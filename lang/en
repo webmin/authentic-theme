@@ -1,0 +1,63 @@
+left_login=Login: $1
+left_home=System Information
+left_oc=Sponsored by OpenCountry
+left_feedback=Send Feedback
+left_search_webmin=Search Webmin:
+left_search_usermin=Search Usermin:
+left_search=Search:
+left_logs=View Module's Logs
+left_others=Others
+
+right_login=Logged in as
+right_from=Logged in from
+
+body_header0=System Information
+body_host=System hostname
+body_os=Operating system
+body_webmin=Webmin version
+body_time=Time on system
+body_kernel=Kernel and CPU
+body_cpuinfo=Processor information
+body_cputype=$5, $8 cores
+body_uptime=System uptime
+body_updays=$1 days, $2 hours, $3 minutes
+body_uphours=$1 hours, $2 minutes
+body_upmins=$1 minutes
+body_procs=Running processes
+body_cpuuse=CPU usage
+body_cpustats=$1% user, $2% kernel, $4% IO, $3% idle
+body_real=Real memory
+body_virt=Virtual memory
+body_used=$1 total - $2 used
+body_cpu=CPU load averages
+body_load=$1 (1 min) $2 (5 mins) $3 (15 mins)
+body_disk=Local disk space
+body_kernelon=$1 $2 on $3
+body_updates=Package updates
+body_upok=All installed packages are up to date
+body_upneed=$1 package updates are available
+body_upsec=$1 package updates are available, of which $2 are security updates
+body_cputemps=CPU temperatures
+body_drivetemps=Drive temperatures
+body_driveerr=$1 errors!
+body_drivefailed=SMART check failed!
+
+body_header1=Account Information
+body_usermin=Usermin Version
+body_out=$1&nbsp;of&nbsp;$2
+body_uquota=Disk quota and usage
+
+login_message=You must enter a username and password to login to the server on
+login_user=Username
+login_pass=Password
+login_token=Token
+login_save=Remember me
+login_signin=Sign in
+login_reset=Reset
+
+session_failed=Login failed. Please try again.
+session_twofailed=Two-factor authentication failed: $1
+session_logout=Logout successful. Use the form below to login again.
+session_timed_out=Session timed out after $1 minutes of inactivity.
+
+__norefs=1
