@@ -1,12 +1,8 @@
 /*!
- * @package Authentic v1.0.0 (https://github.com/qooob/authentic-theme)
- * @description Webmin/Usermin theme based on Bootstrap and Font Awesome
- * @developer Ilia Rostovtsev <programming@rostovtsev.ru>
- * @copyright (c) 2014 Ilia Rostovtsev
- * @contributors (https://github.com/qooob/authentic-theme#code-contributions)
- * @license (https://github.com/qooob/authentic-theme/blob/master/LICENSE) The MIT License (MIT)
+ * Authentic v1.1.0 (https://github.com/qooob/authentic-theme)
+ * Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
-
 $(document).ready(function () {
 
 	// Manipulate loader and dependent pages
@@ -27,102 +23,54 @@ $(document).ready(function () {
 	// Loader run on initial load
 	loading_start();
 
-	// Process navigation
-	var hidden = 0;
+	$(".navigation > li").on('click', function () {
+		typeof $processing == "undefined" ? $processing = false : false;
+		if (!$processing) {
+			$processing = true;
+			var sub = $('a', this).attr('href'),
+				target = $('a', this).attr('target'),
+				$this = $(this);
 
-	function hide_show(status) {
-		if (status == 'open') {
-			$('#sidebar .open-hidden').hide();
-			$('#sidebar').animate({
-				width: "240px"
-			}, 200, function () {
-				$('#sidebar a span').toggle();
-				$('#sidebar ul.navigation:not(:first-child)').css({
-					'margin-top': '0'
+			if (target) {
+				$(".navigation > ul.sub > li").each(function () {
+					$(this).removeClass('sub_active');
+				});
+			}
+			$("#webmin_search_form").submit(function () {
+				$(".navigation > ul.sub > li").each(function () {
+					$(this).removeClass('sub_active');
 				});
 			});
-			$('#sidebar form').css({
-				"margin": "10px"
-			});
-			$('#sidebar input[name="search"]').toggle();
-			$('#wrapper .menu').animate({
-				marginLeft: "240px"
-			}, 200);
-		} else if (status == 'close') {
-			$('#sidebar .sub').hide();
-			width = '40px';
-			$('#sidebar a span').toggle();
-			$('#sidebar .open-hidden').show();
-			$('#sidebar input[name="search"]').toggle();
-			$('#sidebar form').css({
-				'margin': '0'
-			});
-			$('#sidebar ul.navigation:not(:first-child)').css({
-				'margin-top': '-1px'
-			});
-			$('#sidebar').animate({
-				width: "40px"
-			}, 200);
-			$('#wrapper .menu').animate({
-				marginLeft: "40px"
-			}, 200);
 
-		}
-		hidden = !hidden;
-	}
-
-	$(".navigation > li").on('click', function () {
-		var sub = $('a', this).attr('href'),
-			target = $('a', this).attr('target'),
-			$this = $(this);
-
-		if (target) {
-			$(".navigation > ul.sub > li").each(function () {
-				$(this).removeClass('sub_active');
+			$.when(
+				$('#sidebar .navigation > li').each(function () {
+					var $parent_this = $(this);
+					if (!$(this).is($this)) {
+						$(this).removeClass('active');
+						if (!$(this).find('a').attr('href').indexOf("#") && $(this).find('a').attr('href') != '#search' && !$(this).find('a').attr('target')) {
+							if ($($parent_this.find('a').attr('href')).hasClass('sub')) {
+								$($parent_this.find('a').attr('href')).slideUp(600);
+							}
+						}
+					}
+				})
+			).done(function () {
+				$this.hasClass('active') ? $this.removeClass('active') : (sub != '#hide' && !target) ? $this.addClass('active') : false;
+				setTimeout(function () {
+					if ($(sub).is(':visible') && sub != '#hide' && !target) {
+						$this.addClass('active');
+					} else {
+						$this.removeClass('active');
+					}
+					$processing = false;
+				}, 660);
+				$(sub).slideToggle(600);
 			});
-		}
-		$("#webmin_search_form").submit(function () {
-			$(".navigation > ul.sub > li").each(function () {
-				$(this).removeClass('sub_active');
-			});
-		});
-		$('#sidebar .navigation > li').each(function () {
-			var $thisEach = $(this);
-			if (!$(this).is($this)) {
-				$(this).removeClass('active');
-				if (!$(this).find('a').attr('href').indexOf("#") && $(this).find('a').attr('href') != '#search' && !$(this).find('a').attr('target')) {
-					setTimeout(function () {
-						if ($($thisEach.find('a').attr('href')).hasClass('sub'))
-							$($thisEach.find('a').attr('href')).slideUp(250);
-					}, 100);
-				}
-			}
-		});
-		$this.hasClass('active') ? $this.removeClass('active') : (sub != '#hide' && !target) ? $this.addClass('active') : false;
-		setTimeout(function () {
-			if ($(sub).is(':visible') && sub != '#hide' && !target) {
-				$this.addClass('active');
-			} else {
-				$this.removeClass('active');
-			};
-		}, 660);
 
-		if (sub == '#hide') {
-			if (hidden == 0) {
-				hide_show('close');
-			} else {
-				hide_show('open');
-			}
-		} else {
-			if (hidden == 1) {
-				hide_show('open');
-			}
-			$(sub).slideToggle();
 			if (sub == '#search') {
 				$('#sidebar input[name="search"]').focus();
 			}
 		}
-		return false;
 	});
 	$(".navigation > ul.sub > li").on('click', function () {
 		var $this = $(this);
@@ -197,25 +145,20 @@ $(document).ready(function () {
 	});
 
 	$(window).load(function () {
-
-		// On clicking back button, drop previous menu selections
-		//$(window.parent).on('onhashchange', function (event) {
-		//if (event.target.target !== 'page') {
-		//window.parent.$(".navigation > ul.sub > li").removeClass('sub_active');
-		//window.parent.$('#sidebar .navigation > ul.sub').hide();
-		//window.parent.$('#sidebar .navigation > li').removeClass('active');
-		//$(".navigation > li").trigger('click');
-		//$(".navigation > ul.sub > li").trigger('click');
-		//}
-		//});
-
 		// Let's open menu/submenu for Webmin/Usermin default page
-		$('#headln2l a').attr('href') ? $current_page = $('#headln2l a').attr('href').split("?").pop() : $current_page = false;
-
+		// and add support for history button (by applying tricks
+		// to overcome modules' programming inconsistency)
+		var $htarget = $('#headln2l a');
+		$hhreftarget = $htarget.attr('href');
+		$hhreftarget ? $current_page = !$htarget.prop("onclick") ? ($hhreftarget.indexOf("?") >= 0) ? $hhreftarget.split("?").pop() : $hhreftarget.match(/\/(.*?)\//)[1] : $hhreftarget.match(/.cgi\/(.*?)\//)[1] : $current_page = false;
 		if ($current_page) {
+			window.parent.$(".navigation > ul.sub > li").removeClass('sub_active');
+			window.parent.$('#sidebar .navigation > ul.sub').hide();
+			window.parent.$('#sidebar .navigation > li').removeClass('active');
 			window.parent.$('a[href="' + $current_page + '/"]').parent('li').addClass('sub_active').parent('ul.sub').show().prev('li').addClass('active');
 		}
 
+		// Applying CSS tricks for some elements to improve visible effects
 		$('.panel-body > form > table > tbody > tr > td:has(input[type="submit"])').parents('table.table-hardcoded > tbody > tr').css('border', 'none').parents('table').css('margin-top', '20px');
 		$('.panel-body > form > table > tbody > tr > td:has(input[type="submit"])').parents('table.table-hardcoded > tbody').css('border', 'none');
 		$('.ui_grid_table > tbody > tr.ui_grid_row > td:has(button[type="submit"])').parents('table.ui_grid_table').css('border', 'none');
@@ -255,4 +198,45 @@ $(document).ready(function () {
 		}
 	});
 
+	// Initializing CodeMirror
+	$("textarea").each(function (i, block) {
+		var $this = $(this),
+			$global_targets = ['phpini', 'bind8'],
+			$z80_targets = ['phpini'],
+			$xml_targets = ['bind8'];
+		$('#headln2l a').attr('href') ? $page = $('#headln2l a').attr('href').split('/')[1] : $page = null;
+
+		if ($global_targets.indexOf($page) >= 0) {
+			$(this).attr('name', 'data');
+			if ($z80_targets.indexOf($page) >= 0) {
+				$(this).data('mode', 'text/x-z80');
+			} else if ($xml_targets.indexOf($page) >= 0) {
+				$(this).data('mode', 'xml');
+			} else {
+				$(this).data('mode', 'rpm-spec');
+			}
+		}
+
+		if ($(this).attr('name') == 'data' && $("textarea").length === 1) {
+			$parent_width = $this.parent('td').width();
+			var editor = CodeMirror.fromTextArea(block, {
+				mode: {
+					name: $(this).data('mode') ? $(this).data('mode') : "rpm-spec"
+				},
+				tabMode: "indent",
+				matchBrackets: true,
+				lineNumbers: true,
+				lineWrapping: true,
+				indentUnit: 4
+			});
+			$window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2.8));
+			editor.setSize($parent_width, $window_height);
+
+			$(window).resize(function () {
+				$parent_width = $this.parent('td').width();
+				$window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2.8));
+				editor.setSize($parent_width, $window_height);
+			});
+		}
+	});
 });

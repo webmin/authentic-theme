@@ -1,12 +1,8 @@
 /*!
- * @package Authentic v1.0.0 (https://github.com/qooob/authentic-theme)
- * @description Webmin/Usermin theme based on Bootstrap and Font Awesome
- * @developer Ilia Rostovtsev <programming@rostovtsev.ru>
- * @copyright (c) 2014 Ilia Rostovtsev
- * @contributors (https://github.com/qooob/authentic-theme#code-contributions)
- * @license (https://github.com/qooob/authentic-theme/blob/master/LICENSE) The MIT License (MIT)
- */
-
+* Authentic v1.1.0 (https://github.com/qooob/authentic-theme)
+* Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+* Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+*/
 *:focus,
 *:active {
     outline: none !important;
@@ -34,7 +30,7 @@
     height: calc(100% - 50px);
 
     border-right: 1px solid #e7e7e7;
-    background-color: #4e5055;
+    background-color: #515151;
 }
 
 #sidebar form {
@@ -660,7 +656,11 @@ form.ui_form > .ui_form_end_buttons {
     color: #333;
     background-color: #fefefe;
 }
-
+.CodeMirror *,
+.sub_table_container .CodeMirror * {
+    font-family: monospace;
+    font-size: 12px;
+}
 .tab-content div,
 .tab-content div,
 .ui_table_body table {
@@ -1376,5 +1376,4 @@ textarea[name='data'] {
 
     width: 100%;
     min-width: 100%;
-    height: 35em;
 }

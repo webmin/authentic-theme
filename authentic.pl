@@ -1,10 +1,7 @@
 #!
-# @package Authentic v1.0.0 (https://github.com/qooob/authentic-theme)
-# @description Webmin/Usermin theme based on Bootstrap and Font Awesome
-# @developer Ilia Rostovtsev <programming@rostovtsev.ru>
-# @copyright (c) 2014 Ilia Rostovtsev
-# @contributors (https://github.com/qooob/authentic-theme#code-contributions)
-# @license (https://github.com/qooob/authentic-theme/blob/master/LICENSE) The MIT License (MIT)
+# Authentic v1.1.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 sub theme_header {
@@ -25,6 +22,9 @@ sub theme_header {
         '<link href="/css/fontawesome.css" rel="stylesheet" type="text/css">',
         "\n";
     print
+        '<link href="/css/codemirror.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print
         '<link href="/css/progress-circle.css" rel="stylesheet" type="text/css">',
         "\n";
     print '<link href="/css/default.css" rel="stylesheet" type="text/css">',
@@ -32,6 +32,8 @@ sub theme_header {
     print '<script src="/js/jquery.js" type="text/javascript"></script>',
         "\n";
     print '<script src="/js/bootstrap.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="/js/codemirror.js" type="text/javascript"></script>',
         "\n";
     print '<script src="/js/default.js" type="text/javascript"></script>',
         "\n";
