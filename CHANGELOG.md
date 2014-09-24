@@ -1,4 +1,9 @@
 ###Changelog
+####Version 1.1.0 (Sep 24, 2014)
+* Added support for highlighting edited config files, with showing line numbers
+* Fixed navigation menu problems, when using back (history) button
+* Fixed/optimized favicons dimensions
+
 ####Version 1.0.0 by Ilia Rostovtsev (Sep 21, 2014)
 * implemented full support for all elements: tables, forms, inputs, buttons and etc
 * added stick menu to display which module was selected
