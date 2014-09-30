@@ -59,7 +59,7 @@ There is no need to take any additional actions. In case _Virtualmin_ module is 
 ##Donation
 
 When I started working on this theme, I didn't expect to get any donations  but if you do
-_donate_ **it will mean a lot** for _[me]_(https://rostovtsev.ru) and will arouse future development/support.
+_donate_ **it will mean a lot** for _[me](https://rostovtsev.ru)_ and will excite future development.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=programming%40rostovtsev%2eru&lc=RU&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 
