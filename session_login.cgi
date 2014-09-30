@@ -24,19 +24,19 @@ print '<meta charset="utf-8">', "\n";
 print '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
     . "\n";
 print
-    '<link href="unauthenticated/css/bootstrap.css" rel="stylesheet" type="text/css">',
+    '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
     "\n";
 print
-    '<link href="unauthenticated/css/fontawesome.css" rel="stylesheet" type="text/css">',
+    '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
     "\n";
 print
-    '<link href="unauthenticated/css/login.css" rel="stylesheet" type="text/css">',
+    '<link href="/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
     "\n";
 print
-    '<script src="unauthenticated/js/jquery.js" type="text/javascript"></script>',
+    '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
     "\n";
 print
-    '<script src="unauthenticated/js/bootstrap.js" type="text/javascript"></script>',
+    '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
     "\n";
 print '</head>', "\n";
 print '<body>' . "\n";
@@ -46,7 +46,9 @@ if ( defined( $in{'failed'} ) ) {
     if ( $in{'twofactor_msg'} ) {
         print "<h3>",, "</h3><p></p>\n";
         print '<div class="alert alert-danger">' . "\n";
-        print '<strong><i class ="fa fa-bolt"></i> Danger!</strong><br />'
+        print '<strong><i class ="fa fa-bolt"></i> '
+            . $text{'login_danger'}
+            . '</strong><br />'
             . &text( 'session_twofailed',
             &html_escape( $in{'twofactor_msg'} ) )
             . "\n";
@@ -54,24 +56,26 @@ if ( defined( $in{'failed'} ) ) {
     }
     else {
         print '<div class="alert alert-danger">' . "\n";
-        print '<strong><i class ="fa fa-bolt"></i> Danger!</strong><br />'
-            . "\n";
+        print '<strong><i class ="fa fa-bolt"></i> '
+            . $text{'login_danger'}
+            . '</strong><br />' . "\n";
         print $text{'session_failed'} . "\n";
         print '</div>' . "\n";
     }
 }
 elsif ( $in{'logout'} ) {
     print '<div class="alert alert-success">' . "\n";
-    print '<strong><i class ="fa fa-check"></i> Success!</strong><br />'
-        . "\n";
+    print '<strong><i class ="fa fa-check"></i> '
+        . $text{'login_success'}
+        . '</strong><br />' . "\n";
     print $text{'session_logout'} . "\n";
     print '</div>' . "\n";
 }
 elsif ( $in{'timed_out'} ) {
     print '<div class="alert alert-warning">' . "\n";
-    print
-        '<strong><i class ="fa fa fa-exclamation-triangle"></i> Warning!</strong><br />'
-        . "\n";
+    print '<strong><i class ="fa fa fa-exclamation-triangle"></i> '
+        . $text{'login_warning'}
+        . '</strong><br />' . "\n";
     print &text( 'session_timed_out', int( $in{'timed_out'} / 60 ) ) . "\n";
     print '</div>' . "\n";
 }

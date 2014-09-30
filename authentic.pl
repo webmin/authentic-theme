@@ -1,5 +1,5 @@
-#!
-# Authentic v1.1.0 (https://github.com/qooob/authentic-theme)
+#
+# Authentic v2.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -16,32 +16,42 @@ sub theme_header {
     print
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
         . "\n";
-    print '<link href="/css/bootstrap.css" rel="stylesheet" type="text/css">',
+    print '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
-        '<link href="/css/fontawesome.css" rel="stylesheet" type="text/css">',
+        '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
-        '<link href="/css/codemirror.css" rel="stylesheet" type="text/css">',
+        '<link href="/unauthenticated/css/codemirror.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
-        '<link href="/css/progress-circle.css" rel="stylesheet" type="text/css">',
+        '<link href="/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print '<link href="/css/default.css" rel="stylesheet" type="text/css">',
+    print
+        '<link href="/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print '<script src="/js/jquery.js" type="text/javascript"></script>',
+    print '<link href="/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print '<script src="/js/bootstrap.js" type="text/javascript"></script>',
+    print '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
         "\n";
-    print '<script src="/js/codemirror.js" type="text/javascript"></script>',
+    print
+        '<script src="/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
         "\n";
-    print '<script src="/js/default.js" type="text/javascript"></script>',
+    print
+        '<script src="/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',
         "\n";
     print '</head>', "\n";
     print '<body>',  "\n";
 
     if ( @_ > 1 ) {
-        print '<div class="container-fluid col-lg-9 col-lg-offset-1">' . "\n";
+        print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
+            . "\n";
         my %this_module_info = &get_module_info( &get_module_name() );
         print '<div class="panel panel-default" style="margin-top: 20px;">'
             . "\n";

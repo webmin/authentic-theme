@@ -1,33 +1,38 @@
 #Authentic
-**Authentic** is [Webmin/Usermin](https://github.com/webmin/webmin) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that you just longed to get. It uses [CodeMirror](http://codemirror.net/) to highlight config files, when editing manually and . Theme runs using latest releases of dependent software (mentioned above), supporting all modules (even pretty ancient) and fully compatible with latest Webmin 1.7+ and Usermin 1.6+. [Screenshots](https://github.com/qooob/authentic-theme/blob/master/README.md#screenshots) can be found at the bottom of this file.
+**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin](https://www.virtualmin.com/) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that you just longed to get. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
+
+**Authentic** is fully compatible with latest Webmin 1.710+, Usermin 1.620+ and Virtualmin 4.11+.
 
 ##Changelog
-####Version 1.1.0 (Sep 24, 2014)
-* Added support for highlighting edited config files, with showing line numbers
-* Fixed navigation menu problems, when using back (history) button
-* Fixed/optimized favicons dimensions
-[Complete ChangeLog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
+####Version 2.0.0 (Oct 1, 2014)
+* Added support for _Virtualmin_ module
+* Added support for _ConfigServer Security & Firewall_ module
+* Fixed/optimized images
+* Fixed _Usermin_ not loading menu
+* Fixed/added support for menu on mobile devices
+* Fixed dozens of small bugs
+
+>[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
+
+##Screenshots
+
+![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot-2.0.0.png)
 
 ##Principles
 * Make the theme fully support all Webmin/Usermin modules
 * Be as beautiful, light and easy to use as possible
 * Be compatible with mobile devices
 
-##Roadmap
-* Support for Virtualmin (it's supported really but missing left menu yet)
-* Native support for [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html) module
-
 ##Issues
+* Borders on some tables are missing, because of Webmin modules miscalculating _colspan_ values (developers promised to fix it in the near future)
 * Few tables go off the grid on small resolutions (< 1000px)
-* Borders on some tables are missing, because of Webmin/Usermin modules miscalculating colspans value
-
 
 ##FAQ
 ####How do I install _Authentic_ theme?
 
 ####Webmin
 
-  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download it directly](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-1.1.0.wbt.gz) and install it going from Webmin:
+  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download it directly](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-2.0.0.wbt.gz) and install it going from Webmin:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
@@ -44,31 +49,17 @@
 
     `Webmin->Usermin Configuration->Usermin Themes->Install themes->From uploaded file`
 
+####Virtualmin
+There is no need to take any additional actions. In case _Virtualmin_ module is installed, it will be automatically detected and supported.
+
 ##Code contributions
 * [Riccardo Nobile](mailto:riccardo.nobile@winfuture.it)
 * [Simone Cragnolini](mailto:simone.cragnolini@winfuture.it)
 
-
-##Screenshots
-
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/loading.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/system-bootup-shutdown.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/system-bootup-shutdown-edit.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/webmin-configuration.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/webmin-list-users.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/webmin-users-details.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/system-software-packages.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/system-software-packages-edit.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/filesystem-backups.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/smart-drive-status-details.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/smart-drive-status.png)
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshots/hardware-system-time.png)
-
-
 ##Donation
 
-I didn't expect to get donations really and it wasn't the reason at all when I started working on this theme but if you do
-_donate_ **it will mean a world for [me](https://rostovtsev.ru)**.
+When I started working on this theme, I didn't expect to get any donations  but if you do
+_donate_ **it will mean a lot** for _[me]_(https://rostovtsev.ru) and will arouse future development/support.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=programming%40rostovtsev%2eru&lc=RU&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 

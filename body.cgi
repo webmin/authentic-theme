@@ -298,12 +298,9 @@ elsif ( $level == 3 ) {
 
 # End of page
 print '</div>' . "\n";
-
-#print '<p id="about">Template developed and written by <a href="https://www.facebook.com/RiccardoNob" target="_blank">Riccardo Nobile</a> & <a href="https://www.facebook.com/simone.cragnolini" target="_blank">Simone Cragnolini</a></p>' . "\n";
-#print '<p id="about"><a href="http://winfuture.it/" target="_blank">WinFuture</a></p>' . "\n";
+print '</div>' . "\n";
 print '</div>' . "\n";
 
-#print '</div>' . "\n";
 &footer();
 
 sub print_progressbar_colum {

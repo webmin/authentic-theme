@@ -1,11 +1,11 @@
+global_welcome=Welcome
+global_search=Search
+global_search_in=Search in
+
 left_login=Login: $1
 left_home=System Information
-left_oc=Sponsored by OpenCountry
 left_feedback=Send Feedback
-left_search_webmin=Search Webmin:
-left_search_usermin=Search Usermin:
-left_search=Search:
-left_logs=View Module's Logs
+left_refresh_modules=Refresh Modules
 left_others=Others
 
 right_login=Logged in as
@@ -47,6 +47,9 @@ body_usermin=Usermin Version
 body_out=$1&nbsp;of&nbsp;$2
 body_uquota=Disk quota and usage
 
+login_danger=Danger!
+login_warning=Warning!
+login_success=Success!
 login_message=You must enter a username and password to login to the server on
 login_user=Username
 login_pass=Password
@@ -59,5 +62,8 @@ session_failed=Login failed. Please try again.
 session_twofailed=Two-factor authentication failed: $1
 session_logout=Logout successful. Use the form below to login again.
 session_timed_out=Session timed out after $1 minutes of inactivity.
+
+virtualmin_left_generic=Create Virtual Server
+virtualmin_left_virtualmin=List Virtual Servers
 
 __norefs=1

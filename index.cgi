@@ -1,3 +1,9 @@
+#
+# Authentic v2.0.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+#
+
 #!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -24,8 +30,11 @@ if ( $in{'page'} ) {
 %gaccess = &get_module_acl( undef, "" );
 $title   = &get_html_framed_title();
 &header($title);
+$is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
 print '<div id="wrapper" data-product="'
     . &get_product_name()
+    . '" data-virtual-server="'
+    . $is_virtualmin
     . '" class="index">' . "\n";
 print '<header>' . "\n";
 print '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">'
@@ -39,20 +48,67 @@ print '<span class="icon-bar"></span>' . "\n";
 print '<span class="icon-bar"></span>' . "\n";
 print '<span class="icon-bar"></span>' . "\n";
 print '</button>' . "\n";
-print '<span class="navbar-brand">'
-    . ucfirst( &get_product_name() ) . ' - '
-    . &get_display_hostname()
-    . '</span>' . "\n";
+print '<span class="navbar-brand">';
+
+if ( &foreign_available("virtual-server") ) {
+    print '<ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" id="product-menu" role="button" class="dropdown-toggle" data-toggle="dropdown">
+              <small>';
+    if ( $is_virtualmin == -1 ) {
+        print '<i class="fa fa-cogs"></i>';
+    }
+    else {
+        print '<i class="fa fa-sun-o"></i>';
+    }
+    print '</small>&nbsp;&nbsp;';
+    if ( $is_virtualmin == -1 ) {
+        print 'Webmin';
+    }
+    else {
+        print 'Virtualmin';
+    }
+    print '<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="button" aria-labelledby="product-menu">';
+    if ( $is_virtualmin == -1 ) {
+        print
+            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;</i>Virtualmin</a></li>';
+    }
+    else {
+        print
+            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="fa fa-cogs">&nbsp;</i>Webmin</a></li>';
+    }
+    print '</ul>
+            </li>
+          </ul><span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop"></i></small>&nbsp;&nbsp;'
+        . &get_display_hostname() . '</span>';
+}
+elsif ( &get_product_name() eq 'webmin' ) {
+    print '<small><i class="fa fa-cogs">&nbsp;</i></small>&nbsp;'
+        . ucfirst( &get_product_name() )
+        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;'
+        . &get_display_hostname();
+}
+else {
+    print '<small><i class="fa fa-user">&nbsp;</i></small>&nbsp;'
+        . ucfirst( &get_product_name() )
+        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;'
+        . &get_display_hostname();
+}
+
+print '</span>' . "\n";
 print '</div>' . "\n";
 print '<div class="collapse navbar-collapse" id="collapse">' . "\n";
 print '<ul class="nav navbar-nav visible-xs">' . "\n";
 print
-    '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="menu.cgi"><i class="fa fa-tags"></i> Main menu</a></li>'
-    . "\n";
+    '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="menu.cgi?virtualmin='
+    . $is_virtualmin
+    . '"><i class="fa fa-tags"></i> Main menu</a></li>' . "\n";
 
 print
-    '<li><a href="#" target="page" data-href="body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-home"></i> System Information</a></li>'
-    . "\n";
+    '<li><a target="page" data-href="body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-home"></i> '
+    . $text{'left_home'}
+    . '</a></li>' . "\n";
 %gaccess = &get_module_acl( undef, "" );
 if (   &get_product_name() eq 'webmin'
     && !$ENV{'ANONYMOUS_USER'}
@@ -64,13 +120,15 @@ if (   &get_product_name() eq 'webmin'
     && $gconfig{'feedback'} )
 {
     print
-        '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="feedback_form.cgi"><i class="fa fa-envelope"></i> Send Feedback</a></li>'
-        . "\n";
+        '<li><a data-toggle="collapse" data-target="#collapse" target="page" data-href="feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-envelope"></i> '
+        . $text{'left_feedback'}
+        . '</a></li>' . "\n";
 }
 if ( &foreign_available("webmin") ) {
     print
-        '<li><a href="#" target="page" data-href="webmin/refresh_modules.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_refresh_modules_trigger"><i class="fa fa-refresh"></i> Refresh Modules</a></li>'
-        . "\n";
+        '<li><a target="page" data-href="webmin/refresh_modules.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_refresh_modules_trigger"><i class="fa fa-refresh"></i> '
+        . $text{'left_refresh_modules'}
+        . '</a></li>' . "\n";
 }
 print '</ul>' . "\n";
 if ( &get_product_name() eq "usermin" ) {
@@ -88,8 +146,11 @@ if ( &foreign_available("net") ) {
         . $user . '">'
         . $user . '</a>';
 }
+
 print '<div>';
-print '<p class="navbar-text pull-left">Welcome ' . $user . '</p>' . "\n";
+print '<p class="navbar-text pull-left">'
+    . $text{'global_welcome'} . ' '
+    . $user . '</p>' . "\n";
 &get_miniserv_config( \%miniserv );
 if (   $miniserv{'logout'}
     && !$ENV{'SSL_USER'}
@@ -121,106 +182,188 @@ print '</li>' . "\n";
 @cats = &get_visible_modules_categories();
 @modules = map { @{ $_->{'modules'} } } @cats;
 
-if (   $gconfig{"notabs_${base_remote_user}"} == 2
-    || $gconfig{"notabs_${base_remote_user}"} == 0 && $gconfig{'notabs'}
-    || @modules <= 1 )
-{
-    foreach $minfo (@modules) {
-        $target = $minfo->{'noframe'} ? "_top" : "right";
-        print
-            "<a target=$target href=$minfo->{'dir'}/>$minfo->{'desc'}</a><br>\n";
+if ( $is_virtualmin == -1 ) {
+    if (   $gconfig{"notabs_${base_remote_user}"} == 2
+        || $gconfig{"notabs_${base_remote_user}"} == 0 && $gconfig{'notabs'}
+        || @modules <= 1 )
+    {
+        foreach $minfo (@modules) {
+            $target = $minfo->{'noframe'} ? "_top" : "right";
+            print
+                "<a target=$target href=$minfo->{'dir'}/>$minfo->{'desc'}</a><br>\n";
+        }
     }
-}
-else {
-    foreach $c (@cats) {
-
-        # Show category opener, plus modules under it
-        # Modified the span
-        &print_category_opener(
-            $c->{'code'},
-            $in{ $c->{'code'} } ? 1 : 0,
-            $c->{'unused'}
-            ? '<span style="color: #888888">' . $c->{'desc'} . '</span>'
-            : $c->{'desc'}
-        );
-        $cls = $in{ $c->{'code'} } ? "itemshown" : "itemhidden";
-        print '<ul class="sub" style="display: none;" id="'
-            . $c->{'code'} . '">' . "\n";
-        foreach my $minfo ( @{ $c->{'modules'} } ) {
-            &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'}, undef,
-                undef, $minfo->{'noframe'} ? "_top" : "",
+    else {
+        foreach $c (@cats) {
+            &print_category(
+                $c->{'code'},
+                $in{ $c->{'code'} } ? 1 : 0,
+                $c->{'unused'}
+                ? '<span style="color: #888888">' . $c->{'desc'} . '</span>'
+                : $c->{'desc'}
             );
+            print '<ul class="sub" style="display: none;" id="'
+                . $c->{'code'} . '">' . "\n";
+            foreach my $minfo ( @{ $c->{'modules'} } ) {
+                &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'} );
+            }
+            print '</ul>' . "\n";
+        }
+    }
+
+    if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} )
+    {
+        print '<li class="open-hidden">' . "\n";
+        print '<a href="#search"><i class="fa fa-search fa-fw"></i></a>'
+            . "\n";
+        print '</li>' . "\n";
+    }
+    print '</ul>' . "\n";
+    if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} )
+    {
+        print
+            '<form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
+            . "\n";
+        print '<div class="form-group">' . "\n";
+        print
+            '<input type="hidden" class="form-control" name="title" value="'
+            . ucfirst( &get_product_name() ) . ' '
+            . $text{'global_search'} . '">' . "\n";
+        print
+            '<input type="text" class="form-control" name="search" placeholder="'
+            . $text{'global_search_in'} . ' '
+            . ucfirst( &get_product_name() ) . '">' . "\n";
+        print '</div>' . "\n";
+        print '</form>' . "\n";
+    }
+    print '<ul class="navigation">' . "\n";
+    print
+        '<li><a target="page" data-href="/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+        . $text{'left_home'}
+        . '</span></a></li>' . "\n";
+    if (   &get_product_name() eq 'webmin'
+        && !$ENV{'ANONYMOUS_USER'}
+        && $gconfig{'nofeedbackcc'} != 2
+        && $gaccess{'feedback'}
+        && $gconfig{'feedback_to'}
+        || &get_product_name() eq 'usermin'
+        && !$ENV{'ANONYMOUS_USER'}
+        && $gconfig{'feedback'} )
+    {
+        print
+            '<li><a target="page" data-href="/feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-fw fa-envelope"></i> <span>'
+            . $text{'left_feedback'}
+            . '</span></a></li>' . "\n";
+    }
+    if ( &foreign_available("webmin") ) {
+        print
+            '<li><a target="page" data-href="/webmin/refresh_modules.cgi" class="navigation_refresh_modules_trigger"><i class="fa fa-fw fa-refresh"></i> <span>'
+            . $text{'left_refresh_modules'}
+            . '</span></a></li>' . "\n";
+    }
+
+}
+elsif ( $is_virtualmin != -1 ) {
+    require "virtual-server-theme/virtual-server-theme-lib.pl";
+    &ReadParse();
+    &foreign_require( "virtual-server", "virtual-server-lib.pl" );
+    $goto = 'virtual-server/index.cgi';
+    my @buts = &virtual_server::get_all_global_links();
+    my @tcats = &unique( map { $_->{'cat'} } @buts );
+    foreach my $c (@tcats) {
+        my @incat = grep { $_->{'cat'} eq $c } @buts;
+
+        &print_category( $c, \@incat, $incat[0]->{'catname'} );
+
+        print '<ul class="sub" style="display: none;" id="'
+            . $c . '">' . "\n";
+        foreach my $l (@incat) {
+
+            # Show domain creation link
+            if ((      &virtual_server::can_create_master_servers()
+                    || &virtual_server::can_create_sub_servers()
+                )
+                && ( $c eq 'add' )
+                && ( !length $print_virtualmin_link )
+                )
+            {
+
+                &print_category_link(
+                    "virtual-server/domain_form.cgi",
+                    $text{'virtualmin_left_generic'}
+                );
+                $print_virtualmin_link = 1;
+            }
+            $l->{'url'} =~ s/^\/+//;
+            &print_category_link( $l->{'url'}, $l->{'title'} );
+
         }
         print '</ul>' . "\n";
+
+    }
+
+    if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} )
+    {
+        print '<li class="open-hidden">' . "\n";
+        print '<a href="#search"><i class="fa fa-search fa-fw"></i></a>'
+            . "\n";
+        print '</li>' . "\n";
+    }
+    print '</ul>' . "\n";
+    if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} )
+    {
+        print
+            '<form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
+            . "\n";
+        print '<div class="form-group">' . "\n";
+        print
+            '<input type="hidden" class="form-control" name="mod" value="virtual-server">'
+            . "\n";
+        print
+            '<input type="hidden" class="form-control" name="title" value="Virtualmin '
+            . $text{'global_search'} . '">' . "\n";
+        print
+            '<input type="text" class="form-control" name="search" placeholder="'
+            . $text{'global_search_in'}
+            . ' Virtualmin">' . "\n";
+
+        print '</div>' . "\n";
+        print '</form>' . "\n";
+    }
+    if ( &foreign_available("webmin") ) {
+        print
+            '<li><a href="virtual-server/index.cgi" target="page"><i class="fa fa-fw fa-tasks"></i> <span>'
+            . $text{'virtualmin_left_virtualmin'}
+            . '</span></a></li>' . "\n";
     }
 }
-if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} ) {
-    print '<li class="open-hidden">' . "\n";
-    print '<a href="#search"><i class="fa fa-search fa-fw"></i></a>' . "\n";
-    print '</li>' . "\n";
-}
-print '</ul>' . "\n";
-if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} ) {
-    print
-        '<form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
-        . "\n";
-    print '<div class="form-group">' . "\n";
-    print
-        '<input type="text" class="form-control" name="search" placeholder="Search in '
-        . &get_product_name() . '">' . "\n";
-    print '</div>' . "\n";
-    print '</form>' . "\n";
-}
-print '<ul class="navigation">' . "\n";
-print
-    '<li><a href="#" target="page" data-href="/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>System Information</span></a></li>'
-    . "\n";
-if (   &get_product_name() eq 'webmin'
-    && !$ENV{'ANONYMOUS_USER'}
-    && $gconfig{'nofeedbackcc'} != 2
-    && $gaccess{'feedback'}
-    && $gconfig{'feedback_to'}
-    || &get_product_name() eq 'usermin'
-    && !$ENV{'ANONYMOUS_USER'}
-    && $gconfig{'feedback'} )
-{
-    print
-        '<li><a target="page" href="feedback_form.cgi"><i class="fa fa-fw fa-envelope"></i> <span>Send Feedback</span></a></li>'
-        . "\n";
-}
-if ( &foreign_available("webmin") ) {
-    print
-        '<li><a href="#" target="page" data-href="/webmin/refresh_modules.cgi" class="navigation_refresh_modules_trigger"><i class="fa fa-fw fa-refresh"></i> <span>Refresh Modules</span></a></li>'
-        . "\n";
-}
+
 print '</ul>' . "\n";
 print '</aside>' . "\n";
-print '<div id="wrapper" class="menu">' . "\n";
+print '<div id="content" class="menu">' . "\n";
 print
-    '<div class="loader-container" style="background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5); position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index:5; display: none;">'
+    '<div class="loader-container" style="background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5); position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index:5; display: none;">'
     . "\n";
-print '<div class="loader"><i class="fa fa-3x fa-gear fa-spin"></i></div>'
+print
+    '<div class="loader"><i class="fa fa-3x fa-circle-o-notch fa-spin fa-fw"></i></div>'
     . "\n";
 print '</div>' . "\n";
-print '<iframe name="page" src="' . $goto . '">' . "\n";
+print '<iframe name="page" id="iframe" src="' . $goto . '">' . "\n";
 print '</iframe>' . "\n";
 print '</div>' . "\n";
 print '</div>' . "\n";
 &footer();
 
-# print_category_opener(name, &allcats, label)
-# Prints out an open/close twistie for some category
-sub print_category_opener {
+sub print_category {
     local ( $c, $status, $label ) = @_;
     $label = $c eq "others" ? $text{'left_others'} : $label;
-    local $img = $status ? "gray-open.gif" : "gray-closed.gif";
     use feature qw(switch);
     given ($c) {
         when ('webmin')   { $icon = 'fa-cog'; }
         when ('usermin')  { $icon = 'fa-cog'; }
         when ('system')   { $icon = 'fa-wrench'; }
         when ('servers')  { $icon = 'fa-rocket'; }
-        when ('other')    { $icon = 'fa-file'; }
+        when ('other')    { $icon = 'fa-gavel'; }
         when ('net')      { $icon = 'fa-shield'; }
         when ('info')     { $icon = 'fa-info'; }
         when ('hardware') { $icon = 'fa-hdd-o'; }
@@ -229,29 +372,36 @@ sub print_category_opener {
         when ('mail')     { $icon = 'fa-envelope'; }
         when ('login')    { $icon = 'fa-user'; }
         when ('apps')     { $icon = 'fa-rocket'; }
-        default           { $icon = 'fa-cog'; }
+
+        when ('settings') { $icon = 'fa-cog'; }
+        when ('email')    { $icon = 'fa-envelope'; }
+        when ('custom')   { $icon = 'fa-wrench'; }
+        when ('ip')       { $icon = 'fa-shield'; }
+        when ('check')    { $icon = 'fa-user-md'; }
+        when ('add')      { $icon = 'fa-plus'; }
+        when ('backup')   { $icon = 'fa-save'; }
+
+        default { $icon = 'fa-cog'; }
     }
 
-    # Show link to close or open catgory
-    print '<li>' . "\n";
-    print '<a href="#'
-        . $c
-        . '"><i class="fa '
-        . $icon
-        . ' fa-fw"></i> <span>'
-        . $label
-        . '</span></a>' . "\n";
-    print '</li>' . "\n";
+    if ($label) {
+
+        # Show link to close or open catgory
+        print '<li>' . "\n";
+        print '<a href="#'
+            . $c
+            . '"><i class="fa '
+            . $icon
+            . ' fa-fw"></i> <span>'
+            . $label
+            . '</span></a>' . "\n";
+        print '</li>' . "\n";
+    }
 }
 
 sub print_category_link {
-    local ( $link, $label, $image, $noimage, $target ) = @_;
-    $target ||= "page";
+    local ( $link, $label ) = @_;
     print '<li>' . "\n";
-    print '<a target="'
-        . $target
-        . '" href="'
-        . $link . '"> '
-        . $label . '</a>' . "\n";
+    print '<a target="page" href="' . $link . '"> ' . $label . '</a>' . "\n";
     print '</li>' . "\n";
 }

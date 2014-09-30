@@ -1,3 +1,8 @@
+#
+# Authentic v2.0.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+
 #!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -10,46 +15,98 @@ $title   = &get_html_framed_title();
 &header($title);
 print '<div id="wrapper" class="page">' . "\n";
 print '<div class="container">' . "\n";
-@cats     = &get_visible_modules_categories();
-$category = $in{'category'};
-$row      = 1;
+@cats       = &get_visible_modules_categories();
+$virtualmin = $in{'virtualmin'};
+$category   = $in{'category'};
+$row        = 1;
 
-if ( $category eq '' ) {
-    foreach $cat (@cats) {
-        if ( $row eq 1 ) {
-            print '<div class="row menu-row">' . "\n";
-            &print_category_menu( $cat->{'code'},
-                $in{ $cat->{'code'} } ? 1 : 0,
-                $cat->{'desc'} );
-            $row = 0;
-        }
-        else {
-            &print_category_menu( $cat->{'code'},
-                $in{ $cat->{'code'} } ? 1 : 0,
-                $cat->{'desc'} );
-            print '</div>' . "\n";
-            $row = 1;
+if ( $virtualmin == -1 ) {
+    if ( $category eq '' ) {
+        foreach $cat (@cats) {
+            if ( $row eq 1 ) {
+                print '<div class="row menu-row">' . "\n";
+                &print_category( $cat->{'code'}, $cat->{'desc'} );
+                $row = 0;
+            }
+            else {
+                &print_category( $cat->{'code'}, $cat->{'desc'} );
+                print '</div>' . "\n";
+                $row = 1;
+            }
         }
     }
+    else {
+        print '<div class="list-group">' . "\n";
+        foreach $cat (@cats) {
+            next if ( $cat->{'code'} ne $category );
+            foreach my $module ( @{ $cat->{'modules'} } ) {
+                &print_category_link( "$module->{'dir'}/",
+                    $module->{'desc'} );
+            }
+        }
+        print '</div>' . "\n";
+    }
 }
-else {
-    print '<div class="list-group">' . "\n";
-    foreach $cat (@cats) {
-        next if ( $cat->{'code'} ne $category );
-        foreach my $module ( @{ $cat->{'modules'} } ) {
-            &print_category_link( "$module->{'dir'}/", $module->{'desc'},
-                undef, undef, $module->{'noframe'} ? "_top" : "",
-            );
+elsif ( $is_virtualmin != -1 ) {
+    require "virtual-server-theme/virtual-server-theme-lib.pl";
+    &ReadParse();
+    &foreign_require( "virtual-server", "virtual-server-lib.pl" );
+    $goto = 'virtual-server/index.cgi';
+    my @buts = &virtual_server::get_all_global_links();
+    my @tcats = &unique( map { $_->{'cat'} } @buts );
+
+    if ( $category eq '' ) {
+        foreach $c (@tcats) {
+            my @incat = grep { $_->{'cat'} eq $c } @buts;
+            if ( $row eq 1 ) {
+                print '<div class="row menu-row">' . "\n";
+                &print_category( $c, $incat[0]->{'catname'} );
+                $row = 0;
+            }
+            else {
+                &print_category( $c, $incat[0]->{'catname'} );
+                print '</div>' . "\n";
+                $row = 1;
+            }
         }
     }
-    print '</div>' . "\n";
+    else {
+        print '<div class="list-group">' . "\n";
+        foreach $c (@tcats) {
+            my @incat = grep { $_->{'cat'} eq $c } @buts;
+            next if ( $c ne $category );
+            foreach my $l (@incat) {
+
+                # Show domain creation link
+                if ((      &virtual_server::can_create_master_servers()
+                        || &virtual_server::can_create_sub_servers()
+                    )
+                    && ( $category eq 'add' )
+                    && ( !length $print_virtualmin_link )
+                    )
+                {
+
+                    &print_category_link(
+                        "virtual-server/domain_form.cgi",
+                        $text{'virtualmin_left_generic'}
+                    );
+                    $print_virtualmin_link = 1;
+                }
+                $l->{'url'} =~ s/^\/+//;
+                &print_category_link( $l->{'url'}, $l->{'title'} );
+
+            }
+        }
+        print '</div>' . "\n";
+    }
 }
+
 print '</div>' . "\n";
 
 &footer();
 
-sub print_category_menu {
-    local ( $cat, $status, $label ) = @_;
+sub print_category {
+    local ( $cat, $label ) = @_;
     $label = $cat eq "others" ? $text{'left_others'} : $label;
     use feature qw(switch);
     given ($cat) {
@@ -57,7 +114,7 @@ sub print_category_menu {
         when ('usermin')  { $icon = 'fa-cog'; }
         when ('system')   { $icon = 'fa-wrench'; }
         when ('servers')  { $icon = 'fa-rocket'; }
-        when ('other')    { $icon = 'fa-file'; }
+        when ('other')    { $icon = 'fa-gavel'; }
         when ('net')      { $icon = 'fa-shield'; }
         when ('info')     { $icon = 'fa-info'; }
         when ('hardware') { $icon = 'fa-hdd-o'; }
@@ -66,21 +123,34 @@ sub print_category_menu {
         when ('mail')     { $icon = 'fa-envelope'; }
         when ('login')    { $icon = 'fa-user'; }
         when ('apps')     { $icon = 'fa-rocket'; }
-        default           { $icon = 'fa-cog'; }
+
+        when ('settings') { $icon = 'fa-cog'; }
+        when ('email')    { $icon = 'fa-envelope'; }
+        when ('custom')   { $icon = 'fa-wrench'; }
+        when ('ip')       { $icon = 'fa-shield'; }
+        when ('check')    { $icon = 'fa-user-md'; }
+        when ('add')      { $icon = 'fa-plus'; }
+        when ('backup')   { $icon = 'fa-save'; }
+
+        default { $icon = 'fa-cog'; }
     }
-    print '<div class="col-xs-6">' . "\n";
-    print
-        '<div class="menu-col" style="background-color: #222; border-radius: 4px; margin: 0 auto 30px; width: 140px; height: 140px;">'
-        . "\n";
-    print '<a class="menu-link" href="menu.cgi?category=' . $cat . '">'
-        . "\n";
-    print '<div style="padding: 15px 10px;">' . "\n";
-    print '<i class="fa ' . $icon . ' fa-fw"></i>' . "\n";
-    print '<div style="margin-top: 6px;">' . $label . '</div>' . "\n";
-    print '</div>' . "\n";
-    print '</a>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
+    if ($label) {
+        print '<div class="col-xs-6">' . "\n";
+        print
+            '<div class="menu-col" style="background-color: #5885d6; border-radius: 4px; margin: 0 auto 30px; width: 130px; height: 150px;">'
+            . "\n";
+        print '<a class="menu-link" href="menu.cgi?category='
+            . $cat
+            . '&virtualmin='
+            . $virtualmin . '"">' . "\n";
+        print '<div style="padding: 15px 10px;">' . "\n";
+        print '<i class="fa ' . $icon . ' fa-fw"></i>' . "\n";
+        print '<span style="margin-top: 6px;">' . $label . '</span>' . "\n";
+        print '</div>' . "\n";
+        print '</a>' . "\n";
+        print '</div>' . "\n";
+        print '</div>' . "\n";
+    }
 }
 
 sub print_category_link {

@@ -1,4 +1,13 @@
-###Changelog
+##Changelog
+
+####Version 2.0.0 (Oct 1, 2014)
+* Added support for _Virtualmin_ module
+* Added support for _ConfigServer Security & Firewall_ module
+* Fixed/optimized images
+* Fixed _Usermin_ not loading menu
+* Fixed/added support for menu on mobile devices
+* Fixed dozens of small bugs
+
 ####Version 1.1.0 (Sep 24, 2014)
 * Added support for highlighting edited config files, with showing line numbers
 * Fixed navigation menu problems, when using back (history) button
