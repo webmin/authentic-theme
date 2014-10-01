@@ -4,7 +4,7 @@
 **Authentic** is fully compatible with latest Webmin 1.710+, Usermin 1.620+ and Virtualmin 4.11+.
 
 ##Changelog
-####Version 2.0.1 (Oct 2, 2014)
+####Version 2.0.1 (Oct 1, 2014)
 * Fixed small bugs
 ####Version 2.0.0 (Oct 1, 2014)
 * Added support for _Virtualmin_ module
