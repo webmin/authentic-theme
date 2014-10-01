@@ -34,7 +34,7 @@
 
 ####Webmin
 
-  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download it directly](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-2.0.0.wbt.gz) and install it going from Webmin:
+  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download it directly](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz) and install it going from Webmin:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
