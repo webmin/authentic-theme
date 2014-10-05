@@ -8,6 +8,7 @@
 ####Version 3.0.0 (Oct 5, 2014)
 * Added popover tooltip for old `window.open` to process `help.cgi`
 * Added theme information version (installed/update notice) in _System Information_ (works by just comparing `VERSION.txt` files, nothing more)
+* Fixed error in _default.js_ script, throwing `NS_ERROR_NOT_AVAILABLE` in Firefox and other _Gecko_ browsers
 * Fixed all problems with selecting and filtering _files/user/groups_ in `*_chooser.cgi`
 * Fixed loaders being shown every time when waiting for server reply
 * Fixed listing of virtual-servers in Virtualmin
