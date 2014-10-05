@@ -1,11 +1,11 @@
 #
-# Authentic v2.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 3.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 sub theme_header {
-    print '<!DOCTYPE HTML>',        "\n";
+    print '<!DOCTYPE html>',        "\n";
     print '<html>',                 "\n";
     print '<head>',                 "\n";
     print '<title>',                $_[0], '</title>', "\n";
@@ -16,7 +16,8 @@ sub theme_header {
     print
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
         . "\n";
-    print '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+    print
+        '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
         '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
@@ -30,9 +31,11 @@ sub theme_header {
     print
         '<link href="/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print '<link href="/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
+    print
+        '<link href="/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+    print
+        '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
         "\n";
     print
         '<script src="/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
@@ -40,11 +43,14 @@ sub theme_header {
     print
         '<script src="/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
         "\n";
-    print '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+    print
+        '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
         "\n";
-    print '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+    print
+        '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
         "\n";
-    print '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',
+    print
+        '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',
         "\n";
     print '</head>', "\n";
     print '<body>',  "\n";
@@ -150,6 +156,57 @@ sub theme_header {
     $miniserv::page_capture = 1;
 }
 
+sub theme_popup_prehead {
+    if ( index( $ENV{'REQUEST_URI'}, 'help.cgi' ) != 1 ) {
+        print '<meta charset="utf-8">', "\n";
+        print '<link rel="shortcut icon" href="/favicon-'
+            . &get_product_name()
+            . '.ico">' . "\n";
+        print
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+            . "\n";
+        print
+            '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+            "\n";
+        print
+            '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+            "\n";
+        print
+            '<link href="/unauthenticated/css/codemirror.min.css" rel="stylesheet" type="text/css">',
+            "\n";
+        print
+            '<link href="/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
+            "\n";
+        print
+            '<link href="/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
+            "\n";
+        print
+            '<link href="/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/filtermatch.min.js" type="text/javascript"></script>',
+            "\n";
+    }
+}
+
 sub theme_footer {
     for ( my $i = 0; $i + 1 < @_; $i += 2 ) {
         my $url = $_[$i];
@@ -182,12 +239,49 @@ sub theme_file_chooser_button {
     my $form   = defined( $_[2] ) ? $_[2] : 0;
     my $chroot = defined( $_[3] ) ? $_[3] : "/";
     my $add    = int( $_[4] );
-    my ( $w, $h ) = ( 360, 576 );
+    my ( $w, $h ) = ( 520, 600 );
     if ( $gconfig{'db_sizefile'} ) {
         ( $w, $h ) = split( /x/, $gconfig{'db_sizefile'} );
     }
     return
-        "<button class='btn btn-default' style='height: 34px; vertical-align:bottom' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+escape(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>...</button>\n";
+        "<button class='btn btn-default' style='height: 34px; vertical-align:bottom' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>...</button>\n";
+}
+
+sub theme_user_chooser_button {
+    my $form = defined( $_[2] ) ? $_[2] : 0;
+    my $w    = $_[1]            ? 500   : 300;
+    my $h    = 600;
+    if ( $_[1] && $gconfig{'db_sizeusers'} ) {
+        ( $w, $h ) = split( /x/, $gconfig{'db_sizeusers'} );
+    }
+    elsif ( !$_[1] && $gconfig{'db_sizeuser'} ) {
+        ( $w, $h ) = split( /x/, $gconfig{'db_sizeuser'} );
+    }
+    return
+        "<input type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"...\">\n";
+}
+
+sub theme_group_chooser_button {
+    my $form = defined( $_[2] ) ? $_[2] : 0;
+    my $w    = $_[1]            ? 500   : 300;
+    my $h    = 600;
+    if ( $_[1] && $gconfig{'db_sizeusers'} ) {
+        ( $w, $h ) = split( /x/, $gconfig{'db_sizeusers'} );
+    }
+    elsif ( !$_[1] && $gconfig{'db_sizeuser'} ) {
+        ( $w, $h ) = split( /x/, $gconfig{'db_sizeuser'} );
+    }
+    return
+        "<input type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"...\">\n";
+}
+
+sub theme_date_chooser_button {
+    my ( $w, $h ) = ( 320, 270 );
+    if ( $gconfig{'db_sizedate'} ) {
+        ( $w, $h ) = split( /x/, $gconfig{'db_sizedate'} );
+    }
+    return
+        "<input type=button onClick='window.dfield = form.$_[0]; window.mfield = form.$_[1]; window.yfield = form.$_[2]; window.open(\"$gconfig{'webprefix'}/date_chooser.cgi?day=\"+encodeURIComponent(dfield.value)+\"&month=\"+encodeURIComponent(mfield.selectedIndex)+\"&year=\"+yfield.value, \"chooser\", \"toolbar=no,menubar=no,scrollbars=yes,width=$w,height=$h\")' value=\"...\">\n";
 }
 
 sub theme_popup_window_button {
@@ -202,7 +296,7 @@ sub theme_popup_window_button {
     $rv .= "chooser = window.open(\"$url\"";
     foreach my $m (@$fields) {
         if ( $m->[2] ) {
-            $rv .= "+\"$sep$m->[2]=\"+escape($m->[0].value)";
+            $rv .= "+\"$sep$m->[2]=\"+encodeURIComponent($m->[0].value)";
             $sep = "&";
         }
     }
@@ -289,7 +383,7 @@ sub theme_ui_columns_start {
     my ( $heads, $width, $noborder, $tdtags, $title ) = @_;
     my ( $rv, $i );
 
-    $rv .= '<table class="table table-striped">' . "\n";
+    $rv .= '<table class="table table-striped table-condensed">' . "\n";
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
     for ( $i = 0; $i < @$heads; $i++ ) {

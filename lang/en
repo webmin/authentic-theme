@@ -66,4 +66,8 @@ session_timed_out=Session timed out after $1 minutes of inactivity.
 virtualmin_left_generic=Create Virtual Server
 virtualmin_left_virtualmin=List Virtual Servers
 
+theme_version=Theme version
+authentic_theme=Authentic Theme
+theme_update_available=Latest available release
+
 __norefs=1

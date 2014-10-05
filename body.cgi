@@ -85,6 +85,41 @@ if ( $level == 0 ) {
     # Webmin version
     &print_table_row( &text('body_webmin'), &get_webmin_version() );
 
+    # Theme version/updates
+    # Define installed version
+    open my $authentic_installed_version, '<',
+        $root_directory . "/authentic-theme/VERSION.txt";
+    my $installed_version = <$authentic_installed_version>;
+    close $authentic_installed_version;
+
+    # Define remote version
+    use LWP::Simple;
+    my $remote_version
+        = get 'https://rostovtsev.ru/.git/authentic-theme/VERSION.txt';
+    open( FILENAME, '<', \$remote_version );
+
+    # Trim spaces
+    $installed_version =~ s/\s+$//;
+    $remote_version =~ s/\s+$//;
+
+    # Parse response message
+    if ( version->parse($remote_version)
+        <= version->parse($installed_version) )
+    {
+        $authentic_theme_version
+            = '' . $text{'authentic_theme'} . ' ' . $installed_version;
+    }
+    else {
+        $authentic_theme_version
+            = ''
+            . $text{'authentic_theme'} . ' '
+            . $installed_version . '. '
+            . $text{'theme_update_available'}
+            . ' <a target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz">'
+            . $remote_version . '</a>';
+    }
+    &print_table_row( $text{'theme_version'}, $authentic_theme_version );
+
     #System Time
     $tm = localtime( time() );
     if ( &foreign_available("time") ) {
@@ -237,8 +272,43 @@ elsif ( $level == 3 ) {
     }
     &print_table_row( &text('body_os'), $os );
 
-    # Webmin version
+    # Usermin version
     &print_table_row( &text('body_usermin'), &get_webmin_version() );
+
+    # Theme version/updates
+    # Define installed version
+    open my $authentic_installed_version, '<',
+        $root_directory . "/authentic-theme/VERSION.txt";
+    my $installed_version = <$authentic_installed_version>;
+    close $authentic_installed_version;
+
+    # Define remote version
+    use LWP::Simple;
+    my $remote_version
+        = get 'https://rostovtsev.ru/.git/authentic-theme/VERSION.txt';
+    open( FILENAME, '<', \$remote_version );
+
+    # Trim spaces
+    $installed_version =~ s/\s+$//;
+    $remote_version =~ s/\s+$//;
+
+    # Parse response message
+    if ( version->parse($remote_version)
+        <= version->parse($installed_version) )
+    {
+        $authentic_theme_version
+            = '' . $text{'authentic_theme'} . ' ' . $installed_version;
+    }
+    else {
+        $authentic_theme_version
+            = ''
+            . $text{'authentic_theme'} . ' '
+            . $installed_version . '. '
+            . $text{'theme_update_available'}
+            . ' <a target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz">'
+            . $remote_version . '</a>';
+    }
+    &print_table_row( $text{'theme_version'}, $authentic_theme_version );
 
     #System Time
     $tm = localtime( time() );
