@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 3.0.1 (Oct 7, 2014)
+ * Fixed malfunctioning `theme_ui_checkbox`, causing some _input_ fields disappear
+ * Fixed few other small bugs
+
 ####Version 3.0.0 (Oct 5, 2014)
 * Added popover tooltip for old `window.open` to process `help.cgi`
 * Added theme information version (installed/update notice) in _System Information_ (works by just comparing `VERSION.txt` files, nothing more)
