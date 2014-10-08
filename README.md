@@ -21,6 +21,8 @@
 
 ##Screenshots
 
+![screenshots](https://rostovtsev.ru/.git/authentic-theme/update_function_screenshot.png)
+<hr>
 ![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot-2.0.0.png)
 
 ##Principles
