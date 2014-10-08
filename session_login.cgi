@@ -1,3 +1,9 @@
+#
+# Authentic Theme 4.0.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+#
+
 #!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -8,8 +14,59 @@ $pragma_no_cache = 1;
 %text = &load_language($current_theme);
 %gaccess = &get_module_acl( undef, "" );
 &get_miniserv_config( \%miniserv );
-$title   = &get_html_framed_title();
-$sec     = uc( $ENV{'HTTPS'} ) eq 'ON' ? "; secure" : "";
+$title = &get_html_framed_title();
+
+# Show pre-login text banner
+if (   $gconfig{'loginbanner'}
+    && $ENV{'HTTP_COOKIE'} !~ /banner=1/
+    && !$in{'logout'}
+    && !$in{'failed'}
+    && !$in{'timed_out'} )
+{
+    print "Set-Cookie: banner=1; path=/\r\n";
+    &PrintHeader($charset);
+    print '<!DOCTYPE HTML>',        "\n";
+    print '<html>',                 "\n";
+    print '<head>',                 "\n";
+    print '<title>',                $title, '</title>', "\n";
+    print '<meta charset="utf-8">', "\n";
+    print '<link rel="shortcut icon" href="/favicon-'
+            . &get_product_name()
+            . '.ico">' . "\n";
+    print
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+        . "\n";
+    print
+        '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print
+        '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print
+        '<link href="/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print
+        '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+        "\n";
+    print
+        '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        "\n";
+    print '</head>', "\n";
+    print '<body>' . "\n";
+    print '<div class="form-signin-banner container alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>' . "\n";
+    $url = $in{'page'};
+    open( BANNER, $gconfig{'loginbanner'} );
+
+    while (<BANNER>) {
+        s/LOGINURL/$url/g;
+        print;
+    }
+    close(BANNER);
+    &footer();
+    return;
+}
+
+$sec = uc( $ENV{'HTTPS'} ) eq 'ON' ? "; secure" : "";
 $sidname = $miniserv{'sidname'} || "sid";
 print "Set-Cookie: banner=0; path=/$sec\r\n"   if ( $gconfig{'loginbanner'} );
 print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ( $in{'logout'} );
@@ -21,6 +78,9 @@ print '<html>',                 "\n";
 print '<head>',                 "\n";
 print '<title>',                $title, '</title>', "\n";
 print '<meta charset="utf-8">', "\n";
+print '<link rel="shortcut icon" href="/favicon-'
+            . &get_product_name()
+            . '.ico">' . "\n";
 print '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
     . "\n";
 print

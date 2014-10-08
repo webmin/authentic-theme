@@ -1,5 +1,5 @@
 #
-# Authentic Theme 3.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -264,7 +264,7 @@ if ( $is_virtualmin == -1 ) {
 
 }
 elsif ( $is_virtualmin != -1 ) {
-    require "virtual-server-theme/virtual-server-theme-lib.pl";
+    #require "virtual-server-theme/virtual-server-theme-lib.pl";
     &ReadParse();
     &foreign_require( "virtual-server", "virtual-server-lib.pl" );
     $goto = 'virtual-server/index.cgi';

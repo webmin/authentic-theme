@@ -1,5 +1,5 @@
 #
-# Authentic Theme 3.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -29,6 +29,9 @@ sub theme_header {
         '<link href="/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
+        '<link href="/unauthenticated/css/jquery.datatables.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print
         '<link href="/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
@@ -48,6 +51,9 @@ sub theme_header {
         "\n";
     print
         '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+        "\n";
+    print
+        '<script src="/unauthenticated/js/jquery.datatables.min.js" type="text/javascript"></script>',
         "\n";
     print
         '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',

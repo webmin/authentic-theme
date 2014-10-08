@@ -114,9 +114,16 @@ if ( $level == 0 ) {
             = ''
             . $text{'authentic_theme'} . ' '
             . $installed_version . '. '
-            . $text{'theme_update_available'}
-            . ' <a target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz">'
-            . $remote_version . '</a>';
+            . $text{'theme_update_available'} . ' '
+            . $remote_version
+            . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
+            . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 8px; height:21px" href="webmin/edit_themes.cgi">'
+            . $text{'theme_update'} . '</a>'
+            . '<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md">'
+            . $text{'theme_changelog'} . '</a>'
+            . '<a class="btn btn-xs btn-warning" style="padding:0 8px; height:21px" target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz">'
+            . $text{'theme_download'} . '</a>'
+            . '</div>';
     }
     &print_table_row( $text{'theme_version'}, $authentic_theme_version );
 
@@ -304,9 +311,11 @@ elsif ( $level == 3 ) {
             = ''
             . $text{'authentic_theme'} . ' '
             . $installed_version . '. '
-            . $text{'theme_update_available'}
-            . ' <a target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz">'
-            . $remote_version . '</a>';
+            . $text{'theme_update_available'} . ' '
+            . $remote_version
+            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md">'
+            . ''
+            . $text{'theme_changelog'} . '</a>';
     }
     &print_table_row( $text{'theme_version'}, $authentic_theme_version );
 
@@ -433,7 +442,9 @@ sub get_col_num {
 sub print_table_row {
     local ( $title, $content ) = @_;
     print '<tr>' . "\n";
-    print '<td><strong>' . $title . '</strong></td>' . "\n";
-    print '<td>' . $content . '</td>' . "\n";
+    print '<td style="vertical-align:middle"><strong>'
+        . $title
+        . '</strong></td>' . "\n";
+    print '<td  style="vertical-align:middle">' . $content . '</td>' . "\n";
     print '</tr>' . "\n";
 }
