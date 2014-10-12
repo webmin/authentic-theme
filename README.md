@@ -76,7 +76,7 @@ It happens because the theme is trying to load _Perl_ module dependency, that ar
 > 2. `Can't locate Net/SSLeay.pm in @INC (@INC contains: ..)`<br>
 This happens because Webmin is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using CPAN module in Webmin or using CLI. Package name is `perl-Net-SSLeay`.
 > 3. `Can't locate object method "parse" via package "version" (perhaps you forgot to load "version"?) at`. Installing `version` from CPAN, using CPAN module in Webmin will fix this error.
-> 4. `Can't locate Switch.pm in @INC (@INC contains:)` You can install `Switch` module using CPAN in Webmin or by package name `perl-Switch` to fix this error.
+> 4. `Can't locate Switch.pm in @INC (@INC contains:)` You can install `Switch` module using CPAN in Webmin or by package name `perl-Switch` to fix this error. In case you got stuck with this error after updating theme, no worries, just type in _URL_ `http://localhost:10000/cpan` and from there choose to install `Switch` module or use _CLI_ to install it using package `perl-Switch`.
 
 ##Contributions
 
