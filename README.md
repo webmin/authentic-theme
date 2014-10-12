@@ -6,13 +6,13 @@
 ##Changelog
 
 ####Version 4.1.0 (Oct 12, 2014)
-* :pushpin: Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support old versions of _Perl_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/2). See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
+* :white_small_square: Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support old versions of _Perl_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/2). In case `Switch` module not installed on your system, you get an error. See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
 * Changed `link` named _View changelog_ in _ConfigServer Security & Firewall_ module to a `button`
 * Improved loader animation and behavior
 * Added many missing _input_ stylings in some modules
 * Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/3)
 * Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [:paperclip:](https://github.com/qooob/authentic-theme/issues/4)
-* Remove redundant _fonts_ directory
+* Removed redundant _fonts_ directory
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
