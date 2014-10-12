@@ -5,10 +5,8 @@
 
 ##Changelog
 
-####Version 4.1.1 (Oct 13, 2014)
-
 ####Version 4.1.0 (Oct 12, 2014)
-* Changed to using `Switch` rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support lower versions of _Perl_
+* Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support lower versions of _Perl_
 * Changed _View changelog_ `link` in _ConfigServer Security & Firewall_ module to a `button`
 * Improved loader animation and behavior
 * Added many missing _input_ stylings in some modules
