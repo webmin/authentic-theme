@@ -6,21 +6,13 @@
 ##Changelog
 
 ####Version 4.1.0 (Oct 12, 2014)
-* Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support old versions of _Perl_
+* :exclamation: Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support old versions of _Perl_ [:two:](https://github.com/qooob/authentic-theme/issues/2)
 * Changed _View changelog_ `link` in _ConfigServer Security & Firewall_ module to a `button`
 * Improved loader animation and behavior
 * Added many missing _input_ stylings in some modules
-* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions. [Issue 4](https://github.com/qooob/authentic-theme/issues/4)
-* Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_. [Issue 3](https://github.com/qooob/authentic-theme/issues/3)
+* Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_ [:three:](https://github.com/qooob/authentic-theme/issues/3)
+* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [:four:](https://github.com/qooob/authentic-theme/issues/4)
 * Remove redundant _fonts_ directory
-
-####Version 4.0.0 (Oct 9, 2014)
- * Fixed lost pre-login banner option
- * Added support for _dataTables_. Now you can easily sort table rows based on the table header. It gets easier to manage data in such modules as _Bootup and Shutdown_, _Users and Groups_ and others, containing multi-row data. It also supports _ConfigServer Security & Firewall_, where you can also easily filter _Temporary IP Entries_ and _Listening Ports_
- * Added possibility to use automatic updates for **Authentic Theme**, with direct means of Webmin and its theme installation module - _no other server-side scripts are used_! Updates, when available, will be displayed in *System Information* tab.<br>*Warning!* In order to use automatic updates and check for new theme versions, your system _must have_ the following _Perl_ modules installed: _LWP::Simple_ and _Net::SSLeay_. You should be able to install it from official repos.<br>See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
- * Added ability to remove the page _loader_ and see what is happening before the page actually loaded/constructed or just in case of the _loader_ getting stuck. To prematurely remove the _loader_, click on it, using mouse `double-right-click`
- * Removed false dependency for `virtual-server-theme/virtual-server-theme-lib.pl`
-
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 

@@ -1,12 +1,12 @@
 ##Changelog
 
 ####Version 4.1.0 (Oct 12, 2014)
-* Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support old versions of _Perl_
+* :exclamation: Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support old versions of _Perl_ [:two:](https://github.com/qooob/authentic-theme/issues/2)
 * Changed _View changelog_ `link` in _ConfigServer Security & Firewall_ module to a `button`
 * Improved loader animation and behavior
 * Added many missing _input_ stylings in some modules
-* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions. [Issue 4](https://github.com/qooob/authentic-theme/issues/4)
-* Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_. [Issue 3](https://github.com/qooob/authentic-theme/issues/3)
+* Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_ [:three:](https://github.com/qooob/authentic-theme/issues/3)
+* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [:four:](https://github.com/qooob/authentic-theme/issues/4)
 * Remove redundant _fonts_ directory
 
 ####Version 4.0.0 (Oct 9, 2014)
