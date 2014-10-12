@@ -30,9 +30,9 @@ It's very important to clear ___Cache images and files___ in your browser after 
 
 ##Screenshots
 
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/update_function_screenshot.png)
+![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot_function_update.png)
 <hr>
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot-2.0.0.png)
+![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot.png)
 
 ##Principles
 * Make the theme fully support all Webmin/Usermin modules
