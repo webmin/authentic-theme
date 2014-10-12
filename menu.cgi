@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 
@@ -108,31 +108,31 @@ print '</div>' . "\n";
 sub print_category {
     local ( $cat, $label ) = @_;
     $label = $cat eq "others" ? $text{'left_others'} : $label;
-    use feature qw(switch);
-    given ($cat) {
-        when ('webmin')   { $icon = 'fa-cog'; }
-        when ('usermin')  { $icon = 'fa-cog'; }
-        when ('system')   { $icon = 'fa-wrench'; }
-        when ('servers')  { $icon = 'fa-rocket'; }
-        when ('other')    { $icon = 'fa-gavel'; }
-        when ('net')      { $icon = 'fa-shield'; }
-        when ('info')     { $icon = 'fa-info'; }
-        when ('hardware') { $icon = 'fa-hdd-o'; }
-        when ('cluster')  { $icon = 'fa-power-off'; }
-        when ('unused')   { $icon = 'fa-puzzle-piece'; }
-        when ('mail')     { $icon = 'fa-envelope'; }
-        when ('login')    { $icon = 'fa-user'; }
-        when ('apps')     { $icon = 'fa-rocket'; }
+    use Switch;
+    switch ($cat) {
+        case ('webmin')   { $icon = 'fa-cog'; }
+        case ('usermin')  { $icon = 'fa-cog'; }
+        case ('system')   { $icon = 'fa-wrench'; }
+        case ('servers')  { $icon = 'fa-rocket'; }
+        case ('other')    { $icon = 'fa-gavel'; }
+        case ('net')      { $icon = 'fa-shield'; }
+        case ('info')     { $icon = 'fa-info'; }
+        case ('hardware') { $icon = 'fa-hdd-o'; }
+        case ('cluster')  { $icon = 'fa-power-off'; }
+        case ('unused')   { $icon = 'fa-puzzle-piece'; }
+        case ('mail')     { $icon = 'fa-envelope'; }
+        case ('login')    { $icon = 'fa-user'; }
+        case ('apps')     { $icon = 'fa-rocket'; }
 
-        when ('settings') { $icon = 'fa-cog'; }
-        when ('email')    { $icon = 'fa-envelope'; }
-        when ('custom')   { $icon = 'fa-wrench'; }
-        when ('ip')       { $icon = 'fa-shield'; }
-        when ('check')    { $icon = 'fa-user-md'; }
-        when ('add')      { $icon = 'fa-plus'; }
-        when ('backup')   { $icon = 'fa-save'; }
+        case ('settings') { $icon = 'fa-cog'; }
+        case ('email')    { $icon = 'fa-envelope'; }
+        case ('custom')   { $icon = 'fa-wrench'; }
+        case ('ip')       { $icon = 'fa-shield'; }
+        case ('check')    { $icon = 'fa-user-md'; }
+        case ('add')      { $icon = 'fa-plus'; }
+        case ('backup')   { $icon = 'fa-save'; }
 
-        default { $icon = 'fa-cog'; }
+        else { $icon = 'fa-cog'; }
     }
     if ($label) {
         print '<div class="col-xs-6">' . "\n";

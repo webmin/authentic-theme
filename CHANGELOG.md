@@ -1,5 +1,14 @@
 ##Changelog
 
+####Version 4.1.0 (Oct 12, 2014)
+* Changed to using `Switch` rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support lower versions of _Perl_
+* Changed _View changelog_ `link` in _ConfigServer Security & Firewall_ module to a `button`
+* Improved loader animation and behavior
+* Added many missing _input_ stylings in some modules
+* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions. [Issue 4](https://github.com/qooob/authentic-theme/issues/4)
+* Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_. [Issue 3](https://github.com/qooob/authentic-theme/issues/3)
+* Remove redundant _fonts_ directory
+
 ####Version 4.0.0 (Oct 9, 2014)
  * Fixed lost pre-login banner option
  * Added support for _dataTables_. Now you can easily sort table rows based on the table header. It gets easier to manage data in such modules as _Bootup and Shutdown_, _Users and Groups_ and others, containing multi-row data. It also supports _ConfigServer Security & Firewall_, where you can also easily filter _Temporary IP Entries_ and _Listening Ports_

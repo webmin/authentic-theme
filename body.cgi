@@ -1,3 +1,9 @@
+#
+# Authentic Theme 4.1.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+#
+
 #!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -442,9 +448,10 @@ sub get_col_num {
 sub print_table_row {
     local ( $title, $content ) = @_;
     print '<tr>' . "\n";
-    print '<td style="vertical-align:middle"><strong>'
+    print '<td style="vertical-align:middle; padding:10px;"><strong>'
         . $title
         . '</strong></td>' . "\n";
-    print '<td  style="vertical-align:middle">' . $content . '</td>' . "\n";
+    print '<td  style="vertical-align:middle; padding:10px;">'
+        . $content . '</td>' . "\n";
     print '</tr>' . "\n";
 }

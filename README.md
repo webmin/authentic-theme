@@ -5,6 +5,15 @@
 
 ##Changelog
 
+####Version 4.1.0 (Oct 12, 2014)
+* Changed to using `Switch` rather than `feature qw(switch)` in `index.cgi` and `menu.cgi` to support lower versions of _Perl_
+* Changed _View changelog_ `link` in _ConfigServer Security & Firewall_ module to a `button`
+* Improved loader animation and behavior
+* Added many missing _input_ stylings in some modules
+* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions. [Issue 4](https://github.com/qooob/authentic-theme/issues/4)
+* Added [_German_](https://github.com/qooob/authentic-theme#contributions) translation. Special thanks to _Michael Keck_. [Issue 3](https://github.com/qooob/authentic-theme/issues/3)
+* Remove redundant _fonts_ directory
+
 ####Version 4.0.0 (Oct 9, 2014)
  * Fixed lost pre-login banner option
  * Added support for _dataTables_. Now you can easily sort table rows based on the table header. It gets easier to manage data in such modules as _Bootup and Shutdown_, _Users and Groups_ and others, containing multi-row data. It also supports _ConfigServer Security & Firewall_, where you can also easily filter _Temporary IP Entries_ and _Listening Ports_
@@ -17,7 +26,7 @@
 
 ##Update notice
 
-> It's very important to clear ___Cache images and files___ in your browser after applying new theme update
+It's very important to clear ___Cache images and files___ in your browser after applying new theme update
 
 ##Screenshots
 
@@ -64,10 +73,17 @@ There is no need to take any additional actions. In case _Virtualmin_ module is 
 It happens because the theme is trying to load _Perl_ module dependency, that are not installed on your system. `LWP::Simple` - is the simplest and most common type of HTTP request. You can install it using CPAN module in Webmin itself or using CLI and package manager. For example, in RHEL distro you would be able to install it by running<br> `yum install perl-libwww-perl`.
 > 2. `Can't locate Net/SSLeay.pm in @INC (@INC contains: ..)`<br>
 This happens because Webmin is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using CPAN module in Webmin or using CLI. Package name is `perl-Net-SSLeay`.
+> 3. `Can't locate object method "parse" via package "version" (perhaps you forgot to load "version"?) at`. Installing `version` from CPAN, using CPAN module in Webmin will fix this error.
 
-##Code contributions
+##Contributions
+
+###Translations
+* [Michael Keck](https://github.com/mkkeck) (German)
+
+###Code contributions
 * [Riccardo Nobile](mailto:riccardo.nobile@winfuture.it)
 * [Simone Cragnolini](mailto:simone.cragnolini@winfuture.it)
+
 
 ##Donation
 
