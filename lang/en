@@ -69,5 +69,8 @@ virtualmin_left_virtualmin=List Virtual Servers
 theme_version=Theme version
 authentic_theme=Authentic Theme
 theme_update_available=Latest available release
+theme_download=Download
+theme_update=Update
+theme_changelog=Changelog
 
 __norefs=1

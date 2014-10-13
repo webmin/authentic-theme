@@ -1,5 +1,25 @@
 ##Changelog
 
+####Version 4.1.1 (Oct 13, 2014)
+* Removed requirement for both, either using `Switch` module or `Feature` is no longer necessary. Replaced with simple `if/elsif/else` statements. Using `Switch` caused error messages on latest installations, e.g. CentOS 7, while using `Feature` caused errors on old installations
+
+####Version 4.1.0 (Oct 12, 2014)
+
+* :round_pushpin: Changed to using `Switch`(https://github.com/qooob/authentic-theme#troubleshoot) module, rather than `Feature` in `index.cgi` and `menu.cgi` to support old versions of _Perl_. [:paperclip:](https://github.com/qooob/authentic-theme/issues/2) In case, `Switch` module is not installed on your system, you will get an error. See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
+* Changed `link` named _View changelog_ in _ConfigServer Security & Firewall_ module to a `button`
+* Improved loader animation and behavior
+* Added many missing _input_ stylings in some modules
+* Added _German_ translation. Special thanks to _Michael Keck_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/3)
+* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [:paperclip:](https://github.com/qooob/authentic-theme/issues/4)
+* Removed redundant _fonts_ directory
+
+####Version 4.0.0 (Oct 9, 2014)
+ * Fixed lost pre-login banner option
+ * Added support for _dataTables_. Now you can easily sort table rows based on the table header. It gets easier to manage data in such modules as _Bootup and Shutdown_, _Users and Groups_ and others, containing multi-row data. It also supports _ConfigServer Security & Firewall_, where you can also easily filter _Temporary IP Entries_ and _Listening Ports_
+ * Added possibility to use automatic updates for **Authentic Theme**, with direct means of Webmin and its theme installation module - _no other server-side scripts are used_! Updates, when available, will be displayed in *System Information* tab.<br>*Warning!* In order to use automatic updates and check for new theme versions, your system _must have_ the following _Perl_ modules installed: _LWP::Simple_ and _Net::SSLeay_. You should be able to install it from official repos.<br>See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
+ * Added ability to remove the page _loader_ and see what is happening before the page actually loaded/constructed or just in case of the _loader_ getting stuck. To prematurely remove the _loader_, click on it, using mouse `double-right-click`
+ * Removed false dependency for `virtual-server-theme/virtual-server-theme-lib.pl`
+
 ####Version 3.0.1 (Oct 7, 2014)
  * Fixed malfunctioning `theme_ui_checkbox`, causing some _input_ fields disappear
  * Fixed few other small bugs

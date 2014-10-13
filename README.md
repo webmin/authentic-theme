@@ -1,30 +1,33 @@
 #Authentic
-**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin](https://www.virtualmin.com/) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that you just longed to get. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
+**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin](https://www.virtualmin.com/) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
 
 **Authentic** is fully compatible with latest Webmin 1.710+, Usermin 1.620+ and Virtualmin 4.11+.
 
 ##Changelog
 
-####Version 3.0.1 (Oct 7, 2014)
- * Fixed malfunctioning `theme_ui_checkbox`, causing some _input_ fields disappear
- * Fixed few other small bugs
+####Version 4.1.1 (Oct 13, 2014)
+* Removed requirement for both, either using `Switch` module or `Feature` is no longer necessary. Replaced with simple `if/elsif/else` statements. Using `Switch` caused error messages on latest installations, e.g. CentOS 7, while using `Feature` caused errors on old installations
 
-####Version 3.0.0 (Oct 5, 2014)
-* Added popover tooltip for old `window.open` to process `help.cgi`
-* Added theme information version (installed/update notice) in _System Information_ (works by just comparing `VERSION.txt` files, nothing more)
-* Fixed error in _default.js_ script, throwing `NS_ERROR_NOT_AVAILABLE` in Firefox and other _Gecko_ browsers
-* Fixed all problems with selecting and filtering _files/user/groups_ in `*_chooser.cgi`
-* Fixed loaders being shown every time when waiting for server reply
-* Fixed listing of virtual-servers in Virtualmin
-* Fixed `checkboxes` margins in Virtualmin
-* Fixed table `vertical-align: top` for selecting hours
-* Fixed dozens of small bugs
+####Version 4.1.0 (Oct 12, 2014)
+* Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) module, rather than `Feature` in `index.cgi` and `menu.cgi` to support old versions of _Perl_. [:paperclip:](https://github.com/qooob/authentic-theme/issues/2) In case, `Switch` module is not installed on your system, you will get an error. See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
+* Changed `link` named _View changelog_ in _ConfigServer Security & Firewall_ module to a `button`
+* Improved loader animation and behavior
+* Added many missing _input_ stylings in some modules
+* Added _German_ translation. Special thanks to _Michael Keck_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/3)
+* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [:paperclip:](https://github.com/qooob/authentic-theme/issues/4)
+* Removed redundant _fonts_ directory
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
+##Update notice
+
+It's very important to clear ___Cache images and files___ in your browser after applying new theme update
+
 ##Screenshots
 
-![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot-2.0.0.png)
+![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot_function_update.png)
+<hr>
+![screenshots](https://rostovtsev.ru/.git/authentic-theme/screenshot.png)
 
 ##Principles
 * Make the theme fully support all Webmin/Usermin modules
@@ -60,9 +63,23 @@
 ####Virtualmin
 There is no need to take any additional actions. In case _Virtualmin_ module is installed, it will be automatically detected and supported.
 
-##Code contributions
+###Troubleshoot
+> 1. `Can't locate LWP/Simple.pm in @INC (@INC contains: /usr/libexec/webmin..) BEGIN failed--compilation aborted at ..`: <br>
+It happens because the theme is trying to load _Perl_ module dependency, that are not installed on your system. `LWP::Simple` - is the simplest and most common type of HTTP request. You can install it using CPAN module in Webmin itself or using CLI and package manager. For example, in RHEL distro you would be able to install it by running<br> `yum install perl-libwww-perl`.
+> 2. `Can't locate Net/SSLeay.pm in @INC (@INC contains: ..)`<br>
+This happens because Webmin is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using CPAN module in Webmin or using CLI. Package name is `perl-Net-SSLeay`.
+> 3. `Can't locate object method "parse" via package "version" (perhaps you forgot to load "version"?) at`. Installing `version` from CPAN, using CPAN module in Webmin will fix this error.
+> 4. `Can't locate Switch.pm in @INC (@INC contains:)` You can install `Switch` module using CPAN in Webmin or by package name `perl-Switch` to fix this error. In case you got stuck with this error after updating theme and have no access to _CLI_, no worries, just type in _URL_ `http://yourhostname:10000/cpan` and from there choose to install `Switch` module.
+
+##Contributions
+
+###Translations
+* [Michael Keck](https://github.com/mkkeck) (German)
+
+###Code contributions
 * [Riccardo Nobile](mailto:riccardo.nobile@winfuture.it)
 * [Simone Cragnolini](mailto:simone.cragnolini@winfuture.it)
+
 
 ##Donation
 

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 3.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -264,7 +264,8 @@ if ( $is_virtualmin == -1 ) {
 
 }
 elsif ( $is_virtualmin != -1 ) {
-    require "virtual-server-theme/virtual-server-theme-lib.pl";
+
+    #require "virtual-server-theme/virtual-server-theme-lib.pl";
     &ReadParse();
     &foreign_require( "virtual-server", "virtual-server-lib.pl" );
     $goto = 'virtual-server/index.cgi';
@@ -345,7 +346,7 @@ print
     '<div class="loader-container" style="background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5); position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index:5; display: none;">'
     . "\n";
 print
-    '<div class="loader"><i class="fa fa-3x fa-circle-o-notch fa-spin fa-fw"></i></div>'
+    '<div class="loader"><i class="fa fa-spin fa-lg fa-3x fa-circle-o-notch"></i></div>'
     . "\n";
 print '</div>' . "\n";
 print '<iframe name="page" id="iframe" src="' . $goto . '">' . "\n";
@@ -357,31 +358,63 @@ print '</div>' . "\n";
 sub print_category {
     local ( $c, $status, $label ) = @_;
     $label = $c eq "others" ? $text{'left_others'} : $label;
-    use feature qw(switch);
-    given ($c) {
-        when ('webmin')   { $icon = 'fa-cog'; }
-        when ('usermin')  { $icon = 'fa-cog'; }
-        when ('system')   { $icon = 'fa-wrench'; }
-        when ('servers')  { $icon = 'fa-rocket'; }
-        when ('other')    { $icon = 'fa-gavel'; }
-        when ('net')      { $icon = 'fa-shield'; }
-        when ('info')     { $icon = 'fa-info'; }
-        when ('hardware') { $icon = 'fa-hdd-o'; }
-        when ('cluster')  { $icon = 'fa-power-off'; }
-        when ('unused')   { $icon = 'fa-puzzle-piece'; }
-        when ('mail')     { $icon = 'fa-envelope'; }
-        when ('login')    { $icon = 'fa-user'; }
-        when ('apps')     { $icon = 'fa-rocket'; }
 
-        when ('settings') { $icon = 'fa-cog'; }
-        when ('email')    { $icon = 'fa-envelope'; }
-        when ('custom')   { $icon = 'fa-wrench'; }
-        when ('ip')       { $icon = 'fa-shield'; }
-        when ('check')    { $icon = 'fa-user-md'; }
-        when ('add')      { $icon = 'fa-plus'; }
-        when ('backup')   { $icon = 'fa-save'; }
-
-        default { $icon = 'fa-cog'; }
+    if ( $c eq 'webmin' || $c eq 'usermin' || $c eq 'settings' ) {
+        $icon = 'fa-cog';
+    }
+    elsif ( $c eq 'system' ) {
+        $icon = 'fa-wrench';
+    }
+    elsif ( $c eq 'servers' ) {
+        $icon = 'fa-rocket';
+    }
+    elsif ( $c eq 'other' ) {
+        $icon = 'fa-gavel';
+    }
+    elsif ( $c eq 'net' ) {
+        $icon = 'fa-shield';
+    }
+    elsif ( $c eq 'info' ) {
+        $icon = 'fa-info';
+    }
+    elsif ( $c eq 'hardware' ) {
+        $icon = 'fa-hdd-o';
+    }
+    elsif ( $c eq 'cluster' ) {
+        $icon = 'fa-power-off';
+    }
+    elsif ( $c eq 'unused' ) {
+        $icon = 'fa-puzzle-piece';
+    }
+    elsif ( $c eq 'mail' ) {
+        $icon = 'fa-envelope';
+    }
+    elsif ( $c eq 'login' ) {
+        $icon = 'fa-user';
+    }
+    elsif ( $c eq 'apps' ) {
+        $icon = 'fa-rocket';
+    }
+    elsif ( $c eq 'email' ) {
+        $icon = 'fa-envelope';
+    }
+    elsif ( $c eq 'custom' ) {
+        $icon = 'fa-wrench';
+    }
+    elsif ( $c eq 'ip' ) {
+        $icon = 'fa-shield';
+    }
+    elsif ( $c eq 'check' ) {
+        $icon = 'fa-user-md';
+    }
+    elsif ( $c eq 'add' ) {
+        $icon = 'fa-plus';
+    }
+    elsif ( $c eq 'backup' ) {
+        $icon = 'fa-save';
+    }
+    else {
+        $icon = 'fa-cog';
     }
 
     if ($label) {
