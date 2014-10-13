@@ -1,6 +1,6 @@
 desc=Authentic Theme
 longdesc=Webmin/Usermin/Virtualmin theme based on Bootstrap and Font Awesome
-version=4.1.0
+version=4.1.1
 depends=1.336 1.480 1.660
 webmin=1
 usermin=1

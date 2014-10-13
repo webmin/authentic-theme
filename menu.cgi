@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 
@@ -106,33 +106,64 @@ print '</div>' . "\n";
 &footer();
 
 sub print_category {
-    local ( $cat, $label ) = @_;
-    $label = $cat eq "others" ? $text{'left_others'} : $label;
-    use Switch;
-    switch ($cat) {
-        case ('webmin')   { $icon = 'fa-cog'; }
-        case ('usermin')  { $icon = 'fa-cog'; }
-        case ('system')   { $icon = 'fa-wrench'; }
-        case ('servers')  { $icon = 'fa-rocket'; }
-        case ('other')    { $icon = 'fa-gavel'; }
-        case ('net')      { $icon = 'fa-shield'; }
-        case ('info')     { $icon = 'fa-info'; }
-        case ('hardware') { $icon = 'fa-hdd-o'; }
-        case ('cluster')  { $icon = 'fa-power-off'; }
-        case ('unused')   { $icon = 'fa-puzzle-piece'; }
-        case ('mail')     { $icon = 'fa-envelope'; }
-        case ('login')    { $icon = 'fa-user'; }
-        case ('apps')     { $icon = 'fa-rocket'; }
-
-        case ('settings') { $icon = 'fa-cog'; }
-        case ('email')    { $icon = 'fa-envelope'; }
-        case ('custom')   { $icon = 'fa-wrench'; }
-        case ('ip')       { $icon = 'fa-shield'; }
-        case ('check')    { $icon = 'fa-user-md'; }
-        case ('add')      { $icon = 'fa-plus'; }
-        case ('backup')   { $icon = 'fa-save'; }
-
-        else { $icon = 'fa-cog'; }
+    local ( $c, $label ) = @_;
+    $label = $c eq "others" ? $text{'left_others'} : $label;
+    if ( $c eq 'webmin' || $c eq 'usermin' || $c eq 'settings' ) {
+        $icon = 'fa-cog';
+    }
+    elsif ( $c eq 'system' ) {
+        $icon = 'fa-wrench';
+    }
+    elsif ( $c eq 'servers' ) {
+        $icon = 'fa-rocket';
+    }
+    elsif ( $c eq 'other' ) {
+        $icon = 'fa-gavel';
+    }
+    elsif ( $c eq 'net' ) {
+        $icon = 'fa-shield';
+    }
+    elsif ( $c eq 'info' ) {
+        $icon = 'fa-info';
+    }
+    elsif ( $c eq 'hardware' ) {
+        $icon = 'fa-hdd-o';
+    }
+    elsif ( $c eq 'cluster' ) {
+        $icon = 'fa-power-off';
+    }
+    elsif ( $c eq 'unused' ) {
+        $icon = 'fa-puzzle-piece';
+    }
+    elsif ( $c eq 'mail' ) {
+        $icon = 'fa-envelope';
+    }
+    elsif ( $c eq 'login' ) {
+        $icon = 'fa-user';
+    }
+    elsif ( $c eq 'apps' ) {
+        $icon = 'fa-rocket';
+    }
+    elsif ( $c eq 'email' ) {
+        $icon = 'fa-envelope';
+    }
+    elsif ( $c eq 'custom' ) {
+        $icon = 'fa-wrench';
+    }
+    elsif ( $c eq 'ip' ) {
+        $icon = 'fa-shield';
+    }
+    elsif ( $c eq 'check' ) {
+        $icon = 'fa-user-md';
+    }
+    elsif ( $c eq 'add' ) {
+        $icon = 'fa-plus';
+    }
+    elsif ( $c eq 'backup' ) {
+        $icon = 'fa-save';
+    }
+    else {
+        $icon = 'fa-cog';
     }
     if ($label) {
         print '<div class="col-xs-6">' . "\n";
@@ -140,7 +171,7 @@ sub print_category {
             '<div class="menu-col" style="background-color: #5885d6; border-radius: 4px; margin: 0 auto 30px; width: 130px; height: 150px;">'
             . "\n";
         print '<a class="menu-link" href="menu.cgi?category='
-            . $cat
+            . $c
             . '&virtualmin='
             . $virtualmin . '"">' . "\n";
         print '<div style="padding: 15px 10px;">' . "\n";
