@@ -37,7 +37,7 @@ It's very important to clear ___Cache images and files___ in your browser after 
 
 ####Webmin
 
-  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download it directly](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz) and install it going from Webmin:
+  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
