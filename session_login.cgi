@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.2 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -31,8 +31,8 @@ if (   $gconfig{'loginbanner'}
     print '<title>',                $title, '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
     print '<link rel="shortcut icon" href="/favicon-'
-            . &get_product_name()
-            . '.ico">' . "\n";
+        . &get_product_name()
+        . '.ico">' . "\n";
     print
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
         . "\n";
@@ -53,7 +53,9 @@ if (   $gconfig{'loginbanner'}
         "\n";
     print '</head>', "\n";
     print '<body>' . "\n";
-    print '<div class="form-signin-banner container alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>' . "\n";
+    print
+        '<div class="form-signin-banner container alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
+        . "\n";
     $url = $in{'page'};
     open( BANNER, $gconfig{'loginbanner'} );
 
@@ -70,6 +72,7 @@ $sec = uc( $ENV{'HTTPS'} ) eq 'ON' ? "; secure" : "";
 $sidname = $miniserv{'sidname'} || "sid";
 print "Set-Cookie: banner=0; path=/$sec\r\n"   if ( $gconfig{'loginbanner'} );
 print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ( $in{'logout'} );
+print "Set-Cookie: redirect=1; path=/\r\n";
 print "Set-Cookie: testing=1; path=/$sec\r\n";
 $charset = &get_charset();
 &PrintHeader($charset);
@@ -79,8 +82,8 @@ print '<head>',                 "\n";
 print '<title>',                $title, '</title>', "\n";
 print '<meta charset="utf-8">', "\n";
 print '<link rel="shortcut icon" href="/favicon-'
-            . &get_product_name()
-            . '.ico">' . "\n";
+    . &get_product_name()
+    . '.ico">' . "\n";
 print '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
     . "\n";
 print
@@ -101,7 +104,6 @@ print
 print '</head>', "\n";
 print '<body>' . "\n";
 print '<div class="container">' . "\n";
-
 if ( defined( $in{'failed'} ) ) {
     if ( $in{'twofactor_msg'} ) {
         print "<h3>",, "</h3><p></p>\n";

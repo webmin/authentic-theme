@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.2 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -26,11 +26,26 @@ if ($minfo) {
 if ( $in{'page'} ) {
     $goto .= "/" . $in{'page'};
 }
-%text    = &load_language($current_theme);
-%gaccess = &get_module_acl( undef, "" );
-$title   = &get_html_framed_title();
-&header($title);
+%text          = &load_language($current_theme);
+%gaccess       = &get_module_acl( undef, "" );
+$title         = &get_html_framed_title();
 $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
+
+# In case Virtualmin is installed, after logging in, redirect to Virtualmin
+if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
+    && &foreign_available("virtual-server")
+    && &get_product_name() eq "webmin"
+    && $is_virtualmin == -1 )
+{
+    print "Set-Cookie: redirect=0; path=/\r\n";
+    $virtualmin
+        = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+        . $ENV{'HTTP_HOST'}
+        . '/?virtualmin';
+    print "Location: $virtualmin\n\n";
+}
+
+&header($title);
 print '<div id="wrapper" data-product="'
     . &get_product_name()
     . '" data-virtual-server="'
@@ -265,7 +280,6 @@ if ( $is_virtualmin == -1 ) {
 }
 elsif ( $is_virtualmin != -1 ) {
 
-    #require "virtual-server-theme/virtual-server-theme-lib.pl";
     &ReadParse();
     &foreign_require( "virtual-server", "virtual-server-lib.pl" );
     $goto = 'virtual-server/index.cgi';
