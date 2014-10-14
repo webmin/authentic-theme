@@ -1,7 +1,7 @@
 ##Changelog
 
 ####Version 4.1.2 (Oct 15, 2014)
-* Added option to automatically redirect upon logging in to _Virtualmin_ module, in case it's installed
+* Added an option, upon logging in, automatically redirect to _Virtualmin_ module, in case it's installed
 
 ####Version 4.1.1 (Oct 13, 2014)
 * Removed requirement for both, either using `Switch` module or `Feature` is no longer necessary. Replaced with simple `if/elsif/else` statements. Using `Switch` caused error messages on latest installations, e.g. _CentOS 7_, while using `Feature` caused errors on old installations
