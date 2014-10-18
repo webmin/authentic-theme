@@ -5,11 +5,11 @@
 
 ##Changelog
 
-####Version 4.1.2 (Oct 15, 2014)
-* Added an option, upon logging in, automatically redirect to _Virtualmin_ module, in case it's installed
-
-####Version 4.1.1 (Oct 13, 2014)
-* Removed requirement for both, either using `Switch` module or `Feature` is no longer necessary. Replaced with simple `if/elsif/else` statements. Using `Switch` caused error messages on latest installations, e.g. _CentOS 7_, while using `Feature` caused errors on old installations
+####Version 4.1.3 (Oct 18, 2014)
+* Fixed tables automatic sorting by first `th`, to keep defaults set by `Webmin/Virtualmin` [:paperclip:](https://github.com/qooob/authentic-theme/issues/8)
+* Fixed minor loader issues
+* Fixed false/unclickable links in Usermin
+* Added CodeMirror `autofocus` on editing _textarea_
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
