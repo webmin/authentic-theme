@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.3 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -113,12 +113,14 @@ if ( $level == 0 ) {
         <= version->parse($installed_version) )
     {
         $authentic_theme_version
-            = '' . $text{'authentic_theme'} . ' ' . $installed_version;
+            = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+            . $text{'authentic_theme'} . '</a> '
+            . $installed_version;
     }
     else {
         $authentic_theme_version
-            = ''
-            . $text{'authentic_theme'} . ' '
+            = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+            . $text{'authentic_theme'} . '</a> '
             . $installed_version . '. '
             . $text{'theme_update_available'} . ' '
             . $remote_version

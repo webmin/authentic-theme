@@ -5,17 +5,11 @@
 
 ##Changelog
 
-####Version 4.1.1 (Oct 13, 2014)
-* Removed requirement for both, either using `Switch` module or `Feature` is no longer necessary. Replaced with simple `if/elsif/else` statements. Using `Switch` caused error messages on latest installations, e.g. CentOS 7, while using `Feature` caused errors on old installations
-
-####Version 4.1.0 (Oct 12, 2014)
-* Changed to using [`Switch`](https://github.com/qooob/authentic-theme#troubleshoot) module, rather than `Feature` in `index.cgi` and `menu.cgi` to support old versions of _Perl_. [:paperclip:](https://github.com/qooob/authentic-theme/issues/2) In case, `Switch` module is not installed on your system, you will get an error. See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
-* Changed `link` named _View changelog_ in _ConfigServer Security & Firewall_ module to a `button`
-* Improved loader animation and behavior
-* Added many missing _input_ stylings in some modules
-* Added _German_ translation. Special thanks to _Michael Keck_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/3)
-* Fixed `theme_ui_form_end` generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [:paperclip:](https://github.com/qooob/authentic-theme/issues/4)
-* Removed redundant _fonts_ directory
+####Version 4.1.3 (Oct 18, 2014)
+* Fixed tables automatic sorting by first `th`, to keep defaults set by `Webmin/Virtualmin` [:paperclip:](https://github.com/qooob/authentic-theme/issues/8)
+* Fixed minor loader issues
+* Fixed false/unclickable links in Usermin
+* Added CodeMirror `autofocus` on editing _textarea_
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
@@ -43,7 +37,7 @@ It's very important to clear ___Cache images and files___ in your browser after 
 
 ####Webmin
 
-  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download it directly](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz) and install it going from Webmin:
+  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
