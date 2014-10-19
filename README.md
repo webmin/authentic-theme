@@ -5,6 +5,9 @@
 
 ##Changelog
 
+####Version 4.1.4 (Oct 20, 2014)
+* Fixed general issue causing `radios` disappear in some modules, including Linux Firewall [:paperclip:](https://github.com/qooob/authentic-theme/issues/11)
+
 ####Version 4.1.3 (Oct 18, 2014)
 * Fixed tables automatic sorting by first `th`, to keep defaults set by `Webmin/Virtualmin` [:paperclip:](https://github.com/qooob/authentic-theme/issues/8)
 * Fixed minor loader issues

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.1.4 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -615,29 +615,6 @@ sub theme_ui_checkbox {
             . &quote_escape("${name}_${value}")
             . "\">$label</label>$after"
         ) . "\n";
-}
-
-sub theme_ui_oneradio {
-    my ( $name, $value, $label, $sel, $tags, $dis ) = @_;
-    my ( $rv, $after );
-    if ( $label =~ /^([^<]*)(<[\000-\377]*)$/ ) {
-        $label = $1;
-        $after = $2;
-    }
-    $rv .= '<input type="radio" ';
-    $rv .= 'name="' . &quote_escape($name) . '" ';
-    $rv .= 'value="' . &quote_escape($value) . '" ';
-    $rv .= ( $sel ? 'checked ' : '' );
-    $rv .= ( $dis ? 'disabled="true" ' : '' );
-    $rv .= 'id="' . &quote_escape("${name}_${value}") . '" ';
-    $rv .= ( $tags ? $tags . ' ' : '' );
-    $rv .= '>' . "\n";
-    $rv .= '<label class="radio" ';
-    $rv .= 'for="' . &quote_escape("${name}_${value}") . '">' . "\n";
-    $rv .= '<i class="fa"></i> ' . $label . "\n";
-    $rv .= '</label>' . "\n";
-
-    return $rv;
 }
 
 sub theme_ui_textarea {
