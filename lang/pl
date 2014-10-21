@@ -7,9 +7,8 @@ left_home=Informacje o systemie
 left_feedback=Wyślij opinię
 left_refresh_modules=Odśwież moduły
 left_others=Inne
-
-right_login=Zalogoowany jako 
-right_from=Zalogowany z 
+right_login=Zalogoowany jako
+right_from=Zalogowany z
 
 body_header0=Informacje o systemie
 body_host=Nazwa hosta
@@ -50,7 +49,7 @@ body_uquota=Limity i użycie dysku
 login_danger=Niebezpieczeństwo!
 login_warning=Ostrzeżenie!
 login_success=Sukces!
-login_message=Musisz podać nazwęużytkownika aby zalogować się na serwer 
+login_message=Musisz podać nazwęużytkownika aby zalogować się na serwer
 login_user=Nazwa użytkownika
 login_pass=Hasło
 login_token=Token
