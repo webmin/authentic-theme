@@ -1,0 +1,76 @@
+global_welcome=Witaj
+global_search=Szukaj
+global_search_in=Szukaj w
+
+left_login=Login: $1
+left_home=Informacje o systemie
+left_feedback=Wyślij opinię
+left_refresh_modules=Odśwież moduły
+left_others=Inne
+
+right_login=Zalogoowany jako 
+right_from=Zalogowany z 
+
+body_header0=Informacje o systemie
+body_host=Nazwa hosta
+body_os=System operacyjny
+body_webmin=Wersja Webmina
+body_time=Czas systemu
+body_kernel=Kernel i CPU
+body_cpuinfo=Informacje o procesorze
+body_cputype=$5, $8 rdzeni
+body_uptime=Czas pracy systemu
+body_updays=$1 dni, $2 godzin, $3 minut
+body_uphours=$1 godzin, $2 minut
+body_upmins=$1 minut
+body_procs=Działające procesy
+body_cpuuse=Użycie CPU
+body_cpustats=$1% użytkownik, $2% kernel, $4% IO, $3% bezczynność
+body_real=Pamięć rzeczywista
+body_virt=Pamięć wirtualna
+body_used=$1 w sumie - $2 użyte
+body_cpu=Średnie obciążenia CPU
+body_load=$1 (1 minuta) $2 (5 minut) $3 (15 minut)
+body_disk=Przestrzeń na dysku lokalnym
+body_kernelon=$1 $2 na $3
+body_updates=Aktualizacje pakietów
+body_upok=Wszystkie zainstalowane pakiety są aktualne
+body_upneed=$1 dostępnych aktualizacji paczek
+body_upsec=$1 dostępnych aktualizacji paczek, z których $2 to aktualizacje zabezpieczeń
+body_cputemps=Temperatury CPU
+body_drivetemps=Temperatury napędów
+body_driveerr=$1 błędów!
+body_drivefailed=Sprawdzenie SMART nie powiodło się!
+
+body_header1=Informacje o koncie
+body_usermin=Wersja Usermina
+body_out=$1&nbsp;z&nbsp;$2
+body_uquota=Limity i użycie dysku
+
+login_danger=Niebezpieczeństwo!
+login_warning=Ostrzeżenie!
+login_success=Sukces!
+login_message=Musisz podać nazwęużytkownika aby zalogować się na serwer 
+login_user=Nazwa użytkownika
+login_pass=Hasło
+login_token=Token
+login_save=Zapamiętaj mnie
+login_signin=Zaloguj się
+login_reset=Reset
+
+session_failed=Logowanie nie powiodło się. Spróbuj ponownie.
+session_twofailed=Dwuskładnikowe uwierzytelnienie nie powiodło się: $1
+session_logout=Wylogowano prawidłowo. Użyj formularza poniżej, aby ponownie się zalogować.
+session_timed_out=Upłynął limit czasu sesji po $1 minutach nieaktywności.
+
+virtualmin_left_generic=Stwórz serwer wirtualny
+virtualmin_left_virtualmin=Lista serwerów wirtualnych
+
+theme_version=Wersja motywu
+authentic_theme=Authentic Theme
+theme_update_available=Ostatnie dostępne wydanie
+theme_download=Pobierz
+theme_update=Zaktualizuj
+theme_changelog=Lista zmian
+
+__norefs=1
