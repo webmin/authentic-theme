@@ -5,6 +5,9 @@
 
 ##Changelog
 
+####Version 4.1.6 (Oct 22, 2014)
+* Fixed language files encoding [:paperclip:](https://github.com/qooob/authentic-theme/issues/13)
+
 ####Version 4.1.5 (Oct 21, 2014)
 * Added _Polish_ translation. Special thanks to _Michał Pawlik_ [:paperclip:](https://github.com/qooob/authentic-theme/pull/12)
 
