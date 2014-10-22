@@ -5,6 +5,9 @@
 
 ##Changelog
 
+####Version 4.1.7 (Oct 22, 2014)
+* Added _Norwegian_ translation. Special thanks to _Kjetil Elde_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/14)
+
 ####Version 4.1.6 (Oct 22, 2014)
 * Fixed language files encoding [:paperclip:](https://github.com/qooob/authentic-theme/issues/13)
 
@@ -68,8 +71,9 @@ This happens because Webmin is trying to open a link and download the theme usin
 ##Contributions
 
 ###Translations
-* [Michael Keck](https://github.com/mkkeck) (German) :de:
+* [Kjetil Elde](https://github.com/w00p) (Norwegian)
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
+* [Michael Keck](https://github.com/mkkeck) (German)
 
 ###Code contributions
 * [Riccardo Nobile](mailto:riccardo.nobile@winfuture.it)

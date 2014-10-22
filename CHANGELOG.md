@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 4.1.7 (Oct 22, 2014)
+* Added _Norwegian_ translation. Special thanks to _Kjetil Elde_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/14)
+
 ####Version 4.1.6 (Oct 22, 2014)
 * Fixed language files encoding [:paperclip:](https://github.com/qooob/authentic-theme/issues/13)
 

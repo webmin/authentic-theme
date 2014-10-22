@@ -1,0 +1,75 @@
+global_welcome=Velkommen
+global_search=Søk
+global_search_in=Søk i
+
+left_login=Logg inn: $1
+left_home=Systeminformasjon
+left_feedback=Send tilbakemelding
+left_refresh_modules=Oppdater moduler
+left_others=Ander
+right_login=Innlogget som
+right_from=Innlogget fra
+
+body_header0=Systeminformasjon
+body_host=Systemets vertsnavn
+body_os=Operativsystem
+body_webmin=Webmin versjon
+body_time=Tid på serveren
+body_kernel=Kjerne og CPU
+body_cpuinfo=Prosessor informasjon
+body_cputype=$5, $8 kjerner
+body_uptime=Systemets oppetid
+body_updays=$1 dag, $2 timer, $3 minutter
+body_uphours=$1 timer, $2 minutter
+body_upmins=$1 minutter
+body_procs=Prosesser som kjører
+body_cpuuse=CPU bruk
+body_cpustats=$1% bruker, $2% kjerner, $4% IO, $3% inaktiv
+body_real=Faktisk minne
+body_virt=Virtuelt minne
+body_used=$1 totalt - $2 brukt
+body_cpu=CPU gjennomsnittlig last
+body_load=$1 (1 min) $2 (5 min) $3 (15 min)
+body_disk=Lokal diskplass
+body_kernelon=$1 $2 på $3
+body_updates=pakkeoppdatering
+body_upok=Alle installerte pakker er oppdatert
+body_upneed=$1 pakkeoppdateringer er tilgjengelig
+body_upsec=$1 pakkeoppdateringer er tilgengelig, $2 er sikkerhetsoppdateringer
+body_cputemps=CPU temperaturer
+body_drivetemps=Disk temperaturer
+body_driveerr=$1 feil!
+body_drivefailed=SMART sjekk feilet!
+
+body_header1=Kontoinformasjon
+body_usermin=Usermin versjon
+body_out=$1 of $2
+body_uquota=Diskkvote og bruk
+
+login_danger=Feil!
+login_warning=Advarsel!
+login_success=Vellykket!
+login_message=Du må skrive inn et brukernavn og passord for å logge inn til
+login_user=Brukernavn
+login_pass=Passord
+login_token=Token
+login_save=Husk meg
+login_signin=Logg inn
+login_reset=Resett
+
+session_failed=Feil ved innlogging. Vennligst prøv igjen.
+session_twofailed=To-faktor autentisering feilet: $1
+session_logout=Du har blitt logget ut. Bruk skjema under for å logge inn igjen.
+session_timed_out=Økta gikk ut etter $ 1 minutter uten aktivitet.
+
+virtualmin_left_generic=Opprett virtuell server
+virtualmin_left_virtualmin=Vis virtuelle servere
+
+theme_version=Temaversjon
+authentic_theme=Authentic theme
+theme_update_available=Siste tilgjengelige versjon
+theme_download=Last ned
+theme_update=Oppdater
+theme_changelog=Endringslogg
+
+__norefs=1
