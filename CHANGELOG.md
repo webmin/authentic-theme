@@ -1,7 +1,7 @@
 ##Changelog
 
 ####Version 4.2.0 (Oct 23, 2014)
-* Fixed general issue causing `forms` submit return error in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/15)
+* Fixed general issue causing `forms` on submit return an error in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/15)
 * Fixed showing loader when clicking on `select_all/select_invert` links
 
 ####Version 4.1.7 (Oct 22, 2014)
