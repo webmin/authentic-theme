@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.7 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.2.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -619,22 +619,19 @@ sub theme_ui_checkbox {
 
 sub theme_ui_textarea {
     my ( $name, $value, $rows, $cols, $wrap, $dis, $tags ) = @_;
-    my $rv;
     $cols = &ui_max_text_width( $cols, 1 );
 
-    $rv
-        .= '<textarea style="display: inline; width:100%;" class="form-control" ';
-    $rv .= 'name="' . &quote_escape($name) . '" ';
-    $rv .= 'rows="' . $rows . '" ';
-    $rv .= 'cols="' . $cols . '" ';
-    $rv .= ( $wrap ? 'wrap="' . $wrap . '" ' : '' );
-    $rv .= ( $dis ? 'disabled="true" ' : '' );
-    $rv .= ( $tags ? $tags : '' );
-    $rv .= '>' . "\n";
-    $rv .= &html_escape($value) . "\n";
-    $rv .= '</textarea>' . "\n";
-
-    return $rv;
+    return
+        "<textarea style='display: inline; width:100%;' class='form-control' "
+        . "name=\""
+        . &quote_escape($name) . "\" " . "id=\""
+        . &quote_escape($name) . "\" "
+        . "rows='$rows' cols='$cols'"
+        . ( $wrap ? " wrap=$wrap"    : "" )
+        . ( $dis  ? " disabled=true" : "" )
+        . ( $tags ? " $tags"         : "" ) . ">"
+        . &html_escape($value)
+        . "</textarea>";
 }
 
 sub theme_ui_submit {

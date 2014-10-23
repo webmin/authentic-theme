@@ -5,14 +5,9 @@
 
 ##Changelog
 
-####Version 4.1.7 (Oct 22, 2014)
-* Added _Norwegian_ translation. Special thanks to _Kjetil Elde_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/14)
-
-####Version 4.1.6 (Oct 22, 2014)
-* Fixed language files encoding [:paperclip:](https://github.com/qooob/authentic-theme/issues/13)
-
-####Version 4.1.5 (Oct 21, 2014)
-* Added _Polish_ translation. Special thanks to _Michał Pawlik_ [:paperclip:](https://github.com/qooob/authentic-theme/pull/12)
+####Version 4.2.0 (Oct 23, 2014)
+* Fixed general issue causing `forms` on submit return an error, in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/15)
+* Fixed showing loader when clicking on `select_all/select_invert` links
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
