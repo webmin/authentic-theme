@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.3.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -636,35 +636,15 @@ sub theme_ui_textarea {
 
 sub theme_ui_submit {
     my ( $label, $name, $dis, $tags ) = @_;
-    my ( $rv, $fa );
-    my $btntype = 'btn-default';
 
-    if ( $name eq 'delete' ) {
-        $btntype = 'btn-danger';
-        $fa      = '<i class="fa fa-times"></i>';
-    }
-    elsif ( $name eq 'stop' ) {
-        $btntype = 'btn-warning';
-        $fa      = '<i class="fa fa-exclamation"></i>';
-    }
-    elsif ( $name eq 'start' ) {
-        $btntype = 'btn-success';
-        $fa      = '<i class="fa fa-check"></i>';
-    }
-    elsif ( $name eq 'restart' ) {
-        $btntype = 'btn-warning';
-        $fa      = '<i class="fa fa-refresh"></i>';
-    }
-
-    $rv .= '<button type="submit" class="btn ' . $btntype . '" ';
-    $rv .= ( $name ne '' ? 'name="' . &quote_escape($name) . '" ' : '' );
-    $rv .= ( $dis ? ' disabled="disabled"' : '' );
-    $rv .= ( $tags ? ' ' . $tags : '' ) . '>';
-    $rv .= $fa . ' ' . &quote_escape($label);
-    $rv .= '<input type="hidden" name="' . $name . '">';
-    $rv .= '</button>' . "\n";
-
-    return $rv;
+    return
+          "<input class='btn btn-default submitter' type='submit'"
+        . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "" )
+        . ( $name ne '' ? " id=\"" . &quote_escape($name) . "\""   : "" )
+        . " value=\""
+        . &quote_escape($label) . "\""
+        . ( $dis  ? " disabled=true" : "" )
+        . ( $tags ? " " . $tags      : "" ) . ">\n";
 }
 
 sub theme_ui_reset {

@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 4.3.0 (Oct 24, 2014)
+* Fixed general issue causing `buttons` submit a form with an empty values [:paperclip:](https://github.com/qooob/authentic-theme/issues/16)
+
 ####Version 4.2.0 (Oct 23, 2014)
 * Fixed general issue causing `forms` on submit return an error in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/15)
 * Fixed showing loader when clicking on `select_all/select_invert` links
