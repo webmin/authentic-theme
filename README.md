@@ -5,8 +5,9 @@
 
 ##Changelog
 
-####Version 4.3.0 (Oct 24, 2014)
-* Fixed general issue causing `buttons` submit a form with an empty values [:paperclip:](https://github.com/qooob/authentic-theme/issues/16)
+####Version 4.3.1 (Oct 25, 2014)
+* Fixed automatic updates not working in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/17)
+* Fixed rating stars not being rendered on sub-server script installer page in Virtualmin module [:paperclip:](https://github.com/qooob/authentic-theme/issues/18)
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
