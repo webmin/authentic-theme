@@ -1,5 +1,28 @@
 ##Changelog
 
+####Version 4.3.1 (Oct 25, 2014)
+* Fixed automatic updates not working in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/17)
+* Fixed rating stars not being rendered on sub-server script installer page in Virtualmin module [:paperclip:](https://github.com/qooob/authentic-theme/issues/18)
+
+####Version 4.3.0 (Oct 24, 2014)
+* Fixed general issue causing `buttons` submit a form with an empty values [:paperclip:](https://github.com/qooob/authentic-theme/issues/16)
+
+####Version 4.2.0 (Oct 23, 2014)
+* Fixed general issue causing `forms` on submit return an error in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/15)
+* Fixed showing loader when clicking on `select_all/select_invert` links
+
+####Version 4.1.7 (Oct 22, 2014)
+* Added _Norwegian_ translation. Special thanks to _Kjetil Elde_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/14)
+
+####Version 4.1.6 (Oct 22, 2014)
+* Fixed language files encoding [:paperclip:](https://github.com/qooob/authentic-theme/issues/13)
+
+####Version 4.1.5 (Oct 21, 2014)
+* Added _Polish_ translation. Special thanks to _Michał Pawlik_ [:paperclip:](https://github.com/qooob/authentic-theme/pull/12)
+
+####Version 4.1.4 (Oct 20, 2014)
+* Fixed general issue causing `radios` disappear in some modules, including _Linux Firewall_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/11)
+
 ####Version 4.1.3 (Oct 18, 2014)
 * Fixed tables automatic sorting by first `th`, to keep defaults set by `Webmin/Virtualmin` [:paperclip:](https://github.com/qooob/authentic-theme/issues/8)
 * Fixed minor loader issues

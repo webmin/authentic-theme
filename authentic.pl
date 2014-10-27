@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.3.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -617,80 +617,34 @@ sub theme_ui_checkbox {
         ) . "\n";
 }
 
-sub theme_ui_oneradio {
-    my ( $name, $value, $label, $sel, $tags, $dis ) = @_;
-    my ( $rv, $after );
-    if ( $label =~ /^([^<]*)(<[\000-\377]*)$/ ) {
-        $label = $1;
-        $after = $2;
-    }
-    $rv .= '<input type="radio" ';
-    $rv .= 'name="' . &quote_escape($name) . '" ';
-    $rv .= 'value="' . &quote_escape($value) . '" ';
-    $rv .= ( $sel ? 'checked ' : '' );
-    $rv .= ( $dis ? 'disabled="true" ' : '' );
-    $rv .= 'id="' . &quote_escape("${name}_${value}") . '" ';
-    $rv .= ( $tags ? $tags . ' ' : '' );
-    $rv .= '>' . "\n";
-    $rv .= '<label class="radio" ';
-    $rv .= 'for="' . &quote_escape("${name}_${value}") . '">' . "\n";
-    $rv .= '<i class="fa"></i> ' . $label . "\n";
-    $rv .= '</label>' . "\n";
-
-    return $rv;
-}
-
 sub theme_ui_textarea {
     my ( $name, $value, $rows, $cols, $wrap, $dis, $tags ) = @_;
-    my $rv;
     $cols = &ui_max_text_width( $cols, 1 );
 
-    $rv
-        .= '<textarea style="display: inline; width:100%;" class="form-control" ';
-    $rv .= 'name="' . &quote_escape($name) . '" ';
-    $rv .= 'rows="' . $rows . '" ';
-    $rv .= 'cols="' . $cols . '" ';
-    $rv .= ( $wrap ? 'wrap="' . $wrap . '" ' : '' );
-    $rv .= ( $dis ? 'disabled="true" ' : '' );
-    $rv .= ( $tags ? $tags : '' );
-    $rv .= '>' . "\n";
-    $rv .= &html_escape($value) . "\n";
-    $rv .= '</textarea>' . "\n";
-
-    return $rv;
+    return
+        "<textarea style='display: inline; width:100%;' class='form-control' "
+        . "name=\""
+        . &quote_escape($name) . "\" " . "id=\""
+        . &quote_escape($name) . "\" "
+        . "rows='$rows' cols='$cols'"
+        . ( $wrap ? " wrap=$wrap"    : "" )
+        . ( $dis  ? " disabled=true" : "" )
+        . ( $tags ? " $tags"         : "" ) . ">"
+        . &html_escape($value)
+        . "</textarea>";
 }
 
 sub theme_ui_submit {
     my ( $label, $name, $dis, $tags ) = @_;
-    my ( $rv, $fa );
-    my $btntype = 'btn-default';
 
-    if ( $name eq 'delete' ) {
-        $btntype = 'btn-danger';
-        $fa      = '<i class="fa fa-times"></i>';
-    }
-    elsif ( $name eq 'stop' ) {
-        $btntype = 'btn-warning';
-        $fa      = '<i class="fa fa-exclamation"></i>';
-    }
-    elsif ( $name eq 'start' ) {
-        $btntype = 'btn-success';
-        $fa      = '<i class="fa fa-check"></i>';
-    }
-    elsif ( $name eq 'restart' ) {
-        $btntype = 'btn-warning';
-        $fa      = '<i class="fa fa-refresh"></i>';
-    }
-
-    $rv .= '<button type="submit" class="btn ' . $btntype . '" ';
-    $rv .= ( $name ne '' ? 'name="' . &quote_escape($name) . '" ' : '' );
-    $rv .= ( $dis ? ' disabled="disabled"' : '' );
-    $rv .= ( $tags ? ' ' . $tags : '' ) . '>';
-    $rv .= $fa . ' ' . &quote_escape($label);
-    $rv .= '<input type="hidden" name="' . $name . '">';
-    $rv .= '</button>' . "\n";
-
-    return $rv;
+    return
+          "<input class='btn btn-default submitter' type='submit'"
+        . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "" )
+        . ( $name ne '' ? " id=\"" . &quote_escape($name) . "\""   : "" )
+        . " value=\""
+        . &quote_escape($label) . "\""
+        . ( $dis  ? " disabled=true" : "" )
+        . ( $tags ? " " . $tags      : "" ) . ">\n";
 }
 
 sub theme_ui_reset {

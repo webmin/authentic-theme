@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.1.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.3.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -101,7 +101,7 @@ if ( $level == 0 ) {
     # Define remote version
     use LWP::Simple;
     my $remote_version
-        = get 'https://rostovtsev.ru/.git/authentic-theme/VERSION.txt';
+        = get('http://rostovtsev.ru/.git/authentic-theme/VERSION.txt');
     open( FILENAME, '<', \$remote_version );
 
     # Trim spaces
