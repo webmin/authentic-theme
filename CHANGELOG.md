@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 4.4.1 (Oct 28, 2014)
+* Fixed an issue with `file chooser`, not selecting a _file/directory_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/21)
+
 ####Version 4.4.0 (Oct 28, 2014)
 * Fixed missing numbers for _memory_ and _local disk space_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/20)
 
