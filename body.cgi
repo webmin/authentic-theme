@@ -1,5 +1,5 @@
 #
-# Authentic Theme 4.3.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 4.4.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -237,6 +237,37 @@ if ( $level == 0 ) {
         }
     }
 
+    # Real memory details
+    &print_table_row(
+        $text{'body_real'},
+        &text(
+            'body_used',
+            nice_size( ( $m[0] ) * 1000 ),
+            nice_size( ( $m[0] - $m[1] ) * 1000 )
+        )
+    );
+
+    # Virtual memory details
+    &print_table_row(
+        $text{'body_virt'},
+        &text(
+            'body_used',
+            nice_size( ( $m[2] ) * 1000 ),
+            nice_size( ( $m[2] - $m[3] ) * 1000 )
+        )
+    );
+
+    # Local disk space
+    &print_table_row(
+        $text{'body_disk'},
+        &text(
+            'body_used_and_free',
+            nice_size( $info->{'disk_total'} ),
+            nice_size( $info->{'disk_free'} ),
+            nice_size( $info->{'disk_total'} - $info->{'disk_free'} )
+        )
+    );
+
     # Package updates
     if ( $info->{'poss'} ) {
         @poss = @{ $info->{'poss'} };
@@ -300,7 +331,7 @@ elsif ( $level == 3 ) {
     # Define remote version
     use LWP::Simple;
     my $remote_version
-        = get 'https://rostovtsev.ru/.git/authentic-theme/VERSION.txt';
+        = get('http://rostovtsev.ru/.git/authentic-theme/VERSION.txt');
     open( FILENAME, '<', \$remote_version );
 
     # Trim spaces
@@ -334,7 +365,7 @@ elsif ( $level == 3 ) {
     }
     &print_table_row( &text('body_time'), $tm );
 
-    # Disk quotas -- !!!!!
+    # Disk quotas
     if ( &foreign_installed("quota") ) {
         &foreign_require( "quota", "quota-lib.pl" );
         $n     = &quota::user_filesystems($remote_user);
@@ -457,3 +488,4 @@ sub print_table_row {
         . $content . '</td>' . "\n";
     print '</tr>' . "\n";
 }
+
