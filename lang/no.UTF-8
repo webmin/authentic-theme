@@ -3,6 +3,7 @@ global_search=Søk
 global_search_in=Søk i
 
 left_login=Logg inn: $1
+left_main=Hovedmeny
 left_home=Systeminformasjon
 left_feedback=Send tilbakemelding
 left_refresh_modules=Oppdater moduler

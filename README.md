@@ -5,6 +5,10 @@
 
 ##Changelog
 
+####Version 5.1.0 (Oct 31, 2014)
+* Added `refresh button` to _System Information_ page [:paperclip:](https://github.com/qooob/authentic-theme/issues/23)
+* Added _System Information_ link to _Virtualmin_ left navigation bar
+
 ####Version 5.0.0 (Oct 30, 2014)
 * Added new beautiful `ui_link` buttons in replacement for old links with `|` separator
 * Fixed devastating bug, that stopped the script with fatal error, as `dataTables` were called prematurely

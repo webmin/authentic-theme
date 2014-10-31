@@ -1,5 +1,5 @@
 #
-# Authentic Theme 5.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 5.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -118,10 +118,12 @@ print '<ul class="nav navbar-nav visible-xs">' . "\n";
 print
     '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="menu.cgi?virtualmin='
     . $is_virtualmin
-    . '"><i class="fa fa-tags"></i> Main menu</a></li>' . "\n";
+    . '"><i class="fa fa-tags"></i> '
+    . $text{'left_main'}
+    . '</a></li>' . "\n";
 
 print
-    '<li><a target="page" data-href="body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-home"></i> '
+    '<li><a target="page" data-href="body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-info"></i> '
     . $text{'left_home'}
     . '</a></li>' . "\n";
 %gaccess = &get_module_acl( undef, "" );
@@ -345,6 +347,11 @@ elsif ( $is_virtualmin != -1 ) {
         print '</div>' . "\n";
         print '</form>' . "\n";
     }
+    print
+        '<li><a target="page" data-href="/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+        . $text{'left_home'}
+        . '</span></a></li>' . "\n";
+
     if ( &foreign_available("webmin") ) {
         print
             '<li><a href="virtual-server/index.cgi" target="page"><i class="fa fa-fw fa-tasks"></i> <span>'

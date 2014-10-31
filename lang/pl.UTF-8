@@ -3,6 +3,7 @@ global_search=Szukaj
 global_search_in=Szukaj w
 
 left_login=Login: $1
+left_main=Menu główne
 left_home=Informacje o systemie
 left_feedback=Wyślij opinię
 left_refresh_modules=Odśwież moduły

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 5.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 5.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -22,7 +22,13 @@ print '<div id="wrapper" class="page">' . "\n";
 print '<div class="container">' . "\n";
 print '<div id="system-status" class="panel panel-default">' . "\n";
 print '<div class="panel-heading">' . "\n";
-print '<h3 class="panel-title">' . &text('body_header0') . '</h3>' . "\n";
+print '<h3 class="panel-title">'
+    . &text('body_header0')
+    . ( &foreign_available("virtual-server")
+    ? '<a href="/recollect.cgi" class="btn btn-default pull-right" style="margin:-6px -11px;"><i class="fa fa-refresh"></i></a>'
+    : false )
+    . '</h3>' . "\n";
+
 print '</div>';
 print '<div class="panel-body">' . "\n";
 
