@@ -1,5 +1,16 @@
 ##Changelog
 
+####Version 5.0.0 (Oct 30, 2014)
+* Added new beautiful `ui_link` buttons in replacement for old links with `|` separator
+* Fixed devastating bug, that stopped the script with fatal error, as `dataTables` were called prematurely
+* Fixed dozes of small bugs
+
+####Version 4.4.1 (Oct 28, 2014)
+* Fixed an issue with `file chooser`, not selecting a _file/directory_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/21)
+
+####Version 4.4.0 (Oct 28, 2014)
+* Fixed missing numbers for _memory_ and _local disk space_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/20)
+
 ####Version 4.3.1 (Oct 25, 2014)
 * Fixed automatic updates not working in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/17)
 * Fixed rating stars not being rendered on sub-server script installer page in Virtualmin module [:paperclip:](https://github.com/qooob/authentic-theme/issues/18)

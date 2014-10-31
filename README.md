@@ -5,9 +5,10 @@
 
 ##Changelog
 
-####Version 4.3.1 (Oct 25, 2014)
-* Fixed automatic updates not working in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/17)
-* Fixed rating stars not being rendered on sub-server script installer page in Virtualmin module [:paperclip:](https://github.com/qooob/authentic-theme/issues/18)
+####Version 5.0.0 (Oct 30, 2014)
+* Added new beautiful `ui_link` buttons in replacement for old links with `|` separator
+* Fixed devastating bug, that stopped the script with fatal error, as `dataTables` were called prematurely
+* Fixed dozes of small bugs
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
