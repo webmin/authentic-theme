@@ -1,5 +1,11 @@
 ##Changelog
 
+####Version 6.0.0 (Nov 6, 2014)
+* Fixed `refresh button` being slow on _System Information_ page [:paperclip:](https://github.com/qooob/authentic-theme/issues/24)
+* Fixed _System Information_ being displayed properly based on logged in users' privileges [:paperclip:](https://github.com/qooob/authentic-theme/issues/10)
+* Changed the way `refresh button` works on _System Information_ page. No more using `recollect.cgi` or any other server-side scripts.
+* Fixed dozens of small bugs
+
 ####Version 5.1.0 (Oct 31, 2014)
 * Added `refresh button` to _System Information_ page [:paperclip:](https://github.com/qooob/authentic-theme/issues/23)
 * Added _System Information_ link to _Virtualmin_ left navigation bar
@@ -7,7 +13,7 @@
 ####Version 5.0.0 (Oct 30, 2014)
 * Added new beautiful `ui_link` buttons in replacement for old links with `|` separator
 * Fixed devastating bug, that stopped the script with fatal error, as `dataTables` were called prematurely
-* Fixed dozes of small bugs
+* Fixed dozens of small bugs
 
 ####Version 4.4.1 (Oct 28, 2014)
 * Fixed an issue with `file chooser`, not selecting a _file/directory_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/21)

@@ -1,10 +1,11 @@
+#!/usr/bin/perl
+
 #
-# Authentic Theme 5.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-#!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 $pragma_no_cache = 1;

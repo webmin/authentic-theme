@@ -1,9 +1,11 @@
+#!/usr/bin/perl
+
 #
-# Authentic Theme 5.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+#
 
-#!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &ReadParse();
@@ -48,56 +50,66 @@ if ( $virtualmin == -1 ) {
     }
 }
 elsif ( $is_virtualmin != -1 ) {
-    require "virtual-server-theme/virtual-server-theme-lib.pl";
-    &ReadParse();
-    &foreign_require( "virtual-server", "virtual-server-lib.pl" );
-    $goto = 'virtual-server/index.cgi';
-    my @buts = &virtual_server::get_all_global_links();
-    my @tcats = &unique( map { $_->{'cat'} } @buts );
 
-    if ( $category eq '' ) {
-        foreach $c (@tcats) {
-            my @incat = grep { $_->{'cat'} eq $c } @buts;
-            if ( $row eq 1 ) {
-                print '<div class="row menu-row">' . "\n";
-                &print_category( $c, $incat[0]->{'catname'} );
-                $row = 0;
+    &foreign_require( "virtual-server", "virtual-server-lib.pl" );
+
+    $level
+        = &virtual_server::master_admin()   ? 0
+        : &virtual_server::reseller_admin() ? 1
+        :                                     2;
+
+    if ( $level != 2 ) {
+
+        my @buts = &virtual_server::get_all_global_links();
+        my @tcats = &unique( map { $_->{'cat'} } @buts );
+
+        if ( $category eq '' ) {
+            foreach $c (@tcats) {
+                my @incat = grep { $_->{'cat'} eq $c } @buts;
+                if ( $row eq 1 ) {
+                    print '<div class="row menu-row">' . "\n";
+                    &print_category( $c, $incat[0]->{'catname'} );
+                    $row = 0;
+                }
+                else {
+                    &print_category( $c, $incat[0]->{'catname'} );
+                    print '</div>' . "\n";
+                    $row = 1;
+                }
             }
-            else {
-                &print_category( $c, $incat[0]->{'catname'} );
-                print '</div>' . "\n";
-                $row = 1;
+        }
+        else {
+            print '<div class="list-group">' . "\n";
+            foreach $c (@tcats) {
+                my @incat = grep { $_->{'cat'} eq $c } @buts;
+                next if ( $c ne $category );
+                foreach my $l (@incat) {
+
+                    # Show domain creation link
+                    if ((      &virtual_server::can_create_master_servers()
+                            || &virtual_server::can_create_sub_servers()
+                        )
+                        && ( $category eq 'add' )
+                        && ( !length $print_virtualmin_link )
+                        )
+                    {
+
+                        &print_category_link(
+                            "virtual-server/domain_form.cgi",
+                            $text{'virtualmin_left_generic'}
+                        );
+                        $print_virtualmin_link = 1;
+                    }
+                    $l->{'url'} =~ s/^\/+//;
+                    &print_category_link( $l->{'url'}, $l->{'title'} );
+
+                }
             }
+            print '</div>' . "\n";
         }
     }
-    else {
-        print '<div class="list-group">' . "\n";
-        foreach $c (@tcats) {
-            my @incat = grep { $_->{'cat'} eq $c } @buts;
-            next if ( $c ne $category );
-            foreach my $l (@incat) {
-
-                # Show domain creation link
-                if ((      &virtual_server::can_create_master_servers()
-                        || &virtual_server::can_create_sub_servers()
-                    )
-                    && ( $category eq 'add' )
-                    && ( !length $print_virtualmin_link )
-                    )
-                {
-
-                    &print_category_link(
-                        "virtual-server/domain_form.cgi",
-                        $text{'virtualmin_left_generic'}
-                    );
-                    $print_virtualmin_link = 1;
-                }
-                $l->{'url'} =~ s/^\/+//;
-                &print_category_link( $l->{'url'}, $l->{'title'} );
-
-            }
-        }
-        print '</div>' . "\n";
+    elsif ( $level == 2 ) {
+        print '<meta HTTP-EQUIV="REFRESH" CONTENT="0;URL=/virtual-server/index.cgi">';
     }
 }
 

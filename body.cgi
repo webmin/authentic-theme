@@ -1,22 +1,25 @@
+#!/usr/bin/perl
+
 #
-# Authentic Theme 5.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-#!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &ReadParse();
 &init_config();
 &load_theme_library();
-if ( &get_product_name() eq "usermin" ) {
-    $level = 3;
-}
-else {
-    $level = 0;
-}
+use Time::Local;
+( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
 %text = &load_language($current_theme);
+%text = ( &load_language('virtual-server'), %text );
+
+if ( $hasvirt && $in{'dom'} ) {
+    $defdom = virtual_server::get_domain( $in{'dom'} );
+}
+
 &header($title);
 print '<div id="wrapper" class="page">' . "\n";
 print '<div class="container">' . "\n";
@@ -24,10 +27,17 @@ print '<div id="system-status" class="panel panel-default">' . "\n";
 print '<div class="panel-heading">' . "\n";
 print '<h3 class="panel-title">'
     . &text('body_header0')
-    . ( &foreign_available("virtual-server")
-    ? '<a href="/recollect.cgi" class="btn btn-default pull-right" style="margin:-6px -11px;"><i class="fa fa-refresh"></i></a>'
-    : false )
-    . '</h3>' . "\n";
+    . (
+    ( $level != 2 && $level != 3 )
+    ? '<a href="/?updating" target="_top" data-href="webmin/edit_webmincron.cgi" data-refresh="'
+        . (
+        &foreign_available("package-updates")
+        ? 'system-status package-updates'
+        : 'system-status'
+        )
+        . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>'
+    : false
+    ) . '</h3>' . "\n";
 
 print '</div>';
 print '<div class="panel-body">' . "\n";
@@ -309,6 +319,153 @@ if ( $level == 0 ) {
         # print scalar(@notifs);
     }
 }
+elsif ( $level == 2 ) {
+
+    # Domain owner
+    # Show a server owner info about one domain
+    $ex = virtual_server::extra_admin();
+    if ($ex) {
+        $d = virtual_server::get_domain($ex);
+    }
+    else {
+        $d = virtual_server::get_domain_by( "user", $remote_user, "parent",
+            "" );
+    }
+
+    print '<table class="table table-hover">' . "\n";
+
+    &print_table_row( $text{'right_login'}, $remote_user );
+
+    &print_table_row( $text{'right_from'}, $ENV{'REMOTE_HOST'} );
+
+    if ($hasvirt) {
+        &print_table_row( $text{'right_virtualmin'},
+            $virtual_server::module_info{'version'} );
+    }
+    else {
+        &print_table_row( $text{'right_virtualmin'}, $text{'right_not'} );
+    }
+
+    $dname
+        = defined(&virtual_server::show_domain_name)
+        ? &virtual_server::show_domain_name($d)
+        : $d->{'dom'};
+    &print_table_row( $text{'right_dom'}, $dname );
+
+    @subs = ( $d, virtual_server::get_domain_by( "parent", $d->{'id'} ) );
+    @reals = grep { !$_->{'alias'} } @subs;
+    @mails = grep { $_->{'mail'} } @subs;
+    ( $sleft, $sreason, $stotal, $shide )
+        = virtual_server::count_domains("realdoms");
+    if ( $sleft < 0 || $shide ) {
+        &print_table_row( $text{'right_subs'}, scalar(@reals) );
+    }
+    else {
+        &print_table_row( $text{'right_subs'},
+            text( 'right_of', scalar(@reals), $stotal ) );
+    }
+
+    @aliases = grep { $_->{'alias'} } @subs;
+    if (@aliases) {
+        ( $aleft, $areason, $atotal, $ahide )
+            = virtual_server::count_domains("aliasdoms");
+        if ( $aleft < 0 || $ahide ) {
+            &print_table_row( $text{'right_aliases'}, scalar(@aliases) );
+        }
+        else {
+            &print_table_row( $text{'right_aliases'},
+                text( 'right_of', scalar(@aliases), $atotal ) );
+        }
+    }
+
+    # Users and aliases info
+    $users = virtual_server::count_domain_feature( "mailboxes", @subs );
+    ( $uleft, $ureason, $utotal, $uhide )
+        = virtual_server::count_feature("mailboxes");
+    $msg = @mails ? $text{'right_fusers'} : $text{'right_fusers2'};
+    if ( $uleft < 0 || $uhide ) {
+        &print_table_row( $msg, $users );
+    }
+    else {
+        &print_table_row( $msg, text( 'right_of', $users, $utotal ) );
+    }
+
+    if (@mails) {
+        $aliases = virtual_server::count_domain_feature( "aliases", @subs );
+        ( $aleft, $areason, $atotal, $ahide )
+            = virtual_server::count_feature("aliases");
+        if ( $aleft < 0 || $ahide ) {
+            &print_table_row( $text{'right_faliases'}, $aliases );
+        }
+        else {
+            &print_table_row( $text{'right_faliases'},
+                text( 'right_of', $aliases, $atotal ) );
+        }
+    }
+
+    # Databases
+    $dbs = virtual_server::count_domain_feature( "dbs", @subs );
+    ( $dleft, $dreason, $dtotal, $dhide )
+        = virtual_server::count_feature("dbs");
+    if ( $dleft < 0 || $dhide ) {
+        &print_table_row( $text{'right_fdbs'}, $dbs );
+    }
+    else {
+        &print_table_row( $text{'right_fdbs'},
+            text( 'right_of', $dbs, $dtotal ) );
+    }
+
+    if ( !$sects->{'noquotas'}
+        && virtual_server::has_home_quotas() )
+    {
+        # Disk usage for all owned domains
+        $homesize = virtual_server::quota_bsize("home");
+        $mailsize = virtual_server::quota_bsize("mail");
+        ( $home, $mail, $db ) = virtual_server::get_domain_quota( $d, 1 );
+        $usage = $home * $homesize + $mail * $mailsize + $db;
+        $limit = $d->{'quota'} * $homesize;
+        if ($limit) {
+            &print_table_row( $text{'right_quota'},
+                text( 'right_of', nice_size($usage), &nice_size($limit) ),
+                3 );
+            &print_table_row(
+                " ",
+                bar_chart_three( $limit, $usage - $db, $db, $limit - $usage ),
+                3
+            );
+        }
+        else {
+            &print_table_row( $text{'right_quota'}, nice_size($usage), 3 );
+        }
+    }
+
+    if (  !$sects->{'nobw'}
+        && $virtual_server::config{'bw_active'}
+        && $d->{'bw_limit'} )
+    {
+        # Bandwidth usage and limit
+        &print_table_row(
+            $text{'right_bw'},
+            &text(
+                'right_of',
+                &nice_size( $d->{'bw_usage'} ),
+                &text(
+                    'edit_bwpast_' . $virtual_server::config{'bw_past'},
+                    &nice_size( $d->{'bw_limit'} ),
+                    $virtual_server::config{'bw_period'}
+                )
+            ),
+            3
+        );
+        &print_table_row( " ",
+            &bar_chart( $d->{'bw_limit'}, $d->{'bw_usage'}, 1 ), 3 );
+    }
+
+    print '</table>' . "\n";
+
+    # New features for domain owner
+    show_new_features(0);
+}
 elsif ( $level == 3 ) {
     print '<table class="table table-hover">' . "\n";
 
@@ -495,3 +652,71 @@ sub print_table_row {
     print '</tr>' . "\n";
 }
 
+sub get_virtualmin_user_level {
+    local ( $hasvirt, $hasvm2, $level );
+    $hasvm2  = &foreign_available("server-manager");
+    $hasvirt = &foreign_available("virtual-server");
+    if ($hasvm2) {
+        &foreign_require( "server-manager", "server-manager-lib.pl" );
+    }
+    if ($hasvirt) {
+        &foreign_require( "virtual-server", "virtual-server-lib.pl" );
+    }
+    if ($hasvm2) {
+        $level = $server_manager::access{'owner'} ? 4 : 0;
+    }
+    elsif ($hasvirt) {
+        $level
+            = &virtual_server::master_admin()   ? 0
+            : &virtual_server::reseller_admin() ? 1
+            :                                     2;
+    }
+    elsif ( &get_product_name() eq "usermin" ) {
+        $level = 3;
+    }
+    else {
+        $level = 0;
+    }
+    return ( $hasvirt, $level, $hasvm2 );
+}
+
+sub show_new_features {
+    my ($nosect) = @_;
+    my $newhtml;
+    if (   $hasvirt
+        && !$sects->{'nonewfeatures'}
+        && defined(&virtual_server::get_new_features_html)
+        && ( $newhtml = virtual_server::get_new_features_html($defdom) ) )
+    {
+        # Show new features HTML for Virtualmin
+        if ($nosect) {
+            print "<h3>$text{'right_newfeaturesheader'}</h3>\n";
+        }
+        else {
+            print ui_hidden_table_start( $text{'right_newfeaturesheader'},
+                "width=100%", 2, "newfeatures", 1 );
+        }
+        print &ui_table_row( undef, $newhtml, 2 );
+        if ( !$nosect ) {
+            print ui_hidden_table_end("newfeatures");
+        }
+    }
+    if (   $hasvm2
+        && !$sects->{'nonewfeatures'}
+        && defined(&server_manager::get_new_features_html)
+        && ( $newhtml = server_manager::get_new_features_html(undef) ) )
+    {
+        # Show new features HTML for Cloudmin
+        if ($nosect) {
+            print "<h3>$text{'right_newfeaturesheadervm2'}</h3>\n";
+        }
+        else {
+            print ui_hidden_table_start( $text{'right_newfeaturesheadervm2'},
+                "width=100%", 2, "newfeaturesvm2", 1 );
+        }
+        print &ui_table_row( undef, $newhtml, 2 );
+        if ( !$nosect ) {
+            print ui_hidden_table_end("newfeaturesvm2");
+        }
+    }
+}

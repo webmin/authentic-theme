@@ -1,10 +1,11 @@
+#!/usr/bin/perl
+
 #
-# Authentic Theme 5.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-#!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &ReadParse();
@@ -148,12 +149,6 @@ if ( &foreign_available("webmin") ) {
         . '</a></li>' . "\n";
 }
 print '</ul>' . "\n";
-if ( &get_product_name() eq "usermin" ) {
-    $level = 3;
-}
-else {
-    $level = 0;
-}
 
 print '<div class="navbar-right">' . "\n";
 $user = $remote_user;
@@ -282,41 +277,54 @@ if ( $is_virtualmin == -1 ) {
 }
 elsif ( $is_virtualmin != -1 ) {
 
-    &ReadParse();
     &foreign_require( "virtual-server", "virtual-server-lib.pl" );
     $goto = 'virtual-server/index.cgi';
-    my @buts = &virtual_server::get_all_global_links();
-    my @tcats = &unique( map { $_->{'cat'} } @buts );
-    foreach my $c (@tcats) {
-        my @incat = grep { $_->{'cat'} eq $c } @buts;
 
-        &print_category( $c, \@incat, $incat[0]->{'catname'} );
+    $level
+        = &virtual_server::master_admin()   ? 0
+        : &virtual_server::reseller_admin() ? 1
+        :                                     2;
 
-        print '<ul class="sub" style="display: none;" id="'
-            . $c . '">' . "\n";
-        foreach my $l (@incat) {
+    if ( $level != 2 ) {
+        my @buts = &virtual_server::get_all_global_links();
+        my @tcats = &unique( map { $_->{'cat'} } @buts );
+        foreach my $c (@tcats) {
+            my @incat = grep { $_->{'cat'} eq $c } @buts;
 
-            # Show domain creation link
-            if ((      &virtual_server::can_create_master_servers()
-                    || &virtual_server::can_create_sub_servers()
-                )
-                && ( $c eq 'add' )
-                && ( !length $print_virtualmin_link )
-                )
-            {
+            &print_category( $c, \@incat, $incat[0]->{'catname'} );
 
-                &print_category_link(
-                    "virtual-server/domain_form.cgi",
-                    $text{'virtualmin_left_generic'}
-                );
-                $print_virtualmin_link = 1;
+            print '<ul class="sub" style="display: none;" id="'
+                . $c . '">' . "\n";
+            foreach my $l (@incat) {
+
+                # Show domain creation link
+                if ((      &virtual_server::can_create_master_servers()
+                        || &virtual_server::can_create_sub_servers()
+                    )
+                    && ( $c eq 'add' )
+                    && ( !length $print_virtualmin_link )
+                    )
+                {
+
+                    &print_category_link(
+                        "virtual-server/domain_form.cgi",
+                        $text{'virtualmin_left_generic'}
+                    );
+                    $print_virtualmin_link = 1;
+                }
+                $l->{'url'} =~ s/^\/+//;
+                &print_category_link( $l->{'url'}, $l->{'title'} );
+
             }
-            $l->{'url'} =~ s/^\/+//;
-            &print_category_link( $l->{'url'}, $l->{'title'} );
+            print '</ul>' . "\n";
 
         }
-        print '</ul>' . "\n";
-
+    }
+    elsif ( $level == 2 ) {
+        print
+            '<li><a target="page" data-href="/virtual-server/index.cgi" class="navigation_domain_settings_trigger"><i class="fa fa-fw fa-list-alt"></i> <span>'
+            . $text{'virtualmin_left_virtualmin'}
+            . '</span></a></li>' . "\n";
     }
 
     if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} )
@@ -358,6 +366,11 @@ elsif ( $is_virtualmin != -1 ) {
             . $text{'virtualmin_left_virtualmin'}
             . '</span></a></li>' . "\n";
     }
+}
+
+# Reloading theme in case sysinfo was update
+if ( index( $ENV{'REQUEST_URI'}, 'updating' ) != -1 || index( $ENV{'REQUEST_URI'}, 'updating&virtualmin' ) != -1) {
+    $goto = 'body.cgi';
 }
 
 print '</ul>' . "\n";
