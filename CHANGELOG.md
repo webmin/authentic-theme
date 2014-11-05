@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 6.0.1 (Nov 6, 2014)
+* Fixed upcoming bug [:paperclip:](https://github.com/qooob/authentic-theme/issues/26#issuecomment-61886719)
+
 ####Version 6.0.0 (Nov 6, 2014)
 * Fixed `refresh button` being slow on _System Information_ page [:paperclip:](https://github.com/qooob/authentic-theme/issues/24)
 * Fixed _System Information_ being displayed properly based on logged in users' privileges [:paperclip:](https://github.com/qooob/authentic-theme/issues/10)

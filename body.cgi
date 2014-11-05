@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 6.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.0.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -428,11 +428,6 @@ elsif ( $level == 2 ) {
             &print_table_row( $text{'right_quota'},
                 text( 'right_of', nice_size($usage), &nice_size($limit) ),
                 3 );
-            &print_table_row(
-                " ",
-                bar_chart_three( $limit, $usage - $db, $db, $limit - $usage ),
-                3
-            );
         }
         else {
             &print_table_row( $text{'right_quota'}, nice_size($usage), 3 );
@@ -457,8 +452,6 @@ elsif ( $level == 2 ) {
             ),
             3
         );
-        &print_table_row( " ",
-            &bar_chart( $d->{'bw_limit'}, $d->{'bw_usage'}, 1 ), 3 );
     }
 
     print '</table>' . "\n";
