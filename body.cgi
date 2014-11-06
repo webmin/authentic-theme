@@ -1,7 +1,5 @@
-#!/usr/bin/perl
-
 #
-# Authentic Theme 6.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.0.2 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -36,7 +34,7 @@ print '<h3 class="panel-title">'
         : 'system-status'
         )
         . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>'
-    : false
+    : ''
     ) . '</h3>' . "\n";
 
 print '</div>';

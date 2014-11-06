@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 6.0.2 (Nov 6, 2014)
+* Fixed upcoming bug [:paperclip:](https://github.com/qooob/authentic-theme/issues/28)
+
 ####Version 6.0.1 (Nov 6, 2014)
 * Fixed upcoming bug [:paperclip:](https://github.com/qooob/authentic-theme/issues/26#issuecomment-61886719)
 
