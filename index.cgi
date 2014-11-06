@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -367,7 +367,7 @@ elsif ( $is_virtualmin != -1 ) {
 }
 
 # Reloading theme in case sysinfo was update
-if ( index( $ENV{'REQUEST_URI'}, 'updating' ) != -1 || index( $ENV{'REQUEST_URI'}, 'updating&virtualmin' ) != -1) {
+if ( index( $ENV{'REQUEST_URI'}, 'updated' ) != -1 || index( $ENV{'REQUEST_URI'}, 'updated&virtualmin' ) != -1) {
     $goto = 'body.cgi';
 }
 

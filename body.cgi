@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -27,7 +27,7 @@ print '<h3 class="panel-title">'
     . &text('body_header0')
     . (
     ( $level != 2 && $level != 3 )
-    ? '<a href="/?updating" target="_top" data-href="webmin/edit_webmincron.cgi" data-refresh="'
+    ? '<a href="/?updated" target="_top" data-href="webmin/edit_webmincron.cgi" data-refresh="'
         . (
         &foreign_available("package-updates")
         ? 'system-status package-updates'

@@ -5,15 +5,9 @@
 
 ##Changelog
 
-####Version 6.0.1-2 (Nov 6, 2014)
-* Fixed upcoming bug [:paperclip:](https://github.com/qooob/authentic-theme/issues/28)
-* Fixed upcoming bug [:paperclip:](https://github.com/qooob/authentic-theme/issues/26#issuecomment-61886719)
-
-####Version 6.0.0 (Nov 6, 2014)
-* Fixed `refresh button` being slow on _System Information_ page [:paperclip:](https://github.com/qooob/authentic-theme/issues/24)
-* Fixed _System Information_ being displayed properly based on logged in users' privileges [:paperclip:](https://github.com/qooob/authentic-theme/issues/10)
-* Changed the way `refresh button` works on _System Information_ page. No more using `recollect.cgi` or any other server-side scripts.
-* Fixed dozens of small bugs
+####Version 6.1.0 (Nov 6, 2014)
+* Fixed messed up theme automatic update [:paperclip:](https://github.com/qooob/authentic-theme/issues/29)
+* Added option to refresh only system information and not packages, by clicking right mouse button on `refresh button` [:paperclip:](https://github.com/qooob/authentic-theme/issues/29)
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 

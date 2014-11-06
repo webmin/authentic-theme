@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 6.1.0 (Nov 6, 2014)
+* Fixed messed up theme automatic update [:paperclip:](https://github.com/qooob/authentic-theme/issues/29)
+* Added option to refresh only system information and not packages, by clicking right mouse button on `refresh button` [:paperclip:](https://github.com/qooob/authentic-theme/issues/29)
+
 ####Version 6.0.2 (Nov 6, 2014)
 * Fixed upcoming bug [:paperclip:](https://github.com/qooob/authentic-theme/issues/28)
 
