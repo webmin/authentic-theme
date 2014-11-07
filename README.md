@@ -6,7 +6,7 @@
 ##Changelog
 
 ####Version 6.2.0 (Nov 7, 2014)
-* Fixed opening window on user switch mode [:paperclip:](https://github.com/qooob/authentic-theme/issues/31)
+* Fixed opening window issue on `user switch` action [:paperclip:](https://github.com/qooob/authentic-theme/issues/31)
 * Fixed missing icons on `Read Mail` module [:paperclip:](https://github.com/qooob/authentic-theme/issues/33)
 * Added _Italian_, _French_, _Spanish_ translations [:paperclip:](https://github.com/qooob/authentic-theme/issues/26)
 
