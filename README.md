@@ -5,9 +5,10 @@
 
 ##Changelog
 
-####Version 6.1.0 (Nov 6, 2014)
-* Fixed messed up theme automatic update [:paperclip:](https://github.com/qooob/authentic-theme/issues/29)
-* Added option to refresh only system information and not packages, by clicking right mouse button on `refresh button` [:paperclip:](https://github.com/qooob/authentic-theme/issues/29)
+####Version 6.2.0 (Nov 7, 2014)
+* Fixed opening window on user switch mode [:paperclip:](https://github.com/qooob/authentic-theme/issues/31)
+* Fixed missing icons on `Read Mail` module [:paperclip:](https://github.com/qooob/authentic-theme/issues/33)
+* Added _Italian_, _French_, _Spanish_ translations [:paperclip:](https://github.com/qooob/authentic-theme/issues/26)
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 

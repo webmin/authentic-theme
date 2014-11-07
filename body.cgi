@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -27,12 +27,8 @@ print '<h3 class="panel-title">'
     . &text('body_header0')
     . (
     ( $level != 2 && $level != 3 )
-    ? '<a href="/?updated" target="_top" data-href="webmin/edit_webmincron.cgi" data-refresh="'
-        . (
-        &foreign_available("package-updates")
-        ? 'system-status package-updates'
-        : 'system-status'
-        )
+    ? '<a href="/?updated" target="_top" data-href="/webmin/edit_webmincron.cgi" data-refresh="system-status" data-refresh-title="'
+        . &text('body_refresh_title')
         . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>'
     : ''
     ) . '</h3>' . "\n";
@@ -296,8 +292,12 @@ if ( $level == 0 ) {
             $msg = $text{'body_upok'};
         }
         if ( &foreign_available("package-updates") ) {
-            $msg = '<a href="package-updates/index.cgi?mode=updates">'
-                . $msg . '</a>';
+            $msg
+                = '<a href="package-updates/index.cgi?mode=updates">'
+                . $msg
+                . '</a> <a href="/?updated" target="_top" data-href="/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" data-refresh-title="'
+                . &text('body_refresh_title')
+                . '" class="btn btn-primary btn-xs" style="margin-left:4px;color: white;padding:0 12px; height:19px;font-size:11px"><i class="fa fa-refresh"></i></a>';
         }
         &print_table_row( $text{'body_updates'}, $msg );
     }

@@ -194,6 +194,8 @@ body_usermin=Wersja Usermina
 body_out=$1&nbsp;z&nbsp;$2
 body_uquota=Limity i użycie dysku
 
+body_refresh_title=Strona wymaga odświeżania. Kliknij pierwszy odśwież stronę
+
 login_danger=Niebezpieczeństwo!
 login_warning=Ostrzeżenie!
 login_success=Sukces!

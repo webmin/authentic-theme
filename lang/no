@@ -194,6 +194,8 @@ body_usermin=Usermin versjon
 body_out=$1 of $2
 body_uquota=Diskkvote og bruk
 
+body_refresh_title=Page refresh nødvendig. Klikk for å oppdatere siden først
+
 login_danger=Feil!
 login_warning=Advarsel!
 login_success=Vellykket!

@@ -134,6 +134,8 @@ body_usermin=Usermin Version
 body_out=$1&nbsp;von&nbsp;$2
 body_uquota=HDD-Kontigente und Nutzung
 
+body_refresh_title=Aktualisierung der Seite erforderlich. Klicken Sie, um die Seite zu aktualisieren ersten
+
 login_danger=Gefahr!
 login_warning=Warnung!
 login_success=Erfolgreich!

@@ -194,6 +194,8 @@ body_usermin=Usermin Version
 body_out=$1&nbsp;of&nbsp;$2
 body_uquota=Disk quota and usage
 
+body_refresh_title=Page refresh required. Click to refresh the page first
+
 login_danger=Danger!
 login_warning=Warning!
 login_success=Success!
