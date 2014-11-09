@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -140,7 +140,7 @@ elsif ( $in{'timed_out'} ) {
     print &text( 'session_timed_out', int( $in{'timed_out'} / 60 ) ) . "\n";
     print '</div>' . "\n";
 }
-print '<form method="post" action="'
+print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
     . '/session_login.cgi" class="form-signin clearfix" role="form">' . "\n";
 print '<h2 class="form-signin-heading"><i class="fa fa-cogs"></i> '
@@ -152,7 +152,7 @@ if ( $gconfig{'realname'} ) {
     $host = &get_display_hostname();
 }
 else {
-    $host = $ENV{'HTTP_HOST'};
+    $host = $ENV{'SERVER_NAME'};
     $host =~ s/:\d+//g;
     $host = &html_escape($host);
 }

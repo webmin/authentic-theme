@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 6.2.1 (Nov 9, 2014)
+* Fixed opening Webmin/Usermin at the right frame, when session is expired [:paperclip:](https://github.com/qooob/authentic-theme/issues/35)
+* Fixed showing real hostname, in case of using Proxy [:paperclip:](https://github.com/qooob/authentic-theme/issues/34)
+* Fixed _Read User Mail_ module, showing a stuck spinner when performing mail download
+
 ####Version 6.2.0 (Nov 7, 2014)
 * Fixed opening window issue on `user switch` action [:paperclip:](https://github.com/qooob/authentic-theme/issues/31)
 * Fixed missing icons on `Read Mail` module [:paperclip:](https://github.com/qooob/authentic-theme/issues/33)
