@@ -3,7 +3,7 @@
 ####Version 6.2.2 (Nov 9, 2014)
 * Updated to _CodeMirror_ v4.7.0
 * Improved page loader
-* Fixed/added missing icons on `Read Mail` module
+* Fixed/added missing icons on _Read Mail_ module
 * Fixed stuck spinner when printing mail on _Read Mail_ module
 * Fixed minor UI bugs
 
