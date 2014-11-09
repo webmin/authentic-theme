@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.2 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -378,7 +378,7 @@ print
     '<div class="loader-container" style="background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5); position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index:5; display: none;">'
     . "\n";
 print
-    '<div class="loader"><i class="fa fa-spin fa-lg fa-3x fa-circle-o-notch"></i></div>'
+    '<div class="loader"><img src="images/loader.gif"></div>'
     . "\n";
 print '</div>' . "\n";
 print '<iframe name="page" id="iframe" src="' . $goto . '">' . "\n";

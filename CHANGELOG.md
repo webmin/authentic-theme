@@ -1,5 +1,12 @@
 ##Changelog
 
+####Version 6.2.2 (Nov 9, 2014)
+* Updated to _CodeMirror_ v4.7.0
+* Improved page loader
+* Fixed/added missing icons on `Read Mail` module
+* Fixed stuck spinner when printing mail on _Read Mail_ module
+* Fixed minor UI bugs
+
 ####Version 6.2.1 (Nov 9, 2014)
 * Fixed opening Webmin/Usermin at the right frame, when session is expired [:paperclip:](https://github.com/qooob/authentic-theme/issues/35)
 * Fixed _Read User Mail_ module, showing a stuck spinner when performing mail download
