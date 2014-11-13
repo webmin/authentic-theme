@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.3 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -148,7 +148,7 @@ if ( &foreign_available("webmin") ) {
 }
 print '</ul>' . "\n";
 
-print '<div class="navbar-right">' . "\n";
+print '<div class="navbar-right" style="margin-right:0">' . "\n";
 $user = $remote_user;
 if ( &foreign_available("net") ) {
     $user

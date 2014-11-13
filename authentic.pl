@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.3 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -48,6 +48,9 @@ sub theme_header {
         "\n";
     print
         '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        "\n";
+    print
+        '<script src="/unauthenticated/js/fileinput.min.js" type="text/javascript"></script>',
         "\n";
     print
         '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
@@ -200,6 +203,9 @@ sub theme_popup_prehead {
             "\n";
         print
             '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+            "\n";
+        print
+            '<script src="/unauthenticated/js/fileinput.min.js" type="text/javascript"></script>',
             "\n";
         print
             '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',

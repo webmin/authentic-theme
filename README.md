@@ -5,12 +5,10 @@
 
 ##Changelog
 
-####Version 6.2.2 (Nov 9, 2014)
-* Updated to _CodeMirror_ v4.7.0
-* Improved page loader
+####Version 6.2.3 (Nov 13, 2014)
+* Updated to the latest _Bootstrap_ v3.3.1
+* Fixed paginations misplacement and size on _Read Mail_ module
 * Fixed/added missing icons on _Read Mail_ module
-* Fixed stuck spinner when printing mail on _Read Mail_ module
-* Fixed minor UI bugs
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
