@@ -7,7 +7,7 @@
 
 ####Version 6.2.3 (Nov 13, 2014)
 * Updated to the latest _Bootstrap_ v3.3.1
-* Fixed paginations misplacement and size on _Read Mail_ module
+* Fixed paginations misplacement and size on _Read Mail_ module [:paperclip:](https://github.com/qooob/authentic-theme/issues/37)
 * Fixed/added missing icons on _Read Mail_ module
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
