@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.4 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -17,7 +17,7 @@ else {
 $goto
     = $minfo      ? "$minfo->{'dir'}/"
     : $in{'page'} ? ""
-    :               "body.cgi";
+    :               "/body.cgi";
 
 if ($minfo) {
     $cat = "?$minfo->{'category'}=1";
@@ -115,14 +115,17 @@ print '</div>' . "\n";
 print '<div class="collapse navbar-collapse" id="collapse">' . "\n";
 print '<ul class="nav navbar-nav visible-xs">' . "\n";
 print
-    '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="menu.cgi?virtualmin='
+    '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="'
+    . $gconfig{'webprefix'}
+    . '/menu.cgi?virtualmin='
     . $is_virtualmin
     . '"><i class="fa fa-tags"></i> '
     . $text{'left_main'}
     . '</a></li>' . "\n";
 
-print
-    '<li><a target="page" data-href="body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-info"></i> '
+print '<li><a target="page" data-href="'
+    . $gconfig{'webprefix'}
+    . '/body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-info"></i> '
     . $text{'left_home'}
     . '</a></li>' . "\n";
 %gaccess = &get_module_acl( undef, "" );
@@ -136,13 +139,16 @@ if (   &get_product_name() eq 'webmin'
     && $gconfig{'feedback'} )
 {
     print
-        '<li><a data-toggle="collapse" data-target="#collapse" target="page" data-href="feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-envelope"></i> '
+        '<li><a data-toggle="collapse" data-target="#collapse" target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-envelope"></i> '
         . $text{'left_feedback'}
         . '</a></li>' . "\n";
 }
 if ( &foreign_available("webmin") ) {
-    print
-        '<li><a target="page" data-href="webmin/refresh_modules.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_refresh_modules_trigger"><i class="fa fa-refresh"></i> '
+    print '<li><a target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/webmin/refresh_modules.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_refresh_modules_trigger"><i class="fa fa-refresh"></i> '
         . $text{'left_refresh_modules'}
         . '</a></li>' . "\n";
 }
@@ -152,7 +158,9 @@ print '<div class="navbar-right" style="margin-right:0">' . "\n";
 $user = $remote_user;
 if ( &foreign_available("net") ) {
     $user
-        = '<a data-toggle="collapse" data-target="#collapse" target="page" href="acl/edit_user.cgi?user='
+        = '<a data-toggle="collapse" data-target="#collapse" target="page" href="'
+        . $gconfig{'webprefix'}
+        . '/acl/edit_user.cgi?user='
         . $user . '">'
         . $user . '</a>';
 }
@@ -168,13 +176,15 @@ if (   $miniserv{'logout'}
     && $ENV{'HTTP_USER_AGENT'} !~ /webmin/i )
 {
     if ($main::session_id) {
-        print
-            '<a href="session_login.cgi?logout=1" class="btn btn-danger navbar-btn pull-right"><i class="fa fa-sign-out"></i> '
+        print '<a href="'
+            . $gconfig{'webprefix'}
+            . '/session_login.cgi?logout=1" class="btn btn-danger navbar-btn pull-right"><i class="fa fa-sign-out"></i> '
             . $text{'main_logout'} . '</a>' . "\n";
     }
     else {
-        print
-            '<a href="switch_user.cgi" class="btn btn-danger navbar-btn pull-right">'
+        print '<a href="'
+            . $gconfig{'webprefix'}
+            . '/switch_user.cgi" class="btn btn-danger navbar-btn pull-right">'
             . $text{'main_switch'} . '</a>' . "\n";
     }
 }
@@ -247,8 +257,9 @@ if ( $is_virtualmin == -1 ) {
         print '</form>' . "\n";
     }
     print '<ul class="navigation">' . "\n";
-    print
-        '<li><a target="page" data-href="/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+    print '<li><a target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
     if (   &get_product_name() eq 'webmin'
@@ -260,14 +271,16 @@ if ( $is_virtualmin == -1 ) {
         && !$ENV{'ANONYMOUS_USER'}
         && $gconfig{'feedback'} )
     {
-        print
-            '<li><a target="page" data-href="/feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-fw fa-envelope"></i> <span>'
+        print '<li><a target="page" data-href="'
+            . $gconfig{'webprefix'}
+            . '/feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-fw fa-envelope"></i> <span>'
             . $text{'left_feedback'}
             . '</span></a></li>' . "\n";
     }
     if ( &foreign_available("webmin") ) {
-        print
-            '<li><a target="page" data-href="/webmin/refresh_modules.cgi" class="navigation_refresh_modules_trigger"><i class="fa fa-fw fa-refresh"></i> <span>'
+        print '<li><a target="page" data-href="'
+            . $gconfig{'webprefix'}
+            . '/webmin/refresh_modules.cgi" class="navigation_refresh_modules_trigger"><i class="fa fa-fw fa-refresh"></i> <span>'
             . $text{'left_refresh_modules'}
             . '</span></a></li>' . "\n";
     }
@@ -276,7 +289,7 @@ if ( $is_virtualmin == -1 ) {
 elsif ( $is_virtualmin != -1 ) {
 
     &foreign_require( "virtual-server", "virtual-server-lib.pl" );
-    $goto = 'virtual-server/index.cgi';
+    $goto = '/virtual-server/index.cgi';
 
     $level
         = &virtual_server::master_admin()   ? 0
@@ -319,8 +332,9 @@ elsif ( $is_virtualmin != -1 ) {
         }
     }
     elsif ( $level == 2 ) {
-        print
-            '<li><a target="page" data-href="/virtual-server/index.cgi" class="navigation_domain_settings_trigger"><i class="fa fa-fw fa-list-alt"></i> <span>'
+        print '<li><a target="page" data-href="'
+            . $gconfig{'webprefix'}
+            . '/virtual-server/index.cgi" class="navigation_domain_settings_trigger"><i class="fa fa-fw fa-list-alt"></i> <span>'
             . $text{'virtualmin_left_virtualmin'}
             . '</span></a></li>' . "\n";
     }
@@ -353,22 +367,26 @@ elsif ( $is_virtualmin != -1 ) {
         print '</div>' . "\n";
         print '</form>' . "\n";
     }
-    print
-        '<li><a target="page" data-href="/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+    print '<li><a target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
 
     if ( &foreign_available("webmin") ) {
-        print
-            '<li><a href="virtual-server/index.cgi" target="page"><i class="fa fa-fw fa-tasks"></i> <span>'
+        print '<li><a href="'
+            . $gconfig{'webprefix'}
+            . '/virtual-server/index.cgi" target="page"><i class="fa fa-fw fa-tasks"></i> <span>'
             . $text{'virtualmin_left_virtualmin'}
             . '</span></a></li>' . "\n";
     }
 }
 
 # Reloading theme in case sysinfo was update
-if ( index( $ENV{'REQUEST_URI'}, 'updated' ) != -1 || index( $ENV{'REQUEST_URI'}, 'updated&virtualmin' ) != -1) {
-    $goto = 'body.cgi';
+if (   index( $ENV{'REQUEST_URI'}, 'updated' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'updated&virtualmin' ) != -1 )
+{
+    $goto = '/body.cgi';
 }
 
 print '</ul>' . "\n";
@@ -377,11 +395,13 @@ print '<div id="content" class="menu">' . "\n";
 print
     '<div class="loader-container" style="background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5); position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index:5; display: none;">'
     . "\n";
-print
-    '<div class="loader"><img src="images/loader.gif"></div>'
-    . "\n";
+print '<div class="loader"><img src="'
+    . $gconfig{'webprefix'}
+    . '/images/loader.gif"></div>' . "\n";
 print '</div>' . "\n";
-print '<iframe name="page" id="iframe" src="' . $goto . '">' . "\n";
+print '<iframe name="page" id="iframe" src="'
+    . $gconfig{'webprefix'}
+    . $goto . '">' . "\n";
 print '</iframe>' . "\n";
 print '</div>' . "\n";
 print '</div>' . "\n";

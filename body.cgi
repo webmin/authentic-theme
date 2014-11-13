@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.4 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -27,7 +27,7 @@ print '<h3 class="panel-title">'
     . &text('body_header0')
     . (
     ( $level != 2 && $level != 3 )
-    ? '<a href="/?updated" target="_top" data-href="/webmin/edit_webmincron.cgi" data-refresh="system-status" data-refresh-title="'
+    ? '<a href="/?updated" target="_top" data-href="' . $gconfig{'webprefix'} . '/webmin/edit_webmincron.cgi" data-refresh="system-status" data-refresh-title="'
         . &text('body_refresh_title')
         . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>'
     : ''
@@ -85,7 +85,7 @@ if ( $level == 0 ) {
     $ip = " ($ip)" if ($ip);
     $host = &get_system_hostname() . $ip;
     if ( &foreign_available("net") ) {
-        $host = '<a href="net/list_dns.cgi">' . $host . '</a>';
+        $host = '<a href="' . $gconfig{'webprefix'} . '/net/list_dns.cgi">' . $host . '</a>';
     }
     &print_table_row( &text('body_host'), $host );
 
@@ -135,7 +135,7 @@ if ( $level == 0 ) {
             . $text{'theme_update_available'} . ' '
             . $remote_version
             . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
-            . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 8px; height:21px" href="webmin/edit_themes.cgi">'
+            . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 8px; height:21px" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi">'
             . $text{'theme_update'} . '</a>'
             . '<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md">'
             . $text{'theme_changelog'} . '</a>'
@@ -148,7 +148,7 @@ if ( $level == 0 ) {
     #System Time
     $tm = localtime( time() );
     if ( &foreign_available("time") ) {
-        $tm = '<a href=time/>' . $tm . '</a>';
+        $tm = '<a href=' . $gconfig{'webprefix'} . '/time/>' . $tm . '</a>';
     }
     &print_table_row( &text('body_time'), $tm );
 
@@ -224,7 +224,7 @@ if ( $level == 0 ) {
     }
     if ($uptime) {
         if ( &foreign_available("init") ) {
-            $uptime = '<a href=init/>' . $uptime . '</a>';
+            $uptime = '<a href=' . $gconfig{'webprefix'} . '/init/>' . $uptime . '</a>';
         }
         &print_table_row( $text{'body_uptime'}, $uptime );
     }
@@ -234,7 +234,7 @@ if ( $level == 0 ) {
         @procs = &proc::list_processes();
         $pr    = scalar(@procs);
         if ( &foreign_available("proc") ) {
-            $pr = '<a href=proc/>' . $pr . '</a>';
+            $pr = '<a href=' . $gconfig{'webprefix'} . '/proc/>' . $pr . '</a>';
         }
         &print_table_row( $text{'body_procs'}, $pr );
     }
@@ -293,9 +293,9 @@ if ( $level == 0 ) {
         }
         if ( &foreign_available("package-updates") ) {
             $msg
-                = '<a href="package-updates/index.cgi?mode=updates">'
+                = '<a href="' . $gconfig{'webprefix'} . '/package-updates/index.cgi?mode=updates">'
                 . $msg
-                . '</a> <a href="/?updated" target="_top" data-href="/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" data-refresh-title="'
+                . '</a> <a href="/?updated" target="_top" data-href="' . $gconfig{'webprefix'} . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" data-refresh-title="'
                 . &text('body_refresh_title')
                 . '" class="btn btn-primary btn-xs" style="margin-left:4px;color: white;padding:0 12px; height:19px;font-size:11px"><i class="fa fa-refresh"></i></a>';
         }
@@ -515,7 +515,7 @@ elsif ( $level == 3 ) {
     #System Time
     $tm = localtime( time() );
     if ( &foreign_available("time") ) {
-        $tm = '<a href=time/>' . $tm . '</a>';
+        $tm = '<a href=' . $gconfig{'webprefix'} . '/time/>' . $tm . '</a>';
     }
     &print_table_row( &text('body_time'), $tm );
 

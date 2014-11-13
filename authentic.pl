@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.4 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -10,59 +10,76 @@ sub theme_header {
     print '<head>',                 "\n";
     print '<title>',                $_[0], '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
-    print '<link rel="shortcut icon" href="/favicon-'
+    print '<link rel="shortcut icon" href="'
+        . $gconfig{'webprefix'}
+        . '/favicon-'
         . &get_product_name()
         . '.ico">' . "\n";
     print
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
         . "\n";
-    print
-        '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<link href="/unauthenticated/css/codemirror.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/codemirror.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<link href="/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<link href="/unauthenticated/css/jquery.datatables.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/jquery.datatables.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<link href="/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<link href="/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
         "\n";
-    print
-        '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/fileinput.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/fileinput.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/jquery.datatables.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/jquery.datatables.min.js" type="text/javascript"></script>',
         "\n";
-    print
-        '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/default.min.js" type="text/javascript"></script>',
         "\n";
     print '</head>', "\n";
-    print '<body>',  "\n";
+    print '<body data-webprefix="' . $gconfig{'webprefix'} . '">', "\n";
 
     if ( @_ > 1 ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
@@ -168,53 +185,67 @@ sub theme_header {
 sub theme_popup_prehead {
     if ( index( $ENV{'REQUEST_URI'}, 'help.cgi' ) != 1 ) {
         print '<meta charset="utf-8">', "\n";
-        print '<link rel="shortcut icon" href="/favicon-'
+        print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/favicon-'
             . &get_product_name()
             . '.ico">' . "\n";
         print
             '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
             . "\n";
-        print
-            '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
             "\n";
-        print
-            '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
             "\n";
-        print
-            '<link href="/unauthenticated/css/codemirror.min.css" rel="stylesheet" type="text/css">',
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/codemirror.min.css" rel="stylesheet" type="text/css">',
             "\n";
-        print
-            '<link href="/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/jquery.scrollbar.min.css" rel="stylesheet" type="text/css">',
             "\n";
-        print
-            '<link href="/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/progress-circle.min.css" rel="stylesheet" type="text/css">',
             "\n";
-        print
-            '<link href="/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
             "\n";
-        print
-            '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/jquery.ui.effects.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/fileinput.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/fileinput.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/default.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/default.min.js" type="text/javascript"></script>',
             "\n";
-        print
-            '<script src="/unauthenticated/js/filtermatch.min.js" type="text/javascript"></script>',
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/filtermatch.min.js" type="text/javascript"></script>',
             "\n";
     }
 }

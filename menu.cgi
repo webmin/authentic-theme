@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.3 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.2.4 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -180,7 +180,7 @@ sub print_category {
         print
             '<div class="menu-col" style="background-color: #5885d6; border-radius: 4px; margin: 0 auto 30px; width: 130px; height: 150px;">'
             . "\n";
-        print '<a class="menu-link" href="menu.cgi?category='
+        print '<a class="menu-link" href="' . $gconfig{'webprefix'} . '/menu.cgi?category='
             . $c
             . '&virtualmin='
             . $virtualmin . '"">' . "\n";

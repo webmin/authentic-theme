@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 6.2.4 (Nov 14, 2014)
+* Fixed history state toggle for `System Information` [:paperclip:](https://github.com/qooob/authentic-theme/issues/39)
+* Added `webprefix` to the file paths [:paperclip:](https://github.com/qooob/authentic-theme/issues/38)
+
 ####Version 6.2.3 (Nov 13, 2014)
 * Updated to the latest _Bootstrap_ v3.3.1
 * Fixed paginations misplacement and size on _Read Mail_ module [:paperclip:](https://github.com/qooob/authentic-theme/issues/37)
