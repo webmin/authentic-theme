@@ -5,9 +5,10 @@
 
 ##Changelog
 
-####Version 6.2.4 (Nov 14, 2014)
-* Fixed history state toggle for `System Information` [:paperclip:](https://github.com/qooob/authentic-theme/issues/39)
-* Added `webprefix` to the file paths [:paperclip:](https://github.com/qooob/authentic-theme/issues/38)
+####Version 6.3.0 (Nov 15, 2014)
+* Added `quick access menu` for _Webmin/Usermin/Virtualmin_. It makes things easy accessible. Menu depends on the _module/user_ permissions
+* Added display of `Virtualmin` version to the `System Information`
+* Fixed minor UI bugs
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.2.4 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.3.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -25,9 +25,11 @@ if ($minfo) {
 if ( $in{'page'} ) {
     $goto .= "/" . $in{'page'};
 }
-%text          = &load_language($current_theme);
-%gaccess       = &get_module_acl( undef, "" );
-$title         = &get_html_framed_title();
+%text    = &load_language($current_theme);
+%gaccess = &get_module_acl( undef, "" );
+$title   = &get_html_framed_title();
+
+# Detecting Virtualmin availability
 $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
 
 # In case Virtualmin is installed, after logging in, redirect to Virtualmin
@@ -82,7 +84,7 @@ if ( &foreign_available("virtual-server") ) {
     else {
         print 'Virtualmin';
     }
-    print '<span class="caret"></span></a>
+    print '<span class="caret" style="margin-left:6px;"></span></a>
               <ul class="dropdown-menu" role="button" aria-labelledby="product-menu">';
     if ( $is_virtualmin == -1 ) {
         print
@@ -154,7 +156,310 @@ if ( &foreign_available("webmin") ) {
 }
 print '</ul>' . "\n";
 
+# Quick access menu. Start.
+# Implementing procedural, bulky build of quick access menu.
+# It's just quick and first attempt to make
+# the things work. Abstraction will be done later.
+if (   &foreign_available("change-user")
+    || &foreign_available("webmin")
+    || &foreign_available("webminlog")
+    || &foreign_available("cron")
+    || &foreign_available("shell")
+    || &foreign_available("csf")
+    || &foreign_available("firewall")
+    || &foreign_available("useradmin")
+    || &foreign_available("package-updates")
+    || &foreign_available("updown")
+    || &foreign_available("man")
+    || &foreign_available("csf")
+    || &foreign_available("package-updates") )
+{
+
+    print
+        '<div class="dropdown pull-left hidden-xs" style="margin:16px 2px 0 16px;">
+          <a href="#" type="button" data-toggle="dropdown" role="button" aria-expanded="false" style="color:#777"><i class="fa fa-lg fa-bars"></i><span class="caret" style="margin-left:8px;"></span></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">';
+
+    if ( &foreign_available("change-user") ) {
+        my %minfo = &get_module_info( 'change-user', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/change-user" target="page" data-loader="true" style="color:#666; padding-left:8px"><i class="fa fa-language" style="margin-right:11px"></i><i class="fa fa-picture-o" style="left:16px; top:18px; position:absolute; font-size:80%"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("language")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'language', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/language" target="page" data-loader="true" style="color:#666; padding-left:9px"><i class="fa fa-language" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("theme")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'theme', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/theme" target="page" data-loader="true" style="color:#666; padding-left:6px"><i class="fa fa-picture-o" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("changepass")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'changepass', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/changepass" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-key" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("mailbox")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'mailbox', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/mailbox" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-envelope-o" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("fetchmail")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'fetchmail', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/fetchmail" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-cloud-download" style="margin-right:10px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("filter")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'filter', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/filter" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-filter" style="margin-right:14px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("procmail")
+        && &get_product_name() eq "usermin" )
+    {
+        my %minfo = &get_module_info( 'procmail', 0, 1 );
+
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/procmail" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-flag" style="margin-right:12px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if (  !&foreign_available("change-user")
+        && &foreign_available("webmin") )
+    {
+        my %minfo = &load_language('webmin');
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/webmin/edit_lang.cgi" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-language" style="margin-right:11px"></i>'
+            . $minfo{'lang_ok'} . '</a>
+                </li>';
+
+        $minfo{'themes_tabchange'} =~ s/\b(\w)/\U$1/g;
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/webmin/edit_themes.cgi" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-picture-o" style="margin-right:8px"></i>'
+            . $minfo{'themes_tabchange'} . '</a>
+                </li>';
+    }
+
+    if ( &foreign_available("webmin") && $is_virtualmin == -1 ) {
+        my %minfo = &load_language('webmin');
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/webmin" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-wrench" style="margin-right:10px"></i>'
+            . $minfo{'index_title'} . '</a>
+                </li>';
+    }
+    elsif ( $is_virtualmin != -1 ) {
+        &foreign_require( "virtual-server", "virtual-server-lib.pl" );
+        if ( &virtual_server::master_admin() ) {
+            my %minfo = &load_language('virtual-server');
+            print '<li>
+                   <a href="'
+                . $gconfig{'webprefix'}
+                . '/config.cgi?virtual-server" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-wrench" style="margin-right:10px"></i>'
+                . $minfo{'index_virtualminconfig'} . '</a>
+                </li>';
+        }
+    }
+    if ( &foreign_available("virtual-server") ) {
+        &foreign_require( "virtual-server", "virtual-server-lib.pl" );
+        $level
+            = &virtual_server::master_admin()   ? 0
+            : &virtual_server::reseller_admin() ? 1
+            :                                     2;
+
+        if ( &foreign_available("passwd") && $level == 2 ) {
+            my %minfo = &load_language('passwd');
+
+            print '<li>
+                   <a href="'
+                . $gconfig{'webprefix'}
+                . '/passwd" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-key" style="margin-right:11px"></i>'
+                . $minfo{'passwd_title'} . '</a>
+                </li>';
+        }
+        if ( &foreign_available("proc") && $level == 2 ) {
+            my %minfo = &load_language('proc');
+
+            print '<li>
+                   <a href="'
+                . $gconfig{'webprefix'}
+                . '/proc" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-cubes" style="margin-right:8px"></i>'
+                . $minfo{'index_title'} . '</a>
+                </li>';
+        }
+        if ( &foreign_available("syslog") && $level == 2 ) {
+            my %minfo = &load_language('syslog');
+
+            print '<li>
+                   <a href="'
+                . $gconfig{'webprefix'}
+                . '/syslog" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-files-o" style="margin-right:11px"></i>'
+                . $minfo{'index_title'} . '</a>
+                </li>';
+        }
+    }
+    if ( &foreign_available("webminlog") ) {
+        my %minfo = &get_module_info( 'webminlog', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/webminlog" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-file-text" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+
+    if ( &foreign_available("cron") ) {
+        my %minfo = &get_module_info( 'cron', 0, 1 );
+        print '
+                <li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/cron" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-clock-o" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if ( &foreign_available("shell") ) {
+        my %minfo = &get_module_info( 'shell', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/shell" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-terminal" style="margin-right:9px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if ( &foreign_available("tunnel") ) {
+        my %minfo = &get_module_info( 'tunnel', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/tunnel" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-external-link" style="margin-right:9px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if ( &foreign_available("csf") ) {
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/csf" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-fire" style="margin-right:11px"></i>ConfigServer Security & Firewall</a>
+                </li>';
+    }
+    elsif ( &foreign_available("firewall") ) {
+        my %minfo = &get_module_info( 'firewall', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/firewall" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-fire" style="margin-right:11px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if ( &foreign_available("useradmin") ) {
+        my %minfo = &get_module_info( 'useradmin', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/useradmin" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-users" style="margin-right:8px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+
+    }
+    if ( &foreign_available("package-updates") ) {
+        my %minfo = &get_module_info( 'package-updates', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/package-updates" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-cube" style="margin-right:9px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+
+    if ( &foreign_available("updown") ) {
+        my %minfo = &get_module_info( 'updown', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/updown" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-download" style="margin-right:9px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+    if ( &foreign_available("man") ) {
+        my %minfo = &get_module_info( 'man', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/man" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-book" style="margin-right:10px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
+
+    print '</ul>
+        </div>';
+}
+
+# Quick access menu. End.
+
 print '<div class="navbar-right" style="margin-right:0">' . "\n";
+
 $user = $remote_user;
 if ( &foreign_available("net") ) {
     $user
@@ -175,6 +480,7 @@ if (   $miniserv{'logout'}
     && !$ENV{'LOCAL_USER'}
     && $ENV{'HTTP_USER_AGENT'} !~ /webmin/i )
 {
+
     if ($main::session_id) {
         print '<a href="'
             . $gconfig{'webprefix'}
