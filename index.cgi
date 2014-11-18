@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.3.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.4.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -162,23 +162,37 @@ print '</ul>' . "\n";
 # the things work. Abstraction will be done later.
 if (   &foreign_available("change-user")
     || &foreign_available("webmin")
+
+    || ( &foreign_available("language") && &get_product_name() eq "usermin" )
+    || ( &foreign_available("theme")    && &get_product_name() eq "usermin" )
+    || (   &foreign_available("changepass")
+        && &get_product_name() eq "usermin" )
+    || ( &foreign_available("mailbox")   && &get_product_name() eq "usermin" )
+    || ( &foreign_available("filter")    && &get_product_name() eq "usermin" )
+    || ( &foreign_available("procmail")  && &get_product_name() eq "usermin" )
+    || ( &foreign_available("fetchmail") && &get_product_name() eq "usermin" )
+
+    || ( &foreign_available("passwd") && $level == 2 )
+    || ( &foreign_available("proc")   && $level == 2 )
+    || ( &foreign_available("syslog") && $level == 2 )
+
     || &foreign_available("webminlog")
     || &foreign_available("cron")
     || &foreign_available("shell")
+    || &foreign_available("tunnel")
     || &foreign_available("csf")
     || &foreign_available("firewall")
     || &foreign_available("useradmin")
     || &foreign_available("package-updates")
     || &foreign_available("updown")
     || &foreign_available("man")
-    || &foreign_available("csf")
-    || &foreign_available("package-updates") )
+    )
 {
 
     print
         '<div class="dropdown pull-left hidden-xs" style="margin:16px 2px 0 16px;">
-          <a href="#" type="button" data-toggle="dropdown" role="button" aria-expanded="false" style="color:#777"><i class="fa fa-lg fa-bars"></i><span class="caret" style="margin-left:8px;"></span></a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">';
+          <a href="#" type="button" data-toggle="dropdown" data-hover="true" role="button" aria-expanded="false" style="color:#888"><i class="fa fa-lg fa-bars"></i><span class="caret" style="margin-left:8px;"></span></a>
+          <ul class="dropdown-menu" role="menu">';
 
     if ( &foreign_available("change-user") ) {
         my %minfo = &get_module_info( 'change-user', 0, 1 );
@@ -354,7 +368,7 @@ if (   &foreign_available("change-user")
             print '<li>
                    <a href="'
                 . $gconfig{'webprefix'}
-                . '/syslog" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-files-o" style="margin-right:11px"></i>'
+                . '/syslog" target="page" data-loader="true" style="color:#666; padding-left:7px"><i class="fa fa-files-o" style="margin-right:12px"></i>'
                 . $minfo{'index_title'} . '</a>
                 </li>';
         }
@@ -457,6 +471,14 @@ if (   &foreign_available("change-user")
 }
 
 # Quick access menu. End.
+
+#Refresh button. Start
+print '<a href="'
+    . $gconfig{'webprefix'}
+    . '/" target="_top" class="hidden-xs" data-refresh="true" data-hover="true" style="color:#888;"><i class="fa fa-lg fa-refresh" style="margin-top:21px; margin-left:10px;"></i>'
+    . $minfo{'desc'} . '</a>';
+
+#Refresh button. End
 
 print '<div class="navbar-right" style="margin-right:0">' . "\n";
 

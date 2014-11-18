@@ -1,14 +1,14 @@
 #Authentic
 **Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin](https://www.virtualmin.com/) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
 
-**Authentic** is fully compatible with latest Webmin 1.710+, Usermin 1.620+ and Virtualmin 4.11+.
+**Authentic** is fully compatible with latest Webmin 1.710+, Usermin 1.620+ and Virtualmin 4.12+.
 
 ##Changelog
 
-####Version 6.3.0 (Nov 15, 2014)
-* Added `quick access menu` for _Webmin/Usermin/Virtualmin_. It makes things easy accessible. Menu depends on the _module/user_ permissions
-* Added display of `Virtualmin` version to the `System Information`
-* Fixed minor UI bugs
+####Version 6.4.0 (Nov 18, 2014)
+* Added `refresh button` to refresh the page. _Attention!_ `Left click` will refresh the right frame, while `right click` will refresh the whole page
+* Added `quick access menu` and `refresh button` hover effect
+* Fixed missing `font-family: monospace;` on all `pre` tags
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 

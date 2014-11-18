@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 6.4.0 (Nov 18, 2014)
+* Added `refresh button` to refresh the page. _Attention!_ `Left click` will refresh the right frame, while `right click` will refresh the whole page
+* Added `quick access menu` and `refresh button` hover effect
+* Fixed missing `font-family: monospace;` on all `pre` tags
+
 ####Version 6.3.0 (Nov 15, 2014)
 * Added `quick access menu` for _Webmin/Usermin/Virtualmin_. It makes things easy accessible. Menu depends on the _module/user_ permissions
 * Added display of `Virtualmin` version to the `System Information`
