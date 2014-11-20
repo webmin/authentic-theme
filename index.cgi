@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.4.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.5.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -57,7 +57,7 @@ print '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">'
     . "\n";
 print '<div class="navbar-header">' . "\n";
 print
-    '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">'
+    '<button type="button" class="navbar-toggle visible-xs" data-toggle="collapse" data-target="#collapse">'
     . "\n";
 print '<span class="sr-only">Toggle navigation</span>' . "\n";
 print '<span class="icon-bar"></span>' . "\n";
@@ -96,65 +96,32 @@ if ( &foreign_available("virtual-server") ) {
     }
     print '</ul>
             </li>
-          </ul><span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop"></i></small>&nbsp;&nbsp;'
-        . &get_display_hostname() . '</span>';
+          </ul><span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop"></i></small>&nbsp;&nbsp;<a class="data-refresh" href="/'
+        . ( $is_virtualmin != -1 && "?virtualmin" )
+        . '" style="color:#777">'
+        . &get_display_hostname()
+        . '</a></span>';
 }
 elsif ( &get_product_name() eq 'webmin' ) {
     print '<small><i class="fa fa-cogs">&nbsp;</i></small>&nbsp;'
         . ucfirst( &get_product_name() )
-        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;'
-        . &get_display_hostname();
+        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh" href="/" style="color:#777">'
+        . &get_display_hostname() . '</a>';
 }
 else {
     print '<small><i class="fa fa-user">&nbsp;</i></small>&nbsp;'
         . ucfirst( &get_product_name() )
-        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;'
-        . &get_display_hostname();
+        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh" href="/" style="color:#777">'
+        . &get_display_hostname() . '</a>';
 }
 
-print '</span>' . "\n";
-print '</div>' . "\n";
-print '<div class="collapse navbar-collapse" id="collapse">' . "\n";
-print '<ul class="nav navbar-nav visible-xs">' . "\n";
-print
-    '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="'
+#Refresh button. Start
+print '<div class="pull-right" style="margin-top:2px; margin-left:10px;"><a href="'
     . $gconfig{'webprefix'}
-    . '/menu.cgi?virtualmin='
-    . $is_virtualmin
-    . '"><i class="fa fa-tags"></i> '
-    . $text{'left_main'}
-    . '</a></li>' . "\n";
+    . '/" target="_top" data-refresh="true" data-hover="true"><i class="fa fa-refresh" style="color:#888;"></i>'
+    . $minfo{'desc'} . '</a></div>';
 
-print '<li><a target="page" data-href="'
-    . $gconfig{'webprefix'}
-    . '/body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-info"></i> '
-    . $text{'left_home'}
-    . '</a></li>' . "\n";
-%gaccess = &get_module_acl( undef, "" );
-if (   &get_product_name() eq 'webmin'
-    && !$ENV{'ANONYMOUS_USER'}
-    && $gconfig{'nofeedbackcc'} != 2
-    && $gaccess{'feedback'}
-    && $gconfig{'feedback_to'}
-    || &get_product_name() eq 'usermin'
-    && !$ENV{'ANONYMOUS_USER'}
-    && $gconfig{'feedback'} )
-{
-    print
-        '<li><a data-toggle="collapse" data-target="#collapse" target="page" data-href="'
-        . $gconfig{'webprefix'}
-        . '/feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-envelope"></i> '
-        . $text{'left_feedback'}
-        . '</a></li>' . "\n";
-}
-if ( &foreign_available("webmin") ) {
-    print '<li><a target="page" data-href="'
-        . $gconfig{'webprefix'}
-        . '/webmin/refresh_modules.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_refresh_modules_trigger"><i class="fa fa-refresh"></i> '
-        . $text{'left_refresh_modules'}
-        . '</a></li>' . "\n";
-}
-print '</ul>' . "\n";
+#Refresh button. End
 
 # Quick access menu. Start.
 # Implementing procedural, bulky build of quick access menu.
@@ -179,6 +146,7 @@ if (   &foreign_available("change-user")
     || &foreign_available("webminlog")
     || &foreign_available("cron")
     || &foreign_available("shell")
+    || &foreign_available("file")
     || &foreign_available("tunnel")
     || &foreign_available("csf")
     || &foreign_available("firewall")
@@ -190,8 +158,8 @@ if (   &foreign_available("change-user")
 {
 
     print
-        '<div class="dropdown pull-left hidden-xs" style="margin:16px 2px 0 16px;">
-          <a href="#" type="button" data-toggle="dropdown" data-hover="true" role="button" aria-expanded="false" style="color:#888"><i class="fa fa-lg fa-bars"></i><span class="caret" style="margin-left:8px;"></span></a>
+        '<div class="pull-right" style="margin:2px 2px 0 20px;"><div class="dropdown">
+          <a href="#" type="button" data-toggle="dropdown" data-hover="true" role="button" aria-expanded="false"><i class="fa fa-bars" style="color:#888"></i><span class="caret" style="margin-left:8px;color:#888"></span></a>
           <ul class="dropdown-menu" role="menu">';
 
     if ( &foreign_available("change-user") ) {
@@ -393,6 +361,15 @@ if (   &foreign_available("change-user")
             . $minfo{'desc'} . '</a>
                 </li>';
     }
+    if ( &foreign_available("file") ) {
+        my %minfo = &get_module_info( 'file', 0, 1 );
+        print '<li>
+                   <a href="'
+            . $gconfig{'webprefix'}
+            . '/file" target="page" data-loader="true" style="color:#666; padding-left:10px"><i class="fa fa-folder-open-o" style="margin-right:8px"></i>'
+            . $minfo{'desc'} . '</a>
+                </li>';
+    }
     if ( &foreign_available("shell") ) {
         my %minfo = &get_module_info( 'shell', 0, 1 );
         print '<li>
@@ -467,25 +444,60 @@ if (   &foreign_available("change-user")
     }
 
     print '</ul>
-        </div>';
+        </div></div>';
 }
-
 # Quick access menu. End.
 
-#Refresh button. Start
-print '<a href="'
+print '</span>' . "\n";
+print '</div>' . "\n";
+print '<div class="collapse navbar-collapse no-transition" id="collapse">' . "\n";
+print '<ul class="nav navbar-nav visible-xs">' . "\n";
+print
+    '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="'
     . $gconfig{'webprefix'}
-    . '/" target="_top" class="hidden-xs" data-refresh="true" data-hover="true" style="color:#888;"><i class="fa fa-lg fa-refresh" style="margin-top:21px; margin-left:10px;"></i>'
-    . $minfo{'desc'} . '</a>';
+    . '/menu.cgi?virtualmin='
+    . $is_virtualmin
+    . '"><i class="fa fa-tags"></i> '
+    . $text{'left_main'}
+    . '</a></li>' . "\n";
 
-#Refresh button. End
+print '<li><a target="page" data-href="'
+    . $gconfig{'webprefix'}
+    . '/body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-info"></i> '
+    . $text{'left_home'}
+    . '</a></li>' . "\n";
+%gaccess = &get_module_acl( undef, "" );
+if (   &get_product_name() eq 'webmin'
+    && !$ENV{'ANONYMOUS_USER'}
+    && $gconfig{'nofeedbackcc'} != 2
+    && $gaccess{'feedback'}
+    && $gconfig{'feedback_to'}
+    || &get_product_name() eq 'usermin'
+    && !$ENV{'ANONYMOUS_USER'}
+    && $gconfig{'feedback'} )
+{
+    print
+        '<li><a data-toggle="collapse" data-target="#collapse" target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/feedback_form.cgi" class="navigation_feedback_trigger"><i class="fa fa-envelope"></i> '
+        . $text{'left_feedback'}
+        . '</a></li>' . "\n";
+}
+if ( &foreign_available("webmin") ) {
+    print '<li><a target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/webmin/refresh_modules.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_refresh_modules_trigger"><i class="fa fa-refresh"></i> '
+        . $text{'left_refresh_modules'}
+        . '</a></li>' . "\n";
+}
+print '</ul>' . "\n";
 
 print '<div class="navbar-right" style="margin-right:0">' . "\n";
 
 $user = $remote_user;
 if ( &foreign_available("net") ) {
     $user
-        = '<a data-toggle="collapse" data-target="#collapse" target="page" href="'
+        = '<a target="page" href="'
         . $gconfig{'webprefix'}
         . '/acl/edit_user.cgi?user='
         . $user . '">'

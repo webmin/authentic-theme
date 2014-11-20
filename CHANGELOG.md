@@ -1,5 +1,11 @@
 ##Changelog
 
+####Version 6.5.0 (Nov 21, 2014)
+* Fixed positioning for new `quick-access menu` and `refresh button`. Refresh button now spins on frame reload. Both buttons now work well on mobile devices
+* Added _File Manager_ link on `quick-access menu` per request [:paperclip:](http://virtualmin.com/node/34315)
+* Added link behavior, for/when clicking on _hostname_ in page header
+* Fixed minor UI bugs
+
 ####Version 6.4.1 (Nov 20, 2014)
 * Fixed missing icons on _Virtualmin_ `Bandwidth Usage` page [:paperclip:](https://github.com/qooob/authentic-theme/issues/41)
 
