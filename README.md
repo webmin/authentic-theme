@@ -5,10 +5,8 @@
 
 ##Changelog
 
-####Version 6.4.0 (Nov 18, 2014)
-* Added `refresh button` to refresh the page. _Attention!_ `Left click` will refresh the right frame, while `right click` will refresh the whole page
-* Added `quick access menu` and `refresh button` hover effect
-* Fixed missing `font-family: monospace;` on all `pre` tags
+####Version 6.4.1 (Nov 20, 2014)
+* Fixed missing icons on _Virtualmin_ `Bandwidth Usage` page [:paperclip:](https://github.com/qooob/authentic-theme/issues/41)
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
