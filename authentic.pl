@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.5.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.5.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -720,7 +720,6 @@ sub theme_ui_post_header {
 
 sub theme_ui_pre_footer {
     my $rv;
-    $rv .= '</div>' . "\n";
     $rv .= '</div>' . "\n";
 
     return $rv;

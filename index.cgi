@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.5.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.5.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -46,7 +46,34 @@ if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
     print "Location: $virtualmin\n\n";
 }
 
+# Clearing possibly stuck update states
+if (   index( $ENV{'REQUEST_URI'}, 'updating' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'updating-processing' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'recollect' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'recollect-system-status' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'recollecting' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'recollecting-system-status' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'recollecting-package-updates' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'recollecting-package-updates-processing' )
+    != -1 )
+{
+    if ( $is_virtualmin != -1 ) {
+        $virtualmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . '/?virtualmin';
+        print "Location: $virtualmin\n\n";
+    }
+    else {
+        $webmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'} . '/';
+        print "Location: $webmin\n\n";
+    }
+}
+
 &header($title);
+
 print '<div id="wrapper" data-product="'
     . &get_product_name()
     . '" data-virtual-server="'
@@ -105,21 +132,23 @@ if ( &foreign_available("virtual-server") ) {
 elsif ( &get_product_name() eq 'webmin' ) {
     print '<small><i class="fa fa-cogs">&nbsp;</i></small>&nbsp;'
         . ucfirst( &get_product_name() )
-        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh" href="/" style="color:#777">'
+        . '<span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh hidden-xs" href="/" style="color:#777">'
         . &get_display_hostname() . '</a>';
 }
 else {
     print '<small><i class="fa fa-user">&nbsp;</i></small>&nbsp;'
         . ucfirst( &get_product_name() )
-        . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hidden-xs"><small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh" href="/" style="color:#777">'
+        . '<span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh hidden-xs" href="/" style="color:#777">'
         . &get_display_hostname() . '</a>';
 }
 
 #Refresh button. Start
-print '<div class="pull-right" style="margin-top:2px; margin-left:10px;"><a href="'
+print
+    '<div class="pull-right" style="margin-top:2px; margin-left:10px;"><a href="'
     . $gconfig{'webprefix'}
     . '/" target="_top" data-refresh="true" data-hover="true"><i class="fa fa-refresh" style="color:#888;"></i>'
-    . $minfo{'desc'} . '</a></div>';
+    . $minfo{'desc'}
+    . '</a></div>';
 
 #Refresh button. End
 
@@ -446,11 +475,12 @@ if (   &foreign_available("change-user")
     print '</ul>
         </div></div>';
 }
+
 # Quick access menu. End.
 
 print '</span>' . "\n";
 print '</div>' . "\n";
-print '<div class="collapse navbar-collapse no-transition" id="collapse">' . "\n";
+print '<div class="collapse navbar-collapse" id="collapse">' . "\n";
 print '<ul class="nav navbar-nav visible-xs">' . "\n";
 print
     '<li><a data-toggle="collapse" data-target="#collapse" target="page" href="'

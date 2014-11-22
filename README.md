@@ -5,11 +5,10 @@
 
 ##Changelog
 
-####Version 6.5.0 (Nov 21, 2014)
-* Fixed positioning for new `quick-access menu` and `refresh button`. Refresh button now spins on frame reload. Both buttons now work well on mobile devices
-* Added _File Manager_ link on `quick-access menu` per request [:paperclip:](http://virtualmin.com/node/34315)
-* Added link behavior, for/when clicking on _hostname_ in page header
-* Fixed minor UI bugs
+####Version 6.5.1 (Nov 23, 2014)
+* Fixed display issues at small screen resolutions [:paperclip:](https://github.com/qooob/authentic-theme/issues/45)
+* Added functionality to prevent stuck update states [:paperclip:](https://github.com/qooob/authentic-theme/issues/46)
+* Removed stray `<div>` tag at the `theme_footer` to prevent possible page breaks
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
