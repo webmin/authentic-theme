@@ -5,10 +5,10 @@
 
 ##Changelog
 
-####Version 6.5.1 (Nov 23, 2014)
-* Fixed display issues at small screen resolutions [:paperclip:](https://github.com/qooob/authentic-theme/issues/45)
-* Added functionality to prevent stuck update states [:paperclip:](https://github.com/qooob/authentic-theme/issues/46)
-* Removed stray `<div>` tag at the `theme_footer` to prevent possible page breaks
+####Version 6.5.2 (Nov 23, 2014)
+* Reverted incorrectly removed stray `<div>` tag at the `theme_footer`
+* Added _Virtualmin Pro_ information popover and refresh license keys on _System Information_
+* Fixed minor UI bugs
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 

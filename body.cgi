@@ -109,19 +109,129 @@ if ( $level == 0 ) {
 
     # Virtualmin / Cloudmin version
     if ($hasvirt) {
+        if ($hasvirt
+            && read_env_file( $virtual_server::virtualmin_license_file,
+                \%vserial )
+            && $vserial{'SerialNumber'} ne 'GPL'
+            )
+        {
+            $license = 1;
+
+            # Parse license expiry date
+            my %lstatus;
+            read_file( $virtual_server::licence_status, \%lstatus );
+
+            if ( $lstatus{'used_servers'} ) {
+                $right_licensed_virtualmin_systems_text = $text{'right_smax'};
+                $right_licensed_virtualmin_systems_data
+                    = $lstatus{'servers'} || $text{'right_vunlimited'};
+                $right_licensed_virtualmin_systems_installed_on_text
+                    = $text{'right_sused'};
+                $right_licensed_virtualmin_systems_installed_on_data
+                    = $lstatus{'used_servers'};
+
+            }
+
+            if ( $lstatus{'expiry'} =~ /^203[2-8]-/ ) {
+                $right_expiry_text = $text{'right_expiry'};
+                $right_expiry_data = $text{'right_expirynever'};
+            }
+            elsif ( $lstatus{'expiry'} ) {
+                $right_expiry_text = $text{'right_expiry'};
+                $right_expiry_data = $lstatus{'expiry'};
+
+                $ltm = &parse_license_date( $lstatus{'expiry'} );
+                if ($ltm) {
+                    $days = int( ( $ltm - time() ) / ( 24 * 60 * 60 ) );
+                    $right_expiry_until_text = $text{'right_expirydays'};
+                    $right_expiry_until_data
+                        = $days < 0
+                        ? &text( 'right_expiryago', -$days )
+                        : $days;
+                }
+            }
+        }
+        else {
+            $license = 0;
+        }
+        if ( $license == 1 ) {
+            ( $dleft, $dreason, $dmax, $dhide )
+                = virtual_server::count_domains("realdoms");
+        }
         print_table_row(
             $text{'right_virtualmin'},
-            $virtual_server::module_info{'version'} . " "
-                . (
+            $virtual_server::module_info{'version'} . " " . (
                 $virtual_server::module_info{'virtualmin'} eq 'gpl'
-                ? 'GPL'
+                ? ''
                 : 'Pro'
-                )
+
+                    . (
+                    ( $license == 1 )
+                    ? '<button class="btn btn-default btn-xs" data-toggle="virtualmin-license" data-placement="top" title="'
+                        . $text{'right_licenceheader'}
+                        . '" style="margin-left:6px;padding:0 8px; height:19px;font-size:11px"
+
+                        data-proc-serial-number-text="'
+                        . $text{'right_vserial'} . '"
+                        data-proc-serial-number-data="'
+                        . $vserial{'SerialNumber'} . '"
+
+                        data-proc-license-key-text="'
+                        . $text{'right_vkey'} . '"
+                        data-proc-license-key-data="'
+                        . $vserial{'LicenseKey'} . '"
+
+                        data-proc-license-domains-text="'
+                        . $text{'right_vmax'} . '"
+                        data-proc-license-domains-data="'
+                        . ( $dmax <= 0 ? $text{'right_vunlimited'} : $dmax )
+                        . '"
+
+                        data-proc-license-domains-left-text="'
+                        . $text{'right_vleft'} . '"
+                        data-proc-license-domains-left-data="'
+                        . (
+                          $dleft < 0
+                        ? $text{'right_vunlimited'}
+                        : $dleft
+                        )
+                        . '"
+
+                        data-proc-licensed-virtualmin-systems-text="'
+                        . $right_licensed_virtualmin_systems_text . '"
+                        data-proc-licensed-virtualmin-systems-data="'
+                        . $right_licensed_virtualmin_systems_data . '"
+
+                        data-proc-licensed-virtualmin-systems-installed-on-text="'
+                        . $right_licensed_virtualmin_systems_installed_on_text
+                        . '"
+                        data-proc-licensed-virtualmin-systems-installed-on-data="'
+                        . $right_licensed_virtualmin_systems_installed_on_data
+                        . '"
+
+                        data-proc-expiry-date-text="'
+                        . $right_expiry_text . '"
+                        data-proc-expiry-date-data="'
+                        . $right_expiry_data . '"
+
+                        data-proc-expiry-days-text="'
+                        . $right_expiry_until_text . '"
+                        data-proc-expiry-days-data="'
+                        . $right_expiry_until_data . '"
+
+                       >
+                        <i class="fa fa-info"></i>
+                       </button>'
+                        . '<a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top" title="'
+                        . $text{'right_vlcheck'}
+                        . '" style="margin-left:1px;padding:0 6px; height:19px;font-size:11px" href="'
+                        . $gconfig{'webprefix'}
+                        . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a>'
+                    : ''
+                    )
+
+            )
         );
-    }
-    if ($hasvm2) {
-        print_table_row( $text{'right_vm2'},
-            $server_manager::module_info{'version'} );
     }
 
     # Theme version/updates
@@ -747,4 +857,11 @@ sub show_new_features {
             print ui_hidden_table_end("newfeaturesvm2");
         }
     }
+}
+
+sub parse_license_date {
+    if ( $_[0] =~ /^(\d{4})-(\d+)-(\d+)$/ ) {
+        return eval { timelocal( 0, 0, 0, $3, $2 - 1, $1 - 1900 ) };
+    }
+    return undef;
 }
