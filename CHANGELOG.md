@@ -1,5 +1,13 @@
 ##Changelog
 
+####Version 6.6.0 (Dec 2, 2014)
+* Added basic support for _Cloudmin_ module
+* Added `TinyMCE` text editor for _Mail_ modules
+* Fixed display issues in _Mail_ modules
+* Fixed login page being displayed inside of the right frame, when session is expired
+* Fixed all possible issues with missing `input` fields, in all modules, including _ProFTPd_ module [:paperclip:](https://github.com/qooob/authentic-theme/issues/50)
+* Fixed minor UI bugs
+
 ####Version 6.5.2 (Nov 23, 2014)
 * Reverted incorrectly removed stray `<div>` tag at the `theme_footer`
 * Added _Virtualmin Pro_ information popover and refresh license keys on _System Information_

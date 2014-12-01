@@ -1,13 +1,16 @@
 #Authentic
-**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin](https://www.virtualmin.com/) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
+**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin/](https://www.virtualmin.com/)[Cloudmin](http://webmin.com/cloudmin.html) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually, [TinyMCE](http://www.tinymce.com/) to compose comprehensive HTML based messages and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
 
-**Authentic** is fully compatible with latest Webmin 1.710+, Usermin 1.620+ and Virtualmin 4.12+.
+**Authentic** is fully compatible with latest Webmin 1.720+, Usermin 1.630+ and Virtualmin 4.12+.
 
 ##Changelog
 
-####Version 6.5.2 (Nov 23, 2014)
-* Reverted incorrectly removed stray `<div>` tag at the `theme_footer`
-* Added _Virtualmin Pro_ information popover and refresh license keys on _System Information_
+####Version 6.6.0 (Dec 2, 2014)
+* Added basic support for _Cloudmin_ module
+* Added `TinyMCE` text editor for _Mail_ modules
+* Fixed display issues in _Mail_ modules
+* Fixed login page being displayed inside of the right frame, when session is expired
+* Fixed all possible issues with missing `input` fields, in all modules, including _ProFTPd_ module [:paperclip:](https://github.com/qooob/authentic-theme/issues/50)
 * Fixed minor UI bugs
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)

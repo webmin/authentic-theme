@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.5.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.6.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -29,8 +29,20 @@ if ( $in{'page'} ) {
 %gaccess = &get_module_acl( undef, "" );
 $title   = &get_html_framed_title();
 
-# Detecting Virtualmin availability
+# Detecting Virtualmin/Cloudmin request
 $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
+$is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
+
+# Redirect user away, in case requested mode can not be satisfied
+if (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
+    || ( $is_cloudmin != -1 && !&foreign_available("server-manager") ) )
+{
+    print "Set-Cookie: redirect=0; path=/\r\n";
+    $webmin
+        = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+        . $ENV{'HTTP_HOST'} . '/';
+    print "Location: $webmin\n\n";
+}
 
 # In case Virtualmin is installed, after logging in, redirect to Virtualmin
 if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
@@ -64,6 +76,13 @@ if (   index( $ENV{'REQUEST_URI'}, 'updating' ) != -1
             . '/?virtualmin';
         print "Location: $virtualmin\n\n";
     }
+    elsif ( $is_cloudmin != -1 ) {
+        $cloudmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . '/?cloudmin';
+        print "Location: $cloudmin\n\n";
+    }
     else {
         $webmin
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
@@ -78,6 +97,8 @@ print '<div id="wrapper" data-product="'
     . &get_product_name()
     . '" data-virtual-server="'
     . $is_virtualmin
+    . '" data-server-manager="'
+    . $is_cloudmin
     . '" class="index">' . "\n";
 print '<header>' . "\n";
 print '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">'
@@ -93,42 +114,85 @@ print '<span class="icon-bar"></span>' . "\n";
 print '</button>' . "\n";
 print '<span class="navbar-brand">';
 
-if ( &foreign_available("virtual-server") ) {
+# Menu parser. Start.
+# No abstraction at all. Easy to read - hard to enjoy.
+# Front-end user doesn't give a thing - it works the
+# same in the end. Beautify whenever time comes.
+if (   &foreign_available("virtual-server")
+    || &foreign_available("server-manager") )
+{
     print '<ul class="nav navbar-nav">
             <li class="dropdown">
               <a href="#" id="product-menu" role="button" class="dropdown-toggle" data-toggle="dropdown">
               <small>';
-    if ( $is_virtualmin == -1 ) {
+    if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
         print '<i class="fa fa-cogs"></i>';
     }
-    else {
+    elsif ( $is_virtualmin != -1 ) {
         print '<i class="fa fa-sun-o"></i>';
     }
+    elsif ( $is_cloudmin != -1 ) {
+        print '<i class="fa fa-cloud"></i>';
+    }
     print '</small>&nbsp;&nbsp;';
-    if ( $is_virtualmin == -1 ) {
+
+    if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
         print 'Webmin';
     }
-    else {
+    elsif ( $is_virtualmin != -1 ) {
         print 'Virtualmin';
     }
+    elsif ( $is_cloudmin != -1 ) {
+        print 'Cloudmin';
+    }
+
     print '<span class="caret" style="margin-left:6px;"></span></a>
               <ul class="dropdown-menu" role="button" aria-labelledby="product-menu">';
-    if ( $is_virtualmin == -1 ) {
-        print
-            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;</i>Virtualmin</a></li>';
+    if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
+        if (   &foreign_available("virtual-server")
+            && &foreign_available("server-manager") )
+        {
+            print
+                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin</a></li>';
+            print
+                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin</a></li>';
+        }
+        elsif ( &foreign_available("virtual-server") ) {
+            print
+                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin</a></li>';
+        }
+        elsif ( &foreign_available("server-manager") ) {
+            print
+                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin</a></li>';
+        }
+
     }
-    else {
+    elsif ( $is_virtualmin != -1 ) {
         print
-            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="fa fa-cogs">&nbsp;</i>Webmin</a></li>';
+            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin</a></li>';
+        if ( &foreign_available("server-manager") ) {
+            print
+                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin</a></li>';
+        }
+    }
+    elsif ( $is_cloudmin != -1 ) {
+        print
+            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin</a></li>';
+        if ( &foreign_available("virtual-server") ) {
+            print
+                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin</a></li>';
+        }
     }
     print '</ul>
             </li>
           </ul><span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop"></i></small>&nbsp;&nbsp;<a class="data-refresh" href="/'
         . ( $is_virtualmin != -1 && "?virtualmin" )
+        . ( $is_cloudmin != -1   && "?cloudmin" )
         . '" style="color:#777">'
         . &get_display_hostname()
         . '</a></span>';
 }
+
 elsif ( &get_product_name() eq 'webmin' ) {
     print '<small><i class="fa fa-cogs">&nbsp;</i></small>&nbsp;'
         . ucfirst( &get_product_name() )
@@ -141,6 +205,8 @@ else {
         . '<span class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><i class="fa fa-desktop">&nbsp;</i></small></span>&nbsp;&nbsp;<a class="data-refresh hidden-xs" href="/" style="color:#777">'
         . &get_display_hostname() . '</a>';
 }
+
+# Menu parser. End
 
 #Refresh button. Start
 print
@@ -311,7 +377,10 @@ if (   &foreign_available("change-user")
                 </li>';
     }
 
-    if ( &foreign_available("webmin") && $is_virtualmin == -1 ) {
+    if (   &foreign_available("webmin")
+        && $is_virtualmin == -1
+        && $is_cloudmin == -1 )
+    {
         my %minfo = &load_language('webmin');
         print '<li>
                    <a href="'
@@ -493,7 +562,7 @@ print
 
 print '<li><a target="page" data-href="'
     . $gconfig{'webprefix'}
-    . '/body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_sysinfo_modules_trigger"><i class="fa fa-info"></i> '
+    . '/body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_module_trigger"><i class="fa fa-info"></i> '
     . $text{'left_home'}
     . '</a></li>' . "\n";
 %gaccess = &get_module_acl( undef, "" );
@@ -572,7 +641,7 @@ print '</li>' . "\n";
 @cats = &get_visible_modules_categories();
 @modules = map { @{ $_->{'modules'} } } @cats;
 
-if ( $is_virtualmin == -1 ) {
+if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
     if (   $gconfig{"notabs_${base_remote_user}"} == 2
         || $gconfig{"notabs_${base_remote_user}"} == 0 && $gconfig{'notabs'}
         || @modules <= 1 )
@@ -629,7 +698,7 @@ if ( $is_virtualmin == -1 ) {
     print '<ul class="navigation">' . "\n";
     print '<li><a target="page" data-href="'
         . $gconfig{'webprefix'}
-        . '/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+        . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
     if (   &get_product_name() eq 'webmin'
@@ -739,7 +808,7 @@ elsif ( $is_virtualmin != -1 ) {
     }
     print '<li><a target="page" data-href="'
         . $gconfig{'webprefix'}
-        . '/body.cgi" class="navigation_sysinfo_modules_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+        . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
 
@@ -752,9 +821,85 @@ elsif ( $is_virtualmin != -1 ) {
     }
 }
 
+elsif ( $is_cloudmin != -1 ) {
+
+    &foreign_require( "server-manager", "server-manager-lib.pl" );
+    $is_master = &server_manager::can_action( undef, "global" );
+
+    $goto = '/server-manager/index.cgi';
+
+    # Let's wait for Jamie to finish magic menu processor
+
+    # ...
+
+    # @servers    = &server_manager::list_available_managed_servers_sorted();
+    # @allservers = &server_manager::list_managed_servers();
+    # ($server) = grep { $_->{'id'} eq $in{'sid'} } @servers;
+
+    # $status = $server->{'status'};
+    # $t      = $server->{'manager'};
+
+    # # Get actions for this system provided by Cloudmin
+    # @actions = grep { $_ && keys(%$_) > 0 }
+    #     &server_manager::get_server_actions($server);
+    # foreach $b (@actions) {
+    #     $b->{'desc'} = $text{ 'leftvm2_' . $b->{'id'} }
+    #         if ( $text{ 'leftvm2_' . $b->{'id'} } );
+    # }
+
+    # # Work out action categories, and show those under each
+    # my @tcats = sort { $a cmp $b } &unique( map { $_->{'cat'} } @actions );
+
+    # foreach my $c (@tcats) {
+    #     my @incat = grep { $_->{'cat'} eq $c } @actions;
+
+    #     &print_category( $c, \@tcats, $server_manager::text{'cat_'.$c} ||
+    #             $incat[0]->{'catname'} );
+
+    #     print '<ul class="sub" style="display: none;" id="'
+    #         . $c . '">' . "\n";
+    #     foreach my $b (sort { $b->{'priority'} <=> $a->{'priority'} ||
+    #                   ($a->{'title'} || $a->{'desc'}) cmp
+    #                   ($b->{'title'} || $b->{'desc'})} @incat) {
+
+#         if ($b->{'link'} =~ /\//) {
+#             $url = $b->{'link'};
+#             }
+#         elsif ($b->{'link'}) {
+#             $url = "server-manager/$b->{'link'}";
+#             }
+#         else {
+#             $url = "server-manager/save_serv.cgi?id=$server->{'id'}&amp;$b->{'id'}=1";
+#             }
+#         $title = $b->{'title'} || $b->{'desc'};
+
+    #         &print_category_link( $url, $title );
+
+    #     }
+    #     print '</ul>' . "\n";
+
+    # }
+
+    print '<li><a target="page" data-href="'
+        . $gconfig{'webprefix'}
+        . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+        . $text{'left_home'}
+        . '</span></a></li>' . "\n";
+
+    print '<li><a data-href="'
+        . $gconfig{'webprefix'}
+        . '/server-manager/index.cgi" class="navigation_module_trigger" target="page"><i class="fa fa-fw fa-tasks"></i> <span>'
+        . 'List Managed Systems'
+        . '</span></a></li>' . "\n";
+
+    print '</ul>' . "\n";
+
+}
+
 # Reloading theme in case sysinfo was update
 if (   index( $ENV{'REQUEST_URI'}, 'updated' ) != -1
-    || index( $ENV{'REQUEST_URI'}, 'updated&virtualmin' ) != -1 )
+    || index( $ENV{'REQUEST_URI'}, 'updated&virtualmin' ) != -1
+    || index( $ENV{'REQUEST_URI'}, 'updated&cloudmin' ) != -1 )
 {
     $goto = '/body.cgi';
 }

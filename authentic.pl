@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.5.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.6.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -73,6 +73,10 @@ sub theme_header {
     print '<script src="'
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/jquery.datatables.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/tinymce/tinymce.min.js" type="text/javascript"></script>',
         "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
@@ -185,7 +189,9 @@ sub theme_header {
 sub theme_popup_prehead {
     if ( index( $ENV{'REQUEST_URI'}, 'help.cgi' ) != 1 ) {
         print '<meta charset="utf-8">', "\n";
-        print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/favicon-'
+        print '<link rel="shortcut icon" href="'
+            . $gconfig{'webprefix'}
+            . '/favicon-'
             . &get_product_name()
             . '.ico">' . "\n";
         print
@@ -238,6 +244,14 @@ sub theme_popup_prehead {
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/codemirror.min.js" type="text/javascript"></script>',
+            "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/jquery.datatables.min.js" type="text/javascript"></script>',
+            "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/tinymce/tinymce.min.js" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}

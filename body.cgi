@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.5.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 6.6.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -107,7 +107,7 @@ if ( $level == 0 ) {
     # Webmin version
     &print_table_row( &text('body_webmin'), &get_webmin_version() );
 
-    # Virtualmin / Cloudmin version
+    # Virtualmin version
     if ($hasvirt) {
         if ($hasvirt
             && read_env_file( $virtual_server::virtualmin_license_file,
@@ -232,6 +232,21 @@ if ( $level == 0 ) {
 
             )
         );
+    }
+
+    # Cloudmin version
+    if ($hasvm2) {
+        print_table_row(
+            $text{'right_vm2'},
+            $server_manager::module_info{'version'} . " "
+                . (
+                $server_manager::module_info{'virtualmin'} eq 'gpl'
+                ? ''
+                : 'Pro'
+                )
+        );
+
+        # The rest will be added later
     }
 
     # Theme version/updates
