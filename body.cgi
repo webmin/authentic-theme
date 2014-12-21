@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.6.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 7.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -23,17 +23,16 @@ print '<div id="wrapper" class="page">' . "\n";
 print '<div class="container">' . "\n";
 print '<div id="system-status" class="panel panel-default">' . "\n";
 print '<div class="panel-heading">' . "\n";
-print '<h3 class="panel-title">'
-    . &text('body_header0')
-    . (
+print '<h3 class="panel-title">' . &text('body_header0') . (
     ( $level != 2 && $level != 3 )
     ? '<a href="/?updated" target="_top" data-href="'
         . $gconfig{'webprefix'}
         . '/webmin/edit_webmincron.cgi" data-refresh="system-status" data-refresh-title="'
         . &text('body_refresh_title')
-        . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>'
+        . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>
+        <button type="button" class="btn btn-primary" style="display: none; visibility: hidden" data-toggle="modal" data-target="#update_notice"></button>'
     : ''
-    ) . '</h3>' . "\n";
+) . '</h3>' . "\n";
 
 print '</div>';
 print '<div class="panel-body">' . "\n";
@@ -167,9 +166,9 @@ if ( $level == 0 ) {
 
                     . (
                     ( $license == 1 )
-                    ? '<button class="btn btn-default btn-xs" data-toggle="virtualmin-license" data-placement="top" title="'
+                    ? '<button class="btn btn-default btn-xs btn-hidden hidden"  data-toggle="virtualmin-license" data-placement="top" title="'
                         . $text{'right_licenceheader'}
-                        . '" style="margin-left:6px;padding:0 8px; height:19px;font-size:11px"
+                        . '" style="margin-left:6px; padding:0 8px; line-height: 12px; height:15px;font-size:11px"
 
                         data-proc-serial-number-text="'
                         . $text{'right_vserial'} . '"
@@ -222,9 +221,9 @@ if ( $level == 0 ) {
                        >
                         <i class="fa fa-info"></i>
                        </button>'
-                        . '<a class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top" title="'
+                        . '<a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" title="'
                         . $text{'right_vlcheck'}
-                        . '" style="margin-left:1px;padding:0 6px; height:19px;font-size:11px" href="'
+                        . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
                         . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a>'
                     : ''
@@ -273,7 +272,48 @@ if ( $level == 0 ) {
         $authentic_theme_version
             = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
             . $text{'authentic_theme'} . '</a> '
-            . $installed_version;
+            . $installed_version
+            . '<a class="btn btn-xs btn-default btn-hidden hidden" style="margin-left:4px; padding:0 12px; line-height:12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme#donation"><i class="fa fa-rub">&nbsp;</i>'
+            . $text{'theme_donate'} . '</a>
+               <div class="modal fade" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="update_notice_label">'
+            . $text{'theme_update_notice'} . '</h4>
+                      </div>
+                      <div class="modal-body">
+                        <h4>Version 7.0.0 (December 21, 2014)</h4>
+                        <ul>
+                          <li>Improved overall <code>theme speed</code> - twice as fast as before</li>
+                          <li>Added scrolling to extra long <code>help popovers</code> that were going off the screen</li>
+                          <li>Added complete support for <code>Internet Explorer</code> browser</li>
+                          <li>Changed right side <code>body</code> background to draw more attention to content</li>
+                          <li>Changed <code>panel</code> top border height, to draw more attention, while being the main page header</li>
+                          <li>Changed <code>loader</code> - no more images or fonts used - pure script brings overall beauty and compatibility</li>
+                          <li>Updated <code>jQuery</code> to latest <em>2.1.3</em> version</li>
+                          <li>Fixed problems when using <code>LastPass/FireBug</code> plugins &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/6"></a></li>
+                          <li>Fixed extra width in table rows and all around the theme</li>
+                          <li>Fixed position of <code>dataTables</code> sorting images to be closer to the text &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/55"></a></li>
+                          <li>Fixed <code>dataTables</code> disappear in <code>init</code> module in some cases &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/55"></a></li>
+                          <li>Fixed missing <code>ui_hidden</code> when changing tabs &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/56"></a></li>
+                          <li>Fixed <kbd>hundreds</kbd> of UI bugs</li>
+                        </ul>
+                        <h4 style="margin-top:20px">'
+            . $text{'theme_development_support'} . '</h4>
+                        Thank you for using <a target="_blank" href="https://github.com/qooob/authentic-theme"><kbd style="background:#5cb85c">'
+            . $text{'authentic_theme'}
+            . '<kbd></a>. Overall development of this theme has already passed the stage of 100 hours.
+                          While I am happy to provide <em>Authentic Theme</em> for free, it would mean a world to me, if you could send me a <a target="_blank" href="https://github.com/qooob/authentic-theme#donation">donation</a>.
+                          It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development.
+                          <br>
+                          <br>
+                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> page found issues.
+                      </div>
+                    </div>
+                  </div>
+               </div>';
     }
     else {
         $authentic_theme_version
@@ -285,12 +325,14 @@ if ( $level == 0 ) {
             . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
             . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 8px; height:21px" href="'
             . $gconfig{'webprefix'}
-            . '/webmin/edit_themes.cgi">'
+            . '/webmin/edit_themes.cgi"><i class="fa fa-refresh">&nbsp;</i>'
             . $text{'theme_update'} . '</a>'
-            . '<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md">'
+            . '<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o">&nbsp;</i>'
             . $text{'theme_changelog'} . '</a>'
-            . '<a class="btn btn-xs btn-warning" style="padding:0 8px; height:21px" target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz">'
+            . '<a class="btn btn-xs btn-warning" style="padding:0 8px; height:21px" target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz"><i class="fa fa-download">&nbsp;</i>'
             . $text{'theme_download'} . '</a>'
+            . '<a class="btn btn-xs btn-default" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme#donation"><i class="fa fa-rub">&nbsp;</i>'
+            . $text{'theme_donate'} . '</a>'
             . '</div>';
     }
     &print_table_row( $text{'theme_version'}, $authentic_theme_version );
@@ -459,7 +501,7 @@ if ( $level == 0 ) {
                 . $gconfig{'webprefix'}
                 . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" data-refresh-title="'
                 . &text('body_refresh_title')
-                . '" class="btn btn-primary btn-xs" style="margin-left:4px;color: white;padding:0 12px; height:19px;font-size:11px"><i class="fa fa-refresh"></i></a>';
+                . '" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh"></i></a>';
         }
         &print_table_row( $text{'body_updates'}, $msg );
     }

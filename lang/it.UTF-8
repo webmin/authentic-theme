@@ -175,4 +175,8 @@ theme_download=Scarica
 theme_update_available=Ultima versione disponibile
 theme_changelog=Note di rilascio
 
+theme_update_notice=Nota di aggiornamento
+theme_development_support=Supporto per lo sviluppo
+theme_donate=Donazione
+
 __norefs=1

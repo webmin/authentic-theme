@@ -5,19 +5,23 @@
 
 ##Changelog
 
-####Version 6.6.0 (Dec 2, 2014)
-* Added basic support for _Cloudmin_ module
-* Added `TinyMCE` text editor for _Mail_ modules
-* Fixed display issues in _Mail_ modules
-* Fixed login page being displayed inside of the right frame, when session is expired
-* Fixed all possible issues with missing `input` fields, in all modules, including _ProFTPd_ module [:paperclip:](https://github.com/qooob/authentic-theme/issues/50)
-* Fixed minor UI bugs
+####Version 7.0.0 (Dec 21, 2014)
+* Improved overall `theme speed` - twice as fast as before
+* Added scrolling to extra long `help popovers` that were going off the screen
+* Added complete support for `Internet Explorer` browser
+* Changed right side `body` background to draw more attention to content
+* Changed `panel` top border height, to draw more attention, while being the main page header
+* Changed `loader` - no more images or fonts used - pure script brings overall beauty and compatibility
+* Updated `jQuery` to latest _2.1.3_ version
+* Fixed problems when using `LastPass/FireBug` plugins [:paperclip:](https://github.com/qooob/authentic-theme/issues/6)
+* Fixed extra width in table rows and all around the theme
+* Fixed position of `dataTables` sorting images to be closer to the text [:paperclip:](https://github.com/qooob/authentic-theme/issues/55)
+* Fixed `dataTables` disappear in `init` module in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/55)
+* Fixed missing `ui_hidden` when changing tabs [:paperclip:](https://github.com/qooob/authentic-theme/issues/56)
+* Fixed `hundreds` of UI bugs
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
-##Update notice
-
-It's very important to clear ___Cache images and files___ in your browser after applying new theme update
 
 ##Screenshots
 
@@ -81,12 +85,12 @@ This happens because Webmin is trying to open a link and download the theme usin
 
 ##Donation
 
-When I started working on this theme, I didn't expect to get any donations but each _donation_ **will mean a lot** for _[me](https://rostovtsev.ru)_ and will excite future development.
+ Thank you for using _Authentic Theme_. Overall development of this theme has already passed the stage of 100 hours. While I am happy to provide <em>Authentic Theme</em> for free, it would mean a world to _[me](https://rostovtsev.ru)_, if you could send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will excite future development.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=programming%40rostovtsev%2eru&lc=RU&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 
 
 ## License
 
-_Authentic_ is released under the [MIT License][opensource].
+_Authentic Theme_ is released under the [MIT License][opensource].
 [opensource]: http://www.opensource.org/licenses/MIT

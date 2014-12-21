@@ -175,4 +175,8 @@ theme_download=Descargar
 theme_update=Actualizar
 theme_changelog=Notas de la versión
 
+theme_update_notice=Notificación de actualización
+theme_development_support=Apoyo al Desarrollo
+theme_donate=Donación
+
 __norefs=1

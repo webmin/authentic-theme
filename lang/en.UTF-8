@@ -222,4 +222,8 @@ theme_download=Download
 theme_update=Update
 theme_changelog=Changelog
 
+theme_update_notice=Update Notice
+theme_development_support=Development Support
+theme_donate=Donate
+
 __norefs=1

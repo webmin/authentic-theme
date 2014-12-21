@@ -162,4 +162,8 @@ theme_download=Download
 theme_update=Update
 theme_changelog=Changelog
 
+theme_update_notice=Aktualisieren und Datenschutz
+theme_development_support=Entwicklungsunterstützung
+theme_donate=Spende
+
 __norefs=1

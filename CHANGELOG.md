@@ -1,5 +1,20 @@
 ##Changelog
 
+####Version 7.0.0 (Dec 21, 2014)
+* Improved overall `theme speed` - twice as fast as before
+* Added scrolling to extra long `help popovers` that were going off the screen
+* Added complete support for `Internet Explorer` browser
+* Changed right side `body` background to draw more attention to content
+* Changed `panel` top border height, to draw more attention, while being the main page header
+* Changed `loader` - no more images or fonts used - pure script brings overall beauty and compatibility
+* Updated `jQuery` to latest _2.1.3_ version
+* Fixed problems when using `LastPass/FireBug` plugins [:paperclip:](https://github.com/qooob/authentic-theme/issues/6)
+* Fixed extra width in table rows and all around the theme
+* Fixed position of `dataTables` sorting images to be closer to the text [:paperclip:](https://github.com/qooob/authentic-theme/issues/55)
+* Fixed `dataTables` disappear in `init` module in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/55)
+* Fixed missing `ui_hidden` when changing tabs [:paperclip:](https://github.com/qooob/authentic-theme/issues/56)
+* Fixed `hundreds` of UI bugs
+
 ####Version 6.6.0 (Dec 2, 2014)
 * Added basic support for _Cloudmin_ module
 * Added `TinyMCE` text editor for _Mail_ modules

@@ -222,4 +222,8 @@ theme_download=Last ned
 theme_update=Oppdater
 theme_changelog=Endringslogg
 
+theme_update_notice=Oppdater Notice
+theme_development_support=Utvikling Support
+theme_donate=Donasjon
+
 __norefs=1

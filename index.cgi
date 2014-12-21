@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.6.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 7.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -664,7 +664,9 @@ if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
             print '<ul class="sub" style="display: none;" id="'
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
-                &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'} );
+                if ( $minfo->{'dir'} ne 'virtual-server' ) {
+                    &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'} );
+                }
             }
             print '</ul>' . "\n";
         }
@@ -689,7 +691,7 @@ if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
             . ucfirst( &get_product_name() ) . ' '
             . $text{'global_search'} . '">' . "\n";
         print
-            '<input type="text" class="form-control" name="search" placeholder="'
+            '<input type="text" class="form-control sidebar-search" name="search" placeholder="'
             . $text{'global_search_in'} . ' '
             . ucfirst( &get_product_name() ) . '">' . "\n";
         print '</div>' . "\n";
@@ -799,7 +801,7 @@ elsif ( $is_virtualmin != -1 ) {
             '<input type="hidden" class="form-control" name="title" value="Virtualmin '
             . $text{'global_search'} . '">' . "\n";
         print
-            '<input type="text" class="form-control" name="search" placeholder="'
+            '<input type="text" class="form-control sidebar-search" name="search" placeholder="'
             . $text{'global_search_in'}
             . ' Virtualmin">' . "\n";
 
@@ -828,58 +830,6 @@ elsif ( $is_cloudmin != -1 ) {
 
     $goto = '/server-manager/index.cgi';
 
-    # Let's wait for Jamie to finish magic menu processor
-
-    # ...
-
-    # @servers    = &server_manager::list_available_managed_servers_sorted();
-    # @allservers = &server_manager::list_managed_servers();
-    # ($server) = grep { $_->{'id'} eq $in{'sid'} } @servers;
-
-    # $status = $server->{'status'};
-    # $t      = $server->{'manager'};
-
-    # # Get actions for this system provided by Cloudmin
-    # @actions = grep { $_ && keys(%$_) > 0 }
-    #     &server_manager::get_server_actions($server);
-    # foreach $b (@actions) {
-    #     $b->{'desc'} = $text{ 'leftvm2_' . $b->{'id'} }
-    #         if ( $text{ 'leftvm2_' . $b->{'id'} } );
-    # }
-
-    # # Work out action categories, and show those under each
-    # my @tcats = sort { $a cmp $b } &unique( map { $_->{'cat'} } @actions );
-
-    # foreach my $c (@tcats) {
-    #     my @incat = grep { $_->{'cat'} eq $c } @actions;
-
-    #     &print_category( $c, \@tcats, $server_manager::text{'cat_'.$c} ||
-    #             $incat[0]->{'catname'} );
-
-    #     print '<ul class="sub" style="display: none;" id="'
-    #         . $c . '">' . "\n";
-    #     foreach my $b (sort { $b->{'priority'} <=> $a->{'priority'} ||
-    #                   ($a->{'title'} || $a->{'desc'}) cmp
-    #                   ($b->{'title'} || $b->{'desc'})} @incat) {
-
-#         if ($b->{'link'} =~ /\//) {
-#             $url = $b->{'link'};
-#             }
-#         elsif ($b->{'link'}) {
-#             $url = "server-manager/$b->{'link'}";
-#             }
-#         else {
-#             $url = "server-manager/save_serv.cgi?id=$server->{'id'}&amp;$b->{'id'}=1";
-#             }
-#         $title = $b->{'title'} || $b->{'desc'};
-
-    #         &print_category_link( $url, $title );
-
-    #     }
-    #     print '</ul>' . "\n";
-
-    # }
-
     print '<li><a target="page" data-href="'
         . $gconfig{'webprefix'}
         . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
@@ -896,23 +846,13 @@ elsif ( $is_cloudmin != -1 ) {
 
 }
 
-# Reloading theme in case sysinfo was update
-if (   index( $ENV{'REQUEST_URI'}, 'updated' ) != -1
-    || index( $ENV{'REQUEST_URI'}, 'updated&virtualmin' ) != -1
-    || index( $ENV{'REQUEST_URI'}, 'updated&cloudmin' ) != -1 )
-{
-    $goto = '/body.cgi';
-}
-
 print '</ul>' . "\n";
 print '</aside>' . "\n";
 print '<div id="content" class="menu">' . "\n";
 print
-    '<div class="loader-container" style="background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5); position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index:5; display: none;">'
+    '<div class="loader-container" style="background: none repeat scroll 0% 0% #f5f5f5; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index:5; display: none;">'
     . "\n";
-print '<div class="loader"><img src="'
-    . $gconfig{'webprefix'}
-    . '/images/loader.gif"></div>' . "\n";
+print '<div class="loader" id="loader-insertion-point"></div>' . "\n";
 print '</div>' . "\n";
 print '<iframe name="page" id="iframe" src="'
     . $gconfig{'webprefix'}

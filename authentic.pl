@@ -1,5 +1,5 @@
 #
-# Authentic Theme 6.6.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 7.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -44,7 +44,7 @@ sub theme_header {
         "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
+        . '/unauthenticated/css/default.min.css?v700" rel="stylesheet" type="text/css">',
         "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
@@ -57,6 +57,10 @@ sub theme_header {
     print '<script src="'
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/slimscroll.min.js" type="text/javascript"></script>',
         "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
@@ -80,10 +84,18 @@ sub theme_header {
         "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/default.min.js" type="text/javascript"></script>',
+        . '/unauthenticated/js/spin.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/default.min.js?v700" type="text/javascript"></script>',
         "\n";
     print '</head>', "\n";
-    print '<body data-webprefix="' . $gconfig{'webprefix'} . '">', "\n";
+    print '<body data-webprefix="'
+        . $gconfig{'webprefix'}
+        . '" data-current-product="'
+        . &get_product_name()
+        . '">', "\n";
 
     if ( @_ > 1 ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
@@ -219,7 +231,7 @@ sub theme_popup_prehead {
             "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/default.min.css" rel="stylesheet" type="text/css">',
+            . '/unauthenticated/css/default.min.css?v700" rel="stylesheet" type="text/css">',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
@@ -232,6 +244,10 @@ sub theme_popup_prehead {
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/jquery.scrollbar.min.js" type="text/javascript"></script>',
+            "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/slimscroll.min.js" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
@@ -255,7 +271,11 @@ sub theme_popup_prehead {
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/default.min.js" type="text/javascript"></script>',
+            . '/unauthenticated/js/spin.min.js" type="text/javascript"></script>',
+            "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/default.min.js?v700" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
@@ -301,7 +321,7 @@ sub theme_file_chooser_button {
         ( $w, $h ) = split( /x/, $gconfig{'db_sizefile'} );
     }
     return
-        "<button class='btn btn-default' style='height: 34px; vertical-align:bottom' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>...</button>\n";
+        "<button class='btn btn-default file_chooser_button' style='height: 34px; vertical-align:middle !important;' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>...</button>\n";
 }
 
 sub theme_user_chooser_button {
@@ -345,7 +365,7 @@ sub theme_popup_window_button {
     my ( $url, $w, $h, $scroll, $fields ) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
     my $rv
-        = "<input class='btn btn-default' style='height: 34px; vertical-align:bottom' type=button onClick='";
+        = "<input class='btn btn-default' style='height: 34px; vertical-align:middle !important;' type=button onClick='";
     foreach my $m (@$fields) {
         $rv .= "$m->[0] = form.$m->[1]; ";
     }
@@ -568,7 +588,8 @@ sub theme_ui_textbox {
     my $rv;
 
     $rv
-        .= '<input style="display: inline; width: auto; max-width:93%; height: 34px; vertical-align:middle" class="form-control" type="text" ';
+        .= '<input style="display: inline; width: auto; max-width:93%; height: 34px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
+    $rv .= 'id="' . &quote_escape($name) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= ( $dis ? 'disabled="true" ' : '' );
@@ -584,7 +605,7 @@ sub theme_ui_password {
     my $rv;
 
     $rv
-        .= '<input style="display: inline; width: auto; max-width:93%; vertical-align:middle" class="form-control" type="password" ';
+        .= '<input style="display: inline; width: auto; max-width:93%; vertical-align:middle" class="form-control ui_password" type="password" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
@@ -610,7 +631,7 @@ sub theme_ui_radio {
             $label = $1;
             $after = $2;
         }
-        $rv .= '<input type="radio" ';
+        $rv .= '<input class="ui_radio" type="radio" ';
         $rv .= 'name="' . &quote_escape($name) . '" ';
         $rv .= 'value="' . &quote_escape( $o->[0] ) . '" ';
         $rv .= ( $o->[0] eq $value ? 'checked ' : '' );
@@ -673,7 +694,7 @@ sub theme_ui_textarea {
     $cols = &ui_max_text_width( $cols, 1 );
 
     return
-        "<textarea style='display: inline; width:100%;' class='form-control' "
+        "<textarea style='display: inline; width:100%;' class='form-control ui_textarea' "
         . "name=\""
         . &quote_escape($name) . "\" " . "id=\""
         . &quote_escape($name) . "\" "
@@ -689,7 +710,7 @@ sub theme_ui_submit {
     my ( $label, $name, $dis, $tags ) = @_;
 
     return
-          "<input class='btn btn-default submitter' type='submit'"
+          "<input class='btn btn-default submitter ui_submit' type='submit'"
         . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "" )
         . ( $name ne '' ? " id=\"" . &quote_escape($name) . "\""   : "" )
         . " value=\""
@@ -703,7 +724,7 @@ sub theme_ui_reset {
     my $rv;
 
     $rv
-        .= '<button class="btn btn-default" style="height: 32px; vertical-align:middle" type="reset" ';
+        .= '<button class="btn btn-default ui_reset" style="height: 34px; vertical-align:middle" type="reset" ';
     $rv .= ( $dis ? 'disabled="disabled">' : '>' );
     $rv .= &quote_escape($label);
     $rv .= '</button>' . "\n";
@@ -715,7 +736,7 @@ sub theme_ui_button {
     my ( $label, $name, $dis, $tags ) = @_;
     my $rv;
 
-    $rv .= '<button type="button" class="btn btn-default" ';
+    $rv .= '<button type="button" class="btn btn-default ui_button" ';
     $rv .= ( $name ne '' ? 'name="' . &quote_escape($name) . '" ' : '' );
     $rv .= ( $dis ? 'disabled="disabled"' : '' );
     $rv .= ( $tags ? ' ' . $tags : '' ) . '>';
@@ -749,14 +770,14 @@ sub theme_ui_tabs_start {
         my $tabid = "tab_" . $t->[0];
         if ( $t->[0] eq $sel ) {
             $rv
-                .= '<li class="active"><a data-toggle="tab" href="#'
+                .= '<li class="active"><a data-toggle="tab" onclick="return tab_action(\''.$name.'\', \''.$t->[0].'\')" href="#'
                 . $t->[0] . '">'
                 . $t->[1]
                 . '</a></li>' . "\n";
         }
         else {
             $rv
-                .= '<li><a data-toggle="tab" href="#'
+                .= '<li><a data-toggle="tab" onclick="return tab_action(\''.$name.'\', \''.$t->[0].'\')" href="#'
                 . $t->[0] . '">'
                 . $t->[1]
                 . '</a></li>' . "\n";
@@ -765,6 +786,7 @@ sub theme_ui_tabs_start {
     $rv .= '</ul>' . "\n";
     $rv .= '<div class="tab-content">' . "\n";
     $main::ui_tabs_selected = $sel;
+    $rv .= &ui_hidden($name, $sel)."\n";
 
     return $rv;
 }
