@@ -1,6 +1,6 @@
 #
-# Authentic Theme 7.0.0 (https://github.com/qooob/authentic-theme)
-# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 8.0.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -19,7 +19,8 @@ if ( $hasvirt && $in{'dom'} ) {
 }
 
 &header($title);
-print '<div id="wrapper" class="page">' . "\n";
+print '<div id="wrapper" class="page" data-notice="'
+    . (( -f $root_directory . '/authentic-theme/update' ) ? do { '1'; unlink $root_directory . '/authentic-theme/update'; } : 0) . '">' . "\n";
 print '<div class="container">' . "\n";
 print '<div id="system-status" class="panel panel-default">' . "\n";
 print '<div class="panel-heading">' . "\n";
@@ -27,9 +28,7 @@ print '<h3 class="panel-title">' . &text('body_header0') . (
     ( $level != 2 && $level != 3 )
     ? '<a href="/?updated" target="_top" data-href="'
         . $gconfig{'webprefix'}
-        . '/webmin/edit_webmincron.cgi" data-refresh="system-status" data-refresh-title="'
-        . &text('body_refresh_title')
-        . '" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>
+        . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>
         <button type="button" class="btn btn-primary" style="display: none; visibility: hidden" data-toggle="modal" data-target="#update_notice"></button>'
     : ''
 ) . '</h3>' . "\n";
@@ -284,28 +283,25 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 7.0.0 (December 21, 2014)</h4>
+                        <h4>Version 8.0.0 (January 4, 2015)</h4>
                         <ul>
-                          <li>Improved overall <code>theme speed</code> - twice as fast as before</li>
-                          <li>Added scrolling to extra long <code>help popovers</code> that were going off the screen</li>
-                          <li>Added complete support for <code>Internet Explorer</code> browser</li>
-                          <li>Changed right side <code>body</code> background to draw more attention to content</li>
-                          <li>Changed <code>panel</code> top border height, to draw more attention, while being the main page header</li>
-                          <li>Changed <code>loader</code> - no more images or fonts used - pure script brings overall beauty and compatibility</li>
-                          <li>Updated <code>jQuery</code> to latest <em>2.1.3</em> version</li>
-                          <li>Fixed problems when using <code>LastPass/FireBug</code> plugins &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/6"></a></li>
-                          <li>Fixed extra width in table rows and all around the theme</li>
-                          <li>Fixed position of <code>dataTables</code> sorting images to be closer to the text &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/55"></a></li>
-                          <li>Fixed <code>dataTables</code> disappear in <code>init</code> module in some cases &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/55"></a></li>
-                          <li>Fixed missing <code>ui_hidden</code> when changing tabs &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/56"></a></li>
-                          <li>Fixed <kbd>hundreds</kbd> of UI bugs</li>
+                          <li>Added <code>Quick Search</code>. No more searching through the menus. Hit <em>Alt+S</em> <code>(⌥S)</code> and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search</li>
+                          <li>Added <code>Quick Toggle</code>. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use <em>Alt+W</em> <code>(⌥W)</code> / <em>Alt+V</em> <code>(⌥V)</code> / <em>Alt+C</em> <code>(⌥C)</code></li>
+                          <li>Added support for <code>TimePlot</code> for Pro versions of <em>Virtualmin</em> to display <em>System Statistics</em></li>
+                          <li>Added search for <code>CodeMirror</code> files</li>
+                          <li>Added basic support for <code>Webminstats</code> module &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/1"></a></li>
+                          <li>Updated <code>DataTables</code> to the latest version 1.10.4</li>
+                          <li>Fixed stray <code><\/div></code> tag &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/62"></a></li>
+                          <li>Fixed sticking out tables on very long content &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/58"></a></li>
+                          <li>Fixed <em>ConfigServer Security & Firewall</em> <code>UI bugs</code></li>
+                          <li>Fixed minor <code>UI bugs</code> fixes</li>
                         </ul>
                         <h4 style="margin-top:20px">'
             . $text{'theme_development_support'} . '</h4>
                         Thank you for using <a target="_blank" href="https://github.com/qooob/authentic-theme"><kbd style="background:#5cb85c">'
             . $text{'authentic_theme'}
             . '<kbd></a>. Overall development of this theme has already passed the stage of 100 hours.
-                          While I am happy to provide <em>Authentic Theme</em> for free, it would mean a world to me, if you could send me a <a target="_blank" href="https://github.com/qooob/authentic-theme#donation">donation</a>.
+                          While I am happy to provide <em>Authentic Theme</em> for free, it would mean very much to me, if you could send me a <a target="_blank" href="https://github.com/qooob/authentic-theme#donation">donation</a>.
                           It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development.
                           <br>
                           <br>
@@ -499,9 +495,7 @@ if ( $level == 0 ) {
                 . $msg
                 . '</a> <a href="/?updated" target="_top" data-href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" data-refresh-title="'
-                . &text('body_refresh_title')
-                . '" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh"></i></a>';
+                . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh"></i></a>';
         }
         &print_table_row( $text{'body_updates'}, $msg );
     }

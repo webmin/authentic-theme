@@ -5,6 +5,7 @@ global_search_in=Search in
 left_login=Login: $1
 left_main=Main Menu
 left_home=System Information
+left_statistics=System Statistics
 left_feedback=Send Feedback
 left_refresh_modules=Refresh Modules
 left_others=Others
@@ -193,8 +194,6 @@ body_header1=Account Information
 body_usermin=Usermin Version
 body_out=$1&nbsp;of&nbsp;$2
 body_uquota=Disk quota and usage
-
-body_refresh_title=Page refresh required. Click to refresh the page first
 
 login_danger=Danger!
 login_warning=Warning!

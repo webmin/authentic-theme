@@ -5,6 +5,7 @@ global_search_in=Suchen in
 left_login=Login: $1
 left_main=Hauptmenü
 left_home=System Information
+left_statistics=Systemstatistik
 left_feedback=Feedback senden
 left_refresh_modules=Module aktualisieren
 left_others=Sonstiges
@@ -133,8 +134,6 @@ body_header1=Nutzerinformation
 body_usermin=Usermin Version
 body_out=$1&nbsp;von&nbsp;$2
 body_uquota=HDD-Kontigente und Nutzung
-
-body_refresh_title=Aktualisierung der Seite erforderlich. Klicken Sie, um die Seite zu aktualisieren ersten
 
 login_danger=Gefahr!
 login_warning=Warnung!

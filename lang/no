@@ -5,6 +5,7 @@ global_search_in=Søk i
 left_login=Logg inn: $1
 left_main=Hovedmeny
 left_home=Systeminformasjon
+left_statistics=System Statistikk
 left_feedback=Send tilbakemelding
 left_refresh_modules=Oppdater moduler
 left_others=Ander
@@ -193,8 +194,6 @@ body_header1=Kontoinformasjon
 body_usermin=Usermin versjon
 body_out=$1 of $2
 body_uquota=Diskkvote og bruk
-
-body_refresh_title=Page refresh nødvendig. Klikk for å oppdatere siden først
 
 login_danger=Feil!
 login_warning=Advarsel!

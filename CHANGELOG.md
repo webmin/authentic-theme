@@ -1,5 +1,18 @@
 ##Changelog
 
+####Version 8.0.0 (Jan 4, 2015)
+* Added `Quick Search`. No more searching through the menus. Hit _Alt+S_ `(⌥S)` and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search
+* Added `Quick Toggle`. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use _Alt+W_ `(⌥W)` / _Alt+V_ `(⌥V)` / _Alt+C_ `(⌥C)`
+* Added support for `TimePlot` for Pro versions of _Virtualmin_ to display _System Statistics_
+* Added search for `CodeMirror` files
+* Added basic support for `Webminstats` module [:paperclip:](https://github.com/qooob/authentic-theme/issues/1)
+* Updated `CodeMirror` to the latest version 4.10
+* Updated `DataTables` to the latest version 1.10.4
+* Fixed stray `</div>` tag [:paperclip:](https://github.com/qooob/authentic-theme/issues/62)
+* Fixed sticking out tables on very long content [:paperclip:](https://github.com/qooob/authentic-theme/issues/58)
+* Fixed _ConfigServer Security & Firewall_ `UI bugs`
+* Fixed minor `UI bugs` fixes
+
 ####Version 7.0.0 (Dec 21, 2014)
 * Improved overall `theme speed` - twice as fast as before
 * Added scrolling to extra long `help popovers` that were going off the screen

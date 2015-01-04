@@ -1,6 +1,6 @@
 #
-# Authentic Theme 7.0.0 (https://github.com/qooob/authentic-theme)
-# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 8.0.0 (https://github.com/qooob/authentic-theme)
+# Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -153,34 +153,34 @@ if (   &foreign_available("virtual-server")
             && &foreign_available("server-manager") )
         {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin</a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥V)</span></a></li>';
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin</a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥C)</span></a></li>';
         }
         elsif ( &foreign_available("virtual-server") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin</a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥V)</span></a></li>';
         }
         elsif ( &foreign_available("server-manager") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin</a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥C)</span></a></li>';
         }
 
     }
     elsif ( $is_virtualmin != -1 ) {
         print
-            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin</a></li>';
+            '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="webmin" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥W)</span></a></li>';
         if ( &foreign_available("server-manager") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin</a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥C)</span></a></li>';
         }
     }
     elsif ( $is_cloudmin != -1 ) {
         print
-            '<li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin</a></li>';
+            '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="webmin" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥W)</span></a></li>';
         if ( &foreign_available("virtual-server") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin</a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥V)</span></a></li>';
         }
     }
     print '</ul>
@@ -565,6 +565,7 @@ print '<li><a target="page" data-href="'
     . '/body.cgi" data-toggle="collapse" data-target="#collapse" class="navigation_module_trigger"><i class="fa fa-info"></i> '
     . $text{'left_home'}
     . '</a></li>' . "\n";
+get_sysstat_link();
 %gaccess = &get_module_acl( undef, "" );
 if (   &get_product_name() eq 'webmin'
     && !$ENV{'ANONYMOUS_USER'}
@@ -665,7 +666,8 @@ if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 if ( $minfo->{'dir'} ne 'virtual-server' ) {
-                    &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'} );
+                    &print_category_link( "$minfo->{'dir'}/",
+                        $minfo->{'desc'} );
                 }
             }
             print '</ul>' . "\n";
@@ -693,7 +695,8 @@ if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
         print
             '<input type="text" class="form-control sidebar-search" name="search" placeholder="'
             . $text{'global_search_in'} . ' '
-            . ucfirst( &get_product_name() ) . '">' . "\n";
+            . ucfirst( &get_product_name() )
+            . '                 (⌥S)">' . "\n";
         print '</div>' . "\n";
         print '</form>' . "\n";
     }
@@ -703,6 +706,7 @@ if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
         . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
+    get_sysstat_link();
     if (   &get_product_name() eq 'webmin'
         && !$ENV{'ANONYMOUS_USER'}
         && $gconfig{'nofeedbackcc'} != 2
@@ -803,7 +807,7 @@ elsif ( $is_virtualmin != -1 ) {
         print
             '<input type="text" class="form-control sidebar-search" name="search" placeholder="'
             . $text{'global_search_in'}
-            . ' Virtualmin">' . "\n";
+            . ' Virtualmin              (⌥S)">' . "\n";
 
         print '</div>' . "\n";
         print '</form>' . "\n";
@@ -813,7 +817,7 @@ elsif ( $is_virtualmin != -1 ) {
         . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
-
+    get_sysstat_link();
     if ( &foreign_available("webmin") ) {
         print '<li><a href="'
             . $gconfig{'webprefix'}
@@ -944,4 +948,14 @@ sub print_category_link {
     print '<li>' . "\n";
     print '<a target="page" href="' . $link . '"> ' . $label . '</a>' . "\n";
     print '</li>' . "\n";
+}
+
+sub get_sysstat_link {
+    if ( $virtual_server::module_info{'virtualmin'} eq 'pro' && !$access{'noconfig'} ) {
+        print '<li><a target="page" data-href="'
+            . $gconfig{'webprefix'}
+            . '/virtual-server/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>'
+            . $text{'left_statistics'}
+            . '</span></a></li>' . "\n";
+    }
 }

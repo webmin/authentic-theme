@@ -5,6 +5,7 @@ global_welcome=Bienvenue
 left_login=Se connecter: $1
 left_feedback=Envoyer Feedback
 left_home=Informations de Système
+left_statistics=Statistiques système
 left_main=Menu principal
 left_others=Autres
 left_refresh_modules=Reset modules
@@ -148,8 +149,6 @@ body_used_and_free=$1 total / $2 libre / $3 utilisé
 body_usermin=Version Usermin
 body_virt=Mémoire virtuel
 body_webmin=Version Webmin
-
-body_refresh_title=Rafraîchir la page requise. Cliquez ici pour rafraîchir la page en premier
 
 login_danger=Danger!
 login_message=Vous devez saisir un nom d'utilisateur et mot de passe pour vous connecter

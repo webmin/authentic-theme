@@ -5,6 +5,7 @@ global_search_in=Szukaj ws
 left_login=Login: $1
 left_main=Menu glowne
 left_home=Informacje o systemie
+left_statistics=Statystyki systemowe
 left_feedback=Wyslij opinia
 left_refresh_modules=Odswiez moduly
 left_others=Inne
@@ -193,8 +194,6 @@ body_header1=Informacje o koncie
 body_usermin=Wersja Usermina
 body_out=$1&nbsp;z&nbsp;$2
 body_uquota=Limity i uzycie dysku
-
-body_refresh_title=Strona wymaga odswiezania. Kliknij pierwszy odswiez strone
 
 login_danger=Niebezpieczenstwo!
 login_warning=Ostrzezenie!

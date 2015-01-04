@@ -5,6 +5,7 @@ global_welcome=Bienvenido
 left_login=Iniciar sesión: $1
 left_feedback=Envía Feedback
 left_home=Información del sistema
+left_statistics=Estadísticas del sistema
 left_main=Menú Principal
 left_others=Otros
 left_refresh_modules=Reajusta módulos
@@ -148,8 +149,6 @@ body_used_and_free=$1 total / $2 libre / $3 usado
 body_usermin=Versión Usermin
 body_virt=Memoria virtual
 body_webmin=Versión Webmin
-
-body_refresh_title=Página de actualización requiere. Haga clic para actualizar la página primera
 
 login_danger=Peligro!
 login_message=Debe ingresar un nombre de usuario y contraseña para iniciar sesión

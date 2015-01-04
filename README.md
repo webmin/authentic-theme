@@ -5,20 +5,18 @@
 
 ##Changelog
 
-####Version 7.0.0 (Dec 21, 2014)
-* Improved overall `theme speed` - twice as fast as before
-* Added scrolling to extra long `help popovers` that were going off the screen
-* Added complete support for `Internet Explorer` browser
-* Changed right side `body` background to draw more attention to content
-* Changed `panel` top border height, to draw more attention, while being the main page header
-* Changed `loader` - no more images or fonts used - pure script brings overall beauty and compatibility
-* Updated `jQuery` to latest _2.1.3_ version
-* Fixed problems when using `LastPass/FireBug` plugins [:paperclip:](https://github.com/qooob/authentic-theme/issues/6)
-* Fixed extra width in table rows and all around the theme
-* Fixed position of `dataTables` sorting images to be closer to the text [:paperclip:](https://github.com/qooob/authentic-theme/issues/55)
-* Fixed `dataTables` disappear in `init` module in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/55)
-* Fixed missing `ui_hidden` when changing tabs [:paperclip:](https://github.com/qooob/authentic-theme/issues/56)
-* Fixed `hundreds` of UI bugs
+####Version 8.0.0 (Jan 4, 2015)
+* Added `Quick Search`. No more searching through the menus. Hit _Alt+S_ `(⌥S)` and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search
+* Added `Quick Toggle`. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use _Alt+W_ `(⌥W)` / _Alt+V_ `(⌥V)` / _Alt+C_ `(⌥C)`
+* Added support for `TimePlot` for Pro versions of _Virtualmin_ to display _System Statistics_
+* Added search for `CodeMirror` files
+* Added basic support for `Webminstats` module [:paperclip:](https://github.com/qooob/authentic-theme/issues/1)
+* Updated `CodeMirror` to the latest version 4.10
+* Updated `DataTables` to the latest version 1.10.4
+* Fixed stray `</div>` tag [:paperclip:](https://github.com/qooob/authentic-theme/issues/62)
+* Fixed sticking out tables on very long content [:paperclip:](https://github.com/qooob/authentic-theme/issues/58)
+* Fixed _ConfigServer Security & Firewall_ `UI bugs`
+* Fixed minor `UI bugs` fixes
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
@@ -35,8 +33,7 @@
 * Be compatible with mobile devices
 
 ##Issues
-* Borders on some tables are missing, because of Webmin modules miscalculating _colspan_ values (developers promised to fix it in the near future)
-* Few tables go off the grid on small resolutions (< 1000px)
+* Borders on some tables are missing, because of _Webmin_ modules miscalculating _colspan_ values (developers promised to fix it in the near future)
 
 ##FAQ
 ####How do I install _Authentic_ theme?
