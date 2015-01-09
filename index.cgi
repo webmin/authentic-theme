@@ -1,5 +1,5 @@
 #
-# Authentic Theme 8.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 8.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -153,34 +153,34 @@ if (   &foreign_available("virtual-server")
             && &foreign_available("server-manager") )
         {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥V)</span></a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+V)</span></a></li>';
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥C)</span></a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+C)</span></a></li>';
         }
         elsif ( &foreign_available("virtual-server") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥V)</span></a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+V)</span></a></li>';
         }
         elsif ( &foreign_available("server-manager") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥C)</span></a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+C)</span></a></li>';
         }
 
     }
     elsif ( $is_virtualmin != -1 ) {
         print
-            '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="webmin" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥W)</span></a></li>';
+            '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="webmin" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+W)</span></a></li>';
         if ( &foreign_available("server-manager") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥C)</span></a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="cloudmin" href="/?cloudmin"><i class="fa fa-cloud">&nbsp;&nbsp;</i>Cloudmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+C)</span></a></li>';
         }
     }
     elsif ( $is_cloudmin != -1 ) {
         print
-            '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="webmin" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥W)</span></a></li>';
+            '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="webmin" href="/"><i class="fa fa-cogs">&nbsp;&nbsp;</i>Webmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+W)</span></a></li>';
         if ( &foreign_available("virtual-server") ) {
             print
-                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(⌥V)</span></a></li>';
+                '<li role="presentation"><a role="menuitem" tabindex="-1" data-shortcut="virtualmin" href="/?virtualmin"><i class="fa fa-sun-o">&nbsp;&nbsp;</i>Virtualmin<span class="text-muted small">&nbsp;&nbsp;&nbsp;(Alt+V)</span></a></li>';
         }
     }
     print '</ul>
@@ -695,8 +695,7 @@ if ( $is_virtualmin == -1 && $is_cloudmin == -1 ) {
         print
             '<input type="text" class="form-control sidebar-search" name="search" placeholder="'
             . $text{'global_search_in'} . ' '
-            . ucfirst( &get_product_name() )
-            . '                 (⌥S)">' . "\n";
+            . ucfirst( &get_product_name() ) . '" onfocus="this.placeholder = \'' . $text{'global_search_in'} . ' ' . ucfirst( &get_product_name() ) . '              (Alt+S)' . '\'" onblur="this.placeholder = \'' . $text{'global_search_in'} . ' ' . ucfirst( &get_product_name() ) . '\'">' . "\n";
         print '</div>' . "\n";
         print '</form>' . "\n";
     }
@@ -805,9 +804,9 @@ elsif ( $is_virtualmin != -1 ) {
             '<input type="hidden" class="form-control" name="title" value="Virtualmin '
             . $text{'global_search'} . '">' . "\n";
         print
-            '<input type="text" class="form-control sidebar-search" name="search" placeholder="'
-            . $text{'global_search_in'}
-            . ' Virtualmin              (⌥S)">' . "\n";
+            '<input type="text" class="form-control sidebar-search" name="search"  placeholder="'
+            . $text{'global_search_in'} . ' '
+            . 'Virtualmin' . '" onfocus="this.placeholder = \'' . $text{'global_search_in'} . ' ' . 'Virtualmin' . '            (Alt+S)' . '\'" onblur="this.placeholder = \'' . $text{'global_search_in'} . ' ' . 'Virtualmin' . '\'">' . "\n";
 
         print '</div>' . "\n";
         print '</form>' . "\n";

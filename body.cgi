@@ -1,5 +1,5 @@
 #
-# Authentic Theme 8.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 8.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -272,9 +272,7 @@ if ( $level == 0 ) {
             = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
             . $text{'authentic_theme'} . '</a> '
             . $installed_version
-            . '<a class="btn btn-xs btn-default btn-hidden hidden" style="margin-left:4px; padding:0 12px; line-height:12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme#donation"><i class="fa fa-rub">&nbsp;</i>'
-            . $text{'theme_donate'} . '</a>
-               <div class="modal fade" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true">
+            . '<div class="modal fade" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -283,18 +281,12 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 8.0.0 (January 4, 2015)</h4>
+                        <h4>Version 8.1.0 (January 9, 2015)</h4>
                         <ul>
-                          <li>Added <code>Quick Search</code>. No more searching through the menus. Hit <em>Alt+S</em> <code>(⌥S)</code> and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search</li>
-                          <li>Added <code>Quick Toggle</code>. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use <em>Alt+W</em> <code>(⌥W)</code> / <em>Alt+V</em> <code>(⌥V)</code> / <em>Alt+C</em> <code>(⌥C)</code></li>
-                          <li>Added support for <code>TimePlot</code> for Pro versions of <em>Virtualmin</em> to display <em>System Statistics</em></li>
-                          <li>Added search for <code>CodeMirror</code> files</li>
-                          <li>Added basic support for <code>Webminstats</code> module &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/1"></a></li>
-                          <li>Updated <code>DataTables</code> to the latest version 1.10.4</li>
-                          <li>Fixed stray <code><\/div></code> tag &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/62"></a></li>
-                          <li>Fixed sticking out tables on very long content &nbsp;<a class="fa fa-chain" target="_blank" href="https://github.com/qooob/authentic-theme/issues/58"></a></li>
-                          <li>Fixed <em>ConfigServer Security & Firewall</em> <code>UI bugs</code></li>
-                          <li>Fixed minor <code>UI bugs</code> fixes</li>
+                            <li>Fixed script removing <em>text</em> in rare cases, next to <code>radios/checkboxes</code>, which is actually crucial for understanding of what to select</li>
+                            <li>Changed alien Alt sign <code>⌥</code> to <code>Alt</code>, which now also only appears <code>onfocus</code> on search field (thanks to <em>Joe Cooper</em> for advice)</li>
+                            <li>Fixed <em>dozens</em> of UI issues, like broken borders on tables and some other visual improvements (now theme provides most accurate UI <em>ever</em> achieved)</li>
+                            <li>Removed donation button from <em>System Information</em> page, that was seen on everyday basis (thanks to <em>Joe Cooper</em> for advice)</li>
                         </ul>
                         <h4 style="margin-top:20px">'
             . $text{'theme_development_support'} . '</h4>
@@ -305,7 +297,7 @@ if ( $level == 0 ) {
                           It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development.
                           <br>
                           <br>
-                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> page found issues.
+                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found issues.
                       </div>
                     </div>
                   </div>

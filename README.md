@@ -5,18 +5,11 @@
 
 ##Changelog
 
-####Version 8.0.0 (Jan 4, 2015)
-* Added `Quick Search`. No more searching through the menus. Hit _Alt+S_ `(⌥S)` and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search
-* Added `Quick Toggle`. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use _Alt+W_ `(⌥W)` / _Alt+V_ `(⌥V)` / _Alt+C_ `(⌥C)`
-* Added support for `TimePlot` for Pro versions of _Virtualmin_ to display _System Statistics_
-* Added search for `CodeMirror` files
-* Added basic support for `Webminstats` module [:paperclip:](https://github.com/qooob/authentic-theme/issues/1)
-* Updated `CodeMirror` to the latest version 4.10
-* Updated `DataTables` to the latest version 1.10.4
-* Fixed stray `</div>` tag [:paperclip:](https://github.com/qooob/authentic-theme/issues/62)
-* Fixed sticking out tables on very long content [:paperclip:](https://github.com/qooob/authentic-theme/issues/58)
-* Fixed _ConfigServer Security & Firewall_ `UI bugs`
-* Fixed minor `UI bugs` fixes
+####Version 8.1.0 (Jan 9, 2015)
+* Fixed script removing _text_ in rare cases, next to `radios/checkboxes`, which is actually crucial for understanding of what to select
+* Changed alien Alt sign `⌥` to `Alt`, which now also only appears `onfocus` on search field (thanks to _Joe Cooper_ for advice)
+* Fixed _dozens_ of UI issues, like broken borders on tables and some other visual improvements (now theme provides most accurate UI _ever_ achieved)
+* Removed donation button from _System Information_ page, that was seen on everyday basis (thanks to _Joe Cooper_ for advice)
 
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
@@ -31,9 +24,6 @@
 * Make the theme fully support all Webmin/Usermin modules
 * Be as beautiful, light and easy to use as possible
 * Be compatible with mobile devices
-
-##Issues
-* Borders on some tables are missing, because of _Webmin_ modules miscalculating _colspan_ values (developers promised to fix it in the near future)
 
 ##FAQ
 ####How do I install _Authentic_ theme?
@@ -84,7 +74,7 @@ This happens because Webmin is trying to open a link and download the theme usin
 
  Thank you for using _Authentic Theme_. Overall development of this theme has already passed the stage of 100 hours. While I am happy to provide <em>Authentic Theme</em> for free, it would mean a world to _[me](https://rostovtsev.ru)_, if you could send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will excite future development.
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=programming%40rostovtsev%2eru&lc=RU&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 
 
 ## License

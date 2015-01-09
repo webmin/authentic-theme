@@ -1,5 +1,11 @@
 ##Changelog
 
+####Version 8.1.0 (Jan 9, 2015)
+* Fixed script removing _text_ in rare cases, next to `radios/checkboxes`, which is actually crucial for understanding of what to select
+* Changed alien Alt sign `⌥` to `Alt`, which now also only appears `onfocus` on search field (thanks to _Joe Cooper_ for advice)
+* Fixed _dozens_ of UI issues, like broken borders on tables and some other visual improvements (now theme provides most accurate UI _ever_ achieved)
+* Removed donation button from _System Information_ page, that was seen on everyday basis (thanks to _Joe Cooper_ for advice)
+
 ####Version 8.0.0 (Jan 4, 2015)
 * Added `Quick Search`. No more searching through the menus. Hit _Alt+S_ `(⌥S)` and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search
 * Added `Quick Toggle`. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use _Alt+W_ `(⌥W)` / _Alt+V_ `(⌥V)` / _Alt+C_ `(⌥C)`
