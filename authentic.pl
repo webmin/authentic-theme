@@ -1,5 +1,5 @@
 #
-# Authentic Theme 8.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -23,105 +23,139 @@ sub theme_header {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/bootstrap.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/bootstrap.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
+    print
+        '<link href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500&subset=latin,cyrillic" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/fontawesome.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/fontawesome.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/codemirror.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/codemirror.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/jquery.scrollbar.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/jquery.scrollbar.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/jquery.datatables.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/jquery.datatables.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/progress-circle.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/progress-circle.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/jquery.autocomplete.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/jquery.autocomplete.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/default.min.css?v810" rel="stylesheet" type="text/css">',
-        "\n";
+        . '/unauthenticated/css/select2.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/default.min.css?v900" rel="stylesheet" type="text/css">'
+        . "\n";
 
-    if ( $virtual_server::module_info{'virtualmin'} eq 'pro'
-        && !$access{'noconfig'} )
+    if (   &foreign_available("virtual-server")
+        || &foreign_available("server-manager") )
     {
-        print
-            '<script src="/unauthenticated/js/timeplot.min.js?local" type="text/javascript"></script>',
-            "\n";
+
+        if ( -d $root_directory . "/virtual-server/timeplot" ) {
+            print
+                '<script src="/unauthenticated/js/timeplot/virtual-server/timeplot.min.js?local" type="text/javascript"></script>'
+                . "\n";
+        }
+        elsif ( -d $root_directory . "/server-manager/timeplot" ) {
+            print
+                '<script src="/unauthenticated/js/timeplot/server-manager/timeplot.min.js?local" type="text/javascript"></script>'
+                . "\n";
+        }
     }
+
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/spin.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.ui.effects.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/jquery.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.scrollbar.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/jquery.ui.effects.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.autocomplete.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/jquery.scrollbar.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/slimscroll.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/jquery.autocomplete.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/bootstrap.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/select2.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/fileinput.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/jquery.purl.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/codemirror.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/slimscroll.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.datatables.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/bootstrap.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/tinymce/tinymce.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/fileinput.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/spin.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/codemirror.min.js?v900" type="text/javascript"></script>'
+        . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/default.min.js?v810" type="text/javascript"></script>',
-        "\n";
+        . '/unauthenticated/js/jquery.datatables.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/tinymce/tinymce.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/loader.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/transition.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/screensaver.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+
     print '</head>', "\n";
     print '<body data-webprefix="'
         . $gconfig{'webprefix'}
         . '" data-current-product="'
         . &get_product_name()
-        . '">', "\n";
+        . '">'. "\n";
 
     if ( @_ > 1 ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
             . "\n";
         my %this_module_info = &get_module_info( &get_module_name() );
-        print '<div class="panel panel-default" style="margin-top: 20px;">'
-            . "\n";
+        print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
         print "<table class='header' width=100%><tr>\n";
         if ( $gconfig{'sysinfo'} == 2 && $remote_user ) {
@@ -233,83 +267,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/bootstrap.min.css?v810" rel="stylesheet" type="text/css">',
+            . '/unauthenticated/css/bootstrap.min.css?v900" rel="stylesheet" type="text/css">',
             "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/fontawesome.min.css?v810" rel="stylesheet" type="text/css">',
-            "\n";
-        print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/codemirror.min.css?v810" rel="stylesheet" type="text/css">',
-            "\n";
-        print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/jquery.scrollbar.min.css?v810" rel="stylesheet" type="text/css">',
-            "\n";
-        print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/progress-circle.min.css?v810" rel="stylesheet" type="text/css">',
-            "\n";
-        print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/jquery.autocomplete.min.css?v810" rel="stylesheet" type="text/css">',
-            "\n";
-        print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/default.min.css?v810" rel="stylesheet" type="text/css">',
+            . '/unauthenticated/css/default.min.css?v900" rel="stylesheet" type="text/css">',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/jquery.min.js?v810" type="text/javascript"></script>',
+            . '/unauthenticated/js/jquery.min.js?v900" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/jquery.ui.effects.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/jquery.scrollbar.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/jquery.autocomplete.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/slimscroll.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/bootstrap.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/fileinput.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/codemirror.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/jquery.datatables.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/tinymce/tinymce.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/spin.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/default.min.js?v810" type="text/javascript"></script>',
-            "\n";
-        print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?v810" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?v900" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -338,6 +308,11 @@ sub theme_footer {
     }
 
     print "</div>\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/default.min.js?v900" type="text/javascript"></script>'
+        . "\n";
+
     print '</body>', "\n";
     print '</html>', "\n";
 }
@@ -1171,3 +1146,14 @@ sub theme_ui_radio_table {
     $rv .= "</table>\n";
     return $rv;
 }
+
+$main::cloudmin_no_create_links = 1;
+$main::cloudmin_no_edit_buttons = 1;
+$main::cloudmin_no_global_links = 1;
+
+$main::mailbox_no_addressbook_button = 1;
+$main::mailbox_no_folder_button      = 1;
+
+$main::basic_virtualmin_menu          = 1;
+$main::nocreate_virtualmin_menu       = 1;
+$main::nosingledomain_virtualmin_mode = 1;

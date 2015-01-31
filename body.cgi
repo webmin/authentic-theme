@@ -1,5 +1,5 @@
 #
-# Authentic Theme 8.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -8,24 +8,23 @@ BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &ReadParse();
 &init_config();
+
+do "authentic-theme/authentic-lib.cgi";
+
 &load_theme_library();
 use Time::Local;
 ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
 %text = &load_language($current_theme);
 %text = ( &load_language('virtual-server'), %text );
 
-if ( $hasvirt && $in{'dom'} ) {
-    $defdom = virtual_server::get_domain( $in{'dom'} );
-}
-
 &header($title);
 print '<div id="wrapper" class="page" data-notice="'
-    . (( -f $root_directory . '/authentic-theme/update' ) ? do { '1'; unlink $root_directory . '/authentic-theme/update'; } : 0) . '">' . "\n";
+    . (( -f $root_directory . '/authentic-theme/update' ) ? _post_install() : '0') . '">' . "\n";
 print '<div class="container">' . "\n";
 print '<div id="system-status" class="panel panel-default">' . "\n";
 print '<div class="panel-heading">' . "\n";
 print '<h3 class="panel-title">' . &text('body_header0') . (
-    ( $level != 2 && $level != 3 )
+    ( $level != 2 && $level != 3 && &foreign_available("webmin") )
     ? '<a href="/?updated" target="_top" data-href="'
         . $gconfig{'webprefix'}
         . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>
@@ -281,23 +280,28 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 8.1.0 (January 9, 2015)</h4>
+                        <h4>Version 9.0.0 (February 1, 2015)</h4>
                         <ul>
-                            <li>Fixed script removing <em>text</em> in rare cases, next to <code>radios/checkboxes</code>, which is actually crucial for understanding of what to select</li>
-                            <li>Changed alien Alt sign <code>⌥</code> to <code>Alt</code>, which now also only appears <code>onfocus</code> on search field (thanks to <em>Joe Cooper</em> for advice)</li>
-                            <li>Fixed <em>dozens</em> of UI issues, like broken borders on tables and some other visual improvements (now theme provides most accurate UI <em>ever</em> achieved)</li>
-                            <li>Removed donation button from <em>System Information</em> page, that was seen on everyday basis (thanks to <em>Joe Cooper</em> for advice)</li>
+                            <li>Changed: Overall <code>UI redesign</code> for better experience</li>
+                            <li>Changed: Code <code>core</code> complete rewrite for both <strong>server</strong> and <strong>client-side</strong>. Improved <code>speed</code> and <code>browser/plugin</code> compatibility</li>
+                            <li>Added support for <strong>Virtualmin/Cloudmin</strong> <code>missing left menu</code>, for currently selected virtual server/machine. <strong><em>Attention:</em></strong> You need latest <strong>Virtualmin</strong> installation to make it work. (For <strong>Virtualmin</strong> <em>Pro</em>, minimum version requirement is 4.13 and for <em>GPL</em> users minimum is 4.14)</li>
+                            <li>Added <code>autocomplete</code> for currently <code>opened module</code> in <strong>Webmin</strong>, currently <code>selected domain</code> and list of all available <code>virtual domains/machines</code> in <strong>Virtualmin/Cloudmin</strong> modules</li>
+                            <li>Added <code>complete mobile support</code>. Navigation menu now has absolutely <strong>same functionality</strong> for both <strong>desktop/mobile</strong> versions</li>
+                            <li>Added <code>custom logo</code> support. Manual for using it is on <a href="https://github.com/qooob/authentic-theme#how-do-i-set-custom-logo" target="_blank">GitHub</a> page</li>
+                            <li>Added <code>screen-saver</code> effect (using pure CSS) after <strong>2 minutes</strong> of inactivity</li>
+                            <li>Added <code>shortcut</code> <strong>Alt+R</strong> for <strong>reloading</strong> right frame</li>
+                            <li>Added <code>Chinese translation</code> by <a href="https://github.com/Dreista" target="_blank">Dreista</a></li>
                         </ul>
                         <h4 style="margin-top:20px">'
             . $text{'theme_development_support'} . '</h4>
                         Thank you for using <a target="_blank" href="https://github.com/qooob/authentic-theme"><kbd style="background:#5cb85c">'
             . $text{'authentic_theme'}
-            . '<kbd></a>. Overall development of this theme has already passed the stage of 100 hours.
-                          While I am happy to provide <em>Authentic Theme</em> for free, it would mean very much to me, if you could send me a <a target="_blank" href="https://github.com/qooob/authentic-theme#donation">donation</a>.
-                          It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development.
+            . '<kbd></a>. Overall development of this theme has already passed the stage of <kbd>200</kbd> hours.
+                          While I am glad to provide <em>Authentic</em> Theme for free, it would mean a world to me, if you send me a <a target="_blank" class="label label-info fa fa-paypal" style="font-size: 11px" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
+                          It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development and improve your everyday experience, while working with the theme.
                           <br>
                           <br>
-                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found issues.
+                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found bugs.
                       </div>
                     </div>
                   </div>
@@ -764,147 +768,3 @@ print '</div>' . "\n";
 print '</div>' . "\n";
 
 &footer();
-
-sub print_progressbar_colum {
-    my ( $xs, $sm, $percent, $label ) = @_;
-    use POSIX;
-    $percent = ceil($percent);
-    if ( $percent < 75 ) {
-        $class = 'success';
-    }
-    elsif ( $percent < 90 ) {
-        $class = 'warning';
-    }
-    else {
-        $class = 'danger';
-    }
-    print '<div class="col-xs-' . $xs . ' col-sm-' . $sm . '">' . "\n";
-    print '<div data-progress="'
-        . $percent
-        . '" class="progress progress-circle">' . "\n";
-    print '<div class="progress-bar-circle progress-bar-' . $class . '">'
-        . "\n";
-    print '<div class="progress-bar-circle-mask progress-bar-circle-full">'
-        . "\n";
-    print '<div class="progress-bar-circle-fill"></div>' . "\n";
-    print '</div>' . "\n";
-    print '<div class="progress-bar-circle-mask progress-bar-circle-half">'
-        . "\n";
-    print '<div class="progress-bar-circle-fill"></div>' . "\n";
-    print
-        '<div class="progress-bar-circle-fill progress-bar-circle-fix"></div>'
-        . "\n";
-    print '</div>' . "\n";
-    print '<div class="progress-bar-circle-inset">' . "\n";
-    print '<div class="progress-bar-circle-title">' . "\n";
-    print '<strong class="text-muted">' . $label . '</strong>' . "\n";
-    print '</div>' . "\n";
-    print '<div class="progress-bar-circle-percent">' . "\n";
-    print '<span></span>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
-}
-
-sub get_col_num {
-    my ( $info, $max_col ) = @_;
-    my $num_col = 0;
-    if ( $info->{'cpu'} ) { $num_col++; }
-    if ( $info->{'mem'} ) {
-        @m = @{ $info->{'mem'} };
-        if ( @m && $m[0] ) { $num_col++; }
-        if ( @m && $m[2] ) { $num_col++; }
-    }
-    if ( $info->{'disk_total'} ) { $num_col++; }
-    my $col = $max_col / $num_col;
-    return $col;
-}
-
-sub print_table_row {
-    local ( $title, $content ) = @_;
-    print '<tr>' . "\n";
-    print '<td style="vertical-align:middle; padding:10px;"><strong>'
-        . $title
-        . '</strong></td>' . "\n";
-    print '<td  style="vertical-align:middle; padding:10px;">'
-        . $content . '</td>' . "\n";
-    print '</tr>' . "\n";
-}
-
-sub get_virtualmin_user_level {
-    local ( $hasvirt, $hasvm2, $level );
-    $hasvm2  = &foreign_available("server-manager");
-    $hasvirt = &foreign_available("virtual-server");
-    if ($hasvm2) {
-        &foreign_require( "server-manager", "server-manager-lib.pl" );
-    }
-    if ($hasvirt) {
-        &foreign_require( "virtual-server", "virtual-server-lib.pl" );
-    }
-    if ($hasvm2) {
-        $level = $server_manager::access{'owner'} ? 4 : 0;
-    }
-    elsif ($hasvirt) {
-        $level
-            = &virtual_server::master_admin()   ? 0
-            : &virtual_server::reseller_admin() ? 1
-            :                                     2;
-    }
-    elsif ( &get_product_name() eq "usermin" ) {
-        $level = 3;
-    }
-    else {
-        $level = 0;
-    }
-    return ( $hasvirt, $level, $hasvm2 );
-}
-
-sub show_new_features {
-    my ($nosect) = @_;
-    my $newhtml;
-    if (   $hasvirt
-        && !$sects->{'nonewfeatures'}
-        && defined(&virtual_server::get_new_features_html)
-        && ( $newhtml = virtual_server::get_new_features_html($defdom) ) )
-    {
-        # Show new features HTML for Virtualmin
-        if ($nosect) {
-            print "<h3>$text{'right_newfeaturesheader'}</h3>\n";
-        }
-        else {
-            print ui_hidden_table_start( $text{'right_newfeaturesheader'},
-                "width=100%", 2, "newfeatures", 1 );
-        }
-        print &ui_table_row( undef, $newhtml, 2 );
-        if ( !$nosect ) {
-            print ui_hidden_table_end("newfeatures");
-        }
-    }
-    if (   $hasvm2
-        && !$sects->{'nonewfeatures'}
-        && defined(&server_manager::get_new_features_html)
-        && ( $newhtml = server_manager::get_new_features_html(undef) ) )
-    {
-        # Show new features HTML for Cloudmin
-        if ($nosect) {
-            print "<h3>$text{'right_newfeaturesheadervm2'}</h3>\n";
-        }
-        else {
-            print ui_hidden_table_start( $text{'right_newfeaturesheadervm2'},
-                "width=100%", 2, "newfeaturesvm2", 1 );
-        }
-        print &ui_table_row( undef, $newhtml, 2 );
-        if ( !$nosect ) {
-            print ui_hidden_table_end("newfeaturesvm2");
-        }
-    }
-}
-
-sub parse_license_date {
-    if ( $_[0] =~ /^(\d{4})-(\d+)-(\d+)$/ ) {
-        return eval { timelocal( 0, 0, 0, $3, $2 - 1, $1 - 1900 ) };
-    }
-    return undef;
-}

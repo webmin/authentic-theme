@@ -22,6 +22,7 @@ right_faliases=Mail Aliase
 right_fdbs=Datenbanken
 right_fdns=DNS Dom&#228;nen
 right_fdoms=Virtuelle Server
+right_fvm2=Virtuelle Maschinen
 right_fmail=Email Dom&#228;nen
 right_from=Angemeldet von
 right_fssl=SSL Webseiten

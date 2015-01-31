@@ -26,6 +26,7 @@ right_expirynever=Licenza a vita
 right_fbw=Limite di banda assegnato
 right_fdns=Domini DNS
 right_fdoms=Server Virtuali
+right_fvm2=Macchine Virtuali
 right_fmail=Domini Mail
 right_fmailboxes=Utenti Mail/FTP
 right_fquota=Quota disco assegnata

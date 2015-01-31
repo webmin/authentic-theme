@@ -30,6 +30,7 @@ right_used=总计 $1 , 已使用 $2
 right_header1=Virtualmin 信息
 right_virtualminheader=Virtualmin 信息
 right_fdoms=虚拟服务器
+right_fvm2=虛擬機
 right_fweb=虚拟站点
 right_fssl=SSL websites
 right_fdns=DNS domains
