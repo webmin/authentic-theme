@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.0.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -280,6 +280,12 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
+                        <h4>Version 9.0.1 (February 1, 2015)</h4>
+                        <ul>
+                            <li>Fixed Firefox bug making right frame links not clickable <a href="https://github.com/qooob/authentic-theme/issues/74" target="_blank">(Issue 74)</a></li>
+                            <li>Improved navigation menu auto-opening</li>
+                        </ul>
+
                         <h4>Version 9.0.0 (February 1, 2015)</h4>
                         <ul>
                             <li>Changed: Overall <code>UI redesign</code> for better experience</li>
@@ -301,7 +307,9 @@ if ( $level == 0 ) {
                           It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development and improve your everyday experience, while working with the theme.
                           <br>
                           <br>
-                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found bugs.
+                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found bugs.<br>
+                          <br>
+                          Please rate/comment theme presentation on <a class="label label-danger fa fa-youtube" style="font-size: 11px" target="_blank" href="http://www.youtube.com/watch?v=gfuPFuGpyv8"> YouTube</a> channel.
                       </div>
                     </div>
                   </div>

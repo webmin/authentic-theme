@@ -4,6 +4,11 @@
 **Authentic** is fully compatible with latest Webmin 1.730+, Usermin 1.640+, Virtualmin 4.14+ and Cloudmin 8.00+
 
 ##Changelog
+####Version 9.0.1 (Feb 1, 2015)
+* Fixed Firefox bug making right frame links not clickable [:paperclip:](https://github.com/qooob/authentic-theme/issues/74)
+* Improved navigation menu auto-opening
+
+##Changelog
 ####Version 9.0.0 (Feb 1, 2015)
 * Changed: Overall **UI redesign** for better experience
 * Changed: Code **core** complete rewrite for both _server_ and _client-side_. Improved **speed** and **browser/plugin** compatibility
@@ -18,7 +23,7 @@
 >[Complete Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
 
-##Screenshots
+##Video Screencast
 
 [![ScreenShot](https://rostovtsev.ru/.git/authentic-theme/screenshot-latest.png)](http://youtu.be/gfuPFuGpyv8)
 
