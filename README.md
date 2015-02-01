@@ -25,7 +25,7 @@
 
 ##Video Screencast
 
-[![ScreenShot](https://rostovtsev.ru/.git/authentic-theme/screenshot-latest.png)](http://youtu.be/gfuPFuGpyv8)
+[![ScreenShot](https://rostovtsev.ru/.git/authentic-theme/screenshot-screencast.png)](http://youtu.be/gfuPFuGpyv8)
 
 ##Principles
 * Make the theme fully support all Webmin/Usermin modules
