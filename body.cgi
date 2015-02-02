@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -280,10 +280,16 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 9.0.1 (February 1, 2015)</h4>
+                        <h4>Version 9.0.1-9.0.2 (February 3, 2015)</h4>
                         <ul>
-                            <li>Fixed Firefox bug making right frame links not clickable <a href="https://github.com/qooob/authentic-theme/issues/74" target="_blank">(Issue 74)</a></li>
-                            <li>Improved navigation menu auto-opening</li>
+
+                            <li>Fixed <code>loader</code> positioning</li>
+                            <li>Fixed <code>small buttons</code> under the menu showing <em>correct language link</em> on toggling between <em>Webmin/Virtualmin/Cloudmin</em></li>
+                            <li>Fixed <code>menu jumps</code> <a href="https://github.com/qooob/authentic-theme/issues/76" target="_blank">(Issue 76)</a></li>
+                            <li>Fixed <code>selects</code> incorrectly triggering loader in some cases <a href="https://github.com/qooob/authentic-theme/issues/78" target="_blank">(Issue 78)</a></li>
+                            <li>Improved <code>mobile menu</code> trigger button position and some other mobile menu tweaks</li>
+                            <li>Fixed <code>Firefox bug</code> making right frame links not clickable <a href="https://github.com/qooob/authentic-theme/issues/74" target="_blank">(Issue 74)</a></li>
+                            <li>Improved <code>navigation</code> menu auto-opening</li>
                         </ul>
 
                         <h4>Version 9.0.0 (February 1, 2015)</h4>
@@ -303,13 +309,13 @@ if ( $level == 0 ) {
                         Thank you for using <a target="_blank" href="https://github.com/qooob/authentic-theme"><kbd style="background:#5cb85c">'
             . $text{'authentic_theme'}
             . '<kbd></a>. Overall development of this theme has already passed the stage of <kbd>200</kbd> hours.
-                          While I am glad to provide <em>Authentic</em> Theme for free, it would mean a world to me, if you send me a <a target="_blank" class="label label-info fa fa-paypal" style="font-size: 11px" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
+                          While I am glad to provide <em>Authentic</em> Theme for free, it would mean a world to me, if you send me a <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
                           It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development and improve your everyday experience, while working with the theme.
                           <br>
                           <br>
-                          Don\'t forget nor be lazy to post to <a class="label label-primary fa fa-github" style="font-size: 11px" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found bugs.<br>
+                          Don\'t forget nor be lazy to post to <a class="badge fa fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found bugs.<br>
                           <br>
-                          Please rate/comment theme presentation on <a class="label label-danger fa fa-youtube" style="font-size: 11px" target="_blank" href="http://www.youtube.com/watch?v=gfuPFuGpyv8"> YouTube</a> channel.
+                          Please rate/comment theme presentation on <a class="badge label-danger fa fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://www.youtube.com/watch?v=gfuPFuGpyv8"> YouTube</a> channel.
                       </div>
                     </div>
                   </div>

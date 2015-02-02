@@ -1,9 +1,16 @@
 ##Changelog
 
 ##Changelog
+####Version 9.0.2 (Feb 3, 2015)
+* Fixed **loader** positioning
+* Fixed **small buttons** under the menu showing _correct language link_ on toggling between _Webmin/Virtualmin/Cloudmin_
+* Fixed **menu jumps** [:paperclip:](https://github.com/qooob/authentic-theme/issues/76)
+* Fixed **selects** incorrectly triggering loader in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/78)
+* Improved **mobile menu** trigger button position and some other mobile menu tweaks
+
 ####Version 9.0.1 (Feb 1, 2015)
-* Fixed Firefox bug making right frame not clickable [:paperclip:](https://github.com/qooob/authentic-theme/issues/74)
-* Improved navigation menu auto-opening
+* Fixed **Firefox bug** making right frame _links not clickable_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/74)
+* Improved **navigation** menu auto-opening
 
 ####Version 9.0.0 (Feb 1, 2015)
 * Changed: Overall **UI redesign** for better experience

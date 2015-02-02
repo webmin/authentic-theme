@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.1 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -125,13 +125,19 @@ else {
         . $is_virtualmin
         . '" data-server-manager="'
         . $is_cloudmin
+        . '" data-access-level="'
+        . $virtual_server_access_level
+        . '" data-hostname="'
+        . &get_display_hostname()
         . '" class="index">' . "\n";
 
     #### Mobile. Start.
-        print '<div class="pull-right visible-xs mobile-menu-toggler">';
-        print '<button type="button" class="btn btn-lg btn-default">'
+    print
+        '<div class="visible-xs mobile-menu-toggler" style="position: fixed">';
+    print
+        '<button type="button" class="btn btn-primary" style="padding-left: 6px; padding-right: 5px;">'
         . "\n";
-    print '<i class="fa fa-lg fa-fw fa-bars"></i>' . "\n";
+    print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
     print '</button>' . "\n";
     print '</div>' . "\n";
     #### Mobile. End.
@@ -214,7 +220,8 @@ else {
     #### Left Side. End.
     #Process logo
     if ( -r $config_directory . "/authentic-theme/logo.png" ) {
-    # Store logo in config directory, defaults in most case to `/etc/webmin`. Theme config directory is `/etc/webmin/authentic-theme`
+
+# Store logo in config directory, defaults in most case to `/etc/webmin`. Theme config directory is `/etc/webmin/authentic-theme`
         if (  -s $config_directory
             . "/authentic-theme/logo.png" ne -s $root_directory
             . "/authentic-theme/images/logo.png" )
@@ -226,9 +233,7 @@ else {
             );
         }
         print '<div class="__logo">';
-            print '<img src="'
-            . $gconfig{'webprefix'}
-            . '/images/logo.png">';
+        print '<img src="' . $gconfig{'webprefix'} . '/images/logo.png">';
         print '</div>' . "\n";
     }
     elsif ( -r $root_directory . "/authentic-theme/images/logo.png"
@@ -244,7 +249,7 @@ else {
     print '<div class="loader" id="loader-insertion-point"></div>' . "\n";
     print '</div>' . "\n";
     print
-        '<script>new Spinner($__spinner).spin(document.getElementById(\'loader-insertion-point\'));loading_right_start()</script>';
+        '<script>new Spinner($__spinner).spin(document.getElementById(\'loader-insertion-point\'));__lrs()</script>';
     print '<iframe name="page" id="iframe" src="'
         . $gconfig{'webprefix'}
         . (
