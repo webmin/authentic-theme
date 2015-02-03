@@ -1,10 +1,9 @@
 #
-# Authentic Theme 4.1.4 (https://github.com/qooob/authentic-theme)
-# Copyright 2014 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
+# Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-#!/usr/bin/perl
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 $pragma_no_cache = 1;
@@ -30,26 +29,43 @@ if (   $gconfig{'loginbanner'}
     print '<head>',                 "\n";
     print '<title>',                $title, '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
-    print '<link rel="shortcut icon" href="/favicon-'
+    print '<link rel="shortcut icon" href="'
+        . $gconfig{'webprefix'}
+        . '/favicon-'
         . &get_product_name()
         . '.ico">' . "\n";
     print
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
         . "\n";
     print
-        '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+        '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
-        '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+        '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
-        '<link href="/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
+        '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
         "\n";
     print
-        '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+        '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
         "\n";
     print
-        '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        "\n";
+    print
+        '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/login.min.js" type="text/javascript"></script>',
         "\n";
     print '</head>', "\n";
     print '<body>' . "\n";
@@ -81,29 +97,47 @@ print '<html>',                 "\n";
 print '<head>',                 "\n";
 print '<title>',                $title, '</title>', "\n";
 print '<meta charset="utf-8">', "\n";
-print '<link rel="shortcut icon" href="/favicon-'
+print '<link rel="shortcut icon" href="'
+    . $gconfig{'webprefix'}
+    . '/favicon-'
     . &get_product_name()
     . '.ico">' . "\n";
 print '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
     . "\n";
 print
-    '<link href="/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+    '<link href="'
+    . $gconfig{'webprefix'}
+    . '/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
     "\n";
 print
-    '<link href="/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+    '<link href="'
+    . $gconfig{'webprefix'}
+    . '/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
     "\n";
 print
-    '<link href="/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
+    '<link href="'
+    . $gconfig{'webprefix'}
+    . '/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
     "\n";
 print
-    '<script src="/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+    '<script src="'
+    . $gconfig{'webprefix'}
+    . '/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
     "\n";
 print
-    '<script src="/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+    '<script src="'
+    . $gconfig{'webprefix'}
+    . '/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+    "\n";
+print
+    '<script src="'
+    . $gconfig{'webprefix'}
+    . '/unauthenticated/js/login.min.js" type="text/javascript"></script>',
     "\n";
 print '</head>', "\n";
 print '<body>' . "\n";
 print '<div class="container">' . "\n";
+
 if ( defined( $in{'failed'} ) ) {
     if ( $in{'twofactor_msg'} ) {
         print "<h3>",, "</h3><p></p>\n";
@@ -141,7 +175,7 @@ elsif ( $in{'timed_out'} ) {
     print &text( 'session_timed_out', int( $in{'timed_out'} / 60 ) ) . "\n";
     print '</div>' . "\n";
 }
-print '<form method="post" action="'
+print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
     . '/session_login.cgi" class="form-signin clearfix" role="form">' . "\n";
 print '<h2 class="form-signin-heading"><i class="fa fa-cogs"></i> '
@@ -153,7 +187,7 @@ if ( $gconfig{'realname'} ) {
     $host = &get_display_hostname();
 }
 else {
-    $host = $ENV{'HTTP_HOST'};
+    $host = $ENV{'SERVER_NAME'};
     $host =~ s/:\d+//g;
     $host = &html_escape($host);
 }
@@ -208,5 +242,4 @@ print
     . &text('login_signin')
     . '</button>' . "\n";
 print '</form>' . "\n";
-print '</div>' . "\n";
 &footer();
