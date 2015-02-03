@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.0.3 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -280,9 +280,15 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 9.0.1-9.0.2 (February 3, 2015)</h4>
+                        <h4>Version 9.0.3 (February 3, 2015)</h4>
                         <ul>
+                            <li>Fixed file selector <code>filter broken</code> in some cases <a href="https://github.com/qooob/authentic-theme/issues/81" target="_blank">(Issue 81)</a></li>
+                            <li>Fixed a general bug (not theme related), when <code>clicking</code> on <em>external links</em> <a href="https://github.com/qooob/authentic-theme/issues/82" target="_blank">(Issue 82)</a></li>
+                            <li>Fixed ConfigServer Security & Firewall <code>Firefox bug</code> when buttons didn\'t work <a href="https://github.com/qooob/authentic-theme/issues/83" target="_blank">(Issue 83)</a></li>
+                        </ul>
 
+                        <h4>Version 9.0.0-9.0.2 (February 1-2, 2015)</h4>
+                        <ul>
                             <li>Fixed <code>loader</code> positioning</li>
                             <li>Fixed <code>small buttons</code> under the menu showing <em>correct language link</em> on toggling between <em>Webmin/Virtualmin/Cloudmin</em></li>
                             <li>Fixed <code>menu jumps</code> <a href="https://github.com/qooob/authentic-theme/issues/76" target="_blank">(Issue 76)</a></li>
@@ -290,10 +296,6 @@ if ( $level == 0 ) {
                             <li>Improved <code>mobile menu</code> trigger button position and some other mobile menu tweaks</li>
                             <li>Fixed <code>Firefox bug</code> making right frame links not clickable <a href="https://github.com/qooob/authentic-theme/issues/74" target="_blank">(Issue 74)</a></li>
                             <li>Improved <code>navigation</code> menu auto-opening</li>
-                        </ul>
-
-                        <h4>Version 9.0.0 (February 1, 2015)</h4>
-                        <ul>
                             <li>Changed: Overall <code>UI redesign</code> for better experience</li>
                             <li>Changed: Code <code>core</code> complete rewrite for both <strong>server</strong> and <strong>client-side</strong>. Improved <code>speed</code> and <code>browser/plugin</code> compatibility</li>
                             <li>Added support for <strong>Virtualmin/Cloudmin</strong> <code>missing left menu</code>, for currently selected virtual server/machine. <strong><em>Attention:</em></strong> You need latest <strong>Virtualmin</strong> installation to make it work. (For <strong>Virtualmin</strong> <em>Pro</em>, minimum version requirement is 4.13 and for <em>GPL</em> users minimum is 4.14)</li>

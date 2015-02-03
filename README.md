@@ -5,7 +5,12 @@
 
 ##Changelog
 
-####Version 9.0.2 (Feb 3, 2015)
+####Version 9.0.3 (Feb 3, 2015)
+* Fixed file selector **filter broken** in some cases [:paperclip:](https://github.com/qooob/authentic-theme/issues/81)
+* Fixed a general bug (not theme related), when **clicking** on _external links_ [:paperclip:](https://github.com/qooob/authentic-theme/issues/82)
+* Fixed ConfigServer Security & Firewall **Firefox bug** when buttons didn't work [:paperclip:](https://github.com/qooob/authentic-theme/issues/83)
+
+####Version 9.0.2 (Feb 2, 2015)
 * Fixed **loader** positioning
 * Fixed **small buttons** under the menu showing _correct language link_ on toggling between _Webmin/Virtualmin/Cloudmin_
 * Fixed **menu jumps** [:paperclip:](https://github.com/qooob/authentic-theme/issues/76)
