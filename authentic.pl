@@ -25,8 +25,9 @@ sub theme_header {
         . $gconfig{'webprefix'}
         . '/unauthenticated/css/bootstrap.min.css?v903" rel="stylesheet" type="text/css">'
         . "\n";
-    print
-        '<link href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500&subset=latin,cyrillic" rel="stylesheet" type="text/css">'
+     print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/gfont-face.css" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
