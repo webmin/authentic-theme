@@ -228,7 +228,7 @@ if ( $level == 0 ) {
                             <li>Added <code>dataTables</code> to <em>Software Package Updates</em>, as it\'s useful to sort packages by <em>name/description/status/source</em></li>
                             <li>Added font <code>Roboto</code> in the package and set as default. Font now is local, because <em>Google</em> is blocked in some countries <a href="https://github.com/qooob/authentic-theme/issues/80" target="_blank">(Issue 80)</a></li>
                             <li>Added <code>Hotkey</code> - <em>double</em> <code>Shift</code> for dismissing right side loader</li>
-                            <li>Added custom <code>styles</code> and <code>scripts</code> injector. Now you can apply custom <em>styles/scripts</em> to the theme, which will be preserved upon updates. Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-set-custom-styles" target="_blank">Manual</a> for more details</li>
+                            <li>Added custom <code>styles</code> and <code>scripts</code> injector. Now you can apply custom <em>styles/scripts</em> to the theme, which will be preserved upon updates. Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles" target="_blank">Manual</a> for more details</li>
                             <li>Added <code>brand</code> icons for <em>Webmin/Virtualmin/Cloudmin</em> switches (thanks to <em>Joe Cooper</em> for it)</li>
                             <li>Added <code>left menu</code> dependency updates, upon some triggers happening on the right frame</li>
                             <li>Added <code>extended panels</code> on <em>System Information</em> page, like <em>Quotas</em>, <em>Status</em>, <em>IP address allocation</em> and et cetera</li>
