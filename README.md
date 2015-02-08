@@ -6,11 +6,10 @@
 ##Changelog
 
 ####Version 9.5.0 (Feb 8, 2015)
-* Changed location of **VERSION.txt**, used for updates, from my personal server to _GitHub_'s page. _GitHub_ is using forced `https` connection and thus Perl Module `Net::SSLeay` must be installed. [Manual](https://github.com/qooob/authentic-theme#troubleshoot) for installing it is below
 * Added **dataTables** to _Software Package Updates_, as it's useful to sort packages by _name/description/status/source_
 * Added font **Roboto** in the package and set as default. Font now is local, because _Google_ is blocked in some countries [#80](https://github.com/qooob/authentic-theme/issues/80)
 * Added **Hotkey** - _double_ `Shift` for dismissing right side loader
-* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-styles) for using it is below
+* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles) for using it is below
 * Added **brand** icons for _Webmin/Virtualmin/Cloudmin_ switches (thanks to _Joe Cooper_ for it)
 * Added **left menu** dependency updates, upon some triggers happening on the right frame
 * Added **extended panels** on _System Information_ page, like _Quotas_, _Status_, _IP address allocation_ and et cetera
@@ -31,6 +30,7 @@
 * Be as beautiful, fast, light and easy to use as possible
 * Be compatible with all platforms and support mobile devices
 
+
 ## Features
 * **Autocomplete** that lets you very quickly and effectively navigate through items in *left menu*, items of *currently opened* module in _Webmin_,  items for *currently selected domain* and list of *all available virtual domains/machines* in _Virtualmin/Cloudmin_ module
 * **Hotkeys** for quicker access/control. `Alt+S` for focusing on search field; `Alt+R` for refreshing currently opened module; `Alt+W` switching to _Webmin_; `Alt+V` switching to _Virtualmin_; `Alt+C` switching to _Cloudmin_ and _double_ `Shift` to prematurely dismiss right page loader
@@ -41,6 +41,9 @@
 * _Dismissable_ page **loader**
 * Basic **screen-saver** effect, after 2 minutes of inactivity
 
+## Requirements
+* Perl 5+, with _LWP::Simple_, _version_, _Net::SSLeay_ modules installed
+* Webmin _1.730+_, Usermin _1.640+_ (optional), Virtualmin _4.14+_ (optional), Cloudmin _8.01+_ (optional)
 
 ##Browser support
 
@@ -111,7 +114,6 @@ It happens because the theme is trying to load _Perl_ module dependency, that ar
 > 2. `Can't locate Net/SSLeay.pm in @INC (@INC contains: ..)`<br>
 This happens because Webmin is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using CPAN module in Webmin or using CLI. Package name is `perl-Net-SSLeay`.
 > 3. `Can't locate object method "parse" via package "version" (perhaps you forgot to load "version"?) at`. Installing `version` from CPAN, using CPAN module in Webmin will fix this error.
-> 4. `Can't locate Switch.pm in @INC (@INC contains:)` You can install `Switch` module using CPAN in Webmin or by package name `perl-Switch` to fix this error. In case you got stuck with this error after updating theme and have no access to _CLI_, no worries, just type in _URL_ `http://yourhostname:10000/cpan` and from there choose to install `Switch` module.
 
 ##Development
 ###Lead developer

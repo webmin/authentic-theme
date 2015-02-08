@@ -1,11 +1,10 @@
 ##Changelog
 
 ####Version 9.5.0 (Feb 8, 2015)
-* Changed location of **VERSION.txt**, used for updates, from my personal server to _GitHub_'s page. _GitHub_ is using forced `https` connection and thus Perl Module `Net::SSLeay` must be installed. [Manual](https://github.com/qooob/authentic-theme#troubleshoot) for installing it is below
 * Added **dataTables** to _Software Package Updates_, as it's useful to sort packages by _name/description/status/source_
 * Added font **Roboto** in the package and set as default. Font now is local, because _Google_ is blocked in some countries [#80](https://github.com/qooob/authentic-theme/issues/80)
 * Added **Hotkey** - _double_ `Shift` for dismissing right side loader
-* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-styles) for using it is below
+* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles) for using it is below
 * Added **brand** icons for _Webmin/Virtualmin/Cloudmin_ switches (thanks to _Joe Cooper_ for it)
 * Added **left menu** dependency updates, upon some triggers happening on the right frame
 * Added **extended panels** on _System Information_ page, like _Quotas_, _Status_, _IP address allocation_ and et cetera

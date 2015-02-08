@@ -198,7 +198,7 @@ if ( $level == 0 ) {
     use LWP::Simple;
     my $remote_version
         = get(
-        'https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt'
+        'http://rostovtsev.ru/.git/authentic-theme/VERSION.txt'
         );
     open( FILENAME, '<', \$remote_version );
 
@@ -225,7 +225,6 @@ if ( $level == 0 ) {
                       <div class="modal-body">
                         <h4>Version 9.5.0 (February 8, 2015)</h4>
                         <ul>
-                            <li>Changed location of <code>VERSION.txt</code>, used for updates, from my personal server to <em>GitHub</em>\'s page. <em>GitHub</em> is using forced <code>https</code> connection and thus Perl Module <code>Net::SSLeay</code> must be installed. Read the <a href="https://github.com/qooob/authentic-theme#troubleshoot" target="_blank">Manual</a> for more details</li>
                             <li>Added <code>dataTables</code> to <em>Software Package Updates</em>, as it\'s useful to sort packages by <em>name/description/status/source</em></li>
                             <li>Added font <code>Roboto</code> in the package and set as default. Font now is local, because <em>Google</em> is blocked in some countries <a href="https://github.com/qooob/authentic-theme/issues/80" target="_blank">(Issue 80)</a></li>
                             <li>Added <code>Hotkey</code> - <em>double</em> <code>Shift</code> for dismissing right side loader</li>
@@ -649,7 +648,7 @@ elsif ( $level == 3 ) {
     use LWP::Simple;
     my $remote_version
         = get(
-        'https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt'
+        'http://rostovtsev.ru/.git/authentic-theme/VERSION.txt'
         );
     open( FILENAME, '<', \$remote_version );
 
