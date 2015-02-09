@@ -411,7 +411,7 @@ sub theme_ui_upload {
 sub theme_icons_table {
     print '<div class="row icons-row">' . "\n";
     for ( my $i = 0; $i < @{ $_[0] }; $i++ ) {
-        print '<div style="text-align: left;" class="col-lg-4">' . "\n";
+        print '<div style="text-align: left;" class="col-sm-4">' . "\n";
         &generate_icon( $_[2]->[$i], $_[1]->[$i], $_[0]->[$i],
             ref( $_[4] ) ? $_[4]->[$i] : $_[4],
             $_[5], $_[6], $_[7]->[$i], $_[8]->[$i] );
