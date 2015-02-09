@@ -13,7 +13,12 @@ $pragma_no_cache = 1;
 %text = &load_language($current_theme);
 %gaccess = &get_module_acl( undef, "" );
 &get_miniserv_config( \%miniserv );
-$title = &get_html_framed_title();
+
+#Define page title
+$title = $text{'session_header'};
+if ($gconfig{'showhost'}) {
+        $title = &get_display_hostname()." : ".$title;
+    }
 
 # Show pre-login text banner
 if (   $gconfig{'loginbanner'}
