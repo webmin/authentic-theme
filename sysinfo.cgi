@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -12,16 +12,21 @@ use WebminCore;
 do "authentic-theme/authentic-lib.cgi";
 
 &load_theme_library();
-use Time::Local;
 ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
 %text = &load_language($current_theme);
 %text = ( &load_language('virtual-server'), %text );
 
 &header($title);
 print '<div id="wrapper" class="page" data-notice="'
-    . (( -f $root_directory . '/authentic-theme/update' ) ? _post_install() : '0') . '">' . "\n";
+    . (
+    ( -f $root_directory . '/authentic-theme/update' && $level == 0 )
+    ? _post_install()
+    : '0'
+    ) . '">' . "\n";
 print '<div class="container">' . "\n";
-print '<div id="system-status" class="panel panel-default">' . "\n";
+print
+    '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">'
+    . "\n";
 print '<div class="panel-heading">' . "\n";
 print '<h3 class="panel-title">' . &text('body_header0') . (
     ( $level != 2 && $level != 3 && &foreign_available("webmin") )
@@ -34,6 +39,12 @@ print '<h3 class="panel-title">' . &text('body_header0') . (
 
 print '</div>';
 print '<div class="panel-body">' . "\n";
+
+# Get system info to show
+my @info = &list_combined_system_info();
+
+# Print System Warning
+print_sysinfo_warning(@info);
 
 if ( $level == 0 ) {
 
@@ -106,124 +117,33 @@ if ( $level == 0 ) {
 
     # Virtualmin version
     if ($hasvirt) {
-        if ($hasvirt
-            && read_env_file( $virtual_server::virtualmin_license_file,
-                \%vserial )
-            && $vserial{'SerialNumber'} ne 'GPL'
-            )
+        my %vinfo = &get_module_info("virtual-server");
+        my $is_virtual_server_gpl = $vinfo{'version'} =~ /gpl/;
+        if ($is_virtual_server_gpl eq '1')
         {
-            $license = 1;
+            $vs_license = '0';
 
-            # Parse license expiry date
-            my %lstatus;
-            read_file( $virtual_server::licence_status, \%lstatus );
-
-            if ( $lstatus{'used_servers'} ) {
-                $right_licensed_virtualmin_systems_text = $text{'right_smax'};
-                $right_licensed_virtualmin_systems_data
-                    = $lstatus{'servers'} || $text{'right_vunlimited'};
-                $right_licensed_virtualmin_systems_installed_on_text
-                    = $text{'right_sused'};
-                $right_licensed_virtualmin_systems_installed_on_data
-                    = $lstatus{'used_servers'};
-
-            }
-
-            if ( $lstatus{'expiry'} =~ /^203[2-8]-/ ) {
-                $right_expiry_text = $text{'right_expiry'};
-                $right_expiry_data = $text{'right_expirynever'};
-            }
-            elsif ( $lstatus{'expiry'} ) {
-                $right_expiry_text = $text{'right_expiry'};
-                $right_expiry_data = $lstatus{'expiry'};
-
-                $ltm = &parse_license_date( $lstatus{'expiry'} );
-                if ($ltm) {
-                    $days = int( ( $ltm - time() ) / ( 24 * 60 * 60 ) );
-                    $right_expiry_until_text = $text{'right_expirydays'};
-                    $right_expiry_until_data
-                        = $days < 0
-                        ? &text( 'right_expiryago', -$days )
-                        : $days;
-                }
-            }
         }
         else {
-            $license = 0;
+            $vs_license = '1';
         }
-        if ( $license == 1 ) {
-            ( $dleft, $dreason, $dmax, $dhide )
-                = virtual_server::count_domains("realdoms");
-        }
+
+        $__virtual_server_version = $vinfo{'version'};
+        $__virtual_server_version =~ s/.gpl//igs;
         print_table_row(
             $text{'right_virtualmin'},
-            $virtual_server::module_info{'version'} . " " . (
-                $virtual_server::module_info{'virtualmin'} eq 'gpl'
+            $__virtual_server_version . " " . (
+                $vs_license eq '0'
                 ? ''
                 : 'Pro'
 
                     . (
-                    ( $license == 1 )
-                    ? '<button class="btn btn-default btn-xs btn-hidden hidden"  data-toggle="virtualmin-license" data-placement="top" title="'
-                        . $text{'right_licenceheader'}
-                        . '" style="margin-left:6px; padding:0 8px; line-height: 12px; height:15px;font-size:11px"
-
-                        data-proc-serial-number-text="'
-                        . $text{'right_vserial'} . '"
-                        data-proc-serial-number-data="'
-                        . $vserial{'SerialNumber'} . '"
-
-                        data-proc-license-key-text="'
-                        . $text{'right_vkey'} . '"
-                        data-proc-license-key-data="'
-                        . $vserial{'LicenseKey'} . '"
-
-                        data-proc-license-domains-text="'
-                        . $text{'right_vmax'} . '"
-                        data-proc-license-domains-data="'
-                        . ( $dmax <= 0 ? $text{'right_vunlimited'} : $dmax )
-                        . '"
-
-                        data-proc-license-domains-left-text="'
-                        . $text{'right_vleft'} . '"
-                        data-proc-license-domains-left-data="'
-                        . (
-                          $dleft < 0
-                        ? $text{'right_vunlimited'}
-                        : $dleft
-                        )
-                        . '"
-
-                        data-proc-licensed-virtualmin-systems-text="'
-                        . $right_licensed_virtualmin_systems_text . '"
-                        data-proc-licensed-virtualmin-systems-data="'
-                        . $right_licensed_virtualmin_systems_data . '"
-
-                        data-proc-licensed-virtualmin-systems-installed-on-text="'
-                        . $right_licensed_virtualmin_systems_installed_on_text
-                        . '"
-                        data-proc-licensed-virtualmin-systems-installed-on-data="'
-                        . $right_licensed_virtualmin_systems_installed_on_data
-                        . '"
-
-                        data-proc-expiry-date-text="'
-                        . $right_expiry_text . '"
-                        data-proc-expiry-date-data="'
-                        . $right_expiry_data . '"
-
-                        data-proc-expiry-days-text="'
-                        . $right_expiry_until_text . '"
-                        data-proc-expiry-days-data="'
-                        . $right_expiry_until_data . '"
-
-                       >
-                        <i class="fa fa-info"></i>
-                       </button>'
-                        . '<a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" title="'
+                    ( $vs_license eq '1' )
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" title="'
                         . $text{'right_vlcheck'}
                         . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
-                        . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a>'
+                        . '/virtual-server/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
                     : ''
                     )
 
@@ -233,17 +153,38 @@ if ( $level == 0 ) {
 
     # Cloudmin version
     if ($hasvm2) {
+        my %vinfo = &get_module_info("server-manager");
+        $is_server_manager_gpl = $vinfo{'version'} =~ /gpl/;
+        if ($is_server_manager_gpl eq '1')
+        {
+            $vm2_license = '0';
+
+        }
+        else {
+            $vm2_license = '1';
+        }
+
+        $__server_manager_version = $vinfo{'version'};
+        $__server_manager_version =~ s/.gpl//igs;
         print_table_row(
             $text{'right_vm2'},
-            $server_manager::module_info{'version'} . " "
-                . (
-                $server_manager::module_info{'virtualmin'} eq 'gpl'
+            $__server_manager_version . " " . (
+                $vm2_license eq '0'
                 ? ''
                 : 'Pro'
-                )
-        );
 
-        # The rest will be added later
+                    . (
+                    ( $vm2_license eq '1' )
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" title="'
+                        . $text{'right_vlcheck'}
+                        . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
+                        . $gconfig{'webprefix'}
+                        . '/server-manager/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
+                    : ''
+                    )
+
+            )
+        );
     }
 
     # Theme version/updates
@@ -256,7 +197,9 @@ if ( $level == 0 ) {
     # Define remote version
     use LWP::Simple;
     my $remote_version
-        = get('http://rostovtsev.ru/.git/authentic-theme/VERSION.txt');
+        = get(
+        'http://rostovtsev.ru/.git/authentic-theme/VERSION.txt'
+        );
     open( FILENAME, '<', \$remote_version );
 
     # Trim spaces
@@ -280,35 +223,26 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 9.0.1-9.0.2 (February 3, 2015)</h4>
+                        <h4>Version 9.5.0 (February 8, 2015)</h4>
                         <ul>
+                            <li>Added <code>dataTables</code> to <em>Software Package Updates</em>, as it\'s useful to sort packages by <em>name/description/status/source</em></li>
+                            <li>Added font <code>Roboto</code> in the package and set as default. Font now is local, because <em>Google</em> is blocked in some countries <a href="https://github.com/qooob/authentic-theme/issues/80" target="_blank">(Issue 80)</a></li>
+                            <li>Added <code>Hotkey</code> - <em>double</em> <code>Shift</code> for dismissing right side loader</li>
+                            <li>Added custom <code>styles</code> and <code>scripts</code> injector. Now you can apply custom <em>styles/scripts</em> to the theme, which will be preserved upon updates. Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles" target="_blank">Manual</a> for more details</li>
+                            <li>Added <code>brand</code> icons for <em>Webmin/Virtualmin/Cloudmin</em> switches (thanks to <em>Joe Cooper</em> for it)</li>
+                            <li>Added <code>left menu</code> dependency updates, upon some triggers happening on the right frame</li>
+                            <li>Added <code>extended panels</code> on <em>System Information</em> page, like <em>Quotas</em>, <em>Status</em>, <em>IP address allocation</em> and et cetera</li>
+                            <li>Added Perl <code>error message</code>, explaining how to make the theme work, if it\'s downloaded from <em>GitHub</em> as <em>.zip</em> <a href="https://github.com/qooob/authentic-theme/issues/85" target="_blank">(Issue 85)</a></li>
+                            <li>Fixed missing option <code>create sub-servers</code>, when clicking on <em>Create Virtual Server</em> link, on theme very first load <a href="https://github.com/qooob/authentic-theme/issues/96" target="_blank">(Issue 96)</a></li>
+                            <li>Fixed <code>sticking out</code> <em>long text</em> in the left menu in some languages (Russian, French, Polish and some other) <a href="https://github.com/qooob/authentic-theme/issues/95" target="_blank">(Issue 95)</a></li>
+                            <li>Fixed <code>stuck loader</code>, when going to <em>Webmin Scheduled Functions</em> <a href="https://github.com/qooob/authentic-theme/issues/86" target="_blank">(Issue 86)</a></li>
 
-                            <li>Fixed <code>loader</code> positioning</li>
-                            <li>Fixed <code>small buttons</code> under the menu showing <em>correct language link</em> on toggling between <em>Webmin/Virtualmin/Cloudmin</em></li>
-                            <li>Fixed <code>menu jumps</code> <a href="https://github.com/qooob/authentic-theme/issues/76" target="_blank">(Issue 76)</a></li>
-                            <li>Fixed <code>selects</code> incorrectly triggering loader in some cases <a href="https://github.com/qooob/authentic-theme/issues/78" target="_blank">(Issue 78)</a></li>
-                            <li>Improved <code>mobile menu</code> trigger button position and some other mobile menu tweaks</li>
-                            <li>Fixed <code>Firefox bug</code> making right frame links not clickable <a href="https://github.com/qooob/authentic-theme/issues/74" target="_blank">(Issue 74)</a></li>
-                            <li>Improved <code>navigation</code> menu auto-opening</li>
-                        </ul>
-
-                        <h4>Version 9.0.0 (February 1, 2015)</h4>
-                        <ul>
-                            <li>Changed: Overall <code>UI redesign</code> for better experience</li>
-                            <li>Changed: Code <code>core</code> complete rewrite for both <strong>server</strong> and <strong>client-side</strong>. Improved <code>speed</code> and <code>browser/plugin</code> compatibility</li>
-                            <li>Added support for <strong>Virtualmin/Cloudmin</strong> <code>missing left menu</code>, for currently selected virtual server/machine. <strong><em>Attention:</em></strong> You need latest <strong>Virtualmin</strong> installation to make it work. (For <strong>Virtualmin</strong> <em>Pro</em>, minimum version requirement is 4.13 and for <em>GPL</em> users minimum is 4.14)</li>
-                            <li>Added <code>autocomplete</code> for currently <code>opened module</code> in <strong>Webmin</strong>, currently <code>selected domain</code> and list of all available <code>virtual domains/machines</code> in <strong>Virtualmin/Cloudmin</strong> modules</li>
-                            <li>Added <code>complete mobile support</code>. Navigation menu now has absolutely <strong>same functionality</strong> for both <strong>desktop/mobile</strong> versions</li>
-                            <li>Added <code>custom logo</code> support. Manual for using it is on <a href="https://github.com/qooob/authentic-theme#how-do-i-set-custom-logo" target="_blank">GitHub</a> page</li>
-                            <li>Added <code>screen-saver</code> effect (using pure CSS) after <strong>2 minutes</strong> of inactivity</li>
-                            <li>Added <code>shortcut</code> <strong>Alt+R</strong> for <strong>reloading</strong> right frame</li>
-                            <li>Added <code>Chinese translation</code> by <a href="https://github.com/Dreista" target="_blank">Dreista</a></li>
                         </ul>
                         <h4 style="margin-top:20px">'
             . $text{'theme_development_support'} . '</h4>
                         Thank you for using <a target="_blank" href="https://github.com/qooob/authentic-theme"><kbd style="background:#5cb85c">'
             . $text{'authentic_theme'}
-            . '<kbd></a>. Overall development of this theme has already passed the stage of <kbd>200</kbd> hours.
+            . '<kbd></a>. Overall development of this theme has already passed the stage of <kbd>240</kbd> hours.
                           While I am glad to provide <em>Authentic</em> Theme for free, it would mean a world to me, if you send me a <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
                           It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development and improve your everyday experience, while working with the theme.
                           <br>
@@ -344,6 +278,7 @@ if ( $level == 0 ) {
     &print_table_row( $text{'theme_version'}, $authentic_theme_version );
 
     #System Time
+    use Time::Local;
     $tm = localtime( time() );
     if ( &foreign_available("time") ) {
         $tm = '<a href=' . $gconfig{'webprefix'} . '/time/>' . $tm . '</a>';
@@ -498,21 +433,27 @@ if ( $level == 0 ) {
             $msg = $text{'body_upok'};
         }
         if ( &foreign_available("package-updates") ) {
-            $msg
+            my $updates_num  = $msg;
+            my $updates_text = $msg;
+            $updates_num =~ s/[^0-9]//g;
+            $updates_text =~ s/\d//g;
+            $message
                 = '<a href="'
                 . $gconfig{'webprefix'}
                 . '/package-updates/index.cgi?mode=updates">'
-                . $msg
+                . '<i class="badge badge-danger">'
+                . $updates_num
+                . '</i>&nbsp;'
+                . $updates_text
                 . '</a> <a href="/?updated" target="_top" data-href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh"></i></a>';
+                . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh" style="padding-top:1px"></i></a>';
         }
-        &print_table_row( $text{'body_updates'}, $msg );
+        &print_table_row( $text{'body_updates'}, $message );
     }
     print '</table>' . "\n";
 
     # Webmin notifications
-    print '</div>' . "\n";
     if ( &foreign_check("webmin") ) {
         &foreign_require( "webmin", "webmin-lib.pl" );
         my @notifs = &webmin::get_webmin_notifications();
@@ -524,6 +465,12 @@ if ( $level == 0 ) {
 
         # print scalar(@notifs);
     }
+
+    print '</div>';    # Panel Body
+    print '</div>';    # Panel Heading
+
+    print_extended_sysinfo(@info);
+
 }
 elsif ( $level == 2 ) {
 
@@ -545,8 +492,10 @@ elsif ( $level == 2 ) {
     &print_table_row( $text{'right_from'}, $ENV{'REMOTE_HOST'} );
 
     if ($hasvirt) {
+        my $__virtual_server_version = $virtual_server::module_info{'version'};
+        $__virtual_server_version =~ s/.gpl//igs;
         &print_table_row( $text{'right_virtualmin'},
-            $virtual_server::module_info{'version'} );
+            $__virtual_server_version);
     }
     else {
         &print_table_row( $text{'right_virtualmin'}, $text{'right_not'} );
@@ -663,7 +612,12 @@ elsif ( $level == 2 ) {
     print '</table>' . "\n";
 
     # New features for domain owner
-    show_new_features(0);
+    #show_new_features(0);
+
+    print '</div>';    # Panel Body
+    print '</div>';    # Panel Heading
+
+    print_extended_sysinfo(@info);
 }
 elsif ( $level == 3 ) {
     print '<table class="table table-hover">' . "\n";
@@ -693,7 +647,9 @@ elsif ( $level == 3 ) {
     # Define remote version
     use LWP::Simple;
     my $remote_version
-        = get('http://rostovtsev.ru/.git/authentic-theme/VERSION.txt');
+        = get(
+        'http://rostovtsev.ru/.git/authentic-theme/VERSION.txt'
+        );
     open( FILENAME, '<', \$remote_version );
 
     # Trim spaces
@@ -774,11 +730,17 @@ elsif ( $level == 3 ) {
         }
     }
     print '</table>' . "\n";
+
+    print '</div>';    # Panel Body
+    print '</div>';    # Panel Heading
+
+    print_extended_sysinfo(@info);
 }
 
 # End of page
-print '</div>' . "\n";
-print '</div>' . "\n";
+# print '</div>'; # Panel Body
+# print '</div>'; # Panel Heading
+
 print '</div>' . "\n";
 
 &footer();

@@ -17,7 +17,7 @@ right_cpu=Medie carico CPU
 right_defip=(IP predefinito)
 right_disk=Spazio disco locale
 right_dom=Il tuo nome server
-right_down=Non Ë in esecuzione
+right_down=Non √® in esecuzione
 right_edit=Configura questa pagina
 right_expiry=Data di scadenza
 right_expiryago=$1 giorni fa!
@@ -90,7 +90,7 @@ right_time=Ora di Sistema
 right_up=In esecuzione
 right_upall=Tutti i <a href='$1'>pacchetti Virtualmin</a> sono aggiornati.
 right_upcount=$1 aggiornamenti ai pacchetti Virtualmin sono disponibili. Utilizzare il modulo <a href='$2'>Aggiornamenti dei pacchetti Virtualmin</a> per installarli in modo selettivo.
-right_upcount1=Un aggiornamento pacchetto Virtualmin Ë disponibile. Usa il modulo <a href='$2'>Aggiornamenti dei pacchetti Virtualmin</a> per vedere tutti i pacchetti gestiti.
+right_upcount1=Un aggiornamento pacchetto Virtualmin √® disponibile. Usa il modulo <a href='$2'>Aggiornamenti dei pacchetti Virtualmin</a> per vedere tutti i pacchetti gestiti.
 right_updatesheader=Aggiornamenti di pacchetto
 right_updays=In funzione da $1 giorni, $2 ore, $3 minuti
 right_updesc=Descrizione
@@ -162,7 +162,7 @@ login_warning=Attenzione!
 
 session_failed=Login fallito. Per favore prova di nuovo.
 session_logout=Logout riuscito. Usa il form di seguito per loggarti di nuovo.
-session_timed_out=Sessione scaduta dopo $1 minuti di inattivit‡.
+session_timed_out=Sessione scaduta dopo $1 minuti di inattivit√†.
 session_twofailed=Autenticazione a due fattori fallita: $1
 
 virtualmin_left_generic=Crea Server Virtuale

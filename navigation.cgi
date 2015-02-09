@@ -1,11 +1,12 @@
 #
-# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 ## Building Webmin/Usermin menu. Start.
 #
+
 if (   $is_virtualmin == -1 && $is_cloudmin == -1
     || $in{'xhr-navigation-type'} eq 'webmin' )
 {
@@ -65,9 +66,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
     if ( -r "$root_directory/virtual-server/webmin_menu.pl"
         && &get_webmin_version() >= 1.730 )
     {
-        #my $sects = get_right_frame_sections();
         my @leftitems = list_combined_webmin_menu( $sects, \%in );
-        my ($lefttitle) = grep { $_->{'type'} eq 'title' } @leftitems;
 
         print_left_menu( 'virtual-server', \@leftitems, 0 );
         print_sysinfo_link();
@@ -133,9 +132,7 @@ elsif ( $is_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
     if ( -r "$root_directory/server-manager/webmin_menu.pl"
         && &get_webmin_version() >= 1.730 )
     {
-        #my $sects = get_right_frame_sections();
         my @leftitems = list_combined_webmin_menu( $sects, \%in );
-        my ($lefttitle) = grep { $_->{'type'} eq 'title' } @leftitems;
 
         print_left_menu( 'server-manager', \@leftitems, 0 );
         print_sysinfo_link();
@@ -155,10 +152,3 @@ elsif ( $is_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
     }
 }
 
-sub print_sysinfo_link {
-    print '<li><a target="page" data-href="'
-        . $gconfig{'webprefix'}
-        . '/body.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
-        . $text{'left_home'}
-        . '</span></a></li>' . "\n";
-}

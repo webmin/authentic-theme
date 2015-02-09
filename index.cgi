@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -7,8 +7,7 @@
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &ReadParse();
-
-init_config();
+&init_config();
 
 # Detecting Virtualmin/Cloudmin request
 $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
@@ -17,13 +16,20 @@ $is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
 #Going to default right page
 $minfo = &get_goto_module();
 $__goto
-    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? '/body.cgi'
+    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? '/sysinfo.cgi'
     : $minfo ? "$minfo->{'dir'}/"
-    :          "/body.cgi";
+    :          "/sysinfo.cgi";
 
 %text    = &load_language($current_theme);
 %gaccess = &get_module_acl( undef, "" );
 $title   = &get_html_framed_title();
+
+if (  !-d $root_directory . "/authentic-theme"
+    && -d $root_directory . "/authentic-theme-master" )
+{
+    die("ATTENTION:\nHave you downloaded Authentic Theme from GitHub, and unpacked it manually\nto Webmin directory? In this case you need to rename theme directory from\n`authentic-theme-master` to `authentic-theme` in order to make theme work.\nAfterward, you will need to reset the theme again in Webmin Configuration.\n"
+    );
+}
 
 # Load dependencies
 do "authentic-theme/authentic-lib.cgi";
@@ -218,30 +224,9 @@ else {
 
     print '</aside>' . "\n";
     #### Left Side. End.
-    #Process logo
-    if ( -r $config_directory . "/authentic-theme/logo.png" ) {
 
-# Store logo in config directory, defaults in most case to `/etc/webmin`. Theme config directory is `/etc/webmin/authentic-theme`
-        if (  -s $config_directory
-            . "/authentic-theme/logo.png" ne -s $root_directory
-            . "/authentic-theme/images/logo.png" )
-        {
-            # Update logo in case it changed
-            copy_source_dest(
-                $config_directory . "/authentic-theme/logo.png",
-                $root_directory . "/authentic-theme/images"
-            );
-        }
-        print '<div class="__logo">';
-        print '<img src="' . $gconfig{'webprefix'} . '/images/logo.png">';
-        print '</div>' . "\n";
-    }
-    elsif ( -r $root_directory . "/authentic-theme/images/logo.png"
-        && !-r $config_directory . "/authentic-theme/logo.png" )
-    {
-        # Delete logo
-        unlink $root_directory . "/authentic-theme/images/logo.png";
-    }
+    #Process logo
+    embed_logo();
 
     ### Right Side. Start.
     print '<div id="content" class="__page">' . "\n";
@@ -255,7 +240,7 @@ else {
         . (
         ( !-f $root_directory . '/authentic-theme/update' )
         ? $__goto
-        : '/body.cgi'
+        : '/sysinfo.cgi'
         ) . '">' . "\n";
     print '</iframe>' . "\n";
     print '</div>' . "\n";

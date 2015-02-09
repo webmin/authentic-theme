@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.0.2 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -15,10 +15,11 @@ if ( &foreign_available("acl") ) {
         . $user . '</a>';
 }
 else {
-    print '<a><i class="fa fa-fw fa-user text-success"></i>&nbsp;&nbsp;'
+    print
+        '<a style="pointer-events: none;"><i class="fa fa-fw fa-user text-success"></i>&nbsp;&nbsp;'
         . $user . '</a>';
 }
-print '</li><li>';
+print '</li><li class="__logout-link">';
 
 &get_miniserv_config( \%miniserv );
 
@@ -29,14 +30,27 @@ if (   $miniserv{'logout'}
 {
 
     if ($main::session_id) {
-        print '<a href="'
+        print '<a'
+            . (
+            &get_product_name() eq "usermin" ? ' class="bg-dark-red"' : '' )
+            . ' href="'
             . $gconfig{'webprefix'}
-            . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
+            . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out '
+            . (
+            &get_product_name() eq "usermin" ? 'text-light' : 'text-danger' )
+            . '"></i></a>';
     }
     else {
-        print '<a href="'
+        print '<a'
+            . ( &get_product_name() eq "usermin"
+            ? ' class="bg-dark-yellow"'
+            : '' )
+            . ' href="'
             . $gconfig{'webprefix'}
-            . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-warning"></i></a>';
+            . '/switch_user.cgi"><i class="fa fa-fw fa-exchange '
+            . (
+            &get_product_name() eq "usermin" ? 'text-light' : 'text-warning' )
+            . '"></i></a>';
     }
 }
 
