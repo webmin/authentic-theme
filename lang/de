@@ -3,7 +3,7 @@ global_search=Suche
 global_search_in=Suchen in
 
 left_login=Login: $1
-left_main=Hauptmenü
+left_main=Hauptmen&#252;
 left_home=System Information
 left_statistics=Systemstatistik
 left_feedback=Feedback senden
@@ -120,12 +120,12 @@ body_free=$1 gesamt / $2 freien
 body_used_and_free=$1 gesamt / $2 freien / $3 genutzt
 body_cpu=Durchschnitlliche CPU-Auslastung
 body_load=$1 (1 Min) $2 (5 Min) $3 (15 Min)
-body_disk=Lokale HDD-Speicherkapazität
+body_disk=Lokale HDD-Speicherkapazit&#228;t
 body_kernelon=$1 $2 on $3
 body_updates=Paket-Updates
 body_upok=Alle installierten Pakete sind auf dem aktuellesten Stand
-body_upneed=$1 verfügbare Updates
-body_upsec=$1 verfügbare Updates, davon sind $2 Sicherheits-Updates
+body_upneed=$1 verf&#252;gbare Updates
+body_upsec=$1 verf&#252;gbare Updates, davon sind $2 Sicherheits-Updates
 body_cputemps=CPU-Temperatur
 body_drivetemps=HDD-Temperatur
 body_driveerr=$1 Fehler!
@@ -139,7 +139,7 @@ body_uquota=HDD-Kontigente und Nutzung
 login_danger=Gefahr!
 login_warning=Warnung!
 login_success=Erfolgreich!
-login_message=Bitte Nutzernamen und Passwort eingeben für die Anmeldung am Server
+login_message=Bitte Nutzernamen und Passwort eingeben f&#252;r die Anmeldung am Server
 login_user=Nutzername
 login_pass=Passwort
 login_token=Token
@@ -149,21 +149,21 @@ login_reset=Abbrechen
 
 session_failed=Anmeldung fehlgeschlagen. Bitte erneut probieren.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
-session_logout=Erfolgreich abgemeldet. Für eine erneute Anmeldung bitte das folgende Formular nutzen.
-session_timed_out=Sitzung ist nach $1 Minuten aufgrund Inaktivität abgelaufen.
+session_logout=Erfolgreich abgemeldet. F&#252;r eine erneute Anmeldung bitte das folgende Formular nutzen.
+session_timed_out=Sitzung ist nach $1 Minuten aufgrund Inaktivit&#228;t abgelaufen.
 
 virtualmin_left_generic=Virtuellen Server erstellen
 virtualmin_left_virtualmin=Virtuelle Server anzeigen
 
 theme_version=Theme-Version
 authentic_theme=Authentic Theme
-theme_update_available=Neueste verfügbare Release
+theme_update_available=Neueste verf&#252;gbare Release
 theme_download=Download
 theme_update=Update
 theme_changelog=Changelog
 
 theme_update_notice=Aktualisieren und Datenschutz
-theme_development_support=Entwicklungsunterstützung
+theme_development_support=Entwicklungsunterst&#252;tzung
 theme_donate=Spende
 
 __norefs=1
