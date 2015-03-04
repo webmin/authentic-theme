@@ -9,7 +9,7 @@
 
 ##Video Screencast
 
-[![ScreenShot](https://rostovtsev.ru/.git/authentic-theme/images/screenshot-screencast.png)](http://youtu.be/gfuPFuGpyv8)
+[![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot-screencast.png)](http://youtu.be/gfuPFuGpyv8)
 
 ##Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
