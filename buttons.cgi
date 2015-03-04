@@ -1,25 +1,26 @@
 #
-# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 $user = $remote_user;
-print '<li>';
+print '<li class="user-link">';
 if ( &foreign_available("acl") ) {
     print '<a target="page" href="'
         . $gconfig{'webprefix'}
         . '/acl/edit_user.cgi?user='
         . $user
-        . '"><i class="fa fa-fw fa-user text-success"></i>&nbsp;&nbsp;'
+        . '"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
         . $user . '</a>';
 }
 else {
     print
-        '<a style="pointer-events: none;"><i class="fa fa-fw fa-user text-success"></i>&nbsp;&nbsp;'
+        '<a style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
         . $user . '</a>';
 }
-print '</li><li class="__logout-link">';
+print '</li><li class="user-link __logout-link'
+    . ( &get_product_name() eq "usermin" ? ' __logout-link-bg' : '' ) . '">';
 
 &get_miniserv_config( \%miniserv );
 
@@ -36,20 +37,20 @@ if (   $miniserv{'logout'}
             . ' href="'
             . $gconfig{'webprefix'}
             . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out '
-            . (
-            &get_product_name() eq "usermin" ? 'text-light' : 'text-danger' )
+            . ( &get_product_name() eq "usermin" ? '' : 'text-danger' )
             . '"></i></a>';
     }
     else {
         print '<a'
-            . ( &get_product_name() eq "usermin"
+            . (
+            &get_product_name() eq "usermin"
             ? ' class="bg-dark-yellow"'
-            : '' )
+            : ''
+            )
             . ' href="'
             . $gconfig{'webprefix'}
             . '/switch_user.cgi"><i class="fa fa-fw fa-exchange '
-            . (
-            &get_product_name() eq "usermin" ? 'text-light' : 'text-warning' )
+            . ( &get_product_name() eq "usermin" ? '' : 'text-warning' )
             . '"></i></a>';
     }
 }
@@ -62,16 +63,16 @@ if (-r "$root_directory/virtual-server/edit_lang.cgi"
         || $in{'xhr-buttons-type'} eq '1' )
     )
 {
-    print '<li>
+    print '<li class="user-link">
                     <a target="page" href="/virtual-server/edit_lang.cgi">
-                        <i class="fa fa-fw fa-globe text-warning"></i>
+                        <i class="fa fa-fw fa-globe"></i>
                     </a>
                 </li>';
 }
 elsif ( &foreign_available("change-user") ) {
     print
-        '<li><a target="page" href="/change-user"><i class="fa fa-fw fa-globe text-primary"></i></a></li>';
+        '<li class="user-link"><a target="page" href="/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
 
 print
-    '<li><a data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh fa-spin"></i></a></li>';
+    '<li class="user-link"><a data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';

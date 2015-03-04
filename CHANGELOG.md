@@ -1,10 +1,36 @@
 ##Changelog
 
+####Version 10.0.0 (Mar 4, 2015)
+* Changed theme **repo location** to _GitHub_.  **Attention:** It's required that your _Perl_ installation can handle _https_ connections. Make sure to have installed, either _LWP::Protocol::https_ or _Bundle::LWP_ modules to make future _automatic updates_ work
+* Improved left menu design to be more flat-like _(complete page reload is required)_
+* Improved the look of old **ui_hidden** collapse, to look more like new _Bootstrap_ collapse
+* Added support for **Webmail** in _Usermin_ [#104](https://github.com/qooob/authentic-theme/issues/104)
+* Added **dataTables** search, in case table contains more than 10 rows
+* Added **dataTables** on filesize, to properly sort columns containing filesize data [#103](https://github.com/qooob/authentic-theme/issues/103)
+* Added **custom logo** support for login screen [#116](https://github.com/qooob/authentic-theme/issues/116). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-logos) for using it
+* Added support for **basic settings** to control the theme (disable loaders and more). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added extended controls to _System Information_ page for **ConfigServer Security & Firewall**
+* Added complete support for scrolling on _iPhone/iPad_ [#115](https://github.com/qooob/authentic-theme/issues/115)
+* Fixed server-side search that stopped working after adding _autocomplete_
+* Fixed **select** issue in _Internet Explorer_ browser [#99](https://github.com/qooob/authentic-theme/issues/99)
+* Fixed package updates showing wrong numbers on _System Information_ page [#112](https://github.com/qooob/authentic-theme/issues/112)
+* Fixed **quotas charts** issue, displaying incorrect numbers in _System Information_/_Quotas_ [#110](https://github.com/qooob/authentic-theme/issues/110)
+* Fixed missing left menu reload upon importing new virtual server
+* Fixed stuck loader appearing in certain cases [#117](https://github.com/qooob/authentic-theme/issues/117)
+* Fixed stuck loader in all third party modules, like **AWStat, Webminstat** and **OpenVPN + CA** [#106](https://github.com/qooob/authentic-theme/issues/106)
+* Fixed **hotkeys triggers**, which now is executed only in case the switch is not already active [#118](https://github.com/qooob/authentic-theme/issues/118)
+* Fixed fatal error happening when changing domain in _Webmin/Virtualmin_ domain owner mode
+* Fixed **System Statistics** link to be shown only in administrative mode
+* Fixed _Virtualmin->Administration Options->Switch To Server's Admin_ link, being opened in `__parent` window
+* Fixed **WYSIWYG bar** being _lower_ than it should be from the upper border, when composing new message
+* Fixed login page throwing an error to the console
+* Removed screen-saver, as it was eating a lot of memory
+
 ####Version 9.5.0 (Feb 8, 2015)
 * Added **dataTables** to _Software Package Updates_, as it's useful to sort packages by _name/description/status/source_
 * Added font **Roboto** in the package and set as default. Font now is local, because _Google_ is blocked in some countries [#80](https://github.com/qooob/authentic-theme/issues/80)
 * Added **Hotkey** - _double_ `Shift` for dismissing right side loader
-* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles) for using it is below
+* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles) for using
 * Added **brand** icons for _Webmin/Virtualmin/Cloudmin_ switches (thanks to _Joe Cooper_ for it)
 * Added **left menu** dependency updates, upon some triggers happening on the right frame
 * Added **extended panels** on _System Information_ page, like _Quotas_, _Status_, _IP address allocation_ and et cetera
@@ -35,7 +61,7 @@
 * Added support for _Virtualmin/Cloudmin_ **missing left menu**, for currently selected virtual server/machine. ***Attention:*** You need latest _Virtualmin_ installation to make it work. (For _Virtualmin_ *Pro*, minimum version requirement is 4.13 and for *GPL* users minimum is 4.14)
 * Added **autocomplete** for currently **opened module** in _Webmin_, currently **selected domain** and list of all available **virtual domains/machines** in _Virtualmin/Cloudmin_ modules
 * Added **complete mobile support**. Navigation menu now has absolutely _same functionality_ for both _desktop/mobile_ versions
-* Added **custom logo** support. [Manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-logo) for using it is below
+* Added **custom logo** support. [Manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-logos) for using
 * Added **screen-saver** effect (using pure CSS) after _2 minutes_ of inactivity
 * Added **shortcut** _Alt+R_ for _reloading_ right frame
 * Added **Chinese translation** by [Dreista](https://github.com/Dreista)

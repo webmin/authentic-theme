@@ -1,5 +1,5 @@
 #
-# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -41,10 +41,7 @@ print '</div>';
 print '<div class="panel-body">' . "\n";
 
 # Get system info to show
-my @info = &list_combined_system_info();
-
-# Print System Warning
-print_sysinfo_warning(@info);
+my @info = &list_combined_system_info( { 'qshow', 1 } );
 
 if ( $level == 0 ) {
 
@@ -117,10 +114,9 @@ if ( $level == 0 ) {
 
     # Virtualmin version
     if ($hasvirt) {
-        my %vinfo = &get_module_info("virtual-server");
+        my %vinfo                 = &get_module_info("virtual-server");
         my $is_virtual_server_gpl = $vinfo{'version'} =~ /gpl/;
-        if ($is_virtual_server_gpl eq '1')
-        {
+        if ( $is_virtual_server_gpl eq '1' ) {
             $vs_license = '0';
 
         }
@@ -139,7 +135,7 @@ if ( $level == 0 ) {
 
                     . (
                     ( $vs_license eq '1' )
-                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" title="'
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" data-title="'
                         . $text{'right_vlcheck'}
                         . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
@@ -155,8 +151,7 @@ if ( $level == 0 ) {
     if ($hasvm2) {
         my %vinfo = &get_module_info("server-manager");
         $is_server_manager_gpl = $vinfo{'version'} =~ /gpl/;
-        if ($is_server_manager_gpl eq '1')
-        {
+        if ( $is_server_manager_gpl eq '1' ) {
             $vm2_license = '0';
 
         }
@@ -175,8 +170,8 @@ if ( $level == 0 ) {
 
                     . (
                     ( $vm2_license eq '1' )
-                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" title="'
-                        . $text{'right_vlcheck'}
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" data-title="'
+                        . $text{'right_slcheck'}
                         . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
                         . '/server-manager/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
@@ -198,7 +193,7 @@ if ( $level == 0 ) {
     use LWP::Simple;
     my $remote_version
         = get(
-        'http://rostovtsev.ru/.git/authentic-theme/VERSION.txt'
+        'https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt'
         );
     open( FILENAME, '<', \$remote_version );
 
@@ -215,7 +210,7 @@ if ( $level == 0 ) {
             . $text{'authentic_theme'} . '</a> '
             . $installed_version
             . '<div class="modal fade" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true">
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-dialog-update">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -223,33 +218,46 @@ if ( $level == 0 ) {
             . $text{'theme_update_notice'} . '</h4>
                       </div>
                       <div class="modal-body">
-                        <h4>Version 9.5.0 (February 8, 2015)</h4>
+                        <h4>Version 10.0.0 (March 4, 2015)</h4>
                         <ul>
-                            <li>Added <code>dataTables</code> to <em>Software Package Updates</em>, as it\'s useful to sort packages by <em>name/description/status/source</em></li>
-                            <li>Added font <code>Roboto</code> in the package and set as default. Font now is local, because <em>Google</em> is blocked in some countries <a href="https://github.com/qooob/authentic-theme/issues/80" target="_blank">(Issue 80)</a></li>
-                            <li>Added <code>Hotkey</code> - <em>double</em> <code>Shift</code> for dismissing right side loader</li>
-                            <li>Added custom <code>styles</code> and <code>scripts</code> injector. Now you can apply custom <em>styles/scripts</em> to the theme, which will be preserved upon updates. Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles" target="_blank">Manual</a> for more details</li>
-                            <li>Added <code>brand</code> icons for <em>Webmin/Virtualmin/Cloudmin</em> switches (thanks to <em>Joe Cooper</em> for it)</li>
-                            <li>Added <code>left menu</code> dependency updates, upon some triggers happening on the right frame</li>
-                            <li>Added <code>extended panels</code> on <em>System Information</em> page, like <em>Quotas</em>, <em>Status</em>, <em>IP address allocation</em> and et cetera</li>
-                            <li>Added Perl <code>error message</code>, explaining how to make the theme work, if it\'s downloaded from <em>GitHub</em> as <em>.zip</em> <a href="https://github.com/qooob/authentic-theme/issues/85" target="_blank">(Issue 85)</a></li>
-                            <li>Fixed missing option <code>create sub-servers</code>, when clicking on <em>Create Virtual Server</em> link, on theme very first load <a href="https://github.com/qooob/authentic-theme/issues/96" target="_blank">(Issue 96)</a></li>
-                            <li>Fixed <code>sticking out</code> <em>long text</em> in the left menu in some languages (Russian, French, Polish and some other) <a href="https://github.com/qooob/authentic-theme/issues/95" target="_blank">(Issue 95)</a></li>
-                            <li>Fixed <code>stuck loader</code>, when going to <em>Webmin Scheduled Functions</em> <a href="https://github.com/qooob/authentic-theme/issues/86" target="_blank">(Issue 86)</a></li>
-
+                            <li>Improved left menu design to be more flat-like <em>(complete page reload is required)</em></li>
+                            <li>Improved the look of old <code>ui_hidden</code> collapse, to look more like new <em>Bootstrap</em> collapse</li>
+                            <li>Added support for <code>Webmail</code> in <em>Usermin</em> <a href="https://github.com/qooob/authentic-theme/issues/104" target="_blank">(Issue 104)</a></li>
+                            <li>Added <code>dataTables</code>, search in case table contains more than 10 rows</li>
+                            <li>Added <code>dataTables</code> on filesize, to properly sort columns containing filesize data <a href="https://github.com/qooob/authentic-theme/issues/103" target="_blank">(Issue 103)</a></li>
+                            <li>Added <code>custom logo</code> support for login screen <a href="https://github.com/qooob/authentic-theme/issues/116" target="_blank">(Issue 116)</a>. Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-set-custom-logos" target="_blank">manual</a></li>
+                            <li>Added support for <code>basic settings</code> to control the theme (disable loaders and more). Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings" target="_blank">manual</a></li>
+                            <li>Added extended controls to <em>System Information</em> page for <code>ConfigServer Security & Firewall</code></li>
+                            <li>Added complete support for scrolling on <em>iPhone/iPad</em> <a href="https://github.com/qooob/authentic-theme/issues/115" target="_blank">(Issue 115)</a></li>
+                            <li>Fixed server-side search that stopped working after adding <em>autocomplete</em></li>
+                            <li>Fixed <code>select</code> issue in <em>Internet Explorer</em> browser <a href="https://github.com/qooob/authentic-theme/issues/99" target="_blank">(Issue 99)</a></li>
+                            <li>Fixed package updates showing wrong numbers on <em>System Information</em> page <a href="https://github.com/qooob/authentic-theme/issues/112" target="_blank">(Issue 112)</a></li>
+                            <li>Fixed <code>quotas charts</code> issue, displaying incorrect numbers in <em>System Information</em>/<em>Quotas</em> <a href="https://github.com/qooob/authentic-theme/issues/110" target="_blank">(Issue 110)</a></li>
+                            <li>Fixed missing left menu reload upon importing new virtual server</li>
+                            <li>Fixed stuck loader appearing in certain cases <a href="https://github.com/qooob/authentic-theme/issues/117" target="_blank">(Issue 117)</a></li>
+                            <li>Fixed stuck loader in all third party modules, like <code>AWStat, Webminstat</code> and <code>OpenVPN + CA</code> <a href="https://github.com/qooob/authentic-theme/issues/106" target="_blank">(Issue 106)</a></li>
+                            <li>Fixed <code>hotkeys triggers</code>, which now is executed only in case the switch is not already active <a href="https://github.com/qooob/authentic-theme/issues/118" target="_blank">(Issue 118)</a></li>
+                            <li>Fixed fatal error happening when changing domain in <em>Webmin/Virtualmin</em> domain owner mode</li>
+                            <li>Fixed <code>System Statistics</code> link to be shown only in administrative mode</li>
+                            <li>Fixed <em>Virtualmin->Administration Options->Switch To Server\'s Admin</em> link, being opened in <code>__parent</code> window</li>
+                            <li>Fixed <code>WYSIWYG bar</code> being <em>lower</em> than it should be from the upper border, when composing new message</li>
+                            <li>Fixed login page throwing an error to the console</li>
+                            <li>Removed screen-saver, as it was eating a lot of memory</li>
+                            <li>Changed theme <code>repo location</code> to <em>GitHub</em>.  <strong>Attention:</strong> It\'s required that your <em>Perl</em> installation can handle <em>https</em> connections. Make sure to have installed, either <em>LWP::Protocol::https</em> or <em>Bundle::LWP</em> modules to make future <em>automatic updates</em> work</li>
                         </ul>
                         <h4 style="margin-top:20px">'
             . $text{'theme_development_support'} . '</h4>
                         Thank you for using <a target="_blank" href="https://github.com/qooob/authentic-theme"><kbd style="background:#5cb85c">'
             . $text{'authentic_theme'}
-            . '<kbd></a>. Overall development of this theme has already passed the stage of <kbd>240</kbd> hours.
-                          While I am glad to provide <em>Authentic</em> Theme for free, it would mean a world to me, if you send me a <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
-                          It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will excite future development and improve your everyday experience, while working with the theme.
+            . '<kbd></a>. Overall development of this theme has already passed the stage of <kbd>400</kbd> hours.
+                          I am happy to provide <em>Authentic</em> Theme for free but please know, that it would mean a World to <a href="https://rostovtsev.ru" target="_blank">me</a>, if you send me a <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
+                          It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will <em>help me to pay my bills</em>, excite future development and improve your everyday experience, while working with the theme.
                           <br>
                           <br>
-                          Don\'t forget nor be lazy to post to <a class="badge fa fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme"> GitHub</a> found bugs.<br>
+                          Please <i class="badge fa fa-thumbs-up" style="font-size: 11px; background:#5cb85c"> Like</i> theme presentation on <a class="badge label-danger fa fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://www.youtube.com/watch?v=gfuPFuGpyv8"> YouTube</a> channel.
                           <br>
-                          Please rate/comment theme presentation on <a class="badge label-danger fa fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://www.youtube.com/watch?v=gfuPFuGpyv8"> YouTube</a> channel.
+                          <br>
+                          Don\'t forget nor be lazy to post to <a class="badge fa fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> GitHub</a> found bugs.
                       </div>
                     </div>
                   </div>
@@ -263,15 +271,15 @@ if ( $level == 0 ) {
             . $text{'theme_update_available'} . ' '
             . $remote_version
             . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
-            . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 8px; height:21px" href="'
+            . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
             . $gconfig{'webprefix'}
-            . '/webmin/edit_themes.cgi"><i class="fa fa-refresh">&nbsp;</i>'
+            . '/webmin/edit_themes.cgi"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
             . $text{'theme_update'} . '</a>'
-            . '<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o">&nbsp;</i>'
+            . '<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
             . $text{'theme_changelog'} . '</a>'
-            . '<a class="btn btn-xs btn-warning" style="padding:0 8px; height:21px" target="_blank" href="https://rostovtsev.ru/.git/authentic-theme/authentic-theme-latest.wbt.gz"><i class="fa fa-download">&nbsp;</i>'
+            . '<a class="btn btn-xs btn-warning" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/authentic-theme-latest.wbt.gz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
             . $text{'theme_download'} . '</a>'
-            . '<a class="btn btn-xs btn-default" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme#donation"><i class="fa fa-rub">&nbsp;</i>'
+            . '<a class="btn btn-xs btn-default" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"><i class="fa fa-rub" style="padding-top:1px">&nbsp;</i>'
             . $text{'theme_donate'} . '</a>'
             . '</div>';
     }
@@ -419,8 +427,86 @@ if ( $level == 0 ) {
         )
     );
 
+    # Local disk space
+    if ( &foreign_check("csf") && &foreign_available("csf") ) {
+
+        # Define CSF installed version
+        $csf_installed_version = read_file_contents('/etc/csf/version.txt');
+
+        # Define CSF actual version
+        use LWP::Simple;
+        my $csf_remote_version
+            = get('http://download.configserver.com/csf/version.txt');
+        open( FILENAME, '<', \$csf_remote_version );
+
+        # Trim spaces
+        $csf_installed_version =~ s/\s+$//;
+        $csf_remote_version =~ s/\s+$//;
+
+        if ( version->parse($csf_remote_version)
+            <= version->parse($csf_installed_version) )
+        {
+            $csf_update_required = '0';
+        }
+        else {
+            $csf_update_required = '1';
+        }
+
+        &print_table_row(
+            $text{'body_firewall'} . ' '
+                . (
+                  `pgrep lfd` ? ''
+                : ' &nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="document.getElementById(\'csf_lfdstatus\').submit()" class="label label-danger">Stopped</a> '
+                ),
+            '<a href="/csf">ConfigServer Security & Firewall</a> '
+                . $csf_installed_version . ''
+                . (
+                $csf_update_required eq '1'
+                ? '. '
+                    . $text{'theme_update_available'} . ' '
+                    . $csf_remote_version
+                    . '&nbsp;&nbsp;&nbsp;'
+                : '&nbsp;&nbsp;&nbsp;'
+                )
+                . '
+                    <form action="/csf/index.cgi" method="post" class="hidden" id="csf_lfdstatus">
+                        <input type="hidden" name="action" value="lfdstatus">
+                    </form>
+                    <form action="/csf/index.cgi" method="post" class="hidden" id="csf_upgrade">
+                        <input type="hidden" name="action" value="upgrade">
+                    </form>
+                    <form action="/csf/index.cgi" method="post" class="hidden" id="csf_temporary_ip_entries">
+                        <input type="hidden" name="action" value="temp">
+                    </form>
+                    <form action="/csf/index.cgi" method="post" class="hidden" id="csf_search_system_log">
+                        <input type="hidden" name="action" value="loggrep">
+                    </form>
+                    <form action="/csf/index.cgi" method="post" class="hidden" id="csf_denyf">
+                        <input type="hidden" name="action" value="denyf">
+                    </form>
+                '
+                . (
+                $csf_update_required eq '1'
+                ? '<div class="btn-group">
+                    <a class="btn btn-xs btn-success csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_upgrade\').submit()"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
+                    . $text{'theme_update'} . '</a>
+                    <a class="btn btn-xs btn-info csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+                    . $text{'theme_changelog'} . '</a>
+                    <a class="btn btn-xs btn-warning csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
+                    . $text{'theme_download'} . '</a>
+                </div>'
+                : '<div class="btn-group">
+                   <a class="btn btn-info btn-xs btn-hidden hidden csf" data-container="body" data-toggle="tooltip" data-placement="top" title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_search_system_log\').submit()"><i class="fa fa-filter" style="padding-top:1px"></i></a>
+                   <a class="btn btn-danger btn-xs btn-hidden hidden csf" data-container="body" data-toggle="tooltip" data-placement="top" title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_temporary_ip_entries\').submit()"><i class="fa fa-ban" style="padding-top:1px"></i></a>
+                   <a class="btn btn-success btn-xs btn-hidden hidden csf" data-container="body" data-toggle="tooltip" data-placement="top" title="Flush all blocks" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_denyf\').submit()"><i class="fa fa-trash-o" style="padding-top:1px"></i></a>
+                  </div>'
+                )
+                . ''
+        );
+    }
+
     # Package updates
-    if ( $info->{'poss'} ) {
+    if ( &foreign_available("package-updates") && $info->{'poss'} ) {
         @poss = @{ $info->{'poss'} };
         @secs = grep { $_->{'security'} } @poss;
         if ( @poss && @secs ) {
@@ -433,18 +519,12 @@ if ( $level == 0 ) {
             $msg = $text{'body_upok'};
         }
         if ( &foreign_available("package-updates") ) {
-            my $updates_num  = $msg;
-            my $updates_text = $msg;
-            $updates_num =~ s/[^0-9]//g;
-            $updates_text =~ s/\d//g;
+            $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger\'> $1 <\/i>"/eg;
             $message
                 = '<a href="'
                 . $gconfig{'webprefix'}
                 . '/package-updates/index.cgi?mode=updates">'
-                . '<i class="badge badge-danger">'
-                . $updates_num
-                . '</i>&nbsp;'
-                . $updates_text
+                . $msg
                 . '</a> <a href="/?updated" target="_top" data-href="'
                 . $gconfig{'webprefix'}
                 . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh" style="padding-top:1px"></i></a>';
@@ -453,18 +533,8 @@ if ( $level == 0 ) {
     }
     print '</table>' . "\n";
 
-    # Webmin notifications
-    if ( &foreign_check("webmin") ) {
-        &foreign_require( "webmin", "webmin-lib.pl" );
-        my @notifs = &webmin::get_webmin_notifications();
-        if (@notifs) {
-            print '<div class="panel-footer">' . "\n";
-            print "<center>\n", join( "<hr>\n", @notifs ), "</center>\n";
-            print '</div>' . "\n";
-        }
-
-        # print scalar(@notifs);
-    }
+    # Print System Warning
+    print_sysinfo_warning(@info);
 
     print '</div>';    # Panel Body
     print '</div>';    # Panel Heading
@@ -492,10 +562,11 @@ elsif ( $level == 2 ) {
     &print_table_row( $text{'right_from'}, $ENV{'REMOTE_HOST'} );
 
     if ($hasvirt) {
-        my $__virtual_server_version = $virtual_server::module_info{'version'};
+        my $__virtual_server_version
+            = $virtual_server::module_info{'version'};
         $__virtual_server_version =~ s/.gpl//igs;
         &print_table_row( $text{'right_virtualmin'},
-            $__virtual_server_version);
+            $__virtual_server_version );
     }
     else {
         &print_table_row( $text{'right_virtualmin'}, $text{'right_not'} );
@@ -648,7 +719,7 @@ elsif ( $level == 3 ) {
     use LWP::Simple;
     my $remote_version
         = get(
-        'http://rostovtsev.ru/.git/authentic-theme/VERSION.txt'
+        'https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt'
         );
     open( FILENAME, '<', \$remote_version );
 
@@ -670,7 +741,7 @@ elsif ( $level == 3 ) {
             . $installed_version . '. '
             . $text{'theme_update_available'} . ' '
             . $remote_version
-            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 8px; height:21px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md">'
+            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
             . ''
             . $text{'theme_changelog'} . '</a>';
     }
@@ -683,52 +754,6 @@ elsif ( $level == 3 ) {
     }
     &print_table_row( &text('body_time'), $tm );
 
-    # Disk quotas
-    if ( &foreign_installed("quota") ) {
-        &foreign_require( "quota", "quota-lib.pl" );
-        $n     = &quota::user_filesystems($remote_user);
-        $usage = 0;
-        $quota = 0;
-        for ( $i = 0; $i < $n; $i++ ) {
-            if ( $quota::filesys{ $i, 'hblocks' } ) {
-                $quota += $quota::filesys{ $i, 'hblocks' };
-                $usage += $quota::filesys{ $i, 'ublocks' };
-            }
-            elsif ( $quota::filesys{ $i, 'sblocks' } ) {
-                $quota += $quota::filesys{ $i, 'sblocks' };
-                $usage += $quota::filesys{ $i, 'ublocks' };
-            }
-        }
-        if ($quota) {
-            $bsize = $quota::config{'block_size'};
-            print '<tr>' . "\n";
-            print '<td><strong>'
-                . $text{'body_uquota'}
-                . '</strong></td>' . "\n";
-            print '<td>'
-                . &text(
-                'right_out',
-                &nice_size( $usage * $bsize ),
-                &nice_size( $quota * $bsize )
-                ),
-                '</td>' . "\n";
-            print '</tr>' . "\n";
-            print '<tr>' . "\n";
-            print '<td></td>' . "\n";
-            print '<td>' . "\n";
-            print '<div class="progress">' . "\n";
-            $used = $usage / $quota * 100;
-            print
-                '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="'
-                . $used
-                . '" aria-valuemin="0" aria-valuemax="100" style="width: '
-                . $used . '%">' . "\n";
-            print '</div>' . "\n";
-            print '</div>' . "\n";
-            print '</td>' . "\n";
-            print '</tr>' . "\n";
-        }
-    }
     print '</table>' . "\n";
 
     print '</div>';    # Panel Body
