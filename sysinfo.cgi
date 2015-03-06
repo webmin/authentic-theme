@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+
 #
 # Authentic Theme 10.0.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
@@ -7,6 +8,7 @@
 
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
+use version;
 &ReadParse();
 &init_config();
 
