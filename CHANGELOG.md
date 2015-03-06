@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 10.1.0 (Mar 7, 2015)
+* Changed left menu color to be slightly lighter
+* Added in settings `settings_sysinfo_expand_all_accordions` and `settings_menu_hide_webmin_refresh_modules_link`
+* Fixed quota/bandwidth calculations for _System Information_
+
 ####Version 10.0.0 (Mar 4, 2015)
 * Changed theme **repo location** to _GitHub_.  **Attention:** It's required that your _Perl_ installation can handle _https_ connections. Make sure to have installed, either _LWP::Protocol::https_ or _Bundle::LWP_ modules to make future _automatic updates_ work
 * Improved left menu design to be more flat-like _(complete page reload is required)_

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -249,14 +249,14 @@ sub print_extended_sysinfo {
 
                 if ( $info->{'id'} && $charts_not_supported eq 'no' ) {
 
-                    my $open = $info->{'open'} ? ' in' : '';
+                    my $open = $info->{'open'} ? ' in' : (__settings('settings_sysinfo_expand_all_accordions') eq 'true' ? ' in' : '');
 
                     print '
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="'
                         . $info->{'id'} . '-' . $info->{'module'} . '">
                           <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#extended_sysinfo" href="#'
+                            <a data-toggle="collapse" href="#'
                         . $info->{'id'} . '-'
                         . $info->{'module'}
                         . '-collapse" aria-expanded="true" aria-controls="'
@@ -318,18 +318,6 @@ sub print_extended_sysinfo {
                     }
                     elsif ( $info->{'type'} eq 'chart' ) {
                         foreach my $t ( @{ $info->{'chart'} } ) {
-                            if ( $t->{'chart'}[0] && $t->{'chart'}[1] ) {
-                                $chart_percent
-                                    = int(
-                                    ( $t->{'chart'}[1] / $t->{'chart'}[0] )
-                                    * 100 );
-                            }
-                            if ( !$chart_percent || $chart_percent < 0 ) {
-                                $chart_percent = 0;
-                            }
-                            if ( $chart_percent > 100 ) {
-                                $chart_percent = 100;
-                            }
                             print '<tr>
                                 <td style="width:25%">'
                                 . $t->{"desc"} . '</td>
@@ -337,8 +325,8 @@ sub print_extended_sysinfo {
                                 <div class="graph-container">
                                     <div class="graph">
                                         <strong class="bar" style="width:'
-                                . $chart_percent . '%;">'
-                                . $chart_percent
+                                . $t->{'chart'}[1] . '%;">'
+                                . $t->{'chart'}[1]
                                 . '%</strong>
                                     </div>
                                 </div>
@@ -500,10 +488,10 @@ sub print_left_menu {
                 if ( $item->{'module'} ne 'mailbox' ) {
                     &print_category( $c, $item->{'desc'} );
                 }
-                    print '<ul class="sub" style="display: none;" id="'
-                        . $c . '">' . "\n";
-                    print_left_menu( $module, $item->{'members'}, 1 );
-                    print "</ul>\n";
+                print '<ul class="sub" style="display: none;" id="'
+                    . $c . '">' . "\n";
+                print_left_menu( $module, $item->{'members'}, 1 );
+                print "</ul>\n";
             }
             elsif ( $item->{'type'} eq 'hr' ) {
                 if ( $__hr eq '1' ) {
@@ -798,6 +786,32 @@ sub embed_scripts {
     {
         unlink $root_directory
             . "/authentic-theme/unauthenticated/js/scripts.js";
+    }
+}
+
+sub __settings {
+    my ($_s) = @_;
+    my $f = $config_directory . "/authentic-theme/settings.js";
+    if ( -r $f ) {
+        for (
+            split(
+                '\n',
+                $s = do {
+                    local $/ = undef;
+                    open my $fh, "<", $f;
+                    <$fh>;
+                    }
+            )
+            )
+        {
+            if ( index( $_, '//' ) == -1
+                && ( my @m = $_ =~ /(?:$_s\s*=\s*(\S+))/g ) )
+            {
+                my $m = join( '\n', @m );
+                $m =~ s/[\'\;]//g;
+                return $m;
+            }
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.0.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.1.0 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -34,7 +34,7 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
         print '</ul>' . "\n";
     }
 
-    if ( &foreign_available("webmin") ) {
+    if ( &foreign_available("webmin") && __settings('settings_menu_hide_webmin_refresh_modules_link') ne 'true' ) {
         print '<li><a target="page" data-href="'
             . $gconfig{'webprefix'}
             . '/webmin/refresh_modules.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-refresh"></i> <span>'

@@ -3,9 +3,8 @@
 
 ##Changelog
 
-####Version 10.0.0 (Mar 4, 2015)
-> Major Release. Numerous of improvements and bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-
+####Version 10.1.0 (Mar 7, 2015)
+> Minor Release. Improvements and bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
 ##Video Screencast
 
@@ -106,6 +105,13 @@ settings_loader_right = true;
 
 // Replace dots in mailbox delimiter to slashes (UI only)
 settings_mailbox_slash_delimiter = true;
+
+// Show/Hide Webmin `Refresh Modules` link in the left menu
+settings_menu_hide_webmin_refresh_modules_link = false;
+
+// Make all accordions expanded on System Information page
+settings_sysinfo_expand_all_accordions = false;
+
 ```
 
 Settings must be initialized by the same procedure described for the scripts above. The only difference is that the file name, that has to be copied to `/etc/webmin/authentic-theme` must be `settings.js`. Afterwards, put directives from the list of settings above and control it using boolean data type `(true/false)`.
