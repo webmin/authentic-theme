@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.1.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 sub print_category {
-    local ( $c, $label ) = @_;
+    my ( $c, $label ) = @_;
     $label = $c eq "others" ? $text{'left_others'} : $label;
 
     if (   $c eq 'webmin'
@@ -249,7 +249,12 @@ sub print_extended_sysinfo {
 
                 if ( $info->{'id'} && $charts_not_supported eq 'no' ) {
 
-                    my $open = $info->{'open'} ? ' in' : (__settings('settings_sysinfo_expand_all_accordions') eq 'true' ? ' in' : '');
+                    my $open
+                        = $info->{'open'}
+                        ? ' in'
+                        : (
+                        __settings('settings_sysinfo_expand_all_accordions')
+                            eq 'true' ? ' in' : '' );
 
                     print '
                     <div class="panel panel-default">

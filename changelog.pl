@@ -1,5 +1,5 @@
 #
-# Authentic Theme 10.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.1.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,11 +13,13 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label">' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body">
-                <h4>Version 10.0.0-10.1.0 (March 7, 2015)</h4>
+                <h4>Version 10.0.0-10.1.1 (March 8, 2015)</h4>
                 <ul>
+                    <li>Added in settings <code>settings_menu_hide_webmin_unused_modules_link</code></li>
+                    <li>Moved theme build to the separate directory as recommended by <em>Jamie Cameron</em><hr></li>
                     <li>Changed left menu color to be slightly lighter</li>
                     <li>Added <code>settings_sysinfo_expand_all_accordions</code> and <code>settings_menu_hide_webmin_refresh_modules_link</code></li>
-                    <li>Fixed quota/bandwidth calculations for <em>System Information</em><hr></li>
+                    <li>Fixed quota/bandwidth calculations for <em>System Information</em></li>
                     <li>Improved left menu design to be more flat-like <em>(complete page reload is required)</em></li>
                     <li>Improved the look of old <code>ui_hidden</code> collapse, to look more like new <em>Bootstrap</em> collapse</li>
                     <li>Added support for <code>Webmail</code> in <em>Usermin</em> <a href="https://github.com/qooob/authentic-theme/issues/104" target="_blank">(Issue 104)</a></li>
