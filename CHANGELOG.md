@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 10.1.1 (Mar 8, 2015)
+* Added in settings `settings_menu_hide_webmin_unused_modules_link`
+* Moved theme build to the separate directory as recommended by _Jamie Cameron_
+
 ####Version 10.1.0 (Mar 7, 2015)
 * Changed left menu color to be slightly lighter
 * Added in settings `settings_sysinfo_expand_all_accordions` and `settings_menu_hide_webmin_refresh_modules_link`

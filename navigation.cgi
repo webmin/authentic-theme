@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.1.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 10.1.1 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -16,25 +16,36 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
 
     @cats = &get_visible_modules_categories();
     @modules = map { @{ $_->{'modules'} } } @cats;
+    $show_unused
+        = __settings('settings_menu_hide_webmin_unused_modules_link') eq
+        'true' ? 0 : 1;
 
     foreach $c (@cats) {
-        &print_category( $c->{'code'},
-            $c->{'unused'}
-            ? '<span style="color: #888888">' . $c->{'desc'} . '</span>'
-            : $c->{'desc'} );
-        print '<ul class="sub" style="display: none;" id="'
-            . $c->{'code'} . '">' . "\n";
-        foreach my $minfo ( @{ $c->{'modules'} } ) {
-            if (   $minfo->{'dir'} ne 'virtual-server'
-                && $minfo->{'dir'} ne 'server-manager' )
-            {
-                &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'} );
+        if (   ( $c && !$c->{'unused'} )
+            || ( $c && $c->{'unused'} && $show_unused ) )
+        {
+            &print_category( $c->{'code'},
+                $c->{'unused'}
+                ? '<span style="color: #888888">' . $c->{'desc'} . '</span>'
+                : $c->{'desc'} );
+            print '<ul class="sub" style="display: none;" id="'
+                . $c->{'code'} . '">' . "\n";
+            foreach my $minfo ( @{ $c->{'modules'} } ) {
+                if (   $minfo->{'dir'} ne 'virtual-server'
+                    && $minfo->{'dir'} ne 'server-manager' )
+                {
+                    &print_category_link( "$minfo->{'dir'}/",
+                        $minfo->{'desc'} );
+                }
             }
+            print '</ul>' . "\n";
         }
-        print '</ul>' . "\n";
     }
 
-    if ( &foreign_available("webmin") && __settings('settings_menu_hide_webmin_refresh_modules_link') ne 'true' ) {
+    if ( &foreign_available("webmin")
+        && __settings('settings_menu_hide_webmin_refresh_modules_link') ne
+        'true' )
+    {
         print '<li><a target="page" data-href="'
             . $gconfig{'webprefix'}
             . '/webmin/refresh_modules.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-refresh"></i> <span>'

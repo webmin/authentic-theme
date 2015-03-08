@@ -3,7 +3,7 @@
 
 ##Changelog
 
-####Version 10.1.0 (Mar 7, 2015)
+####Version 10.1.1 (Mar 8, 2015)
 > Minor Release. Improvements and bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
 ##Video Screencast
@@ -47,7 +47,7 @@
 
 ####Webmin
 
-  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://raw.githubusercontent.com/qooob/authentic-theme/master/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
+  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
@@ -108,6 +108,9 @@ settings_mailbox_slash_delimiter = true;
 
 // Show/Hide Webmin `Refresh Modules` link in the left menu
 settings_menu_hide_webmin_refresh_modules_link = false;
+
+// Show/Hide Webmin `Unused Modules` link in the left menu
+settings_menu_hide_webmin_unused_modules_link = false;
 
 // Make all accordions expanded on System Information page
 settings_sysinfo_expand_all_accordions = false;
