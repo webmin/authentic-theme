@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 10.1.2 (Mar 9, 2015)
+* Fixed sub-accordions issue found by _Joe Cooper_
+
 ####Version 10.1.1 (Mar 8, 2015)
 * Added in settings `settings_menu_hide_webmin_unused_modules_link`
 * Moved theme build to the separate directory as recommended by _Jamie Cameron_
