@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 10.2.0 (Mar 15, 2015)
+* Fixed issues with slight text flickering on the left menu
+* Fixed missing table headers/borders in some modules
+* Fixed compatibility mode for third-party modules
+
 ####Version 10.1.2 (Mar 9, 2015)
 * Fixed sub-accordions issue found by _Joe Cooper_
 
