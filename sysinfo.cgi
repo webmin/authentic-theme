@@ -460,7 +460,7 @@ if ( $level == 0 ) {
                 . $msg
                 . '</a> <a href="/?updated" target="_top" data-href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_webmincron.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh" style="padding-top:1px"></i></a>';
+                . '/package-updates/index.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh" style="padding-top:1px"></i></a>';
         }
         &print_table_row( $text{'body_updates'}, $message );
     }
