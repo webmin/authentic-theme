@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -15,109 +15,112 @@ sub print_category {
         || $c eq 'settings'
         || $c eq 'global_settings' )
     {
-        $icon = 'fa-cog';
+        our $icon = 'fa-cog';
     }
     elsif ( $c eq 'system' || $c eq 'global_system' ) {
-        $icon = 'fa-wrench';
+        our $icon = 'fa-wrench';
     }
     elsif ( $c eq 'servers' || $c eq 'global_servers' ) {
-        $icon = 'fa-rocket';
+        our $icon = 'fa-rocket';
     }
     elsif ( $c eq 'other' || $c eq 'global_other' ) {
-        $icon = 'fa-gavel';
+        our $icon = 'fa-gavel';
     }
     elsif ( $c eq 'net' || $c eq 'global_net' ) {
-        $icon = 'fa-shield';
+        our $icon = 'fa-shield';
     }
     elsif ( $c eq 'info' || $c eq 'global_info' ) {
-        $icon = 'fa-info';
+        our $icon = 'fa-info';
     }
     elsif ($c eq 'hardware'
         || $c eq 'global_hardware'
         || $c eq 'cat_storage' )
     {
-        $icon = 'fa-hdd-o';
+        our $icon = 'fa-hdd-o';
     }
     elsif ( $c eq 'cluster' || $c eq 'global_cluster' ) {
-        $icon = 'fa-power-off';
+        our $icon = 'fa-power-off';
     }
     elsif ( $c eq 'unused' || $c eq 'global_unused' ) {
-        $icon = 'fa-puzzle-piece';
+        our $icon = 'fa-puzzle-piece';
     }
     elsif ( $c eq 'mail' || $c eq 'global_mail' ) {
-        $icon = 'fa-envelope';
+        our $icon = 'fa-envelope';
     }
     elsif ( $c eq 'login' || $c eq 'global_login' ) {
-        $icon = 'fa-user';
+        our $icon = 'fa-user';
     }
     elsif ( $c eq 'apps' || $c eq 'global_apps' ) {
-        $icon = 'fa-rocket';
+        our $icon = 'fa-rocket';
     }
     elsif ( $c eq 'email' || $c eq 'global_email' ) {
-        $icon = 'fa-envelope';
+        our $icon = 'fa-envelope';
     }
     elsif ( $c eq 'custom' || $c eq 'global_custom' ) {
-        $icon = 'fa-wrench';
+        our $icon = 'fa-wrench';
     }
     elsif ( $c eq 'ip' || $c eq 'global_ip' ) {
-        $icon = 'fa-shield';
+        our $icon = 'fa-shield';
     }
     elsif ( $c eq 'check' || $c eq 'global_check' ) {
-        $icon = 'fa-user-md';
+        our $icon = 'fa-user-md';
     }
     elsif ( $c eq 'add' || $c eq 'global_add' ) {
-        $icon = 'fa-plus';
+        our $icon = 'fa-plus';
     }
     elsif ( $c eq 'backup' || $c eq 'global_backup' || $c eq 'cat_backup' ) {
-        $icon = 'fa-save';
+        our $icon = 'fa-save';
     }
     elsif ( $c eq 'cat_server' || $c eq 'cat_system' ) {
-        $icon = 'fa-cogs';
+        our $icon = 'fa-cogs';
     }
     elsif ( $c eq 'cat_delete' ) {
-        $icon = 'fa-plug';
+        our $icon = 'fa-plug';
     }
     elsif ( $c eq 'cat_logs' ) {
-        $icon = 'fa-file-text';
+        our $icon = 'fa-file-text';
     }
     elsif ( $c eq 'cat_services' ) {
-        $icon = 'fa-puzzle-piece';
+        our $icon = 'fa-puzzle-piece';
     }
     elsif ( $c eq 'create_new' ) {
-        $icon = 'fa-plus';
+        our $icon = 'fa-plus';
     }
     elsif ( $c eq 'cat_gce' ) {
-        $icon = 'fa-google';
+        our $icon = 'fa-google';
     }
     elsif ( $c eq 'cat_ec2' ) {
-        $icon = 'fa-cubes';
+        our $icon = 'fa-cubes';
     }
     elsif ( $c eq 'cat_hosts' ) {
-        $icon = 'fa-globe';
+        our $icon = 'fa-globe';
     }
     elsif ( $c eq 'cat_virtualmin' ) {
-        $icon = 'fa-sun-o';
+        our $icon = 'fa-sun-o';
     }
     elsif ( $c eq 'cat_owners' ) {
-        $icon = 'fa-users';
+        our $icon = 'fa-users';
     }
     elsif ( $c eq 'cat_monitor' ) {
-        $icon = 'fa-desktop';
+        our $icon = 'fa-desktop';
     }
     elsif ( $c eq 'cat_settings' ) {
-        $icon = 'fa-cloud';
+        our $icon = 'fa-cloud';
     }
     elsif ( $c eq 'cat_manage' ) {
-        $icon = 'fa-gavel';
+        our $icon = 'fa-gavel';
     }
     elsif ( $c eq 'cat_res' ) {
-        $icon = 'fa-share-alt';
+        our $icon = 'fa-share-alt';
     }
     elsif ( $c eq 'cat_admin' ) {
-        $icon = 'fa-key';
+        our $icon = 'fa-key';
+    }
+    elsif ( $c eq 'cat_power' ) {
+        our $icon = 'fa-power-off';
     }
     else {
-        $icon = 'fa-cog';
+        our $icon = 'fa-link';
     }
 
     if ($label) {
@@ -407,7 +410,7 @@ sub print_search {
         }
         print
             '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="'
-            . $text{'global_search'}
+            . $text{'left_search'}
             . '" disabled>' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
@@ -439,6 +442,7 @@ sub print_left_menu {
                 && $link ne "/virtual-server/history.cgi" )
             {
 
+                # Define an icon for the link/accordion
                 if (   $link eq "/virtual-server/index.cgi"
                     || $link eq "/server-manager/index.cgi" )
                 {
@@ -464,28 +468,140 @@ sub print_left_menu {
                 elsif ( $link eq "/mailbox/edit_sig.cgi" ) {
                     our $icon = '<i class="fa fa-fw fa-pencil"></i>';
                 }
-                elsif ( index( $link, 'mailbox/index.cgi?id=' ) > 0 ) {
+                elsif ( index( $link, 'mailbox/index.cgi?id=' ) > -1 ) {
                     our $icon = '<i class="fa fa-fw fa-folder-o"></i>';
                 }
-                else {
+
+                if ( __settings('settings_leftmenu_singlelink_icons') ne
+                    'false' )
+                {
+                    if (index( $link, '/virtual-server/domain_form.cgi' )
+                        > -1 )
+                    {
+                        our $icon
+                            = '<i class="fa fa-fw fa-plus-square-o"></i>';
+                    }
+
+                    elsif (
+                        index( $link, '/virtual-server/edit_domain.cgi' )
+                        > -1
+                        || index( $link, '/server-manager/edit_serv.cgi' )
+                        > -1 )
+                    {
+                        our $icon
+                            = '<i class="fa fa-fw fa-pencil-square-o"></i>';
+                    }
+                    elsif (
+                        index( $link, '/virtual-server/view_domain.cgi' )
+                        > -1 )
+                    {
+                        our $icon
+                            = '<i class="fa fa-fw fa-info-circle"></i>';
+                    }
+
+                    elsif (
+                        index( $link, '/virtual-server/list_users.cgi' )
+                        > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-users"></i>';
+                    }
+                    elsif (
+                        index( $link, '/virtual-server/list_aliases.cgi' )
+                        > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-envelope-o"></i>';
+                    }
+                    elsif (
+                        index( $link, '/virtual-server/list_databases.cgi' )
+                        > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-database"></i>';
+                    }
+                    elsif (
+                        index( $link, '/virtual-server/list_scripts.cgi' )
+                        > -1
+                        || index(
+                            $link, '/server-manager/mass_update_form.cgi'
+                        ) > -1
+                        )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-archive"></i>';
+                    }
+
+                    elsif (
+                        index( $link, '/virtual-server/edit_html.cgi' ) > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-globe"></i>';
+                    }
+                    elsif (
+                        index( $link, '/server-manager/edit_pass.cgi' ) > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-key"></i>';
+                    }
+                    elsif (
+                        index( $link, '/server-manager/save_serv.cgi' ) > -1 )
+                    {
+                        if ( index( $link, 'refresh=1' ) > -1 ) {
+                            our $icon = '<i class="fa fa-fw fa-refresh"></i>';
+                        }
+                        elsif ( index( $link, 'regen=1' ) > -1 ) {
+                            our $icon = '<i class="fa fa-fw fa-retweet"></i>';
+                        }
+                    }
+                    elsif ($link =~ /^http:\/\//
+                        || $link =~ /^https:\/\//
+                        || $link =~ /^ftp:\/\//
+                        || $link =~ /^ftps:\/\// )
+                    {
+                        our $icon
+                            = '<i class="fa fa-fw fa-external-link"></i>';
+                    }
+
+                }
+
+                # Set variable in case it hasn't been set before
+                if ( !length $link ) {
                     our $icon = undef;
                 }
 
-                print '<li>' . "\n";
-                print '<a target="page" '
-                    . (
-                    !$group
-                    ? "class=\"navigation_module_trigger\" data-"
-                    : ''
+                if ($link
+                    && index( $link, '/virtual-server/list_scripts.cgi' )
+                    == -1
+                    && index( $link, '/virtual-server/edit_html.cgi' ) == -1
+                    && index( $link, '/virtual-server/list_buckets.cgi' )
+                    == -1
+                    || ((   __settings('settings_leftmenu_vm_installscripts')
+                            ne 'false' && index(
+                                $link, '/virtual-server/list_scripts.cgi'
+                            ) > -1
+                        )
+                        || ( __settings('settings_leftmenu_vm_webpages') ne
+                            'false'
+                            && index( $link, '/virtual-server/edit_html.cgi' )
+                            > -1 )
+                        || ( __settings('settings_leftmenu_vm_backup_amazon') ne
+                            'false'
+                            && index( $link, '/virtual-server/list_buckets.cgi' )
+                            > -1 )
                     )
-                    . 'href="'
-                    . $link . '">'
-                    . $icon
-                    . ' <span>'
-                    . $item->{'desc'}
-                    . '</span></a>' . "\n";
-                print '</li>' . "\n";
-                print "\n";
+                    )
+                {
+                    print '<li>' . "\n";
+                    print '<a target="page" '
+                        . (
+                        !$group
+                        ? "class=\"navigation_module_trigger\" data-"
+                        : ''
+                        )
+                        . 'href="'
+                        . $link . '">'
+                        . ( index( $icon, '<i ' ) > -1 ? $icon : '' )
+                        . ' <span>'
+                        . $item->{'desc'}
+                        . '</span></a>' . "\n";
+                    print '</li>' . "\n";
+                    print "\n";
+                }
 
             }
             elsif ( $item->{'type'} eq 'cat' ) {
@@ -794,6 +910,38 @@ sub embed_scripts {
     }
 }
 
+sub get_authentic_version {
+
+    # Get local version
+    my $installed_version
+        = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt",
+        1 );
+    our $installed_version = $installed_version->[0];
+
+    $installed_version =~ s/^\s+|\s+$//g;
+    $installed_version = sprintf '%.2f', $installed_version;
+
+    if ( __settings('settings_sysinfo_theme_updates') eq 'false' ) {
+        $remote_version = '0';
+    }
+    else {
+        # Get remote version if allowed
+        http_download(
+            'raw.githubusercontent.com',                 '443',
+            '/qooob/authentic-theme/master/VERSION.txt', \$remote_version,
+            \$error,                                     undef,
+            1,                                           undef,
+            undef,                                       5
+        );
+
+        # Trim versions' number
+        $remote_version =~ s/^\s+|\s+$//g;
+        $remote_version = sprintf '%.2f', $remote_version;
+    }
+
+    return ( $installed_version, $remote_version );
+}
+
 sub __settings {
     my ($_s) = @_;
     my $f = $config_directory . "/authentic-theme/settings.js";
@@ -810,12 +958,34 @@ sub __settings {
             )
         {
             if ( index( $_, '//' ) == -1
-                && ( my @m = $_ =~ /(?:$_s\s*=\s*(\S+))/g ) )
+                && ( my @m = $_ =~ /(?:$_s\s*=\s*(.*))/g ) )
             {
                 my $m = join( '\n', @m );
                 $m =~ s/[\'\;]//g;
                 return $m;
             }
+        }
+    }
+}
+
+sub notify {
+    our ($type) = @_;
+    if ( __settings($type) ) {
+        my %messages = (
+            "%1" => $remote_user,
+            "%2" => $ENV{REMOTE_ADDR},
+            "%3" => ucfirst( &get_product_name() )
+        );
+        my %subjects = ( "%3" => ucfirst( &get_product_name() ) );
+        my @mail = split( /\|/, __settings($type) );
+        ( my $message = $mail[0] )
+            =~ s/(@{[join "|", keys %messages]})/$messages{$1}/g;
+        ( my $subject = $mail[1] )
+            =~ s/(@{[join "|", keys %subjects]})/$subjects{$1}/g;
+        if (  !length $mail[3]
+            || length $mail[3] && index( $mail[3], $ENV{REMOTE_ADDR} ) == -1 )
+        {
+            system(`echo "$message" | mail -s "$subject" "$mail[2]"`);
         }
     }
 }
