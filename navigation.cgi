@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -17,11 +17,11 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
     @cats = &get_visible_modules_categories();
     @modules = map { @{ $_->{'modules'} } } @cats;
     $show_unused
-        = __settings('settings_menu_hide_webmin_unused_modules_link') eq
+        = __settings('settings_leftmenu_section_hide_unused_modules') eq
         'true' ? 0 : 1;
 
     foreach $c (@cats) {
-        if (   ( $c && !$c->{'unused'} )
+        if ( $gconfig{"notabs_${base_remote_user}"} ne '2' && ( $c && !$c->{'unused'} )
             || ( $c && $c->{'unused'} && $show_unused ) )
         {
             &print_category( $c->{'code'},
@@ -40,10 +40,20 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
             }
             print '</ul>' . "\n";
         }
+        elsif ($gconfig{"notabs_${base_remote_user}"} eq '2') {
+            foreach my $minfo ( @{ $c->{'modules'} } ) {
+                print '<li><a target="page" data-href="'
+                    . $gconfig{'webprefix'} . '/'
+                    . $minfo->{'dir'}
+                    . '" class="navigation_module_trigger navigation_trigger_single_link"><i class="fa fa-fw fa-link"></i>  <span>'
+                    . $minfo->{'desc'}
+                    . '</span></a></li>' . "\n";
+            }
+        }
     }
 
     if ( &foreign_available("webmin")
-        && __settings('settings_menu_hide_webmin_refresh_modules_link') ne
+        && __settings('settings_leftmenu_section_hide_refresh_modules') ne
         'true' )
     {
         print '<li><a target="page" data-href="'
@@ -114,7 +124,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
 
                         &print_category_link(
                             "virtual-server/domain_form.cgi",
-                            $text{'virtualmin_left_generic'}
+                            $text{'left_virtualmin_create'}
                         );
                         $print_virtualmin_link = 1;
                     }
@@ -130,7 +140,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
         print '<li><a target="page" data-href="'
             . $gconfig{'webprefix'}
             . '/virtual-server/index.cgi" class="navigation_feedback_trigger"><i class="fa fa-fw fa-tasks"></i> <span>'
-            . $text{'virtualmin_left_virtualmin'}
+            . $text{'left_virtualmin_list'}
             . '</span></a></li>' . "\n";
 
         print_sysinfo_link();

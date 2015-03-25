@@ -1,14 +1,13 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
-use version;
 &ReadParse();
 &init_config();
 
@@ -138,7 +137,7 @@ if ( $level == 0 ) {
 
                     . (
                     ( $vs_license eq '1' )
-                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" data-title="'
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
                         . $text{'right_vlcheck'}
                         . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
@@ -173,7 +172,7 @@ if ( $level == 0 ) {
 
                     . (
                     ( $vm2_license eq '1' )
-                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" data-toggle="tooltip" data-placement="top" data-title="'
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
                         . $text{'right_slcheck'}
                         . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
@@ -186,39 +185,21 @@ if ( $level == 0 ) {
     }
 
     # Theme version/updates
-    # Define installed version
-    open my $authentic_installed_version, '<',
-        $root_directory . "/authentic-theme/VERSION.txt";
-    my $installed_version = <$authentic_installed_version>;
-    close $authentic_installed_version;
+    get_authentic_version();
 
-    # Define remote version
-    use LWP::Simple;
-    my $remote_version
-        = get(
-        'https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt'
-        );
-    open( FILENAME, '<', \$remote_version );
-
-    # Trim spaces
-    $installed_version =~ s/\s+$//;
-    $remote_version =~ s/\s+$//;
-
-    # Parse response message
-    if ( version->parse($remote_version)
-        <= version->parse($installed_version) )
-    {
+    # Build version response message
+    if ( $remote_version <= $installed_version ) {
         do "authentic-theme/changelog.pl";
         $authentic_theme_version
             = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
-            . $text{'authentic_theme'} . '</a> '
+            . $text{'theme_name'} . '</a> '
             . $installed_version
             . $__changelog;
     }
     else {
         $authentic_theme_version
             = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
-            . $text{'authentic_theme'} . '</a> '
+            . $text{'theme_name'} . '</a> '
             . $installed_version . '. '
             . $text{'theme_update_available'} . ' '
             . $remote_version
@@ -383,21 +364,21 @@ if ( $level == 0 ) {
     if ( &foreign_check("csf") && &foreign_available("csf") ) {
 
         # Define CSF installed version
-        $csf_installed_version = read_file_contents('/etc/csf/version.txt');
+        my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
+        our $csf_installed_version = $csf_installed_version->[0];
 
-        # Define CSF actual version
-        use LWP::Simple;
-        my $csf_remote_version
-            = get('http://download.configserver.com/csf/version.txt');
-        open( FILENAME, '<', \$csf_remote_version );
+        # Define CSF actual version if allowed
+        if ( __settings('settings_sysinfo_csf_updates') eq 'false' ) {
+            $csf_remote_version = '0';
+        } else {
+            http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error, undef, undef, undef, undef, 5 );
 
-        # Trim spaces
-        $csf_installed_version =~ s/\s+$//;
-        $csf_remote_version =~ s/\s+$//;
+            # Trim versions' number
+            $csf_installed_version =~ s/^\s+|\s+$//g;
+            $csf_remote_version =~ s/^\s+|\s+$//g;
+        }
 
-        if ( version->parse($csf_remote_version)
-            <= version->parse($csf_installed_version) )
-        {
+        if ( $csf_remote_version <= $csf_installed_version ) {
             $csf_update_required = '0';
         }
         else {
@@ -448,9 +429,9 @@ if ( $level == 0 ) {
                     . $text{'theme_download'} . '</a>
                 </div>'
                 : '<div class="btn-group">
-                   <a class="btn btn-info btn-xs btn-hidden hidden csf" data-container="body" data-toggle="tooltip" data-placement="top" title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_search_system_log\').submit()"><i class="fa fa-filter" style="padding-top:1px"></i></a>
-                   <a class="btn btn-danger btn-xs btn-hidden hidden csf" data-container="body" data-toggle="tooltip" data-placement="top" title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_temporary_ip_entries\').submit()"><i class="fa fa-ban" style="padding-top:1px"></i></a>
-                   <a class="btn btn-success btn-xs btn-hidden hidden csf" data-container="body" data-toggle="tooltip" data-placement="top" title="Flush all blocks" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_denyf\').submit()"><i class="fa fa-trash-o" style="padding-top:1px"></i></a>
+                   <a class="btn btn-info btn-xs btn-hidden hidden csf" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_search_system_log\').submit()"><i class="fa fa-filter" style="padding-top:1px"></i></a>
+                   <a class="btn btn-danger btn-xs btn-hidden hidden csf" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_temporary_ip_entries\').submit()"><i class="fa fa-ban" style="padding-top:1px"></i></a>
+                   <a class="btn btn-success btn-xs btn-hidden hidden csf" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Flush all blocks" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_denyf\').submit()"><i class="fa fa-trash-o" style="padding-top:1px"></i></a>
                   </div>'
                 )
                 . ''
@@ -513,6 +494,7 @@ elsif ( $level == 2 ) {
 
     &print_table_row( $text{'right_from'}, $ENV{'REMOTE_HOST'} );
 
+    # Print Virtualmin version
     if ($hasvirt) {
         my $__virtual_server_version
             = $virtual_server::module_info{'version'};
@@ -524,6 +506,30 @@ elsif ( $level == 2 ) {
         &print_table_row( $text{'right_virtualmin'}, $text{'right_not'} );
     }
 
+    # Print Theme version/updates
+    get_authentic_version();
+
+    # Build response message
+    if ( $remote_version
+        <= $installed_version )
+    {
+        $authentic_theme_version
+            = '' . $text{'theme_name'} . ' ' . $installed_version;
+    }
+    else {
+        $authentic_theme_version
+            = ''
+            . $text{'theme_name'} . ' '
+            . $installed_version . '. '
+            . $text{'theme_update_available'} . ' '
+            . $remote_version
+            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+            . ''
+            . $text{'theme_changelog'} . '</a>';
+    }
+    &print_table_row( $text{'theme_version'}, $authentic_theme_version );
+
+    # Print domain name
     $dname
         = defined(&virtual_server::show_domain_name)
         ? &virtual_server::show_domain_name($d)
@@ -661,35 +667,19 @@ elsif ( $level == 3 ) {
     &print_table_row( &text('body_usermin'), &get_webmin_version() );
 
     # Theme version/updates
-    # Define installed version
-    open my $authentic_installed_version, '<',
-        $root_directory . "/authentic-theme/VERSION.txt";
-    my $installed_version = <$authentic_installed_version>;
-    close $authentic_installed_version;
+    get_authentic_version();
 
-    # Define remote version
-    use LWP::Simple;
-    my $remote_version
-        = get(
-        'https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt'
-        );
-    open( FILENAME, '<', \$remote_version );
-
-    # Trim spaces
-    $installed_version =~ s/\s+$//;
-    $remote_version =~ s/\s+$//;
-
-    # Parse response message
-    if ( version->parse($remote_version)
-        <= version->parse($installed_version) )
+    # Build response message
+    if ( $remote_version
+        <= $installed_version )
     {
         $authentic_theme_version
-            = '' . $text{'authentic_theme'} . ' ' . $installed_version;
+            = '' . $text{'theme_name'} . ' ' . $installed_version;
     }
     else {
         $authentic_theme_version
             = ''
-            . $text{'authentic_theme'} . ' '
+            . $text{'theme_name'} . ' '
             . $installed_version . '. '
             . $text{'theme_update_available'} . ' '
             . $remote_version
@@ -715,9 +705,6 @@ elsif ( $level == 3 ) {
 }
 
 # End of page
-# print '</div>'; # Panel Body
-# print '</div>'; # Panel Heading
 
 print '</div>' . "\n";
-
 &footer();

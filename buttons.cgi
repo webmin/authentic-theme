@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -21,8 +21,7 @@ else {
         '<a style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
         . $user . '</a>';
 }
-print '</li><li class="user-link __logout-link'
-    . ( &get_product_name() eq "usermin" ? ' __logout-link-bg' : '' ) . '">';
+print '</li><li class="user-link __logout-link">';
 
 &get_miniserv_config( \%miniserv );
 
@@ -33,33 +32,21 @@ if (   $miniserv{'logout'}
 {
 
     if ($main::session_id) {
-        print '<a'
-            . (
-            &get_product_name() eq "usermin" ? ' class="bg-dark-red"' : '' )
-            . ' href="'
+        print '<a href="'
             . $gconfig{'webprefix'}
-            . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out '
-            . ( &get_product_name() eq "usermin" ? '' : 'text-danger' )
-            . '"></i></a>';
+            . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
     }
     else {
-        print '<a'
-            . (
-            &get_product_name() eq "usermin"
-            ? ' class="bg-dark-yellow"'
-            : ''
-            )
-            . ' href="'
+        print '<a href="'
             . $gconfig{'webprefix'}
-            . '/switch_user.cgi"><i class="fa fa-fw fa-exchange '
-            . ( &get_product_name() eq "usermin" ? '' : 'text-warning' )
-            . '"></i></a>';
+            . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
     }
 }
 
 print '</li>';
 
-if (-r "$root_directory/virtual-server/edit_lang.cgi"
+if (   -r "$root_directory/virtual-server/edit_lang.cgi"
+    && __settings('settings_leftmenu_button_language') eq 'true'
     && (   $is_virtualmin != -1
         || $is_cloudmin != -1
         || $in{'xhr-buttons-type'} eq '1' )
@@ -71,10 +58,14 @@ if (-r "$root_directory/virtual-server/edit_lang.cgi"
                     </a>
                 </li>';
 }
-elsif ( &foreign_available("change-user") ) {
+elsif ( &foreign_available("change-user")
+    && __settings('settings_leftmenu_button_language') eq 'true' )
+{
     print
         '<li class="user-link"><a target="page" href="/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
 
-print
-    '<li class="user-link"><a data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
+if ( __settings('settings_leftmenu_button_refresh') ne 'false' ) {
+    print
+        '<li class="user-link"><a data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
+}

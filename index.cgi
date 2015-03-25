@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 10.2.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -67,6 +67,28 @@ if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
         . $ENV{'HTTP_HOST'}
         . '/?virtualmin';
     print "Location: $virtualmin\n\n";
+}
+
+# In case Mailbox module is installed, after logging in, redirect to Webmail
+if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
+    && &foreign_check("mailbox")
+    && &foreign_available("mailbox")
+    && &get_product_name() eq "usermin"
+    && $is_webmail == -1 )
+{
+    print "Set-Cookie: redirect=0; path=/\r\n";
+    $webmail
+        = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+        . $ENV{'HTTP_HOST'}
+        . '/?webmail';
+    print "Location: $webmail\n\n";
+}
+
+if ( $ENV{'HTTP_COOKIE'} =~ /redirect=1/ ) {
+    print "Set-Cookie: redirect=0; path=/\r\n";
+
+    # Notify on successful authentication
+    notify('settings_security_notify_on_login_success');
 }
 
 # Clearing possibly stuck update states
@@ -153,7 +175,7 @@ else {
     print
         '<div class="visible-xs mobile-menu-toggler" style="position: fixed">';
     print
-        '<button type="button" class="btn btn-primary" style="padding-left: 6px; padding-right: 5px;">'
+        '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
         . "\n";
     print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
     print '</button>' . "\n";
@@ -167,7 +189,7 @@ else {
     ### Product switcher. Start.
     #
     #
-    if ( &get_product_name() eq 'usermin'
+    if (   &get_product_name() eq 'usermin'
         && &foreign_available("mailbox") )
     {
         our $switch_mode  = '2';
