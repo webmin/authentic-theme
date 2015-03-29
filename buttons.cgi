@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -9,7 +9,7 @@
 $user = $remote_user;
 print '<li class="user-link">';
 if ( &foreign_available("acl") ) {
-    print '<a target="page" href="'
+    print '<a target="page" data-href="/acl/edit_user.cgi" href="'
         . $gconfig{'webprefix'}
         . '/acl/edit_user.cgi?user='
         . $user

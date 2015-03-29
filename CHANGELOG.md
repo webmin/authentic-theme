@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 11.01 (Mar 29, 2015)
+* Fixed unclickable left menu links, when custom logo is used [#143](https://github.com/qooob/authentic-theme/issues/143)
+* Fixed DHCP-server module showing no hostnames [#145](https://github.com/qooob/authentic-theme/issues/145)
+* Fixed multiple small bugs
+
 ####Version 11.00 (Mar 25, 2015)
 * Added window automatic scrolling, upon page is populated from server-side.Test it and see it in action in such modules as _Fetchmail Mail Retrieval_, _Software Package Updates_ and others. Intended mouse-scroll done by user, during auto-scrolling, will make it stop. Loader will be automatically hidden upon this features is triggered. This feature can be disabled using settings
 * Added in settings: `settings_security_notify_on_pre_login_request`, `settings_security_notify_on_login_request`, `settings_security_notify_on_login_success`, `settings_window_autoscroll`, `settings_sysinfo_theme_updates`, `settings_sysinfo_csf_updates`, `settings_leftmenu_button_language`, `settings_leftmenu_singlelink_icons`, `settings_leftmenu_vm_installscripts`, `settings_leftmenu_vm_webpages` and `settings_leftmenu_vm_backup_amazon`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
