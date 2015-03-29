@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -34,7 +34,7 @@ print '<h3 class="panel-title">' . &text('body_header0') . (
     ( $level != 2 && $level != 3 && &foreign_available("webmin") )
     ? '<a href="/?updated" target="_top" data-href="'
         . $gconfig{'webprefix'}
-        . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px;color: white"><i class="fa fa-refresh"></i></a>
+        . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>
         <button type="button" class="btn btn-primary" style="display: none; visibility: hidden" data-toggle="modal" data-target="#update_notice"></button>'
     : ''
 ) . '</h3>' . "\n";

@@ -3,8 +3,8 @@
 
 ##Changelog
 
-####Version 11.00 (Mar 25, 2015)
-> Major Release. New features, improvements and bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
+####Version 11.01 (Mar 29, 2015)
+> Minor Release. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
 ##Video Screencast
 

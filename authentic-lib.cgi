@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -495,8 +495,7 @@ sub print_left_menu {
                         index( $link, '/virtual-server/view_domain.cgi' )
                         > -1 )
                     {
-                        our $icon
-                            = '<i class="fa fa-fw fa-info-circle"></i>';
+                        our $icon = '<i class="fa fa-fw fa-info-circle"></i>';
                     }
 
                     elsif (
@@ -579,10 +578,12 @@ sub print_left_menu {
                             'false'
                             && index( $link, '/virtual-server/edit_html.cgi' )
                             > -1 )
-                        || ( __settings('settings_leftmenu_vm_backup_amazon') ne
-                            'false'
-                            && index( $link, '/virtual-server/list_buckets.cgi' )
-                            > -1 )
+                        || (__settings('settings_leftmenu_vm_backup_amazon')
+                            ne 'false'
+                            && index(
+                                $link, '/virtual-server/list_buckets.cgi'
+                            ) > -1
+                        )
                     )
                     )
                 {
@@ -653,7 +654,7 @@ sub print_left_menu {
                         "data-autocomplete-title=\"
                             "
                             . (
-                            index( $ENV{'REQUEST_URI'}, 'virtualmin' )
+                            index( $ENV{'REQUEST_URI'}, 'virtualmin' ) != -1
                             ? $text{'right_fdoms'}
                             : $text{'right_fvm2'}
                             )

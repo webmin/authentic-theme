@@ -1,5 +1,5 @@
 #
-# Authentic Theme 11.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,8 +13,12 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label">' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body">
-                <h4>Version 11.00 (March 25, 2015)</h4>
+                <h4>Version 11.00-11.01 (March 29, 2015)</h4>
                 <ul>
+                    <li>Fixed unclickable left menu links, when custom logo is used <a href="https://github.com/qooob/authentic-theme/issues/143" target="_blank">#143</a></li>
+                    <li>Fixed DHCP-server module showing no hostnames <a href="https://github.com/qooob/authentic-theme/issues/145" target="_blank">#145</a></li>
+                    <li>Fixed multiple small bugs<hr></li>
+
                     <li>Added window automatic scrolling, upon page is populated from server-side.Test it and see it in action in such modules as <em>Fetchmail Mail Retrieval</em>, <em>Software Package Updates</em> and others. Intended mouse-scroll done by user, during auto-scrolling, will make it stop. Loader will be automatically hidden upon this features is triggered. This feature can be disabled using settings</li>
                     <li>Added in settings: <code>settings_security_notify_on_pre_login_request</code>, <code>settings_security_notify_on_login_request</code>, <code>settings_security_notify_on_login_success</code>, <code>settings_window_autoscroll</code>, <code>settings_sysinfo_theme_updates</code>, <code>settings_sysinfo_csf_updates</code>, <code>settings_leftmenu_button_language</code>, <code>settings_leftmenu_singlelink_icons</code>, <code>settings_leftmenu_vm_installscripts</code>, <code>settings_leftmenu_vm_webpages</code> and <code>settings_leftmenu_vm_backup_amazon</code>. Read the <a href="https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings" target="_blank">manual</a> for using it</li>
                     <li>Added automatically stretching inputs for long text <a href="https://github.com/qooob/authentic-theme/issues/121" target="_blank">#121</a></li>
