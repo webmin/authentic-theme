@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -93,7 +93,8 @@ if (   $gconfig{'loginbanner'}
     close(BANNER);
     &footer();
     return;
-} else {
+}
+else {
     # Notify when unauthenticated user is landed on login page
     notify('settings_security_notify_on_login_request');
 
@@ -248,10 +249,22 @@ if ( !$gconfig{'noremember'} ) {
     print '<i class="fa"></i> ' . $text{'login_save'} . "\n";
     print '</label>' . "\n";
 }
-print
-    '<button class="btn btn-danger pull-left" type="reset"><i class="fa fa-pencil"></i> '
-    . &text('login_reset')
-    . '</button>' . "\n";
+
+if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
+    && index( %miniserv->{'anonymous'}, 'virtualmin-password-recovery' )
+    > -1 )
+{
+    print
+        '<button onclick=\'window.open("/virtualmin-password-recovery", "password_recovery", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");\' class="btn btn-warning pull-left" type="reset"><i class="fa fa-undo"></i> '
+        . &text('login_reset')
+        . '</button>' . "\n";
+}
+else {
+    print
+        '<button class="btn btn-danger pull-left" type="reset"><i class="fa fa-eraser"></i> '
+        . &text('login_reset')
+        . '</button>' . "\n";
+}
 print
     '<button class="btn btn-primary pull-right" type="submit"><i class="fa fa-sign-in"></i> '
     . &text('login_signin')
