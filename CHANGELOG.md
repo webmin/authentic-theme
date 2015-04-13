@@ -2,9 +2,9 @@
 
 ####Version 11.10 (Apr 13, 2015)
 * Added ability to open new tab of _Webmin/Usermin/Virtualmin/Cloudmin/Webmail_ by clicking on the switch (top left menu's selector) by right mouse button. **Important:** You must once add _popup window exception_ in your browser to make this feature work
-* Improved greatly the usage of `autocomplete` for basic _Webmin_ Modules. You can test it by going to _Running Processes_ or _Perl Modules_ and start typing in search field. Same done for most inbuilt, crucial modules
+* Improved greatly the usage of `autocomplete` for basic _Webmin_ modules. You can test it by going to _Running Processes_ or _Perl Modules_ and start typing in search field. Same done for most inbuilt modules
 * Removed a hack for _Historic System Statistics_ module, as it was fixed by the author in version 2.11 [#1](https://github.com/qooob/authentic-theme/issues/1#issuecomment-91328157)
-* Fixed login screen missing for the link to _Virtualmin Password Recovery_ module, in case it's installed and set in _Webmin Configuration->Anonymous Module Access_. In that case, the reset button will act as expected an be the color of yellow [#152](https://github.com/qooob/authentic-theme/issues/152)
+* Fixed login screen missing for the link to _Virtualmin Password Recovery_ module, in case it's installed and set in _Webmin Configuration->Anonymous Module Access_. In that case, the reset button will act as expected and be the color of yellow [#152](https://github.com/qooob/authentic-theme/issues/152)
 * Fixed _Webmin Servers Index_ module issue [#147](https://github.com/qooob/authentic-theme/issues/147)
 * Fixed databases listing in editing table cells mode [#150](https://github.com/qooob/authentic-theme/issues/150)
 * Fixed increased the height of `::-webkit-scrollbar` for easy access
