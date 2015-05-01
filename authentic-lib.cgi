@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,11 +13,14 @@ sub print_category {
     if (   $c eq 'webmin'
         || $c eq 'usermin'
         || $c eq 'settings'
-        || $c eq 'global_settings' )
+        || $c eq 'global_settings'
+        || $c eq 'global_setting'
+        || $c eq 'cat_setting'
+       )
     {
         our $icon = 'fa-cog';
     }
-    elsif ( $c eq 'system' || $c eq 'global_system' ) {
+    elsif ( $c eq 'system' || $c eq 'cat_system' ) {
         our $icon = 'fa-wrench';
     }
     elsif ( $c eq 'servers' || $c eq 'global_servers' ) {
@@ -34,7 +37,7 @@ sub print_category {
     }
     elsif ($c eq 'hardware'
         || $c eq 'global_hardware'
-        || $c eq 'cat_storage' )
+        || $c eq 'global_storage' )
     {
         our $icon = 'fa-hdd-o';
     }
@@ -68,43 +71,47 @@ sub print_category {
     elsif ( $c eq 'add' || $c eq 'global_add' ) {
         our $icon = 'fa-plus';
     }
-    elsif ( $c eq 'backup' || $c eq 'global_backup' || $c eq 'cat_backup' ) {
+    elsif ( $c eq 'backup' || $c eq 'global_backup' || $c eq 'global_backup' )
+    {
         our $icon = 'fa-save';
     }
-    elsif ( $c eq 'cat_server' || $c eq 'cat_system' ) {
+    elsif ($c eq 'global_server'
+        || $c eq 'cat_server'
+        || $c eq 'global_system' )
+    {
         our $icon = 'fa-cogs';
     }
-    elsif ( $c eq 'cat_delete' ) {
+    elsif ( $c eq 'global_delete' || $c eq 'cat_delete' ) {
         our $icon = 'fa-plug';
     }
-    elsif ( $c eq 'cat_logs' ) {
+    elsif ( $c eq 'global_logs' || $c eq 'cat_logs' ) {
         our $icon = 'fa-file-text';
     }
-    elsif ( $c eq 'cat_services' ) {
+    elsif ( $c eq 'global_services' || $c eq 'cat_services' ) {
         our $icon = 'fa-puzzle-piece';
     }
     elsif ( $c eq 'create_new' ) {
         our $icon = 'fa-plus';
     }
-    elsif ( $c eq 'cat_gce' ) {
+    elsif ( $c eq 'global_gce' ) {
         our $icon = 'fa-google';
     }
-    elsif ( $c eq 'cat_ec2' ) {
+    elsif ( $c eq 'global_ec2' ) {
         our $icon = 'fa-cubes';
     }
-    elsif ( $c eq 'cat_hosts' ) {
+    elsif ( $c eq 'global_hosts' ) {
         our $icon = 'fa-globe';
     }
-    elsif ( $c eq 'cat_virtualmin' ) {
+    elsif ( $c eq 'global_virtualmin' ) {
         our $icon = 'fa-sun-o';
     }
-    elsif ( $c eq 'cat_owners' ) {
+    elsif ( $c eq 'global_owners' ) {
         our $icon = 'fa-users';
     }
-    elsif ( $c eq 'cat_monitor' ) {
+    elsif ( $c eq 'global_monitor' ) {
         our $icon = 'fa-desktop';
     }
-    elsif ( $c eq 'cat_settings' ) {
+    elsif ( $c eq 'global_settings' ) {
         our $icon = 'fa-cloud';
     }
     elsif ( $c eq 'cat_manage' ) {
@@ -113,10 +120,10 @@ sub print_category {
     elsif ( $c eq 'cat_res' ) {
         our $icon = 'fa-share-alt';
     }
-    elsif ( $c eq 'cat_admin' ) {
+    elsif ( $c eq 'global_admin' || $c eq 'cat_admin' ) {
         our $icon = 'fa-key';
     }
-    elsif ( $c eq 'cat_power' ) {
+    elsif ( $c eq 'global_power' || $c eq 'cat_power' ) {
         our $icon = 'fa-power-off';
     }
     else {
@@ -286,7 +293,7 @@ sub print_extended_sysinfo {
                       <div class="panel-body">';
 
                     print
-                        '<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-rounded"><tbody>';
+                        '<div class="table-responsive" style="width:99.8%"><table class="table table-striped"><tbody>';
 
                     if ($info->{'type'} eq 'table'
                         && (   $info->{'id'} ne 'sysinfo'
@@ -731,10 +738,10 @@ sub print_table_row {
     local ( $title, $content ) = @_;
     print '<tr>' . "\n";
     print
-        '<td style="width:30%;vertical-align:middle; padding:10px;"><strong>'
+        '<td style="width:30%;vertical-align:middle; padding:8px;"><strong>'
         . $title
         . '</strong></td>' . "\n";
-    print '<td  style="width:70%; vertical-align:middle; padding:10px;">'
+    print '<td  style="width:70%; vertical-align:middle; padding:8px;">'
         . $content . '</td>' . "\n";
     print '</tr>' . "\n";
 }

@@ -1,5 +1,14 @@
 ##Changelog
 
+####Version 11.50 (May 1, 2015)
+* Added in settings: `settings_right_iconize_header_links`, that enables you to choose between old style right-page header links or replace it with new beautiful icon links. Default is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added ability to disable right-page reload upon switching between _Webmin/Virtualmin/Cloudmin_ by the following option `settings_right_reload`. The default value is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added ability to choose hotkeys modifier and hotkeys values, when using it by the following options `settings_hotkey_toggle_modifier`, `settings_hotkey_toggle_key_webmin`, `settings_hotkey_toggle_key_virtualmin`, `settings_hotkey_toggle_key_cloudmin`, `settings_hotkey_toggle_key_usermin`, `settings_hotkey_toggle_key_webmail`, `settings_hotkey_focus_search` and `settings_hotkey_reload`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added ability to choose the custom page, when _Virtualmin/Cloudmin_ is loaded/selected by the following options `settings_right_virtualmin_default` and `settings_right_cloudmin_default`. The default value is `'sysinfo.cgi'` (System Information). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added `autofocus` on _username_ field, when login page is accessed
+* Fixed mail being displayed in HTML, to preserve message custom formatting
+* Fixed _dozens_ of bugs
+
 ####Version 11.10 (Apr 13, 2015)
 * Added ability to open new tab of _Webmin/Usermin/Virtualmin/Cloudmin/Webmail_ by clicking on the switch (top left menu's selector) by right mouse button. **Important:** You must once add _popup window exception_ in your browser to make this feature work
 * Improved greatly the usage of `autocomplete` for basic _Webmin_ modules. You can test it by going to _Running Processes_ or _Perl Modules_ and start typing in search field. Same done for most inbuilt modules

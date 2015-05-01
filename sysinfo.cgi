@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -25,7 +25,7 @@ print '<div id="wrapper" class="page" data-notice="'
     ? _post_install()
     : '0'
     ) . '">' . "\n";
-print '<div class="container">' . "\n";
+print '<div class="container-fluid col-lg-10 col-lg-offset-1">' . "\n";
 print
     '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">'
     . "\n";

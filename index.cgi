@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -12,16 +12,9 @@ use WebminCore;
 &init_config();
 
 # Detecting Virtualmin/Cloudmin request
-$is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
-$is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
-$is_webmail    = index( $ENV{'REQUEST_URI'}, 'webmail' );
-
-#Going to default right page
-$minfo = &get_goto_module();
-$__goto
-    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? '/sysinfo.cgi'
-    : $minfo ? "$minfo->{'dir'}/"
-    :          "/sysinfo.cgi";
+our $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
+our $is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
+our $is_webmail    = index( $ENV{'REQUEST_URI'}, 'webmail' );
 
 %text    = &load_language($current_theme);
 %gaccess = &get_module_acl( undef, "" );
@@ -36,6 +29,30 @@ if (  !-d $root_directory . "/authentic-theme"
 
 # Load dependencies
 do "authentic-theme/authentic-lib.cgi";
+
+# Check user settings on default page for Virtualmin/Cloudmin
+if (   $is_virtualmin != -1
+    && length __settings('settings_right_virtualmin_default')
+    && __settings('settings_right_virtualmin_default') ne 'false' )
+{
+    our $udefgoto = '/' . __settings('settings_right_virtualmin_default');
+}
+elsif ($is_cloudmin != -1
+    && length __settings('settings_right_cloudmin_default')
+    && __settings('settings_right_cloudmin_default') ne 'false' )
+{
+    our $udefgoto = '/' . __settings('settings_right_cloudmin_default');
+}
+else {
+    our $udefgoto = '/sysinfo.cgi';
+}
+
+#Going to default right page
+$minfo = &get_goto_module();
+$__goto
+    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? $udefgoto
+    : $minfo ? "$minfo->{'dir'}/"
+    :          $udefgoto;
 
 # Redirect user away, in case requested mode can not be satisfied
 if (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
