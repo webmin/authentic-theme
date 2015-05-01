@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -219,7 +219,7 @@ print
     . "\n";
 print '<input type="text" class="form-control" name="user" placeholder="'
     . &text('login_user') . '" '
-    . $tag . '>' . "\n";
+    . $tag . ' autofocus>' . "\n";
 print '</div>' . "\n";
 print '<div class="input-group form-group">' . "\n";
 print

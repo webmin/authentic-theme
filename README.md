@@ -3,8 +3,8 @@
 
 ##Changelog
 
-####Version 11.10 (Mar 13, 2015)
-> Medium Release. New features, improvements and bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
+####Version 11.50 (May 1, 2015)
+> Major Release. New features, improvements and many bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
 ##Video Screencast
 
@@ -31,7 +31,6 @@
 
 ##Recommended modules
 * Installed _Net::SSLeay_ module, to make automatic update notifications work
-
 
 ##Browser support
 
@@ -101,6 +100,46 @@ console.log('Script loaded...');
 
 
 ```JavaScript
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//							Authentic Theme settings since version 11.50								//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Enable/disable hotkeys usage
+settings_hotkeys_active = true;
+
+// Set hotkeys modifier. Available values are `altKey/ctrlKey/metaKey`.
+// Note: `metaKey` is Windows/iOS special key. Default is set to `altKey`.
+settings_hotkey_toggle_modifier = 'altKey';
+
+// Set hotkey value for each action. For example, in case `settings_hotkey_toggle_modifier` is set to `ctrlKey` and one
+// of the following options, let's say, `settings_hotkey_toggle_key_virtualmin` is set to 'i', then in order to switch
+// to Virtualmin, you would have to click _Ctrl+I_. Default values are set as following: `w` for Webmin, `v` for Virtualmin,
+// `c` for Cloudmin, `u` for Usermin, `m` for Webmail, `s` for focusing on search filed and `r` for performing page refresh.
+settings_hotkey_toggle_key_webmin = 'w';
+settings_hotkey_toggle_key_virtualmin = 'v';
+settings_hotkey_toggle_key_cloudmin = 'c';
+settings_hotkey_toggle_key_usermin = 'u';
+settings_hotkey_toggle_key_webmail = 'm';
+settings_hotkey_focus_search = 's';
+settings_hotkey_reload = 'r';
+
+// Enable/disable reloading of the right page when changing between Webmin/Virtualmin/Cloudmin
+settings_right_reload = true;
+
+// Where do you want to go after you load Virtualmin/Cloudmin the first time or where do you want to go when switching to Virtualmin/Cloudmin
+// and `settings_right_reload` is set to `true`? It can be any valid Virtualmin/Cloudmin URL, that you can extract from the currently opened
+// right side page (to extract it, open the right frame's source, where you'll find the URL that you need to set as default). The default
+// value is `'sysinfo.cgi'` (System Information). It's important that URL has no slash at the begining. See default examples below.
+settings_right_virtualmin_default = 'virtual-server/summary_domain.cgi?dom=142488888426248';
+settings_right_cloudmin_default = 'server-manager/edit_serv.cgi?id=1422426860414460';
+
+// Replace right page header links, such as, `Module Config`, `Preferences`, `Search Docs..` with icons
+settings_right_iconize_header_links = true;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//							Authentic Theme settings since version 11.00								//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Enable/disable loader/spinner for the left frame
 settings_loader_left = true;
 
