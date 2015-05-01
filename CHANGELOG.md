@@ -1,7 +1,7 @@
 ##Changelog
 
 ####Version 11.50 (May 1, 2015)
-* Added in settings: `settings_right_iconize_header_links`, that enables you to choose between old style right-page header links or replace it with new beautiful icon links. Default is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added in settings `settings_right_iconize_header_links`, that enables you to choose between old style right-page header links or replace it with new beautiful icon links. Default is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
 * Added ability to disable right-page reload upon switching between _Webmin/Virtualmin/Cloudmin_ by the following option `settings_right_reload`. The default value is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
 * Added ability to choose hotkeys modifier and hotkeys values, when using it by the following options `settings_hotkey_toggle_modifier`, `settings_hotkey_toggle_key_webmin`, `settings_hotkey_toggle_key_virtualmin`, `settings_hotkey_toggle_key_cloudmin`, `settings_hotkey_toggle_key_usermin`, `settings_hotkey_toggle_key_webmail`, `settings_hotkey_focus_search` and `settings_hotkey_reload`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
 * Added ability to choose the custom page, when _Virtualmin/Cloudmin_ is loaded/selected by the following options `settings_right_virtualmin_default` and `settings_right_cloudmin_default`. The default value is `'sysinfo.cgi'` (System Information). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
