@@ -1,5 +1,10 @@
+![webmin](https://img.shields.io/badge/Webmin-1.730%2B-green.svg?style=flat-square)
+![usermin](https://img.shields.io/badge/Usermin-1.640%2B-green.svg?style=flat-square)
+![virtualmin](https://img.shields.io/badge/Virtualmin-4.14%2B-green.svg?style=flat-square)
+![cloudmin](https://img.shields.io/badge/Cloudmin-8.01%2B-green.svg?style=flat-square)
+
 [![](https://img.shields.io/badge/Authentic Theme Version%2011.55-May 2, 2015-blue.svg?style=flat-square)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
-[![](https://img.shields.io/badge/Distributed%20in%20Webmin%20Official%20Package since-1.740-green.svg?style=flat-square)](http://webmin.com)
+[![](https://img.shields.io/badge/Distributed%20in%20Webmin%20Official%20Package since-1.740-red.svg?style=flat-square)](http://webmin.com)
 
 #Contents
 
@@ -51,16 +56,16 @@
 
 
 ###FAQ
-####How do I install _Authentic_ theme?
+####How do I install _Authentic_ Theme?
 
 #####Webmin
 
-  To install _Autentic_ theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
+  To install _Autentic_ Theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
 #####Usermin
-  **a)** I'd recommend to create a _symlink_ to already installed _Authentic_ theme, which will enable you to only update Webmin installation of the theme not both.
+  **a)** I'd recommend to create a _symlink_ to already installed _Authentic_ Theme, which will enable you to only update Webmin installation of the theme not both.
 
   Creating a _symlink_ as easy as it gets by running as root the following:
 
@@ -244,7 +249,7 @@ Settings must be initialized by the same procedure described for the scripts abo
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 400 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 430 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 
