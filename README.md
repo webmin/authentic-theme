@@ -1,11 +1,11 @@
 <hr>
-&nbsp;&nbsp;&nbsp;&nbsp;[Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-&nbsp;|&nbsp;&nbsp;[![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)Download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
-&nbsp;|&nbsp;&nbsp;[About](#about)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
+&nbsp;|&nbsp;&nbsp;[![](https://rostovtsev.ru/pub/media/icons/download-22x14.png)Download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+&nbsp;|&nbsp;&nbsp;&nbsp;[About](#about)
 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[FAQ](#faq)
 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Troubleshoot](#troubleshoot)
-&nbsp;&nbsp;|&nbsp;&nbsp;[Development](#development)
-&nbsp;|&nbsp;&nbsp;[![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)Donation](#donation)
+&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Development](#development)
+&nbsp;&nbsp;|&nbsp;&nbsp;[![](https://rostovtsev.ru/pub/media/icons/heart-22x15.png)Donation](#donation)
 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 <hr>
 ##About
