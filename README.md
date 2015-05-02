@@ -1,6 +1,3 @@
-[![](https://img.shields.io/badge/Authentic Theme Version-11.55-blue.svg)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
-[![](https://img.shields.io/badge/Distributed by Webmin-1.740%2B-red.svg)](https://github.com/webmin/webmin)
-
 ![webmin](https://img.shields.io/badge/Webmin-1.730%2B-green.svg)
 ![usermin](https://img.shields.io/badge/Usermin-1.640%2B-green.svg)
 ![virtualmin](https://img.shields.io/badge/Virtualmin-4.14%2B-green.svg)
