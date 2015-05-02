@@ -3,8 +3,8 @@
 ![virtualmin](https://img.shields.io/badge/Virtualmin-4.14%2B-green.svg?style=flat-square)
 ![cloudmin](https://img.shields.io/badge/Cloudmin-8.01%2B-green.svg?style=flat-square)
 
-[![](https://img.shields.io/badge/Authentic Theme Version%2011.55-May 2, 2015-blue.svg?style=flat-square)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
-[![](https://img.shields.io/badge/Distributed%20in%20Webmin%20Official%20Package since-1.740-red.svg?style=flat-square)](http://webmin.com)
+[![](https://img.shields.io/badge/Authentic Version-11.55-blue.svg?style=flat-square)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+[![](https://img.shields.io/badge/Webmin%20Distributed-1.740%2B-red.svg?style=flat-square)](http://webmin.com)
 
 #Contents
 
