@@ -1,3 +1,8 @@
+[![](https://img.shields.io/badge/Latest Release 11.55-May 2, 2015-blue.svg)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![webmin](https://img.shields.io/badge/Webmin-1.730%2B-green.svg)
+![usermin](https://img.shields.io/badge/Usermin-1.640%2B-green.svg)
+![virtualmin](https://img.shields.io/badge/Virtualmin-4.14%2B-green.svg)
+![cloudmin](https://img.shields.io/badge/Cloudmin-8.01%2B-green.svg)
 <hr>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 &nbsp;|&nbsp;&nbsp;[![](https://rostovtsev.ru/pub/media/icons/download-22x14.png)Download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
@@ -6,7 +11,6 @@
 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Troubleshoot](#troubleshoot)
 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Development](#development)
 &nbsp;&nbsp;|&nbsp;&nbsp;[![](https://rostovtsev.ru/pub/media/icons/heart-22x15.png)Donation](#donation)
-&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 <hr>
 ##About
 **Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin/](https://www.virtualmin.com/)[Cloudmin](http://webmin.com/cloudmin.html) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually, [TinyMCE](http://www.tinymce.com/) to compose comprehensive HTML based messages and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
