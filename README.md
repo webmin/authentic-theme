@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Latest Release 11.55-May 2, 2015-blue.svg)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![](https://img.shields.io/badge/Latest Release 11.55-May 2, 2015-blue.svg)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![webmin](https://img.shields.io/badge/Webmin-1.730%2B-green.svg)
 ![usermin](https://img.shields.io/badge/Usermin-1.640%2B-green.svg)
 ![virtualmin](https://img.shields.io/badge/Virtualmin-4.14%2B-green.svg)
