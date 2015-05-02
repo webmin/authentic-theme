@@ -1,9 +1,4 @@
-![webmin](https://img.shields.io/badge/Webmin-1.730%2B-green.svg)
-![usermin](https://img.shields.io/badge/Usermin-1.640%2B-green.svg)
-![virtualmin](https://img.shields.io/badge/Virtualmin-4.14%2B-green.svg)
-![cloudmin](https://img.shields.io/badge/Cloudmin-8.01%2B-green.svg)
-#Contents
-
+<hr>
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 * [Download![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
