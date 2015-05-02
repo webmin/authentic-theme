@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.50 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.55 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -15,8 +15,7 @@ sub print_category {
         || $c eq 'settings'
         || $c eq 'global_settings'
         || $c eq 'global_setting'
-        || $c eq 'cat_setting'
-       )
+        || $c eq 'cat_setting' )
     {
         our $icon = 'fa-cog';
     }
@@ -677,46 +676,48 @@ sub print_left_menu {
     }
 }
 
-sub print_progressbar_colum {
-    my ( $xs, $sm, $percent, $label ) = @_;
-    use POSIX;
-    $percent = ceil($percent);
-    if ( $percent < 75 ) {
-        $class = 'success';
+sub print_easypie_charts {
+    my ($info) = @_;
+
+    print '<div class="row" style="margin: 0;">' . "\n";
+    my $columns = &get_col_num( $info, 12 );
+
+    # CPU usage
+    if ( $info->{'cpu'} ) {
+        @c = @{ $info->{'cpu'} };
+        my $percent = $c[0] + $c[1] + $c[3];
+        print_easypie_chart( $columns, $percent, $text{'body_cp'} );
     }
-    elsif ( $percent < 90 ) {
-        $class = 'warning';
+
+    # Memory allocation
+    if ( $info->{'mem'} ) {
+        @m = @{ $info->{'mem'} };
+        if ( @m && $m[0] ) {
+            my $percent = ( $m[0] - $m[1] ) / $m[0] * 100;
+            print_easypie_chart( $columns, $percent, $text{'body_real'} );
+        }
+        if ( @m && $m[2] ) {
+            my $percent = ( $m[2] - $m[3] ) / $m[2] * 100;
+            print_easypie_chart( $columns, $percent, $text{'body_virt'} );
+        }
     }
-    else {
-        $class = 'danger';
+
+    # Disk usage
+    if ( $info->{'disk_total'} ) {
+        ( $total, $free ) = ( $info->{'disk_total'}, $info->{'disk_free'} );
+        my $percent = ( $total - $free ) / $total * 100;
+        print_easypie_chart( $columns, $percent, $text{'body_disk'} );
     }
-    print '<div class="col-xs-' . $xs . ' col-sm-' . $sm . '">' . "\n";
-    print '<div data-progress="'
-        . $percent
-        . '" class="progress progress-circle">' . "\n";
-    print '<div class="progress-bar-circle progress-bar-' . $class . '">'
-        . "\n";
-    print '<div class="progress-bar-circle-mask progress-bar-circle-full">'
-        . "\n";
-    print '<div class="progress-bar-circle-fill"></div>' . "\n";
     print '</div>' . "\n";
-    print '<div class="progress-bar-circle-mask progress-bar-circle-half">'
-        . "\n";
-    print '<div class="progress-bar-circle-fill"></div>' . "\n";
-    print
-        '<div class="progress-bar-circle-fill progress-bar-circle-fix"></div>'
-        . "\n";
-    print '</div>' . "\n";
-    print '<div class="progress-bar-circle-inset">' . "\n";
-    print '<div class="progress-bar-circle-title">' . "\n";
-    print '<strong class="text-muted">' . $label . '</strong>' . "\n";
-    print '</div>' . "\n";
-    print '<div class="progress-bar-circle-percent">' . "\n";
-    print '<span></span>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
-    print '</div>' . "\n";
+}
+
+sub print_easypie_chart {
+    my ( $columns, $percent, $label ) = @_;
+    print '<div class="col-xs-6 col-sm-' . $columns . ' text-center">' . "\n";
+    print '<span class="piechart" data-percent="' . int($percent) . '">
+        <span class="percent"></span>
+        <span class="label">' . $label . '</span>
+    </span>';
     print '</div>' . "\n";
 }
 

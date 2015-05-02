@@ -3,8 +3,8 @@
 
 ##Changelog
 
-####Version 11.50 (May 1, 2015)
-> Major Release. New features, improvements and many bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
+####Version 11.55 (May 2, 2015)
+> After-Major Release. New features, improvements and many bug fixes. [Read more..](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
 
 ##Video Screencast
 
@@ -101,7 +101,14 @@ console.log('Script loaded...');
 
 ```JavaScript
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//							Authentic Theme settings since version 11.50								//
+//							Authentic Theme settings since version 11.55								//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Enable/disable Easy Pie Charts on System Information page. Default is set to `true`
+settings_sysinfo_easypie_charts = true;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//							Authentic Theme settings since version 11.55								//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Enable/disable hotkeys usage
