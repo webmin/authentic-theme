@@ -1,3 +1,4 @@
+body_cp=CPU
 body_cpu=CPU 负载
 body_cpuinfo=处理器信息
 body_cputemps=CPU 温度

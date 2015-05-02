@@ -1,3 +1,4 @@
+body_cp=CPU
 body_cpu=CPU-belastning gennemsnit
 body_cpuinfo=Processor information
 body_cputemps=CPU temperature
@@ -78,7 +79,7 @@ right_vm2=Cloudmin version
 
 session_failed=Login fejlede. Prøv venligst igen.
 session_logout=Loggede ud uden fejl. Brug formen under for at logge ind igen.
-session_timed_out=Sessionen udløb efter $1 minutters inaktivitet. 
+session_timed_out=Sessionen udløb efter $1 minutters inaktivitet.
 session_twofailed=To-faktor godkendelse fejlede: $1
 
 theme_changelog=Changelog

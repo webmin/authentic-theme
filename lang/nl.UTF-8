@@ -1,3 +1,4 @@
+body_cp=CPU
 body_cpu=CPU load gemiddelden
 body_cpuinfo=Processor informatie
 body_cputemps=CPU temperaturen

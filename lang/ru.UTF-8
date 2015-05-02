@@ -1,3 +1,4 @@
+body_cp=ЦП
 body_cpu=Средняя нагрузка на ЦП
 body_cpuinfo=Информация о процессоре
 body_cputemps=Температура ЦП

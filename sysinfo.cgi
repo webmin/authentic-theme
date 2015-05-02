@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 11.50 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 11.55 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -51,37 +51,10 @@ if ( $level == 0 ) {
     &foreign_require("system-status");
     $info = &system_status::get_collected_info();
 
-    # Circle Progress Container
-    print '<div class="row" style="margin: 0;">' . "\n";
-    $col_width = &get_col_num( $info, 12 );
-
-    # CPU Usage
-    if ( $info->{'cpu'} ) {
-        @c    = @{ $info->{'cpu'} };
-        $used = $c[0] + $c[1] + $c[3];
-        &print_progressbar_colum( 6, $col_width, $used, 'CPU' );
+    # Easypie Charts
+    if ( __settings('settings_sysinfo_easypie_charts') ne 'false' ) {
+        print_easypie_charts($info);
     }
-
-    # MEM e VIRT Usage
-    if ( $info->{'mem'} ) {
-        @m = @{ $info->{'mem'} };
-        if ( @m && $m[0] ) {
-            $used = ( $m[0] - $m[1] ) / $m[0] * 100;
-            &print_progressbar_colum( 6, $col_width, $used, 'MEM' );
-        }
-        if ( @m && $m[2] ) {
-            $used = ( $m[2] - $m[3] ) / $m[2] * 100;
-            &print_progressbar_colum( 6, $col_width, $used, 'VIRT' );
-        }
-    }
-
-    # HDD Usage
-    if ( $info->{'disk_total'} ) {
-        ( $total, $free ) = ( $info->{'disk_total'}, $info->{'disk_free'} );
-        $used = ( $total - $free ) / $total * 100;
-        &print_progressbar_colum( 6, $col_width, $used, 'HDD' );
-    }
-    print '</div>' . "\n";
 
     # Info table
     print '<table class="table table-hover">' . "\n";

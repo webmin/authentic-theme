@@ -1,3 +1,4 @@
+body_cp=CPU
 body_cpu=Carico medio su CPU
 body_cpuinfo=Informazioni CPU
 body_cputemps=Temperature CPU
