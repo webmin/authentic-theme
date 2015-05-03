@@ -101,16 +101,35 @@ Theme can be tweaked using inbuilt _settings_. The list of the _settings_ will b
 
 
 ```JavaScript
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//							Authentic Theme settings since version 11.55								//
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Authentic Theme settings since version 12.00		//
+//
+
+// Show/hide right page icons
+settings_right_hide_table_icons = false;
+
+// Make right page icons small
+settings_right_small_table_icons = false;
+
+// Make right page icons extra small
+settings_right_xsmall_table_icons = false;
+
+// Animate right page icons on focus
+settings_right_animate_table_icons = true;
+
+// Grayscale icons and bring color only on focus
+settings_right_grayscaled_table_icons = true;
+
+//
+//		Authentic Theme settings since version 11.55		//
+//
 
 // Enable/disable Easy Pie Charts on System Information page. Default is set to `true`
 settings_sysinfo_easypie_charts = true;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//							Authentic Theme settings since version 11.50								//
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Authentic Theme settings since version 11.50		//
+//
 
 // Enable/disable hotkeys usage
 settings_hotkeys_active = true;
@@ -144,9 +163,9 @@ settings_right_cloudmin_default = 'server-manager/edit_serv.cgi?id=1422426860414
 // Replace right page header links, such as, `Module Config`, `Preferences`, `Search Docs..` with icons
 settings_right_iconize_header_links = true;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//							Authentic Theme settings since version 11.00								//
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Authentic Theme settings since version 11.00		//
+//
 
 // Enable/disable loader/spinner for the left frame
 settings_loader_left = true;
@@ -240,7 +259,7 @@ Settings must be initialized by the same procedure described for the scripts abo
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 430 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 440 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 
