@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 12.00 (May 3, 2015)
+* Added right page _icons_, that had been around in other themes for decades. Many people asked for it, including _Joe Cooper_. It was one of the conditions for making _Authentic Theme_ default in _Webmin_. _Icons_ that are used at the moment, are not brand new but looks good. Brand new, _SVG_ icons, are coming in the near future! It's very important to know, that all of these innovations, can be tweaked using settings. By default, _big icons_ are enabled, with _animation_ and _grayscale effect_. Using settings, you can change default icons, to small or extra small, or even completely disable them and get back to what _Authentic Theme_ has been before. Added in settings `settings_right_hide_table_icons`, `settings_right_small_table_icons`, `settings_right_xsmall_table_icons`, `settings_right_animate_table_icons`, `settings_right_grayscaled_table_icons`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Improved general UI of the left menu
+* Fixed some bugs
+
 ####Version 11.55 (May 2, 2015)
 * Added _Easy Pie Charts_ and corresponding option `settings_sysinfo_easypie_charts`, that will let you enable/disable _Charts_ on _System Information_ page
 
