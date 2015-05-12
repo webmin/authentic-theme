@@ -464,11 +464,11 @@ sub theme_generate_icon {
             -r $root_directory
                 . "/authentic-theme/images/modules/"
                 . get_module_name()
-                . $icon ? "/images/modules/" . get_module_name() . $icon
+                . $icon ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $icon
             : -r $root_directory
                 . "/authentic-theme/images/modules/"
                 . get_module_name()
-                . $___svg ? "/images/modules/" . get_module_name() . $___svg
+                . $___svg ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $___svg
             : "/images/not_found.svg"
         );
 
