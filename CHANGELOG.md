@@ -26,7 +26,7 @@
 > __NOTICE:__ A chat room `authentic-theme@conference.jabbers.im` is opened for discussions. In order to join the chat room, you would need _Jabber ID_. If you don't have _Jabber ID_, you can register it for free on __jabbers.im__, using any XMPP client, that supports account registrations.
 
 ####Version 12.00 (May 3, 2015)
-* Added right page _icons_, that had been around in other themes for decades. Many people asked for it, including _Joe Cooper_. It was one of the conditions for making _Authentic Theme_ default in _Webmin_. _Icons_ that are used at the moment, are not brand new but looks good. Brand new, _SVG_ icons, are coming in the near future! It's very important to know, that all of these innovations, can be tweaked using settings. By default, _big icons_ are enabled, with _animation_ and _grayscale effect_. Using settings, you can change default icons, to small or extra small, or even completely disable them and get back to what _Authentic Theme_ has been before. Added in settings `settings_right_hide_table_icons`, `settings_right_small_table_icons`, `settings_right_xsmall_table_icons`, `settings_right_animate_table_icons`, `settings_right_grayscaled_table_icons`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added right page _icons_, that had been around in other themes for decades. Many people asked for it, including _Joe Cooper_. It was one of the conditions for making _Authentic Theme_ default in _Webmin_. _Icons_ that are used at the moment, are not brand new but looks good. Brand new, _SVG_ icons, are coming in the near future! It's very important to know, that all of these innovations, can be tweaked using settings. By default, _big icons_ are enabled, with _animation_ and _grayscale effect_. Using settings, you can change default icons, to small or extra small, or even completely disable them and get back to what _Authentic Theme_ has been before. Added in settings `settings_right_hide_table_icons`, `settings_right_small_table_icons`, `settings_right_xsmall_table_icons`, `settings_right_animate_table_icons`, `settings_right_grayscaled_table_icons`
 * Improved general UI of the left menu
 * Fixed some bugs
 
@@ -34,10 +34,10 @@
 * Added _Easy Pie Charts_ and corresponding option `settings_sysinfo_easypie_charts`, that will let you enable/disable _Charts_ on _System Information_ page
 
 ####Version 11.50 (May 1, 2015)
-* Added in settings `settings_right_iconize_header_links`, that enables you to choose between old style right-page header links or replace it with new beautiful icon links. Default is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
-* Added ability to disable right-page reload upon switching between _Webmin/Virtualmin/Cloudmin_ by the following option `settings_right_reload`. The default value is set to `true`.  Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
-* Added ability to choose hotkeys modifier and hotkeys values, when using it by the following options `settings_hotkey_toggle_modifier`, `settings_hotkey_toggle_key_webmin`, `settings_hotkey_toggle_key_virtualmin`, `settings_hotkey_toggle_key_cloudmin`, `settings_hotkey_toggle_key_usermin`, `settings_hotkey_toggle_key_webmail`, `settings_hotkey_focus_search` and `settings_hotkey_reload`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
-* Added ability to choose the custom page, when _Virtualmin/Cloudmin_ is loaded/selected by the following options `settings_right_virtualmin_default` and `settings_right_cloudmin_default`. The default value is `'sysinfo.cgi'` (System Information). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added in settings `settings_right_iconize_header_links`, that enables you to choose between old style right-page header links or replace it with new beautiful icon links. Default is set to `true`
+* Added ability to disable right-page reload upon switching between _Webmin/Virtualmin/Cloudmin_ by the following option `settings_right_reload`. The default value is set to `true`
+* Added ability to choose hotkeys modifier and hotkeys values, when using it by the following options `settings_hotkey_toggle_modifier`, `settings_hotkey_toggle_key_webmin`, `settings_hotkey_toggle_key_virtualmin`, `settings_hotkey_toggle_key_cloudmin`, `settings_hotkey_toggle_key_usermin`, `settings_hotkey_toggle_key_webmail`, `settings_hotkey_focus_search` and `settings_hotkey_reload`
+* Added ability to choose the custom page, when _Virtualmin/Cloudmin_ is loaded/selected by the following options `settings_right_virtualmin_default` and `settings_right_cloudmin_default`. The default value is `'sysinfo.cgi'` (System Information)
 * Added `autofocus` on _username_ field, when login page is accessed
 * Fixed mail being displayed in HTML, to preserve message custom formatting
 * Fixed _dozens_ of bugs
@@ -61,7 +61,7 @@
 
 ####Version 11.00 (Mar 25, 2015)
 * Added window automatic scrolling, upon page is populated from server-side.Test it and see it in action in such modules as _Fetchmail Mail Retrieval_, _Software Package Updates_ and others. Intended mouse-scroll done by user, during auto-scrolling, will make it stop. Loader will be automatically hidden upon this features is triggered. This feature can be disabled using settings
-* Added in settings: `settings_security_notify_on_pre_login_request`, `settings_security_notify_on_login_request`, `settings_security_notify_on_login_success`, `settings_window_autoscroll`, `settings_sysinfo_theme_updates`, `settings_sysinfo_csf_updates`, `settings_leftmenu_button_language`, `settings_leftmenu_singlelink_icons`, `settings_leftmenu_vm_installscripts`, `settings_leftmenu_vm_webpages` and `settings_leftmenu_vm_backup_amazon`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added in settings: `settings_security_notify_on_pre_login_request`, `settings_security_notify_on_login_request`, `settings_security_notify_on_login_success`, `settings_window_autoscroll`, `settings_sysinfo_theme_updates`, `settings_sysinfo_csf_updates`, `settings_leftmenu_button_language`, `settings_leftmenu_singlelink_icons`, `settings_leftmenu_vm_installscripts`, `settings_leftmenu_vm_webpages` and `settings_leftmenu_vm_backup_amazon`
 * Added automatically stretching inputs for long text [#121](https://github.com/qooob/authentic-theme/issues/121)
 * Added auto-detection/redirection to _Mailbox_ module upon logging in to _Usermin_
 * Added _Dutch_ translation by [Richard van Laak](https://github.com/Rvanlaak)
@@ -100,8 +100,8 @@
 * Added support for **Webmail** in _Usermin_ [#104](https://github.com/qooob/authentic-theme/issues/104)
 * Added **dataTables** search, in case table contains more than 10 rows
 * Added **dataTables** on filesize, to properly sort columns containing filesize data [#103](https://github.com/qooob/authentic-theme/issues/103)
-* Added **custom logo** support for login screen [#116](https://github.com/qooob/authentic-theme/issues/116). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-logos) for using it
-* Added support for **basic settings** to control the theme (disable loaders and more). Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
+* Added **custom logo** support for login screen [#116](https://github.com/qooob/authentic-theme/issues/116)
+* Added support for **basic settings** to control the theme (disable loaders and more)
 * Added extended controls to _System Information_ page for **ConfigServer Security & Firewall**
 * Added complete support for scrolling on _iPhone/iPad_ [#115](https://github.com/qooob/authentic-theme/issues/115)
 * Fixed server-side search that stopped working after adding _autocomplete_
@@ -123,7 +123,7 @@
 * Added **dataTables** to _Software Package Updates_, as it's useful to sort packages by _name/description/status/source_
 * Added font **Roboto** in the package and set as default. Font now is local, because _Google_ is blocked in some countries [#80](https://github.com/qooob/authentic-theme/issues/80)
 * Added **Hotkey** - _double_ `Shift` for dismissing right side loader
-* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates. [Manual](https://github.com/qooob/authentic-theme#how-do-i-load-custom-styles) for using
+* Added custom **styles** and **scripts** injector. Now you can apply custom _styles/scripts_ to the theme, which will be preserved upon updates
 * Added **brand** icons for _Webmin/Virtualmin/Cloudmin_ switches (thanks to _Joe Cooper_ for it)
 * Added **left menu** dependency updates, upon some triggers happening on the right frame
 * Added **extended panels** on _System Information_ page, like _Quotas_, _Status_, _IP address allocation_ and et cetera
@@ -154,7 +154,7 @@
 * Added support for _Virtualmin/Cloudmin_ **missing left menu**, for currently selected virtual server/machine. ***Attention:*** You need latest _Virtualmin_ installation to make it work. (For _Virtualmin_ *Pro*, minimum version requirement is 4.13 and for *GPL* users minimum is 4.14)
 * Added **autocomplete** for currently **opened module** in _Webmin_, currently **selected domain** and list of all available **virtual domains/machines** in _Virtualmin/Cloudmin_ modules
 * Added **complete mobile support**. Navigation menu now has absolutely _same functionality_ for both _desktop/mobile_ versions
-* Added **custom logo** support. [Manual](https://github.com/qooob/authentic-theme#how-do-i-set-custom-logos) for using
+* Added **custom logo** support
 * Added **screen-saver** effect (using pure CSS) after _2 minutes_ of inactivity
 * Added **shortcut** _Alt+R_ for _reloading_ right frame
 * Added **Chinese translation** by [Dreista](https://github.com/Dreista)
