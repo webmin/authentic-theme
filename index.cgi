@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 12.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,7 +14,7 @@ use WebminCore;
 # Detecting Virtualmin/Cloudmin request
 our $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
 our $is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
-our $is_webmail    = index( $ENV{'REQUEST_URI'}, 'webmail' );
+our $is_webmail    = index( $ENV{'REQUEST_URI'}, 'mail' );
 
 %text    = &load_language($current_theme);
 %gaccess = &get_module_acl( undef, "" );
@@ -33,15 +33,25 @@ do "authentic-theme/authentic-lib.cgi";
 # Check user settings on default page for Virtualmin/Cloudmin
 if (   $is_virtualmin != -1
     && length __settings('settings_right_virtualmin_default')
-    && __settings('settings_right_virtualmin_default') ne 'false' )
+    && __settings('settings_right_virtualmin_default') ne ''
+    && domain_available( __settings('settings_right_virtualmin_default') ) )
 {
-    our $udefgoto = '/' . __settings('settings_right_virtualmin_default');
+    parse_virtual_server_access_level();
+    if ( $virtual_server_access_level eq '2' ) {
+        our $udefgoto = '/sysinfo.cgi';
+    }
+    else {
+        our $udefgoto = '/virtual-server/summary_domain.cgi?dom='
+            . __settings('settings_right_virtualmin_default');
+    }
 }
 elsif ($is_cloudmin != -1
     && length __settings('settings_right_cloudmin_default')
-    && __settings('settings_right_cloudmin_default') ne 'false' )
+    && __settings('settings_right_cloudmin_default') ne ''
+    && serrver_available( __settings('settings_right_cloudmin_default') ) )
 {
-    our $udefgoto = '/' . __settings('settings_right_cloudmin_default');
+    our $udefgoto = '/server-manager/edit_serv.cgi?id='
+        . __settings('settings_right_cloudmin_default');
 }
 else {
     our $udefgoto = '/sysinfo.cgi';
@@ -72,17 +82,23 @@ if (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
     print "Location: $webmin\n\n";
 }
 
-# In case Virtualmin is installed, after logging in, redirect to Virtualmin
-if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
-    && &foreign_available("virtual-server")
+# In case Virtualmin/Cloudmin is installed, after logging in, redirect to Virtualmin/Cloudmin
+if ($ENV{'HTTP_COOKIE'} =~ /redirect=1/
+    && (   &foreign_available("virtual-server")
+        || &foreign_available("server-manager") )
     && &get_product_name() eq "webmin"
-    && $is_virtualmin == -1 )
+    && ( $is_virtualmin == -1 && $is_cloudmin == -1 )
+    )
 {
     print "Set-Cookie: redirect=0; path=/\r\n";
     $virtualmin
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'}
-        . '/?virtualmin';
+        . (
+        length __settings('settings_right_default_tab_webmin')
+        ? __settings('settings_right_default_tab_webmin')
+        : '/'
+        );
     print "Location: $virtualmin\n\n";
 }
 
@@ -97,7 +113,11 @@ if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
     $webmail
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'}
-        . '/?webmail';
+        . (
+        length __settings('settings_right_default_tab_usermin')
+        ? __settings('settings_right_default_tab_usermin')
+        : '/'
+        );
     print "Location: $webmail\n\n";
 }
 
@@ -156,6 +176,18 @@ elsif ( $in{'xhr-switch'} eq '1' ) {
     print "Content-type: text/html\n\n";
     print $__goto;
 }
+elsif ( $in{'xhr-settings'} eq '1' ) {
+    print "Content-type: text/html\n\n";
+    if ( $in{'save'} eq '1' ) {
+        _settings( 'save', undef, undef );
+    }
+    elsif ( $in{'restore'} eq '1' ) {
+        _settings( 'restore', undef, undef );
+    }
+    else {
+        do "authentic-theme/settings.cgi";
+    }
+}
 else {
 
     # Force regular user to be in Virtualmin
@@ -206,7 +238,13 @@ else {
     ### Product switcher. Start.
     #
     #
-    if (   &get_product_name() eq 'usermin'
+    if (   &get_product_name() eq 'webmin'
+        && &foreign_available("asterisk") )
+    {
+        our $switch_mode  = '2';
+        our $product_mode = '5';
+    }
+    elsif (&get_product_name() eq 'usermin'
         && &foreign_available("mailbox") )
     {
         our $switch_mode  = '2';
@@ -262,6 +300,10 @@ else {
     if ( $product_mode eq '4' ) {
         print_switch_webmail(1);
         print_switch_webmin(1);
+    }
+    if ( $product_mode eq '5' ) {
+        print_switch_webmin(1);
+        print_switch_thirdlane(1);
     }
 
     print '<a></a>

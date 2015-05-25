@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 12.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -21,26 +21,29 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
         'true' ? 0 : 1;
 
     foreach $c (@cats) {
-        if ( $gconfig{"notabs_${base_remote_user}"} ne '2' && ( $c && !$c->{'unused'} )
+        if ( $gconfig{"notabs_${base_remote_user}"} ne '2'
+            && ( $c && !$c->{'unused'} )
             || ( $c && $c->{'unused'} && $show_unused ) )
         {
-            &print_category( $c->{'code'},
-                $c->{'unused'}
-                ? '<span style="color: #888888">' . $c->{'desc'} . '</span>'
-                : $c->{'desc'} );
+            &print_category( $c->{'code'}, $c->{'desc'} );
             print '<ul class="sub" style="display: none;" id="'
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
+                if ( $minfo->{'dir'} eq 'webmin' ) {
+                    &print_category_link( "/webmin/edit_themes.cgi",
+                        $text{'settings_right_theme_configuration_title'},
+                        1 );
+                }
                 if (   $minfo->{'dir'} ne 'virtual-server'
                     && $minfo->{'dir'} ne 'server-manager' )
                 {
                     &print_category_link( "$minfo->{'dir'}/",
-                        $minfo->{'desc'} );
+                        $minfo->{'desc'}, undef );
                 }
             }
             print '</ul>' . "\n";
         }
-        elsif ($gconfig{"notabs_${base_remote_user}"} eq '2') {
+        elsif ( $gconfig{"notabs_${base_remote_user}"} eq '2' ) {
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 print '<li><a target="page" data-href="'
                     . $gconfig{'webprefix'} . '/'
@@ -92,7 +95,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
     {
         my @leftitems = list_combined_webmin_menu( $sects, \%in );
 
-        print_left_menu( 'virtual-server', \@leftitems, 0 );
+        print_left_menu( 'virtual-server', \@leftitems, 0, 0 );
         print_sysinfo_link();
         print_sysstat_link();
     }
@@ -124,13 +127,12 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
 
                         &print_category_link(
                             "virtual-server/domain_form.cgi",
-                            $text{'left_virtualmin_create'}
-                        );
+                            $text{'left_virtualmin_create'}, undef );
                         $print_virtualmin_link = 1;
                     }
                     $l->{'url'} =~ s/^\/+//;
 
-                    &print_category_link( $l->{'url'}, $l->{'title'} );
+                    &print_category_link( $l->{'url'}, $l->{'title'}, undef );
 
                 }
                 print '</ul>' . "\n";
@@ -158,7 +160,7 @@ elsif ( $is_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
     {
         my @leftitems = list_combined_webmin_menu( $sects, \%in );
 
-        print_left_menu( 'server-manager', \@leftitems, 0 );
+        print_left_menu( 'server-manager', \@leftitems, 0, 0 );
         print_sysinfo_link();
         print_sysstat_link();
     }
@@ -181,7 +183,7 @@ elsif ( $is_webmail != -1 || $in{'xhr-navigation-type'} eq 'webmail' ) {
     if ( &get_webmin_version() >= 1.630 ) {
         my @leftitems = list_combined_webmin_menu( $sects, \%in );
 
-        print_left_menu( 'mailbox', \@leftitems, 0 );
+        print_left_menu( 'mailbox', \@leftitems, 0, 0 );
         print_sysinfo_link();
     }
     else {
