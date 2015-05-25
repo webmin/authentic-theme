@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 13.01 (May 25, 2015)
+* Fixed redirection loop on Safari OSX [#173](https://github.com/qooob/authentic-theme/issues/173)
+* Fixed switch-toggle in single mode [#172](https://github.com/qooob/authentic-theme/issues/172)
+
 ####Version 13.00 (May 24, 2015)
 * Improved _theme settings are now configurable using UI_. From now on, you don't need to edit settings manually. Theme configurable options located in `Webmin->Webmin Configuration->Webmin Themes`
 * Improved UI of _right frame_ in great amount. Improved UI of _left menu_ and _login page_
