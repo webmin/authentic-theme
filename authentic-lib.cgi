@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 12.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -164,9 +164,8 @@ sub print_switch_webmin {
         . '>
         <label for="open_'
         . &get_product_name() . '">
-                <img alt="" style="height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOm5zMD0iJmFtcDsjMzg7bnNfYWk7IiAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgd2lkdGg9IjEyOCIgICBoZWlnaHQ9IjEyOCIgICB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgICBpZD0ic3ZnNzMyNiIgICB2ZXJzaW9uPSIxLjEiICAgaW5rc2NhcGU6dmVyc2lvbj0iMC45MSByMTM3MjUiICAgc29kaXBvZGk6ZG9jbmFtZT0iV2VibWluLWljb24td2hpdGUtbW9ub2Nocm9tZS5zdmciPiAgPGRlZnMgICAgIGlkPSJkZWZzNzMyOCIgLz4gIDxzb2RpcG9kaTpuYW1lZHZpZXcgICAgIGlkPSJiYXNlIiAgICAgcGFnZWNvbG9yPSIjMDAwMDAwIiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiICAgICBib3JkZXJvcGFjaXR5PSIxLjAiICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIgICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiICAgICBpbmtzY2FwZTp6b29tPSIyLjgyODQyNzEiICAgICBpbmtzY2FwZTpjeD0iMTYuMjQzMzI2IiAgICAgaW5rc2NhcGU6Y3k9IjY2LjIxMDA5MyIgICAgIGlua3NjYXBlOmRvY3VtZW50LXVuaXRzPSJweCIgICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9ImxheWVyMSIgICAgIHNob3dncmlkPSJmYWxzZSIgICAgIHVuaXRzPSJweCIgICAgIHdpZHRoPSIxMjhweCIgICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIgICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjEwMTQiICAgICBpbmtzY2FwZTp3aW5kb3cteD0iMCIgICAgIGlua3NjYXBlOndpbmRvdy15PSIyNyIgICAgIGlua3NjYXBlOndpbmRvdy1tYXhpbWl6ZWQ9IjEiIC8+ICA8bWV0YWRhdGEgICAgIGlkPSJtZXRhZGF0YTczMzEiPiAgICA8cmRmOlJERj4gICAgICA8Y2M6V29yayAgICAgICAgIHJkZjphYm91dD0iIj4gICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PiAgICAgICAgPGRjOnR5cGUgICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+ICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4gICAgICA8L2NjOldvcms+ICAgIDwvcmRmOlJERj4gIDwvbWV0YWRhdGE+ICA8ZyAgICAgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIiAgICAgaWQ9ImxheWVyMSIgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTkyNC4zNjIyKSI+ICAgIDxwYXRoICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiICAgICAgIGlkPSJwYXRoNjY4MiIgICAgICAgZD0ibSAxNS4yODI1NzksMTAxOS4zMjI4IGMgLTAuNzU5MDk4LDUuNjI0NiAwLjExNzQ4NSwxMC40NDY3IDIuNjY3NjgzLDE0LjU3NjUgNS43NTY0ODcsOS40MTEgMTguNTc3OTk4LDEyLjk0MjYgMjguMTkxNDIsNy44MzMxIDUuNjM5MDA2LC0zLjAzNjQgMTEuMzAzMzE3LC02LjA2MTkgMTcuMDIwMDQxLC05LjEyMzUgbCAwLDAgYyA1LjU4NjU5MywzLjE1MiAxMS4xNTg3MjcsNi4zMDU4IDE2LjcxODIxLDkuNDU2MSA0Ljg5MjU2MSwyLjc0OSAxMC42NzYxNTgsMy4zMDc0IDE1Ljk3MzU3MSwxLjk2ODIgNS4xNjU0NjYsLTEuMzA2NyA5Ljk0MDU1NiwtNC40NjQyIDEyLjk3Njk0NiwtOS4xODE0IDIuNjgyMTQsLTQuMTQwNyAzLjYxMTE0LC05LjA2NTcgMi45MDQ0NSwtMTQuODI3NyA1LjU1OTQ4LC0xLjc3MjkgOS43MzI3MSwtNC44MzI5IDEyLjU4NDc0LC05LjI2MjcgMy4xNzkxOCwtNC45MzQyIDMuOTM4MjgsLTEwLjY0MDEgMi42Mjk3NCwtMTUuODIwMDQgLTEuMzMyMDQsLTUuMjY0ODkgLTQuODM4MzQsLTEwLjEzNTc2IC0xMC4xNTAyMiwtMTMuMTAzNDcgLTUuNDI5MzQsLTMuMDI3MzQgLTEwLjg0NjA1LC02LjA1Mjg4IC0xNi4yNTAxLC05LjA2NzU5IDAuMTE4MzEsLTYuMjU2OCAwLjIzMDcxLC0xMi45OTgwNSAwLjMzOTksLTE4Ljc0MDgxIDAuMjIyMjksLTEyLjE5NjE2IC05LjkyNzkxMiwtMjIuMjI4OSAtMjIuMzY5ODc1LC0yMi4wMzE4OCAtNS41NDUwMjQsMC4wODE0IC0xMC41Mjk3NjEsMi4wNjk0MyAtMTUuMTQ3NjAxLDUuOTI0NTYgLTQuOTMyMzI0LC0zLjczOTQ1IC05Ljk0MjM2NSwtNS41ODExNyAtMTUuMTg5MTcyLC01LjUxMDY4IC0xMS45NDQ5MzQsMC4xNzE3IC0yMS44NjAxODgsOS45NDA1NiAtMjEuNzgwNjY0LDIxLjIzODQ1IDAuMDI1Myw2LjQxNzk5IDAuMTQwODU1LDEzLjAzODAzIDAuMTgwNjA4LDE5LjQzNjE0IDAuMzY1MDksLTAuMjIwNTEgMC43MDg2MTQsLTAuNjM5NDUgMS4xMTM0NjYsLTAuODY4OTggMC40NDQ2MTQsLTAuMjQyMTkgMC45MDE4NzksLTAuNTI5NTYgMS4zMDg1MzksLTAuNzkzNDQgNC4xNDYxMTYsLTIuMjA4NjEgOC4wNzE3MzEsLTEuNTMwODUgMTAuMjI5NzM3LDIuMDM2OTEgMC44MzY4MTMsMS4zOTE2OCAxLjE2NTc1NiwyLjg1Mzg0IDAuOTU2MSw0LjIzMjg2IGwgMCwwLjAxMjcgMCwwLjA3MDQgYyAwLDAuMDExMyAwLDAuMDIxNyAtMC4wMjg5MiwwLjAzNDMgMCwwLjAxMTMgMCwwLjAyMzQgLTAuMDEyNjUsMC4wMzQ0IDAsMC4wODE0IDAsMC4xNTAwMiAtMC4wMTI2NSwwLjI0NCAwLjE3MTcsLTAuNzI0NzYgMC4yNzY1MjgsLTEuNTA5MTYgMC4zMjg5NDEsLTIuMzYwNDMgLTAuMDI3MTEsLTAuNTI3NzUgLTAuMDI3MTEsLTEuMDMzODEgLTAuMDM3OTYsLTEuNTQxNjkgMCwtNS43MDc2OCAtMC4wMDksLTExLjM2ODM4IDAsLTE3LjA4NTExIDAuMDAzNiwtMy4wMzYzOCAwLjExNzQ4NiwtNC4yOTA3IDAuNjAxODU2LC01Ljg1NTg5IDAuOTU2MTAxLC0zLjEwNjg3IDMuODU4NzQzLC01LjI0NjgxIDcuMzUwNTksLTUuMjc5MzQgMy40MDMyODUsLTAuMDI1MyA2LjM5ODEwNCwyLjE0ODk3IDcuMjM0OTE4LDUuMTUyODMgMC40NTcyNjYsMS4zNjk5OCAwLjYzOTgxMSwzLjM0OTA2IDAuNjI4OTY2LDUuODY2NzQgLTAuMDI3MTIsNS43MTg1MiAtMC4wMzk3NiwxMS40NDk3MSAtMC4wNjY4NywxNy4xNjY0NCAwLDAuNDkzNDEgMCwxLjAyMjk3IDAuMDE0NDUsMS41MzA4NCAtMC4wMTQ0NSw0LjUzMjkgMi44MTIyNzMsNy42MTYyOCA3LjAyNTI2Miw3LjYxNjI4IDQuMjc4MDU1LDAgNy4wNjUwMjUsLTIuOTkxMjEgNy4xMTc0MzksLTcuNjM5NzggMCwtMC41MDYwNiAwLC0xLjAyMjk3IDAuMDEyNjUsLTEuNTQzNSAwLjA1MjQxLC01LjcyOTM3IDAuMTA0ODI1LC0xMS40NjA1NiAwLjE0NjM5NywtMTcuMjMzMyAwLjAyMTY5LC0zLjU3NjggMC4zNzc3NDEsLTUuMjU3NjUgMS4zNzE3OTcsLTcuMTU3MiAxLjIxNjM2MywtMi4yOTg5OSAzLjc5MzY3OSwtMy43OTM2OCA2LjYyMDQxMSwtMy44MTg5OSAzLjEzNzYwMiwtMC4wMzA3IDYuMDc0NTg0LDEuNzM4NyA3LjEwMjk4LDQuMzM3NjkgMC42MzI1OCwxLjU5NzczIDAuODA5NzA0LDIuOTMzMzggMC43NzE3NDksNi41MzM2NiAtMC4xMDQ4MjQsNS43NzYzNyAtMC4xNzE3LDExLjU2MTc4IC0wLjIzNDk1OCwxNy4zMjczIC0wLjAzOTc2LDAuNTA0MjUgLTAuMDI3MTEsMS4wMzM4MSAtMC4wMzk3NiwxLjU2NTE4IC0wLjAzNzk2LDMuMTczNzUgMS4zNDgzMDEsNS42NzE1NSAzLjcwMzMwOSw2Ljg2ODAzIDAuMjcyOTEzLDAuMTk1MTkgMC41NzQ3NDUsMC4zOTAzOCAwLjkwMTg3OSwwLjU3NDc1IDAuNDU3MjY2LDAuMjQyMTggMC45MDM2ODgsMC40NjA4OCAxLjM0ODMwMSwwLjc0NjQ0IDUuMDIyNjkzLDIuNzg1MTYgMTAuMDg1MTU1LDUuNjA0NjcgMTUuMDk3MDA1LDguNDMzMjEgMy4wODY5OSwxLjczODY5IDQuMTYwNTcsMi41NjY0NiA1LjE2NzI4LDMuODU2OTQgMS43Mzg2OSwyLjEzOTkyIDEuNzkyOTIsNS4zNzE1NyAwLjE4MjU1LDcuODgwMTcgLTEuNDM4NjcsMi4yNTM4IC00LjAyODY0LDMuNjQ3MyAtNi42MzMwNywzLjQ3MzggLTIuMTE4MjUsLTAuMTM3NCAtMy43MDE1LC0wLjY5MDUgLTYuNzc3NjU4LC0yLjM5MyAtNC45OTU1ODIsLTIuODE5NSAtOS45ODAzMTgsLTUuNjEzNzIgLTE0Ljk1MjQwNCwtOC40MDk3MyAtMC40NDQ2MTUsLTAuMjYzODcgLTAuODg5MjI5LC0wLjUxNjkxIC0xLjM0NjQ5NCwtMC43NTkxIC00LjA1NTc0OCwtMi4yNjY0NSAtOC4wODQzODUsLTEuNDcxMiAtMTAuMTY2NDc4LDEuOTg5OTIgLTIuMTQ1MzU0LDMuNDYzMDEgLTAuODc0NzY5LDcuMjk0NjEgMy4wNjE2OSw5LjUxNTkxIDAuNDU3MjY2LDAuMjU0OCAwLjkwMTg4MSwwLjQ5NTIgMS4zNjA5NTMsMC43NDgzIDQuOTE3ODY0LDIuNzg1MiA5Ljg2Mjg0LDUuNTQ0OSAxNC44MjA0NjcsOC4zMjg0IDIuMTg1MTE1LDEuMjE5OSAzLjc4MTAyNiwyLjM0NzcgNC43MjQ0NzUsMy4zMzY0IDIuMTgzMzA4LDIuMTYxNSAyLjUyMzA5NSw1LjYxNTUgMC44MDk3MDUsOC4zNDA5IC0xLjc5MTEwOCwyLjc5NjEgLTUuMDEwMDQyLDQuMDYyOSAtOC4xNzQ3NTMsMy4zMjczIC0xLjU4MzI2LC0wLjMzNjEgLTIuNzIxOTA2LC0wLjg3NDcgLTUuMjg0NzYzLC0yLjMxMzMgLTQuOTE5NjcxLC0yLjc4NTIgLTkuODI0ODg0LC01LjU2ODUgLTE0Ljc2ODA1MiwtOC4zMDg1IC0wLjQzMTk2MywtMC4yNzQ3IC0wLjg5MTAzNiwtMC41MTY5IC0xLjM0ODMwMiwtMC43Njk5IC0xLjY2MDk3NiwtMC44OTY2IC0zLjMzNjQxMSwtMS4yOTA2IC00Ljg1NDYwNiwtMS4xOTY1IGwgLTAuMDEyNjUsMCBjIC0xLjQxMTU1OSwtMC4wMjQgLTIuOTU2ODY0LDAuMzQ1MiAtNC40ODU5MDIsMS4xMzg2IC0wLjQ0NDYxNCwwLjI1NDggLTAuODg5MjI4LDAuNTA2MSAtMS4zNDgzMDEsMC43NDgyIC00Ljk3MDI3OSwyLjY4MDQgLTkuODg5OTUxLDUuMzc4NyAtMTQuNzk1MTYzLDguMDMwMiAtMi41NzM3MDEsMS4zOTM1IC0zLjY4ODg1MSwxLjg4NTEgLTUuMjU5NDU5LDIuMTk3OCAtMy4xMzk0MDgsMC42NTQyIC02LjI1MzUxMywtMC42NjcgLTcuOTY2OTA1LC0zLjQ3NTYgLTEuNjM1NjcyLC0yLjcxNDcgLTEuMjU2MTI1LC02LjA4MzYgMC44NzY1NzcsLTguMTkxIDAuOTU2MTAxLC0wLjk3NiAyLjQ4NTE0LC0yLjA3MTMgNC42MTk2NDgsLTMuMjMxNiA0LjkxOTY3MSwtMi42OTExIDkuODc1NDkyLC01LjM5NSAxNC43OTUxNjMsLTguMTIyMyAwLjQzMDE1NiwtMC4yNDIyIDAuOTE2MzM5LC0wLjUwNjEgMS4zNDY0OTQsLTAuNzM1NiAzLjk1MjcyNywtMi4xODcgNS4yNTk0NTgsLTYuMDA2IDMuMTc5MTcxLC05LjQ2ODkzIC0yLjA5NDc0NiwtMy40NzU1NyAtNi4wNTY1MSwtNC4yMzEwNSAtMTAuMDg2OTU0LC0xLjk5MTcyIC0wLjQ0MDk5OSwwLjI0NTggLTAuOTE0NTMyLDAuNDk1MjMgLTEuMzQ4MzAxLDAuNzIyOTUgLTQuOTcwMjc4LDIuNzM5OTggLTkuODc3Myw1LjUwMTcgLTE0Ljc1NTQwMiw4LjI1MDcgLTMuMDIxOTI5LDEuNjY4MSAtNC42MDUxODgsMi4xODUyIC02LjY0NTcxMywyLjMwMDkgLTIuNDk5NTk5LDAuMTM1NSAtNC45ODY1NDYsLTEuMjMyNyAtNi4zMzEyMzIsLTMuNDU0IC0xLjQ5MTA4NCwtMi40NTk5IC0xLjQzODY2OSwtNS42MTM3NSAwLjIyMjMwNywtNy42OTU4NCAxLjAxOTM1OCwtMS4yNzc4MSAyLjA2NzYzNSwtMi4wODIxIDUuMDYyNDU0LC0zLjc3Mzc5IDQuOTA1MjE0LC0yLjc0OTAzIDkuODEyMjM0LC01LjU0NTAzIDE0LjcxNzQ0NywtOC4zNDEwMyAwLjQ0NDYxNSwtMC4yNjM4OCAwLjkyODk5LC0wLjUwNjA3IDEuMzU5MTQ1LC0wLjc1OTExIDMuOTUwOTIsLTIuMjIxMjUgNS40MjM1NTksLTYuMzUwNjEgMy4zMjg4MTMsLTkuODQ5NjkgLTIuMTA1NTkxLC0zLjQ5NzI3IC02LjU2MTU4NywtNC4zNzUyOCAtMTAuMDYxNzc1LC0yLjEwMzU0IDAsMCAtMC43MDE2MzEsMC40NTE5OCAtMS4xNDQ0MzgsMC43MDY4MiAtNS42NjQzMSwzLjI0NDI0IC0xMS43NTc5MTEsNi45MTk1NiAtMTcuMzgyNDU4LDEwLjE1MTE1IC0xMC4wNDcxOTIyMyw1Ljc3NjM3IC0xMy4zODM2MDUsMTguNTAwMzMgLTcuNDgyNTI5MiwyOC4xNTM1MyAyLjY1MzIyNTksNC4zMzA1IDYuNjI5NDQ4Myw3LjMzMjYgMTEuOTI2ODYxMiw5LjE3NDIgeiIgICAgICAgbnMwOmtub2Nrb3V0PSJPZmYiICAgICAgIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2Njc2NjY2NjY2NjY2NjY3NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2Njc2NjY2NjY2NjY2MiIC8+ICA8L2c+PC9zdmc+">
-                <br>'
-        . ucfirst( &get_product_name() ) . '</label>';
+                <i class="wbm-webmin wbm-sm"></i><div>'
+        . ucfirst( &get_product_name() ) . '</div></label>';
 }
 
 sub print_switch_virtualmin {
@@ -176,8 +175,7 @@ sub print_switch_virtualmin {
         . ' id="open_virtualmin" name="product-switcher" type="radio"'
         . ( $is_virtualmin != -1 ? " checked" : "" ) . '>
           <label for="open_virtualmin">
-          <img alt="" style="margin-left:3px; height:18px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgaWQ9InN2ZzExNjAwIiAgIGhlaWdodD0iMTIuODY0MTFtbSIgICB3aWR0aD0iMTIuODY0MTFtbSIgICB2ZXJzaW9uPSIxLjAiICAgaW5rc2NhcGU6dmVyc2lvbj0iMC45MSByMTM3MjUiICAgc29kaXBvZGk6ZG9jbmFtZT0iVmlydHVhbG1pbi1Mb2dvLXdoaXRlLW1vbm9jaHJvbWVfbm90X2lua3NjYXBlLnN2ZyI+ICA8c29kaXBvZGk6bmFtZWR2aWV3ICAgICBwYWdlY29sb3I9IiNmZmZmZmYiICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIgICAgIGJvcmRlcm9wYWNpdHk9IjEiICAgICBvYmplY3R0b2xlcmFuY2U9IjEwIiAgICAgZ3JpZHRvbGVyYW5jZT0iMTAiICAgICBndWlkZXRvbGVyYW5jZT0iMTAiICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIgICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiICAgICBpbmtzY2FwZTp3aW5kb3ctd2lkdGg9IjI1NjAiICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDIwIiAgICAgaWQ9Im5hbWVkdmlldzI0IiAgICAgc2hvd2dyaWQ9ImZhbHNlIiAgICAgZml0LW1hcmdpbi10b3A9IjAiICAgICBmaXQtbWFyZ2luLWxlZnQ9IjAiICAgICBmaXQtbWFyZ2luLXJpZ2h0PSIwIiAgICAgZml0LW1hcmdpbi1ib3R0b209IjAiICAgICBpbmtzY2FwZTp6b29tPSI3LjEwOTA3NDIiICAgICBpbmtzY2FwZTpjeD0iMjguMTM0OTUiICAgICBpbmtzY2FwZTpjeT0iMjMuMzA3NDg1IiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjAiICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMjciICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0iZzMzNzUiIC8+ICA8bWV0YWRhdGEgICAgIGlkPSJtZXRhZGF0YTIxODciPiAgICA8cmRmOlJERj4gICAgICA8Y2M6V29yayAgICAgICAgIHJkZjphYm91dD0iIj4gICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PiAgICAgICAgPGRjOnR5cGUgICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+ICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4gICAgICA8L2NjOldvcms+ICAgIDwvcmRmOlJERj4gIDwvbWV0YWRhdGE+ICA8ZGVmcyAgICAgaWQ9ImRlZnMzIiAvPiAgPGcgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yLjU2MzAwNTgsLTQ1LjI5MTgyNSkiICAgICBzdHlsZT0iZmlsbDojMDBmZjAwO2ZpbGwtb3BhY2l0eToxIiAgICAgaWQ9ImczMzc1Ij4gICAgPHBhdGggICAgICAgZD0iTSAyNS4xOTQxNTgsODAuODczMjggQyAxNy42MDIyMjMsODAuODQxNzggMi41NTE4ODcsNjEuMTk4MDggMi41NjMwMTIsNTguNjU2NzUgYyAwLjAwNjg5LC0xLjU3OTQ5IDE1LjEwMTIyNyw5LjgyMjY3IDIyLjY4NTEzOSw5Ljg1NDA5IDcuNjA5OTI0LDAuMDMxNiAyMi45MDMxOTcsLTExLjI0NjU0IDIyLjg5NjMzLC05LjY2NTA1IC0wLjAxMTEyLDIuNTM5MzQgLTE1LjM0ODQyMiwyMi4wNTkwNCAtMjIuOTUwMzIzLDIyLjAyNzQ5IHoiICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjAuNDE2NzgxMTM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLW9wYWNpdHk6MSIgICAgICAgaWQ9InBhdGg1MjAxNiIgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgLz4gIDwvZz48L3N2Zz4=">
-          <br>Virtualmin</label>';
+          <i class="wbm-virtualmin wbm-sm"></i><div>Virtualmin</div></label>';
 }
 
 sub print_switch_cloudmin {
@@ -187,8 +185,7 @@ sub print_switch_cloudmin {
         . ' id="open_cloudmin" id="open_cloudmin" name="product-switcher" type="radio"'
         . ( $is_cloudmin != -1 ? " checked" : "" ) . '>
           <label for="open_cloudmin">
-          <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOm9zYj0iaHR0cDovL3d3dy5vcGVuc3dhdGNoYm9vay5vcmcvdXJpLzIwMDkvb3NiIiAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgaWQ9InN2ZzQ3MTQiICAgdmVyc2lvbj0iMS4xIiAgIGlua3NjYXBlOnZlcnNpb249IjAuOTEgcjEzNzI1IiAgIHhtbDpzcGFjZT0icHJlc2VydmUiICAgd2lkdGg9IjEyOC4wMDY5OSIgICBoZWlnaHQ9IjEyOCIgICB2aWV3Qm94PSIwIDAgMTI4LjAwNjk4IDEyOCIgICBzb2RpcG9kaTpkb2NuYW1lPSJjbG91ZG1pbi1pY29uLXdoaXRlLW1vbm9jaHJvbWUuc3ZnIj48bWV0YWRhdGEgICAgIGlkPSJtZXRhZGF0YTQ3MjAiPjxyZGY6UkRGPjxjYzpXb3JrICAgICAgICAgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPjxkYzp0aXRsZT48L2RjOnRpdGxlPjwvY2M6V29yaz48L3JkZjpSREY+PC9tZXRhZGF0YT48ZGVmcyAgICAgaWQ9ImRlZnM0NzE4Ij48bGluZWFyR3JhZGllbnQgICAgICAgaWQ9ImxpbmVhckdyYWRpZW50NTg1NyIgICAgICAgb3NiOnBhaW50PSJzb2xpZCI+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojMDAwMDAwO3N0b3Atb3BhY2l0eToxOyIgICAgICAgICBvZmZzZXQ9IjAiICAgICAgICAgaWQ9InN0b3A1ODU5IiAvPjwvbGluZWFyR3JhZGllbnQ+PGNsaXBQYXRoICAgICAgIGNsaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICBpZD0iY2xpcFBhdGg0NzI4Ij48cGF0aCAgICAgICAgIGQ9Im0gMTEzLjk1NywzNzEuNjk5IDkxLjg3MywwIDAsLTEwMC4yNTYgLTkxLjg3MywwIDAsMTAwLjI1NiB6IiAgICAgICAgIGlkPSJwYXRoNDczMCIgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvY2xpcFBhdGg+PGxpbmVhckdyYWRpZW50ICAgICAgIHgxPSIwIiAgICAgICB5MT0iMCIgICAgICAgeDI9IjEiICAgICAgIHkyPSIwIiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgzMy45NTA0NywtMzUuMDg5OTgxLDM1LjA4OTk4MSwzMy45NTA0NywxNDIuOTE4OTUsMzM5LjExNzE5KSIgICAgICAgc3ByZWFkTWV0aG9kPSJwYWQiICAgICAgIGlkPSJsaW5lYXJHcmFkaWVudDQ3NDAiPjxzdG9wICAgICAgICAgc3R5bGU9InN0b3Atb3BhY2l0eToxO3N0b3AtY29sb3I6I2ZmZmZmZiIgICAgICAgICBvZmZzZXQ9IjAiICAgICAgICAgaWQ9InN0b3A0NzQyIiAvPjxzdG9wICAgICAgICAgc3R5bGU9InN0b3Atb3BhY2l0eTowLjUwMTk2MDc4O3N0b3AtY29sb3I6I2ZmZmZmZiIgICAgICAgICBvZmZzZXQ9IjAuMjcwNTg0IiAgICAgICAgIGlkPSJzdG9wNDc0NCIgLz48c3RvcCAgICAgICAgIHN0eWxlPSJzdG9wLW9wYWNpdHk6MDtzdG9wLWNvbG9yOiNmZmZmZmYiICAgICAgICAgb2Zmc2V0PSIxIiAgICAgICAgIGlkPSJzdG9wNDc0NiIgLz48L2xpbmVhckdyYWRpZW50PjxtYXNrICAgICAgIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiICAgICAgIHg9IjAiICAgICAgIHk9IjAiICAgICAgIHdpZHRoPSIxIiAgICAgICBoZWlnaHQ9IjEiICAgICAgIGlkPSJtYXNrNDc0OCI+PGcgICAgICAgICBpZD0iZzQ3NTAiPjxnICAgICAgICAgICBpZD0iZzQ3NTIiPjxnICAgICAgICAgICAgIGlkPSJnNDc1NCI+PGcgICAgICAgICAgICAgICBpZD0iZzQ3NTYiPjxwYXRoICAgICAgICAgICAgICAgICBkPSJtIC0zMjc2OCwzMjc2NyA2NTUzNSwwIDAsLTY1NTM0IC02NTUzNSwwIDAsNjU1MzQgeiIgICAgICAgICAgICAgICAgIHN0eWxlPSJmaWxsOnVybCgjbGluZWFyR3JhZGllbnQ0NzQwKTtzdHJva2U6bm9uZSIgICAgICAgICAgICAgICAgIGlkPSJwYXRoNDc1OCIgICAgICAgICAgICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiIC8+PC9nPjwvZz48L2c+PC9nPjwvbWFzaz48bGluZWFyR3JhZGllbnQgICAgICAgeDE9IjAiICAgICAgIHkxPSIwIiAgICAgICB4Mj0iMSIgICAgICAgeTI9IjAiICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDMzLjk1MDQ3LC0zNS4wODk5ODEsMzUuMDg5OTgxLDMzLjk1MDQ3LDE0Mi45MTg5NSwzMzkuMTE3MTkpIiAgICAgICBzcHJlYWRNZXRob2Q9InBhZCIgICAgICAgaWQ9ImxpbmVhckdyYWRpZW50NDc2NCI+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1vcGFjaXR5OjE7c3RvcC1jb2xvcjojZmZmZmZmIiAgICAgICAgIG9mZnNldD0iMCIgICAgICAgICBpZD0ic3RvcDQ3NjYiIC8+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1vcGFjaXR5OjE7c3RvcC1jb2xvcjojZmZmZmZmIiAgICAgICAgIG9mZnNldD0iMC4yNzA1ODQiICAgICAgICAgaWQ9InN0b3A0NzY4IiAvPjxzdG9wICAgICAgICAgc3R5bGU9InN0b3Atb3BhY2l0eToxO3N0b3AtY29sb3I6I2ZmZmZmZiIgICAgICAgICBvZmZzZXQ9IjEiICAgICAgICAgaWQ9InN0b3A0NzcwIiAvPjwvbGluZWFyR3JhZGllbnQ+PGNsaXBQYXRoICAgICAgIGNsaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICBpZD0iY2xpcFBhdGg0Nzc4Ij48cGF0aCAgICAgICAgIGQ9Im0gMCw1OTUuMjggODQxLjg5LDAgTCA4NDEuODksMCAwLDAgMCw1OTUuMjggWiIgICAgICAgICBpZD0icGF0aDQ3ODAiICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgLz48L2NsaXBQYXRoPjxjbGlwUGF0aCAgICAgICBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgICAgICAgaWQ9ImNsaXBQYXRoNDc5MCI+PHBhdGggICAgICAgICBkPSJtIDEzMS45MTksMzIxLjU3MSBjIDAsLTI3LjYyMSAxNi41MjUsLTUwLjAyMSAzNi45MDIsLTUwLjAyMSBsIDAsMCBjIDIwLjM3OCwwIDM2LjkwMiwyMi40IDM2LjkwMiw1MC4wMjEgbCAwLDAgYyAwLDI3LjYyMSAtMTYuNTI0LDUwLjAyIC0zNi45MDIsNTAuMDIgbCAwLDAgYyAtMjAuMzc3LDAgLTM2LjkwMiwtMjIuMzk5IC0zNi45MDIsLTUwLjAyIiAgICAgICAgIGlkPSJwYXRoNDc5MiIgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvY2xpcFBhdGg+PGxpbmVhckdyYWRpZW50ICAgICAgIHgxPSIwIiAgICAgICB5MT0iMCIgICAgICAgeDI9IjEiICAgICAgIHkyPSIwIiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCg5Ny45NjA5ODMsLTYwLjAwMTI1MSw0OC4zMTQxOTQsMTIxLjY1NzQ2LDgxLjE2MTYyMSwzNzUuMjY0MTYpIiAgICAgICBzcHJlYWRNZXRob2Q9InBhZCIgICAgICAgaWQ9ImxpbmVhckdyYWRpZW50NDgwMiI+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1vcGFjaXR5OjE7c3RvcC1jb2xvcjojZmZmZmZmIiAgICAgICAgIG9mZnNldD0iMCIgICAgICAgICBpZD0ic3RvcDQ4MDQiIC8+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1vcGFjaXR5OjA7c3RvcC1jb2xvcjojZmZmZmZmIiAgICAgICAgIG9mZnNldD0iMSIgICAgICAgICBpZD0ic3RvcDQ4MDYiIC8+PC9saW5lYXJHcmFkaWVudD48bWFzayAgICAgICBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICB4PSIwIiAgICAgICB5PSIwIiAgICAgICB3aWR0aD0iMSIgICAgICAgaGVpZ2h0PSIxIiAgICAgICBpZD0ibWFzazQ4MDgiPjxnICAgICAgICAgaWQ9Imc0ODEwIj48ZyAgICAgICAgICAgaWQ9Imc0ODEyIj48ZyAgICAgICAgICAgICBpZD0iZzQ4MTQiPjxnICAgICAgICAgICAgICAgaWQ9Imc0ODE2Ij48cGF0aCAgICAgICAgICAgICAgICAgZD0ibSAtMzI3NjgsMzI3NjcgNjU1MzUsMCAwLC02NTUzNCAtNjU1MzUsMCAwLDY1NTM0IHoiICAgICAgICAgICAgICAgICBzdHlsZT0iZmlsbDp1cmwoI2xpbmVhckdyYWRpZW50NDgwMik7c3Ryb2tlOm5vbmUiICAgICAgICAgICAgICAgICBpZD0icGF0aDQ4MTgiICAgICAgICAgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvZz48L2c+PC9nPjwvZz48L21hc2s+PGxpbmVhckdyYWRpZW50ICAgICAgIHgxPSIwIiAgICAgICB5MT0iMCIgICAgICAgeDI9IjEiICAgICAgIHkyPSIwIiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCg5Ny45NjA5ODMsLTYwLjAwMTI1MSw0OC4zMTQxOTQsMTIxLjY1NzQ2LDgxLjE2MTYyMSwzNzUuMjY0MTYpIiAgICAgICBzcHJlYWRNZXRob2Q9InBhZCIgICAgICAgaWQ9ImxpbmVhckdyYWRpZW50NDgyNCI+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1vcGFjaXR5OjE7c3RvcC1jb2xvcjojZmZmZmZmIiAgICAgICAgIG9mZnNldD0iMCIgICAgICAgICBpZD0ic3RvcDQ4MjYiIC8+PHN0b3AgICAgICAgICBzdHlsZT0ic3RvcC1vcGFjaXR5OjE7c3RvcC1jb2xvcjojZmZmZmZmIiAgICAgICAgIG9mZnNldD0iMSIgICAgICAgICBpZD0ic3RvcDQ4MjgiIC8+PC9saW5lYXJHcmFkaWVudD48Y2xpcFBhdGggICAgICAgY2xpcFBhdGhVbml0cz0idXNlclNwYWNlT25Vc2UiICAgICAgIGlkPSJjbGlwUGF0aDQ4MzYiPjxwYXRoICAgICAgICAgZD0ibSAwLDU5NS4yOCA4NDEuODksMCBMIDg0MS44OSwwIDAsMCAwLDU5NS4yOCBaIiAgICAgICAgIGlkPSJwYXRoNDgzOCIgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvY2xpcFBhdGg+PGNsaXBQYXRoICAgICAgIGNsaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICBpZD0iY2xpcFBhdGg0ODQ0Ij48cGF0aCAgICAgICAgIGQ9Im0gMTQyLjg2NiwzNzkuNzY3IDc4LjkxMiwwIDAsLTEyNC40MTYgLTc4LjkxMiwwIDAsMTI0LjQxNiB6IiAgICAgICAgIGlkPSJwYXRoNDg0NiIgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvY2xpcFBhdGg+PGNsaXBQYXRoICAgICAgIGNsaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICBpZD0iY2xpcFBhdGg0ODQ4Ij48cGF0aCAgICAgICAgIGQ9Im0gMTQyLjg2NiwzNzkuNzY3IDc4LjkxMiwwIDAsLTEyNC40MTYgLTc4LjkxMiwwIDAsMTI0LjQxNiB6IiAgICAgICAgIGlkPSJwYXRoNDg1MCIgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvY2xpcFBhdGg+PGNsaXBQYXRoICAgICAgIGNsaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIiAgICAgICBpZD0iY2xpcFBhdGg0ODcyIj48cGF0aCAgICAgICAgIGQ9Im0gMjQxLjA0NSwzNzcuOTc1IDQ0LjU0NCwwIDAsLTU1LjI5NiAtNDQuNTQ0LDAgMCw1NS4yOTYgeiIgICAgICAgICBpZD0icGF0aDQ4NzQiICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgLz48L2NsaXBQYXRoPjxjbGlwUGF0aCAgICAgICBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgICAgICAgaWQ9ImNsaXBQYXRoNDg3NiI+PHBhdGggICAgICAgICBkPSJtIDI0MS4wNDUsMzc3Ljk3NSA0NC41NDQsMCAwLC01NS4yOTYgLTQ0LjU0NCwwIDAsNTUuMjk2IHoiICAgICAgICAgaWQ9InBhdGg0ODc4IiAgICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiIC8+PC9jbGlwUGF0aD48L2RlZnM+PHNvZGlwb2RpOm5hbWVkdmlldyAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiICAgICBib3JkZXJvcGFjaXR5PSIxIiAgICAgb2JqZWN0dG9sZXJhbmNlPSIxMCIgICAgIGdyaWR0b2xlcmFuY2U9IjEwIiAgICAgZ3VpZGV0b2xlcmFuY2U9IjEwIiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAiICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSI5MzAiICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSI2MTAiICAgICBpZD0ibmFtZWR2aWV3NDcxNiIgICAgIHNob3dncmlkPSJmYWxzZSIgICAgIGlua3NjYXBlOnpvb209IjEuMDk5MzE0NiIgICAgIGlua3NjYXBlOmN4PSItODMuNjk1NyIgICAgIGlua3NjYXBlOmN5PSI4My45NTAyNDYiICAgICBpbmtzY2FwZTp3aW5kb3cteD0iNDciICAgICBpbmtzY2FwZTp3aW5kb3cteT0iNzQiICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIwIiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0iZzQ4MzIiIC8+PGcgICAgIGlkPSJnNDcyMiIgICAgIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiICAgICBpbmtzY2FwZTpsYWJlbD0iY2xvdWRtaW4tbG9nbyIgICAgIHRyYW5zZm9ybT0ibWF0cml4KDEuMjUsMCwwLC0xLjI1LDAsMTI4LjAwMDAyKSI+PGcgICAgICAgaWQ9Imc0MjQ4Ij48ZyAgICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KDAuNTc2MDkzMTQsMCwwLDAuNTc2MDkzMTQsLTcxLjM1MTg1NCwtMTM1LjEzMzUxKSIgICAgICAgICBpZD0iZzQ3NzQiICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MSI+PGcgICAgICAgICAgIGNsaXAtcGF0aD0idXJsKCNjbGlwUGF0aDQ3NzgpIiAgICAgICAgICAgaWQ9Imc0Nzc2IiAgICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MSI+PGcgICAgICAgICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg4LjY4NTEsMzgyLjczMzkpIiAgICAgICAgICAgICBpZD0iZzQ3ODIiICAgICAgICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiPjxwYXRoICAgICAgICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgICAgICAgICAgICAgICBpZD0icGF0aDQ3ODQiICAgICAgICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIgICAgICAgICAgICAgICBkPSJtIDAsMCBjIDQwLjIzMSwtMS41MzcgMjIuNjY4LC0yMS43NjkgNzMuNzQzLC04LjI4NCA0My41MDYsMTEuNDg2IDUyLjI1OSwtNTkuNTEzIDYuNzA1LC01NS4wMjMgLTMxLjcwNywzLjEyNiAtMTguMDMsLTUxLjg0MiAtODAuNDQ4LC01NS4yNzQgLTM0LjU5MiwwIC02Mi42NDUsMjYuNTUxIC02Mi42NDUsNTkuMjkxIEMgLTYyLjY0NSwtMjYuNTUxIC0zNC41OTIsMCAwLDAiIC8+PC9nPjwvZz48L2c+PGcgICAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjU3NjA5MzE0LDAsMCwwLjU3NjA5MzE0LC03MS4zNTE4NTQsLTEzNS4xMzM1MSkiICAgICAgICAgaWQ9Imc0Nzg2IiAgICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiPjxnICAgICAgICAgICBjbGlwLXBhdGg9InVybCgjY2xpcFBhdGg0NzkwKSIgICAgICAgICAgIGlkPSJnNDc4OCIgICAgICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjEiPjxnICAgICAgICAgICAgIGlkPSJnNDc5NCIgICAgICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MSI+PGcgICAgICAgICAgICAgICBpZD0iZzQ3OTYiICAgICAgICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MSIgLz48ZyAgICAgICAgICAgICAgIG1hc2s9InVybCgjbWFzazQ4MDgpIiAgICAgICAgICAgICAgIGlkPSJnNDgyMCIgICAgICAgICAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxIj48ZyAgICAgICAgICAgICAgICAgaWQ9Imc0ODIyIiAgICAgICAgICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MSI+PHBhdGggICAgICAgICAgICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgICAgICAgICAgICAgICAgICAgaWQ9InBhdGg0ODMwIiAgICAgICAgICAgICAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAgICAgICAgICAgICAgICAgICBkPSJtIDEzMS45MTksMzIxLjU3MSBjIDAsLTI3LjYyMSAxNi41MjUsLTUwLjAyMSAzNi45MDIsLTUwLjAyMSBsIDAsMCBjIDIwLjM3OCwwIDM2LjkwMiwyMi40IDM2LjkwMiw1MC4wMjEgbCAwLDAgYyAwLDI3LjYyMSAtMTYuNTI0LDUwLjAyIC0zNi45MDIsNTAuMDIgbCAwLDAgYyAtMjAuMzc3LDAgLTM2LjkwMiwtMjIuMzk5IC0zNi45MDIsLTUwLjAyIiAvPjwvZz48L2c+PC9nPjwvZz48L2c+PGcgICAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjU3NjA5MzE0LDAsMCwwLjU3NjA5MzE0LC03MS4zNTE4NTQsLTEzNS4xMzM1MSkiICAgICAgICAgaWQ9Imc0ODMyIiAgICAgICAgIHN0eWxlPSJmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7b3BhY2l0eToxIj48ZyAgICAgICAgICAgY2xpcC1wYXRoPSJ1cmwoI2NsaXBQYXRoNDgzNikiICAgICAgICAgICBpZD0iZzQ4MzQiICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7b3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiI+PGcgICAgICAgICAgICAgaWQ9Imc0ODQwIiAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2Ij48ZyAgICAgICAgICAgICAgIGlkPSJnNDg0MiIgICAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2IiAvPjxnICAgICAgICAgICAgICAgaWQ9Imc0ODUyIiAgICAgICAgICAgICAgIHN0eWxlPSJmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOiMyODM5NDYiPjxnICAgICAgICAgICAgICAgICBpZD0iZzQ4NTQiICAgICAgICAgICAgICAgICBjbGlwLXBhdGg9InVybCgjY2xpcFBhdGg0ODQ0KSIgICAgICAgICAgICAgICAgIHN0eWxlPSJmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOiMyODM5NDYiPjxnICAgICAgICAgICAgICAgICAgIGlkPSJnNDg1NiIgICAgICAgICAgICAgICAgICAgc3R5bGU9ImZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiI+PGcgICAgICAgICAgICAgICAgICAgICBpZD0iZzQ4NTgiICAgICAgICAgICAgICAgICAgICAgc3R5bGU9ImZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiIgLz48ZyAgICAgICAgICAgICAgICAgICAgIGlkPSJnNDg2MCIgICAgICAgICAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2Ij48ZyAgICAgICAgICAgICAgICAgICAgICAgaWQ9Imc0ODYyIiAgICAgICAgICAgICAgICAgICAgICAgY2xpcC1wYXRoPSJ1cmwoI2NsaXBQYXRoNDg0OCkiICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2Ij48ZyAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwtMSwxNDIuODY1NywyODQuMTUxNCkiICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPSJmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0OjkwMDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtc2l6ZToxMTUuMTk5OTk2OTVweDtmb250LWZhbWlseTonQXZlbmlyIExUIFN0ZCA2NSBNZWRpdW0nOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246QXZlbmlyTFRTdGQtQmxhY2s7d3JpdGluZy1tb2RlOmxyLXRiO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lO2ZpbGw6IzI4Mzk0NiIgICAgICAgICAgICAgICAgICAgICAgICAgaWQ9InRleHQ0ODY0Ij48cGF0aCAgICAgICAgICAgICAgICAgICAgICAgICAgIGQ9Im0gNzUuNDU1OTk4LC03MS42NTQzOTggYyAtNi45MTIsLTguODcwNCAtMTguNDMyLC0xMS45ODA4IC0yNy41MzI3OTksLTExLjk4MDggLTI1LjQ1OTIsMCAtNDQuMDA2Mzk5MSwxNi43MDQgLTQ0LjAwNjM5OTEsNDIuODU0Mzk5IDAsMjYuMTUwMzk5IDE4LjU0NzE5OTEsNDIuODU0Mzk4OSA0NC4wMDYzOTkxLDQyLjg1NDM5ODkgMTEuMTc0Mzk5LDAgMjIuNjk0Mzk5LC00LjQ5Mjc5OTggMjkuNDkxMTk5LC0xNC4xNjk1OTk5IGwgLTE0Ljk3NiwtMTEuMTc0Mzk5IGMgLTMuNjg2NCw1LjUyOTU5OSAtOS41NjE1OTksOC43NTUxOTkgLTE2LjgxOTE5OSw4Ljc1NTE5OSAtMTMuMDE3NiwwIC0yMy4wNCwtMTEuMDU5MTk5IC0yMy4wNCwtMjYuMjY1NTk5IDAsLTE1LjIwNjQgMTAuMDIyNCwtMjYuMjY1NTk5IDIzLjYxNiwtMjYuMjY1NTk5IDYuNjgxNiwwIDExLjg2NTU5OSwyLjQxOTIgMTUuNDM2Nzk5LDYuNjgxNiBsIDEzLjgyNCwtMTEuMjg5NiB6IiAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPSJmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOiMyODM5NDYiICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQ9InBhdGg0MjEwIiAgICAgICAgICAgICAgICAgICAgICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiIC8+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9nPjxnICAgICAgICAgICAgIGlkPSJnNDg2OCIgICAgICAgICAgICAgc3R5bGU9ImZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiI+PGcgICAgICAgICAgICAgICBpZD0iZzQ4NzAiICAgICAgICAgICAgICAgc3R5bGU9ImZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiIgLz48ZyAgICAgICAgICAgICAgIGlkPSJnNDg4MCIgICAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2Ij48ZyAgICAgICAgICAgICAgICAgaWQ9Imc0ODgyIiAgICAgICAgICAgICAgICAgY2xpcC1wYXRoPSJ1cmwoI2NsaXBQYXRoNDg3MikiICAgICAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2Ij48ZyAgICAgICAgICAgICAgICAgICBpZD0iZzQ4ODQiICAgICAgICAgICAgICAgICAgIHN0eWxlPSJmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOiMyODM5NDYiPjxnICAgICAgICAgICAgICAgICAgICAgaWQ9Imc0ODg2IiAgICAgICAgICAgICAgICAgICAgIHN0eWxlPSJmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOiMyODM5NDYiIC8+PGcgICAgICAgICAgICAgICAgICAgICBpZD0iZzQ4ODgiICAgICAgICAgICAgICAgICAgICAgc3R5bGU9ImZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiI+PGcgICAgICAgICAgICAgICAgICAgICAgIGlkPSJnNDg5MCIgICAgICAgICAgICAgICAgICAgICAgIGNsaXAtcGF0aD0idXJsKCNjbGlwUGF0aDQ4NzYpIiAgICAgICAgICAgICAgICAgICAgICAgc3R5bGU9ImZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6IzI4Mzk0NiI+PGcgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsLTEsMjQxLjA0NDksMzM1LjQ3OTUpIiAgICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT0iZm9udC12YXJpYW50Om5vcm1hbDtmb250LXdlaWdodDo5MDA7Zm9udC1zdHJldGNoOm5vcm1hbDtmb250LXNpemU6NTEuMjAwMDAwNzZweDtmb250LWZhbWlseTonQXZlbmlyIExUIFN0ZCA2NSBNZWRpdW0nOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246QXZlbmlyTFRTdGQtQmxhY2s7d3JpdGluZy1tb2RlOmxyLXRiO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lO2ZpbGw6IzI4Mzk0NiIgICAgICAgICAgICAgICAgICAgICAgICAgaWQ9InRleHQ0ODkyIj48cGF0aCAgICAgICAgICAgICAgICAgICAgICAgICAgIGQ9Im0gMi43MTM2LDAgNy42OCwwIDAsLTEyLjM5MDQgYyAwLC0zLjIyNTYgMC42MTQ0LC02LjM0ODggNC42MDgsLTYuMzQ4OCAzLjUzMjgsMCAzLjQzMDQsMy43Mzc2IDMuNDMwNCw1LjU4MDggbCAwLDEzLjE1ODQgNy42OCwwIDAsLTEzLjE1ODQgYyAwLC0zLjA3MiAxLjEyNjQsLTUuNTgwOCA0LjY1OTIsLTUuNTgwOCAyLjUwODgsMCAzLjM3OTIwMSwxLjk0NTYgMy4zNzkyMDEsNC4yNDk2IGwgMCwxNC40ODk2IDcuNjgsMCAwLC0xNC42OTQ0IGMgMCwtNi4wNDE2IC0yLjA0OCwtMTAuODAzMiAtOC44MDY0MDEsLTEwLjgwMzIgLTMuNjg2NCwwIC02LjA5MjgsMS4yOCAtNy44ODQ4LDQuNDU0NCAtMS4zMzEyLC0zLjAyMDggLTQuMTk4NCwtNC40NTQ0IC03LjY4LC00LjQ1NDQgLTMuNzM3NiwwIC02LjI0NjQsMi4wNDggLTcuMjcwNCwzLjk5MzYgbCAtMC4xMDI0LDAgMCwtMy4zNzkyIC03LjM3MjgsMCAwLDI0Ljg4MzIgeiIgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT0iZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDojMjgzOTQ2IiAgICAgICAgICAgICAgICAgICAgICAgICAgIGlkPSJwYXRoNDIxMyIgICAgICAgICAgICAgICAgICAgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIiAvPjwvZz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9zdmc+">
-          <br>Cloudmin</label>';
+          <i class="wbm-cloudmin wbm-sm"></i><div>Cloudmin</div></label>';
 }
 
 sub print_switch_webmail {
@@ -199,12 +196,22 @@ sub print_switch_webmail {
         . ( $is_webmail != -1 ? " checked" : "" ) . '>
           <label for="open_webmail">
           <i class="fa fa-envelope"></i>
-          <br>Mail</label>';
+          <div>Mail</div></label>';
+}
+
+sub print_switch_thirdlane {
+    my ($dynamic) = @_;
+    print '<input'
+        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
+        . ' id="open_thirdlane" id="open_cloudmin" name="product-switcher" type="radio">
+          <label for="open_thirdlane">
+          <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTI0LjksNDguOEMxMS44LDQ4LjgsMSwzOC4xLDEsMjQuOVMxMS44LDEsMjQuOSwxczIzLjksMTAuNywyMy45LDIzLjlTMzguMSw0OC44LDI0LjksNDguOHogTTI0LjksMy44Yy0xMS43LDAtMjEuMSw5LjUtMjEuMSwyMS4xczkuNSwyMS4xLDIxLjEsMjEuMWMxMS43LDAsMjEuMS05LjUsMjEuMS0yMS4xUzM2LjYsMy44LDI0LjksMy44eiIvPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDIwLjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywxOC4xLDI1LjEsMjAuMiwxNi42LDIwLjJ6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDI3LjRjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywyNS4zLDI1LjEsMjcuNCwxNi42LDI3LjR6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDM0LjZjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywzMi41LDI1LjEsMzQuNiwxNi42LDM0LjZ6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==">
+          <div>Thirdlane</div></label>';
 }
 
 sub print_category_link {
-    local ( $link, $label ) = @_;
-    print '<li>' . "\n";
+    my ( $link, $label, $state ) = @_;
+    print '<li' . ( $state && ' class="hidden"' ) . '>' . "\n";
     print '<a target="page" href="' . $link . '"> ' . $label . '</a>' . "\n";
     print '</li>' . "\n";
 }
@@ -212,7 +219,9 @@ sub print_category_link {
 sub print_sysinfo_link {
     print '<li><a target="page" data-href="'
         . $gconfig{'webprefix'}
-        . '/sysinfo.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-info"></i> <span>'
+        . '/sysinfo.cgi" class="navigation_module_trigger'
+        . ( __settings('settings_sysinfo_link_mini') eq 'true' && ' hidden' )
+        . '"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
 }
@@ -368,6 +377,49 @@ sub print_extended_sysinfo {
 
 }
 
+sub print_session_login_head {
+    print '<head>',                 "\n";
+    print '<title>',                $title, '</title>', "\n";
+    print '<meta charset="utf-8">', "\n";
+    print '<link rel="shortcut icon" href="'
+        . $gconfig{'webprefix'}
+        . '/images/favicon'
+        . (
+        ( &get_product_name() eq 'usermin' )
+        ? '-usermin'
+        : '-webmin'
+        ) . '.ico">' . "\n";
+    print
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+        . "\n";
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
+        "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
+        "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/login.min.js" type="text/javascript"></script>',
+        "\n";
+    embed_styles();
+    print '</head>', "\n";
+}
+
 sub print_sysstat_link {
     if (   $virtual_server::module_info{'virtualmin'} eq 'pro'
         && $virtual_server_access_level eq '0'
@@ -435,7 +487,7 @@ sub add_webprefix {
 }
 
 sub print_left_menu {
-    my ( $module, $items, $group ) = @_;
+    my ( $module, $items, $group, $id ) = @_;
     my $__hr = 0;
     foreach my $item (@$items) {
         if ( $module eq $item->{'module'} || $group ) {
@@ -593,6 +645,10 @@ sub print_left_menu {
                     )
                     )
                 {
+                    if ( $id eq 'cat_webmin' ) {
+                        substr( $link, 0, 1, "" )
+                            if "/" eq substr( $link, 0, 1 );
+                    }
                     print '<li>' . "\n";
                     print '<a target="page" '
                         . (
@@ -618,7 +674,7 @@ sub print_left_menu {
                 }
                 print '<ul class="sub" style="display: none;" id="'
                     . $c . '">' . "\n";
-                print_left_menu( $module, $item->{'members'}, 1 );
+                print_left_menu( $module, $item->{'members'}, 1, $c );
                 print "</ul>\n";
             }
             elsif ( $item->{'type'} eq 'hr' ) {
@@ -842,32 +898,6 @@ sub embed_logo {
     }
 }
 
-sub embed_styles {
-    if ( -r $config_directory . "/authentic-theme/styles.css" ) {
-        if (  -s $config_directory
-            . "/authentic-theme/styles.css" ne -s $root_directory
-            . "/authentic-theme/unauthenticated/css/styles.css" )
-        {
-            copy_source_dest(
-                $config_directory . "/authentic-theme/styles.css",
-                $root_directory . "/authentic-theme/unauthenticated/css"
-            );
-        }
-        print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">'
-            . "\n";
-    }
-    elsif ( -r $root_directory
-        . "/authentic-theme/unauthenticated/css/styles.css"
-        && !-r $config_directory
-        . "/authentic-theme/styles.css" )
-    {
-        unlink $root_directory
-            . "/authentic-theme/unauthenticated/css/styles.css";
-    }
-}
-
 sub embed_settings {
     if ( -r $config_directory . "/authentic-theme/settings.js" ) {
         if (  -s $config_directory
@@ -894,6 +924,33 @@ sub embed_settings {
     }
 }
 
+sub embed_styles {
+    if ( -r $config_directory . "/authentic-theme/styles.css" ) {
+        if (  -s $config_directory
+            . "/authentic-theme/styles.css" ne -s $root_directory
+            . "/authentic-theme/unauthenticated/css/styles.css" )
+        {
+            copy_source_dest(
+                $config_directory . "/authentic-theme/styles.css",
+                $root_directory . "/authentic-theme/unauthenticated/css"
+            );
+        }
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/styles.css?'
+            . time()
+            . '" rel="stylesheet" type="text/css">' . "\n";
+    }
+    elsif ( -r $root_directory
+        . "/authentic-theme/unauthenticated/css/styles.css"
+        && !-r $config_directory
+        . "/authentic-theme/styles.css" )
+    {
+        unlink $root_directory
+            . "/authentic-theme/unauthenticated/css/styles.css";
+    }
+}
+
 sub embed_scripts {
     if ( -r $config_directory . "/authentic-theme/scripts.js" ) {
         if (  -s $config_directory
@@ -907,8 +964,9 @@ sub embed_scripts {
         }
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/scripts.js" type="text/javascript"></script>'
-            . "\n";
+            . '/unauthenticated/js/scripts.js?'
+            . time()
+            . '" type="text/javascript"></script>' . "\n";
     }
     elsif (
         -r $root_directory . "/authentic-theme/unauthenticated/js/scripts.js"
@@ -951,6 +1009,579 @@ sub get_authentic_version {
     return ( $installed_version, $remote_version );
 }
 
+sub usermin_available {
+    my ($_module) = @_;
+    $_module = ( $_module ? '/' . $_module : undef );
+    $__usermin_root = $root_directory;
+    $__usermin_root =~ s/webmin/usermin/;
+    $__usermin_config = $config_directory;
+    $__usermin_config =~ s/webmin/usermin/;
+
+    if (   -r $__usermin_root . $_module
+        && -r $__usermin_root . '/web-lib-funcs.pl' )
+    {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+
+}
+
+sub domain_available {
+    my ($id) = @_;
+    if ( -r $config_directory . '/virtual-server/domains/' . $id ) {
+        return 1;
+    }
+    else {
+        return undef;
+    }
+
+}
+
+sub server_available {
+    my ($id) = @_;
+    if ( -r $config_directory . '/servers/' . $id . '.serv' ) {
+        return 1;
+    }
+    else {
+        return undef;
+    }
+
+}
+
+sub _settings {
+    my ( $t, $k, $v ) = @_;
+
+    if ( $t eq 'get' ) {
+        my @settings = (
+            '__',
+            _settings(
+                'fa',
+                'file-o',
+                &text('settings_right_page_defaults_title') . "~"
+                    . &text('settings_right_page_default_description')
+            ),
+            'settings_right_default_tab_webmin',
+            '/',
+            'settings_right_default_tab_usermin',
+            '/',
+            'settings_right_virtualmin_default',
+            'sysinfo.cgi',
+            'settings_right_cloudmin_default',
+            'sysinfo.cgi',
+
+            '__',
+            _settings(
+                'fa', 'desktop',
+                &text('settings_right_window_options_title')
+            ),
+            'settings_loader_left',
+            'true',
+            'settings_loader_right',
+            'true',
+            'settings_right_reload',
+            'true',
+            'settings_window_autoscroll',
+            'true',
+            'settings_window_customized_checkboxes_and_radios',
+            'true',
+
+            '__',
+            _settings(
+                'fa', 'bars',
+                &text('settings_right_navigation_menu_title')
+            ),
+            'settings_leftmenu_section_hide_refresh_modules',
+            'false',
+            'settings_leftmenu_section_hide_unused_modules',
+            'false',
+            'settings_sysinfo_link_mini',
+            'true',
+            'settings_leftmenu_button_language',
+            'false',
+            'settings_leftmenu_button_refresh',
+            'true',
+            'settings_leftmenu_singlelink_icons',
+            'true',
+            'settings_leftmenu_vm_installscripts',
+            'true',
+            'settings_leftmenu_vm_webpages',
+            'true',
+            'settings_leftmenu_vm_backup_amazon',
+            'true',
+
+            '__',
+            _settings(
+                'fa', 'table',
+                &text('settings_right_table_options_title')
+            ),
+            'settings_right_iconize_header_links',
+            'true',
+            'settings_right_hide_table_icons',
+            'false',
+            'settings_right_small_table_icons',
+            'false',
+            'settings_right_xsmall_table_icons',
+            'false',
+            'settings_right_animate_table_icons',
+            'true',
+            'settings_right_grayscaled_table_icons',
+            'true',
+
+            '__',
+            _settings(
+                'fa', 'keyboard-o',
+                &text('settings_right_hotkey_options_title')
+            ),
+            'settings_hotkeys_active',
+            'true',
+            'settings_hotkey_toggle_modifier',
+            'altKey',
+            'settings_hotkey_toggle_key_webmin',
+            'w',
+            'settings_hotkey_toggle_key_virtualmin',
+            'v',
+            'settings_hotkey_toggle_key_cloudmin',
+            'c',
+            'settings_hotkey_toggle_key_usermin',
+            'u',
+            'settings_hotkey_toggle_key_webmail',
+            'm',
+            'settings_hotkey_focus_search',
+            's',
+            'settings_hotkey_reload',
+            'r',
+
+            '__',
+            _settings(
+                'fa', 'info-circle',
+                &text('settings_right_sysinfo_page_options_title')
+            ),
+            'settings_sysinfo_easypie_charts',
+            'true',
+            'settings_theme_options_button',
+            'true',
+            'settings_sysinfo_theme_updates',
+            'true',
+            'settings_sysinfo_csf_updates',
+            'true',
+            'settings_sysinfo_drive_status_on_new_line',
+            'true',
+            'settings_sysinfo_expand_all_accordions',
+            'true',
+
+            '__',
+            _settings(
+                'fa',
+                'bell-o',
+                &text('settings_security_title') . "~"
+                    . &text('settings_security_description')
+            ),
+            'settings_security_notify_on_login_success',
+            '%3 successful login alert for user %1 from %2|%3 successful login alert|root',
+            'settings_security_notify_on_login_request',
+            '%3 login page is accessed by unauthenticated user from %2|%3 login page access alert|root',
+            'settings_security_notify_on_pre_login_request',
+            '%3 pre-login page is accessed by unauthenticated user from %2|%3 pre-login page access alert|root'
+        );
+
+        return (@settings);
+    }
+
+    if ( $t eq 'exclusions' ) {
+        my @_s_e = ();
+
+        ##
+        # List of combined settings for Virtualmin/Cloudmin/Usermin
+        my @s_vc_e = (
+            'settings_leftmenu_singlelink_icons',
+            'settings_right_default_tab_webmin',
+            'settings_right_reload'
+        );
+
+        if (   !&foreign_available("server-manager")
+            && !foreign_available("virtual-server") )
+        {
+            foreach my $e (@s_vc_e) {
+                push( @_s_e, $e );
+            }
+        }
+
+        if (   !&foreign_available("server-manager")
+            && !foreign_available("virtual-server")
+            && !usermin_available('mailbox') )
+        {
+            push( @_s_e, 'settings_right_page_defaults_title' );
+        }
+
+        #
+        ##
+
+        ##
+        # List of settings for Virtualmin
+        my @s_vm_e = (
+            'settings_leftmenu_vm_installscripts',
+            'settings_leftmenu_vm_webpages',
+            'settings_leftmenu_vm_backup_amazon',
+            'settings_right_virtualmin_default',
+            'settings_hotkey_toggle_key_virtualmin'
+        );
+
+        if ( !foreign_available("virtual-server") ) {
+            foreach my $e (@s_vm_e) {
+                push( @_s_e, $e );
+            }
+        }
+        #
+        ##
+
+        ##
+        # List of settings for Cloudmin
+        my @s_cm_e = (
+            'settings_right_cloudmin_default',
+            'settings_hotkey_toggle_key_cloudmin'
+        );
+        if ( !&foreign_available("server-manager") ) {
+            foreach my $e (@s_cm_e) {
+                push( @_s_e, $e );
+            }
+        }
+        #
+        ##
+
+        ##
+        # List of settings for Usermin
+        my @s_um_e = ('settings_hotkey_toggle_key_usermin');
+        if ( !usermin_available() ) {
+            foreach my $e (@s_um_e) {
+                push( @_s_e, $e );
+            }
+        }
+        #
+        ##
+
+        ##
+        # List of settings for Webmail
+        my @s_wm_e = (
+            'settings_hotkey_toggle_key_webmail',
+            'settings_right_default_tab_usermin'
+        );
+        if ( !usermin_available("mailbox") ) {
+            foreach my $e (@s_wm_e) {
+                push( @_s_e, $e );
+            }
+        }
+        #
+        ##
+
+        ##
+        # List of settings for ConfigServer Security & Firewall
+        my @s_cf_e = ('settings_sysinfo_csf_updates');
+        if ( !&foreign_available("csf") ) {
+            foreach my $e (@s_cf_e) {
+                push( @_s_e, $e );
+            }
+        }
+        #
+        ##
+
+        return @_s_e;
+    }
+
+    if ( $t eq 'fa' ) {
+        return
+              '<i class="fa fa-'
+            . $k
+            . '" style="vertical-align: text-bottom !important;">&nbsp;&nbsp;</i>'
+            . $v;
+    }
+
+    if ( $t eq 'header' ) {
+        return '
+            ' . &text('settings_right_title') . '
+            <p></p>
+            <form class="ui_form" role="form" action="/settings.cgi" method="post"
+                data-text-current_theme="'
+            . &text('settings_right_current_theme')
+
+            . '" data-text-settings_right_saved="'
+            . &text('settings_right_saved')
+
+            . '" data-text-save="' . &text('save')
+
+            . '" data-text-settings_right_saving="'
+            . &text('settings_right_saving')
+
+            . '" data-text-settings_right_restore_defaults="'
+            . &text('settings_right_restore_defaults')
+
+            . '" data-text-settings_right_restored="'
+            . &text('settings_right_restored')
+
+            . '" data-text-settings_right_restoring="'
+            . &text('settings_right_restoring')
+
+            . '" data-text-error="' . &text('error')
+
+            . '">
+                <div class="table-responsive">
+                    <table class="table table-striped table-rounded table-condensed table-subtable">
+                        <thead><tr><th class="table-title" style="width: auto"><i class="fa fa-cogs">&nbsp;&nbsp;</i><b>'
+            . &text('settings_right_theme_configurable_options_title')
+            . '</b></th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table class="sub_table_container table-hardcoded" width="100%">
+                                        <tbody>
+                                        ';
+    }
+
+    if ( $t eq 'section' ) {
+        foreach my $e (@_s_e) {
+            if ( index( $k, &text($e) ) != -1 ) {
+                return;
+            }
+        }
+        return '
+            <tr>
+                <td class="col_label atssection"><span>'
+            . $k
+            . '</span>'
+            . ( $v
+                && '<br><div class="smaller text-normal no-padding">'
+                . $v
+                . '</div>' )
+            . '</td>
+                <td class="col_value atssection"></td>
+            </tr>
+        ';
+    }
+
+    if ( $t eq 'content' ) {
+        foreach my $o (@_s_e) {
+            if ( $k eq $o ) {
+                return;
+            }
+        }
+
+        my $v = ( length __settings($k) ? __settings($k) : $v );
+
+        if ( $v eq 'true' || $v eq 'false' ) {
+            $v = '
+                <input class="ui_radio" type="radio" name="'
+                . $k
+                . '" id="'
+                . $k
+                . '_1" value="true"'
+                . ( $v eq 'true' && ' checked' ) . '>
+                <label class="radio" for="'
+                . $k
+                . '_1" style="margin-right:10px !important;">'
+                . &text('yes')
+                . '</label>
+                <input class="ui_radio" type="radio" name="'
+                . $k
+                . '" id="'
+                . $k
+                . '_0" value="false"'
+                . ( $v eq 'false' && ' checked' ) . '>
+                <label class="radio" for="'
+                . $k . '_0">' . &text('no') . '</label>
+            ';
+
+        }
+        elsif (index( $k, 'settings_security_notify_on_' ) != -1
+            || index( $k, 'settings_hotkey_toggle_key_' ) != -1
+            || $k eq 'settings_hotkey_focus_search'
+            || $k eq 'settings_hotkey_reload' )
+        {
+
+            my $width
+                = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
+                    || $k eq 'settings_hotkey_focus_search'
+                    || $k eq 'settings_hotkey_reload' )
+                ? ' width: 31px; '
+                : ' width: 95%; ';
+            my $max_length
+                = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
+                    || $k eq 'settings_hotkey_focus_search'
+                    || $k eq 'settings_hotkey_reload' )
+                ? ' maxlength="1"'
+                : ' ';
+
+            $v = '
+                <input style="display: inline;'
+                . $width
+                . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="'
+                . $k
+                . '" value="'
+                . $v . '"'
+                . $max_length . '>
+            ';
+
+        }
+        elsif ( $k eq 'settings_right_default_tab_webmin' ) {
+            $v = '<select class="ui_select" name="' . $k . '">
+                <option value="/"'
+                . ( $v eq '/' && ' selected' ) . '>Webmin</option>
+
+                '
+                . ( &foreign_available("virtual-server")
+                    && ' <option value="/?virtualmin"'
+                    . ( $v eq '/?virtualmin' && ' selected' )
+                    . '>Virtualmin</option> ' )
+                . '
+
+               '
+                . ( &foreign_available("server-manager")
+                    && ' <option value="/?cloudmin"'
+                    . ( $v eq '/?cloudmin' && ' selected' )
+                    . '>Cloudmin</option>' )
+                . '
+                </select>';
+        }
+        elsif ( $k eq 'settings_right_default_tab_usermin' ) {
+            $v = '<select class="ui_select" name="' . $k . '">
+                <option value="/"'
+                . ( $v eq '/' && ' selected' ) . '>Usermin</option>
+
+                '
+                . ( usermin_available('mailbox')
+                    && ' <option value="/?mail"'
+                    . ( $v eq '/?mail' && ' selected' )
+                    . '>Mail</option> ' )
+                . '
+
+                </select>';
+        }
+
+        elsif ( $k eq 'settings_hotkey_toggle_modifier' ) {
+            $v = '<select class="ui_select" name="' . $k . '">
+                    <option value="altKey"'
+                . ( $v eq 'altKey' && ' selected' ) . '>Alt</option>
+                    <option value="ctrlKey"'
+                . ( $v eq 'ctrlKey' && ' selected' ) . '>Ctrl</option>
+                    <option value="metaKey"'
+                . ( $v eq 'metaKey' && ' selected' ) . '>Meta</option>
+                </select>';
+        }
+        elsif ( $k eq 'settings_right_virtualmin_default' ) {
+            get_virtualmin_user_level();
+            $v = &ui_select(
+                $k, $v,
+                [   [ "", $text{'edright_first'} ],
+                    map {
+                        [ $_->{'id'}, &virtual_server::show_domain_name($_) ]
+                        }
+                        grep { &virtual_server::can_edit_domain($_) }
+                        sort { $a->{'dom'} cmp $b->{'dom'} }
+                        &virtual_server::list_domains()
+                ]
+            );
+        }
+        elsif ( $k eq 'settings_right_cloudmin_default' ) {
+            get_virtualmin_user_level();
+            @servers
+                = &server_manager::list_available_managed_servers_sorted();
+            $v = &ui_select(
+                $k, $v,
+                [   [ "", $text{'edright_first'} ],
+                    map { [ $_->{'id'}, $_->{'host'} ] } @servers
+                ]
+            );
+
+        }
+
+        return '
+            <tr class="atshover">
+                <td class="col_label atscontent"><b>'
+            . &text($k) . '</b>'
+            . ( &text( $k . '_description' )
+                && '<div class="smaller text-normal no-padding">'
+                . &text( $k . '_description' )
+                . '</div>' )
+            . '</td>
+                <td class="col_value atscontent"><span>'
+            . $v . '</span></td>
+            </tr>
+        ';
+    }
+
+    if ( $t eq 'footer' ) {
+        return '
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="ui_form_end_buttons" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a style="min-width:106px" class="btn btn-success" id="atsave"><i class="fa fa-fw fa-floppy-o" style="margin-right:7px;"></i>'
+            . &text('save') . '</a>
+                                <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
+            . &text('settings_right_restore_defaults') . '</a>
+                            </td>
+                            <td style="text-align: right;">
+                                <a class="btn btn-default" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
+            . &text('settings_right_theme_extensions') . '</a>
+                                <a class="btn btn-default" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
+            . &text('settings_right_theme_logos') . '</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        ';
+    }
+
+    if ( $t eq 'save' || $t eq 'restore' ) {
+        if ( $t eq 'save' ) {
+            delete @in{ grep( !/^settings_/, keys %in ) };
+            for ( values %in ) {s/(.*)/'$1';/}
+            for ( values %in ) {s/'true'/true/g}
+            for ( values %in ) {s/'false'/false/g}
+            for ( values %in ) {
+                s/^[^']*'(*SKIP)(*F)|'[^']*$(*SKIP)(*F)|(?<!\\)'/\\'/gim;
+            }
+            write_file( $config_directory . "/authentic-theme/settings.js",
+                \%in );
+        }
+        if ( $t eq 'restore' ) {
+            write_file( $config_directory . "/authentic-theme/settings.js",
+                '' );
+        }
+
+        if ( usermin_available() ) {
+            prt($config_directory);
+            copy_source_dest(
+                $config_directory . "/authentic-theme/settings.js",
+                $__usermin_config . "/authentic-theme" );
+        }
+
+        if ( -r $config_directory . "/authentic-theme/logo.png"
+            && usermin_available() )
+        {
+            copy_source_dest(
+                $config_directory . "/authentic-theme/logo.png",
+                $__usermin_config . "/authentic-theme"
+            );
+        }
+        if ( -r $config_directory . "/authentic-theme/logo_welcome.png"
+            && usermin_available() )
+        {
+            copy_source_dest(
+                $config_directory . "/authentic-theme/logo_welcome.png",
+                $__usermin_config . "/authentic-theme" );
+        }
+    }
+}
+
 sub __settings {
     my ($_s) = @_;
     my $f = $config_directory . "/authentic-theme/settings.js";
@@ -970,7 +1601,8 @@ sub __settings {
                 && ( my @m = $_ =~ /(?:$_s\s*=\s*(.*))/g ) )
             {
                 my $m = join( '\n', @m );
-                $m =~ s/[\'\;]//g;
+                $m =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
+                $m =~ s/\\'/'/g;
                 return $m;
             }
         }
@@ -1002,7 +1634,7 @@ sub notify {
 sub prt {
     my ($____v) = @_;
     use Data::Dumper;
-    print '<div style="color: white">';
+    print '<div style="color: red">';
     print Dumper $____v;
     print '</div>';
 }

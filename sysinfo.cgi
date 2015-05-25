@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 12.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -112,7 +112,7 @@ if ( $level == 0 ) {
                     ( $vs_license eq '1' )
                     ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
                         . $text{'right_vlcheck'}
-                        . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
+                        . '" style="margin-left:1px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
                         . '/virtual-server/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
                     : ''
@@ -147,7 +147,7 @@ if ( $level == 0 ) {
                     ( $vm2_license eq '1' )
                     ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
                         . $text{'right_slcheck'}
-                        . '" style="margin-left:1px;padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
+                        . '" style="margin-left:1px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="'
                         . $gconfig{'webprefix'}
                         . '/server-manager/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
                     : ''
@@ -157,6 +157,7 @@ if ( $level == 0 ) {
         );
     }
 
+    #
     # Theme version/updates
     get_authentic_version();
 
@@ -167,7 +168,13 @@ if ( $level == 0 ) {
             = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
             . $text{'theme_name'} . '</a> '
             . $installed_version
-            . $__changelog;
+            . ( __settings('settings_theme_options_button') ne 'false'
+                && '<a href="/webmin/edit_themes.cgi" data-href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi" class="btn btn-default btn-xs btn-hidden hidden" title="'
+                . $text{'settings_right_theme_configurable_options_title'}
+                . '" style="margin-left:4px;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-cogs" style="padding-top:1px"></i></a> '
+            ) . $__changelog;
     }
     else {
         $authentic_theme_version
@@ -237,21 +244,26 @@ if ( $level == 0 ) {
             my $emsg;
             if ( $t->{'errors'} ) {
                 $emsg
-                    .= ' (<span class="text-danger">'
+                    .= '&nbsp;&nbsp;<span class="label label-warning" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
                     . &text( 'body_driveerr', $t->{'errors'} )
-                    . "</span>)";
+                    . "</span>";
             }
             elsif ( $t->{'failed'} ) {
                 $emsg
-                    .= ' (<span class="text-danger">'
+                    .= '&nbsp;&nbsp;<span class="label label-danger" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
                     . &text('body_drivefailed')
-                    . '</span>)';
+                    . '</span>';
             }
             $hddtemp
-                .= $short . ': '
+                .= '<span class="badge-custom badge-drivestatus" style="margin-right:3px; margin-bottom: 3px">'
+                . $short . ': '
                 . int( $t->{'temp'} )
-                . '&#176;C<br>'
-                . $emsg;
+                . '&#176;C '
+                . $emsg
+                . '</span>'
+                . (
+                __settings('settings_sysinfo_drive_status_on_new_line') eq
+                    'true' ? '<br>' : '&nbsp;' );
         }
         &print_table_row( $text{'body_drivetemps'}, $hddtemp );
     }
@@ -337,14 +349,18 @@ if ( $level == 0 ) {
     if ( &foreign_check("csf") && &foreign_available("csf") ) {
 
         # Define CSF installed version
-        my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
+        my $csf_installed_version
+            = read_file_lines( '/etc/csf/version.txt', 1 );
         our $csf_installed_version = $csf_installed_version->[0];
 
         # Define CSF actual version if allowed
         if ( __settings('settings_sysinfo_csf_updates') eq 'false' ) {
             $csf_remote_version = '0';
-        } else {
-            http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error, undef, undef, undef, undef, 5 );
+        }
+        else {
+            http_download( 'download.configserver.com', '80',
+                '/csf/version.txt', \$csf_remote_version, \$error, undef,
+                undef, undef, undef, 5 );
 
             # Trim versions' number
             $csf_installed_version =~ s/^\s+|\s+$//g;
@@ -362,7 +378,7 @@ if ( $level == 0 ) {
             $text{'body_firewall'} . ' '
                 . (
                   `pgrep lfd` ? ''
-                : ' &nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="document.getElementById(\'csf_lfdstatus\').submit()" class="label label-danger">Stopped</a> '
+                : ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="csf-submit" href="#" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
                 ),
             '<a href="/csf">ConfigServer Security & Firewall</a> '
                 . $csf_installed_version . ''
@@ -394,7 +410,7 @@ if ( $level == 0 ) {
                 . (
                 $csf_update_required eq '1'
                 ? '<div class="btn-group">
-                    <a class="btn btn-xs btn-success csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_upgrade\').submit()"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
+                    <a class="btn btn-xs btn-success csf csf-submit" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_upgrade"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
                     . $text{'theme_update'} . '</a>
                     <a class="btn btn-xs btn-info csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
                     . $text{'theme_changelog'} . '</a>
@@ -402,9 +418,9 @@ if ( $level == 0 ) {
                     . $text{'theme_download'} . '</a>
                 </div>'
                 : '<div class="btn-group">
-                   <a class="btn btn-info btn-xs btn-hidden hidden csf" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_search_system_log\').submit()"><i class="fa fa-filter" style="padding-top:1px"></i></a>
-                   <a class="btn btn-danger btn-xs btn-hidden hidden csf" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_temporary_ip_entries\').submit()"><i class="fa fa-ban" style="padding-top:1px"></i></a>
-                   <a class="btn btn-success btn-xs btn-hidden hidden csf" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Flush all blocks" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" onclick="document.getElementById(\'csf_denyf\').submit()"><i class="fa fa-trash-o" style="padding-top:1px"></i></a>
+                   <a class="btn btn-info btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_search_system_log"><i class="fa fa-filter" style="padding-top:1px"></i></a>
+                   <a class="btn btn-danger btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_temporary_ip_entries"><i class="fa fa-ban" style="padding-top:1px"></i></a>
+                   <a class="btn btn-success btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Flush all blocks" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_denyf"><i class="fa fa-trash-o" style="padding-top:1px"></i></a>
                   </div>'
                 )
                 . ''
@@ -483,9 +499,7 @@ elsif ( $level == 2 ) {
     get_authentic_version();
 
     # Build response message
-    if ( $remote_version
-        <= $installed_version )
-    {
+    if ( $remote_version <= $installed_version ) {
         $authentic_theme_version
             = '' . $text{'theme_name'} . ' ' . $installed_version;
     }
@@ -643,9 +657,7 @@ elsif ( $level == 3 ) {
     get_authentic_version();
 
     # Build response message
-    if ( $remote_version
-        <= $installed_version )
-    {
+    if ( $remote_version <= $installed_version ) {
         $authentic_theme_version
             = '' . $text{'theme_name'} . ' ' . $installed_version;
     }

@@ -1,5 +1,30 @@
 ##Changelog
 
+####Version 13.00 (May 24, 2015)
+* Improved _theme settings are now configurable using UI_. From now on, you don't need to edit settings manually. Theme configurable options located in `Webmin->Webmin Configuration->Webmin Themes`
+* Improved UI of _right frame_ in great amount. Improved UI of _left menu_ and _login page_
+* Improved content _page loader_ being less annoying. Content page spinner now will only appear in case something is _really_ loading. On regular page switching it will not appear anymore. When content page starts/ends loading, it's animated to improve user experience
+* Improved _line-graph bars_. Graphs now can have description and color, based on percentage. To see it in action go to `Cloudmin->Edit System->Detailed system status`
+* Improved page _autoscroll_ mechanism. Now _autoscroll_ works, more like in `gnome-terminal`, i.e., when you start scrolling the page - auto-scrolling stops, when you reach the bottom of the page, using double-scroll - it restarts
+* Improved _user mail_ is now searchable, using _autocomplete_ bar
+* Improved _help popovers_ are now not destroyed, in case user made some text selection
+* Added support for images for third party modules. Modules' developers no longer need to do workarounds
+* Added table rows are now _triggerable_ using left click, _highlighted_ and _selectable_ using right mouse click
+* Added in settings an option to _disable/enable customized checkboxes and radio_ buttons
+* Added in settings an option to _choose default tab/page_ after logging in
+* Fixed broken links when using proxy [#165](https://github.com/qooob/authentic-theme/issues/165)
+* Fixed drive temperature formatting on _System Information_ page [#171](https://github.com/qooob/authentic-theme/issues/171)
+* Fixed frames being way too small in _Text Login_ and _Root Shell_ modules
+* Fixed missing _custom styles_ embedment on login page
+* Fixed tabs being fail-safe
+* Fixed hundreds of bugs
+* Updated _jQuery_ and the code to be _iOS fail-safe_
+* Updated to the latest _jQuery_, _dataTables_, _CodeMirror_, _TinyMCE_
+
+> __ATTENTION:__ Translations for `settings_*` and `theme_conference` is required.
+
+> __NOTICE:__ A chat room `authentic-theme@conference.jabbers.im` is opened for discussions. In order to join the chat room, you would need _Jabber ID_. If you don't have _Jabber ID_, you can register it for free on __jabbers.im__, using any XMPP client, that supports account registrations.
+
 ####Version 12.00 (May 3, 2015)
 * Added right page _icons_, that had been around in other themes for decades. Many people asked for it, including _Joe Cooper_. It was one of the conditions for making _Authentic Theme_ default in _Webmin_. _Icons_ that are used at the moment, are not brand new but looks good. Brand new, _SVG_ icons, are coming in the near future! It's very important to know, that all of these innovations, can be tweaked using settings. By default, _big icons_ are enabled, with _animation_ and _grayscale effect_. Using settings, you can change default icons, to small or extra small, or even completely disable them and get back to what _Authentic Theme_ has been before. Added in settings `settings_right_hide_table_icons`, `settings_right_small_table_icons`, `settings_right_xsmall_table_icons`, `settings_right_animate_table_icons`, `settings_right_grayscaled_table_icons`. Read the [manual](https://github.com/qooob/authentic-theme#how-do-i-use-theme-settings) for using it
 * Improved general UI of the left menu
