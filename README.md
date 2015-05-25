@@ -111,3 +111,4 @@ Theme has configurable options, that are located in `Webmin->Webmin Configuratio
 ### License
 
 _Authentic_ Theme is released under the [MIT License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+
