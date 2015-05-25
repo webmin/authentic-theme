@@ -48,7 +48,7 @@ if (   $is_virtualmin != -1
 elsif ($is_cloudmin != -1
     && length __settings('settings_right_cloudmin_default')
     && __settings('settings_right_cloudmin_default') ne ''
-    && serrver_available( __settings('settings_right_cloudmin_default') ) )
+    && server_available( __settings('settings_right_cloudmin_default') ) )
 {
     our $udefgoto = '/server-manager/edit_serv.cgi?id='
         . __settings('settings_right_cloudmin_default');
