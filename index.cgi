@@ -1,5 +1,7 @@
+#!/usr/bin/perl
+
 #
-# Authentic Theme 9.5.0 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -10,15 +12,9 @@ use WebminCore;
 &init_config();
 
 # Detecting Virtualmin/Cloudmin request
-$is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
-$is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
-
-#Going to default right page
-$minfo = &get_goto_module();
-$__goto
-    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? '/sysinfo.cgi'
-    : $minfo ? "$minfo->{'dir'}/"
-    :          "/sysinfo.cgi";
+our $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
+our $is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
+our $is_webmail    = index( $ENV{'REQUEST_URI'}, 'mail' );
 
 %text    = &load_language($current_theme);
 %gaccess = &get_module_acl( undef, "" );
@@ -34,9 +30,50 @@ if (  !-d $root_directory . "/authentic-theme"
 # Load dependencies
 do "authentic-theme/authentic-lib.cgi";
 
+# Check user settings on default page for Virtualmin/Cloudmin
+if (   $is_virtualmin != -1
+    && length __settings('settings_right_virtualmin_default')
+    && __settings('settings_right_virtualmin_default') ne ''
+    && domain_available( __settings('settings_right_virtualmin_default') ) )
+{
+    parse_virtual_server_access_level();
+    if ( $virtual_server_access_level eq '2' ) {
+        our $udefgoto = '/sysinfo.cgi';
+    }
+    else {
+        our $udefgoto = '/virtual-server/summary_domain.cgi?dom='
+            . __settings('settings_right_virtualmin_default');
+    }
+}
+elsif ($is_cloudmin != -1
+    && length __settings('settings_right_cloudmin_default')
+    && __settings('settings_right_cloudmin_default') ne ''
+    && server_available( __settings('settings_right_cloudmin_default') ) )
+{
+    our $udefgoto = '/server-manager/edit_serv.cgi?id='
+        . __settings('settings_right_cloudmin_default');
+}
+else {
+    our $udefgoto = '/sysinfo.cgi';
+}
+
+#Going to default right page
+$minfo = &get_goto_module();
+$__goto
+    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? $udefgoto
+    : $minfo ? "$minfo->{'dir'}/"
+    :          $udefgoto;
+
 # Redirect user away, in case requested mode can not be satisfied
 if (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
-    || ( $is_cloudmin != -1 && !&foreign_available("server-manager") ) )
+    || ( $is_cloudmin != -1 && !&foreign_available("server-manager") )
+    || ($is_webmail != -1
+        && (&get_product_name() ne 'usermin'
+            || ( &get_product_name() eq 'usermin'
+                && !&foreign_available("mailbox") )
+        )
+    )
+    )
 {
     print "Set-Cookie: redirect=0; path=/\r\n";
     $webmin
@@ -45,18 +82,50 @@ if (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
     print "Location: $webmin\n\n";
 }
 
-# In case Virtualmin is installed, after logging in, redirect to Virtualmin
-if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
-    && &foreign_available("virtual-server")
+# In case Virtualmin/Cloudmin is installed, after logging in, redirect to Virtualmin/Cloudmin
+if ($ENV{'HTTP_COOKIE'} =~ /redirect=1/
+    && (   &foreign_available("virtual-server")
+        || &foreign_available("server-manager") )
     && &get_product_name() eq "webmin"
-    && $is_virtualmin == -1 )
+    && ( $is_virtualmin == -1 && $is_cloudmin == -1 )
+    )
 {
     print "Set-Cookie: redirect=0; path=/\r\n";
     $virtualmin
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'}
-        . '/?virtualmin';
+        . (
+        length __settings('settings_right_default_tab_webmin')
+        ? __settings('settings_right_default_tab_webmin')
+        : '/'
+        );
     print "Location: $virtualmin\n\n";
+}
+
+# In case Mailbox module is installed, after logging in, redirect to Webmail
+if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
+    && &foreign_check("mailbox")
+    && &foreign_available("mailbox")
+    && &get_product_name() eq "usermin"
+    && $is_webmail == -1 )
+{
+    print "Set-Cookie: redirect=0; path=/\r\n";
+    $webmail
+        = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+        . $ENV{'HTTP_HOST'}
+        . (
+        length __settings('settings_right_default_tab_usermin')
+        ? __settings('settings_right_default_tab_usermin')
+        : '/'
+        );
+    print "Location: $webmail\n\n";
+}
+
+if ( $ENV{'HTTP_COOKIE'} =~ /redirect=1/ ) {
+    print "Set-Cookie: redirect=0; path=/\r\n";
+
+    # Notify on successful authentication
+    notify('settings_security_notify_on_login_success');
 }
 
 # Clearing possibly stuck update states
@@ -94,17 +163,6 @@ if (   index( $ENV{'REQUEST_URI'}, 'updating' ) != -1
 
 parse_virtual_server_access_level();
 
-# Force regular user to be in Virtualmin
-if (   $virtual_server_access_level eq '2'
-    && $ENV{'REQUEST_URI'} ne '/?virtualmin' )
-{
-    $virtualmin
-        = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
-        . $ENV{'HTTP_HOST'}
-        . '/?virtualmin';
-    print "Location: $virtualmin\n\n";
-}
-
 # Provide unobstructive access for AJAX calls
 if ( $in{'xhr-navigation'} eq '1' ) {
     print "Content-type: text/html\n\n";
@@ -118,7 +176,30 @@ elsif ( $in{'xhr-switch'} eq '1' ) {
     print "Content-type: text/html\n\n";
     print $__goto;
 }
+elsif ( $in{'xhr-settings'} eq '1' ) {
+    print "Content-type: text/html\n\n";
+    if ( $in{'save'} eq '1' ) {
+        _settings( 'save', undef, undef );
+    }
+    elsif ( $in{'restore'} eq '1' ) {
+        _settings( 'restore', undef, undef );
+    }
+    else {
+        do "authentic-theme/settings.cgi";
+    }
+}
 else {
+
+    # Force regular user to be in Virtualmin
+    if (   $virtual_server_access_level eq '2'
+        && $ENV{'REQUEST_URI'} ne '/?virtualmin' )
+    {
+        $virtualmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . '/?virtualmin';
+        print "Location: $virtualmin\n\n";
+    }
 
     &header($title);
 
@@ -131,6 +212,8 @@ else {
         . $is_virtualmin
         . '" data-server-manager="'
         . $is_cloudmin
+        . '" data-webmail="'
+        . $is_webmail
         . '" data-access-level="'
         . $virtual_server_access_level
         . '" data-hostname="'
@@ -141,7 +224,7 @@ else {
     print
         '<div class="visible-xs mobile-menu-toggler" style="position: fixed">';
     print
-        '<button type="button" class="btn btn-primary" style="padding-left: 6px; padding-right: 5px;">'
+        '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
         . "\n";
     print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
     print '</button>' . "\n";
@@ -155,7 +238,19 @@ else {
     ### Product switcher. Start.
     #
     #
-    if (   !&foreign_available("virtual-server")
+    if (   &get_product_name() eq 'webmin'
+        && &foreign_available("asterisk") )
+    {
+        our $switch_mode  = '2';
+        our $product_mode = '5';
+    }
+    elsif (&get_product_name() eq 'usermin'
+        && &foreign_available("mailbox") )
+    {
+        our $switch_mode  = '2';
+        our $product_mode = '4';
+    }
+    elsif (!&foreign_available("virtual-server")
         && !&foreign_available("server-manager")
         || &get_product_name() eq 'usermin'
         || $virtual_server_access_level eq '2' )
@@ -202,9 +297,17 @@ else {
         print_switch_virtualmin(1);
         print_switch_cloudmin(1);
     }
+    if ( $product_mode eq '4' ) {
+        print_switch_webmail(1);
+        print_switch_webmin(1);
+    }
+    if ( $product_mode eq '5' ) {
+        print_switch_webmin(1);
+        print_switch_thirdlane(1);
+    }
 
     print '<a></a>
-            </div><br><br><br>';
+            </div><br style="line-height:4.4">';
 
     #
     #

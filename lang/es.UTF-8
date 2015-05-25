@@ -1,138 +1,20 @@
-global_search=Buscar
-global_search_in=Buscar en
-global_welcome=Bienvenido
-
-left_login=Iniciar sesión: $1
-left_feedback=Envía Feedback
-left_home=Información del sistema
-left_statistics=Estadísticas del sistema
-left_main=Menú Principal
-left_others=Otros
-left_refresh_modules=Reajusta módulos
-
-right_bw=Utilización y límite del ancho de banda
-right_bwheader=Ancho de banda
-right_bwnone=Las estadísticas de uso de ancho de banda aún no han sido recogidos.
-right_cpu=Carga media CPU
-right_defip=(IP por defecto)
-right_disk=Espacio de disco local
-right_dom=Su nombre de servidor
-right_down=No se está ejecutando
-right_edit=Configurar esta página
-right_expiry=Fecha de expiración
-right_expiryago=Hace $1 días!
-right_expirydays=Días antes de la fecha límite
-right_expirynever=Licencia por vida
-right_fbw=Límite de banda asignado
-right_fdns=Dominios DNS
-right_fdoms=Servidores Virtuales
-right_fvm2=Máquinas Virtuales
-right_fmail=Dominios Mail
-right_fmailboxes=Usuarios Mail/FTP
-right_fquota=Cuota disco asignada
-right_from=Conectado de IP
-right_fusers=Usuarios Mail/FTP
-right_fusers2=Usuarios FTP
-right_fweb=Sitios Web Virtuales
-right_header0=Información del Sistema
-right_header1=Información Virtualmin
-right_header3=Información del Servidor Virtual
-right_header4=Uso del disco Virtualmin
-right_header5=Información Cuenta
-right_header6=Estado del servicio
-right_header7=Funciones Cuenta
-right_host=Nombre Host de Sistema
-right_ip=(IP privado)
-right_iprange=$1 direcciones, $2 usado
-right_ips=$1 servidores virtuales
-right_ipsheader=Asignación dirección IP
-right_kernel=Kernel
-right_kernelon=$1 $2 de $3
-right_licenceheader=Licencias Virtualmin
-right_licenceheader_virt_vm2=Licencias Virtualmin y Cloudmin
-right_licenceheader_vm2=Licencias Cloudmin
-right_login=Conectado como
-right_newfeaturesheader=Nuevas características Virtualmin
-right_newfeaturesheadervm2=Nuevas características Cloudmin
-right_not=No instalado
-right_of=$1 de $2
-right_os=Sistema Operativo
-right_out=$1&nbsp;de&nbsp;$2
-right_overlay=Cambiar tema
-right_ownerheader=Propietario Sistema Cloudmin
-right_pkgupdesc=Actualizaciones de paquetes
-right_procs=Procesos en ejecución
-right_quota=Quota y uso disco
-right_quota10=Sólo los primeros 10 servidores mostrados
-right_quotaall=Todos los servidores virtuales en el primer nivel mostrados
-right_quotamax=Sólo los primeros $1 mostrados
-right_quotasheader=Cuotas
-right_quotayours=Todos los servidores virtuales en el primer nivel mostrados
-right_real=Memoria real
-right_realname=Nombre real
-right_recollect=Actualizar información del sistema
-right_reselip=(Distribuidor $1)
-right_resellerheader=Servidores virtuales del Distribuidor
-right_restart=Reiniciar $1
-right_return=Información del sistema
-right_sharedip=(IP compartido)
-right_skey=Clave de licencia Cloudmin
-right_slcheck=Vuelva a verificar la licencia Cloudmin.
-right_status_actions=Acciones
-right_status_service=Servicio
-right_status_up=En funcionamiento??
-right_statusheader=Estado
-right_sused=Sistemas instalados en
-right_sysinfoheader=Programas
-right_systemheader=Sistema
-right_themever=Versión Tema
-right_time=Hora del sistema
-right_up=En ejecución
-right_upall=Todos los <a href='$1'>paquetes Virtualmin</a> están actualizados.
-right_upcount=$1 actualizaciones a los paquetes Virtualmin están disponibles. Utilice el formulario <a href='$2'>Actualizaciones de paquetes Virtualmin</a> para instalarlos de forma selectiva.
-right_upcount1=Una actualización de paquete Virtualmin es disponible. Utilice el formulario <a href='$2'>Actualizaciones de paquetes Virtualmin</a> para todos los paquetes gestionados.
-right_updatesheader=Actualizaciones de paquetes
-right_updays=En funcionamiento de $1 días, $2 horas, $3 minutos
-right_updesc=Descripción
-right_uphours=En funcionamiento $1 horas, $2 minutos
-right_upinst=Hay <a href='$2'>$1 paquetes opcionales Virtualmin</a> que se pueden instalar.
-right_upmins=En funcionamiento de $1 minutos
-right_upname=Paquete
-right_upok=Instalar todas las actualizaciones ahora
-right_upsys=$1 actualizaciones a los paquetes de sistema están disponibles. Utilice el formulario <a href='$2'>Actualizaciones de paquetes Virtualmin</a> para instalarlos de forma selectiva.
-right_upver=Versión
-right_uquota=Quota y uso disco
-right_used=$1 total, $2 usado
-right_usermin=Versión Usermin
-right_virt=Memoria Virtual
-right_virtdocs=Documentación Virtualmin
-right_virtdocs2=Documentación adicional
-right_virtheader=Información Virtualmin
-right_virtualmin=Versión Virtualmin
-right_virtualminheader=Información Virtualmin
-right_vleft=Dominios permanecidos
-right_vm2cbw=Banda actual usada
-right_vm2ccpu=Total CPU asignada
-right_vm2cdisk=Total disco asignado
-right_webmin=Versión Webmin
-right_fdbs=Bases de datos
-right_subs=Sub-servidores
-
+body_cp=CPU
 body_cpu=Carga media en CPU
 body_cpuinfo=Información CPU
 body_cputemps=Temperaturas CPU
-body_cpuuse=Utilización CPU
+body_cputype=$5, $8 núcleos
 body_disk=Espacio en el disco local
 body_driveerr=$1 errores!
 body_drivefailed=Control SMART fallado!
 body_drivetemps=Temperaturas discos
+body_firewall=Versión Firewall
 body_header0=Información del sistema
 body_header1=Información de la cuenta
 body_host=Nombre host del sistema
 body_kernel=Kernel
 body_kernelon=$1 $2 de $3
+body_load=$1 (1 minuto) $2 (5 minutos) $3 (15 minutos)
 body_os=Sistema Operativo
-body_out=$1&nbsp;de&nbsp;$2
 body_procs=Procesos en ejecución
 body_real=Memoria real
 body_time=Hora del sistema
@@ -144,39 +26,179 @@ body_upneed=$1 actualizaciones de paquetes están disponibles
 body_upok=Todos los paquetes instalados están actualizados
 body_upsec=$1 actualizaciones de paquetes están disponibles, de los cuales $2 son actualizaciones de seguridad
 body_uptime=Uptime de Sistema
-body_uquota=Cuota y uso del disco
 body_used=$1 total / $2 usado
 body_used_and_free=$1 total / $2 libre / $3 usado
 body_usermin=Versión Usermin
 body_virt=Memoria virtual
 body_webmin=Versión Webmin
 
+left_feedback=Envía Feedback
+left_home=Información del sistema
+left_others=Otros
+left_refresh_modules=Reajusta módulos
+left_search=Buscar
+left_statistics=Estadísticas del sistema
+left_virtualmin_create=Crear Servidor Virtual
+left_virtualmin_list=Enumera los servidores virtuales
+
 login_danger=Peligro!
 login_message=Debe ingresar un nombre de usuario y contraseña para iniciar sesión
+login_pass=Contraseña
 login_reset=Reajusta
 login_save=Recuérdame
 login_signin=Entra
-login_success=Éxito!
+login_success=Éxito
+login_token=Token
 login_user=Nombre de usuario
 login_warning=Atención!
+
+right_aliases=Servidores alias
+right_bw=Utilización y límite del ancho de banda
+right_dom=Su nombre de servidor
+right_faliases=Alias de correo
+right_fdbs=Bases de datos
+right_fdoms=Servidores Virtuales
+right_from=Conectado de IP
+right_fusers2=Usuarios FTP
+right_fusers=Usuarios Mail/FTP
+right_fvm2=Máquinas Virtuales
+right_fweb=Sitios Web Virtuales
+right_licenceheader_vm2=Licencias Cloudmin
+right_login=Conectado como
+right_not=No instalado
+right_of=$1 de $2
+right_quota=Quota y uso disco
+right_reselip=(Distribuidor $1)
+right_sharedip=(IP compartido)
+right_slcheck=Vuelva a verificar la licencia Cloudmin
+right_subs=Sub-servidores
+right_virtdocs2=Documentación adicional
+right_virtualmin=Versión Virtualmin
+right_vlcheck=Vuelva a verificar la licencia Virtualmin
+right_vm2=Versión Cloudmin
 
 session_failed=Login fallado. Por favor, inténtalo de nuevo.
 session_logout=Logout exitoso. Utilice el formulario de abajo para iniciar sesión de nuevo.
 session_timed_out=Su sesión ha expirado después $1 minutos de inactividad.
 session_twofailed=Autenticación de dos factores fallada: $1
 
-virtualmin_left_generic=Crear Servidor Virtual
-virtualmin_left_virtualmin=Enumera los servidores virtuales
 
-theme_version=Versión Tema
-authentic_theme=Authentic Tema
-theme_update_available=La última versión disponible
-theme_download=Descargar
-theme_update=Actualizar
+
+
+
+
+
+
+
+
+settings_right_options=Options
+settings_right_restore_defaults=Restore defaults
+settings_right_restored=Restored
+settings_right_restoring=Restoring
+settings_right_saved=Saved
+settings_right_saving=Saving
+
+settings_right_theme_extensions=Theme extensions
+settings_right_theme_extensions_title=Theme Extensions
+settings_right_file_edit=Edit extension file:
+settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
+
+settings_right_theme_logos=Theme logos
+settings_right_theme_logos_title=Theme Logos
+settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
+settings_right_logo_authenticated_users=Logo for authenticated users
+settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+
+settings_right_current_theme=Current theme
+settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
+settings_right_theme_configuration_title=Authentic Theme Configuration
+settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+
+
+settings_right_window_options_title=Window options
+settings_right_navigation_menu_title=Navigation menu options
+settings_right_table_options_title=Table options
+settings_security_title=Security Alerts options
+settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_right_hotkey_options_title=Hotkey options
+settings_right_sysinfo_page_options_title=System Information page options
+
+settings_loader_left=Enable spinner for navigation menu
+settings_loader_right=Enable spinner for content page
+settings_right_reload=Load default content page
+settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+
+settings_right_hide_table_icons=Hide table icons for the right frame
+settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
+settings_right_small_table_icons=Small table icons
+settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
+settings_right_xsmall_table_icons=Extra small table icons
+settings_right_xsmall_table_icons_description=Substitute standard size table icons with extra small ones and display icon's link using tooltip
+settings_right_animate_table_icons=Animate table icons on focus
+settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+
+settings_right_iconize_header_links=Replace table header's links with icons
+settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
+
+settings_window_autoscroll=Automatic window scroll
+settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
+
+settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
+
+settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
+settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_leftmenu_button_language=Show language button
+settings_leftmenu_button_refresh=Show refresh button
+
+settings_theme_options_button=Show theme settings button
+
+settings_hotkeys_active=Enable hotkeys usage
+settings_hotkey_toggle_modifier=Hotkeys modifier
+settings_hotkey_toggle_key_webmin=Hotkey for Webmin
+settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
+settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
+settings_hotkey_toggle_key_usermin=Hotkey for Usermin
+settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_focus_search=Hotkey for search field
+settings_hotkey_reload=Hotkey for page reload
+
+settings_security_notify_on_pre_login_request=Notify when pre-login banner is displayed for unauthenticated user
+settings_security_notify_on_login_request=Notify when unauthenticated user has accessed login page
+settings_security_notify_on_login_success=Notify on successful user authentication
+
+settings_sysinfo_easypie_charts=Show charts
+settings_sysinfo_theme_updates=Check for Authentic Theme updates
+settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
+settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
+settings_sysinfo_expand_all_accordions=Make all accordions expanded
+settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
+settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
+
+settings_right_page_defaults_title=Default pages
+settings_right_default_tab_webmin=Default tab after logging in to Webmin
+settings_right_default_tab_usermin=Default tab after logging in to Usermin
+settings_right_virtualmin_default=Default page for Virtualmin
+settings_right_cloudmin_default=Default page for Cloudmin
+
+settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
+settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
+settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+
+
+
+
+
+
+
+
+
 theme_changelog=Notas de la versión
-
-theme_update_notice=Notificación de actualización
+theme_conference=Theme Conference
 theme_development_support=Apoyo al Desarrollo
 theme_donate=Donación
-
-__norefs=1
+theme_download=Descargar
+theme_name=Authentic Tema
+theme_update=Actualizar
+theme_update_available=La última versión disponible
+theme_update_notice=Notificación de actualización
+theme_version=Versión Tema

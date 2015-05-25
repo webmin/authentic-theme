@@ -1,229 +1,204 @@
-global_welcome=Witaj
-global_search=Szukaj
-global_search_in=Szukaj w
-
-left_login=Login: $1
-left_main=Menu główne
-left_home=Informacje o systemie
-left_statistics=Statystyki systemowe
-left_feedback=Wyślij opinię
-left_refresh_modules=Odśwież moduły
-left_others=Inne
-
-right_header0=System Information
-right_host=System hostname
-right_os=Operating system
-right_login=Zalogowany jako
-right_realname=Prawdziwe imię
-right_from=Zalogowany z
-right_webmin=Wersja Webmina
-right_usermin=Wersja Usermina
-right_virtualmin=Wersja Virtualmina
-right_not=Nie zainstalowane
-right_cpu=Średnie obciążenie procesora
-right_loadgraph=$1 (1 minuta) $2 $3 (5 minut) $4 $5 (15 minut) $6
-right_real=Pamięć rzeczywista
-right_virt=Pamięć wirtualna
-right_procs=Działające procesy
-right_disk=Przestrzeń na dysku lokalnym
-right_used=W sumie $1, używane $2
-right_header1=Informacje Virtualmina
-right_virtualminheader=Informacje Virtualmina
-right_fdoms=Serwery wirtualne
-right_fvm2=Maszyny Wirtualne
-right_fweb=Wirtualne strony
-right_fssl=Strony SSL
-right_fdns=Domeny DNS
-right_fmail=Domeny Mailowe
-right_fdbs=Bazy danych
-right_fusers=Użytkownicy Mail/FTP
-right_fusers2=Użytkownicy FTP
-right_fmailboxes=Użytkownicy Mail/FTP
-right_faliases=Aliasy mailowe
-right_fquota=Przypisane przydziały dyskowe
-right_fbw=Przydzielony limit transferu
-right_resellerheader=Serwery wirtualne resellera
-right_header4=Użycie dysku Virtualmin
-right_quota10=Pokazano 10 najlepszych
-right_quotamax=Pokazano $1 serwerów
-right_quotaall=Pokazano wszystkie serwery wirtualne najwyższej warstwy
-right_quotayours=Pokazano wszystkie Twoje serwery wirtualne najwyższej warstwy
-right_out=$1&nbsp;of&nbsp;$2
-right_header3=Informacje o serwerze wirtualnym
-right_dom=Nazwa Twojego serwera
-right_subs=Sub-serwery
-right_aliases=Aliasy serwerów
-right_of=$1 z $2
-right_quota=Użycie i przydział dysków
-right_bw=Użycie i limity łącza
-right_bwnone=Statystyki wykorzystania łącza nie zostały jeszcze zebrane dla żadnego z serwerów
-right_header5=Informacje o koncie
-right_uquota=Użycie i przydział dysku
-right_header6=Status usługi
-right_up=Działa
-right_down=Nie działa
-right_systemheader=System
-right_statusheader=Status
-right_sysinfoheader=Programy
-right_virtheader=Informacje o Virtualmin
-right_quotasheader=Przydziały
-right_ipsheader=Alokacja adresów IP
-right_restart=Restart $1
-right_defip=(Domyślne IP)
-right_ip=(Prywatne IP)
-right_reselip=(Reseller $1)
-right_sharedip=(Współdzielone IP)
-right_ips=$1 virtualnych serwerów
-right_iprange=$1 adresów, $2 w użyciu
-right_time=Czas na serwerze
-right_updays=Działa od $1 dni, $2 godzin, $3 minut
-right_uphours=Działa od $1 godzin, $2 minut
-right_upmins=Działa od $1 minut
-right_kernel=Kernel i CPU
-right_kernelon=$1 $2 na $3
-right_edit=Konfiguruj tę stronę
-right_bwheader=Przepustowość łącza
-right_return=informacje o systemie
-right_updatesheader=Aktualizacje paczek
-right_upcount=$1 dostępnych aktualizacji do Virtualmin. Użyj <a href='$2'>modułu aktualizacji paczek Virtualmin</a> aby zainstalować je selektywnie.
-right_upcount1=Dostępna jest jedna aktualizacja paczki Virtualmin. Użyj <a href='$2'>modułu aktualizacji paczek Virtualmin</a> aby zobaczyć wszystkie paczki.
-right_upsys=$1 dostępnych aktualizacji paczek systemowych. Użyj <a href='$2'>modułu aktualizacji paczek Virtualmin</a> aby zainstalować je selektywnie.
-right_upname=Paczka
-right_updesc=Opis
-right_upver=Wersja
-right_upok=Zainstaluj wszystkie aktualizacje
-right_recollect=Odśwież informacje systemowe
-right_overlay=Zmień motyw
-right_pkgupdesc=Aktualizacje paczek
-right_upall=Wszystkie <a href='$1'>paczki Virtualmina</a> są aktualne.
-right_upinst=Można zainstalować <a href='$2'>$1 opcjonalnych paczek Virtualmina</a>.
-right_vm2=Wersja Cloudmina
-right_themever=Wersja motywu
-right_vm2serversheader=Systemy zarządzane przez Cloudmin
-right_vm2countall=Zadządzane serwery
-right_vm2counthost=Systemy hostów
-right_vm2countvirt=Systemy wirtualne
-right_vm2countreal=Systemy rzeczywiste
-right_vm2countup=Uruchomione i dostępne
-right_vm2countdown=Wyłączone i/lub niedostępne
-right_vm2countmem=Suma pamięci w systemach wirtualnych
-right_vm2countdisk=Suma przestrzeni dyskowej w systemach wirtualnych
-right_vserial=Numer seryjny Virtualmina
-right_vkey=Klucz licencyjny Virtualmina
-right_vlcheck=Ponownie sprawdź licencję Virtualmina
-right_sserial=Numer seryjny Cloudmina
-right_skey=Klucz licencyjny Cloudmina
-right_slcheck=Ponownie sprawdź licencję Cloudmina
-right_licenceheader=Licencje Virtualmina
-right_licenceheader_vm2=Licencje Cloudmina
-right_licenceheader_virt_vm2=Licencje Virtualmina i Cloudmina
-right_vmax=Licencjonowane domeny
-right_vleft=Pozostałe domeny
-right_smax=Licencjonowane serwery Virtualmina
-right_sused=Systemy zainstalowane
-right_expiry=Data wygaśnięcia
-right_expirynever=Licencja dożywotna
-right_expirydays=Dni do wygaśnięcia
-right_expiryago=$1 dni temu!
-right_vunlimited=Nielimitowane
-right_virtdocs=Dokumentacja Virtualmina
-right_vm2docs=Dokumentacja Cloudmina
-right_virtdocs2=Dokumentacja dodatkowa
-right_header7=Funkcje konta
-right_newfeaturesheader=Nowe funkcje Virtualmina
-right_newfeaturesheadervm2=Nowe funkcje Cloudmina
-right_ownerheader=Właściciel systemu Cloudmin
-right_vm2real=Twoje imię
-right_vm2email=Twój adres kontaktowy
-right_vm2one=Twój system wirtualny
-right_status_service=Usługa
-right_status_up=Czy uruchomiona?
-right_status_actions=Akcje
-right_vm2limitsheader=Limity Cloudmina
-right_vm2cservers=Aktualna liczba systemów
-right_vm2mservers=Systemów maksymalnie
-right_vm2cram=Aktualna łączna ilość RAM
-right_vm2mram=Maksymalny limit RAM
-right_vm2cdisk=Aktualny łączny przydział dysku
-right_vm2mdisk=Maksymalny limit dysku
-right_vm2ccpu=Aktualny łączny przydział CPU
-right_vm2mcpu=Maksymalny limit CPU
-right_vm2cips=Aktualnie przypisane adresy IP
-right_vm2mips=Maksymalnie adresów IP
-right_vm2plan=Plan konta
-right_vm2max=Licencjonowane systemy wirtualne
-right_vm2used=Zarządzane systemy wirtualne
-right_vm2cbw=Aktualne użycie przepustowości łącza
-right_vm2mbw=Maksymalna przepustowość
-right_vm2cspace=Użyta przestrzeń na backup
-right_vm2mspace=Maksymalna przestrzeń na backup
-
-body_header0=Informacje o systemie
-body_host=Nazwa hosta
-body_os=System operacyjny
-body_webmin=Wersja Webmina
-body_time=Czas systemu
-body_kernel=Kernel i CPU
+body_cp=CPU
+body_cpu=Średnie obciążenia CPU
 body_cpuinfo=Informacje o procesorze
+body_cputemps=Temperatury CPU
 body_cputype=$5, $8 rdzeni
-body_uptime=Czas pracy systemu
+body_disk=Przestrzeń na dysku lokalnym
+body_driveerr=$1 błędów!
+body_drivefailed=Sprawdzenie SMART nie powiodło się!
+body_drivetemps=Temperatury napędów
+body_firewall=Wersja Firewalla
+body_header0=Informacje o systemie
+body_header1=Informacje o koncie
+body_host=Nazwa hosta
+body_kernel=Kernel i CPU
+body_kernelon=$1 $2 na $3
+body_load=$1 (1 minuta) $2 (5 minut) $3 (15 minut)
+body_os=System operacyjny
+body_procs=Działające procesy
+body_real=Pamięć rzeczywista
+body_time=Czas systemu
+body_updates=Aktualizacje pakietów
 body_updays=$1 dni, $2 godzin, $3 minut
 body_uphours=$1 godzin, $2 minut
 body_upmins=$1 minut
-body_procs=Działające procesy
-body_cpuuse=Użycie CPU
-body_cpustats=$1% użytkownik, $2% kernel, $4% IO, $3% bezczynność
-body_real=Pamięć rzeczywista
-body_virt=Pamięć wirtualna
-body_used=$1 w sumie / $2 użyte
-body_free=$1 sumie / $2 wolne
-body_used_and_free=$1 sumie / $2 wolne / $3 użyte
-body_cpu=Średnie obciążenia CPU
-body_load=$1 (1 minuta) $2 (5 minut) $3 (15 minut)
-body_disk=Przestrzeń na dysku lokalnym
-body_kernelon=$1 $2 na $3
-body_updates=Aktualizacje pakietów
-body_upok=Wszystkie zainstalowane pakiety są aktualne
 body_upneed=$1 dostępnych aktualizacji paczek
+body_upok=Wszystkie zainstalowane pakiety są aktualne
 body_upsec=$1 dostępnych aktualizacji paczek, z których $2 to aktualizacje zabezpieczeń
-body_cputemps=Temperatury CPU
-body_drivetemps=Temperatury napędów
-body_driveerr=$1 błędów!
-body_drivefailed=Sprawdzenie SMART nie powiodło się!
-
-body_header1=Informacje o koncie
+body_uptime=Czas pracy systemu
+body_used=$1 w sumie / $2 użyte
+body_used_and_free=$1 sumie / $2 wolne / $3 użyte
 body_usermin=Wersja Usermina
-body_out=$1&nbsp;z&nbsp;$2
-body_uquota=Limity i użycie dysku
+body_virt=Pamięć wirtualna
+body_webmin=Wersja Webmina
+
+left_feedback=Wyślij opinię
+left_home=Informacje o systemie
+left_others=Inne
+left_refresh_modules=Odśwież moduły
+left_search=Szukaj
+left_statistics=Statystyki systemowe
+left_virtualmin_create=Stwórz serwer wirtualny
+left_virtualmin_list=Lista serwerów wirtualnych
 
 login_danger=Niebezpieczeństwo!
-login_warning=Ostrzeżenie!
-login_success=Sukces!
 login_message=Musisz podać nazwę użytkownika aby zalogować się na serwer
-login_user=Nazwa użytkownika
 login_pass=Hasło
-login_token=Token
+login_reset=Reset
 login_save=Zapamiętaj mnie
 login_signin=Zaloguj się
-login_reset=Reset
+login_success=Sukces!
+login_token=Token
+login_user=Nazwa użytkownika
+login_warning=Ostrzeżenie!
+
+right_aliases=Aliasy serwerów
+right_bw=Użycie i limity łącza
+right_dom=Nazwa Twojego serwera
+right_faliases=Aliasy mailowe
+right_fdbs=Bazy danych
+right_fdoms=Serwery wirtualne
+right_from=Zalogowany z
+right_fusers2=Użytkownicy FTP
+right_fusers=Użytkownicy Mail/FTP
+right_fvm2=Maszyny Wirtualne
+right_fweb=Wirtualne strony
+right_licenceheader_vm2=Licencje Cloudmina
+right_login=Zalogowany jako
+right_not=Nie zainstalowane
+right_of=$1 z $2
+right_quota=Użycie i przydział dysków
+right_reselip=(Reseller $1)
+right_sharedip=(Współdzielone IP)
+right_slcheck=Ponownie sprawdź licencję Cloudmina
+right_subs=Sub-serwery
+right_virtdocs2=Dokumentacja dodatkowa
+right_virtualmin=Wersja Virtualmina
+right_vlcheck=Ponownie sprawdź licencję Virtualmina
+right_vm2=Wersja Cloudmina
 
 session_failed=Logowanie nie powiodło się. Spróbuj ponownie.
-session_twofailed=Dwuskładnikowe uwierzytelnienie nie powiodło się: $1
 session_logout=Wylogowano prawidłowo. Użyj formularza poniżej, aby ponownie się zalogować.
 session_timed_out=Upłynął limit czasu sesji po $1 minutach nieaktywności.
+session_twofailed=Dwuskładnikowe uwierzytelnienie nie powiodło się: $1
 
-virtualmin_left_generic=Stwórz serwer wirtualny
-virtualmin_left_virtualmin=Lista serwerów wirtualnych
 
-theme_version=Wersja motywu
-authentic_theme=Authentic Theme
-theme_update_available=Ostatnie dostępne wydanie
-theme_download=Pobierz
-theme_update=Zaktualizuj
+
+
+
+
+
+
+
+
+settings_right_options=Options
+settings_right_restore_defaults=Restore defaults
+settings_right_restored=Restored
+settings_right_restoring=Restoring
+settings_right_saved=Saved
+settings_right_saving=Saving
+
+settings_right_theme_extensions=Theme extensions
+settings_right_theme_extensions_title=Theme Extensions
+settings_right_file_edit=Edit extension file:
+settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
+
+settings_right_theme_logos=Theme logos
+settings_right_theme_logos_title=Theme Logos
+settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
+settings_right_logo_authenticated_users=Logo for authenticated users
+settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+
+settings_right_current_theme=Current theme
+settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
+settings_right_theme_configuration_title=Authentic Theme Configuration
+settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+
+
+settings_right_window_options_title=Window options
+settings_right_navigation_menu_title=Navigation menu options
+settings_right_table_options_title=Table options
+settings_security_title=Security Alerts options
+settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_right_hotkey_options_title=Hotkey options
+settings_right_sysinfo_page_options_title=System Information page options
+
+settings_loader_left=Enable spinner for navigation menu
+settings_loader_right=Enable spinner for content page
+settings_right_reload=Load default content page
+settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+
+settings_right_hide_table_icons=Hide table icons for the right frame
+settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
+settings_right_small_table_icons=Small table icons
+settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
+settings_right_xsmall_table_icons=Extra small table icons
+settings_right_xsmall_table_icons_description=Substitute standard size table icons with extra small ones and display icon's link using tooltip
+settings_right_animate_table_icons=Animate table icons on focus
+settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+
+settings_right_iconize_header_links=Replace table header's links with icons
+settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
+
+settings_window_autoscroll=Automatic window scroll
+settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
+
+settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
+
+settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
+settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_leftmenu_button_language=Show language button
+settings_leftmenu_button_refresh=Show refresh button
+
+settings_theme_options_button=Show theme settings button
+
+settings_hotkeys_active=Enable hotkeys usage
+settings_hotkey_toggle_modifier=Hotkeys modifier
+settings_hotkey_toggle_key_webmin=Hotkey for Webmin
+settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
+settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
+settings_hotkey_toggle_key_usermin=Hotkey for Usermin
+settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_focus_search=Hotkey for search field
+settings_hotkey_reload=Hotkey for page reload
+
+settings_security_notify_on_pre_login_request=Notify when pre-login banner is displayed for unauthenticated user
+settings_security_notify_on_login_request=Notify when unauthenticated user has accessed login page
+settings_security_notify_on_login_success=Notify on successful user authentication
+
+settings_sysinfo_easypie_charts=Show charts
+settings_sysinfo_theme_updates=Check for Authentic Theme updates
+settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
+settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
+settings_sysinfo_expand_all_accordions=Make all accordions expanded
+settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
+settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
+
+settings_right_page_defaults_title=Default pages
+settings_right_default_tab_webmin=Default tab after logging in to Webmin
+settings_right_default_tab_usermin=Default tab after logging in to Usermin
+settings_right_virtualmin_default=Default page for Virtualmin
+settings_right_cloudmin_default=Default page for Cloudmin
+
+settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
+settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
+settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+
+
+
+
+
+
+
+
+
 theme_changelog=Lista zmian
-
-theme_update_notice=Aktualizacja Wskazówka
+theme_conference=Theme Conference
 theme_development_support=Wsparcie rozwoju
 theme_donate=Dotacja
-
-__norefs=1
+theme_download=Pobierz
+theme_name=Authentic Theme
+theme_update=Zaktualizuj
+theme_update_available=Ostatnie dostępne wydanie
+theme_update_notice=Aktualizacja Wskazówka
+theme_version=Wersja motywu
