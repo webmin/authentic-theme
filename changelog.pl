@@ -1,5 +1,5 @@
 #
-# Authentic Theme 13.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,10 +13,11 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body">
-                <h4>Version 13.00-13.01 (May 25, 2015)</h4>
+                <h4>Version 13.00-13.02 (May 27, 2015)</h4>
                 <ul>
+                <li>Added support for old versions of Perl <a href="https://github.com/qooob/authentic-theme/issues/174" target="_blank">(Issue #174)<hr></a></li>
                 <li>Fixed redirection loop on Safari OSX <a href="https://github.com/qooob/authentic-theme/issues/173" target="_blank">(Issue #173)</a></li>
-                <li>Fixed switch-toggle in single mode <a href="https://github.com/qooob/authentic-theme/issues/172" target="_blank">(Issue #172)</a><hr></li>
+                <li>Fixed switch-toggle in single mode <a href="https://github.com/qooob/authentic-theme/issues/172" target="_blank">(Issue #172)</a></li>
                 <li>Improved <kbd class="kbd-info">theme settings are now configurable using UI</kbd>. From now on, you don\'t need to edit settings manually. Theme configurable options located in <code>Webmin->Webmin Configuration->Webmin Themes</code></li>
                 <li>Improved UI of <em>right frame</em> in great amount. Improved UI of <em>left menu</em> and <em>login page</em></li>
                 <li>Improved <kbd class="kbd-info">content page loader</kbd> being less annoying. Content page spinner now will only appear in case something is <em>really</em> loading. On regular page switching it will not appear anymore. When content page starts/ends loading, it\'s animated to improve user experience. Please give it a try!</li>
