@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 13.02 (May 27, 2015)
+* Added support for old versions of Perl [#174](https://github.com/qooob/authentic-theme/issues/174)
+
 ####Version 13.01 (May 25, 2015)
 * Fixed redirection loop on Safari OSX [#173](https://github.com/qooob/authentic-theme/issues/173)
 * Fixed switch-toggle in single mode [#172](https://github.com/qooob/authentic-theme/issues/172)

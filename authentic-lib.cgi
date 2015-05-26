@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -220,7 +220,7 @@ sub print_sysinfo_link {
     print '<li><a target="page" data-href="'
         . $gconfig{'webprefix'}
         . '/sysinfo.cgi" class="navigation_module_trigger'
-        . ( __settings('settings_sysinfo_link_mini') eq 'true' && ' hidden' )
+        . ( __settings('settings_sysinfo_link_mini') ne 'false' && ' hidden' )
         . '"><i class="fa fa-fw fa-info"></i> <span>'
         . $text{'left_home'}
         . '</span></a></li>' . "\n";
@@ -1547,7 +1547,17 @@ sub _settings {
             for ( values %in ) {s/'true'/true/g}
             for ( values %in ) {s/'false'/false/g}
             for ( values %in ) {
-                s/^[^']*'(*SKIP)(*F)|'[^']*$(*SKIP)(*F)|(?<!\\)'/\\'/gim;
+                s/
+                   \G
+                   (
+                      (?: ^ [^']* ' | (?!^) )
+                      (?: [^'\\]+ | \\. )*
+                   )
+                   '
+                   (?! [^']* \z )
+                /
+                   $1 . "\\'"
+                /xseg;
             }
             write_file( $config_directory . "/authentic-theme/settings.js",
                 \%in );
@@ -1558,7 +1568,6 @@ sub _settings {
         }
 
         if ( usermin_available() ) {
-            prt($config_directory);
             copy_source_dest(
                 $config_directory . "/authentic-theme/settings.js",
                 $__usermin_config . "/authentic-theme" );

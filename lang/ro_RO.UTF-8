@@ -91,98 +91,98 @@ session_twofailed=Autentificarea cu factor dublu a eșuat: $1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=Opțiuni
+settings_right_restore_defaults=Restaurare setări implicite
+settings_right_restored=Restaurat
+settings_right_restoring=În curs de restaurare
+settings_right_saved=Salvat
+settings_right_saving=În curs de salvare
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
+settings_right_theme_extensions=Extensii pentru temă
+settings_right_theme_extensions_title=Extensiile Temei
+settings_right_file_edit=Editează fișierele temei:
+settings_right_extensions_title=Proiectarea extinsă a Temei, vă permite manipularea cu ușurință a părților vizate din interfață. Ai posibilitatea accesării atât a <em>CSS</em> cât și <em>JavaScript</em>, scriind <em>stiluri</em>/<em>scripturi</em> extensii personalizate. Următoarele exemple sunt făcute pentru a vă ajuta să înțelegeți ideea de bază a aplicării sale. De exemplu, pentru a schimba culoarea fundalului, extinde prin a adăuga următorul stil CSS <code>body {background-color: Gainsboro}</code>. Utilizând JavaScript, pentru a modifica lățimea butonului "submit", extinde prin a adăuga următorul cod JavaScript: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. Cu toate acestea, în practică, acestea vor fi mult mai complicate.
 
-settings_right_theme_logos=Theme logos
-settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+settings_right_theme_logos=Logo-urile temei
+settings_right_theme_logos_title=Logo-urile Temei
+settings_right_logos_title=Logo-urile temei pot fi ușor configurate aici, pentru ambele moduri, atât pentru utilizatorii autentificați cât și neautentificați. Dimensiunea recomandată a logo-ului este <kbd>180x90</kbd> pixeli și singurul format acceptat este <kbd>.png</kbd>, pentru a asigura transpatența în mod ALPHA. După ce s-a configurat logo, în cazul în care este nevoie, îl poți manipula cu extensia <a href="/settings-editor_read.cgi"><em>CSS</em></a> și <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accesându-l prin numele lui de clasă <code>class</code>, care corespunde cu <code>._logo</code> și <code>._logo_welcome</code> către tipuri <em>autentificate</em> cât și <em>neautentificate</em>.
+settings_right_logo_authenticated_users=Logo pentru utilizatori autentificați
+settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentificați
 
-settings_right_current_theme=Current theme
-settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_configuration_title=Authentic Theme Configuration
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+settings_right_current_theme=Temă curentă
+settings_right_title=Această pagină îți permite modificarea <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Configurările vor fi înregistrate după Actualizarea Temei.
+settings_right_theme_configuration_title=Configurația Authentic Theme
+settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
-settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_window_options_title=Opțiunile de Fereastră
+settings_right_navigation_menu_title=Opțiunile Meniului de Navigare
+settings_right_table_options_title=Opțiuni pentru Tabele
+settings_security_title=Opțiuni pentru Alerte de Securitate
+settings_security_description=Alertele de securitate vă va lăsa să configurați notificări prin email asupra unor evenimente.<br class="lh0">Format: <code>Mesaj|Subiect|Lista de utilizatori/emailuri separare prin virgulă|Lista IPv4/IPv6 ignorate, separate prin virgulă</code><br class="lh0">Utilizare: <code>%3 alerta autentificare reușită pentru utilizator %1 din %2|%3 alerta autentificare reuşită|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Generat: <code>From: root, To: root, Subject: Webmin alerta autentificare reuşită, Message: Webmin alertă autentificare reuşită pentru utilizator root de la 2.3.4.5</code>
+settings_right_hotkey_options_title=Opțiuni Hotkeys
+settings_right_sysinfo_page_options_title=Opțiuni pagină Informații de Sistem
 
-settings_loader_left=Enable spinner for navigation menu
-settings_loader_right=Enable spinner for content page
-settings_right_reload=Load default content page
-settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+settings_loader_left=Activează spinner pentru meniul de navigare
+settings_loader_right=Activează spinner pentru pagina cu conținut
+settings_right_reload=Încarcă pagina cu conținut implicit
+settings_right_reload_description=Când defilezi prin taburi, pagina cu conținut din cadrul din drepta se reîncarcă. Nu păstrezi conținutul paginii deja deschise din cardul din drepta și reîncarci cu conținutul standard?
 
-settings_right_hide_table_icons=Hide table icons for the right frame
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
-settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_xsmall_table_icons=Extra small table icons
-settings_right_xsmall_table_icons_description=Substitute standard size table icons with extra small ones and display icon's link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+settings_right_hide_table_icons=Ascunde pictogramele tabelelor din cadrul din dreapta
+settings_right_hide_table_icons_description=Elimină complet pictogramele din tabelele paginii de conținut și afișează doar linkuri cu săgeată la dreapta
+settings_right_small_table_icons=Pictograme mici in tabele
+settings_right_small_table_icons_description=Substituează pictogramele tabelelor de dimensiune standard cu unele mici și afișează linkul pictogramelor folosind chenar cu descriere
+settings_right_xsmall_table_icons=Pictograme extra-mici in tabele
+settings_right_xsmall_table_icons_description=Substituează pictogramele tabelelor de dimensiune standard cu unele extra-mici și afișează linkul pictogramelor folosind chenar cu descriere
+settings_right_animate_table_icons=Animează pictogramele tabelelor la focus pe el
+settings_right_grayscaled_table_icons=Tranformă în scala gri pictogramele tabelelor și colorează-le doar la focus pe el
 
-settings_right_iconize_header_links=Replace table header's links with icons
-settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
+settings_right_iconize_header_links=Înlocuiește linkurile antetelor tabelelor cu pictograme
+settings_right_iconize_header_links_description=Alege fie să înlocuiești vechile linkuri ale antetelor tabelelor cu pictograme sau păstrează stilul vechi al linkurilor gen text
 
-settings_window_autoscroll=Automatic window scroll
-settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
+settings_window_autoscroll=Defilare automată a ferestrei
+settings_window_autoscroll_description=Execută defilare în jos automat pentru fereastră, atunci când pagina este populată de către server. Spinner se va ascunde automat la declanșarea acestei caracteristici. Defilarea cu mausul inițiată de către utilizator, va inhiba defilatrea automată; pentru a-l restarta, execută o defilare dublă cu mausul în subsolul paginii.
 
-settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
+settings_window_customized_checkboxes_and_radios=Activează bife checkbox și bife radio personalizate
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=Ascunde linkul <kbd>Împrospătează Module</kbd>
+settings_leftmenu_section_hide_unused_modules=Ascunde linkul <kbd>Module Neutilizate</kbd>
+settings_leftmenu_button_language=Atată butonul limbi
+settings_leftmenu_button_refresh=Arată butonul reîmprospătare
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=Arată butonul setări de temă
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_hotkeys_active=Activează utilizarea Taste Rapide
+settings_hotkey_toggle_modifier=Modificator de Taste Rapide
+settings_hotkey_toggle_key_webmin=Tastă Rapidă pentru Webmin
+settings_Tastă Rapidă_toggle_key_virtualmin=Tastă Rapidă pentru Virtualmin
+settings_Tastă Rapidă_toggle_key_cloudmin=Tastă Rapidă pentru Cloudmin
+settings_Tastă Rapidă_toggle_key_usermin=Tastă Rapidă pentru Usermin
+settings_Tastă Rapidă_toggle_key_webmail=Tastă Rapidă pentru Mail
+settings_Tastă Rapidă_focus_search=Tastă Rapidă pentru câmpul de căutare
+settings_Tastă Rapidă_reload=Tastă Rapidă pentru reîncărcarea paginii
 
-settings_security_notify_on_pre_login_request=Notify when pre-login banner is displayed for unauthenticated user
-settings_security_notify_on_login_request=Notify when unauthenticated user has accessed login page
-settings_security_notify_on_login_success=Notify on successful user authentication
+settings_security_notify_on_pre_login_request=Anunță atunci când banner-ul pre-autentificare este afișat unui utlizator neautentificat
+settings_security_notify_on_login_request=Anunță atunci când un utlizator neautentificat are acces la pagina de autentificare
+settings_security_notify_on_login_success=Anunță autentificarea reușită
 
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
-settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
-settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
+settings_sysinfo_easypie_charts=Afișează diagrame
+settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
+settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall
+settings_sysinfo_drive_status_on_new_line=Afișează starea unităților, fiecare pe o linie nouă
+settings_sysinfo_expand_all_accordions=Menține toate acordeoanele extinse
+settings_sysinfo_link_mini=Afișează linkul <kbd>Informații de Sistem</kbd> ca buton
+settings_leftmenu_singlelink_icons=Afișează pictogramele linkurilor idividual în meniul de navigare al Virtualmin/Cloudmin
 
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
+settings_right_page_defaults_title=Pagini implicite
+settings_right_default_tab_webmin=Tabul implicit după autentificarea în Webmin
+settings_right_default_tab_usermin=Tabul implicit după autentificarea în Usermin
+settings_right_virtualmin_default=Paginia implicită pentru Virtualmin
+settings_right_cloudmin_default=Paginia implicită pentru Cloudmin
 
-settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
-settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
-settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+settings_leftmenu_vm_installscripts=Afișează linkul <kbd>Instalează Scripturi</kbd> în Virtualmin
+settings_leftmenu_vm_webpages=Afișează linkul <kbd>Editează Paginile Web</kbd> în Virtualmin
+settings_leftmenu_vm_backup_amazon=Afișează linkul <kbd>Amazon S3 Buckets</kbd> în Virtualmin
 
 
 
@@ -193,7 +193,7 @@ settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Vir
 
 
 theme_changelog=Jurnal schimbări
-theme_conference=Theme Conference
+theme_conference=Conferință Temă
 theme_development_support=Asistență Developement
 theme_donate=Donează
 theme_download=Descarcă

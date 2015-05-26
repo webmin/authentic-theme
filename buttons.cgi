@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 $user = $remote_user;
 
-if ( __settings('settings_sysinfo_link_mini') eq 'true' ) {
+if ( __settings('settings_sysinfo_link_mini') ne 'false' ) {
     print '<li class="user-link">';
     print '<a target="page" href="'
         . $gconfig{'webprefix'}
