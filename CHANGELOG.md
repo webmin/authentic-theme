@@ -1,5 +1,13 @@
 ##Changelog
 
+####Version 13.03 (May 30, 2015)
+* Improved UI of _System Statistics Graphs_ and optimized its usage
+* Fixed global issue, with generation icon-like links, when _show as_ set to _icons_ in module's settings [#180](https://github.com/qooob/authentic-theme/issues/180)
+* Fixed defaults properly set for _Make all accordions expanded_ [#179](https://github.com/qooob/authentic-theme/issues/179)
+* Fixed issues in _Webmin Servers Index_ module [#178](https://github.com/qooob/authentic-theme/issues/178)
+* Fixed overflow problem when listing long titles in _Easy Pie Charts_ [#177](https://github.com/qooob/authentic-theme/issues/177)
+* Added theme extensions [repo](https://github.com/qooob/authentic-theme-extensions)
+
 ####Version 13.02 (May 27, 2015)
 * Added support for old versions of Perl [#174](https://github.com/qooob/authentic-theme/issues/174)
 

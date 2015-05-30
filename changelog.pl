@@ -1,5 +1,5 @@
 #
-# Authentic Theme 13.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.03 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,24 +13,24 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body">
-                <h4>Version 13.00-13.02 (May 27, 2015)</h4>
+                <h4>Version 13.00-13.03 (May 30, 2015)</h4>
                 <ul>
-                <li>Added support for old versions of Perl <a href="https://github.com/qooob/authentic-theme/issues/174" target="_blank">(Issue #174)<hr></a></li>
-                <li>Fixed redirection loop on Safari OSX <a href="https://github.com/qooob/authentic-theme/issues/173" target="_blank">(Issue #173)</a></li>
-                <li>Fixed switch-toggle in single mode <a href="https://github.com/qooob/authentic-theme/issues/172" target="_blank">(Issue #172)</a></li>
+                <li>Improved UI of <em>System Statistics Graphs</em> and optimized its usage</li>
+                <li>Added theme extensions <a class="badge fa fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme-extensions"> repo</a></li>
+                <li>Fixed multiple bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/180" target="_blank">Issue #180</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/179" target="_blank">Issue #179</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/178" target="_blank">Issue #178</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/177" target="_blank">Issue #177</a><hr></li>
+
+                <li>Fixed multiple minor bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/174" target="_blank">Issue #174</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/173" target="_blank">Issue #173</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/172" target="_blank">Issue #172</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/171" target="_blank">Issue #171</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/165" target="_blank">Issue #165</a></li>
                 <li>Improved <kbd class="kbd-info">theme settings are now configurable using UI</kbd>. From now on, you don\'t need to edit settings manually. Theme configurable options located in <code>Webmin->Webmin Configuration->Webmin Themes</code></li>
                 <li>Improved UI of <em>right frame</em> in great amount. Improved UI of <em>left menu</em> and <em>login page</em></li>
-                <li>Improved <kbd class="kbd-info">content page loader</kbd> being less annoying. Content page spinner now will only appear in case something is <em>really</em> loading. On regular page switching it will not appear anymore. When content page starts/ends loading, it\'s animated to improve user experience. Please give it a try!</li>
-                <li>Improved <kbd class="kbd-info">line-graph bars</kbd>. Graphs now can have description and color, based on percentage. To see it in action go to <code>Cloudmin->Edit System->Detailed system status</code></li>
-                <li>Improved page <kbd class="kbd-info">autoscroll mechanism</kbd>. Now it works, more like in <code>gnome-terminal</code>, i.e., when you start scrolling the page - auto-scrolling stops, when you reach the bottom of the page, using double-scroll - it restarts</li>
+                <li>Improved <kbd class="kbd-info">content page loader</kbd> and its behaviour</li>
+                <li>Improved <kbd class="kbd-info">line-graph bars</kbd>. Graphs now can have description and color, based on percentage</li>
+                <li>Improved page <kbd class="kbd-info">autoscroll</kbd> mechanism</li>
                 <li>Improved <kbd class="kbd-info">user mail</kbd> is now searchable, using <em>autocomplete</em> bar</li>
                 <li>Improved <kbd class="kbd-info">help popovers</kbd> are now <em>not</em> destroyed, in case user made some text selection</li>
                 <li>Added images\' support for <kbd class="kbd-info">third party modules</kbd></li>
                 <li>Added table rows are now <kbd class="kbd-info">triggerable</kbd> using left click, <kbd class="kbd-info">highlighted</kbd> and <kbd class="kbd-info">selectable</kbd> using right mouse click</li>
                 <li>Added in settings an option to <kbd class="kbd-info">disable/enable customized checkboxes and radio</kbd> buttons</li>
                 <li>Added in settings an option to <kbd class="kbd-info">choose default tab/page</kbd> after logging in</li>
-                <li>Fixed broken links when using proxy <a href="https://github.com/qooob/authentic-theme/issues/165" target="_blank">(Issue #165)</a></li>
-                <li>Fixed drive temperature formatting on <em>System Information</em> page <a href="https://github.com/qooob/authentic-theme/issues/171" target="_blank">(Issue #171)</a></li>
                 <li>Fixed frames being way too small in <em>Text Login</em> and <em>Root Shell</em> modules</li>
                 <li>Fixed missing <em>custom styles</em> embedment on login page</li>
                 <li>Fixed tabs being fail-safe</li>
@@ -50,7 +50,7 @@ our $__changelog
                   <br>
                   Don\'t forget nor be lazy to post to <a class="badge fa fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> GitHub</a> found bugs.
                   <h4 style="margin-top:20px">' . $text{'theme_conference'} . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg fa-weixin" style="color: #333"></i></h4>
-                A chat room <code>authentic-theme@conference.jabbers.im</code> is opened for discussions. In order to join the chat room, you would need <em>Jabber ID</em>. If you don\'t have <em>Jabber ID</em>, you can register it for free on <strong>jabbers.im</strong>, using any XMPP client, that supports account registrations.
+                A chat room <code>authentic-theme@conference.jabbers.im</code> is opened for discussions.
               </div>
             </div>
           </div>

@@ -13,7 +13,6 @@
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
 
-
 ####Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
 * Be as beautiful, fast, light and easy to use as possible
