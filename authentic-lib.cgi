@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.03 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -750,11 +750,23 @@ sub print_easypie_charts {
         @m = @{ $info->{'mem'} };
         if ( @m && $m[0] ) {
             my $percent = ( $m[0] - $m[1] ) / $m[0] * 100;
-            print_easypie_chart( $columns, $percent, $text{'body_real'} );
+            print_easypie_chart(
+                $columns, $percent,
+                (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+                    ? $text{'body_real2'}
+                    : $text{'body_real'}
+                )
+            );
         }
         if ( @m && $m[2] ) {
             my $percent = ( $m[2] - $m[3] ) / $m[2] * 100;
-            print_easypie_chart( $columns, $percent, $text{'body_virt'} );
+            print_easypie_chart(
+                $columns, $percent,
+                (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+                    ? $text{'body_virt2'}
+                    : $text{'body_virt'}
+                )
+            );
         }
     }
 
@@ -762,7 +774,13 @@ sub print_easypie_charts {
     if ( $info->{'disk_total'} ) {
         ( $total, $free ) = ( $info->{'disk_total'}, $info->{'disk_free'} );
         my $percent = ( $total - $free ) / $total * 100;
-        print_easypie_chart( $columns, $percent, $text{'body_disk'} );
+        print_easypie_chart(
+            $columns, $percent,
+            (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+                ? $text{'body_disk2'}
+                : $text{'body_disk'}
+            )
+        );
     }
     print '</div>' . "\n";
 }
@@ -1169,7 +1187,7 @@ sub _settings {
             'settings_sysinfo_drive_status_on_new_line',
             'true',
             'settings_sysinfo_expand_all_accordions',
-            'true',
+            'false',
 
             '__',
             _settings(
