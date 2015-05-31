@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.03 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.04 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1166,6 +1166,8 @@ sub _settings {
             'u',
             'settings_hotkey_toggle_key_webmail',
             'm',
+            'settings_hotkey_sysinfo',
+            'i',
             'settings_hotkey_focus_search',
             's',
             'settings_hotkey_reload',
@@ -1413,19 +1415,22 @@ sub _settings {
         elsif (index( $k, 'settings_security_notify_on_' ) != -1
             || index( $k, 'settings_hotkey_toggle_key_' ) != -1
             || $k eq 'settings_hotkey_focus_search'
-            || $k eq 'settings_hotkey_reload' )
+            || $k eq 'settings_hotkey_reload'
+            || $k eq 'settings_hotkey_sysinfo' )
         {
 
             my $width
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
-                    || $k eq 'settings_hotkey_reload' )
+                    || $k eq 'settings_hotkey_reload'
+                    || $k eq 'settings_hotkey_sysinfo' )
                 ? ' width: 31px; '
                 : ' width: 95%; ';
             my $max_length
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
-                    || $k eq 'settings_hotkey_reload' )
+                    || $k eq 'settings_hotkey_reload'
+                    || $k eq 'settings_hotkey_sysinfo' )
                 ? ' maxlength="1"'
                 : ' ';
 

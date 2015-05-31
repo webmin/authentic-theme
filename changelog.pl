@@ -1,5 +1,5 @@
 #
-# Authentic Theme 13.03 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.04 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,12 +13,13 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body">
-                <h4>Version 13.00-13.03 (May 30, 2015)</h4>
+                <h4>Version 13.00-13.04 (May 31, 2015)</h4>
                 <ul>
+                <li>Added in settings an option to quick-switch, using hotkey to <em>System Information</em> page (<code>Ctrl+I</code>)</li>
+                <li>Fixed go back button in <em>Virtualmin/Cloudmin</em> and broken logo uploads <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/181" target="_blank">Issue #181</a><hr></li>
                 <li>Improved UI of <em>System Statistics Graphs</em> and optimized its usage</li>
                 <li>Added theme extensions <a class="badge fa fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme-extensions"> repo</a></li>
-                <li>Fixed multiple bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/180" target="_blank">Issue #180</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/179" target="_blank">Issue #179</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/178" target="_blank">Issue #178</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/177" target="_blank">Issue #177</a><hr></li>
-
+                <li>Fixed multiple bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/180" target="_blank">Issue #180</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/179" target="_blank">Issue #179</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/178" target="_blank">Issue #178</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/177" target="_blank">Issue #177</a></li>
                 <li>Fixed multiple minor bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/174" target="_blank">Issue #174</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/173" target="_blank">Issue #173</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/172" target="_blank">Issue #172</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/171" target="_blank">Issue #171</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/165" target="_blank">Issue #165</a></li>
                 <li>Improved <kbd class="kbd-info">theme settings are now configurable using UI</kbd>. From now on, you don\'t need to edit settings manually. Theme configurable options located in <code>Webmin->Webmin Configuration->Webmin Themes</code></li>
                 <li>Improved UI of <em>right frame</em> in great amount. Improved UI of <em>left menu</em> and <em>login page</em></li>
