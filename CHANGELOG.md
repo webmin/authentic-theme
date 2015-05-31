@@ -1,5 +1,11 @@
 ##Changelog
 
+####Version 13.04 (May 31, 2015)
+* Added in settings an option to quick-switch, using hotkey to _System Information_ page (`Ctrl+I`)
+* Fixed broken logo uploads [#181](https://github.com/qooob/authentic-theme/issues/181
+* Fixed go back button in _Virtualmin/Cloudmin_
+* Fixed minor bugs
+
 ####Version 13.03 (May 30, 2015)
 * Improved UI of _System Statistics Graphs_ and optimized its usage
 * Fixed global issue, with generation icon-like links, when _show as_ set to _icons_ in module's settings [#180](https://github.com/qooob/authentic-theme/issues/180)

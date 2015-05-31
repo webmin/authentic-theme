@@ -162,6 +162,7 @@ settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
 settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
 settings_hotkey_toggle_key_usermin=Hotkey for Usermin
 settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_sysinfo=Hotkey for System Information
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
 

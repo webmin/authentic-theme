@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.03 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.04 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -65,7 +65,13 @@ $__goto
     :          $udefgoto;
 
 # Redirect user away, in case requested mode can not be satisfied
-if (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
+if ($ENV{'REQUEST_URI'} ne '/' && $ENV{'REQUEST_URI'} ne '/?virtualmin' && $ENV{'REQUEST_URI'} ne '/?cloudmin' && $ENV{'REQUEST_URI'} ne '/?mail' && index( $ENV{'REQUEST_URI'}, 'xhr' ) lt 0) {
+    $webmin
+        = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+        . $ENV{'HTTP_HOST'} . '/';
+    print "Location: $webmin\n\n";
+}
+elsif (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
     || ( $is_cloudmin != -1 && !&foreign_available("server-manager") )
     || ($is_webmail != -1
         && (&get_product_name() ne 'usermin'
