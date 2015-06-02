@@ -2,13 +2,13 @@
 
 ####Version 13.05 (June 2, 2015)
 * Added in settings an option to use _custom links_ for quick-switching, while using digit hotkeys from 1 to 9, i.e. `Alt+1`, `Alt+2`, `Alt+3` ... `Alt+9` [#183](https://github.com/qooob/authentic-theme/issues/183
-* Added disabled virtual servers/machines are now marked red [#184](https://github.com/qooob/authentic-theme/issues/184
-* Fixed _line-graph bars_ issues [#185](https://github.com/qooob/authentic-theme/issues/185
+* Added disabled virtual servers/machines are now marked red [#184](https://github.com/qooob/authentic-theme/issues/184)
+* Fixed _line-graph bars_ issues [#185](https://github.com/qooob/authentic-theme/issues/185)
 * Fixed minor bugs
 
 ####Version 13.04 (May 31, 2015)
 * Added in settings an option to quick-switch, using hotkey to _System Information_ page (`Alt+I`)
-* Fixed broken logo uploads [#181](https://github.com/qooob/authentic-theme/issues/181
+* Fixed broken logo uploads [#181](https://github.com/qooob/authentic-theme/issues/181)
 * Fixed go back button in _Virtualmin/Cloudmin_
 * Fixed minor bugs
 
