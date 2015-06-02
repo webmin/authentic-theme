@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.04 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.05 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1172,6 +1172,31 @@ sub _settings {
             's',
             'settings_hotkey_reload',
             'r',
+            '__',
+            _settings(
+                'fa',
+                'sub-title',
+                '' . "~"
+                    . &text('settings_right_hotkey_custom_options_description')
+            ),
+            'settings_hotkey_custom_1',
+            'settings-editor_read.cgi',
+            'settings_hotkey_custom_2',
+            'settings-upload.cgi',
+            'settings_hotkey_custom_3',
+            '',
+            'settings_hotkey_custom_4',
+            '',
+            'settings_hotkey_custom_5',
+            '',
+            'settings_hotkey_custom_6',
+            '',
+            'settings_hotkey_custom_7',
+            '',
+            'settings_hotkey_custom_8',
+            '',
+            'settings_hotkey_custom_9',
+            '',
 
             '__',
             _settings(
@@ -1445,6 +1470,27 @@ sub _settings {
             ';
 
         }
+        elsif ($k eq 'settings_hotkey_custom_1'
+            || $k eq 'settings_hotkey_custom_2'
+            || $k eq 'settings_hotkey_custom_3'
+            || $k eq 'settings_hotkey_custom_4'
+            || $k eq 'settings_hotkey_custom_5'
+            || $k eq 'settings_hotkey_custom_6'
+            || $k eq 'settings_hotkey_custom_7'
+            || $k eq 'settings_hotkey_custom_8'
+            || $k eq 'settings_hotkey_custom_9' )
+        {
+            my $width = ' width: 40%; ';
+
+            $v = '
+                <input style="display: inline;'
+                . $width
+                . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="'
+                . $k
+                . '" value="'
+                . $v . '">
+            ';
+        }
         elsif ( $k eq 'settings_right_default_tab_webmin' ) {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
@@ -1586,11 +1632,14 @@ sub _settings {
                 \%in );
         }
         if ( $t eq 'restore' ) {
-            write_file( $config_directory . "/authentic-theme/settings.js",
-                '' );
+            unlink_file($config_directory . "/authentic-theme/settings.js");
+            if ( usermin_available() ) {
+                unlink_file($__usermin_config . "/authentic-theme/settings.js");
+            }
         }
 
         if ( usermin_available() ) {
+            unlink_file($__usermin_config . "/authentic-theme/settings.js");
             copy_source_dest(
                 $config_directory . "/authentic-theme/settings.js",
                 $__usermin_config . "/authentic-theme" );
@@ -1599,6 +1648,7 @@ sub _settings {
         if ( -r $config_directory . "/authentic-theme/logo.png"
             && usermin_available() )
         {
+            unlink_file($__usermin_config . "/authentic-theme/logo.png");
             copy_source_dest(
                 $config_directory . "/authentic-theme/logo.png",
                 $__usermin_config . "/authentic-theme"
@@ -1607,6 +1657,7 @@ sub _settings {
         if ( -r $config_directory . "/authentic-theme/logo_welcome.png"
             && usermin_available() )
         {
+            unlink_file($__usermin_config . "/authentic-theme/logo_welcome.png");
             copy_source_dest(
                 $config_directory . "/authentic-theme/logo_welcome.png",
                 $__usermin_config . "/authentic-theme" );
