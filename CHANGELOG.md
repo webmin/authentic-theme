@@ -1,5 +1,15 @@
 ##Changelog
 
+####Version 13.10 (June 30, 2015)
+* Added an option to _disable all animation_ on the left menu and on tabs [#192](https://github.com/qooob/authentic-theme/issues/192)
+* Added `autofocus` on input field in _Command Shell_ module [#190](https://github.com/qooob/authentic-theme/issues/190)
+* Improved the look of custom radio buttons
+* Updated _Romanian_ translation
+* Fixed external links issue [#182](https://github.com/qooob/authentic-theme/issues/182)
+* Fixed different _Internet Explorer_ issues [#191](https://github.com/qooob/authentic-theme/issues/191)
+* Fixed issue with the size of input fields in _Squid Module_ [#197](https://github.com/qooob/authentic-theme/issues/197)
+* Fixed other multiple bugs
+
 ####Version 13.05 (June 2, 2015)
 * Added in settings an option to use _custom links_ for quick-switching, while using digit hotkeys from 1 to 9, i.e. `Alt+1`, `Alt+2`, `Alt+3` ... `Alt+9` [#183](https://github.com/qooob/authentic-theme/issues/183)
 * Added disabled virtual servers/machines are now marked red [#184](https://github.com/qooob/authentic-theme/issues/184)

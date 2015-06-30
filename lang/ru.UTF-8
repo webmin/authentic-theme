@@ -137,6 +137,8 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
+settings_animation_left=Enable animation in navigation menu
+settings_animation_tabs=Enable animation in tabs
 settings_loader_left=Enable spinner for navigation menu
 settings_loader_right=Enable spinner for content page
 settings_right_reload=Load default content page

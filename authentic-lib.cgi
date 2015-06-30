@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.05 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -275,7 +275,12 @@ sub print_extended_sysinfo {
                             eq 'true' ? ' in' : '' );
 
                     print '
-                    <div class="panel panel-default">
+                    <div class="panel panel-default'
+                        . (
+                        __settings('settings_animation_tabs') ne 'false'
+                        ? ''
+                        : ' disable-animations' )
+                        . '">
                         <div class="panel-heading" role="tab" id="'
                         . $info->{'id'} . '-' . $info->{'module'} . '">
                           <h4 class="panel-title">
@@ -649,10 +654,16 @@ sub print_left_menu {
                         substr( $link, 0, 1, "" )
                             if "/" eq substr( $link, 0, 1 );
                     }
-                    print '<li>' . "\n";
-                    print '<a target="page" '
+                    print '<li'
                         . (
-                        !$group
+                        $item->{'target'}
+                        ? ' class="navigation_external"'
+                        : ''
+                        ) . '>' . "\n";
+                    print '<a target="'
+                        . ( $item->{'target'} ? '_blank' : 'page' ) . '" '
+                        . (
+                        ( !$group && !$item->{'target'} )
                         ? "class=\"navigation_module_trigger\" data-"
                         : ''
                         )
@@ -1094,6 +1105,10 @@ sub _settings {
                 'fa', 'desktop',
                 &text('settings_right_window_options_title')
             ),
+            'settings_animation_left',
+            'true',
+            'settings_animation_tabs',
+            'true',
             'settings_loader_left',
             'true',
             'settings_loader_right',
@@ -1171,13 +1186,13 @@ sub _settings {
             'settings_hotkey_focus_search',
             's',
             'settings_hotkey_reload',
-            'r',
-            '__',
+            'r', '__',
             _settings(
                 'fa',
                 'sub-title',
                 '' . "~"
-                    . &text('settings_right_hotkey_custom_options_description')
+                    . &text(
+                    'settings_right_hotkey_custom_options_description')
             ),
             'settings_hotkey_custom_1',
             'settings-editor_read.cgi',
@@ -1632,14 +1647,15 @@ sub _settings {
                 \%in );
         }
         if ( $t eq 'restore' ) {
-            unlink_file($config_directory . "/authentic-theme/settings.js");
+            unlink_file( $config_directory . "/authentic-theme/settings.js" );
             if ( usermin_available() ) {
-                unlink_file($__usermin_config . "/authentic-theme/settings.js");
+                unlink_file(
+                    $__usermin_config . "/authentic-theme/settings.js" );
             }
         }
 
         if ( usermin_available() ) {
-            unlink_file($__usermin_config . "/authentic-theme/settings.js");
+            unlink_file( $__usermin_config . "/authentic-theme/settings.js" );
             copy_source_dest(
                 $config_directory . "/authentic-theme/settings.js",
                 $__usermin_config . "/authentic-theme" );
@@ -1648,7 +1664,7 @@ sub _settings {
         if ( -r $config_directory . "/authentic-theme/logo.png"
             && usermin_available() )
         {
-            unlink_file($__usermin_config . "/authentic-theme/logo.png");
+            unlink_file( $__usermin_config . "/authentic-theme/logo.png" );
             copy_source_dest(
                 $config_directory . "/authentic-theme/logo.png",
                 $__usermin_config . "/authentic-theme"
@@ -1657,7 +1673,8 @@ sub _settings {
         if ( -r $config_directory . "/authentic-theme/logo_welcome.png"
             && usermin_available() )
         {
-            unlink_file($__usermin_config . "/authentic-theme/logo_welcome.png");
+            unlink_file(
+                $__usermin_config . "/authentic-theme/logo_welcome.png" );
             copy_source_dest(
                 $config_directory . "/authentic-theme/logo_welcome.png",
                 $__usermin_config . "/authentic-theme" );

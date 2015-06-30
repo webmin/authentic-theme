@@ -1,5 +1,5 @@
 #
-# Authentic Theme 13.05 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -26,39 +26,39 @@ sub theme_header {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/bootstrap.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/bootstrap.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/fontawesome.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/fontawesome.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/fontawesome-animation.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/fontawesome-animation.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/codemirror.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/codemirror.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/jquery.scrollbar.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/jquery.scrollbar.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/jquery.datatables.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/jquery.datatables.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/jquery.autocomplete.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/jquery.autocomplete.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/select2.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/select2.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/default.min.css?1305" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/default.min.css?1310" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     embed_settings();
@@ -83,79 +83,81 @@ sub theme_header {
 
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/spin.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/spin.min.js?1310" type="text/javascript"></script>'
         . "\n";
 
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.scrollbar.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.scrollbar.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.autocomplete.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.autocomplete.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/select2.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/select2.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/icheck.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/icheck.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.purl.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.purl.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/bootstrap.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/bootstrap.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/fileinput.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/fileinput.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/autosizeinput.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/autosizeinput.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/codemirror.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/codemirror.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.datatables.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.datatables.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.datatables.plugins.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.datatables.plugins.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.easypiechart.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/jquery.easypiechart.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/tinymce/tinymce.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/tinymce/tinymce.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/loader.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/loader.min.js?1310" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/transition.min.js?1305" type="text/javascript"></script>'
+        . '/unauthenticated/js/transition.min.js?1310" type="text/javascript"></script>'
         . "\n";
 
     print '</head>', "\n";
     print '<body data-webprefix="'
         . $gconfig{'webprefix'}
         . '" data-current-product="'
-        . &get_product_name() . '">' . "\n";
+        . &get_product_name() . '"'
+        . ( &get_module_name() ? ' class="' . &get_module_name() . '"' : '' )
+        . '>' . "\n";
 
     if ( @_ > 1 ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
@@ -276,23 +278,23 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/bootstrap.min.css?1305" rel="stylesheet" type="text/css">',
+            . '/unauthenticated/css/bootstrap.min.css?1310" rel="stylesheet" type="text/css">',
             "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/default.min.css?1305" rel="stylesheet" type="text/css">',
+            . '/unauthenticated/css/default.min.css?1310" rel="stylesheet" type="text/css">',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/jquery.min.js?1305" type="text/javascript"></script>',
+            . '/unauthenticated/js/jquery.min.js?1310" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1305" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1310" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1305" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1310" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -325,7 +327,7 @@ sub theme_footer {
     if ( $ENV{'SCRIPT_NAME'} ne '/session_login.cgi' ) {
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/default.min.js?1305" type="text/javascript"></script>'
+            . '/unauthenticated/js/default.min.js?1310" type="text/javascript"></script>'
             . "\n";
     }
     embed_scripts();
@@ -501,12 +503,14 @@ sub theme_generate_icon {
                 . '" data-title="'
                 . $title
                 . '" data-toggle="tooltip" data-placement="top" data-container="body">';
-            if ($_[6] || $_[7]) {
-                if ($_[6]) {
-                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+            if ( $_[6] || $_[7] ) {
+                if ( $_[6] ) {
+                    print
+                        "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
-                if ($_[7]) {
-                    print "<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
+                if ( $_[7] ) {
+                    print
+                        "<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
                 }
             }
             print "<a href=\"$link\" class=\"icon_link\">"
@@ -525,12 +529,14 @@ sub theme_generate_icon {
                 . '" data-title="'
                 . $title
                 . '" data-toggle="tooltip" data-placement="top" data-container="body">';
-            if ($_[6] || $_[7]) {
-                if ($_[6]) {
-                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+            if ( $_[6] || $_[7] ) {
+                if ( $_[6] ) {
+                    print
+                        "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
-                if ($_[7]) {
-                    print "<span style='position: absolute; top:-3px; right: 1px;' class='hidden-forged hidden-forged-7 hidden-forged-7-xsmall'>$_[7]</span>\n";
+                if ( $_[7] ) {
+                    print
+                        "<span style='position: absolute; top:-3px; right: 1px;' class='hidden-forged hidden-forged-7 hidden-forged-7-xsmall'>$_[7]</span>\n";
                 }
             }
             print "<a href=\"$link\" class=\"icon_link\">"
@@ -546,12 +552,14 @@ sub theme_generate_icon {
             print '<div class="col-xs-1 icons-container'
                 . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
                 . ( !$animate_table_icons && ' animated' ) . '">';
-            if ($_[6] || $_[7]) {
-                if ($_[6]) {
-                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+            if ( $_[6] || $_[7] ) {
+                if ( $_[6] ) {
+                    print
+                        "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
-                if ($_[7]) {
-                    print "<span style='position: absolute; right: 8px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
+                if ( $_[7] ) {
+                    print
+                        "<span style='position: absolute; right: 8px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
                 }
             }
             print "<a href=\"$link\" class=\"icon_link\">"
