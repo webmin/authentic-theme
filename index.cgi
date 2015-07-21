@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -340,10 +340,10 @@ else {
     ### Right Side. Start.
     print '<div id="content" class="__page">' . "\n";
     print '<div class="loader-container">' . "\n";
-    print '<div class="loader" id="loader-insertion-point"></div>' . "\n";
+    print '<div class="loader"><span class="loading"></span></div>' . "\n";
     print '</div>' . "\n";
     print
-        '<script>new Spinner($__spinner).spin(document.getElementById(\'loader-insertion-point\'));__lrs()</script>';
+        '<script>__lrs()</script>';
     print '<iframe name="page" id="iframe" src="'
         . $gconfig{'webprefix'}
         . (

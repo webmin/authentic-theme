@@ -136,6 +136,7 @@ settings_hotkey_custom_9=Legătură personalizată <code>9</code>
 
 settings_animation_left=Enable animation in navigation menu
 settings_animation_tabs=Enable animation in tabs
+settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Activează spinner pentru meniul de navigare
 settings_loader_right=Activează spinner pentru pagina cu conținut
 settings_right_reload=Încarcă pagina cu conținut implicit

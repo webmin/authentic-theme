@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -164,8 +164,8 @@ sub print_switch_webmin {
         . '>
         <label for="open_'
         . &get_product_name() . '">
-                <i class="wbm-webmin wbm-sm"></i><div>'
-        . ucfirst( &get_product_name() ) . '</div></label>';
+                <i class="wbm-webmin wbm-sm"></i><span>'
+        . ucfirst( &get_product_name() ) . '</span></label>';
 }
 
 sub print_switch_virtualmin {
@@ -175,28 +175,28 @@ sub print_switch_virtualmin {
         . ' id="open_virtualmin" name="product-switcher" type="radio"'
         . ( $is_virtualmin != -1 ? " checked" : "" ) . '>
           <label for="open_virtualmin">
-          <i class="wbm-virtualmin wbm-sm"></i><div>Virtualmin</div></label>';
+          <i class="wbm-virtualmin wbm-sm"></i><span>Virtualmin</span></label>';
 }
 
 sub print_switch_cloudmin {
     my ($dynamic) = @_;
     print '<input'
         . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_cloudmin" id="open_cloudmin" name="product-switcher" type="radio"'
+        . ' id="open_cloudmin" name="product-switcher" type="radio"'
         . ( $is_cloudmin != -1 ? " checked" : "" ) . '>
           <label for="open_cloudmin">
-          <i class="wbm-cloudmin wbm-sm"></i><div>Cloudmin</div></label>';
+          <i class="wbm-cloudmin wbm-sm"></i><span>Cloudmin</span></label>';
 }
 
 sub print_switch_webmail {
     my ($dynamic) = @_;
     print '<input'
         . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_webmail" id="open_webmail" name="product-switcher" type="radio"'
+        . ' id="open_webmail" name="product-switcher" type="radio"'
         . ( $is_webmail != -1 ? " checked" : "" ) . '>
           <label for="open_webmail">
           <i class="fa fa-envelope"></i>
-          <div>Mail</div></label>';
+          <span>Mail</span></label>';
 }
 
 sub print_switch_thirdlane {
@@ -206,7 +206,7 @@ sub print_switch_thirdlane {
         . ' id="open_thirdlane" id="open_cloudmin" name="product-switcher" type="radio">
           <label for="open_thirdlane">
           <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTI0LjksNDguOEMxMS44LDQ4LjgsMSwzOC4xLDEsMjQuOVMxMS44LDEsMjQuOSwxczIzLjksMTAuNywyMy45LDIzLjlTMzguMSw0OC44LDI0LjksNDguOHogTTI0LjksMy44Yy0xMS43LDAtMjEuMSw5LjUtMjEuMSwyMS4xczkuNSwyMS4xLDIxLjEsMjEuMWMxMS43LDAsMjEuMS05LjUsMjEuMS0yMS4xUzM2LjYsMy44LDI0LjksMy44eiIvPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDIwLjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywxOC4xLDI1LjEsMjAuMiwxNi42LDIwLjJ6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDI3LjRjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywyNS4zLDI1LjEsMjcuNCwxNi42LDI3LjR6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDM0LjZjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywzMi41LDI1LjEsMzQuNiwxNi42LDM0LjZ6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==">
-          <div>Thirdlane</div></label>';
+          <span class="block">Thirdlane</span></label>';
 }
 
 sub print_category_link {
@@ -279,7 +279,8 @@ sub print_extended_sysinfo {
                         . (
                         __settings('settings_animation_tabs') ne 'false'
                         ? ''
-                        : ' disable-animations' )
+                        : ' disable-animations'
+                        )
                         . '">
                         <div class="panel-heading" role="tab" id="'
                         . $info->{'id'} . '-' . $info->{'module'} . '">
@@ -380,49 +381,6 @@ sub print_extended_sysinfo {
         print '</div><br><br><br><br>';
     }
 
-}
-
-sub print_session_login_head {
-    print '<head>',                 "\n";
-    print '<title>',                $title, '</title>', "\n";
-    print '<meta charset="utf-8">', "\n";
-    print '<link rel="shortcut icon" href="'
-        . $gconfig{'webprefix'}
-        . '/images/favicon'
-        . (
-        ( &get_product_name() eq 'usermin' )
-        ? '-usermin'
-        : '-webmin'
-        ) . '.ico">' . "\n";
-    print
-        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
-        . "\n";
-    print '<link href="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/css/bootstrap.min.css" rel="stylesheet" type="text/css">',
-        "\n";
-    print '<link href="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/css/fontawesome.min.css" rel="stylesheet" type="text/css">',
-        "\n";
-    print '<link href="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/css/login.min.css" rel="stylesheet" type="text/css">',
-        "\n";
-    print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.min.js" type="text/javascript"></script>',
-        "\n";
-    print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/bootstrap.min.js" type="text/javascript"></script>',
-        "\n";
-    print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/login.min.js" type="text/javascript"></script>',
-        "\n";
-    embed_styles();
-    print '</head>', "\n";
 }
 
 sub print_sysstat_link {
@@ -678,15 +636,20 @@ sub print_left_menu {
                 }
 
             }
+            elsif ( $item->{'type'} eq 'html' ) {
+                print '<li class="menu-container menu-status hidden">'
+                    . $item->{'html'} . '</li>';
+            }
             elsif ( $item->{'type'} eq 'cat' ) {
                 my $c = $item->{'id'};
                 if ( $item->{'module'} ne 'mailbox' ) {
                     &print_category( $c, $item->{'desc'} );
                 }
-                print '<ul class="sub" style="display: none;" id="'
+                print
+                    '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
                     . $c . '">' . "\n";
                 print_left_menu( $module, $item->{'members'}, 1, $c );
-                print "</ul>\n";
+                print "</ul></li>\n";
             }
             elsif ( $item->{'type'} eq 'hr' ) {
                 if ( $__hr eq '1' ) {
@@ -804,6 +767,12 @@ sub print_easypie_chart {
         <span class="label">' . $label . '</span>
     </span>';
     print '</div>' . "\n";
+}
+
+sub get_current_user_config {
+    our ($___user)
+        = grep { $_->{'name'} eq $base_remote_user } &acl::list_users();
+    return $___user;
 }
 
 sub get_col_num {
@@ -1006,6 +975,120 @@ sub embed_scripts {
     }
 }
 
+sub embed_footer {
+    my ($type) = @_;
+
+    #if ( $ENV{'SCRIPT_NAME'} ne '/session_login.cgi' ) {
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/authentic.'
+        . ( $type eq 'debug' ? 'src' : 'min' )
+        . '.js?1400" type="text/javascript"></script>' . "\n";
+
+    #}
+}
+
+sub embed_header {
+
+    my ($type) = @_;
+
+    if ( $type eq 'debug' ) {
+
+        my @css = (
+            'bootstrap',         'datepicker',
+            'fontawesome',       'fontawesome-animation',
+            'codemirror',        'jquery.scrollbar',
+            'jquery.datatables', 'jquery.autocomplete',
+            'nprogress',         'select2',
+            'roboto',            'authentic'
+        );
+
+        my @js = (
+            'timeplot',            'jquery',
+            'jquery.scrollbar',    'jquery.autocomplete',
+            'select2',             'icheck',
+            'jquery.purl',         'bootstrap',
+            'datepicker',          'fileinput',
+            'autosizeinput',       'codemirror',
+            'jquery.datatables',   'jquery.datatables.plugins',
+            'jquery.easypiechart', 'tinymce/tinymce',
+            'transition',          'nprogress',
+            'loader'
+        );
+
+        foreach my $css (@css) {
+            print '<link href="'
+                . $gconfig{'webprefix'}
+                . '/unauthenticated/css/'
+                . $css
+                . '.src.css?1400" rel="stylesheet" type="text/css">' . "\n";
+        }
+
+        embed_styles();
+        embed_settings();
+
+        foreach my $js (@js) {
+            print '<script src="'
+                . $gconfig{'webprefix'}
+                . '/unauthenticated/js/'
+                . $js . '.'
+                . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
+                . '.js?1400" type="text/javascript"></script>' . "\n";
+        }
+    }
+    else {
+        print '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/package.min.css?1400" rel="stylesheet" type="text/css">'
+            . "\n";
+
+        embed_styles();
+        embed_settings();
+
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/package.min.js?1400" type="text/javascript"></script>'
+            . "\n";
+
+        if (   &get_module_name() eq 'mailboxes'
+            || &get_module_name() eq 'mailbox' )
+        {
+            print '<script src="'
+                . $gconfig{'webprefix'}
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1400" type="text/javascript"></script>'
+                . "\n";
+        }
+
+    }
+}
+
+sub embed_login_head {
+    print '<head>',                 "\n";
+    print '<title>',                $title, '</title>', "\n";
+    print '<meta charset="utf-8">', "\n";
+    print '<link rel="shortcut icon" href="'
+        . $gconfig{'webprefix'}
+        . '/images/favicon'
+        . (
+        ( &get_product_name() eq 'usermin' )
+        ? '-usermin'
+        : '-webmin'
+        ) . '.ico">' . "\n";
+    print
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+        . "\n";
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/package.min.css?1400" rel="stylesheet" type="text/css">'
+        . "\n";
+    embed_styles();
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/package.min.js?1400" type="text/javascript"></script>'
+        . "\n";
+    print '</head>', "\n";
+}
+
 sub get_authentic_version {
 
     # Get local version
@@ -1038,6 +1121,12 @@ sub get_authentic_version {
     return ( $installed_version, $remote_version );
 }
 
+sub __config_dir_available {
+    if ( !-d $config_directory . '/authentic-theme' ) {
+        mkdir( $config_directory . '/authentic-theme', 0755 );
+    }
+}
+
 sub usermin_available {
     my ($_module) = @_;
     $_module = ( $_module ? '/' . $_module : undef );
@@ -1045,6 +1134,10 @@ sub usermin_available {
     $__usermin_root =~ s/webmin/usermin/;
     $__usermin_config = $config_directory;
     $__usermin_config =~ s/webmin/usermin/;
+
+    if ( !-d $__usermin_config . '/authentic-theme' ) {
+        mkdir( $__usermin_config . '/authentic-theme', 0755 );
+    }
 
     if (   -r $__usermin_root . $_module
         && -r $__usermin_root . '/web-lib-funcs.pl' )
@@ -1108,6 +1201,8 @@ sub _settings {
             'settings_animation_left',
             'true',
             'settings_animation_tabs',
+            'true',
+            'settings_loader_top',
             'true',
             'settings_loader_left',
             'true',
@@ -1195,9 +1290,9 @@ sub _settings {
                     'settings_right_hotkey_custom_options_description')
             ),
             'settings_hotkey_custom_1',
-            'settings-editor_read.cgi',
+            '',
             'settings_hotkey_custom_2',
-            'settings-upload.cgi',
+            '',
             'settings_hotkey_custom_3',
             '',
             'settings_hotkey_custom_4',
@@ -1625,6 +1720,9 @@ sub _settings {
     }
 
     if ( $t eq 'save' || $t eq 'restore' ) {
+
+        __config_dir_available();
+
         if ( $t eq 'save' ) {
             delete @in{ grep( !/^settings_/, keys %in ) };
             for ( values %in ) {s/(.*)/'$1';/}

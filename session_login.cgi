@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -38,11 +38,11 @@ if (   $gconfig{'loginbanner'}
     print "Set-Cookie: banner=1; path=/\r\n";
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html>',          "\n";
-    print_session_login_head();
-    print '<body>' . "\n";
+    print '<html class="session_login">',          "\n";
+    embed_login_head();
+    print '<body class="session_login">' . "\n";
     print
-        '<div class="form-signin-banner container alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
+        '<div class="form-signin-banner container session_login alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
         . "\n";
     $url = $in{'page'};
     open( BANNER, $gconfig{'loginbanner'} );
@@ -71,10 +71,10 @@ print "Set-Cookie: testing=1; path=/$sec\r\n";
 $charset = &get_charset();
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
-print '<html>',          "\n";
-print_session_login_head();
-print '<body>' . "\n";
-print '<div class="container">' . "\n";
+print '<html class="session_login">',          "\n";
+embed_login_head();
+print '<body class="session_login">' . "\n";
+print '<div class="container session_login">' . "\n";
 
 if ( defined( $in{'failed'} ) ) {
     if ( $in{'twofactor_msg'} ) {
@@ -115,7 +115,7 @@ elsif ( $in{'timed_out'} ) {
 }
 print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
-    . '/session_login.cgi" class="form-signin clearfix" role="form">' . "\n";
+    . '/session_login.cgi" class="form-signin session_login clearfix" role="form">' . "\n";
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
      <span>'
@@ -143,7 +143,7 @@ print '<div class="input-group form-group">' . "\n";
 print
     '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>'
     . "\n";
-print '<input type="text" class="form-control" name="user" placeholder="'
+print '<input type="text" class="form-control session_login" name="user" placeholder="'
     . &text('login_user') . '" '
     . $tag
     . ' autofocus>' . "\n";
@@ -152,7 +152,7 @@ print '<div class="input-group form-group">' . "\n";
 print
     '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>'
     . "\n";
-print '<input type="password" class="form-control" name="pass" placeholder="'
+print '<input type="password" class="form-control session_login" name="pass" placeholder="'
     . &text('login_pass') . '"  '
     . $tag . '>' . "\n";
 print '</div>' . "\n";
@@ -163,21 +163,21 @@ if ( $miniserv{'twofactor_provider'} ) {
         '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>'
         . "\n";
     print
-        '<input type="text" class="form-control" name="twofactor" placeholder="'
+        '<input type="text" class="form-control session_login" name="twofactor" placeholder="'
         . &text('login_token')
         . '" autocomplete=off>' . "\n";
     print '</div>' . "\n";
 }
 if ( !$gconfig{'noremember'} ) {
     print
-        '<input type="checkbox" value="1" name="save" id="remember-me" class="remember-me">'
+        '<div class="input-group form-group"><input type="checkbox" value="1" name="save" id="remember-me" class="remember-me session_login">'
         . "\n";
     print '<label class="checkbox remember-me" for="remember-me">' . "\n";
     print '<i class="fa"></i> <span>'
         . $text{'login_save'}
-        . '</span></label>' . "\n";
+        . '</span></label></div>' . "\n";
 }
-
+print '<div class="form-group">';
 if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
     && index( %miniserv->{'anonymous'}, 'virtualmin-password-recovery' )
     > -1 )
@@ -194,8 +194,9 @@ else {
         . '</button>' . "\n";
 }
 print
-    '<button class="btn btn-primary pull-right" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;'
+    '<button class="btn btn-primary pull-right" type="submit" style="margin-top: 0 !important"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;'
     . &text('login_signin')
     . '</button>' . "\n";
+print '</div>';
 print '</form>' . "\n";
 &footer();

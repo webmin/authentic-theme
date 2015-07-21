@@ -1,5 +1,24 @@
 ##Changelog
 
+####Version 14.00 (July 21, 2015)
+
+* Improved page spinners to use no _JavaScript_, adjusted theme colors and font-weights
+* Improved code and performance by combining styles/scripts in a single package and making other custom optimizations
+* Added new date-picker to replace old _JavaScript_ pop-ups
+* Added ability, when editing custom styles/scripts or uploading custom logos, to update page content dynamically, without reload, to immediately display final outlook
+* Added overall loading progress at the top of the page (like _YouTube_ and _Medium_). Can be enabled/disabled in theme settings
+* Added _CodeMirror_ modes bundle, to be loadable on demand to support different file highlights in [_Filemin_](https://github.com/Real-Gecko/filemin/issues/21) (File manager for _Webmin_) written in _Perl_ (without use of _Java_))
+* Added locales to _TinyMCE_
+* Updated _CodeMirror_ and _TinyMCE_
+* Fixed theme HTML output to be more validator friendly
+* Fixed missing status label on managed system in _Cloudmin_ (thanks to _Jamie Cameron_ for reporting it)
+* Fixed _JavaScript_ history step back button in _Webmin_
+* Fixed _CodeMirror_ problem in _ConfigServer Security & Firewall_ module [#199](https://github.com/qooob/authentic-theme/issues/199)
+* Fixed issues with _Server Index_ module [#182](https://github.com/qooob/authentic-theme/issues/182), [#201](https://github.com/qooob/authentic-theme/issues/201)
+* Fixed an issue in _MySQL/PostgreSQL Database Server_ modules, when trying to view/edit table rows [#200](https://github.com/qooob/authentic-theme/issues/200)
+* Fixed an issue to make theme properly run when using `no_frame_options=1` option [#204](https://github.com/qooob/authentic-theme/issues/204)
+* Fixed dozens of other bugs
+
 ####Version 13.10 (June 30, 2015)
 * Added an option to _disable all animation_ on the left menu and on tabs [#192](https://github.com/qooob/authentic-theme/issues/192)
 * Added `autofocus` on input field in _Command Shell_ module [#190](https://github.com/qooob/authentic-theme/issues/190)
