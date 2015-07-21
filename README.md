@@ -76,7 +76,7 @@ There is no need to take any additional actions. In case _Virtualmin_ or _Cloudm
 Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can set custom _logos_, _styles_ and _scripts_.
 
 ####How do I make the theme load faster?
-_Webmin_ has in-built option to compress static files. It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting correlated option to `Use pre-compressed file and compress dynamically`.
+_Webmin_ has in-built option to compress static files.  It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting _Gzip compress static files_ option to _Use pre-compressed file and compress dynamically_.
 
 ###Troubleshoot
 1. Automatic updates notification feature doesn't work or `Can't locate Net/SSLeay.pm in ..)`<br>
