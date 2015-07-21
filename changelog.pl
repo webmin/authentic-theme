@@ -18,7 +18,7 @@ our $__changelog
 
                 <ul>
 
-                  <li>Improved page spinners to use no <em> JavaScript</em> , adjusted theme colors and font-weights</li>
+                  <li>Improved page spinners to use no <em> JavaScript</em>, adjusted theme colors and font-weights</li>
                   <li>Improved code and performance by combining styles/scripts in a single package and making other custom optimizations</li>
                   <li>Added new date-picker to replace old <em> JavaScript</em>  pop-ups</li>
                   <li>Added ability, when editing custom styles/scripts or uploading custom logos, to update page content dynamically, without reload, to immediately display final outlook</li>
