@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -26,7 +26,7 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
             || ( $c && $c->{'unused'} && $show_unused ) )
         {
             &print_category( $c->{'code'}, $c->{'desc'} );
-            print '<ul class="sub" style="display: none;" id="'
+            print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 if ( $minfo->{'dir'} eq 'webmin' ) {
@@ -41,7 +41,7 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
                         $minfo->{'desc'}, undef );
                 }
             }
-            print '</ul>' . "\n";
+            print '</ul></li>' . "\n";
         }
         elsif ( $gconfig{"notabs_${base_remote_user}"} eq '2' ) {
             foreach my $minfo ( @{ $c->{'modules'} } ) {
@@ -112,7 +112,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
 
                 &print_category( $c, $incat[0]->{'catname'} );
 
-                print '<ul class="sub" style="display: none;" id="'
+                print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
                     . $c . '">' . "\n";
                 foreach my $l (@incat) {
 
@@ -135,7 +135,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
                     &print_category_link( $l->{'url'}, $l->{'title'}, undef );
 
                 }
-                print '</ul>' . "\n";
+                print '</ul></li>' . "\n";
             }
         }
 

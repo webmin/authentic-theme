@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 13.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,6 +13,7 @@ use WebminCore;
 &switch_to_remote_user();
 
 do "authentic-theme/authentic-lib.cgi";
+__config_dir_available();
 
 if ( usermin_available() ) {
     ( our $_usermin_config_directory = $config_directory )
@@ -85,4 +86,8 @@ elsif ( $in{'unauthenticated_logo'} ne "true" ) {
                 . "/authentic-theme/logo_welcome.png" );
     }
 }
+
+copy_source_dest( $config_directory . "/authentic-theme/" . $logo . ".png",
+    $root_directory . "/authentic-theme/images" );
+
 &redirect('settings-upload.cgi?saved=1');
