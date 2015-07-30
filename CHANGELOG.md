@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 14.01 (July 31, 2015)
+* Added _CodeMirror_ automatic mode (highlight syntax) detection for all file-editors
+* Added support for [_Filemin_](https://github.com/Real-Gecko/filemin) file-editor and improved general support for this module
+* Fixed multiple bugs [#205](https://github.com/qooob/authentic-theme/issues/205), [#206](https://github.com/qooob/authentic-theme/issues/206), [#207](https://github.com/qooob/authentic-theme/issues/207), [#209](https://github.com/qooob/authentic-theme/issues/209)
+
 ####Version 14.00 (July 21, 2015)
 
 * Improved page spinners to use no _JavaScript_, adjusted theme colors and font-weights
