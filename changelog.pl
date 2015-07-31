@@ -1,5 +1,5 @@
 #
-# Authentic Theme 14.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,13 +14,15 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 14.00 -14.01 (July 30, 2015)</h4>
+                <h4>Version 14.00 -14.02 (July 31, 2015)</h4>
 
                 <ul>
 
+                  <li>Fixed unrealistic bug <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/211" target="_blank">#211</a><hr></li>
+
                   <li>Added <em>CodeMirror</em> automatic mode (highlight syntax) detection for all file-editors</li>
                   <li>Added support for <em> <a target="_blank" href="https://github.com/Real-Gecko/filemin">Filemin</a></em> file-editor and improved general support for this module</li>
-                  <li>Fixed multiple bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/205" target="_blank">#205</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/206" target="_blank">#206</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/207" target="_blank">#207</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/209" target="_blank">#209</a><hr></li>
+                  <li>Fixed multiple bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/205" target="_blank">#205</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/206" target="_blank">#206</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/207" target="_blank">#207</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/209" target="_blank">#209</a></li>
 
                   <li>Improved page spinners to use no <em> JavaScript</em>, adjusted theme colors and font-weights</li>
                   <li>Improved code and performance by combining styles/scripts in a single package and making other custom optimizations</li>
