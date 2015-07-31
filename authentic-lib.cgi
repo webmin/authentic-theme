@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 14.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -983,7 +983,7 @@ sub embed_footer {
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/authentic.'
         . ( $type eq 'debug' ? 'src' : 'min' )
-        . '.js?1401" type="text/javascript"></script>' . "\n";
+        . '.js?1402" type="text/javascript"></script>' . "\n";
 
     #}
 }
@@ -1021,7 +1021,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1401" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1402" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1033,37 +1033,37 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1401" type="text/javascript"></script>' . "\n";
+                . '.js?1402" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1401" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1402" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
         embed_settings();
 
-        if (index( $ENV{'REQUEST_URI'}, '/virtual-server/history.cgi' != -1 )
-            || index( $ENV{'REQUEST_URI'},
-                '/server-manager/bwgraph.cgi' != -1 )
-            || index( $ENV{'REQUEST_URI'},
-                '/server-manager/history.cgi' != -1 )
-            || index(
-                $ENV{'REQUEST_URI'}, '/server-manager/one_history.cgi' != -1
-            )
+        if (
+            index( $ENV{'REQUEST_URI'}, '/virtual-server/history.cgi' ) != -1
+            ||
+            index( $ENV{'REQUEST_URI'}, '/server-manager/bwgraph.cgi' ) != -1
+            ||
+            index( $ENV{'REQUEST_URI'}, '/server-manager/history.cgi' ) != -1
+            ||
+            index( $ENV{'REQUEST_URI'}, '/server-manager/one_history.cgi' ) != -1
             )
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1401" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1402" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1401" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1402" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1071,7 +1071,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1401" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1402" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1095,12 +1095,12 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1401" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1402" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1401" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1402" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
