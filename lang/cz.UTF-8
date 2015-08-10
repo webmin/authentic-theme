@@ -1,0 +1,216 @@
+body_cp=CPU
+body_cpu=Průměrná zátěž CPU
+body_cpuinfo=Informace o procesoru
+body_cputemps=Teploty CPU
+body_cputype=$5, $8 jader
+body_disk=Diskový prostor
+body_driveerr=$1 chyb!
+body_drivefailed=Kontrola SMART selhala!
+body_drivetemps=Teploty disků
+body_firewall=Verze firewallu
+body_header0=Informace o systému
+body_header1=Informace o účtu
+body_host=Název systému
+body_kernel=Jádro a architektura
+body_kernelon=$1 $2 na $3
+body_load=$1 (1 minuta) $2 (5 minut) $3 (15 minut)
+body_os=Operační systém
+body_procs=Běžící procesy
+body_real=Operační paměť
+body_time=Čas systému
+body_updates=Aktualizace balíčků
+body_updays=$1 dní, $2 hodin, $3 minut
+body_uphours=$1 hodin, $2 minut
+body_upmins=$1 minut
+body_upneed=K dispozici je aktualizace $1 balíčků
+body_upok=Všechny nainstalované balíčky jsou aktuální
+body_upsec=K dispozici je aktualizace $1 balíčků, přičemž $2 z nich jsou bezpečnostní
+body_uptime=Doba běhu systému
+body_used=$1 celkem / $2 použité
+body_used_and_free=$1 celkem / $2 volné / $3 použité
+body_usermin=Verze Userminu
+body_virt=Virtuální paměť
+body_webmin=Verze Webminu
+
+left_feedback=Poslat zpětnou vazbu
+left_home=Informace o systému
+left_others=Ostatní
+left_refresh_modules=Obnovit moduly
+left_search=Hledat
+left_statistics=Statistiky systému
+left_virtualmin_create=Vytvořit virtuální server
+left_virtualmin_list=Vypsat virtuální servery
+
+login_danger=Nebezpečí!
+login_message=Pro přihlášení na server musíte zadat uživatelské jméno a heslo
+login_pass=Heslo
+login_reset=Reset
+login_save=Pamatuj si mě
+login_signin=Přihlásit
+login_success=Úspěch!
+login_token=Token
+login_user=Uživatelské jméno
+login_warning=Varování!
+
+right_aliases=Alias servery
+right_bw=Využití šířky pásma a omezení
+right_dom=Název serveru
+right_faliases=Emailové aliasy
+right_fdbs=Databáze
+right_fdoms=Virtuální servery
+right_from=Přihlášen z
+right_fusers2=Uživatelé FTP
+right_fusers=Uživatelé Mail/FTP
+right_fvm2=Virtuální stroje
+right_fweb=Virtuální weby
+right_licenceheader_vm2=Licence pro Cloudmin
+right_login=Přihlášen jako
+right_not=Nenainstalováno
+right_of=$1 z $2
+right_quota=Využití disků a kvóty
+right_reselip=(Přeprodejce $1)
+right_sharedip=(Sdílená IP)
+right_slcheck=Překontrolovat licenci Cloudminu
+right_subs=Pod-servery
+right_virtdocs2=Doplňující dokumentace
+right_virtualmin=Verze Virtualminu
+right_vlcheck=Překontrolovat licenci Virtualminu
+right_vm2=Verze Cloudminu
+
+session_failed=Přihlášení se nezdařilo. Zkuste to prosím znovu.
+session_logout=Odhlášení úspěšné. Pro opětovné přihlášení využijte formulář níže.
+session_timed_out=Platnost sezení vypršela po $1 minutách neaktivity.
+session_twofailed=Dvou-faktorová autentizace selhala: $1
+
+
+
+
+
+
+
+
+
+
+settings_right_options=Nastavení
+settings_right_restore_defaults=Obnovit výchozí
+settings_right_restored=Obnoveno
+settings_right_restoring=Obnovuji
+settings_right_saved=Uloženo
+settings_right_saving=Ukládám
+
+settings_right_theme_extensions=Rozšíření tématu
+settings_right_theme_extensions_title=Rozšíření tématu
+settings_right_file_edit=Upravit soubor rozšíření:
+settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.  There is already built extensions, that you can <a href="https://github.com/qooob/authentic-theme-extensions" target="_blank">download</a> and use. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
+
+settings_right_theme_logos=Theme logos
+settings_right_theme_logos_title=Theme Logos
+settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
+settings_right_logo_authenticated_users=Logo for authenticated users
+settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+
+settings_right_current_theme=Current theme
+settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
+settings_right_theme_configuration_title=Authentic Theme Configuration
+settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+
+
+settings_right_window_options_title=Window options
+settings_right_navigation_menu_title=Navigation menu options
+settings_right_table_options_title=Table options
+settings_security_title=Security Alerts options
+settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_right_hotkey_options_title=Hotkey options
+settings_right_sysinfo_page_options_title=System Information page options
+
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the begining and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
+settings_hotkey_custom_1=Custom link <code>1</code>
+settings_hotkey_custom_2=Custom link <code>2</code>
+settings_hotkey_custom_3=Custom link <code>3</code>
+settings_hotkey_custom_4=Custom link <code>4</code>
+settings_hotkey_custom_5=Custom link <code>5</code>
+settings_hotkey_custom_6=Custom link <code>6</code>
+settings_hotkey_custom_7=Custom link <code>7</code>
+settings_hotkey_custom_8=Custom link <code>8</code>
+settings_hotkey_custom_9=Custom link <code>9</code>
+
+settings_loader_left=Enable spinner for navigation menu
+settings_loader_right=Enable spinner for content page
+settings_right_reload=Load default content page
+settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+
+settings_right_hide_table_icons=Hide table icons for the right frame
+settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
+settings_right_small_table_icons=Small table icons
+settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
+settings_right_xsmall_table_icons=Extra small table icons
+settings_right_xsmall_table_icons_description=Substitute standard size table icons with extra small ones and display icon's link using tooltip
+settings_right_animate_table_icons=Animate table icons on focus
+settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+
+settings_right_iconize_header_links=Replace table header's links with icons
+settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
+
+settings_window_autoscroll=Automatic window scroll
+settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
+
+settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
+
+settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
+settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_leftmenu_button_language=Show language button
+settings_leftmenu_button_refresh=Show refresh button
+
+settings_theme_options_button=Show theme settings button
+
+settings_hotkeys_active=Enable hotkeys usage
+settings_hotkey_toggle_modifier=Hotkeys modifier
+settings_hotkey_toggle_key_webmin=Hotkey for Webmin
+settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
+settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
+settings_hotkey_toggle_key_usermin=Hotkey for Usermin
+settings_hotkey_toggle_key_webmail=Hotkey for Mail
+settings_hotkey_sysinfo=Hotkey for System Information
+settings_hotkey_focus_search=Hotkey for search field
+settings_hotkey_reload=Hotkey for page reload
+
+settings_security_notify_on_pre_login_request=Notify when pre-login banner is displayed for unauthenticated user
+settings_security_notify_on_login_request=Notify when unauthenticated user has accessed login page
+settings_security_notify_on_login_success=Notify on successful user authentication
+
+settings_sysinfo_easypie_charts=Show charts
+settings_sysinfo_theme_updates=Check for Authentic Theme updates
+settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
+settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
+settings_sysinfo_expand_all_accordions=Make all accordions expanded
+settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
+settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
+
+settings_right_page_defaults_title=Výchozí stránky
+settings_right_default_tab_webmin=Výchozí záložka po přihlášení do Webminu
+settings_right_default_tab_usermin=Výchozí záložka po přihlášení do Userminu
+settings_right_virtualmin_default=Výchozí stránka Virtualminu
+settings_right_cloudmin_default=Výchozí stránka Cloudminu
+
+settings_leftmenu_vm_installscripts=Zobrazit ve Virtualminu odkaz na <kbd>Install Scripts</kbd>
+settings_leftmenu_vm_webpages=Zobrazit ve Virtualminu odkaz na <kbd>Edit Web Pages</kbd>
+settings_leftmenu_vm_backup_amazon=Zobrazit ve Virtualminu odkaz na <kbd>Amazon S3 Buckets</kbd>
+
+
+
+
+
+
+
+
+
+theme_changelog=Seznam změn
+theme_conference=Theme Conference
+theme_development_support=Podpora vývoje
+theme_donate=Přispět
+theme_download=Stáhnout
+theme_name=Authentic Theme
+theme_update=Aktualizovat
+theme_update_available=Nejnovější dostupná verze
+theme_update_notice=Poznámky k vydání
+theme_version=Verze tématu
