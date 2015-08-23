@@ -1,6 +1,6 @@
 ##Changelog
 
-####Version 15.00 (August 23, 2015, Happy Birthday Release - 1 year old :birthday:)
+####Version 15.00 (August 23, 2015) &nbsp;&nbsp; :birthday:
 * Improved and optimized theme's _speed_ and _display_ options
 * Added a new feature of adding any right side page to global _Favorites_ [#210](https://github.com/qooob/authentic-theme/issues/210)
 * Added complete _AJAX_ support for _Filemin_ (by__Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
@@ -8,7 +8,7 @@
 * Added CZ language, thanks to [stuchy3](https://github.com/stuchy3)
 * Fixed sorting issue by file-size in _Filemin_ and other modules, where file-size like sorting is used
 * Fixed link for _System Statistics_ in _Cloudmin_
-* Fixed multiple bugs [#223](https://github.com/qooob/authentic-theme/issues/223) [#213](https://github.com/qooob/authentic-theme/issues/213) [#214](https://github.com/qooob/authentic-theme/issues/214) [#220](https://github.com/qooob/authentic-theme/issues/220)
+* Fixed multiple bugs [#213](https://github.com/qooob/authentic-theme/issues/213) [#214](https://github.com/qooob/authentic-theme/issues/214) [#220](https://github.com/qooob/authentic-theme/issues/220) [#223](https://github.com/qooob/authentic-theme/issues/223)
 * Fixed and made dozens of unmentioned bugs/improvements
 
 ####Version 14.02 (July 31, 2015)
