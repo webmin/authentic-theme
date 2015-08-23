@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -168,6 +168,16 @@ sub print_switch_webmin {
         . ucfirst( &get_product_name() ) . '</span></label>';
 }
 
+sub print_switch_dashboard {
+    my ($dynamic) = @_;
+    print '<input'
+        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
+        . ' id="open_dashboard" name="product-switcher" type="radio"'
+        . ( $is_dashboard != -1 ? " checked" : "" ) . '>
+          <label for="open_dashboard">
+          <i class="fa fa-stack fa-tachometer" style="margin-bottom: -1px; font-size: 1.1em;"></i><span>Dashboard</span></label>';
+}
+
 sub print_switch_virtualmin {
     my ($dynamic) = @_;
     print '<input'
@@ -195,7 +205,7 @@ sub print_switch_webmail {
         . ' id="open_webmail" name="product-switcher" type="radio"'
         . ( $is_webmail != -1 ? " checked" : "" ) . '>
           <label for="open_webmail">
-          <i class="fa fa-envelope"></i>
+          <i class="fa fa-stack fa-envelope"></i>
           <span>Mail</span></label>';
 }
 
@@ -216,14 +226,31 @@ sub print_category_link {
     print '</li>' . "\n";
 }
 
+sub dashboard_switch {
+    my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
+    if (   !&foreign_available("virtual-server")
+        && !&foreign_available("server-manager")
+        && &get_product_name() ne 'usermin'
+        || $level eq '2' )
+    {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
 sub print_sysinfo_link {
-    print '<li><a target="page" data-href="'
-        . $gconfig{'webprefix'}
-        . '/sysinfo.cgi" class="navigation_module_trigger'
-        . ( __settings('settings_sysinfo_link_mini') ne 'false' && ' hidden' )
-        . '"><i class="fa fa-fw fa-info"></i> <span>'
-        . $text{'left_home'}
-        . '</span></a></li>' . "\n";
+    if ( dashboard_switch() ne '1' ) {
+        print '<li><a target="page" data-href="'
+            . $gconfig{'webprefix'}
+            . '/sysinfo.cgi" class="navigation_module_trigger'
+            . ( __settings('settings_sysinfo_link_mini') ne 'false'
+                && ' hidden' )
+            . '"><i class="fa fa-fw fa-info"></i> <span>'
+            . $text{'left_home'}
+            . '</span></a></li>' . "\n";
+    }
 }
 
 sub print_sysinfo_warning {
@@ -384,15 +411,28 @@ sub print_extended_sysinfo {
 }
 
 sub print_sysstat_link {
-    if (   $virtual_server::module_info{'virtualmin'} eq 'pro'
-        && $virtual_server_access_level eq '0'
-        && ( -d $root_directory . "/virtual-server/timeplot" ) )
+    my $link;
+    if ( $virtual_server_access_level eq '0'
+        && ( $is_cloudmin != -1 || $is_virtualmin != -1 ) )
     {
-        print '<li><a target="page" data-href="'
-            . $gconfig{'webprefix'}
-            . '/virtual-server/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>'
-            . $text{'left_statistics'}
-            . '</span></a></li>' . "\n";
+        if ( $is_cloudmin == -1
+            && -d $root_directory . "/virtual-server/timeplot" )
+        {
+            $link = 'virtual-server';
+        }
+        elsif ( $is_cloudmin != -1
+            && -d $root_directory . "/server-manager/timeplot" )
+        {
+            $link = 'server-manager';
+        }
+        if ($link) {
+            print '<li><a target="page" data-href="'
+                . $gconfig{'webprefix'} . '/'
+                . $link
+                . '/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>'
+                . $text{'left_statistics'}
+                . '</span></a></li>' . "\n";
+        }
     }
 }
 
@@ -801,6 +841,70 @@ sub print_table_row {
     print '</tr>' . "\n";
 }
 
+sub print_favorites {
+
+    my $f = &read_file_contents(
+        $config_directory . "/authentic-theme/favorites.json" );
+
+    print '
+    <div id="favorites-menu">
+        <div class="favorites-menu-outer">
+            <nav class="favorites-menu">
+                <ul class="favorites-menu-content ui-sortable">
+                    <li class="menu-exclude exclude favorites-title">
+                        <h1><i class="fa fa-star-o"></i>&nbsp;&nbsp;'
+        . $text{'left_favorites'}
+        . '<sup style="position: absolute; margin: 25px 0 0 -10px;" class="hidden">&nbsp;&nbsp;<small class="text-white"> <a href="'
+        . $gconfig{'webprefix'}
+        . '/settings-editor_read.cgi?file='
+        . $config_directory
+        . '/authentic-theme/favorites.json" target="page" class="fa fa-pencil-square-o'
+        . ( $f =~ m/"favorites":/ ? '' : ' hidden' )
+        . '" style="display: inline; font-size: 1em;"></a></small></sup></h1>
+                    </li>
+    ';
+
+    if ( $f && $f =~ m/"favorites":/ ) {
+        $fc = decode_json( $f =~ /\{(?:\{.*\}|[^{])*\}/sg );
+        foreach my $favorite ( @{ $fc->{'favorites'} } ) {
+            if ( length( $favorite->{"link"} ) ) {
+                print '
+                    <li class="menu-exclude ui-sortable-handle">
+                        <a class="menu-exclude-link" target="page" href="'
+                    . $favorite->{"link"}
+                    . '"><i data-product="'
+                    . $favorite->{"icon"}
+                    . '" class="wbm-'
+                    . $favorite->{"icon"}
+                    . ' wbm-sm">&nbsp;</i><span class="f__c">
+                            ' . $favorite->{"title"} . '
+                        &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-times"></i></small></span></a>
+                    </li>
+              ';
+            }
+        }
+    }
+    print '
+                <li class="menu-exclude exclude favorites-no-message'
+        . ( $f !~ m/"favorites":/ ? '' : ' hidden' ) . '">
+                    <span>' . $text{'left_favorites_no'} . '</span>
+                </li>
+        ';
+
+    print '
+                </ul>
+            </nav>
+        </div>
+        <a class="favorites-menu-close">
+            <div class="favorites-menu-icon">
+                <div class="favorites-menu-bar"></div>
+                <div class="favorites-menu-bar"></div>
+            </div>
+        </a>
+    </div>
+    ';
+}
+
 sub get_virtualmin_user_level {
     local ( $hasvirt, $hasvm2, $level );
     $hasvm2  = &foreign_available("server-manager");
@@ -880,7 +984,7 @@ sub embed_logo {
                 $config_directory . "/authentic-theme/" . $logo . ".png",
                 $root_directory . "/authentic-theme/images" );
         }
-        print '<div class="__logo _' . $logo . '">';
+        print '<div class="__' . $logo . ' _' . $logo . '">';
         print '<img src="'
             . $gconfig{'webprefix'}
             . '/images/'
@@ -977,15 +1081,11 @@ sub embed_scripts {
 
 sub embed_footer {
     my ($type) = @_;
-
-    #if ( $ENV{'SCRIPT_NAME'} ne '/session_login.cgi' ) {
     print '<script src="'
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/authentic.'
         . ( $type eq 'debug' ? 'src' : 'min' )
-        . '.js?1402" type="text/javascript"></script>' . "\n";
-
-    #}
+        . '.js?1500" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
 }
 
 sub embed_header {
@@ -999,20 +1099,22 @@ sub embed_header {
             'fontawesome',       'fontawesome-animation',
             'codemirror',        'jquery.scrollbar',
             'jquery.datatables', 'jquery.autocomplete',
-            'nprogress',         'select2',
-            'roboto',            'authentic'
+            'nprogress',         'messenger',
+            'select2',           'roboto',
+            'authentic'
         );
 
         my @js = (
-            'timeplot',            'jquery',
-            'jquery.scrollbar',    'jquery.autocomplete',
-            'select2',             'icheck',
-            'jquery.purl',         'bootstrap',
-            'datepicker',          'fileinput',
-            'autosizeinput',       'codemirror',
-            'jquery.datatables',   'jquery.datatables.plugins',
-            'jquery.easypiechart', 'tinymce/tinymce',
-            'transition',          'nprogress',
+            'timeplot',                  'jquery',
+            'jquery-ui',                 'jquery.scrollbar',
+            'jquery.autocomplete',       'select2',
+            'icheck',                    'jquery.purl',
+            'bootstrap',                 'datepicker',
+            'fileinput',                 'autosizeinput',
+            'codemirror',                'jquery.datatables',
+            'jquery.datatables.plugins', 'jquery.easypiechart',
+            'tinymce/tinymce',           'transition',
+            'nprogress',                 'messenger',
             'loader'
         );
 
@@ -1021,7 +1123,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1402" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1500" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1033,37 +1135,35 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1402" type="text/javascript"></script>' . "\n";
+                . '.js?1500" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1402" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1500" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
         embed_settings();
 
-        if (
-            index( $ENV{'REQUEST_URI'}, '/virtual-server/history.cgi' ) != -1
-            ||
-            index( $ENV{'REQUEST_URI'}, '/server-manager/bwgraph.cgi' ) != -1
-            ||
-            index( $ENV{'REQUEST_URI'}, '/server-manager/history.cgi' ) != -1
-            ||
-            index( $ENV{'REQUEST_URI'}, '/server-manager/one_history.cgi' ) != -1
-            )
+        if (index( $ENV{'REQUEST_URI'}, '/virtual-server/history.cgi' ) != -1
+            || index( $ENV{'REQUEST_URI'}, '/server-manager/bwgraph.cgi' )
+            != -1
+            || index( $ENV{'REQUEST_URI'}, '/server-manager/history.cgi' )
+            != -1
+            || index( $ENV{'REQUEST_URI'}, '/server-manager/one_history.cgi' )
+            != -1 )
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1402" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1500" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1402" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1500" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1071,7 +1171,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1402" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1500" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1095,12 +1195,12 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1402" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1500" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1402" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1500" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1242,6 +1342,8 @@ sub _settings {
             'false',
             'settings_sysinfo_link_mini',
             'true',
+            'settings_favorites',
+            'true',
             'settings_leftmenu_button_language',
             'false',
             'settings_leftmenu_button_refresh',
@@ -1294,6 +1396,8 @@ sub _settings {
             'm',
             'settings_hotkey_sysinfo',
             'i',
+            'settings_hotkey_favorites',
+            'f',
             'settings_hotkey_focus_search',
             's',
             'settings_hotkey_reload',
@@ -1461,11 +1565,12 @@ sub _settings {
     }
 
     if ( $t eq 'fa' ) {
-        return
-              '<i class="fa fa-'
-            . $k
-            . '" style="vertical-align: text-bottom !important;">&nbsp;&nbsp;</i>'
-            . $v;
+        return $v;
+
+      #   '<i class="fa fa-'
+      # . $k
+      # . '" style="vertical-align: text-bottom !important;">&nbsp;&nbsp;</i>'
+      # . $v;
     }
 
     if ( $t eq 'header' ) {
@@ -1517,15 +1622,15 @@ sub _settings {
         }
         return '
             <tr>
-                <td class="col_label atssection"><span>'
-            . $k
-            . '</span>'
+                <td colspan="2" class="col_value'
+            . ( $k ? ' col_header ' : '' )
+            . ' atssection"><b>'
+            . $k . '</b>'
             . ( $v
                 && '<br><div class="smaller text-normal no-padding">'
                 . $v
                 . '</div>' )
             . '</td>
-                <td class="col_value atssection"></td>
             </tr>
         ';
     }
@@ -1567,21 +1672,24 @@ sub _settings {
             || index( $k, 'settings_hotkey_toggle_key_' ) != -1
             || $k eq 'settings_hotkey_focus_search'
             || $k eq 'settings_hotkey_reload'
-            || $k eq 'settings_hotkey_sysinfo' )
+            || $k eq 'settings_hotkey_sysinfo'
+            || $k eq 'settings_hotkey_favorites' )
         {
 
             my $width
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
                     || $k eq 'settings_hotkey_reload'
-                    || $k eq 'settings_hotkey_sysinfo' )
+                    || $k eq 'settings_hotkey_sysinfo'
+                    || $k eq 'settings_hotkey_favorites' )
                 ? ' width: 31px; '
                 : ' width: 95%; ';
             my $max_length
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
                     || $k eq 'settings_hotkey_reload'
-                    || $k eq 'settings_hotkey_sysinfo' )
+                    || $k eq 'settings_hotkey_sysinfo'
+                    || $k eq 'settings_hotkey_favorites' )
                 ? ' maxlength="1"'
                 : ' ';
 

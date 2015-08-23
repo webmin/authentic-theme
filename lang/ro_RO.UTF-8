@@ -32,6 +32,8 @@ body_usermin=Versiunea Usermin
 body_virt=Memorie Virtuală
 body_webmin=Versiunea Webmin
 
+left_favorites=Favorites
+left_favorites_no=There were no favorites added yet...
 left_feedback=Trimite Feedback
 left_home=Informații despre Sistem
 left_others=Altele
@@ -161,6 +163,7 @@ settings_window_customized_checkboxes_and_radios=Activează bife checkbox și bi
 
 settings_leftmenu_section_hide_refresh_modules=Ascunde linkul <kbd>Împrospătează Module</kbd>
 settings_leftmenu_section_hide_unused_modules=Ascunde linkul <kbd>Module Neutilizate</kbd>
+settings_favorites=Show favorites button
 settings_leftmenu_button_language=Atată butonul limbi
 settings_leftmenu_button_refresh=Arată butonul reîmprospătare
 
@@ -174,6 +177,7 @@ settings_hotkey_toggle_key_cloudmin=Tastă Rapidă pentru Cloudmin
 settings_hotkey_toggle_key_usermin=Tastă Rapidă pentru Usermin
 settings_hotkey_toggle_key_webmail=Tastă Rapidă pentru Mail
 settings_hotkey_sysinfo=Tastă Rapidă pentru Informații de Sistem
+settings_hotkey_favorites=Hotkey for Favorites
 settings_hotkey_focus_search=Tastă Rapidă pentru câmpul de căutare
 settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
 

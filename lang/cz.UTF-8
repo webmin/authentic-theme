@@ -1,0 +1,220 @@
+body_cp=CPU
+body_cpu=Průměrná zátěž CPU
+body_cpuinfo=Informace o procesoru
+body_cputemps=Teploty CPU
+body_cputype=$5, $8 jader
+body_disk=Diskový prostor
+body_driveerr=$1 chyb!
+body_drivefailed=Kontrola SMART selhala!
+body_drivetemps=Teploty disků
+body_firewall=Verze firewallu
+body_header0=Informace o systému
+body_header1=Informace o účtu
+body_host=Název systému
+body_kernel=Jádro a architektura
+body_kernelon=$1 $2 na $3
+body_load=$1 (1 minuta) $2 (5 minut) $3 (15 minut)
+body_os=Operační systém
+body_procs=Běžící procesy
+body_real=Operační paměť
+body_time=Čas systému
+body_updates=Aktualizace balíčků
+body_updays=$1 dní, $2 hodin, $3 minut
+body_uphours=$1 hodin, $2 minut
+body_upmins=$1 minut
+body_upneed=K dispozici je aktualizace $1 balíčků
+body_upok=Všechny nainstalované balíčky jsou aktuální
+body_upsec=K dispozici je aktualizace $1 balíčků, přičemž $2 z nich jsou bezpečnostní
+body_uptime=Doba běhu systému
+body_used=$1 celkem / $2 použité
+body_used_and_free=$1 celkem / $2 volné / $3 použité
+body_usermin=Verze Userminu
+body_virt=Virtuální paměť
+body_webmin=Verze Webminu
+
+left_favorites=Favorites
+left_favorites_no=There were no favorites added yet...
+left_feedback=Poslat zpětnou vazbu
+left_home=Informace o systému
+left_others=Ostatní
+left_refresh_modules=Obnovit moduly
+left_search=Hledat
+left_statistics=Statistiky systému
+left_virtualmin_create=Vytvořit virtuální server
+left_virtualmin_list=Vypsat virtuální servery
+
+login_danger=Nebezpečí!
+login_message=Pro přihlášení na server musíte zadat uživatelské jméno a heslo
+login_pass=Heslo
+login_reset=Reset
+login_save=Pamatuj si mě
+login_signin=Přihlásit
+login_success=Úspěch!
+login_token=Token
+login_user=Uživatelské jméno
+login_warning=Varování!
+
+right_aliases=Alias servery
+right_bw=Využití šířky pásma a omezení
+right_dom=Název serveru
+right_faliases=Emailové aliasy
+right_fdbs=Databáze
+right_fdoms=Virtuální servery
+right_from=Přihlášen z
+right_fusers2=Uživatelé FTP
+right_fusers=Uživatelé Mail/FTP
+right_fvm2=Virtuální stroje
+right_fweb=Virtuální weby
+right_licenceheader_vm2=Licence pro Cloudmin
+right_login=Přihlášen jako
+right_not=Nenainstalováno
+right_of=$1 z $2
+right_quota=Využití disků a kvóty
+right_reselip=(Přeprodejce $1)
+right_sharedip=(Sdílená IP)
+right_slcheck=Překontrolovat licenci Cloudminu
+right_subs=Pod-servery
+right_virtdocs2=Doplňující dokumentace
+right_virtualmin=Verze Virtualminu
+right_vlcheck=Překontrolovat licenci Virtualminu
+right_vm2=Verze Cloudminu
+
+session_failed=Přihlášení se nezdařilo. Zkuste to prosím znovu.
+session_logout=Odhlášení úspěšné. Pro opětovné přihlášení využijte formulář níže.
+session_timed_out=Platnost sezení vypršela po $1 minutách neaktivity.
+session_twofailed=Dvou-faktorová autentizace selhala: $1
+
+
+
+
+
+
+
+
+
+
+settings_right_options=Nastavení
+settings_right_restore_defaults=Obnovit výchozí
+settings_right_restored=Obnoveno
+settings_right_restoring=Obnovuji
+settings_right_saved=Uloženo
+settings_right_saving=Ukládám
+
+settings_right_theme_extensions=Rozšíření tématu
+settings_right_theme_extensions_title=Rozšíření tématu
+settings_right_file_edit=Upravit soubor rozšíření:
+settings_right_extensions_title=Struktura tohoto tématu umožňuje jednoduchou manipulaci s příslušnými částmi rozhraní.  Již existuje připravené rozšíření, které je možné <a href="https://github.com/qooob/authentic-theme-extensions" target="_blank">stáhnout</a> a používat. Při psaní rozšiřujících <em>stylů</em>/<em>skriptů</em> je možné přistupovat jak k <em>CSS</em>, tak i k <em>JavaScriptu</em>. Následují jednoduché ukázky, které by měly usnadnit pochopení základní myšlenky psaní rozšíření. Například pro změnu barvy pozadí, přidejte následující styl do CSS rozšíření: <code>body {background-color: Gainsboro}</code>. Pro změnu šířky potvrzovacího tlačítka lze využít JavaScriptové rozšíření například takto: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. Avšak v praxi budou úpravy jistě mnohem komplikovanější než tyto ukázky.
+
+settings_right_theme_logos=Loga tématu
+settings_right_theme_logos_title=Loga tématu
+settings_right_logos_title=Zde lze nastavit loga tématu jak pro autentizované, tak pro neautentizované uživatele. Doporučená velikost loga je <kbd>180x90</kbd> pixelů a jediný podporovaný formát je <kbd>.png</kbd>, aby bylo možné zachovat průhledný alfa kanál. Jakmile je logo nastavené, můžete s ním dále pracovat pomocí <a href="/settings-editor_read.cgi"><em>CSS</em></a> a <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScriptu</em></a>. K logu lze přistupovat přes jeho class-name, které jsou <code>._logo</code>, <code>._logo_welcome</code>, <em>authenticated</em> a <em>unauthenticated</em>.
+settings_right_logo_authenticated_users=Logo pro autentizované uživatele
+settings_right_logo_unauthenticated_users=Logo pro neautentizované uživatele
+
+settings_right_current_theme=Aktuální téma
+settings_right_title=Tato stránka umožňuje upravit nastavení tématu <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Nastavení budou uložena jen do té doby, než bude provedena aktualizace tématu samotného.
+settings_right_theme_configuration_title=Konfigurace tématu Authentic Theme
+settings_right_theme_configurable_options_title=Dostupná nastavení pro Authentic Theme
+
+
+settings_right_window_options_title=Možnosti oken
+settings_right_navigation_menu_title=Možnosti navigačního panelu
+settings_right_table_options_title=Možnosti tabulek
+settings_security_title=Možnosti bezpečnostních upozornění
+settings_security_description=Bezpečnostní upozornění umožňují nastavit emailové notifikace na základě konkrétních událostí.<br class="lh0">Formát: <code>Zpráva|Předmět|Seznam uživatelů/emailových adres oddělených čárkou|Seznam ignorovaných IPv4/IPv6 adres</code><br class="lh0">Použití: <code>%3 upozornění na úspěšné přihlášení uživatele %1 z adresy %2|%3 úspěšné přihlášení|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Výstup: <code>From: root, To: root, Subject: Webmin úspěšné přihlášení, Message: Webmin upozornění na úspěšné přihlášení uživatele root z adresy 2.3.4.5</code>
+settings_right_hotkey_options_title=Nastavení klávesových zkratek
+settings_right_sysinfo_page_options_title=Nastavení stránky System Information
+
+settings_right_hotkey_custom_options_description=Vlastní odkazy umožňují použít čísla od <code>1</code> do <code>9</code> pro rychlý přístup k jakékoliv Webmin/Usermin/Virtualmin/Cloudmin <code>URL adrese.</code> <code>URL adresu</code> je možné získat z aktuálně otevřeného pravého rámce po zhlédnutí jeho zdrojového kódu. Je důležité, aby <code>URL adresa</code> neobsahovala žádné lomítko na začátku a neobsahovala žádný prefix. Například tedy k rychlému přístupu k Apache, nastavte hodnotu pole pro <code>vlastní link 1</code> jako <code>apache.</code> Pokud je přepínač klávesových zkratek nastavený na <code>Alt,</code> pak se klávesovou zkratkou <code>Alt+1</code>, dostanete na stránku Apache.
+settings_hotkey_custom_1=Vlastní odkaz <code>1</code>
+settings_hotkey_custom_2=Vlastní odkaz <code>2</code>
+settings_hotkey_custom_3=Vlastní odkaz <code>3</code>
+settings_hotkey_custom_4=Vlastní odkaz <code>4</code>
+settings_hotkey_custom_5=Vlastní odkaz <code>5</code>
+settings_hotkey_custom_6=Vlastní odkaz <code>6</code>
+settings_hotkey_custom_7=Vlastní odkaz <code>7</code>
+settings_hotkey_custom_8=Vlastni odkaz <code>8</code>
+settings_hotkey_custom_9=Vlastni odkaz <code>9</code>
+
+settings_loader_left=Povolit posuvník pro navigační panel
+settings_loader_right=Povolit posuvník pro stránku
+settings_right_reload=Nahrání výchozí stránky
+settings_right_reload_description=Obsah stránky pravého rámce je opětovně načten při přepnutí tabů. Zobrazít po přepnutí tabu výchozí obsah pravého rámce?
+
+settings_right_hide_table_icons=Schovat ikony v tabulkách v pravém rámci
+settings_right_hide_table_icons_description=Úplně odstranit ikony ze stránek a zobrazit textové linky se šipkou
+settings_right_small_table_icons=Malé ikony tabulek
+settings_right_small_table_icons_description=Nahradit standardní velikost ikon v tabulkách malými ikonami a zobrazit odkaz v tooltip
+settings_right_xsmall_table_icons=Extra malé ikony tabulek
+settings_right_xsmall_table_icons_description=Nahradit standardní velikost ikon v tabulkách extra malými ikonami a zobrazit odkaz v tooltipu
+settings_right_animate_table_icons=Animovat ikony tabulek při výberu
+settings_right_grayscaled_table_icons=Nechat ikony černobílé a zbarvit je pouze při najetí myši
+
+settings_right_iconize_header_links=Nahradit odkazy v hlavičkách tabulek ikonami
+settings_right_iconize_header_links_description=Zvolte, jestli chcete nahradit starý styl odkazů v hlavičkách tabulek ikonamy nebo ponechat textové odkazy
+
+settings_window_autoscroll=Automatické skrolování okna
+settings_window_autoscroll_description=Provádět automatické skrolování okna při načtení dalších dat ze serveru. Posuvník bude automaticky skryt. Záměrné skrolování uživatelem vypne automatické skrolování. Pro jeho znovuzapnutí je třeba posunout se na úplný konec stránky.
+
+settings_window_customized_checkboxes_and_radios=Povolit upravené checkboxy a radio-buttony
+
+settings_leftmenu_section_hide_refresh_modules=Schovat odkaz <kbd>Refresh Modules</kbd>
+settings_leftmenu_section_hide_unused_modules=Schovat odkaz <kbd>Unused Modules</kbd>
+settings_favorites=Show favorites button
+settings_leftmenu_button_language=Zobrazit tlačítko pro nastavení jazyka
+settings_leftmenu_button_refresh=Zobrazit tlačítko pro obnovení
+
+settings_theme_options_button=Zobrazit tlačítko konfigurace tématu
+
+settings_hotkeys_active=Povolit klávesové zkratky
+settings_hotkey_toggle_modifier=Přepínač klávesových zkratek
+settings_hotkey_toggle_key_webmin=Klávesová zkratka pro Webmin
+settings_hotkey_toggle_key_virtualmin=Klávesová zkratka pro Virtualmin
+settings_hotkey_toggle_key_cloudmin=Klávesová zkratka pro Cloudmin
+settings_hotkey_toggle_key_usermin=Klávesová zkratka pro Usermin
+settings_hotkey_toggle_key_webmail=Klávesová zkratka pro Mail
+settings_hotkey_sysinfo=Klávesová zkratka pro System informationn
+settings_hotkey_favorites=Hotkey for Favorites
+settings_hotkey_focus_search=Klávesová zkratka pro hledání
+settings_hotkey_reload=Klávesová zkratka pro opetovné načtení stránky
+
+settings_security_notify_on_pre_login_request=Upozornit když je pre-login banner zobrazen neautentizovaným uživatelem
+settings_security_notify_on_login_request=Upozornit při přístupu neautentizovaného uživatele na přihlašovací stránku
+settings_security_notify_on_login_success=Upozornit při úspěšném přihlášení uživatele
+
+settings_sysinfo_easypie_charts=Zobrazit grafy
+settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu
+settings_sysinfo_csf_updates=Zkontrolovat aktualizace ConfigServer Security & Firewall
+settings_sysinfo_drive_status_on_new_line=Zobrazit stav disků každý na zvláštním řádku
+settings_sysinfo_expand_all_accordions=Rozbalit všechny záložky
+settings_sysinfo_link_mini=Zobrazit odkaz <kbd>System Information</kbd> jako tlačítko
+settings_leftmenu_singlelink_icons=Zobrazit ikony v navigačním panelu Virtualminu/Cloudminu
+
+settings_right_page_defaults_title=Výchozí stránky
+settings_right_default_tab_webmin=Výchozí záložka po přihlášení do Webminu
+settings_right_default_tab_usermin=Výchozí záložka po přihlášení do Userminu
+settings_right_virtualmin_default=Výchozí stránka Virtualminu
+settings_right_cloudmin_default=Výchozí stránka Cloudminu
+
+settings_leftmenu_vm_installscripts=Zobrazit ve Virtualminu odkaz na <kbd>Install Scripts</kbd>
+settings_leftmenu_vm_webpages=Zobrazit ve Virtualminu odkaz na <kbd>Edit Web Pages</kbd>
+settings_leftmenu_vm_backup_amazon=Zobrazit ve Virtualminu odkaz na <kbd>Amazon S3 Buckets</kbd>
+
+
+
+
+
+
+
+
+
+theme_changelog=Seznam změn
+theme_conference=Theme Conference
+theme_development_support=Podpora vývoje
+theme_donate=Přispět
+theme_download=Stáhnout
+theme_name=Authentic Theme
+theme_update=Aktualizovat
+theme_update_available=Nejnovější dostupná verze
+theme_update_notice=Poznámky k vydání
+theme_version=Verze tématu

@@ -1,11 +1,13 @@
 #
-# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 # Load dependencies
 do "authentic-theme/authentic-lib.cgi";
+
+my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
 
 sub theme_header {
     print '<!DOCTYPE html>',        "\n";
@@ -26,7 +28,11 @@ sub theme_header {
         . "\n";
     embed_header();
     print '</head>', "\n";
-    print '<body data-language="'
+    print '<body data-level="'
+        . $level
+        . '" data-dashboard="'
+        . dashboard_switch()
+        . '" data-language="'
         . substr(
         (     $gconfig{ 'lang' . '_' . $base_remote_user }
             ? $gconfig{ 'lang' . '_' . $base_remote_user }
@@ -160,19 +166,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1402" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1500" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1402" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1500" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1402" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1500" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1402" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1500" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -195,7 +201,7 @@ sub theme_footer {
             }
             $url = "$gconfig{'webprefix'}$url" if ( $url =~ /^\// );
             print
-                "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary' href=\"$url\"><i class='fa fa-arrow-left'></i> ",
+                "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary' href=\"$url\"><i class='fa fa-arrow-left'>&nbsp;</i> ",
                 &text( 'main_return', $_[ $i + 1 ] ), "</a>\n";
         }
     }
@@ -930,7 +936,12 @@ sub theme_ui_table_row {
         if ( $main::ui_table_pos % $main::ui_table_cols == 0 );
     $rv .= "<td class='col_label'><b>$label</b></td>\n"
         if ( defined($label) );
-    $rv .= "<td colspan=$cols class='col_value'>$value</td>\n";
+    $rv
+        .= '<td colspan="'
+        . $cols
+        . '" class="col_value'
+        . ( !length($label) && ' col_header' ) . '">'
+        . $value . '</td>';
     $main::ui_table_pos += $cols + ( defined($label) ? 1 : 0 );
     if ( $main::ui_table_pos % $main::ui_table_cols == 0 ) {
         $rv .= "</tr>\n";

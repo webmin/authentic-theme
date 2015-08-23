@@ -1,10 +1,13 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
+
+#use strict;
+#use warnings;
 
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -14,9 +17,9 @@ use WebminCore;
 do "authentic-theme/authentic-lib.cgi";
 
 &load_theme_library();
-( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
-%text = &load_language($current_theme);
-%text = ( &load_language('virtual-server'), %text );
+my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
+our %text = &load_language($current_theme);
+our %text = ( &load_language('virtual-server'), %text );
 
 &header($title);
 print '<div id="wrapper" class="page" data-notice="'
