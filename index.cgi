@@ -1,24 +1,32 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
+
+#use strict;
+#use warnings;
 
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &ReadParse();
 &init_config();
 
+use lib 'authentic-theme/lib';
+use JSON qw( decode_json );
+
 # Detecting Virtualmin/Cloudmin request
 our $is_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
 our $is_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
 our $is_webmail    = index( $ENV{'REQUEST_URI'}, 'mail' );
+our $is_dashboard  = index( $ENV{'REQUEST_URI'}, 'dashboard' );
 
-%text    = &load_language($current_theme);
-%gaccess = &get_module_acl( undef, "" );
-$title   = &get_html_framed_title();
+our (%gconfig, $current_theme, $root_directory, $theme_root_directory, $virtual_server_access_level, $switch_mode, $product_mode);
+our %text    = &load_language($current_theme);
+our %gaccess = &get_module_acl( undef, "" );
+our $title   = &get_html_framed_title();
 
 if (  !-d $root_directory . "/authentic-theme"
     && -d $root_directory . "/authentic-theme-master" )
@@ -58,20 +66,27 @@ else {
 }
 
 #Going to default right page
-$minfo = &get_goto_module();
-$__goto
-    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? $udefgoto
+our $minfo = &get_goto_module();
+our $__goto
+    = ( $is_virtualmin != -1 || $is_cloudmin != -1 ) ? our $udefgoto
     : $minfo ? "$minfo->{'dir'}/"
-    :          $udefgoto;
+    :          our $udefgoto;
 
 # Redirect user away, in case requested mode can not be satisfied
-if ($ENV{'REQUEST_URI'} ne '/' && $ENV{'REQUEST_URI'} ne '/?virtualmin' && $ENV{'REQUEST_URI'} ne '/?cloudmin' && $ENV{'REQUEST_URI'} ne '/?mail' && index( $ENV{'REQUEST_URI'}, 'xhr' ) lt 0) {
-    $webmin
+if (   $ENV{'REQUEST_URI'} ne '/'
+    && $ENV{'REQUEST_URI'} ne '/?virtualmin'
+    && $ENV{'REQUEST_URI'} ne '/?cloudmin'
+    && $ENV{'REQUEST_URI'} ne '/?mail'
+    && $ENV{'REQUEST_URI'} ne '/?dashboard'
+    && index( $ENV{'REQUEST_URI'}, 'xhr' ) lt 0 )
+{
+    my $webmin
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'} . '/';
     print "Location: $webmin\n\n";
 }
-elsif (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
+elsif (
+       ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
     || ( $is_cloudmin != -1 && !&foreign_available("server-manager") )
     || ($is_webmail != -1
         && (&get_product_name() ne 'usermin'
@@ -82,7 +97,7 @@ elsif (   ( $is_virtualmin != -1 && !&foreign_available("virtual-server") )
     )
 {
     print "Set-Cookie: redirect=0; path=/\r\n";
-    $webmin
+    my $webmin
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'} . '/';
     print "Location: $webmin\n\n";
@@ -97,7 +112,7 @@ if ($ENV{'HTTP_COOKIE'} =~ /redirect=1/
     )
 {
     print "Set-Cookie: redirect=0; path=/\r\n";
-    $virtualmin
+    my $virtualmin
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'}
         . (
@@ -116,7 +131,7 @@ if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
     && $is_webmail == -1 )
 {
     print "Set-Cookie: redirect=0; path=/\r\n";
-    $webmail
+    my $webmail
         = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
         . $ENV{'HTTP_HOST'}
         . (
@@ -146,21 +161,28 @@ if (   index( $ENV{'REQUEST_URI'}, 'updating' ) != -1
     != -1 )
 {
     if ( $is_virtualmin != -1 ) {
-        $virtualmin
+        my $virtualmin
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'}
             . '/?virtualmin';
         print "Location: $virtualmin\n\n";
     }
     elsif ( $is_cloudmin != -1 ) {
-        $cloudmin
+        my $cloudmin
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'}
             . '/?cloudmin';
         print "Location: $cloudmin\n\n";
     }
+    elsif ( $is_dashboard != -1 ) {
+        my $dashboard
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . '/?dashboard';
+        print "Location: $dashboard\n\n";
+    }
     else {
-        $webmin
+        my $webmin
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'} . '/';
         print "Location: $webmin\n\n";
@@ -197,10 +219,10 @@ elsif ( $in{'xhr-settings'} eq '1' ) {
 else {
 
     # Force regular user to be in Virtualmin
-    if (   $virtual_server_access_level eq '2'
+    if ( $virtual_server_access_level eq '2'
         && $ENV{'REQUEST_URI'} ne '/?virtualmin' )
     {
-        $virtualmin
+        my $virtualmin
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'}
             . '/?virtualmin';
@@ -220,6 +242,8 @@ else {
         . $is_cloudmin
         . '" data-webmail="'
         . $is_webmail
+        . '" data-dashboard="'
+        . $is_dashboard
         . '" data-access-level="'
         . $virtual_server_access_level
         . '" data-hostname="'
@@ -261,7 +285,8 @@ else {
         || &get_product_name() eq 'usermin'
         || $virtual_server_access_level eq '2' )
     {
-        our $switch_mode  = '3';
+
+        our $switch_mode = '2';
         our $product_mode = '1';
     }
     elsif (&foreign_available("virtual-server")
@@ -286,11 +311,10 @@ else {
         . ' switch-mins">';
 
     if ( $product_mode eq '1' ) {
-        print_switch_empty(1);
         $virtual_server_access_level eq '2'
-            ? print_switch_virtualmin()
-            : print_switch_webmin();
-        print_switch_empty(2);
+            ? print_switch_virtualmin(1)
+            : print_switch_webmin(1);
+        print_switch_dashboard(1);
     }
     if ( $product_mode eq '2' ) {
         print_switch_webmin(1);
@@ -334,20 +358,22 @@ else {
     print '</aside>' . "\n";
     #### Left Side. End.
 
-    #Process logo
+    # Authenticated logo
     embed_logo();
+
+    # Favorites menu
+    print_favorites();
 
     ### Right Side. Start.
     print '<div id="content" class="__page">' . "\n";
     print '<div class="loader-container">' . "\n";
     print '<div class="loader"><span class="loading"></span></div>' . "\n";
     print '</div>' . "\n";
-    print
-        '<script>__lrs()</script>';
+    print '<script>__lrs()</script>';
     print '<iframe name="page" id="iframe" src="'
         . $gconfig{'webprefix'}
         . (
-        ( !-f $root_directory . '/authentic-theme/update' )
+        ( !-f $root_directory . '/authentic-theme/update' && $is_dashboard == -1)
         ? $__goto
         : '/sysinfo.cgi'
         ) . '">' . "\n";
@@ -359,6 +385,5 @@ else {
     #
     #
     #### Wrapper. End.
-
     &footer();
 }

@@ -20,13 +20,14 @@
 
 ####Features
 * Configurable theme options using _Webmin_ UI
+* Favorites feature for any content page
 * Unprecedentedly convenient and complete navigation for both desktop and mobile versions
 * Autocomplete for quick and effective navigation
 * Hotkeys for quick access control
 * Security mail notifications
 * Code highlight when editing files manually
 * Extensive list of customizable theme options, with ability to embed user logos, styles and scripts
-* Extended support for _ConfigServer Security & Firewall_
+* Extended support for _Filemin_ and _ConfigServer Security & Firewall_ modules
 
 ####Requirements
 * Webmin _1.730+_ (required), Usermin _1.640+_ (optional), Virtualmin _4.14+_ (optional), Cloudmin _8.01+_ (optional)
@@ -103,10 +104,11 @@ _Webmin_ has in-built option to compress static files.  It's possible to enable 
 * [7stars](https://github.com/7starsone) (Spanish, French, Portuguese)
 * [dreista](https://github.com/Dreista) (Chinese)
 * [jlndk](https://github.com/jlndk) (Danish)
+* [stuchy3](https://github.com/stuchy3) (Czech)
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 660 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 800 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 

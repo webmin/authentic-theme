@@ -32,6 +32,8 @@ body_usermin=Usermin Version
 body_virt=Virtuel hukommelse
 body_webmin=Webmin version
 
+left_favorites=Favorites
+left_favorites_no=There were no favorites added yet...
 left_feedback=Send Feedback
 left_home=System Information
 left_others=Andre
@@ -161,6 +163,7 @@ settings_window_customized_checkboxes_and_radios=Enable customized checkboxes an
 
 settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
 settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button
 
@@ -174,6 +177,7 @@ settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
 settings_hotkey_toggle_key_usermin=Hotkey for Usermin
 settings_hotkey_toggle_key_webmail=Hotkey for Mail
 settings_hotkey_sysinfo=Hotkey for System Information
+settings_hotkey_favorites=Hotkey for Favorites
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
 

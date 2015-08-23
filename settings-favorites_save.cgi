@@ -9,19 +9,20 @@
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &init_config();
-&ReadParseMime();
+&ReadParse();
 &switch_to_remote_user();
+
+print "Content-type: text/html\n\n";
 
 do "authentic-theme/authentic-lib.cgi";
 __config_dir_available();
 
-$in{'data'} =~ s/\r//g;
-unlink_file( $in{'file'} );
-write_file_contents( $in{'file'}, $in{'data'} );
+our ($in);
 
-if ( usermin_available() ) {
-    ( my $_file = $in{'file'} ) =~ s/webmin/usermin/;
-    unlink_file($_file);
-    write_file_contents( $_file, $in{'data'} );
-}
-&redirect( 'settings-editor_read.cgi?saved=1&file=' . $in{'file'} );
+$in =~ s/\t\n\r//g;
+$in =~ /\{(?:\{.*\}|[^{])*\}/sg;
+my $file    = $config_directory . '/authentic-theme/favorites.json';
+my $content = $in;
+
+unlink_file($file);
+write_file_contents( $file, $content );

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 14.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -141,7 +141,7 @@ elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
 
         print '<li><a target="page" data-href="'
             . $gconfig{'webprefix'}
-            . '/virtual-server/index.cgi" class="navigation_feedback_trigger"><i class="fa fa-fw fa-tasks"></i> <span>'
+            . '/virtual-server/index.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-tasks"></i> <span>'
             . $text{'left_virtualmin_list'}
             . '</span></a></li>' . "\n";
 
