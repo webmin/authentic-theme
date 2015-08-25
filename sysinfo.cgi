@@ -203,8 +203,9 @@ if ( $level == 0 || $level == 4 ) {
                 . $text{'theme_changelog'} . '</a>'
                 . '<a class="btn btn-xs btn-warning" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
                 . $text{'theme_download'} . '</a>'
-                . '<a class="btn btn-xs btn-default" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"><i class="fa fa-rub" style="padding-top:1px">&nbsp;</i>'
-                . $text{'theme_donate'} . '</a>'
+
+# . '<a class="btn btn-xs btn-default" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"><i class="fa fa-rub" style="padding-top:1px">&nbsp;</i>'
+# . $text{'theme_donate'} . '</a>'
                 . '</div>';
         }
         &print_table_row( $text{'theme_version'}, $authentic_theme_version );
@@ -372,7 +373,9 @@ if ( $level == 0 || $level == 4 ) {
             our $csf_installed_version = $csf_installed_version->[0];
 
             # Define CSF actual version if allowed
-            if ( __settings('settings_sysinfo_csf_updates') eq 'false' ) {
+            if ( !length( __settings('settings_sysinfo_csf_updates') ) && ( licenses('cm') || licenses('vm') )
+                || __settings('settings_sysinfo_csf_updates') eq 'false' )
+            {
                 $csf_remote_version = '0';
             }
             else {

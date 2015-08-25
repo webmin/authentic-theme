@@ -1085,7 +1085,8 @@ sub embed_footer {
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/authentic.'
         . ( $type eq 'debug' ? 'src' : 'min' )
-        . '.js?1500" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+        . '.js?1500" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+        . "\n";
 }
 
 sub embed_header {
@@ -1216,7 +1217,9 @@ sub get_authentic_version {
     $installed_version =~ s/^\s+|\s+$//g;
     $installed_version = sprintf '%.2f', $installed_version;
 
-    if ( __settings('settings_sysinfo_theme_updates') eq 'false' ) {
+    if ( !length( __settings('settings_sysinfo_theme_updates') ) && ( licenses('cm') || licenses('vm') )
+        || __settings('settings_sysinfo_theme_updates') eq 'false' )
+    {
         $remote_version = '0';
     }
     else {
@@ -1438,9 +1441,9 @@ sub _settings {
             'settings_theme_options_button',
             'true',
             'settings_sysinfo_theme_updates',
-            'true',
+            ( !licenses('cm') && !licenses('vm') ? 'true' : 'false' ),
             'settings_sysinfo_csf_updates',
-            'true',
+            ( !licenses('cm') && !licenses('vm') ? 'true' : 'false' ),
             'settings_sysinfo_drive_status_on_new_line',
             'true',
             'settings_sysinfo_expand_all_accordions',
@@ -1928,6 +1931,31 @@ sub __settings {
                 return $m;
             }
         }
+    }
+}
+
+sub licenses {
+    my ($id) = @_;
+    if ( &foreign_available("virtual-server") && $id eq "vm" ) {
+        my %virtualmin = &get_module_info("virtual-server");
+        if ( $virtualmin{'version'} =~ /gpl/ ) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+    elsif ( &foreign_available("server-manager") && $id eq "cm" ) {
+        my %cloudmin = &get_module_info("server-manager");
+        if ( $cloudmin{'version'} =~ /gpl/ ) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+    else {
+        return 0;
     }
 }
 
