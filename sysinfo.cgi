@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -373,12 +373,8 @@ if ( $level == 0 || $level == 4 ) {
             our $csf_installed_version = $csf_installed_version->[0];
 
             # Define CSF actual version if allowed
-            if ( !length( __settings('settings_sysinfo_csf_updates') ) && ( licenses('cm') || licenses('vm') )
-                || __settings('settings_sysinfo_csf_updates') eq 'false' )
+            if ( __settings('settings_sysinfo_csf_updates') eq 'true' )
             {
-                $csf_remote_version = '0';
-            }
-            else {
                 http_download(
                     'download.configserver.com', '80',
                     '/csf/version.txt',          \$csf_remote_version,
@@ -390,6 +386,9 @@ if ( $level == 0 || $level == 4 ) {
                 # Trim versions' number
                 $csf_installed_version =~ s/^\s+|\s+$//g;
                 $csf_remote_version =~ s/^\s+|\s+$//g;
+            }
+            else {
+                $csf_remote_version = '0';
             }
 
             if ( $csf_remote_version <= $csf_installed_version ) {

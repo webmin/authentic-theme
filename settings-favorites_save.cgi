@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -10,7 +10,7 @@ BEGIN { push( @INC, ".." ); }
 use WebminCore;
 &init_config();
 &ReadParse();
-&switch_to_remote_user();
+#&switch_to_remote_user();
 
 print "Content-type: text/html\n\n";
 

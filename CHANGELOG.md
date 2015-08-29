@@ -1,9 +1,19 @@
 ##Changelog
 
-####Version 15.00 (August 23, 2015) &nbsp;&nbsp; :birthday:
+####Version 15.50 (August 29, 2015)
+* Improved theme's _SPEEEEED_ by code optimization. Enjoy!
+* Improved support for _ConfigServer Security & Firewall_ module. Editor mode and code highlights are now working flawlessly
+* Added initialization of filter in _Filemin_ on plain typing (like in _Nautilus_, for example)
+* Added ability to dismiss the page loader with single escape click. Attention! Be careful when you click escape key once, the loader will disappear, when you click it over again and the loader is hidden, you will interrupt the execution of the page process
+* Changed theme auto-updates notifications to be off by default. This will not affect existing users
+* Fixed history buttons, navigating using browser's back/forward buttons now working properly
+* Fixed minor bugs [#224](https://github.com/qooob/authentic-theme/issues/224) [#226](https://github.com/qooob/authentic-theme/issues/226) [#1](https://github.com/qooob/authentic-theme-extensions/issues/1) [#57](https://github.com/Real-Gecko/filemin/issues/57)
+* Fixed dozens of other minor bugs
+
+####Version 15.00 (August 23, 2015)
 * Improved and optimized theme's _speed_ and _display_ options
 * Added a new feature of adding any right side page to global _Favorites_ [#210](https://github.com/qooob/authentic-theme/issues/210)
-* Added complete _AJAX_ support for _Filemin_ (by__Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
+* Added complete _AJAX_ support for _Filemin_ (by _Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
 * Added emphasis on the table sub-titles [#218](https://github.com/qooob/authentic-theme/issues/218)
 * Added CZ language, thanks to [stuchy3](https://github.com/stuchy3)
 * Fixed sorting issue by file-size in _Filemin_ and other modules, where file-size like sorting is used
