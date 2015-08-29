@@ -161,8 +161,8 @@ settings_window_autoscroll_description=Perform window automatic scroll down, upo
 
 settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
+settings_leftmenu_section_hide_unused_modules=Hide un-used modules section
 settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button
@@ -190,7 +190,7 @@ settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
+settings_sysinfo_link_mini=Display system information link as a button
 settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
 
 settings_right_page_defaults_title=Default pages
@@ -199,9 +199,9 @@ settings_right_default_tab_usermin=Default tab after logging in to Usermin
 settings_right_virtualmin_default=Default page for Virtualmin
 settings_right_cloudmin_default=Default page for Cloudmin
 
-settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
-settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
-settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+settings_leftmenu_vm_installscripts=Show install scripts link in Virtualmin
+settings_leftmenu_vm_webpages=Show edit web pages link in Virtualmin
+settings_leftmenu_vm_backup_amazon=Show Amazon S3 buckets link in Virtualmin
 
 
 

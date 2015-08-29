@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -230,6 +230,8 @@ else {
     }
 
     &header($title);
+    # my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
+    # prt($level);
 
     #### Wrapper. Start.
     #

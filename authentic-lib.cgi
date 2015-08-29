@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1085,7 +1085,7 @@ sub embed_footer {
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/authentic.'
         . ( $type eq 'debug' ? 'src' : 'min' )
-        . '.js?1500" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+        . '.js?1550" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
         . "\n";
 }
 
@@ -1124,7 +1124,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1500" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1550" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1136,13 +1136,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1500" type="text/javascript"></script>' . "\n";
+                . '.js?1550" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1500" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1550" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1158,13 +1158,13 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1500" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1550" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1500" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1550" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1172,7 +1172,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1500" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1550" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1196,12 +1196,12 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1500" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1550" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1500" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1550" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1217,12 +1217,8 @@ sub get_authentic_version {
     $installed_version =~ s/^\s+|\s+$//g;
     $installed_version = sprintf '%.2f', $installed_version;
 
-    if ( !length( __settings('settings_sysinfo_theme_updates') ) && ( licenses('cm') || licenses('vm') )
-        || __settings('settings_sysinfo_theme_updates') eq 'false' )
+    if ( __settings('settings_sysinfo_theme_updates') eq 'true' )
     {
-        $remote_version = '0';
-    }
-    else {
         # Get remote version if allowed
         http_download(
             'raw.githubusercontent.com',                 '443',
@@ -1235,6 +1231,9 @@ sub get_authentic_version {
         # Trim versions' number
         $remote_version =~ s/^\s+|\s+$//g;
         $remote_version = sprintf '%.2f', $remote_version;
+    }
+    else {
+        $remote_version = '0';
     }
 
     return ( $installed_version, $remote_version );
@@ -1441,9 +1440,9 @@ sub _settings {
             'settings_theme_options_button',
             'true',
             'settings_sysinfo_theme_updates',
-            ( !licenses('cm') && !licenses('vm') ? 'true' : 'false' ),
+            'false',
             'settings_sysinfo_csf_updates',
-            ( !licenses('cm') && !licenses('vm') ? 'true' : 'false' ),
+            'false',
             'settings_sysinfo_drive_status_on_new_line',
             'true',
             'settings_sysinfo_expand_all_accordions',

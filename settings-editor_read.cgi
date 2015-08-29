@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -11,7 +11,7 @@ use WebminCore;
 &init_config();
 &ReadParse();
 %text = &load_language($current_theme);
-&switch_to_remote_user();
+#&switch_to_remote_user();
 
 my @files = (
     $config_directory . '/authentic-theme/styles.css',
