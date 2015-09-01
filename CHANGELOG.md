@@ -1,7 +1,13 @@
 ##Changelog
 
+####Version 15.51 (September 1, 2015)
+* Fixed initiation of the spinner, that was shown on file download in _Filemin_, while clicking on the row
+* Fixed adding bookmarks in _Filemin_ no longer locks the table
+* Fixed minor bugs [#228](https://github.com/qooob/authentic-theme/issues/228) [#230](https://github.com/qooob/authentic-theme/issues/230) [#231](https://github.com/qooob/authentic-theme/issues/231)
+
+
 ####Version 15.50 (August 29, 2015)
-* Improved theme's _SPEEEEED_ by code optimization. Enjoy!
+* Improved theme's _speed_ by code optimization
 * Improved support for _ConfigServer Security & Firewall_ module. Editor mode and code highlights are now working flawlessly
 * Added initialization of filter in _Filemin_ on plain typing (like in _Nautilus_, for example)
 * Added ability to dismiss the page loader with single escape click. Attention! Be careful when you click escape key once, the loader will disappear, when you click it over again and the loader is hidden, you will interrupt the execution of the page process

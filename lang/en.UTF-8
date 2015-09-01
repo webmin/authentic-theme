@@ -191,7 +191,7 @@ settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
 settings_sysinfo_link_mini=Display system information link as a button
-settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
+settings_leftmenu_singlelink_icons=Show single links' icons on navigation menu in Virtualmin/Cloudmin
 
 settings_right_page_defaults_title=Default pages
 settings_right_default_tab_webmin=Default tab after logging in to Webmin
