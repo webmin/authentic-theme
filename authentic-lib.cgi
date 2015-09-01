@@ -1086,7 +1086,7 @@ sub embed_footer {
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/authentic.'
         . ( $type eq 'debug' ? 'src' : 'min' )
-        . '.js?1550" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+        . '.js?1551" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
         . "\n";
 }
 
@@ -1125,7 +1125,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1550" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1551" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1137,13 +1137,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1550" type="text/javascript"></script>' . "\n";
+                . '.js?1551" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1550" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1551" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1159,13 +1159,13 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1550" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1551" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1550" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1551" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1173,7 +1173,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1550" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1551" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1197,12 +1197,12 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1550" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1551" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1550" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1551" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
