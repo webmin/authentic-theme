@@ -13,7 +13,6 @@
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
 
-
 ####Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
 * Be as beautiful, fast, light and easy to use as possible
@@ -87,6 +86,8 @@ _Webmin_ has in-built option to compress static files.  It's possible to enable 
    This happens because of encoding disparity. To fix this, just set language in _Webmin_ to `UTF-8` and make sure that your browser also has detected it as `UTF-8`.
 3. I get `HEAD 404 (File not found)` in console<br>
    That is not really an error. It happens, when theme is checking, if needed _URL_ exists and can be loaded
+4. Page loader/spinner got stuck<br>
+   To prematurely dismiss the loader, click the escape key or loader close button, right next to it
 
 ###Development
 ####Lead developer

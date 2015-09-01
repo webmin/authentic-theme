@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.50 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 15.51 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -865,7 +865,8 @@ sub print_favorites {
     ';
 
     if ( $f && $f =~ m/"favorites":/ ) {
-        $fc = decode_json( $f =~ /\{(?:\{.*\}|[^{])*\}/sg );
+		my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
+        my $fc = decode_json( $f );
         foreach my $favorite ( @{ $fc->{'favorites'} } ) {
             if ( length( $favorite->{"link"} ) ) {
                 print '
