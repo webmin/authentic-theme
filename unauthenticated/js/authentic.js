@@ -3,20 +3,12 @@
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
-<<<<<<< HEAD
 ;
-=======
-
->>>>>>> c1be073f279a7f6608796b1cbc1be72a85b35b6f
 try {
 	window.parent.$
 } catch (e) {
 	window.parent = window
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> c1be073f279a7f6608796b1cbc1be72a85b35b6f
 var $_url = $.url(window.location),
 	$__source_protocol = $_url.attr("protocol"),
 	$__source_port = $_url.attr("port"),
@@ -1115,11 +1107,7 @@ if ($("html.session_login").length) {
 					}
 				} else {
 					if ($__current_directory + $__source_file != $_____link_full + "/sysinfo.cgi" && window.location != window.parent.location && product_name() != "Usermin") {
-<<<<<<< HEAD
 						if (window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/syslog/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/webalizer/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/apache/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/webminlog/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/spam/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/phpini/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_cloudmin" && $__current_directory == $_____link_full + "/servers/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory && $__current_directory.indexOf("virtualmin-") > -1 || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__relative_url == "/config.cgi?spam" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__relative_url == "/config.cgi?virtual-server" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__relative_url == "/config.cgi?server-manager") {
-=======
-						if (window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/syslog/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/webalizer/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/apache/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/webminlog/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory == $_____link_full + "/spam/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_cloudmin" && $__current_directory == $_____link_full + "/servers/" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__current_directory && $__current_directory.indexOf("virtualmin-") > -1 || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__relative_url == "/config.cgi?spam" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__relative_url == "/config.cgi?virtual-server" || window.parent.$(".switch-toggle input:checked").attr("id") == "open_virtualmin" && $__relative_url == "/config.cgi?server-manager") {
->>>>>>> c1be073f279a7f6608796b1cbc1be72a85b35b6f
 							return
 						}
 						if (window.parent.$(".switch-toggle input:checked").attr("id") != "open_webmin" && window.parent.$('.switch-toggle input[id="open_webmin"]').length) {
@@ -3059,11 +3047,7 @@ if ($("html.session_login").length) {
 				return this.nodeType == 3
 			}).remove()
 		}
-<<<<<<< HEAD
 		if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi" || $current_page_full == $_____link_full + "/ldap-server/edit_schema.cgi" || $current_page_full == $_____link_full + "/mailboxes/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/list_folders.cgi" || $current_page_full == $_____link_full + "/phpini/" || $current_page_full == $_____link_full + "/phpini/index.cgi" || $current_page_full == $_____link_full + "/fsdump/" || $current_page_full == $_____link_full + "/fsdump/index.cgi" || $current_page_full == $_____link_full + "/fdisk/" || $current_page_full == $_____link_full + "/fdisk/index.cgi" || $current_page_full == $_____link_full + "/virtualmin-awstats/" || $current_page_full == $_____link_full + "/virtualmin-awstats/index.cgi") {
-=======
-		if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi" || $current_page_full == $_____link_full + "/ldap-server/edit_schema.cgi" || $current_page_full == $_____link_full + "/mailboxes/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/list_folders.cgi" || $current_page_full == $_____link_full + "/phpini/" || $current_page_full == $_____link_full + "/phpini/index.cgi" || $current_page_full == $_____link_full + "/fdisk/" || $current_page_full == $_____link_full + "/fdisk/index.cgi" || $current_page_full == $_____link_full + "/virtualmin-awstats/" || $current_page_full == $_____link_full + "/virtualmin-awstats/index.cgi") {
->>>>>>> c1be073f279a7f6608796b1cbc1be72a85b35b6f
 			$.each($('tr td:last-child:contains("|")'), function () {
 				if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi") {
 					$(this).find('a[href^="backup_form.cgi"]').html($(this).find('a[href^="backup_form.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-success btn-xxs").attr("style", "margin-top: 0 !important; margin-bottom: 0 !important; margin-right: 3px").removeClass("ui_link").prepend('<i class="fa fa-floppy-o" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>');
@@ -3099,7 +3083,6 @@ if ($("html.session_login").length) {
 			});
 			$('tr td:last-child:contains("|")').contents().filter(function () {
 				return this.nodeType == 3
-<<<<<<< HEAD
 			}).remove();
 			if ($current_page_full == $_____link_full + "/fsdump/" || $current_page_full == $_____link_full + "/fsdump/index.cgi") {
 				$.each($("tr td:last-child"), function () {
@@ -3107,9 +3090,6 @@ if ($("html.session_login").length) {
 					$(this).find('a[href^="kill.cgi"]').html($(this).find('a[href^="kill.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-danger btn-xxs").removeClass("heighter-34").attr("style", "margin-top: 0 !important; margin-bottom: 0 !important; margin-right: 3px").removeClass("ui_link").prepend('<i class="fa fa-trash-o" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>')
 				})
 			}
-=======
-			}).remove()
->>>>>>> c1be073f279a7f6608796b1cbc1be72a85b35b6f
 		}
 		if ($current_page_full == $_____link_full + "/fdisk/edit_disk.cgi") {
 			var __delete = [];
@@ -4006,11 +3986,7 @@ if ($("html.session_login").length) {
 		}, 1);
 		setTimeout(function () {
 			Plugins.AutosizeInput.getDefaultOptions().space = 0;
-<<<<<<< HEAD
 			$('input[name="deny"], input[name="cmd"],input[name="url"],input[name="user"],input[name="group"],input[name="edit"],input[name="label"],input[name="dir"],input[name="file"],input[name="comment"],input[name="pre"],input[name="post"],input[name="before"],input[name="after"]').each(function () {
-=======
-			$('input[name="cmd"],input[name="url"],input[name="user"],input[name="group"],input[name="edit"],input[name="label"],input[name="dir"],input[name="file"],input[name="comment"],input[name="pre"],input[name="post"],input[name="before"],input[name="after"]').each(function () {
->>>>>>> c1be073f279a7f6608796b1cbc1be72a85b35b6f
 				if (!$(this).hasClass("ui_radio") && $(this).attr("type") != "checkbox" && $(this).attr("type") != "radio") {
 					if ($(this).attr("size") == 40) {
 						$(this).css("min-width", "306px")
