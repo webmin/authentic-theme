@@ -453,7 +453,7 @@ function __lls() {
     if (settings_loader_top && t__wi_p.t___p__xhr_r === 0) {
         t__wi_p.NProgress.start()
     }
-    if (settings_loader_left && !dashboard_switch()) {
+    if (settings_loader_left) {
         t__wi_p.$(".mCSB_container, .mCSB_dragger").css("top", "0");
         !t__wi_p.$("#_menu_loader").length && t__wi_p.$("body ul.navigation").before('<span id="_menu_loader" class="loading loading-sm"></span>');
         !t__wi_p.$("#loader-close-sm").length && t__wi_p.$("#_menu_loader").before('<div class="loader-close sm hidden" id="loader-close-sm"><i class="fa fa-times-circle pull-right hidden scale-08"></i></div>');
