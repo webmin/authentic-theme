@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.51 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -16,27 +16,27 @@ use WebminCore;
 
 do "authentic-theme/authentic-lib.cgi";
 
-&load_theme_library();
-my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
 our %text = &load_language($current_theme);
 our %text = ( &load_language('virtual-server'), %text );
+our %text = ( &load_language('server-manager'), %text );
 
 &header($title);
+
 print '<div id="wrapper" class="page" data-notice="'
     . (
-    ( -f $root_directory . '/authentic-theme/update' && $level == 0 )
+    ( -f $root_directory . '/authentic-theme/update' && $get_user_level == 0 )
     ? _post_install()
     : '0'
     ) . '">' . "\n";
 print '<div class="container-fluid col-lg-10 col-lg-offset-1">' . "\n";
 
-if ( $level != 4 ) {
+if ( $get_user_level != 4 ) {
     print
         '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">'
         . "\n";
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">' . &text('body_header0') . (
-        ( $level != 2 && $level != 3 && &foreign_available("webmin") )
+        ( $get_user_level != 2 && $get_user_level != 3 && &foreign_available("webmin") )
         ? '<a href="/?updated" target="_top" data-href="'
             . $gconfig{'webprefix'}
             . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>
@@ -51,9 +51,9 @@ if ( $level != 4 ) {
 # Get system info to show
 my @info = &list_combined_system_info( { 'qshow', 1 } );
 
-if ( $level == 0 || $level == 4 ) {
+if ( $get_user_level == 0 || $get_user_level == 4 ) {
 
-    if ( $level != 4 ) {
+    if ( $get_user_level != 4 ) {
 
         # Ask status module for collected info
         &foreign_require("system-status");
@@ -97,7 +97,7 @@ if ( $level == 0 || $level == 4 ) {
         &print_table_row( &text('body_webmin'), &get_webmin_version() );
 
         # Virtualmin version
-        if ($hasvirt) {
+        if ($has_virtualmin) {
             my %vinfo                 = &get_module_info("virtual-server");
             my $is_virtual_server_gpl = $vinfo{'version'} =~ /gpl/;
             if ( $is_virtual_server_gpl eq '1' ) {
@@ -132,7 +132,7 @@ if ( $level == 0 || $level == 4 ) {
         }
 
         # Cloudmin version
-        if ($hasvm2) {
+        if ($has_cloudmin) {
             my %vinfo = &get_module_info("server-manager");
             $is_server_manager_gpl = $vinfo{'version'} =~ /gpl/;
             if ( $is_server_manager_gpl eq '1' ) {
@@ -490,7 +490,7 @@ if ( $level == 0 || $level == 4 ) {
     print_extended_sysinfo(@info);
 
 }
-elsif ( $level == 2 ) {
+elsif ( $get_user_level == 2 ) {
 
     # Domain owner
     # Show a server owner info about one domain
@@ -510,7 +510,7 @@ elsif ( $level == 2 ) {
     &print_table_row( $text{'right_from'}, $ENV{'REMOTE_HOST'} );
 
     # Print Virtualmin version
-    if ($hasvirt) {
+    if ($has_virtualmin) {
         my $__virtual_server_version
             = $virtual_server::module_info{'version'};
         $__virtual_server_version =~ s/.gpl//igs;
@@ -661,7 +661,7 @@ elsif ( $level == 2 ) {
 
     print_extended_sysinfo(@info);
 }
-elsif ( $level == 3 ) {
+elsif ( $get_user_level == 3 ) {
     print '<table class="table table-hover">' . "\n";
 
     # Host and login info

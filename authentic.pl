@@ -1,13 +1,11 @@
 #
-# Authentic Theme 15.51 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 # Load dependencies
 do "authentic-theme/authentic-lib.cgi";
-
-my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
 
 sub theme_header {
     print '<!DOCTYPE html>',        "\n";
@@ -29,7 +27,7 @@ sub theme_header {
     embed_header();
     print '</head>', "\n";
     print '<body data-level="'
-        . $level
+        . $get_user_level
         . '" data-dashboard="'
         . dashboard_switch()
         . '" data-language="'
@@ -166,19 +164,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1501" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1501" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1600" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1501" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1600" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1501" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1600" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -1136,6 +1134,42 @@ sub theme_ui_radio_table {
     }
     $rv .= "</table>\n";
     return $rv;
+}
+
+sub theme_post_save_domain {
+    my ( $d, $action ) = @_;
+
+    print '<script>';
+    print 't__wi_p.t__vm_l(' . $d->{'id'} . ')';
+    print '</script>';
+    print '<script>';
+    print '___theme_post_save___ = 1;';
+    print '</script>';
+}
+
+sub theme_post_save_domains {
+    my ( $d, $action ) = @_;
+    print '<script>';
+    print 't__wi_p.t__vm_l(false)';
+    print '</script>';
+    print '<script>';
+    print '___theme_post_save___ = 1;';
+    print '</script>';
+}
+
+sub theme_post_save_server {
+    my ( $s, $action ) = @_;
+    if (   $action eq 'create'
+        || $action eq 'delete'
+        || !$done_theme_post_save_server++ )
+    {
+        print '<script>';
+        print 't__wi_p.t__cm_l(' . $s->{'id'} . ')';
+        print '</script>';
+        print '<script>';
+        print '___theme_post_save___ = 1;';
+        print '</script>';
+    }
 }
 
 $main::cloudmin_no_create_links = 1;

@@ -1,15 +1,14 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.51 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-## Building Webmin/Usermin menu. Start.
-#
+my @leftitems = list_combined_webmin_menu( $sects, \%in );
 
-if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
+if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     || $in{'xhr-navigation-type'} eq 'webmin' )
 {
     print_search();
@@ -26,7 +25,8 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
             || ( $c && $c->{'unused'} && $show_unused ) )
         {
             &print_category( $c->{'code'}, $c->{'desc'} );
-            print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
+            print
+                '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 if ( $minfo->{'dir'} eq 'webmin' ) {
@@ -84,110 +84,24 @@ if (   $is_virtualmin == -1 && $is_cloudmin == -1 && $is_webmail == -1
             . '</span></a></li>' . "\n";
     }
 }
-#
-## Building Webmin/Usermin menu. End.
 
-elsif ( $is_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
+elsif ( $t_uri_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
 
-    ## Generate menu using new mechanism
-    if ( -r "$root_directory/virtual-server/webmin_menu.pl"
-        && &get_webmin_version() >= 1.730 )
-    {
-        my @leftitems = list_combined_webmin_menu( $sects, \%in );
+    print_left_menu( 'virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'} );
+    print_sysinfo_link();
+    print_sysstat_link();
 
-        print_left_menu( 'virtual-server', \@leftitems, 0, 0 );
-        print_sysinfo_link();
-        print_sysstat_link();
-    }
-
-    ## Generate menu using old mechanism (compatibility mode)
-    else {
-        print_search();
-        if ( $virtual_server_access_level != 2 ) {
-
-            my @buts = &virtual_server::get_all_global_links();
-            my @tcats = &unique( map { $_->{'cat'} } @buts );
-            foreach my $c (@tcats) {
-                my @incat = grep { $_->{'cat'} eq $c } @buts;
-
-                &print_category( $c, $incat[0]->{'catname'} );
-
-                print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
-                    . $c . '">' . "\n";
-                foreach my $l (@incat) {
-
-                    # Show domain creation link
-                    if ((      &virtual_server::can_create_master_servers()
-                            || &virtual_server::can_create_sub_servers()
-                        )
-                        && ( $c eq 'add' )
-                        && ( !length $print_virtualmin_link )
-                        )
-                    {
-
-                        &print_category_link(
-                            "virtual-server/domain_form.cgi",
-                            $text{'left_virtualmin_create'}, undef );
-                        $print_virtualmin_link = 1;
-                    }
-                    $l->{'url'} =~ s/^\/+//;
-
-                    &print_category_link( $l->{'url'}, $l->{'title'}, undef );
-
-                }
-                print '</ul></li>' . "\n";
-            }
-        }
-
-        print '<li><a target="page" data-href="'
-            . $gconfig{'webprefix'}
-            . '/virtual-server/index.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-tasks"></i> <span>'
-            . $text{'left_virtualmin_list'}
-            . '</span></a></li>' . "\n";
-
-        print_sysinfo_link();
-        print_sysstat_link();
-    }
-}
-#
-##### Virtualmin left side. End. ######
-
-elsif ( $is_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
-
-    ## Generate menu using new mechanism
-    if ( -r "$root_directory/server-manager/webmin_menu.pl"
-        && &get_webmin_version() >= 1.730 )
-    {
-        my @leftitems = list_combined_webmin_menu( $sects, \%in );
-
-        print_left_menu( 'server-manager', \@leftitems, 0, 0 );
-        print_sysinfo_link();
-        print_sysstat_link();
-    }
-    else {
-        &foreign_require( "server-manager", "server-manager-lib.pl" );
-        $is_master = &server_manager::can_action( undef, "global" );
-
-        print_sysinfo_link();
-
-        print '<li><a data-href="'
-            . $gconfig{'webprefix'}
-            . '/server-manager/index.cgi" class="navigation_module_trigger" target="page"><i class="fa fa-fw fa-tasks"></i> <span>'
-            . 'List Managed Systems'
-            . '</span></a></li>' . "\n";
-    }
 }
 
-elsif ( $is_webmail != -1 || $in{'xhr-navigation-type'} eq 'webmail' ) {
-    ## Generate menu using new mechanism
-    if ( &get_webmin_version() >= 1.630 ) {
-        my @leftitems = list_combined_webmin_menu( $sects, \%in );
+elsif ( $t_uri_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
 
-        print_left_menu( 'mailbox', \@leftitems, 0, 0 );
-        print_sysinfo_link();
-    }
-    else {
-        print_sysinfo_link();
-    }
+    print_left_menu( 'server-manager', \@leftitems, 0, 0, $in{'sid'}, $in{'xhr-navigation-type'} );
+    print_sysinfo_link();
+    print_sysstat_link();
+}
 
+elsif ( $t_uri_webmail != -1 || $in{'xhr-navigation-type'} eq 'webmail' ) {
+
+    print_left_menu( 'mailbox', \@leftitems, 0, 0, 0, $in{'xhr-navigation-type'} );
+    print_sysinfo_link();
 }

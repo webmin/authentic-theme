@@ -45,6 +45,8 @@
 
 ######![](https://rostovtsev.ru/pub/media/icons/safari-16.png) Safari 6+
 
+######![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 20+
+
 ######![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 10+
 
 
@@ -79,6 +81,37 @@ Theme has configurable options, that are located in `Webmin->Webmin Configuratio
 ####How do I make the theme load faster?
 _Webmin_ has in-built option to compress static files.  It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting _Gzip compress static files_ option to _Use pre-compressed file and compress dynamically_.
 
+###Supported modules
+
+####_ConfigServer Security & Firewall_
+Theme only re-renders this module and adds support for code highlight, when editing files manually
+
+####_Filemin_
+Theme has great support for this module, by adding numerous mast-have features. Most noticeable are listing without page reload (using XHR requests) and full keyboard support, which enables you to use _Filemin_ just as normal desktop browser.
+
+#####List of keyboard shortcuts
+
+  * `alphanumeric typing` - quick search
+  * `up/down, home/end` - cursor position
+  * `enter` - descent into selected
+    * in case there is only one row filtered, enter on search field will perform trigger
+  * `spacebar` - select current row
+  * `backspace` - previous folder,
+  * `*` - inverse select,
+  * `+` - select all,
+  * `-` - deselect all,
+  * `F2` - change permissions
+  * `F3` - change ownership
+  * `F4` - edit where possible
+  * `F5/Shift+F5` - compress/decompress
+  * `F6` - rename
+  * `Shift+F4/F7` - new file/folder
+  * `Shift+F7` - search
+  * `F8/Del` - delete
+  * `Ctrl+X/C/V` - Cut/Copy/Paste,
+  * `Theme reload hot key` - reload current directory
+
+
 ###Troubleshoot
 1. Automatic updates notification feature doesn't work or `Can't locate Net/SSLeay.pm in ..)`<br>
    This happens because _Webmin_ is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using CPAN module in _Webmin_ or using CLI. Package name is `perl-Net-SSLeay`. Besides, in case you have mentioned module installed and automatic update feature still doesn't work, you would have to also install either `LWP::Protocol::https` or `Bundle::LWP` using CPAN or by package name `perl-LWP-Protocol-https` or `perl-libwww-perl` respectively.
@@ -87,7 +120,7 @@ _Webmin_ has in-built option to compress static files.  It's possible to enable 
 3. I get `HEAD 404 (File not found)` in console<br>
    That is not really an error. It happens, when theme is checking, if needed _URL_ exists and can be loaded
 4. Page loader/spinner got stuck<br>
-   To prematurely dismiss the loader, click the escape key or loader close button, right next to it
+   To prematurely dismiss a loader, click the `Escape` key for the right loader and `Ctrl+Escape` for the left, and/or loader's close button, right next to it
 
 ###Development
 ####Lead developer
@@ -110,7 +143,7 @@ _Webmin_ has in-built option to compress static files.  It's possible to enable 
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 850 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 1000 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 

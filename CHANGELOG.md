@@ -1,5 +1,40 @@
 ##Changelog
 
+####Version 16.00 (September 18, 2015)
+* Improved theme's _performance_ by overall code optimization (biggest in theme's history)
+* Improved support for _Firefox_. _Firefox_ version 42+ will render animations very smoothly and provide, in general, same experience as _Chrome_ now
+* Improved support for _ConfigServer Security & Firewall_ module
+* Added smart focus on visible search fields - no need to focus manually - just start typing and the theme will automatically decide what to do
+* Added support for _Edge_ browser, which now can render theme properly
+* Added ability to dismiss the left spinner with `Ctrl + Esc` key combination and/or its close button, that appears after 3 seconds of spinner activity
+* Fixed in _Filemin_ module, to submit all table rows, disregard of visibility (pagination)
+* Fixed in _Filemin_ module looped XHR requests, which made it twice slower
+* Added for _Filemin_ module extended user-friendly notifications
+* Added for _Filemin_ module state of the art _keyboard navigation_
+	* `alphanumeric typing` - quick search
+	* `up/down, home/end` - cursor position
+	* `enter` - descent into selected
+	  * in case there is only one row filtered, enter on search field will perform trigger
+	* `spacebar` - select current row
+	* `backspace` - previous folder,
+	* `*` - inverse select,
+	* `+` - select all,
+	* `-` - deselect all,
+	* `F2` - change permissions
+	* `F3` - change ownership
+	* `F4` - edit where possible
+	* `F5/Shift+F5` - compress/decompress
+	* `F6` - rename
+	* `Shift+F4/F7` - new file/folder
+	* `Shift+F7` - search
+	* `F8/Del` - delete
+	* `Ctrl+X/C/V` - Cut/Copy/Paste,
+	* `Theme reload hot key` - reload current directory
+* Deuglifed a link for switching between basic/advanced modes in _SpamAssassin->Header and Body Tests_ module
+* Fixed bugs [#234](https://github.com/qooob/authentic-theme/issues/234) [#235](https://github.com/qooob/authentic-theme/issues/235) [#236](https://github.com/qooob/authentic-theme/issues/236) [#238](https://github.com/qooob/authentic-theme/issues/238) [#239](https://github.com/qooob/authentic-theme/issues/239) [#242](https://github.com/qooob/authentic-theme/issues/242) [#243](https://github.com/qooob/authentic-theme/issues/243) [#244](https://github.com/qooob/authentic-theme/issues/244)  [#245](https://github.com/qooob/authentic-theme/issues/245)
+* Fixed other bugs and made dozes of improvements
+
+
 ####Version 15.51 (September 1, 2015)
 * Fixed initiation of the spinner, that was shown on file download in _Filemin_, while clicking on the row
 * Fixed adding bookmarks in _Filemin_ no longer locks the table

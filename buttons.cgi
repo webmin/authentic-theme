@@ -1,12 +1,14 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.51 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
+# Load dependencies
+do "authentic-theme/authentic-lib.cgi";
+
 our $user = $remote_user;
 
 if ( __settings('settings_sysinfo_link_mini') ne 'false' && dashboard_switch() ne '1') {
@@ -17,7 +19,7 @@ if ( __settings('settings_sysinfo_link_mini') ne 'false' && dashboard_switch() n
     print '</li>';
 }
 
-if ( __settings('settings_favorites') ne 'false' && $level == 0) {
+if ( __settings('settings_favorites') ne 'false' && $get_user_level == 0) {
     print '<li class="user-link favorites cursor-pointer">';
     print '<span><i class="fa fa-fw fa-star"></i></span>';
     print '</li>';
@@ -64,8 +66,8 @@ if (   $miniserv{'logout'}
 
 if (   -r "$root_directory/virtual-server/edit_lang.cgi"
     && __settings('settings_leftmenu_button_language') eq 'true'
-    && (   $is_virtualmin != -1
-        || $is_cloudmin != -1
+    && (   $t_uri_virtualmin != -1
+        || $t_uri_cloudmin != -1
         || $in{'xhr-buttons-type'} eq '1' )
     )
 {
