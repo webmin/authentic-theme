@@ -16,10 +16,10 @@
 	* `enter` - descent into selected
 	  * in case there is only one row filtered, enter on search field will perform trigger
 	* `spacebar` - select current row
-	* `backspace` - previous folder,
-	* `*` - inverse select,
-	* `+` - select all,
-	* `-` - deselect all,
+	* `backspace` - previous folder
+	* `*` - inverse select
+	* `+` - select all
+	* `-` - deselect all
 	* `F2` - change permissions
 	* `F3` - change ownership
 	* `F4` - edit where possible
@@ -28,7 +28,7 @@
 	* `Shift+F4/F7` - new file/folder
 	* `Shift+F7` - search
 	* `F8/Del` - delete
-	* `Ctrl+X/C/V` - Cut/Copy/Paste,
+	* `Ctrl+X/C/V` - Cut/Copy/Paste
 	* `Theme reload hot key` - reload current directory
 * Deuglifed a link for switching between basic/advanced modes in _SpamAssassin->Header and Body Tests_ module
 * Fixed bugs [#234](https://github.com/qooob/authentic-theme/issues/234) [#235](https://github.com/qooob/authentic-theme/issues/235) [#236](https://github.com/qooob/authentic-theme/issues/236) [#238](https://github.com/qooob/authentic-theme/issues/238) [#239](https://github.com/qooob/authentic-theme/issues/239) [#242](https://github.com/qooob/authentic-theme/issues/242) [#243](https://github.com/qooob/authentic-theme/issues/243) [#244](https://github.com/qooob/authentic-theme/issues/244)  [#245](https://github.com/qooob/authentic-theme/issues/245)

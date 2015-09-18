@@ -83,9 +83,6 @@ _Webmin_ has in-built option to compress static files.  It's possible to enable 
 
 ###Supported modules
 
-####_ConfigServer Security & Firewall_
-Theme only re-renders this module and adds support for code highlight, when editing files manually
-
 ####_Filemin_
 Theme has great support for this module, by adding numerous mast-have features. Most noticeable are listing without page reload (using XHR requests) and full keyboard support, which enables you to use _Filemin_ just as normal desktop browser.
 
@@ -96,10 +93,10 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `enter` - descent into selected
     * in case there is only one row filtered, enter on search field will perform trigger
   * `spacebar` - select current row
-  * `backspace` - previous folder,
-  * `*` - inverse select,
-  * `+` - select all,
-  * `-` - deselect all,
+  * `backspace` - previous folder
+  * `*` - inverse select
+  * `+` - select all
+  * `-` - deselect all
   * `F2` - change permissions
   * `F3` - change ownership
   * `F4` - edit where possible
@@ -108,8 +105,11 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `Shift+F4/F7` - new file/folder
   * `Shift+F7` - search
   * `F8/Del` - delete
-  * `Ctrl+X/C/V` - Cut/Copy/Paste,
+  * `Ctrl+X/C/V` - Cut/Copy/Paste
   * `Theme reload hot key` - reload current directory
+
+####_ConfigServer Security & Firewall_
+Theme only re-renders this module and adds support for code highlight, when editing files manually
 
 
 ###Troubleshoot
