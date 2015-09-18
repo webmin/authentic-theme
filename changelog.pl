@@ -43,7 +43,7 @@ our $__changelog
                     </ul>
                   <li>Deuglifed a link for switching between basic/advanced modes in <em>SpamAssassin->Header and Body Tests</em> module</li>
                   <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/234" target="_blank">#234</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/235" target="_blank">#235</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/236" target="_blank">#236</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/238" target="_blank">#238</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/239" target="_blank">#239</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/242" target="_blank">#242</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/243" target="_blank">#243</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/244" target="_blank">#244</a></li>
-                  <li>Fixed other bugs and made dozes of improvements
+                  <li>Fixed other bugs and made dozes of improvements</li>
 
 
                 </ul>
