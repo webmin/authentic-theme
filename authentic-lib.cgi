@@ -1,10 +1,18 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 15.51 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
+
+our $t_uri_virtualmin = index( $ENV{'REQUEST_URI'}, 'virtualmin' );
+our $t_uri_cloudmin   = index( $ENV{'REQUEST_URI'}, 'cloudmin' );
+our $t_uri_webmail    = index( $ENV{'REQUEST_URI'}, 'mail' );
+our $t_uri_dashboard  = index( $ENV{'REQUEST_URI'}, 'dashboard' );
+our $t_goto           = get_default_right();
+our ( $t_var_switch_m, $t_var_product_m ) = get_swith_mode();
+our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 
 sub print_category {
     my ( $c, $label ) = @_;
@@ -144,23 +152,57 @@ sub print_category {
     }
 }
 
-sub print_switch_empty {
-    my ($num) = @_;
-    print '<input id="reserve_empty_' . $num
-        . '" name="product-switcher" type="radio">
-<label for="reserve_empty_' . $num . '">&nbsp;</label>';
+sub get_swith_mode {
+    my ( $t_var_switch_m, $t_var_product_m );
+
+    if (   &get_product_name() eq 'webmin'
+        && &foreign_available("asterisk") )
+    {
+        $t_var_switch_m  = '2';
+        $t_var_product_m = '5';
+    }
+    elsif (&get_product_name() eq 'usermin'
+        && &foreign_available("mailbox") )
+    {
+        $t_var_switch_m  = '2';
+        $t_var_product_m = '4';
+    }
+    elsif (!&foreign_available("virtual-server")
+        && !&foreign_available("server-manager")
+        || &get_product_name() eq 'usermin'
+        || $get_user_level eq '2' )
+    {
+
+        $t_var_switch_m  = '2';
+        $t_var_product_m = '1';
+    }
+    elsif (&foreign_available("virtual-server")
+        && &foreign_available("server-manager") )
+    {
+        $t_var_switch_m  = '3';
+        $t_var_product_m = '3';
+    }
+    elsif (
+           &foreign_available("virtual-server")
+        || &foreign_available("server-manager")
+        && (   !&foreign_available("virtual-server")
+            || !&foreign_available("server-manager") )
+        )
+    {
+        $t_var_switch_m  = '2';
+        $t_var_product_m = '2';
+    }
+
+    return ( $t_var_switch_m, $t_var_product_m );
 }
 
 sub print_switch_webmin {
-    my ($dynamic) = @_;
-    print '<input'
-        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_'
+    print '<input class="dynamic" id="open_'
         . &get_product_name()
         . '" name="product-switcher" type="radio"'
-        . (    $is_virtualmin == -1
-            && $is_cloudmin == -1
-            && $is_webmail == -1 ? " checked" : "" )
+        . (    $t_uri_virtualmin == -1
+            && $t_uri_cloudmin == -1
+            && $t_uri_webmail == -1 ? " checked" : "" )
         . '>
         <label for="open_'
         . &get_product_name() . '">
@@ -169,54 +211,77 @@ sub print_switch_webmin {
 }
 
 sub print_switch_dashboard {
-    my ($dynamic) = @_;
-    print '<input'
-        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_dashboard" name="product-switcher" type="radio"'
-        . ( $is_dashboard != -1 ? " checked" : "" ) . '>
-          <label for="open_dashboard">
-          <i class="fa fa-stack fa-tachometer" style="margin-bottom: -1px; font-size: 1.1em;"></i><span>Dashboard</span></label>';
+    print
+        '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
+        . ( $t_uri_dashboard != -1 ? " checked" : "" ) . '>
+          <label for="open_dashboard" style="padding-top: 1px;">
+          <i class="fa fa-stack fa-area-chart"></i><span>Dashboard</span></label>';
 }
 
 sub print_switch_virtualmin {
-    my ($dynamic) = @_;
-    print '<input'
-        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_virtualmin" name="product-switcher" type="radio"'
-        . ( $is_virtualmin != -1 ? " checked" : "" ) . '>
+    print
+        '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"'
+        . ( $t_uri_virtualmin != -1 ? " checked" : "" ) . '>
           <label for="open_virtualmin">
           <i class="wbm-virtualmin wbm-sm"></i><span>Virtualmin</span></label>';
 }
 
 sub print_switch_cloudmin {
-    my ($dynamic) = @_;
-    print '<input'
-        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_cloudmin" name="product-switcher" type="radio"'
-        . ( $is_cloudmin != -1 ? " checked" : "" ) . '>
+    print
+        '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"'
+        . ( $t_uri_cloudmin != -1 ? " checked" : "" ) . '>
           <label for="open_cloudmin">
           <i class="wbm-cloudmin wbm-sm"></i><span>Cloudmin</span></label>';
 }
 
 sub print_switch_webmail {
-    my ($dynamic) = @_;
-    print '<input'
-        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_webmail" name="product-switcher" type="radio"'
-        . ( $is_webmail != -1 ? " checked" : "" ) . '>
+    print
+        '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"'
+        . ( $t_uri_webmail != -1 ? " checked" : "" ) . '>
           <label for="open_webmail">
           <i class="fa fa-stack fa-envelope"></i>
           <span>Mail</span></label>';
 }
 
 sub print_switch_thirdlane {
-    my ($dynamic) = @_;
-    print '<input'
-        . ( $dynamic == 1 ? " class=\"dynamic\"" : "" )
-        . ' id="open_thirdlane" id="open_cloudmin" name="product-switcher" type="radio">
+    print
+        '<input class="dynamic" id="open_thirdlane" id="open_cloudmin" name="product-switcher" type="radio">
           <label for="open_thirdlane">
           <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTI0LjksNDguOEMxMS44LDQ4LjgsMSwzOC4xLDEsMjQuOVMxMS44LDEsMjQuOSwxczIzLjksMTAuNywyMy45LDIzLjlTMzguMSw0OC44LDI0LjksNDguOHogTTI0LjksMy44Yy0xMS43LDAtMjEuMSw5LjUtMjEuMSwyMS4xczkuNSwyMS4xLDIxLjEsMjEuMWMxMS43LDAsMjEuMS05LjUsMjEuMS0yMS4xUzM2LjYsMy44LDI0LjksMy44eiIvPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDIwLjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywxOC4xLDI1LjEsMjAuMiwxNi42LDIwLjJ6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDI3LjRjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywyNS4zLDI1LjEsMjcuNCwxNi42LDI3LjR6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDM0LjZjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywzMi41LDI1LjEsMzQuNiwxNi42LDM0LjZ6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==">
           <span class="block">Thirdlane</span></label>';
+}
+
+sub print_switch {
+    print '<div class="switch-toggle switch-'
+        . $t_var_switch_m
+        . ' switch-mins">';
+    if ( $t_var_product_m eq '1' ) {
+        $get_user_level eq '2'
+            ? print_switch_virtualmin()
+            : print_switch_webmin();
+        print_switch_dashboard();
+    }
+    if ( $t_var_product_m eq '2' ) {
+        print_switch_webmin();
+        &foreign_available("virtual-server")
+            ? print_switch_virtualmin()
+            : print_switch_cloudmin();
+    }
+    if ( $t_var_product_m eq '3' ) {
+        print_switch_webmin();
+        print_switch_virtualmin();
+        print_switch_cloudmin();
+    }
+    if ( $t_var_product_m eq '4' ) {
+        print_switch_webmail();
+        print_switch_webmin();
+    }
+    if ( $t_var_product_m eq '5' ) {
+        print_switch_webmin();
+        print_switch_thirdlane();
+    }
+    print '<a></a>
+            </div><br style="line-height:4.4">';
 }
 
 sub print_category_link {
@@ -227,11 +292,12 @@ sub print_category_link {
 }
 
 sub dashboard_switch {
-    my ( $hasvirt, $level, $hasvm2 ) = get_virtualmin_user_level();
     if (   !&foreign_available("virtual-server")
         && !&foreign_available("server-manager")
         && &get_product_name() ne 'usermin'
-        || $level eq '2' )
+
+        #|| ($get_user_level eq '2')
+        )
     {
         return 1;
     }
@@ -412,15 +478,15 @@ sub print_extended_sysinfo {
 
 sub print_sysstat_link {
     my $link;
-    if ( $virtual_server_access_level eq '0'
-        && ( $is_cloudmin != -1 || $is_virtualmin != -1 ) )
+    if ( $get_user_level eq '0'
+        && ( $t_uri_cloudmin != -1 || $t_uri_virtualmin != -1 ) )
     {
-        if ( $is_cloudmin == -1
+        if ( $t_uri_cloudmin == -1
             && -d $root_directory . "/virtual-server/timeplot" )
         {
             $link = 'virtual-server';
         }
-        elsif ( $is_cloudmin != -1
+        elsif ( $t_uri_cloudmin != -1
             && -d $root_directory . "/server-manager/timeplot" )
         {
             $link = 'server-manager';
@@ -443,12 +509,12 @@ sub print_search {
             '<li class="menu-container"><form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
             . "\n";
         print '<div class="form-group">' . "\n";
-        if ( $is_virtualmin != -1 ) {
+        if ( $t_uri_virtualmin != -1 ) {
             print
                 '<input type="hidden" class="form-control" name="mod" value="virtual-server">'
                 . "\n";
         }
-        if ( $is_cloudmin != -1 ) {
+        if ( $t_uri_cloudmin != -1 ) {
             print
                 '<input type="hidden" class="form-control" name="mod" value="server-manager">'
                 . "\n";
@@ -457,22 +523,22 @@ sub print_search {
         if ((      &get_product_name() == 'webmin'
                 || &get_product_name() == 'usermin'
             )
-            && $is_virtualmin == -1
-            && $is_cloudmin == -1
+            && $t_uri_virtualmin == -1
+            && $t_uri_cloudmin == -1
             )
         {
             $_search = ucfirst( &get_product_name() );
         }
-        elsif ( $is_virtualmin != -1 ) {
+        elsif ( $t_uri_virtualmin != -1 ) {
             $_search = 'Virtualmin';
         }
-        elsif ( $is_cloudmin != -1 ) {
+        elsif ( $t_uri_cloudmin != -1 ) {
             $_search = 'Cloudmin';
         }
         print
             '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="'
             . $text{'left_search'}
-            . '" disabled>' . "\n";
+            . '"">' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
     }
@@ -490,7 +556,7 @@ sub add_webprefix {
 }
 
 sub print_left_menu {
-    my ( $module, $items, $group, $id ) = @_;
+    my ( $module, $items, $group, $id, $selected, $xhr ) = @_;
     my $__hr = 0;
     foreach my $item (@$items) {
         if ( $module eq $item->{'module'} || $group ) {
@@ -719,9 +785,15 @@ sub print_left_menu {
                         $sel = "window.parent.frames[1].location = "
                             . "\"$item->{'onchange'}\" + this.value";
                     }
+
+                    my $default
+                        = __settings( 'settings_right_'
+                            . ( $t_uri_cloudmin == -1 ? 'virtualmin' : 'cloudmin' )
+                            . '_default' );
+
                     print ui_select(
                         $item->{'name'},
-                        $item->{'value'},
+                        ((($selected || $selected == 0) && $xhr) ? $selected : ($default ? $default : $item->{'value'})),
                         $item->{'menu'},
                         1,
                         0,
@@ -865,8 +937,8 @@ sub print_favorites {
     ';
 
     if ( $f && $f =~ m/"favorites":/ ) {
-		my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
-        my $fc = decode_json( $f );
+        my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
+        my $fc = decode_json($f);
         foreach my $favorite ( @{ $fc->{'favorites'} } ) {
             if ( length( $favorite->{"link"} ) ) {
                 print '
@@ -906,32 +978,32 @@ sub print_favorites {
     ';
 }
 
-sub get_virtualmin_user_level {
-    local ( $hasvirt, $hasvm2, $level );
-    $hasvm2  = &foreign_available("server-manager");
-    $hasvirt = &foreign_available("virtual-server");
-    if ($hasvm2) {
+sub get_user_level {
+    my ( $a, $b, $c );
+    $b = &foreign_available("server-manager");
+    $a = &foreign_available("virtual-server");
+    if ($b) {
         &foreign_require( "server-manager", "server-manager-lib.pl" );
     }
-    if ($hasvirt) {
+    if ($a) {
         &foreign_require( "virtual-server", "virtual-server-lib.pl" );
     }
-    if ($hasvm2) {
-        $level = $server_manager::access{'owner'} ? 4 : 0;
+    if ($b) {
+        $c = $server_manager::access{'owner'} ? 4 : 0;
     }
-    elsif ($hasvirt) {
-        $level
+    elsif ($a) {
+        $c
             = &virtual_server::master_admin()   ? 0
             : &virtual_server::reseller_admin() ? 1
             :                                     2;
     }
     elsif ( &get_product_name() eq "usermin" ) {
-        $level = 3;
+        $c = 3;
     }
     else {
-        $level = 0;
+        $c = 0;
     }
-    return ( $hasvirt, $level, $hasvm2 );
+    return ( $a, $c, $b );
 }
 
 sub parse_license_date {
@@ -939,19 +1011,6 @@ sub parse_license_date {
         return eval { timelocal( 0, 0, 0, $3, $2 - 1, $1 - 1900 ) };
     }
     return undef;
-}
-
-sub parse_virtual_server_access_level {
-
-    # Where we at
-    if ( &foreign_available("virtual-server") ) {
-        &foreign_require( "virtual-server", "virtual-server-lib.pl" );
-        our $virtual_server_access_level
-            = &virtual_server::master_admin()   ? 0
-            : &virtual_server::reseller_admin() ? 1
-            :                                     2;
-    }
-    return $virtual_server_access_level;
 }
 
 sub _post_install {
@@ -1082,12 +1141,14 @@ sub embed_scripts {
 
 sub embed_footer {
     my ($type) = @_;
-    print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/authentic.'
-        . ( $type eq 'debug' ? 'src' : 'min' )
-        . '.js?1551" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
-        . "\n";
+    if ( $ENV{'SCRIPT_NAME'} ne '/session_login.cgi' ) {
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/authentic.'
+            . ( $type eq 'debug' ? 'src' : 'min' )
+            . '.js?1600" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . "\n";
+    }
 }
 
 sub embed_header {
@@ -1117,7 +1178,7 @@ sub embed_header {
             'jquery.datatables.plugins', 'jquery.easypiechart',
             'tinymce/tinymce',           'transition',
             'nprogress',                 'messenger',
-            'loader'
+            'init'
         );
 
         foreach my $css (@css) {
@@ -1125,7 +1186,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1551" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1600" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1137,13 +1198,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1551" type="text/javascript"></script>' . "\n";
+                . '.js?1600" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1551" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1159,13 +1220,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1551" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1600" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1551" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1600" type="text/javascript"></script>'
+            . "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/init.min.js?1600" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1173,7 +1238,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1551" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1600" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1197,12 +1262,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1551" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1551" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1600" type="text/javascript"></script>'
+        . "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/init.min.js?1600" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1218,8 +1287,8 @@ sub get_authentic_version {
     $installed_version =~ s/^\s+|\s+$//g;
     $installed_version = sprintf '%.2f', $installed_version;
 
-    if ( __settings('settings_sysinfo_theme_updates') eq 'true' )
-    {
+    if ( __settings('settings_sysinfo_theme_updates') eq 'true' ) {
+
         # Get remote version if allowed
         http_download(
             'raw.githubusercontent.com',                 '443',
@@ -1304,7 +1373,7 @@ sub _settings {
                     . &text('settings_right_page_default_description')
             ),
             'settings_right_default_tab_webmin',
-            '/',
+            ( foreign_available("virtual-server") ? '/?virtualmin' : '/' ),
             'settings_right_default_tab_usermin',
             '/',
             'settings_right_virtualmin_default',
@@ -1774,7 +1843,7 @@ sub _settings {
                 </select>';
         }
         elsif ( $k eq 'settings_right_virtualmin_default' ) {
-            get_virtualmin_user_level();
+            get_user_level();
             $v = &ui_select(
                 $k, $v,
                 [   [ "", $text{'edright_first'} ],
@@ -1788,7 +1857,7 @@ sub _settings {
             );
         }
         elsif ( $k eq 'settings_right_cloudmin_default' ) {
-            get_virtualmin_user_level();
+            get_user_level();
             @servers
                 = &server_manager::list_available_managed_servers_sorted();
             $v = &ui_select(
@@ -1932,6 +2001,311 @@ sub __settings {
             }
         }
     }
+}
+
+sub authentic {
+    &init();
+    &header($title);
+    &content();
+    &footer();
+}
+
+sub get_xhr_request {
+    if ( $in{'xhr-navigation'} eq '1' ) {
+        print "Content-type: text/html\n\n";
+        do "authentic-theme/navigation.cgi";
+        exit;
+    }
+    elsif ( $in{'xhr-buttons'} eq '1' ) {
+        print "Content-type: text/html\n\n";
+        do "authentic-theme/buttons.cgi";
+        exit;
+    }
+    elsif ( $in{'xhr-default'} eq '1' ) {
+        print "Content-type: text/html\n\n";
+        print $t_goto;
+        exit;
+    }
+    elsif ( $in{'xhr-settings'} eq '1' ) {
+        print "Content-type: text/html\n\n";
+        if ( $in{'save'} eq '1' ) {
+            _settings( 'save', undef, undef );
+        }
+        elsif ( $in{'restore'} eq '1' ) {
+            _settings( 'restore', undef, undef );
+        }
+        else {
+            do "authentic-theme/settings.cgi";
+        }
+        exit;
+    }
+}
+
+sub init_error {
+    if (  !-d $root_directory . "/authentic-theme"
+        && -d $root_directory . "/authentic-theme-master" )
+    {
+        die("ATTENTION:\nHave you downloaded Authentic Theme from GitHub, and unpacked it manually\nto Webmin directory? In this case you need to rename theme directory from\n`authentic-theme-master` to `authentic-theme` in order to make theme work.\nAfterward, you will need to reset the theme again in Webmin Configuration.\n"
+        );
+    }
+}
+
+sub get_default_right {
+    my $udefgoto;
+    my $t_goto;
+
+    # Check user settings on default page for Virtualmin/Cloudmin
+    if (   $t_uri_virtualmin != -1
+        && length __settings('settings_right_virtualmin_default')
+        && __settings('settings_right_virtualmin_default') ne ''
+        && domain_available( __settings('settings_right_virtualmin_default') )
+        )
+    {
+        if ( $get_user_level eq '2' ) {
+            $udefgoto = '/sysinfo.cgi';
+        }
+        else {
+            $udefgoto = '/virtual-server/summary_domain.cgi?dom='
+                . __settings('settings_right_virtualmin_default');
+        }
+    }
+    elsif ($t_uri_cloudmin != -1
+        && length __settings('settings_right_cloudmin_default')
+        && __settings('settings_right_cloudmin_default') ne ''
+        && server_available( __settings('settings_right_cloudmin_default') ) )
+    {
+        $udefgoto = '/server-manager/edit_serv.cgi?id='
+            . __settings('settings_right_cloudmin_default');
+    }
+    else {
+        $udefgoto = '/sysinfo.cgi';
+    }
+
+    #Going to default right page
+    my $minfo = &get_goto_module();
+    $t_goto
+        = ( $t_uri_virtualmin != -1 || $t_uri_cloudmin != -1 ) ? $udefgoto
+        : $minfo ? "$minfo->{'dir'}/"
+        :          $udefgoto;
+
+    # Filemin tweak for maintaining localStorage consistency
+    if ( index( $t_goto, 'filemin' ) == 0 ) {
+        $t_goto = $t_goto . 'index.cgi?path=';
+    }
+
+    return $t_goto;
+}
+
+sub init {
+
+    # User-friendly message for those installing from GitHub
+    &init_error();
+
+    # Provide unobstructive access for AJAX calls
+    &get_xhr_request();
+
+    # Redirect user away, in case requested mode can not be satisfied
+    if (   $ENV{'REQUEST_URI'} ne '/'
+        && $ENV{'REQUEST_URI'} ne '/?virtualmin'
+        && $ENV{'REQUEST_URI'} ne '/?cloudmin'
+        && $ENV{'REQUEST_URI'} ne '/?mail'
+        && $ENV{'REQUEST_URI'} ne '/?dashboard'
+        && index( $ENV{'REQUEST_URI'}, 'xhr' ) lt 0 )
+    {
+        my $webmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'} . '/';
+        print "Location: $webmin\n\n";
+    }
+    elsif (
+        ( $t_uri_virtualmin != -1 && !&foreign_available("virtual-server") )
+        || ( $t_uri_cloudmin != -1 && !&foreign_available("server-manager") )
+        || ($t_uri_webmail != -1
+            && (&get_product_name() ne 'usermin'
+                || ( &get_product_name() eq 'usermin'
+                    && !&foreign_available("mailbox") )
+            )
+        )
+        )
+    {
+        print "Set-Cookie: redirect=0; path=/\r\n";
+        my $webmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'} . '/';
+        print "Location: $webmin\n\n";
+    }
+
+# In case Virtualmin/Cloudmin is installed, after logging in, redirect to Virtualmin/Cloudmin
+    if ($ENV{'HTTP_COOKIE'} =~ /redirect=1/
+        && (   &foreign_available("virtual-server")
+            || &foreign_available("server-manager") )
+        && &get_product_name() eq "webmin"
+        && ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 )
+        )
+    {
+        print "Set-Cookie: redirect=0; path=/\r\n";
+        my $virtualmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . (
+            length __settings('settings_right_default_tab_webmin')
+            ? __settings('settings_right_default_tab_webmin')
+            : ( foreign_available("virtual-server") ? '/?virtualmin' : '/' )
+            );
+        print "Location: $virtualmin\n\n";
+    }
+
+  # In case Mailbox module is installed, after logging in, redirect to Webmail
+    if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
+        && &foreign_check("mailbox")
+        && &foreign_available("mailbox")
+        && &get_product_name() eq "usermin"
+        && $t_uri_webmail == -1 )
+    {
+        print "Set-Cookie: redirect=0; path=/\r\n";
+        my $webmail
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . (
+            length __settings('settings_right_default_tab_usermin')
+            ? __settings('settings_right_default_tab_usermin')
+            : '/'
+            );
+        print "Location: $webmail\n\n";
+    }
+
+    if ( $ENV{'HTTP_COOKIE'} =~ /redirect=1/ ) {
+        print "Set-Cookie: redirect=0; path=/\r\n";
+
+        # Notify on successful authentication
+        notify('settings_security_notify_on_login_success');
+    }
+
+    # Clearing possibly stuck update states
+    if (   index( $ENV{'REQUEST_URI'}, 'updating' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'updating-processing' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'recollect' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'recollect-system-status' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'recollecting' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'recollecting-system-status' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'recollecting-package-updates' ) != -1
+        || index( $ENV{'REQUEST_URI'},
+            'recollecting-package-updates-processing' ) != -1
+        )
+    {
+        if ( $t_uri_virtualmin != -1 ) {
+            my $virtualmin
+                = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+                . $ENV{'HTTP_HOST'}
+                . '/?virtualmin';
+            print "Location: $virtualmin\n\n";
+        }
+        elsif ( $t_uri_cloudmin != -1 ) {
+            my $cloudmin
+                = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+                . $ENV{'HTTP_HOST'}
+                . '/?cloudmin';
+            print "Location: $cloudmin\n\n";
+        }
+        elsif ( $t_uri_dashboard != -1 ) {
+            my $dashboard
+                = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+                . $ENV{'HTTP_HOST'}
+                . '/?dashboard';
+            print "Location: $dashboard\n\n";
+        }
+        else {
+            my $webmin
+                = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+                . $ENV{'HTTP_HOST'} . '/';
+            print "Location: $webmin\n\n";
+        }
+    }
+
+    # Force regular user to be in Virtualmin
+    if (   $get_user_level eq '2'
+        && $ENV{'REQUEST_URI'} ne '/?virtualmin' )
+    {
+        my $virtualmin
+            = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
+            . $ENV{'HTTP_HOST'}
+            . '/?virtualmin';
+        print "Location: $virtualmin\n\n";
+    }
+
+}
+
+sub content {
+
+    # Wrapper
+    print '<div id="wrapper" data-product="'
+        . &get_product_name()
+        . '" data-virtual-server="'
+        . $t_uri_virtualmin
+        . '" data-server-manager="'
+        . $t_uri_cloudmin
+        . '" data-webmail="'
+        . $t_uri_webmail
+        . '" data-dashboard="'
+        . $t_uri_dashboard
+        . '" data-access-level="'
+        . $get_user_level
+        . '" data-hostname="'
+        . &get_display_hostname()
+        . '" class="index">' . "\n";
+
+    # Mobile toggle
+    print
+        '<div class="visible-xs mobile-menu-toggler" style="position: fixed">';
+    print
+        '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
+        . "\n";
+    print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
+    print '</button>' . "\n";
+    print '</div>' . "\n";
+
+    #### Left
+    print '<aside style="z-index:10;" id="sidebar" class="hidden-xs">' . "\n"
+        . "\n";
+
+    &print_switch();
+
+    # Navigation
+    print '<ul class="navigation">' . "\n";
+    do "authentic-theme/navigation.cgi";
+    print '</ul>' . "\n";
+
+    # Buttons
+    print '<br><br><ul class="user-links">';
+    do "authentic-theme/buttons.cgi";
+    print '</ul>';
+
+    print '</aside>' . "\n";
+
+    # Authenticated logo
+    embed_logo();
+
+    # Favorites menu
+    print_favorites();
+
+    # Right
+    print '<div id="content" class="__page">' . "\n";
+    print '<div class="loader-container">' . "\n";
+    print '<div class="loader"><span class="loading"></span></div>' . "\n";
+    print '</div>' . "\n";
+    print '<script>__lrs()</script>';
+    print '<iframe name="page" id="iframe" src="'
+        . $gconfig{'webprefix'}
+        . (
+        (   !-f $root_directory . '/authentic-theme/update'
+                && $t_uri_dashboard == -1
+        )
+        ? $t_goto
+        : '/sysinfo.cgi'
+        ) . '">' . "\n";
+    print '</iframe>' . "\n";
+    print '</div>' . "\n";
+
 }
 
 sub licenses {
