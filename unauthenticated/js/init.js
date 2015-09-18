@@ -437,6 +437,9 @@ function ___csf() {
             f.search_control(k);
             f.shortcut_control(k)
         });
+        if (t__wi_p.$('#open_webmin').length > 0 && t__wi_p.$('.switch-toggle input:checked').attr('id') != 'open_webmin') {
+            t__wi_p.t__s("open_webmin");
+        }
         f.__dlm("csf/");
         t__au__c___r(1, 1);
         if (f.$___________initial === 1) {
