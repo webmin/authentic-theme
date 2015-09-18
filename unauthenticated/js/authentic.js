@@ -2556,21 +2556,21 @@ if (t___wi.location == t__wi_p.location) {
                             $("body").trigger(q)
                         }
                     }
-                    if (n == 106) {
+                    if (n == 106 || (r.shiftKey && n == 56)) {
                         if (!$(".modal.in").length) {
                             r.preventDefault();
                             r.stopPropagation();
                             $('body button[onclick="invertSelection()"]').trigger("click")
                         }
                     }
-                    if (n == 107) {
+                    if (n == 107 || (r.shiftKey && n == 187)) {
                         if (!$(".modal.in").length) {
                             r.preventDefault();
                             r.stopPropagation();
                             $('body button[onclick="selectAll()"]').trigger("click")
                         }
                     }
-                    if (n == 109) {
+                    if (n == 109 || (r.shiftKey && n == 189)) {
                         if (!$(".modal.in").length) {
                             r.preventDefault();
                             r.stopPropagation();
