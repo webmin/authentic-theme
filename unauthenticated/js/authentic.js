@@ -2488,7 +2488,7 @@ if (t___wi.location == t__wi_p.location) {
                     if ((n == 32) && !r.shiftKey && !$("#list_form table tbody tr.m-active").length) {
                         return
                     }
-                    if ((n == 46 || n == 113 || n == 114 || n == 115 || n == 116 || n == 117 || n == 119) && !$(".ui_checked_columns input:checked").length && !$("#list_form table tbody tr.m-active").length && (!r.shiftKey || (n == 116 && r.shiftKey) || (n == 115 && !r.shiftKey))) {
+                    if ((n == 46 || n == 113 || n == 114 || n == 115 || n == 116 || n == 117 || n == 119) && !$(".ui_checked_columns input:checked").length && !$("input").is(":focus") && !$("#list_form table tbody tr.m-active").length && (!r.shiftKey || (n == 116 && r.shiftKey) || (n == 115 && !r.shiftKey))) {
                         r.preventDefault();
                         r.stopPropagation();
                         messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Nothing is selected!', 3, "warning");
@@ -2587,7 +2587,7 @@ if (t___wi.location == t__wi_p.location) {
                             __f___lb()
                         }
                     }
-                    if (n == 46 || n == 119) {
+                    if ((n == 46 || n == 119) && !$("input").is(":focus")) {
                         if (!$(".modal.in").length) {
                             r.preventDefault();
                             r.stopPropagation();
