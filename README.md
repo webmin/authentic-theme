@@ -106,6 +106,7 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `Shift+F7` - search
   * `F8/Del` - delete
   * `Ctrl+X/C/V` - Cut/Copy/Paste
+  * `Ctrl+Enter/Ctrl+Shift+Enter` - Save/Save and close currently edited file
   * `Theme reload hot key` - reload current directory
 
 ####_ConfigServer Security & Firewall_
