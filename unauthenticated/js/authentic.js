@@ -66,6 +66,7 @@ if ($current_page_full && $current_page_full.indexOf("/servers/link.cgi/") > -1)
 if ($__source_host_complete.substr(-1) == "/") {
     $__source_host_complete = $__source_host_complete.substr(0, $__source_host_complete.length - 1)
 }
+
 function prt(a) {
     return console.log(a)
 }(function (a) {
@@ -95,6 +96,7 @@ function array_swap(c) {
     }
     return a
 }
+
 function dblrclick(c) {
     var b = 0,
         a = false;
@@ -111,13 +113,15 @@ function dblrclick(c) {
         }
     }
 }
+
 function tab_action(a, b) {
     if (document.forms[0] && document.forms[0][a]) {
         document.forms[0][a].value = b
     }
 }
+
 function parse_bool(a) {
-    return !(/^(false|0)$/i).test(a) && !! a
+    return !(/^(false|0)$/i).test(a) && !!a
 }
 $(function () {
     var a;
@@ -134,6 +138,10 @@ $(function () {
     }, 900)
 });
 
+function t__lo__btn_md() {
+    return '<span class="cspinner in-btn-md" style="position: relative"><span class="cspinner-icon white" style="width:12px; height:12px; margin-right: 7px;"></span></span>'
+}
+
 function get_selected_text() {
     if (t___wi.getSelection) {
         return t___wi.getSelection().toString()
@@ -144,6 +152,7 @@ function get_selected_text() {
     }
     return ""
 }
+
 function loaders_dismiss() {
     if (settings_hotkeys_active) {
         $(window).on("keydown", function (a) {
@@ -160,9 +169,11 @@ function loaders_dismiss() {
         })
     }
 }
+
 function modal_dismiss() {
     $(".modal.in").find("[data-dismiss]").trigger("click")
 }
+
 function search_control(a) {
     if (settings_hotkeys_active) {
         if (!(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_focus_search && a[settings_hotkey_toggle_modifier])) {
@@ -173,9 +184,11 @@ function search_control(a) {
         return false
     }
 }
+
 function access_level() {
     return t__wi_p.$("body").data("level")
 }
+
 function dashboard_switch() {
     if (t__wi_p.$("body").data("dashboard") == "1") {
         return true
@@ -183,11 +196,13 @@ function dashboard_switch() {
         return false
     }
 }
+
 function dashboard_switch_set() {
     t__wi_p.t__s("open_dashboard");
     t__wi_p.__cms();
     t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + "/sysinfo.cgi")
 }
+
 function messenger(b, c, a) {
     t__wi_p.Messenger().post({
         message: b,
@@ -196,6 +211,7 @@ function messenger(b, c, a) {
         type: a
     })
 }
+
 function shortcut_control(a) {
     if (settings_hotkeys_active) {
         if (!(String.fromCharCode(a.which) == "1" && settings_hotkey_custom_1 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "2" && settings_hotkey_custom_2 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "3" && settings_hotkey_custom_3 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "4" && settings_hotkey_custom_4 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "5" && settings_hotkey_custom_5 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "6" && settings_hotkey_custom_6 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "7" && settings_hotkey_custom_7 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "8" && settings_hotkey_custom_8 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which) == "9" && settings_hotkey_custom_9 && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_favorites && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_sysinfo && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_reload && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_toggle_key_webmail && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_toggle_key_usermin && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_toggle_key_cloudmin && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_toggle_key_virtualmin && a[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(a.which).toLowerCase() == settings_hotkey_toggle_key_webmin && a[settings_hotkey_toggle_modifier])) {
@@ -288,6 +304,7 @@ function shortcut_control(a) {
         return false
     }
 }
+
 function right_module_title() {
     $_right_menu_title = t__wi_p.$('iframe[name="page"]').contents().find("#headln2c");
     if ($_right_menu_title.find("font").text().length) {
@@ -300,6 +317,7 @@ function right_module_title() {
         }
     }
 }
+
 function t__s(a) {
     t__wi_p.$('.switch-toggle input:not([id="' + a + '"])').each(function () {
         $(this).removeAttr("checked")
@@ -341,6 +359,7 @@ function t__s(a) {
         }
     }
 }
+
 function hide_mobile_menu() {
     if (t__wi_p.$(".mobile-menu-toggler:visible").length && $(".mobile-menu-toggler").attr("style") && $(".mobile-menu-toggler").attr("style").indexOf("ease") == -1) {
         if (t__wi_p.$(".__logo")) {
@@ -357,6 +376,7 @@ function hide_mobile_menu() {
         })
     }
 }
+
 function t_sel_i() {
     if (t__wi_p.$("aside select").length) {
         t__wi_p.$("aside select").removeAttr("onchange disabled");
@@ -403,6 +423,7 @@ function t_sel_i() {
         }
     }
 }
+
 function __mss() {
     if (product_name(1).toLowerCase() == "cloudmin") {
         if (t__wi_p.$("aside").find("li.menu-container.menu-status.hidden").find("font").length > 0) {
@@ -448,6 +469,7 @@ function __mss() {
         }
     }
 }
+
 function __lls() {
     t__wi_p.t___p__ll = 1;
     if (settings_loader_top && t__wi_p.t___p__xhr_r === 0) {
@@ -465,6 +487,7 @@ function __lls() {
         t__wi_p.$("body ul.user-links").css("visibility", "hidden")
     }
 }
+
 function __lle() {
     if (settings_loader_top && t__wi_p.t___p__xhr_r === 0) {
         t__wi_p.NProgress.done()
@@ -485,6 +508,7 @@ function __lle() {
     loader_start_config();
     t__wi_p.t___p__ll = 0
 }
+
 function t__au__c___i(b) {
     t__wi_p.$(".autocomplete-suggestions").remove();
     t__wi_p.$(".form-control.sidebar-search").removeAttr("disabled");
@@ -635,6 +659,7 @@ function t__au__c___i(b) {
         noSuggestionNotice: "No results found"
     })
 }
+
 function t__au__c___r(a, b) {
     if (typeof t__au__c___i == "function" && a === 0) {
         t__au__c___i((b ? "c" : false))
@@ -642,6 +667,7 @@ function t__au__c___r(a, b) {
         t__wi_p.t__au__c___i((b ? "c" : false))
     }
 }
+
 function container_fluid_size() {
     if (!t__wi_p.$(".mobile-menu-toggler").hasClass("selected")) {
         if (t__wi_p.$("#sidebar:visible").length !== 1) {
@@ -663,6 +689,7 @@ function container_fluid_size() {
         }
     }
 }
+
 function __cms() {
     t__wi_p.$(".navigation > li:not('.has-sub')").removeClass("sub_active").find("span.current-large").remove();
     t__wi_p.$(".navigation > li > ul.sub > li").removeClass("sub_active").find("span.current").remove();
@@ -670,6 +697,7 @@ function __cms() {
     t__wi_p.$(".navigation > li > ul.sub").hide();
     t__wi_p.$(".navigation > li > a > i.fa.fa-folder-open-o").removeClass("fa-folder-open-o")
 }
+
 function __is_same_origin(a) {
     if ((a.attr("href") && (a.attr("href").match("^http") || a.attr("href").match("^https") || a.attr("href").match("^ftp")) && a.attr("target") != "page" && $.url(a.attr("href")).attr("host") != $__host_url) || a.attr("data-href") && (a.attr("data-href").match("^http") || a.attr("data-href").match("^https") || a.attr("data-href").match("^ftp")) && $.url(a.attr("data-href")).attr("host") != $__host_url) {
         return 0
@@ -677,6 +705,7 @@ function __is_same_origin(a) {
         return 1
     }
 }
+
 function settings_update() {
     $.each(t__wi_p.$('iframe[name="page"]').contents().find("#atsettings .ui_form").serializeArray(), function (b, a) {
         if (a.value == "true" || a.value == "false") {
@@ -694,6 +723,7 @@ function settings_update() {
         t__wi_p[a.name] = c
     })
 }
+
 function loader_start_config() {
     $("body").on("click", 'a[href^="http"], a[href^="https"], a[href^="ftp"], a[href^="ftps"]', function (a) {
         if (!__is_same_origin($(this))) {
@@ -724,6 +754,7 @@ function t__wm_l(a) {
         t__m_b()
     }
 }
+
 function t__vm_l(a) {
     $.ajax({
         type: "GET",
@@ -736,6 +767,7 @@ function t__vm_l(a) {
     });
     t__m_b()
 }
+
 function t__cm_l(a) {
     $.ajax({
         type: "GET",
@@ -748,6 +780,7 @@ function t__cm_l(a) {
     });
     t__m_b()
 }
+
 function t__m_b() {
     $.ajax({
         type: "GET",
@@ -759,6 +792,7 @@ function t__m_b() {
         }
     })
 }
+
 function t__wm_r() {
     $("body").append('<span id="____switch"></span>');
     $.ajax({
@@ -774,6 +808,7 @@ function t__wm_r() {
         }
     })
 }
+
 function t_vm_r(b) {
     var a;
     if (b !== false) {
@@ -787,6 +822,7 @@ function t_vm_r(b) {
     }
     t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + "/" + a)
 }
+
 function t_cm_r(b) {
     var a;
     if (b !== false) {
@@ -800,6 +836,7 @@ function t_cm_r(b) {
     }
     t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + "/" + a)
 }
+
 function t__m(b, c, a) {
     if (b === "open_virtualmin") {
         t__vm_l(false);
@@ -820,9 +857,11 @@ function t__m(b, c, a) {
         }
     }
 }
+
 function __samn() {
     return ':not(.menu-exclude-link, [data-href="/webmin/refresh_modules.cgi"])'
 }
+
 function __sam(b, g) {
     if (g === false) {
         var a = false,
@@ -957,7 +996,7 @@ function __sam(b, g) {
             }
         } else {
             $current_page_webmin = 0
-        }(($current_page.split("/")[0] == "virtual-server" || $current_page.split("/")[0] == "server-manager") && !$current_page_webmin && (t__wi_p.$("#wrapper").data("virtual-server") != -1 || t__wi_p.$("#wrapper").data("server-manager") != -1)) ? $current_page = $current_page.split("/")[0] + "/" + $current_page.split("/")[1] : $current_page = $current_page.split("/")[0] + "/";
+        }(($current_page.split("/")[0] == "virtual-server" || $current_page.split("/")[0] == "server-manager") && !$current_page_webmin && (t__wi_p.$("#wrapper").data("virtual-server") != -1 || t__wi_p.$("#wrapper").data("server-manager") != -1)) ? $current_page = $current_page.split("/")[0] + "/" + $current_page.split("/")[1]: $current_page = $current_page.split("/")[0] + "/";
         $current_page_search = t__wi_p.$('iframe[name="page"]').get(0) ? t__wi_p.$('iframe[name="page"]').get(0).contentWindow.location.search : 0;
         var f = [];
         t__wi_p.$('li > ul.sub li:not(.menu-exclude):not(.user-link) a:not(.menu-exclude-link, [data-href="/webmin/refresh_modules.cgi"])').each(function () {
@@ -1144,6 +1183,7 @@ function __sam(b, g) {
         }
     }
 }
+
 function __dlm(a) {
     if (t__wi_p.$___________m_locked === 1) {
         return
@@ -1175,6 +1215,7 @@ function __dlm(a) {
         __cms()
     }
 }
+
 function t__m__m(d, a) {
     if ($.url($__source_url).param("refresh") == "1") {
         if (!$("body").contents().text().match(/___theme_post_save___/)) {
@@ -1234,6 +1275,7 @@ function t__m__m(d, a) {
         }
     }
 }
+
 function ___f__tw() {
     if ($("body").attr("class") && $("body").attr("class").indexOf("filemin") > -1) {
         $("body").on("hidden.bs.modal", function () {
@@ -1387,7 +1429,7 @@ function ___f__tw() {
         $("body").on("click", "#createFolderDialog button._at_filemin_create_folder_submit", function (a) {
             a.preventDefault();
             a.stopPropagation();
-            messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>Creating folder <samp>' + $('#createFolderForm input[name="name"]').val() + "</samp>. Please wait...", 5, "info");
+            messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>Creating folder `<samp>' + $('#createFolderForm input[name="name"]').val() + "</samp>`. Please wait...", 5, "info");
             __f____a("create_folder", false)
         });
         $("body").on("submit", "#createFolderForm", function (a) {
@@ -1417,7 +1459,7 @@ function ___f__tw() {
         $("body").on("click", "#createFileDialog button._at_filemin_create_file_submit", function (a) {
             a.preventDefault();
             a.stopPropagation();
-            messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>Creating file <samp>' + $('#createFileForm input[name="name"]').val() + "</samp>. Please wait...", 5, "info");
+            messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>Creating file `<samp>' + $('#createFileForm input[name="name"]').val() + "</samp>`. Please wait...", 5, "info");
             __f____a("create_file", false)
         });
         $("body").on("submit", "#createFileForm", function (a) {
@@ -1624,14 +1666,14 @@ function ___f__tw() {
         if (settings_window_customized_checkboxes_and_radios) {
             $("body").on("click", ".acheckbox, .btn-group.pull-right > button:eq(0), .btn-group.pull-right > button:eq(1)", function () {
                 if ($("table .acheckbox:visible").filter(function () {
-                    return $(this).children("#select-unselect").length === 0
-                }).length) {
-                    $(".acheckbox, .aradio").icheck("updated");
-                    if ($("table .acheckbox.checked:visible").filter(function () {
-                        return $(this).children("#select-unselect").length === 0
-                    }).length === $("table .acheckbox:visible").filter(function () {
                         return $(this).children("#select-unselect").length === 0
                     }).length) {
+                    $(".acheckbox, .aradio").icheck("updated");
+                    if ($("table .acheckbox.checked:visible").filter(function () {
+                            return $(this).children("#select-unselect").length === 0
+                        }).length === $("table .acheckbox:visible").filter(function () {
+                            return $(this).children("#select-unselect").length === 0
+                        }).length) {
                         $("#select-unselect").prop("checked", true)
                     } else {
                         $("#select-unselect").prop("checked", false)
@@ -1641,6 +1683,100 @@ function ___f__tw() {
             })
         }
     }
+}
+
+function t__cm___init(b, a, c) {
+    $.each(b, function (n, k) {
+        var r = $(this),
+            p = ["phpini", "bind8"],
+            d = ["phpini"],
+            o = ["bind8"];
+        $("#headln2l a").attr("href") ? $page = $("#headln2l a").attr("href").split("/")[1] : $page = null;
+        p.indexOf($page) >= 0 && $(this).data("name", "data");
+        CodeMirror.modeURL = "/unauthenticated/js/codemirror/mode/%N/%N.js";
+        var s = null,
+            j = "text/plain";
+        var l = false;
+        if ($current_page_full == $_____link_full + "/custom/view.cgi") {
+            l = $('form[action="save.cgi"]').find(".table-title").find("tt").text()
+        } else {
+            if ($('body[class^="filemin"]').length) {
+                l = $.url($__relative_url).param("file")
+            } else {
+                l = $('select[name="file"]').val()
+            }
+        }
+        var g = (a ? a : l),
+            h, s, j;
+        if (h = /.+\.([^.]+)$/.exec(g)) {
+            var f = CodeMirror.findModeByExtension(h[1]);
+            if (f) {
+                s = f.mode;
+                j = f.mime
+            }
+        } else {
+            if (/\//.test(g)) {
+                var f = CodeMirror.findModeByMIME(g);
+                if (f) {
+                    s = f.mode;
+                    j = g
+                }
+            } else {
+                s = null;
+                j = "text/plain"
+            }
+        }
+        if ($page == "apache" || $page == "postfix" || $page == "procmail" || $page == "ldap-server") {
+            s = "rpm";
+            j = "rpm-spec"
+        } else {
+            if ($page == "phpini") {
+                s = "z80";
+                j = "text/x-z80"
+            } else {
+                if ($page == "virtual-server" && $(this).attr("name") == "body") {
+                    s = "htmlmixed";
+                    j = "text/html"
+                }
+            }
+        }
+        $current_file = $current_page_full.replace(/^\//g, "");
+        if ($current_file) {
+            $current_file = $current_file.split("/")[1]
+        }
+        var q = ["edit_recs.cgi", "edit_dirs.cgi"];
+        if (((product_name(1).toLowerCase() == "virtualmin" && $page == "virtual-server" && $(this).attr("name") == "body" || $(this).attr("name") == "content") || $(this).attr("name") == "data" || $(this).data("name") == "data" || $(this).attr("name") == "directives" || ($(this).attr("name") == "manual" && $current_page_full == $_____link_full + "/fail2ban/edit_manual.cgi")) && $("textarea").length === 1 && $("textarea").parent("td.td_tag").length === 0 && $current_directory != $_____link + "init/" && q.indexOf($current_file) === -1) {
+            if ($current_page_full != $_____link_full + "/bind8/forward_form.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi") {
+                $parent_width = r.parent("td").width() - 2;
+                __cm_editor = CodeMirror.fromTextArea(k, {
+                    tabMode: "indent",
+                    matchBrackets: true,
+                    lineNumbers: true,
+                    lineWrapping: true,
+                    indentUnit: 4,
+                    autofocus: true
+                });
+                __cm_editor.setOption("mode", j);
+                if (s != "rpm") {
+                    CodeMirror.autoLoadMode(__cm_editor, s)
+                }
+                c ? ($resize = c) : ($resize = 2.8);
+                $window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
+                __cm_editor.setSize($parent_width, $window_height);
+                if (!c) {
+                    $(window).resize(function () {
+                        $parent_width = r.parent("td").width() - 2;
+                        $window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
+                        __cm_editor.setSize($parent_width, $window_height)
+                    })
+                } else {
+                    __cm_editor.on("change", function (t, m) {
+                        b.val(__cm_editor.getValue())
+                    })
+                }
+            }
+        }
+    })
 }
 $(document).on("click", function (a) {
     if ($(a.target).attr("class") && $(a.target).attr("class").indexOf("select2") === 0) {} else {
@@ -1711,6 +1847,7 @@ if (t___wi.location == t__wi_p.location) {
                         k[g] = h[g]
                     }
                 }
+
                 function j() {
                     this.constructor = k
                 }
@@ -1889,6 +2026,7 @@ if (t___wi.location == t__wi_p.location) {
         t___wi.open($("#__tmp_openner").attr("href"));
         $("#__tmp_openner").remove()
     }
+
     function __tmp_opener_link(a) {
         $("body").append('<a href="' + t__wi_p.$__source_protocol + "://" + t__wi_p.$__host_url + ":" + $__source_port + a + '" target="_blank" class="hidden" id="__tmp_openner"></a>')
     }
@@ -2011,9 +2149,11 @@ if (t___wi.location == t__wi_p.location) {
         }
         return a
     }
+
     function __f___gd() {
         return $(_f__table.fnGetNodes()).find("input").add($("#list_form > input")).serialize()
     }
+
     function _f__gr(a) {
         if (a) {
             return $(_f__table.fnGetNodes()).find("input:checked")
@@ -2021,6 +2161,7 @@ if (t___wi.location == t__wi_p.location) {
             return $(_f__table.fnGetNodes()).find("input")
         }
     }
+
     function __f___ub() {
         $("div button.filemin-button-delete").removeClass("disabled").attr("onclick", "removeDialog()");
         $(".filemin-button-chmod").removeClass("disabled").find("a").attr("onclick", "chmodDialog()");
@@ -2029,6 +2170,7 @@ if (t___wi.location == t__wi_p.location) {
         $(".filemin-button-copy").removeClass("disabled");
         $(".filemin-button-cut").removeClass("disabled")
     }
+
     function __f___lb() {
         $("div button.filemin-button-delete").addClass("disabled").removeAttr("onclick");
         $(".filemin-button-chmod").addClass("disabled").find("a").removeAttr("onclick");
@@ -2037,17 +2179,21 @@ if (t___wi.location == t__wi_p.location) {
         $(".filemin-button-copy").addClass("disabled").find("a").removeAttr("onclick");
         $(".filemin-button-cut").addClass("disabled").find("a").removeAttr("onclick")
     }
+
     function __f_____sl() {
         $("body").find(".breadcrumb + .filemin-main-spinner").removeClass("hidden")
     }
+
     function __f_____hl() {
         $("body").find(".breadcrumb + .filemin-main-spinner").addClass("hidden")
     }
+
     function __f_____hl_() {
         setTimeout(function () {
             $("body").find(".breadcrumb + .filemin-main-spinner").addClass("hidden")
         }, 750)
     }
+
     function __f_____lo(b, a) {
         if (a === true) {
             $("body").find("#list_form table tbody").css("opacity", "0.5").addClass("filter-grayscale" + (b ? " filemin-updating" : "") + "");
@@ -2055,12 +2201,14 @@ if (t___wi.location == t__wi_p.location) {
         }
         __f_____sl()
     }
+
     function __f_____ul() {
         $("body").find("#list_form table tbody").css("opacity", "1").removeClass("filter-grayscale filemin-updating");
         $("body").find("ul.pagination").css("opacity", "1").removeClass("filter-grayscale pointer-events-none");
         __f_____hl();
         $(".btn-group.pull-right > .btn-group > button").removeClass("disabled")
     }
+
     function __f____a(f, b) {
         var c = $('#list_form > input[type="hidden"][name="path"]').val();
         if (f != "bookmark") {
@@ -2365,9 +2513,11 @@ if (t___wi.location == t__wi_p.location) {
             })
         }
     }
+
     function __f___cs() {
         $("#list_form table tbody tr").removeClass("m-active m-not-active")
     }
+
     function __f___u(c, f, b, d) {
         $("#DataTables_Table_0").dataTable().fnDestroy();
         $("body").unbind("keydown", onkeydown);
@@ -2400,6 +2550,13 @@ if (t___wi.location == t__wi_p.location) {
                 increaseArea: "20%"
             })
         }
+        $("#list_form > table").on("click", 'a .fa.fa-edit, a[href^="edit_file.cgi"]', function (k) {
+            k.preventDefault();
+            k.stopPropagation();
+            var k = jQuery.Event("keydown");
+            k.which = 115;
+            $("body").trigger(k)
+        });
         _f__table = $("#list_form > table").dataTable({
             order: [],
             aaSorting: [],
@@ -2436,6 +2593,15 @@ if (t___wi.location == t__wi_p.location) {
                 var l;
                 $("body").on("keydown", function (r) {
                     var n = r.keyCode ? r.keyCode : r.which;
+                    if (n == 13 && $(".modal.in._filemin_file_editor").length) {
+                        if (r.ctrlKey && r.shiftKey) {
+                            $("._filemin_file_editor_save_and_close").trigger("click")
+                        } else {
+                            if (r.ctrlKey) {
+                                $("._filemin_file_editor_save").trigger("click")
+                            }
+                        }
+                    }
                     if (n == 13 && $("#list_form table tbody tr.m-active").length === 1 && !$(".modal.in").length && t__wi_p.t___p__xhr_r === 0) {
                         $("#list_form table tbody tr.m-active").find("td:first-child").trigger("click");
                         return
@@ -2488,7 +2654,7 @@ if (t___wi.location == t__wi_p.location) {
                     if ((n == 32) && !r.shiftKey && !$("#list_form table tbody tr.m-active").length) {
                         return
                     }
-                    if ((n == 46 || n == 113 || n == 114 || n == 115 || n == 116 || n == 117 || n == 119) && !$(".ui_checked_columns input:checked").length && !$("input").is(":focus") && !$("#list_form table tbody tr.m-active").length && (!r.shiftKey || (n == 116 && r.shiftKey) || (n == 115 && !r.shiftKey))) {
+                    if ((n == 46 || n == 113 || n == 114 || n == 115 || n == 116 || n == 117 || n == 119) && !$(".ui_checked_columns input:checked").length && !$(".modal.in").length && !$("input").is(":focus") && !$("#list_form table tbody tr.m-active").length && (!r.shiftKey || (n == 116 && r.shiftKey) || (n == 115 && !r.shiftKey))) {
                         r.preventDefault();
                         r.stopPropagation();
                         messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Nothing is selected!', 3, "warning");
@@ -2651,12 +2817,78 @@ if (t___wi.location == t__wi_p.location) {
                     }
                     if (n == 115 && !r.shiftKey) {
                         if (!$(".modal.in").length) {
+                            $(".filemin-main-spinner").removeClass("hidden");
                             if ($("#list_form table tbody tr.m-active").find("i.fa-edit").parent("a").length) {
                                 r.preventDefault();
-                                r.stopPropagation();
-                                $("#list_form table tbody tr.m-active").find("i.fa-edit").parent("a")[0].click();
+                                $.ajax({
+                                    type: "POST",
+                                    url: $("#list_form table tbody tr.m-active").find("i.fa-edit").parent("a").attr("href"),
+                                    data: false,
+                                    dataType: "text",
+                                    success: function (v) {
+                                        $(".filemin-main-spinner").addClass("hidden");
+                                        var w = $(v).find(".panel-body > .ui_form"),
+                                            u = "<strong>" + $(v).find(".panel-body").contents().filter(function () {
+                                                return !!$.trim(this.innerHTML || this.data)
+                                            }).first().text() + "</strong>";
+                                        $("body").append('<div class="modal fade fade7 _filemin_file_editor">                                                              <div class="modal-dialog modal-lg" style="width: 91%; height: 100%">                                                              <div class="modal-content" style="height: 94%">                                                               <div class="modal-header">                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                                                                    <h4 class="modal-title"><i class="fa fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -32%">&nbsp;&nbsp;</i><kbd>' + u + '</kbd></h4>                                                               </div>                                                                  <div class="modal-body">                                                                </div>                                                                </div>                                                            </div>                                                            </div>                                                      ');
+                                        $("._filemin_file_editor .modal-body").append(w);
+                                        $("._filemin_file_editor").on("show.bs.modal", function () {
+                                            $(this).find("textarea").css("height", (parseInt($(window).height()) - 200));
+                                            $(this).find(".ui_form_end_buttons tr td").css("padding-left", "4px");
+                                            var z = $(this).find(".ui_form_end_buttons tr td span:first-child input"),
+                                                y = $(this).find(".ui_form_end_buttons tr td span:nth-child(2) input"),
+                                                x = '<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 2px; margin-bottom: 2px"><i class="fa fa-times-circle">&nbsp;&nbsp;</i>Close</button>';
+                                            $(this).find(".ui_form_end_buttons tr td").html('<div style="margin-top: 6px;">                                                                                             <button type="submit" class="btn btn-success _filemin_file_editor_save"><i class="fa fa-pencil">&nbsp;&nbsp;</i>' + z.val() + '</button>                                                                                                <button type="submit" class="btn btn-primary _filemin_file_editor_save_and_close"><i class="fa fa-floppy-o">&nbsp;&nbsp;</i>' + y.val() + "</button>                                                                                                " + x + "                                                                                               </div>")
+                                        });
+                                        $("._filemin_file_editor").on("shown.bs.modal", function () {
+                                            t__cm___init($(this).find("textarea"), $(u).text(), 5.2);
+                                            $("._filemin_file_editor .CodeMirror-wrap").animate({
+                                                opacity: 1
+                                            }, 400)
+                                        });
+                                        $("._filemin_file_editor").on("hide.bs.modal", function () {
+                                            $("._filemin_file_editor").remove()
+                                        });
+                                        $("._filemin_file_editor").modal("show");
+                                        $('form[action="save_file.cgi"]').on("click", "._filemin_file_editor_save", function (x) {
+                                            _filemin_file_editor_save_icon = $(this).find("i");
+                                            $(this).find("i").replaceWith(t__lo__btn_md())
+                                        });
+                                        $('form[action="save_file.cgi"]').on("click", "._filemin_file_editor_save_and_close", function (x) {
+                                            _filemin_file_editor_save_and_close_icon = $(this).find("i");
+                                            $(this).find("i").replaceWith(t__lo__btn_md())
+                                        });
+                                        $('form[action="save_file.cgi"]').on("submit", function (x) {
+                                            x.preventDefault();
+                                            x.stopPropagation();
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "/" + __f___mn() + "/save_file.cgi",
+                                                data: $("._filemin_file_editor form").serialize(),
+                                                dataType: "text",
+                                                success: function (z) {
+                                                    var y = $('form[action="save_file.cgi"] .cspinner');
+                                                    if (y.parent(".btn").index() === 0) {
+                                                        y.replaceWith('<i class="fa fa-check-circle-o">&nbsp;&nbsp;</i>');
+                                                        setTimeout(function () {
+                                                            $('form[action="save_file.cgi"] .fa-check-circle-o').replaceWith(_filemin_file_editor_save_icon)
+                                                        }, 1500)
+                                                    } else {
+                                                        if (y.parent(".btn").index() === 1) {
+                                                            y.replaceWith(_filemin_file_editor_save_and_close_icon);
+                                                            modal_dismiss();
+                                                            messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>File has been successfully saved', 4, "success")
+                                                        }
+                                                    }
+                                                }
+                                            })
+                                        })
+                                    }
+                                });
                                 __f___cs()
                             } else {
+                                $(".filemin-main-spinner").addClass("hidden");
                                 messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Can not edit this type of selection', 5, "warning")
                             }
                         }
@@ -2806,10 +3038,10 @@ if (t___wi.location == t__wi_p.location) {
                                 messenger('<i class="fa fa-i-cursor">&nbsp;&nbsp;&nbsp;</i>Rename operation was successful', 5, "success")
                             } else {
                                 if (d === "create_folder") {
-                                    messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>Folder <samp>' + $('#createFolderForm input[name="name"]').val() + "</samp> was created successfully", 5, "success")
+                                    messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>Folder `<samp>' + $('#createFolderForm input[name="name"]').val() + "</samp>` was created successfully", 5, "success")
                                 } else {
                                     if (d === "create_file") {
-                                        messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>File <samp>' + $('#createFileForm input[name="name"]').val() + "</samp> was created successfully", 5, "success")
+                                        messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>File `<samp>' + $('#createFileForm input[name="name"]').val() + "</samp>` was created successfully", 5, "success")
                                     }
                                 }
                             }
@@ -2819,6 +3051,7 @@ if (t___wi.location == t__wi_p.location) {
             }
         }
     }
+
     function __f____r(g, c, d, b) {
         if (g === "get") {
             if ($("body").find("#list_form table tbody").hasClass("filemin-updating")) {
@@ -2875,6 +3108,7 @@ if (t___wi.location == t__wi_p.location) {
         function f__gc() {
             return t__wi_p.$("#favorites-menu .favorites-menu-content li:not(.exclude)").length
         }
+
         function f__g() {
             var a = [];
             $.each(t__wi_p.$("#favorites-menu .favorites-menu-content li:not(.exclude) a"), function () {
@@ -2889,6 +3123,7 @@ if (t___wi.location == t__wi_p.location) {
             });
             return a
         }
+
         function f__u() {
             $.ajax({
                 type: "POST",
@@ -2898,19 +3133,22 @@ if (t___wi.location == t__wi_p.location) {
                 error: function (a) {}
             })
         }
+
         function f__a(b, c, a) {
             if (f__gc() === 0) {
                 t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").addClass("hidden");
                 t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").removeClass("hidden")
             }
-            t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").after('						<li class="menu-exclude ui-sortable-handle">                        	<a class="menu-exclude-link" target="page" href="' + b + '"><i data-product="' + a + '" class="wbm-' + a + ' wbm-sm">&nbsp;</i><span class="f__c">                            ' + c + '                        	&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-times"></i></small></span></a>                    	</li>					')
+            t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").after('                     <li class="menu-exclude ui-sortable-handle">                            <a class="menu-exclude-link" target="page" href="' + b + '"><i data-product="' + a + '" class="wbm-' + a + ' wbm-sm">&nbsp;</i><span class="f__c">                            ' + c + '                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-times"></i></small></span></a>                       </li>                   ')
         }
+
         function f__us() {
             if (f__gc() === 0) {
                 t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").removeClass("hidden");
                 t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").addClass("hidden")
             }
         }
+
         function f__r(a) {
             t__wi_p.$("#favorites-menu .favorites-menu-content").find('a[href="' + a + '"]').parent("li").effect("drop", {}, 300, function () {
                 $(this).remove();
@@ -2919,6 +3157,7 @@ if (t___wi.location == t__wi_p.location) {
                 f__u()
             })
         }
+
         function f__dt() {
             $(f__g()).each(function () {
                 if ($(this)[0]) {
@@ -3013,6 +3252,7 @@ if (t___wi.location == t__wi_p.location) {
         });
         f__us()
     }
+
     function datePicker(b, f, c, g) {
         $monthCorrection = $(f).find("option:eq(0)").val() == 1 ? 0 : 1;
         var k = $(g),
@@ -3051,6 +3291,7 @@ if (t___wi.location == t__wi_p.location) {
                 $(this).addClass("ui_checked_columns")
             })
         }
+
         function __mr() {
             $.each($(".ui_checked_columns"), function (d, c) {
                 $(c).on("click", "td", function (b) {
@@ -3498,6 +3739,7 @@ if (t___wi.location == t__wi_p.location) {
             }, 300)
         })
     }
+
     function set_location_search() {
         if (t__wi_p.$("#wrapper").data("virtual-server") != -1) {
             t__wi_p.history.pushState(null, null, $_____link_full + "/?virtualmin")
@@ -3691,90 +3933,7 @@ if (t___wi.location == t__wi_p.location) {
             $(this).parents("td").attr("style", "white-space: nowrap")
         }
     });
-    $("textarea").each(function (j, g) {
-        var p = $(this),
-            n = ["phpini", "bind8"],
-            a = ["phpini"],
-            k = ["bind8"];
-        $("#headln2l a").attr("href") ? $page = $("#headln2l a").attr("href").split("/")[1] : $page = null;
-        n.indexOf($page) >= 0 && $(this).data("name", "data");
-        CodeMirror.modeURL = "/unauthenticated/js/codemirror/mode/%N/%N.js";
-        var q = null,
-            f = "text/plain";
-        var h = false;
-        if ($current_page_full == $_____link_full + "/custom/view.cgi") {
-            h = $('form[action="save.cgi"]').find(".table-title").find("tt").text()
-        } else {
-            if ($('body[class^="filemin"]').length) {
-                h = $.url($__relative_url).param("file")
-            } else {
-                h = $('select[name="file"]').val()
-            }
-        }
-        var c = h,
-            d, q, f;
-        if (d = /.+\.([^.]+)$/.exec(c)) {
-            var b = CodeMirror.findModeByExtension(d[1]);
-            if (b) {
-                q = b.mode;
-                f = b.mime
-            }
-        } else {
-            if (/\//.test(c)) {
-                var b = CodeMirror.findModeByMIME(c);
-                if (b) {
-                    q = b.mode;
-                    f = c
-                }
-            } else {
-                q = null;
-                f = "text/plain"
-            }
-        }
-        if ($page == "apache" || $page == "postfix" || $page == "procmail" || $page == "ldap-server") {
-            q = "rpm";
-            f = "rpm-spec"
-        } else {
-            if ($page == "phpini") {
-                q = "z80";
-                f = "text/x-z80"
-            } else {
-                if ($page == "virtual-server" && $(this).attr("name") == "body") {
-                    q = "htmlmixed";
-                    f = "text/html"
-                }
-            }
-        }
-        $current_file = $current_page_full.replace(/^\//g, "");
-        if ($current_file) {
-            $current_file = $current_file.split("/")[1]
-        }
-        var o = ["edit_recs.cgi", "edit_dirs.cgi"];
-        if (((product_name(1).toLowerCase() == "virtualmin" && $page == "virtual-server" && $(this).attr("name") == "body" || $(this).attr("name") == "content") || $(this).attr("name") == "data" || $(this).data("name") == "data" || $(this).attr("name") == "directives" || ($(this).attr("name") == "manual" && $current_page_full == $_____link_full + "/fail2ban/edit_manual.cgi")) && $("textarea").length === 1 && $("textarea").parent("td.td_tag").length === 0 && $current_directory != $_____link + "init/" && o.indexOf($current_file) === -1) {
-            if ($current_page_full != $_____link_full + "/bind8/forward_form.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi") {
-                $parent_width = p.parent("td").width() - 2;
-                var l = CodeMirror.fromTextArea(g, {
-                    tabMode: "indent",
-                    matchBrackets: true,
-                    lineNumbers: true,
-                    lineWrapping: true,
-                    indentUnit: 4,
-                    autofocus: true
-                });
-                l.setOption("mode", f);
-                if (q != "rpm") {
-                    CodeMirror.autoLoadMode(l, q)
-                }
-                $window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2.8));
-                l.setSize($parent_width, $window_height);
-                $(window).resize(function () {
-                    $parent_width = p.parent("td").width() - 2;
-                    $window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2.8));
-                    l.setSize($parent_width, $window_height)
-                })
-            }
-        }
-    });
+    t__cm___init($("textarea"), false, false);
     if ($(".ui_table tr td").has(".ui_grid_table.table-hardcoded") && ($current_directory == $_____link + "passwd/" || $current_directory == $_____link + "mailboxes/" || $current_page_full == $_____link_full + "/usermin/list_configs.cgi")) {
         $(".ui_table tr td .ui_grid_table.table-hardcoded").parents("table").css("border", "1px solid #f0f0f0");
         $(".ui_table tr td .ui_grid_table.table-hardcoded").addClass("table").parents("tr").css("border", "1px solid #f0f0f0")
@@ -4987,6 +5146,7 @@ if (t___wi.location == t__wi_p.location) {
         $("form").find(".icons-row").find(".icons-container").addClass("icons-container-stretched");
         $("form").find(".icons-row").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
     }
+
     function __m_ico_row_tb() {
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
             "padding-top": "8px",
@@ -4995,6 +5155,7 @@ if (t___wi.location == t__wi_p.location) {
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef").css("border-bottom", "1px solid #efefef");
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
     }
+
     function __m_ico_row_t() {
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
             "padding-top": "8px"
@@ -5002,6 +5163,7 @@ if (t___wi.location == t__wi_p.location) {
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef");
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
     }
+
     function __m_ico_row_b() {
         $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
             "padding-bottom": "6px"

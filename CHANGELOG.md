@@ -29,6 +29,7 @@
 	* `Shift+F7` - search
 	* `F8/Del` - delete
 	* `Ctrl+X/C/V` - Cut/Copy/Paste
+	* `Ctrl+Enter/Ctrl+Shift+Enter` - Save/Save and close currently edited file
 	* `Theme reload hot key` - reload current directory
 * Deuglifed a link for switching between basic/advanced modes in _SpamAssassin->Header and Body Tests_ module
 * Fixed bugs [#234](https://github.com/qooob/authentic-theme/issues/234) [#235](https://github.com/qooob/authentic-theme/issues/235) [#236](https://github.com/qooob/authentic-theme/issues/236) [#238](https://github.com/qooob/authentic-theme/issues/238) [#239](https://github.com/qooob/authentic-theme/issues/239) [#242](https://github.com/qooob/authentic-theme/issues/242) [#243](https://github.com/qooob/authentic-theme/issues/243) [#244](https://github.com/qooob/authentic-theme/issues/244)  [#245](https://github.com/qooob/authentic-theme/issues/245)

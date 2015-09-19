@@ -39,6 +39,7 @@ our $__changelog
                       <li><code>F2</code> - change permissions, <code>F3</code> - change ownership, <code>F4</code> - edit where possible</li>
                       <li><code>F5/Shift+F5</code> - compress/decompress, <code>F6</code> - rename, <code>Shift+F4/F7</code> - new file/folder</li>
                       <li><code>Shift+F7</code> - search, <code>F8/Del</code> - delete, <code>Ctrl+X/C/V</code> - Cut/Copy/Paste</li>
+                      <li><code>Ctrl+Enter/Ctrl+Shift+Enter</code> - Save/Save and close currently edited file</li>
                       <li><code>Theme reload hot key</code> - reload current directory</li>
                     </ul>
                   <li>Deuglifed a link for switching between basic/advanced modes in <em>SpamAssassin->Header and Body Tests</em> module</li>
