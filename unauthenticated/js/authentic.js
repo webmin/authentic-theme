@@ -1761,10 +1761,10 @@ function t__cm___init(b, a, c) {
                     CodeMirror.autoLoadMode(__cm_editor, s)
                 }
                 c ? ($resize = c) : ($resize = 2.8);
-                $window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
-                __cm_editor.setSize($parent_width, $window_height);
                 if (!c) {
-                    $(window).resize(function () {
+                    $window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
+                    __cm_editor.setSize($parent_width, $window_height);
+                    $(t___wi).resize(function () {
                         $parent_width = r.parent("td").width() - 2;
                         $window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
                         __cm_editor.setSize($parent_width, $window_height)
@@ -1772,7 +1772,8 @@ function t__cm___init(b, a, c) {
                 } else {
                     __cm_editor.on("change", function (t, m) {
                         b.val(__cm_editor.getValue())
-                    })
+                    });
+                    __cm_editor.setSize($resize[0], $resize[1])
                 }
             }
         }
@@ -2550,6 +2551,7 @@ if (t___wi.location == t__wi_p.location) {
                 increaseArea: "20%"
             })
         }
+        $("#list_form > table").unbind("click");
         $("#list_form > table").on("click", 'a .fa.fa-edit, a[href^="edit_file.cgi"]', function (k) {
             k.preventDefault();
             k.stopPropagation();
@@ -2657,6 +2659,9 @@ if (t___wi.location == t__wi_p.location) {
                     if ((n == 46 || n == 113 || n == 114 || n == 115 || n == 116 || n == 117 || n == 119) && !$(".ui_checked_columns input:checked").length && !$(".modal.in").length && !$("input").is(":focus") && !$("#list_form table tbody tr.m-active").length && (!r.shiftKey || (n == 116 && r.shiftKey) || (n == 115 && !r.shiftKey))) {
                         r.preventDefault();
                         r.stopPropagation();
+                        if (t___wi.document.activeElement && $(t___wi.document.activeElement).is('a[href^="edit_file.cgi"]')) {
+                            return
+                        }
                         messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Nothing is selected!', 3, "warning");
                         return
                     }
@@ -2825,64 +2830,99 @@ if (t___wi.location == t__wi_p.location) {
                                     url: $("#list_form table tbody tr.m-active").find("i.fa-edit").parent("a").attr("href"),
                                     data: false,
                                     dataType: "text",
-                                    success: function (v) {
+                                    success: function (w) {
                                         $(".filemin-main-spinner").addClass("hidden");
-                                        var w = $(v).find(".panel-body > .ui_form"),
-                                            u = "<strong>" + $(v).find(".panel-body").contents().filter(function () {
+                                        var x = $(w).find(".panel-body > .ui_form"),
+                                            v = "<strong>" + $(w).find(".panel-body").contents().filter(function () {
                                                 return !!$.trim(this.innerHTML || this.data)
                                             }).first().text() + "</strong>";
-                                        $("body").append('<div class="modal fade fade7 _filemin_file_editor">                                                              <div class="modal-dialog modal-lg" style="width: 91%; height: 100%">                                                              <div class="modal-content" style="height: 94%">                                                               <div class="modal-header">                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                                                                    <h4 class="modal-title"><i class="fa fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -32%">&nbsp;&nbsp;</i><kbd>' + u + '</kbd></h4>                                                               </div>                                                                  <div class="modal-body">                                                                </div>                                                                </div>                                                            </div>                                                            </div>                                                      ');
-                                        $("._filemin_file_editor .modal-body").append(w);
+                                        $("body").append('<div class="modal fade fade7 _filemin_file_editor">                                                             <div class="modal-dialog modal-lg" style="width: 91%; height: 100%">                                                              <div class="modal-content" style="height: 94%">                                                               <div class="modal-header">                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                                                                    <h5 class="modal-title"><i class="fa fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -32%">&nbsp;&nbsp;</i><kbd>' + v + '</kbd></h5>                                                               </div>                                                                  <div class="modal-body">                                                                </div>                                                                </div>                                                            </div>                                                            </div>                                                      ');
+                                        $("._filemin_file_editor .modal-body").append(x);
                                         $("._filemin_file_editor").on("show.bs.modal", function () {
                                             $(this).find("textarea").css("height", (parseInt($(window).height()) - 200));
                                             $(this).find(".ui_form_end_buttons tr td").css("padding-left", "4px");
-                                            var z = $(this).find(".ui_form_end_buttons tr td span:first-child input"),
-                                                y = $(this).find(".ui_form_end_buttons tr td span:nth-child(2) input"),
-                                                x = '<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 2px; margin-bottom: 2px"><i class="fa fa-times-circle">&nbsp;&nbsp;</i>Close</button>';
-                                            $(this).find(".ui_form_end_buttons tr td").html('<div style="margin-top: 6px;">                                                                                             <button type="submit" class="btn btn-success _filemin_file_editor_save"><i class="fa fa-pencil">&nbsp;&nbsp;</i>' + z.val() + '</button>                                                                                                <button type="submit" class="btn btn-primary _filemin_file_editor_save_and_close"><i class="fa fa-floppy-o">&nbsp;&nbsp;</i>' + y.val() + "</button>                                                                                                " + x + "                                                                                               </div>")
+                                            var A = $(this).find(".ui_form_end_buttons tr td span:first-child input"),
+                                                z = $(this).find(".ui_form_end_buttons tr td span:nth-child(2) input"),
+                                                y = '<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 2px; margin-bottom: 2px"><i class="fa fa-times-circle">&nbsp;&nbsp;</i>Close</button>';
+                                            $(this).find(".ui_form_end_buttons tr td").html('<div style="margin-top: 6px;">                                                                                             <button type="submit" class="btn btn-primary _filemin_file_editor_save"><i class="fa fa-floppy-o">&nbsp;&nbsp;</i>' + A.val() + '</button>                                                                                              <button type="submit" class="btn btn-primary _filemin_file_editor_save_and_close hidden"><i class="fa fa-floppy-o">&nbsp;&nbsp;</i>' + z.val() + "</button>                                                                                             " + y + "                                                                                               </div>")
                                         });
                                         $("._filemin_file_editor").on("shown.bs.modal", function () {
-                                            t__cm___init($(this).find("textarea"), $(u).text(), 5.2);
+                                            t__cm___init($(this).find("textarea"), $(v).text(), [null, parseInt($(".modal.in._filemin_file_editor .modal-content").css("height")) - 130]);
+                                            $(t___wi).on("resize", function () {
+                                                __cm_editor.setSize(null, parseInt($(".modal.in._filemin_file_editor .modal-content").css("height")) - 130)
+                                            });
                                             $("._filemin_file_editor .CodeMirror-wrap").animate({
                                                 opacity: 1
-                                            }, 400)
+                                            }, 400, function () {
+                                                __cm_editor.focus()
+                                            })
                                         });
                                         $("._filemin_file_editor").on("hide.bs.modal", function () {
-                                            $("._filemin_file_editor").remove()
+                                            $("._filemin_file_editor").remove();
+                                            $(t___wi).unbind("resize");
+                                            tt__m__res()
                                         });
                                         $("._filemin_file_editor").modal("show");
-                                        $('form[action="save_file.cgi"]').on("click", "._filemin_file_editor_save", function (x) {
-                                            _filemin_file_editor_save_icon = $(this).find("i");
+                                        $('form[action="save_file.cgi"]').on("click", "._filemin_file_editor_save, ._filemin_file_editor_save_and_close", function (y) {
+                                            if (_filemin_file_editor_processing === 1) {
+                                                y.preventDefault();
+                                                y.stopPropagation();
+                                                return
+                                            }
                                             $(this).find("i").replaceWith(t__lo__btn_md())
                                         });
-                                        $('form[action="save_file.cgi"]').on("click", "._filemin_file_editor_save_and_close", function (x) {
-                                            _filemin_file_editor_save_and_close_icon = $(this).find("i");
-                                            $(this).find("i").replaceWith(t__lo__btn_md())
-                                        });
-                                        $('form[action="save_file.cgi"]').on("submit", function (x) {
-                                            x.preventDefault();
-                                            x.stopPropagation();
-                                            $.ajax({
-                                                type: "POST",
-                                                url: "/" + __f___mn() + "/save_file.cgi",
-                                                data: $("._filemin_file_editor form").serialize(),
-                                                dataType: "text",
-                                                success: function (z) {
-                                                    var y = $('form[action="save_file.cgi"] .cspinner');
-                                                    if (y.parent(".btn").index() === 0) {
-                                                        y.replaceWith('<i class="fa fa-check-circle-o">&nbsp;&nbsp;</i>');
-                                                        setTimeout(function () {
-                                                            $('form[action="save_file.cgi"] .fa-check-circle-o').replaceWith(_filemin_file_editor_save_icon)
-                                                        }, 1500)
-                                                    } else {
-                                                        if (y.parent(".btn").index() === 1) {
-                                                            y.replaceWith(_filemin_file_editor_save_and_close_icon);
-                                                            modal_dismiss();
-                                                            messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>File has been successfully saved', 4, "success")
+
+                                        function u() {
+                                            $('form[action="save_file.cgi"] ._filemin_file_editor_save .cspinner').remove();
+                                            $('form[action="save_file.cgi"] ._filemin_file_editor_save i').remove();
+                                            $('form[action="save_file.cgi"] ._filemin_file_editor_save').prepend('<i class="fa fa-floppy-o">&nbsp;&nbsp;</i>');
+                                            $('form[action="save_file.cgi"] ._filemin_file_editor_save_and_close .cspinner').remove();
+                                            $('form[action="save_file.cgi"] ._filemin_file_editor_save_and_close i').remove();
+                                            $('form[action="save_file.cgi"] ._filemin_file_editor_save_and_close').prepend('<i class="fa fa-floppy-o">&nbsp;&nbsp;</i>')
+                                        }
+                                        _filemin_file_editor_processing = 0;
+                                        $('form[action="save_file.cgi"]').on("submit", function (y) {
+                                            y.preventDefault();
+                                            y.stopPropagation();
+                                            if (_filemin_file_editor_processing === 1) {
+                                                return
+                                            }
+                                            messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>Saving file `<samp><em>' + v + "</em></samp>`. Please wait...", 2, "info");
+                                            if (_filemin_file_editor_processing === 0) {
+                                                _filemin_file_editor_processing = 1;
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "/" + __f___mn() + "/save_file.cgi",
+                                                    data: $("._filemin_file_editor form").serialize(),
+                                                    dataType: "text",
+                                                    success: function (A) {
+                                                        var z = $('form[action="save_file.cgi"] .cspinner');
+                                                        if (!$(A).find("textarea#data").length) {
+                                                            messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>' + $(A).find(".panel-body").html(), 5, "error");
+                                                            if (z.parent(".btn").index() === 1) {
+                                                                modal_dismiss()
+                                                            }
+                                                            _filemin_file_editor_processing = 0;
+                                                            u();
+                                                            return
                                                         }
+                                                        if (z.parent(".btn").index() === 0) {
+                                                            z.replaceWith('<i class="fa fa-check-circle-o">&nbsp;&nbsp;</i>');
+                                                            messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>File has been successfully saved', 3, "success");
+                                                            setTimeout(function () {
+                                                                u()
+                                                            }, 1000)
+                                                        } else {
+                                                            if (z.parent(".btn").index() === 1) {
+                                                                u();
+                                                                messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>File has been successfully saved and closed', 4, "success");
+                                                                modal_dismiss()
+                                                            }
+                                                        }
+                                                        _filemin_file_editor_processing = 0
                                                     }
-                                                }
-                                            })
+                                                })
+                                            }
                                         })
                                     }
                                 });
@@ -4988,13 +5028,17 @@ if (t___wi.location == t__wi_p.location) {
         $(".panel-body > hr + b").attr("style", "font-size: 16px; font-weight: normal;");
         $(".panel-body > hr + b").text($(".panel-body > hr + b").text().replace(/\:$/, ""))
     }
-    var resizeDelay;
-    $(window).resize(function () {
-        clearTimeout(resizeDelay);
-        resizeDelay = setTimeout(function () {
-            container_fluid_size()
-        }, 1000)
-    });
+
+    function tt__m__res() {
+        var a;
+        $(window).on("resize", function () {
+            clearTimeout(a);
+            a = setTimeout(function () {
+                container_fluid_size()
+            }, 1000)
+        })
+    }
+    tt__m__res();
     $('input[type="file"]').bootstrapFileInput();
     setTimeout(function () {
         $.each($(".file-input-wrapper > span"), function () {
