@@ -4169,6 +4169,7 @@ input[name]:not([type='image']):not(.sidebar-search):not([type='button']):not([t
     color: #555;
 }ul.messenger.messenger-fixed.messenger-on-top,
 ul.messenger.messenger-fixed.messenger-on-bottom {
+    bottom: 13px;
     left: 58%;
 }ul.messenger-theme-air .messenger-message.message-warning:hover,
 ul.messenger-theme-air .messenger-message.message-warning {
