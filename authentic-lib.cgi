@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -537,8 +537,7 @@ sub print_search {
         }
         print
             '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="'
-            . $text{'left_search'}
-            . '"">' . "\n";
+            . $text{'left_search'} . '"">' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
     }
@@ -786,19 +785,22 @@ sub print_left_menu {
                             . "\"$item->{'onchange'}\" + this.value";
                     }
 
-                    my $default
-                        = __settings( 'settings_right_'
-                            . ( $t_uri_cloudmin == -1 ? 'virtualmin' : 'cloudmin' )
-                            . '_default' );
+                    my $default = __settings(
+                        'settings_right_'
+                            . (
+                            $t_uri_cloudmin == -1 ? 'virtualmin' : 'cloudmin'
+                            )
+                            . '_default'
+                    );
 
                     print ui_select(
                         $item->{'name'},
-                        ((($selected || $selected == 0) && $xhr) ? $selected : ($default ? $default : $item->{'value'})),
+                        (   ( ( $selected || $selected == 0 ) && $xhr )
+                            ? $selected
+                            : ( $default ? $default : $item->{'value'} )
+                        ),
                         $item->{'menu'},
-                        1,
-                        0,
-                        0,
-                        0,
+                        1, 0, 0, 0,
                         "data-autocomplete-title=\"
                             "
                             . (
@@ -1146,7 +1148,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1600" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1601" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1186,7 +1188,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1600" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1601" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1198,13 +1200,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1600" type="text/javascript"></script>' . "\n";
+                . '.js?1601" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1220,17 +1222,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1600" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1601" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1600" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1601" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1600" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1601" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1238,7 +1240,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1600" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1601" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1262,16 +1264,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1600" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1601" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1600" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1601" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2355,4 +2357,21 @@ sub notify {
     }
 }
 
+sub get_current_user_language {
+    return substr(
+        (     $gconfig{ 'lang' . '_' . $base_remote_user }
+            ? $gconfig{ 'lang' . '_' . $base_remote_user }
+            : $gconfig{'lang'}
+        ),
+        0, 2
+    );
+}
+
+sub prt {
+    my ($____v) = @_;
+    use Data::Dumper;
+    print '<div style="color: red">';
+    print Dumper $____v;
+    print '</div>';
+}
 

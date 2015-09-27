@@ -1,5 +1,5 @@
 #
-# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,11 +14,11 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 16.00 (September 18, 2015)</h4>
+                <h4>Version 16.00 - 16.01 (September 27, 2015)</h4>
 
                 <ul>
 
-
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/247" target="_blank">#247</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/252" target="_blank">#252</a><hr></li>
 
                   <li>Improved theme\'s <em>performance</em> by overall code optimization (biggest in theme\'s history)</li>
                   <li>Improved support for <em>Firefox</em>. <em>Firefox</em> version 42+ will render animations very smoothly and provide, in general, same experience as <em>Chrome</em> now</li>

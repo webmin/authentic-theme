@@ -1,9 +1,9 @@
 /*!
- * Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
-;
+
 try {
     t__wi_p.$
 } catch (e) {
@@ -1809,7 +1809,7 @@ $('body:not([class*="filemin"])').on("keydown", function (c) {
 if (t___wi.location == t__wi_p.location) {
     loaders_dismiss();
     if (t__wi_p.$___________initial === 1) {
-        console.log("Welcome to Authentic Theme 16.00 https://github.com/qooob/authentic-theme")
+        console.log("Welcome to Authentic Theme 16.01 https://github.com/qooob/authentic-theme")
     }
     typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
     typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -3334,17 +3334,20 @@ if (t___wi.location == t__wi_p.location) {
 
         function __mr() {
             $.each($(".ui_checked_columns"), function (d, c) {
-                $(c).on("click", "td", function (b) {
+                $(c).on("click", "td", function (a) {
                     if ($(c).find("a[href]") && !$("body").hasClass("servers")) {
-                        var f = $(c).find("a[href]")[0];
-                        if (f && ($(this).find("a").attr("href") === $(f).attr("href") || $(this).find("a").attr("href") === undefined) && !$(b.target).is("select, input, .acheckbox, .aradio") && ($(this).parent("tr").find('a[href*="download.cgi"]').length === 0)) {
-                            b.preventDefault();
-                            var a = $(f).attr("target") ? $(f).attr("target") : "_self";
-                            if ($("body").attr("class") && $("body").attr("class").indexOf("filemin") > -1 && $(f).attr("href") && $(f).attr("href").indexOf("index.cgi?path=") > -1) {
-                                __f____r("get", $(f).attr("href"), false, 0);
+                        var b = $(c).find("a[href]")[0];
+                        if (b && ($(this).find("a").attr("href") === $(b).attr("href") || $(this).find("a").attr("href") === undefined) && !$(a.target).is("select, input, .acheckbox, .aradio") && ($(this).parent("tr").find('a[href*="download.cgi"]').length === 0)) {
+                            a.preventDefault();
+                            if ($("body").attr("class") && $("body").attr("class").indexOf("filemin") > -1 && $(b).attr("href") && $(b).attr("href").indexOf("index.cgi?path=") > -1) {
+                                __f____r("get", $(b).attr("href"), false, 0);
                                 return
                             }
-                            t___wi.open($(f).attr("href"), a)
+                            if ($(b).attr("target")) {
+                                window.open($(b).attr("href"), $(b).attr("target"))
+                            } else {
+                                window.location.href = $(b).attr("href")
+                            }
                         }
                     }
                 }).on("contextmenu", "td", function (a) {

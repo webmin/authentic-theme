@@ -1,12 +1,11 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-# Load dependencies
 do "authentic-theme/authentic-lib.cgi";
 
 our $user = $remote_user;
