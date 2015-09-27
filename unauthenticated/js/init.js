@@ -1,23 +1,18 @@
 /*!
- * Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
-;
-$__theme_name__ = "authentic";
 
+$__theme_name__ = "authentic";
 $___________ready = 0;
 t___wi = window;
 t__wi_p = t___wi.parent;
-
 t___wi.parent.$___________right = 0;
-
 typeof t__wi_p.$___________lrs_r_l == "undefined" ? t__wi_p.$___________lrs_r_l = 0 : false;
-
 if (t___wi.location == t__wi_p.location) {
     t___wi.parent.$___________left = 0
 }
-
 typeof t__wi_p.$___________initial == "undefined" ? t__wi_p.$___________initial = 1 : false;
 typeof settings_loader_left == "undefined" ? settings_loader_left = true : false;
 typeof settings_mailbox_slash_delimiter == "undefined" ? settings_mailbox_slash_delimiter = true : false;
@@ -51,15 +46,17 @@ typeof settings_sysinfo_link_mini == "undefined" ? settings_sysinfo_link_mini = 
 typeof settings_window_customized_checkboxes_and_radios == "undefined" ? settings_window_customized_checkboxes_and_radios = true : false;
 typeof settings_loader_top == "undefined" ? settings_loader_top = true : false;
 typeof settings_loader_right == "undefined" ? settings_loader_right = true : false;
-typeof settings_animation_left == "undefined" ? settings_animation_left = true : false; settings_animation_left ? $settings_animation_left_slide_time = 220 : $settings_animation_left_slide_time = 0;
-typeof settings_animation_tabs == "undefined" ? settings_animation_tabs = true : false; settings_animation_tabs ? $settings_animation_tabs_slide_time = 280 : $settings_animation_tabs_slide_time = 0;
+typeof settings_animation_left == "undefined" ? settings_animation_left = true : false;
+settings_animation_left ? $settings_animation_left_slide_time = 220 : $settings_animation_left_slide_time = 0;
+typeof settings_animation_tabs == "undefined" ? settings_animation_tabs = true : false;
+settings_animation_tabs ? $settings_animation_tabs_slide_time = 280 : $settings_animation_tabs_slide_time = 0;
 typeof settings_favorites == "undefined" ? settings_favorites = true : false;
-
 try {
     t__wi_p.$
 } catch (e) {
     t__wi_p = window
 }
+
 function __slm() {
     if (t__wi_p.$("aside").css("transform") == "none") {
         t__wi_p.$("aside").transition({
@@ -87,6 +84,7 @@ function arrayIntersect(c, b) {
     });
     return !$.isEmptyObject(a)
 }
+
 function __lrs(d, b) {
     var a = t__wi_p.document.getElementById("iframe"),
         c = t__wi_p.document.activeElement,
@@ -134,6 +132,7 @@ function __lrs(d, b) {
         }
     }
 }
+
 function product_name(a) {
     if (t__wi_p.$("#wrapper").data("server-manager") != -1) {
         return "Cloudmin"
@@ -150,6 +149,7 @@ function product_name(a) {
         }
     }
 }
+
 function __lre() {
     t__wi_p.$(".loader-container").removeClass("loading-started").css("background-color", "transparent").css("display", "none");
     t__wi_p.$('iframe[name="page"]').animate({
@@ -171,6 +171,7 @@ function __lre() {
         hide_mobile_menu()
     }
 }
+
 function ___csf() {
     var b = window,
         f = b.parent,
@@ -178,7 +179,7 @@ function ___csf() {
         j = a.contentDocument.getElementsByTagName("head")[0],
         c = a.contentDocument.createElement("script");
     c.type = "text/javascript";
-    c.src = "/unauthenticated/js/package.min.js?1600";
+    c.src = "/unauthenticated/js/package.min.js?1601";
     j.appendChild(c);
     if (f.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
         a.contentWindow.onbeforeunload = function (k) {
@@ -186,7 +187,7 @@ function ___csf() {
         };
         f.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
         $csf = f.$('iframe[name="page"]').contents();
-        $csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">			');
+        $csf.find("head").append('               <link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">             <meta name="viewport" content="width=device-width, initial-scale=1.0">              <link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">         ');
         $.each(f.$('link[href*="/styles.css"]'), function () {
             if ($(this)) {
                 $csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -437,8 +438,8 @@ function ___csf() {
             f.search_control(k);
             f.shortcut_control(k)
         });
-        if (t__wi_p.$('#open_webmin').length > 0 && t__wi_p.$('.switch-toggle input:checked').attr('id') != 'open_webmin') {
-            t__wi_p.t__s("open_webmin");
+        if (f.$("#open_webmin").length > 0 && f.$(".switch-toggle input:checked").attr("id") != "open_webmin") {
+            f.t__s("open_webmin")
         }
         f.__dlm("csf/");
         t__au__c___r(1, 1);
@@ -458,6 +459,7 @@ function ___csf() {
         }, 200)
     }
 }
+
 function s(b) {
     var c = document.getElementsByTagName("head")[0];
     var a = document.createElement("script");
@@ -503,7 +505,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
             return
         }
         __lre();
-        s("/unauthenticated/js/authentic.min.js?1600")
+        s("/unauthenticated/js/authentic.min.js?1601")
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
         t__wi_p.NProgress.done()
@@ -538,43 +540,43 @@ function __num() {
     }
 }
 var $__was = function () {
-        if ($("pre") && $("pre").length > 0 && $("pre").length <= 2) {
-            if (__num()) {
-                __lre()
-            }
-            $("body").unbind("mousewheel");
-            t___wi.clearInterval($__was_runner);
-            refresh = function () {
-                $("body, html").animate({
-                    scrollTop: $(document).height()
-                }, 200)
-            };
-            refresher = t___wi.setInterval(refresh, 201);
-            setTimeout(function () {
-                $("body").bind("mousewheel", function (a) {
-                    if (typeof refresher != "undefined") {
-                        t___wi.clearInterval(refresher)
-                    }
-                    delete refresh;
-                    delete refresher;
-                    delete $__was_runner;
-                    $("body").unbind("mousewheel");
-                    $(this).off();
-                    setTimeout(function () {
-                        $("html").bind("mousewheel", function (b) {
-                            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                                $("html").unbind("mousewheel");
-                                $(this).off();
-                                if (settings_window_autoscroll && t___wi.location != t__wi_p.location && typeof $__was_runner_is_done == "undefined") {
-                                    $__was_runner = t___wi.setInterval($__was, 201)
-                                }
-                            }
-                        })
-                    }, 200)
-                })
-            }, 0)
+    if ($("pre") && $("pre").length > 0 && $("pre").length <= 2) {
+        if (__num()) {
+            __lre()
         }
-    };
+        $("body").unbind("mousewheel");
+        t___wi.clearInterval($__was_runner);
+        refresh = function () {
+            $("body, html").animate({
+                scrollTop: $(document).height()
+            }, 200)
+        };
+        refresher = t___wi.setInterval(refresh, 201);
+        setTimeout(function () {
+            $("body").bind("mousewheel", function (a) {
+                if (typeof refresher != "undefined") {
+                    t___wi.clearInterval(refresher)
+                }
+                delete refresh;
+                delete refresher;
+                delete $__was_runner;
+                $("body").unbind("mousewheel");
+                $(this).off();
+                setTimeout(function () {
+                    $("html").bind("mousewheel", function (b) {
+                        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                            $("html").unbind("mousewheel");
+                            $(this).off();
+                            if (settings_window_autoscroll && t___wi.location != t__wi_p.location && typeof $__was_runner_is_done == "undefined") {
+                                $__was_runner = t___wi.setInterval($__was, 201)
+                            }
+                        }
+                    })
+                }, 200)
+            })
+        }, 0)
+    }
+};
 if (settings_window_autoscroll && t___wi.location != t__wi_p.location) {
     $__was_runner = t___wi.setInterval($__was, 201)
 };

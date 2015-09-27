@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 16.01 (September 27, 2015)
+* Fixed bugs [#247](https://github.com/qooob/authentic-theme/issues/247) [#252](https://github.com/qooob/authentic-theme/issues/252)
+
 ####Version 16.00 (September 18, 2015)
 * Improved theme's _performance_ by overall code optimization (biggest in theme's history)
 * Improved support for _Firefox_. _Firefox_ version 42+ will render animations very smoothly and provide, in general, same experience as _Chrome_ now

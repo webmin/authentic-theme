@@ -1,11 +1,11 @@
 #
-# Authentic Theme 16.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-# Load dependencies
 do "authentic-theme/authentic-lib.cgi";
+warn $@;
 
 sub theme_header {
     print '<!DOCTYPE html>',        "\n";
@@ -31,13 +31,7 @@ sub theme_header {
         . '" data-dashboard="'
         . dashboard_switch()
         . '" data-language="'
-        . substr(
-        (     $gconfig{ 'lang' . '_' . $base_remote_user }
-            ? $gconfig{ 'lang' . '_' . $base_remote_user }
-            : $gconfig{'lang'}
-        ),
-        0, 2
-        )
+        . get_current_user_language()
         . '" data-webprefix="'
         . $gconfig{'webprefix'}
         . '" data-current-product="'
@@ -164,19 +158,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1600" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1600" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1601" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1600" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1601" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1600" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1601" type="text/javascript"></script>',
             "\n";
     }
 }
