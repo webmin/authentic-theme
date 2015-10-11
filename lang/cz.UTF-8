@@ -113,7 +113,9 @@ settings_right_logo_unauthenticated_users=Logo pro neautentizované uživatele
 
 settings_right_current_theme=Aktuální téma
 settings_right_title=Tato stránka umožňuje upravit nastavení tématu <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Nastavení budou uložena jen do té doby, než bude provedena aktualizace tématu samotného.
-settings_right_theme_configuration_title=Konfigurace tématu Authentic Theme
+settings_right_theme_left_configuration_title=Konfigurace tématu Authentic Theme
+settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
+settings_right_theme_left_logo_title=Authentic Theme Logo Control
 settings_right_theme_configurable_options_title=Dostupná nastavení pro Authentic Theme
 
 
@@ -136,6 +138,10 @@ settings_hotkey_custom_7=Vlastní odkaz <code>7</code>
 settings_hotkey_custom_8=Vlastni odkaz <code>8</code>
 settings_hotkey_custom_9=Vlastni odkaz <code>9</code>
 
+settings_navigation_color=Navigation menu color
+settings_background_color=Content page color
+settings_animation_left=Enable animation in navigation menu
+settings_animation_tabs=Enable animation in tabs
 settings_loader_left=Povolit posuvník pro navigační panel
 settings_loader_right=Povolit posuvník pro stránku
 settings_right_reload=Nahrání výchozí stránky
@@ -181,6 +187,8 @@ settings_hotkey_reload=Klávesová zkratka pro opetovné načtení stránky
 settings_security_notify_on_pre_login_request=Upozornit když je pre-login banner zobrazen neautentizovaným uživatelem
 settings_security_notify_on_login_request=Upozornit při přístupu neautentizovaného uživatele na přihlašovací stránku
 settings_security_notify_on_login_success=Upozornit při úspěšném přihlášení uživatele
+settings_security_notify_for_webmin=Enabled for Webmin
+settings_security_notify_for_usermin=Enabled for Usermin
 
 settings_sysinfo_easypie_charts=Zobrazit grafy
 settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu

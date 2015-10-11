@@ -1,7 +1,11 @@
 #!/usr/bin/perl
 
 #
+<<<<<<< HEAD
+# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+=======
 # Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -31,7 +35,13 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 if ( $minfo->{'dir'} eq 'webmin' ) {
                     &print_category_link( "/webmin/edit_themes.cgi",
-                        $text{'settings_right_theme_configuration_title'},
+                        $text{'settings_right_theme_left_configuration_title'},
+                        1 );
+                    &print_category_link( "/settings-editor_read.cgi",
+                        $text{'settings_right_theme_left_extensions_title'},
+                        1 );
+                    &print_category_link( "/settings-upload.cgi",
+                        $text{'settings_right_theme_left_logo_title'},
                         1 );
                 }
                 if (   $minfo->{'dir'} ne 'virtual-server'

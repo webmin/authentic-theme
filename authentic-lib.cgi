@@ -1,7 +1,11 @@
 #!/usr/bin/perl
 
 #
+<<<<<<< HEAD
+# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+=======
 # Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,6 +17,104 @@ our $t_uri_dashboard  = index( $ENV{'REQUEST_URI'}, 'dashboard' );
 our $t_goto           = get_default_right();
 our ( $t_var_switch_m, $t_var_product_m ) = get_swith_mode();
 our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
+
+sub init_error {
+    if (  !-d $root_directory . "/authentic-theme"
+        && -d $root_directory . "/authentic-theme-master" )
+    {
+        die("ATTENTION:\nHave you downloaded Authentic Theme from GitHub, and unpacked it manually\nto Webmin directory? In this case you need to rename theme directory from\n`authentic-theme-master` to `authentic-theme` in order to make theme work.\nAfterward, you will need to reset the theme again in Webmin Configuration.\n"
+        );
+    }
+}
+
+sub authentic {
+    &init();
+    &header($title);
+    &content();
+    &footer();
+}
+
+sub __settings {
+    my ($_s) = @_;
+    my $f = $config_directory . "/authentic-theme/settings.js";
+    if ( -r $f ) {
+        for (
+            split(
+                '\n',
+                $s = do {
+                    local $/ = undef;
+                    open my $fh, "<", $f;
+                    <$fh>;
+                    }
+            )
+            )
+        {
+            if ( index( $_, '//' ) == -1
+                && ( my @m = $_ =~ /(?:$_s\s*=\s*(.*))/g ) )
+            {
+                my $m = join( '\n', @m );
+                $m =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
+                $m =~ s/\\'/'/g;
+                return $m;
+            }
+        }
+    }
+}
+
+sub notify {
+    our ($type) = @_;
+    if (__settings($type)
+        && ((   __settings('settings_security_notify_for_webmin') ne 'false'
+                && &get_product_name() eq 'webmin'
+            )
+            || ( __settings('settings_security_notify_for_usermin') ne 'false'
+                && &get_product_name() eq 'usermin' )
+        )
+        )
+    {
+        my %messages = (
+            "%1" => $remote_user,
+            "%2" => $ENV{REMOTE_ADDR},
+            "%3" => ucfirst( &get_product_name() )
+        );
+        my %subjects = ( "%3" => ucfirst( &get_product_name() ) );
+        my @mail = split( /\|/, __settings($type) );
+        ( my $message = $mail[0] )
+            =~ s/(@{[join "|", keys %messages]})/$messages{$1}/g;
+        ( my $subject = $mail[1] )
+            =~ s/(@{[join "|", keys %subjects]})/$subjects{$1}/g;
+        if (  !length $mail[3]
+            || length $mail[3] && index( $mail[3], $ENV{REMOTE_ADDR} ) == -1 )
+        {
+            system(`echo "$message" | mail -s "$subject" "$mail[2]"`);
+        }
+    }
+}
+
+sub licenses {
+    my ($id) = @_;
+    if ( &foreign_available("virtual-server") && $id eq "vm" ) {
+        my %virtualmin = &get_module_info("virtual-server");
+        if ( $virtualmin{'version'} =~ /gpl/ ) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+    elsif ( &foreign_available("server-manager") && $id eq "cm" ) {
+        my %cloudmin = &get_module_info("server-manager");
+        if ( $cloudmin{'version'} =~ /gpl/ ) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+    else {
+        return 0;
+    }
+}
 
 sub print_category {
     my ( $c, $label ) = @_;
@@ -1024,6 +1126,7 @@ sub _post_install {
 }
 
 sub embed_logo {
+    warn $@;
     if ( $ENV{'SCRIPT_NAME'} eq '/session_login.cgi' ) {
         our $logo = 'logo_welcome';
     }
@@ -1031,8 +1134,6 @@ sub embed_logo {
         our $logo = 'logo';
     }
     if ( -r $config_directory . "/authentic-theme/" . $logo . ".png" ) {
-
-# Store logo in config directory, defaults in most case to `/etc/webmin`. Theme config directory is `/etc/webmin/authentic-theme`
         if (  -s $config_directory
             . "/authentic-theme/"
             . $logo
@@ -1148,7 +1249,11 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
+<<<<<<< HEAD
+            . '.js?1700" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+=======
             . '.js?1601" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
             . "\n";
     }
 }
@@ -1188,7 +1293,11 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
+<<<<<<< HEAD
+                . '.src.css?1700" rel="stylesheet" type="text/css">' . "\n";
+=======
                 . '.src.css?1601" rel="stylesheet" type="text/css">' . "\n";
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
         }
 
         embed_styles();
@@ -1200,13 +1309,21 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
+<<<<<<< HEAD
+                . '.js?1700" type="text/javascript"></script>' . "\n";
+=======
                 . '.js?1601" type="text/javascript"></script>' . "\n";
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
+<<<<<<< HEAD
+            . '/unauthenticated/css/package.min.css?1700" rel="stylesheet" type="text/css">'
+=======
             . '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
             . "\n";
 
         embed_styles();
@@ -1222,17 +1339,29 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
+<<<<<<< HEAD
+                . '/unauthenticated/js/timeplot.min.js?1700" type="text/javascript"></script>'
+=======
                 . '/unauthenticated/js/timeplot.min.js?1601" type="text/javascript"></script>'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
+<<<<<<< HEAD
+            . '/unauthenticated/js/package.min.js?1700" type="text/javascript"></script>'
+            . "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/init.min.js?1700" type="text/javascript"></script>'
+=======
             . '/unauthenticated/js/package.min.js?1601" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/init.min.js?1601" type="text/javascript"></script>'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1240,7 +1369,11 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
+<<<<<<< HEAD
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1700" type="text/javascript"></script>'
+=======
                 . '/unauthenticated/js/tinymce/tinymce.min.js?1601" type="text/javascript"></script>'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
                 . "\n";
         }
 
@@ -1264,16 +1397,28 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
+<<<<<<< HEAD
+        . '/unauthenticated/css/package.min.css?1700" rel="stylesheet" type="text/css">'
+=======
         . '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
+<<<<<<< HEAD
+        . '/unauthenticated/js/package.min.js?1700" type="text/javascript"></script>'
+        . "\n";
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/init.min.js?1700" type="text/javascript"></script>'
+=======
         . '/unauthenticated/js/package.min.js?1601" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
         . '/unauthenticated/js/init.min.js?1601" type="text/javascript"></script>'
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
         . "\n";
     print '</head>', "\n";
 }
@@ -1388,6 +1533,10 @@ sub _settings {
                 'fa', 'desktop',
                 &text('settings_right_window_options_title')
             ),
+            'settings_navigation_color',
+            'blue',
+            'settings_background_color',
+            'lightGrey',
             'settings_animation_left',
             'true',
             'settings_animation_tabs',
@@ -1527,6 +1676,10 @@ sub _settings {
                 &text('settings_security_title') . "~"
                     . &text('settings_security_description')
             ),
+            'settings_security_notify_for_webmin',
+            'true',
+            'settings_security_notify_for_usermin',
+            'true',
             'settings_security_notify_on_login_success',
             '%3 successful login alert for user %1 from %2|%3 successful login alert|root',
             'settings_security_notify_on_login_request',
@@ -1870,6 +2023,56 @@ sub _settings {
             );
 
         }
+        elsif ( $k eq 'settings_navigation_color' ) {
+            $v = '<select class="ui_select" name="' . $k . '">
+
+                    <option value="blue"'
+                . ( $v eq 'blue' && ' selected' ) . '>Royal Blue (Default)</option>
+
+                    <option value="darkBlue"'
+                . ( $v eq 'darkBlue' && ' selected' ) . '>Midnight Blue</option>
+
+                    <option value="lightBlue"'
+                . ( $v eq 'lightBlue' && ' selected' ) . '>Dodger Blue</option>
+
+                    <option value="gold"'
+                . ( $v eq 'gold' && ' selected' ) . '>Pale Golden</option>
+
+                    <option value="red"'
+                . ( $v eq 'red' && ' selected' ) . '>Dark Red</option>
+
+                    <option value="indianRed"'
+                . ( $v eq 'indianRed' && ' selected' ) . '>Indian Red</option>
+
+                    <option value="brown"'
+                . ( $v eq 'brown' && ' selected' ) . '>Saddle Brown</option>
+
+                    <option value="purple"'
+                . ( $v eq 'purple' && ' selected' ) . '>Dark Purple</option>
+
+                    <option value="grey"'
+                . ( $v eq 'grey' && ' selected' ) . '>Dim Grey</option>
+
+                    <option value="darkGrey"'
+                . ( $v eq 'darkGrey' && ' selected' ) . '>Dark Grey</option>
+
+
+                </select>';
+        }
+        elsif ( $k eq 'settings_background_color' ) {
+            $v = '<select class="ui_select" name="' . $k . '">
+
+                    <option value="lightGrey"'
+                . ( $v eq 'lightGrey' && ' selected' ) . '>White Smoke (Default)</option>
+
+                    <option value="gainsboro"'
+                . ( $v eq 'gainsboro' && ' selected' ) . '>Gainsboro</option>
+
+                    <option value="ghostWhite"'
+                . ( $v eq 'ghostWhite' && ' selected' ) . '>Ghost White</option>
+
+                </select>';
+        }
 
         return '
             <tr class="atshover">
@@ -1978,40 +2181,6 @@ sub _settings {
     }
 }
 
-sub __settings {
-    my ($_s) = @_;
-    my $f = $config_directory . "/authentic-theme/settings.js";
-    if ( -r $f ) {
-        for (
-            split(
-                '\n',
-                $s = do {
-                    local $/ = undef;
-                    open my $fh, "<", $f;
-                    <$fh>;
-                    }
-            )
-            )
-        {
-            if ( index( $_, '//' ) == -1
-                && ( my @m = $_ =~ /(?:$_s\s*=\s*(.*))/g ) )
-            {
-                my $m = join( '\n', @m );
-                $m =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
-                $m =~ s/\\'/'/g;
-                return $m;
-            }
-        }
-    }
-}
-
-sub authentic {
-    &init();
-    &header($title);
-    &content();
-    &footer();
-}
-
 sub get_xhr_request {
     if ( $in{'xhr-navigation'} eq '1' ) {
         print "Content-type: text/html\n\n";
@@ -2040,15 +2209,6 @@ sub get_xhr_request {
             do "authentic-theme/settings.cgi";
         }
         exit;
-    }
-}
-
-sub init_error {
-    if (  !-d $root_directory . "/authentic-theme"
-        && -d $root_directory . "/authentic-theme-master" )
-    {
-        die("ATTENTION:\nHave you downloaded Authentic Theme from GitHub, and unpacked it manually\nto Webmin directory? In this case you need to rename theme directory from\n`authentic-theme-master` to `authentic-theme` in order to make theme work.\nAfterward, you will need to reset the theme again in Webmin Configuration.\n"
-        );
     }
 }
 
@@ -2184,8 +2344,10 @@ sub init {
     }
 
     # Clearing possibly stuck update states
-    if (   index( $ENV{'REQUEST_URI'}, 'updating' ) != -1
-        || index( $ENV{'REQUEST_URI'}, 'updating-processing' ) != -1
+    if (   index( $ENV{'REQUEST_URI'}, 'updating-webmin-theme' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'downloading-webmin-theme' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'updating-usermin-theme' ) != -1
+        || index( $ENV{'REQUEST_URI'}, 'downloading-usermin-theme' ) != -1
         || index( $ENV{'REQUEST_URI'}, 'recollect' ) != -1
         || index( $ENV{'REQUEST_URI'}, 'recollect-system-status' ) != -1
         || index( $ENV{'REQUEST_URI'}, 'recollecting' ) != -1
@@ -2310,53 +2472,25 @@ sub content {
 
 }
 
-sub licenses {
-    my ($id) = @_;
-    if ( &foreign_available("virtual-server") && $id eq "vm" ) {
-        my %virtualmin = &get_module_info("virtual-server");
-        if ( $virtualmin{'version'} =~ /gpl/ ) {
-            return 0;
-        }
-        else {
-            return 1;
-        }
-    }
-    elsif ( &foreign_available("server-manager") && $id eq "cm" ) {
-        my %cloudmin = &get_module_info("server-manager");
-        if ( $cloudmin{'version'} =~ /gpl/ ) {
-            return 0;
-        }
-        else {
-            return 1;
-        }
-    }
-    else {
-        return 0;
-    }
+sub get_current_user_language {
+    return substr(
+        (     $gconfig{ 'lang' . '_' . $base_remote_user }
+            ? $gconfig{ 'lang' . '_' . $base_remote_user }
+            : $gconfig{'lang'}
+        ),
+        0, 2
+    );
 }
 
-sub notify {
-    our ($type) = @_;
-    if ( __settings($type) ) {
-        my %messages = (
-            "%1" => $remote_user,
-            "%2" => $ENV{REMOTE_ADDR},
-            "%3" => ucfirst( &get_product_name() )
-        );
-        my %subjects = ( "%3" => ucfirst( &get_product_name() ) );
-        my @mail = split( /\|/, __settings($type) );
-        ( my $message = $mail[0] )
-            =~ s/(@{[join "|", keys %messages]})/$messages{$1}/g;
-        ( my $subject = $mail[1] )
-            =~ s/(@{[join "|", keys %subjects]})/$subjects{$1}/g;
-        if (  !length $mail[3]
-            || length $mail[3] && index( $mail[3], $ENV{REMOTE_ADDR} ) == -1 )
-        {
-            system(`echo "$message" | mail -s "$subject" "$mail[2]"`);
-        }
-    }
-}
-
+<<<<<<< HEAD
+# sub prt {
+#     my ($____v) = @_;
+#     use Data::Dumper;
+#     print '<div style="color: red">';
+#     print Dumper $____v;
+#     print '</div>';
+# }
+=======
 sub get_current_user_language {
     return substr(
         (     $gconfig{ 'lang' . '_' . $base_remote_user }
@@ -2374,4 +2508,5 @@ sub prt {
     print Dumper $____v;
     print '</div>';
 }
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 

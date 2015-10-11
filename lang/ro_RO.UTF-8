@@ -113,7 +113,9 @@ settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentifica�
 
 settings_right_current_theme=Temă curentă
 settings_right_title=Această pagină îți permite modificarea <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Configurările vor fi înregistrate după Actualizarea Temei.
-settings_right_theme_configuration_title=Configurația Authentic Theme
+settings_right_theme_left_configuration_title=Configurația Authentic Theme
+settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
+settings_right_theme_left_logo_title=Authentic Theme Logo Control
 settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
 
 
@@ -136,6 +138,8 @@ settings_hotkey_custom_7=Legătură personalizată <code>7</code>
 settings_hotkey_custom_8=Legătură personalizată <code>8</code>
 settings_hotkey_custom_9=Legătură personalizată <code>9</code>
 
+settings_navigation_color=Navigation menu color
+settings_background_color=Content page color
 settings_animation_left=Enable animation in navigation menu
 settings_animation_tabs=Enable animation in tabs
 settings_loader_top=Enable page progress loader on top of the screen
@@ -184,6 +188,8 @@ settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
 settings_security_notify_on_pre_login_request=Anunță atunci când banner-ul pre-autentificare este afișat unui utlizator neautentificat
 settings_security_notify_on_login_request=Anunță atunci când un utlizator neautentificat are acces la pagina de autentificare
 settings_security_notify_on_login_success=Anunță autentificarea reușită
+settings_security_notify_for_webmin=Enabled for Webmin
+settings_security_notify_for_usermin=Enabled for Usermin
 
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
