@@ -1,9 +1,5 @@
 #
-<<<<<<< HEAD
 # Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
-=======
-# Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
->>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -18,7 +14,6 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-<<<<<<< HEAD
                 <h4>Version 17.00 (October 11, 2015)</h4>
 
                 <ul>
@@ -28,41 +23,7 @@ our $__changelog
                   <li>Added quick access to theme\'s <em>extensions</em> editor and <em>logo</em> control from search</li>
                   <li>Improved code highlight in <em>Bind</em>, <em>Dovecot</em>, <em>SSH</em>, <em>Squid</em>, <em>ProFTPD</em>, <em>Spamassassin</em>, <em>Samba</em>, <em>fail2ban</em> and other modules</li>
                   <li>Improved rendering on <code>Webmin->Webmin Users->Available Webmin modules</code> tab</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/255" target="_blank">#255</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/256" target="_blank">#256</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/259" target="_blank">#259</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/261" target="_blank">#261</a>
-=======
-                <h4>Version 16.00 - 16.01 (September 27, 2015)</h4>
-
-                <ul>
-
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/247" target="_blank">#247</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/252" target="_blank">#252</a><hr></li>
-
-                  <li>Improved theme\'s <em>performance</em> by overall code optimization (biggest in theme\'s history)</li>
-                  <li>Improved support for <em>Firefox</em>. <em>Firefox</em> version 42+ will render animations very smoothly and provide, in general, same experience as <em>Chrome</em> now</li>
-                  <li>Improved support for <em>ConfigServer Security & Firewall</em> module</li>
-                  <li>Added smart focus on visible search fields - no need to focus manually - just start typing and the theme will automatically decide what to do</li>
-                  <li>Added support for <em>Edge</em> browser, which now can render theme properly</li>
-                  <li>Added ability to dismiss the left spinner with <code>Ctrl + Esc</code> key combination and/or its close button, that appears after 3 seconds of spinner activity</li>
-                  <li>Fixed in <em>Filemin</em> module, to submit all table rows, disregard of visibility (pagination)</li>
-                  <li>Fixed in <em>Filemin</em> module looped XHR requests, which made it twice slower</li>
-                  <li>Added for <em>Filemin</em> module extended user-friendly notifications</li>
-                  <li>Added for <em>Filemin</em> module state of the art <em>keyboard navigation</em></li>
-                    <ul>
-                      <li><code>alphanumeric typing</code> - quick search</li>
-                      <li><code>up/down, home/end</code> - cursor position</li>
-                      <li><code>enter</code> - descent into selected (in case there is only one row filtered, enter on search field will perform trigger)</li>
-                      <li><code>spacebar</code> - select current row, <code>backspace</code> - previous folder</li>
-                      <li><code>*</code> - inverse select, <code>+</code> - select all, <code>-</code> - deselect all</li>
-                      <li><code>F2</code> - change permissions, <code>F3</code> - change ownership, <code>F4</code> - edit where possible</li>
-                      <li><code>F5/Shift+F5</code> - compress/decompress, <code>F6</code> - rename, <code>Shift+F4/F7</code> - new file/folder</li>
-                      <li><code>Shift+F7</code> - search, <code>F8/Del</code> - delete, <code>Ctrl+X/C/V</code> - Cut/Copy/Paste</li>
-                      <li><code>Ctrl+Enter/Ctrl+Shift+Enter</code> - Save/Save and close currently edited file</li>
-                      <li><code>Theme reload hot key</code> - reload current directory</li>
-                    </ul>
-                  <li>Deuglifed a link for switching between basic/advanced modes in <em>SpamAssassin->Header and Body Tests</em> module</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/234" target="_blank">#234</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/235" target="_blank">#235</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/236" target="_blank">#236</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/238" target="_blank">#238</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/239" target="_blank">#239</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/242" target="_blank">#242</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/243" target="_blank">#243</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/244" target="_blank">#244</a></li>
-                  <li>Fixed other bugs and made dozes of improvements</li>
-
->>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/255" target="_blank">#255</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/256" target="_blank">#256</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/259" target="_blank">#259</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/261" target="_blank">#261</a></li>
 
                 </ul>
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->

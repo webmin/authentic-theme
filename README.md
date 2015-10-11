@@ -1,10 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-<<<<<<< HEAD
 * [Download (17.00)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
-=======
-* [Download (16.01)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
->>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
