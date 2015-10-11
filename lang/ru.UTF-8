@@ -116,7 +116,9 @@ settings_right_logo_unauthenticated_users=Logo for unauthenticated users
 
 settings_right_current_theme=Current theme
 settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_configuration_title=Authentic Theme Configuration
+settings_right_theme_left_configuration_title=Authentic Theme Configuration
+settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
+settings_right_theme_left_logo_title=Authentic Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
 
@@ -139,6 +141,8 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
+settings_navigation_color=Navigation menu color
+settings_background_color=Content page color
 settings_animation_left=Enable animation in navigation menu
 settings_animation_tabs=Enable animation in tabs
 settings_loader_top=Enable page progress loader on top of the screen
@@ -187,6 +191,8 @@ settings_hotkey_reload=Hotkey for page reload
 settings_security_notify_on_pre_login_request=Notify when pre-login banner is displayed for unauthenticated user
 settings_security_notify_on_login_request=Notify when unauthenticated user has accessed login page
 settings_security_notify_on_login_success=Notify on successful user authentication
+settings_security_notify_for_webmin=Enabled for Webmin
+settings_security_notify_for_usermin=Enabled for Usermin
 
 settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates

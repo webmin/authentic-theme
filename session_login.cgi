@@ -1,7 +1,11 @@
 #!/usr/bin/perl
 
 #
+<<<<<<< HEAD
+# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+=======
 # Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -37,7 +41,9 @@ if (   $gconfig{'loginbanner'}
     print "Set-Cookie: banner=1; path=/\r\n";
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html class="session_login">',          "\n";
+    print '<html data-background-style="'
+        . __settings('settings_background_color')
+        . '" class="session_login">', "\n";
     embed_login_head();
     print '<body class="session_login">' . "\n";
     print
@@ -70,7 +76,9 @@ print "Set-Cookie: testing=1; path=/$sec\r\n";
 $charset = &get_charset();
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
-print '<html class="session_login">',          "\n";
+print '<html data-background-style="'
+    . __settings('settings_background_color')
+    . '" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";
@@ -114,7 +122,8 @@ elsif ( $in{'timed_out'} ) {
 }
 print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
-    . '/session_login.cgi" class="form-signin session_login clearfix" role="form">' . "\n";
+    . '/session_login.cgi" class="form-signin session_login clearfix" role="form">'
+    . "\n";
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
      <span>'
@@ -142,7 +151,8 @@ print '<div class="input-group form-group">' . "\n";
 print
     '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>'
     . "\n";
-print '<input type="text" class="form-control session_login" name="user" placeholder="'
+print
+    '<input type="text" class="form-control session_login" name="user" placeholder="'
     . &text('login_user') . '" '
     . $tag
     . ' autofocus>' . "\n";
@@ -151,7 +161,8 @@ print '<div class="input-group form-group">' . "\n";
 print
     '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>'
     . "\n";
-print '<input type="password" class="form-control session_login" name="pass" placeholder="'
+print
+    '<input type="password" class="form-control session_login" name="pass" placeholder="'
     . &text('login_pass') . '"  '
     . $tag . '>' . "\n";
 print '</div>' . "\n";

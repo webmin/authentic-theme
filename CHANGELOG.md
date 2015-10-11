@@ -1,5 +1,17 @@
 ##Changelog
 
+<<<<<<< HEAD
+####Version 17.00 (October 11, 2015)
+* Added _10_ [predefined color palettes](https://github.com/qooob/authentic-theme/issues/264) for left navigation menu and _3_ for the right content page
+* Added separate options for _Webmin_/_Usermin_ to manage security notifications
+* Added quick access to theme's _extensions_ editor and _logo_ control, from _autocomplete_ menu
+* Improved code highlight in _Bind_, _Dovecot_, _SSH_, _Squid_, _ProFTPD_, _Spamassassin_, _Samba_, _fail2ban_ and other modules
+* Improved rendering on `Webmin->Webmin Users->Available Webmin modules` tab
+* Fixed bugs [#255](https://github.com/qooob/authentic-theme/issues/255) [#256](https://github.com/qooob/authentic-theme/issues/256) [#259](https://github.com/qooob/authentic-theme/issues/259) [#261](https://github.com/qooob/authentic-theme/issues/261)
+* Fixed dozens of other issues
+
+=======
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 ####Version 16.01 (September 27, 2015)
 * Fixed bugs [#247](https://github.com/qooob/authentic-theme/issues/247) [#252](https://github.com/qooob/authentic-theme/issues/252)
 

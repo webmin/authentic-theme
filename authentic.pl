@@ -1,5 +1,9 @@
 #
+<<<<<<< HEAD
+# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+=======
 # Authentic Theme 16.01 (https://github.com/qooob/authentic-theme)
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -8,8 +12,10 @@ do "authentic-theme/authentic-lib.cgi";
 warn $@;
 
 sub theme_header {
-    print '<!DOCTYPE html>',        "\n";
-    print '<html>',                 "\n";
+    print '<!DOCTYPE html>', "\n";
+    print '<html data-background-style="'
+        . __settings('settings_background_color')
+        . '">', "\n";
     print '<head>',                 "\n";
     print '<title>',                $_[0], '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
@@ -26,7 +32,9 @@ sub theme_header {
         . "\n";
     embed_header();
     print '</head>', "\n";
-    print '<body data-level="'
+    print '<body data-theme="'
+        . __settings('settings_navigation_color')
+        . '" data-level="'
         . $get_user_level
         . '" data-dashboard="'
         . dashboard_switch()
@@ -158,6 +166,21 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
+<<<<<<< HEAD
+            . '/unauthenticated/css/package.min.css?1700" rel="stylesheet" type="text/css">'
+            . "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/package.min.js?1700" type="text/javascript"></script>'
+            . "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/cgi.min.js?1700" type="text/javascript"></script>',
+            "\n";
+        print '<script src="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/js/filtermatch.min.js?1700" type="text/javascript"></script>',
+=======
             . '/unauthenticated/css/package.min.css?1601" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
@@ -171,6 +194,7 @@ sub theme_popup_prehead {
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/filtermatch.min.js?1601" type="text/javascript"></script>',
+>>>>>>> 26c36195a7bc42a58e36b30aed57642ba4b432c4
             "\n";
     }
 }
