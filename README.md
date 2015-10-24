@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.00)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.01)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -12,7 +12,7 @@
 **Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin/](https://www.virtualmin.com/)[Cloudmin](http://webmin.com/cloudmin.html) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually, [TinyMCE](http://www.tinymce.com/) to compose comprehensive HTML based messages and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
-![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-17.png)
+![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-1701.png)
 
 ####Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
@@ -54,30 +54,155 @@
 ###FAQ
 ####How do I install _Authentic_ Theme?
 
-#####Webmin
+#####Webmin/Usermin
 
-  To install _Autentic_ Theme from repository, just `clone` it into your wherever Webmin binaries folder _(libexec)_ is or [download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin:
+  To install _Autentic_ Theme from repository, just `clone` it into your wherever Webmin/Usermin binaries folder _(libexec)_ is or [download](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz) it directly and install it going from Webmin for:
+
+  **Webmin**
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
-#####Usermin
-  **a)** I'd recommend to create a _symlink_ to already installed _Authentic_ Theme, which will enable you to only update Webmin installation of the theme not both.
+  **Usermin**
 
-  Creating a _symlink_ as easy as it gets by running as root the following:
+  `Webmin->Usermin Configuration->Usermin Themes->Install themes->From uploaded file`
 
-  `ln -s /usr/libexec/webmin/authentic-theme /usr/libexec/usermin/authentic-theme`
-
-> The above implies that Webmin binaries on your system are installed under `/usr/libexec/webmin/` and Usermin installation is in `/usr/libexec/usermin/`. The above is true for _CentOS_ and other RHEL distros at least. You could easily though find out where your installations are by running `/usr/bin/whereis webmin` or `/usr/bin/whereis usermin`.
-
-  **b)** Nevertheless, you could simply install Usermin theme using the same procedure as for Webmin. To install a copy for Usermin go to:
-
-    `Webmin->Usermin Configuration->Usermin Themes->Install themes->From uploaded file`
 
 #####Virtualmin/Cloudmin
 There is no need to take any additional actions. In case _Virtualmin_ or _Cloudmin_ modules are installed, it will be automatically detected and supported.
 
 ####How do I customize the theme?
 Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can set custom _logos_, _styles_ and _scripts_.
+
+
+####How do I make user palettes work?
+_Authentic_ Theme utilizes built-in, custom color palettes, that a user can define using theme's extensions. It's possible, by using theme's _CSS_ extensions, to pass user custom selector, such as `user-palette-1`, `user-palette-2`, `user-palette-3`, `user-palette-4`, `user-palette-5`, `user-palette-6`, `user-palette-7`, `user-palette-8`, `user-palette-9` and `user-palette-10` to enable a usage of user palettes. For example, in order to use `user-palette-1`, in the theme's, you would need to set option _Navigation Menu Color_ to the value of `User Palette 1`. After that, provide a custom code to the theme's _CSS_ extension, with a pre-built template, corresponding with custom theme's identification.
+
+#####Example:
+
+```CSS
+body[data-theme='user-palette-1'] #sidebar {
+    background: #838638;
+}
+body[data-theme='user-palette-1'] #sidebar .form-group .form-control.sidebar-search {
+    color: rgba(230,230,230,.75);
+}
+body[data-theme='user-palette-1'] #sidebar li:not(.menu-title):not(.menu-container) {
+    text-shadow: 1px 1px 0 rgba(20,20,20,.3);
+}
+body[data-theme='user-palette-1'] .select2-selection--single span, body[data-theme='user-palette-1'] .select2-selection span, body[data-theme='user-palette-1'] #sidebar .user-link .a, body[data-theme='user-palette-1'] #sidebar .user-link .fa, body[data-theme='user-palette-1'] #sidebar .user-link .text-danger, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container) a, body[data-theme='user-palette-1'] #sidebar li:not(.menu-container):not(.sub-wrapper) a {
+    color: rgba(250,250,250,.80) !important;
+}
+body[data-theme='user-palette-1'] #sidebar li:not(.sub-wrapper):not(.menu-container).has-sub.active {
+    background-color: rgba(200,200,200,.25);
+}
+body[data-theme='user-palette-1'] #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active a {
+    font-weight: 600;
+    color: #fdfdfd !important;
+}
+body[data-theme='user-palette-1'] #sidebar ul.sub > li:not(.menu-container).sub_active:before, body[data-theme='user-palette-1'] #sidebar ul.sub li:before {
+    background: rgba(200,200,200,.35);
+}
+body[data-theme='user-palette-1'] #sidebar ul.sub > li > a:before {
+    color: #eee;
+}
+body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.menu-container):not(.sub-wrapper) {
+    border: 1px solid rgba(200,200,200,.20);
+    -webkit-box-shadow: 0 1px 2px rgba(20,20,20,.2);
+    box-shadow: 0 1px 2px rgba(20,20,20,.2);
+}
+body[data-theme='user-palette-1'] #sidebar .form-group i.fa.fa-search {
+    color: rgba(200,200,200,.55);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control::-webkit-input-placeholder {
+    color: rgba(200,200,200,.55);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control:-moz-placeholder {
+    color: rgba(200,200,200,.55);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control::-moz-placeholder {
+    color: rgba(200,200,200,.55);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control:-ms-input-placeholder {
+    color: rgba(200,200,200,.55);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control:focus::-webkit-input-placeholder {
+    color: rgba(220,220,220,.80);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control:focus:-moz-placeholder {
+    color: rgba(220,220,220,.80);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control:focus::-moz-placeholder {
+    color: rgba(220,220,220,.80);
+}
+body[data-theme='user-palette-1'] #sidebar .form-control:focus:-ms-input-placeholder {
+    color: rgba(220,220,220,.80);
+}
+body[data-theme='user-palette-1'] #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
+    border-left: 4px solid rgba(255,239,236,.9);
+}
+body[data-theme='user-palette-1'] .mobile-menu-toggler {
+    border-right: 2px solid rgba(26,26,26,.75);
+}
+body[data-theme='user-palette-1'] .mobile-menu-toggler.selected > .btn-primary {
+    border: 1px solid #838638;
+    background-color: #838638;
+}
+body[data-theme='user-palette-1'] #sidebar .switch-mins a {
+    background-color: #838638;
+}
+body[data-theme='user-palette-1'] #sidebar .loading-sm {
+    border: 1px solid rgb(142, 146, 45);
+    border-top: 1px solid rgb(167, 171, 75);
+}
+body[data-theme='user-palette-1'] #sidebar .loader-close.sm {
+    color: rgba(230,230,230,.75);
+}
+body[data-theme='user-palette-1'] #sidebar .loader-close.sm > .fa:hover {
+    color: rgba(240,240,240,.98);
+}
+body[data-theme='user-palette-1'] .loader-close {
+    color: rgba(60,60,60,.65);
+}
+body[data-theme='user-palette-1'] .loader-close > .fa:hover {
+    color: #838638;
+}
+body[data-theme='user-palette-1'] .loading {
+    border: 1px solid rgb(226, 226, 226);
+    border-top: 1px solid rgba(131, 134, 56, .63);
+}
+body[data-theme='user-palette-1'] .autocomplete-selected, body[data-theme='user-palette-1'] .select2-results ul li:active, body[data-theme='user-palette-1'] .select2-results ul li:focus, body[data-theme='user-palette-1'] .select2-results ul li:hover, body[data-theme='user-palette-1'] .select2-container--default .select2-results__option--highlighted[aria-selected]:active, body[data-theme='user-palette-1'] .select2-container--default .select2-results__option:hover, body[data-theme='user-palette-1'] .select2-container--default .select2-results__option:focus, body[data-theme='user-palette-1'] .select2-container--default .select2-results__option[aria-disabled=true], body[data-theme='user-palette-1'] .select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: rgba(30,30,30,.12) !important;
+}
+body[data-theme='user-palette-1'] .favorites-menu-close {
+    background: #eee;
+}
+body[data-theme='user-palette-1'] .favorites-menu-close .favorites-menu-bar {
+    background: rgba(20,20,20,1);
+}
+body[data-theme='user-palette-1'] .favorites-menu-outer.hover {
+    background: rgba(131, 134, 56, .75);
+}
+body[data-theme='user-palette-1'] nav.favorites-menu li > span:not(.f__c), body[data-theme='user-palette-1'] nav.favorites-menu li a {
+    color: rgba(255,255,255,.8);
+}
+body[data-theme='user-palette-1'] nav.favorites-menu li a:not(.disabled):hover {
+    color: rgba(255,255,255,1);
+}
+body[data-theme='user-palette-1'] .select2-selection__rendered .menu-status-label.pointer-events-none {
+    color: #333 !important;
+}
+body[data-theme='user-palette-1'] #sidebar .user-link .fa:hover, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container) a i:hover, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):hover a i, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):hover a, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container) a:hover, body[data-theme='user-palette-1'] .select2-selection__rendered .menu-status-label:hover, body[data-theme='user-palette-1'] #sidebar li:not(.sub-wrapper):not(.menu-container) a:hover, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):hover span, body[data-theme='user-palette-1'] #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):hover a, body[data-theme='user-palette-1'] .select2-selection__rendered:hover .menu-status-label, body[data-theme='user-palette-1'] .select2-selection__rendered .menu-status-label:hover {
+    color: #fff !important;
+}
+body[data-theme='user-palette-1'] #nprogress .bar {
+    height: 2px;
+    background: crimson;
+}
+body[data-theme='user-palette-1'] #nprogress .peg {
+    box-shadow: 0 0 2px crimson,0 0 5px crimson;
+}
+
+```
 
 ####How do I make the theme load faster?
 _Webmin_ has in-built option to compress static files.  It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting _Gzip compress static files_ option to _Use pre-compressed file and compress dynamically_.

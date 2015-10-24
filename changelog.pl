@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,9 +14,11 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.00 (October 11, 2015)</h4>
+                <h4>Version 17.00-17.01 (October 24, 2015)</h4>
 
                 <ul>
+                  <li>Added <em>Sea Green</em> color palette and possibility to use custom <a class="label label-default" href="https://github.com/qooob/authentic-theme#how-do-i-make-user-palettes-work" target="_blank">user palettes</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/269" target="_blank">#269</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/273" target="_blank">#273</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/274" target="_blank">#274</a><hr></li>
 
                   <li>Added <em>10</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/264#issuecomment-147094497" target="_blank">predefined color palettes</a> for left navigation menu and <em>3</em> for the right content page</li>
                   <li>Added separate options for <em>Webmin</em>/<em>Usermin</em> to manage security notifications</li>

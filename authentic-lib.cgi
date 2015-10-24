@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -933,7 +933,6 @@ sub print_easypie_charts {
 
     # Memory allocation
     if ( $info->{'mem'} ) {
-        @m = @{ $info->{'mem'} };
         if ( @m && $m[0] ) {
             my $percent = ( $m[0] - $m[1] ) / $m[0] * 100;
             print_easypie_chart(
@@ -1245,7 +1244,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1700" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1701" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1285,7 +1284,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1700" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1701" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1297,13 +1296,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1700" type="text/javascript"></script>' . "\n";
+                . '.js?1701" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1700" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1701" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1319,17 +1318,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1700" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1701" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1700" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1701" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1700" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1701" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1337,7 +1336,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1700" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1701" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1361,16 +1360,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1700" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1701" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1700" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1701" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1700" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1701" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1990,7 +1989,10 @@ sub _settings {
                     <option value="gold"'
                 . ( $v eq 'gold' && ' selected' ) . '>Pale Golden</option>
 
-                    <option value="red"'
+                    <option value="green"'
+                . ( $v eq 'green' && ' selected' ) . '>Sea Green</option>
+
+                 <option value="red"'
                 . ( $v eq 'red' && ' selected' ) . '>Dark Red</option>
 
                     <option value="indianRed"'
@@ -2007,6 +2009,36 @@ sub _settings {
 
                     <option value="darkGrey"'
                 . ( $v eq 'darkGrey' && ' selected' ) . '>Dark Grey</option>
+
+                    <option value="user-palette-1"'
+                . ( $v eq 'user-palette-1' && ' selected' ) . '>User Palette 1</option>
+
+                    <option value="user-palette-2"'
+                . ( $v eq 'user-palette-2' && ' selected' ) . '>User Palette 2</option>
+
+                    <option value="user-palette-3"'
+                . ( $v eq 'user-palette-3' && ' selected' ) . '>User Palette 3</option>
+
+                    <option value="user-palette-4"'
+                . ( $v eq 'user-palette-4' && ' selected' ) . '>User Palette 4</option>
+
+                    <option value="user-palette-5"'
+                . ( $v eq 'user-palette-5' && ' selected' ) . '>User Palette 5</option>
+
+                    <option value="user-palette-6"'
+                . ( $v eq 'user-palette-6' && ' selected' ) . '>User Palette 6</option>
+
+                    <option value="user-palette-7"'
+                . ( $v eq 'user-palette-7' && ' selected' ) . '>User Palette 7</option>
+
+                    <option value="user-palette-8"'
+                . ( $v eq 'user-palette-8' && ' selected' ) . '>User Palette 8</option>
+
+                    <option value="user-palette-9"'
+                . ( $v eq 'user-palette-9' && ' selected' ) . '>User Palette 9</option>
+
+                    <option value="user-palette-10"'
+                . ( $v eq 'user-palette-10' && ' selected' ) . '>User Palette 10</option>
 
 
                 </select>';
