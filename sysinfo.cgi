@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -24,7 +24,9 @@ our %text = ( &load_language('server-manager'), %text );
 
 print '<div id="wrapper" class="page" data-notice="'
     . (
-    ( -f $root_directory . '/authentic-theme/update' && $get_user_level == 0 )
+    (   -f $root_directory . '/authentic-theme/update'
+            && $get_user_level == 0
+    )
     ? _post_install()
     : '0'
     ) . '">' . "\n";
@@ -36,7 +38,10 @@ if ( $get_user_level != 4 ) {
         . "\n";
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">' . &text('body_header0') . (
-        ( $get_user_level != 2 && $get_user_level != 3 && &foreign_available("webmin") )
+        (          $get_user_level != 2
+                && $get_user_level != 3
+                && &foreign_available("webmin")
+        )
         ? '<a href="/?updated" target="_top" data-href="'
             . $gconfig{'webprefix'}
             . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>
@@ -58,6 +63,11 @@ if ( $get_user_level == 0 || $get_user_level == 4 ) {
         # Ask status module for collected info
         &foreign_require("system-status");
         $info = &system_status::get_collected_info();
+
+        # Require memory information
+        if ( $info->{'mem'} ) {
+            @m = @{ $info->{'mem'} };
+        }
 
         # Easypie Charts
         if ( __settings('settings_sysinfo_easypie_charts') ne 'false' ) {
@@ -334,24 +344,26 @@ if ( $get_user_level == 0 || $get_user_level == 4 ) {
         }
 
         # Real memory details
-        &print_table_row(
-            $text{'body_real'},
-            &text(
-                'body_used',
-                nice_size( ( $m[0] ) * 1000 ),
-                nice_size( ( $m[0] - $m[1] ) * 1000 )
-            )
-        );
+        if ( $info->{'mem'} ) {
+            &print_table_row(
+                $text{'body_real'},
+                &text(
+                    'body_used',
+                    nice_size( ( $m[0] ) * 1000 ),
+                    nice_size( ( $m[0] - $m[1] ) * 1000 )
+                )
+            );
 
-        # Virtual memory details
-        &print_table_row(
-            $text{'body_virt'},
-            &text(
-                'body_used',
-                nice_size( ( $m[2] ) * 1000 ),
-                nice_size( ( $m[2] - $m[3] ) * 1000 )
-            )
-        );
+            # Virtual memory details
+            &print_table_row(
+                $text{'body_virt'},
+                &text(
+                    'body_used',
+                    nice_size( ( $m[2] ) * 1000 ),
+                    nice_size( ( $m[2] - $m[3] ) * 1000 )
+                )
+            );
+        }
 
         # Local disk space
         &print_table_row(
@@ -373,8 +385,7 @@ if ( $get_user_level == 0 || $get_user_level == 4 ) {
             our $csf_installed_version = $csf_installed_version->[0];
 
             # Define CSF actual version if allowed
-            if ( __settings('settings_sysinfo_csf_updates') eq 'true' )
-            {
+            if ( __settings('settings_sysinfo_csf_updates') eq 'true' ) {
                 http_download(
                     'download.configserver.com', '80',
                     '/csf/version.txt',          \$csf_remote_version,

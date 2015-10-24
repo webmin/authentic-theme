@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 17.01 (October 24, 2015)
+* Added _Sea Green_ color palette and possibility to use custom [user palettes](https://github.com/qooob/authentic-theme#how-do-i-make-user-palettes-work)
+* Fixed bugs [#269](https://github.com/qooob/authentic-theme/issues/269) [#273](https://github.com/qooob/authentic-theme/issues/273) [#274](https://github.com/qooob/authentic-theme/issues/274)
+
 ####Version 17.00 (October 11, 2015)
 * Added _10_ [predefined color palettes](https://github.com/qooob/authentic-theme/issues/264) for left navigation menu and _3_ for the right content page
 * Added separate options for _Webmin_/_Usermin_ to manage security notifications
@@ -61,7 +65,7 @@
 * Added ability to dismiss the page loader with single escape click. Attention! Be careful when you click escape key once, the loader will disappear, when you click it over again and the loader is hidden, you will interrupt the execution of the page process
 * Changed theme auto-updates notifications to be off by default. This will not affect existing users
 * Fixed history buttons, navigating using browser's back/forward buttons now working properly
-* Fixed minor bugs [#224](https://github.com/qooob/authentic-theme/issues/224) [#226](https://github.com/qooob/authentic-theme/issues/226) [#1](https://github.com/qooob/authentic-theme-extensions/issues/1) [#57](https://github.com/Real-Gecko/filemin/issues/57)
+* Fixed minor bugs [#224](https://github.com/qooob/authentic-theme/issues/224) [#226](https://github.com/qooob/authentic-theme/issues/226) [#57](https://github.com/Real-Gecko/filemin/issues/57)
 * Fixed dozens of other minor bugs
 
 ####Version 15.00 (August 23, 2015)
@@ -131,7 +135,6 @@
 * Fixed defaults properly set for _Make all accordions expanded_ [#179](https://github.com/qooob/authentic-theme/issues/179)
 * Fixed issues in _Webmin Servers Index_ module [#178](https://github.com/qooob/authentic-theme/issues/178)
 * Fixed overflow problem when listing long titles in _Easy Pie Charts_ [#177](https://github.com/qooob/authentic-theme/issues/177)
-* Added theme extensions [repo](https://github.com/qooob/authentic-theme-extensions)
 
 ####Version 13.02 (May 27, 2015)
 * Added support for old versions of Perl [#174](https://github.com/qooob/authentic-theme/issues/174)
