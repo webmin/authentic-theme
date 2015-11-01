@@ -1,14 +1,21 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
+if ( !%in ) {
+    $in{ ( $t_uri_cloudmin == -1 ? 'dom' : 'sid' ) }
+        = __settings( 'settings_right_'
+            . ( $t_uri_cloudmin == -1 ? 'virtualmin' : 'cloudmin' )
+            . '_default' );
+}
+
 my @leftitems = list_combined_webmin_menu( $sects, \%in );
 
-if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
+if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     || $in{'xhr-navigation-type'} eq 'webmin' )
 {
     print_search();
@@ -30,15 +37,17 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 if ( $minfo->{'dir'} eq 'webmin' ) {
-                    &print_category_link( "/webmin/edit_themes.cgi",
-                        $text{'settings_right_theme_left_configuration_title'},
-                        1 );
+                    &print_category_link(
+                        "/webmin/edit_themes.cgi",
+                        $text{
+                            'settings_right_theme_left_configuration_title'},
+                        1
+                    );
                     &print_category_link( "/settings-editor_read.cgi",
                         $text{'settings_right_theme_left_extensions_title'},
                         1 );
                     &print_category_link( "/settings-upload.cgi",
-                        $text{'settings_right_theme_left_logo_title'},
-                        1 );
+                        $text{'settings_right_theme_left_logo_title'}, 1 );
                 }
                 if (   $minfo->{'dir'} ne 'virtual-server'
                     && $minfo->{'dir'} ne 'server-manager' )
@@ -91,9 +100,12 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     }
 }
 
-elsif ( $t_uri_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) {
+elsif ($t_uri_virtualmin != -1
+    || $in{'xhr-navigation-type'} eq 'virtualmin' )
+{
 
-    print_left_menu( 'virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'} );
+    print_left_menu( 'virtual-server', \@leftitems, 0, 0, $in{'dom'},
+        $in{'xhr-navigation-type'} );
     print_sysinfo_link();
     print_sysstat_link();
 
@@ -101,13 +113,15 @@ elsif ( $t_uri_virtualmin != -1 || $in{'xhr-navigation-type'} eq 'virtualmin' ) 
 
 elsif ( $t_uri_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
 
-    print_left_menu( 'server-manager', \@leftitems, 0, 0, $in{'sid'}, $in{'xhr-navigation-type'} );
+    print_left_menu( 'server-manager', \@leftitems, 0, 0, $in{'sid'},
+        $in{'xhr-navigation-type'} );
     print_sysinfo_link();
     print_sysstat_link();
 }
 
 elsif ( $t_uri_webmail != -1 || $in{'xhr-navigation-type'} eq 'webmail' ) {
 
-    print_left_menu( 'mailbox', \@leftitems, 0, 0, 0, $in{'xhr-navigation-type'} );
+    print_left_menu( 'mailbox', \@leftitems, 0, 0, 0,
+        $in{'xhr-navigation-type'} );
     print_sysinfo_link();
 }

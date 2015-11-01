@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 17.02 (November 01, 2015)
+* Added a feature to execute shell command from the search field. To do so, type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available
+* Fixed user-set virtual server/machine not properly loaded on the first run
+
 ####Version 17.01 (October 24, 2015)
 * Added _Sea Green_ color palette and possibility to use custom [user palettes](https://github.com/qooob/authentic-theme#how-do-i-make-user-palettes-work)
 * Fixed bugs [#269](https://github.com/qooob/authentic-theme/issues/269) [#273](https://github.com/qooob/authentic-theme/issues/273) [#274](https://github.com/qooob/authentic-theme/issues/274)
