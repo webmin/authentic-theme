@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,18 +14,21 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.00-17.01 (October 24, 2015)</h4>
+                <h4>Version 17.00-17.02 (November 01, 2015)</h4>
 
                 <ul>
+
+                  <li>Added a feature to execute shell command from the search field. To do so, type <code>!</code> in search, followed by your command. Example: <code>! ls -lsaZ /root</code><br><em>Note:</em> It\'s required to have <em>Command Shell</em> module available</li>
+                  <li>Fixed user-set virtual server/machine not properly loaded on the first run<hr></li>
+
                   <li>Added <em>Sea Green</em> color palette and possibility to use custom <a class="label label-default" href="https://github.com/qooob/authentic-theme#how-do-i-make-user-palettes-work" target="_blank">user palettes</a></li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/269" target="_blank">#269</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/273" target="_blank">#273</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/274" target="_blank">#274</a><hr></li>
 
                   <li>Added <em>10</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/264#issuecomment-147094497" target="_blank">predefined color palettes</a> for left navigation menu and <em>3</em> for the right content page</li>
                   <li>Added separate options for <em>Webmin</em>/<em>Usermin</em> to manage security notifications</li>
                   <li>Added quick access to theme\'s <em>extensions</em> editor and <em>logo</em> control from search</li>
                   <li>Improved code highlight in <em>Bind</em>, <em>Dovecot</em>, <em>SSH</em>, <em>Squid</em>, <em>ProFTPD</em>, <em>Spamassassin</em>, <em>Samba</em>, <em>fail2ban</em> and other modules</li>
                   <li>Improved rendering on <code>Webmin->Webmin Users->Available Webmin modules</code> tab</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/255" target="_blank">#255</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/256" target="_blank">#256</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/259" target="_blank">#259</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/261" target="_blank">#261</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/269" target="_blank">#269</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/273" target="_blank">#273</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/274" target="_blank">#274</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/255" target="_blank">#255</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/256" target="_blank">#256</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/259" target="_blank">#259</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/261" target="_blank">#261</a></li>
 
                 </ul>
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->
