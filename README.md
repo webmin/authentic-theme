@@ -205,7 +205,7 @@ body[data-theme='user-palette-1'] #nprogress .peg {
 ```
 
 ####How do I execute shell command using search filed?
-Type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available
+Type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available.
 
 ####How do I make the theme load faster?
 _Webmin_ has in-built option to compress static files.  It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting _Gzip compress static files_ option to _Use pre-compressed file and compress dynamically_.
