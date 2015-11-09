@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.03 (November 09, 2015)
+* Added document title dynamic update, depending on the current module. It also supports _Virtualmin/Cloudmin_, appending currenty selected virtual server/machine and _Filemin_, appending currently selected path [#76](https://github.com/Real-Gecko/filemin/issues/76)
+
 ####Version 17.02 (November 01, 2015)
 * Added a feature to execute shell command from the search field. To do so, type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available
 * Fixed user-set virtual server/machine not properly loaded on the first run
