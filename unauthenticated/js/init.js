@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.03 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -182,7 +182,7 @@ function ___csf() {
 		k = t.contentDocument.getElementsByTagName("head")[0],
 		q = t.contentDocument.createElement("script");
 	q.type = "text/javascript";
-	q.src = "/unauthenticated/js/package.min.js?1701";
+	q.src = "/unauthenticated/js/package.min.js?1703";
 	k.appendChild(q);
 	if (o.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
 		t.contentWindow.onbeforeunload = function (a) {
@@ -191,7 +191,7 @@ function ___csf() {
 		o.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
 		$csf = o.$('iframe[name="page"]').contents();
 		$csf.find("html").attr("data-background-style", o.$("html").attr("data-background-style"));
-		$csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1701" rel="stylesheet" type="text/css">			');
+		$csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1703" rel="stylesheet" type="text/css">			');
 		$.each(o.$('link[href*="/styles.css"]'), function () {
 			if ($(this)) {
 				$csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -512,11 +512,12 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 			return
 		}
 		__lre();
-		s("/unauthenticated/js/authentic.min.js?1701")
+		s("/unauthenticated/js/authentic.min.js?1703")
 	}
 	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
 		t__wi_p.NProgress.done()
 	}
+	t__wi_p.__dpt();
 	t___wi.parent.$___________right = 1
 });
 $(function () {

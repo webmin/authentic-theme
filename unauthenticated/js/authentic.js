@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.01 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.03 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -630,7 +630,7 @@ function t__au__c___i(u) {
 		var r = q.concat(n).concat(v).concat(t)
 	}
 	t__wi_p.$(".form-control.sidebar-search").on("keydown", function (a) {
-		if (a.keyCode == 39 || a.keyCode == 37 || a.keyCode == 35 || a.keyCode == 34 || a.keyCode == 33 || a.keyCode == 20 || a.keyCode == 17 || a.keyCode == 16 || a.keyCode == 9 || a.ctrlKey) {
+		if (a.keyCode == 34 || a.keyCode == 33 || a.keyCode == 20 || a.keyCode == 17 || a.keyCode == 16 || a.keyCode == 9) {
 			a.preventDefault();
 			a.stopPropagation()
 		}
@@ -655,7 +655,6 @@ function t__au__c___i(u) {
 			}
 		},
 		groupBy: "category",
-		showNoSuggestionNotice: true,
 		noSuggestionNotice: "No results found"
 	})
 }
@@ -1195,6 +1194,41 @@ function __sam(h, k) {
 	}
 }
 
+function __dpt() {
+	if (!localStorage.getItem("system_default_title")) {
+		localStorage.setItem("system_default_title", t__wi_p.document.title)
+	}
+	if (t__wi_p.$('li.sub_active a[href*="filemin"]').length) {
+		if ($('iframe[name="page"]').get(0) && $('iframe[name="page"]').get(0).contentWindow && $('iframe[name="page"]').get(0).contentWindow.$('body[class*="filemin"] form input#path').val()) {
+			t__wi_p.document.title = $('iframe[name="page"]').get(0).contentWindow.$('body[class*="filemin"] form input#path').val() + " - " + t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+		} else {
+			t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+		}
+	} else {
+		if ((product_name() == "Virtualmin" || product_name() == "Cloudmin") && t__wi_p.$("select option:checked").text() && t__wi_p.$("select option:checked").text().length) {
+			if (t__wi_p.$("li.sub_active a").text() && t__wi_p.$("li.sub_active a").text().length) {
+				t__wi_p.document.title = t__wi_p.$("select option:checked").text() + " - " + t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+			} else {
+				t__wi_p.document.title = product_name() + " — " + localStorage.getItem("system_default_title")
+			}
+		} else {
+			if (product_name() == "Mail") {
+				if (t__wi_p.$("li.sub_active a").text() && t__wi_p.$("li.sub_active a").text().length) {
+					t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " - Mail  — " + localStorage.getItem("system_default_title")
+				} else {
+					t__wi_p.document.title = product_name() + " — " + localStorage.getItem("system_default_title")
+				}
+			} else {
+				if (t__wi_p.$("li.sub_active a").text() && t__wi_p.$("li.sub_active a").text().length) {
+					t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+				} else {
+					t__wi_p.document.title = localStorage.getItem("system_default_title")
+				}
+			}
+		}
+	}
+}
+
 function __dlm(b) {
 	if (t__wi_p.$___________m_locked === 1) {
 		return
@@ -1225,6 +1259,7 @@ function __dlm(b) {
 	if (t__wi_p.$('a[data-href="/sysinfo.cgi"]').hasClass("hidden") && $current_page_full == $_____link_full + "/sysinfo.cgi") {
 		__cms()
 	}
+	__dpt()
 }
 
 function t__m__m(h, g) {
@@ -1810,10 +1845,14 @@ $('body:not([class*="filemin"])').on("keydown", function (g) {
 	var f = g.keyCode ? g.keyCode : g.which;
 	if (!$("input").is(":focus") && !$("select").is(":focus") && !$("textarea").is(":focus")) {
 		var d = String.fromCharCode(f).toLowerCase();
-		if (d && /[a-zA-Z0-9]/.test(d) && !g.shiftKey && !g.ctrlKey && !g.altKey && !g.metaKey) {
+		if (d && /[a-zA-Z0-9]/.test(d) && !g.ctrlKey && !g.altKey && !g.metaKey) {
 			if (!$(".dataTables_filter label input").length) {
 				setTimeout(function () {
-					t__wi_p.$('aside input[name="search"]').focus().val(d)
+					if (g.shiftKey && d == "1") {
+						t__wi_p.$('aside input[name="search"]').focus().val("!")
+					} else {
+						t__wi_p.$('aside input[name="search"]').focus().val(d)
+					}
 				}, 1)
 			} else {
 				$(".dataTables_filter label input").trigger("keyup").focus()
@@ -1824,7 +1863,7 @@ $('body:not([class*="filemin"])').on("keydown", function (g) {
 if (t___wi.location == t__wi_p.location) {
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.01 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.03 https://github.com/qooob/authentic-theme")
 	}
 	typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 	typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -2106,6 +2145,38 @@ if (t___wi.location == t__wi_p.location) {
 		t__wi_p.__lle()
 	});
 	$(window).keydown(function (b) {
+		if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && b.keyCode == 13 && product_name(1).toLowerCase() != "cloudmin") {
+			t__wi_p.$(".form-control.sidebar-search").addClass("_shell_form_");
+			b.preventDefault();
+			b.stopPropagation();
+			if (t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('iframe[name="page"]').contents().find("body").data("shell") == "1") {
+				$__shell_form = '<form class="__shell_form__" role="form" action="' + $_____link_full + '/shell/index.cgi" method="post" enctype="multipart/form-data">									<input type="hidden" id="cmd" name="cmd" value="' + t__wi_p.$(".form-control.sidebar-search").val().trim().substring(1).trim() + '">								</form>';
+				t__wi_p.$('iframe[name="page"]').contents().find("body").append($__shell_form);
+				t__wi_p.$('iframe[name="page"]').contents().find(".__shell_form__").submit();
+				if (product_name(1).toLowerCase() == "virtualmin") {
+					__cms()
+				} else {
+					if (!t__wi_p.$("a[href^='shell']").attr("href")) {
+						t__wi_p.t__wm_l("open_webmin")
+					}
+				}
+			}
+		} else {
+			if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && b.keyCode == 13 && product_name(1).toLowerCase() == "cloudmin") {
+				t__wi_p.$(".form-control.sidebar-search").addClass("_shell_form_");
+				b.preventDefault();
+				b.stopPropagation();
+				if (t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('a[target="page"][href*="/server-manager/save_serv.cgi"]').length && t__wi_p.$('a[target="page"][href*="shell=1"]').length) {
+					$__shell_form = '<form class="__shell_form__" role="form" action="' + $_____link_full + '/server-manager/shell.cgi" method="post" enctype="multipart/form-data">									<input type="hidden" id="id" name="id" value="' + t__wi_p.$("#sid").val() + '">									<input type="hidden" id="cmd" name="cmd" value="' + t__wi_p.$(".form-control.sidebar-search").val().trim().substring(1).trim() + '">								</form>';
+					t__wi_p.$('iframe[name="page"]').contents().find("body").append($__shell_form);
+					t__wi_p.$('iframe[name="page"]').contents().find(".__shell_form__").submit();
+					__cms();
+					t__wi_p.$('a[href*="server-manager/save_serv.cgi"]').parent("li:not(.menu-exclude):not(.user-link)").addClass("sub_active").append('<span class="current-large"></span>').parent("ul.sub").show().parent("li:not(.menu-exclude):not(.user-link)").prev("li").addClass("active")
+				}
+			}
+		}
+	});
+	$(window).keyup(function (b) {
 		t__wi_p.search_control(b);
 		t__wi_p.shortcut_control(b)
 	});
@@ -3149,6 +3220,7 @@ if (t___wi.location == t__wi_p.location) {
 					if (settings_favorites) {
 						f__dt()
 					}
+					t__wi_p.__dpt()
 				},
 				error: function (a) {}
 			})
@@ -4995,6 +5067,9 @@ if (t___wi.location == t__wi_p.location) {
 			$(this).removeClass("heighter-28").addClass("heighter-34");
 			if ($(this).is('input[type="button"]')) {
 				$($(this).addClass("submitter"))
+			}
+			if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!")) {
+				t__wi_p.$(".form-control.sidebar-search").val("")
 			}
 			$(".ui_form").find("input.btn.btn-default:first").addClass("btn-success")
 		});
