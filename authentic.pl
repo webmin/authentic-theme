@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.03 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -162,19 +162,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1703" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1704" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1703" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1704" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1703" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1704" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1703" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1704" type="text/javascript"></script>',
             "\n";
     }
 }

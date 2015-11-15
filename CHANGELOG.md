@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.04 (November 15, 2015)
+* Fixed a bug [#279](https://github.com/qooob/authentic-theme/issues/279)
+
 ####Version 17.03 (November 09, 2015)
 * Added document title dynamic update, depending on the current module. It also supports _Virtualmin/Cloudmin_, appending currenty selected virtual server/machine and _Filemin_, appending currently selected path [#76](https://github.com/Real-Gecko/filemin/issues/76)
 
