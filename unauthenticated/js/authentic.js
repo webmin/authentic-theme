@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.03 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -549,20 +549,20 @@ function t__au__c___i(u) {
 						} else {
 							if ($current_page_full == $_____link_full + "/proc/" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi") {
 								if ($current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi") {
-									$description = $.trim($(this).parent("td").next("td.td_tag").text()) + " — " + $.trim($(this).parent("td").next("td.td_tag").next("td.td_tag").text()) + " - " + $.trim($(this).parents("td").next("td").next("td").next("td").text())
+									$description = $.trim($(this).parent("td").next("td.td_tag").text()) + " â " + $.trim($(this).parent("td").next("td.td_tag").next("td.td_tag").text()) + " - " + $.trim($(this).parents("td").next("td").next("td").next("td").text())
 								} else {
 									if ($current_page_full == $_____link_full + "/proc/index_search.cgi") {
-										$description = $.trim($(this).parent("td").next("td.td_tag").text()) + " — " + $.trim($(this).parent("td").next("td.td_tag").next("td.td_tag").text()) + " - " + $.trim($(this).parents("td").next("td").next("td").next("td").next("td").text())
+										$description = $.trim($(this).parent("td").next("td.td_tag").text()) + " â " + $.trim($(this).parent("td").next("td.td_tag").next("td.td_tag").text()) + " - " + $.trim($(this).parents("td").next("td").next("td").next("td").next("td").text())
 									} else {
-										$description = $.trim($(this).parent("td").next("td.td_tag").text()) + " — " + $.trim($(this).parents("td").next("td").next("td").next("td").text())
+										$description = $.trim($(this).parent("td").next("td.td_tag").text()) + " â " + $.trim($(this).parents("td").next("td").next("td").next("td").text())
 									}
 								}
 							} else {
 								if ($current_page_full == $_____link_full + "/useradmin/" || $current_page_full == $_____link_full + "/useradmin/index.cgi") {
-									$description = $.trim($(this).parents("td").next("td").find("label").text()) + " — " + $(this).text() + ":" + $.trim($(this).parents("td").next("td").next("td").find("label").text()) + " - " + $.trim($(this).parents("td").next("td").next("td").next("td").next("td").find("label").text()) + ", " + $.trim($(this).parents("td").next("td").next("td").next("td").next("td").next("td").find("label").text())
+									$description = $.trim($(this).parents("td").next("td").find("label").text()) + " â " + $(this).text() + ":" + $.trim($(this).parents("td").next("td").next("td").find("label").text()) + " - " + $.trim($(this).parents("td").next("td").next("td").next("td").next("td").find("label").text()) + ", " + $.trim($(this).parents("td").next("td").next("td").next("td").next("td").next("td").find("label").text())
 								} else {
 									if ($current_page_full == $_____link_full + "/mailboxes/list_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/" || $current_page_full == $_____link_full + "/mailbox/index.cgi") {
-										$description = $.trim($(this).parents("td").next("td").next("td").next("td").find("label").text()) + " — " + $.trim($(this).parents("td").next("td").find("label").text()) + " [" + $.trim($(this).parents("td").next("td").next("td").find("label").text()) + "]"
+										$description = $.trim($(this).parents("td").next("td").next("td").next("td").find("label").text()) + " â " + $.trim($(this).parents("td").next("td").find("label").text()) + " [" + $.trim($(this).parents("td").next("td").next("td").find("label").text()) + "]"
 									} else {
 										if ($current_page_full == $_____link_full + "/cpan/" || $current_page_full == $_____link_full + "/cpan/index.cgi") {
 											$description = $.trim($(this).parents("td").next("td").next("td").find("label").text())
@@ -1200,27 +1200,27 @@ function __dpt() {
 	}
 	if (t__wi_p.$('li.sub_active a[href*="filemin"]').length) {
 		if ($('iframe[name="page"]').get(0) && $('iframe[name="page"]').get(0).contentWindow && $('iframe[name="page"]').get(0).contentWindow.$('body[class*="filemin"] form input#path').val()) {
-			t__wi_p.document.title = $('iframe[name="page"]').get(0).contentWindow.$('body[class*="filemin"] form input#path').val() + " - " + t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+			t__wi_p.document.title = $('iframe[name="page"]').get(0).contentWindow.$('body[class*="filemin"] form input#path').val() + " - " + t__wi_p.$("li.sub_active a").text() + " â " + localStorage.getItem("system_default_title")
 		} else {
-			t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+			t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " â " + localStorage.getItem("system_default_title")
 		}
 	} else {
 		if ((product_name() == "Virtualmin" || product_name() == "Cloudmin") && t__wi_p.$("select option:checked").text() && t__wi_p.$("select option:checked").text().length) {
 			if (t__wi_p.$("li.sub_active a").text() && t__wi_p.$("li.sub_active a").text().length) {
-				t__wi_p.document.title = t__wi_p.$("select option:checked").text() + " - " + t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+				t__wi_p.document.title = t__wi_p.$("select option:checked").text() + " - " + t__wi_p.$("li.sub_active a").text() + " â " + localStorage.getItem("system_default_title")
 			} else {
-				t__wi_p.document.title = product_name() + " — " + localStorage.getItem("system_default_title")
+				t__wi_p.document.title = product_name() + " â " + localStorage.getItem("system_default_title")
 			}
 		} else {
 			if (product_name() == "Mail") {
 				if (t__wi_p.$("li.sub_active a").text() && t__wi_p.$("li.sub_active a").text().length) {
-					t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " - Mail  — " + localStorage.getItem("system_default_title")
+					t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " - Mail  â " + localStorage.getItem("system_default_title")
 				} else {
-					t__wi_p.document.title = product_name() + " — " + localStorage.getItem("system_default_title")
+					t__wi_p.document.title = product_name() + " â " + localStorage.getItem("system_default_title")
 				}
 			} else {
 				if (t__wi_p.$("li.sub_active a").text() && t__wi_p.$("li.sub_active a").text().length) {
-					t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " — " + localStorage.getItem("system_default_title")
+					t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " â " + localStorage.getItem("system_default_title")
 				} else {
 					t__wi_p.document.title = localStorage.getItem("system_default_title")
 				}
@@ -1796,7 +1796,7 @@ function t__cm___init(d, f, g) {
 			$current_file = $current_file.split("/")[1]
 		}
 		if ($("textarea").length === 1 && $("textarea").parent("td.td_tag").length === 0) {
-			if ($source_path == $_____link + "settings-editor_read.cgi" || (product_name(1).toLowerCase() == "virtualmin" && ($current_page_full == "/apache/manual_form.cgi" || $current_page_full == "/spam/edit_manual.cgi" || $current_page_full == "/virtual-server/edit_html.cgi" || $current_page_full == "/virtual-server/apply_style.cgi" || $current_page_full == "/phpini/edit_manual.cgi")) || product_name(1).toLowerCase() != "virtualmin" && product_name(1).toLowerCase() != "cloudmin" && $current_page_full != $_____link_full + "/virtualmin-sqlite/" && $current_page_full != $_____link_full + "/updown/" && $current_directory != $_____link + "firewalld/" && $current_directory != $_____link + "firewall/" && $current_directory != $_____link + "net/" && $current_directory != $_____link + "acl/" && $current_directory != $_____link + "inetd/" && $current_directory != $_____link + "nis/" && $current_directory != $_____link + "pap/" && $current_directory != $_____link + "ppp-client/" && $current_directory != $_____link + "pptp-client/" && $current_directory != $_____link + "pptp-server/" && $current_directory != $_____link + "shorewall/" && $current_directory != $_____link + "shorewall6/" && $current_directory != $_____link + "raid/" && $current_directory != $_____link + "lvm/" && $current_directory != $_____link + "fdisk/" && $current_directory != $_____link + "lpadmin/" && $current_directory != $_____link + "virtualmin-registrar/" && $current_directory && $current_directory.indexOf("cluster") === -1 && $current_file != "edit_access.cgi" && $current_file != "edit_file.cgi" && $current_file != "edit_referers.cgi" && $current_file != "edit_lock.cgi" && $current_file != "edit_mobile.cgi" && $current_file != "edit_user.cgi" && $current_file != "edit_unix.cgi" && $current_file != "edit_pass.cgi" && $current_file != "edit_dump.cgi" && $current_file != "edit_cron.cgi" && $current_file != "gbatch_form.cgi" && $current_file != "batch_form.cgi" && $current_file != "edit_score.cgi" && $current_file != "edit_ports.cgi" && $current_file != "acl.cgi" && $current_file != "edit_recs.cgi" && $current_file != "edit_dirs.cgi" && $current_page_full != $_____link_full + "/config.cgi" && $current_page_full != $_____link_full + "/apache/edit_defines.cgi" && $current_page_full != $_____link_full + "/apache/edit_gmime_type.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_filter.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_action.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_jail.cgi" && $current_page_full != $_____link_full + "/usermin/edit_configs.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/ticket.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/login.cgi" && $current_page_full != $_____link_full + "/webminlog/view.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi") {
+			if ($source_path == $_____link + "settings-editor_read.cgi" || (product_name(1).toLowerCase() == "virtualmin" && ($current_page_full == "/apache/manual_form.cgi" || $current_page_full == "/spam/edit_manual.cgi" || $current_page_full == "/virtual-server/edit_html.cgi" || $current_page_full == "/virtual-server/apply_style.cgi" || $current_page_full == "/phpini/edit_manual.cgi")) || product_name(1).toLowerCase() != "virtualmin" && product_name(1).toLowerCase() != "cloudmin" && $current_page_full != $_____link_full + "/virtualmin-sqlite/" && $current_page_full != $_____link_full + "/updown/" && $current_directory != $_____link + "firewalld/" && $current_directory != $_____link + "firewall/" && $current_directory != $_____link + "net/" && $current_directory != $_____link + "acl/" && $current_directory != $_____link + "inetd/" && $current_directory != $_____link + "nis/" && $current_directory != $_____link + "pap/" && $current_directory != $_____link + "ppp-client/" && $current_directory != $_____link + "pptp-client/" && $current_directory != $_____link + "pptp-server/" && $current_directory != $_____link + "shorewall/" && $current_directory != $_____link + "shorewall6/" && $current_directory != $_____link + "raid/" && $current_directory != $_____link + "lvm/" && $current_directory != $_____link + "fdisk/" && $current_directory != $_____link + "lpadmin/" && $current_directory != $_____link + "virtualmin-registrar/" && $current_directory && $current_directory.indexOf("cluster") === -1 && $current_file != "edit_access.cgi" && $current_file != "edit_file.cgi" && $current_file != "edit_referers.cgi" && $current_file != "edit_lock.cgi" && $current_file != "edit_mobile.cgi" && $current_file != "edit_user.cgi" && $current_file != "edit_unix.cgi" && $current_file != "edit_pass.cgi" && $current_file != "edit_dump.cgi" && $current_file != "edit_cron.cgi" && $current_file != "gbatch_form.cgi" && $current_file != "batch_form.cgi" && $current_file != "edit_score.cgi" && $current_file != "edit_ports.cgi" && $current_file != "acl.cgi" && $current_file != "edit_recs.cgi" && $current_file != "edit_dirs.cgi" && $current_page_full != $_____link_full + "/config.cgi" && $current_page_full != $_____link_full + "/apache/edit_defines.cgi" && $current_page_full != $_____link_full + "/apache/edit_gmime_type.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_filter.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_action.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_jail.cgi" && $current_page_full != $_____link_full + "/usermin/edit_configs.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/ticket.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/login.cgi" && $current_page_full != $_____link_full + "/webminlog/view.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi" && $current_page_full != $_____link_full + "/mysql/exec_form.cgi" && $current_page_full != $_____link_full + "/postgresql/exec_form.cgi") {
 				__cm_editor = CodeMirror.fromTextArea(u, {
 					tabMode: "indent",
 					matchBrackets: true,
@@ -1863,7 +1863,7 @@ $('body:not([class*="filemin"])').on("keydown", function (g) {
 if (t___wi.location == t__wi_p.location) {
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.03 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.04 https://github.com/qooob/authentic-theme")
 	}
 	typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 	typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -3323,7 +3323,7 @@ if (t___wi.location == t__wi_p.location) {
 						n = "[" + n + "]"
 					}
 				}
-				f__a(m, (((k.length ? (k + " – ") : "") + (p.length ? (p + "/") : "") + (j.length ? (j + ": ") : "")) + l.trim() + (n.length ? (" " + n) : "")), (product_name() === "Virtualmin" ? "virtualmin" : product_name() === "Cloudmin" ? "cloudmin" : "webmin"))
+				f__a(m, (((k.length ? (k + " â ") : "") + (p.length ? (p + "/") : "") + (j.length ? (j + ": ") : "")) + l.trim() + (n.length ? (" " + n) : "")), (product_name() === "Virtualmin" ? "virtualmin" : product_name() === "Cloudmin" ? "cloudmin" : "webmin"))
 			} else {
 				$(this).addClass("fa-star-o").removeClass("fa-star text-warning");
 				f__r(m)
@@ -5514,6 +5514,11 @@ if (t___wi.location == t__wi_p.location) {
 	});
 	if ($('body[class*="bandwidth"]').length) {
 		$(".fa.fa-calendar.file_chooser_button_attached").attr("style", "font-size: 11px; margin-top: 9px !important; pointer-events: none; margin-left: -27px !important;")
+	}
+	if ($current_page_full == $_____link_full + "/mysql/exec_form.cgi" || $current_page_full == $_____link_full + "/postgresql/exec_form.cgi") {
+		$('select[name="old"], input[name="clear"], select[name="charset"]').removeClass("heighter-34").addClass("heighter-28");
+		$('input[name="clear"]').attr("style", "margin-bottom: 3px !important;");
+		$('select[name="old"]').attr("style", "margin-bottom: 3px !important; margin-right: 0 !important;")
 	}
 	t___wi.onbeforeunload = function (b) {
 		t___wi.parent.$___________right = 0;

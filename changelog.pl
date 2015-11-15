@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.03 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,11 +14,13 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.00-17.03 (November 09, 2015)</h4>
+                <h4>Version 17.00-17.04 (November 15, 2015)</h4>
 
                 <ul>
 
-                  <li>Added document title dynamic update, depending on the current module. It also supports <em>Virtualmin/Cloudmin</em>, appending currenty selected virtual server/machine and <em>Filemin</em>, appending currently selected path <a class="label label-default" href="https://github.com/Real-Gecko/filemin/issues/76" target="_blank">#76</a><hr></li>
+                  <li>Fixed a bug <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/279" target="_blank">#279</a><hr></li>
+
+                  <li>Added document title dynamic update, depending on the current module. It also supports <em>Virtualmin/Cloudmin</em>, appending currenty selected virtual server/machine and <em>Filemin</em>, appending currently selected path <a class="label label-default" href="https://github.com/Real-Gecko/filemin/issues/76" target="_blank">#76</a></li>
 
                   <li>Added a feature to execute shell command from the search field. To do so, type <code>!</code> in search, followed by your command. Example: <code>! ls -lsaZ /root</code><br><em>Note:</em> It\'s required to have <em>Command Shell</em> module available</li>
                   <li>Fixed user-set virtual server/machine not properly loaded on the first run</li>
