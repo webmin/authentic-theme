@@ -1921,10 +1921,11 @@ if (t___wi.location == t__wi_p.location) {
 	$(function () {
 		t___wi.parent.$___________left = 1
 	});
-	if ($access_level == 0) {
-		function __si__bg_upd() {
-			return t___wi.setInterval(function () {
-				if (!t__wi_p.$('iframe[name="page"]').contents().find(".__sytem_information").length) {
+
+	function __si__bg_upd() {
+		return t___wi.setInterval(function () {
+			if (!t__wi_p.$('iframe[name="page"]').contents().find(".__sytem_information").length) {
+				if ($access_level == 0) {
 					t__wi_p.$___ajax_requested_url = "/index.cgi/?xhr-info=1";
 					$.ajax({
 						type: "GET",
@@ -1954,11 +1955,13 @@ if (t___wi.location == t__wi_p.location) {
 						}
 					})
 				}
-			}, (settings_sysinfo_background_call_timeout * 60000))
-		}
-		var __si__bg_upd_id = __si__bg_upd()
+			}
+		}, (settings_sysinfo_background_call_timeout * 60000))
 	}
-	f__si__upd_exec(false);
+	var __si__bg_upd_id = __si__bg_upd();
+	if ($access_level == 0) {
+		f__si__upd_exec(false)
+	}
 	if (settings_loader_right) {
 		if (settings_loader_top) {
 			NProgress.configure({
