@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,7 +14,7 @@ if ( __settings('settings_sysinfo_link_mini') ne 'false' && dashboard_switch() n
     print '<li class="user-link">';
     print '<a class="menu-exclude-link" target="page" href="'
         . $gconfig{'webprefix'}
-        . '/sysinfo.cgi"><i class="fa fa-fw fa-info"></i></a>';
+        . '/sysinfo.cgi"><i class="fa fa-asterisk __sysinfo_asterisk text-danger blinking-default hidden" style="position: absolute; font-size: 50%; margin-top: 1px; margin-left: 14px;"></i><i class="fa fa-fw fa-info"></i></a>';
     print '</li>';
 }
 

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.10 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -14,6 +14,7 @@ if (t___wi.location == t__wi_p.location) {
 	t___wi.parent.$___________left = 0
 }
 typeof t__wi_p.$___________initial == "undefined" ? t__wi_p.$___________initial = 1 : false;
+typeof t__wi_p.$___ajax_requested_url == "undefined" ? t__wi_p.$___ajax_requested_url = "_blank" : false;
 typeof settings_loader_left == "undefined" ? settings_loader_left = true : false;
 typeof settings_mailbox_slash_delimiter == "undefined" ? settings_mailbox_slash_delimiter = true : false;
 typeof settings_window_autoscroll == "undefined" ? settings_window_autoscroll = true : false;
@@ -41,6 +42,7 @@ typeof settings_hotkey_custom_7 == "undefined" ? settings_hotkey_custom_7 = fals
 typeof settings_hotkey_custom_8 == "undefined" ? settings_hotkey_custom_8 = false : false;
 typeof settings_hotkey_custom_9 == "undefined" ? settings_hotkey_custom_9 = false : false;
 typeof settings_right_iconize_header_links == "undefined" ? settings_right_iconize_header_links = true : false;
+typeof settings_sysinfo_background_call_timeout == "undefined" ? settings_sysinfo_background_call_timeout = 2 : false;
 typeof settings_sysinfo_easypie_charts == "undefined" ? settings_sysinfo_easypie_charts = true : false;
 typeof settings_sysinfo_link_mini == "undefined" ? settings_sysinfo_link_mini = true : false;
 typeof settings_window_customized_checkboxes_and_radios == "undefined" ? settings_window_customized_checkboxes_and_radios = true : false;
@@ -182,7 +184,7 @@ function ___csf() {
 		k = t.contentDocument.getElementsByTagName("head")[0],
 		q = t.contentDocument.createElement("script");
 	q.type = "text/javascript";
-	q.src = "/unauthenticated/js/package.min.js?1704";
+	q.src = "/unauthenticated/js/package.min.js?1710";
 	k.appendChild(q);
 	if (o.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
 		t.contentWindow.onbeforeunload = function (a) {
@@ -191,7 +193,7 @@ function ___csf() {
 		o.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
 		$csf = o.$('iframe[name="page"]').contents();
 		$csf.find("html").attr("data-background-style", o.$("html").attr("data-background-style"));
-		$csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1704" rel="stylesheet" type="text/css">			');
+		$csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1710" rel="stylesheet" type="text/css">			');
 		$.each(o.$('link[href*="/styles.css"]'), function () {
 			if ($(this)) {
 				$csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -442,7 +444,7 @@ function ___csf() {
 			o.search_control(a);
 			o.shortcut_control(a)
 		});
-		if (o.$("#open_webmin").length > 0 && o.$(".switch-toggle input:checked").attr("id") != "open_webmin") {
+		if (o.$("#open_webmin").length > 0 && o.$(".switch-toggle input:checked").attr("id") != "open_webmin" && t__wi_p.$("body").data("dashboard") == "1") {
 			o.t__s("open_webmin")
 		}
 		o.__dlm("csf/");
@@ -512,7 +514,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 			return
 		}
 		__lre();
-		s("/unauthenticated/js/authentic.min.js?1704")
+		s("/unauthenticated/js/authentic.min.js?1710")
 	}
 	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
 		t__wi_p.NProgress.done()

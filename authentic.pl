@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -28,7 +28,11 @@ sub theme_header {
         . "\n";
     embed_header();
     print '</head>', "\n";
-    print '<body data-shell="'. &foreign_available("shell") .'" data-theme="'
+    print '<body data-usermin="'
+        . usermin_available()
+        . '" data-shell="'
+        . &foreign_available("shell")
+        . '" data-theme="'
         . __settings('settings_navigation_color')
         . '" data-level="'
         . $get_user_level
@@ -162,19 +166,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1704" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1710" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1704" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1710" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1704" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1710" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1704" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1710" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -742,6 +746,10 @@ sub theme_ui_button {
 sub theme_ui_post_header {
     my ($text) = @_;
     my $rv;
+
+    if ( defined($text) ) {
+        $rv = '<span class="ui_post_header hidden"><br>' . $text . '</span>';
+    }
 
     return $rv;
 }

@@ -194,10 +194,12 @@ settings_security_notify_on_login_success=Notify on successful user authenticati
 settings_security_notify_for_webmin=Enabled for Webmin
 settings_security_notify_for_usermin=Enabled for Usermin
 
+settings_sysinfo_background_call_timeout=Timeout for background information update
+settings_sysinfo_background_call_timeout_description=Set desired timeout for updating system information statuses in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>2</code> minutes. Decimal values can also be used.
 settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show drives' status each on new line
+settings_sysinfo_drive_status_on_new_line=Show CPU and drives' status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
 settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
 settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
