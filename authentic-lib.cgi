@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.04 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -313,7 +313,7 @@ sub print_switch_dashboard {
         '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
         . ( $t_uri_dashboard != -1 ? " checked" : "" ) . '>
           <label for="open_dashboard" style="padding-top: 1px;">
-          <i class="fa fa-stack fa-area-chart"></i><span>Dashboard</span></label>';
+          <i class="fa fa-asterisk __sysinfo_asterisk blinking-default hidden" style="position: absolute; font-size: 40%; margin-top: 1px; margin-left: 26px; color: #e4312d !important"></i><i class="fa fa-stack fa-area-chart"></i><span>Dashboard</span></label>';
 }
 
 sub print_switch_virtualmin {
@@ -411,7 +411,7 @@ sub print_sysinfo_link {
             . '/sysinfo.cgi" class="navigation_module_trigger'
             . ( __settings('settings_sysinfo_link_mini') ne 'false'
                 && ' hidden' )
-            . '"><i class="fa fa-fw fa-info"></i> <span>'
+            . '"><i class="fa fa-asterisk __sysinfo_asterisk blinking-default hidden" style="position: absolute; font-size: 40%; margin-top: -3px; margin-left: 8px;"></i><i class="fa fa-fw fa-info"></i> <span>'
             . $text{'left_home'}
             . '</span></a></li>' . "\n";
     }
@@ -919,65 +919,518 @@ sub print_left_menu {
 }
 
 sub print_easypie_charts {
-    my ($info) = @_;
+    my ( $cpu_percent, $mem_percent, $virt_percent, $disk_percent ) = @_;
 
     print '<div class="row" style="margin: 0;">' . "\n";
-    my $columns = &get_col_num( $info, 12 );
+    my $columns = '3';
 
     # CPU usage
-    if ( $info->{'cpu'} ) {
-        @c = @{ $info->{'cpu'} };
-        my $percent = $c[0] + $c[1] + $c[3];
-        print_easypie_chart( $columns, $percent, $text{'body_cp'} );
-    }
+    print_easypie_chart( $columns, $cpu_percent, $text{'body_cp'},
+        'sysinfo_cpu_percent' );
 
     # Memory allocation
-    if ( $info->{'mem'} ) {
-        if ( @m && $m[0] ) {
-            my $percent = ( $m[0] - $m[1] ) / $m[0] * 100;
-            print_easypie_chart(
-                $columns, $percent,
-                (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
-                    ? $text{'body_real2'}
-                    : $text{'body_real'}
-                )
-            );
-        }
-        if ( @m && $m[2] ) {
-            my $percent = ( $m[2] - $m[3] ) / $m[2] * 100;
-            print_easypie_chart(
-                $columns, $percent,
-                (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
-                    ? $text{'body_virt2'}
-                    : $text{'body_virt'}
-                )
-            );
-        }
-    }
+    print_easypie_chart(
+        $columns,
+        $mem_percent,
+        (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+            ? $text{'body_real2'}
+            : $text{'body_real'}
+        ),
+        'sysinfo_mem_percent'
+    );
+    print_easypie_chart(
+        $columns,
+        $virt_percent,
+        (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+            ? $text{'body_virt2'}
+            : $text{'body_virt'}
+        ),
+        'sysinfo_virt_percent'
+    );
 
     # Disk usage
-    if ( $info->{'disk_total'} ) {
-        ( $total, $free ) = ( $info->{'disk_total'}, $info->{'disk_free'} );
-        my $percent = ( $total - $free ) / $total * 100;
-        print_easypie_chart(
-            $columns, $percent,
-            (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
-                ? $text{'body_disk2'}
-                : $text{'body_disk'}
-            )
-        );
-    }
+    print_easypie_chart(
+        $columns,
+        $disk_percent,
+        (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
+            ? $text{'body_disk2'}
+            : $text{'body_disk'}
+        ),
+        'sysinfo_disk_percent'
+    );
+
     print '</div>' . "\n";
 }
 
 sub print_easypie_chart {
-    my ( $columns, $percent, $label ) = @_;
+    my ( $columns, $percent, $label, $id ) = @_;
     print '<div class="col-xs-6 col-sm-' . $columns . ' text-center">' . "\n";
-    print '<span class="piechart" data-percent="' . int($percent) . '">
+    print '<span class="piechart" data-charts="'
+        . $id
+        . '" data-percent="'
+        . $percent . '">
         <span class="percent"></span>
         <span class="label">' . $label . '</span>
     </span>';
     print '</div>' . "\n";
+}
+
+sub get_sysinfo_vars {
+
+    # Ask status module for collected info
+    &foreign_require("system-status");
+    $info = &system_status::get_collected_info();
+
+    # Define used vars
+    my ($cpu_percent,        $mem_percent,
+        $virt_percent,       $disk_percent,
+        $host,               $os,
+        $webmin_version,     $virtualmin_version,
+        $cloudmin_version,   $authentic_theme_version,
+        $local_time,         $kernel_arch,
+        $cpu_type,           $cpu_temperature,
+        $hdd_temperature,    $uptime,
+        $running_proc,       $load,
+        $real_memory,        $virtual_memory,
+        $disk_space,         $package_message,
+        $csf_title,          $csf_data,
+        $csf_remote_version, $authentic_remote_version
+    );
+
+    # Require memory information
+    if ( $info->{'mem'} ) {
+        @m = @{ $info->{'mem'} };
+    }
+
+    # Easypie charts numbers
+    if ( $info->{'cpu'} ) {
+        @c           = @{ $info->{'cpu'} };
+        $cpu_percent = $c[0] + $c[1] + $c[3];
+        $cpu_percent = int($cpu_percent);
+    }
+    if ( @m && $m[0] ) {
+        $mem_percent = ( $m[0] - $m[1] ) / $m[0] * 100;
+        $mem_percent = int($mem_percent);
+    }
+    if ( @m && $m[2] ) {
+        $virt_percent = ( $m[2] - $m[3] ) / $m[2] * 100;
+        $virt_percent = int($virt_percent);
+    }
+    if ( $info->{'disk_total'} ) {
+        ( $total, $free )
+            = ( $info->{'disk_total'}, $info->{'disk_free'} );
+        $disk_percent = ( $total - $free ) / $total * 100;
+        $disk_percent = int($disk_percent);
+    }
+
+    # Operation system
+    my $ip
+        = $info->{'ips'}
+        ? $info->{'ips'}->[0]->[0]
+        : &to_ipaddress( get_system_hostname() );
+    $ip = " ($ip)" if ($ip);
+    my $host = &get_system_hostname() . $ip;
+    if ( &foreign_available("net") ) {
+        $host
+            = '<a href="'
+            . $gconfig{'webprefix'}
+            . '/net/list_dns.cgi">'
+            . $host . '</a>';
+    }
+
+    # Operating System Info
+    if ( $gconfig{'os_version'} eq '*' ) {
+        $os = $gconfig{'real_os_type'};
+    }
+    else {
+        $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
+    }
+
+    #Webmin version
+    $webmin_version = &get_webmin_version();
+
+    # Virtualmin version
+    if ($has_virtualmin) {
+        my ( $vs_license, $is_virtual_server_gpl, $__virtual_server_version );
+        my %vinfo = &get_module_info("virtual-server");
+        $is_virtual_server_gpl = $vinfo{'version'} =~ /gpl/;
+
+        if ( $is_virtual_server_gpl eq '1' ) {
+            $vs_license = '0';
+
+        }
+        else {
+            $vs_license = '1';
+        }
+
+        $__virtual_server_version = $vinfo{'version'};
+        $__virtual_server_version =~ s/.gpl//igs;
+
+        $virtualmin_version = (
+            $__virtual_server_version . " " . (
+                $vs_license eq '0'
+                ? ''
+                : 'Pro'
+
+                    . (
+                    ( $vs_license eq '1' )
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        . $text{'right_vlcheck'}
+                        . '" style="margin-left:1px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="'
+                        . $gconfig{'webprefix'}
+                        . '/virtual-server/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
+                    : ''
+                    )
+
+            )
+        );
+    }
+
+    # Cloudmin version
+    if ($has_cloudmin) {
+        my ( $vm2_license,
+            $is_server_manager_gpl, $__server_manager_version );
+        my %vinfo = &get_module_info("server-manager");
+        $is_server_manager_gpl = $vinfo{'version'} =~ /gpl/;
+
+        if ( $is_server_manager_gpl eq '1' ) {
+            $vm2_license = '0';
+
+        }
+        else {
+            $vm2_license = '1';
+        }
+
+        $__server_manager_version = $vinfo{'version'};
+        $__server_manager_version =~ s/.gpl//igs;
+
+        $cloudmin_version = (
+            $__server_manager_version . " " . (
+                $vm2_license eq '0'
+                ? ''
+                : 'Pro'
+
+                    . (
+                    ( $vm2_license eq '1' )
+                    ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        . $text{'right_slcheck'}
+                        . '" style="margin-left:1px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="'
+                        . $gconfig{'webprefix'}
+                        . '/server-manager/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
+                    : ''
+                    )
+
+            )
+        );
+    }
+
+    #
+    # Theme version/updates
+    get_authentic_version();
+
+    $authentic_remote_version = $remote_version;
+
+    # Build version response message
+    if ( $remote_version <= $installed_version ) {
+        do "authentic-theme/changelog.pl";
+        $authentic_theme_version
+            = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+            . $text{'theme_name'} . '</a> '
+            . $installed_version
+            . ( __settings('settings_theme_options_button') ne 'false'
+                && '<a href="/webmin/edit_themes.cgi" data-href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi" class="btn btn-default btn-xs btn-hidden hidden" title="'
+                . $text{'settings_right_theme_configurable_options_title'}
+                . '" style="margin-left: 6px; margin-right: -8px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-cogs" style="padding-top:1px"></i></a> '
+            )
+            . '<button data-href="#theme-info" class="btn btn-default btn-xs btn-hidden hidden" style="margin-left: 6px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-info-circle" style="padding-top:1px"></i></button> '
+            . $__changelog;
+    }
+    else {
+        $authentic_theme_version
+            = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+            . $text{'theme_name'} . '</a> '
+            . $installed_version . '. '
+            . $text{'theme_update_available'} . ' '
+            . $remote_version
+            . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
+            . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
+            . $gconfig{'webprefix'}
+            . '/webmin/edit_themes.cgi"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
+            . $text{'theme_update'} . '</a>'
+            . '<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+            . $text{'theme_changelog'} . '</a>'
+            . '<a class="btn btn-xs btn-warning" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
+            . $text{'theme_download'} . '</a>'
+            . '</div>';
+    }
+
+    #System time
+    use Time::Local;
+    $local_time = localtime( time() );
+    if ( &foreign_available("time") ) {
+        $local_time
+            = '<a href='
+            . $gconfig{'webprefix'}
+            . '/time/>'
+            . $local_time . '</a>';
+    }
+
+    # Kernel and arch
+    if ( $info->{'kernel'} ) {
+        $kernel_arch = &text(
+            'body_kernelon',                $info->{'kernel'}->{'os'},
+            $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'}
+        );
+    }
+
+    # CPU Type and cores
+    if ( $info->{'load'} ) {
+        @c = @{ $info->{'load'} };
+        if ( @c > 3 ) {
+            $cpu_type = &text( 'body_cputype', @c );
+        }
+    }
+
+    # Temperatures
+    if ( $info->{'cputemps'} ) {
+        foreach my $t ( @{ $info->{'cputemps'} } ) {
+            my $cpu_temperature
+                .= '<span class="badge-custom badge-drivestatus badge-cpustatus" style="margin-right:3px; margin-bottom: 3px"> Core '
+                . $t->{'core'} . ': '
+                . int( $t->{'temp'} )
+                . '&#176;C</span>'
+                . (
+                __settings('settings_sysinfo_drive_status_on_new_line') eq
+                    'true' ? '<br>' : '&nbsp;' );
+        }
+    }
+    if ( $info->{'drivetemps'} ) {
+        foreach my $t ( @{ $info->{'drivetemps'} } ) {
+            my $short = $t->{'device'};
+            $short =~ s/^\/dev\///;
+            my $emsg;
+            if ( $t->{'errors'} ) {
+                $emsg
+                    .= '&nbsp;&nbsp;<span class="label label-warning" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
+                    . &text( 'body_driveerr', $t->{'errors'} )
+                    . "</span>";
+            }
+            elsif ( $t->{'failed'} ) {
+                $emsg
+                    .= '&nbsp;&nbsp;<span class="label label-danger" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
+                    . &text('body_drivefailed')
+                    . '</span>';
+            }
+            $hdd_temperature
+                .= '<span class="badge-custom badge-drivestatus" style="margin-right:3px; margin-bottom: 3px">'
+                . $short . ': '
+                . int( $t->{'temp'} )
+                . '&#176;C '
+                . $emsg
+                . '</span>'
+                . (
+                __settings('settings_sysinfo_drive_status_on_new_line') eq
+                    'true' ? '<br>' : '&nbsp;' );
+        }
+    }
+
+    # System uptime
+    &foreign_require("proc");
+    my ( $day, $hour, $minute ) = &proc::get_system_uptime();
+    if ($day) {
+        $uptime_text = &text( 'body_updays', $day, $hour, $minute );
+    }
+    elsif ( $minute && $hour ) {
+        $uptime_text = &text( 'body_uphours', $hour, $minute );
+    }
+    elsif ($minute) {
+        $uptime_text = &text( 'body_upmins', $minute );
+    }
+
+    $uptime
+        = '<a href='
+        . $gconfig{'webprefix'}
+        . '/init/>'
+        . $uptime_text . '</a>';
+
+    # Running processes
+    if ( &foreign_check("proc") ) {
+        @procs        = &proc::list_processes();
+        $running_proc = scalar(@procs);
+        if ( &foreign_available("proc") ) {
+            $running_proc
+                = '<a href='
+                . $gconfig{'webprefix'}
+                . '/proc/>'
+                . $running_proc . '</a>';
+        }
+    }
+
+    # Load averages
+    if ( $info->{'load'} ) {
+        my @c = @{ $info->{'load'} };
+        if (@c) {
+            $load = &text( 'body_load', @c );
+        }
+    }
+
+    # Memory
+    if ( $info->{'mem'} ) {
+
+        # Real memory details
+        $real_memory = &text(
+            'body_used',
+            nice_size( ( $m[0] ) * 1000 ),
+            nice_size( ( $m[0] - $m[1] ) * 1000 )
+        );
+
+        # Virtual memory details
+        $virtual_memory = &text(
+            'body_used',
+            nice_size( ( $m[2] ) * 1000 ),
+            nice_size( ( $m[2] - $m[3] ) * 1000 )
+        );
+    }
+
+    # Local disk space
+    if ( $info->{'disk_total'} && $info->{'disk_total'} ) {
+        $disk_space = &text(
+            'body_used_and_free',
+            nice_size( $info->{'disk_total'} ),
+            nice_size( $info->{'disk_free'} ),
+            nice_size( $info->{'disk_total'} - $info->{'disk_free'} )
+        );
+    }
+
+    #ConfigServer Security & Firewall
+    if ( &foreign_check("csf") && &foreign_available("csf") ) {
+
+        # Define CSF installed version
+        my $csf_installed_version
+            = read_file_lines( '/etc/csf/version.txt', 1 );
+        our $csf_installed_version = $csf_installed_version->[0];
+
+        # Define CSF actual version if allowed
+        if ( __settings('settings_sysinfo_csf_updates') eq 'true' ) {
+            http_download( 'download.configserver.com', '80',
+                '/csf/version.txt', \$csf_remote_version, \$error, undef,
+                undef, undef, undef, 5 );
+
+            # Trim versions' number
+            $csf_installed_version =~ s/^\s+|\s+$//g;
+            $csf_remote_version =~ s/^\s+|\s+$//g;
+        }
+        else {
+            $csf_remote_version = '0';
+        }
+
+        if ( $csf_remote_version <= $csf_installed_version ) {
+            $csf_update_required = '0';
+        }
+        else {
+            $csf_update_required = '1';
+        }
+
+        $csf_title
+            = $text{'body_firewall'} . ' '
+            . (
+              `pgrep lfd`
+            ? ''
+            : ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="csf-submit" href="#" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
+            );
+        $csf_data = (
+                  '<a href="/csf">ConfigServer Security & Firewall</a> '
+                . $csf_installed_version . ''
+                . (
+                $csf_update_required eq '1'
+                ? '. '
+                    . $text{'theme_update_available'} . ' '
+                    . $csf_remote_version
+                    . '&nbsp;&nbsp;&nbsp;'
+                : '&nbsp;&nbsp;&nbsp;'
+                )
+                . '
+                <form action="/csf/index.cgi" method="post" class="hidden" id="csf_lfdstatus">
+                    <input type="hidden" name="action" value="lfdstatus">
+                </form>
+                <form action="/csf/index.cgi" method="post" class="hidden" id="csf_upgrade">
+                    <input type="hidden" name="action" value="upgrade">
+                </form>
+                <form action="/csf/index.cgi" method="post" class="hidden" id="csf_temporary_ip_entries">
+                    <input type="hidden" name="action" value="temp">
+                </form>
+                <form action="/csf/index.cgi" method="post" class="hidden" id="csf_search_system_log">
+                    <input type="hidden" name="action" value="loggrep">
+                </form>
+                <form action="/csf/index.cgi" method="post" class="hidden" id="csf_denyf">
+                    <input type="hidden" name="action" value="denyf">
+                </form>
+            '
+                . (
+                $csf_update_required eq '1'
+                ? '<div class="btn-group">
+                <a class="btn btn-xs btn-success csf csf-submit" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_upgrade"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
+                    . $text{'theme_update'} . '</a>
+                <a class="btn btn-xs btn-info csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+                    . $text{'theme_changelog'} . '</a>
+                <a class="btn btn-xs btn-warning csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
+                    . $text{'theme_download'} . '</a>
+            </div>'
+                : '<div class="btn-group">
+               <a class="btn btn-default btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_search_system_log"><i class="fa fa-filter" style="padding-top:1px"></i></a>
+               <a class="btn btn-default btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_temporary_ip_entries"><i class="fa fa-ban" style="padding-top:1px"></i></a>
+               <a class="btn btn-default btn-xs btn-hidden hidden csf csf-submit" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_denyf"><i class="fa fa-trash-o" style="padding-top:1px"></i> Flush all blocks</a>
+              </div>'
+                )
+                . ''
+        );
+    }
+
+    # Package updates
+    if ( &foreign_available("package-updates") && $info->{'poss'} ) {
+        @poss = @{ $info->{'poss'} };
+        @secs = grep { $_->{'security'} } @poss;
+        if ( @poss && @secs ) {
+            $msg
+                = &text( 'body_upsec', scalar(@poss), scalar(@secs) );
+        }
+        elsif (@poss) {
+            $msg = &text( 'body_upneed', scalar(@poss) );
+        }
+        else {
+            $msg = $text{'body_upok'};
+        }
+        if ( &foreign_available("package-updates") ) {
+            $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger\'> $1 <\/i>"/eg;
+            $package_message
+                = '<a href="'
+                . $gconfig{'webprefix'}
+                . '/package-updates/index.cgi?mode=updates">'
+                . $msg
+                . '</a> <a href="/?updated" target="_top" data-href="'
+                . $gconfig{'webprefix'}
+                . '/package-updates/index.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh" style="padding-top:1px"></i></a>';
+        }
+    }
+
+    return (
+        $cpu_percent,        $mem_percent,
+        $virt_percent,       $disk_percent,
+        $host,               $os,
+        $webmin_version,     $virtualmin_version,
+        $cloudmin_version,   $authentic_theme_version,
+        $local_time,         $kernel_arch,
+        $cpu_type,           $cpu_temperature,
+        $hdd_temperature,    $uptime,
+        $running_proc,       $load,
+        $real_memory,        $virtual_memory,
+        $disk_space,         $package_message,
+        $csf_title,          $csf_data,
+        $csf_remote_version, $authentic_remote_version
+    );
+
 }
 
 sub get_current_user_config {
@@ -1001,14 +1454,17 @@ sub get_col_num {
 }
 
 sub print_table_row {
-    local ( $title, $content ) = @_;
+    my ( $title, $content, $id ) = @_;
     print '<tr>' . "\n";
     print
         '<td style="width:30%;vertical-align:middle; padding:8px;"><strong>'
         . $title
         . '</strong></td>' . "\n";
-    print '<td  style="width:70%; vertical-align:middle; padding:8px;">'
-        . $content . '</td>' . "\n";
+    print
+        '<td  style="width:70%; vertical-align:middle; padding:8px;"><span data-id="'
+        . $id . '">'
+        . $content
+        . '</span></td>' . "\n";
     print '</tr>' . "\n";
 }
 
@@ -1244,7 +1700,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1704" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1710" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1284,7 +1740,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1704" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1710" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1296,13 +1752,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1704" type="text/javascript"></script>' . "\n";
+                . '.js?1710" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1704" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1710" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1318,17 +1774,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1704" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1710" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1704" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1710" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1704" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1710" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1336,7 +1792,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1704" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1710" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1360,16 +1816,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1704" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1710" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1704" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1710" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1704" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1710" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1607,6 +2063,8 @@ sub _settings {
                 'fa', 'info-circle',
                 &text('settings_right_sysinfo_page_options_title')
             ),
+            'settings_sysinfo_background_call_timeout',
+            '2',
             'settings_sysinfo_easypie_charts',
             'true',
             'settings_theme_options_button',
@@ -1851,7 +2309,8 @@ sub _settings {
             || $k eq 'settings_hotkey_focus_search'
             || $k eq 'settings_hotkey_reload'
             || $k eq 'settings_hotkey_sysinfo'
-            || $k eq 'settings_hotkey_favorites' )
+            || $k eq 'settings_hotkey_favorites'
+            || $k eq 'settings_sysinfo_background_call_timeout' )
         {
 
             my $width
@@ -1859,7 +2318,8 @@ sub _settings {
                     || $k eq 'settings_hotkey_focus_search'
                     || $k eq 'settings_hotkey_reload'
                     || $k eq 'settings_hotkey_sysinfo'
-                    || $k eq 'settings_hotkey_favorites' )
+                    || $k eq 'settings_hotkey_favorites'
+                    || $k eq 'settings_sysinfo_background_call_timeout' )
                 ? ' width: 31px; '
                 : ' width: 95%; ';
             my $max_length
@@ -1978,13 +2438,16 @@ sub _settings {
             $v = '<select class="ui_select" name="' . $k . '">
 
                     <option value="blue"'
-                . ( $v eq 'blue' && ' selected' ) . '>Royal Blue (Default)</option>
+                . ( $v eq 'blue' && ' selected' )
+                . '>Royal Blue (Default)</option>
 
                     <option value="darkBlue"'
-                . ( $v eq 'darkBlue' && ' selected' ) . '>Midnight Blue</option>
+                . ( $v eq 'darkBlue' && ' selected' )
+                . '>Midnight Blue</option>
 
                     <option value="lightBlue"'
-                . ( $v eq 'lightBlue' && ' selected' ) . '>Dodger Blue</option>
+                . ( $v eq 'lightBlue' && ' selected' )
+                . '>Dodger Blue</option>
 
                     <option value="gold"'
                 . ( $v eq 'gold' && ' selected' ) . '>Pale Golden</option>
@@ -1997,6 +2460,9 @@ sub _settings {
 
                     <option value="indianRed"'
                 . ( $v eq 'indianRed' && ' selected' ) . '>Indian Red</option>
+
+                    <option value="orange"'
+                . ( $v eq 'orange' && ' selected' ) . '>Orange</option>
 
                     <option value="brown"'
                 . ( $v eq 'brown' && ' selected' ) . '>Saddle Brown</option>
@@ -2011,34 +2477,44 @@ sub _settings {
                 . ( $v eq 'darkGrey' && ' selected' ) . '>Dark Grey</option>
 
                     <option value="user-palette-1"'
-                . ( $v eq 'user-palette-1' && ' selected' ) . '>User Palette 1</option>
+                . ( $v eq 'user-palette-1' && ' selected' )
+                . '>User Palette 1</option>
 
                     <option value="user-palette-2"'
-                . ( $v eq 'user-palette-2' && ' selected' ) . '>User Palette 2</option>
+                . ( $v eq 'user-palette-2' && ' selected' )
+                . '>User Palette 2</option>
 
                     <option value="user-palette-3"'
-                . ( $v eq 'user-palette-3' && ' selected' ) . '>User Palette 3</option>
+                . ( $v eq 'user-palette-3' && ' selected' )
+                . '>User Palette 3</option>
 
                     <option value="user-palette-4"'
-                . ( $v eq 'user-palette-4' && ' selected' ) . '>User Palette 4</option>
+                . ( $v eq 'user-palette-4' && ' selected' )
+                . '>User Palette 4</option>
 
                     <option value="user-palette-5"'
-                . ( $v eq 'user-palette-5' && ' selected' ) . '>User Palette 5</option>
+                . ( $v eq 'user-palette-5' && ' selected' )
+                . '>User Palette 5</option>
 
                     <option value="user-palette-6"'
-                . ( $v eq 'user-palette-6' && ' selected' ) . '>User Palette 6</option>
+                . ( $v eq 'user-palette-6' && ' selected' )
+                . '>User Palette 6</option>
 
                     <option value="user-palette-7"'
-                . ( $v eq 'user-palette-7' && ' selected' ) . '>User Palette 7</option>
+                . ( $v eq 'user-palette-7' && ' selected' )
+                . '>User Palette 7</option>
 
                     <option value="user-palette-8"'
-                . ( $v eq 'user-palette-8' && ' selected' ) . '>User Palette 8</option>
+                . ( $v eq 'user-palette-8' && ' selected' )
+                . '>User Palette 8</option>
 
                     <option value="user-palette-9"'
-                . ( $v eq 'user-palette-9' && ' selected' ) . '>User Palette 9</option>
+                . ( $v eq 'user-palette-9' && ' selected' )
+                . '>User Palette 9</option>
 
                     <option value="user-palette-10"'
-                . ( $v eq 'user-palette-10' && ' selected' ) . '>User Palette 10</option>
+                . ( $v eq 'user-palette-10' && ' selected' )
+                . '>User Palette 10</option>
 
 
                 </select>';
@@ -2047,13 +2523,15 @@ sub _settings {
             $v = '<select class="ui_select" name="' . $k . '">
 
                     <option value="lightGrey"'
-                . ( $v eq 'lightGrey' && ' selected' ) . '>White Smoke (Default)</option>
+                . ( $v eq 'lightGrey' && ' selected' )
+                . '>White Smoke (Default)</option>
 
                     <option value="gainsboro"'
                 . ( $v eq 'gainsboro' && ' selected' ) . '>Gainsboro</option>
 
                     <option value="ghostWhite"'
-                . ( $v eq 'ghostWhite' && ' selected' ) . '>Ghost White</option>
+                . ( $v eq 'ghostWhite' && ' selected' )
+                . '>Ghost White</option>
 
                 </select>';
         }
@@ -2165,6 +2643,18 @@ sub _settings {
     }
 }
 
+sub serialize_string_list {
+    return join(
+        '|',
+        map {
+            (   defined($_)
+                ? do { local $_ = $_; s/\^/^1/g; s/\|/^2/g; $_ }
+                : '^0'
+                )
+        } @_
+    );
+}
+
 sub get_xhr_request {
     if ( $in{'xhr-navigation'} eq '1' ) {
         print "Content-type: text/html\n\n";
@@ -2191,6 +2681,64 @@ sub get_xhr_request {
         }
         else {
             do "authentic-theme/settings.cgi";
+        }
+        exit;
+    }
+    elsif ( $in{'xhr-info'} eq '1' ) {
+
+        our (
+            $cpu_percent,        $mem_percent,
+            $virt_percent,       $disk_percent,
+            $host,               $os,
+            $webmin_version,     $virtualmin_version,
+            $cloudmin_version,   $authentic_theme_version,
+            $local_time,         $kernel_arch,
+            $cpu_type,           $cpu_temperature,
+            $hdd_temperature,    $uptime,
+            $running_proc,       $load,
+            $real_memory,        $virtual_memory,
+            $disk_space,         $package_message,
+            $csf_title,          $csf_data,
+            $csf_remote_version, $authentic_remote_version
+        ) = get_sysinfo_vars();
+
+        print "Content-type: text/html\n\n";
+
+        if ( &foreign_available("system-status") ) {
+
+            my @updated_info = {
+                "data"                     => 1,
+                "cpu_percent"              => $cpu_percent,
+                "mem_percent"              => $mem_percent,
+                "virt_percent"             => $virt_percent,
+                "disk_percent"             => $disk_percent,
+                "host"                     => $host,
+                "os"                       => $os,
+                "webmin_version"           => $webmin_version,
+                "virtualmin_version"       => $virtualmin_version,
+                "cloudmin_version"         => $cloudmin_version,
+                "authentic_theme_version"  => $authentic_theme_version,
+                "local_time"               => $local_time,
+                "kernel_arch"              => $kernel_arch,
+                "cpu_type"                 => $cpu_type,
+                "cpu_temperature"          => $cpu_temperature,
+                "hdd_temperature"          => $hdd_temperature,
+                "uptime"                   => $uptime,
+                "running_proc"             => $running_proc,
+                "load"                     => $load,
+                "real_memory"              => $real_memory,
+                "virtual_memory"           => $virtual_memory,
+                "disk_space"               => $disk_space,
+                "package_message"          => $package_message,
+                "csf_title"                => $csf_title,
+                "csf_data"                 => $csf_data,
+                "csf_remote_version"       => $csf_remote_version,
+                "authentic_remote_version" => $authentic_remote_version
+            };
+            print JSON->new->utf8->encode(@updated_info);
+        }
+        else {
+            print JSON->new->utf8->encode( { "data" => 0 } );
         }
         exit;
     }

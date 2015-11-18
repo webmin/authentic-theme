@@ -190,10 +190,12 @@ settings_security_notify_on_login_success=Upozornit při úspěšném přihláš
 settings_security_notify_for_webmin=Enabled for Webmin
 settings_security_notify_for_usermin=Enabled for Usermin
 
+settings_sysinfo_background_call_timeout=Timeout for background information update
+settings_sysinfo_background_call_timeout_description=Set desired timeout for updating system information statuses in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>2</code> minutes. Decimal values can also be used.
 settings_sysinfo_easypie_charts=Zobrazit grafy
 settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu
 settings_sysinfo_csf_updates=Zkontrolovat aktualizace ConfigServer Security & Firewall
-settings_sysinfo_drive_status_on_new_line=Zobrazit stav disků každý na zvláštním řádku
+settings_sysinfo_drive_status_on_new_line=Zobrazit stav CPU a disků každý na zvláštním řádku
 settings_sysinfo_expand_all_accordions=Rozbalit všechny záložky
 settings_sysinfo_link_mini=Zobrazit odkaz <kbd>System Information</kbd> jako tlačítko
 settings_leftmenu_singlelink_icons=Zobrazit ikony v navigačním panelu Virtualminu/Cloudminu

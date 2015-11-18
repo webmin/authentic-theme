@@ -191,10 +191,12 @@ settings_security_notify_on_login_success=Anunță autentificarea reușită
 settings_security_notify_for_webmin=Enabled for Webmin
 settings_security_notify_for_usermin=Enabled for Usermin
 
+settings_sysinfo_background_call_timeout=Timeout for background information update
+settings_sysinfo_background_call_timeout_description=Set desired timeout for updating system information statuses in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>2</code> minutes. Decimal values can also be used.
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
 settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall
-settings_sysinfo_drive_status_on_new_line=Afișează starea unităților, fiecare pe o linie nouă
+settings_sysinfo_drive_status_on_new_line=Show CPU and drives' status each on new line
 settings_sysinfo_expand_all_accordions=Menține toate acordeoanele extinse
 settings_sysinfo_link_mini=Afișează linkul <kbd>Informații de Sistem</kbd> ca buton
 settings_leftmenu_singlelink_icons=Afișează pictogramele linkurilor idividual în meniul de navigare al Virtualmin/Cloudmin
