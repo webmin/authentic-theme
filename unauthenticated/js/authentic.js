@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.10 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.11 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1914,7 +1914,7 @@ $.ajaxSetup({
 if (t___wi.location == t__wi_p.location) {
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.10 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.11 https://github.com/qooob/authentic-theme")
 	}
 	typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 	typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;

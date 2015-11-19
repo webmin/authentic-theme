@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 17.11 (November 19, 2015)
+* Changed _Orange_ color palette to _Longhorn Orange_</li>
+* Fixed bugs [#281](https://github.com/qooob/authentic-theme/issues/281) [#282](https://github.com/qooob/authentic-theme/issues/282)
+
 ####Version 17.10 (November 18, 2015)
 * Added background _System Information_ page updates. There is no need to reload _System Information_ page anymore to see what's new. It will be done automatically, every 2 minutes (by default). This timeout value can be changed in theme's settings. Besides, you will get important notifications, even if you're away from _System Information_ page, by having blinking asterisk near _System Information_ switch or button/link. After you visit _System Information_ page, the current output will be stored, thus you will not be notified twice for the same data. The following data will trigger notification to appear:
   * 1. Charts get over 85% of load
