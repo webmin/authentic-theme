@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.11 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,19 +14,19 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.00-17.10 (November 18, 2015)</h4>
+                <h4>Version 17.00-17.11 (November 19, 2015)</h4>
 
                 <ul>
-
+                  <li>Changed <em>Orange</em> color palette to <em>Longhorn Orange</em></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/281" target="_blank">#281</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/282" target="_blank">#282</a><hr></li>
                   <li>Added background <em>System Information</em> page updates. There is no need to reload <em>System Information</em> page anymore to see what\'s new. It will be done automatically, every 2 minutes (by default). This timeout value can be changed in theme\'s settings. Besides, you will get important notifications, even if you\'re away from <em>System Information</em> page, by having blinking asterisk near <em>System Information</em> switch or button/link. After you visit <em>System Information</em> page, the current output will be stored, thus you will not be notified twice for the same data. The following data will trigger notification to appear:
                     <ul>
                       <li>1. Charts get over 85% of load</li>
                       <li>2. Unseen packages updates</li>
                       <li>3. Unseen <em>Authentic Theme</em>/<em>ConfigServer Security & Firewall</em> pending updates</li>
                     </ul>
+                  </li>
                   <li>Added <em>Orange</em> color palette</li>
-                  <li>Fixed a bug <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/280" target="_blank">#280</a></li>
-                  <li>Fixed dozens of other small issues<hr></li>
 
                   <li>Added document title dynamic update, depending on the current module. It also supports <em>Virtualmin/Cloudmin</em>, appending currenty selected virtual server/machine and <em>Filemin</em>, appending currently selected path <a class="label label-default" href="https://github.com/Real-Gecko/filemin/issues/76" target="_blank">#76</a></li>
 
@@ -40,7 +40,7 @@ our $__changelog
                   <li>Added quick access to theme\'s <em>extensions</em> editor and <em>logo</em> control from search</li>
                   <li>Improved code highlight in <em>Bind</em>, <em>Dovecot</em>, <em>SSH</em>, <em>Squid</em>, <em>ProFTPD</em>, <em>Spamassassin</em>, <em>Samba</em>, <em>fail2ban</em> and other modules</li>
                   <li>Improved rendering on <code>Webmin->Webmin Users->Available Webmin modules</code> tab</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/279" target="_blank">#279</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/269" target="_blank">#269</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/273" target="_blank">#273</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/274" target="_blank">#274</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/255" target="_blank">#255</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/256" target="_blank">#256</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/259" target="_blank">#259</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/261" target="_blank">#261</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/280" target="_blank">#280</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/279" target="_blank">#279</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/269" target="_blank">#269</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/273" target="_blank">#273</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/274" target="_blank">#274</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/255" target="_blank">#255</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/256" target="_blank">#256</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/259" target="_blank">#259</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/261" target="_blank">#261</a></li>
 
                 </ul>
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->
