@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.11 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.20 (https://github.com/qooob/authentic-theme)
  * Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -67,6 +67,7 @@ if ($current_page_full && $current_page_full.indexOf("/servers/link.cgi/") > -1)
 if ($__source_host_complete.substr(-1) == "/") {
 	$__source_host_complete = $__source_host_complete.substr(0, $__source_host_complete.length - 1)
 }
+moment.locale($("body").data("language"));
 
 function prt(b) {
 	return console.log(b)
@@ -215,7 +216,7 @@ function messenger(d, g, f) {
 
 function shortcut_control(b) {
 	if (settings_hotkeys_active) {
-		if (!(String.fromCharCode(b.which) == "1" && settings_hotkey_custom_1 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "2" && settings_hotkey_custom_2 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "3" && settings_hotkey_custom_3 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "4" && settings_hotkey_custom_4 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "5" && settings_hotkey_custom_5 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "6" && settings_hotkey_custom_6 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "7" && settings_hotkey_custom_7 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "8" && settings_hotkey_custom_8 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "9" && settings_hotkey_custom_9 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_favorites && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_sysinfo && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_reload && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmail && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_usermin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_cloudmin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_virtualmin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmin && b[settings_hotkey_toggle_modifier])) {
+		if (!(String.fromCharCode(b.which) == "1" && settings_hotkey_custom_1 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "2" && settings_hotkey_custom_2 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "3" && settings_hotkey_custom_3 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "4" && settings_hotkey_custom_4 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "5" && settings_hotkey_custom_5 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "6" && settings_hotkey_custom_6 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "7" && settings_hotkey_custom_7 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "8" && settings_hotkey_custom_8 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "9" && settings_hotkey_custom_9 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_favorites && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_sysinfo && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_slider && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_reload && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmail && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_usermin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_cloudmin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_virtualmin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmin && b[settings_hotkey_toggle_modifier])) {
 			return true
 		}
 		if (String.fromCharCode(b.which) == "1" && settings_hotkey_custom_1) {
@@ -273,6 +274,11 @@ function shortcut_control(b) {
 		if (String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmail && t__wi_p.$('.switch-toggle input[id="open_webmail"]') && !t__wi_p.$('.switch-toggle input[id="open_webmail"]').is(":checked") && (product_name() != "Webmin" && product_name() != "Virtualmin" && product_name() != "Cloudmin")) {
 			b.preventDefault();
 			t__wi_p.$('.switch-toggle input[id="open_webmail"]').trigger("click")
+		}
+		if (String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_slider) {
+			b.preventDefault();
+			console.log("Slider...");
+			t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click")
 		}
 		if (String.fromCharCode(b.which).toLowerCase() == settings_hotkey_reload && t__wi_p.$('.user-links a[data-refresh="true"]')) {
 			b.preventDefault();
@@ -493,6 +499,7 @@ function __lle() {
 	if (settings_loader_top && t__wi_p.t___p__xhr_r === 0) {
 		t__wi_p.NProgress.done()
 	}
+	t__wi_p.$___ajax_requested_url = "_blank";
 	t__wi_p.$("body aside .mCSB_scrollTools").css("visibility", "visible");
 	t__wi_p.$("body ul.navigation").css("visibility", "visible");
 	t__wi_p.$("body ul.user-links").css("visibility", "visible");
@@ -1833,7 +1840,7 @@ function t__cm___init(d, f, g) {
 
 function f__si__upd_exec(a) {
 	if (a) {
-		$(".sysinfo-main-spinner").removeClass("hidden")
+		$('h3 > a[data-refresh="system-status"]').addClass("disabled").find("i").addClass("fa-spin")
 	} else {}
 	t__wi_p.$___ajax_requested_url = "/index.cgi/?xhr-info=1";
 	$.ajax({
@@ -1849,12 +1856,21 @@ function f__si__upd_exec(a) {
 						var f = $('span[data-id="sysinfo_' + g + '"]'),
 							c = $('span[data-id="sysinfo_' + g + '"] a'),
 							h = $('span[data-id="sysinfo_' + g + '"]').text();
-						(c && c.length) && f.html(c.html(h))
+						if (g == "local_time" && settings_window_replace_timestamps) {
+							if (c && c.length) {
+								h = $('span[data-id="sysinfo_' + g + '"] a').data("convertible-timestamp-full");
+								f.html(c.html(moment.unix(h).format(settings_window_replaced_timestamps_format_full)))
+							} else {
+								h = $('span[data-id="sysinfo_' + g + '"] > span').data("convertible-timestamp-full");
+								f.html(moment.unix(h).format(settings_window_replaced_timestamps_format_full))
+							}
+						} else {
+							(c && c.length) && f.html(c.html(h))
+						}
 					}
 					if ($('.piechart[data-charts="sysinfo_' + g + '"]').length) {
 						$('.piechart[data-charts="sysinfo_' + g + '"]').data("easyPieChart").update(j)
 					}
-					t__wi_p.$(".__sysinfo_asterisk").addClass("hidden");
 					if (g == "cpu_percent" || g == "mem_percent" || g == "virt_percent" || g == "disk_percent") {
 						localStorage.setItem("sysinfo_" + g + "_seen", j)
 					}
@@ -1865,9 +1881,22 @@ function f__si__upd_exec(a) {
 						localStorage.setItem("sysinfo_" + g, j)
 					}
 				}
+				if (!localStorage.getItem("sysinfo_package_message_initial")) {
+					localStorage.setItem("sysinfo_package_message_initial", 1)
+				}
+				if (g == "authentic_theme_version") {
+					if (!localStorage.getItem("sysinfo_theme_current_version") && j) {
+						localStorage.setItem("sysinfo_theme_current_version", (j.match(/^\d+|\d+\b|\d+(?=\w)/g)[0] + "." + j.match(/^\d+|\d+\b|\d+(?=\w)/g)[1]))
+					}
+				}
+				if (g == "csf_data") {
+					if (!localStorage.getItem("sysinfo_csf_current_version") && j) {
+						localStorage.setItem("sysinfo_csf_current_version", (j.match(/^\d+|\d+\b|\d+(?=\w)/g)[0] + "." + j.match(/^\d+|\d+\b|\d+(?=\w)/g)[1]))
+					}
+				}
 			});
 			if (a) {
-				$(".sysinfo-main-spinner").addClass("hidden")
+				$('h3 > a[data-refresh="system-status"]').removeClass("disabled").find("i").removeClass("fa-spin")
 			}
 			setTimeout(function () {
 				t__wi_p.$___ajax_requested_url = "_blank"
@@ -1912,9 +1941,10 @@ $.ajaxSetup({
 	}
 });
 if (t___wi.location == t__wi_p.location) {
+	settings_notification_slider_fixed && t__wi_p.$("html").attr("data-slider-fixed", "1");
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.11 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.20 https://github.com/qooob/authentic-theme")
 	}
 	typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 	typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -1922,45 +1952,137 @@ if (t___wi.location == t__wi_p.location) {
 		t___wi.parent.$___________left = 1
 	});
 
+	function __si__bg_upd_exec() {
+		if ($access_level == 0) {
+			t__wi_p.$___ajax_requested_url = "/index.cgi/?xhr-info=1";
+			$.ajax({
+				type: "GET",
+				url: $_____link_full + "/index.cgi/?xhr-info=1",
+				data: false,
+				dataType: "json",
+				success: function (a) {
+					$.each(a, function (b, f) {
+						$__id__ = moment().unix();
+						if (b == "csf_title" || b == "csf_remote_version" || b == "authentic_remote_version" || b == "package_message") {
+							if (b == "package_message" && (localStorage.getItem("sysinfo_" + b) != f || localStorage.getItem("sysinfo_package_message_initial") == 1) && f && f.indexOf("badge-danger") > -1) {
+								localStorage.setItem("notifications_" + $__id__ + "_package_message", JSON.stringify({
+									title: "Packages Update",
+									time: $__id__,
+									timestamp: $__id__,
+									message: "There are " + ($(f).html().replace(/badge-danger/g, "badge-success")),
+									readStatus: 0,
+									type: b,
+									link: $(f).attr("href")
+								}));
+								localStorage.setItem("sysinfo_" + b, f);
+								localStorage.setItem("sysinfo_package_message_initial", 0)
+							}
+							if (settings_sysinfo_theme_updates) {
+								if (localStorage.getItem("sysinfo_authentic_remote_version") == 0) {
+									delete localStorage.sysinfo_authentic_remote_version
+								}
+								if (localStorage.getItem("sysinfo_theme_current_version") && localStorage.getItem("sysinfo_authentic_remote_version")) {
+									if (b == "authentic_remote_version" && localStorage.getItem("sysinfo_theme_current_version") != f && f != "0" && f != "0.00") {
+										localStorage.setItem("notifications_" + $__id__ + "_authentic_remote_version", JSON.stringify({
+											title: "Theme Update",
+											time: $__id__,
+											timestamp: $__id__,
+											message: "A new version <em>" + f + "</em> of <strong>Authentic Theme</strong> is available. Please update",
+											readStatus: 0,
+											type: b,
+											link: $_____link_full + "/sysinfo.cgi"
+										}));
+										localStorage.setItem("sysinfo_" + b, f);
+										localStorage.setItem("sysinfo_theme_current_version", f)
+									}
+								}
+							}
+							if (settings_sysinfo_csf_updates) {
+								if (localStorage.getItem("sysinfo_csf_current_version") && localStorage.getItem("sysinfo_csf_remote_version")) {
+									if (b == "csf_remote_version" && localStorage.getItem("sysinfo_csf_current_version") != f && f != "0" && f != "0.00") {
+										localStorage.setItem("notifications_" + $__id__ + "_csf_remote_version", JSON.stringify({
+											title: "Firewall Update",
+											time: $__id__,
+											timestamp: $__id__,
+											message: "A new version <em>" + f + "</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update",
+											readStatus: 0,
+											type: b,
+											link: $_____link_full + "/csf"
+										}));
+										localStorage.setItem("sysinfo_" + b, f);
+										localStorage.setItem("sysinfo_csf_current_version", f)
+									}
+								}
+							}
+							if (b == "csf_title" && f && f.indexOf("label-danger") > -1 && localStorage.getItem("sysinfo_csf_not_running") != 1) {
+								localStorage.setItem("notifications_" + $__id__ + "_csf_title", JSON.stringify({
+									title: "Firewall Danger",
+									time: $__id__,
+									timestamp: $__id__,
+									message: 'It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don\'t leave your server exposed, check for the firewall settings (' + moment.unix($__id__).format(settings_window_replaced_timestamps_format_short) + ")",
+									readStatus: 0,
+									type: b,
+									link: $_____link_full + "/csf"
+								}));
+								localStorage.setItem("sysinfo_csf_not_running", 1)
+							} else {
+								if (b == "csf_title" && f && f.indexOf("label-danger") === -1) {
+									delete localStorage.sysinfo_csf_not_running
+								}
+							}
+						}
+						if (b == "csf_deny") {
+							var c = JSON.parse(f);
+							$.each(c, function (n, k) {
+								var k = k.split("|"),
+									o = k[0],
+									g = k[1],
+									p = k[2],
+									d = k[3],
+									m = k[4],
+									h = k[5],
+									l = k[6],
+									j = k[7];
+								j = j.replace("*Port Scan*", ((p && d) ? 'Port <i data-port-href="http://www.speedguide.net/port.php?port=' + d + '" class="badge bg-dark-red">' + d + "</i> scan" : "Port scan"));
+								if (!localStorage.getItem("allowed_trigger_" + (o + g.replace(/\./g, "0")) + "_csf_deny")) {
+									localStorage.setItem("notifications_" + (o + g.replace(/\./g, "0")) + "_csf_deny", JSON.stringify({
+										title: "Firewall Warning",
+										time: $__id__,
+										timestamp: $__id__,
+										message: j + ((p && d) ? " <span>(" + p + ":" + d + ")</span>" : ""),
+										readStatus: 0,
+										type: b,
+										link: $_____link_full + "/csf"
+									}));
+									localStorage.setItem("allowed_trigger_" + (o + g.replace(/\./g, "0")) + "_csf_deny", 1)
+								}
+							})
+						}
+						if (b == "cpu_percent" || b == "mem_percent" || b == "virt_percent" || b == "disk_percent") {
+							if (localStorage.getItem("sysinfo_" + b + "_seen") !== null && f >= 85 && localStorage.getItem("sysinfo_" + b + "_seen") < f) {}
+						}
+					});
+					setTimeout(function () {
+						t__wi_p.$___ajax_requested_url = "_blank"
+					}, 500);
+					setTimeout(function () {
+						n___ck()
+					}, 3000)
+				}
+			})
+		}
+	}
+
 	function __si__bg_upd() {
 		return t___wi.setInterval(function () {
-			if (!t__wi_p.$('iframe[name="page"]').contents().find(".__sytem_information").length) {
-				if ($access_level == 0) {
-					t__wi_p.$___ajax_requested_url = "/index.cgi/?xhr-info=1";
-					$.ajax({
-						type: "GET",
-						url: $_____link_full + "/index.cgi/?xhr-info=1",
-						data: false,
-						dataType: "json",
-						success: function (a) {
-							$.each(a, function (b, c) {
-								if (b == "csf_title" || b == "csf_remote_version" || b == "authentic_remote_version" || b == "package_message") {
-									if (b == "package_message") {
-										if (localStorage.getItem("sysinfo_package_message") && localStorage.getItem("sysinfo_package_message").indexOf("badge-danger") > -1) {
-											(localStorage.getItem("sysinfo_" + b) != c) && $(".__sysinfo_asterisk").removeClass("hidden")
-										}
-									} else {
-										(localStorage.getItem("sysinfo_" + b) != c) && $(".__sysinfo_asterisk").removeClass("hidden")
-									}
-								}
-								if (b == "cpu_percent" || b == "mem_percent" || b == "virt_percent" || b == "disk_percent") {
-									if (localStorage.getItem("sysinfo_" + b + "_seen") !== null && c >= 85 && localStorage.getItem("sysinfo_" + b + "_seen") < c) {
-										$(".__sysinfo_asterisk").removeClass("hidden")
-									}
-								}
-							});
-							setTimeout(function () {
-								t__wi_p.$___ajax_requested_url = "_blank"
-							}, 500)
-						}
-					})
-				}
-			}
+			__si__bg_upd_exec()
 		}, (settings_sysinfo_background_call_timeout * 60000))
 	}
 	var __si__bg_upd_id = __si__bg_upd();
 	if ($access_level == 0) {
-		f__si__upd_exec(false)
+		setTimeout(function () {
+			f__si__upd_exec(false)
+		}, 5000)
 	}
 	if (settings_loader_right) {
 		if (settings_loader_top) {
@@ -2199,7 +2321,7 @@ if (t___wi.location == t__wi_p.location) {
 		}
 	});
 	t__wi_p.$(".switch-toggle").on("click", "input.dynamic", function (b) {
-		if (t__wi_p.$___ajax_requested_url.indexOf("index.cgi/?xhr-info=1") !== -1) {
+		if (t___p__xhr_l === 1 || t___p__xhr_r === 1) {
 			b.preventDefault();
 			b.stopPropagation();
 			return
@@ -2241,15 +2363,62 @@ if (t___wi.location == t__wi_p.location) {
 		$(this).find(".fa").addClass("hidden")
 	});
 	$("body").on("click", "#loader-close > .fa", function (b) {
+		t__wi_p.t___p__xhr_l = 0;
+		t__wi_p.t___p__xhr_r = 0;
+		t__wi_p.$___ajax_requested_url = "_blank";
 		t__wi_p.__lre()
 	}).on("click", "#loader-close-sm > .fa", function (b) {
+		t__wi_p.t___p__xhr_l = 0;
+		t__wi_p.t___p__xhr_r = 0;
+		t__wi_p.$___ajax_requested_url = "_blank";
 		t__wi_p.__lle()
 	});
-	$(window).keydown(function (b) {
-		if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && b.keyCode == 13 && product_name(1).toLowerCase() != "cloudmin") {
+	__shell_commands__i__ = 0;
+	t__wi_p.$(".form-control.sidebar-search").focus(function (a) {
+		a.preventDefault();
+		a.stopPropagation();
+		__shell_commands__i__ = 0
+	});
+	$(window).keydown(function (f) {
+		if ((!t__wi_p.$(".form-control.sidebar-search").val().trim() || t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!")) && (f.keyCode == 38 || f.keyCode == 40)) {
+			typeof localStorage.shell_commands == "undefined" ? localStorage.setItem("shell_commands", JSON.stringify({})) : false;
+			var g = JSON.parse(localStorage.getItem("shell_commands")),
+				d = g.length;
+			f.preventDefault();
+			f.stopPropagation();
+			__shell_commands__i__ = f.keyCode == 40 ? ++__shell_commands__i__ : --__shell_commands__i__;
+			if (__shell_commands__i__ < 0) {
+				__shell_commands__i__ = d - 1
+			}
+			if (g[__shell_commands__i__ % d]) {
+				t__wi_p.$(".form-control.sidebar-search").val(g[__shell_commands__i__ % d])
+			}
+			return
+		} else {
+			if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && f.keyCode == 27) {
+				f.preventDefault();
+				f.stopPropagation();
+				t__wi_p.$(".form-control.sidebar-search").val("");
+				return
+			}
+		}
+		if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && f.keyCode == 13) {
+			var h = JSON.parse(localStorage.getItem("shell_commands")),
+				c = [],
+				j = t__wi_p.$(".form-control.sidebar-search").val().trim();
+			for (var b in h) {
+				c.push(h[b])
+			}
+			c = jQuery.grep(c, function (a) {
+				return a != j
+			});
+			c.push(j);
+			localStorage.setItem("shell_commands", JSON.stringify(c))
+		}
+		if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && f.keyCode == 13 && product_name(1).toLowerCase() != "cloudmin") {
 			t__wi_p.$(".form-control.sidebar-search").addClass("_shell_form_");
-			b.preventDefault();
-			b.stopPropagation();
+			f.preventDefault();
+			f.stopPropagation();
 			if (t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('iframe[name="page"]').contents().find("body").data("shell") == "1") {
 				$__shell_form = '<form class="__shell_form__" role="form" action="' + $_____link_full + '/shell/index.cgi" method="post" enctype="multipart/form-data">									<input type="hidden" id="cmd" name="cmd" value="' + t__wi_p.$(".form-control.sidebar-search").val().trim().substring(1).trim() + '">								</form>';
 				t__wi_p.$('iframe[name="page"]').contents().find("body").append($__shell_form);
@@ -2263,10 +2432,10 @@ if (t___wi.location == t__wi_p.location) {
 				}
 			}
 		} else {
-			if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && b.keyCode == 13 && product_name(1).toLowerCase() == "cloudmin") {
+			if (t__wi_p.$(".form-control.sidebar-search").val().trim().startsWith("!") && f.keyCode == 13 && product_name(1).toLowerCase() == "cloudmin") {
 				t__wi_p.$(".form-control.sidebar-search").addClass("_shell_form_");
-				b.preventDefault();
-				b.stopPropagation();
+				f.preventDefault();
+				f.stopPropagation();
 				if (t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('a[target="page"][href*="/server-manager/save_serv.cgi"]').length && t__wi_p.$('a[target="page"][href*="shell=1"]').length) {
 					$__shell_form = '<form class="__shell_form__" role="form" action="' + $_____link_full + '/server-manager/shell.cgi" method="post" enctype="multipart/form-data">									<input type="hidden" id="id" name="id" value="' + t__wi_p.$("#sid").val() + '">									<input type="hidden" id="cmd" name="cmd" value="' + t__wi_p.$(".form-control.sidebar-search").val().trim().substring(1).trim() + '">								</form>';
 					t__wi_p.$('iframe[name="page"]').contents().find("body").append($__shell_form);
@@ -2301,6 +2470,210 @@ if (t___wi.location == t__wi_p.location) {
 			}
 		})
 	}
+	favicon = new Favico({
+		animation: "none"
+	});
+
+	function n___fv() {
+		var a = $(".right-side-tabs .list-group-item:not(.no-notifications, .opacity-0_3)").length;
+		favicon.badge(a);
+		if (a > 0) {
+			$(".right-side-tabs-toggler button i.fa-bell").addClass("faa-ring faa-slow animated-hover");
+			$(".right-side-tabs-toggler button span.badge").removeClass("hidden").text(a)
+		} else {
+			$(".right-side-tabs-toggler button i.fa-bell").removeClass("faa-ring faa-slow animated-hover");
+			$(".right-side-tabs-toggler button span.badge").addClass("hidden").text(0)
+		}
+	}
+
+	function n___ck() {
+		$.each(localStorage, function (f, l) {
+			if (typeof f == "string" && f.indexOf("notifications_") > -1) {
+				var h = f.split("_")[1],
+					m = JSON.parse(l),
+					a = m.title,
+					c = m.time,
+					d = m.timestamp,
+					g = m.message,
+					b = m.readStatus,
+					j = m.type,
+					k = m.link;
+				if (!$('.list-group-item[id="' + h + '"][data-type="' + j + '"]').length) {
+					n___ad(h, a, c, d, g, b, j, k)
+				} else {
+					$('.list-group-item[id="' + h + '"][data-type="' + j + '"] .list-group-item-heading small').text(moment.unix(c).fromNow())
+				}
+			}
+		})
+	}
+
+	function n___rm() {
+		$.each(localStorage, function (b, a) {
+			if (typeof b == "string" && b.indexOf("notifications_") > -1) {
+				delete localStorage[b]
+			}
+		})
+	}
+
+	function n___mr(d, a, b, f) {
+		var c = JSON.parse(localStorage["notifications_" + d + "_" + a]);
+		localStorage.setItem("notifications_" + d + "_" + a, JSON.stringify({
+			title: c.title,
+			time: c.time,
+			timestamp: c.timestamp,
+			message: c.message,
+			readStatus: b,
+			type: c.type,
+			link: c.link
+		}));
+		f && n___fv()
+	}
+
+	function n___mr_a() {
+		$(".right-side-tabs .list-group-item:not(.no-notifications)").each(function () {
+			$(this).addClass("opacity-0_3");
+			n___mr($(this).attr("id"), $(this).data("type"), 1, 0)
+		}).promise().done(function () {
+			n___fv()
+		})
+	}
+
+	function n___ad(j, h, g, c, d, f, a, b) {
+		$(".right-side-tabs .list-group").prepend('			<a class="list-group-item right-side-tabs-notification' + (f ? " opacity-0_3" : "") + '" data-type="' + a + '" id="' + j + '" href="' + b + '">			    <div class="media-body">			    <i class="fa fa-fw fa-trash-o pull-right hidden"></i>			    <i class="af af-fw af-clear-all pull-right hidden"></i>			        <div class="list-group-item-heading">' + h + " <small>" + moment.unix(g).fromNow() + "</small></div>			        <small>" + d + "</small>			    </div>			</a>			");
+		$(".right-side-tabs-no-notifications").remove();
+		n___fv();
+		if (!t__wi_p.$___________initial) {
+			n___em()
+		}
+	}
+
+	function n___em() {
+		setTimeout(function () {
+			if ($(".right-side-tabs .list-group-item").length === 0) {
+				$(".right-side-tabs .list-group").prepend('				<div class="right-side-tabs-no-notifications" style="opacity: 0">	                <div class="list-group-item text-center no-notifications">	                    <small class="list-group-item-text text-lighter">NO NOTIFICATIONS</small>	                </div>	            </div>			');
+				$(".right-side-tabs-no-notifications").animate({
+					opacity: "1"
+				}, $settings_animation_left_slide_time, function () {})
+			}
+			n___fv()
+		}, $settings_animation_left_slide_time)
+	}
+	$("body").append('		<div id="right-side-tabs" class="right-side-tabs' + (settings_notification_slider_fixed ? " right-side-tabs-fixed" : "") + '" data-background-style="' + settings_notification_color + '">	  		<ul class="nav nav-tabs" role="tablist">				<li role="presentation" class="active"><a href="#right-side-tabs-notifications" aria-controls="home" role="tab" data-toggle="tab">Notifications</a></li>			</ul>			<div class="tab-content">			    <div role="tabpanel" class="tab-pane active" id="right-side-tabs-notifications">		    		<div class="list-group"></div>			    </div>			    <div class="right-side-tabs-dismiss">			    	<i class="fa fa-fw fa-lg fa-refresh margined-left-8"></i>			    	<i class="fa fa-fw fa-lg fa-trash pull-right"></i>			    	<i class="af af-lg af-clear-all pull-right"></i>			  	</div>			</div>		</div>		  <div class="right-side-tabs-toggler' + (settings_notification_slider_fixed ? " hidden" : "") + '" data-background-style="' + settings_notification_color + '">		  	<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">		  		<span class="badge badge-danger hidden"></span>		  		<i class="fa fa-fw fa-lg fa-bell"></i>		  	</button>		  </div>  	');
+	$(".right-side-tabs .tab-pane").each(function () {
+		$(this).css("height", $(window).height() - 92)
+	});
+	$(".right-side-tabs").on("mouseover", ".list-group-item", function (a) {
+		$(this).find(".fa.fa-trash-o").removeClass("hidden");
+		!$(this).hasClass("opacity-0_3") && $(this).find(".af-clear-all").removeClass("hidden")
+	}).on("mouseout", ".list-group-item", function (a) {
+		$(this).find(".fa.fa-trash-o").addClass("hidden");
+		$(this).find(".af-clear-all").addClass("hidden")
+	});
+	$(".right-side-tabs").on("click", "[data-port-href]", function (a) {
+		a.preventDefault();
+		a.stopPropagation();
+		t___wi.open($(this).data("port-href"))
+	});
+	$(".right-side-tabs").on("click", 'a.list-group-item[data-type="csf_deny"]', function (a) {
+		a.preventDefault();
+		a.stopPropagation();
+		if ($(a.target).is(".fa.fa-trash-o") || $(a.target).is(".af-clear-all") || $(a.target).is("[data-port-href]")) {
+			return
+		}
+		t__wi_p.$('iframe[name="page"]').contents().find("body").append('						<form action="' + $_____link_full + '/csf/" method="post" class="hidden" id="csf_temporary_ip_entries">                    		<input type="hidden" name="action" value="temp">                		</form>');
+		t__wi_p.$('iframe[name="page"]').contents().find("form#csf_temporary_ip_entries").submit();
+		t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click")
+	});
+	$(".right-side-tabs").on("click contextmenu", "a.list-group-item", function (a) {
+		a.preventDefault();
+		if (a.type == "contextmenu") {
+			$(this).find(".af-clear-all").trigger("click");
+			a.preventDefault();
+			a.stopPropagation();
+			return
+		}
+		if (!$(a.target).is(".fa.fa-trash-o") && !$(a.target).is(".af-clear-all") && !$(a.target).is("[data-port-href]")) {
+			if ($(this).attr("href") && $(this).attr("href").length && $(this).attr("href") != "undefined" && $(this).attr("data-type") != "csf_deny") {
+				$(this).addClass("opacity-0_3");
+				$(this).find(".af-clear-all").addClass("hidden");
+				n___mr($(this).attr("id"), $(this).data("type"), 1, 1);
+				t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click");
+				t__wi_p.$('iframe[name="page"]').attr("src", $(this).attr("href"))
+			} else {
+				$(this).addClass("opacity-0_3");
+				n___mr($(this).attr("id"), $(this).data("type"), 1, 1)
+			}
+		} else {
+			if ($(a.target).is(".af-clear-all")) {
+				$(this).addClass("opacity-0_3");
+				$(this).find(".af-clear-all").addClass("hidden");
+				n___mr($(this).attr("id"), $(this).data("type"), 1, 1);
+				return
+			}
+			$(this).animate({
+				opacity: "0"
+			}, $settings_animation_left_slide_time, function () {
+				$(this).remove();
+				delete localStorage["notifications_" + $(this).attr("id") + "_" + $(this).data("type")];
+				n___em()
+			})
+		}
+	});
+	$(".right-side-tabs-dismiss i.fa-refresh").click(function (a) {
+		t__wi_p.__si__bg_upd_exec();
+		var b = $(this);
+		b.addClass("fa-spin");
+		setTimeout(function () {
+			b.removeClass("fa-spin")
+		}, 2000)
+	});
+	$(".right-side-tabs-dismiss i.af-clear-all").click(function (a) {
+		n___mr_a()
+	});
+	$(".right-side-tabs-dismiss i.fa-trash").click(function (a) {
+		$(".right-side-tabs .list-group-item:not(.no-notifications)").animate({
+			opacity: "0"
+		}, $settings_animation_left_slide_time, function () {
+			$(this).remove();
+			n___rm();
+			n___em()
+		})
+	});
+	$("body").on("click", ".right-side-tabs-toggler:not(.hidden)", function (a) {
+		if ($(this).hasClass("opened")) {
+			$(this).removeClass("opened");
+			$(this).animate({
+				right: "0"
+			}, $settings_animation_left_slide_time);
+			$(".right-side-tabs").animate({
+				right: "-302"
+			}, $settings_animation_left_slide_time)
+		} else {
+			$(this).addClass("opened");
+			$(this).animate({
+				right: "300"
+			}, $settings_animation_left_slide_time);
+			$(".right-side-tabs").animate({
+				right: "0"
+			}, $settings_animation_left_slide_time)
+		}
+	});
+	$(".right-side-tabs .tab-pane").mCustomScrollbar({
+		axis: "y",
+		theme: "minimal",
+		scrollInertia: 100,
+		scrollButtons: false
+	});
+	$("aside, .btn-menu-toggler").click(function (a) {
+		if (!t__wi_p.$(".right-side-tabs-toggler").hasClass("hidden") && t__wi_p.$(".right-side-tabs-toggler").hasClass("opened") && !$(a.target).is(".btn-menu-toggler") && !$(a.target).is(".fa-bell") && !$(a.target).is(".badge.badge-danger")) {
+			t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click")
+		}
+	});
+	n___em();
+	n___ck();
+	setTimeout(function () {
+		__si__bg_upd_exec()
+	}, 5000)
 } else {
 	typeof t__wi_p.t___p__xhr_r == "undefined" ? t__wi_p.t___p__xhr_r = 0 : false;
 	loaders_dismiss();
@@ -3877,7 +4250,7 @@ if (t___wi.location == t__wi_p.location) {
 
 					function k(c) {
 						typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
-						var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_reload", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
+						var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
 						if (c.val() == "false") {
 							$.each(d, function (f, g) {
 								$('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true)
@@ -3918,6 +4291,30 @@ if (t___wi.location == t__wi_p.location) {
 					});
 					$('select[name="settings_background_color"]').change(function (c) {
 						$("html").attr("data-background-style", $(this).val())
+					});
+					$('select[name="settings_notification_color"]').change(function (c) {
+						t__wi_p.$("body .right-side-tabs, body .right-side-tabs-toggler").attr("data-background-style", $(this).val())
+					});
+					$('input[name="settings_notification_slider_fixed"]').change(function (c) {
+						if ($(this).val() == "true") {
+							if (!t__wi_p.$("body .right-side-tabs-toggler").hasClass("opened")) {
+								t__wi_p.$("body .right-side-tabs-toggler").addClass("opened").css("right", "300px");
+								t__wi_p.$("body .right-side-tabs").css("right", "0")
+							}
+							t__wi_p.$("body .right-side-tabs-toggler").addClass("hidden");
+							t__wi_p.$("body .right-side-tabs").css("right", "0").addClass("right-side-tabs-fixed");
+							t__wi_p.$("html").attr("data-slider-fixed", "1");
+							settings_notification_slider_fixed = true
+						} else {
+							t__wi_p.$("body .right-side-tabs-toggler").removeClass("hidden opened").css("right", "0");
+							t__wi_p.$("body .right-side-tabs").css("right", "-302px").removeClass("right-side-tabs-fixed");
+							t__wi_p.$("html").attr("data-slider-fixed", "0");
+							if (t__wi_p.$("body .right-side-tabs-toggler").hasClass("opened")) {
+								t__wi_p.$("body .right-side-tabs-toggler").removeClass("opened").css("right", "0");
+								t__wi_p.$("body .right-side-tabs").css("right", "-302px")
+							}
+							settings_notification_slider_fixed = false
+						}
 					});
 					if (dashboard_switch()) {
 						$('input[name="settings_sysinfo_link_mini"]').parent().parent().parent().parent("tr").remove()
@@ -4187,7 +4584,7 @@ if (t___wi.location == t__wi_p.location) {
 		$(".ui_table tr td .ui_grid_table.table-hardcoded").parents("table").css("border", "1px solid #f0f0f0");
 		$(".ui_table tr td .ui_grid_table.table-hardcoded").addClass("table").parents("tr").css("border", "1px solid #f0f0f0")
 	}
-	if ($current_page_full == $_____link_full + "/custom/view.cgi") {
+	if (($("body").attr("class") && $('body[class="custom"]').length || ($("body").attr("class") && $("body").attr("class").search(/custom\d+$/) === 0)) && $__source_file == "view.cgi") {
 		var $_tt = $('form[action="save.cgi"]').find(".table-title").find("tt").text();
 		$('form[action="save.cgi"]').find(".table-title").find("b").empty().append("<tt>" + $_tt + "</tt>")
 	}
@@ -4266,7 +4663,7 @@ if (t___wi.location == t__wi_p.location) {
 			$(this).attr("style", "vertical-align: bottom !important")
 		})
 	}
-	if ($current_directory == $_____link + "custom/") {
+	if ($("body").attr("class") && $('body[class="custom"]').length || ($("body").attr("class") && $("body").attr("class").search(/custom\d+$/) === 0)) {
 		$(".panel-body > .ui_grid_table.table-hardcoded").each(function (d, c) {
 			$(this).attr("style", "margin-top: 3px !important")
 		});
@@ -5628,6 +6025,24 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __num() && $access_level == 0) {
 		setTimeout(function () {
+			var d = $('span[data-charts="sysinfo_virt_percent"]'),
+				g = $('span[data-charts="sysinfo_virt_percent"] > span.percent'),
+				c = d.parent("div.text-center").parent("div.row"),
+				b = d.parent("div.text-center");
+			if (g.text().toLowerCase() == "nan") {
+				b.remove();
+				c.find(".col-sm-3").removeClass("col-sm-3 col-xs-6").addClass("col-sm-4 col-xs-12")
+			}
+			var a = $('span[data-charts="sysinfo_cpu_percent"]'),
+				f = $('span[data-charts="sysinfo_cpu_percent"] > span.percent'),
+				c = a.parent("div.text-center").parent("div.row"),
+				b = a.parent("div.text-center");
+			if (f.text().toLowerCase() == "nan") {
+				b.remove();
+				c.find(".col-sm-3").removeClass("col-sm-3 col-xs-6").addClass("col-sm-4 col-xs-12")
+			}
+		}, 1);
+		setTimeout(function () {
 			if (!$(".modal.in").length) {
 				f__si__upd_exec(true)
 			}
@@ -5641,6 +6056,35 @@ if (t___wi.location == t__wi_p.location) {
 			}, (settings_sysinfo_background_call_timeout * 60000))
 		}
 		var __si__upd_id = __si__upd()
+	}
+	$("body").on("click", "a#atclearcache", function (a) {
+		localStorage.clear();
+		t__wi_p.$(".right-side-tabs-dismiss .fa-trash").trigger("click");
+		t__wi_p.$(".right-side-tabs-dismiss .fa-refresh").trigger("click");
+		var b = $(this);
+		b.find(".fa-hourglass-o").removeClass("fa-hourglass-o").addClass("fa-circle-o-notch fa-spin");
+		setTimeout(function () {
+			b.find(".fa-circle-o-notch.fa-spin").removeClass("fa-hourglass-o fa-spin").addClass("fa-hourglass-o")
+		}, 400)
+	});
+	$("body").click(function (a) {
+		if ($(a.target).is('select[name="settings_navigation_color"], select[name="settings_background_color"], select[name="settings_notification_color"]')) {
+			return
+		}
+		if (t__wi_p.$(".right-side-tabs-toggler").hasClass("opened") && !t__wi_p.$(".right-side-tabs-toggler").hasClass("hidden")) {
+			t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click")
+		}
+	});
+	if ($current_page_full == $_____link_full + "/virtual-server/edit_phpmode.cgi") {
+		$("#hiddendiv_phpinfo table tbody tr").css("border", "1px solid #eee")
+	}
+	if (settings_window_replace_timestamps) {
+		$.each($("[data-convertible-timestamp-full]"), function () {
+			$(this).text(moment.unix($(this).data("convertible-timestamp-full")).format(settings_window_replaced_timestamps_format_full))
+		});
+		$.each($("[data-convertible-timestamp-short]"), function () {
+			$(this).text(moment.unix($(this).data("convertible-timestamp-short")).format(settings_window_replaced_timestamps_format_short))
+		})
 	}
 	t___wi.onbeforeunload = function (b) {
 		t___wi.parent.$___________right = 0;

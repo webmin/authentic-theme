@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.11 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.20 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -116,6 +116,7 @@ elsif ( $in{'timed_out'} ) {
     print &text( 'session_timed_out', int( $in{'timed_out'} / 60 ) ) . "\n";
     print '</div>' . "\n";
 }
+print "$text{'session_prefix'}\n";
 print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
     . '/session_login.cgi" class="form-signin session_login clearfix" role="form">'
@@ -205,4 +206,5 @@ print
     . '</button>' . "\n";
 print '</div>';
 print '</form>' . "\n";
+#print "$text{'session_postfix'}\n";
 &footer();

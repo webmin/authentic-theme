@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.11 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.20 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -49,7 +49,6 @@ if ( $get_user_level != 4 ) {
         : ''
         )
         . '
-    <span class="cspinner sysinfo-main-spinner hidden" style="margin-top: 3px; margin-left: 14px; opacity: 0.7"><span class="cspinner-icon"></span></span>
     </h3>' . "\n";
 
     print '</div>';
