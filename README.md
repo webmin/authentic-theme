@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.11)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.20)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -23,6 +23,7 @@
 * Configurable theme options using _Webmin_ UI
 * Favorites feature for any content page
 * Unprecedentedly convenient and complete navigation menu for both desktop and mobile
+* Notification slider for quick access to pushed system messages
 * Autocomplete for quick and effective navigation with ability to execute shell commands [*](https://github.com/qooob/authentic-theme#how-do-i-execute-shell-command-using-search-filed)
 * Hotkeys for quick access control
 * Dynamically updated page title based on current module
@@ -149,7 +150,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 1100 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 1200 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 

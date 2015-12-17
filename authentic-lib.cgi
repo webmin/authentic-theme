@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.11 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.20 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1172,10 +1172,18 @@ sub get_sysinfo_vars {
 
         #System time
         use Time::Local;
-        $local_time = localtime( time() );
+        my ( $_time, $local_time );
+        $_time = time();
+        $local_time
+            = '<span data-convertible-timestamp-full="'
+            . $_time . '" >'
+            . localtime($_time)
+            . '</span>';
         if ( &foreign_available("time") ) {
             $local_time
-                = '<a href='
+                = '<a data-convertible-timestamp-full="'
+                . $_time
+                . '" href='
                 . $gconfig{'webprefix'}
                 . '/time/>'
                 . $local_time . '</a>';
@@ -1440,8 +1448,88 @@ sub get_sysinfo_vars {
             $csf_remote_version, $authentic_remote_version
         );
 
-    } else {
-        return
+    }
+    else {
+        return;
+    }
+}
+
+sub csf_temporary_list {
+    if ( &foreign_check("csf") && &foreign_available("csf") ) {
+        my @t;
+        my @l;
+
+        if ( !-z "/var/lib/csf/csf.tempban" ) {
+            open( IN, "</var/lib/csf/csf.tempban" ) or die $!;
+            @t = <IN>;
+            chomp @t;
+            close(IN);
+        }
+
+        if ( -e "/var/lib/csf/stats/iptables_log" ) {
+            open( IN, "<", "/var/lib/csf/stats/iptables_log" ) or die $!;
+            flock( IN, LOCK_SH );
+            my @i = <IN>;
+            close(IN);
+            chomp @i;
+            @i = reverse @i;
+            my $c = 0;
+
+            my $s = scalar @i;
+            for ( my $x = 0; $x < $s; $x++ ) {
+                $c++;
+                my $u = $i[$x];
+                my ( $o, $l ) = split( /\|/, $u );
+                my ( $r, $w, $k );
+                if ( $l =~ /SRC=(\S+)/ ) { $r = $1 }
+                if ( $l =~ /DST=(\S+)/ ) { $w = $1 }
+                if ( $l =~ /DPT=(\d+)/ ) { $k = $1 }
+
+                foreach my $h ( reverse @t ) {
+                    if ( !length $h ) {next}
+                    my ( $a, $b, $d, $e, $f, $g ) = split( /\|/, $h );
+                    if ( $r eq $b ) {
+                        push @l,
+                              $a . '|'
+                            . $b . '|'
+                            . $w . '|'
+                            . $k . '|'
+                            . $d . '|'
+                            . $e . '|'
+                            . $f . '|'
+                            . $g;
+                        for my $q ( reverse 0 .. $#t ) {
+                            if ( $t[$q] =~ /$b/ ) {
+                                splice( @t, $q, 1, () );
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        foreach my $j ( reverse @t ) {
+            if ( !length $j ) {next}
+            my ( $a, $b, $d, $e, $f, $g ) = split( /\|/, $j );
+            push @l,
+                  $a . '|'
+                . $b . '|' . '|' . '|'
+                . $d . '|'
+                . $e . '|'
+                . $f . '|'
+                . $g;
+        }
+
+        if (@l) {
+            return JSON->new->latin1->encode( \@l );
+        }
+        else {
+            return JSON->new->latin1->encode( {} );
+        }
+    }
+    else {
+        return JSON->new->latin1->encode( {} );
     }
 }
 
@@ -1589,7 +1677,8 @@ sub _post_install {
 }
 
 sub embed_logo {
-    warn $@;
+
+    #warn $@;
     if ( $ENV{'SCRIPT_NAME'} eq '/session_login.cgi' ) {
         our $logo = 'logo_welcome';
     }
@@ -1712,7 +1801,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1711" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1720" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1736,7 +1825,8 @@ sub embed_header {
         my @js = (
             'timeplot',                  'jquery',
             'jquery-ui',                 'jquery.scrollbar',
-            'jquery.autocomplete',       'select2',
+            'jquery.autocomplete',       'momentjs',
+            'favico',                    'select2',
             'icheck',                    'jquery.purl',
             'bootstrap',                 'datepicker',
             'fileinput',                 'autosizeinput',
@@ -1752,7 +1842,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1711" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1720" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1764,13 +1854,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1711" type="text/javascript"></script>' . "\n";
+                . '.js?1720" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1711" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1720" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1786,17 +1876,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1711" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1720" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1711" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1720" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1711" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1720" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1804,7 +1894,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1711" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1720" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1828,16 +1918,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1711" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1720" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1711" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1720" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1711" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1720" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1971,7 +2061,32 @@ sub _settings {
             'settings_window_autoscroll',
             'true',
             'settings_window_customized_checkboxes_and_radios',
+            'true', '__',
+            _settings(
+                'fa',
+                'sub-title',
+                '' . "~"
+                    . &text(
+                    'settings_window_replaced_timestamps_options_description')
+            ),
+            'settings_window_replace_timestamps',
             'true',
+            'settings_window_replaced_timestamps_format_full',
+            'dddd, MMMM D, YYYY h:mm:ss',
+            'settings_window_replaced_timestamps_format_short',
+            'L, h:mm:ss',
+
+            '__',
+            _settings(
+                'fa', 'bell',
+                &text('settings_right_notification_slider_options_title')
+            ),
+            'settings_notification_color',
+            'grey',
+            'settings_notification_slider_fixed',
+            'false',
+            'settings_sysinfo_background_call_timeout',
+            '10',
 
             '__',
             _settings(
@@ -2038,6 +2153,8 @@ sub _settings {
             'm',
             'settings_hotkey_sysinfo',
             'i',
+            'settings_hotkey_toggle_slider',
+            'n',
             'settings_hotkey_favorites',
             'f',
             'settings_hotkey_focus_search',
@@ -2075,8 +2192,6 @@ sub _settings {
                 'fa', 'info-circle',
                 &text('settings_right_sysinfo_page_options_title')
             ),
-            'settings_sysinfo_background_call_timeout',
-            '2',
             'settings_sysinfo_easypie_charts',
             'true',
             'settings_theme_options_button',
@@ -2240,6 +2355,9 @@ sub _settings {
             . '" data-text-settings_right_restore_defaults="'
             . &text('settings_right_restore_defaults')
 
+            . '" data-text-settings_right_clear_local_cache="'
+            . &text('settings_right_clear_local_cache')
+
             . '" data-text-settings_right_restored="'
             . &text('settings_right_restored')
 
@@ -2319,6 +2437,7 @@ sub _settings {
         elsif (index( $k, 'settings_security_notify_on_' ) != -1
             || index( $k, 'settings_hotkey_toggle_key_' ) != -1
             || $k eq 'settings_hotkey_focus_search'
+            || $k eq 'settings_hotkey_toggle_slider'
             || $k eq 'settings_hotkey_reload'
             || $k eq 'settings_hotkey_sysinfo'
             || $k eq 'settings_hotkey_favorites'
@@ -2328,6 +2447,7 @@ sub _settings {
             my $width
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
+                    || $k eq 'settings_hotkey_toggle_slider'
                     || $k eq 'settings_hotkey_reload'
                     || $k eq 'settings_hotkey_sysinfo'
                     || $k eq 'settings_hotkey_favorites'
@@ -2337,6 +2457,7 @@ sub _settings {
             my $max_length
                 = (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                     || $k eq 'settings_hotkey_focus_search'
+                    || $k eq 'settings_hotkey_toggle_slider'
                     || $k eq 'settings_hotkey_reload'
                     || $k eq 'settings_hotkey_sysinfo'
                     || $k eq 'settings_hotkey_favorites' )
@@ -2362,9 +2483,17 @@ sub _settings {
             || $k eq 'settings_hotkey_custom_6'
             || $k eq 'settings_hotkey_custom_7'
             || $k eq 'settings_hotkey_custom_8'
-            || $k eq 'settings_hotkey_custom_9' )
+            || $k eq 'settings_hotkey_custom_9'
+            || $k eq 'settings_window_replaced_timestamps_format_full'
+            || $k eq 'settings_window_replaced_timestamps_format_short' )
         {
             my $width = ' width: 40%; ';
+
+            if (   $k eq 'settings_window_replaced_timestamps_format_full'
+                || $k eq 'settings_window_replaced_timestamps_format_short' )
+            {
+                $width = ' width: 50%; ';
+            }
 
             $v = '
                 <input style="display: inline;'
@@ -2548,6 +2677,18 @@ sub _settings {
 
                 </select>';
         }
+        elsif ( $k eq 'settings_notification_color' ) {
+            $v = '<select class="ui_select" name="' . $k . '">
+
+                    <option value="grey"'
+                . ( $v eq 'grey' && ' selected' )
+                . '>Dim Grey (Default)</option>
+
+                    <option value="white"'
+                . ( $v eq 'white' && ' selected' ) . '>White</option>
+
+                </select>';
+        }
 
         return '
             <tr class="atshover">
@@ -2581,6 +2722,8 @@ sub _settings {
             . &text('save') . '</a>
                                 <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
             . &text('settings_right_restore_defaults') . '</a>
+                                <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
+            . &text('settings_right_clear_local_cache') . '</a>
                             </td>
                             <td style="text-align: right;">
                                 <a class="btn btn-default" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
@@ -2746,12 +2889,13 @@ sub get_xhr_request {
                 "csf_title"                => $csf_title,
                 "csf_data"                 => $csf_data,
                 "csf_remote_version"       => $csf_remote_version,
-                "authentic_remote_version" => $authentic_remote_version
+                "authentic_remote_version" => $authentic_remote_version,
+                "csf_deny"                 => csf_temporary_list(),
             };
             print JSON->new->latin1->encode(@updated_info);
         }
         else {
-            print JSON->new->latin1->encode( { "data" => 0 } );
+            print JSON->new->latin1->encode( {} );
         }
         exit;
     }

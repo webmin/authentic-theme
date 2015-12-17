@@ -1,5 +1,15 @@
 ##Changelog
 
+####Version 17.20 (December 17, 2015)
+* Added _Notification Slider_ to store pushed system messages. At the moment you will get notifications about _system packages updates_, _theme updates_, _ConfigServer Security & Firewall_'s _updates, statuses_ and _temporary blocks_, including server's attacked IP:port. There is an option to keep the slider fixed. Slider can be toggled by hotkey (default `Alt+N`)
+* Added two themes for _Notification Slider_ - _Dim Grey (default)_ and _White_
+* Added _favicon_ notification counter, which enables _Webmin_ notifications seen anytime
+* Added arrows up/down navigation in autocomplete search box, through the history of previously executed shell commands
+* Added an ability for modules' developers to use `[data-pagescroll="true"]` to activate theme's page autoscroll feature
+* Added an ability for modules' developers to use `[data-convertible-timestamp-full="unix-timestamp"]` and `[data-convertible-timestamp-short="unix-timestamp"]` attributes on the disired container to easily display user defined dates
+* Fixed bugs [#287](https://github.com/qooob/authentic-theme/issues/287) [#295](https://github.com/qooob/authentic-theme/issues/295) [#297](https://github.com/qooob/authentic-theme/issues/297) [#298](https://github.com/qooob/authentic-theme/issues/298)
+* Fixed other bugs and made dozens of improvements
+
 ####Version 17.11 (November 19, 2015)
 * Changed _Orange_ color palette to _Longhorn Orange_</li>
 * Fixed bugs [#281](https://github.com/qooob/authentic-theme/issues/281) [#282](https://github.com/qooob/authentic-theme/issues/282)
@@ -72,7 +82,7 @@
 	* `Theme reload hot key` - reload current directory
 * Deuglifed a link for switching between basic/advanced modes in _SpamAssassin->Header and Body Tests_ module
 * Fixed bugs [#234](https://github.com/qooob/authentic-theme/issues/234) [#235](https://github.com/qooob/authentic-theme/issues/235) [#236](https://github.com/qooob/authentic-theme/issues/236) [#238](https://github.com/qooob/authentic-theme/issues/238) [#239](https://github.com/qooob/authentic-theme/issues/239) [#242](https://github.com/qooob/authentic-theme/issues/242) [#243](https://github.com/qooob/authentic-theme/issues/243) [#244](https://github.com/qooob/authentic-theme/issues/244)  [#245](https://github.com/qooob/authentic-theme/issues/245)
-* Fixed other bugs and made dozes of improvements
+* Fixed other bugs and made dozens of improvements
 
 
 ####Version 15.51 (September 1, 2015)

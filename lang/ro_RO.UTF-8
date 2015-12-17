@@ -32,8 +32,8 @@ body_usermin=Versiunea Usermin
 body_virt=Memorie Virtuală
 body_webmin=Versiunea Webmin
 
-left_favorites=Favorites
-left_favorites_no=There were no favorites added yet...
+left_favorites=Favorite
+left_favorites_no=Momentan nu au fost adăugate Favorite...
 left_feedback=Trimite Feedback
 left_home=Informații despre Sistem
 left_others=Altele
@@ -114,8 +114,8 @@ settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentifica�
 settings_right_current_theme=Temă curentă
 settings_right_title=Această pagină îți permite modificarea <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Configurările vor fi înregistrate după Actualizarea Temei.
 settings_right_theme_left_configuration_title=Configurația Authentic Theme
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
+settings_right_theme_left_extensions_title=Editor de Extensii Authentic Theme
+settings_right_theme_left_logo_title=Administrare Logo Authentic Theme
 settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
 
 
@@ -138,11 +138,11 @@ settings_hotkey_custom_7=Legătură personalizată <code>7</code>
 settings_hotkey_custom_8=Legătură personalizată <code>8</code>
 settings_hotkey_custom_9=Legătură personalizată <code>9</code>
 
-settings_navigation_color=Navigation menu color
-settings_background_color=Content page color
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
-settings_loader_top=Enable page progress loader on top of the screen
+settings_navigation_color=Culoare meniu navigare
+settings_background_color=Culoare pagina conţinut
+settings_animation_left=Activează animația în meniul de navigare
+settings_animation_tabs=Activează animația in taburi
+settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
 settings_loader_left=Activează spinner pentru meniul de navigare
 settings_loader_right=Activează spinner pentru pagina cu conținut
 settings_right_reload=Încarcă pagina cu conținut implicit
@@ -167,7 +167,7 @@ settings_window_customized_checkboxes_and_radios=Activează bife checkbox și bi
 
 settings_leftmenu_section_hide_refresh_modules=Ascunde linkul <kbd>Împrospătează Module</kbd>
 settings_leftmenu_section_hide_unused_modules=Ascunde linkul <kbd>Module Neutilizate</kbd>
-settings_favorites=Show favorites button
+settings_favorites=Arată butonul pentru favorite
 settings_leftmenu_button_language=Atată butonul limbi
 settings_leftmenu_button_refresh=Arată butonul reîmprospătare
 
@@ -181,22 +181,22 @@ settings_hotkey_toggle_key_cloudmin=Tastă Rapidă pentru Cloudmin
 settings_hotkey_toggle_key_usermin=Tastă Rapidă pentru Usermin
 settings_hotkey_toggle_key_webmail=Tastă Rapidă pentru Mail
 settings_hotkey_sysinfo=Tastă Rapidă pentru Informații de Sistem
-settings_hotkey_favorites=Hotkey for Favorites
+settings_hotkey_favorites=Tastă Rapidă pentru Favorite
 settings_hotkey_focus_search=Tastă Rapidă pentru câmpul de căutare
 settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
 
 settings_security_notify_on_pre_login_request=Anunță atunci când banner-ul pre-autentificare este afișat unui utlizator neautentificat
 settings_security_notify_on_login_request=Anunță atunci când un utlizator neautentificat are acces la pagina de autentificare
 settings_security_notify_on_login_success=Anunță autentificarea reușită
-settings_security_notify_for_webmin=Enabled for Webmin
-settings_security_notify_for_usermin=Enabled for Usermin
+settings_security_notify_for_webmin=Activează pentru Webmin
+settings_security_notify_for_usermin=Activează pentru Usermin
 
-settings_sysinfo_background_call_timeout=Timeout for background information update
-settings_sysinfo_background_call_timeout_description=Set desired timeout for updating system information statuses in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>2</code> minutes. Decimal values can also be used.
+settings_sysinfo_background_call_timeout=Expirare timp pentru actualizări de informații în fundal
+settings_sysinfo_background_call_timeout_description=Aplică timpul de expirare dorit pentru actualizări de stare și informații de sistem ce rulează cereri în fundal. Valoare trebuie să fie în minute. Valoarea minimă recomandată este de <code>1</code> minut. Configuarea implicită este de <code>2</code> minute. Se pot folosi valori zecimale.
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
 settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives' status each on new line
+settings_sysinfo_drive_status_on_new_line=Afișează starea Procesorului și a Discurilor fiecare pe un nou rând
 settings_sysinfo_expand_all_accordions=Menține toate acordeoanele extinse
 settings_sysinfo_link_mini=Afișează linkul <kbd>Informații de Sistem</kbd> ca buton
 settings_leftmenu_singlelink_icons=Afișează pictogramele linkurilor idividual în meniul de navigare al Virtualmin/Cloudmin
@@ -211,10 +211,15 @@ settings_leftmenu_vm_installscripts=Afișează linkul <kbd>Instalează Scripturi
 settings_leftmenu_vm_webpages=Afișează linkul <kbd>Editează Paginile Web</kbd> în Virtualmin
 settings_leftmenu_vm_backup_amazon=Afișează linkul <kbd>Amazon S3 Buckets</kbd> în Virtualmin
 
-
-
-
-
+settings_right_clear_local_cache=Eliberează Cache-ul
+settings_right_notification_slider_options_title=Opțiuni Slider de Notificări
+settings_notification_slider_fixed=Menține întotdeauna sliderul vizibil
+settings_notification_color=Culoare Slider
+settings_hotkey_toggle_slider=Tastă Rapidă pentru Sliderul de Notificări
+settings_window_replace_timestamps=Activează substituirea datelor
+settings_window_replaced_timestamps_format_short=Formă scurtă dată/oră
+settings_window_replaced_timestamps_format_full=Formă întreagă dată/oră
+settings_window_replaced_timestamps_options_description=Ajustează setările dată/oră după bunul plac pentru afișarea în <a href="http://momentjs.com" target="_blank">formă</a> scurtă sau întreagă. <sup class="fa fa-question-circle" title='Această opțiune nu are efecte globale și se aplică doar dacă sunt folosite anumite module speciale de către dezvoltatori. Oricare dezvoltator de module poate adăuga atributul`data-convertible-timestamp-full="unix-timestamp"` sau `data-convertible-timestamp-short="unix-timestamp"` containerului pentru a afișa cu ușurință datele desemnate de utilizator.'></sup> Această opțiune Pre-Construită are efect în pagina <i>Sliderul de Notificări</i> și <i>Informații de Sistem</i> (de pe rândul <i>Timpul în sistem</i>). Implicit, forma între echivalează cu <code>dddd, MMMM D, YYYY h:mm:ss</code> și forma scurtă este <code>L, h:mm:ss</code>. Expunerea timpului este diferit pentru localizări diferite. Localizarea este bazată pe setările de limbă ale Webmin.
 
 
 
