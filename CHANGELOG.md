@@ -13,7 +13,7 @@
 * Changed theme auto-updates notifications to be on by default
 * Improved and optimized background data collection for notifications
 * Fixed bugs [#288](https://github.com/qooob/authentic-theme/issues/288) [#302](https://github.com/qooob/authentic-theme/issues/302) [#306](https://github.com/qooob/authentic-theme/issues/306) [#310](https://github.com/qooob/authentic-theme/issues/310) [#311](https://github.com/qooob/authentic-theme/issues/311)
-* Fixed other annoying bugs
+* Fixed other bugs
 
 
 ####Version 17.20 (December 17, 2015)

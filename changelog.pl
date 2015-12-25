@@ -31,7 +31,7 @@ our $__changelog
                   <li>Changed theme auto-updates notifications to be on by default</li>
                   <li>Improved and optimized background data collection for notifications</li>
                   <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/288" target="_blank">#288</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/302" target="_blank">#302</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/306" target="_blank">#306</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/310" target="_blank310287</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/311" target="_blank">#311</a>
-                  <li>Fixed other annoying bugs</li>
+                  <li>Fixed other bugs</li>
                 </ul>
 
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->
