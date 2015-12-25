@@ -23,8 +23,12 @@ body_updays=$1 days, $2 hours, $3 minutes
 body_uphours=$1 hours, $2 minutes
 body_upmins=$1 minutes
 body_upneed=$1 package updates are available
+body_upneed1=$1 package update is available
 body_upok=All installed packages are up to date
 body_upsec=$1 package updates are available, of which $2 are security updates
+body_upsec1=$1 package updates are available, of which $2 is security update
+body_upsec2=$1 package update is available, of which $2 are security updates
+body_upsec3=$1 package update is available, of which $2 is security update
 body_uptime=System uptime
 body_used=$1 total / $2 used
 body_used_and_free=$1 total / $2 free / $3 used
@@ -221,7 +225,9 @@ settings_window_replaced_timestamps_format_short=Short date/time format
 settings_window_replaced_timestamps_format_full=Full date/time format
 settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <a href="http://momentjs.com" target="_blank">format</a>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>dddd, MMMM D, YYYY h:mm:ss</code> and short is <code>L, h:mm:ss</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
-
+settings_notification_slider_enabled=Enable slider
+settings_leftmenu_user_html=User HTML snippet
+settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
 theme_changelog=Changelog
@@ -231,6 +237,7 @@ theme_donate=Donate
 theme_download=Download
 theme_name=Authentic Theme
 theme_update=Update
+theme_force_update=Force update
 theme_update_available=Latest available release
 theme_update_notice=Update Notice
 theme_version=Theme version

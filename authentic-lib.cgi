@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.20 (https://github.com/qooob/authentic-theme)
-# Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 17.30 (https://github.com/qooob/authentic-theme)
+# Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -925,13 +925,14 @@ sub print_easypie_charts {
     my $columns = '3';
 
     # CPU usage
-    print_easypie_chart( $columns, $cpu_percent, $text{'body_cp'},
-        'sysinfo_cpu_percent' );
+    print_easypie_chart( $columns,
+        ( $cpu_percent || $cpu_percent eq "0" ? $cpu_percent : 'NaN' ),
+        $text{'body_cp'}, 'sysinfo_cpu_percent' );
 
     # Memory allocation
     print_easypie_chart(
         $columns,
-        $mem_percent,
+        ( $mem_percent || $mem_percent eq "0" ? $mem_percent : 'NaN' ),
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_real2'}
             : $text{'body_real'}
@@ -940,7 +941,7 @@ sub print_easypie_charts {
     );
     print_easypie_chart(
         $columns,
-        $virt_percent,
+        ( $virt_percent || $virt_percent eq "0" ? $virt_percent : 'NaN' ),
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_virt2'}
             : $text{'body_virt'}
@@ -951,7 +952,7 @@ sub print_easypie_charts {
     # Disk usage
     print_easypie_chart(
         $columns,
-        $disk_percent,
+        ( $disk_percent || $disk_percent eq "0" ? $disk_percent : 'NaN' ),
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_disk2'}
             : $text{'body_disk'}
@@ -1141,13 +1142,13 @@ sub get_sysinfo_vars {
                 = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
                 . $text{'theme_name'} . '</a> '
                 . $installed_version
-                . ( __settings('settings_theme_options_button') ne 'false'
-                    && '<a href="/webmin/edit_themes.cgi" data-href="'
-                    . $gconfig{'webprefix'}
-                    . '/webmin/edit_themes.cgi" class="btn btn-default btn-xs btn-hidden hidden" title="'
-                    . $text{'settings_right_theme_configurable_options_title'}
-                    . '" style="margin-left: 6px; margin-right: -8px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-cogs" style="padding-top:1px"></i></a> '
-                )
+                . '<a href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi" data-href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi" class="btn btn-default btn-xs btn-hidden hidden" title="'
+                . $text{'settings_right_theme_configurable_options_title'}
+                . '" style="margin-left: 6px; margin-right: -8px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-cogs" style="padding-top:1px"></i></a> '
                 . '<button data-href="#theme-info" class="btn btn-default btn-xs btn-hidden hidden" style="margin-left: 6px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-info-circle" style="padding-top:1px"></i></button> '
                 . $__changelog;
         }
@@ -1167,6 +1168,12 @@ sub get_sysinfo_vars {
                 . $text{'theme_changelog'} . '</a>'
                 . '<a class="btn btn-xs btn-warning" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
                 . $text{'theme_download'} . '</a>'
+                . '<a class="btn btn-xs btn-primary" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px; padding: 1px 6px !important; border: 0" href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi" data-href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi" ><i class="fa fa-cogs" style="padding-top:1px">&nbsp;</i>'
+                . $text{'settings_right_options'} . '</a>'
                 . '</div>';
         }
 
@@ -1408,12 +1415,23 @@ sub get_sysinfo_vars {
         if ( &foreign_available("package-updates") && $info->{'poss'} ) {
             @poss = @{ $info->{'poss'} };
             @secs = grep { $_->{'security'} } @poss;
-            if ( @poss && @secs ) {
-                $msg
-                    = &text( 'body_upsec', scalar(@poss), scalar(@secs) );
+
+            my $poss = scalar(@poss);
+            my $secs = scalar(@secs);
+
+            if ( $poss && $secs ) {
+                $msg = &text(
+                    (          $poss gt 1
+                            && $secs gt 1 ? 'body_upsec'  : $poss gt 1
+                            && $secs eq 1 ? 'body_upsec1' : $poss eq 1
+                            && $secs gt 1 ? 'body_upsec2' : 'body_upsec3'
+                    ),
+                    $poss, $secs
+                );
             }
-            elsif (@poss) {
-                $msg = &text( 'body_upneed', scalar(@poss) );
+            elsif ($poss) {
+                $msg = &text( ( $poss gt 1 ? 'body_upneed' : 'body_upneed1' ),
+                    $poss );
             }
             else {
                 $msg = $text{'body_upok'};
@@ -1801,7 +1819,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1720" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1730" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1813,18 +1831,19 @@ sub embed_header {
     if ( $type eq 'debug' ) {
 
         my @css = (
-            'bootstrap',         'datepicker',
-            'fontawesome',       'fontawesome-animation',
-            'codemirror',        'jquery.scrollbar',
-            'jquery.datatables', 'jquery.autocomplete',
-            'nprogress',         'messenger',
-            'select2',           'roboto',
-            'authentic'
+            'bootstrap',           'datepicker',
+            'fontawesome',         'fontawesome-animation',
+            'codemirror',          'jquery.jspanel',
+            'jquery.scrollbar',    'jquery.datatables',
+            'jquery.autocomplete', 'nprogress',
+            'messenger',           'select2',
+            'roboto',              'authentic'
         );
 
         my @js = (
             'timeplot',                  'jquery',
-            'jquery-ui',                 'jquery.scrollbar',
+            'jquery-ui',                 'mobile-detect',
+            'jquery.jspanel',            'jquery.scrollbar',
             'jquery.autocomplete',       'momentjs',
             'favico',                    'select2',
             'icheck',                    'jquery.purl',
@@ -1842,7 +1861,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1720" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1730" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1854,13 +1873,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1720" type="text/javascript"></script>' . "\n";
+                . '.js?1730" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1720" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1730" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1876,17 +1895,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1720" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1730" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1720" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1730" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1720" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1730" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1894,7 +1913,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1720" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1730" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1918,16 +1937,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1720" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1730" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1720" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1730" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1720" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1730" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -1943,7 +1962,12 @@ sub get_authentic_version {
     $installed_version =~ s/^\s+|\s+$//g;
     $installed_version = sprintf '%.2f', $installed_version;
 
-    if ( __settings('settings_sysinfo_theme_updates') eq 'true' ) {
+    if (__settings('settings_sysinfo_theme_updates') eq 'true'
+        || (   __settings('settings_sysinfo_theme_updates') ne 'false'
+            && !licenses('cm')
+            && !licenses('vm') )
+        )
+    {
 
         # Get remote version if allowed
         http_download(
@@ -2081,6 +2105,8 @@ sub _settings {
                 'fa', 'bell',
                 &text('settings_right_notification_slider_options_title')
             ),
+            'settings_notification_slider_enabled',
+            'true',
             'settings_notification_color',
             'grey',
             'settings_notification_slider_fixed',
@@ -2101,6 +2127,8 @@ sub _settings {
             'true',
             'settings_favorites',
             'true',
+            'settings_theme_options_button',
+            'true',
             'settings_leftmenu_button_language',
             'false',
             'settings_leftmenu_button_refresh',
@@ -2113,6 +2141,8 @@ sub _settings {
             'true',
             'settings_leftmenu_vm_backup_amazon',
             'true',
+            'settings_leftmenu_user_html',
+            '',
 
             '__',
             _settings(
@@ -2194,10 +2224,8 @@ sub _settings {
             ),
             'settings_sysinfo_easypie_charts',
             'true',
-            'settings_theme_options_button',
-            'true',
             'settings_sysinfo_theme_updates',
-            'false',
+            ( ( !licenses('cm') && !licenses('vm') ) ? 'true' : 'false' ),
             'settings_sysinfo_csf_updates',
             'false',
             'settings_sysinfo_drive_status_on_new_line',
@@ -2484,6 +2512,7 @@ sub _settings {
             || $k eq 'settings_hotkey_custom_7'
             || $k eq 'settings_hotkey_custom_8'
             || $k eq 'settings_hotkey_custom_9'
+            || $k eq 'settings_leftmenu_user_html'
             || $k eq 'settings_window_replaced_timestamps_format_full'
             || $k eq 'settings_window_replaced_timestamps_format_short' )
         {
@@ -2718,18 +2747,26 @@ sub _settings {
                     <tbody>
                         <tr>
                             <td>
-                                <a style="min-width:106px" class="btn btn-success" id="atsave"><i class="fa fa-fw fa-floppy-o" style="margin-right:7px;"></i>'
-            . &text('save') . '</a>
-                                <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
-            . &text('settings_right_restore_defaults') . '</a>
-                                <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
-            . &text('settings_right_clear_local_cache') . '</a>
+                                <div class="btn-group">
+                                    <a style="min-width:106px" class="btn btn-success" id="atsave"><i class="fa fa-fw fa-floppy-o" style="margin-right:7px;"></i>'
+                . &text('save') . '</a>
+                                    <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
+                . &text('settings_right_restore_defaults') . '</a>
+                                    <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
+                . &text('settings_right_clear_local_cache') . '</a>
+                                    <a class="btn btn-warning authentic_update" href="'
+                . $gconfig{'webprefix'}
+                . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh" style="margin-right:7px;"></i>'
+                . &text('theme_force_update') . '</a>
+                                </div>
                             </td>
                             <td style="text-align: right;">
-                                <a class="btn btn-default" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
-            . &text('settings_right_theme_extensions') . '</a>
-                                <a class="btn btn-default" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
-            . &text('settings_right_theme_logos') . '</a>
+                                <div class="btn-group">
+                                    <a class="btn btn-default" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
+                . &text('settings_right_theme_extensions') . '</a>
+                                    <a class="btn btn-default" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
+                . &text('settings_right_theme_logos') . '</a>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -3095,8 +3132,12 @@ sub content {
         . &get_product_name()
         . '" data-virtual-server="'
         . $t_uri_virtualmin
+        . '" data-virtual-server-license="'
+        . licenses('vm')
         . '" data-server-manager="'
         . $t_uri_cloudmin
+        . '" data-server-manager-license="'
+        . licenses('cm')
         . '" data-webmail="'
         . $t_uri_webmail
         . '" data-dashboard="'
@@ -3132,6 +3173,11 @@ sub content {
     print '<br><br><ul class="user-links">';
     do "authentic-theme/buttons.cgi";
     print '</ul>';
+
+    # Custom text
+    print '<ul class="user-html"><li class="user-html-string">'
+        . __settings('settings_leftmenu_user_html')
+        . '</li></ul>';
 
     print '</aside>' . "\n";
 

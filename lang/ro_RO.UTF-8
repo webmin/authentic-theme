@@ -23,8 +23,12 @@ body_updays=$1 zile, $2 ore, $3 minute
 body_uphours=$1 ore, $2 minute
 body_upmins=$1 minute
 body_upneed=Sunt disponibile $1 pachete de actualizat
+body_upneed1=$1 package update is available
 body_upok=Toate pachetele instalate sunt la zi
 body_upsec=Sunt disponibile $1 pachete de actualizat, din care $2 sunt actualizări de securitate
+body_upsec1=$1 package updates are available, of which $2 is security update
+body_upsec2=$1 package update is available, of which $2 are security updates
+body_upsec3=$1 package update is available, of which $2 is security update
 body_uptime=Durata activă a Sistemului
 body_used=$1 total / $2 utilizat
 body_used_and_free=$1 total / $2 liber / $3 utilizat
@@ -221,7 +225,9 @@ settings_window_replaced_timestamps_format_short=Formă scurtă dată/oră
 settings_window_replaced_timestamps_format_full=Formă întreagă dată/oră
 settings_window_replaced_timestamps_options_description=Ajustează setările dată/oră după bunul plac pentru afișarea în <a href="http://momentjs.com" target="_blank">formă</a> scurtă sau întreagă. <sup class="fa fa-question-circle" title='Această opțiune nu are efecte globale și se aplică doar dacă sunt folosite anumite module speciale de către dezvoltatori. Oricare dezvoltator de module poate adăuga atributul`data-convertible-timestamp-full="unix-timestamp"` sau `data-convertible-timestamp-short="unix-timestamp"` containerului pentru a afișa cu ușurință datele desemnate de utilizator.'></sup> Această opțiune Pre-Construită are efect în pagina <i>Sliderul de Notificări</i> și <i>Informații de Sistem</i> (de pe rândul <i>Timpul în sistem</i>). Implicit, forma între echivalează cu <code>dddd, MMMM D, YYYY h:mm:ss</code> și forma scurtă este <code>L, h:mm:ss</code>. Expunerea timpului este diferit pentru localizări diferite. Localizarea este bazată pe setările de limbă ale Webmin.
 
-
+settings_notification_slider_enabled=Enable slider
+settings_leftmenu_user_html=User HTML snippet
+settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
 theme_changelog=Jurnal schimbări
@@ -231,6 +237,7 @@ theme_donate=Donează
 theme_download=Descarcă
 theme_name=Authentic Theme
 theme_update=Actualizează
+theme_force_update=Force update
 theme_update_available=Ultima versiune disponibilă
 theme_update_notice=Notificare de Actualizare
 theme_version=Versiunea Temei

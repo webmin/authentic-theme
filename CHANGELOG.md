@@ -1,5 +1,21 @@
 ##Changelog
 
+####Version 17.30 (December 25, 2015)
+* Added ability to use configurable HTML snippet in navigation menu, for identification purposes. It's configurable in settings, under navigation menu options. Example of usage: `<br><kbd>debug:10000</kbd>`
+* Added ability to completely disable _Notification Slider_ using theme options [#305](https://github.com/qooob/authentic-theme/issues/305)
+* Added ability to minimize/maximize editor window in _Filemin_ [#308](https://github.com/qooob/authentic-theme/issues/308)
+* Added new hotkeys for _Filemin_:
+	* `Esc` - close active editor window
+	* `Ctrl+Esc` - minimize active editor window
+* Added disableable _theme option_ button in navigation
+* Added ability to trigger theme update from _Notification Slider_ with one click
+* Added ability to _Force Update/Re-install_ the theme (on options page)
+* Changed theme auto-updates notifications to be on by default
+* Improved and optimized background data collection for notifications
+* Fixed bugs [#288](https://github.com/qooob/authentic-theme/issues/288) [#302](https://github.com/qooob/authentic-theme/issues/302) [#306](https://github.com/qooob/authentic-theme/issues/306) [#310](https://github.com/qooob/authentic-theme/issues/310) [#311](https://github.com/qooob/authentic-theme/issues/311)
+* Fixed other annoying bugs
+
+
 ####Version 17.20 (December 17, 2015)
 * Added _Notification Slider_ to store pushed system messages. At the moment you will get notifications about _system packages updates_, _theme updates_, _ConfigServer Security & Firewall_'s _updates, statuses_ and _temporary blocks_, including server's attacked IP:port. There is an option to keep the slider fixed. Slider can be toggled by hotkey (default `Alt+N`)
 * Added two themes for _Notification Slider_ - _Dim Grey (default)_ and _White_

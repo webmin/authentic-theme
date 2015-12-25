@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.20 (https://github.com/qooob/authentic-theme)
-# Copyright 2015 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 17.30 (https://github.com/qooob/authentic-theme)
+# Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -10,7 +10,9 @@ do "authentic-theme/authentic-lib.cgi";
 
 our $user = $remote_user;
 
-if ( __settings('settings_sysinfo_link_mini') ne 'false' && dashboard_switch() ne '1') {
+if (   __settings('settings_sysinfo_link_mini') ne 'false'
+    && dashboard_switch() ne '1' )
+{
     print '<li class="user-link">';
     print '<a class="menu-exclude-link" target="page" href="'
         . $gconfig{'webprefix'}
@@ -18,9 +20,20 @@ if ( __settings('settings_sysinfo_link_mini') ne 'false' && dashboard_switch() n
     print '</li>';
 }
 
-if ( __settings('settings_favorites') ne 'false' && $get_user_level == 0) {
+if ( __settings('settings_favorites') ne 'false' && $get_user_level == 0 ) {
     print '<li class="user-link favorites cursor-pointer">';
     print '<span><i class="fa fa-fw fa-star"></i></span>';
+    print '</li>';
+}
+
+if ( __settings('settings_theme_options_button') ne 'false'
+    && $get_user_level == 0 )
+{
+    print '<li class="user-link theme-options cursor-pointer">';
+    print
+        '<a class="menu-exclude-link" target="page" href="/webmin/edit_themes.cgi" data-href="'
+        . $gconfig{'webprefix'}
+        . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
     print '</li>';
 }
 
@@ -72,8 +85,7 @@ if (   -r "$root_directory/virtual-server/edit_lang.cgi"
 {
     print '<li class="user-link">
                     <a class="menu-exclude-link" target="page" href="'
-        . $gconfig{'webprefix'}
-        . '/virtual-server/edit_lang.cgi">
+        . $gconfig{'webprefix'} . '/virtual-server/edit_lang.cgi">
                         <i class="fa fa-fw fa-globe"></i>
                     </a>
                 </li>';
@@ -81,7 +93,8 @@ if (   -r "$root_directory/virtual-server/edit_lang.cgi"
 elsif ( &foreign_available("change-user")
     && __settings('settings_leftmenu_button_language') eq 'true' )
 {
-    print '<li class="user-link"><a class="menu-exclude-link" target="page" href="'
+    print
+        '<li class="user-link"><a class="menu-exclude-link" target="page" href="'
         . $gconfig{'webprefix'}
         . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
