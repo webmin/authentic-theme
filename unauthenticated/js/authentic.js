@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.30 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1759,7 +1759,7 @@ function ___f__tw() {
 	}
 }
 
-function t__cm___init(d, f, g) {
+function t__cm___init(d, f, h, g) {
 	$.each(d, function (s, u) {
 		var b = $(this),
 			c = ["phpini", "bind8"],
@@ -1825,7 +1825,7 @@ function t__cm___init(d, f, g) {
 		}
 		if ($("textarea").length === 1 && $("textarea").parent("td.td_tag").length === 0 || $(".jsPanel").length) {
 			if ($source_path == $_____link + "settings-editor_read.cgi" || (product_name(1).toLowerCase() == "virtualmin" && ($current_page_full == "/apache/manual_form.cgi" || $current_page_full == "/spam/edit_manual.cgi" || $current_page_full == "/virtual-server/edit_html.cgi" || $current_page_full == "/virtual-server/apply_style.cgi" || $current_page_full == "/phpini/edit_manual.cgi" || $('body[class*="filemin"]') && $('body[class*="filemin"]').length)) || (product_name(1).toLowerCase() == "cloudmin" && ($('body:not([class*="filemin"])'))) || product_name(1).toLowerCase() != "virtualmin" && product_name(1).toLowerCase() != "cloudmin" && $current_page_full != $_____link_full + "/virtualmin-sqlite/" && $current_page_full != $_____link_full + "/updown/" && $current_directory != $_____link + "firewalld/" && $current_directory != $_____link + "firewall/" && $current_directory != $_____link + "net/" && $current_directory != $_____link + "acl/" && $current_directory != $_____link + "inetd/" && $current_directory != $_____link + "nis/" && $current_directory != $_____link + "pap/" && $current_directory != $_____link + "ppp-client/" && $current_directory != $_____link + "pptp-client/" && $current_directory != $_____link + "pptp-server/" && $current_directory != $_____link + "shorewall/" && $current_directory != $_____link + "shorewall6/" && $current_directory != $_____link + "raid/" && $current_directory != $_____link + "lvm/" && $current_directory != $_____link + "fdisk/" && $current_directory != $_____link + "lpadmin/" && $current_directory != $_____link + "virtualmin-registrar/" && $current_directory && $current_directory.indexOf("cluster") === -1 && $current_file != "edit_access.cgi" && $current_file != "edit_file.cgi" && $current_file != "edit_referers.cgi" && $current_file != "edit_lock.cgi" && $current_file != "edit_mobile.cgi" && $current_file != "edit_user.cgi" && $current_file != "edit_unix.cgi" && $current_file != "edit_pass.cgi" && $current_file != "edit_dump.cgi" && $current_file != "edit_cron.cgi" && $current_file != "gbatch_form.cgi" && $current_file != "batch_form.cgi" && $current_file != "edit_score.cgi" && $current_file != "edit_ports.cgi" && $current_file != "acl.cgi" && $current_file != "edit_recs.cgi" && $current_file != "edit_dirs.cgi" && $current_page_full != $_____link_full + "/config.cgi" && $current_page_full != $_____link_full + "/apache/edit_defines.cgi" && $current_page_full != $_____link_full + "/apache/edit_gmime_type.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_filter.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_action.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_jail.cgi" && $current_page_full != $_____link_full + "/usermin/edit_configs.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/ticket.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/login.cgi" && $current_page_full != $_____link_full + "/webminlog/view.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi" && $current_page_full != $_____link_full + "/mysql/exec_form.cgi" && $current_page_full != $_____link_full + "/postgresql/exec_form.cgi" && $('body[class*="filemin"]') && $__source_file != "config.cgi") {
-				__cm_editor = CodeMirror.fromTextArea(u, {
+				window["__cm_editor_" + g] = CodeMirror.fromTextArea(u, {
 					tabMode: "indent",
 					matchBrackets: true,
 					lineNumbers: true,
@@ -1833,27 +1833,27 @@ function t__cm___init(d, f, g) {
 					indentUnit: 0,
 					autofocus: true
 				});
-				__cm_editor.setOption("mode", v);
+				window["__cm_editor_" + g].setOption("mode", v);
 				if (a != "rpm") {
-					CodeMirror.autoLoadMode(__cm_editor, a)
+					CodeMirror.autoLoadMode(window["__cm_editor_" + g], a)
 				}
 				if ($current_directory != $_____link + "init/" && $current_file != "edit_cron.cgi" && $current_page_full != $_____link_full + "/virtualmin-password-recovery/" && $current_page_full != $_____link_full + "/bind8/forward_form.cgi") {
-					g ? ($resize = g) : ($resize = 2.8);
-					if (!g) {
+					h ? ($resize = h) : ($resize = 2.8);
+					if (!h) {
 						$window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
-						__cm_editor.setSize(null, $window_height);
+						window["__cm_editor_" + g].setSize(null, $window_height);
 						$(t___wi).resize(function () {
 							$window_height = ($(window).outerHeight() - ($(window).outerHeight() / $resize));
-							__cm_editor.setSize(null, $window_height)
+							window["__cm_editor_" + g].setSize(null, $window_height)
 						})
 					} else {
-						__cm_editor.on("change", function (j, h) {
-							d.val(__cm_editor.getValue());
+						window["__cm_editor_" + g].on("change", function (k, j) {
+							d.val(window["__cm_editor_" + g].getValue());
 							if ($(":focus").parents(".jsPanel").is(".jsPanel")) {
 								$(":focus").parents(".jsPanel").find("._filemin_file_editor_save").addClass("text-danger")
 							}
 						});
-						__cm_editor.setSize($resize[0], $resize[1])
+						window["__cm_editor_" + g].setSize($resize[0], $resize[1])
 					}
 				}
 			}
@@ -1902,7 +1902,7 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.30 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.31 https://github.com/qooob/authentic-theme")
 	}
 	typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 	typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -3462,6 +3462,10 @@ if (t___wi.location == t__wi_p.location) {
 												}).first().text() + "</strong>",
 												B = $(this).parents("div.jsPanel"),
 												t = ($(".jsPanel").length + 1);
+											if (!$(F).find("textarea").length) {
+												var F = $(H).find('form[action="save_file.cgi"]').append($(H).find("#data").removeAttr("id")).prepend($(H).find("#file").removeAttr("id")).prepend($(H).find("#path").removeAttr("id")),
+													I = "<strong>" + $(H).find(".table-title").text() + "</strong>"
+											}
 											C.title(I);
 											B.data("jspuid", u);
 											B.find(".jsPanel-hdr h3").prepend('<i class="fa fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", $(I).text());
@@ -3476,11 +3480,11 @@ if (t___wi.location == t__wi_p.location) {
 											E.find(".ui_form_end_buttons").remove();
 											B.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemin_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-floppy-o" title="' + s.val() + '"></i></div>');
 											B.find(".jsPanel-btn-max").trigger("click");
-											t__cm___init(E.find("textarea"), $(I).text(), [null, parseInt(E.css("height"))]);
+											t__cm___init(E.find("textarea"), $(I).text(), [null, parseInt(E.css("height"))], t);
 											B.animate({
 												opacity: 1
 											}, 400, function () {
-												__cm_editor.focus()
+												window["__cm_editor_" + t].focus()
 											});
 											C.on("jspanelbeforeclose", function (x, A) {
 												var z = $("#" + A)
@@ -3746,6 +3750,9 @@ if (t___wi.location == t__wi_p.location) {
 						$('#headln2l > a[href*="filemin"][href*="index.cgi"]').addClass("hidden")
 					}
 					t___wi.history.pushState(null, null, $_____link_full + "/" + __f___mn() + "/index.cgi?path=" + l);
+					if ($(a).find("#list_form").prev("div.total").length) {
+						$(".total").html($(a).find("#list_form").prev("div.total").html())
+					}
 					$.each($('.modal .modal-body form input[name="path"], #list_form > input[type="hidden"][name="path"]'), function () {
 						$(this).val(l)
 					});
@@ -4664,7 +4671,7 @@ if (t___wi.location == t__wi_p.location) {
 			$(this).parents("td").attr("style", "white-space: nowrap")
 		}
 	});
-	t__cm___init($("textarea"), false, false);
+	t__cm___init($("textarea"), false, false, "static");
 	if ($(".ui_table tr td").has(".ui_grid_table.table-hardcoded") && ($current_directory == $_____link + "passwd/" || $current_directory == $_____link + "mailboxes/" || $current_page_full == $_____link_full + "/usermin/list_configs.cgi")) {
 		$(".ui_table tr td .ui_grid_table.table-hardcoded").parents("table").css("border", "1px solid #f0f0f0");
 		$(".ui_table tr td .ui_grid_table.table-hardcoded").addClass("table").parents("tr").css("border", "1px solid #f0f0f0")
@@ -6059,6 +6066,14 @@ if (t___wi.location == t__wi_p.location) {
 		if (target.find("a").attr("href").indexOf("edit_simple.cgi") > -1) {
 			target.find("a").removeClass("btn-warning").addClass("btn-success")
 		}
+	}
+	if ($current_page_full == $_____link_full + "/server-manager/edit_pass.cgi" && $('form[action="save_pass.cgi"]').find('a[href*="edit_pass.cgi?"]:not(.btn)').length) {
+		var target = $(".ui_form .table-responsive table.table.table-striped.table-rounded.table-condensed.table-subtable > thead tr th:first-child"),
+			container = $(".ui_form .table-responsive table.table.table-striped.table-rounded.table-condensed.table-subtable > thead tr th:last-child"),
+			link = container.find("a");
+		target.append(link);
+		container.remove();
+		target.find("a").addClass("table_title_links pull-right btn btn-info btn-tiny").attr("style", "position: absolute; right: 20px; margin-top: 3px !important;")
 	}
 	$('.panel-default + a[href="/virtual-server/"]').attr("href", "/virtual-server/index.cgi");
 	$('.panel-default + a[href="/server-manager/"]').attr("href", "/server-manager/index.cgi");

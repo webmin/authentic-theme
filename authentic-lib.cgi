@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.30 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -50,6 +50,7 @@ sub __settings {
             {
                 my $m = join( '\n', @m );
                 $m =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
+                $m =~ s/"/&quot;/g;
                 $m =~ s/\\'/'/g;
                 return $m;
             }
@@ -926,13 +927,13 @@ sub print_easypie_charts {
 
     # CPU usage
     print_easypie_chart( $columns,
-        ( $cpu_percent || $cpu_percent eq "0" ? $cpu_percent : 'NaN' ),
+        ( ( $cpu_percent || $cpu_percent eq "0" ) ? $cpu_percent : 'NaN' ),
         $text{'body_cp'}, 'sysinfo_cpu_percent' );
 
     # Memory allocation
     print_easypie_chart(
         $columns,
-        ( $mem_percent || $mem_percent eq "0" ? $mem_percent : 'NaN' ),
+        ( ( $mem_percent || $mem_percent eq "0" ) ? $mem_percent : 'NaN' ),
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_real2'}
             : $text{'body_real'}
@@ -941,7 +942,7 @@ sub print_easypie_charts {
     );
     print_easypie_chart(
         $columns,
-        ( $virt_percent || $virt_percent eq "0" ? $virt_percent : 'NaN' ),
+        ( ( $virt_percent || $virt_percent eq "0" ) ? $virt_percent : 'NaN' ),
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_virt2'}
             : $text{'body_virt'}
@@ -952,7 +953,7 @@ sub print_easypie_charts {
     # Disk usage
     print_easypie_chart(
         $columns,
-        ( $disk_percent || $disk_percent eq "0" ? $disk_percent : 'NaN' ),
+        ( ( $disk_percent || $disk_percent eq "0" ) ? $disk_percent : 'NaN' ),
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_disk2'}
             : $text{'body_disk'}
@@ -1477,7 +1478,8 @@ sub csf_temporary_list {
         my @t;
         my @l;
 
-        if ( !-z "/var/lib/csf/csf.tempban" ) {
+        if ( -e "/var/lib/csf/csf.tempban" && !-z "/var/lib/csf/csf.tempban" )
+        {
             open( IN, "</var/lib/csf/csf.tempban" ) or die $!;
             @t = <IN>;
             chomp @t;
@@ -1819,7 +1821,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1730" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1731" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1861,7 +1863,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1730" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1731" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1873,13 +1875,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1730" type="text/javascript"></script>' . "\n";
+                . '.js?1731" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1730" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1731" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1895,17 +1897,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1730" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1731" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1730" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1731" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1730" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1731" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1913,7 +1915,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1730" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1731" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1937,16 +1939,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1730" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1731" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1730" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1731" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1730" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1731" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2749,23 +2751,23 @@ sub _settings {
                             <td>
                                 <div class="btn-group">
                                     <a style="min-width:106px" class="btn btn-success" id="atsave"><i class="fa fa-fw fa-floppy-o" style="margin-right:7px;"></i>'
-                . &text('save') . '</a>
+            . &text('save') . '</a>
                                     <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
-                . &text('settings_right_restore_defaults') . '</a>
+            . &text('settings_right_restore_defaults') . '</a>
                                     <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
-                . &text('settings_right_clear_local_cache') . '</a>
+            . &text('settings_right_clear_local_cache') . '</a>
                                     <a class="btn btn-warning authentic_update" href="'
-                . $gconfig{'webprefix'}
-                . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh" style="margin-right:7px;"></i>'
-                . &text('theme_force_update') . '</a>
+            . $gconfig{'webprefix'}
+            . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh" style="margin-right:7px;"></i>'
+            . &text('theme_force_update') . '</a>
                                 </div>
                             </td>
                             <td style="text-align: right;">
                                 <div class="btn-group">
                                     <a class="btn btn-default" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
-                . &text('settings_right_theme_extensions') . '</a>
+            . &text('settings_right_theme_extensions') . '</a>
                                     <a class="btn btn-default" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
-                . &text('settings_right_theme_logos') . '</a>
+            . &text('settings_right_theme_logos') . '</a>
                                 </div>
                             </td>
                         </tr>
