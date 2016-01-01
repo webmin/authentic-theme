@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 17.31 (January 01, 2016)
+* Added support for updated _Filemin_ in _Webmin_ 1.780
+* Fixed editor in _Filemin_ saving content incorrectly, when multiple files were opened at once
+* Fixed bugs [#315](https://github.com/qooob/authentic-theme/issues/315) [#317](https://github.com/qooob/authentic-theme/issues/317)
+
 ####Version 17.30 (December 25, 2015)
 * Added ability to use configurable HTML snippet in navigation menu, for identification purposes. It's configurable in settings, under navigation menu options. Example of usage: `<br><kbd>debug:10000</kbd>`
 * Added ability to completely disable _Notification Slider_ using theme options [#305](https://github.com/qooob/authentic-theme/issues/305)

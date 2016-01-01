@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.30 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,9 +14,12 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.30 (December 25, 2015)</h4>
+                <h4>Version 17.30-17.31 (January 01, 2016)</h4>
 
                 <ul>
+                  <li>Added support for updated <em>Filemin</em> in <em>Webmin</em> 1.780</li>
+                  <li>Fixed editor in <em>Filemin</em> saving content incorrectly, when multiple files were opened at once</li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/315" target="_blank">#315</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/317" target="_blank">#317</a><hr></li>
                   <li>Added ability to use configurable HTML snippet in navigation menu, for identification purposes. It\'s configurable in settings, under navigation menu options. Example of usage: <code>&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code></li>
                   <li>Added ability to completely disable <em>Notification Slider</em> using theme options <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/305" target="_blank">#305</a></li>
                   <li>Added ability to minimize/maximize editor window in <em>Filemin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/308" target="_blank">#308</a></li>
