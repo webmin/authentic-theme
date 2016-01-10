@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -19,34 +19,67 @@ do "authentic-theme/authentic-lib.cgi";
 our %text = &load_language($current_theme);
 our %text = ( &load_language('virtual-server'), %text );
 our %text = ( &load_language('server-manager'), %text );
+my ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
+my %virtualmin_config = &foreign_config('virtual-server');
+my %cloudmin_config   = &foreign_config('server-manager');
 
 &header($title);
 
 print '<div id="wrapper" class="page __sytem_information" data-notice="'
     . (
     (   -f $root_directory . '/authentic-theme/update'
-            && $get_user_level == 0
+            && $get_user_level eq '0'
     )
     ? _post_install()
     : '0'
     ) . '">' . "\n";
 print '<div class="container-fluid col-lg-10 col-lg-offset-1">' . "\n";
 
-if ( $get_user_level != 4 ) {
+if ($get_user_level ne '4' && &foreign_available("system-status")
+    || (!&foreign_available("system-status")
+        && (   $get_user_level eq '1'
+            || $get_user_level eq '2'
+            || $get_user_level eq '3' )
+    )
+    )
+{
     print
         '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">'
         . "\n";
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">' . &text('body_header0') . (
-        (          $get_user_level != 2
-                && $get_user_level != 3
+        (          $get_user_level ne '1'
+                && $get_user_level ne '2'
+                && $get_user_level ne '3'
                 && &foreign_available("webmin")
         )
         ? '<a href="/?updated" target="_top" data-href="'
             . $gconfig{'webprefix'}
             . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>
-        <button type="button" class="btn btn-primary" style="display: none; visibility: hidden" data-toggle="modal" data-target="#update_notice"></button>'
+            <button type="button" class="btn btn-primary" style="display: none; visibility: hidden" data-toggle="modal" data-target="#update_notice"></button>'
         : ''
+        )
+        . (
+        $cloudmin_config{'docs_link'} && &foreign_available("server-manager")
+        ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-6px '
+            . ( $get_user_level eq '0' ? '15' : '-11' )
+            . 'px;" href="'
+            . $cloudmin_config{'docs_link'}
+            . '"target="_blank"><i class="fa fa-book"> </i> '
+            . $cloudmin_config{'docs_text'} . '</a>'
+        : undef
+        )
+        . '
+            '
+        . (
+        $virtualmin_config{'docs_link'} && &foreign_available("virtual-server")
+        ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-6px '
+            . ( $get_user_level eq '0' ? '15' : '-11' )
+            . 'px;" href="'
+            . $virtualmin_config{'docs_link'}
+            . '"target="_blank"><i class="fa fa-book"> </i> '
+            . $virtualmin_config{'docs_text'} . '</a>'
+        : undef
         )
         . '
     </h3>' . "\n";
@@ -58,9 +91,9 @@ if ( $get_user_level != 4 ) {
 # Get system info to show
 my @info = &list_combined_system_info( { 'qshow', 1 } );
 
-if ( $get_user_level == 0 || $get_user_level == 4 ) {
+if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
-    if ( $get_user_level != 4 ) {
+    if ( $get_user_level ne '4' && &foreign_available("system-status") ) {
 
         my ($cpu_percent,        $mem_percent,
             $virt_percent,       $disk_percent,
@@ -79,8 +112,8 @@ if ( $get_user_level == 0 || $get_user_level == 4 ) {
 
         # Easypie charts
         if ( __settings('settings_sysinfo_easypie_charts') ne 'false' ) {
-            print_easypie_charts( $cpu_percent, $mem_percent, $virt_percent,
-                $disk_percent );
+            print_easypie_charts( $cpu_percent, $mem_percent,
+                $virt_percent, $disk_percent );
         }
 
         print '<table class="table table-hover">' . "\n";
@@ -200,12 +233,17 @@ if ( $get_user_level == 0 || $get_user_level == 4 ) {
 
         print '</div>';    # Panel Body
         print '</div>';    # Panel Default
+
+    }
+    elsif ( $get_user_level ne '4' ) {
+        print &ui_alert_box( $text{'sysinfo_system_status_warning'},
+            'warn', undef, 0 );
     }
 
     print_extended_sysinfo(@info);
 
 }
-elsif ( $get_user_level == 2 ) {
+elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     # Domain owner
     # Show a server owner info about one domain
@@ -229,6 +267,13 @@ elsif ( $get_user_level == 2 ) {
         my $__virtual_server_version
             = $virtual_server::module_info{'version'};
         $__virtual_server_version =~ s/.gpl//igs;
+        $__virtual_server_version
+            .= ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+            . $text{'theme_sysinfo_vmdocs'}
+            . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://www.virtualmin.com/documentation/users/'
+            . ( $get_user_level eq '1' ? 'reseller' : 'server-owner' )
+            . '" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>';
+
         &print_table_row( $text{'right_virtualmin'},
             $__virtual_server_version );
     }
@@ -257,36 +302,39 @@ elsif ( $get_user_level == 2 ) {
     }
     &print_table_row( $text{'theme_version'}, $authentic_theme_version );
 
-    # Print domain name
-    $dname
-        = defined(&virtual_server::show_domain_name)
-        ? &virtual_server::show_domain_name($d)
-        : $d->{'dom'};
-    &print_table_row( $text{'right_dom'}, $dname );
+    if ( $get_user_level ne '1' ) {
 
-    @subs = ( $d, virtual_server::get_domain_by( "parent", $d->{'id'} ) );
-    @reals = grep { !$_->{'alias'} } @subs;
-    @mails = grep { $_->{'mail'} } @subs;
-    ( $sleft, $sreason, $stotal, $shide )
-        = virtual_server::count_domains("realdoms");
-    if ( $sleft < 0 || $shide ) {
-        &print_table_row( $text{'right_subs'}, scalar(@reals) );
-    }
-    else {
-        &print_table_row( $text{'right_subs'},
-            text( 'right_of', scalar(@reals), $stotal ) );
-    }
+        # Print domain name
+        $dname
+            = defined(&virtual_server::show_domain_name)
+            ? &virtual_server::show_domain_name($d)
+            : $d->{'dom'};
+        &print_table_row( $text{'right_dom'}, $dname );
 
-    @aliases = grep { $_->{'alias'} } @subs;
-    if (@aliases) {
-        ( $aleft, $areason, $atotal, $ahide )
-            = virtual_server::count_domains("aliasdoms");
-        if ( $aleft < 0 || $ahide ) {
-            &print_table_row( $text{'right_aliases'}, scalar(@aliases) );
+        @subs = ( $d, virtual_server::get_domain_by( "parent", $d->{'id'} ) );
+        @reals = grep { !$_->{'alias'} } @subs;
+        @mails = grep { $_->{'mail'} } @subs;
+        ( $sleft, $sreason, $stotal, $shide )
+            = virtual_server::count_domains("realdoms");
+        if ( $sleft < 0 || $shide ) {
+            &print_table_row( $text{'right_subs'}, scalar(@reals) );
         }
         else {
-            &print_table_row( $text{'right_aliases'},
-                text( 'right_of', scalar(@aliases), $atotal ) );
+            &print_table_row( $text{'right_subs'},
+                text( 'right_of', scalar(@reals), $stotal ) );
+        }
+
+        @aliases = grep { $_->{'alias'} } @subs;
+        if (@aliases) {
+            ( $aleft, $areason, $atotal, $ahide )
+                = virtual_server::count_domains("aliasdoms");
+            if ( $aleft < 0 || $ahide ) {
+                &print_table_row( $text{'right_aliases'}, scalar(@aliases) );
+            }
+            else {
+                &print_table_row( $text{'right_aliases'},
+                    text( 'right_of', scalar(@aliases), $atotal ) );
+            }
         }
     }
 
@@ -376,7 +424,7 @@ elsif ( $get_user_level == 2 ) {
 
     print_extended_sysinfo(@info);
 }
-elsif ( $get_user_level == 3 ) {
+elsif ( $get_user_level eq '3' ) {
     print '<table class="table table-hover">' . "\n";
 
     # Host and login info

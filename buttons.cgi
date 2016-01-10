@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -20,14 +20,14 @@ if (   __settings('settings_sysinfo_link_mini') ne 'false'
     print '</li>';
 }
 
-if ( __settings('settings_favorites') ne 'false' && $get_user_level == 0 ) {
+if ( __settings('settings_favorites') ne 'false' && $get_user_level eq '0' ) {
     print '<li class="user-link favorites cursor-pointer">';
     print '<span><i class="fa fa-fw fa-star"></i></span>';
     print '</li>';
 }
 
 if ( __settings('settings_theme_options_button') ne 'false'
-    && $get_user_level == 0 )
+    && $get_user_level eq '0' )
 {
     print '<li class="user-link theme-options cursor-pointer">';
     print

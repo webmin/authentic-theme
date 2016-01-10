@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -165,19 +165,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1731" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1731" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1740" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1731" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1740" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1731" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1740" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -838,34 +838,42 @@ sub theme_ui_hr {
 }
 
 sub theme_ui_alert_box {
-    my ( $msg, $class ) = @_;
+    my ( $msg, $class, $style, $new_line ) = @_;
     my ( $rv, $type, $tmsg, $fa );
+    my %text = &load_language($current_theme);
 
     if ( $class eq "success" ) {
-        $type = 'alert-success', $tmsg = 'Success!', $fa = 'fa-check-circle';
+        $type     = 'alert-success',
+            $tmsg = ( $text{'theme_global_success'} . '!' ),
+            $fa   = 'fa-check-circle';
     }
     elsif ( $class eq "info" ) {
-        $type = 'alert-info', $tmsg = 'Information!', $fa = 'fa-info-circle';
+        $type     = 'alert-info',
+            $tmsg = ( $text{'theme_global_info'} . '!' ),
+            $fa   = 'fa-info-circle';
     }
     elsif ( $class eq "warn" ) {
-        $type = 'alert-warning', $tmsg = 'Warning!',
-            $fa = 'fa-exclamation-triangle';
+        $type     = 'alert-warning',
+            $tmsg = ( $text{'theme_global_warning'} . '!' ),
+            $fa   = 'fa-exclamation-circle';
     }
     elsif ( $class eq "danger" ) {
-        $type = 'alert-danger', $tmsg = 'Danger!', $fa = 'fa-bolt';
+        $type = 'alert-danger',
+            $tmsg = ( $text{'theme_global_error'} . '!' ), $fa = 'fa-bolt';
     }
 
     $rv
         .= '<div class="alert '
         . $type
-        . '" style="margin-bottom: 4px;">' . "\n";
+        . '" style="margin-bottom: 4px; '
+        . $style . '">' . "\n";
     $rv
         .= '<i class="fa fa-fw '
         . $fa
         . '"></i> <strong>'
         . $tmsg
         . '</strong>';
-    $rv .= '<br>' . "\n";
+    $rv .= ( $new_line ? '<br>' : '&nbsp;' ) . "\n";
     $rv .= $msg . "\n";
     $rv .= '</div>' . "\n";
 

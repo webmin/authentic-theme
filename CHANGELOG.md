@@ -1,6 +1,21 @@
 ##Changelog
 
-####Version 17.31 (January 01, 2016)
+####Version 17.40 (January 10, 2016)
+* Added triggers to automatically dismiss loader and perform window autoscroll in _Virtualmin/Cloudmin_ [#39237](https://www.virtualmin.com/node/39237)
+* Added documentation links next to product's version on _System Information_ page. Custom documentation links set in _Virtualmin/Cloudmin_ configuration are now also supported [#39225](https://www.virtualmin.com/node/39225)
+* Added sorting/filter ability for _Installed Scripts_ in _Virtualmin_ [#39237](https://www.virtualmin.com/node/39237)
+* Added an option to show HTML snippet for administrators only
+* Added an ability to edit `custom-lang` file from theme extensions' editor
+* Changed previously removed _Virtualmin/Cloudmin_ links from _Webmin_ navigation menu from enforced to optional [#39237](https://www.virtualmin.com/node/39237)
+* Fixed hardcoded strings in some _Perl_ and _JavaScript_ code
+* Fixed hotkeys execution to be performed in the right context
+* Fixed removed obsolete logo options in _Virtualmin/Cloudmin_ configuration page [#39225](https://www.virtualmin.com/node/39225)
+* Fixed missing input field on the navigation menu, when domain display limits are imposed using _Virtualmin Configuration_ [#39219](https://www.virtualmin.com/node/39219)
+* Fixed _Notification Slider_ to be unfixed disregard of visibility settings on mobile devices
+* Fixed bugs [#321](https://github.com/qooob/authentic-theme/issues/321) [#322](https://github.com/qooob/authentic-theme/issues/322) [#323](https://github.com/qooob/authentic-theme/issues/323) [#326](https://github.com/qooob/authentic-theme/issues/326) [#328](https://github.com/qooob/authentic-theme/issues/328)
+* Fixed other bugs
+
+####Version 17.31 (January 1, 2016)
 * Added support for updated _Filemin_ in _Webmin_ 1.780
 * Fixed editor in _Filemin_ saving content incorrectly, when multiple files were opened at once
 * Fixed bugs [#315](https://github.com/qooob/authentic-theme/issues/315) [#317](https://github.com/qooob/authentic-theme/issues/317)
@@ -26,7 +41,7 @@
 * Added two themes for _Notification Slider_ - _Dim Grey (default)_ and _White_
 * Added _favicon_ notification counter, which enables _Webmin_ notifications seen anytime
 * Added arrows up/down navigation in autocomplete search box, through the history of previously executed shell commands
-* Added an ability for modules' developers to use `[data-pagescroll="true"]` to activate theme's page autoscroll feature
+* Added an ability for modules' developers to use on `<html>` tag `[data-pagescroll="true"]` attribute to activate theme's page autoscroll feature
 * Added an ability for modules' developers to use `[data-convertible-timestamp-full="unix-timestamp"]` and `[data-convertible-timestamp-short="unix-timestamp"]` attributes on the disired container to easily display user defined dates
 * Fixed bugs [#287](https://github.com/qooob/authentic-theme/issues/287) [#295](https://github.com/qooob/authentic-theme/issues/295) [#297](https://github.com/qooob/authentic-theme/issues/297) [#298](https://github.com/qooob/authentic-theme/issues/298)
 * Fixed other bugs and made dozens of improvements
