@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -118,6 +118,18 @@ function dblrclick(g) {
 	}
 }
 
+function is_module(a) {
+	if ($.inArray(a, t__wi_p.$("body").data("available-modules")) > -1) {
+		return true
+	} else {
+		return false
+	}
+}
+
+function lang(a) {
+	return t__wi_p.$("body").data("language-strings")[a]
+}
+
 function tab_action(d, c) {
 	if (document.forms[0] && document.forms[0][d]) {
 		document.forms[0][d].value = c
@@ -233,6 +245,18 @@ function messenger(d, g, f) {
 	})
 }
 
+function shortcut_control_checker(b) {
+	if (access_level() == 0) {
+		return true
+	} else {
+		if (is_module($.url(("/" + b)).attr("directory").replace(/\//g, ""))) {
+			return true
+		} else {
+			return false
+		}
+	}
+}
+
 function shortcut_control(b) {
 	if (settings_hotkeys_active) {
 		if (!(String.fromCharCode(b.which) == "1" && settings_hotkey_custom_1 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "2" && settings_hotkey_custom_2 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "3" && settings_hotkey_custom_3 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "4" && settings_hotkey_custom_4 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "5" && settings_hotkey_custom_5 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "6" && settings_hotkey_custom_6 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "7" && settings_hotkey_custom_7 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "8" && settings_hotkey_custom_8 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which) == "9" && settings_hotkey_custom_9 && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_favorites && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_sysinfo && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_slider && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_reload && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmail && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_usermin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_cloudmin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_virtualmin && b[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmin && b[settings_hotkey_toggle_modifier])) {
@@ -240,39 +264,39 @@ function shortcut_control(b) {
 		}
 		if (String.fromCharCode(b.which) == "1" && settings_hotkey_custom_1) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_1)
+			shortcut_control_checker(settings_hotkey_custom_1) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_1)
 		}
 		if (String.fromCharCode(b.which) == "2" && settings_hotkey_custom_2) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_2)
+			shortcut_control_checker(settings_hotkey_custom_2) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_2)
 		}
 		if (String.fromCharCode(b.which) == "3" && settings_hotkey_custom_3) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_3)
+			shortcut_control_checker(settings_hotkey_custom_3) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_3)
 		}
 		if (String.fromCharCode(b.which) == "4" && settings_hotkey_custom_4) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_4)
+			shortcut_control_checker(settings_hotkey_custom_4) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_4)
 		}
 		if (String.fromCharCode(b.which) == "5" && settings_hotkey_custom_5) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_5)
+			shortcut_control_checker(settings_hotkey_custom_5) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_5)
 		}
 		if (String.fromCharCode(b.which) == "6" && settings_hotkey_custom_6) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_6)
+			shortcut_control_checker(settings_hotkey_custom_6) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_6)
 		}
 		if (String.fromCharCode(b.which) == "7" && settings_hotkey_custom_7) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_7)
+			shortcut_control_checker(settings_hotkey_custom_7) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_7)
 		}
 		if (String.fromCharCode(b.which) == "8" && settings_hotkey_custom_8) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_8)
+			shortcut_control_checker(settings_hotkey_custom_8) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_8)
 		}
 		if (String.fromCharCode(b.which) == "9" && settings_hotkey_custom_9) {
 			b.preventDefault();
-			t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_9)
+			shortcut_control_checker(settings_hotkey_custom_9) && t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + settings_hotkey_custom_9)
 		}
 		if (String.fromCharCode(b.which).toLowerCase() == settings_hotkey_toggle_key_webmin && t__wi_p.$('.switch-toggle input[id="open_webmin"]') && !t__wi_p.$('.switch-toggle input[id="open_webmin"]').is(":checked") && (product_name() != "Usermin" && product_name() != "Mail")) {
 			b.preventDefault();
@@ -428,14 +452,17 @@ function t_sel_i() {
 		$.each($("select > option"), function () {
 			if ($(this).attr("style") && $(this).attr("style").indexOf("italic") > -1) {
 				if ($(".select2-selection > .select2-selection__rendered").text().trim() == $(this).text().trim()) {
-					$(".select2-selection > .select2-selection__rendered").attr("style", "color: #f95753 !important; font-style:italic !important; ")
+					$(".select2-selection > .select2-selection__rendered").attr("style", "color: #e73c38 !important; font-style:italic !important; ")
 				}
 			}
 		});
 		t__wi_p.$("aside select").on("select2:open", function (b) {
 			$.each($("select > option"), function () {
 				if ($(this).attr("style") && $(this).attr("style").indexOf("italic") > -1) {
-					$("body").find('li[id$="' + $(this).attr("value") + '"]').attr("style", "color: #e8433f !important; font-style:italic !important; ")
+					var a = $(this);
+					setTimeout(function () {
+						t__wi_p.$("body").find('li[id$="' + a.attr("value") + '"]').attr("style", "color: #e73c38 !important; font-style:italic !important; ")
+					}, 1)
 				}
 			})
 		});
@@ -556,7 +583,7 @@ function t__au__c___i(u) {
 			value: b,
 			url: a,
 			data: {
-				category: product_name(1)
+				category: product_name_lang(1)
 			}
 		}
 	});
@@ -635,7 +662,7 @@ function t__au__c___i(u) {
 			value: b,
 			url: a,
 			data: {
-				category: t__wi_p.$("aside .select2-selection__rendered").text() ? '<span style="font-style: italic">' + t__wi_p.$("aside .select2-selection__rendered").text() + "</span>" : product_name(0)
+				category: t__wi_p.$("aside .select2-selection__rendered").text() ? '<span style="font-style: italic">' + t__wi_p.$("aside .select2-selection__rendered").text() + "</span>" : product_name_lang(0)
 			}
 		}
 	});
@@ -713,6 +740,11 @@ function container_fluid_size() {
 			if (t__wi_p.$(".__logo")) {
 				t__wi_p.$(".__logo").css("transform", "translate(0px, 0px)")
 			}
+		}
+		if (settings_notification_slider_fixed !== true || t__wi_p.$(".mobile-menu-toggler:visible").length) {
+			n___p__f(0)
+		} else {
+			n___p__f(1)
 		}
 	}
 }
@@ -1223,7 +1255,7 @@ function __sam(h, k) {
 }
 
 function __dpt() {
-	if (!localStorage.getItem("system_default_title")) {
+	if (!localStorage.getItem("system_default_title") || t__wi_p.$___________initial === 1) {
 		localStorage.setItem("system_default_title", t__wi_p.document.title)
 	}
 	if (t__wi_p.$('li.sub_active a[href*="filemin"]').length) {
@@ -1434,32 +1466,32 @@ function ___f__tw() {
 		$("body").on("click", 'li.filemin-button-copy:not(".disabled") a', function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-clone">&nbsp;&nbsp;&nbsp;</i>Copying selected. Please wait...', 5, "info");
+			messenger('<i class="fa fa-clone">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_copying_selected") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("copy", false)
 		});
 		$("body").on("click", 'li.filemin-button-cut:not(".disabled") a', function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-scissors">&nbsp;&nbsp;&nbsp;</i>Cutting selected. Please wait...', 5, "info");
+			messenger('<i class="fa fa-scissors">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_cutting_selected") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("cut", false)
 		});
 		$("body").on("click", 'li.filemin-button-paste:not(".disabled") a', function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>Pasting from clipboard. Please wait...', 5, "info");
+			messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_pasting_selected") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("paste", false)
 		});
 		$("body").on("click", 'a[href^="extract.cgi"]', function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>Unpacking archive. Please wait...', 5, "info");
+			messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>' + lang("unpacking_archive") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("extract", $(this).attr("href"))
 		});
 		$("body").find('#removeDialog button[type="button"][onclick="removeSelected()"]').removeAttr("onclick").addClass("_at_filemin_delete_submit");
 		$("body").on("click", "#removeDialog button._at_filemin_delete_submit", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-trash-o">&nbsp;&nbsp;&nbsp;</i>Deleting selected...', 5, "warning");
+			messenger('<i class="fa fa-trash-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_deleting_selected") + " " + lang("theme_xhred_global_please_wait"), 5, "warning");
 			__f____a("delete", false);
 			modal_dismiss()
 		});
@@ -1474,7 +1506,7 @@ function ___f__tw() {
 		$("body").on("click", "#renameDialog button._at_filemin_rename_submit", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-i-cursor">&nbsp;&nbsp;&nbsp;</i>Renaming selected. Please wait...', 5, "info");
+			messenger('<i class="fa fa-i-cursor">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_renaming_selected") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("rename", false)
 		});
 		$("body").on("submit", "#renameDialog", function (b) {
@@ -1503,7 +1535,7 @@ function ___f__tw() {
 		$("body").on("click", "#createFolderDialog button._at_filemin_create_folder_submit", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>Creating folder `<samp>' + $('#createFolderForm input[name="name"]').val() + "</samp>`. Please wait...", 5, "info");
+			messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_creating_folder") + " `<samp>" + $('#createFolderForm input[name="name"]').val() + "</samp>`. " + lang("theme_xhred_global_please_wait") + "", 5, "info");
 			__f____a("create_folder", false)
 		});
 		$("body").on("submit", "#createFolderForm", function (b) {
@@ -1533,7 +1565,7 @@ function ___f__tw() {
 		$("body").on("click", "#createFileDialog button._at_filemin_create_file_submit", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>Creating file `<samp>' + $('#createFileForm input[name="name"]').val() + "</samp>`. Please wait...", 5, "info");
+			messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_creating_file") + " `<samp>" + $('#createFileForm input[name="name"]').val() + "</samp>`. " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("create_file", false)
 		});
 		$("body").on("submit", "#createFileForm", function (b) {
@@ -1563,7 +1595,7 @@ function ___f__tw() {
 		$("body").on("click", "#downFromUrlDialog button.filemin-submitter-url_download", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-download">&nbsp;&nbsp;&nbsp;</i>Downloading from <samp>' + $.url($('#downFromUrlForm input[name="link"]').val()).attr("host") + "</samp>. Please wait...", 5, "info");
+			messenger('<i class="fa fa-download">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_downloading_from") + " <samp>" + $.url($('#downFromUrlForm input[name="link"]').val()).attr("host") + "</samp>. " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("url_download", false)
 		});
 		$("body").on("submit", "#downFromUrlForm", function (b) {
@@ -1636,7 +1668,7 @@ function ___f__tw() {
 		$("body").on("click", "#chmodDialog button.filemin-submitter-chmod", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>Setting permissions to <samp><em>' + $("#perms").val() + "</em></samp> on selected file(s). Please wait...", 5, "info");
+			messenger('<i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_setting_permissions").replace("%value", $("#perms").val()) + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("chmod", [$("#perms").val(), $('#chmodForm select[name="applyto"] option:selected').val()])
 		});
 		$("#chmodDialog").on("shown.bs.modal", function () {
@@ -1651,7 +1683,7 @@ function ___f__tw() {
 		$("body").on("click", "#chownDialog button.filemin-submitter-chown", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>Changing ownership to <samp><em>' + $('#chownForm input[name="owner"]').val() + ":" + $('#chownForm input[name="group"]').val() + "</em></samp> on selected file(s). Please wait...", 5, "info");
+			messenger('<i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_changing_ownership").replace("%value", $('#chownForm input[name="owner"]').val() + ":" + $('#chownForm input[name="group"]').val()) + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("chown", [$('#chownForm input[name="owner"]').val(), $('#chownForm input[name="group"]').val(), $("#chown-recursive").prop("checked")])
 		});
 		$("#chownDialog").on("shown.bs.modal", function () {
@@ -1687,7 +1719,7 @@ function ___f__tw() {
 		$("body").on("click", "#compressDialog button.filemin-submitter-compress", function (b) {
 			b.preventDefault();
 			b.stopPropagation();
-			messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>Compressing selected. Please wait...', 5, "info");
+			messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_compressing_selected") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			__f____a("compress", [$('#compressSelectedForm input[name="filename"]').val(), $('#compressSelectedForm select[name="method"] option:selected').val()])
 		});
 		$('#compressDialog input[name="filename"]').on("keyup change click input", function (d) {
@@ -1719,7 +1751,7 @@ function ___f__tw() {
 		$("body").on("click", ".btn-group.pull-right > button:eq(2)", function (c) {
 			var d = $.url(t___wi.location).param("path");
 			__f____r("get", "index.cgi?path=" + (d ? d : ""), false, 0);
-			messenger('<i class="fa fa-refresh">&nbsp;&nbsp;&nbsp;</i>Refreshing folder content. Please wait...', 2, "info")
+			messenger('<i class="fa fa-refresh">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_refreshing") + " " + lang("theme_xhred_global_please_wait"), 2, "info")
 		});
 		setTimeout(function () {
 			typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = true : false;
@@ -1824,7 +1856,10 @@ function t__cm___init(d, f, h, g) {
 			$current_file = $current_file.split("/")[1]
 		}
 		if ($("textarea").length === 1 && $("textarea").parent("td.td_tag").length === 0 || $(".jsPanel").length) {
-			if ($source_path == $_____link + "settings-editor_read.cgi" || (product_name(1).toLowerCase() == "virtualmin" && ($current_page_full == "/apache/manual_form.cgi" || $current_page_full == "/spam/edit_manual.cgi" || $current_page_full == "/virtual-server/edit_html.cgi" || $current_page_full == "/virtual-server/apply_style.cgi" || $current_page_full == "/phpini/edit_manual.cgi" || $('body[class*="filemin"]') && $('body[class*="filemin"]').length)) || (product_name(1).toLowerCase() == "cloudmin" && ($('body:not([class*="filemin"])'))) || product_name(1).toLowerCase() != "virtualmin" && product_name(1).toLowerCase() != "cloudmin" && $current_page_full != $_____link_full + "/virtualmin-sqlite/" && $current_page_full != $_____link_full + "/updown/" && $current_directory != $_____link + "firewalld/" && $current_directory != $_____link + "firewall/" && $current_directory != $_____link + "net/" && $current_directory != $_____link + "acl/" && $current_directory != $_____link + "inetd/" && $current_directory != $_____link + "nis/" && $current_directory != $_____link + "pap/" && $current_directory != $_____link + "ppp-client/" && $current_directory != $_____link + "pptp-client/" && $current_directory != $_____link + "pptp-server/" && $current_directory != $_____link + "shorewall/" && $current_directory != $_____link + "shorewall6/" && $current_directory != $_____link + "raid/" && $current_directory != $_____link + "lvm/" && $current_directory != $_____link + "fdisk/" && $current_directory != $_____link + "lpadmin/" && $current_directory != $_____link + "virtualmin-registrar/" && $current_directory && $current_directory.indexOf("cluster") === -1 && $current_file != "edit_access.cgi" && $current_file != "edit_file.cgi" && $current_file != "edit_referers.cgi" && $current_file != "edit_lock.cgi" && $current_file != "edit_mobile.cgi" && $current_file != "edit_user.cgi" && $current_file != "edit_unix.cgi" && $current_file != "edit_pass.cgi" && $current_file != "edit_dump.cgi" && $current_file != "edit_cron.cgi" && $current_file != "gbatch_form.cgi" && $current_file != "batch_form.cgi" && $current_file != "edit_score.cgi" && $current_file != "edit_ports.cgi" && $current_file != "acl.cgi" && $current_file != "edit_recs.cgi" && $current_file != "edit_dirs.cgi" && $current_page_full != $_____link_full + "/config.cgi" && $current_page_full != $_____link_full + "/apache/edit_defines.cgi" && $current_page_full != $_____link_full + "/apache/edit_gmime_type.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_filter.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_action.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_jail.cgi" && $current_page_full != $_____link_full + "/usermin/edit_configs.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/ticket.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/login.cgi" && $current_page_full != $_____link_full + "/webminlog/view.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi" && $current_page_full != $_____link_full + "/mysql/exec_form.cgi" && $current_page_full != $_____link_full + "/postgresql/exec_form.cgi" && $('body[class*="filemin"]') && $__source_file != "config.cgi") {
+			if ($source_path == $_____link + "settings-editor_read.cgi" || (product_name(1).toLowerCase() == "virtualmin" && ($current_page_full == "/apache/manual_form.cgi" || $current_page_full == "/spam/edit_manual.cgi" || $current_page_full == "/virtual-server/edit_html.cgi" || $current_page_full == "/virtual-server/apply_style.cgi" || $current_page_full == "/phpini/edit_manual.cgi" || $('body[class*="filemin"]') && $('body[class*="filemin"]').length)) || (product_name(1).toLowerCase() == "cloudmin" && ($('body:not([class*="filemin"])'))) || product_name(1).toLowerCase() != "virtualmin" && product_name(1).toLowerCase() != "cloudmin" && $current_page_full != $_____link_full + "/virtualmin-sqlite/" && $current_page_full != $_____link_full + "/updown/" && $current_directory != $_____link + "firewalld/" && $current_directory != $_____link + "firewall/" && $current_directory != $_____link + "net/" && $current_directory != $_____link + "acl/" && $current_directory != $_____link + "inetd/" && $current_directory != $_____link + "nis/" && $current_directory != $_____link + "pap/" && $current_directory != $_____link + "ppp-client/" && $current_directory != $_____link + "pptp-client/" && $current_directory != $_____link + "pptp-server/" && $current_directory != $_____link + "shorewall/" && $current_directory != $_____link + "shorewall6/" && $current_directory != $_____link + "raid/" && $current_directory != $_____link + "lvm/" && $current_directory != $_____link + "fdisk/" && $current_directory != $_____link + "lpadmin/" && $current_directory != $_____link + "virtualmin-registrar/" && $current_directory && $current_directory.indexOf("cluster") === -1 && $current_file != "edit_access.cgi" && $current_file != "edit_file.cgi" && $current_file != "edit_referers.cgi" && $current_file != "edit_lock.cgi" && $current_file != "edit_mobile.cgi" && $current_file != "edit_user.cgi" && $current_file != "edit_unix.cgi" && $current_file != "edit_pass.cgi" && $current_file != "edit_dump.cgi" && $current_file != "edit_cron.cgi" && $current_file != "gbatch_form.cgi" && $current_file != "batch_form.cgi" && $current_file != "edit_score.cgi" && $current_file != "edit_ports.cgi" && $current_file != "acl.cgi" && $current_file != "edit_recs.cgi" && $current_file != "edit_dirs.cgi" && $current_page_full != $_____link_full + "/config.cgi" && $current_page_full != $_____link_full + "/backup-config/edit.cgi" && $current_page_full != $_____link_full + "/updown/index.cgi" && $current_page_full != $_____link_full + "/apache/edit_defines.cgi" && $current_page_full != $_____link_full + "/apache/edit_gmime_type.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_filter.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_action.cgi" && $current_page_full != $_____link_full + "/fail2ban/edit_jail.cgi" && $current_page_full != $_____link_full + "/usermin/edit_configs.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/ticket.cgi" && $current_page_full != $_____link_full + "/virtualmin-support/login.cgi" && $current_page_full != $_____link_full + "/webminlog/view.cgi" && $current_page_full != $_____link_full + "/bind8/slave_form.cgi" && $current_page_full != $_____link_full + "/bind8/stub_form.cgi" && $current_page_full != $_____link_full + "/bind8/mass_form.cgi" && $current_page_full != $_____link_full + "/mysql/exec_form.cgi" && $current_page_full != $_____link_full + "/postgresql/exec_form.cgi" && $('body[class*="filemin"]') && $__source_file != "config.cgi") {
+				if ($__relative_url == "/config.cgi?server-manager" || $("textarea").attr("id") === "notes") {
+					return
+				}
 				window["__cm_editor_" + g] = CodeMirror.fromTextArea(u, {
 					tabMode: "indent",
 					matchBrackets: true,
@@ -1902,8 +1937,26 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.31 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.40 https://github.com/qooob/authentic-theme")
 	}
+	$.ajax({
+		type: "GET",
+		url: $_____link_full + "/index.cgi/?xhr-get_theme_language=1",
+		data: false,
+		dataType: "text",
+		success: function (a) {
+			t__wi_p.$("body").data("language-strings", JSON.parse(a))
+		}
+	});
+	$.ajax({
+		type: "GET",
+		url: $_____link_full + "/index.cgi/?xhr-get_available_modules=1",
+		data: false,
+		dataType: "text",
+		success: function (a) {
+			t__wi_p.$("body").data("available-modules", JSON.parse(a))
+		}
+	});
 	typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 	typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
 	$(function () {
@@ -1911,6 +1964,9 @@ if (t___wi.location == t__wi_p.location) {
 	});
 
 	function __si__bg_upd_exec() {
+		if (t__wi_p.$___ajax_requested_url.indexOf("?xhr-buttons=1") > -1 || t__wi_p.$___ajax_requested_url.indexOf("?xhr-navigation=1") > -1) {
+			return
+		}
 		if (t__wi_p.$('iframe[name="page"]').contents().find("body .modal.in").length) {
 			return
 		}
@@ -1976,7 +2032,7 @@ if (t___wi.location == t__wi_p.location) {
 						if (h == "csf_title" || h == "csf_remote_version" || h == "authentic_remote_version" || h == "package_message") {
 							if (h == "package_message" && (localStorage.getItem("sysinfo_" + h) != l || localStorage.getItem("sysinfo_package_message_initial") == 1) && l && l.indexOf("badge-danger") > -1) {
 								localStorage.setItem("notifications_" + $__id__ + "_package_message", JSON.stringify({
-									title: "Packages Update",
+									title: lang("theme_xhred_notifications_packages_updates"),
 									time: $__id__,
 									timestamp: $__id__,
 									message: ($(l).html().replace(/badge-danger/g, "badge-success")),
@@ -1994,10 +2050,10 @@ if (t___wi.location == t__wi_p.location) {
 								if (localStorage.getItem("sysinfo_theme_current_version") && localStorage.getItem("sysinfo_authentic_remote_version")) {
 									if (h == "authentic_remote_version" && localStorage.getItem("sysinfo_theme_current_version") != l && l != "0" && l != "0.00") {
 										localStorage.setItem("notifications_" + $__id__ + "_authentic_remote_version", JSON.stringify({
-											title: "Theme Update",
+											title: lang("theme_xhred_notifications_theme_update"),
 											time: $__id__,
 											timestamp: $__id__,
-											message: "A new version <em>" + l + '</em> of <strong>Authentic Theme</strong> is available. Please update.&nbsp;&nbsp;<span class="label label-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="/webmin/edit_themes.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></span>',
+											message: lang("theme_xhred_notifications_theme_update_message").replace("%v", l) + '&nbsp;&nbsp;<span class="label label-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="/webmin/edit_themes.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></span>',
 											readStatus: 0,
 											type: h,
 											link: $_____link_full + "/sysinfo.cgi"
@@ -2011,10 +2067,10 @@ if (t___wi.location == t__wi_p.location) {
 								if (localStorage.getItem("sysinfo_csf_current_version") && localStorage.getItem("sysinfo_csf_current_version") != null && localStorage.getItem("sysinfo_csf_remote_version")) {
 									if (h == "csf_remote_version" && localStorage.getItem("sysinfo_csf_current_version") != l && l != "0" && l != "0.00") {
 										localStorage.setItem("notifications_" + $__id__ + "_csf_remote_version", JSON.stringify({
-											title: "Firewall Update",
+											title: lang("theme_xhred_notifications_firewall_update"),
 											time: $__id__,
 											timestamp: $__id__,
-											message: "A new version <em>" + l + "</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update",
+											message: lang("theme_xhred_notifications_firewall_update_message").replace("%v", l),
 											readStatus: 0,
 											type: h,
 											link: $_____link_full + "/csf"
@@ -2026,10 +2082,10 @@ if (t___wi.location == t__wi_p.location) {
 							}
 							if (h == "csf_title" && l && l.indexOf("label-danger") > -1 && localStorage.getItem("sysinfo_csf_not_running") != 1) {
 								localStorage.setItem("notifications_" + $__id__ + "_csf_title", JSON.stringify({
-									title: "Firewall Danger",
+									title: lang("theme_xhred_notifications_firewall_danger"),
 									time: $__id__,
 									timestamp: $__id__,
-									message: 'It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don\'t leave your server exposed, check for the firewall settings (' + moment.unix($__id__).format(settings_window_replaced_timestamps_format_short) + ")",
+									message: lang("theme_xhred_notifications_firewall_danger_message").replace("%v", moment.unix($__id__).format(settings_window_replaced_timestamps_format_short)),
 									readStatus: 0,
 									type: h,
 									link: $_____link_full + "/csf"
@@ -2056,7 +2112,7 @@ if (t___wi.location == t__wi_p.location) {
 								o = o.replace("*Port Scan*", ((u && d) ? 'Port <i data-port-href="http://www.speedguide.net/port.php?port=' + d + '" class="badge bg-dark-red">' + d + "</i> scan" : "Port scan"));
 								if (!localStorage.getItem("allowed_trigger_" + (t + m.replace(/\./g, "0")) + "_csf_deny")) {
 									localStorage.setItem("notifications_" + (t + m.replace(/\./g, "0")) + "_csf_deny", JSON.stringify({
-										title: "Firewall Warning",
+										title: lang("theme_xhred_notifications_firewall_warning"),
 										time: $__id__,
 										timestamp: $__id__,
 										message: o + ((u && d) ? " <span>(" + u + ":" + d + ")</span>" : ""),
@@ -2619,7 +2675,7 @@ if (t___wi.location == t__wi_p.location) {
 	});
 	$(".right-side-tabs").on("click contextmenu", "a.list-group-item", function (a) {
 		a.preventDefault();
-		if (!t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__num()) {
+		if (typeof t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__num == "function" && !t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__num()) {
 			a.preventDefault();
 			a.stopPropagation();
 			return
@@ -2843,12 +2899,12 @@ if (t___wi.location == t__wi_p.location) {
 					}
 					if (j === "copy") {
 						setTimeout(function () {
-							messenger('<i class="fa fa-clone">&nbsp;&nbsp;&nbsp;</i>Copy to clipboard successful', 5, "success")
+							messenger('<i class="fa fa-clone">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_copying_successful"), 5, "success")
 						}, 10)
 					} else {
 						if (j === "cut") {
 							setTimeout(function () {
-								messenger('<i class="fa fa-scissors">&nbsp;&nbsp;&nbsp;</i>Cut to clipboard successful', 5, "warning")
+								messenger('<i class="fa fa-scissors">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_cutting_successful"), 5, "warning")
 							}, 10)
 						}
 					}
@@ -2871,7 +2927,7 @@ if (t___wi.location == t__wi_p.location) {
 						if (!localStorage.copy) {
 							$(".filemin-button-paste").addClass("disabled")
 						}
-						messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>Paste from clipboard was successful', 5, "success")
+						messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_pasting_successful"), 5, "success")
 					}
 					__f___u("upd", $(a).find("#list_form table").find(".ui_checked_columns"), 1, j)
 				},
@@ -2888,7 +2944,7 @@ if (t___wi.location == t__wi_p.location) {
 					if (!$(a).find("#list_form").length) {
 						messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>' + $(a).find(".panel-body").html(), 10, "error")
 					} else {}
-					messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>Extracting archive...', 5, "info");
+					messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_extracting_archive") + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 					__f___u("upd", $(a).find("#list_form table").find(".ui_checked_columns"), 0, j)
 				},
 				error: function (a) {}
@@ -2904,7 +2960,7 @@ if (t___wi.location == t__wi_p.location) {
 				data: false,
 				dataType: "text",
 				success: function (a) {
-					messenger('<i class="fa fa-bookmark-o">&nbsp;&nbsp;&nbsp;</i>Bookmark added successfully', 5, "info")
+					messenger('<i class="fa fa-bookmark-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_bookmark_success").replace("%value", (l ? l : "/")), 5, "info")
 				},
 				error: function (a) {}
 			})
@@ -3013,7 +3069,7 @@ if (t___wi.location == t__wi_p.location) {
 			var h = $('#list_form > input[type="hidden"][name="path"]').val(),
 				k = $("#searchForm").find('input[name="query"]').val();
 			modal_dismiss();
-			messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>Searching <em>`' + $('#searchForm input[name="query"]').val() + "`</em>. Please wait...", 5, "info");
+			messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_searching").replace("%value", $('#searchForm input[name="query"]').val()) + " " + lang("theme_xhred_global_please_wait"), 5, "info");
 			$.ajax({
 				type: "POST",
 				url: $_____link_full + "/" + __f___mn() + "/search.cgi",
@@ -3045,12 +3101,12 @@ if (t___wi.location == t__wi_p.location) {
 					$_br = $(".breadcrumb > li:last-child");
 					$_br.html($_br.html() + '<span class="__filemin-search-results">' + ($(".breadcrumb > li:last-child a i").hasClass("fa-search") ? "&nbsp;&nbsp;&nbsp;/&nbsp;" : "") + '&nbsp;&nbsp;:&nbsp;&nbsp;<span class="text-primary __filemin-search-results-data cursor-pointer">`<em>' + k + "</em>`</span></span>");
 					if (__list_table_total_rows > 1) {
-						messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>Found <samp>' + __list_table_total_rows + "</samp> matches", 5, "success")
+						messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_search_founds").replace("%value", __list_table_total_rows), 5, "success")
 					} else {
 						if (__list_table_total_rows == 1) {
-							messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>Found <samp>1</samp> match', 5, "success")
+							messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_search_found"), 5, "success")
 						} else {
-							messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>No matches found', 5, "warning")
+							messenger('<i class="fa fa-search">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_search_no_matches"), 5, "warning")
 						}
 					}
 					if (settings_favorites) {
@@ -3285,7 +3341,7 @@ if (t___wi.location == t__wi_p.location) {
 						if (t___wi.document.activeElement && $(t___wi.document.activeElement).is('a[href^="edit_file.cgi"]')) {
 							return
 						}
-						messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Nothing is selected!', 3, "warning");
+						messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_nothing_is_selected"), 3, "warning");
 						return
 					}
 					if (!c.shiftKey && !c.ctrlKey && !c.altKey && !c.metaKey) {
@@ -3425,7 +3481,7 @@ if (t___wi.location == t__wi_p.location) {
 							__f___cs()
 						}
 					}
-					if (h == 118 && !c.shiftKey) {
+					if (h == 118 && !c.shiftKey && !c.ctrlKey) {
 						if (!$(".modal.in").length) {
 							c.preventDefault();
 							c.stopPropagation();
@@ -3504,7 +3560,7 @@ if (t___wi.location == t__wi_p.location) {
 											B.find('form[action="save_file.cgi"]').submit(function (x) {
 												x.preventDefault();
 												x.stopPropagation();
-												messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>Saving file `<samp><em>' + I + "</em></samp>`. Please wait...", 2, "info");
+												messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_saving_file").replace("%value", I) + " " + lang("theme_xhred_global_please_wait"), 2, "info");
 												$.ajax({
 													type: "POST",
 													url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
@@ -3520,7 +3576,7 @@ if (t___wi.location == t__wi_p.location) {
 															J();
 															return
 														}
-														messenger('<i class="fa fa-check-circle">&nbsp;&nbsp;&nbsp;</i>File `<samp><em>' + I + "</em></samp>` has been successfully saved", 3, "success");
+														messenger('<i class="fa fa-check-circle">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_file_saved").replace("%value", I), 3, "success");
 														J()
 													}
 												})
@@ -3548,7 +3604,7 @@ if (t___wi.location == t__wi_p.location) {
 								__f___cs()
 							} else {
 								$(".filemin-main-spinner").addClass("hidden");
-								messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Can not edit this type of selection', 5, "warning")
+								messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_not_editable"), 5, "warning")
 							}
 						}
 					}
@@ -3598,7 +3654,7 @@ if (t___wi.location == t__wi_p.location) {
 									$("#list_form table tbody tr.m-active").find("i.at-font-box-remove").parent("a")[0].click();
 									__f___cs()
 								} else {
-									messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>Can not decompress this type of file', 5, "warning")
+									messenger('<i class="fa fa-exclamation-circle">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_not_decompressable"), 5, "warning")
 								}
 								return
 							}
@@ -3618,7 +3674,7 @@ if (t___wi.location == t__wi_p.location) {
 									$("body .filemin-button-copy a").trigger("click");
 									__f___cs()
 								} else {
-									messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>No folders/files selected to copy', 5, "error")
+									messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_no_selection_to_copy"), 5, "error")
 								}
 								return
 							}
@@ -3630,7 +3686,7 @@ if (t___wi.location == t__wi_p.location) {
 									$("body .filemin-button-paste a").trigger("click");
 									__f___cs()
 								} else {
-									messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>Clipboard is empty', 5, "error")
+									messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_empty_clipboard"), 5, "error")
 								}
 								return
 							}
@@ -3642,7 +3698,7 @@ if (t___wi.location == t__wi_p.location) {
 									$("body .filemin-button-cut a").trigger("click");
 									__f___cs()
 								} else {
-									messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>No folders/files selected to cut', 5, "error")
+									messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_no_selection_to_cut"), 5, "error")
 								}
 								return
 							}
@@ -3679,28 +3735,28 @@ if (t___wi.location == t__wi_p.location) {
 			$('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("filemin-button-paste")
 		}
 		if (q === "extract") {
-			messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>Extraction was successful', 5, "success")
+			messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_extraction"), 5, "success")
 		} else {
 			if (q === "delete") {
-				messenger('<i class="fa fa-trash-o">&nbsp;&nbsp;&nbsp;</i>Deletion was successful', 5, "success")
+				messenger('<i class="fa fa-trash-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_deletion"), 5, "success")
 			} else {
 				if (q === "chmod") {
-					messenger('<i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>Permissions have been changed successfully', 5, "success")
+					messenger('<i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_permissions"), 5, "success")
 				} else {
 					if (q === "chown") {
-						messenger('<i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>Ownership has been changed successfully', 5, "success")
+						messenger('<i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_ownership"), 5, "success")
 					} else {
 						if (q === "compress") {
-							messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>Compression has successfully finished', 5, "success")
+							messenger('<i class="fa fa-file-archive-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_compression"), 5, "success")
 						} else {
 							if (q === "rename") {
-								messenger('<i class="fa fa-i-cursor">&nbsp;&nbsp;&nbsp;</i>Rename operation was successful', 5, "success")
+								messenger('<i class="fa fa-i-cursor">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_rename"), 5, "success")
 							} else {
 								if (q === "create_folder") {
-									messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>Folder `<samp>' + $('#createFolderForm input[name="name"]').val() + "</samp>` was created successfully", 5, "success")
+									messenger('<i class="fa fa-folder">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_folder_creation").replace("%value", $('#createFolderForm input[name="name"]').val()), 5, "success")
 								} else {
 									if (q === "create_file") {
-										messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>File `<samp>' + $('#createFileForm input[name="name"]').val() + "</samp>` was created successfully", 5, "success")
+										messenger('<i class="fa fa-file">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_file_creation").replace("%value", $('#createFileForm input[name="name"]').val()), 5, "success")
 									}
 								}
 							}
@@ -4395,13 +4451,9 @@ if (t___wi.location == t__wi_p.location) {
 					});
 					$('input[name="settings_notification_slider_fixed"]').change(function (c) {
 						if ($(this).val() == "true") {
-							t__wi_p.$("body .right-side-tabs-toggler").addClass("hidden");
-							t__wi_p.$("body .right-side-tabs").css("right", "0px").addClass("right-side-tabs-fixed");
-							t__wi_p.$("html").attr("data-slider-fixed", "1")
+							n___p__f(1)
 						} else {
-							t__wi_p.$("body .right-side-tabs-toggler").removeClass("hidden opened").css("right", "0");
-							t__wi_p.$("body .right-side-tabs").css("right", "-302px").removeClass("right-side-tabs-fixed");
-							t__wi_p.$("html").attr("data-slider-fixed", "0")
+							n___p__f(0)
 						}
 						settings_update()
 					});
@@ -5794,6 +5846,21 @@ if (t___wi.location == t__wi_p.location) {
 			}
 		}
 	});
+
+	function __init_dt_(a) {
+		$.fn.dataTableExt.sErrMode = "throw";
+		a.dataTable({
+			order: [],
+			aaSorting: [],
+			bDestroy: true,
+			bPaginate: false,
+			bInfo: false,
+			destroy: true,
+			oLanguage: {
+				sSearch: " "
+			}
+		})
+	}
 	if ((($current_page_full.indexOf(".cgi") === -1 || $current_page_full.indexOf("link.cgi") !== -1) || $current_page_full == $_____link_full + "/proc/open_files.cgi" || $current_page_full == $_____link_full + "/webmin/edit_webmincron.cgi" || $current_page_full == $_____link_full + "/postfix/mailq.cgi" || $current_page_full == $_____link_full + "/webmin_search.cgi" || $current_page_full == $_____link_full + "/useradmin/index.cgi" || $current_page_full == $_____link_full + "/quota/list_users.cgi" || $current_page_full == $_____link_full + "/quota/list_groups.cgi" || $current_page_full == $_____link_full + "/init/index.cgi") && ($current_directory == $_____link + "webmin/" || $current_directory == $_____link + "proc/" || $source_path == $_____link + "webmin_search.cgi" || $current_directory == $_____link + "postfix/" || $current_directory == $_____link + "virtual-server/" || $current_directory == $_____link + "init/" || $current_directory == $_____link + "mount/" || $current_directory == $_____link + "custom/" || $current_directory == $_____link + "quota/" || $current_directory == $_____link + "fsdump/" || $current_directory == $_____link + "inittab/" || $current_directory == $_____link + "logrotate/" || $current_directory == $_____link + "mailcap/" || $current_directory == $_____link + "cron/" || $current_directory == $_____link + "software/" || $current_directory == $_____link + "syslog/" || $current_directory == $_____link + "useradmin/" || $current_directory == $_____link + "apache/" || $current_directory == $_____link + "webalizer/" || $current_directory == $_____link + "cpan/" || $current_directory == $_____link + "htaccess-htpasswd/" || $current_directory == $_____link + "fdisk/") || $current_page_full == $_____link_full + "/man/search.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi" || $current_page_full == $_____link_full + "/software/search.cgi" || $current_page_full == $_____link_full + "/virtual-server/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_users.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newplan.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newtmpl.cgi" || $current_page_full == $_____link_full + "/virtual-server/backuplog.cgi" || $current_page_full == $_____link_full + "/package-updates/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/usage.cgi" || $current_page_full == $_____link_full + "/virtual-server/search.cgi" || (($current_page_full == $_____link_full + "/fetchmail/" || $current_page_full == $_____link_full + "/filter/") && product_name() == "Usermin")) {
 		$("table").each(function () {
 			if ($(this).find("thead") && $(this).find("thead").length && $(this).find("thead tr th") && $(this).find("thead tr th").length > 2) {
@@ -5805,18 +5872,7 @@ if (t___wi.location == t__wi_p.location) {
 						$(this).prev("thead").replaceTagName("table")
 					}
 				}
-				$.fn.dataTableExt.sErrMode = "throw";
-				$(this).dataTable({
-					order: [],
-					aaSorting: [],
-					bDestroy: true,
-					bPaginate: false,
-					bInfo: false,
-					destroy: true,
-					oLanguage: {
-						sSearch: " "
-					}
-				});
+				__init_dt_($(this));
 				$(this).find("th").each(function () {
 					if (!$(this).text()) {
 						$(this).css("opacity", "0").css("cursor", "default")
@@ -5832,6 +5888,14 @@ if (t___wi.location == t__wi_p.location) {
 				$(".dataTables_filter input").attr("placeholder", "Filter")
 			}
 		})
+	}
+	if ($current_page_full == $_____link_full + "/virtual-server/list_scripts.cgi") {
+		__init_dt_($("#att_existing > form > table.table.table-striped.table-condensed"));
+		$("#att_existing > form > div table.table.table-striped.table-condensed").prev(".dataTables_filter").attr("style", "margin-top: -27px !important;")
+	}
+	if ($current_page_full == $_____link_full + "/server-manager/index.cgi") {
+		__init_dt_($("body > div > div > div.panel-body > form > table.table.table-striped.table-condensed"));
+		$("#DataTables_Table_0").prev(".dataTables_filter").attr("style", "margin-top: -24px !important;")
 	}
 	$.each($('table.table.table-striped.table-condensed.dataTable.no-footer > thead > tr[role="row"]:first-child'), function (d, c) {
 		$(this).attr("style", "border-top: 4px solid #f2f2f2 !important")
@@ -6181,6 +6245,12 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	if ($current_page_full == $_____link_full + "/virtual-server/edit_domain.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_user.cgi") {
 		$('a[href*="showpass.cgi"]').html('<i class="fa fa-lg fa-key"></i>').css("color", "#555")
+	}
+	if ($__relative_url == "/config.cgi?virtual-server" || $__relative_url == "/config.cgi?server-manager") {
+		$('input[name="theme_image"], input[name="theme_link"], input[name="theme_alt"]').parents("td.col_value").parent("tr").remove()
+	}
+	if ($current_page_full == $_____link_full + "/virtual-server/edit_resel.cgi") {
+		$('input[name="logo"][id="logo"], input[name="link"]').parents("td.col_value").parent("tr").remove()
 	}
 	t___wi.onbeforeunload = function (b) {
 		t___wi.parent.$___________right = 0;
