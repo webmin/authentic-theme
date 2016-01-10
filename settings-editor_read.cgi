@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -11,12 +11,14 @@ use WebminCore;
 &init_config();
 &ReadParse();
 %text = &load_language($current_theme);
+
 #&switch_to_remote_user();
 
 my @files = (
     $config_directory . '/authentic-theme/styles.css',
     $config_directory . '/authentic-theme/scripts.js',
-    $config_directory . '/authentic-theme/favorites.json'
+    $config_directory . '/authentic-theme/favorites.json',
+    $config_directory . '/authentic-theme/custom-lang'
 );
 $in{'file'} = $files[0] if ( !$in{'file'} );
 &ui_print_header( $in{'file'},
@@ -27,10 +29,11 @@ print "<form>\n";
 print
     '<div class="pull-right" style="margin-top: 10px;"><span class="badge label-default">'
     . (
-      index( $in{'file'}, '.css' ) > -1 ? 'CSS'
-    : index( $in{'file'}, '.json' ) > -1 ? 'JSON'
-    :                                      'JS' )
-    . '</span></div>';
+      index( $in{'file'}, '.css' ) > -1 ? $text{'theme_fileformat_css'}
+    : index( $in{'file'}, '.json' ) > -1 ? $text{'theme_fileformat_json'}
+    : index( $in{'file'}, '.js' ) > -1   ? $text{'theme_fileformat_js'}
+    :                                      $text{'theme_fileformat_plain_text'}
+    ) . '</span></div>';
 print "<input type=submit value='$text{'settings_right_file_edit'}'>\n";
 print "<select name=\"file\" onchange=\"form.submit();\">\n";
 
@@ -45,8 +48,15 @@ $data = &read_file_contents( $in{'file'} );
 
 print &ui_form_start( "settings-editor_write.cgi", "form-data" );
 print &ui_hidden( "file", $in{'file'} ), "\n";
-print &ui_textarea( "data", (index( $in{'file'}, '.json' ) > -1 ? ($data =~ /\{(?:\{.*\}|[^{])*\}/sg) : $data), 20, 80, undef, undef,
-    "style='width: 100%'" );
+print &ui_textarea(
+    "data",
+    (   index( $in{'file'}, '.json' ) > -1
+        ? ( $data =~ /\{(?:\{.*\}|[^{])*\}/sg )
+        : $data
+    ),
+    20, 80, undef, undef,
+    "style='width: 100%'"
+);
 print '
     <table class="ui_form_end_buttons" style="width:100%">
         <tr>

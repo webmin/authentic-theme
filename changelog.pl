@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,33 +14,28 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.30-17.31 (January 01, 2016)</h4>
+                <h4>Version 17.40 (January 10, 2016)</h4>
 
                 <ul>
-                  <li>Added support for updated <em>Filemin</em> in <em>Webmin</em> 1.780</li>
-                  <li>Fixed editor in <em>Filemin</em> saving content incorrectly, when multiple files were opened at once</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/315" target="_blank">#315</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/317" target="_blank">#317</a><hr></li>
-                  <li>Added ability to use configurable HTML snippet in navigation menu, for identification purposes. It\'s configurable in settings, under navigation menu options. Example of usage: <code>&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code></li>
-                  <li>Added ability to completely disable <em>Notification Slider</em> using theme options <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/305" target="_blank">#305</a></li>
-                  <li>Added ability to minimize/maximize editor window in <em>Filemin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/308" target="_blank">#308</a></li>
-                  <li>Added new hotkeys for <em>Filemin</em>:</li>
-                    <ul>
-                      <li><code>Esc</code> - close active editor window</li>
-                      <li><code>Ctrl+Esc</code> - minimize active editor window</li>
-                    </ul>
-                  <li>Added disableable <em>theme option</em> button in navigation</li>
-                  <li>Added ability to trigger theme update from <em>Notification Slider</em> with one click</li>
-                  <li>Added ability to <em>Force Update/Re-install</em> the theme (on options page)</li>
-                  <li>Changed theme auto-updates notifications to be on by default</li>
-                  <li>Improved and optimized background data collection for notifications</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/288" target="_blank">#288</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/302" target="_blank">#302</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/306" target="_blank">#306</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/310" target="_blank310287</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/311" target="_blank">#311</a>
+                  <li>Added triggers to automatically dismiss loader and perform window autoscroll in <em>Virtualmin/Cloudmin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39237" target="_blank">#39237</a></li>
+                  <li>Added documentation links next to product\'s version on <em>System Information</em> page. Custom documentation links, configurable in <em>Virtualmin/Cloudmin</em> also supported <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39225" target="_blank">#39225</a></li>
+                  <li>Added sorting/filter ability for <em>Installed Scripts</em> in <em>Virtualmin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39237" target="_blank">#39237</a></li>
+                  <li>Added an option to show HTML snippet for administrators only</li>
+                  <li>Added an ability to edit <code>custom-lang</code> file from theme extensions\' editor</li>
+                  <li>Changed previously removed <em>Virtualmin/Cloudmin</em> links from <em>Webmin</em> navigation menu from enforced to optional <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39237" target="_blank">#39237</a></li>
+                  <li>Fixed hardcoded strings in some <em>Perl</em> and <em>JavaScript</em> code <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39228" target="_blank">#39228</a></li>
+                  <li>Fixed hotkeys execution to be performed in the right context</li>
+                  <li>Fixed removed obsolete logo options in <em>Virtualmin/Cloudmin</em> configuration page <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39225" target="_blank">#39225</a></li>
+                  <li>Fixed missing input field on the navigation menu, when domain display limits are imposed using <em>Virtualmin Configuration</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39219" target="_blank">#39219</a></li>
+                  <li>Fixed <em>Notification Slider</em> to be unfixed disregard of visibility settings on mobile devices</li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/321" target="_blank">#321</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/322" target="_blank">#322</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/323" target="_blank">#323</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/326" target="_blank">#326</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/328" target="_blank">#328</a></li>
                   <li>Fixed other bugs</li>
                 </ul>
 
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->
                 <hr>
                 <h4 style="margin-top:20px;">' . $text{'theme_development_support'} . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg fa-heartbeat faa-pulse animated" style="color: #c9302c"></i></h4>
-                ' . ( !licenses('cm') && !licenses('vm') ? '' : '<!--' ) . 'Thank you for using <a target="_blank" style="color: #333; font-weight: normal;" href="https://github.com/qooob/authentic-theme">' . $text{'theme_name'} . '</a>. Overall development of this theme has already passed the stage of <span class="badge" style="font-size: 90%; background-color: #4ca14e; border-color: #3c763d;">1250</span> hours.
+                ' . ( !licenses('cm') && !licenses('vm') ? '' : '<!--' ) . 'Thank you for using <a target="_blank" style="color: #333; font-weight: normal;" href="https://github.com/qooob/authentic-theme">' . $text{'theme_name'} . '</a>. Overall development of this theme has already passed the stage of <span class="badge" style="font-size: 90%; background-color: #4ca14e; border-color: #3c763d;">1300</span> hours.
                   I am happy to provide it for free but it would mean a lot to <a href="https://rostovtsev.ru" target="_blank">me</a>, if you sent me a <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> donation</a>.
                   It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will <em style="border-bottom:1px dotted #ccc   ">help me to pay my bills</em> and excite future progress.
                   <br>

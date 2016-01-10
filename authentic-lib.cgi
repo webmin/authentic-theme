@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -50,7 +50,6 @@ sub __settings {
             {
                 my $m = join( '\n', @m );
                 $m =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
-                $m =~ s/"/&quot;/g;
                 $m =~ s/\\'/'/g;
                 return $m;
             }
@@ -306,7 +305,11 @@ sub print_switch_webmin {
         <label for="open_'
         . &get_product_name() . '">
                 <i class="wbm-webmin wbm-sm"></i><span>'
-        . ucfirst( &get_product_name() ) . '</span></label>';
+        . (
+          &get_product_name() eq 'webmin'
+        ? $text{'theme_xhred_titles_wm'}
+        : $text{'theme_xhred_titles_um'}
+        ) . '</span></label>';
 }
 
 sub print_switch_dashboard {
@@ -314,7 +317,8 @@ sub print_switch_dashboard {
         '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
         . ( $t_uri_dashboard != -1 ? " checked" : "" ) . '>
           <label for="open_dashboard" style="padding-top: 1px;">
-          <i class="fa fa-asterisk __sysinfo_asterisk blinking-default hidden" style="position: absolute; font-size: 40%; margin-top: 1px; margin-left: 26px; color: #e4312d !important"></i><i class="fa fa-stack fa-area-chart"></i><span>Dashboard</span></label>';
+          <i class="fa fa-asterisk __sysinfo_asterisk blinking-default hidden" style="position: absolute; font-size: 40%; margin-top: 1px; margin-left: 26px; color: #e4312d !important"></i><i class="fa fa-stack fa-area-chart"></i><span>'
+        . $text{'theme_xhred_titles_dashboard'} . '</span></label>';
 }
 
 sub print_switch_virtualmin {
@@ -322,7 +326,8 @@ sub print_switch_virtualmin {
         '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"'
         . ( $t_uri_virtualmin != -1 ? " checked" : "" ) . '>
           <label for="open_virtualmin">
-          <i class="wbm-virtualmin wbm-sm"></i><span>Virtualmin</span></label>';
+          <i class="wbm-virtualmin wbm-sm"></i><span>'
+        . $text{'theme_xhred_titles_vm'} . '</span></label>';
 }
 
 sub print_switch_cloudmin {
@@ -330,7 +335,8 @@ sub print_switch_cloudmin {
         '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"'
         . ( $t_uri_cloudmin != -1 ? " checked" : "" ) . '>
           <label for="open_cloudmin">
-          <i class="wbm-cloudmin wbm-sm"></i><span>Cloudmin</span></label>';
+          <i class="wbm-cloudmin wbm-sm"></i><span>'
+        . $text{'theme_xhred_titles_cm'} . '</span></label>';
 }
 
 sub print_switch_webmail {
@@ -339,7 +345,7 @@ sub print_switch_webmail {
         . ( $t_uri_webmail != -1 ? " checked" : "" ) . '>
           <label for="open_webmail">
           <i class="fa fa-stack fa-envelope"></i>
-          <span>Mail</span></label>';
+          <span>' . $text{'theme_xhred_titles_mail'} . '</span></label>';
 }
 
 sub print_switch_thirdlane {
@@ -347,7 +353,8 @@ sub print_switch_thirdlane {
         '<input class="dynamic" id="open_thirdlane" id="open_cloudmin" name="product-switcher" type="radio">
           <label for="open_thirdlane">
           <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTI0LjksNDguOEMxMS44LDQ4LjgsMSwzOC4xLDEsMjQuOVMxMS44LDEsMjQuOSwxczIzLjksMTAuNywyMy45LDIzLjlTMzguMSw0OC44LDI0LjksNDguOHogTTI0LjksMy44Yy0xMS43LDAtMjEuMSw5LjUtMjEuMSwyMS4xczkuNSwyMS4xLDIxLjEsMjEuMWMxMS43LDAsMjEuMS05LjUsMjEuMS0yMS4xUzM2LjYsMy44LDI0LjksMy44eiIvPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDIwLjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywxOC4xLDI1LjEsMjAuMiwxNi42LDIwLjJ6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDI3LjRjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywyNS4zLDI1LjEsMjcuNCwxNi42LDI3LjR6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDM0LjZjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywzMi41LDI1LjEsMzQuNiwxNi42LDM0LjZ6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==">
-          <span class="block">Thirdlane</span></label>';
+          <span class="block">'
+        . $text{'theme_xhred_titles_thirdlane'} . '</span></label>';
 }
 
 sub print_switch {
@@ -429,7 +436,8 @@ sub print_sysinfo_warning {
     foreach my $info (@info) {
         if ( $info->{'type'} eq 'warning' ) {
             print &ui_alert_box( $info->{'warning'},
-                $info->{'level'} || 'warn' );
+                $info->{'level'} || 'warn',
+                undef, 1 );
         }
     }
 }
@@ -696,6 +704,26 @@ sub print_left_menu {
                 elsif ( index( $link, 'mailbox/index.cgi?id=' ) > -1 ) {
                     our $icon = '<i class="fa fa-fw fa-folder-o"></i>';
                 }
+                if ( $get_user_level == 1 ) {
+                    if ( index( $link, '/virtual-server/edit_pass.cgi' ) > -1
+                        && index( $link, '/virtual-server/edit_pass.cgi?' )
+                        == -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-ticket"></i>';
+                    }
+                    elsif (
+                        index( $link, '/virtual-server/edit_newplan.cgi' )
+                        > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-list"></i>';
+                    }
+                    elsif (
+                        index( $link, '/virtual-server/edit_newresels.cgi' )
+                        > -1 )
+                    {
+                        our $icon = '<i class="fa fa-fw fa-cog"></i>';
+                    }
+                }
 
                 if ( __settings('settings_leftmenu_singlelink_icons') ne
                     'false' )
@@ -876,14 +904,10 @@ sub print_left_menu {
                 foreach my $h ( @{ $item->{'hidden'} } ) {
                     print ui_hidden(@$h);
                 }
-                print $item->{'desc'}, "\n";
-                if ( $item->{'type'} eq 'menu' ) {
-                    my $sel = "";
-                    if ( $item->{'onchange'} ) {
-                        $sel = "window.parent.frames[1].location = "
-                            . "\"$item->{'onchange'}\" + this.value";
-                    }
 
+                print $item->{'desc'}, "\n";
+                if ( $item->{'type'} eq 'menu' || $item->{'type'} eq 'input' )
+                {
                     my $default = __settings(
                         'settings_right_'
                             . (
@@ -893,13 +917,31 @@ sub print_left_menu {
                     );
 
                     print ui_select(
-                        $item->{'name'},
+                        (     $item->{'name'} eq 'dname' ? 'dom'
+                            : $item->{'name'}
+                        ),
                         (   ( ( $selected || $selected == 0 ) && $xhr )
                             ? $selected
                             : ( $default ? $default : $item->{'value'} )
                         ),
-                        $item->{'menu'},
-                        1, 0, 0, 0,
+                        (   $item->{'name'} eq 'dname' ? [
+                                map {
+                                    [   $_->{'id'},
+                                        &virtual_server::show_domain_name($_)
+                                    ]
+                                    }
+                                    grep {
+                                    &virtual_server::can_edit_domain($_)
+                                    }
+                                    sort { $a->{'dom'} cmp $b->{'dom'} }
+                                    &virtual_server::list_domains()
+                                ]
+                            : $item->{'menu'}
+                        ),
+                        1,
+                        0,
+                        0,
+                        0,
                         "data-autocomplete-title=\"
                             "
                             . (
@@ -1052,7 +1094,11 @@ sub get_sysinfo_vars {
         }
 
         #Webmin version
-        $webmin_version = &get_webmin_version();
+        $webmin_version
+            = &get_webmin_version()
+            . ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+            . $text{'theme_sysinfo_wmdocs'}
+            . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>';
 
         # Virtualmin version
         if ($has_virtualmin) {
@@ -1078,6 +1124,9 @@ sub get_sysinfo_vars {
                     ? ''
                     : 'Pro'
 
+                        . ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        . $text{'theme_sysinfo_vmdocs'}
+                        . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>'
                         . (
                         ( $vs_license eq '1' )
                         ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
@@ -1116,6 +1165,9 @@ sub get_sysinfo_vars {
                     ? ''
                     : 'Pro'
 
+                        . ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        . $text{'theme_sysinfo_cmdocs'}
+                        . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>'
                         . (
                         ( $vm2_license eq '1' )
                         ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
@@ -1486,7 +1538,7 @@ sub csf_temporary_list {
             close(IN);
         }
 
-        if ( -e "/var/lib/csf/stats/iptables_log" ) {
+        if ( @t && -e "/var/lib/csf/stats/iptables_log" ) {
             open( IN, "<", "/var/lib/csf/stats/iptables_log" ) or die $!;
             flock( IN, LOCK_SH );
             my @i = <IN>;
@@ -1518,27 +1570,10 @@ sub csf_temporary_list {
                             . $e . '|'
                             . $f . '|'
                             . $g;
-                        for my $q ( reverse 0 .. $#t ) {
-                            if ( $t[$q] =~ /$b/ ) {
-                                splice( @t, $q, 1, () );
-                            }
-                        }
                     }
                 }
 
             }
-        }
-
-        foreach my $j ( reverse @t ) {
-            if ( !length $j ) {next}
-            my ( $a, $b, $d, $e, $f, $g ) = split( /\|/, $j );
-            push @l,
-                  $a . '|'
-                . $b . '|' . '|' . '|'
-                . $d . '|'
-                . $e . '|'
-                . $f . '|'
-                . $g;
         }
 
         if (@l) {
@@ -1821,7 +1856,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1731" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1740" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1863,7 +1898,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1731" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1740" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1875,13 +1910,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1731" type="text/javascript"></script>' . "\n";
+                . '.js?1740" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1731" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1897,17 +1932,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1731" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1740" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1731" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1740" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1731" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1740" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1915,7 +1950,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1731" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1740" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1939,16 +1974,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1731" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1731" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1740" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1731" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1740" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2137,6 +2172,8 @@ sub _settings {
             'true',
             'settings_leftmenu_singlelink_icons',
             'true',
+            'settings_leftmenu_section_hide_vm_and_cm_links',
+            'false',
             'settings_leftmenu_vm_installscripts',
             'true',
             'settings_leftmenu_vm_webpages',
@@ -2145,6 +2182,8 @@ sub _settings {
             'true',
             'settings_leftmenu_user_html',
             '',
+            'settings_leftmenu_user_html_only_for_administrator',
+            'false',
 
             '__',
             _settings(
@@ -2263,6 +2302,7 @@ sub _settings {
         ##
         # List of combined settings for Virtualmin/Cloudmin/Usermin
         my @s_vc_e = (
+            'settings_leftmenu_section_hide_vm_and_cm_links',
             'settings_leftmenu_singlelink_icons',
             'settings_right_default_tab_webmin',
             'settings_right_reload'
@@ -2525,6 +2565,9 @@ sub _settings {
             {
                 $width = ' width: 50%; ';
             }
+            elsif ( $k eq 'settings_leftmenu_user_html' ) {
+                $width = ' width: 95%; ';
+            }
 
             $v = '
                 <input style="display: inline;'
@@ -2584,7 +2627,7 @@ sub _settings {
             get_user_level();
             $v = &ui_select(
                 $k, $v,
-                [   [ "", $text{'edright_first'} ],
+                [   [ undef, undef ],
                     map {
                         [ $_->{'id'}, &virtual_server::show_domain_name($_) ]
                         }
@@ -2600,7 +2643,7 @@ sub _settings {
                 = &server_manager::list_available_managed_servers_sorted();
             $v = &ui_select(
                 $k, $v,
-                [   [ "", $text{'edright_first'} ],
+                [   [ undef, undef ],
                     map { [ $_->{'id'}, $_->{'host'} ] } @servers
                 ]
             );
@@ -2784,6 +2827,8 @@ sub _settings {
         if ( $t eq 'save' ) {
             delete @in{ grep( !/^settings_/, keys %in ) };
             for ( values %in ) {s/(.*)/'$1';/}
+            for ( values %in ) {s/"/'/g}
+            for ( values %in ) {s/\/\//&#47;&#47;/g}
             for ( values %in ) {s/'true'/true/g}
             for ( values %in ) {s/'false'/false/g}
             for ( values %in ) {
@@ -2879,6 +2924,18 @@ sub get_xhr_request {
         }
         exit;
     }
+    elsif ( $in{'xhr-get_theme_language'} eq '1' ) {
+
+        print "Content-type: text/html\n\n";
+        print get_theme_language();
+        exit;
+    }
+    elsif ( $in{'xhr-get_available_modules'} eq '1' ) {
+
+        print "Content-type: text/html\n\n";
+        print get_available_modules('json');
+        exit;
+    }
     elsif ( $in{'xhr-info'} eq '1' ) {
 
         our (
@@ -2945,7 +3002,16 @@ sub get_default_right {
     my $t_goto;
 
     # Check user settings on default page for Virtualmin/Cloudmin
-    if (   $t_uri_virtualmin != -1
+    if ( $t_uri_virtualmin != -1 ) {
+        our %virtualmin_config = &foreign_config( 'virtual-server' );
+    }
+    if ( $t_uri_virtualmin != -1
+        && $virtualmin_config{'wizard_run'} ne '1' )
+    {
+        $udefgoto = '/virtual-server/wizard.cgi';
+
+    }
+    elsif ($t_uri_virtualmin != -1
         && length __settings('settings_right_virtualmin_default')
         && __settings('settings_right_virtualmin_default') ne ''
         && domain_available( __settings('settings_right_virtualmin_default') )
@@ -3178,8 +3244,13 @@ sub content {
 
     # Custom text
     print '<ul class="user-html"><li class="user-html-string">'
-        . __settings('settings_leftmenu_user_html')
-        . '</li></ul>';
+        . (
+        (   __settings('settings_leftmenu_user_html_only_for_administrator')
+                ne 'true' || __settings(
+                'settings_leftmenu_user_html_only_for_administrator') eq
+                'true' && $get_user_level eq '0'
+        ) ? __settings('settings_leftmenu_user_html') : undef
+        ) . '</li></ul>';
 
     print '</aside>' . "\n";
 
@@ -3219,11 +3290,82 @@ sub get_current_user_language {
     );
 }
 
-# sub prt {
+sub get_available_modules {
+    my ($json) = @_;
+    my @mods;
+    foreach my $x ( get_all_module_infos() ) {
+        if ( $x->{'dir'} ne undef ) {
+            push @mods, $x->{'dir'};
+        }
+    }
+    if ( $json eq 'json' ) {
+        use JSON;
+        if (@mods) {
+            return JSON->new->latin1->encode( \@mods );
+        }
+        else {
+            return JSON->new->latin1->encode( {} );
+        }
+    }
+    else {
+        return @mods;
+    }
+
+}
+
+sub get_theme_language {
+    use JSON;
+    my %text = &load_language($current_theme);
+
+    my %s;
+    foreach $key ( keys %text ) {
+        if ( index( $key, '_xhred_' ) == -1 ) {next}
+        $s{$key} .= $text{$key};
+    }
+
+    if (%s) {
+        return JSON->new->latin1->encode( \%s );
+    }
+    else {
+        return JSON->new->latin1->encode( {} );
+    }
+
+}
+
+# sub get_module_config_data {
+#     my ( $module, $key ) = @_;
+
+#     if ( -r $config_directory . '/' . $module . '/config' ) {
+
+#         my $config = &read_file_contents(
+#             $config_directory . '/' . $module . '/config' );
+#         my %config = $config =~ /(.*?)=(.*)/g;
+
+#         if ($key) {
+#             return $config{$key};
+#         }
+#         else {
+#             return %config;
+#         }
+#     }
+#     else {
+#         return undef;
+#     }
+
+# }
+
+# sub print_hash {
+#     my (%d) = @_;
+
+#     use Data::Dumper;
+#     print Dumper( \%d );
+# }
+
+# sub print_array {
 #     my ($____v) = @_;
 #     use Data::Dumper;
-#     print '<div style="color: red">';
+#     print '<pre style="color: red">';
 #     print Dumper $____v;
-#     print '</div>';
+#     print '</pre>';
 # }
 

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -49,8 +49,17 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                     &print_category_link( "/settings-upload.cgi",
                         $text{'settings_right_theme_left_logo_title'}, 1 );
                 }
-                if (   $minfo->{'dir'} ne 'virtual-server'
-                    && $minfo->{'dir'} ne 'server-manager' )
+                if ((      $minfo->{'dir'} ne 'virtual-server'
+                        && $minfo->{'dir'} ne 'server-manager'
+                    )
+                    || ((      $minfo->{'dir'} eq 'virtual-server'
+                            || $minfo->{'dir'} eq 'server-manager'
+                        )
+                        && __settings(
+                            'settings_leftmenu_section_hide_vm_and_cm_links')
+                        ne 'true'
+                    )
+                    )
                 {
                     &print_category_link( "$minfo->{'dir'}/",
                         $minfo->{'desc'}, undef );

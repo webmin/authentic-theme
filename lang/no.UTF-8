@@ -44,8 +44,6 @@ left_others=Ander
 left_refresh_modules=Oppdater moduler
 left_search=Søk
 left_statistics=System Statistikk
-left_virtualmin_create=Opprett virtuell server
-left_virtualmin_list=Vis virtuelle servere
 
 login_danger=Feil!
 login_message=Du må skrive inn et brukernavn og passord for å logge inn til
@@ -202,7 +200,7 @@ settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show CPU and drives' status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Display <kbd>System Information</kbd> link as a button
+settings_sysinfo_link_mini=Show system information link as button
 settings_leftmenu_singlelink_icons=Show navigation menu's single links' icons in Virtualmin/Cloudmin
 
 settings_right_page_defaults_title=Default pages
@@ -226,7 +224,7 @@ settings_window_replaced_timestamps_format_full=Full date/time format
 settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <a href="http://momentjs.com" target="_blank">format</a>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>dddd, MMMM D, YYYY h:mm:ss</code> and short is <code>L, h:mm:ss</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
 settings_notification_slider_enabled=Enable slider
-settings_leftmenu_user_html=User HTML snippet
+settings_leftmenu_user_html=Show HTML snippet
 settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
@@ -242,3 +240,79 @@ theme_update_available=Siste tilgjengelige versjon
 theme_update_notice=Oppdater Notice
 theme_version=Temaversjon
 
+
+# Version 17.40
+theme_global_error=Error
+theme_global_warning=Warning
+theme_global_success=Success
+theme_global_info=Information
+sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
+settings_leftmenu_section_hide_vm_and_cm_links=Hide Virtualmin/Cloudmin links from navigation menu
+settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
+theme_sysinfo_wmdocs=Webmin documentation
+theme_sysinfo_vmdocs=Virtualmin documentation
+theme_sysinfo_cmdocs=Cloudmin documentation
+theme_fileformat_css=CSS
+theme_fileformat_json=JSON
+theme_fileformat_js=Javascript
+theme_fileformat_plain_text=Plain Text
+
+theme_xhred_titles_wm=Webmin
+theme_xhred_titles_um=Usermin
+theme_xhred_titles_dashboard=Dashboard
+theme_xhred_titles_mail=Mail
+theme_xhred_titles_vm=Virtualmin
+theme_xhred_titles_cm=Cloudmin
+theme_xhred_titles_thirdlane=Thirdlane
+
+theme_xhred_global_please_wait=Please wait...
+theme_xhred_filemin_copying_selected=Copying selected.
+theme_xhred_filemin_cutting_selected=Cutting selected.
+theme_xhred_filemin_pasting_selected=Pasting from clipboard.
+theme_xhred_filemin_unpacking_archive=Unpacking archive.
+theme_xhred_filemin_deleting_selected=Deleting selected.
+theme_xhred_filemin_renaming_selected=Renaming selected.
+theme_xhred_filemin_creating_folder=Creating folder
+theme_xhred_filemin_creating_file=Creating file
+theme_xhred_filemin_downloading_from=Downloading from
+theme_xhred_filemin_setting_permissions=Setting permissions to <samp><em>%value</em></samp> on selected file(s).
+theme_xhred_filemin_changing_ownership=Changing ownership to <samp><em>%value</em></samp> on selected file(s).
+theme_xhred_filemin_compressing_selected=Compressing selected.
+theme_xhred_filemin_refreshing=Refreshing folder content.
+theme_xhred_filemin_copying_successful=Copy to clipboard successful.
+theme_xhred_filemin_cutting_successful=Cut to clipboard successful.
+theme_xhred_filemin_pasting_successful=Paste from clipboard was successful.
+theme_xhred_filemin_extracting_archive=Extracting archive.
+theme_xhred_filemin_bookmark_success=Folder <samp><em>%value</em></samp> was successfully added to your bookmarks.
+theme_xhred_filemin_searching=Searching for <em>`%value`</em> string.
+theme_xhred_filemin_search_founds=Found <samp>%value</samp> matches.
+theme_xhred_filemin_search_found=Found <samp>1</samp> match.
+theme_xhred_filemin_search_no_matches=No matches found.
+theme_xhred_filemin_nothing_is_selected=Nothing is selected!
+theme_xhred_filemin_saving_file=File `<samp><em>%value</em></samp>` is being saved.
+theme_xhred_filemin_file_saved=File `<samp><em>%value</em></samp>` has been successfully saved.
+theme_xhred_filemin_not_editable=Can not edit this type of selection.
+theme_xhred_filemin_not_decompressable=Can not decompress this type of file.
+theme_xhred_filemin_no_selection_to_copy=No folders/files selected to copy.
+theme_xhred_filemin_no_selection_to_cut=No folders/files selected to cut.
+theme_xhred_filemin_empty_clipboard=Clipboard is empty.
+
+theme_xhred_filemin_successful_extraction=Extraction was successful.
+theme_xhred_filemin_successful_deletion=Deletion was successful.
+theme_xhred_filemin_successful_permissions=Permissions have been changed successfully.
+theme_xhred_filemin_successful_ownership=Ownership has been changed successfully.
+theme_xhred_filemin_successful_compression=Compression has successfully finished.
+theme_xhred_filemin_successful_rename=Rename operation was successful.
+theme_xhred_filemin_successful_folder_creation=Folder `<samp>%value</samp>` was created successfully.
+theme_xhred_filemin_successful_file_creation=File `<samp>%value</samp>` was created successfully.
+
+theme_xhred_notifications_packages_updates=Packages Update
+theme_xhred_notifications_theme_update=Theme Update
+theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
+theme_xhred_notifications_firewall_update=Firewall Update
+theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+
+theme_xhred_notifications_firewall_danger=Firewall Danger
+theme_xhred_notifications_firewall_danger_message=It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don't leave your server exposed, check for the firewall settings (%v)
+
+theme_xhred_notifications_firewall_warning=Firewall Warning
