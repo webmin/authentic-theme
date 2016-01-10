@@ -17,16 +17,16 @@ our $__changelog
                 <h4>Version 17.40 (January 10, 2016)</h4>
 
                 <ul>
-                  <li>Added triggers to automatically dismiss loader and perform window autoscroll in <em>Virtualmin/Cloudmin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39237" target="_blank">#39237</a></li>
-                  <li>Added documentation links next to product\'s version on <em>System Information</em> page. Custom documentation links, configurable in <em>Virtualmin/Cloudmin</em> also supported <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39225" target="_blank">#39225</a></li>
-                  <li>Added sorting/filter ability for <em>Installed Scripts</em> in <em>Virtualmin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39237" target="_blank">#39237</a></li>
+                  <li>Added triggers to automatically dismiss loader and perform window autoscroll in <em>Virtualmin/Cloudmin</em> <a class="label label-default" href="https://www.virtualmin.com/node/39237" target="_blank">#39237</a></li>
+                  <li>Added documentation links next to product\'s version on <em>System Information</em> page. Custom documentation links, configurable in <em>Virtualmin/Cloudmin</em> also supported <a class="label label-default" href="https://www.virtualmin.com/node/39225" target="_blank">#39225</a></li>
+                  <li>Added sorting/filter ability for <em>Installed Scripts</em> in <em>Virtualmin</em> <a class="label label-default" href="https://www.virtualmin.com/node/39237" target="_blank">#39237</a></li>
                   <li>Added an option to show HTML snippet for administrators only</li>
                   <li>Added an ability to edit <code>custom-lang</code> file from theme extensions\' editor</li>
-                  <li>Changed previously removed <em>Virtualmin/Cloudmin</em> links from <em>Webmin</em> navigation menu from enforced to optional <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39237" target="_blank">#39237</a></li>
-                  <li>Fixed hardcoded strings in some <em>Perl</em> and <em>JavaScript</em> code <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39228" target="_blank">#39228</a></li>
+                  <li>Changed previously removed <em>Virtualmin/Cloudmin</em> links from <em>Webmin</em> navigation menu from enforced to optional <a class="label label-default" href="https://www.virtualmin.com/node/39237" target="_blank">#39237</a></li>
+                  <li>Fixed hardcoded strings in some <em>Perl</em> and <em>JavaScript</em> files</li>
                   <li>Fixed hotkeys execution to be performed in the right context</li>
-                  <li>Fixed removed obsolete logo options in <em>Virtualmin/Cloudmin</em> configuration page <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39225" target="_blank">#39225</a></li>
-                  <li>Fixed missing input field on the navigation menu, when domain display limits are imposed using <em>Virtualmin Configuration</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/39219" target="_blank">#39219</a></li>
+                  <li>Fixed removed obsolete logo options in <em>Virtualmin/Cloudmin</em> configuration page <a class="label label-default" href="https://www.virtualmin.com/node/39225" target="_blank">#39225</a></li>
+                  <li>Fixed missing input field on the navigation menu, when domain display limits are imposed using <em>Virtualmin Configuration</em> <a class="label label-default" href="https://www.virtualmin.com/node/39219" target="_blank">#39219</a></li>
                   <li>Fixed <em>Notification Slider</em> to be unfixed disregard of visibility settings on mobile devices</li>
                   <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/321" target="_blank">#321</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/322" target="_blank">#322</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/323" target="_blank">#323</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/326" target="_blank">#326</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/328" target="_blank">#328</a></li>
                   <li>Fixed other bugs</li>

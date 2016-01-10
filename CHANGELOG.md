@@ -7,7 +7,7 @@
 * Added an option to show HTML snippet for administrators only
 * Added an ability to edit `custom-lang` file from theme extensions' editor
 * Changed previously removed _Virtualmin/Cloudmin_ links from _Webmin_ navigation menu from enforced to optional [#39237](https://www.virtualmin.com/node/39237)
-* Fixed hardcoded strings in some _Perl_ and _JavaScript_ code
+* Fixed hardcoded strings in some _Perl_ and _JavaScript_ files
 * Fixed hotkeys execution to be performed in the right context
 * Fixed removed obsolete logo options in _Virtualmin/Cloudmin_ configuration page [#39225](https://www.virtualmin.com/node/39225)
 * Fixed missing input field on the navigation menu, when domain display limits are imposed using _Virtualmin Configuration_ [#39219](https://www.virtualmin.com/node/39219)
