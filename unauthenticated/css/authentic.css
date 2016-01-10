@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -254,6 +254,8 @@ h6,
     width: 95% !important;
     min-width: 95% !important;
     margin-right: 6px !important;
+}#popup > form center input[name='size'] {
+    min-width: 178px;
 }#sidebar {
     position: fixed;
     top: 0;
@@ -505,6 +507,13 @@ h6,
     font-size: 20px;
 
     text-align: left;
+}#system-status .panel-title > .extra_documentation_links:first-child {
+    margin-right: -11px !important;
+}#system-status .panel-title > .extra_documentation_links + .extra_documentation_links,
+#system-status a + button + .extra_documentation_links + .extra_documentation_links {
+    margin-right: -17px !important;
+}#system-status .extra_documentation_links + .extra_documentation_links {
+    margin-right: 9px !important;
 }.smaller > em,
 .small {
     font-size: 12px !important;
@@ -802,6 +811,9 @@ h6,
 
     opacity: .8;
     border-right: 2px solid #e8433f;
+}_:-ms-fullscreen,
+:root .right-side-tabs-toggler {
+    max-width: 0;
 }.right-side-tabs-toggler {
     right: 0;
     left: initial;
@@ -892,6 +904,8 @@ h6,
 }.right-side-tabs[data-background-style='grey'] .list-group-item.no-notifications small {
     color: #aaa;
 }.right-side-tabs[data-background-style='grey'] .list-group-item-heading small {
+    margin-left: 3px;
+
     color: #777;
 }.right-side-tabs[data-background-style='grey'] ::-webkit-scrollbar {
     width: 3px;
@@ -2711,7 +2725,7 @@ a.opener_trigger,
     text-align: center;
     pointer-events: none;
 
-    opacity: .2;
+    opacity: .4;
 }.opacity-0_3 {
     cursor: default;
 
@@ -2881,6 +2895,10 @@ tr.atshover:hover td {
     overflow: hidden;
 
     word-break: normal;
+}body[data-language='ru'] .row.icons-row .xsmall-icons-container a,
+body[data-language='ru'] .row.icons-row .small-icons-container a,
+body[data-language='ru'] .row.icons-row .icons-container a {
+    word-wrap: break-word;
 }@-moz-document url-prefix() {
     .row.icons-row .xsmall-icons-container img {
         padding-top: 0;
