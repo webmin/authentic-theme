@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -36,7 +36,9 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                 '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
                 . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
-                if ( $minfo->{'dir'} eq 'webmin' ) {
+                if (   $minfo->{'dir'} eq 'webmin'
+                    && &foreign_available("webmin") )
+                {
                     &print_category_link(
                         "/webmin/edit_themes.cgi",
                         $text{
@@ -57,7 +59,7 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                         )
                         && __settings(
                             'settings_leftmenu_section_hide_vm_and_cm_links')
-                        ne 'true'
+                        eq 'false'
                     )
                     )
                 {

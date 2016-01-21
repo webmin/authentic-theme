@@ -23,12 +23,12 @@ body_updays=$1 zile, $2 ore, $3 minute
 body_uphours=$1 ore, $2 minute
 body_upmins=$1 minute
 body_upneed=Sunt disponibile $1 pachete de actualizat
-body_upneed1=$1 package update is available
+body_upneed1=$1 pachet disponibil pentru actualizare
 body_upok=Toate pachetele instalate sunt la zi
 body_upsec=Sunt disponibile $1 pachete de actualizat, din care $2 sunt actualizări de securitate
-body_upsec1=$1 package updates are available, of which $2 is security update
-body_upsec2=$1 package update is available, of which $2 are security updates
-body_upsec3=$1 package update is available, of which $2 is security update
+body_upsec1=$1 pachete disponibile pentru actualizare, din care $2 este este actualizare de securitate
+body_upsec2=$1 pachet disponibil pentru actualizare, din care $2 sunt actualizări de securitate
+body_upsec3=$1 pachet disponibil pentru actualizare, din care $2 este este actualizare de securitate
 body_uptime=Durata activă a Sistemului
 body_used=$1 total / $2 utilizat
 body_used_and_free=$1 total / $2 liber / $3 utilizat
@@ -201,7 +201,7 @@ settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security
 settings_sysinfo_drive_status_on_new_line=Afișează starea Procesorului și a Discurilor fiecare pe un nou rând
 settings_sysinfo_expand_all_accordions=Menține toate acordeoanele extinse
 settings_sysinfo_link_mini=Afișează linkul <kbd>Informații de Sistem</kbd> ca buton
-settings_leftmenu_singlelink_icons=Afișează pictogramele linkurilor idividual în meniul de navigare al Virtualmin/Cloudmin
+settings_leftmenu_singlelink_icons=Show icons for single links on navigation menu
 
 settings_right_page_defaults_title=Pagini implicite
 settings_right_default_tab_webmin=Tabul implicit după autentificarea în Webmin
@@ -223,9 +223,9 @@ settings_window_replaced_timestamps_format_short=Formă scurtă dată/oră
 settings_window_replaced_timestamps_format_full=Formă întreagă dată/oră
 settings_window_replaced_timestamps_options_description=Ajustează setările dată/oră după bunul plac pentru afișarea în <a href="http://momentjs.com" target="_blank">formă</a> scurtă sau întreagă. <sup class="fa fa-question-circle" title='Această opțiune nu are efecte globale și se aplică doar dacă sunt folosite anumite module speciale de către dezvoltatori. Oricare dezvoltator de module poate adăuga atributul`data-convertible-timestamp-full="unix-timestamp"` sau `data-convertible-timestamp-short="unix-timestamp"` containerului pentru a afișa cu ușurință datele desemnate de utilizator.'></sup> Această opțiune Pre-Construită are efect în pagina <i>Sliderul de Notificări</i> și <i>Informații de Sistem</i> (de pe rândul <i>Timpul în sistem</i>). Implicit, forma între echivalează cu <code>dddd, MMMM D, YYYY h:mm:ss</code> și forma scurtă este <code>L, h:mm:ss</code>. Expunerea timpului este diferit pentru localizări diferite. Localizarea este bazată pe setările de limbă ale Webmin.
 
-settings_notification_slider_enabled=Enable slider
-settings_leftmenu_user_html=Show HTML snippet
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+settings_notification_slider_enabled=Activează slider
+settings_leftmenu_user_html=Arată fragmente HTML
+settings_leftmenu_user_html_description=Text definit de utiliyator sau cod HTML va fi injectat în subsolul meniului de navigare. Poate fi folosit în scopuri de identificare. Exemplu, pentru a arăta în mod explicit numele gazdei, poți adăuga câmpului <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code> unde hostname = numele gazdei
 
 
 theme_changelog=Jurnal schimbări
@@ -242,16 +242,16 @@ theme_version=Versiunea Temei
 
 
 # Version 17.40
-theme_global_error=Error
-theme_global_warning=Warning
-theme_global_success=Success
-theme_global_info=Information
-sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
-settings_leftmenu_section_hide_vm_and_cm_links=Hide Virtualmin/Cloudmin links from navigation menu
-settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
-theme_sysinfo_wmdocs=Webmin documentation
-theme_sysinfo_vmdocs=Virtualmin documentation
-theme_sysinfo_cmdocs=Cloudmin documentation
+theme_global_error=Eroare
+theme_global_warning=Atenționare
+theme_global_success=Succes
+theme_global_info=Informație
+sysinfo_system_status_warning=Pentru a avea afișat <strong>Informații despre Sistem</strong> va trebui să activezi modulul <em>Statistici Sistem</em> în configurațiile utilizatorului.
+settings_leftmenu_section_hide_vm_and_cm_links=Hide supported modules' links from navigation menu
+settings_leftmenu_user_html_only_for_administrator=Arată fragmente HTML numia pentru administratori
+theme_sysinfo_wmdocs=Documentație Webmin
+theme_sysinfo_vmdocs=Documentație Virtualmin
+theme_sysinfo_cmdocs=Documentație Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
@@ -259,60 +259,102 @@ theme_fileformat_plain_text=Plain Text
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
-theme_xhred_titles_dashboard=Dashboard
-theme_xhred_titles_mail=Mail
+theme_xhred_titles_dashboard=Panou Principal
+theme_xhred_titles_mail=Email
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Please wait...
-theme_xhred_filemin_copying_selected=Copying selected.
-theme_xhred_filemin_cutting_selected=Cutting selected.
-theme_xhred_filemin_pasting_selected=Pasting from clipboard.
-theme_xhred_filemin_unpacking_archive=Unpacking archive.
-theme_xhred_filemin_deleting_selected=Deleting selected.
-theme_xhred_filemin_renaming_selected=Renaming selected.
-theme_xhred_filemin_creating_folder=Creating folder
-theme_xhred_filemin_creating_file=Creating file
-theme_xhred_filemin_downloading_from=Downloading from
-theme_xhred_filemin_setting_permissions=Setting permissions to <samp><em>%value</em></samp> on selected file(s).
-theme_xhred_filemin_changing_ownership=Changing ownership to <samp><em>%value</em></samp> on selected file(s).
-theme_xhred_filemin_compressing_selected=Compressing selected.
-theme_xhred_filemin_refreshing=Refreshing folder content.
-theme_xhred_filemin_copying_successful=Copy to clipboard successful.
-theme_xhred_filemin_cutting_successful=Cut to clipboard successful.
-theme_xhred_filemin_pasting_successful=Paste from clipboard was successful.
-theme_xhred_filemin_extracting_archive=Extracting archive.
-theme_xhred_filemin_bookmark_success=Folder <samp><em>%value</em></samp> was successfully added to your bookmarks.
-theme_xhred_filemin_searching=Searching for <em>`%value`</em> string.
-theme_xhred_filemin_search_founds=Found <samp>%value</samp> matches.
-theme_xhred_filemin_search_found=Found <samp>1</samp> match.
-theme_xhred_filemin_search_no_matches=No matches found.
-theme_xhred_filemin_nothing_is_selected=Nothing is selected!
-theme_xhred_filemin_saving_file=File `<samp><em>%value</em></samp>` is being saved.
-theme_xhred_filemin_file_saved=File `<samp><em>%value</em></samp>` has been successfully saved.
-theme_xhred_filemin_not_editable=Can not edit this type of selection.
-theme_xhred_filemin_not_decompressable=Can not decompress this type of file.
-theme_xhred_filemin_no_selection_to_copy=No folders/files selected to copy.
-theme_xhred_filemin_no_selection_to_cut=No folders/files selected to cut.
-theme_xhred_filemin_empty_clipboard=Clipboard is empty.
+theme_xhred_global_please_wait=Te rog așteaptă...
+theme_xhred_filemin_copying_selected=Copiez selecțiile.
+theme_xhred_filemin_cutting_selected=Tai selecțiile.
+theme_xhred_filemin_pasting_selected=Alipesc din clipboard.
+theme_xhred_filemin_unpacking_archive=Desfac arhiva.
+theme_xhred_filemin_deleting_selected=Șterg selecțiile.
+theme_xhred_filemin_renaming_selected=Redenumesc selecțiile.
+theme_xhred_filemin_creating_folder=Creez dosar
+theme_xhred_filemin_creating_file=Creez fișier
+theme_xhred_filemin_downloading_from=Descar de la
+theme_xhred_filemin_setting_permissions=Setez permisiuni pentru <samp><em>%value</em></samp> pe fișier(ele) selectat(e).
+theme_xhred_filemin_changing_ownership=Modifica proprietatea pentru <samp><em>%value</em></samp> pe fișier(ele) selectat(e).
+theme_xhred_filemin_compressing_selected=Comprim selecțiile.
+theme_xhred_filemin_refreshing=Reîmprospătez conșinutul dosarului.
+theme_xhred_filemin_copying_successful=Copiere cu succes în clipboard.
+theme_xhred_filemin_cutting_successful=Tăiere cu succes în clipboard.
+theme_xhred_filemin_pasting_successful=Alipirea din clipboard efectuată cu succes.
+theme_xhred_filemin_extracting_archive=Extrag din arhivă.
+theme_xhred_filemin_bookmark_success=Dosar <samp><em>%value</em></samp> a fost adăugat cu succes la favorite.
+theme_xhred_filemin_searching=Caut după cheia <em>`%value`</em>.
+theme_xhred_filemin_search_founds=Găsit <samp>%value</samp> potriviri.
+theme_xhred_filemin_search_found=Găsit <samp>1</samp> potrivire.
+theme_xhred_filemin_search_no_matches=Nicio potrivire găsită.
+theme_xhred_filemin_nothing_is_selected=Nu-i nimic selectat!
+theme_xhred_filemin_saving_file=Fișier `<samp><em>%value</em></samp>` în curs de salvare.
+theme_xhred_filemin_file_saved=Fișier `<samp><em>%value</em></samp>` salvat cu succes.
+theme_xhred_filemin_not_editable=Nu pot edita acest gen de selecție.
+theme_xhred_filemin_not_decompressable=Nu pot decomprima acest gen de fișier.
+theme_xhred_filemin_no_selection_to_copy=Niciun dosar/fișier selectat pentru copiere.
+theme_xhred_filemin_no_selection_to_cut=Niciun dosar/fișier selectat pentru tăiere.
+theme_xhred_filemin_empty_clipboard=Clipboard-ul este gol.
 
-theme_xhred_filemin_successful_extraction=Extraction was successful.
-theme_xhred_filemin_successful_deletion=Deletion was successful.
-theme_xhred_filemin_successful_permissions=Permissions have been changed successfully.
-theme_xhred_filemin_successful_ownership=Ownership has been changed successfully.
-theme_xhred_filemin_successful_compression=Compression has successfully finished.
-theme_xhred_filemin_successful_rename=Rename operation was successful.
-theme_xhred_filemin_successful_folder_creation=Folder `<samp>%value</samp>` was created successfully.
-theme_xhred_filemin_successful_file_creation=File `<samp>%value</samp>` was created successfully.
+theme_xhred_filemin_successful_extraction=Dezarhivare efectuată cu succes.
+theme_xhred_filemin_successful_deletion=Ștergere efectuată cu succes.
+theme_xhred_filemin_successful_permissions=Permisiunile au fost modificate cu succes.
+theme_xhred_filemin_successful_ownership=Proprietatea a fost schimbată cu succes.
+theme_xhred_filemin_successful_compression=Comprimarea s-a finașizat cu succes.
+theme_xhred_filemin_successful_rename=Operația de redenumire efectuată cu succes.
+theme_xhred_filemin_successful_folder_creation=Dosar `<samp>%value</samp>` creat cu succes.
+theme_xhred_filemin_successful_file_creation=Fișier `<samp>%value</samp>` creat cu succes.
 
-theme_xhred_notifications_packages_updates=Packages Update
-theme_xhred_notifications_theme_update=Theme Update
-theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
-theme_xhred_notifications_firewall_update=Firewall Update
-theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+theme_xhred_notifications_packages_updates=Actualizări de Pachete
+theme_xhred_notifications_theme_update=Actualizări de Temă
+theme_xhred_notifications_theme_update_message=O nouă versiune <em>%v</em> a <strong>Authentic Theme</strong> este disponibilă. Te rog actualizează.
+theme_xhred_notifications_firewall_update=Actualizare de Firewall
+theme_xhred_notifications_firewall_update_message=O nouă versiune <em>%v</em> a <strong>ConfigServer Server Security și Firewall</strong> este disponibilă. Te rog actualizează.
 
-theme_xhred_notifications_firewall_danger=Firewall Danger
-theme_xhred_notifications_firewall_danger_message=It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don't leave your server exposed, check for the firewall settings (%v)
+theme_xhred_notifications_firewall_danger=Pericol Firewall
+theme_xhred_notifications_firewall_danger_message=Se pare că <strong>ConfigServer Server Security și Firewall</strong> <span class="badge badge-danger">nu-i activ</span> sau s-a oprit! Nu-ți lăsa serverul expus, verifică setările Firewall-ului (%v)
 
-theme_xhred_notifications_firewall_warning=Firewall Warning
+theme_xhred_notifications_firewall_warning=Atenționare Firewall
+
+#17.50
+settings_force_default_tab=Force default tab for Webmin
+settings_force_default_tab_description=This feature will force default tab on window reload as well. Warning! It will not be possible to choose for desired tab using URL, as any location query will be ignored.
+
+settings_grayscale_level_navigation=Grayscale filter
+settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=Sepia filter
+settings_sepia_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturate_level_navigation=Saturate filter
+settings_saturate_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_hue_level_navigation=Hue-rotate filter
+settings_hue_level_navigation_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_invert_level_navigation=Invert filter
+settings_invert_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=Brightness filter
+settings_brightness_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=Contrast filter
+settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
+settings_grayscale_level_content=Grayscale filter
+settings_grayscale_level_content_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
+settings_saturate_level_content=Saturate filter
+settings_saturate_level_content_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
+settings_hue_level_content=Hue-rotate filter
+settings_hue_level_content_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
+
+settings_cm_view_palette=Viewer color palette
+settings_cm_editor_palette=Editor color palette
+
+theme_xhred_filemin_context_select_all=Select All
+theme_xhred_filemin_context_select_invert=Invert Selection
+theme_xhred_filemin_context_refresh=Refresh
+theme_xhred_filemin_context_newfile=Create new file
+theme_xhred_filemin_context_newfoder=Create new folder
+theme_xhred_filemin_context_copy=Copy
+theme_xhred_filemin_context_cut=Cut
+theme_xhred_filemin_context_paste=Paste
+theme_xhred_filemin_context_chmod=Change permissions
+theme_xhred_filemin_context_chown=Change ownership
+
+

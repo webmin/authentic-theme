@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -19,8 +19,11 @@ typeof settings_loader_left == "undefined" ? settings_loader_left = true : false
 typeof settings_mailbox_slash_delimiter == "undefined" ? settings_mailbox_slash_delimiter = true : false;
 typeof settings_window_autoscroll == "undefined" ? settings_window_autoscroll = true : false;
 typeof settings_right_reload == "undefined" ? settings_right_reload = true : false;
+typeof settings_right_default_tab_usermin == "undefined" ? settings_right_default_tab_usermin = "/" : false;
 typeof settings_right_virtualmin_default == "undefined" ? settings_right_virtualmin_default = "sysinfo.cgi" : false;
 typeof settings_right_cloudmin_default == "undefined" ? settings_right_cloudmin_default = "sysinfo.cgi" : false;
+typeof settings_cm_view_palette == "undefined" ? settings_cm_view_palette = "elegant" : false;
+typeof settings_cm_editor_palette == "undefined" ? settings_cm_editor_palette = "elegant" : false;
 typeof settings_notification_color == "undefined" ? settings_notification_color = "grey" : false;
 typeof settings_notification_slider_enabled == "undefined" ? settings_notification_slider_enabled = true : false;
 typeof settings_notification_slider_fixed == "undefined" ? settings_notification_slider_fixed = false : false;
@@ -67,11 +70,12 @@ try {
 	t__wi_p = window
 }
 
-function n___p__f(b, a) {
-	if (t__wi_p.$("#wrapper").data("access-level") != 0) {
+function n___p__f(c, a) {
+	var b = t__wi_p.$("#wrapper").data("access-level");
+	if (b != 0) {
 		return
 	}
-	if (b) {
+	if (c) {
 		t__wi_p.$("body .right-side-tabs-toggler").addClass("hidden");
 		t__wi_p.$("body .right-side-tabs").css("right", "0px").addClass("right-side-tabs-fixed");
 		t__wi_p.$("html").attr("data-slider-fixed", "1")
@@ -227,7 +231,7 @@ function ___csf() {
 		k = t.contentDocument.getElementsByTagName("head")[0],
 		q = t.contentDocument.createElement("script");
 	q.type = "text/javascript";
-	q.src = "/unauthenticated/js/package.min.js?1740";
+	q.src = "/unauthenticated/js/package.min.js?1750";
 	k.appendChild(q);
 	if (o.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
 		t.contentWindow.onbeforeunload = function (a) {
@@ -236,7 +240,7 @@ function ___csf() {
 		o.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
 		$csf = o.$('iframe[name="page"]').contents();
 		$csf.find("html").attr("data-background-style", o.$("html").attr("data-background-style"));
-		$csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">			');
+		$csf.find("head").append('				<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">				<meta name="viewport" content="width=device-width, initial-scale=1.0">				<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1750" rel="stylesheet" type="text/css">			');
 		$.each(o.$('link[href*="/styles.css"]'), function () {
 			if ($(this)) {
 				$csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -457,7 +461,8 @@ function ___csf() {
 					matchBrackets: true,
 					lineNumbers: true,
 					lineWrapping: true,
-					indentUnit: 0
+					indentUnit: 0,
+					theme: settings_cm_editor_palette
 				});
 				$window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2));
 				b.setSize($parent_width, $window_height);
@@ -557,7 +562,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 			return
 		}
 		__lre();
-		s("/unauthenticated/js/authentic.min.js?1740")
+		s("/unauthenticated/js/authentic.min.js?1750")
 	}
 	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
 		t__wi_p.NProgress.done()

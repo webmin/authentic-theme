@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -11,8 +11,8 @@ sub theme_header {
     print '<html data-background-style="'
         . __settings('settings_background_color')
         . '">', "\n";
-    print '<head>',                 "\n";
-    print '<title>',                $_[0], '</title>', "\n";
+    print '<head>', "\n";
+    print '<title data-initial="' . $_[0] . '">', $_[0], '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
     print '<link rel="shortcut icon" href="'
         . $gconfig{'webprefix'}
@@ -42,7 +42,9 @@ sub theme_header {
         . '" data-webprefix="'
         . $gconfig{'webprefix'}
         . '" data-current-product="'
-        . &get_product_name() . '"'
+        . &get_product_name()
+        . '" data-style="'
+        . get_filters('content') . '"'
         . ( &get_module_name() ? ' class="' . &get_module_name() . '"' : '' )
         . '>' . "\n";
 
@@ -165,19 +167,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1750" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1740" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1750" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1740" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1750" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1740" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1750" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -588,6 +590,7 @@ sub theme_ui_textbox {
     $rv .= 'id="' . &quote_escape($name) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
+    $rv .= 'size="' . $size . '" ';
     $rv .= ( $dis ? 'disabled="true" ' : '' );
     $fv .= ( $max ? 'maxlength="' . $max . '" ' : '' );
     $rv .= ( $tags ? $tags : '' );

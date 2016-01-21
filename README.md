@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.40)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.50)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -98,7 +98,8 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `up/down, home/end` - cursor position
   * `enter` - descent into selected
     * in case there is only one row filtered, enter on search field will perform trigger
-  * `spacebar` - select current row
+  * `Secondary-click` - context menu
+  * `spacebar` or `Alt+Secondary-click` - select current row
   * `backspace` - previous folder
   * `*` - inverse select
   * `+` - select all

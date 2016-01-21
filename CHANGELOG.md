@@ -1,5 +1,19 @@
 ##Changelog
 
+####Version 17.50 (January 21, 2016)
+* Added right click _context menu_ for _Filemin_ for extra convenience (Comming later features: Folder size calculations, combined chown/chmod dialogs and more)
+* Added state of the art _color_ management for the palettes, using theme's settings. It is possible now to control `grayscale, sepia, saturate, hue-rotate, invert, brightness, contrast` filters for navigation menu and `grayscale, saturate, hue-rotate` for content page. It enables you to generate <em>hundreds</em> of color palettes with ease
+* Added _White Snow_ contrast theme, to resemble old _Virtualmin Framed Theme_ [#39344](https://www.virtualmin.com/node/39344)
+* Added line numbers for _System Logs_ module
+* Added ability to choose _color palettes_ for _CodeMirror_ viewer/editor
+* Added _title notification counter_, to extend already existing _favicon_ counter
+* Improved dynamic title output in _Virtualmin/Cloudmin_
+* Fixed login and password _autocomplete_ to be off on login page [#39271](https://www.virtualmin.com/node/39271)
+* Fixed reseller account couldn't be saved, due to missing some form fields [39348](https://virtualmin.com/node/39348)
+* Fixed default page for _Usermin_ in _Mail_ mode is set to _Inbox_. Default page for Usermin in _non-mail_ mode is also respected and can be set in `Webmin->Usermin Configuration->User Interface` [39324](https://www.virtualmin.com/node/39324)
+* Fixed bugs [#333](https://github.com/qooob/authentic-theme/issues/333) [#334](https://github.com/qooob/authentic-theme/issues/334) [#335](https://github.com/qooob/authentic-theme/issues/335) [#336](https://github.com/qooob/authentic-theme/issues/336) [#340](https://github.com/qooob/authentic-theme/issues/340)
+* Fixed dozens of other issues
+
 ####Version 17.40 (January 10, 2016)
 * Added triggers to automatically dismiss loader and perform window autoscroll in _Virtualmin/Cloudmin_ [#39237](https://www.virtualmin.com/node/39237)
 * Added documentation links next to product's version on _System Information_ page. Custom documentation links set in _Virtualmin/Cloudmin_ configuration are now also supported [#39225](https://www.virtualmin.com/node/39225)
