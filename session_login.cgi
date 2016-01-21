@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -149,7 +149,7 @@ print
     '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>'
     . "\n";
 print
-    '<input type="text" class="form-control session_login" name="user" placeholder="'
+    '<input type="text" class="form-control session_login" name="user" autocomplete="off" placeholder="'
     . &text('login_user') . '" '
     . $tag
     . ' autofocus>' . "\n";
@@ -159,7 +159,7 @@ print
     '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>'
     . "\n";
 print
-    '<input type="password" class="form-control session_login" name="pass" placeholder="'
+    '<input type="password" class="form-control session_login" name="pass" autocomplete="off" placeholder="'
     . &text('login_pass') . '"  '
     . $tag . '>' . "\n";
 print '</div>' . "\n";
@@ -170,9 +170,9 @@ if ( $miniserv{'twofactor_provider'} ) {
         '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>'
         . "\n";
     print
-        '<input type="text" class="form-control session_login" name="twofactor" placeholder="'
+        '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" placeholder="'
         . &text('login_token')
-        . '" autocomplete=off>' . "\n";
+        . '">' . "\n";
     print '</div>' . "\n";
 }
 if ( !$gconfig{'noremember'} ) {

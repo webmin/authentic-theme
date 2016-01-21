@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,22 +14,21 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.40 (January 10, 2016)</h4>
+                <h4>Version 17.50 (January 21, 2016)</h4>
 
                 <ul>
-                  <li>Added triggers to automatically dismiss loader and perform window autoscroll in <em>Virtualmin/Cloudmin</em> <a class="label label-default" href="https://www.virtualmin.com/node/39237" target="_blank">#39237</a></li>
-                  <li>Added documentation links next to product\'s version on <em>System Information</em> page. Custom documentation links, configurable in <em>Virtualmin/Cloudmin</em> also supported <a class="label label-default" href="https://www.virtualmin.com/node/39225" target="_blank">#39225</a></li>
-                  <li>Added sorting/filter ability for <em>Installed Scripts</em> in <em>Virtualmin</em> <a class="label label-default" href="https://www.virtualmin.com/node/39237" target="_blank">#39237</a></li>
-                  <li>Added an option to show HTML snippet for administrators only</li>
-                  <li>Added an ability to edit <code>custom-lang</code> file from theme extensions\' editor</li>
-                  <li>Changed previously removed <em>Virtualmin/Cloudmin</em> links from <em>Webmin</em> navigation menu from enforced to optional <a class="label label-default" href="https://www.virtualmin.com/node/39237" target="_blank">#39237</a></li>
-                  <li>Fixed hardcoded strings in some <em>Perl</em> and <em>JavaScript</em> files</li>
-                  <li>Fixed hotkeys execution to be performed in the right context</li>
-                  <li>Fixed removed obsolete logo options in <em>Virtualmin/Cloudmin</em> configuration page <a class="label label-default" href="https://www.virtualmin.com/node/39225" target="_blank">#39225</a></li>
-                  <li>Fixed missing input field on the navigation menu, when domain display limits are imposed using <em>Virtualmin Configuration</em> <a class="label label-default" href="https://www.virtualmin.com/node/39219" target="_blank">#39219</a></li>
-                  <li>Fixed <em>Notification Slider</em> to be unfixed disregard of visibility settings on mobile devices</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/321" target="_blank">#321</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/322" target="_blank">#322</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/323" target="_blank">#323</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/326" target="_blank">#326</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/328" target="_blank">#328</a></li>
-                  <li>Fixed other bugs</li>
+                  <li>Added right click <em>context menu</em> for <em>Filemin</em> for extra convenience (Comming later features: Folder size calculations, combined chown/chmod dialogs and more)</li>
+                  <li>Added state of the art <em>color</em> management for the palettes, using theme\'s settings. It is possible now to control <code>grayscale, sepia, saturate, hue-rotate, invert, brightness, contrast</code> filters for navigation menu and <code>grayscale, saturate, hue-rotate</code> for content page. It enables you to generate <em>hundreds</em> of color palettes with ease</li>
+                  <li>Added <em>White Snow</em> contrast theme, to resemble old <em>Virtualmin Framed Theme</em> <a class="label label-default" href="https://www.virtualmin.com/node/39344" target="_blank">#39344</a></li>
+                  <li>Added line numbers for <em>System Logs</em> module</li>
+                  <li>Added ability to choose <em>color palettes</em> for <em>CodeMirror</em> viewer/editor</li>
+                  <li>Added <em>title notification counter</em>, to extend already existing <em>favicon</em> counter</li>
+                  <li>Improved dynamic title output in <em>Virtualmin/Cloudmin</em></li>
+                  <li>Fixed login and password <em>autocomplete</em> to be off on login page <a class="label label-default" href="https://www.virtualmin.com/node/39271" target="_blank">#39271</a></li>
+                  <li>Fixed reseller account couldn\'t be saved, due to missing some form fields <a class="label label-default" href="https://www.virtualmin.com/node/39348" target="_blank">#39348</a></li>
+                  <li>Fixed default page for <em>Usermin</em> in <em>Mail</em> mode is set to <em>Inbox</em>. Default page for Usermin in <em>non-mail</em> mode is also respected and can be set in <code>Webmin->Usermin Configuration->User Interface</code> <a class="label label-default" href="https://www.virtualmin.com/node/39324" target="_blank">#39324</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/333" target="_blank">#333</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/334" target="_blank">#334</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/335" target="_blank">#335</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/336" target="_blank">#336</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/340" target="_blank">#340</a></li>
+                  <li>Fixed dozens of other issues</li>
                 </ul>
 
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->

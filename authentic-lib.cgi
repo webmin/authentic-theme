@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.40 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -51,6 +51,13 @@ sub __settings {
                 my $m = join( '\n', @m );
                 $m =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
                 $m =~ s/\\'/'/g;
+                if ($m eq 0
+                    && (   index( $_s, '_level_navigation' ) != -1
+                        || index( $_s, '_level_content' ) != -1 )
+                    )
+                {
+                    $m = '0';
+                }
                 return $m;
             }
         }
@@ -881,6 +888,22 @@ sub print_left_menu {
                     '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
                     . $c . '">' . "\n";
                 print_left_menu( $module, $item->{'members'}, 1, $c );
+                if (   $c eq 'global_setting'
+                    || $c eq 'global_settings'
+                    && &foreign_available("webmin") )
+                {
+                    &print_category_link(
+                        "/webmin/edit_themes.cgi",
+                        $text{
+                            'settings_right_theme_left_configuration_title'},
+                        1
+                    );
+                    &print_category_link( "/settings-editor_read.cgi",
+                        $text{'settings_right_theme_left_extensions_title'},
+                        1 );
+                    &print_category_link( "/settings-upload.cgi",
+                        $text{'settings_right_theme_left_logo_title'}, 1 );
+                }
                 print "</ul></li>\n";
             }
             elsif ( $item->{'type'} eq 'hr' ) {
@@ -1772,19 +1795,17 @@ sub embed_logo {
 
 sub embed_settings {
     if ( -r $config_directory . "/authentic-theme/settings.js" ) {
-        if (  -s $config_directory
-            . "/authentic-theme/settings.js" ne -s $root_directory
-            . "/authentic-theme/unauthenticated/js/settings.js" )
-        {
-            copy_source_dest(
-                $config_directory . "/authentic-theme/settings.js",
-                $root_directory . "/authentic-theme/unauthenticated/js"
-            );
-        }
+
+        copy_source_dest(
+            $config_directory . "/authentic-theme/settings.js",
+            $root_directory . "/authentic-theme/unauthenticated/js"
+        );
+
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/settings.js" type="text/javascript"></script>'
-            . "\n";
+            . '/unauthenticated/js/settings.js?'
+            . time()
+            . '" type="text/javascript"></script>' . "\n";
     }
     elsif ( -r $root_directory
         . "/authentic-theme/unauthenticated/js/settings.js"
@@ -1856,7 +1877,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1740" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1750" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1898,7 +1919,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1740" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1750" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1910,13 +1931,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1740" type="text/javascript"></script>' . "\n";
+                . '.js?1750" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1750" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1932,17 +1953,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1740" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1750" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1740" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1750" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1740" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1750" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1950,7 +1971,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1740" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1750" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1974,16 +1995,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1740" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1750" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1740" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1750" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1740" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1750" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2091,12 +2112,14 @@ sub _settings {
             ),
             'settings_right_default_tab_webmin',
             ( foreign_available("virtual-server") ? '/?virtualmin' : '/' ),
-            'settings_right_default_tab_usermin',
-            '/',
+            'settings_force_default_tab',
+            'false',
             'settings_right_virtualmin_default',
             'sysinfo.cgi',
             'settings_right_cloudmin_default',
             'sysinfo.cgi',
+            'settings_right_default_tab_usermin',
+            '/',
 
             '__',
             _settings(
@@ -2105,8 +2128,32 @@ sub _settings {
             ),
             'settings_navigation_color',
             'blue',
+            'settings_grayscale_level_navigation',
+            '0',
+            'settings_sepia_level_navigation',
+            '0',
+            'settings_saturate_level_navigation',
+            '1',
+            'settings_hue_level_navigation',
+            '0',
+            'settings_invert_level_navigation',
+            '0',
+            'settings_brightness_level_navigation',
+            '1',
+            'settings_contrast_level_navigation',
+            '1',
             'settings_background_color',
             'lightGrey',
+            'settings_grayscale_level_content',
+            '0',
+            'settings_saturate_level_content',
+            '1',
+            'settings_hue_level_content',
+            '0',
+            'settings_cm_view_palette',
+            'elegant',
+            'settings_cm_editor_palette',
+            'elegant',
             'settings_animation_left',
             'true',
             'settings_animation_tabs',
@@ -2173,7 +2220,7 @@ sub _settings {
             'settings_leftmenu_singlelink_icons',
             'true',
             'settings_leftmenu_section_hide_vm_and_cm_links',
-            'false',
+            'true',
             'settings_leftmenu_vm_installscripts',
             'true',
             'settings_leftmenu_vm_webpages',
@@ -2305,6 +2352,7 @@ sub _settings {
             'settings_leftmenu_section_hide_vm_and_cm_links',
             'settings_leftmenu_singlelink_icons',
             'settings_right_default_tab_webmin',
+            'settings_force_default_tab',
             'settings_right_reload'
         );
 
@@ -2545,6 +2593,65 @@ sub _settings {
             ';
 
         }
+        elsif ($k eq 'settings_grayscale_level_navigation'
+            || $k eq 'settings_sepia_level_navigation'
+            || $k eq 'settings_saturate_level_navigation'
+            || $k eq 'settings_hue_level_navigation'
+            || $k eq 'settings_invert_level_navigation'
+            || $k eq 'settings_brightness_level_navigation'
+            || $k eq 'settings_contrast_level_navigation'
+            || $k eq 'settings_grayscale_level_content'
+            || $k eq 'settings_saturate_level_content'
+            || $k eq 'settings_hue_level_content' )
+        {
+
+            my $range_max = '1';
+            my $range_min = '0';
+            my $range_step;
+
+            if (   $k eq 'settings_grayscale_level_navigation'
+                || $k eq 'settings_sepia_level_navigation'
+                || $k eq 'settings_saturate_level_navigation'
+                || $k eq 'settings_invert_level_navigation'
+                || $k eq 'settings_grayscale_level_content'
+                || $k eq 'settings_saturate_level_content' )
+            {
+
+                if (   $k eq 'settings_saturate_level_navigation'
+                    || $k eq 'settings_saturate_level_content' )
+                {
+                    $range_max = '3';
+                }
+                $range_step = '0.1';
+            }
+            elsif ($k eq 'settings_brightness_level_navigation'
+                || $k eq 'settings_contrast_level_navigation' )
+            {
+                $range_min  = '0.1';
+                $range_max  = '3';
+                $range_step = '0.01';
+            }
+            elsif ($k eq 'settings_hue_level_navigation'
+                || $k eq 'settings_hue_level_content' )
+            {
+                $range_min  = '-360';
+                $range_max  = '360';
+                $range_step = '1';
+            }
+            $v = '
+                <input style="display: inline; width: 80%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="'
+                . $range_min
+                . '" max="'
+                . $range_max
+                . '" step="'
+                . $range_step
+                . '" name="'
+                . $k
+                . '" value="'
+                . $v . '">
+            ';
+
+        }
         elsif ($k eq 'settings_hotkey_custom_1'
             || $k eq 'settings_hotkey_custom_2'
             || $k eq 'settings_hotkey_custom_3'
@@ -2680,8 +2787,12 @@ sub _settings {
                 . ( $v eq 'orange' && ' selected' )
                 . '>Longhorn Orange</option>
 
+                    <option value="white"'
+                . ( $v eq 'white' && ' selected' ) . '>White Snow</option>
+
                     <option value="brown"'
                 . ( $v eq 'brown' && ' selected' ) . '>Saddle Brown</option>
+
 
                     <option value="purple"'
                 . ( $v eq 'purple' && ' selected' ) . '>Dark Purple</option>
@@ -2748,6 +2859,20 @@ sub _settings {
                     <option value="ghostWhite"'
                 . ( $v eq 'ghostWhite' && ' selected' )
                 . '>Ghost White</option>
+
+                </select>';
+        }
+        elsif ($k eq 'settings_cm_view_palette'
+            || $k eq 'settings_cm_editor_palette' )
+        {
+            $v = '<select class="ui_select" name="' . $k . '">
+
+                    <option value="elegant"'
+                . ( $v eq 'elegant' && ' selected' )
+                . '>Elegant (Default)</option>
+
+                    <option value="monokai"'
+                . ( $v eq 'monokai' && ' selected' ) . '>Monokai</option>
 
                 </select>';
         }
@@ -3002,16 +3127,7 @@ sub get_default_right {
     my $t_goto;
 
     # Check user settings on default page for Virtualmin/Cloudmin
-    if ( $t_uri_virtualmin != -1 ) {
-        our %virtualmin_config = &foreign_config( 'virtual-server' );
-    }
-    if ( $t_uri_virtualmin != -1
-        && $virtualmin_config{'wizard_run'} ne '1' )
-    {
-        $udefgoto = '/virtual-server/wizard.cgi';
-
-    }
-    elsif ($t_uri_virtualmin != -1
+    if (   $t_uri_virtualmin != -1
         && length __settings('settings_right_virtualmin_default')
         && __settings('settings_right_virtualmin_default') ne ''
         && domain_available( __settings('settings_right_virtualmin_default') )
@@ -3034,19 +3150,43 @@ sub get_default_right {
             . __settings('settings_right_cloudmin_default');
     }
     else {
-        $udefgoto = '/sysinfo.cgi';
+        our %virtualmin_config = &foreign_config('virtual-server');
+        if (   $t_uri_virtualmin != -1
+            && $virtualmin_config{'wizard_run'} ne '1' )
+        {
+            $udefgoto = '/virtual-server/wizard.cgi';
+        }
+        else {
+            $udefgoto = '/sysinfo.cgi';
+        }
     }
 
-    #Going to default right page
+    # Going to default right page
     my $minfo = &get_goto_module();
     $t_goto
-        = ( $t_uri_virtualmin != -1 || $t_uri_cloudmin != -1 ) ? $udefgoto
+        = (    $t_uri_virtualmin != -1
+            || $t_uri_cloudmin != -1
+            || $t_uri_dashboard != -1 ) ? $udefgoto
         : $minfo ? "$minfo->{'dir'}/"
         :          $udefgoto;
 
     # Filemin tweak for maintaining localStorage consistency
     if ( index( $t_goto, 'filemin' ) == 0 ) {
         $t_goto = $t_goto . 'index.cgi?path=';
+    }
+
+    # Prevent Virtualmin/Cloudmin module from being set as default page
+    if (   $minfo->{'dir'} eq 'virtual-server'
+        || $minfo->{'dir'} eq 'server-manager' )
+    {
+        $t_goto = '/sysinfo.cgi';
+    }
+
+    # Goto Inbox in Usermin Mail mode
+    if (   $get_user_level eq '3' & foreign_available("mailbox")
+        && $t_uri_webmail != -1 )
+    {
+        $t_goto = '/mailbox/index.cgi?id=INBOX';
     }
 
     return $t_goto;
@@ -3068,10 +3208,10 @@ sub init {
         && $ENV{'REQUEST_URI'} ne '/?dashboard'
         && index( $ENV{'REQUEST_URI'}, 'xhr' ) lt 0 )
     {
-        my $webmin
+        my $l
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'} . '/';
-        print "Location: $webmin\n\n";
+        print "Location: $l\n\n";
     }
     elsif (
         ( $t_uri_virtualmin != -1 && !&foreign_available("virtual-server") )
@@ -3085,33 +3225,70 @@ sub init {
         )
     {
         print "Set-Cookie: redirect=0; path=/\r\n";
-        my $webmin
+        my $l
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'} . '/';
-        print "Location: $webmin\n\n";
+        print "Location: $l\n\n";
     }
 
-# In case Virtualmin/Cloudmin is installed, after logging in, redirect to Virtualmin/Cloudmin
-    if ($ENV{'HTTP_COOKIE'} =~ /redirect=1/
+    # In case Virtualmin/Cloudmin is installed, after
+    # logging in, redirect to Virtualmin/Cloudmin
+    # and check for force options as well
+    my $settings_force_default_tab = __settings('settings_force_default_tab');
+    my $settings_right_default_tab_webmin
+        = __settings('settings_right_default_tab_webmin');
+    if ((      $ENV{'HTTP_COOKIE'} =~ /redirect=1/
+            || $settings_force_default_tab eq 'true'
+        )
         && (   &foreign_available("virtual-server")
             || &foreign_available("server-manager") )
         && &get_product_name() eq "webmin"
-        && ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 )
+        && ((      $t_uri_virtualmin == -1
+                && $t_uri_cloudmin == -1
+                && length $settings_right_default_tab_webmin > 1
+                || ($settings_force_default_tab eq 'true'
+                    && ((   $t_uri_cloudmin != -1
+                            && index( $settings_right_default_tab_webmin,
+                                'cloudmin' ) == -1
+                        )
+                        || ($t_uri_virtualmin != -1
+                            && index( $settings_right_default_tab_webmin,
+                                'virtualmin' ) == -1
+                        )
+                    )
+                )
+            )
+        )
         )
     {
         print "Set-Cookie: redirect=0; path=/\r\n";
-        my $virtualmin
+        my $d
             = ( $ENV{'HTTPS'} ? 'https://' : 'http://' )
             . $ENV{'HTTP_HOST'}
             . (
-            length __settings('settings_right_default_tab_webmin')
-            ? __settings('settings_right_default_tab_webmin')
+            length $settings_right_default_tab_webmin
+            ? $settings_right_default_tab_webmin
             : ( foreign_available("virtual-server") ? '/?virtualmin' : '/' )
             );
-        print "Location: $virtualmin\n\n";
+
+        # Prevent redirect-loop in case one of the
+        # modules were remove and old settings are used
+        if ((   index( $settings_right_default_tab_webmin, 'cloudmin' ) != -1
+                && !&foreign_available("server-manager")
+            )
+            || (index( $settings_right_default_tab_webmin, 'virtualmin' )
+                != -1 && !&foreign_available("virtual-server") )
+            )
+        {
+        }
+        else {
+            print "Location: $d\n\n";
+
+        }
     }
 
-  # In case Mailbox module is installed, after logging in, redirect to Webmail
+    # In case Mailbox module is installed, after
+    # logging in, redirect to Webmail
     if (   $ENV{'HTTP_COOKIE'} =~ /redirect=1/
         && &foreign_check("mailbox")
         && &foreign_available("mailbox")
@@ -3218,7 +3395,8 @@ sub content {
 
     # Mobile toggle
     print
-        '<div class="visible-xs mobile-menu-toggler" style="position: fixed">';
+        '<div class="visible-xs mobile-menu-toggler" style="position: fixed; '
+        . get_filters('navigation') . '">';
     print
         '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
         . "\n";
@@ -3227,8 +3405,9 @@ sub content {
     print '</div>' . "\n";
 
     #### Left
-    print '<aside style="z-index:10;" id="sidebar" class="hidden-xs">' . "\n"
-        . "\n";
+    print '<aside style="z-index:10; '
+        . get_filters('navigation')
+        . '" id="sidebar" class="hidden-xs">' . "\n" . "\n";
 
     &print_switch();
 
@@ -3269,15 +3448,61 @@ sub content {
     print '<iframe name="page" id="iframe" src="'
         . $gconfig{'webprefix'}
         . (
-        (   !-f $root_directory . '/authentic-theme/update'
+        (          -f $root_directory . '/authentic-theme/update'
                 && $t_uri_dashboard == -1
+                && $get_user_level ne '1'
+                && $get_user_level ne '2'
+                && $get_user_level ne '3'
+                && $get_user_level ne '4'
         )
-        ? $t_goto
-        : '/sysinfo.cgi'
+        ? '/sysinfo.cgi'
+        : $t_goto
         ) . '">' . "\n";
     print '</iframe>' . "\n";
     print '</div>' . "\n";
 
+}
+
+sub get_filters {
+    my ($type) = @_;
+    return
+          '-webkit-filter: grayscale('
+        . __settings( 'settings_grayscale_level_' . $type . '' ) . ') '
+        . ( $type eq 'navigation'
+            && 'sepia('
+            . __settings( 'settings_sepia_level_' . $type . '' )
+            . ')' )
+        . ' saturate('
+        . __settings( 'settings_saturate_level_' . $type . '' )
+        . ') hue-rotate('
+        . __settings( 'settings_hue_level_' . $type . '' ) . 'deg)'
+        . ( $type eq 'navigation'
+            && ' invert('
+            . __settings( 'settings_invert_level_' . $type . '' )
+            . ') brightness('
+            . __settings( 'settings_brightness_level_' . $type . '' )
+            . ') contrast('
+            . __settings( 'settings_contrast_level_' . $type . '' )
+            . ')' )
+        . '; filter: grayscale('
+        . __settings( 'settings_grayscale_level_' . $type . '' ) . ') '
+        . ( $type eq 'navigation'
+            && 'sepia('
+            . __settings( 'settings_sepia_level_' . $type . '' )
+            . ')' )
+        . ' saturate('
+        . __settings( 'settings_saturate_level_' . $type . '' )
+        . ') hue-rotate('
+        . __settings( 'settings_hue_level_' . $type . '' ) . 'deg)'
+        . ( $type eq 'navigation'
+            && ' invert('
+            . __settings( 'settings_invert_level_' . $type . '' )
+            . ') brightness('
+            . __settings( 'settings_brightness_level_' . $type . '' )
+            . ') contrast('
+            . __settings( 'settings_contrast_level_' . $type . '' )
+            . ')' )
+        . ';';
 }
 
 sub get_current_user_language {
@@ -3332,27 +3557,27 @@ sub get_theme_language {
 
 }
 
-# sub get_module_config_data {
-#     my ( $module, $key ) = @_;
+sub get_module_config_data {
+    my ( $module, $key ) = @_;
 
-#     if ( -r $config_directory . '/' . $module . '/config' ) {
+    if ( -r $config_directory . '/' . $module . '/config' ) {
 
-#         my $config = &read_file_contents(
-#             $config_directory . '/' . $module . '/config' );
-#         my %config = $config =~ /(.*?)=(.*)/g;
+        my $config = &read_file_contents(
+            $config_directory . '/' . $module . '/config' );
+        my %config = $config =~ /(.*?)=(.*)/g;
 
-#         if ($key) {
-#             return $config{$key};
-#         }
-#         else {
-#             return %config;
-#         }
-#     }
-#     else {
-#         return undef;
-#     }
+        if ($key) {
+            return $config{$key};
+        }
+        else {
+            return %config;
+        }
+    }
+    else {
+        return undef;
+    }
 
-# }
+}
 
 # sub print_hash {
 #     my (%d) = @_;
