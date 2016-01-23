@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.51 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,10 +14,12 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.50 (January 21, 2016)</h4>
-
+                <h4>Version 17.50-17.51 (January 23, 2016)</h4>
                 <ul>
-                  <li>Added right click <em>context menu</em> for <em>Filemin</em> for extra convenience (Comming later features: Folder size calculations, combined chown/chmod dialogs and more)</li>
+                  <li>Improved right click <em>context menu</em> for <em>Filemin</em>, which now has all options and behaves smart. <em>Actions column</em> has been removed as no longer needed. For those who still wants to see it, need to add to the theme\'s JavaScript extension, the following: <code>settings_filemin_hide_actions=false;</code></li>
+                  <li>Fixed <em>Elegant</em> theme for <em>CodeMirror</em><hr></li>
+
+                  <li>Added right click <em>context menu</em> for <em>Filemin</em> for extra convenience</li>
                   <li>Added state of the art <em>color</em> management for the palettes, using theme\'s settings. It is possible now to control <code>grayscale, sepia, saturate, hue-rotate, invert, brightness, contrast</code> filters for navigation menu and <code>grayscale, saturate, hue-rotate</code> for content page. It enables you to generate <em>hundreds</em> of color palettes with ease</li>
                   <li>Added <em>White Snow</em> contrast theme, to resemble old <em>Virtualmin Framed Theme</em> <a class="label label-default" href="https://www.virtualmin.com/node/39344" target="_blank">#39344</a></li>
                   <li>Added line numbers for <em>System Logs</em> module</li>

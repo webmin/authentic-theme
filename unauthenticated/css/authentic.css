@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.51 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -5601,7 +5601,7 @@ body[data-theme='orange'] .select2-selection__rendered .menu-status-label:hover 
 }body[data-theme='white'] .switch-mins label {
     color: #fff;
 }body[data-theme='white'] .switch-mins input:checked + label {
-    color: #333;
+    color: #030303;
     background: #fefefe;
 }body[data-theme='white'] #sidebar .form-group .form-control.sidebar-search {
     color: #0a0a0a;
@@ -5661,6 +5661,12 @@ body[data-theme='white'] #sidebar ul.sub li:before {
 }body[data-theme='white'] .mobile-menu-toggler.selected > .btn-primary {
     border: 1px solid rgba(254,254,254,.99);
     background-color: rgba(254,254,254,.99);
+}body[data-theme='white'] .switch-mins label {
+    opacity: .8;
+    color: #fff;
+}body[data-theme='white'] .switch-mins label[for='open_dashboard'] > i.fa-area-chart,
+body[data-theme='white'] .switch-mins label[for='open_dashboard'] > span {
+    opacity: .8;
 }body[data-theme='white'] #sidebar .switch-mins a {
     background-color: rgba(254,254,254,.99);
 }body[data-theme='white'] #sidebar .loading-sm {
@@ -6098,6 +6104,47 @@ html[data-background-style='ghostWhite'] .container-fluid,
 html[data-background-style='ghostWhite'] .loader-container,
 html[data-background-style='ghostWhite'] .input-group-addon {
     background-color: #f8f8f8 !important;
+}.dropdown-submenu {
+    position: relative;
+}.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+
+    margin-top: -6px;
+    margin-left: -1px;
+
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}.dropdown-submenu > a:after {
+    display: block;
+    float: right;
+
+    width: 0;
+    height: 0;
+    margin-top: 5px;
+    margin-right: -10px;
+
+    content: ' ';
+
+    border-width: 5px 0 5px 5px;
+    border-style: solid;
+    border-color: transparent;
+    border-left-color: #ccc;
+}.dropdown-submenu:hover > a:after {
+    border-left-color: #333;
+}.dropdown-submenu.pull-left {
+    float: none;
+}.dropdown-submenu.pull-left > .dropdown-menu {
+    left: -100%;
+
+    margin-left: 10px;
+
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
 }@media screen and (max-width:767px) {
     .table-responsive {
         border: 0;

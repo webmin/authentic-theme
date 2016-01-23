@@ -1,7 +1,11 @@
 ##Changelog
 
+####Version 17.51 (January 23, 2016)
+* Improved right click _context menu_ for _Filemin_, which now has all options and behaves smart. _Actions column_ has been removed as no longer needed. For those who still wants to see it, need to add to the theme's JavaScript extension, the following: `settings_filemin_hide_actions=false;`
+* Fixed _Elegant_ theme for _CodeMirror_
+
 ####Version 17.50 (January 21, 2016)
-* Added right click _context menu_ for _Filemin_ for extra convenience (Comming later features: Folder size calculations, combined chown/chmod dialogs and more)
+* Added right click _context menu_ for _Filemin_ for extra convenience
 * Added state of the art _color_ management for the palettes, using theme's settings. It is possible now to control `grayscale, sepia, saturate, hue-rotate, invert, brightness, contrast` filters for navigation menu and `grayscale, saturate, hue-rotate` for content page. It enables you to generate <em>hundreds</em> of color palettes with ease
 * Added _White Snow_ contrast theme, to resemble old _Virtualmin Framed Theme_ [#39344](https://www.virtualmin.com/node/39344)
 * Added line numbers for _System Logs_ module
