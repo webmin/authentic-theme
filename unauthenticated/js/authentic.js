@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.50 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.51 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1447,7 +1447,10 @@ function t__m__m(h, g) {
 
 function ___f__tw() {
 	if ($("body").attr("class") && $("body").attr("class").indexOf("filemin") > -1) {
-		$("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li><a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_invert") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1"><i class="fa fa-refresh"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-file-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-copy"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-cut"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-paste"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-gears"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown") + "</a></li>		        </ul>");
+		if ($__source_file == "config.cgi") {
+			$('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"]').parents("td.col_value").parent("tr").addClass("hidden")
+		}
+		$("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-filemin-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_goto") + '</a></li>		            <li class="divider context-filemin-dependent-goto"></li>		            <li><a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_new") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-file-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive") + '</a></li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-copy"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-cut"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-paste"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-filemin-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_rename") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_search") + '</a></li>		            <li class="divider context-filemin-dependent-extract"></li>		            <li class="context-filemin-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa at-font-box-remove"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_properties") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-gears"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
 		$("body").on("hidden.bs.modal", function () {
 			$(".modal-backdrop").remove()
 		});
@@ -1818,13 +1821,10 @@ function ___f__tw() {
 			messenger('<i class="fa fa-refresh">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_refreshing") + " " + lang("theme_xhred_global_please_wait"), 2, "info")
 		});
 		setTimeout(function () {
-			typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = true : false;
-			if ($hostname == settings_allowed_hostname) {
-				$(".btn-group.pull-right > .btn-group > button").hover(function (b) {
-					b.preventDefault();
-					b.stopPropagation()
-				})
-			}
+			$(".btn-group.pull-right > .btn-group > button").hover(function (b) {
+				b.preventDefault();
+				b.stopPropagation()
+			})
 		}, 100);
 		$("body").on("click", ".acheckbox, .btn-group.pull-right > button:eq(0), .btn-group.pull-right > button:eq(1), input", function () {
 			if ($("#DataTables_Table_0 tbody input:checked").length !== 0) {
@@ -2051,7 +2051,7 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.50 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.51 https://github.com/qooob/authentic-theme")
 	}
 	$.ajax({
 		type: "GET",
@@ -3002,6 +3002,7 @@ if (t___wi.location == t__wi_p.location) {
 			__f_____lo(false, true)
 		}
 		if (j === "copy" || j === "cut") {
+			__f_____ul();
 			$.ajax({
 				type: "POST",
 				url: $_____link_full + "/" + __f___mn() + "/" + j + ".cgi",
@@ -3027,7 +3028,6 @@ if (t___wi.location == t__wi_p.location) {
 							}, 10)
 						}
 					}
-					__f_____ul()
 				},
 				error: function (a) {}
 			})
@@ -3040,15 +3040,16 @@ if (t___wi.location == t__wi_p.location) {
 				dataType: "text",
 				success: function (a) {
 					if (!$(a).find("#list_form").length) {
-						messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>' + $(a).find(".panel-body").html(), 10, "error")
+						messenger('<i class="fa fa-exclamation-triangle">&nbsp;&nbsp;&nbsp;</i>' + $(a).find(".panel-body").html(), 10, "error");
+						__f_____ul()
 					} else {
 						delete localStorage.cut;
 						if (!localStorage.copy) {
 							$(".filemin-button-paste").addClass("disabled")
 						}
-						messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_pasting_successful"), 5, "success")
+						messenger('<i class="fa fa-clipboard">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_pasting_successful"), 5, "success");
+						__f___u("upd", $(a).find("#list_form table").find(".ui_checked_columns"), 1, j)
 					}
-					__f___u("upd", $(a).find("#list_form table").find(".ui_checked_columns"), 1, j)
 				},
 				error: function (a) {}
 			})
@@ -3306,9 +3307,47 @@ if (t___wi.location == t__wi_p.location) {
 	}
 
 	function __f__c__m() {
-		$("#list_form table tbody tr").contextMenu({
+		$("#list_form table").contextMenu({
 			menuSelector: "#__f__c__m",
-			menuSelectorTriggered: function (a, b) {
+			menuSelectorTriggered: function (d, a) {
+				if ($("#DataTables_Table_0 tbody tr input").length && d.parents("tr").find("input:checked").length === 0) {
+					var a = document.getElementsByClassName("ui_checked_columns");
+					for (i = 0; i < a.length; i++) {
+						var c = a[i].getElementsByTagName("input")[0];
+						if (c.checked) {
+							rowClick(a[i])
+						}
+					}
+					if (settings_window_customized_checkboxes_and_radios) {
+						$(".acheckbox, .aradio").icheck("updated")
+					}
+					__f___lb();
+					d.parents("tr").find("td:first-child input").trigger("click");
+					var b = jQuery.Event("keydown");
+					b.which = 40;
+					$("body").trigger(b);
+					d.parents("tr").find("td:first-child").trigger("contextmenu")
+				}
+				if (d.parents("tr").find("i.fa-folder-open-o").length) {
+					$(".context-filemin-dependent-goto").removeClass("hidden")
+				} else {
+					$(".context-filemin-dependent-goto").addClass("hidden")
+				}
+				if (!d.parents("tr").find("i.fa-edit").length) {
+					$(".context-filemin-dependent-edit").addClass("hidden")
+				} else {
+					$(".context-filemin-dependent-edit").removeClass("hidden")
+				}
+				if (!d.parents("tr").find("i.fa.at-font-box-remove").length) {
+					$(".context-filemin-dependent-extract").addClass("hidden")
+				} else {
+					$(".context-filemin-dependent-extract").removeClass("hidden")
+				}
+				if ($(".filemin-button-compress").hasClass("disabled")) {
+					$("a[data-context-newarchive]").addClass("disabled").parent("li").addClass("disabled")
+				} else {
+					$("a[data-context-newarchive]").removeClass("disabled").parent("li").removeClass("disabled")
+				}
 				if ($(".filemin-button-copy").hasClass("disabled")) {
 					$("a[data-context-copy]").addClass("disabled").parent("li").addClass("disabled")
 				} else {
@@ -3324,6 +3363,18 @@ if (t___wi.location == t__wi_p.location) {
 				} else {
 					$("a[data-context-paste]").removeClass("disabled").parent("li").removeClass("disabled")
 				}
+				if ($(".filemin-button-delete").hasClass("disabled")) {
+					$("a[data-context-delete]").addClass("disabled").parent("li").addClass("disabled");
+					$("a[data-context-rename]").addClass("disabled").parent("li").addClass("disabled")
+				} else {
+					$("a[data-context-delete]").removeClass("disabled").parent("li").removeClass("disabled");
+					$("a[data-context-rename]").removeClass("disabled").parent("li").removeClass("disabled")
+				}
+				if ($(".filemin-button-chmod").hasClass("disabled") && $(".filemin-button-chown").hasClass("disabled")) {
+					$(".context-properties").addClass("disabled")
+				} else {
+					$(".context-properties").removeClass("disabled")
+				}
 				if ($(".filemin-button-chmod").hasClass("disabled")) {
 					$("a[data-context-chmod]").addClass("disabled").parent("li").addClass("disabled")
 				} else {
@@ -3336,6 +3387,9 @@ if (t___wi.location == t__wi_p.location) {
 				}
 			},
 			menuSelected: function (a, b) {
+				if (b.data("context-goto") == "1") {
+					a.parents("tr").find('a.filemin-follow-file[href^="index.cgi?"]').trigger("click")
+				}
 				if (b.data("context-select-all") == "1") {
 					$('button[onclick="selectAll()"]').trigger("click")
 				}
@@ -3351,6 +3405,9 @@ if (t___wi.location == t__wi_p.location) {
 				if (b.data("context-newfolder") == "1") {
 					$('a[onclick="createFolderDialog()"]').trigger("click")
 				}
+				if (b.data("context-newarchive") == "1") {
+					$('a[onclick="compressDialog()"]').trigger("click")
+				}
 				if (b.data("context-copy") == "1") {
 					$(".filemin-button-copy a").trigger("click")
 				}
@@ -3359,6 +3416,22 @@ if (t___wi.location == t__wi_p.location) {
 				}
 				if (b.data("context-paste") == "1") {
 					$(".filemin-button-paste a").trigger("click")
+				}
+				if (b.data("context-delete") == "1") {
+					$(".filemin-button-delete").trigger("click")
+				}
+				if (b.data("context-search") == "1") {
+					$('a[onclick="searchDialog()"]').trigger("click")
+				}
+				if (b.data("context-edit") == "1") {
+					a.parents("tr").addClass("m-active");
+					a.parents("tr").find('a[href^="edit_file.cgi?"]').trigger("click")
+				}
+				if (b.data("context-rename") == "1") {
+					a.parents("tr").find('a[onclick^="renameDialog("]').trigger("click")
+				}
+				if (b.data("context-extract") == "1") {
+					a.parents("tr").find('a[href^="extract.cgi?"]').trigger("click")
 				}
 				if (b.data("context-chmod") == "1") {
 					$('a[onclick="chmodDialog()"]').trigger("click")
@@ -3422,6 +3495,11 @@ if (t___wi.location == t__wi_p.location) {
 				} else {
 					$(".dataTables_paginate").show()
 				}
+				var b = $("#list_form table").find(".fa-font").parents("td").index();
+				if (b > 1 && typeof t__wi_p.settings_filemin_hide_actions == "undefined") {
+					$("#list_form table thead th").eq(b).addClass("hidden");
+					$("#list_form table").find(".fa-font").parents("td").addClass("hidden")
+				}
 				$("#DataTables_Table_0_previous > a").html('<i class="fa fa-angle-left"></i>').css("border-top-left-radius", "2px").css("border-bottom-left-radius", "2px");
 				$("#DataTables_Table_0_next > a").html('<i class="fa fa-angle-right"></i>').css("border-top-right-radius", "2px").css("border-bottom-right-radius", "2px");
 				$("#list_form table").find(".fa-font").removeClass("fa-font").addClass("fa-i-cursor").css("margin-right", "5px").css("margin-left", "5px");
@@ -3447,6 +3525,11 @@ if (t___wi.location == t__wi_p.location) {
 				var a;
 				$("body").on("keydown", function (c) {
 					var h = c.keyCode ? c.keyCode : c.which;
+					if ($("#__f__c__m").is(":visible") && h == 27) {
+						$("#__f__c__m").css("display", "none");
+						return
+					}
+					if (h == 18 && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {}
 					if (h == 13 && $(":focus").parents(".jsPanel").is(".jsPanel")) {
 						if (c.ctrlKey && c.shiftKey) {
 							$(":focus").parents(".jsPanel").find("._filemin_file_editor_save").trigger("click");
@@ -3926,7 +4009,7 @@ if (t___wi.location == t__wi_p.location) {
 				messenger('<i class="fa fa-trash-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_deletion"), 5, "success")
 			} else {
 				if (q === "chmod") {
-					messenger('<i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_permissions"), 5, "success")
+					messenger('<i class="fa fa-cogs">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_permissions"), 5, "success")
 				} else {
 					if (q === "chown") {
 						messenger('<i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_successful_ownership"), 5, "success")
@@ -4215,7 +4298,7 @@ if (t___wi.location == t__wi_p.location) {
 						}
 					}
 				}).on("contextmenu", "td", function (c) {
-					if ($('body[class^="filemin"]').length && !c.shiftKey && !c.altKey && !c.ctrlKey) {
+					if ($('body[class^="filemin"]').length && !c.shiftKey && !c.altKey && !c.ctrlKey && $("#DataTables_Table_0 tbody input:checked").length >= 1) {
 						return
 					}
 					c.preventDefault();
