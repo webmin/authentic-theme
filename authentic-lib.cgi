@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.51 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.52 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1877,7 +1877,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1751" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1752" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1911,7 +1911,7 @@ sub embed_header {
             'jquery.datatables.plugins', 'jquery.easypiechart',
             'tinymce/tinymce',           'transition',
             'nprogress',                 'messenger',
-            'init'
+            'contextmenu',               'init'
         );
 
         foreach my $css (@css) {
@@ -1919,7 +1919,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1751" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1752" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -1931,13 +1931,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1751" type="text/javascript"></script>' . "\n";
+                . '.js?1752" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1751" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1752" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -1953,17 +1953,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1751" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1752" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1751" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1752" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1751" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1752" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -1971,7 +1971,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1751" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1752" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -1995,16 +1995,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1751" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1752" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1751" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1752" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1751" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1752" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -3059,6 +3059,11 @@ sub get_xhr_request {
 
         print "Content-type: text/html\n\n";
         print get_available_modules('json');
+        exit;
+    }
+    elsif ( $in{'xhr-get_size'} eq '1' ) {
+        print "Content-type: text/html\n\n";
+        print nice_size( recursive_disk_usage( $in{'xhr-get_size_path'} ) );
         exit;
     }
     elsif ( $in{'xhr-info'} eq '1' ) {

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.51 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.52 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1450,7 +1450,10 @@ function ___f__tw() {
 		if ($__source_file == "config.cgi") {
 			$('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"]').parents("td.col_value").parent("tr").addClass("hidden")
 		}
-		$("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-filemin-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_goto") + '</a></li>		            <li class="divider context-filemin-dependent-goto"></li>		            <li><a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_new") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-file-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive") + '</a></li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-copy"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-cut"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-paste"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-filemin-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_rename") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_search") + '</a></li>		            <li class="divider context-filemin-dependent-extract"></li>		            <li class="context-filemin-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa at-font-box-remove"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_properties") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-gears"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
+		$("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-filemin-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_goto") + '</a></li>		            <li class="divider context-filemin-dependent-goto"></li>		            <li><a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_deselect_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_new") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-file-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive") + '</a></li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-copy"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-cut"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-paste"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-filemin-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_rename") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_search") + '</a></li>		            <li class="divider context-filemin-dependent-extract"></li>		            <li class="context-filemin-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa at-font-box-remove"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_properties") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-gears"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
+		$("body").on("click", "#__f__c__m li i.fa", function (a) {
+			$(this).parents("a").trigger("click")
+		});
 		$("body").on("hidden.bs.modal", function () {
 			$(".modal-backdrop").remove()
 		});
@@ -1852,6 +1855,26 @@ function ___f__tw() {
 				}
 			})
 		}
+		$(".filemin-button-chmod a").html('<i class="fa fa-gears" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod"));
+		$("#chmodDialog .modal-header h4").html('<i class="fa fa-gears" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod"));
+		$(".filemin-button-chown a").html('<i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown"));
+		$("#chownDialog .modal-header h4").html('<i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown"));
+		$(".filemin-button-compress a").html('<i class="fa fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive"));
+		$("#compressDialog .modal-header h4").html('<i class="fa fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive"));
+		$("#searchDialog .modal-header h4").html('<i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_search"));
+		$(".filemin-button-copy a").html('<i class="fa fa-copy" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy"));
+		$(".filemin-button-cut a").html('<i class="fa fa-cut" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut"));
+		$('.btn-group .btn-group a[onclick="createFileDialog()"]').html('<i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile"));
+		$("#createFileDialog .modal-header h4").html('<i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile"));
+		$('.btn-group .btn-group a[onclick="createFolderDialog()"]').parent("li").addClass("_createFolderDialog_");
+		$('.btn-group .btn-group a[onclick="createFolderDialog()"]').html('<i class="fa fa-folder-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder"));
+		$("#createFolderDialog .modal-header h4").html('<i class="fa fa-folder-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder"));
+		$('.btn-group .btn-group a[onclick="viewReadyForUpload()"]').html('<i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_upload"));
+		$("#readyForUploadDialog .modal-header h4").html('<i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_upload"));
+		$('.btn-group .btn-group a[onclick="downFromUrlDialog()"]').html('<i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_download"));
+		$("#downFromUrlDialog .modal-header h4").html('<i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_download"));
+		$('.btn-group .btn-group a[onclick="downFromUrlDialog()"] i').removeClass("fa-globe").addClass("fa-download");
+		$(".filemin-button-compress").detach().insertAfter("._createFolderDialog_")
 	}
 }
 
@@ -1959,56 +1982,7 @@ function t__cm___init(d, f, h, g) {
 			}
 		}
 	})
-}(function (b, a) {
-	b.fn.contextMenu = function (d) {
-		return this.each(function () {
-			b(this).on("contextmenu", function (f) {
-				if (f.ctrlKey) {
-					return
-				}
-				if (f.shiftKey) {
-					return
-				}
-				if (f.altKey) {
-					return
-				}
-				b(d.menuSelector).data("invokedOn", b(f.target)).show(0, false, function () {
-					d.menuSelectorTriggered.call(this, b(this).data("invokedOn"), b(f.target))
-				}).css({
-					position: "absolute",
-					left: c(f.clientX, "width", "scrollLeft"),
-					top: c(f.clientY, "height", "scrollTop")
-				}).off("click").on("click", function (h) {
-					if (b(h.target).parent().hasClass("disabled")) {
-						return
-					}
-					b(this).hide();
-					var g = b(this).data("invokedOn");
-					var j = b(h.target);
-					d.menuSelected.call(this, g, j);
-					h.preventDefault()
-				});
-				return false
-			});
-			b("body").on("click", function (f) {
-				if (!b(f.target).closest(b(d.menuSelector)).length) {
-					b(d.menuSelector).hide()
-				}
-			})
-		});
-
-		function c(j, l, h) {
-			var k = b(a)[l](),
-				g = b(a)[h](),
-				m = b(d.menuSelector)[l](),
-				f = j + g;
-			if (j + m > k && m < j) {
-				f -= m
-			}
-			return f
-		}
-	}
-})(jQuery, window);
+}
 $(document).on("click", function (b) {
 	if ($(b.target).attr("class") && $(b.target).attr("class").indexOf("select2") === 0) {} else {
 		if (t__wi_p.$("aside select") && t__wi_p.$("aside select").length > 0 && t__wi_p.$("aside select").hasClass("select2-hidden-accessible")) {
@@ -2051,7 +2025,7 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.51 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.52 https://github.com/qooob/authentic-theme")
 	}
 	$.ajax({
 		type: "GET",
@@ -3306,26 +3280,56 @@ if (t___wi.location == t__wi_p.location) {
 		$("#list_form table tbody tr").removeClass("m-active m-not-active")
 	}
 
+	function __f___ds_a() {
+		var a = document.getElementsByClassName("ui_checked_columns");
+		for (i = 0; i < a.length; i++) {
+			var b = a[i].getElementsByTagName("input")[0];
+			if (b.checked) {
+				rowClick(a[i])
+			}
+		}
+		if (settings_window_customized_checkboxes_and_radios) {
+			$(".acheckbox, .aradio").icheck("updated")
+		}
+		__f___lb()
+	}
+
+	function __f__get_fs(d) {
+		var a = d.parents("tr");
+		if (!a.find('img[src$="inode-directory.png"]').length && !a.find('img[src$="inode-symlink.png"]').length && !a.find('img[src$="inode-mount-point.png"]').length) {
+			return
+		}
+		var c = $('#list_form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + a.find("td:nth-child(3) a").text(),
+			b = d;
+		b.html('<span class="cspinner filemin-main-spinner" style="margin-top: -11px; margin-left: 14px;"><span class="cspinner-icon"></span></span>');
+		$.ajax({
+			type: "POST",
+			url: $_____link_full + "/index.cgi/?xhr-get_size=1&xhr-get_size_path=" + c,
+			data: false,
+			dataType: "text",
+			success: function (f) {
+				b.html(f);
+				a.addClass("row-filesize-done")
+			},
+			error: function (f) {}
+		})
+	}
+
 	function __f__c__m() {
-		$("#list_form table").contextMenu({
+		var a = $("#list_form table");
+		if (a.hasClass("contextmenu-initialized")) {
+			return
+		}
+		a.addClass("contextmenu-initialized");
+		a.contextMenu({
 			menuSelector: "#__f__c__m",
-			menuSelectorTriggered: function (d, a) {
+			menuSelectorTriggered: function (d, b) {
 				if ($("#DataTables_Table_0 tbody tr input").length && d.parents("tr").find("input:checked").length === 0) {
-					var a = document.getElementsByClassName("ui_checked_columns");
-					for (i = 0; i < a.length; i++) {
-						var c = a[i].getElementsByTagName("input")[0];
-						if (c.checked) {
-							rowClick(a[i])
-						}
-					}
-					if (settings_window_customized_checkboxes_and_radios) {
-						$(".acheckbox, .aradio").icheck("updated")
-					}
-					__f___lb();
+					__f___ds_a();
 					d.parents("tr").find("td:first-child input").trigger("click");
-					var b = jQuery.Event("keydown");
-					b.which = 40;
-					$("body").trigger(b);
+					var c = jQuery.Event("keydown");
+					c.which = 40;
+					$("body").trigger(c);
 					d.parents("tr").find("td:first-child").trigger("contextmenu")
 				}
 				if (d.parents("tr").find("i.fa-folder-open-o").length) {
@@ -3334,9 +3338,9 @@ if (t___wi.location == t__wi_p.location) {
 					$(".context-filemin-dependent-goto").addClass("hidden")
 				}
 				if (!d.parents("tr").find("i.fa-edit").length) {
-					$(".context-filemin-dependent-edit").addClass("hidden")
+					$("a[data-context-edit]").addClass("disabled").parent("li").addClass("disabled")
 				} else {
-					$(".context-filemin-dependent-edit").removeClass("hidden")
+					$("a[data-context-edit]").removeClass("disabled").parent("li").removeClass("disabled")
 				}
 				if (!d.parents("tr").find("i.fa.at-font-box-remove").length) {
 					$(".context-filemin-dependent-extract").addClass("hidden")
@@ -3386,57 +3390,60 @@ if (t___wi.location == t__wi_p.location) {
 					$("a[data-context-chown]").removeClass("disabled").parent("li").removeClass("disabled")
 				}
 			},
-			menuSelected: function (a, b) {
-				if (b.data("context-goto") == "1") {
-					a.parents("tr").find('a.filemin-follow-file[href^="index.cgi?"]').trigger("click")
+			menuSelected: function (b, c) {
+				if (c.data("context-goto") == "1") {
+					b.parents("tr").find('a.filemin-follow-file[href^="index.cgi?"]').trigger("click")
 				}
-				if (b.data("context-select-all") == "1") {
+				if (c.data("context-select-all") == "1") {
 					$('button[onclick="selectAll()"]').trigger("click")
 				}
-				if (b.data("context-invert-selection") == "1") {
+				if (c.data("context-deselect-all") == "1") {
+					__f___ds_a()
+				}
+				if (c.data("context-invert-selection") == "1") {
 					$('button[onclick="invertSelection()"]').trigger("click")
 				}
-				if (b.data("context-refresh") == "1") {
+				if (c.data("context-refresh") == "1") {
 					$("button > .fa-refresh").parent("button").trigger("click")
 				}
-				if (b.data("context-newfile") == "1") {
+				if (c.data("context-newfile") == "1") {
 					$('a[onclick="createFileDialog()"]').trigger("click")
 				}
-				if (b.data("context-newfolder") == "1") {
+				if (c.data("context-newfolder") == "1") {
 					$('a[onclick="createFolderDialog()"]').trigger("click")
 				}
-				if (b.data("context-newarchive") == "1") {
+				if (c.data("context-newarchive") == "1") {
 					$('a[onclick="compressDialog()"]').trigger("click")
 				}
-				if (b.data("context-copy") == "1") {
+				if (c.data("context-copy") == "1") {
 					$(".filemin-button-copy a").trigger("click")
 				}
-				if (b.data("context-cut") == "1") {
+				if (c.data("context-cut") == "1") {
 					$(".filemin-button-cut a").trigger("click")
 				}
-				if (b.data("context-paste") == "1") {
+				if (c.data("context-paste") == "1") {
 					$(".filemin-button-paste a").trigger("click")
 				}
-				if (b.data("context-delete") == "1") {
+				if (c.data("context-delete") == "1") {
 					$(".filemin-button-delete").trigger("click")
 				}
-				if (b.data("context-search") == "1") {
+				if (c.data("context-search") == "1") {
 					$('a[onclick="searchDialog()"]').trigger("click")
 				}
-				if (b.data("context-edit") == "1") {
-					a.parents("tr").addClass("m-active");
-					a.parents("tr").find('a[href^="edit_file.cgi?"]').trigger("click")
+				if (c.data("context-edit") == "1") {
+					b.parents("tr").addClass("m-active");
+					b.parents("tr").find('a[href^="edit_file.cgi?"]').trigger("click")
 				}
-				if (b.data("context-rename") == "1") {
-					a.parents("tr").find('a[onclick^="renameDialog("]').trigger("click")
+				if (c.data("context-rename") == "1") {
+					b.parents("tr").find('a[onclick^="renameDialog("]').trigger("click")
 				}
-				if (b.data("context-extract") == "1") {
-					a.parents("tr").find('a[href^="extract.cgi?"]').trigger("click")
+				if (c.data("context-extract") == "1") {
+					b.parents("tr").find('a[href^="extract.cgi?"]').trigger("click")
 				}
-				if (b.data("context-chmod") == "1") {
+				if (c.data("context-chmod") == "1") {
 					$('a[onclick="chmodDialog()"]').trigger("click")
 				}
-				if (b.data("context-chown") == "1") {
+				if (c.data("context-chown") == "1") {
 					$('a[onclick="chownDialog()"]').trigger("click")
 				}
 			}
@@ -3511,6 +3518,23 @@ if (t___wi.location == t__wi_p.location) {
 					$("#list_form table").find(".at-font-box-remove").parent("a.action-link").remove();
 					$("#list_form table").find(".fa-edit").parent("a.action-link").remove()
 				}
+				$.each($("#list_form table tbody tr:not('.row-filesize-done') td"), function () {
+					if (/((\d+(\s+)|\d+\.\d+(\s+)))(TB|GB|MB|KB|Byte|Bytes|ТБ|ГБ|МБ|КБ|Байт)|(Unlimited|Ubegrenset|Nielimitowane|Ilimitado|无限制|Не ограничено|No Limit|Same as admin)/i.test($(this).text())) {
+						if ($(this).index() > 1) {
+							list_form_table_file_size = $(this).index()
+						}
+					}
+				}).promise().done(function () {
+					if (typeof list_form_table_file_size != "undefined") {
+						$.each($("#list_form table tbody tr:not('.row-filesize-done') td"), function () {
+							if ($(this).parent("tr").find('img[src$="inode-directory.png"]').length || $(this).parent("tr").find('img[src$="inode-symlink.png"]').length || $(this).parent("tr").find('img[src$="inode-mount-point.png"]').length) {
+								$(this).parent("tr").find("td").eq(list_form_table_file_size).addClass("column-filesize").find("label").text("")
+							}
+						}).promise().done(function () {
+							$("#list_form table thead th").eq(list_form_table_file_size).css("min-width", "51px")
+						})
+					}
+				})
 			},
 			initComplete: function (b) {
 				$("#list_form table tbody").on("mouseout", "tr", function (c) {
@@ -3615,20 +3639,20 @@ if (t___wi.location == t__wi_p.location) {
 					if (!c.shiftKey && !c.ctrlKey && !c.altKey && !c.metaKey) {
 						a = $("#list_form table tbody tr.m-active").removeClass("m-active");
 						var j = a.index();
-						var v = a.index();
+						var w = a.index();
 						if (h == 38 && !$(".modal.in").length) {
-							v--;
+							w--;
 							$(".dataTables_filter label input").blur();
 							$("#list_form table tbody tr").addClass("m-not-active")
 						}
 						if (h == 40 && !$(".modal.in").length) {
-							v++;
+							w++;
 							$(".dataTables_filter label input").blur();
 							$("#list_form table tbody tr").addClass("m-not-active")
 						}
 					}
 					if ((h == 38 || h == 40 || h == 32 || h == 13 || h == 46 || h == 119 || h == 117 || h == 115 || h == 116 || h == 113 || h == 114) && !$(".modal.in").length) {
-						a = $("#list_form table tbody tr").eq(v).addClass("m-active m-not-active")
+						a = $("#list_form table tbody tr").eq(w).addClass("m-active m-not-active")
 					}
 					if (h == 27) {
 						c.preventDefault();
@@ -3668,8 +3692,12 @@ if (t___wi.location == t__wi_p.location) {
 						if (!$(".modal.in").length) {
 							c.preventDefault();
 							c.stopPropagation();
-							$("#list_form table tbody tr.m-active").find("td:first-child input").trigger("click");
-							var d = jQuery.Event("keydown");
+							var v = $("#list_form table tbody tr.m-active"),
+								d = jQuery.Event("keydown");
+							v.find("td:first-child input").trigger("click");
+							if (!v.hasClass("row-filesize-done")) {
+								__f__get_fs(v.find("td.column-filesize label"))
+							}
 							d.which = 40;
 							$("body").trigger(d)
 						}
@@ -3692,11 +3720,11 @@ if (t___wi.location == t__wi_p.location) {
 						if (!$(".modal.in").length) {
 							c.preventDefault();
 							c.stopPropagation();
-							var w = document.getElementsByClassName("ui_checked_columns");
-							for (i = 0; i < w.length; i++) {
-								var g = w[i].getElementsByTagName("input")[0];
+							var x = document.getElementsByClassName("ui_checked_columns");
+							for (i = 0; i < x.length; i++) {
+								var g = x[i].getElementsByTagName("input")[0];
 								if (g.checked) {
-									rowClick(w[i])
+									rowClick(x[i])
 								}
 							}
 							if (settings_window_customized_checkboxes_and_radios) {
@@ -3810,24 +3838,24 @@ if (t___wi.location == t__wi_p.location) {
 											}, 400, function () {
 												window["__cm_editor_" + t].focus()
 											});
-											C.on("jspanelbeforeclose", function (x, A) {
-												var z = $("#" + A)
+											C.on("jspanelbeforeclose", function (z, K) {
+												var A = $("#" + K)
 											});
-											B.find("._filemin_file_editor_save").click(function (x) {
+											B.find("._filemin_file_editor_save").click(function (z) {
 												$(this).find("i").replaceWith(t__lo__btn_md());
 												$(this).removeClass("text-danger");
 												B.find('form[action="save_file.cgi"]').submit()
 											});
 
 											function J() {
-												var x = B.find("._filemin_file_editor_save");
-												x.find(".cspinner").remove();
-												x.find("i").remove();
-												x.prepend('<i class="fa fa-floppy-o" title="' + s.val() + '"></i>')
+												var z = B.find("._filemin_file_editor_save");
+												z.find(".cspinner").remove();
+												z.find("i").remove();
+												z.prepend('<i class="fa fa-floppy-o" title="' + s.val() + '"></i>')
 											}
-											B.find('form[action="save_file.cgi"]').submit(function (x) {
-												x.preventDefault();
-												x.stopPropagation();
+											B.find('form[action="save_file.cgi"]').submit(function (z) {
+												z.preventDefault();
+												z.stopPropagation();
 												messenger('<i class="fa fa-floppy-o">&nbsp;&nbsp;&nbsp;</i>' + lang("theme_xhred_filemin_saving_file").replace("%value", I) + " " + lang("theme_xhred_global_please_wait"), 2, "info");
 												$.ajax({
 													type: "POST",
@@ -4298,17 +4326,23 @@ if (t___wi.location == t__wi_p.location) {
 						}
 					}
 				}).on("contextmenu", "td", function (c) {
-					if ($('body[class^="filemin"]').length && !c.shiftKey && !c.altKey && !c.ctrlKey && $("#DataTables_Table_0 tbody input:checked").length >= 1) {
-						return
+					var d = $(this).parents("tr.ui_checked_columns");
+					if ($('body[class^="filemin"]').length) {
+						if (!d.hasClass("row-filesize-done")) {
+							__f__get_fs(d.find("td.column-filesize label"))
+						}
+						if (!c.shiftKey && !c.altKey && !c.ctrlKey && $("#DataTables_Table_0 tbody input:checked").length >= 1) {
+							return
+						}
 					}
 					c.preventDefault();
 					if (($(this).parents("tr").find('input[type="checkbox"]:first').length && $(this).parents("tr").find('input[type="checkbox"][disabled]').length === 0) || ($(this).parents("tr").find('input[type="checkbox"][disabled]').length && $(this).parents("tr").find("input").length > 1)) {
-						if ($(this).parents("tr.ui_checked_columns").find('input[type="checkbox"]:first').is(":checked")) {
-							$(this).parents("tr.ui_checked_columns").removeClass("hl-aw")
+						if (d.find('input[type="checkbox"]:first').is(":checked")) {
+							d.removeClass("hl-aw")
 						} else {
-							$(this).parents("tr.ui_checked_columns").addClass("hl-aw")
+							d.addClass("hl-aw")
 						}
-						$(this).parents("tr.ui_checked_columns").find('input[type="checkbox"]:first').trigger("click");
+						d.find('input[type="checkbox"]:first').trigger("click");
 						if (settings_window_customized_checkboxes_and_radios) {
 							$(".acheckbox, .aradio").icheck("updated")
 						}
