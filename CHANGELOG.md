@@ -1,7 +1,11 @@
 ##Changelog
 
+####Version 17.52 (January 24, 2016)
+* Added _Filemin_ folder size auto-calculation on row selection
+* Improved once again right click _context menu_ and modals' titles for _Filemin_
+
 ####Version 17.51 (January 23, 2016)
-* Improved right click _context menu_ for _Filemin_, which now has all options and behaves smart. _Actions column_ has been removed as no longer needed. For those who still wants to see it, need to add to the theme's JavaScript extension, the following: `settings_filemin_hide_actions=false;`
+* Improved right click _context menu_ for _Filemin_, which now has all options and behaves smart. _Actions column_ has been removed as no longer needed. For those who still wants to see it, would need to add to the theme's JavaScript extension, the following: `settings_filemin_hide_actions=false;`
 * Fixed _Elegant_ theme for _CodeMirror_
 
 ####Version 17.50 (January 21, 2016)

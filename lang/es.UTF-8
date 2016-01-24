@@ -359,7 +359,7 @@ theme_xhred_filemin_context_chown=Change Ownership
 
 #17.51
 theme_xhred_filemin_context_new=New
-theme_xhred_filemin_context_newarchive=New archive
+theme_xhred_filemin_context_newarchive=Create new archive
 theme_xhred_filemin_context_delete=Delete
 theme_xhred_filemin_context_rename=Rename
 theme_xhred_filemin_context_edit=Edit
@@ -367,4 +367,10 @@ theme_xhred_filemin_context_extract=Extract
 theme_xhred_filemin_context_goto=Open Item Location
 theme_xhred_filemin_context_properties=Properties
 theme_xhred_filemin_context_search=Search
+
+#17.52
+theme_xhred_filemin_context_deselect_all=Deselect All
+theme_xhred_filemin_context_upload=Upload to current folder
+theme_xhred_filemin_context_download=Download from URL to current folder
+
 
