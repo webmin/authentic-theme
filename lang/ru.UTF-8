@@ -376,4 +376,19 @@ theme_xhred_filemin_context_deselect_all=Deselect All
 theme_xhred_filemin_context_upload=Upload to current folder
 theme_xhred_filemin_context_download=Download from URL to current folder
 
+#17.53
+theme_settings_virtualmin=Virtualmin Virtual Servers
+theme_settings_cloudmin=Cloudmin Managed Systems
+settings_right_thirdparties_options_title=Third-parties modules options
+settings_thirdparty_section_filemin=<span class="subsection_title">Filemin</span>
+settings_thirdparty_filemin_autofoldersize=Automatically detect folder size upon selection
+settings_thirdparty_filemin_autofoldersize_description=This option allows you chose, if folder size will be automatically calculated upon selection or using context menu
+settings_thirdparty_filemin_hide_toolbar=Hide toolbar
+settings_thirdparty_filemin_hide_actions=Hide actions column
+theme_xhred_filemin_context_calculate_size=Calculate folder's size
+theme_xhred_filemin_context_bookmarks=Bookmarks
+theme_xhred_filemin_context_bookmark_current=Bookmark currently opened path
+theme_xhred_filemin_context_transfer=Transfer
+
+
 

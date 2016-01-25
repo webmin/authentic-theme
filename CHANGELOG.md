@@ -1,11 +1,17 @@
 ##Changelog
 
+####Version 17.53 (January 25, 2016)
+* Improved _Filemin_ right click _context menu_ styling and behaviour
+* Added _Filemin_ controls in theme's settings to hide toolbar (for extra lightness) and other options (the list will grow in time)
+* Added ability to let user choose as the default page the list of servers/systems in _Virtualmin/Cloudmin_ [#348](https://github.com/qooob/authentic-theme/issues/348)
+* Fixed a bug, when search using _autocomplete_ didn't work in _Virtualmin/Cloudmin_ for Virtual Servers/Virtual Machines group
+
 ####Version 17.52 (January 24, 2016)
 * Added _Filemin_ folder size auto-calculation on row selection
 * Improved once again right click _context menu_ and modals' titles for _Filemin_
 
 ####Version 17.51 (January 23, 2016)
-* Improved right click _context menu_ for _Filemin_, which now has all options and behaves smart. _Actions column_ has been removed as no longer needed. For those who still wants to see it, would need to add to the theme's JavaScript extension, the following: `settings_filemin_hide_actions=false;`
+* Improved right click _context menu_ for _Filemin_, which now has all options and behaves smart
 * Fixed _Elegant_ theme for _CodeMirror_
 
 ####Version 17.50 (January 21, 2016)

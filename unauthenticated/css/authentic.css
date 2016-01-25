@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.52 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.53 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -2823,7 +2823,9 @@ tr.atshover:hover td div,
 tr.atshover:hover td span,
 tr.atshover:hover td {
     background-color: #f5f5f5 !important;
-}.atshover.settings_navigation_color_rows td.col_label b,
+}.atshover.settings_thirdparty_option td.col_label b,
+.atshover.settings_thirdparty_option td.col_label .smaller,
+.atshover.settings_navigation_color_rows td.col_label b,
 .atshover.settings_navigation_color_rows td.col_label .smaller,
 .atshover.settings_background_color_rows td.col_label b,
 .atshover.settings_background_color_rows td.col_label .smaller {
@@ -2864,6 +2866,8 @@ tr.atshover:hover td {
     font-size: 11px;
 
     color: #555;
+}.col_label.atscontent .subsection_title {
+    font-size: 15px;
 }.va-tb {
     vertical-align: text-bottom !important;
 }.vertical-align {
@@ -6104,6 +6108,12 @@ html[data-background-style='ghostWhite'] .container-fluid,
 html[data-background-style='ghostWhite'] .loader-container,
 html[data-background-style='ghostWhite'] .input-group-addon {
     background-color: #f8f8f8 !important;
+}.filemin .dropdown-menu .divider {
+    margin: 6.5px 0;
+}.filemin .dropdown-menu > li > a {
+    font-size: 13px;
+
+    padding: 2px 20px;
 }.dropdown-submenu {
     position: relative;
 }.dropdown-submenu > .dropdown-menu {
