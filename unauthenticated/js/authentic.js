@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.52 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.53 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -754,7 +754,12 @@ function t__au__c___i(u) {
 					t__wi_p.$('iframe[name="page"]').attr("src", a.url.indexOf($_____link_full) > -1 ? a.url : $_____link_full + a.url)
 				}
 			} else {
-				t__wi_p.__lls()
+				if (a.url && a.url.indexOf(":::") > -1) {
+					t__wi_p.__lls();
+					t__wi_p.$("select").val(a.url.split(":::")[0]).trigger("change").trigger("select2:select")
+				} else {
+					t__wi_p.__lls()
+				}
 			}
 		},
 		groupBy: "category",
@@ -927,7 +932,11 @@ function t_vm_r(c) {
 		if (settings_right_virtualmin_default == "sysinfo.cgi" || settings_right_virtualmin_default == "") {
 			d = "sysinfo.cgi"
 		} else {
-			d = "virtual-server/summary_domain.cgi?dom=" + settings_right_virtualmin_default
+			if (settings_right_virtualmin_default == "index.cgi") {
+				d = "virtual-server/index.cgi"
+			} else {
+				d = "virtual-server/summary_domain.cgi?dom=" + settings_right_virtualmin_default
+			}
 		}
 	}
 	t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + "/" + d)
@@ -941,7 +950,11 @@ function t_cm_r(c) {
 		if (settings_right_cloudmin_default == "sysinfo.cgi" || settings_right_cloudmin_default == "") {
 			d = "sysinfo.cgi"
 		} else {
-			d = "server-manager/edit_serv.cgi?id=" + settings_right_cloudmin_default
+			if (settings_right_cloudmin_default == "index.cgi") {
+				d = "server-manager/index.cgi"
+			} else {
+				d = "server-manager/edit_serv.cgi?id=" + settings_right_cloudmin_default
+			}
 		}
 	}
 	t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + "/" + d)
@@ -1450,7 +1463,7 @@ function ___f__tw() {
 		if ($__source_file == "config.cgi") {
 			$('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"]').parents("td.col_value").parent("tr").addClass("hidden")
 		}
-		$("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-filemin-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_goto") + '</a></li>		            <li class="divider context-filemin-dependent-goto"></li>		            <li><a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_deselect_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_new") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-file-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive") + '</a></li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-copy"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-cut"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-paste"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-filemin-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_rename") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_search") + '</a></li>		            <li class="divider context-filemin-dependent-extract"></li>		            <li class="context-filemin-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa at-font-box-remove"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_properties") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-gears"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
+		$("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-filemin-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_goto") + '</a></li>		            <li class="divider context-filemin-dependent-goto"></li>		            <li><a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_deselect_all") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_new") + '</a>		            	<ul class="dropdown-menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-file-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_newarchive") + '</a></li>		            		<li class="dropdown-submenu">				            	<a tabindex="-1" href="#"><i class="fa fa-exchange"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_transfer") + '</a>				            	<ul class="dropdown-menu">				            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-upload="1"><i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_upload") + '</a></li>				            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-download="1"><i class="fa fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_download") + '</a></li>				            	</ul>				            </li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-copy"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_copy") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-cut"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-paste"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-filemin-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_rename") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_search") + '</a></li>		            <li class="divider"></li>		            		            <li class="dropdown-submenu">		            	<a tabindex="-1" href="#"><i class="fa fa-bookmark-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_bookmarks") + '</a>		            	<ul class="dropdown-menu at-filemin-favorites-dropdown">		            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-bookmarks="1">' + lang("theme_xhred_filemin_context_bookmark_current") + '</a></li>		            		<li class="divider"></li>		            	</ul>		            </li>		            		            <li class="divider context-filemin-dependent-extract"></li>		            <li class="context-filemin-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa at-font-box-remove"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_properties") + '</a>		            	<ul class="dropdown-menu">		            		' + (settings_thirdparty_filemin_autofoldersize ? "" : '<li><a tabindex="-1" href="#" data-context-calculate-folder-size="1"><i class="fa fa-calculator"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_calculate_size") + "</a></li>") + '		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-gears"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
 		$("body").on("click", "#__f__c__m li i.fa", function (a) {
 			$(this).parents("a").trigger("click")
 		});
@@ -1515,7 +1528,7 @@ function ___f__tw() {
 			}
 			__f____r("get", d, false, 0)
 		});
-		$("body").on("click", ".breadcrumb li > a, button + .dropdown-menu.at-filemin-favorites-dropdown > li > a, #DataTables_Table_0 label > a.filemin-follow-file", function (c) {
+		$("body").on("click", ".breadcrumb li > a, .dropdown-menu.at-filemin-favorites-dropdown > li:not(.data-context-bookmarks) > a, #DataTables_Table_0 label > a.filemin-follow-file", function (c) {
 			c.preventDefault();
 			c.stopPropagation();
 			var d = "index.cgi?path=";
@@ -1873,8 +1886,18 @@ function ___f__tw() {
 		$("#readyForUploadDialog .modal-header h4").html('<i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_upload"));
 		$('.btn-group .btn-group a[onclick="downFromUrlDialog()"]').html('<i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_download"));
 		$("#downFromUrlDialog .modal-header h4").html('<i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemin_context_download"));
+		$("#renameDialog .modal-header h4").prepend('<i class="fa fa-i-cursor" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;');
 		$('.btn-group .btn-group a[onclick="downFromUrlDialog()"] i').removeClass("fa-globe").addClass("fa-download");
-		$(".filemin-button-compress").detach().insertAfter("._createFolderDialog_")
+		$(".filemin-button-compress").detach().insertAfter("._createFolderDialog_");
+		if (settings_thirdparty_filemin_hide_toolbar) {
+			$(".btn-group.pull-right").addClass("hidden");
+			$(".breadcrumb.pull-left").removeClass("pull-left").addClass("pull-right").css("margin-bottom", "-25px");
+			$(".filemin-main-spinner").css({
+				"margin-top": "40px",
+				"margin-left": "170px"
+			})
+		}
+		$(".btn-group .at-filemin-favorites-dropdown li:not(:first-child):not(:empty)").clone().insertAfter("li.data-context-bookmarks + .divider")
 	}
 }
 
@@ -2025,7 +2048,7 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.52 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.53 https://github.com/qooob/authentic-theme")
 	}
 	$.ajax({
 		type: "GET",
@@ -3047,7 +3070,7 @@ if (t___wi.location == t__wi_p.location) {
 		if (j === "bookmark") {
 			__f_____sl();
 			__f_____hl_();
-			$('a[href^="bookmark.cgi?path="]').parents("ul").append('<li><a href="index.cgi?path=' + l + '" style="padding-left: 12px;">' + l + "</a></li>");
+			$("body").find("ul.dropdown-menu.at-filemin-favorites-dropdown").append('<li><a href="index.cgi?path=' + l + '" style="padding-left: 12px;">' + l + "</a></li>");
 			$.ajax({
 				type: "POST",
 				url: $_____link_full + "/" + __f___mn() + "/" + g,
@@ -3296,9 +3319,10 @@ if (t___wi.location == t__wi_p.location) {
 
 	function __f__get_fs(d) {
 		var a = d.parents("tr");
-		if (!a.find('img[src$="inode-directory.png"]').length && !a.find('img[src$="inode-symlink.png"]').length && !a.find('img[src$="inode-mount-point.png"]').length) {
+		if (a.hasClass("row-filesize-done") || !a.find('img[src$="inode-directory.png"]').length && !a.find('img[src$="inode-symlink.png"]').length && !a.find('img[src$="inode-mount-point.png"]').length) {
 			return
 		}
+		a.addClass("row-filesize-done");
 		var c = $('#list_form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + a.find("td:nth-child(3) a").text(),
 			b = d;
 		b.html('<span class="cspinner filemin-main-spinner" style="margin-top: -11px; margin-left: 14px;"><span class="cspinner-icon"></span></span>');
@@ -3308,8 +3332,7 @@ if (t___wi.location == t__wi_p.location) {
 			data: false,
 			dataType: "text",
 			success: function (f) {
-				b.html(f);
-				a.addClass("row-filesize-done")
+				b.html(f)
 			},
 			error: function (f) {}
 		})
@@ -3415,6 +3438,12 @@ if (t___wi.location == t__wi_p.location) {
 				if (c.data("context-newarchive") == "1") {
 					$('a[onclick="compressDialog()"]').trigger("click")
 				}
+				if (c.data("context-upload") == "1") {
+					$('a[onclick="viewReadyForUpload()"]').trigger("click")
+				}
+				if (c.data("context-download") == "1") {
+					$('a[onclick="downFromUrlDialog()"]').trigger("click")
+				}
 				if (c.data("context-copy") == "1") {
 					$(".filemin-button-copy a").trigger("click")
 				}
@@ -3426,6 +3455,9 @@ if (t___wi.location == t__wi_p.location) {
 				}
 				if (c.data("context-delete") == "1") {
 					$(".filemin-button-delete").trigger("click")
+				}
+				if (c.data("context-bookmarks") == "1") {
+					$('a[href^="bookmark.cgi"]').trigger("click")
 				}
 				if (c.data("context-search") == "1") {
 					$('a[onclick="searchDialog()"]').trigger("click")
@@ -3439,6 +3471,9 @@ if (t___wi.location == t__wi_p.location) {
 				}
 				if (c.data("context-extract") == "1") {
 					b.parents("tr").find('a[href^="extract.cgi?"]').trigger("click")
+				}
+				if (c.data("context-calculate-folder-size") == "1") {
+					__f__get_fs(b.parents("tr").find("td.column-filesize label"))
 				}
 				if (c.data("context-chmod") == "1") {
 					$('a[onclick="chmodDialog()"]').trigger("click")
@@ -3503,7 +3538,7 @@ if (t___wi.location == t__wi_p.location) {
 					$(".dataTables_paginate").show()
 				}
 				var b = $("#list_form table").find(".fa-font").parents("td").index();
-				if (b > 1 && typeof t__wi_p.settings_filemin_hide_actions == "undefined") {
+				if (b > 1 && settings_thirdparty_filemin_hide_actions == true) {
 					$("#list_form table thead th").eq(b).addClass("hidden");
 					$("#list_form table").find(".fa-font").parents("td").addClass("hidden")
 				}
@@ -3695,9 +3730,6 @@ if (t___wi.location == t__wi_p.location) {
 							var v = $("#list_form table tbody tr.m-active"),
 								d = jQuery.Event("keydown");
 							v.find("td:first-child input").trigger("click");
-							if (!v.hasClass("row-filesize-done")) {
-								__f__get_fs(v.find("td.column-filesize label"))
-							}
 							d.which = 40;
 							$("body").trigger(d)
 						}
@@ -4311,7 +4343,8 @@ if (t___wi.location == t__wi_p.location) {
 			$.each($(".ui_checked_columns"), function (a, b) {
 				$(b).on("click", "td", function (d) {
 					if ($(b).find("a[href]") && !$("body").hasClass("servers")) {
-						var c = $(b).find("a[href]")[0];
+						var c = $(b).find("a[href]")[0],
+							f = $(this).parents("tr.ui_checked_columns");
 						if (c && ($(this).find("a").attr("href") === $(c).attr("href") || $(this).find("a").attr("href") === undefined) && !$(d.target).is("select, input, .acheckbox, .aradio") && ($(this).parent("tr").find('a[href*="download.cgi"]').length === 0)) {
 							d.preventDefault();
 							if ($("body").attr("class") && $("body").attr("class").indexOf("filemin") > -1 && $(c).attr("href") && $(c).attr("href").indexOf("index.cgi?path=") > -1) {
@@ -4329,7 +4362,7 @@ if (t___wi.location == t__wi_p.location) {
 					var d = $(this).parents("tr.ui_checked_columns");
 					if ($('body[class^="filemin"]').length) {
 						if (!d.hasClass("row-filesize-done")) {
-							__f__get_fs(d.find("td.column-filesize label"))
+							settings_thirdparty_filemin_autofoldersize && __f__get_fs(d.find("td.column-filesize label"))
 						}
 						if (!c.shiftKey && !c.altKey && !c.ctrlKey && $("#DataTables_Table_0 tbody input:checked").length >= 1) {
 							return
@@ -4392,11 +4425,15 @@ if (t___wi.location == t__wi_p.location) {
 			}
 		});
 		$("body").on("change", 'input[type="checkbox"], input[type="radio"]', function (b) {
-			if ($(this).parents("tr.ui_checked_columns").length && $(this).parents("tr.ui_checked_columns").find("input:first").is($(this))) {
+			var c = $(this).parents("tr.ui_checked_columns");
+			if ($('body[class^="filemin"]').length && c.length && !c.hasClass("hl-aw")) {
+				settings_thirdparty_filemin_autofoldersize && __f__get_fs(c.find("td.column-filesize label"))
+			}
+			if (c.length && c.find("input:first").is($(this))) {
 				if ($(this).is(":checked")) {
-					$(this).parents("tr.ui_checked_columns").addClass("hl-aw")
+					c.addClass("hl-aw")
 				} else {
-					$(this).parents("tr.ui_checked_columns").removeClass("hl-aw")
+					c.removeClass("hl-aw")
 				}
 			}
 			setTimeout(function () {
@@ -4816,6 +4853,9 @@ if (t___wi.location == t__wi_p.location) {
 					if (!$t_uri_virtualmin && !$t_uri_cloudmin) {
 						t__wi_p.__dlm("webmin/")
 					}
+					$('input[name^="settings_thirdparty_filemin"]').each(function () {
+						$(this).parent().parent().parent("td").parent("tr.atshover").addClass("settings_thirdparty_option")
+					})
 				}
 			})
 		});
