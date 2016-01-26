@@ -387,4 +387,9 @@ theme_xhred_filemin_context_bookmarks=Bookmarks
 theme_xhred_filemin_context_bookmark_current=Bookmark currently opened path
 theme_xhred_filemin_context_transfer=Transfer
 
+#17.54
+theme_xhred_filemin_title_symlink_target=Symlink's target:
+settings_thirdparty_filemin_hovered_toolbar=Activate dropdown in toolbar on mouse hover
+
+
 

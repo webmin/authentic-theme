@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.53 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1345,6 +1345,7 @@ aside form {
     z-index: 10000000;
 }@media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
+        width: 700px;
         margin: 30px auto;
     }
 }.piechart {
@@ -4532,6 +4533,12 @@ body,
     border-top-color: #bbb;
     border-left-color: #bbb;
     border-radius: 50%;
+}.cspinner .cspinner-icon.small {
+    width: 14px;
+    height: 14px;
+}.cspinner .cspinner-icon.smaller {
+    width: 10px;
+    height: 10px;
 }.cspinner.in-btn-md {
     top: 1px;
 }.cspinner .cspinner-icon.white {
@@ -6108,20 +6115,23 @@ html[data-background-style='ghostWhite'] .container-fluid,
 html[data-background-style='ghostWhite'] .loader-container,
 html[data-background-style='ghostWhite'] .input-group-addon {
     background-color: #f8f8f8 !important;
-}.filemin .dropdown-menu .divider {
+}.filemin #__f__c__m.dropdown-menu .divider {
     margin: 6.5px 0;
-}.filemin .dropdown-menu > li > a {
+}.filemin #__f__c__m .dropdown-menu > li > a,
+.filemin #__f__c__m.dropdown-menu > li > a {
     font-size: 13px;
 
     padding: 2px 20px;
+}.filemin .tooltip-inner {
+    max-width: 100%;
 }.dropdown-submenu {
     position: relative;
 }.dropdown-submenu > .dropdown-menu {
     top: 0;
     left: 100%;
 
-    margin-top: -6px;
-    margin-left: -1px;
+    margin-top: -10px;
+    margin-left: -2px;
 
     -webkit-border-radius: 0 6px 6px 6px;
     -moz-border-radius: 0 6px 6px 6px;

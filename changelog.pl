@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.53 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,14 +14,16 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.50-17.53 (January 25, 2016)</h4>
+                <h4>Version 17.50-17.54 (January 26, 2016)</h4>
                 <ul>
 
-                  <li>Improved <em>Filemin</em> right click <em>context menu</em> styling and behaviour</li>
+                  <li>Added display of <em>symlink\'s</em> target in <em>Filemin</em> when hovering on the symlink-icon <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/346" target="_blank">#346</a></li>
+                  <li>Added an option for <em>Filemin</em> in theme\'s settings to show dropdowns in toolbar on hover or using click</li>
+                  <li>Fixed bugs <a class="label label-default" href="https://www.virtualmin.com/node/39486" target="_blank">#39486</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/350" target="_blank">#350</a><hr></li>
+
                   <li>Added <em>Filemin</em> controls in theme\'s settings to hide toolbar (for extra lightness) and other options (the list will grow in time)</li>
                   <li>Added ability to let user choose as the default page the list of servers/systems in <em>Virtualmin/Cloudmin</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/348" target="_blank">#348</a></li>
-                  <li>Fixed a bug, when search using <em>autocomplete</em> didn\'t work in <em>Virtualmin/Cloudmin</em> for Virtual Servers/Virtual Machines group<hr></li>
-
+                  <li>Fixed a bug, when search using <em>autocomplete</em> didn\'t work in <em>Virtualmin/Cloudmin</em> for Virtual Servers/Virtual Machines group</li>
                   <li>Added <em>Filemin</em> folder size auto-calculation on row selection</li>
                   <li>Improved right click <em>context menu</em> for <em>Filemin</em>, which now has all options and behaves smart</li>
                   <li>Fixed <em>Elegant</em> theme for <em>CodeMirror</em></li>
