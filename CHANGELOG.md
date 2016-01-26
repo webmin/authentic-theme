@@ -5,7 +5,7 @@
 * Added an option for _Filemin_ in theme's settings to show dropdowns in toolbar on hover or using click
 * Fixed bugs [#39486](https://www.virtualmin.com/node/39486) [#350](https://github.com/qooob/authentic-theme/issues/350)
 
-####Version 17.54 (January 25, 2016)
+####Version 17.53 (January 25, 2016)
 * Improved _Filemin_ right click _context menu_ styling and behaviour
 * Added _Filemin_ controls in theme's settings to hide toolbar (for extra lightness) and other options (the list will grow in time)
 * Added ability to let user choose as the default page the list of servers/systems in _Virtualmin/Cloudmin_ [#348](https://github.com/qooob/authentic-theme/issues/348)
