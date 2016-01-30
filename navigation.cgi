@@ -1,16 +1,18 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-if ( !%in ) {
-    $in{ ( $t_uri_cloudmin == -1 ? 'dom' : 'sid' ) }
-        = __settings( 'settings_right_'
-            . ( $t_uri_cloudmin == -1 ? 'virtualmin' : 'cloudmin' )
-            . '_default' );
+if (( !%in )
+    || (   $t_uri___i_virtualmin
+        || $t_uri___i_cloudmin )
+
+    )
+{
+    $in{$t_uri____i} = get_default_target();
 }
 
 my @leftitems = list_combined_webmin_menu( $sects, \%in );
@@ -23,7 +25,7 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     @cats = &get_visible_modules_categories();
     @modules = map { @{ $_->{'modules'} } } @cats;
     $show_unused
-        = __settings('settings_leftmenu_section_hide_unused_modules') eq
+        = $__settings{'settings_leftmenu_section_hide_unused_modules'} eq
         'true' ? 0 : 1;
 
     foreach $c (@cats) {
@@ -57,8 +59,8 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                     || ((      $minfo->{'dir'} eq 'virtual-server'
                             || $minfo->{'dir'} eq 'server-manager'
                         )
-                        && __settings(
-                            'settings_leftmenu_section_hide_vm_and_cm_links')
+                        && $__settings{
+                            'settings_leftmenu_section_hide_vm_and_cm_links'}
                         eq 'false'
                     )
                     )
@@ -82,7 +84,7 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     }
 
     if ( &foreign_available("webmin")
-        && __settings('settings_leftmenu_section_hide_refresh_modules') ne
+        && $__settings{'settings_leftmenu_section_hide_refresh_modules'} ne
         'true' )
     {
         print '<li><a target="page" data-href="'

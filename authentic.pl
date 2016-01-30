@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -9,7 +9,7 @@ do "authentic-theme/authentic-lib.cgi";
 sub theme_header {
     print '<!DOCTYPE html>', "\n";
     print '<html data-background-style="'
-        . __settings('settings_background_color')
+        . $__settings{'settings_background_color'}
         . '">', "\n";
     print '<head>', "\n";
     print '<title data-initial="' . $_[0] . '">', $_[0], '</title>', "\n";
@@ -32,7 +32,7 @@ sub theme_header {
         . '" data-shell="'
         . &foreign_available("shell")
         . '" data-theme="'
-        . __settings('settings_navigation_color')
+        . $__settings{'settings_navigation_color'}
         . '" data-level="'
         . $get_user_level
         . '" data-dashboard="'
@@ -61,7 +61,7 @@ sub theme_header {
             print "</td></tr> <tr>\n";
         }
         print '<td id="headln2l" width="15%" align="left"'
-            . ( __settings('settings_right_iconize_header_links') ne 'false'
+            . ( $__settings{'settings_right_iconize_header_links'} ne 'false'
                 && ' class="invisible"' )
             . '>';
         if ( $ENV{'HTTP_WEBMIN_SERVERS'} && !$tconfig{'framed'} ) {
@@ -167,19 +167,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1754" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1760" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1754" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1760" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1754" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1760" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1754" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1760" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -304,7 +304,7 @@ sub theme_ui_upload {
 
 sub theme_icons_table {
     my $hide_table_icons
-        = ( __settings('settings_right_hide_table_icons') eq 'true' ? 1 : 0 );
+        = ( $__settings{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0 );
     print '<div class="row icons-row'
         . ( !$hide_table_icons && ' vertical-align' ) . '">' . "\n";
     for ( my $i = 0; $i < @{ $_[0] }; $i++ ) {
@@ -323,7 +323,7 @@ sub theme_icons_table {
 
 sub theme_generate_icon {
     my ( $icon, $title, $link, $href, $width, $height, $before, $after ) = @_;
-    if ( __settings('settings_right_hide_table_icons') eq 'true' ) {
+    if ( $__settings{'settings_right_hide_table_icons'} eq 'true' ) {
         print '<div>';
         print $before;
         print '<a href="'
@@ -339,12 +339,12 @@ sub theme_generate_icon {
         my $icon_outer = $icon;
         $icon =~ s/images//g;
         my $grayscaled_table_icons = (
-            __settings('settings_right_grayscaled_table_icons') ne 'false'
+            $__settings{'settings_right_grayscaled_table_icons'} ne 'false'
             ? 0
             : 1
         );
         my $animate_table_icons = (
-            __settings('settings_right_animate_table_icons') ne 'false'
+            $__settings{'settings_right_animate_table_icons'} ne 'false'
             ? 0
             : 1
         );
@@ -374,8 +374,8 @@ sub theme_generate_icon {
             :               "/images/not_found.svg"
         );
 
-        if (   __settings('settings_right_small_table_icons') eq 'true'
-            && __settings('settings_right_xsmall_table_icons') ne 'true' )
+        if (   $__settings{'settings_right_small_table_icons'} eq 'true'
+            && $__settings{'settings_right_xsmall_table_icons'} ne 'true' )
         {
             print '<div class="col-xs-1 small-icons-container'
                 . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
@@ -402,7 +402,7 @@ sub theme_generate_icon {
             print "<span class=\"hidden\">$title</span></a>\n";
             print '</div>';
         }
-        elsif ( __settings('settings_right_xsmall_table_icons') eq 'true' ) {
+        elsif ( $__settings{'settings_right_xsmall_table_icons'} eq 'true' ) {
             print '<div class="col-xs-1 xsmall-icons-container'
                 . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
                 . ( !$animate_table_icons && ' animated' )

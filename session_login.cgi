@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -34,11 +34,12 @@ if (   $gconfig{'loginbanner'}
     # Notify when unauthenticated user is seeing pre-login banner
     notify('settings_security_notify_on_pre_login_request');
 
+    print "Auth-type: auth-required=1\r\n";
     print "Set-Cookie: banner=1; path=/\r\n";
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
     print '<html data-background-style="'
-        . __settings('settings_background_color')
+        . $__settings{'settings_background_color'}
         . '" class="session_login">', "\n";
     embed_login_head();
     print '<body class="session_login">' . "\n";
@@ -65,6 +66,7 @@ else {
 
 $sec = uc( $ENV{'HTTPS'} ) eq 'ON' ? "; secure" : "";
 $sidname = $miniserv{'sidname'} || "sid";
+print "Auth-type: auth-required=1\r\n";
 print "Set-Cookie: banner=0; path=/$sec\r\n"   if ( $gconfig{'loginbanner'} );
 print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ( $in{'logout'} );
 print "Set-Cookie: redirect=1; path=/\r\n";
@@ -73,7 +75,7 @@ $charset = &get_charset();
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
 print '<html data-background-style="'
-    . __settings('settings_background_color')
+    . $__settings{'settings_background_color'}
     . '" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login">' . "\n";
