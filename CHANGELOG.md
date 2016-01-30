@@ -1,5 +1,20 @@
 ##Changelog
 
+####Version 17.60 (January 30, 2016)
+* Added ability to select virtual-server/machine in _Virtualmin/Cloudmin_ using URL queries, like `?virtualmin&domain=example.com` or `?cloudmin&server=example.com`. Shortened params like, `dom` and `serv` are also supported
+* Added an option to control navigation menu's width [#353](https://github.com/qooob/authentic-theme/issues/353)
+* Added an option to theme's settings to reverse switch order [#358](https://github.com/qooob/authentic-theme/issues/358)
+* Added sortable/searchable table for _Webmin Servers Index_ module. Useful when there are many hosts [#39534](https://www.virtualmin.com/node/39534)
+* Added redirection to login page, on background calls, in case the session is expired
+* Updated dependencies. Most notable _jQuery 2.2.0_, which brings more speed and cross-browser compatibility
+* Improved speed by performing code optimizations
+* Improved content page loader animation
+* Improved the select's dropdown in navigation menu for long lists [#358](https://github.com/qooob/authentic-theme/issues/358)
+* Improved username/password preview in _Virtualmin/Cloudmin_ using nice popover [#358](https://github.com/qooob/authentic-theme/issues/358)
+* Fixed incorrect sorting by size for _Edit Users_ in _Virtualmin_ [#39494](https://www.virtualmin.com/node/39494)
+* Fixed bugs [#351](https://github.com/qooob/authentic-theme/issues/351) [#352](https://github.com/qooob/authentic-theme/issues/352) [#354](https://github.com/qooob/authentic-theme/issues/354 [#356](https://github.com/qooob/authentic-theme/issues/356) [#359](https://github.com/qooob/authentic-theme/issues/359)
+
+
 ####Version 17.54 (January 26, 2016)
 * Added display of _symlink's_ target in _Filemin_ when hovering on the symlink-icon [#346](https://github.com/qooob/authentic-theme/issues/346)
 * Added an option for _Filemin_ in theme's settings to show dropdowns in toolbar on hover or using click

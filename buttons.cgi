@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -10,7 +10,7 @@ do "authentic-theme/authentic-lib.cgi";
 
 our $user = $remote_user;
 
-if (   __settings('settings_sysinfo_link_mini') ne 'false'
+if (   $__settings{'settings_sysinfo_link_mini'} ne 'false'
     && dashboard_switch() ne '1' )
 {
     print '<li class="user-link">';
@@ -20,13 +20,13 @@ if (   __settings('settings_sysinfo_link_mini') ne 'false'
     print '</li>';
 }
 
-if ( __settings('settings_favorites') ne 'false' && $get_user_level eq '0' ) {
+if ( $__settings{'settings_favorites'} ne 'false' && $get_user_level eq '0' ) {
     print '<li class="user-link favorites cursor-pointer">';
     print '<span><i class="fa fa-fw fa-star"></i></span>';
     print '</li>';
 }
 
-if ( __settings('settings_theme_options_button') ne 'false'
+if ( $__settings{'settings_theme_options_button'} ne 'false'
     && $get_user_level eq '0' )
 {
     print '<li class="user-link theme-options cursor-pointer">';
@@ -77,7 +77,7 @@ if (   $miniserv{'logout'}
 }
 
 if (   -r "$root_directory/virtual-server/edit_lang.cgi"
-    && __settings('settings_leftmenu_button_language') eq 'true'
+    && $__settings{'settings_leftmenu_button_language'} eq 'true'
     && (   $t_uri_virtualmin != -1
         || $t_uri_cloudmin != -1
         || $in{'xhr-buttons-type'} eq '1' )
@@ -91,7 +91,7 @@ if (   -r "$root_directory/virtual-server/edit_lang.cgi"
                 </li>';
 }
 elsif ( &foreign_available("change-user")
-    && __settings('settings_leftmenu_button_language') eq 'true' )
+    && $__settings{'settings_leftmenu_button_language'} eq 'true' )
 {
     print
         '<li class="user-link"><a class="menu-exclude-link" target="page" href="'
@@ -99,7 +99,7 @@ elsif ( &foreign_available("change-user")
         . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
 
-if ( __settings('settings_leftmenu_button_refresh') ne 'false' ) {
+if ( $__settings{'settings_leftmenu_button_refresh'} ne 'false' ) {
     print
         '<li class="user-link"><a class="menu-exclude-link" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
 }

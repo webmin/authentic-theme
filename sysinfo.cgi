@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.54 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -111,7 +111,7 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
         ) = get_sysinfo_vars();
 
         # Easypie charts
-        if ( __settings('settings_sysinfo_easypie_charts') ne 'false' ) {
+        if ( $__settings{'settings_sysinfo_easypie_charts'} ne 'false' ) {
             print_easypie_charts( $cpu_percent, $mem_percent,
                 $virt_percent, $disk_percent );
         }

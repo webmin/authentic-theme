@@ -390,3 +390,10 @@ theme_xhred_filemin_context_transfer=Transfer
 #17.54
 theme_xhred_filemin_title_symlink_target=Symlink's target:
 settings_thirdparty_filemin_hovered_toolbar=Activate dropdown in toolbar on mouse hover
+
+#17.60
+right_unlimited=Unlimited
+settings_leftmenu_width=Preferable width
+settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=Reverse switch output
+settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required to apply new settings.
