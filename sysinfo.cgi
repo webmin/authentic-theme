@@ -19,6 +19,7 @@ do "authentic-theme/authentic-lib.cgi";
 our %text = &load_language($current_theme);
 our %text = ( &load_language('virtual-server'), %text );
 our %text = ( &load_language('server-manager'), %text );
+our %__settings = settings();
 my ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 my %virtualmin_config = &foreign_config('virtual-server');
 my %cloudmin_config   = &foreign_config('server-manager');
