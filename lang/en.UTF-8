@@ -397,3 +397,4 @@ settings_leftmenu_width=Preferable width
 settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Reverse switch output
 settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required to apply new settings.
+

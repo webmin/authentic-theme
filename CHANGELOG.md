@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.61 (January 31, 2016)
+* Fixed bugs [#351](https://github.com/qooob/authentic-theme/issues/351) [#364](https://github.com/qooob/authentic-theme/issues/364)
+
 ####Version 17.60 (January 30, 2016)
 * Added ability to select virtual-server/machine in _Virtualmin/Cloudmin_ using URL queries, like `?virtualmin&domain=example.com` or `?cloudmin&server=example.com`. Shortened params like, `dom` and `serv` are also supported
 * Added an option to control navigation menu's width [#353](https://github.com/qooob/authentic-theme/issues/353)
