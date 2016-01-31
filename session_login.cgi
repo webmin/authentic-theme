@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.61 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -12,8 +12,13 @@ $pragma_no_cache = 1;
 &ReadParse();
 &init_config();
 
-%text = &load_language($current_theme);
-%gaccess = &get_module_acl( undef, "" );
+do "authentic-theme/authentic-lib.cgi";
+
+our %text = &load_language($current_theme);
+our %gaccess = &get_module_acl( undef, "" );
+our %__settings = settings();
+our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
+
 &get_miniserv_config( \%miniserv );
 
 #Define page title
@@ -22,7 +27,6 @@ if ( $gconfig{'showhost'} ) {
     $title = &get_display_hostname() . " : " . $title;
 }
 
-do "authentic-theme/authentic-lib.cgi";
 
 # Show pre-login text banner
 if (   $gconfig{'loginbanner'}

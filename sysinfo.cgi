@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.60 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.61 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -20,6 +20,7 @@ our %text = &load_language($current_theme);
 our %text = ( &load_language('virtual-server'), %text );
 our %text = ( &load_language('server-manager'), %text );
 our %__settings = settings();
+
 my ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 my %virtualmin_config = &foreign_config('virtual-server');
 my %cloudmin_config   = &foreign_config('server-manager');
