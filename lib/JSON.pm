@@ -10,7 +10,6 @@ BEGIN {
     $JSON::DEBUG   = $ENV{ PERL_JSON_DEBUG } if exists $ENV{ PERL_JSON_DEBUG };
 }
 
-
 my $Module_XS  = 'JSON::XS';
 my $Module_PP  = 'JSON::PP';
 my $Module_bp  = 'JSON::backportPP'; # included in JSON distribution

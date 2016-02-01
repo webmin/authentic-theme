@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.62 (February 01, 2016)
+* Fixed bugs [#365](https://github.com/qooob/authentic-theme/issues/365) [#366](https://github.com/qooob/authentic-theme/issues/366) [#368](https://github.com/qooob/authentic-theme/issues/368)
+
 ####Version 17.61 (January 31, 2016)
 * Fixed bugs [#351](https://github.com/qooob/authentic-theme/issues/351) [#364](https://github.com/qooob/authentic-theme/issues/364)
 
