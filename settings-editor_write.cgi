@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.61 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.62 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -12,7 +12,7 @@ use WebminCore;
 &ReadParseMime();
 #&switch_to_remote_user();
 
-do "authentic-theme/authentic-lib.cgi";
+do "authentic-theme/authentic-lib.pm";
 __config_dir_available();
 
 $in{'data'} =~ s/\r//g;

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.61 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.62 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,9 +14,9 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.60-17.61 (January 31, 2016)</h4>
+                <h4>Version 17.60-17.62 (February 01, 2016)</h4>
                 <ul>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/351" target="_blank">#351</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/364" target="_blank">#364</a><hr></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/365" target="_blank">#365</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/366" target="_blank">#366</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/368" target="_blank">#368</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/351" target="_blank">#351</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/364" target="_blank">#364</a><hr></li>
 
                   <li>Added ability to select virtual-server/machine in <em>Virtualmin/Cloudmin</em> using URL queries, like <code>?virtualmin&domain=example.com</code> or <code>?cloudmin&server=example.com</code>. Shortened params like, <code>dom</code> and <code>serv</code> are also supported</li>
                   <li>Added an option to control navigation menu\'s width <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/353" target="_blank">#353</a></li>

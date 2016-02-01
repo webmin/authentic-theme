@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.61 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.62 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -69,7 +69,7 @@ sub notify {
         && ((   $__settings{'settings_security_notify_for_webmin'} ne 'false'
                 && &get_product_name() eq 'webmin'
             )
-            || ( $__settings{'settings_security_notify_for_usermin'} ne 'false'
+            || ($__settings{'settings_security_notify_for_usermin'} ne 'false'
                 && &get_product_name() eq 'usermin' )
         )
         )
@@ -459,8 +459,7 @@ sub print_category_link {
 sub dashboard_switch {
     if (   !&foreign_available("virtual-server")
         && !&foreign_available("server-manager")
-        && &get_product_name() ne 'usermin'
-        )
+        && &get_product_name() ne 'usermin' )
     {
         return 1;
     }
@@ -606,25 +605,23 @@ sub print_extended_sysinfo {
                     }
                     elsif ( $info->{'type'} eq 'chart' ) {
                         foreach my $t ( @{ $info->{'chart'} } ) {
-                            my $percent = '&nbsp;'
-                                . (
-                                  $t->{'chart'}[1] gt '200'
-                                ? $text{'right_unlimited'}
-                                : $t->{'chart'}[1] . '%'
-                                );
-                            my $percent_width = (
-                                $t->{'chart'}[1] gt '200' ? '0'
-                                : (   $t->{'chart'}[1] gt '100' ? '100'
-                                    : $t->{'chart'}[1]
-                                )
-                            );
+                            my $percent = '&nbsp;' . $t->{'chart'}[1] . '%';
+                            my $percent_width = $t->{'chart'}[1];
+                            my $dd            = $text{'right_out'};
+                            $dd =~ s/\s|&nbsp;|\$1|\$2//g;
+
+                            if ( index( $t->{"value"}, $dd ) == -1 ) {
+                                $percent = '&nbsp;' . $text{'right_unlimited'};
+                                $percent_width = '0';
+                            }
+
                             print '<tr>
                                 <td style="width:25%">'
                                 . $t->{"desc"} . '</td>
                                 <td style="width:60%">
                                 <div class="graph-container">
                                     <div class="graph">
-                                        <strong class="bar" style="width: '
+                                        <strong class="bar" style="width:'
                                 . $percent_width . '%;">' . $percent
                                 . '</strong>
                                     </div>
@@ -1278,7 +1275,7 @@ sub get_sysinfo_vars {
 
         # Build version response message
         if ( $remote_version <= $installed_version ) {
-            do "authentic-theme/changelog.pl";
+            do "authentic-theme/changelog.pm";
             $authentic_theme_version
                 = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
                 . $text{'theme_name'} . '</a> '
@@ -1973,7 +1970,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1761" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1762" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -2018,7 +2015,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1761" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1762" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -2030,13 +2027,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1761" type="text/javascript"></script>' . "\n";
+                . '.js?1762" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1761" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1762" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -2049,17 +2046,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1761" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1762" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1761" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1762" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1761" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1762" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -2067,7 +2064,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1761" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1762" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -2091,16 +2088,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1761" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1762" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1761" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1762" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1761" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1762" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -3197,12 +3194,12 @@ sub serialize_string_list {
 sub get_xhr_request {
     if ( $in{'xhr-navigation'} eq '1' ) {
         print "Content-type: text/html\n\n";
-        do "authentic-theme/navigation.cgi";
+        do "authentic-theme/navigation.pm";
         exit;
     }
     elsif ( $in{'xhr-buttons'} eq '1' ) {
         print "Content-type: text/html\n\n";
-        do "authentic-theme/buttons.cgi";
+        do "authentic-theme/buttons.pm";
         exit;
     }
     elsif ( $in{'xhr-default'} eq '1' ) {
@@ -3219,7 +3216,7 @@ sub get_xhr_request {
             _settings( 'restore', undef, undef );
         }
         else {
-            do "authentic-theme/settings.cgi";
+            do "authentic-theme/settings.pm";
         }
         exit;
     }
@@ -3529,7 +3526,8 @@ sub init {
     # In case Virtualmin/Cloudmin is installed, after
     # logging in, redirect to Virtualmin/Cloudmin
     # and check for force options as well
-    my $settings_force_default_tab = $__settings{'settings_force_default_tab'};
+    my $settings_force_default_tab
+        = $__settings{'settings_force_default_tab'};
     my $settings_right_default_tab_webmin
         = $__settings{'settings_right_default_tab_webmin'};
     if ((      $ENV{'HTTP_COOKIE'} =~ /redirect=1/
@@ -3707,12 +3705,12 @@ sub content {
 
     # Navigation
     print '<ul class="navigation">' . "\n";
-    do "authentic-theme/navigation.cgi";
+    do "authentic-theme/navigation.pm";
     print '</ul>' . "\n";
 
     # Buttons
     print '<br><br><ul class="user-links">';
-    do "authentic-theme/buttons.cgi";
+    do "authentic-theme/buttons.pm";
     print '</ul>';
 
     # Custom text

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.61 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.62 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -12,7 +12,7 @@ $pragma_no_cache = 1;
 &ReadParse();
 &init_config();
 
-do "authentic-theme/authentic-lib.cgi";
+do "authentic-theme/authentic-lib.pm";
 
 our %text = &load_language($current_theme);
 our %gaccess = &get_module_acl( undef, "" );
