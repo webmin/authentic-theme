@@ -378,8 +378,6 @@ theme_settings_virtualmin=Virtualmin Virtual Servers
 theme_settings_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Third-parties modules options
 settings_thirdparty_section_filemin=<span class="subsection_title">Filemin</span>
-settings_thirdparty_filemin_autofoldersize=Automatically detect folder size upon selection
-settings_thirdparty_filemin_autofoldersize_description=This option allows you chose, if folder size will be automatically calculated upon selection or using context menu
 settings_thirdparty_filemin_hide_toolbar=Hide toolbar
 settings_thirdparty_filemin_hide_actions=Hide actions column
 theme_xhred_filemin_context_calculate_size=Calculate folder's size
@@ -388,7 +386,7 @@ theme_xhred_filemin_context_bookmark_current=Bookmark currently opened path
 theme_xhred_filemin_context_transfer=Transfer
 
 #17.54
-theme_xhred_filemin_title_symlink_target=Symlink's target:
+theme_xhred_filemin_title_symlink_target=Link target
 settings_thirdparty_filemin_hovered_toolbar=Activate dropdown in toolbar on mouse hover
 
 #17.60
@@ -399,6 +397,18 @@ settings_switch_rdisplay=Reverse switch output
 settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required to apply new settings.
 
 
+#17.63
+theme_xhred_filemin_context_calculate_selected_size=Calculate selected size
+theme_xhred_filemin_selected_entries=Selected: %value entries
+theme_xhred_filemin_manual_path=Enter path manually
+
+theme_xhred_datatable_semptytable=No data available in table
+theme_xhred_datatable_sinfo=Showing _START_ to _END_ of _TOTAL_ entries
+theme_xhred_datatable_sinfoempty=Showing 0 to 0 of 0 entries
+theme_xhred_datatable_slengthmenu=Show _MENU_ entries
+theme_xhred_datatable_sloadingrecords=Loading...
+theme_xhred_datatable_sprocessing=Processing...
+theme_xhred_datatable_szerorecords=No matching records found
 
 
 

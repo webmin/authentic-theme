@@ -18,7 +18,6 @@ my $XS_Version = '2.34';
 
 
 # XS and PP common methods
-
 my @PublicMethods = qw/
     ascii latin1 utf8 pretty indent space_before space_after relaxed canonical allow_nonref
     allow_blessed convert_blessed filter_json_object filter_json_single_key_object

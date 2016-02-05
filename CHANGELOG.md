@@ -1,5 +1,12 @@
 ##Changelog
 
+####Version 17.63 (February 05, 2016)
+* Added _Filemin_ help button for easier user-reference
+* Added ability in _Filemin_ to enter path manually, by `right-clicking` on the path or using `Ctrl+L` shortcut
+* Added translatable _dataTables_ entries to language file
+* Improved _Filemin_ size calculation, which now supports multiple _folders/files_ from properties of _context menu_ [#350](https://github.com/qooob/authentic-theme/issues/350)
+* Fixed bugs [#369](https://github.com/qooob/authentic-theme/issues/369) [#371](https://github.com/qooob/authentic-theme/issues/371) [#373](https://github.com/qooob/authentic-theme/issues/373)
+
 ####Version 17.62 (February 01, 2016)
 * Fixed bugs [#365](https://github.com/qooob/authentic-theme/issues/365) [#366](https://github.com/qooob/authentic-theme/issues/366) [#368](https://github.com/qooob/authentic-theme/issues/368)
 
@@ -204,7 +211,7 @@
 
 ####Version 14.02 (July 31, 2015)
 * Fixed unrealistic bugs [#211](https://github.com/qooob/authentic-theme/issues/211)
-* Fixed dataTable function for sorting files correctly by size
+* Fixed _dataTables_ function for sorting files correctly by size
 
 ####Version 14.01 (July 30, 2015)
 * Added _CodeMirror_ automatic mode (highlight syntax) detection for all file-editors

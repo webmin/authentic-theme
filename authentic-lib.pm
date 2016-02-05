@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.62 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.63 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -611,7 +611,8 @@ sub print_extended_sysinfo {
                             $dd =~ s/\s|&nbsp;|\$1|\$2//g;
 
                             if ( index( $t->{"value"}, $dd ) == -1 ) {
-                                $percent = '&nbsp;' . $text{'right_unlimited'};
+                                $percent
+                                    = '&nbsp;' . $text{'right_unlimited'};
                                 $percent_width = '0';
                             }
 
@@ -1970,7 +1971,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1762" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1763" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -2015,7 +2016,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1762" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1763" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -2027,13 +2028,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1762" type="text/javascript"></script>' . "\n";
+                . '.js?1763" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1762" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1763" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -2046,17 +2047,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1762" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1763" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1762" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1763" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1762" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1763" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -2064,7 +2065,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1762" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1763" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -2088,16 +2089,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1762" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1763" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1762" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1763" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1762" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1763" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2475,10 +2476,8 @@ sub _settings {
             ),
             'settings_thirdparty_section_filemin',
             '',
-            'settings_thirdparty_filemin_autofoldersize',
-            'false',
             'settings_thirdparty_filemin_hide_toolbar',
-            'false',
+            'true',
             'settings_thirdparty_filemin_hovered_toolbar',
             'false',
             'settings_thirdparty_filemin_hide_actions',
@@ -3234,11 +3233,14 @@ sub get_xhr_request {
     }
     elsif ( $in{'xhr-get_size'} eq '1' ) {
         print "Content-type: text/html\n\n";
-        print nice_size(
-            recursive_disk_usage(
-                get_access_data('root') . $in{'xhr-get_size_path'}
-            )
-        );
+        my $size = recursive_disk_usage(
+            get_access_data('root') . $in{'xhr-get_size_path'} );
+        print nice_size($size) . '|' . $size;
+        exit;
+    }
+    elsif ( $in{'xhr-get_nice_size'} eq '1' ) {
+        print "Content-type: text/html\n\n";
+        print nice_size( $in{'xhr-get_nice_size_sum'} );
         exit;
     }
     elsif ( $in{'xhr-get_symlink'} eq '1' ) {
@@ -3735,8 +3737,9 @@ sub content {
     # Right
     print '<div id="content" class="__page">' . "\n";
     print '<div class="loader-container">' . "\n";
-    print
-        '<div class="loader"><span class="loading"><svg class="loading-container" viewBox="0 0 44 44" data-reactid=".0.0.0"><circle class="loading-path" cx="22" cy="22" r="20" fill="none" stroke-width="0.5" data-reactid=".0.0.0.0"></circle></svg></span></div>'
+    print '<div class="loader"><span class="loading"><svg style="'
+        . get_filters('content')
+        . '" class="loading-container" viewBox="0 0 44 44" data-reactid=".0.0.0"><circle class="loading-path" cx="22" cy="22" r="20" fill="none" stroke-width="0.5" data-reactid=".0.0.0.0"></circle></svg></span></div>'
         . "\n";
     print '</div>' . "\n";
     print '<script>__lrs()</script>';
