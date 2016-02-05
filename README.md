@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.62)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.63)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -96,11 +96,12 @@ Theme has great support for this module, by adding numerous mast-have features. 
 
   * `alphanumeric typing` - quick search
   * `up/down, home/end` - cursor position
-  * `enter` - descent into selected
-    * in case there is only one row filtered, enter on search field will perform trigger
-  * `Secondary-click` - context menu
-  * `spacebar` or `Alt+Secondary-click` - select current row
+  * `enter` - descent into selected directory
   * `backspace` - previous folder
+    * in case there is only one row filtered, enter on search field will perform trigger
+  * `right-click` - context menu
+  * `spacebar` or `Alt+right-click` - select current row
+  * `right-click on path` or `Ctrl+L` - enter path manually
   * `*` - inverse select
   * `+` - select all
   * `-` - deselect all

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.62 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.63 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,9 +14,14 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.60-17.62 (February 01, 2016)</h4>
+                <h4>Version 17.60-17.63 (February 05, 2016)</h4>
                 <ul>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/365" target="_blank">#365</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/366" target="_blank">#366</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/368" target="_blank">#368</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/351" target="_blank">#351</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/364" target="_blank">#364</a><hr></li>
+
+                  <li>Added <em>Filemin</em> help button for easier user-reference</li>
+                  <li>Added ability in <em>Filemin</em> to enter path manually, by <code>right-clicking</code> on the path or using <code>Ctrl+L</code> shortcut</li>
+                  <li>Added translatable <em>dataTables</em> entries to language file</li>
+                  <li>Improved <em>Filemin</em> size calculation, which now supports multiple <em>folders/files</em> from properties of <em>context menu</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/350" target="_blank">#350</a> </li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/369" target="_blank">#369</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/371" target="_blank">#371</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/373" target="_blank">#373</a><hr></li>
 
                   <li>Added ability to select virtual-server/machine in <em>Virtualmin/Cloudmin</em> using URL queries, like <code>?virtualmin&domain=example.com</code> or <code>?cloudmin&server=example.com</code>. Shortened params like, <code>dom</code> and <code>serv</code> are also supported</li>
                   <li>Added an option to control navigation menu\'s width <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/353" target="_blank">#353</a></li>
@@ -29,7 +34,7 @@ our $__changelog
                   <li>Improved the select\'s dropdown in navigation menu for long lists <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/358" target="_blank">#358</a></li>
                   <li>Improved username/password preview in <em>Virtualmin/Cloudmin</em> using nice popover <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/358" target="_blank">#358</a></li>
                   <li>Fixed incorrect sorting by size for <em>Edit Users</em> in <em>Virtualmin</em> <a class="label label-default" href="https://www.virtualmin.com/node/39494" target="_blank">#39494</a></li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/351" target="_blank">#351</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/352" target="_blank">#352</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/354" target="_blank">#354</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/356" target="_blank">#356</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/359" target="_blank">#359</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/351" target="_blank">#351</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/352" target="_blank">#352</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/354" target="_blank">#354</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/356" target="_blank">#356</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/359" target="_blank">#359</a><a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/365" target="_blank">#365</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/366" target="_blank">#366</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/368" target="_blank">#368</a>    <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/351" target="_blank">#351</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/364" target="_blank">#364</a></li>
 
                 </ul>
 
