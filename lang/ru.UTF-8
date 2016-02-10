@@ -413,5 +413,14 @@ theme_xhred_datatable_sloadingrecords=Loading...
 theme_xhred_datatable_sprocessing=Processing...
 theme_xhred_datatable_szerorecords=No matching records found
 
+#17.64
+theme_xhred_filemin_file_edit_but_not_saved=File has been edited but hasn't been saved.
+theme_xhred_filemin_file_edit_but_not_saved_what_to_do=What do you want to do?
+theme_xhred_global_save_and_close=Save and close
+theme_xhred_global_close_without_saving=Close without saving
+theme_xhred_global_continue_editing=Continue editing
+theme_xhred_filemin_context_download_file=Download
+
+
 
 
