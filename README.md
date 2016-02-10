@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.63)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.64)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -99,7 +99,7 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `enter` - descent into selected directory
   * `backspace` - previous folder
     * in case there is only one row filtered, enter on search field will perform trigger
-  * `right-click` - context menu
+  * `contextmenu/right-click` - context menu
   * `spacebar` or `Alt+right-click` - select current row
   * `right-click on path` or `Ctrl+L` - enter path manually
   * `*` - inverse select
@@ -125,13 +125,15 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ###Troubleshoot
 1. Automatic updates notification feature doesn't work or `Can't locate Net/SSLeay.pm in ..)`<br>
-   This happens because _Webmin_ is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using CPAN module in _Webmin_ or using CLI. Package name is `perl-Net-SSLeay`. Besides, in case you have mentioned module installed and automatic update feature still doesn't work, you would have to also install either `LWP::Protocol::https` or `Bundle::LWP` using CPAN or by package name `perl-LWP-Protocol-https` or `perl-libwww-perl` respectively;
+   This happens because _Webmin_ is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using _Perl_ module in _Webmin_ or using _command-line_. Package name is `perl-Net-SSLeay`. Besides, in case you have mentioned module installed and automatic update feature still doesn't work, you would have to also install either `LWP::Protocol::https` or `Bundle::LWP` using _CPAN_ or by package name `perl-LWP-Protocol-https` or `perl-libwww-perl` respectively;
 2. Strange `Â` character is appeared in text-editor mode<br>
    This happens because of encoding disparity. To fix this, just set language in _Webmin_ to `UTF-8` and make sure that your browser also has detected it as `UTF-8`;
 3. I get `HEAD 404 (File not found)` in console<br>
    That is not really an error. It happens, when theme is checking, if needed _URL_ exists and can be loaded;
 4. Page loader/spinner got stuck<br>
-   To prematurely dismiss a loader, click the `Escape` key for the right loader and `Ctrl+Escape` for the left, or loader's close button, right next to it.
+   To prematurely dismiss a loader, click _once_ the `Escape` key for the right loader and `Ctrl+Escape` for the left, or loader's close button, right next to it;
+5. Can't toggle _checkbox_ in a row of a _table_<br>
+   Theme provides an extended support for operations with table rows. It's easy to select current row by simply `right-clicking` on it with the mouse (on mobile device `long-tap`). Regular `click` on the row will take you to the row's main link.
 
 ###Development
 ####Lead developer
@@ -154,7 +156,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 1400 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](https://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 1400 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">PayPal</a> or <a href="https://money.yandex.ru" alt="41001414241949">Yandex Money: 41001414241949</a>
 

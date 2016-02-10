@@ -16,7 +16,6 @@ my $Module_bp  = 'JSON::backportPP'; # included in JSON distribution
 my $PP_Version = '2.27203';
 my $XS_Version = '2.34';
 
-
 # XS and PP common methods
 my @PublicMethods = qw/
     ascii latin1 utf8 pretty indent space_before space_after relaxed canonical allow_nonref

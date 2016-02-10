@@ -1,5 +1,13 @@
 ##Changelog
 
+####Version 17.64 (February 10, 2016)
+* Added _on-close_ prompt for _Filemin_ editor, in case file was edited but not saved
+* Added for _Filemin_ in _context menu_ new _Download_ option for files
+* Fixed _Filemin_ back button to _root_ folder error
+* Fixed missing _Programs_ tab on _System Information_ page, in case _Virtualmin_ is installed
+* Improved _Filemin_ right click _context menu_ behaviour and added trigger by keyboard, using _menu_ key
+* Fixed bugs [#374](https://github.com/qooob/authentic-theme/issues/374) [#375](https://github.com/qooob/authentic-theme/issues/375) [#376](https://github.com/qooob/authentic-theme/issues/376) [#378](https://github.com/qooob/authentic-theme/issues/378) [#380](https://github.com/qooob/authentic-theme/issues/380) [#39613](https://www.virtualmin.com/node/39613) [#39228](https://www.virtualmin.com/node/39228)
+
 ####Version 17.63 (February 05, 2016)
 * Added _Filemin_ help button for easier user-reference
 * Added ability in _Filemin_ to enter path manually, by `right-clicking` on the path or using `Ctrl+L` shortcut

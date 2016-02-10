@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.63 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.64 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -504,11 +504,11 @@ sub print_extended_sysinfo {
         print
             '<div class="panel-group" id="extended_sysinfo" role="tablist" aria-multiselectable="true">';
         foreach my $info (@info) {
-            if (   $info->{'id'} ne 'sysinfo'
-                && $info->{'id'} ne 'domain'
+            if (   $info->{'id'} ne 'domain'
                 && $info->{'id'} ne 'notifications'
                 && $info->{'type'} ne 'link'
                 && $info->{'module'} ne 'mailbox'
+                && $info->{'module'} ne 'system-status'
                 && $a->{'type'} ne 'warning'
                 && $b->{'type'} ne 'warning' )
             {
@@ -568,8 +568,10 @@ sub print_extended_sysinfo {
                         '<div class="table-responsive" style="width:99.8%"><table class="table table-striped"><tbody>';
 
                     if ($info->{'type'} eq 'table'
-                        && (   $info->{'id'} ne 'sysinfo'
-                            && $info->{'type'} ne 'link' )
+                        && (   $info->{'module'} ne 'system-status'
+                            && $info->{'type'} ne 'link'
+
+                        )
                         )
                     {
 
@@ -1971,7 +1973,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1763" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1764" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1997,9 +1999,9 @@ sub embed_header {
             'jquery-ui',           'mobile-detect',
             'jquery.jspanel',      'jquery.scrollbar',
             'jquery.autocomplete', 'momentjs',
-            'favico',              'select2',
-            'icheck',              'jquery.purl',
-            'bootstrap',           'datepicker',
+            'favico',    'select2', 'bootbox',
+            'icheck',    'jquery.purl',
+            'bootstrap', 'datepicker',
             'fileinput',
 
             #'autosizeinput',
@@ -2016,7 +2018,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1763" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1764" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -2028,13 +2030,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1763" type="text/javascript"></script>' . "\n";
+                . '.js?1764" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1763" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1764" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -2047,17 +2049,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1763" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1764" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1763" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1764" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1763" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1764" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -2065,7 +2067,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1763" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1764" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -2089,16 +2091,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1763" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1764" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1763" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1764" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1763" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1764" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }

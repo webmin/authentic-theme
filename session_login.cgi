@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.63 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.64 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,8 +14,8 @@ $pragma_no_cache = 1;
 
 do "authentic-theme/authentic-lib.pm";
 
-our %text = &load_language($current_theme);
-our %gaccess = &get_module_acl( undef, "" );
+our %text       = &load_language($current_theme);
+our %gaccess    = &get_module_acl( undef, "" );
 our %__settings = settings();
 our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 
@@ -26,7 +26,6 @@ $title = $text{'session_header'};
 if ( $gconfig{'showhost'} ) {
     $title = &get_display_hostname() . " : " . $title;
 }
-
 
 # Show pre-login text banner
 if (   $gconfig{'loginbanner'}
@@ -130,7 +129,11 @@ print '<form method="post" target="_top" action="'
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
      <span>'
-    . ucfirst( &get_product_name() ) . '</span></h2>' . "\n";
+    . (
+      &get_product_name() eq 'webmin'
+    ? $text{'theme_xhred_titles_wm'}
+    : $text{'theme_xhred_titles_um'}
+    ) . '</span></h2>' . "\n";
 
 #Process logo
 embed_logo();
@@ -177,8 +180,7 @@ if ( $miniserv{'twofactor_provider'} ) {
         . "\n";
     print
         '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" placeholder="'
-        . &text('login_token')
-        . '">' . "\n";
+        . &text('login_token') . '">' . "\n";
     print '</div>' . "\n";
 }
 if ( !$gconfig{'noremember'} ) {
@@ -192,8 +194,7 @@ if ( !$gconfig{'noremember'} ) {
 }
 print '<div class="form-group">';
 if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
-    && index( $miniserv{'anonymous'}, 'virtualmin-password-recovery' )
-    > -1 )
+    && index( $miniserv{'anonymous'}, 'virtualmin-password-recovery' ) > -1 )
 {
     print
         '<button onclick=\'window.open("/virtualmin-password-recovery", "password_recovery", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");\' class="btn btn-warning pull-left" type="reset"><i class="fa fa-undo"></i>&nbsp;&nbsp;'
@@ -212,5 +213,6 @@ print
     . '</button>' . "\n";
 print '</div>';
 print '</form>' . "\n";
+
 #print "$text{'session_postfix'}\n";
 &footer();
