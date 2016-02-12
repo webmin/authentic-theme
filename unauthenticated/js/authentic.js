@@ -5036,7 +5036,7 @@ if (t___wi.location == t__wi_p.location) {
 
 					function m(c) {
 						typeof c == "undefined" ? c = $('input[name="settings_sysinfo_easypie_charts"]:checked') : false;
-						var d = ["settings_sysinfo_easypie_charts_width"];
+						var d = ["settings_sysinfo_easypie_charts_width", "settings_sysinfo_easypie_charts_scale"];
 						if (c.val() == "true") {
 							$.each(d, function (f, g) {
 								$('input[name="' + g + '"]').prop("disabled", false).removeClass("disabled")
@@ -5150,9 +5150,7 @@ if (t___wi.location == t__wi_p.location) {
 					if (!$t_uri_virtualmin && !$t_uri_cloudmin) {
 						t__wi_p.__dlm("webmin/")
 					}
-					$('input[name^="settings_thirdparty_filemin"]').each(function () {
-						$(this).parent().parent().parent("td").parent("tr.atshover").addClass("settings_thirdparty_option")
-					})
+					$('input[name^="settings_thirdparty_filemin"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded")
 				}
 			})
 		});
@@ -6269,9 +6267,9 @@ if (t___wi.location == t__wi_p.location) {
 				return (b < 50 ? "#5cb85c" : b < 85 ? "#f0ad4e" : "#cb3935")
 			},
 			size: 160,
-			scaleLength: (settings_sysinfo_easypie_charts_width * 2),
+			scaleLength: settings_sysinfo_easypie_charts_scale,
 			trackWidth: settings_sysinfo_easypie_charts_width,
-			lineWidth: (settings_sysinfo_easypie_charts_width / 2),
+			lineWidth: (settings_sysinfo_easypie_charts_width / 1.2),
 			lineCap: "square",
 			onStep: function (g, d, f) {
 				$(this.el).find(".percent").text(Math.round(f))
