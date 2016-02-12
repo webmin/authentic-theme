@@ -198,7 +198,7 @@ settings_sysinfo_background_call_timeout_description=Set desired timeout for upd
 settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives' status each on new line
+settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
 settings_sysinfo_link_mini=Show system information link as button
 settings_leftmenu_singlelink_icons=Show icons for single links on navigation menu
@@ -417,3 +417,5 @@ theme_xhred_global_close_without_saving=Close without saving
 theme_xhred_global_continue_editing=Continue editing
 theme_xhred_filemin_context_download_file=Download
 
+#17.65
+settings_sysinfo_easypie_charts_width=Charts width
