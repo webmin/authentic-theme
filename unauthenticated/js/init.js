@@ -58,6 +58,7 @@ typeof settings_right_iconize_header_links == "undefined" ? settings_right_iconi
 typeof settings_sysinfo_background_call_timeout == "undefined" ? settings_sysinfo_background_call_timeout = 10 : false;
 typeof settings_leftmenu_width == "undefined" ? settings_leftmenu_width = 260 : false;
 typeof settings_sysinfo_easypie_charts == "undefined" ? settings_sysinfo_easypie_charts = true : false;
+typeof settings_sysinfo_easypie_charts_width == "undefined" ? settings_sysinfo_easypie_charts_width = 4 : (settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width));
 typeof settings_sysinfo_csf_updates == "undefined" ? settings_sysinfo_csf_updates = false : false;
 typeof settings_sysinfo_link_mini == "undefined" ? settings_sysinfo_link_mini = true : false;
 typeof settings_window_customized_checkboxes_and_radios == "undefined" ? settings_window_customized_checkboxes_and_radios = true : false;

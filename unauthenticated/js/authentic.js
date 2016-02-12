@@ -2121,7 +2121,9 @@ if (t___wi.location == t__wi_p.location) {
 		}
 	});
 	t__wi_p.$("body").on("blur", ".sidebar-search", function () {
-		t__wi_p.t__au__c___i("c", true)
+		setTimeout(function () {
+			t__wi_p.t__au__c___i("c", true)
+		}, 150)
 	});
 
 	function __si__bg_upd_exec() {
@@ -4906,17 +4908,17 @@ if (t___wi.location == t__wi_p.location) {
 				url: $_____link_full + "/index.cgi/?xhr-settings=1",
 				data: false,
 				dataType: "text",
-				success: function (m) {
-					$("#atsettings").html(m);
-					var p = $("div#atsettings").find(".ui_form");
-					$__theme_text_right_save = p.data("text-save");
-					$__theme_text_right_saved = p.data("text-settings_right_saved");
-					$__theme_text_right_saving = p.data("text-settings_right_saving");
-					$__theme_text_right_restore_defaults = p.data("text-settings_right_restore_defaults");
-					$__theme_text_right_restored = p.data("text-settings_right_restored");
-					$__theme_text_right_restoring = p.data("text-settings_right_restoring");
-					$__theme_text_right_error = p.data("text-error");
-					$('.nav-tabs a[href="#atsettings"]').text(p.data("text-current_theme"));
+				success: function (n) {
+					$("#atsettings").html(n);
+					var q = $("div#atsettings").find(".ui_form");
+					$__theme_text_right_save = q.data("text-save");
+					$__theme_text_right_saved = q.data("text-settings_right_saved");
+					$__theme_text_right_saving = q.data("text-settings_right_saving");
+					$__theme_text_right_restore_defaults = q.data("text-settings_right_restore_defaults");
+					$__theme_text_right_restored = q.data("text-settings_right_restored");
+					$__theme_text_right_restoring = q.data("text-settings_right_restoring");
+					$__theme_text_right_error = q.data("text-error");
+					$('.nav-tabs a[href="#atsettings"]').text(q.data("text-current_theme"));
 					$("div#atsettings").removeClass("text-center");
 					b();
 					settings_update();
@@ -4927,10 +4929,10 @@ if (t___wi.location == t__wi_p.location) {
 							increaseArea: "20%"
 						})
 					}
-					var o = $("body").find(".fa.fa-sub-title").parent("span");
-					$(o).next("br").remove();
-					$(o).next("div.smaller").attr("style", "margin-top: -15px !important");
-					o.remove();
+					var p = $("body").find(".fa.fa-sub-title").parent("span");
+					$(p).next("br").remove();
+					$(p).next("div.smaller").attr("style", "margin-top: -15px !important");
+					p.remove();
 
 					function j(c) {
 						typeof c == "undefined" ? c = $('input[name="settings_right_hide_table_icons"]:checked') : false;
@@ -4950,7 +4952,7 @@ if (t___wi.location == t__wi_p.location) {
 					j();
 					$('input[name="settings_right_hide_table_icons"]').on("change", function () {
 						j($(this));
-						n()
+						o()
 					});
 
 					function k(c) {
@@ -4992,7 +4994,7 @@ if (t___wi.location == t__wi_p.location) {
 						l($(this))
 					});
 
-					function n(c) {
+					function o(c) {
 						typeof c == "undefined" ? c = $('input[name="settings_right_xsmall_table_icons"]:checked') : false;
 						var d = ["settings_right_small_table_icons"];
 						if (c.val() == "true") {
@@ -5007,12 +5009,12 @@ if (t___wi.location == t__wi_p.location) {
 							})
 						}
 					}
-					n();
+					o();
 					$('input[name="settings_right_xsmall_table_icons"]').on("change", function () {
-						n($(this))
+						o($(this))
 					});
 
-					function q(c) {
+					function r(c) {
 						typeof c == "undefined" ? c = $('input[name="settings_thirdparty_filemin_hide_toolbar"]:checked') : false;
 						var d = ["settings_thirdparty_filemin_hovered_toolbar"];
 						if (c.val() == "true") {
@@ -5027,9 +5029,27 @@ if (t___wi.location == t__wi_p.location) {
 							})
 						}
 					}
-					q();
+					r();
 					$('input[name="settings_thirdparty_filemin_hide_toolbar"]').on("change", function () {
-						q($(this))
+						r($(this))
+					});
+
+					function m(c) {
+						typeof c == "undefined" ? c = $('input[name="settings_sysinfo_easypie_charts"]:checked') : false;
+						var d = ["settings_sysinfo_easypie_charts_width"];
+						if (c.val() == "true") {
+							$.each(d, function (f, g) {
+								$('input[name="' + g + '"]').prop("disabled", false).removeClass("disabled")
+							})
+						} else {
+							$.each(d, function (f, g) {
+								$('input[name="' + g + '"]').prop("disabled", true).addClass("disabled")
+							})
+						}
+					}
+					m();
+					$('input[name="settings_sysinfo_easypie_charts"]').on("change", function () {
+						m($(this))
 					});
 					$('select[name="settings_navigation_color"]').on("click keyup change", function (c) {
 						$("body").attr("data-theme", $(this).val());
@@ -5089,33 +5109,33 @@ if (t___wi.location == t__wi_p.location) {
 						$('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
 						$(this).parent().parent("td").parent("tr.atshover").addClass("hidden settings_navigation_color_rows")
 					});
-					var s = $('input[name="settings_grayscale_level_content"], input[name="settings_saturate_level_content"], input[name="settings_hue_level_content"]');
-					s.on("click keyup change", function (c) {
+					var t = $('input[name="settings_grayscale_level_content"], input[name="settings_saturate_level_content"], input[name="settings_hue_level_content"]');
+					t.on("click keyup change", function (c) {
 						var d = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg); filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg);";
 						$("body").attr("style", d);
 						t__wi_p.$("#content .loading-container").attr("style", d);
 						$('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
 						settings_update()
 					});
-					s.each(function () {
+					t.each(function () {
 						$('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
 						$(this).parent().parent("td").parent("tr.atshover").addClass("hidden settings_background_color_rows")
 					});
-					var r = $('input[name="settings_leftmenu_width"]');
-					r.on("click keyup change", function (c) {
+					var s = $('input[name="settings_leftmenu_width"]');
+					s.on("click keyup change", function (c) {
 						t__wi_p.f__r__s($(this).val(), $(this).val());
 						$('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
 						settings_update();
 						t__wi_p.settings_leftmenu_width_initial = $(this).val()
 					});
-					r.each(function () {
+					s.each(function () {
 						$('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
 						t__wi_p.settings_leftmenu_width_initial = $(this).val()
 					});
 					if ($__source_query == "restored") {
 						a.trigger("click");
+						t.trigger("click");
 						s.trigger("click");
-						r.trigger("click");
 						$('select[name="settings_navigation_color"], select[name="settings_background_color"]').trigger("change");
 						window.history.pushState(null, null, $_____link_full + "/webmin/edit_themes.cgi")
 					}
@@ -6248,10 +6268,10 @@ if (t___wi.location == t__wi_p.location) {
 			barColor: function (b) {
 				return (b < 50 ? "#5cb85c" : b < 85 ? "#f0ad4e" : "#cb3935")
 			},
-			size: 150,
-			scaleLength: 8,
-			trackWidth: 4,
-			lineWidth: 2,
+			size: 160,
+			scaleLength: (settings_sysinfo_easypie_charts_width * 2),
+			trackWidth: settings_sysinfo_easypie_charts_width,
+			lineWidth: (settings_sysinfo_easypie_charts_width / 2),
 			lineCap: "square",
 			onStep: function (g, d, f) {
 				$(this.el).find(".percent").text(Math.round(f))
