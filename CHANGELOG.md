@@ -1,5 +1,9 @@
 ##Changelog
 
+####Version 17.65 (February 12, 2016)
+* Added ability to setup manually _Easy Pie Charts_ width [#380](https://github.com/qooob/authentic-theme/issues/380)
+* Fixed bug [#384](https://github.com/qooob/authentic-theme/issues/384)
+
 ####Version 17.64 (February 10, 2016)
 * Added _on-close_ prompt for _Filemin_ editor, in case file was edited but not saved
 * Added for _Filemin_ in _context menu_ new _Download_ option for files
