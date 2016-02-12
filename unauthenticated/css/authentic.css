@@ -2848,8 +2848,8 @@ tr.atshover:hover td div,
 tr.atshover:hover td span,
 tr.atshover:hover td {
     background-color: #f5f5f5 !important;
-}.atshover.settings_thirdparty_option td.col_label b,
-.atshover.settings_thirdparty_option td.col_label .smaller,
+}.atshover.settings_option_padded td.col_label b,
+.atshover.settings_option_padded td.col_label .smaller,
 .atshover.settings_navigation_color_rows td.col_label b,
 .atshover.settings_navigation_color_rows td.col_label .smaller,
 .atshover.settings_background_color_rows td.col_label b,

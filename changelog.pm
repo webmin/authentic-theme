@@ -16,7 +16,7 @@ our $__changelog
 
                 <h4>Version 17.60-17.65 (February 12, 2016)</h4>
                 <ul>
-                  <li>Added ability to setup manually <em>Easy Pie Charts</em> width <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/380" target="_blank">#380</a></li>
+                  <li>Added ability to setup manually <em>Easy Pie Charts</em> width and scale length <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/380" target="_blank">#380</a></li>
                   <li>Fixed bug <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/384" target="_blank">#384</a><hr></li>
 
                   <li>Added <em>Filemin</em> help button for easier user-reference</li>

@@ -2464,6 +2464,8 @@ sub _settings {
             'true',
             'settings_sysinfo_easypie_charts_width',
             '4',
+            'settings_sysinfo_easypie_charts_scale',
+            '8',
             'settings_sysinfo_theme_updates',
             ( ( !licenses('cm') && !licenses('vm') ) ? 'true' : 'false' ),
             'settings_sysinfo_csf_updates',
@@ -2726,7 +2728,8 @@ sub _settings {
             || $k eq 'settings_hotkey_sysinfo'
             || $k eq 'settings_hotkey_favorites'
             || $k eq 'settings_sysinfo_background_call_timeout'
-            || $k eq 'settings_sysinfo_easypie_charts_width' )
+            || $k eq 'settings_sysinfo_easypie_charts_width'
+            || $k eq 'settings_sysinfo_easypie_charts_scale' )
         {
 
             my $width
@@ -2737,7 +2740,8 @@ sub _settings {
                     || $k eq 'settings_hotkey_sysinfo'
                     || $k eq 'settings_hotkey_favorites'
                     || $k eq 'settings_sysinfo_background_call_timeout'
-                    || $k eq 'settings_sysinfo_easypie_charts_width' )
+                    || $k eq 'settings_sysinfo_easypie_charts_width'
+                    || $k eq 'settings_sysinfo_easypie_charts_scale' )
                 ? ' width: 31px; '
                 : ' width: 95%; ';
             my $max_length
