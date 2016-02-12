@@ -1346,7 +1346,7 @@ aside form {
     z-index: 10000000;
 }@media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 721px;
+        width: 725px;
         margin: 30px auto;
     }
 }.piechart {
@@ -6228,6 +6228,12 @@ html[data-background-style='ghostWhite'] .input-group-addon {
     vertical-align: top !important;
 }.vertical-align-inherit {
     vertical-align: inherit !important;
+}body.init div.panel-body > form > div > table > tbody > tr > td > table > tbody > tr.ui_checked_columns > td.col_label {
+    width: 12%;
+}.sub_table_container button[disabled],
+.sub_table_container select[disabled],
+.sub_table_container input[disabled] {
+    background-color: #eee !important;
 }@keyframes dash {
     0 {
         stroke-dasharray: 1,150;
