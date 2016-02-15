@@ -2305,8 +2305,6 @@ sub _settings {
             'true',
             'settings_animation_tabs',
             'true',
-            'settings_loader_top',
-            'true',
             'settings_right_reload',
             'true',
             'settings_window_autoscroll',
