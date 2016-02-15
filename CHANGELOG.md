@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.70 (February 16, 2016)
+* Changed overall page rendering. Switched away from old page loading mechanism. All pages now are loding using quick load, without using content page loader. It will feel faster, nicer and smoother. Enjoy.
+
 ####Version 17.65 (February 12, 2016)
 * Added ability to setup manually _Easy Pie Charts_ width and scale length [#380](https://github.com/qooob/authentic-theme/issues/380)
 * Fixed bug [#384](https://github.com/qooob/authentic-theme/issues/384)

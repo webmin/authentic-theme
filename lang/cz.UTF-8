@@ -145,7 +145,6 @@ settings_background_color=Content page color palette
 settings_animation_left=Enable animation in navigation menu
 settings_animation_tabs=Enable animation in tabs
 settings_loader_left=Povolit posuvník pro navigační panel
-settings_loader_right=Povolit posuvník pro stránku
 settings_right_reload=Nahrání výchozí stránky
 settings_right_reload_description=Obsah stránky pravého rámce je opětovně načten při přepnutí tabů. Zobrazít po přepnutí tabu výchozí obsah pravého rámce?
 

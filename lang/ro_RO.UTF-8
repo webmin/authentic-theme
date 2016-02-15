@@ -146,7 +146,6 @@ settings_animation_left=Activează animația în meniul de navigare
 settings_animation_tabs=Activează animația in taburi
 settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
 settings_loader_left=Activează spinner pentru meniul de navigare
-settings_loader_right=Activează spinner pentru pagina cu conținut
 settings_right_reload=Încarcă pagina cu conținut implicit
 settings_right_reload_description=Când defilezi prin taburi, pagina cu conținut din cadrul din drepta se reîncarcă. Nu păstrezi conținutul paginii deja deschise din cardul din drepta și reîncarci cu conținutul standard?
 

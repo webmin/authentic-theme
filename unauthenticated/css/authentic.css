@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.65 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.70 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1346,7 +1346,6 @@ aside form {
     z-index: 10000000;
 }@media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 725px;
         margin: 30px auto;
     }
 }.piechart {
@@ -1723,6 +1722,10 @@ form.ui_form > div.table-responsive {
     margin-bottom: 8px !important;
 }form.ui_form[action='delete_servs.cgi'] table.table-striped.table-condensed table tbody {
     border: 0 !important;
+}.__csf__ {
+    pointer-events: none;
+
+    opacity: 0;
 }.csf form input + input {
     vertical-align: bottom !important;
 }.csf form table .comment {
@@ -1756,24 +1759,32 @@ form.ui_form > div.table-responsive {
     border: 1px dashed #f0f0f0;
     border-top: 0;
     background: #fff;
-}.csf img[src='csfimages/minus.png']:not(.skip):before {
-    font-family: FontAwesome;
+}.csf img[src*='csfimages/plus.png'] + .fa-minus-circle:before,
+.csf img[src*='csfimages/plus.png'] + .fa-plus-circle:before {
+    content: '\f055' !important;
 
-    margin-right: 3px;
+    color: #449d44 !important;
+}.csf img[src*='csfimages/minus.png'] + .fa-minus-circle:before,
+.csf img[src*='csfimages/minus.png'] + .fa-plus-circle:before {
+    content: '\f056' !important;
 
-    content: '\f056';
-    text-decoration: none;
+    color: #c9302c !important;
+}.csf form fieldset legend {
+    margin-bottom: 0 !important;
+}.csf form fieldset legend b {
+    font-size: 16px !important;
+    font-weight: normal !important;
+    line-height: 26px !important;
 
-    color: #c9302c;
-}.csf img[src='csfimages/plus.png']:not(.skip):before {
-    font-family: FontAwesome;
+    display: block;
 
-    margin-right: 3px;
+    padding: 2px 0 !important;
 
-    content: '\f055';
-    text-decoration: none;
+    text-align: center !important;
 
-    color: #449d44;
+    border: 1px solid #f0f0f0 !important;
+    border-top: 3px solid #f0f0f0 !important;
+    background-color: #f7f7f7 !important;
 }.dataTables_filter input[type=search]:focus,
 .dataTables_filter input[type=search]:hover,
 .csf input[type=text]:focus,
@@ -2082,9 +2093,9 @@ label.checkbox {
     top: 50%;
     left: 50%;
 
-    width: 130px;
-    height: 130px;
-    margin: -65px 0 0 -65px;
+    width: 150px;
+    height: 150px;
+    margin: -80px 0 0 -80px;
 }@keyframes rotate {
     100% {
         transform: rotate(360deg);
@@ -2237,12 +2248,14 @@ td.col_value label,
     margin-left: -2px !important;
 }.margined-right-2 {
     margin-right: 2px !important;
+}.margined-left-2 {
+    margin-left: 2px !important;
+}.margined-left-4 {
+    margin-left: 4px !important;
 }.margined-right-5 {
     margin-right: 5px !important;
 }.margined-left-8 {
     margin-left: 8px !important;
-}.margined-left-4 {
-    margin-left: 4px !important;
 }.panel {
     position: relative;
 
@@ -2838,7 +2851,8 @@ a.opener_trigger,
     background: #ccc;
 }.webmin .at-help {
     max-width: 420px;
-}.webmin .at-help ul {
+}.module-help ul,
+.webmin .at-help ul {
     padding-left: 25px;
 }.webmin .at-help ul li h5 {
     margin-bottom: 0;
@@ -3554,9 +3568,7 @@ img[src='/images/closed.gif']:before {
     color: #666;
 }img[src='/images/close.gif']:before {
     content: '\f0d7';
-}.csf img[src='csfimages/minus.png']:not(.skip),
-.csf img[src='csfimages/plus.png']:not(.skip),
-img[src='/images/open.gif'],
+}img[src='/images/open.gif'],
 img[src='/images/close.gif'],
 img[src='/images/closed.gif'] {
     content: ' ';
@@ -3995,6 +4007,10 @@ td.ui_grid_cell {
 }.container,
 .container-fluid {
     margin-top: 15px;
+}body:not(.csf) .container-fluid {
+    pointer-events: none;
+
+    opacity: 0;
 }::-webkit-scrollbar-track-piece {
     -webkit-border-radius: 0;
     background-color: #f0f0f0;
@@ -4548,7 +4564,10 @@ body,
 }html[data-slider-fixed='1'] #nprogress .spinner {
     right: 325px;
 }#nprogress .spinner-icon {
-    border: 1px solid rgba(133,167,194,.25);
+    width: 22px;
+    height: 22px;
+
+    border: 2px solid rgba(133,167,194,.25);
     border-top: 1px solid #437ba8;
     border-radius: 100%;
 }.cspinner {

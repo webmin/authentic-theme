@@ -146,7 +146,6 @@ settings_animation_left=Enable animation in navigation menu
 settings_animation_tabs=Enable animation in tabs
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
-settings_loader_right=Enable spinner for content page
 settings_right_reload=Load default content page
 settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
@@ -420,3 +419,5 @@ theme_xhred_filemin_context_download_file=Download
 #17.65
 settings_sysinfo_easypie_charts_width=Charts width
 settings_sysinfo_easypie_charts_scale=Charts scale length
+
+
