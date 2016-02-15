@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.65 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.70 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1973,7 +1973,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1765" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1770" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1998,10 +1998,11 @@ sub embed_header {
             'timeplot',            'jquery',
             'jquery-ui',           'mobile-detect',
             'jquery.jspanel',      'jquery.scrollbar',
-            'jquery.autocomplete', 'momentjs',
-            'favico',    'select2', 'bootbox',
-            'icheck',    'jquery.purl',
-            'bootstrap', 'datepicker',
+            'jquery.autocomplete', 'jquery.scrollintoview',
+            'momentjs',            'favico',
+            'select2',             'bootbox',
+            'icheck',              'jquery.purl',
+            'bootstrap',           'datepicker',
             'fileinput',
 
             #'autosizeinput',
@@ -2018,7 +2019,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1765" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1770" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -2030,13 +2031,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1765" type="text/javascript"></script>' . "\n";
+                . '.js?1770" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1765" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1770" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -2049,17 +2050,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1765" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1770" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1765" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1770" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1765" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1770" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -2067,7 +2068,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1765" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1770" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -2091,16 +2092,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1765" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1770" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1765" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1770" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1765" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1770" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2299,16 +2300,12 @@ sub _settings {
             'settings_cm_view_palette',
             'elegant',
             'settings_cm_editor_palette',
-            'elegant',
+            'monokai',
             'settings_animation_left',
             'true',
             'settings_animation_tabs',
             'true',
             'settings_loader_top',
-            'true',
-            'settings_loader_left',
-            'true',
-            'settings_loader_right',
             'true',
             'settings_right_reload',
             'true',
@@ -3672,6 +3669,29 @@ sub init {
         print "Location: $virtualmin\n\n";
     }
 
+    # Make ConfigServer Security Firewall look as we need
+    if ( -r '/usr/local/csf/lib/webmin/csf/index.cgi' ) {
+        open( FILE, "</usr/local/csf/lib/webmin/csf/index.cgi" );
+        my @l = <FILE>;
+        close(FILE);
+
+        if ( grep { /data-replaced/ } @l ) {
+            return
+        }
+
+        my @n;
+        foreach (@l) {
+            $_ =~ s/%in\);/%in, \$current_theme);/g;
+            $_ =~ s/<BODY>//g;
+            $_ =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
+            push( @n, $_ );
+        }
+
+        open( FILE, ">/usr/local/csf/lib/webmin/csf/index.cgi" );
+        print FILE @n;
+        close(FILE);
+    }
+
 }
 
 sub content {
@@ -3749,7 +3769,7 @@ sub content {
     print '<div class="loader-container">' . "\n";
     print '<div class="loader"><span class="loading"><svg style="'
         . get_filters('content')
-        . '" class="loading-container" viewBox="0 0 44 44" data-reactid=".0.0.0"><circle class="loading-path" cx="22" cy="22" r="20" fill="none" stroke-width="0.5" data-reactid=".0.0.0.0"></circle></svg></span></div>'
+        . '" class="loading-container" viewBox="0 0 44 44" data-reactid=".0.0.0"><circle class="loading-path" cx="22" cy="22" r="20" fill="none" stroke-width="0.4" data-reactid=".0.0.0.0"></circle></svg></span></div>'
         . "\n";
     print '</div>' . "\n";
     print '<script>__lrs()</script>';
