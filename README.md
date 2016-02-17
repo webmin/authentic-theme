@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.70)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.71)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -115,6 +115,7 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `Shift+F4/F7` - new file/folder
   * `Shift+F7` - search
   * `F8/Del` - delete
+  * `F9/F10` - download/upload
   * `Ctrl+X/C/V` - Cut/Copy/Paste
   * `Ctrl+Enter/Ctrl+Shift+Enter` - Save/Save and close currently edited file
   * `Theme reload hot key` - reload current directory

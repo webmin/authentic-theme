@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.70 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,8 +14,9 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.70 (February 16, 2016)</h4>
+                <h4>Version 17.70-17.71 (February 17, 2016)</h4>
                 <ul>
+                  <li>Fixed bugs<hr></li>
                   <li>Changed overall page rendering. Switched away from old page loading mechanism. All pages now are loding using quick load, without using content page loader. It will feel faster, nicer and smoother. Enjoy.</li>
                 </ul>
 

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.70 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -140,7 +140,7 @@ function __lrs(j, g) {
 		return
 	}
 	typeof j == "undefined" ? j = false : j = true;
-	typeof g == "undefined" ? g = 100 : false;
+	typeof g == "undefined" ? g = 80 : false;
 	if (t__wi_p.$___________initial === 1) {
 		t__wi_p.$('iframe[name="page"]').animate({
 			opacity: 0
@@ -214,7 +214,7 @@ function __s___() {
 	if (b.length) {
 		b.animate({
 			opacity: 1
-		}, 200, function () {
+		}, 240, function () {
 			b.css("pointer-events", "auto")
 		})
 	}
@@ -235,7 +235,7 @@ function __lre() {
 		}
 	}
 	t__wi_p.$(".loader .loader-close").hide();
-	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
+	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
 		t__wi_p.NProgress.done()
 	}
 	if (typeof hide_mobile_menu == "function") {
@@ -250,7 +250,7 @@ function ___csf() {
 		l = u.contentDocument.getElementsByTagName("head")[0],
 		r = u.contentDocument.createElement("script");
 	r.type = "text/javascript";
-	r.src = "/unauthenticated/js/package.min.js?1770";
+	r.src = "/unauthenticated/js/package.min.js?1771";
 	l.appendChild(r);
 	if (p.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
 		u.contentWindow.onbeforeunload = function (a) {
@@ -259,7 +259,7 @@ function ___csf() {
 		p.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
 		$csf = p.$('iframe[name="page"]').contents();
 		$csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-		$csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1770" rel="stylesheet" type="text/css">		');
+		$csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1771" rel="stylesheet" type="text/css">		');
 		$.each(p.$('link[href*="/styles.css"]'), function () {
 			if ($(this)) {
 				$csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -277,7 +277,7 @@ function ___csf() {
 		setTimeout(function () {
 			$csf.find("body").animate({
 				opacity: 1
-			}, 200, function () {
+			}, 240, function () {
 				$csf.find("body").css("pointer-events", "auto")
 			})
 		}, t__wi_p.$____csf);
@@ -585,7 +585,7 @@ function f__c_view() {
 	if (typeof t__wi_p.settings_leftmenu_width_initial == "undefined") {
 		t__wi_p.settings_leftmenu_width_initial = t__wi_p.settings_leftmenu_width
 	}
-	if (window.matchMedia("(max-width: 767px)").matches) {
+	if (t__wi_p.matchMedia("(max-width: 767px)").matches) {
 		t__wi_p.settings_leftmenu_width = 260;
 		t__wi_p.f__r__s(t__wi_p.settings_leftmenu_width, 0)
 	} else {
@@ -644,9 +644,9 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 			return
 		}
 		__lre();
-		s("/unauthenticated/js/authentic.min.js?1770")
+		s("/unauthenticated/js/authentic.min.js?1771")
 	}
-	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
+	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
 		t__wi_p.NProgress.done()
 	}
 	if (typeof t__wi_p.__dpt == "function") {

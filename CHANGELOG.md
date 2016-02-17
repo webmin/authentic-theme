@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.71 (February 17, 2016)
+Fixed bugs
+
 ####Version 17.70 (February 16, 2016)
 * Changed overall page rendering. Switched away from old page loading mechanism. All pages now are loding using quick load, without using content page loader. It will feel faster, nicer and smoother. Enjoy.
 
