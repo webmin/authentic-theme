@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.70 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -606,7 +606,7 @@ function __lls() {
 
 function __lle() {
 	t__wi_p.$("aside ul.user-html").removeClass("invisible");
-	if (settings_loader_top && t__wi_p.t___p__xhr_r === 0) {
+	if (settings_loader_top && t__wi_p.t___p__xhr_r === 0 && __num()) {
 		t__wi_p.NProgress.done()
 	}
 	t__wi_p.$___ajax_requested_url = "_blank";
@@ -2095,7 +2095,7 @@ if (t___wi.location == t__wi_p.location) {
 	}
 	loaders_dismiss();
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.70 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.71 https://github.com/qooob/authentic-theme")
 	}
 	$.ajax({
 		type: "GET",
@@ -2966,7 +2966,7 @@ if (t___wi.location == t__wi_p.location) {
 		}
 	}).ajaxStop(function () {
 		if (t__wi_p.t___p__xhr_l === 0) {
-			if (settings_loader_top) {
+			if (settings_loader_top && __num()) {
 				t__wi_p.NProgress.done()
 			}
 			if (t__wi_p.t___p__ll === 1) {
@@ -3635,21 +3635,22 @@ if (t___wi.location == t__wi_p.location) {
 				} else {
 					$(".dataTables_paginate").show()
 				}
-				var c = $("#list_form table").find(".fa-font").parents("td").index();
+				var d = $("#list_form table"),
+					c = d.find(".fa-font").parents("td").index();
 				if (c > 1 && settings_thirdparty_filemin_hide_actions == true) {
 					$("#list_form table thead th").eq(c).addClass("hidden");
-					$("#list_form table").find(".fa-font").parents("td").addClass("hidden")
+					d.find(".fa-font").parents("td").addClass("hidden")
 				}
 				$("#DataTables_Table_0_previous > a").html('<i class="fa fa-angle-left"></i>').css("border-top-left-radius", "2px").css("border-bottom-left-radius", "2px");
 				$("#DataTables_Table_0_next > a").html('<i class="fa fa-angle-right"></i>').css("border-top-right-radius", "2px").css("border-bottom-right-radius", "2px");
-				$("#list_form table").find(".fa-font").removeClass("fa-font").addClass("fa-i-cursor").css("margin-right", "5px").css("margin-left", "5px");
-				$("#list_form table").find(".fa-external-link").removeClass("fa-external-link").addClass("at-font-box-remove").css("margin-right", "5px").css("margin-left", "5px");
-				$("#list_form table").find(".fa-edit").css("margin-right", "7px").css("margin-left", "7px");
-				$("#list_form table").find(".fa-arrow-right").removeClass("fa-arrow-right").addClass("fa-folder-open-o").css("margin-right", "30px").css("margin-left", "30px").parent("a").addClass("filemin-follow-file");
+				d.find(".fa-font").removeClass("fa-font").addClass("fa-i-cursor").css("margin-right", "5px").css("margin-left", "5px");
+				d.find(".fa-external-link").removeClass("fa-external-link").addClass("at-font-box-remove").css("margin-right", "5px").css("margin-left", "5px");
+				d.find(".fa-edit").css("margin-right", "7px").css("margin-left", "7px");
+				d.find(".fa-arrow-right").removeClass("fa-arrow-right").addClass("fa-folder-open-o").css("margin-right", "30px").css("margin-left", "30px").parent("a").addClass("filemin-follow-file");
 				if ($(".breadcrumb li:first-child a").find(".fa-search").length) {
-					$("#list_form table").find(".fa-i-cursor").parent("a.action-link").remove();
-					$("#list_form table").find(".at-font-box-remove").parent("a.action-link").remove();
-					$("#list_form table").find(".fa-edit").parent("a.action-link").remove()
+					d.find(".fa-i-cursor").parent("a.action-link").remove();
+					d.find(".at-font-box-remove").parent("a.action-link").remove();
+					d.find(".fa-edit").parent("a.action-link").remove()
 				}
 				$.each($("#list_form table tbody tr:not('.row-filesize-done') td"), function () {
 					if (/((\d+(\s+)|\d+\.\d+(\s+)))(TB|GB|MB|KB|Byte|Bytes|ТБ|ГБ|МБ|КБ|Байт)|(Unlimited|Ubegrenset|Nielimitowane|Ilimitado|无限制|Не ограничено|No Limit|Same as admin)/i.test($(this).text())) {
@@ -3681,37 +3682,37 @@ if (t___wi.location == t__wi_p.location) {
 				}
 				var a = $("#list_form table tbody tr td:nth-child(2)");
 				a.unbind("mouseover");
-				a.on("mouseover", "img", function (h) {
-					var j = $(this).parents("td"),
-						g = j.find('img[src*="inode-symlink"]'),
-						d = j.next("td").find("a"),
-						f = $('#list_form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + d.text();
-					if (g.length) {
-						if (g.attr("symlink-title") != 1) {
-							!g.parent().find(".cspinner").length && g.before('<span class="cspinner" style="margin-top: 1px; margin-left: -20px;"><span class="cspinner-icon small"></span></span>');
+				a.on("mouseover", "img", function (j) {
+					var s = $(this).parents("td"),
+						h = s.find('img[src*="inode-symlink"]'),
+						f = s.next("td").find("a"),
+						g = $('#list_form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + f.text();
+					if (h.length) {
+						if (h.attr("symlink-title") != 1) {
+							!h.parent().find(".cspinner").length && h.before('<span class="cspinner" style="margin-top: 1px; margin-left: -20px;"><span class="cspinner-icon small"></span></span>');
 							$.ajax({
 								type: "POST",
-								url: $_____link_full + "/index.cgi/?xhr-get_symlink=1&xhr-get_symlink_path=" + f,
+								url: $_____link_full + "/index.cgi/?xhr-get_symlink=1&xhr-get_symlink_path=" + g,
 								data: false,
 								dataType: "text",
-								success: function (s) {
-									g.attr("data-content", '<code class="text-nowrap">' + s + "</code>").attr("symlink-title", "1").data("trigger", "manual").data("html", true).data("placement", "right").data("container", "body").data("animation", false);
-									g.is(":hover") && g.popover("show");
-									g.on("mouseenter", function () {
-										if (g.is(":hover")) {
+								success: function (t) {
+									h.attr("data-content", '<code class="text-nowrap">' + t + "</code>").attr("symlink-title", "1").data("trigger", "manual").data("html", true).data("placement", "right").data("container", "body").data("animation", false);
+									h.is(":hover") && h.popover("show");
+									h.on("mouseenter", function () {
+										if (h.is(":hover")) {
 											$(this).popover("show")
 										}
 									}).on("mouseleave", function () {
-										var t = this;
+										var u = this;
 										setTimeout(function () {
-											if (!$(".popover:hover").length && !g.is(":hover")) {
-												$(t).popover("hide")
+											if (!$(".popover:hover").length && !h.is(":hover")) {
+												$(u).popover("hide")
 											}
 										}, 200)
 									});
-									g.parent().find(".cspinner").remove()
+									h.parent().find(".cspinner").remove()
 								},
-								error: function (s) {}
+								error: function (t) {}
 							})
 						}
 					}
@@ -3740,6 +3741,16 @@ if (t___wi.location == t__wi_p.location) {
 					}
 					if ($("input.popover-path-input").is(":focus")) {
 						return
+					}
+					if ((h == 120 || h == 121) && !c.ctrlKey && !c.shiftKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
+						if (h == 120) {
+							$('a[onclick="downFromUrlDialog()"]').trigger("click");
+							return
+						}
+						if (h == 121) {
+							$('a[onclick="viewReadyForUpload()"]').trigger("click");
+							return
+						}
 					}
 					if (!$("input.popover-path-input").is(":focus") && String.fromCharCode(h).toLowerCase() == "l" && c.ctrlKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
 						c.preventDefault();
@@ -4345,6 +4356,7 @@ if (t___wi.location == t__wi_p.location) {
 			var l = $.url(n).param("path"),
 				j = l.split("/");
 			__f_____lo(true, true);
+			$('a[href="' + n + '"] img').before('<span class="cspinner" style="margin-top: 1px; margin-left: -25px;"><span class="cspinner-icon small"></span></span>');
 			$.ajax({
 				type: "POST",
 				url: $_____link_full + "/" + __f___mn() + "/" + n,
@@ -5204,6 +5216,7 @@ if (t___wi.location == t__wi_p.location) {
 		}
 	}
 	if (t__wi_p.location.search == "?theme-update-finished" || $("#wrapper").data("notice") == 1) {
+		__s___();
 		setTimeout(function () {
 			t__wi_p.$('iframe[name="page"]').contents().find("button[data-target='#update_notice']").click();
 			t__wi_p.$('.right-side-tabs-notification[data-type="authentic_remote_version"]').find("i.af-clear-all").trigger("click")

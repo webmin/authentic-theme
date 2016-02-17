@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.70 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -4007,7 +4007,7 @@ td.ui_grid_cell {
 }.container,
 .container-fluid {
     margin-top: 15px;
-}body:not(.csf) .container-fluid {
+}body:not(.csf):not(.drweb-maild) .container-fluid {
     pointer-events: none;
 
     opacity: 0;
