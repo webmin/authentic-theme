@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -95,6 +95,9 @@ elsif ( $in{'unauthenticated_logo'} ne "true" ) {
 }
 
 copy_source_dest( $config_directory . $lr,
+    $root_directory . "/authentic-theme/images" );
+
+copy_source_dest( $config_directory . $lw,
     $root_directory . "/authentic-theme/images" );
 
 &redirect('settings-upload.cgi?saved=1');

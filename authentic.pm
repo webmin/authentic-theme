@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -45,8 +45,20 @@ sub theme_header {
         . &get_product_name()
         . '" data-style="'
         . get_filters('content') . '"'
-        . ( &get_module_name() ? ' class="' . &get_module_name() . '"' : '' )
-        . '>' . "\n";
+        . (
+        &get_module_name()
+        ? ' class="'
+            . &get_module_name()
+            . (
+            (   index( $__settings{'settings_window_exclusion_list'},
+                    get_module_name() ) gt -1
+                    || $__settings{'settings_window_exclusion_list'} eq
+                    "*"
+            ) ? ' __e__' : undef
+            )
+            . '"'
+        : undef
+        ) . '>' . "\n";
 
     if ( @_ > 1 ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
@@ -167,19 +179,19 @@ sub theme_popup_prehead {
             . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1771" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1772" rel="stylesheet" type="text/css">'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1771" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1772" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1771" type="text/javascript"></script>',
+            . '/unauthenticated/js/cgi.min.js?1772" type="text/javascript"></script>',
             "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1771" type="text/javascript"></script>',
+            . '/unauthenticated/js/filtermatch.min.js?1772" type="text/javascript"></script>',
             "\n";
     }
 }
@@ -304,7 +316,8 @@ sub theme_ui_upload {
 
 sub theme_icons_table {
     my $hide_table_icons
-        = ( $__settings{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0 );
+        = (
+        $__settings{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0 );
     print '<div class="row icons-row'
         . ( !$hide_table_icons && ' vertical-align' ) . '">' . "\n";
     for ( my $i = 0; $i < @{ $_[0] }; $i++ ) {

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -45,7 +45,7 @@ if (   $gconfig{'loginbanner'}
         . $__settings{'settings_background_color'}
         . '" class="session_login">', "\n";
     embed_login_head();
-    print '<body class="session_login">' . "\n";
+    print '<body class="session_login" data-style="' . get_filters('content') . '">' . "\n";
     print
         '<div class="form-signin-banner container session_login alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
         . "\n";
@@ -81,7 +81,7 @@ print '<html data-background-style="'
     . $__settings{'settings_background_color'}
     . '" class="session_login">', "\n";
 embed_login_head();
-print '<body class="session_login">' . "\n";
+print '<body class="session_login" data-style="' . get_filters('content') . '">' . "\n";
 print '<div class="container session_login">' . "\n";
 
 if ( defined( $in{'failed'} ) ) {

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -59,6 +59,7 @@ typeof settings_leftmenu_width == "undefined" ? settings_leftmenu_width = 260 : 
 typeof settings_sysinfo_easypie_charts == "undefined" ? settings_sysinfo_easypie_charts = true : false;
 typeof settings_sysinfo_easypie_charts_width == "undefined" ? settings_sysinfo_easypie_charts_width = 4 : (settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width));
 typeof settings_sysinfo_easypie_charts_scale == "undefined" ? settings_sysinfo_easypie_charts_scale = 8 : (settings_sysinfo_easypie_charts_scale = parseInt(settings_sysinfo_easypie_charts_scale));
+typeof settings_sysinfo_theme_updates == "undefined" ? settings_sysinfo_theme_updates = false : false;
 typeof settings_sysinfo_csf_updates == "undefined" ? settings_sysinfo_csf_updates = false : false;
 typeof settings_sysinfo_link_mini == "undefined" ? settings_sysinfo_link_mini = true : false;
 typeof settings_window_customized_checkboxes_and_radios == "undefined" ? settings_window_customized_checkboxes_and_radios = true : false;
@@ -250,7 +251,7 @@ function ___csf() {
 		l = u.contentDocument.getElementsByTagName("head")[0],
 		r = u.contentDocument.createElement("script");
 	r.type = "text/javascript";
-	r.src = "/unauthenticated/js/package.min.js?1771";
+	r.src = "/unauthenticated/js/package.min.js?1772";
 	l.appendChild(r);
 	if (p.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
 		u.contentWindow.onbeforeunload = function (a) {
@@ -259,7 +260,7 @@ function ___csf() {
 		p.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
 		$csf = p.$('iframe[name="page"]').contents();
 		$csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-		$csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1771" rel="stylesheet" type="text/css">		');
+		$csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1772" rel="stylesheet" type="text/css">		');
 		$.each(p.$('link[href*="/styles.css"]'), function () {
 			if ($(this)) {
 				$csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -644,7 +645,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 			return
 		}
 		__lre();
-		s("/unauthenticated/js/authentic.min.js?1771")
+		s("/unauthenticated/js/authentic.min.js?1772")
 	}
 	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
 		t__wi_p.NProgress.done()
@@ -656,6 +657,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 });
 $(function () {
 	if ($("html.session_login").length) {
+		$("body").attr("style", $("body").data("style"));
 		if (t__wi_p.$("aside").length) {
 			t__wi_p.location.href = "/"
 		}

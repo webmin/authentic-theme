@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -29,7 +29,7 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
         'true' ? 0 : 1;
 
     foreach $c (@cats) {
-        if ( $gconfig{"notabs_${base_remote_user}"} ne '2'
+        if ( $gconfig{"notabs_${base_remote_user}"} ne '2' && $gconfig{"notabs"} ne '1'
             && ( $c && !$c->{'unused'} )
             || ( $c && $c->{'unused'} && $show_unused ) )
         {
@@ -71,7 +71,7 @@ if ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
             }
             print '</ul></li>' . "\n";
         }
-        elsif ( $gconfig{"notabs_${base_remote_user}"} eq '2' ) {
+        elsif ( $gconfig{"notabs_${base_remote_user}"} eq '2' || $gconfig{"notabs"} eq '1' ) {
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 print '<li><a target="page" data-href="'
                     . $gconfig{'webprefix'} . '/'
