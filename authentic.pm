@@ -51,7 +51,7 @@ sub theme_header {
             . &get_module_name()
             . (
             (   index( $__settings{'settings_window_exclusion_list'},
-                    get_module_name() ) gt -1
+                    &get_module_name() ) gt -1
                     || $__settings{'settings_window_exclusion_list'} eq
                     "*"
             ) ? ' __e__' : undef
