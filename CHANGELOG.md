@@ -1,5 +1,15 @@
 ##Changelog
 
+####Version 17.72 (February 21, 2016)
+* Added ability to selectively disable in-built page rendering mechanism for refractory modules [#396](https://github.com/qooob/authentic-theme/issues/396) [#397](https://github.com/qooob/authentic-theme/issues/397)
+* Changed update notifications are off by default for all. You could enable it manually, in case you wish to get updates aside from Webmin [#39717](https://www.virtualmin.com/node/39717)
+* Added ticking time on _System Information_ page
+* Fixed _Webmin/Usermin->Configuration->User Interface_ pages not to display deprecated options
+* Fixed _Usermin_ categorize modules option feature
+* Fixed unauthenticated logo preview upon first upload
+* Fixed filters imposed in settings are being applied properly to login page
+* Fixed bugs [#398](https://github.com/qooob/authentic-theme/issues/398) [#402](https://github.com/qooob/authentic-theme/issues/402) [#39752](https://www.virtualmin.com/node/39752)
+
 ####Version 17.71 (February 17, 2016)
 * Fixed bugs
 

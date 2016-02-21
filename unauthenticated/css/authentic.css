@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1346,6 +1346,7 @@ aside form {
     z-index: 10000000;
 }@media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
+        width: 690px;
         margin: 30px auto;
     }
 }.piechart {
@@ -2905,8 +2906,6 @@ tr.atshover:hover td {
     font-size: 11px;
 
     color: #555;
-}.col_label.atscontent .subsection_title {
-    font-size: 15px;
 }tr.atshover .col_value > label,
 .col_value.atscontent span > label {
     background: transparent;
@@ -4007,7 +4006,7 @@ td.ui_grid_cell {
 }.container,
 .container-fluid {
     margin-top: 15px;
-}body:not(.csf):not(.drweb-maild) .container-fluid {
+}body:not(.csf):not(.__e__) .container-fluid {
     pointer-events: none;
 
     opacity: 0;
@@ -6253,6 +6252,48 @@ html[data-background-style='ghostWhite'] .input-group-addon {
 .sub_table_container select[disabled],
 .sub_table_container input[disabled] {
     background-color: #eee !important;
+}.bootstrap-tagsinput {
+    max-width: 96%;
+    padding: 0 6px;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    box-shadow: none;
+}.bootstrap-tagsinput > input {
+    max-height: 26px !important;
+
+    background-color: transparent !important;
+}.atshover:hover .bootstrap-tagsinput,
+.atshover .bootstrap-tagsinput:hover {
+    background-color: #fff !important;
+}.atshover:hover .bootstrap-tagsinput .label,
+.atshover .bootstrap-tagsinput:hover .label {
+    background-color: #eee !important;
+}.bootstrap-tagsinput .label {
+    font-size: 90% !important;
+    font-weight: 400 !important;
+
+    padding-top: 0;
+    padding-bottom: 1px;
+
+    color: #444 !important;
+    background-color: #eee !important;
+}.bootstrap-tagsinput input {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}.atshover .bootstrap-tagsinput:hover .tag [data-role='remove'],
+.atshover:hover .bootstrap-tagsinput .tag [data-role='remove'],
+.bootstrap-tagsinput .tag [data-role='remove']:after {
+    background-color: #eee !important;
+}.atshover .bootstrap-tagsinput:hover .tag [data-role='remove'],
+.atshover:hover .bootstrap-tagsinput .tag [data-role='remove'],
+.bootstrap-tagsinput .tag [data-role='remove'] {
+    background-color: #eee !important;
+}.bootstrap-tagsinput .tag [data-role='remove']:hover {
+    color: red !important;
+}.bootstrap-tagsinput .tag [data-role='remove']:hover:active,
+.bootstrap-tagsinput .tag [data-role='remove']:hover {
+    box-shadow: inset 0 1px 0 transparent,0 1px 2px transparent;
 }@keyframes dash {
     0 {
         stroke-dasharray: 1,150;

@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.71)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.72)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -134,7 +134,9 @@ Theme only re-renders this module and adds support for code highlight, when edit
 4. Page loader/spinner got stuck<br>
    To prematurely dismiss a loader, click _once_ the `Escape` key for the right loader and `Ctrl+Escape` for the left, or loader's close button, right next to it;
 5. Can't toggle _checkbox_ in a row of a _table_<br>
-   Theme provides an extended support for operations with table rows. It's easy to select current row by simply `right-clicking` on it with the mouse (on mobile device `long-tap`). Regular `click` on the row will take you to the row's main link.
+   Theme provides an extended support for operations with table rows. It's easy to select current row by simply `right-clicking` on it with the mouse (on mobile device `long-tap`). Regular `click` on the row will take you to the row's main link;
+6. Default tab after logging in doesn't work<br>
+   You need to set _Authentic Theme_ as default globally. To do so, go to _Webmin->Webmin Configuration->Themes_.
 
 ###Development
 ####Lead developer

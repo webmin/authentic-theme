@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,9 +14,16 @@ our $__changelog
               </div>
               <div class="modal-body" style="font-weight: 300">
 
-                <h4>Version 17.70-17.71 (February 17, 2016)</h4>
+                <h4>Version 17.70-17.72 (February 21, 2016)</h4>
                 <ul>
-                  <li>Fixed bugs<hr></li>
+                  <li>Added ability to selectively disable in-built page rendering mechanism for refractory modules <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/396" target="_blank">#396</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/397" target="_blank">#397</a></li>
+                  <li>Changed update notifications are off by default for all. You could enable it manually, in case you wish to get updates aside from Webmin <a class="label label-default" href="https://www.virtualmin.com/node/39717" target="_blank">#39717</a></li>
+                  <li>Added ticking time on <em>System Information</em> page</li>
+                  <li>Fixed <em>Webmin/Usermin->Configuration->User Interface</em> pages not to display deprecated options</li>
+                  <li>Fixed <em>Usermin</em> categorize modules option feature</li>
+                  <li>Fixed unauthenticated logo preview upon first upload</li>
+                  <li>Fixed filters imposed in settings are being applied properly to login page</li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/398" target="_blank">#398</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/402" target="_blank">#402</a> <a class="label label-default" href="https://www.virtualmin.com/node/39752" target="_blank">#39752</a><hr></li>
                   <li>Changed overall page rendering. Switched away from old page loading mechanism. All pages now are loding using quick load, without using content page loader. It will feel faster, nicer and smoother. Enjoy.</li>
                 </ul>
 

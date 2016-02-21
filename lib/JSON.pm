@@ -4,7 +4,6 @@ use Carp ();
 use base qw(Exporter);
 @JSON::EXPORT = qw(from_json to_json jsonToObj objToJson encode_json decode_json);
 
-
 BEGIN {
     $JSON::VERSION = '2.90';
     $JSON::DEBUG   = 0 unless (defined $JSON::DEBUG);

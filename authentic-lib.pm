@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.71 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1072,7 +1072,7 @@ sub print_easypie_charts {
     );
     print_easypie_chart(
         $columns,
-        ( ( $virt_percent || $virt_percent eq "0" ) ? $virt_percent : 'NaN' ),
+        ( ( $virt_percent || $virt_percent eq "0" ) ? $virt_percent : 'NaN' ), # -sin(9**9**9)
         (   ( $current_lang eq 'ru' || $current_lang eq 'ru.UTF-8' )
             ? $text{'body_virt2'}
             : $text{'body_virt'}
@@ -1973,7 +1973,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1771" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+            . '.js?1772" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
             . "\n";
     }
 }
@@ -1985,27 +1985,26 @@ sub embed_header {
     if ( $type eq 'debug' ) {
 
         my @css = (
-            'bootstrap',           'datepicker',
-            'fontawesome',         'fontawesome-animation',
-            'codemirror',          'jquery.jspanel',
-            'jquery.scrollbar',    'jquery.datatables',
-            'jquery.autocomplete', 'nprogress',
-            'messenger',           'select2',
-            'roboto',              'authentic'
+            'bootstrap',             'bootstrap.tagsinput',
+            'datepicker',            'fontawesome',
+            'fontawesome-animation', 'codemirror',
+            'jquery.jspanel',        'jquery.scrollbar',
+            'jquery.datatables',     'jquery.autocomplete',
+            'nprogress',             'messenger',
+            'select2',               'roboto',
+            'authentic'
         );
 
         my @js = (
-            'timeplot',            'jquery',
-            'jquery-ui',           'mobile-detect',
-            'jquery.jspanel',      'jquery.scrollbar',
-            'jquery.autocomplete', 'jquery.scrollintoview',
-            'momentjs',            'favico',
-            'select2',             'bootbox',
-            'icheck',              'jquery.purl',
-            'bootstrap',           'datepicker',
-            'fileinput',
-
-            #'autosizeinput',
+            'timeplot',                  'jquery',
+            'jquery-ui',                 'mobile-detect',
+            'jquery.jspanel',            'jquery.scrollbar',
+            'jquery.autocomplete',       'jquery.scrollintoview',
+            'momentjs',                  'favico',
+            'select2',                   'bootbox',
+            'icheck',                    'jquery.purl',
+            'bootstrap',                 'bootstrap.tagsinput',
+            'datepicker',                'fileinput',
             'codemirror',                'jquery.datatables',
             'jquery.datatables.plugins', 'jquery.easypiechart',
             'jquery.injectCSS',          'tinymce/tinymce',
@@ -2019,7 +2018,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1771" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1772" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -2031,13 +2030,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1771" type="text/javascript"></script>' . "\n";
+                . '.js?1772" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1771" rel="stylesheet" type="text/css">'
+            . '/unauthenticated/css/package.min.css?1772" rel="stylesheet" type="text/css">'
             . "\n";
 
         embed_styles();
@@ -2050,17 +2049,17 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1771" type="text/javascript"></script>'
+                . '/unauthenticated/js/timeplot.min.js?1772" type="text/javascript"></script>'
                 . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1771" type="text/javascript"></script>'
+            . '/unauthenticated/js/package.min.js?1772" type="text/javascript"></script>'
             . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1771" type="text/javascript"></script>'
+            . '/unauthenticated/js/init.min.js?1772" type="text/javascript"></script>'
             . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
@@ -2068,7 +2067,7 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1771" type="text/javascript"></script>'
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1772" type="text/javascript"></script>'
                 . "\n";
         }
 
@@ -2092,16 +2091,16 @@ sub embed_login_head {
         . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1771" rel="stylesheet" type="text/css">'
+        . '/unauthenticated/css/package.min.css?1772" rel="stylesheet" type="text/css">'
         . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1771" type="text/javascript"></script>'
+        . '/unauthenticated/js/package.min.js?1772" type="text/javascript"></script>'
         . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1771" type="text/javascript"></script>'
+        . '/unauthenticated/js/init.min.js?1772" type="text/javascript"></script>'
         . "\n";
     print '</head>', "\n";
 }
@@ -2117,12 +2116,7 @@ sub get_authentic_version {
     $installed_version =~ s/^\s+|\s+$//g;
     $installed_version = sprintf '%.2f', $installed_version;
 
-    if ($__settings{'settings_sysinfo_theme_updates'} eq 'true'
-        || (   $__settings{'settings_sysinfo_theme_updates'} ne 'false'
-            && !licenses('cm')
-            && !licenses('vm') )
-        )
-    {
+    if ( $__settings{'settings_sysinfo_theme_updates'} eq 'true' ) {
 
         # Get remote version if allowed
         http_download(
@@ -2310,7 +2304,8 @@ sub _settings {
             'settings_window_autoscroll',
             'true',
             'settings_window_customized_checkboxes_and_radios',
-            'true', '__',
+            'true',
+            '__',
             _settings(
                 'fa',
                 'sub-title',
@@ -2324,6 +2319,14 @@ sub _settings {
             'dddd, MMMM D, YYYY h:mm:ss',
             'settings_window_replaced_timestamps_format_short',
             'L, h:mm:ss',
+            '__',
+            _settings(
+                'fa',
+                'sub-title',
+                '' . "~" . &text('settings_window_exclusion_description')
+            ),
+            'settings_window_exclusion_list',
+            'sysstats,drweb-maild',
 
             '__',
             _settings(
@@ -2462,7 +2465,7 @@ sub _settings {
             'settings_sysinfo_easypie_charts_scale',
             '8',
             'settings_sysinfo_theme_updates',
-            ( ( !licenses('cm') && !licenses('vm') ) ? 'true' : 'false' ),
+            'false',
             'settings_sysinfo_csf_updates',
             'false',
             'settings_sysinfo_drive_status_on_new_line',
@@ -3062,6 +3065,12 @@ sub _settings {
                 . ( $v eq 'white' && ' selected' ) . '>White</option>
 
                 </select>';
+        }
+        elsif ( $k eq 'settings_window_exclusion_list' ) {
+            $v = '
+                <input data-role="tagsinput" style="display: inline; width: 75%; height: 26px; max-height: 26px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="'
+                . $k . '" value="' . $v . '">
+            ';
         }
 
         return '
@@ -3673,15 +3682,16 @@ sub init {
         my @l = <FILE>;
         close(FILE);
 
-        if ( grep { /data-replaced/ } @l ) {
-            return
+        if ( grep {/data-replaced/} @l ) {
+            return;
         }
 
         my @n;
         foreach (@l) {
             $_ =~ s/%in\);/%in, \$current_theme);/g;
             $_ =~ s/<BODY>//g;
-            $_ =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
+            $_
+                =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
             push( @n, $_ );
         }
 

@@ -424,3 +424,7 @@ theme_xhred_filemin_context_download_file=Download
 settings_sysinfo_easypie_charts_width=Charts width
 settings_sysinfo_easypie_charts_scale=Charts scale length
 
+#17.72
+settings_window_exclusion_description=Set the list of modules that will be excluded from in-built rendering mechanism. This feature will provide support for outdated/voluntarily built modules, that are failed to be displayed properly. To disable rendering for certain modules you must specify its name. The module's name is based on its folder name and can be found when hovering on its link in navigation menu. It's also possible to pass single asterisk <kbd>*</kbd> to disable in-built rendering for all modules.
+settings_window_exclusion_list=Modules to exclude
+
