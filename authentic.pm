@@ -5,7 +5,14 @@
 #
 
 do "authentic-theme/authentic-lib.pm";
+
 our %__settings = settings();
+our (
+    %gconfig,              $current_theme,  $root_directory,
+    $theme_root_directory, $t_var_switch_m, $t_var_product_m
+);
+our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
+
 
 sub theme_header {
     print '<!DOCTYPE html>', "\n";
