@@ -5,6 +5,7 @@
 #
 
 do "authentic-theme/authentic-lib.pm";
+our %__settings = settings();
 
 sub theme_header {
     print '<!DOCTYPE html>', "\n";
