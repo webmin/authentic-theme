@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.73 (February XX, 2016)
+* Fixed bugs [#403](https://github.com/qooob/authentic-theme/issues/403)
+
 ####Version 17.72 (February 21, 2016)
 * Added ability to selectively disable in-built page rendering mechanism for refractory modules [#396](https://github.com/qooob/authentic-theme/issues/396) [#397](https://github.com/qooob/authentic-theme/issues/397)
 * Changed update notifications are off by default for all. You could enable it manually, in case you wish to get updates aside from Webmin [#39717](https://www.virtualmin.com/node/39717)

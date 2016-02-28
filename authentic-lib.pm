@@ -2326,7 +2326,7 @@ sub _settings {
                 '' . "~" . &text('settings_window_exclusion_description')
             ),
             'settings_window_exclusion_list',
-            'sysstats,drweb-maild',
+            'sysstats,drweb-maild,cwaf',
 
             '__',
             _settings(
@@ -2481,7 +2481,7 @@ sub _settings {
             'settings_thirdparty_section_filemin',
             '',
             'settings_thirdparty_filemin_hide_toolbar',
-            'true',
+            'false',
             'settings_thirdparty_filemin_hovered_toolbar',
             'false',
             'settings_thirdparty_filemin_hide_actions',
