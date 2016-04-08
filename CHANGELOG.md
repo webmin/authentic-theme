@@ -1,7 +1,31 @@
 ##Changelog
 
-####Version 17.73 (February XX, 2016)
-* Fixed bugs [#403](https://github.com/qooob/authentic-theme/issues/403)
+####Version 17.80 (April 08, 2016)  :star:
+* Improved theme's speed, up-to _80-120%_, depending on the module, due to large code optimisation. At the moment the _Theme_ is only ~15% slower than _Gray Theme_, while at the same time 600% heavier
+* Improved general _UI_
+* Improved _autocomplete_ links' processing
+* Improved output of _System and Server Status_ to _System Information_ page
+* Improved and enhanced file editor functionality:
+  * Find/search/replace/replace all/jump to line
+  * Auto close/match brackets
+  * Code fold
+  * Scroll-bar annotations
+  * Match-highlight on text selection
+  * Highlight of the current line
+  * Word autocompletion (hint), based on the words found in the current window (_Ctrl+Space_)
+* Improved and enhanced _File Manager_ functionality:
+	* Switched to using _WebminCore_ for copying/moving files  (Suggested by _Joe Cooper_)
+	* Pasting existing file/folder in a directory with the new name [#390](https://github.com/qooob/authentic-theme/issues/390)
+	* Prompt for copying/replacing existing folders/files from other directory [#401](https://github.com/qooob/authentic-theme/issues/401)
+	* Copying path to clipboard using _context menu_ [#408](https://github.com/qooob/authentic-theme/issues/408)
+	* Error message for moving directory into itself
+	* Improved bookmarks functionality and fixed usability for wheel users.<br>Bookmarks control no longer in settings [#347](https://github.com/qooob/authentic-theme/issues/347) [#389](https://github.com/qooob/authentic-theme/issues/389)
+	* Options control was ported away from theme's settings to the module's configuration page
+* Added character set notification warning for _non UTF-8_ users [#416](https://github.com/qooob/authentic-theme/issues/416)
+* Added ability to save config files, that are edited manually, without reloading the page. Script will also makes sure that you are not going to leave the page unsaved.<br>Hotkeys are supported - _Ctrl + Enter / Ctrl + ⇧ + Enter_ - Save/Save and close currently edited file
+* Added ability to prematurely unveil the page by double-clicking on the content page
+* Added support for _ConfigServer Security & Firewall_ 8.19+
+* Fixed bugs [#176](https://github.com/qooob/authentic-theme/issues/176) [#386](https://github.com/qooob/authentic-theme/issues/386) [#399](https://github.com/qooob/authentic-theme/issues/399) [#403](https://github.com/qooob/authentic-theme/issues/403) [#411](https://github.com/qooob/authentic-theme/issues/411) [#412](https://github.com/qooob/authentic-theme/issues/412) [#414](https://github.com/qooob/authentic-theme/issues/414) [#417](https://github.com/qooob/authentic-theme/issues/417) [#419](https://github.com/qooob/authentic-theme/issues/419) [#424](https://github.com/qooob/authentic-theme/issues/424) [#426](https://github.com/qooob/authentic-theme/issues/426) [#39272](https://www.virtualmin.com/node/39272) [#39722](https://www.virtualmin.com/node/39722) [#39958](https://www.virtualmin.com/node/39958) [#39974](https://www.virtualmin.com/node/39974) [#39977](https://www.virtualmin.com/node/39977) [#39999](https://www.virtualmin.com/node/39999) [#40066](https://www.virtualmin.com/node/40066)
 
 ####Version 17.72 (February 21, 2016)
 * Added ability to selectively disable in-built page rendering mechanism for refractory modules [#396](https://github.com/qooob/authentic-theme/issues/396) [#397](https://github.com/qooob/authentic-theme/issues/397)
@@ -24,18 +48,18 @@
 * Fixed bug [#384](https://github.com/qooob/authentic-theme/issues/384)
 
 ####Version 17.64 (February 10, 2016)
-* Added _on-close_ prompt for _Filemin_ editor, in case file was edited but not saved
-* Added for _Filemin_ in _context menu_ new _Download_ option for files
-* Fixed _Filemin_ back button to _root_ folder error
+* Added _on-close_ prompt for _File Manager_ editor, in case file was edited but not saved
+* Added for _File Manager_ in _context menu_ new _Download_ option for files
+* Fixed _File Manager_ back button to _root_ folder error
 * Fixed missing _Programs_ tab on _System Information_ page, in case _Virtualmin_ is installed
-* Improved _Filemin_ right click _context menu_ behaviour and added trigger by keyboard, using _menu_ key
+* Improved _File Manager_ right click _context menu_ behaviour and added trigger by keyboard, using _menu_ key
 * Fixed bugs [#374](https://github.com/qooob/authentic-theme/issues/374) [#375](https://github.com/qooob/authentic-theme/issues/375) [#376](https://github.com/qooob/authentic-theme/issues/376) [#378](https://github.com/qooob/authentic-theme/issues/378) [#380](https://github.com/qooob/authentic-theme/issues/380) [#39613](https://www.virtualmin.com/node/39613) [#39228](https://www.virtualmin.com/node/39228)
 
 ####Version 17.63 (February 05, 2016)
-* Added _Filemin_ help button for easier user-reference
-* Added ability in _Filemin_ to enter path manually, by `right-clicking` on the path or using `Ctrl+L` shortcut
+* Added _File Manager_ help button for easier user-reference
+* Added ability in _File Manager_ to enter path manually, by `right-clicking` on the path or using `Ctrl+L` shortcut
 * Added translatable _dataTables_ entries to language file
-* Improved _Filemin_ size calculation, which now supports multiple _folders/files_ from properties of _context menu_ [#350](https://github.com/qooob/authentic-theme/issues/350)
+* Improved _File Manager_ size calculation, which now supports multiple _folders/files_ from properties of _context menu_ [#350](https://github.com/qooob/authentic-theme/issues/350)
 * Fixed bugs [#369](https://github.com/qooob/authentic-theme/issues/369) [#371](https://github.com/qooob/authentic-theme/issues/371) [#373](https://github.com/qooob/authentic-theme/issues/373)
 
 ####Version 17.62 (February 01, 2016)
@@ -60,26 +84,26 @@
 
 
 ####Version 17.54 (January 26, 2016)
-* Added display of _symlink's_ target in _Filemin_ when hovering on the symlink-icon [#346](https://github.com/qooob/authentic-theme/issues/346)
-* Added an option for _Filemin_ in theme's settings to show dropdowns in toolbar on hover or using click
+* Added display of _symlink's_ target in _File Manager_ when hovering on the symlink-icon [#346](https://github.com/qooob/authentic-theme/issues/346)
+* Added an option for _File Manager_ in theme's settings to show dropdowns in toolbar on hover or using click
 * Fixed bugs [#39486](https://www.virtualmin.com/node/39486) [#350](https://github.com/qooob/authentic-theme/issues/350)
 
 ####Version 17.53 (January 25, 2016)
-* Improved _Filemin_ right click _context menu_ styling and behaviour
-* Added _Filemin_ controls in theme's settings to hide toolbar (for extra lightness) and other options (the list will grow in time)
+* Improved _File Manager_ right click _context menu_ styling and behaviour
+* Added _File Manager_ controls in theme's settings to hide toolbar (for extra lightness) and other options (the list will grow in time)
 * Added ability to let user choose as the default page the list of servers/systems in _Virtualmin/Cloudmin_ [#348](https://github.com/qooob/authentic-theme/issues/348)
 * Fixed a bug, when search using _autocomplete_ didn't work in _Virtualmin/Cloudmin_ for Virtual Servers/Virtual Machines group
 
 ####Version 17.52 (January 24, 2016)
-* Added _Filemin_ folder size auto-calculation on row selection
-* Improved once again right click _context menu_ and modals' titles for _Filemin_
+* Added _File Manager_ folder size auto-calculation on row selection
+* Improved once again right click _context menu_ and modals' titles for _File Manager_
 
 ####Version 17.51 (January 23, 2016)
-* Improved right click _context menu_ for _Filemin_, which now has all options and behaves smart
+* Improved right click _context menu_ for _File Manager_, which now has all options and behaves smart
 * Fixed _Elegant_ theme for _CodeMirror_
 
 ####Version 17.50 (January 21, 2016)
-* Added right click _context menu_ for _Filemin_ for extra convenience
+* Added right click _context menu_ for _File Manager_ for extra convenience
 * Added state of the art _color_ management for the palettes, using theme's settings. It is possible now to control `grayscale, sepia, saturate, hue-rotate, invert, brightness, contrast` filters for navigation menu and `grayscale, saturate, hue-rotate` for content page. It enables you to generate <em>hundreds</em> of color palettes with ease
 * Added _White Snow_ contrast theme, to resemble old _Virtualmin Framed Theme_ [#39344](https://www.virtualmin.com/node/39344)
 * Added line numbers for _System Logs_ module
@@ -108,15 +132,15 @@
 * Fixed other bugs
 
 ####Version 17.31 (January 1, 2016)
-* Added support for updated _Filemin_ in _Webmin_ 1.780
-* Fixed editor in _Filemin_ saving content incorrectly, when multiple files were opened at once
+* Added support for updated _File Manager_ in _Webmin_ 1.780
+* Fixed editor in _File Manager_ saving content incorrectly, when multiple files were opened at once
 * Fixed bugs [#315](https://github.com/qooob/authentic-theme/issues/315) [#317](https://github.com/qooob/authentic-theme/issues/317)
 
 ####Version 17.30 (December 25, 2015)
 * Added ability to use configurable HTML snippet in navigation menu, for identification purposes. It's configurable in settings, under navigation menu options. Example of usage: `<br><kbd>debug:10000</kbd>`
 * Added ability to completely disable _Notification Slider_ using theme options [#305](https://github.com/qooob/authentic-theme/issues/305)
-* Added ability to minimize/maximize editor window in _Filemin_ [#308](https://github.com/qooob/authentic-theme/issues/308)
-* Added new hotkeys for _Filemin_:
+* Added ability to minimize/maximize editor window in _File Manager_ [#308](https://github.com/qooob/authentic-theme/issues/308)
+* Added new hotkeys for _File Manager_:
 	* `Esc` - close active editor window
 	* `Ctrl+Esc` - minimize active editor window
 * Added disableable _theme option_ button in navigation
@@ -155,7 +179,7 @@
 * Fixed a bug [#279](https://github.com/qooob/authentic-theme/issues/279)
 
 ####Version 17.03 (November 09, 2015)
-* Added document title dynamic update, depending on the current module. It also supports _Virtualmin/Cloudmin_, appending currenty selected virtual server/machine and _Filemin_, appending currently selected path [#76](https://github.com/Real-Gecko/filemin/issues/76)
+* Added document title dynamic update, depending on the current module. It also supports _Virtualmin/Cloudmin_, appending currenty selected virtual server/machine and _File Manager_, appending currently selected path [#76](https://github.com/Real-Gecko/filemin/issues/76)
 
 ####Version 17.02 (November 01, 2015)
 * Added a feature to execute shell command from the search field. To do so, type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available
@@ -184,10 +208,10 @@
 * Added smart focus on visible search fields - no need to focus manually - just start typing and the theme will automatically decide what to do
 * Added support for _Edge_ browser, which now can render theme properly
 * Added ability to dismiss the left spinner with `Ctrl + Esc` key combination and/or its close button, that appears after 3 seconds of spinner activity
-* Fixed in _Filemin_ module, to submit all table rows, disregard of visibility (pagination)
-* Fixed in _Filemin_ module looped XHR requests, which made it twice slower
-* Added for _Filemin_ module extended user-friendly notifications
-* Added for _Filemin_ module state of the art _keyboard navigation_
+* Fixed in _File Manager_ module, to submit all table rows, disregard of visibility (pagination)
+* Fixed in _File Manager_ module looped XHR requests, which made it twice slower
+* Added for _File Manager_ module extended user-friendly notifications
+* Added for _File Manager_ module state of the art _keyboard navigation_
 	* `alphanumeric typing` - quick search
 	* `up/down, home/end` - cursor position
 	* `enter` - descent into selected
@@ -214,15 +238,15 @@
 
 
 ####Version 15.51 (September 1, 2015)
-* Fixed initiation of the spinner, that was shown on file download in _Filemin_, while clicking on the row
-* Fixed adding bookmarks in _Filemin_ no longer locks the table
+* Fixed initiation of the spinner, that was shown on file download in _File Manager_, while clicking on the row
+* Fixed adding bookmarks in _File Manager_ no longer locks the table
 * Fixed minor bugs [#228](https://github.com/qooob/authentic-theme/issues/228) [#230](https://github.com/qooob/authentic-theme/issues/230) [#231](https://github.com/qooob/authentic-theme/issues/231)
 
 
 ####Version 15.50 (August 29, 2015)
 * Improved theme's _speed_ by code optimization
 * Improved support for _ConfigServer Security & Firewall_ module. Editor mode and code highlights are now working flawlessly
-* Added initialization of filter in _Filemin_ on plain typing (like in _Nautilus_, for example)
+* Added initialization of filter in _File Manager_ on plain typing (like in _Nautilus_, for example)
 * Added ability to dismiss the page loader with single escape click. Attention! Be careful when you click escape key once, the loader will disappear, when you click it over again and the loader is hidden, you will interrupt the execution of the page process
 * Changed theme auto-updates notifications to be off by default. This will not affect existing users
 * Fixed history buttons, navigating using browser's back/forward buttons now working properly
@@ -232,10 +256,10 @@
 ####Version 15.00 (August 23, 2015)
 * Improved and optimized theme's _speed_ and _display_ options
 * Added a new feature of adding any right side page to global _Favorites_ [#210](https://github.com/qooob/authentic-theme/issues/210)
-* Added complete _AJAX_ support for _Filemin_ (by _Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
+* Added complete _AJAX_ support for _File Manager_ (by _Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
 * Added emphasis on the table sub-titles [#218](https://github.com/qooob/authentic-theme/issues/218)
 * Added CZ language, thanks to [stuchy3](https://github.com/stuchy3)
-* Fixed sorting issue by file-size in _Filemin_ and other modules, where file-size like sorting is used
+* Fixed sorting issue by file-size in _File Manager_ and other modules, where file-size like sorting is used
 * Fixed link for _System Statistics_ in _Cloudmin_
 * Fixed multiple bugs [#213](https://github.com/qooob/authentic-theme/issues/213) [#214](https://github.com/qooob/authentic-theme/issues/214) [#220](https://github.com/qooob/authentic-theme/issues/220) [#223](https://github.com/qooob/authentic-theme/issues/223)
 * Fixed and made dozens of unmentioned bugs/improvements
@@ -246,7 +270,7 @@
 
 ####Version 14.01 (July 30, 2015)
 * Added _CodeMirror_ automatic mode (highlight syntax) detection for all file-editors
-* Added support for [_Filemin_](https://github.com/Real-Gecko/filemin) file-editor and improved general support for this module
+* Added support for [_File Manager_](https://github.com/Real-Gecko/filemin) file-editor and improved general support for this module
 * Fixed multiple bugs [#205](https://github.com/qooob/authentic-theme/issues/205), [#206](https://github.com/qooob/authentic-theme/issues/206), [#207](https://github.com/qooob/authentic-theme/issues/207), [#209](https://github.com/qooob/authentic-theme/issues/209)
 
 ####Version 14.00 (July 21, 2015)
@@ -256,7 +280,7 @@
 * Added new date-picker to replace old _JavaScript_ pop-ups
 * Added ability, when editing custom styles/scripts or uploading custom logos, to update page content dynamically, without reload, to immediately display final outlook
 * Added overall loading progress at the top of the page (like _YouTube_ and _Medium_). Can be enabled/disabled in theme settings
-* Added _CodeMirror_ modes bundle, to be loadable on demand to support different file highlights in [_Filemin_](https://github.com/Real-Gecko/filemin/issues/21) (File manager for _Webmin_) written in _Perl_ (without use of _Java_))
+* Added _CodeMirror_ modes bundle, to be loadable on demand to support different file highlights in [_File Manager_](https://github.com/Real-Gecko/filemin/issues/21) (File manager for _Webmin_) written in _Perl_ (without use of _Java_))
 * Added locales to _TinyMCE_
 * Updated _CodeMirror_ and _TinyMCE_
 * Fixed theme HTML output to be more validator friendly

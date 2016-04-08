@@ -1,16 +1,12 @@
-#!/usr/bin/perl
-
 #
-# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-do "authentic-theme/authentic-lib.pm";
-
 our $user = $remote_user;
 
-if (   $__settings{'settings_sysinfo_link_mini'} ne 'false'
+if ( $__settings{'settings_sysinfo_link_mini'} ne 'false'
     && dashboard_switch() ne '1' )
 {
     print '<li class="user-link">';
@@ -26,12 +22,11 @@ if ( $__settings{'settings_favorites'} ne 'false' && $get_user_level eq '0' ) {
     print '</li>';
 }
 
-if ( $__settings{'settings_theme_options_button'} ne 'false'
+if (   $__settings{'settings_theme_options_button'} ne 'false'
     && $get_user_level eq '0' )
 {
     print '<li class="user-link theme-options cursor-pointer">';
-    print
-        '<a class="menu-exclude-link" target="page" href="/webmin/edit_themes.cgi" data-href="'
+    print '<a class="menu-exclude-link" target="page" href="/webmin/edit_themes.cgi" data-href="'
         . $gconfig{'webprefix'}
         . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
     print '</li>';
@@ -49,8 +44,7 @@ if ( &foreign_available("acl") ) {
         . $user . '</a>';
 }
 else {
-    print
-        '<a class="menu-exclude-link" style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
+    print '<a class="menu-exclude-link" style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
         . $user . '</a>';
 }
 print '</li>';
@@ -58,9 +52,9 @@ print '</li>';
 &get_miniserv_config( \%miniserv );
 
 if (   $miniserv{'logout'}
-    && !$ENV{'SSL_USER'}
-    && !$ENV{'LOCAL_USER'}
-    && $ENV{'HTTP_USER_AGENT'} !~ /webmin/i )
+    && !get_env('ssl_user')
+    && !get_env('local_user')
+    && get_env('http_user_agent') !~ /webmin/i )
 {
     print '<li class="user-link __logout-link">';
     if ($main::session_id) {
@@ -90,11 +84,10 @@ if (   -r "$root_directory/virtual-server/edit_lang.cgi"
                     </a>
                 </li>';
 }
-elsif ( &foreign_available("change-user")
+elsif (&foreign_available("change-user")
     && $__settings{'settings_leftmenu_button_language'} eq 'true' )
 {
-    print
-        '<li class="user-link"><a class="menu-exclude-link" target="page" href="'
+    print '<li class="user-link"><a class="menu-exclude-link" target="page" href="'
         . $gconfig{'webprefix'}
         . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
@@ -103,3 +96,5 @@ if ( $__settings{'settings_leftmenu_button_refresh'} ne 'false' ) {
     print
         '<li class="user-link"><a class="menu-exclude-link" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
 }
+
+1;

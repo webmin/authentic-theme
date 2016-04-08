@@ -1,6 +1,5 @@
-#!/usr/bin/perl
 #
-# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -18,3 +17,5 @@ for ( my $i = 0; $i < scalar(@settings) - 1; $i += 2 ) {
     }
 }
 print _settings( 'footer', undef, undef );
+
+1;

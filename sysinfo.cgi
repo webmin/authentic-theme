@@ -1,37 +1,21 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-#use strict;
-#use warnings;
-
-BEGIN { push( @INC, ".." ); }
-use WebminCore;
-&ReadParse();
-&init_config();
-
 do "authentic-theme/authentic-lib.pm";
 
-our %text = &load_language($current_theme);
-our %text = ( &load_language('virtual-server'), %text );
-our %text = ( &load_language('server-manager'), %text );
-our %__settings = settings();
-
-my ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 my %virtualmin_config = &foreign_config('virtual-server');
 my %cloudmin_config   = &foreign_config('server-manager');
 
-&header($title);
+header($title);
 
 print '<div id="wrapper" class="page __sytem_information" data-notice="'
     . (
-    (   -f $root_directory . '/authentic-theme/update'
-            && $get_user_level eq '0'
-    )
+    ( -f $root_directory . '/authentic-theme/update' && $get_user_level eq '0' )
     ? _post_install()
     : '0'
     ) . '">' . "\n";
@@ -45,20 +29,13 @@ if ($get_user_level ne '4' && &foreign_available("system-status")
     )
     )
 {
-    print
-        '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">'
-        . "\n";
+    print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">' . &text('body_header0') . (
-        (          $get_user_level ne '1'
-                && $get_user_level ne '2'
-                && $get_user_level ne '3'
-                && &foreign_available("webmin")
-        )
+        ( $get_user_level ne '1' && $get_user_level ne '2' && $get_user_level ne '3' && &foreign_available("webmin") )
         ? '<a href="/?updated" target="_top" data-href="'
             . $gconfig{'webprefix'}
-            . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>
-            <button type="button" class="btn btn-primary" style="display: none; visibility: hidden" data-toggle="modal" data-target="#update_notice"></button>'
+            . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>'
         : ''
         )
         . (
@@ -97,25 +74,18 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
     if ( $get_user_level ne '4' && &foreign_available("system-status") ) {
 
-        my ($cpu_percent,        $mem_percent,
-            $virt_percent,       $disk_percent,
-            $host,               $os,
-            $webmin_version,     $virtualmin_version,
-            $cloudmin_version,   $authentic_theme_version,
-            $local_time,         $kernel_arch,
-            $cpu_type,           $cpu_temperature,
-            $hdd_temperature,    $uptime,
-            $running_proc,       $load,
-            $real_memory,        $virtual_memory,
-            $disk_space,         $package_message,
-            $csf_title,          $csf_data,
+        my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+            $host,               $os,                      $webmin_version,  $virtualmin_version,
+            $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+            $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+            $running_proc,       $load,                    $real_memory,     $virtual_memory,
+            $disk_space,         $package_message,         $csf_title,       $csf_data,
             $csf_remote_version, $authentic_remote_version
         ) = get_sysinfo_vars();
 
         # Easypie charts
         if ( $__settings{'settings_sysinfo_easypie_charts'} ne 'false' ) {
-            print_easypie_charts( $cpu_percent, $mem_percent,
-                $virt_percent, $disk_percent );
+            print_easypie_charts( $cpu_percent, $mem_percent, $virt_percent, $disk_percent );
         }
 
         print '<table class="table table-hover">' . "\n";
@@ -131,63 +101,52 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
         }
 
         # Webmin version
-        &print_table_row( &text('body_webmin'), $webmin_version,
-            'sysinfo_webmin_version' );
+        &print_table_row( &text('body_webmin'), $webmin_version, 'sysinfo_webmin_version' );
 
         # Virtualmin version
         if ($virtualmin_version) {
-            print_table_row( $text{'right_virtualmin'},
-                $virtualmin_version, 'sysinfo_virtualmin_version' );
+            print_table_row( $text{'right_virtualmin'}, $virtualmin_version, 'sysinfo_virtualmin_version' );
         }
 
         # Cloudmin version
         if ($cloudmin_version) {
-            print_table_row( $text{'right_vm2'}, $cloudmin_version,
-                'sysinfo_cloudmin_version' );
+            print_table_row( $text{'right_vm2'}, $cloudmin_version, 'sysinfo_cloudmin_version' );
         }
 
         # Theme version
         if ($authentic_theme_version) {
-            &print_table_row( $text{'theme_version'},
-                $authentic_theme_version, 'sysinfo_authentic_theme_version' );
+            &print_table_row( $text{'theme_version'}, $authentic_theme_version, 'sysinfo_authentic_theme_version' );
         }
 
         #System time
-        &print_table_row( &text('body_time'), $local_time,,
-            'sysinfo_local_time' );
+        &print_table_row( &text('body_time'), $local_time,, 'sysinfo_local_time' );
 
         # Kernel and arch
         if ($kernel_arch) {
-            &print_table_row( &text('body_kernel'), $kernel_arch,
-                'sysinfo_kernel_arch' );
+            &print_table_row( &text('body_kernel'), $kernel_arch, 'sysinfo_kernel_arch' );
         }
 
         # CPU Type and cores
         if ($cpu_type) {
-            &print_table_row( $text{'body_cpuinfo'}, $cpu_type,
-                'sysinfo_cpu_type' );
+            &print_table_row( $text{'body_cpuinfo'}, $cpu_type, 'sysinfo_cpu_type' );
         }
 
         # Temperatures
         if ($cpu_temperature) {
-            &print_table_row( $text{'body_cputemps'}, $cpu_temperature,
-                'sysinfo_cpu_temperature' );
+            &print_table_row( $text{'body_cputemps'}, $cpu_temperature, 'sysinfo_cpu_temperature' );
         }
         if ($hdd_temperature) {
-            &print_table_row( $text{'body_drivetemps'},
-                $hdd_temperature, 'sysinfo_hdd_temperature' );
+            &print_table_row( $text{'body_drivetemps'}, $hdd_temperature, 'sysinfo_hdd_temperature' );
         }
 
         # System uptime
         if ($uptime) {
-            &print_table_row( $text{'body_uptime'}, $uptime,
-                'sysinfo_uptime' );
+            &print_table_row( $text{'body_uptime'}, $uptime, 'sysinfo_uptime' );
         }
 
         # Running processes
         if ($running_proc) {
-            &print_table_row( $text{'body_procs'}, $running_proc,
-                'sysinfo_running_proc' );
+            &print_table_row( $text{'body_procs'}, $running_proc, 'sysinfo_running_proc' );
         }
 
         # Load averages
@@ -197,14 +156,12 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
         # Real memory details
         if ($real_memory) {
-            &print_table_row( $text{'body_real'}, $real_memory,
-                'sysinfo_real_memory' );
+            &print_table_row( $text{'body_real'}, $real_memory, 'sysinfo_real_memory' );
         }
 
         # Virtual memory details
         if ($virtual_memory) {
-            &print_table_row( $text{'body_virt'}, $virtual_memory,
-                'sysinfo_virtual_memory' );
+            &print_table_row( $text{'body_virt'}, $virtual_memory, 'sysinfo_virtual_memory' );
         }
 
         # Local disk space
@@ -225,8 +182,7 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
         # Package updates
         if ($package_message) {
-            &print_table_row( $text{'body_updates'}, $package_message,
-                'sysinfo_package_message' );
+            &print_table_row( $text{'body_updates'}, $package_message, 'sysinfo_package_message' );
         }
         print '</table>' . "\n";
 
@@ -238,8 +194,7 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
     }
     elsif ( $get_user_level ne '4' ) {
-        print &ui_alert_box( $text{'sysinfo_system_status_warning'},
-            'warn', undef, 0 );
+        print &ui_alert_box( $text{'sysinfo_system_status_warning'}, 'warn', undef, 0 );
     }
 
     print_extended_sysinfo(@info);
@@ -254,20 +209,18 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         $d = virtual_server::get_domain($ex);
     }
     else {
-        $d = virtual_server::get_domain_by( "user", $remote_user, "parent",
-            "" );
+        $d = virtual_server::get_domain_by( "user", $remote_user, "parent", "" );
     }
 
     print '<table class="table table-hover">' . "\n";
 
     &print_table_row( $text{'right_login'}, $remote_user );
 
-    &print_table_row( $text{'right_from'}, $ENV{'REMOTE_HOST'} );
+    &print_table_row( $text{'right_from'}, get_env('remote_host') );
 
     # Print Virtualmin version
     if ($has_virtualmin) {
-        my $__virtual_server_version
-            = $virtual_server::module_info{'version'};
+        my $__virtual_server_version = $virtual_server::module_info{'version'};
         $__virtual_server_version =~ s/.gpl//igs;
         $__virtual_server_version
             .= ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
@@ -276,8 +229,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
             . ( $get_user_level eq '1' ? 'reseller' : 'server-owner' )
             . '" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>';
 
-        &print_table_row( $text{'right_virtualmin'},
-            $__virtual_server_version );
+        &print_table_row( $text{'right_virtualmin'}, $__virtual_server_version );
     }
     else {
         &print_table_row( $text{'right_virtualmin'}, $text{'right_not'} );
@@ -288,8 +240,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     # Build response message
     if ( $remote_version <= $installed_version ) {
-        $authentic_theme_version
-            = '' . $text{'theme_name'} . ' ' . $installed_version;
+        $authentic_theme_version = '' . $text{'theme_name'} . ' ' . $installed_version;
     }
     else {
         $authentic_theme_version
@@ -316,34 +267,29 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         @subs = ( $d, virtual_server::get_domain_by( "parent", $d->{'id'} ) );
         @reals = grep { !$_->{'alias'} } @subs;
         @mails = grep { $_->{'mail'} } @subs;
-        ( $sleft, $sreason, $stotal, $shide )
-            = virtual_server::count_domains("realdoms");
+        ( $sleft, $sreason, $stotal, $shide ) = virtual_server::count_domains("realdoms");
         if ( $sleft < 0 || $shide ) {
             &print_table_row( $text{'right_subs'}, scalar(@reals) );
         }
         else {
-            &print_table_row( $text{'right_subs'},
-                text( 'right_of', scalar(@reals), $stotal ) );
+            &print_table_row( $text{'right_subs'}, text( 'right_of', scalar(@reals), $stotal ) );
         }
 
         @aliases = grep { $_->{'alias'} } @subs;
         if (@aliases) {
-            ( $aleft, $areason, $atotal, $ahide )
-                = virtual_server::count_domains("aliasdoms");
+            ( $aleft, $areason, $atotal, $ahide ) = virtual_server::count_domains("aliasdoms");
             if ( $aleft < 0 || $ahide ) {
                 &print_table_row( $text{'right_aliases'}, scalar(@aliases) );
             }
             else {
-                &print_table_row( $text{'right_aliases'},
-                    text( 'right_of', scalar(@aliases), $atotal ) );
+                &print_table_row( $text{'right_aliases'}, text( 'right_of', scalar(@aliases), $atotal ) );
             }
         }
     }
 
     # Users and aliases info
     $users = virtual_server::count_domain_feature( "mailboxes", @subs );
-    ( $uleft, $ureason, $utotal, $uhide )
-        = virtual_server::count_feature("mailboxes");
+    ( $uleft, $ureason, $utotal, $uhide ) = virtual_server::count_feature("mailboxes");
     $msg = @mails ? $text{'right_fusers'} : $text{'right_fusers2'};
     if ( $uleft < 0 || $uhide ) {
         &print_table_row( $msg, $users );
@@ -354,27 +300,23 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     if (@mails) {
         $aliases = virtual_server::count_domain_feature( "aliases", @subs );
-        ( $aleft, $areason, $atotal, $ahide )
-            = virtual_server::count_feature("aliases");
+        ( $aleft, $areason, $atotal, $ahide ) = virtual_server::count_feature("aliases");
         if ( $aleft < 0 || $ahide ) {
             &print_table_row( $text{'right_faliases'}, $aliases );
         }
         else {
-            &print_table_row( $text{'right_faliases'},
-                text( 'right_of', $aliases, $atotal ) );
+            &print_table_row( $text{'right_faliases'}, text( 'right_of', $aliases, $atotal ) );
         }
     }
 
     # Databases
     $dbs = virtual_server::count_domain_feature( "dbs", @subs );
-    ( $dleft, $dreason, $dtotal, $dhide )
-        = virtual_server::count_feature("dbs");
+    ( $dleft, $dreason, $dtotal, $dhide ) = virtual_server::count_feature("dbs");
     if ( $dleft < 0 || $dhide ) {
         &print_table_row( $text{'right_fdbs'}, $dbs );
     }
     else {
-        &print_table_row( $text{'right_fdbs'},
-            text( 'right_of', $dbs, $dtotal ) );
+        &print_table_row( $text{'right_fdbs'}, text( 'right_of', $dbs, $dtotal ) );
     }
 
     if ( !$sects->{'noquotas'}
@@ -387,9 +329,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         $usage = $home * $homesize + $mail * $mailsize + $db;
         $limit = $d->{'quota'} * $homesize;
         if ($limit) {
-            &print_table_row( $text{'right_quota'},
-                text( 'right_of', nice_size($usage), &nice_size($limit) ),
-                3 );
+            &print_table_row( $text{'right_quota'}, text( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
         }
         else {
             &print_table_row( $text{'right_quota'}, nice_size($usage), 3 );
@@ -449,8 +389,7 @@ elsif ( $get_user_level eq '3' ) {
 
     # Build response message
     if ( $remote_version <= $installed_version ) {
-        $authentic_theme_version
-            = '' . $text{'theme_name'} . ' ' . $installed_version;
+        $authentic_theme_version = '' . $text{'theme_name'} . ' ' . $installed_version;
     }
     else {
         $authentic_theme_version
@@ -484,4 +423,5 @@ elsif ( $get_user_level eq '3' ) {
 
 print '</div>' . "\n";
 print '</div>' . "\n";
+print $__changelog;
 &footer();

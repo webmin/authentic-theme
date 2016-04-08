@@ -1,24 +1,14 @@
 #
-# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-do "authentic-theme/authentic-lib.pm";
-
-our %__settings = settings();
-our (
-    %gconfig,              $current_theme,  $root_directory,
-    $theme_root_directory, $t_var_switch_m, $t_var_product_m
-);
-our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
-
+do "authentic-theme/authentic-init.pm";
 
 sub theme_header {
     print '<!DOCTYPE html>', "\n";
-    print '<html data-background-style="'
-        . $__settings{'settings_background_color'}
-        . '">', "\n";
+    print '<html data-background-style="' . $__settings{'settings_background_color'} . '">', "\n";
     print '<head>', "\n";
     print '<title data-initial="' . $_[0] . '">', $_[0], '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
@@ -30,9 +20,7 @@ sub theme_header {
         ? '-usermin'
         : '-webmin'
         ) . '.ico">' . "\n";
-    print
-        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
-        . "\n";
+    print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
     embed_header();
     print '</head>', "\n";
     print '<body data-usermin="'
@@ -47,6 +35,8 @@ sub theme_header {
         . dashboard_switch()
         . '" data-language="'
         . get_current_user_language()
+        . '" data-charset="'
+        . get_charset()
         . '" data-webprefix="'
         . $gconfig{'webprefix'}
         . '" data-current-product="'
@@ -58,19 +48,17 @@ sub theme_header {
         ? ' class="'
             . &get_module_name()
             . (
-            (   index( $__settings{'settings_window_exclusion_list'},
-                    &get_module_name() ) gt -1
-                    || $__settings{'settings_window_exclusion_list'} eq
-                    "*"
+            (   index( $__settings{'settings_window_exclusion_list'}, &get_module_name() ) gt -1
+                    || $__settings{'settings_window_exclusion_list'} eq "*"
             ) ? ' __e__' : undef
             )
-            . '"'
+            . '" data-module="'
+            . &get_module_name() . '"'
         : undef
         ) . '>' . "\n";
 
     if ( @_ > 1 ) {
-        print '<div class="container-fluid col-lg-10 col-lg-offset-1">'
-            . "\n";
+        print '<div class="container-fluid col-lg-10 col-lg-offset-1">' . "\n";
         my %this_module_info = &get_module_info( &get_module_name() );
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
@@ -81,20 +69,17 @@ sub theme_header {
             print "</td></tr> <tr>\n";
         }
         print '<td id="headln2l" width="15%" align="left"'
-            . ( $__settings{'settings_right_iconize_header_links'} ne 'false'
-                && ' class="invisible"' )
-            . '>';
-        if ( $ENV{'HTTP_WEBMIN_SERVERS'} && !$tconfig{'framed'} ) {
-            print "<a href='$ENV{'HTTP_WEBMIN_SERVERS'}'>",
-                "$text{'header_servers'}</a><br>\n";
+            . ( $__settings{'settings_right_iconize_header_links'} ne 'false' && ' class="invisible"' ) . '>';
+        if ( get_env('http_webmin_servers') && !$tconfig{'framed'} ) {
+            print "<a href='get_env('http_webmin_servers')'>", "$text{'header_servers'}</a><br>\n";
         }
         if ( !$_[5] && !$tconfig{'noindex'} ) {
             my @avail = &get_available_module_infos(1);
             my $nolo
-                = $ENV{'ANONYMOUS_USER'}
-                || $ENV{'SSL_USER'}
-                || $ENV{'LOCAL_USER'}
-                || $ENV{'HTTP_USER_AGENT'} =~ /webmin/i;
+                = get_env('anonymous_user')
+                || get_env('ssl_user')
+                || get_env('local_user')
+                || get_env('http_user_agent') =~ /webmin/i;
             if (   $gconfig{'gotoone'}
                 && $main::session_id
                 && @avail == 1
@@ -105,30 +90,27 @@ sub theme_header {
                     "$text{'main_logout'}</a><br>";
             }
             elsif ( $gconfig{'gotoone'} && @avail == 1 && !$nolo ) {
-                print "<a href=$gconfig{'webprefix'}/switch_user.cgi>",
-                    "$text{'main_switch'}</a><br>";
+                print "<a href=$gconfig{'webprefix'}/switch_user.cgi>", "$text{'main_switch'}</a><br>";
             }
             elsif ( !$gconfig{'gotoone'} || @avail > 1 ) {
-                print "<a href='$gconfig{'webprefix'}/?cat=",
-                    $this_module_info{'category'},
+                print "<a href='$gconfig{'webprefix'}/?cat=", $this_module_info{'category'},
                     "'>$text{'header_webmin'}</a><br>\n";
             }
         }
         if ( !$_[4] && !$tconfig{'nomoduleindex'} ) {
             my $idx = $this_module_info{'index_link'};
-            my $mi = $module_index_link || "/" . &get_module_name() . "/$idx";
-            my $mt = $module_index_name || $text{'header_module'};
+            my $mi  = $module_index_link || "/" . &get_module_name() . "/$idx";
+            my $mt  = $module_index_name || $text{'header_module'};
             print "<a href=\"$gconfig{'webprefix'}$mi\">$mt</a><br>\n";
         }
         if (   ref( $_[2] ) eq "ARRAY"
-            && !$ENV{'ANONYMOUS_USER'}
+            && !get_env('anonymous_user')
             && !$tconfig{'nohelp'} )
         {
-            print &hlink( $text{'header_help'}, $_[2]->[0], $_[2]->[1] ),
-                "<br>\n";
+            print &hlink( $text{'header_help'}, $_[2]->[0], $_[2]->[1] ), "<br>\n";
         }
         elsif (defined( $_[2] )
-            && !$ENV{'ANONYMOUS_USER'}
+            && !get_env('anonymous_user')
             && !$tconfig{'nohelp'} )
         {
             print &hlink( $text{'header_help'}, $_[2] ), "<br>\n";
@@ -140,23 +122,20 @@ sub theme_header {
                     = $user_module_config_directory
                     ? "uconfig.cgi"
                     : "config.cgi";
-                print "<a href=\"$gconfig{'webprefix'}/$cprog?",
-                    &get_module_name() . "\">",
-                    $text{'header_config'}, "</a><br>\n";
+                print "<a href=\"$gconfig{'webprefix'}/$cprog?", &get_module_name() . "\">", $text{'header_config'},
+                    "</a><br>\n";
             }
         }
         print "</td>\n";
         if ( $_[1] ) {
-            print "<td id='headln2c' align=center width=70%>",
-                "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
+            print "<td id='headln2c' align=center width=70%>", "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
         }
         else {
             my $ts
                 = defined( $tconfig{'titlesize'} )
                 ? $tconfig{'titlesize'}
                 : "+2";
-            print "<td id='headln2c' align=center width=70%>",
-                ( $ts ? "<font size=$ts>" : "" ), $_[0],
+            print "<td id='headln2c' align=center width=70%>", ( $ts ? "<font size=$ts>" : "" ), $_[0],
                 ( $ts ? "</font>" : "" );
             print "<br>$_[9]\n" if ( $_[9] );
             print "</td>\n";
@@ -172,7 +151,7 @@ sub theme_header {
 }
 
 sub theme_popup_prehead {
-    if ( index( $ENV{'REQUEST_URI'}, 'help.cgi' ) != 1 ) {
+    if ( index( get_env('request_uri'), 'help.cgi' ) != 1 ) {
         print '<meta charset="utf-8">', "\n";
         print '<link rel="shortcut icon" href="'
             . $gconfig{'webprefix'}
@@ -182,25 +161,19 @@ sub theme_popup_prehead {
             ? '-usermin'
             : '-webmin'
             ) . '.ico">' . "\n";
-        print
-            '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
-            . "\n";
+        print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1772" rel="stylesheet" type="text/css">'
-            . "\n";
+            . '/unauthenticated/css/package.min.css?1780" rel="stylesheet" type="text/css">' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1772" type="text/javascript"></script>'
-            . "\n";
+            . '/unauthenticated/js/package.min.js?1780" type="text/javascript"></script>' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1772" type="text/javascript"></script>',
-            "\n";
+            . '/unauthenticated/js/cgi.min.js?1780" type="text/javascript"></script>', "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1772" type="text/javascript"></script>',
-            "\n";
+            . '/unauthenticated/js/filtermatch.min.js?1780" type="text/javascript"></script>', "\n";
     }
 }
 
@@ -212,10 +185,7 @@ sub theme_footer {
                 $url = "/?cat=$this_module_info{'category'}";
             }
             elsif ( $url eq '' && &get_module_name() ) {
-                $url
-                    = "/"
-                    . &get_module_name() . "/"
-                    . $this_module_info{'index_link'};
+                $url = "/" . &get_module_name() . "/" . $this_module_info{'index_link'};
             }
             elsif ( $url =~ /^\?/ && &get_module_name() ) {
                 $url = "/" . &get_module_name() . "/$url";
@@ -300,8 +270,7 @@ sub theme_popup_window_button {
             $sep = "&";
         }
     }
-    $rv
-        .= ", \"chooser\", \"toolbar=no,menubar=no,scrollbars=$scrollyn,resizable=yes,width=$w,height=$h\"); ";
+    $rv .= ", \"chooser\", \"toolbar=no,menubar=no,scrollbars=$scrollyn,resizable=yes,width=$w,height=$h\"); ";
     foreach my $m (@$fields) {
         $rv .= "chooser.$m->[0] = $m->[0]; ";
         $rv .= "window.$m->[0] = $m->[0]; ";
@@ -323,18 +292,13 @@ sub theme_ui_upload {
 }
 
 sub theme_icons_table {
-    my $hide_table_icons
-        = (
-        $__settings{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0 );
-    print '<div class="row icons-row'
-        . ( !$hide_table_icons && ' vertical-align' ) . '">' . "\n";
+    my $hide_table_icons = ( $__settings{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0 );
+    print '<div class="row icons-row' . ( !$hide_table_icons && ' vertical-align' ) . '">' . "\n";
     for ( my $i = 0; $i < @{ $_[0] }; $i++ ) {
 
         $hide_table_icons
-            && print '<div style="text-align: left;" class="col-sm-3">'
-            . "\n";
-        &generate_icon( $_[2]->[$i], $_[1]->[$i], $_[0]->[$i],
-            ref( $_[4] ) ? $_[4]->[$i] : $_[4],
+            && print '<div style="text-align: left;" class="col-sm-3">' . "\n";
+        &generate_icon( $_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref( $_[4] ) ? $_[4]->[$i] : $_[4],
             $_[5], $_[6], $_[7]->[$i], $_[8]->[$i] );
 
         $hide_table_icons && print '</div>' . "\n";
@@ -375,22 +339,10 @@ sub theme_generate_icon {
             && ( $icon_outer = undef );
 
         my $__icon = (
-            -r $root_directory
-                . "/authentic-theme/images/modules/"
-                . get_module_name()
-                . $icon
-            ? $gconfig{'webprefix'}
-                . "/images/modules/"
-                . get_module_name()
-                . $icon
-            : -r $root_directory
-                . "/authentic-theme/images/modules/"
-                . get_module_name()
-                . $___svg
-            ? $gconfig{'webprefix'}
-                . "/images/modules/"
-                . get_module_name()
-                . $___svg
+            -r $root_directory . "/authentic-theme/images/modules/" . get_module_name() . $icon
+            ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $icon
+            : -r $root_directory . "/authentic-theme/images/modules/" . get_module_name() . $___svg
+            ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $___svg
             : $icon_outer ? $icon_outer
             :               "/images/not_found.svg"
         );
@@ -406,8 +358,7 @@ sub theme_generate_icon {
                 . '" data-toggle="tooltip" data-placement="top" data-container="body">';
             if ( $_[6] || $_[7] ) {
                 if ( $_[6] ) {
-                    print
-                        "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
                     print
@@ -432,8 +383,7 @@ sub theme_generate_icon {
                 . '" data-toggle="tooltip" data-placement="top" data-container="body">';
             if ( $_[6] || $_[7] ) {
                 if ( $_[6] ) {
-                    print
-                        "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
                     print
@@ -455,8 +405,7 @@ sub theme_generate_icon {
                 . ( !$animate_table_icons && ' animated' ) . '">';
             if ( $_[6] || $_[7] ) {
                 if ( $_[6] ) {
-                    print
-                        "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
                     print
@@ -479,7 +428,7 @@ sub theme_ui_columns_start {
     my ( $heads, $width, $noborder, $tdtags, $title ) = @_;
     my ( $rv, $i );
 
-    $rv .= '<table class="table table-striped table-condensed">' . "\n";
+    $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
     for ( $i = 0; $i < @$heads; $i++ ) {
@@ -540,10 +489,9 @@ sub theme_ui_form_start {
     $rv .= '<form class="ui_form" role="form" ';
     $rv .= 'action="' . &html_escape($script) . '" ';
     $rv .= (
-          $method eq 'post' ? 'method="post" '
-        : $method eq 'form-data'
-        ? 'method="post" enctype="multipart/form-data" '
-        : 'method="get" '
+          $method eq 'post'      ? 'method="post" '
+        : $method eq 'form-data' ? 'method="post" enctype="multipart/form-data" '
+        :                          'method="get" '
     );
     $rv .= ( $target ? 'target="' . $target . '" ' : '' );
     $rv .= ( $tags   ? $tags                       : '' );
@@ -557,10 +505,7 @@ sub theme_ui_form_end {
     my ( $buttons, $width, $nojs ) = @_;
     my $rv;
     if ( $buttons && @$buttons ) {
-        $rv
-            .= "<table class='ui_form_end_buttons' "
-            . ( $width ? " width=$width" : "" )
-            . "><tr><td>\n";
+        $rv .= "<table class='ui_form_end_buttons' " . ( $width ? " width=$width" : "" ) . "><tr><td>\n";
         my $b;
         foreach $b (@$buttons) {
             if ( ref($b) ) {
@@ -591,11 +536,9 @@ sub theme_ui_form_end {
         # When going back to a form, re-enable any text fields generated by
         # ui_opt_textbox that aren't in the default state.
         $rv .= "<script type='text/javascript'>\n";
-        $rv
-            .= "var opts = document.getElementsByClassName('ui_opt_textbox');\n";
+        $rv .= "var opts = document.getElementsByClassName('ui_opt_textbox');\n";
         $rv .= "for(var i=0; i<opts.length; i++) {\n";
-        $rv
-            .= "  opts[i].disabled = document.getElementsByName(opts[i].name+'_def')[0].checked;\n";
+        $rv .= "  opts[i].disabled = document.getElementsByName(opts[i].name+'_def')[0].checked;\n";
         $rv .= "}\n";
         $rv .= "</script>\n";
     }
@@ -644,10 +587,7 @@ sub theme_ui_radio {
         my $id = &quote_escape( $name . "_" . $o->[0] );
         my $label = $o->[1] || $o->[0];
         my $after;
-        if ( $label
-            =~ /^([\000-\377]*?)((<a\s+href|<input|<select|<textarea)[\000-\377]*)$/i
-            )
-        {
+        if ( $label =~ /^([\000-\377]*?)((<a\s+href|<input|<select|<textarea)[\000-\377]*)$/i ) {
             $label = $1;
             $after = $2;
         }
@@ -676,8 +616,7 @@ sub theme_ui_yesno_radio {
     $no  = 0 if ( !defined($no) );
     $value = int($value);
 
-    $rv .= &ui_radio( $name, $value,
-        [ [ $yes, $text{'yes'} ], [ $no, $text{'no'} ] ], $dis );
+    $rv .= &ui_radio( $name, $value, [ [ $yes, $text{'yes'} ], [ $no, $text{'no'} ] ], $dis );
 
     return $rv;
 }
@@ -703,9 +642,7 @@ sub theme_ui_checkbox {
         . (
          !$label
         ? $after
-        : "<label class='checkbox' for=\""
-            . &quote_escape("${name}_${value}")
-            . "\">$label</label>$after"
+        : "<label class='checkbox' for=\"" . &quote_escape("${name}_${value}") . "\">$label</label>$after"
         ) . "\n";
 }
 
@@ -714,7 +651,7 @@ sub theme_ui_textarea {
     $cols = &ui_max_text_width( $cols, 1 );
 
     return
-        "<textarea style='display: inline; width:100%;' class='form-control ui_textarea' "
+          "<textarea style='display: inline; width:100%;' class='form-control ui_textarea' "
         . "name=\""
         . &quote_escape($name) . "\" " . "id=\""
         . &quote_escape($name) . "\" "
@@ -743,8 +680,7 @@ sub theme_ui_reset {
     my ( $label, $dis ) = @_;
     my $rv;
 
-    $rv
-        .= '<button class="btn btn-default ui_reset" style="height: 28px; vertical-align:middle" type="reset" ';
+    $rv .= '<button class="btn btn-default ui_reset" style="height: 28px; vertical-align:middle" type="reset" ';
     $rv .= ( $dis ? 'disabled="disabled">' : '>' );
     $rv .= &quote_escape($label);
     $rv .= '</button>' . "\n";
@@ -836,11 +772,7 @@ sub theme_ui_tabs_start_tab {
     my $rv;
     my $defclass = $tab eq $main::ui_tabs_selected ? 'active' : '';
 
-    $rv
-        .= '<div id="att_'
-        . $tab
-        . '" class="tab-pane '
-        . $defclass . '">' . "\n";
+    $rv .= '<div id="att_' . $tab . '" class="tab-pane ' . $defclass . '">' . "\n";
 
     return $rv;
 }
@@ -864,39 +796,22 @@ sub theme_ui_hr {
 sub theme_ui_alert_box {
     my ( $msg, $class, $style, $new_line ) = @_;
     my ( $rv, $type, $tmsg, $fa );
-    my %text = &load_language($current_theme);
 
     if ( $class eq "success" ) {
-        $type     = 'alert-success',
-            $tmsg = ( $text{'theme_global_success'} . '!' ),
-            $fa   = 'fa-check-circle';
+        $type = 'alert-success', $tmsg = ( $text{'theme_global_success'} . '!' ), $fa = 'fa-check-circle';
     }
     elsif ( $class eq "info" ) {
-        $type     = 'alert-info',
-            $tmsg = ( $text{'theme_global_info'} . '!' ),
-            $fa   = 'fa-info-circle';
+        $type = 'alert-info', $tmsg = ( $text{'theme_global_info'} . '!' ), $fa = 'fa-info-circle';
     }
     elsif ( $class eq "warn" ) {
-        $type     = 'alert-warning',
-            $tmsg = ( $text{'theme_global_warning'} . '!' ),
-            $fa   = 'fa-exclamation-circle';
+        $type = 'alert-warning', $tmsg = ( $text{'theme_global_warning'} . '!' ), $fa = 'fa-exclamation-circle';
     }
     elsif ( $class eq "danger" ) {
-        $type = 'alert-danger',
-            $tmsg = ( $text{'theme_global_error'} . '!' ), $fa = 'fa-bolt';
+        $type = 'alert-danger', $tmsg = ( $text{'theme_global_error'} . '!' ), $fa = 'fa-bolt';
     }
 
-    $rv
-        .= '<div class="alert '
-        . $type
-        . '" style="margin-bottom: 4px; '
-        . $style . '">' . "\n";
-    $rv
-        .= '<i class="fa fa-fw '
-        . $fa
-        . '"></i> <strong>'
-        . $tmsg
-        . '</strong>';
+    $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";
+    $rv .= '<i class="fa fa-fw ' . $fa . '"></i> <strong>' . $tmsg . '</strong>';
     $rv .= ( $new_line ? '<br>' : '&nbsp;' ) . "\n";
     $rv .= $msg . "\n";
     $rv .= '</div>' . "\n";
@@ -908,10 +823,9 @@ sub theme_ui_table_start {
     my ( $heading, $tabletags, $cols, $tds, $rightheading ) = @_;
     if ( defined($main::ui_table_cols) ) {
 
-        push( @main::ui_table_cols_stack, $main::ui_table_cols );
-        push( @main::ui_table_pos_stack,  $main::ui_table_pos );
-        push( @main::ui_table_default_tds_stack,
-            $main::ui_table_default_tds );
+        push( @main::ui_table_cols_stack,        $main::ui_table_cols );
+        push( @main::ui_table_pos_stack,         $main::ui_table_pos );
+        push( @main::ui_table_default_tds_stack, $main::ui_table_default_tds );
     }
     my $colspan = 1;
     my $rv;
@@ -928,8 +842,7 @@ sub theme_ui_table_start {
         }
         $rv .= "</tr></thead>\n";
     }
-    $rv .= "<tbody> <td>"
-        . "<table class='sub_table_container' width=100%>\n";
+    $rv .= "<tbody> <td>" . "<table class='sub_table_container' width=100%>\n";
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
@@ -991,8 +904,7 @@ sub theme_ui_table_hr {
         $rv .= "</tr>\n";
         $ui_table_pos = 0;
     }
-    $rv .= "<tr> "
-        . "<td colspan=$main::ui_table_cols class='no-border'><hr></td></tr>\n";
+    $rv .= "<tr> " . "<td colspan=$main::ui_table_cols class='no-border'><hr></td></tr>\n";
     return $rv;
 }
 
@@ -1005,10 +917,7 @@ sub theme_ui_opt_textbox {
     $rv .= &ui_radio(
         $name . "_def",
         $value eq '' ? 1 : 0,
-        [   [ 1, $opt1, "onClick='$dis1'" ],
-            [ 0, $opt2 || " ", "onClick='$dis2'" ]
-        ],
-        $dis
+        [ [ 1, $opt1, "onClick='$dis1'" ], [ 0, $opt2 || " ", "onClick='$dis2'" ] ], $dis
     ) . "\n";
     $rv
         .= "<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; min-width: 15%; margin-right:2px;' type='text' name=\""
@@ -1023,25 +932,19 @@ sub theme_ui_opt_textbox {
 }
 
 sub theme_ui_checked_columns_row {
-    my ( $cols, $tdtags, $checkname, $checkvalue, $checked, $disabled, $tags )
-        = @_;
+    my ( $cols, $tdtags, $checkname, $checkvalue, $checked, $disabled, $tags ) = @_;
     my $rv;
-    $rv
-        .= "<tr"
-        . ( $cb ? " " . $cb : "" )
-        . " class='ui_checked_columns'>\n";
+    $rv .= "<tr" . ( $cb ? " " . $cb : "" ) . " class='ui_checked_columns'>\n";
     $rv
         .= "<td class='ui_checked_checkbox' "
         . $tdtags->[0] . ">"
-        . &ui_checkbox( $checkname, $checkvalue, undef, $checked, $tags,
-        $disabled )
+        . &ui_checkbox( $checkname, $checkvalue, undef, $checked, $tags, $disabled )
         . "</td>\n";
     my $i;
     for ( $i = 0; $i < @$cols; $i++ ) {
         $rv .= "<td " . $tdtags->[ $i + 1 ] . ">";
         if ( $cols->[$i] !~ /<a\s+href|<input|<select|<textarea/ ) {
-            $rv .= "<label for=\""
-                . &quote_escape("${checkname}_${checkvalue}") . "\">";
+            $rv .= "<label for=\"" . &quote_escape("${checkname}_${checkvalue}") . "\">";
         }
         $rv .= ( $cols->[$i] !~ /\S/ ? "<br>" : $cols->[$i] );
         if ( $cols->[$i] !~ /<a\s+href|<input|<select|<textarea/ ) {
@@ -1075,17 +978,14 @@ sub theme_ui_hidden_start {
         ? ""
         : "";
     my $defclass = $status ? 'opener_shown' : 'opener_hidden';
-    $rv
-        .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a>\n";
-    $rv
-        .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\">$title</a><br>\n";
+    $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a>\n";
+    $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\">$title</a><br>\n";
     $rv .= "<div class='$defclass' id='$divid'>\n";
     return $rv;
 }
 
 sub theme_ui_hidden_table_start {
-    my ( $heading, $tabletags, $cols, $name, $status, $tds, $rightheading )
-        = @_;
+    my ( $heading, $tabletags, $cols, $name, $status, $tds, $rightheading ) = @_;
     my $rv;
     if ( !$main::ui_hidden_start_donejs++ ) {
         $rv .= &ui_hidden_javascript();
@@ -1104,8 +1004,7 @@ sub theme_ui_hidden_table_start {
         = defined( $tconfig{'cs_text'} ) ? $tconfig{'cs_text'}
         : defined( $gconfig{'cs_text'} ) ? $gconfig{'cs_text'}
         :                                  "f00";
-    $rv
-        .= "<table class='table table-striped table-rounded table-condensed' $tabletags>\n";
+    $rv .= "<table class='table table-striped table-hover table-rounded table-condensed' $tabletags>\n";
     my $colspan = 1;
 
     if ( defined($heading) || defined($rightheading) ) {
@@ -1160,8 +1059,7 @@ sub theme_ui_radio_table {
             .= "<td"
             . ( defined( $r->[2] ) ? "" : " colspan=2" ) . ">"
             . ( $nobold            ? "" : "<b>" )
-            . &ui_oneradio( $name, $r->[0], $r->[1], $r->[0] eq $sel,
-            $r->[3] )
+            . &ui_oneradio( $name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3] )
             . ( $nobold ? "" : "</b>" )
             . "</td>\n";
         if ( defined( $r->[2] ) ) {
@@ -1220,3 +1118,5 @@ $main::basic_virtualmin_menu          = 1;
 $main::basic_virtualmin_domain        = 1;
 $main::nocreate_virtualmin_menu       = 1;
 $main::nosingledomain_virtualmin_mode = 1;
+
+1;
