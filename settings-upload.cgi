@@ -1,17 +1,12 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-BEGIN { push( @INC, ".." ); }
-use WebminCore;
-&init_config();
-&ReadParse();
-%text = &load_language($current_theme);
-#&switch_to_remote_user();
+do "authentic-theme/authentic-lib.pm";
 
 &ui_print_header( $in{'file'},
     $text{'settings_right_theme_logos_title'}, undef );
@@ -114,5 +109,5 @@ name="save" id="saved"><i class="fa fa-fw fa-check-square-o" style="margin-right
         </tr>
     </table>
 </form>';
-&ui_print_footer( "/webmin/edit_themes.cgi", $text{'error_previous'} );
+&ui_print_footer( "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
 

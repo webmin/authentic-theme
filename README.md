@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.72)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (17.80)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -30,7 +30,7 @@
 * Security mail notifications
 * Code highlight when editing files manually
 * Extensive list of customizable theme options, with ability to embed user logos, styles and scripts
-* Extended support for _Filemin_ and _ConfigServer Security & Firewall_ modules
+* Extended support for _File Manager_ and _ConfigServer Security & Firewall_ modules
 
 ####Requirements
 * Webmin _1.730+_ (required), Usermin _1.640+_ (optional), Virtualmin _4.14+_ (optional), Cloudmin _8.01+_ (optional)
@@ -89,8 +89,8 @@ _Webmin_ has in-built option to compress static files.  It's possible to enable 
 
 ###Extended support for bundled/third-party modules
 
-####_Filemin_
-Theme has great support for this module, by adding numerous mast-have features. Most noticeable are listing without page reload (using XHR requests) and full keyboard support, which enables you to use _Filemin_ just as normal desktop browser.
+####_File Manager_
+Theme has great support for this module, by adding numerous mast-have features. Most noticeable are listing without page reload (using XHR requests) and full keyboard support, which enables you to use _File Manager_ just as normal desktop browser.
 
 #####List of keyboard shortcuts
 
@@ -131,8 +131,8 @@ Theme only re-renders this module and adds support for code highlight, when edit
    This happens because of encoding disparity. To fix this, just set language in _Webmin_ to `UTF-8` and make sure that your browser also has detected it as `UTF-8`. Pay attention, that _Webmin_ in-built module, named _Change Language and Theme_ can override global settings;
 3. I get `HEAD 404 (File not found)` in console<br>
    That is not really an error. It happens, when theme is checking, if needed _URL_ exists and can be loaded;
-4. Page loader/spinner got stuck<br>
-   To prematurely dismiss a loader, click _once_ the `Escape` key for the right loader and `Ctrl+Escape` for the left, or loader's close button, right next to it;
+4. Page loading got stuck<br>
+   To prematurely dismiss a loader, hover on it and click loader's close button, right next to it. It is also possible to unveil currently loading content page by double clicking on it;
 5. Can't toggle _checkbox_ in a row of a _table_<br>
    Theme provides an extended support for operations with table rows. It's easy to select current row by simply `right-clicking` on it with the mouse (on mobile device `long-tap`). Regular `click` on the row will take you to the row's main link;
 6. Default tab after logging in doesn't work<br>
@@ -159,7 +159,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 1500 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 1600 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://rostovtsev.ru/pub/media/icons/paypal-175x45.png)</a>
 

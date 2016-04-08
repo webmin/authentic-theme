@@ -1,25 +1,14 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.72 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-BEGIN { push( @INC, ".." ); }
-use WebminCore;
-$pragma_no_cache = 1;
-&ReadParse();
-&init_config();
-
 do "authentic-theme/authentic-lib.pm";
 
-our %text       = &load_language($current_theme);
-our %gaccess    = &get_module_acl( undef, "" );
-our %__settings = settings();
-our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
-
-&get_miniserv_config( \%miniserv );
+get_miniserv_config( \%miniserv );
 
 #Define page title
 $title = $text{'session_header'};
@@ -29,7 +18,7 @@ if ( $gconfig{'showhost'} ) {
 
 # Show pre-login text banner
 if (   $gconfig{'loginbanner'}
-    && $ENV{'HTTP_COOKIE'} !~ /banner=1/
+    && get_env('http_cookie') !~ /banner=1/
     && !$in{'logout'}
     && !$in{'failed'}
     && !$in{'timed_out'} )
@@ -41,9 +30,7 @@ if (   $gconfig{'loginbanner'}
     print "Set-Cookie: banner=1; path=/\r\n";
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html data-background-style="'
-        . $__settings{'settings_background_color'}
-        . '" class="session_login">', "\n";
+    print '<html data-background-style="' . $__settings{'settings_background_color'} . '" class="session_login">', "\n";
     embed_login_head();
     print '<body class="session_login" data-style="' . get_filters('content') . '">' . "\n";
     print
@@ -67,7 +54,7 @@ else {
 
 }
 
-$sec = uc( $ENV{'HTTPS'} ) eq 'ON' ? "; secure" : "";
+$sec = lc( get_env('https') ) eq 'on' ? "; secure" : "";
 $sidname = $miniserv{'sidname'} || "sid";
 print "Auth-type: auth-required=1\r\n";
 print "Set-Cookie: banner=0; path=/$sec\r\n"   if ( $gconfig{'loginbanner'} );
@@ -77,9 +64,7 @@ print "Set-Cookie: testing=1; path=/$sec\r\n";
 $charset = &get_charset();
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-background-style="'
-    . $__settings{'settings_background_color'}
-    . '" class="session_login">', "\n";
+print '<html data-background-style="' . $__settings{'settings_background_color'} . '" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login" data-style="' . get_filters('content') . '">' . "\n";
 print '<div class="container session_login">' . "\n";
@@ -91,41 +76,32 @@ if ( defined( $in{'failed'} ) ) {
         print '<strong><i class ="fa fa-bolt"></i> '
             . $text{'login_danger'}
             . '</strong><br />'
-            . &text( 'session_twofailed',
-            &html_escape( $in{'twofactor_msg'} ) )
-            . "\n";
+            . &text( 'session_twofailed', &html_escape( $in{'twofactor_msg'} ) ) . "\n";
         print '</div>' . "\n";
     }
     else {
         print '<div class="alert alert-danger">' . "\n";
-        print '<strong><i class ="fa fa-bolt"></i> '
-            . $text{'login_danger'}
-            . '</strong><br />' . "\n";
+        print '<strong><i class ="fa fa-bolt"></i> ' . $text{'login_danger'} . '</strong><br />' . "\n";
         print $text{'session_failed'} . "\n";
         print '</div>' . "\n";
     }
 }
 elsif ( $in{'logout'} ) {
     print '<div class="alert alert-success">' . "\n";
-    print '<strong><i class ="fa fa-check"></i> '
-        . $text{'login_success'}
-        . '</strong><br />' . "\n";
+    print '<strong><i class ="fa fa-check"></i> ' . $text{'login_success'} . '</strong><br />' . "\n";
     print $text{'session_logout'} . "\n";
     print '</div>' . "\n";
 }
 elsif ( $in{'timed_out'} ) {
     print '<div class="alert alert-warning">' . "\n";
-    print '<strong><i class ="fa fa fa-exclamation-triangle"></i> '
-        . $text{'login_warning'}
-        . '</strong><br />' . "\n";
+    print '<strong><i class ="fa fa fa-exclamation-triangle"></i> ' . $text{'login_warning'} . '</strong><br />' . "\n";
     print &text( 'session_timed_out', int( $in{'timed_out'} / 60 ) ) . "\n";
     print '</div>' . "\n";
 }
 print "$text{'session_prefix'}\n";
 print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
-    . '/session_login.cgi" class="form-signin session_login clearfix" role="form">'
-    . "\n";
+    . '/session_login.cgi" class="form-signin session_login clearfix" role="form">' . "\n";
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
      <span>'
@@ -143,43 +119,30 @@ if ( $gconfig{'realname'} ) {
     $host = &get_display_hostname();
 }
 else {
-    $host = $ENV{'SERVER_NAME'};
+    $host = get_env('server_name');
     $host =~ s/:\d+//g;
     $host = &html_escape($host);
 }
-print '<p class="form-signin-paragraph">'
-    . &text('login_message')
-    . '<strong> '
-    . $host
-    . '</strong></p>' . "\n";
+print '<p class="form-signin-paragraph">' . &text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
 $tag = $gconfig{'noremember'} ? 'autocomplete="off"' : '';
 print '<div class="input-group form-group">' . "\n";
-print
-    '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>'
-    . "\n";
-print
-    '<input type="text" class="form-control session_login" name="user" autocomplete="off" placeholder="'
+print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
+print '<input type="text" class="form-control session_login" name="user" autocomplete="off" placeholder="'
     . &text('login_user') . '" '
     . $tag
     . ' autofocus>' . "\n";
 print '</div>' . "\n";
 print '<div class="input-group form-group">' . "\n";
-print
-    '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>'
-    . "\n";
-print
-    '<input type="password" class="form-control session_login" name="pass" autocomplete="off" placeholder="'
+print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
+print '<input type="password" class="form-control session_login" name="pass" autocomplete="off" placeholder="'
     . &text('login_pass') . '"  '
     . $tag . '>' . "\n";
 print '</div>' . "\n";
 
 if ( $miniserv{'twofactor_provider'} ) {
     print '<div class="input-group form-group">' . "\n";
-    print
-        '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>'
-        . "\n";
-    print
-        '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" placeholder="'
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
+    print '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" placeholder="'
         . &text('login_token') . '">' . "\n";
     print '</div>' . "\n";
 }
@@ -188,9 +151,7 @@ if ( !$gconfig{'noremember'} ) {
         '<div class="input-group form-group"><input type="checkbox" value="1" name="save" id="remember-me" class="remember-me session_login">'
         . "\n";
     print '<label class="checkbox remember-me" for="remember-me">' . "\n";
-    print '<i class="fa"></i> <span>'
-        . $text{'login_save'}
-        . '</span></label></div>' . "\n";
+    print '<i class="fa"></i> <span>' . $text{'login_save'} . '</span></label></div>' . "\n";
 }
 print '<div class="form-group">';
 if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
@@ -202,8 +163,7 @@ if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
         . '</button>' . "\n";
 }
 else {
-    print
-        '<button class="btn btn-danger pull-left" type="reset"><i class="fa fa-eraser"></i>&nbsp;&nbsp;'
+    print '<button class="btn btn-danger pull-left" type="reset"><i class="fa fa-eraser"></i>&nbsp;&nbsp;'
         . &text('login_reset')
         . '</button>' . "\n";
 }
