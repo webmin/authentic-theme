@@ -15,7 +15,7 @@ our $__changelog
               <div class="modal-body" style="font-weight: 300">
                 <h4>Version 17.80 (April 8, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
                 <ul>
-                  <li>Skyrocketed theme\'s speed, up-to <em style="font-weight: 500;">80-120%</em>, depending on the module, due to large code optimisation. At the moment the <em>Theme</em> is only ~15% slower than <em>Gray Theme</em>, while at the same time 600% heavier</li>
+                  <li>Improved theme\'s speed, up-to about <em style="font-weight: 500;">10%</em>, depending on the module, due to large code optimisation</li>
                   <li>Improved general <em>UI</em></li>
                   <li>Improved <em>autocomplete</em> links\' processing</li>
                   <li>Improved output of <em>System and Server Status</em> to <em>System Information</em> page</li>

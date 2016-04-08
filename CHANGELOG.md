@@ -1,7 +1,7 @@
 ##Changelog
 
 ####Version 17.80 (April 08, 2016)  :star:
-* Improved theme's speed, up-to _80-120%_, depending on the module, due to large code optimisation. At the moment the _Theme_ is only ~15% slower than _Gray Theme_, while at the same time 600% heavier
+* Improved theme's speed, up-to about _10%_, depending on the module, due to large code optimisation
 * Improved general _UI_
 * Improved _autocomplete_ links' processing
 * Improved output of _System and Server Status_ to _System Information_ page
