@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.80 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.81 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,9 +13,11 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body" style="font-weight: 300">
-                <h4>Version 17.80 (April 8, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
+                <h4>Version 17.80 - 17.81 (April 9, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
                 <ul>
-                  <li>Improved theme\'s speed, up-to about <em style="font-weight: 500;">10%</em>, depending on the module, due to large code optimisation</li>
+                  <li>Improved support for the latest <em>ConfigServer Security & Firewall</em></li>
+                  <li>Fixed a bug <a class="label label-default" href="https://www.virtualmin.com/node/40293" target="_blank">#40293</a><hr></li>
+                  <li>Improved theme\'s speed, up to around <em style="font-weight: 500;">20%</em>, depending on the module, due to large code optimisation</li>
                   <li>Improved general <em>UI</em></li>
                   <li>Improved <em>autocomplete</em> links\' processing</li>
                   <li>Improved output of <em>System and Server Status</em> to <em>System Information</em> page</li>

@@ -1,7 +1,11 @@
 ##Changelog
 
-####Version 17.80 (April 08, 2016)  :star:
-* Improved theme's speed, up-to about _10%_, depending on the module, due to large code optimisation
+####Version 17.81 (April 09, 2016)
+* Improved support for the latest _ConfigServer Security & Firewall_
+* Fixed a bug [#40293](https://www.virtualmin.com/node/40293)
+
+####Version 17.81 (April 08, 2016)  :star:
+* Improved theme's speed, up to around _20%_, depending on the module, due to large code optimisation
 * Improved general _UI_
 * Improved _autocomplete_ links' processing
 * Improved output of _System and Server Status_ to _System Information_ page
