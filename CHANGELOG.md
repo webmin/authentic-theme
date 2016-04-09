@@ -4,7 +4,7 @@
 * Improved support for the latest _ConfigServer Security & Firewall_
 * Fixed a bug [#40293](https://www.virtualmin.com/node/40293)
 
-####Version 17.81 (April 08, 2016)  :star:
+####Version 17.80 (April 08, 2016)  :star:
 * Improved theme's speed, up to around _20%_, depending on the module, due to large code optimisation
 * Improved general _UI_
 * Improved _autocomplete_ links' processing
