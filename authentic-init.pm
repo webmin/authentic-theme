@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.81 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -63,7 +63,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1781" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1782" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -75,13 +75,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1781" type="text/javascript"></script>' . "\n";
+                . '.js?1782" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1781" rel="stylesheet" type="text/css">' . "\n";
+            . '/unauthenticated/css/package.min.css?1782" rel="stylesheet" type="text/css">' . "\n";
 
         embed_styles();
         embed_settings();
@@ -93,22 +93,22 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1781" type="text/javascript"></script>' . "\n";
+                . '/unauthenticated/js/timeplot.min.js?1782" type="text/javascript"></script>' . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1781" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/package.min.js?1782" type="text/javascript"></script>' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1781" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/init.min.js?1782" type="text/javascript"></script>' . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
             || &get_module_name() eq 'mailbox' )
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1781" type="text/javascript"></script>' . "\n";
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1782" type="text/javascript"></script>' . "\n";
         }
 
     }
@@ -201,7 +201,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1781" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1782" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
     }
 }
 
@@ -344,22 +344,5 @@ sub get_env {
     my ($key) = @_;
     return $ENV{ uc($key) };
 }
-
-# sub print_hash {
-#     head();
-#     my (%d) = @_;
-
-#     use Data::Dumper;
-#     print Dumper( \%d );
-# }
-
-# sub print_array {
-#     head();
-#     my ($____v) = @_;
-#     use Data::Dumper;
-#     print '<pre style="color: red">';
-#     print Dumper $____v;
-#     print '</pre>';
-# }
 
 1;

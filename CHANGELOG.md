@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.82 (April 10, 2016)
+* Enhanced support for _MySQL/PostgreSQL_ modules
+
 ####Version 17.81 (April 09, 2016)
 * Improved support for the latest _ConfigServer Security & Firewall_
 * Fixed a bug [#40293](https://www.virtualmin.com/node/40293)
