@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.81 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -266,7 +266,7 @@ function ___csf() {
 		m = v.contentDocument.getElementsByTagName("head")[0],
 		t = v.contentDocument.createElement("script");
 	t.type = "text/javascript";
-	t.src = "/unauthenticated/js/package.min.js?1781";
+	t.src = "/unauthenticated/js/package.min.js?1782";
 	m.appendChild(t);
 	if (q.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
 		v.contentWindow.onbeforeunload = function (a) {
@@ -275,7 +275,7 @@ function ___csf() {
 		q.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
 		$csf = q.$('iframe[name="page"]').contents();
 		$csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-		$csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1781" rel="stylesheet" type="text/css">		');
+		$csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1782" rel="stylesheet" type="text/css">		');
 		$.each(q.$('link[href*="/styles.css"]'), function () {
 			if ($(this)) {
 				$csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -664,7 +664,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function () {
 			return
 		}
 		__lre();
-		s("/unauthenticated/js/authentic.min.js?1781")
+		s("/unauthenticated/js/authentic.min.js?1782")
 	}
 	if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
 		t__wi_p.NProgress.done()

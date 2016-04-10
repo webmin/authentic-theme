@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.81 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -96,6 +96,23 @@ function prt(b) {
 		return b(o)
 	}
 })(t___wi.jQuery);
+jQuery.fn.selectText = function () {
+	var d = document;
+	var b = this[0];
+	if (d.body.createTextRange) {
+		var a = document.body.createTextRange();
+		a.moveToElementText(b);
+		a.select()
+	} else {
+		if (window.getSelection) {
+			var c = window.getSelection();
+			var a = document.createRange();
+			a.selectNodeContents(b);
+			c.removeAllRanges();
+			c.addRange(a)
+		}
+	}
+};
 
 function get_cookie(b) {
 	var f = b + "=";
@@ -2263,7 +2280,7 @@ if (t___wi.location == t__wi_p.location) {
 		settings_notification_slider_fixed && t__wi_p.$("html").attr("data-slider-fixed", "1")
 	}
 	if (t__wi_p.$___________initial === 1) {
-		console.log("Welcome to Authentic Theme 17.81 https://github.com/qooob/authentic-theme")
+		console.log("Welcome to Authentic Theme 17.82 https://github.com/qooob/authentic-theme")
 	}
 	$.ajax({
 		type: "GET",
@@ -3162,6 +3179,115 @@ if (t___wi.location == t__wi_p.location) {
 			}).length;
 			$(".total_selected span").text(a)
 		}
+	}
+
+	function __init_dt_(a) {
+		$.fn.dataTableExt.sErrMode = "throw";
+		a.DataTable({
+			order: [],
+			aaSorting: [],
+			bDestroy: true,
+			bPaginate: false,
+			bInfo: false,
+			destroy: true,
+			oLanguage: {
+				sEmptyTable: lang("theme_xhred_datatable_semptytable"),
+				sInfo: lang("theme_xhred_datatable_sinfo"),
+				sInfoEmpty: lang("theme_xhred_datatable_sinfoempty"),
+				sLengthMenu: lang("theme_xhred_datatable_slengthmenu"),
+				sLoadingRecords: lang("theme_xhred_datatable_sloadingrecords"),
+				sProcessing: lang("theme_xhred_datatable_sprocessing"),
+				sSearch: " ",
+				sZeroRecords: lang("theme_xhred_datatable_szerorecords")
+			}
+		})
+	}
+	if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_page_full == $_____link_full + "/mysql/edit_table.cgi" || $current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/edit_dbase.cgi" || $current_page_full == $_____link_full + "/postgresql/edit_dbase.cgi" || $current_page_full == $_____link_full + "/postgresql/edit_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {
+		$(function () {
+			$(".table.table-striped.table-hover.table-condensed").css("width", "99%").wrap('<div class="long-table-wrapper"><div class="long-table-scroll"></div></div>');
+			$("body").on("click", 'td > label[for^="row_"], td.td_tag.selectable', function (a) {
+				a.preventDefault();
+				a.stopPropagation();
+				$(this).selectText()
+			});
+			$("body").on("click", ".long-table-wrapper div.thead", function (a) {
+				if ($(this).find("i").hasClass("fa-plus-square")) {
+					$(this).find("i").removeClass("fa-plus-square").addClass("fa-minus-square");
+					$(this).find("i").parent().next(".long-table-scroll").find(".table-hardcoded").removeClass("hidden")
+				} else {
+					$(this).find("i").addClass("fa-plus-square").removeClass("fa-minus-square");
+					$(this).find("i").parent().next(".long-table-scroll").find(".table-hardcoded").addClass("hidden")
+				}
+			});
+			$.each($(".table.table-striped.table-hover.table-condensed").find("thead th"), function (b, a) {
+				$(this).html("<em>" + $(this).text() + "</em>")
+			}).promise().done(function () {
+				$.each($(".table.table-striped.table-hover.table-condensed").find("tbody tr td"), function (c, b) {
+					if ($current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {
+						$(this).parent("tr").addClass("selectable");
+						$(this).addClass("selectable")
+					}!$(this).find("table").length && $(this).attr("title", $(this).text())
+				}).promise().done(function () {
+					if (($current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") && $("#save").length && $("#cancel").length) {
+						var b = $(".long-table-wrapper").width();
+						visibleThNum = $(".table.table-striped.table-hover.table-condensed").find("thead th").filter(function (c) {
+							return $(this).position().left + $(this).width() < b
+						}).length + 1;
+						$("td.td_tag .table-hardcoded").wrap('<div class="long-table-wrapper"><div class="long-table-scroll" style="width: ' + ((b - 15) + "px") + ';  max-height: 14vw;"></div></div>').css({
+							width: ((b - 30) + "px"),
+							"border-top": "1px solid #e6e6e6",
+							"border-left": "1px dashed #b43d3d"
+						}).parent().parent().parent("td").removeClass("selectable").addClass("col-no-styling").attr({
+							colspan: visibleThNum,
+							style: "padding: 0 !important;"
+						}).find(".long-table-wrapper").attr({
+							style: "margin: 0 !important"
+						}).find(".table-hardcoded tr.thead").attr({
+							style: "border: 0 !important"
+						}).addClass("hidden").next("tr").find("td:first-child").css({
+							width: "20%",
+							"text-align": "left",
+							"padding-left": "10%"
+						}).parent("tr").find("td:last-child").css({
+							width: "80%",
+							"text-align": "left",
+							"padding-left": "10%"
+						});
+						setTimeout(function () {
+							$.each($("td.td_tag .table-hardcoded").parent(".long-table-scroll").parent(".long-table-wrapper"), function (c, d) {
+								var f = $(this).find(".table-hardcoded").find("tbody tr:nth-child(2) td:last-child"),
+									f = (f.find('input[type="text"]').val() ? f.find('input[type="text"]').val() : f.text());
+								$(this).prepend('					 				  <div class="thead" style="width: ' + ((b - 15) + "px") + '; height: 23px; background: #f6f6f6; border-top: 1px solid #ddd; border-right: 1px solid #ddd;">					 				  	<i class="fa fa-minus-square text-light pull-right db_editor_collapse" style="cursor: default; margin-top: 5px; position: relative; z-index: 999999; margin-right: 12px; margin-bottom: -5px;"></i>					 				  	<span class="col-xs-2 text-left" style="padding-top: 1px; padding-left: 7px;"><em style="font-weight: 500">' + f + '</em></span>					 				  	<span class="col-xs-10 text-left" style="padding-left: 4%; padding-top: 6px"></span>					 				  </div>								')
+							})
+						}, 1)
+					} else {
+						__init_dt_($(".table.table-striped.table-hover.table-condensed"));
+						$(".table.table-striped.table-hover.table-condensed").prev(".dataTables_filter").attr("style", "margin-top: -25px !important;");
+						$(".dataTable.no-footer").find("thead th:first-child").addClass("pointer-events-none opacity-0");
+						$(".dataTables_filter").detach().insertBefore(".long-table-wrapper").css({
+							"float": "right",
+							"margin-top": "-30px"
+						})
+					}
+				});
+
+				function a() {
+					var b = $('.table.table-striped.table-hover.table-condensed input[type="checkbox"]:checked').length;
+					if (b === 0) {
+						$("input#edit, input#delete").prop("disabled", true)
+					} else {
+						$("input#edit, input#delete").prop("disabled", false)
+					}
+				}
+				$(".table.table-striped.table-hover.table-condensed").on("change", 'input[type="checkbox"]', function (b) {
+					a()
+				});
+				$(".select_all, .select_invert").on("click", function (b) {
+					a()
+				});
+				a()
+			})
+		})
 	}
 
 	function __f___mn() {
@@ -4922,10 +5048,10 @@ if (t___wi.location == t__wi_p.location) {
 
 		function __mr() {
 			$.each($(".ui_checked_columns"), function (a, b) {
-				if ($(b).find("a[href]") && !$("body").hasClass("servers")) {
+				if ($(b).find("a[href]") && !$("body").hasClass("servers") && !$(this).hasClass("selectable")) {
 					$(this).addClass("cursor-pointer").find("td").addClass("cursor-pointer").find("label").addClass("cursor-pointer").find("tt").addClass("cursor-pointer")
 				}
-				$(b).on("click", "td", function (d) {
+				$(b).on("click", "td:not(.selectable)", function (d) {
 					if ($(b).find("a[href]") && !$("body").hasClass("servers")) {
 						var c = $(b).find("a[href]")[0],
 							k = $(this).parents("tr.ui_checked_columns"),
@@ -5057,13 +5183,7 @@ if (t___wi.location == t__wi_p.location) {
 					}
 				})
 			}
-		});
-		if ($current_page_full == $_____link_full + "/mysql/view_table.cgi") {
-			$("body").on("click", ".ui_checked_checkbox", function (b) {
-				$(this).find('input[type="checkbox"]').trigger("click");
-				$(".acheckbox").icheck("updated")
-			})
-		}
+		})
 	}
 	if ($("body").hasClass("servers")) {
 		$('form[action="delete_servs.cgi"] a.icon_link, form[action="delete_servs.cgi"] a.ui_link, form[action="delete_servs.cgi"] .col-xs-1').on("click", function (f) {
@@ -6912,28 +7032,6 @@ if (t___wi.location == t__wi_p.location) {
 			}
 		}
 	});
-
-	function __init_dt_(a) {
-		$.fn.dataTableExt.sErrMode = "throw";
-		a.dataTable({
-			order: [],
-			aaSorting: [],
-			bDestroy: true,
-			bPaginate: false,
-			bInfo: false,
-			destroy: true,
-			oLanguage: {
-				sEmptyTable: lang("theme_xhred_datatable_semptytable"),
-				sInfo: lang("theme_xhred_datatable_sinfo"),
-				sInfoEmpty: lang("theme_xhred_datatable_sinfoempty"),
-				sLengthMenu: lang("theme_xhred_datatable_slengthmenu"),
-				sLoadingRecords: lang("theme_xhred_datatable_sloadingrecords"),
-				sProcessing: lang("theme_xhred_datatable_sprocessing"),
-				sSearch: " ",
-				sZeroRecords: lang("theme_xhred_datatable_szerorecords")
-			}
-		})
-	}
 	if ((($current_page_full.indexOf(".cgi") === -1 || $current_page_full.indexOf("link.cgi") !== -1) || $current_page_full == $_____link_full + "/proc/open_files.cgi" || $current_page_full == $_____link_full + "/webmin/edit_webmincron.cgi" || $current_page_full == $_____link_full + "/postfix/mailq.cgi" || $current_page_full == $_____link_full + "/webmin_search.cgi" || $current_page_full == $_____link_full + "/useradmin/index.cgi" || $current_page_full == $_____link_full + "/quota/list_users.cgi" || $current_page_full == $_____link_full + "/quota/list_groups.cgi" || $current_page_full == $_____link_full + "/init/index.cgi") && ($current_directory == $_____link + "webmin/" || $current_directory == $_____link + "proc/" || $source_path == $_____link + "webmin_search.cgi" || $current_directory == $_____link + "postfix/" || $current_directory == $_____link + "virtual-server/" || $current_directory == $_____link + "init/" || $current_directory == $_____link + "mount/" || $current_directory == $_____link + "custom/" || $current_directory == $_____link + "quota/" || $current_directory == $_____link + "fsdump/" || $current_directory == $_____link + "inittab/" || $current_directory == $_____link + "logrotate/" || $current_directory == $_____link + "mailcap/" || $current_directory == $_____link + "cron/" || $current_directory == $_____link + "software/" || $current_directory == $_____link + "syslog/" || $current_directory == $_____link + "useradmin/" || $current_directory == $_____link + "apache/" || $current_directory == $_____link + "webalizer/" || $current_directory == $_____link + "cpan/" || $current_directory == $_____link + "htaccess-htpasswd/" || $current_directory == $_____link + "fdisk/") || $current_page_full == $_____link_full + "/man/search.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi" || $current_page_full == $_____link_full + "/software/search.cgi" || $current_page_full == $_____link_full + "/virtual-server/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_users.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newplan.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newtmpl.cgi" || $current_page_full == $_____link_full + "/virtual-server/backuplog.cgi" || $current_page_full == $_____link_full + "/package-updates/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/usage.cgi" || $current_page_full == $_____link_full + "/virtual-server/search.cgi" || (($current_page_full == $_____link_full + "/fetchmail/" || $current_page_full == $_____link_full + "/filter/") && product_name() == "Usermin")) {
 		$("table").each(function () {
 			if ($(this).find("thead") && $(this).find("thead").length && $(this).find("thead tr th") && $(this).find("thead tr th").length > 2) {

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.81 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -2282,6 +2282,8 @@ td.col_value label,
     margin-top: -30px !important;
 }.margined-top-3 {
     margin-top: 3px !important;
+}.margined-top-4 {
+    margin-top: 4px !important;
 }.margined-top-5 {
     margin-top: 5px !important;
 }.margined-top-10 {
@@ -2817,6 +2819,10 @@ a.opener_trigger,
     pointer-events: none;
 
     opacity: .4;
+}.opacity-0 {
+    cursor: default;
+
+    opacity: 0;
 }.opacity-0_3 {
     cursor: default;
 
@@ -6462,6 +6468,34 @@ html[data-background-style='ghostWhite'] .input-group-addon {
     opacity: 0;
 }.pointer-events-none {
     pointer-events: none;
+}body[class*='postgresql'] form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed td,
+body[class*='mysql'] form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed td {
+    overflow: hidden;
+
+    max-width: 110px;
+    padding-right: 8px !important;
+    padding-left: 7px !important;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}td.selectable,
+td.selectable label {
+    cursor: default;
+}td.selectable label {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}td.col-no-styling:hover,
+td.col-no-styling {
+    border: 0 !important;
+    background-color: white !important;
+}.long-table-wrapper {
+    position: relative;
+}.long-table-scroll {
+    overflow: auto;
+
+    max-height: 38vw;
 }@keyframes dash {
     0 {
         stroke-dasharray: 1,150;
