@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -63,7 +63,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1782" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1783" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -75,13 +75,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1782" type="text/javascript"></script>' . "\n";
+                . '.js?1783" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1782" rel="stylesheet" type="text/css">' . "\n";
+            . '/unauthenticated/css/package.min.css?1783" rel="stylesheet" type="text/css">' . "\n";
 
         embed_styles();
         embed_settings();
@@ -93,22 +93,22 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1782" type="text/javascript"></script>' . "\n";
+                . '/unauthenticated/js/timeplot.min.js?1783" type="text/javascript"></script>' . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1782" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/package.min.js?1783" type="text/javascript"></script>' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1782" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/init.min.js?1783" type="text/javascript"></script>' . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
             || &get_module_name() eq 'mailbox' )
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1782" type="text/javascript"></script>' . "\n";
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1783" type="text/javascript"></script>' . "\n";
         }
 
     }
@@ -201,7 +201,7 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1782" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1783" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
     }
 }
 
@@ -211,6 +211,8 @@ sub init_vars {
     our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m, $t_var_product_m );
 
     our %text = ( &load_language($current_theme), %text );
+    our %text = ( &load_language('virtual-server'), %text );
+    our %text = ( &load_language('server-manager'), %text );
     our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 
     our $t_uri__x = get_env('script_name');

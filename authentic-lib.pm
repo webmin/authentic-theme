@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1639,14 +1639,14 @@ sub embed_login_head {
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1782" rel="stylesheet" type="text/css">' . "\n";
+        . '/unauthenticated/css/package.min.css?1783" rel="stylesheet" type="text/css">' . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1782" type="text/javascript"></script>' . "\n";
+        . '/unauthenticated/js/package.min.js?1783" type="text/javascript"></script>' . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1782" type="text/javascript"></script>' . "\n";
+        . '/unauthenticated/js/init.min.js?1783" type="text/javascript"></script>' . "\n";
     print '</head>', "\n";
 }
 

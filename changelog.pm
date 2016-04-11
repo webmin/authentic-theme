@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.82 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,9 +13,10 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body" style="font-weight: 300">
-                <h4>Version 17.80 - 17.82 (April 10, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
+                <h4>Version 17.80 - 17.83 (April 11, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
                 <ul>
-                  <li>Enhanced support for <em>MySQL/PostgreSQL</em> modules<hr></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/432" target="_blank">#432</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/433" target="_blank">#433</a><hr></li>
+                  <li>Enhanced support for <em>MySQL/PostgreSQL</em> modules</li>
                   <li>Improved support for the latest <em>ConfigServer Security & Firewall</em></li>
                   <li>Improved theme\'s speed, up to around <em style="font-weight: 500;">20%</em>, depending on the module, due to large code optimisation</li>
                   <li>Improved general <em>UI</em></li>
