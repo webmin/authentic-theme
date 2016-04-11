@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 17.83 (April 11, 2016)
+* Fixed bugs [#432](https://github.com/qooob/authentic-theme/issues/432) [#433](https://github.com/qooob/authentic-theme/issues/433)
+
 ####Version 17.82 (April 10, 2016)
 * Enhanced support for _MySQL/PostgreSQL_ modules
 
