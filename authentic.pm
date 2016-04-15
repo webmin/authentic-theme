@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -7,22 +7,7 @@
 do "authentic-theme/authentic-init.pm";
 
 sub theme_header {
-    print '<!DOCTYPE html>', "\n";
-    print '<html data-background-style="' . $__settings{'settings_background_color'} . '">', "\n";
-    print '<head>', "\n";
-    print '<title data-initial="' . $_[0] . '">', $_[0], '</title>', "\n";
-    print '<meta charset="utf-8">', "\n";
-    print '<link rel="shortcut icon" href="'
-        . $gconfig{'webprefix'}
-        . '/images/favicon'
-        . (
-        ( &get_product_name() eq 'usermin' )
-        ? '-usermin'
-        : '-webmin'
-        ) . '.ico">' . "\n";
-    print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
-    embed_header();
-    print '</head>', "\n";
+    embed_header(($_[0], $_[7], 'production'));
     print '<body data-usermin="'
         . usermin_available()
         . '" data-shell="'
@@ -164,16 +149,16 @@ sub theme_popup_prehead {
         print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1783" rel="stylesheet" type="text/css">' . "\n";
+            . '/unauthenticated/css/package.min.css?1784" rel="stylesheet" type="text/css">' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1783" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/package.min.js?1784" type="text/javascript"></script>' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1783" type="text/javascript"></script>', "\n";
+            . '/unauthenticated/js/cgi.min.js?1784" type="text/javascript"></script>', "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1783" type="text/javascript"></script>', "\n";
+            . '/unauthenticated/js/filtermatch.min.js?1784" type="text/javascript"></script>', "\n";
     }
 }
 
@@ -199,7 +184,7 @@ sub theme_footer {
 
     print "</div>\n";
 
-    embed_footer();
+    embed_footer('production');
     embed_scripts();
     print '</body>', "\n";
     print '</html>', "\n";
@@ -796,6 +781,7 @@ sub theme_ui_hr {
 sub theme_ui_alert_box {
     my ( $msg, $class, $style, $new_line ) = @_;
     my ( $rv, $type, $tmsg, $fa );
+    my %text = ( &load_language($current_theme), %text );
 
     if ( $class eq "success" ) {
         $type = 'alert-success', $tmsg = ( $text{'theme_global_success'} . '!' ), $fa = 'fa-check-circle';

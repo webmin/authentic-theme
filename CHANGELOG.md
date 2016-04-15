@@ -1,5 +1,17 @@
 ##Changelog
 
+####Version 17.84 (April 15, 2016)
+* Improved and enhanced _MySQL/PostgreSQL_ functionality:
+	* Added ability to use background calls on diffident kind of operations (you might want to stop using _phpMyAdmin_)
+	* Added ability to make sure that you are not going to leave the page unsaved after entering new data
+	* Resizeable table's header for long tables
+	* Action buttons put in groups and have dynamic text based on the selection
+	* Confirmation buttons added for previously straightforward delete actions
+* Improved _File Manager_ will return user-friendly message upon creating new archive, in case <em>zip</em> command is not installed [#437](https://github.com/qooob/authentic-theme/issues/437)
+* Fixed missing _force charset_ option
+* Fixed refresh button on navigation menu to properly refresh content page
+* Fixed bugs [#425](https://github.com/qooob/authentic-theme/issues/425) [#434](https://github.com/qooob/authentic-theme/issues/434) [#436](https://github.com/qooob/authentic-theme/issues/436) [#438](https://github.com/qooob/authentic-theme/issues/438) [#439](https://github.com/qooob/authentic-theme/issues/439) [#440](https://github.com/qooob/authentic-theme/issues/440)
+
 ####Version 17.83 (April 11, 2016)
 * Fixed bugs [#432](https://github.com/qooob/authentic-theme/issues/432) [#433](https://github.com/qooob/authentic-theme/issues/433)
 
