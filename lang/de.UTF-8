@@ -454,10 +454,46 @@ theme_xhred_filemanager_hovered_toolbar=Activate dropdown in toolbar on mouse ho
 theme_xhred_filemanager_context_delete_selected=Delete selected
 
 #17.83
-theme_xhred_database_add_new_row=Add new row
-theme_xhred_database_edit_row=Edit selected row
-theme_xhred_database_edit_rows=Edit selected rows
-theme_xhred_database_add_new_row_data=Set data
+theme_xhred_database_adding_new_row=Adding new row
+theme_xhred_database_editing_row=Editing selected row
+theme_xhred_database_editing_rows=Editing selected rows
+theme_xhred_database_adding_new_row_data=Set data
+
+#17.84
+theme_xhred_datatable_filter=Filter
+
+theme_xhred_global_update=Update
+theme_xhred_global_update_and_return=Update and return
+theme_xhred_global_update_and_close=Update and close
+theme_xhred_global_back=Back
+theme_xhred_global_cancel=Cancel
+
+theme_xhred_database_add_row_successful=New row was successfully added
+theme_xhred_database_edit_row_successful=Selected row was successfully updated
+theme_xhred_database_edit_rows_successful=Selected rows were successfully updated
+theme_xhred_database_edit_row_delete_successful=Selected row was successfully deleted
+theme_xhred_database_edit_rows_delete_successful=Successfully deleted <em>%n</em> selected rows
+theme_xhred_database_edit_field_delete_successful=Selected field was successfully deleted
+theme_xhred_database_edit_fields_delete_successful=Successfully deleted <em>%n</em> selected fields
+theme_xhred_database_edit_selected_row=Edit selected row
+theme_xhred_database_edit_selected_rows=Edit selected rows
+theme_xhred_database_add_new_row=Add row
+theme_xhred_database_delete_selected_row=Delete selected row
+theme_xhred_database_delete_selected_rows=Delete selected rows
+theme_xhred_database_delete_selected_field=Delete selected field
+theme_xhred_database_delete_selected_fields=Delete selected fields
+theme_xhred_database_object_selected_delete=Delete selected object
+theme_xhred_database_objects_selected_delete=Delete selected objects
+theme_xhred_database_db_selected_drop=Drop selected database
+theme_xhred_database_dbs_selected_drop=Drop selected databases
+theme_xhred_database_edit_but_not_saved=Table data has been edited but not saved.
+
+theme_xhred_global_no_such_command=It appears that <tt>%cmd</tt> executable is not installed or not in the path on your system.
+
+theme_xhred_global_notice=Notice
+
+theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
+
 
 
 

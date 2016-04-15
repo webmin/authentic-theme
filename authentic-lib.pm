@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -21,23 +21,6 @@ sub authentic {
     footer();
 }
 
-sub settings {
-    my %c;
-    my $f = $config_directory . "/authentic-theme/settings.js";
-    if ( -r $f ) {
-        my $k = &read_file_contents($f);
-        my %k = $k =~ /(.*?)=(.*)/g;
-        foreach $s ( keys %k ) {
-            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
-            $k{$s} =~ s/\\'/'/g;
-            $c{$s} .= $k{$s};
-        }
-        return %c;
-    }
-    else {
-        return %c;
-    }
-}
 
 sub notify {
     our ($type) = @_;
@@ -1639,14 +1622,14 @@ sub embed_login_head {
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1783" rel="stylesheet" type="text/css">' . "\n";
+        . '/unauthenticated/css/package.min.css?1784" rel="stylesheet" type="text/css">' . "\n";
     embed_styles();
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1783" type="text/javascript"></script>' . "\n";
+        . '/unauthenticated/js/package.min.js?1784" type="text/javascript"></script>' . "\n";
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1783" type="text/javascript"></script>' . "\n";
+        . '/unauthenticated/js/init.min.js?1784" type="text/javascript"></script>' . "\n";
     print '</head>', "\n";
 }
 
@@ -2638,6 +2621,10 @@ sub get_xhr_request {
         head();
         print nice_size( $in{'xhr-get_nice_size_sum'} );
     }
+    elsif ( $in{'xhr-get_command_exists'} eq '1' ) {
+        head();
+        print has_command($in{'xhr-get_command_exists_name'});
+    }
     elsif ( $in{'xhr-get_symlink'} eq '1' ) {
         head();
         print resolve_links( get_access_data('root') . $in{'xhr-get_symlink_path'} );
@@ -3044,7 +3031,7 @@ sub init {
             $_ =~ s/%in\);/%in, \$current_theme);/g;
             $_ =~ s/<BODY>//g;
             $_
-                =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
+                =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; overflow: hidden; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
             push( @n, $_ );
         }
 
@@ -3240,7 +3227,7 @@ sub get_module_config_data {
 }
 
 # sub print_hash {
-#     head();
+#     print "Content-type: text/html\n\n";
 #     my (%d) = @_;
 
 #     use Data::Dumper;
@@ -3248,7 +3235,7 @@ sub get_module_config_data {
 # }
 
 # sub print_array {
-#     head();
+#     print "Content-type: text/html\n\n";
 #     my ($____v) = @_;
 #     use Data::Dumper;
 #     print '<pre style="color: red">';

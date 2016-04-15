@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,9 +13,21 @@ our $__changelog
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body" style="font-weight: 300">
-                <h4>Version 17.80 - 17.83 (April 11, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
+                <h4>Version 17.80 - 17.84 (April 15, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
                 <ul>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/432" target="_blank">#432</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/433" target="_blank">#433</a><hr></li>
+                  <li>Improved and enhanced <em>MySQL/PostgreSQL</em> functionality:</li>
+                  <ul>
+                    <li>Added ability to use background calls on diffident kind of operations (you might want to stop using <em>phpMyAdmin</em>)</li>
+                    <li>Added ability to make sure that you are not going to leave the page unsaved after entering new data</li>
+                    <li>Resizeable table\'s header for long tables</li>
+                    <li>Action buttons put in groups and have dynamic text based on the selection</li>
+                    <li>Confirmation buttons added for previously straightforward delete actions</li>
+                  </ul>
+                  <li>Improved <em>File Manager</em> will return user-friendly message upon creating new archive, in case <em>zip</em> command is not installed <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/437" target="_blank">#437</a></li>
+                  <li>Fixed missing <em>force charset</em> option</li>
+                  <li>Fixed refresh button on navigation menu to properly refresh content page</li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/425" target="_blank">#425</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/434" target="_blank">#434</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/436" target="_blank">#436</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/439" target="_blank">#439</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/440" target="_blank">#440</a><hr></li>
+
                   <li>Enhanced support for <em>MySQL/PostgreSQL</em> modules</li>
                   <li>Improved support for the latest <em>ConfigServer Security & Firewall</em></li>
                   <li>Improved theme\'s speed, up to around <em style="font-weight: 500;">20%</em>, depending on the module, due to large code optimisation</li>
@@ -23,7 +35,7 @@ our $__changelog
                   <li>Improved <em>autocomplete</em> links\' processing</li>
                   <li>Improved output of <em>System and Server Status</em> to <em>System Information</em> page</li>
                   <li>Improved and enhanced file editor functionality:</li>
-                    <ul></li>
+                    <ul>
                       <li>Find/search/replace/replace all/jump to line</li>
                       <li>Auto close/match brackets</li>
                       <li>Code fold</li>
@@ -31,7 +43,7 @@ our $__changelog
                       <li>Match-highlight on text selection</li>
                       <li>Highlight of the current line</li>
                       <li>Word autocompletion (hint), based on the words found in the current window (<i>Ctrl + Space</i>)</li>
-                    </ul></li>
+                    </ul>
                   <li>Improved and enhanced <em>File Manager</em> functionality:</li>
                     <ul></li>
                       <li>Switched to using <em>WebminCore</em> for copying/moving files (Suggested by <em>Joe Cooper</em>)</li>
@@ -46,7 +58,7 @@ our $__changelog
                   <li>Added ability to save config files, that are edited manually, without reloading the page. Script will also makes sure that you are not going to leave the page unsaved.<br>Hotkeys are supported - <em>Ctrl + Enter / Ctrl + ⇧ + Enter</em> - Save/Save and close currently edited file</li>
                   <li>Added ability to prematurely unveil the page by double-clicking on the content page</li>
                   <li>Added support for <em>ConfigServer Security & Firewall</em> 8.19+</li>
-                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/176" target="_blank">#176</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/386" target="_blank">#386</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/399" target="_blank">#399</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/403" target="_blank">#403</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/411" target="_blank">#411</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/412" target="_blank">#412</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/414" target="_blank">#414</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/417" target="_blank">#417</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/419" target="_blank">#419</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/424" target="_blank">#424</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/426" target="_blank">#426</a> <br style="line-height: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-default" href="https://www.virtualmin.com/node/39272" target="_blank">#39272</a> <a class="label label-default" href="https://www.virtualmin.com/node/39722" target="_blank">#39722</a> <a class="label label-default" href="https://www.virtualmin.com/node/39958" target="_blank">#39958</a> <a class="label label-default" href="https://www.virtualmin.com/node/39974" target="_blank">#39974</a> <a class="label label-default" href="https://www.virtualmin.com/node/39977" target="_blank">#39977</a> <a class="label label-default" href="https://www.virtualmin.com/node/39999" target="_blank">#39999</a> <a class="label label-default" href="https://www.virtualmin.com/node/40066" target="_blank">#40066</a> <a class="label label-default" href="https://www.virtualmin.com/node/40293" target="_blank">#40293</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/176" target="_blank">#176</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/386" target="_blank">#386</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/399" target="_blank">#399</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/403" target="_blank">#403</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/411" target="_blank">#411</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/412" target="_blank">#412</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/414" target="_blank">#414</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/417" target="_blank">#417</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/419" target="_blank">#419</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/424" target="_blank">#424</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/426" target="_blank">#426</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/432" target="_blank">#432</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/433" target="_blank">#433</a> <br style="line-height: 19px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-default" href="https://www.virtualmin.com/node/39272" target="_blank">#39272</a> <a class="label label-default" href="https://www.virtualmin.com/node/39722" target="_blank">#39722</a> <a class="label label-default" href="https://www.virtualmin.com/node/39958" target="_blank">#39958</a> <a class="label label-default" href="https://www.virtualmin.com/node/39974" target="_blank">#39974</a> <a class="label label-default" href="https://www.virtualmin.com/node/39977" target="_blank">#39977</a> <a class="label label-default" href="https://www.virtualmin.com/node/39999" target="_blank">#39999</a> <a class="label label-default" href="https://www.virtualmin.com/node/40066" target="_blank">#40066</a> <a class="label label-default" href="https://www.virtualmin.com/node/40293" target="_blank">#40293</a></li>
                   </ul>
 
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -25,13 +25,33 @@ sub settings {
 }
 
 sub embed_header {
+    my (@args) = @_;
+    my $charset
+        = defined($main::force_charset)
+        ? $main::force_charset
+        : get_charset();
+
+    print '<!DOCTYPE html>', "\n";
+    print '<html data-background-style="' . $__settings{'settings_background_color'} . '">', "\n";
+    print '<head>', "\n";
+    print '<title data-initial="' . $args[0] . '">', $args[0], '</title>', "\n";
+    print '<meta charset="' . ( $charset ? quote_escape($charset) : 'utf-8' ) . '">', "\n";
+    print '<link rel="shortcut icon" href="'
+        . $gconfig{'webprefix'}
+        . '/images/favicon'
+        . (
+        ( &get_product_name() eq 'usermin' )
+        ? '-usermin'
+        : '-webmin'
+        ) . '.ico">' . "\n";
+    print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+    ( $args[1] && ( print( $args[1] . "\n" ) ) );
+
     if ( $in{'stripped'} eq '1' ) {
         return;
     }
 
-    my ($type) = @_;
-
-    if ( $type eq 'debug' ) {
+    if ( $args[2] eq 'debug' ) {
 
         my @css = (
             'bootstrap',             'bootstrap.tagsinput', 'datepicker',     'fontawesome',
@@ -63,7 +83,7 @@ sub embed_header {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/css/'
                 . $css
-                . '.src.css?1783" rel="stylesheet" type="text/css">' . "\n";
+                . '.src.css?1782" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -75,13 +95,13 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $js eq 'tinymce/tinymce' ? 'min' : 'src' )
-                . '.js?1783" type="text/javascript"></script>' . "\n";
+                . '.js?1782" type="text/javascript"></script>' . "\n";
         }
     }
     else {
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1783" rel="stylesheet" type="text/css">' . "\n";
+            . '/unauthenticated/css/package.min.css?1782" rel="stylesheet" type="text/css">' . "\n";
 
         embed_styles();
         embed_settings();
@@ -93,25 +113,26 @@ sub embed_header {
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/timeplot.min.js?1783" type="text/javascript"></script>' . "\n";
+                . '/unauthenticated/js/timeplot.min.js?1782" type="text/javascript"></script>' . "\n";
         }
 
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1783" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/package.min.js?1782" type="text/javascript"></script>' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/init.min.js?1783" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/init.min.js?1782" type="text/javascript"></script>' . "\n";
 
         if (   &get_module_name() eq 'mailboxes'
             || &get_module_name() eq 'mailbox' )
         {
             print '<script src="'
                 . $gconfig{'webprefix'}
-                . '/unauthenticated/js/tinymce/tinymce.min.js?1783" type="text/javascript"></script>' . "\n";
+                . '/unauthenticated/js/tinymce/tinymce.min.js?1782" type="text/javascript"></script>' . "\n";
         }
 
     }
+    print '</head>', "\n";
 }
 
 sub embed_settings {
@@ -201,14 +222,15 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/authentic.'
             . ( $type eq 'debug' ? 'src' : 'min' )
-            . '.js?1783" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1782" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
     }
 }
 
 sub init_vars {
     our $t_uri__i   = get_env('request_uri');
     our %__settings = settings();
-    our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m, $t_var_product_m );
+    our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
+        $t_var_product_m );
 
     our %text = ( &load_language($current_theme), %text );
     our %text = ( &load_language('virtual-server'), %text );
@@ -231,7 +253,6 @@ sub init_vars {
 
     our ( $t_var_switch_m, $t_var_product_m ) = get_swith_mode();
 }
-
 
 sub usermin_available {
     my ($_module) = @_;

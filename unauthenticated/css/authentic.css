@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1716,7 +1716,7 @@ aside .form-control:focus:-ms-input-placeholder {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 660px;
+        width: 800px;
         margin: 30px auto
     }
 }
@@ -3562,7 +3562,7 @@ body.syslog .cm-s-mdn-like.CodeMirror {
     text-align: center;
     color: #c7d2e6;
     border-radius: 0;
-    background-color: rgba(40, 40, 40, .90)
+    background-color: rgba(11, 11, 11, 0.9)
 }
 
 .switch-mins label[for^='reserve_empty'] {
@@ -5380,6 +5380,10 @@ td.ui_grid_cell {
 
 body[data-module] {
     overflow: hidden
+}
+
+body[data-module].__e__ {
+    overflow: auto
 }
 
 body:not(.csf):not(.__e__) .container-fluid {
@@ -8229,6 +8233,10 @@ body[data-theme='brown'] #sidebar {
     background: #544538
 }
 
+body[data-theme='brown'] #sidebar .form-group .form-control.sidebar-search {
+    color: #807368
+}
+
 body[data-theme='brown'] .mobile-menu-toggler.selected>.btn-primary {
     border: 1px solid #544538;
     background-color: #544538
@@ -9061,6 +9069,11 @@ body.init div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr.ui_checked_co
     pointer-events: none
 }
 
+body[class*='postgresql']:not(.__non_res__) form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed th,
+body[class*='mysql']:not(.__non_res__) form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed th {
+    border-right: 1px dotted #f1f1f1
+}
+
 body[class*='postgresql'] form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed td,
 body[class*='mysql'] form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed td {
     overflow: hidden;
@@ -9089,7 +9102,8 @@ td.col-no-styling {
 }
 
 .long-table-wrapper {
-    position: relative
+    position: relative;
+    overflow: hidden
 }
 
 .long-table-scroll {

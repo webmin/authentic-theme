@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.83 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -229,9 +229,7 @@ function __s___() {
             opacity: 1
         }, 240, function() {
             b.css("pointer-events", "auto");
-            setTimeout(function() {
-                c.css("overflow", "auto")
-            }, 240)
+            c.css("overflow", "auto")
         })
     }
 }
@@ -266,7 +264,7 @@ function ___csf() {
         m = v.contentDocument.getElementsByTagName("head")[0],
         t = v.contentDocument.createElement("script");
     t.type = "text/javascript";
-    t.src = "/unauthenticated/js/package.min.js?1783";
+    t.src = "/unauthenticated/js/package.min.js?1784";
     m.appendChild(t);
     if (q.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
         v.contentWindow.onbeforeunload = function(a) {
@@ -275,7 +273,7 @@ function ___csf() {
         q.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
         $csf = q.$('iframe[name="page"]').contents();
         $csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-        $csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1783" rel="stylesheet" type="text/css">		');
+        $csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1784" rel="stylesheet" type="text/css">		');
         $.each(q.$('link[href*="/styles.css"]'), function() {
             if ($(this)) {
                 $csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
@@ -285,10 +283,10 @@ function ___csf() {
             q.hide_mobile_menu()
         });
         if (!$csf.find("body").attr("style")) {
-            q.$('iframe[name="page"]').contents().get(0).location.reload();
+            t__wi_p.location.reload();
             return
         }
-        typeof t__wi_p.$____csf == "undefined" ? t__wi_p.$____csf = 1100 : t__wi_p.$____csf = 0;
+        typeof t__wi_p.$____csf == "undefined" ? t__wi_p.$____csf = 1100 : t__wi_p.$____csf = 300;
         setTimeout(function() {
             $csf.find("body").animate({
                 opacity: 1
@@ -296,6 +294,7 @@ function ___csf() {
                 $csf.find("body").css("pointer-events", "auto")
             })
         }, t__wi_p.$____csf);
+        $csf.find('fieldset.csf-box + div.csf-box[align="center"]').css("margin-top", "3px");
         $csf.find("style").remove();
         $csf.find("body").addClass("csf");
         $csf.find("body").wrapInner('<div class="container-fluid col-lg-10 col-lg-offset-1">');
@@ -504,7 +503,10 @@ function ___csf() {
             $csf.find('select, input[type="text"], button[onclick="CSFgrep()"]').removeClass("heighter-34").addClass("heighter-28");
             $csf.find("#CSFgrep_i, #CSFgrep_E, #CSFgrep_D").attr("style", "vertical-align: middle; margin-right: 4px;");
             $csf.find("#CSFajax").css("margin-bottom", "4px");
-            $csf.find("#CSFlognum").attr("onchange", "javascript: document.getElementsByTagName('button')[0].click()")
+            $csf.find("#CSFlognum").attr("onchange", "javascript: document.getElementsByTagName('button')[0].click()");
+            $csf.find("#CSFgrep_D").addClass("hidden");
+            $csf.find(".csf-box").replaceText(/Detach/gi, "");
+            $csf.find("li:contains('Use the \"Detach\" option to display the search results in a separate window')").remove()
         }
         $csf.find("#CSFajax.csf-box").addClass("csf_force_log_size");
 
@@ -516,11 +518,22 @@ function ___csf() {
                     mode: {
                         name: "rpm-spec"
                     },
-                    tabMode: "indent",
                     matchBrackets: true,
                     lineNumbers: true,
-                    lineWrapping: true,
+                    keyMap: "sublime",
+                    highlightSelectionMatches: {
+                        showToken: /\w/,
+                        annotateScrollbar: true
+                    },
                     indentUnit: 0,
+                    autofocus: true,
+                    foldGutter: true,
+                    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+                    extraKeys: {
+                        "Ctrl-Space": "autocomplete"
+                    },
+                    styleActiveLine: true,
+                    lineWrapping: true,
                     theme: t__wi_p.settings_cm_editor_palette
                 });
                 $window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2));
@@ -666,7 +679,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
             return
         }
         __lre();
-        s("/unauthenticated/js/authentic.min.js?1783")
+        s("/unauthenticated/js/authentic.min.js?1784")
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
         t__wi_p.NProgress.done()
@@ -718,7 +731,7 @@ function __num() {
 var $__was = function() {
     var d = $.url(t___wi.location),
         c = d.attr("path");
-    if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1) {
+    if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/virtual-server/backup.cgi") > -1 || c.indexOf("/server-manager/backup.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1) {
         $("html").data("data-pagescroll", true)
     }
     if (($("pre") && $("pre").length > 0 && $("pre").length <= 2) || $("html").data("data-pagescroll") === true) {
