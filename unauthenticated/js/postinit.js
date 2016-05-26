@@ -1771,7 +1771,7 @@ function t__cm___init(d, f, i, h, g, e) {
         if ($current_file) {
             $current_file = $current_file.split("/")[1]
         }
-        if (($("textarea").length === 1 && ($("textarea").attr("name") === "data" || $("textarea").attr("name") === "text" || $__source_file.indexOf("manual") > -1)) || $(".jsPanel").length || g) {
+        if (($("textarea").length === 1 && ($("textarea").attr("name") === "data" || $("textarea").attr("name") === "text" || $("textarea").attr("name") === "conf" || $__source_file.indexOf("manual") > -1)) || $(".jsPanel").length || g) {
             if (is__mf("virtual-server", "mass_ucreate_form.cgi") || is__mf("virtual-server", "mass_create_form.cgi") || is__mf("server-manager", "edit_pubkey.cgi") || is__mf("server-manager", "edit_key.cgi") || $__relative_url == "/config.cgi?server-manager" || is__mf("useradmin", "batch_form.cgi") || is__mf("useradmin", "gbatch_form.cgi") || $__source_file == "mass_form.cgi" || $("textarea").attr("id") === "notes") {
                 return
             }

@@ -1081,17 +1081,17 @@ sub get_sysinfo_vars {
                 . '&nbsp;&nbsp;&nbsp;<div class="btn-group margined-left-4">'
                 . '<a class="btn btn-xxs btn-success authentic_update" href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_themes.cgi"><i class="fa fa-refresh">&nbsp;</i>'
+                . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
                 . $text{'theme_update'} . '</a>'
-                . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o">&nbsp;</i>'
+                . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                 . $text{'theme_changelog'} . '</a>'
-                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-download">&nbsp;</i>'
+                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>'
                 . $text{'theme_download'} . '</a>'
                 . '<a class="btn btn-xxs btn-primary" href="'
                 . $gconfig{'webprefix'}
                 . '/webmin/edit_themes.cgi" data-href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_themes.cgi" ><i class="fa fa-cogs">&nbsp;</i>'
+                . '/webmin/edit_themes.cgi" ><i class="fa fa-fw fa-cogs">&nbsp;</i>'
                 . $text{'settings_right_options'} . '</a>'
                 . '</div>';
         }

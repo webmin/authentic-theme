@@ -1547,6 +1547,23 @@ aside .form-control:focus:-ms-input-placeholder {
     margin-top: 2px
 }
 
+.csf input[name="ip"]+br+input[name="comment"] {
+    margin-top: 1px
+}
+
+.csf select[name="profile1"],
+.csf select[name="profile2"],
+.csf select[name="backup"] {
+    min-height: 200px !important
+}
+
+.csf input[value="rblchecksave"]+select[name="freq"],
+.csf select[name="freq"]+input[name="email"]+input[type="submit"],
+.csf select[name="do"],
+.csf select[name="dur"] {
+    vertical-align: baseline !important
+}
+
 body.csf .dataTables_filter input[type="search"],
 body .dataTables_filter input[type="search"],
 .csf input[type="text"],
