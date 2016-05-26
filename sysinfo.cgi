@@ -249,7 +249,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
             . $installed_version . '. '
             . $text{'theme_update_available'} . ' '
             . $remote_version
-            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
             . ''
             . $text{'theme_changelog'} . '</a>';
     }
@@ -398,7 +398,7 @@ elsif ( $get_user_level eq '3' ) {
             . $installed_version . '. '
             . $text{'theme_update_available'} . ' '
             . $remote_version
-            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+            . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
             . ''
             . $text{'theme_changelog'} . '</a>';
     }

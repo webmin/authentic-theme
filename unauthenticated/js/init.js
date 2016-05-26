@@ -301,12 +301,16 @@ function ___csf() {
         u = w.contentDocument.createElement("script"),
         k = r.$load____ext;
     u.type = "text/javascript";
-    u.src = "/unauthenticated/js/jquery." + k + ".js?1800";
+    u.src = t__wi_p.$_____link_full + "/unauthenticated/js/jquery." + k + ".js?1800";
     n.appendChild(u);
     var n = w.contentDocument.getElementsByTagName("head")[0],
         u = w.contentDocument.createElement("script");
-    u.src = "/unauthenticated/js/codemirror." + k + ".js?1800";
+    u.type = "text/javascript";
+    u.src = t__wi_p.$_____link_full + "/unauthenticated/js/codemirror." + k + ".js?1800";
     n.appendChild(u);
+    if (!$('script[src*="datatables"]').length) {
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/jquery.datatables." + k + ".js?1800")
+    }
     if (r.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
         w.contentWindow.onbeforeunload = function(a) {
             r.__lrs()
@@ -314,10 +318,10 @@ function ___csf() {
         r.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
         $csf = r.$('iframe[name="page"]').contents();
         $csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-        $csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + "/unauthenticated/css/bootstrap." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + $_____link_full + "/unauthenticated/css/codemirror." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + $_____link_full + "/unauthenticated/css/authentic." + k + '.css?1800" rel="stylesheet" type="text/css">		');
+        $csf.find("head").append('			<link rel="shortcut icon" href="' + t__wi_p.$_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/bootstrap." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/jquery.datatables." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/codemirror." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/authentic." + k + '.css?1800" rel="stylesheet" type="text/css">		');
         $.each(r.$('link[href*="/styles.css"]'), function() {
             if ($(this)) {
-                $csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
+                $csf.find("head").append('<link href="' + t__wi_p.$_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
             }
         });
         $csf.find('body:not(".mobile-menu-toggler")').on("click", function() {
@@ -496,7 +500,7 @@ function ___csf() {
                 $(q).remove()
             }
         }
-        $csf.find('.csf select:not([name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').each(function() {
+        $csf.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').each(function() {
             $(this).addClass("heighter-34")
         });
         $csf.find(".csf #paginatediv2.paginationstyle > select").each(function() {
@@ -509,7 +513,7 @@ function ___csf() {
             $(this).attr("style", "vertical-align: baseline !important")
         });
         $csf.find('img[src="csfimages/loader.gif"]').each(function() {
-            $(this).attr("src", "" + $_____link_full + "/images/loader-horizontal.gif").css("margin-left", "10px")
+            $(this).attr("src", "" + t__wi_p.$_____link_full + "/images/loader-horizontal.gif").css("margin-left", "10px")
         });
         $csf.find(".paginationstyle a").each(function() {
             $(this).addClass("btn btn-default")
@@ -722,7 +726,8 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
             return
         }
         __lre();
-        s("/unauthenticated/js/authentic.min.js?1800")
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + load____ext + ".js?1800");
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + load____ext + ".js?1800")
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
         t__wi_p.NProgress.done()
