@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -19,35 +19,6 @@ sub authentic {
     header($title);
     content();
     footer();
-}
-
-
-sub notify {
-    our ($type) = @_;
-    if ($__settings{$type}
-        && (( $__settings{'settings_security_notify_for_webmin'} ne 'false' && &get_product_name() eq 'webmin' )
-            || (   $__settings{'settings_security_notify_for_usermin'} ne 'false'
-                && &get_product_name() eq 'usermin' )
-        )
-        )
-    {
-        my %messages = (
-            "%1" => $remote_user,
-            "%2" => get_env('remote_addr'),
-            "%3" => ucfirst( &get_product_name() )
-        );
-        my %subjects = ( "%3" => ucfirst( &get_product_name() ) );
-        my @mail = split( /\|/, $__settings{$type} );
-        ( my $message = $mail[0] ) =~ s/(@{[join "|", keys %messages]})/$messages{$1}/g;
-        ( my $subject = $mail[1] ) =~ s/(@{[join "|", keys %subjects]})/$subjects{$1}/g;
-        if (  !length $mail[3]
-            || length $mail[3] && index( $mail[3], get_env('remote_addr') ) == -1 )
-        {
-            $subject .= ' (' . get_system_hostname() . ')';
-            $message .= "\n\n" . get_html_framed_title() . "\n" . get_env('http_user_agent');
-            system(`echo "$message" | mail -s "$subject" "$mail[2]"`);
-        }
-    }
 }
 
 sub licenses {
@@ -140,7 +111,7 @@ sub print_category {
         our $icon = 'fa-plus';
     }
     elsif ( $c eq 'backup' || $c eq 'global_backup' || $c eq 'global_backup' ) {
-        our $icon = 'fa-save';
+        our $icon = 'fa-floppy-o';
     }
     elsif ($c eq 'global_server'
         || $c eq 'cat_server'
@@ -483,7 +454,7 @@ sub print_extended_sysinfo {
                       <div class="panel-body">';
 
                     print
-                        '<div class="table-responsive" style="width:99.8%"><table class="table table-striped"><tbody>';
+                        '<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-hover"><tbody>';
 
                     if ($info->{'type'} eq 'table'
                         && (   $info->{'module'} ne 'system-status'
@@ -994,9 +965,9 @@ sub get_sysinfo_vars {
         #Webmin version
         $webmin_version
             = &get_webmin_version()
-            . ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+            . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden" title="'
             . $text{'theme_sysinfo_wmdocs'}
-            . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>';
+            . '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
 
         # Virtualmin version
         if ($has_virtualmin) {
@@ -1021,17 +992,17 @@ sub get_sysinfo_vars {
                     ? ''
                     : 'Pro'
 
-                        . ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden" title="'
                         . $text{'theme_sysinfo_vmdocs'}
-                        . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>'
+                        . '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
                         . (
                         ( $vs_license eq '1' )
-                        ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        ? ' <a class="btn btn-default btn-xxs btn-hidden hidden" title="'
                             . $text{'right_vlcheck'}
-                            . '" style="margin-left:1px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="'
+                            . '" href="'
                             . $gconfig{'webprefix'}
-                            . '/virtual-server/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
-                        : ''
+                            . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
+                        : '</div>'
                         )
 
                 )
@@ -1061,17 +1032,17 @@ sub get_sysinfo_vars {
                     ? ''
                     : 'Pro'
 
-                        . ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden" title="'
                         . $text{'theme_sysinfo_cmdocs'}
-                        . '" style="margin-left:1px;margin-right:-3px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book" style="padding-top:1px"></i></a>'
+                        . '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
                         . (
                         ( $vm2_license eq '1' )
-                        ? ' <a class="btn btn-default btn-xs btn-hidden hidden" title="'
+                        ? ' <a class="btn btn-default btn-xxs btn-hidden hidden" title="'
                             . $text{'right_slcheck'}
-                            . '" style="margin-left:1px;padding:0 12px; line-height: 12px; height:15px;font-size:11px" href="'
+                            . '" href="'
                             . $gconfig{'webprefix'}
-                            . '/server-manager/licence.cgi"><i class="fa fa-refresh" style="padding-top:1px"></i></a>'
-                        : ''
+                            . '/server-manager/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
+                        : '</div>'
                         )
 
                 )
@@ -1091,14 +1062,14 @@ sub get_sysinfo_vars {
                 = '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
                 . $text{'theme_name'} . '</a> '
                 . $installed_version
-                . '<a href="'
+                . '<div class="btn-group margined-left-4"><a href="'
                 . $gconfig{'webprefix'}
                 . '/webmin/edit_themes.cgi" data-href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_themes.cgi" class="btn btn-default btn-xs btn-hidden hidden" title="'
+                . '/webmin/edit_themes.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
                 . $text{'settings_right_theme_configurable_options_title'}
-                . '" style="margin-left: 6px; margin-right: -8px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-cogs" style="padding-top:1px"></i></a> '
-                . '<button data-href="#theme-info" class="btn btn-default btn-xs btn-hidden hidden" style="margin-left: 6px; padding: 0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-info-circle" style="padding-top:1px"></i></button> ';
+                . '"><i class="fa fa-cogs"></i></a> '
+                . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
         }
         else {
             $authentic_theme_version
@@ -1107,20 +1078,20 @@ sub get_sysinfo_vars {
                 . $installed_version . '. '
                 . $text{'theme_update_available'} . ' '
                 . $remote_version
-                . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
-                . '<a class="btn btn-xs btn-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="'
+                . '&nbsp;&nbsp;&nbsp;<div class="btn-group margined-left-4">'
+                . '<a class="btn btn-xxs btn-success authentic_update" href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_themes.cgi"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
+                . '/webmin/edit_themes.cgi"><i class="fa fa-refresh">&nbsp;</i>'
                 . $text{'theme_update'} . '</a>'
-                . '<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+                . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-pencil-square-o">&nbsp;</i>'
                 . $text{'theme_changelog'} . '</a>'
-                . '<a class="btn btn-xs btn-warning" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
+                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-download">&nbsp;</i>'
                 . $text{'theme_download'} . '</a>'
-                . '<a class="btn btn-xs btn-primary" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px; padding: 1px 6px !important; border: 0" href="'
+                . '<a class="btn btn-xxs btn-primary" href="'
                 . $gconfig{'webprefix'}
                 . '/webmin/edit_themes.cgi" data-href="'
                 . $gconfig{'webprefix'}
-                . '/webmin/edit_themes.cgi" ><i class="fa fa-cogs" style="padding-top:1px">&nbsp;</i>'
+                . '/webmin/edit_themes.cgi" ><i class="fa fa-cogs">&nbsp;</i>'
                 . $text{'settings_right_options'} . '</a>'
                 . '</div>';
         }
@@ -1280,7 +1251,7 @@ sub get_sysinfo_vars {
                 . (
                   `pgrep lfd`
                 ? ''
-                : ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="csf-submit" href="#" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
+                : ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" href="#" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
                 );
             $csf_data = (
                       '<a href="/csf">ConfigServer Security & Firewall</a> '
@@ -1310,17 +1281,17 @@ sub get_sysinfo_vars {
                     . (
                     $csf_update_required eq '1'
                     ? '<div class="btn-group">
-                <a class="btn btn-xs btn-success csf csf-submit" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_upgrade"><i class="fa fa-refresh" style="padding-top:1px">&nbsp;</i>'
+                <a class="btn btn-xxs btn-success csf csf-submit" href="#" data-id="csf_upgrade"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
                         . $text{'theme_update'} . '</a>
-                <a class="btn btn-xs btn-info csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+                <a class="btn btn-xxs btn-info csf" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                         . $text{'theme_changelog'} . '</a>
-                <a class="btn btn-xs btn-warning csf" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-download" style="padding-top:1px">&nbsp;</i>'
+                <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
                         . $text{'theme_download'} . '</a>
             </div>'
                     : '<div class="btn-group">
-               <a class="btn btn-default btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Search system logs" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_search_system_log"><i class="fa fa-filter" style="padding-top:1px"></i></a>
-               <a class="btn btn-default btn-xs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Temporary IP entries" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_temporary_ip_entries"><i class="fa fa-ban" style="padding-top:1px"></i></a>
-               <a class="btn btn-default btn-xs btn-hidden hidden csf csf-submit" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="#" data-id="csf_denyf"><i class="fa fa-trash-o" style="padding-top:1px"></i> Flush all blocks</a>
+               <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Search system logs" href="#" data-id="csf_search_system_log"><i class="fa fa-fw fa-filter"></i></a>
+               <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="top" data-container="body" data-title="Temporary IP entries" href="#" data-id="csf_temporary_ip_entries"><i class="fa fa-fw fa-ban"></i></a>
+               <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" href="#" data-id="csf_denyf"><i class="fa fa-fw fa-trash-o"></i> Flush all blocks</a>
               </div>'
                     )
                     . ''
@@ -1360,7 +1331,7 @@ sub get_sysinfo_vars {
                     . $msg
                     . '</a> <a href="/?updated" target="_top" data-href="'
                     . $gconfig{'webprefix'}
-                    . '/package-updates/index.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xs btn-hidden hidden" style="margin-left:4px;color: white;padding:0 12px; line-height: 12px; height:15px; font-size:11px"><i class="fa fa-refresh" style="padding-top:1px"></i></a>';
+                    . '/package-updates/index.cgi" data-refresh="system-status package-updates" class="btn btn-primary btn-xxs btn-hidden hidden"><i class="fa fa-refresh"></i></a>';
             }
         }
 
@@ -1620,16 +1591,23 @@ sub embed_login_head {
         : '-webmin'
         ) . '.ico">' . "\n";
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/package.min.css?1784" rel="stylesheet" type="text/css">' . "\n";
+        . '/unauthenticated/css/bootstrap.min.css?1800" rel="stylesheet" type="text/css">' . "\n";
+
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/authentic.min.css?1800" rel="stylesheet" type="text/css">' . "\n";
+
+
+
     embed_styles();
+
+
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/package.min.js?1784" type="text/javascript"></script>' . "\n";
-    print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1784" type="text/javascript"></script>' . "\n";
+        . '/unauthenticated/js/jquery.min.js?1800" type="text/javascript"></script>' . "\n";
     print '</head>', "\n";
 }
 
@@ -1777,7 +1755,7 @@ sub _settings {
             'settings_contrast_level_navigation',
             '1',
             'settings_background_color',
-            'lightGrey',
+            'gainsboro',
             'settings_grayscale_level_content',
             '0',
             'settings_saturate_level_content',
@@ -1795,8 +1773,6 @@ sub _settings {
             'settings_right_reload',
             'true',
             'settings_window_autoscroll',
-            'true',
-            'settings_window_customized_checkboxes_and_radios',
             'true', '__',
             _settings( 'fa', 'sub-title', '' . "~" . &text('settings_window_replaced_timestamps_options_description') ),
             'settings_window_replace_timestamps',
@@ -1931,22 +1907,7 @@ sub _settings {
             'settings_sysinfo_drive_status_on_new_line',
             'true',
             'settings_sysinfo_expand_all_accordions',
-            'false',
-
-            '__',
-            _settings(
-                'fa', 'bell-o', &text('settings_security_title') . "~" . &text('settings_security_description')
-            ),
-            'settings_security_notify_for_webmin',
-            'true',
-            'settings_security_notify_for_usermin',
-            'true',
-            'settings_security_notify_on_login_success',
-            '%3 successful login alert for user %1 from %2|%3 successful login alert|root',
-            'settings_security_notify_on_login_request',
-            '%3 login page is accessed by unauthenticated user from %2|%3 login page access alert|root',
-            'settings_security_notify_on_pre_login_request',
-            '%3 pre-login page is accessed by unauthenticated user from %2|%3 pre-login page access alert|root'
+            'false'
         );
 
         return (@settings);
@@ -2079,8 +2040,8 @@ sub _settings {
 
             . '">
                 <div class="table-responsive">
-                    <table class="table table-striped table-rounded table-condensed table-subtable">
-                        <thead><tr><th class="table-title" style="width: auto"><i class="fa fa-cogs">&nbsp;&nbsp;</i><b>'
+                    <table class="table table-striped table-condensed table-subtable">
+                        <thead><tr><th class="table-title" style="width: auto"><i class="fa fa-cogs vertical-align-text-bottom"></i>&nbsp;<b>'
             . $text{'settings_right_theme_configurable_options_title'} . '</b></th></tr></thead>
                         <tbody>
                             <tr>
@@ -2117,15 +2078,16 @@ sub _settings {
         my $v = ( length $__settings{$k} ? $__settings{$k} : $v );
 
         if ( $v eq 'true' || $v eq 'false' ) {
-            $v = '
-                <input class="ui_radio" type="radio" name="'
+            $v = '<span class="awradio awobject">
+                    <input class="iawobject" type="radio" name="'
                 . $k . '" id="' . $k . '_1" value="true"' . ( $v eq 'true' && ' checked' ) . '>
-                <label class="radio" for="'
-                . $k . '_1" style="margin-right:10px !important;">' . $text{'yes'} . '</label>
-                <input class="ui_radio" type="radio" name="'
+                    <label class="lawobject" for="'
+                . $k . '_1">' . $text{'yes'} . '</label>
+                    <input class="iawobject" type="radio" name="'
                 . $k . '" id="' . $k . '_0" value="false"' . ( $v eq 'false' && ' checked' ) . '>
-                <label class="radio" for="'
+                    <label class="lawobject" for="'
                 . $k . '_0">' . $text{'no'} . '</label>
+                </span>
             ';
 
         }
@@ -2416,11 +2378,11 @@ sub _settings {
         elsif ( $k eq 'settings_background_color' ) {
             $v = '<select class="ui_select" name="' . $k . '">
 
-                    <option value="lightGrey"'
-                . ( $v eq 'lightGrey' && ' selected' ) . '>White Smoke (Default)</option>
-
                     <option value="gainsboro"'
-                . ( $v eq 'gainsboro' && ' selected' ) . '>Gainsboro</option>
+                . ( $v eq 'gainsboro' && ' selected' ) . '>Gainsboro (Default)</option>
+
+                    <option value="lightGrey"'
+                . ( $v eq 'lightGrey' && ' selected' ) . '>White Smoke</option>
 
                     <option value="ghostWhite"'
                 . ( $v eq 'ghostWhite' && ' selected' ) . '>Ghost White</option>
@@ -2499,9 +2461,9 @@ sub _settings {
                             </td>
                             <td style="text-align: right;">
                                 <div class="btn-group">
-                                    <a class="btn btn-default" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
+                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
             . $text{'settings_right_theme_extensions'} . '</a>
-                                    <a class="btn btn-default" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
+                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
             . $text{'settings_right_theme_logos'} . '</a>
                                 </div>
                             </td>
@@ -2623,7 +2585,7 @@ sub get_xhr_request {
     }
     elsif ( $in{'xhr-get_command_exists'} eq '1' ) {
         head();
-        print has_command($in{'xhr-get_command_exists_name'});
+        print has_command( $in{'xhr-get_command_exists_name'} );
     }
     elsif ( $in{'xhr-get_symlink'} eq '1' ) {
         head();
@@ -2974,8 +2936,6 @@ sub init {
     if ( $cookies{'redirect'} eq '1' ) {
         print "Set-Cookie: redirect=0; path=/\r\n";
 
-        # Notify on successful authentication
-        notify('settings_security_notify_on_login_success');
     }
 
     # Clearing possibly stuck update states
@@ -3171,7 +3131,6 @@ sub get_available_modules {
     }
     if ( $json eq 'json' ) {
 
-        #use JSON;
         if (@mods) {
             return JSON->new->latin1->encode( \@mods );
         }
@@ -3187,7 +3146,6 @@ sub get_available_modules {
 
 sub get_theme_language {
 
-    #use JSON;
     my %text = &load_language($current_theme);
 
     my %s;
@@ -3226,21 +3184,11 @@ sub get_module_config_data {
 
 }
 
-# sub print_hash {
-#     print "Content-type: text/html\n\n";
-#     my (%d) = @_;
+sub replace {
+    my ( $from, $to, $string ) = @_;
+    $string =~ s/$from/$to/ig;
 
-#     use Data::Dumper;
-#     print Dumper( \%d );
-# }
-
-# sub print_array {
-#     print "Content-type: text/html\n\n";
-#     my ($____v) = @_;
-#     use Data::Dumper;
-#     print '<pre style="color: red">';
-#     print Dumper $____v;
-#     print '</pre>';
-# }
+    return $string;
+}
 
 1;

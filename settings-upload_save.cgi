@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -22,7 +22,7 @@ if ( usermin_available() ) {
 
 }
 
-if ( $in{'authenticated_logo'} eq "true"
+if ( $in{'authenticated_logo'} eq "1"
     && length $in{'authenticated_logo_file'} )
 {
     unlink_file( $config_directory . $lr );
@@ -35,7 +35,7 @@ if ( $in{'authenticated_logo'} eq "true"
         write_file_contents( $_usermin_root_directory . $lrd, $in{'authenticated_logo_file'} );
     }
 }
-elsif ( $in{'authenticated_logo'} ne "true" ) {
+elsif ( $in{'authenticated_logo'} ne "1" ) {
     unlink_file( $config_directory . $lr );
     unlink_file( $root_directory . $lrd );
     if ( usermin_available() ) {
@@ -44,7 +44,7 @@ elsif ( $in{'authenticated_logo'} ne "true" ) {
     }
 }
 
-if ( $in{'unauthenticated_logo'} eq "true"
+if ( $in{'unauthenticated_logo'} eq "1"
     && length $in{'unauthenticated_logo_file'} )
 {
     unlink_file( $config_directory . $lw );
@@ -57,7 +57,7 @@ if ( $in{'unauthenticated_logo'} eq "true"
         write_file_contents( $_usermin_root_directory . $lwd, $in{'unauthenticated_logo_file'} );
     }
 }
-elsif ( $in{'unauthenticated_logo'} ne "true" ) {
+elsif ( $in{'unauthenticated_logo'} ne "1" ) {
     unlink_file( $config_directory . $lw );
     unlink_file( $root_directory . $lwd );
     if ( usermin_available() ) {
@@ -70,4 +70,4 @@ copy_source_dest( $config_directory . $lr, $root_directory . "/authentic-theme/i
 
 copy_source_dest( $config_directory . $lw, $root_directory . "/authentic-theme/images" );
 
-&redirect('settings-upload.cgi?saved=1');
+&redirect( $gconfig{'webprefix'} . '/settings-upload.cgi?saved=1' );

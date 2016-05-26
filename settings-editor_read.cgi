@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -18,8 +18,8 @@ $in{'file'} = $files[0] if ( !$in{'file'} );
 &ui_print_header( $in{'file'}, $text{'settings_right_theme_extensions_title'}, undef );
 print '' . &text('settings_right_extensions_title') . '
             <p></p>';
-print "<form>\n";
-print '<div class="pull-right" style="margin-top: 3px;"><span class="badge label-default">'
+print "<form class=\"margined-bottom-3\">\n";
+print '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><span class="badge label-default">'
     . (
       index( $in{'file'}, '.css' ) > -1 ? $text{'theme_fileformat_css'}
     : index( $in{'file'}, '.json' ) > -1 ? $text{'theme_fileformat_json'}
@@ -49,5 +49,5 @@ print &ui_textarea(
     "style='width: 100%'"
 );
 print &ui_form_end( [ [ "save", $text{'save'} ] ] );
-&ui_print_footer( "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
+&ui_print_footer( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
 

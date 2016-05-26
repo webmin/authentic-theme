@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -18,4 +18,4 @@ if ( usermin_available() ) {
     unlink_file($_file);
     write_file_contents( $_file, $in{'data'} );
 }
-&redirect("/webmin/edit_themes.cgi");
+&redirect($gconfig{'webprefix'} . "/webmin/edit_themes.cgi?path=lost+found");

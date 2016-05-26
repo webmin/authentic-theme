@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -40,12 +40,12 @@ if ( &foreign_available("acl") ) {
         . $gconfig{'webprefix'}
         . '/acl/edit_user.cgi?user='
         . $user
-        . '"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
-        . $user . '</a>';
+        . '"><i class="fa fa-fw fa-user"></i>&nbsp;<span>'
+        . $user . '</span></a>';
 }
 else {
-    print '<a class="menu-exclude-link" style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;&nbsp;'
-        . $user . '</a>';
+    print '<a class="menu-exclude-link" style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;<span>'
+        . $user . '</span></a>';
 }
 print '</li>';
 

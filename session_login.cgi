@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -23,8 +23,6 @@ if (   $gconfig{'loginbanner'}
     && !$in{'failed'}
     && !$in{'timed_out'} )
 {
-    # Notify when unauthenticated user is seeing pre-login banner
-    notify('settings_security_notify_on_pre_login_request');
 
     print "Auth-type: auth-required=1\r\n";
     print "Set-Cookie: banner=1; path=/\r\n";
@@ -47,11 +45,6 @@ if (   $gconfig{'loginbanner'}
     close(BANNER);
     &footer();
     return;
-}
-else {
-    # Notify when unauthenticated user is landed on login page
-    notify('settings_security_notify_on_login_request');
-
 }
 
 $sec = lc( get_env('https') ) eq 'on' ? "; secure" : "";
@@ -101,7 +94,7 @@ elsif ( $in{'timed_out'} ) {
 print "$text{'session_prefix'}\n";
 print '<form method="post" target="_top" action="'
     . $gconfig{'webprefix'}
-    . '/session_login.cgi" class="form-signin session_login clearfix" role="form">' . "\n";
+    . '/session_login.cgi" class="form-signin session_login clearfix" role="form" onsubmit="spinner()">' . "\n";
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
      <span>'
@@ -147,30 +140,32 @@ if ( $miniserv{'twofactor_provider'} ) {
     print '</div>' . "\n";
 }
 if ( !$gconfig{'noremember'} ) {
-    print
-        '<div class="input-group form-group"><input type="checkbox" value="1" name="save" id="remember-me" class="remember-me session_login">'
-        . "\n";
-    print '<label class="checkbox remember-me" for="remember-me">' . "\n";
-    print '<i class="fa"></i> <span>' . $text{'login_save'} . '</span></label></div>' . "\n";
+    print '<div class="input-group form-group">
+            <span class="awcheckbox awobject"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save">'
+        . $text{'login_save'}
+        . '</label></span>
+         </div>' . "\n";
 }
 print '<div class="form-group">';
+print
+    '<button class="btn btn-primary pull-left" type="submit" style="margin-top: 0 !important; width: 50%"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;'
+    . &text('login_signin')
+    . '</button>' . "\n";
 if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
     && index( $miniserv{'anonymous'}, 'virtualmin-password-recovery' ) > -1 )
 {
     print
-        '<button onclick=\'window.open("/virtualmin-password-recovery", "password_recovery", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");\' class="btn btn-warning pull-left" type="reset"><i class="fa fa-undo"></i>&nbsp;&nbsp;'
+        '<button onclick=\'window.open("/virtualmin-password-recovery", "password_recovery", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");\' class="btn btn-warning pull-right" style="width: 50%" type="reset"><i class="fa fa-undo"></i>&nbsp;&nbsp;'
         . &text('login_reset')
         . '</button>' . "\n";
 }
 else {
-    print '<button class="btn btn-danger pull-left" type="reset"><i class="fa fa-eraser"></i>&nbsp;&nbsp;'
+    print
+        '<button class="btn btn-danger pull-right" type="reset" style="width: 50%"><i class="fa fa-backup fa-1_25x"></i>&nbsp;&nbsp;'
         . &text('login_reset')
         . '</button>' . "\n";
 }
-print
-    '<button class="btn btn-primary pull-right" type="submit" style="margin-top: 0 !important"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;'
-    . &text('login_signin')
-    . '</button>' . "\n";
+print '<script>function spinner(){var x=$(".fa-sign-in"),s =\'<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 2px; margin-left: -22px;"><span class="cspinner-icon white small"></span></span></span>\';x.addClass("invisible").after(s);x.parent(".btn").addClass("disabled")}</script>';
 print '</div>';
 print '</form>' . "\n";
 

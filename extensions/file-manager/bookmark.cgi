@@ -1,13 +1,15 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Alexandr Bezenkov (https://github.com/Real-Gecko/filemin)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
+use lib ( dirname(__FILE__) . '/../../lib' );
+
 require( dirname(__FILE__) . '/file-manager-lib.pm' );
 
 switch_to_remote_user();
@@ -26,7 +28,7 @@ if ( !length $path ) {
     $path = '/';
 }
 if ( grep { $_ eq $path } @$bookmarks ) {
-    @$bookmarks = grep !/\A$path\z/, @$bookmarks;
+    @$bookmarks = grep !/\A\Q$path\E\z/, @$bookmarks;
 }
 else {
     push @$bookmarks, $path;
