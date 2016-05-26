@@ -1,5 +1,5 @@
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -7,8 +7,10 @@
 do "authentic-theme/authentic-init.pm";
 
 sub theme_header {
-    embed_header(($_[0], $_[7], 'production'));
-    print '<body data-usermin="'
+    embed_header( ( $_[0], $_[7], isd(), ( @_ > 1 ? '1' : '0' ) ) );
+    print '<body data-debug="'
+        . isd()
+        . '" data-usermin="'
         . usermin_available()
         . '" data-shell="'
         . &foreign_available("shell")
@@ -37,12 +39,15 @@ sub theme_header {
                     || $__settings{'settings_window_exclusion_list'} eq "*"
             ) ? ' __e__' : undef
             )
+            . '" data-uri="'
+            . get_env('request_uri')
             . '" data-module="'
-            . &get_module_name() . '"'
+            . &get_module_name()
+            . '" data-ovo="1"'
         : undef
         ) . '>' . "\n";
 
-    if ( @_ > 1 ) {
+    if ( @_ > 1 && $_[1] ne 'stripped' ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">' . "\n";
         my %this_module_info = &get_module_info( &get_module_name() );
         print '<div class="panel panel-default">' . "\n";
@@ -53,7 +58,7 @@ sub theme_header {
             print &get_html_status_line(1);
             print "</td></tr> <tr>\n";
         }
-        print '<td id="headln2l" width="15%" align="left"'
+        print '<td id="headln2l" width="25%" align="left"'
             . ( $__settings{'settings_right_iconize_header_links'} ne 'false' && ' class="invisible"' ) . '>';
         if ( get_env('http_webmin_servers') && !$tconfig{'framed'} ) {
             print "<a href='get_env('http_webmin_servers')'>", "$text{'header_servers'}</a><br>\n";
@@ -113,19 +118,19 @@ sub theme_header {
         }
         print "</td>\n";
         if ( $_[1] ) {
-            print "<td id='headln2c' align=center width=70%>", "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
+            print "<td id='headln2c' align=center width=50%>", "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
         }
         else {
             my $ts
                 = defined( $tconfig{'titlesize'} )
                 ? $tconfig{'titlesize'}
                 : "+2";
-            print "<td id='headln2c' align=center width=70%>", ( $ts ? "<font size=$ts>" : "" ), $_[0],
+            print "<td id='headln2c' align=center width=50%>", ( $ts ? "<font size=$ts>" : "" ), $_[0],
                 ( $ts ? "</font>" : "" );
             print "<br>$_[9]\n" if ( $_[9] );
             print "</td>\n";
         }
-        print "<td id='headln2r' width=15% align=right>";
+        print "<td id='headln2r' width=25% align=right>";
         print $_[6];
         print "</td></tr></table>\n";
         print $tconfig{'postheader'};
@@ -149,20 +154,21 @@ sub theme_popup_prehead {
         print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1784" rel="stylesheet" type="text/css">' . "\n";
+            . '/unauthenticated/css/package.min.css?1800" rel="stylesheet" type="text/css">' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1784" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/package.min.js?1800" type="text/javascript"></script>' . "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1784" type="text/javascript"></script>', "\n";
+            . '/unauthenticated/js/cgi.min.js?1800" type="text/javascript"></script>', "\n";
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1784" type="text/javascript"></script>', "\n";
+            . '/unauthenticated/js/filtermatch.min.js?1800" type="text/javascript"></script>', "\n";
     }
 }
 
 sub theme_footer {
+
     for ( my $i = 0; $i + 1 < @_; $i += 2 ) {
         my $url = $_[$i];
         if ( $url ne '/' || !$tconfig{'noindex'} ) {
@@ -177,14 +183,23 @@ sub theme_footer {
             }
             $url = "$gconfig{'webprefix'}$url" if ( $url =~ /^\// );
             print
-                "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary' href=\"$url\"><i class='fa fa-arrow-left'>&nbsp;</i> ",
+                "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
                 &text( 'main_return', $_[ $i + 1 ] ), "</a>\n";
         }
     }
 
     print "</div>\n";
-
-    embed_footer('production');
+    embed_footer(
+        ( isd() ),
+        (   (          get_module_name()
+                    || index( get_env('request_uri'), '/config.cgi?' ) gt "-1"
+                    || index( get_env('request_uri'), '/webmin_search.cgi?' ) gt "-1"
+                    || index( get_env('request_uri'), '/settings-editor_read.cgi' ) gt "-1"
+                    || index( get_env('request_uri'), '/settings-upload.cgi' ) gt "-1"
+            ) ? '1' : '0'
+        ),
+        $_[0]
+    );
     embed_scripts();
     print '</body>', "\n";
     print '</html>', "\n";
@@ -199,7 +214,7 @@ sub theme_file_chooser_button {
         ( $w, $h ) = split( /x/, $gconfig{'db_sizefile'} );
     }
     return
-        "<button class='btn btn-default file_chooser_button' style='width: 40px; height: 28px; vertical-align:middle !important;' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'><i class=\"fa fa-fw fa-files-o\" style=\"font-size:11px; pointer-events: none\"></i></button>\n";
+        "<button class='btn btn-default file_chooser_button' style='width: 40px; height: 28px; vertical-align:middle !important;' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'><i class=\"fa fa-fw fa-files-o vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i></button>\n";
 }
 
 sub theme_user_chooser_button {
@@ -213,7 +228,7 @@ sub theme_user_chooser_button {
         ( $w, $h ) = split( /x/, $gconfig{'db_sizeuser'} );
     }
     return
-        "<input type=button style=\"width:40px;\"  onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached\" style=\"font-size:11px; pointer-events: none\"></i>\n";
+        "<input type=button style=\"width:40px;\"  onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>\n";
 }
 
 sub theme_group_chooser_button {
@@ -227,7 +242,7 @@ sub theme_group_chooser_button {
         ( $w, $h ) = split( /x/, $gconfig{'db_sizeuser'} );
     }
     return
-        "<input type=button style=\"width:40px;\" onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached\" style=\"font-size:11px; pointer-events: none\"></i>\n";
+        "<input type=button style=\"width:40px;\" onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>\n";
 }
 
 sub theme_date_chooser_button {
@@ -236,7 +251,7 @@ sub theme_date_chooser_button {
         ( $w, $h ) = split( /x/, $gconfig{'db_sizedate'} );
     }
     return
-        "<input type=button style=\"width:40px;\" onClick='datePicker(window.dfield = form.$_[0], window.mfield = form.$_[1], window.yfield = form.$_[2], this)' value=\"   \"><i class=\"fa fa-fw fa-calendar file_chooser_button_attached\" style=\"font-size:11px; margin-top: 9px; margin-left: -27px; pointer-events: none\"></i>\n";
+        "<input type=button style=\"width:40px;\" onClick='datePicker(window.dfield = form.$_[0], window.mfield = form.$_[1], window.yfield = form.$_[2], this)' value=\"   \"><i class=\"fa fa-fw fa-calendar file_chooser_button_attached\" style=\"font-size:11px; margin-top: 10px; margin-left: -27px; pointer-events: none\"></i>\n";
 }
 
 sub theme_popup_window_button {
@@ -261,7 +276,7 @@ sub theme_popup_window_button {
         $rv .= "window.$m->[0] = $m->[0]; ";
     }
     $rv
-        .= "' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached\" style=\"font-size:11px; pointer-events: none\"></i>";
+        .= "' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>";
     return $rv;
 }
 
@@ -467,6 +482,44 @@ sub theme_ui_columns_end {
     return $rv;
 }
 
+sub theme_ui_link {
+
+    my ( $href, $text, $class, $tags ) = @_;
+    return (  "<a class='ui_link"
+            . ( $class ? " " . $class : "" )
+            . "' href='$href'"
+            . ( $tags ? " " . $tags : "" )
+            . ">$text</a>" );
+}
+
+sub theme_select_all_link {
+
+    my ( $field, $form, $text ) = @_;
+    $form = int($form);
+    $text ||= $text{'ui_selall'};
+    return
+        "<a class='select_all' href='#' onClick='var ff = document.forms[$form].$field; ff.checked = true; for(i=0; i<ff.length; i++) { if (!ff[i].disabled) { ff[i].checked = true; } } return false'>$text</a>";
+}
+
+sub theme_select_invert_link {
+
+    my ( $field, $form, $text ) = @_;
+    $form = int($form);
+    $text ||= $text{'ui_selinv'};
+    return
+        "<a class='select_invert margined-right-5' href='#' onClick='var ff = document.forms[$form].$field; ff.checked = !ff.checked; for(i=0; i<ff.length; i++) { if (!ff[i].disabled) { ff[i].checked = !ff[i].checked; } } return false'>$text</a>";
+}
+
+sub theme_select_rows_link {
+    my ( $field, $form, $text, $rows ) = @_;
+    $form = int($form);
+    my $js = "var sel = { " . join( ",", map { "\"" . &quote_escape($_) . "\":1" } @$rows ) . " }; ";
+    $js
+        .= "for(var i=0; i<document.forms[$form].${field}.length; i++) { var r = document.forms[$form].${field}[i]; r.checked = sel[r.value]; } ";
+    $js .= "return false;";
+    return "<a href='#' onClick='$js'>$text</a>";
+}
+
 sub theme_ui_form_start {
     my ( $script, $method, $target, $tags ) = @_;
     my $rv;
@@ -492,27 +545,19 @@ sub theme_ui_form_end {
     if ( $buttons && @$buttons ) {
         $rv .= "<table class='ui_form_end_buttons' " . ( $width ? " width=$width" : "" ) . "><tr><td>\n";
         my $b;
+        $rv .= '<div class="btn-group end_submits">';
         foreach $b (@$buttons) {
             if ( ref($b) ) {
-                $rv .= "<span"
-                    . (
-                     !$width                            ? ""
-                    : $b eq $buttons->[0]               ? " align=left"
-                    : $b eq $buttons->[ @$buttons - 1 ] ? " align=right"
-                    :                                     " align=center"
-                    )
-                    . ">"
-                    . &ui_submit( $b->[1], $b->[0], $b->[3], $b->[4] )
-                    . ( $b->[2] ? " " . $b->[2] : "" )
-                    . "</span>\n";
+                $rv .= &ui_submit( $b->[1], $b->[0], $b->[3], $b->[4] ) . ( $b->[2] ? " " . $b->[2] : "" );
             }
             elsif ($b) {
                 $rv .= "<span>$b</span>\n";
             }
             else {
-                $rv .= "<span>&nbsp;&nbsp;</span>\n";
+                $rv .= "<span>&nbsp;</span>\n";
             }
         }
+        $rv .= '</div>';
         $rv .= "</td></tr></table>\n";
     }
     $rv .= "</form>\n";
@@ -576,7 +621,7 @@ sub theme_ui_radio {
             $label = $1;
             $after = $2;
         }
-        $rv .= '<input class="ui_radio" type="radio" ';
+        $rv .= '<span class="awradio awobject"><input class="iawobject" type="radio" ';
         $rv .= 'name="' . &quote_escape($name) . '" ';
         $rv .= 'value="' . &quote_escape( $o->[0] ) . '" ';
         $rv .= ( $o->[0] eq $value ? 'checked ' : '' );
@@ -584,26 +629,39 @@ sub theme_ui_radio {
         $rv .= 'id="' . $id . '" ';
         $rv .= $o->[2] . ' ';
         $rv .= '>' . "\n";
-        $rv .= '<label class="radio" ';
+        $rv .= '<label class="lawobject" ';
         $rv .= 'for="' . $id . '">' . "\n";
-        $rv .= '' . $label . "\n";
-        $rv .= '</label>' . $after . "\n";
+        $rv .= '' . ( length trim($label) ? trim($label) : '&nbsp;' ) . "\n";
+        $rv .= '</label></span>' . $after . "\n";
     }
 
     return $rv;
 }
 
-sub theme_ui_yesno_radio {
-    my ( $name, $value, $yes, $no, $dis ) = @_;
-    my $rv;
-
-    $yes = 1 if ( !defined($yes) );
-    $no  = 0 if ( !defined($no) );
-    $value = int($value);
-
-    $rv .= &ui_radio( $name, $value, [ [ $yes, $text{'yes'} ], [ $no, $text{'no'} ] ], $dis );
-
-    return $rv;
+sub theme_ui_oneradio {
+    my ( $name, $value, $label, $sel, $tags, $dis ) = @_;
+    my $id = &quote_escape("${name}_${value}");
+    my $after;
+    if ( $label =~ /^([^<]*)(<[\000-\377]*)$/ ) {
+        $label = $1;
+        $after = $2;
+    }
+    my $ret
+        = "<span class=\"awradio awobject\"><input class=\"iawobject\" type=\"radio\" name=\""
+        . &quote_escape($name) . "\" "
+        . "value=\""
+        . &quote_escape($value) . "\" "
+        . ( $sel ? " checked"       : "" )
+        . ( $dis ? " disabled=true" : "" )
+        . " id=\"$id\""
+        . ( $tags ? " " . $tags : "" ) . ">";
+    $ret
+        .= ' <label class="lawobject" for="'
+        . $id . '">'
+        . ( length trim($label) ? trim($label) : '&nbsp;' )
+        . '</label></span>';
+    $ret .= "$after\n";
+    return $ret;
 }
 
 sub theme_ui_checkbox {
@@ -614,7 +672,7 @@ sub theme_ui_checkbox {
         $after = $2;
     }
     return
-          "<input type='checkbox' "
+          "<span class=\"awcheckbox awobject\"><input class=\"iawobject\" type=\"checkbox\" "
         . "name=\""
         . &quote_escape($name) . "\" "
         . "value=\""
@@ -624,11 +682,11 @@ sub theme_ui_checkbox {
         . " id=\""
         . &quote_escape("${name}_${value}") . "\""
         . ( $tags ? " " . $tags : "" ) . "> "
-        . (
-         !$label
-        ? $after
-        : "<label class='checkbox' for=\"" . &quote_escape("${name}_${value}") . "\">$label</label>$after"
-        ) . "\n";
+        . '<label class="lawobject" for="'
+        . &quote_escape("${name}_${value}") . '">'
+        . ( length trim($label) ? trim($label) : '&nbsp;' )
+        . '</label></span>'
+        . $after;
 }
 
 sub theme_ui_textarea {
@@ -650,15 +708,23 @@ sub theme_ui_textarea {
 
 sub theme_ui_submit {
     my ( $label, $name, $dis, $tags ) = @_;
+    my ( $entry, $class, $icon ) = get_button_style( get_module_name(), $label );
 
     return
-          "<input class='btn btn-default submitter ui_submit' type='submit'"
+          "<button class=\"btn btn-"
+        . $class
+        . " ui_submit ui_form_end_submit\" type=\"button\""
         . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "" )
         . ( $name ne '' ? " id=\"" . &quote_escape($name) . "\""   : "" )
-        . " value=\""
-        . &quote_escape($label) . "\""
-        . ( $dis  ? " disabled=true" : "" )
-        . ( $tags ? " " . $tags      : "" ) . ">\n";
+        . ( $dis        ? " disabled=true"                         : "" )
+        . ( $tags       ? " " . $tags                              : "" ) . ">"
+        . $icon
+        . "&nbsp;<span data-entry=\""
+        . $entry . "\">"
+        . &quote_escape($label)
+        . "&nbsp;</span></button>\n"
+        . "<input class=\"hidden\" type=\"submit\""
+        . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "" ) . " >\n";
 }
 
 sub theme_ui_reset {
@@ -816,7 +882,7 @@ sub theme_ui_table_start {
     my $colspan = 1;
     my $rv;
     $rv
-        .= "<div class='table-responsive'><table class='table table-striped table-rounded table-condensed table-subtable' $tabletags>\n";
+        .= "<div class='table-responsive'><table class='table table-striped table-condensed table-subtable' $tabletags>\n";
     if ( defined($heading) || defined($rightheading) ) {
         $rv .= "<thead><tr>";
         if ( defined($heading) ) {
@@ -990,7 +1056,7 @@ sub theme_ui_hidden_table_start {
         = defined( $tconfig{'cs_text'} ) ? $tconfig{'cs_text'}
         : defined( $gconfig{'cs_text'} ) ? $gconfig{'cs_text'}
         :                                  "f00";
-    $rv .= "<table class='table table-striped table-hover table-rounded table-condensed' $tabletags>\n";
+    $rv .= "<table class='table table-striped table-hover table-condensed' $tabletags>\n";
     my $colspan = 1;
 
     if ( defined($heading) || defined($rightheading) ) {

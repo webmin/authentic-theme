@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (17.84)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (18.00)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -9,7 +9,7 @@
 * [License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 
 ##About
-**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin/](https://www.virtualmin.com/)[Cloudmin](http://webmin.com/cloudmin.html) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually, [TinyMCE](http://www.tinymce.com/) to compose comprehensive HTML based messages and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
+**Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin/](https://www.virtualmin.com/)[Cloudmin](http://webmin.com/cloudmin.html) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually, [CKEditor](http://ckeditor.com/) to compose comprehensive HTML based messages and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
 ![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-1710.png)
@@ -116,9 +116,14 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `Shift+F7` - search
   * `F8/Del` - delete
   * `F9/F10` - download/upload
-  * `Ctrl+X/C/V` - Cut/Copy/Paste
-  * `Ctrl+Enter/Ctrl+Shift+Enter` - Save/Save and close currently edited file
-  * `Theme reload hot key` - reload current directory
+  * `Ctrl+S` - calculate selected size
+  * `Ctrl+space` - new tab
+  * `Ctrl+Shift+space` - close current tab
+  * `Ctrl+left/right` - change tabs
+  * `Ctrl+1..9` - switch to the tab number
+  * `Ctrl+X/C/V` - cut/copy/paste
+  * `Ctrl+Enter/Ctrl+Shift+Enter` - save/save and close currently edited file
+  * `Theme reload hotkey` - reload current directory
 
 ####_ConfigServer Security & Firewall_
 Theme only re-renders this module and adds support for code highlight, when editing files manually.
@@ -137,6 +142,8 @@ Theme only re-renders this module and adds support for code highlight, when edit
    Theme provides an extended support for operations with table rows. It's easy to select current row by simply `right-clicking` on it with the mouse (on mobile device `long-tap`). Regular `click` on the row will take you to the row's main link;
 6. Default tab after logging in doesn't work<br>
    You need to set _Authentic Theme_ as default globally. To do so, go to _Webmin->Webmin Configuration->Themes_.
+7. Blinking navigation menu or overall jerky theme's rendering<br>
+   This could happen to GPU driver misconfiguration on your OS. For more details refer to [#453](https://github.com/qooob/authentic-theme/issues/453)
 
 ###Development
 ####Lead developer
@@ -159,7 +166,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 1600 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 1800 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://rostovtsev.ru/pub/media/icons/paypal-175x45.png)</a>
 

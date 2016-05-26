@@ -164,8 +164,6 @@ settings_right_iconize_header_links_description=Choose whether to replace old st
 settings_window_autoscroll=Automatic window scroll
 settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
 
-settings_window_customized_checkboxes_and_radios=Enable customized checkboxes and radio buttons
-
 settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
 settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
 settings_favorites=Show favorites button
@@ -185,12 +183,6 @@ settings_hotkey_sysinfo=Hotkey for System Information
 settings_hotkey_favorites=Hotkey for favorites
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
-
-settings_security_notify_on_pre_login_request=Notify when pre-login banner is displayed for unauthenticated user
-settings_security_notify_on_login_request=Notify when unauthenticated user has accessed login page
-settings_security_notify_on_login_success=Notify on successful user authentication
-settings_security_notify_for_webmin=Enabled for Webmin
-settings_security_notify_for_usermin=Enabled for Usermin
 
 settings_sysinfo_background_call_timeout=Timeout for background information update
 settings_sysinfo_background_call_timeout_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>10</code> minutes. Decimal values can also be used.
@@ -268,22 +260,21 @@ theme_xhred_global_please_wait=Please wait...
 theme_xhred_filemanager_copying_selected=Copying selected.
 theme_xhred_filemanager_cutting_selected=Cutting selected.
 theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
-theme_xhred_filemanager_unpacking_archive=Unpacking archive.
+theme_xhred_filemanager_unpacking_archive=Unpacking selected file(s).
 theme_xhred_filemanager_deleting_selected=Deleting selected.
 theme_xhred_filemanager_renaming_selected=Renaming selected.
-theme_xhred_filemanager_creating_folder=Creating folder
+theme_xhred_filemanager_creating_directory=Creating directory
 theme_xhred_filemanager_creating_file=Creating file
 theme_xhred_filemanager_downloading_from=Downloading from
 theme_xhred_filemanager_setting_permissions=Setting permissions to <samp><em>%value</em></samp> on selected file(s).
 theme_xhred_filemanager_changing_ownership=Changing ownership to <samp><em>%value</em></samp> on selected file(s).
-theme_xhred_filemanager_compressing_selected=Compressing selected.
-theme_xhred_filemanager_refreshing=Refreshing folder content.
+theme_xhred_filemanager_compressing_selected=Compressing selected in the background.
+theme_xhred_filemanager_refreshing=Refreshing directory content.
 theme_xhred_filemanager_copying_successful=Copy to clipboard successful.
 theme_xhred_filemanager_cutting_successful=Cut to clipboard successful.
 theme_xhred_filemanager_pasting_successful=Paste from clipboard was successful.
-theme_xhred_filemanager_extracting_archive=Extracting archive.
-theme_xhred_filemanager_bookmark_success=Folder <samp><em>%value</em></samp> was successfully added to your bookmarks.
-theme_xhred_filemanager_searching=Searching for <em>`%value`</em> string.
+theme_xhred_filemanager_bookmark_success=Directory <samp><em>%value</em></samp> was successfully added to your bookmarks.
+theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
 theme_xhred_filemanager_search_founds=Found <samp>%value</samp> matches.
 theme_xhred_filemanager_search_found=Found <samp>1</samp> match.
 theme_xhred_filemanager_search_no_matches=No matches found.
@@ -292,17 +283,16 @@ theme_xhred_filemanager_saving_file=File `<samp><em>%value</em></samp>` is being
 theme_xhred_filemanager_file_saved=File `<samp><em>%value</em></samp>` has been successfully saved.
 theme_xhred_filemanager_not_editable=Can not edit this type of selection.
 theme_xhred_filemanager_not_decompressable=Can not decompress this type of file.
-theme_xhred_filemanager_no_selection_to_copy=No folders/files selected to copy.
-theme_xhred_filemanager_no_selection_to_cut=No folders/files selected to cut.
+theme_xhred_filemanager_no_selection_to_copy=No directories/files selected to copy.
+theme_xhred_filemanager_no_selection_to_cut=No directories/files selected to cut.
 theme_xhred_filemanager_empty_clipboard=Clipboard is empty.
 
-theme_xhred_filemanager_successful_extraction=Extraction was successful.
+theme_xhred_filemanager_successful_extraction=Extraction of selected file(s) was successful.
 theme_xhred_filemanager_successful_deletion=Deletion was successful.
 theme_xhred_filemanager_successful_permissions=Permissions have been changed successfully.
 theme_xhred_filemanager_successful_ownership=Ownership has been changed successfully.
 theme_xhred_filemanager_successful_compression=Compression has successfully finished.
-theme_xhred_filemanager_successful_rename=Rename operation was successful.
-theme_xhred_filemanager_successful_folder_creation=Folder `<samp>%value</samp>` was created successfully.
+theme_xhred_filemanager_successful_directory_creation=Directory `<samp>%value</samp>` was created successfully.
 theme_xhred_filemanager_successful_file_creation=File `<samp>%value</samp>` was created successfully.
 
 theme_xhred_notifications_packages_updates=Packages Update
@@ -349,7 +339,7 @@ theme_xhred_filemanager_context_select_all=Select All
 theme_xhred_filemanager_context_select_invert=Invert Selection
 theme_xhred_filemanager_context_refresh=Refresh
 theme_xhred_filemanager_context_newfile=Create new file
-theme_xhred_filemanager_context_newfoder=Create new folder
+theme_xhred_filemanager_context_newfoder=Create new directory
 theme_xhred_filemanager_context_copy=Copy
 theme_xhred_filemanager_context_cut=Cut
 theme_xhred_filemanager_context_paste=Paste
@@ -369,14 +359,14 @@ theme_xhred_filemanager_context_search=Search
 
 #17.52
 theme_xhred_filemanager_context_deselect_all=Deselect All
-theme_xhred_filemanager_context_upload=Upload to current folder
-theme_xhred_filemanager_context_download=Download from URL to current folder
+theme_xhred_filemanager_context_upload=Upload to current directory
+theme_xhred_filemanager_context_download=Download from remote URL
 
 #17.53
 theme_settings_virtualmin=Virtualmin Virtual Servers
 theme_settings_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Third-parties modules options
-theme_xhred_filemanager_context_calculate_size=Calculate folder's size
+theme_xhred_filemanager_context_calculate_size=Calculate size on spacebar
 theme_xhred_filemanager_context_bookmarks=Bookmarks
 theme_xhred_filemanager_context_bookmark_current=Bookmark currently opened path
 theme_xhred_filemanager_context_transfer=Transfer
@@ -419,32 +409,32 @@ settings_sysinfo_easypie_charts_width=Charts width
 settings_sysinfo_easypie_charts_scale=Charts scale length
 
 #17.72
-settings_window_exclusion_description=Set the list of modules that will be excluded from in-built rendering mechanism. This feature will provide support for outdated/voluntarily built modules, that are failed to be displayed properly. To disable rendering for certain modules you must specify its name. The module's name is based on its folder name and can be found when hovering on its link in navigation menu. It's also possible to pass single asterisk <kbd>*</kbd> to disable in-built rendering for all modules.
+settings_window_exclusion_description=Set the list of modules that will be excluded from in-built rendering mechanism. This feature will provide support for outdated/voluntarily built modules, that are failed to be displayed properly. To disable rendering for certain modules you must specify its name. The module's name is based on its directory name and can be found when hovering on its link in navigation menu. It's also possible to pass single asterisk <kbd>*</kbd> to disable in-built rendering for all modules.
 settings_window_exclusion_list=Modules to exclude
 
 #17.80
 right_return_theme_options=theme options
-theme_xhred_datatable_semptyfolder=Folder is empty
+theme_xhred_datatable_semptydirectory=Directory is empty
 theme_xhred_filemanager_context_clipboard=Copy path to clipboard
 theme_xhred_global_warning=Warning
 theme_xhred_global_close=Close
-theme_xhred_encoding_warning=Detected that you are using <code>%charset</code> character set and not <code>utf-8</code>, which is strongly recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> Webmin Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.
+theme_xhred_encoding_warning=Detected that you are using <code>%charset</code> character set and not <code>utf-8</code>, which is strongly recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
 
 theme_xhred_filemanager__no_bookmarks=No saved bookmarks
-theme_xhred_filemanager_unbookmark_success=Folder <samp><em>%value</em></samp> was successfully removed from your bookmarks.
-theme_xhred_filemanager_bookmark=Bookmark current folder
-theme_xhred_filemanager_unbookmark=Unbookmark current folder
-theme_xhred_filemanager_move_into_self=You cannot move a folder into itself! The destination folder is inside the source folder.
+theme_xhred_filemanager_unbookmark_success=Directory <samp><em>%value</em></samp> was successfully removed from your bookmarks.
+theme_xhred_filemanager_bookmark=Bookmark current directory
+theme_xhred_filemanager_unbookmark=Unbookmark current directory
+theme_xhred_filemanager_move_into_self=You cannot move a directory into itself! The destination directory is inside the source directory.
 theme_xhred_filemanager_pasting_and_copying_1=Selected source has been pasted with the new name successfully.
 theme_xhred_filemanager_pasting_and_copying_2=Selected sources have been pasted with the new names successfully.
 theme_xhred_filemanager_pasting_and_replacing_1=Existing target has been replaced with new successfully.
 theme_xhred_filemanager_pasting_and_replacing_2=Existing targets have been replaced with new successfully.
-theme_xhred_filemanager_target_conflic_1=Target conflic
-theme_xhred_filemanager_target_conflic_2=Targets conflics
-theme_xhred_filemanager_target_conflic_message_1=Pasted target already exists! What do you prefer to do?
-theme_xhred_filemanager_target_conflic_message_2=Pasted targets already exist! What do you prefer to do?
-theme_xhred_filemanager_target_conflic_replace=Merge and replace
-theme_xhred_filemanager_target_conflic_paste=Paste with new name
+theme_xhred_filemanager_target_conflict_1=Target conflic
+theme_xhred_filemanager_target_conflict_2=Targets conflics
+theme_xhred_filemanager_target_conflict_message_1=Pasted target already exists! What do you prefer to do?
+theme_xhred_filemanager_target_conflict_message_2=Pasted targets already exist! What do you prefer to do?
+theme_xhred_filemanager_target_conflict_replace=Merge and replace
+theme_xhred_filemanager_target_conflict_paste=Paste with new name
 
 theme_xhred_editor_help_title=Editor Keyboard Shortcuts
 theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
@@ -496,9 +486,76 @@ theme_xhred_global_notice=Notice
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
 
+#18.00
+theme_xhred_global_file=File
+theme_xhred_global_directory=Directory
+theme_xhred_global_no_target=Target doesn't exist or not accessible
+theme_xhred_global_error_code=Error code
+theme_xhred_global_on=On
+theme_xhred_global_off=Off
+theme_xhred_global_all=All
+theme_xhred_global_none=None
+theme_xhred_global_yes=Yes
+theme_xhred_global_no=No
+
+theme_xhred_filemanager_new_tab=Add new tab (Ctrl+Space)
+theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
+
+theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
+
+filemanager_create_object_exists=$3 `<samp><em>$1</em></samp>` already exists in `<samp><tt>$2</tt></samp>`
+filemanager_create_object_denied=Can't create $3 `<samp><em>$1</em></samp>` in `<samp><tt>$2</tt></samp>` - permission denied.
+
+filemanager_paste_warning=Failed to paste target(s). It is possible that requested object(s) could have been <em>renamed, moved</em> or <em>deleted</em> while/before pasting. Another possible cause is that destination is not writable.  It is worth checking objects' attributes.
+
+theme_xhred_filemanager_delete_warning=Deletion has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before deletion. Restricted permissions (attributes) is another possible cause.  Error message:
 
 
+filemanager_rename_exists=$3 with name `<samp><em>$1</em></samp>` already exists in `<samp><tt>$2</tt></samp>`
+filemanager_rename_denied=Can not rename the $3. This might happen because the source $3 has been removed or due to restricted permissions.
 
+theme_xhred_filemanager_successful_rename=Renaming `<samp><em><s>%from</s></em></samp>` to `<samp><em>%to</em></samp>` was successful.
 
+filemanager_global_info_total1=Total: $1 file and $2 directory
+filemanager_global_info_total2=Total: $1 files and $2 directory
+filemanager_global_info_total3=Total: $1 file and $2 directories
+filemanager_global_info_total4=Total: $1 files and $2 directories
 
+theme_xhred_filemanager_selected_entry=Selected: %value entry
 
+theme_xhred_filemanager_search_query=Query mask
+theme_xhred_filemanager_search_match=Find in results
+theme_xhred_filemanager_search_replace=Replace in results
+
+theme_xhred_global_find=Find
+theme_xhred_global_replace=Replace
+
+theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
+theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
+
+theme_xhred_filemanager_search_replaced_multi=Found and replaced in <samp>%value</samp> files.
+theme_xhred_filemanager_search_replaced=Found and replaced in <samp>1</samp> file.
+
+theme_xhred_filemanager_successful_permissions_with_errors=Permissions have been changed successfully but not for all objects:
+
+theme_xhred_filemanager_successful_ownership_with_errors=Ownership has not been changed successfully for all objects:
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=Ownership can't be changed due to following errors:
+
+theme_xhred_filemanager_successful_compression_with_errors=Compression has finished with the following errors:
+theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <samp>`%file</samp> is located in <samp>`%path`</samp> directory.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <samp>`%file</samp> should be located in <samp>`%path`</samp> directory.
+
+theme_xhred_filemanager_settings_notification_type=Type of notifications to display
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informations, warnings and errors
+theme_xhred_filemanager_settings_notification_type_warn_err=Warnings and errors
+theme_xhred_filemanager_settings_notification_type_err=Errors only
+
+theme_xhred_filemanager_settings_tabs_remember_state=Restore previously used tabs on first load
+theme_xhred_filemanager_context_open_new_tab=Open in new tab
+
+theme_xhred_xsql_fit_content_screen_height=Fit database table content in screen height
+
+theme_xhred_datatable_filter_visible_tables=Filter Visible Table(s)
+theme_xhred_module_help=Module Help
+
+theme_xhred_server_process_running=Server process is still running!? Are you sure that you want to navigate away and have no access to output information? Even if you leave now the process will not be terminated.

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -11,7 +11,7 @@ do "authentic-theme/authentic-lib.pm";
 my %virtualmin_config = &foreign_config('virtual-server');
 my %cloudmin_config   = &foreign_config('server-manager');
 
-header($title);
+header($title, 'stripped');
 
 print '<div id="wrapper" class="page __sytem_information" data-notice="'
     . (
@@ -35,12 +35,12 @@ if ($get_user_level ne '4' && &foreign_available("system-status")
         ( $get_user_level ne '1' && $get_user_level ne '2' && $get_user_level ne '3' && &foreign_available("webmin") )
         ? '<a href="/?updated" target="_top" data-href="'
             . $gconfig{'webprefix'}
-            . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-6px -11px; color: white;"><i class="fa fa-refresh"></i></a>'
+            . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-8px -11px; color: white;"><i class="fa fa-refresh"></i></a>'
         : ''
         )
         . (
         $cloudmin_config{'docs_link'} && &foreign_available("server-manager")
-        ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-6px '
+        ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-8px '
             . ( $get_user_level eq '0' ? '15' : '-11' )
             . 'px;" href="'
             . $cloudmin_config{'docs_link'}
@@ -52,7 +52,7 @@ if ($get_user_level ne '4' && &foreign_available("system-status")
             '
         . (
         $virtualmin_config{'docs_link'} && &foreign_available("virtual-server")
-        ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-6px '
+        ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-8px '
             . ( $get_user_level eq '0' ? '15' : '-11' )
             . 'px;" href="'
             . $virtualmin_config{'docs_link'}
@@ -424,4 +424,4 @@ elsif ( $get_user_level eq '3' ) {
 print '</div>' . "\n";
 print '</div>' . "\n";
 print $__changelog;
-&footer();
+footer('stripped');

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -17,7 +17,7 @@ print &ui_form_start( "settings-upload_save.cgi", "form-data" );
 print &ui_hidden( "path", $config_directory ), "\n";
 print '
 <div class="table-responsive">
-    <table class="table table-striped table-rounded table-condensed table-subtable">
+    <table class="table table-striped table-condensed table-subtable">
         <thead><tr><th class="table-title" style="width: auto"><b>' . $text{'settings_right_options'} . '</b></th></tr></thead>
         <tbody>
             <tr>
@@ -26,20 +26,7 @@ print '
                         <tbody>
                             <tr class="atshover">
                                 <td class="col_label" style="width:25%"><b>' . $text{'settings_right_logo_authenticated_users'} . '</b></td>
-                                <td class="col_value" style="width:15%">
-                                        <input class="ui_radio" type="radio" name="authenticated_logo" value="true"'
-                                            . ( -r $config_directory . '/authentic-theme/logo.png' && ' checked' ).
-                                        '>
-                                        <label class="radio" style="margin-right:10px !important;">
-                                            <i class="fa"></i> ' . $text{'yes'} . '
-                                        </label>
-                                        <input class="ui_radio" type="radio" name="authenticated_logo" value="false"'
-                                            . ( !-r $config_directory . '/authentic-theme/logo.png' && ' checked' ) .
-                                        '>
-                                        <label class="radio">
-                                            <i class="fa"></i> ' . $text{'no'} . '
-                                        </label>
-                                </td>
+                                <td class="col_value" style="width:15%">' . ui_yesno_radio("authenticated_logo", (-r $config_directory . "/authentic-theme/logo.png" ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value" style="width:60%">
                                     <button class="btn btn-default file_chooser_button file_chooser_button_preview'
                                         . ( !-r $root_directory . "/authentic-theme/images/logo.png" && ' disabled' ) .
@@ -55,20 +42,7 @@ print '
                             </tr>
                             <tr class="atshover">
                                 <td class="col_label" style="width:25%"><b>' . $text{'settings_right_logo_unauthenticated_users'} . '</b></td>
-                                <td class="col_value" style="width:15%">
-                                    <input class="ui_radio" type="radio" name="unauthenticated_logo" value="true"'
-                                        . ( -r $config_directory . '/authentic-theme/logo_welcome.png' && ' checked' ) .
-                                    '>
-                                    <label class="radio" style="margin-right:10px !important;">
-                                        <i class="fa"></i> ' . $text{'yes'} . '
-                                    </label>
-                                    <input class="ui_radio" type="radio" name="unauthenticated_logo" value="false"'
-                                        . ( !-r $config_directory . '/authentic-theme/logo_welcome.png' && ' checked' ) .
-                                    '>
-                                    <label class="radio">
-                                        <i class="fa"></i> ' . $text{'no'} . '
-                                    </label>
-                                </td>
+                                <td class="col_value" style="width:15%">' . ui_yesno_radio("unauthenticated_logo", (-r $config_directory . "/authentic-theme/logo_welcome.png" ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value" style="width:60%">
                                     <button class="btn btn-default file_chooser_button file_chooser_button_preview'
                                         . ( !-r $root_directory . "/authentic-theme/images/logo_welcome.png" && ' disabled' ) .
@@ -95,19 +69,19 @@ print '
     . ( $in{'saved'} ne 1 && ' hidden' ) . '" type="submit"
 name="save" id="saved"><i class="fa fa-fw fa-check-square-o" style="margin-right:2px;"></i>'
     . $text{'settings_right_saved'} . ' </button>
-                <button class="btn btn-success file-editor-save'
+                <button class="btn btn-success file-editor-save page_footer_ajax_submit'
     . ( $in{'saved'} eq 1 && ' hidden' )
     . '" type="submit" name="save" id="save"><i class="fa fa-fw fa-floppy-o" style="margin-right:2px;"></i>'
     . $text{'save'}
     . ' </button>
             </td>
             <td style="text-align: right;">
-                <a class="btn btn-default" style="margin-top: 2px !important; margin-bottom: 2px !important; margin-right:-8px;" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o"> </i> '
+                <a class="btn btn-default page_footer_ajax_submit" style="margin-top: 2px !important; margin-bottom: 2px !important; margin-right:-3px;" href="' . $gconfig{'webprefix'} . '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o"> </i> '
                     . &text('settings_right_theme_extensions') . '
                 </a>
             </td>
         </tr>
     </table>
 </form>';
-&ui_print_footer( "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
+&ui_print_footer( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
 

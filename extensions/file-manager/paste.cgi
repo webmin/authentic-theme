@@ -1,14 +1,16 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Alexandr Bezenkov (https://github.com/Real-Gecko/filemin)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
-require (dirname(__FILE__) . '/file-manager-lib.pm');
+use lib ( dirname(__FILE__) . '/../../lib' );
+
+require( dirname(__FILE__) . '/file-manager-lib.pm' );
 
 open( my $fh, "<" . &get_paste_buffer_file() ) or die "Error: $!";
 my @arr = <$fh>;
@@ -37,9 +39,10 @@ for ( my $i = 2; $i <= scalar(@arr) - 1; $i++ ) {
 
 if ( scalar(@errors) > 0 ) {
     set_response('err');
-    print_errors(@errors);
+    redirect(
+        'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') );
 }
 else {
     set_response_count( scalar(@arr) - 2 );
-    &redirect( '/' . $request_uri{'module'} . '/index.cgi?path=' . $path );
+    redirect( 'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' );
 }

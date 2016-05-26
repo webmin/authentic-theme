@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 17.84 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -29,6 +29,10 @@ typeof settings_notification_slider_fixed == "undefined" ? settings_notification
 settings_thirdparty_filemanager_hide_actions = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_hide_actions") == "false" ? false : true);
 settings_thirdparty_filemanager_hide_toolbar = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_hide_toolbar") == "true" ? true : false);
 settings_thirdparty_filemanager_hovered_toolbar = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_hovered_toolbar") == "true" ? true : false);
+settings_thirdparty_filemanager_notification_type = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_notification_type") ? localStorage.getItem("settings_thirdparty_filemanager_notification_type") : 1);
+settings_thirdparty_filemanager_calculate_size = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_calculate_size") == "true" ? true : false);
+settings_thirdparty_filemanager_remember_tabs = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_remember_tabs") == "false" ? false : true);
+settings_thirdparty_xsql_fit_content_screen_height = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_xsql_fit_content_screen_height") == "true" ? true : false);
 typeof settings_hotkeys_active == "undefined" ? settings_hotkeys_active = true : false;
 typeof settings_hotkey_toggle_modifier == "undefined" ? settings_hotkey_toggle_modifier = "altKey" : false;
 typeof settings_hotkey_toggle_key_webmin == "undefined" ? settings_hotkey_toggle_key_webmin = "w" : false;
@@ -62,7 +66,6 @@ typeof settings_sysinfo_easypie_charts_scale == "undefined" ? settings_sysinfo_e
 typeof settings_sysinfo_theme_updates == "undefined" ? settings_sysinfo_theme_updates = false : false;
 typeof settings_sysinfo_csf_updates == "undefined" ? settings_sysinfo_csf_updates = false : false;
 typeof settings_sysinfo_link_mini == "undefined" ? settings_sysinfo_link_mini = true : false;
-typeof settings_window_customized_checkboxes_and_radios == "undefined" ? settings_window_customized_checkboxes_and_radios = true : false;
 typeof settings_loader_top == "undefined" ? settings_loader_top = true : false;
 typeof settings_animation_left == "undefined" ? settings_animation_left = true : false;
 settings_animation_left ? $settings_animation_left_slide_time = 280 : $settings_animation_left_slide_time = 0;
@@ -77,7 +80,7 @@ try {
 
 function n___p__f(b) {
     var a = t__wi_p.$("#wrapper").data("access-level");
-    if (a != 0) {
+    if (a != "0") {
         return
     }
     if (b) {
@@ -122,6 +125,34 @@ function arrayIntersect(g, d) {
         }
     });
     return !$.isEmptyObject(f)
+}
+
+function is_module(a) {
+    if ($.inArray(a, t__wi_p.$("body").data("available-modules")) > -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function is__m(a) {
+    return $('body[class*="' + a + '"]').length
+}
+
+function is__f(a) {
+    return ($__source_file == a)
+}
+
+function is__mf(a, b) {
+    return ($('body[class*="' + a + '"]').length && $__source_file == b)
+}
+
+function is__mfq(a, c, b) {
+    return ($('body[class*="' + a + '"]').length && $__source_file == c && ($__source_query && $__source_query.indexOf(b) !== -1))
+}
+
+function lang(a) {
+    return t__wi_p.$("body").data("language-strings") ? t__wi_p.$("body").data("language-strings")[a] : false
 }
 
 function __lrs(j, g) {
@@ -212,24 +243,29 @@ function product_name(d) {
 }
 
 function __s___() {
-    if (t__wi_p.$('iframe[name="page"]').get(0) && typeof t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$ != "function") {
+    var f = t__wi_p.$('iframe[name="page"]').get(0);
+    if (f && typeof f.contentWindow.$ != "function" || !__num()) {
         return
     }
     var b = false,
+        d = false,
         c = false;
-    if (t__wi_p.$('iframe[name="page"]').get(0)) {
-        c = t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$("body");
-        b = t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$("body").find(".container-fluid")
+    if (f) {
+        d = f.contentWindow.$("body");
+        b = f.contentWindow.$("body").find(".container-fluid");
+        c = f.contentWindow.$("head")
     } else {
-        c = $("body");
-        b = $("body").find(".container-fluid")
+        d = $("body");
+        b = $("body").find(".container-fluid");
+        c = $("head")
     }
     if (b.length) {
         b.animate({
             opacity: 1
         }, 240, function() {
             b.css("pointer-events", "auto");
-            c.css("overflow", "auto")
+            d.css("overflow", "auto");
+            c.find("#__tmp_no_overflow").remove()
         })
     }
 }
@@ -245,7 +281,7 @@ function __lre() {
     }
     if (__num()) {
         if (typeof t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__dlm == "function") {
-            $('iframe[name="page"]').get(0).contentWindow.__dlm()
+            t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__dlm()
         }
     }
     t__wi_p.$(".loader .loader-close").hide();
@@ -258,29 +294,34 @@ function __lre() {
 }
 
 function ___csf() {
-    var u = window,
-        q = u.parent,
-        v = q.document.getElementById("iframe"),
-        m = v.contentDocument.getElementsByTagName("head")[0],
-        t = v.contentDocument.createElement("script");
-    t.type = "text/javascript";
-    t.src = "/unauthenticated/js/package.min.js?1784";
-    m.appendChild(t);
-    if (q.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
-        v.contentWindow.onbeforeunload = function(a) {
-            q.__lrs()
+    var v = window,
+        r = v.parent,
+        w = r.document.getElementById("iframe"),
+        n = w.contentDocument.getElementsByTagName("head")[0],
+        u = w.contentDocument.createElement("script"),
+        k = r.$load____ext;
+    u.type = "text/javascript";
+    u.src = "/unauthenticated/js/jquery." + k + ".js?1800";
+    n.appendChild(u);
+    var n = w.contentDocument.getElementsByTagName("head")[0],
+        u = w.contentDocument.createElement("script");
+    u.src = "/unauthenticated/js/codemirror." + k + ".js?1800";
+    n.appendChild(u);
+    if (r.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
+        w.contentWindow.onbeforeunload = function(a) {
+            r.__lrs()
         };
-        q.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
-        $csf = q.$('iframe[name="page"]').contents();
+        r.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
+        $csf = r.$('iframe[name="page"]').contents();
         $csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-        $csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + '/unauthenticated/css/package.min.css?1784" rel="stylesheet" type="text/css">		');
-        $.each(q.$('link[href*="/styles.css"]'), function() {
+        $csf.find("head").append('			<link rel="shortcut icon" href="' + $_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + $_____link_full + "/unauthenticated/css/bootstrap." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + $_____link_full + "/unauthenticated/css/codemirror." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + $_____link_full + "/unauthenticated/css/authentic." + k + '.css?1800" rel="stylesheet" type="text/css">		');
+        $.each(r.$('link[href*="/styles.css"]'), function() {
             if ($(this)) {
                 $csf.find("head").append('<link href="' + $_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
             }
         });
         $csf.find('body:not(".mobile-menu-toggler")').on("click", function() {
-            q.hide_mobile_menu()
+            r.hide_mobile_menu()
         });
         if (!$csf.find("body").attr("style")) {
             t__wi_p.location.reload();
@@ -324,18 +365,18 @@ function ___csf() {
             }
         });
 
-        function o() {
+        function p() {
             $csf.find("#CSFajax").css("max-height", $(window).outerHeight() - $(window).outerHeight() / 2.4 + "px");
             container_fluid_size()
         }
-        var n;
+        var o;
         $(window).resize(function() {
-            clearTimeout(n);
-            n = setTimeout(function() {
-                o()
+            clearTimeout(o);
+            o = setTimeout(function() {
+                p()
             }, 1000)
         });
-        o();
+        p();
         $csf.find(".csf table.table-striped.table-condensed tbody > tr > td > p").each(function() {
             if ($(this).text().indexOf("Your Score") >= 0) {
                 $(this).next("p").remove();
@@ -344,7 +385,7 @@ function ___csf() {
                 $(this).next("p").css("text-align", "center")
             }
         });
-        var l = {
+        var m = {
             order: [],
             aaSorting: [],
             bDestroy: true,
@@ -372,7 +413,7 @@ function ___csf() {
                     b.prepend("<thead>" + a.html() + "</thead>");
                     $(this).find("thead td").replaceTagName("th");
                     a.remove();
-                    $(this).dataTable(l);
+                    $(this).dataTable(m);
                     $csf.find(".dataTables_filter input").attr("placeholder", "Filter")
                 }
             })
@@ -384,7 +425,7 @@ function ___csf() {
                         a = $(this).find("tbody tr:first-child");
                     b.prepend("<thead>" + a.html() + "</thead>");
                     a.remove();
-                    $(this).dataTable(l);
+                    $(this).dataTable(m);
                     b.find('img[src^="csfimages/"]').each(function() {
                         $(this).attr("src", $(this).attr("src").replace("/csfimages/", "csfimages/"))
                     });
@@ -418,10 +459,10 @@ function ___csf() {
             }
         });
         $csf.find('a[href$="/csf/changelog.txt"]').addClass("btn btn-xs btn-default").attr("style", "padding:0 12px; height:19px;font-size:11px").text("View changelog");
-        var k = $csf.find('table:contains("©2006-")').find("tr").find('*:contains("csf:")').text().match(/((?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+))$/)[0];
+        var l = $csf.find('table:contains("©2006-")').find("tr").find('*:contains("csf:")').text().match(/((?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+))$/)[0];
         $csf.find(".csf .panel-heading font").each(function() {
             if ($(this).text().indexOf("ConfigServer Security & Firewall") >= 0) {
-                $(this).html('<font size="+2">Firewall</font><span style="font-size:14px;display:block">ConfigServer Security & Firewall version ' + k + "</span>")
+                $(this).html('<font size="+2">Firewall</font><span style="font-size:14px;display:block">ConfigServer Security & Firewall version ' + l + "</span>")
             }
         });
         $csf.find('table > tbody > tr:first-child > th:first-child, table[align="center"] > tbody > tr:first-child').each(function() {
@@ -441,18 +482,18 @@ function ___csf() {
         } else {
             $csf.find('table:contains("©2006-")').removeClass("table-striped").css("border-color", "transparent").find("tr td").addClass("text-right").css("border-color", "#eaeaea").parent().parent("tbody").find("tr:first-child").remove()
         }
-        var u = -Infinity;
+        var v = -Infinity;
         $csf.find("table").find("tr").each(function(a, b) {
-            u = Math.max(u, parseFloat(a))
+            v = Math.max(v, parseFloat(a))
         });
-        if (u < 10) {
+        if (v < 10) {
             $csf.find("table").parents(".dataTables_wrapper").find(".dataTables_filter").remove()
         }
         $csf.find('big:contains("iptables logs")').parent("p").next().next().next(".table.table-striped.table-condensed").find("tbody tr:nth-child(2) td:first-child").css("min-width", "200px");
         if ($csf.find('.csf select[name="dur"]')[0]) {
-            var p = $csf.find('.csf select[name="dur"]')[0].nextSibling;
-            if (p.nodeValue == ".") {
-                $(p).remove()
+            var q = $csf.find('.csf select[name="dur"]')[0].nextSibling;
+            if (q.nodeValue == ".") {
+                $(q).remove()
             }
         }
         $csf.find('.csf select:not([name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').each(function() {
@@ -510,11 +551,11 @@ function ___csf() {
         }
         $csf.find("#CSFajax.csf-box").addClass("csf_force_log_size");
 
-        function r() {
+        function t() {
             $csf.find('textarea[name="formdata"]').each(function(c, d) {
                 var a = $(this);
                 $parent_width = a.parent("td").width();
-                var b = q.$('iframe[name="page"]').get(0).contentWindow.CodeMirror.fromTextArea(d, {
+                var b = r.$('iframe[name="page"]').get(0).contentWindow.CodeMirror.fromTextArea(d, {
                     mode: {
                         name: "rpm-spec"
                     },
@@ -546,71 +587,73 @@ function ___csf() {
             })
         }
         setTimeout(function() {
-            if (typeof q.$('iframe[name="page"]').get(0).contentWindow.CodeMirror == "function") {
-                r()
+            if (typeof r.$('iframe[name="page"]').get(0).contentWindow.CodeMirror == "function") {
+                t()
             } else {
                 setTimeout(function() {
-                    if (typeof q.$('iframe[name="page"]').get(0).contentWindow.CodeMirror == "function") {
-                        r()
+                    if (typeof r.$('iframe[name="page"]').get(0).contentWindow.CodeMirror == "function") {
+                        t()
                     } else {
                         setTimeout(function() {
-                            r()
+                            t()
                         }, 10)
                     }
                 }, 140)
             }
         }, 50);
         $("#iframe").contents().find("body").on("keydown", function(a) {
-            q.search_control(a);
-            q.shortcut_control(a)
+            r.search_control(a);
+            r.shortcut_control(a)
         });
-        if (q.$("#open_webmin").length > 0 && q.$(".switch-toggle input:checked").attr("id") != "open_webmin" && t__wi_p.$("body").data("dashboard") == "1") {
-            q.t__s("open_webmin")
+        if (r.$("#open_webmin").length > 0 && r.$(".switch-toggle input:checked").attr("id") != "open_webmin" && t__wi_p.$("body").data("dashboard") == "1") {
+            r.t__s("open_webmin")
         }
-        q.__dlm("csf/");
-        if (q.$___________initial === 1) {
+        r.__dlm("csf/");
+        if (r.$___________initial === 1) {
             setTimeout(function() {
-                q.__lre()
+                r.__lre()
             }, t__wi_p.$____csf)
         } else {
             setTimeout(function() {
-                q.__lre()
+                r.__lre()
             }, t__wi_p.$____csf)
         }
         setTimeout(function() {
-            if (!q.$('ul.sub li.sub_active a[target="page"][href="csf/"]').length) {
-                q.__dlm("csf/")
+            if (!r.$('ul.sub li.sub_active a[target="page"][href="csf/"]').length) {
+                r.__dlm("csf/")
             }
         }, 200)
     }
 }
 
 function f__r__s(b, a) {
-    t__wi_p.$("#injected-css").remove();
-    a ? (a = "translate(" + a + "px, 0px) !important") : (a = false);
-    $.injectCSS({
-        "#sidebar": {
-            left: -b + "px",
-            width: b + "px",
-            transform: a
-        },
-        ".switch-toggle": {
-            width: b + "px"
-        },
-        "#content.__page": {
-            "margin-left": b + "px"
-        },
-        ".autocomplete-suggestions": {
-            "min-width": (b - 23) + "px !important"
-        },
-        ".__logo": {
-            width: b + "px",
-            "max-width": b + "px"
+    if (typeof $.injectCSS == "function") {
+        t__wi_p.$("#injected-css").remove();
+        a ? (a = "translate(" + a + "px, 0px) !important") : (a = false);
+        $.injectCSS({
+            "#sidebar": {
+                left: -b + "px",
+                width: b + "px",
+                transform: a
+            },
+            ".switch-toggle": {
+                width: b + "px"
+            },
+            "#content.__page": {
+                "margin-left": b + "px"
+            },
+            ".autocomplete-suggestions": {
+                "min-width": (b - 23) + "px !important"
+            },
+            ".__logo": {
+                width: b + "px",
+                "max-width": b + "px"
+            }
+        });
+        if (t__wi_p.$("aside select").length) {
+            t__wi_p.$("aside select[data-autocomplete-title]").attr("style", "width:" + (b - 24) + "px; margin-top: 0 !important");
+            t__wi_p.t_sel_i()
         }
-    });
-    if (t__wi_p.$("aside select").length) {
-        t__wi_p.$("aside select[data-autocomplete-title]").attr("style", "width:" + (b - 24) + "px; margin-top: 0 !important");
-        t__wi_p.t_sel_i()
     }
 }
 
@@ -679,7 +722,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
             return
         }
         __lre();
-        s("/unauthenticated/js/authentic.min.js?1784")
+        s("/unauthenticated/js/authentic.min.js?1800")
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
         t__wi_p.NProgress.done()
@@ -687,13 +730,27 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
     if (typeof t__wi_p.__dpt == "function") {
         t__wi_p.__dpt()
     }
-    t___wi.parent.$___________right = 1;
     $("body").unbind("mousewheel");
+    !t__wi_p.$___________initial && __lre();
+    delete __________was_runner___;
+    t___wi.parent.$___________right = 1;
     $(function() {
         if (t__wi_p.location.search == "?theme-update-finished" || $("#wrapper").data("notice") == 1) {
             t__wi_p.$('.right-side-tabs-notification[data-type="authentic_remote_version"]').find("i.af-clear-all").trigger("click");
             $("#update_notice").modal("show");
             __s___()
+        }
+        var a = $("select[multiple]:visible"),
+            b = a.length - 1;
+        if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
+            $.each(a, function(h, g) {
+                setTimeout(function() {
+                    $(g).focus();
+                    if (b === h) {
+                        $(g).blur()
+                    }
+                }, 20 + (h * 20))
+            })
         }
     })
 });
@@ -731,36 +788,39 @@ function __num() {
 var $__was = function() {
     var d = $.url(t___wi.location),
         c = d.attr("path");
-    if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/virtual-server/backup.cgi") > -1 || c.indexOf("/server-manager/backup.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1) {
+    if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/virtual-server/backup.cgi") > -1 || c.indexOf("/virtual-server/script_install.cgi") > -1 || c.indexOf("/server-manager/backup.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1) {
         $("html").data("data-pagescroll", true)
     }
     if (($("pre") && $("pre").length > 0 && $("pre").length <= 2) || $("html").data("data-pagescroll") === true) {
         if (__num()) {
             __s___()
         }
-        $("body").unbind("mousewheel");
+        $("body").bind("mousewheel", function() {
+            return false
+        });
+        __________was_runner___ = t___wi.onbeforeunload = function(b) {
+            return lang("theme_xhred_server_process_running")
+        };
         t___wi.clearInterval($__was_runner);
         refresh = function() {
             $("body, html").animate({
                 scrollTop: $(document).height()
-            }, 200)
+            }, 400)
         };
-        refresher = t___wi.setInterval(refresh, 201);
-        $("body").bind("mousewheel", function() {
-            return false
-        })
+        refresher = t___wi.setInterval(refresh, 401)
     }
 };
 if (t___wi.location == t__wi_p.location) {
     t__wi_p.f__r__s(settings_leftmenu_width, 0);
     t__wi_p.f__c_view()
 } else {
-    $("html").on("dblclick", "body", function(a) {
-        if ($(this).find(".container-fluid").css("opacity") != 1) {
-            __s___()
-        }
-    })
+    $("head").append('<style id="__tmp_no_overflow">body {overflow: hidden}</style>')
 }
+$("html").on("dblclick", "body", function() {
+    if ($(this).find(".container-fluid").css("opacity") != 1) {
+        __s___()
+    }
+});
 if (settings_window_autoscroll && t___wi.location != t__wi_p.location) {
     $__was_runner = t___wi.setInterval($__was, 201)
 };

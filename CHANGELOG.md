@@ -1,5 +1,33 @@
 ##Changelog
 
+####Version 18.00 (May 26, 2016)  :star2:
+* Fixed possible security issue and removed _Security Alerts_ as they become the part of _Webmin Core_ in the near future [#467](https://github.com/qooob/authentic-theme/issues/467)
+* Improved _UI_ overall
+* Reworked and empowered _File Manager_ functionality:
+	* Increased speed load for all processes
+	* Added back an option to _Calculate size on spacebar_ (off by default)
+	* Added use of multiple, draggable tabs. New _Open in new tab_ option in _context menu_. Ability to load previously used tabs on the first load can be setup in module's options (on by default). Hotkeys are also supported for tab:
+		* `Ctrl+space` - New tab
+		* `Ctrl+Shift+space` - Close current tab
+		* `Ctrl+left/right` - Change tabs
+		* `Ctrl+1..9` - Switch to the tab number
+	* Added _find/replace_ functionality in search for files. It is possible now to find given string in files and replace it
+	* Fixed ability _sort by size_ folders/files, after _Calculate selected size_ was applied. Added a hotkey to quickly get the size of selected:
+		* `Ctrl+S` - Calculate selected size
+	* Extended notifications with proper server-response processing. Notifications now can be setup in module's options to display messages, either _All_ (default), _Informations, warnings and errors_ or _Warnings and Errors_ only.
+	* Extraction now supports multiple files and new formats `.7z, .bz2, .gz, .gzip, .rar, .xz` (in case needed dependencies installed)
+	* Background operations for compress (However, it will work for any other operation but for now, it will not provide user-friendly message after process completes on the different folder from where it was initiated)
+	* Fixed bug when _Change Permissions_ worked correctly only for the first operation (until reload)
+* Improved client-side code performance by lightening, separation and optimization:
+	* Each window will only load needed dependencies
+	* Color palettes are now loaded on demand from separate file
+	* Used only needed set of icons
+	* Removed JavaScript _checkboxes/radios_ in favour of using pure CSS3 (great speed increase on large tables)
+* Improved submit buttons. Type detection with adding icons, grouping and coloring. After submission, spinner appears and button becomes inactive to prevent accidental resubmission
+* Added an option to disable to fit database table content into screen height on _MySQL/PostgreSQL_ modules. By default no scroll bars will be shown
+* Fixed bugs [#422](https://github.com/qooob/authentic-theme/issues/422) [#433](https://github.com/qooob/authentic-theme/issues/433) [#455](https://github.com/qooob/authentic-theme/issues/455) [#457](https://github.com/qooob/authentic-theme/issues/457)  [#460](https://github.com/qooob/authentic-theme/issues/460) [#461](https://github.com/qooob/authentic-theme/issues/461) [#462](https://github.com/qooob/authentic-theme/issues/462) [#465](https://github.com/qooob/authentic-theme/issues/465) [#40767](https://www.virtualmin.com/node/40767) [#40686](https://www.virtualmin.com/node/40686)
+* Fixed dozens of other bugs
+
 ####Version 17.84 (April 15, 2016)
 * Improved and enhanced _MySQL/PostgreSQL_ functionality:
 	* Added ability to use background calls on diffident kind of operations (you might want to stop using _phpMyAdmin_)
@@ -23,7 +51,7 @@
 * Fixed a bug [#40293](https://www.virtualmin.com/node/40293)
 
 ####Version 17.80 (April 08, 2016)  :star:
-* Improved theme's speed, up to around _20%_, depending on the module, due to large code optimisation
+* Improved theme's speed, up to around _20%_, depending on the module, due to large server-side code optimisation
 * Improved general _UI_
 * Improved _autocomplete_ links' processing
 * Improved output of _System and Server Status_ to _System Information_ page
@@ -253,7 +281,7 @@
 	* `F8/Del` - delete
 	* `Ctrl+X/C/V` - Cut/Copy/Paste
 	* `Ctrl+Enter/Ctrl+Shift+Enter` - Save/Save and close currently edited file
-	* `Theme reload hot key` - reload current directory
+	* `Theme reload hotkey` - reload current directory
 * Deuglifed a link for switching between basic/advanced modes in _SpamAssassin->Header and Body Tests_ module
 * Fixed bugs [#234](https://github.com/qooob/authentic-theme/issues/234) [#235](https://github.com/qooob/authentic-theme/issues/235) [#236](https://github.com/qooob/authentic-theme/issues/236) [#238](https://github.com/qooob/authentic-theme/issues/238) [#239](https://github.com/qooob/authentic-theme/issues/239) [#242](https://github.com/qooob/authentic-theme/issues/242) [#243](https://github.com/qooob/authentic-theme/issues/243) [#244](https://github.com/qooob/authentic-theme/issues/244)  [#245](https://github.com/qooob/authentic-theme/issues/245)
 * Fixed other bugs and made dozens of improvements
