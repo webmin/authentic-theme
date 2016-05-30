@@ -3,6 +3,8 @@
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
+use strict;
+use warnings;
 
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -1357,17 +1359,17 @@ sub csf_temporary_list {
         my @l;
 
         if ( -e "/var/lib/csf/csf.tempban" && !-z "/var/lib/csf/csf.tempban" ) {
-            open( IN, "</var/lib/csf/csf.tempban" ) or die $!;
-            @t = <IN>;
+            open( $IN, "<", "/var/lib/csf/csf.tempban" ) or die $!;
+            @t = <$IN>;
             chomp @t;
-            close(IN);
+            close($IN);
         }
 
         if ( @t && -e "/var/lib/csf/stats/iptables_log" ) {
-            open( IN, "<", "/var/lib/csf/stats/iptables_log" ) or die $!;
-            flock( IN, LOCK_SH );
-            my @i = <IN>;
-            close(IN);
+            open( $IN, "<", "/var/lib/csf/stats/iptables_log" ) or die $!;
+            flock( $IN, LOCK_SH );
+            my @i = <$IN>;
+            close($IN);
             chomp @i;
             @i = reverse @i;
             my $c = 0;
@@ -2527,18 +2529,6 @@ sub _settings {
                 $__usermin_config . "/authentic-theme" );
         }
     }
-}
-
-sub serialize_string_list {
-    return join(
-        '|',
-        map {
-            (   defined($_)
-                ? do { local $_ = $_; s/\^/^1/g; s/\|/^2/g; $_ }
-                : '^0'
-                )
-        } @_
-    );
 }
 
 sub get_xhr_request {
