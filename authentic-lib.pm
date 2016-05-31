@@ -3,8 +3,9 @@
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
-use strict;
-use warnings;
+#use strict;
+#use warnings;
+our (%in, %text, %config);
 
 BEGIN { push( @INC, ".." ); }
 use WebminCore;
@@ -52,126 +53,69 @@ sub print_category {
     my ( $c, $label ) = @_;
     $label = $c eq "others" ? $text{'left_others'} : $label;
 
-    if (   $c eq 'webmin'
-        || $c eq 'usermin'
-        || $c eq 'settings'
-        || $c eq 'global_settings'
-        || $c eq 'global_setting'
-        || $c eq 'cat_setting' )
-    {
-        our $icon = 'fa-cog';
-    }
-    elsif ( $c eq 'system' || $c eq 'cat_system' ) {
-        our $icon = 'fa-wrench';
-    }
-    elsif ( $c eq 'servers' || $c eq 'global_servers' ) {
-        our $icon = 'fa-rocket';
-    }
-    elsif ( $c eq 'other' || $c eq 'global_other' ) {
-        our $icon = 'fa-gavel';
-    }
-    elsif ( $c eq 'net' || $c eq 'global_net' ) {
-        our $icon = 'fa-shield';
-    }
-    elsif ( $c eq 'info' || $c eq 'global_info' ) {
-        our $icon = 'fa-info';
-    }
-    elsif ($c eq 'hardware'
-        || $c eq 'global_hardware'
-        || $c eq 'global_storage' )
-    {
-        our $icon = 'fa-hdd-o';
-    }
-    elsif ( $c eq 'cluster' || $c eq 'global_cluster' ) {
-        our $icon = 'fa-power-off';
-    }
-    elsif ( $c eq 'unused' || $c eq 'global_unused' ) {
-        our $icon = 'fa-puzzle-piece';
-    }
-    elsif ( $c eq 'mail' || $c eq 'global_mail' ) {
-        our $icon = 'fa-envelope';
-    }
-    elsif ( $c eq 'login' || $c eq 'global_login' ) {
-        our $icon = 'fa-user';
-    }
-    elsif ( $c eq 'apps' || $c eq 'global_apps' ) {
-        our $icon = 'fa-rocket';
-    }
-    elsif ( $c eq 'email' || $c eq 'global_email' ) {
-        our $icon = 'fa-envelope';
-    }
-    elsif ( $c eq 'custom' || $c eq 'global_custom' ) {
-        our $icon = 'fa-wrench';
-    }
-    elsif ( $c eq 'ip' || $c eq 'global_ip' ) {
-        our $icon = 'fa-shield';
-    }
-    elsif ( $c eq 'check' || $c eq 'global_check' ) {
-        our $icon = 'fa-user-md';
-    }
-    elsif ( $c eq 'add' || $c eq 'global_add' ) {
-        our $icon = 'fa-plus';
-    }
-    elsif ( $c eq 'backup' || $c eq 'global_backup' || $c eq 'global_backup' ) {
-        our $icon = 'fa-floppy-o';
-    }
-    elsif ($c eq 'global_server'
-        || $c eq 'cat_server'
-        || $c eq 'global_system' )
-    {
-        our $icon = 'fa-cogs';
-    }
-    elsif ( $c eq 'global_delete' || $c eq 'cat_delete' ) {
-        our $icon = 'fa-plug';
-    }
-    elsif ( $c eq 'global_logs' || $c eq 'cat_logs' ) {
-        our $icon = 'fa-file-text';
-    }
-    elsif ( $c eq 'global_services' || $c eq 'cat_services' ) {
-        our $icon = 'fa-puzzle-piece';
-    }
-    elsif ( $c eq 'create_new' ) {
-        our $icon = 'fa-plus';
-    }
-    elsif ( $c eq 'global_gce' ) {
-        our $icon = 'fa-google';
-    }
-    elsif ( $c eq 'global_ec2' ) {
-        our $icon = 'fa-cubes';
-    }
-    elsif ( $c eq 'global_hosts' ) {
-        our $icon = 'fa-globe';
-    }
-    elsif ( $c eq 'global_virtualmin' ) {
-        our $icon = 'fa-sun-o';
-    }
-    elsif ( $c eq 'global_owners' ) {
-        our $icon = 'fa-users';
-    }
-    elsif ( $c eq 'global_monitor' ) {
-        our $icon = 'fa-desktop';
-    }
-    elsif ( $c eq 'global_settings' ) {
-        our $icon = 'fa-cloud';
-    }
-    elsif ( $c eq 'cat_manage' ) {
-        our $icon = 'fa-gavel';
-    }
-    elsif ( $c eq 'cat_res' ) {
-        our $icon = 'fa-share-alt';
-    }
-    elsif ( $c eq 'global_admin' || $c eq 'cat_admin' ) {
-        our $icon = 'fa-key';
-    }
-    elsif ( $c eq 'global_power' || $c eq 'cat_power' ) {
-        our $icon = 'fa-power-off';
-    }
-    else {
-        our $icon = 'fa-link';
-    }
+    my %icon_table = (
+      'webmin'              => 'fa-cog',
+      'usermin'             => 'fa-cog',
+      'settings'            => 'fa-cog',
+      'global_settings'     => 'fa-cog',
+      'cat_settings'        => 'fa-cog',
+      'system'              => 'fa-wrench',
+      'servers'             => 'fa-rocket',
+      'other'               => 'fa-gavel',
+      'net'                 => 'fa-sheild',
+      'info'                => 'fa-info',
+      'hardware'            => 'fa-hdd-o',
+      'global_hardware'     => 'fa-hdd-o',
+      'global_storage'      => 'fa-hdd-o',
+      'cluster'             => 'fa-power-off',
+      'global_cluster'      => 'fa-power-off',
+      'unused'              => 'fa-puzzle-piece',
+      'global_unused'       => 'pa-puzzle-piece',
+      'mail'                => 'fa-envelope',
+      'global_mail'         => 'fa-envelope',
+      'email'               => 'fa-envelope',
+      'global_email'        => 'fa-envelope',
+      'login'               => 'fa-user',
+      'global_login'        => 'fa-user',
+      'apps'                => 'fa-rocket',
+      'global_apps'         => 'fa-rocket',
+      'custom'              => 'fa-wrench',
+      'global_custom'       => 'fa-wrench',
+      'ip'                  => 'fa-shield',
+      'global_ip'           => 'fa-shield',
+      'check'               => 'fa-user-md',
+      'global_check'        => 'fa-user-md',
+      'add'                 => 'fa-plus',
+      'global_add'          => 'fa-plus',
+      'backup'              => 'fa-floppy-o',
+      'global_backup'       => 'fa-floppy-o',
+      'global_server',      => 'fa-cogs',
+      'cat_server',         => 'fa-cogs'.
+      'global_system'       => 'fa-cogs',
+      'global_delete'       => 'fa-plug',
+      'cat_delete'          => 'fa-plug',
+      'global_logs'         => 'fa-file-text',
+      'cat_logs'            => 'fa-file-text',
+      'global_services'     => 'fa-puzzle-piece',
+      'cat_services'        => 'fa-puzzle-piece',
+      'create_new'          => 'fa-plus',
+      'global_gce'          => 'fa-google',
+      'global_ec2'          => 'fa-cubes',
+      'global_hosts'        => 'fa-globe',
+      'global_virtualmin'   => 'fa-sun-o',
+      'global_owners'       => 'fa-users-o',
+      'global_monitor'      => 'fa-desktop',
+      'global_settings'     => 'fa-cloud',
+      'cat_manage'          => 'fa-gavel',
+      'cat_res'             => 'fa-share-alt',
+      'global_admin'        => 'fa-key',
+      'cat_admin'           => 'fa-key',
+      'global_power'        => 'fa-power-off',
+      'cat_power'           => 'fa-power-off',
+    );
+    my $icon = $icon_table{$c} || 'fa-link';
 
     if ($label) {
-
         # Show link to close or open catgory
         print '<li class="has-sub">' . "\n";
         print '<a href="#' . $c . '"><i class="fa ' . $icon . ' fa-fw"></i> <span>' . $label . '</span></a>' . "\n";
