@@ -553,6 +553,7 @@ sub print_left_menu {
         if ( $module eq $item->{'module'} || $group ) {
 
             my $link = add_webprefix( $item->{'link'} );
+            my $icon;
 
             if (   $item->{'type'} eq 'item'
                 && $link ne "/virtual-server/edit_lang.cgi"
@@ -564,86 +565,86 @@ sub print_left_menu {
                 if (   $link eq "/virtual-server/index.cgi"
                     || $link eq "/server-manager/index.cgi" )
                 {
-                    our $icon = '<i class="fa fa-fw fa-tasks"></i>';
+                    $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 }
                 elsif ($link eq "/mailbox/list_folders.cgi"
                     || $link eq "/mailbox/list_ifolders.cgi" )
                 {
-                    our $icon = '<i class="fa fa-fw fa-folder"></i>';
+                    $icon = '<i class="fa fa-fw fa-folder"></i>';
                 }
                 elsif ( $link eq "/mailbox/list_addresses.cgi" ) {
-                    our $icon = '<i class="fa fa-fw fa-users"></i>';
+                    $icon = '<i class="fa fa-fw fa-users"></i>';
                 }
                 elsif ( $link eq "/filter/edit_forward.cgi" ) {
-                    our $icon = '<i class="fa fa-fw fa-share"></i>';
+                    $icon = '<i class="fa fa-fw fa-share"></i>';
                 }
                 elsif ( $link eq "/filter/edit_auto.cgi" ) {
-                    our $icon = '<i class="fa fa-fw fa-reply-all"></i>';
+                    $icon = '<i class="fa fa-fw fa-reply-all"></i>';
                 }
                 elsif ( $link eq "/filter/" ) {
-                    our $icon = '<i class="fa fa-fw fa-filter"></i>';
+                    $icon = '<i class="fa fa-fw fa-filter"></i>';
                 }
                 elsif ( $link eq "/mailbox/edit_sig.cgi" ) {
-                    our $icon = '<i class="fa fa-fw fa-pencil"></i>';
+                    $icon = '<i class="fa fa-fw fa-pencil"></i>';
                 }
                 elsif ( index( $link, 'mailbox/index.cgi?id=' ) > -1 ) {
-                    our $icon = '<i class="fa fa-fw fa-folder-o"></i>';
+                    $icon = '<i class="fa fa-fw fa-folder-o"></i>';
                 }
                 if ( $get_user_level == 1 ) {
                     if (   index( $link, '/virtual-server/edit_pass.cgi' ) > -1
                         && index( $link, '/virtual-server/edit_pass.cgi?' ) == -1 )
                     {
-                        our $icon = '<i class="fa fa-fw fa-ticket"></i>';
+                        $icon = '<i class="fa fa-fw fa-ticket"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/edit_newplan.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-list"></i>';
+                        $icon = '<i class="fa fa-fw fa-list"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/edit_newresels.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-cog"></i>';
+                        $icon = '<i class="fa fa-fw fa-cog"></i>';
                     }
                 }
 
                 if ( $__settings{'settings_leftmenu_singlelink_icons'} ne 'false' ) {
                     if ( index( $link, '/virtual-server/domain_form.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-plus-square-o"></i>';
+                        $icon = '<i class="fa fa-fw fa-plus-square-o"></i>';
                     }
 
                     elsif (index( $link, '/virtual-server/edit_domain.cgi' ) > -1
                         || index( $link, '/server-manager/edit_serv.cgi' ) > -1 )
                     {
-                        our $icon = '<i class="fa fa-fw fa-pencil-square-o"></i>';
+                        $icon = '<i class="fa fa-fw fa-pencil-square-o"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/view_domain.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-info-circle"></i>';
+                        $icon = '<i class="fa fa-fw fa-info-circle"></i>';
                     }
 
                     elsif ( index( $link, '/virtual-server/list_users.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-users"></i>';
+                        $icon = '<i class="fa fa-fw fa-users"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/list_aliases.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-envelope-o"></i>';
+                        $icon = '<i class="fa fa-fw fa-envelope-o"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/list_databases.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-database"></i>';
+                        $icon = '<i class="fa fa-fw fa-database"></i>';
                     }
                     elsif (index( $link, '/virtual-server/list_scripts.cgi' ) > -1
                         || index( $link, '/server-manager/mass_update_form.cgi' ) > -1 )
                     {
-                        our $icon = '<i class="fa fa-fw fa-archive"></i>';
+                        $icon = '<i class="fa fa-fw fa-archive"></i>';
                     }
 
                     elsif ( index( $link, '/virtual-server/edit_html.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-globe"></i>';
+                        $icon = '<i class="fa fa-fw fa-globe"></i>';
                     }
                     elsif ( index( $link, '/server-manager/edit_pass.cgi' ) > -1 ) {
-                        our $icon = '<i class="fa fa-fw fa-key"></i>';
+                        $icon = '<i class="fa fa-fw fa-key"></i>';
                     }
                     elsif ( index( $link, '/server-manager/save_serv.cgi' ) > -1 ) {
                         if ( index( $link, 'refresh=1' ) > -1 ) {
-                            our $icon = '<i class="fa fa-fw fa-refresh"></i>';
+                            $icon = '<i class="fa fa-fw fa-refresh"></i>';
                         }
                         elsif ( index( $link, 'regen=1' ) > -1 ) {
-                            our $icon = '<i class="fa fa-fw fa-retweet"></i>';
+                            $icon = '<i class="fa fa-fw fa-retweet"></i>';
                         }
                     }
                     elsif ($link =~ /^http:\/\//
@@ -651,14 +652,14 @@ sub print_left_menu {
                         || $link =~ /^ftp:\/\//
                         || $link =~ /^ftps:\/\// )
                     {
-                        our $icon = '<i class="fa fa-fw fa-external-link"></i>';
+                        $icon = '<i class="fa fa-fw fa-external-link"></i>';
                     }
 
                 }
 
                 # Set variable in case it hasn't been set before
                 if ( !length $link ) {
-                    our $icon = undef;
+                    $icon = undef;
                 }
 
                 if (   $link
@@ -851,7 +852,7 @@ sub get_sysinfo_vars {
 
         # Ask status module for collected info
         &foreign_require("system-status");
-        $info = &system_status::get_collected_info();
+        my ($info) = &system_status::get_collected_info();
 
         # Define used vars
         my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
@@ -2912,9 +2913,9 @@ sub init {
 
     # Make ConfigServer Security Firewall look as we need
     if ( -r '/usr/local/csf/lib/webmin/csf/index.cgi' ) {
-        open( FILE, "</usr/local/csf/lib/webmin/csf/index.cgi" );
-        my @l = <FILE>;
-        close(FILE);
+        open( my $FILE, "<", "/usr/local/csf/lib/webmin/csf/index.cgi" );
+        my @l = <$FILE>;
+        close($FILE);
 
         if ( grep {/data-replaced/} @l ) {
             return;
@@ -2929,9 +2930,9 @@ sub init {
             push( @n, $_ );
         }
 
-        open( FILE, ">/usr/local/csf/lib/webmin/csf/index.cgi" );
-        print FILE @n;
-        close(FILE);
+        open( $FILE, ">", "/usr/local/csf/lib/webmin/csf/index.cgi" );
+        print $FILE @n;
+        close($FILE);
     }
 
 }
@@ -3083,7 +3084,7 @@ sub get_theme_language {
     my %text = &load_language($current_theme);
 
     my %s;
-    foreach $key ( keys %text ) {
+    foreach my $key ( keys %text ) {
         if ( index( $key, '_xhred_' ) == -1 ) {next}
         $s{$key} .= $text{$key};
     }
