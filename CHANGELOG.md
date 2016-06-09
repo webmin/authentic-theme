@@ -7,7 +7,7 @@
 * Added ability to open correspondent module, when clicking on charts on _System Information_ page [#480](https://github.com/qooob/authentic-theme/issues/480)
 * Added ability to donate using _[Bitcoin](https://github.com/qooob/authentic-theme#donation)_
 * Fixed bugs [#320](https://github.com/qooob/authentic-theme/issues/320) [#445](https://github.com/qooob/authentic-theme/issues/445) [#452](https://github.com/qooob/authentic-theme/issues/452) [#485](https://github.com/qooob/authentic-theme/issues/485) [#39576](https://www.virtualmin.com/node/39576) [#39789](https://www.virtualmin.com/node/39789) [#40686](https://www.virtualmin.com/node/40686) [#40936](https://www.virtualmin.com/node/40936) [#40988](https://www.virtualmin.com/node/40988)
-* Fixed other bugs
+* Fixed dozens of other bugs
 
 ####Version 18.00 (May 26, 2016)  :star2:
 * Fixed possible security issue and removed _Security Alerts_ as they become the part of _Webmin Core_ in the near future [#467](https://github.com/qooob/authentic-theme/issues/467)
