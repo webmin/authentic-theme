@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -295,8 +295,8 @@ function f__mgk_sp(l, j) {
         k = l.find(".fa").hasClass("fa-1_25x"),
         d = l.find(".fa"),
         h = ((typeof j == "undefined" || j == false) ? false : j),
-        i = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : ((b || c) ? (-0.5 + f) + "px" : k ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (b || c ? "-23.5px" : (g || k) ? "-27px" : "-25px")) + ' !important;"><span class="cspinner-icon white ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>',
-        a = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : ((b || c) ? (-0.5 + f) + "px" : k ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (b || c ? "-23.5px" : (g || k) ? "-27px" : "-25px")) + '  !important;"><span class="cspinner-icon dark ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>';
+        i = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : (((b || c) && (!k && !g)) ? (-0.5 + f) + "px" : k ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (((b || c) && (!k && !g)) ? "-23.5px" : g ? "-28px" : (!b && !c && k) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>',
+        a = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : (((b || c) && (!k && !g)) ? (-0.5 + f) + "px" : k ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (((b || c) && (!k && !g)) ? "-23.5px" : g ? "-28px" : (!b && !c && k) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>';
     !e && l.addClass("disabled");
     if (d.length && !e) {
         if (l.hasClass("btn-default")) {
@@ -1257,7 +1257,8 @@ $.each($("span > input"), function() {
         f.css("margin-top", "4px")
     }
     if (e) {
-        e.attr("style", "display: inline; width:40px; height: 28px; margin-right:0 !important; margin-top:4px !important; vertical-align: bottom").next("i.fa-files-o").css("margin-top", "11px").addClass("vertical-align-middle")
+        e.attr("style", "display: inline; width:40px; height: 28px; margin-right:0 !important; vertical-align: middle").next("i.fa-files-o").css("margin-top", "11px").addClass("vertical-align-middle");
+        e.attr("style", "display: inline; width:40px; height: 28px; margin-right:0 !important; vertical-align: middle").next("i.fa-calendar").attr("style", "margin-top: 8px !important; font-size: 11px; margin-left: -27px; pointer-events: none;")
     }
 });
 $.each($('input[type="button"][onclick^="ifield"]'), function(d, c) {
@@ -1352,6 +1353,9 @@ if ($('body[class*="status"]').length && $__source_file == "edit_mon.cgi" || $cu
             return this.nodeType == 3
         }).remove()
     }
+    if ($current_page_full == $_____link_full + "/fdisk/" || $current_page_full == $_____link_full + "/fdisk/index.cgi") {
+        $("body").find('a[href^="blink.cgi"]:not(.ui_link_replaced)').html($("body").find('a[href^="blink.cgi"]:not(.ui_link_replaced)').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-warning btn-xxs").removeClass("heighter-34").removeClass("ui_link")
+    }
     if ($current_page_full == $_____link_full + "/fsdump/" || $current_page_full == $_____link_full + "/fsdump/index.cgi") {
         $.each($("tr td:last-child"), function() {
             $(this).find('a[href^="backup.cgi"]').html($(this).find('a[href^="backup.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-success btn-xxs").removeClass("heighter-34").removeClass("ui_link").prepend('<i class="fa fa-fw fa-floppy-o" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>');
@@ -1390,7 +1394,7 @@ if ($current_directory == $_____link + "init/") {
     })
 }
 if ($current_directory == $_____link + "proc/" || $source_path == $_____link + "proc/index.cgi" || ($current_directory == $_____link + "fetchmail/" && $("link").attr("href") == "/images/favicon-usermin.ico")) {
-    if ($current_directory == $_____link + "proc/" || $source_path == $_____link + "proc/index.cgi") {
+    if (($current_directory == $_____link + "proc/" && $__source_file && $__source_file.indexOf("index_") > -1) || $source_path == $_____link + "proc/index.cgi") {
         $("a.ui_link + b").addClass("btn").css("margin-left", "3px");
         $("b + a.ui_link").addClass("btn").css("margin-left", "3px");
         if ($('.panel-body > b:first-child:contains("Display")').length > 0) {
@@ -1766,7 +1770,7 @@ if ($current_directory == $_____link + "fdisk/" || $current_directory == $_____l
         $(this).text($(this).text().replace(/\.$/, ""))
     })
 }
-$('.panel-body > form > p > a.ui_link, .panel-body > table.table + a.ui_link, .panel-body > p > a:not([href*="config.cgi?bacula-backup"]), body[data-current-product="usermin"] div.panel-body > p > a, div.panel-body > a[href^="edit_"]:not([href^="edit_user.cgi?user="]), .ui_form > a, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a.ui_link:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="]), .ui_grid_cell > a.select_all, .ui_grid_cell > a.select_invert, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a[href*=".cgi"]:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="]), .ui_grid_cell > a[href*=".cgi"]:first-child:not([href^="edit_rpc.cgi"],[href^="edit_nuser.cgi"],[href*="edit_user.cgi?idx"]), .tab-pane > p > a, .tab-pane > a.ui_link, .tab-pane > .table-condensed > a.ui_link, .tab-pane > a, .panel-body > p > a.ui_link, a.select_all, a.select_invert, form[action="delete.cgi"] > table table.ui_grid_table + a').each(function() {
+$('.panel-body > form > p > a.ui_link, .panel-body > table.table + a.ui_link, .panel-body > p > a:not([href*="config.cgi?bacula-backup"]), body[data-current-product="usermin"] div.panel-body > p > a, div.panel-body > a[href^="edit_"]:not([href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_form > a, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a.ui_link:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_grid_cell > a.select_all, .ui_grid_cell > a.select_invert, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a[href*=".cgi"]:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_grid_cell > a[href*=".cgi"]:first-child:not([href^="edit_rpc.cgi"],[href^="edit_nuser.cgi"],[href*="edit_user.cgi?idx"]), .tab-pane > p > a, .tab-pane > a.ui_link, .tab-pane > .table-condensed > a.ui_link, .tab-pane > a, .panel-body > p > a.ui_link, a.select_all, a.select_invert, form[action="delete.cgi"] > table table.ui_grid_table + a').each(function() {
     if ($(this).parents(".ui_grid_row").length) {}
     if (!is__mf("virtual-server", "history.cgi") && !is__mf("server-manager", "one_history.cgi") && $current_directory != $_____link + "passwd/" && $(this).text() && $current_page_full != $_____link_full + "/mailboxes/" && $current_page_full != $_____link_full + "/mailboxes/index.cgi" && $current_page_full != $_____link_full + "/usermin/list_configs.cgi" && !$(this).hasClass("help_popup")) {
         $(this).addClass("btn btn-inverse btn-tiny ui_link_replaced");
@@ -2190,7 +2194,7 @@ if ($current_page_full == $_____link_full + "/syslog/" || $current_page_full == 
 }
 if ($current_page_full == $_____link_full + "/software/" || $current_page_full == $_____link_full + "/software/index.cgi") {
     $("input#search").addClass("heighter-34 vertical-align-top");
-    $('form[action="file_info.cgi"] > .ui_form_end_submit').addClass("heighter-28 heighter-28-force vertical-align-top margined-top-0")
+    $('form[action="file_info.cgi"] > .ui_form_end_submit').addClass("heighter-28 heighter-28-force margined-top-0")
 }
 if ($current_page_full == $_____link_full + "/software/tree.cgi") {
     $(".ui_link").addClass("margined-top-10")
@@ -2329,7 +2333,7 @@ $("body table").each(function(d, e) {
         }
     }
 });
-if ((($current_page_full.indexOf(".cgi") === -1 || $current_page_full.indexOf("link.cgi") !== -1) || $current_page_full == $_____link_full + "/proc/open_files.cgi" || $current_page_full == $_____link_full + "/webmin/edit_webmincron.cgi" || $current_page_full == $_____link_full + "/postfix/mailq.cgi" || $current_page_full == $_____link_full + "/webmin_search.cgi" || $current_page_full == $_____link_full + "/useradmin/index.cgi" || $current_page_full == $_____link_full + "/quota/list_users.cgi" || $current_page_full == $_____link_full + "/quota/list_groups.cgi" || $current_page_full == $_____link_full + "/init/index.cgi") && ($current_directory == $_____link + "webmin/" || $current_directory == $_____link + "proc/" || $source_path == $_____link + "webmin_search.cgi" || $current_directory == $_____link + "postfix/" || $current_directory == $_____link + "virtual-server/" || $current_directory == $_____link + "init/" || $current_directory == $_____link + "mount/" || $current_directory == $_____link + "custom/" || $current_directory == $_____link + "quota/" || $current_directory == $_____link + "php-pear/" || $current_directory == $_____link + "fsdump/" || $current_directory == $_____link + "inittab/" || $current_directory == $_____link + "logrotate/" || $current_directory == $_____link + "mailcap/" || $current_directory == $_____link + "cron/" || $current_directory == $_____link + "software/" || $current_directory == $_____link + "syslog/" || $current_directory == $_____link + "useradmin/" || $current_directory == $_____link + "apache/" || $current_directory == $_____link + "webalizer/" || $current_directory == $_____link + "cpan/" || $current_directory == $_____link + "htaccess-htpasswd/" || $current_directory == $_____link + "fdisk/") || is__mf("fail2ban", "list_filters.cgi") || is__mf("fail2ban", "list_actions.cgi") || is__mf("fail2ban", "list_jails.cgi") || $current_page_full == $_____link_full + "/useradmin/list_logins.cgi" || $current_page_full == $_____link_full + "/man/search.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi" || $current_page_full == $_____link_full + "/software/search.cgi" || $current_page_full == $_____link_full + "/software/file_info.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/virtual-server/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_users.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newplan.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newtmpl.cgi" || $current_page_full == $_____link_full + "/virtual-server/backuplog.cgi" || $current_page_full == $_____link_full + "/package-updates/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/usage.cgi" || $current_page_full == $_____link_full + "/virtual-server/search.cgi" || (($current_page_full == $_____link_full + "/fetchmail/" || $current_page_full == $_____link_full + "/filter/") && product_name() == "Usermin")) {
+if ((($current_page_full.indexOf(".cgi") === -1 || $current_page_full.indexOf("link.cgi") !== -1) || $current_page_full == $_____link_full + "/proc/open_files.cgi" || $current_page_full == $_____link_full + "/webmin/edit_webmincron.cgi" || $current_page_full == $_____link_full + "/postfix/mailq.cgi" || $current_page_full == $_____link_full + "/webmin_search.cgi" || $current_page_full == $_____link_full + "/useradmin/index.cgi" || $current_page_full == $_____link_full + "/quota/list_users.cgi" || $current_page_full == $_____link_full + "/quota/list_groups.cgi" || $current_page_full == $_____link_full + "/init/index.cgi") && ($current_directory == $_____link + "webmin/" || $current_directory == $_____link + "proc/" || $source_path == $_____link + "webmin_search.cgi" || $current_directory == $_____link + "postfix/" || $current_directory == $_____link + "virtual-server/" || $current_directory == $_____link + "init/" || $current_directory == $_____link + "mount/" || $current_directory == $_____link + "custom/" || $current_directory == $_____link + "quota/" || $current_directory == $_____link + "php-pear/" || $current_directory == $_____link + "fsdump/" || $current_directory == $_____link + "inittab/" || $current_directory == $_____link + "logrotate/" || $current_directory == $_____link + "mailcap/" || $current_directory == $_____link + "cron/" || $current_directory == $_____link + "software/" || $current_directory == $_____link + "syslog/" || $current_directory == $_____link + "useradmin/" || $current_directory == $_____link + "apache/" || $current_directory == $_____link + "webalizer/" || $current_directory == $_____link + "cpan/" || $current_directory == $_____link + "htaccess-htpasswd/" || $current_directory == $_____link + "fdisk/") || is__mf("postfix", "master.cgi") || is__mf("fail2ban", "list_filters.cgi") || is__mf("fail2ban", "list_actions.cgi") || is__mf("fail2ban", "list_jails.cgi") || $current_page_full == $_____link_full + "/useradmin/list_logins.cgi" || $current_page_full == $_____link_full + "/man/search.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi" || $current_page_full == $_____link_full + "/software/search.cgi" || $current_page_full == $_____link_full + "/software/file_info.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/virtual-server/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_users.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newplan.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newtmpl.cgi" || $current_page_full == $_____link_full + "/virtual-server/backuplog.cgi" || $current_page_full == $_____link_full + "/package-updates/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/usage.cgi" || $current_page_full == $_____link_full + "/virtual-server/search.cgi" || (($current_page_full == $_____link_full + "/fetchmail/" || $current_page_full == $_____link_full + "/filter/") && product_name() == "Usermin")) {
     $("table").each(function() {
         if ($(this).find("thead") && $(this).find("thead").length && $(this).find("thead tr th") && $(this).find("thead tr th").length > 2) {
             if ($(this).find("thead") && $(this).find("thead").length > 1) {
@@ -2786,11 +2790,12 @@ if ($current_page_full == $_____link_full + "/virtual-server/edit_resel.cgi") {
 }
 if ($('body[class^="syslog"]').length && $__source_query && $__source_query.indexOf("view=1") > -1) {
     if (!$("pre").find("i").length) {
+        var log = false;
         $("pre").each(function() {
-            var c = $(this),
-                a = HTMLDecode(c.html());
-            c.empty();
-            var b = CodeMirror(this, {
+            var b = $(this),
+                a = HTMLDecode(b.html());
+            b.empty();
+            log = CodeMirror(this, {
                 value: a,
                 lineNumbers: true,
                 mode: null,
@@ -2798,6 +2803,16 @@ if ($('body[class^="syslog"]').length && $__source_query && $__source_query.inde
                 readOnly: true,
                 viewportMargin: Infinity
             })
+        }).promise().done(function() {
+            if (log) {
+                var a = ($(window).outerHeight() / 1.7),
+                    b = ($(".CodeMirror-code").find("pre").length * 17);
+                if (b > a) {
+                    log.setSize(null, a)
+                } else {
+                    log.setSize(null, b)
+                }
+            }
         })
     }
 }
@@ -2854,7 +2869,7 @@ $("#headln2r, #headln2l").prepend('<div class="btn-group">').append("</div>");
 $("#headln2r a").detach().appendTo("#headln2r .btn-group");
 $("#headln2l a").detach().appendTo("#headln2l .btn-group");
 $.each($(".ui_form_end_submit"), function() {
-    if ($source_path == $_____link + "proc/edit_proc.cgi" || $__source_file == "edit_dbase.cgi" || $__source_file == "edit_pam.cgi" || $__source_file == "list_records.cgi") {
+    if ($source_path == $_____link + "proc/edit_proc.cgi" || $__source_file == "edit_dbase.cgi" || $__source_file == "edit_pam.cgi" || $__source_file == "list_records.cgi" || is__m("mailbox") || is__m("mailboxes")) {
         return
     }
     var a = $(this).parent().find(".ui_form_end_submit");
@@ -2919,6 +2934,7 @@ if (my_editor_page.length) {
     $('form[action*="manual"], form[action*="edit_"]').css("margin-bottom", "2px")
 }
 $('body[class*="proftpd"] .table-hardcoded tr td > input + input.btn.btn-default').removeClass("heighter-28").addClass("heighter-34").prev("input").addClass("heighter-34");
+$('body[class*="proftpd"] form[action="find_ftpaccess.cgi"] > input:first-child').removeClass("heighter-34").addClass("heighter-28");
 if ($__source_file == "edit_simple.cgi" && $('body[class*="spam"]').length) {
     $("tr td").contents().filter(function() {
         return this.nodeType == 3
@@ -2931,18 +2947,25 @@ if (is__mf("usermin", "list_sessions.cgi")) {
     $('#user, input[type="button"]').addClass("heighter-34")
 }
 if (is__mf("htaccess-htpasswd", "") || is__mf("htaccess-htpasswd", "index.cgi")) {
-    $("#search, .file_chooser_button").addClass("heighter-34").css("margin-bottom", "-1px")
+    $("#search, .file_chooser_button").addClass("heighter-34").css("margin-bottom", "-1px");
+    $("#search").css("margin-top", "0")
 }
 if (is__mf("mailboxes", "") || is__mf("mailboxes", "index.cgi")) {
     $("#user, .file_chooser_button").addClass("heighter-34 vertical-align-middle").css("margin-bottom", "-1px")
 }
 if (is__mf("mailboxes", "list_mail.cgi")) {
-    $("#mfolder1, #mfolder2").addClass("heighter-34").css("margin-bottom", "-1px")
+    $("#mfolder1, #mfolder2").addClass("heighter-34").css("margin-bottom", "-1px").css("margin-top", "-1px")
+}
+if (is__mf("quota", "list_users.cgi")) {
+    $("#user, #user + input").addClass("heighter-34")
+}
+if (is__mf("quota", "list_groups.cgi")) {
+    $("#group, #group + input").addClass("heighter-34")
 }
 if (is__mf("apache", "htaccess.cgi") || is__mf("virtualmin-registrar", "index.cgi") || is__mf("virtualmin-registrar", "")) {
     $(".ui_form_end_submit").addClass("heighter-28-force")
 }
-var attempt_make_all_elem = $('form .table-responsive .table .sub_table_container .table tbody tr td > select, form .table-responsive .table .sub_table_container .table tbody tr td > input,							   form .table td.opener_container td.col_value table tbody tr td > select, form .table td.opener_container td.col_value table tbody tr td > input,							   form[action="save_newglobal.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td input,							   form[action="save_linkcats.cgi"] > table tbody tr td input,							   form[action="save_gen.cgi"] > table tbody tr td input							   ');
+var attempt_make_all_elem = $('form:not([action="save_log.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > select,							   form:not([action="save_log.cgi"], [action="save_net.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > input,							   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > select,							   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > input,							   form[action="save_newglobal.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td input,							   form[action="save_linkcats.cgi"] > table tbody tr td input,							   form[action="save_gen.cgi"] > table tbody tr td input							   ');
 $.each(attempt_make_all_elem, function(a, b) {
     if ($(this).parent().find('input:not([type="checkbox"], [type="radio"]), select').length == 1) {
         $(this).css("width", "100%").css("min-width", "100%")
@@ -2979,11 +3002,17 @@ if (is__mf("virtual-server", "edit_html.cgi")) {
     }
     $(".ui_form_end_submit").click(function() {
         $("body").removeAttr("data-unload-warning")
+    });
+    $("input:file").change(function() {
+        var a = $(this);
+        setTimeout(function() {
+            $('form[action*="upload_html.cgi"]').append(a)
+        }, 500)
     })
 }
-if (is__mf("virtual-server", "edit_newlinks.cgi") || is__mf("virtualmin-dav", "list_shares.cgi") || ($current_directory == $_____link + "pam/" && !$__source_file) || ($current_directory == $_____link + "syslog/" && !$__source_file) || ($current_page_full == $_____link_full + "/postfix/master.cgi")) {
+if (is__mf("virtualmin-nginx", "") || is__mf("virtualmin-awstats", "") || is__mf("fdisk", "edit_disk.cgi") || is__mf("virtual-server", "edit_newlinks.cgi") || is__mf("virtualmin-dav", "list_shares.cgi") || ($current_directory == $_____link + "pam/" && !$__source_file) || ($current_directory == $_____link + "syslog/" && !$__source_file) || ($current_page_full == $_____link_full + "/postfix/master.cgi")) {
     setTimeout(function() {
-        var b = $('.panel-body > .ui_link, .panel-body > .ui_link_replaced, body[data-uri*="edit_newlinks.cgi"] .panel-body > form > .ui_link_replaced, body[data-uri*="edit_newlinks.cgi"] .panel-body > .ui_emptymsg + p > .ui_link_replaced'),
+        var b = $('.panel-body > .ui_link, .panel-body > .ui_link_replaced,					 body[data-uri*="virtualmin-awstats"] .panel-body > form > .ui_link_replaced,					 body[data-uri*="edit_disk.cgi"] .panel-body p > a.ui_link_replaced,					 body[data-uri*="edit_newlinks.cgi"] .panel-body > form > .ui_link_replaced,					 body[data-uri*="edit_newlinks.cgi"] .panel-body > .ui_emptymsg + p > .ui_link_replaced'),
             c = $.trim(b.first().text()),
             a = b.first().attr("href");
         $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
@@ -2991,6 +3020,41 @@ if (is__mf("virtual-server", "edit_newlinks.cgi") || is__mf("virtualmin-dav", "l
         b.next("br").remove();
         b.remove()
     }, 0)
+}
+if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __num()) {
+    $(".piechart canvas").hover(function() {
+        var a = $(this).parent("span").attr("data-charts").split("_")[1];
+        if ((a == "cpu" || a == "mem" || a == "virt") && !is_module("proc")) {
+            return
+        } else {
+            if (a == "disk" && !is_module("disk-usage") && !is_module("quota")) {
+                return
+            }
+        }
+        $(this).addClass("cursor-alias");
+        $(this).prev("span").prepend('<i class="fa fa-fw fa-link">&nbsp;</i>')
+    }, function() {
+        $(this).prev("span").find("i").remove()
+    });
+    $("body").on("click", "canvas", function(b) {
+        b.preventDefault();
+        var a = $(this).parent("span").attr("data-charts").split("_")[1];
+        if (a == "cpu" && is_module("proc")) {
+            window.location.href = $_____link_full + "/proc/index_cpu.cgi"
+        } else {
+            if ((a == "mem" || a == "virt") && is_module("proc")) {
+                window.location.href = $_____link_full + "/proc/index_size.cgi"
+            } else {
+                if (a == "disk" && is_module("disk-usage")) {
+                    window.location.href = $_____link_full + "/disk-usage"
+                } else {
+                    if (a == "disk" && is_module("quota")) {
+                        window.location.href = $_____link_full + "/quota/list_users.cgi?dir=%2F"
+                    }
+                }
+            }
+        }
+    })
 }
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {

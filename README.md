@@ -1,11 +1,11 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (18.00)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (18.01)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
 * [Development](#development)
-* [Donation![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest)
+* [Donation![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/qooob/authentic-theme#donation)
 * [License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 
 ##About
@@ -169,6 +169,8 @@ Theme only re-renders this module and adds support for code highlight, when edit
  Overall development of this theme has already passed the stage of 1800 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://rostovtsev.ru/pub/media/icons/paypal-175x45.png)</a>
+
+![](http://rostovtsev.ru/pub/media/icons/bitcoin-175-218.png)
 
 ### License
 

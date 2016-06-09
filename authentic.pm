@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -18,6 +18,8 @@ sub theme_header {
         . $__settings{'settings_navigation_color'}
         . '" data-level="'
         . $get_user_level
+        . '" data-user="'
+        . $remote_user
         . '" data-dashboard="'
         . dashboard_switch()
         . '" data-language="'
@@ -152,18 +154,30 @@ sub theme_popup_prehead {
             : '-webmin'
             ) . '.ico">' . "\n";
         print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+
         print '<link href="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/css/package.min.css?1800" rel="stylesheet" type="text/css">' . "\n";
+            . '/unauthenticated/css/authentic.'
+            . ( isd() eq 'debug' ? 'src' : 'min' )
+            . '.css?1801" rel="stylesheet" type="text/css">' . "\n";
+
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/package.min.js?1800" type="text/javascript"></script>' . "\n";
+            . '/unauthenticated/js/jquery.'
+            . ( isd() eq 'debug' ? 'src' : 'min' )
+            . '.js?1801" type="text/javascript"></script>', "\n";
+
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/cgi.min.js?1800" type="text/javascript"></script>', "\n";
+            . '/unauthenticated/js/cgi.'
+            . ( isd() eq 'debug' ? 'src' : 'min' )
+            . '.js?1801" type="text/javascript"></script>', "\n";
+
         print '<script src="'
             . $gconfig{'webprefix'}
-            . '/unauthenticated/js/filtermatch.min.js?1800" type="text/javascript"></script>', "\n";
+            . '/unauthenticated/js/filtermatch.'
+            . ( isd() eq 'debug' ? 'src' : 'min' )
+            . '.js?1801" type="text/javascript"></script>', "\n";
     }
 }
 

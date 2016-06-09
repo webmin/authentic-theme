@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -10,11 +10,19 @@ our $__changelog
             <div class="modal-content">
               <div class="modal-header background-success background--bordered">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="update_notice_label"><i class="fa fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
+                <h4 class="modal-title" id="update_notice_label"><i class="fa fa-fw fa-info-circle">&nbsp;&nbsp;</i>' . $text{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body" style="font-weight: 300">
-                <h4>Version 18.00 (May 26, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
+                <h4>Version 18.00-18.01 (June 09, 2016) &nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></h4>
                 <ul>
+                  <li>Improved <em>UI</em> of <em>ConfigServer Security & Firewall</em> (in particular, configuration page and server outputs)</li>
+                  <li>Added ability to extract <code>.rpm</code> and <code>.deb</code> files in <em>File Manager</em> (needed dependencies for <code>.rpm</code>: <em>rpm2cpio</em> and <em>cpio</em>; for <code>.deb</code>: <em>dpkg</em>)</li>
+                  <li>Added ability to have user-specific tabs in <em>File Manager</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/478" target="_blank">#478</a></li>
+                  <li>Added ability to open correspondent module, when clicking on charts on <em>System Information</em> page <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/480" target="_blank">#480</a></li>
+                  <li>Added ability to donate using <a target="_blank" href="https://github.com/qooob/authentic-theme#donation">Bitcoin</a></li>
+                  <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/320" target="_blank">#320</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/445" target="_blank">#445</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/452" target="_blank">#452</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/485" target="_blank">#485</a> <a class="label label-default" href="https://www.virtualmin.com/node/39576" target="_blank">#39576</a> <a class="label label-default" href="https://www.virtualmin.com/node/39789" target="_blank">#39789</a> <a class="label label-default" href="https://www.virtualmin.com/node/40686" target="_blank">#40686</a> <a class="label label-default" href="https://www.virtualmin.com/node/40936" target="_blank">#40936</a> <a class="label label-default" href="https://www.virtualmin.com/node/40988" target="_blank">#40988</a></li>
+                  <li>Fixed dozens of other bugs<hr></li>
+
                   <li>Fixed possible security issue and removed <em>Security Alerts</em> as they become the part of <em>Webmin Core</em> in the near future <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/467" target="_blank">#467</a></li>
                   <li>Improved <em>UI</em> overall</li>
                   <li>Reworked and empowered <em>File Manager</em> functionality:</li>
@@ -48,14 +56,13 @@ our $__changelog
                   <li>Improved submit buttons. Type detection with adding icons, grouping and coloring. After submission, spinner appears and button becomes inactive to prevent accidental resubmission</li>
                   <li>Added an option to disable to fit database table content into screen height on <em>MySQL/PostgreSQL</em> modules. By default no scroll bars will be shown</li>
                   <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/422" target="_blank">#422</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/433" target="_blank">#433</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/455" target="_blank">#455</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/457" target="_blank">#457</a>  <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/460" target="_blank">#460</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/461" target="_blank">#461</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/462" target="_blank">#462</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/465" target="_blank">#465</a> <a class="label label-default" href="https://www.virtualmin.com/node/40490" target="_blank">#40490</a> <a class="label label-default" href="https://www.virtualmin.com/node/40767" target="_blank">#40767</a> <a class="label label-default" href="https://www.virtualmin.com/node/40686" target="_blank">#40686</a></li>
-                  <li>Fixed dozens of other bugs</li>
                 </ul>
 
                 <!-- <h5 style="margin-top:10px; margin-bottom:5px; font-weight: 300">How do I make the theme load faster?</h5> <em>Webmin</em> has in-built option to compress static files. It\'s possible to enable this feature by going to <code>Webmin->Webmin Configuration->Web Server Options</code> and setting <em>Gzip compress static files</em> option to <em>Use pre-compressed file and compress dynamically</em>.-->
                 <hr>
                 <h4 style="margin-top:20px;">' . $text{'theme_development_support'} . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg fa-heartbeat" style="color: #c9302c"></i></h4>
                 ' . ( !licenses('cm') && !licenses('vm') ? '' : '<!--' ) . 'Thank you for using <a target="_blank" style="color: #333; font-weight: normal;" href="https://github.com/qooob/authentic-theme">' . $text{'theme_name'} . '</a>. Overall development of this theme has already passed the stage of <span class="badge" style="font-size: 90%; background-color: #4ca14e; border-color: #3c763d;">1800</span> hours.
-                  I am happy to provide it for free but it would mean a lot to <a href="https://rostovtsev.ru" target="_blank">me</a>, if you sent me a <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default" style="margin-left: -7px;">donation</span></a>.
+                  I am happy to provide it for free but it would mean a lot to <a href="https://rostovtsev.ru" target="_blank">me</a>, if you sent me a donation using <a target="_blank" class="badge fa fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default" style="margin-left: -7px;">PayPal</span></a> or <a target="_blank" class="badge" style="font-size: 11px; background-color: #f7931a; display: inline-block; max-height: 17px;" href="https://github.com/qooob/authentic-theme#donation"> <span class="font-family-default" style="margin-left: -7px;"><em style="margin-left: 7px; font-weight: 700; margin-right: 3px; font-size: 15px; vertical-align: middle; margin-top: -3px; display: inline-block;">฿ </em> Bitcoin</span></a>.
                   It doesn\'t matter how big or small your donation is. I appreciate all donations. Each donation will <em style="border-bottom:1px dotted #ccc   ">help me to pay my bills</em> and excite future progress.
                   <br>
                   <br>' . ( !licenses('cm') && !licenses('vm') ? '' : '-->' ) . '

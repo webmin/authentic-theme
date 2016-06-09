@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -38,6 +38,7 @@ var $_url = $.url(t___wi.location),
     $t_uri_dashboard = t__wi_p.location.search == "?dashboard" ? 1 : 0,
     $g__v__title = t__wi_p.$("html head title").data("initial"),
     $g__v__nav = t__wi_p.$("aside").length,
+    $g__user__ = $("body").data("user"),
     $g__m__name = $("body").data("module");
 if ($webprefix) {
     $webprefix = ($webprefix + "/").replace(/\/\//g, "/");

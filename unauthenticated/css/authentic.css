@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -111,6 +111,14 @@ h6,
 #hiddenopener_docs,
 .ui_value label {
     margin-right: 5px
+}
+
+#popup>form table tr td input[name="file"] {
+    width: 99% !important
+}
+
+#popup>form table tr td input[name="pc"] {
+    width: 170px !important
 }
 
 #popup>.ui_form>.table-responsive table tr td.col_label button,
@@ -1745,6 +1753,11 @@ input[type="search"] {
     padding-left: 6px
 }
 
+.csf input[type="text"]:focus,
+.csf input[type="search"]:focus {
+    padding-left: 6px !important
+}
+
 .btn:not(.btn-xxs):not(.btn-tiny):not(.ui_link_replaced),
 .csf button.input,
 .csf input[type="submit"],
@@ -1794,6 +1807,21 @@ input[name]:not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.
     color: #555;
     border-color: #e2e2e2;
     background-color: #e7e7e7
+}
+
+.csf input[type="submit"]:hover,
+.csf input[type="submit"]:focus,
+.csf input[type="submit"]:active,
+.csf input[type="submit"].active {
+    border-color: #cecece
+}
+
+.csf .csf-box legend+table.table.table-striped.table-condensed[align="center"] {
+    margin-top: -2px !important
+}
+
+.csf .csf-box legend+table.table.table-striped.table-condensed[align="center"] tbody tr:first-child {
+    border-top: 0 !important
 }
 
 .btn-tiny {
@@ -2189,6 +2217,7 @@ fieldset[disabled] .btn-grey.active {
 
 .csf #CSFajax {
     width: auto !important;
+    height: auto !important;
     padding: 6px
 }
 
@@ -2267,6 +2296,7 @@ form.ui_form>input+select {
 }
 
 br+.ui_form_end_submit,
+br+.ui_form_end_submit ~ .ui_form_end_submit,
 br+.end_submits,
 .ui_link_replaced+.end_submits,
 .table-responsive+.end_submits,
@@ -2336,36 +2366,113 @@ form.ui_form[action="delete_servs.cgi"] table.table-striped.table-condensed tabl
 }
 
 .csf form table .comment {
-    font-size: 15px;
-    font-style: italic;
+    font-size: 13px;
     margin-top: 15px;
     padding: 10px;
-    border: 1px dashed #f0f0f0;
+    border: 1px solid #e4e4e4;
     border-bottom: 0
 }
 
 .csf form table .section {
+    margin-right: -5px;
+    margin-left: -5px;
     border: 1px solid #eaeaea;
+    border-top: 3px solid #f1f1f1;
     background: #fff
+}
+
+.csf form table .comment+.value-other+.value-default,
+.csf form table .comment+.value-default+br+.value-default {
+    margin-top: -1px
+}
+
+.csf form table .section+br {
+    display: none
+}
+
+.csf form table .section+br+.comment {
+    margin-top: -1px;
+    margin-left: -5px;
+    margin-right: -5px
+}
+
+.csf form table .value-other>table tbody tr td,
+.csf form table .value-other>table tbody {
+    border: 0 !important
+}
+
+.csf form table .value-other+br+.comment,
+.csf form table .value-default+br+.comment {
+    margin-left: -5px;
+    margin-right: -5px
 }
 
 .csf form table .section,
 .csf table tbody tr th {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: normal;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     text-align: center;
     vertical-align: bottom !important
 }
 
+.csf form table .value-other>table,
+.csf form table .value-default>table tbody,
+.csf form table .value-other>table tr td,
+.csf form table .value-default>table tbody tr td {
+    border-color: transparent !important
+}
+
+.csf form table .value-default+.value-default,
+.csf form table .value-other+.value-other {
+    border-top: 0
+}
+
+.csf form table .value-other>table tr,
+.csf form table .value-default>table tbody tr {
+    background: #fff
+}
+
+.csf form table .value-other>table,
+.csf form table .value-default>table {
+    margin: 0 !important
+}
+
 .csf form table .value-other,
 .csf form table .value-default {
-    font-size: 13px;
-    padding: 10px;
-    border: 1px dashed #f0f0f0;
-    border-top: 0;
+    font-size: 12px;
+    padding: 0;
+    border: 1px solid #eee;
     background: #fff
+}
+
+.csf form table .value-other>b,
+.csf form table .value-default>b {
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 4px
+}
+
+.csf form table .value-other>input,
+.csf form table .value-default>input,
+.csf form table .value-other>select,
+.csf form table .value-default>select {
+    margin-top: 1px;
+    margin-bottom: 3px
+}
+
+.csf form table .value-other>b+input[type="text"],
+.csf form table .value-default>b+input[type="text"],
+.csf form table .value-other>b+select.heighter-34,
+.csf form table .value-default>b+select.heighter-34 {
+    font-size: 13px !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important
 }
 
 .csf img[src*="csfimages/plus.png"]+.fa-minus-circle:before,
@@ -2389,6 +2496,7 @@ form.ui_form[action="delete_servs.cgi"] table.table-striped.table-condensed tabl
     font-weight: normal !important;
     line-height: 26px !important;
     display: block;
+    margin-right: -1px;
     padding: 2px 0 !important;
     text-align: center !important;
     border: 1px solid #f0f0f0 !important;
@@ -2398,7 +2506,7 @@ form.ui_form[action="delete_servs.cgi"] table.table-striped.table-condensed tabl
 
 .dataTables_filter input[type="search"]:focus,
 .dataTables_filter input[type="search"]:hover,
-.csf input[type="text"]:focus,
+.csf input[type="text"]:not(.dataTable-mirror):focus,
 .csf input[type="search"]:focus,
 input[id^="CSF"]:focus,
 input[name]:not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.sidebar-search):focus {
@@ -2406,6 +2514,12 @@ input[name]:not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6) !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6) !important
+}
+
+.csf input[type="text"].dataTable-mirror,
+.csf input[type="text"].dataTable-mirror:focus {
+    max-width: 70px;
+    border-color: transparent !important
 }
 
 label+.file-input-wrapper,
@@ -2479,6 +2593,7 @@ h3.h3_help {
     margin-top: 5px
 }
 
+input[type="text"],
 input.ui_radio {
     vertical-align: middle !important
 }
@@ -2508,12 +2623,35 @@ input.ui_radio+label {
 
 .csf table tbody tr,
 .csf table tbody td {
-    padding: 4px !important
+    padding: 1px 4px !important
 }
 
 .csf table tbody tr.csf-tr td,
 .csf table tbody tr.csf-tr {
     padding: 1px 10px 1px 3px !important
+}
+
+.csf table tbody tr.csf-tr td[nowrap] {
+    padding: 0 10px 0 3px !important
+}
+
+.csf .csf-table {
+    padding: 2px !important;
+    border: 1px solid #eee !important;
+    border-radius: 0 !important
+}
+
+.csf script+.csf-table+.csf-table,
+.csf script+.csf-table {
+    border: 1px solid transparent !important
+}
+
+.csf a[target="_blank"]:not(.btn-xxs) {
+    color: #1d599d !important
+}
+
+.csf a[target="_blank"]:hover:not(.btn-xxs) {
+    text-decoration: underline
 }
 
 .csf table tbody tr[bgcolor="#F4F4EA"] {
@@ -2571,6 +2709,8 @@ input[type="button"]:not(.btn-success):not(.btn-primary):not(.btn-info):not(.btn
     color: #ddd
 }
 
+.csf .btn-filter-top-right,
+.csf .btn-toggle-top-right,
 .btn.btn-menu-toggler:active,
 .btn.btn-menu-toggler:focus,
 .btn.btn-menu-toggler:hover,
@@ -2632,10 +2772,6 @@ input:hover+.file_chooser_button_attached,
 .file_chooser_button:hover,
 .file-input-wrapper:hover {
     background-color: #f2f2f2
-}
-
-.ui_form>input[type="submit"]:not(.ui_submit)+input.form-control.ui_textbox {
-    margin-top: -1px !important
 }
 
 .col_value>textarea+input[onclick][type="button"] {
@@ -4196,6 +4332,7 @@ td.col_value>table.table.table-striped.table-condensed>thead>tr {
     border-top: 3px solid #f0f0f0 !important
 }
 
+.custom_table_head,
 td.col_value>table.table.table-striped.table-condensed>thead>tr>th {
     font-size: 14px;
     font-weight: normal !important;
@@ -5089,6 +5226,10 @@ select.input-sm:not(.heighter-34) {
     padding: 2px 4px 3px 4px
 }
 
+.csf select#CSFlognum {
+    margin-top: 0 !important
+}
+
 .file_chooser_button_preview.disabled,
 .file_chooser_button_preview.disabled i,
 .file-input-wrapper.disabled,
@@ -5473,6 +5614,7 @@ input.heighter-34:not(.btn-lg):not(.ui_form_end_submit)+select.heighter-34 {
     margin-left: 3px !important
 }
 
+input[name]:not([type="checkbox"]):not([type="radio"])+.awobject,
 input[type="text"]+.awobject {
     margin-left: 4px
 }
@@ -5726,6 +5868,10 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
 
 .cursor-pointer {
     cursor: pointer
+}
+
+.cursor-alias {
+    cursor: alias !important
 }
 
 .cursor-na {
@@ -6453,6 +6599,46 @@ input[name]:not([type="image"]):not(.sidebar-search):not([type="button"]):not([t
     box-shadow: none !important
 }
 
+.csf .csf-tr form[action*="index.cgi"] select.heighter-34 {
+    margin-left: 0 !important
+}
+
+.csf .csf-tr form[action*="index.cgi"] select.heighter-34+input {
+    margin-left: -4px !important
+}
+
+.csf .csf-tr form[action*="index.cgi"] select.heighter-34[name="template"]+input,
+.csf .csf-tr form[action*="index.cgi"] select.heighter-34[name="template"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.csf .csf-tr form[action*="index.cgi"] input[value="upgrade"]+input.heighter-34 {
+    margin-left: 1px !important
+}
+
+.csf .custom_table_head td b {
+    font-size: 15px;
+    font-weight: 400 !important
+}
+
+.csf .csf-switch-field .awobject {
+    display: inline-block;
+    margin-top: -10px !important;
+    margin-bottom: 10px !important
+}
+
+.csf .col_header_custom {
+    line-height: 25px !important;
+    height: 37px
+}
+
+@-moz-document url-prefix() {
+    .csf .col_header_custom:not(.big_big) {
+        width: 100.45% !important
+    }
+}
+
 .dropdown-menu,
 .pagination,
 .breadcrumb {
@@ -6951,11 +7137,6 @@ ul.messenger .messenger-message-inner ul {
     margin-right: 2px
 }
 
-.file-manager .modal .modal-body form .form-group>input+input,
-.file-manager .modal .modal-body form .form-group+select {
-    margin-bottom: 1px !important
-}
-
 .file-manager .modal .modal-body form .form-group+table {
     margin-bottom: 15px !important
 }
@@ -7205,58 +7386,6 @@ ul.messenger .messenger-message-inner ul {
 .btn.btn-primary.btn-menu-toggler {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important
-}
-
-@font-face {
-    font-family: "at-font";
-    font-weight: normal;
-    font-style: normal;
-    src: url(data:application/font-woff;base64,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) format("woff")
-}
-
-[class^="at-font-"],
-[class*=" at-font-"] {
-    font-family: "at-font";
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    text-transform: none;
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-.at-font-drawer2:before {
-    content: "\e601"
-}
-
-.at-font-box-add:before {
-    content: "\e602"
-}
-
-.at-font-box-remove:before {
-    content: "\e600"
-}
-
-.at-font-download:before {
-    content: "\e603"
-}
-
-.at-font-upload:before {
-    content: "\e604"
-}
-
-.at-font-spinner11:before {
-    content: "\e605"
-}
-
-.at-font-loop2:before {
-    content: "\e606"
-}
-
-.at-font-tab:before {
-    content: "\e607"
 }
 
 tr.thead+script+tr.thead,
@@ -7578,6 +7707,21 @@ body.init div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr.ui_checked_co
     pointer-events: none
 }
 
+.postgresql[data-uri*="view_table.cgi"] .table>tbody>tr>td,
+.mysql[data-uri*="view_table.cgi"] .table>tbody>tr>td {
+    line-height: 15px
+}
+
+.postgresql form[action="delete_fields.cgi"]+script+.table-hardcoded,
+.mysql form[action="delete_fields.cgi"]+script+.table-hardcoded {
+    margin-top: 2px
+}
+
+.postgresql form[action="table_form.cgi"],
+.mysql form[action="table_form.cgi"] {
+    margin-top: 4px
+}
+
 .postgresql form[action="table_form.cgi"] input[name="db"]+.ui_form_end_submit,
 .mysql form[action="table_form.cgi"] input[name="db"]+.ui_form_end_submit {
     margin-right: 6px !important
@@ -7585,7 +7729,7 @@ body.init div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr.ui_checked_co
 
 .postgresql select.ui_select.heighter-34[name="type"],
 .mysql select.ui_select.heighter-34[name="type"] {
-    margin-top: 4px !important;
+    margin-top: 1px !important;
     margin-left: -3px !important
 }
 
@@ -7736,13 +7880,14 @@ body[class*="proc"][data-uri*="edit_proc.cgi?"] .table-responsive+.table-hardcod
 }
 
 body[class*="proc"][data-uri*="edit_proc.cgi?"] .table-responsive+.table-hardcoded tbody tr td[nowrap] button.ui_form_end_submit:nth-child(6) {
-    margin-left: -4px !important
+    margin-left: -5px !important
 }
 
 body[class*="proc"][data-uri*="edit_proc.cgi?"] .table-responsive+.table-hardcoded tbody tr td[align="right"] {
     vertical-align: bottom
 }
 
+body[class*="proc"][data-uri*="edit_proc.cgi?"] td[nowrap]>select[name="signal"],
 body[class*="proc"][data-uri*="edit_proc.cgi?"] .table-responsive+.table-hardcoded tbody tr td[align="right"] button.ui_form_end_submit {
     margin-left: -3px !important
 }
@@ -7794,6 +7939,14 @@ body[class*="proftpd"] form[action*="save"] input[type="submit"] {
     margin-top: 10px !important
 }
 
+body[class*="proftpd"][data-uri*="ftpaccess.cgi"] input[name="dir"],
+body[class*="proftpd"][data-uri*="ftpaccess.cgi"] input[name="file"],
+body[class*="proftpd"][data-uri*="edit_global.cgi"] input[name="ScoreboardPath"],
+body[class*="proftpd"][data-uri*="edit_global.cgi"] input[name="PidFile"],
+body[class*="proftpd"][data-uri*="edit_global.cgi"] input[name="SystemLog"] {
+    vertical-align: middle
+}
+
 body[class*="spam"][data-uri*="edit_report.cgi"] form[action="save_report.cgi"] .sub_table_container.table-hardcoded .table.table-striped.table-condensed tbody>tr>td select,
 body[class*="spam"][data-uri*="edit_report.cgi"] form[action="save_report.cgi"] .sub_table_container.table-hardcoded .table.table-striped.table-condensed tbody>tr>td input:not([type="checkbox"]):not([type="radio"]),
 body[class*="spam"][data-uri*="edit_simple.cgi"] select,
@@ -7841,12 +7994,9 @@ body[class*="firewall"] .select_invert+br+.table-hardcoded {
     margin-top: 8px !important
 }
 
-body[class*="firewall"] .table-hardcoded .ui_form_end_submit {
-    vertical-align: top
-}
-
+body[class*="firewall"] .table-hardcoded input[type="submit"]+input[name="chain"],
 body[class*="firewall"] .table-hardcoded input[type="submit"] {
-    vertical-align: bottom
+    vertical-align: middle
 }
 
 body[class*="pptp-client"] form[action*="save"] input[type="submit"] {
@@ -8019,6 +8169,167 @@ font[color="#ff0000"] {
     color: #e8433f !important
 }
 
+body[class="servers"] input[name="scan"] {
+    margin-bottom: 2px
+}
+
+body[class="servers"] input[name="defuser"] {
+    margin-top: 2px
+}
+
+body[class="servers"] input[name="port"] {
+    margin-bottom: 2px
+}
+
+body[class="acl"] select[name="group"] {
+    margin-top: 0 !important;
+    margin-left: -1px !important
+}
+
+body[class="acl"][data-uri*="edit_user.cgi"] .col_value.col_header a.select_all,
+body[class="acl"][data-uri*="edit_user.cgi"] .col_value.col_header a.select_invert,
+body[class="acl"][data-uri*="edit_group.cgi"] .col_value.col_header a.select_all,
+body[class="acl"][data-uri*="edit_group.cgi"] .col_value.col_header a.select_invert {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+body[class="acl"] span>input[name="fileunix"],
+body[class="acl"] span>input[name="root"] {
+    vertical-align: middle
+}
+
+body[class="acl"] input[onclick*="form.fileunix"]+i.fa-files-o {
+    margin-top: 9px !important
+}
+
+body[class="acl"] input+i.fa-files-o {
+    margin-top: 12px !important
+}
+
+body[class="quota"] input+i.fa-files-o {
+    margin-top: 17px !important
+}
+
+body[class="quota"][data-uri*="list_groups.cgi"] input+i.fa-files-o,
+body[class="quota"][data-uri*="list_users.cgi"] input+i.fa-files-o {
+    margin-top: 14px !important
+}
+
+body[class="pam"][data-uri*="create_form.cgi"] input[name="name"] {
+    margin-top: 1px
+}
+
+body[class="pam"][data-uri*="create_form.cgi"] .awobject {
+    margin-left: 4px
+}
+
+body[class="pam"][data-uri*="create_form.cgi"] td>.table-hardcoded td {
+    padding: 3px 4px !important
+}
+
+body[class="proc"] .panel-body>b.btn-success,
+body[class="proc"] .panel-body>.ui_link {
+    margin-left: -1px !important
+}
+
+body[class="proc"] .panel-body>b.btn.btn-success.heighter-34,
+body[class="proc"] .panel-body>.ui_link.btn {
+    line-height: 20px !important
+}
+
+body[class*="ldap-client"] input[style*="height: 28px"]:not(.heighter-34)+i.fa-files-o {
+    margin-top: 7px !important
+}
+
+body[class*="ldap-client"] .table-hardcoded {
+    margin-top: 2px
+}
+
+body[class*="virtualmin-nginx"] form[action="edit_mime.cgi"] {
+    margin-bottom: 4px !important
+}
+
+input[style*="height: 28px"]:not(.heighter-34)+i.fa-files-o {
+    margin-top: 10px !important
+}
+
+body[class="sshd"][data-uri*="edit_access.cgi"] input+i.fa-files-o {
+    margin-top: 7px !important
+}
+
+body[class="spam"][data-uri*="edit_awl.cgi"] input+i.fa-files-o {
+    margin-top: 14px !important
+}
+
+body[class*="postgresql"][data-uri*="edit_dbase.cgi"] #DataTables_Table_0,
+body[class*="mysql"][data-uri*="edit_dbase.cgi"] #DataTables_Table_0 {
+    margin-left: 0
+}
+
+body[class*="postgresql"]:not([data-uri*="view_table.cgi"]) .table.table-striped.table-hover.table-condensed tr,
+body[class*="mysql"]:not([data-uri*="view_table.cgi"]) .table.table-striped.table-hover.table-condensed tr,
+body[class*="status"] .table.table-striped.table-hover.table-condensed tr,
+.ui_grid_table.table-hardcoded .ui_grid_row td>.table.table-striped.table-hover.table-condensed tr {
+    border-top: 1px solid #e4e4e4
+}
+
+form[action="list_mail.cgi"] input#user {
+    margin-top: 0 !important
+}
+
+form[action="mail_search.cgi"] input[name="search"] {
+    min-height: 34px !important
+}
+
+form[action="delete_mail.cgi"] button#delete {
+    float: right
+}
+
+form[action="delete_mail.cgi"] select#mfolder1,
+form[action="delete_mail.cgi"] button.ui_form_end_submit {
+    margin-left: -1px !important
+}
+
+form[action="delete_mail.cgi"] select#mfolder2 {
+    margin-top: 5px !important;
+    margin-left: -1px !important
+}
+
+body[class*="cluster-cron"] .panel-body>form>.table-hardcoded tr+script+.thead .tdhead b {
+    font-size: 15px !important
+}
+
+body[class*="cluster-useradmin"] input[name="what"],
+body[class*="cluster-webmin"] input[name="file"],
+body[class*="cluster-webmin"] input[name="local"],
+body[class*="cluster-usermin"] input[name="file"],
+body[class*="cluster-usermin"] input[name="local"],
+body[class*="cluster-software"] form[action="search.cgi"]>input[name="search"] {
+    vertical-align: middle
+}
+
+body[class*="fetchmail"][data-uri*="edit_poll.cgi"] input:not([type="checkbox"]):not([type="radio"]) {
+    vertical-align: middle !important
+}
+
+body[class*="fetchmail"][data-uri*="edit_cron.cgi"] tr:first-child input:not([type="checkbox"]):not([type="radio"]) {
+    margin-bottom: 2px
+}
+
+body[class*="fetchmail"][data-uri*="edit_poll.cgi"] tr:first-child input:not([type="checkbox"]):not([type="radio"]) {
+    margin-top: 1px
+}
+
+body[class*="fetchmail"][data-uri*="edit_poll.cgi"] tr:first-child input[type="submit"] {
+    margin-top: 4px !important
+}
+
+.cm-s-monokai .CodeMirror-dialog,
+.cm-s-monokai .CodeMirror-dialog input {
+    color: #eee !important
+}
+
 .datepicker {
     font-size: 90%
 }
@@ -8026,6 +8337,10 @@ font[color="#ff0000"] {
 .datepicker table tr td,
 .datepicker table tr th {
     border-radius: 0
+}
+
+form[action="save_login.cgi"] input[type="text"]+br {
+    line-height: 26px
 }
 
 .cke_panel,
@@ -8066,6 +8381,39 @@ a.cke_button,
 
 .jsglyph-remove:before {
     content: "\f044"
+}
+
+.table>thead>tr:first-child>th,
+.table>tbody>tr:first-child>th,
+.table>tfoot>tr:first-child>th,
+.table>thead>tr:first-child>td,
+.table>tbody>tr:first-child>td,
+.table>tfoot>tr:first-child>td {
+    border-top: 1px solid #e9e9e9
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    border-top: 1px solid #e4e4e4
+}
+
+.server-manager td.ui_radio_radio,
+.virtual-server td.ui_radio_radio {
+    min-width: 51px
+}
+
+.server-manager table.table.table-striped.table-condensed tbody+thead>tr:first-child,
+.virtual-server table.table.table-striped.table-condensed tbody+thead>tr:first-child {
+    border-top-width: 1px !important
+}
+
+.heighter-34+i.fa-files-o,
+td>.heighter-34+i.fa-files-o {
+    margin-top: 17px !important
 }
 
 html[data-background-style="gainsboro"],
@@ -8188,7 +8536,7 @@ screen and (max-height:600px) {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 800px;
+        width: 830px;
         margin: 30px auto
     }
 }

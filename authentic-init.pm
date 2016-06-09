@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -32,7 +32,7 @@ sub embed_header {
         : get_charset();
 
     print '<!DOCTYPE html>', "\n";
-    print '<html data-background-style="' . $__settings{'settings_background_color'} . '">', "\n";
+    print '<html data-background-style="' . ($__settings{'settings_background_color'} ? $__settings{'settings_background_color'} : 'gainsboro') . '">', "\n";
     print '<head>', "\n";
     print '<title data-initial="' . $args[0] . '">', $args[0], '</title>', "\n";
     print '<meta charset="' . ( $charset ? quote_escape($charset) : 'utf-8' ) . '">', "\n";
@@ -73,7 +73,7 @@ sub embed_header {
                 . '/unauthenticated/css/'
                 . $css . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1800" rel="stylesheet" type="text/css">' . "\n";
+                . '.css?1801" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -97,7 +97,7 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?1800" type="text/javascript"></script>' . "\n";
+                . '.js?1801" type="text/javascript"></script>' . "\n";
         }
     }
     else {
@@ -120,7 +120,7 @@ sub embed_header {
                 . '/unauthenticated/css/'
                 . $css . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1800" rel="stylesheet" type="text/css">' . "\n";
+                . '.css?1801" rel="stylesheet" type="text/css">' . "\n";
         }
 
         if ( length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue' ) {
@@ -129,7 +129,7 @@ sub embed_header {
                 . '/unauthenticated/css/palettes/'
                 . lc( $__settings{'settings_navigation_color'} ) . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1800" rel="stylesheet" type="text/css" data-palette>' . "\n";
+                . '.css?1801" rel="stylesheet" type="text/css" data-palette>' . "\n";
         }
 
         embed_styles();
@@ -141,7 +141,7 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?1800" type="text/javascript"></script>' . "\n";
+                . '.js?1801" type="text/javascript"></script>' . "\n";
         }
 
     }
@@ -237,14 +237,14 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/postinit.'
             . ( $args[0] eq 'debug' ? 'src' : 'min' )
-            . '.js?1800" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1801" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
 
         if ( $args[1] eq '1' || $args[2] eq 'stripped' ) {
             print '<script src="'
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/content.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1800" type="text/javascript"></script>' . "\n";
+                . '.js?1801" type="text/javascript"></script>' . "\n";
 
             # Load `MySQL/PostgreSQL` specific scripts
             if ( index( get_module_name(), 'mysql' ) gt '-1' || index( get_module_name(), 'postgresql' ) gt '-1' ) {
@@ -252,7 +252,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/sql.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1800" type="text/javascript"></script>' . "\n";
+                    . '.js?1801" type="text/javascript"></script>' . "\n";
             }
 
             # Load `File Manager` specific scripts
@@ -261,7 +261,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/file-manager/file-manager.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1800" type="text/javascript"></script>' . "\n";
+                    . '.js?1801" type="text/javascript"></script>' . "\n";
             }
         }
         else {
@@ -269,7 +269,7 @@ sub embed_footer {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/parent.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1800" type="text/javascript"></script>' . "\n";
+                . '.js?1801" type="text/javascript"></script>' . "\n";
         }
     }
 }

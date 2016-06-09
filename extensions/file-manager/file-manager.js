@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -22,7 +22,9 @@ function _f__gr(b) {
 }
 
 function __f__ld__sh() {
-    t__wi_p.NProgress.start()
+    if (typeof t__wi_p.NProgress == "object") {
+        t__wi_p.NProgress.start()
+    }
 }
 
 function __f__ld__bg() {
@@ -641,7 +643,7 @@ function __f__c__m() {
             } else {
                 $(".context-o__f_m-dependent-download").removeClass("hidden")
             }
-            if (!d.parents("tr").find("i.fa.at-font-box-remove").length) {
+            if (!d.parents("tr").find("i.fa.fa-extract-archive").length) {
                 $(".context-o__f_m-dependent-extract").addClass("hidden")
             } else {
                 $(".context-o__f_m-dependent-extract").removeClass("hidden")
@@ -786,37 +788,39 @@ function __f__c__m() {
     })
 }
 
-function __f___u(A, x, B, y, D, q) {
-    if (typeof D == "object") {
-        var n = D[1],
-            r = D[2],
-            t = D[3],
-            D = D[0]
+function __f___u(B, y, C, z, E, q) {
+    if (typeof E == "object") {
+        var n = E[1],
+            r = E[2],
+            v = E[3],
+            t = E[4],
+            E = E[0]
     } else {
         var n = true
     }
     if ($__source_file == "config.cgi") {
         return
     }
-    var w = null,
+    var x = null,
         k = null,
         m = null,
         o = null,
-        z = $("#path").val();
+        A = $("#path").val();
     typeof q == "undefined" ? q = false : false;
-    ((typeof D == "undefined" || (typeof D != "undefined" && D === false)) ? (w = false) : (w = true));
-    (!w ? (k = ".tab-pane.active form table") : (k = '.tab-pane[id="tab-' + D + '"] form table'));
-    (!w ? (m = ".tab-pane.active") : (m = '.tab-pane[id="tab-' + D + '"]'));
+    ((typeof E == "undefined" || (typeof E != "undefined" && E === false)) ? (x = false) : (x = true));
+    (!x ? (k = ".tab-pane.active form table") : (k = '.tab-pane[id="tab-' + E + '"] form table'));
+    (!x ? (m = ".tab-pane.active") : (m = '.tab-pane[id="tab-' + E + '"]'));
     var o = $(m).attr("id").replace(/^\D+/g, ""),
         o = (o ? o : 1);
     var p = $("body").find(k).attr("id"),
         e = p ? parseInt(p.replace(/^\D+/g, "")) : "none";
-    (!w && e !== "none") && $("#DataTables_Table_" + e).dataTable().fnDestroy();
-    if (A === "upd") {
-        var u = x.find(".fa-font").first().parents("td").index();
+    (!x && e !== "none") && $("#DataTables_Table_" + e).dataTable().fnDestroy();
+    if (B === "upd") {
+        var u = y.find(".fa-font").first().parents("td").index();
+        $(k).addClass("___f_m__q__");
         $("body").find(k + " tbody").empty();
-        $("body").find(k + " tbody").append(x);
-        !n && $(m).data("totalValue", t).data("breadcrumb", $(".breadcrumb").clone());
+        $("body").find(k + " tbody").append(y);
+        !n && $(m).data("totalValue", v).data("breadcrumb", $(".breadcrumb").clone());
         (q && !r) && __f__upd_____tl(q);
         __mcr();
         __f_____ul()
@@ -829,8 +833,8 @@ function __f___u(A, x, B, y, D, q) {
         _filemanager_data = false
     }
     var s = ($.inArray($("#headln2r > div.btn-group > a[data-config-pagination]").data("config-pagination"), [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]) > -1 ? $("#headln2r > div.btn-group > a[data-config-pagination]").data("config-pagination") : 25),
-        C = (($.inArray(parseInt(localStorage.getItem("_________per_page")), [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]) > -1) ? parseInt(localStorage.getItem("_________per_page")) : false),
-        v = ((_filemanager_data.length && !C) ? (C ? C : _filemanager_data.length) : s);
+        D = (($.inArray(parseInt(localStorage.getItem("_________per_page")), [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]) > -1) ? parseInt(localStorage.getItem("_________per_page")) : false),
+        w = ((_filemanager_data.length && !D) ? (D ? D : _filemanager_data.length) : s);
     delete localStorage._________per_page;
     if (u != 3 && u != 4) {
         u = false
@@ -866,7 +870,7 @@ function __f___u(A, x, B, y, D, q) {
             $(".tab-pane .paginate_button.previous > a").html('<i class="fa fa-fw fa-angle-left"></i>').css("border-top-left-radius", "0").css("border-bottom-left-radius", "0");
             $(".tab-pane .paginate_button.next > a").html('<i class="fa fa-fw fa-angle-right"></i>').css("border-top-right-radius", "0").css("border-bottom-right-radius", "0");
             $(k).find(".fa-font").removeClass("fa-font").addClass("fa-i-cursor").css("margin-right", "5px").css("margin-left", "5px");
-            $(k).find(".fa-external-link").removeClass("fa-external-link").addClass("at-font-box-remove").css("margin-right", "5px").css("margin-left", "5px");
+            $(k).find(".fa-external-link").removeClass("fa-external-link").addClass("fa-extract-archive").css("margin-right", "5px").css("margin-left", "5px");
             $(k).find(".fa-edit").addClass("fa-pencil-square-o").css("margin-right", "7px").css("margin-left", "7px");
             $(k).find(".fa-arrow-right").removeClass("fa-arrow-right").addClass("fa-folder-open-o").parent("a").addClass("o__f_m-follow-file");
             __list_table_total_rows = b.fnRecordsTotal();
@@ -898,9 +902,9 @@ function __f___u(A, x, B, y, D, q) {
             var a = $(k + " tbody tr td:nth-child(2)");
             a.unbind("mouseover");
             a.on("mouseover", "img", function(h) {
-                var E = $(this).parents("td"),
-                    f = E.find('img[src*="inode-symlink"]'),
-                    c = E.next("td").find("a"),
+                var F = $(this).parents("td"),
+                    f = F.find('img[src*="inode-symlink"]'),
+                    c = F.next("td").find("a"),
                     d = $(m + ' form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + c.text();
                 if (f.length) {
                     if (f.attr("symlink-title") != 1) {
@@ -910,31 +914,31 @@ function __f___u(A, x, B, y, D, q) {
                             url: $_____link_full + "/index.cgi/?xhr-get_symlink=1&xhr-get_symlink_path=" + d,
                             data: false,
                             dataType: "text",
-                            success: function(F) {
-                                f.attr("data-content", '<code class="text-nowrap">' + F + "</code>").attr("symlink-title", "1").data("trigger", "manual").data("html", true).data("placement", "right").data("container", "body").data("animation", false);
+                            success: function(G) {
+                                f.attr("data-content", '<code class="text-nowrap">' + G + "</code>").attr("symlink-title", "1").data("trigger", "manual").data("html", true).data("placement", "right").data("container", "body").data("animation", false);
                                 f.is(":hover") && f.popover("show");
                                 f.on("mouseenter", function() {
                                     if (f.is(":hover")) {
                                         $(this).popover("show")
                                     }
                                 }).on("mouseleave", function() {
-                                    var G = this;
+                                    var H = this;
                                     setTimeout(function() {
                                         if (!$(".popover:hover").length && !f.is(":hover")) {
-                                            $(G).popover("hide")
+                                            $(H).popover("hide")
                                         }
                                     }, 200)
                                 });
                                 f.parent().find(".cspinner").remove()
                             },
-                            error: function(F) {}
+                            error: function(G) {}
                         })
                     }
                 }
             });
             $(k + " #select-unselect").parents("th").css("opacity", 0).addClass("pointer-events-none");
             __init__dt_ck__e();
-            if (z) {
+            if (A) {
                 !$(".active table tbody tr.directory_go_up").length && $(".active table tbody").prepend('<tr class="ui_checked_columns directory_go_up" style="height: 23px;"><td colspan="' + $(".active thead tr th:visible").length + '"><input class="hidden" type="hidden">&nbsp;<i class="fa fa-fw fa-folder-btl"></i>&nbsp;..</td></tr>')
             } else {
                 if (r && r != "/") {
@@ -951,21 +955,26 @@ function __f___u(A, x, B, y, D, q) {
             }, 0)
         },
         initComplete: function(b) {
-            n && __f___up__d("index.cgi?path=" + encodeURIComponentSafe(r ? r : z), D, false);
-            !n && __f___upd___tb(r, D);
+            n && __f___up__d("index.cgi?path=" + encodeURIComponentSafe(r ? r : A), E, false);
+            !n && __f___upd___tb(r, E);
             !n && __f___up__tb_store();
-            if (w != false && n) {
-                $('a[href="#tab-' + D + '"').attr("newly-created", "1").trigger("click")
+            if (x != false && n) {
+                $('a[href="#tab-' + E + '"').attr("newly-created", "1").trigger("click")
+            }
+            if (t) {
+                setTimeout(function() {
+                    $('a[href="#tab-1"] i.fa-close-box').trigger("click")
+                }, 100)
             }
             $(k + " tbody").on("mouseout", "tr", function(c) {
                 __f___cs()
             }).on("mouseover", "tr", function(c) {
                 $(this).addClass("m-active")
             });
-            if (B === 0 || $(k + " tbody tr").length === 1 && $(k + " tbody tr td.dataTables_empty").length) {
+            if (C === 0 || $(k + " tbody tr").length === 1 && $(k + " tbody tr td.dataTables_empty").length) {
                 l__res_fi()
             }
-            $(k + ' select[name^="DataTables_Table"][name$="_length"]').val(v).change();
+            $(k + ' select[name^="DataTables_Table"][name$="_length"]').val(w).change();
             var a
         },
         bInfo: true,
@@ -986,7 +995,7 @@ function __f___u(A, x, B, y, D, q) {
             targets: [0, 1, (u ? u : 0)]
         }],
         bStateSave: true,
-        bPaginate: v,
+        bPaginate: w,
         aLengthMenu: [
             [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000],
             [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]
@@ -1005,26 +1014,26 @@ function __f___u(A, x, B, y, D, q) {
     } else {
         $('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("o__f_m-button-paste")
     }
-    if (y === "extract") {
-        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_extraction"), 5, "info", y + "_info")
+    if (z === "extract") {
+        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_extraction"), 5, "info", z + "_info")
     }
-    if (y === "chmod") {
-        messenger('<i class="fa fa-lg fa-fw fa-cogs"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_permissions"), 5, "info", y + "_info")
+    if (z === "chmod") {
+        messenger('<i class="fa fa-lg fa-fw fa-cogs"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_permissions"), 5, "info", z + "_info")
     }
-    if (y === "chown") {
-        messenger('<i class="fa fa-lg fa-fw fa-users"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_ownership"), 5, "info", y + "_info")
+    if (z === "chown") {
+        messenger('<i class="fa fa-lg fa-fw fa-users"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_ownership"), 5, "info", z + "_info")
     }
-    if (y === "compress") {
-        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_compression"), 5, "info", y + "_info")
+    if (z === "compress") {
+        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_compression"), 5, "info", z + "_info")
     }
-    if (y === "rename") {
-        messenger('<i class="fa fa-lg fa-fw fa-i-cursor"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_rename").replace("%from", $('#renameForm input[name="file"]').val()).replace("%to", $('#renameForm input[name="name"]').val()), 5, "info", y + "_info")
+    if (z === "rename") {
+        messenger('<i class="fa fa-lg fa-fw fa-i-cursor"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_rename").replace("%from", $('#renameForm input[name="file"]').val()).replace("%to", $('#renameForm input[name="name"]').val()), 5, "info", z + "_info")
     }
-    if (y === "create_folder") {
-        messenger('<i class="fa fa-lg fa-fw fa-folder"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_directory_creation").replace("%value", $('#createFolderForm input[name="name"]').val()), 5, "info", y + "_info")
+    if (z === "create_folder") {
+        messenger('<i class="fa fa-lg fa-fw fa-folder"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_directory_creation").replace("%value", $('#createFolderForm input[name="name"]').val()), 5, "info", z + "_info")
     }
-    if (y === "create_file") {
-        messenger('<i class="fa fa-lg fa-fw fa-file"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_file_creation").replace("%value", $('#createFileForm input[name="name"]').val()), 5, "info", y + "_info")
+    if (z === "create_file") {
+        messenger('<i class="fa fa-lg fa-fw fa-file"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_file_creation").replace("%value", $('#createFileForm input[name="name"]').val()), 5, "info", z + "_info")
     }
 }
 
@@ -1145,21 +1154,27 @@ function __f___up__tb_store() {
         var d = $(b).attr("data-original-title").replace(/\/$/, "");
         a.push(d)
     }).promise().done(function() {
-        localStorage.setItem("settings_thirdparty_filemanager_remembered_tabs", JSON.stringify(a))
+        var c = {};
+        c[$g__user__] = a;
+        var b = JSON.parse(localStorage.getItem("settings_thirdparty_filemanager_remembered_tabs"));
+        if (!$.isEmptyObject(b)) {
+            delete b[$g__user__]
+        }
+        var d = $.extend({}, c, b);
+        localStorage.setItem("settings_thirdparty_filemanager_remembered_tabs", JSON.stringify(d))
     })
 }
 
 function __f___ld__tb_stored_chk() {
-    return JSON.parse(localStorage.getItem("settings_thirdparty_filemanager_remembered_tabs"))
+    var a = JSON.parse(localStorage.getItem("settings_thirdparty_filemanager_remembered_tabs"));
+    return (!$.isEmptyObject(a) ? a[$g__user__] : false)
 }
 
 function __f___ld__tb_stored() {
     var a = __f___ld__tb_stored_chk();
-    if (a) {
-        $.each(a, function(c, b) {
-            if (b != "") {
-                __f___nt(b)
-            }
+    if ($.isArray(a)) {
+        $.each($(a), function(c, b) {
+            __f___nt(b, false, c)
         })
     }
 }
@@ -1199,40 +1214,42 @@ function __f___up__d(n, m, k) {
 }
 tab___to______create = 1;
 
-function __f___nt(d, e) {
+function __f___nt(d, e, b) {
     var a = d,
-        c = $("#file-manager-new-instance");
-    c.blur();
+        b = ((typeof b != "undefined" && b === 0) ? true : false);
+    $this = $("#file-manager-new-instance");
+    $this.blur();
     $(".nav.nav-tabs li").addClass("disabled");
     tab___to______create = tab___to______create + 1;
     $(".tabs-top > .nav.nav-tabs").append('<li class="ui-sortable-handle"><a href="#tab-' + tab___to______create + '" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="top"><span style="margin-top: 2px; margin-left: -3px" class="cspinner"><span class="cspinner-icon smaller"></span></span>&nbsp;</span></a></li>');
     $(".tabs-top > .tab-content").append('<div class="tab-pane fade" id="tab-' + tab___to______create + '">	    		<form class="ui_form" role="form" action="" method="post" id="list_form_AuthenticThemeTmp' + tab___to______create + '" name="list_form_AuthenticThemeTmp' + tab___to______create + '">	    			<table class="table table-striped table-hover table-condensed"><tbody></tbody></table>	    			<input class="ui_hidden heighter-34" type="hidden" name="path_AuthenticThemeTmp' + tab___to______create + '" id="path_AuthenticThemeTmp' + tab___to______create + '" value="' + a + '">	    		</form>	        </div>');
-    var b = $(".active table thead").clone();
-    b.removeClass("hidden");
-    b.prependTo("#list_form_AuthenticThemeTmp" + tab___to______create + " table");
-    __f____r("get", "index.cgi?path=" + encodeURIComponentSafe(a), false, 0, [tab___to______create, e]);
+    var c = $(".active table thead").clone();
+    c.removeClass("hidden");
+    c.prependTo("#list_form_AuthenticThemeTmp" + tab___to______create + " table");
+    __f____r("get", "index.cgi?path=" + encodeURIComponentSafe(a), false, 0, [tab___to______create, e, b]);
     setTimeout(function() {}, 0);
     tab___is______new = true
 }
 
-function __f____r(f, n, h, e, m) {
-    if (typeof m == "object") {
-        var k = m[1],
-            m = m[0]
+function __f____r(h, o, k, e, n) {
+    if (typeof n == "object") {
+        var f = n[2],
+            m = n[1],
+            n = n[0]
     } else {
-        var k = true
+        var m = true
     }
-    if (n && !$.isArray(n)) {
-        n = encodeURIParam(n, "path")
+    if (o && !$.isArray(o)) {
+        o = encodeURIParam(o, "path")
     }
-    var a = encodeURIComponentSafe($.url(n).param("path").replace("//", "/"));
-    typeof m == "undefined" ? m = false : false;
-    if (f === "get") {
-        if ($("body").find("#list_form table tbody").hasClass("o__f_m-updating") && k) {
+    var a = encodeURIComponentSafe($.url(o).param("path").replace("//", "/"));
+    typeof n == "undefined" ? n = false : false;
+    if (h === "get") {
+        if ($("body").find("#list_form table tbody").hasClass("o__f_m-updating") && m) {
             return
         }
         __f_____lo(true, true);
-        (!$("div.popover.popover-path-data.in:visible").length && !m) && $('.active a[href="' + n + '"] img').before('<span class="cspinner" style="margin-top: 4px; margin-left: -25px;"><span class="cspinner-icon small"></span></span>');
+        (!$("div.popover.popover-path-data.in:visible").length && !n) && $('.active a[href="' + o + '"] img').before('<span class="cspinner" style="margin-top: 4px; margin-left: -25px;"><span class="cspinner-icon small"></span></span>');
         $.ajax({
             type: "POST",
             url: $g__e__path + "/file-manager/list.cgi?path=" + a + "&module=" + $g__m__name,
@@ -1245,23 +1262,23 @@ function __f____r(f, n, h, e, m) {
                     messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;' + b, 15, "error", "getPath_error");
                     __f_____ul();
                     $(".active table .cspinner").remove();
-                    if (m) {
-                        $('a[href="#tab-' + m + '"]').parent("li").remove();
-                        $('.tab-content .tab-pane[id="tab-' + m + '"]').remove()
+                    if (n) {
+                        $('a[href="#tab-' + n + '"]').parent("li").remove();
+                        $('.tab-content .tab-pane[id="tab-' + n + '"]').remove()
                     }
                     return
                 } else {
                     $('[data-toggle="popover-path"]').popover("hide")
-                }!m && $('#list_form > input[type="hidden"][name="path"]').val($.url(decodeURIComponent(n)).param("path").replace("//", "/"));
-                k && $("div.total").append(__f___tl_v());
+                }!n && $('#list_form > input[type="hidden"][name="path"]').val($.url(decodeURIComponent(o)).param("path").replace("//", "/"));
+                m && $("div.total").append(__f___tl_v());
                 var c = $(j[0]).append(__f___tl_v()).html();
-                k && $(".total").html(c);
-                if (m) {
-                    $('.tab-pane[id="' + m + '"]').data("totalValue", c)
+                m && $(".total").html(c);
+                if (n) {
+                    $('.tab-pane[id="' + n + '"]').data("totalValue", c)
                 } else {
                     $(".tab-pane.active form table").data("totalValue", c)
                 }
-                __f___u("upd", $(j[1]).find("table").find(".ui_checked_columns"), e, false, [m, k, decodeURIComponent(a), c], $(f[0]).text());
+                __f___u("upd", $(j[1]).find("table").find(".ui_checked_columns"), e, false, [n, m, decodeURIComponent(a), c, f], $(h[0]).text());
                 $("#__f__c__m").css("display", "none")
             },
             error: function(b) {}
@@ -1329,7 +1346,7 @@ function ___f__tw() {
         });
         $("div.total").append(__f___tl_v());
         $(".tab-pane.active").data("totalValue", $("div.total").html());
-        $("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-o__f_m-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-fw fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_goto") + '</a></li>		            <li class="divider context-o__f_m-dependent-goto"></li>		            <li class="context-o__f_m-dependent-open-new-tab hidden"><a tabindex="-1" href="#" data-context-open-new-tab="1"><i class="fa fa-fw fa-tab"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_open_new_tab") + '</a></li>		            <li class="divider context-o__f_m-dependent-open-new-tab hidden"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-fw fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_all") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-fw fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_deselect_all") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-fw fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_new") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-fw fa-file-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-fw fa-folder-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newarchive") + '</a></li>		            		<li class="dropdown-submenu" role="menu">				            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-exchange"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_transfer") + '</a>				            	<ul class="dropdown-menu" role="menu">				            		<li><a tabindex="-1" href="#" data-context-upload="1"><i class="fa fa-fw fa-upload"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_upload") + '</a></li>				            		<li><a tabindex="-1" href="#" data-context-download="1"><i class="fa fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download") + '</a></li>				            	</ul>				            </li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-fw fa-files-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_copy") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-clipboard="1"><i class="fa fa-fw fa-clone"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_clipboard") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-fw fa-scissors"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-fw fa-clipboard"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-fw fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-o__f_m-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_rename") + '</a></li>		            <li class="context-o__f_m-dependent-download"><a tabindex="-1" href="#" data-context-download-file="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download_file") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-fw fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_search") + '</a></li>		            <li class="divider"></li>		            		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-star-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_bookmarks") + '</a>		            	<ul class="dropdown-menu at-o__f_m-favorites-dropdown" role="menu">		            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-bookmarks="1">' + lang("theme_xhred_filemanager_bookmark") + '</a></li>		            		<li class="divider"></li>		            	</ul>		            </li>		            		            <li class="divider context-o__f_m-dependent-extract"></li>		            <li class="context-o__f_m-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa at-font-box-remove"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_properties") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-calculate-selected-size="1"><i class="fa fa-fw fa-calculator"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_calculate_selected_size") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-fw fa-cogs"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-fw fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
+        $("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-o__f_m-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-fw fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_goto") + '</a></li>		            <li class="divider context-o__f_m-dependent-goto"></li>		            <li class="context-o__f_m-dependent-open-new-tab hidden"><a tabindex="-1" href="#" data-context-open-new-tab="1"><i class="fa fa-fw fa-tab"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_open_new_tab") + '</a></li>		            <li class="divider context-o__f_m-dependent-open-new-tab hidden"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-fw fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_all") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-fw fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_deselect_all") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-fw fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_new") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-fw fa-file-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-fw fa-folder-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newarchive") + '</a></li>		            		<li class="dropdown-submenu" role="menu">				            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-exchange"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_transfer") + '</a>				            	<ul class="dropdown-menu" role="menu">				            		<li><a tabindex="-1" href="#" data-context-upload="1"><i class="fa fa-fw fa-upload"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_upload") + '</a></li>				            		<li><a tabindex="-1" href="#" data-context-download="1"><i class="fa fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download") + '</a></li>				            	</ul>				            </li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-fw fa-files-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_copy") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-clipboard="1"><i class="fa fa-fw fa-clone"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_clipboard") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-fw fa-scissors"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-fw fa-clipboard"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-fw fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-o__f_m-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_rename") + '</a></li>		            <li class="context-o__f_m-dependent-download"><a tabindex="-1" href="#" data-context-download-file="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download_file") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-fw fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_search") + '</a></li>		            <li class="divider"></li>		            		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-star-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_bookmarks") + '</a>		            	<ul class="dropdown-menu at-o__f_m-favorites-dropdown" role="menu">		            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-bookmarks="1">' + lang("theme_xhred_filemanager_bookmark") + '</a></li>		            		<li class="divider"></li>		            	</ul>		            </li>		            		            <li class="divider context-o__f_m-dependent-extract"></li>		            <li class="context-o__f_m-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa fa-fw fa-extract-archive"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_properties") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-calculate-selected-size="1"><i class="fa fa-fw fa-calculator"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_calculate_selected_size") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-fw fa-cogs"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-fw fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
         $("body").on("click", "#__f__c__m li i.fa", function(d) {
             $(this).parents("a").trigger("click")
         });
@@ -1835,7 +1852,7 @@ function ___f__tw() {
                     $(".popover-path-button").find("i").addClass("invisible").parent().find(".cspinner").removeClass("hidden");
                     $(".popover-path-input-value").find("a").trigger("click").remove();
                     $('[data-toggle="popover-path"]').popover("hide");
-                    t__wi_p.NProgress.start()
+                    __f__ld__sh()
                 }
             });
             setTimeout(function() {
@@ -2441,10 +2458,10 @@ function ___f__tw() {
             if (k == 116) {
                 if (!$(".modal.in").length) {
                     d.stopPropagation();
-                    if ($("#list_form table tbody tr.m-active").find("i.at-font-box-remove").parent("a").length) {
+                    if ($("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a").length) {
                         d.preventDefault();
                         d.stopPropagation();
-                        $("#list_form table tbody tr.m-active").find("i.at-font-box-remove").parent("a")[0].click();
+                        $("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a")[0].click();
                         __f___cs()
                     } else {
                         messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_not_decompressable"), 0.75, "warning", "notDecompressableTarget")
