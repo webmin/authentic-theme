@@ -558,3 +558,4 @@ theme_xhred_datatable_filter_visible_tables=Filter Visible Table(s)
 theme_xhred_module_help=Module Help
 
 theme_xhred_server_process_running=Server process is still running!? Are you sure that you want to navigate away and have no access to output information? Even if you leave now the process will not be terminated.
+
