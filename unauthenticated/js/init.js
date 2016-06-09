@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -243,31 +243,39 @@ function product_name(d) {
 }
 
 function __s___() {
-    var f = t__wi_p.$('iframe[name="page"]').get(0);
-    if (f && typeof f.contentWindow.$ != "function" || !__num()) {
+    var d = 0;
+    xx = t__wi_p.$('iframe[name="page"]').get(0), current_window = t__wi_p.$('iframe[name="page"]').contents(), current_window = (current_window.length ? current_window : $(document));
+    if (xx && typeof xx.contentWindow.$ != "function" || !__num()) {
         return
     }
     var b = false,
-        d = false,
+        f = false,
         c = false;
-    if (f) {
-        d = f.contentWindow.$("body");
-        b = f.contentWindow.$("body").find(".container-fluid");
-        c = f.contentWindow.$("head")
+    if (xx) {
+        bbbb = xx.contentWindow;
+        f = xx.contentWindow.$("body");
+        b = xx.contentWindow.$("body").find(".container-fluid");
+        c = xx.contentWindow.$("head")
     } else {
-        d = $("body");
+        bbbb = window;
+        f = $("body");
         b = $("body").find(".container-fluid");
         c = $("head")
     }
-    if (b.length) {
-        b.animate({
-            opacity: 1
-        }, 240, function() {
-            b.css("pointer-events", "auto");
-            d.css("overflow", "auto");
-            c.find("#__tmp_no_overflow").remove()
-        })
+    if (current_window.find('body[class*="' + bbbb.$g__o__f_m + '"]').length) {
+        d = 1100
     }
+    setTimeout(function() {
+        if (b.length) {
+            b.animate({
+                opacity: 1
+            }, 240, function() {
+                b.css("pointer-events", "auto");
+                f.css("overflow", "auto");
+                c.find("#__tmp_no_overflow").remove()
+            })
+        }
+    }, d)
 }
 
 function __lre() {
@@ -290,343 +298,6 @@ function __lre() {
     }
     if (typeof hide_mobile_menu == "function") {
         hide_mobile_menu()
-    }
-}
-
-function ___csf() {
-    var v = window,
-        r = v.parent,
-        w = r.document.getElementById("iframe"),
-        n = w.contentDocument.getElementsByTagName("head")[0],
-        u = w.contentDocument.createElement("script"),
-        k = r.$load____ext;
-    u.type = "text/javascript";
-    u.src = t__wi_p.$_____link_full + "/unauthenticated/js/jquery." + k + ".js?1800";
-    n.appendChild(u);
-    var n = w.contentDocument.getElementsByTagName("head")[0],
-        u = w.contentDocument.createElement("script");
-    u.type = "text/javascript";
-    u.src = t__wi_p.$_____link_full + "/unauthenticated/js/codemirror." + k + ".js?1800";
-    n.appendChild(u);
-    if (!$('script[src*="datatables"]').length) {
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/jquery.datatables." + k + ".js?1800")
-    }
-    if (r.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
-        w.contentWindow.onbeforeunload = function(a) {
-            r.__lrs()
-        };
-        r.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
-        $csf = r.$('iframe[name="page"]').contents();
-        $csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-        $csf.find("head").append('			<link rel="shortcut icon" href="' + t__wi_p.$_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/bootstrap." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/jquery.datatables." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/codemirror." + k + '.css?1800" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/authentic." + k + '.css?1800" rel="stylesheet" type="text/css">		');
-        $.each(r.$('link[href*="/styles.css"]'), function() {
-            if ($(this)) {
-                $csf.find("head").append('<link href="' + t__wi_p.$_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
-            }
-        });
-        $csf.find('body:not(".mobile-menu-toggler")').on("click", function() {
-            r.hide_mobile_menu()
-        });
-        if (!$csf.find("body").attr("style")) {
-            t__wi_p.location.reload();
-            return
-        }
-        typeof t__wi_p.$____csf == "undefined" ? t__wi_p.$____csf = 1100 : t__wi_p.$____csf = 300;
-        setTimeout(function() {
-            $csf.find("body").animate({
-                opacity: 1
-            }, 240, function() {
-                $csf.find("body").css("pointer-events", "auto")
-            })
-        }, t__wi_p.$____csf);
-        $csf.find('fieldset.csf-box + div.csf-box[align="center"]').css("margin-top", "3px");
-        $csf.find("style").remove();
-        $csf.find("body").addClass("csf");
-        $csf.find("body").wrapInner('<div class="container-fluid col-lg-10 col-lg-offset-1">');
-        $csf.find(".container-fluid").wrapInner('<div class="panel panel-default">');
-        $csf.find(".panel-default").wrapInner('<div class="panel-body">');
-        $csf.find(".panel-default").css("border-color", "#e9e9e9").css("border-top-width", "4px").prepend('<div class="panel-heading" style="text-align:center"><font size="+2">ConfigServer Security & Firewall</font></div>');
-        $csf.find(".panel-body > img:first-child, .panel-body > b").remove();
-        $csf.find("#CSFajax").css("border", "1px solid #f0f0f0");
-        $csf.find("body table").each(function() {
-            $(this).addClass("table table-striped table-condensed").removeAttr("style")
-        });
-        $csf.find("body table tr td, body table tr th").each(function() {
-            $(this).removeAttr("style")
-        });
-        $csf.find("body table tr").each(function() {
-            $(this).removeAttr("bgcolor")
-        });
-        $csf.find(".panel-body > h2:first-child").each(function() {
-            $(this).text($(this).text().replace(":", ""))
-        });
-        $csf.find(".csf table.table-striped.table-condensed th").each(function() {
-            if ($(this).html() == "Time To Live") {
-                $(this).css("min-width", "100px")
-            }
-            if ($(this).html() == "&nbsp;") {
-                $(this).css("min-width", "70px")
-            }
-        });
-
-        function p() {
-            $csf.find("#CSFajax").css("max-height", $(window).outerHeight() - $(window).outerHeight() / 2.4 + "px");
-            container_fluid_size()
-        }
-        var o;
-        $(window).resize(function() {
-            clearTimeout(o);
-            o = setTimeout(function() {
-                p()
-            }, 1000)
-        });
-        p();
-        $csf.find(".csf table.table-striped.table-condensed tbody > tr > td > p").each(function() {
-            if ($(this).text().indexOf("Your Score") >= 0) {
-                $(this).next("p").remove();
-                $(this).next("table").remove();
-                $(this).next("table").remove();
-                $(this).next("p").css("text-align", "center")
-            }
-        });
-        var m = {
-            order: [],
-            aaSorting: [],
-            bDestroy: true,
-            bPaginate: false,
-            bInfo: false,
-            destroy: true,
-            oLanguage: {
-                sEmptyTable: lang("theme_xhred_datatable_semptytable"),
-                sInfo: lang("theme_xhred_datatable_sinfo"),
-                sInfoEmpty: lang("theme_xhred_datatable_sinfoempty"),
-                sLengthMenu: lang("theme_xhred_datatable_slengthmenu"),
-                sLoadingRecords: lang("theme_xhred_datatable_sloadingrecords"),
-                sProcessing: lang("theme_xhred_datatable_sprocessing"),
-                sSearch: " ",
-                sZeroRecords: lang("theme_xhred_datatable_szerorecords")
-            }
-        };
-        if ($csf.find(".csf h2").text().indexOf("Ports listening for external connections and the executables running behind them") !== -1) {
-            $csf.find('table:not(:contains("©2006-"))').each(function() {
-                if (!$(this).find("thead").length) {
-                    var b = $(this),
-                        a = $(this).find("tbody tr:first-child");
-                    b.attr("style", "width: 100% !important");
-                    b.attr("style", "min-width: 100% !important");
-                    b.prepend("<thead>" + a.html() + "</thead>");
-                    $(this).find("thead td").replaceTagName("th");
-                    a.remove();
-                    $(this).dataTable(m);
-                    $csf.find(".dataTables_filter input").attr("placeholder", "Filter")
-                }
-            })
-        }
-        if ($csf.find(".csf .table.table-striped.table-condensed tbody th:eq(1)").text().indexOf("A/D") !== -1 && $csf.find(".csf .table.table-striped.table-condensed tbody th:eq(2)").text().indexOf("IP address") !== -1) {
-            $csf.find('table:not(:contains("©2006-"))').each(function() {
-                if (!$(this).find("thead").length) {
-                    var b = $(this),
-                        a = $(this).find("tbody tr:first-child");
-                    b.prepend("<thead>" + a.html() + "</thead>");
-                    a.remove();
-                    $(this).dataTable(m);
-                    b.find('img[src^="csfimages/"]').each(function() {
-                        $(this).attr("src", $(this).attr("src").replace("/csfimages/", "csfimages/"))
-                    });
-                    $csf.find(".dataTables_filter input").attr("placeholder", "Filter")
-                }
-            })
-        }
-        $csf.find(".csf td.section-gap:first-child").each(function() {
-            $(this).parent("tr:first-child").remove();
-            $(this).parent("tr:last-child").remove()
-        });
-        $csf.find(".csf td.section-title").each(function() {
-            $(this).parent("tr").prev("tr").find("td.section-gap").parent("tr").remove();
-            $(this).parent("tr").prev("tr").find("td.section-gap").parent("tr").remove()
-        });
-        $csf.find('.csf input[type="text"]').each(function() {
-            if ($(this).attr("id") == "allowip") {
-                $(this).removeAttr("style").attr("style", "border-color: #8cac8c; background-color: #93b893;")
-            }
-            if ($(this).attr("style") == "background-color: pink") {
-                $(this).removeAttr("style").attr("style", "color: #fff; border-color: #d4a09f; background-color: #e0a9a8;")
-            }
-            if ($(this).attr("id") == "ignoreip") {
-                $(this).removeAttr("style").attr("style", "border-color: #b3dae5; background-color: #bfd9e1;")
-            }
-        });
-        $csf.find("body table tr th").each(function() {
-            if (!$(this).parents("tbody").find("form").length && $(this).text().indexOf("Upgrade") >= 0) {
-                $(this).parents("table").prev("br").remove();
-                $(this).parents("table").remove()
-            }
-        });
-        $csf.find('a[href$="/csf/changelog.txt"]').addClass("btn btn-xs btn-default").attr("style", "padding:0 12px; height:19px;font-size:11px").text("View changelog");
-        var l = $csf.find('table:contains("©2006-")').find("tr").find('*:contains("csf:")').text().match(/((?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+))$/)[0];
-        $csf.find(".csf .panel-heading font").each(function() {
-            if ($(this).text().indexOf("ConfigServer Security & Firewall") >= 0) {
-                $(this).html('<font size="+2">Firewall</font><span style="font-size:14px;display:block">ConfigServer Security & Firewall version ' + l + "</span>")
-            }
-        });
-        $csf.find('table > tbody > tr:first-child > th:first-child, table[align="center"] > tbody > tr:first-child').each(function() {
-            $(this).css("border-top", "3px solid #f0f0f0")
-        });
-        $csf.find('table[align="center"] > tbody > tr > td.section-title').each(function() {
-            $(this).parent("tr").css("border-top", "3px solid #f0f0f0")
-        });
-        typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = true : false;
-        if ($hostname == settings_allowed_hostname) {
-            $csf.find('table:contains("Development Contribution")').prev("br").remove();
-            $csf.find('table:contains("Development Contribution")').parents(".dataTables_wrapper").remove();
-            $csf.find('table:contains("Development Contribution")').remove();
-            $csf.find('table:contains("©2006-")').prev("br").remove();
-            $csf.find('table:contains("©2006-")').parents(".dataTables_wrapper").remove();
-            $csf.find('table:contains("©2006-")').remove()
-        } else {
-            $csf.find('table:contains("©2006-")').removeClass("table-striped").css("border-color", "transparent").find("tr td").addClass("text-right").css("border-color", "#eaeaea").parent().parent("tbody").find("tr:first-child").remove()
-        }
-        var v = -Infinity;
-        $csf.find("table").find("tr").each(function(a, b) {
-            v = Math.max(v, parseFloat(a))
-        });
-        if (v < 10) {
-            $csf.find("table").parents(".dataTables_wrapper").find(".dataTables_filter").remove()
-        }
-        $csf.find('big:contains("iptables logs")').parent("p").next().next().next(".table.table-striped.table-condensed").find("tbody tr:nth-child(2) td:first-child").css("min-width", "200px");
-        if ($csf.find('.csf select[name="dur"]')[0]) {
-            var q = $csf.find('.csf select[name="dur"]')[0].nextSibling;
-            if (q.nodeValue == ".") {
-                $(q).remove()
-            }
-        }
-        $csf.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').each(function() {
-            $(this).addClass("heighter-34")
-        });
-        $csf.find(".csf #paginatediv2.paginationstyle > select").each(function() {
-            $(this).attr("style", "vertical-align: baseline !important")
-        });
-        $csf.find(".csf #paginatediv2 > a").each(function() {
-            $(this).attr("style", "vertical-align: baseline !important")
-        });
-        $csf.find(".csf p > select").each(function() {
-            $(this).attr("style", "vertical-align: baseline !important")
-        });
-        $csf.find('img[src="csfimages/loader.gif"]').each(function() {
-            $(this).attr("src", "" + t__wi_p.$_____link_full + "/images/loader-horizontal.gif").css("margin-left", "10px")
-        });
-        $csf.find(".paginationstyle a").each(function() {
-            $(this).addClass("btn btn-default")
-        });
-        $csf.find('img[src^="lfd_"], img[src^="/csf/lfd_"]').each(function() {
-            $(this).parents("table").removeClass("table-striped")
-        });
-        $csf.find('img[src^="csfimages/delete.png"]').each(function() {
-            $(this).replaceWith('<i class="fa fa-unlock text-success" style="font-size: 1.1em; vertical-align: middle;"></i>')
-        });
-        $csf.find('img[src^="csfimages/perm.png"]').each(function() {
-            $(this).replaceWith('<i class="fa fa-lock text-danger" style="font-size: 1.1em; vertical-align: middle;"></i>')
-        });
-        $csf.find('img[src^="csfimages/plus.png"]').each(function() {
-            $(this).addClass("hidden");
-            $(this).after('<i class="fa fa-plus-circle text-success margined-right-2" style="font-size: 1.1em; vertical-align: text-bottom;"></i>')
-        });
-        $csf.find('img[src^="csfimages/minus.png"]').each(function() {
-            $(this).addClass("hidden");
-            $(this).after('<i class="fa fa-minus-circle text-danger margined-right-2" style="font-size: 1.1em; vertical-align: text-bottom;"></i>')
-        });
-        $csf.find(".csf fieldset legend b").each(function() {
-            if ($(this).text().indexOf("Edit ConfigServer Firewall") >= 0) {
-                $submit_changes = $csf.find('input[value="Change"]');
-                $submit_changes.addClass("csf-submit_changes");
-                $submit_changes.on("click", function() {
-                    $csf.find('input[value="saveconf"]').parent("form").submit()
-                })
-            }
-        });
-        if ($csf.find("#CSFgrep_D").length && $csf.find("#CSFgrep_E").length && $csf.find("#CSFgrep_i").length) {
-            $csf.find('select, input[type="text"], button[onclick="CSFgrep()"]').removeClass("heighter-34").addClass("heighter-28");
-            $csf.find("#CSFgrep_i, #CSFgrep_E, #CSFgrep_D").attr("style", "vertical-align: middle; margin-right: 4px;");
-            $csf.find("#CSFajax").css("margin-bottom", "4px");
-            $csf.find("#CSFlognum").attr("onchange", "javascript: document.getElementsByTagName('button')[0].click()");
-            $csf.find("#CSFgrep_D").addClass("hidden");
-            $csf.find(".csf-box").replaceText(/Detach/gi, "");
-            $csf.find("li:contains('Use the \"Detach\" option to display the search results in a separate window')").remove()
-        }
-        $csf.find("#CSFajax.csf-box").addClass("csf_force_log_size");
-
-        function t() {
-            $csf.find('textarea[name="formdata"]').each(function(c, d) {
-                var a = $(this);
-                $parent_width = a.parent("td").width();
-                var b = r.$('iframe[name="page"]').get(0).contentWindow.CodeMirror.fromTextArea(d, {
-                    mode: {
-                        name: "rpm-spec"
-                    },
-                    matchBrackets: true,
-                    lineNumbers: true,
-                    keyMap: "sublime",
-                    highlightSelectionMatches: {
-                        showToken: /\w/,
-                        annotateScrollbar: true
-                    },
-                    indentUnit: 0,
-                    autofocus: true,
-                    foldGutter: true,
-                    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
-                    extraKeys: {
-                        "Ctrl-Space": "autocomplete"
-                    },
-                    styleActiveLine: true,
-                    lineWrapping: true,
-                    theme: t__wi_p.settings_cm_editor_palette
-                });
-                $window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2));
-                b.setSize($parent_width, $window_height);
-                $(window).resize(function() {
-                    $parent_width = a.parent("td").width();
-                    $window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2));
-                    b.setSize($parent_width, $window_height)
-                })
-            })
-        }
-        setTimeout(function() {
-            if (typeof r.$('iframe[name="page"]').get(0).contentWindow.CodeMirror == "function") {
-                t()
-            } else {
-                setTimeout(function() {
-                    if (typeof r.$('iframe[name="page"]').get(0).contentWindow.CodeMirror == "function") {
-                        t()
-                    } else {
-                        setTimeout(function() {
-                            t()
-                        }, 10)
-                    }
-                }, 140)
-            }
-        }, 50);
-        $("#iframe").contents().find("body").on("keydown", function(a) {
-            r.search_control(a);
-            r.shortcut_control(a)
-        });
-        if (r.$("#open_webmin").length > 0 && r.$(".switch-toggle input:checked").attr("id") != "open_webmin" && t__wi_p.$("body").data("dashboard") == "1") {
-            r.t__s("open_webmin")
-        }
-        r.__dlm("csf/");
-        if (r.$___________initial === 1) {
-            setTimeout(function() {
-                r.__lre()
-            }, t__wi_p.$____csf)
-        } else {
-            setTimeout(function() {
-                r.__lre()
-            }, t__wi_p.$____csf)
-        }
-        setTimeout(function() {
-            if (!r.$('ul.sub li.sub_active a[target="page"][href="csf/"]').length) {
-                r.__dlm("csf/")
-            }
-        }, 200)
     }
 }
 
@@ -722,12 +393,19 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
     $("body").find('a[href*="virtual-server/switch_user.cgi"]').attr("target", "_parent");
     if (c && !c.text().match(/___authentic_theme_footer___/)) {
         if (d) {
-            t__wi_p.___csf();
+            if (typeof t__wi_p.___csf == "undefined") {
+                t__wi_p.$___ajax_requested_url = "___LL_PREV___";
+                t__wi_p.$.getScript("/extensions/csf." + $load____ext + ".js?1801", function(a, f, b) {
+                    t__wi_p.___csf()
+                })
+            } else {
+                t__wi_p.___csf()
+            }
             return
         }
         __lre();
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + load____ext + ".js?1800");
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + load____ext + ".js?1800")
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?1801");
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?1801")
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
         t__wi_p.NProgress.done()

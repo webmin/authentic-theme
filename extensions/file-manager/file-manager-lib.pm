@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -42,22 +42,24 @@ sub get_libs {
     }
 
     $checked_path = $path;
-    if (join(" , ", @allowed_paths) ne '/') {
+    if ( join( " , ", @allowed_paths ) ne '/' ) {
         $checked_path =~ s/$in{'cwd'}\//\//ig;
     }
 
 }
 
 sub get_errors {
-    my %errors = %{$_[0]};
+    my %errors = %{ $_[0] };
 
-    if (scalar %errors) {
-        return JSON->new->latin1->encode(\%errors);
-    } else {
+    if ( scalar %errors ) {
+        return JSON->new->latin1->encode( \%errors );
+    }
+    else {
         return undef;
     }
 
 }
+
 sub get_request_uri {
     ( my $uri = get_env('request_uri') ) =~ s/\?/&/;
     my @r = split /&/, $uri;
@@ -91,11 +93,12 @@ sub fatal_errors {
     head();
     print $text{'errors_occured'};
     print "<ul>";
-    foreach $error(@errors) {
+    foreach $error (@errors) {
         print("<li>$error</li>");
     }
     print "</ul>";
 }
+
 sub print_error {
     my ($error) = @_;
 
@@ -247,6 +250,8 @@ sub print_content {
             if (   ( index( $type, "application-zip" ) != -1 && has_command('unzip') )
                 || ( index( $type, "application-x-7z-compressed" ) != -1 && has_command('7z') )
                 || ( index( $type, "application-x-rar" ) != -1           && has_command('unrar') )
+                || ( index( $type, "application-x-rpm" ) != -1 && has_command('rpm2cpio') && has_command('cpio') )
+                || ( index( $type, "application-x-deb" ) != -1 && has_command('dpkg') )
                 || ((      index( $type, "x-compressed-tar" ) != -1
                         || index( $type, "-x-tar" ) != -1
                         || ( index( $type, "-x-bzip" ) != -1 && has_command('bzip2') )
@@ -278,7 +283,7 @@ sub print_content {
     print ui_columns_end();
     print &ui_hidden( "path", $path ), "\n";
     print '</form>';
-    print '<div class="error_message">' . $in{'error'} . '</div>' if ( length $in{'error'} );
+    print '<div class="error_message">' . $in{'error'} . '</div>'     if ( length $in{'error'} );
     print '<div class="error_fatal">' . $in{'error_fatal'} . '</div>' if ( length $in{'error_fatal'} );
     print '</body>';
     print '</html>';

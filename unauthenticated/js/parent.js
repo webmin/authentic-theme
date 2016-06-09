@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.00 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -8,7 +8,7 @@ if ($access_level == 0) {
     settings_notification_slider_fixed && t__wi_p.$("html").attr("data-slider-fixed", "1")
 }
 if (t__wi_p.$___________initial === 1) {
-    console.log("Welcome to Authentic Theme 18.00 https://github.com/qooob/authentic-theme")
+    console.log("Welcome to Authentic Theme 18.01 https://github.com/qooob/authentic-theme")
 }
 typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -122,7 +122,7 @@ function __si__bg_upd_exec() {
                                         title: lang("theme_xhred_notifications_theme_update"),
                                         time: $__id__,
                                         timestamp: $__id__,
-                                        message: lang("theme_xhred_notifications_theme_update_message").replace("%v", m) + '&nbsp;&nbsp;<span class="label label-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh" style="padding-top:1px"></i></span>',
+                                        message: lang("theme_xhred_notifications_theme_update_message").replace("%v", m) + '&nbsp;&nbsp;<span class="label label-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="' + $_____link_full + '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh" style="padding-top:1px"></i></span>',
                                         readStatus: 0,
                                         type: j,
                                         link: $_____link_full + "/sysinfo.cgi"
@@ -227,7 +227,7 @@ if (settings_loader_top) {
     })
 }
 $(window).ajaxStart(function() {
-    if (t__wi_p.$___ajax_requested_url.indexOf("index.cgi/?xhr-info=1") === -1) {
+    if (t__wi_p.$___ajax_requested_url.indexOf("index.cgi/?xhr-info=1") === -1 && t__wi_p.$___ajax_requested_url.indexOf("___LL_PREV___") === -1) {
         t___p__xhr_l = 1;
         t__wi_p.__lls()
     }
@@ -287,6 +287,11 @@ if (t__wi_p.$('a[target="page"][href="link/"]').first().length) {
 $("aside").on("click", ".select2-container .select2-selection__arrow b", function(a) {
     a.preventDefault();
     a.stopPropagation()
+});
+$("aside").on("contextmenu", 'a[href*="csf/"][target="page"]', function(a) {
+    a.preventDefault();
+    a.stopPropagation();
+    $(this)[0].click()
 });
 $("body").on("keydown", ".sidebar-search", function(b) {
     if (t__wi_p.$("#wrapper").data("webmail") !== -1) {
