@@ -157,6 +157,12 @@ sub theme_popup_prehead {
 
         print '<link href="'
             . $gconfig{'webprefix'}
+            . '/unauthenticated/css/bootstrap.'
+            . ( isd() eq 'debug' ? 'src' : 'min' )
+            . '.css?1801" rel="stylesheet" type="text/css">' . "\n";
+
+        print '<link href="'
+            . $gconfig{'webprefix'}
             . '/unauthenticated/css/authentic.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
             . '.css?1801" rel="stylesheet" type="text/css">' . "\n";
