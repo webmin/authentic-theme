@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -2967,6 +2967,9 @@ if (is__mf("apache", "htaccess.cgi") || is__mf("virtualmin-registrar", "index.cg
 }
 var attempt_make_all_elem = $('form:not([action="save_log.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > select,							   form:not([action="save_log.cgi"], [action="save_net.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > input,							   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > select,							   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > input,							   form[action="save_newglobal.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td input,							   form[action="save_linkcats.cgi"] > table tbody tr td input,							   form[action="save_gen.cgi"] > table tbody tr td input							   ');
 $.each(attempt_make_all_elem, function(a, b) {
+    if ($(this).parent().find('input[onclick*="window.open"]').length) {
+        return
+    }
     if ($(this).parent().find('input:not([type="checkbox"], [type="radio"]), select').length == 1) {
         $(this).css("width", "100%").css("min-width", "100%")
     } else {

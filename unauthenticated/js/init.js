@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -395,7 +395,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
         if (d) {
             if (typeof t__wi_p.___csf == "undefined") {
                 t__wi_p.$___ajax_requested_url = "___LL_PREV___";
-                t__wi_p.$.getScript("/extensions/csf." + $load____ext + ".js?1801", function(a, f, b) {
+                t__wi_p.$.getScript("/extensions/csf." + $load____ext + ".js?1802", function(a, f, b) {
                     t__wi_p.___csf()
                 })
             } else {
@@ -404,8 +404,8 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
             return
         }
         __lre();
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?1801");
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?1801")
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?1802");
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?1802")
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
         t__wi_p.NProgress.done()
