@@ -170,7 +170,9 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://rostovtsev.ru/pub/media/icons/paypal-175x45.png)</a>
 
-![](https://rostovtsev.ru/pub/media/icons/bitcoin-175-219.png)
+[![](https://rostovtsev.ru/pub/media/icons/yandex-175x89.png)](http://rostovtsev.ru/pub/api/donation/yandex.html)
+
+![](https://rostovtsev.ru/pub/media/icons/bitcoin-175-218.png)
 
 ### License
 
