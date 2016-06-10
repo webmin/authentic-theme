@@ -1,12 +1,15 @@
 ##Changelog
 
+####Version 18.02 (June 10, 2016)
+* Fixed bugs [#470](https://github.com/qooob/authentic-theme/issues/470) [#487](https://github.com/qooob/authentic-theme/issues/487)
+* Added ability to donate using _[Bitcoin](https://github.com/qooob/authentic-theme#donation)_ and _[Yandex Money](https://github.com/qooob/authentic-theme#donation)_
+
 ####Version 18.01 (June 09, 2016)
 * Improved _UI_ of _ConfigServer Security & Firewall_ (in particular, configuration page and server outputs)
 * Added ability to extract `.rpm` and `.deb` files in _File Manager_ (needed dependencies for `.rpm`: _rpm2cpio_ and _cpio_; for `.deb`: _dpkg_)
 * Added ability to have user-specific tabs in _File Manager_ [#478](https://github.com/qooob/authentic-theme/issues/478)
 * Added ability to open correspondent module, when clicking on charts on _System Information_ page [#480](https://github.com/qooob/authentic-theme/issues/480)
-* Added ability to donate using _[Bitcoin](https://github.com/qooob/authentic-theme#donation)_
-* Fixed bugs [#320](https://github.com/qooob/authentic-theme/issues/320) [#445](https://github.com/qooob/authentic-theme/issues/445) [#452](https://github.com/qooob/authentic-theme/issues/452) [#485](https://github.com/qooob/authentic-theme/issues/485) [#487](https://github.com/qooob/authentic-theme/issues/487) [#39576](https://www.virtualmin.com/node/39576) [#39789](https://www.virtualmin.com/node/39789) [#40686](https://www.virtualmin.com/node/40686) [#40936](https://www.virtualmin.com/node/40936) [#40988](https://www.virtualmin.com/node/40988)
+* Fixed bugs [#320](https://github.com/qooob/authentic-theme/issues/320) [#445](https://github.com/qooob/authentic-theme/issues/445) [#452](https://github.com/qooob/authentic-theme/issues/452) [#485](https://github.com/qooob/authentic-theme/issues/485) [#39576](https://www.virtualmin.com/node/39576) [#39789](https://www.virtualmin.com/node/39789) [#40686](https://www.virtualmin.com/node/40686) [#40936](https://www.virtualmin.com/node/40936) [#40988](https://www.virtualmin.com/node/40988)
 * Fixed dozens of other bugs
 
 ####Version 18.00 (May 26, 2016)  :star2:

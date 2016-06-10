@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.01 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -3103,13 +3103,6 @@ sub get_module_config_data {
         return undef;
     }
 
-}
-
-sub replace {
-    my ( $from, $to, $string ) = @_;
-    $string =~ s/$from/$to/ig;
-
-    return $string;
 }
 
 1;
