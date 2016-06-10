@@ -5,7 +5,7 @@
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
 * [Development](#development)
-* [Donation![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/qooob/authentic-theme#donation)
+* [Donation![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/qooob/authentic-theme#license)
 * [License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 
 ##About
