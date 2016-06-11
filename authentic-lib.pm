@@ -28,20 +28,20 @@ sub licenses {
     my ($id) = @_;
     if ( &foreign_available("virtual-server") && $id eq "vm" ) {
         my %virtualmin = &get_module_info("virtual-server");
-        if ( $virtualmin{'version'} =~ /gpl/i ) {
-            return 0;
+        if ( $virtualmin{'version'} =~ /pro/i ) {
+            return 1;
         }
         else {
-            return 1;
+            return 0;
         }
     }
     elsif ( &foreign_available("server-manager") && $id eq "cm" ) {
         my %cloudmin = &get_module_info("server-manager");
-        if ( $cloudmin{'version'} =~ /gpl/i ) {
-            return 0;
+        if ( $cloudmin{'version'} =~ /pro/i ) {
+            return 1;
         }
         else {
-            return 1;
+            return 0;
         }
     }
     else {
