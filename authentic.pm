@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -159,31 +159,31 @@ sub theme_popup_prehead {
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/bootstrap.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1802" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?1803" rel="stylesheet" type="text/css">' . "\n";
 
         print '<link href="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/authentic.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1802" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?1803" rel="stylesheet" type="text/css">' . "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/jquery.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1802" type="text/javascript"></script>', "\n";
+            . '.js?1803" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/cgi.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1802" type="text/javascript"></script>', "\n";
+            . '.js?1803" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/filtermatch.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1802" type="text/javascript"></script>', "\n";
+            . '.js?1803" type="text/javascript"></script>', "\n";
     }
 }
 
@@ -213,6 +213,7 @@ sub theme_footer {
         ( isd() ),
         (   (          get_module_name()
                     || index( get_env('request_uri'), '/config.cgi?' ) gt "-1"
+                    || index( get_env('request_uri'), '/uconfig.cgi?' ) gt "-1"
                     || index( get_env('request_uri'), '/webmin_search.cgi?' ) gt "-1"
                     || index( get_env('request_uri'), '/settings-editor_read.cgi' ) gt "-1"
                     || index( get_env('request_uri'), '/settings-upload.cgi' ) gt "-1"

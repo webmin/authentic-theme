@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -2442,7 +2442,7 @@ function ___f__tw() {
         if (d.shiftKey && d.ctrlKey) {
             return
         }
-        if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus") && (k == 115 || k == 116 || k == 118 || String.fromCharCode(k).toLowerCase() == "c" || String.fromCharCode(k).toLowerCase() == "v" || String.fromCharCode(k).toLowerCase() == "x")) {
+        if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus") && !$(".btn-filter-top-right input").is(":focus") && (k == 115 || k == 116 || k == 118 || String.fromCharCode(k).toLowerCase() == "c" || String.fromCharCode(k).toLowerCase() == "v" || String.fromCharCode(k).toLowerCase() == "x")) {
             if ((!(String.fromCharCode(d.which).toLowerCase() == "c" && d.ctrlKey) && !(String.fromCharCode(d.which).toLowerCase() == "v" && d.ctrlKey) && !(String.fromCharCode(d.which).toLowerCase() == "x" && d.ctrlKey) && !(k == 115 && d.shiftKey) && !(k == 116 && d.shiftKey) && !(k == 118 && d.shiftKey)) && !(d.which == 19)) {
                 return true
             }

@@ -1,5 +1,10 @@
 ##Changelog
 
+####Version 18.03 (June 18, 2016)
+* Added _Password Generator_ feature for pages that require it. Password length and characters used can be set in theme settings [#492](https://github.com/qooob/authentic-theme/issues/492)
+* Fixed bugs [#495](https://github.com/qooob/authentic-theme/issues/495) [#496](https://github.com/qooob/authentic-theme/issues/496)
+* Fixed other _Webmin/Usermin_ related bugs
+
 ####Version 18.02 (June 10, 2016)
 * Fixed bugs [#470](https://github.com/qooob/authentic-theme/issues/470) [#487](https://github.com/qooob/authentic-theme/issues/487)
 * Added ability to donate using _[Bitcoin](https://github.com/qooob/authentic-theme#donation)_ and _[Yandex Money](https://github.com/qooob/authentic-theme#donation)_

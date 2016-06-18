@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
 # Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1669,7 +1669,7 @@ sub _settings {
             '/',
 
             '__',
-            _settings( 'fa', 'desktop', &text('settings_right_window_options_title') ),
+            _settings( 'fa', 'desktop', &text('settings_global_options_title') ),
             'settings_navigation_color',
             'blue',
             'settings_grayscale_level_navigation',
@@ -1705,7 +1705,10 @@ sub _settings {
             'settings_right_reload',
             'true',
             'settings_window_autoscroll',
-            'true', '__',
+            'true',
+            'settings_global_passgen_format',
+            '12|a-z,A-Z,0-9,#',
+            '__',
             _settings( 'fa', 'sub-title', '' . "~" . &text('settings_window_replaced_timestamps_options_description') ),
             'settings_window_replace_timestamps',
             'true',
@@ -2143,11 +2146,15 @@ sub _settings {
             || $k eq 'settings_hotkey_custom_8'
             || $k eq 'settings_hotkey_custom_9'
             || $k eq 'settings_leftmenu_user_html'
+            || $k eq 'settings_global_passgen_format'
             || $k eq 'settings_window_replaced_timestamp_format_full'
             || $k eq 'settings_window_replaced_timestamp_format_short' )
         {
             my $width = ' width: 40%; ';
 
+            if ( $k eq 'settings_global_passgen_format' ) {
+                $width = ' width: 30%; ';
+            }
             if (   $k eq 'settings_window_replaced_timestamp_format_full'
                 || $k eq 'settings_window_replaced_timestamp_format_short' )
             {
@@ -2393,9 +2400,13 @@ sub _settings {
                             </td>
                             <td style="text-align: right;">
                                 <div class="btn-group">
-                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_styles" href="/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
+                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_styles" href="'
+            . $gconfig{'webprefix'}
+            . '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
             . $text{'settings_right_theme_extensions'} . '</a>
-                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
+                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="'
+            . $gconfig{'webprefix'}
+            . '/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
             . $text{'settings_right_theme_logos'} . '</a>
                                 </div>
                             </td>
@@ -3103,6 +3114,13 @@ sub get_module_config_data {
         return undef;
     }
 
+}
+
+sub replace {
+    my ( $from, $to, $string ) = @_;
+    $string =~ s/$from/$to/ig;
+
+    return $string;
 }
 
 1;
