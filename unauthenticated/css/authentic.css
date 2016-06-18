@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -7540,6 +7540,10 @@ body[class*="file-manager"] #list_form tbody tr:hover,
     vertical-align: text-bottom !important
 }
 
+.vertical-align-bottom {
+    vertical-align: bottom !important
+}
+
 .vertical-align-baseline {
     vertical-align: baseline !important
 }
@@ -8325,6 +8329,10 @@ body[class*="fetchmail"][data-uri*="edit_poll.cgi"] tr:first-child input[type="s
     margin-top: 4px !important
 }
 
+body[class*="firewalld"][data-uri*="edit_port.cgi"] input[name="port"] {
+    margin-top: 1px
+}
+
 .cm-s-monokai .CodeMirror-dialog,
 .cm-s-monokai .CodeMirror-dialog input {
     color: #eee !important
@@ -8536,7 +8544,7 @@ screen and (max-height:600px) {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 961px;
+        width: 1024px;
         margin: 30px auto
     }
 }

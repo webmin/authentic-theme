@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -199,6 +199,29 @@ jQuery.fn.confirmation = function(d, c) {
     });
     return $(this)
 };
+
+function passwordGenerator() {
+    var e = settings_global_passgen_format.split("|")[1].split(","),
+        d = parseInt(settings_global_passgen_format.split("|")[0]),
+        b = "",
+        a = "";
+    if ($.inArray("a-z", e) >= 0) {
+        b += "abcdefghijklmnopqrstuvwxyz"
+    }
+    if ($.inArray("A-Z", e) >= 0) {
+        b += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+    if ($.inArray("0-9", e) >= 0) {
+        b += "0123456789"
+    }
+    if ($.inArray("#", e) >= 0) {
+        b += "![]{}()%&*$#^<>~@|"
+    }
+    for (var c = 0; c < d; c++) {
+        a += b.charAt(Math.floor(Math.random() * b.length))
+    }
+    return a
+}
 
 function isEncodedURIComponent(a) {
     return decodeURIComponent(a) !== a
@@ -1002,7 +1025,7 @@ function __p__pe_sm() {
             setTimeout(function() {
                 $.ajax({
                     type: "POST",
-                    url: $_____link_full + $__current_directory + c.attr("action"),
+                    url: $__current_directory + c.attr("action"),
                     data: (new FormData(j.parents("form")[0])),
                     dataType: "text",
                     cache: false,

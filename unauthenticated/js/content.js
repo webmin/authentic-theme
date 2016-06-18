@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.02 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1470,7 +1470,7 @@ $("table thead th:not(.table-title)").each(function() {
 });
 if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
     !$("body").hasClass("file-manager") && $("body").addClass("file-manager");
-    $("#headln2l").prepend('<a onClick=\'window.open("/help.cgi/authentic-theme/file-manager", "help", "toolbar=no,menubar=no,scrollbars=yes,width=600,height=400,resizable=yes"); return false\' href="/help.cgi/authentic-theme/file-manager"></a>')
+    $("#headln2l").prepend("<a onClick='window.open(\"" + $_____link_full + '/help.cgi/authentic-theme/file-manager", "help", "toolbar=no,menubar=no,scrollbars=yes,width=600,height=400,resizable=yes"); return false\' href="/help.cgi/authentic-theme/file-manager"></a>')
 }
 if (settings_right_iconize_header_links) {
     $.each($(".panel-heading > table.header > tbody > tr > td > a"), function() {
@@ -1771,7 +1771,9 @@ if ($current_directory == $_____link + "fdisk/" || $current_directory == $_____l
     })
 }
 $('.panel-body > form > p > a.ui_link, .panel-body > table.table + a.ui_link, .panel-body > p > a:not([href*="config.cgi?bacula-backup"]), body[data-current-product="usermin"] div.panel-body > p > a, div.panel-body > a[href^="edit_"]:not([href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_form > a, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a.ui_link:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_grid_cell > a.select_all, .ui_grid_cell > a.select_invert, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a[href*=".cgi"]:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_grid_cell > a[href*=".cgi"]:first-child:not([href^="edit_rpc.cgi"],[href^="edit_nuser.cgi"],[href*="edit_user.cgi?idx"]), .tab-pane > p > a, .tab-pane > a.ui_link, .tab-pane > .table-condensed > a.ui_link, .tab-pane > a, .panel-body > p > a.ui_link, a.select_all, a.select_invert, form[action="delete.cgi"] > table table.ui_grid_table + a').each(function() {
-    if ($(this).parents(".ui_grid_row").length) {}
+    if (is__mf("samba", "edit_epass.cgi")) {
+        return
+    }
     if (!is__mf("virtual-server", "history.cgi") && !is__mf("server-manager", "one_history.cgi") && $current_directory != $_____link + "passwd/" && $(this).text() && $current_page_full != $_____link_full + "/mailboxes/" && $current_page_full != $_____link_full + "/mailboxes/index.cgi" && $current_page_full != $_____link_full + "/usermin/list_configs.cgi" && !$(this).hasClass("help_popup")) {
         $(this).addClass("btn btn-inverse btn-tiny ui_link_replaced");
         $(this).text($(this).text().replace(/\.$/, ""));
@@ -2928,10 +2930,15 @@ if (dynamic_switch_off_on.length === 1) {
         dynamic_switch_off_on.find(".fa-toggle-switch-off").addClass("fa-toggle-switch").removeClass("fa-toggle-switch-off")
     }
 }
+dynamic_switch_off_on.parents("td").addClass("vertical-align-bottom");
 var my_editor_page = $('form[action*="manual"] > select[name="file"], form[action*="manual.cgi"] > select[name="manual"], form[action*="edit_"] > select[name="file"]');
 if (my_editor_page.length) {
     my_editor_page.addClass("heighter-34");
     $('form[action*="manual"], form[action*="edit_"]').css("margin-bottom", "2px")
+}
+if (is__m("firewalld")) {
+    $("select#zone").addClass("heighter-34");
+    $('form[action="save_ifaces.cgi"] button').addClass("heighter-28-force")
 }
 $('body[class*="proftpd"] .table-hardcoded tr td > input + input.btn.btn-default').removeClass("heighter-28").addClass("heighter-34").prev("input").addClass("heighter-34");
 $('body[class*="proftpd"] form[action="find_ftpaccess.cgi"] > input:first-child').removeClass("heighter-34").addClass("heighter-28");
@@ -3058,6 +3065,21 @@ if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __n
             }
         }
     })
+}
+if (is__mf("server-manager", "edit_pass.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("acl", "edit_user.cgi") || is__mf("virtual-server", "clone_form.cgi") || is__mf("virtual-server", "edit_user.cgi") || is__mf("virtual-server", "edit_domain.cgi") || is__mf("virtual-server", "domain_form.cgi") || is__mf("samba", "edit_euser.cgi") || is__mf("samba", "ask_epass.cgi") || is__mfq("virtualmin-registrar", "edit.cgi", "registrar=") || is__mfq("htaccess-htpasswd", "edit_user.cgi", "new=") || is__mfq("postgresql", "edit_user.cgi", "new=") || is__mfq("mysql", "edit_user.cgi", "new=") || is__mfq("useradmin", "edit_group.cgi", "group=") || is__mfq("useradmin", "edit_user.cgi", "user=") || is__mfq("passwd", "edit_passwd.cgi", "user=")) {
+    setTimeout(function() {
+        $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
+        $("#headln2r .btn-group").prepend('		<a href="#" class="btn btn-link text-lighter text-decoration-none pull-left generate-password-key" data-toggle="tooltip" data-container="body" data-title="' + lang("theme_xhred_password_generator_new") + '">			<i class="fa fa-1_25x fa-key-plus" style="width: 14px; margin-left: -3px;"></i>		</a>	');
+        $("body .generate-password-key").click(function(c) {
+            var a = passwordGenerator();
+            $("body").append('<button class="hidden tmp-clipboard-obj" data-clipboard-text="' + a + '"></button>');
+            var b = new Clipboard(".tmp-clipboard-obj");
+            $(".tmp-clipboard-obj").trigger("click");
+            $(".tmp-clipboard-obj").remove();
+            b.destroy();
+            messenger('<i class="fa fa-lg fa-fw fa-key-plus"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_password_generator_new_success").replace("%password", '&nbsp;<code class="vertical-align-middle">' + a + "</code>&nbsp;"), 10, "success", "newGeneratedPassword")
+        })
+    }, 0)
 }
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {
