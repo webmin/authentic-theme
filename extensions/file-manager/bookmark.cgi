@@ -12,7 +12,7 @@ use lib ( dirname(__FILE__) . '/../../lib' );
 
 require( dirname(__FILE__) . '/file-manager-lib.pm' );
 
-switch_to_remote_user();
+get_paths();
 $confdir = "$remote_user_info[7]/.filemin";
 
 if ( !-d $confdir ) {
