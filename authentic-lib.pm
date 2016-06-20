@@ -70,7 +70,7 @@ sub print_category {
         'cluster'           => 'fa-power-off',
         'global_cluster'    => 'fa-power-off',
         'unused'            => 'fa-puzzle-piece',
-        'global_unused'     => 'pa-puzzle-piece',
+        'global_unused'     => 'fa-puzzle-piece',
         'mail'              => 'fa-envelope',
         'global_mail'       => 'fa-envelope',
         'email'             => 'fa-envelope',
