@@ -49,5 +49,5 @@ print &ui_textarea(
     "style='width: 100%'"
 );
 print &ui_form_end( [ [ "save", $text{'save'} ] ] );
-&ui_print_footer( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
+&ui_print_footer( "webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
 

@@ -159,31 +159,31 @@ sub theme_popup_prehead {
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/bootstrap.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1803" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?180301" rel="stylesheet" type="text/css">' . "\n";
 
         print '<link href="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/authentic.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1803" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?180301" rel="stylesheet" type="text/css">' . "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/jquery.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1803" type="text/javascript"></script>', "\n";
+            . '.js?180301" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/cgi.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1803" type="text/javascript"></script>', "\n";
+            . '.js?180301" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/filtermatch.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1803" type="text/javascript"></script>', "\n";
+            . '.js?180301" type="text/javascript"></script>', "\n";
     }
 }
 

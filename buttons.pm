@@ -26,7 +26,9 @@ if (   $__settings{'settings_theme_options_button'} ne 'false'
     && $get_user_level eq '0' )
 {
     print '<li class="user-link theme-options cursor-pointer">';
-    print '<a class="menu-exclude-link" target="page" href="/webmin/edit_themes.cgi" data-href="'
+    print '<a class="menu-exclude-link" target="page" href="'
+        . $gconfig{'webprefix'}
+        . '/webmin/edit_themes.cgi" data-href="'
         . $gconfig{'webprefix'}
         . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
     print '</li>';
@@ -41,11 +43,13 @@ if ( &foreign_available("acl") ) {
         . '/acl/edit_user.cgi?user='
         . $user
         . '"><i class="fa fa-fw fa-user"></i>&nbsp;<span>'
-        . $user . '</span></a>';
+        . $user
+        . '</span></a>';
 }
 else {
     print '<a class="menu-exclude-link" style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;<span>'
-        . $user . '</span></a>';
+        . $user
+        . '</span></a>';
 }
 print '</li>';
 
