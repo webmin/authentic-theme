@@ -83,5 +83,5 @@ name="save" id="saved"><i class="fa fa-fw fa-check-square-o" style="margin-right
         </tr>
     </table>
 </form>';
-&ui_print_footer( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
+&ui_print_footer( "webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
 
