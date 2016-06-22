@@ -70,4 +70,4 @@ copy_source_dest( $config_directory . $lr, $root_directory . "/authentic-theme/i
 
 copy_source_dest( $config_directory . $lw, $root_directory . "/authentic-theme/images" );
 
-&redirect( $gconfig{'webprefix'} . '/settings-upload.cgi?saved=1' );
+redirect( '/settings-upload.cgi?saved=1' );
