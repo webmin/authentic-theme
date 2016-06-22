@@ -18,4 +18,4 @@ if ( usermin_available() ) {
     unlink_file($_file);
     write_file_contents( $_file, $in{'data'} );
 }
-&redirect($gconfig{'webprefix'} . "/webmin/edit_themes.cgi?path=lost+found");
+redirect("/webmin/edit_themes.cgi");
