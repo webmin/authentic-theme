@@ -691,10 +691,10 @@ function t_sel_i() {
                 }
             }
         });
-        $.each($("select > option"), function() {
+        $.each($("aside select > option"), function() {
             if ($(this).attr("style") && $(this).attr("style").indexOf("italic") > -1) {
-                if ($(".select2-selection > .select2-selection__rendered").text().trim() == $(this).text().trim()) {
-                    $(".select2-selection > .select2-selection__rendered").attr("style", "color: #e73c38 !important; font-style:italic !important; ")
+                if (t__wi_p.$(".select2-selection > .select2-selection__rendered").text().trim() == $(this).text().trim()) {
+                    t__wi_p.$(".select2-selection > .select2-selection__rendered").attr("style", "color: #e73c38 !important; font-style:italic !important; ")
                 }
             }
         });

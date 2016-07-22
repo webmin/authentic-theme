@@ -1,6 +1,6 @@
 /*!
- * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
- * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+ * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;

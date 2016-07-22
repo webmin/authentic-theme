@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
-# Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -15,18 +15,18 @@ my @files = (
     $config_directory . '/authentic-theme/custom-lang'
 );
 $in{'file'} = $files[0] if ( !$in{'file'} );
-&ui_print_header( $in{'file'}, $text{'settings_right_theme_extensions_title'}, undef );
-print '' . &text('settings_right_extensions_title') . '
+&ui_print_header( $in{'file'}, $Atext{'settings_right_theme_extensions_title'}, undef );
+print '' . &Atext('settings_right_extensions_title') . '
             <p></p>';
 print "<form class=\"margined-bottom-3\">\n";
 print '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><span class="badge label-default">'
     . (
-      index( $in{'file'}, '.css' ) > -1 ? $text{'theme_fileformat_css'}
-    : index( $in{'file'}, '.json' ) > -1 ? $text{'theme_fileformat_json'}
-    : index( $in{'file'}, '.js' ) > -1   ? $text{'theme_fileformat_js'}
-    :                                      $text{'theme_fileformat_plain_text'}
+      index( $in{'file'}, '.css' ) > -1 ? $Atext{'theme_fileformat_css'}
+    : index( $in{'file'}, '.json' ) > -1 ? $Atext{'theme_fileformat_json'}
+    : index( $in{'file'}, '.js' ) > -1   ? $Atext{'theme_fileformat_js'}
+    :                                      $Atext{'theme_fileformat_plain_text'}
     ) . '</span></div>';
-print "<input type=submit value='$text{'settings_right_file_edit'}'>\n";
+print "<input type=submit value='$Atext{'settings_right_file_edit'}'>\n";
 print "<select name=\"file\" onchange=\"form.submit();\">\n";
 
 foreach $f (@files) {
@@ -49,5 +49,5 @@ print &ui_textarea(
     "style='width: 100%'"
 );
 print &ui_form_end( [ [ "save", $text{'save'} ] ] );
-&ui_print_footer( "webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
+&ui_print_footer( "webmin/edit_themes.cgi", $Atext{'right_return_theme_options'} );
 

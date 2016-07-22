@@ -1,6 +1,6 @@
 /*!
- * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
- * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+ * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
@@ -13,15 +13,15 @@ function ___csf() {
         w = y.contentDocument.createElement("script"),
         m = u.$load____ext;
     w.type = "text/javascript";
-    w.src = t__wi_p.$_____link_full + "/unauthenticated/js/jquery." + m + ".js?180301";
+    w.src = t__wi_p.$_____link_full + "/unauthenticated/js/jquery." + m + ".js?1804";
     p.appendChild(w);
     var p = y.contentDocument.getElementsByTagName("head")[0],
         w = y.contentDocument.createElement("script");
     w.type = "text/javascript";
-    w.src = t__wi_p.$_____link_full + "/unauthenticated/js/codemirror." + m + ".js?180301";
+    w.src = t__wi_p.$_____link_full + "/unauthenticated/js/codemirror." + m + ".js?1804";
     p.appendChild(w);
     if (!t__wi_p.$('script[src*="datatables"]').length) {
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/jquery.datatables." + m + ".js?180301")
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/jquery.datatables." + m + ".js?1804")
     }
     if (u.$('iframe[name="page"]').contents().find("body.csf").length === 0) {
         y.contentWindow.onbeforeunload = function(a) {
@@ -30,7 +30,7 @@ function ___csf() {
         u.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active");
         $csf = u.$('iframe[name="page"]').contents();
         $csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
-        $csf.find("head").append('			<link rel="shortcut icon" href="' + t__wi_p.$_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/bootstrap." + m + '.css?180301" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/jquery.datatables." + m + '.css?180301" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/codemirror." + m + '.css?180301" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/authentic." + m + '.css?180301" rel="stylesheet" type="text/css">		');
+        $csf.find("head").append('			<link rel="shortcut icon" href="' + t__wi_p.$_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/bootstrap." + m + '.css?1804" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/jquery.datatables." + m + '.css?1804" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/codemirror." + m + '.css?1804" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/authentic." + m + '.css?1804" rel="stylesheet" type="text/css">		');
         $.each(u.$('link[href*="/styles.css"]'), function() {
             if ($(this)) {
                 $csf.find("head").append('<link href="' + t__wi_p.$_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
