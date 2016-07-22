@@ -493,6 +493,9 @@ function ___csf() {
                 u.__lre()
             }, t__wi_p.$____csf)
         }
+        setTimeout(function() {
+            $csf.find("body").css("overflow", "auto")
+        }, t__wi_p.$____csf);
         if (u.$('ul.sub li.sub_active a[target="page"]').length === 2) {
             u.__cms();
             u.__dlm("csf/")
