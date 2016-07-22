@@ -1,7 +1,7 @@
 ##Changelog
 
 ####Version 18.04 (July 23, 2016)
-Fixed bugs [#394](https://github.com/qooob/authentic-theme/issues/394) [#503](https://github.com/qooob/authentic-theme/issues/503)  [#514](https://github.com/qooob/authentic-theme/issues/514) [#515](https://github.com/qooob/authentic-theme/issues/515)
+Fixed bugs [#394](https://github.com/qooob/authentic-theme/issues/394) [#503](https://github.com/qooob/authentic-theme/issues/503) [#506](https://github.com/qooob/authentic-theme/issues/506) [#507](https://github.com/qooob/authentic-theme/issues/507) [#513](https://github.com/qooob/authentic-theme/issues/513) [#514](https://github.com/qooob/authentic-theme/issues/514) [#515](https://github.com/qooob/authentic-theme/issues/515)
 
 ####Version 18.03 (June 18, 2016)
 * Added _Password Generator_ feature for pages that require it. Password length and characters used can be set in theme settings [#492](https://github.com/qooob/authentic-theme/issues/492)
