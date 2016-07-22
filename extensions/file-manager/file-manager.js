@@ -1,6 +1,6 @@
 /*!
- * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
- * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+ * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
@@ -2097,11 +2097,21 @@ function ___f__tw() {
             var u = l.index();
             var B = l.index();
             if (k == 38 && !$(".modal.in").length) {
+                if ($(".dataTable-mirror").is(":focus")) {
+                    $.each($("input"), function() {
+                        $(this).blur()
+                    })
+                }
                 B--;
                 $(".dataTables_filter label input").blur();
                 $("#list_form table tbody tr").addClass("m-not-active")
             }
             if (k == 40 && !$(".modal.in").length) {
+                if ($(".dataTable-mirror").is(":focus")) {
+                    $.each($("input"), function() {
+                        $(this).blur()
+                    })
+                }
                 B++;
                 $(".dataTables_filter label input").blur();
                 $("#list_form table tbody tr").addClass("m-not-active")

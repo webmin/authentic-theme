@@ -1,6 +1,6 @@
 #
-# Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
-# Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -35,10 +35,10 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                     && &foreign_available("webmin") )
                 {
                     &print_category_link( "/webmin/edit_themes.cgi",
-                        $text{'settings_right_theme_left_configuration_title'}, 1 );
+                        $Atext{'settings_right_theme_left_configuration_title'}, 1 );
                     &print_category_link( "/settings-editor_read.cgi",
-                        $text{'settings_right_theme_left_extensions_title'}, 1 );
-                    &print_category_link( "/settings-upload.cgi", $text{'settings_right_theme_left_logo_title'}, 1 );
+                        $Atext{'settings_right_theme_left_extensions_title'}, 1 );
+                    &print_category_link( "/settings-upload.cgi", $Atext{'settings_right_theme_left_logo_title'}, 1 );
                 }
                 if (( $minfo->{'dir'} ne 'virtual-server' && $minfo->{'dir'} ne 'server-manager' )
                     || ( ( $minfo->{'dir'} eq 'virtual-server' || $minfo->{'dir'} eq 'server-manager' )
@@ -68,7 +68,7 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
         print '<li><a target="page" data-href="'
             . $gconfig{'webprefix'}
             . '/webmin/refresh_modules.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-refresh"></i> <span>'
-            . $text{'left_refresh_modules'}
+            . $Atext{'left_refresh_modules'}
             . '</span></a></li>' . "\n";
     }
     print_sysinfo_link();
@@ -84,7 +84,7 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
         print '<li><a target="page" data-href="'
             . $gconfig{'webprefix'}
             . '/feedback_form.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-envelope"></i> <span>'
-            . $text{'left_feedback'}
+            . $Atext{'left_feedback'}
             . '</span></a></li>' . "\n";
     }
 }

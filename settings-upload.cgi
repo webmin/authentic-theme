@@ -1,31 +1,31 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
-# Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 do "authentic-theme/authentic-lib.pm";
 
 &ui_print_header( $in{'file'},
-    $text{'settings_right_theme_logos_title'}, undef );
+    $Atext{'settings_right_theme_logos_title'}, undef );
 
-print '' . &text('settings_right_logos_title') . '
+print '' . &Atext('settings_right_logos_title') . '
             <p></p>';
 print &ui_form_start( "settings-upload_save.cgi", "form-data" );
 print &ui_hidden( "path", $config_directory ), "\n";
 print '
 <div class="table-responsive">
     <table class="table table-striped table-condensed table-subtable">
-        <thead><tr><th class="table-title" style="width: auto"><b>' . $text{'settings_right_options'} . '</b></th></tr></thead>
+        <thead><tr><th class="table-title" style="width: auto"><b>' . $Atext{'settings_right_options'} . '</b></th></tr></thead>
         <tbody>
             <tr>
                 <td>
                     <table class="sub_table_container table-hardcoded" width="100%">
                         <tbody>
                             <tr class="atshover">
-                                <td class="col_label" style="width:25%"><b>' . $text{'settings_right_logo_authenticated_users'} . '</b></td>
+                                <td class="col_label" style="width:25%"><b>' . $Atext{'settings_right_logo_authenticated_users'} . '</b></td>
                                 <td class="col_value" style="width:15%">' . ui_yesno_radio("authenticated_logo", (-r $config_directory . "/authentic-theme/logo.png" ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value" style="width:60%">
                                     <button class="btn btn-default file_chooser_button file_chooser_button_preview'
@@ -41,7 +41,7 @@ print '
                                 </td>
                             </tr>
                             <tr class="atshover">
-                                <td class="col_label" style="width:25%"><b>' . $text{'settings_right_logo_unauthenticated_users'} . '</b></td>
+                                <td class="col_label" style="width:25%"><b>' . $Atext{'settings_right_logo_unauthenticated_users'} . '</b></td>
                                 <td class="col_value" style="width:15%">' . ui_yesno_radio("unauthenticated_logo", (-r $config_directory . "/authentic-theme/logo_welcome.png" ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value" style="width:60%">
                                     <button class="btn btn-default file_chooser_button file_chooser_button_preview'
@@ -68,7 +68,7 @@ print '
                 <button class="btn btn-info file-editor-saved'
     . ( $in{'saved'} ne 1 && ' hidden' ) . '" type="submit"
 name="save" id="saved"><i class="fa fa-fw fa-check-square-o" style="margin-right:2px;"></i>'
-    . $text{'settings_right_saved'} . ' </button>
+    . $Atext{'settings_right_saved'} . ' </button>
                 <button class="btn btn-success file-editor-save page_footer_ajax_submit'
     . ( $in{'saved'} eq 1 && ' hidden' )
     . '" type="submit" name="save" id="save"><i class="fa fa-fw fa-floppy-o" style="margin-right:2px;"></i>'
@@ -77,11 +77,11 @@ name="save" id="saved"><i class="fa fa-fw fa-check-square-o" style="margin-right
             </td>
             <td style="text-align: right;">
                 <a class="btn btn-default page_footer_ajax_submit" style="margin-top: 2px !important; margin-bottom: 2px !important; margin-right:-3px;" href="' . $gconfig{'webprefix'} . '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o"> </i> '
-                    . &text('settings_right_theme_extensions') . '
+                    . &Atext('settings_right_theme_extensions') . '
                 </a>
             </td>
         </tr>
     </table>
 </form>';
-&ui_print_footer( "webmin/edit_themes.cgi", $text{'right_return_theme_options'} );
+&ui_print_footer( "webmin/edit_themes.cgi", $Atext{'right_return_theme_options'} );
 

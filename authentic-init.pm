@@ -1,6 +1,6 @@
 #
-# Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
-# Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -32,7 +32,9 @@ sub embed_header {
         : get_charset();
 
     print '<!DOCTYPE html>', "\n";
-    print '<html data-background-style="' . ($__settings{'settings_background_color'} ? $__settings{'settings_background_color'} : 'gainsboro') . '">', "\n";
+    print '<html data-background-style="'
+        . ( $__settings{'settings_background_color'} ? $__settings{'settings_background_color'} : 'gainsboro' )
+        . '">', "\n";
     print '<head>', "\n";
     print '<title data-initial="' . $args[0] . '">', $args[0], '</title>', "\n";
     print '<meta charset="' . ( $charset ? quote_escape($charset) : 'utf-8' ) . '">', "\n";
@@ -73,7 +75,7 @@ sub embed_header {
                 . '/unauthenticated/css/'
                 . $css . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?180301" rel="stylesheet" type="text/css">' . "\n";
+                . '.css?1804" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -97,7 +99,7 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?180301" type="text/javascript"></script>' . "\n";
+                . '.js?1804" type="text/javascript"></script>' . "\n";
         }
     }
     else {
@@ -120,7 +122,7 @@ sub embed_header {
                 . '/unauthenticated/css/'
                 . $css . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?180301" rel="stylesheet" type="text/css">' . "\n";
+                . '.css?1804" rel="stylesheet" type="text/css">' . "\n";
         }
 
         if ( length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue' ) {
@@ -129,7 +131,7 @@ sub embed_header {
                 . '/unauthenticated/css/palettes/'
                 . lc( $__settings{'settings_navigation_color'} ) . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?180301" rel="stylesheet" type="text/css" data-palette>' . "\n";
+                . '.css?1804" rel="stylesheet" type="text/css" data-palette>' . "\n";
         }
 
         embed_styles();
@@ -141,7 +143,7 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?180301" type="text/javascript"></script>' . "\n";
+                . '.js?1804" type="text/javascript"></script>' . "\n";
         }
 
     }
@@ -237,14 +239,14 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/postinit.'
             . ( $args[0] eq 'debug' ? 'src' : 'min' )
-            . '.js?180301" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1804" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
 
         if ( $args[1] eq '1' || $args[2] eq 'stripped' ) {
             print '<script src="'
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/content.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?180301" type="text/javascript"></script>' . "\n";
+                . '.js?1804" type="text/javascript"></script>' . "\n";
 
             # Load `MySQL/PostgreSQL` specific scripts
             if ( index( get_module_name(), 'mysql' ) gt '-1' || index( get_module_name(), 'postgresql' ) gt '-1' ) {
@@ -252,7 +254,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/sql.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?180301" type="text/javascript"></script>' . "\n";
+                    . '.js?1804" type="text/javascript"></script>' . "\n";
             }
 
             # Load `File Manager` specific scripts
@@ -261,7 +263,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/file-manager/file-manager.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?180301" type="text/javascript"></script>' . "\n";
+                    . '.js?1804" type="text/javascript"></script>' . "\n";
             }
         }
         else {
@@ -269,9 +271,16 @@ sub embed_footer {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/parent.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?180301" type="text/javascript"></script>' . "\n";
+                . '.js?1804" type="text/javascript"></script>' . "\n";
         }
     }
+}
+
+sub Atext {
+
+    my $rv = $Atext{ $_[0] };
+    $rv =~ s/\$(\d+)/$1 < @_ ? $_[$1] : '$'.$1/ge;
+    return $rv;
 }
 
 sub init_vars {
@@ -280,9 +289,14 @@ sub init_vars {
     our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
         $t_var_product_m );
 
-    our %text = ( &load_language($current_theme), %text );
-    our %text = ( &load_language('virtual-server'), %text );
-    our %text = ( &load_language('server-manager'), %text );
+    our %Atext = ( &load_language($current_theme), %Atext );
+
+    my $t_sysinfo = index( $t_uri__i, 'sysinfo.cgi' );
+    if ($t_sysinfo != -1) {
+        our %Atext = ( &load_language('virtual-server'), %Atext );
+        our %Atext = ( &load_language('server-manager'), %Atext );
+    }
+
     our ( $has_virtualmin, $get_user_level, $has_cloudmin ) = get_user_level();
 
     our $t_uri__x = get_env('script_name');
@@ -539,6 +553,7 @@ sub get_button_style {
         || index( $entry, 'index_broad' ) gt "-1"
         || $entry eq 'scripts_findok'
         || $entry eq 'edit_kill'
+        || $entry eq 'find_ok'
         || $entry eq 'kill_title' )
     {
         $class = "info ";

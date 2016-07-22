@@ -24,7 +24,7 @@ else {
 }
 @list = split( '\n', &backquote_logged( "find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*") ) );
 
-my $query = trim( $in{'grepstring'} );
+my $query = quotemeta(trim( $in{'grepstring'} ));
 if ( length $query ) {
     my @matched;
 
