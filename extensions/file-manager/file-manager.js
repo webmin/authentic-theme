@@ -1292,7 +1292,6 @@ function __f___tl_v() {
 
 function ___f__tw() {
     if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
-        $(".container-fluid").removeClass("col-lg-10 col-lg-offset-1").addClass("col-xs-10 col-xs-offset-1");
         if ($__source_file == "config.cgi") {
             $('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"], textarea[name="bookmarks"]').parents("td.col_value").parent("tr").addClass("hidden");
             $("#columns_size").parent(".awobject").remove();

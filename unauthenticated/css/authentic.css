@@ -4859,6 +4859,10 @@ body {
     -webkit-overflow-scrolling: touch
 }
 
+html>head+body.modal-open {
+    overflow: hidden !important
+}
+
 img {
     max-width: 100%
 }
