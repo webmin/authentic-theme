@@ -1566,7 +1566,6 @@ aside .form-control:focus:-ms-input-placeholder {
 }
 
 .csf input[value="rblchecksave"]+select[name="freq"],
-.csf select[name="freq"]+input[name="email"]+input[type="submit"],
 .csf select[name="do"],
 .csf select[name="dur"] {
     vertical-align: baseline !important
@@ -2633,6 +2632,95 @@ input.ui_radio+label {
 
 .csf table tbody tr.csf-tr td[nowrap] {
     padding: 0 10px 0 3px !important
+}
+
+.csf .panel-body>table ~ table.csf-table.table.table-striped.table-condensed[align="center"][border="0"][cellpadding="4"][cellspacing="0"] tbody tr.csf-tr td,
+.csf .panel-body>table ~ table.csf-table.table.table-striped.table-condensed[align="center"][border="0"][cellpadding="4"][cellspacing="0"] tbody tr.csf-tr {
+    padding: 3px 10px 3px 5px !important
+}
+
+.csf .panel-body>table ~ table.csf-table.table.table-striped.table-condensed[align="center"][border="0"][cellpadding="4"][cellspacing="0"] tbody tr.csf-tr td[nowrap] {
+    padding: 2px 10px 2px 5px !important
+}
+
+.csf .csf-box>form[action="index.cgi"]>input[type="submit"],
+.csf select[name="freq"]+input[name="email"]+input[type="submit"],
+.csf button[onclick="CSFrefreshtimer()"].input {
+    vertical-align: middle !important
+}
+
+.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"] {
+    color: #fff !important;
+    border-color: #eea236;
+    background-color: #f0ad4e
+}
+
+.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"]:active,
+.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"]:focus,
+.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"]:hover {
+    color: #fff !important;
+    border-color: #d58512;
+    background-color: #ec971f
+}
+
+.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"] {
+    color: #fff !important;
+    border-color: #992020;
+    background-color: #bd1e1e
+}
+
+.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"]:active,
+.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"]:focus,
+.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"]:hover {
+    color: #fff !important;
+    border-color: #992020;
+    background-color: #ad2828
+}
+
+.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"] {
+    color: #fff !important;
+    border-color: #4cae4c;
+    background-color: #5cb85c
+}
+
+.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"]:active,
+.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"]:focus,
+.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"]:hover {
+    color: #fff !important;
+    border-color: #398439;
+    background-color: #449d44
+}
+
+.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"],
+.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"] {
+    color: #fff !important;
+    border-color: #46b8da;
+    background-color: #5bc0de
+}
+
+.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"]:active,
+.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"]:focus,
+.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"]:hover,
+.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"]:active,
+.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"]:focus,
+.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"]:hover {
+    color: #fff !important;
+    border-color: #269abc;
+    background-color: #31b0d5
+}
+
+.csf .csf-box>form[action="index.cgi"][method="post"]>input[type="hidden"]+input.input[type="submit"] {
+    color: #fff !important;
+    border-color: #357ebd;
+    background-color: #428bca
+}
+
+.csf .csf-box>form[action="index.cgi"][method="post"]>input[type="hidden"]+input.input[type="submit"]:active,
+.csf .csf-box>form[action="index.cgi"][method="post"]>input[type="hidden"]+input.input[type="submit"]:focus,
+.csf .csf-box>form[action="index.cgi"][method="post"]>input[type="hidden"]+input.input[type="submit"]:hover {
+    color: #fff !important;
+    border-color: #285e8e;
+    background-color: #3071a9
 }
 
 .csf .csf-table {

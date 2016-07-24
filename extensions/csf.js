@@ -338,6 +338,9 @@ function ___csf() {
         $csf.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').each(function() {
             $(this).addClass("heighter-34")
         });
+        if ($csf.find(".csf #paginatediv2.paginationstyle > select").length) {
+            $csf.find(".panel-body > script + fieldset.csf-box > legend").first().remove()
+        }
         $csf.find(".csf #paginatediv2.paginationstyle > select").each(function() {
             $(this).attr("style", "vertical-align: top !important")
         });
@@ -406,8 +409,12 @@ function ___csf() {
                 $(this).attr("id", d)
             }
             if ($(this).is(":checkbox")) {
-                $($___text).wrap('<label style="font-weight: 400" class="lawobject" ' + c + ">" + $.trim(g) + " </label>");
-                $($___text).remove()
+                if ($($___text).length) {
+                    $($___text).wrap('<label style="font-weight: 400" class="lawobject" ' + c + ">" + $.trim(g) + " </label>");
+                    $($___text).remove()
+                } else {
+                    $(this).after('<label class="lawobject" for="' + ($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>')
+                }
             }
             $(this).next("label").andSelf().wrapAll('<span class="aw' + $(this).attr("type") + ' awobject awobjectm"></span>')
         });
