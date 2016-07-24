@@ -31,6 +31,13 @@ function ___csf() {
         $csf = u.$('iframe[name="page"]').contents();
         $csf.find("html").attr("data-background-style", t__wi_p.$("html").attr("data-background-style"));
         $csf.find("head").append('			<link rel="shortcut icon" href="' + t__wi_p.$_____link_full + '/images/favicon-webmin.ico">			<meta name="viewport" content="width=device-width, initial-scale=1.0">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/bootstrap." + m + '.css?1804" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/jquery.datatables." + m + '.css?1804" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/codemirror." + m + '.css?1804" rel="stylesheet" type="text/css">			<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/authentic." + m + '.css?1804" rel="stylesheet" type="text/css">		');
+        $.ajax({
+            url: t__wi_p.$_____link_full + "/unauthenticated/css/styles.css",
+            type: "HEAD",
+            success: function() {
+                $csf.find("head").append('		    	   	<link href="' + t__wi_p.$_____link_full + "/unauthenticated/css/styles.css?" + (Math.floor(Date.now() / 1000)) + '" rel="stylesheet" type="text/css">			')
+            }
+        });
         $.each(u.$('link[href*="/styles.css"]'), function() {
             if ($(this)) {
                 $csf.find("head").append('<link href="' + t__wi_p.$_____link_full + '/unauthenticated/css/styles.css" rel="stylesheet" type="text/css">')
