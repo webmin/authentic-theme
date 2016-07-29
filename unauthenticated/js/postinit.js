@@ -1780,7 +1780,7 @@ function t__cm___init(d, f, i, h, g, e) {
                 a = "z80";
                 v = "text/x-z80"
             } else {
-                if ($page == "bind8" || $page == "procmail") {
+                if ($page == "bind8" || $page == "procmail" || is__mf("virtual-server", "manual_records.cgi")) {
                     a = "clike";
                     v = "text/x-java"
                 } else {

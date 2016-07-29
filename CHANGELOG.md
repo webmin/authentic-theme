@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 18.05 (July 29, 2016)
+Fixed bugs [#516](https://github.com/qooob/authentic-theme/issues/516) [#517](https://github.com/qooob/authentic-theme/issues/517) [#518](https://github.com/qooob/authentic-theme/issues/518) [#519](https://github.com/qooob/authentic-theme/issues/519)
+
 ####Version 18.04 (July 23, 2016)
 Fixed bugs [#394](https://github.com/qooob/authentic-theme/issues/394) [#503](https://github.com/qooob/authentic-theme/issues/503) [#506](https://github.com/qooob/authentic-theme/issues/506) [#507](https://github.com/qooob/authentic-theme/issues/507) [#513](https://github.com/qooob/authentic-theme/issues/513) [#514](https://github.com/qooob/authentic-theme/issues/514) [#515](https://github.com/qooob/authentic-theme/issues/515)
 
