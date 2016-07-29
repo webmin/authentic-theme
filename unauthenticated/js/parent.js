@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.05 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -8,7 +8,7 @@ if ($access_level == 0) {
     settings_notification_slider_fixed && t__wi_p.$("html").attr("data-slider-fixed", "1")
 }
 if (t__wi_p.$___________initial === 1) {
-    console.log("Welcome to Authentic Theme 18.04 https://github.com/qooob/authentic-theme")
+    console.log("Welcome to Authentic Theme 18.05 https://github.com/qooob/authentic-theme")
 }
 typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;

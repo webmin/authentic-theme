@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.04 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.05 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -8427,6 +8427,15 @@ body[class*="firewalld"][data-uri*="edit_port.cgi"] input[name="port"] {
     margin-top: 1px
 }
 
+body[class*="virtual-server"][data-uri*="list_records.cgi"] button#manual {
+    float: right
+}
+
+body[class*="virtual-server"][data-uri*="list_records.cgi"] select#type {
+    margin-top: 0 !important;
+    margin-right: 5px
+}
+
 .cm-s-monokai .CodeMirror-dialog,
 .cm-s-monokai .CodeMirror-dialog input {
     color: #eee !important
@@ -8634,6 +8643,11 @@ screen and (max-height:600px) {
     nav.favorites-menu ul a {
         padding: 10px
     }
+}
+
+.modal-dialog-update .label.label-default {
+    display: inline-block;
+    margin: -1px
 }
 
 @media(min-width:768px) {
