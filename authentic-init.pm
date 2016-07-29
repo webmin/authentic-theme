@@ -437,7 +437,19 @@ sub get_button_style {
     if ( $entry eq 'edit_createnow' || $entry eq 'edit_savenow' ) {
         $icon =~ s/%icon/backup fa-1_25x/ig;
     }
+    elsif ( $entry eq 'edit_title1'
+        )
+    {
+        $icon = undef;
+        $class = "success ";
+    }
+    elsif (index( $entry, 'open' ) gt "-1" )
+    {
+        $class = "info ";
+        $icon =~ s/%icon/folder-open/ig;
+    }
     elsif (index( $entry, 'save' ) gt "-1"
+        || index( $entry, 'move' ) gt "-1"
         || $entry eq 'backup_ok2'
         || $entry eq 'sharedips_ok'
         || $entry eq 'categories_ok'
@@ -445,7 +457,7 @@ sub get_button_style {
         || $entry eq 'newquotas_ok'
         || $entry eq 'newdynip_ok' )
     {
-        $class = "success ";
+        $class = "info ";
         $icon =~ s/%icon/check-circle/ig;
     }
     elsif ( $entry eq 'form_ok' ) {
@@ -461,6 +473,8 @@ sub get_button_style {
         $icon =~ s/%icon/refresh/ig;
     }
     elsif (( index( $entry, 'delete' ) gt "-1" && $entry ne 'users_delete' )
+        || index( $entry, 'wipe' ) gt "-1"
+        || index( $entry, 'clear' ) gt "-1"
         || index( $entry, 'ddrop_ok' ) gt "-1"
         || index( $entry, 'dbs_dok' ) gt "-1"
         || index( $entry, 'tprivs_dok' ) gt "-1"
@@ -508,10 +522,16 @@ sub get_button_style {
     elsif ( index( $entry, 'quota' ) gt "-1" ) {
         $icon =~ s/%icon/pie-chart/ig;
     }
+    elsif ( index( $entry, 'addboot_start' ) gt "-1" ) {
+        $class = "success ";
+        $icon =~ s/%icon/toggle-switch  fa-1_25x/ig;
+    }
     elsif ( index( $entry, 'addboot' ) gt "-1" || index( $entry, 'enable' ) gt "-1" || $entry eq 'massdomains_enaok' ) {
+        $class = "primary ";
         $icon =~ s/%icon/toggle-switch  fa-1_25x/ig;
     }
     elsif ( index( $entry, 'shutdown' ) gt "-1" ) {
+        $class = "danger ";
         $icon =~ s/%icon/power-off/ig;
     }
     elsif ( index( $entry, 'docker_reg' ) gt "-1" ) {
@@ -547,13 +567,13 @@ sub get_button_style {
         $icon =~ s/%icon/area-chart/ig;
     }
     elsif ( index( $entry, 'reboot' ) gt "-1" || $entry eq 'view_refresh' ) {
+        $class = "warning ";
         $icon =~ s/%icon/refresh-fi fa-1_25x/ig;
     }
     elsif (index( $entry, 'search' ) gt "-1"
         || index( $entry, 'index_broad' ) gt "-1"
         || $entry eq 'scripts_findok'
         || $entry eq 'edit_kill'
-        || $entry eq 'find_ok'
         || $entry eq 'kill_title' )
     {
         $class = "info ";
@@ -567,12 +587,14 @@ sub get_button_style {
         $class = "warning ";
         $icon =~ s/%icon/times-circle-o/ig;
     }
-    elsif ( index( $entry, 'start' ) gt "-1" ) {
-        $class = "info ";
+    elsif ( index( $entry, 'start' ) gt "-1"
+        || index( $entry, 'index_start' ) gt "-1"
+         ) {
+        $class = "success ";
         $icon =~ s/%icon/play/ig;
     }
     elsif ( index( $entry, 'index_stop' ) gt "-1" || index( $entry, 'edit_stopnow' ) gt "-1" ) {
-        $class = "grey ";
+        $class = "danger ";
         $icon =~ s/%icon/stop/ig;
     }
     elsif ( index( $entry, 'ok_ok' ) gt "-1" ) {
@@ -583,7 +605,8 @@ sub get_button_style {
         $class = "danger ";
         $icon =~ s/%icon/toggle-switch-off fa-1_25x/ig;
     }
-    elsif ( index( $entry, 'index_refsel' ) gt "-1" || $entry eq 'index_reset' || $entry eq 'index_regen' ) {
+    elsif ( index( $entry, 'index_refsel' ) gt "-1" || $entry eq 'index_reset' || $entry eq 'index_regen' || $entry eq 'index_reload' ) {
+        $class = "warning ";
         $icon =~ s/%icon/refresh/ig;
     }
     elsif ( $entry eq 'index_script' ) {
@@ -604,6 +627,7 @@ sub get_button_style {
         || $entry eq 'massdomains_disok'
         || index( $entry, 'disable' ) gt "-1" )
     {
+        $class = "warning ";
         $icon =~ s/%icon/toggle-switch-off fa-1_25x/ig;
     }
     elsif (index( $entry, 'index_global' ) gt "-1"
@@ -613,6 +637,7 @@ sub get_button_style {
         || $entry eq 'root_ok'
         || $entry eq 'index_edit' )
     {
+        $class = "primary ";
         $icon =~ s/%icon/pencil-square-o/ig;
     }
     elsif ( index( $entry, 'clone' ) gt "-1" ) {
@@ -622,6 +647,7 @@ sub get_button_style {
         $icon =~ s/%icon/table-edit fa-1_25x/ig;
     }
     elsif ( index( $entry, 'index_sched' ) gt "-1" || index( $entry, 'sched_title' ) gt "-1" ) {
+        $class = "primary ";
         $icon =~ s/%icon/clock/ig;
     }
     elsif ( index( $entry, 'uedit_mail' ) gt "-1" ) {
@@ -653,6 +679,7 @@ sub get_button_style {
         $icon =~ s/%icon/plus-circle/ig;
     }
     elsif ( index( $entry, 'force_title' ) gt "-1" || index( $entry, 'index_force' ) gt "-1" ) {
+        $class = "warning ";
         $icon =~ s/%icon/rotate-3d fa-1_25x margined-left--3 margined-right--3/ig;
     }
     elsif ( index( $entry, 'csv' ) gt "-1" ) {
@@ -682,12 +709,19 @@ sub get_button_style {
         $icon =~ s/%icon/transform fa-1_25x/ig;
     }
     elsif ( $entry eq 'transfer_uploadok' || $entry eq 'transfer_tabupload' || $entry eq 'html_uploadok' ) {
+        $class = "primary ";
         $icon =~ s/%icon/upload/ig;
     }
     elsif ( $entry eq 'index_down' || $entry eq 'transfer_downloadok' ) {
+        $class = "primary ";
         $icon =~ s/%icon/download/ig;
     }
+    elsif ( index( $entry, 'upload' ) gt "-1" ) {
+        $class = "primary ";
+        $icon =~ s/%icon/cloud-upload/ig;
+    }
     elsif ( $entry eq 'index_up' || $entry eq 'download_need' ) {
+        $class = "primary ";
         $icon =~ s/%icon/download/ig;
     }
     elsif (index( $entry, 'umass_del1' ) gt "-1"

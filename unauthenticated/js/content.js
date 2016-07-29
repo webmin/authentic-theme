@@ -1457,7 +1457,42 @@ $('input[name="all_weekdays"], .ui_grid_cell > table.table-condensed, table.tabl
     $(this).parent("td").attr("style", "vertical-align: top !important; padding-left:2px; padding-right:2px;")
 });
 $('input[type="submit"]').each(function() {
-    $(this).addClass("btn btn-default")
+    var label = $(this).val().toUpperCase();
+    if((label.indexOf('START') > -1)
+        || (label.indexOf('CREATE') > -1)
+        || (label.indexOf('ADD') > -1)
+        || (label.indexOf('INSTALL') > -1)
+        || (label.indexOf('CLONE') > -1)
+        )
+        $(this).addClass("btn btn-success")    
+    else if((label.indexOf('SAVE') > -1)
+        || (label.indexOf('APPLY') > -1)
+        || (label.indexOf('MOVE') > -1)
+        || (label.indexOf('UPDATE') > -1)
+        || (label.indexOf('OPEN') > -1)
+        )
+        $(this).addClass("btn btn-info")
+    else if((label.indexOf('DELETE') > -1)
+        || (label.indexOf('REMOVE') > -1)
+        || (label.indexOf('STOP') > -1)
+        || (label.indexOf('WIPE') > -1)
+        || (label.indexOf('UNINSTALL') > -1)
+        )
+        $(this).addClass("btn btn-danger")
+    else if((label.indexOf('RESTART') > -1)
+        || (label.indexOf('RESTORE') > -1)
+        || (label.indexOf('DISABLE') > -1)
+        )
+        $(this).addClass("btn btn-warning")
+    else if((label.indexOf('STATUS') > -1)
+        || (label.indexOf('RETURN') > -1)
+        || (label.indexOf('DOWNLOAD') > -1)
+        || (label.indexOf('UPLOAD') > -1)
+        || (label.indexOf('EDIT') > -1)
+        )
+        $(this).addClass("btn btn-primary")
+    else
+        $(this).addClass("btn btn-default")
 });
 $("table tr th").each(function() {
     if ($(this).text()) {
