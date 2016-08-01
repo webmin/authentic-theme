@@ -1,5 +1,8 @@
 ##Changelog
 
+####Version 18.06 (August 01, 2016)
+Fixed bugs [#41530](https://www.virtualmin.com/node/41530) [#520](https://github.com/qooob/authentic-theme/pull/520)
+
 ####Version 18.05 (July 29, 2016)
 Fixed bugs [#516](https://github.com/qooob/authentic-theme/issues/516) [#517](https://github.com/qooob/authentic-theme/issues/517) [#518](https://github.com/qooob/authentic-theme/issues/518) [#519](https://github.com/qooob/authentic-theme/issues/519)
 

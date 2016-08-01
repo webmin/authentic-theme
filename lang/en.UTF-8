@@ -566,4 +566,3 @@ settings_global_passgen_format=Password generator
 settings_global_passgen_format_description=Set the length and character type used in the generated password. First value is numerical, which is the length of the password, immediately followed by <code>|</code> as a delimiter. Next is the type, where you can use numbers <code>0-9</code>, letters <code>a-z</code> and/or <code>A-Z</code>, and special characters <code>#</code>. All of these sets can be used together or individually, using comma as a delimiter. Default value equals to <code>12|a-z,A-Z,0-9,#</code>, which represents password with 12 characters in length, containing upper and lower case letters, numbers and special characters.
 theme_xhred_password_generator_new=Generate New Password<br> (To Clipboard)
 theme_xhred_password_generator_new_success=Generated password %password has been copied to clipboard successfully.
-
