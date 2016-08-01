@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.05 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.06 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -75,7 +75,7 @@ sub embed_header {
                 . '/unauthenticated/css/'
                 . $css . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1805" rel="stylesheet" type="text/css">' . "\n";
+                . '.css?1806" rel="stylesheet" type="text/css">' . "\n";
         }
 
         embed_styles();
@@ -99,7 +99,7 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?1805" type="text/javascript"></script>' . "\n";
+                . '.js?1806" type="text/javascript"></script>' . "\n";
         }
     }
     else {
@@ -122,7 +122,7 @@ sub embed_header {
                 . '/unauthenticated/css/'
                 . $css . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1805" rel="stylesheet" type="text/css">' . "\n";
+                . '.css?1806" rel="stylesheet" type="text/css">' . "\n";
         }
 
         if ( length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue' ) {
@@ -131,7 +131,7 @@ sub embed_header {
                 . '/unauthenticated/css/palettes/'
                 . lc( $__settings{'settings_navigation_color'} ) . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1805" rel="stylesheet" type="text/css" data-palette>' . "\n";
+                . '.css?1806" rel="stylesheet" type="text/css" data-palette>' . "\n";
         }
 
         embed_styles();
@@ -143,7 +143,7 @@ sub embed_header {
                 . '/unauthenticated/js/'
                 . $js . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?1805" type="text/javascript"></script>' . "\n";
+                . '.js?1806" type="text/javascript"></script>' . "\n";
         }
 
     }
@@ -239,14 +239,14 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/postinit.'
             . ( $args[0] eq 'debug' ? 'src' : 'min' )
-            . '.js?1805" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1806" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
 
         if ( $args[1] eq '1' || $args[2] eq 'stripped' ) {
             print '<script src="'
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/content.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1805" type="text/javascript"></script>' . "\n";
+                . '.js?1806" type="text/javascript"></script>' . "\n";
 
             # Load `MySQL/PostgreSQL` specific scripts
             if ( index( get_module_name(), 'mysql' ) gt '-1' || index( get_module_name(), 'postgresql' ) gt '-1' ) {
@@ -254,7 +254,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/sql.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1805" type="text/javascript"></script>' . "\n";
+                    . '.js?1806" type="text/javascript"></script>' . "\n";
             }
 
             # Load `File Manager` specific scripts
@@ -263,7 +263,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/file-manager/file-manager.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1805" type="text/javascript"></script>' . "\n";
+                    . '.js?1806" type="text/javascript"></script>' . "\n";
             }
         }
         else {
@@ -271,7 +271,7 @@ sub embed_footer {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/parent.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1805" type="text/javascript"></script>' . "\n";
+                . '.js?1806" type="text/javascript"></script>' . "\n";
         }
     }
 }
@@ -292,7 +292,7 @@ sub init_vars {
     our %Atext = ( &load_language($current_theme), %Atext );
 
     my $t_sysinfo = index( $t_uri__i, 'sysinfo.cgi' );
-    if ($t_sysinfo != -1) {
+    if ( $t_sysinfo != -1 ) {
         our %Atext = ( &load_language('virtual-server'), %Atext );
         our %Atext = ( &load_language('server-manager'), %Atext );
     }
@@ -461,6 +461,8 @@ sub get_button_style {
         $icon =~ s/%icon/refresh/ig;
     }
     elsif (( index( $entry, 'delete' ) gt "-1" && $entry ne 'users_delete' )
+        || index( $entry, 'wipe' ) gt "-1"
+        || index( $entry, 'clear' ) gt "-1"
         || index( $entry, 'ddrop_ok' ) gt "-1"
         || index( $entry, 'dbs_dok' ) gt "-1"
         || index( $entry, 'tprivs_dok' ) gt "-1"
@@ -480,6 +482,7 @@ sub get_button_style {
         || $entry eq 'html_dtitle' )
     {
         $class = "danger ";
+
         $icon =~ s/%icon/times-circle/ig;
     }
     elsif (
@@ -546,14 +549,22 @@ sub get_button_style {
     elsif ( index( $entry, 'history_ok' ) gt "-1" ) {
         $icon =~ s/%icon/area-chart/ig;
     }
-    elsif ( index( $entry, 'reboot' ) gt "-1" || $entry eq 'view_refresh' ) {
+    elsif (index( $entry, 'reboot' ) gt "-1"
+        || $entry eq 'view_refresh'
+        || index( $entry, 'refreshmods_title' ) gt "-1" )
+    {
+        if ( index( $entry, 'refreshmods_title' ) gt "-1" ) {
+            $class = "primary ";
+        }
+        elsif ( $entry ne 'reboot_ok' && $entry ne 'index_reboot' ) {
+            $class = "warning ";
+        }
         $icon =~ s/%icon/refresh-fi fa-1_25x/ig;
     }
     elsif (index( $entry, 'search' ) gt "-1"
         || index( $entry, 'index_broad' ) gt "-1"
         || $entry eq 'scripts_findok'
         || $entry eq 'edit_kill'
-        || $entry eq 'find_ok'
         || $entry eq 'kill_title' )
     {
         $class = "info ";
@@ -568,11 +579,11 @@ sub get_button_style {
         $icon =~ s/%icon/times-circle-o/ig;
     }
     elsif ( index( $entry, 'start' ) gt "-1" ) {
-        $class = "info ";
+        $class = "success ";
         $icon =~ s/%icon/play/ig;
     }
     elsif ( index( $entry, 'index_stop' ) gt "-1" || index( $entry, 'edit_stopnow' ) gt "-1" ) {
-        $class = "grey ";
+        $class = "danger ";
         $icon =~ s/%icon/stop/ig;
     }
     elsif ( index( $entry, 'ok_ok' ) gt "-1" ) {
@@ -580,10 +591,15 @@ sub get_button_style {
         $class = "success ";
     }
     elsif ( index( $entry, 'index_delboot' ) gt "-1" ) {
-        $class = "danger ";
+        $class = "grey ";
         $icon =~ s/%icon/toggle-switch-off fa-1_25x/ig;
     }
-    elsif ( index( $entry, 'index_refsel' ) gt "-1" || $entry eq 'index_reset' || $entry eq 'index_regen' ) {
+    elsif (index( $entry, 'index_refsel' ) gt "-1"
+        || $entry eq 'index_reset'
+        || $entry eq 'index_regen'
+        || $entry eq 'index_reload' )
+    {
+        $class = "warning ";
         $icon =~ s/%icon/refresh/ig;
     }
     elsif ( $entry eq 'index_script' ) {
@@ -613,6 +629,7 @@ sub get_button_style {
         || $entry eq 'root_ok'
         || $entry eq 'index_edit' )
     {
+        $class = "primary ";
         $icon =~ s/%icon/pencil-square-o/ig;
     }
     elsif ( index( $entry, 'clone' ) gt "-1" ) {
@@ -622,6 +639,7 @@ sub get_button_style {
         $icon =~ s/%icon/table-edit fa-1_25x/ig;
     }
     elsif ( index( $entry, 'index_sched' ) gt "-1" || index( $entry, 'sched_title' ) gt "-1" ) {
+        $class = "primary ";
         $icon =~ s/%icon/clock/ig;
     }
     elsif ( index( $entry, 'uedit_mail' ) gt "-1" ) {
@@ -653,6 +671,7 @@ sub get_button_style {
         $icon =~ s/%icon/plus-circle/ig;
     }
     elsif ( index( $entry, 'force_title' ) gt "-1" || index( $entry, 'index_force' ) gt "-1" ) {
+        $class = "warning ";
         $icon =~ s/%icon/rotate-3d fa-1_25x margined-left--3 margined-right--3/ig;
     }
     elsif ( index( $entry, 'csv' ) gt "-1" ) {
@@ -682,12 +701,15 @@ sub get_button_style {
         $icon =~ s/%icon/transform fa-1_25x/ig;
     }
     elsif ( $entry eq 'transfer_uploadok' || $entry eq 'transfer_tabupload' || $entry eq 'html_uploadok' ) {
+        $class = "primary ";
         $icon =~ s/%icon/upload/ig;
     }
     elsif ( $entry eq 'index_down' || $entry eq 'transfer_downloadok' ) {
+        $class = "primary ";
         $icon =~ s/%icon/download/ig;
     }
     elsif ( $entry eq 'index_up' || $entry eq 'download_need' ) {
+        $class = "primary ";
         $icon =~ s/%icon/download/ig;
     }
     elsif (index( $entry, 'umass_del1' ) gt "-1"

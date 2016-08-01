@@ -1,13 +1,10 @@
 /*!
- * Authentic Theme 18.05 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.06 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
 charset_warning();
-if (access_level() == 0 && $g__v__nav) {
-    theme_update_notification()
-}
 typeof t__wi_p.t___p__xhr_r == "undefined" ? t__wi_p.t___p__xhr_r = 0 : false;
 $(window).ajaxStart(function() {
     t__wi_p.t___p__xhr_r = 1;
@@ -1771,7 +1768,7 @@ if ($current_directory == $_____link + "fdisk/" || $current_directory == $_____l
     })
 }
 $('.panel-body > form > p > a.ui_link, .panel-body > table.table + a.ui_link, .panel-body > p > a:not([href*="config.cgi?bacula-backup"]), body[data-current-product="usermin"] div.panel-body > p > a, div.panel-body > a[href^="edit_"]:not([href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_form > a, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a.ui_link:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_grid_cell > a.select_all, .ui_grid_cell > a.select_invert, .ui_grid_cell > :not(input):not(.acheckbox):not(.aradio):not(label) + a[href*=".cgi"]:not([href^="edit_acl.cgi"], [href^="edit_rpc.cgi"], [href^="edit_user.cgi?user="], [href^="edit_group.cgi?group="]), .ui_grid_cell > a[href*=".cgi"]:first-child:not([href^="edit_rpc.cgi"],[href^="edit_nuser.cgi"],[href*="edit_user.cgi?idx"]), .tab-pane > p > a, .tab-pane > a.ui_link, .tab-pane > .table-condensed > a.ui_link, .tab-pane > a, .panel-body > p > a.ui_link, a.select_all, a.select_invert, form[action="delete.cgi"] > table table.ui_grid_table + a').each(function() {
-    if (is__mf("samba", "edit_epass.cgi")) {
+    if (is__mf("samba", "edit_epass.cgi") || (is__m("acl") && $(this).is('[href^="edit_user.cgi?user="]') && !$(this).parents("b").length)) {
         return
     }
     if (!is__mf("virtual-server", "history.cgi") && !is__mf("server-manager", "one_history.cgi") && $current_directory != $_____link + "passwd/" && $(this).text() && $current_page_full != $_____link_full + "/mailboxes/" && $current_page_full != $_____link_full + "/mailboxes/index.cgi" && $current_page_full != $_____link_full + "/usermin/list_configs.cgi" && !$(this).hasClass("help_popup")) {

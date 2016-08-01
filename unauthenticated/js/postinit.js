@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.03 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.06 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -540,24 +540,6 @@ function charset_warning() {
                 });
                 $(".modal-charset-warning").on("hide.bs.modal", function(b) {
                     localStorage.setItem("___theme__global__charset_warning_read", 1)
-                })
-            }
-        }, 2000)
-    }
-}
-
-function theme_update_notification() {
-    if (t__wi_p.settings_sysinfo_theme_updates != true && localStorage.getItem("___theme_update_notification_notice_read") != 1) {
-        var a = '		<div class="modal fade7 modal-theme_update-info" tabindex="-1" role="dialog">		  <div class="modal-dialog modal-sm">		    <div class="modal-content">		      <div class="modal-header background-info background--bordered">		        <button type="button" class="close" data-dismiss="modal" aria-label="' + lang("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>		        <h4 class="modal-title"><i class="fa fa-fw fa-exclamation-circle">&nbsp;&nbsp;</i> ' + lang("theme_xhred_global_notice") + '</h4>		      </div>		      <div class="modal-body">		        <p>' + lang("theme_xhred_updates_disabled_notice").replace("%link", $_____link_full + "/webmin/edit_themes.cgi") + "</p>		      </div>		    </div>		  </div>		</div>	";
-        $("body").append(a);
-        setTimeout(function() {
-            if (!$("body").hasClass("modal-open")) {
-                $(".modal-theme_update-info").modal("show");
-                $(".modal-theme_update-info").on("click", ".modal-body a.label", function(b) {
-                    $(".modal-theme_update-info").modal("hide")
-                });
-                $(".modal-theme_update-info").on("hide.bs.modal", function(b) {
-                    localStorage.setItem("___theme_update_notification_notice_read", 1)
                 })
             }
         }, 2000)
