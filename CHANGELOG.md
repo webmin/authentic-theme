@@ -1,6 +1,6 @@
 ##Changelog
 
-####Version 18.07 (August xx, 2016)
+####Version 18.07 (August 04, 2016)
 Fixed bugs [#521](https://github.com/qooob/authentic-theme/pull/521) [#40515](https://www.virtualmin.com/node/40515)
 
 ####Version 18.06 (August 01, 2016)
