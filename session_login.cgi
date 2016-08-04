@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.06 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.07 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -65,16 +65,16 @@ print '<div class="container session_login">' . "\n";
 if ( defined( $in{'failed'} ) ) {
     if ( $in{'twofactor_msg'} ) {
         print "<h3>",, "</h3><p></p>\n";
-        print '<div class="alert alert-danger">' . "\n";
-        print '<strong><i class ="fa fa-bolt"></i> '
-            . $Atext{'login_danger'}
+        print '<div class="alert alert-warning">' . "\n";
+        print '<strong><i class ="fa fa-exclamation-triangle"></i> '
+            . $Atext{'login_warning'}
             . '</strong><br />'
             . &Atext( 'session_twofailed', &html_escape( $in{'twofactor_msg'} ) ) . "\n";
         print '</div>' . "\n";
     }
     else {
-        print '<div class="alert alert-danger">' . "\n";
-        print '<strong><i class ="fa fa-bolt"></i> ' . $Atext{'login_danger'} . '</strong><br />' . "\n";
+        print '<div class="alert alert-warning">' . "\n";
+        print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
         print $Atext{'session_failed'} . "\n";
         print '</div>' . "\n";
     }
