@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.06 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.07 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -90,7 +90,7 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
     if ($current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {
         var magic_form_save_button_spinner = '<span class="cspinner_container" style=" width: 19px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: -4px; margin-left: -11px;"><span class="cspinner-icon white small"></span></span></span>';
         $("#delete").remove();
-        $("#new").addClass("hidden");
+        $("#edit").length && $("#new").addClass("hidden");
         $("#edit").replaceWith('				<div class="btn-group">					<button class="btn btn-default" type="submit" name="edit" id="edit" disabled><i class="fa fa-fw fa-i-cursor">&nbsp;&nbsp;</i><span>' + lang("theme_xhred_database_edit_selected_row") + '</span></button>					<button class="btn btn-success" type="submit" name="newClone" id="newClone"><i class="fa fa-fw fa-plus-circle">&nbsp;&nbsp;</i><span>' + lang("theme_xhred_database_add_new_row") + '</span></button>					<button class="btn btn-warning" type="submit" name="delete" id="delete" disabled><i class="fa fa-fw fa-trash">&nbsp;&nbsp;</i><span>' + lang("theme_xhred_database_delete_selected_row") + "</span></button>				</div>			");
         $("body").on("click", "#newClone, #deleteClone", function(a) {
             a.preventDefault();
