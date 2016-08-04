@@ -462,7 +462,6 @@ sub get_button_style {
     }
     elsif (( index( $entry, 'delete' ) gt "-1" && $entry ne 'users_delete' )
         || index( $entry, 'wipe' ) gt "-1"
-        || index( $entry, 'clear' ) gt "-1"
         || index( $entry, 'ddrop_ok' ) gt "-1"
         || index( $entry, 'dbs_dok' ) gt "-1"
         || index( $entry, 'tprivs_dok' ) gt "-1"

@@ -17,6 +17,7 @@ our $__changelog
                 <ul>
 
                   <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/521" target="_blank">#521</a>
+                                 <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/522" target="_blank">#522</a>
                                  <a class="label label-default" href="https://www.virtualmin.com/node/40515" target="_blank">#40515</a>
 
                                  <span style=" float: right; font-size: 10px; display: inline-block; margin-top: 10px; ">18.07</span><hr></li>
