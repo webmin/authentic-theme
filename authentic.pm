@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.07 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.08 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -159,31 +159,31 @@ sub theme_popup_prehead {
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/bootstrap.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1807" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?1808" rel="stylesheet" type="text/css">' . "\n";
 
         print '<link href="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/authentic.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1807" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?1808" rel="stylesheet" type="text/css">' . "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/jquery.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1807" type="text/javascript"></script>', "\n";
+            . '.js?1808" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/cgi.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1807" type="text/javascript"></script>', "\n";
+            . '.js?1808" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/filtermatch.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1807" type="text/javascript"></script>', "\n";
+            . '.js?1808" type="text/javascript"></script>', "\n";
     }
 }
 
@@ -221,7 +221,8 @@ sub theme_footer {
         ),
         $_[0]
     );
-    embed_scripts();
+    embed_pm_scripts();
+    embed_js_scripts();
     print '</body>', "\n";
     print '</html>', "\n";
 }

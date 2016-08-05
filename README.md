@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (18.07)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
+* [Download (18.08)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -75,7 +75,7 @@ There is no need to take any additional actions. In case _Virtualmin_ or/and _Cl
 The theme has inbuilt feature to notify an administrative user to install updates. To enable this feature, turn `Check for Authentic Theme updates` on in theme settings.
 
 ####How do I customize the theme?
-Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can set custom _logos_, _styles_ and _scripts_.
+Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.
 
 
 ####How do I make user palettes work?
@@ -166,7 +166,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ###Donation
 
- Overall development of this theme has already passed the stage of 1800 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ Overall development of this theme has already passed the stage of 1810 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
 
 [![](https://rostovtsev.ru/pub/media/icons/yandex-175x89.png)](http://rostovtsev.ru/pub/api/donation/yandex.html)
 <br>

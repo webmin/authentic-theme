@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.07 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.08 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -11,6 +11,7 @@ do "authentic-theme/authentic-lib.pm";
 my @files = (
     $config_directory . '/authentic-theme/styles.css',
     $config_directory . '/authentic-theme/scripts.js',
+    $config_directory . '/authentic-theme/scripts.pm',
     $config_directory . '/authentic-theme/favorites.json',
     $config_directory . '/authentic-theme/custom-lang'
 );
@@ -24,6 +25,7 @@ print '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><sp
       index( $in{'file'}, '.css' ) > -1 ? $Atext{'theme_fileformat_css'}
     : index( $in{'file'}, '.json' ) > -1 ? $Atext{'theme_fileformat_json'}
     : index( $in{'file'}, '.js' ) > -1   ? $Atext{'theme_fileformat_js'}
+    : index( $in{'file'}, '.pm' ) > -1   ? $Atext{'theme_fileformat_perl'}
     :                                      $Atext{'theme_fileformat_plain_text'}
     ) . '</span></div>';
 print "<input type=submit value='$Atext{'settings_right_file_edit'}'>\n";
@@ -46,7 +48,8 @@ print &ui_textarea(
         : $data
     ),
     20, 80, undef, undef,
-    "style='width: 100%'"
+    "style='width: 100%' "
+        . ( index( $in{'file'}, '.pm' ) > -1 ? 'placeholder="' . $Atext{'theme_fileformat_perl_placeholder'} . '"' : '' ) . ""
 );
 print &ui_form_end( [ [ "save", $text{'save'} ] ] );
 &ui_print_footer( "webmin/edit_themes.cgi", $Atext{'right_return_theme_options'} );
