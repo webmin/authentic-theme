@@ -1,11 +1,11 @@
 ##Changelog
 
 ####Version 18.08 (August 06, 2016)
-* Added ability to embed custom _Perl_ scripts to be able to run arbitrary server-side code that survives updates. It can be edited in _Theme Extensions_ [#525](https://github.com/qooob/authentic-theme/pull/525)
-* Fixed bug [#524](https://github.com/qooob/authentic-theme/pull/524)
+* Added ability to embed custom _Perl_ scripts to be able to run arbitrary server-side code that survives updates. It can be edited in _Theme Extensions_ [#525](https://github.com/qooob/authentic-theme/issues/525)
+* Fixed bug [#524](https://github.com/qooob/authentic-theme/issues/524)
 
 ####Version 18.07 (August 04, 2016)
-* Fixed bugs [#521](https://github.com/qooob/authentic-theme/pull/521) [#522](https://github.com/qooob/authentic-theme/pull/522) [#40515](https://www.virtualmin.com/node/40515)
+* Fixed bugs [#521](https://github.com/qooob/authentic-theme/issues/521) [#522](https://github.com/qooob/authentic-theme/issues/522) [#40515](https://www.virtualmin.com/node/40515)
 
 ####Version 18.06 (August 01, 2016)
 * Fixed bugs [#41530](https://www.virtualmin.com/node/41530) [#520](https://github.com/qooob/authentic-theme/pull/520)
