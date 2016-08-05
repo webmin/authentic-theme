@@ -568,3 +568,9 @@ settings_global_passgen_format_description=Set the length and character type use
 theme_xhred_password_generator_new=Generate New Password<br> (To Clipboard)
 theme_xhred_password_generator_new_success=Generated password %password has been copied to clipboard successfully.
 
+
+#18.08
+theme_fileformat_perl=Perl
+theme_fileformat_perl_placeholder=This file must end with `1;` to work successfully. (http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl)
+
+

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.07 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.08 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1654,7 +1654,8 @@ sub _settings {
         my @settings = (
             '__',
             _settings(
-                'fa', 'file-o',
+                'fa',
+                'file-o',
                 &Atext('settings_right_page_defaults_title') . "~" . &Atext('settings_right_page_default_description')
             ),
             'settings_right_default_tab_webmin',
@@ -1709,7 +1710,9 @@ sub _settings {
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',
-            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_window_replaced_timestamps_options_description') ),
+            _settings(
+                'fa', 'sub-title', '' . "~" . &Atext('settings_window_replaced_timestamps_options_description')
+            ),
             'settings_window_replace_timestamps',
             'true',
             'settings_window_replaced_timestamp_format_full',
@@ -3022,7 +3025,6 @@ sub content {
         ) . '">' . "\n";
     print '</iframe>' . "\n";
     print '</div>' . "\n";
-
 }
 
 sub get_cookies {
