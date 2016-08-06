@@ -572,3 +572,4 @@ theme_xhred_password_generator_new_success=Generated password %password has been
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=This file must end with `1;` to work successfully. (http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl)
 
+err_access_not_root=Access Denied: Must be root to edit configuration

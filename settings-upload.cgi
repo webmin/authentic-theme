@@ -11,6 +11,8 @@ do "authentic-theme/authentic-lib.pm";
 &ui_print_header( $in{'file'},
     $Atext{'settings_right_theme_logos_title'}, undef );
 
+$base_remote_user !~ /^(root|admin)$/ && error($Atext{'err_access_not_root'});
+
 print '' . &Atext('settings_right_logos_title') . '
             <p></p>';
 print &ui_form_start( "settings-upload_save.cgi", "form-data" );

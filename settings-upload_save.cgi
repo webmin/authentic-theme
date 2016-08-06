@@ -8,6 +8,9 @@
 
 do "authentic-theme/authentic-lib.pm";
 
+# XXX should be a redirect, probably
+$base_remote_user !~ /^(root|admin)$/ && error($Atext{'err_access_not_root'});
+
 __config_dir_available();
 
 my $lr  = "/authentic-theme/logo.png";

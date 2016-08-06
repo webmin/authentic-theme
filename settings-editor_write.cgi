@@ -8,6 +8,9 @@
 
 do "authentic-theme/authentic-lib.pm";
 
+# XXX should actually be a redirect or something else
+$base_remote_user !~ /^(root|admin)$/ && error($text{'err_access_not_root'});
+
 __config_dir_available();
 
 unlink_file( $in{'file'} );
