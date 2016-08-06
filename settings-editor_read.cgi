@@ -17,6 +17,9 @@ my @files = (
 );
 $in{'file'} = $files[0] if ( !$in{'file'} );
 &ui_print_header( $in{'file'}, $Atext{'settings_right_theme_extensions_title'}, undef );
+
+$base_remote_user !~ /^(root|admin)$/ && error($text{'err_access_not_root'});
+
 print '' . &Atext('settings_right_extensions_title') . '
             <p></p>';
 print "<form class=\"margined-bottom-3\">\n";
