@@ -1,12 +1,14 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.08 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
 do "authentic-theme/authentic-lib.pm";
+
+$base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
 
 &ui_print_header( $in{'file'},
     $Atext{'settings_right_theme_logos_title'}, undef );

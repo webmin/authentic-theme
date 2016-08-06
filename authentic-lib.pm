@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.08 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -2425,6 +2425,9 @@ sub _settings {
         __config_dir_available();
 
         if ( $t eq 'save' ) {
+
+            $base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
+
             delete @in{ grep( !/^settings_/, keys %in ) };
             for ( values %in ) {s/(.*)/'$1';/}
             for ( values %in ) {s/"/'/g}
@@ -2447,6 +2450,9 @@ sub _settings {
             write_file( $config_directory . "/authentic-theme/settings.js", \%in );
         }
         if ( $t eq 'restore' ) {
+
+            $base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
+
             unlink_file( $config_directory . "/authentic-theme/settings.js" );
             if ( usermin_available() ) {
                 unlink_file( $__usermin_config . "/authentic-theme/settings.js" );

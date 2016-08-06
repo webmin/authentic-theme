@@ -1,6 +1,9 @@
 ##Changelog
 
-####Version 18.08 (August 06, 2016)
+####Version 18.10 (August 06, 2016)
+* Fixed bug [#527](https://github.com/qooob/authentic-theme/issues/527)
+
+####Version 18.08 (August 05, 2016)
 * Added ability to embed custom _Perl_ scripts to be able to run arbitrary server-side code that survives updates. It can be edited in _Theme Extensions_ [#525](https://github.com/qooob/authentic-theme/issues/525)
 * Fixed bug [#524](https://github.com/qooob/authentic-theme/issues/524)
 
