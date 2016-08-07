@@ -575,6 +575,6 @@ theme_fileformat_perl_placeholder=This file must end with `1;` to work successfu
 
 
 #18.10
-theme_error_access_not_root=Access Denied: Must be root to edit configuration
+theme_error_access_not_root=Access denied: User needs access to the <em>Webmin Configuration</em> module to edit theme configuration
 
 
