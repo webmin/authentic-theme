@@ -2426,7 +2426,7 @@ sub _settings {
 
         if ( $t eq 'save' ) {
 
-            $base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
+            !foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
 
             delete @in{ grep( !/^settings_/, keys %in ) };
             for ( values %in ) {s/(.*)/'$1';/}
@@ -2451,7 +2451,7 @@ sub _settings {
         }
         if ( $t eq 'restore' ) {
 
-            $base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
+            !foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
 
             unlink_file( $config_directory . "/authentic-theme/settings.js" );
             if ( usermin_available() ) {
