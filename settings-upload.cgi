@@ -8,7 +8,7 @@
 
 do "authentic-theme/authentic-lib.pm";
 
-$base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
+!foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
 
 &ui_print_header( $in{'file'},
     $Atext{'settings_right_theme_logos_title'}, undef );

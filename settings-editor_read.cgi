@@ -8,7 +8,7 @@
 
 do "authentic-theme/authentic-lib.pm";
 
-$base_remote_user !~ /^(root|admin)$/ && error($Atext{'theme_error_access_not_root'});
+!foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
 
 my @files = (
     $config_directory . '/authentic-theme/styles.css',

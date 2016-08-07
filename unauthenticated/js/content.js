@@ -697,7 +697,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 }
             })
         }
-        if ($g__user__ == "root" || $g__user__ == "admin") {
+        if (is_module("webmin")) {
             $(".nav.nav-tabs").prepend('<li><a data-toggle="tab" href="#atsettings"><span class="cspinner" style="position: relative"><span class="cspinner-icon" style="width:12px; height:12px; "></span></span></a></li>');
             $(".tab-pane").first().before('<div id="atsettings" class="tab-pane text-center"><span class="cspinner" style="margin-top:18px; position: relative"><span class="cspinner-icon"></span></span></div>');
             $('.nav-tabs a[href="#atsettings"]').tab("show")
