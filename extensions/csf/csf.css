@@ -119,12 +119,12 @@ html[data-post="viewlogs"] .table.table-striped.table-condensed tbody tr:not(.su
 
 html[data-post="viewlogs"] button.fa.fa-1_25x,
 html[data-post="temp"] tr td .btn {
-    display: none;
+    visibility: hidden;
     margin-top: -4px
 }
 
 html[data-post="temp"] tr:hover td .btn {
-    display: inline-block
+    visibility: visible
 }
 
 html[data-post="temp"] tr td .btn.btn-danger {
