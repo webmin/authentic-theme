@@ -1020,7 +1020,7 @@ sub get_sysinfo_vars {
                 . $Atext{'theme_update'} . '</a>'
                 . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                 . $Atext{'theme_changelog'} . '</a>'
-                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://github.com/qooob/authentic-theme/archive/authentic-theme-latest.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>'
+                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-latest.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>'
                 . $Atext{'theme_download'} . '</a>'
                 . '<a class="btn btn-xxs btn-primary" href="'
                 . $gconfig{'webprefix'}
