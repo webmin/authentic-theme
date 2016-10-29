@@ -1603,6 +1603,10 @@ sub embed_login_head {
         . $gconfig{'webprefix'}
         . '/unauthenticated/css/bootstrap.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
 
+        print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/fontbase.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+
     print '<link href="'
         . $gconfig{'webprefix'}
         . '/unauthenticated/css/authentic.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
@@ -2469,10 +2473,6 @@ sub _settings {
             . $Atext{'settings_right_restore_defaults'} . '</a>
                                     <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
             . $Atext{'settings_right_clear_local_cache'} . '</a>
-                                    <a class="btn btn-warning authentic_update" href="'
-            . $gconfig{'webprefix'}
-            . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh" style="margin-right:7px;"></i>'
-            . $Atext{'theme_force_update'} . '</a>
                                 </div>
                             </td>
                             <td style="text-align: right;">

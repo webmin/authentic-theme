@@ -828,7 +828,7 @@ sub get_button_style {
 }
 
 sub isd {
-    return 'production';
+    return 'debug';
 
 }
 
