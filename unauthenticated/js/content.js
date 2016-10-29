@@ -1048,7 +1048,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
         $iframe.find(".panel-body .tab-pane.active").removeClass("active");
         $iframe.find(".panel-body #att_install").addClass("active");
         $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').prop("checked", true);
-        $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').parents("td").next("td").find('input[name="url"]').val("https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-latest.wbt.gz");
+        $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').parents("td").next("td").find('input[name="url"]').val("https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-18.30.wbt.gz");
         $iframe.find('.panel-body .tab-pane.active form[action^="install_theme."]').submit();
         t__wi_p.history.pushState(null, null, $_____link_full + "/?downloading-webmin-theme")
     }, 400)
@@ -1059,7 +1059,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 setTimeout(function() {
                     $__iframe = t__wi_p.$('iframe[name="page"]').contents();
                     $__iframe.find('input[name="source"][value="2"]').prop("checked", true);
-                    $__iframe.find('input[name="url"]').val("https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-latest.wbt.gz");
+                    $__iframe.find('input[name="url"]').val("https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-18.30.wbt.gz");
                     $__iframe.find('form[action^="install_theme."]').submit();
                     t__wi_p.history.pushState(null, null, $_____link_full + "/?downloading-usermin-theme")
                 }, 400)
