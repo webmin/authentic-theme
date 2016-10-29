@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1020,7 +1020,7 @@ sub get_sysinfo_vars {
                 . $Atext{'theme_update'} . '</a>'
                 . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                 . $Atext{'theme_changelog'} . '</a>'
-                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://raw.githubusercontent.com/qooob/authentic-theme/master/.build/authentic-theme-latest.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>'
+                . '<a class="btn btn-xxs btn-warning" target="_blank" href="https://github.com/qooob/authentic-theme/archive/authentic-theme-latest.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>'
                 . $Atext{'theme_download'} . '</a>'
                 . '<a class="btn btn-xxs btn-primary" href="'
                 . $gconfig{'webprefix'}
@@ -1286,6 +1286,78 @@ sub get_sysinfo_vars {
     }
 }
 
+sub csf_mod {
+    if ( &foreign_check("csf") && &foreign_available("csf") ) {
+        my $ext = (isd() eq 'debug' ? 'src' : 'min');
+
+        my $styles = $config_directory . "/authentic-theme/styles.css";
+        my $scripts = $config_directory . "/authentic-theme/scripts.js";
+
+        my $csf_header_mod = $root_directory . "/authentic-theme/extensions/csf/csf.header";
+        my $csf_footer_mod = $root_directory . "/authentic-theme/extensions/csf/csf.footer";
+
+        open(my $fh, '>', $csf_header_mod) or die $!;
+        print $fh '<link data-hostname="' . &get_display_hostname() . '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/codemirror.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/codemirror.' . $ext . '.js?1820" type="text/javascript"></script>' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/jquery.datatables.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/jquery.datatables.' . $ext . '.js?1820" type="text/javascript"></script>' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fontbase.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/authentic.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<script src="' . $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?1820" type="text/javascript"></script>' . "\n";
+        print $fh '<link href="'. $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' ."\n";
+        if (-r $styles) {
+            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' . time() . '" rel="stylesheet" type="text/css">' ."\n";
+        }
+        if (-r $scripts) {
+            print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/scripts.js?' . time() . '" type="text/javascript"></script>' ."\n";
+        }
+        close $fh;
+
+        open(my $fh, '>', $csf_footer_mod) or die $!;
+        print $fh '<script class="__at__">csf_init();</script>' . "\n";
+        close $fh;
+
+        my $csf_etc        = "/etc/csf";
+        my $csf_header     = $csf_etc . "/csf.header";
+        my $csf_footer     = $csf_etc . "/csf.footer";
+        if ( -e $csf_etc && -d $csf_etc ) {
+            if ( -s $csf_header ne -s $csf_header_mod ) {
+                copy_source_dest( $csf_header_mod, $csf_etc );
+            }
+             if ( -s $csf_footer ne -s $csf_footer_mod ) {
+                copy_source_dest( $csf_footer_mod, $csf_etc );
+            }
+        }
+
+    }
+
+    # if ( -r '/usr/local/csf/lib/webmin/csf/index.cgi' ) {
+    #     open( my $FILE, "<", "/usr/local/csf/lib/webmin/csf/index.cgi" );
+    #     my @l = <$FILE>;
+    #     close($FILE);
+
+    #     if ( grep {/data-replaced/} @l ) {
+    #         return;
+    #     }
+
+    #     my @n;
+    #     foreach (@l) {
+    #         $_ =~ s/%in\);/%in, \$current_theme);/g;
+    #         $_ =~ s/<HTML>/<HTML style="background-color: $__settings{'settings_background_color'}">/g;
+    #         $_ =~ s/<BODY>//g;
+    #         $_
+    #             =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; overflow: hidden; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
+    #         push( @n, $_ );
+    #     }
+
+    #     open( $FILE, ">", "/usr/local/csf/lib/webmin/csf/index.cgi" );
+    #     print $FILE @n;
+    #     close($FILE);
+    # }
+
+}
+
 sub csf_temporary_list {
     if ( &foreign_check("csf") && &foreign_available("csf") ) {
         my @t;
@@ -1529,17 +1601,17 @@ sub embed_login_head {
 
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/bootstrap.min.css?1801" rel="stylesheet" type="text/css">' . "\n";
+        . '/unauthenticated/css/bootstrap.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
 
     print '<link href="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/css/authentic.min.css?1801" rel="stylesheet" type="text/css">' . "\n";
+        . '/unauthenticated/css/authentic.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
 
     embed_styles();
 
     print '<script src="'
         . $gconfig{'webprefix'}
-        . '/unauthenticated/js/jquery.min.js?1801" type="text/javascript"></script>' . "\n";
+        . '/unauthenticated/js/jquery.min.js?1820" type="text/javascript"></script>' . "\n";
     print '</head>', "\n";
 }
 
@@ -1699,6 +1771,8 @@ sub _settings {
             'elegant',
             'settings_cm_editor_palette',
             'monokai',
+            'settings_hide_top_loader',
+            'false',
             'settings_animation_left',
             'true',
             'settings_animation_tabs',
@@ -2426,7 +2500,7 @@ sub _settings {
 
         if ( $t eq 'save' ) {
 
-            !foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
+            !foreign_available("webmin") && error( $Atext{'theme_error_access_not_root'} );
 
             delete @in{ grep( !/^settings_/, keys %in ) };
             for ( values %in ) {s/(.*)/'$1';/}
@@ -2451,7 +2525,7 @@ sub _settings {
         }
         if ( $t eq 'restore' ) {
 
-            !foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
+            !foreign_available("webmin") && error( $Atext{'theme_error_access_not_root'} );
 
             unlink_file( $config_directory . "/authentic-theme/settings.js" );
             if ( usermin_available() ) {
@@ -2916,31 +2990,8 @@ sub init {
         print "Location: $virtualmin\n\n";
     }
 
-    # Make ConfigServer Security Firewall look as we need
-    if ( -r '/usr/local/csf/lib/webmin/csf/index.cgi' ) {
-        open( my $FILE, "<", "/usr/local/csf/lib/webmin/csf/index.cgi" );
-        my @l = <$FILE>;
-        close($FILE);
-
-        if ( grep {/data-replaced/} @l ) {
-            return;
-        }
-
-        my @n;
-        foreach (@l) {
-            $_ =~ s/%in\);/%in, \$current_theme);/g;
-            $_ =~ s/<HTML>/<HTML style="background-color: $__settings{'settings_background_color'}">/g;
-            $_ =~ s/<BODY>//g;
-            $_
-                =~ s/^(?!<<)EOF/EOF\nif (\$current_theme eq 'authentic-theme') {print "<BODY style=\\"opacity: 0; overflow: hidden; pointer-events: none;\\">\\n";} else {print "<BODY data-replaced=\\"true\\">\\n";}/g;
-            push( @n, $_ );
-        }
-
-        open( $FILE, ">", "/usr/local/csf/lib/webmin/csf/index.cgi" );
-        print $FILE @n;
-        close($FILE);
-    }
-
+    # ConfigServer Security Firewall mod
+    csf_mod();
 }
 
 sub content {

@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -8,7 +8,9 @@ do "authentic-theme/authentic-init.pm";
 
 sub theme_header {
     embed_header( ( $_[0], $_[7], isd(), ( @_ > 1 ? '1' : '0' ) ) );
-    print '<body data-debug="'
+    print '<body data-session="'
+        . ( $main::session_id ? 1 : 0 )
+        . '" data-debug="'
         . isd()
         . '" data-usermin="'
         . usermin_available()
@@ -31,7 +33,9 @@ sub theme_header {
         . '" data-current-product="'
         . &get_product_name()
         . '" data-style="'
-        . get_filters('content') . '"'
+        . get_filters('content')
+        . '" data-progress="'
+        . ( $__settings{'settings_hide_top_loader'} ne 'true' ? '1' : '0' ) . '"'
         . (
         &get_module_name()
         ? ' class="'
@@ -159,31 +163,31 @@ sub theme_popup_prehead {
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/bootstrap.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1810" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
 
         print '<link href="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/css/authentic.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.css?1810" rel="stylesheet" type="text/css">' . "\n";
+            . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/jquery.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1810" type="text/javascript"></script>', "\n";
+            . '.js?1820" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/cgi.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1810" type="text/javascript"></script>', "\n";
+            . '.js?1820" type="text/javascript"></script>', "\n";
 
         print '<script src="'
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/filtermatch.'
             . ( isd() eq 'debug' ? 'src' : 'min' )
-            . '.js?1810" type="text/javascript"></script>', "\n";
+            . '.js?1820" type="text/javascript"></script>', "\n";
     }
 }
 
@@ -746,7 +750,8 @@ sub theme_ui_submit {
         . &quote_escape($label)
         . "&nbsp;</span></button>\n"
         . "<input class=\"hidden\" type=\"submit\""
-        . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "" ) . " >\n";
+        . ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" : "" )
+        . " >\n";
 }
 
 sub theme_ui_reset {

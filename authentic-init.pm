@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -57,56 +57,68 @@ sub embed_header {
 
         my @css = (
             'bootstrap',  'bootstrap.tagsinput', 'datepicker',        'fontawesome-animation',
-            'codemirror', 'jquery.jspanel',      'jquery.datatables', 'nprogress',
+            'codemirror', 'jquery.jspanel',      'jquery.datatables', 'fontbase',
             'authentic'
         );
 
         my @js = (
-            'timeplot',              'jquery',              'jquery-ui',                 'jquery.jspanel',
-            'jquery.scrollintoview', 'momentjs',            'bootbox',                   'jquery.purl',
-            'bootstrap',             'bootstrap.tagsinput', 'datepicker',                'fileinput',
-            'codemirror',            'jquery.datatables',   'jquery.datatables.plugins', 'jquery.easypiechart',
-            'clipboard',             'contextmenu',         'init'
+            'timeplot',              'jquery',
+            'jquery-ui',             'jquery.jspanel',
+            'jquery.scrollintoview', 'bootbox',
+            'jquery.purl',           'bootstrap',
+            'bootstrap.tagsinput',   'datepicker',
+            'fileinput',             'codemirror',
+            'jquery.datatables',     'jquery.datatables.plugins',
+            'jquery.easypiechart',   'clipboard',
+            'contextmenu',           'init'
         );
 
-        foreach my $css (@css) {
-            print '<link href="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/css/'
-                . $css . '.'
-                . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1810" rel="stylesheet" type="text/css">' . "\n";
+        if ( $args[2] eq 'debug' ) {
+            foreach my $css (@css) {
+                print '<link href="'
+                    . $gconfig{'webprefix'}
+                    . '/unauthenticated/css/'
+                    . $css
+                    . '.src.css?1820" rel="stylesheet" type="text/css">' . "\n";
+            }
+        }
+        else {
+            embed_css_content();
+            embed_css_bundle();
         }
 
         embed_styles();
         embed_settings();
 
-        foreach my $js (@js) {
+        if ( $args[2] eq 'debug' ) {
+            foreach my $js (@js) {
 
-            if ((      index( $t_uri__i, '/virtual-server/history.cgi' ) == -1
-                    && index( $t_uri__i, '/server-manager/bwgraph.cgi' ) == -1
-                    && index( $t_uri__i, '/server-manager/history.cgi' ) == -1
-                    && index( $t_uri__i, '/server-manager/one_history.cgi' ) == -1
-                )
-                && $js eq 'timeplot'
-                )
-            {
-                next;
+                if ( is_st_p()
+                    && $js eq 'timeplot' )
+                {
+                    next;
+                }
+
+                print '<script src="'
+                    . $gconfig{'webprefix'}
+                    . '/unauthenticated/js/'
+                    . $js
+                    . '.src.js?1820" type="text/javascript"></script>' . "\n";
             }
-
-            print '<script src="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/js/'
-                . $js . '.'
-                . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?1810" type="text/javascript"></script>' . "\n";
+        }
+        else {
+            # is_st_p() && embed_js_timeplot();
+            embed_js_bundle();
+            embed_js_content();
+            embed_js_init();
         }
     }
     else {
 
         my @css = (
             'bootstrap', 'fontawesome-animation', 'jquery.scrollbar', 'jquery.autocomplete',
-            'nprogress', 'messenger',             'select2',          'authentic'
+            'nprogress', 'messenger',             'select2',          'fontbase',
+            'authentic'
         );
 
         my @js = (
@@ -116,13 +128,19 @@ sub embed_header {
             'init'
         );
 
-        foreach my $css (@css) {
-            print '<link href="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/css/'
-                . $css . '.'
-                . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1810" rel="stylesheet" type="text/css">' . "\n";
+        if ( $args[2] eq 'debug' ) {
+            foreach my $css (@css) {
+                print '<link href="'
+                    . $gconfig{'webprefix'}
+                    . '/unauthenticated/css/'
+                    . $css
+                    . '.src.css?1820" rel="stylesheet" type="text/css">' . "\n";
+            }
+
+        }
+        else {
+            embed_css_parent();
+            embed_css_bundle();
         }
 
         if ( length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue' ) {
@@ -131,19 +149,25 @@ sub embed_header {
                 . '/unauthenticated/css/palettes/'
                 . lc( $__settings{'settings_navigation_color'} ) . '.'
                 . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1810" rel="stylesheet" type="text/css" data-palette>' . "\n";
+                . '.css?1820" rel="stylesheet" type="text/css" data-palette>' . "\n";
         }
 
         embed_styles();
         embed_settings();
 
-        foreach my $js (@js) {
-            print '<script src="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/js/'
-                . $js . '.'
-                . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.js?1810" type="text/javascript"></script>' . "\n";
+        if ( $args[2] eq 'debug' ) {
+            foreach my $js (@js) {
+                print '<script src="'
+                    . $gconfig{'webprefix'}
+                    . '/unauthenticated/js/'
+                    . $js
+                    . '.src.js?1820" type="text/javascript"></script>' . "\n";
+            }
+        }
+        else {
+            embed_js_bundle();
+            embed_js_parent();
+            embed_js_init();
         }
 
     }
@@ -205,6 +229,54 @@ sub embed_pm_scripts {
     }
 }
 
+sub embed_css_bundle {
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/bundle.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+}
+
+sub embed_css_parent {
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/parent.bundle.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+}
+
+sub embed_css_content {
+    print '<link href="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/css/content.bundle.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+}
+
+sub embed_js_timeplot {
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/timeplot.min.js?1820" type="text/javascript"></script>' . "\n";
+}
+
+sub embed_js_bundle {
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/bundle.min.js?1820" type="text/javascript"></script>' . "\n";
+}
+
+sub embed_js_parent {
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/parent.bundle.min.js?1820" type="text/javascript"></script>' . "\n";
+}
+
+sub embed_js_content {
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/content.bundle.min.js?1820" type="text/javascript"></script>' . "\n";
+}
+
+sub embed_js_init {
+    print '<script src="'
+        . $gconfig{'webprefix'}
+        . '/unauthenticated/js/init.min.js?1820" type="text/javascript"></script>' . "\n";
+}
+
 sub embed_js_scripts {
 
     if ( $in{'stripped'} eq '1' ) {
@@ -246,14 +318,14 @@ sub embed_footer {
             . $gconfig{'webprefix'}
             . '/unauthenticated/js/postinit.'
             . ( $args[0] eq 'debug' ? 'src' : 'min' )
-            . '.js?1810" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+            . '.js?1820" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
 
         if ( $args[1] eq '1' || $args[2] eq 'stripped' ) {
             print '<script src="'
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/content.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1810" type="text/javascript"></script>' . "\n";
+                . '.js?1820" type="text/javascript"></script>' . "\n";
 
             # Load `MySQL/PostgreSQL` specific scripts
             if ( index( get_module_name(), 'mysql' ) gt '-1' || index( get_module_name(), 'postgresql' ) gt '-1' ) {
@@ -261,7 +333,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/sql.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1810" type="text/javascript"></script>' . "\n";
+                    . '.js?1820" type="text/javascript"></script>' . "\n";
             }
 
             # Load `File Manager` specific scripts
@@ -270,7 +342,7 @@ sub embed_footer {
                     . $gconfig{'webprefix'}
                     . '/extensions/file-manager/file-manager.'
                     . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1810" type="text/javascript"></script>' . "\n";
+                    . '.js?1820" type="text/javascript"></script>' . "\n";
             }
         }
         else {
@@ -278,9 +350,16 @@ sub embed_footer {
                 . $gconfig{'webprefix'}
                 . '/unauthenticated/js/parent.'
                 . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1810" type="text/javascript"></script>' . "\n";
+                . '.js?1820" type="text/javascript"></script>' . "\n";
         }
     }
+}
+
+sub is_st_p {
+    return (   index( $t_uri__i, '/virtual-server/history.cgi' ) == -1
+            && index( $t_uri__i, '/server-manager/bwgraph.cgi' ) == -1
+            && index( $t_uri__i, '/server-manager/history.cgi' ) == -1
+            && index( $t_uri__i, '/server-manager/one_history.cgi' ) == -1 ) ? 1 : 0;
 }
 
 sub Atext {
@@ -484,7 +563,6 @@ sub get_button_style {
         || index( $entry, 'delq_confirm' ) gt "-1"
         || index( $entry, 'umass_del2' ) gt "-1"
         || index( $entry, 'index_gmass' ) gt "-1"
-        || $entry eq 'index_mass'
         || $entry eq 'html_dtitle' )
     {
         $class = "danger ";
@@ -750,7 +828,7 @@ sub get_button_style {
 }
 
 sub isd {
-    return 'prod';
+    return 'production';
 
 }
 

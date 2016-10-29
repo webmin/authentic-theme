@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1944,11 +1944,11 @@ function ___f__tw() {
                 return
             }
             if ((k == 49 || k == 50 || k == 51 || k == 52 || k == 53 || k == 54 || k == 55 || k == 56 || k == 57) && d.ctrlKey) {
-                var w = (k - 48);
+                var y = (k - 48);
                 d.preventDefault();
                 d.stopPropagation();
                 $.each($(".nav.nav-tabs").find("li"), function(n, m) {
-                    if ((n + 1) == w) {
+                    if ((n + 1) == y) {
                         $(this).find("a").trigger("click");
                         return
                     }
@@ -1969,11 +1969,11 @@ function ___f__tw() {
         if (!$("input.popover-path-input").is(":focus") && String.fromCharCode(k).toLowerCase() == "l" && d.ctrlKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
             d.preventDefault();
             d.stopPropagation();
-            var A = $('#headln2r > div.btn-group > a[href^="config.cgi"]');
-            if (is_scrolled_into_view(A)) {
+            var B = $('#headln2r > div.btn-group > a[href^="config.cgi"]');
+            if (is_scrolled_into_view(B)) {
                 $('[data-toggle="popover-path"]').popover("show")
             } else {
-                A.scrollIntoView({
+                B.scrollIntoView({
                     duration: 200,
                     direction: "vertical",
                     complete: function() {
@@ -2094,14 +2094,14 @@ function ___f__tw() {
             }
             l = $("#list_form table tbody tr.m-active").removeClass("m-active");
             var u = l.index();
-            var B = l.index();
+            var C = l.index();
             if (k == 38 && !$(".modal.in").length) {
                 if ($(".dataTable-mirror").is(":focus")) {
                     $.each($("input"), function() {
                         $(this).blur()
                     })
                 }
-                B--;
+                C--;
                 $(".dataTables_filter label input").blur();
                 $("#list_form table tbody tr").addClass("m-not-active")
             }
@@ -2111,13 +2111,13 @@ function ___f__tw() {
                         $(this).blur()
                     })
                 }
-                B++;
+                C++;
                 $(".dataTables_filter label input").blur();
                 $("#list_form table tbody tr").addClass("m-not-active")
             }
         }
         if ((k == 38 || k == 40 || k == 32 || k == 13 || k == 46 || k == 119 || k == 117 || k == 115 || k == 116 || k == 113 || k == 114) && !$(".modal.in").length) {
-            l = (!$("#list_form table tbody tr").find(".dataTables_empty").length && $("#list_form table tbody tr").eq(B).addClass("m-active m-not-active"))
+            l = (!$("#list_form table tbody tr").find(".dataTables_empty").length && $("#list_form table tbody tr").eq(C).addClass("m-active m-not-active"))
         }
         if (k == 27) {
             d.preventDefault();
@@ -2158,9 +2158,9 @@ function ___f__tw() {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
-                var z = $("#list_form table tbody tr.m-active"),
+                var A = $("#list_form table tbody tr.m-active"),
                     e = jQuery.Event("keydown");
-                z.find("td:first-child input").trigger("click");
+                A.find("td:first-child input").trigger("click");
                 e.which = 40;
                 $("body").trigger(e);
                 __r____changed();
@@ -2187,11 +2187,11 @@ function ___f__tw() {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
-                var C = document.getElementsByClassName("ui_checked_columns");
-                for (i = 0; i < C.length; i++) {
-                    var h = C[i].getElementsByTagName("input")[0];
+                var D = document.getElementsByClassName("ui_checked_columns");
+                for (i = 0; i < D.length; i++) {
+                    var h = D[i].getElementsByTagName("input")[0];
                     if (h.checked) {
-                        rowClick(C[i])
+                        rowClick(D[i])
                     }
                 }
                 __f___lb();
@@ -2265,26 +2265,26 @@ function ___f__tw() {
                 if ($("#list_form table tbody tr.m-active").find("i.fa-pencil-square-o").parent("a").length) {
                     d.preventDefault();
                     t__wi_p.$___ajax_requested_url = "edit_file.cgi";
-                    var y = "jsp_" + parseInt(Math.random() * 1000000000000000000);
-                    window[y] = $.jsPanel({
+                    var z = "jsp_" + parseInt(Math.random() * 1000000000000000000);
+                    window[z] = $.jsPanel({
                         ajax: {
                             url: $("#list_form table tbody tr.m-active").find("i.fa-pencil-square-o").parent("a").attr("href"),
                             dataType: "text",
                             autoload: false,
-                            done: function(E, o, D, q) {
-                                var t = $(E).find(".ui_form"),
-                                    F = "<strong>" + $(E).find(".panel-body").contents().filter(function() {
+                            done: function(F, o, E, q) {
+                                var t = $(F).find(".ui_form"),
+                                    G = "<strong>" + $(F).find(".panel-body").contents().filter(function() {
                                         return !!$.trim(this.innerHTML || this.data)
                                     }).first().text() + "</strong>",
                                     p = $(this).parents("div.jsPanel"),
                                     n = (parseInt(q.attr("id").replace("jsPanel-", "")) + 1);
                                 if (!$(t).find("textarea").length) {
-                                    var t = $(E).find('form[action="save_file.cgi"]').append($(E).find("#data").removeAttr("id")).prepend($(E).find("#file").removeAttr("id")).prepend($(E).find("#path").removeAttr("id")),
-                                        F = "<strong>" + $(E).find(".table-title").text() + "</strong>"
+                                    var t = $(F).find('form[action="save_file.cgi"]').append($(F).find("#data").removeAttr("id")).prepend($(F).find("#file").removeAttr("id")).prepend($(F).find("#path").removeAttr("id")),
+                                        G = "<strong>" + $(F).find(".table-title").text() + "</strong>"
                                 }
-                                q.title(F);
-                                p.data("jspuid", y);
-                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", $(F).text());
+                                q.title(G);
+                                p.data("jspuid", z);
+                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", $(G).text());
                                 p.find(".jsPanel-content").html(t);
                                 $("#jsPanel-min-container").css({
                                     width: $(window).width(),
@@ -2296,14 +2296,14 @@ function ___f__tw() {
                                 s.find(".ui_form_end_buttons").remove();
                                 p.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
                                 p.find(".jsPanel-btn-max").trigger("click");
-                                t__cm___init(s.find("textarea"), $(F).text(), [null, parseInt(s.css("height"))], n);
+                                t__cm___init(s.find("textarea"), $(G).text(), [null, parseInt(s.css("height"))], n);
                                 p.animate({
                                     opacity: 1
                                 }, 400, function() {
                                     window["__cm_editor_" + n].focus()
                                 });
-                                q.on("jspanelbeforeclose", function(x, I) {
-                                    var H = $("#" + I)
+                                q.on("jspanelbeforeclose", function(x, J) {
+                                    var I = $("#" + J)
                                 });
                                 p.find("._filemanager_file_editor_save").click(function(x) {
                                     $(this).find("i").replaceWith(t__lo__btn_md());
@@ -2311,7 +2311,7 @@ function ___f__tw() {
                                     p.find('form[action="save_file.cgi"]').submit()
                                 });
 
-                                function G() {
+                                function H() {
                                     var x = p.find("._filemanager_file_editor_save");
                                     x.find(".cspinner").remove();
                                     x.find("i").remove();
@@ -2320,26 +2320,26 @@ function ___f__tw() {
                                 p.find('form[action="save_file.cgi"]').submit(function(x) {
                                     x.preventDefault();
                                     x.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_saving_file").replace("%value", F) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileStart");
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_saving_file").replace("%value", G) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileStart");
                                     $.ajax({
                                         type: "POST",
                                         url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
                                         data: p.find('form[action="save_file.cgi"]').serialize(),
                                         dataType: "text",
-                                        success: function(H) {
-                                            var I = p.find("._filemanager_file_editor_save .cspinner");
-                                            if (!$(H).find("textarea#data").length) {
-                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(H).find(".panel-body").html(), 10, "error", "savingFileError");
-                                                if (I.parent(".btn").index() === 1) {
+                                        success: function(I) {
+                                            var J = p.find("._filemanager_file_editor_save .cspinner");
+                                            if (!$(I).find("textarea#data").length) {
+                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(I).find(".panel-body").html(), 10, "error", "savingFileError");
+                                                if (J.parent(".btn").index() === 1) {
                                                     modal_dismiss()
                                                 }
-                                                G();
+                                                H();
                                                 return
                                             }
-                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_file_saved").replace("%value", F), 1.5, "success", "savingFileDone");
-                                            G()
+                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_file_saved").replace("%value", G), 1.5, "success", "savingFileDone");
+                                            H()
                                         },
-                                        error: function(H) {}
+                                        error: function(I) {}
                                     })
                                 })
                             }
@@ -2468,6 +2468,8 @@ function ___f__tw() {
                 if (!$(".modal.in").length) {
                     d.stopPropagation();
                     if ($("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a").length) {
+                        var w = $("#list_form table tbody tr.m-active").find("td.ui_checked_checkbox input");
+                        !w.is(":checked") && w.trigger("click");
                         d.preventDefault();
                         d.stopPropagation();
                         $("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a")[0].click();
@@ -2524,6 +2526,11 @@ function ___f__tw() {
             }
             return
         }
+    });
+    $("body").on("click", "a.action-link > .fa-extract-archive", function(f) {
+        f.preventDefault();
+        var d = $(this).parents("tr").find("td.ui_checked_checkbox input");
+        !d.is(":checked") && d.trigger("click")
     });
     $("body").on("click", "#file-manager-new-instance:not(.disabled_no_styling)", function(d) {
         __f___nt($("#path").val(), true)

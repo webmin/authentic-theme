@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
  * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -30,6 +30,7 @@ var $_url = $.url(t___wi.location),
     $load____type = t__wi_p.$("body").data("debug"),
     $load____ext = ($load____type == "debug" ? "src" : "min"),
     $t_av__usermin = $("body").data("usermin"),
+    $t_av__session = $("body").data("session"),
     $t___license_vm = t__wi_p.$("#wrapper").data("virtual-server-license"),
     $t___license_cm = t__wi_p.$("#wrapper").data("server-manager-license"),
     $t_uri_virtualmin = t__wi_p.location.search == "?virtualmin" ? 1 : 0,
@@ -70,7 +71,7 @@ if ($current_page_full && $current_page_full.indexOf("/servers/link.cgi/") > -1)
 if ($__source_host_complete.substr(-1) == "/") {
     $__source_host_complete = $__source_host_complete.substr(0, $__source_host_complete.length - 1)
 }
-if (t___wi.location == t__wi_p.location) {
+if (t___wi.location == t__wi_p.location && $t_av__session) {
     $.ajax({
         type: "GET",
         url: $_____link_full + "/index.cgi/?xhr-get_theme_language=1",
@@ -94,7 +95,6 @@ if (t___wi.location == t__wi_p.location) {
 }
 var $g__o__f_m = ("file" + (is_module("file-manager") ? "-manager" : "min")),
     $g__e__path = $_____link_full + "/extensions";
-moment.locale($("body").data("language"));
 
 function prt(b) {
     return console.log(b)
@@ -646,58 +646,70 @@ function t_sel_i() {
     if (t__wi_p.$(".form-control.sidebar-search").is(":focus")) {
         return
     }
-    var a = t__wi_p.$("aside select");
-    if (a.length) {
-        a.removeAttr("onchange disabled");
-        a.data("select2") ? a.select2("destroy") : false;
-        a.unbind("select2:select");
-        a.select2({
-            minimumResultsForSearch: (!$.browser.mobile ? 5 : -1)
-        });
-        setTimeout(function() {
-            a.data("select2").open();
-            a.data("select2").close()
-        }, 1);
-        $create_link = $('a.navigation_module_trigger[data-href^="/virtual-server/domain_form.cgi?generic=1&amp;gparent="]');
-        if (!$.url($create_link.data("href")).param("gparent")) {
-            $create_link.data("href", $create_link.data("href") + a.val())
+    $.each($("aside select > option"), function() {
+        var a = $(this).text().match(/^\s{0,4}/)[0].length,
+            b = $(this).text();
+        if (a === 4 && b.indexOf("↱") === -1) {
+            $(this).html("&nbsp;&nbsp;&nbsp;&nbsp;↱&nbsp;" + b.replace(/\s/g, ""))
+        } else {
+            if (a === 2 && b.indexOf("↴") === -1) {
+                $(this).html("&nbsp;&nbsp;↴&nbsp;" + b.replace(/\s/g, ""))
+            }
         }
-        a.on("select2:select", function(b) {
-            if (b.currentTarget.id === "dom") {
-                t__vm_l(b.currentTarget.value);
-                t_vm_r(b.currentTarget.value)
-            } else {
-                if (b.currentTarget.id === "sid") {
-                    t__cm_l(b.currentTarget.value);
-                    t_cm_r(b.currentTarget.value)
-                }
+    }).promise().done(function() {
+        var a = t__wi_p.$("aside select");
+        if (a.length) {
+            a.removeAttr("onchange disabled");
+            a.data("select2") ? a.select2("destroy") : false;
+            a.unbind("select2:select");
+            a.select2({
+                minimumResultsForSearch: (!$.browser.mobile ? 5 : -1)
+            });
+            setTimeout(function() {
+                a.data("select2").open();
+                a.data("select2").close()
+            }, 1);
+            $create_link = $('a.navigation_module_trigger[data-href^="/virtual-server/domain_form.cgi?generic=1&amp;gparent="]');
+            if (!$.url($create_link.data("href")).param("gparent")) {
+                $create_link.data("href", $create_link.data("href") + a.val())
             }
-        });
-        $.each($("aside select > option"), function() {
-            if ($(this).attr("style") && $(this).attr("style").indexOf("italic") > -1) {
-                if (t__wi_p.$(".select2-selection > .select2-selection__rendered").text().trim() == $(this).text().trim()) {
-                    t__wi_p.$(".select2-selection > .select2-selection__rendered").attr("style", "color: #e73c38 !important; font-style:italic !important; ")
+            a.on("select2:select", function(b) {
+                if (b.currentTarget.id === "dom") {
+                    t__vm_l(b.currentTarget.value);
+                    t_vm_r(b.currentTarget.value)
+                } else {
+                    if (b.currentTarget.id === "sid") {
+                        t__cm_l(b.currentTarget.value);
+                        t_cm_r(b.currentTarget.value)
+                    }
                 }
+            });
+            a.on("select2:open", function(b) {
+                $.each($("select > option"), function() {
+                    if ($(this).attr("style") && $(this).attr("style").indexOf("italic") > -1) {
+                        var c = $(this);
+                        setTimeout(function() {
+                            t__wi_p.$("body").find('li[id$="' + c.attr("value") + '"]').attr("style", "color: #e73c38 !important;")
+                        }, 1)
+                    }
+                })
+            });
+            if (t__wi_p.$("aside select option").length === 1) {
+                t__wi_p.$(".select2 span").css("cursor", "default");
+                t__wi_p.$(".select2 .select2-selection__arrow").remove();
+                a.on("select2:open", function() {
+                    t__wi_p.$(".select2-container .select2-dropdown").css("opacity", "0")
+                })
             }
-        });
-        a.on("select2:open", function(b) {
-            $.each($("select > option"), function() {
+            $.each($("aside select > option"), function() {
                 if ($(this).attr("style") && $(this).attr("style").indexOf("italic") > -1) {
-                    var c = $(this);
-                    setTimeout(function() {
-                        t__wi_p.$("body").find('li[id$="' + c.attr("value") + '"]').attr("style", "color: #e73c38 !important; font-style:italic !important; ")
-                    }, 1)
+                    if (t__wi_p.$(".select2-selection > .select2-selection__rendered").text().trim() == $(this).text().trim()) {
+                        t__wi_p.$(".select2-selection > .select2-selection__rendered").attr("style", "color: #e97471 !important;")
+                    }
                 }
             })
-        });
-        if (t__wi_p.$("aside select option").size() - 1 === 0) {
-            t__wi_p.$(".select2 span").css("cursor", "default");
-            t__wi_p.$(".select2 .select2-selection__arrow").remove();
-            a.on("select2:open", function() {
-                t__wi_p.$(".select2-container .select2-dropdown").css("opacity", "0")
-            })
         }
-    }
+    })
 }
 
 function __mss() {
@@ -767,8 +779,10 @@ function f__l_reload() {
 function __lls() {
     t__wi_p.t___p__ll = 1;
     if (settings_loader_top && t__wi_p.t___p__xhr_r === 0) {
-        t__wi_p.NProgress.remove();
-        t__wi_p.NProgress.start()
+        if (typeof NProgress == "object" && typeof t__wi_p != "undefined") {
+            t__wi_p.NProgress.remove();
+            t__wi_p.NProgress.start()
+        }
     }
     t__wi_p.$(".mCSB_container, .mCSB_dragger").css("top", "0");
     !t__wi_p.$("#_menu_loader").length && t__wi_p.$("body ul.navigation").before('<span id="_menu_loader" class="loading loading-sm"></span>');
@@ -785,7 +799,9 @@ function __lls() {
 function __lle() {
     t__wi_p.$("aside ul.user-html").removeClass("invisible");
     if (settings_loader_top && t__wi_p.t___p__xhr_r === 0 && __num()) {
-        t__wi_p.NProgress.done()
+        if (typeof NProgress == "object" && typeof t__wi_p != "undefined") {
+            t__wi_p.NProgress.done()
+        }
     }
     t__wi_p.$___ajax_requested_url = "_blank";
     t__wi_p.$("body aside .mCSB_scrollTools").css("visibility", "visible");
@@ -1000,25 +1016,27 @@ function __p__pe_sm() {
             $("button").addClass("disabled").find(".fa.fa-arrow-circle-o-left").addClass("invisible").after(g);
             a.attr("data-form-onbeforeunload", 0)
         });
-        $("body").on("click", 'button[data-form="submitter"]:not(.disabled)', function(k) {
-            k.preventDefault();
-            var j = $(this);
+        $("body").on("click", 'button[data-form="submitter"]:not(.disabled)', function(l) {
+            l.preventDefault();
+            var k = $(this),
+                m = ($("form").attr("enctype") && $("form").attr("enctype").indexOf("form-data") > -1 ? 0 : 1),
+                j = (m ? k.parents("form").serialize() : (new FormData(k.parents("form")[0])));
             $("button").addClass("disabled").find(".fa.fa-floppy-o").addClass("invisible").after(h);
             setTimeout(function() {
                 $.ajax({
                     type: "POST",
                     url: $__current_directory + c.attr("action"),
-                    data: (new FormData(j.parents("form")[0])),
+                    data: j,
                     dataType: "text",
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success: function(l) {
+                    success: function(n) {
                         a.removeClass("btn-warning").addClass("btn-success").attr("data-form-onbeforeunload", 0);
                         $("button").removeClass("disabled").find(".fa").removeClass("invisible").parent().find(".cspinner_container").remove();
                         messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_file_saved").replace("%value", f), 3, "success")
                     },
-                    error: function(l) {}
+                    error: function(n) {}
                 })
             }, 300)
         })
@@ -1875,6 +1893,9 @@ $("a").each(function() {
         $(this).css("text-decoration", "none")
     }
 });
+if ($t_av__session == 0) {
+    __s___()
+}
 $("body").on("keydown", function(f) {
     if (t__wi_p.$('aside input[name="search"]').is(":focus")) {
         return

@@ -1,5 +1,13 @@
 ##Changelog
 
+####Version 18.20 (October 29, 2016)
+* Upgraded dependencies _jQuery 3.0_, latest _Bootstrap_, _DataTables_, _CodeMirror_ and other
+* Optimized dependencies load [#534](https://github.com/qooob/authentic-theme/issues/534)
+* Added support for _ConfigServer Security & Firewall_ v.9.20+ [#547](https://github.com/qooob/authentic-theme/issues/547)
+* Added ability to disable top progress bar and its loader
+* Enhanced display of _Virtualmin_ select [#466](https://github.com/qooob/authentic-theme/issues/466)
+* Fixed bugs [#509](https://github.com/qooob/authentic-theme/issues/509) [#510](https://github.com/qooob/authentic-theme/issues/510) [#535](https://github.com/qooob/authentic-theme/issues/535) [#536](https://github.com/qooob/authentic-theme/issues/536) [#540](https://github.com/qooob/authentic-theme/issues/540) [#541](https://github.com/qooob/authentic-theme/issues/541) [#543](https://github.com/qooob/authentic-theme/issues/543) [#544](https://github.com/qooob/authentic-theme/issues/544) [#546](https://github.com/qooob/authentic-theme/issues/546) [#547](https://github.com/qooob/authentic-theme/issues/547) [#551](https://github.com/qooob/authentic-theme/issues/551) [#553](https://github.com/qooob/authentic-theme/issues/553) [#554](https://github.com/qooob/authentic-theme/issues/554) [#556](https://github.com/qooob/authentic-theme/issues/556) [#559](https://github.com/qooob/authentic-theme/issues/559) [#561](https://github.com/qooob/authentic-theme/issues/561) [#564](https://github.com/qooob/authentic-theme/issues/564) [#42093](https://www.virtualmin.com/node/42093) [#43096](https://www.virtualmin.com/node/43096) [#43158](https://www.virtualmin.com/node/43158)
+
 ####Version 18.10 (August 06, 2016)
 * Fixed bug [#527](https://github.com/qooob/authentic-theme/issues/527)
 
