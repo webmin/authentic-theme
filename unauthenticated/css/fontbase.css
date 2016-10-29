@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -141,9 +141,9 @@
 }
 
 @-webkit-keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
+    0 {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
     }
     100% {
         -webkit-transform: rotate(359deg);
@@ -152,9 +152,9 @@
 }
 
 @keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
+    0 {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
     }
     100% {
         -webkit-transform: rotate(359deg);

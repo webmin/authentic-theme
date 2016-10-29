@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.10 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -8,7 +8,7 @@ if ($access_level == 0) {
     settings_notification_slider_fixed && t__wi_p.$("html").attr("data-slider-fixed", "1")
 }
 if (t__wi_p.$___________initial === 1) {
-    console.log("Welcome to Authentic Theme 18.10 https://github.com/qooob/authentic-theme")
+    console.log("Welcome to Authentic Theme 18.20 https://github.com/qooob/authentic-theme")
 }
 typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;
@@ -220,11 +220,13 @@ function __si__bg_upd() {
 }
 var __si__bg_upd_id = __si__bg_upd();
 if (settings_loader_top) {
-    NProgress.configure({
-        showSpinner: true,
-        trickleRate: 0.08,
-        trickleSpeed: 200
-    })
+    if (typeof NProgress == "object") {
+        NProgress.configure({
+            showSpinner: true,
+            trickleRate: 0.08,
+            trickleSpeed: 200
+        })
+    }
 }
 $(window).ajaxStart(function() {
     if (t__wi_p.$___ajax_requested_url.indexOf("index.cgi/?xhr-info=1") === -1 && t__wi_p.$___ajax_requested_url.indexOf("___LL_PREV___") === -1) {
@@ -287,11 +289,6 @@ if (t__wi_p.$('a[target="page"][href="link/"]').first().length) {
 $("aside").on("click", ".select2-container .select2-selection__arrow b", function(a) {
     a.preventDefault();
     a.stopPropagation()
-});
-$("aside").on("contextmenu", 'a[href*="csf/"][target="page"]', function(a) {
-    a.preventDefault();
-    a.stopPropagation();
-    $(this)[0].click()
 });
 $("body").on("keydown", ".sidebar-search", function(b) {
     if (t__wi_p.$("#wrapper").data("webmail") !== -1) {
@@ -512,6 +509,7 @@ $("body").on("click", "#loader-close > .fa", function(b) {
 });
 __shell_commands__i__ = 0;
 t__wi_p.$(".form-control.sidebar-search").focus(function(a) {
+    t__wi_p.$(".__logo").addClass("inited");
     a.preventDefault();
     a.stopPropagation();
     __shell_commands__i__ = 0
@@ -863,3 +861,4 @@ n___ck();
 setTimeout(function() {
     __si__bg_upd_exec()
 }, 5000);
+moment.locale($("body").data("language"));
