@@ -11,7 +11,48 @@
 
 .csf table tbody tr,
 .csf table tbody td {
-    padding: 1px 4px !important
+    padding: 2px !important
+}
+
+.csf #upgradetable {
+    margin-top: 10px !important
+}
+
+.csf button {
+    background: #fff
+}
+
+.csf .csf-tr form[action*='index.cgi'] {
+    margin-left: -2px
+}
+
+.csf #CSFpauseID {
+    margin-top: 5px;
+    margin-left: 5px;
+    vertical-align: baseline
+}
+
+.csf .csf-box+.csf-box {
+    margin-top: 2px
+}
+
+.csf input[name='ip']+br+input[name='comment'] {
+    margin-top: 1px
+}
+
+.csf select[name='profile1'],
+.csf select[name='profile2'],
+.csf select[name='backup'] {
+    min-height: 200px !important
+}
+
+.csf input[value='rblchecksave']+select[name='freq'] {
+    vertical-align: baseline !important
+}
+
+.csf input+select[name='dur'] {
+    margin-top: 0 !important;
+    margin-bottom: -2px !important
 }
 
 .csf table tbody tr.csf-tr td,
@@ -23,18 +64,27 @@
     padding: 0 10px 0 3px !important
 }
 
-.csf .panel-body>table ~ table.csf-table.table.table-striped.table-condensed[align="center"][border="0"][cellpadding="4"][cellspacing="0"] tbody tr.csf-tr td,
-.csf .panel-body>table ~ table.csf-table.table.table-striped.table-condensed[align="center"][border="0"][cellpadding="4"][cellspacing="0"] tbody tr.csf-tr {
+.csf .panel-body>table~table.csf-table.table.table-striped.table-condensed[align='center'][border='0'][cellpadding='4'][cellspacing='0'] tbody tr.csf-tr td,
+.csf .panel-body>table~table.csf-table.table.table-striped.table-condensed[align='center'][border='0'][cellpadding='4'][cellspacing='0'] tbody tr.csf-tr {
     padding: 3px 10px 3px 5px !important
 }
 
-.csf .panel-body>table ~ table.csf-table.table.table-striped.table-condensed[align="center"][border="0"][cellpadding="4"][cellspacing="0"] tbody tr.csf-tr td[nowrap] {
+.csf .panel-body>table~table.csf-table.table.table-striped.table-condensed[align='center'][border='0'][cellpadding='4'][cellspacing='0'] tbody tr.csf-tr td[nowrap] {
     padding: 2px 10px 2px 5px !important
 }
 
-.csf .csf-box>form[action="index.cgi"]>input[type="submit"],
-.csf select[name="freq"]+input[name="email"]+input[type="submit"],
-.csf button[onclick="CSFrefreshtimer()"].input {
+.csf #grep input.collapse,
+.csf #qallow input.collapse,
+.csf #qdeny input.collapse,
+.csf #qignore input.collapse,
+.csf #kill input.collapse,
+.csf #tempdeny input.collapse {
+    display: none
+}
+
+.csf .csf-box>form[action='index.cgi']>input[type='submit'],
+.csf select[name='freq']+input[name='email']+input[type='submit'],
+.csf button[onclick='CSFrefreshtimer()'].input {
     vertical-align: middle !important
 }
 
@@ -89,46 +139,54 @@
     max-width: 320px !important
 }
 
-.csf a[data-toggle="tab"] {
+.csf a[data-toggle='tab'] {
     font-weight: 400
 }
 
-html[data-post="temp"] .dataTables_wrapper+div {
+html[data-post='temp'] .dataTables_wrapper+div {
     text-align: center
 }
 
-html[data-post="temp"] .dataTables_wrapper+div a.btn-xxs {
+html[data-post='temp'] .dataTables_wrapper+div a.btn-xxs {
     cursor: pointer
 }
 
-html[data-post="viewlogs"] .dataTables_wrapper .table tbody tr.odd {
+html[data-post='viewlogs'] .dataTables_wrapper .table tbody tr.odd {
     background-color: #fff
 }
 
-html[data-post="viewlogs"] .dataTables_wrapper .table tbody tr.submenu {
+html[data-post='viewlogs'] .dataTables_wrapper .table tbody tr.submenu {
     background-color: #ffffe4
 }
 
-html[data-post="viewlogs"] .table.table-striped.table-condensed tbody tr:not(.submenu):hover {
+html[data-post='viewlogs'] .table.table-striped.table-condensed tbody tr:not(.submenu):hover {
     background-color: #ebf2fc !important
 }
 
-html[data-post="viewlogs"] .table.table-striped.table-condensed tbody tr:not(.submenu) {
+html[data-post='viewlogs'] .table.table-striped.table-condensed tbody tr:not(.submenu) {
     cursor: pointer
 }
 
-html[data-post="viewlogs"] button.fa.fa-1_25x,
-html[data-post="temp"] tr td .btn {
+html[data-post='viewlogs'] button.fa.fa-1_25x {
+    display: none
+}
+
+html[data-post='temp'] tr td .btn {
     visibility: hidden;
     margin-top: -4px
 }
 
-html[data-post="temp"] tr:hover td .btn {
+html[data-post='temp'] tr:hover td .btn {
     visibility: visible
 }
 
-html[data-post="temp"] tr td .btn.btn-danger {
+html[data-post='temp'] tr td .btn.btn-danger {
     margin-left: -3px
+}
+
+html[data-post='logtail'] .panel .panel-body .panel,
+html[data-post='loggrep'] .panel .panel-body .panel {
+    border: 1px solid #eaeaea
 }
 
 .__csf__ {
@@ -226,7 +284,7 @@ html[data-post="temp"] tr td .btn.btn-danger {
     margin: 0 !important
 }
 
-html[data-post="conf"] .csf select {
+html[data-post='conf'] .csf select {
     vertical-align: bottom !important
 }
 
@@ -255,8 +313,8 @@ html[data-post="conf"] .csf select {
     margin-bottom: 3px
 }
 
-.csf form .value-other>b+input[type="text"],
-.csf form .value-default>b+input[type="text"],
+.csf form .value-other>b+input[type='text'],
+.csf form .value-default>b+input[type='text'],
 .csf form .value-other>b+select.heighter-34,
 .csf form .value-default>b+select.heighter-34 {
     font-size: 13px !important;
@@ -267,15 +325,15 @@ html[data-post="conf"] .csf select {
     padding-bottom: 2px !important
 }
 
-.csf img[src*="csfimages/plus.png"]+.fa-minus-circle:before,
-.csf img[src*="csfimages/plus.png"]+.fa-plus-circle:before {
-    content: "\f05e" !important;
+.csf img[src*='csfimages/plus.png']+.fa-minus-circle:before,
+.csf img[src*='csfimages/plus.png']+.fa-plus-circle:before {
+    content: '\f05e' !important;
     color: #449d44 !important
 }
 
-.csf img[src*="csfimages/minus.png"]+.fa-minus-circle:before,
-.csf img[src*="csfimages/minus.png"]+.fa-plus-circle:before {
-    content: "\f02a" !important;
+.csf img[src*='csfimages/minus.png']+.fa-minus-circle:before,
+.csf img[src*='csfimages/minus.png']+.fa-plus-circle:before {
+    content: '\f02a' !important;
     color: #c9302c !important
 }
 
@@ -296,67 +354,67 @@ html[data-post="conf"] .csf select {
     background-color: #f7f7f7 !important
 }
 
-html[data-module="csf"] body {
+html[data-module='csf'] body {
     overflow: hidden;
     pointer-events: none;
     opacity: 0
 }
 
-.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"] {
+.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit'] {
     color: #fff !important;
     border-color: #eea236 !important;
     background-color: #f0ad4e !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"]:active,
-.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"]:focus,
-.csf td>form[action="index.cgi"]>input[value="denyf"]+input[type="submit"]:hover {
+.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:active,
+.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:focus,
+.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:hover {
     color: #fff !important;
     border-color: #d58512 !important;
     background-color: #ec971f !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"] {
+.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit'] {
     color: #fff !important;
     border-color: #992020 !important;
     background-color: #bd1e1e !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"]:active,
-.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"]:focus,
-.csf td>form[action="index.cgi"]>input[value="disable"]+input[type="submit"]:hover {
+.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit']:active,
+.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit']:focus,
+.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit']:hover {
     color: #fff !important;
     border-color: #992020 !important;
     background-color: #ad2828 !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"] {
+.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit'] {
     color: #fff !important;
     border-color: #4cae4c !important;
     background-color: #5cb85c !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"]:active,
-.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"]:focus,
-.csf td>form[action="index.cgi"]>input[value="enable"]+input[type="submit"]:hover {
+.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit']:active,
+.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit']:focus,
+.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit']:hover {
     color: #fff !important;
     border-color: #398439 !important;
     background-color: #449d44 !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"],
-.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"] {
+.csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit'],
+.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit'] {
     color: #fff !important;
     border-color: #46b8da !important;
     background-color: #5bc0de !important
 }
 
-.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"]:active,
-.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"]:focus,
-.csf td>form[action="index.cgi"]>input[value="lfdrestart"]+input[type="submit"]:hover,
-.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"]:active,
-.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"]:focus,
-.csf td>form[action="index.cgi"]>input[value="restart"]+input[type="submit"]:hover {
+.csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:active,
+.csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:focus,
+.csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:hover,
+.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit']:active,
+.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit']:focus,
+.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit']:hover {
     color: #fff !important;
     border-color: #269abc !important;
     background-color: #31b0d5 !important
@@ -387,11 +445,11 @@ html[data-module="csf"] body {
     border: 1px solid transparent !important
 }
 
-.csf a[target="_blank"]:hover:not(.btn-xxs) {
+.csf a[target='_blank']:hover:not(.btn-xxs) {
     text-decoration: underline
 }
 
-.csf table tbody tr[bgcolor="#F4F4EA"] {
+.csf table tbody tr[bgcolor='#F4F4EA'] {
     background: #fff !important
 }
 
@@ -443,52 +501,52 @@ html>body {
     background-color: Gainsboro !important
 }
 
-html[data-module="csf"] .csf-tr form[action*="index.cgi"] select.heighter-34 {
+html[data-module='csf'] .csf-tr form[action*='index.cgi'] select.heighter-34 {
     margin-left: 0 !important
 }
 
-html[data-module="csf"] .csf-tr form[action*="index.cgi"] select.heighter-34+input {
+html[data-module='csf'] .csf-tr form[action*='index.cgi'] select.heighter-34+input {
     margin-left: -4px !important
 }
 
-html[data-module="csf"] .csf-tr form[action*="index.cgi"] select.heighter-34[name="template"]+input,
-html[data-module="csf"] .csf-tr form[action*="index.cgi"] select.heighter-34[name="template"] {
+html[data-module='csf'] .csf-tr form[action*='index.cgi'] select.heighter-34[name='template']+input,
+html[data-module='csf'] .csf-tr form[action*='index.cgi'] select.heighter-34[name='template'] {
     margin-top: 0 !important;
     margin-bottom: 0 !important
 }
 
-html[data-module="csf"] .csf-tr form[action*="index.cgi"] input[value="upgrade"]+input.heighter-34 {
+html[data-module='csf'] .csf-tr form[action*='index.cgi'] input[value='upgrade']+input.heighter-34 {
     margin-left: 1px !important
 }
 
-html[data-module="csf"] .custom_table_head td b {
+html[data-module='csf'] .custom_table_head td b {
     font-size: 15px;
     font-weight: 400 !important
 }
 
-html[data-module="csf"] .csf-switch-field .awobject {
+html[data-module='csf'] .csf-switch-field .awobject {
     display: inline-block;
     margin-top: -10px !important;
     margin-bottom: 10px !important
 }
 
-html[data-post="viewlogs"] .table.table.table-striped.table-condensed>thead>tr:first-child,
+html[data-post='viewlogs'] .table.table.table-striped.table-condensed>thead>tr:first-child,
 table.dataTable {
     border-top-width: 1px !important
 }
 
-html[data-module="csf"] .col_header_custom {
+html[data-module='csf'] .col_header_custom {
     line-height: 27px !important;
     height: 36px !important;
     margin-bottom: 5px !important
 }
 
-html[data-post="viewports"] .col_header_custom {
+html[data-post='viewports'] .col_header_custom {
     line-height: 25px !important;
     height: 34px
 }
 
-html[data-module="csf"] .bs-callout {
+html[data-module='csf'] .bs-callout {
     margin: 10px 0;
     padding: 8px 6px 4px 6px;
     border: 1px solid #eaeaea;
@@ -496,81 +554,81 @@ html[data-module="csf"] .bs-callout {
     border-radius: 0
 }
 
-html[data-module="csf"] .bs-callout h4 {
+html[data-module='csf'] .bs-callout h4 {
     margin-top: 0;
     margin-bottom: 5px
 }
 
-html[data-module="csf"] .bs-callout p:last-child {
+html[data-module='csf'] .bs-callout p:last-child {
     margin-bottom: 0
 }
 
-html[data-module="csf"] .bs-callout code {
+html[data-module='csf'] .bs-callout code {
     border-radius: 0
 }
 
-html[data-module="csf"] .bs-callout+.bs-callout {
+html[data-module='csf'] .bs-callout+.bs-callout {
     margin-top: -5px
 }
 
-html[data-module="csf"] .bs-callout-success {
+html[data-module='csf'] .bs-callout-success {
     border-left-color: #5cb85c;
     background-color: #edf7ed
 }
 
-html[data-module="csf"] .bs-callout-success h4 {
+html[data-module='csf'] .bs-callout-success h4 {
     color: #5cb85c
 }
 
-html[data-module="csf"] .bs-callout-info {
+html[data-module='csf'] .bs-callout-info {
     border-left-color: #5bc0de;
     background-color: #eaf7fb
 }
 
-html[data-module="csf"] .bs-callout-info h4 {
+html[data-module='csf'] .bs-callout-info h4 {
     color: #5bc0de
 }
 
-html[data-module="csf"] .bs-callout-warning {
+html[data-module='csf'] .bs-callout-warning {
     border-left-color: #f0ad4e;
     background-color: #fdf4e8
 }
 
-html[data-module="csf"] .bs-callout-warning h4 {
+html[data-module='csf'] .bs-callout-warning h4 {
     color: #f0ad4e
 }
 
-html[data-module="csf"] .bs-callout-danger {
+html[data-module='csf'] .bs-callout-danger {
     border-left-color: #d9534f;
     background-color: #faebea
 }
 
-html[data-module="csf"] .bs-callout-danger h4 {
+html[data-module='csf'] .bs-callout-danger h4 {
     color: #d9534f
 }
 
-html[data-module="csf"] .tab-pane>.table.table-striped.table-condensed,
-html[data-module="csf"] .table.table-striped.table-condensed+.table.table-striped.table-condensed {
+html[data-module='csf'] .tab-pane>.table.table-striped.table-condensed,
+html[data-module='csf'] .table.table-striped.table-condensed+.table.table-striped.table-condensed {
     margin-top: 10px !important
 }
 
-html[data-module="csf"] .tab-pane>.table.table-striped.table-condensed tbody>tr:first-child,
-html[data-module="csf"] .tab-pane>.table.table-striped.table-condensed tr:first-child>th:first-child,
-html[data-module="csf"] .table.table-striped.table-condensed+.table.table-striped.table-condensed tbody>tr:first-child,
-html[data-module="csf"] .table.table-striped.table-condensed+.table.table-striped.table-condensed tr:first-child>th:first-child {
+html[data-module='csf'] .tab-pane>.table.table-striped.table-condensed tbody>tr:first-child,
+html[data-module='csf'] .tab-pane>.table.table-striped.table-condensed tr:first-child>th:first-child,
+html[data-module='csf'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tbody>tr:first-child,
+html[data-module='csf'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tr:first-child>th:first-child {
     border-top: 3px solid #f0f0f0
 }
 
 .csf form .value-default+br,
 .csf form .value-other+br,
-html[data-module="csf"] a#MobileView,
-html[data-module="csf"] a#toplink,
-html[data-module="csf"] a#botlink,
-html[data-module="csf"] div#loader {
+html[data-module='csf'] a#MobileView,
+html[data-module='csf'] a#toplink,
+html[data-module='csf'] a#botlink,
+html[data-module='csf'] div#loader {
     display: none !important
 }
 
-html[data-module="csf"] .icon-configserver {
+html[data-module='csf'] .icon-configserver {
     font-size: 100% !important;
     display: inline-block !important;
     padding: 0 4px 0 1px;
@@ -578,7 +636,7 @@ html[data-module="csf"] .icon-configserver {
     color: #aaa
 }
 
-html[data-module="csf"] code {
+html[data-module='csf'] code {
     font-size: 90%;
     padding: 2px 4px;
     text-decoration: underline;
@@ -587,47 +645,48 @@ html[data-module="csf"] code {
     background-color: transparent
 }
 
-html[data-module="csf"] ._btn-changelog {
+html[data-module='csf'] ._btn-changelog {
     margin-top: -3px
 }
 
-html[data-module="csf"] ._btn-changelog i {
+html[data-module='csf'] ._btn-changelog i {
     margin-right: 5px;
     margin-left: -3px
 }
 
-html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel-body,
-html[data-module="csf"] .panel._devcon .panel-body {
+html[data-module='csf'] #CSFajax .panel-body,
+html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel-body,
+html[data-module='csf'] .panel._devcon .panel-body {
     box-shadow: none
 }
 
-html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
-html[data-module="csf"] .panel._devcon .panel-heading {
+html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'] .panel._devcon .panel-heading {
     font-size: 17px;
     padding: 6.5px;
     border-bottom: 1px solid #e4e4e4;
     box-shadow: none
 }
 
-html[data-module="csf"] .panel._devcon {
+html[data-module='csf'] .panel._devcon {
     border-color: #eaeaea;
     border-top-width: 3px;
     border-top-color: #f0f0f0;
     box-shadow: none
 }
 
-html[data-module="csf"] .footer-string {
+html[data-module='csf'] .footer-string {
     font-size: 11px;
     color: #999;
     border-top: 1px solid #eaeaea
 }
 
-html[data-module="csf"] .footer-string a {
+html[data-module='csf'] .footer-string a {
     cursor: pointer;
     color: #5a799c
 }
 
-html[data-module="csf"] .panel-footer {
+html[data-module='csf'] .panel-footer {
     margin-bottom: -15px;
     padding: 4px 0 0 0;
     border-top: 0;
@@ -635,7 +694,7 @@ html[data-module="csf"] .panel-footer {
     background: transparent
 }
 
-html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading {
+html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading {
     line-height: 21px;
     padding: 0 6.5px;
     text-align: center;
@@ -645,7 +704,7 @@ html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel
     background-color: #f7f7f7
 }
 
-html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading code {
+html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading code {
     font-size: 13px;
     display: block;
     margin-top: -5px;
@@ -653,107 +712,117 @@ html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel
     text-decoration: none
 }
 
-html[data-module="csf"] .panel-body>form>.panel.panel-default>.panel-body>.panel-body {
+html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel-body {
     padding: 1px;
     border: 1px solid #eaeaea
 }
 
-html[data-module="csf"] form>.panel.panel-default>.panel-body,
-html[data-module="csf"] form>.panel.panel-default {
+html[data-module='csf'] form>.panel.panel-default>.panel-body,
+html[data-module='csf'] form>.panel.panel-default {
     border-color: transparent;
     box-shadow: none
 }
 
-html[data-module="csf"] div.panel-body>div+hr {
+html[data-module='csf'] div.panel-body>div+hr {
     margin-top: 10px
 }
 
-html[data-module="csf"] div.panel-body>div[style*="background: #F4F4EA"] {
+html[data-module='csf'] div.panel-body>div[style*='background: #F4F4EA'] {
     border-radius: 0 !important;
     background-color: #f7f7f7 !important
 }
 
-html[data-module="csf"] div.panel-body>div[style*="background: #F4F4EA"]+div[style*="background"] {
+html[data-module='csf'] div.panel-body>div[style*='background: #F4F4EA']+div[style*='background'] {
     border-top: 0 !important
 }
 
-html[data-module="csf"] table[align="center"] tbody tr td div[style*="border-radius"] {
+html[data-module='csf'] table[align='center'] tbody tr td div[style*='border-radius'] {
     margin-bottom: 10px;
     border-radius: 0 !important
 }
 
-html[data-module="csf"][data-post=""] input.heighter-34:not(.btn-lg):not(.ui_form_end_submit)+select.heighter-34,
-html[data-module="csf"][data-post=""] select.heighter-34,
-html[data-module="csf"][data-post=""] .btn.heighter-34:not(.btn-lg):not(.ui_form_end_submit) {
+html[data-module='csf'][data-post=''] input[name="ip"] {
+    vertical-align: middle !important
+}
+
+html[data-module='csf'][data-post=''] select.heighter-34+button,
+html[data-module='csf'][data-post=''] input.heighter-34:not(.btn-lg):not(.ui_form_end_submit)+select.heighter-34,
+html[data-module='csf'][data-post=''] select.heighter-34,
+html[data-module='csf'][data-post=''] .btn.heighter-34:not(.btn-lg):not(.ui_form_end_submit) {
     font-size: 14px !important;
     line-height: 16px !important;
     height: 31px !important;
     min-height: 31px !important;
     max-height: 31px !important;
-    margin-left: -1px !important
+    margin-left: 0 !important
 }
 
-html[data-post="viewports"] .dataTables_wrapper table.dataTable {
+html[data-module='csf'][data-post=''] select.heighter-34+button[type='submit'],
+html[data-module='csf'][data-post=''] select[name="ignorefile"].heighter-34+input[type='submit'].btn.btn-default.heighter-34 {
+    margin-left: -3px !important
+}
+
+html[data-post='viewports'] .dataTables_wrapper table.dataTable {
     margin-top: 3px !important;
     border-top: 0 !important
 }
 
-html[data-module="csf"] hr+div>form[action="index.cgi"]>button[type="submit"] {
+html[data-module='csf'] hr+div>form[action='index.cgi']>button[type='submit'] {
     margin-top: -2px
 }
 
-html[data-post="profiles"] input[name="backup"]+input {
+html[data-post='profiles'] input[name='backup']+input {
     vertical-align: middle !important
 }
 
-html[data-post="profiles"] input[value="profilerestore"]+table tbody tr td,
-html[data-post="profiles"] input[value="profilediff"]+table tbody tr td {
+html[data-post='profiles'] input[value='profilerestore']+table tbody tr td,
+html[data-post='profiles'] input[value='profilediff']+table tbody tr td {
     text-align: center
 }
 
-html[data-post="profiles"] th[style*="#990000"] {
+html[data-post='profiles'] th[style*='#990000'] {
     border-left: 1px solid transparent !important
 }
 
-html[data-post="profiles"] td[style*="#990000"] {
+html[data-post='profiles'] td[style*='#990000'] {
     text-align: center;
     border-left: 1px solid #eaeaea !important
 }
 
-html[data-post="profiles"] input[value="profileapply"]+table tbody tr:first-child th:first-child {
+html[data-post='profiles'] input[value='profileapply']+table tbody tr:first-child th:first-child {
     padding-left: 150px !important
 }
 
-.csf form[action="index.cgi"] button.__restart,
-html[data-post="csftest"] form[action="index.cgi"] input[value="restart"]+input,
-html[data-post="profileapply"] form[action="index.cgi"] input[value="restartboth"]+input {
+.csf form[action='index.cgi'] button.__restart,
+html[data-post='csftest'] form[action='index.cgi'] input[value='restart']+input,
+html[data-post='profileapply'] form[action='index.cgi'] input[value='restartboth']+input {
     margin-bottom: 10px !important
 }
 
-.csf [style*="background: #BDECB6"],
-.csf [style*="background:#BDECB6"] {
+.csf [style*='background: #BDECB6'],
+.csf [style*='background:#BDECB6'] {
     background-color: #e3ffdd !important
 }
 
-.csf [style*="background: #FFD1DC"],
-.csf [style*="background:#FFD1DC"] {
+.csf [style*='background: #FFD1DC'],
+.csf [style*='background:#FFD1DC'] {
     background-color: #fdd !important
 }
 
-.csf [style*="background: #FFD1DC"][style*="border"],
-.csf [style*="background:#FFD1DC"][style*="border"] {
+.csf [style*='background: #FFD1DC'][style*='border'],
+.csf [style*='background:#FFD1DC'][style*='border'] {
     border-bottom-color: #ccc !important
 }
 
-.csf [style*="background: #990000"],
-.csf [style*="background:#990000"] {
+.csf [style*='background: #990000'],
+.csf [style*='background:#990000'] {
     background-color: #d04646 !important
 }
 
-.csf div+div[style*="text-align:center;border:1px solid #DDDDDD;width:500px"] {
+.csf div+div[style*='text-align:center;border:1px solid #DDDDDD;width:500px'] {
     border-top: 0 !important
 }
 
-html[data-post=""] input[name="comment"] {
+html[data-post=''] input[name='comment'] {
     margin-top: 2px
 }

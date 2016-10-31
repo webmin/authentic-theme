@@ -420,7 +420,7 @@ function messenger(d, j, e, i, h) {
 }
 
 function shortcut_control_checker(b) {
-    if (access_level() == 0) {
+    if (access_level() == "0") {
         return true
     } else {
         if (is_module($.url(("/" + b)).attr("directory").replace(/\//g, ""))) {

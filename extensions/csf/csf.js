@@ -105,11 +105,12 @@ function csf_init() {
         if ($('html[data-post="viewlogs"]').length) {
             setTimeout(function() {
                 $.each($(".table.table-striped.table-condensed tbody tr"), function() {
-                    var d = $(this),
-                        g = parseInt(d.find('td[nowrap] button[type="button"]').attr("onClick").match(/\d+/)[0]);
-                    $.grep($__submenus__, function(L) {
-                        if ($(L).attr("id") == ("s" + g)) {
-                            d.after($(L))
+                    var d = $(this);
+                    targ = d.find('td[style*="nowrap"] button[type="button"]').attr("onclick");
+                    __id = (targ ? parseInt(targ.match(/\d+/)[0]) : -1);
+                    $.grep($__submenus__, function(g) {
+                        if ($(g).attr("id") == ("s" + __id)) {
+                            d.after($(g))
                         }
                     })
                 })
@@ -288,12 +289,9 @@ function csf_init() {
     t.find(".nav.nav-tabs").addClass("hidden");
     t.find('a[data-toggle="tab"][href="#other"]').parent("li").remove();
     t.find(".csf .nav.nav-tabs:hidden + .tab-content").attr("style", "margin-top: -10px !important");
-    t.find("body table tr th").each(function() {
-        if (!$(this).parents("tbody").find("form").length && $(this).text().indexOf("Upgrade") >= 0) {
-            $(this).parents("table").prev("br").remove();
-            $(this).parents("table").remove()
-        }
-    });
+    if (t.find('button[value="upgrade"]').length === 0) {
+        $("#upgradetable").remove()
+    }
     t.find('a[href$="/csf/changelog.txt"]').addClass("btn btn-xxs btn-default _btn-changelog").html('<i class="fa fa-info-circle"></i>Changelog');
     t.find("body table.table.table-bordered.table-striped").each(function() {
         $(this).addClass("table-condensed").removeClass("table-bordered").removeAttr("style")
@@ -323,9 +321,7 @@ function csf_init() {
             j.find("p").addClass("text-right footer-string")
         }
     }
-    t.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').each(function() {
-        $(this).addClass("heighter-34")
-    });
+    t.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').addClass("heighter-34");
     var B = t.find('h4:contains("iptables logs*")');
     if (B.length) {
         $(".panel-body .pull-right").addClass("hidden");
@@ -424,11 +420,7 @@ function csf_init() {
     if (t.find("#CSFgrep_D").length && t.find("#CSFgrep_E").length && t.find("#CSFgrep_i").length) {
         t.find('select, input[type="text"], button[onclick="CSFgrep()"]').removeClass("heighter-34").addClass("heighter-28");
         t.find("#CSFgrep_i, #CSFgrep_E, #CSFgrep_D").attr("style", "vertical-align: middle; margin-right: 4px;");
-        t.find("#CSFajax").css("margin-bottom", "4px");
-        t.find("#CSFlognum").attr("onchange", "javascript: document.getElementsByTagName('button')[0].click()");
-        t.find("#CSFgrep_D").addClass("hidden");
-        t.find(".csf-box").replaceText(/Detach/gi, "");
-        t.find("li:contains('Use the \"Detach\" option to display the search results in a separate window')").remove()
+        t.find("#CSFajax").css("margin-bottom", "4px")
     }
     t.find("#CSFajax.csf-box").addClass("csf_force_log_size");
     setTimeout(function() {
@@ -525,7 +517,7 @@ function csf_init() {
         $('.dataTables_wrapper + div:contains("There are no temporary IP entries")').remove();
         $('html[data-post="temp"] .dataTables_wrapper + div').find("a").addClass("btn-xxs btn-inverse").removeClass("btn-success").prepend('<i class="fa fa-fw fa-unlock">&nbsp;</i>')
     }
-    $.each(t.find('input[type="radio"]:not(.iawobject), input[type="checkbox"]:not(.iawobject):not(#CSFgrep_D)'), function() {
+    $.each(t.find('input[type="radio"]:not(.iawobject), input[type="checkbox"]:not(.iawobject)'), function() {
         if ($("html").attr("data-post") == "conf") {
             return
         }
@@ -562,7 +554,7 @@ function csf_init() {
     });
     var A = $('p:contains("..."):contains("Done")');
     if (A.length || $('html[data-post="logtail"], 									html[data-post="allow"],									html[data-post="deny"],									html[data-post="redirect"],									html[data-post="ignorefiles"],									html[data-post="dirwatch"],									html[data-post="dyndns"],									html[data-post="templates"],									html[data-post="logfiles"],									html[data-post="blocklists"],									html[data-post="syslogusers"]').length) {
-        $("#csfreturn").parent("form").parent("div").prev("hr").remove();
+        $("#csfreturn").parent("form").parent("div").prev("hr").replaceTagName("br");
         A.remove()
     } else {
         if ($('html[data-post="servercheck"], html[data-post="readme"], html[data-post="viewlogs"], html[data-post="chart"], html[data-post="loggrep"], html[data-post="viewports"], html[data-post="profiles"], html[data-post="status"], html[data-post="sips"], html[data-post="temp"]').length) {
@@ -572,7 +564,7 @@ function csf_init() {
         }
     }
     var c = $("#csfreturn").length;
-    $('#csfreturn, 		   html[data-post="rblcheckedit"] input[value="rblcheck"] + input,		   html[data-post="serverchecksave"] input[value="servercheck"] + input,		   html[data-post="temprm"] input[value="temp"] + input,		   html[data-post="temptoperm"] input[value="temp"] + input		').replaceWith('<button type="submit" class="btn btn-' + (c ? "primary" : "default") + ' page_footer_submit"><i class="fa fa-fw fa-arrow-left">&nbsp;</i> Return' + (c ? " to module index" : "") + "</button>");
+    $('#csfreturn, 		   html[data-post="rblcheckedit"] input[value="rblcheck"] + input,		   html[data-post="serverchecksave"] input[value="servercheck"] + input,		   html[data-post="temprm"] input[value="temp"] + input,		   html[data-post="temptoperm"] input[value="temp"] + input		').replaceWith('<button type="submit" class="btn btn-' + (c ? "primary" : "default margined-top-10") + ' page_footer_submit"><i class="fa fa-fw fa-arrow-left">&nbsp;</i> Return' + (c ? " to module index" : "") + "</button>");
     var k = $('html input[value="lfdrestart"] + input, html input[value="restart"] + input, html input[value="restartboth"] + input'),
         x = "Save",
         G = "fa-circle-check";
