@@ -635,12 +635,13 @@ sub get_button_style {
     }
     elsif (index( $entry, 'reboot' ) gt "-1"
         || $entry eq 'view_refresh'
-        || index( $entry, 'refreshmods_title' ) gt "-1" )
+        || index( $entry, 'refreshmods_title' ) gt "-1"
+        || $entry eq 'index_buttinit' )
     {
         if ( index( $entry, 'refreshmods_title' ) gt "-1" ) {
             $class = "primary ";
         }
-        elsif ( $entry ne 'reboot_ok' && $entry ne 'index_reboot' ) {
+        elsif ( $entry ne 'reboot_ok' && $entry ne 'index_reboot' || $entry eq 'index_buttinit' ) {
             $class = "warning ";
         }
         $icon =~ s/%icon/refresh-fi fa-1_25x/ig;
