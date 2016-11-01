@@ -360,50 +360,50 @@ html[data-module='csf'] body {
     opacity: 0
 }
 
-.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit'] {
+html[data-post=''] button[value='denyf'] {
     color: #fff !important;
     border-color: #eea236 !important;
     background-color: #f0ad4e !important
 }
 
-.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:active,
-.csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:focus,
+html[data-post=''] button[value='denyf']:active,
+html[data-post=''] button[value='denyf']:focus,
 .csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:hover {
     color: #fff !important;
     border-color: #d58512 !important;
     background-color: #ec971f !important
 }
 
-.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit'] {
+html[data-post=''] button[value='disable'] {
     color: #fff !important;
     border-color: #992020 !important;
     background-color: #bd1e1e !important
 }
 
-.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit']:active,
-.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit']:focus,
-.csf td>form[action='index.cgi']>input[value='disable']+input[type='submit']:hover {
+html[data-post=''] button[value='disable']:active,
+html[data-post=''] button[value='disable']:focus,
+html[data-post=''] button[value='disable']:hover {
     color: #fff !important;
     border-color: #992020 !important;
     background-color: #ad2828 !important
 }
 
-.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit'] {
+html[data-post=''] button[value='enable'] {
     color: #fff !important;
     border-color: #4cae4c !important;
     background-color: #5cb85c !important
 }
 
-.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit']:active,
-.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit']:focus,
-.csf td>form[action='index.cgi']>input[value='enable']+input[type='submit']:hover {
+html[data-post=''] button[value='enable']:active,
+html[data-post=''] button[value='enable']:focus,
+html[data-post=''] button[value='enable']:hover {
     color: #fff !important;
     border-color: #398439 !important;
     background-color: #449d44 !important
 }
 
 .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit'],
-.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit'] {
+html[data-post=''] button[value='restart'] {
     color: #fff !important;
     border-color: #46b8da !important;
     background-color: #5bc0de !important
@@ -412,9 +412,9 @@ html[data-module='csf'] body {
 .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:active,
 .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:focus,
 .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:hover,
-.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit']:active,
-.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit']:focus,
-.csf td>form[action='index.cgi']>input[value='restart']+input[type='submit']:hover {
+html[data-post=''] button[value='restart']:active,
+html[data-post=''] button[value='restart']:focus,
+html[data-post=''] button[value='restart']:hover {
     color: #fff !important;
     border-color: #269abc !important;
     background-color: #31b0d5 !important
@@ -487,6 +487,21 @@ html[data-module='csf'] body {
     border: 1px solid #d58512 !important;
     border-top: none !important;
     background-color: #ec971f !important
+}
+
+.csf .footer_module_index_top:hover {
+    color: #23527c
+}
+
+.csf .footer_module_index_top {
+    line-height: 19px;
+    float: left;
+    height: 34px !important;
+    margin-top: 9px;
+    margin-right: -38px !important;
+    margin-left: 0;
+    color: #ccc;
+    border-color: #ddd
 }
 
 .mobilecontainer {
@@ -741,7 +756,8 @@ html[data-module='csf'] table[align='center'] tbody tr td div[style*='border-rad
     border-radius: 0 !important
 }
 
-html[data-module='csf'][data-post=''] input[name="ip"] {
+.csf form[action="index.cgi"]>input[type="submit"],
+html[data-module='csf'][data-post=''] input[name='ip'] {
     vertical-align: middle !important
 }
 
@@ -758,7 +774,7 @@ html[data-module='csf'][data-post=''] .btn.heighter-34:not(.btn-lg):not(.ui_form
 }
 
 html[data-module='csf'][data-post=''] select.heighter-34+button[type='submit'],
-html[data-module='csf'][data-post=''] select[name="ignorefile"].heighter-34+input[type='submit'].btn.btn-default.heighter-34 {
+html[data-module='csf'][data-post=''] select[name='ignorefile'].heighter-34+input[type='submit'].btn.btn-default.heighter-34 {
     margin-left: -3px !important
 }
 

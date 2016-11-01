@@ -1296,16 +1296,19 @@ sub csf_mod {
         my $csf_header_mod = $root_directory . "/authentic-theme/extensions/csf/csf.header";
         my $csf_footer_mod = $root_directory . "/authentic-theme/extensions/csf/csf.footer";
 
+        my $l_version = "1820";
+        my $x_version = "0003";
+
         open(my $fh, '>', $csf_header_mod) or die $!;
-        print $fh '<link data-hostname="' . &get_display_hostname() . '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/codemirror.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/codemirror.' . $ext . '.js?1820" type="text/javascript"></script>' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/jquery.datatables.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/jquery.datatables.' . $ext . '.js?1820" type="text/javascript"></script>' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fontbase.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/authentic.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' . "\n";
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?1820" type="text/javascript"></script>' . "\n";
-        print $fh '<link href="'. $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?1820" rel="stylesheet" type="text/css">' ."\n";
+        print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="'. ( $l_version . '-' . $x_version ) . '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/codemirror.' . $ext . '.css?' . $l_version . '" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/codemirror.' . $ext . '.js?' . $l_version . '" type="text/javascript"></script>' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/jquery.datatables.' . $ext . '.css?' . $l_version . '" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/jquery.datatables.' . $ext . '.js?' . $l_version . '" type="text/javascript"></script>' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fontbase.' . $ext . '.css?' . $l_version . '" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/authentic.' . $ext . '.css?' . $l_version . '" rel="stylesheet" type="text/css">' . "\n";
+        print $fh '<script src="' . $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . $l_version . '" type="text/javascript"></script>' . "\n";
+        print $fh '<link href="'. $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . $l_version . '" rel="stylesheet" type="text/css">' ."\n";
         if (-r $styles) {
             print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' . time() . '" rel="stylesheet" type="text/css">' ."\n";
         }
