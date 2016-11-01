@@ -20,84 +20,84 @@ function csf_init() {
     function q(d) {
         return $("<div></div>").html(d).text()
     }(function(d) {
-        d.fn.replaceTagName = function(Q) {
-            var P = [],
-                O = this.length;
-            while (O--) {
-                var M = document.createElement(Q),
-                    L = this[O],
-                    R = L.attributes;
-                for (var S = R.length - 1; S >= 0; S--) {
-                    var N = R[S];
-                    M.setAttribute(N.name, N.value)
+        d.fn.replaceTagName = function(S) {
+            var R = [],
+                Q = this.length;
+            while (Q--) {
+                var O = document.createElement(S),
+                    N = this[Q],
+                    T = N.attributes;
+                for (var U = T.length - 1; U >= 0; U--) {
+                    var P = T[U];
+                    O.setAttribute(P.name, P.value)
                 }
-                M.innerHTML = L.innerHTML;
-                d(L).after(M).remove();
-                P[O - 1] = M
+                O.innerHTML = N.innerHTML;
+                d(N).after(O).remove();
+                R[Q - 1] = O
             }
-            return d(P)
+            return d(R)
         }
     })(jQuery);
     (function(d) {
-        d.fn.replaceText = function(g, L, M) {
+        d.fn.replaceText = function(g, N, O) {
             return this.each(function() {
-                var O = this.firstChild,
-                    N, P, Q = [];
-                if (O) {
+                var Q = this.firstChild,
+                    P, R, S = [];
+                if (Q) {
                     do {
-                        if (O.nodeType === 3) {
-                            N = O.nodeValue;
-                            P = N.replace(g, L);
-                            if (P !== N) {
-                                if (!M && /</.test(P)) {
-                                    d(O).before(P);
-                                    Q.push(O)
+                        if (Q.nodeType === 3) {
+                            P = Q.nodeValue;
+                            R = P.replace(g, N);
+                            if (R !== P) {
+                                if (!O && /</.test(R)) {
+                                    d(Q).before(R);
+                                    S.push(Q)
                                 } else {
-                                    O.nodeValue = P
+                                    Q.nodeValue = R
                                 }
                             }
                         }
-                    } while (O = O.nextSibling)
+                    } while (Q = Q.nextSibling)
                 }
-                Q.length && d(Q).remove()
+                S.length && d(S).remove()
             })
         }
     })(jQuery);
 
-    function v(d, L, g) {
+    function v(d, N, g) {
         s.animate({
             opacity: 1
-        }, L.$settings_animation_left_slide_time, function() {
+        }, N.$settings_animation_left_slide_time, function() {
             s.css("pointer-events", "auto").css("overflow", "auto")
         });
-        g && L.__lre()
+        g && N.__lre()
     }
 
-    function w(U, S) {
-        var N = (((U.attr("onclick") && U.attr("onclick").indexOf("blank") !== -1) || (U.parents("form").attr("target") && U.parents("form").attr("target").indexOf("blank") !== -1)) ? true : false),
-            g = U.hasClass("heighter-28"),
-            L = U.css("height") == "28px",
-            P = U.hasClass("btn-lg"),
-            O = 0,
-            T = U.find(".fa").hasClass("fa-1_25x"),
-            M = U.find(".fa"),
-            Q = ((typeof S == "undefined" || S == false) ? false : S),
-            R = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (Q ? Q[0] + "px" : (((g || L) && (!T && !P)) ? (-0.5 + O) + "px" : T ? "1.6px" : P ? "1.5px" : "0")) + " !important; margin-left: " + (Q ? Q[1] + "px" : (((g || L) && (!T && !P)) ? "-23.5px" : P ? "-28px" : (!g && !L && T) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (Q ? (Q[2] ? Q[2] : "") : (g || L ? "smaller" : "small")) + '"></span></span></span>',
-            d = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (Q ? Q[0] + "px" : (((g || L) && (!T && !P)) ? (-0.5 + O) + "px" : T ? "1.6px" : P ? "1.5px" : "0")) + " !important; margin-left: " + (Q ? Q[1] + "px" : (((g || L) && (!T && !P)) ? "-23.5px" : P ? "-28px" : (!g && !L && T) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (Q ? (Q[2] ? Q[2] : "") : (g || L ? "smaller" : "small")) + '"></span></span></span>';
-        !N && U.addClass("disabled");
-        if (M.length && !N) {
-            if (U.hasClass("btn-default")) {
-                M.addClass("invisible").after(d)
+    function w(W, U) {
+        var P = (((W.attr("onclick") && W.attr("onclick").indexOf("blank") !== -1) || (W.parents("form").attr("target") && W.parents("form").attr("target").indexOf("blank") !== -1)) ? true : false),
+            g = W.hasClass("heighter-28"),
+            N = W.css("height") == "28px",
+            R = W.hasClass("btn-lg"),
+            Q = 0,
+            V = W.find(".fa").hasClass("fa-1_25x"),
+            O = W.find(".fa"),
+            S = ((typeof U == "undefined" || U == false) ? false : U),
+            T = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (S ? S[0] + "px" : (((g || N) && (!V && !R)) ? (-0.5 + Q) + "px" : V ? "1.6px" : R ? "1.5px" : "0")) + " !important; margin-left: " + (S ? S[1] + "px" : (((g || N) && (!V && !R)) ? "-23.5px" : R ? "-28px" : (!g && !N && V) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (S ? (S[2] ? S[2] : "") : (g || N ? "smaller" : "small")) + '"></span></span></span>',
+            d = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (S ? S[0] + "px" : (((g || N) && (!V && !R)) ? (-0.5 + Q) + "px" : V ? "1.6px" : R ? "1.5px" : "0")) + " !important; margin-left: " + (S ? S[1] + "px" : (((g || N) && (!V && !R)) ? "-23.5px" : R ? "-28px" : (!g && !N && V) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (S ? (S[2] ? S[2] : "") : (g || N ? "smaller" : "small")) + '"></span></span></span>';
+        !P && W.addClass("disabled");
+        if (O.length && !P) {
+            if (W.hasClass("btn-default")) {
+                O.addClass("invisible").after(d)
             } else {
-                M.addClass("invisible").after(R)
+                O.addClass("invisible").after(T)
             }
         }
-        if (Q[3]) {
+        if (S[3]) {
             setTimeout(function() {
-                U.removeClass("disabled");
-                M.removeClass("invisible");
-                U.find(".cspinner_container").remove()
-            }, Q[3])
+                W.removeClass("disabled");
+                O.removeClass("invisible");
+                W.find(".cspinner_container").remove()
+            }, S[3])
         }
     }
 
@@ -119,7 +119,7 @@ function csf_init() {
     }
     typeof f.lang == "function" ? $is_lang = 1 : $is_lang = 0;
     if ($is_lang) {
-        var J = {
+        var L = {
             order: [],
             aaSorting: [],
             bDestroy: true,
@@ -141,7 +141,7 @@ function csf_init() {
             }
         }
     } else {
-        var J = {
+        var L = {
             order: [],
             aaSorting: [],
             bDestroy: true,
@@ -154,7 +154,7 @@ function csf_init() {
         }
     }
 
-    function e(d, L) {
+    function e(d, N) {
         if (t.find('textarea[name="formdata"]').length) {
             return
         }
@@ -166,19 +166,19 @@ function csf_init() {
                     left: "initial",
                     opacity: "0"
                 });
-                t.find("pre").each(function(O, N) {
-                    var P = $(this),
-                        M = q(P.html());
-                    P.empty();
-                    window[g + "_" + O] = window.CodeMirror(this, {
-                        value: M,
-                        lineNumbers: L,
+                t.find("pre").each(function(Q, P) {
+                    var R = $(this),
+                        O = q(R.html());
+                    R.empty();
+                    window[g + "_" + Q] = window.CodeMirror(this, {
+                        value: O,
+                        lineNumbers: N,
                         mode: null,
                         theme: (with_frame ? f.settings_cm_view_palette : "monokai"),
                         readOnly: true,
                         viewportMargin: Infinity
                     });
-                    d && window[g + "_" + O].setSize(null, ($(window).outerHeight() / 1.7))
+                    d && window[g + "_" + Q].setSize(null, ($(window).outerHeight() / 1.7))
                 }).promise().done(function() {
                     if (d) {
                         t.find("pre").css({
@@ -192,14 +192,14 @@ function csf_init() {
                         }, 10)
                     }
                     if (!d) {
-                        var M = ($("pre[style]").length == 1 ? 1.4 : 1.8);
-                        $.each($("pre[style]"), function(O, N) {
-                            var P = ($(window).outerHeight() / (M * $("pre[style]").length)),
-                                Q = ($(this).find(".CodeMirror-code").find("pre").length * 17);
-                            if (Q > P) {
-                                window[g + "_" + O].setSize(null, P)
+                        var O = ($("pre[style]").length == 1 ? 1.4 : 1.8);
+                        $.each($("pre[style]"), function(Q, P) {
+                            var R = ($(window).outerHeight() / (O * $("pre[style]").length)),
+                                S = ($(this).find(".CodeMirror-code").find("pre").length * 17);
+                            if (S > R) {
+                                window[g + "_" + Q].setSize(null, R)
                             } else {
-                                window[g + "_" + O].setSize(null, Q - 10)
+                                window[g + "_" + Q].setSize(null, S - 10)
                             }
                         })
                     }
@@ -236,14 +236,14 @@ function csf_init() {
             t.find(".btn-filter-top-right input").blur(function(g) {
                 $(this).parent("label").slideToggle(0)
             });
-            t.on("keydown", function(M) {
+            t.on("keydown", function(O) {
                 if (f.$('aside input[name="search"]').is(":focus")) {
                     return
                 }
-                var L = M.keyCode ? M.keyCode : M.which;
+                var N = O.keyCode ? O.keyCode : O.which;
                 if (!t.find("input").is(":focus") && !t.find("select").is(":focus") && !t.find("textarea").is(":focus") && !t.find(".modal.in").length) {
-                    var g = String.fromCharCode(L).toLowerCase();
-                    if (g && /[a-zA-Z0-9]/.test(g) && !M.ctrlKey && !M.altKey && !M.metaKey && L !== 106 && L !== 107 && L !== 109 && L !== 112 && L !== 113 && L !== 114 && L !== 115 && L !== 116 && L !== 117 && L !== 118 && L !== 119 && L !== 120 && L !== 121 && L !== 122 && L !== 123) {
+                    var g = String.fromCharCode(N).toLowerCase();
+                    if (g && /[a-zA-Z0-9]/.test(g) && !O.ctrlKey && !O.altKey && !O.metaKey && N !== 106 && N !== 107 && N !== 109 && N !== 112 && N !== 113 && N !== 114 && N !== 115 && N !== 116 && N !== 117 && N !== 118 && N !== 119 && N !== 120 && N !== 121 && N !== 122 && N !== 123) {
                         if (t.find(".dataTables_filter label input").length) {
                             t.find(".btn-filter-top-right").trigger("click");
                             t.find(".btn-filter-top-right .dataTable-mirror").focus().trigger("keyup")
@@ -300,20 +300,20 @@ function csf_init() {
     t.find(".mobilecontainer").remove();
     typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = true : false;
     var j = t.find('.panel-heading:contains("Development Contribution")').parent().parent(),
-        F = ($('link[rel="shortcut icon"]').data("hostname") == settings_allowed_hostname ? 1 : 0);
+        H = ($('link[rel="shortcut icon"]').data("hostname") == settings_allowed_hostname ? 1 : 0);
     if (D) {
-        var K = t.find('br + pre:contains("csf:")');
-        if (F) {
-            K.prev("br").remove();
-            K.next("p").remove();
-            K.remove()
+        var M = t.find('br + pre:contains("csf:")');
+        if (H) {
+            M.prev("br").remove();
+            M.next("p").remove();
+            M.remove()
         } else {
-            var u = K.next("p");
-            K.remove();
+            var u = M.next("p");
+            M.remove();
             u.addClass("text-right footer-string")
         }
     } else {
-        if (F) {
+        if (H) {
             j.remove()
         } else {
             j.find('br, br + pre:contains("csf:")').remove();
@@ -359,19 +359,19 @@ function csf_init() {
                 $(this).removeClass("fa-toggle-switch").addClass("fa-toggle-switch-off")
             }
         });
-        $(".table.table-striped.table-condensed").dataTable(J);
+        $(".table.table-striped.table-condensed").dataTable(L);
         p();
         setTimeout(function() {
             $(".btn-filter-top-right").parent().css("right", "58px")
         }, 100)
     }
     if (t.find('.csf select[name="dur"]')[0]) {
-        var E = t.find('.csf select[name="dur"]')[0].nextSibling;
-        if (E.nodeValue == ".") {
-            $(E).remove()
+        var G = t.find('.csf select[name="dur"]')[0].nextSibling;
+        if (G.nodeValue == ".") {
+            $(G).remove()
         }
     }
-    var I = $('html[data-post="conf"] .csf form .comment > br:first-child').map(function() {
+    var K = $('html[data-post="conf"] .csf form .comment > br:first-child').map(function() {
         this.previousSibling.nodeValue && $(this.previousSibling).wrap('<span class="fst-ln-c">')
     });
     t.find(".csf #paginatediv2.paginationstyle > select").each(function() {
@@ -439,11 +439,11 @@ function csf_init() {
         }
     }, 100);
 
-    function H() {
-        t.find('textarea[name="formdata"]').each(function(L, M) {
+    function J() {
+        t.find('textarea[name="formdata"]').each(function(N, O) {
             var d = $(this);
             $parent_width = d.parent("td").width();
-            var g = window.CodeMirror.fromTextArea(M, {
+            var g = window.CodeMirror.fromTextArea(O, {
                 mode: {
                     name: "rpm-spec"
                 },
@@ -476,14 +476,14 @@ function csf_init() {
     }
     setTimeout(function() {
         if (typeof window.CodeMirror == "function") {
-            H()
+            J()
         } else {
             setTimeout(function() {
                 if (typeof window.CodeMirror == "function") {
-                    H()
+                    J()
                 } else {
                     setTimeout(function() {
-                        H()
+                        J()
                     }, 60)
                 }
             }, 150)
@@ -493,7 +493,7 @@ function csf_init() {
         t.find(".container-fluid .panel .panel-body table.table-striped").each(function() {
             t.find("h4").addClass("col_header_custom").attr("style", "margin-bottom: -5px !important; margin-top: 2px !important");
             t.find("h4").replaceText(/:/gi, "");
-            $(this).dataTable(J)
+            $(this).dataTable(L)
         });
         p()
     }
@@ -507,7 +507,7 @@ function csf_init() {
                     d = $(this).find("tbody tr:first-child");
                 g.prepend("<thead>" + d.html() + "</thead>");
                 d.remove();
-                $(this).dataTable(J);
+                $(this).dataTable(L);
                 setTimeout(function() {
                     t.find(".csf .dataTable thead tr th:eq(0)").css("opacity", "0").css("pointer-events", "none")
                 }, 10)
@@ -517,6 +517,13 @@ function csf_init() {
         $('.dataTables_wrapper + div:contains("There are no temporary IP entries")').remove();
         $('html[data-post="temp"] .dataTables_wrapper + div').find("a").addClass("btn-xxs btn-inverse").removeClass("btn-success").prepend('<i class="fa fa-fw fa-unlock">&nbsp;</i>')
     }
+    if ($("html").attr("data-post") === "") {
+        t.find('button[value="conf"]').prepend('<i class="fa fa-cog margined-right-5"></i>');
+        t.find('button[value="enable"]').addClass("page_footer_submit btn-success").removeClass("btn-default").prepend('<i class="fa fa-toggle-switch fa-1_25x margined-right-5"></i>');
+        t.find('button[value="disable"]').addClass("page_footer_submit btn-danger").removeClass("btn-default").prepend('<i class="fa fa-toggle-switch-off fa-1_25x margined-right-5"></i>');
+        t.find('button[value="restart"]').addClass("page_footer_submit btn-info").removeClass("btn-default").prepend('<i class="fa fa-circle-o-notch margined-right-5"></i>');
+        t.find('button[value="denyf"]').addClass("page_footer_submit btn-warning").removeClass("btn-default").prepend('<i class="fa fa-unlock margined-right-5"></i>')
+    }
     $.each(t.find('input[type="radio"]:not(.iawobject), input[type="checkbox"]:not(.iawobject)'), function() {
         if ($("html").attr("data-post") == "conf") {
             return
@@ -525,9 +532,9 @@ function csf_init() {
             if ($(this)[0]) {
                 $___text = $(this)[0].nextSibling
             }
-            var N = $(this).next('input:not([type="radio"], [type="checkbox"], [type="hidden"]), select, textarea'),
-                L = ($___text && $___text.nodeValue && $.trim($___text.nodeValue).length > 1),
-                M = (L ? $___text.nodeValue : "&nbsp;");
+            var P = $(this).next('input:not([type="radio"], [type="checkbox"], [type="hidden"]), select, textarea'),
+                N = ($___text && $___text.nodeValue && $.trim($___text.nodeValue).length > 1),
+                O = (N ? $___text.nodeValue : "&nbsp;");
             $(this).addClass("iawobject");
             var d = $(this).attr("id") ? 'for="' + $(this).attr("id") + '"' : false;
             if (d === false && $(this).attr("name") && $(this).val()) {
@@ -537,7 +544,7 @@ function csf_init() {
             }
             if ($(this).is(":checkbox")) {
                 if ($($___text).length) {
-                    $($___text).wrap('<label style="font-weight: 400" class="lawobject" ' + d + ">" + $.trim(M) + " </label>");
+                    $($___text).wrap('<label style="font-weight: 400" class="lawobject" ' + d + ">" + $.trim(O) + " </label>");
                     $($___text).remove()
                 } else {
                     $(this).after('<label class="lawobject" for="' + ($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>')
@@ -567,12 +574,12 @@ function csf_init() {
     $('#csfreturn, 		   html[data-post="rblcheckedit"] input[value="rblcheck"] + input,		   html[data-post="serverchecksave"] input[value="servercheck"] + input,		   html[data-post="temprm"] input[value="temp"] + input,		   html[data-post="temptoperm"] input[value="temp"] + input		').replaceWith('<button type="submit" class="btn btn-' + (c ? "primary" : "default margined-top-10") + ' page_footer_submit"><i class="fa fa-fw fa-arrow-left">&nbsp;</i> Return' + (c ? " to module index" : "") + "</button>");
     var k = $('html input[value="lfdrestart"] + input, html input[value="restart"] + input, html input[value="restartboth"] + input'),
         x = "Save",
-        G = "fa-circle-check";
+        I = "fa-circle-check";
     if (k.length) {
         x = k.val();
-        G = "fa-circle-o-notch"
+        I = "fa-circle-o-notch"
     }
-    $('input[value="Change"],		html:not([data-post=""]) input[value="restartboth"] + input,		html:not([data-post=""]) input[value="lfdrestart"] + input,		html:not([data-post=""]) input[value="restart"] + input		').replaceWith('<button type="submit" class="btn btn-default page_footer_submit' + (k.length ? " __restart" : "") + '"><i class="fa fa-fw ' + G + '">&nbsp;</i> ' + x + "</button>");
+    $('input[value="Change"],		html:not([data-post=""]) input[value="restartboth"] + input,		html:not([data-post=""]) input[value="lfdrestart"] + input,		html:not([data-post=""]) input[value="restart"] + input		').replaceWith('<button type="submit" class="btn btn-default page_footer_submit' + (k.length ? " __restart" : "") + '"><i class="fa fa-fw ' + I + '">&nbsp;</i> ' + x + "</button>");
     $("body").on("click", ".page_footer_submit:not(.disabled)", function(d) {
         w($(this), [2, -27, "small", 600])
     });
@@ -592,6 +599,25 @@ function csf_init() {
         $(n).prepend('<span data-tooltip="tooltip" data-container="body" data-html="true" data-placement="bottom" data-title="' + d + '" class="circle ' + g + '"><i class="fa fa-' + ((g == "warning" || g == "danger") ? "exclamation-circle" : (g == "info" ? "info-circle" : "check-circle")) + '"></i></span>');
         $(this).remove()
     });
+    if ($("html").attr("data-post") !== "") {
+        var F = t.find(".btn-primary.page_footer_submit");
+        if (F.length) {
+            t.find(".panel-heading font").before('<a href="/csf" class="btn btn-link footer_module_index_top"><i class="fa fa-arrow-left"></i></a>');
+            $("body").on("click", ".footer_module_index_top", function(d) {
+                d.preventDefault();
+                $("body").find(".btn.btn-primary.page_footer_submit").before('<input type="submit" class="submit_tmp_index hidden">');
+                $(".submit_tmp_index").trigger("click")
+            })
+        }
+    } else {
+        var E = t.find('button[value="conf"]');
+        E.parent("form").parent("td").parent("tr").addClass("hidden");
+        t.find(".panel-heading font").before('<a href="/" class="btn btn-link footer_module_index_top"><i class="fa fa-cog"></i></a>');
+        $("body").on("click", 'a[href="/"].footer_module_index_top', function(d) {
+            d.preventDefault();
+            E.trigger("click")
+        })
+    }
     setTimeout(function() {
         v(i, f, with_frame)
     }, 100)
