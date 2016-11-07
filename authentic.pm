@@ -921,7 +921,7 @@ sub theme_ui_table_start {
         }
         $rv .= "</tr></thead>\n";
     }
-    $rv .= "<tbody> <td>" . "<table class='sub_table_container' width=100%>\n";
+    $rv .= "<tbody> <tr><td>" . "<table class='sub_table_container' width=100%>\n";
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
@@ -944,7 +944,7 @@ sub theme_ui_table_end {
         $main::ui_table_pos         = undef;
         $main::ui_table_default_tds = undef;
     }
-    $rv .= "</table></td></tbody></table></div>\n";
+    $rv .= "</table></td></tr></tbody></table></div>\n";
     return $rv;
 }
 
