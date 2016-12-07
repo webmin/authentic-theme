@@ -1,9 +1,10 @@
 /*!
- * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
+t__wi_p.$____loader_block__ = 1;
 
 function __f___mn() {
     return $g__m__name
@@ -41,6 +42,8 @@ function __f___ub() {
     $("div button.o__f_m-button-delete").removeClass("disabled").attr("onclick", "removeDialog()");
     $(".o__f_m-button-chmod").removeClass("disabled").find("a").attr("onclick", "chmodDialog()");
     $(".o__f_m-button-chown").removeClass("disabled").find("a").attr("onclick", "chownDialog()");
+    $(".o__f_m-button-chattr").removeClass("disabled").find("a").attr("onclick", "chattrDialog()");
+    $(".o__f_m-button-chcon").removeClass("disabled").find("a").attr("onclick", "chconDialog()");
     $(".o__f_m-button-compress").removeClass("disabled").find("a").attr("onclick", "compressDialog()");
     $(".o__f_m-button-copy").removeClass("disabled");
     $(".o__f_m-button-cut").removeClass("disabled")
@@ -50,6 +53,8 @@ function __f___lb() {
     $("div button.o__f_m-button-delete").addClass("disabled").removeAttr("onclick");
     $(".o__f_m-button-chmod").addClass("disabled").find("a").removeAttr("onclick");
     $(".o__f_m-button-chown").addClass("disabled").find("a").removeAttr("onclick");
+    $(".o__f_m-button-chattr").addClass("disabled").find("a").removeAttr("onclick");
+    $(".o__f_m-button-chcon").addClass("disabled").find("a").removeAttr("onclick");
     $(".o__f_m-button-compress").addClass("disabled").find("a").removeAttr("onclick");
     $(".o__f_m-button-copy").addClass("disabled").find("a").removeAttr("onclick");
     $(".o__f_m-button-cut").addClass("disabled").find("a").removeAttr("onclick")
@@ -166,9 +171,9 @@ function __f____a(n, e) {
             data: __f___gd(),
             dataType: "text",
             success: function(a) {
-                delete localStorage.cut;
-                delete localStorage.copy;
-                localStorage.setItem(n, 1);
+                localStorage.removeItem($hostname + "-cut");
+                localStorage.removeItem($hostname + "-copy");
+                localStorage.setItem($hostname + "-" + n, 1);
                 $(".o__f_m-button-paste").removeClass("disabled");
                 if (n === "copy") {
                     messenger('<i class="fa fa-lg fa-fw fa-clone"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_copying_successful"), 1.5, "info", n + "_info")
@@ -197,8 +202,8 @@ function __f____a(n, e) {
                 var c = (get_cookie("file-manager-response_count") == "1" ? 1 : 2);
                 var b = get_cookie("file-manager-response");
                 if (b.indexOf("err") === -1) {
-                    delete localStorage.cut;
-                    if (!localStorage.copy) {
+                    localStorage.removeItem($hostname + "-cut");
+                    if (!localStorage.getItem($hostname + "-copy")) {
                         $(".o__f_m-button-paste").addClass("disabled")
                     }
                 }
@@ -519,6 +524,42 @@ function __f____a(n, e) {
             error: function(a) {}
         })
     }
+    if (n === "chattr") {
+        __f__ld__sh();
+        $("#list_form").append('<input type="hidden" name="label" value="' + e[0] + '" class="_o__f_m-tmp-chattr-inputs">');
+        $("#list_form").append('<input type="hidden" name="recursive" value="' + e[1] + '" class="_o__f_m-tmp-chattr-inputs">');
+        $.ajax({
+            type: "POST",
+            url: $g__e__path + "/file-manager/chattr.cgi?module=" + $g__m__name,
+            data: __f___gd(),
+            dataType: "text",
+            success: function(a) {
+                setTimeout(function() {
+                    messenger_hide("chattr_info")
+                }, 2000);
+                __f____success(a, 1, 1, 1, "_o__f_m-tmp-chattr-inputs", "fa-exclamation-triangle", "theme_xhred_filemanager_successful_attributes_with_errors", 15, "warning", "fa-tags", "theme_xhred_filemanager_successful_attributes", 3, "success", n)
+            },
+            error: function(a) {}
+        })
+    }
+    if (n === "chcon") {
+        __f__ld__sh();
+        $("#list_form").append('<input type="hidden" name="label" value="' + e[0] + '" class="_o__f_m-tmp-chcon-inputs">');
+        $("#list_form").append('<input type="hidden" name="recursive" value="' + e[1] + '" class="_o__f_m-tmp-chcon-inputs">');
+        $.ajax({
+            type: "POST",
+            url: $g__e__path + "/file-manager/chcon.cgi?module=" + $g__m__name,
+            data: __f___gd(),
+            dataType: "text",
+            success: function(a) {
+                setTimeout(function() {
+                    messenger_hide("chcon_info")
+                }, 2000);
+                __f____success(a, 1, 1, 1, "_o__f_m-tmp-chcon-inputs", "fa-exclamation-triangle", "theme_xhred_filemanager_successful_secontext_with_errors", 15, "warning", "fa-tags", "theme_xhred_filemanager_successful_secontext", 3, "success", n)
+            },
+            error: function(a) {}
+        })
+    }
     if (n === "compress") {
         __f__ld__sh();
         $("#list_form").append('<input type="hidden" name="arch" value="' + e[0] + '" class="_o__f_m-tmp-compress-inputs">');
@@ -694,6 +735,16 @@ function __f__c__m() {
             } else {
                 $("a[data-context-chown]").removeClass("disabled").parent("li").removeClass("disabled")
             }
+            if ($(".o__f_m-button-chattr").hasClass("disabled")) {
+                $("a[data-context-chattr]").addClass("disabled").parent("li").addClass("disabled")
+            } else {
+                $("a[data-context-chattr]").removeClass("disabled").parent("li").removeClass("disabled")
+            }
+            if ($(".o__f_m-button-chcon").hasClass("disabled")) {
+                $("a[data-context-chcon]").addClass("disabled").parent("li").addClass("disabled")
+            } else {
+                $("a[data-context-chcon]").removeClass("disabled").parent("li").removeClass("disabled")
+            }
         },
         menuSelected: function(c, e) {
             if (e.data("context-goto") == "1") {
@@ -784,6 +835,12 @@ function __f__c__m() {
             if (e.data("context-chown") == "1") {
                 $('a[onclick="chownDialog()"]').trigger("click")
             }
+            if (e.data("context-chattr") == "1") {
+                $('a[onclick="chattrDialog()"]').trigger("click")
+            }
+            if (e.data("context-chcon") == "1") {
+                $('a[onclick="chconDialog()"]').trigger("click")
+            }
         }
     })
 }
@@ -833,9 +890,9 @@ function __f___u(B, y, C, z, E, q) {
         _filemanager_data = false
     }
     var s = ($.inArray($("#headln2r > div.btn-group > a[data-config-pagination]").data("config-pagination"), [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]) > -1 ? $("#headln2r > div.btn-group > a[data-config-pagination]").data("config-pagination") : 25),
-        D = (($.inArray(parseInt(localStorage.getItem("_________per_page")), [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]) > -1) ? parseInt(localStorage.getItem("_________per_page")) : false),
+        D = (($.inArray(parseInt(localStorage.getItem($hostname + "-_________per_page")), [5, 10, 15, 20, 25, 30, 35, 40, 50, 100, 250, 500, 1000]) > -1) ? parseInt(localStorage.getItem($hostname + "-_________per_page")) : false),
         w = ((_filemanager_data.length && !D) ? (D ? D : _filemanager_data.length) : s);
-    delete localStorage._________per_page;
+    localStorage.removeItem($hostname + "-_________per_page");
     if (u != 3 && u != 4) {
         u = false
     }
@@ -854,7 +911,7 @@ function __f___u(B, y, C, z, E, q) {
         bDestroy: true,
         pageLength: 25,
         preDrawCallback: function() {
-            if (settings_thirdparty_filemanager_hide_actions == true) {
+            if (config_portable_module_filemanager_hide_actions == true) {
                 var c = $(k),
                     a = $(".tab-pane.active form table"),
                     f = a.find(".fa-font"),
@@ -901,37 +958,37 @@ function __f___u(B, y, C, z, E, q) {
             });
             var a = $(k + " tbody tr td:nth-child(2)");
             a.unbind("mouseover");
-            a.on("mouseover", "img", function(h) {
-                var F = $(this).parents("td"),
-                    f = F.find('img[src*="inode-symlink"]'),
-                    c = F.next("td").find("a"),
-                    d = $(m + ' form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + c.text();
-                if (f.length) {
-                    if (f.attr("symlink-title") != 1) {
-                        !f.parent().find(".cspinner").length && f.before('<span class="cspinner" style="margin-top: 5px; margin-left: -20px;"><span class="cspinner-icon small"></span></span>');
+            a.on("mouseover", "img", function(F) {
+                var G = $(this).parents("td"),
+                    h = G.find('img[src*="inode-symlink"]'),
+                    d = G.next("td").find("a"),
+                    f = $(m + ' form > input[type="hidden"][name="path"]').val().replace(/\/$/g, "") + "/" + d.text();
+                if (h.length) {
+                    if (h.attr("symlink-title") != 1) {
+                        !h.parent().find(".cspinner").length && h.before('<span class="cspinner" style="margin-top: 5px; margin-left: -20px;"><span class="cspinner-icon small"></span></span>');
                         $.ajax({
                             type: "POST",
-                            url: $_____link_full + "/index.cgi/?xhr-get_symlink=1&xhr-get_symlink_path=" + d,
+                            url: $_____link_full + "/index.cgi/?xhr-get_symlink=1&xhr-get_symlink_path=" + f,
                             data: false,
                             dataType: "text",
-                            success: function(G) {
-                                f.attr("data-content", '<code class="text-nowrap">' + G + "</code>").attr("symlink-title", "1").data("trigger", "manual").data("html", true).data("placement", "right").data("container", "body").data("animation", false);
-                                f.is(":hover") && f.popover("show");
-                                f.on("mouseenter", function() {
-                                    if (f.is(":hover")) {
+                            success: function(H) {
+                                h.attr("data-content", '<code class="text-nowrap">' + H + "</code>").attr("symlink-title", "1").data("trigger", "manual").data("html", true).data("placement", "auto right").data("container", "body").data("animation", false);
+                                h.is(":hover") && h.popover("show");
+                                h.on("mouseenter", function() {
+                                    if (h.is(":hover")) {
                                         $(this).popover("show")
                                     }
                                 }).on("mouseleave", function() {
-                                    var H = this;
+                                    var I = this;
                                     setTimeout(function() {
-                                        if (!$(".popover:hover").length && !f.is(":hover")) {
-                                            $(H).popover("hide")
+                                        if (!$(".popover:hover").length && !h.is(":hover")) {
+                                            $(I).popover("hide")
                                         }
                                     }, 200)
                                 });
-                                f.parent().find(".cspinner").remove()
+                                h.parent().find(".cspinner").remove()
                             },
-                            error: function(G) {}
+                            error: function(H) {}
                         })
                     }
                 }
@@ -945,7 +1002,8 @@ function __f___u(B, y, C, z, E, q) {
                     !$(k + " tbody tr.directory_go_up").length && $(k + " tbody").prepend('<tr class="ui_checked_columns directory_go_up" style="height: 23px;"><td colspan="' + $(".active thead tr th:visible").length + '"><input class="hidden" type="hidden">&nbsp;<i class="fa fa-fw fa-folder-btl"></i>&nbsp;..</td></tr>')
                 }
             }
-            if ($(".active td.dataTables_empty").length) {
+            var c = $(".active td.dataTables_empty");
+            if (c.length) {
                 $("tr.directory_go_up").addClass("hidden")
             } else {
                 $("tr.directory_go_up").removeClass("hidden")
@@ -1004,12 +1062,14 @@ function __f___u(B, y, C, z, E, q) {
     $('div button[onclick="removeDialog()"]').addClass("disabled o__f_m-button-delete").removeAttr("onclick");
     $('a[onclick="chmodDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chmod");
     $('a[onclick="chownDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chown");
+    $('a[onclick="chattrDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chattr");
+    $('a[onclick="chconDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chcon");
     $('a[onclick="compressDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-compress");
     $('a[onclick="copySelected()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-copy");
     $("li.o__f_m-button-copy").addClass("disabled");
     $('a[onclick="cutSelected()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-cut");
     $("li.o__f_m-button-cut").addClass("disabled");
-    if (!localStorage.getItem("copy") && !localStorage.getItem("cut")) {
+    if (!localStorage.getItem($hostname + "-copy") && !localStorage.getItem($hostname + "-cut")) {
         $('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-paste")
     } else {
         $('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("o__f_m-button-paste")
@@ -1116,7 +1176,7 @@ function __f___upd___cr(d, c) {
     $.each($(d), function(e, f) {
         a = a + (f != "" ? "/" + f : "");
         if (f != "") {
-            b.find(".breadcrumb").append('<li><a href="index.cgi?path=' + encodeURIComponentSafe(a) + '">' + f + "</a></li>")
+            b.find(".breadcrumb").append('<li><a href="index.cgi?path=' + encodeURIComponentSafe(a) + '">' + f + ' <i data-path="' + encodeURIComponentSafe(a.replace(f, "")) + '" class="fa fa-fw fa-lg fa-caret-right"></i></a></li>')
         }
     }).promise().done(function() {
         if (!$.isEmptyObject(c)) {
@@ -1126,8 +1186,8 @@ function __f___upd___cr(d, c) {
             $("div.total").html(c[1])
         } else {
             if (!$(".breadcrumb li:first-child").find(".fa.fa-keyboard-o").length && !$("a.popover-path").length) {
-                $(".breadcrumb li:first-child").prepend('<a class="fa fa-fw fa-keyboard-o popover-path" style="position: absolute; margin-left: -12px; margin-top: 4px; font-size: 80%;" data-container="body" data-toggle="popover-path" data-placement="' + (settings_thirdparty_filemanager_hide_toolbar != true ? "right" : "left") + '" data-html="true" data-trigger="click" data-content=\'<div class="form-horizontal"> <div class="input-group input-group-sm"> <span class="input-group-addon"><i class="fa fa-fw fa-folder-open-o"></i></span><input type="text" class="form-control popover-path-input" placeholder="' + lang("theme_xhred_filemanager_manual_path") + '"> <span class="input-group-btn" style="width:0;"> <button class="btn btn-sm btn-default popover-path-button" type="button"><i class="fa fa-fw fa-chevron-circle-right text-lighter"></i><span class="cspinner hidden" style="margin-top: 2px; margin-left: -17px;"><span class="cspinner-icon small"></span></span></button> </span> </div> </div>\'></a>');
-                if (settings_thirdparty_filemanager_hide_toolbar != true) {
+                $(".breadcrumb li:first-child").prepend('<a class="fa fa-fw fa-keyboard-o popover-path" style="position: absolute; margin-left: -12px; margin-top: 4px; font-size: 80%;" data-container="body" data-toggle="popover-path" data-placement="' + (config_portable_module_filemanager_hide_toolbar != true ? "auto right" : "auto left") + '" data-html="true" data-trigger="click" data-content=\'<div class="form-horizontal"> <div class="input-group input-group-sm"> <span class="input-group-addon"><i class="fa fa-fw fa-folder-open-o"></i></span><input type="text" class="form-control popover-path-input" placeholder="' + lang("theme_xhred_filemanager_manual_path") + '"> <span class="input-group-btn" style="width:0;"> <button class="btn btn-sm btn-default popover-path-button" type="button"><i class="fa fa-fw fa-chevron-circle-right text-lighter"></i><span class="cspinner hidden" style="margin-top: 2px; margin-left: -17px;"><span class="cspinner-icon small"></span></span></button> </span> </div> </div>\'></a>');
+                if (config_portable_module_filemanager_hide_toolbar != true) {
                     $(".fa.fa-keyboard-o.popover-path").detach().appendTo(".breadcrumb li:last-child");
                     $(".fa.fa-keyboard-o.popover-path").css("margin-left", "2px")
                 }
@@ -1156,17 +1216,17 @@ function __f___up__tb_store() {
     }).promise().done(function() {
         var c = {};
         c[$g__user__] = a;
-        var b = JSON.parse(localStorage.getItem("settings_thirdparty_filemanager_remembered_tabs"));
+        var b = JSON.parse(localStorage.getItem($hostname + "-settings_thirdparty_filemanager_remembered_tabs"));
         if (!$.isEmptyObject(b)) {
             delete b[$g__user__]
         }
         var d = $.extend({}, c, b);
-        localStorage.setItem("settings_thirdparty_filemanager_remembered_tabs", JSON.stringify(d))
+        localStorage.setItem($hostname + "-settings_thirdparty_filemanager_remembered_tabs", JSON.stringify(d))
     })
 }
 
 function __f___ld__tb_stored_chk() {
-    var a = JSON.parse(localStorage.getItem("settings_thirdparty_filemanager_remembered_tabs"));
+    var a = JSON.parse(localStorage.getItem($hostname + "-settings_thirdparty_filemanager_remembered_tabs"));
     return (!$.isEmptyObject(a) ? a[$g__user__] : false)
 }
 
@@ -1202,9 +1262,7 @@ function __f___up__d(n, m, k) {
     });
     $('ul li a[href^="bookmark.cgi?path="]').attr("href", "bookmark.cgi?path=" + e);
     f_m__bm__c();
-    if (settings_favorites) {
-        f__dt()
-    }
+    f__dt();
     setTimeout(function() {
         __dpt();
         __r____changed(1);
@@ -1221,7 +1279,7 @@ function __f___nt(d, e, b) {
     $this.blur();
     $(".nav.nav-tabs li").addClass("disabled");
     tab___to______create = tab___to______create + 1;
-    $(".tabs-top > .nav.nav-tabs").append('<li class="ui-sortable-handle"><a href="#tab-' + tab___to______create + '" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="top"><span style="margin-top: 2px; margin-left: -3px" class="cspinner"><span class="cspinner-icon smaller"></span></span>&nbsp;</span></a></li>');
+    $(".tabs-top > .nav.nav-tabs").append('<li class="ui-sortable-handle"><a href="#tab-' + tab___to______create + '" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="auto top"><span style="margin-top: 2px; margin-left: -3px" class="cspinner"><span class="cspinner-icon smaller"></span></span>&nbsp;</span></a></li>');
     $(".tabs-top > .tab-content").append('<div class="tab-pane fade" id="tab-' + tab___to______create + '">	    		<form class="ui_form" role="form" action="" method="post" id="list_form_AuthenticThemeTmp' + tab___to______create + '" name="list_form_AuthenticThemeTmp' + tab___to______create + '">	    			<table class="table table-striped table-hover table-condensed"><tbody></tbody></table>	    			<input class="ui_hidden heighter-34" type="hidden" name="path_AuthenticThemeTmp' + tab___to______create + '" id="path_AuthenticThemeTmp' + tab___to______create + '" value="' + a + '">	    		</form>	        </div>');
     var c = $(".active table thead").clone();
     c.removeClass("hidden");
@@ -1296,11 +1354,11 @@ function ___f__tw() {
             $('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"], textarea[name="bookmarks"]').parents("td.col_value").parent("tr").addClass("hidden");
             $("#columns_size").parent(".awobject").remove();
             $('form[action="save_config.cgi"]').append('<input type="hidden" name="columns" value="size">');
-            $(".table-subtable .sub_table_container.table-hardcoded").find("tbody").append('				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_hide_toolbar") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="settings_thirdparty_filemanager_hide_toolbar" id="settings_thirdparty_filemanager_hide_toolbar_1" value="true"' + (settings_thirdparty_filemanager_hide_toolbar ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_hide_toolbar_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_hide_toolbar" id="settings_thirdparty_filemanager_hide_toolbar_0" value="false"' + (settings_thirdparty_filemanager_hide_toolbar ? "" : " checked") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_hide_toolbar_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_hovered_toolbar") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="settings_thirdparty_filemanager_hovered_toolbar" id="settings_thirdparty_filemanager_hovered_toolbar_1" value="true"' + (settings_thirdparty_filemanager_hovered_toolbar ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_hovered_toolbar_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_hovered_toolbar" id="settings_thirdparty_filemanager_hovered_toolbar_0" value="false"' + (settings_thirdparty_filemanager_hovered_toolbar ? "" : " checked") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_hovered_toolbar_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_hide_actions") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="settings_thirdparty_filemanager_hide_actions" id="settings_thirdparty_filemanager_hide_actions_1" value="true"' + (settings_thirdparty_filemanager_hide_actions ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_hide_actions_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_hide_actions" id="settings_thirdparty_filemanager_hide_actions_0" value="false"' + (settings_thirdparty_filemanager_hide_actions ? "" : " checked") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_hide_actions_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_settings_tabs_remember_state") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="settings_thirdparty_filemanager_remember_tabs" id="settings_thirdparty_filemanager_remember_tabs_1" value="true"' + (settings_thirdparty_filemanager_remember_tabs ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_remember_tabs_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_remember_tabs" id="settings_thirdparty_filemanager_remember_tabs_0" value="false"' + (settings_thirdparty_filemanager_remember_tabs ? "" : " checked") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_remember_tabs_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_context_calculate_size") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="settings_thirdparty_filemanager_calculate_size" id="settings_thirdparty_filemanager_calculate_size_1" value="true"' + (settings_thirdparty_filemanager_calculate_size ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_calculate_size_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_calculate_size" id="settings_thirdparty_filemanager_calculate_size_0" value="false"' + (settings_thirdparty_filemanager_calculate_size ? "" : " checked") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_calculate_size_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_settings_notification_type") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="settings_thirdparty_filemanager_notification_type" id="settings_thirdparty_filemanager_notification_type_1" value="1"' + (settings_thirdparty_filemanager_notification_type == "1" ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_notification_type_1">' + lang("theme_xhred_global_all") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_notification_type" id="settings_thirdparty_filemanager_notification_type_4" value="4"' + (settings_thirdparty_filemanager_notification_type == "4" ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_notification_type_4">' + lang("theme_xhred_filemanager_settings_notification_type_inf_warn_err") + '</label>						<input class="iawobject" name="settings_thirdparty_filemanager_notification_type" id="settings_thirdparty_filemanager_notification_type_2" value="2"' + (settings_thirdparty_filemanager_notification_type == "2" ? " checked" : "") + ' type="radio">						<label class="lawobject" for="settings_thirdparty_filemanager_notification_type_2">' + lang("theme_xhred_filemanager_settings_notification_type_warn_err") + "</label>					</span>				</span></td>				</tr>			");
+            $(".table-subtable .sub_table_container.table-hardcoded").find("tbody").append('				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_hide_toolbar") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="config_portable_module_filemanager_hide_toolbar" id="config_portable_module_filemanager_hide_toolbar_1" value="true"' + (config_portable_module_filemanager_hide_toolbar ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_hide_toolbar_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_hide_toolbar" id="config_portable_module_filemanager_hide_toolbar_0" value="false"' + (config_portable_module_filemanager_hide_toolbar ? "" : " checked") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_hide_toolbar_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_hovered_toolbar") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="config_portable_module_filemanager_hovered_toolbar" id="config_portable_module_filemanager_hovered_toolbar_1" value="true"' + (config_portable_module_filemanager_hovered_toolbar ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_hovered_toolbar_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_hovered_toolbar" id="config_portable_module_filemanager_hovered_toolbar_0" value="false"' + (config_portable_module_filemanager_hovered_toolbar ? "" : " checked") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_hovered_toolbar_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_hide_actions") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="config_portable_module_filemanager_hide_actions" id="config_portable_module_filemanager_hide_actions_1" value="true"' + (config_portable_module_filemanager_hide_actions ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_hide_actions_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_hide_actions" id="config_portable_module_filemanager_hide_actions_0" value="false"' + (config_portable_module_filemanager_hide_actions ? "" : " checked") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_hide_actions_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_settings_tabs_remember_state") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="config_portable_module_filemanager_remember_tabs" id="config_portable_module_filemanager_remember_tabs_1" value="true"' + (config_portable_module_filemanager_remember_tabs ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_remember_tabs_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_remember_tabs" id="config_portable_module_filemanager_remember_tabs_0" value="false"' + (config_portable_module_filemanager_remember_tabs ? "" : " checked") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_remember_tabs_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_context_calculate_size") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="config_portable_module_filemanager_calculate_size" id="config_portable_module_filemanager_calculate_size_1" value="true"' + (config_portable_module_filemanager_calculate_size ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_calculate_size_1">' + lang("theme_xhred_global_yes") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_calculate_size" id="config_portable_module_filemanager_calculate_size_0" value="false"' + (config_portable_module_filemanager_calculate_size ? "" : " checked") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_calculate_size_0">' + lang("theme_xhred_global_no") + '</label>					</span>				</span></td>				</tr>				<tr>					<td class="col_label"><b>' + lang("theme_xhred_filemanager_settings_notification_type") + '</b></td>					<td class="col_value"><span>					<span class="awradio awobject">						<input class="iawobject" name="config_portable_module_filemanager_notification_type" id="config_portable_module_filemanager_notification_type_1" value="1"' + (config_portable_module_filemanager_notification_type == "1" ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_notification_type_1">' + lang("theme_xhred_global_all") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_notification_type" id="config_portable_module_filemanager_notification_type_4" value="4"' + (config_portable_module_filemanager_notification_type == "4" ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_notification_type_4">' + lang("theme_xhred_filemanager_settings_notification_type_inf_warn_err") + '</label>						<input class="iawobject" name="config_portable_module_filemanager_notification_type" id="config_portable_module_filemanager_notification_type_2" value="2"' + (config_portable_module_filemanager_notification_type == "2" ? " checked" : "") + ' type="radio">						<label class="lawobject" for="config_portable_module_filemanager_notification_type_2">' + lang("theme_xhred_filemanager_settings_notification_type_warn_err") + "</label>					</span>				</span></td>				</tr>			");
 
             function c(d) {
-                typeof d == "undefined" ? d = $('input[name="settings_thirdparty_filemanager_hide_toolbar"]:checked') : false;
-                var e = ["settings_thirdparty_filemanager_hovered_toolbar"];
+                typeof d == "undefined" ? d = $('input[name="config_portable_module_filemanager_hide_toolbar"]:checked') : false;
+                var e = ["config_portable_module_filemanager_hovered_toolbar"];
                 if (d.val() == "true") {
                     $.each(e, function(f, h) {
                         $('input[name="' + h + '"], select[name="' + h + '"]').prop("disabled", true);
@@ -1314,17 +1372,18 @@ function ___f__tw() {
                 }
             }
             c();
-            $('input[name="settings_thirdparty_filemanager_hide_toolbar"]').on("change", function() {
+            $('input[name="config_portable_module_filemanager_hide_toolbar"]').on("change", function() {
                 c($(this))
             });
-            $('input[name="settings_thirdparty_filemanager_hide_toolbar"], input[name="settings_thirdparty_filemanager_hovered_toolbar"], input[name="settings_thirdparty_filemanager_hide_actions"], input[name="settings_thirdparty_filemanager_notification_type"], input[name="settings_thirdparty_filemanager_remember_tabs"], input[name="settings_thirdparty_filemanager_calculate_size"]').on("change", function() {
+            $('input[name="config_portable_module_filemanager_hide_toolbar"], input[name="config_portable_module_filemanager_hovered_toolbar"], input[name="config_portable_module_filemanager_hide_actions"], input[name="config_portable_module_filemanager_notification_type"], input[name="config_portable_module_filemanager_remember_tabs"], input[name="config_portable_module_filemanager_calculate_size"]').on("change", function() {
                 var e = $(this).attr("name"),
                     d = $(this).val();
-                localStorage.setItem(e, d);
-                window[e] = d
+                localStorage.setItem($hostname + "-" + e, d);
+                window[e] = d;
+                t__wi_p.manageConfig("save")
             })
         } else {
-            $(".panel-body").append('			<div>                <div class="tabs-top">                    <ul class="nav nav-tabs">                        <li class="active ui-sortable-handle"><a href="#tab-1" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="top" data-title="/">/</span></a></li>                    </ul>                    <div class="tab-content">                        <div class="tab-pane fade in active" id="tab-1">                        </div>                    </div>                </div>            </div>        ');
+            $(".panel-body").append('			<div>                <div class="tabs-top">                    <ul class="nav nav-tabs">                        <li class="active ui-sortable-handle"><a href="#tab-1" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="auto top" data-title="/">/</span></a></li>                    </ul>                    <div class="tab-content">                        <div class="tab-pane fade in active" id="tab-1">                        </div>                    </div>                </div>            </div>        ');
             $("#list_form").detach().appendTo("#tab-1");
             if (typeof jQuery.ui == "object") {
                 $(".tabs-top > ul.nav").sortable({
@@ -1333,7 +1392,7 @@ function ___f__tw() {
                     update: function() {}
                 })
             }
-            if (settings_thirdparty_filemanager_remember_tabs && __f___ld__tb_stored_chk()) {
+            if (config_portable_module_filemanager_remember_tabs && __f___ld__tb_stored_chk()) {
                 __f___ld__tb_stored()
             }
             $("#headln2r .btn-group").prepend('<a href="#" id="file-manager-new-instance" data-toggle="tooltip" data-title="' + lang("theme_xhred_filemanager_new_tab") + '" class="btn btn-link text-lighter pull-left"><i class="fa fa-plus"></i></a>')
@@ -1345,7 +1404,7 @@ function ___f__tw() {
         });
         $("div.total").append(__f___tl_v());
         $(".tab-pane.active").data("totalValue", $("div.total").html());
-        $("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-o__f_m-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-fw fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_goto") + '</a></li>		            <li class="divider context-o__f_m-dependent-goto"></li>		            <li class="context-o__f_m-dependent-open-new-tab hidden"><a tabindex="-1" href="#" data-context-open-new-tab="1"><i class="fa fa-fw fa-tab"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_open_new_tab") + '</a></li>		            <li class="divider context-o__f_m-dependent-open-new-tab hidden"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-fw fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_all") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-fw fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_deselect_all") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-fw fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_new") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-fw fa-file-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-fw fa-folder-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newarchive") + '</a></li>		            		<li class="dropdown-submenu" role="menu">				            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-exchange"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_transfer") + '</a>				            	<ul class="dropdown-menu" role="menu">				            		<li><a tabindex="-1" href="#" data-context-upload="1"><i class="fa fa-fw fa-upload"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_upload") + '</a></li>				            		<li><a tabindex="-1" href="#" data-context-download="1"><i class="fa fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download") + '</a></li>				            	</ul>				            </li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-fw fa-files-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_copy") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-clipboard="1"><i class="fa fa-fw fa-clone"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_clipboard") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-fw fa-scissors"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-fw fa-clipboard"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-fw fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-o__f_m-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_rename") + '</a></li>		            <li class="context-o__f_m-dependent-download"><a tabindex="-1" href="#" data-context-download-file="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download_file") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-fw fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_search") + '</a></li>		            <li class="divider"></li>		            		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-star-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_bookmarks") + '</a>		            	<ul class="dropdown-menu at-o__f_m-favorites-dropdown" role="menu">		            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-bookmarks="1">' + lang("theme_xhred_filemanager_bookmark") + '</a></li>		            		<li class="divider"></li>		            	</ul>		            </li>		            		            <li class="divider context-o__f_m-dependent-extract"></li>		            <li class="context-o__f_m-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa fa-fw fa-extract-archive"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_properties") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-calculate-selected-size="1"><i class="fa fa-fw fa-calculator"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_calculate_selected_size") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-fw fa-cogs"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-fw fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chown") + "</a></li>		            	</ul>		            </li>		        </ul>");
+        $("body").append('<ul id="__f__c__m" class="dropdown-menu" role="menu" style="display:none">		            <li class="context-o__f_m-dependent-goto hidden"><a tabindex="-1" href="#" data-context-goto="1"><i class="fa fa-fw fa-folder-open-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_goto") + '</a></li>		            <li class="divider context-o__f_m-dependent-goto"></li>		            <li class="context-o__f_m-dependent-open-new-tab hidden"><a tabindex="-1" href="#" data-context-open-new-tab="1"><i class="fa fa-fw fa-tab"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_open_new_tab") + '</a></li>		            <li class="divider context-o__f_m-dependent-open-new-tab hidden"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-select-all="1"><i class="fa fa-fw fa-check-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_all") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-deselect-all="1"><i class="fa fa-fw fa-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_deselect_all") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-invert-selection="1"><i class="fa fa-fw fa-share-square-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_select_invert") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-refresh="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_refresh") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_new") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-newfile="1"><i class="fa fa-fw fa-file-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfile") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newfolder="1"><i class="fa fa-fw fa-folder-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newfoder") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-newarchive="1"><i class="fa fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newarchive") + '</a></li>		            		<li class="dropdown-submenu" role="menu">				            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-exchange"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_transfer") + '</a>				            	<ul class="dropdown-menu" role="menu">				            		<li><a tabindex="-1" href="#" data-context-upload="1"><i class="fa fa-fw fa-upload"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_upload") + '</a></li>				            		<li><a tabindex="-1" href="#" data-context-download="1"><i class="fa fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download") + '</a></li>				            	</ul>				            </li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#" data-context-copy="1"><i class="fa fa-fw fa-files-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_copy") + '</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="#" data-context-clipboard="1"><i class="fa fa-fw fa-clone"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_clipboard") + '</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="#" data-context-cut="1"><i class="fa fa-fw fa-scissors"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_cut") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-paste="1"><i class="fa fa-fw fa-clipboard"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_paste") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-delete="1"><i class="fa fa-fw fa-trash"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_delete") + '</a></li>		            <li class="divider"></li>		            <li class="context-o__f_m-dependent-edit"><a tabindex="-1" href="#" data-context-edit="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_edit") + '</a></li>		            <li><a tabindex="-1" href="#" data-context-rename="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_rename") + '</a></li>		            <li class="context-o__f_m-dependent-download"><a tabindex="-1" href="#" data-context-download-file="1">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_download_file") + '</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="#" data-context-search="1"><i class="fa fa-fw fa-search"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_search") + '</a></li>		            <li class="divider"></li>		            		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="#"><i class="fa fa-fw fa-star-o"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_bookmarks") + '</a>		            	<ul class="dropdown-menu at-o__f_m-favorites-dropdown dropdown-submenu-bookmarks" role="menu">		            		<li class="data-context-bookmarks"><a tabindex="-1" href="#" data-context-bookmarks="1">' + lang("theme_xhred_filemanager_bookmark") + '</a></li>		            		<li class="divider"></li>		            	</ul>		            </li>		            		            <li class="divider context-o__f_m-dependent-extract"></li>		            <li class="context-o__f_m-dependent-extract"><a tabindex="-1" href="#" data-context-extract="1"><i class="fa fa-fw fa-extract-archive"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_extract") + '</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties" role="menu">		            	<a tabindex="-1" href="#">&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_properties") + '</a>		            	<ul class="dropdown-menu dropdown-submenu-properties" role="menu">		            		<li><a tabindex="-1" href="#" data-context-calculate-selected-size="1"><i class="fa fa-fw fa-calculator"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_calculate_selected_size") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chmod="1"><i class="fa fa-fw fa-cogs"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chmod") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chown="1"><i class="fa fa-fw fa-users"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chown") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chattr="1"><i class="fa fa-fw fa-tags"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chattr") + '</a></li>		            		<li><a tabindex="-1" href="#" data-context-chcon="1"><i class="fa fa-fw fa-shield"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chcon") + "</a></li>		            	</ul>		            </li>		        </ul>");
         $("body").on("click", "#__f__c__m li i.fa", function(d) {
             $(this).parents("a").trigger("click")
         });
@@ -1353,7 +1412,7 @@ function ___f__tw() {
             $(".modal-backdrop").remove()
         });
         $("body").on("submit", 'form[action="save_config.cgi"]', function() {
-            localStorage.setItem("_________per_page", parseInt($('input[name="per_page"]').val()))
+            localStorage.setItem($hostname + "-_________per_page", parseInt($('input[name="per_page"]').val()))
         });
         $("body").on("click", function(d) {
             $(".tooltip").each(function() {
@@ -1362,6 +1421,58 @@ function ___f__tw() {
                 }
             })
         });
+        $("body").on("click", ".breadcrumb .fa-caret-right", function(f) {
+            f.preventDefault();
+            f.stopPropagation();
+            var d = $(".breadcrumb span[data-tree]"),
+                m = $(".breadcrumb .fa-caret-down"),
+                k = $(this),
+                e = k.attr("data-path"),
+                h = (e ? e : "/"),
+                n = k.parent("a").attr("href");
+            $dirCurrent = $.trim(k.parent("a").text());
+            d.remove();
+            m.addClass("fa-caret-right").removeClass("fa-caret-down");
+            if (k.parent("a").next("span[data-tree]").length) {
+                return
+            }
+            k.addClass("invisible").after('<span class="cspinner"><span class="cspinner-icon smallest"></span></span>');
+            $(this).removeClass("fa-caret-right").addClass("fa-caret-down");
+            k.parent("a").after('<span class="hidden" data-tree=""></div>');
+            $.ajax({
+                type: "POST",
+                url: $_____link_full + "/index.cgi/?xhr-get_list=1&xhr-get_list_path=" + h,
+                data: false,
+                dataType: "JSON",
+                success: function(o) {
+                    $.each($(o), function(q, p) {
+                        k.parent("a").next("span[data-tree]").append('<a href="index.cgi?path=' + (encodeURIComponentSafe(h + "/" + p)) + '"><i class="fa fa-fw ' + ($dirCurrent == p ? "fa-folder-open-o" : "fa-folder-o") + '">&nbsp;&nbsp;</i>' + ($dirCurrent == p ? " <strong>" + p + "</strong>" : " " + p) + "</a>")
+                    }).promise().done(function() {
+                        k.removeClass("invisible").next(".cspinner").remove();
+                        k.parent("a").removeClass("text-black");
+                        k.parent("a").next("span[data-tree]").removeClass("hidden");
+                        var q = k.parent("a").next("span[data-tree]"),
+                            p = $("span[data-tree] i.fa-folder-open-o").parent("a");
+                        q.animate({
+                            scrollTop: p.offset().top - q.offset().top + q.scrollTop()
+                        }, 0)
+                    })
+                },
+                error: function(o) {}
+            })
+        }).on("mouseenter", ".breadcrumb .fa-caret-right", function(d) {
+            $(this).parent("a").addClass("text-black")
+        }).on("mouseleave", ".breadcrumb .fa-caret-right", function(d) {
+            $(this).parent("a").removeClass("text-black")
+        });
+        $("body").on("click", function(e) {
+            var d = $(".breadcrumb a + span[data-tree]"),
+                f = $(".breadcrumb .fa-caret-down");
+            if (d.length) {
+                d.remove();
+                f.addClass("fa-caret-right").removeClass("fa-caret-down")
+            }
+        });
         $.each($(".modal .modal-content .modal-footer"), function(e, d) {
             $(this).wrapInner('<div class="btn-group"></div>')
         });
@@ -1369,22 +1480,27 @@ function ___f__tw() {
         if ($___relative_url.indexOf("index.cgi") === -1) {
             t___wi.history.pushState(null, null, $_____link_full + "/" + __f___mn() + "/index.cgi?path=");
             $('#headln2l > div.btn-group > a[href*="' + $g__o__f_m + '"][href*="index.cgi"]').addClass("hidden");
-            if (settings_favorites) {
-                f__dt()
-            }
+            f__dt()
         }
         $("#headln2l .help_popup").css("padding", "6px 12px");
-        $('ul > li > a[href^="bookmark.cgi?path="]').parents("ul").addClass("at-o__f_m-favorites-dropdown").find(".fa-bookmark-o").removeClass("fa-bookmark-o").addClass("fa-star-o");
+        $('ul > li > a[href^="bookmark.cgi?path="]').parents("ul").addClass("at-o__f_m-favorites-dropdown").find(".fa-bookmark-o").removeClass("fa-bookmark-o").addClass("fa-fw fa-star-o");
         $('div button[onclick="removeDialog()"]').addClass("disabled o__f_m-button-delete").removeAttr("onclick");
         $('a[onclick="chmodDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chmod");
         $('a[onclick="chownDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chown");
+        $('a[onclick="chattrDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chattr");
+        $('a[onclick="chconDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chcon");
         $('a[onclick="compressDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-compress");
         $('a[onclick="copySelected()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-copy");
         $('a[onclick="cutSelected()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-cut");
-        if (!localStorage.getItem("copy") && !localStorage.getItem("cut")) {
+        if (!localStorage.getItem($hostname + "-copy") && !localStorage.getItem($hostname + "-cut")) {
             $('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-paste")
         } else {
             $('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("o__f_m-button-paste")
+        }
+        if (!$t_av_sestatus) {
+            $("li.o__f_m-button-chcon").addClass("hidden");
+            $("#__f__c__m a[data-context-chcon]").parent("li").addClass("hidden");
+            $("#__f__c__m .dropdown-submenu-properties").css("top", "-74px")
         }
         $("body").on("click", 'button + .dropdown-menu.at-o__f_m-favorites-dropdown > li > a:not([href^="bookmark.cgi"])', function() {
             $(this).parents("ul").trigger("mouseleave")
@@ -1440,7 +1556,7 @@ function ___f__tw() {
             __f____r("get", e, false, 0);
             $(".active i.fa-folder-btl").after('<span class="cspinner" style="margin-top: 2px; margin-left: 28px;"><span class="cspinner-icon small"></span></span>')
         });
-        $("body").on("click", ".breadcrumb li > a:not(.fa-keyboard-o), .dropdown-menu.at-o__f_m-favorites-dropdown > li:not(.data-context-bookmarks) > a:not(.no_effect), .active table label > a.o__f_m-follow-file", function(d) {
+        $("body").on("click", ".breadcrumb li > a:not(.fa-keyboard-o), .breadcrumb li > a + span[data-tree] > a, .dropdown-menu.at-o__f_m-favorites-dropdown > li:not(.data-context-bookmarks) > a:not(.no_effect), .active table label > a.o__f_m-follow-file", function(d) {
             d.preventDefault();
             d.stopPropagation();
             var f = "index.cgi?path=",
@@ -1698,7 +1814,7 @@ function ___f__tw() {
             d.preventDefault();
             d.stopPropagation();
             messenger('<i class="fa fa-lg fa-fw fa-users"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_changing_ownership").replace("%value", $('#chownForm input[name="owner"]').val() + ":" + $('#chownForm input[name="group"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chown_info");
-            __f____a("chown", [$('#chownForm input[name="owner"]').val(), $('#chownForm input[name="group"]').val(), $('input[name="recursive"]').prop("checked")])
+            __f____a("chown", [$('#chownForm input[name="owner"]').val(), $('#chownForm input[name="group"]').val(), $('#chownForm input[name="recursive"]').prop("checked")])
         });
         $("#chownDialog").on("shown.bs.modal", function() {
             $('#chownDialog input[name="owner"]').focus()
@@ -1724,7 +1840,113 @@ function ___f__tw() {
         });
         $("#chownDialog").on("show.bs.modal", function() {
             $('#chownDialog input[name="owner"], #chownDialog input[name="group"]').val("");
-            $('input[name="recursive"]').removeAttr("checked")
+            $('#chownDialog input[name="recursive"]').removeAttr("checked")
+        });
+        $('body #chattrDialog button[onclick="chattrSelected()"]').removeAttr("onclick").addClass("o__f_m-submitter-chattr");
+        $("body").on("click", "#chattrDialog button.o__f_m-submitter-chattr", function(d) {
+            d.preventDefault();
+            d.stopPropagation();
+            messenger('<i class="fa fa-lg fa-fw fa-tags"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_changing_attributes").replace("%value", $('#chattrForm input[name="label"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chattr_info");
+            __f____a("chattr", [$('#chattrForm input[name="label"]').val(), $('#chattrForm input[name="recursive"]').prop("checked")])
+        });
+        $("#chattrDialog").on("shown.bs.modal", function() {
+            $('#chattrDialog input[name="label"]').focus()
+        });
+        $("#chattrDialog").on("show.bs.modal", function() {
+            var d = $(this).find("button.o__f_m-submitter-chattr");
+            d.prop("disabled", true)
+        });
+        $('#chattrDialog input[name="label"]').on("keyup change click input", function(e) {
+            var d = $("#chattrDialog").find("button.o__f_m-submitter-chattr");
+            if ($('#chattrDialog input[name="label"]').val()) {
+                d.prop("disabled", false)
+            } else {
+                d.prop("disabled", true)
+            }
+        });
+        $('#chattrDialog input[name="label"]').on("keyup", function(d) {
+            d.preventDefault();
+            var e = d.which;
+            if (e == 13) {
+                $("#chattrDialog button.o__f_m-submitter-chattr").trigger("click")
+            }
+        });
+        $("#chattrDialog").on("show.bs.modal", function() {
+            $('#chattrDialog input[name="label"]').val("");
+            $('#chattrForm input[name="recursive"]').removeAttr("checked")
+        });
+        $('body #chconDialog button[onclick="chconSelected()"]').removeAttr("onclick").addClass("o__f_m-submitter-chcon");
+        $("body").on("click", "#chconDialog button.o__f_m-submitter-chcon", function(d) {
+            d.preventDefault();
+            d.stopPropagation();
+            messenger('<i class="fa fa-lg fa-fw fa-tags"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_changing_secontext").replace("%value", $('#chconForm input[name="label"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chcon_info");
+            __f____a("chcon", [$('#chconForm input[name="label"]').val(), $('#chconForm input[name="recursive"]').prop("checked")])
+        });
+        $("#chconDialog").on("shown.bs.modal", function() {
+            $('#chconDialog input[name="label"]').focus()
+        });
+        $("#chconDialog").on("show.bs.modal", function() {
+            var d = $(this).find("button.o__f_m-submitter-chcon");
+            d.prop("disabled", true);
+            var k = {};
+            $.unique($("tr td span[data-secontext]").map(function() {
+                k[$(this).text()] = $(this).text()
+            }).get());
+            var f = $.map(k, function(p, o) {
+                if (o != "undefined") {
+                    return {
+                        value: p,
+                        url: o,
+                        data: {
+                            category: 0
+                        }
+                    }
+                }
+            });
+
+            function e(m) {
+                $('#chconDialog input[name="label"]').autocomplete({
+                    lookup: f,
+                    onSelect: function(n) {},
+                    showNoSuggestionNotice: true,
+                    noSuggestionNotice: lang("theme_xhred_global_no_results_found")
+                })
+            }
+            if (typeof $().autocomplete === "function") {
+                e()
+            } else {
+                var h = 0;
+                if (t__wi_p.$load____ext === "src") {
+                    h = $('html head link[href*="css/jquery.jspanel."]:first')
+                } else {
+                    h = $('html head link[href*="css/bundle."]:first')
+                }
+                if (!$('html head link[href*="css/autocomplete."]').length) {
+                    h.before('<link href="' + $_____link_full + "/unauthenticated/css/jquery.autocomplete." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                }
+                $.getScript("" + $_____link_full + "/unauthenticated/js/jquery.autocomplete." + t__wi_p.$load____ext + ".js", function(m, o, n) {
+                    e();
+                    t__wi_p.$___ajax_requested_url = "_blank"
+                })
+            }
+        });
+        $('#chconDialog input[name="label"]').on("keyup change click input", function(e) {
+            var d = $("#chconDialog").find("button.o__f_m-submitter-chcon");
+            if ($('#chconDialog input[name="label"]').val()) {
+                d.prop("disabled", false)
+            } else {
+                d.prop("disabled", true)
+            }
+        });
+        $('#chconDialog input[name="label"]').on("keydown", function(d) {
+            var e = d.which;
+            if (e == 13 && !$(".autocomplete-suggestions:visible").length) {
+                $("#chconDialog button.o__f_m-submitter-chcon").trigger("click")
+            }
+        });
+        $("#chconDialog").on("show.bs.modal", function() {
+            $('#chconDialog input[name="label"]').val("");
+            $('#chconForm input[name="recursive"]').removeAttr("checked")
         });
 
         function a() {
@@ -1793,7 +2015,7 @@ function ___f__tw() {
             messenger('<i class="fa fa-lg fa-fw fa-refresh"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_refreshing") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "refreshDir_info")
         });
         setTimeout(function() {
-            if (settings_thirdparty_filemanager_hovered_toolbar != true) {
+            if (config_portable_module_filemanager_hovered_toolbar != true) {
                 $(".btn-group.pull-right > .btn-group > button").hover(function(d) {
                     d.preventDefault();
                     d.stopPropagation()
@@ -1811,6 +2033,10 @@ function ___f__tw() {
         $("#chmodDialog .modal-header h4").html('<i class="fa fa-fw fa-cogs" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chmod"));
         $(".o__f_m-button-chown a").html('<i class="fa fa-fw fa-users" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chown"));
         $("#chownDialog .modal-header h4").html('<i class="fa fa-fw fa-users" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chown"));
+        $(".o__f_m-button-chattr a").html('<i class="fa fa-fw fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chattr"));
+        $("#chattrDialog .modal-header h4").html('<i class="fa fa-fw fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chattr"));
+        $(".o__f_m-button-chcon a").html('<i class="fa fa-fw fa-shield" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chcon"));
+        $("#chconDialog .modal-header h4").html('<i class="fa fa-fw fa-shield" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_chcon"));
         $(".o__f_m-button-compress a").html('<i class="fa fa-fw fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newarchive"));
         $("#compressDialog .modal-header h4").html('<i class="fa fa-fw fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_newarchive"));
         $("#searchDialog .modal-header h4").html('<i class="fa fa-fw fa-search" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_search"));
@@ -1829,7 +2055,7 @@ function ___f__tw() {
         $('.btn-group .btn-group a[onclick="downFromUrlDialog()"] i').removeClass("fa-globe").addClass("fa-download");
         $("#removeDialog .modal-header h4").html('<i class="fa fa-fw fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;' + lang("theme_xhred_filemanager_context_delete_selected"));
         $(".o__f_m-button-compress").detach().insertAfter("._createFolderDialog_");
-        if (settings_thirdparty_filemanager_hide_toolbar) {
+        if (config_portable_module_filemanager_hide_toolbar) {
             $(".btn-group.pull-right").addClass("hidden");
             $(".breadcrumb.pull-left").removeClass("pull-left").addClass("pull-right").css("margin-bottom", "-20px");
             $(".o__f_m-main-spinner").css({
@@ -1882,6 +2108,9 @@ function ___f__tw() {
     }, 10);
     $("body").on("click", ".active .ui_checked_columns", function(m) {
         var k = m.keyCode ? m.keyCode : m.which;
+        if (get_selected_text()) {
+            return
+        }
         if (k !== 1) {
             return
         }
@@ -2164,7 +2393,7 @@ function ___f__tw() {
                 e.which = 40;
                 $("body").trigger(e);
                 __r____changed();
-                if (settings_thirdparty_filemanager_calculate_size) {
+                if (config_portable_module_filemanager_calculate_size) {
                     __f__get_fs()
                 }
             }
@@ -2209,7 +2438,7 @@ function ___f__tw() {
                 __f___cs()
             }
         }
-        if (k == 113) {
+        if (k == 113 && !d.shiftKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2219,8 +2448,20 @@ function ___f__tw() {
                 $("body .o__f_m-button-chmod a").trigger("click");
                 __f___cs()
             }
+        } else {
+            if (k === 113 && d.shiftKey) {
+                if (!$(".modal.in").length) {
+                    d.preventDefault();
+                    d.stopPropagation();
+                    if ($(".o__f_m-button-chattr.disabled").length) {
+                        $("#list_form table tbody tr.m-active").find("td:first-child input").trigger("click")
+                    }
+                    $("body .o__f_m-button-chattr a").trigger("click");
+                    __f___cs()
+                }
+            }
         }
-        if (k == 114) {
+        if (k == 114 && !d.shiftKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2229,6 +2470,18 @@ function ___f__tw() {
                 }
                 $("body .o__f_m-button-chown a").trigger("click");
                 __f___cs()
+            }
+        } else {
+            if (k === 114 && d.shiftKey && $t_av_sestatus) {
+                if (!$(".modal.in").length) {
+                    d.preventDefault();
+                    d.stopPropagation();
+                    if ($(".o__f_m-button-chcon.disabled").length) {
+                        $("#list_form table tbody tr.m-active").find("td:first-child input").trigger("click")
+                    }
+                    $("body .o__f_m-button-chcon a").trigger("click");
+                    __f___cs()
+                }
             }
         }
         if (k == 116 && !d.shiftKey) {
@@ -2527,10 +2780,16 @@ function ___f__tw() {
             return
         }
     });
-    $("body").on("click", "a.action-link > .fa-extract-archive", function(f) {
+    $("body").on("click", "a.action-link > .fa", function(f) {
         f.preventDefault();
-        var d = $(this).parents("tr").find("td.ui_checked_checkbox input");
-        !d.is(":checked") && d.trigger("click")
+        if ($(this).hasClass("fa-extract-archive")) {
+            var d = $(this).parents("tr").find("td.ui_checked_checkbox input");
+            !d.is(":checked") && d.trigger("click")
+        } else {
+            if ($(this).hasClass("fa-i-cursor")) {
+                f.stopPropagation()
+            }
+        }
     });
     $("body").on("click", "#file-manager-new-instance:not(.disabled_no_styling)", function(d) {
         __f___nt($("#path").val(), true)
@@ -2668,3 +2927,8 @@ function ___f__tw() {
     $('#searchDialog input[name="query"]').val("*")
 }
 ___f__tw();
+t__cm___init(0, 0, 0, 0, 0, 0, 1);
+setTimeout(function() {
+    t__wi_p.$____loader_block__ = 0;
+    __lre()
+}, 1200);

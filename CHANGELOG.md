@@ -1,5 +1,26 @@
 ##Changelog
 
+####Version 18.30 (December 07, 2016) &nbsp;&nbsp;&nbsp; :star2: :star2: :star2: :star2: :star2:
+* Increased theme's speed and stability
+* Added new drop-down _Command Shell_ port. There is no need in going to _Shell_ module to use console anymore. By default, hitting `Alt+K` anywhere in the theme will bring its accessibility immediately [#566](https://github.com/qooob/authentic-theme/issues/566)
+* Added new functionality that replaces old pop-up windows with contemporary modals for file-chooser and other familiar operations [#552](https://github.com/qooob/authentic-theme/issues/552)
+* Added navigation link for the servers with installed [Netdata](https://github.com/firehol/netdata) real-time monitoring tool
+* Added _Dashboard_ and _Favorites_ tabs to the _Side Slider_. Hotkeys for switching tabs are available. Check theme _Side slider options_ for more details
+* Added ability to change fonts in theme settings. This feature will let you as well use local _system-default_ fonts
+* Added ability to disable _Virtualmin/Cloudmin_ drop-down's symbolic icons [#569](https://github.com/qooob/authentic-theme/issues/569)
+* Added ability to store local configs on the server [#488](https://github.com/qooob/authentic-theme/issues/488)
+* Added support for multiple hosts when using browser's storage [#523](https://github.com/qooob/authentic-theme/issues/523)
+* Added support for displaying very long log files smoothly
+* Added support for PAM authentication [#544](https://github.com/qooob/authentic-theme/issues/544) [#580](https://github.com/qooob/authentic-theme/issues/580)
+* Added support for _SELinux_ and file _attributes_ in _File Manager_. It can be enabled in module's config (requires Webmin 1.830+) [#565](https://github.com/qooob/authentic-theme/issues/565) [#590](https://github.com/qooob/authentic-theme/issues/590)
+* Added tree-view drop-down for navigation breadcrumbs in _File Manager_ [#442](https://github.com/qooob/authentic-theme/issues/442)
+* Added support for overwriting files upon extraction in _File Manager_ [#589](https://github.com/qooob/authentic-theme/issues/589)
+* Added ability to select/copy any text from the table to clipboard in _File Manager_ [#591](https://github.com/qooob/authentic-theme/issues/591)
+* Fixed the logic of selecting/accessing objects in modules for list (icons) mode. For selecting use click/right-click; for accessing double-click [#575](https://github.com/qooob/authentic-theme/issues/575)
+* Fixed missed tag at core function. Thanks to _Michael Varian_ [#576](https://github.com/qooob/authentic-theme/pull/576)
+* Fixed dozens of unreported bugs
+* Fixed bugs [#394](https://github.com/qooob/authentic-theme/issues/394) [#571](https://github.com/qooob/authentic-theme/issues/571) [#582](https://github.com/qooob/authentic-theme/issues/582) [#583](https://github.com/qooob/authentic-theme/issues/583) [#587](https://github.com/qooob/authentic-theme/issues/587) [#43304](https://www.virtualmin.com/node/43304) [#44156](https://www.virtualmin.com/node/44156)
+
 ####Version 18.20 (October 29, 2016)
 * Upgraded dependencies _jQuery 3.0_, latest _Bootstrap_, _DataTables_, _CodeMirror_ and other
 * Optimized dependencies load [#534](https://github.com/qooob/authentic-theme/issues/534)
@@ -171,7 +192,7 @@
 * Updated dependencies. Most notable _jQuery 2.2.0_, which brings more speed and cross-browser compatibility
 * Improved speed by performing code optimizations
 * Improved content page loader animation
-* Improved the select's dropdown in navigation menu for long lists [#358](https://github.com/qooob/authentic-theme/issues/358)
+* Improved the select's drop-down in navigation menu for long lists [#358](https://github.com/qooob/authentic-theme/issues/358)
 * Improved username/password preview in _Virtualmin/Cloudmin_ using nice popover [#358](https://github.com/qooob/authentic-theme/issues/358)
 * Fixed incorrect sorting by size for _Edit Users_ in _Virtualmin_ [#39494](https://www.virtualmin.com/node/39494)
 * Fixed bugs [#351](https://github.com/qooob/authentic-theme/issues/351) [#352](https://github.com/qooob/authentic-theme/issues/352) [#354](https://github.com/qooob/authentic-theme/issues/354 [#356](https://github.com/qooob/authentic-theme/issues/356) [#359](https://github.com/qooob/authentic-theme/issues/359)
@@ -179,7 +200,7 @@
 
 ####Version 17.54 (January 26, 2016)
 * Added display of _symlink's_ target in _File Manager_ when hovering on the symlink-icon [#346](https://github.com/qooob/authentic-theme/issues/346)
-* Added an option for _File Manager_ in theme's settings to show dropdowns in toolbar on hover or using click
+* Added an option for _File Manager_ in theme's settings to activate toolbar's drop-down on hover or using click
 * Fixed bugs [#39486](https://www.virtualmin.com/node/39486) [#350](https://github.com/qooob/authentic-theme/issues/350)
 
 ####Version 17.53 (January 25, 2016)
@@ -588,7 +609,7 @@
 * Removed donation button from _System Information_ page, that was seen on everyday basis (thanks to _Joe Cooper_ for advice)
 
 ####Version 8.00 (Jan 4, 2015)
-* Added **Quick Search**. No more searching through the menus. Hit _Alt+S_ **(⌥S)** and start typing to see what you get. When you use suggestions from dropdown, you get quick access to the modules; if you just type and hit enter you get the regular search
+* Added **Quick Search**. No more searching through the menus. Hit _Alt+S_ **(⌥S)** and start typing to see what you get. When you use suggestions from drop-down, you get quick access to the modules; if you just type and hit enter you get the regular search
 * Added **Quick Toggle**. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use _Alt+W_ **(⌥W)** / _Alt+V_ **(⌥V)** / _Alt+C_ **(⌥C)**
 * Added support for **TimePlot** for Pro versions of _Virtualmin_ to display _System Statistics_
 * Added search for **CodeMirror** files

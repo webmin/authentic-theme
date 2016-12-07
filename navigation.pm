@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -73,6 +73,7 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     }
     print_sysinfo_link();
     print_sysstat_link();
+    print_netdata_link();
 
     if (   &get_product_name() eq 'webmin'
         && !get_env('anonymous_user')
@@ -96,6 +97,7 @@ elsif ($t_uri_virtualmin != -1
     print_left_menu( 'virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'} );
     print_sysinfo_link();
     print_sysstat_link();
+    print_netdata_link();
 
 }
 
@@ -104,6 +106,7 @@ elsif ( $t_uri_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
     print_left_menu( 'server-manager', \@leftitems, 0, 0, $in{'sid'}, $in{'xhr-navigation-type'} );
     print_sysinfo_link();
     print_sysstat_link();
+    print_netdata_link();
 }
 
 elsif ( $t_uri_webmail != -1 || $in{'xhr-navigation-type'} eq 'webmail' ) {

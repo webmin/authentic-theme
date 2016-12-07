@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -80,7 +80,7 @@ if ($current_page_full == $_____link_full + "/mysql/" || $current_page_full == $
         $("#" + ($(this).attr("id").replace("Clone", ""))).trigger("click")
     })
 }
-if (!settings_thirdparty_xsql_fit_content_screen_height) {
+if (!config_portable_module_xsql_fit_content_screen_height) {
     $('<style type="text/css">.long-table-scroll {max-height: 100% !important;}</style>').appendTo("head")
 }
 if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_page_full == $_____link_full + "/mysql/edit_table.cgi" || $current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/edit_dbase.cgi" || $current_page_full == $_____link_full + "/postgresql/edit_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {

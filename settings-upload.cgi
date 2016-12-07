@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -86,4 +86,3 @@ name="save" id="saved"><i class="fa fa-fw fa-check-square-o" style="margin-right
     </table>
 </form>';
 &ui_print_footer( "webmin/edit_themes.cgi", $Atext{'right_return_theme_options'} );
-

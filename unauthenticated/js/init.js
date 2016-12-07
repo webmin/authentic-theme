@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -8,10 +8,17 @@ $__theme_name__ = "authentic";
 $___________ready = 0;
 t___wi = window;
 t__wi_p = t___wi.parent;
-t___wi.parent.$___________right = 0;
+t__wi_p.$___________right = 0;
+t__wi_p.$____shelling__ = 0;
+t__wi_p.$____loader_block__ = 0;
+t__wi_p.$____cm__has_init__ = 0;
+const $t_av__session = $("html").data("session"),
+    $t_av__script_name = $("html").data("script-name").replace(/^\//g, ""),
+    $hostname = $("html").data("hostname"),
+    $t_av_sestatus = $("html").data("sestatus");
 typeof t__wi_p.$___________lrs_r_l == "undefined" ? t__wi_p.$___________lrs_r_l = 0 : false;
 if (t___wi.location == t__wi_p.location) {
-    t___wi.parent.$___________left = 0
+    t__wi_p.$___________left = 0
 }
 typeof t__wi_p.$___________initial == "undefined" ? t__wi_p.$___________initial = 1 : false;
 typeof t__wi_p.$___ajax_requested_url == "undefined" ? t__wi_p.$___ajax_requested_url = "_blank" : false;
@@ -21,18 +28,22 @@ typeof settings_right_reload == "undefined" ? settings_right_reload = true : fal
 typeof settings_right_default_tab_usermin == "undefined" ? settings_right_default_tab_usermin = "/" : false;
 typeof settings_right_virtualmin_default == "undefined" ? settings_right_virtualmin_default = "sysinfo.cgi" : false;
 typeof settings_right_cloudmin_default == "undefined" ? settings_right_cloudmin_default = "sysinfo.cgi" : false;
-typeof settings_cm_view_palette == "undefined" ? settings_cm_view_palette = "elegant" : false;
+typeof settings_cm_view_palette == "undefined" ? settings_cm_view_palette = "monokai" : false;
 typeof settings_cm_editor_palette == "undefined" ? settings_cm_editor_palette = "monokai" : false;
-typeof settings_notification_color == "undefined" ? settings_notification_color = "grey" : false;
-typeof settings_notification_slider_enabled == "undefined" ? settings_notification_slider_enabled = true : false;
-typeof settings_notification_slider_fixed == "undefined" ? settings_notification_slider_fixed = false : false;
-settings_thirdparty_filemanager_hide_actions = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_hide_actions") == "false" ? false : true);
-settings_thirdparty_filemanager_hide_toolbar = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_hide_toolbar") == "true" ? true : false);
-settings_thirdparty_filemanager_hovered_toolbar = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_hovered_toolbar") == "true" ? true : false);
-settings_thirdparty_filemanager_notification_type = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_notification_type") ? localStorage.getItem("settings_thirdparty_filemanager_notification_type") : 1);
-settings_thirdparty_filemanager_calculate_size = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_calculate_size") == "true" ? true : false);
-settings_thirdparty_filemanager_remember_tabs = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_filemanager_remember_tabs") == "false" ? false : true);
-settings_thirdparty_xsql_fit_content_screen_height = (typeof localStorage != "undefined" && localStorage.getItem("settings_thirdparty_xsql_fit_content_screen_height") == "true" ? true : false);
+typeof settings_side_slider_palette == "undefined" ? settings_side_slider_palette = "grey" : false;
+typeof settings_side_slider_enabled == "undefined" ? settings_side_slider_enabled = true : false;
+typeof settings_side_slider_fixed == "undefined" ? settings_side_slider_fixed = true : false;
+typeof settings_side_slider_sysinfo_enabled == "undefined" ? settings_side_slider_sysinfo_enabled = true : false;
+typeof settings_side_slider_notifications_enabled == "undefined" ? settings_side_slider_notifications_enabled = true : false;
+typeof settings_side_slider_favorites_enabled == "undefined" ? settings_side_slider_favorites_enabled = true : false;
+typeof settings_side_slider_tabs_hotkeys == "undefined" ? settings_side_slider_tabs_hotkeys = true : false;
+config_portable_module_filemanager_hide_actions = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_hide_actions") == "false" ? false : true);
+config_portable_module_filemanager_hide_toolbar = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_hide_toolbar") == "true" ? true : false);
+config_portable_module_filemanager_hovered_toolbar = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_hovered_toolbar") == "true" ? true : false);
+config_portable_module_filemanager_notification_type = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_notification_type") ? localStorage.getItem($hostname + "-config_portable_module_filemanager_notification_type") : 1);
+config_portable_module_filemanager_calculate_size = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_calculate_size") == "true" ? true : false);
+config_portable_module_filemanager_remember_tabs = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_remember_tabs") == "false" ? false : true);
+config_portable_module_xsql_fit_content_screen_height = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_xsql_fit_content_screen_height") == "true" ? true : false);
 typeof settings_hotkeys_active == "undefined" ? settings_hotkeys_active = true : false;
 typeof settings_hotkey_toggle_modifier == "undefined" ? settings_hotkey_toggle_modifier = "altKey" : false;
 typeof settings_hotkey_toggle_key_webmin == "undefined" ? settings_hotkey_toggle_key_webmin = "w" : false;
@@ -40,6 +51,7 @@ typeof settings_hotkey_toggle_key_virtualmin == "undefined" ? settings_hotkey_to
 typeof settings_hotkey_toggle_key_cloudmin == "undefined" ? settings_hotkey_toggle_key_cloudmin = "c" : false;
 typeof settings_hotkey_toggle_key_usermin == "undefined" ? settings_hotkey_toggle_key_usermin = "u" : false;
 typeof settings_hotkey_toggle_key_webmail == "undefined" ? settings_hotkey_toggle_key_webmail = "m" : false;
+typeof settings_hotkey_shell == "undefined" ? settings_hotkey_shell = "k" : false;
 typeof settings_hotkey_sysinfo == "undefined" ? settings_hotkey_sysinfo = "i" : false;
 typeof settings_hotkey_favorites == "undefined" ? settings_hotkey_favorites = "f" : false;
 typeof settings_hotkey_focus_search == "undefined" ? settings_hotkey_focus_search = "s" : false;
@@ -49,6 +61,7 @@ typeof settings_global_passgen_format == "undefined" ? settings_global_passgen_f
 typeof settings_window_replace_timestamps == "undefined" ? settings_window_replace_timestamps = true : false;
 typeof settings_window_replaced_timestamp_format_full == "undefined" ? settings_window_replaced_timestamp_format_full = "LLLL" : false;
 typeof settings_window_replaced_timestamp_format_short == "undefined" ? settings_window_replaced_timestamp_format_short = "L, LTS" : false;
+typeof settings_leftmenu_vm_cm_dropdown_icons == "undefined" ? settings_leftmenu_vm_cm_dropdown_icons = true : false;
 typeof settings_hotkey_custom_1 == "undefined" ? settings_hotkey_custom_1 = false : false;
 typeof settings_hotkey_custom_2 == "undefined" ? settings_hotkey_custom_2 = false : false;
 typeof settings_hotkey_custom_3 == "undefined" ? settings_hotkey_custom_3 = false : false;
@@ -59,7 +72,7 @@ typeof settings_hotkey_custom_7 == "undefined" ? settings_hotkey_custom_7 = fals
 typeof settings_hotkey_custom_8 == "undefined" ? settings_hotkey_custom_8 = false : false;
 typeof settings_hotkey_custom_9 == "undefined" ? settings_hotkey_custom_9 = false : false;
 typeof settings_right_iconize_header_links == "undefined" ? settings_right_iconize_header_links = true : false;
-typeof settings_sysinfo_background_call_timeout == "undefined" ? settings_sysinfo_background_call_timeout = 10 : false;
+typeof settings_side_slider_background_refresh_time == "undefined" ? settings_side_slider_background_refresh_time = 5 : false;
 typeof settings_leftmenu_width == "undefined" ? settings_leftmenu_width = 260 : false;
 typeof settings_sysinfo_easypie_charts == "undefined" ? settings_sysinfo_easypie_charts = true : false;
 typeof settings_sysinfo_easypie_charts_width == "undefined" ? settings_sysinfo_easypie_charts_width = 4 : (settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width));
@@ -72,6 +85,7 @@ typeof settings_animation_left == "undefined" ? settings_animation_left = true :
 settings_animation_left ? $settings_animation_left_slide_time = 280 : $settings_animation_left_slide_time = 0;
 typeof settings_animation_tabs == "undefined" ? settings_animation_tabs = true : false;
 settings_animation_tabs ? $settings_animation_tabs_slide_time = 280 : $settings_animation_tabs_slide_time = 0;
+typeof settings_show_terminal_link == "undefined" ? settings_show_terminal_link = true : false;
 typeof settings_favorites == "undefined" ? settings_favorites = true : false;
 try {
     t__wi_p.$
@@ -81,15 +95,17 @@ try {
 
 function n___p__f(b) {
     var a = t__wi_p.$("#wrapper").data("access-level");
-    if (a != "0") {
+    if (a != "0" && is_module("status") != "1") {
         return
     }
     if (b) {
         t__wi_p.$("body .right-side-tabs-toggler").addClass("hidden");
         t__wi_p.$("body .right-side-tabs").css("right", "0px").addClass("right-side-tabs-fixed");
-        t__wi_p.$("html").attr("data-slider-fixed", "1")
+        if (settings_side_slider_enabled) {
+            t__wi_p.$("html").attr("data-slider-fixed", "1")
+        }
     } else {
-        if (settings_notification_slider_enabled) {
+        if (settings_side_slider_enabled) {
             t__wi_p.$("body .right-side-tabs-toggler").removeClass("hidden opened").css("right", "0")
         }
         t__wi_p.$("body .right-side-tabs").css("right", "-302px").removeClass("right-side-tabs-fixed");
@@ -98,6 +114,10 @@ function n___p__f(b) {
 }
 if (t__wi_p.$(".mobile-menu-toggler:visible").length) {
     n___p__f(0)
+}
+
+function upperFirst(a) {
+    return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase()
 }
 
 function __slm() {
@@ -117,6 +137,32 @@ function __slm() {
     }
 }
 __slm();
+(function(c) {
+    function a(g) {
+        var f = c(this);
+        f.data("mouseheld_timeout", setTimeout(function() {
+            f.trigger("mouseheld")
+        }, g.data))
+    }
+
+    function b() {
+        var f = c(this);
+        clearTimeout(f.data("mouseheld_timeout"))
+    }
+    var d = c.event.special.mouseheld = {
+        setup: function(f) {
+            var g = c(this);
+            g.bind("mousedown", +f || d.time, a);
+            g.bind("mouseleave mouseup", b)
+        },
+        teardown: function() {
+            var f = c(this);
+            f.unbind("mousedown", a);
+            f.unbind("mouseleave mouseup", b)
+        },
+        time: 750
+    }
+})(jQuery);
 
 function array_flip(c) {
     var b, a = {};
@@ -138,11 +184,23 @@ function arrayIntersect(g, d) {
     return !$.isEmptyObject(f)
 }
 
+function is_numeric(a) {
+    return Number(parseFloat(a)) == a
+}
+
 function is_module(a) {
-    if ($.inArray(a, t__wi_p.$("body").data("available-modules")) > -1) {
-        return true
+    if (t__wi_p.$("body").data(a) != undefined) {
+        if (t__wi_p.$('iframe[name="page"]').contents().length && t__wi_p.$('iframe[name="page"]').contents().find("body").data(a) != undefined) {
+            return t__wi_p.$('iframe[name="page"]').contents().find("body").data(a)
+        } else {
+            return t__wi_p.$("body").data(a)
+        }
     } else {
-        return false
+        if ($.inArray(a, t__wi_p.$("body").data("available-modules")) > -1) {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
@@ -169,6 +227,77 @@ function lang(b, a) {
         return c ? array_flip(c)[$.trim(b)] : false
     } else {
         return c ? c[b] : false
+    }
+}
+
+function manageConfig(d) {
+    var b = ["config_portable_module_csf_style_custom_promoted", "config_portable_theme_charset_warning_shown", "config_portable_module_xsql_fit_content_screen_height", "config_portable_module_filemanager_hide_toolbar", "config_portable_module_filemanager_hovered_toolbar", "config_portable_module_filemanager_hide_actions", "config_portable_module_filemanager_remember_tabs", "config_portable_module_filemanager_calculate_size", "config_portable_module_filemanager_notification_type"];
+    if (d == "get_options") {
+        return b
+    }
+    if (d == "save") {
+        var a = {},
+            c = 0;
+        $.each(localStorage, function(g, f) {
+            if (typeof g == "string" && g.indexOf($hostname) > -1 && arrayIntersect(b, g)) {
+                if (f == "true") {
+                    c = true
+                } else {
+                    if (f == "false") {
+                        c = false
+                    } else {
+                        if (is_numeric(f)) {
+                            c = parseInt(f)
+                        } else {
+                            c = f
+                        }
+                    }
+                }
+                a[g.replace($hostname + "-", "")] = c
+            }
+        });
+        t__wi_p.$___ajax_requested_url = "___blocked";
+        setTimeout(function() {
+            $.ajax({
+                type: "POST",
+                url: $_____link_full + "/index.cgi?xhr-manage-config=1&save=1",
+                data: a,
+                dataType: "text",
+                success: function(f) {},
+                error: function() {}
+            })
+        }, 1000)
+    } else {
+        if (d === "load") {
+            t__wi_p.$___ajax_requested_url = "___blocked";
+            var c = 0;
+            $.ajax({
+                type: "GET",
+                url: $_____link_full + "/index.cgi?xhr-manage-config=1&load=1",
+                data: false,
+                dataType: "json",
+                success: function(f) {
+                    $.each(f, function(h, g) {
+                        if (g == "true") {
+                            c = true
+                        } else {
+                            if (g == "false") {
+                                c = false
+                            } else {
+                                if (is_numeric(g)) {
+                                    c = parseInt(g)
+                                } else {
+                                    c = g
+                                }
+                            }
+                        }
+                        localStorage.setItem(($hostname + "-" + h), c);
+                        window[h] = c
+                    })
+                },
+                error: function() {}
+            })
+        }
     }
 }
 
@@ -201,7 +330,7 @@ function __lrs(j, g) {
             t__wi_p.$(".loader-container").css("background-color", "#ededed").css("display", "block")
         } else {
             t__wi_p.setTimeout(function() {
-                if (t___wi.parent.$___________right === 0 && t__wi_p.$___________lrs_r_l === 0) {
+                if (t__wi_p.$___________right === 0 && t__wi_p.$___________lrs_r_l === 0) {
                     t__wi_p.$___________lrs_r_l = 1;
                     if (t__wi_p.$(".loader-container").hasClass("loading-started")) {
                         if (settings_loader_top && t__wi_p.t___p__xhr_l === 0) {
@@ -260,6 +389,9 @@ function product_name(d) {
 }
 
 function __s___() {
+    if (t__wi_p.$____loader_block__) {
+        return
+    }
     var d = 0;
     xx = t__wi_p.$('iframe[name="page"]').get(0), current_window = t__wi_p.$('iframe[name="page"]').contents(), current_window = (current_window.length ? current_window : $(document));
     if (xx && typeof xx.contentWindow.$ != "function" || !__num()) {
@@ -279,9 +411,6 @@ function __s___() {
         b = $("body").find(".container-fluid");
         c = $("head")
     }
-    if (current_window.find('body[class*="' + bbbb.$g__o__f_m + '"]').length) {
-        d = 1100
-    }
     setTimeout(function() {
         if (b.length) {
             b.animate({
@@ -296,6 +425,9 @@ function __s___() {
 }
 
 function __lre() {
+    if (t__wi_p.$____loader_block__) {
+        return
+    }
     __s___();
     t__wi_p.$(".loader-container").removeClass("loading-started").css("background-color", "transparent").css("display", "none");
     t__wi_p.$('iframe[name="page"]').animate({
@@ -375,7 +507,12 @@ function s(d) {
 t__wi_p.$('iframe[name="page"]').unbind("load");
 t__wi_p.$('iframe[name="page"]').on("load", function() {
     if (t__wi_p.$___________initial === 1) {
-        __mss()
+        $.each(manageConfig("get_options"), function(b, a) {
+            localStorage.setItem(($hostname + "-" + a), t__wi_p[a]);
+            window[a] = t__wi_p[a]
+        });
+        __mss();
+        t__wi_p.fetch_right_pane_favorites()
     }
     var c = t__wi_p.$('iframe[name="page"]').contents();
     if (c && c.find('iframe[name="page"]').length) {
@@ -390,7 +527,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
     if (__num() && !d) {
         t__wi_p.__lre()
     }
-    if ($("body").find(".form-signin-banner").length === 1 || $("body").find('form[action*="session_login"]').length === 1) {
+    if ($("body").find(".form-signin-banner").length === 1 || $("body").find('form[action*="session_login.cgi"]').length === 1 || $("body").find('form[action*="pam_login.cgi"]').length === 1) {
         t__wi_p.location = t___wi.location.origin
     }
     ____iframe___ = t__wi_p.$("#iframe")[0];
@@ -413,10 +550,10 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
             return
         }
         __lre();
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?1820");
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?1820")
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?" + $g__t__ver_str + "");
+        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?" + $g__t__ver_str + "")
     }
-    if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
+    if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num() && !t__wi_p.$____loader_block__) {
         t__wi_p.NProgress.done()
     }
     if (typeof t__wi_p.__dpt == "function") {
@@ -425,7 +562,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
     $("body").unbind("mousewheel");
     !t__wi_p.$___________initial && __lre();
     delete __________was_runner___;
-    t___wi.parent.$___________right = 1;
+    t__wi_p.$___________right = 1;
     $(function() {
         if (t__wi_p.location.search == "?theme-update-finished" || $("#wrapper").data("notice") == 1) {
             t__wi_p.$('.right-side-tabs-notification[data-type="authentic_remote_version"]').find("i.af-clear-all").trigger("click");
@@ -468,12 +605,14 @@ function __num() {
 var $__was = function() {
     var d = $.url(t___wi.location),
         c = d.attr("path");
-    if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/virtual-server/backup.cgi") > -1 || c.indexOf("/virtual-server/script_install.cgi") > -1 || c.indexOf("/virtual-server/mass_scripts.cgi") > -1 || c.indexOf("/server-manager/backup.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1 || c.indexOf("/webmin/upgrade.cgi") > -1) {
+    if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/cpan/install.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/virtual-server/backup.cgi") > -1 || c.indexOf("/virtual-server/script_install.cgi") > -1 || c.indexOf("/virtual-server/mass_scripts.cgi") > -1 || c.indexOf("/server-manager/backup.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1 || c.indexOf("/webmin/upgrade.cgi") > -1) {
         $("html").data("data-pagescroll", true)
     }
-    if (($("pre") && $("pre").length > 0 && $("pre").length <= 2) || $("html").data("data-pagescroll") === true) {
+    if (!$('body[class^="syslog"]').length && (($("pre") && $("pre").length > 0 && $("pre").length <= 2) || $("html").data("data-pagescroll") === true)) {
         if (__num()) {
-            __s___()
+            setTimeout(function() {
+                __s___()
+            }, 1200)
         }
         $("body").bind("mousewheel", function() {
             return false
@@ -503,4 +642,9 @@ $("html").on("dblclick", "body", function() {
 });
 if (settings_window_autoscroll && t___wi.location != t__wi_p.location) {
     $__was_runner = t___wi.setInterval($__was, 201)
+}
+if ($t_av__session === 0) {
+    setTimeout(function() {
+        __s___()
+    }, 200)
 };

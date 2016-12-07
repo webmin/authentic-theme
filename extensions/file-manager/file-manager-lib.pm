@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -13,11 +13,24 @@ our %text = ( load_language( $request_uri{'module'} ), %text );
 
 our $checked_path;
 
+sub get_attr_status {
+    return has_command('lsattr');
+}
+
+sub get_selinux_status {
+    return is_selinux_enabled();
+}
+
+sub get_selinux_command_type {
+    my $out = backquote_command("ls --help 2>&1 </dev/null");
+    return $out =~ /--scontext/ ? 1 : 0;
+}
+
 sub set_module {
     my ($module) = @_;
     set_env( 'foreign_module_name', $module );
-    set_env( 'foreign_root_directory', ( get_env('document_root') . '/' . $module ) );
-
+    set_env( 'foreign_root_directory',
+        ( get_env('document_root') . '/' . $module ) );
 }
 
 sub get_libs {
@@ -110,6 +123,10 @@ sub print_error {
 
 sub print_content {
 
+    my $setype = get_selinux_command_type();
+    my %secontext;
+    my %attributes;
+
     # Filter out not allowed entries
     if ( $remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT' ) {
 
@@ -117,7 +134,8 @@ sub print_content {
         for $path (@allowed_paths) {
             my $slashed = $path;
             $slashed .= "/" if ( $slashed !~ /\/$/ );
-            push @tmp_list, grep { $slashed =~ /^$_\// || $_ =~ /$slashed/ } @list;
+            push @tmp_list,
+              grep { $slashed =~ /^$_\// || $_ =~ /$slashed/ } @list;
         }
 
         # Remove duplicates
@@ -125,14 +143,49 @@ sub print_content {
         @list = keys %hash;
     }
 
+    # List attributes
+    if ( $userconfig{'columns'} =~ /attributes/ && get_attr_status() ) {
+        my $command =
+          get_attr_command() . join( ' ', map { quotemeta("$_") } @list );
+        my $output = `$command`;
+        my @attributesArr =
+          map { [ split( /\s+/, $_, 2 ) ] } split( /\n/, $output );
+        %attributes = map {
+            $_->[1] => ( '<span data-attributes="s">' . $_->[0] . '</span>' )
+        } @attributesArr;
+    }
+
+    # List security context
+    if ( $userconfig{'columns'} =~ /selinux/ && get_selinux_status() ) {
+        my $command =
+          get_selinux_command() . join( ' ', map { quotemeta("$_") } @list );
+        my $output = `$command`;
+        ( !$setype && ( $output =~ s/\n//g, $output =~ s/,\s/,/g ) );
+        my $delimiter = ( $setype ? '\n' : ',' );
+        my @searray =
+          map { [ split( /\s+/, $_, 2 ) ] } split( /$delimiter/, $output );
+        %secontext = map {
+            $_->[1] => (
+                $_->[0] eq "?"
+                ? undef
+                : ( '<span data-secontext>' . $_->[0] . '</span>' )
+              )
+        } @searray;
+    }
+
     # Get info about directory entries
-    @info = map { [ $_, stat($_), mimetype($_), -d $_ ] } @list;
+    @info = map {
+        [
+            $_,    lstat($_),      &mimetype($_), -d,
+            -l $_, $secontext{$_}, $attributes{$_}
+        ]
+    } @list;
 
     # Filter out folders
-    @folders = map {$_} grep { $_->[15] == 1 } @info;
+    @folders = map { $_ } grep { $_->[15] == 1 } @info;
 
     # Filter out files
-    @files = map {$_} grep { $_->[15] != 1 } @info;
+    @files = map { $_ } grep { $_->[15] != 1 } @info;
 
     # Sort stuff by name
     @folders = sort { $a->[0] cmp $b->[0] } @folders;
@@ -146,10 +199,11 @@ sub print_content {
     %allowed_for_edit = map { $_ => 1 } @allowed_for_edit;
 
     # Set icons variables
-    $edit_icon    = "<i class='fa fa-edit' alt='$text{'edit'}'></i>";
-    $rename_icon  = "<i class='fa fa-font' title='$text{'rename'}'></i>";
-    $extract_icon = "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
-    $goto_icon    = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
+    $edit_icon   = "<i class='fa fa-edit' alt='$text{'edit'}'></i>";
+    $rename_icon = "<i class='fa fa-font' title='$text{'rename'}'></i>";
+    $extract_icon =
+      "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
+    $goto_icon = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
 
     $page      = 1;
     $pagelimit = 4294967295;
@@ -176,21 +230,46 @@ sub print_content {
     print '<html>';
     print '<head></head>';
     print '<body>';
-    print "<div class='total'>" . text( $info_total, $info_files, $info_folders ) . "</div>";
+    print "<div class='total'>"
+      . text( $info_total, $info_files, $info_folders )
+      . "</div>";
 
     # Render current directory entries
     print &ui_form_start( "", "post", undef, "id='list_form'" );
-    @ui_columns = ( '<input id="select-unselect" type="checkbox" onclick="selectUnselect(this)" />', '' );
-    push @ui_columns, $text{'name'};
-    push @ui_columns, $text{'type'} if ( $userconfig{'columns'} =~ /type/ );
-    push @ui_columns, $text{'actions'};
-    push @ui_columns, $text{'size'} if ( $userconfig{'columns'} =~ /size/ );
-    push @ui_columns, $text{'owner_user'} if ( $userconfig{'columns'} =~ /owner_user/ );
-    push @ui_columns, $text{'permissions'} if ( $userconfig{'columns'} =~ /permissions/ );
-    push @ui_columns, $text{'last_mod_time'} if ( $userconfig{'columns'} =~ /last_mod_time/ );
+    @ui_columns = (
+'<input id="select-unselect" type="checkbox" onclick="selectUnselect(this)" />',
+        ''
+    );
+    push @ui_columns, ( '<span data-head-name>' . $text{'name'} . '</span>' );
+    push @ui_columns, ( '<span data-head-type>' . $text{'type'} . '</span>' )
+      if ( $userconfig{'columns'} =~ /type/ );
+    push @ui_columns,
+      ( '<span data-head-actions>' . $text{'actions'} . '</span>' );
+    push @ui_columns, ( '<span data-head-size>' . $text{'size'} . '</span>' )
+      if ( $userconfig{'columns'} =~ /size/ );
+    push @ui_columns,
+      ( '<span data-head-owner_user>' . $text{'ownership'} . '</span>' )
+      if ( $userconfig{'columns'} =~ /owner_user/ );
+    push @ui_columns,
+      ( '<span data-head-permissions>' . $text{'permissions'} . '</span>' )
+      if ( $userconfig{'columns'} =~ /permissions/ );
+    push @ui_columns,
+      ( '<span data-head-attributes>' . $text{'attributes'} . '</span>' )
+      if ( get_attr_status() && $userconfig{'columns'} =~ /attributes/ );
+    push @ui_columns,
+      ( '<span data-head-selinux>' . $text{'selinux'} . '</span>' )
+      if ( get_selinux_status() && $userconfig{'columns'} =~ /selinux/ );
+    push @ui_columns,
+      ( '<span data-head-last_mod_time>' . $text{'last_mod_time'} . '</span>' )
+      if ( $userconfig{'columns'} =~ /last_mod_time/ );
 
     print &ui_columns_start( \@ui_columns );
-    for ( my $count = 1 + $pagelimit * ( $page - 1 ); $count <= $pagelimit + $pagelimit * ( $page - 1 ); $count++ ) {
+    for (
+        my $count = 1 + $pagelimit * ( $page - 1 ) ;
+        $count <= $pagelimit + $pagelimit * ( $page - 1 ) ;
+        $count++
+      )
+    {
         if ( $count > scalar(@list) ) { last; }
         my $class = $count & 1 ? "odd" : "even";
         my $link = $list[ $count - 1 ][0];
@@ -206,15 +285,33 @@ sub print_content {
         my $type = $list[ $count - 1 ][14];
         $type =~ s/\//\-/g;
         my $img = "images/icons/mime/$type.png";
-        unless ( -e $request_uri{'module'} . '/' . $img ) { $img = "images/icons/mime/unknown.png"; }
-        $size        = &nice_size( $list[ $count - 1 ][8] );
-        $user        = getpwuid( $list[ $count - 1 ][5] ) ? getpwuid( $list[ $count - 1 ][5] ) : $list[ $count - 1 ][5];
-        $group       = getgrgid( $list[ $count - 1 ][6] ) ? getgrgid( $list[ $count - 1 ][6] ) : $list[ $count - 1 ][6];
+        unless ( -e $request_uri{'module'} . '/' . $img ) {
+            $img = "images/icons/mime/unknown.png";
+        }
+        $size = &nice_size( $list[ $count - 1 ][8] );
+        $user =
+            getpwuid( $list[ $count - 1 ][5] )
+          ? getpwuid( $list[ $count - 1 ][5] )
+          : $list[ $count - 1 ][5];
+        $group =
+            getgrgid( $list[ $count - 1 ][6] )
+          ? getgrgid( $list[ $count - 1 ][6] )
+          : $list[ $count - 1 ][6];
         $permissions = sprintf( "%04o", $list[ $count - 1 ][3] & 07777 );
-        $mod_time    = POSIX::strftime( '%Y/%m/%d - %T', localtime( $list[ $count - 1 ][10] ) );
 
-        $actions
-            = "<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$vlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
+        if ( get_selinux_status() && $userconfig{'columns'} =~ /selinux/ ) {
+            $selinux = $list[ $count - 1 ][17];
+        }
+
+        if ( get_attr_status() && $userconfig{'columns'} =~ /attributes/ ) {
+            $attributes = $list[ $count - 1 ][18];
+        }
+
+        $mod_time = POSIX::strftime( '%Y/%m/%d - %T',
+            localtime( $list[ $count - 1 ][10] ) );
+
+        $actions =
+"<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$vlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
 
         if ( $list[ $count - 1 ][15] == 1 ) {
             if ( $path eq '/' . $link ) {
@@ -225,66 +322,93 @@ sub print_content {
             }
         }
         else {
-            $href = "download.cgi?file=" . &urlize($link) . "&path=" . &urlize($path);
+            $href =
+              "download.cgi?file=" . &urlize($link) . "&path=" . &urlize($path);
             if ( $0 =~ /search.cgi/ ) {
-                ( $fname, $fpath, $fsuffix ) = fileparse( $list[ $count - 1 ][0] );
+                ( $fname, $fpath, $fsuffix ) =
+                  fileparse( $list[ $count - 1 ][0] );
                 if ( $base ne '/' ) {
                     $fpath =~ s/^\Q$base\E//g;
                 }
-                $actions
-                    = "$actions<a class='action-link' "
-                    . "href='index.cgi?path="
-                    . &urlize($fpath) . "' "
-                    . "title='$text{'goto_folder'}'>$goto_icon</a>";
+                $actions =
+                    "$actions<a class='action-link' "
+                  . "href='index.cgi?path="
+                  . &urlize($fpath) . "' "
+                  . "title='$text{'goto_folder'}'>$goto_icon</a>";
             }
             if ( index( $type, "text-" ) != -1
                 or exists( $allowed_for_edit{$type} ) )
             {
-                $actions
-                    = "$actions<a class='action-link' href='edit_file.cgi?file="
-                    . &urlize($link)
-                    . "&path="
-                    . &urlize($path)
-                    . "' title='$text{'edit'}' data-container='body'>$edit_icon</a>";
+                $actions =
+                    "$actions<a class='action-link' href='edit_file.cgi?file="
+                  . &urlize($link)
+                  . "&path="
+                  . &urlize($path)
+                  . "' title='$text{'edit'}' data-container='body'>$edit_icon</a>";
             }
-            if (   ( index( $type, "application-zip" ) != -1 && has_command('unzip') )
-                || ( index( $type, "application-x-7z-compressed" ) != -1 && has_command('7z') )
-                || ( index( $type, "application-x-rar" ) != -1           && has_command('unrar') )
-                || ( index( $type, "application-x-rpm" ) != -1 && has_command('rpm2cpio') && has_command('cpio') )
-                || ( index( $type, "application-x-deb" ) != -1 && has_command('dpkg') )
-                || ((      index( $type, "x-compressed-tar" ) != -1
+            if (
+                (
+                    index( $type, "application-zip" ) != -1
+                    && has_command('unzip')
+                )
+                || ( index( $type, "application-x-7z-compressed" ) != -1
+                    && has_command('7z') )
+                || ( index( $type, "application-x-rar" ) != -1
+                    && has_command('unrar') )
+                || (   index( $type, "application-x-rpm" ) != -1
+                    && has_command('rpm2cpio')
+                    && has_command('cpio') )
+                || ( index( $type, "application-x-deb" ) != -1
+                    && has_command('dpkg') )
+                || (
+                    (
+                           index( $type, "x-compressed-tar" ) != -1
                         || index( $type, "-x-tar" ) != -1
-                        || ( index( $type, "-x-bzip" ) != -1 && has_command('bzip2') )
-                        || ( index( $type, "-gzip" ) != -1   && has_command('gzip') )
-                        || ( index( $type, "-x-xz" ) != -1   && has_command('xz') )
+                        || ( index( $type, "-x-bzip" ) != -1
+                            && has_command('bzip2') )
+                        || ( index( $type, "-gzip" ) != -1
+                            && has_command('gzip') )
+                        || ( index( $type, "-x-xz" ) != -1
+                            && has_command('xz') )
                     )
                     && has_command('tar')
                 )
-                )
+              )
             {
-                $actions
-                    = "$actions <a class='action-link' href='extract.cgi?path="
-                    . &urlize($path)
-                    . "&file="
-                    . &urlize($link)
-                    . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
+                $actions =
+                    "$actions <a class='action-link' href='extract.cgi?path="
+                  . &urlize($path)
+                  . "&file="
+                  . &urlize($link)
+                  . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        @row_data
-            = ( "<a href='$href'><img src=\"$img\"></a>", "<a href=\"$href\" data-filemin-path=\"$href\">$vlink</a>" );
-        push @row_data, $type                if ( $userconfig{'columns'} =~ /type/ );
+        @row_data = (
+            "<a href='$href'><img src=\"$img\"></a>",
+            "<a href=\"$href\" data-filemin-path=\"$href\">$vlink</a>"
+        );
+        push @row_data, $type if ( $userconfig{'columns'} =~ /type/ );
         push @row_data, $actions;
-        push @row_data, $size                if ( $userconfig{'columns'} =~ /size/ );
-        push @row_data, $user . ':' . $group if ( $userconfig{'columns'} =~ /owner_user/ );
-        push @row_data, $permissions         if ( $userconfig{'columns'} =~ /permissions/ );
-        push @row_data, $mod_time            if ( $userconfig{'columns'} =~ /last_mod_time/ );
+        push @row_data, $size if ( $userconfig{'columns'} =~ /size/ );
+        push @row_data, $user . ':' . $group
+          if ( $userconfig{'columns'} =~ /owner_user/ );
+        push @row_data, $permissions
+          if ( $userconfig{'columns'} =~ /permissions/ );
+        push @row_data, $attributes
+          if ( get_attr_status() && $userconfig{'columns'} =~ /attributes/ );
+        push @row_data, $selinux
+          if ( get_selinux_status() && $userconfig{'columns'} =~ /selinux/ );
+        push @row_data, $mod_time
+          if ( $userconfig{'columns'} =~ /last_mod_time/ );
         print &ui_checked_columns_row( \@row_data, "", "name", $vlink );
     }
     print ui_columns_end();
     print &ui_hidden( "path", $path ), "\n";
     print '</form>';
-    print '<div class="error_message">' . $in{'error'} . '</div>'     if ( length $in{'error'} );
-    print '<div class="error_fatal">' . $in{'error_fatal'} . '</div>' if ( length $in{'error_fatal'} );
+    print '<div class="error_message">' . $in{'error'} . '</div>'
+      if ( length $in{'error'} );
+    print '<div class="error_fatal">' . $in{'error_fatal'} . '</div>'
+      if ( length $in{'error_fatal'} );
     print '</body>';
     print '</html>';
 
@@ -295,7 +419,7 @@ sub paster {
     my $x;
     my $j = $c . '/' . $f;
     if ( !$r && -f $j ne -d $j ) {
-        for ( my $t = 1; $t <= inf; $t += 1 ) {
+        for ( my $t = 1 ; $t <= inf ; $t += 1 ) {
             if ( !-e ( $j . '(' . $t . ')' ) ) {
                 $x = $t;
                 last;

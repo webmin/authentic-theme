@@ -178,13 +178,14 @@ settings_hotkey_toggle_key_virtualmin=Klávesová zkratka pro Virtualmin
 settings_hotkey_toggle_key_cloudmin=Klávesová zkratka pro Cloudmin
 settings_hotkey_toggle_key_usermin=Klávesová zkratka pro Usermin
 settings_hotkey_toggle_key_webmail=Klávesová zkratka pro Mail
-settings_hotkey_sysinfo=Klávesová zkratka pro System informationn
+settings_hotkey_sysinfo=Hotkey for dashboard
+settings_hotkey_shell=Hotkey for shell
 settings_hotkey_favorites=Hotkey for favorites
 settings_hotkey_focus_search=Klávesová zkratka pro hledání
 settings_hotkey_reload=Klávesová zkratka pro opetovné načtení stránky
 
-settings_sysinfo_background_call_timeout=Timeout for background information update
-settings_sysinfo_background_call_timeout_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>10</code> minutes. Decimal values can also be used.
+settings_side_slider_background_refresh_time=Timeout for background information update
+settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
 settings_sysinfo_easypie_charts=Zobrazit grafy
 settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu
 settings_sysinfo_csf_updates=Zkontrolovat aktualizace ConfigServer Security & Firewall
@@ -204,17 +205,17 @@ settings_leftmenu_vm_webpages=Zobrazit ve Virtualminu odkaz na <kbd>Edit Web Pag
 settings_leftmenu_vm_backup_amazon=Zobrazit ve Virtualminu odkaz na <kbd>Amazon S3 Buckets</kbd>
 
 settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Notification Slider options
-settings_notification_slider_fixed=Keep slider always visible
-settings_notification_color=Slider color
-settings_hotkey_toggle_slider=Hotkey for Notification Slider
+settings_right_notification_slider_options_title=Side slider options
+settings_side_slider_fixed=Keep slider always visible
+settings_side_slider_palette=Slider palette
+settings_hotkey_toggle_slider=Hotkey for slider
 settings_window_replace_timestamps=Enable dates substitutions
 settings_window_replaced_timestamp_format_short=Short date/time format
 settings_window_replaced_timestamp_format_full=Full date/time format
 settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <a href="http://momentjs.com" target="_blank">format</a>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>dddd, MMMM D, YYYY h:mm:ss</code> and short is <code>L, h:mm:ss</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
 
-settings_notification_slider_enabled=Enable slider
+settings_side_slider_enabled=Enable slider
 settings_leftmenu_user_html=Show HTML snippet
 settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
@@ -418,7 +419,7 @@ theme_xhred_datatable_semptydirectory=Directory is empty
 theme_xhred_filemanager_context_clipboard=Copy path to clipboard
 theme_xhred_global_warning=Warning
 theme_xhred_global_close=Close
-theme_xhred_encoding_warning=Detected that you are using <code>%charset</code> character set and not <code>utf-8</code>, which is strongly recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
+theme_xhred_encoding_warning=Detected that you are using non-unicode character set, which is not recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
 
 theme_xhred_filemanager__no_bookmarks=No saved bookmarks
 theme_xhred_filemanager_unbookmark_success=Directory <samp><em>%value</em></samp> was successfully removed from your bookmarks.
@@ -580,3 +581,54 @@ theme_error_access_not_root=Access denied: User needs access to the <em>Webmin C
 
 #18.20
 settings_hide_top_loader=Hide top progress bar and its loader
+
+
+#18.30
+settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
+settings_font_family=Font family
+settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your loacal computer in order to work. By using local fonts default is not loaded, which will result in faster theme load
+theme_xhred_global_shipped=Shipped
+theme_xhred_global_available=Available
+theme_xhred_global_not_available=Not available
+theme_xhred_global_default=Default
+theme_xhred_global_system_default=System default
+theme_xhred_global_local_system_default=Local system default
+theme_xhred_global_stats=Stats
+theme_xhred_global_notifications=Notifications
+theme_xhred_global_favorites=Favorites
+theme_xhred_global_cpu_load=CPU load
+theme_xhred_notification_none=No notifications
+theme_xhred_notification_no_data=No collected data
+theme_xhred_notification_no_favorites=No favorites data
+theme_xhred_global_theme_version=Theme version
+
+settings_side_slider_sysinfo_enabled=Show dashboard tab
+settings_side_slider_notifications_enabled=Show notifications tab
+settings_side_slider_favorites_enabled=Show favorites tab
+settings_side_slider_tabs_hotkeys=Enable hotkeys for switching tabs
+settings_side_slider_tabs_hotkeys_description=You can use keyboard hotkeys to toggle tabs back and forth using <code>Meta+⇧+Tab/Meta+Tab</code> in case global option for hotkeys usage is enabled
+settings_show_terminal_link=Show terminal button
+
+theme_xhred_sysinfo_system_monitors=System Monitors
+theme_xhred_sysinfo_server_status=Servers Status
+theme_xhred_sysinfo_software_versions=Software Versions
+theme_xhred_sysinfo_recent_logins=Recent Logins
+theme_xhred_sysinfo_vm_package_updates=Virtualmin Package Updates
+theme_xhred_sysinfo_disk_quotas=Disk Quotas
+theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
+
+left_netdata=Realtime Monitoring
+settings_leftmenu_netdata=Show Netdata realtime monitoring link
+settings_leftmenu_netdata_link=Netdata server preferred link
+
+theme_xhred_filemanager_context_chattr=Change attributes
+theme_xhred_filemanager_changing_attributes=Setting attributes to <samp><em>%value</em></samp> on selected file(s).
+theme_xhred_filemanager_successful_attributes_with_errors=Attributes haven't been set successfully for all objects:
+theme_xhred_filemanager_successful_attributes=Attributes have been set successfully.
+
+theme_xhred_filemanager_context_chcon=Change security context
+theme_xhred_filemanager_changing_secontext=Changing security context to <samp><em>%value</em></samp> on selected file(s).
+theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
+theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
+
+theme_xhred_global_no_results_found=No results found

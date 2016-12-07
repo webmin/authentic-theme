@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -26,61 +26,78 @@ sub settings {
 
 sub embed_header {
     my (@args) = @_;
-    my $charset
-        = defined($main::force_charset)
-        ? $main::force_charset
-        : get_charset();
+    my $charset =
+      defined($main::force_charset)
+      ? $main::force_charset
+      : get_charset();
 
     print '<!DOCTYPE html>', "\n";
-    print '<html data-background-style="'
-        . ( $__settings{'settings_background_color'} ? $__settings{'settings_background_color'} : 'gainsboro' )
-        . '">', "\n";
+    print '<html data-hostname="'
+      . &get_display_hostname()
+      . '" data-session="'
+      . ( $main::session_id ? 1 : 0 )
+      . '" data-script-name="'
+      . get_env('script_name')
+      . '" data-sestatus="'
+      . is_selinux_enabled()
+      . '" data-background-style="'
+      . (
+          $__settings{'settings_background_color'}
+        ? $__settings{'settings_background_color'}
+        : 'gainsboro'
+      ) . '">', "\n";
     print '<head>', "\n";
     print '<title data-initial="' . $args[0] . '">', $args[0], '</title>', "\n";
-    print '<meta charset="' . ( $charset ? quote_escape($charset) : 'utf-8' ) . '">', "\n";
+    print '<meta charset="'
+      . ( $charset ? quote_escape($charset) : 'utf-8' )
+      . '">', "\n";
     print '<link rel="shortcut icon" href="'
-        . $gconfig{'webprefix'}
-        . '/images/favicon'
-        . (
+      . $gconfig{'webprefix'}
+      . '/images/favicon'
+      . (
         ( &get_product_name() eq 'usermin' )
         ? '-usermin'
         : '-webmin'
-        ) . '.ico">' . "\n";
-    print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+      ) . '.ico">' . "\n";
+    print
+      '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+      . "\n";
     ( $args[1] && ( print( $args[1] . "\n" ) ) );
 
-    if ( $in{'stripped'} eq '1' ) {
-        return;
-    }
+    ( get_stripped() && return );
 
     if ( $args[3] eq '1' ) {
 
         my @css = (
-            'bootstrap',  'bootstrap.tagsinput', 'datepicker',        'fontawesome-animation',
-            'codemirror', 'jquery.jspanel',      'jquery.datatables', 'fontbase',
-            'authentic'
+            'bootstrap',      'bootstrap.tagsinput',
+            'datepicker',     'fontawesome-animation',
+            'jquery.jspanel', 'jquery.datatables',
+            'fontbase',       'authentic'
         );
 
         my @js = (
-            'timeplot',              'jquery',
-            'jquery-ui',             'jquery.jspanel',
-            'jquery.scrollintoview', 'bootbox',
-            'jquery.purl',           'bootstrap',
-            'bootstrap.tagsinput',   'datepicker',
-            'fileinput',             'codemirror',
-            'jquery.datatables',     'jquery.datatables.plugins',
-            'jquery.easypiechart',   'clipboard',
-            'contextmenu',           'init'
+            'timeplot',                  'jquery',
+            'jquery-ui',                 'jquery.jspanel',
+            'jquery.scrollintoview',     'bootbox',
+            'jquery.purl',               'bootstrap',
+            'bootstrap.tagsinput',       'datepicker',
+            'fileinput',                 'jquery.datatables',
+            'jquery.datatables.plugins', 'jquery.easypiechart',
+            'clipboard',                 'contextmenu',
+            'init'
         );
 
         if ( $args[2] eq 'debug' ) {
             foreach my $css (@css) {
                 print '<link href="'
-                    . $gconfig{'webprefix'}
-                    . '/unauthenticated/css/'
-                    . $css
-                    . '.src.css?1820" rel="stylesheet" type="text/css">' . "\n";
+                  . $gconfig{'webprefix'}
+                  . '/unauthenticated/css/'
+                  . $css
+                  . '.src.css?'
+                  . theme_version()
+                  . '" rel="stylesheet" type="text/css">' . "\n";
             }
+            embed_css_fonts();
         }
         else {
             embed_css_content();
@@ -100,14 +117,15 @@ sub embed_header {
                 }
 
                 print '<script src="'
-                    . $gconfig{'webprefix'}
-                    . '/unauthenticated/js/'
-                    . $js
-                    . '.src.js?1820" type="text/javascript"></script>' . "\n";
+                  . $gconfig{'webprefix'}
+                  . '/unauthenticated/js/'
+                  . $js
+                  . '.src.js?'
+                  . theme_version()
+                  . '" type="text/javascript"></script>' . "\n";
             }
         }
         else {
-            # is_st_p() && embed_js_timeplot();
             embed_js_bundle();
             embed_js_content();
             embed_js_init();
@@ -116,40 +134,50 @@ sub embed_header {
     else {
 
         my @css = (
-            'bootstrap', 'fontawesome-animation', 'jquery.scrollbar', 'jquery.autocomplete',
-            'nprogress', 'messenger',             'select2',          'fontbase',
+            'bootstrap',        'fontawesome-animation',
+            'jquery.scrollbar', 'jquery.autocomplete',
+            'nprogress',        'messenger',
+            'select2',          'fontbase',
             'authentic'
         );
 
         my @js = (
-            'jquery',           'jquery-ui',  'jquery.scrollbar', 'jquery.autocomplete',
-            'momentjs',         'favico',     'select2',          'jquery.purl',
-            'jquery.injectCSS', 'transition', 'nprogress',        'messenger',
-            'init'
+            'jquery',              'jquery-ui',
+            'bootstrap',           'jquery.scrollbar',
+            'jquery.autocomplete', 'momentjs',
+            'favico',              'select2',
+            'jquery.purl',         'jquery.injectCSS',
+            'transition',          'nprogress',
+            'messenger',           'init'
         );
 
         if ( $args[2] eq 'debug' ) {
             foreach my $css (@css) {
                 print '<link href="'
-                    . $gconfig{'webprefix'}
-                    . '/unauthenticated/css/'
-                    . $css
-                    . '.src.css?1820" rel="stylesheet" type="text/css">' . "\n";
+                  . $gconfig{'webprefix'}
+                  . '/unauthenticated/css/'
+                  . $css
+                  . '.src.css?'
+                  . theme_version()
+                  . '" rel="stylesheet" type="text/css">' . "\n";
             }
-
+            embed_css_fonts();
         }
         else {
             embed_css_parent();
             embed_css_bundle();
         }
 
-        if ( length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue' ) {
+        if ( length $__settings{'settings_navigation_color'}
+            && $__settings{'settings_navigation_color'} ne 'blue' )
+        {
             print '<link href="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/css/palettes/'
-                . lc( $__settings{'settings_navigation_color'} ) . '.'
-                . ( $args[2] eq 'debug' ? 'src' : 'min' )
-                . '.css?1820" rel="stylesheet" type="text/css" data-palette>' . "\n";
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/css/palettes/'
+              . lc( $__settings{'settings_navigation_color'} ) . '.'
+              . ( $args[2] eq 'debug' ? 'src' : 'min' ) . '.css?'
+              . theme_version()
+              . '" rel="stylesheet" type="text/css" data-palette>' . "\n";
         }
 
         embed_styles();
@@ -158,10 +186,12 @@ sub embed_header {
         if ( $args[2] eq 'debug' ) {
             foreach my $js (@js) {
                 print '<script src="'
-                    . $gconfig{'webprefix'}
-                    . '/unauthenticated/js/'
-                    . $js
-                    . '.src.js?1820" type="text/javascript"></script>' . "\n";
+                  . $gconfig{'webprefix'}
+                  . '/unauthenticated/js/'
+                  . $js
+                  . '.src.js?'
+                  . theme_version()
+                  . '" type="text/javascript"></script>' . "\n";
             }
         }
         else {
@@ -171,7 +201,7 @@ sub embed_header {
         }
 
     }
-
+    embed_js_scripts();
     print '</head>', "\n";
 }
 
@@ -185,15 +215,17 @@ sub embed_settings {
         );
 
         print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/settings.js?'
-            . time()
-            . '" type="text/javascript"></script>' . "\n";
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/js/settings.js?'
+          . time()
+          . '" type="text/javascript"></script>' . "\n";
     }
-    elsif ( -r $root_directory . "/authentic-theme/unauthenticated/js/settings.js"
+    elsif (
+        -r $root_directory . "/authentic-theme/unauthenticated/js/settings.js"
         && !-r $config_directory . "/authentic-theme/settings.js" )
     {
-        unlink $root_directory . "/authentic-theme/unauthenticated/js/settings.js";
+        unlink $root_directory
+          . "/authentic-theme/unauthenticated/js/settings.js";
     }
 }
 
@@ -210,15 +242,17 @@ sub embed_styles {
             );
         }
         print '<link href="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/css/styles.css?'
-            . time()
-            . '" rel="stylesheet" type="text/css">' . "\n";
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/styles.css?'
+          . time()
+          . '" rel="stylesheet" type="text/css">' . "\n";
     }
-    elsif ( -r $root_directory . "/authentic-theme/unauthenticated/css/styles.css"
+    elsif (
+        -r $root_directory . "/authentic-theme/unauthenticated/css/styles.css"
         && !-r $config_directory . "/authentic-theme/styles.css" )
     {
-        unlink $root_directory . "/authentic-theme/unauthenticated/css/styles.css";
+        unlink $root_directory
+          . "/authentic-theme/unauthenticated/css/styles.css";
     }
 }
 
@@ -229,59 +263,94 @@ sub embed_pm_scripts {
     }
 }
 
+sub embed_css_fonts {
+    if ( !$__settings{'settings_font_family'} ) {
+        print '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/fonts-roboto.'
+          . ( theme_mode() eq 'debug' ? 'src' : 'min' ) . '.css?'
+          . theme_version()
+          . '" rel="stylesheet" type="text/css">' . "\n";
+    }
+    elsif ( $__settings{'settings_font_family'} != '1' ) {
+        print '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/font-'
+          . $__settings{'settings_font_family'} . '.'
+          . ( theme_mode() eq 'debug' ? 'src' : 'min' ) . '.css?'
+          . theme_version()
+          . '" rel="stylesheet" type="text/css">' . "\n";
+    }
+}
+
 sub embed_css_bundle {
     print '<link href="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/css/bundle.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/css/bundle.min.css?'
+      . theme_version()
+      . '" rel="stylesheet" type="text/css">' . "\n";
+    embed_css_fonts();
 }
 
 sub embed_css_parent {
     print '<link href="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/css/parent.bundle.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/css/parent.bundle.min.css?'
+      . theme_version()
+      . '" rel="stylesheet" type="text/css">' . "\n";
 }
 
 sub embed_css_content {
     print '<link href="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/css/content.bundle.min.css?1820" rel="stylesheet" type="text/css">' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/css/content.bundle.min.css?'
+      . theme_version()
+      . '" rel="stylesheet" type="text/css">' . "\n";
 }
 
 sub embed_js_timeplot {
     print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/timeplot.min.js?1820" type="text/javascript"></script>' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/js/timeplot.min.js?'
+      . theme_version()
+      . '" type="text/javascript"></script>' . "\n";
 }
 
 sub embed_js_bundle {
     print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/bundle.min.js?1820" type="text/javascript"></script>' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/js/bundle.min.js?'
+      . theme_version()
+      . '" type="text/javascript"></script>' . "\n";
 }
 
 sub embed_js_parent {
     print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/parent.bundle.min.js?1820" type="text/javascript"></script>' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/js/parent.bundle.min.js?'
+      . theme_version()
+      . '" type="text/javascript"></script>' . "\n";
 }
 
 sub embed_js_content {
     print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/content.bundle.min.js?1820" type="text/javascript"></script>' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/js/content.bundle.min.js?'
+      . theme_version()
+      . '" type="text/javascript"></script>' . "\n";
 }
 
 sub embed_js_init {
     print '<script src="'
-        . $gconfig{'webprefix'}
-        . '/unauthenticated/js/init.min.js?1820" type="text/javascript"></script>' . "\n";
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/js/init.min.js?'
+      . theme_version()
+      . '" type="text/javascript"></script>' . "\n";
 }
 
 sub embed_js_scripts {
 
-    if ( $in{'stripped'} eq '1' ) {
-        return;
-    }
+    ( get_stripped() && return );
 
     if ( -r $config_directory . "/authentic-theme/scripts.js" ) {
         if (  -s $config_directory
@@ -294,72 +363,87 @@ sub embed_js_scripts {
             );
         }
         print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/scripts.js?'
-            . time()
-            . '" type="text/javascript"></script>' . "\n";
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/js/scripts.js?'
+          . time()
+          . '" type="text/javascript"></script>' . "\n";
     }
-    elsif ( -r $root_directory . "/authentic-theme/unauthenticated/js/scripts.js"
+    elsif (
+        -r $root_directory . "/authentic-theme/unauthenticated/js/scripts.js"
         && !-r $config_directory . "/authentic-theme/scripts.js" )
     {
-        unlink $root_directory . "/authentic-theme/unauthenticated/js/scripts.js";
+        unlink $root_directory
+          . "/authentic-theme/unauthenticated/js/scripts.js";
     }
 }
 
 sub embed_footer {
     my (@args) = @_;
 
-    if ( $in{'stripped'} eq '1' ) {
-        return;
-    }
+    ( get_stripped() && return );
 
-    if ( get_env('script_name') ne '/session_login.cgi' ) {
+    if (   get_env('script_name') ne '/session_login.cgi'
+        && get_env('script_name') ne '/pam_login.cgi' )
+    {
+
         print '<script src="'
-            . $gconfig{'webprefix'}
-            . '/unauthenticated/js/postinit.'
-            . ( $args[0] eq 'debug' ? 'src' : 'min' )
-            . '.js?1820" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>' . "\n";
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/js/postinit.'
+          . ( $args[0] eq 'debug' ? 'src' : 'min' ) . '.js?'
+          . theme_version()
+          . '" type="text/javascript"></script><script>___authentic_theme_footer___ = 1;</script>'
+          . "\n";
 
         if ( $args[1] eq '1' || $args[2] eq 'stripped' ) {
             print '<script src="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/js/content.'
-                . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1820" type="text/javascript"></script>' . "\n";
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/js/content.'
+              . ( $args[0] eq 'debug' ? 'src' : 'min' ) . '.js?'
+              . theme_version()
+              . '" type="text/javascript"></script>' . "\n";
 
             # Load `MySQL/PostgreSQL` specific scripts
-            if ( index( get_module_name(), 'mysql' ) gt '-1' || index( get_module_name(), 'postgresql' ) gt '-1' ) {
+            if (   index( get_module_name(), 'mysql' ) gt '-1'
+                || index( get_module_name(), 'postgresql' ) gt '-1' )
+            {
                 print '<script src="'
-                    . $gconfig{'webprefix'}
-                    . '/extensions/sql.'
-                    . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1820" type="text/javascript"></script>' . "\n";
+                  . $gconfig{'webprefix'}
+                  . '/extensions/sql.'
+                  . ( $args[0] eq 'debug' ? 'src' : 'min' ) . '.js?'
+                  . theme_version()
+                  . '" type="text/javascript"></script>' . "\n";
             }
 
             # Load `File Manager` specific scripts
-            if ( index( get_module_name(), 'file-manager' ) gt '-1' || index( get_module_name(), 'filemin' ) gt '-1' ) {
+            if (   index( get_module_name(), 'file-manager' ) gt '-1'
+                || index( get_module_name(), 'filemin' ) gt '-1' )
+            {
                 print '<script src="'
-                    . $gconfig{'webprefix'}
-                    . '/extensions/file-manager/file-manager.'
-                    . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                    . '.js?1820" type="text/javascript"></script>' . "\n";
+                  . $gconfig{'webprefix'}
+                  . '/extensions/file-manager/file-manager.'
+                  . ( $args[0] eq 'debug' ? 'src' : 'min' ) . '.js?'
+                  . theme_version()
+                  . '" type="text/javascript"></script>' . "\n";
             }
         }
         else {
             print '<script src="'
-                . $gconfig{'webprefix'}
-                . '/unauthenticated/js/parent.'
-                . ( $args[0] eq 'debug' ? 'src' : 'min' )
-                . '.js?1820" type="text/javascript"></script>' . "\n";
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/js/parent.'
+              . ( $args[0] eq 'debug' ? 'src' : 'min' ) . '.js?'
+              . theme_version()
+              . '" type="text/javascript"></script>' . "\n";
         }
     }
 }
 
 sub is_st_p {
-    return (   index( $t_uri__i, '/virtual-server/history.cgi' ) == -1
-            && index( $t_uri__i, '/server-manager/bwgraph.cgi' ) == -1
-            && index( $t_uri__i, '/server-manager/history.cgi' ) == -1
-            && index( $t_uri__i, '/server-manager/one_history.cgi' ) == -1 ) ? 1 : 0;
+    return ( index( $t_uri__i, '/virtual-server/history.cgi' ) == -1
+          && index( $t_uri__i, '/server-manager/bwgraph.cgi' ) == -1
+          && index( $t_uri__i, '/server-manager/history.cgi' ) == -1
+          && index( $t_uri__i, '/server-manager/one_history.cgi' ) == -1 )
+      ? 1
+      : 0;
 }
 
 sub Atext {
@@ -372,8 +456,8 @@ sub Atext {
 sub init_vars {
     our $t_uri__i   = get_env('request_uri');
     our %__settings = settings();
-    our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
-        $t_var_product_m );
+    our ( %text, %in, %gconfig, $current_theme, $root_directory,
+        $theme_root_directory, $t_var_switch_m, $t_var_product_m );
 
     our %Atext = ( &load_language($current_theme), %Atext );
 
@@ -439,7 +523,8 @@ sub dashboard_switch {
 
 sub get_current_user_language {
     return substr(
-        (     $gconfig{ 'lang' . '_' . $base_remote_user }
+        (
+              $gconfig{ 'lang' . '_' . $base_remote_user }
             ? $gconfig{ 'lang' . '_' . $base_remote_user }
             : $gconfig{'lang'}
         ),
@@ -450,37 +535,43 @@ sub get_current_user_language {
 sub get_filters {
     my ($type) = @_;
     return
-          '-webkit-filter: grayscale('
-        . $__settings{ 'settings_grayscale_level_' . $type . '' } . ') '
-        . ( $type eq 'navigation' && 'sepia(' . $__settings{ 'settings_sepia_level_' . $type . '' } . ')' )
-        . ' saturate('
-        . $__settings{ 'settings_saturate_level_' . $type . '' }
-        . ') hue-rotate('
-        . $__settings{ 'settings_hue_level_' . $type . '' } . 'deg)'
-        . ( $type eq 'navigation'
-            && ' invert('
-            . $__settings{ 'settings_invert_level_' . $type . '' }
-            . ') brightness('
-            . $__settings{ 'settings_brightness_level_' . $type . '' }
-            . ') contrast('
-            . $__settings{ 'settings_contrast_level_' . $type . '' }
-            . ')' )
-        . '; filter: grayscale('
-        . $__settings{ 'settings_grayscale_level_' . $type . '' } . ') '
-        . ( $type eq 'navigation' && 'sepia(' . $__settings{ 'settings_sepia_level_' . $type . '' } . ')' )
-        . ' saturate('
-        . $__settings{ 'settings_saturate_level_' . $type . '' }
-        . ') hue-rotate('
-        . $__settings{ 'settings_hue_level_' . $type . '' } . 'deg)'
-        . ( $type eq 'navigation'
-            && ' invert('
-            . $__settings{ 'settings_invert_level_' . $type . '' }
-            . ') brightness('
-            . $__settings{ 'settings_brightness_level_' . $type . '' }
-            . ') contrast('
-            . $__settings{ 'settings_contrast_level_' . $type . '' }
-            . ')' )
-        . ';';
+        '-webkit-filter: grayscale('
+      . $__settings{ 'settings_grayscale_level_' . $type . '' } . ') '
+      . ( $type eq 'navigation'
+          && 'sepia('
+          . $__settings{ 'settings_sepia_level_' . $type . '' }
+          . ')' )
+      . ' saturate('
+      . $__settings{ 'settings_saturate_level_' . $type . '' }
+      . ') hue-rotate('
+      . $__settings{ 'settings_hue_level_' . $type . '' } . 'deg)'
+      . ( $type eq 'navigation'
+          && ' invert('
+          . $__settings{ 'settings_invert_level_' . $type . '' }
+          . ') brightness('
+          . $__settings{ 'settings_brightness_level_' . $type . '' }
+          . ') contrast('
+          . $__settings{ 'settings_contrast_level_' . $type . '' }
+          . ')' )
+      . '; filter: grayscale('
+      . $__settings{ 'settings_grayscale_level_' . $type . '' } . ') '
+      . ( $type eq 'navigation'
+          && 'sepia('
+          . $__settings{ 'settings_sepia_level_' . $type . '' }
+          . ')' )
+      . ' saturate('
+      . $__settings{ 'settings_saturate_level_' . $type . '' }
+      . ') hue-rotate('
+      . $__settings{ 'settings_hue_level_' . $type . '' } . 'deg)'
+      . ( $type eq 'navigation'
+          && ' invert('
+          . $__settings{ 'settings_invert_level_' . $type . '' }
+          . ') brightness('
+          . $__settings{ 'settings_brightness_level_' . $type . '' }
+          . ') contrast('
+          . $__settings{ 'settings_contrast_level_' . $type . '' }
+          . ')' )
+      . ';';
 }
 
 sub get_user_level {
@@ -497,10 +588,10 @@ sub get_user_level {
         $c = $server_manager::access{'owner'} ? 4 : 0;
     }
     elsif ($a) {
-        $c
-            = &virtual_server::master_admin()   ? 0
-            : &virtual_server::reseller_admin() ? 1
-            :                                     2;
+        $c =
+            &virtual_server::master_admin()   ? 0
+          : &virtual_server::reseller_admin() ? 1
+          :                                     2;
     }
     elsif ( &get_product_name() eq "usermin" ) {
         $c = 3;
@@ -542,7 +633,9 @@ sub get_button_style {
         $class = "info ";
         $icon =~ s/%icon/check-circle-o/ig;
     }
-    elsif ( index( $entry, 'update' ) gt "-1" || index( $entry, 'index_sync' ) gt "-1" ) {
+    elsif (index( $entry, 'update' ) gt "-1"
+        || index( $entry, 'index_sync' ) gt "-1" )
+    {
         $class = "info ";
         $icon =~ s/%icon/refresh/ig;
     }
@@ -570,13 +663,14 @@ sub get_button_style {
         $icon =~ s/%icon/times-circle/ig;
     }
     elsif (
-        (      index( $entry, 'install' ) gt "-1"
+        (
+               index( $entry, 'install' ) gt "-1"
             || index( $entry, 'recsok' ) gt "-1"
             || $entry eq 'scripts_iok'
             || $entry eq 'right_upok'
         )
         && index( $entry, 'uninstall' ) eq "-1"
-        )
+      )
     {
         $class = "success ";
         $icon =~ s/%icon/package-install fa-1_25x/ig;
@@ -595,7 +689,10 @@ sub get_button_style {
     elsif ( index( $entry, 'quota' ) gt "-1" ) {
         $icon =~ s/%icon/pie-chart/ig;
     }
-    elsif ( index( $entry, 'addboot' ) gt "-1" || index( $entry, 'enable' ) gt "-1" || $entry eq 'massdomains_enaok' ) {
+    elsif (index( $entry, 'addboot' ) gt "-1"
+        || index( $entry, 'enable' ) gt "-1"
+        || $entry eq 'massdomains_enaok' )
+    {
         $icon =~ s/%icon/toggle-switch  fa-1_25x/ig;
     }
     elsif ( index( $entry, 'shutdown' ) gt "-1" ) {
@@ -633,14 +730,20 @@ sub get_button_style {
     elsif ( index( $entry, 'history_ok' ) gt "-1" ) {
         $icon =~ s/%icon/area-chart/ig;
     }
+    elsif ( index( $entry, 'edit_open' ) gt "-1" ) {
+        $icon =~ s/%icon/files-o/ig;
+    }
     elsif (index( $entry, 'reboot' ) gt "-1"
         || $entry eq 'view_refresh'
-        || index( $entry, 'refreshmods_title' ) gt "-1" )
+        || index( $entry, 'refreshmods_title' ) gt "-1"
+        || $entry eq 'index_buttinit' )
     {
         if ( index( $entry, 'refreshmods_title' ) gt "-1" ) {
             $class = "primary ";
         }
-        elsif ( $entry ne 'reboot_ok' && $entry ne 'index_reboot' ) {
+        elsif ($entry ne 'reboot_ok' && $entry ne 'index_reboot'
+            || $entry eq 'index_buttinit' )
+        {
             $class = "warning ";
         }
         $icon =~ s/%icon/refresh-fi fa-1_25x/ig;
@@ -648,13 +751,12 @@ sub get_button_style {
     elsif (index( $entry, 'search' ) gt "-1"
         || index( $entry, 'index_broad' ) gt "-1"
         || $entry eq 'scripts_findok'
-        || $entry eq 'edit_kill'
         || $entry eq 'kill_title' )
     {
         $class = "info ";
         $icon =~ s/%icon/search/ig;
     }
-    elsif ( index( $entry, 'restart' ) gt "-1" ) {
+    elsif ( index( $entry, 'restart' ) gt "-1" || $entry eq 'edit_kill' ) {
         $class = "warning ";
         $icon =~ s/%icon/refresh/ig;
     }
@@ -666,7 +768,9 @@ sub get_button_style {
         $class = "success ";
         $icon =~ s/%icon/play/ig;
     }
-    elsif ( index( $entry, 'index_stop' ) gt "-1" || index( $entry, 'edit_stopnow' ) gt "-1" ) {
+    elsif (index( $entry, 'index_stop' ) gt "-1"
+        || index( $entry, 'edit_stopnow' ) gt "-1" )
+    {
         $class = "danger ";
         $icon =~ s/%icon/stop/ig;
     }
@@ -722,8 +826,12 @@ sub get_button_style {
     elsif ( index( $entry, 'index_tmpls' ) gt "-1" ) {
         $icon =~ s/%icon/table-edit fa-1_25x/ig;
     }
-    elsif ( index( $entry, 'index_sched' ) gt "-1" || index( $entry, 'sched_title' ) gt "-1" ) {
-        $class = "primary ";
+    elsif (index( $entry, 'index_sched' ) gt "-1"
+        || index( $entry, 'sched_title' ) gt "-1" )
+    {
+        if ( index( $entry, 'sched_title' ) gt "-1" ) {
+            $class = "primary ";
+        }
         $icon =~ s/%icon/clock/ig;
     }
     elsif ( index( $entry, 'uedit_mail' ) gt "-1" ) {
@@ -745,24 +853,38 @@ sub get_button_style {
         $class = "success ";
         $icon =~ s/%icon/database-plus fa-1_25x/ig;
     }
-    elsif (( index( $entry, 'add' ) gt "-1" && $entry ne 'dbase_addview' && $entry ne 'edit_addinc' )
-        || ( index( $entry, 'create' ) gt "-1" && $entry ne 'user_priv_create_view' )
+    elsif (
+        (
+               index( $entry, 'add' ) gt "-1"
+            && $entry ne 'dbase_addview'
+            && $entry ne 'edit_addinc'
+        )
+        || ( index( $entry, 'create' ) gt "-1"
+            && $entry ne 'user_priv_create_view' )
         || index( $entry, 'index_crnow' ) gt "-1"
         || $entry eq 'view_new'
         || $entry eq 'mass_ok'
-        || $entry eq 'rmass_ok' )
+        || $entry eq 'rmass_ok'
+      )
     {
         $class = "success ";
         $icon =~ s/%icon/plus-circle/ig;
     }
-    elsif ( index( $entry, 'force_title' ) gt "-1" || index( $entry, 'index_force' ) gt "-1" ) {
+    elsif (index( $entry, 'force_title' ) gt "-1"
+        || index( $entry, 'index_force' ) gt "-1" )
+    {
         $class = "warning ";
-        $icon =~ s/%icon/rotate-3d fa-1_25x margined-left--3 margined-right--3/ig;
+        $icon =~
+          s/%icon/rotate-3d fa-1_25x margined-left--3 margined-right--3/ig;
     }
     elsif ( index( $entry, 'csv' ) gt "-1" ) {
         $icon =~ s/%icon/export/ig;
     }
-    elsif ( $entry eq 'backup_title' || $entry eq 'dbase_backup' || $entry eq 'backup_ok' || $entry eq 'backup_now' ) {
+    elsif ($entry eq 'backup_title'
+        || $entry eq 'dbase_backup'
+        || $entry eq 'backup_ok'
+        || $entry eq 'backup_now' )
+    {
         $icon =~ s/%icon/backup fa-1_25x/ig;
     }
     elsif (index( $entry, 'dbase_exec' ) gt "-1"
@@ -773,7 +895,10 @@ sub get_button_style {
     {
         $icon =~ s/%icon/database/ig;
     }
-    elsif ( index( $entry, 'create_view' ) gt "-1" || index( $entry, 'addview' ) gt "-1" || $entry eq "view_title1" ) {
+    elsif (index( $entry, 'create_view' ) gt "-1"
+        || index( $entry, 'addview' ) gt "-1"
+        || $entry eq "view_title1" )
+    {
         $icon =~ s/%icon/list/ig;
     }
     elsif ( $entry eq 'table_data' ) {
@@ -785,7 +910,10 @@ sub get_button_style {
     elsif ( $entry eq 'transfer_transferok' ) {
         $icon =~ s/%icon/transform fa-1_25x/ig;
     }
-    elsif ( $entry eq 'transfer_uploadok' || $entry eq 'transfer_tabupload' || $entry eq 'html_uploadok' ) {
+    elsif ($entry eq 'transfer_uploadok'
+        || $entry eq 'transfer_tabupload'
+        || $entry eq 'html_uploadok' )
+    {
         $class = "primary ";
         $icon =~ s/%icon/upload/ig;
     }
@@ -817,7 +945,10 @@ sub get_button_style {
         $class = "success ";
         $icon =~ s/%icon/toggle-switch-off  fa-1_25x/ig;
     }
-    elsif ( $entry eq 'index_ok' || $entry eq 'assignment_ok' || $entry eq 'lang_ok' ) {
+    elsif ($entry eq 'index_ok'
+        || $entry eq 'assignment_ok'
+        || $entry eq 'lang_ok' )
+    {
         $icon =~ s/%icon/check-circle-o/ig;
     }
     else {
@@ -827,14 +958,44 @@ sub get_button_style {
     return ( $entry, $class, $icon );
 }
 
-sub isd {
-    return 'production';
+sub theme_version {
+    my ($switch)            = @_;
+    my $sh__ln__p___version = '18.20';
+    my $sh__ln__c___version = '18.30';
+    ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
+    return $sh__ln__c___version;
+}
 
+sub theme_mode {
+    return 'prod';
 }
 
 sub get_env {
     my ($key) = @_;
     return $ENV{ uc($key) };
+}
+
+sub get_user_home {
+    my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
+    return @my_user_info[7];
+}
+
+sub get_stripped {
+    if ( index( get_env('request_uri'), 'stripped=1' ) gt -1 ) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+sub get_raw {
+    if ( index( get_env('request_uri'), 'stripped=1&stripped=2' ) gt -1 ) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
 
 sub ltrim {
@@ -855,21 +1016,11 @@ sub trim {
     return $s;
 }
 
-# sub print_hash {
-#     print "Content-type: text/html\n\n";
-#     my (%d) = @_;
+sub replace {
+    my ( $from, $to, $string ) = @_;
+    $string =~ s/$from/$to/ig;
 
-#     use Data::Dumper;
-#     print Dumper( \%d );
-# }
-
-# sub print_array {
-#     print "Content-type: text/html\n\n";
-#     my ($____v) = @_;
-#     use Data::Dumper;
-#     print '<pre style="color: red">';
-#     print Dumper $____v;
-#     print '</pre>';
-# }
+    return $string;
+}
 
 1;

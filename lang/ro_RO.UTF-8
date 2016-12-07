@@ -179,13 +179,14 @@ settings_hotkey_toggle_key_virtualmin=Tastă Rapidă pentru Virtualmin
 settings_hotkey_toggle_key_cloudmin=Tastă Rapidă pentru Cloudmin
 settings_hotkey_toggle_key_usermin=Tastă Rapidă pentru Usermin
 settings_hotkey_toggle_key_webmail=Tastă Rapidă pentru Mail
-settings_hotkey_sysinfo=Tastă Rapidă pentru Informații de Sistem
+settings_hotkey_sysinfo=Hotkey for dashboard
+settings_hotkey_shell=Hotkey for shell
 settings_hotkey_favorites=Tastă Rapidă pentru Favorite
 settings_hotkey_focus_search=Tastă Rapidă pentru câmpul de căutare
 settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
 
-settings_sysinfo_background_call_timeout=Expirare timp pentru actualizări de informații în fundal
-settings_sysinfo_background_call_timeout_description=Aplică timpul de expirare dorit pentru actualizări de stare și informații de sistem ce rulează cereri în fundal. Valoare trebuie să fie în minute. Valoarea minimă recomandată este de <code>1</code> minut. Configuarea implicită este de <code>2</code> minute. Se pot folosi valori zecimale.
+settings_side_slider_background_refresh_time=Expirare timp pentru actualizări de informații în fundal
+settings_side_slider_background_refresh_time_description=Aplică timpul de expirare dorit pentru actualizări de stare și informații de sistem ce rulează cereri în fundal. Valoare trebuie să fie în minute. Valoarea minimă recomandată este de <code>1</code> minut. Configuarea implicită este de <code>5</code> minute. Se pot folosi valori zecimale.
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
 settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall
@@ -205,16 +206,16 @@ settings_leftmenu_vm_webpages=Afișează linkul <kbd>Editează Paginile Web</kbd
 settings_leftmenu_vm_backup_amazon=Afișează linkul <kbd>Amazon S3 Buckets</kbd> în Virtualmin
 
 settings_right_clear_local_cache=Eliberează Cache-ul
-settings_right_notification_slider_options_title=Opțiuni Slider de Notificări
-settings_notification_slider_fixed=Menține întotdeauna sliderul vizibil
-settings_notification_color=Culoare Slider
-settings_hotkey_toggle_slider=Tastă Rapidă pentru Sliderul de Notificări
+settings_right_notification_slider_options_title=Side slider options
+settings_side_slider_fixed=Menține întotdeauna sliderul vizibil
+settings_side_slider_palette=Culoare Slider
+settings_hotkey_toggle_slider=Hotkey for slider
 settings_window_replace_timestamps=Activează substituirea datelor
 settings_window_replaced_timestamp_format_short=Formă scurtă dată/oră
 settings_window_replaced_timestamp_format_full=Formă întreagă dată/oră
 settings_window_replaced_timestamps_options_description=Ajustează setările dată/oră după bunul plac pentru afișarea în <a href="http://momentjs.com" target="_blank">formă</a> scurtă sau întreagă. <sup class="fa fa-question-circle" title='Această opțiune nu are efecte globale și se aplică doar dacă sunt folosite anumite module speciale de către dezvoltatori. Oricare dezvoltator de module poate adăuga atributul`data-convertible-timestamp-full="unix-timestamp"` sau `data-convertible-timestamp-short="unix-timestamp"` containerului pentru a afișa cu ușurință datele desemnate de utilizator.'></sup> Această opțiune Pre-Construită are efect în pagina <i>Sliderul de Notificări</i> și <i>Informații de Sistem</i> (de pe rândul <i>Timpul în sistem</i>). Implicit, forma între echivalează cu <code>dddd, MMMM D, YYYY h:mm:ss</code> și forma scurtă este <code>L, h:mm:ss</code>. Expunerea timpului este diferit pentru localizări diferite. Localizarea este bazată pe setările de limbă ale Webmin.
 
-settings_notification_slider_enabled=Activează slider
+settings_side_slider_enabled=Activează slider
 settings_leftmenu_user_html=Arată fragmente HTML
 settings_leftmenu_user_html_description=Text definit de utiliyator sau cod HTML va fi injectat în subsolul meniului de navigare. Poate fi folosit în scopuri de identificare. Exemplu, pentru a arăta în mod explicit numele gazdei, poți adăuga câmpului <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code> unde hostname = numele gazdei
 
@@ -418,7 +419,7 @@ theme_xhred_datatable_semptydirectory=Directory is empty
 theme_xhred_filemanager_context_clipboard=Copy path to clipboard
 theme_xhred_global_warning=Warning
 theme_xhred_global_close=Close
-theme_xhred_encoding_warning=Detected that you are using <code>%charset</code> character set and not <code>utf-8</code>, which is strongly recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
+theme_xhred_encoding_warning=Detected that you are using non-unicode character set, which is not recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
 
 theme_xhred_filemanager__no_bookmarks=No saved bookmarks
 theme_xhred_filemanager_unbookmark_success=Directory <samp><em>%value</em></samp> was successfully removed from your bookmarks.
@@ -581,3 +582,53 @@ theme_error_access_not_root=Access denied: User needs access to the <em>Webmin C
 #18.20
 settings_hide_top_loader=Hide top progress bar and its loader
 
+
+#18.30
+settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
+settings_font_family=Font family
+settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your loacal computer in order to work. By using local fonts default is not loaded, which will result in faster theme load
+theme_xhred_global_shipped=Shipped
+theme_xhred_global_available=Available
+theme_xhred_global_not_available=Not available
+theme_xhred_global_default=Default
+theme_xhred_global_system_default=System default
+theme_xhred_global_local_system_default=Local system default
+theme_xhred_global_stats=Stats
+theme_xhred_global_notifications=Notifications
+theme_xhred_global_favorites=Favorites
+theme_xhred_global_cpu_load=CPU load
+theme_xhred_notification_none=No notifications
+theme_xhred_notification_no_data=No collected data
+theme_xhred_notification_no_favorites=No favorites data
+theme_xhred_global_theme_version=Theme version
+
+settings_side_slider_sysinfo_enabled=Show dashboard tab
+settings_side_slider_notifications_enabled=Show notifications tab
+settings_side_slider_favorites_enabled=Show favorites tab
+settings_side_slider_tabs_hotkeys=Enable hotkeys for switching tabs
+settings_side_slider_tabs_hotkeys_description=You can use keyboard hotkeys to toggle tabs back and forth using <code>Meta+⇧+Tab/Meta+Tab</code> in case global option for hotkeys usage is enabled
+settings_show_terminal_link=Show terminal button
+
+theme_xhred_sysinfo_system_monitors=System Monitors
+theme_xhred_sysinfo_server_status=Servers Status
+theme_xhred_sysinfo_software_versions=Software Versions
+theme_xhred_sysinfo_recent_logins=Recent Logins
+theme_xhred_sysinfo_vm_package_updates=Virtualmin Package Updates
+theme_xhred_sysinfo_disk_quotas=Disk Quotas
+theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
+
+left_netdata=Realtime Monitoring
+settings_leftmenu_netdata=Show Netdata realtime monitoring link
+settings_leftmenu_netdata_link=Netdata server preferred link
+
+theme_xhred_filemanager_context_chattr=Change attributes
+theme_xhred_filemanager_changing_attributes=Setting attributes to <samp><em>%value</em></samp> on selected file(s).
+theme_xhred_filemanager_successful_attributes_with_errors=Attributes haven't been set successfully for all objects:
+theme_xhred_filemanager_successful_attributes=Attributes have been set successfully.
+
+theme_xhred_filemanager_context_chcon=Change security context
+theme_xhred_filemanager_changing_secontext=Changing security context to <samp><em>%value</em></samp> on selected file(s).
+theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
+theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
+
+theme_xhred_global_no_results_found=No results found

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -16,7 +16,7 @@ $(window).ajaxStart(function() {
     }
 }).ajaxStop(function() {
     if (t__wi_p.t___p__xhr_l === 0) {
-        if (settings_loader_top && __num()) {
+        if (settings_loader_top && __num() && !t__wi_p.$____loader_block__) {
             t__wi_p.NProgress.done()
         }
         if (t__wi_p.t___p__ll === 1) {
@@ -142,156 +142,157 @@ function __init_dt_(e, d, a) {
         b(e)
     }
 }
-if (settings_favorites) {
-    function f__gc() {
-        return t__wi_p.$("#favorites-menu .favorites-menu-content li:not(.exclude)").length
-    }
 
-    function f__g() {
-        var b = [];
-        $.each(t__wi_p.$("#favorites-menu .favorites-menu-content li:not(.exclude) a"), function() {
-            var e = $(this).text(),
-                f = $(this).attr("href"),
-                a = $(this).find(".wbm-sm").attr("data-product");
-            favorite = {};
-            favorite.link = f;
-            favorite.title = e.trim();
-            favorite.icon = a;
-            b.push(favorite)
-        });
-        return b
-    }
-
-    function f__u() {
-        $.ajax({
-            type: "POST",
-            url: $_____link_full + "/settings-favorites_save.cgi",
-            data: ('{"favorites":' + JSON.stringify(f__g(), null, 4).replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f") + "}"),
-            success: function(b) {},
-            error: function(b) {}
-        })
-    }
-
-    function f__a(d, f, e) {
-        if (f__gc() === 0) {
-            t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").addClass("hidden");
-            t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").removeClass("hidden")
-        }
-        t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").after('						<li class="menu-exclude ui-sortable-handle">                        	<a class="menu-exclude-link" target="page" href="' + d + '"><i data-product="' + e + '" class="wbm-' + e + ' wbm-sm">&nbsp;</i><span class="f__c">                            ' + f + '                        	&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-fw fa-times"></i></small></span></a>                    	</li>					')
-    }
-
-    function f__us() {
-        if (f__gc() === 0) {
-            t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").removeClass("hidden");
-            t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").addClass("hidden")
-        }
-    }
-
-    function f__r(b) {
-        t__wi_p.$("#favorites-menu .favorites-menu-content").find('a[href="' + b + '"]').parent("li").effect("drop", {}, 300, function() {
-            $(this).remove();
-            $("#headln2c > .favorites").addClass("fa-star-o").removeClass("fa-star text-warning");
-            f__us();
-            f__u()
-        })
-    }
-
-    function f__dt() {
-        $(f__g()).each(function() {
-            if ($(this)[0]) {
-                var b = $.url(t___wi.location).attr("relative");
-                if ($(this)[0].link == b || $(this)[0].link + "index.cgi" == b) {
-                    setTimeout(function() {
-                        $("#headln2c > .favorites").addClass("fa-star").removeClass("fa-star-o")
-                    }, 100);
-                    return false
-                } else {
-                    setTimeout(function() {
-                        $("#headln2c > .favorites").removeClass("fa-star").addClass("fa-star-o")
-                    }, 100)
-                }
-            }
-        })
-    }
-    f__dt();
-    if (settings_favorites && access_level() == 0 && $g__v__nav) {
-        $("#headln2c").prepend('<i class="fa fa-fw fa-inverse fa-2x fa-star-o text-lighter favorites" style="position: absolute; margin-left: -35px; margin-top: 4px;"></i>&nbsp;');
-        $("body").append('<span id="favorites-target" style="position: absolute; top: 0; right: 0; visibility: hidden"></span>')
-    }
-    $("body").on("click", "#headln2c > .favorites", function(m) {
-        m.preventDefault();
-        var k = $.url(t___wi.location).attr("relative");
-        if ($(this).hasClass("fa-star-o")) {
-            $(this).removeClass("fa-star-o").addClass("fa-star text-warning");
-            var j = $("#headln2c > font").text(),
-                n = t__wi_p.$(".has-sub.active").text().trim(),
-                e = t__wi_p.$(".sub_active").text().trim(),
-                i = "",
-                l = "";
-            if (product_name() === "Virtualmin" || product_name() === "Cloudmin") {
-                i = t__wi_p.$(".ui_select option:selected").text()
-            }
-            if ($('body[class^="' + $g__o__f_m + '"]').length) {
-                l = $.url(t___wi.location).param("path");
-                if (!l) {
-                    l = "[/]"
-                } else {
-                    l = "[" + l + "]"
-                }
-            }
-            f__a(k, (((i.length ? (i + " - ") : "") + (n.length ? (n + "/") : "") + (e.length ? (e + ": ") : "")) + j.trim() + (l.length ? (" " + l) : "")), (product_name() === "Virtualmin" ? "virtualmin" : product_name() === "Cloudmin" ? "cloudmin" : "webmin"))
-        } else {
-            $(this).addClass("fa-star-o").removeClass("fa-star text-warning");
-            f__r(k)
-        }
-        f__u()
-    });
-    if (typeof jQuery.ui == "object") {
-        t__wi_p.$("#favorites-menu > div > nav > ul").sortable({
-            revert: true,
-            delay: 100,
-            update: function() {
-                f__u()
-            }
-        })
-    }
-    t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").hover(function() {
-        $(this).find("sup").removeClass("hidden")
-    }, function() {
-        $(this).find("sup").addClass("hidden")
-    });
-    t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
-        $(this).find("small").removeClass("hidden")
-    }).on("mouseleave", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
-        $(this).find("small").addClass("hidden")
-    });
-    t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) small", function() {
-        $(this).find(".fa-times").removeClass("fa-times").addClass("fa-times-circle");
-        $(this).animate({
-            "font-size": "0.7em",
-            "margin-top": "-2px",
-            "margin-left": "-1px"
-        }, 160)
-    }).on("mouseleave", "li:not(.exclude) small", function() {
-        $(this).find(".fa-times-circle").removeClass("fa-times-circle").addClass("fa-times");
-        $(this).animate({
-            "font-size": "0.6em",
-            "margin-top": "-1px",
-            "margin-left": "0"
-        }, 80)
-    });
-    t__wi_p.$("#favorites-menu .favorites-menu-content").on("click", "li:not(.exclude) small .fa-times-circle", function(b) {
-        b.preventDefault();
-        b.stopPropagation();
-        f__r($(this).parents("a").attr("href"))
-    });
-    $(document).on("keydown", function(b) {
-        if (t__wi_p.$(".favorites-menu-outer").css("left") == "0px" && b.keyCode == 27) {
-            t__wi_p.$(".favorites-menu-outer").removeClass("hover")
-        }
-    });
-    f__us()
+function f__gc() {
+    return t__wi_p.$("#favorites-menu .favorites-menu-content li:not(.exclude)").length
 }
+
+function f__g() {
+    var b = [];
+    $.each(t__wi_p.$("#favorites-menu .favorites-menu-content li:not(.exclude) a"), function() {
+        var e = $(this).text(),
+            f = $(this).attr("href"),
+            a = $(this).find(".wbm-sm").attr("data-product");
+        favorite = {};
+        favorite.link = f;
+        favorite.title = e.trim();
+        favorite.icon = (a == "virtualmin" ? (a + "") : a);
+        b.push(favorite)
+    });
+    return b
+}
+
+function f__u() {
+    $.ajax({
+        type: "POST",
+        url: $_____link_full + "/settings-favorites_save.cgi",
+        data: ('{"favorites":' + JSON.stringify(f__g(), null, 4).replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f") + "}"),
+        success: function(b) {
+            t__wi_p.fetch_right_pane_favorites()
+        },
+        error: function(b) {}
+    })
+}
+
+function f__a(d, f, e) {
+    if (f__gc() === 0) {
+        t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").addClass("hidden");
+        t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").removeClass("hidden")
+    }
+    t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").after('						<li class="menu-exclude ui-sortable-handle">                        	<a class="menu-exclude-link" target="page" href="' + d + '"><i data-product="' + e + '" class="wbm-' + e + "" + (e == "virtualmin" ? "" : "") + ' wbm-sm">&nbsp;</i><span class="f__c">                            ' + f + '                        	&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-fw fa-times"></i></small></span></a>                    	</li>					')
+}
+
+function f__us() {
+    if (f__gc() === 0) {
+        t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").removeClass("hidden");
+        t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").addClass("hidden")
+    }
+}
+
+function f__r(b) {
+    t__wi_p.$("#favorites-menu .favorites-menu-content").find('a[href="' + b + '"]').parent("li").effect("drop", {}, 300, function() {
+        $(this).remove();
+        $("#headln2c > .favorites").addClass("fa-star-o").removeClass("fa-star text-warning");
+        f__us();
+        f__u()
+    })
+}
+
+function f__dt() {
+    $(f__g()).each(function() {
+        if ($(this)[0]) {
+            var b = $.url(t___wi.location).attr("relative");
+            if ($(this)[0].link == b || $(this)[0].link + "index.cgi" == b) {
+                setTimeout(function() {
+                    $("#headln2c > .favorites").addClass("fa-star").removeClass("fa-star-o")
+                }, 100);
+                return false
+            } else {
+                setTimeout(function() {
+                    $("#headln2c > .favorites").removeClass("fa-star").addClass("fa-star-o")
+                }, 100)
+            }
+        }
+    })
+}
+f__dt();
+if (access_level() == 0 && $g__v__nav) {
+    $("#headln2c").prepend('<i class="fa fa-fw fa-inverse fa-2x fa-star-o text-lighter favorites" style="position: absolute; margin-left: -35px; margin-top: 4px;"></i>&nbsp;');
+    $("body").append('<span id="favorites-target" style="position: absolute; top: 0; right: 0; visibility: hidden"></span>')
+}
+$("body").on("click", "#headln2c > .favorites", function(m) {
+    m.preventDefault();
+    var k = $.url(t___wi.location).attr("relative");
+    if ($(this).hasClass("fa-star-o")) {
+        $(this).removeClass("fa-star-o").addClass("fa-star text-warning");
+        var j = $("#headln2c > font").text(),
+            n = t__wi_p.$(".has-sub.active").text().trim(),
+            e = t__wi_p.$(".sub_active").text().trim(),
+            i = "",
+            l = "";
+        if (product_name() === "Virtualmin" || product_name() === "Cloudmin") {
+            i = t__wi_p.$(".ui_select option:selected").text()
+        }
+        if ($('body[class^="' + $g__o__f_m + '"]').length) {
+            l = $.url(t___wi.location).param("path");
+            if (!l) {
+                l = "[/]"
+            } else {
+                l = "[" + l + "]"
+            }
+        }
+        f__a(k, (((i.length ? (i + " - ") : "") + (n.length ? (n + "/") : "") + (e.length ? (e + ": ") : "")) + j.trim() + (l.length ? (" " + l) : "")), (product_name() === "Virtualmin" ? "virtualmin" : product_name() === "Cloudmin" ? "cloudmin" : "webmin"))
+    } else {
+        $(this).addClass("fa-star-o").removeClass("fa-star text-warning");
+        f__r(k)
+    }
+    f__u()
+});
+if (typeof jQuery.ui == "object") {
+    t__wi_p.$("#favorites-menu > div > nav > ul").sortable({
+        revert: true,
+        delay: 100,
+        update: function() {
+            f__u()
+        }
+    })
+}
+t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").hover(function() {
+    $(this).find("sup").removeClass("hidden")
+}, function() {
+    $(this).find("sup").addClass("hidden")
+});
+t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
+    $(this).find("small").removeClass("hidden")
+}).on("mouseleave", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
+    $(this).find("small").addClass("hidden")
+});
+t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) small", function() {
+    $(this).find(".fa-times").removeClass("fa-times").addClass("fa-times-circle");
+    $(this).animate({
+        "font-size": "0.7em",
+        "margin-top": "-2px",
+        "margin-left": "-1px"
+    }, 160)
+}).on("mouseleave", "li:not(.exclude) small", function() {
+    $(this).find(".fa-times-circle").removeClass("fa-times-circle").addClass("fa-times");
+    $(this).animate({
+        "font-size": "0.6em",
+        "margin-top": "-1px",
+        "margin-left": "0"
+    }, 80)
+});
+t__wi_p.$("#favorites-menu .favorites-menu-content").on("click", "li:not(.exclude) small .fa-times-circle", function(b) {
+    b.preventDefault();
+    b.stopPropagation();
+    f__r($(this).parents("a").attr("href"))
+});
+$(document).on("keydown", function(b) {
+    if (t__wi_p.$(".favorites-menu-outer").css("left") == "0px" && b.keyCode == 27) {
+        t__wi_p.$(".favorites-menu-outer").removeClass("hover")
+    }
+});
+f__us();
 
 function l__res_fi() {
     $(".btn-filter-top-right .dataTable-mirror").val("").trigger("keyup");
@@ -338,7 +339,7 @@ function f__mgk_fi() {
     if ($(".dataTables_filter").length) {
         setTimeout(function() {
             $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
-            $("#headln2r .btn-group").prepend('				<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-toggle="tooltip" data-title="' + lang("theme_xhred_datatable_filter_visible_tables") + '" data-container="body">					<label>						<input type="text" class="dataTable-mirror" placeholder="' + lang("theme_xhred_datatable_filter") + '">					</label>					<i class="fa fa-filter"></i>				</a>			');
+            $("#headln2r .btn-group").prepend('				<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-title="' + lang("theme_xhred_datatable_filter_visible_tables") + '" data-container="body">					<label>						<input type="text" class="dataTable-mirror" placeholder="' + lang("theme_xhred_datatable_filter") + '">					</label>					<i class="fa fa-filter"></i>				</a>			');
             if ($(".nav.nav-tabs").length) {
                 $("body").on("shown.bs.tab", 'a[data-toggle="tab"]', function(b) {
                     var c = $(b.target).parent(".active");
@@ -638,6 +639,11 @@ $("body").on("submit", 'form[action*="seen_newfeatures.cgi"]', function(b) {
     })
 });
 $(t__wi_p.$('iframe[name="page"]').contents()).keydown(function(b) {
+    if (t__wi_p.$(".-shell-port-").hasClass("opened")) {
+        b.preventDefault();
+        b.stopPropagation();
+        return
+    }
     t__wi_p.search_control(b);
     t__wi_p.shortcut_control(b)
 });
@@ -668,6 +674,7 @@ $(".opener_container").each(function(d, c) {
 $("body").tooltip({
     selector: '[data-toggle="tooltip"], [data-toggle="virtualmin-license"], .panel-body td a',
     container: "body",
+    placement: "auto top",
     html: true
 });
 $.each($("div.barchart"), function() {
@@ -698,7 +705,6 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 $(this).off();
                 var a = $(this);
                 if (!a.hasClass("btn-inverse")) {
-                    t__wi_p.__lls();
                     setTimeout(function() {
                         f__mgk_sp(a, [1.5, -33, "small", false]);
                         var d = $(".ui_form").serialize();
@@ -707,10 +713,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                             url: $_____link_full + "/index.cgi?xhr-settings=1&restore=1",
                             data: d,
                             success: function(c) {
-                                setTimeout(function() {
-                                    t__wi_p.t_sel_i();
-                                    t__wi_p.$('iframe[name="page"]').attr("src", $_____link_full + "/webmin/edit_themes.cgi?restored")
-                                }, 400)
+                                t___wi.top.location.reload()
                             },
                             error: function(c) {
                                 a.addClass("btn-danger").removeClass("btn-default btn-inverse opacity-0_5")
@@ -772,7 +775,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
 
                 function i(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
-                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
+                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_shell", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
                     if (c.val() == "false") {
                         $.each(d, function(f, g) {
                             $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true)
@@ -789,12 +792,12 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 });
 
                 function j(c) {
-                    typeof c == "undefined" ? c = $('input[name="settings_notification_slider_enabled"]:checked') : false;
-                    var d = ["settings_notification_color", "settings_notification_slider_fixed", "settings_sysinfo_background_call_timeout"];
+                    typeof c == "undefined" ? c = $('input[name="settings_side_slider_enabled"]:checked') : false;
+                    var d = ["settings_side_slider_palette", "settings_side_slider_fixed", "settings_side_slider_background_refresh_time", "settings_side_slider_sysinfo_enabled", "settings_side_slider_notifications_enabled", "settings_side_slider_favorites_enabled", "settings_side_slider_tabs_hotkeys"];
                     if (c.val() == "false") {
                         $.each(d, function(f, g) {
-                            if (g == "settings_notification_slider_fixed") {
-                                $('input[name="settings_notification_slider_fixed"][value="false"]').trigger("click")
+                            if (g == "settings_side_slider_fixed") {
+                                $('input[name="settings_side_slider_fixed"][value="false"]').trigger("click")
                             }
                             $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true).parent(".aradio").addClass("disabled")
                         })
@@ -805,7 +808,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                     }
                 }
                 j();
-                $('input[name="settings_notification_slider_enabled"]').on("change", function() {
+                $('input[name="settings_side_slider_enabled"]').on("change", function() {
                     j($(this))
                 });
 
@@ -859,24 +862,43 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                     t__wi_p.$("html").attr("data-background-style", $(this).val());
                     $("html").attr("data-background-style", $(this).val())
                 });
-                $('select[name="settings_notification_color"]').change(function(c) {
+                $('select[name="settings_side_slider_palette"]').change(function(c) {
                     t__wi_p.$("body .right-side-tabs, body .right-side-tabs-toggler").attr("data-background-style", $(this).val())
                 });
-                $('input[name="settings_notification_slider_enabled"]').change(function(c) {
+                $('input[name="settings_side_slider_enabled"]').change(function(c) {
                     if ($(this).val() == "true") {
                         t__wi_p.$("body .right-side-tabs-toggler").removeClass("hidden");
-                        t__wi_p.$("body .right-side-tabs").removeClass("hidden")
+                        t__wi_p.$("body .right-side-tabs").removeClass("hidden");
+                        $('input[name="settings_side_slider_sysinfo_enabled"][value="true"], input[name="settings_side_slider_notifications_enabled"][value="true"], input[name="settings_side_slider_favorites_enabled"][value="true"]').trigger("click")
                     } else {
                         t__wi_p.$("body .right-side-tabs-toggler").addClass("hidden");
                         t__wi_p.$("body .right-side-tabs").addClass("hidden")
                     }
                     settings_update()
                 });
-                $('input[name="settings_notification_slider_fixed"]').change(function(c) {
+                $('input[name="settings_side_slider_fixed"]').change(function(c) {
                     if ($(this).val() == "true") {
                         n___p__f(1)
                     } else {
                         n___p__f(0)
+                    }
+                    settings_update()
+                });
+                $('input[name="settings_side_slider_sysinfo_enabled"], input[name="settings_side_slider_notifications_enabled"], input[name="settings_side_slider_favorites_enabled"]').change(function(c) {
+                    var f = ("right-side-tabs-" + $(this).attr("name").split("_")[3]),
+                        d = t__wi_p.$("body").find("#" + f).hasClass("active"),
+                        g = $('input[name="settings_side_slider_sysinfo_enabled"][value="true"]:checked, input[name="settings_side_slider_notifications_enabled"][value="true"]:checked, input[name="settings_side_slider_favorites_enabled"][value="true"]:checked').length;
+                    if ($(this).val() == "true") {
+                        t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").removeClass("hidden").parent().removeClass("hidden")
+                    } else {
+                        t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").addClass("hidden");
+                        if (d && g) {
+                            t__wi_p.$("body #right-side-tabs").find("li:not(.active) a:not(.hidden)").first().trigger("click")
+                        } else {
+                            if (g === 0) {
+                                $('input[name="settings_side_slider_enabled"][value="false"]').trigger("click")
+                            }
+                        }
                     }
                     settings_update()
                 });
@@ -951,9 +973,46 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 if (!$t_uri_virtualmin && !$t_uri_cloudmin) {
                     t__wi_p.__dlm("webmin/")
                 }
-                $('input[name^="settings_thirdparty_filemanager"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
+                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();
-                $("body").css("overflow", "auto")
+                $("body").css("overflow", "auto");
+                $.getScript("" + $_____link_full + "/unauthenticated/js/detector." + t__wi_p.$load____ext + ".js?" + $g__t__ver_str + "", function(c, g, f) {
+                    var d = new Detector;
+                    $.each($('select[name="settings_font_family"] option'), function() {
+                        var h = $(this).text();
+                        if (!d.detect(h) && $(this).val() != "system-default") {
+                            $(this).attr("disabled", "disabled").text(h + " (" + lang("theme_xhred_global_not_available") + ")")
+                        }
+                    });
+                    $('select[name="settings_font_family"]').on("click keyup change", function(h) {
+                        var u = $(this).val(),
+                            r = $.merge(t__wi_p.$("head"), t___wi.$("head")),
+                            s = t__wi_p.$("head").find('link[href*="font-"]').add(t___wi.$("head").find('link[href*="font-"]')).add(t__wi_p.$("head").find('link[href*="fonts-roboto"]')).add(t___wi.$("head").find('link[href*="fonts-roboto"]')),
+                            t = $.merge(t__wi_p.$("head").find('link[href*="/authentic."]'), t___wi.$("head").find('link[href*="/authentic."]')),
+                            t = t.length ? t : $.merge(t__wi_p.$("head").find('link[href*="/bundle."]'), t___wi.$("head").find('link[href*="/bundle."]'));
+                        s.remove();
+                        if (u == "0" || u == "1") {
+                            if (u == "0") {
+                                t.after('<link href="' + $_____link_full + "/unauthenticated/css/fonts-roboto." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                            }
+                        } else {
+                            t.after('<link href="' + $_____link_full + "/unauthenticated/css/font-" + u + "." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                        }
+                    })
+                });
+                $('input[name="settings_leftmenu_netdata"]').on("change", function() {
+                    var c = $('input[name="settings_leftmenu_netdata_link"]');
+                    if ($(this).val() == "true") {
+                        c.removeAttr("disabled")
+                    } else {
+                        c.attr("disabled", "disabled")
+                    }
+                });
+                $('input[name="settings_leftmenu_netdata"]:checked').trigger("change");
+                if (is_module("status") == 0 || !t__wi_p.$(".right-side-tabs-toggler").length) {
+                    $('input[name="settings_side_slider_enabled"][value="false"]').trigger("click");
+                    $('input[name="settings_side_slider_enabled"]').attr("disabled", "disabled")
+                }
             }
         })
     });
@@ -1043,12 +1102,14 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
     t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50")
 });
 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search == "?updating-webmin-theme") {
+    var $__remove_theme_version = (localStorage.getItem($hostname + "-sysinfo_authentic_remote_version") ? localStorage.getItem($hostname + "-sysinfo_authentic_remote_version") : (t___wi.top.location.reload())),
+        $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + localStorage.getItem($hostname + "-sysinfo_authentic_remote_version") + "/authentic-theme-" + localStorage.getItem($hostname + "-sysinfo_authentic_remote_version") + ".wbt.gz";
     setTimeout(function() {
         $iframe = t__wi_p.$('iframe[name="page"]').contents();
         $iframe.find(".panel-body .tab-pane.active").removeClass("active");
         $iframe.find(".panel-body #att_install").addClass("active");
         $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').prop("checked", true);
-        $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').parents("td").next("td").find('input[name="url"]').val("https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-18.30.wbt.gz");
+        $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').parents("td").next("td").find('input[name="url"]').val($__theme_link_upd);
         $iframe.find('.panel-body .tab-pane.active form[action^="install_theme."]').submit();
         t__wi_p.history.pushState(null, null, $_____link_full + "/?downloading-webmin-theme")
     }, 400)
@@ -1059,7 +1120,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 setTimeout(function() {
                     $__iframe = t__wi_p.$('iframe[name="page"]').contents();
                     $__iframe.find('input[name="source"][value="2"]').prop("checked", true);
-                    $__iframe.find('input[name="url"]').val("https://github.com/qooob/authentic-theme/releases/download/18.30/authentic-theme-18.30.wbt.gz");
+                    $__iframe.find('input[name="url"]').val($__theme_link_upd);
                     $__iframe.find('form[action^="install_theme."]').submit();
                     t__wi_p.history.pushState(null, null, $_____link_full + "/?downloading-usermin-theme")
                 }, 400)
@@ -1169,53 +1230,26 @@ $('.ui_form[action^="delete_mons"] tr.ui_checked_columns > td > label > img[src=
     var f = $(this);
     $(e).attr("src", "" + $_____link_full + "/images/not.png")
 });
-$('img[src^="images"]:not(".ui_icon_protected")').each(function(d, e) {
-    var f = $(this),
-        e = e;
-    if ($__current_directory == $_____link_full + "/virtual-server/") {
-        $(e).attr("src", "" + $_____link_full + "/" + f.attr("src"))
-    } else {
-        if ($('body[class^="' + $g__o__f_m + '"]').length) {
-            return
-        }
-        $.ajax({
-            type: "HEAD",
-            data: false,
-            url: $_____link_full + "/" + f.attr("src"),
-            success: function() {
-                $(e).attr("src", "" + $_____link_full + "/" + f.attr("src"))
-            },
-            error: function() {}
-        })
-    }
-});
-$('img[src^="../images"]:not(".ui_icon_protected")').each(function(d, e) {
-    var f = $(this),
-        e = e;
-    if ($__current_directory == $_____link_full + "/virtual-server/") {
-        $(e).attr("src", "" + $_____link_full + "/" + f.attr("src").replace("../", ""))
-    } else {
-        if ($('body[class^="' + $g__o__f_m + '"]').length) {
-            return
-        }
-        $.ajax({
-            type: "HEAD",
-            data: false,
-            url: $_____link_full + "/" + f.attr("src"),
-            success: function() {
-                $(e).attr("src", "" + $_____link_full + "/" + f.attr("src").replace("../", ""))
-            },
-            error: function() {}
-        })
-    }
-});
+if (is__m("proc") || is__m("firewall") || is__m("firewall6")) {
+    $("td a img[src], td label a img[src]").parents("td").addClass("text-center");
+    $('td img[src*="images/gap.gif"]').replaceWith('<i class="fa fa-fw fa-lg fa-caret-down invisible"></i>');
+    $('td a img[src*="images/down.gif"]').replaceWith('<i class="fa fa-fw fa-lg fa-caret-down cursor-pointer"></i>');
+    $('td a img[src*="images/up.gif"]').replaceWith('<i class="fa fa-fw fa-lg fa-caret-up cursor-pointer"></i>');
+    $('td a img[src*="images/after.gif"]').replaceWith('<i class="fa fa-fw fa-move-down cursor-pointer"></i>');
+    $('td a img[src*="images/before.gif"]').replaceWith('<i class="fa fa-fw fa-move-up cursor-pointer"></i>')
+}
+if (is__m("squid")) {
+    $('td a img[src*="images/movedown.gif"]').replaceWith('<i class="fa fa-fw fa-move-down cursor-pointer"></i>');
+    $('td a img[src*="images/moveup.gif"]').replaceWith('<i class="fa fa-fw fa-move-up cursor-pointer"></i>')
+}
 $("input").each(function(c, d) {
     if ($(this).attr("src") == "images/ok.gif") {
         $(d).attr("src", "" + $_____link_full + "/" + $(this).attr("src"));
         $(this).parents("td").attr("style", "white-space: nowrap")
     }
 });
-t__cm___init($("textarea"), false, false, "static");
+v__cm___init() && t__cm___init($("textarea"), false, false, "static");
+v__cm_viewer() && f__cm_viewer();
 if ($(".ui_table tr td").has(".ui_grid_table.table-hardcoded") && ($current_directory == $_____link + "passwd/" || $current_directory == $_____link + "mailboxes/" || $current_page_full == $_____link_full + "/usermin/list_configs.cgi")) {
     $(".ui_table tr td .ui_grid_table.table-hardcoded").parents("table").css("border", "1px solid #f0f0f0");
     $(".ui_table tr td .ui_grid_table.table-hardcoded").addClass("table").parents("tr").css("border", "1px solid #f0f0f0")
@@ -1568,7 +1602,10 @@ if (settings_right_iconize_header_links) {
             $(this).contents().filter(function() {
                 return this.nodeType == 3
             }).remove();
-            $(this).tooltip();
+            $(this).tooltip({
+                container: "body",
+                placement: "auto top"
+            });
             if ((($current_directory == $_____link + "apache/" || $current_directory == $_____link + "proftpd/") && ($(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1)) || $(this).parent("td").find("a") && $(this).parent("td").find("a").length == 1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
                 if (($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1) && $("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
                     $(this).attr("style", "margin-right: 0 !important; padding: 6px 12px")
@@ -1755,7 +1792,7 @@ $(".help_popup").on("click", function(f) {
                 content: function() {
                     return $help_body
                 },
-                placement: "right"
+                placement: "auto right"
             });
             h.popover("show");
             h.on("shown.bs.popover", function() {
@@ -2159,9 +2196,6 @@ if (t__wi_p.$('iframe[name="page"]').contents().find('iframe:not([name="page"])'
     $(this).next('input[type="button"]').remove();
     $(this).next("p").remove()
 }
-$(".row.icons-row.vertical-align").on("click", ".icons-container, .small-icons-container, .xsmall-icons-container", function() {
-    t___wi.location.href = $(this).find("a").attr("href")
-});
 $.each($(".file_chooser_button"), function() {
     if ($(this).prev("input").attr("style") && $(this).prev("input").attr("style").indexOf("max-width: 100%") > -1) {
         $(this).prev("input").css("max-width", "93%")
@@ -2342,7 +2376,8 @@ function tt__m__res() {
         clearTimeout(b);
         b = setTimeout(function() {
             container_fluid_size()
-        }, 1000)
+        }, 1000);
+        t__wi_p.ported_shell_size()
     })
 }
 tt__m__res();
@@ -2380,7 +2415,7 @@ $("body table").each(function(d, e) {
         }
     }
 });
-if ((($current_page_full.indexOf(".cgi") === -1 || $current_page_full.indexOf("link.cgi") !== -1) || $current_page_full == $_____link_full + "/proc/open_files.cgi" || $current_page_full == $_____link_full + "/webmin/edit_webmincron.cgi" || $current_page_full == $_____link_full + "/postfix/mailq.cgi" || $current_page_full == $_____link_full + "/webmin_search.cgi" || $current_page_full == $_____link_full + "/useradmin/index.cgi" || $current_page_full == $_____link_full + "/quota/list_users.cgi" || $current_page_full == $_____link_full + "/quota/list_groups.cgi" || $current_page_full == $_____link_full + "/init/index.cgi") && ($current_directory == $_____link + "webmin/" && $_____link_full.indexOf("servers/link.cgi") === -1 || $current_directory == $_____link + "proc/" || $source_path == $_____link + "webmin_search.cgi" || $current_directory == $_____link + "postfix/" || $current_directory == $_____link + "virtual-server/" || $current_directory == $_____link + "init/" || $current_directory == $_____link + "mount/" || $current_directory == $_____link + "custom/" || $current_directory == $_____link + "quota/" || $current_directory == $_____link + "php-pear/" || $current_directory == $_____link + "fsdump/" || $current_directory == $_____link + "inittab/" || $current_directory == $_____link + "logrotate/" || $current_directory == $_____link + "mailcap/" || $current_directory == $_____link + "cron/" || $current_directory == $_____link + "software/" || $current_directory == $_____link + "syslog/" || $current_directory == $_____link + "useradmin/" || $current_directory == $_____link + "apache/" || $current_directory == $_____link + "webalizer/" || $current_directory == $_____link + "cpan/" || $current_directory == $_____link + "htaccess-htpasswd/" || $current_directory == $_____link + "fdisk/") || is__mf("postfix", "master.cgi") || is__mf("fail2ban", "list_filters.cgi") || is__mf("fail2ban", "list_actions.cgi") || is__mf("fail2ban", "list_jails.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("virtual-server", "connectivity.cgi") || is__mf("virtualmin-git", "index.cgi") || $current_page_full == $_____link_full + "/useradmin/list_logins.cgi" || $current_page_full == $_____link_full + "/man/search.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi" || $current_page_full == $_____link_full + "/software/search.cgi" || $current_page_full == $_____link_full + "/software/file_info.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/virtual-server/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_users.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newplan.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newtmpl.cgi" || $current_page_full == $_____link_full + "/virtual-server/backuplog.cgi" || $current_page_full == $_____link_full + "/package-updates/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/usage.cgi" || $current_page_full == $_____link_full + "/virtual-server/search.cgi" || (($current_page_full == $_____link_full + "/fetchmail/" || $current_page_full == $_____link_full + "/filter/") && product_name() == "Usermin")) {
+if ((($current_page_full.indexOf(".cgi") === -1 || $current_page_full.indexOf("link.cgi") !== -1) || $current_page_full == $_____link_full + "/proc/open_files.cgi" || $current_page_full == $_____link_full + "/webmin/edit_webmincron.cgi" || $current_page_full == $_____link_full + "/postfix/mailq.cgi" || $current_page_full == $_____link_full + "/webmin_search.cgi" || $current_page_full == $_____link_full + "/useradmin/index.cgi" || $current_page_full == $_____link_full + "/quota/list_users.cgi" || $current_page_full == $_____link_full + "/quota/list_groups.cgi" || $current_page_full == $_____link_full + "/init/index.cgi") && ($current_directory == $_____link + "webmin/" && $_____link_full.indexOf("servers/link.cgi") === -1 || $current_directory == $_____link + "proc/" || $source_path == $_____link + "webmin_search.cgi" || $current_directory == $_____link + "postfix/" || $current_directory == $_____link + "virtual-server/" || $current_directory == $_____link + "init/" || $current_directory == $_____link + "mount/" || $current_directory == $_____link + "custom/" || $current_directory == $_____link + "quota/" || $current_directory == $_____link + "php-pear/" || $current_directory == $_____link + "fsdump/" || $current_directory == $_____link + "inittab/" || $current_directory == $_____link + "logrotate/" || $current_directory == $_____link + "mailcap/" || $current_directory == $_____link + "cron/" || $current_directory == $_____link + "software/" || $current_directory == $_____link + "syslog/" || $current_directory == $_____link + "useradmin/" || $current_directory == $_____link + "apache/" || $current_directory == $_____link + "webalizer/" || $current_directory == $_____link + "cpan/" || $current_directory == $_____link + "htaccess-htpasswd/" || $current_directory == $_____link + "fdisk/") || is__mf("ruby-gems", "index.cgi") || is__mf("postfix", "master.cgi") || is__mf("fail2ban", "list_filters.cgi") || is__mf("fail2ban", "list_actions.cgi") || is__mf("fail2ban", "list_jails.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("virtual-server", "connectivity.cgi") || is__mf("virtualmin-git", "index.cgi") || $current_page_full == $_____link_full + "/useradmin/list_logins.cgi" || $current_page_full == $_____link_full + "/man/search.cgi" || $current_page_full == $_____link_full + "/proc/index_tree.cgi" || $current_page_full == $_____link_full + "/proc/index_user.cgi" || $current_page_full == $_____link_full + "/proc/index_size.cgi" || $current_page_full == $_____link_full + "/proc/index_cpu.cgi" || $current_page_full == $_____link_full + "/proc/index_search.cgi" || $current_page_full == $_____link_full + "/software/search.cgi" || $current_page_full == $_____link_full + "/software/file_info.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/virtual-server/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_users.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newplan.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi" || $current_page_full == $_____link_full + "/virtual-server/edit_newtmpl.cgi" || $current_page_full == $_____link_full + "/virtual-server/backuplog.cgi" || $current_page_full == $_____link_full + "/package-updates/index.cgi" || $current_page_full == $_____link_full + "/virtual-server/usage.cgi" || $current_page_full == $_____link_full + "/virtual-server/search.cgi" || (($current_page_full == $_____link_full + "/fetchmail/" || $current_page_full == $_____link_full + "/filter/") && product_name() == "Usermin")) {
     $("table.table").each(function() {
         if ($(this).find("thead") && $(this).find("thead").length && $(this).find("thead tr th") && $(this).find("thead tr th").length > 2) {
             if ($(this).find("thead") && $(this).find("thead").length > 1) {
@@ -2550,6 +2585,49 @@ $("body").on("contextmenu", "div.icons-container, div.small-icons-container, div
     }
 });
 if ($("body").find(".icons-row > div.icons-container").length || $("body").find(".icons-row > div.small-icons-container").length || $("body").find(".icons-row > div.xsmall-icons-container").length) {
+    $(".row.icons-row.vertical-align").on("click", ".icons-container, .small-icons-container, .xsmall-icons-container", function() {
+        if (!$(this).hasClass("forged-xx-skip")) {
+            return
+        }
+        t___wi.location.href = $(this).find("a").attr("href")
+    });
+    let DELAY = 340,
+        clicks = 0,
+        timer = null;
+    $("body").on("click", '.icons-row div[class*="icons-container"] .forged-xx-data, .icons-container, .small-icons-container, .xsmall-icons-container', function(b) {
+        if ($(this).hasClass("forged-xx-skip")) {
+            return
+        }
+        b.preventDefault();
+        b.stopPropagation();
+        b.stopImmediatePropagation();
+        clicks++;
+        if (clicks === 1) {
+            timer = setTimeout(function() {
+                clicks = 0;
+                $(b.target).trigger("contextmenu")
+            }, DELAY)
+        } else {
+            clearTimeout(timer);
+            clicks = 0;
+            var e = $(b.target).parent("a").attr("href"),
+                c = $(b.target).find("a").attr("href"),
+                d = $(b.target).attr("href");
+            if (e) {
+                window.location.href = e
+            } else {
+                if (c) {
+                    window.location.href = c
+                } else {
+                    if (d) {
+                        window.location.href = d
+                    }
+                }
+            }
+        }
+    }).on("dblclick", function(a) {
+        a.preventDefault()
+    });
     $("body").on("click", ".select_all", function() {
         if ($(this).parents("form").find('.icons-row div[class*="icons-container"]').length) {
             $.each($(".icons-row .hidden-forged-6"), function() {
@@ -2722,12 +2800,13 @@ if ($current_page_full == $_____link_full + "/mysql/exec_form.cgi" || $current_p
     $('select[name="old"]').attr("style", "margin-bottom: 3px !important; margin-right: 0 !important;")
 }
 if ($__source_file == "config.cgi" && ($__source_query == "mysql" || $__source_query == "postgresql")) {
-    $('input[name="style"]').parents("td.col_value").parent("tr").after('		<tr>			<td class="col_label"><b>' + lang("theme_xhred_xsql_fit_content_screen_height") + '</b></td>			<td class="col_value"><span>			<span class="awradio awobject">				<input class="iawobject" name="settings_thirdparty_xsql_fit_content_screen_height" id="settings_thirdparty_xsql_fit_content_screen_height_1" value="true"' + (settings_thirdparty_xsql_fit_content_screen_height ? " checked" : "") + ' type="radio">				<label class="lawobject" for="settings_thirdparty_xsql_fit_content_screen_height_1">' + lang("theme_xhred_global_yes") + '</label>				<input class="iawobject" name="settings_thirdparty_xsql_fit_content_screen_height" id="settings_thirdparty_xsql_fit_content_screen_height_0" value="false"' + (settings_thirdparty_xsql_fit_content_screen_height ? "" : " checked") + ' type="radio">				<label class="lawobject" for="settings_thirdparty_xsql_fit_content_screen_height_0">' + lang("theme_xhred_global_no") + "</label>			</span>		</span></td>		</tr>	");
-    $('input[name="settings_thirdparty_xsql_fit_content_screen_height"]').on("change", function() {
+    $('input[name="style"]').parents("td.col_value").parent("tr").after('		<tr>			<td class="col_label"><b>' + lang("theme_xhred_xsql_fit_content_screen_height") + '</b></td>			<td class="col_value"><span>			<span class="awradio awobject">				<input class="iawobject" name="config_portable_module_xsql_fit_content_screen_height" id="config_portable_module_xsql_fit_content_screen_height_1" value="true"' + (config_portable_module_xsql_fit_content_screen_height ? " checked" : "") + ' type="radio">				<label class="lawobject" for="config_portable_module_xsql_fit_content_screen_height_1">' + lang("theme_xhred_global_yes") + '</label>				<input class="iawobject" name="config_portable_module_xsql_fit_content_screen_height" id="config_portable_module_xsql_fit_content_screen_height_0" value="false"' + (config_portable_module_xsql_fit_content_screen_height ? "" : " checked") + ' type="radio">				<label class="lawobject" for="config_portable_module_xsql_fit_content_screen_height_0">' + lang("theme_xhred_global_no") + "</label>			</span>		</span></td>		</tr>	");
+    $('input[name="config_portable_module_xsql_fit_content_screen_height"]').on("change", function() {
         var b = $(this).attr("name"),
             a = $(this).val();
-        localStorage.setItem(b, a);
-        window[b] = a
+        localStorage.setItem($hostname + "-" + b, a);
+        window[b] = a;
+        t__wi_p.manageConfig("save")
     })
 }
 if ($(".ui_post_header.hidden").html() && $(".ui_post_header.hidden").html().length > 5) {
@@ -2780,17 +2859,22 @@ if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __n
         a.remove();
         $(a).appendTo(".panel-group")
     }).promise().done(function() {
-        $("#serial-virtual-server, #ftypes-virtual-server").parent(".panel").detach().prependTo(".panel-group");
+        $("#serial-virtual-server").parent(".panel").detach().prependTo(".panel-group");
         $("#vm2servers-server-manager, #serial-server-manager").parent(".panel").detach().prependTo(".panel-group");
         $("#sysinfo-virtual-server").parent(".panel").detach().prependTo(".panel-group");
+        $("#quota-virtual-server, #bw-virtual-server").parent(".panel").detach().prependTo(".panel-group");
+        $("#ftypes-virtual-server").parent(".panel").detach().prependTo(".panel-group");
         $("#status-virtual-server").parent(".panel").detach().prependTo(".panel-group");
-        $("#newfeatures-virtual-server").parent(".panel").detach().prependTo(".panel-group")
+        $("#status_services-status").parent(".panel").detach().prependTo(".panel-group");
+        $("#newfeatures-virtual-server").parent(".panel").detach().prependTo(".panel-group");
+        $("#updates-virtual-server").parent(".panel").detach().prependTo(".panel-group");
+        $("#acl_logins-acl").parent(".panel").detach().appendTo(".panel-group")
     })
 }
 $("body").on("click", "a#atclearcache", function(a) {
     Object.keys(localStorage).forEach(function(c) {
         if (/^allowed_trigger|^notifications_|^sysinfo_/.test(c)) {
-            localStorage.removeItem(c)
+            localStorage.removeItem($hostname + "-" + c)
         }
     });
     t__wi_p.$(".right-side-tabs-dismiss .fa-trash").trigger("click");
@@ -2799,7 +2883,7 @@ $("body").on("click", "a#atclearcache", function(a) {
     f__mgk_sp(b, [1.5, -33, "small", 1000])
 });
 $("body").click(function(a) {
-    if ($(a.target).is('select[name="settings_navigation_color"], select[name="settings_background_color"], select[name="settings_notification_color"], input[name="settings_notification_slider_fixed"], label[for^="settings_notification_slider_fixed"], div.aradio')) {
+    if ($(a.target).is('select[name="settings_navigation_color"], select[name="settings_background_color"], select[name="settings_side_slider_palette"], input[name="settings_side_slider_fixed"], label[for^="settings_side_slider_fixed"], div.aradio')) {
         return
     }
     if (t__wi_p.$(".right-side-tabs-toggler").hasClass("opened") && !t__wi_p.$(".right-side-tabs-toggler").hasClass("hidden")) {
@@ -2834,34 +2918,6 @@ if ($__relative_url == "/config.cgi?virtual-server" || $__relative_url == "/conf
 }
 if ($current_page_full == $_____link_full + "/virtual-server/edit_resel.cgi") {
     $('input[name="logo"][id="logo"], input[name="link"]').parents("td.col_value").parent("tr").hide()
-}
-if ($('body[class^="syslog"]').length && $__source_query && $__source_query.indexOf("view=1") > -1) {
-    if (!$("pre").find("i").length) {
-        var log = false;
-        $("pre").each(function() {
-            var b = $(this),
-                a = HTMLDecode(b.html());
-            b.empty();
-            log = CodeMirror(this, {
-                value: a,
-                lineNumbers: true,
-                mode: null,
-                theme: settings_cm_view_palette,
-                readOnly: true,
-                viewportMargin: Infinity
-            })
-        }).promise().done(function() {
-            if (log) {
-                var a = ($(window).outerHeight() / 1.7),
-                    b = ($(".CodeMirror-code").find("pre").length * 17);
-                if (b > a) {
-                    log.setSize(null, a)
-                } else {
-                    log.setSize(null, b)
-                }
-            }
-        })
-    }
 }
 if ($current_page_full == $_____link_full + "/virtual-server/edit_newfeatures.cgi") {
     $('tr td:last-child label:contains("|")').replaceText(/\|/gi, "");
@@ -2901,10 +2957,6 @@ if ($current_page_full == $_____link_full + "/virtual-server/domain_form.cgi" ||
         }
     })
 }
-if ($(".sub_table_container").find(".CodeMirror").length) {
-    $(".sub_table_container").addClass("xcontent-force-no-styling");
-    $(".panel-body").addClass("xqcontent-forced")
-}
 if ($("#headln2l .btn .fa-arrow-left").length) {
     if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {} else {
         $("#headln2l .btn .fa-arrow-left").parent("a").attr("href", $("#headln2l .btn .fa-arrow-left").parent("a").attr("href").replace("index.cgi", ""))
@@ -2941,7 +2993,6 @@ $.each($(".btn-group").find("span"), function() {
     ($(this).not("[class]").length && !$.trim($(this).text()).length) && $(this).remove()
 });
 f__mgk_fi();
-__p__pe_sm();
 if ($(".panel-default").nextAll("a.btn.btn-primary").length === 2) {
     $(".panel-default").next("a.btn.btn-primary").find(".fa.fa-arrow-left").removeClass("fa-arrow-left").addClass("fa-arrow-circle-o-left")
 }
@@ -3026,7 +3077,11 @@ if (is__mf("apache", "htaccess.cgi") || is__mf("virtualmin-registrar", "index.cg
 }
 var attempt_make_all_elem = $('form:not([action="save_log.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > select,							   form:not([action="save_log.cgi"], [action="save_net.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > input,							   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > select,							   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > input,							   form[action="save_newglobal.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td input,							   form[action="save_newfields.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td select,							   form[action="save_newshells.cgi"] > table tbody tr td input,							   form[action="save_linkcats.cgi"] > table tbody tr td input,							   form[action="save_gen.cgi"] > table tbody tr td input							   ');
 $.each(attempt_make_all_elem, function(a, b) {
-    if ($(this).parent().find('input[onclick*="window.open"]').length) {
+    if ($(this).parent().find("input[data-mmclick]").length || $(this).parent().find("button[data-mmclick]").length || $(this).parent().find('input[onclick*="window.open"]').length || $(this).parent().find('button[onclick*="window.open"]').length) {
+        return
+    }
+    if ($(this).prev(".awobject").length) {
+        $(this).css("width", "auto");
         return
     }
     if ($(this).parent().find('input:not([type="checkbox"], [type="radio"]), select').length == 1) {
@@ -3059,7 +3114,7 @@ if (is__mf("virtual-server", "edit_html.cgi")) {
     } else {
         if (is_text_mode_edit_web_pages) {
             $("#textok").removeClass("btn-default").addClass("btn-grey");
-            t__cm___init($("textarea"), false, false, "static", true, true)
+            v__cm___init() && t__cm___init($("textarea"), false, false, "static", true, true)
         }
     }
     $(".ui_form_end_submit").click(function() {
@@ -3072,13 +3127,394 @@ if (is__mf("virtual-server", "edit_html.cgi")) {
         }, 500)
     })
 }
+typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = true : false;
+if ($hostname == settings_allowed_hostname) {
+    if (is__mf("postfix", "")) {
+        $.each($(".icons-container a"), function(a, b) {
+            if ($(this).attr("href") != "general.cgi" && $(this).attr("href") != "address_rewriting.cgi" && $(this).attr("href") != "local_delivery.cgi" && $(this).attr("href") != "resource.cgi" && $(this).attr("href") != "sasl.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "debug.cgi" && $(this).attr("href") != "manual.cgi") {
+                $(this).parent(".icons-container").remove()
+            }
+        })
+    }
+}
+var $magic_button_selector = '        body button[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),        body input[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),                body button[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"]    ';
+if ($($magic_button_selector).length) {
+    function magic_popup_run(b) {
+        if ($(".refInputData").is("textarea")) {
+            var a = $(".refInputData");
+            if (a.val()) {
+                a.val(a.val() + "\n" + b.replace(/\/\/+/g, "/"))
+            } else {
+                a.val(b.replace(/\/\/+/g, "/"))
+            }
+        } else {
+            $(".refInputData").val(b.replace(/\/\/+/g, "/"))
+        }
+        $("body .mppopup").modal("hide");
+        var f = $(".refInputData").parent("td").prev("td").find('input[type="radio"]'),
+            e = $(".refInputData").parent("span").prev("span").find('input[type="radio"]'),
+            d = $(".refInputData").prev("span").find('input[type="radio"]'),
+            c = $(".refInputData").prev("select").find('option[value="*"]');
+        if (e.length) {
+            e.trigger("click")
+        } else {
+            if (d.length) {
+                d.trigger("click")
+            } else {
+                if (c.length) {
+                    c.parent("select").val("*").trigger("change")
+                } else {
+                    f.trigger("click")
+                }
+            }
+        }
+    }
+
+    function addmodule(b, a) {
+        adduser(b, a);
+        return false
+    }
+
+    function addgroup(b, a) {
+        adduser(b, a);
+        return false
+    }
+
+    function adduser(b, a) {
+        $v__mpp__g_olt = 0;
+        $('.mppopup input[data-role="tagsinput"]').tagsinput("add", b);
+        setTimeout(function() {
+            if (!v__mpp__ml_t__e) {
+                $(".mppopup_filter_input").val("");
+                $(".mppopup_filter_input").focus().trigger("keyup")
+            }
+            v__mpp__ml_t__e = 0
+        }, 440);
+        return false
+    }
+
+    function parentdir(a) {
+        fileclick(a, "1");
+        $v__mpp__g_gp = 1
+    }
+
+    function fileclick(a, b) {
+        $v__mpp__g_ol = a;
+        $v__mpp__g_olt = b
+    }
+
+    function select(a, b) {
+        magic_popup_run(a);
+        return false
+    }
+
+    function filter_match(n, e, r) {
+        e = "";
+        r = r || false;
+        var t = function(g) {
+            g = g || false;
+            var h = $(".mppopup table tbody tr");
+            if (h.length > 0) {
+                for (var b = 0; b < h.length; b++) {
+                    var d = h[b];
+                    var c = d.className;
+                    if (!r && c !== e) {
+                        continue
+                    }
+                    if (r && c.match(e) === null) {
+                        continue
+                    }
+                    if (g) {
+                        d.style.display = ""
+                    } else {
+                        d.style.display = "none"
+                    }
+                }
+            }
+            return h
+        };
+        n = n.trim();
+        if (n !== "") {
+            var q = t(false);
+            if (q.length > 0) {
+                for (var a = 0; a < q.length; a++) {
+                    var s = q[a].className;
+                    if (!r && s !== e) {
+                        continue
+                    }
+                    if (r && s.match(e) === null) {
+                        continue
+                    }
+                    var f = q[a].getElementsByTagName("a");
+                    for (var i = 0; i < f.length; i++) {
+                        var o = f[i].innerHTML.trim();
+                        o = o.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, "");
+                        if (o !== "") {
+                            o = o.toLowerCase();
+                            if (o.match(n.toLowerCase())) {
+                                q[a].style.display = ""
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            t(true)
+        }
+    }
+
+    function breadcrumbx_format(a) {
+        a = $.url(a).attr("path").replace(/\/$/g, "").split("/");
+        var b = "";
+        $.each(a, function(d, e) {
+            if (e === "") {
+                b += '<a href="#' + d + '">' + (access_level() == 0 ? '<i class="fa fa-hdd-o margined-left--5"></i>' : '<i class="fa fa-user text-light margined-left--5"></i>') + "</a>\n"
+            } else {
+                b += '<a href="#' + d + '">' + e + "</a>\n"
+            }
+        });
+        var c = '          <nav class="breadcrumbx">            ' + b + "            </nav>          ";
+        return c + '<span class="cspinner hidden" style="margin-top: 2px; margin-left: 8px;"><span class="cspinner-icon smaller"></span></span>'
+    }
+
+    function mppopup_extract_chooser_link(a) {
+        return a.replace(/&file.*&chroot/, "&file=" + encodeURIComponentSafe(($v__mpp__g_ol + "/").replace(/\/\/+/g, "/")) + "&chroot")
+    }
+
+    function mppopup_extract_chooser(a) {
+        $(".mppopup .cspinner.hidden").removeClass("hidden");
+        $.ajax({
+            type: "POST",
+            url: a,
+            data: false,
+            dataType: "text",
+            success: function(e) {
+                var d = e.replace(/<(!doctype|script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace(/<\/body>|<\/html>/gi, ""),
+                    c = $(d).filter(".table").html(),
+                    b = $(d).filter(".table").prev("b").html();
+                b = breadcrumbx_format(b);
+                $(".mppopup .modal-body").html(b + '<table class="table table-hover table-condensed table-striped">' + c + "</table>");
+                $v__mpp__g_gp = 0;
+                $(".mppopup_filter_input").focus();
+                $(".mppopup_filter_input").val("")
+            }
+        })
+    }
+    $("body").on("dblclick", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(a) {
+        a.preventDefault()
+    });
+    let DELAY = 340,
+        clicks = 0,
+        timer = null;
+    $("body").on("click", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(b) {
+        b.preventDefault();
+        b.stopPropagation();
+        b.stopImmediatePropagation();
+        clicks++;
+        if (clicks === 1) {
+            timer = setTimeout(function() {
+                clicks = 0;
+                typeof $v__mpp__g_gp == "undefined" ? $v__mpp__g_gp = 0 : 0;
+                if (!$v__mpp__g_gp) {
+                    magic_popup_run($v__mpp__g_ol)
+                } else {
+                    var a = mppopup_extract_chooser_link($v__mpp__g_op);
+                    mppopup_extract_chooser(a)
+                }
+                $v__mpp__g_gp = 0
+            }, DELAY)
+        } else {
+            clearTimeout(timer);
+            clicks = 0;
+            if ($v__mpp__g_olt) {
+                var c = mppopup_extract_chooser_link($v__mpp__g_op);
+                mppopup_extract_chooser(c)
+            } else {
+                magic_popup_run($v__mpp__g_ol)
+            }
+        }
+    });
+    $("body").on("show.bs.modal", ".mppopup", function() {
+        v__mpp__ml_t__e = 0;
+        $('.mppopup input[data-role="tagsinput"]').tagsinput({
+            onTagExists: function(b, a) {
+                a.hide().fadeIn();
+                v__mpp__ml_t__e = 1
+            }
+        })
+    });
+    $("body").on("shown.bs.modal", ".mppopup", function() {
+        var b = $("body .mppopup").find(".modal-head"),
+            a = $("body .mppopup").find(".modal-body"),
+            d = $("body .mppopup").find(".modal-body table"),
+            c = b.find(".mppopup_filter > input");
+        setTimeout(function() {
+            $(".mppopup_filter_input").animate({
+                opacity: 1
+            }, $settings_animation_tabs_slide_time);
+            $(".mppopup_filter_input").focus()
+        }, 0)
+    });
+    $("body").on("hidden.bs.modal", ".mppopup", function() {
+        refInput.removeClass("refInputData");
+        $('.mppopup input[data-role="tagsinput"]').tagsinput("destroy");
+        $("body .mppopup").remove();
+        $("button[data-mmclick].disabled, input[data-mmclick].disabled").removeClass("disabled").removeAttr("disabled")
+    });
+    $("body").on("click", ".mppopup_multi_done", function(a) {
+        refInput.val($.trim($('.mppopup input[data-role="tagsinput"]').val().replace(/,/g, " ")));
+        $('.mppopup span[aria-hidden="true"]').trigger("click")
+    });
+    $("body").on("keyup", ".mppopup_filter_input", function(c) {
+        var d = c.which,
+            i = $(".mppopup table tbody tr:visible"),
+            f = i.find("td:first-child a");
+        if (d == 13 && i.length === 1 && !c.shiftKey) {
+            f.trigger("click");
+            typeof $v__mpp__g_olt == "undefined" ? $v__mpp__g_olt = 1 : 0;
+            if ($v__mpp__g_olt) {
+                setTimeout(function() {
+                    f.trigger("click")
+                }, 200)
+            }
+        } else {
+            if (d == 13 && i.length === 1 && c.shiftKey) {
+                f.trigger("click");
+                var e = $(".mppopup .mppopup_multi_done:visible");
+                if (e.length) {
+                    setTimeout(function() {
+                        e.trigger("click")
+                    }, 240)
+                }
+            }
+        }
+        if (!$(".mppopup table tbody tr.noresults").length) {
+            $(".mppopup table tbody").append('<tr class="hidden noresults"><td class="text-center" colspan="' + $(".mppopup table tbody tr:first-child td").length + '">' + lang("theme_xhred_global_no_results_found") + "</td></tr>")
+        }
+        var h = $(".mppopup table tbody tr:visible:not(.noresults)"),
+            g = $(".mppopup table tbody tr.noresults");
+        if (h.length) {
+            g.addClass("hidden")
+        } else {
+            g.removeClass("hidden")
+        }
+    });
+
+    function mppopup_get_ref_input(c, a) {
+        var b = c.prev('input[type="text"], input[name]');
+        if (!b.is("input") && !c.prev("textarea").length && !c.prev("br").prev("textarea").length) {
+            b = c.prev("span:not(.awradio)").find('input[type="text"]')
+        } else {
+            if (!b.length && !b.is("input") && a) {
+                b = c.prev("textarea");
+                if (!b.length) {
+                    b = c.prev("br").prev("textarea")
+                }
+            }
+        }
+        return b
+    }
+    $($magic_button_selector).each(function() {
+        $(this).attr("data-mmclick", $(this).attr("onclick")).removeAttr("onclick");
+        var a = mppopup_get_ref_input($(this), 0);
+        if (a.length) {
+            $(this).css("margin-left", "-8px")
+        }
+    });
+    $("body").on("click", "button[data-mmclick]:not(.disabled), input[data-mmclick]:not(.disabled)", function(a) {
+        a.preventDefault();
+        a.stopPropagation();
+        refInput = mppopup_get_ref_input($(this), 1);
+        var h = $(this),
+            c = refInput.val(),
+            f = encodeURIComponent(c),
+            i = $(this).attr("data-mmclick"),
+            j = i.match("window.open\\(['\"]*(.*?)(\\s*['\"]*,.*?)"),
+            b = j[1].match(/(\w+\.[a-z]{3,4})/gi)[0],
+            e = b.replace(".cgi", "");
+        h.addClass("disabled").attr("disabled", "disabled");
+        if (j[1]) {
+            var d = j[1].replace("encodeURIComponent(ifield.value)", "refInputCurrValSafe");
+            d = d.replace('"+"', "").replace('"+', "").replace("refInputCurrValSafe", f);
+
+            function k(p, o, n, m, q) {
+                var l = '                      <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                        <div class="modal-dialog" role="document">                        <div class="modal-content">                          <div class="modal-header">                            <button type="button" class="close" data-dismiss="modal" aria-label="' + lang("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                            <h4 class="modal-title">                              <div class="mppopup_filter">                                <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + lang("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                              </div>                            </h4>                          </div>                          <div class="modal-body ' + e + '">                            ' + p + '                          </div>                          <div class="modal-footer' + (q ? "" : " hidden") + '">                            <div class="input-group">                              <input data-role="tagsinput" class="form-control ui_textbox" type="text" value="' + (c ? (c.replace(/ /g, ",")) : "") + '">                              <span class="input-group-btn mppopup_multi_done">                              <button type="button" class="btn btn-inverse heighter-28"><i class="fa fa-circle-check"></i></button>                              </span>                            </div>                          </div>                        </div>                      </div>                    </div>                ';
+                $("body").append(l);
+                refInput.addClass("refInputData");
+                $("body .mppopup").modal("show")
+            }
+
+            function g(l) {
+                if (!l[1].startsWith("/")) {
+                    $v__mpp__g_op = "/" + l[1]
+                } else {
+                    $v__mpp__g_op = l[1]
+                }
+            }
+            $.ajax({
+                type: "POST",
+                url: d,
+                data: false,
+                dataType: "text",
+                success: function(p) {
+                    var o = p;
+                    var l = p.match('<frame.*?src="([^"]+)"');
+                    if ($.isArray(l) && l[1] && l[1].indexOf("&multi=1") === -1) {
+                        g(l);
+                        $.ajax({
+                            type: "POST",
+                            url: $v__mpp__g_op,
+                            data: false,
+                            dataType: "text",
+                            success: function(u) {
+                                var s = u.replace(/<(!doctype|script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace(/<\/body>|<\/html>/gi, ""),
+                                    r = $(s).filter(".table").html(),
+                                    q = $(s).filter(".table").prev("b").html();
+                                var t = breadcrumbx_format(q);
+                                s = t + '<table class="table table-hover table-condensed table-striped">' + r + "</table>";
+                                k(s, "type1", 0, refInput, 0)
+                            }
+                        })
+                    } else {
+                        if (!$.isArray(l)) {
+                            if ($.isArray(l) && l[1].indexOf("&multi=1") === -1) {
+                                return
+                            }
+                            var n = o,
+                                m = $(n).filter("table").html();
+                            k('<table class="table table-hover table-condensed table-striped type2" data-target="' + refInput + '">' + m + "</table>", "", 1, refInput, 0)
+                        } else {
+                            g(l);
+                            $.ajax({
+                                type: "POST",
+                                url: $v__mpp__g_op,
+                                data: false,
+                                dataType: "text",
+                                success: function(s) {
+                                    var r = s.replace(/<(!doctype|script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace(/<\/body>|<\/html>/gi, ""),
+                                        q = $(r).filter("table").html();
+                                    r = '<table class="table table-hover table-condensed table-striped type2">' + q + "</table>";
+                                    k(r, "type2", 0, refInput, 1)
+                                }
+                            })
+                        }
+                    }
+                }
+            })
+        } else {
+            $(this).removeClass("disabled");
+            $(this).attr("onclick", $(this).attr("data-mmclick")).removeAttr("data-mmclick");
+            $(this).trigger("click")
+        }
+    })
+}
 if (is__mf("virtualmin-nginx", "") || is__mf("virtualmin-awstats", "") || is__mf("fdisk", "edit_disk.cgi") || is__mf("virtual-server", "edit_newlinks.cgi") || is__mf("virtualmin-dav", "list_shares.cgi") || ($current_directory == $_____link + "pam/" && !$__source_file) || ($current_directory == $_____link + "syslog/" && !$__source_file) || ($current_page_full == $_____link_full + "/postfix/master.cgi")) {
     setTimeout(function() {
         var b = $('.panel-body > .ui_link, .panel-body > .ui_link_replaced,					 body[data-uri*="virtualmin-awstats"] .panel-body > form > .ui_link_replaced,					 body[data-uri*="edit_disk.cgi"] .panel-body p > a.ui_link_replaced,					 body[data-uri*="edit_newlinks.cgi"] .panel-body > form > .ui_link_replaced,					 body[data-uri*="edit_newlinks.cgi"] .panel-body > .ui_emptymsg + p > .ui_link_replaced'),
             c = $.trim(b.first().text()),
             a = b.first().attr("href");
         $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
-        $("#headln2r .btn-group").prepend('		<a href="' + a + '" class="btn btn-link text-lighter text-decoration-none pull-left" data-toggle="tooltip" data-container="body" data-title="' + c + '">			<i class="fa fa-plus"></i>		</a>	');
+        $("#headln2r .btn-group").prepend('		<a href="' + a + '" class="btn btn-link text-lighter text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-container="body" data-title="' + c + '">			<i class="fa fa-plus"></i>		</a>	');
         b.next("br").remove();
         b.remove()
     }, 0)
@@ -3124,7 +3560,7 @@ is__mf("sysstats", "display_all.cgi") && setTimeout(function() {
 if (is__m("changepass") || is__mf("server-manager", "edit_pass.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("acl", "edit_user.cgi") || is__mf("virtual-server", "clone_form.cgi") || is__mf("virtual-server", "edit_user.cgi") || is__mf("virtual-server", "edit_domain.cgi") || is__mf("virtual-server", "domain_form.cgi") || is__mf("samba", "edit_euser.cgi") || is__mf("samba", "ask_epass.cgi") || is__mfq("virtualmin-registrar", "edit.cgi", "registrar=") || is__mfq("htaccess-htpasswd", "edit_user.cgi", "new=") || is__mfq("postgresql", "edit_user.cgi", "new=") || is__mfq("mysql", "edit_user.cgi", "new=") || is__mfq("useradmin", "edit_group.cgi", "group=") || is__mfq("useradmin", "edit_user.cgi", "user=") || is__mfq("passwd", "edit_passwd.cgi", "user=")) {
     setTimeout(function() {
         $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
-        $("#headln2r .btn-group").prepend('		<a href="#" class="btn btn-link text-lighter text-decoration-none pull-left generate-password-key" data-placement="left" data-toggle="tooltip" data-container="body" data-title="' + lang("theme_xhred_password_generator_new") + '">			<i class="fa fa-1_25x fa-key-plus" style="width: 14px; margin-left: -3px;"></i>		</a>	');
+        $("#headln2r .btn-group").prepend('		<a href="#" class="btn btn-link text-lighter text-decoration-none pull-left generate-password-key" data-placement="auto top" data-toggle="tooltip" data-container="body" data-title="' + lang("theme_xhred_password_generator_new") + '">			<i class="fa fa-1_25x fa-key-plus" style="width: 14px; margin-left: -3px;"></i>		</a>	');
         $("body .generate-password-key").click(function(c) {
             var a = passwordGenerator();
             $("body").append('<button class="hidden tmp-clipboard-obj" data-clipboard-text="' + a + '"></button>');
@@ -3135,6 +3571,12 @@ if (is__m("changepass") || is__mf("server-manager", "edit_pass.cgi") || is__mf("
             messenger('<i class="fa fa-lg fa-fw fa-key-plus"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_password_generator_new_success").replace("%password", '&nbsp;<code class="vertical-align-middle">' + a + "</code>&nbsp;"), 10, "success", "newGeneratedPassword")
         })
     }, 0)
+}
+if ($access_level == 0 && is_module("status") == 1) {} else {
+    t___wi.settings_side_slider_enabled = false;
+    t__wi_p.settings_side_slider_enabled = false;
+    t__wi_p.$("html").attr("data-slider-fixed", "0");
+    t__wi_p.$("#right-side-tabs, .right-side-tabs-toggler").addClass("hidden")
 }
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {

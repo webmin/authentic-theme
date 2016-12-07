@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #

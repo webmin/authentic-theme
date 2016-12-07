@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.20 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.30 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -65,6 +65,7 @@ if ($get_user_level ne '4' && &foreign_available("system-status")
 
     print '</div>';
     print '<div class="panel-body">' . "\n";
+
 }
 
 # Get system info to show
@@ -116,6 +117,14 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
         # Theme version
         if ($authentic_theme_version) {
             &print_table_row( $Atext{'theme_version'}, $authentic_theme_version, 'sysinfo_authentic_theme_version' );
+        }
+
+        # ConfigServer Security & Firewall version
+        if ( $csf_title && $csf_data ) {
+            &print_table_row(
+                $csf_title, $csf_data, 'sysinfo_csf_data'
+
+            );
         }
 
         #System time
@@ -172,14 +181,6 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
             );
         }
 
-        # ConfigServer Security & Firewall version
-        if ( $csf_title && $csf_data ) {
-            &print_table_row(
-                $csf_title, $csf_data, 'sysinfo_csf_data'
-
-            );
-        }
-
         # Package updates
         if ($package_message) {
             &print_table_row( $Atext{'body_updates'}, $package_message, 'sysinfo_package_message' );
@@ -187,7 +188,7 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
         print '</table>' . "\n";
 
         # Print System Warning
-        print_sysinfo_warning(@info);
+        print get_sysinfo_warning(@info);
 
         print '</div>';    # Panel Body
         print '</div>';    # Panel Default
@@ -197,7 +198,7 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
         print &ui_alert_box( $Atext{'sysinfo_system_status_warning'}, 'warn', undef, 0 );
     }
 
-    print_extended_sysinfo(@info);
+    print get_extended_sysinfo(@info);
 
 }
 elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
@@ -364,7 +365,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
     print '</div>';    # Panel Body
     print '</div>';    # Panel Default
 
-    print_extended_sysinfo(@info);
+    print get_extended_sysinfo(@info);
 }
 elsif ( $get_user_level eq '3' ) {
     print '<table class="table table-hover">' . "\n";
@@ -416,7 +417,7 @@ elsif ( $get_user_level eq '3' ) {
     print '</div>';    # Panel Body
     print '</div>';    # Panel Default
 
-    print_extended_sysinfo(@info);
+    print get_extended_sysinfo(@info);
 }
 
 # End of page
