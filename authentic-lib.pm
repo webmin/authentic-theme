@@ -656,7 +656,7 @@ sub print_search {
         }
         print
 '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="'
-          . $Atext{'left_search'} . '"">' . "\n";
+          . $Atext{'left_search'} . '">' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
     }
