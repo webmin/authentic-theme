@@ -1,7 +1,7 @@
 ##Changelog
 
 ####Version 18.31 (December 09, 2016)
-Fixed bugs [#592](https://github.com/qooob/authentic-theme/pull/592) [#593](https://github.com/qooob/authentic-theme/pull/593) [#594](https://github.com/qooob/authentic-theme/pull/594) [#597](https://github.com/qooob/authentic-theme/pull/597) [#599](https://github.com/qooob/authentic-theme/pull/599) [#600](https://github.com/qooob/authentic-theme/pull/600) [#601](https://github.com/qooob/authentic-theme/pull/601) [#602](https://github.com/qooob/authentic-theme/pull/602)
+Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](https://github.com/qooob/authentic-theme/issues/593) [#594](https://github.com/qooob/authentic-theme/pull/594) [#597](https://github.com/qooob/authentic-theme/issues/597) [#599](https://github.com/qooob/authentic-theme/issues/599) [#600](https://github.com/qooob/authentic-theme/issues/600) [#601](https://github.com/qooob/authentic-theme/issues/601) [#602](https://github.com/qooob/authentic-theme/issues/602)
 
 ####Version 18.30 (December 07, 2016) &nbsp;&nbsp;&nbsp; :star2: :star2: :star2: :star2: :star2:
 * Increased theme's speed and stability

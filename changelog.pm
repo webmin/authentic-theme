@@ -18,7 +18,7 @@ our $__changelog
                     <li>Fixed bugs
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/592" target="_blank">#592</a>
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/593" target="_blank">#593</a>
-                      <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/594" target="_blank">#594</a>
+                      <a class="label label-default" href="https://github.com/qooob/authentic-theme/pull/594" target="_blank">#594</a>
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/597" target="_blank">#597</a>
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/599" target="_blank">#599</a>
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/600" target="_blank">#600</a>
@@ -44,7 +44,7 @@ our $__changelog
                     <li>Added support for overwriting files upon extraction in <em>File Manager</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/589" target="_blank">#589</a></li>
                     <li>Added ability to select/copy any text from the table to clipboard in <em>File Manager</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/591" target="_blank">#591</a></li>
                     <li>Fixed the logic of selecting/accessing objects in modules for list (icons) mode. For selecting use click/right-click; for accessing double-click <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/575" target="_blank">#575</a></li>
-                    <li>Fixed missed tag at core function. Thanks to <em>Michael Varian</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/576" target="_blank">#576</a></li>
+                    <li>Fixed missed tag at core function. Thanks to <em>Michael Varian</em> <a class="label label-default" href="https://github.com/qooob/authentic-theme/pull/576" target="_blank">#576</a></li>
                     <li>Fixed dozens of unreported bugs</li>
                     <li>Fixed bugs <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/394" target="_blank">#394</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/571" target="_blank">#571</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/582" target="_blank">#582</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/583" target="_blank">#583</a> <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/587" target="_blank">#587</a> <a class="label label-default" href="https://www.virtualmin.com/node/43304" target="_blank">#43304</a> <a class="label label-default" href="https://www.virtualmin.com/node/44156" target="_blank">#44156</a></li>
                 </ul>
