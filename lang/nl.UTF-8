@@ -586,7 +586,7 @@ settings_hide_top_loader=Hide top progress bar and its loader
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
 settings_font_family=Font family
-settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your loacal computer in order to work. By using local fonts default is not loaded, which will result in faster theme load
+settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your local computer in order to work. By using local fonts, the default one is not loaded, which will result in faster theme load
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Available
 theme_xhred_global_not_available=Not available
