@@ -13,19 +13,6 @@ our %text = ( load_language( $request_uri{'module'} ), %text );
 
 our $checked_path;
 
-sub get_attr_status {
-    return has_command('lsattr');
-}
-
-sub get_selinux_status {
-    return is_selinux_enabled();
-}
-
-sub get_selinux_command_type {
-    my $out = backquote_command("ls --help 2>&1 </dev/null");
-    return $out =~ /--scontext/ ? 1 : 0;
-}
-
 sub set_module {
     my ($module) = @_;
     set_env( 'foreign_module_name', $module );
