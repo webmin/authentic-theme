@@ -25,7 +25,7 @@
 * Favorites feature for any content page
 * Unprecedentedly convenient and complete navigation menu for both desktop and mobile
 * Notification slider for quick access to pushed system messages
-* Autocomplete for quick and effective navigation with ability to execute shell commands [*](https://github.com/qooob/authentic-theme#how-do-i-execute-shell-command-using-search-filed)
+* Autocomplete for quick and effective navigation with ability to execute shell commands [*](https://github.com/qooob/authentic-theme#how-do-i-execute-shell-command-using-search-field)
 * Hotkeys for quick access control
 * Dynamically updated page title based on current module
 * Code highlight when editing files manually
@@ -81,7 +81,7 @@ Theme has configurable options, that are located in `Webmin->Webmin Configuratio
 ####How do I make user palettes work?
 _Authentic_ Theme utilizes built-in, custom color palettes, that a user can define using theme's extensions. It's possible, by using theme's _CSS_ extensions, to pass user custom selector, such as `user-palette-1`, `user-palette-2`, `user-palette-3`, `user-palette-4`, `user-palette-5`, `user-palette-6`, `user-palette-7`, `user-palette-8`, `user-palette-9` and `user-palette-10` to enable a usage of user palettes. For example, in order to use `user-palette-1`, in the theme's settings, you would need to set the option _Navigation Menu Color_ to the value of `User Palette 1`. After that, provide a custom code to the theme's _CSS_ extension, with [a pre-built template](http://codepen.io/qooob/pen/dYaPvj), corresponding with custom theme's identification.
 
-####How do I execute shell command using search filed?
+####How do I execute shell command using search field?
 Type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available.
 
 ####How do I make the theme load faster?
