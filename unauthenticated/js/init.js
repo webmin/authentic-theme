@@ -436,7 +436,8 @@ function __s___() {
     }, d)
 }
 
-function __lre() {
+function __lre(a) {
+    typeof a == "undefined" ? a = 1 : false;
     if (t__wi_p.$____loader_block__) {
         return
     }
@@ -454,7 +455,7 @@ function __lre() {
         }
     }
     t__wi_p.$(".loader .loader-close").hide();
-    if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num()) {
+    if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num() && a) {
         t__wi_p.NProgress.done()
     }
     if (typeof hide_mobile_menu == "function") {
@@ -620,6 +621,9 @@ var $__was = function() {
     if (c && c.indexOf("/webmin_search.cgi") > -1 || c.indexOf("/cpan/install.cgi") > -1 || c.indexOf("/virtual-server/import.cgi") > -1 || c.indexOf("/virtual-server/domain_setup.cgi") > -1 || c.indexOf("/virtual-server/mass_create.cgi") > -1 || c.indexOf("/virtual-server/restore.cgi") > -1 || c.indexOf("/virtual-server/mass_domains_change.cgi") > -1 || c.indexOf("/virtual-server/save_domain.cgi") > -1 || c.indexOf("/virtual-server/save_phpmode.cgi") > -1 || c.indexOf("/virtual-server/migrate.cgi") > -1 || c.indexOf("/virtual-server/mass_delete_domains.cgi") > -1 || c.indexOf("/virtual-server/delete_domain.cgi") > -1 || c.indexOf("/virtual-server/clone.cgi") > -1 || c.indexOf("/virtual-server/disable_domain.cgi") > -1 || c.indexOf("/virtual-server/edit_newlinks.cgi") > -1 || c.indexOf("/virtual-server/move.cgi") > -1 || c.indexOf("/virtual-server/enable_domain.cgi") > -1 || c.indexOf("/virtual-server/transfer.cgi") > -1 || c.indexOf("/virtual-server/rename.cgi") > -1 || c.indexOf("/virtual-server/check.cgi") > -1 || c.indexOf("/virtual-server/postsave.cgi") > -1 || c.indexOf("/virtual-server/unalias.cgi") > -1 || c.indexOf("/virtual-server/unsub.cgi") > -1 || c.indexOf("/virtual-server/validate.cgi") > -1 || c.indexOf("/virtual-server/backup.cgi") > -1 || c.indexOf("/virtual-server/script_install.cgi") > -1 || c.indexOf("/virtual-server/mass_scripts.cgi") > -1 || c.indexOf("/server-manager/backup.cgi") > -1 || c.indexOf("/server-manager/edit_serv.cgi") > -1 || c.indexOf("/server-manager/save_serv.cgi") > -1 || c.indexOf("/server-manager/mass.cgi") > -1 || c.indexOf("/server-manager/index.cgi") > -1 || c.indexOf("/server-manager/save_limits.cgi") > -1 || c.indexOf("/server-manager/save_pass.cgi") > -1 || c.indexOf("/server-manager/list_ifaces.cgi") > -1 || c.indexOf("/server-manager/mass_update.cgi") > -1 || c.indexOf("/server-manager/get_images.cgi") > -1 || c.indexOf("/server-manager/boot.cgi") > -1 || c.indexOf("/server-manager/save_ec2address.cgi") > -1 || c.indexOf("/server-manager/mass_move.cgi") > -1 || c.indexOf("/server-manager/edit_newlinks.cgi") > -1 || c.indexOf("/server-manager/move.cgi") > -1 || c.indexOf("/server-manager/list_gces.cgi") > -1 || c.indexOf("/server-manager/list_ec2s.cgi") > -1 || c.indexOf("/server-manager/failover.cgi") > -1 || c.indexOf("/server-manager/reset.cgi") > -1 || c.indexOf("/server-manager/unpause.cgi") > -1 || c.indexOf("/server-manager/find.cgi") > -1 || c.indexOf("/server-manager/pause.cgi") > -1 || c.indexOf("/webmin/upgrade.cgi") > -1) {
         $("html").data("data-pagescroll", true)
     }
+    if ($("body").hasClass("__e__")) {
+        return
+    }
     if (!$('body[class^="syslog"]').length && (($("pre") && $("pre").length > 0 && $("pre").length <= 2) || $("html").data("data-pagescroll") === true)) {
         if (__num()) {
             setTimeout(function() {
@@ -655,6 +659,11 @@ $("html").on("dblclick", "body", function() {
 if (settings_window_autoscroll && t___wi.location != t__wi_p.location) {
     $__was_runner = t___wi.setInterval($__was, 201)
 }
+setTimeout(function() {
+    if ($("body").hasClass("__e__")) {
+        __lre(0)
+    }
+}, 400);
 if ($t_av__session === 0) {
     setTimeout(function() {
         __s___()
