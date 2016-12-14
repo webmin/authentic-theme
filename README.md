@@ -87,6 +87,8 @@ Type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's 
 ####How do I make the theme load faster?
 _Webmin_ has in-built option to compress static files.  It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting _Gzip compress static files_ option to _Use pre-compressed file and compress dynamically_.
 
+Another solution would be to install used by default [_Roboto Font_](http://www.fontsquirrel.com/fonts/download/roboto "wget http://www.fontsquirrel.com/fonts/download/roboto -O roboto.zip") locally to prevent extra load from embedding it and later setting it in the theme's settings accordingly.
+
 ###Extended support for bundled/third-party modules
 
 ####_File Manager_
