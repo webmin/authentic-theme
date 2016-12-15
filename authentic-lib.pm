@@ -694,6 +694,10 @@ sub print_left_menu {
                 {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 }
+                elsif (   index( $link, 'virtual-server/edit_newvalidate.cgi' ) > -1  )
+                {
+                    $icon = '<i class="fa fa-fw fa-user-md"></i>';
+                }
                 elsif ($link eq "/mailbox/list_folders.cgi"
                     || $link eq "/mailbox/list_ifolders.cgi" )
                 {
