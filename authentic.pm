@@ -230,6 +230,10 @@ sub theme_footer {
     print '</html>', "\n";
 }
 
+sub theme_popup_prehead {
+    print '<style>.ui_form_end_submit {display: none}</style>';
+}
+
 sub theme_file_chooser_button {
     my $form   = defined( $_[2] ) ? $_[2] : 0;
     my $chroot = defined( $_[3] ) ? $_[3] : "/";
