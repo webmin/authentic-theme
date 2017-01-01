@@ -1,6 +1,6 @@
 #
 # Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
-# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -231,7 +231,7 @@ sub theme_footer {
 }
 
 sub theme_popup_prehead {
-    print '<style>.ui_form_end_submit {display: none}</style>';
+    print '<style>#popup .ui_form_end_submit {display: none}</style>';
 }
 
 sub theme_file_chooser_button {

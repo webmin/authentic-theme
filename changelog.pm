@@ -1,6 +1,6 @@
 #
 # Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
-# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
@@ -24,6 +24,11 @@ our $__changelog
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/600" target="_blank">#600</a>
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/601" target="_blank">#601</a>
                       <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/602" target="_blank">#602</a>
+                      <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/605" target="_blank">#605</a>
+                      <a class="label label-default" href="https://github.com/qooob/authentic-theme/pull/611" target="_blank">#611</a>
+                      <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/619" target="_blank">#619</a>
+                      <a class="label label-default" href="https://github.com/qooob/authentic-theme/issues/620" target="_blank">#620</a>
+                      <a class="label label-default" href="https://www.virtualmin.com/node/767595" target="_blank">#767595</a>
                     </li>
                 </ul>
                 <span style=" float: right; font-size: 10px; display: inline-block; margin-top: -7px; ">18.31</span><hr style="margin-top: 18px; margin-bottom: 12px;">

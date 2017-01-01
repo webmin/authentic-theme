@@ -1,6 +1,6 @@
 #
 # Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
-# Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 

@@ -1,6 +1,6 @@
 /*!
  * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
- * Copyright 2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
@@ -1757,20 +1757,23 @@ function __dlm(b) {
 }
 
 function t__m__m(f, l) {
+    var p = $.url($__source_url).param("dom"),
+        i = $.url($__source_url).param("id"),
+        h = "aside select";
     if ($.url($__source_url).param("refresh") == "1") {
         if (!$("body").contents().text().match(/___theme_post_save___/)) {
             var j = false;
-            if ($.url($__source_url).param("id") || $.url($__source_url).param("dom") && ($t_uri_virtualmin || $t_uri_cloudmin)) {
+            if (i || p && ($t_uri_virtualmin || $t_uri_cloudmin)) {
                 if ($t_uri_virtualmin) {
-                    j = $.url($__source_url).param("dom")
+                    j = p
                 } else {
                     if ($t_uri_cloudmin) {
-                        j = $.url($__source_url).param("id")
+                        j = i
                     }
                 }
             } else {
                 if ($t_uri_virtualmin || $t_uri_cloudmin) {
-                    j = t__wi_p.$("aside select").val()
+                    j = t__wi_p.$(h).val()
                 }
             }
             if ($t_uri_virtualmin) {
@@ -1786,10 +1789,7 @@ function t__m__m(f, l) {
             return
         }
     } else {
-        var p = $.url($__source_url).param("dom"),
-            i = $.url($__source_url).param("id"),
-            h = "aside select",
-            e = " option",
+        var e = " option",
             n = t__wi_p.$(h).val(),
             q = t__wi_p.$(h + e + "[value=" + n + "]").text();
         if (t__wi_p.t___p__ll === 0 && (($t_uri_virtualmin || $t_uri_cloudmin) && (i || p))) {
