@@ -108,7 +108,9 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `+` - select all
   * `-` - deselect all
   * `F2` - change permissions
+  * `Shift+F2` - Change attributes
   * `F3` - change ownership
+  * `Shift+F3` - change security context
   * `F4` - edit where possible
   * `Esc` - close active editor window
   * `Ctrl+Esc` - minimize active editor window

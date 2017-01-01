@@ -1,6 +1,6 @@
 /*!
  * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
- * Copyright 2014-2016 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
@@ -319,7 +319,7 @@ function __si__bg_upd_exec() {
                         }
                         if (k == "warning_si") {
                             var o = $("#right-side-tabs .info-container .warning-list-data");
-                            o.html(n.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace("type='submit'", "formtarget='page' type='submit'").replace("class='ui_submit", "class='ui_submit btn btn-default btn-xs"));
+                            o.html(n.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace("type='submit'", "formtarget='page' type='submit'").replace("class='ui_submit", "class='ui_submit btn btn-default btn-xs").replace('ui_form_end_submit" type="button"', 'ui_form_end_submit" type="submit" formtarget="page"').replace("ui_form_end_submit", "ui_form_end_submit btn-tiny"));
                             ((n == "<br>") && o.empty())
                         }
                         if (k == "extended_si") {
