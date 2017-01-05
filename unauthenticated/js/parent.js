@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -58,85 +58,86 @@ function __si__bg_upd_exec() {
             data: false,
             dataType: "json",
             success: function(e) {
-                $.each(e, function(k, n) {
-                    if (k == "cpu_percent" || k == "mem_percent" || k == "virt_percent" || k == "disk_percent") {
+                $.each(e, function(l, n) {
+                    if (l == "cpu_percent" || l == "mem_percent" || l == "virt_percent" || l == "disk_percent") {
                         if (is_numeric(n)) {
-                            localStorage.setItem($hostname + "-sysinfo_" + k + "_stats", n)
+                            localStorage.setItem($hostname + "-sysinfo_" + l + "_stats", n)
                         } else {
-                            localStorage.setItem($hostname + "-sysinfo_" + k + "_stats", "")
+                            localStorage.setItem($hostname + "-sysinfo_" + l + "_stats", "")
                         }
                     } else {}
                     if (a) {
-                        $(a).find('span[data-id="sysinfo_' + k + '"]').html(n);
-                        if (k == "local_time" || k == "uptime" || k == "running_proc") {
-                            var j = $(a).find('span[data-id="sysinfo_' + k + '"]'),
-                                h = $(a).find('span[data-id="sysinfo_' + k + '"] a'),
-                                l = $(a).find('span[data-id="sysinfo_' + k + '"]').text();
-                            if (k == "local_time" && settings_window_replace_timestamps) {
-                                if (h && h.length) {
-                                    l = $(a).find('span[data-id="sysinfo_' + k + '"] a').data("convertible-timestamp-full");
-                                    j.html(h.html(moment.unix(l).format(settings_window_replaced_timestamp_format_full)))
+                        $(a).find('span[data-id="sysinfo_' + l + '"]').html(n);
+                        if (l == "local_time" || l == "uptime" || l == "running_proc") {
+                            var f = $(a).find('span[data-id="sysinfo_' + l + '"]'),
+                                m = $(a).find('span[data-id="sysinfo_' + l + '"] a'),
+                                o = $(a).find('span[data-id="sysinfo_' + l + '"]').text();
+                            if (l == "local_time" && settings_window_replace_timestamps) {
+                                if (m && m.length) {
+                                    o = $(a).find('span[data-id="sysinfo_' + l + '"] a').data("convertible-timestamp-full");
+                                    f.html(m.html(moment.unix(o).format(settings_window_replaced_timestamp_format_full)))
                                 } else {
-                                    l = $(a).find('span[data-id="sysinfo_' + k + '"] > span').data("convertible-timestamp-full");
-                                    j.html(moment.unix(l).format(settings_window_replaced_timestamp_format_full))
+                                    o = $(a).find('span[data-id="sysinfo_' + l + '"] > span').data("convertible-timestamp-full");
+                                    f.html(moment.unix(o).format(settings_window_replaced_timestamp_format_full))
                                 }
                             } else {
-                                (h && h.length) && j.html(h.html(l))
+                                (m && m.length) && f.html(m.html(o))
                             }
                         }
-                        if ($(a).find('.piechart[data-charts="sysinfo_' + k + '"]').length) {
-                            var g = t__wi_p.$('iframe[name="page"]').get(0),
-                                f = t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$("body").find('.piechart[data-charts="sysinfo_' + k + '"]');
-                            if (g && g.contentWindow && f.length) {
-                                f.data("easyPieChart").update(n)
+                        if ($(a).find('.piechart[data-charts="sysinfo_' + l + '"]').length) {
+                            var j = t__wi_p.$('iframe[name="page"]').get(0),
+                                h = (typeof t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$ === "function"),
+                                g = (h ? t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$("body").find('.piechart[data-charts="sysinfo_' + l + '"]') : 0);
+                            if (j && j.contentWindow && g.length) {
+                                g.data("easyPieChart").update(n)
                             }
                         }
-                        if (k == "cpu_percent" || k == "mem_percent" || k == "virt_percent" || k == "disk_percent") {
-                            localStorage.setItem($hostname + "-sysinfo_" + k + "_seen", n)
+                        if (l == "cpu_percent" || l == "mem_percent" || l == "virt_percent" || l == "disk_percent") {
+                            localStorage.setItem($hostname + "-sysinfo_" + l + "_seen", n)
                         }
                         $(a).find(".modal-backdrop").remove()
                     }
                     $__id__ = moment().unix();
-                    if (k == "cpu_percent" || k == "mem_percent" || k == "virt_percent" || k == "disk_percent" || k == "csf_title" || k == "csf_remote_version" || k == "authentic_remote_version" || k == "package_message") {
-                        if (!localStorage.getItem($hostname + "-sysinfo_" + k)) {
-                            localStorage.setItem($hostname + "-sysinfo_" + k, n)
+                    if (l == "cpu_percent" || l == "mem_percent" || l == "virt_percent" || l == "disk_percent" || l == "csf_title" || l == "csf_remote_version" || l == "authentic_remote_version" || l == "package_message") {
+                        if (!localStorage.getItem($hostname + "-sysinfo_" + l)) {
+                            localStorage.setItem($hostname + "-sysinfo_" + l, n)
                         }
                     } else {
                         if (n == null || n == NaN) {
-                            localStorage.setItem($hostname + "-sysinfo_" + k, "")
+                            localStorage.setItem($hostname + "-sysinfo_" + l, "")
                         } else {
-                            localStorage.setItem($hostname + "-sysinfo_" + k, n)
+                            localStorage.setItem($hostname + "-sysinfo_" + l, n)
                         }
                     }
                     if (!localStorage.getItem($hostname + "-sysinfo_package_message_initial")) {
                         localStorage.setItem($hostname + "-sysinfo_package_message_initial", 1)
                     }
-                    if (k == "authentic_theme_version") {
+                    if (l == "authentic_theme_version") {
                         if (!localStorage.getItem($hostname + "-sysinfo_theme_current_version") && n) {
                             localStorage.setItem($hostname + "-sysinfo_theme_current_version", (n.match(/^\d+|\d+\b|\d+(?=\w)/g)[0] + "." + n.match(/^\d+|\d+\b|\d+(?=\w)/g)[1]))
                         }
                     }
-                    if (k == "csf_data") {
+                    if (l == "csf_data") {
                         if (!localStorage.getItem($hostname + "-sysinfo_csf_current_version") && n) {
                             localStorage.setItem($hostname + "-sysinfo_csf_current_version", (n.match(/^\d+|\d+\b|\d+(?=\w)/g)[0] + "." + n.match(/^\d+|\d+\b|\d+(?=\w)/g)[1]))
                         }
                     }
-                    if (k == "csf_title" || k == "csf_remote_version" || k == "authentic_remote_version" || k == "package_message") {
-                        if (k == "package_message" && (localStorage.getItem($hostname + "-sysinfo_" + k) != n || localStorage.getItem($hostname + "-sysinfo_package_message_initial") == 1) && n && n.indexOf("badge-danger") > -1) {
+                    if (l == "csf_title" || l == "csf_remote_version" || l == "authentic_remote_version" || l == "package_message") {
+                        if (l == "package_message" && (localStorage.getItem($hostname + "-sysinfo_" + l) != n || localStorage.getItem($hostname + "-sysinfo_package_message_initial") == 1) && n && n.indexOf("badge-danger") > -1) {
                             localStorage.setItem($hostname + "-notifications_" + $__id__ + "_package_message", JSON.stringify({
                                 title: lang("theme_xhred_notifications_packages_updates"),
                                 time: $__id__,
                                 timestamp: $__id__,
                                 message: ($(n).html().replace(/badge-danger/g, "badge-success")),
                                 readStatus: 0,
-                                type: k,
+                                type: l,
                                 link: $(n).attr("href")
                             }));
-                            localStorage.setItem($hostname + "-sysinfo_" + k, n);
+                            localStorage.setItem($hostname + "-sysinfo_" + l, n);
                             localStorage.setItem($hostname + "-sysinfo_package_message_initial", 0)
                         } else {
-                            if (k === "package_message") {
-                                localStorage.setItem($hostname + "-sysinfo_" + k, n)
+                            if (l === "package_message") {
+                                localStorage.setItem($hostname + "-sysinfo_" + l, n)
                             }
                         }
                         if (settings_sysinfo_theme_updates) {
@@ -144,208 +145,208 @@ function __si__bg_upd_exec() {
                                 localStorage.removeItem($hostname + "-sysinfo_authentic_remote_version")
                             }
                             if (localStorage.getItem($hostname + "-sysinfo_theme_current_version") && localStorage.getItem($hostname + "-sysinfo_authentic_remote_version")) {
-                                if (k == "authentic_remote_version" && localStorage.getItem($hostname + "-sysinfo_theme_current_version") < n && n != "0" && n != "0.00" && n != null) {
+                                if (l == "authentic_remote_version" && localStorage.getItem($hostname + "-sysinfo_theme_current_version") < n && n != "0" && n != "0.00" && n != null) {
                                     localStorage.setItem($hostname + "-notifications_" + $__id__ + "_authentic_remote_version", JSON.stringify({
                                         title: lang("theme_xhred_notifications_theme_update"),
                                         time: $__id__,
                                         timestamp: $__id__,
                                         message: lang("theme_xhred_notifications_theme_update_message").replace("%v", n) + '&nbsp;&nbsp;<span class="label label-success authentic_update" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" href="' + $_____link_full + '/webmin/edit_themes.cgi"></span>',
                                         readStatus: 0,
-                                        type: k,
+                                        type: l,
                                         link: $_____link_full + "/sysinfo.cgi"
                                     }));
-                                    localStorage.setItem($hostname + "-sysinfo_" + k, n);
+                                    localStorage.setItem($hostname + "-sysinfo_" + l, n);
                                     localStorage.setItem($hostname + "-sysinfo_theme_current_version", n)
                                 }
                             }
                         }
                         if (settings_sysinfo_csf_updates) {
                             if (localStorage.getItem($hostname + "-sysinfo_csf_current_version") && localStorage.getItem($hostname + "-sysinfo_csf_current_version") != null && localStorage.getItem($hostname + "-sysinfo_csf_remote_version")) {
-                                if (k == "csf_remote_version" && localStorage.getItem($hostname + "-sysinfo_csf_current_version") < n && n != "0" && n != "0.00" && n != null) {
+                                if (l == "csf_remote_version" && localStorage.getItem($hostname + "-sysinfo_csf_current_version") < n && n != "0" && n != "0.00" && n != null) {
                                     localStorage.setItem($hostname + "-notifications_" + $__id__ + "_csf_remote_version", JSON.stringify({
                                         title: lang("theme_xhred_notifications_firewall_update"),
                                         time: $__id__,
                                         timestamp: $__id__,
                                         message: lang("theme_xhred_notifications_firewall_update_message").replace("%v", n),
                                         readStatus: 0,
-                                        type: k,
+                                        type: l,
                                         link: $_____link_full + "/csf"
                                     }));
-                                    localStorage.setItem($hostname + "-sysinfo_" + k, n);
+                                    localStorage.setItem($hostname + "-sysinfo_" + l, n);
                                     localStorage.setItem($hostname + "-sysinfo_csf_current_version", n)
                                 }
                             }
                         }
-                        if (k == "csf_title" && n && n.indexOf("label-danger") > -1 && localStorage.getItem($hostname + "-sysinfo_csf_not_running") != 1) {
+                        if (l == "csf_title" && n && n.indexOf("label-danger") > -1 && localStorage.getItem($hostname + "-sysinfo_csf_not_running") != 1) {
                             localStorage.setItem($hostname + "-notifications_" + $__id__ + "_csf_title", JSON.stringify({
                                 title: lang("theme_xhred_notifications_firewall_danger"),
                                 time: $__id__,
                                 timestamp: $__id__,
                                 message: lang("theme_xhred_notifications_firewall_danger_message").replace("%v", moment.unix($__id__).format(settings_window_replaced_timestamp_format_short)),
                                 readStatus: 0,
-                                type: k,
+                                type: l,
                                 link: $_____link_full + "/csf"
                             }));
                             localStorage.setItem($hostname + "-sysinfo_csf_not_running", 1)
                         } else {
-                            if (k == "csf_title" && n && n.indexOf("label-danger") === -1) {
+                            if (l == "csf_title" && n && n.indexOf("label-danger") === -1) {
                                 localStorage.removeItem($hostname + "-sysinfo_csf_not_running")
                             }
                         }
                     }
-                    if (k == "csf_deny") {
-                        var m = JSON.parse(n);
-                        $.each(m, function(v, s) {
-                            var s = s.split("|"),
-                                w = s[0],
-                                p = s[1],
-                                x = s[2],
-                                o = s[3],
-                                u = s[4],
-                                q = s[5],
-                                t = s[6],
-                                r = s[7];
-                            r = r.replace("*Port Scan*", ((x && o) ? 'Port <i data-port-href="http://www.speedguide.net/port.php?port=' + o + '" class="badge bg-dark-red">' + o + "</i> scan" : "Port scan"));
-                            if (!localStorage.getItem($hostname + "-allowed_trigger_" + (w + p.replace(/\./g, "0")) + "_csf_deny")) {
-                                localStorage.setItem($hostname + "-notifications_" + (w + p.replace(/\./g, "0")) + "_csf_deny", JSON.stringify({
+                    if (l == "csf_deny") {
+                        var k = JSON.parse(n);
+                        $.each(k, function(w, t) {
+                            var t = t.split("|"),
+                                x = t[0],
+                                q = t[1],
+                                y = t[2],
+                                p = t[3],
+                                v = t[4],
+                                r = t[5],
+                                u = t[6],
+                                s = t[7];
+                            s = s.replace("*Port Scan*", ((y && p) ? 'Port <i data-port-href="http://www.speedguide.net/port.php?port=' + p + '" class="badge bg-dark-red">' + p + "</i> scan" : "Port scan"));
+                            if (!localStorage.getItem($hostname + "-allowed_trigger_" + (x + q.replace(/\./g, "0")) + "_csf_deny")) {
+                                localStorage.setItem($hostname + "-notifications_" + (x + q.replace(/\./g, "0")) + "_csf_deny", JSON.stringify({
                                     title: lang("theme_xhred_notifications_firewall_warning"),
                                     time: $__id__,
                                     timestamp: $__id__,
-                                    message: r + ((x && o) ? " <span>(" + x + ":" + o + ")</span>" : ""),
+                                    message: s + ((y && p) ? " <span>(" + y + ":" + p + ")</span>" : ""),
                                     readStatus: 0,
-                                    type: k,
+                                    type: l,
                                     link: $_____link_full + "/csf"
                                 }));
-                                localStorage.setItem($hostname + "-allowed_trigger_" + (w + p.replace(/\./g, "0")) + "_csf_deny", 1)
+                                localStorage.setItem($hostname + "-allowed_trigger_" + (x + q.replace(/\./g, "0")) + "_csf_deny", 1)
                             }
                         })
                     }
-                    if (k == "cpu_percent" || k == "mem_percent" || k == "virt_percent" || k == "disk_percent") {
-                        if (localStorage.getItem($hostname + "-sysinfo_" + k + "_seen") !== null && n >= 85 && localStorage.getItem($hostname + "-sysinfo_" + k + "_seen") < n) {}
+                    if (l == "cpu_percent" || l == "mem_percent" || l == "virt_percent" || l == "disk_percent") {
+                        if (localStorage.getItem($hostname + "-sysinfo_" + l + "_seen") !== null && n >= 85 && localStorage.getItem($hostname + "-sysinfo_" + l + "_seen") < n) {}
                     }
                     setTimeout(function() {
                         if (localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") || localStorage.getItem($hostname + "-sysinfo_mem_percent_stats") || localStorage.getItem($hostname + "-sysinfo_virt_percent_stats") || localStorage.getItem($hostname + "-sysinfo_disk_percent_stats")) {
                             if ($("#right-side-tabs-sysinfo .graph-container").length) {
-                                if (k == "cpu_percent") {
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_load")).text("" + lang("theme_xhred_global_cpu_load") + ": " + localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_load") + ")");
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") + "%")
+                                if (l == "cpu_percent") {
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_load")).text("" + lang("theme_xhred_global_cpu_load") + ": " + localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_load") + ")");
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") + "%")
                                 }
-                                if (k == "mem_percent") {
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_real_memory")).text("" + lang("body_real") + ": " + localStorage.getItem($hostname + "-sysinfo_mem_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_real_memory") + ")");
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_mem_percent_stats") + "%")
+                                if (l == "mem_percent") {
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_real_memory")).text("" + lang("body_real") + ": " + localStorage.getItem($hostname + "-sysinfo_mem_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_real_memory") + ")");
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_mem_percent_stats") + "%")
                                 }
-                                if (k == "virt_percent") {
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_virtual_memory")).text("" + lang("body_virt") + ": " + localStorage.getItem($hostname + "-sysinfo_virt_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_virtual_memory") + ")");
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_virt_percent_stats") + "%")
+                                if (l == "virt_percent") {
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_virtual_memory")).text("" + lang("body_virt") + ": " + localStorage.getItem($hostname + "-sysinfo_virt_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_virtual_memory") + ")");
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_virt_percent_stats") + "%")
                                 }
-                                if (k == "disk_percent") {
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_disk_space")).text("" + lang("body_disk") + ": " + localStorage.getItem($hostname + "-sysinfo_disk_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_disk_space") + ")");
-                                    $("#right-side-tabs-sysinfo .graph-container." + k + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_disk_percent_stats") + "%")
+                                if (l == "disk_percent") {
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_disk_space")).text("" + lang("body_disk") + ": " + localStorage.getItem($hostname + "-sysinfo_disk_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_disk_space") + ")");
+                                    $("#right-side-tabs-sysinfo .graph-container." + l + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_disk_percent_stats") + "%")
                                 }
                             }
                         }
-                        $('#right-side-tabs .info-container .info-list-data span[data-data="' + k + '"]').html(n);
-                        if (k == "package_message") {
-                            $('#right-side-tabs .info-container .info-list-data span[data-data="' + k + '"]').html($(n).html($(n).html().split(",")[0])[0].outerHTML)
+                        $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"]').html(n);
+                        if (l == "package_message") {
+                            $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"]').html($(n).html($(n).html().split(",")[0])[0].outerHTML)
                         }
-                        if (k == "local_time" && settings_window_replace_timestamps) {
-                            var u = $('#right-side-tabs .info-container .info-list-data span[data-data="' + k + '"] a');
-                            if (u && u.length) {
-                                u.html(u.next("span").detach())
+                        if (l == "local_time" && settings_window_replace_timestamps) {
+                            var v = $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"] a');
+                            if (v && v.length) {
+                                v.html(v.next("span").detach())
                             }
-                            var s = t__wi_p.$(".info-container").find("span[data-convertible-timestamp-full]"),
-                                t = s.attr("data-convertible-timestamp-full");
-                            s.html(moment.unix(t).format(settings_window_replaced_timestamp_format_full))
+                            var t = t__wi_p.$(".info-container").find("span[data-convertible-timestamp-full]"),
+                                u = t.attr("data-convertible-timestamp-full");
+                            t.html(moment.unix(u).format(settings_window_replaced_timestamp_format_full))
                         }
-                        if (k == "cpu_temperature") {
-                            var p = 0;
-                            $.each($(n).filter(".badge-cpustatus"), function(y, z) {
-                                var x = parseInt($(this).text().split(":")[1]),
-                                    A = (x <= 30 ? "--bg-info" : (x > 30 && x <= 60 ? "--bg-success" : (x > 60 && x <= 80) ? "bg-warning" : (x > 80) ? "bg-danger" : "")),
-                                    B = $(this).text().indexOf("°C") > -1;
-                                if (!B) {
-                                    A = (x <= 86 ? "--bg-info" : (x > 86 && x <= 140 ? "--bg-success" : (x > 140 && x <= 176) ? "bg-warning" : (x > 176) ? "bg-danger" : ""))
+                        if (l == "cpu_temperature") {
+                            var q = 0;
+                            $.each($(n).filter(".badge-cpustatus"), function(z, A) {
+                                var y = parseInt($(this).text().split(":")[1]),
+                                    B = (y <= 30 ? "--bg-info" : (y > 30 && y <= 60 ? "--bg-success" : (y > 60 && y <= 80) ? "bg-warning" : (y > 80) ? "bg-danger" : "")),
+                                    C = $(this).text().indexOf("°C") > -1;
+                                if (!C) {
+                                    B = (y <= 86 ? "--bg-info" : (y > 86 && y <= 140 ? "--bg-success" : (y > 140 && y <= 176) ? "bg-warning" : (y > 176) ? "bg-danger" : ""))
                                 }
-                                if (A == "bg-warning" || A == "bg-danger") {
-                                    p = 1
+                                if (B == "bg-warning" || B == "bg-danger") {
+                                    q = 1
                                 }
                                 if (!$("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus").length) {
                                     $('strong[data-stats="cpu"] + br[data-stats="cpu"]').after(n.replace(/<br>|&nbsp;/gi, ""))
                                 }
-                                $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[y]).html($(this).text()).removeClass((function(C, D) {
-                                    return (D.match(/(^|\s)bg-\S+/g) || []).join(" ")
-                                })).addClass(A)
+                                $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[z]).html($(this).text()).removeClass((function(D, E) {
+                                    return (E.match(/(^|\s)bg-\S+/g) || []).join(" ")
+                                })).addClass(B)
                             }).promise().done(function() {
-                                if (p) {
+                                if (q) {
                                     $('[data-stats="cpu"]').removeClass("hidden")
                                 } else {
                                     $('[data-stats="cpu"]').addClass("hidden")
                                 }
                             })
                         }
-                        if (k == "hdd_temperature") {
-                            var q = 0;
-                            $.each($(n), function(y, z) {
-                                var x = parseInt($(this).text().split(":")[1]),
-                                    A = (x <= 30 ? "--bg-info" : (x > 30 && x <= 60 ? "--bg-success" : (x > 60 && x <= 80) ? "bg-warning" : (x > 80) ? "bg-danger" : "")),
-                                    B = $(this).text().indexOf("°C") > -1;
-                                if (!B) {
-                                    A = (x <= 86 ? "--bg-info" : (x > 86 && x <= 140 ? "--bg-success" : (x > 140 && x <= 176) ? "bg-warning" : (x > 176) ? "bg-danger" : ""))
+                        if (l == "hdd_temperature") {
+                            var r = 0;
+                            $.each($(n), function(z, A) {
+                                var y = parseInt($(this).text().split(":")[1]),
+                                    B = (y <= 30 ? "--bg-info" : (y > 30 && y <= 60 ? "--bg-success" : (y > 60 && y <= 80) ? "bg-warning" : (y > 80) ? "bg-danger" : "")),
+                                    C = $(this).text().indexOf("°C") > -1;
+                                if (!C) {
+                                    B = (y <= 86 ? "--bg-info" : (y > 86 && y <= 140 ? "--bg-success" : (y > 140 && y <= 176) ? "bg-warning" : (y > 176) ? "bg-danger" : ""))
                                 }
-                                if (A == "bg-warning" || A == "bg-danger") {
-                                    q = 1
+                                if (B == "bg-warning" || B == "bg-danger") {
+                                    r = 1
                                 }
                                 if (!$("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)").length) {
                                     $('strong[data-stats="drive"] + br[data-stats="drive"]').after(n.replace(/<br>|&nbsp;/gi, ""))
                                 }
-                                $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[y]).html($(this).text()).removeClass((function(C, D) {
-                                    return (D.match(/(^|\s)bg-\S+/g) || []).join(" ")
-                                })).addClass(A)
+                                $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[z]).html($(this).text()).removeClass((function(D, E) {
+                                    return (E.match(/(^|\s)bg-\S+/g) || []).join(" ")
+                                })).addClass(B)
                             }).promise().done(function() {
-                                if (q) {
+                                if (r) {
                                     $('[data-stats="drive"]').removeClass("hidden")
                                 } else {
                                     $('[data-stats="drive"]').addClass("hidden")
                                 }
                             })
                         }
-                        if (k == "uptime" || k == "running_proc") {
-                            var u = $('#right-side-tabs .info-container .info-list-data span[data-data="' + k + '"] a');
-                            if (u && u.length) {
-                                var r = u.parent(),
-                                    w = r.text();
-                                r.html(u.text(w))
+                        if (l == "uptime" || l == "running_proc") {
+                            var v = $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"] a');
+                            if (v && v.length) {
+                                var s = v.parent(),
+                                    x = s.text();
+                                s.html(v.text(x))
                             }
                         }
-                        if (k == "warning_si") {
-                            var o = $("#right-side-tabs .info-container .warning-list-data");
-                            o.html(n.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace("type='submit'", "formtarget='page' type='submit'").replace("class='ui_submit", "class='ui_submit btn btn-default btn-xs").replace('ui_form_end_submit" type="button"', 'ui_form_end_submit" type="submit" formtarget="page"').replace("ui_form_end_submit", "ui_form_end_submit btn-tiny"));
-                            ((n == "<br>") && o.empty())
+                        if (l == "warning_si") {
+                            var p = $("#right-side-tabs .info-container .warning-list-data");
+                            p.html(n.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace("type='submit'", "formtarget='page' type='submit'").replace("class='ui_submit", "class='ui_submit btn btn-default btn-xs").replace('ui_form_end_submit" type="button"', 'ui_form_end_submit" type="submit" formtarget="page"').replace("ui_form_end_submit", "ui_form_end_submit btn-tiny"));
+                            ((n == "<br>") && p.empty())
                         }
-                        if (k == "extended_si") {
-                            var o = $("#right-side-tabs .info-container .extended-list-data");
-                            var v = (n.replace(/aria-expanded="true"/gi, 'aria-expanded="false"').replace(/collapse in/gi, "collapse"));
+                        if (l == "extended_si") {
+                            var p = $("#right-side-tabs .info-container .extended-list-data");
+                            var w = (n.replace(/aria-expanded="true"/gi, 'aria-expanded="false"').replace(/collapse in/gi, "collapse"));
                             opened_tabs = $("#extended_sysinfo .panel .in").map(function() {
-                                v = (v.replace('data-toggle="collapse" href="#' + this.id + '" aria-expanded="false" aria-controls="' + this.id + '"', 'data-toggle="collapse" href="#' + this.id + '" aria-expanded="true" aria-controls="' + this.id + '"'));
-                                v = (v.replace('div id="' + this.id + '" class="panel-collapse collapse"', 'div id="' + this.id + '" class="panel-collapse collapse in"'))
+                                w = (w.replace('data-toggle="collapse" href="#' + this.id + '" aria-expanded="false" aria-controls="' + this.id + '"', 'data-toggle="collapse" href="#' + this.id + '" aria-expanded="true" aria-controls="' + this.id + '"'));
+                                w = (w.replace('div id="' + this.id + '" class="panel-collapse collapse"', 'div id="' + this.id + '" class="panel-collapse collapse in"'))
                             }).promise().done(function() {
-                                o.html('<div style="height: 11px"></div>' + v);
-                                var x = $("#right-side-tabs .extended-list-data");
-                                x.find("div.panel-heading:not(#status_services-status):not(#status-virtual-server):not(#acl_logins-acl):not(#sysinfo-virtual-server):not(#quota-virtual-server):not(#bw-virtual-server)").parent().remove();
-                                $.each(x.find("div.panel-heading .panel-title"), function() {
-                                    var z = $(this).find("a"),
-                                        y = $(this).find("a").attr("aria-expanded") != "true" ? 1 : 0,
-                                        A = (y ? "+" : "—");
-                                    $(this).append('<span class="pull-right panel-title-status' + (y ? " margined-right-2" : "") + '">' + A + "</span>");
-                                    z.text(upperFirst($.trim(z.text())))
+                                p.html('<div style="height: 11px"></div>' + w);
+                                var y = $("#right-side-tabs .extended-list-data");
+                                y.find("div.panel-heading:not(#status_services-status):not(#status-virtual-server):not(#acl_logins-acl):not(#sysinfo-virtual-server):not(#quota-virtual-server):not(#bw-virtual-server)").parent().remove();
+                                $.each(y.find("div.panel-heading .panel-title"), function() {
+                                    var A = $(this).find("a"),
+                                        z = $(this).find("a").attr("aria-expanded") != "true" ? 1 : 0,
+                                        B = (z ? "+" : "—");
+                                    $(this).append('<span class="pull-right panel-title-status' + (z ? " margined-right-2" : "") + '">' + B + "</span>");
+                                    A.text(upperFirst($.trim(A.text())))
                                 });
-                                x.find(".panel.panel-default").detach().appendTo("#right-side-tabs #extended_sysinfo");
-                                x.find("div.panel-body").find("img").remove();
-                                x.find("a").attr("target", "page");
-                                x.find('input[type="submit"]').addClass("btn btn-default btn-xs");
-                                x.find('input[type="submit"]').parents("form").attr("formtarget", "page");
-                                x.find('button[type="button"].ui_submit').addClass("btn btn-default btn-xs");
-                                x.find('button[type="button"].ui_submit').parents("form").attr("formtarget", "page");
+                                y.find(".panel.panel-default").detach().appendTo("#right-side-tabs #extended_sysinfo");
+                                y.find("div.panel-body").find("img").remove();
+                                y.find("a").attr("target", "page");
+                                y.find('input[type="submit"]').addClass("btn btn-default btn-xs");
+                                y.find('input[type="submit"]').parents("form").attr("formtarget", "page");
+                                y.find('button[type="button"].ui_submit').addClass("btn btn-default btn-xs");
+                                y.find('button[type="button"].ui_submit').parents("form").attr("formtarget", "page");
                                 $("#extended_sysinfo .panel").on("show.bs.collapse", function() {
                                     $(this).find(".panel-title-status").removeClass("margined-right-2").text("—")
                                 }).on("hide.bs.collapse", function() {

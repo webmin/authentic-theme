@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -8908,6 +8908,15 @@ body[class*='fetchmail'][data-uri*='edit_poll.cgi'] tr:first-child input[type='s
     margin-top: 4px !important
 }
 
+body[class*='fetchmail'] .panel-body>form[action="edit_poll.cgi"]:first-child {
+    margin-bottom: 4px !important
+}
+
+body[class*='fetchmail'] table.table-hardcoded>tbody>tr[bgcolor].thead>td>b {
+    font-size: 18px !important;
+    vertical-align: middle !important
+}
+
 body[class*='firewalld'][data-uri*='edit_port.cgi'] input[name='port'] {
     margin-top: 1px
 }
@@ -8995,6 +9004,8 @@ input[data-mmclick]:not(.heighter-34)+i.fa-files-o {
     margin-left: -28px !important
 }
 
+body[class*='updown'] tr>td>input[name="group"]+input[data-mmclick*="group_chooser.cgi"]:not(.heighter-34)+i.fa-files-o,
+body[class*='updown'] tr>td>input[name="user"]+input[data-mmclick*="user_chooser.cgi"]:not(.heighter-34)+i.fa-files-o,
 body[class*='proc'] tr>td>input[name="user"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
 body[class*='webmin'] tr>td>input[name="third"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
 body[class*='webmin'] tr>td>input[name="standard"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,

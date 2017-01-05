@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1450,7 +1450,7 @@ if ($current_directory == $_____link + "init/") {
         $(this).attr("style", "vertical-align: middle !important")
     })
 }
-if ($current_directory == $_____link + "proc/" || $source_path == $_____link + "proc/index.cgi" || ($current_directory == $_____link + "fetchmail/" && $("link").attr("href") == "/images/favicon-usermin.ico")) {
+if ($current_directory == $_____link + "proc/" || $source_path == $_____link + "proc/index.cgi") {
     if (($current_directory == $_____link + "proc/" && $__source_file && $__source_file.indexOf("index_") > -1) || $source_path == $_____link + "proc/index.cgi") {
         $("a.ui_link + b").addClass("btn").css("margin-left", "3px");
         $("b + a.ui_link").addClass("btn").css("margin-left", "3px");
@@ -2596,12 +2596,28 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
         clicks = 0,
         timer = null;
     $("body").on("click", '.icons-row div[class*="icons-container"] .forged-xx-data, .icons-container, .small-icons-container, .xsmall-icons-container', function(b) {
+        var e = $(this);
         if ($(this).hasClass("forged-xx-skip")) {
             return
         }
         b.preventDefault();
         b.stopPropagation();
         b.stopImmediatePropagation();
+        if ($_v__ls__a && localStorage.getItem($hostname + "-config_portable_theme_display_icons_info_message") != "true") {
+            var d = '                  <div class="modal fade7 modal-display-icons-warning" tabindex="-1" role="dialog">                    <div class="modal-dialog modal-sm">                      <div class="modal-content">                        <div class="modal-header background-info background--bordered">                          <button type="button" class="close" data-dismiss="modal" aria-label="' + lang("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                          <h4 class="modal-title"><i class="fa fa-fw fa-exclamation-circle">&nbsp;&nbsp;</i> ' + lang("theme_xhred_global_notice") + '</h4>                        </div>                        <div class="modal-body">                          <p>' + lang("theme_xhred_display_icons_warning") + "</p>                        </div>                      </div>                    </div>                  </div>                ";
+            $("body").append(d);
+            if (!$("body").hasClass("modal-open")) {
+                $(".modal-display-icons-warning").modal("show");
+                $(".modal-display-icons-warning").on("click", ".modal-body a.label", function(a) {
+                    $(".modal-display-icons-warning").modal("hide")
+                });
+                $(".modal-display-icons-warning").on("hide.bs.modal", function(a) {
+                    localStorage.setItem($hostname + "-config_portable_theme_display_icons_info_message", "true");
+                    t__wi_p.manageConfig("save")
+                })
+            }
+            return
+        }
         clicks++;
         if (clicks === 1) {
             timer = setTimeout(function() {
@@ -2611,17 +2627,17 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
         } else {
             clearTimeout(timer);
             clicks = 0;
-            var e = $(b.target).parent("a").attr("href"),
+            var g = $(b.target).parent("a").attr("href"),
                 c = $(b.target).find("a").attr("href"),
-                d = $(b.target).attr("href");
-            if (e) {
-                window.location.href = e
+                f = $(b.target).attr("href");
+            if (g) {
+                window.location.href = g
             } else {
                 if (c) {
                     window.location.href = c
                 } else {
-                    if (d) {
-                        window.location.href = d
+                    if (f) {
+                        window.location.href = f
                     }
                 }
             }
