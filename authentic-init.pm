@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -495,7 +495,7 @@ sub usermin_available {
     $__usermin_config =~ s/webmin/usermin/;
 
     if ( !-d $__usermin_config . '/authentic-theme' ) {
-        mkdir( $__usermin_config . '/authentic-theme', 0755 );
+        mkdir( $__usermin_config . '/authentic-theme', "0755" );
     }
 
     if (   -r $__usermin_root . $_module
@@ -960,8 +960,8 @@ sub get_button_style {
 
 sub theme_version {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '18.30';
-    my $sh__ln__c___version = '18.31';
+    my $sh__ln__p___version = '18.31';
+    my $sh__ln__c___version = '18.32';
     ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
     return $sh__ln__c___version;
 }
@@ -990,7 +990,7 @@ sub get_stripped {
 }
 
 sub get_raw {
-    if ( index( get_env('request_uri'), 'stripped=1&stripped=2' ) gt -1 ) {
+    if ( index( get_env('request_uri'), 'stripped=1&stripped=2' ) gt -1 || get_module_name() eq "file") {
         return 1;
     }
     else {

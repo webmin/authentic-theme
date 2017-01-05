@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -3437,6 +3437,9 @@ sub init_type {
 }
 
 sub init {
+
+    # Make sure that config directory exists
+    __config_dir_available();
 
     # Register hooks
     $t_uri____i = ( $t_uri_cloudmin == -1 ? 'dom' : 'sid' );

@@ -1,6 +1,6 @@
 ##Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (18.31)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.31/authentic-theme-18.31.wbt.gz)
+* [Download (18.32)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.32/authentic-theme-18.32.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -58,7 +58,7 @@
 
 #####Webmin
 
-  To install _Autentic_ Theme from repository, just `clone` it into your wherever _Webmin_ binary folder _(libexec)_ is. After that, you must rename `authentic-theme-master` directory to `authentic-theme` to make the theme work properly. Besides, you could just [download](https://github.com/qooob/authentic-theme/releases/download/18.31/authentic-theme-18.31.wbt.gz) the theme directly and install it using _Webmin_:
+  To install _Autentic_ Theme from repository, just `clone` it into your wherever _Webmin_ binary folder _(libexec)_ is. After that, you must rename `authentic-theme-master` directory to `authentic-theme` to make the theme work properly. Besides, you could just [download](https://github.com/qooob/authentic-theme/releases/download/18.32/authentic-theme-18.32.wbt.gz) the theme directly and install it using _Webmin_:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 

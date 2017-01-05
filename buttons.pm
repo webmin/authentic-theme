@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -17,7 +17,8 @@ if ( $__settings{'settings_sysinfo_link_mini'} ne 'false'
     print '</li>';
 }
 
-if ( $__settings{'settings_show_terminal_link'} ne 'false' )
+if ( $__settings{'settings_show_terminal_link'} ne 'false'
+    && foreign_available("shell") )
 {
     print '<li class="user-link ported-console cursor-pointer">';
     print '<span><i class="fa fa-fw fa-terminal"></i></span>';

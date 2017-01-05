@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -243,7 +243,7 @@ function lang(b, a) {
 }
 
 function manageConfig(d) {
-    var b = ["config_portable_module_csf_style_custom_promoted", "config_portable_theme_charset_warning_shown", "config_portable_module_xsql_fit_content_screen_height", "config_portable_module_filemanager_hide_toolbar", "config_portable_module_filemanager_hovered_toolbar", "config_portable_module_filemanager_hide_actions", "config_portable_module_filemanager_remember_tabs", "config_portable_module_filemanager_calculate_size", "config_portable_module_filemanager_notification_type"];
+    var b = ["config_portable_module_csf_style_custom_promoted", "config_portable_theme_charset_warning_shown", "config_portable_theme_display_icons_info_message", "config_portable_module_xsql_fit_content_screen_height", "config_portable_module_filemanager_hide_toolbar", "config_portable_module_filemanager_hovered_toolbar", "config_portable_module_filemanager_hide_actions", "config_portable_module_filemanager_remember_tabs", "config_portable_module_filemanager_calculate_size", "config_portable_module_filemanager_notification_type"];
     if (d == "get_options") {
         return b
     }

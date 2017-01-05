@@ -1,9 +1,13 @@
 ##Changelog
 
-####Version 18.31 (December 09, 2016)
-Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](https://github.com/qooob/authentic-theme/issues/593) [#594](https://github.com/qooob/authentic-theme/pull/594) [#597](https://github.com/qooob/authentic-theme/issues/597) [#599](https://github.com/qooob/authentic-theme/issues/599) [#600](https://github.com/qooob/authentic-theme/issues/600) [#601](https://github.com/qooob/authentic-theme/issues/601) [#602](https://github.com/qooob/authentic-theme/issues/602) [#605](https://github.com/qooob/authentic-theme/issues/605) [#611](https://github.com/qooob/authentic-theme/pull/611) [#619](https://github.com/qooob/authentic-theme/issues/619) [#620](https://github.com/qooob/authentic-theme/issues/620) [#767595](https://www.virtualmin.com/node/767595)
+####Version 18.32 (January 05, 2017)
+* Added _Catalan_ language, thanks to [David Canalias](https://github.com/diathesaron)
+* Fixed bugs [#605](https://github.com/qooob/authentic-theme/issues/605) [#611](https://github.com/qooob/authentic-theme/pull/611) [#617](https://github.com/qooob/authentic-theme/pull/617) [#619](https://github.com/qooob/authentic-theme/issues/619) [#620](https://github.com/qooob/authentic-theme/issues/620) [#624](https://github.com/qooob/authentic-theme/issues/624) [#628](https://github.com/qooob/authentic-theme/issues/628) [#44856](https://www.virtualmin.com/node/44856) [#44874](https://www.virtualmin.com/node/44874) [#45206](https://www.virtualmin.com/node/45206)
 
-####Version 18.30 (December 07, 2016) &nbsp;&nbsp;&nbsp; :star2: :star2: :star2: :star2: :star2:
+####Version 18.31 (December 09, 2016)
+Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](https://github.com/qooob/authentic-theme/issues/593) [#594](https://github.com/qooob/authentic-theme/pull/594) [#597](https://github.com/qooob/authentic-theme/issues/597) [#599](https://github.com/qooob/authentic-theme/issues/599) [#600](https://github.com/qooob/authentic-theme/issues/600) [#601](https://github.com/qooob/authentic-theme/issues/601) [#602](https://github.com/qooob/authentic-theme/issues/602)
+
+####Version 18.30 (December 07, 2016)
 * Increased theme's speed and stability
 * Added new drop-down _Command Shell_ port. There is no need in going to _Shell_ module to use console anymore. By default, hitting `Alt+K` anywhere in the theme will bring its accessibility immediately [#566](https://github.com/qooob/authentic-theme/issues/566)
 * Added new functionality that replaces old pop-up windows with contemporary modals for file-chooser and other familiar operations [#552](https://github.com/qooob/authentic-theme/issues/552)
@@ -376,7 +380,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Added a new feature of adding any right side page to global _Favorites_ [#210](https://github.com/qooob/authentic-theme/issues/210)
 * Added complete _AJAX_ support for _File Manager_ (by _Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
 * Added emphasis on the table sub-titles [#218](https://github.com/qooob/authentic-theme/issues/218)
-* Added CZ language, thanks to [stuchy3](https://github.com/stuchy3)
+* Added _Czech_ language, thanks to [stuchy3](https://github.com/stuchy3)
 * Fixed sorting issue by file-size in _File Manager_ and other modules, where file-size like sorting is used
 * Fixed link for _System Statistics_ in _Cloudmin_
 * Fixed multiple bugs [#213](https://github.com/qooob/authentic-theme/issues/213) [#214](https://github.com/qooob/authentic-theme/issues/214) [#220](https://github.com/qooob/authentic-theme/issues/220) [#223](https://github.com/qooob/authentic-theme/issues/223)
