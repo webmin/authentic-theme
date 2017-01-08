@@ -2592,7 +2592,7 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
         }
         t___wi.location.href = $(this).find("a").attr("href")
     });
-    let DELAY = 340,
+    var DELAY = 340,
         clicks = 0,
         timer = null;
     $("body").on("click", '.icons-row div[class*="icons-container"] .forged-xx-data, .icons-container, .small-icons-container, .xsmall-icons-container', function(b) {
@@ -3320,7 +3320,7 @@ if ($($magic_button_selector).length) {
     $("body").on("dblclick", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(a) {
         a.preventDefault()
     });
-    let DELAY = 340,
+    var DELAY = 340,
         clicks = 0,
         timer = null;
     $("body").on("click", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(b) {
