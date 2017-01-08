@@ -203,7 +203,8 @@ sub theme_footer {
           . ' <span class="-shell-port-pwd" data-home="'
           . get_user_home()
           . '" data-pwd="'
-          . get_user_home() . '">~</span>]'
+          . get_user_home()
+          . '">~</span>]'
           . ( $get_user_level eq '0' ? '#' : '$' )
           . '</span></span><input type="text" data-command="true"><span class="-shell-port-cursor">&nbsp;</span></div></div>
      </div>', "\n";
@@ -226,6 +227,12 @@ sub theme_footer {
         $_[0]
     );
     embed_pm_scripts();
+
+    if (   get_env('script_name') eq '/session_login.cgi'
+        || get_env('script_name') eq '/pam_login.cgi' )
+    {
+        embed_js_scripts();
+    }
     print '</body>', "\n";
     print '</html>', "\n";
 }
