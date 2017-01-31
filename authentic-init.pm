@@ -382,8 +382,10 @@ sub embed_footer {
 
     ( get_stripped() && return );
 
-    if (   get_env('script_name') ne '/session_login.cgi'
-        && get_env('script_name') ne '/pam_login.cgi' )
+    if (   index( get_env('script_name'), 'session_login.cgi' ) eq '-1'
+        && index( get_env('script_name'), 'pam_login.cgi' ) eq '-1'
+        && index( get_env('script_name'), 'password_form.cgi' ) eq '-1'
+        && index( get_env('script_name'), 'password_change.cgi' ) eq '-1' )
     {
 
         print '<script src="'
@@ -990,7 +992,9 @@ sub get_stripped {
 }
 
 sub get_raw {
-    if ( index( get_env('request_uri'), 'stripped=1&stripped=2' ) gt -1 || get_module_name() eq "file") {
+    if ( index( get_env('request_uri'), 'stripped=1&stripped=2' ) gt -1
+        || get_module_name() eq "file" )
+    {
         return 1;
     }
     else {
