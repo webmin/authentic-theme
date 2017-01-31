@@ -9053,6 +9053,42 @@ form[action='save_login.cgi'] input[type='text']+br {
     line-height: 26px
 }
 
+html[data-script-name*="password_change.cgi"] body .container-fluid {
+    pointer-events: auto !important;
+    opacity: 1 !important
+}
+
+html[data-script-name*="password_change.cgi"] .panel .panel-body hr,
+html[data-script-name*="password_change.cgi"] .panel .panel-heading {
+    display: none
+}
+
+html[data-script-name*="password_change.cgi"] .panel {
+    position: relative;
+    max-width: 320px;
+    margin: 80px auto 0;
+    padding: 30px 30px 40px 30px;
+    text-align: center;
+    color: #444;
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0
+}
+
+html[data-script-name*="password_change.cgi"] .panel-body {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+html[data-script-name*="password_change.cgi"] .panel-body center h3 {
+    font-size: 15px
+}
+
+html[data-script-name*="password_change.cgi"] .panel-body center h3 a {
+    text-decoration: underline
+}
+
 .cke_panel,
 .cke_toolbar *,
 .cke_dialog_body,
