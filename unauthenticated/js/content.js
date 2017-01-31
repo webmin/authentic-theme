@@ -2585,6 +2585,10 @@ $("body").on("contextmenu", "div.icons-container, div.small-icons-container, div
         }
     }
 });
+
+function __m_ico_row_func() {
+    return 0
+}
 if ($("body").find(".icons-row > div.icons-container").length || $("body").find(".icons-row > div.small-icons-container").length || $("body").find(".icons-row > div.xsmall-icons-container").length) {
     $(".row.icons-row.vertical-align").on("click", ".icons-container, .small-icons-container, .xsmall-icons-container", function() {
         if (!$(this).hasClass("forged-xx-skip")) {
@@ -2592,7 +2596,7 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
         }
         t___wi.location.href = $(this).find("a").attr("href")
     });
-    var DELAY = 340,
+    var DELAY = 240,
         clicks = 0,
         timer = null;
     $("body").on("click", '.icons-row div[class*="icons-container"] .forged-xx-data, .icons-container, .small-icons-container, .xsmall-icons-container', function(b) {
@@ -2622,7 +2626,8 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
         if (clicks === 1) {
             timer = setTimeout(function() {
                 clicks = 0;
-                $(b.target).trigger("contextmenu")
+                $(b.target).trigger("contextmenu");
+                typeof db_check_selected === "function" && db_check_selected()
             }, DELAY)
         } else {
             clearTimeout(timer);
@@ -3320,7 +3325,7 @@ if ($($magic_button_selector).length) {
     $("body").on("dblclick", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(a) {
         a.preventDefault()
     });
-    var DELAY = 340,
+    var DELAY = 240,
         clicks = 0,
         timer = null;
     $("body").on("click", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(b) {
