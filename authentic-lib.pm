@@ -694,7 +694,8 @@ sub print_left_menu {
                 {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 }
-                elsif (   index( $link, 'virtual-server/edit_newvalidate.cgi' ) > -1  )
+                elsif (
+                    index( $link, 'virtual-server/edit_newvalidate.cgi' ) > -1 )
                 {
                     $icon = '<i class="fa fa-fw fa-user-md"></i>';
                 }
@@ -1610,6 +1611,7 @@ sub csf_mod {
           . $ext . '.css?'
           . theme_version()
           . '" rel="stylesheet">' . "\n";
+
         if ( -r $scripts ) {
             print $fh '<script src="'
               . $gconfig{'webprefix'}
@@ -1953,6 +1955,9 @@ sub head {
 }
 
 sub embed_login_head {
+
+    my $ext = ( theme_mode() eq 'debug' ? 'src' : 'min' );
+
     print '<head>',                 "\n";
     print '<title>',                $title, '</title>', "\n";
     print '<meta charset="utf-8">', "\n";
@@ -1970,19 +1975,22 @@ sub embed_login_head {
 
     print '<link href="'
       . $gconfig{'webprefix'}
-      . '/unauthenticated/css/bootstrap.min.css?'
+      . '/unauthenticated/css/bootstrap.'
+      . $ext . '.css?'
       . theme_version()
       . '" rel="stylesheet">' . "\n";
 
     print '<link href="'
       . $gconfig{'webprefix'}
-      . '/unauthenticated/css/fontbase.min.css?'
+      . '/unauthenticated/css/fontbase.'
+      . $ext . '.css?'
       . theme_version()
       . '" rel="stylesheet">' . "\n";
 
     print '<link href="'
       . $gconfig{'webprefix'}
-      . '/unauthenticated/css/authentic.min.css?'
+      . '/unauthenticated/css/authentic.'
+      . $ext . '.css?'
       . theme_version()
       . '" rel="stylesheet">' . "\n";
 
@@ -1991,7 +1999,8 @@ sub embed_login_head {
 
     print '<script src="'
       . $gconfig{'webprefix'}
-      . '/unauthenticated/js/jquery.min.js?'
+      . '/unauthenticated/js/jquery.'
+      . $ext . '.js?'
       . theme_version()
       . '"></script>' . "\n";
     print '</head>', "\n";

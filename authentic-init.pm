@@ -1027,4 +1027,26 @@ sub replace {
     return $string;
 }
 
+sub get_link {
+    my ( $string, $type ) = @_;
+    my ($url, $text);
+
+    if ( $type eq 'ugly' ) {
+      $string =~ /<a.*href=([\s\S]+?)>/;
+      $url = $1;
+    }
+    elsif ( $type eq 'bad' ) {
+        $string =~ /<a.*href='([\s\S]+?)'.*>/;
+        $url = $1;
+    }
+    else {
+        $string =~ /<a.*href="([\s\S]+?)".*>/;
+        $url = $1;
+    }
+    $string =~ /<a.*href.*>([\s\S]+?)<\/a>/;
+
+    return [$url, $1];
+
+}
+
 1;

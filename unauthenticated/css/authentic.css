@@ -4606,6 +4606,11 @@ body[data-language='ru'] .row.icons-row .icons-container a {
     padding-top: 0
 }
 
+.ui_form .row.icons-row .xsmall-icons-container:not(.forged-xx-skip) img,
+.ui_form .row.icons-row .small-icons-container:not(.forged-xx-skip) img {
+    margin-top: 9px
+}
+
 .row.icons-row:not(.inline-row) .xsmall-icons-container.animated:hover,
 .row.icons-row:not(.inline-row) .xsmall-icons-container.animated:focus,
 .row.icons-row:not(.inline-row) .xsmall-icons-container.animated:active,
@@ -6860,7 +6865,7 @@ form.session_login,
     position: relative;
     max-width: 320px;
     margin: 80px auto 0;
-    padding: 30px 30px 40px 30px;
+    padding: 30px 30px 32px 30px;
     text-align: center;
     color: #444;
     border: 1px solid #ddd;
@@ -6870,6 +6875,28 @@ form.session_login,
     background-color: #fff;
     -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .15);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, .15)
+}
+
+.session_login .form-signin .form-group.form-signin-group {
+    margin: 0 -30px -32px -30px;
+    padding: 20px;
+    background-color: #f7f7f7
+}
+
+.session_login .form-signin .form-group.form-signin-group .btn {
+    width: 100%
+}
+
+.session_login .form-signin .form-group.form-signin-group .btn>.cspinner_container {
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 14px
+}
+
+.session_login .form-signin .form-group.form-signin-group .btn>.cspinner_container>.cspinner {
+    margin-top: 2px;
+    margin-left: -22px
 }
 
 .session_login .form-signin-banner {
@@ -8908,7 +8935,7 @@ body[class*='fetchmail'][data-uri*='edit_poll.cgi'] tr:first-child input[type='s
     margin-top: 4px !important
 }
 
-body[class*='fetchmail'] .panel-body>form[action="edit_poll.cgi"]:first-child {
+body[class*='fetchmail'] .panel-body>form[action='edit_poll.cgi']:first-child {
     margin-bottom: 4px !important
 }
 
@@ -8982,13 +9009,13 @@ body[class*='php-pear'][data-uri*='view.cgi'] .table .table-hardcoded tbody tr:n
     border-bottom: 1px solid #efefef
 }
 
-body[class*='inetd'][data-uri*="edit_rpc.cgi"] tr>td>span+input[data-mmclick*="group_chooser.cgi"]:not(.heighter-34)+i.fa-files-o,
-body[class*='updown'] tr>td>span+input[data-mmclick*="group_chooser.cgi"]:not(.heighter-34)+i.fa-files-o,
+body[class*='inetd'][data-uri*='edit_rpc.cgi'] tr>td>span+input[data-mmclick*='group_chooser.cgi']:not(.heighter-34)+i.fa-files-o,
+body[class*='updown'] tr>td>span+input[data-mmclick*='group_chooser.cgi']:not(.heighter-34)+i.fa-files-o,
 body[class*='status'][data-uri*='edit_mon.cgi'] input[style*='height: 28px']:not(.heighter-34)+i.fa-files-o {
     margin-top: 7px !important
 }
 
-body[class*='virtual-server'][data-uri*="edit_limits.cgi"] input+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+body[class*='virtual-server'][data-uri*='edit_limits.cgi'] input+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
 body[class*='fetchmail'] input[data-mmclick]:not(.heighter-34)+i.fa-files-o {
     margin-top: 11px !important
 }
@@ -9004,34 +9031,34 @@ input[data-mmclick]:not(.heighter-34)+i.fa-files-o {
     margin-left: -28px !important
 }
 
-body[class*='updown'] tr>td>input[name="group"]+input[data-mmclick*="group_chooser.cgi"]:not(.heighter-34)+i.fa-files-o,
-body[class*='updown'] tr>td>input[name="user"]+input[data-mmclick*="user_chooser.cgi"]:not(.heighter-34)+i.fa-files-o,
-body[class*='proc'] tr>td>input[name="user"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-body[class*='webmin'] tr>td>input[name="third"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-body[class*='webmin'] tr>td>input[name="standard"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-body[class*="virtual-server"][data-uri*="import_form.cgi"] form input+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-html[data-script-name*="config.cgi"] form[action*="config_save.cgi"] input[name="vpopmail_group"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-html[data-script-name*="config.cgi"] form[action*="config_save.cgi"] input[name="vpopmail_user"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-html[data-script-name*="config.cgi"] form[action*="config_save.cgi"] input[name="webmin_modules"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
-html[data-script-name*="config.cgi"] form[action*="config_save.cgi"] input[name="reseller_modules"]+input[data-mmclick]:not(.heighter-34)+i.fa-files-o {
+body[class*='updown'] tr>td>input[name='group']+input[data-mmclick*='group_chooser.cgi']:not(.heighter-34)+i.fa-files-o,
+body[class*='updown'] tr>td>input[name='user']+input[data-mmclick*='user_chooser.cgi']:not(.heighter-34)+i.fa-files-o,
+body[class*='proc'] tr>td>input[name='user']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+body[class*='webmin'] tr>td>input[name='third']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+body[class*='webmin'] tr>td>input[name='standard']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+body[class*='virtual-server'][data-uri*='import_form.cgi'] form input+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+html[data-script-name*='config.cgi'] form[action*='config_save.cgi'] input[name='vpopmail_group']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+html[data-script-name*='config.cgi'] form[action*='config_save.cgi'] input[name='vpopmail_user']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+html[data-script-name*='config.cgi'] form[action*='config_save.cgi'] input[name='webmin_modules']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o,
+html[data-script-name*='config.cgi'] form[action*='config_save.cgi'] input[name='reseller_modules']+input[data-mmclick]:not(.heighter-34)+i.fa-files-o {
     margin-top: 9px !important
 }
 
-body[class*='virtual-server'][data-uri*="edit_user.cgi"] .opener_container .fa-calendar.file_chooser_button_attached {
+body[class*='virtual-server'][data-uri*='edit_user.cgi'] .opener_container .fa-calendar.file_chooser_button_attached {
     margin-top: 10px !important
 }
 
-body[class*="krb5"] input[name="kdc"],
-body[class*="krb5"] input[name="default_admin_port"] {
+body[class*='krb5'] input[name='kdc'],
+body[class*='krb5'] input[name='default_admin_port'] {
     margin-left: 3px
 }
 
-body[class*="grub"] .icons-container .hidden-forged-7 {
+body[class*='grub'] .icons-container .hidden-forged-7 {
     display: none
 }
 
-body[class*='squid'][data-uri*="edit_cachemgr"] .table-hover>tbody>tr:hover,
-body[class*='sendmail'][data-uri*="list_ports.cgi"] .table-hover>tbody>tr:hover {
+body[class*='squid'][data-uri*='edit_cachemgr'] .table-hover>tbody>tr:hover,
+body[class*='sendmail'][data-uri*='list_ports.cgi'] .table-hover>tbody>tr:hover {
     background: #f7f7f7 !important
 }
 
@@ -9053,17 +9080,17 @@ form[action='save_login.cgi'] input[type='text']+br {
     line-height: 26px
 }
 
-html[data-script-name*="password_change.cgi"] body .container-fluid {
+html[data-script-name*='password_change.cgi'] body .container-fluid {
     pointer-events: auto !important;
     opacity: 1 !important
 }
 
-html[data-script-name*="password_change.cgi"] .panel .panel-body hr,
-html[data-script-name*="password_change.cgi"] .panel .panel-heading {
+html[data-script-name*='password_change.cgi'] .panel .panel-body hr,
+html[data-script-name*='password_change.cgi'] .panel .panel-heading {
     display: none
 }
 
-html[data-script-name*="password_change.cgi"] .panel {
+html[data-script-name*='password_change.cgi'] .panel {
     position: relative;
     max-width: 320px;
     margin: 80px auto 0;
@@ -9076,16 +9103,16 @@ html[data-script-name*="password_change.cgi"] .panel {
     border-radius: 0
 }
 
-html[data-script-name*="password_change.cgi"] .panel-body {
+html[data-script-name*='password_change.cgi'] .panel-body {
     -webkit-box-shadow: none;
     box-shadow: none
 }
 
-html[data-script-name*="password_change.cgi"] .panel-body center h3 {
+html[data-script-name*='password_change.cgi'] .panel-body center h3 {
     font-size: 15px
 }
 
-html[data-script-name*="password_change.cgi"] .panel-body center h3 a {
+html[data-script-name*='password_change.cgi'] .panel-body center h3 a {
     text-decoration: underline
 }
 

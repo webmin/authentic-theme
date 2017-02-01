@@ -815,7 +815,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 function m(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_right_xsmall_table_icons"]:checked') : false;
                     var d = ["settings_right_small_table_icons"];
-                    if (c.val() == "true") {
+                    if (c.val() == "true" && $('input[name="settings_right_hide_table_icons"]:checked') != "false") {
                         $.each(d, function(f, g) {
                             $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true);
                             $('input[name="' + g + '"], select[name="' + g + '"]').parent(".aradio").addClass("disabled")
