@@ -48,7 +48,6 @@ left_statistics=System Statistics
 login_danger=Danger!
 login_message=You must enter a username and password to login to the server on
 login_pass=Password
-login_reset=Reset
 login_save=Remember me
 login_signin=Sign in
 login_success=Success!
@@ -639,3 +638,4 @@ theme_xhred_display_icons_warning=When display mode in module's configuration is
 
 #18.33
 theme_new_password_header=Set new password for user
+login_reset=Password recovery

@@ -336,7 +336,9 @@ sub theme_icons_table {
     for ( my $i = 0 ; $i < @{ $_[0] } ; $i++ ) {
 
         $hide_table_icons
-          && print '<div style="text-align: left;" class="col-sm-3">' . "\n";
+          && print
+'<div style="margin-bottom: -5px; text-align: left;" class="col-sm-3">'
+          . "\n";
         &generate_icon( $_[2]->[$i], $_[1]->[$i], $_[0]->[$i],
             ref( $_[4] ) ? $_[4]->[$i] : $_[4],
             $_[5], $_[6], $_[7]->[$i], $_[8]->[$i] );
@@ -351,10 +353,14 @@ sub theme_generate_icon {
     if ( $__settings{'settings_right_hide_table_icons'} eq 'true' ) {
         print '<div>';
         print $before;
-        print '<a href="'
+        print '<a'
+          . ( $before ? ' class="inline-block"' : ' ' )
+          . 'href="'
           . $link . '" '
           . $href
-          . '><p><i class="fa fa-angle-right">&nbsp;&nbsp;</i>'
+          . '><p><i class="fa fa-fw fa-angle-right'
+          . ( $before ? ' hidden' : '' )
+          . '">&nbsp;&nbsp;</i>'
           . $title
           . '</p></a>';
         print $after;
@@ -403,6 +409,7 @@ sub theme_generate_icon {
             && $__settings{'settings_right_xsmall_table_icons'} ne 'true' )
         {
             print '<div class="col-xs-1 small-icons-container'
+              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . ''
               . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
               . ( !$animate_table_icons && ' animated' )
               . '" data-title="'
@@ -429,6 +436,7 @@ sub theme_generate_icon {
         }
         elsif ( $__settings{'settings_right_xsmall_table_icons'} eq 'true' ) {
             print '<div class="col-xs-1 xsmall-icons-container'
+              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . ''
               . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
               . ( !$animate_table_icons && ' animated' )
               . '" data-title="'

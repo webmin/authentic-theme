@@ -12,7 +12,7 @@ $(".select_all, .select_invert").on("click", function(a) {
 });
 
 function db_check_selected() {
-    var b = $('.table.table-striped.table-hover.table-condensed input[type="checkbox"]:checked, form div.icons-container.highlighted').length;
+    var b = $('.table.table-striped.table-hover.table-condensed input[type="checkbox"]:checked, form div.icons-container.highlighted, form div.small-icons-container.highlighted, form div.xsmall-icons-container.highlighted').length;
     if (b === 0) {
         $("button#edit, button#delete, button#deleteClone, input#delete").prop("disabled", true)
     } else {

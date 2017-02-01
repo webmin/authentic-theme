@@ -170,27 +170,25 @@ if ( !$gconfig{'noremember'} ) {
       . $Atext{'login_save'} . '</label></span>
          </div>' . "\n";
 }
-print '<div class="form-group">';
+print '<div class="form-group form-signin-group">';
 print
-'<button class="btn btn-primary pull-left" type="submit" style="margin-top: 0 !important; width: 50%"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;'
+'<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;'
   . &Atext('login_signin')
   . '</button>' . "\n";
-if ( -r $root_directory . "/virtualmin-password-recovery/index.cgi"
-    && index( $miniserv{'anonymous'}, 'virtualmin-password-recovery' ) > -1 )
-{
-    print
-'<button onclick=\'window.open("/virtualmin-password-recovery", "password_recovery", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");\' class="btn btn-warning pull-right" style="width: 50%" type="reset"><i class="fa fa-undo"></i>&nbsp;&nbsp;'
+
+if ( index( $text{'session_postfix'}, "href" ) != '-1' ) {
+    my $link = get_link( $text{'session_postfix'}, 'ugly' );
+
+    print '<button onclick=\'window.open("'
+      . $link->[0] . '", "'
+      . $link->[1]
+      . '", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");return false;\' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;'
       . &Atext('login_reset')
       . '</button>' . "\n";
 }
-else {
-    print
-'<button class="btn btn-danger pull-right" type="reset" style="width: 50%"><i class="fa fa-backup fa-1_25x"></i>&nbsp;&nbsp;'
-      . &Atext('login_reset')
-      . '</button>' . "\n";
-}
+
 print
-'<script>function spinner(){var x=$(".fa-sign-in"),s =\'<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 2px; margin-left: -22px;"><span class="cspinner-icon white small"></span></span></span>\';x.addClass("invisible").after(s);x.parent(".btn").addClass("disabled")}</script>';
+'<script>function spinner(){var x=$(".fa-sign-in"),s =\'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';x.addClass("invisible").after(s);x.parent(".btn").addClass("disabled")}</script>';
 print '</div>';
 print '</form>' . "\n";
 
