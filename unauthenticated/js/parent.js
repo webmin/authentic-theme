@@ -1063,6 +1063,9 @@ $("body").on("submit", "#webmin_search_form", function(c) {
         }
     }, 30)
 });
+$("body").on("click", "#right-side-tabs .right_pane_favorites_link", function(c) {
+    $(".favorites-menu-outer.hover + .favorites-menu-close").trigger("click")
+});
 $("aside").on("click", ".user-links > li.favorites", function(c) {
     $(".favorites-menu-outer").addClass("hover")
 });

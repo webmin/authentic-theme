@@ -14,8 +14,9 @@ __config_dir_available();
 
 $in =~ s/\t\n\r//g;
 $in =~ /\{(?:\{.*\}|[^{])*\}/sg;
+
 my $file    = $config_directory . '/authentic-theme/favorites.json';
-my $content = $in;
+my $content = $in{'favorites'};
 
 unlink_file($file);
 write_file_contents( $file, $content );

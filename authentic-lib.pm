@@ -4018,11 +4018,10 @@ sub get_autocomplete_shell {
             @rs = @units;
         }
     }
-
     if ( $cd || $cmd2 ) {
         my @rs_tmp;
         foreach my $file (@rs) {
-            if ( -d $file || -d ( $cd . $file ) ) { #&& ( $cmd ne 'cat' || $cmd2 )
+            if ( -d $file || -d ( $cd . $file ) ) {
                 push @rs_tmp, ( $file . '/' );
             }
             else {
