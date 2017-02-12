@@ -2854,7 +2854,7 @@ if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __n
     function _update_time_() {
         var a = $("[data-convertible-timestamp-full]");
         a.data("convertible-timestamp-full", (parseInt(a.data("convertible-timestamp-full")) + 1));
-        a.text(t__wi_p.moment.unix(a.data("convertible-timestamp-full")).format(settings_window_replaced_timestamp_format_full))
+        typeof t__wi_p.moment !== "undefined" && a.text(t__wi_p.moment.unix(a.data("convertible-timestamp-full")).format(settings_window_replaced_timestamp_format_full))
     }
     $(function() {
         setInterval(_update_time_, 1000)
@@ -2918,11 +2918,12 @@ if ($current_page_full == $_____link_full + "/virtual-server/edit_phpmode.cgi") 
     $("#hiddendiv_phpinfo table tbody tr").css("border", "1px solid #eee")
 }
 if (settings_window_replace_timestamps) {
+    var xMoment = typeof t__wi_p.moment !== "undefined";
     $.each($("[data-convertible-timestamp-full]"), function() {
-        $(this).text(t__wi_p.moment.unix($(this).data("convertible-timestamp-full")).format(settings_window_replaced_timestamp_format_full))
+        xMoment && $(this).text(t__wi_p.moment.unix($(this).data("convertible-timestamp-full")).format(settings_window_replaced_timestamp_format_full))
     });
     $.each($("[data-convertible-timestamp-short]"), function() {
-        $(this).text(t__wi_p.moment.unix($(this).data("convertible-timestamp-short")).format(settings_window_replaced_timestamp_format_short))
+        xMoment && $(this).text(t__wi_p.moment.unix($(this).data("convertible-timestamp-short")).format(settings_window_replaced_timestamp_format_short))
     })
 }
 $.each($('a[href*="showpass.cgi?"][onclick]'), function() {
