@@ -460,7 +460,7 @@ function __lre(a) {
         __slm()
     }
     if (__num()) {
-        if (typeof t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__dlm == "function") {
+        if (typeof t__wi_p.$('iframe[name="page"]').get(0) !== "undefined" && typeof t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__dlm == "function") {
             t__wi_p.$('iframe[name="page"]').get(0).contentWindow.__dlm()
         }
     }
