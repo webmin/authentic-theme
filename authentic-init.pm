@@ -5,6 +5,7 @@
 #
 
 init_vars();
+init_funcs();
 
 sub settings {
     my %c;
@@ -456,6 +457,7 @@ sub Atext {
 }
 
 sub init_vars {
+
     our $t_uri__i   = get_env('request_uri');
     our %__settings = settings();
     our ( %text, %in, %gconfig, $current_theme, $root_directory,
@@ -486,6 +488,15 @@ sub init_vars {
     our %cookies = get_cookies();
 
     our ( $t_var_switch_m, $t_var_product_m ) = get_swith_mode();
+}
+
+sub init_funcs {
+
+    # Embed debug functions
+    if ( theme_mode() eq 'debug' ) {
+        require "$root_directory/$current_theme/.debug.pm";
+    }
+
 }
 
 sub usermin_available {
@@ -968,10 +979,6 @@ sub theme_version {
     return $sh__ln__c___version;
 }
 
-sub theme_mode {
-    return 'production';
-}
-
 sub get_env {
     my ($key) = @_;
     return $ENV{ uc($key) };
@@ -1029,11 +1036,11 @@ sub replace {
 
 sub get_link {
     my ( $string, $type ) = @_;
-    my ($url, $text);
+    my $url;
 
     if ( $type eq 'ugly' ) {
-      $string =~ /<a.*href=([\s\S]+?)>/;
-      $url = $1;
+        $string =~ /<a.*href=([\s\S]+?)>/;
+        $url = $1;
     }
     elsif ( $type eq 'bad' ) {
         $string =~ /<a.*href='([\s\S]+?)'.*>/;
@@ -1045,8 +1052,18 @@ sub get_link {
     }
     $string =~ /<a.*href.*>([\s\S]+?)<\/a>/;
 
-    return [$url, $1];
+    return [ $url, $1 ];
 
+}
+
+sub theme_mode {
+    my $debug_mode = "$root_directory/$current_theme/.debug.pm";
+    if ( -r $debug_mode ) {
+        return 'debug';
+    }
+    else {
+        return 'production';
+    }
 }
 
 1;

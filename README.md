@@ -71,6 +71,14 @@
 #####Virtualmin/Cloudmin
 There is no need to take any additional actions. In case _Virtualmin_ or/and _Cloudmin_ modules are installed, it will be automatically detected and supported.
 
+####How to update _Authentic_ Theme manually?
+Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using command line, do the following:
+  1. Go to _Webmin_ (`cd /usr/libexec/webmin`) or _Usermin_ (`cd /usr/libexec/usermin`) directory __*__
+  2. Move current version of the theme to the temporary directory (`mv authentic-theme /tmp`)
+  3. Get latest version of the theme from the repository  (`git clone https://github.com/qooob/authentic-theme.git`)
+  4. Restart _Webmin_/_Usermin_ after update
+<br>__*__ *Binary folder might be different from `libexec` depending on the system. Run `whereis webmin` to figure out the correct path.*
+
 ####How to update _Authentic_ Theme automatically?
 The theme has inbuilt feature to notify an administrative user to install updates. To enable this feature, turn `Check for Authentic Theme updates` on in theme settings.
 
@@ -167,6 +175,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [dreista](https://github.com/Dreista) (Chinese)
 * [jlndk](https://github.com/jlndk) (Danish)
 * [stuchy3](https://github.com/stuchy3) (Czech)
+* [David Canalias](https://github.com/diathesaron) (Catalan)
 
 ###Donation
 

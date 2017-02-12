@@ -193,7 +193,9 @@ sub theme_footer {
     if (   get_env('script_name') ne '/session_login.cgi'
         && get_env('script_name') ne '/pam_login.cgi' )
     {
-        print '<div class="-shell-port-">
+        print '<div data-autocomplete="'
+          . ( has_command('bash') ? 1 : 0 )
+          . '" class="-shell-port-">
             <div class="-shell-port-container">
             <div data-output="true"><pre></pre></div>
             <div class="-shell-port-cmd">
@@ -206,7 +208,7 @@ sub theme_footer {
           . get_user_home()
           . '">~</span>]'
           . ( $get_user_level eq '0' ? '#' : '$' )
-          . '</span></span><input type="text" data-command="true"><span class="-shell-port-cursor">&nbsp;</span></div></div>
+          . '</span></span><input type="text" data-command="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span></div></div>
      </div>', "\n";
     }
     embed_footer(

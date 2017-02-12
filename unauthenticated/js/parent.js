@@ -699,108 +699,235 @@ t__wi_p.$(".form-control.sidebar-search").focus(function(a) {
 });
 const shell = t__wi_p.$("body").find(".-shell-port-"),
     cmdInput = shell.find('input[data-command="true"]'),
-    shellOut = shell.find("div[data-output]");
-$(window).keydown(function(c) {
-    if (!shell.hasClass("opened")) {
-        t__wi_p.search_control(c);
-        t__wi_p.shortcut_control(c)
+    shellOut = shell.find("div[data-output]"),
+    shellCont = shell.find(".-shell-port-container"),
+    shellAutocomplete = shell.data("autocomplete");
+$(window).keydown(function(p) {
+    var m = t__wi_p.$("body").find(".-shell-port-").hasClass("opened");
+    if (!m) {
+        t__wi_p.search_control(p);
+        t__wi_p.shortcut_control(p)
     }
-    if (c.keyCode === 38 && ((cmdInput.is(":focus") && t__wi_p.$("body .-shell-port-").hasClass("opened")) || (t__wi_p.$(".form-control.sidebar-search").is(":focus")))) {
-        c.preventDefault()
+    if (p.keyCode === 38 && ((cmdInput.is(":focus") && m) || (t__wi_p.$(".form-control.sidebar-search").is(":focus")))) {
+        p.preventDefault()
+    }
+    if (p.keyCode === 9 && cmdInput.is(":focus") && m && t__wi_p.$___ajax_requested_url !== "___blocked") {
+        p.preventDefault();
+        if (!shellAutocomplete) {
+            return
+        }
+        var h = cmdInput.val().trim().split(/\s+(?!-)/),
+            d = h.length,
+            l = (h[0] && h[0].indexOf("-") === -1 ? 0 : 1),
+            f = (h[1] && h[1].indexOf(":") === -1 ? 0 : 1),
+            g = cmdInput.val().endsWith(" "),
+            e = $.trim(h[0]) === "service",
+            k = $.trim(h[0]) === "systemctl",
+            q = ($.trim(h[0]) && $.trim(h[0]).startsWith("chown")),
+            c = ((h.length === 1 && cmdInput.val().length && !l && !g) ? "commands" : ((e || k) ? "services" : (q ? "permissions" : "lists")));
+        if (!$.trim(cmdInput.val()).length) {
+            return
+        }
+        var o = cmdInput.val(),
+            n = shell.find(".-shell-port-pwd"),
+            j = n.attr("data-pwd");
+        if (c === "services") {
+            c = (e ? "service" : "systemctl");
+            if (c === "systemctl" && h.length !== 3) {
+                return
+            }
+            o = (c == "service" ? $.trim(h[1]) : $.trim(h[2]));
+            if ($.trim(h[0]) === "service" && ((h.length === 2 && g) || h.length === 3)) {
+                if (h.length === 3) {
+                    o = "::::" + $.trim(h[1]) + "::::" + $.trim(h[2])
+                } else {
+                    o = "::::" + $.trim(h[1])
+                }
+            }
+        }
+        if (q) {
+            if (d === 1 && !g) {
+                cmdInput.val($.trim(h[0]) + " ");
+                return
+            }
+            if (!f || !$.trim(h[1])) {
+                c = "users";
+                o = $.trim(h[1])
+            } else {
+                if (!g && !h[2]) {
+                    c = "groups";
+                    o = $.trim($.trim(h[1]).split(":")[1])
+                } else {
+                    c = "lists";
+                    o = j + "/::::" + $.trim(h[2])
+                }
+            }
+        }
+        if (c === "lists" && !q) {
+            o = j + "/::::" + $.trim(h[1]) + "::::" + $.trim(h[0]) + "::::" + $.trim(h[2])
+        }
+        t__wi_p.$___ajax_requested_url = "___blocked";
+        $.ajax({
+            type: "POST",
+            url: $_____link_full + "/index.cgi?xhr-get_autocompletes=1&xhr-get_autocomplete_type=" + c + "&xhr-get_autocomplete_string=" + o + "",
+            data: false,
+            dataType: "json",
+            success: function(u) {
+                var r = u.length;
+                if (r === 1) {
+                    if (c === "service" || c === "systemctl" || c === "lists") {
+                        var s = $.trim(h[0]),
+                            t = $.trim(h[0]) + " " + $.trim(h[1]);
+                        if (c === "lists") {
+                            if (((s === "cd" && u[0].endsWith("/"))) || (s !== "cd")) {
+                                if (s === "cd" || s === "cat") {
+                                    cmdInput.val(s + " " + u[0])
+                                } else {
+                                    if ($.trim(h[2])) {
+                                        cmdInput.val(t + " " + u[0] + "")
+                                    } else {
+                                        cmdInput.val(s + " " + u[0] + "")
+                                    }
+                                }
+                            }
+                        } else {
+                            if (s === "service" && (h.length === 2 || h.length === 3)) {
+                                if (h.length === 2) {
+                                    cmdInput.val(s + " " + u[0] + " ")
+                                } else {
+                                    if (h.length === 3) {
+                                        cmdInput.val($.trim(h[0]) + " " + $.trim(h[1]) + " " + u[0])
+                                    }
+                                }
+                            } else {
+                                if (s === "systemctl" && h.length === 3) {
+                                    cmdInput.val(s + " " + $.trim(h[1]) + " " + u[0])
+                                }
+                            }
+                        }
+                    } else {
+                        if (q) {
+                            if (!f) {
+                                cmdInput.val($.trim(h[0]) + " " + u[0] + ":")
+                            } else {
+                                if (!g && !h[2]) {
+                                    cmdInput.val($.trim(h[0]) + " " + $.trim($.trim(h[1]).split(":")[0]) + ":" + u[0] + " ")
+                                } else {
+                                    cmdInput.val($.trim(h[0]) + " " + $.trim(h[1]) + " " + u[0] + "")
+                                }
+                            }
+                        } else {
+                            cmdInput.val(u[0] + " ")
+                        }
+                    }
+                } else {
+                    if (r > 1) {
+                        var a = "<b>" + $(".-shell-port-type").text() + " " + cmdInput.val() + "</b>\n";
+                        shellOut.find("pre").append(a);
+                        shellOut.find("pre").append(u.join("\n") + "\n");
+                        shellCont.scrollTop(shellCont[0].scrollHeight)
+                    }
+                }
+                setTimeout(function() {
+                    cmdInput.focus().mousedown()
+                }, 10)
+            },
+            error: function() {}
+        })
     }
 });
 $(window).keyup(function(D) {
-    var y = 0,
-        o = 0,
-        u = 0,
-        s = t__wi_p.$("body").find(".-shell-port-").hasClass("opened"),
-        k = t__wi_p.$(".form-control.sidebar-search"),
-        C = (product_name(1).toLowerCase() == "cloudmin" && t__wi_p.$('a[target="page"][href*="/server-manager/save_serv.cgi"][href*="shell=1"]').length),
-        p = 0;
-    var E = 0;
-    if (C) {
-        E = ($_____link_full + "/server-manager/shell.cgi")
-    } else {
-        if (is_module("shell")) {
-            E = ($_____link_full + "/shell/index.cgi")
-        } else {
-            return
-        }
-    }
-    if (s || k.is(":focus")) {
-        if (D.keyCode === 8) {
-            __shell_commands__i__ = 0
-        }
-    }
+    var s = t__wi_p.$("body").find(".-shell-port-").hasClass("opened");
     if (s) {
-        y = $.trim(cmdInput.val());
-        o = 1;
-        u = 1
-    } else {
-        y = k.val();
-        o = (typeof k.val() != "undefined");
-        u = 0
-    }
-    if ((u || (o && (!y.trim() || y.trim().startsWith("!")))) && (D.keyCode == 38 || D.keyCode == 40)) {
-        D.preventDefault();
-        D.stopPropagation();
-        typeof localStorage.getItem($hostname + "-shell_commands") == "undefined" ? localStorage.setItem($hostname + "-shell_commands", JSON.stringify({})) : false;
-        var e = JSON.parse(localStorage.getItem($hostname + "-shell_commands")),
-            w = e ? e.length : 0;
-        if (__shell_commands__i__ === 0 && !y && D.keyCode == 40) {
-            return
+        var y = 0,
+            o = 0,
+            u = 0,
+            k = t__wi_p.$(".form-control.sidebar-search"),
+            C = (product_name(1).toLowerCase() == "cloudmin" && t__wi_p.$('a[target="page"][href*="/server-manager/save_serv.cgi"][href*="shell=1"]').length),
+            p = 0;
+        var E = 0;
+        if (C) {
+            E = ($_____link_full + "/server-manager/shell.cgi")
         } else {
-            if (__shell_commands__i__ === 0 && y && D.keyCode == 38) {
-                p = 1;
-                return
+            if (is_module("shell")) {
+                E = ($_____link_full + "/shell/index.cgi")
             } else {
-                __shell_commands__i__ = D.keyCode == 40 ? ++__shell_commands__i__ : --__shell_commands__i__
+                return
             }
         }
-        if (__shell_commands__i__ < 0 && D.keyCode === 38) {
-            __shell_commands__i__ = w - 1
-        } else {
-            if (__shell_commands__i__ > w) {
+        if (s || k.is(":focus")) {
+            if (D.keyCode === 8) {
                 __shell_commands__i__ = 0
             }
         }
-        if (e && e[__shell_commands__i__ % w]) {
-            if (!$.isEmptyObject(e) && (((__shell_commands__i__ == w) && D.keyCode === 38) || ((__shell_commands__i__ == w) && D.keyCode === 40) || p)) {
-                if (s) {
-                    cmdInput.val("").focus()
-                } else {
-                    k.val("").focus()
-                }
-                __shell_commands__i__ = 0;
-                return
-            }
-            if (s) {
-                var d = (e[__shell_commands__i__ % w]).replace(/^!/, "");
-                cmdInput.val(d).focus()
-            }
+        if (s) {
+            y = $.trim(cmdInput.val());
+            o = 1;
+            u = 1
+        } else {
+            y = k.val();
+            o = (typeof k.val() != "undefined");
+            u = 0
         }
-        return
-    } else {
-        if (o && y.trim().startsWith("!") && D.keyCode == 27) {
+        if ((u || (o && (!y.trim() || y.trim().startsWith("!")))) && (D.keyCode == 38 || D.keyCode == 40)) {
             D.preventDefault();
             D.stopPropagation();
-            k.val("").focus();
+            typeof localStorage.getItem($hostname + "-shell_commands") == "undefined" ? localStorage.setItem($hostname + "-shell_commands", JSON.stringify({})) : false;
+            var e = JSON.parse(localStorage.getItem($hostname + "-shell_commands")),
+                w = e ? e.length : 0;
+            if (__shell_commands__i__ === 0 && !y && D.keyCode == 40) {
+                return
+            } else {
+                if (__shell_commands__i__ === 0 && y && D.keyCode == 38) {
+                    p = 1;
+                    return
+                } else {
+                    __shell_commands__i__ = D.keyCode == 40 ? ++__shell_commands__i__ : --__shell_commands__i__
+                }
+            }
+            if (__shell_commands__i__ < 0 && D.keyCode === 38) {
+                __shell_commands__i__ = w - 1
+            } else {
+                if (__shell_commands__i__ > w) {
+                    __shell_commands__i__ = 0
+                }
+            }
+            if (e && e[__shell_commands__i__ % w]) {
+                if (!$.isEmptyObject(e) && (((__shell_commands__i__ == w) && D.keyCode === 38) || ((__shell_commands__i__ == w) && D.keyCode === 40) || p)) {
+                    if (s) {
+                        cmdInput.val("").focus()
+                    } else {
+                        k.val("").focus()
+                    }
+                    __shell_commands__i__ = 0;
+                    return
+                }
+                if (s) {
+                    var d = (e[__shell_commands__i__ % w]).replace(/^!/, "");
+                    cmdInput.val(d).focus()
+                }
+            }
             return
+        } else {
+            if (o && y.trim().startsWith("!") && D.keyCode == 27) {
+                D.preventDefault();
+                D.stopPropagation();
+                k.val("").focus();
+                return
+            }
         }
-    }
-    if (o && y.trim().startsWith("!") && D.keyCode == 13) {
-        k.addClass("_shell_form_");
-        D.preventDefault();
-        D.stopPropagation();
-        if (is_module("shell") == 1 || C) {
-            cmdInput.val(y.trim().substring(1)).focus();
-            ported_shell_open(shell);
-            var z = $.Event("keyup");
-            z.keyCode = 13;
-            cmdInput.trigger(z)
+        if (o && y.trim().startsWith("!") && D.keyCode == 13) {
+            k.addClass("_shell_form_");
+            D.preventDefault();
+            D.stopPropagation();
+            if (is_module("shell") == 1 || C) {
+                cmdInput.val(y.trim().substring(1)).focus();
+                ported_shell_open(shell);
+                var z = $.Event("keyup");
+                z.keyCode = 13;
+                cmdInput.trigger(z)
+            }
         }
-    }
-    if (s) {
         var g = shell.find(".-shell-port-container"),
             q = shell.find(".-shell-port-pwd"),
             r = q.attr("data-pwd"),
@@ -902,7 +1029,7 @@ $(window).keyup(function(D) {
                             H = $(a).find("pre").html().replace(/>&gt;/g, ">" + I + ""),
                             c = $(a).find('select[name="pcmd"] option').map(function() {
                                 return $(this).val()
-                            }).get();
+                            }).get().move(-1, 0).reverse();
                         localStorage.setItem($hostname + "-shell_commands", JSON.stringify(c));
                         newPwd = $(a).find('input[name="pwd"]').val();
                         shellOut.find("pre").append((t ? (H.replace(new RegExp(G, "g"), t)) : H));

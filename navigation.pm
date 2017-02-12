@@ -34,12 +34,21 @@ if (   $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                 if (   $minfo->{'dir'} eq 'webmin'
                     && &foreign_available("webmin") )
                 {
-                    &print_category_link( "/webmin/edit_themes.cgi",
+                    &print_category_link( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi",
                         $Atext{'settings_right_theme_left_configuration_title'}, 1 );
-                    &print_category_link( "/settings-editor_read.cgi",
+                    &print_category_link( $gconfig{'webprefix'} . "/settings-editor_read.cgi",
                         $Atext{'settings_right_theme_left_extensions_title'}, 1 );
-                    &print_category_link( "/settings-upload.cgi", $Atext{'settings_right_theme_left_logo_title'}, 1 );
+                    &print_category_link( $gconfig{'webprefix'} . "/settings-upload.cgi", $Atext{'settings_right_theme_left_logo_title'}, 1 );
+
                 }
+
+                if (licenses('vm') eq '1') {
+                  &print_category_link( $gconfig{'webprefix'} . "/virtual-server/licence.cgi", $Atext{'right_vlcheck'}, 1 );
+                }
+                if (licenses('cm') eq '1') {
+                  &print_category_link( $gconfig{'webprefix'} . "/server-manager/licence.cgi", $Atext{'right_slcheck'}, 1 );
+                }
+
                 if (( $minfo->{'dir'} ne 'virtual-server' && $minfo->{'dir'} ne 'server-manager' )
                     || ( ( $minfo->{'dir'} eq 'virtual-server' || $minfo->{'dir'} eq 'server-manager' )
                         && $__settings{'settings_leftmenu_section_hide_vm_and_cm_links'} eq 'false' )

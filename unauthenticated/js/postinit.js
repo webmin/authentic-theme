@@ -316,7 +316,7 @@ function ported_shell_size() {
     if (is_module("shell") == 1) {
         var a = parseInt(t__wi_p.$("body").find(".-shell-port-cmd").width()),
             b = parseInt(t__wi_p.$("body").find(".-shell-port-type").width());
-        t__wi_p.$("body").find('.-shell-port- input[data-command="true"]').css("width", (a - b - 10) + "px")
+        t__wi_p.$("body").find('.-shell-port- input[data-command="true"]').css("width", (a - b - 20) + "px")
     }
 }
 
