@@ -3153,7 +3153,7 @@ typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = tr
 if ($hostname == settings_allowed_hostname) {
     if (is__mf("postfix", "")) {
         $.each($(".icons-container a"), function(a, b) {
-            if ($(this).attr("href") != "general.cgi" && $(this).attr("href") != "address_rewriting.cgi" && $(this).attr("href") != "local_delivery.cgi" && $(this).attr("href") != "resource.cgi" && $(this).attr("href") != "sasl.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "debug.cgi" && $(this).attr("href") != "manual.cgi") {
+            if ($(this).attr("href") != "general.cgi" && $(this).attr("href") != "address_rewriting.cgi" && $(this).attr("href") != "local_delivery.cgi" && $(this).attr("href") != "resource.cgi" && $(this).attr("href") != "sasl.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "mailq.cgi" && $(this).attr("href") != "debug.cgi" && $(this).attr("href") != "manual.cgi") {
                 $(this).parent(".icons-container").remove()
             }
         })

@@ -3379,6 +3379,10 @@ td.col_value label,
     max-width: 10px !important
 }
 
+.margined-left--1 {
+    margin-left: -1px !important
+}
+
 .margined-left--2 {
     margin-left: -2px !important
 }
@@ -6878,13 +6882,12 @@ form.session_login,
 }
 
 .session_login .form-signin .form-group.form-signin-group {
-    margin: 0 -30px -32px -30px;
-    padding: 20px;
-    background-color: #f7f7f7
+    margin-bottom: -2px
 }
 
 .session_login .form-signin .form-group.form-signin-group .btn {
-    width: 100%
+    width: 100%;
+    margin-bottom: 1px
 }
 
 .session_login .form-signin .form-group.form-signin-group .btn>.cspinner_container {
@@ -9387,6 +9390,7 @@ body.sysstats .graph_table a img {
 
 .-shell-port-.opened input[data-command='true'] {
     font-size: 12px;
+    font-family: monospace;
     height: 15px !important;
     margin-left: 1px;
     border: 0;

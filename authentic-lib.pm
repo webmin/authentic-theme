@@ -695,7 +695,8 @@ sub print_left_menu {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 }
                 elsif (
-                    index( $link, 'virtual-server/edit_newvalidate.cgi' ) > -1 )
+                    index( $link, '/virtual-server/edit_newvalidate.cgi' ) > -1
+                    && $get_user_level ne '0' )
                 {
                     $icon = '<i class="fa fa-fw fa-user-md"></i>';
                 }
@@ -895,15 +896,38 @@ sub print_left_menu {
                     || $c eq 'global_settings' && &foreign_available("webmin") )
                 {
                     &print_category_link(
-                        "/webmin/edit_themes.cgi",
+                        $gconfig{'webprefix'} . "/webmin/edit_themes.cgi",
                         $Atext{'settings_right_theme_left_configuration_title'},
                         1
                     );
-                    &print_category_link( "/settings-editor_read.cgi",
+                    &print_category_link(
+                        $gconfig{'webprefix'} . "/settings-editor_read.cgi",
                         $Atext{'settings_right_theme_left_extensions_title'},
-                        1 );
-                    &print_category_link( "/settings-upload.cgi",
+                        1
+                    );
+                    &print_category_link(
+                        $gconfig{'webprefix'} . "/settings-upload.cgi",
                         $Atext{'settings_right_theme_left_logo_title'}, 1 );
+
+                    if ( licenses('vm') eq '1'
+                        && $item->{'module'} eq 'virtual-server' )
+                    {
+                        &print_category_link(
+                            $gconfig{'webprefix'}
+                              . "/virtual-server/licence.cgi",
+                            $Atext{'right_vlcheck'}, 1
+                        );
+                    }
+
+                    if ( licenses('cm') eq '1'
+                        && $item->{'module'} eq 'server-manager' )
+                    {
+                        &print_category_link(
+                            $gconfig{'webprefix'}
+                              . "/server-manager/licence.cgi",
+                            $Atext{'right_slcheck'}, 1
+                        );
+                    }
                 }
                 print "</ul></li>\n";
             }
@@ -1128,7 +1152,7 @@ sub get_sysinfo_vars {
         #Webmin version
         $webmin_version =
             &get_webmin_version()
-          . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden" title="'
+          . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
           . $Atext{'theme_sysinfo_wmdocs'}
           . '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
 
@@ -1148,18 +1172,19 @@ sub get_sysinfo_vars {
                     ? ''
                     : ''
 
-                      . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden" title="'
-                      . $Atext{'theme_sysinfo_vmdocs'}
-                      . '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
+                      . ' <div class="btn-group margined-left-4">'
                       . (
                         ( $vs_license eq '1' )
-                        ? ' <a class="btn btn-default btn-xxs btn-hidden hidden" title="'
+                        ? ' <a data-license class="btn btn-default btn-xxs" title="'
                           . $Atext{'right_vlcheck'}
                           . '" href="'
                           . $gconfig{'webprefix'}
                           . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
                         : '</div>'
                       )
+                      . '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
+                      . $Atext{'theme_sysinfo_vmdocs'}
+                      . '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
 
                 )
             );
@@ -1181,19 +1206,19 @@ sub get_sysinfo_vars {
                     ? ''
                     : ''
 
-                      . ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden" title="'
-                      . $Atext{'theme_sysinfo_cmdocs'}
-                      . '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
+                      . ' <div class="btn-group margined-left-4">'
                       . (
                         ( $vm2_license eq '1' )
-                        ? ' <a class="btn btn-default btn-xxs btn-hidden hidden" title="'
+                        ? ' <a data-license class="btn btn-default btn-xxs" title="'
                           . $Atext{'right_slcheck'}
                           . '" href="'
                           . $gconfig{'webprefix'}
                           . '/server-manager/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
                         : '</div>'
                       )
-
+                      . '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
+                      . $Atext{'theme_sysinfo_cmdocs'}
+                      . '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
                 )
             );
         }
@@ -3205,6 +3230,13 @@ sub get_xhr_request {
             print resolve_links(
                 get_access_data('root') . $in{'xhr-get_symlink_path'} );
         }
+        elsif ( $in{'xhr-get_autocompletes'} eq '1' ) {
+            my @data = get_autocomplete_shell(
+                $in{'xhr-get_autocomplete_type'},
+                $in{'xhr-get_autocomplete_string'}
+            );
+            print get_json( \@data );
+        }
         elsif ( $in{'xhr-info'} eq '1' ) {
             our (
                 $cpu_percent,        $mem_percent,
@@ -3883,6 +3915,148 @@ sub get_module_config_data {
         return undef;
     }
 
+}
+
+sub get_autocomplete_shell {
+    my ( $type, $string ) = @_;
+    my ( $cd, $cmd, $cd_cmd, $command, @rs );
+
+    if ( $type eq 'commands' ) {
+        $command = '-c';
+    }
+    elsif ( $type eq 'groups' ) {
+        $command = '-g';
+    }
+    elsif ( $type eq 'service' ) {
+        ( !string_starts_with( $string, '::::' ) && ( $command = '-s' ) );
+    }
+    elsif ( $type eq 'systemctl' ) {
+        $command = undef;
+    }
+    elsif ( $type eq 'users' ) {
+        $command = '-u';
+    }
+    else {
+        my @strings =
+          split /::::/, $string;
+        ( $cd, $string, $cmd, $cmd2 ) = @strings[ 0, 1, 2, 3 ];
+        $cd_cmd  = "cd $cd; ";
+        $command = '-o default';
+    }
+
+    if ($command) {
+        @rs = array_unique(
+            backquote_command(
+                    $cd_cmd
+                  . "bash -c 'compgen "
+                  . $command . " '"
+                  . quotemeta( $cmd2 ? $cmd2 : $string ) . ""
+            )
+        );
+
+    }
+    else {
+        if ( $type eq 'service' && has_command('service') ) {
+            my @cmd = split /::::/, $string;
+            my $units_tmp =
+              backquote_command( "service " . quotemeta( $cmd[1] ) );
+            my ($unit_tmp) = $units_tmp =~ / \(  ( [^\)]+ )  \) /x;
+            if ( !$unit_tmp ) {
+                ($unit_tmp) = $units_tmp =~ / {  ( [^}]+ )  } /x;
+            }
+            if ( !$unit_tmp ) {
+                ($unit_tmp) = $units_tmp =~ / \[  ( [^]]+ )  \] /x;
+            }
+
+            $unit_tmp =~ s/\s+//g;
+            $unit_tmp =~ s/\|/,/g;
+            $unit_tmp =~ s/;/,/g;
+
+            my @units_tmp = split /,/, $unit_tmp;
+            my @units_possible_tmp = (
+                'start',  'stop',         'restart', 'try-restart',
+                'reload', 'force-reload', 'status'
+            );
+            @rs_tmp = ( @units_tmp ? @units_tmp : @units_possible_tmp );
+            my @rs_cmd;
+            if ( $cmd[2] ) {
+                foreach my $cmd (@rs_tmp) {
+                    if ( string_starts_with( $cmd, $cmd[2] ) ) {
+                        push @rs_cmd, $cmd;
+                    }
+                }
+                @rs = @rs_cmd;
+            }
+            else {
+                @rs = @rs_tmp;
+            }
+        }
+        if ( $type eq 'systemctl' && has_command('systemctl') ) {
+            my ( @units, @units_tmp );
+
+            @units_tmp =
+              array_unique( backquote_command("systemctl list-unit-files") );
+            my $i = 0;
+            my $n = $#units_tmp;
+            foreach my $unit (@units_tmp) {
+                my @tmp = split / {1,}/, $unit;
+                my ( $unit_tmp, $status_tmp ) = @tmp[ 0, 1 ];
+
+                if (
+                       $i
+                    && --$n
+                    && $unit_tmp
+                    && ( !$string
+                        || string_starts_with( $unit_tmp, $string ) )
+                  )
+                {
+                    push @units, $unit_tmp;
+                }
+
+                $i++;
+            }
+            @rs = @units;
+        }
+    }
+
+    if ( $cd || $cmd2 ) {
+        my @rs_tmp;
+        foreach my $file (@rs) {
+            if ( -d $file || -d ( $cd . $file ) ) { #&& ( $cmd ne 'cat' || $cmd2 )
+                push @rs_tmp, ( $file . '/' );
+            }
+            else {
+                if ( $cmd ne 'cd' ) {
+                    push @rs_tmp, $file;
+                }
+            }
+        }
+        @rs = @rs_tmp;
+    }
+    return @rs;
+}
+
+sub string_starts_with {
+    my ( $string, $search ) = @_;
+    if ( $string =~ m/^\Q$search/ ) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+sub array_unique {
+    my @unique;
+    my %seen;
+
+    foreach my $value (@_) {
+        if ( !$seen{$value}++ ) {
+            $value =~ tr/\r\n//d;
+            push @unique, $value;
+        }
+    }
+    return @unique;
 }
 
 1;
