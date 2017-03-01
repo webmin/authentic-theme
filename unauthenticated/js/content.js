@@ -49,12 +49,12 @@ function __r____changed() {
 
 function __init_ck_(a) {
     CKEDITOR_BASEPATH = "/unauthenticated/js/ckeditor/";
-    $.getScript("" + $_____link_full + "/unauthenticated/js/ckeditor/ckeditor.js", function(e, j, h) {
+    $.getScript("" + $_____link_full + "/unauthenticated/js/ckeditor/ckeditor.js", function(f, c, d) {
         if (CKEDITOR.env.ie && CKEDITOR.env.version < 9) {
             CKEDITOR.tools.enableHtml5Elements(document)
         }
 
-        function d() {
+        function g() {
             if (CKEDITOR.revision == ("%REV%")) {
                 return true
             }
@@ -63,20 +63,27 @@ function __init_ck_(a) {
         CKEDITOR.config.height = $(window).height() / a[1];
         CKEDITOR.config.width = "auto";
         CKEDITOR.config.removePlugins = "save, about";
-        var b = d();
-        var g = CKEDITOR.document.getById(a[0]);
-        if (b) {
-            var f = $("body").data("language");
+        var k = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : 0);
+        if (k) {
+            CKEDITOR.config.contentsCss = ($_____link_full + "/unauthenticated/css/palettes/nightrider_ckeditor_content." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str);
+            if (!$('html head link[href*="css/nightrider_ckeditor."]').length) {
+                $("html head").append('<link href="' + $_____link_full + "/unauthenticated/css/palettes/nightrider_ckeditor." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+            }
+        }
+        var h = g();
+        var j = CKEDITOR.document.getById(a[0]);
+        if (h) {
+            var b = $("body").data("language");
             CKEDITOR.replace(a[0], {
-                language: (f == "zh" ? "zh-cn" : f)
+                language: (b == "zh" ? "zh-cn" : b)
             })
         } else {
-            g.setAttribute("contenteditable", "true");
+            j.setAttribute("contenteditable", "true");
             CKEDITOR.inline(a[0])
         }
         if (a[2] === true) {
-            for (var c in CKEDITOR.instances) {
-                CKEDITOR.instances[c].on("change", function(i) {
+            for (var e in CKEDITOR.instances) {
+                CKEDITOR.instances[e].on("change", function(i) {
                     i.removeListener();
                     $("body").attr("data-unload-warning", "1")
                 })
@@ -573,17 +580,26 @@ if ($current_page_full == $_____link_full + "/apache/edit_global.cgi" || $curren
         }
     })
 }
+if ($(".opener_container").length) {
+    $.each($(".opener_container"), function() {
+        if ($(this).find(".opener_shown").is(":visible")) {
+            $(this).parent("tr").prev("tr").find("td a:nth-child(1)").addClass("opener_container_opened").removeClass("opener_container_closed")
+        }
+    })
+}
 
 function hidden_opener(c, d) {
     if ($("#" + c).parent(".opener_container").length === 0) {
         $("#" + c).wrapAll('<div class="opener_container opener_sub_container margined-top"></div>')
     }
     if ($("#" + c).hasClass("opener_shown")) {
+        $("#" + c).parent(".opener_container").parent("tr").prev("tr").find("td a:nth-child(1)").removeClass("opener_container_opened").addClass("opener_container_closed");
         $("#" + c).parent(".opener_container").show().find("#" + c).slideUp($settings_animation_tabs_slide_time, function() {
             $("#" + c).removeClass("opener_shown").addClass("opener_hidden").parent('.opener_container:not(".opener_sub_container")').hide();
             $("#" + c).parent(".opener_sub_container").removeClass("margined-top")
         })
     } else {
+        $("#" + c).parent(".opener_container").parent("tr").prev("tr").find("td a:nth-child(1)").addClass("opener_container_opened").removeClass("opener_container_closed");
         $("#" + c).slideUp(0).removeClass("opener_hidden").addClass("opener_shown").parent(".opener_container").slideDown($settings_animation_tabs_slide_time).find(".opener_shown").slideDown($settings_animation_tabs_slide_time);
         $("#" + c).parent(".opener_sub_container").addClass("margined-top")
     }
@@ -591,10 +607,10 @@ function hidden_opener(c, d) {
 if ($(".opener_shown").length > 0) {
     if ($(".opener_trigger").length > 0) {
         $(".panel-body  .ui_form .table  tbody  tr").removeClass("thead");
-        $(".opener_trigger").parents("table.table").attr("style", "margin-bottom:6px !important; border-collapse: separate !important; border: 0 !important; border-bottom:1px solid #f0f0f0 !important;");
+        $(".opener_trigger").parents("table.table").addClass("opener_table_style");
         $(".opener_trigger").parents("tr").addClass("_c__op_r").attr("style", "border: 0 !important");
-        $(".opener_trigger").parent("td").addClass("_c__op_d").attr("style", "vertical-align: middle; height:35px; line-height: 30px; text-align:left; border:0; border-left:1px solid #f0f0f0; border-right:1px solid #f0f0f0; border-top:4px solid #f0f0f0; box-shadow:0 1px 1px rgba(0,0,0,.05); border-top-left-radius:0; border-top-right-radius:0");
-        $(".opener_trigger").parent("td").find("a").addClass("link_hover_effect").attr("style", "padding-left:3px; font-size:16px; line-height: 20px !important; font-weight: 400 !important")
+        $(".opener_trigger").parent("td").addClass("_c__op_d");
+        $(".opener_trigger").parent("td").find("a").addClass("link_hover_effect link_hover_effect_style_extra")
     }
 }
 if ($('a[href^="javascript:hidden_opener"]:not(".opener_trigger")').length > 0) {
@@ -602,17 +618,20 @@ if ($('a[href^="javascript:hidden_opener"]:not(".opener_trigger")').length > 0) 
         var d = (($current_page_full == $_____link_full + "/virtual-server/backup_form.cgi" && $__source_url && $__source_url.indexOf("?sched=") > -1) ? true : false);
         $(this).find("img").length > 0 ? $(this).remove() : false;
         $(this).css("border-bottom", "0");
-        $(this).parents("table.table").attr("style", "margin-bottom:6px !important; border-collapse: separate !important; border: 0 !important; border-bottom:1px solid #f0f0f0 !important;");
-        $(this).parent("td").attr("style", "vertical-align: middle; height:35px; line-height: 30px; background: #f5f5f5; text-align:left; border:0; border-left:1px solid #f0f0f0; border-right:1px solid #f0f0f0; " + (!d ? " border-top:4px solid #f0f0f0; border-bottom:1px solid #f0f0f0 !important; " : "") + " border-top-left-radius:0; border-top-right-radius:0");
-        $(this).parent("td").find("a").addClass("link_hover_effect").attr("style", "padding-left:12px; font-size:16px; font-weight: 400 !important; background: #f5f5f5 !important");
+        $(this).parents("table.table").addClass("opener_table_style_small");
+        $(this).parent("td").addClass("opener_table_cell_style_small");
+        if (!d) {
+            $(this).parent("td").addClass("opener_table_cell_style_small opener_table_cell_style_small_exclusion_border_top")
+        }
+        $(this).parent("td").find("a").addClass("link_hover_effect link_hover_effect_style");
         if ($(this).parent().is(".panel-body") || $(this).parent().is(".ui_form")) {
             var c = $(this).parent().is(".panel-body") ? ".panel-body" : ".ui_form";
             $(this).parent(c).find('a[href^="javascript:hidden_opener"]:eq(1)').wrapAll('<div class="opener_extra_container"></div>');
             $(this).parent('.panel-body > a[href^="javascript:hidden_opener"]:first-child').remove();
             var e = $(this).parent(c).find(".opener_extra_container");
             $(e).next("br").remove();
-            $(e).attr("style", "vertical-align: middle; height:35px; line-height: 30px; background: #f5f5f5; text-align:left; border:0; border-left:1px solid #f0f0f0; border-right:1px solid #f0f0f0; border-top:4px solid #f0f0f0; border-bottom:1px solid #f0f0f0 !important; border-top-left-radius:0; border-top-right-radius:0;");
-            $(e).find("a").attr("style", "padding-left:12px; line-height:20px; font-size:16px; font-weight: 400 !important; background: #f5f5f5 !important").addClass("link_hover_effect");
+            $(e).addClass("opener_extra_container_style");
+            $(e).find("a").addClass("opener_extra_container_a_style link_hover_effect");
             $(e).next(".opener_hidden").attr("style", "padding:8px")
         }
     });
@@ -852,17 +871,25 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                     l($(this))
                 });
                 $('select[name="settings_navigation_color"]').on("click keyup change", function(c) {
-                    val = $(this).val();
-                    $("body").attr("data-theme", val);
-                    t__wi_p.$("body").attr("data-theme", val);
+                    var d = $(this).val();
+                    $("body").attr("data-theme", d);
+                    t__wi_p.$("body").attr("data-theme", d);
                     t__wi_p.$("link[data-palette]").remove();
-                    if (val != "blue") {
-                        t__wi_p.$("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + val.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>')
+                    if (d != "blue") {
+                        t__wi_p.$("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>')
                     }
+                    settings_update()
                 });
                 $('select[name="settings_background_color"]').on("click keyup change", function(c) {
-                    t__wi_p.$("html").attr("data-background-style", $(this).val());
-                    $("html").attr("data-background-style", $(this).val())
+                    var d = $(this).val();
+                    t__wi_p.$("html").attr("data-background-style", d);
+                    $("html").attr("data-background-style", d);
+                    $("link[data-palette]").remove();
+                    if (d != "gainsboro") {
+                        $("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+                        $('select[name="settings_navigation_color"]').val("gunmetal").trigger("change")
+                    }
+                    settings_update()
                 });
                 $('select[name="settings_side_slider_palette"]').change(function(c) {
                     t__wi_p.$("body .right-side-tabs, body .right-side-tabs-toggler").attr("data-background-style", $(this).val())
@@ -1207,6 +1234,16 @@ $('form[action*="switch_user.cgi"], a[href*="switch_user.cgi"]').each(function()
     });
     $(this).attr("target", "_top")
 });
+if (is__mf("virtual-server", "list_scripts.cgi")) {
+    $('td > a > img[src*="images/staroff.gif"]').each(function(d, e) {
+        var f = $(this);
+        $(e).attr("src", "" + $_____link_full + "/images/staroff.gif")
+    });
+    $('td > a > img[src*="images/staron.gif"]').each(function(d, e) {
+        var f = $(this);
+        $(e).attr("src", "" + $_____link_full + "/images/staron.gif")
+    })
+}
 if ($current_directory == $_____link + "status/") {
     $('td img[src*="images/up.gif"]:not(".ui_icon_protected")').each(function(d, e) {
         var f = $(this);
@@ -2143,10 +2180,13 @@ if ($current_page_full == $_____link_full + "/server-manager/edit_serv.cgi") {
     }, 20)
 }
 if (settings_sysinfo_easypie_charts && $current_page_full == $_____link_full + "/sysinfo.cgi") {
+    var isNR = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : 0);
     $("body").find(".page.__sytem_information").find(".piechart").easyPieChart({
         barColor: function(b) {
-            return (b < 50 ? "#5cb85c" : b < 85 ? "#f0ad4e" : "#cb3935")
+            return (b < 50 ? (isNR ? "#269373" : "#5cb85c") : b < 85 ? (isNR ? "#c38d40" : "#f0ad4e") : "#cb3935")
         },
+        trackColor: (isNR ? "#3b424b" : "#f8f8f8"),
+        scaleColor: (isNR ? "#3b424b" : "#dfe0e0"),
         size: 160,
         scaleLength: settings_sysinfo_easypie_charts_scale,
         trackWidth: settings_sysinfo_easypie_charts_width,
@@ -2790,7 +2830,7 @@ if ($__current_directory == $_____link_full + "/virtual-server/") {
 }
 if ($current_directory == $_____link + "acl/") {
     $("body.acl > div > div > div.panel-body > form > div > table > tbody > tr > td > table > tbody > tr:nth-child(1) > td > table > tbody").attr("style", "border: 0 !important");
-    var $t__acl_title = $("br").next(".ui_grid_table.table-hardcoded").find("tbody").attr("style", "border: 1px solid #eee !important").parent("table").prev("br").prev("b");
+    var $t__acl_title = $("br").next(".ui_grid_table.table-hardcoded").find("tbody").attr("style", "border: 1px solid #" + (settings_background_color === "nightRider" ? "393b3f" : "eee") + " !important").parent("table").prev("br").prev("b");
     $("br").next(".ui_grid_table.table-hardcoded").css("margin-bottom", "3px");
     $.each($t__acl_title, function(c, d) {
         if ($(this).text() == "") {
@@ -3543,6 +3583,25 @@ if (is__mf("virtualmin-nginx", "") || is__mf("virtualmin-awstats", "") || is__mf
         b.next("br").remove();
         b.remove()
     }, 0)
+}
+if (typeof settings_background_color != "undefined" && settings_background_color === "nightRider") {
+    if ($(".opener_shown").length > 0) {
+        var __tmp_ui_grinTable = $(".opener_container, .opener_container:hidden").find(".ui_grid_table, .ui_grid_table:hidden");
+        if (__tmp_ui_grinTable.length) {
+            $.each(__tmp_ui_grinTable, function(a, b) {
+                $(this).parent("td").attr("style", "padding: 0 !important")
+            })
+        }
+    }
+    if ($(".opener_table_style_small").length > 0) {
+        var __tmp_ui_hardTable = $(".opener_table_style_small, .opener_table_style_small:hidden").find(".sub_table_container.table-hardcoded, .sub_table_container.table-hardcoded:hidden");
+        if (__tmp_ui_hardTable.length) {
+            $.each(__tmp_ui_hardTable, function(a, b) {
+                $(this).parent("td").attr("style", "padding: 0 !important");
+                $(this).find("tbody tr td").attr("style", "padding-left: 3px !important; padding-right: 3px !important")
+            })
+        }
+    }
 }
 if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __num()) {
     $(".piechart canvas").hover(function() {

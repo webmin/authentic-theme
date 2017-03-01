@@ -13,6 +13,7 @@
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
 ![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-1710.png)
+![](https://rostovtsev.ru/pub/media/screenshots/screenshot-content-page-18.40.png)
 
 ####Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
@@ -84,10 +85,6 @@ The theme has inbuilt feature to notify an administrative user to install update
 
 ####How do I customize the theme?
 Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.
-
-
-####How do I make user palettes work?
-_Authentic_ Theme utilizes built-in, custom color palettes, that a user can define using theme's extensions. It's possible, by using theme's _CSS_ extensions, to pass user custom selector, such as `user-palette-1`, `user-palette-2`, `user-palette-3`, `user-palette-4`, `user-palette-5`, `user-palette-6`, `user-palette-7`, `user-palette-8`, `user-palette-9` and `user-palette-10` to enable a usage of user palettes. For example, in order to use `user-palette-1`, in the theme's settings, you would need to set the option _Navigation Menu Color_ to the value of `User Palette 1`. After that, provide a custom code to the theme's _CSS_ extension, with [a pre-built template](http://codepen.io/qooob/pen/dYaPvj), corresponding with custom theme's identification.
 
 ####How do I execute shell command using search field?
 Type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available.

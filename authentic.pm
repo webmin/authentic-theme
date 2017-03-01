@@ -193,6 +193,8 @@ sub theme_footer {
     if (   get_env('script_name') ne '/session_login.cgi'
         && get_env('script_name') ne '/pam_login.cgi' )
     {
+        my $prefix;
+        my $hostname = ( $prefix ) = split( /\./, get_display_hostname() );
         print '<div data-autocomplete="'
           . ( has_command('bash') ? 1 : 0 )
           . '" class="-shell-port-">
@@ -201,7 +203,7 @@ sub theme_footer {
             <div class="-shell-port-cmd">
             <span class="-shell-port-prompt"><span class="-shell-port-type">['
           . $remote_user . '@'
-          . &get_display_hostname()
+          . ($prefix ? $prefix : get_display_hostname())
           . ' <span class="-shell-port-pwd" data-home="'
           . get_user_home()
           . '" data-pwd="'

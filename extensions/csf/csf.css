@@ -852,3 +852,200 @@ html[data-post='profileapply'] form[action='index.cgi'] input[value='restartboth
 html[data-post=''] input[name='comment'] {
     margin-top: 2px
 }
+
+html[data-background-style='nightRider'] .csf form .value-other,
+html[data-background-style='nightRider'] .csf form .value-default,
+html[data-background-style='nightRider'] .csf form .comment,
+html[data-background-style='nightRider'] .csf form .section {
+    background-color: #2f3237;
+    border-color: #383a40;
+    border-top-width: 1px
+}
+
+html[data-background-style='nightRider'] .csf .btn:not(.btn-xxs):not(.btn-tiny):not(.ui_link_replaced).btn-csf-config.active {
+    color: #bfc9d3 !important;
+    border-color: rgba(27, 191, 137, .45) !important;
+    background-color: rgba(27, 191, 137, .07) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .tab-pane>.table.table-striped.table-condensed tbody>tr:first-child,
+html[data-module='csf'][data-background-style='nightRider'] .tab-pane>.table.table-striped.table-condensed tr:first-child>th:first-child,
+html[data-module='csf'][data-background-style='nightRider'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tbody>tr:first-child,
+html[data-module='csf'][data-background-style='nightRider'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tr:first-child>th:first-child {
+    border-top-color: #3d3f43 !important;
+    border-top-width: 1px;
+    background-color: #2d3036
+}
+
+html[data-background-style='nightRider'] hr,
+html[data-module='csf'][data-background-style='nightRider'] .csf .footer-string {
+    border-top-color: #3d3f43 !important;
+    border-top-width: 1px
+}
+
+html[data-post=''][data-background-style='nightRider'] button[value='denyf'] {
+    color: #bfc9d3 !important;
+    border-color: rgba(247, 175, 62, .68) !important;
+    background-color: rgba(247, 175, 62, .07) !important
+}
+
+html[data-post=''][data-background-style='nightRider'] button[value='denyf']:active,
+html[data-post=''][data-background-style='nightRider'] button[value='denyf']:focus,
+html[data-post=''][data-background-style='nightRider'] button[value='denyf']:hover,
+html[data-background-style='nightRider'] .csf td>form[action='index.cgi']>input[value='denyf']+input[type='submit']:hover {
+    color: #fff !important;
+    border-color: #f7af3e !important;
+    outline: 0 !important;
+    background-color: rgba(247, 175, 62, .1) !important;
+    box-shadow: none !important
+}
+
+html[data-post=''][data-background-style='nightRider'] button[value='disable'] {
+    color: #bfc9d3 !important;
+    border-color: rgba(219, 82, 75, .69) !important;
+    background-color: rgba(219, 82, 75, .07) !important
+}
+
+html[data-post=''][data-background-style='nightRider'] button[value='disable']:active,
+html[data-post=''][data-background-style='nightRider'] button[value='disable']:focus,
+html[data-post=''][data-background-style='nightRider'] button[value='disable']:hover {
+    color: #fff !important;
+    border-color: #db524b !important;
+    outline: 0 !important;
+    background-color: rgba(219, 82, 75, .1) !important;
+    box-shadow: none !important
+}
+
+html[data-post=''][data-background-style='nightRider'] button[value='enable'] {
+    color: #bfc9d3 !important;
+    border-color: rgba(27, 191, 137, .55) !important;
+    background-color: rgba(27, 191, 137, .07) !important
+}
+
+html[data-post=''][data-background-style='nightRider'] button[value='enable']:active,
+html[data-post=''][data-background-style='nightRider'] button[value='enable']:focus,
+html[data-post=''][data-background-style='nightRider'] button[value='enable']:hover {
+    color: #fff !important;
+    border-color: #1bbf89 !important;
+    outline: 0 !important;
+    background-color: rgba(27, 191, 137, .1) !important;
+    box-shadow: none !important
+}
+
+html[data-background-style='nightRider'] .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit'],
+html[data-post=''][data-background-style='nightRider'] button[value='restart'] {
+    color: #bfc9d3 !important;
+    border-color: rgba(86, 192, 224, .72) !important;
+    background-color: rgba(86, 192, 224, .07) !important
+}
+
+html[data-background-style='nightRider'] .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:active,
+html[data-background-style='nightRider'] .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:focus,
+html[data-background-style='nightRider'] .csf td>form[action='index.cgi']>input[value='lfdrestart']+input[type='submit']:hover,
+html[data-post=''][data-background-style='nightRider'] button[value='restart']:active,
+html[data-post=''][data-background-style='nightRider'] button[value='restart']:focus,
+html[data-post=''][data-background-style='nightRider'] button[value='restart']:hover {
+    color: #fff !important;
+    border-color: #56c0e0 !important;
+    outline: 0 !important;
+    background-color: rgba(86, 192, 224, .1) !important;
+    box-shadow: none !important
+}
+
+html[data-background-style='nightRider'] body.csf .table>thead>tr:first-child>th,
+html[data-background-style='nightRider'] body.csf .table>tbody>tr:first-child>th,
+html[data-background-style='nightRider'] body.csf table>tfoot>tr:first-child>th,
+html[data-background-style='nightRider'] body.csf .table>thead>tr:first-child>td,
+html[data-background-style='nightRider'] body.csf .table>tbody>tr:first-child>td,
+html[data-background-style='nightRider'] body.csf .table>tfoot>tr:first-child>td {
+    border-top: 1px solid #424449 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading {
+    border: 1px solid #424449;
+    background-color: #2d3036
+}
+
+html[data-background-style='nightRider'] code {
+    background-color: #2d3036 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-body {
+    border-color: #424449
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading {
+    border-bottom: 0
+}
+
+html[data-module='csf'][data-background-style='nightRider'] div.panel-body>div[style*='background: #F4F4EA'] {
+    background-color: #2d3036 !important;
+    border-color: #3d3f43 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] [style*='border-right: 1px solid #DDDDDD'] {
+    border-color: rgba(61, 63, 67, 0.85) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] [style*='background:#FFD1DC'],
+html[data-module='csf'][data-background-style='nightRider'] [style*='background: #FFD1DC'] {
+    border-color: rgba(61, 63, 67, 0.85) !important;
+    outline: 0 !important;
+    background-color: rgba(219, 82, 75, .1) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] [style*='background:#BDECB6'],
+html[data-module='csf'][data-background-style='nightRider'] [style*='background: #BDECB6'] {
+    background-color: rgba(27, 191, 137, .1) !important;
+    border-color: rgba(61, 63, 67, 0.85) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] [style*='background: #FFFDD8'],
+html[data-module='csf'][data-background-style='nightRider'] [style*='background:#FFFDD8'] {
+    background-color: rgba(247, 175, 62, .1) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] [style*='border: 1px solid #DDDDDD'],
+html[data-module='csf'][data-background-style='nightRider'] [style*='border:1px solid #DDDDDD'] {
+    border-color: rgba(61, 63, 67, 0.85) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] [style*='background: #990000'],
+html[data-module='csf'][data-background-style='nightRider'] [style*='background:#990000'] {
+    background-color: #a84b4b !important
+}
+
+html[data-post='logtail'][data-background-style='nightRider'] .panel .panel-body .panel,
+html[data-post='loggrep'][data-background-style='nightRider'] .panel .panel-body .panel {
+    border: 1px solid #424449
+}
+
+html[data-post='viewports'][data-background-style='nightRider'] .col_header_custom {
+    border-top: 1px solid #424449 !important;
+    border-right: 1px solid #424449 !important;
+    border-left: 1px solid #424449 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .dataTables_wrapper .dataTables_empty:hover,
+html[data-module='csf'][data-background-style='nightRider'] .dataTables_wrapper .dataTables_empty {
+    background-color: #2f3237
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .panel {
+    color: rgba(169, 174, 180, 0.94) !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .cspinner .cspinner-icon.dark {
+    border-top-color: #70737b;
+    border-left-color: #5d5c5c
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-background-style='nightRider'] .panel._devcon .panel-heading,
+html[data-module='csf'][data-background-style='nightRider'] .panel._devcon {
+    border-color: #3a3e43
+}
+
+html[data-post=''][data-module='csf'][data-background-style='nightRider'] div#home table tr:nth-child(even) td {
+    background-color: #2a2d31
+}

@@ -105,6 +105,7 @@ sub embed_header {
             embed_css_bundle();
         }
 
+        embed_css_content_palette();
         embed_styles();
         embed_settings();
 
@@ -307,6 +308,20 @@ sub embed_css_content {
       . '/unauthenticated/css/content.bundle.min.css?'
       . theme_version()
       . '" rel="stylesheet">' . "\n";
+}
+
+sub embed_css_content_palette {
+    if (   length $__settings{'settings_background_color'}
+        && $__settings{'settings_background_color'} ne 'gainsboro' )
+    {
+        print '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/palettes/'
+          . lc( $__settings{'settings_background_color'} ) . '.'
+          . ( theme_mode() eq 'debug' ? 'src' : 'min' ) . '.css?'
+          . theme_version()
+          . '" rel="stylesheet" data-palette>' . "\n";
+    }
 }
 
 sub embed_js_timeplot {
