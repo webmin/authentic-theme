@@ -418,7 +418,15 @@ sub get_extended_sysinfo {
                             <a data-toggle="collapse" href="#'
                       . $info->{'id'} . '-'
                       . $info->{'module'}
-                      . '-collapse" aria-expanded="true" aria-controls="'
+                      . '-collapse" aria-expanded="'
+                      . (
+                        (
+                            $info->{'open'}
+                              || $__settings{
+                                'settings_sysinfo_expand_all_accordions'} eq 'true'
+                        ) ? 'true' : 'false'
+                      )
+                      . '" aria-controls="'
                       . $info->{'id'} . '-'
                       . $info->{'module'}
                       . '-collapse">
@@ -1636,6 +1644,16 @@ sub csf_mod {
           . $ext . '.css?'
           . theme_version()
           . '" rel="stylesheet">' . "\n";
+        if (   length $__settings{'settings_background_color'}
+            && $__settings{'settings_background_color'} ne 'gainsboro' )
+        {
+          print $fh '<link href="'
+            . $gconfig{'webprefix'}
+            . '/unauthenticated/css/palettes/' .
+            lc( $__settings{'settings_background_color'} ) . '.' . $ext . '.css?'
+            . theme_version()
+            . '" rel="stylesheet">' . "\n";
+        }
 
         if ( -r $scripts ) {
             print $fh '<script src="'
@@ -2019,6 +2037,7 @@ sub embed_login_head {
       . theme_version()
       . '" rel="stylesheet">' . "\n";
 
+    embed_css_content_palette();
     embed_css_fonts();
     embed_styles();
 
@@ -2933,45 +2952,11 @@ sub _settings {
                     <option value="darkGrey"'
               . ( $v eq 'darkGrey' && ' selected' ) . '>Dark Grey</option>
 
-                    <option value="user-palette-1"'
-              . ( $v eq 'user-palette-1' && ' selected' )
-              . '>User Palette 1</option>
+                    <option value="noir"'
+              . ( $v eq 'noir' && ' selected' ) . '>Noir</option>
 
-                    <option value="user-palette-2"'
-              . ( $v eq 'user-palette-2' && ' selected' )
-              . '>User Palette 2</option>
-
-                    <option value="user-palette-3"'
-              . ( $v eq 'user-palette-3' && ' selected' )
-              . '>User Palette 3</option>
-
-                    <option value="user-palette-4"'
-              . ( $v eq 'user-palette-4' && ' selected' )
-              . '>User Palette 4</option>
-
-                    <option value="user-palette-5"'
-              . ( $v eq 'user-palette-5' && ' selected' )
-              . '>User Palette 5</option>
-
-                    <option value="user-palette-6"'
-              . ( $v eq 'user-palette-6' && ' selected' )
-              . '>User Palette 6</option>
-
-                    <option value="user-palette-7"'
-              . ( $v eq 'user-palette-7' && ' selected' )
-              . '>User Palette 7</option>
-
-                    <option value="user-palette-8"'
-              . ( $v eq 'user-palette-8' && ' selected' )
-              . '>User Palette 8</option>
-
-                    <option value="user-palette-9"'
-              . ( $v eq 'user-palette-9' && ' selected' )
-              . '>User Palette 9</option>
-
-                    <option value="user-palette-10"'
-              . ( $v eq 'user-palette-10' && ' selected' )
-              . '>User Palette 10</option>
+                    <option value="gunmetal"'
+              . ( $v eq 'gunmetal' && ' selected' ) . '>Gunmetal</option>
 
 
                 </select>';
@@ -2979,17 +2964,15 @@ sub _settings {
         elsif ( $k eq 'settings_background_color' ) {
             $v = '<select class="ui_select" name="' . $k . '">
 
-                    <option value="gainsboro"'
+
+              <option value="gainsboro"'
               . ( $v eq 'gainsboro' && ' selected' )
               . '>Gainsboro ('
               . $Atext{'theme_xhred_global_default'}
               . ')</option>
 
-                    <option value="lightGrey"'
-              . ( $v eq 'lightGrey' && ' selected' ) . '>White Smoke</option>
-
-                    <option value="ghostWhite"'
-              . ( $v eq 'ghostWhite' && ' selected' ) . '>Ghost White</option>
+              <option value="nightRider"'
+              . ( $v eq 'nightRider' && ' selected' ) . '>Night Rider</option>
 
                 </select>';
         }

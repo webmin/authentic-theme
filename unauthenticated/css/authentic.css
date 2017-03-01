@@ -939,6 +939,11 @@ br.lh0 {
     color: #bbb
 }
 
+.right-side-tabs table tr td,
+.right-side-tabs table tr th {
+    font-size: 11px
+}
+
 .right-side-tabs[data-background-style='white'] .tab-pane .info-container .extended-list-data .panel-default .panel-body {
     border-top-color: #888;
     border-bottom-color: #888
@@ -2963,7 +2968,7 @@ td>input+input[type='submit'] {
     vertical-align: middle
 }
 
-input+a[href^='/help.cgi'].help_popup {
+input+a[href*='help.cgi'].help_popup {
     line-height: 30px !important;
     margin-left: 4px !important;
     vertical-align: top !important
@@ -2979,7 +2984,7 @@ input+a[href^='/help.cgi'].help_popup {
     color: #23527c !important
 }
 
-a[href^='/help.cgi'].help_popup+.popover>.popover-content center {
+a[href*='help.cgi'].help_popup+.popover>.popover-content center {
     font-weight: 500;
     display: inline-block;
     margin-bottom: 2px !important;
@@ -2987,22 +2992,28 @@ a[href^='/help.cgi'].help_popup+.popover>.popover-content center {
     text-align: left !important
 }
 
-a[href^='/help.cgi'].help_popup+.popover>.popover-content center:after {
+a[href*='help.cgi'].help_popup+.popover>.popover-content center:after {
     content: ':'
 }
 
-a[href^='/help.cgi'].help_popup+.popover>.popover-content center tt {
+a[href*='help.cgi'].help_popup+.popover>.popover-content center tt {
     padding-left: 0
 }
 
-a[href^='/help.cgi'].help_popup+.popover>.popover-title {
+a[href*='help.cgi'].help_popup+.popover>.popover-title {
     font-size: 14px;
     line-height: 15px
 }
 
-a[href^='/help.cgi'].help_popup+.popover>.popover-content u {
+a[href*='help.cgi'].help_popup+.popover>.popover-content u {
     display: inline-block;
     margin-top: -3px !important
+}
+
+a[href*='showpass.cgi'].help_popup+.popover>.popover-content {
+    width: 23vw;
+    min-width: 276px;
+    max-width: 23vw
 }
 
 h3.h3_help {
@@ -3328,7 +3339,7 @@ td.col_value label,
     width: 99%;
     height: 1px;
     border: 0;
-    border-bottom: 1px dotted #f0f0f0 !important
+    border-top: 1px solid #f0f0f0 !important
 }
 
 .opener_container .opener_shown .table.table-striped tbody tr:first-child td:first-child {
@@ -3351,6 +3362,41 @@ td.col_value label,
 
 .opener_trigger img {
     font-size: 10px
+}
+
+.panel .panel-heading .panel-title a {
+    margin-left: 10px !important
+}
+
+td .opener_trigger[id] {
+    margin-left: 18px !important
+}
+
+.panel .panel-heading .panel-title a:before,
+td .opener_trigger[id]:before {
+    font-family: 'Authentic';
+    position: absolute;
+    margin-left: -10px;
+    content: '\f088';
+    color: #bfbfbf
+}
+
+.panel .panel-heading .panel-title a:not([data-toggle="collapse"]):before {
+    display: none
+}
+
+.panel .panel-heading .panel-title a:before {
+    margin-left: -13px
+}
+
+.panel .panel-heading .panel-title a[aria-expanded='true']:before,
+td .opener_trigger.opener_container_opened[id]:before {
+    margin-left: -13px;
+    content: '\f085'
+}
+
+.panel .panel-heading .panel-title a[aria-expanded='true']:before {
+    margin-left: -16px
 }
 
 .panel-body table:not(.table-hardcoded) tr.thead+tr>td,
@@ -3907,9 +3953,9 @@ a.opener_trigger,
     line-height: 1.42857143
 }
 
-.sub_table_container:not(.xcontent-force-no-styling) *:not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th) {
+.sub_table_container:not(.xcontent-force-no-styling) *:not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select) {
     color: #333;
-    background-color: #fff
+    background-color: #fff !important
 }
 
 body.server-manager[data-uri*='shell.cgi'] .sub_table_container:not(.xcontent-force-no-styling) *:not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th),
@@ -4129,7 +4175,7 @@ body.syslog .CodeMirror {
     font-weight: normal;
     cursor: pointer;
     opacity: .3;
-    color: #c7d2e6;
+    color: #c7c7c7;
     border-bottom: 1px solid rgba(255, 255, 255, .09)
 }
 
@@ -4407,6 +4453,10 @@ tr.atshover .col_value>a.file-input-wrapper span,
 tr.atshover .col_value>label,
 .col_value.atscontent span>label {
     background: transparent !important
+}
+
+tr.atshover:hover td.atscontent span {
+    background-color: transparent !important
 }
 
 .va-tb {
@@ -6468,11 +6518,11 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
 }
 
 .awcheckbox label::after {
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1em !important;
     position: absolute;
-    top: 2px;
-    left: -1px;
+    top: 3px;
+    left: 0;
     display: inline-block;
     width: 13px;
     height: 13px;
@@ -6676,6 +6726,89 @@ input[src='/images/ok.gif'] {
     margin-top: 12px !important
 }
 
+.opener_table_style {
+    margin-bottom: 6px !important;
+    border-collapse: separate !important;
+    border: 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important
+}
+
+.opener_table_style_small {
+    margin-bottom: 6px !important;
+    border-collapse: separate !important;
+    border: 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important
+}
+
+.opener_table_cell_style_small {
+    line-height: 30px;
+    height: 35px;
+    text-align: left;
+    vertical-align: middle;
+    border: 0;
+    border-right: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: #f5f5f5
+}
+
+.opener_table_cell_style_small_exclusion_border_top {
+    border-top: 4px solid #f0f0f0 !important;
+    border-bottom: 1px solid #f0f0f0 !important
+}
+
+.link_hover_effect_style {
+    font-size: 16px;
+    font-weight: 400 !important;
+    padding-left: 12px;
+    background: #f5f5f5 !important
+}
+
+.link_hover_effect_style_extra {
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    padding-left: 3px
+}
+
+.opener_extra_container_style {
+    line-height: 30px;
+    height: 35px;
+    text-align: left;
+    vertical-align: middle;
+    border: 0;
+    border-top: 4px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-left: 1px solid #f0f0f0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: #f5f5f5
+}
+
+.opener_extra_container_a_style {
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 20px;
+    padding-left: 12px;
+    background: #f5f5f5 !important
+}
+
+._c__op_d {
+    line-height: 22px !important;
+    height: 35px;
+    text-align: left;
+    vertical-align: middle;
+    border: 0;
+    border-top: 4px solid #f0f0f0 !important;
+    border-right: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+}
+
 .kbd-success {
     background-color: #349e30 !important
 }
@@ -6877,8 +7010,8 @@ form.session_login,
     -moz-border-radius: 0;
     border-radius: 0;
     background-color: #fff;
-    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, .15);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .15)
+    -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, .10);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, .10)
 }
 
 .session_login .form-signin .form-group.form-signin-group {
@@ -6988,7 +7121,7 @@ body[class^='servers'] .dataTables_wrapper tbody tr td table.table-hardcoded tbo
 
 .col_header_custom,
 form[action='save_check.cgi']>b,
-.col_header b {
+body:not([data-module*="man"]) .col_header b {
     font-size: 16px !important;
     font-weight: normal !important;
     line-height: 24px !important;
@@ -7059,6 +7192,15 @@ input[name]:not([type='image']):not(.sidebar-search):not([type='button']):not([t
     border-radius: 0 !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important
+}
+
+body.csf .table>thead>tr:first-child>th,
+body.csf .table>tbody>tr:first-child>th,
+body.csf table>tfoot>tr:first-child>th,
+body.csf .table>thead>tr:first-child>td,
+body.csf .table>tbody>tr:first-child>td,
+body.csf .table>tfoot>tr:first-child>td {
+    border-top: 3px solid #f0f0f0
 }
 
 @-moz-document url-prefix() {
@@ -7338,6 +7480,26 @@ ul.messenger .messenger-message-inner ul {
         width: 40%;
         margin-left: -10px
     }
+}
+
+ul.messenger .messenger-message {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.messenger-message-inner {
+    font-size: 12px;
+    margin-left: 24px;
+    padding-left: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.38)
+}
+
+.messenger-message-inner i {
+    position: absolute;
+    top: 37%;
+    left: 2%
 }
 
 .file-manager .dataTables_length {
@@ -7948,7 +8110,8 @@ img.scale-08,
     min-height: 100px
 }
 
-.table-hover>tbody>tr:hover {
+.table-hover>tbody>tr.ui_checked_columns:hover,
+.table-hover>tbody>tr:not(.tr_tag):hover {
     background-color: #ebf2fc !important
 }
 
@@ -9389,8 +9552,8 @@ body.sysstats .graph_table a img {
 }
 
 .-shell-port-.opened input[data-command='true'] {
-    font-size: 12px;
     font-family: monospace;
+    font-size: 12px;
     height: 15px !important;
     margin-left: 1px;
     border: 0;
@@ -9422,28 +9585,21 @@ html[data-background-style='gainsboro'] .container:not(.form-signin-banner),
 html[data-background-style='gainsboro'] .container-fluid,
 html[data-background-style='gainsboro'] .loader-container,
 html[data-background-style='gainsboro'] .input-group-addon {
-    background-color: Gainsboro !important
+    background-color: #d6d6d6 !important
 }
 
 html[data-background-style='gainsboro'] .form-signin-banner,
 html[data-background-style='gainsboro'] .form-signin {
     border: 1px solid rgba(212, 212, 212, .93);
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+    -webkit-box-shadow: 2px 3px 2px rgba(0, 0, 0, .06);
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, .06)
 }
 
 html[data-background-style='gainsboro'] .panel.panel-default {
-    border-color: rgba(212, 212, 212, .93);
-    border-top-color: rgba(228, 228, 228, .83)
-}
-
-html[data-background-style='ghostWhite'],
-html[data-background-style='ghostWhite'] body,
-html[data-background-style='ghostWhite'] .container:not(.form-signin-banner),
-html[data-background-style='ghostWhite'] .container-fluid,
-html[data-background-style='ghostWhite'] .loader-container,
-html[data-background-style='ghostWhite'] .input-group-addon {
-    background-color: #f8f8f8 !important
+    border-color: rgba(150, 150, 150, .45);
+    border-top-color: rgba(228, 228, 228, .83);
+    -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, .02);
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .02)
 }
 
 .fa-spin-slow {
@@ -9594,4 +9750,298 @@ screen and (max-height:600px) {
     .loader {
         margin: -20px 0 !important
     }
+}
+
+html[data-background-style='nightRider'],
+html[data-background-style='nightRider'] body,
+html[data-background-style='nightRider'] .container:not(.form-signin-banner),
+html[data-background-style='nightRider'] .container-fluid,
+html[data-background-style='nightRider'] .loader-container,
+html[data-background-style='nightRider'] .input-group-addon {
+    background-color: #1a1c20 !important
+}
+
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-warning:hover,
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-warning {
+    background-color: rgba(247, 175, 62, .70) !important
+}
+
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-info:hover,
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-info {
+    background-color: rgba(86, 192, 224, .70) !important
+}
+
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-success:hover,
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-success {
+    background-color: rgba(27, 191, 137, .73) !important
+}
+
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-error:hover,
+html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-error {
+    background-color: rgba(219, 82, 75, .73) !important
+}
+
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'],
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .list-group-item,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .right-side-tabs-dismiss,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs .active a,
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey']>button,
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey'].opened>button,
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey'] {
+    background: #2d3035 !important
+}
+
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] {
+    border-left: 1px solid #36383d !important
+}
+
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs>li.active:first-child>a:focus,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs>li.active:first-child>a:hover,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs>li.active:first-child>a {
+    border-left-color: transparent
+}
+
+html[data-background-style='nightRider'] .right-side-tabs-dismiss i,
+html[data-background-style='nightRider'] #right-side-tabs .right_pane_favorites_link,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .list-group>a.list-group-item div.media-body>i,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] a.list-group-item .list-group-item-heading,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] button.list-group-item .list-group-item-heading,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs>li a,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane table.table.table-striped.table-hover.table-condensed>thead>tr>th,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:focus,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:visited,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:active,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:hover,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data]+strong {
+    color: #8c9196
+}
+
+html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data small,
+html[data-background-style='nightRider'] #right-side-tabs-sysinfo .no-sysinfo_data small,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] #right-side-tabs-notifications .right-side-tabs-notification div.media-body>small,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-body .table-responsive,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-default .panel-body table tbody tr.ui_columns_row a,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-default .panel-body table tbody tr.ui_columns_row,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-body a,
+html[data-background-style='nightRider'] .right-side-tabs .panel-title,
+html[data-background-style='nightRider'] .panel .panel-heading .panel-title a:before,
+html[data-background-style='nightRider'] td .opener_trigger[id]:before,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data],
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data] a {
+    color: #767a7f !important
+}
+
+html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data,
+html[data-background-style='nightRider'] #right-side-tabs-sysinfo .no-sysinfo_data {
+    border-color: #3e4146
+}
+
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] div.media-body>small,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-body .table-responsive .table td,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-body .table-responsive .table tr,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-default .panel-body table tbody tr.ui_columns_row,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-default .panel-body table td,
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-default .panel-body table .thead {
+    border-color: #44464e !important
+}
+
+html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-default .panel-body {
+    border-top-color: #44464e;
+    border-bottom-color: #44464e
+}
+
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey'].opened>.btn:active,
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey'].opened>.btn:focus,
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey']>.btn:focus,
+html[data-background-style='nightRider'] .right-side-tabs-toggler[data-background-style='grey'].opened>.btn {
+    background-color: #2f3238 !important
+}
+
+html[data-background-style='nightRider'] .alert-warning:hover,
+html[data-background-style='nightRider'] .alert-warning {
+    color: rgba(234, 239, 238, 0.96);
+    border-color: rgba(222, 180, 93, .13);
+    background-color: rgba(128, 118, 64, .08)
+}
+
+html[data-background-style='nightRider'] .alert-danger:hover,
+html[data-background-style='nightRider'] .alert-danger {
+    color: rgba(234, 239, 238, 0.96);
+    border-color: rgba(224, 60, 87, .15);
+    background-color: rgba(145, 94, 94, 0.88)
+}
+
+html[data-background-style='nightRider'] .alert-info:hover,
+html[data-background-style='nightRider'] .alert-info {
+    color: rgba(234, 239, 238, 0.96);
+    border-color: rgba(65, 108, 117, .29);
+    background-color: rgba(131, 162, 177, .08)
+}
+
+html[data-background-style='nightRider'] .alert-success:hover,
+html[data-background-style='nightRider'] .alert-success {
+    color: rgba(234, 239, 238, 0.96);
+    border-color: rgba(71, 101, 47, .33);
+    background-color: rgba(62, 118, 38, .08)
+}
+
+html[data-background-style='nightRider'] .graph-container>.graph {
+    background-color: #858a8f
+}
+
+html[data-background-style='nightRider'] .graph-container>.graph>.bar {
+    border-right-color: #ca524f;
+    background-color: #a94442
+}
+
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:1%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:2%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:3%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:4%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:5%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:6%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:7%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:8%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:9%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:10%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:11%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:12%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:13%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:14%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:15%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:16%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:17%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:18%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:19%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:20%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:21%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:22%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:23%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:24%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:25%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:26%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:27%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:28%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:29%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:30%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:31%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:32%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:33%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:34%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:35%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:36%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:37%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:38%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:39%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:40%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:41%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:42%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:43%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:44%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:45%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:46%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:47%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:48%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:49%'] {
+    border-right: #1d7a5f;
+    background-color: #269373
+}
+
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:50%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:51%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:52%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:53%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:54%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:55%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:56%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:57%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:58%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:59%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:60%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:61%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:62%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:63%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:64%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:65%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:66%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:67%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:68%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:69%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:70%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:71%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:72%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:73%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:74%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:75%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:76%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:77%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:78%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:79%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:80%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:81%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:82%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:83%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:84%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:85%'] {
+    border-right-color: #d8a357;
+    background-color: #c38d40
+}
+
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:0%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: 0%'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:0'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: 0'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:-'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: -'] {
+    border-right-color: #aaa;
+    background-color: #858a8f
+}
+
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:-'],
+html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: -'] {
+    color: #aaa
+}
+
+html[data-background-style='nightRider'] font[color="green"],
+html[data-background-style='nightRider'] font[color="#00aa00"],
+html[data-background-style='nightRider'] .text-success {
+    color: #269373 !important
+}
+
+html[data-background-style='nightRider'] font[color="#ff0000"] {
+    color: #a94442 !important
+}
+
+html[data-background-style='nightRider'] .btn-default {
+    color: #a8abad !important;
+    border-color: rgba(80, 85, 99, .75) !important;
+    background-color: rgba(97, 103, 121, .07) !important
+}
+
+html[data-background-style='nightRider'] .btn-default:hover,
+html[data-background-style='nightRider'] .btn-default:focus,
+html[data-background-style='nightRider'] .btn-default.focus {
+    color: #fff !important;
+    border-color: #505563 !important;
+    outline: 0 !important;
+    background-color: rgba(97, 103, 121, .1) !important;
+    box-shadow: none !important
+}
+
+html[data-background-style='nightRider'] .badge-success {
+    background-color: #269373 !important
+}
+
+html[data-background-style='nightRider'] .badge-warning {
+    background-color: #c38d40 !important
+}
+
+html[data-background-style='nightRider'] .label-danger,
+html[data-background-style='nightRider'] #right-side-tabs .right-side-tab-notification-asterix,
+html[data-background-style='nightRider'] .badge-danger {
+    background-color: #a94442 !important;
+    color: #ddd !important
 }
