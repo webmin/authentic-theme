@@ -213,7 +213,7 @@ settings_hotkey_toggle_slider=Dreceres del panell dret
 settings_window_replace_timestamps=Habilita la substitució de dates
 settings_window_replaced_timestamp_format_short=Format de data/hora curta
 settings_window_replaced_timestamp_format_full=Format de data/hora llarga
-settings_window_replaced_timestamps_options_description=Modifica la configuració de la data i hora per obtenir el <a href="http://momentjs.com" target="_blank">format</a> desitjat. Aquesta opció només té efectes al panell de notificacions i en la informació del sistema. Per defecte el format llarg correspon a <code>dddd, D MMMM YYYY h:mm:ss</code> i el curt <code>L, h:mm:ss</code>. El format és diferent per a cada zona horària.
+settings_window_replaced_timestamps_options_description=Modifica la configuració de la data i hora per obtenir el <code><a href="http://momentjs.com" target="_blank">format</a></code> desitjat. Aquesta opció només té efectes al panell de notificacions i en la informació del sistema. Per defecte el format llarg correspon a <code>LLLL</code> i el curt <code>L, LTS</code>. El format és diferent per a cada zona horària.
 
 settings_side_slider_enabled=Habilitar el panell dret
 settings_leftmenu_user_html=Mostrar retall HTML
