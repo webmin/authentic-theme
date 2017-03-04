@@ -10,6 +10,12 @@ function __f___mn() {
     return $g__m__name
 }
 
+function checkSelected() {
+    return _f__table().dataTable().$("tr.hl-aw", {
+        filter: "applied"
+    }).length
+}
+
 function __f___gd() {
     return $(_f__table().fnGetNodes()).find("input").add($(".active form > input")).serialize()
 }
