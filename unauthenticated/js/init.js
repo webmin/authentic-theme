@@ -131,16 +131,19 @@ if (t__wi_p.$(".mobile-menu-toggler:visible").length) {
 function upperFirst(a) {
     return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase()
 }
-Array.prototype.move = function(c, a) {
-    if (a >= this.length) {
-        var b = a - this.length;
-        while ((b--) + 1) {
-            this.push(undefined)
+Object.defineProperty(Array.prototype, "reOrder", {
+    enumerable: false,
+    value: function(c, a) {
+        if (a >= this.length) {
+            var b = a - this.length;
+            while ((b--) + 1) {
+                this.push(undefined)
+            }
         }
+        this.splice(a, 0, this.splice(c, 1)[0]);
+        return this
     }
-    this.splice(a, 0, this.splice(c, 1)[0]);
-    return this
-};
+});
 
 function __slm() {
     if (t__wi_p.$("aside").css("transform") == "none") {
