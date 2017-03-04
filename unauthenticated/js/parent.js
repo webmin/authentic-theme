@@ -1029,7 +1029,7 @@ $(window).keyup(function(D) {
                             H = $(a).find("pre").html().replace(/>&gt;/g, ">" + I + ""),
                             c = $(a).find('select[name="pcmd"] option').map(function() {
                                 return $(this).val()
-                            }).get().move(-1, 0).reverse();
+                            }).get().reOrder(-1, 0).reverse();
                         localStorage.setItem($hostname + "-shell_commands", JSON.stringify(c));
                         newPwd = $(a).find('input[name="pwd"]').val();
                         shellOut.find("pre").append((t ? (H.replace(new RegExp(G, "g"), t)) : H));
