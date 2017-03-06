@@ -9802,6 +9802,7 @@ html[data-background-style='nightRider'] .right-side-tabs[data-background-style=
     border-left-color: transparent
 }
 
+html[data-background-style='nightRider'] .right-side-tabs #acl_logins-acl-collapse>div>div>table.ui_columns>tbody>tr.thead>td>b,
 html[data-background-style='nightRider'] .right-side-tabs-dismiss i,
 html[data-background-style='nightRider'] #right-side-tabs .right_pane_favorites_link,
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .list-group>a.list-group-item div.media-body>i,
