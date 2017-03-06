@@ -757,7 +757,7 @@ function __f__c__m() {
                 c.parents("tr").find('a.o__f_m-follow-file[href^="index.cgi?"]').trigger("click")
             }
             if (e.data("context-open-new-tab") == "1") {
-                __f___nt($.url(decodeURIComponent(c.parents("tr").find('a[href*="index.cgi?path="]').attr("href"))).param("path").replace("//", "/"), 1)
+                __f___nt(URI.parseQuery(URI(decodeURIComponent(c.parents("tr").find('a[href*="index.cgi?path="]').attr("href"))).query())["path"].replace("//", "/"), 1)
             }
             if (e.data("context-select-all") == "1") {
                 $('button[onclick="selectAll()"]').trigger("click")
@@ -788,9 +788,9 @@ function __f__c__m() {
                 $('a[onclick="downFromUrlDialog()"]').trigger("click")
             }
             if (e.data("context-clipboard") == "1") {
-                var b = $.url(c.parents("tr").find("img").parent("a").attr("href")),
-                    f = (b.param("file") ? ("/" + b.param("file")) : "");
-                $("body").append('<button class="hidden tmp-clipboard-obj" data-clipboard-text="' + (b.param("path") + f) + '"></button>');
+                var b = URI(c.parents("tr").find("img").parent("a").attr("href")),
+                    f = (b.filename() ? ("/" + b.filename()) : "");
+                $("body").append('<button class="hidden tmp-clipboard-obj" data-clipboard-text="' + (b.path() + f) + '"></button>');
                 var d = new Clipboard(".tmp-clipboard-obj");
                 $(".tmp-clipboard-obj").trigger("click");
                 $(".tmp-clipboard-obj").remove();
@@ -1250,7 +1250,7 @@ function __f___up__tb_vis() {
 }
 
 function __f___up__d(n, m, k) {
-    var e = $.url(decodeURIComponent(n)).param("path").replace("//", "/"),
+    var e = URI.parseQuery(URI(decodeURIComponent(n)).query())["path"].replace("//", "/"),
         b = e.split("/"),
         d = $("body");
     $('[data-toggle="popover-path"]').popover("hide");
@@ -1306,7 +1306,7 @@ function __f____r(h, o, k, e, n) {
     if (o && !$.isArray(o)) {
         o = encodeURIParam(o, "path")
     }
-    var a = encodeURIComponentSafe($.url(o).param("path").replace("//", "/"));
+    var a = encodeURIComponentSafe(URI.parseQuery(URI(o).query())["path"].replace("//", "/"));
     typeof n == "undefined" ? n = false : false;
     if (h === "get") {
         if ($("body").find("#list_form table tbody").hasClass("o__f_m-updating") && m) {
@@ -1333,7 +1333,7 @@ function __f____r(h, o, k, e, n) {
                     return
                 } else {
                     $('[data-toggle="popover-path"]').popover("hide")
-                }!n && $('#list_form > input[type="hidden"][name="path"]').val($.url(decodeURIComponent(o)).param("path").replace("//", "/"));
+                }!n && $('#list_form > input[type="hidden"][name="path"]').val(URI.parseQuery(URI(decodeURIComponent(o)).query())["path"].replace("//", "/"));
                 m && $("div.total").append(__f___tl_v());
                 var c = $(j[0]).append(__f___tl_v()).html();
                 m && $(".total").html(c);
@@ -1523,7 +1523,8 @@ function ___f__tw() {
         $("body").on("click", ".file-manager-remove-bookmark", function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var d = $.url($(this).parent("a").attr("href")).param()["path"];
+            var d = URI.parseQuery(URI($(this).parent("a").attr("href")).query())["path"];
+            console.log("Removing from favorites: " + d);
             $(this).parent("a").parent("li").remove();
             $.ajax({
                 type: "POST",
@@ -1712,7 +1713,7 @@ function ___f__tw() {
         $("body").on("click", "#downFromUrlDialog button.o__f_m-submitter-url_download", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_downloading_from") + " <samp>" + $.url($('#downFromUrlForm input[name="link"]').val()).attr("host") + "</samp>. " + lang("theme_xhred_global_please_wait"), 1000000, "info", "url_download_info");
+            messenger('<i class="fa fa-lg fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_downloading_from") + " <samp>" + URI($('#downFromUrlForm input[name="link"]').val()).hostname() + "</samp>. " + lang("theme_xhred_global_please_wait"), 1000000, "info", "url_download_info");
             __f____a("url_download", false)
         });
         $("body").on("submit", "#downFromUrlForm", function(d) {
@@ -1738,7 +1739,7 @@ function ___f__tw() {
             }
         });
         $("#readyForUploadDialog").on("show.bs.modal", function() {
-            var d = $.url($("#upload-form").attr("action")).param()["id"];
+            var d = URI.parseQuery(URI($("#upload-form").attr("action")).query())["id"];
             $("#upload-form").attr("action", "upload.cgi?path=" + encodeURIComponentSafe($("#upload-form").find('input[name="path"]').val()) + "&id=" + d + "")
         });
         $("body").find('#searchDialog button[type="button"][onclick="search()"]').removeAttr("onclick").addClass("_at_filemanager_search_submit");
@@ -2011,12 +2012,12 @@ function ___f__tw() {
             d.preventDefault();
             d.stopPropagation()
         });
-        if ($__source_file === "index.cgi" && !$.url(t___wi.location).param("path")) {
+        if ($__source_file === "index.cgi" && !URI(t___wi.location).hasQuery("path")) {
             $("#headln2l").find('a[href*="' + $g__o__f_m + '"][href*="index.cgi"]').addClass("hidden")
         }
         $(".btn-group.pull-right > button:eq(2)").removeAttr("onclick");
         $("body").on("click", ".btn-group.pull-right > button:eq(2)", function(d) {
-            var e = $.url(t___wi.location).param("path");
+            var e = URI.parseQuery(URI(t___wi.location).query())["path"];
             __f____r("get", "index.cgi?path=" + (e ? encodeURIComponentSafe(e) : ""), false, 0);
             messenger('<i class="fa fa-lg fa-fw fa-refresh"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_refreshing") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "refreshDir_info")
         });

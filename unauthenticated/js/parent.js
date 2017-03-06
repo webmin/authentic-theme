@@ -1033,7 +1033,9 @@ $(window).keyup(function(D) {
                         localStorage.setItem($hostname + "-shell_commands", JSON.stringify(c));
                         newPwd = $(a).find('input[name="pwd"]').val();
                         shellOut.find("pre").append((t ? (H.replace(new RegExp(G, "g"), t)) : H));
-                        q.text(F ? F : (newPwd == q.attr("data-home") ? "~" : $.url(newPwd).segment(-1))).attr("data-pwd", F ? F : newPwd).attr("title", F ? F : newPwd);
+                        q.text(F ? F : (newPwd == q.attr("data-home") ? "~" : newPwd.split("/").filter(function(J) {
+                            return $.trim(J) != ""
+                        }).slice(-1)[0])).attr("data-pwd", F ? F : newPwd).attr("title", F ? F : newPwd);
                         ported_shell_size();
                         ported_shell_clear_cmd(cmdInput);
                         g.scrollTop(g[0].scrollHeight);
@@ -1152,15 +1154,17 @@ function n___rm() {
 
 function n___mr(e, a, c, f) {
     var d = JSON.parse(localStorage.getItem($hostname + "-notifications_" + e + "_" + a));
-    localStorage.setItem($hostname + "-notifications_" + e + "_" + a, JSON.stringify({
-        title: d.title,
-        time: d.time,
-        timestamp: d.timestamp,
-        message: d.message,
-        readStatus: c,
-        type: d.type,
-        link: d.link
-    }));
+    if (d) {
+        localStorage.setItem($hostname + "-notifications_" + e + "_" + a, JSON.stringify({
+            title: d.title,
+            time: d.time,
+            timestamp: d.timestamp,
+            message: d.message,
+            readStatus: c,
+            type: d.type,
+            link: d.link
+        }))
+    }
     f && n___fv()
 }
 

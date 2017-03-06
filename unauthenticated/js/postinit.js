@@ -4,24 +4,24 @@
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 ;
-var $_url = $.url(t___wi.location),
-    $__source_protocol = $_url.attr("protocol"),
-    $__source_port = $_url.attr("port"),
-    $__source_url = $_url.attr("source"),
-    $__source_path = $_url.attr("path"),
-    $___source_path = $_url.attr("path").replace(/^\//g, "").replace(/\/$/g, ""),
-    $__source_file = $_url.attr("file"),
-    $__source_dir = $_url.attr("directory"),
-    $___source_dir = $_url.attr("directory").replace(/^\//g, "").replace(/\/$/g, ""),
-    $__source_query = $_url.attr("query"),
-    $source_path = $_url.attr("path").replace(/^\//g, ""),
-    $__host_url = $_url.attr("host"),
-    $__current_directory = $_url.attr("directory"),
-    $__relative_url = $_url.attr("relative"),
-    $___relative_url = $_url.attr("relative").replace(/^\//g, "").replace(/\/$/g, ""),
-    $current_page = $_url.attr("path").replace(/^\//g, "").replace(/\/\//g, "/"),
+var $_url = URI(t___wi.location),
+    $__source_protocol = $_url.protocol(),
+    $__source_port = $_url.port(),
+    $__source_url = location.href,
+    $__source_path = $_url.path(),
+    $___source_path = $_url.path().replace(/^\//g, "").replace(/\/$/g, ""),
+    $__source_file = $_url.filename(),
+    $__source_dir = $_url.directory() + "/",
+    $___source_dir = $_url.directory().replace(/^\//g, "").replace(/\/$/g, ""),
+    $__source_query = $_url.query(),
+    $source_path = $_url.path().replace(/^\//g, ""),
+    $__host_url = $_url.hostname(),
+    $__current_directory = $__source_dir,
+    $__relative_url = $_url.resource(),
+    $___relative_url = $_url.resource().replace(/^\//g, "").replace(/\/$/g, ""),
+    $current_page = $_url.path().replace(/^\//g, "").replace(/\/\//g, "/"),
     $current_directory = $__current_directory.replace(/^\//g, ""),
-    $current_page_full = $_url.attr("path").replace(/\/\//g, "/"),
+    $current_page_full = location.pathname.replace(/\/\//g, "/"),
     $webprefix = $("body").data("webprefix"),
     $webprefix_full = "",
     $__source_host_complete = ($__source_protocol + "://" + $__host_url + ($__source_port ? ":" : "") + $__source_port + ("/" + $webprefix + $__source_path)).replace(/\/\//g, "/"),
@@ -242,7 +242,7 @@ function encodeURIComponentSafe(a) {
 }
 
 function encodeURIParam(b, c) {
-    var a = $.url(b).param(c);
+    var a = URI.parseQuery(URI(b).query())[c];
     if (a) {
         b = b.replace(a, encodeURIComponentSafe(a));
         b = b.replace("//", "/")
@@ -475,7 +475,7 @@ function shortcut_control_checker(b) {
     if (access_level() == "0") {
         return true
     } else {
-        if (is_module($.url(("/" + b)).attr("directory").replace(/\//g, ""))) {
+        if (is_module(URI(("/" + b)).directory().replace(/\//g, ""))) {
             return true
         } else {
             return false
@@ -752,10 +752,6 @@ function t_sel_i() {
                 a.data("select2").open();
                 a.data("select2").close()
             }, 1);
-            $create_link = $('a.navigation_module_trigger[data-href^="/virtual-server/domain_form.cgi?generic=1&amp;gparent="]');
-            if (!$.url($create_link.data("href")).param("gparent")) {
-                $create_link.data("href", $create_link.data("href") + a.val())
-            }
             a.on("select2:select", function(b) {
                 if (b.currentTarget.id === "dom") {
                     t__vm_l(b.currentTarget.value);
@@ -1160,7 +1156,7 @@ function __cms() {
 }
 
 function __is_same_origin(b) {
-    if ((b.attr("href") && (b.attr("href").match("^http:") || b.attr("href").match("^https:") || b.attr("href").match("^ftp:")) && b.attr("target") != "page" && $.url(b.attr("href")).attr("host") != $__host_url) || b.attr("data-href") && (b.attr("data-href").match("^http:") || b.attr("data-href").match("^https:") || b.attr("data-href").match("^ftp:")) && $.url(b.attr("data-href")).attr("host") != $__host_url) {
+    if ((b.attr("href") && (b.attr("href").match("^http:") || b.attr("href").match("^https:") || b.attr("href").match("^ftp:")) && b.attr("target") != "page" && URI(b.attr("href")).hostname() != $__host_url) || b.attr("data-href") && (b.attr("data-href").match("^http:") || b.attr("data-href").match("^https:") || b.attr("data-href").match("^ftp:")) && URI(b.attr("data-href")).hostname() != $__host_url) {
         return 0
     } else {
         return 1
@@ -1475,7 +1471,7 @@ function __sam(e, i) {
         if (custom_url != "auto") {
             $current_page = custom_url
         } else {
-            $current_page = $_url.attr("path").replace(/^\//g, "")
+            $current_page = $_url.path().replace(/^\//g, "")
         }
         if ($("#headln2l a").attr("href")) {
             if ($("#headln2l a").attr("href").indexOf(".cgi") >= 0) {
@@ -1531,7 +1527,7 @@ function __sam(e, i) {
             }
         } else {
             if ($t_uri_virtualmin || $t_uri_cloudmin) {
-                $current_page_with_path = $_url.attr("path").substring(1);
+                $current_page_with_path = $_url.path().substring(1);
                 if ($current_page_with_path == "virtual-server/webminlog") {
                     $current_page_with_path = "webminlog/search.cgi?"
                 } else {
@@ -1553,14 +1549,14 @@ function __sam(e, i) {
                 }
                 if ($current_page_with_path == "apache/virt_index.cgi?" || $current_page_with_path == "apache/virt_index.cgi") {
                     __cms();
-                    t__wi_p.$('a[href^="/' + $current_page_with_path + "?" + $_url.attr("query") + '"]').parent("li:not(.menu-exclude):not(.user-link)").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().parent("li:not(.menu-exclude):not(.user-link)").prev("li").addClass("active")
+                    t__wi_p.$('a[href^="/' + $current_page_with_path + "?" + $_url.query() + '"]').parent("li:not(.menu-exclude):not(.user-link)").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().parent("li:not(.menu-exclude):not(.user-link)").prev("li").addClass("active")
                 } else {
                     if ($current_page_with_path == "syslog/save_log.cgi") {
-                        if ($_url.attr("query").indexOf("access_log") > -1) {
+                        if ($_url.query().indexOf("access_log") > -1) {
                             __cms();
                             t__wi_p.$('a[href$="access%5Flog"]:first' + __samn() + "").parent("li:not(.menu-exclude):not(.user-link)").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().parent("li:not(.menu-exclude):not(.user-link)").prev("li").addClass("active")
                         } else {
-                            if ($_url.attr("query").indexOf("error_log") > -1) {
+                            if ($_url.query().indexOf("error_log") > -1) {
                                 __cms();
                                 t__wi_p.$('a[href$="error%5Flog"]').parent("li:not(.menu-exclude):not(.user-link)").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().parent("li:not(.menu-exclude):not(.user-link)").prev("li").addClass("active")
                             }
@@ -1757,10 +1753,10 @@ function __dlm(b) {
 }
 
 function t__m__m(f, l) {
-    var p = $.url($__source_url).param("dom"),
-        i = $.url($__source_url).param("id"),
+    var p = URI.parseQuery(URI($__source_url).query())["dom"],
+        i = URI.parseQuery(URI($__source_url).query())["id"],
         h = "aside select";
-    if ($.url($__source_url).param("refresh") == "1") {
+    if (URI.parseQuery(URI($__source_url).query())["refresh"] == "1") {
         if (!$("body").contents().text().match(/___theme_post_save___/)) {
             var j = false;
             if (i || p && ($t_uri_virtualmin || $t_uri_cloudmin)) {
@@ -1874,7 +1870,7 @@ function t__cm___init(g, i, f, j, d, m, k) {
                 v = $('form[action="save.cgi"]').find(".table-title").find("tt").text()
             } else {
                 if ($('body[class^="' + $g__o__f_m + '"]').length) {
-                    v = $.url($__relative_url).param("file")
+                    v = URI.parseQuery(URI($__source_url).query())["file"]
                 } else {
                     v = $('select[name="file"]').val()
                 }

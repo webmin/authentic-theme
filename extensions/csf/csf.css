@@ -853,6 +853,14 @@ html[data-post=''] input[name='comment'] {
     margin-top: 2px
 }
 
+html[data-module='csf'] #DataTables_Table_0>thead>tr>th:nth-child(1) {
+    opacity: 1 !important
+}
+
+html[data-module='csf'] #DataTables_Table_0>thead>tr>th:nth-child(1) {
+    background: 0
+}
+
 html[data-background-style='nightRider'] .csf form .value-other,
 html[data-background-style='nightRider'] .csf form .value-default,
 html[data-background-style='nightRider'] .csf form .comment,
@@ -1047,5 +1055,5 @@ html[data-module='csf'][data-background-style='nightRider'] .panel._devcon {
 }
 
 html[data-post=''][data-module='csf'][data-background-style='nightRider'] div#home table tr:nth-child(even) td {
-    background-color: #2a2d31
+    background-color: #2a2d31 !important
 }

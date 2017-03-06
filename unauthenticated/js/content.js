@@ -210,7 +210,7 @@ function f__r(b) {
 function f__dt() {
     $(f__g()).each(function() {
         if ($(this)[0]) {
-            var b = $.url(t___wi.location).attr("relative");
+            var b = URI(t___wi.location).resource();
             if ($(this)[0].link == b || $(this)[0].link + "index.cgi" == b) {
                 setTimeout(function() {
                     $("#headln2c > .favorites").addClass("fa-star").removeClass("fa-star-o")
@@ -231,7 +231,7 @@ if (access_level() == 0 && $g__v__nav) {
 }
 $("body").on("click", "#headln2c > .favorites", function(m) {
     m.preventDefault();
-    var k = $.url(t___wi.location).attr("relative");
+    var k = URI(t___wi.location).resource();
     if ($(this).hasClass("fa-star-o")) {
         $(this).removeClass("fa-star-o").addClass("fa-star text-warning");
         var j = $("#headln2c > font").text(),
@@ -243,7 +243,7 @@ $("body").on("click", "#headln2c > .favorites", function(m) {
             i = t__wi_p.$(".ui_select option:selected").text()
         }
         if ($('body[class^="' + $g__o__f_m + '"]').length) {
-            l = $.url(t___wi.location).param("path");
+            l = URI.parseQuery(URI(t___wi.location).query())["path"];
             if (!l) {
                 l = "[/]"
             } else {
@@ -3026,8 +3026,8 @@ if ($("#headln2l .btn .fa-arrow-left").length) {
     if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {} else {
         $("#headln2l .btn .fa-arrow-left").parent("a").attr("href", $("#headln2l .btn .fa-arrow-left").parent("a").attr("href").replace("index.cgi", ""))
     }
-    var $_url = $.url(t___wi.location);
-    $__source_file = $_url.attr("file")
+    var $_url = URI(t___wi.location);
+    $__source_file = $_url.filename()
 }
 $("#headln2r, #headln2l").prepend('<div class="btn-group">').append("</div>");
 $("#headln2r a").detach().appendTo("#headln2r .btn-group");
