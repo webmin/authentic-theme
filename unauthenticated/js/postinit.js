@@ -45,7 +45,8 @@ var $_url = URI(t___wi.location),
 const __ua__ = window.navigator.userAgent,
     ___is_iOS = (!!__ua__.match(/iPad/i) || !!__ua__.match(/iPhone/i)),
     ___is_webkit = (!!__ua__.match(/WebKit/i)),
-    ___is_iOSSafari = (___is_iOS && ___is_webkit && !__ua__.match(/CriOS/i) && !__ua__.match(/OPiOS/i));
+    ___is_iOSSafari = (___is_iOS && ___is_webkit && !__ua__.match(/CriOS/i) && !__ua__.match(/OPiOS/i)),
+    __isNR = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : 0);
 if ($webprefix) {
     $webprefix = ($webprefix + "/").replace(/\/\//g, "/");
     $webprefix_full = $webprefix;
@@ -680,6 +681,15 @@ function t__s(b) {
             }
         }
     }
+}
+
+function format_new_lines(b, d) {
+    var c = b.val().split(d),
+        a = "";
+    $.each(c, function(e, f) {
+        (f && (a += d + f + "\n"))
+    });
+    b.val(a)
 }
 
 function hide_mobile_menu() {
