@@ -287,7 +287,7 @@ h6,
 }
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>a.sidebar_sysinfo_link {
-    padding: 3px 4px 0 4px
+    padding: 4px 4px 0 4px
 }
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container) a .fa.fa-dashboard {
@@ -8853,6 +8853,16 @@ form input[style*='height: 28px']+.btn:not(.heighter-34-force) span,
     padding-left: 5px !important
 }
 
+.badge.fa.fa-github span,
+.badge.background-info.fa.fa-twitter span {
+    margin-left: -7px
+}
+
+.badge.fa.fa-github,
+.badge.background-info.fa.fa-twitter {
+    font-size: 11px
+}
+
 .panel-title {
     line-height: 16px;
     margin-top: -1px;
@@ -9824,7 +9834,7 @@ html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-messa
 
 html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-success:hover,
 html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-success {
-    background-color: rgba(27, 191, 137, .73) !important
+    background-color: rgba(38, 147, 115, 0.73) !important
 }
 
 html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-error:hover,
@@ -9942,12 +9952,13 @@ html[data-background-style='nightRider'] .alert-success {
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph {
-    background-color: #858a8f
+    background-color: rgba(133, 138, 143, 0.17)
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar {
     border-right-color: #ca524f;
-    background-color: #a94442
+    background-color: #a94442;
+    color: rgba(255, 255, 255, 0.37)
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:1%'],
@@ -10101,4 +10112,8 @@ html[data-background-style='nightRider'] .badge-danger {
 
 html[data-background-style='nightRider'] #sidebar ul.user-links li:not(.menu-container):not(.sub-wrapper) {
     border: 1px solid rgba(255, 255, 255, .04)
+}
+
+html[data-background-style='nightRider'] .info-container .graph-container>.graph>.description {
+    color: #222
 }
