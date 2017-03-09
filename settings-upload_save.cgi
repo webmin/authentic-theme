@@ -8,7 +8,7 @@
 
 do "authentic-theme/authentic-lib.pm";
 
-!foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
+!foreign_available("webmin") && error( $Atext{'theme_error_access_not_root'} );
 
 __config_dir_available();
 
@@ -25,7 +25,7 @@ if ( usermin_available() ) {
 }
 
 if ( $in{'authenticated_logo'} eq "1"
-    && length $in{'authenticated_logo_file'} )
+     && length $in{'authenticated_logo_file'} )
 {
     unlink_file( $config_directory . $lr );
     write_file_contents( $config_directory . $lr, $in{'authenticated_logo_file'} );
@@ -47,7 +47,7 @@ elsif ( $in{'authenticated_logo'} ne "1" ) {
 }
 
 if ( $in{'unauthenticated_logo'} eq "1"
-    && length $in{'unauthenticated_logo_file'} )
+     && length $in{'unauthenticated_logo_file'} )
 {
     unlink_file( $config_directory . $lw );
     write_file_contents( $config_directory . $lw, $in{'unauthenticated_logo_file'} );
@@ -72,4 +72,4 @@ copy_source_dest( $config_directory . $lr, $root_directory . "/authentic-theme/i
 
 copy_source_dest( $config_directory . $lw, $root_directory . "/authentic-theme/images" );
 
-redirect( '/settings-upload.cgi?saved=1' );
+redirect('/settings-upload.cgi?saved=1');

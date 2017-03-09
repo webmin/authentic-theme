@@ -175,8 +175,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [David Canalias](https://github.com/diathesaron) (Catalan)
 
 ###Donation
-
- Overall development of this theme has already passed the stage of 2000 hours. I'm happy to provide _Authentic_ Theme for free but please know, that it would mean a World to _[me](http://rostovtsev.ru)_, if you send me a donation. It doesn't matter how big or small your donation is. I appreciate all donations. Each donation will _help me to pay my bills_, excite future development and improve your everyday experience, while working with the theme.
+ You can make a difference. Donations show appreciation. Your donations would help me to pay my bills and _excite future development_.
 
 [![](https://rostovtsev.ru/pub/media/icons/yandex-175x89.png)](http://rostovtsev.ru/pub/api/donation/yandex.html)
 <br>
