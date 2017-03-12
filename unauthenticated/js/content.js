@@ -762,26 +762,26 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
             url: $_____link_full + "/index.cgi/?xhr-settings=1",
             data: false,
             dataType: "text",
-            success: function(k) {
-                $("#atsettings").html(k);
-                var o = $("div#atsettings").find(".ui_form");
-                $__theme_text_right_save = o.data("text-save");
-                $__theme_text_right_saved = o.data("text-settings_right_saved");
-                $__theme_text_right_saving = o.data("text-settings_right_saving");
-                $__theme_text_right_restore_defaults = o.data("text-settings_right_restore_defaults");
-                $__theme_text_right_restored = o.data("text-settings_right_restored");
-                $__theme_text_right_restoring = o.data("text-settings_right_restoring");
-                $__theme_text_right_error = o.data("text-error");
-                $('.nav-tabs a[href="#atsettings"]').text(o.data("text-current_theme"));
+            success: function(l) {
+                $("#atsettings").html(l);
+                var p = $("div#atsettings").find(".ui_form");
+                $__theme_text_right_save = p.data("text-save");
+                $__theme_text_right_saved = p.data("text-settings_right_saved");
+                $__theme_text_right_saving = p.data("text-settings_right_saving");
+                $__theme_text_right_restore_defaults = p.data("text-settings_right_restore_defaults");
+                $__theme_text_right_restored = p.data("text-settings_right_restored");
+                $__theme_text_right_restoring = p.data("text-settings_right_restoring");
+                $__theme_text_right_error = p.data("text-error");
+                $('.nav-tabs a[href="#atsettings"]').text(p.data("text-current_theme"));
                 $("div#atsettings").removeClass("text-center");
                 b();
                 settings_update();
-                var n = $("body").find(".fa.fa-sub-title").parent("span");
-                $(n).next("br").remove();
-                $(n).next("div.smaller").attr("style", "margin-top: -15px !important");
-                n.remove();
+                var o = $("body").find(".fa.fa-sub-title").parent("span");
+                $(o).next("br").remove();
+                $(o).next("div.smaller").attr("style", "margin-top: -15px !important");
+                o.remove();
 
-                function e(c) {
+                function i(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_right_hide_table_icons"]:checked') : false;
                     var d = ["settings_right_small_table_icons", "settings_right_xsmall_table_icons", "settings_right_animate_table_icons", "settings_right_grayscaled_table_icons"];
                     if (c.val() == "true") {
@@ -796,13 +796,13 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         })
                     }
                 }
-                e();
+                i();
                 $('input[name="settings_right_hide_table_icons"]').on("change", function() {
-                    e($(this));
-                    m()
+                    i($(this));
+                    n()
                 });
 
-                function i(c) {
+                function j(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
                     var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_shell", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
                     if (c.val() == "false") {
@@ -815,12 +815,12 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         })
                     }
                 }
-                i();
+                j();
                 $('input[name="settings_hotkeys_active"]').on("change", function() {
-                    i($(this))
+                    j($(this))
                 });
 
-                function j(c) {
+                function k(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_side_slider_enabled"]:checked') : false;
                     var d = ["settings_side_slider_palette", "settings_side_slider_fixed", "settings_side_slider_background_refresh_time", "settings_side_slider_sysinfo_enabled", "settings_side_slider_notifications_enabled", "settings_side_slider_favorites_enabled", "settings_side_slider_tabs_hotkeys"];
                     if (c.val() == "false") {
@@ -836,12 +836,12 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         })
                     }
                 }
-                j();
+                k();
                 $('input[name="settings_side_slider_enabled"]').on("change", function() {
-                    j($(this))
+                    k($(this))
                 });
 
-                function m(c) {
+                function n(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_right_xsmall_table_icons"]:checked') : false;
                     var d = ["settings_right_small_table_icons"];
                     if (c.val() == "true" && $('input[name="settings_right_hide_table_icons"]:checked') != "false") {
@@ -856,12 +856,12 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         })
                     }
                 }
-                m();
+                n();
                 $('input[name="settings_right_xsmall_table_icons"]').on("change", function() {
-                    m($(this))
+                    n($(this))
                 });
 
-                function l(c) {
+                function m(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_sysinfo_easypie_charts"]:checked') : false;
                     var d = ["settings_sysinfo_easypie_charts_width", "settings_sysinfo_easypie_charts_scale"];
                     if (c.val() == "true") {
@@ -874,9 +874,28 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         })
                     }
                 }
-                l();
+                m();
                 $('input[name="settings_sysinfo_easypie_charts"]').on("change", function() {
-                    l($(this))
+                    m($(this))
+                });
+
+                function a(c) {
+                    typeof c == "undefined" ? c = $('input[name="settings_sysinfo_theme_updates"]:checked') : false;
+                    var d = ["settings_sysinfo_theme_beta_updates"];
+                    if (c.val() == "true") {
+                        $.each(d, function(f, g) {
+                            $('input[name="' + g + '"]').prop("disabled", false).removeClass("disabled")
+                        })
+                    } else {
+                        $('input[name="settings_sysinfo_theme_beta_updates"][value="false"]').trigger("click");
+                        $.each(d, function(f, g) {
+                            $('input[name="' + g + '"]').prop("disabled", true).addClass("disabled")
+                        })
+                    }
+                }
+                a();
+                $('input[name="settings_sysinfo_theme_updates"]').on("change", function() {
+                    a($(this))
                 });
                 $('select[name="settings_navigation_color"]').on("click keyup change", function(c) {
                     var d = $(this).val();
@@ -957,45 +976,45 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         f__c__filter_r()
                     }
                 });
-                var a = $('input[name="settings_grayscale_level_navigation"], input[name="settings_sepia_level_navigation"], input[name="settings_saturate_level_navigation"], input[name="settings_hue_level_navigation"], input[name="settings_invert_level_navigation"], input[name="settings_brightness_level_navigation"], input[name="settings_contrast_level_navigation"]');
-                a.on("click keyup change", function(c) {
+                var e = $('input[name="settings_grayscale_level_navigation"], input[name="settings_sepia_level_navigation"], input[name="settings_saturate_level_navigation"], input[name="settings_hue_level_navigation"], input[name="settings_invert_level_navigation"], input[name="settings_brightness_level_navigation"], input[name="settings_contrast_level_navigation"]');
+                e.on("click keyup change", function(c) {
                     var d = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_navigation"]').val() + ") sepia(" + $('input[name="settings_sepia_level_navigation"]').val() + ") saturate(" + $('input[name="settings_saturate_level_navigation"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_navigation"]').val() + "deg) invert(" + $('input[name="settings_invert_level_navigation"]').val() + ") brightness(" + $('input[name="settings_brightness_level_navigation"]').val() + ") contrast(" + $('input[name="settings_contrast_level_navigation"]').val() + "); filter: grayscale(" + $('input[name="settings_grayscale_level_navigation"]').val() + ") sepia(" + $('input[name="settings_sepia_level_navigation"]').val() + ") saturate(" + $('input[name="settings_saturate_level_navigation"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_navigation"]').val() + "deg) invert(" + $('input[name="settings_invert_level_navigation"]').val() + ") brightness(" + $('input[name="settings_brightness_level_navigation"]').val() + ") contrast(" + $('input[name="settings_contrast_level_navigation"]').val() + ");";
                     t__wi_p.$(".visible-xs.mobile-menu-toggler").attr("style", "position: fixed;" + d);
                     t__wi_p.$("aside, .visible-xs.mobile-menu-toggler").attr("style", "z-index: 10; overflow: visible; transform: translate(" + settings_leftmenu_width + "px, 0px);" + d);
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     settings_update()
                 });
-                a.each(function() {
+                e.each(function() {
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     $(this).parent().parent("td").parent("tr.atshover").addClass("hidden settings_navigation_color_rows")
                 });
-                var q = $('input[name="settings_grayscale_level_content"], input[name="settings_saturate_level_content"], input[name="settings_hue_level_content"]');
-                q.on("click keyup change", function(c) {
+                var r = $('input[name="settings_grayscale_level_content"], input[name="settings_saturate_level_content"], input[name="settings_hue_level_content"]');
+                r.on("click keyup change", function(c) {
                     var d = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg); filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg);";
                     $("body").attr("style", d);
                     t__wi_p.$("#content .loading-container").attr("style", d);
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     settings_update()
                 });
-                q.each(function() {
+                r.each(function() {
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     $(this).parent().parent("td").parent("tr.atshover").addClass("hidden settings_background_color_rows")
                 });
-                var p = $('input[name="settings_leftmenu_width"]');
-                p.on("click keyup change", function(c) {
+                var q = $('input[name="settings_leftmenu_width"]');
+                q.on("click keyup change", function(c) {
                     t__wi_p.f__r__s($(this).val(), $(this).val());
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     settings_update();
                     t__wi_p.settings_leftmenu_width_initial = $(this).val()
                 });
-                p.each(function() {
+                q.each(function() {
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     t__wi_p.settings_leftmenu_width_initial = $(this).val()
                 });
                 if ($__source_query == "restored") {
-                    a.trigger("click");
+                    e.trigger("click");
+                    r.trigger("click");
                     q.trigger("click");
-                    p.trigger("click");
                     $('select[name="settings_navigation_color"], select[name="settings_background_color"]').trigger("change");
                     window.history.pushState(null, null, $_____link_full + "/webmin/edit_themes.cgi")
                 }
@@ -1010,7 +1029,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 if (!$t_uri_virtualmin && !$t_uri_cloudmin) {
                     t__wi_p.__dlm("webmin/")
                 }
-                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
+                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();
                 $("body").css("overflow", "auto");
                 $.getScript("" + $_____link_full + "/unauthenticated/js/detector." + t__wi_p.$load____ext + ".js?" + $g__t__ver_str + "", function(c, g, f) {
@@ -1022,18 +1041,18 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                         }
                     });
                     $('select[name="settings_font_family"]').on("click keyup change", function(h) {
-                        var u = $(this).val(),
-                            r = $.merge(t__wi_p.$("head"), t___wi.$("head")),
-                            s = t__wi_p.$("head").find('link[href*="font-"]').add(t___wi.$("head").find('link[href*="font-"]')).add(t__wi_p.$("head").find('link[href*="fonts-roboto"]')).add(t___wi.$("head").find('link[href*="fonts-roboto"]')),
-                            t = $.merge(t__wi_p.$("head").find('link[href*="/authentic."]'), t___wi.$("head").find('link[href*="/authentic."]')),
-                            t = t.length ? t : $.merge(t__wi_p.$("head").find('link[href*="/bundle."]'), t___wi.$("head").find('link[href*="/bundle."]'));
-                        s.remove();
-                        if (u == "0" || u == "1") {
-                            if (u == "0") {
-                                t.after('<link href="' + $_____link_full + "/unauthenticated/css/fonts-roboto." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                        var v = $(this).val(),
+                            s = $.merge(t__wi_p.$("head"), t___wi.$("head")),
+                            t = t__wi_p.$("head").find('link[href*="font-"]').add(t___wi.$("head").find('link[href*="font-"]')).add(t__wi_p.$("head").find('link[href*="fonts-roboto"]')).add(t___wi.$("head").find('link[href*="fonts-roboto"]')),
+                            u = $.merge(t__wi_p.$("head").find('link[href*="/authentic."]'), t___wi.$("head").find('link[href*="/authentic."]')),
+                            u = u.length ? u : $.merge(t__wi_p.$("head").find('link[href*="/bundle."]'), t___wi.$("head").find('link[href*="/bundle."]'));
+                        t.remove();
+                        if (v == "0" || v == "1") {
+                            if (v == "0") {
+                                u.after('<link href="' + $_____link_full + "/unauthenticated/css/fonts-roboto." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
                             }
                         } else {
-                            t.after('<link href="' + $_____link_full + "/unauthenticated/css/font-" + u + "." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                            u.after('<link href="' + $_____link_full + "/unauthenticated/css/font-" + v + "." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
                         }
                     })
                 });
@@ -1537,7 +1556,7 @@ if ($current_directory == $_____link + "proc/" || $source_path == $_____link + "
     $(".panel-body").contents().filter(function() {
         return this.nodeType == 3
     }).remove();
-    $(".panel-body > a.ui_link").css("margin-left", "3px")
+    $(".panel-body > a.ui_link").addClass("btn").css("margin-left", "3px")
 }
 if ($source_path == $_____link + "proc/edit_proc.cgi") {
     $("#signal").attr("style", "margin-bottom: 0 !important;")
@@ -1674,7 +1693,7 @@ if (settings_right_iconize_header_links) {
                 $iconized_class = "fa-question-circle";
                 $(this).data("title", "")
             }
-            $(this).attr("data-toggle", "tooltip").attr("title", (e ? lang("theme_xhred_module_help") : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
+            $(this).attr("data-toggle", "tooltip").attr("title", (e ? "" : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
             $(this).contents().filter(function() {
                 return this.nodeType == 3
             }).remove();
@@ -1833,17 +1852,16 @@ function module_help_focuser(a) {
 $(".help_popup").on("click", function(f) {
     f.stopPropagation();
     f.preventDefault();
-    if ($(this).is($(".popover:visible").prev("a")) && $(".popover").is(":visible")) {
-        setTimeout(function() {
-            $(".module-help").popover("destroy")
-        }, 10);
-        return true
-    } else {}
     var h = $(this),
         g = $(this).attr("href"),
         e = $(this).parents("td");
     e.append('<div class="_tmp_help_content hidden"></div>');
     t__wi_p.$___ajax_requested_url = "help.cgi";
+    $("body").on("click", function(a) {
+        if ($(a.target).is(".close-popover-trigger")) {
+            $(a.target).parent().parent().popover("hide")
+        }
+    });
     $.ajax({
         type: "POST",
         url: h.attr("href"),
@@ -1859,11 +1877,15 @@ $(".help_popup").on("click", function(f) {
             $help_body = e.find("._tmp_help_content a").removeAttr("href").css("text-decoration", "none").css("color", "#333").css("font-style", "italic");
             $help_body = e.find("._tmp_help_content").html();
             e.find("._tmp_help_content").remove();
+            var b = '<button type="button" class="close pull-right close-popover-trigger' + (($(this).parents("#headln2l").length || $__source_file !== "config.cgi") ? " margined-top--1" : " margined-top--5 margined-right--4") + ' font-size-120p">&times;</button>';
+            if (h.attr("href").indexOf("showpass.cgi") > -1) {
+                b = ""
+            }
             h.popover({
                 html: true,
                 template: '<div class="popover module-help" role="tooltip" style="z-index: ' + (2147483642 + ($(".module-help").length * 10)) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
                 title: function() {
-                    return $help_title
+                    return (b + $help_title)
                 },
                 content: function() {
                     return $help_body
@@ -1871,14 +1893,16 @@ $(".help_popup").on("click", function(f) {
                 placement: "auto right"
             });
             h.popover("show");
-            h.on("shown.bs.popover", function() {
-                $("body").click(function(m) {
-                    $(".popover.in").each(function() {
-                        if (!$(this).is(m.target) && $(this).has(m.target).length === 0 && $(".popover").has(m.target).length === 0) {
-                            $(this).popover("destroy")
+            h.on("shown.bs.popover", function(c, o, i) {
+                if (h.attr("href").indexOf("showpass.cgi") > -1) {
+                    $("body").on("click", function(q) {
+                        q.preventDefault();
+                        q.stopPropagation();
+                        if (!$(q.target).is("tt")) {
+                            $(".popover.in").popover("hide")
                         }
                     })
-                });
+                }
                 if ($help_body.indexOf("<ad>") > -1) {
                     $(".popover").animate({
                         "max-width": "540px"
@@ -1888,21 +1912,21 @@ $(".help_popup").on("click", function(f) {
                 $('body[class*="' + $g__o__f_m + '"]').find(".popover:visible").addClass("file-manager-help");
                 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search != "?updating-webmin-theme") {
                     $("body").find(".popover:visible").addClass("at-help");
-                    var k = $(".link-theme").text(),
-                        d = $(".link-theme2").text(),
-                        c = $(".link-changelog").text(),
-                        b = $(".link-me").text(),
-                        l = $(".link-donation").text(),
-                        j = $(".link-youtube").text(),
-                        i = $(".link-github").text();
-                    $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + k + "</em></a>");
-                    $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + d + "</em></a>");
-                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + c + "</span></em></a>");
+                    var d = $(".link-theme").text(),
+                        k = $(".link-theme2").text(),
+                        n = $(".link-changelog").text(),
+                        m = $(".link-me").text(),
+                        j = $(".link-donation").text(),
+                        p = $(".link-youtube").text(),
+                        l = $(".link-github").text();
+                    $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + d + "</em></a>");
+                    $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + k + "</em></a>");
+                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + n + "</span></em></a>");
                     $(".link-changelog").detach().appendTo(".at-help .popover-title");
-                    $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + b + "</em></a>");
-                    $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + l + "</span></a>");
-                    $(".link-youtube").replaceWith('<a title="" data-original-title="" class="badge label-danger fa fa-fw fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://youtu.be/f_oy3qX2GXo"> <span class="font-family-default">' + j + "</span></a>");
-                    $(".link-github").replaceWith('<a title="" data-original-title="" class="badge fa fa-fw fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> <span class="font-family-default">' + i + "</span></a>")
+                    $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + m + "</em></a>");
+                    $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + j + "</span></a>");
+                    $(".link-youtube").replaceWith('<a title="" data-original-title="" class="badge label-danger fa fa-fw fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://youtu.be/f_oy3qX2GXo"> <span class="font-family-default">' + p + "</span></a>");
+                    $(".link-github").replaceWith('<a title="" data-original-title="" class="badge fa fa-fw fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> <span class="font-family-default">' + l + "</span></a>")
                 }
                 setTimeout(function() {
                     $.each($(".module-help"), function() {
@@ -2991,7 +3015,7 @@ $("body").click(function(a) {
     }
 });
 if ($current_page_full == $_____link_full + "/virtual-server/edit_phpmode.cgi") {
-    $("#hiddendiv_phpinfo table tbody tr").css("border", "1px solid #eee")
+    $("#hiddendiv_phpinfo table tbody tr").css("border", "1px solid #" + (__isNR ? "393b3f" : "eee") + "")
 }
 if (settings_window_replace_timestamps) {
     var xMoment = typeof t__wi_p.moment !== "undefined";
