@@ -3480,6 +3480,10 @@ a.opener_extra_container_a_style.opener_container_opened:before {
     margin-right: -3px !important
 }
 
+.margined-right--4 {
+    margin-right: -4px !important
+}
+
 .margined-right-5 {
     margin-right: 5px !important
 }
@@ -3496,8 +3500,24 @@ a.opener_extra_container_a_style.opener_container_opened:before {
     margin-left: 40px !important
 }
 
+.margined-top--1 {
+    margin-top: -1px !important
+}
+
+.margined-top--2 {
+    margin-top: -2px !important
+}
+
 .margined-top--3 {
     margin-top: -3px !important
+}
+
+.margined-top--4 {
+    margin-top: -4px !important
+}
+
+.margined-top--5 {
+    margin-top: -5px !important
 }
 
 .margined-top--10 {
@@ -3972,7 +3992,7 @@ a.opener_trigger,
     line-height: 1.42857143
 }
 
-.sub_table_container:not(.xcontent-force-no-styling) *:not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
+.sub_table_container:not(.xcontent-force-no-styling) *:not(.popover):not(.popover-title):not(.popover-content):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
     color: #333;
     background-color: #fff !important
 }
@@ -5280,6 +5300,10 @@ a.no_effect.active,
 a.no_effect:active,
 a.no_effect:hover {
     color: #333
+}
+
+.font-size-120p {
+    font-size: 120%
 }
 
 .font-size-90p {
@@ -8502,6 +8526,21 @@ html[data-script-name*='settings-editor_read.cgi'] .fa-question-circle.-helper {
     vertical-align: middle !important
 }
 
+body[class*='postgresql']:not(.__non_res__) .container-resizeable-head,
+body[class*='mysql']:not(.__non_res__) .container-resizeable-head {
+    height: 23px;
+    background: rgba(233, 242, 255, 0.7);
+    border-top: 1px solid #e6e6e6;
+    border-right: 1px solid #eee;
+    z-index: 999998
+}
+
+body[class*='postgresql']:not(.__non_res__)>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>a:nth-child(9) body[class*='postgresql']:not(.__non_res__)>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>a:nth-child(10),
+body[class*='mysql']:not(.__non_res__)>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>a:nth-child(9),
+body[class*='mysql']:not(.__non_res__)>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>a:nth-child(10) {
+    margin-top: 5px
+}
+
 body[class*='postgresql']:not(.__non_res__) form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed th,
 body[class*='mysql']:not(.__non_res__) form[action='view_table.cgi'] .table.table-striped.table-hover.table-condensed th {
     border-right: 1px dotted #f1f1f1
@@ -8656,6 +8695,10 @@ body[class*='proc'][data-uri*='edit_proc.cgi?'] .table-responsive+.table-hardcod
 body[class*='proc'][data-uri*='edit_proc.cgi?'] td[nowrap]>select[name='signal'],
 body[class*='proc'][data-uri*='edit_proc.cgi?'] .table-responsive+.table-hardcoded tbody tr td[align='right'] button.ui_form_end_submit {
     margin-left: -3px !important
+}
+
+body[class*='proc'][data-uri*='index_search.cgi'] #files {
+    width: 50% !important
 }
 
 .btn-group.end_submits+select.ui_select {
@@ -9863,6 +9906,7 @@ html[data-background-style='nightRider'] .right-side-tabs[data-background-style=
     border-left-color: transparent
 }
 
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data strong,
 html[data-background-style='nightRider'] .right-side-tabs #acl_logins-acl-collapse>div>div>table.ui_columns>tbody>tr.thead>td>b,
 html[data-background-style='nightRider'] .right-side-tabs-dismiss i,
 html[data-background-style='nightRider'] #right-side-tabs .right_pane_favorites_link,
@@ -9877,7 +9921,7 @@ html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-contai
 html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:active,
 html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:hover,
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data]+strong {
-    color: #8c9196
+    color: rgba(140, 145, 150, 0.89)
 }
 
 html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data small,
@@ -9892,12 +9936,15 @@ html[data-background-style='nightRider'] .panel .panel-heading .panel-title a:be
 html[data-background-style='nightRider'] td .opener_trigger[id]:before,
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data],
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data] a {
-    color: #767a7f !important
+    color: rgba(118, 122, 127, 0.89) !important
 }
 
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .right-side-tabs-dismiss,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .list-group-item:last-child,
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs,
 html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data,
 html[data-background-style='nightRider'] #right-side-tabs-sysinfo .no-sysinfo_data {
-    border-color: #3e4146
+    border-color: rgba(62, 65, 70, 0.57)
 }
 
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container,
@@ -9924,7 +9971,7 @@ html[data-background-style='nightRider'] .right-side-tabs-toggler[data-backgroun
 
 html[data-background-style='nightRider'] .alert-warning:hover,
 html[data-background-style='nightRider'] .alert-warning {
-    color: rgba(234, 239, 238, 0.96);
+    color: rgba(234, 239, 238, 0.66);
     border-color: rgba(222, 180, 93, .13);
     background-color: rgba(128, 118, 64, .08)
 }
@@ -9932,21 +9979,21 @@ html[data-background-style='nightRider'] .alert-warning {
 html[data-background-style='nightRider'] tr[bgcolor="#ff8888"],
 html[data-background-style='nightRider'] .alert-danger:hover,
 html[data-background-style='nightRider'] .alert-danger {
-    color: rgba(234, 239, 238, 0.96);
+    color: rgba(234, 239, 238, 0.66);
     border-color: rgba(224, 60, 87, .15);
     background-color: rgba(145, 94, 94, 0.88)
 }
 
 html[data-background-style='nightRider'] .alert-info:hover,
 html[data-background-style='nightRider'] .alert-info {
-    color: rgba(234, 239, 238, 0.96);
+    color: rgba(234, 239, 238, 0.66);
     border-color: rgba(65, 108, 117, .29);
     background-color: rgba(131, 162, 177, .08)
 }
 
 html[data-background-style='nightRider'] .alert-success:hover,
 html[data-background-style='nightRider'] .alert-success {
-    color: rgba(234, 239, 238, 0.96);
+    color: rgba(234, 239, 238, 0.66);
     border-color: rgba(71, 101, 47, .33);
     background-color: rgba(62, 118, 38, .08)
 }
