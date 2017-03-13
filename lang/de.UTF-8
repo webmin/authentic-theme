@@ -637,5 +637,6 @@ theme_xhred_global_no_results_found=No results found
 theme_xhred_display_icons_warning=When display mode in module's configuration is set to icons, each target is displayed in separate container (current setup), rather than in a table.<br><br>In order to select a target use either single <em>left-click</em> or single <em>right-click</em>; to enter a target use double <em>left-click</em>.
 
 
-#18.33
+#18.40
 theme_new_password_header=Set new password for user
+settings_sysinfo_theme_beta_updates=Including beta versions

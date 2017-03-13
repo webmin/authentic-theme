@@ -1032,23 +1032,10 @@ sub get_sysinfo_vars
 
         $authentic_remote_version = $remote_version;
 
+        use Version::Compare;
+
         # Build version response message
-        if ( $remote_version <= $installed_version ) {
-            do "authentic-theme/changelog.pm";
-            $authentic_theme_version =
-                '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
-              . $Atext{'theme_name'} . '</a> '
-              . $installed_version
-              . '<div class="btn-group margined-left-4"><a href="'
-              . $gconfig{'webprefix'}
-              . '/webmin/edit_themes.cgi" data-href="'
-              . $gconfig{'webprefix'}
-              . '/webmin/edit_themes.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
-              . $Atext{'settings_right_theme_configurable_options_title'}
-              . '"><i class="fa fa-cogs"></i></a> '
-              . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
-        }
-        else {
+        if ( &Version::Compare::version_compare( $remote_version, $installed_version ) == 1 ) {
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
@@ -1077,6 +1064,21 @@ sub get_sysinfo_vars
               . '/webmin/edit_themes.cgi" ><i class="fa fa-fw fa-cogs">&nbsp;</i>'
               . $Atext{'settings_right_options'} . '</a>'
               . '</div>';
+
+        }
+        else {
+            $authentic_theme_version =
+                '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+              . $Atext{'theme_name'} . '</a> '
+              . $installed_version
+              . '<div class="btn-group margined-left-4"><a href="'
+              . $gconfig{'webprefix'}
+              . '/webmin/edit_themes.cgi" data-href="'
+              . $gconfig{'webprefix'}
+              . '/webmin/edit_themes.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
+              . $Atext{'settings_right_theme_configurable_options_title'}
+              . '"><i class="fa fa-cogs"></i></a> '
+              . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
         }
 
         #ConfigServer Security & Firewall
@@ -1608,7 +1610,7 @@ sub embed_login_head
 
     embed_css_content_palette();
     embed_css_fonts();
-    embed_styles();
+    embed_styles(1);
 
     print '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/jquery.' . $ext . '.js?' . theme_version() . '"></script>' . "\n";
     print '</head>', "\n";
@@ -1620,20 +1622,20 @@ sub get_authentic_version
     # Get local version
     my $installed_version = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt", 1 );
     our $installed_version = $installed_version->[0];
+    our $remote_version;
 
     $installed_version =~ s/^\s+|\s+$//g;
-    $installed_version = sprintf '%.2f', $installed_version;
 
-    if (    $__settings{'settings_sysinfo_theme_updates'} eq 'true'
-         && $get_user_level eq '0' )
-    {
+    if ( $__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' ) {
 
         # Get remote version if allowed
         http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt', \$remote_version, \$error, undef, 1, undef, undef, 5 );
 
         # Trim versions' number
         $remote_version =~ s/^\s+|\s+$//g;
-        $remote_version = sprintf '%.2f', $remote_version;
+        if ( $__settings{'settings_sysinfo_theme_beta_updates'} ne 'true' && index( $remote_version, 'beta' ) != -1 ) {
+            $remote_version = '0';
+        }
     }
     else {
         $remote_version = '0';
@@ -1954,6 +1956,8 @@ sub _settings
             'settings_sysinfo_easypie_charts_scale',
             '8',
             'settings_sysinfo_theme_updates',
+            'false',
+            'settings_sysinfo_theme_beta_updates',
             'false',
             'settings_sysinfo_csf_updates',
             'false',

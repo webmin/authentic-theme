@@ -83,7 +83,7 @@ sub embed_header
         }
 
         embed_css_content_palette();
-        embed_styles();
+        embed_styles(0);
         embed_settings();
 
         if ( $args[2] eq 'debug' ) {
@@ -133,7 +133,7 @@ sub embed_header
               . '" rel="stylesheet" data-palette>' . "\n";
         }
 
-        embed_styles();
+        embed_styles(1);
         embed_settings();
 
         if ( $args[2] eq 'debug' ) {
@@ -170,9 +170,9 @@ sub embed_settings
 
 sub embed_styles
 {
-
+    my ($force) = @_;
     if ( -r $config_directory . "/authentic-theme/styles.css" ) {
-        if ( -s $config_directory . "/authentic-theme/styles.css" ne -s $root_directory . "/authentic-theme/unauthenticated/css/styles.css" ) {
+        if ( $force || ( -s $config_directory . "/authentic-theme/styles.css" ne -s $root_directory . "/authentic-theme/unauthenticated/css/styles.css" ) ) {
             copy_source_dest( $config_directory . "/authentic-theme/styles.css", $root_directory . "/authentic-theme/unauthenticated/css" );
         }
         print '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' . time() . '" rel="stylesheet">' . "\n";
@@ -823,8 +823,8 @@ sub get_button_style
 sub theme_version
 {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '18.31';
-    my $sh__ln__c___version = '18.32';
+    my $sh__ln__p___version = '18.32';
+    my $sh__ln__c___version = '18.40';
     ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
     return $sh__ln__c___version;
 }

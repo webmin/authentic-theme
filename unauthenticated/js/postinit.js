@@ -11,7 +11,7 @@ var $_url = URI(t___wi.location),
     $__source_path = $_url.path(),
     $___source_path = $_url.path().replace(/^\//g, "").replace(/\/$/g, ""),
     $__source_file = $_url.filename(),
-    $__source_dir = $_url.directory() + "/",
+    $__source_dir = ($_url.directory() ? ($_url.directory().endsWith("/") ? $_url.directory() : ($_url.directory() + "/")) : "/"),
     $___source_dir = $_url.directory().replace(/^\//g, "").replace(/\/$/g, ""),
     $__source_query = $_url.query(),
     $source_path = $_url.path().replace(/^\//g, ""),
@@ -1966,20 +1966,13 @@ function t__cm___init(g, i, f, j, d, m, k) {
                     C.popover({
                         container: "body",
                         placement: "auto right",
-                        title: lang("theme_xhred_editor_help_title"),
+                        title: ('<button type="button" class="close pull-right close-popover-trigger font-size-120p">&times;</button>' + lang("theme_xhred_editor_help_title")),
                         content: lang("theme_xhred_editor_help_content"),
                         trigger: "click",
                         html: true
                     });
                     C.on("inserted.bs.popover", function() {
                         $("body").find(".theme_xhred_editor_help").parents(".popover").addClass("_helper")
-                    });
-                    $("body").on("click", function(D) {
-                        $(".-helper.__helper").each(function() {
-                            if (!$(this).is(D.target) && $(this).has(D.target).length === 0 && $(".popover").has(D.target).length === 0) {
-                                $(this).popover("hide")
-                            }
-                        })
                     })
                 }, 100);
                 if (o) {
