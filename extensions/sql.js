@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.31 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -128,7 +128,7 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                 $(this).html("<em>" + $(this).text() + "</em>")
             }
             if ($(this).is(":last-child") && !$(this).parents(".table-hardcoded").length) {
-                $(this).css("border-right", "1px solid #eee")
+                $(this).css("border-right", "1px solid #" + (__isNR ? "2f3238" : "eee") + "")
             }
         }).promise().done(function() {
             $.each($(".table.table-striped.table-hover.table-condensed").find("tbody tr td"), function(b, a) {
@@ -203,7 +203,7 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                         $.each(b.parent(".long-table-scroll").parent(".long-table-wrapper"), function() {
                             var s = $(this).find(".table-hardcoded").find("tbody tr:nth-child(2) td:last-child"),
                                 s = (s.find('input[type="text"]').val() ? s.find('input[type="text"]').val() : s.text());
-                            $(this).prepend('					 				  <div class="thead container-resizeable-head" style="width: ' + (parseInt(m - i + 12 + f) + "px") + '; height: 23px; background: rgba(233, 242, 255, 0.7); border-top: 1px solid #e6e6e6; border-right: 1px solid #eee; z-index: 999998;">					 				  	<i class="fa fa-fw fa-minus-square text-light pull-right db_editor_collapse' + ($("#savenew").length ? " invisible" : "") + '" style="cursor: default; margin-top: 5px; position: relative; z-index: 999999; margin-right: ' + d + 'px; margin-bottom: -5px;"></i>					 				  	<span class="col-xs-2 text-left pull-left" style="padding-top: 1px; padding-left: 7px;"><em style="font-weight: 500">' + ($("#savenew").length ? "" : s) + '</em></span>					 				  	<span class="col-xs-10 text-left pull-left" style="padding-top: 0; padding-left: 4%; font-size: 14px; font-weight: 500; font-style: italic;">' + ($("#savenew").length ? lang("theme_xhred_database_adding_new_row_data") : "") + "</span>					 				  </div>								")
+                            $(this).prepend('					 				  <div class="thead container-resizeable-head" style="width: ' + (parseInt(m - i + 12 + f) + "px") + ';">					 				  	<i class="fa fa-fw fa-minus-square text-light pull-right db_editor_collapse' + ($("#savenew").length ? " invisible" : "") + '" style="cursor: default; margin-top: 5px; position: relative; z-index: 999999; margin-right: ' + d + 'px; margin-bottom: -5px;"></i>					 				  	<span class="col-xs-2 text-left pull-left" style="padding-top: 1px; padding-left: 7px;"><em style="font-weight: 500">' + ($("#savenew").length ? "" : s) + '</em></span>					 				  	<span class="col-xs-10 text-left pull-left" style="padding-top: 0; padding-left: 4%; font-size: 14px; font-weight: 500; font-style: italic;">' + ($("#savenew").length ? lang("theme_xhred_database_adding_new_row_data") : "") + "</span>					 				  </div>								")
                         });
                         $(".col-no-styling").parent("tr").addClass("row-no-styling");
                         $(".table.table-striped.table-hover.table-condensed > thead > tr, .table.table-striped.table-hover.table-condensed > tbody > tr:not(.row-no-styling)").addClass("opacity-0_5");
@@ -309,7 +309,7 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                                                         $(this).html("<em>" + $(this).text() + "</em>")
                                                     }
                                                     if ($(this).is(":last-child") && !$(this).parents(".table-hardcoded").length) {
-                                                        $(this).css("border-right", "1px solid #eee")
+                                                        $(this).css("border-right", "1px solid #" + (__isNR ? "2f3238" : "eee") + "")
                                                     }
                                                 })
                                             })

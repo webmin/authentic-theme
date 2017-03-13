@@ -3017,7 +3017,7 @@ a[href*='showpass.cgi'].help_popup+.popover>.popover-content {
 }
 
 h3.h3_help {
-    font-size: 17px;
+    font-size: 14px;
     margin-top: 5px
 }
 
@@ -3950,12 +3950,17 @@ h3.ui_subheading+form.ui_form>select[name^='parentuser']~table.table.table-strip
 }
 
 .popover-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 21px;
-    padding-top: 10px;
-    padding-bottom: 9px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     background-color: #f7f7f7 !important
+}
+
+.popover-title button {
+    margin-top: 2px;
+    margin-right: -4px
 }
 
 .popover-content {
@@ -3970,6 +3975,23 @@ h3.ui_subheading+form.ui_form>select[name^='parentuser']~table.table.table-strip
 .popover-content {
     overflow-y: auto;
     max-height: 300px
+}
+
+.popover-content table>thead>tr>th.head {
+    font-weight: 500 !important
+}
+
+.popover-content h5,
+.popover-content table>tbody>tr>td h5,
+.popover-content table>tbody>tr>td,
+.popover-content table>thead>tr>th {
+    font-size: 12px
+}
+
+.popover-content table>tbody>tr>td,
+.popover-content table>thead>tr>th {
+    padding-top: 3px;
+    padding-bottom: 3px
 }
 
 .popover.bottom .popover-title,
@@ -3992,7 +4014,7 @@ a.opener_trigger,
     line-height: 1.42857143
 }
 
-.sub_table_container:not(.xcontent-force-no-styling) *:not(.popover):not(.popover-title):not(.popover-content):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
+.sub_table_container:not(.xcontent-force-no-styling) *:not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
     color: #333;
     background-color: #fff !important
 }
@@ -9811,7 +9833,7 @@ screen and (max-height:600px) {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 720px;
+        width: 650px;
         margin: 30px auto
     }
 }

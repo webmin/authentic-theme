@@ -638,5 +638,6 @@ theme_xhred_global_no_results_found=No s'ha trobat cap resultat
 theme_xhred_display_icons_warning=Quant el mode de visualització en la configuració del mòdul està configurat per mostrar icones els diferents enllaços es mostren en icones separades (configuració actual). Per seleccionar el destí pots utilitzar tant el botó esquerra com el dret i per entrar el destí has d'utilitzar el botó esquerra.
 
 
-#18.33
+#18.40
 theme_new_password_header=Set new password for user
+settings_sysinfo_theme_beta_updates=Including beta versions

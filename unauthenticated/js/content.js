@@ -942,10 +942,14 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 });
                 $('input[name="settings_side_slider_sysinfo_enabled"], input[name="settings_side_slider_notifications_enabled"], input[name="settings_side_slider_favorites_enabled"]').change(function(c) {
                     var f = ("right-side-tabs-" + $(this).attr("name").split("_")[3]),
+                        h = $(this).attr("name"),
                         d = t__wi_p.$("body").find("#" + f).hasClass("active"),
                         g = $('input[name="settings_side_slider_sysinfo_enabled"][value="true"]:checked, input[name="settings_side_slider_notifications_enabled"][value="true"]:checked, input[name="settings_side_slider_favorites_enabled"][value="true"]:checked').length;
                     if ($(this).val() == "true") {
-                        t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").removeClass("hidden").parent().removeClass("hidden")
+                        t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").removeClass("hidden").parent().removeClass("hidden");
+                        if (h === "settings_side_slider_notifications_enabled") {
+                            t__wi_p.$(".right-side-tab-notification-asterix").removeClass("invisible")
+                        }
                     } else {
                         t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").addClass("hidden");
                         if (d && g) {
@@ -955,8 +959,14 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                                 $('input[name="settings_side_slider_enabled"][value="false"]').trigger("click")
                             }
                         }
+                        if (h === "settings_side_slider_notifications_enabled") {
+                            t__wi_p.$(".right-side-tab-notification-asterix").addClass("invisible")
+                        }
                     }
                     settings_update()
+                });
+                $('input[name="settings_side_slider_sysinfo_enabled"], input[name="settings_side_slider_notifications_enabled"], input[name="settings_side_slider_favorites_enabled"]').each(function() {
+                    $('input[name="' + $(this).attr("name") + '"][value="' + window[$(this).attr("name")] + '"]').trigger("change")
                 });
                 $('select[name="settings_navigation_color"]').after('<i class="fa fa-fw fa-cog text-light settings_navigation_color_toggle cursor-default" data-name="settings_navigation_color" style="margin-left: 10px; background-color: transparent !important"></i>																		 <i class="fa fa-fw fa-refresh text-light settings_navigation_color_reset cursor-default hidden" data-name="settings_navigation_color" style="margin-left: 4px; background-color: transparent !important"></i>');
                 $('select[name="settings_background_color"]').after('<i class="fa fa-fw fa-cog text-light settings_background_color_toggle cursor-default" data-name="settings_background_color" style="margin-left: 10px; background-color: transparent !important"></i>																		 <i class="fa fa-fw fa-refresh text-light settings_background_color_reset cursor-default hidden" data-name="settings_background_color" style="margin-left: 4px; background-color: transparent !important"></i>');
@@ -1693,7 +1703,7 @@ if (settings_right_iconize_header_links) {
                 $iconized_class = "fa-question-circle";
                 $(this).data("title", "")
             }
-            $(this).attr("data-toggle", "tooltip").attr("title", (e ? "" : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
+            $(this).data("toggle", "tooltip").data("title", (e ? lang("theme_xhred_module_help") : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
             $(this).contents().filter(function() {
                 return this.nodeType == 3
             }).remove();
@@ -1849,6 +1859,16 @@ function module_help_focuser(a) {
         }
     })
 }
+$("body").on("click", function(a) {
+    if ($(a.target).is(".close-popover-trigger")) {
+        $(a.target).parent().parent().popover("hide")
+    }
+    $(".showpass-popover").each(function() {
+        if (!$(this).is(a.target) && $(this).has(a.target).length === 0 && $(".popover").has(a.target).length === 0) {
+            $(this).popover("hide")
+        }
+    })
+});
 $(".help_popup").on("click", function(f) {
     f.stopPropagation();
     f.preventDefault();
@@ -1857,11 +1877,6 @@ $(".help_popup").on("click", function(f) {
         e = $(this).parents("td");
     e.append('<div class="_tmp_help_content hidden"></div>');
     t__wi_p.$___ajax_requested_url = "help.cgi";
-    $("body").on("click", function(a) {
-        if ($(a.target).is(".close-popover-trigger")) {
-            $(a.target).parent().parent().popover("hide")
-        }
-    });
     $.ajax({
         type: "POST",
         url: h.attr("href"),
@@ -1877,15 +1892,17 @@ $(".help_popup").on("click", function(f) {
             $help_body = e.find("._tmp_help_content a").removeAttr("href").css("text-decoration", "none").css("color", "#333").css("font-style", "italic");
             $help_body = e.find("._tmp_help_content").html();
             e.find("._tmp_help_content").remove();
-            var b = '<button type="button" class="close pull-right close-popover-trigger' + (($(this).parents("#headln2l").length || $__source_file !== "config.cgi") ? " margined-top--1" : " margined-top--5 margined-right--4") + ' font-size-120p">&times;</button>';
-            if (h.attr("href").indexOf("showpass.cgi") > -1) {
-                b = ""
+            var c = '<button type="button" class="close pull-right close-popover-trigger font-size-120p">&times;</button>',
+                b = (h.attr("href").indexOf("showpass.cgi") > -1);
+            if (b) {
+                c = ""
             }
             h.popover({
                 html: true,
-                template: '<div class="popover module-help" role="tooltip" style="z-index: ' + (2147483642 + ($(".module-help").length * 10)) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+                container: "body",
+                template: '<div class="popover module-help' + (b ? " showpass-popover" : "") + '" role="tooltip" style="z-index: ' + (2147483642 + ($(".module-help").length * 10)) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
                 title: function() {
-                    return (b + $help_title)
+                    return (c + $help_title)
                 },
                 content: function() {
                     return $help_body
@@ -1893,16 +1910,7 @@ $(".help_popup").on("click", function(f) {
                 placement: "auto right"
             });
             h.popover("show");
-            h.on("shown.bs.popover", function(c, o, i) {
-                if (h.attr("href").indexOf("showpass.cgi") > -1) {
-                    $("body").on("click", function(q) {
-                        q.preventDefault();
-                        q.stopPropagation();
-                        if (!$(q.target).is("tt")) {
-                            $(".popover.in").popover("hide")
-                        }
-                    })
-                }
+            h.on("shown.bs.popover", function() {
                 if ($help_body.indexOf("<ad>") > -1) {
                     $(".popover").animate({
                         "max-width": "540px"
@@ -1912,21 +1920,21 @@ $(".help_popup").on("click", function(f) {
                 $('body[class*="' + $g__o__f_m + '"]').find(".popover:visible").addClass("file-manager-help");
                 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search != "?updating-webmin-theme") {
                     $("body").find(".popover:visible").addClass("at-help");
-                    var d = $(".link-theme").text(),
-                        k = $(".link-theme2").text(),
-                        n = $(".link-changelog").text(),
-                        m = $(".link-me").text(),
-                        j = $(".link-donation").text(),
-                        p = $(".link-youtube").text(),
-                        l = $(".link-github").text();
-                    $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + d + "</em></a>");
-                    $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + k + "</em></a>");
-                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + n + "</span></em></a>");
+                    var m = $(".link-theme").text(),
+                        j = $(".link-theme2").text(),
+                        i = $(".link-changelog").text(),
+                        d = $(".link-me").text(),
+                        n = $(".link-donation").text(),
+                        l = $(".link-youtube").text(),
+                        k = $(".link-github").text();
+                    $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + m + "</em></a>");
+                    $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + j + "</em></a>");
+                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + i + "</span></em></a>");
                     $(".link-changelog").detach().appendTo(".at-help .popover-title");
-                    $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + m + "</em></a>");
-                    $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + j + "</span></a>");
-                    $(".link-youtube").replaceWith('<a title="" data-original-title="" class="badge label-danger fa fa-fw fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://youtu.be/f_oy3qX2GXo"> <span class="font-family-default">' + p + "</span></a>");
-                    $(".link-github").replaceWith('<a title="" data-original-title="" class="badge fa fa-fw fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> <span class="font-family-default">' + l + "</span></a>")
+                    $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + d + "</em></a>");
+                    $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + n + "</span></a>");
+                    $(".link-youtube").replaceWith('<a title="" data-original-title="" class="badge label-danger fa fa-fw fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://youtu.be/f_oy3qX2GXo"> <span class="font-family-default">' + l + "</span></a>");
+                    $(".link-github").replaceWith('<a title="" data-original-title="" class="badge fa fa-fw fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> <span class="font-family-default">' + k + "</span></a>")
                 }
                 setTimeout(function() {
                     $.each($(".module-help"), function() {
@@ -1940,6 +1948,9 @@ $(".help_popup").on("click", function(f) {
                         }
                     })
                 }, 100)
+            });
+            h.on("hidden.bs.popover", function() {
+                $("body").undelegate(":not(tt)", "click")
             })
         }
     })
@@ -3701,7 +3712,7 @@ if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __n
 is__mf("sysstats", "display_all.cgi") && setTimeout(function() {
     __lre()
 }, 600);
-if (is__m("changepass") || is__mf("server-manager", "edit_pass.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("acl", "edit_user.cgi") || is__mf("virtual-server", "clone_form.cgi") || is__mf("virtual-server", "edit_user.cgi") || is__mf("virtual-server", "edit_domain.cgi") || is__mf("virtual-server", "domain_form.cgi") || is__mf("samba", "edit_euser.cgi") || is__mf("samba", "ask_epass.cgi") || is__mfq("virtualmin-registrar", "edit.cgi", "registrar=") || is__mfq("htaccess-htpasswd", "edit_user.cgi", "new=") || is__mfq("postgresql", "edit_user.cgi", "new=") || is__mfq("mysql", "edit_user.cgi", "new=") || is__mfq("useradmin", "edit_group.cgi", "group=") || is__mfq("useradmin", "edit_user.cgi", "user=") || is__mfq("passwd", "edit_passwd.cgi", "user=")) {
+if (is__m("changepass") || is__mf("server-manager", "edit_pass.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("acl", "edit_user.cgi") || is__mf("virtual-server", "clone_form.cgi") || is__mf("virtual-server", "edit_user.cgi") || is__mf("virtual-server", "edit_domain.cgi") || is__mf("virtual-server", "domain_form.cgi") || is__mf("samba", "edit_euser.cgi") || is__mf("samba", "ask_epass.cgi") || is__mfq("virtualmin-registrar", "edit.cgi", "registrar=") || is__mfq("htaccess-htpasswd", "edit_user.cgi", "new=") || is__mfq("postgresql", "edit_user.cgi", "new=") || is__mfq("mysql", "edit_user.cgi", "new=") || is__mf("useradmin", "edit_group.cgi") || is__mf("useradmin", "edit_user.cgi") || is__mfq("passwd", "edit_passwd.cgi", "user=")) {
     setTimeout(function() {
         $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
         $("#headln2r .btn-group").prepend('		<a href="#" class="btn btn-link text-lighter text-decoration-none pull-left generate-password-key" data-placement="auto top" data-toggle="tooltip" data-container="body" data-title="' + lang("theme_xhred_password_generator_new") + '">			<i class="fa fa-1_25x fa-key-plus" style="width: 14px; margin-left: -3px;"></i>		</a>	');
