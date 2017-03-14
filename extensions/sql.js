@@ -10,6 +10,7 @@ $(".table.table-striped.table-hover.table-condensed").on("change", 'input[type="
 $(".select_all, .select_invert").on("click", function(a) {
     db_check_selected()
 });
+$isResizeable = false;
 
 function db_check_selected() {
     var b = $('.table.table-striped.table-hover.table-condensed input[type="checkbox"]:checked, form div.icons-container.highlighted, form div.small-icons-container.highlighted, form div.xsmall-icons-container.highlighted').length;
@@ -54,6 +55,13 @@ function db_check_selected() {
             }
         }
     }
+}
+
+function proc_sql_table(a) {
+    if ($current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {
+        a.parent("tr").addClass("selectable");
+        a.addClass("selectable")
+    }!a.find("table").length && a.attr("title", $.trim(a.text()))
 }
 if (!$__source_file || $__source_file == "list_users.cgi" || $__source_file == "list_dbs.cgi" || $__source_file == "list_tprivs.cgi" || $__source_file == "list_cprivs.cgi") {
     db_check_selected();
@@ -132,17 +140,13 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
             }
         }).promise().done(function() {
             $.each($(".table.table-striped.table-hover.table-condensed").find("tbody tr td"), function(b, a) {
-                if ($current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {
-                    $(this).parent("tr").addClass("selectable");
-                    $(this).addClass("selectable")
-                }!$(this).find("table").length && $(this).attr("title", $.trim($(this).text()))
+                proc_sql_table($(this))
             }).promise().done(function() {
                 var h = '<i class="fa fa-fw fa-floppy-o">&nbsp;&nbsp;</i>',
                     g = '<i class="fa fa-fw fa-check-circle-o">&nbsp;&nbsp;</i>',
                     o = '<i class="fa fa-fw fa-trash-o">&nbsp;&nbsp;</i>',
                     n = '<span class="cspinner_container" style=" width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 1px; margin-left: -11px;"><span class="cspinner-icon white small"></span></span></span>',
                     l = '<span class="cspinner_container" style=" width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 1px; margin-left: -11px;"><span class="cspinner-icon dark small"></span></span></span>';
-                var c = false;
                 if ($current_page_full == $_____link_full + "/mysql/view_table.cgi" || $current_page_full == $_____link_full + "/postgresql/view_table.cgi") {
                     var p = parseInt($(".ui_form > .long-table-wrapper .long-table-scroll").width()),
                         a = parseInt($(".ui_form > .long-table-wrapper .long-table-scroll > table").width()),
@@ -366,18 +370,32 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                             url: ($_____link_full + "/" + $g__m__name + "/" + q.parents("form").attr("action") + "?xhr&" + q.attr("id") + "=1&stripped=1"),
                             data: q.parents("form").serialize(),
                             dataType: "text",
-                            success: function(r) {
-                                if (!$(r).find(".ui_form").length) {
-                                    messenger('<i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(r).find(".panel-body h3").html(), 10, "error")
+                            success: function(s) {
+                                if (!$(s).find(".ui_form").length) {
+                                    messenger('<i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(s).find(".panel-body h3").html(), 10, "error")
                                 } else {
-                                    var t = $('.table.table-striped.table-hover.table-condensed tr td:first-child input[type="checkbox"]:checked').parents("tr"),
-                                        v = t.length;
-                                    $.each(t, function() {
-                                        $(".table.table-striped.table-hover.table-condensed").DataTable().row($(this)).remove().draw()
-                                    });
-                                    var s = ($__source_file == "edit_table.cgi" ? "field" : "row"),
-                                        u = (v > 1 ? ("theme_xhred_database_edit_" + s + "s_delete_successful") : ("theme_xhred_database_edit_" + s + "_delete_successful"));
-                                    messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang(u).replace("%n", v) + "", 3, "info");
+                                    var r = $(".table.table-striped.table-hover.table-condensed tbody tr"),
+                                        v = $('.table.table-striped.table-hover.table-condensed tr td:first-child input[type="checkbox"]:checked').parents("tr"),
+                                        x = v.length,
+                                        u = ".table.table-striped.table-hover.table-condensed";
+                                    if ($__source_file == "view_table.cgi") {
+                                        $.each(r, function() {
+                                            $(u).DataTable().row($(this)).remove()
+                                        }).promise().done(function() {
+                                            $(u).DataTable().rows.add($(s).find(u).find("tbody").find("tr")).draw();
+                                            $.each($(".table.table-striped.table-hover.table-condensed").find("tbody tr td"), function(z, y) {
+                                                proc_sql_table($(this))
+                                            });
+                                            __mr()
+                                        })
+                                    } else {
+                                        $.each(v, function() {
+                                            $(u).DataTable().row($(this)).remove().draw()
+                                        })
+                                    }
+                                    var t = ($__source_file == "edit_table.cgi" ? "field" : "row"),
+                                        w = (x > 1 ? ("theme_xhred_database_edit_" + t + "s_delete_successful") : ("theme_xhred_database_edit_" + t + "_delete_successful"));
+                                    messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang(w).replace("%n", x) + "", 3, "info");
                                     q.prop("disabled", true)
                                 }
                                 $("button").find(".cspinner_container").replaceWith(o);

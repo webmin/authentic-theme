@@ -8554,6 +8554,8 @@ body[class*='mysql']:not(.__non_res__) .container-resizeable-head {
     background: rgba(233, 242, 255, 0.7);
     border-top: 1px solid #e6e6e6;
     border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2px;
     z-index: 999998
 }
 
@@ -9146,6 +9148,11 @@ body[class='spam'][data-uri*='edit_awl.cgi'] input+i.fa-files-o {
 
 body[class*='spam'] form>input[data-mmclick].heighter-34:not(.btn-lg):not(.ui_form_end_submit) {
     margin-left: -7px !important
+}
+
+body[class*='postgresql'][data-uri*='view_table.cgi'] #DataTables_Table_0 tr td.ui_checked_checkbox>.awcheckbox.awobject,
+body[class*='mysql'][data-uri*='view_table.cgi'] #DataTables_Table_0 tr td.ui_checked_checkbox>.awcheckbox.awobject {
+    margin-top: -2px
 }
 
 body[class*='postgresql'][data-uri*='edit_dbase.cgi'] #DataTables_Table_0,
