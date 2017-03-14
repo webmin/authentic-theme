@@ -1085,13 +1085,13 @@ favicon = new Favico({
 });
 
 function n___fv() {
-    if (!settings_side_slider_enabled) {
+    if (!settings_side_slider_enabled || !settings_side_slider_notifications_enabled) {
         return
     }
     var a = $(".right-side-tabs .list-group-item:not(.no-notifications, .opacity-0_3)").length;
     favicon.badge(a);
     __dpt();
-    if (a > 0) {
+    if (a > 0 && settings_side_slider_notifications_enabled) {
         $(".right-side-tabs-toggler button i.fa-bell").addClass("faa-ring faa-slow animated-hover");
         $(".right-side-tabs-toggler button span.badge").removeClass("hidden").text(a);
         $("#right-side-tabs .right-side-tab-notification-asterix").removeClass("hidden").text(a)

@@ -1719,7 +1719,7 @@ function __dpt() {
         }
     }
     var c = t__wi_p.$(".right-side-tabs .list-group-item:not(.no-notifications, .opacity-0_3)").length;
-    if (settings_side_slider_enabled) {
+    if (settings_side_slider_enabled && settings_side_slider_notifications_enabled) {
         t__wi_p.titlenotifier.set(c)
     } else {
         t__wi_p.titlenotifier.set(0)

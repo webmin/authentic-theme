@@ -948,7 +948,11 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                     if ($(this).val() == "true") {
                         t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").removeClass("hidden").parent().removeClass("hidden");
                         if (h === "settings_side_slider_notifications_enabled") {
-                            t__wi_p.$(".right-side-tab-notification-asterix").removeClass("invisible")
+                            t__wi_p.$(".right-side-tab-notification-asterix").removeClass("invisible hidden hidden-forged");
+                            t__wi_p.$(".right-side-tabs-toggler .badge.badge-danger").removeClass("invisible hidden hidden-forged");
+                            setTimeout(function() {
+                                t__wi_p.n___fv()
+                            }, 300)
                         }
                     } else {
                         t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").addClass("hidden");
@@ -960,7 +964,10 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                             }
                         }
                         if (h === "settings_side_slider_notifications_enabled") {
-                            t__wi_p.$(".right-side-tab-notification-asterix").addClass("invisible")
+                            t__wi_p.$(".right-side-tab-notification-asterix").addClass("invisible hidden hidden-forged");
+                            t__wi_p.$(".right-side-tabs-toggler .badge.badge-danger").addClass("invisible hidden hidden-forged");
+                            t__wi_p.favicon.badge(0);
+                            t__wi_p.titlenotifier.set(0)
                         }
                     }
                     settings_update()
