@@ -1278,6 +1278,16 @@ $('form[action*="switch_user.cgi"], a[href*="switch_user.cgi"]').each(function()
     });
     $(this).attr("target", "_top")
 });
+if (is__m("mysql") || is__m("postgresql")) {
+    $('a > img[src*="images/left.gif"]').each(function(d, e) {
+        var f = $(this);
+        f.replaceWith('<i class="fa fa-fw fa-lg fa-arrow-circle-o-left text-semi-light vertical-align-baseline"></i>')
+    });
+    $('a > img[src*="images/right.gif"]').each(function(d, e) {
+        var f = $(this);
+        f.replaceWith('<i class="fa fa-fw fa-lg fa-arrow-circle-o-right text-semi-light vertical-align-baseline"></i>')
+    })
+}
 if (is__mf("virtual-server", "list_scripts.cgi")) {
     $('td > a > img[src*="images/staroff.gif"]').each(function(d, e) {
         var f = $(this);
@@ -1288,71 +1298,53 @@ if (is__mf("virtual-server", "list_scripts.cgi")) {
         $(e).attr("src", "" + $_____link_full + "/images/staron.gif")
     })
 }
-if (is__m("cron")) {
-    $('td img[src*="images/movedown.gif"]').each(function(d, e) {
-        var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/down" + (__isNR ? "_dark" : "") + ".gif")
-    });
-    $('td img[src*="images/moveup.gif"]').each(function(d, e) {
-        var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/up" + (__isNR ? "_dark" : "") + ".gif")
-    });
-    $('td img[src*="images/bottom.gif"]').each(function(d, e) {
-        var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/bottom" + (__isNR ? "_dark" : "") + ".gif")
-    });
-    $('td img[src*="images/top.gif"]').each(function(d, e) {
-        var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/top" + (__isNR ? "_dark" : "") + ".gif")
-    })
-}
-if (is__mf("pam", "edit_pam.cgi")) {
-    $('td img[src*="images/down.gif"]').each(function(d, e) {
-        var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/down" + (__isNR ? "_dark" : "") + ".gif")
-    });
-    $('td img[src*="images/up.gif"]').each(function(d, e) {
-        var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/up" + (__isNR ? "_dark" : "") + ".gif")
-    })
-}
 if ($current_directory == $_____link + "status/") {
     $('td img[src*="images/up.gif"]:not(".ui_icon_protected")').each(function(d, e) {
         var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/check.png")
+        $(e).attr("src", "" + $_____link_full + "/images/check.png");
+        f.addClass("scale-08")
     });
     $('td img[src*="images/down.gif"]:not(".ui_icon_protected")').each(function(d, e) {
         var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/cross.png")
+        $(e).attr("src", "" + $_____link_full + "/images/cross.png");
+        f.addClass("scale-08")
     });
     $('td img[src*="images/not.gif"]:not(".ui_icon_protected")').each(function(d, e) {
         var f = $(this);
-        $(e).attr("src", "" + $_____link_full + "/images/not.png")
+        $(e).attr("src", "" + $_____link_full + "/images/not.png");
+        f.addClass("scale-08")
     })
 }
 $('.ui_form[action^="delete_mons"] tr.ui_checked_columns > td > label > img[src="images/up.gif"]:not(".ui_icon_protected"), .ui_form[action^="save_mon"] img[src="images/up.gif"]:not(".ui_icon_protected"), table.ui_buttons_table > tbody > tr.ui_buttons_row > td.ui_buttons_label > img[src="images/up.gif"]:not(".ui_icon_protected")').each(function(d, e) {
     var f = $(this);
-    $(e).attr("src", "" + $_____link_full + "/images/check.png")
+    $(e).attr("src", "" + $_____link_full + "/images/check.png");
+    f.addClass("scale-08")
 });
 $('.ui_form[action^="delete_mons"] tr.ui_checked_columns > td > label > img[src="images/down.gif"]:not(".ui_icon_protected"), .ui_form[action^="save_mon"] img[src="images/down.gif"]:not(".ui_icon_protected"), table.ui_buttons_table > tbody > tr.ui_buttons_row > td.ui_buttons_label > img[src="images/down.gif"]:not(".ui_icon_protected")').each(function(d, e) {
     var f = $(this);
-    $(e).attr("src", "" + $_____link_full + "/images/cross.png")
+    $(e).attr("src", "" + $_____link_full + "/images/cross.png");
+    f.addClass("scale-08")
 });
 $('.ui_form[action^="delete_mons"] tr.ui_checked_columns > td > label > img[src="images/not.gif"]:not(".ui_icon_protected"), .ui_form[action^="save_mon"] img[src="images/not.gif"]:not(".ui_icon_protected"), table.ui_buttons_table > tbody > tr.ui_buttons_row > td.ui_buttons_label > img[src="images/not.gif"]:not(".ui_icon_protected")').each(function(d, e) {
     var f = $(this);
-    $(e).attr("src", "" + $_____link_full + "/images/not.png")
+    $(e).attr("src", "" + $_____link_full + "/images/not.png");
+    f.addClass("scale-08")
 });
-if (is__m("proc") || is__m("firewall") || is__m("firewall6")) {
+if (is__m("proc") || is__m("firewall") || is__m("firewall6") || is__mf("pam", "edit_pam.cgi")) {
     $("td a img[src], td label a img[src]").parents("td").addClass("text-center");
-    $('td img[src*="images/gap.gif"]').replaceWith('<i class="fa fa-fw fa-lg fa-caret-down invisible"></i>');
-    $('td a img[src*="images/down.gif"]').replaceWith('<i class="fa fa-fw fa-lg fa-caret-down cursor-pointer"></i>');
-    $('td a img[src*="images/up.gif"]').replaceWith('<i class="fa fa-fw fa-lg fa-caret-up cursor-pointer"></i>');
-    $('td a img[src*="images/after.gif"]').replaceWith('<i class="fa fa-fw fa-move-down cursor-pointer"></i>');
-    $('td a img[src*="images/before.gif"]').replaceWith('<i class="fa fa-fw fa-move-up cursor-pointer"></i>')
+    $('td img[src*="images/gap.gif"]').replaceWith('<i class="fa fa-fw fa-caret-down invisible"></i>');
+    $('td a img[src*="images/down.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_down") + '" class="fa fa-fw fa-move-down cursor-pointer"></i>');
+    $('td a img[src*="images/up.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_up") + '" class="fa fa-fw  fa-move-up cursor-pointer"></i>');
+    $('td a img[src*="images/after.gif"]').replaceWith('<i title="' + lang("theme_xhred_add_after") + '" class="fa fa-fw fa-level-down cursor-pointer"></i>');
+    $('td a img[src*="images/before.gif"]').replaceWith('<i title="' + lang("theme_xhred_add_before") + '" class="fa fa-fw fa-level-down fa-flip-vertical cursor-pointer"></i>')
 }
-if (is__m("squid")) {
-    $('td a img[src*="images/movedown.gif"]').replaceWith('<i class="fa fa-fw fa-move-down cursor-pointer"></i>');
-    $('td a img[src*="images/moveup.gif"]').replaceWith('<i class="fa fa-fw fa-move-up cursor-pointer"></i>')
+if (is__m("squid") || is__m("cron")) {
+    $('td a img[src*="images/movedown.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_down") + '" class="fa fa-fw fa-move-down cursor-pointer"></i>');
+    $('td a img[src*="images/moveup.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_up") + '" class="fa fa-fw fa-move-up cursor-pointer"></i>')
+}
+if (is__m("cron")) {
+    $('td a img[src*="images/bottom.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_bottom") + '" class="fa fa-fw fa-level-down cursor-pointer"></i>');
+    $('td a img[src*="images/top.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_top") + '" class="fa fa-fw fa-level-down fa-flip-vertical cursor-pointer"></i>')
 }
 $("input").each(function(c, d) {
     if ($(this).attr("src") == "images/ok.gif") {
