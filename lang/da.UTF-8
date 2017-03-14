@@ -641,3 +641,4 @@ theme_xhred_display_icons_warning=When display mode in module's configuration is
 #18.40
 theme_new_password_header=Set new password for user
 settings_sysinfo_theme_beta_updates=Including beta versions
+login_reset=Password recovery
