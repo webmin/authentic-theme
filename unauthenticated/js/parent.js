@@ -1411,6 +1411,16 @@ $("aside, .btn-menu-toggler").click(function(a) {
         t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click")
     }
 });
+if (!!settings_hotkeys_tooltip) {
+    $("body").tooltip({
+        selector: 'li[data-toggle="tooltip"], label[data-toggle="tooltip"]',
+        container: "body",
+        html: true
+    })
+}
+$("body").on("click", ".user-link.palette-toggle", function(a) {
+    f__toogle_palette()
+});
 $("body").on("click", ".user-link.ported-console", function(a) {
     if (ported_shell_available()) {
         ported_shell_open(shell)

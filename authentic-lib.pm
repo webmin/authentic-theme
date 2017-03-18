@@ -168,8 +168,15 @@ sub get_swith_mode
 
 sub print_switch_webmin
 {
-    print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"' . ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1 ? " checked" : "" ) . '>
-        <label for="open_'
+    print '<input class="dynamic" id="open_'
+      . &get_product_name()
+      . '" name="product-switcher" type="radio"'
+      . ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1 ? " checked" : "" ) . '>
+        <label'
+      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_' . get_product_name() . '',
+                            'settings_hotkey_toggle_key_' . get_product_name() . '',
+                            'auto bottom' )
+      . ' for="open_'
       . &get_product_name() . '">
                 <i class="wbm-webmin wbm-sm"></i><span>'
       . (   &get_product_name() eq 'webmin'
@@ -180,32 +187,46 @@ sub print_switch_webmin
 
 sub print_switch_dashboard
 {
-    print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"' . ( $t_uri_dashboard != -1 ? " checked" : "" ) . '>
-          <label for="open_dashboard" style="padding-top: 1px;">
+    print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
+      . ( $t_uri_dashboard != -1 ? " checked" : "" ) . '>
+          <label'
+      . get_hotkey_tooltip( 'settings_hotkey_sysinfo', 'settings_hotkey_sysinfo', 'auto right' )
+      . ' for="open_dashboard" style="padding-top: 1px;">
           <i class="fa fa-stack fa-dashboard"></i><span>'
       . $Atext{'theme_xhred_titles_dashboard'} . '</span></label>';
 }
 
 sub print_switch_virtualmin
 {
-    print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"' . ( $t_uri_virtualmin != -1 ? " checked" : "" ) . '>
-          <label for="open_virtualmin">
+    print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"'
+      . ( $t_uri_virtualmin != -1 ? " checked" : "" ) . '>
+          <label'
+      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_virtualmin',
+                            'settings_hotkey_toggle_key_virtualmin',
+                            'auto right' )
+      . ' for="open_virtualmin">
           <i class="wbm-virtualmin wbm-sm"></i><span>'
       . $Atext{'theme_xhred_titles_vm'} . '</span></label>';
 }
 
 sub print_switch_cloudmin
 {
-    print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"' . ( $t_uri_cloudmin != -1 ? " checked" : "" ) . '>
-          <label for="open_cloudmin">
+    print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"'
+      . ( $t_uri_cloudmin != -1 ? " checked" : "" ) . '>
+          <label'
+      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_cloudmin', 'settings_hotkey_toggle_key_cloudmin', 'auto right' )
+      . ' for="open_cloudmin">
           <i class="wbm-cloudmin wbm-sm"></i><span>'
       . $Atext{'theme_xhred_titles_cm'} . '</span></label>';
 }
 
 sub print_switch_webmail
 {
-    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"' . ( $t_uri_webmail != -1 ? " checked" : "" ) . '>
-          <label for="open_webmail">
+    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"'
+      . ( $t_uri_webmail != -1 ? " checked" : "" ) . '>
+          <label'
+      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_webmail', 'settings_hotkey_toggle_key_webmail', 'auto right' )
+      . ' for="open_webmail">
           <i class="fa fa-stack fa-envelope"></i>
           <span>' . $Atext{'theme_xhred_titles_mail'} . '</span></label>';
 }
@@ -324,7 +345,7 @@ sub print_sysinfo_link
         print '<li><a target="page" data-href="'
           . $gconfig{'webprefix'}
           . '/sysinfo.cgi" class="navigation_module_trigger'
-          . ( $__settings{'settings_sysinfo_link_mini'} ne 'false' && ' hidden' )
+          . ( $__settings{'settings_sysinfo_link_mini'} eq 'true' && ' hidden' )
           . '"><i class="fa fa-asterisk __sysinfo_asterisk blinking-default hidden" style="position: absolute; font-size: 40%; margin-top: -3px; margin-left: 8px;"></i><i class="fa fa-fw fa-dashboard"></i> <span>'
           . $Atext{'left_home'}
           . '</span></a></li>' . "\n";
@@ -353,7 +374,8 @@ sub get_extended_sysinfo
     my (@info) = @_;
     my $returned_sysinfo = '';
     if (@info) {
-        $returned_sysinfo .= '<div class="panel-group" id="extended_sysinfo" role="tablist" aria-multiselectable="true">';
+        $returned_sysinfo .=
+          '<div class="panel-group" id="extended_sysinfo" role="tablist" aria-multiselectable="true">';
         foreach my $info (@info) {
             if (    $info->{'id'} ne 'domain'
                  && $info->{'id'} ne 'notifications'
@@ -394,25 +416,34 @@ sub get_extended_sysinfo
                       . $info->{'id'} . '-'
                       . $info->{'module'}
                       . '-collapse" aria-expanded="'
-                      . ( ( $info->{'open'} || $__settings{'settings_sysinfo_expand_all_accordions'} eq 'true' ) ? 'true' : 'false' )
+                      . ( ( $info->{'open'} || $__settings{'settings_sysinfo_expand_all_accordions'} eq 'true' )
+                          ? 'true'
+                          : 'false' )
                       . '" aria-controls="'
                       . $info->{'id'} . '-'
                       . $info->{'module'}
                       . '-collapse">
                               '
                       . ( $info->{'id'} . '-'
-                            . $info->{'module'} eq 'status_services-status' ? $Atext{'theme_xhred_sysinfo_system_monitors'}
+                            . $info->{'module'} eq 'status_services-status'
+                          ? $Atext{'theme_xhred_sysinfo_system_monitors'}
                           : ( $info->{'id'} . '-'
-                                . $info->{'module'} eq 'sysinfo-virtual-server' ? $Atext{'theme_xhred_sysinfo_software_versions'}
+                                . $info->{'module'} eq 'sysinfo-virtual-server'
+                              ? $Atext{'theme_xhred_sysinfo_software_versions'}
                               : ( $info->{'id'} . '-'
-                                    . $info->{'module'} eq 'status-virtual-server' ? $Atext{'theme_xhred_sysinfo_server_status'}
+                                    . $info->{'module'} eq 'status-virtual-server'
+                                  ? $Atext{'theme_xhred_sysinfo_server_status'}
                                   : ( $info->{'id'} . '-'
-                                        . $info->{'module'} eq 'quota-virtual-server' ? $Atext{'theme_xhred_sysinfo_disk_quotas'}
+                                        . $info->{'module'} eq 'quota-virtual-server'
+                                      ? $Atext{'theme_xhred_sysinfo_disk_quotas'}
                                       : ( $info->{'id'} . '-'
-                                            . $info->{'module'} eq 'bw-virtual-server' ? $Atext{'theme_xhred_sysinfo_bandwidth_quotas'}
+                                            . $info->{'module'} eq 'bw-virtual-server'
+                                          ? $Atext{'theme_xhred_sysinfo_bandwidth_quotas'}
                                           : ( $info->{'id'} . '-'
-                                                . $info->{'module'} eq 'updates-virtual-server' ? $Atext{'theme_xhred_sysinfo_vm_package_updates'}
-                                              : ( $info->{'id'} . '-' . $info->{'module'} eq 'acl_logins-acl' ? $Atext{'theme_xhred_sysinfo_recent_logins'}
+                                                . $info->{'module'} eq 'updates-virtual-server'
+                                              ? $Atext{'theme_xhred_sysinfo_vm_package_updates'}
+                                              : (   $info->{'id'} . '-' . $info->{'module'} eq 'acl_logins-acl'
+                                                  ? $Atext{'theme_xhred_sysinfo_recent_logins'}
                                                   : ( $info->{'desc'} )
                                               )
                                           )
@@ -425,10 +456,17 @@ sub get_extended_sysinfo
                           </h4>
                         </div>
                     <div id="'
-                      . $info->{'id'} . '-' . $info->{'module'} . '-collapse" class="panel-collapse collapse' . $open . '" role="tabpanel" aria-labelledby="' . $info->{'id'} . '-' . $info->{'module'} . '">
+                      . $info->{'id'} . '-'
+                      . $info->{'module'}
+                      . '-collapse" class="panel-collapse collapse'
+                      . $open
+                      . '" role="tabpanel" aria-labelledby="'
+                      . $info->{'id'} . '-'
+                      . $info->{'module'} . '">
                       <div class="panel-body">';
 
-                    $returned_sysinfo .= '<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-hover"><tbody>';
+                    $returned_sysinfo .=
+'<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-hover"><tbody>';
 
                     if ($info->{'type'} eq 'table'
                         && (   $info->{'module'} ne 'system-status'
@@ -556,7 +594,9 @@ sub print_netdata_link
 sub print_search
 {
     if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} ) {
-        print '<li class="menu-container"><form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">' . "\n";
+        print
+'<li class="menu-container"><form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
+          . "\n";
         print '<div class="form-group">' . "\n";
         if ( $t_uri_virtualmin != -1 ) {
             print '<input type="hidden" class="form-control" name="mod" value="virtual-server">' . "\n";
@@ -577,7 +617,9 @@ sub print_search
         elsif ( $t_uri_cloudmin != -1 ) {
             $_search = 'Cloudmin';
         }
-        print '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="' . $Atext{'left_search'} . '">' . "\n";
+        print
+'<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="'
+          . $Atext{'left_search'} . '">' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
     }
@@ -598,7 +640,8 @@ sub add_webprefix
 sub print_left_menu
 {
     my ( $module, $items, $group, $id, $selected, $xhr ) = @_;
-    my $__hr = 0;
+    my $__hr           = 0;
+    my $__custom_print = 0;
     foreach my $item (@$items) {
         if ( $module eq $item->{'module'} || $group ) {
 
@@ -717,8 +760,13 @@ sub print_left_menu
                     $icon = undef;
                 }
 
-                if ( $link && index( $link, '/virtual-server/list_scripts.cgi' ) == -1 && index( $link, '/virtual-server/edit_html.cgi' ) == -1 && index( $link, '/virtual-server/list_buckets.cgi' ) == -1
-                     || ( ( $__settings{'settings_leftmenu_vm_installscripts'} ne 'false' && index( $link, '/virtual-server/list_scripts.cgi' ) > -1 )
+                if (    $link
+                     && index( $link, '/virtual-server/list_scripts.cgi' ) == -1
+                     && index( $link, '/virtual-server/edit_html.cgi' ) == -1
+                     && index( $link, '/virtual-server/list_buckets.cgi' ) == -1
+                     || (
+                          ( $__settings{'settings_leftmenu_vm_installscripts'} ne 'false'
+                            && index( $link, '/virtual-server/list_scripts.cgi' ) > -1 )
                           || ( $__settings{'settings_leftmenu_vm_webpages'} ne 'false'
                                && index( $link, '/virtual-server/edit_html.cgi' ) > -1 )
                           || ( $__settings{'settings_leftmenu_vm_backup_amazon'} ne 'false'
@@ -761,24 +809,35 @@ sub print_left_menu
                 }
                 print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $c . '">' . "\n";
                 print_left_menu( $module, $item->{'members'}, 1, $c );
-                if (    $c eq 'global_setting'
-                     || $c eq 'global_settings' && &foreign_available("webmin") )
+                if ( ( $c eq 'global_setting' || $c eq 'global_settings' && &foreign_available("webmin") )
+                     && $__custom_print eq '0' )
                 {
-                    &print_category_link( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi",   $Atext{'settings_right_theme_left_configuration_title'}, 1 );
-                    &print_category_link( $gconfig{'webprefix'} . "/settings-editor_read.cgi", $Atext{'settings_right_theme_left_extensions_title'},    1 );
-                    &print_category_link( $gconfig{'webprefix'} . "/settings-upload.cgi",      $Atext{'settings_right_theme_left_logo_title'},          1 );
+                    &print_category_link( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi",
+                                          $Atext{'settings_right_theme_left_configuration_title'}, 1 );
+                    &print_category_link( $gconfig{'webprefix'} . "/settings-editor_read.cgi",
+                                          $Atext{'settings_right_theme_left_extensions_title'}, 1 );
+                    &print_category_link( $gconfig{'webprefix'} . "/settings-upload.cgi",
+                                          $Atext{'settings_right_theme_left_logo_title'}, 1 );
+
+                    $__custom_print++;
 
                     if ( licenses('vm') eq '1'
                          && $item->{'module'} eq 'virtual-server' )
                     {
-                        &print_category_link( $gconfig{'webprefix'} . "/virtual-server/licence.cgi", $Atext{'right_vlcheck'}, 1 );
+                        &print_category_link( $gconfig{'webprefix'} . "/virtual-server/licence.cgi",
+                                              $Atext{'right_vlcheck'}, 1 );
                     }
 
                     if ( licenses('cm') eq '1'
                          && $item->{'module'} eq 'server-manager' )
                     {
-                        &print_category_link( $gconfig{'webprefix'} . "/server-manager/licence.cgi", $Atext{'right_slcheck'}, 1 );
+                        &print_category_link( $gconfig{'webprefix'} . "/server-manager/licence.cgi",
+                                              $Atext{'right_slcheck'}, 1 );
                     }
+                }
+                elsif ( !foreign_available("webmin") && $__custom_print eq '0' ) {
+                    print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi", $Atext{'settings_title'}, 1 );
+                    $__custom_print++;
                 }
                 print "</ul></li>\n";
             }
@@ -915,9 +974,13 @@ sub get_sysinfo_vars
         my ($info) = &system_status::get_collected_info();
 
         # Define used vars
-        my ( $cpu_percent,             $mem_percent,    $virt_percent, $disk_percent,    $host,            $os,              $webmin_version,     $virtualmin_version, $cloudmin_version,
-             $authentic_theme_version, $local_time,     $kernel_arch,  $cpu_type,        $cpu_temperature, $hdd_temperature, $uptime,             $running_proc,       $load,
-             $real_memory,             $virtual_memory, $disk_space,   $package_message, $csf_title,       $csf_data,        $csf_remote_version, $authentic_remote_version );
+        my ( $cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+             $host,               $os,                      $webmin_version,  $virtualmin_version,
+             $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+             $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+             $running_proc,       $load,                    $real_memory,     $virtual_memory,
+             $disk_space,         $package_message,         $csf_title,       $csf_data,
+             $csf_remote_version, $authentic_remote_version );
 
         # Require memory information
         if ( $info->{'mem'} ) {
@@ -989,7 +1052,11 @@ sub get_sysinfo_vars
 
                       . ' <div class="btn-group margined-left-4">'
                       . ( ( $vs_license eq '1' )
-                          ? ' <a data-license class="btn btn-default btn-xxs" title="' . $Atext{'right_vlcheck'} . '" href="' . $gconfig{'webprefix'} . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
+                          ? ' <a data-license class="btn btn-default btn-xxs" title="'
+                            . $Atext{'right_vlcheck'}
+                            . '" href="'
+                            . $gconfig{'webprefix'}
+                            . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
                           : '</div>'
                       )
                       . '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
@@ -1017,7 +1084,11 @@ sub get_sysinfo_vars
 
                       . ' <div class="btn-group margined-left-4">'
                       . ( ( $vm2_license eq '1' )
-                          ? ' <a data-license class="btn btn-default btn-xxs" title="' . $Atext{'right_slcheck'} . '" href="' . $gconfig{'webprefix'} . '/server-manager/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
+                          ? ' <a data-license class="btn btn-default btn-xxs" title="'
+                            . $Atext{'right_slcheck'}
+                            . '" href="'
+                            . $gconfig{'webprefix'}
+                            . '/server-manager/licence.cgi"><i class="fa fa-refresh"></i></a></div>'
                           : '</div>'
                       )
                       . '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
@@ -1092,7 +1163,8 @@ sub get_sysinfo_vars
             if (    $__settings{'settings_sysinfo_csf_updates'} eq 'true'
                  && $get_user_level eq '0' )
             {
-                http_download( 'download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error, undef, undef, undef, undef, 5 );
+                http_download( 'download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
+                               undef, undef, undef, undef, 5 );
 
                 # Trim versions' number
                 $csf_installed_version =~ s/^\s+|\s+$//g;
@@ -1111,9 +1183,11 @@ sub get_sysinfo_vars
 
             $csf_title =
               $Atext{'body_firewall'} . ' '
-              . (   `pgrep lfd`
-                  ? ''
-                  : ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" href="#" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> ' );
+              . (
+                  `pgrep lfd`
+                ? ''
+                : ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" href="#" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
+              );
             $csf_data = (
                     '<a href="/csf">ConfigServer Security & Firewall</a> '
                   . $csf_installed_version . ''
@@ -1163,12 +1237,19 @@ sub get_sysinfo_vars
         $_time      = time();
         $local_time = '<span data-convertible-timestamp-full="' . $_time . '" >' . localtime($_time) . '</span>';
         if ( &foreign_available("time") ) {
-            $local_time = '<a data-convertible-timestamp-full="' . $_time . '" href=' . $gconfig{'webprefix'} . '/time/>' . $local_time . '</a>';
+            $local_time =
+                '<a data-convertible-timestamp-full="'
+              . $_time
+              . '" href='
+              . $gconfig{'webprefix'}
+              . '/time/>'
+              . $local_time . '</a>';
         }
 
         # Kernel and arch
         if ( $info->{'kernel'} ) {
-            $kernel_arch = &Atext( 'body_kernelon', $info->{'kernel'}->{'os'}, $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'} );
+            $kernel_arch = &Atext( 'body_kernelon',                $info->{'kernel'}->{'os'},
+                                   $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'} );
         }
 
         # CPU Type and cores
@@ -1183,7 +1264,7 @@ sub get_sysinfo_vars
         if ( $info->{'cputemps'} ) {
             foreach my $t ( @{ $info->{'cputemps'} } ) {
                 $cpu_temperature .=
-                    '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu" style="margin-right:3px; margin-bottom: 3px"> Core '
+'<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu" style="margin-right:3px; margin-bottom: 3px"> Core '
                   . $t->{'core'} . ': '
                   . int( $t->{'temp'} )
                   . '&#176;C</span>'
@@ -1196,13 +1277,19 @@ sub get_sysinfo_vars
                 $short =~ s/^\/dev\///;
                 my $emsg;
                 if ( $t->{'errors'} ) {
-                    $emsg .= '&nbsp;&nbsp;<span class="label label-warning bg-warning" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">' . &Atext( 'body_driveerr', $t->{'errors'} ) . "</span>";
+                    $emsg .=
+'&nbsp;&nbsp;<span class="label label-warning bg-warning" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
+                      . &Atext( 'body_driveerr', $t->{'errors'} )
+                      . "</span>";
                 }
                 elsif ( $t->{'failed'} ) {
-                    $emsg .= '&nbsp;&nbsp;<span class="label label-danger bg-danger" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">' . &Atext('body_drivefailed') . '</span>';
+                    $emsg .=
+'&nbsp;&nbsp;<span class="label label-danger bg-danger" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
+                      . &Atext('body_drivefailed')
+                      . '</span>';
                 }
                 $hdd_temperature .=
-                    '<span class="badge-custom badge-drivestatus" data-stats="drive" style="margin-right:3px; margin-bottom: 3px">'
+'<span class="badge-custom badge-drivestatus" data-stats="drive" style="margin-right:3px; margin-bottom: 3px">'
                   . $short . ': '
                   . int( $t->{'temp'} )
                   . '&#176;C '
@@ -1248,15 +1335,20 @@ sub get_sysinfo_vars
         if ( $info->{'mem'} ) {
 
             # Real memory details
-            $real_memory = &Atext( 'body_used', nice_size( ( $m[0] ) * 1000 ), nice_size( ( $m[0] - $m[1] ) * 1000 ) );
+            $real_memory =
+              &Atext( 'body_used', nice_size( ( $m[0] ) * 1000 ), nice_size( ( $m[0] - $m[1] ) * 1000 ) );
 
             # Virtual memory details
-            $virtual_memory = &Atext( 'body_used', nice_size( ( $m[2] ) * 1000 ), nice_size( ( $m[2] - $m[3] ) * 1000 ) );
+            $virtual_memory =
+              &Atext( 'body_used', nice_size( ( $m[2] ) * 1000 ), nice_size( ( $m[2] - $m[3] ) * 1000 ) );
         }
 
         # Local disk space
         if ( $info->{'disk_total'} && $info->{'disk_total'} ) {
-            $disk_space = &Atext( 'body_used_and_free', nice_size( $info->{'disk_total'} ), nice_size( $info->{'disk_free'} ), nice_size( $info->{'disk_total'} - $info->{'disk_free'} ) );
+            $disk_space = &Atext( 'body_used_and_free',
+                                  nice_size( $info->{'disk_total'} ),
+                                  nice_size( $info->{'disk_free'} ),
+                                  nice_size( $info->{'disk_total'} - $info->{'disk_free'} ) );
         }
 
         # Package updates
@@ -1268,7 +1360,13 @@ sub get_sysinfo_vars
             my $secs = scalar(@secs);
 
             if ( $poss && $secs ) {
-                $msg = &Atext( ( $poss gt 1 && $secs gt 1 ? 'body_upsec' : $poss gt 1 && $secs eq 1 ? 'body_upsec1' : $poss eq 1 && $secs gt 1 ? 'body_upsec2' : 'body_upsec3' ), $poss, $secs );
+                $msg = &Atext(
+                               (       $poss gt 1
+                                    && $secs gt 1 ? 'body_upsec'  : $poss gt 1
+                                    && $secs eq 1 ? 'body_upsec1' : $poss eq 1
+                                    && $secs gt 1 ? 'body_upsec2' : 'body_upsec3'
+                               ),
+                               $poss, $secs );
             }
             elsif ($poss) {
                 $msg = &Atext( ( $poss gt 1 ? 'body_upneed' : 'body_upneed1' ), $poss );
@@ -1289,9 +1387,13 @@ sub get_sysinfo_vars
             }
         }
 
-        return ( $cpu_percent,             $mem_percent,    $virt_percent, $disk_percent,    $host,            $os,              $webmin_version,     $virtualmin_version, $cloudmin_version,
-                 $authentic_theme_version, $local_time,     $kernel_arch,  $cpu_type,        $cpu_temperature, $hdd_temperature, $uptime,             $running_proc,       $load,
-                 $real_memory,             $virtual_memory, $disk_space,   $package_message, $csf_title,       $csf_data,        $csf_remote_version, $authentic_remote_version );
+        return ( $cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+                 $host,               $os,                      $webmin_version,  $virtualmin_version,
+                 $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+                 $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+                 $running_proc,       $load,                    $real_memory,     $virtual_memory,
+                 $disk_space,         $package_message,         $csf_title,       $csf_data,
+                 $csf_remote_version, $authentic_remote_version );
 
     }
     else {
@@ -1316,35 +1418,106 @@ sub csf_mod
         my $x_version = "01";
 
         open( my $fh, '>', $csf_header_mod ) or die $!;
-        print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' . ( theme_version() . '-' . $x_version ) . '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/codemirror.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/codemirror.' . $ext . '.js?' . theme_version() . '"></script>' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/jquery.datatables.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/jquery.datatables.' . $ext . '.js?' . theme_version() . '"></script>' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fontbase.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/authentic.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+        print $fh '<link data-hostname="'
+          . &get_display_hostname()
+          . '" data-version="'
+          . ( theme_version() . '-' . $x_version )
+          . '" rel="shortcut icon" href="'
+          . $gconfig{'webprefix'}
+          . '/images/favicon-webmin.ico">' . "\n";
+        print $fh '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/codemirror.'
+          . $ext . '.css?'
+          . theme_version()
+          . '" rel="stylesheet">' . "\n";
+        print $fh '<script src="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/js/codemirror.'
+          . $ext . '.js?'
+          . theme_version()
+          . '"></script>' . "\n";
+        print $fh '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/jquery.datatables.'
+          . $ext . '.css?'
+          . theme_version()
+          . '" rel="stylesheet">' . "\n";
+        print $fh '<script src="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/js/jquery.datatables.'
+          . $ext . '.js?'
+          . theme_version()
+          . '"></script>' . "\n";
+        print $fh '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/fontbase.'
+          . $ext . '.css?'
+          . theme_version()
+          . '" rel="stylesheet">' . "\n";
+        print $fh '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/authentic.'
+          . $ext . '.css?'
+          . theme_version()
+          . '" rel="stylesheet">' . "\n";
 
         if ( length $__settings{'settings_background_color'}
              && $__settings{'settings_background_color'} ne 'gainsboro' )
         {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' . lc( $__settings{'settings_background_color'} ) . '.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+            print $fh '<link href="'
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/css/palettes/'
+              . lc( $__settings{'settings_background_color'} ) . '.'
+              . $ext . '.css?'
+              . theme_version()
+              . '" rel="stylesheet">' . "\n";
         }
 
         if ( -r $scripts ) {
-            print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/scripts.js?' . time() . '"></script>' . "\n";
+            print $fh '<script src="'
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/js/scripts.js?'
+              . time()
+              . '"></script>' . "\n";
         }
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . theme_version() . '"></script>' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+        print $fh '<script src="'
+          . $gconfig{'webprefix'}
+          . '/extensions/csf/csf.'
+          . $ext . '.js?'
+          . theme_version()
+          . '"></script>' . "\n";
+        print $fh '<link href="'
+          . $gconfig{'webprefix'}
+          . '/extensions/csf/csf.'
+          . $ext . '.css?'
+          . theme_version()
+          . '" rel="stylesheet">' . "\n";
 
         if ( !$__settings{'settings_font_family'} ) {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+            print $fh '<link href="'
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/css/fonts-roboto.'
+              . $ext . '.css?'
+              . theme_version()
+              . '" rel="stylesheet">' . "\n";
         }
         elsif ( $__settings{'settings_font_family'} != '1' ) {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $__settings{'settings_font_family'} . '.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+            print $fh '<link href="'
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/css/font-'
+              . $__settings{'settings_font_family'} . '.'
+              . $ext . '.css?'
+              . theme_version()
+              . '" rel="stylesheet">' . "\n";
         }
 
         if ( -r $styles ) {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' . time() . '" rel="stylesheet">' . "\n";
+            print $fh '<link href="'
+              . $gconfig{'webprefix'}
+              . '/unauthenticated/css/styles.css?'
+              . time()
+              . '" rel="stylesheet">' . "\n";
         }
 
         close $fh;
@@ -1458,7 +1631,10 @@ sub print_table_row
     my ( $title, $content, $id ) = @_;
     print '<tr>' . "\n";
     print '<td style="width:30%;vertical-align:middle; padding:8px;"><strong>' . $title . '</strong></td>' . "\n";
-    print '<td  style="width:70%; vertical-align:middle; padding:8px;"><span data-id="' . $id . '">' . $content . '</span></td>' . "\n";
+    print '<td  style="width:70%; vertical-align:middle; padding:8px;"><span data-id="'
+      . $id . '">'
+      . $content
+      . '</span></td>' . "\n";
     print '</tr>' . "\n";
 }
 
@@ -1493,7 +1669,12 @@ sub print_favorites
                 print '
                     <li class="menu-exclude ui-sortable-handle">
                         <a class="menu-exclude-link" target="page" href="'
-                  . $favorite->{"link"} . '"><i data-product="' . $favorite->{"icon"} . '" class="wbm-' . $favorite->{"icon"} . ' wbm-sm">&nbsp;</i><span class="f__c">
+                  . $favorite->{"link"}
+                  . '"><i data-product="'
+                  . $favorite->{"icon"}
+                  . '" class="wbm-'
+                  . $favorite->{"icon"}
+                  . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $favorite->{"title"} . '
                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-times"></i></small></span></a>
                     </li>
@@ -1558,17 +1739,31 @@ sub embed_logo
 
     if ( -r $config_directory . "/authentic-theme/" . $logo . ".png" ) {
         if ( $get_user_level eq '0'
-             && (    -s $config_directory . "/authentic-theme/" . $logo . ".png" ne -s $root_directory . "/authentic-theme/images/" . $logo . ".png"
-                  || -s $usermin_config_directory . "/authentic-theme/" . $logo . ".png" ne -s $usermin_root_directory . "/authentic-theme/images/" . $logo . ".png" ) )
+             && (   -s $config_directory
+                  . "/authentic-theme/"
+                  . $logo
+                  . ".png" ne -s $root_directory
+                  . "/authentic-theme/images/"
+                  . $logo . ".png"
+                  || -s $usermin_config_directory
+                  . "/authentic-theme/"
+                  . $logo
+                  . ".png" ne -s $usermin_root_directory
+                  . "/authentic-theme/images/"
+                  . $logo
+                  . ".png" ) )
         {
             # Update logo in case it changed
-            copy_source_dest( $config_directory . "/authentic-theme/" . $logo . ".png", $root_directory . "/authentic-theme/images" );
+            copy_source_dest( $config_directory . "/authentic-theme/" . $logo . ".png",
+                              $root_directory . "/authentic-theme/images" );
 
             # Push logo update in case Usermin is installed
             if ( usermin_available() ) {
-                copy_source_dest( $usermin_config_directory . "/authentic-theme/" . $logo . ".png", $usermin_root_directory . "/authentic-theme/images" );
+                copy_source_dest( $usermin_config_directory . "/authentic-theme/" . $logo . ".png",
+                                  $usermin_root_directory . "/authentic-theme/images" );
                 if ( -r $usermin_config_directory . "/authentic-theme/logo_welcome.png" ) {
-                    copy_source_dest( $usermin_config_directory . "/authentic-theme/logo_welcome.png", $usermin_root_directory . "/authentic-theme/images" );
+                    copy_source_dest( $usermin_config_directory . "/authentic-theme/logo_welcome.png",
+                                      $usermin_root_directory . "/authentic-theme/images" );
                 }
             }
         }
@@ -1602,17 +1797,37 @@ sub embed_login_head
       ) . '.ico">' . "\n";
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
-    print '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/bootstrap.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+    print '<link href="'
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/css/bootstrap.'
+      . $ext . '.css?'
+      . theme_version()
+      . '" rel="stylesheet">' . "\n";
 
-    print '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fontbase.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+    print '<link href="'
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/css/fontbase.'
+      . $ext . '.css?'
+      . theme_version()
+      . '" rel="stylesheet">' . "\n";
 
-    print '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/authentic.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+    print '<link href="'
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/css/authentic.'
+      . $ext . '.css?'
+      . theme_version()
+      . '" rel="stylesheet">' . "\n";
 
     embed_css_content_palette();
     embed_css_fonts();
     embed_styles(1);
 
-    print '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/jquery.' . $ext . '.js?' . theme_version() . '"></script>' . "\n";
+    print '<script src="'
+      . $gconfig{'webprefix'}
+      . '/unauthenticated/js/jquery.'
+      . $ext . '.js?'
+      . theme_version()
+      . '"></script>' . "\n";
     print '</head>', "\n";
 }
 
@@ -1629,11 +1844,14 @@ sub get_authentic_version
     if ( $__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' ) {
 
         # Get remote version if allowed
-        http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt', \$remote_version, \$error, undef, 1, undef, undef, 5 );
+        http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
+                       \$remote_version, \$error, undef, 1, undef, undef, 5 );
 
         # Trim versions' number
         $remote_version =~ s/^\s+|\s+$//g;
-        if ( $__settings{'settings_sysinfo_theme_beta_updates'} ne 'true' && index( $remote_version, 'beta' ) != -1 ) {
+        if ( $__settings{'settings_sysinfo_theme_beta_updates'} ne 'true'
+             && index( $remote_version, 'beta' ) != -1 )
+        {
             $remote_version = '0';
         }
     }
@@ -1720,6 +1938,109 @@ sub get_default_target
     return $default;
 }
 
+sub settings_get_select_font_family
+{
+    my ( $v, $k ) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+
+                    <option value="system-default"'
+      . ( $v eq 'system-default' && ' selected' ) . '>['
+      . $Atext{'theme_xhred_global_local_system_default'}
+      . ']</option>
+
+                    <option value="0"'
+      . ( $v eq '0' && ' selected' )
+      . '>Roboto ('
+      . $Atext{'theme_xhred_global_default'} . ', '
+      . lc( $Atext{'theme_xhred_global_shipped'} )
+      . ')</option>
+
+                    <option value="1"'
+      . ( $v eq '1' && ' selected' ) . '>Roboto</option>
+
+                    <option value="arial"'
+      . ( $v eq 'arial' && ' selected' ) . '>Arial</option>
+
+
+                    <option value="helvetica-neue"'
+      . ( $v eq 'helvetica-neue' && ' selected' ) . '>Helvetica Neue</option>
+
+                    <option value="open-sans"'
+      . ( $v eq 'open-sans' && ' selected' ) . '>Open Sans</option>
+
+                    <option value="open-sans-condensed"'
+      . ( $v eq 'open-sans-condensed' && ' selected' ) . '>Open Sans Condensed</option>
+
+                    <option value="sans-serif"'
+      . ( $v eq 'sans-serif' && ' selected' ) . '>Sans Serif</option>
+
+                    <option value="segoe-ui"'
+      . ( $v eq 'segoe-ui' && ' selected' ) . '>Segoe UI</option>
+
+                    <option value="tahoma"'
+      . ( $v eq 'tahoma' && ' selected' ) . '>Tahoma</option>
+
+                    <option value="trebuchet-ms"'
+      . ( $v eq 'trebuchet-ms' && ' selected' ) . '>Trebuchet MS</option>
+
+                </select>';
+
+}
+
+sub settings_get_select_navigation_color
+{
+    my ( $v, $k ) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+
+                    <option value="blue"'
+      . ( $v eq 'blue' && ' selected' ) . '>Royal Blue (' . $Atext{'theme_xhred_global_default'} . ')</option>
+
+                    <option value="darkBlue"'
+      . ( $v eq 'darkBlue' && ' selected' ) . '>Midnight Blue</option>
+
+                    <option value="lightBlue"'
+      . ( $v eq 'lightBlue' && ' selected' ) . '>Dodger Blue</option>
+
+                    <option value="gold"'
+      . ( $v eq 'gold' && ' selected' ) . '>Pale Golden</option>
+
+                    <option value="green"'
+      . ( $v eq 'green' && ' selected' ) . '>Sea Green</option>
+
+                 <option value="red"'
+      . ( $v eq 'red' && ' selected' ) . '>Dark Red</option>
+
+                    <option value="indianRed"'
+      . ( $v eq 'indianRed' && ' selected' ) . '>Indian Red</option>
+
+                    <option value="orange"'
+      . ( $v eq 'orange' && ' selected' ) . '>Longhorn Orange</option>
+
+                    <option value="white"'
+      . ( $v eq 'white' && ' selected' ) . '>White Snow</option>
+
+                    <option value="brown"'
+      . ( $v eq 'brown' && ' selected' ) . '>Saddle Brown</option>
+
+
+                    <option value="purple"'
+      . ( $v eq 'purple' && ' selected' ) . '>Dark Purple</option>
+
+                    <option value="grey"'
+      . ( $v eq 'grey' && ' selected' ) . '>Dim Grey</option>
+
+                    <option value="darkGrey"'
+      . ( $v eq 'darkGrey' && ' selected' ) . '>Dark Grey</option>
+
+                    <option value="noir"'
+      . ( $v eq 'noir' && ' selected' ) . '>Noir</option>
+
+                    <option value="gunmetal"'
+      . ( $v eq 'gunmetal' && ' selected' ) . '>Gunmetal</option>
+                </select>';
+
+}
+
 sub _settings
 {
     my ( $t, $k, $v ) = @_;
@@ -1763,18 +2084,12 @@ sub _settings
             '1',
             'settings_contrast_level_navigation',
             '1',
-            'settings_background_color',
-            'gainsboro',
             'settings_grayscale_level_content',
             '0',
             'settings_saturate_level_content',
             '1',
             'settings_hue_level_content',
             '0',
-            'settings_cm_view_palette',
-            'monokai',
-            'settings_cm_editor_palette',
-            'monokai',
             'settings_hide_top_loader',
             'false',
             'settings_animation_left',
@@ -1788,11 +2103,7 @@ sub _settings
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',
-            _settings( 'fa',
-                       'sub-title',
-                       '' . "~"
-                         . &Atext( 'settings_window_replaced_timestamps_options_description'
-                         )
+            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_window_replaced_timestamps_options_description')
             ),
             'settings_window_replace_timestamps',
             'true',
@@ -1800,17 +2111,12 @@ sub _settings
             'LLLL',
             'settings_window_replaced_timestamp_format_short',
             'L, LTS', '__',
-            _settings( 'fa', 'sub-title',
-                       '' . "~" . &Atext('settings_window_exclusion_description')
-            ),
+            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_window_exclusion_description') ),
             'settings_window_exclusion_list',
             'sysstats,drweb-maild,cwaf',
 
             '__',
-            _settings( 'fa', 'bell',
-                       &Atext(
-                              'settings_right_notification_slider_options_title')
-            ),
+            _settings( 'fa', 'bell', &Atext('settings_right_notification_slider_options_title') ),
             'settings_side_slider_enabled',
             'true',
             'settings_side_slider_fixed',
@@ -1829,9 +2135,7 @@ sub _settings
             '5',
 
             '__',
-            _settings( 'fa', 'bars',
-                       &Atext('settings_right_navigation_menu_title')
-            ),
+            _settings( 'fa', 'bars', &Atext('settings_right_navigation_menu_title') ),
             'settings_leftmenu_width',
             '260',
             'settings_switch_rdisplay',
@@ -1841,6 +2145,8 @@ sub _settings
             'settings_leftmenu_section_hide_unused_modules',
             'false',
             'settings_sysinfo_link_mini',
+            'false',
+            'settings_show_night_mode_link',
             'true',
             'settings_show_terminal_link',
             'true',
@@ -1851,7 +2157,7 @@ sub _settings
             'settings_leftmenu_button_language',
             'false',
             'settings_leftmenu_button_refresh',
-            'true',
+            'false',
             'settings_leftmenu_singlelink_icons',
             'true',
             'settings_leftmenu_vm_cm_dropdown_icons',
@@ -1874,9 +2180,7 @@ sub _settings
             'false',
 
             '__',
-            _settings( 'fa', 'table',
-                       &Atext('settings_right_table_options_title')
-            ),
+            _settings( 'fa', 'table', &Atext('settings_right_table_options_title') ),
             'settings_right_iconize_header_links',
             'true',
             'settings_right_hide_table_icons',
@@ -1891,10 +2195,10 @@ sub _settings
             'true',
 
             '__',
-            _settings( 'fa', 'keyboard-o',
-                       &Atext('settings_right_hotkey_options_title')
-            ),
+            _settings( 'fa', 'keyboard-o', &Atext('settings_right_hotkey_options_title') ),
             'settings_hotkeys_active',
+            'true',
+            'settings_hotkeys_tooltip',
             'true',
             'settings_hotkey_toggle_modifier',
             'altKey',
@@ -1919,13 +2223,10 @@ sub _settings
             'settings_hotkey_focus_search',
             's',
             'settings_hotkey_reload',
-            'r', '__',
-            _settings( 'fa',
-                       'sub-title',
-                       '' . "~"
-                         . &Atext(
-                                  'settings_right_hotkey_custom_options_description')
-            ),
+            'r',
+            'settings_hotkey_toggle_key_night_mode',
+            'l', '__',
+            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_right_hotkey_custom_options_description') ),
             'settings_hotkey_custom_1',
             '',
             'settings_hotkey_custom_2',
@@ -1946,9 +2247,7 @@ sub _settings
             '',
 
             '__',
-            _settings( 'fa', 'info-circle',
-                       &Atext('settings_right_sysinfo_page_options_title')
-            ),
+            _settings( 'fa', 'info-circle', &Atext('settings_right_sysinfo_page_options_title') ),
             'settings_sysinfo_easypie_charts',
             'true',
             'settings_sysinfo_easypie_charts_width',
@@ -1973,8 +2272,9 @@ sub _settings
         my @_s_e = ();
 
         # List of combined settings for Virtualmin/Cloudmin/Usermin
-        my @s_vc_e =
-          ( 'settings_leftmenu_vm_cm_dropdown_icons', 'settings_leftmenu_section_hide_vm_and_cm_links', 'settings_leftmenu_singlelink_icons', 'settings_right_default_tab_webmin', 'settings_force_default_tab', 'settings_right_reload' );
+        my @s_vc_e = ( 'settings_leftmenu_vm_cm_dropdown_icons', 'settings_leftmenu_section_hide_vm_and_cm_links',
+                       'settings_leftmenu_singlelink_icons',     'settings_right_default_tab_webmin',
+                       'settings_force_default_tab',             'settings_right_reload' );
 
         if (    !&foreign_available("server-manager")
              && !foreign_available("virtual-server") )
@@ -1992,7 +2292,9 @@ sub _settings
         }
 
         # List of settings for Virtualmin
-        my @s_vm_e = ( 'settings_leftmenu_vm_installscripts', 'settings_leftmenu_vm_webpages', 'settings_leftmenu_vm_backup_amazon', 'settings_right_virtualmin_default', 'settings_hotkey_toggle_key_virtualmin' );
+        my @s_vm_e = ( 'settings_leftmenu_vm_installscripts', 'settings_leftmenu_vm_webpages',
+                       'settings_leftmenu_vm_backup_amazon',  'settings_right_virtualmin_default',
+                       'settings_hotkey_toggle_key_virtualmin' );
 
         if ( !foreign_available("virtual-server") ) {
             foreach my $e (@s_vm_e) {
@@ -2096,7 +2398,7 @@ sub _settings
           . '">
                 <div class="table-responsive">
                     <table class="table table-striped table-condensed table-subtable">
-                        <thead><tr><th class="table-title" style="width: auto"><i class="fa fa-cogs vertical-align-text-bottom"></i>&nbsp;<b>'
+                        <thead><tr><th class="table-title" style="width: auto"><i class="fa fa-cogs vertical-align-text-middle"></i>&nbsp;<b>'
           . $Atext{'settings_right_theme_configurable_options_title'} . '</b></th></tr></thead>
                         <tbody>
                             <tr>
@@ -2115,7 +2417,10 @@ sub _settings
         return '
             <tr>
                 <td colspan="2" class="col_value'
-          . ( $k ? ' col_header ' : '' ) . ' atssection"><b>' . $k . '</b>' . ( $v && '<br><div class="smaller text-normal no-padding">' . $v . '</div>' ) . '</td>
+          . ( $k ? ' col_header ' : '' )
+          . ' atssection"><b>'
+          . $k . '</b>'
+          . ( $v && '<br><div class="smaller text-normal no-padding">' . $v . '</div>' ) . '</td>
             </tr>
         ';
     }
@@ -2182,7 +2487,12 @@ sub _settings
 
             $v = '
                 <input style="display: inline;'
-              . $width . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' . $k . '" value="' . $v . '"' . $max_length . '>
+              . $width
+              . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="'
+              . $k
+              . '" value="'
+              . $v . '"'
+              . $max_length . '>
             ';
 
         }
@@ -2239,7 +2549,15 @@ sub _settings
             }
             $v = '
                 <input style="display: inline; width: 80%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="'
-              . $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
+              . $range_min
+              . '" max="'
+              . $range_max
+              . '" step="'
+              . $range_step
+              . '" name="'
+              . $k
+              . '" value="'
+              . $v . '">
             ';
 
         }
@@ -2275,7 +2593,11 @@ sub _settings
 
             $v = '
                 <input style="display: inline;'
-              . $width . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' . $k . '" value="' . $v . '">
+              . $width
+              . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="'
+              . $k
+              . '" value="'
+              . $v . '">
             ';
         }
         elsif ( $k eq 'settings_right_default_tab_webmin' ) {
@@ -2284,10 +2606,16 @@ sub _settings
               . ( $v eq '/' && ' selected' ) . '>Webmin</option>
 
                 '
-              . ( &foreign_available("virtual-server") && ' <option value="/?virtualmin"' . ( $v eq '/?virtualmin' && ' selected' ) . '>Virtualmin</option> ' ) . '
+              . ( &foreign_available("virtual-server")
+                  && ' <option value="/?virtualmin"'
+                  . ( $v eq '/?virtualmin' && ' selected' )
+                  . '>Virtualmin</option> ' )
+              . '
 
                '
-              . ( &foreign_available("server-manager") && ' <option value="/?cloudmin"' . ( $v eq '/?cloudmin' && ' selected' ) . '>Cloudmin</option>' ) . '
+              . ( &foreign_available("server-manager")
+                  && ' <option value="/?cloudmin"' . ( $v eq '/?cloudmin' && ' selected' ) . '>Cloudmin</option>' )
+              . '
                 </select>';
         }
         elsif ( $k eq 'settings_right_default_tab_usermin' ) {
@@ -2296,7 +2624,9 @@ sub _settings
               . ( $v eq '/' && ' selected' ) . '>Usermin</option>
 
                 '
-              . ( usermin_available('mailbox') && ' <option value="/?mail"' . ( $v eq '/?mail' && ' selected' ) . '>Mail</option> ' ) . '
+              . ( usermin_available('mailbox')
+                  && ' <option value="/?mail"' . ( $v eq '/?mail' && ' selected' ) . '>Mail</option> ' )
+              . '
 
                 </select>';
         }
@@ -2324,125 +2654,21 @@ sub _settings
         elsif ( $k eq 'settings_right_cloudmin_default' ) {
             get_user_level();
             @servers = &server_manager::list_available_managed_servers_sorted();
-            $v = &ui_select( $k, $v, [ [ undef, undef ], [ 'index.cgi', $Atext{'theme_settings_cloudmin'} ], map { [ $_->{'id'}, $_->{'host'} ] } @servers, ] );
+            $v = &ui_select( $k, $v,
+                             [  [ undef,       undef ],
+                                [ 'index.cgi', $Atext{'theme_settings_cloudmin'} ],
+                                map { [ $_->{'id'}, $_->{'host'} ] } @servers,
+                             ] );
 
         }
         elsif ( $k eq 'settings_font_family' ) {
-            $v = '<select class="ui_select" name="' . $k . '">
-
-                    <option value="system-default"'
-              . ( $v eq 'system-default' && ' selected' ) . '>[' . $Atext{'theme_xhred_global_local_system_default'} . ']</option>
-
-                    <option value="0"'
-              . ( $v eq '0' && ' selected' ) . '>Roboto (' . $Atext{'theme_xhred_global_default'} . ', ' . lc( $Atext{'theme_xhred_global_shipped'} ) . ')</option>
-
-                    <option value="1"'
-              . ( $v eq '1' && ' selected' ) . '>Roboto</option>
-
-                    <option value="arial"'
-              . ( $v eq 'arial' && ' selected' ) . '>Arial</option>
-
-
-                    <option value="helvetica-neue"'
-              . ( $v eq 'helvetica-neue' && ' selected' ) . '>Helvetica Neue</option>
-
-                    <option value="open-sans"'
-              . ( $v eq 'open-sans' && ' selected' ) . '>Open Sans</option>
-
-                    <option value="open-sans-condensed"'
-              . ( $v eq 'open-sans-condensed' && ' selected' ) . '>Open Sans Condensed</option>
-
-                    <option value="sans-serif"'
-              . ( $v eq 'sans-serif' && ' selected' ) . '>Sans Serif</option>
-
-                    <option value="segoe-ui"'
-              . ( $v eq 'segoe-ui' && ' selected' ) . '>Segoe UI</option>
-
-                    <option value="tahoma"'
-              . ( $v eq 'tahoma' && ' selected' ) . '>Tahoma</option>
-
-                    <option value="trebuchet-ms"'
-              . ( $v eq 'trebuchet-ms' && ' selected' ) . '>Trebuchet MS</option>
-
-                </select>';
+            $v = settings_get_select_font_family( $v, $k );
         }
         elsif ( $k eq 'settings_navigation_color' ) {
-            $v = '<select class="ui_select" name="' . $k . '">
-
-                    <option value="blue"'
-              . ( $v eq 'blue' && ' selected' ) . '>Royal Blue (' . $Atext{'theme_xhred_global_default'} . ')</option>
-
-                    <option value="darkBlue"'
-              . ( $v eq 'darkBlue' && ' selected' ) . '>Midnight Blue</option>
-
-                    <option value="lightBlue"'
-              . ( $v eq 'lightBlue' && ' selected' ) . '>Dodger Blue</option>
-
-                    <option value="gold"'
-              . ( $v eq 'gold' && ' selected' ) . '>Pale Golden</option>
-
-                    <option value="green"'
-              . ( $v eq 'green' && ' selected' ) . '>Sea Green</option>
-
-                 <option value="red"'
-              . ( $v eq 'red' && ' selected' ) . '>Dark Red</option>
-
-                    <option value="indianRed"'
-              . ( $v eq 'indianRed' && ' selected' ) . '>Indian Red</option>
-
-                    <option value="orange"'
-              . ( $v eq 'orange' && ' selected' ) . '>Longhorn Orange</option>
-
-                    <option value="white"'
-              . ( $v eq 'white' && ' selected' ) . '>White Snow</option>
-
-                    <option value="brown"'
-              . ( $v eq 'brown' && ' selected' ) . '>Saddle Brown</option>
-
-
-                    <option value="purple"'
-              . ( $v eq 'purple' && ' selected' ) . '>Dark Purple</option>
-
-                    <option value="grey"'
-              . ( $v eq 'grey' && ' selected' ) . '>Dim Grey</option>
-
-                    <option value="darkGrey"'
-              . ( $v eq 'darkGrey' && ' selected' ) . '>Dark Grey</option>
-
-                    <option value="noir"'
-              . ( $v eq 'noir' && ' selected' ) . '>Noir</option>
-
-                    <option value="gunmetal"'
-              . ( $v eq 'gunmetal' && ' selected' ) . '>Gunmetal</option>
-
-
-                </select>';
+            $v = settings_get_select_navigation_color( $v, $k );
         }
         elsif ( $k eq 'settings_background_color' ) {
-            $v = '<select class="ui_select" name="' . $k . '">
-
-
-              <option value="gainsboro"'
-              . ( $v eq 'gainsboro' && ' selected' ) . '>Gainsboro (' . $Atext{'theme_xhred_global_default'} . ')</option>
-
-              <option value="nightRider"'
-              . ( $v eq 'nightRider' && ' selected' ) . '>Night Rider</option>
-
-                </select>';
-        }
-        elsif (    $k eq 'settings_cm_view_palette'
-                || $k eq 'settings_cm_editor_palette' )
-        {
-            $v = '<select class="ui_select" name="' . $k . '">
-
-                    <option value="monokai"'
-              . ( $v eq 'monokai' && ' selected' ) . '>Monokai (' . $Atext{'theme_xhred_global_default'} . ')</option>
-
-                    <option value="elegant"'
-              . ( $v eq 'elegant' && ' selected' ) . '>Elegant</option>
-
-
-                </select>';
+            $v = settings_get_select_background_color( $v, $k );
         }
         elsif ( $k eq 'settings_side_slider_palette' ) {
             $v = '<select class="ui_select" name="' . $k . '">
@@ -2465,7 +2691,10 @@ sub _settings
         return '
             <tr class="atshover">
                 <td class="col_label atscontent"><b>'
-          . $Atext{$k} . '</b>' . ( $Atext{ $k . '_description' } && '<div class="smaller text-normal no-padding">' . $Atext{ $k . '_description' } . '</div>' ) . '</td>
+          . $Atext{$k} . '</b>'
+          . ( $Atext{ $k . '_description' }
+              && '<div class="smaller text-normal no-padding">' . $Atext{ $k . '_description' } . '</div>' )
+          . '</td>
                 <td class="col_value atscontent"><span>'
           . $v . '</span></td>
             </tr>
@@ -2497,9 +2726,13 @@ sub _settings
                             <td style="text-align: right;">
                                 <div class="btn-group">
                                     <a class="btn btn-default page_footer_ajax_submit" id="edit_styles" href="'
-          . $gconfig{'webprefix'} . '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>' . $Atext{'settings_right_theme_extensions'} . '</a>
+          . $gconfig{'webprefix'}
+          . '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>'
+          . $Atext{'settings_right_theme_extensions'} . '</a>
                                     <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="'
-          . $gconfig{'webprefix'} . '/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>' . $Atext{'settings_right_theme_logos'} . '</a>
+          . $gconfig{'webprefix'}
+          . '/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>'
+          . $Atext{'settings_right_theme_logos'} . '</a>
                                 </div>
                             </td>
                         </tr>
@@ -2552,7 +2785,8 @@ sub _settings
 
         if ( usermin_available() ) {
             unlink_file( $__usermin_config . "/authentic-theme/settings.js" );
-            copy_source_dest( $config_directory . "/authentic-theme/settings.js", $__usermin_config . "/authentic-theme" );
+            copy_source_dest( $config_directory . "/authentic-theme/settings.js",
+                              $__usermin_config . "/authentic-theme" );
         }
 
         if ( -r $config_directory . "/authentic-theme/logo.png"
@@ -2565,7 +2799,8 @@ sub _settings
              && usermin_available() )
         {
             unlink_file( $__usermin_config . "/authentic-theme/logo_welcome.png" );
-            copy_source_dest( $config_directory . "/authentic-theme/logo_welcome.png", $__usermin_config . "/authentic-theme" );
+            copy_source_dest( $config_directory . "/authentic-theme/logo_welcome.png",
+                              $__usermin_config . "/authentic-theme" );
         }
     }
 }
@@ -2641,13 +2876,18 @@ sub get_xhr_request
             print resolve_links( get_access_data('root') . $in{'xhr-get_symlink_path'} );
         }
         elsif ( $in{'xhr-get_autocompletes'} eq '1' ) {
-            my @data = get_autocomplete_shell( $in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'} );
+            my @data =
+              get_autocomplete_shell( $in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'} );
             print get_json( \@data );
         }
         elsif ( $in{'xhr-info'} eq '1' ) {
-            our ( $cpu_percent,             $mem_percent,    $virt_percent, $disk_percent,    $host,            $os,              $webmin_version,     $virtualmin_version, $cloudmin_version,
-                  $authentic_theme_version, $local_time,     $kernel_arch,  $cpu_type,        $cpu_temperature, $hdd_temperature, $uptime,             $running_proc,       $load,
-                  $real_memory,             $virtual_memory, $disk_space,   $package_message, $csf_title,       $csf_data,        $csf_remote_version, $authentic_remote_version
+            our ( $cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+                  $host,               $os,                      $webmin_version,  $virtualmin_version,
+                  $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+                  $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+                  $running_proc,       $load,                    $real_memory,     $virtual_memory,
+                  $disk_space,         $package_message,         $csf_title,       $csf_data,
+                  $csf_remote_version, $authentic_remote_version
             ) = get_sysinfo_vars();
 
             if ( &foreign_available("system-status") ) {
@@ -2731,7 +2971,8 @@ sub get_default_right
             }
             else {
                 if ( !$t_uri___i ) {
-                    $udefgoto = '/virtual-server/summary_domain.cgi?dom=' . $__settings{'settings_right_virtualmin_default'};
+                    $udefgoto =
+                      '/virtual-server/summary_domain.cgi?dom=' . $__settings{'settings_right_virtualmin_default'};
                 }
                 else {
                     if ($t_uri___i) {
@@ -3040,7 +3281,9 @@ sub content
 
     # Mobile toggle
     print '<div class="visible-xs mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
-    print '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' . "\n";
+    print
+      '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
+      . "\n";
     print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
     print '</button>' . "\n";
     print '</div>' . "\n";
@@ -3062,7 +3305,10 @@ sub content
 
     # Custom text
     print '<ul class="user-html"><li class="user-html-string">'
-      . ( ( $__settings{'settings_leftmenu_user_html_only_for_administrator'} ne 'true' || $__settings{'settings_leftmenu_user_html_only_for_administrator'} eq 'true' && $get_user_level eq '0' )
+      . (
+          (      $__settings{'settings_leftmenu_user_html_only_for_administrator'} ne 'true'
+              || $__settings{'settings_leftmenu_user_html_only_for_administrator'} eq 'true' && $get_user_level eq '0'
+          )
           ? $__settings{'settings_leftmenu_user_html'}
           : undef
       ) . '</li></ul>';
@@ -3080,12 +3326,20 @@ sub content
     print '<div class="loader-container">' . "\n";
     print '<div class="loader"><span class="loading"><svg style="'
       . get_filters('content')
-      . '" class="loading-container" viewBox="0 0 44 44" data-reactid=".0.0.0"><circle class="loading-path" cx="22" cy="22" r="20" fill="none" stroke-width="0.4" data-reactid=".0.0.0.0"></circle></svg></span></div>' . "\n";
+      . '" class="loading-container" viewBox="0 0 44 44" data-reactid=".0.0.0"><circle class="loading-path" cx="22" cy="22" r="20" fill="none" stroke-width="0.4" data-reactid=".0.0.0.0"></circle></svg></span></div>'
+      . "\n";
     print '</div>' . "\n";
     print '<script>__lrs()</script>';
     print '<iframe name="page" id="iframe" src="'
       . $gconfig{'webprefix'}
-      . ( ( -f $root_directory . '/authentic-theme/update' && $t_uri_dashboard == -1 && $get_user_level ne '1' && $get_user_level ne '2' && $get_user_level ne '3' && $get_user_level ne '4' )
+      . (
+          (      -f $root_directory . '/authentic-theme/update'
+              && $t_uri_dashboard == -1
+              && $get_user_level ne '1'
+              && $get_user_level ne '2'
+              && $get_user_level ne '3'
+              && $get_user_level ne '4'
+          )
           ? '/sysinfo.cgi'
           : $t_goto
       ) . '">' . "\n";
@@ -3095,7 +3349,8 @@ sub content
 
 sub changelog()
 {
-    my $changelog_data = ( read_file_contents( $root_directory . '/' . $current_theme . "/CHANGELOG.md" ) =~ /####Version(.*?)####Version/s )[0];
+    my $changelog_data = ( read_file_contents( $root_directory . '/' . $current_theme . "/CHANGELOG.md" ) =~
+                           /####Version(.*?)####Version/s )[0];
     my @changelog_version = split /\n/, $changelog_data;
 
     $changelog_data =~ s/^[^\n]*\n/\n/s;
@@ -3106,12 +3361,13 @@ sub changelog()
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;
 
     my $changelog_content = '
-      <div class="modal fade fade6" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal fade fade9" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-update">
             <div class="modal-content">
               <div class="modal-header background-success background--bordered">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="update_notice_label"><i class="fa fa-fw fa-info-circle">&nbsp;&nbsp;</i>' . $Atext{'theme_update_notice'} . '</h4>
+                <h4 class="modal-title" id="update_notice_label"><i class="fa fa-fw fa-info-circle">&nbsp;&nbsp;</i>'
+      . $Atext{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body" style="font-weight: 300">
                 <h4>Version ' . $changelog_version[0] . '</h4>
@@ -3119,7 +3375,9 @@ sub changelog()
                   ' . $changelog_data . '
                 </ul>
                 <hr>
-                <h4 style="margin-top:20px;">' . $Atext{'theme_development_support'} . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg fa-heartbeat" style="color: #c9302c"></i></h4>
+                <h4 style="margin-top:20px;">'
+      . $Atext{'theme_development_support'}
+      . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg fa-heartbeat" style="color: #c9302c"></i></h4>
                   Follow theme\'s
                     <a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme">
                       <span class="font-family-default">Twitter</span></a>
@@ -3203,7 +3461,7 @@ sub manage_theme_config
     my %atconfig;
 
     if ( $action eq 'save' ) {
-        delete @in{ grep( !/^config_portable_/, keys %in ) };
+        delete @in{ grep( !/^config_portable_|^settings_/, keys %in ) };
         &write_file( get_user_home() . "/.atconfig", \%in );
     }
     elsif ( $action eq 'load' ) {
@@ -3211,12 +3469,34 @@ sub manage_theme_config
         if ( -f $atconfig_file ) {
             $atconfig = &read_file_contents($atconfig_file);
             %atconfig = $atconfig =~ /(.*?)=(.*)/g;
+            delete @atconfig{ grep( !/^config_portable_/, keys %atconfig ) };
             get_json( \%atconfig );
         }
         else {
             get_json_empty();
         }
     }
+}
+
+sub get_hotkey_tooltip
+{
+    my ( $label, $key, $placement ) = @_;
+
+    my $mod_key = $__settings{'settings_hotkey_toggle_modifier'};
+
+    return (
+             (      length $__settings{'settings_hotkeys_active'}
+                 && $__settings{'settings_hotkeys_active'} ne 'false'
+                 && $__settings{'settings_hotkeys_tooltip'} ne 'false'
+             )
+             ? ( ' data-placement="'
+                 . $placement
+                 . '" data-toggle="tooltip" data-title="'
+                 . $Atext{$key} . ": "
+                 . ( $mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta" ) . '+'
+                 . ucfirst( $__settings{$key} )
+                 . '"' )
+             : ' ' );
 }
 
 sub get_theme_language
@@ -3290,7 +3570,10 @@ sub get_autocomplete_shell
     }
 
     if ($command) {
-        @rs = array_unique( backquote_command( $cd_cmd . "bash -c 'compgen " . $command . " '" . quotemeta( $cmd2 ? $cmd2 : $string ) . "" ) );
+        @rs = array_unique(
+                         backquote_command(
+                             $cd_cmd . "bash -c 'compgen " . $command . " '" . quotemeta( $cmd2 ? $cmd2 : $string ) . ""
+                         ) );
 
     }
     else {
