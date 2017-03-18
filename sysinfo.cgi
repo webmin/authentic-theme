@@ -380,13 +380,6 @@ elsif ( $get_user_level eq '3' ) {
     }
     &print_table_row( $Atext{'theme_version'}, $authentic_theme_version );
 
-    #System Time
-    $tm = localtime( time() );
-    if ( &foreign_available("time") ) {
-        $tm = '<a href=' . $gconfig{'webprefix'} . '/time/>' . $tm . '</a>';
-    }
-    &print_table_row( &Atext('body_time'), $tm );
-
     print '</table>' . "\n";
 
     print '</div>';    # Panel Body

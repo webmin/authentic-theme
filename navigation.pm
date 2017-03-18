@@ -20,31 +20,43 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
 {
     print_search();
 
-    @cats        = &get_visible_modules_categories();
-    @modules     = map { @{ $_->{'modules'} } } @cats;
-    $show_unused = $__settings{'settings_leftmenu_section_hide_unused_modules'} eq 'true' ? 0 : 1;
+    my @cats           = &get_visible_modules_categories();
+    my @modules        = map { @{ $_->{'modules'} } } @cats;
+    my $show_unused    = $__settings{'settings_leftmenu_section_hide_unused_modules'} eq 'true' ? 0 : 1;
+    my $__custom_print = 0;
 
-    foreach $c (@cats) {
+    foreach my $c (@cats) {
         if ( $gconfig{"notabs_${base_remote_user}"} ne '2' && $gconfig{"notabs"} ne '1' && ( $c && !$c->{'unused'} )
              || ( $c && $c->{'unused'} && $show_unused ) )
         {
             &print_category( $c->{'code'}, $c->{'desc'} );
             print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
-                if (    $minfo->{'dir'} eq 'webmin'
-                     && &foreign_available("webmin") )
+                if ( ( $minfo->{'dir'} eq 'webmin' && &foreign_available("webmin") )
+                     && $__custom_print eq '0' )
                 {
-                    &print_category_link( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi",   $Atext{'settings_right_theme_left_configuration_title'}, 1 );
-                    &print_category_link( $gconfig{'webprefix'} . "/settings-editor_read.cgi", $Atext{'settings_right_theme_left_extensions_title'},    1 );
-                    &print_category_link( $gconfig{'webprefix'} . "/settings-upload.cgi",      $Atext{'settings_right_theme_left_logo_title'},          1 );
+                    print_category_link( $gconfig{'webprefix'} . "/webmin/edit_themes.cgi",
+                                         $Atext{'settings_right_theme_left_configuration_title'}, 1 );
+                    print_category_link( $gconfig{'webprefix'} . "/settings-editor_read.cgi",
+                                         $Atext{'settings_right_theme_left_extensions_title'}, 1 );
+                    print_category_link( $gconfig{'webprefix'} . "/settings-upload.cgi",
+                                         $Atext{'settings_right_theme_left_logo_title'}, 1 );
+                    $__custom_print++;
 
+                }
+                elsif ( ( $c->{'code'} eq 'webmin' || $c->{'code'} eq 'usermin' ) && !foreign_available("webmin") && $__custom_print eq '0' ) {
+                    print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi", $Atext{'settings_title'},
+                                         undef );
+                    $__custom_print++;
                 }
 
                 if ( licenses('vm') eq '1' ) {
-                    &print_category_link( $gconfig{'webprefix'} . "/virtual-server/licence.cgi", $Atext{'right_vlcheck'}, 1 );
+                    &print_category_link( $gconfig{'webprefix'} . "/virtual-server/licence.cgi",
+                                          $Atext{'right_vlcheck'}, 1 );
                 }
                 if ( licenses('cm') eq '1' ) {
-                    &print_category_link( $gconfig{'webprefix'} . "/server-manager/licence.cgi", $Atext{'right_slcheck'}, 1 );
+                    &print_category_link( $gconfig{'webprefix'} . "/server-manager/licence.cgi",
+                                          $Atext{'right_slcheck'}, 1 );
                 }
 
                 if ( ( $minfo->{'dir'} ne 'virtual-server' && $minfo->{'dir'} ne 'server-manager' )
@@ -53,6 +65,7 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                 {
                     &print_category_link( "$minfo->{'dir'}/", $minfo->{'desc'}, undef );
                 }
+
             }
             print '</ul></li>' . "\n";
         }
@@ -81,10 +94,18 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     print_sysstat_link();
     print_netdata_link();
 
-    if (    &get_product_name() eq 'webmin' && !get_env('anonymous_user') && $gconfig{'nofeedbackcc'} != 2 && $gaccess{'feedback'} && $gconfig{'feedback_to'}
+    if (    &get_product_name() eq 'webmin'
+         && !get_env('anonymous_user')
+         && $gconfig{'nofeedbackcc'} != 2
+         && $gaccess{'feedback'}
+         && $gconfig{'feedback_to'}
          || &get_product_name() eq 'usermin' && !get_env('anonymous_user') && $gconfig{'feedback'} )
     {
-        print '<li><a target="page" data-href="' . $gconfig{'webprefix'} . '/feedback_form.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-envelope"></i> <span>' . $Atext{'left_feedback'} . '</span></a></li>' . "\n";
+        print '<li><a target="page" data-href="'
+          . $gconfig{'webprefix'}
+          . '/feedback_form.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-envelope"></i> <span>'
+          . $Atext{'left_feedback'}
+          . '</span></a></li>' . "\n";
     }
 }
 

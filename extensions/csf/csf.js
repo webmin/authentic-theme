@@ -400,7 +400,7 @@ function csf_init() {
     v.find(".csf p > select").each(function() {
         $(this).attr("style", "vertical-align: baseline !important")
     });
-    var h = (typeof f.settings_background_color != "undef" && f.settings_background_color === "nightRider" ? 1 : 0);
+    var h = ((f.__isNR || f.__isNM) ? 1 : 0);
     v.find('img[src="csfimages/loader.gif"]').each(function() {
         $(this).attr("src", "" + (with_frame ? f.$_____link_full : "") + "/images/loader-horizontal" + (h ? "_dark" : "") + ".gif").css("margin-left", "10px")
     });

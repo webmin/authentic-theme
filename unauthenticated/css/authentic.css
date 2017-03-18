@@ -7221,17 +7221,31 @@ form[action='save_check.cgi']>b,
 body:not([data-module*="man"]) .col_header b {
     font-size: 16px !important;
     font-weight: normal !important;
-    line-height: 24px !important;
+    line-height: 26px !important;
     display: inline-block;
     width: 100%;
     height: 33px;
     margin-bottom: 4px !important;
     padding: 2px 0 !important;
     text-align: center !important;
-    border: 1px solid #f0f0f0 !important;
-    border-top: 3px solid #f0f0f0 !important;
-    border-bottom: 1px solid rgba(216, 216, 216, .40) !important;
+    border: 1px solid #f1f1f1 !important;
     background-color: #f7f7f7 !important
+}
+
+html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_header b[data-first-child] {
+    border-top: 0 !important
+}
+
+html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_header b {
+    border-left: 0 !important;
+    border-right: 0 !important
+}
+
+html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_background_color_reset,
+html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_background_color_toggle,
+html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_navigation_color_reset,
+html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_navigation_color_toggle {
+    display: none
 }
 
 .col_header b+br {

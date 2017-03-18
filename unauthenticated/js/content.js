@@ -63,7 +63,7 @@ function __init_ck_(a) {
         CKEDITOR.config.height = $(window).height() / a[1];
         CKEDITOR.config.width = "auto";
         CKEDITOR.config.removePlugins = "save, about";
-        var k = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : 0);
+        var k = ((__isNR || __isNM) ? 1 : 0);
         if (k) {
             CKEDITOR.config.contentsCss = ($_____link_full + "/unauthenticated/css/palettes/nightrider_ckeditor_content." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str);
             if (!$('html head link[href*="css/nightrider_ckeditor."]').length) {
@@ -727,7 +727,40 @@ $("form.ui_form > table label.radio, form.ui_form > table label.checkbox").each(
         g.parent("label").remove()
     }
 });
-if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search != "?updating-webmin-theme") {
+if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 || $source_path == $_____link + "settings-user.cgi") && t__wi_p.location.search != "?updating-webmin-theme") {
+    if ($product_name != "usermin" && product_name() != "Webmin" && $source_path == $_____link + "settings-user.cgi") {
+        t__wi_p.__cms()
+    }
+    $("body").on("change", "select, input", function() {
+        var a = $(this).val();
+        if (a == "true" || a == "false") {
+            if (a == "true") {
+                var b = true
+            } else {
+                if (a == "false") {
+                    var b = false
+                }
+            }
+        } else {
+            var b = a
+        }
+        window[$(this).attr("name")] = b;
+        t__wi_p[$(this).attr("name")] = b
+    });
+    if ($source_path == $_____link + "settings-user.cgi") {
+        $('button[type="button"][name="save_user"]').on("click", function(a) {
+            a.preventDefault();
+            a.stopPropagation();
+            console.log(333);
+            t__wi_p.$___ajax_requested_url = "_blank";
+            t__wi_p.manageConfig("save");
+            t__wi_p.__lls();
+            f__mgk_sp($(this), [-0.5, -25, "small", 750]);
+            setTimeout(function() {
+                t__wi_p.f__l_reload()
+            }, 1400)
+        })
+    }
     $(function() {
         function b() {
             $("body").on("click", "#atrestore:not(.disabled)", function() {
@@ -804,7 +837,7 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
 
                 function j(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
-                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_shell", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
+                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkeys_tooltip", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_reload", "settings_hotkey_toggle_key_night_mode", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
                     if (c.val() == "false") {
                         $.each(d, function(f, g) {
                             $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true)
@@ -905,6 +938,9 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                     if (d != "blue") {
                         t__wi_p.$("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>')
                     }
+                    t__wi_p.$("body").attr("data-default-theme", d);
+                    $(t__wi_p.page.document).find("body").attr("data-default-theme", d);
+                    t__wi_p.$("body .user-link.palette-toggle").find(".fa-sun").trigger("click");
                     settings_update()
                 });
                 $('select[name="settings_background_color"]').on("click keyup change", function(c) {
@@ -976,7 +1012,6 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                     $('input[name="' + $(this).attr("name") + '"][value="' + window[$(this).attr("name")] + '"]').trigger("change")
                 });
                 $('select[name="settings_navigation_color"]').after('<i class="fa fa-fw fa-cog text-light settings_navigation_color_toggle cursor-default" data-name="settings_navigation_color" style="margin-left: 10px; background-color: transparent !important"></i>																		 <i class="fa fa-fw fa-refresh text-light settings_navigation_color_reset cursor-default hidden" data-name="settings_navigation_color" style="margin-left: 4px; background-color: transparent !important"></i>');
-                $('select[name="settings_background_color"]').after('<i class="fa fa-fw fa-cog text-light settings_background_color_toggle cursor-default" data-name="settings_background_color" style="margin-left: 10px; background-color: transparent !important"></i>																		 <i class="fa fa-fw fa-refresh text-light settings_background_color_reset cursor-default hidden" data-name="settings_background_color" style="margin-left: 4px; background-color: transparent !important"></i>');
                 $(".settings_navigation_color_toggle, .settings_background_color_toggle").on("click", function() {
                     if (typeof window[$(this).attr("data-name") + "controller"] == "undefined" || window[$(this).attr("data-name") + "controller"] == "hidden") {
                         $("." + $(this).attr("data-name") + "_reset, ." + $(this).attr("data-name") + "_rows").removeClass("hidden");
@@ -1042,10 +1077,8 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 if (dashboard_switch()) {
                     $('input[name="settings_sysinfo_link_mini"]').parent().parent().parent().parent("tr").remove()
                 }
-                t__wi_p.__cms();
-                if (!$t_uri_virtualmin && !$t_uri_cloudmin) {
-                    t__wi_p.__dlm("webmin/")
-                }
+                if ($source_path != $_____link + "settings-user.cgi" && $source_path != $_____link + "settings-user.cgi") {}
+                if (!$t_uri_virtualmin && !$t_uri_cloudmin) {}
                 $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();
                 $("body").css("overflow", "auto");
@@ -1092,8 +1125,9 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
     $("body").on("click", "#atsave:not(.btn-inverse):not(.disabled)", function(d) {
         d.preventDefault();
         var c = $(this);
-        f__mgk_sp(c, [1.5, -33, "small", 600]);
+        f__mgk_sp(c, [1.5, -33, "small", 1000]);
         settings_update();
+        t__wi_p.manageConfig("save");
         setTimeout(function() {
             $.ajax({
                 type: "POST",
@@ -1101,14 +1135,13 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
                 data: c.parents("form").serialize(),
                 dataType: "text",
                 success: function(a) {
-                    t__wi_p.__lls();
-                    f__l_reload()
+                    t__wi_p.f__l_reload()
                 },
                 error: function() {
                     c.addClass("btn-danger").removeClass("btn-success btn-inverse opacity-0_5")
                 }
             })
-        }, 300)
+        }, 1000)
     });
     $("body").on("click", ".authentic_update:not(.disabled), .page_footer_ajax_submit:not(.disabled)", function() {
         f__mgk_sp($(this), [1.5, -33, "small", false])
@@ -1330,7 +1363,7 @@ $('.ui_form[action^="delete_mons"] tr.ui_checked_columns > td > label > img[src=
     $(e).attr("src", "" + $_____link_full + "/images/not.png");
     f.addClass("scale-08")
 });
-if (is__m("proc") || is__m("firewall") || is__m("firewall6") || is__mf("pam", "edit_pam.cgi")) {
+if (is__m("proc") || is__m("firewall") || is__m("firewall6") || is__mf("pam", "edit_pam.cgi") || is__m("filter")) {
     $("td a img[src], td label a img[src]").parents("td").addClass("text-center");
     $('td img[src*="images/gap.gif"]').replaceWith('<i class="fa fa-fw fa-caret-down invisible"></i>');
     $('td a img[src*="images/down.gif"]').replaceWith('<i title="' + lang("theme_xhred_move_down") + '" class="fa fa-fw fa-move-down cursor-pointer"></i>');
@@ -2250,7 +2283,7 @@ if ($current_page_full == $_____link_full + "/server-manager/edit_serv.cgi") {
     }, 20)
 }
 if (settings_sysinfo_easypie_charts && $current_page_full == $_____link_full + "/sysinfo.cgi") {
-    var isNR = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : 0);
+    var isNR = ((__isNR || __isNM) ? 1 : 0);
     $("body").find(".page.__sytem_information").find(".piechart").easyPieChart({
         barColor: function(b) {
             return (b < 50 ? (isNR ? "#269373" : "#5cb85c") : b < 85 ? (isNR ? "#c38d40" : "#f0ad4e") : "#cb3935")
@@ -2900,7 +2933,7 @@ if ($__current_directory == $_____link_full + "/virtual-server/") {
 }
 if ($current_directory == $_____link + "acl/") {
     $("body.acl > div > div > div.panel-body > form > div > table > tbody > tr > td > table > tbody > tr:nth-child(1) > td > table > tbody").attr("style", "border: 0 !important");
-    var $t__acl_title = $("br").next(".ui_grid_table.table-hardcoded").find("tbody").attr("style", "border: 1px solid #" + (settings_background_color === "nightRider" ? "393b3f" : "eee") + " !important").parent("table").prev("br").prev("b");
+    var $t__acl_title = $("br").next(".ui_grid_table.table-hardcoded").find("tbody").attr("style", "border: 1px solid #" + ((__isNR || __isNM) ? "393b3f" : "eee") + " !important").parent("table").prev("br").prev("b");
     $("br").next(".ui_grid_table.table-hardcoded").css("margin-bottom", "3px");
     $.each($t__acl_title, function(c, d) {
         if ($(this).text() == "") {
@@ -3654,7 +3687,7 @@ if (is__mf("virtualmin-nginx", "") || is__mf("virtualmin-awstats", "") || is__mf
         b.remove()
     }, 0)
 }
-if (typeof settings_background_color != "undefined" && settings_background_color === "nightRider") {
+if (__isNR || __isNM) {
     if ($(".opener_shown").length > 0) {
         var __tmp_ui_grinTable = $(".opener_container, .opener_container:hidden").find(".ui_grid_table, .ui_grid_table:hidden");
         if (__tmp_ui_grinTable.length) {

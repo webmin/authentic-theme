@@ -25,6 +25,8 @@ sub theme_header
       . '" data-csf="'
       . &foreign_available("csf")
       . '" data-theme="'
+      . ( theme_night_mode() ? 'gunmetal' : $__settings{'settings_navigation_color'} )
+      . '" data-default-theme="'
       . $__settings{'settings_navigation_color'}
       . '" data-theme-version="'
       . theme_version('version')
@@ -49,7 +51,11 @@ sub theme_header
       . ( &get_module_name()
           ? ' class="'
             . &get_module_name()
-            . ( ( index( $__settings{'settings_window_exclusion_list'}, &get_module_name() ) gt -1 || $__settings{'settings_window_exclusion_list'} eq "*" ) ? ' __e__' : undef )
+            . (
+                ( index( $__settings{'settings_window_exclusion_list'}, &get_module_name() ) gt -1
+                    || $__settings{'settings_window_exclusion_list'} eq "*"
+                ) ? ' __e__' : undef
+            )
             . '" data-uri="'
             . get_env('request_uri')
             . '" data-module="'
@@ -94,7 +100,8 @@ sub theme_header
                 print "<a href=$gconfig{'webprefix'}/switch_user.cgi>", "$text{'main_switch'}</a><br>";
             }
             elsif ( !$gconfig{'gotoone'} || @avail > 1 ) {
-                print "<a href='$gconfig{'webprefix'}/?cat=", $this_module_info{'category'}, "'>$text{'header_webmin'}</a><br>\n";
+                print "<a href='$gconfig{'webprefix'}/?cat=", $this_module_info{'category'},
+                  "'>$text{'header_webmin'}</a><br>\n";
             }
         }
         if ( !$_[4] && !$tconfig{'nomoduleindex'} ) {
@@ -122,7 +129,8 @@ sub theme_header
                   $user_module_config_directory
                   ? "uconfig.cgi"
                   : "config.cgi";
-                print "<a href=\"$gconfig{'webprefix'}/$cprog?", &get_module_name() . "\">", $text{'header_config'}, "</a><br>\n";
+                print "<a href=\"$gconfig{'webprefix'}/$cprog?", &get_module_name() . "\">", $text{'header_config'},
+                  "</a><br>\n";
             }
         }
         print "</td>\n";
@@ -134,7 +142,8 @@ sub theme_header
               defined( $tconfig{'titlesize'} )
               ? $tconfig{'titlesize'}
               : "+2";
-            print "<td id='headln2c' align=center width=50%>", ( $ts ? "<font size=$ts>" : "" ), $_[0], ( $ts ? "</font>" : "" );
+            print "<td id='headln2c' align=center width=50%>", ( $ts ? "<font size=$ts>" : "" ), $_[0],
+              ( $ts ? "</font>" : "" );
             print "<br>$_[9]\n" if ( $_[9] );
             print "</td>\n";
         }
@@ -165,7 +174,7 @@ sub theme_footer
             }
             $url = "$gconfig{'webprefix'}$url" if ( $url =~ /^\// );
             print
-              "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
+"&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
               &text( 'main_return', $_[ $i + 1 ] ), "</a>\n";
         }
     }
@@ -198,6 +207,7 @@ sub theme_footer
                           || index( get_env('request_uri'), '/config.cgi?' ) gt "-1"
                           || index( get_env('request_uri'), '/uconfig.cgi?' ) gt "-1"
                           || index( get_env('request_uri'), '/webmin_search.cgi?' ) gt "-1"
+                          || index( get_env('request_uri'), '/settings-user.cgi' ) gt "-1"
                           || index( get_env('request_uri'), '/settings-editor_read.cgi' ) gt "-1"
                           || index( get_env('request_uri'), '/settings-upload.cgi' ) gt "-1"
                      ) ? '1' : '0'
@@ -276,7 +286,8 @@ sub theme_popup_window_button
 {
     my ( $url, $w, $h, $scroll, $fields ) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
-    my $rv = "<input class='btn btn-default' style='height: 28px; vertical-align:middle !important;' type=button onClick='";
+    my $rv =
+      "<input class='btn btn-default' style='height: 28px; vertical-align:middle !important;' type=button onClick='";
     foreach my $m (@$fields) {
         $rv .= "$m->[0] = form.$m->[1]; ";
     }
@@ -293,7 +304,8 @@ sub theme_popup_window_button
         $rv .= "chooser.$m->[0] = $m->[0]; ";
         $rv .= "window.$m->[0] = $m->[0]; ";
     }
-    $rv .= "' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>";
+    $rv .=
+"' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>";
     return $rv;
 }
 
@@ -301,7 +313,12 @@ sub theme_ui_upload
 {
     my ( $name, $size, $dis, $tags ) = @_;
     $size = &ui_max_text_width($size);
-    return "<input style='margin: 4px 0;' class='ui_upload' type=file name=\"" . &quote_escape($name) . "\" " . "size=$size " . ( $dis ? "disabled=true" : "" ) . ( $tags ? " " . $tags : "" ) . ">";
+    return
+        "<input style='margin: 4px 0;' class='ui_upload' type=file name=\""
+      . &quote_escape($name) . "\" "
+      . "size=$size "
+      . ( $dis  ? "disabled=true" : "" )
+      . ( $tags ? " " . $tags     : "" ) . ">";
 }
 
 sub theme_icons_table
@@ -312,7 +329,8 @@ sub theme_icons_table
 
         $hide_table_icons
           && print '<div style="margin-bottom: -5px; text-align: left;" class="col-sm-3">' . "\n";
-        &generate_icon( $_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref( $_[4] ) ? $_[4]->[$i] : $_[4], $_[5], $_[6], $_[7]->[$i], $_[8]->[$i] );
+        &generate_icon( $_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref( $_[4] ) ? $_[4]->[$i] : $_[4],
+                        $_[5], $_[6], $_[7]->[$i], $_[8]->[$i] );
 
         $hide_table_icons && print '</div>' . "\n";
     }
@@ -325,7 +343,16 @@ sub theme_generate_icon
     if ( $__settings{'settings_right_hide_table_icons'} eq 'true' ) {
         print '<div>';
         print $before;
-        print '<a' . ( $before ? ' class="inline-block"' : ' ' ) . 'href="' . $link . '" ' . $href . '><p><i class="fa fa-fw fa-angle-right' . ( $before ? ' hidden' : '' ) . '">&nbsp;&nbsp;</i>' . $title . '</p></a>';
+        print '<a'
+          . ( $before ? ' class="inline-block"' : ' ' )
+          . 'href="'
+          . $link . '" '
+          . $href
+          . '><p><i class="fa fa-fw fa-angle-right'
+          . ( $before ? ' hidden' : '' )
+          . '">&nbsp;&nbsp;</i>'
+          . $title
+          . '</p></a>';
         print $after;
         print '</div>';
     }
@@ -343,10 +370,12 @@ sub theme_generate_icon
         ( !-r $root_directory . "/" . get_module_name() . "/" . $icon_outer )
           && ( $icon_outer = undef );
 
-        my $__icon = (   -r $root_directory . "/authentic-theme/images/modules/" . get_module_name() . $icon   ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $icon
-                       : -r $root_directory . "/authentic-theme/images/modules/" . get_module_name() . $___svg ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $___svg
-                       : $icon_outer                                                                           ? $icon_outer
-                       :                                                                                         "/images/not_found.svg" );
+        my $__icon = ( -r $root_directory . "/authentic-theme/images/modules/" . get_module_name() . $icon
+                       ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $icon
+                       : -r $root_directory . "/authentic-theme/images/modules/" . get_module_name() . $___svg
+                       ? $gconfig{'webprefix'} . "/images/modules/" . get_module_name() . $___svg
+                       : $icon_outer ? $icon_outer
+                       :               "/images/not_found.svg" );
 
         if (    $__settings{'settings_right_small_table_icons'} eq 'true'
              && $__settings{'settings_right_xsmall_table_icons'} ne 'true' )
@@ -363,10 +392,16 @@ sub theme_generate_icon
                     print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
-                    print "<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
+                    print
+"<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
                 }
             }
-            print "<a href=\"$link\" class=\"icon_link\">" . '<img class="ui_icon' . ( $icon_outer && ' ui_icon_protected' ) . '" src="' . $__icon . '" alt="">';
+            print "<a href=\"$link\" class=\"icon_link\">"
+              . '<img class="ui_icon'
+              . ( $icon_outer && ' ui_icon_protected' )
+              . '" src="'
+              . $__icon
+              . '" alt="">';
             print "<span class=\"hidden\">$title</span></a>\n";
             print '</div>';
         }
@@ -383,24 +418,39 @@ sub theme_generate_icon
                     print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
-                    print "<span style='position: absolute; top:-3px; right: 1px;' class='hidden-forged hidden-forged-7 hidden-forged-7-xsmall'>$_[7]</span>\n";
+                    print
+"<span style='position: absolute; top:-3px; right: 1px;' class='hidden-forged hidden-forged-7 hidden-forged-7-xsmall'>$_[7]</span>\n";
                 }
             }
-            print "<a href=\"$link\" class=\"icon_link\">" . '<img class="ui_icon' . ( $icon_outer && ' ui_icon_protected' ) . '" src="' . $__icon . '" alt="">';
+            print "<a href=\"$link\" class=\"icon_link\">"
+              . '<img class="ui_icon'
+              . ( $icon_outer && ' ui_icon_protected' )
+              . '" src="'
+              . $__icon
+              . '" alt="">';
             print "<span class=\"hidden\">$title</span></a>\n";
             print '</div>';
         }
         else {
-            print '<div class="col-xs-1 icons-container' . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . '' . ( !$grayscaled_table_icons && ' grayscaled' ) . '' . ( !$animate_table_icons && ' animated' ) . '">';
+            print '<div class="col-xs-1 icons-container'
+              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . ''
+              . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
+              . ( !$animate_table_icons && ' animated' ) . '">';
             if ( $_[6] || $_[7] ) {
                 if ( $_[6] ) {
                     print "<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
-                    print "<span style='position: absolute; top:2px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
+                    print
+"<span style='position: absolute; top:2px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
                 }
             }
-            print "<a href=\"$link\" class=\"icon_link\">" . '<img class="ui_icon' . ( $icon_outer && ' ui_icon_protected' ) . '" src="' . $__icon . '" alt=""><br>';
+            print "<a href=\"$link\" class=\"icon_link\">"
+              . '<img class="ui_icon'
+              . ( $icon_outer && ' ui_icon_protected' )
+              . '" src="'
+              . $__icon
+              . '" alt=""><br>';
             print "$title</a>\n";
             print '</div>';
         }
@@ -473,7 +523,11 @@ sub theme_ui_link
 {
 
     my ( $href, $text, $class, $tags ) = @_;
-    return ( "<a class='ui_link" . ( $class ? " " . $class : "" ) . "' href='$href'" . ( $tags ? " " . $tags : "" ) . ">$text</a>" );
+    return (   "<a class='ui_link"
+             . ( $class ? " " . $class : "" )
+             . "' href='$href'"
+             . ( $tags ? " " . $tags : "" )
+             . ">$text</a>" );
 }
 
 sub theme_select_all_link
@@ -482,7 +536,8 @@ sub theme_select_all_link
     my ( $field, $form, $text ) = @_;
     $form = int($form);
     $text ||= $text{'ui_selall'};
-    return "<a class='select_all' href='#' onClick='var ff = document.forms[$form].$field; ff.checked = true; for(i=0; i<ff.length; i++) { if (!ff[i].disabled) { ff[i].checked = true; } } return false'>$text</a>";
+    return
+"<a class='select_all' href='#' onClick='var ff = document.forms[$form].$field; ff.checked = true; for(i=0; i<ff.length; i++) { if (!ff[i].disabled) { ff[i].checked = true; } } return false'>$text</a>";
 }
 
 sub theme_select_invert_link
@@ -500,7 +555,8 @@ sub theme_select_rows_link
     my ( $field, $form, $text, $rows ) = @_;
     $form = int($form);
     my $js = "var sel = { " . join( ",", map { "\"" . &quote_escape($_) . "\":1" } @$rows ) . " }; ";
-    $js .= "for(var i=0; i<document.forms[$form].${field}.length; i++) { var r = document.forms[$form].${field}[i]; r.checked = sel[r.value]; } ";
+    $js .=
+"for(var i=0; i<document.forms[$form].${field}.length; i++) { var r = document.forms[$form].${field}[i]; r.checked = sel[r.value]; } ";
     $js .= "return false;";
     return "<a href='#' onClick='$js'>$text</a>";
 }
@@ -565,7 +621,8 @@ sub theme_ui_textbox
     my ( $name, $value, $size, $dis, $max, $tags ) = @_;
     my $rv;
 
-    $rv .= '<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; vertical-align: middle" class="form-control ui_textbox" type="text" ';
+    $rv .=
+'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; vertical-align: middle" class="form-control ui_textbox" type="text" ';
     $rv .= 'id="' . &quote_escape($name) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
@@ -583,7 +640,8 @@ sub theme_ui_password
     my ( $name, $value, $size, $dis, $max, $tags ) = @_;
     my $rv;
 
-    $rv .= '<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; vertical-align:middle" class="form-control ui_password" type="password" ';
+    $rv .=
+'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; vertical-align:middle" class="form-control ui_password" type="password" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
@@ -597,7 +655,7 @@ sub theme_ui_password
 
 sub theme_ui_radio
 {
-    my ( $name, $value, $opts, $dis ) = @_;
+    my ( $name, $val, $opts, $dis ) = @_;
     my ( $rv, $o );
     foreach $o (@$opts) {
         my $id = &quote_escape( $name . "_" . $o->[0] );
@@ -610,7 +668,7 @@ sub theme_ui_radio
         $rv .= '<span class="awradio awobject"><input class="iawobject" type="radio" ';
         $rv .= 'name="' . &quote_escape($name) . '" ';
         $rv .= 'value="' . &quote_escape( $o->[0] ) . '" ';
-        $rv .= ( $o->[0] eq $value ? 'checked ' : '' );
+        $rv .= ( $o->[0] eq $val ? 'checked ' : '' );
         $rv .= ( $dis ? 'disabled="true" ' : '' );
         $rv .= 'id="' . $id . '" ';
         $rv .= $o->[2] . ' ';
@@ -622,6 +680,17 @@ sub theme_ui_radio
     }
 
     return $rv;
+}
+
+sub theme_ui_yesno_radio
+{
+    my ( $name, $value, $yes, $no, $dis ) = @_;
+    $yes = 1 if ( !defined($yes) );
+    $no  = 0 if ( !defined($no) );
+    if ( $value =~ /^[0-9,.E]+$/ ) {
+        $value = int($value);
+    }
+    return ui_radio( $name, $value, [ [ $yes, $text{'yes'} ], [ $no, $text{'no'} ] ], $dis );
 }
 
 sub theme_ui_oneradio
@@ -642,7 +711,11 @@ sub theme_ui_oneradio
       . ( $dis ? " disabled=true" : "" )
       . " id=\"$id\""
       . ( $tags ? " " . $tags : "" ) . ">";
-    $ret .= ' <label class="lawobject" for="' . $id . '">' . ( length trim($label) ? trim($label) : '&nbsp;' ) . '</label></span>';
+    $ret .=
+        ' <label class="lawobject" for="'
+      . $id . '">'
+      . ( length trim($label) ? trim($label) : '&nbsp;' )
+      . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
@@ -774,10 +847,26 @@ sub theme_ui_tabs_start
     $rv .= '<ul class="nav nav-tabs">' . "\n";
     foreach my $t (@$tabs) {
         if ( $t->[0] eq $sel ) {
-            $rv .= '<li class="active"><a data-toggle="tab" onclick="return tab_action(\'' . $name . '\', \'' . $t->[0] . '\')" href="#att_' . $t->[0] . '">' . $t->[1] . '</a></li>' . "\n";
+            $rv .=
+                '<li class="active"><a data-toggle="tab" onclick="return tab_action(\''
+              . $name
+              . '\', \''
+              . $t->[0]
+              . '\')" href="#att_'
+              . $t->[0] . '">'
+              . $t->[1]
+              . '</a></li>' . "\n";
         }
         else {
-            $rv .= '<li><a data-toggle="tab" onclick="return tab_action(\'' . $name . '\', \'' . $t->[0] . '\')" href="#att_' . $t->[0] . '">' . $t->[1] . '</a></li>' . "\n";
+            $rv .=
+                '<li><a data-toggle="tab" onclick="return tab_action(\''
+              . $name
+              . '\', \''
+              . $t->[0]
+              . '\')" href="#att_'
+              . $t->[0] . '">'
+              . $t->[1]
+              . '</a></li>' . "\n";
         }
     }
     $rv .= '</ul>' . "\n";
@@ -866,7 +955,8 @@ sub theme_ui_table_start
     }
     my $colspan = 1;
     my $rv;
-    $rv .= "<div class='table-responsive'><table class='table table-striped table-condensed table-subtable' $tabletags>\n";
+    $rv .=
+      "<div class='table-responsive'><table class='table table-striped table-condensed table-subtable' $tabletags>\n";
     if ( defined($heading) || defined($rightheading) ) {
         $rv .= "<thead><tr>";
         if ( defined($heading) ) {
@@ -922,7 +1012,8 @@ sub theme_ui_table_row
       if ( $main::ui_table_pos % $main::ui_table_cols == 0 );
     $rv .= "<td class='col_label'><b>$label</b></td>\n"
       if ( defined($label) );
-    $rv .= '<td colspan="' . $cols . '" class="col_value' . ( !length($label) && ' col_header' ) . '">' . $value . '</td>';
+    $rv .=
+      '<td colspan="' . $cols . '" class="col_value' . ( !length($label) && ' col_header' ) . '">' . $value . '</td>';
     $main::ui_table_pos += $cols + ( defined($label) ? 1 : 0 );
     if ( $main::ui_table_pos % $main::ui_table_cols == 0 ) {
         $rv .= "</tr>\n";
@@ -949,9 +1040,12 @@ sub theme_ui_opt_textbox
     my $dis2 = &js_disable_inputs( [], [ $name, @$extra ] );
     my $rv;
     $size = &ui_max_text_width($size);
-    $rv .= &ui_radio( $name . "_def", $value eq '' ? 1 : 0, [ [ 1, $opt1, "onClick='$dis1'" ], [ 0, $opt2 || " ", "onClick='$dis2'" ] ], $dis ) . "\n";
+    $rv .= &ui_radio( $name . "_def",
+                      $value eq '' ? 1 : 0,
+                      [ [ 1, $opt1, "onClick='$dis1'" ], [ 0, $opt2 || " ", "onClick='$dis2'" ] ], $dis )
+      . "\n";
     $rv .=
-        "<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; min-width: 15%; margin-right:2px;' type='text' name=\""
+"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; min-width: 15%; margin-right:2px;' type='text' name=\""
       . &quote_escape($name) . "\" "
       . "size=$size value=\""
       . &quote_escape($value) . "\""
@@ -967,7 +1061,11 @@ sub theme_ui_checked_columns_row
     my ( $cols, $tdtags, $checkname, $checkvalue, $checked, $disabled, $tags ) = @_;
     my $rv;
     $rv .= "<tr" . ( $cb ? " " . $cb : "" ) . " class='ui_checked_columns'>\n";
-    $rv .= "<td class='ui_checked_checkbox' " . $tdtags->[0] . ">" . &ui_checkbox( $checkname, $checkvalue, undef, $checked, $tags, $disabled ) . "</td>\n";
+    $rv .=
+        "<td class='ui_checked_checkbox' "
+      . $tdtags->[0] . ">"
+      . &ui_checkbox( $checkname, $checkvalue, undef, $checked, $tags, $disabled )
+      . "</td>\n";
     my $i;
     for ( $i = 0 ; $i < @$cols ; $i++ ) {
         $rv .= "<td " . $tdtags->[ $i + 1 ] . ">";
@@ -1041,7 +1139,8 @@ sub theme_ui_hidden_table_start
     if ( defined($heading) || defined($rightheading) ) {
         $rv .= "<tr" . ( $tb ? " " . $tb : "" ) . "><td>";
         if ( defined($heading) ) {
-            $rv .= "<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
+            $rv .=
+"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
         }
         if ( defined($rightheading) ) {
             $rv .= "<td align=right>$rightheading</td>";
@@ -1049,7 +1148,9 @@ sub theme_ui_hidden_table_start
         }
         $rv .= "</td> </tr>\n";
     }
-    $rv .= "<tr" . ( $cb ? " " . $cb : "" ) . "><td class='opener_container' colspan=$colspan><div class='$defclass' id='$divid'><table width=100%>\n";
+    $rv .= "<tr"
+      . ( $cb ? " " . $cb : "" )
+      . "><td class='opener_container' colspan=$colspan><div class='$defclass' id='$divid'><table width=100%>\n";
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
@@ -1084,7 +1185,12 @@ sub theme_ui_radio_table
     my $rv = "<table class='ui_radio_table'>\n";
     foreach my $r (@$rows) {
         $rv .= "<tr>\n";
-        $rv .= "<td" . ( defined( $r->[2] ) ? "" : " colspan=2" ) . ">" . ( $nobold ? "" : "<b>" ) . &ui_oneradio( $name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3] ) . ( $nobold ? "" : "</b>" ) . "</td>\n";
+        $rv .= "<td"
+          . ( defined( $r->[2] ) ? "" : " colspan=2" ) . ">"
+          . ( $nobold            ? "" : "<b>" )
+          . &ui_oneradio( $name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3] )
+          . ( $nobold ? "" : "</b>" )
+          . "</td>\n";
         if ( defined( $r->[2] ) ) {
             $rv .= "<td>" . $r->[2] . "</td>\n";
         }

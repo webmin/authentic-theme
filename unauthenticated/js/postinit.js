@@ -41,12 +41,12 @@ var $_url = URI(t___wi.location),
     $g__user__ = $("body").data("user"),
     $g__m__name = $("body").data("module"),
     $g__t__ver = $("body").data("theme-version").toString(),
-    $g__t__ver_str = $g__t__ver.replace(".", "");
+    $g__t__ver_str = $g__t__ver.replace(".", ""),
+    __isNR = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : __isNM);
 const __ua__ = window.navigator.userAgent,
     ___is_iOS = (!!__ua__.match(/iPad/i) || !!__ua__.match(/iPhone/i)),
     ___is_webkit = (!!__ua__.match(/WebKit/i)),
-    ___is_iOSSafari = (___is_iOS && ___is_webkit && !__ua__.match(/CriOS/i) && !__ua__.match(/OPiOS/i)),
-    __isNR = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : 0);
+    ___is_iOSSafari = (___is_iOS && ___is_webkit && !__ua__.match(/CriOS/i) && !__ua__.match(/OPiOS/i));
 if ($webprefix) {
     $webprefix = ($webprefix + "/").replace(/\/\//g, "/");
     $webprefix_full = $webprefix;
@@ -295,6 +295,54 @@ function dblrclick(f) {
     }
 }
 
+function f__toogle_palette() {
+    var a = $("body .user-link.palette-toggle"),
+        c = (a.find(".fa-sun").length ? 0 : 1),
+        f = (typeof t__wi_p.$('iframe[name="page"]') != "undefined" && t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('iframe[name="page"]').contents().get(0)),
+        e = t__wi_p.$("html").attr("data-night-mode"),
+        d = t__wi_p.$("body").attr("data-default-theme"),
+        b = t__wi_p.$("html").attr("data-default-background-style");
+    if (!f) {
+        return
+    }
+    if (c === 1) {
+        a.find(".fa-moon").removeClass("fa-moon").addClass("fa-sun vertical-align-middle");
+        $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').attr("disabled", "disabled");
+        $(t__wi_p.page.document).find(".settings_navigation_color_toggle").addClass("hidden");
+        $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]').remove();
+        $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/gunmetal." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+        $(t__wi_p.page.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/nightrider." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+        t__wi_p.$("body").attr("data-theme", "gunmetal");
+        $(t__wi_p.page.document).find("body").attr("data-theme", "gunmetal");
+        t__wi_p.$("html").attr("data-background-style", "nightRider");
+        $(t__wi_p.page.document).find("html").attr("data-background-style", "nightRider");
+        t__wi_p.$("html").attr("data-night-mode", 1);
+        $(t__wi_p.page.document).find("html").attr("data-night-mode", 1);
+        t__wi_p.__isNR = 1;
+        t__wi_p.__isNM = 1;
+        t__wi_p.page.window.__isNR = 1;
+        t__wi_p.page.window.__isNM = 1
+    } else {
+        $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').removeAttr("disabled");
+        $(t__wi_p.page.document).find(".settings_navigation_color_toggle").removeClass("hidden");
+        a.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
+        $(t__wi_p.top.document).find('head link[href*="gunmetal"]').remove();
+        $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+        settings_background_color !== "nightRider" && $(t__wi_p.page.document).find('head link[href*="nightrider"]').remove();
+        t__wi_p.$("body").attr("data-theme", d);
+        $(t__wi_p.page.document).find("body").attr("data-theme", d);
+        t__wi_p.$("html").attr("data-background-style", b);
+        $(t__wi_p.page.document).find("html").attr("data-background-style", b);
+        t__wi_p.$("html").attr("data-night-mode", 0);
+        $(t__wi_p.page.document).find("html").attr("data-night-mode", 0);
+        t__wi_p.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
+        t__wi_p.__isNM = 0;
+        t__wi_p.page.window.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
+        t__wi_p.page.window.__isNM = 0
+    }
+    t__wi_p.manageConfig("save")
+}
+
 function ported_shell_clear_cmd(a) {
     a.val("");
     a.focus()
@@ -505,7 +553,7 @@ function shortcut_control(c) {
                 }
             }
         }
-        if (!(String.fromCharCode(c.which) == "1" && settings_hotkey_custom_1 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "2" && settings_hotkey_custom_2 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "3" && settings_hotkey_custom_3 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "4" && settings_hotkey_custom_4 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "5" && settings_hotkey_custom_5 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "6" && settings_hotkey_custom_6 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "7" && settings_hotkey_custom_7 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "8" && settings_hotkey_custom_8 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "9" && settings_hotkey_custom_9 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_favorites && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_shell && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_sysinfo && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_slider && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_reload && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_webmail && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_usermin && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_cloudmin && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_virtualmin && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_webmin && c[settings_hotkey_toggle_modifier])) {
+        if (!(String.fromCharCode(c.which) == "1" && settings_hotkey_custom_1 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "2" && settings_hotkey_custom_2 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "3" && settings_hotkey_custom_3 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "4" && settings_hotkey_custom_4 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "5" && settings_hotkey_custom_5 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "6" && settings_hotkey_custom_6 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "7" && settings_hotkey_custom_7 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "8" && settings_hotkey_custom_8 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which) == "9" && settings_hotkey_custom_9 && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_favorites && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_shell && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_sysinfo && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_slider && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_reload && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_night_mode && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_webmail && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_usermin && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_cloudmin && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_virtualmin && c[settings_hotkey_toggle_modifier]) && !(String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_webmin && c[settings_hotkey_toggle_modifier])) {
             return true
         }
         if (String.fromCharCode(c.which) == "1" && settings_hotkey_custom_1) {
@@ -563,6 +611,10 @@ function shortcut_control(c) {
         if (String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_webmail && t__wi_p.$('.switch-toggle input[id="open_webmail"]') && !t__wi_p.$('.switch-toggle input[id="open_webmail"]').is(":checked") && (product_name() != "Webmin" && product_name() != "Virtualmin" && product_name() != "Cloudmin")) {
             c.preventDefault();
             t__wi_p.$('.switch-toggle input[id="open_webmail"]').trigger("click")
+        }
+        if (String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_key_night_mode) {
+            c.preventDefault();
+            f__toogle_palette()
         }
         if (String.fromCharCode(c.which).toLowerCase() == settings_hotkey_toggle_slider) {
             c.preventDefault();
@@ -848,7 +900,7 @@ function __mss() {
 }
 
 function f__l_reload() {
-    var a = t__wi_p.$t_uri_virtualmin ? "virtualmin" : t__wi_p.$t_uri_cloudmin ? "cloudmin" : "webmin";
+    var a = t__wi_p.$t_uri_virtualmin ? "virtualmin" : t__wi_p.$t_uri_cloudmin ? "cloudmin" : product_name() == "Usermin" ? "usermin" : product_name() == "Mail" ? "mail" : "webmin";
     if (a == "webmin") {
         t__wi_p.t__s("open_webmin");
         t__wm_l("open_webmin")
@@ -860,6 +912,16 @@ function f__l_reload() {
             if (a == "cloudmin") {
                 t__wi_p.t__s("open_cloudmin");
                 t__cm_l(t__wi_p.$("aside select").val())
+            } else {
+                if (a == "usermin") {
+                    t__wi_p.t__s("open_usermin");
+                    t__wm_l("open_usermin")
+                } else {
+                    if (a == "mail") {
+                        t__wi_p.t__s("open_webmail");
+                        t__wm_l(t__wi_p.$("aside select").val())
+                    }
+                }
             }
         }
     }
@@ -1727,7 +1789,7 @@ function __dpt() {
 }
 
 function __dlm(b) {
-    if (t__wi_p.$___________m_locked === 1) {
+    if (t__wi_p.$___________m_locked === 1 || ($source_path == $_____link + "settings-user.cgi" && $product_name != "usermin" && product_name() != "Webmin")) {
         return
     }
     if ($current_page_full == $_____link_full + "/server-manager/" || $current_page_full == $_____link_full + "/virtual-server/") {
