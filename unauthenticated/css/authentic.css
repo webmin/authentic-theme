@@ -1953,6 +1953,27 @@ aside .form-control:focus:-ms-input-placeholder {
     -webkit-filter: opacity(50%) grayscale(100%)
 }
 
+.bg-puff-out {
+    animation-name: puff-out;
+    animation-duration: .4s;
+    animation-fill-mode: both
+}
+
+@keyframes puff-out {
+    0 {
+        transform: scale(1, 1);
+        transform-origin: 50% 50%;
+        opacity: 1;
+        filter: blur(0)
+    }
+    100% {
+        transform: scale(2, 2);
+        transform-origin: 50% 50%;
+        opacity: 0;
+        filter: blur(2px)
+    }
+}
+
 .select2-selection__rendered .menu-status-label {
     font-weight: 500;
     position: absolute;
@@ -3381,7 +3402,7 @@ td .opener_trigger[id]:before {
     color: #bfbfbf
 }
 
-.panel .panel-heading .panel-title a:not([data-toggle="collapse"]):before {
+.panel .panel-heading .panel-title a:not([data-toggle='collapse']):before {
     display: none
 }
 
@@ -3404,10 +3425,10 @@ a.opener_extra_container_a_style {
 }
 
 a.opener_extra_container_a_style:before {
-    content: '\f088';
     position: absolute;
     margin-top: 6px;
     margin-left: -13px !important;
+    content: '\f088';
     color: #bfbfbf
 }
 
@@ -3419,8 +3440,8 @@ a.opener_extra_container_a_style.opener_container_opened:before {
 .panel-body table:not(.table-hardcoded) tr.thead+tr>td,
 .panel-body,
 .opener_container {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .055);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .055)
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .050);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .050)
 }
 
 .opener_container.opener_sub_container {
@@ -5662,6 +5683,43 @@ input.btn-warning.active,
     background-color: #ec971f
 }
 
+.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle) {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0)
+}
+
+.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    background: rgba(255, 255, 255, .075) !important
+}
+
+.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):hover:before,
+.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):focus:before,
+.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+}
+
 input.form-control {
     padding-left: 6px;
     background: #fff
@@ -6864,12 +6922,12 @@ input[src='/images/ok.gif'] {
     background: #f5f5f5
 }
 
-html:not([data-background-style="nightRider"]) .opener_extra_container_style {
-    border-top-width: 3px !important;
-    line-height: 30px
+html:not([data-background-style='nightRider']) .opener_extra_container_style {
+    line-height: 30px;
+    border-top-width: 3px !important
 }
 
-html:not([data-background-style="nightRider"]) a.opener_extra_container_a_style:before {
+html:not([data-background-style='nightRider']) a.opener_extra_container_a_style:before {
     margin-top: 4px
 }
 
@@ -6879,9 +6937,9 @@ div.opener_extra_container.opener_extra_container_style>div.opener_extra_contain
 }
 
 p+.opener_container.opener_sub_container.margined-top {
-    padding: 5px;
     margin-top: -6px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    padding: 5px
 }
 
 .opener_extra_container_a_style {
@@ -6898,12 +6956,12 @@ p+.opener_container.opener_sub_container.margined-top {
     text-align: left;
     vertical-align: middle;
     border: 0;
-    border-top: 4px solid #f0f0f0 !important;
+    border-top: 1px solid #f0f0f0 !important;
     border-right: 1px solid #f0f0f0;
     border-left: 1px solid #f0f0f0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .02)
 }
 
 .kbd-success {
@@ -7218,7 +7276,7 @@ body[class^='servers'] .dataTables_wrapper tbody tr td table.table-hardcoded tbo
 
 .col_header_custom,
 form[action='save_check.cgi']>b,
-body:not([data-module*="man"]) .col_header b {
+body:not([data-module*='man']) .col_header b {
     font-size: 16px !important;
     font-weight: normal !important;
     line-height: 26px !important;
@@ -7232,19 +7290,19 @@ body:not([data-module*="man"]) .col_header b {
     background-color: #f7f7f7 !important
 }
 
-html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_header b[data-first-child] {
+html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_header b[data-first-child] {
     border-top: 0 !important
 }
 
-html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_header b {
-    border-left: 0 !important;
-    border-right: 0 !important
+html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_header b {
+    border-right: 0 !important;
+    border-left: 0 !important
 }
 
-html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_background_color_reset,
-html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_background_color_toggle,
-html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_navigation_color_reset,
-html[data-script-name*="settings-user.cgi"] body:not([data-module*="man"]) .col_value .settings_navigation_color_toggle {
+html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_value .settings_background_color_reset,
+html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_value .settings_background_color_toggle,
+html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_value .settings_navigation_color_reset,
+html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_value .settings_navigation_color_toggle {
     display: none
 }
 
@@ -7604,7 +7662,7 @@ ul.messenger .messenger-message {
     font-size: 12px;
     margin-left: 24px;
     padding-left: 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.38)
+    border-left: 1px solid rgba(255, 255, 255, .38)
 }
 
 .messenger-message-inner i {
@@ -8564,13 +8622,13 @@ html[data-script-name*='settings-editor_read.cgi'] .fa-question-circle.-helper {
 
 body[class*='postgresql']:not(.__non_res__) .container-resizeable-head,
 body[class*='mysql']:not(.__non_res__) .container-resizeable-head {
+    z-index: 999998;
     height: 23px;
-    background: rgba(233, 242, 255, 0.7);
+    margin-bottom: 2px;
     border-top: 1px solid #e6e6e6;
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
-    margin-bottom: 2px;
-    z-index: 999998
+    background: rgba(233, 242, 255, .7)
 }
 
 body[class*='postgresql']:not(.__non_res__)>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>a:nth-child(9) body[class*='postgresql']:not(.__non_res__)>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>a:nth-child(10),
@@ -9380,6 +9438,10 @@ body[class*='sendmail'][data-uri*='list_ports.cgi'] .table-hover>tbody>tr:hover 
     color: #eee !important
 }
 
+.CodeMirror~input[type="reset"] {
+    display: none
+}
+
 .datepicker {
     font-size: 90%
 }
@@ -9920,7 +9982,7 @@ html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-messa
 
 html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-success:hover,
 html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-success {
-    background-color: rgba(38, 147, 115, 0.73) !important
+    background-color: rgba(38, 147, 115, .73) !important
 }
 
 html[data-background-style='nightRider'] ul.messenger-theme-air .messenger-message.message-error:hover,
@@ -9964,7 +10026,7 @@ html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-contai
 html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:active,
 html[data-background-style='nightRider'] .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading h4 a:hover,
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data]+strong {
-    color: rgba(140, 145, 150, 0.89)
+    color: rgba(140, 145, 150, .89)
 }
 
 html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data small,
@@ -9979,7 +10041,7 @@ html[data-background-style='nightRider'] .panel .panel-heading .panel-title a:be
 html[data-background-style='nightRider'] td .opener_trigger[id]:before,
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data],
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container .info-list-data span[data-data] a {
-    color: rgba(118, 122, 127, 0.89) !important
+    color: rgba(118, 122, 127, .89) !important
 }
 
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .right-side-tabs-dismiss,
@@ -9987,7 +10049,7 @@ html[data-background-style='nightRider'] .right-side-tabs[data-background-style=
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .nav-tabs,
 html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data,
 html[data-background-style='nightRider'] #right-side-tabs-sysinfo .no-sysinfo_data {
-    border-color: rgba(62, 65, 70, 0.57)
+    border-color: rgba(62, 65, 70, .57)
 }
 
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .tab-pane .info-container,
@@ -10014,41 +10076,41 @@ html[data-background-style='nightRider'] .right-side-tabs-toggler[data-backgroun
 
 html[data-background-style='nightRider'] .alert-warning:hover,
 html[data-background-style='nightRider'] .alert-warning {
-    color: rgba(234, 239, 238, 0.66);
+    color: rgba(234, 239, 238, .66);
     border-color: rgba(222, 180, 93, .13);
     background-color: rgba(128, 118, 64, .08)
 }
 
-html[data-background-style='nightRider'] tr[bgcolor="#ff8888"],
+html[data-background-style='nightRider'] tr[bgcolor='#ff8888'],
 html[data-background-style='nightRider'] .alert-danger:hover,
 html[data-background-style='nightRider'] .alert-danger {
-    color: rgba(234, 239, 238, 0.66);
+    color: rgba(234, 239, 238, .66);
     border-color: rgba(224, 60, 87, .15);
-    background-color: rgba(145, 94, 94, 0.88)
+    background-color: rgba(145, 94, 94, .88)
 }
 
 html[data-background-style='nightRider'] .alert-info:hover,
 html[data-background-style='nightRider'] .alert-info {
-    color: rgba(234, 239, 238, 0.66);
+    color: rgba(234, 239, 238, .66);
     border-color: rgba(65, 108, 117, .29);
     background-color: rgba(131, 162, 177, .08)
 }
 
 html[data-background-style='nightRider'] .alert-success:hover,
 html[data-background-style='nightRider'] .alert-success {
-    color: rgba(234, 239, 238, 0.66);
+    color: rgba(234, 239, 238, .66);
     border-color: rgba(71, 101, 47, .33);
     background-color: rgba(62, 118, 38, .08)
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph {
-    background-color: rgba(133, 138, 143, 0.17)
+    background-color: rgba(133, 138, 143, .17)
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar {
+    color: rgba(255, 255, 255, .37);
     border-right-color: #ca524f;
-    background-color: #a94442;
-    color: rgba(255, 255, 255, 0.37)
+    background-color: #a94442
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:1%'],
@@ -10159,13 +10221,13 @@ html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='wi
     color: #aaa
 }
 
-html[data-background-style='nightRider'] font[color="green"],
-html[data-background-style='nightRider'] font[color="#00aa00"],
+html[data-background-style='nightRider'] font[color='green'],
+html[data-background-style='nightRider'] font[color='#00aa00'],
 html[data-background-style='nightRider'] .text-success {
     color: #269373 !important
 }
 
-html[data-background-style='nightRider'] font[color="#ff0000"] {
+html[data-background-style='nightRider'] font[color='#ff0000'] {
     color: #a94442 !important
 }
 
@@ -10196,8 +10258,8 @@ html[data-background-style='nightRider'] .badge-warning {
 html[data-background-style='nightRider'] .label-danger,
 html[data-background-style='nightRider'] #right-side-tabs .right-side-tab-notification-asterix,
 html[data-background-style='nightRider'] .badge-danger {
-    background-color: #a94442 !important;
-    color: #ddd !important
+    color: #ddd !important;
+    background-color: #a94442 !important
 }
 
 html[data-background-style='nightRider'] #sidebar ul.user-links li:not(.menu-container):not(.sub-wrapper) {

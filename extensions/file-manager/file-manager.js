@@ -126,7 +126,7 @@ function __f____success(a, d, D, f, c, r, h, e, A, B, s, o, k, v, w) {
         var F = JSON.parse(G),
             E = '<div class="margined-left-40">';
         $.each(F, function(I, H) {
-            E += "<samp>• " + I + "</samp> - " + H + "<br>"
+            E += "<strong>• " + I + "</strong> - " + H + "<br>"
         });
         E += "</div>";
         return E
@@ -466,7 +466,7 @@ function __f____a(n, e) {
                 $(".__o__f_m-search-results").remove();
                 $(".ui_checked_columns.directory_go_up").addClass("hidden");
                 $_br = $(".breadcrumb > li:last-child");
-                $_br.html($_br.html() + '<span class="__o__f_m-search-results">' + ($(".breadcrumb > li:last-child a i").hasClass("fa-search") ? "&nbsp;&nbsp;&nbsp;/&nbsp;" : "") + '&nbsp;&nbsp;:&nbsp;&nbsp;<span class="text-primary __o__f_m-search-results-data cursor-pointer">`<em><samp class="small">' + o + "</samp>" + (m && !k ? ' <samp class="small">[' + m + "]</samp>" : (m && k) ? ' <samp class="small">[' + m + '<span class="smaller"> -> </span>' + k + "]</samp>" : "") + "</em>`</span></span>");
+                $_br.html($_br.html() + '<span class="__o__f_m-search-results">' + ($(".breadcrumb > li:last-child a i").hasClass("fa-search") ? "&nbsp;&nbsp;&nbsp;/&nbsp;" : "") + '&nbsp;&nbsp;:&nbsp;&nbsp;<span class="text-primary __o__f_m-search-results-data cursor-pointer">`<em><strong class="small">' + o + "</strong>" + (m && !k ? ' <strong class="small">[' + m + "]</strong>" : (m && k) ? ' <strong class="small">[' + m + '<span class="smaller"> -> </span>' + k + "]</strong>" : "") + "</em>`</span></span>");
                 var a = 5000;
                 if (__list_table_total_rows > 1) {
                     if (m && k) {
@@ -1653,7 +1653,7 @@ function ___f__tw() {
         $("body").on("click", "#createFolderDialog button._at_filemanager_create_folder_submit", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-folder"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_creating_directory") + " `<samp>" + $('#createFolderForm input[name="name"]').val() + "</samp>`. " + lang("theme_xhred_global_please_wait") + "", 10, "info", "create_folder_info");
+            messenger('<i class="fa fa-lg fa-fw fa-folder"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_creating_directory") + " `<strong>" + $('#createFolderForm input[name="name"]').val() + "</strong>`. " + lang("theme_xhred_global_please_wait") + "", 10, "info", "create_folder_info");
             __f____a("create_folder", false)
         });
         $("body").on("submit", "#createFolderForm", function(d) {
@@ -1683,7 +1683,7 @@ function ___f__tw() {
         $("body").on("click", "#createFileDialog button._at_filemanager_create_file_submit", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-file"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_creating_file") + " `<samp>" + $('#createFileForm input[name="name"]').val() + "</samp>`. " + lang("theme_xhred_global_please_wait"), 10, "info", "create_file_info");
+            messenger('<i class="fa fa-lg fa-fw fa-file"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_creating_file") + " `<strong>" + $('#createFileForm input[name="name"]').val() + "</strong>`. " + lang("theme_xhred_global_please_wait"), 10, "info", "create_file_info");
             __f____a("create_file", false)
         });
         $("body").on("submit", "#createFileForm", function(d) {
@@ -1713,7 +1713,7 @@ function ___f__tw() {
         $("body").on("click", "#downFromUrlDialog button.o__f_m-submitter-url_download", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_downloading_from") + " <samp>" + URI($('#downFromUrlForm input[name="link"]').val()).hostname() + "</samp>. " + lang("theme_xhred_global_please_wait"), 1000000, "info", "url_download_info");
+            messenger('<i class="fa fa-lg fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_downloading_from") + " <strong>" + URI($('#downFromUrlForm input[name="link"]').val()).hostname() + "</strong>. " + lang("theme_xhred_global_please_wait"), 1000000, "info", "url_download_info");
             __f____a("url_download", false)
         });
         $("body").on("submit", "#downFromUrlForm", function(d) {

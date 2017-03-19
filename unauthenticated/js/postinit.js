@@ -298,49 +298,61 @@ function dblrclick(f) {
 function f__toogle_palette() {
     var a = $("body .user-link.palette-toggle"),
         c = (a.find(".fa-sun").length ? 0 : 1),
-        f = (typeof t__wi_p.$('iframe[name="page"]') != "undefined" && t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('iframe[name="page"]').contents().get(0)),
-        e = t__wi_p.$("html").attr("data-night-mode"),
+        g = (typeof t__wi_p.$('iframe[name="page"]') != "undefined" && t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('iframe[name="page"]').contents().get(0)),
+        f = t__wi_p.$("html").attr("data-night-mode"),
         d = t__wi_p.$("body").attr("data-default-theme"),
         b = t__wi_p.$("html").attr("data-default-background-style");
-    if (!f) {
+    if (!g) {
         return
     }
-    if (c === 1) {
-        a.find(".fa-moon").removeClass("fa-moon").addClass("fa-sun vertical-align-middle");
-        $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').attr("disabled", "disabled");
-        $(t__wi_p.page.document).find(".settings_navigation_color_toggle").addClass("hidden");
-        $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]').remove();
-        $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/gunmetal." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
-        $(t__wi_p.page.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/nightrider." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
-        t__wi_p.$("body").attr("data-theme", "gunmetal");
-        $(t__wi_p.page.document).find("body").attr("data-theme", "gunmetal");
-        t__wi_p.$("html").attr("data-background-style", "nightRider");
-        $(t__wi_p.page.document).find("html").attr("data-background-style", "nightRider");
-        t__wi_p.$("html").attr("data-night-mode", 1);
-        $(t__wi_p.page.document).find("html").attr("data-night-mode", 1);
-        t__wi_p.__isNR = 1;
-        t__wi_p.__isNM = 1;
-        t__wi_p.page.window.__isNR = 1;
-        t__wi_p.page.window.__isNM = 1
-    } else {
-        $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').removeAttr("disabled");
-        $(t__wi_p.page.document).find(".settings_navigation_color_toggle").removeClass("hidden");
-        a.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
-        $(t__wi_p.top.document).find('head link[href*="gunmetal"]').remove();
-        $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
-        settings_background_color !== "nightRider" && $(t__wi_p.page.document).find('head link[href*="nightrider"]').remove();
-        t__wi_p.$("body").attr("data-theme", d);
-        $(t__wi_p.page.document).find("body").attr("data-theme", d);
-        t__wi_p.$("html").attr("data-background-style", b);
-        $(t__wi_p.page.document).find("html").attr("data-background-style", b);
-        t__wi_p.$("html").attr("data-night-mode", 0);
-        $(t__wi_p.page.document).find("html").attr("data-night-mode", 0);
-        t__wi_p.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
-        t__wi_p.__isNM = 0;
-        t__wi_p.page.window.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
-        t__wi_p.page.window.__isNM = 0
+    if ($(t__wi_p.page.document).find(".modal.in:visible").length) {
+        return
     }
-    t__wi_p.manageConfig("save")
+    var e = (t__wi_p.page.$source_path == t__wi_p.page.$_____link + "sysinfo.cgi" ? 330 : 0);
+    if (e) {
+        $(t__wi_p.page.document).find("body").addClass("bg-puff-out");
+        setTimeout(function() {
+            t__wi_p.page.location.reload()
+        }, (e))
+    }
+    setTimeout(function() {
+        if (c === 1) {
+            a.find(".fa-moon").removeClass("fa-moon").addClass("fa-sun vertical-align-middle");
+            $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').attr("disabled", "disabled");
+            $(t__wi_p.page.document).find(".settings_navigation_color_toggle").addClass("hidden");
+            $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]').remove();
+            $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/gunmetal." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+            $(t__wi_p.page.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/nightrider." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+            t__wi_p.$("body").attr("data-theme", "gunmetal");
+            $(t__wi_p.page.document).find("body").attr("data-theme", "gunmetal");
+            t__wi_p.$("html").attr("data-background-style", "nightRider");
+            $(t__wi_p.page.document).find("html").attr("data-background-style", "nightRider");
+            t__wi_p.$("html").attr("data-night-mode", 1);
+            $(t__wi_p.page.document).find("html").attr("data-night-mode", 1);
+            t__wi_p.__isNR = 1;
+            t__wi_p.__isNM = 1;
+            t__wi_p.page.window.__isNR = 1;
+            t__wi_p.page.window.__isNM = 1
+        } else {
+            $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').removeAttr("disabled");
+            $(t__wi_p.page.document).find(".settings_navigation_color_toggle").removeClass("hidden");
+            a.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
+            $(t__wi_p.top.document).find('head link[href*="gunmetal"]').remove();
+            $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+            settings_background_color !== "nightRider" && $(t__wi_p.page.document).find('head link[href*="nightrider"]').remove();
+            t__wi_p.$("body").attr("data-theme", d);
+            $(t__wi_p.page.document).find("body").attr("data-theme", d);
+            t__wi_p.$("html").attr("data-background-style", b);
+            $(t__wi_p.page.document).find("html").attr("data-background-style", b);
+            t__wi_p.$("html").attr("data-night-mode", 0);
+            $(t__wi_p.page.document).find("html").attr("data-night-mode", 0);
+            t__wi_p.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
+            t__wi_p.__isNM = 0;
+            t__wi_p.page.window.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
+            t__wi_p.page.window.__isNM = 0
+        }
+        t__wi_p.manageConfig("save")
+    }, (e * 2))
 }
 
 function ported_shell_clear_cmd(a) {
@@ -900,7 +912,7 @@ function __mss() {
 }
 
 function f__l_reload() {
-    var a = t__wi_p.$t_uri_virtualmin ? "virtualmin" : t__wi_p.$t_uri_cloudmin ? "cloudmin" : product_name() == "Usermin" ? "usermin" : product_name() == "Mail" ? "mail" : "webmin";
+    var a = t__wi_p.$t_uri_virtualmin ? "virtualmin" : t__wi_p.$t_uri_cloudmin ? "cloudmin" : ((product_name() == "Usermin") ? "usermin" : (product_name() == "Mail" ? "mail" : "webmin"));
     if (a == "webmin") {
         t__wi_p.t__s("open_webmin");
         t__wm_l("open_webmin")
@@ -919,7 +931,7 @@ function f__l_reload() {
                 } else {
                     if (a == "mail") {
                         t__wi_p.t__s("open_webmail");
-                        t__wm_l(t__wi_p.$("aside select").val())
+                        t__wm_l("open_webmail")
                     }
                 }
             }

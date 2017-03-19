@@ -267,21 +267,21 @@ theme_xhred_filemanager_renaming_selected=Canviant de nom l'element seleccionat.
 theme_xhred_filemanager_creating_directory=Creant una nova carpeta
 theme_xhred_filemanager_creating_file=Creant un nou arxiu
 theme_xhred_filemanager_downloading_from=Descarregant des de
-theme_xhred_filemanager_setting_permissions=Establir els permisos <samp><em>%value</em></samp> en els arxius seleccionats.
-theme_xhred_filemanager_changing_ownership=Canviar la propietat <samp><em>%value</em></samp> en els arxius seleccionats.
+theme_xhred_filemanager_setting_permissions=Establir els permisos <strong><em>%value</em></strong> en els arxius seleccionats.
+theme_xhred_filemanager_changing_ownership=Canviar la propietat <strong><em>%value</em></strong> en els arxius seleccionats.
 theme_xhred_filemanager_compressing_selected=Comprimint els elements seleccionats en segon pla.
 theme_xhred_filemanager_refreshing=Actualitzant el contingut de la carpeta.
 theme_xhred_filemanager_copying_successful=S'ha copiat al porta-retalls.
 theme_xhred_filemanager_cutting_successful=S'ha tallat al porta-retalls.
 theme_xhred_filemanager_pasting_successful=S'ha enganxat des del porta-retalls.
-theme_xhred_filemanager_bookmark_success=La carpeta <samp><em>%value</em></samp> s'ha afegit correctament als teus marcadors.
+theme_xhred_filemanager_bookmark_success=La carpeta <strong><em>%value</em></strong> s'ha afegit correctament als teus marcadors.
 theme_xhred_filemanager_searching=Cercant el valor <em>`%value`</em> en els arxius i carpetes.
-theme_xhred_filemanager_search_founds=S'han trobat <samp>%value</samp> elements.
-theme_xhred_filemanager_search_found=S'ha trobat <samp>1</samp> element.
+theme_xhred_filemanager_search_founds=S'han trobat <strong>%value</strong> elements.
+theme_xhred_filemanager_search_found=S'ha trobat <strong>1</strong> element.
 theme_xhred_filemanager_search_no_matches=La cerca no ha trobat cap resultat.
 theme_xhred_filemanager_nothing_is_selected=No hi ha res seleccionat.
-theme_xhred_filemanager_saving_file=L'arxiu `<samp><em>%value</em></samp>` s'ha desat.
-theme_xhred_filemanager_file_saved=L'arxiu `<samp><em>%value</em></samp>` s'ha desat correctament.
+theme_xhred_filemanager_saving_file=L'arxiu `<strong><em>%value</em></strong>` s'ha desat.
+theme_xhred_filemanager_file_saved=L'arxiu `<strong><em>%value</em></strong>` s'ha desat correctament.
 theme_xhred_filemanager_not_editable=No és possible editar aquests elements.
 theme_xhred_filemanager_not_decompressable=No és possible descomprimir aquest arxiu.
 theme_xhred_filemanager_no_selection_to_copy=No s'ha seleccionat cap arxiu ni carpeta per copiar.
@@ -293,8 +293,8 @@ theme_xhred_filemanager_successful_deletion=S'ha eliminat correctament.
 theme_xhred_filemanager_successful_permissions=Els permisos s'han aplicat correctament.
 theme_xhred_filemanager_successful_ownership=El propietari s'ha canviat correctament.
 theme_xhred_filemanager_successful_compression=La compressió ha acabat correctament.
-theme_xhred_filemanager_successful_directory_creation=S'ha creat correctament la carpeta `<samp>%value</samp>`.
-theme_xhred_filemanager_successful_file_creation=S'ha creat correctament l'arxiu `<samp>%value</samp>`.
+theme_xhred_filemanager_successful_directory_creation=S'ha creat correctament la carpeta `<strong>%value</strong>`.
+theme_xhred_filemanager_successful_file_creation=S'ha creat correctament l'arxiu `<strong>%value</strong>`.
 
 theme_xhred_notifications_packages_updates=Actualització de paquests
 theme_xhred_notifications_theme_update=Actualització del tema
@@ -422,7 +422,7 @@ theme_xhred_global_close=Tancar
 theme_xhred_encoding_warning=S'ha detectat que no utilitzes caràcters unicode.Poden aparèixer caràcters no desitjats. Pots canviar la configuració de l'idioma a <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> i assegura que el teu navegador es capaç de detectar-lo correctament. Tingues en compte que el mòdul "Canvi d'idioma i tema" pot sobreescriure la configuració general.
 
 theme_xhred_filemanager__no_bookmarks=No s'ha desat cap marcador
-theme_xhred_filemanager_unbookmark_success=La carpeta <samp><em>%value</em></samp> s'ha eliminat correctament dels teus marcadors.
+theme_xhred_filemanager_unbookmark_success=La carpeta <strong><em>%value</em></strong> s'ha eliminat correctament dels teus marcadors.
 theme_xhred_filemanager_bookmark=Marcar la carpeta actual
 theme_xhred_filemanager_unbookmark=Desmarcar la carpeta actual
 theme_xhred_filemanager_move_into_self=No és possible moure la carpeta sobre si mateixa! La carpeta de destí està a sobre de la carpeta d'orígen.
@@ -504,18 +504,18 @@ theme_xhred_datatable_no_search_results=<span class="h5">No s'ha trobat cap resu
 
 theme_xhred_filemanager_buffer_error=S'ha produït un error mentres s'enganxaven els arxius al búfer - permís denegat.
 
-filemanager_create_object_exists=$3 `<samp><em>$1</em></samp>` ja existeix a `<samp><tt>$2</tt></samp>`
-filemanager_create_object_denied=No es pot crear $3 `<samp><em>$1</em></samp>` en `<samp><tt>$2</tt></samp>` - permís denegat.
+filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` ja existeix a `<strong><tt>$2</tt></strong>`
+filemanager_create_object_denied=No es pot crear $3 `<strong><em>$1</em></strong>` en `<strong><tt>$2</tt></strong>` - permís denegat.
 
 filemanager_paste_warning=No és possible enganxar l'objecte. Podria ser que els objectes s'hagin canviat de nom, mogut, eliminat o que no tinguis permís d'escriptura.
 
 theme_xhred_filemanager_delete_warning=Alguns dels objectes no s'han eliminat correctament. Podria ser que els objectes s'hagin canviat de nom, mogut, eliminat o que no tinguis permís d'escriptura. Error:
 
 
-filemanager_rename_exists=$3 amb el nom `<samp><em>$1</em></samp>` ja existeix a `<samp><tt>$2</tt></samp>`
+filemanager_rename_exists=$3 amb el nom `<strong><em>$1</em></strong>` ja existeix a `<strong><tt>$2</tt></strong>`
 filemanager_rename_denied=El $3 no es pot canviar de nom. Això podria ser degut a que l'orígen $3 s'hagi eliminat o hi hagi problemes amb els permisos.
 
-theme_xhred_filemanager_successful_rename=S'ha canviat correctament el nom `<samp><em><s>%from</s></em></samp>` a `<samp><em>%to</em></samp>`.
+theme_xhred_filemanager_successful_rename=S'ha canviat correctament el nom `<strong><em><s>%from</s></em></strong>` a `<strong><em>%to</em></strong>`.
 
 filemanager_global_info_total1=Total: $1 arxiu i $2 carpeta
 filemanager_global_info_total2=Total: $1 arxius i $2 carpeta
@@ -534,8 +534,8 @@ theme_xhred_global_replace=Substitueix
 theme_xhred_filemanager_searching_matching=Cercant <em>`%value`</em> que correspongui amb arxius o carpetes, amb el text <em>`%text`</em>.
 theme_xhred_filemanager_searching_replacing=Substituint el text <em>`%text`</em> per <em>`%replace`</em> en arxius que contingin <em>`%value`</em>.
 
-theme_xhred_filemanager_search_replaced_multi=S'ha trobat i substituït en <samp>%value</samp> arxius.
-theme_xhred_filemanager_search_replaced=S'ha trobat i substituït en <samp>1</samp> arxiu.
+theme_xhred_filemanager_search_replaced_multi=S'ha trobat i substituït en <strong>%value</strong> arxius.
+theme_xhred_filemanager_search_replaced=S'ha trobat i substituït en <strong>1</strong> arxiu.
 
 theme_xhred_filemanager_successful_permissions_with_errors=S'ha produït un error mentres es canviaven els permisos en alguns objectes:
 
@@ -543,8 +543,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=S'ha produït un error 
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=El propietari no s'ha pogut canviar pels errors:
 
 theme_xhred_filemanager_successful_compression_with_errors=Ha finalitzat la compressió amb els següents errors:
-theme_xhred_filemanager_successful_compression_bg=La compressió ha finalitzat correctament. L'arxiu comprimit <samp>`%file</samp> està ubicat a la carpeta <samp>`%path`</samp>.
-theme_xhred_filemanager_successful_compression_bg_with_errors=La compressió ha finalitzat amb errors. L'arxiu comprimit <samp>`%file</samp> hauria d'estar ubicat a la carpeta <samp>`%path`</samp>.
+theme_xhred_filemanager_successful_compression_bg=La compressió ha finalitzat correctament. L'arxiu comprimit <strong>`%file</strong> està ubicat a la carpeta <strong>`%path`</strong>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=La compressió ha finalitzat amb errors. L'arxiu comprimit <strong>`%file</strong> hauria d'estar ubicat a la carpeta <strong>`%path`</strong>.
 
 theme_xhred_filemanager_settings_notification_type=Tipus de notificacions a mostrar
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informacions, alertes i errors
@@ -622,12 +622,12 @@ settings_leftmenu_netdata=Mostrar l'enllaç d'informació de xarxa en temps real
 settings_leftmenu_netdata_link=Enllaç de servidor preferit d'informació de xarxa
 
 theme_xhred_filemanager_context_chattr=Canviar els atributs
-theme_xhred_filemanager_changing_attributes=Establint els atributs <samp><em>%value</em></samp> en els arxius seleciconats.
+theme_xhred_filemanager_changing_attributes=Establint els atributs <strong><em>%value</em></strong> en els arxius seleciconats.
 theme_xhred_filemanager_successful_attributes_with_errors=Els atributs no s'han establet pels següents elements:
 theme_xhred_filemanager_successful_attributes=Els nous atributs s'han establert correctament.
 
 theme_xhred_filemanager_context_chcon=Canvia el context de seguretat
-theme_xhred_filemanager_changing_secontext=Canviant el context de seguretat a <samp><em>%value</em></samp> en els arxius seleccionats.
+theme_xhred_filemanager_changing_secontext=Canviant el context de seguretat a <strong><em>%value</em></strong> en els arxius seleccionats.
 theme_xhred_filemanager_successful_secontext_with_errors=El context de seguretat no s'ha canviat en els següents elements:
 theme_xhred_filemanager_successful_secontext=El context de seguretat s'ha canviat correctament.
 
