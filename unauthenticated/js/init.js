@@ -29,6 +29,8 @@ typeof settings_right_reload == "undefined" ? settings_right_reload = true : fal
 typeof settings_right_default_tab_usermin == "undefined" ? settings_right_default_tab_usermin = "/" : false;
 typeof settings_right_virtualmin_default == "undefined" ? settings_right_virtualmin_default = "sysinfo.cgi" : false;
 typeof settings_right_cloudmin_default == "undefined" ? settings_right_cloudmin_default = "sysinfo.cgi" : false;
+typeof settings_navigation_color == "undefined" ? settings_navigation_color = "blue" : false;
+typeof settings_background_color == "undefined" ? settings_background_color = "gainsboro" : false;
 typeof settings_cm_view_palette == "undefined" ? settings_cm_view_palette = "monokai" : false;
 typeof settings_cm_editor_palette == "undefined" ? settings_cm_editor_palette = "monokai" : false;
 typeof settings_side_slider_palette == "undefined" ? settings_side_slider_palette = "grey" : false;
@@ -46,7 +48,7 @@ config_portable_module_filemanager_calculate_size = (typeof localStorage != "und
 config_portable_module_filemanager_remember_tabs = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_remember_tabs") == "false" ? false : true);
 config_portable_module_xsql_fit_content_screen_height = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_xsql_fit_content_screen_height") == "true" ? true : false);
 typeof settings_hotkeys_active == "undefined" ? settings_hotkeys_active = true : false;
-typeof settings_hotkeys_tooltip == "undefined" ? settings_hotkeys_tooltip = true : false;
+typeof settings_button_tooltip == "undefined" ? settings_button_tooltip = true : false;
 typeof settings_hotkey_toggle_modifier == "undefined" ? settings_hotkey_toggle_modifier = "altKey" : false;
 typeof settings_hotkey_toggle_key_webmin == "undefined" ? settings_hotkey_toggle_key_webmin = "w" : false;
 typeof settings_hotkey_toggle_key_virtualmin == "undefined" ? settings_hotkey_toggle_key_virtualmin = "v" : false;
@@ -290,6 +292,7 @@ function manageConfig(d) {
         t__wi_p.settings_font_family != "undefind" && (a.settings_font_family = (is_numeric(t__wi_p.settings_font_family) ? (t__wi_p.settings_font_family + ";") : "'" + t__wi_p.settings_font_family + "';"));
         t__wi_p.settings_navigation_color != "undefind" && (a.settings_navigation_color = "'" + t__wi_p.settings_navigation_color + "';");
         t__wi_p.settings_background_color != "undefind" && (a.settings_background_color = "'" + t__wi_p.settings_background_color + "';");
+        t__wi_p.settings_button_tooltip != "undefind" && (a.settings_button_tooltip = t__wi_p.settings_button_tooltip);
         t__wi_p.settings_hide_top_loader != "undefind" && (a.settings_hide_top_loader = t__wi_p.settings_hide_top_loader);
         t__wi_p.settings_animation_left != "undefind" && (a.settings_animation_left = t__wi_p.settings_animation_left);
         t__wi_p.settings_animation_tabs != "undefind" && (a.settings_animation_tabs = t__wi_p.settings_animation_tabs);
@@ -297,8 +300,7 @@ function manageConfig(d) {
         t__wi_p.settings_show_night_mode_link != "undefind" && (a.settings_show_night_mode_link = t__wi_p.settings_show_night_mode_link);
         t__wi_p.settings_theme_options_button != "undefind" && (a.settings_theme_options_button = t__wi_p.settings_theme_options_button);
         t__wi_p.settings_leftmenu_button_refresh != "undefind" && (a.settings_leftmenu_button_refresh = t__wi_p.settings_leftmenu_button_refresh);
-        t__wi_p.settings_hotkeys_active && (a.settings_hotkeys_active = t__wi_p.settings_hotkeys_active);
-        t__wi_p.settings_hotkeys_tooltip && (a.settings_hotkeys_tooltip = t__wi_p.settings_hotkeys_tooltip);
+        t__wi_p.settings_hotkeys_active != "undefind" && (a.settings_hotkeys_active = t__wi_p.settings_hotkeys_active);
         t__wi_p.$___ajax_requested_url = "___blocked";
         setTimeout(function() {
             $.ajax({

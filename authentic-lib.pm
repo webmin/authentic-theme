@@ -120,7 +120,13 @@ sub print_category
 
         # Show link to close or open catgory
         print '<li class="has-sub">' . "\n";
-        print '<a href="#' . $c . '"><i class="fa ' . $icon . ' fa-fw"></i> <span>' . $label . '</span></a>' . "\n";
+        print '<a href="#'
+          . $c
+          . '"><i class="fa '
+          . $icon
+          . ' fa-fw"></i> <span>'
+          . $label
+          . '</span></a>' . "\n";
         print '</li>' . "\n";
     }
 }
@@ -173,11 +179,15 @@ sub print_switch_webmin
       . '" name="product-switcher" type="radio"'
       . ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1 ? " checked" : "" ) . '>
         <label'
-      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_' . get_product_name() . '',
+      . get_button_tooltip(
+                            (  get_product_name() eq 'usermin'
+                               ? 'theme_xhred_titles_um'
+                               : 'theme_xhred_titles_wm'
+                            ),
                             'settings_hotkey_toggle_key_' . get_product_name() . '',
                             'auto bottom' )
       . ' for="open_'
-      . &get_product_name() . '">
+      . get_product_name() . '">
                 <i class="wbm-webmin wbm-sm"></i><span>'
       . (   &get_product_name() eq 'webmin'
           ? $Atext{'theme_xhred_titles_wm'}
@@ -190,7 +200,7 @@ sub print_switch_dashboard
     print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
       . ( $t_uri_dashboard != -1 ? " checked" : "" ) . '>
           <label'
-      . get_hotkey_tooltip( 'settings_hotkey_sysinfo', 'settings_hotkey_sysinfo', 'auto right' )
+      . get_button_tooltip( 'theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto right' )
       . ' for="open_dashboard" style="padding-top: 1px;">
           <i class="fa fa-stack fa-dashboard"></i><span>'
       . $Atext{'theme_xhred_titles_dashboard'} . '</span></label>';
@@ -201,9 +211,7 @@ sub print_switch_virtualmin
     print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"'
       . ( $t_uri_virtualmin != -1 ? " checked" : "" ) . '>
           <label'
-      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_virtualmin',
-                            'settings_hotkey_toggle_key_virtualmin',
-                            'auto right' )
+      . get_button_tooltip( 'theme_xhred_titles_vm', 'settings_hotkey_toggle_key_virtualmin', 'auto right' )
       . ' for="open_virtualmin">
           <i class="wbm-virtualmin wbm-sm"></i><span>'
       . $Atext{'theme_xhred_titles_vm'} . '</span></label>';
@@ -214,7 +222,7 @@ sub print_switch_cloudmin
     print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"'
       . ( $t_uri_cloudmin != -1 ? " checked" : "" ) . '>
           <label'
-      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_cloudmin', 'settings_hotkey_toggle_key_cloudmin', 'auto right' )
+      . get_button_tooltip( 'theme_xhred_titles_cm', 'settings_hotkey_toggle_key_cloudmin', 'auto right' )
       . ' for="open_cloudmin">
           <i class="wbm-cloudmin wbm-sm"></i><span>'
       . $Atext{'theme_xhred_titles_cm'} . '</span></label>';
@@ -225,7 +233,7 @@ sub print_switch_webmail
     print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"'
       . ( $t_uri_webmail != -1 ? " checked" : "" ) . '>
           <label'
-      . get_hotkey_tooltip( 'settings_hotkey_toggle_key_webmail', 'settings_hotkey_toggle_key_webmail', 'auto right' )
+      . get_button_tooltip( 'theme_xhred_titles_mail', 'settings_hotkey_toggle_key_webmail', 'auto right' )
       . ' for="open_webmail">
           <i class="fa fa-stack fa-envelope"></i>
           <span>' . $Atext{'theme_xhred_titles_mail'} . '</span></label>';
@@ -416,9 +424,9 @@ sub get_extended_sysinfo
                       . $info->{'id'} . '-'
                       . $info->{'module'}
                       . '-collapse" aria-expanded="'
-                      . ( ( $info->{'open'} || $__settings{'settings_sysinfo_expand_all_accordions'} eq 'true' )
-                          ? 'true'
-                          : 'false' )
+                      . (( $info->{'open'} || $__settings{'settings_sysinfo_expand_all_accordions'} eq 'true' )
+                         ? 'true'
+                         : 'false' )
                       . '" aria-controls="'
                       . $info->{'id'} . '-'
                       . $info->{'module'}
@@ -486,7 +494,8 @@ sub get_extended_sysinfo
                             $t->{"value"} =~ s/<img src='\/virtual-server\/images\/stop.png'.*?>/$__stop/g;
                             $t->{"value"} =~ s/<img src='\/virtual-server\/images\/down.gif'.*?>/$__down/g;
                             $t->{"value"} =~ s/<img src='\/virtual-server\/images\/start.png'.*?>/$__start/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
+                            $t->{"value"} =~
+                              s/<img src='\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
 
                             $returned_sysinfo .= '<tr>
                                 <td>' . $t->{"desc"} . '</td>
@@ -836,7 +845,8 @@ sub print_left_menu
                     }
                 }
                 elsif ( !foreign_available("webmin") && $__custom_print eq '0' ) {
-                    print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi", $Atext{'settings_title'}, 1 );
+                    print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi",
+                                         $Atext{'settings_title'}, 1 );
                     $__custom_print++;
                 }
                 print "</ul></li>\n";
@@ -1163,8 +1173,8 @@ sub get_sysinfo_vars
             if (    $__settings{'settings_sysinfo_csf_updates'} eq 'true'
                  && $get_user_level eq '0' )
             {
-                http_download( 'download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
-                               undef, undef, undef, undef, 5 );
+                http_download( 'download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version,
+                               \$error, undef, undef, undef, undef, 5 );
 
                 # Trim versions' number
                 $csf_installed_version =~ s/^\s+|\s+$//g;
@@ -1192,7 +1202,10 @@ sub get_sysinfo_vars
                     '<a href="/csf">ConfigServer Security & Firewall</a> '
                   . $csf_installed_version . ''
                   . ( $csf_update_required eq '1'
-                      ? '. ' . $Atext{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;'
+                      ? '. '
+                        . $Atext{'theme_update_available'} . ' '
+                        . $csf_remote_version
+                        . '&nbsp;&nbsp;&nbsp;'
                       : '&nbsp;&nbsp;&nbsp;'
                   )
                   . '
@@ -1234,8 +1247,9 @@ sub get_sysinfo_vars
         #System time
         use Time::Local;
         my ( $_time, $local_time );
-        $_time      = time();
-        $local_time = '<span data-convertible-timestamp-full="' . $_time . '" >' . localtime($_time) . '</span>';
+        $_time = time();
+        $local_time =
+          '<span data-convertible-timestamp-full="' . $_time . '" >' . localtime($_time) . '</span>';
         if ( &foreign_available("time") ) {
             $local_time =
                 '<a data-convertible-timestamp-full="'
@@ -1319,7 +1333,8 @@ sub get_sysinfo_vars
             @procs        = &proc::list_processes();
             $running_proc = scalar(@procs);
             if ( &foreign_available("proc") ) {
-                $running_proc = '<a href=' . $gconfig{'webprefix'} . '/proc/index_tree.cgi>' . $running_proc . '</a>';
+                $running_proc =
+                  '<a href=' . $gconfig{'webprefix'} . '/proc/index_tree.cgi>' . $running_proc . '</a>';
             }
         }
 
@@ -1387,13 +1402,15 @@ sub get_sysinfo_vars
             }
         }
 
-        return ( $cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-                 $host,               $os,                      $webmin_version,  $virtualmin_version,
-                 $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-                 $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-                 $running_proc,       $load,                    $real_memory,     $virtual_memory,
-                 $disk_space,         $package_message,         $csf_title,       $csf_data,
-                 $csf_remote_version, $authentic_remote_version );
+        return ( $cpu_percent,             $mem_percent,        $virt_percent,
+                 $disk_percent,            $host,               $os,
+                 $webmin_version,          $virtualmin_version, $cloudmin_version,
+                 $authentic_theme_version, $local_time,         $kernel_arch,
+                 $cpu_type,                $cpu_temperature,    $hdd_temperature,
+                 $uptime,                  $running_proc,       $load,
+                 $real_memory,             $virtual_memory,     $disk_space,
+                 $package_message,         $csf_title,          $csf_data,
+                 $csf_remote_version,      $authentic_remote_version );
 
     }
     else {
@@ -1547,8 +1564,9 @@ sub csf_mod
 
             ( my $fc = read_file_contents($csf_conf) ) =~ s/$csf_ui = "0"/$csf_ui = "1"/g;
 
-            write_file_contents( $csf_conf,                                                               $fc );
-            write_file_contents( $config_directory . "/authentic-theme/" . $csf_prefix . "ui-introduced", "\n" );
+            write_file_contents( $csf_conf, $fc );
+            write_file_contents( $config_directory . "/authentic-theme/" . $csf_prefix . "ui-introduced",
+                                 "\n" );
         }
 
     }
@@ -1590,7 +1608,8 @@ sub csf_temporary_list
                     if ( !length $h ) { next }
                     my ( $a, $b, $d, $e, $f, $g ) = split( /\|/, $h );
                     if ( $r eq $b ) {
-                        push @l, $a . '|' . $b . '|' . $w . '|' . $k . '|' . $d . '|' . $e . '|' . $f . '|' . $g;
+                        push @l,
+                          $a . '|' . $b . '|' . $w . '|' . $k . '|' . $d . '|' . $e . '|' . $f . '|' . $g;
                     }
                 }
 
@@ -1630,7 +1649,9 @@ sub print_table_row
 {
     my ( $title, $content, $id ) = @_;
     print '<tr>' . "\n";
-    print '<td style="width:30%;vertical-align:middle; padding:8px;"><strong>' . $title . '</strong></td>' . "\n";
+    print '<td style="width:30%;vertical-align:middle; padding:8px;"><strong>'
+      . $title
+      . '</strong></td>' . "\n";
     print '<td  style="width:70%; vertical-align:middle; padding:8px;"><span data-id="'
       . $id . '">'
       . $content
@@ -2103,7 +2124,8 @@ sub _settings
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',
-            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_window_replaced_timestamps_options_description')
+            _settings( 'fa', 'sub-title',
+                       '' . "~" . &Atext('settings_window_replaced_timestamps_options_description')
             ),
             'settings_window_replace_timestamps',
             'true',
@@ -2140,6 +2162,8 @@ sub _settings
             '260',
             'settings_switch_rdisplay',
             'false',
+            'settings_button_tooltip',
+            'true',
             'settings_leftmenu_section_hide_refresh_modules',
             'false',
             'settings_leftmenu_section_hide_unused_modules',
@@ -2198,8 +2222,6 @@ sub _settings
             _settings( 'fa', 'keyboard-o', &Atext('settings_right_hotkey_options_title') ),
             'settings_hotkeys_active',
             'true',
-            'settings_hotkeys_tooltip',
-            'true',
             'settings_hotkey_toggle_modifier',
             'altKey',
             'settings_hotkey_toggle_key_webmin',
@@ -2226,7 +2248,8 @@ sub _settings
             'r',
             'settings_hotkey_toggle_key_night_mode',
             'l', '__',
-            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_right_hotkey_custom_options_description') ),
+            _settings( 'fa', 'sub-title', '' . "~" . &Atext('settings_right_hotkey_custom_options_description')
+            ),
             'settings_hotkey_custom_1',
             '',
             'settings_hotkey_custom_2',
@@ -2272,9 +2295,12 @@ sub _settings
         my @_s_e = ();
 
         # List of combined settings for Virtualmin/Cloudmin/Usermin
-        my @s_vc_e = ( 'settings_leftmenu_vm_cm_dropdown_icons', 'settings_leftmenu_section_hide_vm_and_cm_links',
-                       'settings_leftmenu_singlelink_icons',     'settings_right_default_tab_webmin',
-                       'settings_force_default_tab',             'settings_right_reload' );
+        my @s_vc_e = ( 'settings_leftmenu_vm_cm_dropdown_icons',
+                       'settings_leftmenu_section_hide_vm_and_cm_links',
+                       'settings_leftmenu_singlelink_icons',
+                       'settings_right_default_tab_webmin',
+                       'settings_force_default_tab',
+                       'settings_right_reload' );
 
         if (    !&foreign_available("server-manager")
              && !foreign_available("virtual-server") )
@@ -2614,7 +2640,9 @@ sub _settings
 
                '
               . ( &foreign_available("server-manager")
-                  && ' <option value="/?cloudmin"' . ( $v eq '/?cloudmin' && ' selected' ) . '>Cloudmin</option>' )
+                  && ' <option value="/?cloudmin"'
+                  . ( $v eq '/?cloudmin' && ' selected' )
+                  . '>Cloudmin</option>' )
               . '
                 </select>';
         }
@@ -2674,7 +2702,10 @@ sub _settings
             $v = '<select class="ui_select" name="' . $k . '">
 
                     <option value="grey"'
-              . ( $v eq 'grey' && ' selected' ) . '>Dim Grey (' . $Atext{'theme_xhred_global_default'} . ')</option>
+              . ( $v eq 'grey' && ' selected' )
+              . '>Dim Grey ('
+              . $Atext{'theme_xhred_global_default'}
+              . ')</option>
 
                     <option value="white"'
               . ( $v eq 'white' && ' selected' ) . '>White</option>
@@ -2778,6 +2809,7 @@ sub _settings
               && error( $Atext{'theme_error_access_not_root'} );
 
             unlink_file( $config_directory . "/authentic-theme/settings.js" );
+            unlink_file( get_user_home() . "/.atconfig" );
             if ( usermin_available() ) {
                 unlink_file( $__usermin_config . "/authentic-theme/settings.js" );
             }
@@ -2793,7 +2825,8 @@ sub _settings
              && usermin_available() )
         {
             unlink_file( $__usermin_config . "/authentic-theme/logo.png" );
-            copy_source_dest( $config_directory . "/authentic-theme/logo.png", $__usermin_config . "/authentic-theme" );
+            copy_source_dest( $config_directory . "/authentic-theme/logo.png",
+                              $__usermin_config . "/authentic-theme" );
         }
         if ( -r $config_directory . "/authentic-theme/logo_welcome.png"
              && usermin_available() )
@@ -2881,13 +2914,15 @@ sub get_xhr_request
             print get_json( \@data );
         }
         elsif ( $in{'xhr-info'} eq '1' ) {
-            our ( $cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-                  $host,               $os,                      $webmin_version,  $virtualmin_version,
-                  $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-                  $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-                  $running_proc,       $load,                    $real_memory,     $virtual_memory,
-                  $disk_space,         $package_message,         $csf_title,       $csf_data,
-                  $csf_remote_version, $authentic_remote_version
+            our ( $cpu_percent,             $mem_percent,        $virt_percent,
+                  $disk_percent,            $host,               $os,
+                  $webmin_version,          $virtualmin_version, $cloudmin_version,
+                  $authentic_theme_version, $local_time,         $kernel_arch,
+                  $cpu_type,                $cpu_temperature,    $hdd_temperature,
+                  $uptime,                  $running_proc,       $load,
+                  $real_memory,             $virtual_memory,     $disk_space,
+                  $package_message,         $csf_title,          $csf_data,
+                  $csf_remote_version,      $authentic_remote_version
             ) = get_sysinfo_vars();
 
             if ( &foreign_available("system-status") ) {
@@ -2972,7 +3007,8 @@ sub get_default_right
             else {
                 if ( !$t_uri___i ) {
                     $udefgoto =
-                      '/virtual-server/summary_domain.cgi?dom=' . $__settings{'settings_right_virtualmin_default'};
+                      '/virtual-server/summary_domain.cgi?dom='
+                      . $__settings{'settings_right_virtualmin_default'};
                 }
                 else {
                     if ($t_uri___i) {
@@ -3006,7 +3042,8 @@ sub get_default_right
         }
         else {
             if ( !$t_uri___i ) {
-                $udefgoto = '/server-manager/edit_serv.cgi?id=' . $__settings{'settings_right_cloudmin_default'};
+                $udefgoto =
+                  '/server-manager/edit_serv.cgi?id=' . $__settings{'settings_right_cloudmin_default'};
             }
             else {
 
@@ -3165,11 +3202,16 @@ sub init
                  || &foreign_available("server-manager") )
             && &get_product_name() eq "webmin"
             && (
-                 ( $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && length $settings_right_default_tab_webmin > 1
+                 (    $t_uri_virtualmin == -1
+                   && $t_uri_cloudmin == -1
+                   && length $settings_right_default_tab_webmin > 1
                    || ( $settings_force_default_tab eq 'true'
-                        && ( ( $t_uri_cloudmin != -1 && index( $settings_right_default_tab_webmin, 'cloudmin' ) == -1 )
+                        && (
+                             ( $t_uri_cloudmin != -1
+                               && index( $settings_right_default_tab_webmin, 'cloudmin' ) == -1 )
                              || ( $t_uri_virtualmin != -1
-                                  && index( $settings_right_default_tab_webmin, 'virtualmin' ) == -1 ) ) ) ) ) )
+                                  && index( $settings_right_default_tab_webmin, 'virtualmin' ) == -1 ) ) ) ) )
+      )
     {
         print "Set-Cookie: redirect=0; path=/\r\n";
         my $d =
@@ -3181,7 +3223,9 @@ sub init
 
         # Prevent redirect-loop in case one of the
         # modules were remove and old settings are used
-        if ( ( index( $settings_right_default_tab_webmin, 'cloudmin' ) != -1 && !&foreign_available("server-manager") )
+        if (
+             ( index( $settings_right_default_tab_webmin, 'cloudmin' ) != -1
+               && !&foreign_available("server-manager") )
              || ( index( $settings_right_default_tab_webmin, 'virtualmin' ) != -1
                   && !&foreign_available("virtual-server") ) )
         {
@@ -3228,7 +3272,8 @@ sub init
          || index( $t_uri__i, 'recollecting-package-updates-processing' ) != -1 )
     {
         if ( $t_uri_virtualmin != -1 ) {
-            my $virtualmin = ( get_env('https') ? 'https://' : 'http://' ) . get_env('http_host') . '/?virtualmin';
+            my $virtualmin =
+              ( get_env('https') ? 'https://' : 'http://' ) . get_env('http_host') . '/?virtualmin';
             print "Location: $virtualmin\n\n";
         }
         elsif ( $t_uri_cloudmin != -1 ) {
@@ -3236,7 +3281,8 @@ sub init
             print "Location: $cloudmin\n\n";
         }
         elsif ( $t_uri_dashboard != -1 ) {
-            my $dashboard = ( get_env('https') ? 'https://' : 'http://' ) . get_env('http_host') . '/?dashboard';
+            my $dashboard =
+              ( get_env('https') ? 'https://' : 'http://' ) . get_env('http_host') . '/?dashboard';
             print "Location: $dashboard\n\n";
         }
         else {
@@ -3280,16 +3326,19 @@ sub content
       . '" class="index">' . "\n";
 
     # Mobile toggle
-    print '<div class="visible-xs mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
+    print '<div class="visible-xs mobile-menu-toggler" style="position: fixed; '
+      . get_filters('navigation') . '">';
     print
-      '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
+'<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">'
       . "\n";
     print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
     print '</button>' . "\n";
     print '</div>' . "\n";
 
     #### Left
-    print '<aside style="z-index:10; ' . get_filters('navigation') . '" id="sidebar" class="hidden-xs">' . "\n" . "\n";
+    print '<aside style="z-index:10; '
+      . get_filters('navigation')
+      . '" id="sidebar" class="hidden-xs">' . "\n" . "\n";
 
     &print_switch();
 
@@ -3307,7 +3356,8 @@ sub content
     print '<ul class="user-html"><li class="user-html-string">'
       . (
           (      $__settings{'settings_leftmenu_user_html_only_for_administrator'} ne 'true'
-              || $__settings{'settings_leftmenu_user_html_only_for_administrator'} eq 'true' && $get_user_level eq '0'
+              || $__settings{'settings_leftmenu_user_html_only_for_administrator'} eq 'true'
+              && $get_user_level eq '0'
           )
           ? $__settings{'settings_leftmenu_user_html'}
           : undef
@@ -3357,7 +3407,8 @@ sub changelog()
     $changelog_data =~ s/`(.*?)`/<code>$1<\/code>/g;
     $changelog_data =~ s/__(.*?)__/<strong>$1<\/strong>/g;
     $changelog_data =~ s/_(.*?)_/<em>$1<\/em>/g;
-    $changelog_data =~ s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
+    $changelog_data =~
+      s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;
 
     my $changelog_content = '
@@ -3478,24 +3529,29 @@ sub manage_theme_config
     }
 }
 
-sub get_hotkey_tooltip
+sub get_button_tooltip
 {
     my ( $label, $key, $placement ) = @_;
 
     my $mod_key = $__settings{'settings_hotkey_toggle_modifier'};
+    my $the_key = ucfirst( $__settings{$key} );
 
-    return (
-             (      length $__settings{'settings_hotkeys_active'}
-                 && $__settings{'settings_hotkeys_active'} ne 'false'
-                 && $__settings{'settings_hotkeys_tooltip'} ne 'false'
-             )
-             ? ( ' data-placement="'
-                 . $placement
-                 . '" data-toggle="tooltip" data-title="'
-                 . $Atext{$key} . ": "
-                 . ( $mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta" ) . '+'
-                 . ucfirst( $__settings{$key} )
-                 . '"' )
+    return ( $__settings{'settings_button_tooltip'} ne 'false'
+             ? (     ' data-placement="'
+                   . $placement
+                   . '" data-toggle="tooltip" data-title="'
+                   . ( $Atext{$label}
+                         . (
+                           length $__settings{'settings_hotkeys_active'}
+                             && $__settings{'settings_hotkeys_active'} ne 'false' && $the_key
+                           ? " ("
+                             . ( $mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta" ) . '+'
+                             . $the_key . ")"
+                           : ''
+                         )
+                   )
+                   . '"'
+               )
              : ' ' );
 }
 
@@ -3571,9 +3627,9 @@ sub get_autocomplete_shell
 
     if ($command) {
         @rs = array_unique(
-                         backquote_command(
-                             $cd_cmd . "bash -c 'compgen " . $command . " '" . quotemeta( $cmd2 ? $cmd2 : $string ) . ""
-                         ) );
+                backquote_command(
+                    $cd_cmd . "bash -c 'compgen " . $command . " '" . quotemeta( $cmd2 ? $cmd2 : $string ) . ""
+                ) );
 
     }
     else {
@@ -3594,7 +3650,8 @@ sub get_autocomplete_shell
             $unit_tmp =~ s/;/,/g;
 
             my @units_tmp = split /,/, $unit_tmp;
-            my @units_possible_tmp = ( 'start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status' );
+            my @units_possible_tmp =
+              ( 'start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status' );
             @rs_tmp = ( @units_tmp ? @units_tmp : @units_possible_tmp );
             my @rs_cmd;
 

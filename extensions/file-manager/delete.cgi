@@ -16,7 +16,7 @@ my %errors;
 
 foreach $name ( split( /\0/, $in{'name'} ) ) {
     if ( !&unlink_logged( $cwd . '/' . $name ) ) {
-        $errors{urlize($name)} = "$text{'error_delete'}";
+        $errors{ urlize($name) } = "$text{'error_delete'}";
     }
 }
 

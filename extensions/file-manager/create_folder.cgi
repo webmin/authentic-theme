@@ -27,8 +27,11 @@ else {
 
 if ( -f "$cwd/$in{'name'}" || -d "$cwd/$in{'name'}" ) {
     print_error(
-        ( text( 'filemanager_create_object_exists', $in{'name'}, $path, $text{ 'theme_xhred_global_' . $type . '' } ) )
-    );
+                 (
+                   text( 'filemanager_create_object_exists', $in{'name'},
+                         $path,                              $text{ 'theme_xhred_global_' . $type . '' }
+                   )
+                 ) );
 }
 else {
     if ( mkdir( "$cwd/$in{'name'}", oct(755) ) ) {
@@ -37,6 +40,10 @@ else {
     }
     else {
         print_error(
-            ( text( 'filemanager_create_object_denied', $in{'name'}, $path, $text{'theme_xhred_global_directory'} ) ) );
+                     (
+                       text( 'filemanager_create_object_denied', $in{'name'},
+                             $path,                              $text{'theme_xhred_global_directory'}
+                       )
+                     ) );
     }
 }

@@ -25,7 +25,7 @@ my $mv = ( $act eq "copy"            ? 0 : 1 );
 my $fr = ( length $request_uri{'ua'} ? 1 : 0 );
 my $fo = ( $request_uri{'ua'} eq '1' ? 1 : 0 );
 
-for ( my $i = 2; $i <= scalar(@arr) - 1; $i++ ) {
+for ( my $i = 2 ; $i <= scalar(@arr) - 1 ; $i++ ) {
     chomp( $arr[$i] );
 
     if ( ( -e "$cwd/$arr[$i]" ) && $cwd ne $from && !$fr ) {
@@ -39,8 +39,12 @@ for ( my $i = 2; $i <= scalar(@arr) - 1; $i++ ) {
 
 if ( scalar(@errors) > 0 ) {
     set_response('err');
-    redirect(
-        'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') );
+    redirect(   'list.cgi?path='
+              . urlize($path)
+              . '&module='
+              . $in{'module'}
+              . '&error='
+              . text('filemanager_paste_warning') );
 }
 else {
     set_response_count( scalar(@arr) - 2 );

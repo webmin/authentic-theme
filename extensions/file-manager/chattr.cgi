@@ -31,14 +31,16 @@ $label =~ tr/a-zA-Z\-\+ //dc;
 foreach my $file ( split( /\0/, $in{'name'} ) ) {
     $file =~ s/\.\.//g;
     &simplify_path($file);
-    if (
-        system_logged(
-            "chattr $recursive " . $label . " " . quotemeta("$cwd/$file")
-        ) != 0
-      )
-    {
-        $errors{html_escape($file)} = lc("$text{'attr_label_error_proc'}: $?");
+    if ( system_logged( "chattr $recursive " . $label . " " . quotemeta("$cwd/$file") ) != 0 ) {
+        $errors{ html_escape($file) } = lc("$text{'attr_label_error_proc'}: $?");
     }
 }
 
-redirect( 'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors( \%errors ) . '&error_fatal=' . $error_fatal );
+redirect(   'list.cgi?path='
+          . urlize($path)
+          . '&module='
+          . $in{'module'}
+          . '&error='
+          . get_errors( \%errors )
+          . '&error_fatal='
+          . $error_fatal );

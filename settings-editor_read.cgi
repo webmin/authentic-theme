@@ -20,7 +20,8 @@ $in{'file'} = $files[0] if ( !$in{'file'} );
 print '' . &Atext('settings_right_extensions_title') . '
             <p></p>';
 print "<form class=\"margined-bottom-3\">\n";
-print '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><span class="badge label-default">'
+print
+  '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><span class="badge label-default">'
   . (   index( $in{'file'}, '.css' ) > -1 ? $Atext{'theme_fileformat_css'}
       : index( $in{'file'}, '.json' ) > -1 ? $Atext{'theme_fileformat_json'}
       : index( $in{'file'}, '.js' ) > -1   ? $Atext{'theme_fileformat_js'}
@@ -41,11 +42,15 @@ $data = &read_file_contents( $in{'file'} );
 print &ui_form_start( "settings-editor_write.cgi", "form-data" );
 print &ui_hidden( "file", $in{'file'} ), "\n";
 print &ui_textarea( "data",
-                    (  index( $in{'file'}, '.json' ) > -1
-                       ? ( $data =~ /\{(?:\{.*\}|[^{])*\}/sg )
+                    (  index( $in{'file'}, '.json' ) > -1 ? ( $data =~ /\{(?:\{.*\}|[^{])*\}/sg )
                        : $data
                     ),
                     20, 80, undef, undef,
-                    "style='width: 100%' " . ( index( $in{'file'}, '.pm' ) > -1 ? 'placeholder="' . $Atext{'theme_fileformat_perl_placeholder'} . '"' : '' ) . "" );
+                    "style='width: 100%' "
+                      . ( index( $in{'file'}, '.pm' ) > -1
+                          ? 'placeholder="' . $Atext{'theme_fileformat_perl_placeholder'} . '"'
+                          : ''
+                      )
+                      . "" );
 print &ui_form_end( [ [ "save", $text{'save'} ] ] );
 &ui_print_footer( "webmin/edit_themes.cgi", $Atext{'right_return_theme_options'} );

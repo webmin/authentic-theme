@@ -26,11 +26,14 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
     my $__custom_print = 0;
 
     foreach my $c (@cats) {
-        if ( $gconfig{"notabs_${base_remote_user}"} ne '2' && $gconfig{"notabs"} ne '1' && ( $c && !$c->{'unused'} )
+        if (    $gconfig{"notabs_${base_remote_user}"} ne '2'
+             && $gconfig{"notabs"} ne '1'
+             && ( $c && !$c->{'unused'} )
              || ( $c && $c->{'unused'} && $show_unused ) )
         {
             &print_category( $c->{'code'}, $c->{'desc'} );
-            print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $c->{'code'} . '">' . "\n";
+            print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="'
+              . $c->{'code'} . '">' . "\n";
             foreach my $minfo ( @{ $c->{'modules'} } ) {
                 if ( ( $minfo->{'dir'} eq 'webmin' && &foreign_available("webmin") )
                      && $__custom_print eq '0' )
@@ -44,9 +47,9 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                     $__custom_print++;
 
                 }
-                elsif ( ( $c->{'code'} eq 'webmin' || $c->{'code'} eq 'usermin' ) && !foreign_available("webmin") && $__custom_print eq '0' ) {
-                    print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi", $Atext{'settings_title'},
-                                         undef );
+                elsif ( !foreign_available("webmin") && $__custom_print eq '0' ) {
+                    print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi",
+                                         $Atext{'settings_title'}, 1 );
                     $__custom_print++;
                 }
 

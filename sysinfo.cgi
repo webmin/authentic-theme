@@ -30,11 +30,16 @@ if ( $get_user_level ne '4' && &foreign_available("system-status")
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">'
       . &Atext('body_header0')
-      . ( ( $get_user_level ne '1' && $get_user_level ne '2' && $get_user_level ne '3' && &foreign_available("webmin") )
-          ? '<a href="/?updated" target="_top" data-href="'
-            . $gconfig{'webprefix'}
-            . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-8px -11px; color: white;"><i class="fa fa-refresh"></i></a>'
-          : '' )
+      . (
+        (       $get_user_level ne '1'
+             && $get_user_level ne '2'
+             && $get_user_level ne '3'
+             && &foreign_available("webmin")
+        )
+        ? '<a href="/?updated" target="_top" data-href="'
+          . $gconfig{'webprefix'}
+          . '/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right" style="margin:-8px -11px; color: white;"><i class="fa fa-refresh"></i></a>'
+        : '' )
       . ( $cloudmin_config{'docs_link'} && &foreign_available("server-manager")
           ? '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-8px '
             . ( $get_user_level eq '0' ? '15' : '-11' )
@@ -68,9 +73,13 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
     if ( $get_user_level ne '4' && &foreign_available("system-status") ) {
 
-        my ( $cpu_percent,             $mem_percent,    $virt_percent, $disk_percent,    $host,            $os,              $webmin_version,     $virtualmin_version, $cloudmin_version,
-             $authentic_theme_version, $local_time,     $kernel_arch,  $cpu_type,        $cpu_temperature, $hdd_temperature, $uptime,             $running_proc,       $load,
-             $real_memory,             $virtual_memory, $disk_space,   $package_message, $csf_title,       $csf_data,        $csf_remote_version, $authentic_remote_version
+        my ( $cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+             $host,               $os,                      $webmin_version,  $virtualmin_version,
+             $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+             $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+             $running_proc,       $load,                    $real_memory,     $virtual_memory,
+             $disk_space,         $package_message,         $csf_title,       $csf_data,
+             $csf_remote_version, $authentic_remote_version
         ) = get_sysinfo_vars();
 
         # Easypie charts
@@ -105,7 +114,8 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
         # Theme version
         if ($authentic_theme_version) {
-            &print_table_row( $Atext{'theme_version'}, $authentic_theme_version, 'sysinfo_authentic_theme_version' );
+            &print_table_row( $Atext{'theme_version'}, $authentic_theme_version,
+                              'sysinfo_authentic_theme_version' );
         }
 
         # ConfigServer Security & Firewall version
@@ -230,7 +240,18 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     # Build response message
     if ( $remote_version <= $installed_version ) {
-        $authentic_theme_version = '' . $Atext{'theme_name'} . ' ' . $installed_version;
+      $authentic_theme_version =
+          '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+        . $Atext{'theme_name'} . '</a> '
+        . $installed_version
+        . '<div class="btn-group margined-left-4"><a href="'
+        . $gconfig{'webprefix'}
+        . '/settings-user.cgi" data-href="'
+        . $gconfig{'webprefix'}
+        . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
+        . $Atext{'settings_right_theme_configurable_options_title'}
+        . '"><i class="fa fa-cogs"></i></a> '
+        . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
     }
     else {
         $authentic_theme_version = ''
@@ -318,7 +339,8 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         $usage = $home * $homesize + $mail * $mailsize + $db;
         $limit = $d->{'quota'} * $homesize;
         if ($limit) {
-            &print_table_row( $Atext{'right_quota'}, text( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
+            &print_table_row( $Atext{'right_quota'},
+                              text( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
         }
         else {
             &print_table_row( $Atext{'right_quota'}, nice_size($usage), 3 );
@@ -330,7 +352,15 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
          && $d->{'bw_limit'} )
     {
         # Bandwidth usage and limit
-        &print_table_row( $Atext{'right_bw'}, &Atext( 'right_of', &nice_size( $d->{'bw_usage'} ), &Atext( 'edit_bwpast_' . $virtual_server::config{'bw_past'}, &nice_size( $d->{'bw_limit'} ), $virtual_server::config{'bw_period'} ) ), 3 );
+        &print_table_row( $Atext{'right_bw'},
+                          &Atext( 'right_of',
+                                  &nice_size( $d->{'bw_usage'} ),
+                                  &Atext( 'edit_bwpast_' . $virtual_server::config{'bw_past'},
+                                          &nice_size( $d->{'bw_limit'} ),
+                                          $virtual_server::config{'bw_period'}
+                                  )
+                          ),
+                          3 );
     }
 
     print '</table>' . "\n";
@@ -365,8 +395,20 @@ elsif ( $get_user_level eq '3' ) {
     get_authentic_version();
 
     # Build response message
+
     if ( $remote_version <= $installed_version ) {
-        $authentic_theme_version = '' . $Atext{'theme_name'} . ' ' . $installed_version;
+      $authentic_theme_version =
+          '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+        . $Atext{'theme_name'} . '</a> '
+        . $installed_version
+        . '<div class="btn-group margined-left-4"><a href="'
+        . $gconfig{'webprefix'}
+        . '/settings-user.cgi" data-href="'
+        . $gconfig{'webprefix'}
+        . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
+        . $Atext{'settings_right_theme_configurable_options_title'}
+        . '"><i class="fa fa-cogs"></i></a> '
+        . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
     }
     else {
         $authentic_theme_version = ''

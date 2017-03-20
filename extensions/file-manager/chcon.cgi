@@ -27,13 +27,17 @@ foreach my $file ( split( /\0/, $in{'name'} ) ) {
     $file =~ s/\.\.//g;
     &simplify_path($file);
     if (
-        system_logged(
-            "chcon $recursive " . quotemeta("$in{'label'}") . " " . quotemeta("$cwd/$file")
-        ) != 0
-      )
+        system_logged( "chcon $recursive " . quotemeta("$in{'label'}") . " " . quotemeta("$cwd/$file") ) != 0 )
     {
-        $errors{html_escape($file)} = lc("$text{'context_label_error_proc'}: $?");
+        $errors{ html_escape($file) } = lc("$text{'context_label_error_proc'}: $?");
     }
 }
 
-redirect( 'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors( \%errors ) . '&error_fatal=' . $error_fatal );
+redirect(   'list.cgi?path='
+          . urlize($path)
+          . '&module='
+          . $in{'module'}
+          . '&error='
+          . get_errors( \%errors )
+          . '&error_fatal='
+          . $error_fatal );

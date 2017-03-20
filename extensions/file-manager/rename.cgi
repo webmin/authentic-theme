@@ -26,7 +26,10 @@ else {
 
 if ( -e "$cwd/$in{'name'}" ) {
     print_error(
-        ( text( 'filemanager_rename_exists', $in{'name'}, $path, $text{ 'theme_xhred_global_' . $type . '' } ) ) );
+          (
+            text( 'filemanager_rename_exists', $in{'name'}, $path, $text{ 'theme_xhred_global_' . $type . '' }
+            )
+          ) );
 }
 else {
     if ( &rename_file( $cwd . '/' . $in{'file'}, $cwd . '/' . $in{'name'} ) ) {
@@ -34,11 +37,10 @@ else {
     }
     else {
         print_error(
-            (   text(
-                    'filemanager_rename_denied', $in{'name'},
-                    $path,                       lc( $text{ 'theme_xhred_global_' . $type . '' } )
-                )
-            )
-        );
+                     (
+                       text( 'filemanager_rename_denied', $in{'name'},
+                             $path,                       lc( $text{ 'theme_xhred_global_' . $type . '' } )
+                       )
+                     ) );
     }
 }
