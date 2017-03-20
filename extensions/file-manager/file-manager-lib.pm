@@ -13,14 +13,15 @@ our %text = ( load_language( $request_uri{'module'} ), %text );
 
 our $checked_path;
 
-sub set_module {
+sub set_module
+{
     my ($module) = @_;
     set_env( 'foreign_module_name', $module );
-    set_env( 'foreign_root_directory',
-        ( get_env('document_root') . '/' . $module ) );
+    set_env( 'foreign_root_directory', ( get_env('document_root') . '/' . $module ) );
 }
 
-sub get_libs {
+sub get_libs
+{
     my ($module) = @_;
 
     use Cwd 'abs_path';
@@ -48,7 +49,8 @@ sub get_libs {
 
 }
 
-sub get_errors {
+sub get_errors
+{
     my %errors = %{ $_[0] };
 
     if ( scalar %errors ) {
@@ -60,7 +62,8 @@ sub get_errors {
 
 }
 
-sub get_request_uri {
+sub get_request_uri
+{
     ( my $uri = get_env('request_uri') ) =~ s/\?/&/;
     my @r = split /&/, $uri;
     my %c;
@@ -73,21 +76,25 @@ sub get_request_uri {
     return %c;
 }
 
-sub head {
+sub head
+{
     print "Content-type: text/html\n\n";
 }
 
-sub set_response {
+sub set_response
+{
     my ($c) = @_;
     print "Set-Cookie: file-manager-response=" . $c . "; path=/\r\n";
 }
 
-sub set_response_count {
+sub set_response_count
+{
     my ($c) = @_;
     print "Set-Cookie: file-manager-response_count=" . $c . "; path=/\r\n";
 }
 
-sub fatal_errors {
+sub fatal_errors
+{
     my @errors = @_;
 
     head();
@@ -99,7 +106,8 @@ sub fatal_errors {
     print "</ul>";
 }
 
-sub print_error {
+sub print_error
+{
     my ($error) = @_;
 
     head();
@@ -108,7 +116,8 @@ sub print_error {
 
 }
 
-sub print_content {
+sub print_content
+{
 
     my $setype = get_selinux_command_type();
     my %secontext;
@@ -121,8 +130,7 @@ sub print_content {
         for $path (@allowed_paths) {
             my $slashed = $path;
             $slashed .= "/" if ( $slashed !~ /\/$/ );
-            push @tmp_list,
-              grep { $slashed =~ /^$_\// || $_ =~ /$slashed/ } @list;
+            push @tmp_list, grep { $slashed =~ /^$_\// || $_ =~ /$slashed/ } @list;
         }
 
         # Remove duplicates
@@ -137,9 +145,7 @@ sub print_content {
         my $output = `$command`;
         my @attributesArr =
           map { [ split( /\s+/, $_, 2 ) ] } split( /\n/, $output );
-        %attributes = map {
-            $_->[1] => ( '<span data-attributes="s">' . $_->[0] . '</span>' )
-        } @attributesArr;
+        %attributes = map { $_->[1] => ( '<span data-attributes="s">' . $_->[0] . '</span>' ) } @attributesArr;
     }
 
     # List security context
@@ -151,22 +157,13 @@ sub print_content {
         my $delimiter = ( $setype ? '\n' : ',' );
         my @searray =
           map { [ split( /\s+/, $_, 2 ) ] } split( /$delimiter/, $output );
-        %secontext = map {
-            $_->[1] => (
-                $_->[0] eq "?"
-                ? undef
-                : ( '<span data-secontext>' . $_->[0] . '</span>' )
-              )
-        } @searray;
+        %secontext =
+          map { $_->[1] => ( $_->[0] eq "?" ? undef : ( '<span data-secontext>' . $_->[0] . '</span>' ) ) }
+          @searray;
     }
 
     # Get info about directory entries
-    @info = map {
-        [
-            $_,    lstat($_),      &mimetype($_), -d,
-            -l $_, $secontext{$_}, $attributes{$_}
-        ]
-    } @list;
+    @info = map { [ $_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_} ] } @list;
 
     # Filter out folders
     @folders = map { $_ } grep { $_->[15] == 1 } @info;
@@ -186,11 +183,10 @@ sub print_content {
     %allowed_for_edit = map { $_ => 1 } @allowed_for_edit;
 
     # Set icons variables
-    $edit_icon   = "<i class='fa fa-edit' alt='$text{'edit'}'></i>";
-    $rename_icon = "<i class='fa fa-font' title='$text{'rename'}'></i>";
-    $extract_icon =
-      "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
-    $goto_icon = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
+    $edit_icon    = "<i class='fa fa-edit' alt='$text{'edit'}'></i>";
+    $rename_icon  = "<i class='fa fa-font' title='$text{'rename'}'></i>";
+    $extract_icon = "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
+    $goto_icon    = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
 
     $page      = 1;
     $pagelimit = 4294967295;
@@ -217,45 +213,32 @@ sub print_content {
     print '<html>';
     print '<head></head>';
     print '<body>';
-    print "<div class='total'>"
-      . text( $info_total, $info_files, $info_folders )
-      . "</div>";
+    print "<div class='total'>" . text( $info_total, $info_files, $info_folders ) . "</div>";
 
     # Render current directory entries
     print &ui_form_start( "", "post", undef, "id='list_form'" );
-    @ui_columns = (
-'<input id="select-unselect" type="checkbox" onclick="selectUnselect(this)" />',
-        ''
-    );
+    @ui_columns = ( '<input id="select-unselect" type="checkbox" onclick="selectUnselect(this)" />', '' );
     push @ui_columns, ( '<span data-head-name>' . $text{'name'} . '</span>' );
     push @ui_columns, ( '<span data-head-type>' . $text{'type'} . '</span>' )
       if ( $userconfig{'columns'} =~ /type/ );
-    push @ui_columns,
-      ( '<span data-head-actions>' . $text{'actions'} . '</span>' );
+    push @ui_columns, ( '<span data-head-actions>' . $text{'actions'} . '</span>' );
     push @ui_columns, ( '<span data-head-size>' . $text{'size'} . '</span>' )
       if ( $userconfig{'columns'} =~ /size/ );
-    push @ui_columns,
-      ( '<span data-head-owner_user>' . $text{'ownership'} . '</span>' )
+    push @ui_columns, ( '<span data-head-owner_user>' . $text{'ownership'} . '</span>' )
       if ( $userconfig{'columns'} =~ /owner_user/ );
-    push @ui_columns,
-      ( '<span data-head-permissions>' . $text{'permissions'} . '</span>' )
+    push @ui_columns, ( '<span data-head-permissions>' . $text{'permissions'} . '</span>' )
       if ( $userconfig{'columns'} =~ /permissions/ );
-    push @ui_columns,
-      ( '<span data-head-attributes>' . $text{'attributes'} . '</span>' )
+    push @ui_columns, ( '<span data-head-attributes>' . $text{'attributes'} . '</span>' )
       if ( get_attr_status() && $userconfig{'columns'} =~ /attributes/ );
-    push @ui_columns,
-      ( '<span data-head-selinux>' . $text{'selinux'} . '</span>' )
+    push @ui_columns, ( '<span data-head-selinux>' . $text{'selinux'} . '</span>' )
       if ( get_selinux_status() && $userconfig{'columns'} =~ /selinux/ );
-    push @ui_columns,
-      ( '<span data-head-last_mod_time>' . $text{'last_mod_time'} . '</span>' )
+    push @ui_columns, ( '<span data-head-last_mod_time>' . $text{'last_mod_time'} . '</span>' )
       if ( $userconfig{'columns'} =~ /last_mod_time/ );
 
     print &ui_columns_start( \@ui_columns );
-    for (
-        my $count = 1 + $pagelimit * ( $page - 1 ) ;
-        $count <= $pagelimit + $pagelimit * ( $page - 1 ) ;
-        $count++
-      )
+    for ( my $count = 1 + $pagelimit * ( $page - 1 ) ;
+          $count <= $pagelimit + $pagelimit * ( $page - 1 ) ;
+          $count++ )
     {
         if ( $count > scalar(@list) ) { last; }
         my $class = $count & 1 ? "odd" : "even";
@@ -294,8 +277,7 @@ sub print_content {
             $attributes = $list[ $count - 1 ][18];
         }
 
-        $mod_time = POSIX::strftime( '%Y/%m/%d - %T',
-            localtime( $list[ $count - 1 ][10] ) );
+        $mod_time = POSIX::strftime( '%Y/%m/%d - %T', localtime( $list[ $count - 1 ][10] ) );
 
         $actions =
 "<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$vlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
@@ -309,8 +291,7 @@ sub print_content {
             }
         }
         else {
-            $href =
-              "download.cgi?file=" . &urlize($link) . "&path=" . &urlize($path);
+            $href = "download.cgi?file=" . &urlize($link) . "&path=" . &urlize($path);
             if ( $0 =~ /search.cgi/ ) {
                 ( $fname, $fpath, $fsuffix ) =
                   fileparse( $list[ $count - 1 ][0] );
@@ -323,8 +304,8 @@ sub print_content {
                   . &urlize($fpath) . "' "
                   . "title='$text{'goto_folder'}'>$goto_icon</a>";
             }
-            if ( index( $type, "text-" ) != -1
-                or exists( $allowed_for_edit{$type} ) )
+            if ( index( $type, "text-" ) != -1 or
+                 exists( $allowed_for_edit{$type} ) )
             {
                 $actions =
                     "$actions<a class='action-link' href='edit_file.cgi?file="
@@ -333,34 +314,26 @@ sub print_content {
                   . &urlize($path)
                   . "' title='$text{'edit'}' data-container='body'>$edit_icon</a>";
             }
-            if (
-                (
-                    index( $type, "application-zip" ) != -1
-                    && has_command('unzip')
-                )
-                || ( index( $type, "application-x-7z-compressed" ) != -1
-                    && has_command('7z') )
-                || ( index( $type, "application-x-rar" ) != -1
-                    && has_command('unrar') )
-                || (   index( $type, "application-x-rpm" ) != -1
-                    && has_command('rpm2cpio')
-                    && has_command('cpio') )
-                || ( index( $type, "application-x-deb" ) != -1
-                    && has_command('dpkg') )
-                || (
-                    (
-                           index( $type, "x-compressed-tar" ) != -1
+            if ( ( index( $type, "application-zip" ) != -1 && has_command('unzip') )
+                 || ( index( $type, "application-x-7z-compressed" ) != -1
+                      && has_command('7z') )
+                 || ( index( $type, "application-x-rar" ) != -1
+                      && has_command('unrar') )
+                 || (    index( $type, "application-x-rpm" ) != -1
+                      && has_command('rpm2cpio')
+                      && has_command('cpio') )
+                 || ( index( $type, "application-x-deb" ) != -1
+                      && has_command('dpkg') )
+                 || (
+                      (    index( $type, "x-compressed-tar" ) != -1
                         || index( $type, "-x-tar" ) != -1
                         || ( index( $type, "-x-bzip" ) != -1
-                            && has_command('bzip2') )
+                             && has_command('bzip2') )
                         || ( index( $type, "-gzip" ) != -1
-                            && has_command('gzip') )
+                             && has_command('gzip') )
                         || ( index( $type, "-x-xz" ) != -1
-                            && has_command('xz') )
-                    )
-                    && has_command('tar')
-                )
-              )
+                             && has_command('xz') ) )
+                      && has_command('tar') ) )
             {
                 $actions =
                     "$actions <a class='action-link' href='extract.cgi?path="
@@ -370,10 +343,8 @@ sub print_content {
                   . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        @row_data = (
-            "<a href='$href'><img src=\"$img\"></a>",
-            "<a href=\"$href\" data-filemin-path=\"$href\">$vlink</a>"
-        );
+        @row_data = ( "<a href='$href'><img src=\"$img\"></a>",
+                      "<a href=\"$href\" data-filemin-path=\"$href\">$vlink</a>" );
         push @row_data, $type if ( $userconfig{'columns'} =~ /type/ );
         push @row_data, $actions;
         push @row_data, $size if ( $userconfig{'columns'} =~ /size/ );
@@ -401,7 +372,8 @@ sub print_content {
 
 }
 
-sub paster {
+sub paster
+{
     my ( $c, $f, $s, $d, $r, $m ) = @_;
     my $x;
     my $j = $c . '/' . $f;
@@ -429,17 +401,20 @@ sub paster {
 
 }
 
-sub get_env {
+sub get_env
+{
     my ($key) = @_;
     return $ENV{ uc($key) };
 }
 
-sub set_env {
+sub set_env
+{
     my ( $k, $v ) = @_;
     $ENV{ uc($k) } = $v;
 }
 
-sub trim {
+sub trim
+{
     my $s = shift;
     $s =~ s/^\s+|\s+$//g;
     return $s;

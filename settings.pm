@@ -7,7 +7,7 @@
 our @_s_e = _settings( 'exclusions', undef, undef );
 my @settings = _settings( 'get', undef, undef );
 print _settings( 'header', undef, undef );
-for ( my $i = 0; $i < scalar(@settings) - 1; $i += 2 ) {
+for ( my $i = 0 ; $i < scalar(@settings) - 1 ; $i += 2 ) {
     if ( $settings[$i] ne '__' ) {
         print _settings( 'content', $settings[$i], $settings[ $i + 1 ] );
     }

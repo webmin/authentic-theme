@@ -20,7 +20,7 @@ my $perms = $in{'perms'};
 if ( $in{'applyto'} eq '1' ) {
     foreach $name ( split( /\0/, $in{'name'} ) ) {
         if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
-            $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+            $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
         }
     }
 }
@@ -29,19 +29,18 @@ if ( $in{'applyto'} eq '1' ) {
 if ( $in{'applyto'} eq '2' ) {
     foreach $name ( split( /\0/, $in{'name'} ) ) {
         if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
-            $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+            $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
         }
         if ( -d "$cwd/$name" ) {
-            if (system_logged(
-                          "find "
-                        . quotemeta("$cwd/$name")
-                        . " -maxdepth 1 -type f -exec chmod "
-                        . quotemeta($perms)
-                        . " {} \\;"
-                ) != 0
-                )
+            if (
+                 system_logged(     "find "
+                                  . quotemeta("$cwd/$name")
+                                  . " -maxdepth 1 -type f -exec chmod "
+                                  . quotemeta($perms)
+                                  . " {} \\;"
+                 ) != 0 )
             {
-                $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+                $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
             }
         }
     }
@@ -51,7 +50,7 @@ if ( $in{'applyto'} eq '2' ) {
 if ( $in{'applyto'} eq '3' ) {
     foreach $name ( split( /\0/, $in{'name'} ) ) {
         if ( system_logged( "chmod -R " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
-            $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+            $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
         }
     }
 }
@@ -61,16 +60,19 @@ if ( $in{'applyto'} eq '4' ) {
     foreach $name ( split( /\0/, $in{'name'} ) ) {
         if ( -f "$cwd/$name" ) {
             if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
-                $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+                $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
             }
         }
         else {
-            if (system_logged(
-                    "find " . quotemeta("$cwd/$name") . " -type f -exec chmod " . quotemeta($perms) . " {} \\;"
-                ) != 0
-                )
+            if (
+                 system_logged(     "find "
+                                  . quotemeta("$cwd/$name")
+                                  . " -type f -exec chmod "
+                                  . quotemeta($perms)
+                                  . " {} \\;"
+                 ) != 0 )
             {
-                $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+                $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
             }
         }
     }
@@ -81,14 +83,17 @@ if ( $in{'applyto'} eq '5' ) {
     foreach $name ( split( /\0/, $in{'name'} ) ) {
         if ( -d "$cwd/$name" ) {
             if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
-                $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+                $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
             }
-            if (system_logged(
-                    "find " . quotemeta("$cwd/$name") . " -type d -exec chmod " . quotemeta($perms) . " {} \\;"
-                ) != 0
-                )
+            if (
+                 system_logged(     "find "
+                                  . quotemeta("$cwd/$name")
+                                  . " -type d -exec chmod "
+                                  . quotemeta($perms)
+                                  . " {} \\;"
+                 ) != 0 )
             {
-                $errors{urlize($name)} = lc("$text{'error_chmod'}: $?");
+                $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
             }
         }
     }

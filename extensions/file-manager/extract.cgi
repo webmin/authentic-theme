@@ -17,10 +17,10 @@ foreach my $name ( split( /\0/, $in{'name'} ) ) {
     if ( index( $archive_type, "x-bzip" ) != -1 ) {
         &backquote_logged( "tar xvjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd) );
     }
-    elsif (index( $archive_type, "x-tar" ) != -1
-        || index( $archive_type, "/gzip" ) != -1
-        || index( $archive_type, "x-xz" ) != -1
-        || index( $archive_type, "x-compressed-tar" ) != -1 )
+    elsif (    index( $archive_type, "x-tar" ) != -1
+            || index( $archive_type, "/gzip" ) != -1
+            || index( $archive_type, "x-xz" ) != -1
+            || index( $archive_type, "x-compressed-tar" ) != -1 )
     {
         &backquote_logged( "tar xfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd) );
     }
@@ -38,8 +38,7 @@ foreach my $name ( split( /\0/, $in{'name'} ) ) {
         my $path = quotemeta("$cwd/$dir");
         &backquote_logged("mkdir $path");
         if ( index( $archive_type, "/x-rpm" ) != -1 ) {
-            &backquote_logged(
-                "(rpm2cpio " . quotemeta("$cwd/$name") . " | (cd " . $path . "; cpio -idmv))" );
+            &backquote_logged( "(rpm2cpio " . quotemeta("$cwd/$name") . " | (cd " . $path . "; cpio -idmv))" );
         }
         else {
             &backquote_logged( "dpkg -x " . quotemeta("$cwd/$name") . " " . $path );

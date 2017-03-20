@@ -129,7 +129,8 @@ sub theme_header
                   $user_module_config_directory
                   ? "uconfig.cgi"
                   : "config.cgi";
-                print "<a href=\"$gconfig{'webprefix'}/$cprog?", &get_module_name() . "\">", $text{'header_config'},
+                print "<a href=\"$gconfig{'webprefix'}/$cprog?", &get_module_name() . "\">",
+                  $text{'header_config'},
                   "</a><br>\n";
             }
         }
@@ -287,7 +288,7 @@ sub theme_popup_window_button
     my ( $url, $w, $h, $scroll, $fields ) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
     my $rv =
-      "<input class='btn btn-default' style='height: 28px; vertical-align:middle !important;' type=button onClick='";
+"<input class='btn btn-default' style='height: 28px; vertical-align:middle !important;' type=button onClick='";
     foreach my $m (@$fields) {
         $rv .= "$m->[0] = form.$m->[1]; ";
     }
@@ -438,7 +439,8 @@ sub theme_generate_icon
               . ( !$animate_table_icons && ' animated' ) . '">';
             if ( $_[6] || $_[7] ) {
                 if ( $_[6] ) {
-                    print "<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";
+                    print
+"<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";
                 }
                 if ( $_[7] ) {
                     print
@@ -795,7 +797,8 @@ sub theme_ui_reset
     my ( $label, $dis ) = @_;
     my $rv;
 
-    $rv .= '<button class="btn btn-default ui_reset" style="height: 28px; vertical-align:middle" type="reset" ';
+    $rv .=
+      '<button class="btn btn-default ui_reset" style="height: 28px; vertical-align:middle" type="reset" ';
     $rv .= ( $dis ? 'disabled="disabled">' : '>' );
     $rv .= &quote_escape($label);
     $rv .= '</button>' . "\n";
@@ -929,7 +932,8 @@ sub theme_ui_alert_box
         $type = 'alert-info', $tmsg = ( $text{'theme_global_info'} . '!' ), $fa = 'fa-info-circle';
     }
     elsif ( $class eq "warn" ) {
-        $type = 'alert-warning', $tmsg = ( $text{'theme_global_warning'} . '!' ), $fa = 'fa-exclamation-circle';
+        $type = 'alert-warning', $tmsg = ( $text{'theme_global_warning'} . '!' ),
+          $fa = 'fa-exclamation-circle';
     }
     elsif ( $class eq "danger" ) {
         $type = 'alert-danger', $tmsg = ( $text{'theme_global_error'} . '!' ), $fa = 'fa-bolt';
@@ -956,7 +960,7 @@ sub theme_ui_table_start
     my $colspan = 1;
     my $rv;
     $rv .=
-      "<div class='table-responsive'><table class='table table-striped table-condensed table-subtable' $tabletags>\n";
+"<div class='table-responsive'><table class='table table-striped table-condensed table-subtable' $tabletags>\n";
     if ( defined($heading) || defined($rightheading) ) {
         $rv .= "<thead><tr>";
         if ( defined($heading) ) {
@@ -1013,7 +1017,11 @@ sub theme_ui_table_row
     $rv .= "<td class='col_label'><b>$label</b></td>\n"
       if ( defined($label) );
     $rv .=
-      '<td colspan="' . $cols . '" class="col_value' . ( !length($label) && ' col_header' ) . '">' . $value . '</td>';
+        '<td colspan="'
+      . $cols
+      . '" class="col_value'
+      . ( !length($label) && ' col_header' ) . '">'
+      . $value . '</td>';
     $main::ui_table_pos += $cols + ( defined($label) ? 1 : 0 );
     if ( $main::ui_table_pos % $main::ui_table_cols == 0 ) {
         $rv .= "</tr>\n";

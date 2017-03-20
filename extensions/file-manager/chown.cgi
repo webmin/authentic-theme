@@ -38,9 +38,16 @@ if ( !defined $grid ) {
 if ( !scalar %errors ) {
     foreach $name ( split( /\0/, $in{'name'} ) ) {
         if ( system_logged( "chown $recursive $uid:$grid " . quotemeta("$cwd/$name") ) != 0 ) {
-            $errors{urlize($name)} = lc("$text{'error_chown'}: $?");
+            $errors{ urlize($name) } = lc("$text{'error_chown'}: $?");
         }
     }
 }
 
-redirect( 'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors( \%errors ) . '&error_fatal=' . $error_fatal );
+redirect(   'list.cgi?path='
+          . urlize($path)
+          . '&module='
+          . $in{'module'}
+          . '&error='
+          . get_errors( \%errors )
+          . '&error_fatal='
+          . $error_fatal );

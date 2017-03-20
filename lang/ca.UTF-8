@@ -648,8 +648,15 @@ theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_hotkeys_tooltip=Enable tooltip on correspondent buttons
+settings_button_tooltip=Show tooltip on buttons
 settings_show_night_mode_link=Show palette toggle
 settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
 settings_title=Theme Configuration
 settings_subtitle=For user
+
+theme_tooltip_night_mode=Day/night mode toggle
+theme_tooltip_terminal_link=Terminal
+theme_tooltip_language_link=Language
+theme_tooltip_switch_user=Switch user
+theme_tooltip_logout=Sign out
+theme_tooltip_edit_user=Edit user

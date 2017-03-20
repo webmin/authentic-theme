@@ -27,6 +27,38 @@ sub settings
     }
 }
 
+sub settings_default
+{
+    my %c;
+    $c{'settings_font_family'}                  = '0';
+    $c{'settings_navigation_color'}             = 'blue';
+    $c{'settings_background_color'}             = 'gainsboro';
+    $c{'settings_button_tooltip'}               = 'true';
+    $c{'settings_hide_top_loader'}              = 'false';
+    $c{'settings_animation_left'}               = 'true';
+    $c{'settings_animation_tabs'}               = 'true';
+    $c{'settings_sysinfo_link_mini'}            = 'false';
+    $c{'settings_show_night_mode_link'}         = 'true';
+    $c{'settings_theme_options_button'}         = 'true';
+    $c{'settings_leftmenu_button_refresh'}      = 'false';
+    $c{'settings_hotkeys_active'}               = 'true';
+    $c{'settings_hotkey_toggle_modifier'}       = 'altKey';
+    $c{'settings_hotkey_toggle_key_webmin'}     = 'w';
+    $c{'settings_hotkey_toggle_key_virtualmin'} = 'v';
+    $c{'settings_hotkey_toggle_key_cloudmin'}   = 'c';
+    $c{'settings_hotkey_toggle_key_usermin'}    = 'u';
+    $c{'settings_hotkey_toggle_key_webmail'}    = 'm';
+    $c{'settings_hotkey_shell'}                 = 'k';
+    $c{'settings_hotkey_sysinfo'}               = 'i';
+    $c{'settings_hotkey_toggle_slider'}         = 'n';
+    $c{'settings_hotkey_favorites'}             = 'f';
+    $c{'settings_hotkey_focus_search'}          = 's';
+    $c{'settings_hotkey_reload'}                = 'r';
+    $c{'settings_hotkey_toggle_key_night_mode'} = 'l';
+
+    return %c;
+}
+
 sub embed_header
 {
     my (@args) = @_;
@@ -156,7 +188,9 @@ sub embed_header
             embed_css_bundle();
         }
 
-        if ( ( length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue' )
+        if (
+             ( length $__settings{'settings_navigation_color'}
+               && $__settings{'settings_navigation_color'} ne 'blue' )
              || theme_night_mode() )
         {
             print '<link href="'
@@ -199,10 +233,11 @@ sub embed_settings
     my $str_settings        = "settings";
     my $str_js              = "js";
     my $cur_time            = time();
-    my $global_config_file  = ( $config_directory . "/" . $current_theme . "/" . $str_settings . "." . $str_js );
-    my $user_config_file    = ( get_user_home() . "/.atconfig" );
-    my $js_directory        = "/" . $current_theme . "/" . $str_unauthenticated . "/" . $str_js;
-    my $js_root_directory   = ( $root_directory . $js_directory );
+    my $global_config_file =
+      ( $config_directory . "/" . $current_theme . "/" . $str_settings . "." . $str_js );
+    my $user_config_file  = ( get_user_home() . "/.atconfig" );
+    my $js_directory      = "/" . $current_theme . "/" . $str_unauthenticated . "/" . $str_js;
+    my $js_root_directory = ( $root_directory . $js_directory );
 
     # Global configuration
     if ( -r $global_config_file ) {
@@ -236,7 +271,8 @@ sub embed_settings
           . $cur_time
           . '"></script>' . "\n";
     }
-    elsif ( -r $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js && !-r $user_config_file )
+    elsif ( -r $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js
+            && !-r $user_config_file )
     {
         unlink $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js;
     }
@@ -277,7 +313,8 @@ sub embed_pm_scripts
 
 sub embed_css_fonts
 {
-    if ( !$__settings{'settings_font_family'} ) {
+
+    if ( !$__settings{'settings_font_family'} || $__settings{'settings_font_family'} eq 'undefined' ) {
         print '<link href="'
           . $gconfig{'webprefix'}
           . '/unauthenticated/css/fonts-roboto.'
@@ -326,7 +363,10 @@ sub embed_css_content
 
 sub embed_css_content_palette
 {
-    if ( ( length $__settings{'settings_background_color'} && $__settings{'settings_background_color'} ne 'gainsboro' )
+    if (
+         (    length $__settings{'settings_background_color'}
+           && $__settings{'settings_background_color'} ne 'undefined'
+           && $__settings{'settings_background_color'} ne 'gainsboro' )
          || theme_night_mode() )
     {
         print '<link href="'
@@ -494,8 +534,9 @@ sub init_vars
 {
 
     our $t_uri__i = get_env('request_uri');
-    our %__settings =
-      ( settings( $config_directory . "/authentic-theme/settings.js" ), settings( get_user_home() . "/.atconfig" ) );
+    our %__settings = ( settings_default(),
+                        settings( $config_directory . "/authentic-theme/settings.js" ),
+                        settings( get_user_home() . "/.atconfig" ) );
     our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
           $t_var_product_m );
 

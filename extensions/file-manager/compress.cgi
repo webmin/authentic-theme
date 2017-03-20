@@ -33,8 +33,8 @@ foreach my $name ( split( /\0/, $in{'name'} ) ) {
     $name =~ s/$in{'cwd'}\///ig;
     $command .= " " . quotemeta($name);
 
-    if (!-e ( $cwd . '/' . $name ) ) {
-    	$errors{urlize($name)} = lc($text{'theme_xhred_global_no_target'});
+    if ( !-e ( $cwd . '/' . $name ) ) {
+        $errors{ urlize($name) } = lc( $text{'theme_xhred_global_no_target'} );
     }
 }
 

@@ -10108,7 +10108,7 @@ html[data-background-style='nightRider'] .graph-container>.graph {
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar {
-    color: rgba(255, 255, 255, .37);
+    color: rgba(255, 255, 255, .77);
     border-right-color: #ca524f;
     background-color: #a94442
 }

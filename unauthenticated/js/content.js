@@ -729,7 +729,7 @@ $("form.ui_form > table label.radio, form.ui_form > table label.checkbox").each(
     }
 });
 if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 || $source_path == $_____link + "settings-user.cgi") && t__wi_p.location.search != "?updating-webmin-theme") {
-    if ($product_name != "usermin" && product_name() != "Webmin" && $source_path == $_____link + "settings-user.cgi") {
+    if ($source_path == $_____link + "settings-user.cgi") {
         t__wi_p.__cms()
     }
     $("body").on("change", "select, input", function() {
@@ -837,7 +837,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
 
                 function j(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
-                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkeys_tooltip", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_reload", "settings_hotkey_toggle_key_night_mode", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
+                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_reload", "settings_hotkey_toggle_key_night_mode", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
                     if (c.val() == "false") {
                         $.each(d, function(f, g) {
                             $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true)
@@ -1077,7 +1077,6 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                 if (dashboard_switch()) {
                     $('input[name="settings_sysinfo_link_mini"]').parent().parent().parent().parent("tr").remove()
                 }
-                if ($source_path != $_____link + "settings-user.cgi" && $source_path != $_____link + "settings-user.cgi") {}
                 if (!$t_uri_virtualmin && !$t_uri_cloudmin) {}
                 $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();

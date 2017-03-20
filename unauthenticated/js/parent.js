@@ -1411,9 +1411,9 @@ $("aside, .btn-menu-toggler").click(function(a) {
         t__wi_p.$(".right-side-tabs-toggler:not(.hidden)").trigger("click")
     }
 });
-if (!!settings_hotkeys_tooltip) {
+if (!!settings_button_tooltip) {
     $("body").tooltip({
-        selector: 'li[data-toggle="tooltip"], label[data-toggle="tooltip"]',
+        selector: 'li[data-toggle="tooltip"], li > a[data-toggle="tooltip"].menu-exclude-link, label[data-toggle="tooltip"]',
         container: "body",
         html: true
     })
