@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1011,7 +1011,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                 $('input[name="settings_side_slider_sysinfo_enabled"], input[name="settings_side_slider_notifications_enabled"], input[name="settings_side_slider_favorites_enabled"]').each(function() {
                     $('input[name="' + $(this).attr("name") + '"][value="' + window[$(this).attr("name")] + '"]').trigger("change")
                 });
-                $('select[name="settings_navigation_color"]').after('<i class="fa fa-fw fa-cog text-light settings_navigation_color_toggle cursor-default" data-name="settings_navigation_color" style="margin-left: 10px; background-color: transparent !important"></i>																		 <i class="fa fa-fw fa-refresh text-light settings_navigation_color_reset cursor-default hidden" data-name="settings_navigation_color" style="margin-left: 4px; background-color: transparent !important"></i>');
+                $('select[name="settings_navigation_color"]').after('<i class="fa fa-fw fa-cog text-light settings_navigation_color_toggle cursor-default" data-name="settings_navigation_color" style="margin-left: 10px; vertical-align: middle; background-color: transparent !important"></i>																		 <i class="fa fa-fw fa-refresh text-light settings_navigation_color_reset cursor-default hidden" data-name="settings_navigation_color" style="margin-left: 4px; vertical-align: middle; background-color: transparent !important"></i>');
                 $(".settings_navigation_color_toggle, .settings_background_color_toggle").on("click", function() {
                     if (typeof window[$(this).attr("data-name") + "controller"] == "undefined" || window[$(this).attr("data-name") + "controller"] == "hidden") {
                         $("." + $(this).attr("data-name") + "_reset, ." + $(this).attr("data-name") + "_rows").removeClass("hidden");
@@ -1913,27 +1913,46 @@ $(".help_popup").on("click", function(f) {
         url: h.attr("href"),
         data: false,
         dataType: "text",
-        success: function(a) {
-            e.find("._tmp_help_content").html(a.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, ""));
+        success: function(b) {
+            e.find("._tmp_help_content").html(b.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, ""));
             $help_title = e.find("._tmp_help_content .ui_subheading").first().text();
             $help_body = e.find("._tmp_help_content title").remove();
             $help_body = e.find("._tmp_help_content h3.ui_subheading").remove();
             $help_body = e.find("._tmp_help_content h3").addClass("h3_help");
             $help_body = e.find("._tmp_help_content hr").remove();
-            $help_body = e.find("._tmp_help_content a").removeAttr("href").css("text-decoration", "none").css("color", "#333").css("font-style", "italic");
+            var a = e.find("._tmp_help_content a");
+            if (typeof a.attr("href") != "undefined") {
+                $.each(a, function() {
+                    var i = $(this).attr("href");
+                    if (i.startsWith("http")) {
+                        $help_body = e.find("._tmp_help_content a").attr("target", "_blank").css("text-decoration", "none").css("font-style", "italic")
+                    } else {
+                        $("body").undelegate('a[href="' + i + '"]', "click");
+                        $("body").one("click", 'a[href="' + i + '"]', function(k) {
+                            if ($(k.target).is($('a[href="' + i + '"]'))) {
+                                k.preventDefault();
+                                var j = (removeLastDirectoryPartOf(h.attr("href")) + "/" + i);
+                                $('a[href="' + g + '"].help_popup').attr("data-initial", g).attr("data-substituted", j);
+                                $('a[href="' + g + '"].help_popup').attr("href", j);
+                                h.trigger("click")
+                            }
+                        })
+                    }
+                })
+            }
             $help_body = e.find("._tmp_help_content").html();
             e.find("._tmp_help_content").remove();
-            var c = '<button type="button" class="close pull-right close-popover-trigger font-size-120p">&times;</button>',
-                b = (h.attr("href").indexOf("showpass.cgi") > -1);
-            if (b) {
-                c = ""
+            var d = '<button type="button" class="close pull-right close-popover-trigger font-size-120p">&times;</button>',
+                c = (h.attr("href").indexOf("showpass.cgi") > -1);
+            if (c) {
+                d = ""
             }
             h.popover({
                 html: true,
                 container: "body",
-                template: '<div class="popover module-help' + (b ? " showpass-popover" : "") + '" role="tooltip" style="z-index: ' + (2147483642 + ($(".module-help").length * 10)) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+                template: '<div class="popover module-help' + (c ? " showpass-popover" : "") + '" role="tooltip" style="z-index: ' + (2147483642 + ($(".module-help").length * 10)) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
                 title: function() {
-                    return (c + $help_title)
+                    return (d + $help_title)
                 },
                 content: function() {
                     return $help_body
@@ -1951,21 +1970,21 @@ $(".help_popup").on("click", function(f) {
                 $('body[class*="' + $g__o__f_m + '"]').find(".popover:visible").addClass("file-manager-help");
                 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search != "?updating-webmin-theme") {
                     $("body").find(".popover:visible").addClass("at-help");
-                    var m = $(".link-theme").text(),
-                        j = $(".link-theme2").text(),
-                        i = $(".link-changelog").text(),
-                        d = $(".link-me").text(),
-                        n = $(".link-donation").text(),
-                        l = $(".link-youtube").text(),
-                        k = $(".link-github").text();
-                    $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + m + "</em></a>");
-                    $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + j + "</em></a>");
-                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + i + "</span></em></a>");
+                    var n = $(".link-theme").text(),
+                        k = $(".link-theme2").text(),
+                        j = $(".link-changelog").text(),
+                        i = $(".link-me").text(),
+                        o = $(".link-donation").text(),
+                        m = $(".link-youtube").text(),
+                        l = $(".link-github").text();
+                    $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + n + "</em></a>");
+                    $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + k + "</em></a>");
+                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + j + "</span></em></a>");
                     $(".link-changelog").detach().appendTo(".at-help .popover-title");
-                    $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + d + "</em></a>");
-                    $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + n + "</span></a>");
-                    $(".link-youtube").replaceWith('<a title="" data-original-title="" class="badge label-danger fa fa-fw fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://youtu.be/f_oy3qX2GXo"> <span class="font-family-default">' + l + "</span></a>");
-                    $(".link-github").replaceWith('<a title="" data-original-title="" class="badge fa fa-fw fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> <span class="font-family-default">' + k + "</span></a>")
+                    $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + i + "</em></a>");
+                    $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + o + "</span></a>");
+                    $(".link-youtube").replaceWith('<a title="" data-original-title="" class="badge label-danger fa fa-fw fa-youtube" style="font-size: 11px; background-color: #c9302c;" target="_blank" href="http://youtu.be/f_oy3qX2GXo"> <span class="font-family-default">' + m + "</span></a>");
+                    $(".link-github").replaceWith('<a title="" data-original-title="" class="badge fa fa-fw fa-github" style="font-size: 11px; background-color: #337ab7;" target="_blank" href="https://github.com/qooob/authentic-theme/issues"> <span class="font-family-default">' + l + "</span></a>")
                 }
                 setTimeout(function() {
                     $.each($(".module-help"), function() {
@@ -1981,7 +2000,11 @@ $(".help_popup").on("click", function(f) {
                 }, 100)
             });
             h.on("hidden.bs.popover", function() {
-                $("body").undelegate(":not(tt)", "click")
+                $("body").undelegate(":not(tt)", "click");
+                if (h.attr("data-initial")) {
+                    h.attr("href", h.attr("data-initial"));
+                    h.removeAttr("data-initial").removeAttr("data-substituted")
+                }
             })
         }
     })
@@ -3766,6 +3789,9 @@ if ($access_level == 0 && is_module("status") == 1) {} else {
 }
 if (is__mf("bind8", "edit_zonekey.cgi")) {
     format_new_lines($("textarea#ds"), $("#headln2c").find("span[data-sub_title]").text())
+}
+if (is__mf("virtual-server", "edit_script.cgi")) {
+    $('select[name="version"]').addClass("heighter-34 margined-top-4")
 }
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {

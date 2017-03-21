@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2015 Alexandr Bezenkov (https://github.com/Real-Gecko/filemin)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)

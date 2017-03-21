@@ -1,0 +1,660 @@
+body_cp=CPU
+body_cpu=Genomsnittlig CPU-användning
+body_cpuinfo=Processorinformation
+body_cputemps=CPU-temperaturer
+body_cputype=$5, $8 kärnor
+body_disk=Lokalt diskutrymme
+body_driveerr=$1 fel!
+body_drivefailed=SMART-kontroll misslyckades!
+body_drivetemps=Disktemperaturer
+body_firewall=Brandväggsversion
+body_header0=Systeminformation
+body_header1=Kontoinformation
+body_host=Systemvärdnamn
+body_kernel=Kärna och CPU
+body_kernelon=$1 $2 på $3
+body_load=$1 (1 min) $2 (5 min) $3 (15 min)
+body_os=Operativsystem
+body_procs=Processer som körs
+body_real=Minne
+body_time=Systemtid
+body_updates=Paketuppdateringar
+body_updays=$1 dagar, $2 timmar, $3 minuter
+body_uphours=$1 timmar, $2 minuter
+body_upmins=$1 minuter
+body_upneed=$1 paketuppdateringar finns tillgängliga
+body_upneed1=$1 paketuppdater finns tillgänglig
+body_upok=All installerade paket är uppdaterade
+body_upsec=$1 paketuppdateringar finns tillgängliga, varav $2 är säkerhetsuppdateringar
+body_upsec1=$1 paketuppdateringar finns tillgängliga, varav $2 är säkerhetsuppdatering
+body_upsec2=$1 paketuppdatering finns tillgänglig, varav $2 är säkerhetsuppdateringar
+body_upsec3=$1 paketuppdatering finns tillgänglig, varav $2 är säkerhetsuppdatering
+body_uptime=Systemupptid
+body_used=$1 totalt / $2 använt
+body_used_and_free=$1 totalt / $2 ledigt / $3 använt
+body_usermin=Usermin-version
+body_virt=Virtuellt minne
+body_webmin=Webmin-version
+
+left_favorites=Favoriter
+left_favorites_no=Det finns inga tillagda favoriter...
+left_feedback=Skicka feedback
+left_home=Systeminformation
+left_others=Andra
+left_refresh_modules=Uppdatera moduler
+left_search=Sök
+left_statistics=Systemstatistik
+
+login_danger=Varning!
+login_message=Du måste ange ett användarnamn och lösenord för att logga in på servern på
+login_pass=Lösenord
+login_save=Kom ihåg mig
+login_signin=Logga in
+login_success=Lyckad!
+login_token=Token
+login_user=Användarnamn
+login_warning=Varning!
+
+right_aliases=Alias-servrar
+right_bw=Bandbreddsanvändning och begränsningar
+right_dom=Ditt servernamn
+right_faliases=E-postalias
+right_fdbs=Databaser
+right_fdoms=Virtuella servrar
+right_from=Inloggad från
+right_fusers2=FTP-användare
+right_fusers=E-post-/FTP-användare
+right_fvm2=Virtuella datorer
+right_fweb=Virtuella webbplatser
+right_licenceheader_vm2=Cloudmin licenser
+right_login=Inloggad som
+right_not=Inte installerad
+right_of=$1 av $2
+right_quota=Diskanvändning och kvoter
+right_reselip=(Reseller $1)
+right_sharedip=(Delat IP)
+right_slcheck=Omkontrollera Cloudmin-licensen
+right_subs=Sub-servrar
+right_virtdocs2=Ytterligare dokumentation
+right_virtualmin=Virtualmin-version
+right_vlcheck=Omkontrollera Virtualmin-licensen
+right_vm2=Cloudmin-version
+
+session_failed=Inloggningen misslyckades. Försök igen.
+session_logout=Du har loggats ut. Använd rutan här under för att logga in igen.
+session_timed_out=Sessionen har gått ut efter $1 minuter av inaktivitet.
+session_twofailed=Tvåfaktorsautentisering misslyckades: $1
+
+
+
+
+
+
+
+
+
+
+settings_right_options=Alternativ
+settings_right_restore_defaults=Återställ standardinställningar
+settings_right_restored=Återställd
+settings_right_restoring=Återställer
+settings_right_saved=Sparad
+settings_right_saving=Sparar
+
+settings_right_theme_extensions=Tematillägg
+settings_right_theme_extensions_title=Tematillägg
+settings_right_file_edit=Redigera tilläggsfil:
+settings_right_extensions_title=Theme extensive design, gör det lätt för dig att ändra på utvalda delar i gränssnittet. Det är möjligt att både komma åt <em>CSS</em> och <em>JavaScript</em>, genom att skriva egna <em>stil-</em>/<em>skript-</em> tillägg. Här följer några vanliga exempel, gjorda så du förstår den enkla idé tillämplingen. Till exempel, för att byta bakgrundsfärg, lägg till följande stil till CSS-tillägget: <code>body {background-color: Gainsboro}</code>. Användning av JavaScript, för att ändra bredden på på knappen skicka, lägg till följande kod i JavaScript-tillägget: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. I praktiken kommer det dock att vara lite mer komplicerat än så.
+
+settings_right_theme_logos=Temalogotyper
+settings_right_theme_logos_title=Temalogotyper
+settings_right_logos_title=Temalogotyper sätter du enkelt här, för både, behöriga och obehöriga användare. Rekommenderas logotypstorlek är<kbd>180x90</kbd> pixlar och bildformatet måste vara <kbd>.png</kbd>, för att förse alfagenomskinlighet. När logotypen är inställd, och om du behöver kan du manipulera den med utdrag <a href="/settings-editor_read.cgi"><em>CSS</em></a> och <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, tillgång till den genom sitt klassnamn, vilket är på motsvarande sätt <code>._logo</code> och <code>._logo_welcome</code> till <em>behöriga</em> och <em>obehöriga</em> typer.
+settings_right_logo_authenticated_users=Logotyper för autentiserade användare
+settings_right_logo_unauthenticated_users=Logotyper för obehöriga användare
+
+settings_right_current_theme=Aktuellt tema
+settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
+settings_right_theme_left_configuration_title=Konfiguration av Authentic Theme
+settings_right_theme_left_extensions_title=Tilläggsredigerare för Authentic Theme
+settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
+settings_right_theme_configurable_options_title=Konfigurerbara alternativ för Authentic Theme
+
+
+settings_right_window_options_title=Fönsteralternativ
+settings_right_navigation_menu_title=Navigeringsmenyalternativ
+settings_right_table_options_title=Tabellalternativ
+settings_security_title=Alternativ för säkerhetsvarningar
+settings_security_description=Säkerhetsvarningar låter dig ställa in e-postaviseringar på vissa händelser. (Linux <code>mail</code>-kommandot krävs för den här funktionen ska fungera)<br class="lh0">Format: <code>Meddelande|Ämne|Kommaseparerad lista med användare/e-postadresser|Kommaseparerad lista av ignorerade IPv4/IPv6</code><br class="lh0">Användning: <code>%3 lyckad inloggningsmeddelande för användare %1 från %2|%3 lyckad inloggningsmeddelande|root,användare@exempel.se|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>Från: root, Till: root, Ämne: Webmin lyckad inloggningsmeddelande, Meddelande: Webmin lyckad inloggningsmeddelande för användaren root från 2.3.4.5</code>
+settings_right_hotkey_options_title=Snabbtangentalternativ
+settings_right_sysinfo_page_options_title=Alternativ för systeminformationsidan
+
+settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>apache.</code> Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
+settings_hotkey_custom_1=Egen länk <code>1</code>
+settings_hotkey_custom_2=Egen länk <code>2</code>
+settings_hotkey_custom_3=Egen länk <code>3</code>
+settings_hotkey_custom_4=Egen länk <code>4</code>
+settings_hotkey_custom_5=Egen länk <code>5</code>
+settings_hotkey_custom_6=Egen länk <code>6</code>
+settings_hotkey_custom_7=Egen länk <code>7</code>
+settings_hotkey_custom_8=Egen länk <code>8</code>
+settings_hotkey_custom_9=Egen länk <code>9</code>
+
+settings_navigation_color=Färgpalett för navigeringsmeny
+settings_background_color=Färgpalett för innehållssida
+settings_animation_left=Aktivera animation i navigeringsmenyn
+settings_animation_tabs=Aktivera animation i flikar
+settings_loader_top=Aktivera förloppsindikator överst på skärmen
+settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
+settings_right_reload=Ladda standard innehållssida
+settings_right_reload_description=När du byter flikar, uppdateras den högra sidan. Behåll inte den nuvarande högra sidans innehåll och uppdatera den som standard?
+
+settings_right_hide_table_icons=Dölj tabellikonerna för högra ramen
+settings_right_hide_table_icons_description=Ta bort samtliga ikoner från tabellerna och visa i stället endast textlänkar med en högersparre
+settings_right_small_table_icons=Små tabellikoner
+settings_right_small_table_icons_description=Ersätt tabellikonerna med små ikoner och visa i stället namnet som ett verktygstips
+settings_right_xsmall_table_icons=Extra små tabellikoner
+settings_right_xsmall_table_icons_description=Ersätt tabellikonerna med extra små ikoner och visa i stället namnet som ett verktygstips
+settings_right_animate_table_icons=Animera tabellikonerna när de hamnar i fokus
+settings_right_grayscaled_table_icons=Låt tabellikonerna vara gråa och ta fram färgen när den hamnar i fokus
+
+settings_right_iconize_header_links=Ersätt tabellrubriklänkarna med ikoner
+settings_right_iconize_header_links_description=Välj om du vill ersätta den gamla tabellrubriklänkarna med ikoner eller behålla de gamla stiltextlänkarna
+
+settings_window_autoscroll=Automatisk fönsterrullning
+settings_window_autoscroll_description=Utför automatisk fönsterrullning neråt, när sidan uppdateras från serversidan. Den roterande pilen kommer att döljas automatiskt när denna funktionen aktiveras. När en musrullning utförs av användaren, inaktiveras den automatiska rullningen; för att starta den igen, gör en dubbelt musrullning, när du är längst ner på sidan.
+
+settings_leftmenu_section_hide_refresh_modules=Dölj uppdateringslänk
+settings_leftmenu_section_hide_unused_modules=Dölj oanvända moduler
+settings_favorites=Visa favoritknapp
+settings_leftmenu_button_language=Visa språkknapp
+settings_leftmenu_button_refresh=Visa uppdateringsknapp
+
+settings_theme_options_button=Visa inställningsknapp för temat
+
+settings_hotkeys_active=Aktivera användning av snabbtangenter
+settings_hotkey_toggle_modifier=Kombinationstangent
+settings_hotkey_toggle_key_webmin=Snabbtangent för Webmin
+settings_hotkey_toggle_key_virtualmin=Snabbtangent för Virtualmin
+settings_hotkey_toggle_key_cloudmin=Snabbtangent för Cloudmin
+settings_hotkey_toggle_key_usermin=Snabbtangent för Usermin
+settings_hotkey_toggle_key_webmail=Snabbtangent för E-post
+settings_hotkey_sysinfo=Snabbtangent för Översikt
+settings_hotkey_shell=Snabbtangent för skal
+settings_hotkey_favorites=Snabbtangent för favoriter
+settings_hotkey_focus_search=Snabbtangent för sökfält
+settings_hotkey_reload=Snabbtangent för siduppdatering
+
+settings_side_slider_background_refresh_time=Timeout för uppdateringar av bakgrundsinformation
+settings_side_slider_background_refresh_time_description=Ställ in önskad timeout för uppdatering av aviseringar i bakgrunden. Tiden är i minuter och lägsta tiden är <code>1</code> minut. Standardvärdet är <code>5</code> minuter. Det går även bra att använda decimalvärden.
+settings_sysinfo_easypie_charts=Visa diagram
+settings_sysinfo_theme_updates=Se om det finns uppdateringar till Authentic Theme
+settings_sysinfo_csf_updates=Se om det finns uppdateringar till ConfigServer Security & Firewall
+settings_sysinfo_drive_status_on_new_line=Visa CPU och diskstatus på varsin rad
+settings_sysinfo_expand_all_accordions=Expandera alla ihopfällda menyer
+settings_sysinfo_link_mini=Visa systeminformationslänk som en knapp
+settings_leftmenu_singlelink_icons=Visa ikoner för enskilda länkar på navigationsmenyn
+
+settings_right_page_defaults_title=Standardsidor
+settings_right_default_tab_webmin=Standardflik vid inloggning i Webmin
+settings_right_default_tab_usermin=Standardflik vid inloggning i Usermin
+settings_right_virtualmin_default=Standardsida för Virtualmin
+settings_right_cloudmin_default=Standardsida för Cloudmin
+
+settings_leftmenu_vm_installscripts=Show install scripts link in Virtualmin
+settings_leftmenu_vm_webpages=Show edit web pages link in Virtualmin
+settings_leftmenu_vm_backup_amazon=Show Amazon S3 buckets link in Virtualmin
+
+settings_right_clear_local_cache=Rensa buffert
+settings_right_notification_slider_options_title=Sidomenyalternativ
+settings_side_slider_fixed=Visa alltid sidomeny
+settings_side_slider_palette=Sidomenypalett
+settings_hotkey_toggle_slider=Snabbtangent för sidomeny
+settings_window_replace_timestamps=Aktivera datumsubstitutioner
+settings_window_replaced_timestamp_format_short=Kort datum/tids-format
+settings_window_replaced_timestamp_format_full=Fullt datum/tids-format
+settings_window_replaced_timestamps_options_description=Justera full/kort datum och tid till önskat visnings-<code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='Detta alternativ har inte global effekt och aktiveras endast om det finns särskilda triggers som används av modulutvecklare. Alla modulutvecklare kan själva lägga till `data-convertible-timestamp-full="unix-timestamp"` eller `data-convertible-timestamp-short="unix-timestamp"` attribut till behållaren för att visa användardefinierade datum.'></sup> Detta alternativ påverkar inbyggda funktioner som <i>Sidoaviseringsmenyn</i> och <i>Systeminformationsidan</i> (på raden <i>Systemtiden</i>). Som standard är, fullformat det samma som <code>LLLL</code> och som kort är det <code>L, LTS</code>. Tidsformat är olika för olika språk. Språket baseras på Webmins språkinställningar.
+
+settings_side_slider_enabled=Aktivera sidomeny
+settings_leftmenu_user_html=Visa HTML-utdrag
+settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+
+
+theme_changelog=Ändringslogg
+theme_conference=Temakonferens
+theme_development_support=Utvecklingsstöd
+theme_donate=Donera
+theme_download=Ladda ner
+theme_name=Authentic Theme
+theme_update=Uppdatera
+theme_force_update=Tvinga uppdatering
+theme_update_available=Senaste tillgängliga version
+theme_update_notice=Uppdateringsmeddelande
+theme_version=Temaversion
+
+
+# Version 17.40
+theme_global_error=Fel
+theme_global_warning=Varning
+theme_global_success=Lyckades
+theme_global_info=Information
+sysinfo_system_status_warning=För att visa <strong>Systeminformation</strong> måste du aktivera modulen <em>Systemstatus</em> i användarinställningar.
+settings_leftmenu_section_hide_vm_and_cm_links=Hide supported modules' links from navigation menu
+settings_leftmenu_user_html_only_for_administrator=Visa HTML-utdrag endast för administratörer
+theme_sysinfo_wmdocs=Webmin-dokumentation
+theme_sysinfo_vmdocs=Virtualmin-dokumentation
+theme_sysinfo_cmdocs=Cloudmin-dokumentation
+theme_fileformat_css=CSS
+theme_fileformat_json=JSON
+theme_fileformat_js=Javascript
+theme_fileformat_plain_text=Oformatterad text
+
+theme_xhred_titles_wm=Webmin
+theme_xhred_titles_um=Usermin
+theme_xhred_titles_dashboard=Översikt
+theme_xhred_titles_mail=E-post
+theme_xhred_titles_vm=Virtualmin
+theme_xhred_titles_cm=Cloudmin
+theme_xhred_titles_thirdlane=Thirdlane
+
+theme_xhred_global_please_wait=Vänta...
+theme_xhred_filemanager_copying_selected=Kopierar markerade.
+theme_xhred_filemanager_cutting_selected=Klipper ut markerade.
+theme_xhred_filemanager_pasting_selected=Klistrar in från urklippet.
+theme_xhred_filemanager_unpacking_archive=Packar upp markerad(e) fil(er).
+theme_xhred_filemanager_deleting_selected=Tar bort markerade.
+theme_xhred_filemanager_renaming_selected=Döper om markerade.
+theme_xhred_filemanager_creating_directory=Skapar katalog
+theme_xhred_filemanager_creating_file=Skapar fil
+theme_xhred_filemanager_downloading_from=Laddar ner från
+theme_xhred_filemanager_setting_permissions=Sätter behörigheterna till <strong><em>%value</em></strong> på markerad(e) fil(er).
+theme_xhred_filemanager_changing_ownership=Ändrar ägare till <strong><em>%value</em></strong> på markerad(e) fil(er).
+theme_xhred_filemanager_compressing_selected=Komprimmerar markerade i bakgrunden.
+theme_xhred_filemanager_refreshing=Uppdaterar innehållet i katalogen.
+theme_xhred_filemanager_copying_successful=Kopieringen till urklippet lyckades.
+theme_xhred_filemanager_cutting_successful=Klippa ut till urklippet lyckades.
+theme_xhred_filemanager_pasting_successful=Klistra in från urklippet lyckades.
+theme_xhred_filemanager_bookmark_success=Katalogen <strong><em>%value</em></strong> har lagts till dina bokmärken.
+theme_xhred_filemanager_searching=Sökresultatet för <em>`%value`</em> matchade namnet på filer/kataloger.
+theme_xhred_filemanager_search_founds=Hittade <samp>%value</samp> träffar.
+theme_xhred_filemanager_search_found=Hittade <samp>1</samp> träff.
+theme_xhred_filemanager_search_no_matches=Inga träffar hittades.
+theme_xhred_filemanager_nothing_is_selected=Inget är valt!
+theme_xhred_filemanager_saving_file=Filen `<strong><em>%value</em></strong>` har sparats.
+theme_xhred_filemanager_file_saved=Filen `<strong><em>%value</em></strong>` har blivit sparad.
+theme_xhred_filemanager_not_editable=Det går inte att ändra denna typ av val.
+theme_xhred_filemanager_not_decompressable=Det går inte att packa upp denna typ av fil.
+theme_xhred_filemanager_no_selection_to_copy=Inga kataloger/filer har valts för att kopieras.
+theme_xhred_filemanager_no_selection_to_cut=Inga kataloger/filer har valts att klippas ut.
+theme_xhred_filemanager_empty_clipboard=Urklippet är tomt.
+
+theme_xhred_filemanager_successful_extraction=Uppackningen av markerad(e) fil(er) lyckades.
+theme_xhred_filemanager_successful_deletion=Borttagningen lyckades.
+theme_xhred_filemanager_successful_permissions=Behörigheten har blivit ändrad.
+theme_xhred_filemanager_successful_ownership=Ägaren har blivit ändrad.
+theme_xhred_filemanager_successful_compression=Komprimeringen slutfördes.
+theme_xhred_filemanager_successful_directory_creation=Katalogen `<samp>%value</samp>` har skapats.
+theme_xhred_filemanager_successful_file_creation=Filen `<samp>%value</samp>` har skapats.
+
+theme_xhred_notifications_packages_updates=Paketuppdatering
+theme_xhred_notifications_theme_update=Temauppdatering
+theme_xhred_notifications_theme_update_message=En ny version <em>%v</em> av <strong>Authentic Theme</strong> finns tillgänglig. Uppdatera.
+theme_xhred_notifications_firewall_update=Brandväggsuppdatering
+theme_xhred_notifications_firewall_update_message=En ny version <em>%v</em> av <strong>ConfigServer Server Security och Firewall</strong> finns tillgänglig. Uppdatera.
+
+theme_xhred_notifications_firewall_danger=Brandväggsfara
+theme_xhred_notifications_firewall_danger_message=Det verkar som att <strong>ConfigServer Server Security och Firewall</strong> inte <span class="badge badge-danger">körs</span> eller har blivit stoppad! Lämna inte din server oskyddad, kontrollera brandväggsinställningarna (%v)
+
+theme_xhred_notifications_firewall_warning=Brandväggsvarning
+
+#17.50
+settings_force_default_tab=Tvinga standardflik för Webmin
+settings_force_default_tab_description=Denna funktion kommer att tvinga standardfliken att uppdateras vid en fönsteruppdatering. Varning! Det kommer inte att vara möjligt att välja önskad flik med hjälp av URL:en, eftersom alla platsförfrågningar kommer att ignoreras.
+
+settings_grayscale_level_navigation=Filter för gråskala
+settings_grayscale_level_navigation_description=Standard/nuvarande värde <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=Filter för sepia
+settings_sepia_level_navigation_description=Standard/nuvarande värde <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturate_level_navigation=Filter för mättnad
+settings_saturate_level_navigation_description=Standard/nuvarande värde <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_hue_level_navigation=Filter för nyans
+settings_hue_level_navigation_description=Standard/nuvarande värde <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_invert_level_navigation=Filter för invertera
+settings_invert_level_navigation_description=Standard/nuvarande värde <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=Filter för ljusstyrka
+settings_brightness_level_navigation_description=Standard/nuvarande värde <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=Filter för kontrast
+settings_contrast_level_navigation_description=Standard/nuvarande värde <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
+settings_grayscale_level_content=Filter för gråskala
+settings_grayscale_level_content_description=Standard/nuvarande värde <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
+settings_saturate_level_content=Filter för mättnad
+settings_saturate_level_content_description=Standard/nuvarande värde <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
+settings_hue_level_content=Filter för nyans
+settings_hue_level_content_description=Standard/nuvarande värde <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
+
+settings_cm_view_palette=Visa färgpalett
+settings_cm_editor_palette=Redigera färgpalett
+
+theme_xhred_filemanager_context_select_all=Markera alla
+theme_xhred_filemanager_context_select_invert=Invertera
+theme_xhred_filemanager_context_refresh=Uppdatera
+theme_xhred_filemanager_context_newfile=Skapa ny fil
+theme_xhred_filemanager_context_newfoder=Skapa ny katalog
+theme_xhred_filemanager_context_copy=Kopiera
+theme_xhred_filemanager_context_cut=Klipp ut
+theme_xhred_filemanager_context_paste=Klistra in
+theme_xhred_filemanager_context_chmod=Ändra behörigheter
+theme_xhred_filemanager_context_chown=Ändra ägare
+
+#17.51
+theme_xhred_filemanager_context_new=Ny
+theme_xhred_filemanager_context_newarchive=Skapa nytt arkiv
+theme_xhred_filemanager_context_delete=Ta bort
+theme_xhred_filemanager_context_rename=Döp om
+theme_xhred_filemanager_context_edit=Redigera
+theme_xhred_filemanager_context_extract=Packa upp
+theme_xhred_filemanager_context_goto=Öppna objektplats
+theme_xhred_filemanager_context_properties=Egenskaper
+theme_xhred_filemanager_context_search=Sök
+
+#17.52
+theme_xhred_filemanager_context_deselect_all=Avmarkera alla
+theme_xhred_filemanager_context_upload=Ladda upp till nuvarande katalog
+theme_xhred_filemanager_context_download=Ladda ner från fjärr-URL
+
+#17.53
+theme_settings_virtualmin=Virtualmin Virtual Servers
+theme_settings_cloudmin=Cloudmin Managed Systems
+settings_right_thirdparties_options_title=Tredjeparts modulalternativ
+theme_xhred_filemanager_context_calculate_size=Beräkna storleken med mellanslagstangenten
+theme_xhred_filemanager_context_bookmarks=Bokmärken
+theme_xhred_filemanager_context_bookmark_current=Bokmarkera den nuvarande öppna sökvägen
+theme_xhred_filemanager_context_transfer=Överför
+
+#17.54
+theme_xhred_filemanager_title_symlink_target=Länka målet
+
+#17.60
+right_unlimited=Obegränsad
+settings_leftmenu_width=Önskvärd bredd
+settings_leftmenu_width_description=Standard/nuvarande bredd <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=Omvänd utdata
+settings_switch_rdisplay_description=Detta alternativet låter dig ändra ordningen på knapparna till vänster. När du har ändrat detta alternativet, måste en fullständig uppdatering av sidan göras för att de nya inställningarna ska fungera.
+
+#17.63
+theme_xhred_filemanager_context_calculate_selected_size=Beräkna storlek på markerade
+theme_xhred_filemanager_selected_entries=Markerade: %value poster
+theme_xhred_filemanager_manual_path=Ange sökvägen manuellt
+
+theme_xhred_datatable_semptytable=No data available in table
+theme_xhred_datatable_sinfo=Visar _START_ till _END_ av _TOTAL_ poster
+theme_xhred_datatable_sinfoempty=Visar 0 till 0 av 0 poster
+theme_xhred_datatable_slengthmenu=Visa _MENU_ poster
+theme_xhred_datatable_sloadingrecords=Laddar...
+theme_xhred_datatable_sprocessing=Bearbetar...
+theme_xhred_datatable_szerorecords=Inga matchande uppgifter funna
+
+#17.64
+theme_xhred_filemanager_file_edit_but_not_saved=Filen har ändrats men har inte blivit sparad.
+theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Vad vill du göra?
+theme_xhred_global_save=Spara
+theme_xhred_global_save_and_close=Spara och stäng
+theme_xhred_global_close_without_saving=Stäng utan att spara
+theme_xhred_global_continue_editing=Fortsätt redigera
+theme_xhred_filemanager_context_download_file=Ladda ner
+
+#17.65
+settings_sysinfo_easypie_charts_width=Diagrambredd
+settings_sysinfo_easypie_charts_scale=Skallängd på diagram
+
+#17.72
+settings_window_exclusion_description=Ange de moduler som ska uteslutas från den inbyggda in-built renderingsmekanismen. Den här funktionen kommer att ge stöd för föråldrade/frivilligt byggda moduler, som inte visas på rätt sätt. För att inaktivera renderingen för moduler måste du ange namnet. Modulens namn bygger på katalognamnet och du hittar namnet om du håller muspekaren över länken i navigeringsmenyn. Du kan också använda en asterisk <kbd>*</kbd> till att inaktivera alla inbyggda moduler.
+settings_window_exclusion_list=Moduler att utesluta
+
+#17.80
+right_return_theme_options=temaalternativ
+theme_xhred_datatable_semptydirectory=Katalogen är tom
+theme_xhred_filemanager_context_clipboard=Kopiera sökväg till urklippet
+theme_xhred_global_warning=Varning
+theme_xhred_global_close=Stäng
+theme_xhred_encoding_warning=Upptäckte att du använder teckenuppsättning non-unicode, vilket inte rekommenderas. Konstiga tecken <tt>Â</tt> kan förekomma i textredigeringsläge och/eller andra kodningsproblem kan förekomma. <br><br>Ändra språk i <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod -konfigurationen</strong></a> till <code>%lang.UTF-8</code> och se till att din webbläsare också känner av det rätt. <span class="_hidden_"><br><br>Var uppmärksam på att den <em>Webmin</em> inbyggda modulen som heter <em>Ändra språk och tema</em> kan kan åsidosätta de globala inställningarna.</span>
+
+theme_xhred_filemanager__no_bookmarks=Inga sparade bokmärken
+theme_xhred_filemanager_unbookmark_success=Katalogen <samp><em>%value</em></samp> har tagits bort från dina bokmärken.
+theme_xhred_filemanager_bookmark=Bokmarkera nuvarande katalog
+theme_xhred_filemanager_unbookmark=Ta bort bokmärket för nuvarande katalog
+theme_xhred_filemanager_move_into_self=Du kan inte flytta en katalog till sig själv! Destinationskatalogen är inne i källkatalogen.
+theme_xhred_filemanager_pasting_and_copying_1=Markerad källa har blivit inklistrad med det nya namnet.
+theme_xhred_filemanager_pasting_and_copying_2=Markerade källor har blivit inklistrade med de nya namnen.
+theme_xhred_filemanager_pasting_and_replacing_1=Befintligt mål har ersatts med en ny.
+theme_xhred_filemanager_pasting_and_replacing_2=Befintliga mål har ersatts med nya.
+theme_xhred_filemanager_target_conflict_1=mål-konflikt
+theme_xhred_filemanager_target_conflict_2=mål-konflikter
+theme_xhred_filemanager_target_conflict_message_1=Inklistrat mål existerar redan! Vad vill du göra?
+theme_xhred_filemanager_target_conflict_message_2=Inklistrade mål existerar redan! Vad vill du göra?
+theme_xhred_filemanager_target_conflict_replace=Slå ihop och ersätta
+theme_xhred_filemanager_target_conflict_paste=Klistra in med nytt namn
+
+theme_xhred_editor_help_title=Editor Keyboard Shortcuts
+theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
+
+theme_xhred_filemanager_hide_toolbar=Dölj verktygsfält
+theme_xhred_filemanager_hide_actions=Dölj åtgärdskolumn
+theme_xhred_filemanager_hovered_toolbar=Aktivera rullgardinsmenyn i verktygsfältet när musen är ovanför
+theme_xhred_filemanager_context_delete_selected=Ta bort markerade
+
+#17.83
+theme_xhred_database_adding_new_row=Lägg till ny rad
+theme_xhred_database_editing_row=Redigera markerad rad
+theme_xhred_database_editing_rows=Redigera markerade rader
+theme_xhred_database_adding_new_row_data=Ange värde
+
+#17.84
+theme_xhred_datatable_filter=Filter
+
+theme_xhred_global_update=Uppdatera
+theme_xhred_global_update_and_return=Uppdatera och återgå
+theme_xhred_global_update_and_close=Uppdatera och stäng
+theme_xhred_global_back=Bakåt
+theme_xhred_global_cancel=Avbryt
+
+theme_xhred_database_add_row_successful=Ny rad har blivit tillagd
+theme_xhred_database_edit_row_successful=Markerad rad har blivit uppdaterad
+theme_xhred_database_edit_rows_successful=Markerade rader har blivit uppdaterad
+theme_xhred_database_edit_row_delete_successful=Markerad rad har tagits bort
+theme_xhred_database_edit_rows_delete_successful=Tog bort <em>%n</em> markerade rader
+theme_xhred_database_edit_field_delete_successful=Markerat fält har tagits bort
+theme_xhred_database_edit_fields_delete_successful=Tog bort <em>%n</em> markerade fält
+theme_xhred_database_edit_selected_row=Redigera markerad rad
+theme_xhred_database_edit_selected_rows=Redigera markerade rader
+theme_xhred_database_add_new_row=Lägg till rad
+theme_xhred_database_delete_selected_row=Ta bort markerad rad
+theme_xhred_database_delete_selected_rows=Ta bort markerade rader
+theme_xhred_database_delete_selected_field=Ta bort markerat fält
+theme_xhred_database_delete_selected_fields=Ta bort markerat fält
+theme_xhred_database_object_selected_delete=Ta bort markerat objekt
+theme_xhred_database_objects_selected_delete=Ta bort markerade objekt
+theme_xhred_database_db_selected_drop=Släpp markerad databas
+theme_xhred_database_dbs_selected_drop=Släpp markerade databaser
+theme_xhred_database_edit_but_not_saved=Tabelldatan har redigerats men inte sparats.
+
+theme_xhred_global_no_such_command=Det verkar som att den körbara filen <tt>%cmd</tt> inte är installerad eller den finns inte i systemsökvägen.
+
+theme_xhred_global_notice=Notera
+
+theme_xhred_updates_disabled_notice=Upptäckte att du har stängt av aviseringar för uppdateringar av <em>Authentic Theme</em>? <br><br>Aktivera detta i <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Temakonfigurationen</strong></a> hjälper dig att uppdatera till senaste versionen i ett klick så fort den är släppt.
+
+
+#18.00
+theme_xhred_global_file=Fil
+theme_xhred_global_directory=Katalog
+theme_xhred_global_no_target=Target doesn't exist or not accessible
+theme_xhred_global_error_code=Felkod
+theme_xhred_global_on=På
+theme_xhred_global_off=Av
+theme_xhred_global_all=Alla
+theme_xhred_global_none=Ingen
+theme_xhred_global_yes=Ja
+theme_xhred_global_no=Nej
+
+theme_xhred_filemanager_new_tab=Lägg till ny flik (Ctrl+Mellanslag)
+theme_xhred_datatable_no_search_results=<span class="h5">Hittade inga träffar</span><br>Försök sök efter något annat
+
+theme_xhred_filemanager_buffer_error=Det gick inte att klistra in filer till bufferten - åtkomst nekad.
+
+filemanager_create_object_exists=$3 `<samp><em>$1</em></samp>` finns redan i `<samp><tt>$2</tt></samp>`
+filemanager_create_object_denied=Kan inte skapa $3 `<samp><em>$1</em></samp>` i `<samp><tt>$2</tt></samp>` - åtkomst nekad.
+
+filemanager_paste_warning=Det gick inte att klistra in mål(en). Det är möjligt att de begärda objekten har blivit <em>omdöpta, flyttade</em> eller <em>borttagna</em> medan/innan du klistrade in. En annan möjlig orsak är att destinationen är skrivskyddad.  Det är värt att ta en titt på objektens attribut.
+
+theme_xhred_filemanager_delete_warning=Borttagning av filer är utförda men inte för alla objekten. Det är möjligt att de begärda objekten har blivit <em>omdöpta</em> eller <em>flyttade</em> innan borttagningen. Begränsad behörighet (attribut) är en annan möjlig orsak.  Felmeddelande:
+
+
+filemanager_rename_exists=$3 med namnet `<samp><em>$1</em></samp>` finns redan i `<samp><tt>$2</tt></samp>`
+filemanager_rename_denied=Can not rename the $3. This might happen because the source $3 has been removed or due to restricted permissions.
+
+theme_xhred_filemanager_successful_rename=Döper om `<samp><em><s>%from</s></em></samp>` till `<samp><em>%to</em></samp>` utan problem.
+
+filemanager_global_info_total1=Totalt: $1 fil och $2 katalog
+filemanager_global_info_total2=Totalt: $1 filer och $2 katalog
+filemanager_global_info_total3=Totalt: $1 fil och $2 kataloger
+filemanager_global_info_total4=Totalt: $1 filer och $2 kataloger
+
+theme_xhred_filemanager_selected_entry=Markerade: %value post
+
+theme_xhred_filemanager_search_query=Sök efter
+theme_xhred_filemanager_search_match=Hitta i resultatet
+theme_xhred_filemanager_search_replace=Ersätt i resultatet
+
+theme_xhred_global_find=Sök
+theme_xhred_global_replace=Ersätt
+
+theme_xhred_filemanager_searching_matching=Söker efter <em>`%value`</em> som matchar namnet i filer/kataloger, som innehåller texten <em>`%text`</em>.
+theme_xhred_filemanager_searching_replacing=Ersätter Replacing träffar <em>`%text`</em> med <em>`%replace`</em> i filer med namn som innehåller <em>`%value`</em>.
+
+theme_xhred_filemanager_search_replaced_multi=Hittat och ersatt i <samp>%value</samp> filer.
+theme_xhred_filemanager_search_replaced=Hittat och ersatt i <samp>1</samp> fil.
+
+theme_xhred_filemanager_successful_permissions_with_errors=Behörigheten har ändrats men inte på alla objekten:
+
+theme_xhred_filemanager_successful_ownership_with_errors=Äganderätten har ändrats för alla objekten:
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=Äganderätten kan inte ändras på grund av följande fel:
+
+theme_xhred_filemanager_successful_compression_with_errors=Komprimeringen har slutförs med följande fel:
+theme_xhred_filemanager_successful_compression_bg=Komprimering har är klar. Komprimerad fil <samp>`%file</samp> finns i katalogen <samp>`%path`</samp>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Komprimering är klar med fel. Komprimerad fil <samp>`%file</samp> borde finnas i katalogen <samp>`%path`</samp>.
+
+theme_xhred_filemanager_settings_notification_type=Vad för typ av aviseringar ska visas
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=Information, varningar och fel
+theme_xhred_filemanager_settings_notification_type_warn_err=Varningar och fel
+theme_xhred_filemanager_settings_notification_type_err=Endast fel
+
+theme_xhred_filemanager_settings_tabs_remember_state=Återställ föregående använd flik vid uppstart
+theme_xhred_filemanager_context_open_new_tab=Öppna i ny flik
+
+theme_xhred_xsql_fit_content_screen_height=Fit database table content in screen height
+
+theme_xhred_datatable_filter_visible_tables=Filtrera synlig(a) tabell(er)
+theme_xhred_module_help=Modulhjälp
+
+theme_xhred_server_process_running=Serverprocessen körs fortfarande? Är du säker på att du vill lämna sidan och missa all information om processen? Även om du lämnar nu avslutas inte processen.
+
+
+#18.03
+settings_global_options_title=Globala alternativ
+settings_global_passgen_format=Lösenordsskapare
+settings_global_passgen_format_description=Ange längden och teckentypen som ska användas i det nya lösenordet. Första värdet är numeriskt, vilket är längden på lösenordet, och direkt efter följer <code>|</code> som en avgränsare. Sen kommer texentypen, där du kan använda siffrorna <code>0-9</code>, bokstäverna <code>a-z</code> och/eller <code>A-Z</code>, och även specialtecknen <code>#</code>. Dessa uppsättningar kan användas tillsammans eller var för sig, med hjälp av kommatecken som avgränsare. Standardvärdet är <code>12|a-z,A-Z,0-9,#</code>, vilket motsvarar ett lösenord på 12 tecken, som innehåller både versala och gemena bokstäver, nummer och specialtecken.
+theme_xhred_password_generator_new=Skapa nytt lösenord<br> (till urklippet)
+theme_xhred_password_generator_new_success=Det nya lösenordet %password har blivit kopierat till urklippet.
+
+
+#18.08
+theme_fileformat_perl=Perl
+theme_fileformat_perl_placeholder=Denna filen måste avslutas med `1;` för att fungera korrekt. (http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl)
+
+
+#18.10
+theme_error_access_not_root=Åtkomst nekad: Användaren måste ha tillgång till modulen <em>Webmin-konfiguration</em> för att kunna redigera ett tema
+
+
+#18.20
+settings_hide_top_loader=Göm övre förlopps- och laddindikatorn
+
+
+#18.30
+settings_leftmenu_vm_cm_dropdown_icons=Visa symboliska ikoner i drag-och-släpp i Virtualmin/Cloudmin
+settings_font_family=Typsnitt
+settings_font_family_description=Bland alla typsnitt är <em>Roboto</em> satt som standardtypsnitt på temat. De andra typsnitten måste installeras lokalt på din dator för att det ska fungera. När du använder lokala typsnitt, är inte standardtypsnittet laddat, vilken innebär att temat laddas fortare
+theme_xhred_global_shipped=Medföljer
+theme_xhred_global_available=Tillgängliga
+theme_xhred_global_not_available=Inte tillgängliga
+theme_xhred_global_default=Standard
+theme_xhred_global_system_default=Systemstandard
+theme_xhred_global_local_system_default=Lokal systemstandard
+theme_xhred_global_stats=Statistik
+theme_xhred_global_notifications=Aviseringar
+theme_xhred_global_favorites=Favoriter
+theme_xhred_global_cpu_load=CPU-belastning
+theme_xhred_notification_none=Inga aviseringar
+theme_xhred_notification_no_data=Samla inte in data
+theme_xhred_notification_no_favorites=Ingen favoritdata
+theme_xhred_global_theme_version=Version på temat
+
+settings_side_slider_sysinfo_enabled=Visa översiktsflik
+settings_side_slider_notifications_enabled=Visa aviseringsflik
+settings_side_slider_favorites_enabled=Visa favoritflik
+settings_side_slider_tabs_hotkeys=Aktivera snabbtangenter för flikarna
+settings_side_slider_tabs_hotkeys_description=Du kan använda snabbtangenter för att skifta mellan flikarna genom att använda <code>Meta+⇧+Tabb/Meta+Tabb</code> i fall det globala alternativet för snabbtangenter är aktiverat
+settings_show_terminal_link=Visa terminalknapp
+
+theme_xhred_sysinfo_system_monitors=Systemövervakare
+theme_xhred_sysinfo_server_status=Serverstatus
+theme_xhred_sysinfo_software_versions=Mjukvaruversioner
+theme_xhred_sysinfo_recent_logins=Senaste inloggade
+theme_xhred_sysinfo_vm_package_updates=Virtualmin paketuppdateringar
+theme_xhred_sysinfo_disk_quotas=Diskkvoter
+theme_xhred_sysinfo_bandwidth_quotas=Bandbreddskvoter Quotas
+
+left_netdata=Realtidsövervakning
+settings_leftmenu_netdata=Visa Netdata realtidsövervakningslänk
+settings_leftmenu_netdata_link=Netdata serverbestämd länk
+
+theme_xhred_filemanager_context_chattr=Ändra attribut
+theme_xhred_filemanager_changing_attributes=Ändrar attributen till <samp><em>%value</em></samp> på vald(a) file(r).
+theme_xhred_filemanager_successful_attributes_with_errors=Attributen har inte ändrats på alla objekten:
+theme_xhred_filemanager_successful_attributes=Attributen har ändrats.
+
+theme_xhred_filemanager_context_chcon=Ändra security context
+theme_xhred_filemanager_changing_secontext=Ändrar security context till <samp><em>%value</em></samp> på markerad(e) fil(er).
+theme_xhred_filemanager_successful_secontext_with_errors=Security context har inte ändrats på alla objekten:
+theme_xhred_filemanager_successful_secontext=Security context har ändrats.
+
+theme_xhred_global_no_results_found=Inga resultat funna
+
+
+#18.32
+theme_xhred_display_icons_warning=När visningsläge i modulkonfiguration är satt till ikoner, visas varje mål i en separat behållare (nuvarande inställning), snarare än i en tabell.<br><br>För att välja ett mål använd antingen enkelt <em>vänsterklick</em> eller enkelt <em>högerklick</em>; ange målet genom ett dubbelt <em>vänstertryck</em>.
+
+
+#18.40
+theme_new_password_header=Ange nytt lösenord för användaren
+settings_sysinfo_theme_beta_updates=Ta även med beta-versioner
+login_reset=Återställning av lösenord
+theme_xhred_move_top=Flytta längst upp
+theme_xhred_move_bottom=Flytta längst ner
+theme_xhred_move_up=Flytta uppåt
+theme_xhred_move_down=Flytta neråt
+theme_xhred_add_after=Lägg till efter
+theme_xhred_add_before=Lägg till före
+settings_button_tooltip=Visa verktygstips för knappar
+settings_show_night_mode_link=Visa palettväxling
+settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla mellan mörk/ljus palett
+settings_title=Temakonfiguration
+settings_subtitle=För användaren
+
+theme_tooltip_night_mode=Växla mellan dag-/nattläge
+theme_tooltip_terminal_link=Terminal
+theme_tooltip_language_link=Språk
+theme_tooltip_switch_user=Växla användare
+theme_tooltip_logout=Logga ut
+theme_tooltip_edit_user=Redigera användare

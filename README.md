@@ -1,6 +1,6 @@
-##Contents
+## Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (18.32)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.32/authentic-theme-18.32.wbt.gz)
+* [Download (18.40)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.40/authentic-theme-18.40.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -8,19 +8,19 @@
 * [Donation![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/qooob/authentic-theme#license)
 * [License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 
-##About
+## About
 **Authentic** is [Webmin/](https://github.com/webmin/webmin)[Usermin/](https://github.com/webmin/usermin)[Virtualmin/](https://www.virtualmin.com/)[Cloudmin](http://webmin.com/cloudmin.html) theme based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome) that is made with _love_. It uses [CodeMirror](http://codemirror.net/) to highlight config files and show line numbers, when editing manually, [CKEditor](http://ckeditor.com/) to compose comprehensive HTML based messages and [DataTables](http://www.datatables.net/) to add advanced interaction controls to modules' tables. Theme runs using latest releases of dependent software (mentioned above), supporting all in-built modules (even ancient ones) and third-party modules, including [ConfigServer Security & Firewall](http://configserver.com/cp/csf.html).
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
 ![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-1710.png)
-![](https://rostovtsev.ru/pub/media/screenshots/screenshot-content-page-18.40.png)
+![](https://rostovtsev.ru/pub/media/screenshots/screenshot-content-page-18.40-final.png)
 
-####Principles
+#### Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
 * Be as beautiful, fast, light and easy to use as possible
 * Be compatible with all platforms and support mobile devices
 
-####Features
+#### Features
 * Configurable theme options using _Webmin_ UI
 * Top-down terminal port
 * Favorites feature for any content page
@@ -33,46 +33,46 @@
 * Extensive list of customizable theme options, with ability to embed user logos, styles and scripts
 * Extended support for _File Manager_ and _ConfigServer Security & Firewall_ modules
 
-####Requirements
+#### Requirements
 * Webmin _1.830+_ (required), Usermin _1.700+_ (optional), Virtualmin _5.00+_ (optional), Cloudmin _9.00+_ (optional)
 
-####Recommended modules
+#### Recommended modules
 * Installed _Net::SSLeay_ module, to make automatic update notifications work
 
-####Browser support
+#### Browser support
 
-######![](https://rostovtsev.ru/pub/media/icons/chrome-16.png) Chrome 24+
+###### ![](https://rostovtsev.ru/pub/media/icons/chrome-16.png) Chrome 24+
 
-######![](https://rostovtsev.ru/pub/media/icons/firefox-16.png) Firefox 5+
+###### ![](https://rostovtsev.ru/pub/media/icons/firefox-16.png) Firefox 5+
 
-######![](https://rostovtsev.ru/pub/media/icons/opera-16.png) Opera 18+
+###### ![](https://rostovtsev.ru/pub/media/icons/opera-16.png) Opera 18+
 
-######![](https://rostovtsev.ru/pub/media/icons/safari-16.png) Safari 6+
+###### ![](https://rostovtsev.ru/pub/media/icons/safari-16.png) Safari 6+
 
-######![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 20+
+###### ![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 20+
 
-######![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 10+
+###### ![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 10+
 
 
-###FAQ
-####How to install _Authentic_ Theme?
+### FAQ
+#### How to install _Authentic_ Theme?
 
-#####Webmin
+##### Webmin
 
-  To install _Autentic_ Theme from repository, just `clone` it into your wherever _Webmin_ binary folder _(libexec)_ is. After that, you must rename `authentic-theme-master` directory to `authentic-theme` to make the theme work properly. Besides, you could just [download](https://github.com/qooob/authentic-theme/releases/download/18.32/authentic-theme-18.32.wbt.gz) the theme directly and install it using _Webmin_:
+  To install _Autentic_ Theme from repository, just `clone` it into your wherever _Webmin_ binary folder _(libexec)_ is. After that, you must rename `authentic-theme-master` directory to `authentic-theme` to make the theme work properly. Besides, you could just [download](https://github.com/qooob/authentic-theme/releases/download/18.40/authentic-theme-18.40.wbt.gz) the theme directly and install it using _Webmin_:
 
   `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
 
-#####Usermin
+##### Usermin
   Use the same procedure as described above to install the theme for _Usermin_:
 
   `Webmin->Usermin Configuration->Usermin Themes->Install themes->From uploaded file`
 
 
-#####Virtualmin/Cloudmin
+##### Virtualmin/Cloudmin
 There is no need to take any additional actions. In case _Virtualmin_ or/and _Cloudmin_ modules are installed, it will be automatically detected and supported.
 
-####How to update _Authentic_ Theme manually?
+#### How to update _Authentic_ Theme manually?
 Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using command line, do the following:
   1. Go to _Webmin_ (`cd /usr/libexec/webmin`) or _Usermin_ (`cd /usr/libexec/usermin`) directory __*__
   2. Move current version of the theme to the temporary directory (`mv authentic-theme /tmp`)
@@ -80,26 +80,26 @@ Theme can be easily updated manually. Please make sure that you have `git` comma
   4. Restart _Webmin_/_Usermin_ after update
 <br>__*__ *Binary folder might be different from `libexec` depending on the system. Run `whereis webmin` to figure out the correct path.*
 
-####How to update _Authentic_ Theme automatically?
+#### How to update _Authentic_ Theme automatically?
 The theme has inbuilt feature to notify an administrative user to install updates. To enable this feature, turn `Check for Authentic Theme updates` on in theme settings.
 
-####How do I customize the theme?
+#### How do I customize the theme?
 Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.
 
-####How do I execute shell command using search field?
+#### How do I execute shell command using search field?
 Type `!` in search, followed by your command. Example: `! ls -lsaZ /root`. It's required to have _Command Shell_ module available.
 
-####How do I make the theme load faster?
+#### How do I make the theme load faster?
 _Webmin_ has in-built option to compress static files.  It's possible to enable this feature by going to `Webmin->Webmin Configuration->Web Server Options` and setting _Gzip compress static files_ option to _Use pre-compressed file and compress dynamically_.
 
 Another solution would be to install used by default [_Roboto Font_](http://www.fontsquirrel.com/fonts/download/roboto "wget http://www.fontsquirrel.com/fonts/download/roboto -O roboto.zip") locally to prevent extra load from embedding it and later setting it in the theme's settings accordingly.
 
-###Extended support for bundled/third-party modules
+### Extended support for bundled/third-party modules
 
-####_File Manager_
+#### _File Manager_
 Theme has great support for this module, by adding numerous mast-have features. Most noticeable are listing without page reload (using XHR requests) and full keyboard support, which enables you to use _File Manager_ just as normal desktop browser.
 
-#####List of keyboard shortcuts
+##### List of keyboard shortcuts
 
   * `alphanumeric typing` - quick search
   * `up/down, home/end` - cursor position
@@ -113,7 +113,7 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `+` - select all
   * `-` - deselect all
   * `F2` - change permissions
-  * `Shift+F2` - Change attributes
+  * `Shift+F2` - change attributes
   * `F3` - change ownership
   * `Shift+F3` - change security context
   * `F4` - edit where possible
@@ -134,11 +134,11 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `Ctrl+Enter/Ctrl+Shift+Enter` - save/save and close currently edited file
   * `Theme reload hotkey` - reload current directory
 
-####_ConfigServer Security & Firewall_
+#### _ConfigServer Security & Firewall_
 Theme only re-renders this module and adds support for code highlight, when editing files manually.
 
 
-###Troubleshoot
+### Troubleshoot
 1. Automatic updates notification feature doesn't work or `Can't locate Net/SSLeay.pm in ..)`<br>
    This happens because _Webmin_ is trying to open a link and download the theme using _https_ protocol. `Net::SSLeay` - is high level functions for accessing web servers (by using HTTP/HTTPS). You can install it using _Perl_ module in _Webmin_ or using _command-line_. Package name is `perl-Net-SSLeay`. Besides, in case you have mentioned module installed and automatic update feature still doesn't work, you would have to also install either `LWP::Protocol::https` or `Bundle::LWP` using _CPAN_ or by package name `perl-LWP-Protocol-https` or `perl-libwww-perl` respectively;
 2. Strange `Â` character is appeared in text-editor mode or other encoding issues<br>
@@ -154,27 +154,28 @@ Theme only re-renders this module and adds support for code highlight, when edit
 7. Blinking navigation menu or overall jerky theme's rendering<br>
    This could happen to GPU driver misconfiguration on your OS. For more details refer to [#453](https://github.com/qooob/authentic-theme/issues/453)
 
-###Development
-####Lead developer
+### Development
+#### Lead developer
 * [Ilia Rostovtsev](https://rostovtsev.ru)[![](https://rostovtsev.ru/pub/media/icons/stackoverflow-23x15.png)](http://stackoverflow.com/users/1455661/ilia-rostovtsev)
 
 
-###Contributions
+### Contributions
 
-####Translations
+#### Translations
 * [Richard van Laak](https://github.com/Rvanlaak) (Dutch)
 * [Kjetil Elde](https://github.com/w00p) (Norwegian)
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
 * [Michael Keck](https://github.com/mkkeck) (German)
 * [Silviu-Ionut Radu](https://github.com/sealview) (Romanian)
 * [Ilia Rostovtsev](https://github.com/qooob) (Russian)
+* [David Canalias](https://github.com/diathesaron) (Catalan)
+* [Sopor Spr](https://github.com/Sopor-) (Swedish)
 * [7stars](https://github.com/7starsone) (Spanish, French, Portuguese)
 * [dreista](https://github.com/Dreista) (Chinese)
 * [jlndk](https://github.com/jlndk) (Danish)
 * [stuchy3](https://github.com/stuchy3) (Czech)
-* [David Canalias](https://github.com/diathesaron) (Catalan)
 
-###Donation
+### Donation
  You can make a difference. Donations show appreciation. Your donations would help me to pay my bills and _excite future development_.
 
 [![](https://rostovtsev.ru/pub/media/icons/yandex-175x89.png)](http://rostovtsev.ru/pub/api/donation/yandex.html)

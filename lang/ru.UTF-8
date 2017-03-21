@@ -132,7 +132,7 @@ settings_security_description=Security alerts will let you setup email notificat
 settings_right_hotkey_options_title=Hotkey options
 settings_right_sysinfo_page_options_title=System Information page options
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the begining and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
 settings_hotkey_custom_1=Custom link <code>1</code>
 settings_hotkey_custom_2=Custom link <code>2</code>
 settings_hotkey_custom_3=Custom link <code>3</code>

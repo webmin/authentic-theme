@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -61,8 +61,9 @@ sub theme_header
             . '" data-module="'
             . &get_module_name()
             . '" data-ovo="1"'
-          : undef
-      ) . '>' . "\n";
+          : undef )
+      . ''
+      . ( index( get_env('request_uri'), '/config.cgi?' ) gt "-1" ? ' id="configCGI"' : '' ) . '>' . "\n";
 
     if ( @_ > 1 && $_[1] ne 'stripped' ) {
         print '<div class="container-fluid col-lg-10 col-lg-offset-1">' . "\n";
