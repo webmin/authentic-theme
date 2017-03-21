@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -204,6 +204,12 @@ function array_flip(c) {
     return a
 }
 
+function removeLastDirectoryPartOf(a) {
+    var b = a.split("/");
+    b.pop();
+    return (b.join("/"))
+}
+
 function arrayIntersect(g, d) {
     var f = [];
     $.each(g, function(b, a) {
@@ -289,9 +295,9 @@ function manageConfig(d) {
             }
         });
         a.settings_force_night_mode = __isNM;
-        t__wi_p.settings_font_family != "undefind" && (a.settings_font_family = (is_numeric(t__wi_p.settings_font_family) ? (t__wi_p.settings_font_family + ";") : "'" + t__wi_p.settings_font_family + "';"));
-        t__wi_p.settings_navigation_color != "undefind" && (a.settings_navigation_color = "'" + t__wi_p.settings_navigation_color + "';");
-        t__wi_p.settings_background_color != "undefind" && (a.settings_background_color = "'" + t__wi_p.settings_background_color + "';");
+        t__wi_p.settings_font_family != "undefind" && (a.settings_font_family = t__wi_p.settings_font_family);
+        t__wi_p.settings_navigation_color != "undefind" && (a.settings_navigation_color = t__wi_p.settings_navigation_color);
+        t__wi_p.settings_background_color != "undefind" && (a.settings_background_color = t__wi_p.settings_background_color);
         t__wi_p.settings_button_tooltip != "undefind" && (a.settings_button_tooltip = t__wi_p.settings_button_tooltip);
         t__wi_p.settings_hide_top_loader != "undefind" && (a.settings_hide_top_loader = t__wi_p.settings_hide_top_loader);
         t__wi_p.settings_animation_left != "undefind" && (a.settings_animation_left = t__wi_p.settings_animation_left);

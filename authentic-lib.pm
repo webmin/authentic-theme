@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1479,13 +1479,11 @@ sub csf_mod
           . theme_version()
           . '" rel="stylesheet">' . "\n";
 
-        if ( length $__settings{'settings_background_color'}
-             && $__settings{'settings_background_color'} ne 'gainsboro' )
+        if ( theme_night_mode() )
         {
             print $fh '<link href="'
               . $gconfig{'webprefix'}
-              . '/unauthenticated/css/palettes/'
-              . lc( $__settings{'settings_background_color'} ) . '.'
+              . '/unauthenticated/css/palettes/nightrider.'
               . $ext . '.css?'
               . theme_version()
               . '" rel="stylesheet">' . "\n";
@@ -2118,8 +2116,6 @@ sub _settings
             'settings_animation_tabs',
             'true',
             'settings_right_reload',
-            'true',
-            'settings_window_autoscroll',
             'true',
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
@@ -2778,30 +2774,10 @@ sub _settings
         __config_dir_available();
 
         if ( $t eq 'save' ) {
-
             !foreign_available("webmin")
               && error( $Atext{'theme_error_access_not_root'} );
-
-            delete @in{ grep( !/^settings_/, keys %in ) };
-            for ( values %in ) { s/(.*)/'$1';/ }
-            for ( values %in ) { s/"/'/g }
-            for ( values %in ) { s/\/\//&#47;&#47;/g }
-            for ( values %in ) { s/'true'/true/g }
-            for ( values %in ) { s/'false'/false/g }
-            for ( values %in ) {
-                s/
-                   \G
-                   (
-                      (?: ^ [^']* ' | (?!^) )
-                      (?: [^'\\]+ | \\. )*
-                   )
-                   '
-                   (?! [^']* \z )
-                /
-                   $1 . "\\'"
-                /xseg;
-            }
-            write_file( $config_directory . "/authentic-theme/settings.js", \%in );
+            my %i = settings_filter(%in, $t);
+            write_file( $config_directory . "/authentic-theme/settings.js", \%i );
         }
         if ( $t eq 'restore' ) {
 
@@ -3400,7 +3376,7 @@ sub content
 sub changelog()
 {
     my $changelog_data = ( read_file_contents( $root_directory . '/' . $current_theme . "/CHANGELOG.md" ) =~
-                           /####Version(.*?)####Version/s )[0];
+                           /#### Version(.*?)#### Version/s )[0];
     my @changelog_version = split /\n/, $changelog_data;
 
     $changelog_data =~ s/^[^\n]*\n/\n/s;
@@ -3512,14 +3488,14 @@ sub manage_theme_config
     my %atconfig;
 
     if ( $action eq 'save' ) {
-        delete @in{ grep( !/^config_portable_|^settings_/, keys %in ) };
-        &write_file( get_user_home() . "/.atconfig", \%in );
+        my %i = settings_filter(%in);
+        write_file( get_user_home() . "/.atconfig", \%i );
     }
     elsif ( $action eq 'load' ) {
         my $atconfig_file = ( get_user_home() . "/.atconfig" );
         if ( -f $atconfig_file ) {
-            $atconfig = &read_file_contents($atconfig_file);
-            %atconfig = $atconfig =~ /(.*?)=(.*)/g;
+            my %atconfig = ( settings( get_user_home() . "/.atconfig" ) );
+
             delete @atconfig{ grep( !/^config_portable_/, keys %atconfig ) };
             get_json( \%atconfig );
         }

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -5463,8 +5463,9 @@ img[src='/images/open.gif']:before {
     color: #666
 }
 
-img[src='/images/tick.gif'] {
-    height: 36px
+body.virtual-server img[src*='images/tick.gif'] {
+    visibility: hidden;
+    pointer-events: none
 }
 
 input.btn-danger {
@@ -8279,6 +8280,13 @@ img.scale-08,
     min-height: 100px
 }
 
+html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td b,
+html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td a,
+html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td,
+html:not([data-background-style='nightRider']) .table-striped:not(.opener_table_style):not(.table-subtable)>tbody>tr:hover td,
+html[data-script-name*="settings-user.cgi"] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form#settings_>div>table>tbody>tr>td>table>tbody>tr:hover td:not([colspan="2"]),
+#atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td div,
+#atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td,
 .table-hover>tbody>tr.ui_checked_columns:hover,
 .table-hover>tbody>tr:not(.tr_tag):hover {
     background-color: #ebf2fc !important

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -308,7 +308,7 @@ function f__toogle_palette() {
     if ($(t__wi_p.page.document).find(".modal.in:visible").length) {
         return
     }
-    var e = (t__wi_p.page.$source_path == t__wi_p.page.$_____link + "sysinfo.cgi" ? 330 : 0);
+    var e = ((t__wi_p.page.$source_path == t__wi_p.page.$_____link + "sysinfo.cgi" && $access_level == "0") ? 330 : 0);
     if (e) {
         $(t__wi_p.page.document).find("body").addClass("bg-puff-out");
         setTimeout(function() {
@@ -318,34 +318,38 @@ function f__toogle_palette() {
     setTimeout(function() {
         if (c === 1) {
             a.find(".fa-moon").removeClass("fa-moon").addClass("fa-sun vertical-align-middle");
-            $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').attr("disabled", "disabled");
             $(t__wi_p.page.document).find(".settings_navigation_color_toggle").addClass("hidden");
-            $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]').remove();
+            var h = $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]');
             $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/gunmetal." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
             $(t__wi_p.page.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/nightrider." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
-            t__wi_p.$("body").attr("data-theme", "gunmetal");
-            $(t__wi_p.page.document).find("body").attr("data-theme", "gunmetal");
-            t__wi_p.$("html").attr("data-background-style", "nightRider");
-            $(t__wi_p.page.document).find("html").attr("data-background-style", "nightRider");
-            t__wi_p.$("html").attr("data-night-mode", 1);
-            $(t__wi_p.page.document).find("html").attr("data-night-mode", 1);
+            setTimeout(function() {
+                t__wi_p.$("body").attr("data-theme", "gunmetal");
+                $(t__wi_p.page.document).find("body").attr("data-theme", "gunmetal");
+                h.remove();
+                t__wi_p.$("html").attr("data-background-style", "nightRider");
+                $(t__wi_p.page.document).find("html").attr("data-background-style", "nightRider");
+                t__wi_p.$("html").attr("data-night-mode", 1);
+                $(t__wi_p.page.document).find("html").attr("data-night-mode", 1)
+            }, 300);
             t__wi_p.__isNR = 1;
             t__wi_p.__isNM = 1;
             t__wi_p.page.window.__isNR = 1;
             t__wi_p.page.window.__isNM = 1
         } else {
-            $(t__wi_p.page.document).find('select[name="settings_navigation_color"]').removeAttr("disabled");
             $(t__wi_p.page.document).find(".settings_navigation_color_toggle").removeClass("hidden");
             a.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
-            $(t__wi_p.top.document).find('head link[href*="gunmetal"]').remove();
+            var i = $(t__wi_p.top.document).find('head link[href*="gunmetal"]');
             t__wi_p.$("body").attr("data-default-theme") != "blue" && $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
-            settings_background_color !== "nightRider" && $(t__wi_p.page.document).find('head link[href*="nightrider"]').remove();
-            t__wi_p.$("body").attr("data-theme", d);
-            $(t__wi_p.page.document).find("body").attr("data-theme", d);
-            t__wi_p.$("html").attr("data-background-style", b);
-            $(t__wi_p.page.document).find("html").attr("data-background-style", b);
-            t__wi_p.$("html").attr("data-night-mode", 0);
-            $(t__wi_p.page.document).find("html").attr("data-night-mode", 0);
+            setTimeout(function() {
+                t__wi_p.$("body").attr("data-theme", d);
+                $(t__wi_p.page.document).find("body").attr("data-theme", d);
+                i.remove();
+                t__wi_p.$("html").attr("data-background-style", b);
+                $(t__wi_p.page.document).find("html").attr("data-background-style", b);
+                t__wi_p.$("html").attr("data-night-mode", 0);
+                $(t__wi_p.page.document).find("html").attr("data-night-mode", 0);
+                settings_background_color !== "nightRider" && $(t__wi_p.page.document).find('head link[href*="nightrider"]').remove()
+            }, 300);
             t__wi_p.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
             t__wi_p.__isNM = 0;
             t__wi_p.page.window.__isNR = (settings_background_color === "nightRider" ? 1 : 0);
@@ -377,7 +381,7 @@ function ported_shell_size() {
     if (is_module("shell") == 1) {
         var a = parseInt(t__wi_p.$("body").find(".-shell-port-cmd").width()),
             b = parseInt(t__wi_p.$("body").find(".-shell-port-type").width());
-        t__wi_p.$("body").find('.-shell-port- input[data-command="true"]').css("width", (a - b - 20) + "px")
+        t__wi_p.$("body").find('.-shell-port- input[data-command="true"]').css("width", (a - b - 200) + "px")
     }
 }
 

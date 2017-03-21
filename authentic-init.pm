@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -27,9 +27,41 @@ sub settings
     }
 }
 
+sub settings_filter
+{
+    my (%in_data) = @_;
+
+    delete @in_data{ grep( !/^config_portable_|^settings_/, keys %in_data ) };
+    delete @in_data{ grep( !m/^\w*$/, keys %in_data ) };
+    for ( values %in_data ) { s/(.*)/'$1';/ }
+    for ( values %in_data ) { s/\$|`*//g }
+    for ( values %in_data ) { s/<<//g }
+    for ( values %in_data ) { s/"/'/g }
+    for ( values %in_data ) { s/\/\//&#47;&#47;/g }
+    for ( values %in_data ) { s/'true'/true/g }
+    for ( values %in_data ) { s/'false'/false/g }
+    for ( values %in_data ) { s/'1'/1/g }
+    for ( values %in_data ) { s/'0'/0/g }
+    for ( values %in_data ) {
+        s/
+         \G
+         (
+            (?: ^ [^']* ' | (?!^) )
+            (?: [^'\\]+ | \\. )*
+         )
+         '
+         (?! [^']* \z )
+      /
+         $1 . "\\'"
+      /xseg;
+    }
+    return %in_data;
+}
+
 sub settings_default
 {
     my %c;
+    $c{'settings_window_autoscroll'}            = 'true';
     $c{'settings_font_family'}                  = '0';
     $c{'settings_navigation_color'}             = 'blue';
     $c{'settings_background_color'}             = 'gainsboro';
@@ -363,17 +395,11 @@ sub embed_css_content
 
 sub embed_css_content_palette
 {
-    if (
-         (    length $__settings{'settings_background_color'}
-           && $__settings{'settings_background_color'} ne 'undefined'
-           && $__settings{'settings_background_color'} ne 'gainsboro' )
-         || theme_night_mode() )
-    {
+    if ( theme_night_mode() ) {
         print '<link href="'
           . $gconfig{'webprefix'}
-          . '/unauthenticated/css/palettes/'
-          . ( theme_night_mode()      ? 'nightrider' : lc( $__settings{'settings_background_color'} ) ) . '.'
-          . ( theme_mode() eq 'debug' ? 'src'        : 'min' ) . '.css?'
+          . '/unauthenticated/css/palettes/nightrider.'
+          . ( theme_mode() eq 'debug' ? 'src' : 'min' ) . '.css?'
           . theme_version()
           . '" rel="stylesheet" data-palette>' . "\n";
     }

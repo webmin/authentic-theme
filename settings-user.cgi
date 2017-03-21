@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.32 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -12,7 +12,7 @@ ui_print_header( ( $Atext{'settings_subtitle'} . ' <tt>' . $remote_user . '</tt>
                  $Atext{'settings_title'},
                  undef, undef, undef, 1 );
 
-print ui_form_start( "save_config.cgi", "post" );
+print ui_form_start( "save_config.cgi", "post", undef, 'id="settings_"' );
 
 print ui_table_start(
                       (  '<i class="fa fa-cogs vertical-align-text-middle"></i> '
