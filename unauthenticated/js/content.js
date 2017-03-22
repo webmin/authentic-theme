@@ -3793,6 +3793,7 @@ if (is__mf("bind8", "edit_zonekey.cgi")) {
 if (is__mf("virtual-server", "edit_script.cgi")) {
     $('select[name="version"]').addClass("heighter-34 margined-top-4")
 }
+brake_long_lines((is__mf("firewall", "") || is__mf("firewall", "index.cgi")), $(".ui_checked_columns td label b"), ",");
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {
         return
