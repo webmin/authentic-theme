@@ -6475,6 +6475,15 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
     color: #eaa747 !important
 }
 
+#headln2c .favorites.fa-star:hover:before {
+    content: '\f091';
+    color: #5c5c5c
+}
+
+#headln2c .favorites.fa-star-o:hover {
+    color: #eba94c
+}
+
 .menu-exclude-link>[class^='wbm-']:before,
 .menu-exclude-link>[class*=' wbm-']:before {
     font-size: 24px;
