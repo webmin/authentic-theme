@@ -207,6 +207,19 @@ jQuery.fn.confirmation = function(d, c) {
     });
     return $(this)
 };
+RegExp.quote = function(a) {
+    return a.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1")
+};
+
+function brake_long_lines(c, a, b) {
+    if (c && a.text() && a.text().length) {
+        $.each(a, function() {
+            var e = new RegExp(RegExp.quote(b), "g"),
+                d = $(this).text().replace(e, ", ");
+            $(this).html("<br>" + d)
+        })
+    }
+}
 
 function passwordGenerator() {
     var e = settings_global_passgen_format.split("|")[1].split(","),
