@@ -4556,33 +4556,28 @@ tr.atshover:hover td.atscontent span {
     justify-content: center
 }
 
-.row.icons-row .xsmall-icons-container.grayscaled:not(.highlighted),
 .row.icons-row .small-icons-container.grayscaled:not(.highlighted),
 .row.icons-row .icons-container.grayscaled:not(.highlighted) {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%)
 }
 
-.row.icons-row .xsmall-icons-container.grayscaled:not(.highlighted):hover,
 .row.icons-row .small-icons-container.grayscaled:not(.highlighted):hover,
 .row.icons-row .icons-container.grayscaled:not(.highlighted):hover {
     -webkit-filter: grayscale(1%);
     filter: grayscale(1%)
 }
 
-.row.icons-row .xsmall-icons-container:not(.highlighted),
 .row.icons-row .small-icons-container:not(.highlighted),
 .row.icons-row .icons-container:not(.highlighted) {
     background: linear-gradient(to bottom, #fdfdfd 0, #f3f3f3 100%) repeat scroll 0 0 transparent
 }
 
-.row.icons-row .xsmall-icons-container.highlighted,
 .row.icons-row .small-icons-container.highlighted,
 .row.icons-row .icons-container.highlighted {
     background: linear-gradient(to bottom, #ffffe9 0, #ffffc1 100%) repeat scroll 0 0 transparent
 }
 
-.row.icons-row.inline-row .xsmall-icons-container,
 .row.icons-row.inline-row .small-icons-container,
 .row.icons-row.inline-row .icons-container {
     min-width: 37px;
@@ -4591,17 +4586,35 @@ tr.atshover:hover td.atscontent span {
     max-height: 37px;
     margin: 4px;
     margin: 4.9px;
-    padding-top: 6px
+    padding-top: 6px;
+    margin-left: 25px;
+    overflow: visible
 }
 
-.row.icons-row.inline-row .xsmall-icons-container img,
+.row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6,
+.row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 {
+    display: inline !important;
+    margin-left: -30px
+}
+
+.row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:before,
+.row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after,
+.row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:before,
+.row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after {
+    top: 1px
+}
+
+.row.icons-row.inline-row .small-icons-container:not(.forged-xx-skip) img,
+.ui_form .row.icons-row.inline-row .small-icons-container:not(.forged-xx-skip) img {
+    margin-top: 0
+}
+
 .row.icons-row.inline-row .small-icons-container img,
 .row.icons-row.inline-row .icons-container img {
     max-width: 23px;
     max-height: 23px
 }
 
-.row.icons-row .xsmall-icons-container,
 .row.icons-row .small-icons-container,
 .row.icons-row .icons-container {
     overflow: hidden;
@@ -4632,7 +4645,6 @@ tr.atshover:hover td.atscontent span {
 }
 
 @supports(-ms-ime-align:auto) {
-    .row.icons-row .xsmall-icons-container,
     .row.icons-row .small-icons-container,
     .row.icons-row .icons-container {
         -webkit-transition-duration: .01s;
@@ -4670,86 +4682,42 @@ form .row.icons-row .small-icons-container {
     padding-top: 7px
 }
 
-.row.icons-row .xsmall-icons-container {
-    min-width: 37px;
-    max-width: 37px;
-    min-height: 37px;
-    max-height: 37px;
-    margin: 4px;
-    margin: 4.9px;
-    padding-top: 17px
-}
-
-.row.icons-row .xsmall-icons-container-stretched {
-    margin: 8px 4px 9px 4px;
-    margin: 8px 4.9px 9px 4.9px
-}
-
-.row.icons-row .xsmall-icons-container img {
-    max-width: 23px;
-    max-height: 23px
-}
-
-form .row.icons-row .xsmall-icons-container {
-    padding-top: 8px
-}
-
-.row.icons-row .xsmall-icons-container a,
 .row.icons-row .small-icons-container a,
 .row.icons-row .icons-container a {
     overflow: hidden;
     word-break: normal
 }
 
-body[data-language='ru'] .row.icons-row .xsmall-icons-container a,
 body[data-language='ru'] .row.icons-row .small-icons-container a,
 body[data-language='ru'] .row.icons-row .icons-container a {
     word-wrap: break-word
 }
 
 @-moz-document url-prefix() {
-    .row.icons-row .xsmall-icons-container img {
-        padding-top: 0
-    }
     form .row.icons-row .small-icons-container {
         padding-top: 10px
     }
     .row.icons-row .small-icons-container {
         padding-top: 11px
     }
-    form .row.icons-row .xsmall-icons-container,
-    .row.icons-row .xsmall-icons-container {
-        padding-top: 6px
-    }
-    .row.icons-row .xsmall-icons-container img {
-        max-width: 23px;
-        max-height: 23px
-    }
     .row.icons-row .small-icons-container img {
         max-width: 30px;
         max-height: 30px
     }
-    .vertical-align>[class^='col-'].xsmall-icons-container,
-    .vertical-align>[class*=' col-'].xsmall-icons-container,
     .vertical-align>[class^='col-'].small-icons-container,
     .vertical-align>[class*=' col-'].small-icons-container {
         display: inline-block
     }
 }
 
-.ui_form .row.icons-row .xsmall-icons-container img,
 .ui_form .row.icons-row .small-icons-container img {
     padding-top: 0
 }
 
-.ui_form .row.icons-row .xsmall-icons-container:not(.forged-xx-skip) img,
 .ui_form .row.icons-row .small-icons-container:not(.forged-xx-skip) img {
     margin-top: 9px
 }
 
-.row.icons-row:not(.inline-row) .xsmall-icons-container.animated:hover,
-.row.icons-row:not(.inline-row) .xsmall-icons-container.animated:focus,
-.row.icons-row:not(.inline-row) .xsmall-icons-container.animated:active,
 .row.icons-row:not(.inline-row) .small-icons-container.animated:hover,
 .row.icons-row:not(.inline-row) .small-icons-container.animated:focus,
 .row.icons-row:not(.inline-row) .small-icons-container.animated:active,
@@ -4758,14 +4726,6 @@ body[data-language='ru'] .row.icons-row .icons-container a {
 .row.icons-row:not(.inline-row) .icons-container.animated:active {
     -webkit-transform: translateY(5px);
     transform: translateY(5px)
-}
-
-.xsmall-icons-container>.hidden-forged-7-xsmall {
-    -webkit-transform: scale(.60);
-    -moz-transform: scale(.60);
-    -ms-transform: scale(.60);
-    -o-transform: scale(.60);
-    transform: scale(.60)
 }
 
 .row.icons-row .ui_icon {
@@ -5286,6 +5246,10 @@ tr:hover .badge-drivestatus {
     color: #888
 }
 
+.text-semi-dark {
+    color: #777
+}
+
 .text-dark {
     color: #444
 }
@@ -5294,6 +5258,7 @@ tr:hover .badge-drivestatus {
     color: #333
 }
 
+.text-semi-dark.text-dark-hoverd:hover,
 .text-dark.text-dark-hoverd:hover {
     color: #d43f3a
 }
@@ -6659,7 +6624,7 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
     line-height: 1em !important;
     position: absolute;
     top: 3px;
-    left: 0;
+    left: -40%;
     display: inline-block;
     width: 13px;
     height: 13px;
@@ -6990,6 +6955,61 @@ p+.opener_container.opener_sub_container.margined-top {
 
 .hidden-forged {
     display: none !important
+}
+
+.vertical-align .gl-icon-container .gl-icon-selected,
+.vertical-align .gl-icon-container .gl-icon-select,
+.vertical-align .gl-icon-container .gl-icon-edit {
+    position: absolute;
+    top: 5px;
+    display: none
+}
+
+body form>div.vertical-align>div>span.hidden-forged-7>a>i.fa-edit,
+.vertical-align .gl-icon-container .gl-icon-edit {
+    font-size: 14px;
+    top: 4px;
+    cursor: default
+}
+
+.vertical-align .gl-icon-container .gl-icon-edit {
+    right: 0
+}
+
+.vertical-align .gl-icon-container .gl-icon-selected,
+.vertical-align .gl-icon-container .gl-icon-select {
+    left: 0
+}
+
+.vertical-align .gl-icon-container:hover .gl-icon-selected,
+.vertical-align .gl-icon-container:hover .gl-icon-select,
+.vertical-align .gl-icon-container:hover .gl-icon-edit {
+    display: inline-block;
+    cursor: default
+}
+
+.vertical-align .small-icons-container.gl-icon-container .gl-icon-selected,
+.vertical-align .small-icons-container.gl-icon-container .gl-icon-select,
+.vertical-align .small-icons-container.gl-icon-container .gl-icon-edit {
+    font-size: 13px;
+    top: 3px
+}
+
+body form>div.vertical-align>div.small-icons-container>span.hidden-forged-7>a>i.fa-edit,
+.vertical-align .small-icons-container.gl-icon-container .gl-icon-edit {
+    font-size: 10px;
+    top: 2px
+}
+
+body form>div.vertical-align>div.small-icons-container>span.hidden-forged-7>a>i.fa-edit {
+    display: block;
+    margin-top: 4px
+}
+
+.inline-row .gl-icon-container .gl-icon-selected,
+.inline-row .gl-icon-container .gl-icon-select,
+.inline-row .gl-icon-container .gl-icon-edit {
+    display: none
 }
 
 input[name='dest0_file'],
@@ -8293,7 +8313,7 @@ html:not([data-background-style='nightRider']) body#configCGI>div.container-flui
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td a,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td,
 html:not([data-background-style='nightRider']) .table-striped:not(.opener_table_style):not(.table-subtable)>tbody>tr:hover td,
-html[data-script-name*="settings-user.cgi"] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form#settings_>div>table>tbody>tr>td>table>tbody>tr:hover td:not([colspan="2"]),
+html[data-script-name*='settings-user.cgi'] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form#settings_>div>table>tbody>tr>td>table>tbody>tr:hover td:not([colspan='2']),
 #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td div,
 #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td,
 .table-hover>tbody>tr.ui_checked_columns:hover,
@@ -9455,7 +9475,7 @@ body[class*='sendmail'][data-uri*='list_ports.cgi'] .table-hover>tbody>tr:hover 
     color: #eee !important
 }
 
-.CodeMirror~input[type="reset"] {
+.CodeMirror~input[type='reset'] {
     display: none
 }
 
@@ -9826,6 +9846,12 @@ html[data-background-style='gainsboro'] .panel.panel-default {
     border-top-color: rgba(228, 228, 228, .83);
     -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, .02);
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .02)
+}
+
+.fa-md {
+    font-size: 1.2em;
+    line-height: .6em;
+    vertical-align: -10%
 }
 
 .fa-spin-slow {

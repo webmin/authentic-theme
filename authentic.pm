@@ -379,11 +379,9 @@ sub theme_generate_icon
                        : $icon_outer ? $icon_outer
                        :               "/images/not_found.svg" );
 
-        if (    $__settings{'settings_right_small_table_icons'} eq 'true'
-             && $__settings{'settings_right_xsmall_table_icons'} ne 'true' )
-        {
+        if ( $__settings{'settings_right_small_table_icons'} eq 'true' ) {
             print '<div class="col-xs-1 small-icons-container'
-              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . ''
+              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container' ) . ''
               . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
               . ( !$animate_table_icons && ' animated' )
               . '" data-title="'
@@ -407,37 +405,14 @@ sub theme_generate_icon
             print "<span class=\"hidden\">$title</span></a>\n";
             print '</div>';
         }
-        elsif ( $__settings{'settings_right_xsmall_table_icons'} eq 'true' ) {
-            print '<div class="col-xs-1 xsmall-icons-container'
-              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . ''
+        else {
+            print '<div class="col-xs-1 icons-container'
+              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container' ) . ''
               . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
               . ( !$animate_table_icons && ' animated' )
               . '" data-title="'
               . $title
               . '" data-toggle="tooltip" data-placement="auto top" data-container="body">';
-            if ( $_[6] || $_[7] ) {
-                if ( $_[6] ) {
-                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
-                }
-                if ( $_[7] ) {
-                    print
-"<span style='position: absolute; top:-3px; right: 1px;' class='hidden-forged hidden-forged-7 hidden-forged-7-xsmall'>$_[7]</span>\n";
-                }
-            }
-            print "<a href=\"$link\" class=\"icon_link\">"
-              . '<img class="ui_icon'
-              . ( $icon_outer && ' ui_icon_protected' )
-              . '" src="'
-              . $__icon
-              . '" alt="">';
-            print "<span class=\"hidden\">$title</span></a>\n";
-            print '</div>';
-        }
-        else {
-            print '<div class="col-xs-1 icons-container'
-              . ( !$_[6] && !$_[7] ? ' forged-xx-skip' : '' ) . ''
-              . ( !$grayscaled_table_icons && ' grayscaled' ) . ''
-              . ( !$animate_table_icons && ' animated' ) . '">';
             if ( $_[6] || $_[7] ) {
                 if ( $_[6] ) {
                     print
