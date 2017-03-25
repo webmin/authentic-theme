@@ -153,8 +153,6 @@ settings_right_hide_table_icons=Amagar les icones
 settings_right_hide_table_icons_description=Mostra enllaços en comptes d'icones en les taules.
 settings_right_small_table_icons=Icones petites en les taules
 settings_right_small_table_icons_description=Mostra icones petites en les taules.
-settings_right_xsmall_table_icons=Icones molt petites en les taules
-settings_right_xsmall_table_icons_description=Mostra icones molt petites en les taules.
 settings_right_animate_table_icons=Habilita l'animació de les icones
 settings_right_grayscaled_table_icons=Mostra les icones sense color
 
@@ -632,10 +630,6 @@ theme_xhred_filemanager_successful_secontext_with_errors=El context de seguretat
 theme_xhred_filemanager_successful_secontext=El context de seguretat s'ha canviat correctament.
 
 theme_xhred_global_no_results_found=No s'ha trobat cap resultat
-
-
-#18.32
-theme_xhred_display_icons_warning=Quant el mode de visualització en la configuració del mòdul està configurat per mostrar icones els diferents enllaços es mostren en icones separades (configuració actual). Per seleccionar el destí pots utilitzar tant el botó esquerra com el dret i per entrar el destí has d'utilitzar el botó esquerra.
 
 
 #18.40

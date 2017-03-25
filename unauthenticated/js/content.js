@@ -558,6 +558,9 @@ if (__num()) {
 }
 if ($("body").hasClass("servers")) {
     $('form[action="delete_servs.cgi"] a.icon_link, form[action="delete_servs.cgi"] a.ui_link, form[action="delete_servs.cgi"] .col-xs-1').on("click", function(e) {
+        if ($(e.target).is(".gl-icon-select")) {
+            return
+        }
         var g = $__source_url + $(this).attr("href"),
             f = $(this).attr("href"),
             h = $(this);
@@ -795,134 +798,113 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
             url: $_____link_full + "/index.cgi/?xhr-settings=1",
             data: false,
             dataType: "text",
-            success: function(l) {
-                $("#atsettings").html(l);
-                var p = $("div#atsettings").find(".ui_form");
-                $__theme_text_right_save = p.data("text-save");
-                $__theme_text_right_saved = p.data("text-settings_right_saved");
-                $__theme_text_right_saving = p.data("text-settings_right_saving");
-                $__theme_text_right_restore_defaults = p.data("text-settings_right_restore_defaults");
-                $__theme_text_right_restored = p.data("text-settings_right_restored");
-                $__theme_text_right_restoring = p.data("text-settings_right_restoring");
-                $__theme_text_right_error = p.data("text-error");
-                $('.nav-tabs a[href="#atsettings"]').text(p.data("text-current_theme"));
+            success: function(k) {
+                $("#atsettings").html(k);
+                var n = $("div#atsettings").find(".ui_form");
+                $__theme_text_right_save = n.data("text-save");
+                $__theme_text_right_saved = n.data("text-settings_right_saved");
+                $__theme_text_right_saving = n.data("text-settings_right_saving");
+                $__theme_text_right_restore_defaults = n.data("text-settings_right_restore_defaults");
+                $__theme_text_right_restored = n.data("text-settings_right_restored");
+                $__theme_text_right_restoring = n.data("text-settings_right_restoring");
+                $__theme_text_right_error = n.data("text-error");
+                $('.nav-tabs a[href="#atsettings"]').text(n.data("text-current_theme"));
                 $("div#atsettings").removeClass("text-center");
                 b();
                 settings_update();
-                var o = $("body").find(".fa.fa-sub-title").parent("span");
-                $(o).next("br").remove();
-                $(o).next("div.smaller").attr("style", "margin-top: -15px !important");
-                o.remove();
+                var m = $("body").find(".fa.fa-sub-title").parent("span");
+                $(m).next("br").remove();
+                $(m).next("div.smaller").attr("style", "margin-top: -15px !important");
+                m.remove();
 
-                function i(c) {
+                function e(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_right_hide_table_icons"]:checked') : false;
-                    var d = ["settings_right_small_table_icons", "settings_right_xsmall_table_icons", "settings_right_animate_table_icons", "settings_right_grayscaled_table_icons"];
+                    var f = ["settings_right_small_table_icons", "settings_right_animate_table_icons", "settings_right_grayscaled_table_icons"];
                     if (c.val() == "true") {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"]').prop("disabled", true);
-                            $('input[name="' + g + '"]').parent(".aradio").addClass("disabled")
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"]').prop("disabled", true);
+                            $('input[name="' + h + '"]').parent(".aradio").addClass("disabled")
                         })
                     } else {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"]').prop("disabled", false);
-                            $('input[name="' + g + '"]').parent(".aradio").removeClass("disabled")
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"]').prop("disabled", false);
+                            $('input[name="' + h + '"]').parent(".aradio").removeClass("disabled")
+                        })
+                    }
+                }
+                e();
+                $('input[name="settings_right_hide_table_icons"]').on("change", function() {
+                    e($(this))
+                });
+
+                function i(c) {
+                    typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
+                    var f = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_reload", "settings_hotkey_toggle_key_night_mode", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
+                    if (c.val() == "false") {
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"], select[name="' + h + '"]').prop("disabled", true)
+                        })
+                    } else {
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"], select[name="' + h + '"]').prop("disabled", false)
                         })
                     }
                 }
                 i();
-                $('input[name="settings_right_hide_table_icons"]').on("change", function() {
-                    i($(this));
-                    n()
+                $('input[name="settings_hotkeys_active"]').on("change", function() {
+                    i($(this))
                 });
 
                 function j(c) {
-                    typeof c == "undefined" ? c = $('input[name="settings_hotkeys_active"]:checked') : false;
-                    var d = ["settings_hotkey_custom_1", "settings_hotkey_custom_2", "settings_hotkey_custom_3", "settings_hotkey_custom_4", "settings_hotkey_custom_5", "settings_hotkey_custom_6", "settings_hotkey_custom_7", "settings_hotkey_custom_8", "settings_hotkey_custom_9", "settings_hotkey_toggle_modifier", "settings_hotkey_toggle_key_webmin", "settings_hotkey_toggle_key_virtualmin", "settings_hotkey_toggle_key_cloudmin", "settings_hotkey_toggle_key_usermin", "settings_hotkey_toggle_key_webmail", "settings_hotkey_focus_search", "settings_hotkey_toggle_slider", "settings_hotkey_reload", "settings_hotkey_reload", "settings_hotkey_toggle_key_night_mode", "settings_hotkey_sysinfo", "settings_hotkey_favorites"];
+                    typeof c == "undefined" ? c = $('input[name="settings_side_slider_enabled"]:checked') : false;
+                    var f = ["settings_side_slider_palette", "settings_side_slider_fixed", "settings_side_slider_background_refresh_time", "settings_side_slider_sysinfo_enabled", "settings_side_slider_notifications_enabled", "settings_side_slider_favorites_enabled", "settings_side_slider_tabs_hotkeys"];
                     if (c.val() == "false") {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true)
+                        $.each(f, function(g, h) {
+                            if (h == "settings_side_slider_fixed") {
+                                $('input[name="settings_side_slider_fixed"][value="false"]').trigger("click")
+                            }
+                            $('input[name="' + h + '"], select[name="' + h + '"]').prop("disabled", true).parent(".aradio").addClass("disabled")
                         })
                     } else {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", false)
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"], select[name="' + h + '"]').prop("disabled", false).parent(".aradio").removeClass("disabled")
                         })
                     }
                 }
                 j();
-                $('input[name="settings_hotkeys_active"]').on("change", function() {
+                $('input[name="settings_side_slider_enabled"]').on("change", function() {
                     j($(this))
                 });
 
-                function k(c) {
-                    typeof c == "undefined" ? c = $('input[name="settings_side_slider_enabled"]:checked') : false;
-                    var d = ["settings_side_slider_palette", "settings_side_slider_fixed", "settings_side_slider_background_refresh_time", "settings_side_slider_sysinfo_enabled", "settings_side_slider_notifications_enabled", "settings_side_slider_favorites_enabled", "settings_side_slider_tabs_hotkeys"];
-                    if (c.val() == "false") {
-                        $.each(d, function(f, g) {
-                            if (g == "settings_side_slider_fixed") {
-                                $('input[name="settings_side_slider_fixed"][value="false"]').trigger("click")
-                            }
-                            $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true).parent(".aradio").addClass("disabled")
-                        })
-                    } else {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", false).parent(".aradio").removeClass("disabled")
-                        })
-                    }
-                }
-                k();
-                $('input[name="settings_side_slider_enabled"]').on("change", function() {
-                    k($(this))
-                });
-
-                function n(c) {
-                    typeof c == "undefined" ? c = $('input[name="settings_right_xsmall_table_icons"]:checked') : false;
-                    var d = ["settings_right_small_table_icons"];
-                    if (c.val() == "true" && $('input[name="settings_right_hide_table_icons"]:checked') != "false") {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", true);
-                            $('input[name="' + g + '"], select[name="' + g + '"]').parent(".aradio").addClass("disabled")
-                        })
-                    } else {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"], select[name="' + g + '"]').prop("disabled", false);
-                            $('input[name="' + g + '"], select[name="' + g + '"]').parent(".aradio").removeClass("disabled")
-                        })
-                    }
-                }
-                n();
-                $('input[name="settings_right_xsmall_table_icons"]').on("change", function() {
-                    n($(this))
-                });
-
-                function m(c) {
+                function l(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_sysinfo_easypie_charts"]:checked') : false;
-                    var d = ["settings_sysinfo_easypie_charts_width", "settings_sysinfo_easypie_charts_scale"];
+                    var f = ["settings_sysinfo_easypie_charts_width", "settings_sysinfo_easypie_charts_scale"];
                     if (c.val() == "true") {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"]').prop("disabled", false).removeClass("disabled")
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"]').prop("disabled", false).removeClass("disabled")
                         })
                     } else {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"]').prop("disabled", true).addClass("disabled")
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"]').prop("disabled", true).addClass("disabled")
                         })
                     }
                 }
-                m();
+                l();
                 $('input[name="settings_sysinfo_easypie_charts"]').on("change", function() {
-                    m($(this))
+                    l($(this))
                 });
 
                 function a(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_sysinfo_theme_updates"]:checked') : false;
-                    var d = ["settings_sysinfo_theme_beta_updates"];
+                    var f = ["settings_sysinfo_theme_beta_updates"];
                     if (c.val() == "true") {
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"]').prop("disabled", false).removeClass("disabled")
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"]').prop("disabled", false).removeClass("disabled")
                         })
                     } else {
                         $('input[name="settings_sysinfo_theme_beta_updates"][value="false"]').trigger("click");
-                        $.each(d, function(f, g) {
-                            $('input[name="' + g + '"]').prop("disabled", true).addClass("disabled")
+                        $.each(f, function(g, h) {
+                            $('input[name="' + h + '"]').prop("disabled", true).addClass("disabled")
                         })
                     }
                 }
@@ -931,25 +913,25 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                     a($(this))
                 });
                 $('select[name="settings_navigation_color"]').on("click keyup change", function(c) {
-                    var d = $(this).val();
-                    $("body").attr("data-theme", d);
-                    t__wi_p.$("body").attr("data-theme", d);
+                    var f = $(this).val();
+                    $("body").attr("data-theme", f);
+                    t__wi_p.$("body").attr("data-theme", f);
                     t__wi_p.$("link[data-palette]").remove();
-                    if (d != "blue") {
-                        t__wi_p.$("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>')
+                    if (f != "blue") {
+                        t__wi_p.$("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + f.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>')
                     }
-                    t__wi_p.$("body").attr("data-default-theme", d);
-                    $(t__wi_p.page.document).find("body").attr("data-default-theme", d);
+                    t__wi_p.$("body").attr("data-default-theme", f);
+                    $(t__wi_p.page.document).find("body").attr("data-default-theme", f);
                     t__wi_p.$("body .user-link.palette-toggle").find(".fa-sun").trigger("click");
                     settings_update()
                 });
                 $('select[name="settings_background_color"]').on("click keyup change", function(c) {
-                    var d = $(this).val();
-                    t__wi_p.$("html").attr("data-background-style", d);
-                    $("html").attr("data-background-style", d);
+                    var f = $(this).val();
+                    t__wi_p.$("html").attr("data-background-style", f);
+                    $("html").attr("data-background-style", f);
                     $("link[data-palette]").remove();
-                    if (d != "gainsboro") {
-                        $("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+                    if (f != "gainsboro") {
+                        $("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + f.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
                         $('select[name="settings_navigation_color"]').val("gunmetal").trigger("change")
                     }
                     settings_update()
@@ -977,13 +959,13 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                     settings_update()
                 });
                 $('input[name="settings_side_slider_sysinfo_enabled"], input[name="settings_side_slider_notifications_enabled"], input[name="settings_side_slider_favorites_enabled"]').change(function(c) {
-                    var f = ("right-side-tabs-" + $(this).attr("name").split("_")[3]),
-                        h = $(this).attr("name"),
-                        d = t__wi_p.$("body").find("#" + f).hasClass("active"),
-                        g = $('input[name="settings_side_slider_sysinfo_enabled"][value="true"]:checked, input[name="settings_side_slider_notifications_enabled"][value="true"]:checked, input[name="settings_side_slider_favorites_enabled"][value="true"]:checked').length;
+                    var g = ("right-side-tabs-" + $(this).attr("name").split("_")[3]),
+                        q = $(this).attr("name"),
+                        f = t__wi_p.$("body").find("#" + g).hasClass("active"),
+                        h = $('input[name="settings_side_slider_sysinfo_enabled"][value="true"]:checked, input[name="settings_side_slider_notifications_enabled"][value="true"]:checked, input[name="settings_side_slider_favorites_enabled"][value="true"]:checked').length;
                     if ($(this).val() == "true") {
-                        t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").removeClass("hidden").parent().removeClass("hidden");
-                        if (h === "settings_side_slider_notifications_enabled") {
+                        t__wi_p.$("body").find('a[href="#' + g + '"], #' + g + "").removeClass("hidden").parent().removeClass("hidden");
+                        if (q === "settings_side_slider_notifications_enabled") {
                             t__wi_p.$(".right-side-tab-notification-asterix").removeClass("invisible hidden hidden-forged");
                             t__wi_p.$(".right-side-tabs-toggler .badge.badge-danger").removeClass("invisible hidden hidden-forged");
                             setTimeout(function() {
@@ -991,15 +973,15 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                             }, 300)
                         }
                     } else {
-                        t__wi_p.$("body").find('a[href="#' + f + '"], #' + f + "").addClass("hidden");
-                        if (d && g) {
+                        t__wi_p.$("body").find('a[href="#' + g + '"], #' + g + "").addClass("hidden");
+                        if (f && h) {
                             t__wi_p.$("body #right-side-tabs").find("li:not(.active) a:not(.hidden)").first().trigger("click")
                         } else {
-                            if (g === 0) {
+                            if (h === 0) {
                                 $('input[name="settings_side_slider_enabled"][value="false"]').trigger("click")
                             }
                         }
-                        if (h === "settings_side_slider_notifications_enabled") {
+                        if (q === "settings_side_slider_notifications_enabled") {
                             t__wi_p.$(".right-side-tab-notification-asterix").addClass("invisible hidden hidden-forged");
                             t__wi_p.$(".right-side-tabs-toggler .badge.badge-danger").addClass("invisible hidden hidden-forged");
                             t__wi_p.favicon.badge(0);
@@ -1028,45 +1010,45 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                         f__c__filter_r()
                     }
                 });
-                var e = $('input[name="settings_grayscale_level_navigation"], input[name="settings_sepia_level_navigation"], input[name="settings_saturate_level_navigation"], input[name="settings_hue_level_navigation"], input[name="settings_invert_level_navigation"], input[name="settings_brightness_level_navigation"], input[name="settings_contrast_level_navigation"]');
-                e.on("click keyup change", function(c) {
-                    var d = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_navigation"]').val() + ") sepia(" + $('input[name="settings_sepia_level_navigation"]').val() + ") saturate(" + $('input[name="settings_saturate_level_navigation"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_navigation"]').val() + "deg) invert(" + $('input[name="settings_invert_level_navigation"]').val() + ") brightness(" + $('input[name="settings_brightness_level_navigation"]').val() + ") contrast(" + $('input[name="settings_contrast_level_navigation"]').val() + "); filter: grayscale(" + $('input[name="settings_grayscale_level_navigation"]').val() + ") sepia(" + $('input[name="settings_sepia_level_navigation"]').val() + ") saturate(" + $('input[name="settings_saturate_level_navigation"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_navigation"]').val() + "deg) invert(" + $('input[name="settings_invert_level_navigation"]').val() + ") brightness(" + $('input[name="settings_brightness_level_navigation"]').val() + ") contrast(" + $('input[name="settings_contrast_level_navigation"]').val() + ");";
-                    t__wi_p.$(".visible-xs.mobile-menu-toggler").attr("style", "position: fixed;" + d);
-                    t__wi_p.$("aside, .visible-xs.mobile-menu-toggler").attr("style", "z-index: 10; overflow: visible; transform: translate(" + settings_leftmenu_width + "px, 0px);" + d);
+                var d = $('input[name="settings_grayscale_level_navigation"], input[name="settings_sepia_level_navigation"], input[name="settings_saturate_level_navigation"], input[name="settings_hue_level_navigation"], input[name="settings_invert_level_navigation"], input[name="settings_brightness_level_navigation"], input[name="settings_contrast_level_navigation"]');
+                d.on("click keyup change", function(c) {
+                    var f = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_navigation"]').val() + ") sepia(" + $('input[name="settings_sepia_level_navigation"]').val() + ") saturate(" + $('input[name="settings_saturate_level_navigation"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_navigation"]').val() + "deg) invert(" + $('input[name="settings_invert_level_navigation"]').val() + ") brightness(" + $('input[name="settings_brightness_level_navigation"]').val() + ") contrast(" + $('input[name="settings_contrast_level_navigation"]').val() + "); filter: grayscale(" + $('input[name="settings_grayscale_level_navigation"]').val() + ") sepia(" + $('input[name="settings_sepia_level_navigation"]').val() + ") saturate(" + $('input[name="settings_saturate_level_navigation"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_navigation"]').val() + "deg) invert(" + $('input[name="settings_invert_level_navigation"]').val() + ") brightness(" + $('input[name="settings_brightness_level_navigation"]').val() + ") contrast(" + $('input[name="settings_contrast_level_navigation"]').val() + ");";
+                    t__wi_p.$(".visible-xs.mobile-menu-toggler").attr("style", "position: fixed;" + f);
+                    t__wi_p.$("aside, .visible-xs.mobile-menu-toggler").attr("style", "z-index: 10; overflow: visible; transform: translate(" + settings_leftmenu_width + "px, 0px);" + f);
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     settings_update()
                 });
-                e.each(function() {
+                d.each(function() {
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     $(this).parent().parent("td").parent("tr.atshover").addClass("hidden settings_navigation_color_rows")
                 });
-                var r = $('input[name="settings_grayscale_level_content"], input[name="settings_saturate_level_content"], input[name="settings_hue_level_content"]');
-                r.on("click keyup change", function(c) {
-                    var d = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg); filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg);";
-                    $("body").attr("style", d);
-                    t__wi_p.$("#content .loading-container").attr("style", d);
+                var p = $('input[name="settings_grayscale_level_content"], input[name="settings_saturate_level_content"], input[name="settings_hue_level_content"]');
+                p.on("click keyup change", function(c) {
+                    var f = "-webkit-filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg); filter: grayscale(" + $('input[name="settings_grayscale_level_content"]').val() + ") saturate(" + $('input[name="settings_saturate_level_content"]').val() + ") hue-rotate(" + $('input[name="settings_hue_level_content"]').val() + "deg);";
+                    $("body").attr("style", f);
+                    t__wi_p.$("#content .loading-container").attr("style", f);
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     settings_update()
                 });
-                r.each(function() {
+                p.each(function() {
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     $(this).parent().parent("td").parent("tr.atshover").addClass("hidden settings_background_color_rows")
                 });
-                var q = $('input[name="settings_leftmenu_width"]');
-                q.on("click keyup change", function(c) {
+                var o = $('input[name="settings_leftmenu_width"]');
+                o.on("click keyup change", function(c) {
                     t__wi_p.f__r__s($(this).val(), $(this).val());
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     settings_update();
                     t__wi_p.settings_leftmenu_width_initial = $(this).val()
                 });
-                q.each(function() {
+                o.each(function() {
                     $('code[data-name="' + $(this).attr("name") + '"]').text($(this).val());
                     t__wi_p.settings_leftmenu_width_initial = $(this).val()
                 });
                 if ($__source_query == "restored") {
-                    e.trigger("click");
-                    r.trigger("click");
-                    q.trigger("click");
+                    d.trigger("click");
+                    p.trigger("click");
+                    o.trigger("click");
                     $('select[name="settings_navigation_color"], select[name="settings_background_color"]').trigger("change");
                     window.history.pushState(null, null, $_____link_full + "/webmin/edit_themes.cgi")
                 }
@@ -1081,27 +1063,27 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                 $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();
                 $("body").css("overflow", "auto");
-                $.getScript("" + $_____link_full + "/unauthenticated/js/detector." + t__wi_p.$load____ext + ".js?" + $g__t__ver_str + "", function(c, g, f) {
-                    var d = new Detector;
+                $.getScript("" + $_____link_full + "/unauthenticated/js/detector." + t__wi_p.$load____ext + ".js?" + $g__t__ver_str + "", function(c, h, g) {
+                    var f = new Detector;
                     $.each($('select[name="settings_font_family"] option'), function() {
-                        var h = $(this).text();
-                        if (!d.detect(h) && $(this).val() != "system-default") {
-                            $(this).attr("disabled", "disabled").text(h + " (" + lang("theme_xhred_global_not_available") + ")")
+                        var q = $(this).text();
+                        if (!f.detect(q) && $(this).val() != "system-default") {
+                            $(this).attr("disabled", "disabled").text(q + " (" + lang("theme_xhred_global_not_available") + ")")
                         }
                     });
-                    $('select[name="settings_font_family"]').on("click keyup change", function(h) {
-                        var v = $(this).val(),
-                            s = $.merge(t__wi_p.$("head"), t___wi.$("head")),
-                            t = t__wi_p.$("head").find('link[href*="font-"]').add(t___wi.$("head").find('link[href*="font-"]')).add(t__wi_p.$("head").find('link[href*="fonts-roboto"]')).add(t___wi.$("head").find('link[href*="fonts-roboto"]')),
-                            u = $.merge(t__wi_p.$("head").find('link[href*="/authentic."]'), t___wi.$("head").find('link[href*="/authentic."]')),
-                            u = u.length ? u : $.merge(t__wi_p.$("head").find('link[href*="/bundle."]'), t___wi.$("head").find('link[href*="/bundle."]'));
-                        t.remove();
-                        if (v == "0" || v == "1") {
-                            if (v == "0") {
-                                u.after('<link href="' + $_____link_full + "/unauthenticated/css/fonts-roboto." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                    $('select[name="settings_font_family"]').on("click keyup change", function(q) {
+                        var u = $(this).val(),
+                            r = $.merge(t__wi_p.$("head"), t___wi.$("head")),
+                            s = t__wi_p.$("head").find('link[href*="font-"]').add(t___wi.$("head").find('link[href*="font-"]')).add(t__wi_p.$("head").find('link[href*="fonts-roboto"]')).add(t___wi.$("head").find('link[href*="fonts-roboto"]')),
+                            t = $.merge(t__wi_p.$("head").find('link[href*="/authentic."]'), t___wi.$("head").find('link[href*="/authentic."]')),
+                            t = t.length ? t : $.merge(t__wi_p.$("head").find('link[href*="/bundle."]'), t___wi.$("head").find('link[href*="/bundle."]'));
+                        s.remove();
+                        if (u == "0" || u == "1") {
+                            if (u == "0") {
+                                t.after('<link href="' + $_____link_full + "/unauthenticated/css/fonts-roboto." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
                             }
                         } else {
-                            u.after('<link href="' + $_____link_full + "/unauthenticated/css/font-" + v + "." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
+                            t.after('<link href="' + $_____link_full + "/unauthenticated/css/font-" + u + "." + t__wi_p.$load____ext + ".css?" + $g__t__ver_str + '" rel="stylesheet" type="text/css">')
                         }
                     })
                 });
@@ -2703,8 +2685,7 @@ if ($current_page_full == $_____link_full + "/cpan/" || $current_page_full == $_
 if ($("form").find(".icons-row:not(.inline-row)").length) {
     $("form").find(".icons-row").addClass("_processed_");
     $("form").find(".icons-row").css("border-top", "1px solid #efefef").css("border-bottom", "1px solid #efefef");
-    $("form").find(".icons-row").find(".icons-container").addClass("icons-container-stretched");
-    $("form").find(".icons-row").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
+    $("form").find(".icons-row").find(".icons-container").addClass("icons-container-stretched")
 }
 
 function __m_ico_row_tb() {
@@ -2712,24 +2693,21 @@ function __m_ico_row_tb() {
         "padding-top": "8px",
         "padding-bottom": "8px"
     });
-    $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef").css("border-bottom", "1px solid #efefef");
-    $("body").find(".icons-row:not(._processed_):not(.inline-row)").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
+    $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef").css("border-bottom", "1px solid #efefef")
 }
 
 function __m_ico_row_t() {
     $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
         "padding-top": "8px"
     });
-    $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef");
-    $("body").find(".icons-row:not(._processed_):not(.inline-row)").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
+    $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef")
 }
 
 function __m_ico_row_b() {
     $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
         "padding-bottom": "6px"
     });
-    $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-bottom", "1px solid #efefef");
-    $("body").find(".icons-row:not(._processed_):not(.inline-row)").find(".xsmall-icons-container").addClass("xsmall-icons-container-stretched")
+    $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-bottom", "1px solid #efefef")
 }
 if ($current_page_full == $_____link_full + "/lvm/" || $current_page_full == $_____link_full + "/virtualmin-support/" || $current_page_full == $_____link_full + "/proftpd/virt_index.cgi" || $current_page_full == $_____link_full + "/dhcpd/" || $current_page_full == $_____link_full + "/dhcpd/index.cgi" || $current_page_full == $_____link_full + "/cluster-usermin/" || $current_page_full == $_____link_full + "/cluster-usermin/index.cgi" || $current_page_full == $_____link_full + "/cluster-useradmin/" || $current_page_full == $_____link_full + "/cluster-useradmin/index.cgi" || $current_page_full == $_____link_full + "/cluster-webmin/" || $current_page_full == $_____link_full + "/cluster-webmin/index.cgi") {
     __m_ico_row_tb()
@@ -2740,7 +2718,7 @@ if ($current_page_full == $_____link_full + "/proftpd/" || $current_page_full ==
 if ($current_page_full == $_____link_full + "//") {
     __m_ico_row_b()
 }
-$("body").on("contextmenu", "div.icons-container, div.small-icons-container, div.xsmall-icons-container", function(b) {
+$("body").on("contextmenu", "div.icons-container, div.small-icons-container", function(b) {
     b.preventDefault();
     if ($(this).find("input").is(":checked")) {
         $(this).find("input").prop("checked", false);
@@ -2751,13 +2729,23 @@ $("body").on("contextmenu", "div.icons-container, div.small-icons-container, div
             $(this).addClass("highlighted")
         }
     }
+    var c = ($(b.target).is(".icon_link") ? $(b.target).parent(".gl-icon-container").find(".fa-select, .fa-selected") : ($(b.target).is(".gl-icon-select") ? $(b.target) : ($(b.target).is("img") ? $(b.target).parent("a").parent(".gl-icon-container").find(".fa-select, .fa-selected") : $(b.target).find(".fa-select, .fa-selected"))));
+    c.hasClass("fa-select") ? c.removeClass("fa-select").addClass("fa-selected") : c.removeClass("fa-selected").addClass("fa-select")
 });
 
 function __m_ico_row_func() {
     return 0
 }
-if ($("body").find(".icons-row > div.icons-container").length || $("body").find(".icons-row > div.small-icons-container").length || $("body").find(".icons-row > div.xsmall-icons-container").length) {
-    $(".row.icons-row.vertical-align").on("click", ".icons-container, .small-icons-container, .xsmall-icons-container", function() {
+$.each($(".row.icons-row.inline-row"), function(a, b) {
+    $(this).find("a.icon_link").contents().filter(function() {
+        return this.nodeType == 3
+    }).remove()
+});
+$.each($(".row.icons-row:not(.inline-row) .icons-container"), function(a, b) {
+    $(this).removeAttr("data-title").removeAttr("data-toggle").removeAttr("data-placement").removeAttr("data-container")
+});
+if ($("body").find(".icons-row > div.icons-container").length || $("body").find(".icons-row > div.small-icons-container").length) {
+    $(".row.icons-row.vertical-align").on("click", ".icons-container, .small-icons-container", function() {
         if (!$(this).hasClass("forged-xx-skip")) {
             return
         }
@@ -2766,27 +2754,26 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
     var DELAY = 240,
         clicks = 0,
         timer = null;
-    $("body").on("click", '.icons-row div[class*="icons-container"] .forged-xx-data, .icons-container, .small-icons-container, .xsmall-icons-container', function(b) {
-        var e = $(this);
-        if ($(this).hasClass("forged-xx-skip")) {
+    $("body").on("click", '.icons-row div[class*="icons-container"] .forged-xx-data, .icons-container, .small-icons-container', function(b) {
+        var d = $(this);
+        if ($(this).hasClass("forged-xx-skip") || $(b.target).is(".gl-icon-edit")) {
+            return
+        }
+        if ($(b.target).parents(".inline-row").length) {
+            if ($(b.target).is("input.iawobject")) {
+                if (!$(b.target).is(":checked")) {
+                    $(b.target).parents(".icons-container, .small-icons-container").removeClass("highlighted")
+                } else {
+                    $(b.target).parents(".icons-container, .small-icons-container").addClass("highlighted")
+                }
+            }
             return
         }
         b.preventDefault();
         b.stopPropagation();
         b.stopImmediatePropagation();
-        if ($_v__ls__a && localStorage.getItem($hostname + "-config_portable_theme_display_icons_info_message") != "true") {
-            var d = '                  <div class="modal fade7 modal-display-icons-warning" tabindex="-1" role="dialog">                    <div class="modal-dialog modal-sm">                      <div class="modal-content">                        <div class="modal-header background-info background--bordered">                          <button type="button" class="close" data-dismiss="modal" aria-label="' + lang("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                          <h4 class="modal-title"><i class="fa fa-fw fa-exclamation-circle">&nbsp;&nbsp;</i> ' + lang("theme_xhred_global_notice") + '</h4>                        </div>                        <div class="modal-body">                          <p>' + lang("theme_xhred_display_icons_warning") + "</p>                        </div>                      </div>                    </div>                  </div>                ";
-            $("body").append(d);
-            if (!$("body").hasClass("modal-open")) {
-                $(".modal-display-icons-warning").modal("show");
-                $(".modal-display-icons-warning").on("click", ".modal-body a.label", function(a) {
-                    $(".modal-display-icons-warning").modal("hide")
-                });
-                $(".modal-display-icons-warning").on("hide.bs.modal", function(a) {
-                    localStorage.setItem($hostname + "-config_portable_theme_display_icons_info_message", "true");
-                    t__wi_p.manageConfig("save")
-                })
-            }
+        if ($(b.target).is(".gl-icon-select")) {
+            $(b.target).trigger("contextmenu");
             return
         }
         clicks++;
@@ -2799,17 +2786,17 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
         } else {
             clearTimeout(timer);
             clicks = 0;
-            var g = $(b.target).parent("a").attr("href"),
+            var f = $(b.target).parent("a").attr("href"),
                 c = $(b.target).find("a").attr("href"),
-                f = $(b.target).attr("href");
-            if (g) {
-                window.location.href = g
+                e = $(b.target).attr("href");
+            if (f) {
+                window.location.href = f
             } else {
                 if (c) {
                     window.location.href = c
                 } else {
-                    if (f) {
-                        window.location.href = f
+                    if (e) {
+                        window.location.href = e
                     }
                 }
             }
@@ -2820,15 +2807,18 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
     $("body").on("click", ".select_all", function() {
         if ($(this).parents("form").find('.icons-row div[class*="icons-container"]').length) {
             $.each($(".icons-row .hidden-forged-6"), function() {
-                $(this).parents('div[class*="icons-container"]').addClass("highlighted")
+                $(this).parents('div[class*="icons-container"]').addClass("highlighted");
+                $(this).parents('div[class*="icons-container"]').find(".fa-select").removeClass("fa-select").addClass("fa-selected")
             })
         }
     }).on("click", ".select_invert", function() {
         $.each($(".icons-row .hidden-forged-6"), function() {
             if ($(this).find("input").is(":checked")) {
-                $(this).parents('div[class*="icons-container"]').addClass("highlighted")
+                $(this).parents('div[class*="icons-container"]').addClass("highlighted");
+                $(this).parents('div[class*="icons-container"]').find(".fa-select, .fa-selected").removeClass("fa-select").addClass("fa-selected")
             } else {
-                $(this).parents('div[class*="icons-container"]').removeClass("highlighted")
+                $(this).parents('div[class*="icons-container"]').removeClass("highlighted");
+                $(this).parents('div[class*="icons-container"]').find(".fa-select, .fa-selected").removeClass("fa-selected").addClass("fa-select")
             }
         })
     });
@@ -2840,13 +2830,11 @@ if ($("body").find(".icons-row > div.icons-container").length || $("body").find(
     $.each($(".hidden-forged-7 > a"), function() {
         $(this).removeClass();
         if ($(this).parents(".hidden-forged-7").hasClass("hidden-forged-7-small")) {
-            $(this).html('<i class="fa fa-pencil-square text-dark text-dark-hoverd"> </i>')
+            $(this).html('<i class="fa fa-edit text-semi-dark text-dark-hoverd"> </i>');
+            $(this).parent().parent().prepend('<i class="fa fa-fw fa-select text-dark text-dark-hoverd gl-icon-select" style="top:1px; left:-1px"></i>')
         } else {
-            if ($(this).parents(".hidden-forged-7").hasClass("hidden-forged-7-xsmall")) {
-                $(this).html('<i class="fa fa-pencil-square text-dark text-dark-hoverd"> </i>')
-            } else {
-                $(this).html('<i class="fa fa-lg fa-pencil-square text-dark text-dark-hoverd"> </i>')
-            }
+            $(this).html('<i class="fa fa-edit text-semi-dark text-dark-hoverd"> </i>');
+            $(this).parent().parent().prepend('<i class="fa fa-fw fa-lg fa-select text-dark text-dark-hoverd gl-icon-select"></i>')
         }
     });
     $("body").on("mouseover", '.icons-row div[class*="icons-container"]', function(b) {
@@ -3794,6 +3782,12 @@ if (is__mf("virtual-server", "edit_script.cgi")) {
     $('select[name="version"]').addClass("heighter-34 margined-top-4")
 }
 brake_long_lines((is__mf("firewall", "") || is__mf("firewall", "index.cgi")), $(".ui_checked_columns td label b"), ",");
+$.each($(".gl-icon-container"), function(a, b) {
+    if (!$(this).find("a:first").find("i.fa-edit").length) {
+        $(this).find("a:first").prepend('<i class="fa fa-fw fa-lg fa-select text-dark text-dark-hoverd gl-icon-select"></i>');
+        $(this).find("a:first").prepend('<i class="fa fa-fw fa-edit text-semi-dark text-dark-hoverd gl-icon-edit"></i>')
+    }
+});
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {
         return

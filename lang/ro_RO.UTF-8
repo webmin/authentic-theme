@@ -153,8 +153,6 @@ settings_right_hide_table_icons=Ascunde pictogramele tabelelor din cadrul din dr
 settings_right_hide_table_icons_description=Elimină complet pictogramele din tabelele paginii de conținut și afișează doar linkuri cu săgeată la dreapta
 settings_right_small_table_icons=Pictograme mici in tabele
 settings_right_small_table_icons_description=Substituează pictogramele tabelelor de dimensiune standard cu unele mici și afișează linkul pictogramelor folosind chenar cu descriere
-settings_right_xsmall_table_icons=Pictograme extra-mici in tabele
-settings_right_xsmall_table_icons_description=Substituează pictogramele tabelelor de dimensiune standard cu unele extra-mici și afișează linkul pictogramelor folosind chenar cu descriere
 settings_right_animate_table_icons=Animează pictogramele tabelelor la focus pe el
 settings_right_grayscaled_table_icons=Tranformă în scala gri pictogramele tabelelor și colorează-le doar la focus pe el
 
@@ -632,10 +630,6 @@ theme_xhred_filemanager_successful_secontext_with_errors=Security context has no
 theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
 
 theme_xhred_global_no_results_found=No results found
-
-
-#18.32
-theme_xhred_display_icons_warning=When display mode in module's configuration is set to icons, each target is displayed in separate container (current setup), rather than in a table.<br><br>In order to select a target use either single <em>left-click</em> or single <em>right-click</em>; to enter a target use double <em>left-click</em>.
 
 
 #18.40

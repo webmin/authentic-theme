@@ -152,8 +152,6 @@ settings_right_hide_table_icons=Schovat ikony v tabulkách v pravém rámci
 settings_right_hide_table_icons_description=Úplně odstranit ikony ze stránek a zobrazit textové linky se šipkou
 settings_right_small_table_icons=Malé ikony tabulek
 settings_right_small_table_icons_description=Nahradit standardní velikost ikon v tabulkách malými ikonami a zobrazit odkaz v tooltip
-settings_right_xsmall_table_icons=Extra malé ikony tabulek
-settings_right_xsmall_table_icons_description=Nahradit standardní velikost ikon v tabulkách extra malými ikonami a zobrazit odkaz v tooltipu
 settings_right_animate_table_icons=Animovat ikony tabulek při výberu
 settings_right_grayscaled_table_icons=Nechat ikony černobílé a zbarvit je pouze při najetí myši
 
@@ -632,10 +630,6 @@ theme_xhred_filemanager_successful_secontext_with_errors=Security context has no
 theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
 
 theme_xhred_global_no_results_found=No results found
-
-
-#18.32
-theme_xhred_display_icons_warning=When display mode in module's configuration is set to icons, each target is displayed in separate container (current setup), rather than in a table.<br><br>In order to select a target use either single <em>left-click</em> or single <em>right-click</em>; to enter a target use double <em>left-click</em>.
 
 
 #18.40
