@@ -1479,8 +1479,7 @@ sub csf_mod
           . theme_version()
           . '" rel="stylesheet">' . "\n";
 
-        if ( theme_night_mode() )
-        {
+        if ( theme_night_mode() ) {
             print $fh '<link href="'
               . $gconfig{'webprefix'}
               . '/unauthenticated/css/palettes/nightrider.'
@@ -2267,6 +2266,8 @@ sub _settings
             _settings( 'fa', 'info-circle', &Atext('settings_right_sysinfo_page_options_title') ),
             'settings_sysinfo_easypie_charts',
             'true',
+            'settings_sysinfo_easypie_charts_size',
+            '172',
             'settings_sysinfo_easypie_charts_width',
             '4',
             'settings_sysinfo_easypie_charts_scale',
@@ -2477,6 +2478,7 @@ sub _settings
                 || $k eq 'settings_hotkey_sysinfo'
                 || $k eq 'settings_hotkey_favorites'
                 || $k eq 'settings_side_slider_background_refresh_time'
+                || $k eq 'settings_sysinfo_easypie_charts_size'
                 || $k eq 'settings_sysinfo_easypie_charts_width'
                 || $k eq 'settings_sysinfo_easypie_charts_scale' )
         {
@@ -2492,8 +2494,8 @@ sub _settings
                 || $k eq 'settings_side_slider_background_refresh_time'
                 || $k eq 'settings_sysinfo_easypie_charts_width'
                 || $k eq 'settings_sysinfo_easypie_charts_scale' )
-              ? ' width: 31px; '
-              : ' width: 95%; ';
+              ? ' width: 36px; '
+              : ( $k eq 'settings_sysinfo_easypie_charts_size' ? ' width: 48px; ' : ' width: 95%; ' );
             my $max_length =
               (    index( $k, 'settings_hotkey_toggle_key_' ) != -1
                 || $k eq 'settings_hotkey_focus_search'
@@ -2774,7 +2776,7 @@ sub _settings
         if ( $t eq 'save' ) {
             !foreign_available("webmin")
               && error( $Atext{'theme_error_access_not_root'} );
-            my %i = settings_filter(%in, $t);
+            my %i = settings_filter( %in, $t );
             write_file( $config_directory . "/authentic-theme/settings.js", \%i );
         }
         if ( $t eq 'restore' ) {
