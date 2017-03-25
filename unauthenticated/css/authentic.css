@@ -4816,6 +4816,10 @@ tr.thead {
     border-left: 1px solid #eaeaea !important
 }
 
+td[bgcolor="#99CCFF"] {
+    background-color: transparent
+}
+
 tr.thead+tr[bgcolor='#feffff']:last-child {
     border: 1px solid #eaeaea
 }
@@ -5649,43 +5653,6 @@ input.btn-warning.active,
     background-color: #ec971f
 }
 
-.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle) {
-    -webkit-transition-duration: .25s;
-    transition-duration: .25s;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0)
-}
-
-.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):before {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: '';
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-    -webkit-transition-duration: .25s;
-    transition-duration: .25s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 50%;
-    transform-origin: 50%;
-    background: rgba(255, 255, 255, .075) !important
-}
-
-.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):hover:before,
-.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):focus:before,
-.btn:not(.btn-link):not(.btn-menu-toggler):not(.dropdown-toggle):active:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1)
-}
-
 input.form-control {
     padding-left: 6px;
     background: #fff
@@ -5858,6 +5825,7 @@ span>.submitter+span>.submitter,
     margin-left: 0 !important
 }
 
+font[color="#000000"],
 font[color='0000FF'] {
     color: #333
 }
@@ -6624,7 +6592,7 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
     line-height: 1em !important;
     position: absolute;
     top: 3px;
-    left: -40%;
+    left: -1px;
     display: inline-block;
     width: 13px;
     height: 13px;

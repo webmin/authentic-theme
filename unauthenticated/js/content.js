@@ -97,6 +97,11 @@ function __init_ck_(a) {
         }
     })
 }
+$.each($('tr td:last-child a:contains("..")'), function() {
+    if ($current_page_full == $_____link_full + "/virtual-server/list_databases.cgi") {
+        $(this).html($(this).text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-info btn-xxs").removeClass("ui_link")
+    }
+});
 
 function __init_dt_(e, d, a) {
     typeof d == "undefined" ? d = false : false;
@@ -878,7 +883,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
 
                 function l(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_sysinfo_easypie_charts"]:checked') : false;
-                    var f = ["settings_sysinfo_easypie_charts_width", "settings_sysinfo_easypie_charts_scale"];
+                    var f = ["settings_sysinfo_easypie_charts_size", "settings_sysinfo_easypie_charts_width", "settings_sysinfo_easypie_charts_scale"];
                     if (c.val() == "true") {
                         $.each(f, function(g, h) {
                             $('input[name="' + h + '"]').prop("disabled", false).removeClass("disabled")
@@ -1060,7 +1065,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                     $('input[name="settings_sysinfo_link_mini"]').parent().parent().parent().parent("tr").remove()
                 }
                 if (!$t_uri_virtualmin && !$t_uri_cloudmin) {}
-                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
+                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_size"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();
                 $("body").css("overflow", "auto");
                 $.getScript("" + $_____link_full + "/unauthenticated/js/detector." + t__wi_p.$load____ext + ".js?" + $g__t__ver_str + "", function(c, h, g) {
@@ -1488,7 +1493,8 @@ if ($('body[class*="status"]').length && $__source_file == "edit_mon.cgi" || $cu
     $.each($('tr td:last-child:contains("|")'), function() {
         if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi") {
             $(this).find('a[href^="backup_form.cgi"]').html($(this).find('a[href^="backup_form.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-success btn-xxs").removeClass("ui_link").prepend('<i class="fa fa-fw fa-floppy-o" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>');
-            $(this).find('a[href^="restore_form.cgi"]').html($(this).find('a[href^="restore_form.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-primary btn-xxs").removeClass("ui_link").prepend('<i class="fa fa-fw fa-reply" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>')
+            $(this).find('a[href^="restore_form.cgi"]').html($(this).find('a[href^="restore_form.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-primary btn-xxs").removeClass("ui_link").prepend('<i class="fa fa-fw fa-reply" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>');
+            $(this).find('a[href^="backuplog.cgi"]').html($(this).find('a[href^="backuplog.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-info btn-xxs").removeClass("ui_link").prepend('<i class="fa fa-fw fa-file-o" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>')
         }
         if ($current_page_full == $_____link_full + "/ldap-server/edit_schema.cgi") {
             $(this).find('a[href^="view_sfile.cgi"]').html($(this).find('a[href^="view_sfile.cgi"]').text().replace(/\.\.$/, "&nbsp;")).addClass("ui_link_replaced btn btn-success btn-xxs").removeClass("ui_link").prepend('<i class="fa fa-fw fa-eye" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>');
@@ -2294,7 +2300,7 @@ if (settings_sysinfo_easypie_charts && $current_page_full == $_____link_full + "
         },
         trackColor: (isNR ? "#3b424b" : "#f8f8f8"),
         scaleColor: (isNR ? "#3b424b" : "#dfe0e0"),
-        size: 170,
+        size: settings_sysinfo_easypie_charts_size,
         scaleLength: settings_sysinfo_easypie_charts_scale,
         trackWidth: settings_sysinfo_easypie_charts_width,
         lineWidth: 0,
@@ -3309,7 +3315,7 @@ typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = tr
 if ($hostname == settings_allowed_hostname) {
     if (is__mf("postfix", "")) {
         $.each($(".icons-container a"), function(a, b) {
-            if ($(this).attr("href") != "general.cgi" && $(this).attr("href") != "address_rewriting.cgi" && $(this).attr("href") != "local_delivery.cgi" && $(this).attr("href") != "resource.cgi" && $(this).attr("href") != "sasl.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "mailq.cgi" && $(this).attr("href") != "debug.cgi" && $(this).attr("href") != "manual.cgi") {
+            if ($(this).attr("href") != "general.cgi" && $(this).attr("href") != "address_rewriting.cgi" && $(this).attr("href") != "local_delivery.cgi" && $(this).attr("href") != "resource.cgi" && $(this).attr("href") != "virtual.cgi" && $(this).attr("href") != "sasl.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "rate.cgi" && $(this).attr("href") != "mailq.cgi" && $(this).attr("href") != "debug.cgi" && $(this).attr("href") != "manual.cgi") {
                 $(this).parent(".icons-container").remove()
             }
         })

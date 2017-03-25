@@ -408,6 +408,9 @@ $(window).ajaxStart(function() {
     }
 });
 (function() {
+    if (typeof t___wi.Messenger.Message != "function") {
+        return
+    }
     var j, h, k, g = {}.hasOwnProperty,
         e = function(a, d) {
             for (var f in d) {

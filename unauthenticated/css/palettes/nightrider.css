@@ -27,6 +27,7 @@ html[data-background-style='nightRider'] a[data-toggle='collapse'] {
     color: rgba(198, 198, 198, .83)
 }
 
+html[data-background-style='nightRider'] font[color="#000000"],
 html[data-background-style='nightRider'] a.opener_trigger,
 html[data-background-style='nightRider'] a.help_popup,
 html[data-background-style='nightRider'] a[style*='color: #333'],
@@ -1790,6 +1791,10 @@ html[data-background-style='nightRider'] body.server-manager[data-uri*='shell.cg
 html[data-background-style='nightRider'] body.shell .sub_table_container:not(.xcontent-force-no-styling) *:not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th) {
     color: #dee0e5 !important;
     background-color: #121417 !important
+}
+
+html[data-background-style='nightRider'] body[class*='server-manager'][data-uri*='list_domains.cgi'] form[action='list_domains.cgi']+script+a+.opener_extra_container+div+p>a {
+    border-bottom-color: #434751 !important
 }
 
 html[data-background-style='nightRider'] .badge.label-default {

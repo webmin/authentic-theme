@@ -80,6 +80,7 @@ typeof settings_right_iconize_header_links == "undefined" ? settings_right_iconi
 typeof settings_side_slider_background_refresh_time == "undefined" ? settings_side_slider_background_refresh_time = 5 : false;
 typeof settings_leftmenu_width == "undefined" ? settings_leftmenu_width = 260 : false;
 typeof settings_sysinfo_easypie_charts == "undefined" ? settings_sysinfo_easypie_charts = true : false;
+typeof settings_sysinfo_easypie_charts_size == "undefined" ? settings_sysinfo_easypie_charts_size = 172 : (settings_sysinfo_easypie_charts_size = parseInt(settings_sysinfo_easypie_charts_size));
 typeof settings_sysinfo_easypie_charts_width == "undefined" ? settings_sysinfo_easypie_charts_width = 4 : (settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width));
 typeof settings_sysinfo_easypie_charts_scale == "undefined" ? settings_sysinfo_easypie_charts_scale = 8 : (settings_sysinfo_easypie_charts_scale = parseInt(settings_sysinfo_easypie_charts_scale));
 typeof settings_sysinfo_theme_updates == "undefined" ? settings_sysinfo_theme_updates = false : false;
@@ -602,8 +603,10 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
             return
         }
         __lre();
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?" + $g__t__ver_str + "");
-        s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?" + $g__t__ver_str + "")
+        if (typeof $load____ext != "undefined") {
+            s(t__wi_p.$_____link_full + "/unauthenticated/js/postinit." + $load____ext + ".js?" + $g__t__ver_str + "");
+            s(t__wi_p.$_____link_full + "/unauthenticated/js/content." + $load____ext + ".js?" + $g__t__ver_str + "")
+        }
     }
     if (settings_loader_top && t__wi_p.t___p__xhr_l === 0 && __num() && !t__wi_p.$____loader_block__) {
         t__wi_p.NProgress.done()
