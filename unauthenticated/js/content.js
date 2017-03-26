@@ -1202,9 +1202,11 @@ if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") 
         $iframe.find(".panel-body .tab-pane.active").removeClass("active");
         $iframe.find(".panel-body #att_install").addClass("active");
         $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').prop("checked", true);
-        $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').parents("td").next("td").find('input[name="url"]').val($__theme_link_upd);
-        $iframe.find('.panel-body .tab-pane.active form[action^="install_theme."]').submit();
-        t__wi_p.history.pushState(null, null, $_____link_full + "/?downloading-webmin-theme")
+        $iframe.find('.panel-body .ui_radio_table.table-hardcoded input[id="source_2"]').parents("td").next("td").find('input[name="url"]').attr("autocomplete", "off").val($__theme_link_upd);
+        setTimeout(function() {
+            $iframe.find('.panel-body .tab-pane.active form[action^="install_theme."]').submit();
+            t__wi_p.history.pushState(null, null, $_____link_full + "/?downloading-webmin-theme")
+        }, 200)
     }, 400)
 } else {
     if ($current_page_full && ($current_page_full.indexOf("/webmin/install_theme.cgi") > -1 || $current_page_full.indexOf("/usermin/install_theme.cgi") > -1 || $current_page_full.indexOf("/usermin/edit_themes.cgi") > -1) && (t__wi_p.location.search == "?downloading-webmin-theme" || t__wi_p.location.search == "?downloading-usermin-theme" || t__wi_p.location.search == "?updating-usermin-theme")) {
