@@ -282,18 +282,18 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                                 success: function(u) {
                                     $("button").find(".cspinner_container").replaceWith((q == "save" || q == "savenew") ? h : g);
                                     if (!$(u).find(".ui_form").length) {
-                                        messenger('<i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(u).find(".panel-body h3").find("tt:last-child").html(), 10, "error")
+                                        messenger('<i class="fa fa-fw fa-exclamation-triangle"></i>' + $(u).find(".panel-body h3").find("tt:last-child").html(), 10, "error")
                                     } else {
                                         $("button.btn-warning").removeClass("btn-warning").addClass("btn-success").attr("data-form-onbeforeunload", 0);
                                         if (q == "save" || q == "save-close") {
                                             var w = ($(".container-resizeable-head").length > 1 ? "theme_xhred_database_edit_rows_successful" : "theme_xhred_database_edit_row_successful");
-                                            messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang(w) + "", 3, "success");
+                                            messenger('<i class="fa fa-fw fa-check-circle"></i>' + lang(w) + "", 3, "success");
                                             if (q == "save-close") {
                                                 $("#cancel").trigger("click")
                                             }
                                         }
                                         if (q == "savenew" || q == "savenew-close") {
-                                            messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_database_add_row_successful") + "", 3, "success");
+                                            messenger('<i class="fa fa-fw fa-check-circle"></i>' + lang("theme_xhred_database_add_row_successful") + "", 3, "success");
                                             if (q == "savenew-close") {
                                                 $("#cancel").trigger("click")
                                             }
@@ -372,7 +372,7 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                             dataType: "text",
                             success: function(s) {
                                 if (!$(s).find(".ui_form").length) {
-                                    messenger('<i class="fa fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(s).find(".panel-body h3").html(), 10, "error")
+                                    messenger('<i class="fa fa-fw fa-exclamation-triangle"></i>' + $(s).find(".panel-body h3").html(), 10, "error")
                                 } else {
                                     var r = $(".table.table-striped.table-hover.table-condensed tbody tr"),
                                         v = $('.table.table-striped.table-hover.table-condensed tr td:first-child input[type="checkbox"]:checked').parents("tr"),
@@ -395,7 +395,7 @@ if ($current_page_full == $_____link_full + "/mysql/edit_dbase.cgi" || $current_
                                     }
                                     var t = ($__source_file == "edit_table.cgi" ? "field" : "row"),
                                         w = (x > 1 ? ("theme_xhred_database_edit_" + t + "s_delete_successful") : ("theme_xhred_database_edit_" + t + "_delete_successful"));
-                                    messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang(w).replace("%n", x) + "", 3, "info");
+                                    messenger('<i class="fa fa-fw fa-check-circle"></i>' + lang(w).replace("%n", x) + "", 3, "info");
                                     q.prop("disabled", true)
                                 }
                                 $("button").find(".cspinner_container").replaceWith(o);

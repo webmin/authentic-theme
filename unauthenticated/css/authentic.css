@@ -3628,6 +3628,10 @@ a.opener_extra_container_a_style.opener_container_opened:before {
     border-top-width: 4px
 }
 
+.panel-group .panel {
+    border-top-width: 1px
+}
+
 .panel-body .tab-content .ui_form+.ui_form,
 .panel-body .tab-content form.ui_form+form.ui_form,
 .panel-body .tab-content form.ui_form+script+form.ui_form {
@@ -4602,6 +4606,11 @@ tr.atshover:hover td.atscontent span {
 .row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:before,
 .row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after {
     top: 1px
+}
+
+.row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after,
+.row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after {
+    left: -3px
 }
 
 .row.icons-row.inline-row .small-icons-container:not(.forged-xx-skip) img,
@@ -6865,13 +6874,8 @@ input[src='/images/ok.gif'] {
     background: #f5f5f5
 }
 
-html:not([data-background-style='nightRider']) .opener_extra_container_style {
-    line-height: 30px;
-    border-top-width: 3px !important
-}
-
 html:not([data-background-style='nightRider']) a.opener_extra_container_a_style:before {
-    margin-top: 4px
+    margin-top: 6px
 }
 
 div.opener_extra_container.opener_extra_container_style>div.opener_extra_container.opener_extra_container_style {
@@ -7659,7 +7663,7 @@ ul.messenger .messenger-message {
 .messenger-message-inner {
     font-size: 12px;
     margin-left: 24px;
-    padding-left: 0;
+    padding-left: 12px;
     border-left: 1px solid rgba(255, 255, 255, .38)
 }
 

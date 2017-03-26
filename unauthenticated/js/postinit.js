@@ -1216,7 +1216,12 @@ function __p__pe_sm() {
                     success: function(n) {
                         a.removeClass("btn-warning").addClass("btn-success").attr("data-form-onbeforeunload", 0);
                         $("button").removeClass("disabled").find(".fa").removeClass("invisible").parent().find(".cspinner_container").remove();
-                        messenger('<i class="fa fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_file_saved").replace("%value", f), 3, "success")
+                        if ($(n).find(".panel-body > hr + h3").length) {
+                            messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(n).find(".panel-body hr + h3").html(), 60, "error", "magic_save_error");
+                            a.removeClass("btn-success").addClass("btn-warning").attr("data-form-onbeforeunload", 1);
+                            return
+                        }
+                        messenger('<i class="fa fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", f), 3, "success")
                     },
                     error: function(n) {}
                 })

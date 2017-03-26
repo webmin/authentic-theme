@@ -653,3 +653,7 @@ theme_tooltip_language_link=Language
 theme_tooltip_switch_user=Switch user
 theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
+
+
+#18.41
+settings_sysinfo_easypie_charts_size=Diameter of charts
