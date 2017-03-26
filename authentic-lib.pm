@@ -1120,7 +1120,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . $installed_version . '. '
+              . ($installed_git_version ? $installed_git_version : $installed_version) . '. '
               . $Atext{'theme_update_available'} . ' '
               . $remote_version
               . '&nbsp;&nbsp;&nbsp;<div class="btn-group margined-left-4">'
