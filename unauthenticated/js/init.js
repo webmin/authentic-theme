@@ -559,7 +559,7 @@ function s(d) {
 }
 t__wi_p.$('iframe[name="page"]').unbind("load");
 t__wi_p.$('iframe[name="page"]').on("load", function() {
-    if (t__wi_p.$___________initial === 1) {
+    if (t__wi_p.$___________initial === 1 && typeof $__post_init_script != "undefined") {
         $.each(manageConfig("get_options"), function(b, a) {
             localStorage.setItem(($hostname + "-" + a), t__wi_p[a]);
             window[a] = t__wi_p[a]

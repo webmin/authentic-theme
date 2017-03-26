@@ -1478,15 +1478,12 @@ sub csf_mod
           . $ext . '.css?'
           . theme_version()
           . '" rel="stylesheet">' . "\n";
-
-        if ( theme_night_mode() ) {
-            print $fh '<link href="'
-              . $gconfig{'webprefix'}
-              . '/unauthenticated/css/palettes/nightrider.'
-              . $ext . '.css?'
-              . theme_version()
-              . '" rel="stylesheet">' . "\n";
-        }
+        print $fh '<link href="'
+          . $gconfig{'webprefix'}
+          . '/unauthenticated/css/palettes/nightrider.'
+          . $ext . '.css?'
+          . theme_version()
+          . '" rel="stylesheet">' . "\n";
 
         if ( -r $scripts ) {
             print $fh '<script src="'
