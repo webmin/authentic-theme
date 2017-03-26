@@ -1151,7 +1151,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . $installed_version
+              . ($installed_git_version ? $installed_git_version : $installed_version)
               . '<div class="btn-group margined-left-4"><a href="'
               . $gconfig{'webprefix'}
               . '/webmin/edit_themes.cgi" data-href="'
@@ -1853,8 +1853,11 @@ sub get_authentic_version
 {
 
     # Get local version
-    my $installed_version = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt", 1 );
-    our $installed_version = $installed_version->[0];
+    our $installed_version = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt", 1 );
+    $installed_version = $installed_version->[0];
+
+    our $installed_git_version = theme_git_version();
+
     our $remote_version;
 
     $installed_version =~ s/^\s+|\s+$//g;
@@ -3376,7 +3379,15 @@ sub content
 sub changelog()
 {
     my $changelog_data = ( read_file_contents( $root_directory . '/' . $current_theme . "/CHANGELOG.md" ) =~
-                           /#### Version(.*?)#### Version/s )[0];
+                           /#### Version(.*?)<!--- separator --->/s )[0];
+    if ($changelog_data) {
+        $changelog_data =~
+s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releases\/tag\/@{[get_version($1)]}$2" class="version_separator">@{[get_version($1)]}$2<\/a><hr><ul>/g;
+    }
+    else {
+        $changelog_data = ( read_file_contents( $root_directory . '/' . $current_theme . "/CHANGELOG.md" ) =~
+                            /### Version(.*?)<!--- separator --->/s )[0];
+    }
     my @changelog_version = split /\n/, $changelog_data;
 
     $changelog_data =~ s/^[^\n]*\n/\n/s;
@@ -3404,13 +3415,13 @@ sub changelog()
                 <hr>
                 <h4 style="margin-top:20px;">'
       . $Atext{'theme_development_support'}
-      . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg fa-heartbeat" style="color: #c9302c"></i></h4>
-                  Follow theme\'s
-                    <a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme">
-                      <span class="font-family-default">Twitter</span></a>
-                  channel for the latest updates. Please don\'t forget nor be lazy reporting bugs to
+      . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c"></i></h4>
+                  Please be kind reporting bugs to
                     <a class="badge fa fa-github" target="_blank" href="https://github.com/qooob/authentic-theme/issues">
-                      <span class="font-family-default">GitHub</span></a>
+                      <span class="font-family-default">GitHub</span></a> repository. Follow theme\'s
+                        <a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme">
+                          <span class="font-family-default">Twitter</span></a>
+                      channel for the latest updates.
               </div>
             </div>
           </div>

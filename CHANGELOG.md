@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 18.40 (21 March, 2017)
+### Version 18.40 (21 March, 2017)
 * Added ability to use theme configuration for all users [#640](https://github.com/qooob/authentic-theme/issues/640#issuecomment-287572703)
 * Added complete support for dark palette in the content page (right frame) [#664](https://github.com/qooob/authentic-theme/issues/664)
 * Added ability to toggle dark/light palette in a flash
@@ -13,6 +13,8 @@
 * Fixed display in iconless mode for tables
 * Fixed bugs [#623](https://github.com/qooob/authentic-theme/issues/623) [#637](https://github.com/qooob/authentic-theme/issues/637) [#639](https://github.com/qooob/authentic-theme/issues/639) [#645](https://github.com/qooob/authentic-theme/issues/645) [#647](https://github.com/qooob/authentic-theme/issues/647) [#649](https://github.com/qooob/authentic-theme/issues/649) [#657](https://github.com/qooob/authentic-theme/issues/657) [#659](https://github.com/qooob/authentic-theme/issues/659) [#665](https://github.com/qooob/authentic-theme/issues/665) [#666](https://github.com/qooob/authentic-theme/issues/666) [#672](https://github.com/qooob/authentic-theme/issues/672) [#673](https://github.com/qooob/authentic-theme/issues/673) [#675](https://github.com/qooob/authentic-theme/issues/675) [#677](https://github.com/qooob/authentic-theme/issues/677) [#680](https://github.com/qooob/authentic-theme/issues/680) [#681](https://github.com/qooob/authentic-theme/issues/681) [#682](https://github.com/qooob/authentic-theme/issues/682) [#45506](https://www.virtualmin.com/node/45506) [#45522](https://www.virtualmin.com/node/45522) [#45770](https://www.virtualmin.com/node/45770)
 
+<!--- separator --->
+
 #### Version 18.32 (January 05, 2017)
 * Added _Catalan_ language, thanks to [David Canalias](https://github.com/diathesaron)
 * Fixed bugs [#605](https://github.com/qooob/authentic-theme/issues/605) [#611](https://github.com/qooob/authentic-theme/pull/611) [#617](https://github.com/qooob/authentic-theme/pull/617) [#619](https://github.com/qooob/authentic-theme/issues/619) [#620](https://github.com/qooob/authentic-theme/issues/620) [#624](https://github.com/qooob/authentic-theme/issues/624) [#628](https://github.com/qooob/authentic-theme/issues/628) [#44856](https://www.virtualmin.com/node/44856) [#44874](https://www.virtualmin.com/node/44874) [#45206](https://www.virtualmin.com/node/45206)
@@ -20,7 +22,7 @@
 #### Version 18.31 (December 09, 2016)
 Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](https://github.com/qooob/authentic-theme/issues/593) [#594](https://github.com/qooob/authentic-theme/pull/594) [#597](https://github.com/qooob/authentic-theme/issues/597) [#599](https://github.com/qooob/authentic-theme/issues/599) [#600](https://github.com/qooob/authentic-theme/issues/600) [#601](https://github.com/qooob/authentic-theme/issues/601) [#602](https://github.com/qooob/authentic-theme/issues/602)
 
-#### Version 18.30 (December 07, 2016)
+### Version 18.30 (December 07, 2016)
 * Increased theme's speed and stability
 * Added new drop-down _Command Shell_ port. There is no need in going to _Shell_ module to use console anymore. By default, hitting `Alt+K` anywhere in the theme will bring its accessibility immediately [#566](https://github.com/qooob/authentic-theme/issues/566)
 * Added new functionality that replaces old pop-up windows with contemporary modals for file-chooser and other familiar operations [#552](https://github.com/qooob/authentic-theme/issues/552)
@@ -41,7 +43,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed dozens of unreported bugs
 * Fixed bugs [#394](https://github.com/qooob/authentic-theme/issues/394) [#571](https://github.com/qooob/authentic-theme/issues/571) [#582](https://github.com/qooob/authentic-theme/issues/582) [#583](https://github.com/qooob/authentic-theme/issues/583) [#587](https://github.com/qooob/authentic-theme/issues/587) [#43304](https://www.virtualmin.com/node/43304) [#44156](https://www.virtualmin.com/node/44156)
 
-#### Version 18.20 (October 29, 2016)
+### Version 18.20 (October 29, 2016)
 * Upgraded dependencies _jQuery 3.0_, latest _Bootstrap_, _DataTables_, _CodeMirror_ and other
 * Optimized dependencies load [#534](https://github.com/qooob/authentic-theme/issues/534)
 * Added support for _ConfigServer Security & Firewall_ v.9.20+ [#547](https://github.com/qooob/authentic-theme/issues/547)
@@ -85,7 +87,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed bugs [#320](https://github.com/qooob/authentic-theme/issues/320) [#445](https://github.com/qooob/authentic-theme/issues/445) [#452](https://github.com/qooob/authentic-theme/issues/452) [#485](https://github.com/qooob/authentic-theme/issues/485) [#39576](https://www.virtualmin.com/node/39576) [#39789](https://www.virtualmin.com/node/39789) [#40686](https://www.virtualmin.com/node/40686) [#40936](https://www.virtualmin.com/node/40936) [#40988](https://www.virtualmin.com/node/40988)
 * Fixed dozens of other bugs
 
-#### Version 18.00 (May 26, 2016)  :star2:
+### Version 18.00 (May 26, 2016)
 * Fixed possible security issue and removed _Security Alerts_ as they become the part of _Webmin Core_ in the near future [#467](https://github.com/qooob/authentic-theme/issues/467)
 * Improved _UI_ overall
 * Reworked and empowered _File Manager_ functionality:
@@ -135,7 +137,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Improved support for the latest _ConfigServer Security & Firewall_
 * Fixed a bug [#40293](https://www.virtualmin.com/node/40293)
 
-#### Version 17.80 (April 08, 2016)  :star:
+### Version 17.80 (April 08, 2016)
 * Improved theme's speed, up to around _20%_, depending on the module, due to large server-side code optimisation
 * Improved general _UI_
 * Improved _autocomplete_ links' processing
@@ -203,7 +205,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 #### Version 17.61 (January 31, 2016)
 * Fixed bugs [#351](https://github.com/qooob/authentic-theme/issues/351) [#364](https://github.com/qooob/authentic-theme/issues/364)
 
-#### Version 17.60 (January 30, 2016)
+### Version 17.60 (January 30, 2016)
 * Added ability to select virtual-server/machine in _Virtualmin/Cloudmin_ using URL queries, like `?virtualmin&domain=example.com` or `?cloudmin&server=example.com`. Shortened params like, `dom` and `serv` are also supported
 * Added an option to control navigation menu's width [#353](https://github.com/qooob/authentic-theme/issues/353)
 * Added an option to theme's settings to reverse switch order [#358](https://github.com/qooob/authentic-theme/issues/358)
@@ -236,7 +238,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 #### Version 17.51 (January 23, 2016)
 * Improved right click _context menu_ for _File Manager_, which now has all options and behaves smart
 
-#### Version 17.50 (January 21, 2016)
+### Version 17.50 (January 21, 2016)
 * Added right click _context menu_ for _File Manager_ for extra convenience
 * Added state of the art _color_ management for the palettes, using theme's settings. It is possible now to control `grayscale, sepia, saturate, hue-rotate, invert, brightness, contrast` filters for navigation menu and `grayscale, saturate, hue-rotate` for content page. It enables you to generate <em>hundreds</em> of color palettes with ease
 * Added _White Snow_ contrast theme, to resemble old _Virtualmin Framed Theme_ [#39344](https://www.virtualmin.com/node/39344)
@@ -250,7 +252,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed bugs [#333](https://github.com/qooob/authentic-theme/issues/333) [#334](https://github.com/qooob/authentic-theme/issues/334) [#335](https://github.com/qooob/authentic-theme/issues/335) [#336](https://github.com/qooob/authentic-theme/issues/336) [#340](https://github.com/qooob/authentic-theme/issues/340)
 * Fixed dozens of other issues
 
-#### Version 17.40 (January 10, 2016)
+### Version 17.40 (January 10, 2016)
 * Added triggers to automatically dismiss loader and perform window autoscroll in _Virtualmin/Cloudmin_ [#39237](https://www.virtualmin.com/node/39237)
 * Added documentation links next to product's version on _System Information_ page. Custom documentation links set in _Virtualmin/Cloudmin_ configuration are now also supported [#39225](https://www.virtualmin.com/node/39225)
 * Added sorting/filter ability for _Installed Scripts_ in _Virtualmin_ [#39237](https://www.virtualmin.com/node/39237)
@@ -270,7 +272,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed editor in _File Manager_ saving content incorrectly, when multiple files were opened at once
 * Fixed bugs [#315](https://github.com/qooob/authentic-theme/issues/315) [#317](https://github.com/qooob/authentic-theme/issues/317)
 
-#### Version 17.30 (December 25, 2015)
+### Version 17.30 (December 25, 2015)
 * Added ability to use configurable HTML snippet in navigation menu, for identification purposes. It's configurable in settings, under navigation menu options. Example of usage: `<br><kbd>debug:10000</kbd>`
 * Added ability to completely disable _Notification Slider_ using theme options [#305](https://github.com/qooob/authentic-theme/issues/305)
 * Added ability to minimize/maximize editor window in _File Manager_ [#308](https://github.com/qooob/authentic-theme/issues/308)
@@ -286,7 +288,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed other bugs
 
 
-#### Version 17.20 (December 17, 2015)
+### Version 17.20 (December 17, 2015)
 * Added _Notification Slider_ to store pushed system messages. At the moment you will get notifications about _system packages updates_, _theme updates_, _ConfigServer Security & Firewall_'s _updates, statuses_ and _temporary blocks_, including server's attacked IP:port. There is an option to keep the slider fixed. Slider can be toggled by hotkey (default `Alt+N`)
 * Added two themes for _Notification Slider_ - _Dim Grey (default)_ and _White_
 * Added _favicon_ notification counter, which enables _Webmin_ notifications seen anytime
@@ -300,7 +302,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Changed _Orange_ color palette to _Longhorn Orange_</li>
 * Fixed bugs [#281](https://github.com/qooob/authentic-theme/issues/281) [#282](https://github.com/qooob/authentic-theme/issues/282)
 
-#### Version 17.10 (November 18, 2015)
+### Version 17.10 (November 18, 2015)
 * Added background _System Information_ page updates. There is no need to reload _System Information_ page anymore to see what's new. It will be done automatically, every 2 minutes (by default). This timeout value can be changed in theme's settings. Besides, you will get important notifications, even if you're away from _System Information_ page, by having blinking asterisk near _System Information_ switch or button/link. After you visit _System Information_ page, the current output will be stored, thus you will not be notified twice for the same data. The following data will trigger notification to appear:
   * 1. Charts get over 85% of load
   * 2. Unseen packages updates
@@ -323,7 +325,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Added _Sea Green_ color palette and possibility to use custom [user palettes](https://github.com/qooob/authentic-theme#how-do-i-make-user-palettes-work)
 * Fixed bugs [#269](https://github.com/qooob/authentic-theme/issues/269) [#273](https://github.com/qooob/authentic-theme/issues/273) [#274](https://github.com/qooob/authentic-theme/issues/274)
 
-#### Version 17.00 (October 11, 2015)
+### Version 17.00 (October 11, 2015)
 * Added _10_ [predefined color palettes](https://github.com/qooob/authentic-theme/issues/264) for left navigation menu and _3_ for the right content page
 * Added separate options for _Webmin_/_Usermin_ to manage security notifications
 * Added quick access to theme's _extensions_ editor and _logo_ control, from _autocomplete_ menu
@@ -335,7 +337,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 #### Version 16.01 (September 27, 2015)
 * Fixed bugs [#247](https://github.com/qooob/authentic-theme/issues/247) [#252](https://github.com/qooob/authentic-theme/issues/252)
 
-#### Version 16.00 (September 18, 2015)
+### Version 16.00 (September 18, 2015)
 * Improved theme's _performance_ by overall code optimization (biggest in theme's history)
 * Improved support for _Firefox_. _Firefox_ version 42+ will render animations very smoothly and provide, in general, same experience as _Chrome_ now
 * Improved support for _ConfigServer Security & Firewall_ module
@@ -377,7 +379,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed minor bugs [#228](https://github.com/qooob/authentic-theme/issues/228) [#230](https://github.com/qooob/authentic-theme/issues/230) [#231](https://github.com/qooob/authentic-theme/issues/231)
 
 
-#### Version 15.50 (August 29, 2015)
+### Version 15.50 (August 29, 2015)
 * Improved theme's _speed_ by code optimization
 * Improved support for _ConfigServer Security & Firewall_ module. Editor mode and code highlights are now working flawlessly
 * Added initialization of filter in _File Manager_ on plain typing (like in _Nautilus_, for example)
@@ -387,7 +389,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed minor bugs [#224](https://github.com/qooob/authentic-theme/issues/224) [#226](https://github.com/qooob/authentic-theme/issues/226) [#57](https://github.com/Real-Gecko/filemin/issues/57)
 * Fixed dozens of other minor bugs
 
-#### Version 15.00 (August 23, 2015)
+### Version 15.00 (August 23, 2015)
 * Improved and optimized theme's _speed_ and _display_ options
 * Added a new feature of adding any right side page to global _Favorites_ [#210](https://github.com/qooob/authentic-theme/issues/210)
 * Added complete _AJAX_ support for _File Manager_ (by _Alexandr Bezenkov_), taking it to the next, absolutely new level [#222](https://github.com/qooob/authentic-theme/issues/222)
@@ -407,7 +409,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Added support for [_File Manager_](https://github.com/Real-Gecko/filemin) file-editor and improved general support for this module
 * Fixed multiple bugs [#205](https://github.com/qooob/authentic-theme/issues/205), [#206](https://github.com/qooob/authentic-theme/issues/206), [#207](https://github.com/qooob/authentic-theme/issues/207), [#209](https://github.com/qooob/authentic-theme/issues/209)
 
-#### Version 14.00 (July 21, 2015)
+### Version 14.00 (July 21, 2015)
 
 * Improved page spinners to use no _JavaScript_, adjusted theme colors and font-weights
 * Improved code and performance by combining styles/scripts in a single package and making other custom optimizations
@@ -426,7 +428,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed an issue to make theme properly run when using `no_frame_options=1` option [#204](https://github.com/qooob/authentic-theme/issues/204)
 * Fixed dozens of other bugs
 
-#### Version 13.10 (June 30, 2015)
+### Version 13.10 (June 30, 2015)
 * Added an option to _disable all animation_ on the left menu and on tabs [#192](https://github.com/qooob/authentic-theme/issues/192)
 * Added `autofocus` on input field in _Command Shell_ module [#190](https://github.com/qooob/authentic-theme/issues/190)
 * Improved the look of custom radio buttons
@@ -462,7 +464,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed redirection loop on Safari OSX [#173](https://github.com/qooob/authentic-theme/issues/173)
 * Fixed switch-toggle in single mode [#172](https://github.com/qooob/authentic-theme/issues/172)
 
-#### Version 13.00 (May 24, 2015)
+### Version 13.00 (May 24, 2015)
 * Improved _theme settings are now configurable using UI_. From now on, you don't need to edit settings manually. Theme configurable options located in `Webmin->Webmin Configuration->Webmin Themes`
 * Improved UI of _right frame_ in great amount. Improved UI of _left menu_ and _login page_
 * Improved content _page loader_ being less annoying. Content page spinner now will only appear in case something is _really_ loading. On regular page switching it will not appear anymore. When content page starts/ends loading, it's animated to improve user experience
@@ -483,11 +485,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Updated _jQuery_ and the code to be _iOS fail-safe_
 * Updated to the latest _jQuery_, _dataTables_, _CodeMirror_, _TinyMCE_
 
-> __ATTENTION:__ Translations for `settings_*` and `theme_conference` is required.
-
-> __NOTICE:__ A chat room `authentic-theme@conference.jabbers.im` is opened for discussions. In order to join the chat room, you would need _Jabber ID_. If you don't have _Jabber ID_, you can register it for free on __jabbers.im__, using any XMPP client, that supports account registrations.
-
-#### Version 12.00 (May 3, 2015)
+### Version 12.00 (May 3, 2015)
 * Added right page _icons_, that had been around in other themes for decades. Many people asked for it, including _Joe Cooper_. It was one of the conditions for making _Authentic Theme_ default in _Webmin_. _Icons_ that are used at the moment, are not brand new but looks good. Brand new, _SVG_ icons, are coming in the near future! It's very important to know, that all of these innovations, can be tweaked using settings. By default, _big icons_ are enabled, with _animation_ and _grayscale effect_. Using settings, you can change default icons, to small or extra small, or even completely disable them and get back to what _Authentic Theme_ has been before. Added in settings `settings_right_hide_table_icons`, `settings_right_small_table_icons`, `settings_right_xsmall_table_icons`, `settings_right_animate_table_icons`, `settings_right_grayscaled_table_icons`
 * Improved general UI of the left menu
 * Fixed some bugs
@@ -495,7 +493,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 #### Version 11.55 (May 2, 2015)
 * Added _Easy Pie Charts_ and corresponding option `settings_sysinfo_easypie_charts`, that will let you enable/disable _Charts_ on _System Information_ page
 
-#### Version 11.50 (May 1, 2015)
+### Version 11.50 (May 1, 2015)
 * Added in settings `settings_right_iconize_header_links`, that enables you to choose between old style right-page header links or replace it with new beautiful icon links. Default is set to `true`
 * Added ability to disable right-page reload upon switching between _Webmin/Virtualmin/Cloudmin_ by the following option `settings_right_reload`. The default value is set to `true`
 * Added ability to choose hotkeys modifier and hotkeys values, when using it by the following options `settings_hotkey_toggle_modifier`, `settings_hotkey_toggle_key_webmin`, `settings_hotkey_toggle_key_virtualmin`, `settings_hotkey_toggle_key_cloudmin`, `settings_hotkey_toggle_key_usermin`, `settings_hotkey_toggle_key_webmail`, `settings_hotkey_focus_search` and `settings_hotkey_reload`
@@ -504,7 +502,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed mail being displayed in HTML, to preserve message custom formatting
 * Fixed _dozens_ of bugs
 
-#### Version 11.10 (Apr 13, 2015)
+### Version 11.10 (Apr 13, 2015)
 * Added ability to open new tab of _Webmin/Usermin/Virtualmin/Cloudmin/Webmail_ by clicking on the switch (top left menu's selector) by right mouse button. **Important:** You must once add _popup window exception_ in your browser to make this feature work
 * Improved greatly the usage of `autocomplete` for basic _Webmin_ modules. You can test it by going to _Running Processes_ or _Perl Modules_ and start typing in search field. Same done for most inbuilt modules
 * Removed a hack for _Historic System Statistics_ module, as it was fixed by the author in version 2.11 [#1](https://github.com/qooob/authentic-theme/issues/1#issuecomment-91328157)
@@ -521,7 +519,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed DHCP-server module showing no hostnames [#145](https://github.com/qooob/authentic-theme/issues/145)
 * Fixed multiple small bugs
 
-#### Version 11.00 (Mar 25, 2015)
+### Version 11.00 (Mar 25, 2015)
 * Added window automatic scrolling, upon page is populated from server-side.Test it and see it in action in such modules as _Fetchmail Mail Retrieval_, _Software Package Updates_ and others. Intended mouse-scroll done by user, during auto-scrolling, will make it stop. Loader will be automatically hidden upon this features is triggered. This feature can be disabled using settings
 * Added in settings: `settings_security_notify_on_pre_login_request`, `settings_security_notify_on_login_request`, `settings_security_notify_on_login_success`, `settings_window_autoscroll`, `settings_sysinfo_theme_updates`, `settings_sysinfo_csf_updates`, `settings_leftmenu_button_language`, `settings_leftmenu_singlelink_icons`, `settings_leftmenu_vm_installscripts`, `settings_leftmenu_vm_webpages` and `settings_leftmenu_vm_backup_amazon`
 * Added automatically stretching inputs for long text [#121](https://github.com/qooob/authentic-theme/issues/121)
@@ -555,7 +553,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Added in settings `settings_sysinfo_expand_all_accordions` and `settings_leftmenu_section_hide_refresh_modules`
 * Fixed quota/bandwidth calculations for _System Information_
 
-#### Version 10.00 (Mar 4, 2015)
+### Version 10.00 (Mar 4, 2015)
 * Changed theme **repo location** to _GitHub_.  **Attention:** It's required that your _Perl_ installation can handle _https_ connections. Make sure to have installed, either _LWP::Protocol::https_ or _Bundle::LWP_ modules to make future _automatic updates_ work
 * Improved left menu design to be more flat-like _(complete page reload is required)_
 * Improved the look of old **ui_hidden** collapse, to look more like new _Bootstrap_ collapse
@@ -581,7 +579,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed login page throwing an error to the console
 * Removed screen-saver, as it was eating a lot of memory
 
-#### Version 9.50 (Feb 8, 2015)
+### Version 9.50 (Feb 8, 2015)
 * Added **dataTables** to _Software Package Updates_, as it's useful to sort packages by _name/description/status/source_
 * Added font **Roboto** in the package and set as default. Font now is local, because _Google_ is blocked in some countries [#80](https://github.com/qooob/authentic-theme/issues/80)
 * Added **Hotkey** - _double_ `Shift` for dismissing right side loader
@@ -610,7 +608,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed **Firefox bug** making right frame _links not clickable_ [#74](https://github.com/qooob/authentic-theme/issues/74)
 * Improved **navigation** menu auto-opening
 
-#### Version 9.00 (Feb 1, 2015)
+### Version 9.00 (Feb 1, 2015)
 * Changed: Overall **UI redesign** for better experience
 * Changed: Code **core** complete rewrite for both _server_ and _client-side_. Improved **speed** and **browser/plugin** compatibility
 * Added support for _Virtualmin/Cloudmin_ **missing left menu**, for currently selected virtual server/machine. ***Attention:*** You need latest _Virtualmin_ installation to make it work. (For _Virtualmin_ *Pro*, minimum version requirement is 4.13 and for *GPL* users minimum is 4.14)
@@ -627,7 +625,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed _dozens_ of UI issues, like broken borders on tables and some other visual improvements (now theme provides most accurate UI _ever_ achieved)
 * Removed donation button from _System Information_ page, that was seen on everyday basis (thanks to _Joe Cooper_ for advice)
 
-#### Version 8.00 (Jan 4, 2015)
+### Version 8.00 (Jan 4, 2015)
 * Added **Quick Search**. No more searching through the menus. Hit _Alt+S_ **(⌥S)** and start typing to see what you get. When you use suggestions from drop-down, you get quick access to the modules; if you just type and hit enter you get the regular search
 * Added **Quick Toggle**. It lets you quickly switch between Webmin/Virtualmin/Cloudmin. To toggle use _Alt+W_ **(⌥W)** / _Alt+V_ **(⌥V)** / _Alt+C_ **(⌥C)**
 * Added support for **TimePlot** for Pro versions of _Virtualmin_ to display _System Statistics_
@@ -640,7 +638,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed _ConfigServer Security & Firewall_ **UI bugs**
 * Fixed minor **UI bugs** fixes
 
-#### Version 7.00 (Dec 21, 2014)
+### Version 7.00 (Dec 21, 2014)
 * Improved overall **theme speed** - twice as fast as before
 * Added scrolling to extra long **help popovers** that were going off the screen
 * Added complete support for **Internet Explorer** browser
@@ -727,7 +725,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 #### Version 6.01 (Nov 6, 2014)
 * Fixed upcoming bug [#26](https://github.com/qooob/authentic-theme/issues/26#issuecomment-61886719)
 
-#### Version 6.00 (Nov 6, 2014)
+### Version 6.00 (Nov 6, 2014)
 * Fixed **refresh button** being slow on _System Information_ page [#24](https://github.com/qooob/authentic-theme/issues/24)
 * Fixed _System Information_ being displayed properly based on logged in users' privileges [#10](https://github.com/qooob/authentic-theme/issues/10)
 * Changed the way **refresh button** works on _System Information_ page. No more using **recollect.cgi** or any other server-side scripts.
@@ -737,7 +735,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Added **refresh button** to _System Information_ page [#23](https://github.com/qooob/authentic-theme/issues/23)
 * Added _System Information_ link to _Virtualmin_ left navigation bar
 
-#### Version 5.00 (Oct 30, 2014)
+### Version 5.00 (Oct 30, 2014)
 * Added new beautiful **ui_link** buttons in replacement for old links with **|** separator
 * Fixed devastating bug, that stopped the script with fatal error, as **dataTables** were called prematurely
 * Fixed dozens of small bugs
@@ -792,7 +790,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed **theme_ui_form_end** generator to wrap buttons in _span_ not in _td_, which enables support for lower resolutions [#4](https://github.com/qooob/authentic-theme/issues/4)
 * Removed redundant _fonts_ directory
 
-#### Version 4.00 (Oct 9, 2014)
+### Version 4.00 (Oct 9, 2014)
  * Fixed lost pre-login banner option
  * Added support for _dataTables_. Now you can easily sort table rows based on the table header. It gets easier to manage data in such modules as _Bootup and Shutdown_, _Users and Groups_ and others, containing multi-row data. It also supports _ConfigServer Security & Firewall_, where you can also easily filter _Temporary IP Entries_ and _Listening Ports_
  * Added possibility to use automatic updates for **Authentic Theme**, with direct means of Webmin and its theme installation module - _no other server-side scripts are used_! Updates, when available, will be displayed in *System Information* tab.<br>*Warning!* In order to use automatic updates and check for new theme versions, your system _must have_ the following _Perl_ modules installed: _Net::SSLeay_. You should be able to install it from official repos.<br>See [FAQ](https://github.com/qooob/authentic-theme#troubleshoot) for more details
@@ -803,11 +801,11 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
  * Fixed malfunctioning **theme_ui_checkbox**, causing some _input_ fields disappear
  * Fixed few other small bugs
 
-#### Version 3.00 (Oct 5, 2014)
+### Version 3.00 (Oct 5, 2014)
 * Added popover tooltip for old **window.open** to process **help.cgi**
 * Added theme information version (installed/update notice) in _System Information_ (works by just comparing **VERSION.txt** files, nothing more)
 * Fixed error in _default.js_ script, throwing **NS_ERROR_NOT_AVAILABLE** in Firefox and other _Gecko_ browsers
-* Fixed all problems with selecting and filtering _files/user/groups_ in ***_chooser.cgi**
+* Fixed all problems with selecting and filtering _files/user/groups_ in `chooser.cgi`
 * Fixed loaders being shown every time when waiting for server reply
 * Fixed listing of virtual-servers in Virtualmin
 * Fixed **checkboxes** margins in Virtualmin
@@ -817,7 +815,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 #### Version 2.01 (Oct 1, 2014)
 * Fixed small bugs
 
-#### Version 2.00 (Oct 1, 2014)
+### Version 2.00 (Oct 1, 2014)
 * Added support for _Virtualmin_ module
 * Added support for _ConfigServer Security & Firewall_ module
 * Fixed/optimized images
@@ -830,7 +828,7 @@ Fixed bugs [#592](https://github.com/qooob/authentic-theme/issues/592) [#593](ht
 * Fixed navigation menu problems, when using back (history) button
 * Fixed/optimized favicons dimensions
 
-#### Version 1.00 (Sep 21, 2014)
+### Version 1.00 (Sep 21, 2014)
 * Added full support for all elements: tables, forms, inputs, buttons and etc
 * Added stick menu to display which module was selected
 * Added optional favicons to visually distinguish Webmin/Usermin
