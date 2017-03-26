@@ -83,6 +83,11 @@
     padding: 2px 10px 2px 5px !important
 }
 
+body.csf .table>thead>tr:first-child>th,
+body.csf .table>thead>tr:first-child>td {
+    border-top: 3px solid #f0f0f0
+}
+
 .csf #grep input.collapse,
 .csf #qallow input.collapse,
 .csf #qdeny input.collapse,
@@ -149,6 +154,7 @@
     max-width: 320px !important
 }
 
+html[data-post='servercheck'] div[style*="clear: both;padding"] strong,
 .csf a[data-toggle='tab'] {
     font-weight: 400
 }
@@ -166,7 +172,7 @@ html[data-post='viewlogs'] .dataTables_wrapper .table tbody tr.odd {
 }
 
 html[data-post='viewlogs'] .dataTables_wrapper .table tbody tr.submenu {
-    background-color: #ffffe4
+    background-color: #ffffe4 !important
 }
 
 html[data-post='viewlogs'] .table.table-striped.table-condensed tbody tr:not(.submenu):hover {
@@ -262,14 +268,37 @@ html[data-post='loggrep'] .panel .panel-body .panel {
     background-color: #f7f7f7
 }
 
+.csf .panel-body .table-subtable tr th:not(.table-title),
+.csf .panel-body tr th:not(.table-title) {
+    padding: 5px 22px !important
+}
+
+html[data-post='servercheck'] div[style*="clear: both;padding"],
+.table thead tr th,
 .csf form .section,
 .csf tbody tr th {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: normal;
-    padding-top: 7px;
+    padding-top: 6px;
     padding-bottom: 7px;
     text-align: center;
-    vertical-align: bottom !important
+    vertical-align: bottom !important;
+    background-color: #f6f6f6 !important
+}
+
+html[data-post='servercheck'] div[style*="clear: both;padding"] {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important
+}
+
+.csf .table th,
+.csf .dataTable th {
+    font-size: 14px
+}
+
+html[data-post='profiles'] .table thead tr th,
+html[data-post=''] .table thead tr th {
+    font-size: 18px
 }
 
 .csf form .value-other>table,
@@ -555,6 +584,8 @@ html[data-module='csf'] .csf-switch-field .awobject {
     margin-bottom: 10px !important
 }
 
+html[data-post='viewlogs'] .table.dataTable>thead>tr:first-child>th,
+html[data-post='viewlogs'] .table.table.table-striped.table-condensed>thead>tr:first-child,
 html[data-post='viewlogs'] .table.table.table-striped.table-condensed>thead>tr:first-child,
 table.dataTable {
     border-top-width: 1px !important
@@ -564,6 +595,17 @@ html[data-module='csf'] .col_header_custom {
     line-height: 27px !important;
     height: 36px !important;
     margin-bottom: 5px !important
+}
+
+html[data-module='csf'] .col_header_custom.big_big {
+    border-bottom-color: transparent !important;
+    background-color: #f6f6f6 !important;
+    line-height: 25px !important
+}
+
+html[data-post='servercheck']:not([data-background-style="nightRider"]) div[style*="clear: both;padding"],
+html[data-module='csf']:not([data-background-style="nightRider"]) .col_header_custom.big_big {
+    border-top: 3px solid #f0f0f0 !important
 }
 
 html[data-post='viewports'] .col_header_custom {
@@ -637,7 +679,6 @@ html[data-module='csf'] .table.table-striped.table-condensed+.table.table-stripe
     margin-top: 10px !important
 }
 
-html[data-module='csf'] .tab-pane>.table.table-striped.table-condensed tbody>tr:first-child,
 html[data-module='csf'] .tab-pane>.table.table-striped.table-condensed tr:first-child>th:first-child,
 html[data-module='csf'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tbody>tr:first-child,
 html[data-module='csf'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tr:first-child>th:first-child {
@@ -687,7 +728,7 @@ html[data-module='csf'] .panel._devcon .panel-body {
 
 html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
 html[data-module='csf'] .panel._devcon .panel-heading {
-    font-size: 17px;
+    font-size: 18px;
     padding: 6.5px;
     border-bottom: 1px solid #e4e4e4;
     box-shadow: none
@@ -797,6 +838,28 @@ html[data-module='csf'] hr+div>form[action='index.cgi']>button[type='submit'] {
     margin-top: -2px
 }
 
+html[data-module='csf'] .btn-group-csf-home {
+    position: absolute;
+    top: 19px;
+    left: 15px
+}
+
+html[data-module='csf'] .btn-group-csf-home a {
+    border: 1px solid #ddd
+}
+
+html[data-module='csf'] .btn-group-csf-home a.ported_module_csf_help {
+    cursor: help
+}
+
+html[data-module='csf']:not([data-background-style="nightRider"]) .table-striped>tbody>tr:nth-child(even) {
+    background-color: #f7f7f7
+}
+
+html[data-module='csf']:not([data-background-style="nightRider"]) .table-striped>tbody>tr:nth-child(odd) {
+    background-color: #fff
+}
+
 html[data-post='profiles'] input[name='backup']+input {
     vertical-align: middle !important
 }
@@ -876,7 +939,6 @@ html[data-background-style='nightRider'] .csf .btn:not(.btn-xxs):not(.btn-tiny):
     background-color: rgba(27, 191, 137, .07) !important
 }
 
-html[data-module='csf'][data-background-style='nightRider'] .tab-pane>.table.table-striped.table-condensed tbody>tr:first-child,
 html[data-module='csf'][data-background-style='nightRider'] .tab-pane>.table.table-striped.table-condensed tr:first-child>th:first-child,
 html[data-module='csf'][data-background-style='nightRider'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tbody>tr:first-child,
 html[data-module='csf'][data-background-style='nightRider'] .table.table-striped.table-condensed+.table.table-striped.table-condensed tr:first-child>th:first-child {
@@ -889,6 +951,10 @@ html[data-background-style='nightRider'] hr,
 html[data-module='csf'][data-background-style='nightRider'] .csf .footer-string {
     border-top-color: #3d3f43 !important;
     border-top-width: 1px
+}
+
+html[data-post=''][data-background-style='nightRider'] body>div>div>div.panel-body>div:nth-child(2)>div>div.panel-body {
+    background-color: #2d3036 !important
 }
 
 html[data-post=''][data-background-style='nightRider'] button[value='denyf'] {
@@ -964,9 +1030,8 @@ html[data-background-style='nightRider'] body.csf .table>thead>tr:first-child>th
 html[data-background-style='nightRider'] body.csf .table>tbody>tr:first-child>th,
 html[data-background-style='nightRider'] body.csf table>tfoot>tr:first-child>th,
 html[data-background-style='nightRider'] body.csf .table>thead>tr:first-child>td,
-html[data-background-style='nightRider'] body.csf .table>tbody>tr:first-child>td,
 html[data-background-style='nightRider'] body.csf .table>tfoot>tr:first-child>td {
-    border-top: 1px solid #424449 !important
+    border-top: 1px solid #3a3c41 !important
 }
 
 html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading {
@@ -1028,10 +1093,25 @@ html[data-post='loggrep'][data-background-style='nightRider'] .panel .panel-body
     border: 1px solid #424449
 }
 
+html[data-module='csf'][data-post="viewports"]:not([data-background-style="nightRider"]) body.csf .panel-body h4.col_header_custom {
+    border-top: 3px solid #f0f0f0 !important
+}
+
+html[data-module='csf'][data-post="viewports"] body.csf .table>thead>tr:first-child>th,
+html[data-module='csf'][data-post="viewports"] body.csf .table>thead>tr:first-child>td {
+    border-top-width: 1px
+}
+
 html[data-post='viewports'][data-background-style='nightRider'] .col_header_custom {
-    border-top: 1px solid #424449 !important;
-    border-right: 1px solid #424449 !important;
-    border-left: 1px solid #424449 !important
+    border-top: 1px solid #393b40 !important;
+    border-right: 1px solid #393b40 !important;
+    border-left: 1px solid #393b40 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .col_header_custom.big_big {
+    background-color: #292c32 !important;
+    border-left: 1px solid #3a3c41 !important;
+    border-right: 1px solid #3a3c41 !important
 }
 
 html[data-module='csf'][data-background-style='nightRider'] .dataTables_wrapper .dataTables_empty:hover,
@@ -1039,8 +1119,20 @@ html[data-module='csf'][data-background-style='nightRider'] .dataTables_wrapper 
     background-color: #2f3237
 }
 
+html[data-module='csf'][data-background-style='nightRider'] .table thead tr th,
+html[data-module='csf'][data-background-style='nightRider'] .csf form .section,
+html[data-module='csf'][data-background-style='nightRider'] .csf tbody tr th {
+    background-color: #292c32 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] #home>form:nth-child(1)>table>thead>tr>th,
+html[data-module='csf'][data-background-style='nightRider'] .panel._devcon .panel-heading {
+    border-bottom-color: #252729 !important
+}
+
+body>div>div>div.panel-body>div:nth-child(2)>div>div.panel-heading,
 html[data-module='csf'][data-background-style='nightRider'] .panel {
-    color: rgba(169, 174, 180, 0.94) !important
+    color: rgba(151, 155, 160, .82) !important
 }
 
 html[data-module='csf'][data-background-style='nightRider'] .cspinner .cspinner-icon.dark {
@@ -1048,10 +1140,31 @@ html[data-module='csf'][data-background-style='nightRider'] .cspinner .cspinner-
     border-left-color: #5d5c5c
 }
 
+html[data-post='viewlogs'][data-background-style='nightRider'] .table.table-striped.table-condensed tbody tr:not(.submenu):nth-child(odd) {
+    background-color: #2f3237
+}
+
+html[data-post='viewlogs'][data-background-style='nightRider'] .table.table-striped.table-condensed tbody tr:not(.submenu):hover {
+    background-color: #393737 !important
+}
+
+html[data-post='viewlogs'][data-background-style='nightRider'] .dataTables_wrapper .table tbody tr.submenu {
+    background-color: #3d353b
+}
+
+html[data-post='viewlogs'][data-background-style='nightRider'] table.dataTable {
+    border-top: 0 !important
+}
+
 html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
 html[data-module='csf'][data-background-style='nightRider'] .panel._devcon .panel-heading,
 html[data-module='csf'][data-background-style='nightRider'] .panel._devcon {
     border-color: #3a3e43
+}
+
+html[data-post='servercheck'][data-background-style='nightRider'] div[style*="clear: both;padding"] {
+    padding-top: 5px !important;
+    padding-bottom: 6px !important
 }
 
 html[data-post=''][data-module='csf'][data-background-style='nightRider'] div#home table tr:nth-child(even) td {

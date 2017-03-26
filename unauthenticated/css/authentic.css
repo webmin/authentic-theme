@@ -4039,7 +4039,7 @@ a.opener_trigger,
     line-height: 1.42857143
 }
 
-.sub_table_container:not(.xcontent-force-no-styling) *:not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
+.sub_table_container:not(.xcontent-force-no-styling) *:not(a):not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
     color: #333;
     background-color: #fff !important
 }
@@ -7365,15 +7365,6 @@ input[name]:not([type='image']):not(.sidebar-search):not([type='button']):not([t
     box-shadow: none !important
 }
 
-body.csf .table>thead>tr:first-child>th,
-body.csf .table>tbody>tr:first-child>th,
-body.csf table>tfoot>tr:first-child>th,
-body.csf .table>thead>tr:first-child>td,
-body.csf .table>tbody>tr:first-child>td,
-body.csf .table>tfoot>tr:first-child>td {
-    border-top: 3px solid #f0f0f0
-}
-
 @-moz-document url-prefix() {
     .csf .col_header_custom:not(.big_big) {
         width: 100.45% !important
@@ -8284,7 +8275,7 @@ img.scale-08,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td b,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td a,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td,
-html:not([data-background-style='nightRider']) .table-striped:not(.opener_table_style):not(.table-subtable)>tbody>tr:hover td,
+html:not([data-background-style='nightRider']) body:not(.csf) .table-striped:not(.opener_table_style):not(.table-subtable)>tbody>tr:hover td,
 html[data-script-name*='settings-user.cgi'] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form#settings_>div>table>tbody>tr>td>table>tbody>tr:hover td:not([colspan='2']),
 #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td div,
 #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td,
@@ -8763,6 +8754,7 @@ form[action='delete_pack.cgi']~td>button {
     vertical-align: initial !important
 }
 
+input.dataTable-mirror,
 .lawobject tt {
     font-size: 12px
 }
@@ -10064,6 +10056,7 @@ html[data-background-style='nightRider'] .right-side-tabs[data-background-style=
     color: rgba(140, 145, 150, .89)
 }
 
+html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] .list-group-item.no-notifications small,
 html[data-background-style='nightRider'] #right-side-tabs-favorites .no-favorites_data small,
 html[data-background-style='nightRider'] #right-side-tabs-sysinfo .no-sysinfo_data small,
 html[data-background-style='nightRider'] .right-side-tabs[data-background-style='grey'] #right-side-tabs-notifications .right-side-tabs-notification div.media-body>small,

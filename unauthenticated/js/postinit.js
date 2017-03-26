@@ -5,6 +5,7 @@
  */
 ;
 var $_url = URI(t___wi.location),
+    $__post_init_script = 1,
     $__source_protocol = $_url.protocol(),
     $__source_port = $_url.port(),
     $__source_url = location.href,

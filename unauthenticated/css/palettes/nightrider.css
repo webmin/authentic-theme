@@ -27,6 +27,7 @@ html[data-background-style='nightRider'] a[data-toggle='collapse'] {
     color: rgba(198, 198, 198, .83)
 }
 
+html[data-background-style='nightRider'] input.dataTable-mirror,
 html[data-background-style='nightRider'] font[color="#000000"],
 html[data-background-style='nightRider'] a.opener_trigger,
 html[data-background-style='nightRider'] a.help_popup,
@@ -122,7 +123,7 @@ html[data-background-style='nightRider'] #atsettings>form>div>table>tbody>tr>td>
 html[data-background-style='nightRider'] #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td div,
 html[data-background-style='nightRider'] #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td,
 html[data-background-style='nightRider'][data-script-name*="settings-user.cgi"] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form#settings_>div>table>tbody>tr>td>table>tbody>tr:hover td:not([colspan="2"]),
-html[data-background-style='nightRider'] .panel-body:not(.xqcontent-forced) .table-striped:not(.table-subtable)>tbody>tr:hover,
+html[data-background-style='nightRider'] body:not(.csf) .panel-body:not(.xqcontent-forced) .table-striped:not(.table-subtable)>tbody>tr:hover,
 html[data-background-style='nightRider'] body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td b,
 html[data-background-style='nightRider'] body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td a,
 html[data-background-style='nightRider'] body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td,
@@ -137,6 +138,11 @@ html[data-background-style='nightRider'] ._c__op_r,
 html[data-background-style='nightRider'] .panel {
     border-color: rgba(99, 99, 99, .18);
     background-color: #2f3238 !important
+}
+
+html[data-background-style='nightRider'] mark {
+    background-color: #584819;
+    color: #aaa
 }
 
 html[data-background-style='nightRider'] #headln2c>.favorites.fa-star-o {
@@ -432,7 +438,7 @@ html[data-background-style='nightRider'] .col_header b {
     border-left: 0 !important
 }
 
-html[data-background-style='nightRider'] .panel-body form table tbody tr:not(.thead):not(.ui_checked_columns) td:not(._c__op_d):not(.opener_table_cell_style_small),
+html[data-background-style='nightRider'] .panel-body form table:not(.ui_form_end_buttons) tbody tr:not(.thead):not(.ui_checked_columns) td:not(._c__op_d):not(.opener_table_cell_style_small),
 html[data-background-style='nightRider'] .col_header_custom,
 html[data-background-style='nightRider'] form[action='save_check.cgi']>b,
 html[data-background-style='nightRider'] .col_header b {
@@ -1607,7 +1613,7 @@ html[data-background-style='nightRider'] .row.icons-row .icon_link {
     text-shadow: none
 }
 
-html[data-background-style='nightRider'] input:not(.popover-path-input):not([type='submit']):not([type='checkbox']):not([type='radio']):not(.session_login):not(.select2-search__field):not([data-command='true']),
+html[data-background-style='nightRider'] input:not(.popover-path-input):not([type='submit']):not([type='checkbox']):not([type='radio']):not(.session_login):not(.select2-search__field):not([data-command='true']):not(.dataTable-mirror),
 html[data-background-style='nightRider'] textarea:not([disabled]),
 html[data-background-style='nightRider'] textarea.form-control:not([disabled]),
 html[data-background-style='nightRider'] select:not([disabled]),
@@ -1629,7 +1635,7 @@ html[data-background-style='nightRider'] select[name="settings_font_family"] opt
     display: none
 }
 
-html[data-background-style='nightRider'] input:focus:not(.popover-path-input):not([type='submit']):not([type='checkbox']):not([type='radio']):not(.session_login):not(.select2-search__field):not([data-command='true']),
+html[data-background-style='nightRider'] input:focus:not(.popover-path-input):not([type='submit']):not([type='checkbox']):not([type='radio']):not(.session_login):not(.select2-search__field):not([data-command='true']):not(.dataTable-mirror),
 html[data-background-style='nightRider'] textarea:focus,
 html[data-background-style='nightRider'] textarea.form-control:focus,
 html[data-background-style='nightRider'] select:focus,
