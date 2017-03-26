@@ -139,17 +139,17 @@ function __f____success(a, d, D, f, c, r, h, e, A, B, s, o, k, v, w) {
             p = 0;
             t = 0;
             if (m) {
-                messenger('<i class="fa fa-lg fa-fw ' + (z ? "fa-exclamation-circle" : r) + '"></i>&nbsp;&nbsp;&nbsp;' + ((lang("theme_xhred_filemanager_successful_compression_bg_with_errors").replace("%file", b).replace("%path", y)) + (C($(x[2]).text()))), e, (A), v + "_" + A)
+                messenger('<i class="fa fa-lg fa-fw ' + (z ? "fa-exclamation-circle" : r) + '"></i>' + ((lang("theme_xhred_filemanager_successful_compression_bg_with_errors").replace("%file", b).replace("%path", y)) + (C($(x[2]).text()))), e, (A), v + "_" + A)
             } else {
-                messenger('<i class="fa fa-lg fa-fw ' + B + '"></i>&nbsp;&nbsp;&nbsp;' + (lang("theme_xhred_filemanager_successful_compression_bg").replace("%file", b).replace("%path", y)), o, "info", v + "_" + k)
+                messenger('<i class="fa fa-lg fa-fw ' + B + '"></i>' + (lang("theme_xhred_filemanager_successful_compression_bg").replace("%file", b).replace("%path", y)), o, "info", v + "_" + k)
             }
         }
     }
     if (m && q) {
-        messenger('<i class="fa fa-lg fa-fw ' + (z ? "fa-exclamation-circle" : r) + '"></i>&nbsp;&nbsp;&nbsp;' + lang(h + (z ? "_fatal" : "")) + (C($(x[2]).text())), e, (z ? "error" : A), v + "_" + A)
+        messenger('<i class="fa fa-lg fa-fw ' + (z ? "fa-exclamation-circle" : r) + '"></i>' + lang(h + (z ? "_fatal" : "")) + (C($(x[2]).text())), e, (z ? "error" : A), v + "_" + A)
     } else {
         if (p) {
-            messenger('<i class="fa fa-lg fa-fw ' + B + '"></i>&nbsp;&nbsp;&nbsp;' + lang(s), o, k, v + "_" + k)
+            messenger('<i class="fa fa-lg fa-fw ' + B + '"></i>' + lang(s), o, k, v + "_" + k)
         }
     }
     c && $("." + c).remove();
@@ -182,16 +182,16 @@ function __f____a(n, e) {
                 localStorage.setItem($hostname + "-" + n, 1);
                 $(".o__f_m-button-paste").removeClass("disabled");
                 if (n === "copy") {
-                    messenger('<i class="fa fa-lg fa-fw fa-clone"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_copying_successful"), 1.5, "info", n + "_info")
+                    messenger('<i class="fa fa-lg fa-fw fa-clone"></i>' + lang("theme_xhred_filemanager_copying_successful"), 1.5, "info", n + "_info")
                 } else {
                     if (n === "cut") {
-                        messenger('<i class="fa fa-lg fa-fw fa-scissors"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_cutting_successful"), 1.5, "warning", n + "_warning")
+                        messenger('<i class="fa fa-lg fa-fw fa-scissors"></i>' + lang("theme_xhred_filemanager_cutting_successful"), 1.5, "warning", n + "_warning")
                     }
                 }
                 __f_____ul()
             },
             error: function(a) {
-                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_buffer_error"), 10, "error", n + "_error")
+                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + lang("theme_xhred_filemanager_buffer_error"), 10, "error", n + "_error")
             }
         })
     }
@@ -214,7 +214,7 @@ function __f____a(n, e) {
                     }
                 }
                 if (b == "err") {
-                    messenger('<i class="fa fa-lg fa-fw fa-question-circle"></i>&nbsp;&nbsp;&nbsp;' + $(g[2]).html(), 20, "warning", n + "_warning");
+                    messenger('<i class="fa fa-lg fa-fw fa-question-circle"></i>' + $(g[2]).html(), 20, "warning", n + "_warning");
                     __f___u("upd", $(g[1]).find("table.ui_columns").find(".ui_checked_columns"), 1, n, false, $(g[0]).text())
                 } else {
                     if (b == "merr") {
@@ -238,9 +238,9 @@ function __f____a(n, e) {
                                                 success: function(d) {
                                                     d = $.parseHTML(d);
                                                     if ($(d[2]).html().length > 1) {
-                                                        messenger('<i class="fa fa-lg fa-fw fa-question-circle"></i>&nbsp;&nbsp;&nbsp;' + $(d[2]).html(), 15, "warning", n + "_warning")
+                                                        messenger('<i class="fa fa-lg fa-fw fa-question-circle"></i>' + $(d[2]).html(), 15, "warning", n + "_warning")
                                                     } else {
-                                                        messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_pasting_and_copying_" + c + ""), 5, "success", n + "_success")
+                                                        messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>' + lang("theme_xhred_filemanager_pasting_and_copying_" + c + ""), 5, "success", n + "_success")
                                                     }
                                                     __f___u("upd", $(d[1]).find("table.ui_columns").find(".ui_checked_columns"), 1, n, false, $(d[0]).text())
                                                 },
@@ -260,9 +260,9 @@ function __f____a(n, e) {
                                                 success: function(d) {
                                                     d = $.parseHTML(d);
                                                     if ($(d[2]).html().length > 1) {
-                                                        messenger('<i class="fa fa-lg fa-fw fa-question-circle"></i>&nbsp;&nbsp;&nbsp;' + $(d[2]).html(), 15, "warning", n + "_warning")
+                                                        messenger('<i class="fa fa-lg fa-fw fa-question-circle"></i>' + $(d[2]).html(), 15, "warning", n + "_warning")
                                                     } else {
-                                                        messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_pasting_and_replacing_" + c + ""), 5, "success", n + "_success")
+                                                        messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>' + lang("theme_xhred_filemanager_pasting_and_replacing_" + c + ""), 5, "success", n + "_success")
                                                     }
                                                     __f___u("upd", $(d[1]).find("table.ui_columns").find(".ui_checked_columns"), 1, n, false, $(d[0]).text())
                                                 },
@@ -275,10 +275,10 @@ function __f____a(n, e) {
                             })
                         } else {
                             if (b == "cc") {
-                                messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_pasting_and_copying_" + c + ""), 5, "success", n + "_success");
+                                messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>' + lang("theme_xhred_filemanager_pasting_and_copying_" + c + ""), 5, "success", n + "_success");
                                 __f___u("upd", $(g[1]).find("table.ui_columns").find(".ui_checked_columns"), 1, n, false, $(g[0]).text())
                             } else {
-                                messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_pasting_successful"), 5, "success", n + "_success");
+                                messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>' + lang("theme_xhred_filemanager_pasting_successful"), 5, "success", n + "_success");
                                 __f___u("upd", $(g[1]).find("table.ui_columns").find(".ui_checked_columns"), 1, n, false, $(g[0]).text())
                             }
                         }
@@ -313,9 +313,9 @@ function __f____a(n, e) {
             success: function(a) {
                 exiting_book_mark = f_m__bm__u();
                 if (exiting_book_mark.length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-star-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_unbookmark_success").replace("%value", (q ? q : "/")), 5, "warning", "bookmarkAddRemove")
+                    messenger('<i class="fa fa-lg fa-fw fa-star-o"></i>' + lang("theme_xhred_filemanager_unbookmark_success").replace("%value", (q ? q : "/")), 5, "warning", "bookmarkAddRemove")
                 } else {
-                    messenger('<i class="fa fa-lg fa-fw fa-star"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_bookmark_success").replace("%value", (q ? q : "/")), 5, "info", "bookmarkAddRemove")
+                    messenger('<i class="fa fa-lg fa-fw fa-star"></i>' + lang("theme_xhred_filemanager_bookmark_success").replace("%value", (q ? q : "/")), 5, "info", "bookmarkAddRemove")
                 }
             },
             error: function(a) {}
@@ -347,7 +347,7 @@ function __f____a(n, e) {
             success: function(a) {
                 g = $.parseHTML(a);
                 if (!$(g[1]).find("table.ui_columns").length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + a, 10, "error", n + "_error");
+                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + a, 10, "error", n + "_error");
                     __f_____ul();
                     return
                 }
@@ -368,7 +368,7 @@ function __f____a(n, e) {
             success: function(a) {
                 g = $.parseHTML(a);
                 if (!$(g[1]).find("table.ui_columns").length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + a, 10, "error", n + "_error");
+                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + a, 10, "error", n + "_error");
                     __f_____ul();
                     return
                 }
@@ -389,7 +389,7 @@ function __f____a(n, e) {
             success: function(a) {
                 g = $.parseHTML(a);
                 if (!$(g[1]).find("table.ui_columns").length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + a, 10, "error", n + "_error");
+                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + a, 10, "error", n + "_error");
                     __f_____ul();
                     return
                 }
@@ -410,15 +410,15 @@ function __f____a(n, e) {
             success: function(a) {
                 messenger_hide("url_download_info");
                 if (!$(a).find(".panel-body").text().match(/100 %/) && !$(a).find(".panel-body").text().match(/100%/) && !$(a).find(".panel-body h3").length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(a).find(".panel-body").html(), 10, "error", n + "_error");
+                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(a).find(".panel-body").html(), 10, "error", n + "_error");
                     __f_____ul();
                     return
                 } else {
                     if ($(a).find(".panel-body h3").length) {
-                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(a).find(".panel-body h3").html(), 10, "error", n + "_error");
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(a).find(".panel-body h3").html(), 10, "error", n + "_error");
                         return
                     } else {
-                        messenger('<i class="fa fa-lg fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + $(a).find(".panel-body").html(), 5, "success", n + "_success");
+                        messenger('<i class="fa fa-lg fa-fw fa-download"></i>' + $(a).find(".panel-body").html(), 5, "success", n + "_success");
                         __f____r("get", "index.cgi?path=" + (h ? encodeURIComponentSafe(h) : ""), false, 0)
                     }
                 }
@@ -435,12 +435,12 @@ function __f____a(n, e) {
             p = (m && !k ? " fa-1_50x fa-file-find" : m && k ? " fa-1_50x fa-find-replace" : " fa-lg fa-search");
         modal_dismiss();
         if (m && !k) {
-            messenger('<i class="fa fa-1_50x fa-fw fa-file-find"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_searching_matching").replace("%value", o).replace("%text", m) + " " + lang("theme_xhred_global_please_wait"), 10000, "info", n + "_preMe")
+            messenger('<i class="fa fa-1_50x fa-fw fa-file-find"></i>' + lang("theme_xhred_filemanager_searching_matching").replace("%value", o).replace("%text", m) + " " + lang("theme_xhred_global_please_wait"), 10000, "info", n + "_preMe")
         } else {
             if (m && k) {
-                messenger('<i class="fa fa-1_50x fa-fw fa-find-replace"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_searching_replacing").replace("%value", o).replace("%text", m).replace("%replace", k) + " " + lang("theme_xhred_global_please_wait"), 10000, "warning", n + "_preMe")
+                messenger('<i class="fa fa-1_50x fa-fw fa-find-replace"></i>' + lang("theme_xhred_filemanager_searching_replacing").replace("%value", o).replace("%text", m).replace("%replace", k) + " " + lang("theme_xhred_global_please_wait"), 10000, "warning", n + "_preMe")
             } else {
-                messenger('<i class="fa fa-lg fa-fw fa-search"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_searching").replace("%value", o) + " " + lang("theme_xhred_global_please_wait"), 10000, "info", n + "_preMe")
+                messenger('<i class="fa fa-lg fa-fw fa-search"></i>' + lang("theme_xhred_filemanager_searching").replace("%value", o) + " " + lang("theme_xhred_global_please_wait"), 10000, "info", n + "_preMe")
             }
         }
         $.ajax({
@@ -470,20 +470,20 @@ function __f____a(n, e) {
                 var a = 5000;
                 if (__list_table_total_rows > 1) {
                     if (m && k) {
-                        messenger('<i class="fa fa-fw ' + p + '"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_search_replaced_multi").replace("%value", __list_table_total_rows), 10, "success", n + "_success");
+                        messenger('<i class="fa fa-fw ' + p + '"></i>' + lang("theme_xhred_filemanager_search_replaced_multi").replace("%value", __list_table_total_rows), 10, "success", n + "_success");
                         a = 9000
                     } else {
-                        messenger('<i class="fa fa-fw ' + p + '"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_search_founds").replace("%value", __list_table_total_rows), 6, "success", n + "_success")
+                        messenger('<i class="fa fa-fw ' + p + '"></i>' + lang("theme_xhred_filemanager_search_founds").replace("%value", __list_table_total_rows), 6, "success", n + "_success")
                     }
                 } else {
                     if (__list_table_total_rows == 1) {
                         if (m && k) {
-                            messenger('<i class="fa fa-fw ' + p + '"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_search_replaced"), 6, "success", n + "_success")
+                            messenger('<i class="fa fa-fw ' + p + '"></i>' + lang("theme_xhred_filemanager_search_replaced"), 6, "success", n + "_success")
                         } else {
-                            messenger('<i class="fa fa-fw ' + p + '"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_search_found"), 6, "success", n + "_success")
+                            messenger('<i class="fa fa-fw ' + p + '"></i>' + lang("theme_xhred_filemanager_search_found"), 6, "success", n + "_success")
                         }
                     } else {
-                        messenger('<i class="fa fa-fw ' + p + '"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_search_no_matches"), 6, "error", n + "_error")
+                        messenger('<i class="fa fa-fw ' + p + '"></i>' + lang("theme_xhred_filemanager_search_no_matches"), 6, "error", n + "_error")
                     }
                 }
                 setTimeout(function() {
@@ -1081,25 +1081,25 @@ function __f___u(B, y, C, z, E, q) {
         $('a[onclick*="paste.cgi"]').removeAttr("onclick").parent("li").addClass("o__f_m-button-paste")
     }
     if (z === "extract") {
-        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_extraction"), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>' + lang("theme_xhred_filemanager_successful_extraction"), 5, "info", z + "_info")
     }
     if (z === "chmod") {
-        messenger('<i class="fa fa-lg fa-fw fa-cogs"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_permissions"), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-cogs"></i>' + lang("theme_xhred_filemanager_successful_permissions"), 5, "info", z + "_info")
     }
     if (z === "chown") {
-        messenger('<i class="fa fa-lg fa-fw fa-users"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_ownership"), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-users"></i>' + lang("theme_xhred_filemanager_successful_ownership"), 5, "info", z + "_info")
     }
     if (z === "compress") {
-        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_compression"), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>' + lang("theme_xhred_filemanager_successful_compression"), 5, "info", z + "_info")
     }
     if (z === "rename") {
-        messenger('<i class="fa fa-lg fa-fw fa-i-cursor"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_rename").replace("%from", $('#renameForm input[name="file"]').val()).replace("%to", $('#renameForm input[name="name"]').val()), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-i-cursor"></i>' + lang("theme_xhred_filemanager_successful_rename").replace("%from", $('#renameForm input[name="file"]').val()).replace("%to", $('#renameForm input[name="name"]').val()), 5, "info", z + "_info")
     }
     if (z === "create_folder") {
-        messenger('<i class="fa fa-lg fa-fw fa-folder"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_directory_creation").replace("%value", $('#createFolderForm input[name="name"]').val()), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-folder"></i>' + lang("theme_xhred_filemanager_successful_directory_creation").replace("%value", $('#createFolderForm input[name="name"]').val()), 5, "info", z + "_info")
     }
     if (z === "create_file") {
-        messenger('<i class="fa fa-lg fa-fw fa-file"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_successful_file_creation").replace("%value", $('#createFileForm input[name="name"]').val()), 5, "info", z + "_info")
+        messenger('<i class="fa fa-lg fa-fw fa-file"></i>' + lang("theme_xhred_filemanager_successful_file_creation").replace("%value", $('#createFileForm input[name="name"]').val()), 5, "info", z + "_info")
     }
 }
 
@@ -1323,7 +1323,7 @@ function __f____r(h, o, k, e, n) {
                 messenger_hide("refreshDir_info");
                 j = $.parseHTML(b);
                 if (!$(j[1]).find("table").length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;' + b, 15, "error", "getPath_error");
+                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + b, 15, "error", "getPath_error");
                     __f_____ul();
                     $(".active table .cspinner").remove();
                     if (n) {
@@ -1533,7 +1533,7 @@ function ___f__tw() {
                 dataType: "text",
                 success: function(f) {
                     f_m__bm__c();
-                    messenger('<i class="fa fa-lg fa-fw fa-star-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_unbookmark_success").replace("%value", (d ? d : "/")), 5, "warning", "bookmarkAddRemove")
+                    messenger('<i class="fa fa-lg fa-fw fa-star-o"></i>' + lang("theme_xhred_filemanager_unbookmark_success").replace("%value", (d ? d : "/")), 5, "warning", "bookmarkAddRemove")
                 },
                 error: function(f) {}
             })
@@ -1584,32 +1584,32 @@ function ___f__tw() {
         $("body").on("click", 'li.o__f_m-button-copy:not(".disabled") a', function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-clone"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_copying_selected") + " " + lang("theme_xhred_global_please_wait"), 10, "info", "copy_info");
+            messenger('<i class="fa fa-lg fa-fw fa-clone"></i>' + lang("theme_xhred_filemanager_copying_selected") + " " + lang("theme_xhred_global_please_wait"), 10, "info", "copy_info");
             __f____a("copy", false)
         });
         $("body").on("click", 'li.o__f_m-button-cut:not(".disabled") a', function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-scissors"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_cutting_selected") + " " + lang("theme_xhred_global_please_wait"), 10, "warning", "cut_warning");
+            messenger('<i class="fa fa-lg fa-fw fa-scissors"></i>' + lang("theme_xhred_filemanager_cutting_selected") + " " + lang("theme_xhred_global_please_wait"), 10, "warning", "cut_warning");
             __f____a("cut", false)
         });
         $("body").on("click", 'li.o__f_m-button-paste:not(".disabled") a', function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_pasting_selected") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "paste_info");
+            messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>' + lang("theme_xhred_filemanager_pasting_selected") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "paste_info");
             __f____a("paste", false)
         });
         $("body").on("click", 'a[href^="extract.cgi"]', function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_unpacking_archive") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "extract_info");
+            messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>' + lang("theme_xhred_filemanager_unpacking_archive") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "extract_info");
             __f____a("extract", $(this).attr("href"))
         });
         $("body").find('#removeDialog button[type="button"][onclick="removeSelected()"]').removeAttr("onclick").addClass("_at_filemanager_delete_submit");
         $("body").on("click", "#removeDialog button._at_filemanager_delete_submit", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-trash-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_deleting_selected") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "delete_info");
+            messenger('<i class="fa fa-lg fa-fw fa-trash-o"></i>' + lang("theme_xhred_filemanager_deleting_selected") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "delete_info");
             __f____a("delete", false);
             modal_dismiss()
         });
@@ -1624,7 +1624,7 @@ function ___f__tw() {
         $("body").on("click", "#renameDialog button._at_filemanager_rename_submit", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-i-cursor"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_renaming_selected") + " " + lang("theme_xhred_global_please_wait"), 10, "info", "rename_info");
+            messenger('<i class="fa fa-lg fa-fw fa-i-cursor"></i>' + lang("theme_xhred_filemanager_renaming_selected") + " " + lang("theme_xhred_global_please_wait"), 10, "info", "rename_info");
             __f____a("rename", false)
         });
         $("body").on("submit", "#renameDialog", function(d) {
@@ -1653,7 +1653,7 @@ function ___f__tw() {
         $("body").on("click", "#createFolderDialog button._at_filemanager_create_folder_submit", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-folder"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_creating_directory") + " `<strong>" + $('#createFolderForm input[name="name"]').val() + "</strong>`. " + lang("theme_xhred_global_please_wait") + "", 10, "info", "create_folder_info");
+            messenger('<i class="fa fa-lg fa-fw fa-folder"></i>' + lang("theme_xhred_filemanager_creating_directory") + " `<strong>" + $('#createFolderForm input[name="name"]').val() + "</strong>`. " + lang("theme_xhred_global_please_wait") + "", 10, "info", "create_folder_info");
             __f____a("create_folder", false)
         });
         $("body").on("submit", "#createFolderForm", function(d) {
@@ -1683,7 +1683,7 @@ function ___f__tw() {
         $("body").on("click", "#createFileDialog button._at_filemanager_create_file_submit", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-file"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_creating_file") + " `<strong>" + $('#createFileForm input[name="name"]').val() + "</strong>`. " + lang("theme_xhred_global_please_wait"), 10, "info", "create_file_info");
+            messenger('<i class="fa fa-lg fa-fw fa-file"></i>' + lang("theme_xhred_filemanager_creating_file") + " `<strong>" + $('#createFileForm input[name="name"]').val() + "</strong>`. " + lang("theme_xhred_global_please_wait"), 10, "info", "create_file_info");
             __f____a("create_file", false)
         });
         $("body").on("submit", "#createFileForm", function(d) {
@@ -1713,7 +1713,7 @@ function ___f__tw() {
         $("body").on("click", "#downFromUrlDialog button.o__f_m-submitter-url_download", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_downloading_from") + " <strong>" + URI($('#downFromUrlForm input[name="link"]').val()).hostname() + "</strong>. " + lang("theme_xhred_global_please_wait"), 1000000, "info", "url_download_info");
+            messenger('<i class="fa fa-lg fa-fw fa-download"></i>' + lang("theme_xhred_filemanager_downloading_from") + " <strong>" + URI($('#downFromUrlForm input[name="link"]').val()).hostname() + "</strong>. " + lang("theme_xhred_global_please_wait"), 1000000, "info", "url_download_info");
             __f____a("url_download", false)
         });
         $("body").on("submit", "#downFromUrlForm", function(d) {
@@ -1810,7 +1810,7 @@ function ___f__tw() {
         $("body").on("click", "#chmodDialog button.o__f_m-submitter-chmod", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-user"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_setting_permissions").replace("%value", $("#perms").val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chmod_info");
+            messenger('<i class="fa fa-lg fa-fw fa-user"></i>' + lang("theme_xhred_filemanager_setting_permissions").replace("%value", $("#perms").val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chmod_info");
             __f____a("chmod", [$("#perms").val(), $('#chmodForm select[name="applyto"] option:selected').val()])
         });
         $("#chmodDialog").on("shown.bs.modal", function() {
@@ -1820,7 +1820,7 @@ function ___f__tw() {
         $("body").on("click", "#chownDialog button.o__f_m-submitter-chown", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-users"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_changing_ownership").replace("%value", $('#chownForm input[name="owner"]').val() + ":" + $('#chownForm input[name="group"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chown_info");
+            messenger('<i class="fa fa-lg fa-fw fa-users"></i>' + lang("theme_xhred_filemanager_changing_ownership").replace("%value", $('#chownForm input[name="owner"]').val() + ":" + $('#chownForm input[name="group"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chown_info");
             __f____a("chown", [$('#chownForm input[name="owner"]').val(), $('#chownForm input[name="group"]').val(), $('#chownForm input[name="recursive"]').prop("checked")])
         });
         $("#chownDialog").on("shown.bs.modal", function() {
@@ -1853,7 +1853,7 @@ function ___f__tw() {
         $("body").on("click", "#chattrDialog button.o__f_m-submitter-chattr", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-tags"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_changing_attributes").replace("%value", $('#chattrForm input[name="label"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chattr_info");
+            messenger('<i class="fa fa-lg fa-fw fa-tags"></i>' + lang("theme_xhred_filemanager_changing_attributes").replace("%value", $('#chattrForm input[name="label"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chattr_info");
             __f____a("chattr", [$('#chattrForm input[name="label"]').val(), $('#chattrForm input[name="recursive"]').prop("checked")])
         });
         $("#chattrDialog").on("shown.bs.modal", function() {
@@ -1886,7 +1886,7 @@ function ___f__tw() {
         $("body").on("click", "#chconDialog button.o__f_m-submitter-chcon", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-tags"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_changing_secontext").replace("%value", $('#chconForm input[name="label"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chcon_info");
+            messenger('<i class="fa fa-lg fa-fw fa-tags"></i>' + lang("theme_xhred_filemanager_changing_secontext").replace("%value", $('#chconForm input[name="label"]').val()) + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "chcon_info");
             __f____a("chcon", [$('#chconForm input[name="label"]').val(), $('#chconForm input[name="recursive"]').prop("checked")])
         });
         $("#chconDialog").on("shown.bs.modal", function() {
@@ -1966,7 +1966,7 @@ function ___f__tw() {
                     if (!d) {
                         $('select[name="method"]').val("tar");
                         $('select[name="method"] option[value="zip"]').prop("disabled", true);
-                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + (lang("theme_xhred_global_no_such_command").replace("%cmd", "zip")), 15, "error")
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + (lang("theme_xhred_global_no_such_command").replace("%cmd", "zip")), 15, "error")
                     } else {
                         $('select[name="method"] option[value="zip"]').prop("disabled", false)
                     }
@@ -1978,7 +1978,7 @@ function ___f__tw() {
         $("body").on("click", "#compressDialog button.o__f_m-submitter-compress", function(d) {
             d.preventDefault();
             d.stopPropagation();
-            messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_compressing_selected") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "compress_info", 0);
+            messenger('<i class="fa fa-lg fa-fw fa-file-archive-o"></i>' + lang("theme_xhred_filemanager_compressing_selected") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "compress_info", 0);
             __f____a("compress", [$('#compressSelectedForm input[name="filename"]').val(), $('#compressSelectedForm select[name="method"] option:selected').val()])
         });
         $('#compressDialog input[name="filename"]').on("keyup change click input", function(e) {
@@ -2019,7 +2019,7 @@ function ___f__tw() {
         $("body").on("click", ".btn-group.pull-right > button:eq(2)", function(d) {
             var e = URI.parseQuery(URI(t___wi.location).query())["path"];
             __f____r("get", "index.cgi?path=" + (e ? encodeURIComponentSafe(e) : ""), false, 0);
-            messenger('<i class="fa fa-lg fa-fw fa-refresh"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_refreshing") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "refreshDir_info")
+            messenger('<i class="fa fa-lg fa-fw fa-refresh"></i>' + lang("theme_xhred_filemanager_refreshing") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "refreshDir_info")
         });
         setTimeout(function() {
             if (config_portable_module_filemanager_hovered_toolbar != true) {
@@ -2317,7 +2317,7 @@ function ___f__tw() {
             if (t___wi.document.activeElement && $(t___wi.document.activeElement).is('a[href^="edit_file.cgi"]')) {
                 return
             }
-            messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_nothing_is_selected"), 0.75, "warning", "noSelection_warning");
+            messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + lang("theme_xhred_filemanager_nothing_is_selected"), 0.75, "warning", "noSelection_warning");
             return
         }
         if (!d.shiftKey && !d.ctrlKey && !d.altKey && !d.metaKey && !$("#__f__c__m").is(":visible")) {
@@ -2580,7 +2580,7 @@ function ___f__tw() {
                                 p.find('form[action="save_file.cgi"]').submit(function(x) {
                                     x.preventDefault();
                                     x.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_saving_file").replace("%value", G) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileStart");
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", G) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileStart");
                                     $.ajax({
                                         type: "POST",
                                         url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
@@ -2589,14 +2589,14 @@ function ___f__tw() {
                                         success: function(I) {
                                             var J = p.find("._filemanager_file_editor_save .cspinner");
                                             if (!$(I).find("textarea#data").length) {
-                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + $(I).find(".panel-body").html(), 10, "error", "savingFileError");
+                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(I).find(".panel-body").html(), 10, "error", "savingFileError");
                                                 if (J.parent(".btn").index() === 1) {
                                                     modal_dismiss()
                                                 }
                                                 H();
                                                 return
                                             }
-                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_file_saved").replace("%value", G), 1.5, "success", "savingFileDone");
+                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", G), 1.5, "success", "savingFileDone");
                                             H()
                                         },
                                         error: function(I) {}
@@ -2676,7 +2676,7 @@ function ___f__tw() {
                     });
                     __f___cs()
                 } else {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_not_editable"), 0.75, "warning", "notEditableTarget")
+                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + lang("theme_xhred_filemanager_not_editable"), 0.75, "warning", "notEditableTarget")
                 }
             }
         }
@@ -2735,7 +2735,7 @@ function ___f__tw() {
                         $("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a")[0].click();
                         __f___cs()
                     } else {
-                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_not_decompressable"), 0.75, "warning", "notDecompressableTarget")
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + lang("theme_xhred_filemanager_not_decompressable"), 0.75, "warning", "notDecompressableTarget")
                     }
                     return
                 }
@@ -2755,7 +2755,7 @@ function ___f__tw() {
                         $("body .o__f_m-button-copy a").trigger("click");
                         __f___cs()
                     } else {
-                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_no_selection_to_copy"), 0.75, "warning", "nothingSelected")
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + lang("theme_xhred_filemanager_no_selection_to_copy"), 0.75, "warning", "nothingSelected")
                     }
                     return
                 }
@@ -2767,7 +2767,7 @@ function ___f__tw() {
                         $("body .o__f_m-button-paste a").trigger("click");
                         __f___cs()
                     } else {
-                        messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_empty_clipboard"), 0.75, "warning", "emptyClipboard")
+                        messenger('<i class="fa fa-lg fa-fw fa-clipboard"></i>' + lang("theme_xhred_filemanager_empty_clipboard"), 0.75, "warning", "emptyClipboard")
                     }
                     return
                 }
@@ -2779,7 +2779,7 @@ function ___f__tw() {
                         $("body .o__f_m-button-cut a").trigger("click");
                         __f___cs()
                     } else {
-                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_filemanager_no_selection_to_cut"), 0.75, "warning", "nothingSelected")
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + lang("theme_xhred_filemanager_no_selection_to_cut"), 0.75, "warning", "nothingSelected")
                     }
                     return
                 }

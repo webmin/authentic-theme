@@ -3771,7 +3771,7 @@ if (is__m("changepass") || is__mf("server-manager", "edit_pass.cgi") || is__mf("
             $(".tmp-clipboard-obj").trigger("click");
             $(".tmp-clipboard-obj").remove();
             b.destroy();
-            messenger('<i class="fa fa-lg fa-fw fa-key-plus"></i>&nbsp;&nbsp;&nbsp;' + lang("theme_xhred_password_generator_new_success").replace("%password", '&nbsp;<code class="vertical-align-middle">' + a + "</code>&nbsp;"), 10, "success", "newGeneratedPassword")
+            messenger('<i class="fa fa-lg fa-fw fa-key-plus"></i>' + lang("theme_xhred_password_generator_new_success").replace("%password", '&nbsp;<code class="vertical-align-middle">' + a + "</code>&nbsp;"), 10, "success", "newGeneratedPassword")
         })
     }, 0)
 }
