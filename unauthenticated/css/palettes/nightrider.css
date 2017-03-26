@@ -1004,8 +1004,16 @@ html[data-background-style='nightRider'] .badge.fa.fa-github {
     background-color: rgba(28, 28, 28, .73)
 }
 
+html[data-background-style='nightRider'] .badge.fa.fa-github:hover {
+    background-color: rgba(230, 230, 230, .08)
+}
+
 html[data-background-style='nightRider'] .badge.background-info.fa.fa-twitter {
     color: rgba(255, 255, 255, .58)
+}
+
+html[data-background-style='nightRider'] .badge.background-info.fa.fa-twitter:hover {
+    background-color: rgba(78, 212, 251, 0.4)
 }
 
 html[data-background-style='nightRider'] a.label,

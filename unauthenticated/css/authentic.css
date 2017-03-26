@@ -9011,6 +9011,14 @@ form input[style*='height: 28px']+.btn:not(.heighter-34-force) span,
     font-size: 11px
 }
 
+.badge.fa.fa-github:hover {
+    background-color: rgba(22, 22, 22, .73)
+}
+
+.badge.background-info.fa.fa-twitter:hover {
+    background-color: #4193aa
+}
+
 .panel-title {
     line-height: 16px;
     margin-top: -1px;
@@ -9929,9 +9937,21 @@ screen and (max-height:600px) {
     margin: -1px
 }
 
+.modal-dialog-update .version_separator {
+    float: right;
+    font-size: 10px;
+    display: inline-block;
+    margin-top: -14px
+}
+
+.modal-dialog-update .version_separator+hr {
+    margin-top: 13px;
+    margin-bottom: 10px
+}
+
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 650px;
+        width: 680px;
         margin: 30px auto
     }
 }

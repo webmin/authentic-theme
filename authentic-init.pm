@@ -1084,6 +1084,23 @@ sub theme_version
     return $sh__ln__c___version;
 }
 
+sub theme_git_version
+{
+  my $git_version = undef;
+  my $git_version_file = $root_directory . "/authentic-theme/version";
+  if (-e $git_version_file) {
+    $git_version = read_file_lines( $git_version_file, 1 );
+    $git_version = $git_version->[0];
+  }
+  return $git_version;
+}
+
+sub get_version
+{
+  my ($version) = @_;
+  return $version =~ /([0-9]+[.][0-9]+)/;
+}
+
 sub get_env
 {
     my ($key) = @_;
