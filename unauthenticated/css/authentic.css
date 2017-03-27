@@ -4039,7 +4039,7 @@ a.opener_trigger,
     line-height: 1.42857143
 }
 
-.sub_table_container:not(.xcontent-force-no-styling) *:not(a):not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
+html:not([data-background-style='nightRider']) .sub_table_container:not(.xcontent-force-no-styling) *:not(tt):not(a):not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
     color: #333;
     background-color: #fff !important
 }
@@ -4598,7 +4598,7 @@ tr.atshover:hover td.atscontent span {
 .row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6,
 .row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 {
     display: inline !important;
-    margin-left: -30px
+    margin-left: -31px
 }
 
 .row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:before,
@@ -4610,7 +4610,7 @@ tr.atshover:hover td.atscontent span {
 
 .row.icons-row.inline-row div.small-icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after,
 .row.icons-row.inline-row div.icons-container>span.hidden-forged.hidden-forged-6 .awcheckbox label:after {
-    left: -3px
+    left: -2px
 }
 
 .row.icons-row.inline-row .small-icons-container:not(.forged-xx-skip) img,
@@ -9596,14 +9596,14 @@ body .mppopup .modal-body .table tr.noresults {
     background-color: #f7f7f7
 }
 
-body .mppopup .modal-body .table tr td a {
-    color: #333
-}
-
 body .mppopup .modal-body .table tr td a[onclick*='select']:hover,
 body .mppopup .modal-body .table tr td a[onclick*='parentdir']:hover,
 body .mppopup .modal-body .table tr td a[onclick*='fileclick'][onclick*=', 1']:hover {
     color: #1d599d
+}
+
+body .mppopup button[data-mppopup_confirm] {
+    line-height: 22px !important
 }
 
 body .mppopup .modal-body .table tr td {
@@ -9649,6 +9649,7 @@ body .mppopup .modal-header .mppopup_filter {
     padding: 0
 }
 
+body .mppopup .modal-footer input[data-mppopup_value],
 body .mppopup .modal-header .mppopup_filter input {
     font-size: 12px;
     display: inline;
@@ -9657,6 +9658,10 @@ body .mppopup .modal-header .mppopup_filter input {
     padding-top: 0;
     padding-bottom: 0;
     vertical-align: middle !important
+}
+
+body .mppopup .modal-footer input[data-mppopup_value] {
+    width: 100%
 }
 
 body .mppopup .breadcrumbx {

@@ -1127,7 +1127,7 @@ html[data-module='csf'][data-background-style='nightRider'] .csf tbody tr th {
 
 html[data-module='csf'][data-background-style='nightRider'] #home>form:nth-child(1)>table>thead>tr>th,
 html[data-module='csf'][data-background-style='nightRider'] .panel._devcon .panel-heading {
-    border-bottom-color: #252729 !important
+    border-bottom: 1px solid #252729 !important
 }
 
 body>div>div>div.panel-body>div:nth-child(2)>div>div.panel-heading,
@@ -1149,7 +1149,7 @@ html[data-post='viewlogs'][data-background-style='nightRider'] .table.table-stri
 }
 
 html[data-post='viewlogs'][data-background-style='nightRider'] .dataTables_wrapper .table tbody tr.submenu {
-    background-color: #3d353b
+    background-color: #3d353b !important
 }
 
 html[data-post='viewlogs'][data-background-style='nightRider'] table.dataTable {
@@ -1169,4 +1169,29 @@ html[data-post='servercheck'][data-background-style='nightRider'] div[style*="cl
 
 html[data-post=''][data-module='csf'][data-background-style='nightRider'] div#home table tr:nth-child(even) td {
     background-color: #2a2d31 !important
+}
+
+html[data-post='chart'][data-background-style='nightRider'] td {
+    border-color: #252729
+}
+
+html[data-post='chart'][data-background-style='nightRider'] td img {
+    filter: sepia(60%) invert(82%) grayscale(40%) contrast(93%) saturate(3) hue-rotate(330deg);
+    -webkit-filter: sepia(60%) invert(82%) grayscale(40%) contrast(93%) saturate(3) hue-rotate(330deg)
+}
+
+html[data-background-style='nightRider'] .csf .circle.success {
+    background-color: rgba(27, 191, 137, 0.40)
+}
+
+html[data-background-style='nightRider'] .csf .circle.info {
+    background-color: rgba(91, 192, 222, 0.42)
+}
+
+html[data-background-style='nightRider'] .csf .circle.warning {
+    background-color: rgba(173, 112, 27, 0.56)
+}
+
+html[data-background-style='nightRider'] .csf .circle.danger {
+    background-color: rgba(217, 83, 79, 0.57)
 }
