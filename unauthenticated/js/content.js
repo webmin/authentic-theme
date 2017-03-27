@@ -3325,34 +3325,38 @@ if ($hostname == settings_allowed_hostname) {
 }
 var $magic_button_selector = '        body button[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),        body input[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),                body button[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"]    ';
 if ($($magic_button_selector).length) {
-    function magic_popup_run(b) {
-        if ($(".refInputData").is("textarea")) {
-            var a = $(".refInputData");
-            if (a.val()) {
-                a.val(a.val() + "\n" + b.replace(/\/\/+/g, "/"))
-            } else {
-                a.val(b.replace(/\/\/+/g, "/"))
-            }
-        } else {
-            $(".refInputData").val(b.replace(/\/\/+/g, "/"))
-        }
-        $("body .mppopup").modal("hide");
-        var f = $(".refInputData").parent("td").prev("td").find('input[type="radio"]'),
-            e = $(".refInputData").parent("span").prev("span").find('input[type="radio"]'),
-            d = $(".refInputData").prev("span").find('input[type="radio"]'),
-            c = $(".refInputData").prev("select").find('option[value="*"]');
-        if (e.length) {
-            e.trigger("click")
-        } else {
-            if (d.length) {
-                d.trigger("click")
-            } else {
-                if (c.length) {
-                    c.parent("select").val("*").trigger("change")
+    function magic_popup_run(b, f, h) {
+        if (h) {
+            if ($(".refInputData").is("textarea")) {
+                var a = $(".refInputData");
+                if (a.val()) {
+                    a.val(a.val() + "\n" + b.replace(/\/\/+/g, "/"))
                 } else {
-                    f.trigger("click")
+                    a.val(b.replace(/\/\/+/g, "/"))
+                }
+            } else {
+                $(".refInputData").val(b.replace(/\/\/+/g, "/"))
+            }
+            var g = $(".refInputData").parent("td").prev("td").find('input[type="radio"]'),
+                e = $(".refInputData").parent("span").prev("span").find('input[type="radio"]'),
+                d = $(".refInputData").prev("span").find('input[type="radio"]'),
+                c = $(".refInputData").prev("select").find('option[value="*"]');
+            if (e.length) {
+                e.trigger("click")
+            } else {
+                if (d.length) {
+                    d.trigger("click")
+                } else {
+                    if (c.length) {
+                        c.parent("select").val("*").trigger("change")
+                    } else {
+                        g.trigger("click")
+                    }
                 }
             }
+        }
+        if (f) {
+            $("body .mppopup").modal("hide")
         }
     }
 
@@ -3390,7 +3394,7 @@ if ($($magic_button_selector).length) {
     }
 
     function select(a, b) {
-        magic_popup_run(a);
+        $data_mppopup_value.val(a);
         return false
     }
 
@@ -3492,17 +3496,21 @@ if ($($magic_button_selector).length) {
     var DELAY = 240,
         clicks = 0,
         timer = null;
+    $("body").on("dblclick", '.mppopup a[onclick*="select("]', function(b) {
+        $(".mppopup button[data-mppopup_confirm]").trigger("click")
+    });
     $("body").on("click", '.mppopup a[onclick*="fileclick("], .mppopup a[onclick*="parentdir("]', function(b) {
         b.preventDefault();
         b.stopPropagation();
         b.stopImmediatePropagation();
         clicks++;
+        $data_mppopup_value.val($v__mpp__g_ol);
         if (clicks === 1) {
             timer = setTimeout(function() {
                 clicks = 0;
                 typeof $v__mpp__g_gp == "undefined" ? $v__mpp__g_gp = 0 : 0;
                 if (!$v__mpp__g_gp) {
-                    magic_popup_run($v__mpp__g_ol)
+                    magic_popup_run($v__mpp__g_ol, 0, 0)
                 } else {
                     var a = mppopup_extract_chooser_link($v__mpp__g_op);
                     mppopup_extract_chooser(a)
@@ -3516,12 +3524,16 @@ if ($($magic_button_selector).length) {
                 var c = mppopup_extract_chooser_link($v__mpp__g_op);
                 mppopup_extract_chooser(c)
             } else {
-                magic_popup_run($v__mpp__g_ol)
+                magic_popup_run($v__mpp__g_ol, 1, 1)
             }
         }
     });
+    $("body").on("click", ".mppopup button[data-mppopup_confirm]", function() {
+        magic_popup_run($data_mppopup_value.val(), 1, 1)
+    });
     $("body").on("show.bs.modal", ".mppopup", function() {
         v__mpp__ml_t__e = 0;
+        $data_mppopup_value = $(".mppopup input[data-mppopup_value]");
         $('.mppopup input[data-role="tagsinput"]').tagsinput({
             onTagExists: function(b, a) {
                 a.hide().fadeIn();
@@ -3553,23 +3565,21 @@ if ($($magic_button_selector).length) {
     });
     $("body").on("keyup", ".mppopup_filter_input", function(c) {
         var d = c.which,
-            i = $(".mppopup table tbody tr:visible"),
-            f = i.find("td:first-child a");
-        if (d == 13 && i.length === 1 && !c.shiftKey) {
-            f.trigger("click");
-            typeof $v__mpp__g_olt == "undefined" ? $v__mpp__g_olt = 1 : 0;
-            if ($v__mpp__g_olt) {
-                setTimeout(function() {
-                    f.trigger("click")
-                }, 200)
-            }
+            j = $(".mppopup table tbody tr:visible"),
+            g = j.find("td:first-child a"),
+            e = $(".mppopup .breadcrumbx").length;
+        if (e) {
+            return
+        }
+        if (d == 13 && j.length === 1 && !c.shiftKey) {
+            g.trigger("click")
         } else {
-            if (d == 13 && i.length === 1 && c.shiftKey) {
-                f.trigger("click");
-                var e = $(".mppopup .mppopup_multi_done:visible");
-                if (e.length) {
+            if (d == 13 && j.length === 1 && c.shiftKey) {
+                g.trigger("click").trigger("dblclick");
+                var f = $(".mppopup .mppopup_multi_done:visible");
+                if (f.length) {
                     setTimeout(function() {
-                        e.trigger("click")
+                        f.trigger("click")
                     }, 240)
                 }
             }
@@ -3577,12 +3587,12 @@ if ($($magic_button_selector).length) {
         if (!$(".mppopup table tbody tr.noresults").length) {
             $(".mppopup table tbody").append('<tr class="hidden noresults"><td class="text-center" colspan="' + $(".mppopup table tbody tr:first-child td").length + '">' + lang("theme_xhred_global_no_results_found") + "</td></tr>")
         }
-        var h = $(".mppopup table tbody tr:visible:not(.noresults)"),
-            g = $(".mppopup table tbody tr.noresults");
-        if (h.length) {
-            g.addClass("hidden")
+        var i = $(".mppopup table tbody tr:visible:not(.noresults)"),
+            h = $(".mppopup table tbody tr.noresults");
+        if (i.length) {
+            h.addClass("hidden")
         } else {
-            g.removeClass("hidden")
+            h.removeClass("hidden")
         }
     });
 
@@ -3623,8 +3633,14 @@ if ($($magic_button_selector).length) {
             var d = j[1].replace("encodeURIComponent(ifield.value)", "refInputCurrValSafe");
             d = d.replace('"+"', "").replace('"+', "").replace("refInputCurrValSafe", f);
 
-            function k(p, o, n, m, q) {
-                var l = '                      <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                        <div class="modal-dialog" role="document">                        <div class="modal-content">                          <div class="modal-header">                            <button type="button" class="close" data-dismiss="modal" aria-label="' + lang("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                            <h4 class="modal-title">                              <div class="mppopup_filter">                                <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + lang("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                              </div>                            </h4>                          </div>                          <div class="modal-body ' + e + '">                            ' + p + '                          </div>                          <div class="modal-footer' + (q ? "" : " hidden") + '">                            <div class="input-group">                              <input data-role="tagsinput" class="form-control ui_textbox" type="text" value="' + (c ? (c.replace(/ /g, ",")) : "") + '">                              <span class="input-group-btn mppopup_multi_done">                              <button type="button" class="btn btn-inverse heighter-28"><i class="fa fa-circle-check"></i></button>                              </span>                            </div>                          </div>                        </div>                      </div>                    </div>                ';
+            function k(q, p, o, n, r) {
+                var m;
+                if (r) {
+                    m = '                  <div class="modal-footer">                    <div class="input-group">                      <input data-role="tagsinput" class="form-control ui_textbox" type="text" value="' + (c ? (c.replace(/ /g, ",")) : "") + '">                      <span class="input-group-btn mppopup_multi_done">                        <button type="button" class="btn btn-success heighter-28"><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + lang("theme_xhred_global_choose") + "</button>                      </span>                    </div>                  </div>"
+                } else {
+                    m = '                  <div class="modal-footer">                    <div class="input-group">                      <input class="form-control ui_textbox" data-mppopup_value type="text" value="' + c + '">                      <span class="input-group-btn mppopup_string_done">                        <button type="button" class="btn btn-success heighter-28" data-mppopup_confirm><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + lang("theme_xhred_global_choose") + "</button>                      </span>                    </div>                  </div>"
+                }
+                var l = '                      <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                        <div class="modal-dialog" role="document">                        <div class="modal-content">                          <div class="modal-header">                            <button type="button" class="close" data-dismiss="modal" aria-label="' + lang("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                            <h4 class="modal-title">                              <div class="mppopup_filter">                                <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + lang("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                              </div>                            </h4>                          </div>                          <div class="modal-body ' + e + '">                            ' + q + "                          </div>                            " + m + "                        </div>                      </div>                    </div>                ";
                 $("body").append(l);
                 refInput.addClass("refInputData");
                 $("body .mppopup").modal("show")

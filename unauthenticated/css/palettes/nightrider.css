@@ -362,7 +362,7 @@ html[data-background-style='nightRider'] table.dataTable {
 
 html[data-background-style='nightRider'] .bootstrap-tagsinput {
     border: 1px solid #e0e0e0;
-    background-color: #3c3d42
+    background-color: #2f3237
 }
 
 html[data-background-style='nightRider'] .bootstrap-tagsinput>input {
@@ -934,7 +934,7 @@ html[data-background-style='nightRider'] .modal-content {
 }
 
 html[data-background-style='nightRider'] .modal-footer {
-    border-top: 1px solid #4d5057
+    border-top: 1px solid #35363b
 }
 
 html[data-background-style='nightRider'] .close {
