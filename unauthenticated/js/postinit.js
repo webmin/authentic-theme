@@ -1271,6 +1271,17 @@ function __is_same_origin(b) {
     }
 }
 
+function at__s_s__b(c) {
+    var a = $("#atsave, #save_user");
+    if (c) {
+        $("body").attr("data-unload-warning", "1");
+        a.addClass("btn-warning")
+    } else {
+        $("body").removeAttr("data-unload-warning");
+        a.removeClass("btn-warning")
+    }
+}
+
 function settings_update() {
     $.each(t__wi_p.$('iframe[name="page"]').contents().find("#atsettings .ui_form").serializeArray(), function(d, e) {
         if (e.value == "true" || e.value == "false") {
