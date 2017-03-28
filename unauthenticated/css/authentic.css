@@ -4040,7 +4040,7 @@ a.opener_trigger,
     line-height: 1.42857143
 }
 
-html:not([data-background-style='nightRider']) .sub_table_container:not(.xcontent-force-no-styling) *:not(tt):not(a):not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
+html:not([data-background-style='nightRider']) .sub_table_container:not(.xcontent-force-no-styling) *:not(em):not(tt):not(a):not(.popover):not(.popover-title):not(.popover-content):not(.close-popover-trigger):not(.arrow):not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th):not(textarea):not(select):not(.opener_table_cell_style_small):not(.link_hover_effect) {
     color: #333;
     background-color: #fff !important
 }

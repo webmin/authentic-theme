@@ -740,21 +740,33 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
     if ($source_path == $_____link + "settings-user.cgi") {
         t__wi_p.__cms()
     }
-    $("body").on("change", "select, input", function() {
-        var a = $(this).val();
-        if (a == "true" || a == "false") {
-            if (a == "true") {
-                var b = true
+    $("body").on("change", "select, input", function(a) {
+        var b = $(this).val();
+        if (b == "true" || b == "false") {
+            if (b == "true") {
+                var d = true
             } else {
-                if (a == "false") {
-                    var b = false
+                if (b == "false") {
+                    var d = false
                 }
             }
         } else {
-            var b = a
+            var d = b
         }
-        window[$(this).attr("name")] = b;
-        t__wi_p[$(this).attr("name")] = b
+        window[$(this).attr("name")] = d;
+        t__wi_p[$(this).attr("name")] = d;
+        if (a.originalEvent !== undefined) {
+            if ((t__wi_p.$___________initial && $__source_file !== "settings-user.cgi")) {
+                t__wi_p.$___________initial = 0
+            } else {
+                at__s_s__b(1)
+            }
+        }
+    });
+    $("body").on("keydown", "input", function(a) {
+        if (a.originalEvent !== undefined) {
+            at__s_s__b(1)
+        }
     });
     if ($source_path == $_____link + "settings-user.cgi") {
         $('button[type="button"][name="save_user"]').on("click", function(a) {
@@ -974,7 +986,9 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                             t__wi_p.$(".right-side-tab-notification-asterix").removeClass("invisible hidden hidden-forged");
                             t__wi_p.$(".right-side-tabs-toggler .badge.badge-danger").removeClass("invisible hidden hidden-forged");
                             setTimeout(function() {
-                                t__wi_p.n___fv()
+                                if (typeof t__wi_p.n___fv === "function") {
+                                    t__wi_p.n___fv()
+                                }
                             }, 300)
                         }
                     } else {
@@ -1121,7 +1135,8 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                 data: c.parents("form").serialize(),
                 dataType: "text",
                 success: function(a) {
-                    t__wi_p.f__l_reload()
+                    t__wi_p.f__l_reload();
+                    at__s_s__b(0)
                 },
                 error: function() {
                     c.addClass("btn-danger").removeClass("btn-success btn-inverse opacity-0_5")
@@ -3818,8 +3833,13 @@ t___wi.onbeforeunload = function(b) {
     }
     t___wi.parent.$___________right = 0;
     t__wi_p.__lrs();
+    if ($('body[data-unload-warning="1"]').length && $("#atsave, #save_user").length) {
+        $("#atsave, #save_user")[0].scrollIntoView()
+    }
     if ($('body[data-unload-warning="1"]').length || $('button[type="button"]:not(.ui_form_end_submit)').attr("data-form-onbeforeunload") == 1 || $('button[type="submit"]:not(.ui_form_end_submit)').attr("data-form-onbeforeunload") == 1 || $("body").find("._filemanager_file_editor_save.text-danger").length) {
-        t__wi_p.NProgress.done();
+        if (typeof t__wi_p.NProgress === "object") {
+            t__wi_p.NProgress.done()
+        }
         return (!$('[data-form-onbeforeunload-tabledata="1"]').length ? lang("theme_xhred_filemanager_file_edit_but_not_saved") : lang("theme_xhred_database_edit_but_not_saved")) + "\n\n" + lang("theme_xhred_filemanager_file_edit_but_not_saved_what_to_do")
     }
 };

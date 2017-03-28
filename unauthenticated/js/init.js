@@ -12,6 +12,7 @@ t__wi_p.$___________right = 0;
 t__wi_p.$____shelling__ = 0;
 t__wi_p.$____loader_block__ = 0;
 t__wi_p.$____cm__has_init__ = 0;
+t__wi_p.$____has_frame__ = (!!t__wi_p.$("aside").length ? 1 : 0);
 const $t_av__session = $("html").data("session"),
     $t_av__script_name = $("html").data("script-name").replace(/^\//g, ""),
     $hostname = $("html").data("hostname"),
@@ -315,7 +316,11 @@ function manageConfig(d) {
                 url: $_____link_full + "/index.cgi?xhr-manage-config=1&save=1",
                 data: a,
                 dataType: "text",
-                success: function(f) {},
+                success: function(f) {
+                    setTimeout(function() {
+                        t__wi_p.$____has_frame__ ? t___wi.page.at__s_s__b(0) : at__s_s__b(0)
+                    }, 400)
+                },
                 error: function() {}
             })
         }, 300)
