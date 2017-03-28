@@ -1178,7 +1178,8 @@ html[data-slider-fixed='1'] {
 }
 
 .right-side-tabs.right-side-tabs-fixed {
-    right: 0
+    right: 0;
+    z-index: -1
 }
 
 .right-side-tabs .nav .tab-content .tab-pane .list-groups {
