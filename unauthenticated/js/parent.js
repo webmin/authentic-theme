@@ -227,6 +227,9 @@ function __si__bg_upd_exec() {
                     setTimeout(function() {
                         if (localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") || localStorage.getItem($hostname + "-sysinfo_mem_percent_stats") || localStorage.getItem($hostname + "-sysinfo_virt_percent_stats") || localStorage.getItem($hostname + "-sysinfo_disk_percent_stats")) {
                             if ($("#right-side-tabs-sysinfo .graph-container").length) {
+                                var v = !localStorage.getItem($hostname + "-sysinfo_" + l + "_stats"),
+                                    u = $(".info-container .graph-container." + l + "");
+                                v ? u.addClass("hidden").prev("br").addClass("hidden") : u.removeClass("hidden").prev("br").removeClass("hidden");
                                 if (l == "cpu_percent") {
                                     $("#right-side-tabs-sysinfo .graph-container." + l + " .description").attr("title", localStorage.getItem($hostname + "-sysinfo_load")).text("" + lang("theme_xhred_global_cpu_load") + ": " + localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") + "% (" + localStorage.getItem($hostname + "-sysinfo_load") + ")");
                                     $("#right-side-tabs-sysinfo .graph-container." + l + " .bar").attr("style", "width:" + localStorage.getItem($hostname + "-sysinfo_cpu_percent_stats") + "%")
@@ -250,32 +253,32 @@ function __si__bg_upd_exec() {
                             $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"]').html($(n).html($(n).html().split(",")[0])[0].outerHTML)
                         }
                         if (l == "local_time" && settings_window_replace_timestamps) {
-                            var v = $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"] a');
-                            if (v && v.length) {
-                                v.html(v.next("span").detach())
+                            var x = $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"] a');
+                            if (x && x.length) {
+                                x.html(x.next("span").detach())
                             }
                             var t = t__wi_p.$(".info-container").find("span[data-convertible-timestamp-full]"),
-                                u = t.attr("data-convertible-timestamp-full");
-                            t.html(moment.unix(u).format(settings_window_replaced_timestamp_format_full))
+                                w = t.attr("data-convertible-timestamp-full");
+                            t.html(moment.unix(w).format(settings_window_replaced_timestamp_format_full))
                         }
                         if (l == "cpu_temperature") {
                             var q = 0;
-                            $.each($(n).filter(".badge-cpustatus"), function(z, A) {
-                                var y = parseInt($(this).text().split(":")[1]),
-                                    B = (y <= 30 ? "--bg-info" : (y > 30 && y <= 60 ? "--bg-success" : (y > 60 && y <= 80) ? "bg-warning" : (y > 80) ? "bg-danger" : "")),
-                                    C = $(this).text().indexOf("°C") > -1;
-                                if (!C) {
-                                    B = (y <= 86 ? "--bg-info" : (y > 86 && y <= 140 ? "--bg-success" : (y > 140 && y <= 176) ? "bg-warning" : (y > 176) ? "bg-danger" : ""))
+                            $.each($(n).filter(".badge-cpustatus"), function(B, C) {
+                                var A = parseInt($(this).text().split(":")[1]),
+                                    D = (A <= 30 ? "--bg-info" : (A > 30 && A <= 60 ? "--bg-success" : (A > 60 && A <= 80) ? "bg-warning" : (A > 80) ? "bg-danger" : "")),
+                                    E = $(this).text().indexOf("°C") > -1;
+                                if (!E) {
+                                    D = (A <= 86 ? "--bg-info" : (A > 86 && A <= 140 ? "--bg-success" : (A > 140 && A <= 176) ? "bg-warning" : (A > 176) ? "bg-danger" : ""))
                                 }
-                                if (B == "bg-warning" || B == "bg-danger") {
+                                if (D == "bg-warning" || D == "bg-danger") {
                                     q = 1
                                 }
                                 if (!$("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus").length) {
                                     $('strong[data-stats="cpu"] + br[data-stats="cpu"]').after(n.replace(/<br>|&nbsp;/gi, ""))
                                 }
-                                $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[z]).html($(this).text()).removeClass((function(D, E) {
-                                    return (E.match(/(^|\s)bg-\S+/g) || []).join(" ")
-                                })).addClass(B)
+                                $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[B]).html($(this).text()).removeClass((function(F, G) {
+                                    return (G.match(/(^|\s)bg-\S+/g) || []).join(" ")
+                                })).addClass(D)
                             }).promise().done(function() {
                                 if (q) {
                                     $('[data-stats="cpu"]').removeClass("hidden")
@@ -286,22 +289,22 @@ function __si__bg_upd_exec() {
                         }
                         if (l == "hdd_temperature") {
                             var r = 0;
-                            $.each($(n), function(z, A) {
-                                var y = parseInt($(this).text().split(":")[1]),
-                                    B = (y <= 30 ? "--bg-info" : (y > 30 && y <= 60 ? "--bg-success" : (y > 60 && y <= 80) ? "bg-warning" : (y > 80) ? "bg-danger" : "")),
-                                    C = $(this).text().indexOf("°C") > -1;
-                                if (!C) {
-                                    B = (y <= 86 ? "--bg-info" : (y > 86 && y <= 140 ? "--bg-success" : (y > 140 && y <= 176) ? "bg-warning" : (y > 176) ? "bg-danger" : ""))
+                            $.each($(n), function(B, C) {
+                                var A = parseInt($(this).text().split(":")[1]),
+                                    D = (A <= 30 ? "--bg-info" : (A > 30 && A <= 60 ? "--bg-success" : (A > 60 && A <= 80) ? "bg-warning" : (A > 80) ? "bg-danger" : "")),
+                                    E = $(this).text().indexOf("°C") > -1;
+                                if (!E) {
+                                    D = (A <= 86 ? "--bg-info" : (A > 86 && A <= 140 ? "--bg-success" : (A > 140 && A <= 176) ? "bg-warning" : (A > 176) ? "bg-danger" : ""))
                                 }
-                                if (B == "bg-warning" || B == "bg-danger") {
+                                if (D == "bg-warning" || D == "bg-danger") {
                                     r = 1
                                 }
                                 if (!$("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)").length) {
                                     $('strong[data-stats="drive"] + br[data-stats="drive"]').after(n.replace(/<br>|&nbsp;/gi, ""))
                                 }
-                                $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[z]).html($(this).text()).removeClass((function(D, E) {
-                                    return (E.match(/(^|\s)bg-\S+/g) || []).join(" ")
-                                })).addClass(B)
+                                $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[B]).html($(this).text()).removeClass((function(F, G) {
+                                    return (G.match(/(^|\s)bg-\S+/g) || []).join(" ")
+                                })).addClass(D)
                             }).promise().done(function() {
                                 if (r) {
                                     $('[data-stats="drive"]').removeClass("hidden")
@@ -311,11 +314,11 @@ function __si__bg_upd_exec() {
                             })
                         }
                         if (l == "uptime" || l == "running_proc") {
-                            var v = $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"] a');
-                            if (v && v.length) {
-                                var s = v.parent(),
-                                    x = s.text();
-                                s.html(v.text(x))
+                            var x = $('#right-side-tabs .info-container .info-list-data span[data-data="' + l + '"] a');
+                            if (x && x.length) {
+                                var s = x.parent(),
+                                    z = s.text();
+                                s.html(x.text(z))
                             }
                         }
                         if (l == "warning_si") {
@@ -325,28 +328,28 @@ function __si__bg_upd_exec() {
                         }
                         if (l == "extended_si") {
                             var p = $("#right-side-tabs .info-container .extended-list-data");
-                            var w = (n.replace(/aria-expanded="true"/gi, 'aria-expanded="false"').replace(/collapse in/gi, "collapse"));
+                            var y = (n.replace(/aria-expanded="true"/gi, 'aria-expanded="false"').replace(/collapse in/gi, "collapse"));
                             opened_tabs = $("#extended_sysinfo .panel .in").map(function() {
-                                w = (w.replace('data-toggle="collapse" href="#' + this.id + '" aria-expanded="false" aria-controls="' + this.id + '"', 'data-toggle="collapse" href="#' + this.id + '" aria-expanded="true" aria-controls="' + this.id + '"'));
-                                w = (w.replace('div id="' + this.id + '" class="panel-collapse collapse"', 'div id="' + this.id + '" class="panel-collapse collapse in"'))
+                                y = (y.replace('data-toggle="collapse" href="#' + this.id + '" aria-expanded="false" aria-controls="' + this.id + '"', 'data-toggle="collapse" href="#' + this.id + '" aria-expanded="true" aria-controls="' + this.id + '"'));
+                                y = (y.replace('div id="' + this.id + '" class="panel-collapse collapse"', 'div id="' + this.id + '" class="panel-collapse collapse in"'))
                             }).promise().done(function() {
-                                p.html('<div style="height: 11px"></div>' + w);
-                                var y = $("#right-side-tabs .extended-list-data");
-                                y.find("div.panel-heading:not(#status_services-status):not(#status-virtual-server):not(#acl_logins-acl):not(#sysinfo-virtual-server):not(#quota-virtual-server):not(#bw-virtual-server)").parent().remove();
-                                $.each(y.find("div.panel-heading .panel-title"), function() {
-                                    var A = $(this).find("a"),
-                                        z = $(this).find("a").attr("aria-expanded") != "true" ? 1 : 0,
-                                        B = (z ? "+" : "—");
-                                    $(this).append('<span class="pull-right panel-title-status' + (z ? " margined-right-2" : "") + '">' + B + "</span>");
-                                    A.text(upperFirst($.trim(A.text())))
+                                p.html('<div style="height: 11px"></div>' + y);
+                                var A = $("#right-side-tabs .extended-list-data");
+                                A.find("div.panel-heading:not(#status_services-status):not(#status-virtual-server):not(#acl_logins-acl):not(#sysinfo-virtual-server):not(#quota-virtual-server):not(#bw-virtual-server)").parent().remove();
+                                $.each(A.find("div.panel-heading .panel-title"), function() {
+                                    var C = $(this).find("a"),
+                                        B = $(this).find("a").attr("aria-expanded") != "true" ? 1 : 0,
+                                        D = (B ? "+" : "—");
+                                    $(this).append('<span class="pull-right panel-title-status' + (B ? " margined-right-2" : "") + '">' + D + "</span>");
+                                    C.text(upperFirst($.trim(C.text())))
                                 });
-                                y.find(".panel.panel-default").detach().appendTo("#right-side-tabs #extended_sysinfo");
-                                y.find("div.panel-body").find("img").remove();
-                                y.find("a").attr("target", "page");
-                                y.find('input[type="submit"]').addClass("btn btn-default btn-xs");
-                                y.find('input[type="submit"]').parents("form").attr("formtarget", "page");
-                                y.find('button[type="button"].ui_submit').addClass("btn btn-default btn-xs");
-                                y.find('button[type="button"].ui_submit').parents("form").attr("formtarget", "page");
+                                A.find(".panel.panel-default").detach().appendTo("#right-side-tabs #extended_sysinfo");
+                                A.find("div.panel-body").find("img").remove();
+                                A.find("a").attr("target", "page");
+                                A.find('input[type="submit"]').addClass("btn btn-default btn-xs");
+                                A.find('input[type="submit"]').parents("form").attr("formtarget", "page");
+                                A.find('button[type="button"].ui_submit').addClass("btn btn-default btn-xs");
+                                A.find('button[type="button"].ui_submit').parents("form").attr("formtarget", "page");
                                 $("#extended_sysinfo .panel").on("show.bs.collapse", function() {
                                     $(this).find(".panel-title-status").removeClass("margined-right-2").text("—")
                                 }).on("hide.bs.collapse", function() {
