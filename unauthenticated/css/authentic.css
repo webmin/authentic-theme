@@ -10303,3 +10303,15 @@ html[data-background-style='nightRider'] #sidebar ul.user-links li:not(.menu-con
 html[data-background-style='nightRider'] .info-container .graph-container>.graph>.description {
     color: #222
 }
+
+@media screen and (-ms-high-contrast:active),
+(-ms-high-contrast:none) {
+    .panel .panel-heading .panel-title a:before,
+    td .opener_trigger[id]:before,
+    .panel .panel-heading .panel-title a[aria-expanded='true']:before,
+    td .opener_trigger.opener_container_opened[id]:before,
+    a.opener_extra_container_a_style:before,
+    a.opener_extra_container_a_style.opener_container_opened:before {
+        display: none
+    }
+}
