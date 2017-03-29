@@ -110,6 +110,25 @@ if (typeof localStorage === "object") {
         $_v__ls__a = 0
     }
 }
+if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function(c, b) {
+        var a = this.toString();
+        if (typeof b !== "number" || !isFinite(b) || Math.floor(b) !== b || b > a.length) {
+            b = a.length
+        }
+        b -= c.length;
+        var d = a.lastIndexOf(c, b);
+        return d !== -1 && d === b
+    }
+}
+if (!String.prototype.startsWith) {
+    if (!String.prototype.startsWith) {
+        String.prototype.startsWith = function(b, a) {
+            a = a || 0;
+            return this.indexOf(b, a) === a
+        }
+    }
+}
 $_v__ls__a ? _v__ls__a = "" : _v__ls__a = " hidden";
 
 function n___p__f(b) {
