@@ -1182,7 +1182,9 @@ function __f___upd___cr(d, c) {
     $.each($(d), function(e, f) {
         a = a + (f != "" ? "/" + f : "");
         if (f != "") {
-            b.find(".breadcrumb").append('<li><a href="index.cgi?path=' + encodeURIComponentSafe(a) + '">' + f + ' <i data-path="' + encodeURIComponentSafe(a.replace(f, "")) + '" class="fa fa-fw fa-lg fa-caret-right"></i></a></li>')
+            var h = ' <i data-path="' + encodeURIComponentSafe(a.replace(f, "")) + '" class="fa fa-fw fa-lg fa-caret-right"></i>';
+            (access_level() == 3 && a.indexOf($g__user__home + "/") === -1 ? h = "" : false);
+            b.find(".breadcrumb").append('<li><a href="index.cgi?path=' + encodeURIComponentSafe(a) + '">' + f + h + "</a></li>")
         }
     }).promise().done(function() {
         if (!$.isEmptyObject(c)) {
@@ -1323,7 +1325,11 @@ function __f____r(h, o, k, e, n) {
                 messenger_hide("refreshDir_info");
                 j = $.parseHTML(b);
                 if (!$(j[1]).find("table").length) {
-                    messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + b, 15, "error", "getPath_error");
+                    if ($(j[10]).is("h3") && access_level() == 3) {
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + $(j[10]).text().replace(" :", ":").replace(" ,", ","), 15, "error", "getPath_error")
+                    } else {
+                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-circle"></i>' + b, 15, "error", "getPath_error")
+                    }
                     __f_____ul();
                     $(".active table .cspinner").remove();
                     if (n) {
@@ -1338,7 +1344,7 @@ function __f____r(h, o, k, e, n) {
                 var c = $(j[0]).append(__f___tl_v()).html();
                 m && $(".total").html(c);
                 if (n) {
-                    $('.tab-pane[id="' + n + '"]').data("totalValue", c)
+                    $('.tab-pane[id="tab-' + n + '"]').data("totalValue", c)
                 } else {
                     $(".tab-pane.active form table").data("totalValue", c)
                 }
@@ -1459,9 +1465,11 @@ function ___f__tw() {
                         k.parent("a").next("span[data-tree]").removeClass("hidden");
                         var q = k.parent("a").next("span[data-tree]"),
                             p = $("span[data-tree] i.fa-folder-open-o").parent("a");
-                        q.animate({
-                            scrollTop: p.offset().top - q.offset().top + q.scrollTop()
-                        }, 0)
+                        if (typeof p.offset() != "undefined" && typeof q.offset() != "undefined") {
+                            q.animate({
+                                scrollTop: p.offset().top - q.offset().top + q.scrollTop()
+                            }, 0)
+                        }
                     })
                 },
                 error: function(o) {}

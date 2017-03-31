@@ -2863,6 +2863,10 @@ sub get_xhr_request
             my $path = $in{'xhr-get_list_path'};
             my @dirs;
 
+            if ( $get_user_level eq '2' || $get_user_level eq '4') {
+              $path = get_user_home() . $path;
+            }
+
             opendir( my $dirs, $path );
             while ( my $dir = readdir $dirs ) {
                 next unless -d $path . '/' . $dir;
