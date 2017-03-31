@@ -5339,6 +5339,10 @@ a.no_effect:hover {
     font-size: 75%
 }
 
+.font-style-normal {
+    font-style: normal !important
+}
+
 html:not(.session_login),
 body:not(.session_login) {
     font-size: 13px;
