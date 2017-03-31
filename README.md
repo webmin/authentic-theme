@@ -51,37 +51,19 @@
 
 ###### ![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 20+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 10+
-
+###### ![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 11
 
 ### FAQ
-#### How to install _Authentic_ Theme?
-
-##### Webmin
-
-  To install _Autentic_ Theme from repository, just `clone` it into your wherever _Webmin_ binary folder _(libexec)_ is. After that, you must rename `authentic-theme-master` directory to `authentic-theme` to make the theme work properly. Besides, you could just [download](https://github.com/qooob/authentic-theme/releases/download/18.40/authentic-theme-18.40.wbt.gz) the theme directly and install it using _Webmin_:
-
-  `Webmin->Webmin Configuration->Webmin Themes->Install themes->From uploaded file`
-
-##### Usermin
-  Use the same procedure as described above to install the theme for _Usermin_:
-
-  `Webmin->Usermin Configuration->Usermin Themes->Install themes->From uploaded file`
-
-
-##### Virtualmin/Cloudmin
-There is no need to take any additional actions. In case _Virtualmin_ or/and _Cloudmin_ modules are installed, it will be automatically detected and supported.
-
 #### How to update _Authentic_ Theme manually?
-Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using command line, do the following:
+Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using console, do the following:
   1. Go to _Webmin_ (`cd /usr/libexec/webmin`) or _Usermin_ (`cd /usr/libexec/usermin`) directory __*__
-  2. Move current version of the theme to the temporary directory (`mv authentic-theme /tmp`)
-  3. Get latest version of the theme from the repository  (`git clone https://github.com/qooob/authentic-theme.git`)
+  2. Descend into theme's directory (`cd authentic-theme`)
+  3. Run [`./theme-update.sh`](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
   4. Restart _Webmin_/_Usermin_ after update
-<br>__*__ *Binary folder might be different from `libexec` depending on the system. Run `whereis webmin` to figure out the correct path.*
+<br>__*__ *Binary directory might be different from `libexec` depending on the system. Run `whereis webmin` to figure this out.*
 
 #### How to update _Authentic_ Theme automatically?
-The theme has inbuilt feature to notify an administrative user to install updates. To enable this feature, turn `Check for Authentic Theme updates` on in theme settings.
+The theme has inbuilt feature to notify an administrative user to install updates. To enable this feature, turn on `Check for Authentic Theme updates` in theme settings.
 
 #### How do I customize the theme?
 Theme has configurable options, that are located in `Webmin->Webmin Configuration->Webmin Themes`. There as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.
@@ -104,7 +86,7 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `alphanumeric typing` - quick search
   * `up/down, home/end` - cursor position
   * `enter` - descent into selected directory
-  * `backspace` - previous folder
+  * `backspace` - previous directory
     * in case there is only one row filtered, enter on search field will perform trigger
   * `contextmenu/right-click` - context menu
   * `spacebar` or `Alt+right-click` - select current row
@@ -121,7 +103,7 @@ Theme has great support for this module, by adding numerous mast-have features. 
   * `Ctrl+Esc` - minimize active editor window
   * `F5/Shift+F5` - compress/decompress
   * `F6` - rename
-  * `Shift+F4/F7` - new file/folder
+  * `Shift+F4/F7` - new file/directory
   * `Shift+F7` - search
   * `F8/Del` - delete
   * `F9/F10` - download/upload
