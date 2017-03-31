@@ -1390,7 +1390,7 @@ sub get_sysinfo_vars
                 $msg = $Atext{'body_upok'};
             }
             if ( &foreign_available("package-updates") ) {
-                $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger\'> $1 <\/i>"/eg;
+                $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger font-style-normal\'> $1 <\/i>"/eg;
                 $package_message =
                     '<a href="'
                   . $gconfig{'webprefix'}
