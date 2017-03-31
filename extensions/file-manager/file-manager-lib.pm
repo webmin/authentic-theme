@@ -49,6 +49,17 @@ sub get_libs
 
 }
 
+sub get_type
+{
+    my ($dir) = @_;
+    if ( -d $dir ) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
 sub get_errors
 {
     my %errors = %{ $_[0] };

@@ -71,7 +71,8 @@ html[data-background-style='nightRider'] .input-group-addon {
 }
 
 html[data-background-style='nightRider'] body .mppopup .modal-body .table tr td img {
-    filter: saturate(.9) brightness(0.8) contrast(.7)
+    filter: saturate(.9) brightness(0.8) contrast(.7);
+    -webkit-filter: saturate(.9) brightness(0.8) contrast(.7)
 }
 
 html[data-background-style='nightRider'] .breadcrumbx {
@@ -508,7 +509,8 @@ html[data-background-style='nightRider'] .breadcrumb>li+li:before {
 }
 
 html[data-background-style='nightRider'] .file-manager .table-striped>tbody>tr td:nth-child(2) img {
-    filter: saturate(.6) brightness(1.2) contrast(.6)
+    filter: saturate(.6) brightness(1.2) contrast(.6);
+    -webkit-filter: saturate(.6) brightness(1.2) contrast(.6)
 }
 
 html[data-background-style='nightRider'] .file-manager .tabs-top>.nav-tabs {
@@ -1571,11 +1573,13 @@ html[data-background-style='nightRider'] div.container-fluid.col-lg-10.col-lg-of
 }
 
 html[data-background-style='nightRider'] .row.icons-row .icons-container img {
-    filter: saturate(0) brightness(.6) contrast(1.5)
+    filter: saturate(0) brightness(.6) contrast(1.5);
+    -webkit-filter: saturate(0) brightness(.6) contrast(1.5)
 }
 
 html[data-background-style='nightRider'] .row.icons-row .icons-container:hover img {
-    filter: saturate(.6) brightness(1.2) contrast(.6)
+    filter: saturate(.6) brightness(1.2) contrast(.6);
+    -webkit-filter: saturate(.6) brightness(1.2) contrast(.6)
 }
 
 html[data-background-style='nightRider'] .row.icons-row .small-icons-container:not(.highlighted),

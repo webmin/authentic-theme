@@ -34,6 +34,8 @@ sub theme_header
       . theme_git_version()
       . '" data-level="'
       . $get_user_level
+      . '" data-user-home="'
+      . get_user_home()
       . '" data-user="'
       . $remote_user
       . '" data-dashboard="'
