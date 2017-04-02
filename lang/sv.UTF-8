@@ -152,8 +152,6 @@ settings_right_hide_table_icons=Dölj tabellikonerna för högra ramen
 settings_right_hide_table_icons_description=Ta bort samtliga ikoner från tabellerna och visa i stället endast textlänkar med en högersparre
 settings_right_small_table_icons=Små tabellikoner
 settings_right_small_table_icons_description=Ersätt tabellikonerna med små ikoner och visa i stället namnet som ett verktygstips
-settings_right_xsmall_table_icons=Extra små tabellikoner
-settings_right_xsmall_table_icons_description=Ersätt tabellikonerna med extra små ikoner och visa i stället namnet som ett verktygstips
 settings_right_animate_table_icons=Animera tabellikonerna när de hamnar i fokus
 settings_right_grayscaled_table_icons=Låt tabellikonerna vara gråa och ta fram färgen när den hamnar i fokus
 
@@ -632,13 +630,8 @@ theme_xhred_filemanager_successful_secontext=Security context har ändrats.
 theme_xhred_global_no_results_found=Inga resultat funna
 
 
-#18.32
-theme_xhred_display_icons_warning=När visningsläge i modulkonfiguration är satt till ikoner, visas varje mål i en separat behållare (nuvarande inställning), snarare än i en tabell.<br><br>För att välja ett mål använd antingen enkelt <em>vänsterklick</em> eller enkelt <em>högerklick</em>; ange målet genom ett dubbelt <em>vänstertryck</em>.
-
-
 #18.40
 theme_new_password_header=Ange nytt lösenord för användaren
-settings_sysinfo_theme_beta_updates=Ta även med beta-versioner
 login_reset=Återställning av lösenord
 theme_xhred_move_top=Flytta längst upp
 theme_xhred_move_bottom=Flytta längst ner
@@ -658,3 +651,18 @@ theme_tooltip_language_link=Språk
 theme_tooltip_switch_user=Växla användare
 theme_tooltip_logout=Logga ut
 theme_tooltip_edit_user=Redigera användare
+
+
+#18.41
+settings_sysinfo_easypie_charts_size=Diameter diagram
+theme_xhred_global_choose=Välj
+theme_xhred_global_select=Markera
+theme_xhred_global_ok=OK
+settings_sysinfo_theme_patched_updates=Ta med patchade versioner
+settings_sysinfo_theme_patched_updates_description=För att denna funktionen ska fungera måste <code>git</code> vara installerad i ditt system
+theme_git_patch_available=Senaste tillgängliga patchen
+theme_git_patch_no_git_message=För att kunna installera de senaste patcharna direkt från GitHub måste du se till att kommandot <code>git</code> är installerat.
+theme_git_patch_update_success_message=Uppdatering av Webmin-temat lyckades. Nuvarande installerad version är <tt>$1</tt>. Uppdaterar...
+theme_git_patch_update_success_message2=Uppdatering av Webmin- och Usermin-temat lyckades. Nuvarande installerad version är <tt>$1</tt>. Uppdaterar...
+theme_xhred_git_patch_update=Uppdatering av temat misslyckades. Prova uppdatera manuellt via konsolen.
+theme_xhred_git_patch_initiated=Uppdatering av temat har påbörjats.
