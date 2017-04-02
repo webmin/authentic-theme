@@ -1117,22 +1117,35 @@ sub get_sysinfo_vars
 
         # Build version response message
         if ( &Version::Compare::version_compare( $remote_version, $installed_version ) == 1 ) {
+            my $git_version_remote = index( $remote_version, '-git-' ) != -1;
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . ($installed_git_version ? $installed_git_version : $installed_version) . '. '
-              . $Atext{'theme_update_available'} . ' '
+              . $installed_version . '. '
+              . (
+                 $git_version_remote ? $Atext{'theme_git_patch_available'} : $Atext{'theme_update_available'} )
+              . ' '
               . $remote_version
-              . '&nbsp;&nbsp;&nbsp;<div class="btn-group margined-left-4">'
-              . '<a class="btn btn-xxs btn-success authentic_update" href="'
+              . '&nbsp;&nbsp;&nbsp;<div class="btn-group">'
+              . '<a data-git="'
+              . ( $git_version_remote
+                  ? 1
+                  : 0 )
+              . '" class="btn btn-xxs btn-'
+              . ( $git_version_remote ? 'warning' : 'success' )
+              . ' authentic_update" href="'
               . $gconfig{'webprefix'}
-              . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
+              . '/webmin/edit_themes.cgi"><i class="fa fa-fw '
+              . ( $git_version_remote ? 'fa-git-pull' : 'fa-refresh' )
+              . '">&nbsp;</i>'
               . $Atext{'theme_update'} . '</a>'
               . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $Atext{'theme_changelog'} . '</a>'
               . '<a data-remove-version="'
               . $remote_version
-              . '" class="btn btn-xxs btn-warning" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/'
+              . '" class="btn btn-xxs btn-warning'
+              . ( $git_version_remote ? ' hidden' : '' )
+              . '" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/'
               . $remote_version
               . '/authentic-theme-'
               . $remote_version
@@ -1151,7 +1164,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . ($installed_git_version ? $installed_git_version : $installed_version)
+              . $installed_version
               . '<div class="btn-group margined-left-4"><a href="'
               . $gconfig{'webprefix'}
               . '/webmin/edit_themes.cgi" data-href="'
@@ -1849,29 +1862,36 @@ sub embed_login_head
 sub get_authentic_version
 {
 
+    our $remote_version;
+
     # Get local version
     our $installed_version = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt", 1 );
     $installed_version = $installed_version->[0];
 
-    our $installed_git_version = theme_git_version();
-
-    our $remote_version;
+    # Get local git version if available
+    if ( theme_git_version() ) {
+        $installed_version = theme_git_version();
+    }
 
     $installed_version =~ s/^\s+|\s+$//g;
 
     if ( $__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' ) {
 
         # Get remote version if allowed
-        http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
-                       \$remote_version, \$error, undef, 1, undef, undef, 5 );
+        http_download( 'raw.githubusercontent.com',
+                       '443',
+                       '/qooob/authentic-theme/master/'
+                         . ( $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true'
+                             ? 'VERSION.txt'
+                             : 'version'
+                         )
+                         . '',
+                       \$remote_version,
+                       \$error,
+                       undef, 1, undef, undef, 5 );
 
         # Trim versions' number
         $remote_version =~ s/^\s+|\s+$//g;
-        if ( $__settings{'settings_sysinfo_theme_beta_updates'} ne 'true'
-             && index( $remote_version, 'beta' ) != -1 )
-        {
-            $remote_version = '0';
-        }
     }
     else {
         $remote_version = '0';
@@ -2274,7 +2294,7 @@ sub _settings
             '8',
             'settings_sysinfo_theme_updates',
             'false',
-            'settings_sysinfo_theme_beta_updates',
+            'settings_sysinfo_theme_patched_updates',
             'false',
             'settings_sysinfo_csf_updates',
             'false',
@@ -2863,8 +2883,8 @@ sub get_xhr_request
             my $path = $in{'xhr-get_list_path'};
             my @dirs;
 
-            if ( $get_user_level eq '2' || $get_user_level eq '4') {
-              $path = get_user_home() . $path;
+            if ( $get_user_level eq '2' || $get_user_level eq '4' ) {
+                $path = get_user_home() . $path;
             }
 
             opendir( my $dirs, $path );
@@ -2892,6 +2912,30 @@ sub get_xhr_request
             my @data =
               get_autocomplete_shell( $in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'} );
             print get_json( \@data );
+        }
+        elsif ( $in{'xhr-update'} eq '1' && foreign_available('webmin') ) {
+            my @update_rs;
+            if ( !has_command('git') ) {
+                @update_rs = { "no_git" => $Atext{'theme_git_patch_no_git_message'}, };
+                print get_json( \@update_rs );
+            }
+            else {
+                my $usermin = usermin_available();
+                my $usermin_root;
+                backquote_logged("yes | $root_directory/authentic-theme/theme-update.sh -no-restart");
+                if ($usermin) {
+                    $usermin_root = $root_directory;
+                    $usermin_root =~ s/webmin/usermin/;
+                    backquote_logged("yes | $usermin_root/authentic-theme/theme-update.sh -no-restart");
+                }
+                @update_rs = {
+                               "success" => (
+                                      $usermin
+                                      ? Atext( 'theme_git_patch_update_success_message2', theme_git_version() )
+                                      : Atext( 'theme_git_patch_update_success_message',  theme_git_version() )
+                               ) };
+                print get_json( \@update_rs );
+            }
         }
         elsif ( $in{'xhr-info'} eq '1' ) {
             our ( $cpu_percent,             $mem_percent,        $virt_percent,

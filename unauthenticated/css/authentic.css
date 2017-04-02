@@ -9952,7 +9952,7 @@ screen and (max-height:600px) {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 680px;
+        width: 760px;
         margin: 30px auto
     }
 }
@@ -10113,7 +10113,7 @@ html[data-background-style='nightRider'] .right-side-tabs-toggler[data-backgroun
 
 html[data-background-style='nightRider'] .alert-warning:hover,
 html[data-background-style='nightRider'] .alert-warning {
-    color: rgba(234, 239, 238, .66);
+    color: rgba(234, 239, 238, .86);
     border-color: rgba(222, 180, 93, .13);
     background-color: rgba(128, 118, 64, .08)
 }
@@ -10121,23 +10121,23 @@ html[data-background-style='nightRider'] .alert-warning {
 html[data-background-style='nightRider'] tr[bgcolor='#ff8888'],
 html[data-background-style='nightRider'] .alert-danger:hover,
 html[data-background-style='nightRider'] .alert-danger {
-    color: rgba(234, 239, 238, .66);
+    color: rgba(234, 239, 238, .86);
     border-color: rgba(224, 60, 87, .15);
     background-color: rgba(145, 94, 94, .88)
 }
 
 html[data-background-style='nightRider'] .alert-info:hover,
 html[data-background-style='nightRider'] .alert-info {
-    color: rgba(234, 239, 238, .66);
+    color: rgba(234, 239, 238, .86);
     border-color: rgba(65, 108, 117, .29);
-    background-color: rgba(131, 162, 177, .08)
+    background-color: rgba(131, 162, 177, .20)
 }
 
 html[data-background-style='nightRider'] .alert-success:hover,
 html[data-background-style='nightRider'] .alert-success {
-    color: rgba(234, 239, 238, .66);
+    color: rgba(234, 239, 238, .86);
     border-color: rgba(71, 101, 47, .33);
-    background-color: rgba(62, 118, 38, .08)
+    background-color: rgba(62, 118, 38, .20)
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph {

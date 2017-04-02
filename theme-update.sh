@@ -40,7 +40,8 @@ else
         rm -rf "$DIR/authentic-theme"/*
         mv "$DIR/.~authentic-theme"/* "$DIR/authentic-theme/"
         rm -rf "$DIR/.~authentic-theme"
-        if [[ $1 = "-u" || $1 = "-ur" ]]; then
+
+        if [[ $PROD = "usermin" ]]; then
           rm -f "$DIR/authentic-theme/update"
         fi
 
@@ -52,7 +53,7 @@ else
         echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/version`, done.\e[0m"
 
         # Restart Webmin/Usermin in case it's running
-        if [[ $1 = "-r" || $1 = "-ur" ]]; then
+        if [ -z $1 ]; then
           if ps aux | grep -v grep | grep $PROD/miniserv.pl > /dev/null
           then
             echo -e "\e[49;3;37;182mRestarting "${PROD^}"..\e[0m"

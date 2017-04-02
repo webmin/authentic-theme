@@ -85,6 +85,7 @@ typeof settings_sysinfo_easypie_charts_size == "undefined" ? settings_sysinfo_ea
 typeof settings_sysinfo_easypie_charts_width == "undefined" ? settings_sysinfo_easypie_charts_width = 4 : (settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width));
 typeof settings_sysinfo_easypie_charts_scale == "undefined" ? settings_sysinfo_easypie_charts_scale = 8 : (settings_sysinfo_easypie_charts_scale = parseInt(settings_sysinfo_easypie_charts_scale));
 typeof settings_sysinfo_theme_updates == "undefined" ? settings_sysinfo_theme_updates = false : false;
+typeof settings_sysinfo_theme_patched_updates == "undefined" ? settings_sysinfo_theme_patched_updates = false : false;
 typeof settings_sysinfo_csf_updates == "undefined" ? settings_sysinfo_csf_updates = false : false;
 typeof settings_sysinfo_link_mini == "undefined" ? settings_sysinfo_link_mini = false : false;
 typeof settings_loader_top == "undefined" ? settings_loader_top = true : false;
