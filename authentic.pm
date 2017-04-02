@@ -29,9 +29,7 @@ sub theme_header
       . '" data-default-theme="'
       . $__settings{'settings_navigation_color'}
       . '" data-theme-version="'
-      . theme_version('version')
-      . '" data-theme-git-version="'
-      . theme_git_version()
+      . (theme_git_version() ? theme_git_version() : theme_version('version'))
       . '" data-level="'
       . $get_user_level
       . '" data-user-home="'

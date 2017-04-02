@@ -685,7 +685,50 @@ $(t__wi_p.$('iframe[name="page"]').contents()).keydown(function(b) {
     t__wi_p.search_control(b);
     t__wi_p.shortcut_control(b)
 });
-$("body").on("click", ".authentic_update", function(b) {
+$("body").on("click", '.authentic_update:not([data-git="0"]):not(.disabled)', function(b) {
+    b.preventDefault();
+    b.stopPropagation();
+    var c = $(this);
+    c.addClass("disabled");
+    $("body").attr("data-unload-warning", "1");
+    t__wi_p.NProgress.start();
+    t__wi_p.$("#wrapper").addClass("bg-filter-blur-grayscale-opacity50");
+    messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + lang("theme_xhred_git_patch_initiated") + " " + lang("theme_xhred_global_please_wait") + '&nbsp;&nbsp;&nbsp;<span class="cspinner"><span class="cspinner-icon white smallest margined-top-4"></span></span>', 1800, "info", "themeUpgrade", 0);
+    $.ajax({
+        type: "POST",
+        url: $_____link_full + "/index.cgi?xhr-update=1",
+        data: false,
+        dataType: "json",
+        success: function(a) {
+            if (a[0] && a[0].success) {
+                messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].success, 7, "success", "themeUpgrade");
+                setTimeout(function() {
+                    t___wi.top.location.reload()
+                }, 7300)
+            } else {
+                if (a[0] && a[0].no_git) {
+                    messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].no_git, 20, "warning", "themeUpgrade");
+                    t__wi_p.$("#wrapper").removeClass("bg-filter-blur-grayscale-opacity50");
+                    c.removeClass("disabled")
+                } else {
+                    messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + lang("theme_xhred_git_patch_update"), 20, "error", "themeUpgrade");
+                    t__wi_p.$("#wrapper").removeClass("bg-filter-blur-grayscale-opacity50");
+                    c.removeClass("disabled")
+                }
+            }
+        },
+        error: function(a) {
+            messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + lang("theme_xhred_git_patch_update"), 20, "error", "themeUpgrade");
+            t__wi_p.$("#wrapper").removeClass("bg-filter-blur-grayscale-opacity50");
+            c.removeClass("disabled")
+        },
+        complete: function(a) {
+            t__wi_p.NProgress.done();
+            $("body").removeAttr("data-unload-warning")
+        }
+    })
+});
+$("body").on("click", '.authentic_update:not([data-git="1"])', function(b) {
     b.preventDefault();
     b.stopPropagation();
     t__wi_p.history.pushState(null, null, $_____link_full + "/?updating-webmin-theme");
@@ -913,13 +956,13 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
 
                 function a(c) {
                     typeof c == "undefined" ? c = $('input[name="settings_sysinfo_theme_updates"]:checked') : false;
-                    var f = ["settings_sysinfo_theme_beta_updates"];
+                    var f = ["settings_sysinfo_theme_patched_updates"];
                     if (c.val() == "true") {
                         $.each(f, function(g, h) {
                             $('input[name="' + h + '"]').prop("disabled", false).removeClass("disabled")
                         })
                     } else {
-                        $('input[name="settings_sysinfo_theme_beta_updates"][value="false"]').trigger("click");
+                        $('input[name="settings_sysinfo_theme_patched_updates"][value="false"]').trigger("click");
                         $.each(f, function(g, h) {
                             $('input[name="' + h + '"]').prop("disabled", true).addClass("disabled")
                         })
@@ -1079,7 +1122,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
                     $('input[name="settings_sysinfo_link_mini"]').parent().parent().parent().parent("tr").remove()
                 }
                 if (!$t_uri_virtualmin && !$t_uri_cloudmin) {}
-                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_size"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_beta_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
+                $('input[name^="settings_leftmenu_netdata_link"], input[name^="settings_leftmenu_user_html_only_for_administrator"], input[name="settings_sysinfo_easypie_charts_size"], input[name="settings_sysinfo_easypie_charts_width"], input[name="settings_sysinfo_easypie_charts_scale"], input[name="settings_sysinfo_theme_patched_updates"]').parents("td.col_value.atscontent").parent("tr.atshover").addClass("settings_option_padded");
                 $('input[data-role="tagsinput"]').tagsinput();
                 $("body").css("overflow", "auto");
                 $.getScript("" + $_____link_full + "/unauthenticated/js/detector." + t__wi_p.$load____ext + ".js?" + $g__t__ver_str + "", function(c, h, g) {
@@ -1209,8 +1252,11 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
     t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50")
 });
 var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authentic_remote_version"),
-    $__remove_theme_version = ($___remove_theme_version ? $___remove_theme_version : $g__t__ver),
-    $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + $__remove_theme_version + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
+    $__remove_theme_version = ($___remove_theme_version ? $___remove_theme_version : $g__t__ver);
+if ($__remove_theme_version && $__remove_theme_version.indexOf("git") > -1) {
+    $__remove_theme_version = parseFloat($__remove_theme_version).toFixed(2)
+}
+var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + $__remove_theme_version + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search == "?updating-webmin-theme") {
     setTimeout(function() {
         $iframe = t__wi_p.$('iframe[name="page"]').contents();

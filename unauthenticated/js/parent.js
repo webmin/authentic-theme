@@ -10,7 +10,7 @@ if ($access_level == 0) {
     }
 }
 if (t__wi_p.$___________initial === 1) {
-    console.log("Welcome to Authentic Theme " + ($g__t__gver ? $g__t__gver : $g__t__ver) + "\nhttps://github.com/qooob/authentic-theme")
+    console.log("Welcome to Authentic Theme " + $g__t__ver + "\nhttps://github.com/qooob/authentic-theme")
 }
 typeof t__wi_p.t___p__xhr_l == "undefined" ? t__wi_p.t___p__xhr_l = 0 : false;
 typeof t__wi_p.t___p__ll == "undefined" ? t__wi_p.t___p__ll = 0 : false;

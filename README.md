@@ -58,7 +58,7 @@
 Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using console, do the following:
   1. Go to _Webmin_ (`cd /usr/libexec/webmin`) or _Usermin_ (`cd /usr/libexec/usermin`) directory __*__
   2. Descend into theme's directory (`cd authentic-theme`)
-  3. Run [`./theme-update.sh -r`](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
+  3. Run [`./theme-update.sh`](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
   4. Restart _Webmin_/_Usermin_ after update
 <br>__*__ *Binary directory might be different from `libexec` depending on the system. Run `whereis webmin` to figure this out.*
 

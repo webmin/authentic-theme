@@ -32,7 +32,7 @@ sub settings_filter
     my (%in_data) = @_;
 
     delete @in_data{ grep( !/^config_portable_|^settings_/, keys %in_data ) };
-    delete @in_data{ grep( !m/^\w*$/, keys %in_data ) };
+    delete @in_data{ grep( !m/^\w*$/,                       keys %in_data ) };
     for ( values %in_data ) { s/(.*)/'$1';/ }
     for ( values %in_data ) { s/\$|`*//g }
     for ( values %in_data ) { s/<<//g }
@@ -1075,30 +1075,34 @@ sub theme_night_mode
     }
 }
 
+sub theme_git_version
+{
+    my $git_version      = undef;
+    my $git_version_file = $root_directory . "/authentic-theme/version";
+    if ( -e $git_version_file && $__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' ) {
+        $git_version = read_file_lines( $git_version_file, 1 );
+        $git_version = $git_version->[0];
+    }
+    return $git_version;
+}
+
 sub theme_version
 {
     my ($switch)            = @_;
     my $sh__ln__p___version = '18.32';
     my $sh__ln__c___version = '18.40';
+    my $sh__ln__g___version = theme_git_version();
     ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
-    return $sh__ln__c___version;
-}
+    (     ( !$switch && $sh__ln__g___version )
+       && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ) ) );
 
-sub theme_git_version
-{
-  my $git_version = undef;
-  my $git_version_file = $root_directory . "/authentic-theme/version";
-  if (-e $git_version_file) {
-    $git_version = read_file_lines( $git_version_file, 1 );
-    $git_version = $git_version->[0];
-  }
-  return $git_version;
+    return $sh__ln__c___version;
 }
 
 sub get_version
 {
-  my ($version) = @_;
-  return $version =~ /([0-9]+[.][0-9]+)/;
+    my ($version) = @_;
+    return $version =~ /([0-9]+[.][0-9]+)/;
 }
 
 sub get_env

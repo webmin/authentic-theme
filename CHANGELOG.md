@@ -1,11 +1,18 @@
 ## Changelog
 
+#### Version 18.41-beta20 (02 April, 2017)
+* Added ability to install patched version of the theme directly from _GitHub_, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
+* Added console script for updating the theme [#703](https://github.com/qooob/authentic-theme/issues/703)
+* Added error handler for saving files in background calls [#689](https://github.com/qooob/authentic-theme/issues/689)
+* Added controls for operations in icon mode [#684](https://github.com/qooob/authentic-theme/issues/684)
+* Added ability to display version patch number [#676](https://github.com/qooob/authentic-theme/issues/676)
+* Fixed bugs [#687](https://github.com/qooob/authentic-theme/issues/687) [#688](https://github.com/qooob/authentic-theme/issues/688) [#692](https://github.com/qooob/authentic-theme/issues/692) [#693](https://github.com/qooob/authentic-theme/issues/693) [#695](https://github.com/qooob/authentic-theme/issues/695) [#696](https://github.com/qooob/authentic-theme/issues/696) [#697](https://github.com/qooob/authentic-theme/issues/697) [#698](https://github.com/qooob/authentic-theme/issues/698) [#699](https://github.com/qooob/authentic-theme/issues/699) [#700](https://github.com/qooob/authentic-theme/issues/700) [#701](https://github.com/qooob/authentic-theme/issues/701) [#702](https://github.com/qooob/authentic-theme/issues/702) [#704](https://github.com/qooob/authentic-theme/issues/704)
+
 ### Version 18.40 (21 March, 2017)
 * Added ability to use theme configuration for all users [#640](https://github.com/qooob/authentic-theme/issues/640#issuecomment-287572703)
 * Added complete support for dark palette in the content page (right frame) [#664](https://github.com/qooob/authentic-theme/issues/664)
 * Added ability to toggle dark/light palette in a flash
 * Added autocomplete feature (using _Tab_) for _Command Shell_ port [#641](https://github.com/qooob/authentic-theme/pull/641)
-* Added ability to enable _beta channel_ for the theme updates to get early access on the new features
 * Added close button for popovers and improved its general appearance [#46862](https://www.virtualmin.com/node/46862)
 * Added support for included links in help popovers
 * Added _Swedish_ language, thanks to [Sopor Spr](https://github.com/Sopor-)
