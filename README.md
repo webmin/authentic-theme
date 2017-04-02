@@ -58,7 +58,7 @@
 Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using console, do the following:
   1. Go to _Webmin_ (`cd /usr/libexec/webmin`) or _Usermin_ (`cd /usr/libexec/usermin`) directory __*__
   2. Descend into theme's directory (`cd authentic-theme`)
-  3. Run [`./theme-update.sh`](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
+  3. Run [`./theme-update.sh -r`](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
   4. Restart _Webmin_/_Usermin_ after update
 <br>__*__ *Binary directory might be different from `libexec` depending on the system. Run `whereis webmin` to figure this out.*
 
@@ -80,41 +80,6 @@ Another solution would be to install used by default [_Roboto Font_](http://www.
 
 #### _File Manager_
 Theme has great support for this module, by adding numerous mast-have features. Most noticeable are listing without page reload (using XHR requests) and full keyboard support, which enables you to use _File Manager_ just as normal desktop browser.
-
-##### List of keyboard shortcuts
-
-  * `alphanumeric typing` - quick search
-  * `up/down, home/end` - cursor position
-  * `enter` - descent into selected directory
-  * `backspace` - previous directory
-    * in case there is only one row filtered, enter on search field will perform trigger
-  * `contextmenu/right-click` - context menu
-  * `spacebar` or `Alt+right-click` - select current row
-  * `right-click on path` or `Ctrl+L` - enter path manually
-  * `*` - inverse select
-  * `+` - select all
-  * `-` - deselect all
-  * `F2` - change permissions
-  * `Shift+F2` - change attributes
-  * `F3` - change ownership
-  * `Shift+F3` - change security context
-  * `F4` - edit where possible
-  * `Esc` - close active editor window
-  * `Ctrl+Esc` - minimize active editor window
-  * `F5/Shift+F5` - compress/decompress
-  * `F6` - rename
-  * `Shift+F4/F7` - new file/directory
-  * `Shift+F7` - search
-  * `F8/Del` - delete
-  * `F9/F10` - download/upload
-  * `Ctrl+S` - calculate selected size
-  * `Ctrl+space` - new tab
-  * `Ctrl+Shift+space` - close current tab
-  * `Ctrl+left/right` - change tabs
-  * `Ctrl+1..9` - switch to the tab number
-  * `Ctrl+X/C/V` - cut/copy/paste
-  * `Ctrl+Enter/Ctrl+Shift+Enter` - save/save and close currently edited file
-  * `Theme reload hotkey` - reload current directory
 
 #### _ConfigServer Security & Firewall_
 Theme only re-renders this module and adds support for code highlight, when editing files manually.
