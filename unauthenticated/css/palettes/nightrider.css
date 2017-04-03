@@ -1815,6 +1815,11 @@ html[data-background-style='nightRider'] body[class*='server-manager'][data-uri*
     border-bottom-color: #434751 !important
 }
 
+html[data-background-style='nightRider'] body[data-module*="virtualmin-mailman"] .table-hardcoded td[bgcolor="#FFF0D0"] {
+    background-color: rgba(41, 44, 50, 0.49);
+    border: 1px solid #393b40
+}
+
 html[data-background-style='nightRider'] .badge.label-default {
     color: #2a2d32;
     background-color: #777

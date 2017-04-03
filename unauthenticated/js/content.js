@@ -478,55 +478,57 @@ if (__num()) {
             if ($(this)[0]) {
                 $___text = $(this)[0].nextSibling
             }
-            var i = $(this).next('input:not([type="radio"], [type="checkbox"], [type="hidden"]), select, textarea'),
-                f = ($___text && $___text.nodeValue && $.trim($___text.nodeValue).length > 1),
-                g = (f ? $___text.nodeValue : "&nbsp;");
-            if ($(this).next("label").length === 0 && i.length === 0 && f) {
+            var e = $(this).next('input:not([type="radio"], [type="checkbox"], [type="hidden"]), select, textarea'),
+                k = ($___text && $___text.nodeValue && $.trim($___text.nodeValue).length > 1),
+                d = (k ? $___text.nodeValue : "&nbsp;"),
+                j = $(this).attr("type").toLowerCase();
+            if ($(this).next("label").length === 0 && e.length === 0 && k) {
                 $(this).addClass("iawobject");
-                var c = $(this).attr("id") ? 'for="' + $(this).attr("id") + '"' : false;
-                if (c === false && $(this).attr("name") && $(this).val()) {
-                    var d = "__replaced_" + $(this).attr("name") + "_" + $(this).val() + "";
-                    var c = 'for="' + d + '"';
-                    $(this).attr("id", d)
+                var g = $(this).attr("id") ? 'for="' + $(this).attr("id") + '"' : false;
+                if (g === false && $(this).attr("name") && $(this).val()) {
+                    var h = "__replaced_" + $(this).attr("name") + "_" + $(this).val() + "";
+                    var g = 'for="' + h + '"';
+                    $(this).attr("id", h)
                 }
-                $($___text).wrap('<label class="lawobject" ' + c + ">" + g.replace(/<hr>/g, "&lt;hr&gt;").replace(/<header>/g, "&lt;header&gt;") + " </label>");
+                $($___text).wrap('<label class="lawobject" ' + g + ">" + d.replace(/<hr>/g, "&lt;hr&gt;").replace(/<header>/g, "&lt;header&gt;") + " </label>");
                 $($___text).remove();
-                $(this).next("label").addBack().wrapAll('<span class="aw' + $(this).attr("type") + ' awobject awobjectm"></span>')
+                $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>')
             } else {
-                if (i.length === 0 && $(this).next("label").length === 0 && $(this).prev("label").length === 1 && !f) {
-                    var h = $(this).prev("label"),
-                        e = h.text();
+                if (e.length === 0 && $(this).next("label").length === 0 && $(this).prev("label").length === 1 && !k) {
+                    var c = $(this).prev("label"),
+                        f = c.text();
                     $(this).addClass("iawobject");
                     if (!$(this).attr("id") && !$("#" + $(this).attr("name")).length) {
                         $(this).attr("id", $(this).attr("name"))
                     }
-                    $(this).after('<label class="lawobject" for="' + $(this).attr("name") + '-aur0">' + e + "</label>");
-                    $(this).next("label").addBack().wrapAll('<span class="aw' + $(this).attr("type") + ' awobject awobjectm"></span>');
+                    $(this).after('<label class="lawobject" for="' + $(this).attr("name") + '-aur0">' + f + "</label>");
+                    $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>');
                     $(this).attr("id", $(this).attr("name") + "-aur0").removeClass("form-control").css("width", "initial");
-                    h.remove()
+                    c.remove()
                 } else {
-                    if (i.length === 0 && $(this).next("label").length === 0 && !f) {
+                    if (e.length === 0 && $(this).next("label").length === 0 && !k) {
                         $(this).addClass("iawobject");
-                        if (!$(this).attr("id") && !$("#" + $(this).attr("name")).length) {
-                            $(this).attr("id", $(this).attr("name"))
+                        var i = $(this).attr("name").replace(".", "").replace("%", "");
+                        if (!$(this).attr("id") && !$("#" + i).length) {
+                            $(this).attr("id", i)
                         }
                         $(this).after('<label class="lawobject" for="' + ($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>');
-                        $(this).next("label").addBack().wrapAll('<span class="aw' + $(this).attr("type") + ' awobject awobjectm"></span>')
+                        $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>')
                     }
                 }
             }
-            if (i.length === 1 && $(this).next("label").length === 0) {
+            if (e.length === 1 && $(this).next("label").length === 0) {
                 $(this).addClass("iawobject");
-                if (!$("#" + i.attr("name")).length) {
-                    $(this).attr("id", i.attr("name"))
+                if (!$("#" + e.attr("name")).length) {
+                    $(this).attr("id", e.attr("name"))
                 } else {
-                    if (!$("#" + i.attr("name")).length) {
-                        i.attr("id", i.attr("name"))
+                    if (!$("#" + e.attr("name")).length) {
+                        e.attr("id", e.attr("name"))
                     }
                 }
-                $(this).after('<label class="lawobject" for="' + (g ? $(this).attr("id") : i.attr("name")) + '">' + g + "</label>");
-                $(this).next("label").addBack().wrapAll('<span class="aw' + $(this).attr("type") + ' awobject awobjectm"></span>');
-                f && $($___text).remove()
+                $(this).after('<label class="lawobject" for="' + (d ? $(this).attr("id") : e.attr("name")) + '">' + d + "</label>");
+                $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>');
+                k && $($___text).remove()
             }
         })
     }
