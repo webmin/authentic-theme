@@ -9508,6 +9508,52 @@ html[data-script-name*='password_change.cgi'] .panel-body center h3 a {
     text-decoration: underline
 }
 
+html:not([data-background-style='nightRider']) body[data-module*="virtualmin-mailman"] form .table-hardcoded>tbody>tr>td[bgcolor="#dddddd"] {
+    background-color: transparent !important
+}
+
+body[data-module*="virtualmin-mailman"] form .table-hardcoded>tbody>tr>td[bgcolor="#dddddd"]>div[align="right"] {
+    padding-right: 25px
+}
+
+body[data-module*="virtualmin-mailman"] form>table.table-hardcoded table.table-hardcoded>tbody,
+body[data-module*="virtualmin-mailman"] form .table-hardcoded>tbody>tr>td[bgcolor="#dddddd"]>.table-hardcoded>tbody {
+    border: none !important
+}
+
+body[data-module*="virtualmin-mailman"] address>.table-hardcoded {
+    display: none
+}
+
+body[data-module*="virtualmin-mailman"] form font[color="#ff0000"] strong font[size="+1"],
+body[data-module*="virtualmin-mailman"] td b font[color="#000000"][size="+1"],
+body[data-module*="virtualmin-mailman"] .panel-body>font[size="+1"],
+body[data-module*="virtualmin-mailman"] .panel-body>font[size="+2"],
+body[data-module*="virtualmin-mailman"] div[align="right"] font[size="+2"],
+body[data-module*="virtualmin-mailman"] .table-hardcoded font[size="+2"] {
+    font-size: 13px
+}
+
+body[data-module*="virtualmin-mailman"] .panel-body>h1,
+body[data-module*="virtualmin-mailman"] h3,
+body[data-module*="virtualmin-mailman"] h2 {
+    font-size: 18px
+}
+
+body[data-module*="virtualmin-mailman"] .table-hardcoded td[bgcolor="#FFF0D0"] {
+    padding: 6px !important;
+    border: 1px solid #eaeaea;
+    background-color: #f7f7f7
+}
+
+body[data-module*="virtualmin-mailman"] .table-hardcoded td[bgcolor="#FFF0D0"][colspan="1"]:first-child {
+    border-right: 0
+}
+
+body[data-module*="virtualmin-mailman"] .table-hardcoded td[bgcolor="#FFF0D0"][colspan="1"]:last-child {
+    border-left: 0
+}
+
 .cke_panel,
 .cke_toolbar *,
 .cke_dialog_body,
