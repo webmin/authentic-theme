@@ -654,15 +654,15 @@ theme_tooltip_edit_user=Redigera användare
 
 
 #18.41
-settings_sysinfo_easypie_charts_size=Diameter of charts
-theme_xhred_global_choose=Choose
-theme_xhred_global_select=Select
+settings_sysinfo_easypie_charts_size=Diameter diagram
+theme_xhred_global_choose=Välj
+theme_xhred_global_select=Markera
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including patched versions
-settings_sysinfo_theme_patched_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
-theme_git_patch_available=Latest available patch
-theme_git_patch_no_git_message=In order to install latest patches directly from GitHub you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme upgrade for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme upgrade for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme upgrade has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme upgrade has been initiated.
+settings_sysinfo_theme_patched_updates=Ta med patchade versioner
+settings_sysinfo_theme_patched_updates_description=För att denna funktionen ska fungera måste <code>git</code> vara installerad i ditt system
+theme_git_patch_available=Senaste tillgängliga patchen
+theme_git_patch_no_git_message=För att kunna installera de senaste patcharna direkt från GitHub måste du se till att kommandot <code>git</code> är installerat.
+theme_git_patch_update_success_message=Uppdatering av Webmin-temat lyckades. Nuvarande installerad version är <tt>$1</tt>. Uppdaterar...
+theme_git_patch_update_success_message2=Uppdatering av Webmin- och Usermin-temat lyckades. Nuvarande installerad version är <tt>$1</tt>. Uppdaterar...
+theme_xhred_git_patch_update=Uppdatering av temat misslyckades. Prova uppdatera manuellt via konsolen.
+theme_xhred_git_patch_initiated=Uppdatering av temat har påbörjats.
