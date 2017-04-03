@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 18.41-beta20 (02 April, 2017)
+#### Version 18.41-beta21 (03 April, 2017)
 * Added ability to install patched version of the theme directly from _GitHub_, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
 * Added console script for updating the theme [#703](https://github.com/qooob/authentic-theme/issues/703)
 * Added error handler for saving files in background calls [#689](https://github.com/qooob/authentic-theme/issues/689)

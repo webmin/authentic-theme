@@ -1077,9 +1077,12 @@ sub theme_night_mode
 
 sub theme_git_version
 {
+    my ($force)          = @_;
     my $git_version      = undef;
     my $git_version_file = $root_directory . "/authentic-theme/version";
-    if ( -e $git_version_file && $__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' ) {
+    if ( -e $git_version_file
+         && ( $__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force ) )
+    {
         $git_version = read_file_lines( $git_version_file, 1 );
         $git_version = $git_version->[0];
     }
@@ -1091,7 +1094,7 @@ sub theme_version
     my ($switch)            = @_;
     my $sh__ln__p___version = '18.32';
     my $sh__ln__c___version = '18.40';
-    my $sh__ln__g___version = theme_git_version();
+    my $sh__ln__g___version = theme_git_version('uncond');
     ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
     (     ( !$switch && $sh__ln__g___version )
        && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ) ) );

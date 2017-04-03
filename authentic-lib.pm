@@ -1121,7 +1121,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . $installed_version . '. '
+              . ($git_version_local ? $git_version_local : $installed_version) . '. '
               . (
                  $git_version_remote ? $Atext{'theme_git_patch_available'} : $Atext{'theme_update_available'} )
               . ' '
@@ -1164,7 +1164,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . $installed_version
+              . ($git_version_local ? $git_version_local : $installed_version)
               . '<div class="btn-group margined-left-4"><a href="'
               . $gconfig{'webprefix'}
               . '/webmin/edit_themes.cgi" data-href="'
@@ -1863,6 +1863,7 @@ sub get_authentic_version
 {
 
     our $remote_version;
+    our $git_version_local = theme_git_version('uncond');
 
     # Get local version
     our $installed_version = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt", 1 );

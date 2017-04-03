@@ -243,7 +243,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
       $authentic_theme_version =
           '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
         . $Atext{'theme_name'} . '</a> '
-        . $installed_version
+        . ($git_version_local ? $git_version_local : $installed_version)
         . '<div class="btn-group margined-left-4"><a href="'
         . $gconfig{'webprefix'}
         . '/settings-user.cgi" data-href="'
@@ -256,7 +256,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
     else {
         $authentic_theme_version = ''
           . $Atext{'theme_name'} . ' '
-          . $installed_version . '. '
+          . ($git_version_local ? $git_version_local : $installed_version) . '. '
           . $Atext{'theme_update_available'} . ' '
           . $remote_version
           . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
@@ -400,7 +400,7 @@ elsif ( $get_user_level eq '3' ) {
       $authentic_theme_version =
           '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
         . $Atext{'theme_name'} . '</a> '
-        . $installed_version
+        . ($git_version_local ? $git_version_local : $installed_version)
         . '<div class="btn-group margined-left-4"><a href="'
         . $gconfig{'webprefix'}
         . '/settings-user.cgi" data-href="'
@@ -413,7 +413,7 @@ elsif ( $get_user_level eq '3' ) {
     else {
         $authentic_theme_version = ''
           . $Atext{'theme_name'} . ' '
-          . $installed_version . '. '
+          . ($git_version_local ? $git_version_local : $installed_version) . '. '
           . $Atext{'theme_update_available'} . ' '
           . $remote_version
           . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
