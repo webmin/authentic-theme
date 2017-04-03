@@ -271,11 +271,6 @@ if (typeof jQuery.ui == "object") {
         }
     })
 }
-t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").hover(function() {
-    $(this).find("sup").removeClass("hidden")
-}, function() {
-    $(this).find("sup").addClass("hidden")
-});
 t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
     $(this).find("small").removeClass("hidden")
 }).on("mouseleave", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {

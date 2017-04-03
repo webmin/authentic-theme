@@ -6408,6 +6408,10 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
     margin-left: -30px
 }
 
+.favorites-menu-content li.favorites-title sup {
+    display: inline !important
+}
+
 .favorites-border {
     border: 2px dotted #386386
 }
@@ -10266,6 +10270,10 @@ html[data-background-style='nightRider'] .text-success {
 
 html[data-background-style='nightRider'] font[color='#ff0000'] {
     color: #a94442 !important
+}
+
+html[data-background-style='nightRider'] font[color='orange'] {
+    color: #a2782c !important
 }
 
 html[data-background-style='nightRider'] .btn-default {
