@@ -43,6 +43,7 @@ var $_url = URI(t___wi.location),
     $g__user__home = $("body").data("user-home"),
     $g__m__name = $("body").data("module"),
     $g__t__ver = $("body").data("theme-version").toString(),
+    $g__t__gver = $("body").data("theme-git-version").toString(),
     $g__t__ver_str = $g__t__ver.replace(".", ""),
     __isNR = (typeof settings_background_color != "undefined" && settings_background_color === "nightRider" ? 1 : __isNM);
 const __ua__ = window.navigator.userAgent,
