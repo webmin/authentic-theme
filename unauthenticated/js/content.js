@@ -106,6 +106,9 @@ $.each($('tr td:last-child a:contains("..")'), function() {
 function __init_dt_(e, d, a) {
     typeof d == "undefined" ? d = false : false;
     typeof a == "undefined" ? a = false : false;
+    if (is__mf("virtual-server", "index.cgi")) {
+        d = true
+    }
     $.fn.dataTableExt.sErrMode = "throw";
 
     function b(f) {
@@ -349,7 +352,7 @@ function f__mgk_fi() {
     if ($(".dataTables_filter").length) {
         setTimeout(function() {
             $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
-            $("#headln2r .btn-group").prepend('				<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-title="' + lang("theme_xhred_datatable_filter_visible_tables") + '" data-container="body">					<label>						<input type="text" class="dataTable-mirror" placeholder="' + lang("theme_xhred_datatable_filter") + '">					</label>					<i class="fa fa-filter"></i>				</a>			');
+            $("#headln2r .btn-group").prepend('				<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-title="' + lang("theme_xhred_datatable_filter") + '" data-container="body">					<label>						<input type="text" class="dataTable-mirror" placeholder="' + lang("theme_xhred_datatable_filter") + '">					</label>					<i class="fa fa-filter"></i>				</a>			');
             if ($(".nav.nav-tabs").length) {
                 $("body").on("shown.bs.tab", 'a[data-toggle="tab"]', function(b) {
                     var c = $(b.target).parent(".active");
@@ -1729,11 +1732,11 @@ if (settings_right_iconize_header_links) {
             }
             if ($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == $__current_directory || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
                 $iconized_class = "fa-arrow-left";
-                $(this).data("title", "")
+                $(this).data("title", "").data("back", 1)
             } else {
                 if ($(this).attr("href") == "//" && ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi")) {
                     $iconized_class = "fa-arrow-left";
-                    $(this).attr("href", "/webmin/edit_themes.cgi").data("title", "")
+                    $(this).attr("href", "/webmin/edit_themes.cgi").data("title", "").data("back", 1)
                 } else {
                     if ($(this).attr("href").indexOf("config.cgi") > -1) {
                         $iconized_class = "fa-cog";
@@ -1764,7 +1767,8 @@ if (settings_right_iconize_header_links) {
                                                         $iconized_class = "fa-cogs"
                                                     } else {
                                                         if ($(this).attr("href").indexOf("index.cgi?") > -1 && $current_directory == $_____link + "spam/") {
-                                                            $iconized_class = "fa-arrow-left"
+                                                            $iconized_class = "fa-arrow-left";
+                                                            $(this).data("back", 1)
                                                         }
                                                     }
                                                 }
@@ -1782,7 +1786,7 @@ if (settings_right_iconize_header_links) {
                 $iconized_class = "fa-question-circle";
                 $(this).data("title", "")
             }
-            $(this).data("toggle", "tooltip").data("title", (e ? lang("theme_xhred_module_help") : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
+            $(this).data("toggle", "tooltip").data("title", (e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? lang("theme_xhred_global_prev_page") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
             $(this).contents().filter(function() {
                 return this.nodeType == 3
             }).remove();
@@ -1799,6 +1803,13 @@ if (settings_right_iconize_header_links) {
             }
         }
         $("#headln2l").removeClass("invisible")
+    });
+    $("body").on("click", "#headln2l a", function(a) {
+        if ($(this).find(".fa-arrow-left").length) {
+            a.preventDefault();
+            a.stopPropagation();
+            window.history.back()
+        }
     })
 }
 if ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi") {

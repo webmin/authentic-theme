@@ -890,6 +890,11 @@ br.lh0 {
     cursor: pointer
 }
 
+html[data-background-style='nightRider'] body:not(.csf):not(.backup-config) #right-side-tabs .table-striped:not(.opener_table_style):not(.table-subtable)>tbody>tr:hover td,
+html:not([data-background-style='nightRider']) body:not(.csf):not(.backup-config) #right-side-tabs .table-striped:not(.opener_table_style):not(.table-subtable)>tbody>tr:hover td {
+    background-color: rgba(213, 133, 18, 0.1) !important
+}
+
 .right-side-tabs .tab-pane .info-container .extended-list-data tr.thead~tr:last-child>td {
     padding: 1px !important
 }
@@ -10197,7 +10202,7 @@ html[data-background-style='nightRider'] .graph-container>.graph {
 html[data-background-style='nightRider'] .graph-container>.graph>.bar {
     color: rgba(255, 255, 255, .77);
     border-right-color: #ca524f;
-    background-color: #a94442
+    background-color: rgba(169, 68, 66, 0.78)
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:1%'],
@@ -10249,8 +10254,8 @@ html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='wi
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:47%'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:48%'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:49%'] {
-    border-right: #1d7a5f;
-    background-color: #269373
+    border-right-color: #18aa80;
+    background-color: #21795f
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:50%'],
@@ -10289,8 +10294,8 @@ html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='wi
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:83%'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:84%'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:85%'] {
-    border-right-color: #d8a357;
-    background-color: #c38d40
+    border-right-color: #ab844c;
+    background-color: #8a6939
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:0%'],
@@ -10299,8 +10304,8 @@ html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='wi
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: 0'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:-'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: -'] {
-    border-right-color: #aaa;
-    background-color: #858a8f
+    border-right-color: #515151;
+    background-color: #444950
 }
 
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:-'],
