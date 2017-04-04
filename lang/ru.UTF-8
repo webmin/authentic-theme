@@ -671,3 +671,5 @@ theme_git_patch_update_success_message=Theme upgrade for Webmin was successful. 
 theme_git_patch_update_success_message2=Theme upgrade for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
 theme_xhred_git_patch_update=Theme upgrade has failed. Try using console to do it manually.
 theme_xhred_git_patch_initiated=Theme upgrade has been initiated.
+theme_xhred_global_prev_page=Previous Page
+theme_xhred_global_help=Help
