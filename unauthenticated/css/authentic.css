@@ -5129,6 +5129,11 @@ a#product-menu {
     padding: 0
 }
 
+.text-force-link,
+.text-force-link-hover:hover {
+    color: #1d599d !important
+}
+
 a,
 .ui_checked_checkbox,
 .panel-body .ui_table tbody tr td a b {
@@ -9884,6 +9889,38 @@ html[data-background-style='gainsboro'] .panel.panel-default {
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .02)
 }
 
+@-webkit-keyframes obj-popup {
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5)
+    }
+}
+
+@keyframes obj-popup {
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2)
+    }
+}
+
+.obj-popup {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-animation-name: obj-popup;
+    animation-name: obj-popup;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1
+}
+
 .fa-md {
     font-size: 1.2em;
     line-height: .6em;
@@ -10007,7 +10044,6 @@ screen and (max-height:600px) {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 760px;
         margin: 30px auto
     }
 }

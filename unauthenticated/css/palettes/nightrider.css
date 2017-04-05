@@ -45,6 +45,8 @@ html[data-background-style='nightRider'] table tr td label {
     color: rgba(151, 155, 160, .82) !important
 }
 
+html[data-background-style='nightRider'] .text-force-link,
+html[data-background-style='nightRider'] .text-force-link-hover:hover,
 html[data-background-style='nightRider'] .btn.dropdown-toggle:hover,
 html[data-background-style='nightRider'] body .mppopup .modal-body .table tr td a[onclick*='select']:hover,
 html[data-background-style='nightRider'] body .mppopup .modal-body .table tr td a[onclick*='parentdir']:hover,
@@ -659,7 +661,7 @@ html[data-background-style='nightRider'] .btn.active {
 html[data-background-style='nightRider'] .ui_link.btn.btn-inverse.btn-tiny.ui_link_replaced,
 html[data-background-style='nightRider'] .btn-inverse.btn-tiny,
 html[data-background-style='nightRider'] .btn-tiny,
-html[data-background-style='nightRider'] .btn {
+html[data-background-style='nightRider'] .btn:not(.btn-transparent) {
     color: rgba(199, 199, 200, .60) !important;
     border-color: rgba(80, 85, 99, .61) !important;
     background-color: transparent !important
@@ -1861,4 +1863,13 @@ html[data-background-style='nightRider'] .session_login .alert-success {
 
 html[data-background-style='nightRider'] .text-semi-light {
     color: #6d6d6d
+}
+
+html[data-background-style='nightRider'] .text-semi-dark.text-dark-hoverd:hover,
+html[data-background-style='nightRider'] .text-dark.text-dark-hoverd:hover,
+html[data-background-style='nightRider'] .text-semi-dark:visited,
+html[data-background-style='nightRider'] .text-semi-dark:focus,
+html[data-background-style='nightRider'] .text-semi-dark:active,
+html[data-background-style='nightRider'] .text-semi-dark:hover {
+    color: #757272
 }
