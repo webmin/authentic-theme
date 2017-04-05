@@ -1818,6 +1818,9 @@ if (settings_right_iconize_header_links) {
         $("#headln2l").removeClass("invisible")
     });
     $("body").on("click", "#headln2l a", function(a) {
+        if (unbuffered_header()) {
+            return
+        }
         if ($(this).find(".fa-arrow-left").length) {
             a.preventDefault();
             a.stopPropagation();

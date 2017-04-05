@@ -667,4 +667,4 @@ theme_git_patch_update_success_message2=Uppdatering av Webmin- och Usermin-temat
 theme_xhred_git_patch_update=Uppdatering av temat misslyckades. Prova uppdatera manuellt via konsolen.
 theme_xhred_git_patch_initiated=Uppdatering av temat har påbörjats.
 theme_xhred_global_prev_page=Föregående sida
-theme_xhred_global_help=Hjälpa
+theme_xhred_global_help=Hjälp
