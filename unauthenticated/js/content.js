@@ -1249,7 +1249,20 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
     t__wi_p.$("aside").animate({
         "margin-left": b
     }, 560);
-    t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50")
+    t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50");
+    $.each($(this).find('li span:contains("Fixed bugs")'), function() {
+        var e = $(this),
+            c = $(this).parent("li"),
+            d = c.find("a").length,
+            f = c.find("a:not(.bctl)");
+        e.html([e.text().slice(0, 6), "" + d + " other ", e.text().slice(6)].join(""));
+        c.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
+        c.find("a.bctl").click(function(g) {
+            f.toggleClass("hidden");
+            c.find("a.bctl i").toggleClass("fa-minus-square-o")
+        });
+        f.addClass("obj-popup hidden")
+    })
 });
 var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authentic_remote_version"),
     $__remove_theme_version = ($___remove_theme_version ? $___remove_theme_version : $g__t__ver);

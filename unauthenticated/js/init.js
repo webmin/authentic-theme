@@ -338,7 +338,9 @@ function manageConfig(d) {
                 dataType: "text",
                 success: function(f) {
                     setTimeout(function() {
-                        t__wi_p.$____has_frame__ ? t___wi.page.at__s_s__b(0) : at__s_s__b(0)
+                        if (typeof t___wi.page.at__s_s__b == "function") {
+                            t__wi_p.$____has_frame__ ? t___wi.page.at__s_s__b(0) : at__s_s__b(0)
+                        }
                     }, 400)
                 },
                 error: function() {}

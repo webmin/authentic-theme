@@ -3440,6 +3440,7 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
     $changelog_data =~ s/`(.*?)`/<code>$1<\/code>/g;
     $changelog_data =~ s/__(.*?)__/<strong>$1<\/strong>/g;
     $changelog_data =~ s/_(.*?)_/<em>$1<\/em>/g;
+    $changelog_data =~ s/(Fixed bugs)/<span data-fixed="1">$1<\/span>/g;
     $changelog_data =~
       s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;

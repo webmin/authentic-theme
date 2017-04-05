@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 18.41-beta23 (03 April, 2017)
-* Added ability to install patched version of the theme directly from _GitHub_, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
+#### Version 18.41-beta24 (05 April, 2017)
+* Added ability to install patched version of the theme directly from GitHub, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
 * Added console script for updating the theme [#703](https://github.com/qooob/authentic-theme/issues/703)
 * Added error handler for saving files in background calls [#689](https://github.com/qooob/authentic-theme/issues/689)
 * Added controls for operations in icon mode [#684](https://github.com/qooob/authentic-theme/issues/684)
@@ -12,11 +12,11 @@
 * Added ability to use theme configuration for all users [#640](https://github.com/qooob/authentic-theme/issues/640#issuecomment-287572703)
 * Added complete support for dark palette in the content page (right frame) [#664](https://github.com/qooob/authentic-theme/issues/664)
 * Added ability to toggle dark/light palette in a flash
-* Added autocomplete feature (using _Tab_) for _Command Shell_ port [#641](https://github.com/qooob/authentic-theme/pull/641)
+* Added autocomplete feature (using Tab) for Command Shell port [#641](https://github.com/qooob/authentic-theme/pull/641)
 * Added close button for popovers and improved its general appearance [#46862](https://www.virtualmin.com/node/46862)
 * Added support for included links in help popovers
-* Added _Swedish_ language, thanks to [Sopor Spr](https://github.com/Sopor-)
-* Updated _Catalan_ translation, thanks to [David Canalias](https://github.com/diathesaron)
+* Added Swedish language, thanks to [Sopor Spr](https://github.com/Sopor-)
+* Updated Catalan translation, thanks to [David Canalias](https://github.com/diathesaron)
 * Fixed display in iconless mode for tables
 * Fixed bugs [#623](https://github.com/qooob/authentic-theme/issues/623) [#637](https://github.com/qooob/authentic-theme/issues/637) [#639](https://github.com/qooob/authentic-theme/issues/639) [#645](https://github.com/qooob/authentic-theme/issues/645) [#647](https://github.com/qooob/authentic-theme/issues/647) [#649](https://github.com/qooob/authentic-theme/issues/649) [#657](https://github.com/qooob/authentic-theme/issues/657) [#659](https://github.com/qooob/authentic-theme/issues/659) [#665](https://github.com/qooob/authentic-theme/issues/665) [#666](https://github.com/qooob/authentic-theme/issues/666) [#672](https://github.com/qooob/authentic-theme/issues/672) [#673](https://github.com/qooob/authentic-theme/issues/673) [#675](https://github.com/qooob/authentic-theme/issues/675) [#677](https://github.com/qooob/authentic-theme/issues/677) [#680](https://github.com/qooob/authentic-theme/issues/680) [#681](https://github.com/qooob/authentic-theme/issues/681) [#682](https://github.com/qooob/authentic-theme/issues/682) [#45506](https://www.virtualmin.com/node/45506) [#45522](https://www.virtualmin.com/node/45522) [#45770](https://www.virtualmin.com/node/45770)
 
