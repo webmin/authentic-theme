@@ -10,7 +10,7 @@ do "authentic-theme/authentic-lib.pm";
 
 !foreign_available("webmin") && error( $Atext{'theme_error_access_not_root'} );
 
-__config_dir_available();
+theme_config_dir_available();
 
 my $lr  = "/authentic-theme/logo.png";
 my $lrd = "/authentic-theme/images/logo.png";
