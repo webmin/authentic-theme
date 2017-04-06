@@ -1781,7 +1781,7 @@ sub embed_logo
                   . $logo
                   . ".png" ) )
         {
-            # Update logo in case it changed
+            # Update logo for Webmin
             copy_source_dest( $config_directory . "/authentic-theme/" . $logo . ".png",
                               $root_directory . "/authentic-theme/images" );
 
@@ -1789,10 +1789,6 @@ sub embed_logo
             if ( usermin_available() ) {
                 copy_source_dest( $usermin_config_directory . "/authentic-theme/" . $logo . ".png",
                                   $usermin_root_directory . "/authentic-theme/images" );
-                if ( -r $usermin_config_directory . "/authentic-theme/logo_welcome.png" ) {
-                    copy_source_dest( $usermin_config_directory . "/authentic-theme/logo_welcome.png",
-                                      $usermin_root_directory . "/authentic-theme/images" );
-                }
             }
         }
         if ( -r $root_directory . "/authentic-theme/images/" . $logo . ".png" ) {
@@ -1901,10 +1897,24 @@ sub get_authentic_version
     return ( $installed_version, $remote_version );
 }
 
-sub __config_dir_available
+sub theme_config_dir_available
 {
-    if ( !-d $config_directory . '/authentic-theme' ) {
-        mkdir( $config_directory . '/authentic-theme', "0755" );
+    my $_wm_at_conf_dir = $config_directory . '/authentic-theme';
+
+    if ( !-d $_wm_at_conf_dir ) {
+        mkdir( $_wm_at_conf_dir, 0755 );
+    } else {
+        chmod(0755, $_wm_at_conf_dir);
+    }
+
+    if ( usermin_available() ) {
+        ( my $_um_at_conf_dir = $config_directory ) =~ s/webmin/usermin/;
+
+        if ( !-d $_um_at_conf_dir ) {
+            mkdir( $_um_at_conf_dir, 0755 );
+        } else {
+            chmod(0755, $_um_at_conf_dir);
+        }
     }
 }
 
@@ -2792,7 +2802,7 @@ sub _settings
 
     if ( $t eq 'save' || $t eq 'restore' ) {
 
-        __config_dir_available();
+        theme_config_dir_available();
 
         if ( $t eq 'save' ) {
             !foreign_available("webmin")
@@ -3152,7 +3162,7 @@ sub init
 {
 
     # Make sure that config directory exists
-    __config_dir_available();
+    theme_config_dir_available();
 
     # Register hooks
     $t_uri____i = ( $t_uri_cloudmin == -1 ? 'dom' : 'sid' );

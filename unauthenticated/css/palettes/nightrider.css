@@ -120,7 +120,7 @@ html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] 
 html[data-background-style='nightRider'] tr.atshover:hover td kbd,
 html[data-background-style='nightRider'] tr.atshover:hover td code,
 html[data-background-style='nightRider'] tr.atshover:hover td div,
-html[data-background-style='nightRider'] tr.atshover:hover td:not(.atscontent) span,
+html[data-background-style='nightRider'] tr.atshover:hover td:not(.atscontent) span:not(.awobject),
 html[data-background-style='nightRider'] tr.atshover:hover td,
 html[data-background-style='nightRider'] #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover,
 html[data-background-style='nightRider'] #atsettings>form>div>table>tbody>tr>td>table>tbody>tr.atshover:hover td div,

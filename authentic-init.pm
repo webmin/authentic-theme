@@ -613,7 +613,7 @@ sub usermin_available
     $__usermin_config =~ s/webmin/usermin/;
 
     if ( !-d $__usermin_config . '/authentic-theme' ) {
-        mkdir( $__usermin_config . '/authentic-theme', "0755" );
+        mkdir( $__usermin_config . '/authentic-theme', 0755 );
     }
 
     if (    -r $__usermin_root . $_module
