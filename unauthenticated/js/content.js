@@ -511,7 +511,10 @@ if (__num()) {
                 } else {
                     if (e.length === 0 && $(this).next("label").length === 0 && !k) {
                         $(this).addClass("iawobject");
-                        var i = $(this).attr("name").replace(".", "").replace("%", "");
+                        var i = $(this).attr("name");
+                        if (i) {
+                            i = $(this).attr("name").replace(".", "").replace("%", "")
+                        }
                         if (!$(this).attr("id") && !$("#" + i).length) {
                             $(this).attr("id", i)
                         }
