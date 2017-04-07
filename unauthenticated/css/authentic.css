@@ -771,7 +771,7 @@ br.lh0 {
 
 .right-side-tabs-dismiss i.fa-reload {
     font-size: 1.5em;
-    line-height: 3px;
+    line-height: 24%;
     margin-left: 10px;
     vertical-align: middle
 }
@@ -779,7 +779,7 @@ br.lh0 {
 @-moz-document url-prefix() {
     .right-side-tabs-dismiss i.fa-reload {
         font-size: 1.5em;
-        line-height: 18px;
+        line-height: 99%;
         width: 20px;
         height: 20px;
         margin-left: 10px;
@@ -1058,7 +1058,7 @@ html:not([data-background-style='nightRider']) body:not(.csf):not(.backup-config
 
 .right-side-tabs .tab-pane .info-container .extended-list-data .panel-heading {
     padding: 2px 0;
-    color: #d2d2d2;
+    color: #c2c2c2;
     background-color: transparent
 }
 
@@ -3518,6 +3518,22 @@ a.opener_extra_container_a_style.opener_container_opened:before {
     margin-right: 8px !important
 }
 
+.margined-right--8 {
+    margin-right: -8px !important
+}
+
+.margined-right--10 {
+    margin-right: -10px !important
+}
+
+.margined-right--12 {
+    margin-right: -12px !important
+}
+
+.margined-right--20 {
+    margin-right: -20px !important
+}
+
 .margined-left-8 {
     margin-left: 8px !important
 }
@@ -3544,6 +3560,10 @@ a.opener_extra_container_a_style.opener_container_opened:before {
 
 .margined-top--5 {
     margin-top: -5px !important
+}
+
+.margined-top--7 {
+    margin-top: -7px !important
 }
 
 .margined-top--10 {

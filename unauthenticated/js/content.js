@@ -1250,18 +1250,22 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
         "margin-left": b
     }, 560);
     t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50");
+    if ($(this).find(".modal-body h4").length && $(this).find('.modal-body h4:contains("beta")').length) {
+        var c = $(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text();
+        $(this).find(".modal-body h4:first").append('<a data-toggle="tooltip" data-title="' + lang("theme_xhred_git_compare_changes") + '" class="btn btn-transparent diffctl text-semi-dark text-force-link-hover margined-top--7 margined-right--10 pull-right" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-fw fa-git-pull fa-flip-horizontal">&nbsp;</i></a>')
+    }
     $.each($(this).find('li span:contains("Fixed bugs")'), function() {
-        var e = $(this),
-            c = $(this).parent("li"),
-            d = c.find("a").length,
-            f = c.find("a:not(.bctl)");
-        e.html([e.text().slice(0, 6), "" + d + " other ", e.text().slice(6)].join(""));
-        c.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
-        c.find("a.bctl").click(function(g) {
-            f.toggleClass("hidden");
-            c.find("a.bctl i").toggleClass("fa-minus-square-o")
+        var f = $(this),
+            d = $(this).parent("li"),
+            e = d.find("a").length,
+            g = d.find("a:not(.bctl)");
+        f.html([f.text().slice(0, 6), "" + e + " other ", f.text().slice(6)].join(""));
+        d.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
+        d.find("a.bctl").click(function(h) {
+            g.toggleClass("hidden");
+            d.find("a.bctl i").toggleClass("fa-minus-square-o")
         });
-        f.addClass("obj-popup hidden")
+        g.addClass("obj-popup hidden")
     })
 });
 var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authentic_remote_version"),
