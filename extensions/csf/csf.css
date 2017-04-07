@@ -83,9 +83,10 @@
     padding: 2px 10px 2px 5px !important
 }
 
+body.csf table.table.table-striped.table-condensed>thead>tr:first-child,
 body.csf .table>thead>tr:first-child>th,
 body.csf .table>thead>tr:first-child>td {
-    border-top: 3px solid #f0f0f0
+    border-top: 1px solid #eaeaea !important
 }
 
 .csf #grep input.collapse,
@@ -154,6 +155,11 @@ body.csf .table>thead>tr:first-child>td {
     max-width: 320px !important
 }
 
+html[data-post='status'] .CodeMirror pre {
+    white-space: pre-wrap;
+    word-wrap: break-word
+}
+
 html[data-post='servercheck'] div[style*="clear: both;padding"] strong,
 .csf a[data-toggle='tab'] {
     font-weight: 400
@@ -165,6 +171,16 @@ html[data-post='temp'] .dataTables_wrapper+div {
 
 html[data-post='temp'] .dataTables_wrapper+div a.btn-xxs {
     cursor: pointer
+}
+
+html[data-module='csf'][data-post='viewlogs']:not([data-background-style="nightRider"]) .col_header_custom.big_big,
+html[data-post='temp'] body.csf .table>thead>tr:first-child>th {
+    border-top: 2px solid #f0f0f0 !important;
+    vertical-align: middle !important
+}
+
+html[data-module='csf'][data-post='viewlogs']:not([data-background-style="nightRider"]) .col_header_custom.big_big {
+    border-top-width: 3px
 }
 
 html[data-post='viewlogs'] .dataTables_wrapper .table tbody tr.odd {
@@ -200,9 +216,13 @@ html[data-post='temp'] tr td .btn.btn-danger {
     margin-left: -3px
 }
 
+div[style*=': 1px solid #DDDDDD'] {
+    border-color: #eaeaea !important
+}
+
 html[data-post='logtail'] .panel .panel-body .panel,
 html[data-post='loggrep'] .panel .panel-body .panel {
-    border: 1px solid #eaeaea
+    border: 1px solid #eaeaea !important
 }
 
 .__csf__ {
@@ -605,7 +625,7 @@ html[data-module='csf'] .col_header_custom.big_big {
 
 html[data-post='servercheck']:not([data-background-style="nightRider"]) div[style*="clear: both;padding"],
 html[data-module='csf']:not([data-background-style="nightRider"]) .col_header_custom.big_big {
-    border-top: 3px solid #f0f0f0 !important
+    border-top: 1px solid #eaeaea !important
 }
 
 html[data-post='viewports'] .col_header_custom {
@@ -736,8 +756,7 @@ html[data-module='csf'] .panel._devcon .panel-heading {
 
 html[data-module='csf'] .panel._devcon {
     border-color: #eaeaea;
-    border-top-width: 3px;
-    border-top-color: #f0f0f0;
+    border-top-width: 1px;
     box-shadow: none
 }
 
@@ -765,7 +784,6 @@ html[data-module='csf'] .panel-body>form>.panel.panel-default>.panel-body>.panel
     padding: 0 6.5px;
     text-align: center;
     border: 1px solid #f0f0f0;
-    border-top: 3px solid #f0f0f0;
     border-bottom: 0;
     background-color: #f7f7f7
 }
@@ -878,6 +896,7 @@ html[data-post='profiles'] td[style*='#990000'] {
     border-left: 1px solid #eaeaea !important
 }
 
+html[data-post='profiles'] body>div>div>div.panel-body>form:nth-child(1)>table>thead>tr>th:nth-child(1),
 html[data-post='profiles'] input[value='profileapply']+table tbody tr:first-child th:first-child {
     padding-left: 150px !important
 }
@@ -900,7 +919,7 @@ html[data-post='profileapply'] form[action='index.cgi'] input[value='restartboth
 
 .csf [style*='background: #FFD1DC'][style*='border'],
 .csf [style*='background:#FFD1DC'][style*='border'] {
-    border-bottom-color: #ccc !important
+    border-bottom-color: #ddd !important
 }
 
 .csf [style*='background: #990000'],
@@ -1093,6 +1112,16 @@ html[data-post='loggrep'][data-background-style='nightRider'] .panel .panel-body
     border: 1px solid #424449
 }
 
+html[data-module='csf'][data-post="allow"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="deny"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="redirect"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="ignorefiles"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="dirwatch"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="dyndns"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="templates"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="logfiles"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="blocklists"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
+html[data-module='csf'][data-post="syslogusers"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
 html[data-module='csf'][data-post="viewports"]:not([data-background-style="nightRider"]) body.csf .panel-body h4.col_header_custom {
     border-top: 3px solid #f0f0f0 !important
 }
@@ -1130,7 +1159,7 @@ html[data-module='csf'][data-background-style='nightRider'] .panel._devcon .pane
     border-bottom: 1px solid #252729 !important
 }
 
-body>div>div>div.panel-body>div:nth-child(2)>div>div.panel-heading,
+html[data-module='csf'][data-background-style='nightRider'] body>div>div>div.panel-body>div:nth-child(2)>div>div.panel-heading,
 html[data-module='csf'][data-background-style='nightRider'] .panel {
     color: rgba(151, 155, 160, .82) !important
 }

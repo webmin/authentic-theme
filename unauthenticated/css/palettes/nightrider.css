@@ -661,7 +661,7 @@ html[data-background-style='nightRider'] .btn.active {
 html[data-background-style='nightRider'] .ui_link.btn.btn-inverse.btn-tiny.ui_link_replaced,
 html[data-background-style='nightRider'] .btn-inverse.btn-tiny,
 html[data-background-style='nightRider'] .btn-tiny,
-html[data-background-style='nightRider'] .btn:not(.btn-transparent) {
+html[data-background-style='nightRider'] .btn {
     color: rgba(199, 199, 200, .60) !important;
     border-color: rgba(80, 85, 99, .61) !important;
     background-color: transparent !important
