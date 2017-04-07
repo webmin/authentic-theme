@@ -4352,14 +4352,29 @@ body.syslog .CodeMirror {
     opacity: 0
 }
 
+.opacity-0_2 {
+    cursor: default;
+    opacity: .2
+}
+
 .opacity-0_3 {
     cursor: default;
-    opacity: .5
+    opacity: .3
+}
+
+.opacity-0_4 {
+    cursor: default;
+    opacity: .4
 }
 
 .opacity-0_5 {
     cursor: default;
     opacity: .5
+}
+
+.opacity-0_6 {
+    cursor: default;
+    opacity: .6
 }
 
 .opacity-0_7 {
@@ -6662,6 +6677,7 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
     opacity: 0
 }
 
+.awcheckbox.pointer-events-none input[type='checkbox']+label,
 .awcheckbox input[type='checkbox']:disabled+label {
     opacity: .65
 }
@@ -6745,6 +6761,7 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
     opacity: 0
 }
 
+.awradio.pointer-events-none input[type='radio']+label,
 .awradio input[type='radio']:disabled+label {
     opacity: .65
 }
@@ -9136,6 +9153,12 @@ body[class='servers'] input[name='defuser'] {
 
 body[class='servers'] input[name='port'] {
     margin-bottom: 2px
+}
+
+body[class='acl'] .panel-body>h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-left: 0 !important
 }
 
 body[class='acl'] select[name='group'] {

@@ -1121,7 +1121,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . ($git_version_local ? $git_version_local : $installed_version) . '. '
+              . ( $git_version_local ? $git_version_local : $installed_version ) . '. '
               . (
                  $git_version_remote ? $Atext{'theme_git_patch_available'} : $Atext{'theme_update_available'} )
               . ' '
@@ -1164,7 +1164,7 @@ sub get_sysinfo_vars
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
-              . ($git_version_local ? $git_version_local : $installed_version)
+              . ( $git_version_local ? $git_version_local : $installed_version )
               . '<div class="btn-group margined-left-4"><a href="'
               . $gconfig{'webprefix'}
               . '/webmin/edit_themes.cgi" data-href="'
@@ -1903,8 +1903,9 @@ sub theme_config_dir_available
 
     if ( !-d $_wm_at_conf_dir ) {
         mkdir( $_wm_at_conf_dir, 0755 );
-    } else {
-        chmod(0755, $_wm_at_conf_dir);
+    }
+    else {
+        chmod( 0755, $_wm_at_conf_dir );
     }
 
     if ( usermin_available() ) {
@@ -1912,8 +1913,9 @@ sub theme_config_dir_available
 
         if ( !-d $_um_at_conf_dir ) {
             mkdir( $_um_at_conf_dir, 0755 );
-        } else {
-            chmod(0755, $_um_at_conf_dir);
+        }
+        else {
+            chmod( 0755, $_um_at_conf_dir );
         }
     }
 }
@@ -2303,15 +2305,18 @@ sub _settings
             '4',
             'settings_sysinfo_easypie_charts_scale',
             '8',
+            'settings_sysinfo_drive_status_on_new_line',
+            'true',
+            'settings_sysinfo_expand_all_accordions',
+            'false',
+
+            '__',
+            _settings( 'fa', 'info-circle', &Atext('settings_right_soft_updates_page_options_title') ),
             'settings_sysinfo_theme_updates',
             'false',
             'settings_sysinfo_theme_patched_updates',
             'false',
             'settings_sysinfo_csf_updates',
-            'false',
-            'settings_sysinfo_drive_status_on_new_line',
-            'true',
-            'settings_sysinfo_expand_all_accordions',
             'false' );
 
         return (@settings);
@@ -2487,7 +2492,14 @@ sub _settings
         my $v = ( length $__settings{$k} ? $__settings{$k} : $v );
 
         if ( $v eq 'true' || $v eq 'false' ) {
-            $v = '<span class="awradio awobject">
+            my $disabled;
+
+            # Force disabled state
+            if ( !has_command('git') && $k eq 'settings_sysinfo_theme_patched_updates' ) {
+                $disabled = " pointer-events-none";
+            }
+
+            $v = '<span class="awradio awobject' . $disabled . '">
                     <input class="iawobject" type="radio" name="'
               . $k . '" id="' . $k . '_1" value="true"' . ( $v eq 'true' && ' checked' ) . '>
                     <label class="lawobject" for="'
