@@ -667,6 +667,11 @@ html[data-background-style='nightRider'] .btn {
     background-color: transparent !important
 }
 
+html[data-background-style='nightRider'] .btn.diffctl,
+html[data-background-style='nightRider'] .btn.bctl {
+    border-color: transparent !important
+}
+
 html[data-background-style='nightRider'] .ui_link.btn.btn-inverse.btn-tiny.ui_link_replaced:hover,
 html[data-background-style='nightRider'] .btn-inverse.btn-tiny:hover,
 html[data-background-style='nightRider'] .btn-tiny:hover {
