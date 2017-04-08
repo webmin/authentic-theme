@@ -12,7 +12,11 @@ body_header0=系統資訊
 body_header1=帳號資訊
 body_host=主機名稱
 body_kernel=內核與 CPU
+已編輯
 body_kernelon=$1 $2 執行於 $3
+字元數：26
+ 
+
 body_load=$1 (1 分鐘) $2 (5 分鐘) $3 (15 分鐘)
 body_os=作業系統
 body_procs=執行中的过程
@@ -63,28 +67,28 @@ right_faliases=郵件別名
 right_fdbs=伺服器
 right_fdoms=虛擬伺服器
 right_from=登入自
-right_fusers2=FTP 用戶
-right_fusers=郵件/FTP 用戶
+right_fusers2=FTP用戶
+right_fusers=郵件/FTP用戶
 right_fvm2=虛擬機
-right_fweb=虚拟站点
-right_licenceheader_vm2=Cloudmin Licenses
-right_login=登入为
-right_not=Not installed
-right_of=$1 out of $2
-right_quota=磁盘配额与使用状况
-right_reselip=(Reseller $1)
-right_sharedip=(Shared IP)
-right_slcheck=Re-check Cloudmin license
-right_subs=子服务器
-right_virtdocs2=附加文档
+right_fweb=虛擬網站
+right_licenceheader_vm2=Cloudmin 許可
+right_login=以登入為
+right_not=未安裝
+right_of=$1 項中 $2 個
+right_quota=硬碟使用率和配額
+right_reselip=(經銷商$1)
+right_sharedip=(共享IP)
+right_slcheck=重新檢查 Cloudmin 許可證
+right_subs=子伺服器
+right_virtdocs2=附加文檔
 right_virtualmin=Virtualmin 版本
-right_vlcheck=Re-check Virtualmin license
+right_vlcheck=重新檢查 Virtualmin 許可證
 right_vm2=Cloudmin 版本
 
-session_failed=登入失败。请重试。
-session_logout=登出成功。 使用下方的表单以再次登入。
-session_timed_out=会话超时。
-session_twofailed=两步验证失败: $1
+session_failed=登入失敗。請再試一次。
+session_logout=登出成功。使用下面的表單重新登入。
+session_timed_out=對話在 $1 分鐘不活動後超時。
+session_twofailed=雙因素認證失敗: $1
 
 
 
@@ -95,63 +99,64 @@ session_twofailed=两步验证失败: $1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=選項
+settings_right_restore_defaults=復原預設值
+settings_right_restored=復原
+settings_right_restoring=復原
+settings_right_saved=已儲存
+settings_right_saving=儲存
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
+settings_right_theme_extensions=主題擴展
+settings_right_theme_extensions_title=主題擴展
+settings_right_file_edit=編輯擴展檔案:
+settings_right_extensions_title=題材豐富的設計，讓您輕鬆操控界面上有針對性的部分。您可以通過編寫定製樣式<em>樣式</em>或<em>腳本</em>擴展，來同時修改<em>CSS</em>與<em>JavaScript</em>。以下是簡單的例子，以幫助您了解其基本概念。例如，為改變背景的顏色，添加以下樣式的 CSS 擴展: <code>body {background-color: Gainsboro}</code>。使用 JavaScript 來改變提交按鈕的寬度，以下代碼添加到 JavaScript 擴展: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>。然而，在實踐中將比這更複雜。
 
-settings_right_theme_logos=Theme logos
-settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+settings_right_theme_logos=主題 Logo
+settings_right_theme_logos_title=主題 Logo
+settings_right_logos_title=主題 Logo 可以簡便地在這裡設置，經過身份驗證和未經驗證的用戶皆可。推薦 Logo 大小是<kbd> 180x90 </kbd>像素,支持的格式是<kbd> .PNG </kbd>，以提供透明度。在 Logo 設定完畢後,如果有需要,您可以用可擴展的 <a href="/settings-editor_read.cgi"><em>CSS</em></a> 與 <a href="/settings-editor_read.cgi?
+file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>來修改,通過類名來訪問它相應的 <code>._logo</code> 與 <code>._logo_welcome</code> 來區分 <em>對已驗證的用戶的 Logo</em> 與 <em>對未經驗證的用戶的 Logo</em> 類型。
+settings_right_logo_authenticated_users=對已驗證用戶的 Logo
+settings_right_logo_unauthenticated_users=對未經驗證用戶的 Logo
 
-settings_right_current_theme=Current theme
-settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Authentic Theme Configuration
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+settings_right_current_theme=當前主題
+settings_right_title =此頁面允許您配置<a href="https://github.com/qooob/authentic-theme" target="_blank">主題</A>選項。設置將在主題更新時儲存。
+settings_right_theme_left_configuration_title=Authentic 主題配置
+settings_right_theme_left_extensions_title=Authentic 主題編輯器擴展
+settings_right_theme_left_logo_title=Authentic 主題標誌控制
+settings_right_theme_configurable_options_title=可配置選項
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
-settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_window_options_title=視窗選項
+settings_right_navigation_menu_title=導航菜單選項
+settings_right_table_options_title=表選項
+settings_security_title=安全警報選項
+settings_security_description=安全警報將讓你在特定事件接到電子郵件通知。(需要 Linux 的 <code>mail</code> 命令來啟用此功能)<br class="lh0">格式: <code>訊息|主題|逗號分隔的用戶或Email表|逗號分隔的忽略 IPv4/IPv6 表</code><br class="lh0">使用例: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_right_hotkey_options_title=熱鍵選項
+settings_right_sysinfo_page_options_title=系統資訊頁面選項
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
-settings_hotkey_custom_1=Custom link <code>1</code>
-settings_hotkey_custom_2=Custom link <code>2</code>
-settings_hotkey_custom_3=Custom link <code>3</code>
-settings_hotkey_custom_4=Custom link <code>4</code>
-settings_hotkey_custom_5=Custom link <code>5</code>
-settings_hotkey_custom_6=Custom link <code>6</code>
-settings_hotkey_custom_7=Custom link <code>7</code>
-settings_hotkey_custom_8=Custom link <code>8</code>
-settings_hotkey_custom_9=Custom link <code>9</code>
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
+settings_hotkey_custom_1=自定義鏈接 <code>1</code>
+settings_hotkey_custom_2=自定義鏈接 <code>2</code>
+settings_hotkey_custom_3=自定義鏈接 <code>3</code>
+settings_hotkey_custom_4=自定義鏈接 <code>4</code>
+settings_hotkey_custom_5=自定義鏈接 <code>5</code>
+settings_hotkey_custom_6=自定義鏈接 <code>6</code>
+settings_hotkey_custom_7=自定義鏈接 <code>7</code>
+settings_hotkey_custom_8=自定義鏈接 <code>9</code>
+settings_hotkey_custom_9=自定義鏈接 <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
-settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
-settings_loader_top=Enable page progress loader on top of the screen
-settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default content page
-settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+settings_navigation_color=導航菜單調色板
+settings_background_color=內容頁面顏色調色板
+settings_animation_left=啟用導航菜單動畫
+settings_animation_tabs=啟用在標籤中的動畫
+在屏幕上方settings_loader_top=啟用頁面頂部裝載進度條
+settings_loader_left=允許導航菜單微調
+settings_right_reload=加載默認內容頁
+settings_right_reload_description=當切換標籤頁，右側內容頁被重載。不保留當前打開的右框內容頁面，並使用默認刷新？
 
-settings_right_hide_table_icons=Hide table icons for the right frame
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
+settings_right_hide_table_icons=對右側資訊框隱藏列表圖標
+settings_right_hide_table_icons_description=完全從內容頁中刪除圖標並顯示右側滑動鏈接
+settings_right_small_table_icons=小表格圖標
 settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
@@ -159,49 +164,54 @@ settings_right_grayscaled_table_icons=Grayscale table icons and bring color on f
 settings_right_iconize_header_links=Replace table header's links with icons
 settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
 
-settings_window_autoscroll=Automatic window scroll
+settings_window_autoscroll=自動窗口滾動
 settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
+settings_leftmenu_section_hide_unused_modules=Hide un-used modules section
+settings_favorites=顯示我的最愛按鈕
+settings_leftmenu_button_language=顯示語言按鈕
+settings_leftmenu_button_refresh=顯示重載按鈕
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=顯示主題設置按鈕
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for shell
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_leftmenu_button_language=顯示語言按鈕
+settings_leftmenu_button_refresh=顯示重載按鈕
 
-settings_side_slider_background_refresh_time=Timeout for background information update
-settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
+settings_theme_options_button=顯示主題設置按鈕
+
+settings_hotkeys_active=啟用熱鍵
+settings_hotkey_toggle_modifier=熱鍵更改
+settings_hotkey_toggle_key_webmin=Webmin 熱鍵
+settings_hotkey_toggle_key_virtualmin=Virtualmin 熱鍵
+settings_hotkey_toggle_key_cloudmin=Cloudmin 熱鍵
+settings_hotkey_toggle_key_usermin=Usermin 熱鍵
+settings_hotkey_toggle_key_webmail=郵件熱鍵
+settings_hotkey_sysinfo=儀表板熱鍵
+settings_hotkey_shell=Shell 熱鍵
+settings_hotkey_favorites=我的最愛熱鍵
+settings_hotkey_focus_search=搜尋熱鍵
+settings_hotkey_reload=重載熱鍵
+
+settings_side_slider_background_refresh_time=超時資訊更新
+該值單位為分鐘。最小的推薦值為 <code>1</code> 分鐘。默認設置為 <code>5</code> 分鐘。也可以使用十進制值。
+settings_sysinfo_easypie_charts=顯示圖表
+settings_sysinfo_theme_updates=檢查 Authentic 主題更新
+settings_sysinfo_csf_updates=檢查 ConfigServer 安全與防火牆更新
 settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show system information link as button
-settings_leftmenu_singlelink_icons=Show icons for single links on navigation menu
+settings_sysinfo_link_mini=將系統信息鏈接顯示為按鈕
+settings_leftmenu_singlelink_icons=為導航菜單上單個鏈接顯示圖標
 
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
+settings_right_page_defaults_title=默認頁
+settings_right_default_tab_webmin=登入 Webmin 後的默認標籤
+settings_right_default_tab_usermin=登入到 Usermin 後的默認標籤
+settings_right_virtualmin_default=登入到 Virtualmin 的默認頁
+settings_right_cloudmin_default=Cloudmin 默認頁
 
-settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
-settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
-settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+settings_leftmenu_vm_installscripts =顯示 Virtualmin 安裝腳本鏈接
+settings_leftmenu_vm_webpages =顯示 Virtualmin 編輯網頁鏈接
+settings_leftmenu_vm_backup_amazon=Show Amazon S3 buckets link in Virtualmin
 
 settings_right_clear_local_cache=Clear cache
 settings_right_notification_slider_options_title=Side slider options
@@ -218,17 +228,17 @@ settings_leftmenu_user_html=Show HTML snippet
 settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
-theme_changelog=更新日志
+theme_changelog=Changelog
 theme_conference=Theme Conference
-theme_development_support=开发支持
-theme_donate=捐赠
-theme_download=下载
-theme_name=Authentic 主题
-theme_update=更新
+theme_development_support=Development Support
+theme_donate=Donate
+theme_download=Download
+theme_name=Authentic Theme
+theme_update=Update
 theme_force_update=Force update
-theme_update_available=最新版本
-theme_update_notice=更新提示
-theme_version=主题版本
+theme_update_available=Latest available release
+theme_update_notice=Update Notice
+theme_version=Theme version
 
 
 # Version 17.40
@@ -245,7 +255,7 @@ theme_sysinfo_cmdocs=Cloudmin documentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
-theme_fileformat_plain_text=Plain Text
+theme_fileformat_plain_text=文本
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
@@ -342,8 +352,8 @@ theme_xhred_filemanager_context_newfoder=Create new directory
 theme_xhred_filemanager_context_copy=Copy
 theme_xhred_filemanager_context_cut=Cut
 theme_xhred_filemanager_context_paste=Paste
-theme_xhred_filemanager_context_chmod=Change Permissions
-theme_xhred_filemanager_context_chown=Change Ownership
+theme_xhred_filemanager_context_chmod=Change permissions
+theme_xhred_filemanager_context_chown=Change ownership
 
 #17.51
 theme_xhred_filemanager_context_new=New
@@ -352,7 +362,7 @@ theme_xhred_filemanager_context_delete=Delete
 theme_xhred_filemanager_context_rename=Rename
 theme_xhred_filemanager_context_edit=Edit
 theme_xhred_filemanager_context_extract=Extract
-theme_xhred_filemanager_context_goto=Open Item Location
+theme_xhred_filemanager_context_goto=Open item location
 theme_xhred_filemanager_context_properties=Properties
 theme_xhred_filemanager_context_search=Search
 
@@ -379,7 +389,6 @@ settings_leftmenu_width=Preferable width
 settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Reverse switch output
 settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required to apply new settings.
-
 
 #17.63
 theme_xhred_filemanager_context_calculate_selected_size=Calculate selected size
