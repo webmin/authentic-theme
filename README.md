@@ -54,11 +54,15 @@
 ###### ![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 11
 
 ### FAQ
+
+#### PGP signature verification
+After adding theme's [_public key_](https://github.com/qooob/authentic-theme/blob/master/THEME.pgp) to your keyring, you can check that the downloaded file that you want to install is original and unmodified, by verifying its signature with running `gpg --verify authentic-theme-18.40.wbt.gz-sig.asc authentic-theme-18.40.wbt.gz` command in the console.
+
 #### How to update _Authentic_ Theme manually?
 Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using console, do the following:
   1. Go to _Webmin_ (`cd /usr/libexec/webmin`) or _Usermin_ (`cd /usr/libexec/usermin`) directory __*__
   2. Descend into theme's directory (`cd authentic-theme`)
-  3. Run [`./theme-update.sh`](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
+  3. Run [_`./theme-update.sh`_](https://github.com/qooob/authentic-theme/issues/703) and hit _y_ to continue
   4. Restart _Webmin_/_Usermin_ after update
 <br>__*__ *Binary directory might be different from `libexec` depending on the system. Run `whereis webmin` to figure this out.*
 
