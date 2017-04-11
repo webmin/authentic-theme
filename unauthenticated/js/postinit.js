@@ -747,7 +747,15 @@ function t__s(b) {
                 t__wi_p.history.pushState(null, null, $_____link_full + "/?virtualmin");
                 t__wi_p.$("#wrapper").data("virtual-server", 2);
                 t__wi_p.$("#wrapper").data("server-manager", -1);
-                t__wi_p.$("#wrapper").data("webmail", -1)
+                t__wi_p.$("#wrapper").data("webmail", -1);
+                if (typeof t___wi.page.t__vm_l == "function") {
+                    var c = URI.parseQuery(URI(t___wi.page.location).query())["dom"];
+                    if (c) {
+                        setTimeout(function() {
+                            t___wi.t__vm_l(c)
+                        }, 301)
+                    }
+                }
             } else {
                 if (b == "open_cloudmin") {
                     t__wi_p.history.pushState(null, null, $_____link_full + "/?cloudmin");
