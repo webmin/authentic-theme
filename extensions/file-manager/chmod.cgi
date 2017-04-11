@@ -18,7 +18,8 @@ my $perms = $in{'perms'};
 
 # Selected directories and files only
 if ( $in{'applyto'} eq '1' ) {
-    foreach $name ( split( /\0/, $in{'name'} ) ) {
+    foreach my $name ( split( /\0/, $in{'name'} ) ) {
+        $name = simplify_path($name);
         if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
             $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
         }
@@ -27,7 +28,8 @@ if ( $in{'applyto'} eq '1' ) {
 
 # Selected files and directories and files in selected directories
 if ( $in{'applyto'} eq '2' ) {
-    foreach $name ( split( /\0/, $in{'name'} ) ) {
+    foreach my $name ( split( /\0/, $in{'name'} ) ) {
+        $name = simplify_path($name);
         if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
             $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
         }
@@ -48,7 +50,8 @@ if ( $in{'applyto'} eq '2' ) {
 
 # All (recursive)
 if ( $in{'applyto'} eq '3' ) {
-    foreach $name ( split( /\0/, $in{'name'} ) ) {
+    foreach my $name ( split( /\0/, $in{'name'} ) ) {
+        $name = simplify_path($name);
         if ( system_logged( "chmod -R " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
             $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");
         }
@@ -57,7 +60,8 @@ if ( $in{'applyto'} eq '3' ) {
 
 # Selected files and files under selected directories and subdirectories
 if ( $in{'applyto'} eq '4' ) {
-    foreach $name ( split( /\0/, $in{'name'} ) ) {
+    foreach my $name ( split( /\0/, $in{'name'} ) ) {
+        $name = simplify_path($name);
         if ( -f "$cwd/$name" ) {
             if ( system_logged( "chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name") ) != 0 ) {
                 $errors{ urlize($name) } = lc("$text{'error_chmod'}: $?");

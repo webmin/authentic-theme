@@ -36,8 +36,9 @@ if ( !defined $grid ) {
 }
 
 if ( !scalar %errors ) {
-    foreach $name ( split( /\0/, $in{'name'} ) ) {
-        if ( system_logged( "chown $recursive $uid:$grid " . quotemeta("$cwd/$name") ) != 0 ) {
+    foreach my $name ( split( /\0/, $in{'name'} ) ) {
+        $name = simplify_path($name);
+        if ( !$name || system_logged( "chown $recursive $uid:$grid " . quotemeta("$cwd/$name") ) != 0 ) {
             $errors{ urlize($name) } = lc("$text{'error_chown'}: $?");
         }
     }
