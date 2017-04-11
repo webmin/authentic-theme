@@ -24,8 +24,7 @@ if ( !$in{'label'} ) {
 }
 
 foreach my $file ( split( /\0/, $in{'name'} ) ) {
-    $file =~ s/\.\.//g;
-    &simplify_path($file);
+    $file = simplify_path($file);
     if (
         system_logged( "chcon $recursive " . quotemeta("$in{'label'}") . " " . quotemeta("$cwd/$file") ) != 0 )
     {

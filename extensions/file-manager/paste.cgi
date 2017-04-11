@@ -27,6 +27,7 @@ my $fo = ( $request_uri{'ua'} eq '1' ? 1 : 0 );
 
 for ( my $i = 2 ; $i <= scalar(@arr) - 1 ; $i++ ) {
     chomp( $arr[$i] );
+    $arr[$i] = simplify_path( $arr[$i] );
 
     if ( ( -e "$cwd/$arr[$i]" ) && $cwd ne $from && !$fr ) {
         set_response('ep');

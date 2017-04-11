@@ -12,13 +12,11 @@ use lib ( dirname(__FILE__) . '/../../lib' );
 
 require( dirname(__FILE__) . '/file-manager-lib.pm' );
 
-$path_urlized = urlize($path);
-
 open( my $fh, ">", &get_paste_buffer_file() ) or die "Error: $!";
 print $fh "cut\n";
 print $fh "$path\n";
 
-foreach $name ( split( /\0/, $in{'name'} ) ) {
+foreach my $name ( split( /\0/, $in{'name'} ) ) {
     print $fh "$name\n";
 }
 

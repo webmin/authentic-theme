@@ -14,7 +14,8 @@ require( dirname(__FILE__) . '/file-manager-lib.pm' );
 
 my %errors;
 
-foreach $name ( split( /\0/, $in{'name'} ) ) {
+foreach my $name ( split( /\0/, $in{'name'} ) ) {
+    $name = simplify_path($name);
     if ( !&unlink_logged( $cwd . '/' . $name ) ) {
         $errors{ urlize($name) } = "$text{'error_delete'}";
     }
