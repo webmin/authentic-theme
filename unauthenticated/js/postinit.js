@@ -999,7 +999,8 @@ function __lls() {
     !t__wi_p.$("#_menu_loader").length && t__wi_p.$("body ul.navigation").before('<span id="_menu_loader" class="loading loading-sm"></span>');
     !t__wi_p.$("#loader-close-sm").length && t__wi_p.$("#_menu_loader").before('<div class="loader-close sm hidden" id="loader-close-sm"><i class="fa fa-fw fa-times-circle pull-right hidden scale-08"></i></div>');
     t__wi_p.setTimeout(function() {
-        t__wi_p.$("#loader-close-sm").removeClass("hidden")
+        t__wi_p.$("#loader-close-sm").removeClass("hidden");
+        t__wi_p.$("#loader-close-sm i").trigger("click")
     }, 4500);
     t__wi_p.$("body aside .mCSB_scrollTools").css("visibility", "hidden");
     t__wi_p.$("body ul.navigation").css("visibility", "hidden");
