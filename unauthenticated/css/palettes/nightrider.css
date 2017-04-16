@@ -65,7 +65,7 @@ html[data-background-style='nightRider'] a:not(.opener_trigger):not([data-toggle
 }
 
 html[data-background-style='nightRider'] .file-manager .breadcrumb .fa.fa-caret-down {
-    color: #ccc
+    color: #888
 }
 
 html[data-background-style='nightRider'] .input-group-addon {
@@ -555,6 +555,12 @@ html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-them
     border: 1px solid #393c41;
     border-bottom-color: 0;
     background: #292c32
+}
+
+html[data-background-style='nightRider'] .file-manager .cspinner .cspinner-icon,
+html[data-background-style='nightRider'] .file-manager .table .cspinner .cspinner-icon {
+    border-top-color: #333;
+    border-left-color: #777
 }
 
 html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light ._filemanager_file_editor_save .cspinner .cspinner-icon {
@@ -1816,6 +1822,11 @@ html[data-background-style='nightRider'] body.server-manager[data-uri*='shell.cg
 html[data-background-style='nightRider'] body.shell .sub_table_container:not(.xcontent-force-no-styling) *:not(.fa):not(.lawobject):not(b):not(.btn):not(span):not(input):not(.tdhead):not(th) {
     color: #dee0e5 !important;
     background-color: #121417 !important
+}
+
+html[data-background-style='nightRider'] .file-manager .directory_go_up,
+html[data-background-style='nightRider'] .file-manager .directory_go_up td i.fa {
+    color: #666
 }
 
 html[data-background-style='nightRider'] body[class*='server-manager'][data-uri*='list_domains.cgi'] form[action='list_domains.cgi']+script+a+.opener_extra_container+div+p>a {

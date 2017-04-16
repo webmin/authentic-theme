@@ -227,7 +227,7 @@ theme_name=Autentic-theme
 theme_update=Actualitzar
 theme_force_update=Força l'actualització
 theme_update_available=Última versió disponible
-theme_update_notice=Notifica les actualitzacions
+theme_update_notice=Informació de l'actualització
 theme_version=Versió del tema
 
 
@@ -633,42 +633,43 @@ theme_xhred_global_no_results_found=No s'ha trobat cap resultat
 
 
 #18.40
-theme_new_password_header=Set new password for user
-login_reset=Password recovery
-theme_xhred_move_top=Move to top
-theme_xhred_move_bottom=Move to bottom
-theme_xhred_move_up=Move up
-theme_xhred_move_down=Move down
-theme_xhred_add_after=Add after
-theme_xhred_add_before=Add before
-settings_button_tooltip=Show tooltip on buttons
-settings_show_night_mode_link=Show palette toggle
-settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
-settings_title=Theme Configuration
-settings_subtitle=For user
+theme_new_password_header=Establir una nova contrasenya
+login_reset=Recuperar la contrasenya
+theme_xhred_move_top=Moure a sobre
+theme_xhred_move_bottom=Moure a sota
+theme_xhred_move_up=Moure a dalt
+theme_xhred_move_down=Moure a baix
+theme_xhred_add_after=Afegir després
+theme_xhred_add_before=Afegir abans
+settings_button_tooltip=Mostrar informació contextual en els botons
+settings_show_night_mode_link=Mostrar el botó d'intercanvi entre els modes clar i fosc
+settings_hotkey_toggle_key_night_mode=Drecera per canviar entre el modes clar i fosc
+settings_title=Configuració del tema
+settings_subtitle=Per a l'usuari
 
-theme_tooltip_night_mode=Day/night mode toggle
+theme_tooltip_night_mode=Canvi entre el mode clar i el mode fosc
 theme_tooltip_terminal_link=Terminal
-theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
-theme_tooltip_logout=Sign out
-theme_tooltip_edit_user=Edit user
+theme_tooltip_language_link=Idioma
+theme_tooltip_switch_user=Canviar d'usuari
+theme_tooltip_logout=Sortir
+theme_tooltip_edit_user=Editar l'usuari
 
 
 #18.41
-settings_sysinfo_easypie_charts_size=Diameter of charts
-theme_xhred_global_choose=Choose
-theme_xhred_global_select=Select
-theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including patched versions
-settings_sysinfo_theme_patched_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
-theme_git_patch_available=Latest available patch
-theme_git_patch_no_git_message=In order to install latest patches directly from GitHub you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme upgrade for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme upgrade for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme upgrade has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme upgrade has been initiated.
-theme_xhred_global_prev_page=Previous Page
-theme_xhred_global_help=Help
-settings_right_soft_updates_page_options_title=Software updates
-theme_xhred_git_compare_changes=Compare changes
+settings_sysinfo_easypie_charts_size=Mida de les gràfiques
+theme_xhred_global_choose=Escull
+theme_xhred_global_select=Selecciona
+theme_xhred_global_ok=D'acord
+settings_sysinfo_theme_patched_updates=Incloure versions amb correccions
+settings_sysinfo_theme_patched_updates_description=Per tal de que funcioni, cal tenir la comanda git instal·lada en el sistema.
+theme_git_patch_available=Última correcció disponible
+theme_git_patch_no_git_message=Per tal d'instal·lar les últimes correccions directament de GitHub, cal tenir la comanda git instal·lada en el sistema.
+theme_git_patch_update_success_message=L'actualització del tema de Webmin s'ha instal·lat correctament. La versió actual és <tt>$1</tt>. Recarregant...
+theme_git_patch_update_success_message2=L'actualització del tema de Webmin i Usermin s'ha instal·lat correctament. La versió actual és <tt>$1</tt>. Recarregant...
+theme_xhred_git_patch_update=No s'ha pogut actualitzar el tema. Utilitza la consola per a realitzar una actualització manual.
+theme_xhred_git_patch_initiated=S'ha iniciat correctament l'actualització del tema.
+theme_xhred_global_prev_page=Pàgina anterior
+theme_xhred_global_help=Ajuda
+settings_right_soft_updates_page_options_title=Actualitzacions de programari
+theme_xhred_git_compare_changes=Compara els canvis
+theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.

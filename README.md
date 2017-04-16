@@ -122,7 +122,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [David Canalias](https://github.com/diathesaron) (Catalan)
 * [Sopor Spr](https://github.com/Sopor-) (Swedish)
 * [7stars](https://github.com/7starsone) (Spanish, French, Portuguese)
-* [dreista](https://github.com/Dreista) (Chinese)
+* [miyorineko](https://github.com/miyorineko), [dreista](https://github.com/Dreista) (Chinese)
 * [jlndk](https://github.com/jlndk) (Danish)
 * [stuchy3](https://github.com/stuchy3) (Czech)
 

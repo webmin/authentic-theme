@@ -256,12 +256,13 @@ sub print_content
         my $link = $list[ $count - 1 ][0];
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
-        $vlink = html_escape($link);
-        $vlink = quote_escape($vlink);
-        $vlink = decode( 'UTF-8', $vlink, Encode::FB_DEFAULT );
-        $path  = html_escape($path);
-        $vpath = quote_escape($vpath);
-        $vpath = decode( 'UTF-8', $vpath, Encode::FB_DEFAULT );
+        $vlink         = html_escape($link);
+        $vlink         = quote_escape($vlink);
+        $vlink         = decode( 'UTF-8', $vlink, Encode::FB_DEFAULT );
+        $vlink_escaped = html_escape($vlink);
+        $path          = html_escape($path);
+        $vpath         = quote_escape($vpath);
+        $vpath         = decode( 'UTF-8', $vpath, Encode::FB_DEFAULT );
 
         my $type = $list[ $count - 1 ][14];
         $type =~ s/\//\-/g;
@@ -291,7 +292,7 @@ sub print_content
         $mod_time = POSIX::strftime( '%Y/%m/%d - %T', localtime( $list[ $count - 1 ][10] ) );
 
         $actions =
-"<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$vlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
+"<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$vlink_escaped\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
 
         if ( $list[ $count - 1 ][15] == 1 ) {
             if ( $path eq '/' . $link ) {
@@ -302,13 +303,13 @@ sub print_content
             }
         }
         else {
-            $href = "download.cgi?file=" . &urlize($link) . "&path=" . &urlize($path);
+            ( $fname, $fpath, $fsuffix ) =
+              fileparse( $list[ $count - 1 ][0] );
+            if ( $base ne '/' ) {
+                $fpath =~ s/^\Q$base\E//g;
+            }
+            $href = "download.cgi?file=" . &urlize($link) . "&path=" . &urlize($fpath);
             if ( $0 =~ /search.cgi/ ) {
-                ( $fname, $fpath, $fsuffix ) =
-                  fileparse( $list[ $count - 1 ][0] );
-                if ( $base ne '/' ) {
-                    $fpath =~ s/^\Q$base\E//g;
-                }
                 $actions =
                     "$actions<a class='action-link' "
                   . "href='index.cgi?path="
@@ -355,7 +356,7 @@ sub print_content
             }
         }
         @row_data = ( "<a href='$href'><img src=\"$img\"></a>",
-                      "<a href=\"$href\" data-filemin-path=\"$href\">$vlink</a>" );
+                      "<a href=\"$href\" data-filemin-link=\"$vlink_escaped\">$vlink</a>" );
         push @row_data, $type if ( $userconfig{'columns'} =~ /type/ );
         push @row_data, $actions;
         push @row_data, $size if ( $userconfig{'columns'} =~ /size/ );
