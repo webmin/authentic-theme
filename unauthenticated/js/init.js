@@ -130,6 +130,40 @@ if (!String.prototype.startsWith) {
         }
     }
 }
+
+function escape_html(b) {
+    var a = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+        "=": "&#61;"
+    };
+    return String(b).replace(/[&<>"'=]/g, function(c) {
+        return a[c]
+    })
+}
+
+function decode_html(d) {
+    var c = [
+        ["amp", "&"],
+        ["apos", "'"],
+        ["#x27", "'"],
+        ["#x2F", "/"],
+        ["#39", "'"],
+        ["#47", "/"],
+        ["#61", "="],
+        ["lt", "<"],
+        ["gt", ">"],
+        ["nbsp", " "],
+        ["quot", '"']
+    ];
+    for (var b = 0, a = c.length; b < a; ++b) {
+        d = d.replace(new RegExp("&" + c[b][0] + ";", "g"), c[b][1])
+    }
+    return d
+}
 $_v__ls__a ? _v__ls__a = "" : _v__ls__a = " hidden";
 
 function n___p__f(b) {

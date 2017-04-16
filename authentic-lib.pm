@@ -2909,7 +2909,6 @@ sub get_xhr_request
             if ( $get_user_level eq '2' || $get_user_level eq '4' ) {
                 $path = get_user_home() . $path;
             }
-
             opendir( my $dirs, $path );
             while ( my $dir = readdir $dirs ) {
                 next unless -d $path . '/' . $dir;

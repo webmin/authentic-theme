@@ -247,8 +247,25 @@ function passwordGenerator() {
     return a
 }
 
+function decodeURIComponentSafe(h, g) {
+    var d = new String(),
+        b, f = 0,
+        c, a;
+    typeof g === "undefined" ? g = 0 : 0;
+    b = h.split(/(%(?:d0|d1)%.{2})/);
+    for (c = b.length; f < c; f++) {
+        try {
+            a = decodeURIComponent(b[f])
+        } catch (j) {
+            a = (g ? b[f].replace(/%(?!\d+)/g, "%25") : b[f])
+        }
+        d += a
+    }
+    return d
+}
+
 function isEncodedURIComponent(a) {
-    return decodeURIComponent(a) !== a
+    return decodeURIComponentSafe(a) !== a
 }
 
 function encodeURIComponentSafe(a) {
@@ -983,7 +1000,7 @@ function __lls() {
     !t__wi_p.$("#loader-close-sm").length && t__wi_p.$("#_menu_loader").before('<div class="loader-close sm hidden" id="loader-close-sm"><i class="fa fa-fw fa-times-circle pull-right hidden scale-08"></i></div>');
     t__wi_p.setTimeout(function() {
         t__wi_p.$("#loader-close-sm").removeClass("hidden")
-    }, 3000);
+    }, 4500);
     t__wi_p.$("body aside .mCSB_scrollTools").css("visibility", "hidden");
     t__wi_p.$("body ul.navigation").css("visibility", "hidden");
     t__wi_p.$("body ul.user-links").css("visibility", "hidden");
@@ -1804,7 +1821,7 @@ function __dpt() {
     if (t__wi_p.$('li.sub_active a[href*="' + $g__o__f_m + '"]').length) {
         var a = t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$g__o__f_m;
         if (t__wi_p.$('iframe[name="page"]').get(0) && t__wi_p.$('iframe[name="page"]').get(0).contentWindow && t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$('body[class*="' + a + '"] .active form input#path').val()) {
-            t__wi_p.document.title = t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$('body[class*="' + a + '"] .active form input#path').val() + " - " + t__wi_p.$("li.sub_active a").text() + " — " + $g__v__title
+            t__wi_p.document.title = decodeURIComponentSafe(t__wi_p.$('iframe[name="page"]').get(0).contentWindow.$('body[class*="' + a + '"] .active form input#path').val()) + " - " + t__wi_p.$("li.sub_active a").text() + " — " + $g__v__title
         } else {
             t__wi_p.document.title = t__wi_p.$("li.sub_active a").text() + " — " + $g__v__title
         }

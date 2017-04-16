@@ -7868,7 +7868,8 @@ ul.messenger .messenger-message {
 
 .file-manager .table-striped>tbody>tr td:nth-child(3) {
     min-width: 15vw !important;
-    max-width: 30vw !important
+    max-width: 30vw !important;
+    white-space: pre
 }
 
 .file-manager .table-striped>tbody>tr>td {
@@ -8219,10 +8220,16 @@ ul.messenger .messenger-message {
     border-color: #888
 }
 
+.file-manager .at-o__f_m-favorites-dropdown a,
+.file-manager .breadcrumb>li a {
+    white-space: pre
+}
+
 .file-manager .breadcrumb>li a+span[data-tree] {
     position: absolute;
     z-index: 99999;
     overflow: auto;
+    white-space: pre;
     width: 280px;
     min-width: 280px;
     max-width: 280px;

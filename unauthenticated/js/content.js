@@ -504,7 +504,7 @@ if (__num()) {
                     if (!$(this).attr("id") && !$("#" + $(this).attr("name")).length) {
                         $(this).attr("id", $(this).attr("name"))
                     }
-                    $(this).after('<label class="lawobject" for="' + $(this).attr("name") + '-aur0">' + f + "</label>");
+                    $(this).after('<label class="lawobject" for="' + escape_html($(this).attr("name")) + '-aur0">' + f + "</label>");
                     $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>');
                     $(this).attr("id", $(this).attr("name") + "-aur0").removeClass("form-control").css("width", "initial");
                     c.remove()
@@ -518,7 +518,7 @@ if (__num()) {
                         if (!$(this).attr("id") && !$("#" + i).length) {
                             $(this).attr("id", i)
                         }
-                        $(this).after('<label class="lawobject" for="' + ($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>');
+                        $(this).after('<label class="lawobject" for="' + escape_html($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>');
                         $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>')
                     }
                 }
@@ -532,7 +532,7 @@ if (__num()) {
                         e.attr("id", e.attr("name"))
                     }
                 }
-                $(this).after('<label class="lawobject" for="' + (d ? $(this).attr("id") : e.attr("name")) + '">' + d + "</label>");
+                $(this).after('<label class="lawobject" for="' + escape_html((d ? $(this).attr("id") : e.attr("name"))) + '">' + d + "</label>");
                 $(this).next("label").addBack().wrapAll('<span class="aw' + j + ' awobject awobjectm"></span>');
                 k && $($___text).remove()
             }
@@ -1806,7 +1806,7 @@ if (settings_right_iconize_header_links) {
                 $iconized_class = "fa-question-circle";
                 $(this).data("title", "")
             }
-            $(this).data("toggle", "tooltip").data("title", (e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? lang("theme_xhred_global_prev_page") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
+            $(this).data("toggle", "tooltip").data("title", (e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? (!is__m($g__o__f_m) ? lang("theme_xhred_global_prev_page") : "") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
             $(this).contents().filter(function() {
                 return this.nodeType == 3
             }).remove();
