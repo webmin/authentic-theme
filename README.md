@@ -13,7 +13,7 @@
 
 [![ScreenShot](https://raw.githubusercontent.com/qooob/authentic-theme/master/images/screenshot.png)](http://youtu.be/f_oy3qX2GXo)
 ![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-1710.png)
-![](https://rostovtsev.ru/pub/media/screenshots/screenshot-content-page-18.40-final.png)
+![](https://rostovtsev.ru/pub/media/screenshots/screenshot-content-page-1840.png)
 
 #### Principles
 * Make the theme fully support all _Webmin/Usermin_ modules
@@ -51,7 +51,6 @@
 
 ###### ![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 20+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/internet-explorer-16.png) IE 11
 
 ### FAQ
 

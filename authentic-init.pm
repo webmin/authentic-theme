@@ -1097,7 +1097,7 @@ sub theme_version
     my $sh__ln__g___version = theme_git_version('uncond');
     ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
     (     ( !$switch && $sh__ln__g___version )
-       && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ) ) );
+       && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ), $sh__ln__c___version .= time()  ) );
 
     return $sh__ln__c___version;
 }

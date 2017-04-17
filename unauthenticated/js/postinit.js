@@ -1198,61 +1198,62 @@ function __p__pe_sm() {
             return
         }
         $(".ui_reset").remove();
-        var c = $('textarea[name="data"], textarea[name="text"], textarea[name="directives"], textarea[name="manual"]').parents("form"),
-            i = c.find('button[type="button"]').length ? c.find('button[type="button"]') : c.find('input[type="submit"]'),
-            d = '<i class="fa fa-fw fa-floppy-o">&nbsp;&nbsp;</i>',
+        var d = (__ie__() > 5 && __ie__() <= 11),
+            c = $('textarea[name="data"], textarea[name="text"], textarea[name="directives"], textarea[name="manual"]').parents("form"),
+            j = c.find('button[type="button"]').length ? c.find('button[type="button"]') : c.find('input[type="submit"]'),
+            e = '<i class="fa fa-fw fa-floppy-o">&nbsp;&nbsp;</i>',
             b = ($('textarea[name="directives"]').length ? "-12px" : "0"),
-            f = ($("select").val() ? $("select").val() : ($(".table-title").text() ? $(".table-title").text() : ($(".panel-body tt:first").text() ? $(".panel-body tt:first").text() : ($("#headln2c tt:first").text() ? $("#headln2c tt:first").text() : "")))),
-            h = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: -0.5px; margin-left: -28px;"><span class="cspinner-icon white small"></span></span></span>',
-            g = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: -0.5px; margin-left: -28px;"><span class="cspinner-icon dark small"></span></span></span>';
-        i.parents("table.ui_form_end_buttons").prev("br").remove();
-        i.parents("table.ui_form_end_buttons").prev("div.table-responsive").attr("style", "margin-bottom: -4px !important");
-        i.replaceWith('			<span class="btn-group" style="margin-top: ' + b + '">				<button type="button" class="btn btn-success btn-34 margined-top-5" data-form="submitter" data-form-onbeforeunload="0">' + d + lang("theme_xhred_global_save") + '&nbsp;</button>				<button type="submit" class="btn btn-default btn-34 margined-top-5"><i class="fa fa-fw fa-arrow-circle-o-left">&nbsp;&nbsp;</i>' + lang("theme_xhred_global_save_and_close") + "&nbsp;</button>			</span>		");
+            g = ($("select").val() ? $("select").val() : ($(".table-title").text() ? $(".table-title").text() : ($(".panel-body tt:first").text() ? $(".panel-body tt:first").text() : ($("#headln2c tt:first").text() ? $("#headln2c tt:first").text() : "")))),
+            i = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: -0.5px; margin-left: -28px;"><span class="cspinner-icon white small"></span></span></span>',
+            h = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: ' + (d ? "none" : "inline-block;") + '"><span class="cspinner" style="margin-top: -0.5px; margin-left: -28px;"><span class="cspinner-icon dark small"></span></span></span>';
+        j.parents("table.ui_form_end_buttons").prev("br").remove();
+        j.parents("table.ui_form_end_buttons").prev("div.table-responsive").attr("style", "margin-bottom: -4px !important");
+        j.replaceWith('			<span class="btn-group" style="margin-top: ' + b + '">				<button type="button" class="btn btn-success btn-34 margined-top-5' + (d ? " hidden" : "") + '" data-form="submitter" data-form-onbeforeunload="0">' + e + lang("theme_xhred_global_save") + '&nbsp;</button>				<button type="submit" class="btn btn-' + (d ? "success" : "default") + ' btn-34 margined-top-5"><i class="fa fa-fw fa-arrow-circle-o-left">&nbsp;&nbsp;</i>' + lang("theme_xhred_global_save_and_close") + "&nbsp;</button>			</span>		");
         var a = $('button[type="button"]:not(.ui_form_end_submit)'),
-            e = $('button[type="submit"]:not(.ui_form_end_submit)');
-        window.__cm_editor_static.on("change", function(k, j) {
+            f = $('button[type="submit"]:not(.ui_form_end_submit)');
+        window.__cm_editor_static.on("change", function(l, k) {
             __cm_editor_static.save();
             a.addClass("btn-warning").removeClass("btn-success").attr("data-form-onbeforeunload", 1)
         });
-        $("body").on("keydown", function(j) {
-            if (j.keyCode == 13 && j.ctrlKey && !j.shiftKey) {
+        $("body").on("keydown", function(k) {
+            if (k.keyCode == 13 && k.ctrlKey && !k.shiftKey) {
                 a.trigger("click")
             } else {
-                if (j.keyCode == 13 && j.ctrlKey && j.shiftKey) {
-                    e.trigger("click")
+                if (k.keyCode == 13 && k.ctrlKey && k.shiftKey) {
+                    f.trigger("click")
                 }
             }
         });
-        $("body").on("click", 'button[type="submit"]:not(.disabled)', function(j) {
-            $("button").addClass("disabled").find(".fa.fa-arrow-circle-o-left").addClass("invisible").after(g);
+        $("body").on("click", 'button[type="submit"]:not(.disabled)', function(k) {
+            $("button").addClass("disabled").find(".fa.fa-arrow-circle-o-left").addClass((d ? "visible" : "invisible")).after(h);
             a.attr("data-form-onbeforeunload", 0)
         });
-        $("body").on("click", 'button[data-form="submitter"]:not(.disabled)', function(l) {
-            l.preventDefault();
-            var k = $(this),
-                m = (k.parents("form").attr("enctype") && k.parents("form").attr("enctype").indexOf("form-data") > -1 ? 0 : 1),
-                j = (m ? k.parents("form").serialize() : (new FormData(k.parents("form")[0])));
-            $("button").addClass("disabled").find(".fa.fa-floppy-o").addClass("invisible").after(h);
+        $("body").on("click", 'button[data-form="submitter"]:not(.disabled)', function(m) {
+            m.preventDefault();
+            var l = $(this),
+                n = (l.parents("form").attr("enctype") && l.parents("form").attr("enctype").indexOf("form-data") > -1 ? 0 : 1),
+                k = (n ? l.parents("form").serialize() : (new FormData(l.parents("form")[0])));
+            $("button").addClass("disabled").find(".fa.fa-floppy-o").addClass("invisible").after(i);
             setTimeout(function() {
                 $.ajax({
                     type: "POST",
                     url: $__current_directory + c.attr("action"),
-                    data: j,
+                    data: k,
                     dataType: "text",
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success: function(n) {
+                    success: function(o) {
                         a.removeClass("btn-warning").addClass("btn-success").attr("data-form-onbeforeunload", 0);
                         $("button").removeClass("disabled").find(".fa").removeClass("invisible").parent().find(".cspinner_container").remove();
-                        if ($(n).find(".panel-body > hr + h3").length) {
-                            messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(n).find(".panel-body hr + h3").html(), 60, "error", "magic_save_error");
+                        if ($(o).find(".panel-body > hr + h3").length) {
+                            messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(o).find(".panel-body hr + h3").html(), 60, "error", "magic_save_error");
                             a.removeClass("btn-success").addClass("btn-warning").attr("data-form-onbeforeunload", 1);
                             return
                         }
-                        messenger('<i class="fa fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", f), 3, "success")
+                        messenger('<i class="fa fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", g), 3, "success")
                     },
-                    error: function(n) {}
+                    error: function(o) {}
                 })
             }, 300)
         })
