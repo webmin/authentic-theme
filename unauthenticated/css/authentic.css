@@ -8026,6 +8026,10 @@ ul.messenger .messenger-message {
     display: none
 }
 
+.file-manager .breadcrumb {
+    padding: 7px 15px
+}
+
 .file-manager .breadcrumb i {
     font-size: 15px
 }
@@ -8111,6 +8115,9 @@ ul.messenger .messenger-message {
 }
 
 @-moz-document url-prefix() {
+    .file-manager .breadcrumb {
+        padding: 7px 15px 6px 15px
+    }
     .file-manager ._filemanager_file_editor_save .cspinner {
         top: -4px
     }
