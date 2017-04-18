@@ -1208,7 +1208,7 @@ function __f___upd___cr(d, c) {
     $.each($(d), function(e, f) {
         a = a + (f != "" ? "/" + f : "");
         if (f != "") {
-            var h = '<i data-path="' + encodeURIComponentSafe(a.replace(escape_html(f), "")) + '" class="fa fa-fw fa-lg fa-caret-right margined-left-4"></i>';
+            var h = '<i data-path="' + encodeURIComponentSafe(a.replace(f, "")) + '" class="fa fa-fw fa-lg fa-caret-right margined-left-4"></i>';
             (access_level() == 3 && a.indexOf($g__user__home + "/") === -1 ? h = "" : false);
             b.find(".breadcrumb").append('<li><a href="index.cgi?path=' + encodeURIComponentSafe(a) + '">' + escape_html(f) + h + "</a></li>")
         }

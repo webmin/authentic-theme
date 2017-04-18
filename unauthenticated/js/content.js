@@ -704,10 +704,10 @@ $("body").on("click", '.authentic_update:not([data-git="0"]):not(.disabled)', fu
         dataType: "json",
         success: function(a) {
             if (a[0] && a[0].success) {
-                messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].success, 7, "success", "themeUpgrade");
+                messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].success, 4, "success", "themeUpgrade");
                 setTimeout(function() {
                     t___wi.top.location.reload()
-                }, 7300)
+                }, 3300)
             } else {
                 if (a[0] && a[0].no_git) {
                     messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].no_git, 20, "warning", "themeUpgrade");

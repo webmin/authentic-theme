@@ -2903,7 +2903,7 @@ sub get_xhr_request
         }
         elsif ( $in{'xhr-get_list'} eq '1' ) {
 
-            my $path = $in{'xhr-get_list_path'};
+            my $path = "$in{'xhr-get_list_path'}";
             my @dirs;
 
             if ( $get_user_level eq '2' || $get_user_level eq '4' ) {
