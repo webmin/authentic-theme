@@ -828,9 +828,9 @@ $(window).keydown(function(p) {
                     }
                 } else {
                     if (r > 1) {
-                        var a = "<b>" + $(".-shell-port-type").text() + " " + cmdInput.val() + "</b>\n";
+                        var a = "<b>" + $(".-shell-port-type").text() + " " + escape_html(cmdInput.val()) + "</b>\n";
                         shellOut.find("pre").append(a);
-                        shellOut.find("pre").append(u.join("\n") + "\n");
+                        shellOut.find("pre").append(escape_html(u.join("\n") + "\n"));
                         shellCont.scrollTop(shellCont[0].scrollHeight)
                     }
                 }
@@ -910,7 +910,7 @@ $(window).keyup(function(D) {
                 }
                 if (s) {
                     var d = (e[__shell_commands__i__ % w]).replace(/^!/, "");
-                    cmdInput.val(d).focus()
+                    cmdInput.val(decode_html(d)).focus()
                 }
             }
             return
@@ -1034,7 +1034,7 @@ $(window).keyup(function(D) {
                         var I = $(".-shell-port-type").text(),
                             H = $(a).find("pre").html().replace(/>&gt;/g, ">" + I + ""),
                             c = $(a).find('select[name="pcmd"] option').map(function() {
-                                return $(this).val()
+                                return escape_html($(this).val())
                             }).get().reOrder(-1, 0).reverse();
                         localStorage.setItem($hostname + "-shell_commands", JSON.stringify(c));
                         newPwd = $(a).find('input[name="pwd"]').val();
