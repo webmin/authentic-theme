@@ -27,6 +27,7 @@ html[data-background-style='nightRider'] a[data-toggle='collapse'] {
     color: rgba(198, 198, 198, .83)
 }
 
+html[data-background-style='nightRider'] .btn.btn-transparent-link-inverse:hover,
 html[data-background-style='nightRider'] input.dataTable-mirror,
 html[data-background-style='nightRider'] font[color="#000000"],
 html[data-background-style='nightRider'] a.opener_trigger,
@@ -45,6 +46,9 @@ html[data-background-style='nightRider'] table tr td label {
     color: rgba(151, 155, 160, .82) !important
 }
 
+html[data-background-style='nightRider'] .btn.btn-transparent-link-force,
+html[data-background-style='nightRider'] .btn.btn-transparent-link-force:hover,
+html[data-background-style='nightRider'] .btn.btn-transparent-link-inverse,
 html[data-background-style='nightRider'] .text-force-link,
 html[data-background-style='nightRider'] .text-force-link-hover:hover,
 html[data-background-style='nightRider'] .btn.dropdown-toggle:hover,
@@ -671,6 +675,10 @@ html[data-background-style='nightRider'] .btn {
     color: rgba(199, 199, 200, .60) !important;
     border-color: rgba(80, 85, 99, .61) !important;
     background-color: transparent !important
+}
+
+html[data-background-style='nightRider'] .btn.btn-borderless {
+    border-color: transparent !important
 }
 
 html[data-background-style='nightRider'] .btn.diffctl,
@@ -1577,6 +1585,19 @@ html[data-background-style='nightRider'] .btn-link:focus {
     background-color: rgba(97, 103, 121, .1) !important
 }
 
+html[data-background-style='nightRider'] .btn-link-bordered:hover,
+html[data-background-style='nightRider'] .btn-link-bordered:focus,
+html[data-background-style='nightRider'] .btn-link-bordered:active,
+html[data-background-style='nightRider'] .btn-link-bordered.active,
+html[data-background-style='nightRider'] .btn-link-bordered {
+    border: 1px solid #444649 !important
+}
+
+html[data-background-style='nightRider'] .btn-link-bordered:hover,
+html[data-background-style='nightRider'] .btn-link-bordered:focus {
+    border: 1px solid rgba(147, 107, 37, 0.72) !important
+}
+
 html[data-background-style='nightRider'] input:not(.popover-path-input):not([type='submit']):not([type='checkbox']):not([type='radio']):not(.session_login):not(.select2-search__field):not([data-command='true']) {
     color: #bbb
 }
@@ -1888,4 +1909,13 @@ html[data-background-style='nightRider'] .text-semi-dark:focus,
 html[data-background-style='nightRider'] .text-semi-dark:active,
 html[data-background-style='nightRider'] .text-semi-dark:hover {
     color: #757272
+}
+
+html[data-background-style='nightRider'] font[color="#ff1100"] {
+    color: #a94442 !important
+}
+
+html[data-background-style='nightRider'] font[color="#00c000"],
+html[data-background-style='nightRider'] font[color="#00ff00"] {
+    color: #269373 !important
 }

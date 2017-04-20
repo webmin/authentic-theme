@@ -328,6 +328,45 @@ function dblrclick(f) {
     }
 }
 
+function f__lnk_t_btn(f, b, e, d, g, c, h, a) {
+    typeof g == "undefined" ? g = false : false;
+    typeof c == "undefined" ? c = "" : false;
+    typeof h == "undefined" ? h = "" : false;
+    (typeof a == "undefined" || a == false) ? a = "": false;
+    $.each(f, function(j, i) {
+        if ($current_page_full == $_____link_full + i) {
+            if (c !== 1) {
+                c = c.split("~");
+                h = h.split("~")
+            }
+            $.each($(c), function(l, k) {
+                if (c !== 1) {
+                    var m = new RegExp(RegExp.quote(k), "g");
+                    $("" + b + ':not(.f__lnk_t_btn):contains("' + k + '")').replaceText(m, h[l])
+                }
+            }).promise().done(function() {
+                var k = "",
+                    l = "";
+                if (a && a.indexOf("~") > -1) {
+                    a = a.split("~");
+                    k = a[0];
+                    l = a[1]
+                }
+                $.each($(b).find(e), function() {
+                    if ($(this).parents(b).hasClass("f__lnk_t_btn")) {
+                        return
+                    }
+                    if (d && d.indexOf("__center__") > -1) {
+                        $(e).parent().addClass("text-center")
+                    }
+                    $(this).html(k + $(this).text().replace(/\.\.$/, "") + l).addClass(d).removeClass("ui_link").prepend(g ? ('<i class="fa fa-fw margined-left--3 ' + g + '" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>') : "");
+                    $(this).parent(b).addClass("f__lnk_t_btn")
+                })
+            })
+        }
+    })
+}
+
 function f__toogle_palette() {
     var a = $("body .user-link.palette-toggle"),
         c = (a.find(".fa-sun").length ? 0 : 1),
