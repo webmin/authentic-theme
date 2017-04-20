@@ -113,6 +113,7 @@ html[data-background-style='nightRider'] .hl-aw {
     background-color: #3d353b !important
 }
 
+html[data-background-style='nightRider'] .hl-ow,
 html[data-background-style='nightRider'] body[class*='file-manager'] #list_form tbody tr:hover,
 html[data-background-style='nightRider'] #list_form tbody tr.checked:hover.m-active.m-not-active,
 html[data-background-style='nightRider'] #list_form tbody tr:hover.m-active.m-not-active,
@@ -445,7 +446,7 @@ html[data-background-style='nightRider'] .col_header b {
     border-left: 0 !important
 }
 
-html[data-background-style='nightRider'] .panel-body form table:not(.ui_form_end_buttons) tbody tr:not(.thead):not(.ui_checked_columns) td:not(._c__op_d):not(.opener_table_cell_style_small),
+html[data-background-style='nightRider'] .panel-body form table:not(.ui_form_end_buttons) tbody tr:not(.thead):not(.ui_checked_columns) td:not(._c__op_d):not(.opener_table_cell_style_small):not(.hl-ow),
 html[data-background-style='nightRider'] .col_header_custom,
 html[data-background-style='nightRider'] form[action='save_check.cgi']>b,
 html[data-background-style='nightRider'] .col_header b {

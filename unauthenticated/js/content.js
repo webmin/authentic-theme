@@ -3836,6 +3836,18 @@ if (__isNR || __isNM) {
         }
     }
 }
+$('html[data-script-name*="webmin/edit_assignment.cgi"] table table tbody tr td, html[data-script-name*="usermin/edit_assignment.cgi"] table table tbody tr td').hover(function() {
+    if ($(this).is("td:nth-child(1)") || $(this).is("td:nth-child(3)")) {
+        $(this).addClass("hl-ow").next("td").addClass("hl-ow")
+    } else {
+        if ($(this).is("td:nth-child(2)") || $(this).is("td:nth-child(4)")) {
+            $(this).addClass("hl-ow").prev("td").addClass("hl-ow")
+        }
+    }
+}, function() {
+    $(this).removeClass("hl-ow").next("td").removeClass("hl-ow");
+    $(this).removeClass("hl-ow").prev("td").removeClass("hl-ow")
+});
 if ($current_page_full && $current_page_full.indexOf("/sysinfo.cgi") > -1 && __num()) {
     $(".piechart canvas").hover(function() {
         var a = $(this).parent("span").attr("data-charts").split("_")[1];
