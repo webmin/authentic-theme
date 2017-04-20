@@ -8393,6 +8393,7 @@ img.scale-08,
     min-height: 100px
 }
 
+.hl-ow,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td b,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td a,
 html:not([data-background-style='nightRider']) body#configCGI>div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>div>table>tbody>tr>td>table>tbody>tr:hover>td,
@@ -9448,6 +9449,11 @@ body[class*='fetchmail'] .panel-body>form[action='edit_poll.cgi']:first-child {
 
 body[class*='fetchmail'] table.table-hardcoded>tbody>tr[bgcolor].thead>td>b {
     font-size: 18px !important;
+    vertical-align: middle !important
+}
+
+html[data-script-name*="webmin/edit_assignment.cgi"] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>table.ui_table>tbody>tr>td>table>tbody>tr>td,
+html[data-script-name*="usermin/edit_assignment.cgi"] div.container-fluid.col-lg-10.col-lg-offset-1>div>div.panel-body>form>table.ui_table>tbody>tr>td>table>tbody>tr>td {
     vertical-align: middle !important
 }
 
