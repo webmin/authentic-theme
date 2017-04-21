@@ -34,7 +34,7 @@ else
       git clone --depth 1 https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme"
 
       # Checking for possible errors
-      if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/version" ]; then
+      if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/VERSION.txt" ]; then
 
         # Post successful commands
         rm -rf "$DIR/authentic-theme"/*
@@ -50,7 +50,12 @@ else
           rm -f "$DIR/authentic-theme/.debug.pm"
         fi
         rm -f "$DIR/authentic-theme/README.md"
-        echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/version`, done.\e[0m"
+
+        if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/version" ]; then
+          echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/version`, done.\e[0m"
+        else
+          echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/VERSION.txt`, done.\e[0m"
+        fi
 
         # Restart Webmin/Usermin in case it's running
         if [ -z $1 ]; then
@@ -62,7 +67,6 @@ else
         fi
 
       else
-
         # Post fail commands
         rm -rf "$DIR/.~authentic-theme"
         echo -e "\e[49;0;31;82mUpdating Authentic Theme, failed.\e[0m"
