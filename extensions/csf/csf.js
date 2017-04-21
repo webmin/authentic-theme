@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.40 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.45 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -16,93 +16,99 @@ f.$___________initial = 0;
 html.attr("data-background-style", f.$("html").attr("data-background-style")).attr("data-module", "csf");
 empty.empty();
 r.remove();
+$("body").tooltip({
+    selector: 'a[data-toggle="tooltip"]',
+    container: "body",
+    placement: "auto top",
+    html: true
+});
 
 function csf_init() {
-    function y(d) {
+    function w(d) {
         return $("<div></div>").html(d).text()
     }(function(d) {
-        d.fn.replaceTagName = function(X) {
-            var W = [],
-                V = this.length;
-            while (V--) {
-                var T = document.createElement(X),
-                    S = this[V],
-                    Y = S.attributes;
-                for (var Z = Y.length - 1; Z >= 0; Z--) {
-                    var U = Y[Z];
-                    T.setAttribute(U.name, U.value)
+        d.fn.replaceTagName = function(V) {
+            var U = [],
+                T = this.length;
+            while (T--) {
+                var R = document.createElement(V),
+                    Q = this[T],
+                    W = Q.attributes;
+                for (var X = W.length - 1; X >= 0; X--) {
+                    var S = W[X];
+                    R.setAttribute(S.name, S.value)
                 }
-                T.innerHTML = S.innerHTML;
-                d(S).after(T).remove();
-                W[V - 1] = T
+                R.innerHTML = Q.innerHTML;
+                d(Q).after(R).remove();
+                U[T - 1] = R
             }
-            return d(W)
+            return d(U)
         }
     })(jQuery);
     (function(d) {
-        d.fn.replaceText = function(g, S, T) {
+        d.fn.replaceText = function(g, Q, R) {
             return this.each(function() {
-                var V = this.firstChild,
-                    U, W, X = [];
-                if (V) {
+                var T = this.firstChild,
+                    S, U, V = [];
+                if (T) {
                     do {
-                        if (V.nodeType === 3) {
-                            U = V.nodeValue;
-                            W = U.replace(g, S);
-                            if (W !== U) {
-                                if (!T && /</.test(W)) {
-                                    d(V).before(W);
-                                    X.push(V)
+                        if (T.nodeType === 3) {
+                            S = T.nodeValue;
+                            U = S.replace(g, Q);
+                            if (U !== S) {
+                                if (!R && /</.test(U)) {
+                                    d(T).before(U);
+                                    V.push(T)
                                 } else {
-                                    V.nodeValue = W
+                                    T.nodeValue = U
                                 }
                             }
                         }
-                    } while (V = V.nextSibling)
+                    } while (T = T.nextSibling)
                 }
-                X.length && d(X).remove()
+                V.length && d(V).remove()
             })
         }
     })(jQuery);
 
-    function p(d, S, g) {
-        w.animate({
+    function o(d, Q, g) {
+        u.animate({
             opacity: 1
-        }, S.$settings_animation_left_slide_time, function() {
-            w.css("pointer-events", "auto").css("overflow", "auto")
+        }, Q.$settings_animation_left_slide_time, function() {
+            u.css("pointer-events", "auto").css("overflow", "auto")
         });
-        g && S.__lre()
+        g && Q.__lre()
     }
 
-    function u(ab, Z) {
-        var U = (((ab.attr("onclick") && ab.attr("onclick").indexOf("blank") !== -1) || (ab.parents("form").attr("target") && ab.parents("form").attr("target").indexOf("blank") !== -1)) ? true : false),
-            g = ab.hasClass("heighter-28"),
-            S = ab.css("height") == "28px",
-            W = ab.hasClass("btn-lg"),
-            V = 0,
-            aa = ab.find(".fa").hasClass("fa-1_25x"),
-            T = ab.find(".fa"),
-            X = ((typeof Z == "undefined" || Z == false) ? false : Z),
-            Y = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (X ? X[0] + "px" : (((g || S) && (!aa && !W)) ? (-0.5 + V) + "px" : aa ? "1.6px" : W ? "1.5px" : "0")) + " !important; margin-left: " + (X ? X[1] + "px" : (((g || S) && (!aa && !W)) ? "-23.5px" : W ? "-28px" : (!g && !S && aa) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (X ? (X[2] ? X[2] : "") : (g || S ? "smaller" : "small")) + '"></span></span></span>',
-            d = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (X ? X[0] + "px" : (((g || S) && (!aa && !W)) ? (-0.5 + V) + "px" : aa ? "1.6px" : W ? "1.5px" : "0")) + " !important; margin-left: " + (X ? X[1] + "px" : (((g || S) && (!aa && !W)) ? "-23.5px" : W ? "-28px" : (!g && !S && aa) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (X ? (X[2] ? X[2] : "") : (g || S ? "smaller" : "small")) + '"></span></span></span>';
-        !U && ab.addClass("disabled");
-        if (T.length && !U) {
-            if (ab.hasClass("btn-default")) {
-                T.addClass("invisible").after(d)
+    function s(Z, X) {
+        var S = (((Z.attr("onclick") && Z.attr("onclick").indexOf("blank") !== -1) || (Z.parents("form").attr("target") && Z.parents("form").attr("target").indexOf("blank") !== -1)) ? true : false),
+            g = Z.hasClass("heighter-28"),
+            Q = Z.css("height") == "28px",
+            U = Z.hasClass("btn-lg"),
+            T = 0,
+            Y = Z.find(".fa").hasClass("fa-1_25x"),
+            R = Z.find(".fa"),
+            V = ((typeof X == "undefined" || X == false) ? false : X),
+            W = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (V ? V[0] + "px" : (((g || Q) && (!Y && !U)) ? (-0.5 + T) + "px" : Y ? "1.6px" : U ? "1.5px" : "0")) + " !important; margin-left: " + (V ? V[1] + "px" : (((g || Q) && (!Y && !U)) ? "-23.5px" : U ? "-28px" : (!g && !Q && Y) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (V ? (V[2] ? V[2] : "") : (g || Q ? "smaller" : "small")) + '"></span></span></span>',
+            d = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (V ? V[0] + "px" : (((g || Q) && (!Y && !U)) ? (-0.5 + T) + "px" : Y ? "1.6px" : U ? "1.5px" : "0")) + " !important; margin-left: " + (V ? V[1] + "px" : (((g || Q) && (!Y && !U)) ? "-23.5px" : U ? "-28px" : (!g && !Q && Y) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (V ? (V[2] ? V[2] : "") : (g || Q ? "smaller" : "small")) + '"></span></span></span>';
+        !S && Z.addClass("disabled");
+        if (R.length && !S) {
+            if (Z.hasClass("btn-default")) {
+                R.addClass("invisible").after(d)
             } else {
-                T.addClass("invisible").after(Y)
+                R.addClass("invisible").after(W)
             }
         }
-        if (X[3]) {
+        if (V[3]) {
             setTimeout(function() {
-                ab.removeClass("disabled");
-                T.removeClass("invisible");
-                ab.find(".cspinner_container").remove()
-            }, X[3])
+                Z.removeClass("disabled");
+                R.removeClass("invisible");
+                Z.find(".cspinner_container").remove()
+            }, V[3])
         }
     }
 
-    function F() {
+    function D() {
         if ($('html[data-post="viewlogs"]').length) {
             setTimeout(function() {
                 $.each($(".table.table-striped.table-condensed tbody tr"), function() {
@@ -120,7 +126,7 @@ function csf_init() {
     }
     typeof f.lang == "function" ? $is_lang = 1 : $is_lang = 0;
     if ($is_lang) {
-        var A = {
+        var y = {
             order: [],
             aaSorting: [],
             bDestroy: true,
@@ -138,11 +144,11 @@ function csf_init() {
                 sZeroRecords: f.lang("theme_xhred_datatable_szerorecords")
             },
             drawCallback: function(d) {
-                F()
+                D()
             }
         }
     } else {
-        var A = {
+        var y = {
             order: [],
             aaSorting: [],
             bDestroy: true,
@@ -150,104 +156,104 @@ function csf_init() {
             bInfo: false,
             destroy: true,
             drawCallback: function(d) {
-                F()
+                D()
             }
         }
     }
 
-    function k(d, S) {
-        if (B.find('textarea[name="formdata"]').length || !$("html[data-post]").attr("data-post")) {
+    function k(d, Q) {
+        if (z.find('textarea[name="formdata"]').length || !$("html[data-post]").attr("data-post")) {
             return
         }
-        if (B.find('pre:not(:contains("<---"))').length) {
+        if (z.find('pre:not(:contains("<---"))').length) {
             var g = "log";
             setTimeout(function() {
-                d && B.find("pre").css({
+                d && z.find("pre").css({
                     position: "initial",
                     left: "initial",
                     opacity: "0"
                 });
-                B.find("pre").each(function(V, U) {
-                    var W = $(this),
-                        T = y(W.html());
-                    W.empty();
-                    window[g + "_" + V] = window.CodeMirror(this, {
-                        value: T,
-                        lineNumbers: S,
+                z.find("pre").each(function(T, S) {
+                    var U = $(this),
+                        R = w(U.html());
+                    U.empty();
+                    window[g + "_" + T] = window.CodeMirror(this, {
+                        value: R,
+                        lineNumbers: Q,
                         mode: null,
                         theme: (with_frame ? f.settings_cm_view_palette : "monokai"),
                         readOnly: true,
                         viewportMargin: Infinity
                     });
-                    d && window[g + "_" + V].setSize(null, ($(window).outerHeight() / 1.7))
+                    d && window[g + "_" + T].setSize(null, ($(window).outerHeight() / 1.7))
                 }).promise().done(function() {
                     if (d) {
-                        B.find("pre").css({
+                        z.find("pre").css({
                             position: "initial",
                             left: "initial"
                         });
                         setTimeout(function() {
-                            B.find("pre").animate({
+                            z.find("pre").animate({
                                 opacity: 1
                             }, f.$settings_animation_left_slide_time)
                         }, 10)
                     }
                     if (!d) {
-                        var T = ($("pre[style]").length == 1 ? 1.4 : 1.8);
-                        $.each($("pre[style]"), function(V, U) {
-                            var W = ($(window).outerHeight() / (T * $("pre[style]").length)),
-                                X = ($(this).find(".CodeMirror-code").find("pre").length * 17);
-                            if (X > W) {
-                                window[g + "_" + V].setSize(null, W)
+                        var R = ($("pre[style]").length == 1 ? 1.4 : 1.8);
+                        $.each($("pre[style]"), function(T, S) {
+                            var U = ($(window).outerHeight() / (R * $("pre[style]").length)),
+                                V = ($(this).find(".CodeMirror-code").find("pre").length * 17);
+                            if (V > U) {
+                                window[g + "_" + T].setSize(null, U)
                             } else {
-                                window[g + "_" + V].setSize(null, X - 10)
+                                window[g + "_" + T].setSize(null, V - 10)
                             }
                         })
                     }
                 })
             }, 10)
         } else {
-            B.find("pre").css({
+            z.find("pre").css({
                 position: "initial",
                 left: "initial"
             });
-            B.find("pre").replaceText(/<---- /gi, "");
-            B.find("pre").replaceText(/ ---->/gi, "")
+            z.find("pre").replaceText(/<---- /gi, "");
+            z.find("pre").replaceText(/ ---->/gi, "")
         }
     }
 
-    function s() {
+    function q() {
         setTimeout(function() {
-            B.find(".panel-heading").prepend('			<div class="btn-group pull-right" style="position: absolute; right: 15px; top: 17px;">			<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-toggle="tooltip" data-title="' + ($is_lang ? f.lang("theme_xhred_datatable_filter_visible_tables") : "") + '" data-container="body">				<label style="font-weight: 400">					<input type="text" class="dataTable-mirror" placeholder="' + ($is_lang ? f.lang("theme_xhred_datatable_filter") : "") + '">				</label>				<i class="fa fa-filter"></i>			</a>			</div>		');
-            var d = B.find(".dataTables_filter");
+            z.find(".panel-heading").prepend('			<div class="btn-group pull-right" style="position: absolute; right: 15px; top: 17px;">			<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-toggle="tooltip" data-title="' + ($is_lang ? f.lang("theme_xhred_datatable_filter_visible_tables") : "") + '" data-container="body">				<label style="font-weight: 400">					<input type="text" class="dataTable-mirror" placeholder="' + ($is_lang ? f.lang("theme_xhred_datatable_filter") : "") + '">				</label>				<i class="fa fa-filter"></i>			</a>			</div>		');
+            var d = z.find(".dataTables_filter");
             d.hide();
-            B.find(".btn-filter-top-right").click(function(g) {
+            z.find(".btn-filter-top-right").click(function(g) {
                 !$(g.target).is("input") && $(this).find("label").slideToggle(300, function() {
                     $(this).find("input").focus()
                 })
             });
-            B.find(".dataTable-mirror").keyup(function(g) {
-                B.find(".dataTables_filter input").val($(this).val()).trigger("keyup");
+            z.find(".dataTable-mirror").keyup(function(g) {
+                z.find(".dataTables_filter input").val($(this).val()).trigger("keyup");
                 if ($.trim($(this).val()).length > 0) {
-                    B.find(".btn-filter-top-right i").addClass("text-danger")
+                    z.find(".btn-filter-top-right i").addClass("text-danger")
                 } else {
-                    B.find(".btn-filter-top-right i").removeClass("text-danger")
+                    z.find(".btn-filter-top-right i").removeClass("text-danger")
                 }
             });
-            B.find(".btn-filter-top-right input").blur(function(g) {
+            z.find(".btn-filter-top-right input").blur(function(g) {
                 $(this).parent("label").slideToggle(0)
             });
-            B.on("keydown", function(T) {
+            z.on("keydown", function(R) {
                 if (f.$('aside input[name="search"]').is(":focus")) {
                     return
                 }
-                var S = T.keyCode ? T.keyCode : T.which;
-                if (!B.find("input").is(":focus") && !B.find("select").is(":focus") && !B.find("textarea").is(":focus") && !B.find(".modal.in").length) {
-                    var g = String.fromCharCode(S).toLowerCase();
-                    if (g && /[a-zA-Z0-9]/.test(g) && !T.ctrlKey && !T.altKey && !T.metaKey && S !== 106 && S !== 107 && S !== 109 && S !== 112 && S !== 113 && S !== 114 && S !== 115 && S !== 116 && S !== 117 && S !== 118 && S !== 119 && S !== 120 && S !== 121 && S !== 122 && S !== 123) {
-                        if (B.find(".dataTables_filter label input").length) {
-                            B.find(".btn-filter-top-right").trigger("click");
-                            B.find(".btn-filter-top-right .dataTable-mirror").focus().trigger("keyup")
+                var Q = R.keyCode ? R.keyCode : R.which;
+                if (!z.find("input").is(":focus") && !z.find("select").is(":focus") && !z.find("textarea").is(":focus") && !z.find(".modal.in").length) {
+                    var g = String.fromCharCode(Q).toLowerCase();
+                    if (g && /[a-zA-Z0-9]/.test(g) && !R.ctrlKey && !R.altKey && !R.metaKey && Q !== 106 && Q !== 107 && Q !== 109 && Q !== 112 && Q !== 113 && Q !== 114 && Q !== 115 && Q !== 116 && Q !== 117 && Q !== 118 && Q !== 119 && Q !== 120 && Q !== 121 && Q !== 122 && Q !== 123) {
+                        if (z.find(".dataTables_filter label input").length) {
+                            z.find(".btn-filter-top-right").trigger("click");
+                            z.find(".btn-filter-top-right .dataTable-mirror").focus().trigger("keyup")
                         }
                     }
                 }
@@ -256,9 +262,9 @@ function csf_init() {
     }
     r = $('link[href*="configserver"], style, a#toplink, a#botlink, div#loader, a#webmintr2');
     r.remove();
-    var I = (a !== null ? a.contentWindow : window);
+    var G = (a !== null ? a.contentWindow : window);
     if (with_frame) {
-        I.onbeforeunload = function(d) {
+        G.onbeforeunload = function(d) {
             f.__lrs()
         };
         $('body:not(".mobile-menu-toggler")').on("click", function(d) {
@@ -277,89 +283,89 @@ function csf_init() {
         f.__cms();
         f.$('a[href="csf/"]').parent("li").addClass("sub_active").append('<span class="current"></span>').parent("ul.sub").show().prev("li").addClass("active")
     }
-    var B = $("html"),
-        w = $("body"),
-        D = $("body .container-fluid"),
-        o = $("html").attr("data-post"),
-        Q = $('pre:contains("csf:")').text().match(/((?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+))$/)[0] || "9.xx";
-    w.addClass("csf");
-    D.addClass("col-lg-10 col-lg-offset-1").wrapInner('<div class="panel panel-default">');
-    B.find(".panel-default").wrapInner('<div class="panel-body">');
-    B.find(".panel-default:first").css("border-top-width", "4px").prepend('<div class="panel-heading" style="text-align:center"><font size="+2">Firewall</font><span style="font-size:14px;display:block">ConfigServer Security & Firewall version ' + Q + "</span></div>");
-    B.find(".panel-heading + .panel-body > .panel:first").remove();
-    B.find(".nav.nav-tabs").addClass("hidden");
-    B.find('a[data-toggle="tab"][href="#other"]').parent("li").remove();
-    B.find(".csf .nav.nav-tabs:hidden + .tab-content").attr("style", "margin-top: -10px !important");
-    if (B.find('button[value="upgrade"]').length === 0) {
+    var z = $("html"),
+        u = $("body"),
+        B = $("body .container-fluid"),
+        n = $("html").attr("data-post"),
+        O = $('pre:contains("csf:")').text().match(/((?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+))$/)[0] || "9.xx";
+    u.addClass("csf");
+    B.addClass("col-lg-10 col-lg-offset-1").wrapInner('<div class="panel panel-default">');
+    z.find(".panel-default").wrapInner('<div class="panel-body">');
+    z.find(".panel-default:first").css("border-top-width", "4px").prepend('<div class="panel-heading" style="text-align:center"><font size="+2">Firewall</font><span style="font-size:14px;display:block">ConfigServer Security & Firewall version ' + O + "</span></div>");
+    z.find(".panel-heading + .panel-body > .panel:first").remove();
+    z.find(".nav.nav-tabs").addClass("hidden");
+    z.find('a[data-toggle="tab"][href="#other"]').parent("li").remove();
+    z.find(".csf .nav.nav-tabs:hidden + .tab-content").attr("style", "margin-top: -10px !important");
+    if (z.find('button[value="upgrade"]').length === 0) {
         $("#upgradetable").remove()
     }
-    B.find('a[href$="/csf/changelog.txt"]').addClass("btn btn-xxs btn-default _btn-changelog").html('<i class="fa fa-info-circle"></i>Changelog');
-    B.find("body table.table.table-bordered.table-striped").each(function() {
+    z.find('a[href$="/csf/changelog.txt"]').addClass("btn btn-xxs btn-default _btn-changelog").html('<i class="fa fa-info-circle"></i>Changelog');
+    z.find("body table.table.table-bordered.table-striped").each(function() {
         $(this).addClass("table-condensed").removeClass("table-bordered").removeAttr("style")
     });
-    B.find("a#MobileView").parent(".panel-body").parent(".panel-body").parent(".panel").remove();
-    var P = 0;
-    if (B.find(".mobilecontainer").length) {
-        P = 1
+    z.find("a#MobileView").parent(".panel-body").parent(".panel-body").parent(".panel").remove();
+    var N = 0;
+    if (z.find(".mobilecontainer").length) {
+        N = 1
     }
-    B.find(".mobilecontainer").remove();
+    z.find(".mobilecontainer").remove();
     typeof settings_allowed_hostname == "undefined" ? settings_allowed_hostname = true : false;
-    var G = P ? B.find('.panel-heading:contains("Development Contribution")').parent().parent() : B.find('.panel-heading:contains("Development Contribution")').parent(),
-        q = ($('link[rel="shortcut icon"]').data("hostname") == settings_allowed_hostname ? 1 : 0);
-    if (o) {
-        var m = B.find('br + pre:contains("csf:")');
-        if (q) {
-            m.prev("br").remove();
-            m.next("p").remove();
-            m.remove()
+    var E = N ? z.find('.panel-heading:contains("Development Contribution")').parent().parent() : z.find('.panel-heading:contains("Development Contribution")').parent(),
+        p = ($('link[rel="shortcut icon"]').data("hostname") == settings_allowed_hostname ? 1 : 0);
+    if (n) {
+        var l = z.find('br + pre:contains("csf:")');
+        if (p) {
+            l.prev("br").remove();
+            l.next("p").remove();
+            l.remove()
         } else {
-            var z = m.next("p");
-            m.remove();
-            m.prev("br").remove();
-            z.addClass("text-right footer-string")
+            var x = l.next("p");
+            l.remove();
+            l.prev("br").remove();
+            x.addClass("text-right footer-string")
         }
     } else {
-        if (q) {
-            if (P) {
-                G.remove()
+        if (p) {
+            if (N) {
+                E.remove()
             } else {
-                G.parent().find('br, br + pre:contains("csf:")').remove();
-                G.parent().find("p").remove();
-                G.remove()
+                E.parent().find('br, br + pre:contains("csf:")').remove();
+                E.parent().find("p").remove();
+                E.remove()
             }
         } else {
-            if (P) {
-                G.find('br, br + pre:contains("csf:")').remove();
-                G.find(".panel-info").removeClass("panel-info").addClass("panel-default text-center margined-top-10 _devcon");
-                G.find("p").addClass("text-right footer-string")
+            if (N) {
+                E.find('br, br + pre:contains("csf:")').remove();
+                E.find(".panel-info").removeClass("panel-info").addClass("panel-default text-center margined-top-10 _devcon");
+                E.find("p").addClass("text-right footer-string")
             } else {
-                G.parent().find('br, br + pre:contains("csf:")').remove();
-                G.parent().find(".panel-info").removeClass("panel-info").addClass("panel-default text-center margined-top-10 _devcon");
-                G.parent().find("p").addClass("text-right footer-string")
+                E.parent().find('br, br + pre:contains("csf:")').remove();
+                E.parent().find(".panel-info").removeClass("panel-info").addClass("panel-default text-center margined-top-10 _devcon");
+                E.parent().find("p").addClass("text-right footer-string")
             }
         }
     }
-    B.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').addClass("heighter-34");
-    var n = B.find('h4:contains("iptables logs*")');
-    if (n.length) {
+    z.find('.csf select:not([name="backup"], [name="profile1"], [name="profile2"], [name="do"], [name="dur"]), .csf input:not([name="comment"], [name="ip"], [name="ports"], [name="timeout"], [aria-controls*="DataTables_Table_"])').addClass("heighter-34");
+    var m = z.find('h4:contains("iptables logs*")');
+    if (m.length) {
         $(".panel-body .pull-right").addClass("hidden");
-        var H = n.next().next(".table.table-striped.table-condensed");
-        n.addClass("col_header_custom big_big");
-        n.find("b").css("margin-left", "4px");
-        H.attr("style", "margin-top: -8px !important");
-        H.find("tbody tr:nth-child(2) td:first-child").css("min-width", "200px");
+        var F = m.next().next(".table.table-striped.table-condensed");
+        m.addClass("col_header_custom big_big");
+        m.find("b").css("margin-left", "4px");
+        F.attr("style", "margin-top: -8px !important");
+        F.find("tbody tr:nth-child(2) td:first-child").css("min-width", "200px");
         $__submenus__ = $(".submenu").detach();
         setTimeout(function() {
-            B.find(".panel-heading").prepend('			<div class="btn-group pull-right" style="position: absolute; right: 15px; top: 17px;">			<a class="btn btn-link text-lighter btn-toggle-top-right text-decoration-none pull-left" data-toggle="tooltip" data-container="body">				<i class="fa fa-toggle-switch-off fa-1_25x"></i>			</a>			</div>		');
-            B.find("body").on("click", ".btn-toggle-top-right", function(d) {
+            z.find(".panel-heading").prepend('			<div class="btn-group pull-right" style="position: absolute; right: 15px; top: 17px;">			<a class="btn btn-link text-lighter btn-toggle-top-right text-decoration-none pull-left" data-toggle="tooltip" data-container="body">				<i class="fa fa-toggle-switch-off fa-1_25x"></i>			</a>			</div>		');
+            z.find("body").on("click", ".btn-toggle-top-right", function(d) {
                 d.preventDefault();
                 if ($(this).find(".fa-toggle-switch-off").length) {
-                    B.find('button[onclick*=".show()"]')[0].click();
-                    B.find(".btn.btn-xxs.fa-1_25x").removeClass("fa-toggle-switch-off").addClass("fa-toggle-switch");
+                    z.find('button[onclick*=".show()"]')[0].click();
+                    z.find(".btn.btn-xxs.fa-1_25x").removeClass("fa-toggle-switch-off").addClass("fa-toggle-switch");
                     $(this).find(".fa-toggle-switch-off").removeClass("fa-toggle-switch-off").addClass("fa-toggle-switch")
                 } else {
-                    B.find('button[onclick*=".hide()"]')[0].click();
-                    B.find(".btn.btn-xxs.fa-1_25x").removeClass("fa-toggle-switch").addClass("fa-toggle-switch-off");
+                    z.find('button[onclick*=".hide()"]')[0].click();
+                    z.find(".btn.btn-xxs.fa-1_25x").removeClass("fa-toggle-switch").addClass("fa-toggle-switch-off");
                     $(this).find(".fa-toggle-switch").addClass("fa-toggle-switch-off").removeClass("fa-toggle-switch")
                 }
             })
@@ -377,71 +383,71 @@ function csf_init() {
                 $(this).removeClass("fa-toggle-switch").addClass("fa-toggle-switch-off")
             }
         });
-        $(".table.table-striped.table-condensed").dataTable(A);
-        s();
+        $(".table.table-striped.table-condensed").dataTable(y);
+        q();
         setTimeout(function() {
             $(".btn-filter-top-right").parent().css("right", "58px")
         }, 100)
     }
-    if (B.find('.csf select[name="dur"]')[0]) {
-        var K = B.find('.csf select[name="dur"]')[0].nextSibling;
-        if (K.nodeValue == ".") {
-            $(K).remove()
+    if (z.find('.csf select[name="dur"]')[0]) {
+        var I = z.find('.csf select[name="dur"]')[0].nextSibling;
+        if (I.nodeValue == ".") {
+            $(I).remove()
         }
     }
     var i = $('html[data-post="conf"] .csf form .comment > br:first-child').map(function() {
         this.previousSibling.nodeValue && $(this.previousSibling).wrap('<span class="fst-ln-c">')
     });
-    B.find(".csf #paginatediv2.paginationstyle > select").each(function() {
+    z.find(".csf #paginatediv2.paginationstyle > select").each(function() {
         $(this).attr("style", "vertical-align: top !important")
     });
-    B.find(".csf #paginatediv2 > a").each(function() {
+    z.find(".csf #paginatediv2 > a").each(function() {
         $(this).attr("style", "vertical-align: baseline !important")
     });
-    B.find(".csf p > select").each(function() {
+    z.find(".csf p > select").each(function() {
         $(this).attr("style", "vertical-align: baseline !important")
     });
-    var x = ((f.__isNR || f.__isNM) ? 1 : 0);
-    B.find('img[src="csfimages/loader.gif"]').each(function() {
-        $(this).attr("src", "" + (with_frame ? f.$_____link_full : "") + "/images/loader-horizontal" + (x ? "_dark" : "") + ".gif").css("margin-left", "10px")
+    var v = ((f.__isNR || f.__isNM) ? 1 : 0);
+    z.find('img[src="csfimages/loader.gif"]').each(function() {
+        $(this).attr("src", "" + (with_frame ? f.$_____link_full : "") + "/images/loader-horizontal" + (v ? "_dark" : "") + ".gif").css("margin-left", "10px")
     });
-    B.find(".paginationstyle a").each(function() {
+    z.find(".paginationstyle a").each(function() {
         $(this).addClass("btn btn-default")
     });
-    B.find('img[src^="lfd_"], img[src^="/csf/lfd_"]').each(function() {
+    z.find('img[src^="lfd_"], img[src^="/csf/lfd_"]').each(function() {
         $(this).parents("table").removeClass("table-striped")
     });
-    B.find('img[src^="csfimages/delete.png"]').each(function() {
+    z.find('img[src^="csfimages/delete.png"]').each(function() {
         $(this).replaceWith('<i class="fa fa-unlock text-success" style="font-size: 1.1em; vertical-align: middle;"></i>')
     });
-    B.find('img[src^="csfimages/perm.png"]').each(function() {
+    z.find('img[src^="csfimages/perm.png"]').each(function() {
         $(this).replaceWith('<i class="fa fa-lock text-danger" style="font-size: 1.1em; vertical-align: middle;"></i>')
     });
-    B.find('img[src^="csfimages/plus.png"]').each(function() {
+    z.find('img[src^="csfimages/plus.png"]').each(function() {
         $(this).addClass("hidden");
         b;
         $(this).after('<i class="fa fa-plus-circle text-success margined-right-2" style="font-size: 1.1em;"></i>')
     });
-    B.find('img[src^="csfimages/minus.png"]').each(function() {
+    z.find('img[src^="csfimages/minus.png"]').each(function() {
         $(this).addClass("hidden");
         $(this).after('<i class="fa fa-minus-circle text-danger margined-right-2" style="font-size: 1.1em;"></i>')
     });
-    B.find(".csf fieldset legend b").each(function() {
+    z.find(".csf fieldset legend b").each(function() {
         if ($(this).text().indexOf("Edit ConfigServer Firewall") >= 0) {
-            $submit_changes = B.find('input[value="Change"]');
+            $submit_changes = z.find('input[value="Change"]');
             $submit_changes.addClass("csf-submit_changes");
             $submit_changes.on("click", function() {
-                B.find('input[value="saveconf"]').parent("form").submit()
+                z.find('input[value="saveconf"]').parent("form").submit()
             })
         }
     });
     typeof __csf__listen_log_grep != "undefined" && clearInterval(__csf__listen_log_grep);
-    if (B.find("#CSFgrep_D").length && B.find("#CSFgrep_E").length && B.find("#CSFgrep_i").length) {
-        B.find('select, input[type="text"], button[onclick="CSFgrep()"]').removeClass("heighter-34").addClass("heighter-28");
-        B.find("#CSFgrep_i, #CSFgrep_E, #CSFgrep_D").attr("style", "vertical-align: middle; margin-right: 4px;");
-        B.find("#CSFajax").css("margin-bottom", "4px")
+    if (z.find("#CSFgrep_D").length && z.find("#CSFgrep_E").length && z.find("#CSFgrep_i").length) {
+        z.find('select, input[type="text"], button[onclick="CSFgrep()"]').removeClass("heighter-34").addClass("heighter-28");
+        z.find("#CSFgrep_i, #CSFgrep_E, #CSFgrep_D").attr("style", "vertical-align: middle; margin-right: 4px;");
+        z.find("#CSFajax").css("margin-bottom", "4px")
     }
-    B.find("#CSFajax.csf-box").addClass("csf_force_log_size");
+    z.find("#CSFajax.csf-box").addClass("csf_force_log_size");
     setTimeout(function() {
         if (typeof window.CodeMirror == "function") {
             k(false, false)
@@ -458,14 +464,14 @@ function csf_init() {
         }
     }, 100);
 
-    function O() {
+    function M() {
         if (!$("html[data-post]").attr("data-post")) {
             return
         }
-        B.find('textarea[name="formdata"]').each(function(S, T) {
+        z.find('textarea[name="formdata"]').each(function(Q, R) {
             var d = $(this);
             $parent_width = d.parent("td").width();
-            var g = window.CodeMirror.fromTextArea(T, {
+            var g = window.CodeMirror.fromTextArea(R, {
                 mode: {
                     name: "rpm-spec"
                 },
@@ -498,29 +504,29 @@ function csf_init() {
     }
     setTimeout(function() {
         if (typeof window.CodeMirror == "function") {
-            O()
+            M()
         } else {
             setTimeout(function() {
                 if (typeof window.CodeMirror == "function") {
-                    O()
+                    M()
                 } else {
                     setTimeout(function() {
-                        O()
+                        M()
                     }, 60)
                 }
             }, 150)
         }
     }, 60);
-    if (B.find("h4").text().indexOf("Ports listening for external connections") !== -1) {
-        B.find(".container-fluid .panel .panel-body table.table-striped").each(function() {
-            B.find("h4").addClass("col_header_custom").attr("style", "margin-bottom: -5px !important; margin-top: 2px !important");
-            B.find("h4").text("Ports listening for external connections");
-            $(this).dataTable(A)
+    if (z.find("h4").text().indexOf("Ports listening for external connections") !== -1) {
+        z.find(".container-fluid .panel .panel-body table.table-striped").each(function() {
+            z.find("h4").addClass("col_header_custom").attr("style", "margin-bottom: -5px !important; margin-top: 2px !important");
+            z.find("h4").text("Ports listening for external connections");
+            $(this).dataTable(y)
         });
-        s()
+        q()
     }
-    if (B.find(".csf th:eq(1)").text().indexOf("A/D") !== -1 && B.find(".csf th:eq(2)").text().indexOf("IP address") !== -1) {
-        B.find('table:not(:contains("©2006-"))').each(function() {
+    if (z.find(".csf th:eq(1)").text().indexOf("A/D") !== -1 && z.find(".csf th:eq(2)").text().indexOf("IP address") !== -1) {
+        z.find('table:not(:contains("©2006-"))').each(function() {
             $.each($('html[data-post="temp"] tr td a.btn'), function(d, g) {
                 $(this).attr("data-placement", "right");
                 $(this).addClass("btn-xxs");
@@ -528,23 +534,23 @@ function csf_init() {
                     $(this).addClass("margined-right-8")
                 }
             });
-            $(this).dataTable(A);
+            $(this).dataTable(y);
             setTimeout(function() {
-                B.find(".csf .dataTable thead tr th:eq(0)").css("opacity", "0").css("pointer-events", "none")
+                z.find(".csf .dataTable thead tr th:eq(0)").css("opacity", "0").css("pointer-events", "none")
             }, 10)
         });
-        s();
+        q();
         $('.dataTables_wrapper + div:contains("There are no temporary IP entries")').remove();
         $('html[data-post="temp"] .dataTables_wrapper + div').find("a").addClass("btn-xxs btn-inverse").removeClass("btn-success").prepend('<i class="fa fa-fw fa-unlock">&nbsp;</i>')
     }
     if ($("html").attr("data-post") === "") {
-        B.find('button[value="conf"]').prepend('<i class="fa fa-cog margined-right-5"></i>');
-        B.find('button[value="enable"]').addClass("page_footer_submit btn-success").removeClass("btn-default").prepend('<i class="fa fa-toggle-switch fa-1_25x margined-right-5"></i>');
-        B.find('button[value="disable"]').addClass("page_footer_submit btn-danger").removeClass("btn-default").prepend('<i class="fa fa-toggle-switch-off fa-1_25x margined-right-5"></i>');
-        B.find('button[value="restart"]').addClass("page_footer_submit btn-info").removeClass("btn-default").prepend('<i class="fa fa-circle-o-notch margined-right-5"></i>');
-        B.find('button[value="denyf"]').addClass("page_footer_submit btn-warning").removeClass("btn-default").prepend('<i class="fa fa-unlock margined-right-5"></i>')
+        z.find('button[value="conf"]').prepend('<i class="fa fa-cog margined-right-5"></i>');
+        z.find('button[value="enable"]').addClass("page_footer_submit btn-success").removeClass("btn-default").prepend('<i class="fa fa-toggle-switch fa-1_25x margined-right-5"></i>');
+        z.find('button[value="disable"]').addClass("page_footer_submit btn-danger").removeClass("btn-default").prepend('<i class="fa fa-toggle-switch-off fa-1_25x margined-right-5"></i>');
+        z.find('button[value="restart"]').addClass("page_footer_submit btn-info").removeClass("btn-default").prepend('<i class="fa fa-circle-o-notch margined-right-5"></i>');
+        z.find('button[value="denyf"]').addClass("page_footer_submit btn-warning").removeClass("btn-default").prepend('<i class="fa fa-unlock margined-right-5"></i>')
     }
-    $.each(B.find('input[type="radio"]:not(.iawobject), input[type="checkbox"]:not(.iawobject)'), function() {
+    $.each(z.find('input[type="radio"]:not(.iawobject), input[type="checkbox"]:not(.iawobject)'), function() {
         if ($("html").attr("data-post") == "conf") {
             return
         }
@@ -552,9 +558,9 @@ function csf_init() {
             if ($(this)[0]) {
                 $___text = $(this)[0].nextSibling
             }
-            var U = $(this).next('input:not([type="radio"], [type="checkbox"], [type="hidden"]), select, textarea'),
-                S = ($___text && $___text.nodeValue && $.trim($___text.nodeValue).length > 1),
-                T = (S ? $___text.nodeValue : "&nbsp;");
+            var S = $(this).next('input:not([type="radio"], [type="checkbox"], [type="hidden"]), select, textarea'),
+                Q = ($___text && $___text.nodeValue && $.trim($___text.nodeValue).length > 1),
+                R = (Q ? $___text.nodeValue : "&nbsp;");
             $(this).addClass("iawobject");
             var d = $(this).attr("id") ? 'for="' + $(this).attr("id") + '"' : false;
             if (d === false && $(this).attr("name") && $(this).val()) {
@@ -564,7 +570,7 @@ function csf_init() {
             }
             if ($(this).is(":checkbox")) {
                 if ($($___text).length) {
-                    $($___text).wrap('<label style="font-weight: 400" class="lawobject" ' + d + ">" + $.trim(T) + " </label>");
+                    $($___text).wrap('<label style="font-weight: 400" class="lawobject" ' + d + ">" + $.trim(R) + " </label>");
                     $($___text).remove()
                 } else {
                     $(this).after('<label class="lawobject" for="' + ($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>')
@@ -579,10 +585,10 @@ function csf_init() {
             }
         }
     });
-    var J = $('p:contains("..."):contains("Done")');
-    if (J.length || $('html[data-post="logtail"], 									html[data-post="allow"],									html[data-post="deny"],									html[data-post="redirect"],									html[data-post="ignorefiles"],									html[data-post="dirwatch"],									html[data-post="dyndns"],									html[data-post="templates"],									html[data-post="logfiles"],									html[data-post="blocklists"],									html[data-post="syslogusers"]').length) {
+    var H = $('p:contains("..."):contains("Done")');
+    if (H.length || $('html[data-post="logtail"], 									html[data-post="allow"],									html[data-post="deny"],									html[data-post="redirect"],									html[data-post="ignorefiles"],									html[data-post="dirwatch"],									html[data-post="dyndns"],									html[data-post="templates"],									html[data-post="logfiles"],									html[data-post="blocklists"],									html[data-post="syslogusers"]').length) {
         $("#csfreturn").parent("form").parent("div").prev("hr").replaceTagName("br");
-        J.remove()
+        H.remove()
     } else {
         if ($('html[data-post="servercheck"], html[data-post="readme"], html[data-post="viewlogs"], html[data-post="chart"], html[data-post="loggrep"], html[data-post="viewports"], html[data-post="profiles"], html[data-post="status"], html[data-post="sips"], html[data-post="temp"]').length) {
             if ($('html[data-post="temp"]') && $('a[href="index.cgi?action=temprm&ip=all"]').length) {} else {
@@ -592,37 +598,37 @@ function csf_init() {
     }
     var c = $("#csfreturn").length;
     $('#csfreturn, 		   html[data-post="rblcheckedit"] input[value="rblcheck"] + input,		   html[data-post="serverchecksave"] input[value="servercheck"] + input,		   html[data-post="temprm"] input[value="temp"] + input,		   html[data-post="temptoperm"] input[value="temp"] + input		').replaceWith('<button type="submit" class="btn btn-' + (c ? "primary" : "default margined-top-10") + ' page_footer_submit"><i class="fa fa-fw fa-arrow-left">&nbsp;</i> Return' + (c ? " to module index" : "") + "</button>");
-    var L = $('html input[value="lfdrestart"] + input, html input[value="restart"] + input, html input[value="restartboth"] + input'),
-        R = "Save",
-        C = "fa-circle-check";
-    if (L.length) {
-        R = L.val();
-        C = "fa-circle-o-notch"
+    var J = $('html input[value="lfdrestart"] + input, html input[value="restart"] + input, html input[value="restartboth"] + input'),
+        P = "Save",
+        A = "fa-circle-check";
+    if (J.length) {
+        P = J.val();
+        A = "fa-circle-o-notch"
     }
-    $('input[value="Change"],		html:not([data-post=""]) input[value="restartboth"] + input,		html:not([data-post=""]) input[value="lfdrestart"] + input,		html:not([data-post=""]) input[value="restart"] + input		').replaceWith('<button type="submit" class="btn btn-default page_footer_submit' + (L.length ? " __restart" : "") + '"><i class="fa fa-fw ' + C + '">&nbsp;</i> ' + R + "</button>");
+    $('input[value="Change"],		html:not([data-post=""]) input[value="restartboth"] + input,		html:not([data-post=""]) input[value="lfdrestart"] + input,		html:not([data-post=""]) input[value="restart"] + input		').replaceWith('<button type="submit" class="btn btn-default page_footer_submit' + (J.length ? " __restart" : "") + '"><i class="fa fa-fw ' + A + '">&nbsp;</i> ' + P + "</button>");
     $("body").on("click", ".page_footer_submit:not(.disabled)", function(d) {
-        u($(this), [2, -27, "small", 600])
+        s($(this), [2, -27, "small", 600])
     });
-    var M = ".panel-heading font",
-        v = "bs-callout",
-        h = "" + M + " + .circles",
-        N = $("." + v + ":visible");
-    if (N.length && !$(h).length) {
-        $(M).after('<span class="circles"></span>')
+    var K = ".panel-heading font",
+        t = "bs-callout",
+        e = "" + K + " + .circles",
+        L = $("." + t + ":visible");
+    if (L.length && !$(e).length) {
+        $(K).after('<span class="circles"></span>')
     }
-    $.each(N, function() {
-        var g = $.trim($(this).attr("class").replace(v, "").replace(v + "-", "").replace("text-center", "").replace("collapse", "")),
+    $.each(L, function() {
+        var g = $.trim($(this).attr("class").replace(t, "").replace(t + "-", "").replace("text-center", "").replace("collapse", "")),
             d = $(this).text();
         if (!d) {
             return
         }
-        $(h).prepend('<span data-tooltip="tooltip" data-container="body" data-html="true" data-placement="bottom" data-title="' + d + '" class="circle ' + g + '"><i class="fa fa-' + ((g == "warning" || g == "danger") ? "exclamation-circle" : (g == "info" ? "info-circle" : "check-circle")) + '"></i></span>');
+        $(e).prepend('<span data-tooltip="tooltip" data-container="body" data-html="true" data-placement="bottom" data-title="' + d + '" class="circle ' + g + '"><i class="fa fa-' + ((g == "warning" || g == "danger") ? "exclamation-circle" : (g == "info" ? "info-circle" : "check-circle")) + '"></i></span>');
         $(this).remove()
     });
     if ($("html").attr("data-post") !== "") {
-        var j = B.find(".btn-primary.page_footer_submit");
+        var j = z.find(".btn-primary.page_footer_submit");
         if (j.length) {
-            B.find(".panel-heading font").before('<a href="/csf" class="btn btn-link footer_module_index_top"><i class="fa fa-arrow-left"></i></a>');
+            z.find(".panel-heading font").before('<a data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + $(".page_footer_submit").text() + '"  href="/csf" class="btn btn-link footer_module_index_top"><i class="fa fa-arrow-left"></i></a>');
             $("body").on("click", ".footer_module_index_top", function(d) {
                 d.preventDefault();
                 $("body").find(".btn.btn-primary.page_footer_submit").before('<input type="submit" class="submit_tmp_index hidden">');
@@ -630,23 +636,22 @@ function csf_init() {
             })
         }
     } else {
-        var E = B.find('button[value="conf"]'),
-            l = E.parent("form").parent("td").parent("tr").addClass("hidden").detach();
-        $("#csf > table > tbody").append(l);
-        B.find(".panel-heading font").before('<div class="btn-group btn-group-csf-home"><a href="/" class="btn btn-link text-lighter ported_module_csf_conf"><i class="fa fa-cog"></i></a><a href="/" class="btn btn-link text-lighter ported_module_csf_help"><i class="fa fa-question-circle"></i></a></div>');
+        var C = z.find('button[value="conf"]'),
+            h = C.text();
+        conf_row = C.parent("form").parent("td").parent("tr").addClass("hidden").detach(), info_button = z.find('button[value="readme"]'), title_help = info_button.text(), info_row = info_button.parent("td").parent("tr").addClass("hidden").detach();
+        $("#csf > table > tbody").append(conf_row);
+        z.find(".panel-heading font").before('<div class="btn-group btn-group-csf-home"><a href="/" data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + h + '" class="btn btn-link text-lighter ported_module_csf_conf"><i class="fa fa-cog"></i></a><a href="/" data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + title_help + '" class="btn btn-link text-lighter ported_module_csf_help"><i class="fa fa-question-circle"></i></a></div>');
         $("body").on("click", 'a[href="/"].ported_module_csf_conf', function(d) {
             d.preventDefault();
-            E.trigger("click")
+            C.trigger("click")
         });
-        var t = B.find('button[value="readme"]'),
-            e = t.parent("td").parent("tr").addClass("hidden").detach();
-        $("#home form table tbody").append(e);
+        $("#home form table tbody").append(info_row);
         $("body").on("click", 'a[href="/"].ported_module_csf_help', function(d) {
             d.preventDefault();
-            t.trigger("click")
+            info_button.trigger("click")
         })
     }
     setTimeout(function() {
-        p(D, f, with_frame)
+        o(B, f, with_frame)
     }, 100)
 };
