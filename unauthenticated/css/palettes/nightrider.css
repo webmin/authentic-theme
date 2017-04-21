@@ -24,7 +24,7 @@ html[data-background-style='nightRider'] .modal-header.background-danger button,
 html[data-background-style='nightRider'] .modal-header.background-danger h4,
 html[data-background-style='nightRider'] .panel-title,
 html[data-background-style='nightRider'] a[data-toggle='collapse'] {
-    color: rgba(198, 198, 198, .83)
+    color: rgba(151, 155, 160, .82) !important
 }
 
 html[data-background-style='nightRider'] .btn.btn-transparent-link-inverse:hover,
@@ -175,7 +175,7 @@ html[data-background-style='nightRider'] #headln2c>.fa.fa-star:before {
 }
 
 html[data-background-style='nightRider'] .panel-default>.panel-heading {
-    color: rgba(201, 201, 201, .80);
+    color: rgba(201, 201, 201, .70);
     border-color: #242528;
     background-color: rgba(39, 43, 48, .69)
 }
@@ -516,8 +516,8 @@ html[data-background-style='nightRider'] .breadcrumb>li+li:before {
 }
 
 html[data-background-style='nightRider'] .file-manager .table-striped>tbody>tr td:nth-child(2) img {
-    filter: saturate(.6) brightness(1.2) contrast(.6);
-    -webkit-filter: saturate(.6) brightness(1.2) contrast(.6)
+    filter: saturate(.4) brightness(0.75) contrast(.9);
+    -webkit-filter: saturate(.4) brightness(0.75) contrast(.9)
 }
 
 html[data-background-style='nightRider'] .file-manager .tabs-top>.nav-tabs {
