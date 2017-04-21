@@ -436,12 +436,22 @@ function ported_shell_clear_cmd(a) {
     a.focus()
 }
 
-function ported_shell_open(a) {
+function ported_shell_open(a, b) {
+    var d = (typeof b == "undefined" ? d = false : d = (b.startsWith("!") ? b.substr(1) : b)),
+        f = t__wi_p.$("body").find(".-shell-port- input");
+    if (d) {
+        f.val(d);
+        var c = $.Event("keydown");
+        c.which = 13;
+        f.trigger(c)
+    }
     a.css("bottom", "0vh").addClass("opened");
     t__wi_p.ported_shell_size();
     setTimeout(function() {
-        t__wi_p.focus();
-        t__wi_p.$("body").find(".-shell-port- input").focus()
+        if (!d) {
+            t__wi_p.focus();
+            f.focus()
+        }
     }, 20)
 }
 

@@ -1059,10 +1059,14 @@ $(window).keyup(function(D) {
 });
 $("body").on("submit", "#webmin_search_form", function(c) {
     var e = $(this),
-        d = !e.find("input.sidebar-search").val().trim().startsWith("!"),
+        g = e.find("input.sidebar-search"),
+        d = !g.val().trim().startsWith("!"),
         f = t__wi_p.$(".form-control.sidebar-search");
     if (!d || !$.trim(f.val())) {
-        c.preventDefault()
+        c.preventDefault();
+        if (ported_shell_available()) {
+            ported_shell_open(shell, g.val())
+        }
     }
     setTimeout(function() {
         t__wi_p.$(".navigation > li:not('.has-sub')").removeClass("sub_active").find("span.current-large").remove();
