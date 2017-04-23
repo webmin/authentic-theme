@@ -349,13 +349,16 @@ sub print_category_link
 
 sub print_sysinfo_link
 {
+    my ($user) = @_;
     if ( dashboard_switch() ne '1' ) {
         print '<li><a target="page" data-href="'
           . $gconfig{'webprefix'}
           . '/sysinfo.cgi" class="navigation_module_trigger'
           . ( $__settings{'settings_sysinfo_link_mini'} eq 'true' && ' hidden' )
-          . '"><i class="fa fa-asterisk __sysinfo_asterisk blinking-default hidden" style="position: absolute; font-size: 40%; margin-top: -3px; margin-left: 8px;"></i><i class="fa fa-fw fa-dashboard"></i> <span>'
-          . $Atext{'left_home'}
+          . '"><i class="fa fa-fw '
+          . ( $user ? 'fa-user-circle' : 'fa-dashboard' )
+          . '"></i> <span>'
+          . ( $user ? $Atext{'body_header1'} : $Atext{'body_header0'} )
           . '</span></a></li>' . "\n";
     }
 }
@@ -680,7 +683,7 @@ sub print_left_menu
                     $icon = '<i class="fa fa-fw fa-folder"></i>';
                 }
                 elsif ( $link eq "/mailbox/list_addresses.cgi" ) {
-                    $icon = '<i class="fa fa-fw fa-users"></i>';
+                    $icon = '<i class="fa fa-fw fa-address-book"></i>';
                 }
                 elsif ( $link eq "/filter/edit_forward.cgi" ) {
                     $icon = '<i class="fa fa-fw fa-share"></i>';
@@ -1729,6 +1732,53 @@ sub print_favorites
         </a>
     </div>
     ';
+}
+
+sub print_panels_group_start
+{
+    my ($id) = @_;
+    print '<div class="panel-group" id="' . $id . '" role="tablist" aria-multiselectable="true">';
+}
+
+sub print_panels_group_end
+{
+    print '</div>';
+}
+
+sub print_panel
+{
+    my ( $opened, $id, $title, $data ) = @_;
+
+
+    print '
+              <div class="panel panel-default'
+      . ( $__settings{'settings_animation_tabs'} ne 'false'
+          ? ''
+          : ' disable-animations' )
+      . '">
+                  <div class="panel-heading" role="tab" id="'
+      . $id . '">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#'
+      . $id
+      . '-collapse" aria-expanded="'
+      . ( $opened
+          ? 'true'
+          : 'false' )
+      . '" aria-controls="'
+      . $id
+      . '-collapse">'
+      . $title . '</a>
+                    </h4>
+                  </div>
+              <div id="'
+      . $id
+      . '-collapse" class="panel-collapse collapse'
+      . ( $opened ? ' in' : '')
+      . '" role="tabpanel" aria-labelledby="'
+      . $id . '">
+                <div class="panel-body">' . $data . '</div></div></div>';
+
 }
 
 sub parse_license_date

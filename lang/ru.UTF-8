@@ -658,7 +658,7 @@ theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
 
 
-#18.41
+#18.45
 settings_sysinfo_easypie_charts_size=Diameter of charts
 theme_xhred_global_choose=Choose
 theme_xhred_global_select=Select
@@ -676,3 +676,10 @@ theme_xhred_global_help=Help
 settings_right_soft_updates_page_options_title=Software updates
 theme_xhred_git_compare_changes=Compare changes
 theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
+
+
+
+#18.46
+theme_left_mail_prefs=Mail Preferences
+theme_left_mail_change_password=Change Password
+theme_left_mail_account_functions=Account Functions

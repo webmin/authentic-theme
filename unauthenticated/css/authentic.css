@@ -115,6 +115,10 @@ h6,
     overflow-x: initial
 }
 
+.table[data-class="no-inner-formatting"] table {
+    border: 0 !important
+}
+
 #hiddenopener_docs,
 .ui_value label {
     margin-right: 5px

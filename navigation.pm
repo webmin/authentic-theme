@@ -93,7 +93,7 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
           . $Atext{'left_refresh_modules'}
           . '</span></a></li>' . "\n";
     }
-    print_sysinfo_link();
+    print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
     print_sysstat_link();
     print_netdata_link();
 
@@ -134,7 +134,20 @@ elsif ( $t_uri_cloudmin != -1 || $in{'xhr-navigation-type'} eq 'cloudmin' ) {
 elsif ( $t_uri_webmail != -1 || $in{'xhr-navigation-type'} eq 'webmail' ) {
 
     print_left_menu( 'mailbox', \@leftitems, 0, 0, 0, $in{'xhr-navigation-type'} );
-    print_sysinfo_link();
+
+    print '<li><a target="page" data-href="'
+      . $gconfig{'webprefix'}
+      . '/uconfig.cgi?mailbox" class="navigation_module_trigger"><i class="fa fa-fw fa-cog"></i> <span>'
+      . $Atext{'theme_left_mail_prefs'}
+      . '</span></a></li>' . "\n";
+
+    print '<li><a target="page" data-href="'
+      . $gconfig{'webprefix'}
+      . '/changepass" class="navigation_module_trigger"><i class="fa fa-fw fa-key"></i> <span>'
+      . $Atext{'theme_left_mail_change_password'}
+      . '</span></a></li>' . "\n";
+
+    print_sysinfo_link(1);
 }
 
 1;
