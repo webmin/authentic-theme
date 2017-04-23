@@ -29,7 +29,7 @@ if ( $get_user_level ne '4' && &foreign_available("system-status")
     print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">'
-      . &Atext('body_header0')
+      . ( $get_user_level eq '3' ? $Atext{'body_header1'} : $Atext{'body_header0'} )
       . (
         (       $get_user_level ne '1'
              && $get_user_level ne '2'
@@ -240,23 +240,23 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     # Build response message
     if ( $remote_version <= $installed_version ) {
-      $authentic_theme_version =
-          '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
-        . $Atext{'theme_name'} . '</a> '
-        . ($git_version_local ? $git_version_local : $installed_version)
-        . '<div class="btn-group margined-left-4"><a href="'
-        . $gconfig{'webprefix'}
-        . '/settings-user.cgi" data-href="'
-        . $gconfig{'webprefix'}
-        . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
-        . $Atext{'settings_right_theme_configurable_options_title'}
-        . '"><i class="fa fa-cogs"></i></a> '
-        . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
+        $authentic_theme_version =
+            '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+          . $Atext{'theme_name'} . '</a> '
+          . ( $git_version_local ? $git_version_local : $installed_version )
+          . '<div class="btn-group margined-left-4"><a href="'
+          . $gconfig{'webprefix'}
+          . '/settings-user.cgi" data-href="'
+          . $gconfig{'webprefix'}
+          . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
+          . $Atext{'settings_right_theme_configurable_options_title'}
+          . '"><i class="fa fa-cogs"></i></a> '
+          . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
     }
     else {
         $authentic_theme_version = ''
           . $Atext{'theme_name'} . ' '
-          . ($git_version_local ? $git_version_local : $installed_version) . '. '
+          . ( $git_version_local ? $git_version_local : $installed_version ) . '. '
           . $Atext{'theme_update_available'} . ' '
           . $remote_version
           . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
@@ -282,7 +282,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
             &print_table_row( $Atext{'right_subs'}, scalar(@reals) );
         }
         else {
-            &print_table_row( $Atext{'right_subs'}, text( 'right_of', scalar(@reals), $stotal ) );
+            &print_table_row( $Atext{'right_subs'}, Atext( 'right_of', scalar(@reals), $stotal ) );
         }
 
         @aliases = grep { $_->{'alias'} } @subs;
@@ -292,7 +292,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
                 &print_table_row( $Atext{'right_aliases'}, scalar(@aliases) );
             }
             else {
-                &print_table_row( $Atext{'right_aliases'}, text( 'right_of', scalar(@aliases), $atotal ) );
+                &print_table_row( $Atext{'right_aliases'}, Atext( 'right_of', scalar(@aliases), $atotal ) );
             }
         }
     }
@@ -305,7 +305,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         &print_table_row( $msg, $users );
     }
     else {
-        &print_table_row( $msg, text( 'right_of', $users, $utotal ) );
+        &print_table_row( $msg, Atext( 'right_of', $users, $utotal ) );
     }
 
     if (@mails) {
@@ -315,7 +315,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
             &print_table_row( $Atext{'right_faliases'}, $aliases );
         }
         else {
-            &print_table_row( $Atext{'right_faliases'}, text( 'right_of', $aliases, $atotal ) );
+            &print_table_row( $Atext{'right_faliases'}, Atext( 'right_of', $aliases, $atotal ) );
         }
     }
 
@@ -326,7 +326,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         &print_table_row( $Atext{'right_fdbs'}, $dbs );
     }
     else {
-        &print_table_row( $Atext{'right_fdbs'}, text( 'right_of', $dbs, $dtotal ) );
+        &print_table_row( $Atext{'right_fdbs'}, Atext( 'right_of', $dbs, $dtotal ) );
     }
 
     if ( !$sects->{'noquotas'}
@@ -340,7 +340,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
         $limit = $d->{'quota'} * $homesize;
         if ($limit) {
             &print_table_row( $Atext{'right_quota'},
-                              text( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
+                              Atext( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
         }
         else {
             &print_table_row( $Atext{'right_quota'}, nice_size($usage), 3 );
@@ -397,23 +397,23 @@ elsif ( $get_user_level eq '3' ) {
     # Build response message
 
     if ( $remote_version <= $installed_version ) {
-      $authentic_theme_version =
-          '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
-        . $Atext{'theme_name'} . '</a> '
-        . ($git_version_local ? $git_version_local : $installed_version)
-        . '<div class="btn-group margined-left-4"><a href="'
-        . $gconfig{'webprefix'}
-        . '/settings-user.cgi" data-href="'
-        . $gconfig{'webprefix'}
-        . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
-        . $Atext{'settings_right_theme_configurable_options_title'}
-        . '"><i class="fa fa-cogs"></i></a> '
-        . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
+        $authentic_theme_version =
+            '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
+          . $Atext{'theme_name'} . '</a> '
+          . ( $git_version_local ? $git_version_local : $installed_version )
+          . '<div class="btn-group margined-left-4"><a href="'
+          . $gconfig{'webprefix'}
+          . '/settings-user.cgi" data-href="'
+          . $gconfig{'webprefix'}
+          . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="'
+          . $Atext{'settings_right_theme_configurable_options_title'}
+          . '"><i class="fa fa-cogs"></i></a> '
+          . '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
     }
     else {
         $authentic_theme_version = ''
           . $Atext{'theme_name'} . ' '
-          . ($git_version_local ? $git_version_local : $installed_version) . '. '
+          . ( $git_version_local ? $git_version_local : $installed_version ) . '. '
           . $Atext{'theme_update_available'} . ' '
           . $remote_version
           . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
@@ -427,7 +427,24 @@ elsif ( $get_user_level eq '3' ) {
     print '</div>';    # Panel Body
     print '</div>';    # Panel Default
 
+    # Common modules
+    @commonmods = grep { &foreign_available($_) }
+      ( "filter", "changepass", "gnupg", "filemin", "mysql", "postgresql", "datastore" );
+    my $commonmods_data = ui_table_start( undef, "data-class=\"no-inner-formatting\"", 2 );
+    if (@commonmods) {
+
+        # print ui_hidden_table_start( '44', "width=100%", 2, $open{'common'} );
+        foreach $mod (@commonmods) {
+            %minfo = &get_module_info($mod);
+            $commonmods_data .= ui_table_row( $minfo{'desc'},
+                           "<a href='$mod/'>" . ( $text{ 'common_' . $mod } || $minfo{'longdesc'} ) . "</a>" );
+        }
+    }
+    $commonmods_data .= ui_table_end();
     print get_extended_sysinfo(@info);
+
+    print_panel( 1, 'account_functions', $Atext{'theme_left_mail_account_functions'}, ($commonmods_data) );
+
 }
 
 # End of page

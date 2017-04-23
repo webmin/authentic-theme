@@ -653,7 +653,7 @@ theme_tooltip_logout=登出
 theme_tooltip_edit_user=編輯用戶
 
 
-#18.41
+#18.45
 settings_sysinfo_easypie_charts_size=圖表直徑
 theme_xhred_global_choose=選擇
 theme_xhred_global_select=選擇
@@ -671,3 +671,10 @@ theme_xhred_global_help=幫助
 settings_right_soft_updates_page_options_title=軟體更新
 theme_xhred_git_compare_changes=變動比較
 theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
+
+
+
+#18.46
+theme_left_mail_prefs=Mail Preferences
+theme_left_mail_change_password=Change Password
+theme_left_mail_account_functions=Account Functions

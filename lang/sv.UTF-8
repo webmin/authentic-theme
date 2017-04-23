@@ -653,7 +653,7 @@ theme_tooltip_logout=Logga ut
 theme_tooltip_edit_user=Redigera användare
 
 
-#18.41
+#18.45
 settings_sysinfo_easypie_charts_size=Diameter diagram
 theme_xhred_global_choose=Välj
 theme_xhred_global_select=Markera
@@ -671,3 +671,10 @@ theme_xhred_global_help=Hjälp
 settings_right_soft_updates_page_options_title=Programuppdateringar
 theme_xhred_git_compare_changes=Jämför förändringar
 theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn <strong><em>%value</em></strong> har kopierats till urklippet.
+
+
+
+#18.46
+theme_left_mail_prefs=Mail Preferences
+theme_left_mail_change_password=Change Password
+theme_left_mail_account_functions=Account Functions
