@@ -2337,7 +2337,7 @@ $.ajaxSetup({
         t__wi_p.$___ajax_requested_url = a.url
     },
     complete: function(b, a) {
-        if (b.getResponseHeader("Auth-type") === "auth-required=1") {
+        if (b.getResponseHeader("Auth-type") === "auth-required=1" || (b.responseText && (b.responseText.indexOf("reset-fonts-grids-base") > -1 && b.responseText.indexOf("window.top.location = window.location;") > -1))) {
             t___wi.top.location.reload()
         }
         if (t__wi_p.$___ajax_requested_url && (t__wi_p.$___ajax_requested_url.indexOf("help.cgi") > -1 || t__wi_p.$___ajax_requested_url.indexOf("edit_file.cgi") > -1)) {

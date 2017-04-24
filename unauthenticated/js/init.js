@@ -641,7 +641,7 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
     if (__num() && !d) {
         t__wi_p.__lre()
     }
-    if ($("body").find(".form-signin-banner").length === 1 || $("body").find('form[action*="session_login.cgi"]').length === 1 || $("body").find('form[action*="pam_login.cgi"]').length === 1) {
+    if ($("body").find(".form-signin-banner").length === 1 || $("body").find('form[action*="session_login.cgi"]').length === 1 || $("body").find('form[action*="pam_login.cgi"]').length === 1 || $("body").is("[vlink=#376ebd]")) {
         t__wi_p.location = t___wi.location.origin
     }
     ____iframe___ = t__wi_p.$("#iframe")[0];
