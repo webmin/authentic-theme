@@ -707,7 +707,7 @@ $("body").on("click", '.authentic_update:not([data-git="0"]):not(.disabled)', fu
                 messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].success, 4, "success", "themeUpgrade");
                 setTimeout(function() {
                     t___wi.top.location.reload()
-                }, 3300)
+                }, 2000)
             } else {
                 if (a[0] && a[0].no_git) {
                     messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].no_git, 20, "warning", "themeUpgrade");

@@ -51,7 +51,7 @@ else
         fi
         rm -f "$DIR/authentic-theme/README.md"
 
-        if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/version" ]; then
+        if [ $? -eq 0 ] && [ -f "$DIR/authentic-theme/version" ]; then
           echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/version`, done.\e[0m"
         else
           echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/VERSION.txt`, done.\e[0m"
