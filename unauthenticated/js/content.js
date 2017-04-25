@@ -103,22 +103,24 @@ $.each($('tr td:last-child a:contains("..")'), function() {
     }
 });
 
-function __init_dt_(e, d, a) {
-    typeof d == "undefined" ? d = false : false;
+function __init_dt_(f, e, a, d) {
+    typeof e == "undefined" ? e = false : false;
     typeof a == "undefined" ? a = false : false;
+    typeof d == "undefined" ? d = false : false;
     if (is__mf("virtual-server", "index.cgi")) {
-        d = true
+        e = true
     }
     $.fn.dataTableExt.sErrMode = "throw";
 
-    function b(f) {
-        f.DataTable({
+    function b(g) {
+        g.DataTable({
             order: [],
             aaSorting: [],
             bDestroy: true,
             bPaginate: false,
+            columnDefs: [d],
             bInfo: false,
-            bStateSave: d,
+            bStateSave: e,
             destroy: true,
             dom: (a ? "Rlfrtip" : "f"),
             oLanguage: {
@@ -131,7 +133,7 @@ function __init_dt_(e, d, a) {
                 sSearch: " ",
                 sZeroRecords: lang("theme_xhred_datatable_szerorecords")
             },
-            initComplete: function(g) {
+            initComplete: function(h) {
                 $(".dataTables_filter").find('input[type="search"]').attr("placeholder", lang("theme_xhred_datatable_filter"))
             }
         })
@@ -141,20 +143,20 @@ function __init_dt_(e, d, a) {
             return $(this).text().match(/Last login|Dernière Connexion|Siste innlogging|Letzer Login|Laatste login/)
         }).index();
         if (c > -1) {
-            $.each(e.find("tbody tr td:nth-child(" + (c + 1) + ")"), function(g, h) {
-                var f = $(this).text();
-                if (/Never|Jamais|Aldri|Niemals|Nigdy|Nooit/i.test(f)) {
-                    f = 0
+            $.each(f.find("tbody tr td:nth-child(" + (c + 1) + ")"), function(h, i) {
+                var g = $(this).text();
+                if (/Never|Jamais|Aldri|Niemals|Nigdy|Nooit/i.test(g)) {
+                    g = 0
                 }
-                $(this).attr("data-sort", f)
+                $(this).attr("data-sort", g)
             }).promise().done(function() {
-                b(e)
+                b(f)
             })
         } else {
-            b(e)
+            b(f)
         }
     } else {
-        b(e)
+        b(f)
     }
 }
 
@@ -2725,6 +2727,12 @@ if ((($('body[class*="status"]').length && !$('body[class*="smart-status"]').len
 }
 if ($('body[class*="ldap-useradmin"]').length) {
     __init_dt_($("form > table.table.table-striped.table-condensed"))
+}
+if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi") {
+    __init_dt_($(".table.table-striped.table-hover.table-condensed"), false, false, {
+        orderable: false,
+        targets: [0, -1]
+    })
 }
 if ($current_page_full == $_____link_full + "/servers/" || $current_page_full == $_____link_full + "/servers/index.cgi") {
     $(".ui_checked_columns td table tr td").find('a.ui_link[href*="edit_serv.cgi"]').addClass("margined-left-4 label label-sm label-primary hidden").html('<i class="fa fa-fw fa-pencil-square-o"></i>');
