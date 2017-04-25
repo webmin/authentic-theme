@@ -65,7 +65,6 @@ else
             service $PROD restart >/dev/null 2>&1
           fi
         fi
-
       else
         # Post fail commands
         rm -rf "$DIR/.~authentic-theme"
