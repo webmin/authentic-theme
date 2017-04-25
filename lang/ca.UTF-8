@@ -680,3 +680,7 @@ theme_xhred_filemanager_link_to_clipboard=El nom de l'enllaç `<strong><em>%valu
 theme_left_mail_prefs=Mail Preferences
 theme_left_mail_change_password=Change Password
 theme_left_mail_account_functions=Account Functions
+theme_xhred_global_dir_up=Go to previous directory (Backspace)
+theme_xhred_global_module_config=Module config
+theme_xhred_global_return=Return
+theme_xhred_global_return_to_module_index=Return to module index

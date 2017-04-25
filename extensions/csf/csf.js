@@ -11,17 +11,11 @@ var b = window,
     html = $("html"),
     r = $('link[href*="configserver"]'),
     empty = $("style"),
-    __isNR = ($('link[href*="nightrider"]').length ? 1 : 0);
+    __isNR = (($('html[data-background-style="nightRider"]').length && $('link[href*="nightrider"]').length) ? 1 : 0);
 f.$___________initial = 0;
 html.attr("data-background-style", f.$("html").attr("data-background-style")).attr("data-module", "csf");
 empty.empty();
 r.remove();
-$("body").tooltip({
-    selector: 'a[data-toggle="tooltip"]',
-    container: "body",
-    placement: "auto top",
-    html: true
-});
 
 function csf_init() {
     function w(d) {
@@ -224,7 +218,7 @@ function csf_init() {
 
     function q() {
         setTimeout(function() {
-            z.find(".panel-heading").prepend('			<div class="btn-group pull-right" style="position: absolute; right: 15px; top: 17px;">			<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-toggle="tooltip" data-title="' + ($is_lang ? f.lang("theme_xhred_datatable_filter_visible_tables") : "") + '" data-container="body">				<label style="font-weight: 400">					<input type="text" class="dataTable-mirror" placeholder="' + ($is_lang ? f.lang("theme_xhred_datatable_filter") : "") + '">				</label>				<i class="fa fa-filter"></i>			</a>			</div>		');
+            z.find(".panel-heading").prepend('			<div class="btn-group pull-right" style="position: absolute; right: 15px; top: 17px;">			<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-toggle="tooltip" data-title="' + ($is_lang ? f.lang("theme_xhred_datatable_filter") : "") + '" data-container="body">				<label style="font-weight: 400">					<input type="text" class="dataTable-mirror" placeholder="' + ($is_lang ? f.lang("theme_xhred_datatable_filter") : "") + '">				</label>				<i class="fa fa-filter"></i>			</a>			</div>		');
             var d = z.find(".dataTables_filter");
             d.hide();
             z.find(".btn-filter-top-right").click(function(g) {
@@ -597,7 +591,7 @@ function csf_init() {
         }
     }
     var c = $("#csfreturn").length;
-    $('#csfreturn, 		   html[data-post="rblcheckedit"] input[value="rblcheck"] + input,		   html[data-post="serverchecksave"] input[value="servercheck"] + input,		   html[data-post="temprm"] input[value="temp"] + input,		   html[data-post="temptoperm"] input[value="temp"] + input		').replaceWith('<button type="submit" class="btn btn-' + (c ? "primary" : "default margined-top-10") + ' page_footer_submit"><i class="fa fa-fw fa-arrow-left">&nbsp;</i> Return' + (c ? " to module index" : "") + "</button>");
+    $('#csfreturn, 		   html[data-post="rblcheckedit"] input[value="rblcheck"] + input,		   html[data-post="serverchecksave"] input[value="servercheck"] + input,		   html[data-post="temprm"] input[value="temp"] + input,		   html[data-post="temptoperm"] input[value="temp"] + input		').replaceWith('<button type="submit" class="btn btn-' + (c ? "primary" : "default margined-top-10") + ' page_footer_submit"><i class="fa fa-fw fa-arrow-left">&nbsp;</i> ' + (c ? ($is_lang ? f.lang("theme_xhred_global_return_to_module_index") : "Return to module index") : ($is_lang ? f.lang("theme_xhred_global_return") : "Return")) + "</button>");
     var J = $('html input[value="lfdrestart"] + input, html input[value="restart"] + input, html input[value="restartboth"] + input'),
         P = "Save",
         A = "fa-circle-check";
@@ -628,7 +622,7 @@ function csf_init() {
     if ($("html").attr("data-post") !== "") {
         var j = z.find(".btn-primary.page_footer_submit");
         if (j.length) {
-            z.find(".panel-heading font").before('<a data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + $(".page_footer_submit").text() + '"  href="/csf" class="btn btn-link footer_module_index_top"><i class="fa fa-arrow-left"></i></a>');
+            z.find(".panel-heading font").before('<a data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + $.trim($(".page_footer_submit.btn-primary:first").text()) + '"  href="/csf" class="btn btn-link footer_module_index_top"><i class="fa fa-arrow-left"></i></a>');
             $("body").on("click", ".footer_module_index_top", function(d) {
                 d.preventDefault();
                 $("body").find(".btn.btn-primary.page_footer_submit").before('<input type="submit" class="submit_tmp_index hidden">');
@@ -640,7 +634,7 @@ function csf_init() {
             h = C.text();
         conf_row = C.parent("form").parent("td").parent("tr").addClass("hidden").detach(), info_button = z.find('button[value="readme"]'), title_help = info_button.text(), info_row = info_button.parent("td").parent("tr").addClass("hidden").detach();
         $("#csf > table > tbody").append(conf_row);
-        z.find(".panel-heading font").before('<div class="btn-group btn-group-csf-home"><a href="/" data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + h + '" class="btn btn-link text-lighter ported_module_csf_conf"><i class="fa fa-cog"></i></a><a href="/" data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + title_help + '" class="btn btn-link text-lighter ported_module_csf_help"><i class="fa fa-question-circle"></i></a></div>');
+        z.find(".panel-heading font").before('<div class="btn-group btn-group-csf-home"><a href="/" data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + ($is_lang ? f.lang("theme_xhred_global_module_config") : "Module config") + '" class="btn btn-link text-lighter ported_module_csf_conf"><i class="fa fa-cog"></i></a><a href="/" data-tooltip="tooltip" data-container="body" data-html="true" data-placement="auto top" title="' + ($is_lang ? f.lang("theme_xhred_global_help") : "Module help") + '" class="btn btn-link text-lighter ported_module_csf_help"><i class="fa fa-question-circle"></i></a></div>');
         $("body").on("click", 'a[href="/"].ported_module_csf_conf', function(d) {
             d.preventDefault();
             C.trigger("click")
@@ -652,6 +646,12 @@ function csf_init() {
         })
     }
     setTimeout(function() {
-        o(B, f, with_frame)
+        o(B, f, with_frame);
+        $("body").tooltip({
+            selector: 'a[data-toggle="tooltip"]',
+            container: "body",
+            placement: "auto top",
+            html: true
+        })
     }, 100)
 };
