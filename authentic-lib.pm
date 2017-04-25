@@ -3616,6 +3616,8 @@ sub manage_theme_config
     my ($action) = @_;
     my %atconfig;
 
+    switch_to_remote_user();
+
     if ( $action eq 'save' ) {
         my %i = settings_filter(%in);
         write_file( get_user_home() . "/.atconfig", \%i );
