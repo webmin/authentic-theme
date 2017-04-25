@@ -10163,7 +10163,7 @@ screen and (max-height:600px) {
 
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
-        width: 580px;
+        width: 600px;
         margin: 30px auto
     }
 }

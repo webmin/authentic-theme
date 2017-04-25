@@ -371,6 +371,7 @@ function manageConfig(d) {
                 data: a,
                 dataType: "text",
                 success: function(f) {
+                    console.log(a);
                     setTimeout(function() {
                         if (typeof t___wi.page.at__s_s__b == "function") {
                             t__wi_p.$____has_frame__ ? t___wi.page.at__s_s__b(0) : at__s_s__b(0)

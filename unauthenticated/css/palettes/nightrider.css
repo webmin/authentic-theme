@@ -105,8 +105,8 @@ html[data-background-style='nightRider'] ::-webkit-scrollbar-thumb:hover {
 html[data-background-style='nightRider'] #list_form tbody tr.hl-aw.m-not-active:not(.m-active),
 html[data-background-style='nightRider'] .panel-body form .table-hardcoded tbody tr td>table.table-striped tbody>tr.hl-aw.ui_checked_columns:nth-of-type(odd) td,
 html[data-background-style='nightRider'] .panel-body form .table-hardcoded tbody tr td>table.table-striped tbody>tr.hl-aw.ui_checked_columns:nth-of-type(even) td,
-html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] .table-striped>tbody>tr.hl-aw:nth-child(odd) td>table.ui_grid_table tr.ui_grid_row td,
-html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] .table-striped>tbody>tr.hl-aw:nth-child(even) td>table.ui_grid_table tr.ui_grid_row td,
+html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] #DataTables_Table_0>tbody>tr.hl-aw:nth-child(odd) td>table.ui_grid_table tr.ui_grid_row td,
+html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] #DataTables_Table_0>tbody>tr.hl-aw:nth-child(even) td>table.ui_grid_table tr.ui_grid_row td,
 html[data-background-style='nightRider'] form[action='save_newshells.cgi'] .hl-aw:nth-of-type(odd),
 body[class*='file-manager'] #list_form tbody tr.checked:hover,
 html[data-background-style='nightRider'] .hl-aw {
@@ -120,8 +120,8 @@ html[data-background-style='nightRider'] #list_form tbody tr:hover.m-active.m-no
 html[data-background-style='nightRider'] #list_form tbody tr.m-active,
 .panel-body form .table-hardcoded tbody tr td>table.table-striped tbody>tr:hover.ui_checked_columns:nth-of-type(odd) td,
 .panel-body form .table-hardcoded tbody tr td>table.table-striped tbody>tr:hover.ui_checked_columns:nth-of-type(even) td,
-html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] .table-striped>tbody>tr:hover:nth-child(odd) td>table.ui_grid_table tr.ui_grid_row td,
-html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] .table-striped>tbody>tr:hover:nth-child(even) td>table.ui_grid_table tr.ui_grid_row td,
+html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] #DataTables_Table_0>tbody>tr:hover:nth-child(odd) td>table.ui_grid_table tr.ui_grid_row td,
+html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] #DataTables_Table_0>tbody>tr:hover:nth-child(even) td>table.ui_grid_table tr.ui_grid_row td,
 html[data-background-style='nightRider'] tr.atshover:hover td kbd,
 html[data-background-style='nightRider'] tr.atshover:hover td code,
 html[data-background-style='nightRider'] tr.atshover:hover td div,
@@ -400,6 +400,10 @@ html[data-background-style='nightRider'] body[class*='mysql']:not(.__non_res__) 
 
 html[data-background-style='nightRider'] .table-striped>tbody>tr:nth-child(even) {
     background-color: #2a2d31
+}
+
+html[data-background-style='nightRider'] body[data-module*='htaccess-htpasswd'] #DataTables_Table_0>tbody>tr:nth-child(even) td>table.ui_grid_table tr.ui_grid_row td {
+    background-color: #2a2d31 !important
 }
 
 html[data-background-style='nightRider'] .opener_extra_container_a_style,
