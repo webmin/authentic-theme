@@ -1262,7 +1262,7 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
             d = $(this).parent("li"),
             e = d.find("a").length,
             g = d.find("a:not(.bctl)");
-        f.html([f.text().slice(0, 6), "" + e + " other ", f.text().slice(6)].join(""));
+        f.html([f.text().slice(0, 6), "" + e + " ", f.text().slice(6)].join(""));
         d.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
         d.find("a.bctl").click(function(h) {
             g.toggleClass("hidden");
@@ -2421,6 +2421,9 @@ $.each($("select"), function() {
 $.each($(".ui_buttons_row input, .ui_buttons_row select"), function() {
     $(this).addClass("heighter-34")
 });
+if (is__mf("gnupg", "list_keys.cgi")) {
+    $('input[id="id"]').addClass("heighter-34")
+}
 $.each($("tr > .ui_form"), function() {
     if ($(this).next().next("td").find("input.submitter")) {
         $(this).next().next("td").find("input.submitter").addClass("heighter-34")

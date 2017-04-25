@@ -2036,7 +2036,7 @@ function t__m__m(f, l) {
 
 function v__cm___init() {
     if ($("textarea").length === 1 && ($("textarea").attr("name") === "data" || $("textarea").attr("name") === "text" || $("textarea").attr("name") === "conf" || is__mfq("virtual-server", "edit_html.cgi", "textok=") || $__source_file.indexOf("manual") > -1)) {
-        if (is__mf("virtual-server", "mass_ucreate_form.cgi") || is__mf("virtual-server", "mass_create_form.cgi") || is__mf("server-manager", "edit_pubkey.cgi") || is__mf("server-manager", "edit_key.cgi") || $__relative_url == "/config.cgi?server-manager" || is__mf("useradmin", "batch_form.cgi") || is__mf("useradmin", "gbatch_form.cgi") || $__source_file == "mass_form.cgi" || $("textarea").attr("id") === "notes") {
+        if (is__m("gnupg") || is__mf("virtual-server", "mass_ucreate_form.cgi") || is__mf("virtual-server", "mass_create_form.cgi") || is__mf("server-manager", "edit_pubkey.cgi") || is__mf("server-manager", "edit_key.cgi") || $__relative_url == "/config.cgi?server-manager" || is__mf("useradmin", "batch_form.cgi") || is__mf("useradmin", "gbatch_form.cgi") || $__source_file == "mass_form.cgi" || $("textarea").attr("id") === "notes") {
             return 0
         }
         t__wi_p.$____loader_block__ = 1;
