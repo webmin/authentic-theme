@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.45 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.46 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -14,7 +14,9 @@ if ( $__settings{'settings_sysinfo_link_mini'} eq 'true'
       . ' class="user-link">';
     print '<a class="menu-exclude-link sidebar_sysinfo_link" target="page" href="'
       . $gconfig{'webprefix'}
-      . '/sysinfo.cgi"><i class="fa fa-fw fa-dashboard"></i></a>';
+      . '/sysinfo.cgi"><i class="fa fa-fw fa-'
+      . ( $get_user_level eq '3' ? 'user-circle' : 'dashboard' )
+      . '"></i></a>';
     print '</li>';
 }
 
