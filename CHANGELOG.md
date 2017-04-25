@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 18.46-beta5 (25 April, 2017)
-* Fixed bugs [#685](https://github.com/qooob/authentic-theme/issues/685) [#723](https://github.com/qooob/authentic-theme/issues/723) [#726](https://github.com/qooob/authentic-theme/issues/726) [#727](https://github.com/qooob/authentic-theme/issues/727) [#51917](https://www.virtualmin.com/node/51917)
+#### Version 18.46-beta7 (25 April, 2017)
+* Fixed bugs [#685](https://github.com/qooob/authentic-theme/issues/685) [#723](https://github.com/qooob/authentic-theme/issues/723) [#726](https://github.com/qooob/authentic-theme/issues/726) [#727](https://github.com/qooob/authentic-theme/issues/727) [#728](https://github.com/qooob/authentic-theme/issues/728) [#51917](https://www.virtualmin.com/node/51917)
 
 #### Version 18.45 (21 April, 2017)
 * Added ability to install patched version of the theme directly from GitHub, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
