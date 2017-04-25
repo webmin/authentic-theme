@@ -192,6 +192,10 @@ if (t__wi_p.$(".mobile-menu-toggler:visible").length) {
 function upperFirst(a) {
     return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase()
 }
+
+function upperFirstLowerAll(a) {
+    return upperFirst(a.toLowerCase())
+}
 Object.defineProperty(Array.prototype, "reOrder", {
     enumerable: false,
     value: function(c, a) {

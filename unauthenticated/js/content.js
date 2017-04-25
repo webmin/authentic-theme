@@ -1810,7 +1810,7 @@ if (settings_right_iconize_header_links) {
                 $iconized_class = "fa-question-circle";
                 $(this).data("title", "")
             }
-            $(this).data("toggle", "tooltip").data("title", (e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? (!is__m($g__o__f_m) ? lang("theme_xhred_global_prev_page") : "") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
+            $(this).data("toggle", "tooltip").data("title", upperFirstLowerAll(e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? (!is__m($g__o__f_m) ? lang("theme_xhred_global_prev_page") : "") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
             $(this).contents().filter(function() {
                 return this.nodeType == 3
             }).remove();
@@ -3892,7 +3892,7 @@ is__mf("sysstats", "display_all.cgi") && setTimeout(function() {
 if (is__m("changepass") || is__mf("server-manager", "edit_pass.cgi") || is__mf("virtual-server", "list_databases.cgi") || is__mf("acl", "edit_user.cgi") || is__mf("virtual-server", "clone_form.cgi") || is__mf("virtual-server", "edit_user.cgi") || is__mf("virtual-server", "edit_domain.cgi") || is__mf("virtual-server", "domain_form.cgi") || is__mf("samba", "edit_euser.cgi") || is__mf("samba", "ask_epass.cgi") || is__mfq("virtualmin-registrar", "edit.cgi", "registrar=") || is__mfq("htaccess-htpasswd", "edit_user.cgi", "new=") || is__mfq("postgresql", "edit_user.cgi", "new=") || is__mfq("mysql", "edit_user.cgi", "new=") || is__mf("useradmin", "edit_group.cgi") || is__mf("useradmin", "edit_user.cgi") || is__mfq("passwd", "edit_passwd.cgi", "user=")) {
     setTimeout(function() {
         $("#headln2r .btn-group a").addClass("pull-left").attr("style", "");
-        $("#headln2r .btn-group").prepend('		<a href="#" class="btn btn-link text-lighter text-decoration-none pull-left generate-password-key" data-placement="auto top" data-toggle="tooltip" data-container="body" data-title="' + lang("theme_xhred_password_generator_new") + '">			<i class="fa fa-1_25x fa-key-plus" style="width: 14px; margin-left: -3px;"></i>		</a>	');
+        $("#headln2r .btn-group").prepend('		<a href="#" class="btn btn-link text-lighter text-decoration-none pull-left generate-password-key" data-placement="auto top" data-toggle="tooltip" data-container="body" data-title="' + upperFirstLowerAll(lang("theme_xhred_password_generator_new")) + '">			<i class="fa fa-1_25x fa-key-plus" style="width: 14px; margin-left: -3px;"></i>		</a>	');
         $("body .generate-password-key").click(function(c) {
             var a = passwordGenerator();
             $("body").append('<button class="hidden tmp-clipboard-obj" data-clipboard-text="' + a + '"></button>');
@@ -3915,6 +3915,9 @@ if (is__mf("bind8", "edit_zonekey.cgi")) {
 }
 if (is__mf("virtual-server", "edit_script.cgi")) {
     $('select[name="version"]').addClass("heighter-34 margined-top-4")
+}
+if (is__mf("virtual-server", "transfer_form.cgi")) {
+    $('input[name="newttl"]').addClass("heighter-34")
 }
 brake_long_lines((is__mf("firewall", "") || is__mf("firewall", "index.cgi")), $(".ui_checked_columns td label b"), ",");
 $.each($(".gl-icon-container"), function(a, b) {

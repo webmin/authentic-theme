@@ -1109,7 +1109,7 @@ html[data-module='csf'][data-background-style='nightRider'] [style*='background:
 
 html[data-post='logtail'][data-background-style='nightRider'] .panel .panel-body .panel,
 html[data-post='loggrep'][data-background-style='nightRider'] .panel .panel-body .panel {
-    border: 1px solid #424449
+    border: 1px solid #424449 !important
 }
 
 html[data-module='csf'][data-post="allow"] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,

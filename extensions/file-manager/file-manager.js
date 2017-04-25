@@ -1526,6 +1526,7 @@ function ___f__tw() {
             f__dt()
         }
         $("#headln2l .help_popup").css("padding", "6px 12px");
+        $("#headln2l .btn-group > a.btn:first-child > i").attr("data-title", lang("theme_xhred_global_dir_up")).attr("data-toggle", "tooltip");
         $('ul > li > a[href^="bookmark.cgi?path="]').parents("ul").addClass("at-o__f_m-favorites-dropdown").find(".fa-bookmark-o").removeClass("fa-bookmark-o").addClass("fa-fw fa-star-o");
         $('div button[onclick="removeDialog()"]').addClass("disabled o__f_m-button-delete").removeAttr("onclick");
         $('a[onclick="chmodDialog()"]').removeAttr("onclick").parent("li").addClass("disabled o__f_m-button-chmod");
