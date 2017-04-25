@@ -786,7 +786,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
     if ($source_path == $_____link + "settings-user.cgi") {
         t__wi_p.__cms()
     }
-    $("body").on("change", 'form[action*="settings.cgi"] select, form[action*="settings.cgi"] input', function(a) {
+    $("body").on("change", 'form[action*="settings.cgi"] select, form[action*="save_config.cgi"] select, form[action*="settings.cgi"] input, form[action*="save_config.cgi"] input', function(a) {
         var b = $(this).val();
         if (b == "true" || b == "false") {
             if (b == "true") {
@@ -809,7 +809,7 @@ if ($current_page_full && ($current_page_full.indexOf("/webmin/edit_themes.cgi")
             }
         }
     });
-    $("body").on("keydown", 'form[action*="settings.cgi"] input', function(a) {
+    $("body").on("keydown", 'form[action*="settings.cgi"] input, form[action*="save_config.cgi"] input', function(a) {
         if (a.originalEvent !== undefined) {
             at__s_s__b(1)
         }
