@@ -669,7 +669,7 @@ sub theme_ui_yesno_radio
     my ( $name, $value, $yes, $no, $dis ) = @_;
     $yes = 1 if ( !defined($yes) );
     $no  = 0 if ( !defined($no) );
-    if ( $value =~ /^[0-9,.E]+$/ ) {
+    if ( $value =~ /^[0-9,.E]+$/ || !$value) {
         $value = int($value);
     }
     return ui_radio( $name, $value, [ [ $yes, $text{'yes'} ], [ $no, $text{'no'} ] ], $dis );
