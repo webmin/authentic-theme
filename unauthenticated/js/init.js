@@ -159,10 +159,12 @@ function decode_html(d) {
         ["nbsp", " "],
         ["quot", '"']
     ];
-    for (var b = 0, a = c.length; b < a; ++b) {
-        d = d.replace(new RegExp("&" + c[b][0] + ";", "g"), c[b][1])
+    if (!!d) {
+        for (var b = 0, a = c.length; b < a; ++b) {
+            d = String(d).replace(new RegExp("&" + c[b][0] + ";", "g"), c[b][1])
+        }
     }
-    return d
+    return !!d ? d : ""
 }
 $_v__ls__a ? _v__ls__a = "" : _v__ls__a = " hidden";
 

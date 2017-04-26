@@ -1,7 +1,8 @@
 ## Changelog
 
-#### Version 18.47-beta1 (25 April, 2017)
+#### Version 18.47-beta2 (26 April, 2017)
 * Added sortable table for Virtualmin/Scheduled Backups [#51970](https://www.virtualmin.com/node/51970)
+* Fixed bugs [#731](https://github.com/qooob/authentic-theme/issues/731)
 
 #### Version 18.46 (25 April, 2017)
 * Fixed bugs [#685](https://github.com/qooob/authentic-theme/issues/685) [#723](https://github.com/qooob/authentic-theme/issues/723) [#726](https://github.com/qooob/authentic-theme/issues/726) [#727](https://github.com/qooob/authentic-theme/issues/727) [#728](https://github.com/qooob/authentic-theme/issues/728) [#729](https://github.com/qooob/authentic-theme/issues/729) [#730](https://github.com/qooob/authentic-theme/issues/730) [#51917](https://www.virtualmin.com/node/51917)
