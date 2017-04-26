@@ -10,8 +10,14 @@ if ( $__settings{'settings_sysinfo_link_mini'} eq 'true'
      && dashboard_switch() ne '1' )
 {
     print '<li'
-      . get_button_tooltip( 'theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto top' )
-      . ' class="user-link">';
+      . get_button_tooltip(
+                            (  $get_user_level eq '3'
+                               ? 'body_header1'
+                               : 'body_header0'
+                            ),
+                            'settings_hotkey_sysinfo',
+                            'auto top'
+      ) . ' class="user-link">';
     print '<a class="menu-exclude-link sidebar_sysinfo_link" target="page" href="'
       . $gconfig{'webprefix'}
       . '/sysinfo.cgi"><i class="fa fa-fw fa-'
@@ -26,6 +32,7 @@ print '<li'
   . (
       (      $__settings{'settings_show_night_mode_link'} ne 'false'
           && $__settings{'settings_background_color'} ne "nightRider"
+          && check_reseller_home()
       )
       ? ''
       : ' hidden'
@@ -56,7 +63,7 @@ if ( $get_user_level eq '0'
     print '</li>';
 }
 
-if ( $__settings{'settings_theme_options_button'} ne 'false' ) {
+if ( $__settings{'settings_theme_options_button'} ne 'false' && check_reseller_home() ) {
     print '<li'
       . get_button_tooltip( 'settings_title', undef, 'auto top' )
       . ' class="user-link theme-options cursor-pointer">';

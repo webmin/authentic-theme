@@ -704,13 +704,16 @@ sub print_left_menu
                     if (    index( $link, '/virtual-server/edit_pass.cgi' ) > -1
                          && index( $link, '/virtual-server/edit_pass.cgi?' ) == -1 )
                     {
-                        $icon = '<i class="fa fa-fw fa-ticket"></i>';
+                        $icon = '<i class="fa fa-fw fa-key"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/edit_newplan.cgi' ) > -1 ) {
                         $icon = '<i class="fa fa-fw fa-list"></i>';
                     }
                     elsif ( index( $link, '/virtual-server/edit_newresels.cgi' ) > -1 ) {
                         $icon = '<i class="fa fa-fw fa-cog"></i>';
+                    }
+                    elsif ( index( $link, '/virtual-server/bwgraph.cgi' ) > -1 ) {
+                        $icon = '<i class="fa fa-fw fa-line-chart"></i>';
                     }
                 }
 
@@ -847,7 +850,7 @@ sub print_left_menu
                                               $Atext{'right_slcheck'}, 1 );
                     }
                 }
-                elsif ( !foreign_available("webmin") && $__custom_print eq '0' ) {
+                elsif ( !foreign_available("webmin") && $__custom_print eq '0' && check_reseller_home() ) {
                     print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi",
                                          $Atext{'settings_title'}, 1 );
                     $__custom_print++;
@@ -3680,6 +3683,19 @@ sub get_theme_language
 
     get_json( \%s );
 
+}
+
+sub check_reseller_home
+{
+  if ( $get_user_level eq '1' ) {
+    if (length get_user_home()) {
+      return 1;
+    } else {
+      return 0;
+    }
+  } else {
+    return 1;
+  }
 }
 
 sub get_module_config_data

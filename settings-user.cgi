@@ -8,6 +8,10 @@
 
 do "authentic-theme/authentic-lib.pm";
 
+if (!check_reseller_home()) {
+  die('Not available when reseller\'s configuration doesn\'t have `Create FTP/SSH account for reseller` enabled. Error ');
+}
+
 ui_print_header( ( $Atext{'settings_subtitle'} . ' <tt>' . $remote_user . '</tt>' ),
                  $Atext{'settings_title'},
                  undef, undef, undef, 1 );
@@ -57,7 +61,7 @@ print ui_table_row( $Atext{'settings_animation_tabs'},
                     ui_yesno_radio( 'settings_animation_tabs', $__settings{'settings_animation_tabs'},
                                     "true",                    "false"
                     ) );
-print ui_table_row( $Atext{'settings_sysinfo_link_mini'},
+print ui_table_row( ($get_user_level eq '3' ? $Atext{'settings_account_info_link_mini'} : $Atext{'settings_sysinfo_link_mini'} ),
                     ui_yesno_radio( 'settings_sysinfo_link_mini', $__settings{'settings_sysinfo_link_mini'},
                                     "true",                       "false"
                     ) );

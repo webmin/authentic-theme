@@ -189,7 +189,7 @@ settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show dashboard link as button
+settings_sysinfo_link_mini=Show system information link as button
 settings_leftmenu_singlelink_icons=Show icons for single links on navigation menu
 
 settings_right_page_defaults_title=Default pages
@@ -683,3 +683,5 @@ theme_xhred_global_return=Return
 theme_xhred_global_return_to_module_index=Return to module index
 
 
+#18.47
+settings_account_info_link_mini=Show account information link as button
