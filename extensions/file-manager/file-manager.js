@@ -784,7 +784,7 @@ function __f__c__m() {
                 $('button[onclick="invertSelection()"]').trigger("click")
             }
             if (k.data("context-refresh") == "1") {
-                $("button > .fa-refresh").parent("button").trigger("click")
+                $("button > ." + $__f__rf_s + "").parent("button").trigger("click")
             }
             if (k.data("context-newfile") == "1") {
                 $('a[onclick="createFileDialog()"]').trigger("click")
@@ -1391,6 +1391,7 @@ function __f___tl_v() {
 
 function ___f__tw() {
     if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
+        $__f__rf_s = "fa-refresh";
         if ($__source_file == "config.cgi") {
             $('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"], textarea[name="bookmarks"]').parents("td.col_value").parent("tr").addClass("hidden");
             $("#columns_size").parent(".awobject").remove();
@@ -2056,7 +2057,7 @@ function ___f__tw() {
         $("body").on("click", ".btn-group.pull-right > button:eq(2)", function(d) {
             var e = $("#path").val();
             __f____r("get", "index.cgi?path=" + (e ? encodeURIComponentSafe(e) : ""), false, 0);
-            messenger('<i class="fa fa-lg fa-fw fa-refresh"></i>' + lang("theme_xhred_filemanager_refreshing") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "refreshDir_info")
+            t__wi_p.$____loader_block__ === 0 && messenger('<i class="fa fa-lg fa-fw ' + $__f__rf_s + '"></i>' + lang("theme_xhred_filemanager_refreshing") + " " + lang("theme_xhred_global_please_wait"), 100000, "info", "refreshDir_info")
         });
         setTimeout(function() {
             if (config_portable_module_filemanager_hovered_toolbar != true) {
@@ -2972,6 +2973,7 @@ function ___f__tw() {
 ___f__tw();
 t__cm___init(0, 0, 0, 0, 0, 0, 1);
 setTimeout(function() {
+    $("." + $__f__rf_s + "").trigger("click");
     t__wi_p.$____loader_block__ = 0;
     __lre()
 }, 1200);
