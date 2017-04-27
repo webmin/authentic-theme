@@ -1392,6 +1392,22 @@ if (is__m("mysql") || is__m("postgresql")) {
         f.replaceWith('<i class="fa fa-fw fa-lg fa-arrow-circle-o-right text-semi-light vertical-align-baseline"></i>')
     })
 }
+if (is__m("mailboxes") || is__m("mailbox")) {
+    var $mail_ar_selector = 'form.ui_form[action="index.cgi"]',
+        $mail_icon_class = "fa fa-fw fa-lg text-semi-light vertical-align-baseline fa-angle-";
+    $("" + $mail_ar_selector + ' img[src*="images/left"], center img[src*="images/left"]').each(function() {
+        $(this).replaceWith('<i class="' + $mail_icon_class + 'left"></i>')
+    });
+    $("" + $mail_ar_selector + ' img[src*="images/right"], center img[src*="images/right"]').each(function() {
+        $(this).replaceWith('<i class="' + $mail_icon_class + 'right"></i>')
+    });
+    $("" + $mail_ar_selector + ' img[src*="images/first"]').each(function() {
+        $(this).replaceWith('<i class="' + $mail_icon_class + 'double-left"></i>')
+    });
+    $("" + $mail_ar_selector + ' img[src*="images/last"]').each(function() {
+        $(this).replaceWith('<i class="' + $mail_icon_class + 'double-right"></i>')
+    })
+}
 if (is__mf("virtual-server", "list_scripts.cgi")) {
     $('td > a > img[src*="images/staroff.gif"]').each(function(d, e) {
         var f = $(this);
