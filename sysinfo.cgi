@@ -127,7 +127,7 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
         }
 
         #System time
-        &print_table_row( &Atext('body_time'), $local_time,, 'sysinfo_local_time' );
+        &print_table_row( &Atext('body_time'), $local_time, 'sysinfo_local_time' );
 
         # Kernel and arch
         if ($kernel_arch) {
@@ -214,9 +214,28 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     print '<table class="table table-hover">' . "\n";
 
+    if ( $get_user_level eq '1' ) {
+
+        # Host and login info
+        &print_table_row( &Atext('body_host'), &get_system_hostname() );
+
+        # Operating System Info
+        if ( $gconfig{'os_version'} eq '*' ) {
+            $os = $gconfig{'real_os_type'};
+        }
+        else {
+            $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
+        }
+        &print_table_row( &Atext('body_os'), $os );
+
+    }
+
     &print_table_row( $Atext{'right_login'}, $remote_user );
 
     &print_table_row( $Atext{'right_from'}, get_env('remote_host') );
+
+    # Webmin version
+    &print_table_row( &Atext('body_webmin'), get_webmin_version(), 'sysinfo_webmin_version' );
 
     # Print Virtualmin version
     if ($has_virtualmin) {
@@ -295,72 +314,72 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
                 &print_table_row( $Atext{'right_aliases'}, Atext( 'right_of', scalar(@aliases), $atotal ) );
             }
         }
-    }
 
-    # Users and aliases info
-    $users = virtual_server::count_domain_feature( "mailboxes", @subs );
-    ( $uleft, $ureason, $utotal, $uhide ) = virtual_server::count_feature("mailboxes");
-    $msg = @mails ? $Atext{'right_fusers'} : $Atext{'right_fusers2'};
-    if ( $uleft < 0 || $uhide ) {
-        &print_table_row( $msg, $users );
-    }
-    else {
-        &print_table_row( $msg, Atext( 'right_of', $users, $utotal ) );
-    }
-
-    if (@mails) {
-        $aliases = virtual_server::count_domain_feature( "aliases", @subs );
-        ( $aleft, $areason, $atotal, $ahide ) = virtual_server::count_feature("aliases");
-        if ( $aleft < 0 || $ahide ) {
-            &print_table_row( $Atext{'right_faliases'}, $aliases );
+        # Users and aliases info
+        $users = virtual_server::count_domain_feature( "mailboxes", @subs );
+        ( $uleft, $ureason, $utotal, $uhide ) = virtual_server::count_feature("mailboxes");
+        $msg = @mails ? $Atext{'right_fusers'} : $Atext{'right_fusers2'};
+        if ( $uleft < 0 || $uhide ) {
+            &print_table_row( $msg, $users );
         }
         else {
-            &print_table_row( $Atext{'right_faliases'}, Atext( 'right_of', $aliases, $atotal ) );
+            &print_table_row( $msg, Atext( 'right_of', $users, $utotal ) );
         }
-    }
 
-    # Databases
-    $dbs = virtual_server::count_domain_feature( "dbs", @subs );
-    ( $dleft, $dreason, $dtotal, $dhide ) = virtual_server::count_feature("dbs");
-    if ( $dleft < 0 || $dhide ) {
-        &print_table_row( $Atext{'right_fdbs'}, $dbs );
-    }
-    else {
-        &print_table_row( $Atext{'right_fdbs'}, Atext( 'right_of', $dbs, $dtotal ) );
-    }
+        if (@mails) {
+            $aliases = virtual_server::count_domain_feature( "aliases", @subs );
+            ( $aleft, $areason, $atotal, $ahide ) = virtual_server::count_feature("aliases");
+            if ( $aleft < 0 || $ahide ) {
+                &print_table_row( $Atext{'right_faliases'}, $aliases );
+            }
+            else {
+                &print_table_row( $Atext{'right_faliases'}, Atext( 'right_of', $aliases, $atotal ) );
+            }
+        }
 
-    if ( !$sects->{'noquotas'}
-         && virtual_server::has_home_quotas() )
-    {
-        # Disk usage for all owned domains
-        $homesize = virtual_server::quota_bsize("home");
-        $mailsize = virtual_server::quota_bsize("mail");
-        ( $home, $mail, $db ) = virtual_server::get_domain_quota( $d, 1 );
-        $usage = $home * $homesize + $mail * $mailsize + $db;
-        $limit = $d->{'quota'} * $homesize;
-        if ($limit) {
-            &print_table_row( $Atext{'right_quota'},
-                              Atext( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
+        # Databases
+        $dbs = virtual_server::count_domain_feature( "dbs", @subs );
+        ( $dleft, $dreason, $dtotal, $dhide ) = virtual_server::count_feature("dbs");
+        if ( $dleft < 0 || $dhide ) {
+            &print_table_row( $Atext{'right_fdbs'}, $dbs );
         }
         else {
-            &print_table_row( $Atext{'right_quota'}, nice_size($usage), 3 );
+            &print_table_row( $Atext{'right_fdbs'}, Atext( 'right_of', $dbs, $dtotal ) );
         }
-    }
 
-    if (   !$sects->{'nobw'}
-         && $virtual_server::config{'bw_active'}
-         && $d->{'bw_limit'} )
-    {
-        # Bandwidth usage and limit
-        &print_table_row( $Atext{'right_bw'},
-                          &Atext( 'right_of',
-                                  &nice_size( $d->{'bw_usage'} ),
-                                  &Atext( 'edit_bwpast_' . $virtual_server::config{'bw_past'},
-                                          &nice_size( $d->{'bw_limit'} ),
-                                          $virtual_server::config{'bw_period'}
-                                  )
-                          ),
-                          3 );
+        if ( !$sects->{'noquotas'}
+             && virtual_server::has_home_quotas() )
+        {
+            # Disk usage for all owned domains
+            $homesize = virtual_server::quota_bsize("home");
+            $mailsize = virtual_server::quota_bsize("mail");
+            ( $home, $mail, $db ) = virtual_server::get_domain_quota( $d, 1 );
+            $usage = $home * $homesize + $mail * $mailsize + $db;
+            $limit = $d->{'quota'} * $homesize;
+            if ($limit) {
+                &print_table_row( $Atext{'right_quota'},
+                                  Atext( 'right_of', nice_size($usage), &nice_size($limit) ), 3 );
+            }
+            else {
+                &print_table_row( $Atext{'right_quota'}, nice_size($usage), 3 );
+            }
+        }
+
+        if (   !$sects->{'nobw'}
+             && $virtual_server::config{'bw_active'}
+             && $d->{'bw_limit'} )
+        {
+            # Bandwidth usage and limit
+            &print_table_row( $Atext{'right_bw'},
+                              &Atext( 'right_of',
+                                      &nice_size( $d->{'bw_usage'} ),
+                                      &Atext( 'edit_bwpast_' . $virtual_server::config{'bw_past'},
+                                              &nice_size( $d->{'bw_limit'} ),
+                                              $virtual_server::config{'bw_period'}
+                                      )
+                              ),
+                              3 );
+        }
     }
 
     print '</table>' . "\n";

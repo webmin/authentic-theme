@@ -1200,7 +1200,7 @@ function __f___upd___cr(d, c) {
     var b = $("body"),
         a = "";
     b.find(".breadcrumb").empty();
-    if (access_level() == 0) {
+    if (access_level() == 0 || access_level() == 1) {
         b.find(".breadcrumb").append('<li class="fm___root__"><a href="index.cgi?path="><i class="fa fa-hdd-o"></i></a></li>')
     } else {
         b.find(".breadcrumb").append('<li class="fm___root__"><a href="index.cgi?path="><i class="fa fa-user text-light"></i></a></li>')
@@ -1576,7 +1576,7 @@ function ___f__tw() {
                 error: function(f) {}
             })
         });
-        if (access_level() !== 0) {
+        if (access_level() !== 0 && access_level() !== 1) {
             $("body").find(".breadcrumb li:first-child a").html('<i class="fa fa-fw fa-user text-light">&nbsp;</i>')
         }
         $("body").find(".breadcrumb li:first-child").addClass("fm___root__");

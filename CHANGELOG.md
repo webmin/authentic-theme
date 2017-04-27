@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 18.47-beta5 (26 April, 2017)
+#### Version 18.47-beta6 (26 April, 2017)
 * Added sortable table for Virtualmin/Scheduled Backups [#51970](https://www.virtualmin.com/node/51970)
 * Fixed bugs [#731](https://github.com/qooob/authentic-theme/issues/731)
 
