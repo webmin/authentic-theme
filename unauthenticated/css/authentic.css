@@ -3614,6 +3614,14 @@ a.opener_extra_container_a_style.opener_container_opened:before {
     margin-top: 5px !important
 }
 
+.margined-top-6 {
+    margin-top: 6px !important
+}
+
+.margined-top-7 {
+    margin-top: 7px !important
+}
+
 .margined-top-10 {
     margin-top: 10px !important
 }

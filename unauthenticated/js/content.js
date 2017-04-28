@@ -1242,7 +1242,7 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
 }).on("show.bs.modal", "#update_notice", function() {
     var a = $('a[data-href="#theme-info"]'),
         b = t__wi_p.$("aside").css("left");
-    ___________content_initial_ = t__wi_p.$("#content").css("margin-left");
+    ___________content_initial_ = t__wi_p.$("#content").css("margin-left"), ________version_date_obj = $(this).find(".modal-body > h4:first-child"), ________version_curr_text = ________version_date_obj.text().split(/\s+/)[1];
     if (!a.hasClass("manual")) {
         setTimeout(function() {
             $(".container-fluid").addClass("bg-filter-blur-grayscale-opacity50")
@@ -1257,8 +1257,10 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
     t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50");
     if ($(this).find(".modal-body h4").length && $(this).find('.modal-body h4:contains("beta")').length) {
         var c = $(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text();
-        $(this).find(".modal-body h4:first").append('<a data-toggle="tooltip" data-title="' + lang("theme_xhred_git_compare_changes") + '" class="btn btn-transparent diffctl text-semi-dark text-force-link-hover margined-top--7 margined-right--10 pull-right" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-fw fa-git-pull fa-flip-horizontal">&nbsp;</i></a>')
-    }
+        if (!$(this).find(".modal-body h4:first .diffctl").length) {
+            $(this).find(".modal-body h4:first").append('<a data-toggle="tooltip" data-title="' + lang("theme_xhred_git_compare_changes") + '" class="btn btn-transparent diffctl text-semi-dark text-force-link-hover margined-top--7 margined-right--10 pull-right" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-fw fa-git-pull fa-flip-horizontal">&nbsp;</i></a>')
+        }
+    } else {}
     $.each($(this).find('li span:contains("Fixed bugs")'), function() {
         var f = $(this),
             d = $(this).parent("li"),
