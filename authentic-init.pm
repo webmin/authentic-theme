@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.46 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.47 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -1092,8 +1092,8 @@ sub theme_git_version
 sub theme_version
 {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '18.45';
-    my $sh__ln__c___version = '18.46';
+    my $sh__ln__p___version = '18.46';
+    my $sh__ln__c___version = '18.47';
     my $sh__ln__g___version = theme_git_version('uncond');
     ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
     (     ( !$switch && $sh__ln__g___version )

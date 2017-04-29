@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.46 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.47 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -2562,7 +2562,7 @@ function ___f__tw() {
                     d.preventDefault();
                     t__wi_p.$___ajax_requested_url = "edit_file.cgi";
                     var A = "jsp_" + parseInt(Math.random() * 1000000000000000000),
-                        D = encodeURIComponentSafe(decode_html($("#list_form table tbody tr.m-active").find("i.fa-pencil-square-o").parent("a").parent("label").parent("td").prev("td").find("a").attr("data-filemin-link"))),
+                        D = encodeURIComponentSafe(decode_html($("#list_form table tbody tr.m-active").find("a[data-filemin-link]").attr("data-filemin-link"))),
                         z = ("edit_file.cgi?file=" + D + "&path=" + $("#path").val());
                     window[A] = $.jsPanel({
                         ajax: {
@@ -2571,7 +2571,7 @@ function ___f__tw() {
                             autoload: false,
                             done: function(H, o, G, q) {
                                 var t = $(H).find(".ui_form"),
-                                    I = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe($("#path").val())) + ")") + "</strong>"),
+                                    I = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
                                     p = $(this).parents("div.jsPanel"),
                                     n = (parseInt(q.attr("id").replace("jsPanel-", "")) + 1);
                                 if (!$(t).find("textarea").length) {
@@ -2579,7 +2579,7 @@ function ___f__tw() {
                                 }
                                 q.title(I);
                                 p.data("jspuid", A);
-                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", I);
+                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", I.replace(/<\/?[^>]+(>|$)/g, ""));
                                 p.find(".jsPanel-content").html(t);
                                 $("#jsPanel-min-container").css({
                                     width: $(window).width(),

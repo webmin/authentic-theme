@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 18.46-patch11 (April 29, 2017)
+#### Version 18.47 (April 29, 2017)
 * Added desktop notifications [#734](https://github.com/qooob/authentic-theme/issues/734)
 * Added improved display and data-grouping for theme's update notice
 * Fixed bugs [#731](https://github.com/qooob/authentic-theme/issues/731) [#51967](https://www.virtualmin.com/node/51967)

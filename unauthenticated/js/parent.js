@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.46 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.47 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -137,7 +137,7 @@ function __si__bg_upd_exec() {
                             }));
                             localStorage.setItem($hostname + "-sysinfo_" + o, s);
                             localStorage.setItem($hostname + "-sysinfo_package_message_initial", 0);
-                            f__g_notifications(w, q)
+                            f__g_notifications(w, q, o)
                         } else {
                             if (o === "package_message") {
                                 localStorage.setItem($hostname + "-sysinfo_" + o, s)
@@ -162,7 +162,7 @@ function __si__bg_upd_exec() {
                                     }));
                                     localStorage.setItem($hostname + "-sysinfo_" + o, s);
                                     localStorage.setItem($hostname + "-sysinfo_theme_current_version", s);
-                                    f__g_notifications(n, f)
+                                    f__g_notifications(n, f, o)
                                 }
                             }
                         }
@@ -182,7 +182,7 @@ function __si__bg_upd_exec() {
                                     }));
                                     localStorage.setItem($hostname + "-sysinfo_" + o, s);
                                     localStorage.setItem($hostname + "-sysinfo_csf_current_version", s);
-                                    f__g_notifications(u, m)
+                                    f__g_notifications(u, m, o)
                                 }
                             }
                         }
@@ -199,7 +199,7 @@ function __si__bg_upd_exec() {
                                 link: $_____link_full + "/csf"
                             }));
                             localStorage.setItem($hostname + "-sysinfo_csf_not_running", 1);
-                            f__g_notifications(p, v)
+                            f__g_notifications(p, v, "csf_remote_version")
                         } else {
                             if (o == "csf_title" && s && s.indexOf("label-danger") === -1) {
                                 localStorage.removeItem($hostname + "-sysinfo_csf_not_running")
@@ -232,7 +232,7 @@ function __si__bg_upd_exec() {
                                     link: $_____link_full + "/csf"
                                 }));
                                 localStorage.setItem($hostname + "-allowed_trigger_" + (G + y.replace(/\./g, "0")) + "_csf_deny", 1);
-                                f__g_notifications(H, A)
+                                f__g_notifications(H, A, o)
                             }
                         })
                     }
