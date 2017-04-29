@@ -269,6 +269,19 @@ html[data-background-style='nightRider'] .CodeMirror-dialog-top {
     border-bottom-color: #404040
 }
 
+html[data-background-style='nightRider'] .modal-dialog-update .modal-body>h4:first-child {
+    border-bottom-color: rgba(76, 79, 84, .40)
+}
+
+html[data-background-style='nightRider'] .modal-dialog-update .modal-body .version_separator+hr,
+html[data-background-style='nightRider'] .modal-dialog-update .modal-body a+hr {
+    border-style: dashed !important
+}
+
+html[data-background-style='nightRider'] .hr-dashed {
+    border-style: dashed !important
+}
+
 html[data-background-style='nightRider'] .CodeMirror-focused .CodeMirror-selected {
     background-color: #bfb19e !important
 }

@@ -3534,7 +3534,7 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
                   ' . $changelog_data . '
                 </ul>
                 <hr>
-                <h4 style="margin-top:20px;">'
+                <h4 data-development style="margin-top:20px;">'
       . $Atext{'theme_development_support'}
       . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c"></i></h4>
                   Please be kind reporting bugs to

@@ -1099,7 +1099,7 @@ sub theme_version
     (     ( !$switch && $sh__ln__g___version )
        && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ) ) );
 
-    if (theme_mode() eq 'debug') {
+    if (theme_mode() eq 'debug' && !$switch && $sh__ln__g___version) {
       $sh__ln__c___version .= time();
     }
     return $sh__ln__c___version;
