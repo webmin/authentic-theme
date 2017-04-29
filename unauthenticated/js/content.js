@@ -1240,10 +1240,18 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
         })
     }
 }).on("show.bs.modal", "#update_notice", function() {
-    var a = $('a[data-href="#theme-info"]'),
-        b = t__wi_p.$("aside").css("left");
-    ___________content_initial_ = t__wi_p.$("#content").css("margin-left"), ________version_date_obj = $(this).find(".modal-body > h4:first-child"), ________version_curr_text = ________version_date_obj.text().split(/\s+/)[1];
-    if (!a.hasClass("manual")) {
+    var e = $('a[data-href="#theme-info"]'),
+        d = t__wi_p.$("aside").css("left");
+    ___________content_initial_ = t__wi_p.$("#content").css("margin-left"), ________version_date_obj = $(this).find(".modal-body > h4:first-child"), ________version_curr_text = ________version_date_obj.text().split(/\s+/)[1], ________version_first_text = $(".version_separator:last").text(), ________multi_in_branch = $(".version_separator").length, _____version__x = (________version_first_text + "..." + ________version_curr_text), __release_time = $g__t__gver.slice(-4, -2) + ":" + $g__t__gver.slice(-2), _____release_date_ = ________version_date_obj.text().match(/\(([^)]+)\)/), _____release_date = _____release_date_ ? _____release_date_[1] : false, __release_date_time = (_____release_date + (__release_time.length > 2 ? (", " + __release_time) : ""));
+    var b = lang("theme_xhred_global_release").toLowerCase(),
+        i = $(".version_separator"),
+        a = lang("theme_xhred_global_beta_version");
+    $.each(i, function() {
+        if ($(this).text().indexOf(b) === -1 && $(this).text().indexOf(a) === -1) {
+            $(this).append('<span class="smaller">-' + b + " </span>")
+        }
+    });
+    if (!e.hasClass("manual")) {
         setTimeout(function() {
             $(".container-fluid").addClass("bg-filter-blur-grayscale-opacity50")
         }, 0)
@@ -1252,27 +1260,74 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
         "margin-left": 0
     }, 560);
     t__wi_p.$("aside").animate({
-        "margin-left": b
+        "margin-left": d
     }, 560);
     t__wi_p.$(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50");
-    if ($(this).find(".modal-body h4").length && $(this).find('.modal-body h4:contains("beta")').length) {
-        var c = $(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text();
-        if (!$(this).find(".modal-body h4:first .diffctl").length) {
-            $(this).find(".modal-body h4:first").append('<a data-toggle="tooltip" data-title="' + lang("theme_xhred_git_compare_changes") + '" class="btn btn-transparent diffctl text-semi-dark text-force-link-hover margined-top--7 margined-right--10 pull-right" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-fw fa-git-pull fa-flip-horizontal">&nbsp;</i></a>')
+    var f = $(this).find(".modal-body h4");
+    $modal_h4_first = $(this).find(".modal-body h4:first");
+    if (!$(this).find(".modal-body h4:first .diffctl").length) {
+        var h = new RegExp(RegExp.quote(________version_curr_text), "g");
+        if (________multi_in_branch) {
+            f.replaceText(h, "<span>" + _____version__x + "</span>");
+            f.replaceText(/Version/, "Versions")
         }
-    } else {}
+        if (f.length && $(this).find('.modal-body h4:contains("patch")').length) {
+            var c = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
+            $modal_h4_first.append('<a data-toggle="tooltip" data-title="<strong>' + lang("theme_xhred_git_compare_changes") + "</strong><br>" + (lang("theme_xhred_global_commited_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>');
+            $modal_h4_first.after('<span class="version_separator" style="margin-top: -32px;margin-right: -3px;">            <span class="smaller text-danger"><span>' + a + "</span></span></span>")
+        } else {
+            if (________multi_in_branch) {
+                $modal_h4_first.after('                <a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator" style="margin-top: -28px;">' + ________version_curr_text + '<span class="smaller">-' + lang("theme_xhred_global_release").toLowerCase() + " </span></a>")
+            }
+            $modal_h4_first.append('<a data-toggle="tooltip" data-html="true" data-title="<strong>' + lang("theme_xhred_global_complete_changelog") + "</strong><br>" + (lang("theme_xhred_global_released_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>')
+        }
+    }
+    var h = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
+    f.replaceText(h, "");
+    var g = [];
     $.each($(this).find('li span:contains("Fixed bugs")'), function() {
-        var f = $(this),
-            d = $(this).parent("li"),
-            e = d.find("a").length,
-            g = d.find("a:not(.bctl)");
-        f.html([f.text().slice(0, 6), "" + e + " ", f.text().slice(6)].join(""));
-        d.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
-        d.find("a.bctl").click(function(h) {
-            g.toggleClass("hidden");
-            d.find("a.bctl i").toggleClass("fa-minus-square-o")
-        });
-        g.addClass("obj-popup hidden")
+        var m = $(this),
+            j = $(this).parent("li"),
+            k = j.parent("ul"),
+            n = j.find("a:not(.bctl)"),
+            l = n.length;
+        if (________multi_in_branch) {
+            g.push(n);
+            if (k.find("li").length === 1) {
+                k.prev("hr").prev("a").remove();
+                k.prev("hr").remove()
+            }
+            j.remove()
+        } else {
+            m.html([m.text().slice(0, 6), "" + l + " ", m.text().slice(6)].join(""));
+            j.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
+            j.find("a.bctl").click(function(o) {
+                n.toggleClass("hidden");
+                j.find("a.bctl i").toggleClass("fa-minus-square-o")
+            });
+            n.addClass("obj-popup hidden")
+        }
+    }).promise().done(function() {
+        if (________multi_in_branch && !$(".bctl").length) {
+            $(".modal-body h4[data-development]").prev("hr").before('      <hr class="hr-dashed margined-top-15">      <div data-bugs><ul><li><span data-fixed-bugs data-fixed-bugs-obj>Fixed bugs</span><span data-bugs-container></span></li></ul></div>');
+            $(".modal-body span[data-bugs-container]").append(g);
+
+            function j(p, o) {
+                return (parseInt($(o).text().replace("#", ""))) < parseInt(($(p).text().replace("#", ""))) ? 1 : -1
+            }
+            $(".modal-body span[data-bugs-container] a").sort(j).appendTo(".modal-body span[data-bugs-container]");
+            var l = $("span[data-fixed-bugs]"),
+                n = $("span[data-bugs-container]"),
+                m = $(".modal-body span[data-bugs-container]").find("a:not(.bctl)"),
+                k = m.length;
+            l.html([l.text().slice(0, 6), "" + k + " ", l.text().slice(6)].join(""));
+            l.append('<a class="btn btn-xxs btn-transparent bctl margined-left-4 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>');
+            l.find("a.bctl").click(function(o) {
+                m.toggleClass("hidden");
+                l.find("a.bctl i").toggleClass("fa-minus-square-o")
+            });
+            m.addClass("obj-popup hidden")
+        }
     })
 });
 var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authentic_remote_version"),

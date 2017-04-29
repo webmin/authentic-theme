@@ -1,14 +1,15 @@
 ## Changelog
 
-#### Version 18.47beta7 (28 April, 2017)
+#### Version 18.46-patch11 (April 29, 2017)
 * Added desktop notifications [#734](https://github.com/qooob/authentic-theme/issues/734)
-* Added sortable table for Virtualmin/Scheduled Backups [#51970](https://www.virtualmin.com/node/51970)
+* Added improved display and data-grouping for theme's update notice
 * Fixed bugs [#731](https://github.com/qooob/authentic-theme/issues/731) [#51967](https://www.virtualmin.com/node/51967)
 
-#### Version 18.46 (25 April, 2017)
+#### Version 18.46 (April 25, 2017)
+* Added sortable table for Virtualmin/Scheduled Backups [#51970](https://www.virtualmin.com/node/51970)
 * Fixed bugs [#685](https://github.com/qooob/authentic-theme/issues/685) [#723](https://github.com/qooob/authentic-theme/issues/723) [#726](https://github.com/qooob/authentic-theme/issues/726) [#727](https://github.com/qooob/authentic-theme/issues/727) [#728](https://github.com/qooob/authentic-theme/issues/728) [#729](https://github.com/qooob/authentic-theme/issues/729) [#730](https://github.com/qooob/authentic-theme/issues/730) [#51917](https://www.virtualmin.com/node/51917)
 
-#### Version 18.45 (21 April, 2017)
+#### Version 18.45 (April 21, 2017)
 * Added ability to install patched version of the theme directly from GitHub, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
 * Added PGP signature to verify authenticity of the package [860e1aa](https://github.com/qooob/authentic-theme/commit/860e1aa6cea9591efd7471c85cda540edecce6d9)
 * Added console script for updating the theme [#703](https://github.com/qooob/authentic-theme/issues/703)
@@ -18,7 +19,7 @@
 * Added buttons instead of having plain links [#719](https://github.com/qooob/authentic-theme/issues/719)
 * Fixed bugs [#687](https://github.com/qooob/authentic-theme/issues/687) [#688](https://github.com/qooob/authentic-theme/issues/688) [#692](https://github.com/qooob/authentic-theme/issues/692) [#693](https://github.com/qooob/authentic-theme/issues/693) [#695](https://github.com/qooob/authentic-theme/issues/695) [#696](https://github.com/qooob/authentic-theme/issues/696) [#697](https://github.com/qooob/authentic-theme/issues/697) [#698](https://github.com/qooob/authentic-theme/issues/698) [#699](https://github.com/qooob/authentic-theme/issues/699) [#700](https://github.com/qooob/authentic-theme/issues/700) [#701](https://github.com/qooob/authentic-theme/issues/701) [#702](https://github.com/qooob/authentic-theme/issues/702) [#704](https://github.com/qooob/authentic-theme/issues/704) [#706](https://github.com/qooob/authentic-theme/issues/706) [#710](https://github.com/qooob/authentic-theme/issues/710) [#711](https://github.com/qooob/authentic-theme/issues/711) [#713](https://github.com/qooob/authentic-theme/issues/713) [#714](https://github.com/qooob/authentic-theme/issues/714) [#716](https://github.com/qooob/authentic-theme/issues/716) [#718](https://github.com/qooob/authentic-theme/issues/718) [#720](https://github.com/qooob/authentic-theme/issues/720) [#721](https://github.com/qooob/authentic-theme/issues/721) [#51526](https://www.virtualmin.com/node/51526) [#51807](https://www.virtualmin.com/node/51807)
 
-### Version 18.40 (21 March, 2017)
+### Version 18.40 (March 21, 2017)
 * Added ability to use theme configuration for all users [#640](https://github.com/qooob/authentic-theme/issues/640#issuecomment-287572703)
 * Added complete support for dark palette in the content page (right frame) [#664](https://github.com/qooob/authentic-theme/issues/664)
 * Added ability to toggle dark/light palette in a flash
