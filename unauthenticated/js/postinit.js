@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.46 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.47 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -2286,22 +2286,24 @@ function f__cm_viewer() {
     }
 }
 
-function f__g_notifications(a, c) {
+function f__g_notifications(b, d, a) {
     if (!settings_side_slider_enabled || !settings_side_slider_notifications_enabled) {
         return
     }
-    var a = (decode_html($.trim(a.replace(/(<([^>]+)>)/ig, ""))).replace(/\s+/g, " ")),
-        c = (decode_html($.trim(c.replace(/(<([^>]+)>)/ig, ""))).replace(/\s+/g, " "));
+    var b = (decode_html($.trim(b.replace(/(<([^>]+)>)/ig, ""))).replace(/\s+/g, " ")),
+        d = (decode_html($.trim(d.replace(/(<([^>]+)>)/ig, ""))).replace(/\s+/g, " "));
     if (Notification.permission === "granted") {
-        var b = new Notification(a, {
-            body: c
+        var c = new Notification(b, {
+            body: d,
+            icon: $_____link_full + "/images/notifications_" + a + ".png"
         })
     } else {
         if (Notification.permission !== "denied") {
-            Notification.requestPermission(function(d) {
-                if (d === "granted") {
-                    var e = new Notification(a, {
-                        body: c
+            Notification.requestPermission(function(e) {
+                if (e === "granted") {
+                    var f = new Notification(b, {
+                        body: d,
+                        icon: $_____link_full + "/images/notifications_" + a + ".png"
                     })
                 }
             })

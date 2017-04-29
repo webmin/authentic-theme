@@ -70,7 +70,6 @@ else
         rm -rf "$DIR/.~authentic-theme"
         echo -e "\e[49;0;31;82mUpdating Authentic Theme, failed.\e[0m"
       fi
-
     else
       echo -e "\e[49;0;33;82mError: Command \`git\` is not installed or not in the \`PATH\`.\e[0m";
     fi
