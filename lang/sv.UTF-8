@@ -214,7 +214,7 @@ settings_window_replaced_timestamps_options_description=Justera full/kort datum 
 
 settings_side_slider_enabled=Aktivera sidomeny
 settings_leftmenu_user_html=Visa HTML-utdrag
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+settings_leftmenu_user_html_description=Användardefinierad text eller HTML-kod kommer att visas underst i navigationsmenyn. Den kan användas för identifieringsändamål. Till exempel, för att visa ditt värdnamn, du skulle kunna lägga till följande kod <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
 theme_changelog=Ändringslogg
@@ -675,20 +675,20 @@ theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn <strong><em>%value
 
 
 #18.46
-theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
-theme_left_mail_account_functions=Account Functions
-theme_xhred_global_dir_up=Go to previous directory (Backspace)
-theme_xhred_global_module_config=Module config
-theme_xhred_global_return=Return
-theme_xhred_global_return_to_module_index=Return to module index
+theme_left_mail_prefs=E-postinställningar
+theme_left_mail_change_password=Ändra lösenord
+theme_left_mail_account_functions=Kontofunktioner
+theme_xhred_global_dir_up=Gå till föregående katalog (backstegstangent)
+theme_xhred_global_module_config=Modulkonfiguration
+theme_xhred_global_return=Återgå
+theme_xhred_global_return_to_module_index=Återgå till modulindex
 
 
 #18.47
-settings_account_info_link_mini=Show account information link as button
-theme_xhred_global_complete_changelog=Complete changelog
-theme_xhred_global_beta_version=Beta version
-theme_xhred_global_release=Release
-theme_xhred_global_released_on=Released on
-theme_xhred_global_commited_on=Commited on
-theme_xhred_global_resolved_issues=Resolved issues in %value releases
+settings_account_info_link_mini=Visa länk för kontoinformation som knapp
+theme_xhred_global_complete_changelog=Fullständig ändringslogg
+theme_xhred_global_beta_version=Betaversion
+theme_xhred_global_release=Utgåvor
+theme_xhred_global_released_on=Släppt på
+theme_xhred_global_commited_on=Upplagd på
+theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
