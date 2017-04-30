@@ -1280,7 +1280,7 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
         if (f.length && $(this).find('.modal-body h4:contains("patch")').length) {
             var c = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
             $modal_h4_first.append('<a data-toggle="tooltip" data-title="<strong>' + lang("theme_xhred_git_compare_changes") + "</strong><br>" + (lang("theme_xhred_global_committed_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>');
-            $modal_h4_first.after('<span class="version_separator" style="margin-top: -32px;margin-right: -3px;">            <span class="smaller text-danger"><span>' + a + "</span></span></span>")
+            $modal_h4_first.after('<span class="version_separator" style="margin-top: -32px;margin-right: 0;">            <span class="smaller text-danger"><span>' + a + "</span></span></span>")
         } else {
             if (________multi_in_branch) {
                 $modal_h4_first.after('                <a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator" style="margin-top: -28px;">' + ________version_curr_text + '<span class="smaller">-' + lang("theme_xhred_global_release").toLowerCase() + " </span></a>")
@@ -1301,7 +1301,8 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
             g.push(n);
             if (k.find("li").length === 1) {
                 k.prev("hr").prev("a").remove();
-                k.prev("hr").remove()
+                k.prev("hr").remove();
+                k.addClass("no-data")
             }
             j.remove()
         } else {
