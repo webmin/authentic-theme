@@ -10221,6 +10221,14 @@ screen and (max-height:600px) {
     margin-left: -7px
 }
 
+.modal-dialog-update .modal-body>h4:first-child+.version_separator+.no-data+.version_separator {
+    margin-top: -9px
+}
+
+.modal-dialog-update .modal-body>h4:first-child+.version_separator+.no-data+.version_separator+hr {
+    display: none
+}
+
 .hr-dashed {
     border-style: dashed
 }
