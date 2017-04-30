@@ -321,32 +321,38 @@ function l__ck_fi() {
     }
 }
 
-function f__mgk_sp(m, k, j) {
-    var e = (((m.attr("onclick") && m.attr("onclick").indexOf("blank") !== -1) || (m.parents("form").attr("target") && m.parents("form").attr("target").indexOf("blank") !== -1)) ? true : false),
-        b = m.hasClass("heighter-28"),
-        c = m.css("height") == "28px",
-        g = m.hasClass("btn-lg"),
+function f__mgk_sp(n, k, j, l) {
+    var e = (((n.attr("onclick") && n.attr("onclick").indexOf("blank") !== -1) || (n.parents("form").attr("target") && n.parents("form").attr("target").indexOf("blank") !== -1)) ? true : false),
+        b = n.hasClass("heighter-28"),
+        c = n.css("height") == "28px",
+        g = n.hasClass("btn-lg"),
         f = is__m("server-manager") ? 2 : 0,
-        l = m.find(".fa").hasClass("fa-1_25x"),
-        d = m.find(".fa"),
+        m = n.find(".fa").hasClass("fa-1_25x"),
+        d = n.find(".fa"),
         h = ((typeof k == "undefined" || k == false) ? false : k),
-        i = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : (((b || c) && (!l && !g)) ? (-0.5 + f) + "px" : l ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (((b || c) && (!l && !g)) ? "-23.5px" : g ? "-28px" : (!b && !c && l) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>',
-        a = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : (((b || c) && (!l && !g)) ? (-0.5 + f) + "px" : l ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (((b || c) && (!l && !g)) ? "-23.5px" : g ? "-28px" : (!b && !c && l) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>';
-    !e && m.addClass("disabled");
+        i = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : (((b || c) && (!m && !g)) ? (-0.5 + f) + "px" : m ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (((b || c) && (!m && !g)) ? "-23.5px" : g ? "-28px" : (!b && !c && m) ? "-27.5px" : "-25.5px")) + ' !important;"><span class="cspinner-icon white ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>',
+        a = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (h ? h[0] + "px" : (((b || c) && (!m && !g)) ? (-0.5 + f) + "px" : m ? "1.6px" : g ? "1.5px" : "0")) + " !important; margin-left: " + (h ? h[1] + "px" : (((b || c) && (!m && !g)) ? "-23.5px" : g ? "-28px" : (!b && !c && m) ? "-27.5px" : "-25.5px")) + '  !important;"><span class="cspinner-icon dark ' + (h ? (h[2] ? h[2] : "") : (b || c ? "smaller" : "small")) + '"></span></span></span>';
+    !e && n.addClass("disabled");
     if (d.length && !e) {
-        if (m.hasClass("btn-default")) {
+        if (n.hasClass("btn-default")) {
             d.addClass("invisible").after(a)
         } else {
             d.addClass("invisible").after(i)
         }
     }
     typeof j == "undefind" ? j = false : false;
+    typeof l == "undefind" ? l = false : false;
     if (h[3] || j) {
         setTimeout(function() {
-            m.removeClass("disabled");
+            n.removeClass("disabled");
             d.removeClass("invisible");
-            m.find(".cspinner_container").remove()
+            n.find(".cspinner_container").remove()
         }, (j ? j : h[3]))
+    }
+    if (l) {
+        setTimeout(function() {
+            __lre()
+        }, 2)
     }
 }
 
@@ -1273,7 +1279,7 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
         }
         if (f.length && $(this).find('.modal-body h4:contains("patch")').length) {
             var c = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
-            $modal_h4_first.append('<a data-toggle="tooltip" data-title="<strong>' + lang("theme_xhred_git_compare_changes") + "</strong><br>" + (lang("theme_xhred_global_commited_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>');
+            $modal_h4_first.append('<a data-toggle="tooltip" data-title="<strong>' + lang("theme_xhred_git_compare_changes") + "</strong><br>" + (lang("theme_xhred_global_committed_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + c + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>');
             $modal_h4_first.after('<span class="version_separator" style="margin-top: -32px;margin-right: -3px;">            <span class="smaller text-danger"><span>' + a + "</span></span></span>")
         } else {
             if (________multi_in_branch) {
@@ -3385,7 +3391,17 @@ $("body").on("click", 'button.ui_form_end_submit[type="button"]:not(.disabled)',
     }
 });
 $("body").on("click", ".ui_form_end_submit:not(.disabled), .page_footer_submit:not(.disabled)", function() {
-    f__mgk_sp($(this), false, ($(this).hasClass("page_footer_submit") ? 1000 : false))
+    var a = false,
+        b = false;
+    if ($(this).hasClass("page_footer_submit")) {
+        a = 1000
+    } else {
+        if ($(this).parents('form[action="fetch.cgi"]').length) {
+            a = 1000;
+            b = 1
+        }
+    }
+    f__mgk_sp($(this), false, a, b)
 });
 $(".dataTable .ui_checked_checkbox").parent("tr").parent("tbody").prev("thead").find("th:first-child").addClass("opacity-0 pointer-events-none");
 $("table tr.thead td").addClass("tdhead");
