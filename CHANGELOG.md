@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 18.47-patch1 (April 30, 2017)
+* Fixed bug [#737](https://github.com/qooob/authentic-theme/issues/737)
+
 #### Version 18.47 (April 29, 2017)
 * Added desktop notifications [#734](https://github.com/qooob/authentic-theme/issues/734)
 * Added improved display and data-grouping for theme's update notice
