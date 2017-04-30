@@ -3628,9 +3628,7 @@ sub manage_theme_config
     elsif ( $action eq 'load' ) {
         my $atconfig_file = ( get_user_home() . "/.atconfig" );
         if ( -f $atconfig_file ) {
-            my %atconfig = ( settings( get_user_home() . "/.atconfig" ) );
-
-            delete @atconfig{ grep( !/^config_portable_/, keys %atconfig ) };
+            my %atconfig = ( settings( $atconfig_file, 'config_portable_' ) );
             get_json( \%atconfig );
         }
         else {

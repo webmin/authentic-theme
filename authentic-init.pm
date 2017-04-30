@@ -9,12 +9,12 @@ init_funcs();
 
 sub settings
 {
-    my ($f) = @_;
+    my ( $f, $e ) = @_;
     my %c;
     if ( -r $f ) {
         my $k = read_file_contents($f);
         my %k = $k =~ /(.*?)=(.*)/g;
-        delete @k{ grep( !/^settings_/, keys %k ) };
+        delete @k{ grep( !/^$e/, keys %k ) };
         foreach $s ( keys %k ) {
             $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
             $k{$s} =~ s/\\'/'/g;
@@ -561,8 +561,8 @@ sub init_vars
 
     our $t_uri__i = get_env('request_uri');
     our %__settings = ( settings_default(),
-                        settings( $config_directory . "/authentic-theme/settings.js" ),
-                        settings( get_user_home() . "/.atconfig" ) );
+                        settings( $config_directory . "/authentic-theme/settings.js", 'settings_' ),
+                        settings( get_user_home() . "/.atconfig",                     'settings_' ) );
     our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
           $t_var_product_m );
 
@@ -1099,8 +1099,8 @@ sub theme_version
     (     ( !$switch && $sh__ln__g___version )
        && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ) ) );
 
-    if (theme_mode() eq 'debug' && !$switch && $sh__ln__g___version) {
-      $sh__ln__c___version .= time();
+    if ( theme_mode() eq 'debug' && !$switch && $sh__ln__g___version ) {
+        $sh__ln__c___version .= time();
     }
     return $sh__ln__c___version;
 }
