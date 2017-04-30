@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 18.47-patch3 (April 30, 2017)
+#### Version 18.47-patch4 (April 30, 2017)
+* Added bigger checkboxes for tables [#743](https://github.com/qooob/authentic-theme/issues/743)
 * Added alternative method for calling context menu in File Manager [#739](https://github.com/qooob/authentic-theme/issues/739)
 * Fixed bugs [#737](https://github.com/qooob/authentic-theme/issues/737) [#738](https://github.com/qooob/authentic-theme/issues/738)
 

@@ -6702,7 +6702,7 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
     left: -1px;
     display: inline-block;
     width: 14px;
-    height: 13px;
+    height: 14px;
     margin-left: -15px;
     content: '';
     -webkit-transition: border .15s ease-in-out, color .15s ease-in-out;
@@ -6714,7 +6714,7 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
 }
 
 .awcheckbox label::after {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1em !important;
     position: absolute;
     top: 3px;
@@ -6852,6 +6852,25 @@ body[class*='init'][data-uri*='edit_upstart.cgi'] tr.ui_checked_columns td:not(.
 
 .awradio input[type='radio']:disabled+label::before {
     cursor: not-allowed
+}
+
+.ui_checked_columns td:not(.ui_checked_checkbox):first-child .awcheckbox label::before,
+.ui_checked_checkbox .awcheckbox label::before {
+    top: 2px;
+    width: 15px;
+    height: 15px
+}
+
+.ui_checked_columns td:not(.ui_checked_checkbox):first-child .awcheckbox label::after,
+.ui_checked_checkbox .awcheckbox label::after {
+    font-size: 11px;
+    top: 3px;
+    width: 15px;
+    height: 15px
+}
+
+.opener_shown .ui_checked_checkbox .awcheckbox label::after {
+    left: -1px
 }
 
 form[action='save_restrict.cgi'] .table-hardcoded>tbody,
