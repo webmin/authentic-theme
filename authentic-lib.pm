@@ -1752,7 +1752,6 @@ sub print_panel
 {
     my ( $opened, $id, $title, $data ) = @_;
 
-
     print '
               <div class="panel panel-default'
       . ( $__settings{'settings_animation_tabs'} ne 'false'
@@ -1777,7 +1776,7 @@ sub print_panel
               <div id="'
       . $id
       . '-collapse" class="panel-collapse collapse'
-      . ( $opened ? ' in' : '')
+      . ( $opened ? ' in' : '' )
       . '" role="tabpanel" aria-labelledby="'
       . $id . '">
                 <div class="panel-body">' . $data . '</div></div></div>';
@@ -1939,6 +1938,12 @@ sub get_authentic_version
                        \$remote_version,
                        \$error,
                        undef, 1, undef, undef, 5 );
+
+        # In case there was a release and no Git patches available
+        if ( !$remote_version ) {
+            http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
+                           \$remote_version, \$error, undef, 1, undef, undef, 5 );
+        }
 
         # Trim versions' number
         $remote_version =~ s/^\s+|\s+$//g;
@@ -3685,15 +3690,17 @@ sub get_theme_language
 
 sub check_reseller_home
 {
-  if ( $get_user_level eq '1' ) {
-    if (length get_user_home()) {
-      return 1;
-    } else {
-      return 0;
+    if ( $get_user_level eq '1' ) {
+        if ( length get_user_home() ) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
-  } else {
-    return 1;
-  }
+    else {
+        return 1;
+    }
 }
 
 sub get_module_config_data
