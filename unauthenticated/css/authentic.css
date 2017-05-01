@@ -3222,7 +3222,6 @@ body[data-current-product='usermin'] .ui_form+script+hr {
     z-index: 2000000002;
     top: -90px;
     right: -82px;
-    display: none;
     width: 137px;
     height: 137px;
     cursor: default;
@@ -3262,13 +3261,13 @@ body[data-current-product='usermin'] .ui_form+script+hr {
 
 .loading-container {
     z-index: 2;
-    -webkit-animation: rotate 2s linear infinite;
-    animation: rotate 2s linear infinite
+    -webkit-animation: rotate 2.1s linear infinite;
+    animation: rotate 2.1s linear infinite
 }
 
 .loading-container .loading-path {
-    -webkit-animation: dash 1.7s ease-in-out infinite;
-    animation: dash 1.7s ease-in-out infinite;
+    -webkit-animation: dash 1.8s ease-in-out infinite;
+    animation: dash 1.8s ease-in-out infinite;
     stroke-dasharray: 1, 150;
     stroke-dashoffset: 0;
     stroke: rgba(67, 123, 168, .86);

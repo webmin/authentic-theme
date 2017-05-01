@@ -441,9 +441,6 @@ function __lrs(j, g) {
     typeof j == "undefined" ? j = false : j = true;
     typeof g == "undefined" ? g = 80 : false;
     if (t__wi_p.$___________initial === 1) {
-        t__wi_p.$('iframe[name="page"]').animate({
-            opacity: 0
-        }, g);
         t__wi_p.$(".loader-container").addClass("loading-started");
         if (((t__wi_p.$("aside").css("transform") == "none" || t__wi_p.$("aside").css("transform") != "matrix(1, 0, 0, 1, " + settings_leftmenu_width + ", 0)") && !t__wi_p.$(".btn-menu-toggler").is(":visible"))) {
             t__wi_p.$(".loader-container").css("background-color", "#ededed").css("display", "block")
@@ -459,7 +456,6 @@ function __lrs(j, g) {
                         t__wi_p.$(".loader-container").css("background-color", "#ededed").css("display", "block")
                     }
                     t__wi_p.setTimeout(function() {
-                        t__wi_p.$(".loader .loader-close").show();
                         t__wi_p.$___________lrs_r_l = 0
                     }, 1500)
                 }
@@ -511,36 +507,30 @@ function __s___() {
     if (t__wi_p.$____loader_block__) {
         return
     }
-    var d = 0;
-    xx = t__wi_p.$('iframe[name="page"]').get(0), current_window = t__wi_p.$('iframe[name="page"]').contents(), current_window = (current_window.length ? current_window : $(document));
-    if (xx && typeof xx.contentWindow.$ != "function" || !__num()) {
+    var g = t__wi_p.$('iframe[name="page"]').get(0),
+        d = t__wi_p.$('iframe[name="page"]').contents(),
+        d = (d.length ? d : $(document));
+    if (g && typeof g.contentWindow.$ != "function" || !__num()) {
         return
     }
     var b = false,
         f = false,
         c = false;
-    if (xx) {
-        bbbb = xx.contentWindow;
-        f = xx.contentWindow.$("body");
-        b = xx.contentWindow.$("body").find(".container-fluid");
-        c = xx.contentWindow.$("head")
+    if (g) {
+        f = g.contentWindow.$("body");
+        b = g.contentWindow.$("body").find(".container-fluid");
+        c = g.contentWindow.$("head")
     } else {
-        bbbb = window;
         f = $("body");
         b = $("body").find(".container-fluid");
         c = $("head")
     }
-    setTimeout(function() {
-        if (b.length) {
-            b.animate({
-                opacity: 1
-            }, 240, function() {
-                b.css("pointer-events", "auto");
-                f.css("overflow", "auto");
-                c.find("#__tmp_no_overflow").remove()
-            })
-        }
-    }, d)
+    b.css({
+        opacity: 1,
+        "pointer-events": "auto"
+    });
+    f.css("overflow", "auto");
+    c.find("#__tmp_no_overflow").remove()
 }
 
 function __lre(a) {
@@ -550,9 +540,7 @@ function __lre(a) {
     }
     __s___();
     t__wi_p.$(".loader-container").removeClass("loading-started").css("background-color", "transparent").css("display", "none");
-    t__wi_p.$('iframe[name="page"]').animate({
-        opacity: 1
-    }, 30, function() {});
+    t__wi_p.$('iframe[name="page"]').css("opacity", 1);
     if (t__wi_p.$("aside").css("transform") == "none") {
         __slm()
     }

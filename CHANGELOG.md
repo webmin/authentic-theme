@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 18.47-patch6 (May 1, 2017)
+#### Version 18.47-patch7 (May 1, 2017)
+* Added no animations for page transitions, resulting in small speed increase
 * Added bigger checkboxes for tables [#743](https://github.com/qooob/authentic-theme/issues/743)
 * Added alternative method for calling context menu in File Manager [#739](https://github.com/qooob/authentic-theme/issues/739)
 * Fixed bugs [#736](https://github.com/qooob/authentic-theme/issues/736) [#737](https://github.com/qooob/authentic-theme/issues/737) [#738](https://github.com/qooob/authentic-theme/issues/738) [#742](https://github.com/qooob/authentic-theme/issues/742)
