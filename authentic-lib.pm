@@ -3008,11 +3008,12 @@ sub get_xhr_request
                     $usermin_root =~ s/webmin/usermin/;
                     backquote_logged("yes | $usermin_root/authentic-theme/theme-update.sh -no-restart");
                 }
+                my $tversion = (theme_git_version(1) ? theme_git_version(1) : theme_version('version'));
                 @update_rs = {
                                "success" => (
                                       $usermin
-                                      ? Atext( 'theme_git_patch_update_success_message2', theme_git_version() )
-                                      : Atext( 'theme_git_patch_update_success_message',  theme_git_version() )
+                                      ? Atext( 'theme_git_patch_update_success_message2', $tversion )
+                                      : Atext( 'theme_git_patch_update_success_message',  $tversion )
                                ) };
                 print get_json( \@update_rs );
             }
@@ -3529,7 +3530,17 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
           <div class="modal-dialog modal-dialog-update">
             <div class="modal-content">
               <div class="modal-header background-success background--bordered">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" data-toggle="tooltip" data-title="'
+      . $Atext{'theme_xhred_global_close'}
+      . '" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                '
+      . (
+        $get_user_level eq '0' && $__settings{'settings_sysinfo_theme_updates'} eq 'true'
+        ? '<a data-update-force data-git="1" class="fa fa-fw fa-md fa-download-cloud cursor-pointer authentic_update" data-toggle="tooltip" data-title="'
+          . $Atext{'theme_force_upgrade'}
+          . '"></a>'
+        : '' )
+      . '
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-fw fa-info-circle">&nbsp;&nbsp;</i>'
       . $Atext{'theme_update_notice'} . '</h4>
               </div>
