@@ -2630,7 +2630,7 @@ function ___f__tw() {
                                 p.find('form[action="save_file.cgi"]').submit(function(K) {
                                     K.preventDefault();
                                     K.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", I) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileStart");
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", I) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
                                     var x = p.find('form[action="save_file.cgi"] input:not([name="path"]), form[action="save_file.cgi"] textarea').serialize();
                                     x = x + "&path=" + $("#path").val();
                                     $.ajax({

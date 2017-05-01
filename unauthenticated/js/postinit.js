@@ -2066,7 +2066,8 @@ function t__cm___init(g, i, f, j, d, m, k) {
                 v = $('form[action="save.cgi"]').find(".table-title").find("tt").text()
             } else {
                 if ($('body[class^="' + $g__o__f_m + '"]').length) {
-                    v = URI.parseQuery(URI($__source_url).query())["file"]
+                    v = p.replace(/<(?:.|\n)*?>/gm, "").replace(/ *\([^)]*\) */g, "");
+                    p = v
                 } else {
                     v = $('select[name="file"]').val()
                 }
