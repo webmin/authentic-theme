@@ -21,7 +21,10 @@ html[data-background-style='nightRider'] .modal-header.background-info h4,
 html[data-background-style='nightRider'] .modal-header.background-warning button,
 html[data-background-style='nightRider'] .modal-header.background-warning h4,
 html[data-background-style='nightRider'] .modal-header.background-danger button,
-html[data-background-style='nightRider'] .modal-header.background-danger h4,
+html[data-background-style='nightRider'] .modal-header.background-danger h4 {
+    color: rgba(198, 198, 198, .73)
+}
+
 html[data-background-style='nightRider'] .panel-title,
 html[data-background-style='nightRider'] a[data-toggle='collapse'] {
     color: rgba(151, 155, 160, .82) !important
@@ -280,6 +283,14 @@ html[data-background-style='nightRider'] .modal-dialog-update .modal-body a+hr {
 
 html[data-background-style='nightRider'] .hr-dashed {
     border-style: dashed !important
+}
+
+html[data-background-style='nightRider'] .modal-dialog-update a[data-update-force] {
+    color: #47756b
+}
+
+html[data-background-style='nightRider'] .modal-dialog-update a[data-update-force]:hover {
+    color: #6c8482
 }
 
 html[data-background-style='nightRider'] .CodeMirror-focused .CodeMirror-selected {

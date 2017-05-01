@@ -4122,7 +4122,7 @@ body.syslog .CodeMirror {
 .CodeMirror-line::selection,
 .CodeMirror-line>span::selection,
 .CodeMirror-line>span>span::selection {
-    background: #d7d4f0 !important
+    background: #2f2d3e !important
 }
 
 .CodeMirror-crosshair {
@@ -4132,7 +4132,7 @@ body.syslog .CodeMirror {
 .CodeMirror-line::-moz-selection,
 .CodeMirror-line>span::-moz-selection,
 .CodeMirror-line>span>span::-moz-selection {
-    background: #d7d4f0 !important
+    background: #2f2d3e !important
 }
 
 .CodeMirror-line>span,
@@ -4142,7 +4142,7 @@ body.syslog .CodeMirror {
 
 .CodeMirror-line>span::selection,
 .CodeMirror-line>span::-moz-selection {
-    background: #d7d4f0 !important
+    background: #2f2d3e !important
 }
 
 .sub_table_container pre,
@@ -10245,6 +10245,17 @@ screen and (max-height:600px) {
 
 .modal-dialog-update .modal-body>h4:first-child+.version_separator+.no-data+.version_separator+hr {
     display: none
+}
+
+.modal-dialog-update a[data-update-force] {
+    float: right;
+    margin-right: 13px;
+    margin-top: 6px;
+    color: #4aa335
+}
+
+.modal-dialog-update a[data-update-force]:hover {
+    color: #76c164
 }
 
 .hr-dashed {

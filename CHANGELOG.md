@@ -1,7 +1,8 @@
 ## Changelog
 
-#### Version 18.47-patch7 (May 1, 2017)
+#### Version 18.47-patch8 (May 1, 2017)
 * Added no animations for page transitions, resulting in small speed increase
+* Added ability to force upgrade the theme using link from update notice [#741](https://github.com/qooob/authentic-theme/issues/741)
 * Added bigger checkboxes for tables [#743](https://github.com/qooob/authentic-theme/issues/743)
 * Added alternative method for calling context menu in File Manager [#739](https://github.com/qooob/authentic-theme/issues/739)
 * Fixed bugs [#736](https://github.com/qooob/authentic-theme/issues/736) [#737](https://github.com/qooob/authentic-theme/issues/737) [#738](https://github.com/qooob/authentic-theme/issues/738) [#742](https://github.com/qooob/authentic-theme/issues/742)
@@ -16,7 +17,7 @@
 * Fixed bugs [#685](https://github.com/qooob/authentic-theme/issues/685) [#723](https://github.com/qooob/authentic-theme/issues/723) [#726](https://github.com/qooob/authentic-theme/issues/726) [#727](https://github.com/qooob/authentic-theme/issues/727) [#728](https://github.com/qooob/authentic-theme/issues/728) [#729](https://github.com/qooob/authentic-theme/issues/729) [#730](https://github.com/qooob/authentic-theme/issues/730) [#51917](https://www.virtualmin.com/node/51917)
 
 #### Version 18.45 (April 21, 2017)
-* Added ability to install patched version of the theme directly from GitHub, to get early access on the new features [#707](https://github.com/qooob/authentic-theme/issues/707)
+* Added ability to install patched version of the theme directly from GitHub [#707](https://github.com/qooob/authentic-theme/issues/707)
 * Added PGP signature to verify authenticity of the package [860e1aa](https://github.com/qooob/authentic-theme/commit/860e1aa6cea9591efd7471c85cda540edecce6d9)
 * Added console script for updating the theme [#703](https://github.com/qooob/authentic-theme/issues/703)
 * Added ability to display version patch number [#676](https://github.com/qooob/authentic-theme/issues/676)
