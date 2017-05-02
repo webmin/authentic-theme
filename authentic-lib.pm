@@ -3008,12 +3008,11 @@ sub get_xhr_request
                     $usermin_root =~ s/webmin/usermin/;
                     backquote_logged("yes | $usermin_root/authentic-theme/theme-update.sh -no-restart");
                 }
-                my $tversion = (theme_git_version(1) ? theme_git_version(1) : theme_version('version'));
+                my $tversion = ( theme_git_version(1) ? theme_git_version(1) : theme_version('version') );
                 @update_rs = {
-                               "success" => (
-                                      $usermin
-                                      ? Atext( 'theme_git_patch_update_success_message2', $tversion )
-                                      : Atext( 'theme_git_patch_update_success_message',  $tversion )
+                               "success" => ( $usermin
+                                              ? Atext( 'theme_git_patch_update_success_message2', $tversion )
+                                              : Atext( 'theme_git_patch_update_success_message',  $tversion )
                                ) };
                 print get_json( \@update_rs );
             }
@@ -3552,13 +3551,13 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
                 <hr>
                 <h4 data-development style="margin-top:20px;">'
       . $Atext{'theme_development_support'}
-      . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c"></i></h4>
-                  Please be kind reporting bugs to
-                    <a class="badge fa fa-github" target="_blank" href="https://github.com/qooob/authentic-theme/issues">
-                      <span class="font-family-default">GitHub</span></a> repository. Follow theme\'s
-                        <a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme">
-                          <span class="font-family-default">Twitter</span></a>
-                      channel for the latest updates.
+      . '&nbsp;&nbsp;<i class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c"></i></h4>'
+      . Atext(
+        'theme_update_footer',
+'<a class="badge fa fa-github" target="_blank" href="https://github.com/qooob/authentic-theme/issues"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;GitHub</span></a>',
+'<a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;Twitter</span></a>'
+      )
+      . '
               </div>
             </div>
           </div>
