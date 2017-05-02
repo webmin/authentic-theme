@@ -2584,36 +2584,39 @@ function ___f__tw() {
                             url: z,
                             dataType: "text",
                             autoload: false,
-                            done: function(H, o, G, q) {
-                                var t = $(H).find(".ui_form"),
-                                    I = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
+                            done: function(I, o, H, q) {
+                                var G = $(I).find(".ui_form"),
+                                    J = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
                                     p = $(this).parents("div.jsPanel"),
                                     n = (parseInt(q.attr("id").replace("jsPanel-", "")) + 1);
-                                if (!$(t).find("textarea").length) {
-                                    var t = $(H).find('form[action="save_file.cgi"]').append($(H).find("#data").removeAttr("id")).prepend($(H).find("#file").removeAttr("id")).prepend($(H).find("#path").removeAttr("id"))
+                                if (!$(G).find("textarea").length) {
+                                    var G = $(I).find('form[action="save_file.cgi"]').append($(I).find("#data").removeAttr("id")).prepend($(I).find("#file").removeAttr("id")).prepend($(I).find("#path").removeAttr("id"))
                                 }
-                                q.title(I);
+                                q.title(J);
                                 p.data("jspuid", A);
-                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", I.replace(/<\/?[^>]+(>|$)/g, ""));
-                                p.find(".jsPanel-content").html(t);
+                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", J.replace(/<\/?[^>]+(>|$)/g, ""));
+                                p.find(".jsPanel-content").html(G);
                                 $("#jsPanel-min-container").css({
                                     width: $(window).width(),
                                     overflow: "auto"
                                 });
-                                var s = p.find(".jsPanel-content");
-                                var m = s.find(".ui_form_end_buttons tr td span:first-child input"),
-                                    r = s.find(".ui_form_end_buttons tr td span:nth-child(2) input");
-                                s.find(".ui_form_end_buttons").remove();
+                                var t = p.find(".jsPanel-content");
+                                var m = t.find(".ui_form_end_buttons tr td span:first-child input"),
+                                    s = t.find(".ui_form_end_buttons tr td span:nth-child(2) input");
+                                t.find(".ui_form_end_buttons").remove();
                                 p.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
+                                var r = t.find("form").attr("data-encoding");
+                                r = (r ? r : "UTF-8");
+                                p.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-2 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + r + '"><samp class="smaller">' + r + "</samp></div>");
                                 p.find(".jsPanel-btn-max").trigger("click");
-                                t__cm___init(s.find("textarea"), I, [null, parseInt(s.css("height"))], n);
+                                t__cm___init(t.find("textarea"), J, [null, parseInt(t.css("height"))], n);
                                 p.animate({
                                     opacity: 1
                                 }, 400, function() {
                                     window["__cm_editor_" + n].focus()
                                 });
-                                q.on("jspanelbeforeclose", function(x, L) {
-                                    var K = $("#" + L)
+                                q.on("jspanelbeforeclose", function(x, M) {
+                                    var L = $("#" + M)
                                 });
                                 p.find("._filemanager_file_editor_save").click(function(x) {
                                     $(this).find("i").replaceWith(t__lo__btn_md());
@@ -2621,37 +2624,42 @@ function ___f__tw() {
                                     p.find('form[action="save_file.cgi"]').submit()
                                 });
 
-                                function J() {
+                                function K() {
                                     var x = p.find("._filemanager_file_editor_save");
                                     x.find(".cspinner").remove();
                                     x.find("i").remove();
                                     x.prepend('<i class="fa fa-fw fa-floppy-o"></i>')
                                 }
-                                p.find('form[action="save_file.cgi"]').submit(function(K) {
-                                    K.preventDefault();
-                                    K.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", I) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
-                                    var x = p.find('form[action="save_file.cgi"] input:not([name="path"]), form[action="save_file.cgi"] textarea').serialize();
+                                p.find('form[action="save_file.cgi"]').submit(function(N) {
+                                    N.preventDefault();
+                                    N.stopPropagation();
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", J) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
+                                    var M = 'form[action="save_file.cgi"]',
+                                        L = p.find("" + M + "").attr("data-encoding"),
+                                        x = p.find("" + M + ' input:not([name="path"]), ' + M + " textarea").serialize();
                                     x = x + "&path=" + $("#path").val();
+                                    if (L) {
+                                        x = x + "&encoding=" + L
+                                    }
                                     $.ajax({
                                         type: "POST",
                                         url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
                                         data: x,
                                         dataType: "text",
-                                        success: function(L) {
-                                            var M = p.find("._filemanager_file_editor_save .cspinner");
-                                            if (!$(L).find("textarea#data").length) {
-                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(L).find(".panel-body").html(), 10, "error", "savingFileError");
-                                                if (M.parent(".btn").index() === 1) {
+                                        success: function(O) {
+                                            var P = p.find("._filemanager_file_editor_save .cspinner");
+                                            if (!$(O).find("textarea#data").length) {
+                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(O).find(".panel-body").html(), 10, "error", "savingFileError");
+                                                if (P.parent(".btn").index() === 1) {
                                                     modal_dismiss()
                                                 }
-                                                J();
+                                                K();
                                                 return
                                             }
-                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", I), 1.5, "success", "savingFileDone");
-                                            J()
+                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", J), 1.5, "success", "savingFileDone");
+                                            K()
                                         },
-                                        error: function(L) {}
+                                        error: function(O) {}
                                     })
                                 })
                             }

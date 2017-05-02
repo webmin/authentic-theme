@@ -691,4 +691,9 @@ theme_xhred_global_release=Utgåvor
 theme_xhred_global_released_on=Släppt den
 theme_xhred_global_committed_on=Upplagd den
 theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
+
+
+#18.48
 theme_force_upgrade=Uppdatera temat med det senaste upplägget från GitHub
+theme_xhred_source_encoding=Kodkodning
+theme_update_footer=Var snäll och rapportera buggar till $1 repository. Följ temat $2 kanalen för de senaste uppdateringarna.

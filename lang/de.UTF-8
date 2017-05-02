@@ -692,4 +692,9 @@ theme_xhred_global_release=Release
 theme_xhred_global_released_on=Released on
 theme_xhred_global_committed_on=Committed on
 theme_xhred_global_resolved_issues=Resolved issues in %value releases
+
+
+#18.48
 theme_force_upgrade=Force upgrade the theme, using latest commit from GitHub
+theme_xhred_source_encoding=Source encoding
+theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
