@@ -699,15 +699,17 @@ $(t__wi_p.$('iframe[name="page"]').contents()).keydown(function(b) {
 $("body").on("click", '.authentic_update:not([data-git="0"]):not(.disabled)', function(b) {
     b.preventDefault();
     b.stopPropagation();
-    var c = $(this);
-    c.addClass("disabled");
+    var c = $(this),
+        e = $("body").add(t__wi_p.$("body")),
+        d = c.data("stable") == "1" ? "-release" : "-beta";
+    e.addClass("pointer-events-none");
     $("body").attr("data-unload-warning", "1");
     t__wi_p.NProgress.start();
     t__wi_p.$("#wrapper").addClass("bg-filter-blur-grayscale-opacity50");
     messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + lang("theme_xhred_git_patch_initiated") + " " + lang("theme_xhred_global_please_wait") + '&nbsp;&nbsp;&nbsp;<span class="cspinner"><span class="cspinner-icon white smallest margined-top-4"></span></span>', 1800, "info", "themeUpgrade", 0);
     $.ajax({
         type: "POST",
-        url: $_____link_full + "/index.cgi?xhr-update=1",
+        url: $_____link_full + "/index.cgi?xhr-update=1&xhr-update-type=" + d + "",
         data: false,
         dataType: "json",
         success: function(a) {
@@ -720,18 +722,18 @@ $("body").on("click", '.authentic_update:not([data-git="0"]):not(.disabled)', fu
                 if (a[0] && a[0].no_git) {
                     messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + a[0].no_git, 20, "warning", "themeUpgrade");
                     t__wi_p.$("#wrapper").removeClass("bg-filter-blur-grayscale-opacity50");
-                    c.removeClass("disabled")
+                    e.removeClass("pointer-events-none")
                 } else {
                     messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + lang("theme_xhred_git_patch_update"), 20, "error", "themeUpgrade");
                     t__wi_p.$("#wrapper").removeClass("bg-filter-blur-grayscale-opacity50");
-                    c.removeClass("disabled")
+                    e.removeClass("pointer-events-none")
                 }
             }
         },
         error: function(a) {
             messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + lang("theme_xhred_git_patch_update"), 20, "error", "themeUpgrade");
             t__wi_p.$("#wrapper").removeClass("bg-filter-blur-grayscale-opacity50");
-            c.removeClass("disabled")
+            e.removeClass("pointer-events-none")
         },
         complete: function(a) {
             t__wi_p.NProgress.done();

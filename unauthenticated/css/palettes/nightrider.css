@@ -54,7 +54,7 @@ html[data-background-style='nightRider'] .btn.btn-transparent-link-force:hover,
 html[data-background-style='nightRider'] .btn.btn-transparent-link-inverse,
 html[data-background-style='nightRider'] .text-force-link,
 html[data-background-style='nightRider'] .text-force-link-hover:hover,
-html[data-background-style='nightRider'] .btn.dropdown-toggle:hover,
+html[data-background-style='nightRider'] .btn.dropdown-toggle:not(.no-style-hover):hover,
 html[data-background-style='nightRider'] body .mppopup .modal-body .table tr td a[onclick*='select']:hover,
 html[data-background-style='nightRider'] body .mppopup .modal-body .table tr td a[onclick*='parentdir']:hover,
 html[data-background-style='nightRider'] body .mppopup .modal-body .table tr td a[onclick*='fileclick'][onclick*=', 1']:hover,
@@ -116,6 +116,11 @@ html[data-background-style='nightRider'] .hl-aw {
     background-color: #3d353b !important
 }
 
+html[data-background-style='nightRider'] .file-manager .breadcrumb>li a+span[data-tree] a:hover,
+html[data-background-style='nightRider'] .dropdown-menu>li>a:hover,
+html[data-background-style='nightRider'] .dropdown-menu>li>a:focus,
+html[data-background-style='nightRider'] .dropdown-submenu>li>a:hover,
+html[data-background-style='nightRider'] .dropdown-submenu>li>a:focus,
 html[data-background-style='nightRider'] .hl-ow,
 html[data-background-style='nightRider'] body[class*='file-manager'] #list_form tbody tr:hover,
 html[data-background-style='nightRider'] #list_form tbody tr.checked:hover.m-active.m-not-active,
@@ -489,10 +494,6 @@ html[data-background-style='nightRider'] .panel-body form table tbody tr:not(.th
 html[data-background-style='nightRider'] .file-manager .breadcrumb>li a+span[data-tree] {
     border: 1px solid rgba(66, 68, 73, .78);
     background: rgba(47, 50, 56, .89)
-}
-
-html[data-background-style='nightRider'] .file-manager .breadcrumb>li a+span[data-tree] a:hover {
-    background-color: #434548
 }
 
 html[data-background-style='nightRider'] .file-manager .breadcrumb .fa.fa-caret-right:hover,
