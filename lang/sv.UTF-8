@@ -694,8 +694,8 @@ theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_force_upgrade_beta=Install latest development version (beta)
-theme_force_upgrade_stable=Install latest release version (stable)
+theme_force_upgrade=Uppdatera temat
+theme_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
+theme_force_upgrade_stable=Installera senaste versionen (stabil)
 theme_xhred_source_encoding=Källkodning
 theme_update_footer=Hittar du fel i temat får du gärna rapportera dem på $1. Följ temat på $2 för de senaste uppdateringarna.
