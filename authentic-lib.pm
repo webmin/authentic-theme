@@ -2849,6 +2849,26 @@ sub _settings
           . $Atext{'settings_right_restore_defaults'} . '</a>
                                     <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
           . $Atext{'settings_right_clear_local_cache'} . '</a>
+         ' . (
+            $get_user_level eq '0' && has_command('git')
+            ? '                     <span class="dropup">
+                                       <button class="btn btn-warning dropdown-toggle margined-left--1 no-style-hover" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i> '
+                                        . $Atext{'theme_force_upgrade'}
+                                        . '&nbsp;&nbsp;
+                                         <span class="caret"></span>
+                                       </button>
+                                       <ul class="dropdown-menu" aria-labelledby="force_update_menu">
+                                         <li><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-package-install margined-right-8"></i>'
+                                        . $Atext{'theme_force_upgrade_stable'}
+                                        . '</a></li>
+                                         <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-git-commit margined-right-8"></i>'
+                                        . $Atext{'theme_force_upgrade_beta'}
+                                        . '</a></li>
+                                       </ul>
+                                   </span>'
+            : '' )
+          . '
                                 </div>
                             </td>
                             <td style="text-align: right;">
@@ -2995,6 +3015,7 @@ sub get_xhr_request
         }
         elsif ( $in{'xhr-update'} eq '1' && foreign_available('webmin') ) {
             my @update_rs;
+            my $version_type = $in{'xhr-update-type'};
             if ( !has_command('git') ) {
                 @update_rs = { "no_git" => $Atext{'theme_git_patch_no_git_message'}, };
                 print get_json( \@update_rs );
@@ -3002,11 +3023,13 @@ sub get_xhr_request
             else {
                 my $usermin = usermin_available();
                 my $usermin_root;
-                backquote_logged("yes | $root_directory/authentic-theme/theme-update.sh -no-restart");
+                backquote_logged(
+                           "yes | $root_directory/authentic-theme/theme-update.sh -$version_type -no-restart");
                 if ($usermin) {
                     $usermin_root = $root_directory;
                     $usermin_root =~ s/webmin/usermin/;
-                    backquote_logged("yes | $usermin_root/authentic-theme/theme-update.sh -no-restart");
+                    backquote_logged(
+                             "yes | $usermin_root/authentic-theme/theme-update.sh -$version_type -no-restart");
                 }
                 my $tversion = ( theme_git_version(1) ? theme_git_version(1) : theme_version('version') );
                 @update_rs = {
@@ -3532,14 +3555,6 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
                 <button type="button" data-toggle="tooltip" data-title="'
       . $Atext{'theme_xhred_global_close'}
       . '" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                '
-      . (
-        $get_user_level eq '0' && $__settings{'settings_sysinfo_theme_updates'} eq 'true'
-        ? '<a data-update-force data-git="1" class="fa fa-fw fa-md fa-download-cloud cursor-pointer authentic_update" data-toggle="tooltip" data-title="'
-          . $Atext{'theme_force_upgrade'}
-          . '"></a>'
-        : '' )
-      . '
                 <h4 class="modal-title" id="update_notice_label"><i class="fa fa-fw fa-info-circle">&nbsp;&nbsp;</i>'
       . $Atext{'theme_update_notice'} . '</h4>
               </div>

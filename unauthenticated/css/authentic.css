@@ -1730,6 +1730,13 @@ aside .form-control:focus:-ms-input-placeholder {
     color: #668bb5
 }
 
+.dropup:not(.open) .caret {
+    content: "";
+    border-bottom: 0;
+    border-top: 4px dashed;
+    border-top: 4px solid \9
+}
+
 #system-status .table,
 .popover-content .progress,
 #sidebar .form-group {
@@ -10271,17 +10278,6 @@ screen and (max-height:600px) {
 
 .modal-dialog-update .modal-body>h4:first-child+.version_separator+.no-data+.version_separator+hr {
     display: none
-}
-
-.modal-dialog-update a[data-update-force] {
-    float: right;
-    margin-top: 6px;
-    margin-right: 13px;
-    color: #4aa335
-}
-
-.modal-dialog-update a[data-update-force]:hover {
-    color: #76c164
 }
 
 .hr-dashed {

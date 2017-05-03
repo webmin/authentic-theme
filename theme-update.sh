@@ -6,12 +6,19 @@
 
 # Get parent dir based on script's location
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DIR="$(echo $DIR | sed 's/\/authentic-theme//g')"
+DIR="$(echo $DIR | sed 's/\/authentic-theme.*//g')"
 PROD=${DIR##*/}
 CURRENT=$PWD
 
 # Clear the screen for better readability
 clear
+
+if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
+    echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script"
+    echo "Usage:  ./`basename $0` { [-beta] | [-release] | [-release:number] }"
+    exit 0
+fi
+
 
 # Ask user to confirm update operation
 read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
@@ -30,8 +37,21 @@ else
     then
 
       # Pull latest changes
-      echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (https://github.com/qooob/authentic-theme)..."
-      git clone --depth 1 https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme"
+      if [[ "$1" == *"-release"* ]]; then
+        if [[ "$1" == *":"* ]] && [[ "$1" != *"latest"* ]]; then
+          RRELEASE=${1##*:}
+        else
+          RRELEASE=`curl -s -L https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt`
+        fi
+        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $RRELEASE (https://github.com/qooob/authentic-theme)..."
+        RS="$(git clone --depth 1 --branch $RRELEASE -q https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme" 2>&1)"
+        if [[ "$RS" == *"ould not find remote branch"* ]]; then
+          ERROR="Release ${RRELEASE} doesn't exist. "
+        fi
+      else
+        echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (https://github.com/qooob/authentic-theme)..."
+        git clone --depth 1 --quiet https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme"
+      fi
 
       # Checking for possible errors
       if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/VERSION.txt" ]; then
@@ -58,7 +78,7 @@ else
         fi
 
         # Restart Webmin/Usermin in case it's running
-        if [ -z $1 ]; then
+        if [ "$2" != "-no-restart" ]; then
           if ps aux | grep -v grep | grep $PROD/miniserv.pl > /dev/null
           then
             echo -e "\e[49;3;37;182mRestarting "${PROD^}"..\e[0m"
@@ -68,7 +88,7 @@ else
       else
         # Post fail commands
         rm -rf "$DIR/.~authentic-theme"
-        echo -e "\e[49;0;31;82mUpdating Authentic Theme, failed.\e[0m"
+        echo -e "\e[49;0;31;82m${ERROR}Updating Authentic Theme, failed.\e[0m"
       fi
     else
       echo -e "\e[49;0;33;82mError: Command \`git\` is not installed or not in the \`PATH\`.\e[0m";

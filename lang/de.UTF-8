@@ -662,10 +662,10 @@ settings_sysinfo_theme_patched_updates=Including patched versions
 settings_sysinfo_theme_patched_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
 theme_git_patch_available=Latest available patch
 theme_git_patch_no_git_message=In order to install latest patches directly from GitHub you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme upgrade for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme upgrade for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme upgrade has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme upgrade has been initiated.
+theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
+theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
+theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
+theme_xhred_git_patch_initiated=Theme update has been initiated.
 theme_xhred_global_prev_page=Go back one page
 theme_xhred_global_help=Help
 settings_right_soft_updates_page_options_title=Software updates
@@ -695,6 +695,8 @@ theme_xhred_global_resolved_issues=Resolved issues in %value releases
 
 
 #18.48
-theme_force_upgrade=Force upgrade the theme, using latest commit from GitHub
+theme_force_upgrade=Force update theme
+theme_force_upgrade_beta=Install latest development version (beta)
+theme_force_upgrade_stable=Install latest release version (stable)
 theme_xhred_source_encoding=Source encoding
 theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
