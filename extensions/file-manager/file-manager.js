@@ -2607,34 +2607,34 @@ function ___f__tw() {
                                 r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
                                 var G = I.find("form").attr("data-encoding");
                                 G = (G ? G : "UTF-8");
-                                var q = new String(),
-                                    s = {
-                                        "UTF-8": "utf-8, Unicode",
-                                        "ISO-8859-1": "iso-8859-1 (cp1252), Latin Alphabet-1",
-                                        "windows-1252": "cp1252 (iso-8859-1), Windows Latin-1",
-                                        "windows-1250": "cp1250, Windows Eastern European",
-                                        "windows-1251": "cp1251, Windows Cyrillic",
-                                        "windows-1253": "cp1253, Windows Greek",
-                                        "windows-1254": "cp1254, Windows Turkish",
-                                        "windows-1255": "cp1255, Windows Hebrew",
-                                        "windows-1256": "cp1256, Windows Arabic",
-                                        "ISO-8859-2": "iso-8859-2, Latin Alphabet-2",
-                                        "ISO-8859-7": "iso-8859-7, Latin/Greek Alphabet",
-                                        "ISO-8859-9": "iso-8859-9, Latin Alphabet-5",
-                                        "ISO-8859-15": "iso-8859-15, Latin Alphabet-9",
-                                        "US-ASCII": "ascii",
-                                        "x-IBM874": "cp874, IBM Thai",
-                                        IBM866: "cp866, MS-DOS Russian",
-                                        "KOI8-R": "koi8-r, Russian",
-                                        "KOI8-U": "koi8-u, Ukrainian",
-                                        "EUC-KR": "EUC encoding, Korean",
-                                        "EUC-JP": "EUC encoding, Japanese",
-                                        Shift_JIS: "Shift-JIS, Japanese"
-                                    };
+                                var q = "";
+                                var s = {
+                                    "UTF-8": "utf-8",
+                                    "ISO-8859-1": "iso-8859-1 (cp1252)&#x200E;",
+                                    "windows-1252": "cp1252 (iso-8859-1)&#x200E;",
+                                    "windows-1250": "cp1250",
+                                    "windows-1251": "cp1251",
+                                    "windows-1253": "cp1253",
+                                    "windows-1254": "cp1254",
+                                    "windows-1255": "cp1255",
+                                    "windows-1256": "cp1256",
+                                    "ISO-8859-2": "iso-8859-2",
+                                    "ISO-8859-7": "iso-8859-7",
+                                    "ISO-8859-9": "iso-8859-9",
+                                    "ISO-8859-15": "iso-8859-15",
+                                    "US-ASCII": "ascii",
+                                    "x-IBM874": "cp874",
+                                    IBM866: "cp866",
+                                    "KOI8-R": "koi8-r",
+                                    "KOI8-U": "koi8-u",
+                                    "EUC-KR": "EUC encoding, Korean",
+                                    "EUC-JP": "EUC encoding, Japanese",
+                                    Shift_JIS: "Shift-JIS, Japanese"
+                                };
                                 $.each(s, function(x, P) {
-                                    q += '<option value="' + x + '"' + (((G.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + "> " + P + "  </option>"
+                                    q += '<option value="' + x + '"' + (((G.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + ">" + P + "</option>"
                                 });
-                                r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + G + '"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon"> <select data-encoding dir="rtl">' + q + "</select> </label></div>");
+                                r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + G + '"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + ($("body").data("charset") != "UTF-8" ? " pointer-events-none" : "") + '"> <select data-encoding dir="rtl">' + q + "</select> </label></div>");
                                 var M = r.find("select[data-encoding]"),
                                     p = M.val();
                                 p == Object.keys(s)[2] && M.val(Object.keys(s)[1]);
