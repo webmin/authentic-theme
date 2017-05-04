@@ -5951,6 +5951,95 @@ select[multiple][size='12'] {
     min-height: 228px !important
 }
 
+label.select-styled select {
+    padding: 0 6px;
+    margin: 0;
+    font-size: 13px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #888;
+    border: 1px solid #e8e8e8;
+    outline: 0;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    max-height: auto;
+    min-height: auto;
+    height: 28px
+}
+
+label.select-styled select option {
+    font-size: 13px
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    label.select-styled select {
+        padding-right: 18px
+    }
+}
+
+label.select-styled {
+    position: relative;
+    font-weight: normal
+}
+
+label.select-styled:after {
+    content: '<>';
+    font: 10px monospace;
+    color: #bbb;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 4px;
+    top: 7px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #e8e8e8;
+    position: absolute;
+    pointer-events: none
+}
+
+label.select-styled:before {
+    content: '';
+    right: 6px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    position: absolute;
+    pointer-events: none;
+    display: block
+}
+
+label.select-styled.select-styled-small select option,
+label.select-styled.select-styled-small select {
+    font-size: 11px
+}
+
+label.select-styled.select-styled-small select {
+    height: 22px;
+    padding: 0 6px;
+    line-height: 20px
+}
+
+label.select-styled.select-styled-small:after {
+    font: 9px monospace;
+    right: 4px;
+    top: 5px
+}
+
+label.select-styled.select-styled-no-border select {
+    border: 1px solid transparent
+}
+
+label.select-styled.select-styled-small.select-styled-no-icon:after {
+    display: none
+}
+
 span>.submitter+span>.submitter,
 .submitter+.submitter {
     margin-right: 0 !important;
@@ -8249,22 +8338,14 @@ ul.messenger .messenger-message {
 }
 
 .file-manager .jsPanel-state-minimized div[data-encoding-label] {
-    font-size: 8px !important;
-    display: block;
+    display: none;
     overflow: hidden;
-    max-width: 36px;
-    margin-left: -10px !important;
-    margin-right: 4px !important;
-    white-space: nowrap;
-    text-overflow: ellipsis
+    max-width: 1px;
+    pointer-events: none
 }
 
 .file-manager .jsPanel-state-minimized .jsPanel-title {
     margin-top: -1px
-}
-
-.file-manager .jsPanel-state-minimized {
-    min-width: 280px
 }
 
 .file-manager .jsPanel.jsPanel-theme-light {

@@ -2853,7 +2853,7 @@ sub _settings
             $get_user_level eq '0' && has_command('git')
             ? '                     <span class="dropup">
                                        <button class="btn btn-warning dropdown-toggle margined-left--1 no-style-hover" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i> '
+                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>'
                                         . $Atext{'theme_force_upgrade'}
                                         . '&nbsp;&nbsp;
                                          <span class="caret"></span>

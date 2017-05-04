@@ -2584,82 +2584,113 @@ function ___f__tw() {
                             url: z,
                             dataType: "text",
                             autoload: false,
-                            done: function(I, o, H, q) {
-                                var G = $(I).find(".ui_form"),
-                                    J = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
-                                    p = $(this).parents("div.jsPanel"),
-                                    n = (parseInt(q.attr("id").replace("jsPanel-", "")) + 1);
-                                if (!$(G).find("textarea").length) {
-                                    var G = $(I).find('form[action="save_file.cgi"]').append($(I).find("#data").removeAttr("id")).prepend($(I).find("#file").removeAttr("id")).prepend($(I).find("#path").removeAttr("id"))
+                            done: function(L, o, K, t) {
+                                var J = $(L).find(".ui_form"),
+                                    N = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
+                                    r = $(this).parents("div.jsPanel"),
+                                    n = (parseInt(t.attr("id").replace("jsPanel-", "")) + 1);
+                                if (!$(J).find("textarea").length) {
+                                    var J = $(L).find('form[action="save_file.cgi"]').append($(L).find("#data").removeAttr("id")).prepend($(L).find("#file").removeAttr("id")).prepend($(L).find("#path").removeAttr("id"))
                                 }
-                                q.title(J);
-                                p.data("jspuid", A);
-                                p.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", J.replace(/<\/?[^>]+(>|$)/g, ""));
-                                p.find(".jsPanel-content").html(G);
+                                t.title(N);
+                                r.data("jspuid", A);
+                                r.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", N.replace(/<\/?[^>]+(>|$)/g, ""));
+                                r.find(".jsPanel-content").html(J);
                                 $("#jsPanel-min-container").css({
                                     width: $(window).width(),
                                     overflow: "auto"
                                 });
-                                var t = p.find(".jsPanel-content");
-                                var m = t.find(".ui_form_end_buttons tr td span:first-child input"),
-                                    s = t.find(".ui_form_end_buttons tr td span:nth-child(2) input");
-                                t.find(".ui_form_end_buttons").remove();
-                                p.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
-                                var r = t.find("form").attr("data-encoding");
-                                r = (r ? r : "UTF-8");
-                                p.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-2 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + r + '"><samp class="smaller">' + r + "</samp></div>");
-                                p.find(".jsPanel-btn-max").trigger("click");
-                                t__cm___init(t.find("textarea"), J, [null, parseInt(t.css("height"))], n);
-                                p.animate({
+                                var I = r.find(".jsPanel-content");
+                                var m = I.find(".ui_form_end_buttons tr td span:first-child input"),
+                                    H = I.find(".ui_form_end_buttons tr td span:nth-child(2) input");
+                                I.find(".ui_form_end_buttons").remove();
+                                r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
+                                var G = I.find("form").attr("data-encoding");
+                                G = (G ? G : "UTF-8");
+                                var q = new String(),
+                                    s = {
+                                        "UTF-8": "utf-8, Unicode",
+                                        "ISO-8859-1": "iso-8859-1 (cp1252), Latin Alphabet-1",
+                                        "windows-1252": "cp1252 (iso-8859-1), Windows Latin-1",
+                                        "windows-1250": "cp1250, Windows Eastern European",
+                                        "windows-1251": "cp1251, Windows Cyrillic",
+                                        "windows-1253": "cp1253, Windows Greek",
+                                        "windows-1254": "cp1254, Windows Turkish",
+                                        "windows-1255": "cp1255, Windows Hebrew",
+                                        "windows-1256": "cp1256, Windows Arabic",
+                                        "ISO-8859-2": "iso-8859-2, Latin Alphabet-2",
+                                        "ISO-8859-7": "iso-8859-7, Latin/Greek Alphabet",
+                                        "ISO-8859-9": "iso-8859-9, Latin Alphabet-5",
+                                        "ISO-8859-15": "iso-8859-15, Latin Alphabet-9",
+                                        "US-ASCII": "ascii",
+                                        "x-IBM874": "cp874, IBM Thai",
+                                        IBM866: "cp866, MS-DOS Russian",
+                                        "KOI8-R": "koi8-r, Russian",
+                                        "KOI8-U": "koi8-u, Ukrainian",
+                                        "EUC-KR": "EUC encoding, Korean",
+                                        "EUC-JP": "EUC encoding, Japanese",
+                                        Shift_JIS: "Shift-JIS, Japanese"
+                                    };
+                                $.each(s, function(x, P) {
+                                    q += '<option value="' + x + '"' + (((G.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + "> " + P + "  </option>"
+                                });
+                                r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + G + '"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon"> <select data-encoding dir="rtl">' + q + "</select> </label></div>");
+                                var M = r.find("select[data-encoding]"),
+                                    p = M.val();
+                                p == Object.keys(s)[2] && M.val(Object.keys(s)[1]);
+                                r.find(".jsPanel-btn-max").trigger("click");
+                                t__cm___init(I.find("textarea"), N, [null, parseInt(I.css("height"))], n);
+                                r.animate({
                                     opacity: 1
                                 }, 400, function() {
                                     window["__cm_editor_" + n].focus()
                                 });
-                                q.on("jspanelbeforeclose", function(x, M) {
-                                    var L = $("#" + M)
+                                t.on("jspanelbeforeclose", function(x, Q) {
+                                    var P = $("#" + Q)
                                 });
-                                p.find("._filemanager_file_editor_save").click(function(x) {
+                                r.find("._filemanager_file_editor_save").click(function(x) {
                                     $(this).find("i").replaceWith(t__lo__btn_md());
                                     $(this).removeClass("text-danger");
-                                    p.find('form[action="save_file.cgi"]').submit()
+                                    r.find('form[action="save_file.cgi"]').submit()
                                 });
 
-                                function K() {
-                                    var x = p.find("._filemanager_file_editor_save");
+                                function O() {
+                                    var x = r.find("._filemanager_file_editor_save");
                                     x.find(".cspinner").remove();
                                     x.find("i").remove();
                                     x.prepend('<i class="fa fa-fw fa-floppy-o"></i>')
                                 }
-                                p.find('form[action="save_file.cgi"]').submit(function(N) {
-                                    N.preventDefault();
-                                    N.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", J) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
-                                    var M = 'form[action="save_file.cgi"]',
-                                        L = p.find("" + M + "").attr("data-encoding"),
-                                        x = p.find("" + M + ' input:not([name="path"]), ' + M + " textarea").serialize();
+                                r.find('form[action="save_file.cgi"]').submit(function(S) {
+                                    S.preventDefault();
+                                    S.stopPropagation();
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", N) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
+                                    var R = 'form[action="save_file.cgi"]',
+                                        Q = "select[data-encoding]",
+                                        P = r.find(Q).val(),
+                                        x = r.find("" + R + ' input:not([name="path"]), ' + R + " textarea").serialize();
                                     x = x + "&path=" + $("#path").val();
-                                    if (L) {
-                                        x = x + "&encoding=" + L
+                                    if (P) {
+                                        x = x + "&encoding=" + P
                                     }
                                     $.ajax({
                                         type: "POST",
                                         url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
                                         data: x,
                                         dataType: "text",
-                                        success: function(O) {
-                                            var P = p.find("._filemanager_file_editor_save .cspinner");
-                                            if (!$(O).find("textarea#data").length) {
-                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(O).find(".panel-body").html(), 10, "error", "savingFileError");
-                                                if (P.parent(".btn").index() === 1) {
+                                        success: function(T) {
+                                            var U = r.find("._filemanager_file_editor_save .cspinner");
+                                            if (!$(T).find("textarea#data").length) {
+                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(T).find(".panel-body").html(), 10, "error", "savingFileError");
+                                                if (U.parent(".btn").index() === 1) {
                                                     modal_dismiss()
                                                 }
-                                                K();
+                                                O();
                                                 return
                                             }
-                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", J), 1.5, "success", "savingFileDone");
-                                            K()
+                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", N), 1.5, "success", "savingFileDone");
+                                            O()
                                         },
-                                        error: function(O) {}
+                                        error: function(T) {}
                                     })
                                 })
                             }

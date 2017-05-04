@@ -231,8 +231,7 @@ function __si__bg_upd_exec() {
                                     type: o,
                                     link: $_____link_full + "/csf"
                                 }));
-                                localStorage.setItem($hostname + "-allowed_trigger_" + (G + y.replace(/\./g, "0")) + "_csf_deny", 1);
-                                f__g_notifications(H, A, o)
+                                localStorage.setItem($hostname + "-allowed_trigger_" + (G + y.replace(/\./g, "0")) + "_csf_deny", 1)
                             }
                         })
                     }

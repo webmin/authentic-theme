@@ -617,6 +617,10 @@ html[data-background-style='nightRider'] .file-manager .jsPanel-content.jsPanel-
     outline: 1px solid #2a2c2e
 }
 
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr>.jsPanel-hdr-r {
+    top: 2px
+}
+
 html[data-background-style='nightRider'] .pagination>.active>a,
 html[data-background-style='nightRider'] .pagination>.active>span,
 html[data-background-style='nightRider'] .pagination>.active>a:hover,

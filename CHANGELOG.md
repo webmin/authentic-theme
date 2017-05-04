@@ -1,8 +1,8 @@
 ## Changelog
 
-#### Version 18.47-patch10 (May 3, 2017)
+#### Version 18.47-patch11 (May 4, 2017)
 * Added no animations for page transitions, resulting in overall speed increase
-* Added support for preserving encoding for edited files in File Manager [webmin/webmin#543](https://github.com/webmin/webmin/pull/543)
+* Added support for choosing/preserving encoding for edited files in File Manager [#52020](https://virtualmin.com/comment/775888#comment-775888)
 * Added ability to force update the theme from settings [#741](https://github.com/qooob/authentic-theme/issues/741)
 * Added bigger checkboxes for tables [#743](https://github.com/qooob/authentic-theme/issues/743)
 * Added alternative method for calling context menu in File Manager [#739](https://github.com/qooob/authentic-theme/issues/739)
