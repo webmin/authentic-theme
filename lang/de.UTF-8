@@ -16,7 +16,7 @@ body_kernelon=$1 $2 on $3
 body_load=$1 (1 Min) $2 (5 Min) $3 (15 Min)
 body_os=Betriebssystem
 body_procs=Laufende Prozesse
-body_real=Hardwarespeicher
+body_real=Tatsächlicher Speicher
 body_time=Systemzeit
 body_updates=Paket-Updates
 body_updays=$1 Tage, $2 Stunden, $3 Minuten
@@ -25,10 +25,10 @@ body_upmins=$1 Minuten
 body_upneed=$1 verfügbare Updates
 body_upneed1=$1 Paket Update ist verfügbar
 body_upok=Alle installierten Pakete sind auf dem aktuellesten Stand
-body_upsec=$1 verfügbare Updates, davon sind $2 Sicherheits-Updates
-body_upsec1=$1 Paket Updates verfügbar, avon sind $2 Sicherheits-Updates
-body_upsec2=$1 Paket Updates verfügbar, avon sind $2 Sicherheits-Updates
-body_upsec3=$1 Paket Updates verfügbar, avon sind $2 Sicherheits-Updates
+body_upsec=$1 verfügbare Updates, davon $2 Sicherheits-Updates
+body_upsec1=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
+body_upsec2=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
+body_upsec3=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
 body_uptime=System-Betriebszeit
 body_used=$1 gesamt / $2 genutzt
 body_used_and_free=$1 gesamt / $2 freien / $3 genutzt
@@ -46,7 +46,7 @@ left_search=Suche
 left_statistics=Systemstatistik
 
 login_danger=Gefahr!
-login_message=Bitte Nutzernamen und Passwort eingeben für die Anmeldung am Server
+login_message=Bitte mit Nutzernamen und Passwort anmelden.
 login_pass=Passwort
 login_reset=Abbrechen
 login_save=Angemeldet bleiben
@@ -83,7 +83,7 @@ right_vm2=Cloudmin Version
 
 session_failed=Die Anmeldung ist fehlgeschlagen. Bitte versuchen sie es erneut.
 session_logout=Erfolgreich abgemeldet. Für eine erneute Anmeldung bitte das folgende Formular nutzen.
-session_timed_out=Sitzung ist nach $1 Minuten aufgrund Inaktivität abgelaufen.
+session_timed_out=Sitzung wurde nach $1 Minuten Inaktivität abgebrochen.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
 
 
@@ -576,40 +576,40 @@ theme_error_access_not_root=Access denied: User needs access to the <em>Webmin C
 
 
 #18.20
-settings_hide_top_loader=Hide top progress bar and its loader
+settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 
 
 #18.30
-settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
-settings_font_family=Font family
-settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your local computer in order to work. By using local fonts, the default one is not loaded, which will result in faster theme load
-theme_xhred_global_shipped=Shipped
-theme_xhred_global_available=Available
-theme_xhred_global_not_available=Not available
+settings_leftmenu_vm_cm_dropdown_icons=Zeige Symbole in Virtualmin/Cloudmin Dropdown Liste
+settings_font_family=Schriftart
+settings_font_family_description=Von den angezeigten Schriftenn wird nur <em>Roboto</em> mit dem Thema installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal auf deinem Computer installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt.
+theme_xhred_global_shipped=Verschickt
+theme_xhred_global_available=Vorhanden
+theme_xhred_global_not_available=Nicht vorhanden
 theme_xhred_global_default=Default
 theme_xhred_global_system_default=System default
 theme_xhred_global_local_system_default=Local system default
-theme_xhred_global_stats=Stats
-theme_xhred_global_notifications=Notifications
-theme_xhred_global_favorites=Favorites
-theme_xhred_global_cpu_load=CPU load
-theme_xhred_notification_none=No notifications
-theme_xhred_notification_no_data=No collected data
-theme_xhred_notification_no_favorites=No favorites data
-theme_xhred_global_theme_version=Theme version
+theme_xhred_global_stats=Statistik
+theme_xhred_global_notifications=Benachrichtigungen
+theme_xhred_global_favorites=Favoriten
+theme_xhred_global_cpu_load=CPU Auslastung
+theme_xhred_notification_none=Keine Benachrichtigungen vorhanden
+theme_xhred_notification_no_data=Keine Daten vorhanden
+theme_xhred_notification_no_favorites=Keine Favoriten vorhanden
+theme_xhred_global_theme_version=Theme Version
 
-settings_side_slider_sysinfo_enabled=Show dashboard tab
-settings_side_slider_notifications_enabled=Show notifications tab
-settings_side_slider_favorites_enabled=Show favorites tab
-settings_side_slider_tabs_hotkeys=Enable hotkeys for switching tabs
+settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
+settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
+settings_side_slider_favorites_enabled=Zeige Tab Favoriten
+settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
 settings_side_slider_tabs_hotkeys_description=You can use keyboard hotkeys to toggle tabs back and forth using <code>Meta+⇧+Tab/Meta+Tab</code> in case global option for hotkeys usage is enabled
-settings_show_terminal_link=Show terminal button
+settings_show_terminal_link=Zeige Terminal Knopf
 
-theme_xhred_sysinfo_system_monitors=System Monitors
-theme_xhred_sysinfo_server_status=Servers Status
-theme_xhred_sysinfo_software_versions=Software Versions
-theme_xhred_sysinfo_recent_logins=Recent Logins
-theme_xhred_sysinfo_vm_package_updates=Virtualmin Package Updates
+theme_xhred_sysinfo_system_monitors=System Monitor
+theme_xhred_sysinfo_server_status=Server Status
+theme_xhred_sysinfo_software_versions=Software Versionen
+theme_xhred_sysinfo_recent_logins=Letzte Anmeldungen
+theme_xhred_sysinfo_vm_package_updates=Virtualmin Paket Updates
 theme_xhred_sysinfo_disk_quotas=Disk Quotas
 theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
 
@@ -627,76 +627,76 @@ theme_xhred_filemanager_changing_secontext=Changing security context to <strong>
 theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
 theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
 
-theme_xhred_global_no_results_found=No results found
+theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
 
 
 #18.40
-theme_new_password_header=Set new password for user
-login_reset=Password recovery
+theme_new_password_header=Setze neues Benutzer Passwort
+login_reset=Passwort wiederherstellen
 theme_xhred_move_top=Move to top
 theme_xhred_move_bottom=Move to bottom
 theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_button_tooltip=Show tooltip on buttons
-settings_show_night_mode_link=Show palette toggle
-settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
-settings_title=Theme Configuration
-settings_subtitle=For user
+settings_button_tooltip=Zeige Tooltips auf Knöpfen
+settings_show_night_mode_link=Zeige Umschaltung Farbpalette
+settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Fabrpalette
+settings_title=Theme Konfiguration
+settings_subtitle=Für Benutzer
 
-theme_tooltip_night_mode=Day/night mode toggle
+theme_tooltip_night_mode=Tag/Nacht Modus umschalten
 theme_tooltip_terminal_link=Terminal
-theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
-theme_tooltip_logout=Sign out
-theme_tooltip_edit_user=Edit user
+theme_tooltip_language_link=Sprache
+theme_tooltip_switch_user=Benutzer wechseln
+theme_tooltip_logout=Abmelden
+theme_tooltip_edit_user=Benutzer bearbeiten
 
 
 #18.45
-settings_sysinfo_easypie_charts_size=Diameter of charts
-theme_xhred_global_choose=Choose
-theme_xhred_global_select=Select
+settings_sysinfo_easypie_charts_size=Durchmesser der Diagramme
+theme_xhred_global_choose=Auswählen
+theme_xhred_global_select=Auswählen
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including patched versions
-settings_sysinfo_theme_patched_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
-theme_git_patch_available=Latest available patch
-theme_git_patch_no_git_message=In order to install latest patches directly from GitHub you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme update has been initiated.
-theme_xhred_global_prev_page=Go back one page
-theme_xhred_global_help=Help
-settings_right_soft_updates_page_options_title=Software updates
-theme_xhred_git_compare_changes=Compare changes
-theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
+settings_sysinfo_theme_patched_updates=Inklusive gepatcher Versionen
+settings_sysinfo_theme_patched_updates_description=Damit dies funktioniert, muss das <code>git</code> Programm installiert sein.
+theme_git_patch_available=Aktuell verfügbarer Patch
+theme_git_patch_no_git_message=Damit die neueste Patch von Github installiert werden können, muss das <code>git</code> Programm installiert sein.
+theme_git_patch_update_success_message=Theme Update für Webmin was successful. war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
+theme_git_patch_update_success_message2=Theme Update für Webmin and Usermin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
+theme_xhred_git_patch_update=Theme Update fehlgeschlagen. Versuche es bitte selbst auf der Kommandozeile auszuführen.
+theme_xhred_git_patch_initiated=Theme Update wurde angestoßen.
+theme_xhred_global_prev_page=Eine Seite zurück
+theme_xhred_global_help=Hilfe
+settings_right_soft_updates_page_options_title=Software Updates
+theme_xhred_git_compare_changes=Vergleiche Änderungen
+theme_xhred_filemanager_link_to_clipboard=Name des symbolischen Links `<strong><em>%value</em></strong>` wurde in die Zwischenablage kopiert.
 
 
 
 #18.46
-theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
-theme_left_mail_account_functions=Account Functions
-theme_xhred_global_dir_up=Go to previous directory (Backspace)
-theme_xhred_global_module_config=Module config
-theme_xhred_global_return=Return
-theme_xhred_global_return_to_module_index=Return to module index
+theme_left_mail_prefs=Mail Einstellungen
+theme_left_mail_change_password=Ändere Passwort
+theme_left_mail_account_functions=Konto Funktionen
+theme_xhred_global_dir_up=Zurück zum vroherigen Verzeichnis (Backspace)
+theme_xhred_global_module_config=Module Konfiguration
+theme_xhred_global_return=Zurück
+theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
 
 
 #18.47
-settings_account_info_link_mini=Show account information link as button
-theme_xhred_global_complete_changelog=Complete changelog
-theme_xhred_global_beta_version=Beta version
+settings_account_info_link_mini=Zeige Link Konto Informationen als Knopf
+theme_xhred_global_complete_changelog=Zeige Änderungspprotokoll
+theme_xhred_global_beta_version=Beta Version
 theme_xhred_global_release=Release
-theme_xhred_global_released_on=Released on
-theme_xhred_global_committed_on=Committed on
+theme_xhred_global_released_on=Veröffentlicht am
+theme_xhred_global_committed_on=Hinzugefügt am
 theme_xhred_global_resolved_issues=Resolved issues in %value releases
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_force_upgrade_beta=Install latest development version (beta)
-theme_force_upgrade_stable=Install latest release version (stable)
-theme_xhred_source_encoding=Source encoding
-theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
+theme_force_upgrade=Erzwinge Theme Update
+theme_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
+theme_force_upgrade_stable=Installiere aktuelle Release Version (stable)
+theme_xhred_source_encoding=Quellen Codierung
+theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Theme Updates.
