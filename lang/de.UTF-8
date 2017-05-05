@@ -700,3 +700,5 @@ theme_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
 theme_force_upgrade_stable=Installiere aktuelle Release Version (stable)
 theme_xhred_source_encoding=Quellen Codierung
 theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Theme Updates.
+theme_xhred_encoding_manually_set=Ändere Codierung händisch
+theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Codierung geändert werden kann.
