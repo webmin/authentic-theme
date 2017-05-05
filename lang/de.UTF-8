@@ -151,70 +151,70 @@ settings_right_reload_description=When switching tabs, right frame content page 
 
 settings_right_hide_table_icons=Zeige Tabellen Icons im rechten Fenster nicht an
 settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Schmale Tabellen Icons
+settings_right_small_table_icons=Kleine Tabellen Symbole
 settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
+settings_right_grayscaled_table_icons=Zeige farbige Tabellen Symbole nur bei Eingabe
 
-settings_right_iconize_header_links=Replace table header's links with icons
+settings_right_iconize_header_links=Ersetzte Links im Tabellenkopf durch Symbole
 settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
 
-settings_window_autoscroll=Automatic window scroll
+settings_window_autoscroll=Bewege Fenster automatisch
 settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=Verstecke Eintrag<kbd>Module aktualisieren</kbd>
+settings_leftmenu_section_hide_unused_modules=Verstecke Eintrag<kbd>Nicht benutzte Module</kbd>
+settings_favorites=Zeige Knopf für Favoriten
+settings_leftmenu_button_language=Zeige Knopf für Sprachen
+settings_leftmenu_button_refresh=Zeige Knopf für Neu Laden
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=Zeige Knopf Theme Einstellungen
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_hotkeys_active=Schalte Schnellzugriffs Tasten ein
+settings_hotkey_toggle_modifier=Schnellzugriffs Taste
+settings_hotkey_toggle_key_webmin=Schnellzugriffs Taste für Webmin
+settings_hotkey_toggle_key_virtualmin=Schnellzugriffs Taste für Virtualmin
+settings_hotkey_toggle_key_cloudmin=Schnellzugriffs Taste für Cloudmin
+settings_hotkey_toggle_key_usermin=Schnellzugriffs Taste für Usermin
+settings_hotkey_toggle_key_webmail=Schnellzugriffs Taste für Mail
+settings_hotkey_sysinfo=Schnellzugriffs Taste für Dashboard
+settings_hotkey_shell=Schnellzugriffs Taste für Terminal
+settings_hotkey_favorites=Schnellzugriffs Taste für Favoriten
+settings_hotkey_focus_search=Schnellzugriffs Taste für Suchfeld
+settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
 settings_side_slider_background_refresh_time=Timeout for background information update
 settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
+settings_sysinfo_easypie_charts=Zeige Diagramm 
+settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Theme
+settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
+settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show dashboard link as button
-settings_leftmenu_singlelink_icons=Show icons for single links on navigation menu
+settings_sysinfo_link_mini=Zeige Link zum Dashboard als Knopf
+settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menu als Symbol
 
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
+settings_right_page_defaults_title=Standard Titel
+settings_right_default_tab_webmin=Standard Tab nach Anmelden in Webmin
+settings_right_default_tab_usermin=Standard Tab nach Anmelden in Usermin
+settings_right_virtualmin_default=Standard Tab für Virtualmin
+settings_right_cloudmin_default=Standard Tab für Cloudmin
 
-settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
-settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
-settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+settings_leftmenu_vm_installscripts=Zeige Link <kbd>Installations Scripte</kbd> in Virtualmin
+settings_leftmenu_vm_webpages=Zeige Link <kbd>Bearbeite Web Seiten</kbd> in Virtualmin
+settings_leftmenu_vm_backup_amazon=Zeige Link <kbd>Amazon S3 Buckets</kbd> in Virtualmin
 
-settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Side slider options
-settings_side_slider_fixed=Keep slider always visible
-settings_side_slider_palette=Slider palette
-settings_hotkey_toggle_slider=Hotkey for slider
+settings_right_clear_local_cache=Lösche Zwischenspeicher
+settings_right_notification_slider_options_title=Optionen für seitlichen Schieber
+settings_side_slider_fixed=Zeige Schieber immer an
+settings_side_slider_palette=Farbpalette für Schieber
+settings_hotkey_toggle_slider=Schnellzugriffs Taste für Schieber
 settings_window_replace_timestamps=Enable dates substitutions
-settings_window_replaced_timestamp_format_short=Short date/time format
-settings_window_replaced_timestamp_format_full=Full date/time format
+settings_window_replaced_timestamp_format_short=Kurzes Datums Format
+settings_window_replaced_timestamp_format_full=Langes Datums Format
 settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
-settings_side_slider_enabled=Enable slider
-settings_leftmenu_user_html=Show HTML snippet
+settings_side_slider_enabled=Schalte Schieber ein
+settings_leftmenu_user_html=Zeige HTML Schnipsel
 settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
@@ -231,20 +231,20 @@ theme_version=Theme-Version
 
 
 # Version 17.40
-theme_global_error=Error
-theme_global_warning=Warning
-theme_global_success=Success
+theme_global_error=Fehler
+theme_global_warning=Warnung
+theme_global_success=Erfolgreich
 theme_global_info=Information
 sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
 settings_leftmenu_section_hide_vm_and_cm_links=Hide supported modules' links from navigation menu
 settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
-theme_sysinfo_wmdocs=Webmin documentation
-theme_sysinfo_vmdocs=Virtualmin documentation
-theme_sysinfo_cmdocs=Cloudmin documentation
+theme_sysinfo_wmdocs=Webmin Dockmentation
+theme_sysinfo_vmdocs=Virtualmin Dockmentation
+theme_sysinfo_cmdocs=Cloudmin Dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
-theme_fileformat_plain_text=Plain Text
+theme_fileformat_plain_text=Nur Text
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
@@ -254,7 +254,7 @@ theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Please wait...
+theme_xhred_global_please_wait=Bitte warten...
 theme_xhred_filemanager_copying_selected=Copying selected.
 theme_xhred_filemanager_cutting_selected=Cutting selected.
 theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
@@ -293,51 +293,51 @@ theme_xhred_filemanager_successful_compression=Compression has successfully fini
 theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
 theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
 
-theme_xhred_notifications_packages_updates=Packages Update
+theme_xhred_notifications_packages_updates=Packet Update
 theme_xhred_notifications_theme_update=Theme Update
 theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
 theme_xhred_notifications_firewall_update=Firewall Update
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
 
-theme_xhred_notifications_firewall_danger=Firewall Danger
+theme_xhred_notifications_firewall_danger=Firewall Gefahr
 theme_xhred_notifications_firewall_danger_message=It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don't leave your server exposed, check for the firewall settings (%v)
 
-theme_xhred_notifications_firewall_warning=Firewall Warning
+theme_xhred_notifications_firewall_warning=Firewall Warnung
 
 #17.50
-settings_force_default_tab=Force default tab for Webmin
+settings_force_default_tab=Erzwinge Standard Tab für Webmin
 settings_force_default_tab_description=This feature will force default tab on window reload as well. Warning! It will not be possible to choose for desired tab using URL, as any location query will be ignored.
 
-settings_grayscale_level_navigation=Grayscale filter
+settings_grayscale_level_navigation=Graustufen Filter
 settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
-settings_sepia_level_navigation=Sepia filter
+settings_sepia_level_navigation=Sepia Filter
 settings_sepia_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Saturate filter
+settings_saturate_level_navigation=Sättigungs Filter
 settings_saturate_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
-settings_hue_level_navigation=Hue-rotate filter
+settings_hue_level_navigation=Hue-rotate Filter
 settings_hue_level_navigation_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
-settings_invert_level_navigation=Invert filter
+settings_invert_level_navigation=Filter umkehren
 settings_invert_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
-settings_brightness_level_navigation=Brightness filter
+settings_brightness_level_navigation=Helligkeits filter
 settings_brightness_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
-settings_contrast_level_navigation=Contrast filter
+settings_contrast_level_navigation=Kontrast Filter
 settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_grayscale_level_content=Grayscale filter
+settings_grayscale_level_content=Graustufen Filter
 settings_grayscale_level_content_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
-settings_saturate_level_content=Saturate filter
+settings_saturate_level_content=Sättigungs Filter
 settings_saturate_level_content_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
-settings_hue_level_content=Hue-rotate filter
+settings_hue_level_content=Hue-rotate Filter
 settings_hue_level_content_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
 
-settings_cm_view_palette=Viewer color palette
-settings_cm_editor_palette=Editor color palette
+settings_cm_view_palette=Farbpaletten angzeigen
+settings_cm_editor_palette=Farbpaletten Editor
 
-theme_xhred_filemanager_context_select_all=Select All
-theme_xhred_filemanager_context_select_invert=Invert Selection
-theme_xhred_filemanager_context_refresh=Refresh
-theme_xhred_filemanager_context_newfile=Create new file
-theme_xhred_filemanager_context_newfoder=Create new directory
+theme_xhred_filemanager_context_select_all=Allen Auswählen
+theme_xhred_filemanager_context_select_invert=Auswahl umkehren
+theme_xhred_filemanager_context_refresh=Neu Laden
+theme_xhred_filemanager_context_newfile=Neue Datei anlegen
+theme_xhred_filemanager_context_newfoder=Neues Verzeichnis angelegen
 theme_xhred_filemanager_context_copy=Copy
 theme_xhred_filemanager_context_cut=Cut
 theme_xhred_filemanager_context_paste=Paste
