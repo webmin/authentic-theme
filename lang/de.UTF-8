@@ -23,12 +23,12 @@ body_updays=$1 Tage, $2 Stunden, $3 Minuten
 body_uphours=$1 Stunden, $2 Minuten
 body_upmins=$1 Minuten
 body_upneed=$1 verfügbare Updates
-body_upneed1=$1 package update is available
+body_upneed1=$1 Paket Update ist verfügbar
 body_upok=Alle installierten Pakete sind auf dem aktuellesten Stand
 body_upsec=$1 verfügbare Updates, davon sind $2 Sicherheits-Updates
-body_upsec1=$1 package updates are available, of which $2 is security update
-body_upsec2=$1 package update is available, of which $2 are security updates
-body_upsec3=$1 package update is available, of which $2 is security update
+body_upsec1=$1 Paket Updates verfügbar, avon sind $2 Sicherheits-Updates
+body_upsec2=$1 Paket Updates verfügbar, avon sind $2 Sicherheits-Updates
+body_upsec3=$1 Paket Updates verfügbar, avon sind $2 Sicherheits-Updates
 body_uptime=System-Betriebszeit
 body_used=$1 gesamt / $2 genutzt
 body_used_and_free=$1 gesamt / $2 freien / $3 genutzt
@@ -36,8 +36,8 @@ body_usermin=Usermin-Version
 body_virt=Virtueller Speicher
 body_webmin=Webmin-Version
 
-left_favorites=Favorites
-left_favorites_no=There were no favorites added yet...
+left_favorites=Favoriten
+left_favorites_no=Keine Favoriten zum hinzufügen...
 left_feedback=Feedback senden
 left_home=System Information
 left_others=Sonstiges
@@ -49,15 +49,15 @@ login_danger=Gefahr!
 login_message=Bitte Nutzernamen und Passwort eingeben für die Anmeldung am Server
 login_pass=Passwort
 login_reset=Abbrechen
-login_save=An mich erinnern
+login_save=Angemeldet bleiben
 login_signin=Anmelden
 login_success=Erfolgreich!
 login_token=Token
 login_user=Nutzername
 login_warning=Warnung!
 
-right_aliases=Aliase Server
-right_bw=Bandbreitenbenutzung und Limits
+right_aliases=Server Aliase
+right_bw=Bandbreitennutzung und Limits
 right_dom=Ihr Servername
 right_faliases=Mail Aliase
 right_fdbs=Datenbanken
@@ -71,17 +71,17 @@ right_licenceheader_vm2=Cloudmin Lizenz
 right_login=Angemeldet als
 right_not=Nicht installiert
 right_of=$1 von insgesamt $2
-right_quota=Festplattenbenutzung und Limits
+right_quota=Festplattennutzung und Limits
 right_reselip=(Wiederverkäufer $1)
 right_sharedip=(Gemeinsame IP)
-right_slcheck=Überprüfen Sie Cloudmin Lizenz
+right_slcheck=Überprüfen Sie die Cloudmin Lizenz
 right_subs=Untergeordnete Server
 right_virtdocs2=Zusätzliche Dokumentation
 right_virtualmin=Virtualmin Version
 right_vlcheck=Überprüfen Sie Virtualmin Lizenz
 right_vm2=Cloudmin Version
 
-session_failed=Anmeldung fehlgeschlagen. Bitte erneut probieren.
+session_failed=Die Anmeldung ist fehlgeschlagen. Bitte versuchen sie es erneut.
 session_logout=Erfolgreich abgemeldet. Für eine erneute Anmeldung bitte das folgende Formular nutzen.
 session_timed_out=Sitzung ist nach $1 Minuten aufgrund Inaktivität abgelaufen.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
@@ -95,39 +95,39 @@ session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=Optionen
+settings_right_restore_defaults=Auf Grundeinstellung zurücksetzen
+settings_right_restored=Zurückgesetzt
+settings_right_restoring=Zurücksetzen
+settings_right_saved=Gespeichert
+settings_right_saving=Speichern
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
+settings_right_theme_extensions=Themen Erweiterungen
+settings_right_theme_extensions_title=Themen Erweiterungen
+settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
 
-settings_right_theme_logos=Theme logos
+settings_right_theme_logos=Theme 
 settings_right_theme_logos_title=Theme Logos
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
+settings_right_logo_unauthenticated_users=Logo für nicht angemeldete Benutzer
 
-settings_right_current_theme=Current theme
+settings_right_current_theme=Aktuelles Theme
 settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Authentic Theme Configuration
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+settings_right_theme_left_configuration_title=Authentic Theme Konfiguration
+settings_right_theme_left_extensions_title=Authentic Theme Erweiterungs Editor
+settings_right_theme_left_logo_title=Authentic Theme Logo Einstellungen
+settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Theme
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
+settings_right_window_options_title=Optionen für Fenster
+settings_right_navigation_menu_title=Optionen für Navigations Menu
+settings_right_table_options_title=Optionen für Tabellen
+settings_security_title=Optionen für Sicherheits Hinweise
 settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_hotkey_options_title=Optionen für Schnellzugriffs Tasten
+settings_right_sysinfo_page_options_title=Optionen für System Informationen
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
 settings_hotkey_custom_1=Custom link <code>1</code>
@@ -140,18 +140,18 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
-settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
-settings_loader_top=Enable page progress loader on top of the screen
-settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default content page
+settings_navigation_color=Farbpalette für Navigations Menu
+settings_background_color=Farbpalette für Inhalts Seite
+settings_animation_left=Anminationen im Navigations Menu einschalten
+settings_animation_tabs=Anminationen in den Tabs einschalten
+settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
+settings_loader_left=Drehende Anzeige im Navigations Menu einschalten
+settings_right_reload=Lade Standad Inhalts Seite
 settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
-settings_right_hide_table_icons=Hide table icons for the right frame
+settings_right_hide_table_icons=Zeige Tabellen Icons im rechten Fenster nicht an
 settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
+settings_right_small_table_icons=Schmale Tabellen Icons
 settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
