@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 18.47-patch12 (May 5, 2017)
+#### Version 18.47-patch13 (May 5, 2017)
 * Added no animations for page transitions, resulting in overall speed increase
 * Added support for choosing/preserving encoding for edited files in File Manager [#52020](https://virtualmin.com/comment/775888#comment-775888)
 * Added ability to force update the theme from settings [#741](https://github.com/qooob/authentic-theme/issues/741)

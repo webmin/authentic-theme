@@ -699,3 +699,5 @@ theme_force_upgrade_beta=Install latest development version (beta)
 theme_force_upgrade_stable=Install latest release version (stable)
 theme_xhred_source_encoding=Source encoding
 theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
+theme_xhred_encoding_manually_set=Manually set encoding
+theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.

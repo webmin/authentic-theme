@@ -1953,3 +1953,7 @@ html[data-background-style='nightRider'] font[color="#00c000"],
 html[data-background-style='nightRider'] font[color="#00ff00"] {
     color: #269373 !important
 }
+
+html[data-background-style='nightRider'] .text-lighter {
+    color: #6e727b
+}
