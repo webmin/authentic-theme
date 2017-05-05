@@ -4133,7 +4133,7 @@ body.syslog .CodeMirror {
 .CodeMirror-line::selection,
 .CodeMirror-line>span::selection,
 .CodeMirror-line>span>span::selection {
-    background: #2f2d3e !important
+    background: #494662 !important
 }
 
 .CodeMirror-crosshair {
@@ -4143,7 +4143,7 @@ body.syslog .CodeMirror {
 .CodeMirror-line::-moz-selection,
 .CodeMirror-line>span::-moz-selection,
 .CodeMirror-line>span>span::-moz-selection {
-    background: #2f2d3e !important
+    background: #494662 !important
 }
 
 .CodeMirror-line>span,
@@ -4153,7 +4153,7 @@ body.syslog .CodeMirror {
 
 .CodeMirror-line>span::selection,
 .CodeMirror-line>span::-moz-selection {
-    background: #2f2d3e !important
+    background: #494662 !important
 }
 
 .sub_table_container pre,

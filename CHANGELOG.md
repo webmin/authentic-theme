@@ -1,12 +1,12 @@
 ## Changelog
 
-#### Version 18.47-patch11 (May 4, 2017)
+#### Version 18.47-patch12 (May 5, 2017)
 * Added no animations for page transitions, resulting in overall speed increase
 * Added support for choosing/preserving encoding for edited files in File Manager [#52020](https://virtualmin.com/comment/775888#comment-775888)
 * Added ability to force update the theme from settings [#741](https://github.com/qooob/authentic-theme/issues/741)
 * Added bigger checkboxes for tables [#743](https://github.com/qooob/authentic-theme/issues/743)
 * Added alternative method for calling context menu in File Manager [#739](https://github.com/qooob/authentic-theme/issues/739)
-* Fixed bugs [#736](https://github.com/qooob/authentic-theme/issues/736) [#737](https://github.com/qooob/authentic-theme/issues/737) [#738](https://github.com/qooob/authentic-theme/issues/738) [#742](https://github.com/qooob/authentic-theme/issues/742) [#745](https://github.com/qooob/authentic-theme/issues/745)
+* Fixed bugs [#736](https://github.com/qooob/authentic-theme/issues/736) [#737](https://github.com/qooob/authentic-theme/issues/737) [#738](https://github.com/qooob/authentic-theme/issues/738) [#742](https://github.com/qooob/authentic-theme/issues/742) [#745](https://github.com/qooob/authentic-theme/issues/745) [#751](https://github.com/qooob/authentic-theme/issues/751)
 
 #### Version 18.47 (April 29, 2017)
 * Added desktop notifications [#734](https://github.com/qooob/authentic-theme/issues/734)

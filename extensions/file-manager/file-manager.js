@@ -2199,8 +2199,8 @@ function ___f__tw() {
         }
     });
     $("body").on("keydown", function(d) {
-        var k = d.keyCode ? d.keyCode : d.which;
-        if ($("#__f__c__m").is(":visible") && k == 27) {
+        var u = d.keyCode ? d.keyCode : d.which;
+        if ($("#__f__c__m").is(":visible") && u == 27) {
             $("#__f__c__m").css("display", "none");
             return
         } else {
@@ -2212,7 +2212,7 @@ function ___f__tw() {
             return
         }
         if (!$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
-            if (k == 32 && d.ctrlKey) {
+            if (u == 32 && d.ctrlKey) {
                 d.preventDefault();
                 d.stopPropagation();
                 if (!d.shiftKey) {
@@ -2221,22 +2221,22 @@ function ___f__tw() {
                     $(".nav.nav-tabs").find("li.active").find("a").find("i").trigger("click")
                 }
             }
-            if ((k == 37 || k == 39) && d.ctrlKey) {
+            if ((u == 37 || u == 39) && d.ctrlKey) {
                 d.preventDefault();
                 d.stopPropagation();
-                if (k == 37) {
+                if (u == 37) {
                     $(".nav.nav-tabs").find("li.active").prev("li").find("a").trigger("click")
                 } else {
                     $(".nav.nav-tabs").find("li.active").next("li").find("a").trigger("click")
                 }
                 return
             }
-            if ((k == 49 || k == 50 || k == 51 || k == 52 || k == 53 || k == 54 || k == 55 || k == 56 || k == 57) && d.ctrlKey) {
-                var y = (k - 48);
+            if ((u == 49 || u == 50 || u == 51 || u == 52 || u == 53 || u == 54 || u == 55 || u == 56 || u == 57) && d.ctrlKey) {
+                var z = (u - 48);
                 d.preventDefault();
                 d.stopPropagation();
                 $.each($(".nav.nav-tabs").find("li"), function(n, m) {
-                    if ((n + 1) == y) {
+                    if ((n + 1) == z) {
                         $(this).find("a").trigger("click");
                         return
                     }
@@ -2244,24 +2244,24 @@ function ___f__tw() {
                 return
             }
         }
-        if ((k == 120 || k == 121) && !d.ctrlKey && !d.shiftKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
-            if (k == 120) {
+        if ((u == 120 || u == 121) && !d.ctrlKey && !d.shiftKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
+            if (u == 120) {
                 $('a[onclick="downFromUrlDialog()"]').trigger("click");
                 return
             }
-            if (k == 121) {
+            if (u == 121) {
                 $('a[onclick="viewReadyForUpload()"]').trigger("click");
                 return
             }
         }
-        if (!$("input.popover-path-input").is(":focus") && String.fromCharCode(k).toLowerCase() == "l" && d.ctrlKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
+        if (!$("input.popover-path-input").is(":focus") && String.fromCharCode(u).toLowerCase() == "l" && d.ctrlKey && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
             d.preventDefault();
             d.stopPropagation();
-            var C = $('#headln2r > div.btn-group > a[href^="config.cgi"]');
-            if (is_scrolled_into_view(C)) {
+            var D = $('#headln2r > div.btn-group > a[href^="config.cgi"]');
+            if (is_scrolled_into_view(D)) {
                 $('[data-toggle="popover-path"]').popover("show")
             } else {
-                C.scrollIntoView({
+                D.scrollIntoView({
                     duration: 200,
                     direction: "vertical",
                     complete: function() {
@@ -2273,7 +2273,7 @@ function ___f__tw() {
             }
             return
         }
-        if (k == 93 && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
+        if (u == 93 && !$(":focus").parents(".jsPanel").is(".jsPanel") && !$(".modal.in").length) {
             d.preventDefault();
             d.stopPropagation();
             if (!$("#list_form table tbody tr.m-active").length) {
@@ -2282,7 +2282,7 @@ function ___f__tw() {
             $("#list_form table tbody tr.m-active").find("td:first-child input").trigger("contextmenu");
             return
         }
-        if (k == 13 && $(":focus").parents(".jsPanel").is(".jsPanel")) {
+        if (u == 13 && $(":focus").parents(".jsPanel").is(".jsPanel")) {
             if (d.ctrlKey && d.shiftKey) {
                 $(":focus").parents(".jsPanel").find("._filemanager_file_editor_save").trigger("click");
                 $(":focus").parents(".jsPanel").find(".jsPanel-btn-close").trigger("click")
@@ -2292,7 +2292,7 @@ function ___f__tw() {
                 }
             }
         }
-        if (k == 27 && $(":focus").parents(".jsPanel").is(".jsPanel")) {
+        if (u == 27 && $(":focus").parents(".jsPanel").is(".jsPanel")) {
             if (d.ctrlKey) {
                 $(":focus").parents(".jsPanel").find(".jsPanel-btn-min").trigger("click")
             } else {
@@ -2303,21 +2303,21 @@ function ___f__tw() {
         if ($(":focus").parents(".jsPanel").is(".jsPanel")) {
             return
         }
-        if (k == 13 && $("#list_form table tbody tr.m-active").length === 1 && !$(".modal.in").length) {
+        if (u == 13 && $("#list_form table tbody tr.m-active").length === 1 && !$(".modal.in").length) {
             if ($("#list_form table tbody tr.m-active").hasClass("directory_go_up")) {
                 $('#headln2l > div.btn-group > a[href*="' + $g__o__f_m + '"][href*="index.cgi"]').trigger("click")
             } else {
-                var v = $('.active form table tbody tr.m-active td a[href*="index.cgi?path="]');
-                v.length && v.first()[0].click()
+                var w = $('.active form table tbody tr.m-active td a[href*="index.cgi?path="]');
+                w.length && w.first()[0].click()
             }
             return
         }
-        if (!$(".modal.in").length && d.ctrlKey && (String.fromCharCode(k).toLowerCase() == "c" || String.fromCharCode(k).toLowerCase() == "v" || String.fromCharCode(k).toLowerCase() == "x")) {
-            if ($("#list_form table tbody tr td:first-child").find("input:checked").length === 0 && $("#list_form table tbody tr.m-active").length === 1 && d.ctrlKey && (String.fromCharCode(k).toLowerCase() == "c" || String.fromCharCode(k).toLowerCase() == "v" || String.fromCharCode(k).toLowerCase() == "x")) {
+        if (!$(".modal.in").length && d.ctrlKey && (String.fromCharCode(u).toLowerCase() == "c" || String.fromCharCode(u).toLowerCase() == "v" || String.fromCharCode(u).toLowerCase() == "x")) {
+            if ($("#list_form table tbody tr td:first-child").find("input:checked").length === 0 && $("#list_form table tbody tr.m-active").length === 1 && d.ctrlKey && (String.fromCharCode(u).toLowerCase() == "c" || String.fromCharCode(u).toLowerCase() == "v" || String.fromCharCode(u).toLowerCase() == "x")) {
                 $("#list_form table tbody tr.m-active").find("td:first-child input").trigger("click")
             }
         }
-        if (k == 13) {
+        if (u == 13) {
             if ($(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2350,19 +2350,19 @@ function ___f__tw() {
                 }
             }
         }
-        if (k == 13 && $("#list_form table tbody tr:not(.directory_go_up)").length === 1 && !$(".modal.in").length && t__wi_p.t___p__xhr_r === 0) {
+        if (u == 13 && $("#list_form table tbody tr:not(.directory_go_up)").length === 1 && !$(".modal.in").length && t__wi_p.t___p__xhr_r === 0) {
             $('.active form table tbody tr td a[href*="index.cgi?path="]').length && $('.active form table tbody tr td a[href*="index.cgi?path="]').first()[0].click();
             return
         }
-        if (k == 13) {
+        if (u == 13) {
             return
         }
-        if ((k == 32) && !d.shiftKey && !$("#list_form table tbody tr.m-active").length) {
+        if ((u == 32) && !d.shiftKey && !$("#list_form table tbody tr.m-active").length) {
             return
         }
-        if ((k == 46 || k == 113 || k == 114 || k == 115 || k == 116 || k == 117 || k == 119) && !_f__table().dataTable().$("tr.hl-aw", {
+        if ((u == 46 || u == 113 || u == 114 || u == 115 || u == 116 || u == 117 || u == 119) && !_f__table().dataTable().$("tr.hl-aw", {
                 filter: "applied"
-            }).length && !$(".ui_checked_columns input:checked").length && !$(".modal.in").length && !$(".popover").is(":visible") && !$("input").is(":focus") && !$("#list_form table tbody tr.m-active").length && (!d.shiftKey || (k == 116 && d.shiftKey) || (k == 115 && !d.shiftKey))) {
+            }).length && !$(".ui_checked_columns input:checked").length && !$(".modal.in").length && !$(".popover").is(":visible") && !$("input").is(":focus") && !$("#list_form table tbody tr.m-active").length && (!d.shiftKey || (u == 116 && d.shiftKey) || (u == 115 && !d.shiftKey))) {
             d.preventDefault();
             d.stopPropagation();
             if (t___wi.document.activeElement && $(t___wi.document.activeElement).is('a[href^="edit_file.cgi"]')) {
@@ -2372,7 +2372,7 @@ function ___f__tw() {
             return
         }
         if (!d.shiftKey && !d.ctrlKey && !d.altKey && !d.metaKey && !$("#__f__c__m").is(":visible")) {
-            if (k != 33 && k != 34 && $("#list_form table tbody tr.m-active").length) {
+            if (u != 33 && u != 34 && $("#list_form table tbody tr.m-active").length) {
                 d.preventDefault();
                 d.stopPropagation()
             }
@@ -2380,52 +2380,52 @@ function ___f__tw() {
                 return
             }
             l = $("#list_form table tbody tr.m-active").removeClass("m-active");
-            var u = l.index();
-            var E = l.index();
-            if (k == 38 && !$(".modal.in").length) {
+            var v = l.index();
+            var F = l.index();
+            if (u == 38 && !$(".modal.in").length) {
                 if ($(".dataTable-mirror").is(":focus")) {
                     $.each($("input"), function() {
                         $(this).blur()
                     })
                 }
-                E--;
+                F--;
                 $(".dataTables_filter label input").blur();
                 $("#list_form table tbody tr").addClass("m-not-active")
             }
-            if (k == 40 && !$(".modal.in").length) {
+            if (u == 40 && !$(".modal.in").length) {
                 if ($(".dataTable-mirror").is(":focus")) {
                     $.each($("input"), function() {
                         $(this).blur()
                     })
                 }
-                E++;
+                F++;
                 $(".dataTables_filter label input").blur();
                 $("#list_form table tbody tr").addClass("m-not-active")
             }
         }
-        if ((k == 38 || k == 40 || k == 32 || k == 13 || k == 46 || k == 119 || k == 117 || k == 115 || k == 116 || k == 113 || k == 114) && !$(".modal.in").length) {
-            l = (!$("#list_form table tbody tr").find(".dataTables_empty").length && $("#list_form table tbody tr").eq(E).addClass("m-active m-not-active"))
+        if ((u == 38 || u == 40 || u == 32 || u == 13 || u == 46 || u == 119 || u == 117 || u == 115 || u == 116 || u == 113 || u == 114) && !$(".modal.in").length) {
+            l = (!$("#list_form table tbody tr").find(".dataTables_empty").length && $("#list_form table tbody tr").eq(F).addClass("m-active m-not-active"))
         }
-        if (k == 27) {
+        if (u == 27) {
             d.preventDefault();
             d.stopPropagation();
             $('.modal.in button[data-dismiss="modal"]').trigger("click")
         }
-        if (k == 35 && !$("input").is(":focus")) {
+        if (u == 35 && !$("input").is(":focus")) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
                 l = $("#list_form table tbody tr").eq(parseInt($("#list_form table tbody tr").length) - 1).addClass("m-active m-not-active")
             }
         }
-        if (k == 36 && !$("input").is(":focus")) {
+        if (u == 36 && !$("input").is(":focus")) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
                 l = $("#list_form table tbody tr").eq(0).addClass("m-active m-not-active")
             }
         }
-        if (k == 13) {
+        if (u == 13) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2433,7 +2433,7 @@ function ___f__tw() {
                 $("#list_form table tbody tr.m-active").find("td:first-child").trigger("click")
             }
         }
-        if (k == 8 && !$(".o__f_m-main-spinner").is(":visible") && !$("input").is(":focus")) {
+        if (u == 8 && !$(".o__f_m-main-spinner").is(":visible") && !$("input").is(":focus")) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2441,13 +2441,13 @@ function ___f__tw() {
                 $('#headln2l > div.btn-group > a[href*="' + $g__o__f_m + '"][href*="index.cgi"]:not(.hidden)').trigger("click")
             }
         }
-        if (k == 32 && !d.ctrlKey) {
+        if (u == 32 && !d.ctrlKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
-                var B = $("#list_form table tbody tr.m-active"),
+                var C = $("#list_form table tbody tr.m-active"),
                     e = jQuery.Event("keydown");
-                B.find("td:first-child input").trigger("click");
+                C.find("td:first-child input").trigger("click");
                 e.which = 40;
                 $("body").trigger(e);
                 __r____changed();
@@ -2456,36 +2456,36 @@ function ___f__tw() {
                 }
             }
         }
-        if (k == 106 || (d.shiftKey && k == 56)) {
+        if (u == 106 || (d.shiftKey && u == 56)) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
                 $('body button[onclick="invertSelection()"]').trigger("click")
             }
         }
-        if (k == 107 || (d.shiftKey && k == 187)) {
+        if (u == 107 || (d.shiftKey && u == 187)) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
                 $('body button[onclick="selectAll()"]').trigger("click")
             }
         }
-        if (k == 109 || (d.shiftKey && k == 189)) {
+        if (u == 109 || (d.shiftKey && u == 189)) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
-                var F = document.getElementsByClassName("ui_checked_columns");
-                for (i = 0; i < F.length; i++) {
-                    var h = F[i].getElementsByTagName("input")[0];
-                    if (h.checked) {
-                        rowClick(F[i])
+                var G = document.getElementsByClassName("ui_checked_columns");
+                for (i = 0; i < G.length; i++) {
+                    var k = G[i].getElementsByTagName("input")[0];
+                    if (k.checked) {
+                        rowClick(G[i])
                     }
                 }
                 __f___lb();
                 __r____changed()
             }
         }
-        if ((k == 46 || k == 119) && !$("input").is(":focus")) {
+        if ((u == 46 || u == 119) && !$("input").is(":focus")) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2496,7 +2496,7 @@ function ___f__tw() {
                 __f___cs()
             }
         }
-        if (k == 113 && !d.shiftKey) {
+        if (u == 113 && !d.shiftKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2507,7 +2507,7 @@ function ___f__tw() {
                 __f___cs()
             }
         } else {
-            if (k === 113 && d.shiftKey) {
+            if (u === 113 && d.shiftKey) {
                 if (!$(".modal.in").length) {
                     d.preventDefault();
                     d.stopPropagation();
@@ -2519,7 +2519,7 @@ function ___f__tw() {
                 }
             }
         }
-        if (k == 114 && !d.shiftKey) {
+        if (u == 114 && !d.shiftKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2530,7 +2530,7 @@ function ___f__tw() {
                 __f___cs()
             }
         } else {
-            if (k === 114 && d.shiftKey && $t_av_sestatus) {
+            if (u === 114 && d.shiftKey && $t_av_sestatus) {
                 if (!$(".modal.in").length) {
                     d.preventDefault();
                     d.stopPropagation();
@@ -2542,7 +2542,7 @@ function ___f__tw() {
                 }
             }
         }
-        if (k == 116 && !d.shiftKey) {
+        if (u == 116 && !d.shiftKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2553,7 +2553,7 @@ function ___f__tw() {
                 __f___cs()
             }
         }
-        if (k == 118 && !d.shiftKey && !d.ctrlKey) {
+        if (u == 118 && !d.shiftKey && !d.ctrlKey) {
             if (!$(".modal.in").length) {
                 d.preventDefault();
                 d.stopPropagation();
@@ -2561,7 +2561,7 @@ function ___f__tw() {
                 __f___cs()
             }
         }
-        if (k == 117) {
+        if (u == 117) {
             if (!$(".modal.in").length) {
                 if ($("#list_form table tbody tr.m-active").find("i.fa-i-cursor").parent("a").length) {
                     d.preventDefault();
@@ -2571,44 +2571,47 @@ function ___f__tw() {
                 }
             }
         }
-        if (k == 115 && !d.shiftKey) {
+        if (u == 115 && !d.shiftKey) {
             if (!$(".modal.in").length) {
                 if ($("#list_form table tbody tr.m-active").find("i.fa-pencil-square-o").parent("a").length) {
                     d.preventDefault();
                     t__wi_p.$___ajax_requested_url = "edit_file.cgi";
-                    var A = "jsp_" + parseInt(Math.random() * 1000000000000000000),
-                        D = encodeURIComponentSafe(decode_html($("#list_form table tbody tr.m-active").find("a[data-filemin-link]").attr("data-filemin-link"))),
-                        z = ("edit_file.cgi?file=" + D + "&path=" + $("#path").val());
-                    window[A] = $.jsPanel({
+                    var B = "jsp_" + parseInt(Math.random() * 1000000000000000000),
+                        E = encodeURIComponentSafe(decode_html($("#list_form table tbody tr.m-active").find("a[data-filemin-link]").attr("data-filemin-link"))),
+                        h = $("#path").val(),
+                        A = ("edit_file.cgi?file=" + E + "&path=" + h);
+                    window[B] = $.jsPanel({
                         ajax: {
-                            url: z,
+                            url: A,
                             dataType: "text",
                             autoload: false,
-                            done: function(L, o, K, t) {
-                                var J = $(L).find(".ui_form"),
-                                    N = ("<strong>" + (escape_html(decodeURIComponentSafe(D)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
-                                    r = $(this).parents("div.jsPanel"),
-                                    n = (parseInt(t.attr("id").replace("jsPanel-", "")) + 1);
-                                if (!$(J).find("textarea").length) {
-                                    var J = $(L).find('form[action="save_file.cgi"]').append($(L).find("#data").removeAttr("id")).prepend($(L).find("#file").removeAttr("id")).prepend($(L).find("#path").removeAttr("id"))
+                            done: function(I, p, R, m) {
+                                var o = E,
+                                    n = h;
+                                var t = $(I).find(".ui_form"),
+                                    K = ("<strong>" + (escape_html(decodeURIComponentSafe(E)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
+                                    P = $(this).parents("div.jsPanel"),
+                                    J = (parseInt(m.attr("id").replace("jsPanel-", "")) + 1);
+                                if (!$(t).find("textarea").length) {
+                                    var t = $(I).find('form[action="save_file.cgi"]').append($(I).find("#data").removeAttr("id")).prepend($(I).find("#file").removeAttr("id")).prepend($(I).find("#path").removeAttr("id"))
                                 }
-                                t.title(N);
-                                r.data("jspuid", A);
-                                r.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", N.replace(/<\/?[^>]+(>|$)/g, ""));
-                                r.find(".jsPanel-content").html(J);
+                                m.title(K);
+                                P.data("jspuid", B);
+                                P.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", K.replace(/<\/?[^>]+(>|$)/g, ""));
+                                P.find(".jsPanel-content").html(t);
                                 $("#jsPanel-min-container").css({
                                     width: $(window).width(),
                                     overflow: "auto"
                                 });
-                                var I = r.find(".jsPanel-content");
-                                var m = I.find(".ui_form_end_buttons tr td span:first-child input"),
-                                    H = I.find(".ui_form_end_buttons tr td span:nth-child(2) input");
-                                I.find(".ui_form_end_buttons").remove();
-                                r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
-                                var G = I.find("form").attr("data-encoding");
-                                G = (G ? G : "UTF-8");
-                                var q = "";
-                                var s = {
+                                var q = P.find(".jsPanel-content");
+                                var Q = q.find(".ui_form_end_buttons tr td span:first-child input"),
+                                    s = q.find(".ui_form_end_buttons tr td span:nth-child(2) input");
+                                q.find(".ui_form_end_buttons").remove();
+                                P.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
+                                var N = q.find("form").attr("data-encoding");
+                                N = (N ? N : "UTF-8");
+                                var O = "";
+                                var M = {
                                     "UTF-8": "utf-8",
                                     "ISO-8859-1": "iso-8859-1 (cp1252)&#x200E;",
                                     "windows-1252": "cp1252 (iso-8859-1)&#x200E;",
@@ -2631,66 +2634,67 @@ function ___f__tw() {
                                     "EUC-JP": "EUC encoding, Japanese",
                                     Shift_JIS: "Shift-JIS, Japanese"
                                 };
-                                $.each(s, function(x, P) {
-                                    q += '<option value="' + x + '"' + (((G.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + ">" + P + "</option>"
+                                $.each(M, function(x, S) {
+                                    O += '<option value="' + x + '"' + (((N.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + ">" + S + "</option>"
                                 });
-                                r.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + G + '"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + ($("body").data("charset") != "UTF-8" ? " pointer-events-none" : "") + '"> <select data-encoding dir="rtl">' + q + "</select> </label></div>");
-                                var M = r.find("select[data-encoding]"),
-                                    p = M.val();
-                                p == Object.keys(s)[2] && M.val(Object.keys(s)[1]);
-                                r.find(".jsPanel-btn-max").trigger("click");
-                                t__cm___init(I.find("textarea"), N, [null, parseInt(I.css("height"))], n);
-                                r.animate({
+                                P.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + N + '"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + ($("body").data("charset") != "UTF-8" ? " pointer-events-none" : "") + '"> <select data-encoding dir="rtl">' + O + "</select> </label></div>");
+                                var H = P.find("select[data-encoding]"),
+                                    r = H.val();
+                                console.log(Object.keys(M)[1], Object.keys(M)[2]);
+                                r == Object.keys(M)[2] && H.val(Object.keys(M)[1]);
+                                P.find(".jsPanel-btn-max").trigger("click");
+                                t__cm___init(q.find("textarea"), K, [null, parseInt(q.css("height"))], J);
+                                P.animate({
                                     opacity: 1
                                 }, 400, function() {
-                                    window["__cm_editor_" + n].focus()
+                                    window["__cm_editor_" + J].focus()
                                 });
-                                t.on("jspanelbeforeclose", function(x, Q) {
-                                    var P = $("#" + Q)
+                                m.on("jspanelbeforeclose", function(x, T) {
+                                    var S = $("#" + T)
                                 });
-                                r.find("._filemanager_file_editor_save").click(function(x) {
+                                P.find("._filemanager_file_editor_save").click(function(x) {
                                     $(this).find("i").replaceWith(t__lo__btn_md());
                                     $(this).removeClass("text-danger");
-                                    r.find('form[action="save_file.cgi"]').submit()
+                                    P.find('form[action="save_file.cgi"]').submit()
                                 });
 
-                                function O() {
-                                    var x = r.find("._filemanager_file_editor_save");
+                                function L() {
+                                    var x = P.find("._filemanager_file_editor_save");
                                     x.find(".cspinner").remove();
                                     x.find("i").remove();
                                     x.prepend('<i class="fa fa-fw fa-floppy-o"></i>')
                                 }
-                                r.find('form[action="save_file.cgi"]').submit(function(S) {
-                                    S.preventDefault();
-                                    S.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", N) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
-                                    var R = 'form[action="save_file.cgi"]',
-                                        Q = "select[data-encoding]",
-                                        P = r.find(Q).val(),
-                                        x = r.find("" + R + ' input:not([name="path"]), ' + R + " textarea").serialize();
-                                    x = x + "&path=" + $("#path").val();
-                                    if (P) {
-                                        x = x + "&encoding=" + P
+                                P.find('form[action="save_file.cgi"]').submit(function(V) {
+                                    V.preventDefault();
+                                    V.stopPropagation();
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", K) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
+                                    var U = 'form[action="save_file.cgi"]',
+                                        T = "select[data-encoding]",
+                                        S = P.find(T).val(),
+                                        x = P.find("" + U + ' input:not([name="path"]), ' + U + " textarea").serialize();
+                                    x = x + "&path=" + n;
+                                    if (S) {
+                                        x = x + "&encoding=" + S
                                     }
                                     $.ajax({
                                         type: "POST",
                                         url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
                                         data: x,
                                         dataType: "text",
-                                        success: function(T) {
-                                            var U = r.find("._filemanager_file_editor_save .cspinner");
-                                            if (!$(T).find("textarea#data").length) {
-                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(T).find(".panel-body").html(), 10, "error", "savingFileError");
-                                                if (U.parent(".btn").index() === 1) {
+                                        success: function(W) {
+                                            var X = P.find("._filemanager_file_editor_save .cspinner");
+                                            if (!$(W).find("textarea#data").length) {
+                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(W).find(".panel-body").html(), 10, "error", "savingFileError");
+                                                if (X.parent(".btn").index() === 1) {
                                                     modal_dismiss()
                                                 }
-                                                O();
+                                                L();
                                                 return
                                             }
-                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", N), 1.5, "success", "savingFileDone");
-                                            O()
+                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", K), 1.5, "success", "savingFileDone");
+                                            L()
                                         },
-                                        error: function(T) {}
+                                        error: function(W) {}
                                     })
                                 })
                             }
@@ -2771,28 +2775,28 @@ function ___f__tw() {
                 }
             }
         }
-        if (!$("input").is(":focus") && !$("select").is(":focus") && !$("textarea").is(":focus") && !$(".modal.in").length && k != 32 && k != 113 && k != 114 && k != 106 && k != 107 && k != 116 && k != 109 && k != 46 && k != 119 && k != 118 && k != 115) {
+        if (!$("input").is(":focus") && !$("select").is(":focus") && !$("textarea").is(":focus") && !$(".modal.in").length && u != 32 && u != 113 && u != 114 && u != 106 && u != 107 && u != 116 && u != 109 && u != 46 && u != 119 && u != 118 && u != 115) {
             if ($(".tab-pane.active .paginate_button.next").parents("ul.pagination").hasClass("pointer-events-none")) {
                 return
             }
-            if (k === 39) {
+            if (u === 39) {
                 $(".tab-pane.active .paginate_button.next").trigger("click");
                 $("#list_form table tbody tr.m-active").removeClass("m-active");
                 $("#list_form table tbody tr").addClass("m-not-active")
             } else {
-                if (k === 37) {
+                if (u === 37) {
                     $(".tab-pane.active .paginate_button.previous").trigger("click");
                     $("#list_form table tbody tr.m-active").removeClass("m-active");
                     $("#list_form table tbody tr").addClass("m-not-active")
                 } else {
-                    var f = String.fromCharCode(k);
+                    var f = String.fromCharCode(u);
                     if (f && /[a-zA-Z0-9]/.test(f) && !d.ctrlKey && !d.altKey && !d.metaKey) {
                         $(".dataTables_filter label input").trigger("keyup").focus()
                     }
                 }
             }
         }
-        if (String.fromCharCode(k).toLowerCase() == "s" && d.ctrlKey) {
+        if (String.fromCharCode(u).toLowerCase() == "s" && d.ctrlKey) {
             d.preventDefault();
             d.stopPropagation();
             _f__table().dataTable().$("tr.hl-aw", {
@@ -2802,12 +2806,12 @@ function ___f__tw() {
         if (d.shiftKey && d.ctrlKey) {
             return
         }
-        if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus") && !$(".btn-filter-top-right input").is(":focus") && (k == 115 || k == 116 || k == 118 || String.fromCharCode(k).toLowerCase() == "c" || String.fromCharCode(k).toLowerCase() == "v" || String.fromCharCode(k).toLowerCase() == "x")) {
-            if ((!(String.fromCharCode(d.which).toLowerCase() == "c" && d.ctrlKey) && !(String.fromCharCode(d.which).toLowerCase() == "v" && d.ctrlKey) && !(String.fromCharCode(d.which).toLowerCase() == "x" && d.ctrlKey) && !(k == 115 && d.shiftKey) && !(k == 116 && d.shiftKey) && !(k == 118 && d.shiftKey)) && !(d.which == 19)) {
+        if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus") && !$(".btn-filter-top-right input").is(":focus") && (u == 115 || u == 116 || u == 118 || String.fromCharCode(u).toLowerCase() == "c" || String.fromCharCode(u).toLowerCase() == "v" || String.fromCharCode(u).toLowerCase() == "x")) {
+            if ((!(String.fromCharCode(d.which).toLowerCase() == "c" && d.ctrlKey) && !(String.fromCharCode(d.which).toLowerCase() == "v" && d.ctrlKey) && !(String.fromCharCode(d.which).toLowerCase() == "x" && d.ctrlKey) && !(u == 115 && d.shiftKey) && !(u == 116 && d.shiftKey) && !(u == 118 && d.shiftKey)) && !(d.which == 19)) {
                 return true
             }
             d.preventDefault();
-            if (k == 115) {
+            if (u == 115) {
                 if (!$(".modal.in").length) {
                     d.stopPropagation();
                     $('a[onclick = "createFileDialog()"]').trigger("click");
@@ -2815,12 +2819,12 @@ function ___f__tw() {
                     return
                 }
             }
-            if (k == 116) {
+            if (u == 116) {
                 if (!$(".modal.in").length) {
                     d.stopPropagation();
                     if ($("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a").length) {
-                        var w = $("#list_form table tbody tr.m-active").find("td.ui_checked_checkbox input");
-                        !w.is(":checked") && w.trigger("click");
+                        var y = $("#list_form table tbody tr.m-active").find("td.ui_checked_checkbox input");
+                        !y.is(":checked") && y.trigger("click");
                         d.preventDefault();
                         d.stopPropagation();
                         $("#list_form table tbody tr.m-active").find("i.fa-extract-archive").parent("a")[0].click();
@@ -2831,7 +2835,7 @@ function ___f__tw() {
                     return
                 }
             }
-            if (k == 118) {
+            if (u == 118) {
                 if (!$(".modal.in").length) {
                     d.stopPropagation();
                     $('a[onclick = "searchDialog()"]').trigger("click");
@@ -2839,7 +2843,7 @@ function ___f__tw() {
                     return
                 }
             }
-            if (String.fromCharCode(k).toLowerCase() == "c") {
+            if (String.fromCharCode(u).toLowerCase() == "c") {
                 if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus")) {
                     d.stopPropagation();
                     if (!$(".o__f_m-button-copy.disabled").length) {
@@ -2851,7 +2855,7 @@ function ___f__tw() {
                     return
                 }
             }
-            if (String.fromCharCode(k).toLowerCase() == "v") {
+            if (String.fromCharCode(u).toLowerCase() == "v") {
                 if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus")) {
                     d.stopPropagation();
                     if (!$(".o__f_m-button-paste.disabled").length) {
@@ -2863,7 +2867,7 @@ function ___f__tw() {
                     return
                 }
             }
-            if (String.fromCharCode(k).toLowerCase() == "x") {
+            if (String.fromCharCode(u).toLowerCase() == "x") {
                 if (!$(".modal.in").length && !$(".popover").is(":visible") && !$("input.popover-path-input").is(":focus")) {
                     d.stopPropagation();
                     if (!$(".o__f_m-button-cut.disabled").length) {
