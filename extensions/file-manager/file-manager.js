@@ -2642,12 +2642,15 @@ function ___f__tw() {
                                 $.each(Q, function(x, X) {
                                     S += '<option value="' + x + '"' + (((R.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + ">" + X + "</option>"
                                 });
-                                T.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + (K ? " pointer-events-none" : "") + '"> <select required data-encoding dir="rtl">' + S + "</select> </label></div>");
+                                T.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + (K ? " pointer-events-none hidden" : "") + '"> <select required data-encoding dir="rtl">' + S + "</select> </label></div>");
                                 var L = T.find("select[data-encoding]"),
                                     H = L.val(),
                                     s = T.find("._filemanager_file_editor_save");
                                 H == Object.keys(Q)[2] && L.val(Object.keys(Q)[1]);
                                 L.on("change", function(x) {
+                                    if (K) {
+                                        return
+                                    }
                                     if (s.hasClass("text-danger") && s.hasClass("__locked__")) {
                                         return
                                     }
@@ -2668,7 +2671,7 @@ function ___f__tw() {
                                     })
                                 });
                                 var W = localStorage.getItem(o);
-                                if (!q && W) {
+                                if (!K && !q && W) {
                                     if (W && Q.hasOwnProperty(W)) {
                                         L.val(W).trigger("change")
                                     }
