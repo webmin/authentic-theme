@@ -661,14 +661,14 @@ sub print_left_menu
             my $icon;
 
             if (    $item->{'type'} eq 'item'
-                 && $link ne "/virtual-server/edit_lang.cgi"
-                 && $link ne "/virtual-server/edit_lang.cgi"
-                 && $link ne "/virtual-server/history.cgi" )
+                 && $link ne add_webprefix("/virtual-server/edit_lang.cgi")
+                 && $link ne add_webprefix("/virtual-server/edit_lang.cgi")
+                 && $link ne add_webprefix("/virtual-server/history.cgi") )
             {
 
                 # Define an icon for the link/accordion
-                if (    $link eq "/virtual-server/index.cgi"
-                     || $link eq "/server-manager/index.cgi" )
+                if (    $link eq add_webprefix("/virtual-server/index.cgi")
+                     || $link eq add_webprefix("/server-manager/index.cgi") )
                 {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 }
@@ -677,24 +677,24 @@ sub print_left_menu
                 {
                     $icon = '<i class="fa fa-fw fa-user-md"></i>';
                 }
-                elsif (    $link eq "/mailbox/list_folders.cgi"
-                        || $link eq "/mailbox/list_ifolders.cgi" )
+                elsif (    $link eq add_webprefix("/mailbox/list_folders.cgi")
+                        || $link eq add_webprefix("/mailbox/list_ifolders.cgi") )
                 {
                     $icon = '<i class="fa fa-fw fa-folder"></i>';
                 }
-                elsif ( $link eq "/mailbox/list_addresses.cgi" ) {
+                elsif ( $link eq add_webprefix("/mailbox/list_addresses.cgi") ) {
                     $icon = '<i class="fa fa-fw fa-address-book"></i>';
                 }
-                elsif ( $link eq "/filter/edit_forward.cgi" ) {
+                elsif ( $link eq add_webprefix("/filter/edit_forward.cgi") ) {
                     $icon = '<i class="fa fa-fw fa-share"></i>';
                 }
-                elsif ( $link eq "/filter/edit_auto.cgi" ) {
+                elsif ( $link eq add_webprefix("/filter/edit_auto.cgi") ) {
                     $icon = '<i class="fa fa-fw fa-reply-all"></i>';
                 }
-                elsif ( $link eq "/filter/" ) {
+                elsif ( $link eq add_webprefix("/filter/") ) {
                     $icon = '<i class="fa fa-fw fa-filter"></i>';
                 }
-                elsif ( $link eq "/mailbox/edit_sig.cgi" ) {
+                elsif ( $link eq add_webprefix("/mailbox/edit_sig.cgi") ) {
                     $icon = '<i class="fa fa-fw fa-pencil"></i>';
                 }
                 elsif ( index( $link, 'mailbox/index.cgi?id=' ) > -1 ) {
@@ -2854,17 +2854,14 @@ sub _settings
             ? '                     <span class="dropup">
                                        <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                          <i class="fa fa-fw fa-download-cloud margined-right-8"></i>'
-                                        . $Atext{'theme_force_upgrade'}
-                                        . '&nbsp;&nbsp;
+              . $Atext{'theme_force_upgrade'} . '&nbsp;&nbsp;
                                          <span class="caret"></span>
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
                                          <li><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-package-install margined-right-8"></i>'
-                                        . $Atext{'theme_force_upgrade_stable'}
-                                        . '</a></li>
+              . $Atext{'theme_force_upgrade_stable'} . '</a></li>
                                          <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-git-commit margined-right-8"></i>'
-                                        . $Atext{'theme_force_upgrade_beta'}
-                                        . '</a></li>
+              . $Atext{'theme_force_upgrade_beta'} . '</a></li>
                                        </ul>
                                    </span>'
             : '' )
@@ -3003,7 +3000,12 @@ sub get_xhr_request
             switch_to_remote_user();
             my $data;
             use Encode qw( encode decode );
-            eval { $data = Encode::encode( 'utf-8', Encode::decode( $in{'xhr-encoding_convert_name'}, read_file_contents( $in{'xhr-encoding_convert_file'} ) ) ) };
+            eval {
+                $data = Encode::encode( 'utf-8',
+                                        Encode::decode( $in{'xhr-encoding_convert_name'},
+                                                        read_file_contents( $in{'xhr-encoding_convert_file'} )
+                                        ) );
+            };
             print $data;
         }
         elsif ( $in{'xhr-get_nice_size'} eq '1' ) {

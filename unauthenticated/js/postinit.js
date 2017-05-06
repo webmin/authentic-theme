@@ -70,11 +70,21 @@ if ($current_page_full && $current_page_full.indexOf("/servers/link.cgi/") > -1)
         $_____link = $webprefix;
         $_____link_full = $webprefix_full
     } else {
-        $_____link = $webprefix;
+        if ($webprefix) {
+            $_____link = $webprefix.replace(/^\//g, "");
+            $_____link = ($_____link.endsWith("/") ? $_____link : ($_____link + "/"))
+        } else {
+            $_____link = $webprefix
+        }
         $_____link_full = (("/" + $webprefix.replace(/\/$/g, "")).replace(/\/\//g, "/")).replace(/\/$/g, "")
     }
 } else {
-    $_____link = $webprefix;
+    if ($webprefix) {
+        $_____link = $webprefix.replace(/^\//g, "");
+        $_____link = ($_____link.endsWith("/") ? $_____link : ($_____link + "/"))
+    } else {
+        $_____link = $webprefix
+    }
     $_____link_full = (("/" + $webprefix.replace(/\/$/g, "")).replace(/\/\//g, "/")).replace(/\/$/g, "")
 }
 if ($__source_host_complete.substr(-1) == "/") {

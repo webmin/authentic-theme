@@ -1,8 +1,9 @@
 ## Changelog
 
-#### Version 18.47-patch14 (May 6, 2017)
-* Added no animations for page transitions, resulting in overall speed increase
-* Added support for choosing/preserving encoding for edited files in File Manager [#52020](https://virtualmin.com/comment/775985#comment-775985)
+#### Version 18.47-patch15 (May 6, 2017)
+* Added enhancements to page transitions, resulting in overall speed increase
+* Added complete support for proxy-passed configurations [#748](https://github.com/qooob/authentic-theme/issues/748)
+* Added support for encodings control for edited files in File Manager [#52020](https://virtualmin.com/comment/775985#comment-775985)
 * Added ability to force update the theme from settings [#741](https://github.com/qooob/authentic-theme/issues/741)
 * Added bigger checkboxes for tables [#743](https://github.com/qooob/authentic-theme/issues/743)
 * Added alternative method for calling context menu in File Manager [#739](https://github.com/qooob/authentic-theme/issues/739)

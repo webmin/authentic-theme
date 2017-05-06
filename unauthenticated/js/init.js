@@ -639,7 +639,9 @@ t__wi_p.$('iframe[name="page"]').on("load", function() {
         t__wi_p.location = t___wi.location.origin
     }
     ____iframe___ = t__wi_p.$("#iframe")[0];
-    ____iframe___ && ____iframe___.contentWindow.focus();
+    if (!t__wi_p.$(".form-control.sidebar-search").is(":focus")) {
+        ____iframe___ && ____iframe___.contentWindow.focus()
+    }
     $("body").on("shown.bs.modal", ".modal.in", function() {
         $(this).focus()
     });

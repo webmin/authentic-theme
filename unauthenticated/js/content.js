@@ -1660,6 +1660,7 @@ f__lnk_t_btn(["/sysinfo.cgi", "/virtual-server/edit_newchangelog.cgi", "/server-
 f__lnk_t_btn(["/virtual-server/", "/virtual-server/index.cgi", "/virtual-server/edit_plan.cgi"], "form table tbody td", 'a[href*="list_users.cgi?"], a[href*="list_aliases.cgi?"]', "btn btn-transparent btn-transparent-link-force btn-borderless btn-xxs vertical-align-top margined-top-2", 0, "(~)", " ~ ", "(~..)");
 f__lnk_t_btn(["/quota/", "/quota/index.cgi"], ".table tbody td.td_tag", 'a[href*="activate.cgi"][href*="&active=3"]', "btn btn-warning btn-xxs vertical-align-top margined-top-2", "fa-ban");
 f__lnk_t_btn(["/quota/", "/quota/index.cgi"], ".table tbody td.td_tag", 'a[href*="activate.cgi"][href*="&active=0"]', "btn btn-success btn-xxs vertical-align-top margined-top-2", "fa-check-circle-o");
+f__lnk_t_btn(["/virtualmin-google-analytics/", "/virtualmin-google-analytics/index.cgi"], ".table tbody td.td_tag", 'a[href*="edit.cgi"]', "btn btn-warning btn-xxs vertical-align-top margined-top-2", "fa-pencil-square");
 if ($('body[class*="status"]').length && $__source_file == "edit_mon.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_sched.cgi" || $current_page_full == $_____link_full + "/ldap-server/edit_schema.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/mailboxes/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/list_folders.cgi" || $current_page_full == $_____link_full + "/phpini/" || $current_page_full == $_____link_full + "/phpini/index.cgi" || $current_page_full == $_____link_full + "/fsdump/" || $current_page_full == $_____link_full + "/fsdump/index.cgi" || $current_page_full == $_____link_full + "/fdisk/" || $current_page_full == $_____link_full + "/fdisk/index.cgi" || $current_page_full == $_____link_full + "/virtualmin-awstats/" || $current_page_full == $_____link_full + "/virtualmin-awstats/index.cgi" || $current_page_full == $_____link_full + "/syslog/" || $current_page_full == $_____link_full + "/syslog/index.cgi") {
     $.each($('tr td:last-child:contains("|")'), function() {
         if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi") {
@@ -1821,7 +1822,7 @@ $("table thead th:not(.table-title)").each(function() {
 });
 if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
     !$("body").hasClass("file-manager") && $("body").addClass("file-manager");
-    $("#headln2l").prepend("<a onClick='window.open(\"" + $_____link_full + '/help.cgi/authentic-theme/file-manager", "help", "toolbar=no,menubar=no,scrollbars=yes,width=600,height=400,resizable=yes"); return false\' href="/help.cgi/authentic-theme/file-manager"></a>')
+    $("#headln2l").prepend("<a onClick='window.open(\"" + $_____link_full + '/help.cgi/authentic-theme/file-manager", "help", "toolbar=no,menubar=no,scrollbars=yes,width=600,height=400,resizable=yes"); return false\' href="' + $_____link_full + '/help.cgi/authentic-theme/file-manager"></a>')
 }
 if (settings_right_iconize_header_links) {
     $.each($(".panel-heading > table.header > tbody > tr > td > a"), function() {
@@ -3173,7 +3174,7 @@ if ($current_page_full == $_____link_full + "/mysql/exec_form.cgi" || $current_p
     $('input[name="clear"]').attr("style", "margin-bottom: 3px !important;");
     $('select[name="old"]').attr("style", "margin-bottom: 3px !important; margin-right: 0 !important;")
 }
-if ($__source_file == "config.cgi" && ($__source_query == "mysql" || $__source_query == "postgresql")) {
+if (($__source_file == "config.cgi" || $__source_file == "uconfig.cgi") && ($__source_query == "mysql" || $__source_query == "postgresql")) {
     $('input[name="style"]').parents("td.col_value").parent("tr").after('		<tr>			<td class="col_label"><b>' + lang("theme_xhred_xsql_fit_content_screen_height") + '</b></td>			<td class="col_value"><span>			<span class="awradio awobject">				<input class="iawobject" name="config_portable_module_xsql_fit_content_screen_height" id="config_portable_module_xsql_fit_content_screen_height_1" value="true"' + (config_portable_module_xsql_fit_content_screen_height ? " checked" : "") + ' type="radio">				<label class="lawobject" for="config_portable_module_xsql_fit_content_screen_height_1">' + lang("theme_xhred_global_yes") + '</label>				<input class="iawobject" name="config_portable_module_xsql_fit_content_screen_height" id="config_portable_module_xsql_fit_content_screen_height_0" value="false"' + (config_portable_module_xsql_fit_content_screen_height ? "" : " checked") + ' type="radio">				<label class="lawobject" for="config_portable_module_xsql_fit_content_screen_height_0">' + lang("theme_xhred_global_no") + "</label>			</span>		</span></td>		</tr>	");
     $('input[name="config_portable_module_xsql_fit_content_screen_height"]').on("change", function() {
         var b = $(this).attr("name"),
