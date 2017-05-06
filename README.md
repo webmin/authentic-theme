@@ -115,7 +115,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [Richard van Laak](https://github.com/Rvanlaak) (Dutch)
 * [Kjetil Elde](https://github.com/w00p) (Norwegian)
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
-* [Michael Keck](https://github.com/mkkeck) (German)
+* [Kay Marquardt](https://github.com/gnadelwartz), [Michael Keck](https://github.com/mkkeck) (German)
 * [Silviu-Ionut Radu](https://github.com/sealview) (Romanian)
 * [Ilia Rostovtsev](https://github.com/qooob) (Russian)
 * [David Canalias](https://github.com/diathesaron) (Catalan)
@@ -137,4 +137,3 @@ Theme only re-renders this module and adds support for code highlight, when edit
 ### License
 
 _Authentic_ Theme is released under the [MIT License](https://github.com/qooob/authentic-theme/blob/master/LICENSE)
-

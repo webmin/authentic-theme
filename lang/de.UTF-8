@@ -16,19 +16,19 @@ body_kernelon=$1 $2 on $3
 body_load=$1 (1 Min) $2 (5 Min) $3 (15 Min)
 body_os=Betriebssystem
 body_procs=Laufende Prozesse
-body_real=Hardwarespeicher
+body_real=Tatsächlicher Speicher
 body_time=Systemzeit
 body_updates=Paket-Updates
 body_updays=$1 Tage, $2 Stunden, $3 Minuten
 body_uphours=$1 Stunden, $2 Minuten
 body_upmins=$1 Minuten
 body_upneed=$1 verfügbare Updates
-body_upneed1=$1 package update is available
+body_upneed1=$1 Paket Update ist verfügbar
 body_upok=Alle installierten Pakete sind auf dem aktuellesten Stand
-body_upsec=$1 verfügbare Updates, davon sind $2 Sicherheits-Updates
-body_upsec1=$1 package updates are available, of which $2 is security update
-body_upsec2=$1 package update is available, of which $2 are security updates
-body_upsec3=$1 package update is available, of which $2 is security update
+body_upsec=$1 verfügbare Updates, davon $2 Sicherheits-Updates
+body_upsec1=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
+body_upsec2=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
+body_upsec3=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
 body_uptime=System-Betriebszeit
 body_used=$1 gesamt / $2 genutzt
 body_used_and_free=$1 gesamt / $2 freien / $3 genutzt
@@ -36,8 +36,8 @@ body_usermin=Usermin-Version
 body_virt=Virtueller Speicher
 body_webmin=Webmin-Version
 
-left_favorites=Favorites
-left_favorites_no=There were no favorites added yet...
+left_favorites=Favoriten
+left_favorites_no=Keine Favoriten zum hinzufügen...
 left_feedback=Feedback senden
 left_home=System Information
 left_others=Sonstiges
@@ -46,18 +46,18 @@ left_search=Suche
 left_statistics=Systemstatistik
 
 login_danger=Gefahr!
-login_message=Bitte Nutzernamen und Passwort eingeben für die Anmeldung am Server
+login_message=Bitte mit Nutzernamen und Passwort anmelden.
 login_pass=Passwort
 login_reset=Abbrechen
-login_save=An mich erinnern
+login_save=Angemeldet bleiben
 login_signin=Anmelden
 login_success=Erfolgreich!
 login_token=Token
 login_user=Nutzername
 login_warning=Warnung!
 
-right_aliases=Aliase Server
-right_bw=Bandbreitenbenutzung und Limits
+right_aliases=Server Aliase
+right_bw=Bandbreitennutzung und Limits
 right_dom=Ihr Servername
 right_faliases=Mail Aliase
 right_fdbs=Datenbanken
@@ -71,19 +71,19 @@ right_licenceheader_vm2=Cloudmin Lizenz
 right_login=Angemeldet als
 right_not=Nicht installiert
 right_of=$1 von insgesamt $2
-right_quota=Festplattenbenutzung und Limits
+right_quota=Festplattennutzung und Limits
 right_reselip=(Wiederverkäufer $1)
 right_sharedip=(Gemeinsame IP)
-right_slcheck=Überprüfen Sie Cloudmin Lizenz
+right_slcheck=Überprüfen Sie die Cloudmin Lizenz
 right_subs=Untergeordnete Server
 right_virtdocs2=Zusätzliche Dokumentation
 right_virtualmin=Virtualmin Version
 right_vlcheck=Überprüfen Sie Virtualmin Lizenz
 right_vm2=Cloudmin Version
 
-session_failed=Anmeldung fehlgeschlagen. Bitte erneut probieren.
+session_failed=Die Anmeldung ist fehlgeschlagen. Bitte versuchen sie es erneut.
 session_logout=Erfolgreich abgemeldet. Für eine erneute Anmeldung bitte das folgende Formular nutzen.
-session_timed_out=Sitzung ist nach $1 Minuten aufgrund Inaktivität abgelaufen.
+session_timed_out=Sitzung wurde nach $1 Minuten Inaktivität abgebrochen.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
 
 
@@ -95,39 +95,39 @@ session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=Optionen
+settings_right_restore_defaults=Auf Grundeinstellung zurücksetzen
+settings_right_restored=Zurückgesetzt
+settings_right_restoring=Zurücksetzen
+settings_right_saved=Gespeichert
+settings_right_saving=Speichern
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
+settings_right_theme_extensions=Themen Erweiterungen
+settings_right_theme_extensions_title=Themen Erweiterungen
+settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
 
-settings_right_theme_logos=Theme logos
+settings_right_theme_logos=Theme 
 settings_right_theme_logos_title=Theme Logos
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
+settings_right_logo_unauthenticated_users=Logo für nicht angemeldete Benutzer
 
-settings_right_current_theme=Current theme
+settings_right_current_theme=Aktuelles Theme
 settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Authentic Theme Configuration
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+settings_right_theme_left_configuration_title=Authentic Theme Konfiguration
+settings_right_theme_left_extensions_title=Authentic Theme Erweiterungs Editor
+settings_right_theme_left_logo_title=Authentic Theme Logo Einstellungen
+settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Theme
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
+settings_right_window_options_title=Optionen für Fenster
+settings_right_navigation_menu_title=Optionen für Navigations Menu
+settings_right_table_options_title=Optionen für Tabellen
+settings_security_title=Optionen für Sicherheits Hinweise
 settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_hotkey_options_title=Optionen für Schnellzugriffs Tasten
+settings_right_sysinfo_page_options_title=Optionen für System Informationen
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
 settings_hotkey_custom_1=Custom link <code>1</code>
@@ -140,81 +140,81 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
-settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
-settings_loader_top=Enable page progress loader on top of the screen
-settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default content page
+settings_navigation_color=Farbpalette für Navigations Menu
+settings_background_color=Farbpalette für Inhalts Seite
+settings_animation_left=Anminationen im Navigations Menu einschalten
+settings_animation_tabs=Anminationen in den Tabs einschalten
+settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
+settings_loader_left=Drehende Anzeige im Navigations Menu einschalten
+settings_right_reload=Lade Standad Inhalts Seite
 settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
-settings_right_hide_table_icons=Hide table icons for the right frame
+settings_right_hide_table_icons=Zeige Tabellen Icons im rechten Fenster nicht an
 settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
+settings_right_small_table_icons=Kleine Tabellen Symbole
 settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
+settings_right_grayscaled_table_icons=Zeige farbige Tabellen Symbole nur bei Eingabe
 
-settings_right_iconize_header_links=Replace table header's links with icons
+settings_right_iconize_header_links=Ersetzte Links im Tabellenkopf durch Symbole
 settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
 
-settings_window_autoscroll=Automatic window scroll
+settings_window_autoscroll=Bewege Fenster automatisch
 settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=Verstecke Eintrag<kbd>Module aktualisieren</kbd>
+settings_leftmenu_section_hide_unused_modules=Verstecke Eintrag<kbd>Nicht benutzte Module</kbd>
+settings_favorites=Zeige Knopf für Favoriten
+settings_leftmenu_button_language=Zeige Knopf für Sprachen
+settings_leftmenu_button_refresh=Zeige Knopf für Neu Laden
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=Zeige Knopf Theme Einstellungen
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_hotkeys_active=Schalte Schnellzugriffs Tasten ein
+settings_hotkey_toggle_modifier=Schnellzugriffs Taste
+settings_hotkey_toggle_key_webmin=Schnellzugriffs Taste für Webmin
+settings_hotkey_toggle_key_virtualmin=Schnellzugriffs Taste für Virtualmin
+settings_hotkey_toggle_key_cloudmin=Schnellzugriffs Taste für Cloudmin
+settings_hotkey_toggle_key_usermin=Schnellzugriffs Taste für Usermin
+settings_hotkey_toggle_key_webmail=Schnellzugriffs Taste für Mail
+settings_hotkey_sysinfo=Schnellzugriffs Taste für Dashboard
+settings_hotkey_shell=Schnellzugriffs Taste für Terminal
+settings_hotkey_favorites=Schnellzugriffs Taste für Favoriten
+settings_hotkey_focus_search=Schnellzugriffs Taste für Suchfeld
+settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
 settings_side_slider_background_refresh_time=Timeout for background information update
 settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
+settings_sysinfo_easypie_charts=Zeige Diagramm 
+settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Theme
+settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
+settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show dashboard link as button
-settings_leftmenu_singlelink_icons=Show icons for single links on navigation menu
+settings_sysinfo_link_mini=Zeige Link zum Dashboard als Knopf
+settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menu als Symbol
 
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
+settings_right_page_defaults_title=Standard Titel
+settings_right_default_tab_webmin=Standard Tab nach Anmelden in Webmin
+settings_right_default_tab_usermin=Standard Tab nach Anmelden in Usermin
+settings_right_virtualmin_default=Standard Tab für Virtualmin
+settings_right_cloudmin_default=Standard Tab für Cloudmin
 
-settings_leftmenu_vm_installscripts=Show <kbd>Install Scripts</kbd> link in Virtualmin
-settings_leftmenu_vm_webpages=Show <kbd>Edit Web Pages</kbd> link in Virtualmin
-settings_leftmenu_vm_backup_amazon=Show <kbd>Amazon S3 Buckets</kbd> link in Virtualmin
+settings_leftmenu_vm_installscripts=Zeige Link <kbd>Installations Scripte</kbd> in Virtualmin
+settings_leftmenu_vm_webpages=Zeige Link <kbd>Bearbeite Web Seiten</kbd> in Virtualmin
+settings_leftmenu_vm_backup_amazon=Zeige Link <kbd>Amazon S3 Buckets</kbd> in Virtualmin
 
-settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Side slider options
-settings_side_slider_fixed=Keep slider always visible
-settings_side_slider_palette=Slider palette
-settings_hotkey_toggle_slider=Hotkey for slider
+settings_right_clear_local_cache=Lösche Zwischenspeicher
+settings_right_notification_slider_options_title=Optionen für seitlichen Schieber
+settings_side_slider_fixed=Zeige Schieber immer an
+settings_side_slider_palette=Farbpalette für Schieber
+settings_hotkey_toggle_slider=Schnellzugriffs Taste für Schieber
 settings_window_replace_timestamps=Enable dates substitutions
-settings_window_replaced_timestamp_format_short=Short date/time format
-settings_window_replaced_timestamp_format_full=Full date/time format
+settings_window_replaced_timestamp_format_short=Kurzes Datums Format
+settings_window_replaced_timestamp_format_full=Langes Datums Format
 settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
-settings_side_slider_enabled=Enable slider
-settings_leftmenu_user_html=Show HTML snippet
+settings_side_slider_enabled=Schalte Schieber ein
+settings_leftmenu_user_html=Zeige HTML Schnipsel
 settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
@@ -231,20 +231,20 @@ theme_version=Theme-Version
 
 
 # Version 17.40
-theme_global_error=Error
-theme_global_warning=Warning
-theme_global_success=Success
+theme_global_error=Fehler
+theme_global_warning=Warnung
+theme_global_success=Erfolgreich
 theme_global_info=Information
 sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
 settings_leftmenu_section_hide_vm_and_cm_links=Hide supported modules' links from navigation menu
 settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
-theme_sysinfo_wmdocs=Webmin documentation
-theme_sysinfo_vmdocs=Virtualmin documentation
-theme_sysinfo_cmdocs=Cloudmin documentation
+theme_sysinfo_wmdocs=Webmin Dockmentation
+theme_sysinfo_vmdocs=Virtualmin Dockmentation
+theme_sysinfo_cmdocs=Cloudmin Dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
-theme_fileformat_plain_text=Plain Text
+theme_fileformat_plain_text=Nur Text
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
@@ -254,7 +254,7 @@ theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Please wait...
+theme_xhred_global_please_wait=Bitte warten...
 theme_xhred_filemanager_copying_selected=Copying selected.
 theme_xhred_filemanager_cutting_selected=Cutting selected.
 theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
@@ -293,51 +293,51 @@ theme_xhred_filemanager_successful_compression=Compression has successfully fini
 theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
 theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
 
-theme_xhred_notifications_packages_updates=Packages Update
+theme_xhred_notifications_packages_updates=Packet Update
 theme_xhred_notifications_theme_update=Theme Update
 theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
 theme_xhred_notifications_firewall_update=Firewall Update
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
 
-theme_xhred_notifications_firewall_danger=Firewall Danger
+theme_xhred_notifications_firewall_danger=Firewall Gefahr
 theme_xhred_notifications_firewall_danger_message=It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don't leave your server exposed, check for the firewall settings (%v)
 
-theme_xhred_notifications_firewall_warning=Firewall Warning
+theme_xhred_notifications_firewall_warning=Firewall Warnung
 
 #17.50
-settings_force_default_tab=Force default tab for Webmin
+settings_force_default_tab=Erzwinge Standard Tab für Webmin
 settings_force_default_tab_description=This feature will force default tab on window reload as well. Warning! It will not be possible to choose for desired tab using URL, as any location query will be ignored.
 
-settings_grayscale_level_navigation=Grayscale filter
+settings_grayscale_level_navigation=Graustufen Filter
 settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
-settings_sepia_level_navigation=Sepia filter
+settings_sepia_level_navigation=Sepia Filter
 settings_sepia_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Saturate filter
+settings_saturate_level_navigation=Sättigungs Filter
 settings_saturate_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
-settings_hue_level_navigation=Hue-rotate filter
+settings_hue_level_navigation=Hue-rotate Filter
 settings_hue_level_navigation_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
-settings_invert_level_navigation=Invert filter
+settings_invert_level_navigation=Filter umkehren
 settings_invert_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
-settings_brightness_level_navigation=Brightness filter
+settings_brightness_level_navigation=Helligkeits filter
 settings_brightness_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
-settings_contrast_level_navigation=Contrast filter
+settings_contrast_level_navigation=Kontrast Filter
 settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_grayscale_level_content=Grayscale filter
+settings_grayscale_level_content=Graustufen Filter
 settings_grayscale_level_content_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
-settings_saturate_level_content=Saturate filter
+settings_saturate_level_content=Sättigungs Filter
 settings_saturate_level_content_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
-settings_hue_level_content=Hue-rotate filter
+settings_hue_level_content=Hue-rotate Filter
 settings_hue_level_content_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
 
-settings_cm_view_palette=Viewer color palette
-settings_cm_editor_palette=Editor color palette
+settings_cm_view_palette=Farbpaletten angzeigen
+settings_cm_editor_palette=Farbpaletten Editor
 
-theme_xhred_filemanager_context_select_all=Select All
-theme_xhred_filemanager_context_select_invert=Invert Selection
-theme_xhred_filemanager_context_refresh=Refresh
-theme_xhred_filemanager_context_newfile=Create new file
-theme_xhred_filemanager_context_newfoder=Create new directory
+theme_xhred_filemanager_context_select_all=Allen Auswählen
+theme_xhred_filemanager_context_select_invert=Auswahl umkehren
+theme_xhred_filemanager_context_refresh=Neu Laden
+theme_xhred_filemanager_context_newfile=Neue Datei anlegen
+theme_xhred_filemanager_context_newfoder=Neues Verzeichnis angelegen
 theme_xhred_filemanager_context_copy=Copy
 theme_xhred_filemanager_context_cut=Cut
 theme_xhred_filemanager_context_paste=Paste
@@ -576,40 +576,40 @@ theme_error_access_not_root=Access denied: User needs access to the <em>Webmin C
 
 
 #18.20
-settings_hide_top_loader=Hide top progress bar and its loader
+settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 
 
 #18.30
-settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
-settings_font_family=Font family
-settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your local computer in order to work. By using local fonts, the default one is not loaded, which will result in faster theme load
-theme_xhred_global_shipped=Shipped
-theme_xhred_global_available=Available
-theme_xhred_global_not_available=Not available
+settings_leftmenu_vm_cm_dropdown_icons=Zeige Symbole in Virtualmin/Cloudmin Dropdown Liste
+settings_font_family=Schriftart
+settings_font_family_description=Von den angezeigten Schriftenn wird nur <em>Roboto</em> mit dem Thema installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal auf deinem Computer installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt.
+theme_xhred_global_shipped=Verschickt
+theme_xhred_global_available=Vorhanden
+theme_xhred_global_not_available=Nicht vorhanden
 theme_xhred_global_default=Default
 theme_xhred_global_system_default=System default
 theme_xhred_global_local_system_default=Local system default
-theme_xhred_global_stats=Stats
-theme_xhred_global_notifications=Notifications
-theme_xhred_global_favorites=Favorites
-theme_xhred_global_cpu_load=CPU load
-theme_xhred_notification_none=No notifications
-theme_xhred_notification_no_data=No collected data
-theme_xhred_notification_no_favorites=No favorites data
-theme_xhred_global_theme_version=Theme version
+theme_xhred_global_stats=Statistik
+theme_xhred_global_notifications=Benachrichtigungen
+theme_xhred_global_favorites=Favoriten
+theme_xhred_global_cpu_load=CPU Auslastung
+theme_xhred_notification_none=Keine Benachrichtigungen vorhanden
+theme_xhred_notification_no_data=Keine Daten vorhanden
+theme_xhred_notification_no_favorites=Keine Favoriten vorhanden
+theme_xhred_global_theme_version=Theme Version
 
-settings_side_slider_sysinfo_enabled=Show dashboard tab
-settings_side_slider_notifications_enabled=Show notifications tab
-settings_side_slider_favorites_enabled=Show favorites tab
-settings_side_slider_tabs_hotkeys=Enable hotkeys for switching tabs
+settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
+settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
+settings_side_slider_favorites_enabled=Zeige Tab Favoriten
+settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
 settings_side_slider_tabs_hotkeys_description=You can use keyboard hotkeys to toggle tabs back and forth using <code>Meta+⇧+Tab/Meta+Tab</code> in case global option for hotkeys usage is enabled
-settings_show_terminal_link=Show terminal button
+settings_show_terminal_link=Zeige Terminal Knopf
 
-theme_xhred_sysinfo_system_monitors=System Monitors
-theme_xhred_sysinfo_server_status=Servers Status
-theme_xhred_sysinfo_software_versions=Software Versions
-theme_xhred_sysinfo_recent_logins=Recent Logins
-theme_xhred_sysinfo_vm_package_updates=Virtualmin Package Updates
+theme_xhred_sysinfo_system_monitors=System Monitor
+theme_xhred_sysinfo_server_status=Server Status
+theme_xhred_sysinfo_software_versions=Software Versionen
+theme_xhred_sysinfo_recent_logins=Letzte Anmeldungen
+theme_xhred_sysinfo_vm_package_updates=Virtualmin Paket Updates
 theme_xhred_sysinfo_disk_quotas=Disk Quotas
 theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
 
@@ -627,78 +627,78 @@ theme_xhred_filemanager_changing_secontext=Changing security context to <strong>
 theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
 theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
 
-theme_xhred_global_no_results_found=No results found
+theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
 
 
 #18.40
-theme_new_password_header=Set new password for user
-login_reset=Password recovery
+theme_new_password_header=Setze neues Benutzer Passwort
+login_reset=Passwort wiederherstellen
 theme_xhred_move_top=Move to top
 theme_xhred_move_bottom=Move to bottom
 theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_button_tooltip=Show tooltip on buttons
-settings_show_night_mode_link=Show palette toggle
-settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
-settings_title=Theme Configuration
-settings_subtitle=For user
+settings_button_tooltip=Zeige Tooltips auf Knöpfen
+settings_show_night_mode_link=Zeige Umschaltung Farbpalette
+settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Fabrpalette
+settings_title=Theme Konfiguration
+settings_subtitle=Für Benutzer
 
-theme_tooltip_night_mode=Day/night mode toggle
+theme_tooltip_night_mode=Tag/Nacht Modus umschalten
 theme_tooltip_terminal_link=Terminal
-theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
-theme_tooltip_logout=Sign out
-theme_tooltip_edit_user=Edit user
+theme_tooltip_language_link=Sprache
+theme_tooltip_switch_user=Benutzer wechseln
+theme_tooltip_logout=Abmelden
+theme_tooltip_edit_user=Benutzer bearbeiten
 
 
 #18.45
-settings_sysinfo_easypie_charts_size=Diameter of charts
-theme_xhred_global_choose=Choose
-theme_xhred_global_select=Select
+settings_sysinfo_easypie_charts_size=Durchmesser der Diagramme
+theme_xhred_global_choose=Auswählen
+theme_xhred_global_select=Auswählen
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including patched versions
-settings_sysinfo_theme_patched_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
-theme_git_patch_available=Latest available patch
-theme_git_patch_no_git_message=In order to install latest patches directly from GitHub you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme update has been initiated.
-theme_xhred_global_prev_page=Go back one page
-theme_xhred_global_help=Help
-settings_right_soft_updates_page_options_title=Software updates
-theme_xhred_git_compare_changes=Compare changes
-theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
+settings_sysinfo_theme_patched_updates=Inklusive gepatcher Versionen
+settings_sysinfo_theme_patched_updates_description=Damit dies funktioniert, muss das <code>git</code> Programm installiert sein.
+theme_git_patch_available=Aktuell verfügbarer Patch
+theme_git_patch_no_git_message=Damit die neueste Patch von Github installiert werden können, muss das <code>git</code> Programm installiert sein.
+theme_git_patch_update_success_message=Theme Update für Webmin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
+theme_git_patch_update_success_message2=Theme Update für Webmin and Usermin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
+theme_xhred_git_patch_update=Theme Update fehlgeschlagen. Versuche es bitte selbst auf der Kommandozeile auszuführen.
+theme_xhred_git_patch_initiated=Theme Update wurde angestoßen.
+theme_xhred_global_prev_page=Eine Seite zurück
+theme_xhred_global_help=Hilfe
+settings_right_soft_updates_page_options_title=Software Updates
+theme_xhred_git_compare_changes=Vergleiche Änderungen
+theme_xhred_filemanager_link_to_clipboard=Name des symbolischen Links `<strong><em>%value</em></strong>` wurde in die Zwischenablage kopiert.
 
 
 
 #18.46
-theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
-theme_left_mail_account_functions=Account Functions
-theme_xhred_global_dir_up=Go to previous directory (Backspace)
-theme_xhred_global_module_config=Module config
-theme_xhred_global_return=Return
-theme_xhred_global_return_to_module_index=Return to module index
+theme_left_mail_prefs=Mail Einstellungen
+theme_left_mail_change_password=Ändere Passwort
+theme_left_mail_account_functions=Konto Funktionen
+theme_xhred_global_dir_up=Zurück zum vroherigen Verzeichnis (Backspace)
+theme_xhred_global_module_config=Module Konfiguration
+theme_xhred_global_return=Zurück
+theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
 
 
 #18.47
-settings_account_info_link_mini=Show account information link as button
-theme_xhred_global_complete_changelog=Complete changelog
-theme_xhred_global_beta_version=Beta version
+settings_account_info_link_mini=Zeige Link Konto Informationen als Knopf
+theme_xhred_global_complete_changelog=Zeige Änderungspprotokoll
+theme_xhred_global_beta_version=Beta Version
 theme_xhred_global_release=Release
-theme_xhred_global_released_on=Released on
-theme_xhred_global_committed_on=Committed on
+theme_xhred_global_released_on=Veröffentlicht am
+theme_xhred_global_committed_on=Hinzugefügt am
 theme_xhred_global_resolved_issues=Resolved issues in %value releases
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_force_upgrade_beta=Install latest development version (beta)
-theme_force_upgrade_stable=Install latest release version (stable)
-theme_xhred_source_encoding=Source encoding
-theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
-theme_xhred_encoding_manually_set=Manually set encoding
-theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+theme_force_upgrade=Erzwinge Theme Update
+theme_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
+theme_force_upgrade_stable=Installiere aktuelle Release Version (stable)
+theme_xhred_source_encoding=Quellen Codierung
+theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Theme Updates.
+theme_xhred_encoding_manually_set=Ändere Codierung händisch
+theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Codierung geändert werden kann.
