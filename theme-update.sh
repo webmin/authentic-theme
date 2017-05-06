@@ -19,7 +19,6 @@ if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
     exit 0
 fi
 
-
 # Ask user to confirm update operation
 read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
 echo

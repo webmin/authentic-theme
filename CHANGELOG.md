@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 18.47-patch15 (May 6, 2017)
+#### Version 18.48 (May 6, 2017)
 * Added enhancements to page transitions, resulting in overall speed increase
 * Added complete support for proxy-passed configurations [#748](https://github.com/qooob/authentic-theme/issues/748)
 * Added support for encodings control for edited files in File Manager [#52020](https://virtualmin.com/comment/775985#comment-775985)

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.47 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -730,7 +730,7 @@ var $__was = function() {
     if (unbuffered_header()) {
         $("html").data("data-pagescroll", true)
     }
-    if ($("body").hasClass("__e__")) {
+    if ($("body").hasClass("__e__") || (c && c.indexOf("sysinfo.cgi") > -1)) {
         return
     }
     if (!$('body[class^="syslog"]').length && (($("pre") && $("pre").length > 0 && $("pre").length <= 2) || $("html").data("data-pagescroll") === true)) {

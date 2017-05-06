@@ -1,6 +1,6 @@
 ## Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (18.47)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.47/authentic-theme-18.47.wbt.gz)
+* [Download (18.48)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.48/authentic-theme-18.48.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -55,7 +55,7 @@
 ### FAQ
 
 #### PGP signature verification
-After adding theme's [_public key_](https://github.com/qooob/authentic-theme/blob/master/THEME.pgp) to your keyring, you can check that the downloaded file that you want to install is original and unmodified, by verifying its signature with running `gpg --verify authentic-theme-18.47.wbt.gz-sig.asc authentic-theme-18.47.wbt.gz` command in the console.
+After adding theme's [_public key_](https://github.com/qooob/authentic-theme/blob/master/THEME.pgp) to your keyring, you can check that the downloaded file that you want to install is original and unmodified, by verifying its signature with running `gpg --verify authentic-theme-18.48.wbt.gz-sig.asc authentic-theme-18.48.wbt.gz` command in the console.
 
 #### How to update _Authentic_ Theme manually?
 Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using console, do the following:
