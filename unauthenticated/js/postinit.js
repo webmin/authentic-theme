@@ -2180,7 +2180,8 @@ function t__cm___init(g, i, f, j, d, m, k) {
                         window["__cm_editor_" + r].on("change", function(D, C) {
                             n.val(window["__cm_editor_" + r].getValue());
                             if ($(":focus").parents(".jsPanel").is(".jsPanel")) {
-                                $(":focus").parents(".jsPanel").find("._filemanager_file_editor_save").addClass("text-danger")
+                                $(":focus").parents(".jsPanel").find("._filemanager_file_editor_save").addClass("text-danger __locked__");
+                                $(":focus").parents(".jsPanel").find("select[data-encoding]").addClass("pointer-events-none")
                             }
                         });
                         window["__cm_editor_" + r].setSize($resize[0], $resize[1])

@@ -699,3 +699,5 @@ theme_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
 theme_force_upgrade_stable=Installera senaste versionen (stabil)
 theme_xhred_source_encoding=Källkodning
 theme_update_footer=Hittar du fel i temat får du gärna rapportera dem på $1. Följ temat på $2 för de senaste uppdateringarna.
+theme_xhred_encoding_manually_set=Manually set encoding
+theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.

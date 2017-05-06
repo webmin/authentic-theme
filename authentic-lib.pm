@@ -2852,7 +2852,7 @@ sub _settings
          ' . (
             $get_user_level eq '0' && has_command('git')
             ? '                     <span class="dropup">
-                                       <button class="btn btn-warning dropdown-toggle margined-left--1 no-style-hover" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                          <i class="fa fa-fw fa-download-cloud margined-right-8"></i>'
                                         . $Atext{'theme_force_upgrade'}
                                         . '&nbsp;&nbsp;
@@ -2998,6 +2998,13 @@ sub get_xhr_request
             @dirs = sort { "\L$a" cmp "\L$b" } @dirs;
             print get_json( \@dirs );
 
+        }
+        elsif ( $in{'xhr-encoding_convert'} eq '1' ) {
+            switch_to_remote_user();
+            my $data;
+            use Encode qw( encode decode );
+            eval { $data = Encode::encode( 'utf-8', Encode::decode( $in{'xhr-encoding_convert_name'}, read_file_contents( $in{'xhr-encoding_convert_file'} ) ) ) };
+            print $data;
         }
         elsif ( $in{'xhr-get_nice_size'} eq '1' ) {
             print nice_size( $in{'xhr-get_nice_size_sum'} );

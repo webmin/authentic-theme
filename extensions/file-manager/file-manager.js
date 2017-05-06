@@ -2585,33 +2585,36 @@ function ___f__tw() {
                             url: A,
                             dataType: "text",
                             autoload: false,
-                            done: function(I, p, R, m) {
-                                var o = E,
+                            done: function(M, r, V, m) {
+                                var p = E,
                                     n = h;
-                                var t = $(I).find(".ui_form"),
-                                    K = ("<strong>" + (escape_html(decodeURIComponentSafe(E)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
-                                    P = $(this).parents("div.jsPanel"),
-                                    J = (parseInt(m.attr("id").replace("jsPanel-", "")) + 1);
-                                if (!$(t).find("textarea").length) {
-                                    var t = $(I).find('form[action="save_file.cgi"]').append($(I).find("#data").removeAttr("id")).prepend($(I).find("#file").removeAttr("id")).prepend($(I).find("#path").removeAttr("id"))
+                                var J = $(M).find(".ui_form"),
+                                    O = ("<strong>" + (escape_html(decodeURIComponentSafe(E)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
+                                    T = $(this).parents("div.jsPanel"),
+                                    N = (parseInt(m.attr("id").replace("jsPanel-", "")) + 1);
+                                if (!$(J).find("textarea").length) {
+                                    var J = $(M).find('form[action="save_file.cgi"]').append($(M).find("#data").removeAttr("id")).prepend($(M).find("#file").removeAttr("id")).prepend($(M).find("#path").removeAttr("id"))
                                 }
-                                m.title(K);
-                                P.data("jspuid", B);
-                                P.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", K.replace(/<\/?[^>]+(>|$)/g, ""));
-                                P.find(".jsPanel-content").html(t);
+                                m.title(O);
+                                T.data("jspuid", B);
+                                T.find(".jsPanel-hdr h3").prepend('<i class="fa fa-fw fa-lg fa-pencil-square-o" alt="Edit" style="margin-right: 7px; vertical-align: -15%">&nbsp;&nbsp;</i>').find("strong").attr("title", O.replace(/<\/?[^>]+(>|$)/g, ""));
+                                T.find(".jsPanel-content").html(J);
                                 $("#jsPanel-min-container").css({
                                     width: $(window).width(),
                                     overflow: "auto"
                                 });
-                                var q = P.find(".jsPanel-content");
-                                var Q = q.find(".ui_form_end_buttons tr td span:first-child input"),
-                                    s = q.find(".ui_form_end_buttons tr td span:nth-child(2) input");
-                                q.find(".ui_form_end_buttons").remove();
-                                P.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
-                                var N = q.find("form").attr("data-encoding");
-                                N = (N ? N : "UTF-8");
-                                var O = "";
-                                var M = {
+                                var t = T.find(".jsPanel-content");
+                                var U = t.find(".ui_form_end_buttons tr td span:first-child input"),
+                                    I = t.find(".ui_form_end_buttons tr td span:nth-child(2) input");
+                                t.find(".ui_form_end_buttons").remove();
+                                T.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div class="jsPanel-btn-save _filemanager_file_editor_save" style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-floppy-o"></i></div>																								 <div class="jsPanel-btn-help " style="margin-right: 10px; margin-top: 5px;"><i class="fa fa-fw fa-question-circle __helper"></i></div>');
+                                var R = t.find("form").attr("data-encoding"),
+                                    o = ($hostname + "-" + ("__cm_editor_encoding")),
+                                    q = (R ? true : false),
+                                    R = (R ? R : (localStorage.getItem(o) ? "not_detected" : "UTF-8")),
+                                    K = ($("body").data("charset") != "UTF-8");
+                                var S = "";
+                                var Q = {
                                     "UTF-8": "utf-8",
                                     "ISO-8859-1": "iso-8859-1 (cp1252)&#x200E;",
                                     "windows-1252": "cp1252 (iso-8859-1)&#x200E;",
@@ -2628,73 +2631,107 @@ function ___f__tw() {
                                     "US-ASCII": "ascii",
                                     "x-IBM874": "cp874",
                                     IBM866: "cp866",
-                                    "KOI8-R": "koi8-r",
-                                    "KOI8-U": "koi8-u",
+                                    "KOI8-R": "koi8",
                                     "EUC-KR": "EUC encoding, Korean",
                                     "EUC-JP": "EUC encoding, Japanese",
                                     Shift_JIS: "Shift-JIS, Japanese"
                                 };
-                                $.each(M, function(x, S) {
-                                    O += '<option value="' + x + '"' + (((N.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + ">" + S + "</option>"
+                                if (!Q.hasOwnProperty(R) && R != "not_detected") {
+                                    S += '<option value="' + R + '" selected>' + R.toLowerCase() + "</option>"
+                                }
+                                $.each(Q, function(x, X) {
+                                    S += '<option value="' + x + '"' + (((R.toLowerCase() == x.toLowerCase()) || (!x)) ? " selected" : "") + ">" + X + "</option>"
                                 });
-                                P.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default" title="' + lang("theme_xhred_source_encoding") + ": " + N + '"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + ($("body").data("charset") != "UTF-8" ? " pointer-events-none" : "") + '"> <select data-encoding dir="rtl">' + O + "</select> </label></div>");
-                                var H = P.find("select[data-encoding]"),
-                                    r = H.val();
-                                console.log(Object.keys(M)[1], Object.keys(M)[2]);
-                                r == Object.keys(M)[2] && H.val(Object.keys(M)[1]);
-                                P.find(".jsPanel-btn-max").trigger("click");
-                                t__cm___init(q.find("textarea"), K, [null, parseInt(q.css("height"))], J);
-                                P.animate({
+                                T.find(".jsPanel-hdr .jsPanel-hdr-r").append('<div data-encoding-label class="margined-top-3 margined-right-13 text-light cursor-default"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon' + (K ? " pointer-events-none" : "") + '"> <select required data-encoding dir="rtl">' + S + "</select> </label></div>");
+                                var L = T.find("select[data-encoding]"),
+                                    H = L.val(),
+                                    s = T.find("._filemanager_file_editor_save");
+                                H == Object.keys(Q)[2] && L.val(Object.keys(Q)[1]);
+                                L.on("change", function(x) {
+                                    if (s.hasClass("text-danger") && s.hasClass("__locked__")) {
+                                        return
+                                    }
+                                    var X = $(this).val(),
+                                        Y = n + "/" + p;
+                                    (!q && localStorage.setItem(o, X));
+                                    $.ajax({
+                                        type: "POST",
+                                        url: $_____link_full + "/index.cgi?xhr-encoding_convert=1&xhr-encoding_convert_name=" + X + "&xhr-encoding_convert_file=" + Y + "",
+                                        data: false,
+                                        dataType: "text",
+                                        success: function(Z) {
+                                            window["__cm_editor_" + N].setValue(Z);
+                                            s.removeClass("text-danger __locked__");
+                                            L.removeClass("pointer-events-none")
+                                        },
+                                        error: function() {}
+                                    })
+                                });
+                                var W = localStorage.getItem(o);
+                                if (!q && W) {
+                                    if (W && Q.hasOwnProperty(W)) {
+                                        L.val(W).trigger("change")
+                                    }
+                                }
+                                T.find(".jsPanel-btn-max").trigger("click");
+                                t__cm___init(t.find("textarea"), O, [null, parseInt(t.css("height"))], N);
+                                T.animate({
                                     opacity: 1
                                 }, 400, function() {
-                                    window["__cm_editor_" + J].focus()
+                                    window["__cm_editor_" + N].focus()
                                 });
-                                m.on("jspanelbeforeclose", function(x, T) {
-                                    var S = $("#" + T)
+                                m.on("jspanelbeforeclose", function(x, Y) {
+                                    var X = $("#" + Y)
                                 });
-                                P.find("._filemanager_file_editor_save").click(function(x) {
+                                L.click(function(x) {
+                                    if (!K && $(this).hasClass("pointer-events-none")) {
+                                        messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + lang("theme_xhred_filemanager_save_to_change_encoding"), 5, "warning", "savingFileDone")
+                                    }
+                                });
+                                s.click(function(x) {
                                     $(this).find("i").replaceWith(t__lo__btn_md());
-                                    $(this).removeClass("text-danger");
-                                    P.find('form[action="save_file.cgi"]').submit()
+                                    $(this).removeClass("text-danger __locked__");
+                                    L.removeClass("pointer-events-none");
+                                    T.find('form[action="save_file.cgi"]').submit()
                                 });
 
-                                function L() {
-                                    var x = P.find("._filemanager_file_editor_save");
+                                function P() {
+                                    var x = s;
                                     x.find(".cspinner").remove();
                                     x.find("i").remove();
                                     x.prepend('<i class="fa fa-fw fa-floppy-o"></i>')
                                 }
-                                P.find('form[action="save_file.cgi"]').submit(function(V) {
-                                    V.preventDefault();
-                                    V.stopPropagation();
-                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", K) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
-                                    var U = 'form[action="save_file.cgi"]',
-                                        T = "select[data-encoding]",
-                                        S = P.find(T).val(),
-                                        x = P.find("" + U + ' input:not([name="path"]), ' + U + " textarea").serialize();
+                                T.find('form[action="save_file.cgi"]').submit(function(aa) {
+                                    aa.preventDefault();
+                                    aa.stopPropagation();
+                                    messenger('<i class="fa fa-lg fa-fw fa-floppy-o"></i>' + lang("theme_xhred_filemanager_saving_file").replace("%value", O) + " " + lang("theme_xhred_global_please_wait"), 5, "info", "savingFileDone");
+                                    var Z = 'form[action="save_file.cgi"]',
+                                        Y = "select[data-encoding]",
+                                        X = T.find(Y).val(),
+                                        x = T.find("" + Z + ' input:not([name="path"]), ' + Z + " textarea").serialize();
                                     x = x + "&path=" + n;
-                                    if (S) {
-                                        x = x + "&encoding=" + S
+                                    if (X) {
+                                        x = x + "&encoding=" + X
                                     }
                                     $.ajax({
                                         type: "POST",
                                         url: $_____link_full + "/" + __f___mn() + "/save_file.cgi",
                                         data: x,
                                         dataType: "text",
-                                        success: function(W) {
-                                            var X = P.find("._filemanager_file_editor_save .cspinner");
-                                            if (!$(W).find("textarea#data").length) {
-                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(W).find(".panel-body").html(), 10, "error", "savingFileError");
-                                                if (X.parent(".btn").index() === 1) {
+                                        success: function(ab) {
+                                            var ac = T.find("._filemanager_file_editor_save .cspinner");
+                                            if (!$(ab).find("textarea#data").length) {
+                                                messenger('<i class="fa fa-lg fa-fw fa-exclamation-triangle"></i>' + $(ab).find(".panel-body").html(), 10, "error", "savingFileError");
+                                                if (ac.parent(".btn").index() === 1) {
                                                     modal_dismiss()
                                                 }
-                                                L();
+                                                P();
                                                 return
                                             }
-                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", K), 1.5, "success", "savingFileDone");
-                                            L()
+                                            messenger('<i class="fa fa-lg fa-fw fa-check-circle"></i>' + lang("theme_xhred_filemanager_file_saved").replace("%value", O), 1.5, "success", "savingFileDone");
+                                            P()
                                         },
-                                        error: function(W) {}
+                                        error: function(ab) {}
                                     })
                                 })
                             }
