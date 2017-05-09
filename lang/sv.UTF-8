@@ -701,3 +701,10 @@ theme_xhred_source_encoding=Källkodning
 theme_update_footer=Hittar du fel i temat får du gärna rapportera dem på $1. Följ temat på $2 för de senaste uppdateringarna.
 theme_xhred_encoding_manually_set=Manually set encoding
 theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+
+
+#18.49
+theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
+theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
+theme_xhred_filemanager_user_switch_current_user=Current user

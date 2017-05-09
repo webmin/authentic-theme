@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 18.48-patch1 (May 9, 2017)
+* Added ability to switch user mode for privileged user in File Manager [#759](https://github.com/qooob/authentic-theme/issues/759)
+
 #### Version 18.48 (May 6, 2017)
 * Added enhancements to page transitions, resulting in overall speed increase
 * Added complete support for proxy-passed configurations [#748](https://github.com/qooob/authentic-theme/issues/748)

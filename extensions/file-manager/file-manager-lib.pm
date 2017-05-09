@@ -37,6 +37,8 @@ sub get_libs
 
     get_paths();
 
+    switch_to_user($in{'username'});
+
     if ( !$in{'error'} ) {
         set_response();
         set_response_count();
@@ -58,6 +60,15 @@ sub get_type
     else {
         return 0;
     }
+}
+
+sub get_json
+{
+  return JSON->new->latin1->encode(@_);
+}
+
+sub print_json {
+    head(), print get_json(@_);
 }
 
 sub get_errors
@@ -408,6 +419,20 @@ sub paster
 
     return $e;
 
+}
+
+sub switch_to_user
+{
+  my ($username) = @_;
+  my @uinfo = getpwnam($username);
+  if (@uinfo) {
+    switch_to_unix_user(\@uinfo);
+  }
+
+}
+
+sub is_root {
+  return ($base_remote_user eq 'root' ? 1 : 0);
 }
 
 sub get_env

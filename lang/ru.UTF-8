@@ -706,3 +706,10 @@ theme_xhred_source_encoding=Source encoding
 theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
 theme_xhred_encoding_manually_set=Manually set encoding
 theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+
+
+#18.49
+theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
+theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
+theme_xhred_filemanager_user_switch_current_user=Current user

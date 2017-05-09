@@ -5951,6 +5951,11 @@ select[multiple][size='12'] {
     min-height: 228px !important
 }
 
+label.select-styled.fstreched,
+label.select-styled.fstreched select {
+    width: 100%
+}
+
 label.select-styled select {
     padding: 0 6px;
     margin: 0;
@@ -9567,6 +9572,10 @@ body[class*='cluster-software'] form[action='search.cgi']>input[name='search'] {
     vertical-align: middle
 }
 
+body[data-level="0"] tr[data-users-switch] {
+    display: table-row !important
+}
+
 html[data-sestatus='0'] tr[data-selinux] {
     display: none
 }
@@ -10365,10 +10374,29 @@ screen and (max-height:600px) {
     border-style: dashed
 }
 
+.hr-no-margin {
+    margin-top: 1px;
+    margin-bottom: 0
+}
+
+.hr-darker {
+    border-color: rgba(200, 200, 200, 0.5)
+}
+
+.modal-list-users hr {
+    margin-bottom: 13px
+}
+
 @media(min-width:768px) {
     .modal-dialog.modal-dialog-update {
         width: 600px;
         margin: 30px auto
+    }
+    .modal-top-10 {
+        margin: 10% auto
+    }
+    .modal-md {
+        width: 480px
     }
 }
 

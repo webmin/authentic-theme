@@ -107,7 +107,7 @@ settings_right_theme_extensions_title=Themen Erweiterungen
 settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
 
-settings_right_theme_logos=Theme 
+settings_right_theme_logos=Theme
 settings_right_theme_logos_title=Theme Logos
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
 settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
@@ -185,7 +185,7 @@ settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
 settings_side_slider_background_refresh_time=Timeout for background information update
 settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
-settings_sysinfo_easypie_charts=Zeige Diagramm 
+settings_sysinfo_easypie_charts=Zeige Diagramm
 settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Theme
 settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
@@ -702,3 +702,10 @@ theme_xhred_source_encoding=Quellen Codierung
 theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Theme Updates.
 theme_xhred_encoding_manually_set=Ändere Codierung händisch
 theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Codierung geändert werden kann.
+
+
+#18.49
+theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
+theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
+theme_xhred_filemanager_user_switch_current_user=Current user
