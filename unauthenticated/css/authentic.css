@@ -9572,7 +9572,7 @@ body[class*='cluster-software'] form[action='search.cgi']>input[name='search'] {
     vertical-align: middle
 }
 
-body[data-level="0"] tr[data-users-switch] {
+body[data-user-switch="1"] tr[data-users-switch] {
     display: table-row !important
 }
 

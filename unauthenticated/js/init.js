@@ -46,6 +46,7 @@ config_portable_module_filemanager_hide_toolbar = (typeof localStorage != "undef
 config_portable_module_filemanager_hovered_toolbar = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_hovered_toolbar") == "true" ? true : false);
 config_portable_module_filemanager_notification_type = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_notification_type") ? localStorage.getItem($hostname + "-config_portable_module_filemanager_notification_type") : 1);
 config_portable_module_filemanager_calculate_size = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_calculate_size") == "true" ? true : false);
+config_portable_module_filemanager_switch_user = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_switch_user") == "false" ? false : true);
 config_portable_module_filemanager_remember_tabs = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_filemanager_remember_tabs") == "false" ? false : true);
 config_portable_module_xsql_fit_content_screen_height = (typeof localStorage != "undefined" && localStorage.getItem($hostname + "-config_portable_module_xsql_fit_content_screen_height") == "true" ? true : false);
 typeof settings_hotkeys_active == "undefined" ? settings_hotkeys_active = true : false;
@@ -329,7 +330,7 @@ function lang(b, a) {
 }
 
 function manageConfig(d) {
-    var b = ["config_portable_module_csf_style_custom_promoted", "config_portable_theme_charset_warning_shown", "config_portable_module_xsql_fit_content_screen_height", "config_portable_module_filemanager_hide_toolbar", "config_portable_module_filemanager_hovered_toolbar", "config_portable_module_filemanager_hide_actions", "config_portable_module_filemanager_remember_tabs", "config_portable_module_filemanager_calculate_size", "config_portable_module_filemanager_notification_type"];
+    var b = ["config_portable_module_csf_style_custom_promoted", "config_portable_theme_charset_warning_shown", "config_portable_module_xsql_fit_content_screen_height", "config_portable_module_filemanager_hide_toolbar", "config_portable_module_filemanager_hovered_toolbar", "config_portable_module_filemanager_hide_actions", "config_portable_module_filemanager_remember_tabs", "config_portable_module_filemanager_calculate_size", "config_portable_module_filemanager_switch_user", "config_portable_module_filemanager_notification_type"];
     if (d == "get_options") {
         return b
     }
