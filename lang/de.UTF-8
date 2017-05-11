@@ -87,14 +87,6 @@ session_timed_out=Sitzung wurde nach $1 Minuten Inaktivität abgebrochen.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
 
 
-
-
-
-
-
-
-
-
 settings_right_options=Optionen
 settings_right_restore_defaults=Auf Grundeinstellung zurücksetzen
 settings_right_restored=Zurückgesetzt
@@ -105,8 +97,7 @@ settings_right_saving=Speichern
 settings_right_theme_extensions=Themen Erweiterungen
 settings_right_theme_extensions_title=Themen Erweiterungen
 settings_right_file_edit=Bearbeite Erweitungs Datei:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
-
+settings_right_extensions_title=Das erweiterbare Theme Design erlaubt es sehr einfach Teile der Benutzerschnittstelle zu verändern Man kann sowohl <em>CSS</em> als auch <em>JavaScript</em> mit benutzerdefinierten Regeln für <emStyle</em und <em>Script</em> Erweiterungen anpassen. Im folgenden ein paar Beispiele zum bessseren Verständis der zugrundeliegenden Idee. Das Anpassen der Hintergrundfarbe erfolgt durch Einfügen von Style-Regeln in die CSS Erweiterung: <code>body {background-color: Gainsboro}</code>. Das Anpassen der Breite ein Knopfes erfolgt durch Einfügen von JavaScript-Anweisungen: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. In der Praxis wird es aber doch etwas komplexer sein als heir beschrieben.
 settings_right_theme_logos=Theme
 settings_right_theme_logos_title=Theme Logos
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
@@ -122,7 +113,7 @@ settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen f�
 
 
 settings_right_window_options_title=Optionen für Fenster
-settings_right_navigation_menu_title=Optionen für Navigations Menu
+settings_right_navigation_menu_title=Optionen für Navigations Menü
 settings_right_table_options_title=Optionen für Tabellen
 settings_security_title=Optionen für Sicherheits Hinweise
 settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
@@ -140,12 +131,12 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
-settings_navigation_color=Farbpalette für Navigations Menu
+settings_navigation_color=Farbpalette für Navigations Menü
 settings_background_color=Farbpalette für Inhalts Seite
-settings_animation_left=Anminationen im Navigations Menu einschalten
+settings_animation_left=Anminationen im Navigations Menü einschalten
 settings_animation_tabs=Anminationen in den Tabs einschalten
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
-settings_loader_left=Drehende Anzeige im Navigations Menu einschalten
+settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
 settings_right_reload=Lade Standad Inhalts Seite
 settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
@@ -191,7 +182,7 @@ settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
 settings_sysinfo_link_mini=Zeige Link zum Dashboard als Knopf
-settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menu als Symbol
+settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menü als Symbol
 
 settings_right_page_defaults_title=Standard Titel
 settings_right_default_tab_webmin=Standard Tab nach Anmelden in Webmin
@@ -293,7 +284,7 @@ theme_xhred_filemanager_successful_compression=Compression has successfully fini
 theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
 theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
 
-theme_xhred_notifications_packages_updates=Packet Update
+theme_xhred_notifications_packages_updates=Paket Update
 theme_xhred_notifications_theme_update=Theme Update
 theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
 theme_xhred_notifications_firewall_update=Firewall Update
@@ -602,7 +593,7 @@ settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
 settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
 settings_side_slider_favorites_enabled=Zeige Tab Favoriten
 settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
-settings_side_slider_tabs_hotkeys_description=You can use keyboard hotkeys to toggle tabs back and forth using <code>Meta+⇧+Tab/Meta+Tab</code> in case global option for hotkeys usage is enabled
+settings_side_slider_tabs_hotkeys_description=Schnelles hin und her schalten zwischen den Tabs mit den Schnellzugriffs Tasten <code>Meta+⇧+Tab/Meta+Tab</code>, wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
 settings_show_terminal_link=Zeige Terminal Knopf
 
 theme_xhred_sysinfo_system_monitors=System Monitor
@@ -641,7 +632,7 @@ theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
 settings_button_tooltip=Zeige Tooltips auf Knöpfen
 settings_show_night_mode_link=Zeige Umschaltung Farbpalette
-settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Fabrpalette
+settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
 settings_title=Theme Konfiguration
 settings_subtitle=Für Benutzer
 
@@ -678,7 +669,7 @@ theme_xhred_filemanager_link_to_clipboard=Name des symbolischen Links `<strong><
 theme_left_mail_prefs=Mail Einstellungen
 theme_left_mail_change_password=Ändere Passwort
 theme_left_mail_account_functions=Konto Funktionen
-theme_xhred_global_dir_up=Zurück zum vroherigen Verzeichnis (Backspace)
+theme_xhred_global_dir_up=Zurück zum vorherigen Verzeichnis (Backspace)
 theme_xhred_global_module_config=Module Konfiguration
 theme_xhred_global_return=Zurück
 theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
@@ -686,12 +677,12 @@ theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
 
 #18.47
 settings_account_info_link_mini=Zeige Link Konto Informationen als Knopf
-theme_xhred_global_complete_changelog=Zeige Änderungspprotokoll
+theme_xhred_global_complete_changelog=Zeige Änderungsprotokoll
 theme_xhred_global_beta_version=Beta Version
 theme_xhred_global_release=Release
 theme_xhred_global_released_on=Veröffentlicht am
 theme_xhred_global_committed_on=Hinzugefügt am
-theme_xhred_global_resolved_issues=Resolved issues in %value releases
+theme_xhred_global_resolved_issues=Gelöste Probleme in %value Release
 
 
 #18.48
@@ -705,8 +696,8 @@ theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden da
 
 
 #18.49
-theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
-theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
-theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
-theme_xhred_filemanager_user_switch_current_user=Current user
-theme_xhred_filemanager_user_switch_option=Automatically switch to user mode upon entering its home directory
+theme_xhred_filemanager_user_switch=Schneller Benutzerwechsel (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=Nach Auswahl eines Benutzers aus der Liste werden nachfolgende Operationen unter diesem Benutzer-Account ausgeführt.
+theme_xhred_filemanager_user_switch_description_back=Zum Zücksetzen auf den Standard Benutzer bitte die erste Option in der Liste auswählen.
+theme_xhred_filemanager_user_switch_current_user=Aktueller Benutzer
+theme_xhred_filemanager_user_switch_option=Automatischer Benutzerwechsel wenn man in das Heimatverzeichnis des Benutzers wechselt
