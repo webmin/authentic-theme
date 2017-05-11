@@ -113,7 +113,7 @@ settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen f�
 
 
 settings_right_window_options_title=Optionen für Fenster
-settings_right_navigation_menu_title=Optionen für Navigations Menu
+settings_right_navigation_menu_title=Optionen für Navigations Menü
 settings_right_table_options_title=Optionen für Tabellen
 settings_security_title=Optionen für Sicherheits Hinweise
 settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
@@ -131,12 +131,12 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
-settings_navigation_color=Farbpalette für Navigations Menu
+settings_navigation_color=Farbpalette für Navigations Menü
 settings_background_color=Farbpalette für Inhalts Seite
-settings_animation_left=Anminationen im Navigations Menu einschalten
+settings_animation_left=Anminationen im Navigations Menü einschalten
 settings_animation_tabs=Anminationen in den Tabs einschalten
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
-settings_loader_left=Drehende Anzeige im Navigations Menu einschalten
+settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
 settings_right_reload=Lade Standad Inhalts Seite
 settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
@@ -182,7 +182,7 @@ settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
 settings_sysinfo_link_mini=Zeige Link zum Dashboard als Knopf
-settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menu als Symbol
+settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menü als Symbol
 
 settings_right_page_defaults_title=Standard Titel
 settings_right_default_tab_webmin=Standard Tab nach Anmelden in Webmin
@@ -284,7 +284,7 @@ theme_xhred_filemanager_successful_compression=Compression has successfully fini
 theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
 theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
 
-theme_xhred_notifications_packages_updates=Packet Update
+theme_xhred_notifications_packages_updates=Paket Update
 theme_xhred_notifications_theme_update=Theme Update
 theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
 theme_xhred_notifications_firewall_update=Firewall Update
@@ -696,8 +696,8 @@ theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden da
 
 
 #18.49
-theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
-theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
-theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
-theme_xhred_filemanager_user_switch_current_user=Current user
-theme_xhred_filemanager_user_switch_option=Automatically switch to user mode upon entering its home directory
+theme_xhred_filemanager_user_switch=Schneller Benutzerwechsel (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=Nach Auswahl eines Benutzers aus der Liste werden nachfolgende Operationen unter diesem Benutzer-Account ausgeführt.
+theme_xhred_filemanager_user_switch_description_back=Zum Zücksetzen auf den Standard Benutzer bitte die erste Option in der Liste auswählen.
+theme_xhred_filemanager_user_switch_current_user=Aktueller Benutzer
+theme_xhred_filemanager_user_switch_option=Automatischer Benutzerwechsel wenn man in das Heimatverzeichnis des Benutzers wechselt
