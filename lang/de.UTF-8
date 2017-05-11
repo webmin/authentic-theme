@@ -87,14 +87,6 @@ session_timed_out=Sitzung wurde nach $1 Minuten Inaktivität abgebrochen.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
 
 
-
-
-
-
-
-
-
-
 settings_right_options=Optionen
 settings_right_restore_defaults=Auf Grundeinstellung zurücksetzen
 settings_right_restored=Zurückgesetzt
@@ -105,8 +97,7 @@ settings_right_saving=Speichern
 settings_right_theme_extensions=Themen Erweiterungen
 settings_right_theme_extensions_title=Themen Erweiterungen
 settings_right_file_edit=Bearbeite Erweitungs Datei:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface. It's possible to access both <em>CSS</em> and <em>JavaScript</em>, by writing custom <em>styles</em>/<em>scripts</em> extensions. Following are the plain examples, made to help you understand the basic idea of its application. For example, in order to change the color of the background, add the following style to CSS extension: <code>body {background-color: Gainsboro}</code>. Using JavaScript, to change submit button's width, add the following code to JavaScript extension: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. However, in practice, it will be more complicated than that.
-
+settings_right_extensions_title=Das erweiterbare Theme Design erlaubt es sehr einfach Teile der Benutzerschnittstelle zu verändern Man kann sowohl <em>CSS</em> als auch <em>JavaScript</em> mit benutzerdefinierten Regeln für <emStyle</em und <em>Script</em> Erweiterungen anpassen. Im folgenden ein paar Beispiele zum bessseren Verständis der zugrundeliegenden Idee. Das Anpassen der Hintergrundfarbe erfolgt durch Einfügen von Style-Regeln in die CSS Erweiterung: <code>body {background-color: Gainsboro}</code>. Das Anpassen der Breite ein Knopfes erfolgt durch Einfügen von JavaScript-Anweisungen: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. In der Praxis wird es aber doch etwas komplexer sein als heir beschrieben.
 settings_right_theme_logos=Theme
 settings_right_theme_logos_title=Theme Logos
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
