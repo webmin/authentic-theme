@@ -632,7 +632,7 @@ theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
 settings_button_tooltip=Zeige Tooltips auf Knöpfen
 settings_show_night_mode_link=Zeige Umschaltung Farbpalette
-settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Fabrpalette
+settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
 settings_title=Theme Konfiguration
 settings_subtitle=Für Benutzer
 
@@ -669,7 +669,7 @@ theme_xhred_filemanager_link_to_clipboard=Name des symbolischen Links `<strong><
 theme_left_mail_prefs=Mail Einstellungen
 theme_left_mail_change_password=Ändere Passwort
 theme_left_mail_account_functions=Konto Funktionen
-theme_xhred_global_dir_up=Zurück zum vroherigen Verzeichnis (Backspace)
+theme_xhred_global_dir_up=Zurück zum vorherigen Verzeichnis (Backspace)
 theme_xhred_global_module_config=Module Konfiguration
 theme_xhred_global_return=Zurück
 theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
@@ -677,7 +677,7 @@ theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
 
 #18.47
 settings_account_info_link_mini=Zeige Link Konto Informationen als Knopf
-theme_xhred_global_complete_changelog=Zeige Änderungspprotokoll
+theme_xhred_global_complete_changelog=Zeige Änderungsprotokoll
 theme_xhred_global_beta_version=Beta Version
 theme_xhred_global_release=Release
 theme_xhred_global_released_on=Veröffentlicht am
