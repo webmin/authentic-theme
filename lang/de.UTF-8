@@ -593,7 +593,7 @@ settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
 settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
 settings_side_slider_favorites_enabled=Zeige Tab Favoriten
 settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
-settings_side_slider_tabs_hotkeys_description=You can use keyboard hotkeys to toggle tabs back and forth using <code>Meta+⇧+Tab/Meta+Tab</code> in case global option for hotkeys usage is enabled
+settings_side_slider_tabs_hotkeys_description=Schnelles hin und her schalten zwischen den Tabs mit den Schnellzugriffs Tasten <code>Meta+⇧+Tab/Meta+Tab</code>, wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
 settings_show_terminal_link=Zeige Terminal Knopf
 
 theme_xhred_sysinfo_system_monitors=System Monitor
@@ -682,7 +682,7 @@ theme_xhred_global_beta_version=Beta Version
 theme_xhred_global_release=Release
 theme_xhred_global_released_on=Veröffentlicht am
 theme_xhred_global_committed_on=Hinzugefügt am
-theme_xhred_global_resolved_issues=Resolved issues in %value releases
+theme_xhred_global_resolved_issues=Gelöste Probleme in %value Release
 
 
 #18.48
