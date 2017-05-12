@@ -850,7 +850,7 @@ sub print_left_menu
                                               $Atext{'right_slcheck'}, 1 );
                     }
                 }
-                elsif ( !foreign_available("webmin") && $__custom_print eq '0' && check_reseller_home() ) {
+                elsif ( !foreign_available("webmin") && $__custom_print eq '0' ) {
                     print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi",
                                          $Atext{'settings_title'}, 1 );
                     $__custom_print++;
@@ -2903,7 +2903,7 @@ sub _settings
               && error( $Atext{'theme_error_access_not_root'} );
 
             unlink_file( $config_directory . "/authentic-theme/settings.js" );
-            unlink_file( get_user_home() . "/.atconfig" );
+            unlink_file( get_tuconfig_file() );
             if ( usermin_available() ) {
                 unlink_file( $__usermin_config . "/authentic-theme/settings.js" );
             }
@@ -3656,19 +3656,17 @@ sub get_available_modules
 sub manage_theme_config
 {
     my ($action) = @_;
-    my %atconfig;
-
-    switch_to_remote_user();
+    my %tuconfig;
 
     if ( $action eq 'save' ) {
         my %i = settings_filter(%in);
-        write_file( get_user_home() . "/.atconfig", \%i );
+        write_file( get_tuconfig_file(), \%i );
     }
     elsif ( $action eq 'load' ) {
-        my $atconfig_file = ( get_user_home() . "/.atconfig" );
-        if ( -f $atconfig_file ) {
-            my %atconfig = ( settings( $atconfig_file, 'config_portable_' ) );
-            get_json( \%atconfig );
+        my $tuconfig_file = ( get_tuconfig_file() );
+        if ( -f $tuconfig_file ) {
+            my %tuconfig = ( settings( $tuconfig_file, 'config_portable_' ) );
+            get_json( \%tuconfig );
         }
         else {
             get_json_empty();
@@ -3720,21 +3718,6 @@ sub get_theme_language
 
     get_json( \%s );
 
-}
-
-sub check_reseller_home
-{
-    if ( $get_user_level eq '1' ) {
-        if ( length get_user_home() ) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    }
-    else {
-        return 1;
-    }
 }
 
 sub get_module_config_data

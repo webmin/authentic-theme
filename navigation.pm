@@ -47,7 +47,7 @@ if (    $t_uri_virtualmin == -1 && $t_uri_cloudmin == -1 && $t_uri_webmail == -1
                     $__custom_print++;
 
                 }
-                elsif ( !foreign_available("webmin") && $__custom_print eq '0' && check_reseller_home()) {
+                elsif ( !foreign_available("webmin") && $__custom_print eq '0' ) {
                     print_category_link( $gconfig{'webprefix'} . "/settings-user.cgi",
                                          $Atext{'settings_title'}, 1 );
                     $__custom_print++;

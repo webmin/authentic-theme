@@ -267,7 +267,7 @@ sub embed_settings
     my $cur_time            = time();
     my $global_config_file =
       ( $config_directory . "/" . $current_theme . "/" . $str_settings . "." . $str_js );
-    my $user_config_file  = ( get_user_home() . "/.atconfig" );
+    my $user_config_file  = ( get_tuconfig_file() );
     my $js_directory      = "/" . $current_theme . "/" . $str_unauthenticated . "/" . $str_js;
     my $js_root_directory = ( $root_directory . $js_directory );
 
@@ -562,7 +562,7 @@ sub init_vars
     our $t_uri__i = get_env('request_uri');
     our %__settings = ( settings_default(),
                         settings( $config_directory . "/authentic-theme/settings.js", 'settings_' ),
-                        settings( get_user_home() . "/.atconfig",                     'settings_' ) );
+                        settings( get_tuconfig_file(),                     'settings_' ) );
     our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
           $t_var_product_m );
 
@@ -1121,6 +1121,12 @@ sub get_user_home
 {
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return @my_user_info[7];
+}
+
+sub get_tuconfig_file
+{
+    my $tuconfig = $config_directory . "/authentic-theme/settings-" . $remote_user;
+    return $tuconfig;
 }
 
 sub get_stripped

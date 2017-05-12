@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 18.48-patch2 (May 10, 2017)
+#### Version 18.48-patch3 (May 12, 2017)
+* Added ability to manage theme config by users without home directory
 * Added ability for automatic switching to user mode upon entering its home directory in File Manager [#759](https://github.com/qooob/authentic-theme/issues/759)
 
 #### Version 18.48 (May 6, 2017)

@@ -8,10 +8,6 @@
 
 do "authentic-theme/authentic-lib.pm";
 
-if (!check_reseller_home()) {
-  die('Not available when reseller\'s configuration doesn\'t have `Create FTP/SSH account for reseller` enabled. Error ');
-}
-
 ui_print_header( ( $Atext{'settings_subtitle'} . ' <tt>' . $remote_user . '</tt>' ),
                  $Atext{'settings_title'},
                  undef, undef, undef, 1 );

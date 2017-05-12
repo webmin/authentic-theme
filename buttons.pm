@@ -32,7 +32,6 @@ print '<li'
   . (
       (      $__settings{'settings_show_night_mode_link'} ne 'false'
           && $__settings{'settings_background_color'} ne "nightRider"
-          && check_reseller_home()
       )
       ? ''
       : ' hidden'
@@ -63,7 +62,7 @@ if ( $get_user_level eq '0'
     print '</li>';
 }
 
-if ( $__settings{'settings_theme_options_button'} ne 'false' && check_reseller_home() ) {
+if ( $__settings{'settings_theme_options_button'} ne 'false' ) {
     print '<li'
       . get_button_tooltip( 'settings_title', undef, 'auto top' )
       . ' class="user-link theme-options cursor-pointer">';
