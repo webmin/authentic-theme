@@ -226,9 +226,9 @@ theme_global_error=Fehler
 theme_global_warning=Warnung
 theme_global_success=Erfolgreich
 theme_global_info=Information
-sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
-settings_leftmenu_section_hide_vm_and_cm_links=Hide supported modules' links from navigation menu
-settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
+sysinfo_system_status_warning=Damit <strong>System Informationen</strong> angezeigt werden kann muss das Modul <em>System Status</em> in den Benutzer Einstellungen eingeschaltet sein.
+settings_leftmenu_section_hide_vm_and_cm_links=Zeige Link <kbd>Verstecke inaktive Module<kbd> nicht in der Navigation
+settings_leftmenu_user_html_only_for_administrator=Zeige HTML Schnipsel nur für Administratoren
 theme_sysinfo_wmdocs=Webmin Dockmentation
 theme_sysinfo_vmdocs=Virtualmin Dockmentation
 theme_sysinfo_cmdocs=Cloudmin Dokumentation
@@ -246,277 +246,277 @@ theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
 theme_xhred_global_please_wait=Bitte warten...
-theme_xhred_filemanager_copying_selected=Copying selected.
-theme_xhred_filemanager_cutting_selected=Cutting selected.
-theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
-theme_xhred_filemanager_unpacking_archive=Unpacking selected file(s).
-theme_xhred_filemanager_deleting_selected=Deleting selected.
-theme_xhred_filemanager_renaming_selected=Renaming selected.
-theme_xhred_filemanager_creating_directory=Creating directory
-theme_xhred_filemanager_creating_file=Creating file
-theme_xhred_filemanager_downloading_from=Downloading from
-theme_xhred_filemanager_setting_permissions=Setting permissions to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_changing_ownership=Changing ownership to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_compressing_selected=Compressing selected in the background.
-theme_xhred_filemanager_refreshing=Refreshing directory content.
-theme_xhred_filemanager_copying_successful=Copy to clipboard successful.
-theme_xhred_filemanager_cutting_successful=Cut to clipboard successful.
-theme_xhred_filemanager_pasting_successful=Paste from clipboard was successful.
-theme_xhred_filemanager_bookmark_success=Directory <strong><em>%value</em></strong> was successfully added to your bookmarks.
-theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
-theme_xhred_filemanager_search_founds=Found <strong>%value</strong> matches.
-theme_xhred_filemanager_search_found=Found <strong>1</strong> match.
-theme_xhred_filemanager_search_no_matches=No matches found.
-theme_xhred_filemanager_nothing_is_selected=Nothing is selected!
-theme_xhred_filemanager_saving_file=File `<strong><em>%value</em></strong>` is being saved.
-theme_xhred_filemanager_file_saved=File `<strong><em>%value</em></strong>` has been successfully saved.
-theme_xhred_filemanager_not_editable=Can not edit this type of selection.
-theme_xhred_filemanager_not_decompressable=Can not decompress this type of file.
-theme_xhred_filemanager_no_selection_to_copy=No directories/files selected to copy.
-theme_xhred_filemanager_no_selection_to_cut=No directories/files selected to cut.
-theme_xhred_filemanager_empty_clipboard=Clipboard is empty.
+theme_xhred_filemanager_copying_selected=Kopiere Auswahl.
+theme_xhred_filemanager_cutting_selected=Schneide Auswahl aus.
+theme_xhred_filemanager_pasting_selected=Füge aus Zwischenablage ein.
+theme_xhred_filemanager_unpacking_archive=Entpacke auswahlgewählte Dateien.
+theme_xhred_filemanager_deleting_selected=Lösche Auswahl.
+theme_xhred_filemanager_renaming_selected=Benenne Auswahl um.
+theme_xhred_filemanager_creating_directory=Lege Verzeichnis an
+theme_xhred_filemanager_creating_file=LEge Datei an
+theme_xhred_filemanager_downloading_from=Downloade von
+theme_xhred_filemanager_setting_permissions=Ändere Rechte der ausgewählten Dateien auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_changing_ownership=Ändere Besitzer der ausgewählten Dateien auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_compressing_selected=Packe ausgewählte Dateien im Hintergrund.
+theme_xhred_filemanager_refreshing=Lade Verzeichnisinhalt enu.
+theme_xhred_filemanager_copying_successful=Erfolgreich in Zwischenablage kopiert.
+theme_xhred_filemanager_cutting_successful=Erfolgreich in Zwischenablage ausgeschnitten.
+theme_xhred_filemanager_pasting_successful=Erfolgreich aus Zwischenablage eingefügt.
+theme_xhred_filemanager_bookmark_success=Verzeichnis <strong><em>%value</em></strong> erfolreich zu den Favoriten hinzugefügt.
+theme_xhred_filemanager_searching=Suche Verzeichnisse/Dateien die auf Suchbegriff <em>`%value`</em> passen.
+theme_xhred_filemanager_search_founds=<strong>%value</strong> Übereinstimmungen gefunden.
+theme_xhred_filemanager_search_found=<strong>Eine</strong> Übereinstimmungen gefunden.
+theme_xhred_filemanager_search_no_matches=Keine Übereinstimmungen gefunden.
+theme_xhred_filemanager_nothing_is_selected=Nichts Ausgewählt!
+theme_xhred_filemanager_saving_file=Datei `<strong><em>%value</em></strong>` wird gespeichert.
+theme_xhred_filemanager_file_saved=Datei `<strong><em>%value</em></strong>` erfolgreich gespeichert.
+theme_xhred_filemanager_not_editable=Kann diese Auswahl nicht bearbeiten.
+theme_xhred_filemanager_not_decompressable=Kann diesen Datei Typ nicht entpacken.
+theme_xhred_filemanager_no_selection_to_copy=Keine Verzeichnisse/Dateien zum Kopieren ausgewählt.
+theme_xhred_filemanager_no_selection_to_cut=Keine Verzeichnisse/Dateien zum Ausschneiden ausgewählt.
+theme_xhred_filemanager_empty_clipboard=Zwischenablage ist leer.
 
-theme_xhred_filemanager_successful_extraction=Extraction of selected file(s) was successful.
-theme_xhred_filemanager_successful_deletion=Deletion was successful.
-theme_xhred_filemanager_successful_permissions=Permissions have been changed successfully.
-theme_xhred_filemanager_successful_ownership=Ownership has been changed successfully.
-theme_xhred_filemanager_successful_compression=Compression has successfully finished.
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
-theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
+theme_xhred_filemanager_successful_extraction=Ausgewählte Dateien erfolgreich entpackt.
+theme_xhred_filemanager_successful_deletion=Löschen erfolgreich.
+theme_xhred_filemanager_successful_permissions=Rechte erfolgreich geändert.
+theme_xhred_filemanager_successful_ownership=Besitzer erfolgreich geändert.
+theme_xhred_filemanager_successful_compression=Packen erfolgreich.
+theme_xhred_filemanager_successful_directory_creation=Verzeichnis `<strong>%value</strong>` erfolgreich erzeugt.
+theme_xhred_filemanager_successful_file_creation=Datzei `<strong>%value</strong>` erfolgreich erzeugt.
 
 theme_xhred_notifications_packages_updates=Paket Update
 theme_xhred_notifications_theme_update=Theme Update
-theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
+theme_xhred_notifications_theme_update_message=Es ist eine neue Version <em>%v</em> von <strong>Authentic Theme</strong> verfügbar. Bitte updaten.
 theme_xhred_notifications_firewall_update=Firewall Update
-theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+theme_xhred_notifications_firewall_update_message=Es ist eine neue Version <em>%v</em> von <strong>ConfigServer Server Security und Firewall</strong> verfügbar. Bitte updaten.
 
-theme_xhred_notifications_firewall_danger=Firewall Gefahr
-theme_xhred_notifications_firewall_danger_message=It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don't leave your server exposed, check for the firewall settings (%v)
+theme_xhred_notifications_firewall_danger=Firewall Problem
+theme_xhred_notifications_firewall_danger_message=Es scheint das <strong>ConfigServer Server Security und Firewall</strong> <span class="badge badge-danger">nicht läuft</span> oder gestopp wurde! Lassen sie Ihren Server nicht ungeschützt, überprüfen sie die Firewall Einstellungen  (%v)
 
 theme_xhred_notifications_firewall_warning=Firewall Warnung
 
 #17.50
 settings_force_default_tab=Erzwinge Standard Tab für Webmin
-settings_force_default_tab_description=This feature will force default tab on window reload as well. Warning! It will not be possible to choose for desired tab using URL, as any location query will be ignored.
+settings_force_default_tab_description=Mit dieser Einstellung wird der Standard Inhalt des Tabs ebenfalls neu geladen. Achtung! Es ist nicht möglich den gewpnschten TAB über die URL anzuwählen, jegliche URL wird ignoriert.
 
 settings_grayscale_level_navigation=Graustufen Filter
-settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Standard Wert/aktueller Wert: <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia Filter
-settings_sepia_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Standard Wert/aktueller Wert: <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Sättigungs Filter
-settings_saturate_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Standard Wert/aktueller Wert: <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Hue-rotate Filter
-settings_hue_level_navigation_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_hue_level_navigation_description=Standard Wert/aktueller Wert: <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
 settings_invert_level_navigation=Filter umkehren
-settings_invert_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Standard Wert/aktueller Wert: code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Helligkeits filter
-settings_brightness_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Standard Wert/aktueller Wert: <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrast Filter
-settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Standard Wert/aktueller Wert: <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_grayscale_level_content=Graustufen Filter
-settings_grayscale_level_content_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
+settings_grayscale_level_content_description=Standard Wert/aktueller Wert: <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
 settings_saturate_level_content=Sättigungs Filter
-settings_saturate_level_content_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
+settings_saturate_level_content_description=Standard Wert/aktueller Wert: <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
 settings_hue_level_content=Hue-rotate Filter
-settings_hue_level_content_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
+settings_hue_level_content_description=Standard Wert/aktueller Wert: <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
 
 settings_cm_view_palette=Farbpaletten angzeigen
 settings_cm_editor_palette=Farbpaletten Editor
 
-theme_xhred_filemanager_context_select_all=Allen Auswählen
+theme_xhred_filemanager_context_select_all=Alles Auswählen
 theme_xhred_filemanager_context_select_invert=Auswahl umkehren
 theme_xhred_filemanager_context_refresh=Neu Laden
 theme_xhred_filemanager_context_newfile=Neue Datei anlegen
 theme_xhred_filemanager_context_newfoder=Neues Verzeichnis angelegen
-theme_xhred_filemanager_context_copy=Copy
-theme_xhred_filemanager_context_cut=Cut
-theme_xhred_filemanager_context_paste=Paste
-theme_xhred_filemanager_context_chmod=Change Permissions
-theme_xhred_filemanager_context_chown=Change Ownership
+theme_xhred_filemanager_context_copy=Kopieren
+theme_xhred_filemanager_context_cut=Ausschneiden
+theme_xhred_filemanager_context_paste=Einfügen
+theme_xhred_filemanager_context_chmod=Rechte ändern
+theme_xhred_filemanager_context_chown=Besitzer ändern
 
 #17.51
-theme_xhred_filemanager_context_new=New
-theme_xhred_filemanager_context_newarchive=Create new archive
-theme_xhred_filemanager_context_delete=Delete
-theme_xhred_filemanager_context_rename=Rename
-theme_xhred_filemanager_context_edit=Edit
-theme_xhred_filemanager_context_extract=Extract
-theme_xhred_filemanager_context_goto=Open Item Location
-theme_xhred_filemanager_context_properties=Properties
-theme_xhred_filemanager_context_search=Search
+theme_xhred_filemanager_context_new=Neu
+theme_xhred_filemanager_context_newarchive=Neues Archiv erzeugen
+theme_xhred_filemanager_context_delete=Löschen
+theme_xhred_filemanager_context_rename=Umbenennen
+theme_xhred_filemanager_context_edit=Bearbeiten
+theme_xhred_filemanager_context_extract=Auspacken
+theme_xhred_filemanager_context_goto=Ablageort öffnen
+theme_xhred_filemanager_context_properties=Eigenschaften
+theme_xhred_filemanager_context_search=Suche
 
 #17.52
-theme_xhred_filemanager_context_deselect_all=Deselect All
-theme_xhred_filemanager_context_upload=Upload to current directory
-theme_xhred_filemanager_context_download=Download from remote URL
+theme_xhred_filemanager_context_deselect_all=Nichts auswählen
+theme_xhred_filemanager_context_upload=In aktuelles Verzeichnis hochladen
+theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Servers
-theme_settings_cloudmin=Cloudmin Managed Systems
-settings_right_thirdparties_options_title=Third-parties modules options
-theme_xhred_filemanager_context_calculate_size=Calculate size on spacebar
-theme_xhred_filemanager_context_bookmarks=Bookmarks
-theme_xhred_filemanager_context_bookmark_current=Bookmark currently opened path
-theme_xhred_filemanager_context_transfer=Transfer
+theme_settings_virtualmin=Virtualmin virtuelle Server
+theme_settings_cloudmin=Cloudmin gemanagte System
+settings_right_thirdparties_options_title=Optionen für Drittanbieter Module
+theme_xhred_filemanager_context_calculate_size=Berechne freien Platz im Leerraum
+theme_xhred_filemanager_context_bookmarks=Lesezeichen
+theme_xhred_filemanager_context_bookmark_current=Pfad zum aktuell geöffneten Lesezeichen
+theme_xhred_filemanager_context_transfer=Übertragung
 
 #17.54
-theme_xhred_filemanager_title_symlink_target=Link target
+theme_xhred_filemanager_title_symlink_target=Link Ziel
 
 #17.60
-right_unlimited=Unlimited
-settings_leftmenu_width=Preferable width
-settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
-settings_switch_rdisplay=Reverse switch output
-settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required to apply new settings.
+right_unlimited=Unbeschränkt
+settings_leftmenu_width=Bevorzugte Breite
+settings_leftmenu_width_description=Standard Wert/aktueller Wert: <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=Zeige Schalter in umgekehrter Reihenfolge
+settings_switch_rdisplay_description=Diese Einstellung ermöglicht es die Schalter oben links anders herum anzuordnen. Neuladen der Seite erforderlich.
 
 #17.63
-theme_xhred_filemanager_context_calculate_selected_size=Calculate selected size
-theme_xhred_filemanager_selected_entries=Selected: %value entries
-theme_xhred_filemanager_manual_path=Enter path manually
+theme_xhred_filemanager_context_calculate_selected_size=Berechne Größe der Auswahl
+theme_xhred_filemanager_selected_entries=%value Elemente ausgewählt
+theme_xhred_filemanager_manual_path=Pfad händisch eingeben
 
-theme_xhred_datatable_semptytable=No data available in table
-theme_xhred_datatable_sinfo=Showing _START_ to _END_ of _TOTAL_ entries
-theme_xhred_datatable_sinfoempty=Showing 0 to 0 of 0 entries
-theme_xhred_datatable_slengthmenu=Show _MENU_ entries
-theme_xhred_datatable_sloadingrecords=Loading...
-theme_xhred_datatable_sprocessing=Processing...
-theme_xhred_datatable_szerorecords=No matching records found
+theme_xhred_datatable_semptytable=Keine Daten in Tabelle
+theme_xhred_datatable_sinfo=Einträge _START_ bis _END_ von insgesamt _TOTAL_ Einträgen
+theme_xhred_datatable_sinfoempty=Keine Einträge zum anzeigen
+theme_xhred_datatable_slengthmenu=Zeige _MENU_ Einträge 
+theme_xhred_datatable_sloadingrecords=Lade...
+theme_xhred_datatable_sprocessing=Bearbeite...
+theme_xhred_datatable_szerorecords=Keine passenden Einträge gefunden
 
 #17.64
-theme_xhred_filemanager_file_edit_but_not_saved=File has been edited but hasn't been saved.
-theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=What do you want to do?
-theme_xhred_global_save=Save
-theme_xhred_global_save_and_close=Save and close
-theme_xhred_global_close_without_saving=Close without saving
-theme_xhred_global_continue_editing=Continue editing
-theme_xhred_filemanager_context_download_file=Download
+theme_xhred_filemanager_file_edit_but_not_saved=Datei wurde bearbeitet, aber nicht gespeichert.
+theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Wie möchten sie fortfahren?
+theme_xhred_global_save=Speichern
+theme_xhred_global_save_and_close=Speichen und beenden
+theme_xhred_global_close_without_saving=Beenden ohne zu speichern
+theme_xhred_global_continue_editing=Bearbeitung fortsetzen
+theme_xhred_filemanager_context_download_file=Downloaden
 
 #17.65
-settings_sysinfo_easypie_charts_width=Width of charts
-settings_sysinfo_easypie_charts_scale=Scale length of charts
+settings_sysinfo_easypie_charts_width=Breite der Diagramme
+settings_sysinfo_easypie_charts_scale=Skalenlänge der Diagramme
 
 #17.72
-settings_window_exclusion_description=Set the list of modules that will be excluded from in-built rendering mechanism. This feature will provide support for outdated/voluntarily built modules, that are failed to be displayed properly. To disable rendering for certain modules you must specify its name. The module's name is based on its directory name and can be found when hovering on its link in navigation menu. It's also possible to pass single asterisk <kbd>*</kbd> to disable in-built rendering for all modules.
-settings_window_exclusion_list=Modules to exclude
+settings_window_exclusion_description=Liste der Module die von der automatischen Anpassung an das Theme ausgenommen sind. Diese Einstellung ermöglicht die Nutzung von alten oder unbeḱannten Modulen die nicht korrekt angezeigt werden. Den Namen eines Moduls erkennen sie am Linkziel wenn sie mit der Maus über den Menüeintrag in der Navigation fahren. Die Eingabe von <kbd>*</kbd> deaktivert die Anpassung aller Module.
+settings_window_exclusion_list=Module ausschließen
 
 #17.80
-right_return_theme_options=theme options
-theme_xhred_datatable_semptydirectory=Directory is empty
-theme_xhred_filemanager_context_clipboard=Copy path to clipboard
-theme_xhred_global_warning=Warning
-theme_xhred_global_close=Close
-theme_xhred_encoding_warning=Detected that you are using non-unicode character set, which is not recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
+right_return_theme_options=Theme Optionen
+theme_xhred_datatable_semptydirectory=Verzeichnis ist leer
+theme_xhred_filemanager_context_clipboard=Pfad in Zwischeablage kopieren
+theme_xhred_global_warning=Warnung
+theme_xhred_global_close=Schließen
+theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Andern Sie die Srache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Theme</em> die Standard Einstellungen überschreiben.</span>
 
-theme_xhred_filemanager__no_bookmarks=No saved bookmarks
-theme_xhred_filemanager_unbookmark_success=Directory <strong><em>%value</em></strong> was successfully removed from your bookmarks.
-theme_xhred_filemanager_bookmark=Bookmark current directory
-theme_xhred_filemanager_unbookmark=Unbookmark current directory
-theme_xhred_filemanager_move_into_self=You cannot move a directory into itself! The destination directory is inside the source directory.
-theme_xhred_filemanager_pasting_and_copying_1=Selected source has been pasted with the new name successfully.
-theme_xhred_filemanager_pasting_and_copying_2=Selected sources have been pasted with the new names successfully.
-theme_xhred_filemanager_pasting_and_replacing_1=Existing target has been replaced with new successfully.
-theme_xhred_filemanager_pasting_and_replacing_2=Existing targets have been replaced with new successfully.
-theme_xhred_filemanager_target_conflict_1=Target conflict
-theme_xhred_filemanager_target_conflict_2=Targets conflicts
-theme_xhred_filemanager_target_conflict_message_1=Pasted target already exists! What do you prefer to do?
-theme_xhred_filemanager_target_conflict_message_2=Pasted targets already exist! What do you prefer to do?
-theme_xhred_filemanager_target_conflict_replace=Merge and replace
-theme_xhred_filemanager_target_conflict_paste=Paste with new name
+theme_xhred_filemanager__no_bookmarks=Keine Lesezeichen vorhanden
+theme_xhred_filemanager_unbookmark_success=Verzeichnis <strong><em>%value</em></strong> wurde erfolgreich aus den Lesezeichen entfernt.
+theme_xhred_filemanager_bookmark=Lesezeichen für aktuelles Verzeichnis setzen
+theme_xhred_filemanager_unbookmark=Aktuelles Verzeichnis aus den Lesezeichen entfernen
+theme_xhred_filemanager_move_into_self=Verzeichnis kann nicht in sich selbst verschoben werden! Das Zielverzeichnis liegt innerhalb des Quellverzeichnisses.
+theme_xhred_filemanager_pasting_and_copying_1=Ausgewähltes Element erfolgreich unter neuem Namen eingefügt.
+theme_xhred_filemanager_pasting_and_copying_2=Ausgewählte Elemente erfolgreich unter neuen Namen eingefügt.
+theme_xhred_filemanager_pasting_and_replacing_1=Ausgewähltes Ziel erfolgreich durch neues Element ersetzt.
+theme_xhred_filemanager_pasting_and_replacing_2=Ausgewählte Ziele erfolgreich durch neue Elemente ersetzt.
+theme_xhred_filemanager_target_conflict_1=Problem mit Ziel Element
+theme_xhred_filemanager_target_conflict_2=Proleme mit Ziel Elementen
+theme_xhred_filemanager_target_conflict_message_1=Einzufügendes Ziel Element existiert bereits! Wie möchten sie fortfahren?
+theme_xhred_filemanager_target_conflict_message_2=Einzufügende Ziel Elemente existieren bereits! Wie möchten sie fortfahren?
+theme_xhred_filemanager_target_conflict_replace=Vereinigen und ersetzen
+theme_xhred_filemanager_target_conflict_paste=Unter neuem Namen einfügen
 
-theme_xhred_editor_help_title=Editor Keyboard Shortcuts
+theme_xhred_editor_help_title=Editor Schnellzugriffs Tasten
 theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
 
-theme_xhred_filemanager_hide_toolbar=Hide toolbar
-theme_xhred_filemanager_hide_actions=Hide actions column
-theme_xhred_filemanager_hovered_toolbar=Activate dropdown in toolbar on mouse hover
-theme_xhred_filemanager_context_delete_selected=Delete selected
+theme_xhred_filemanager_hide_toolbar=Verstecke Toolbar
+theme_xhred_filemanager_hide_actions=Verstecke Aktivitäten Zeile
+theme_xhred_filemanager_hovered_toolbar=Zeige Ausklappliste in der Toolbar beim Überfahren mit der Maus
+theme_xhred_filemanager_context_delete_selected=Ausgewählte löschen
 
 #17.83
-theme_xhred_database_adding_new_row=Adding new row
-theme_xhred_database_editing_row=Editing selected row
-theme_xhred_database_editing_rows=Editing selected rows
-theme_xhred_database_adding_new_row_data=Set data
+theme_xhred_database_adding_new_row=Neue Zeile hinzufügen
+theme_xhred_database_editing_row=Ausgewählte Zeile bearbeiten
+theme_xhred_database_editing_rows=Ausgwählte Zeilen bearbeiten
+theme_xhred_database_adding_new_row_data=Daten setzen
 
 #17.84
 theme_xhred_datatable_filter=Filter
 
-theme_xhred_global_update=Update
-theme_xhred_global_update_and_return=Update and return
-theme_xhred_global_update_and_close=Update and close
-theme_xhred_global_back=Back
-theme_xhred_global_cancel=Cancel
+theme_xhred_global_update=Updaten
+theme_xhred_global_update_and_return=Updaten und zurück
+theme_xhred_global_update_and_close=Updaten und beenden
+theme_xhred_global_back=Zurück
+theme_xhred_global_cancel=Abbrechen
 
-theme_xhred_database_add_row_successful=New row was successfully added
-theme_xhred_database_edit_row_successful=Selected row was successfully updated
-theme_xhred_database_edit_rows_successful=Selected rows were successfully updated
-theme_xhred_database_edit_row_delete_successful=Selected row was successfully deleted
-theme_xhred_database_edit_rows_delete_successful=Successfully deleted <em>%n</em> selected rows
-theme_xhred_database_edit_field_delete_successful=Selected field was successfully deleted
-theme_xhred_database_edit_fields_delete_successful=Successfully deleted <em>%n</em> selected fields
-theme_xhred_database_edit_selected_row=Edit selected row
-theme_xhred_database_edit_selected_rows=Edit selected rows
-theme_xhred_database_add_new_row=Add row
-theme_xhred_database_delete_selected_row=Delete selected row
-theme_xhred_database_delete_selected_rows=Delete selected rows
-theme_xhred_database_delete_selected_field=Delete selected field
-theme_xhred_database_delete_selected_fields=Delete selected fields
-theme_xhred_database_object_selected_delete=Delete selected object
-theme_xhred_database_objects_selected_delete=Delete selected objects
-theme_xhred_database_db_selected_drop=Drop selected database
-theme_xhred_database_dbs_selected_drop=Drop selected databases
-theme_xhred_database_edit_but_not_saved=Table data has been edited but not saved.
+theme_xhred_database_add_row_successful=Neue Zeile erfolgreich hinzugefügt
+theme_xhred_database_edit_row_successful=Ausgewählte Zeile erfolgreich aktualisiert
+theme_xhred_database_edit_rows_successful=Ausgewählte Zeilen erfolgreich aktualisiert
+theme_xhred_database_edit_row_delete_successful=Ausgewählte Zeile erfolgreich gelöscht
+theme_xhred_database_edit_rows_delete_successful=<em>%n</em> ausgewählte Zeilen erfolgreich gelöscht
+theme_xhred_database_edit_field_delete_successful=Ausgewähltes Feld erfolgreich gelöscht
+theme_xhred_database_edit_fields_delete_successful=<em>%n</em> ausgewählte Felder erfolgreich gelöscht
+theme_xhred_database_edit_selected_row=Ausgewählte Zeile bearbeiten
+theme_xhred_database_edit_selected_rows=Ausgewählte Zeilen bearbeiten
+theme_xhred_database_add_new_row=Zeile hinzufügen
+theme_xhred_database_delete_selected_row=Ausgewählte Zeile löschen
+theme_xhred_database_delete_selected_rows=Ausgewählte Zeilev löschen
+theme_xhred_database_delete_selected_field=Ausgewähltes Feld löschen
+theme_xhred_database_delete_selected_fields=Ausgewählte Felder löschen
+theme_xhred_database_object_selected_delete=Ausgewählte Element löschen
+theme_xhred_database_objects_selected_delete=Ausgewählte Elemente löschen
+theme_xhred_database_db_selected_drop=Ausgewählte Datenbank löschen
+theme_xhred_database_dbs_selected_drop=Ausgewählte Datenbanken löschen
+theme_xhred_database_edit_but_not_saved=Datenbank Tablle würde verändert aber nicht gespeichert.
 
-theme_xhred_global_no_such_command=It appears that <tt>%cmd</tt> executable is not installed or not in the path on your system.
+theme_xhred_global_no_such_command=Es scheind das Programm <tt>%cmd</tt> ist nicht installiert oder nicht im System Pfad.
 
-theme_xhred_global_notice=Notice
+theme_xhred_global_notice=Hinweis
 
-theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
+theme_xhred_updates_disabled_notice=Es wurde erkannt das Sie keine Benachrichtigung für Updates von <em>Authentic Theme</em> eingeschaltet haben! <br><br>Das einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Einstellungen</strong></a> erlaubt ihnen mit einem Mausklick die  neueste Theme Version zu installieren, sobald sie verfügbar ist.
 
 
 #18.00
-theme_xhred_global_file=File
-theme_xhred_global_directory=Directory
-theme_xhred_global_no_target=Target doesn't exist or not accessible
-theme_xhred_global_error_code=Error code
-theme_xhred_global_on=On
-theme_xhred_global_off=Off
-theme_xhred_global_all=All
-theme_xhred_global_none=None
-theme_xhred_global_yes=Yes
-theme_xhred_global_no=No
+theme_xhred_global_file=Datei
+theme_xhred_global_directory=Verzeichnis
+theme_xhred_global_no_target=Ziel existiert nicht oder kann nicht erreicht werden
+theme_xhred_global_error_code=Fehler Nummer
+theme_xhred_global_on=An
+theme_xhred_global_off=Aus
+theme_xhred_global_all=Alle
+theme_xhred_global_none=Keine
+theme_xhred_global_yes=Ja
+theme_xhred_global_no=Nein
 
-theme_xhred_filemanager_new_tab=Add new tab (Ctrl+Space)
-theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
+theme_xhred_filemanager_new_tab=Neuen Tab hinzufügen (Strg+Leertaste)
+theme_xhred_datatable_no_search_results=<span class="h5">Keine Ergebnisse vorhanden</span><br>Führen sie eine neue Suche durch
 
-theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
+theme_xhred_filemanager_buffer_error=Dateien nicht in den Zwischenspeicher kopiert - keine Berechtigung.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Can't create $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - permission denied.
+filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` existiert bereits in `<strong><tt>$2</tt></strong>`
+filemanager_create_object_denied=Anlegen von $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` nicht möglich - keine Berechtigung.
 
-filemanager_paste_warning=Failed to paste target(s). It is possible that requested object(s) could have been <em>renamed, moved</em> or <em>deleted</em> while/before pasting. Another possible cause is that destination is not writable.  It is worth checking objects' attributes.
+filemanager_paste_warning=Einfügen im Ziel fehlgeschagen. Möglicherweise wurden die Quell Elemente <em>umbenannt, verschoben</em> doer <em>gelöscht</em>. Alternativ fehlt Ihnen die Schreibberechtigung im Ziel, dies sollten sie überprüfen.
 
-theme_xhred_filemanager_delete_warning=Deletion has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before deletion. Restricted permissions (attributes) is another possible cause.  Error message:
+theme_xhred_filemanager_delete_warning=Nicht alle Elemente wurden erfolgreich gelöscht. Möglicherweise wurden die Quell Elemente <em>umbenannt oder verschoben</em>. Alternativ fehlt Ihnen die Löschberechtigung. Fehlermeldung:
 
 
-filemanager_rename_exists=$3 with name `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
-filemanager_rename_denied=Can not rename the $3. This might happen because the source $3 has been removed or due to restricted permissions.
+filemanager_rename_exists=$3 mit dem Namen `<strong><em>$1</em></strong>` existiert bereits in `<strong><tt>$2</tt></strong>`
+filemanager_rename_denied=Kann $3 nicht umbenennen. Möglicherweise wurde die Quelle $3 gelöscht oder es sind nicht genügend Rechte vorhanden.
 
-theme_xhred_filemanager_successful_rename=Renaming `<strong><em><s>%from</s></em></strong>` to `<strong><em>%to</em></strong>` was successful.
+theme_xhred_filemanager_successful_rename=Erfolgreich von `<strong><em><s>%from</s></em></strong>` nach `<strong><em>%to</em></strong>` umbenannt.
 
-filemanager_global_info_total1=Total: $1 file and $2 directory
-filemanager_global_info_total2=Total: $1 files and $2 directory
-filemanager_global_info_total3=Total: $1 file and $2 directories
-filemanager_global_info_total4=Total: $1 files and $2 directories
+filemanager_global_info_total1=Total: $1 Datei und $2 Verzeichnis
+filemanager_global_info_total2=Total: $1 Dateien und $2 Verzeichnis
+filemanager_global_info_total3=Total: $1 Datei und $2 Verzeichnisse
+filemanager_global_info_total4=Total: $1 Dateien und $2 Verzeichnisse
 
-theme_xhred_filemanager_selected_entry=Selected: %value entry
+theme_xhred_filemanager_selected_entry=Ausgewählt: %value Eintrag
 
-theme_xhred_filemanager_search_query=Query mask
-theme_xhred_filemanager_search_match=Find in results
-theme_xhred_filemanager_search_replace=Replace in results
+theme_xhred_filemanager_search_query=Suchanfrage
+theme_xhred_filemanager_search_match=Suche in Ergbnissen
+theme_xhred_filemanager_search_replace=Ersetze in Ergebnissen
 
-theme_xhred_global_find=Find
-theme_xhred_global_replace=Replace
+theme_xhred_global_find=Suche
+theme_xhred_global_replace=Ersetze
 
 theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
 theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
@@ -610,12 +610,12 @@ settings_leftmenu_netdata_link=Netdata bevorzugter Server Link
 
 theme_xhred_filemanager_context_chattr=Ändere Eigenschaften
 theme_xhred_filemanager_changing_attributes=Ändere Eigenschaften der markierten Datei(en) auf <strong><em>%value</em></strong>.
-theme_xhred_filemanager_successful_attributes_with_errors=Eigenschaften konnten nicht für alle betroffenen Objekte geändert werden:
+theme_xhred_filemanager_successful_attributes_with_errors=Eigenschaften konnten nicht für alle betroffenen Elemente geändert werden:
 theme_xhred_filemanager_successful_attributes=Eigenschaften erfolgreich geändert.
 
 theme_xhred_filemanager_context_chcon=Ändere Sicherheits Kontext
 theme_xhred_filemanager_changing_secontext=Ändere Sicherheits Kontext der markierten Datei(en) auf <strong><em>%value</em></strong>.
-theme_xhred_filemanager_successful_secontext_with_errors=Sicherheits Kontext konnten nicht für alle betroffenen Objekte geändert werden:
+theme_xhred_filemanager_successful_secontext_with_errors=Sicherheits Kontext konnten nicht für alle betroffenen Elemente geändert werden:
 theme_xhred_filemanager_successful_secontext=Sicherheits Kontext erfolgreich geändert.
 
 theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
