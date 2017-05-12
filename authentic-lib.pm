@@ -712,7 +712,8 @@ sub print_left_menu
                     elsif ( index( $link, '/virtual-server/edit_newresels.cgi' ) > -1 ) {
                         $icon = '<i class="fa fa-fw fa-cog"></i>';
                     }
-                    elsif ( index( $link, '/virtual-server/bwgraph.cgi' ) > -1 ) {
+                    elsif ( index( $link, '/virtual-server/bwgraph.cgi' ) > -1 && $id ne 'cat_logs' )
+                    {
                         $icon = '<i class="fa fa-fw fa-line-chart"></i>';
                     }
                 }

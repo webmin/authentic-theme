@@ -9718,6 +9718,18 @@ body[class*='virtual-server'][data-uri*='edit_user.cgi'] .opener_container .fa-c
     margin-top: 10px !important
 }
 
+body[class*='virtual-server'] img[src*="grey"],
+body[class*='virtual-server'] img[src*="blue"],
+body[class*='virtual-server'] img[src*="red"],
+body[class*='virtual-server'] img[src*="usage-"],
+body[class*='server-manager'] img[src*="grey"],
+body[class*='server-manager'] img[src*="blue"],
+body[class*='server-manager'] img[src*="red"],
+body[class*='server-manager'] img[src*="usage-"] {
+    filter: saturate(1.2) brightness(1.2) contrast(1) hue-rotate(-29deg);
+    -webkit-filter: saturate(1.2) brightness(1.2) contrast(1) hue-rotate(-29deg)
+}
+
 body[class*='krb5'] input[name='kdc'],
 body[class*='krb5'] input[name='default_admin_port'] {
     margin-left: 3px

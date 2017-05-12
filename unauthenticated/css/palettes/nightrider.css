@@ -1962,3 +1962,15 @@ html[data-background-style='nightRider'] label.select-styled:after {
     color: #555;
     border-color: #444
 }
+
+html[data-background-style='nightRider'] body[class*='virtual-server'] img[src*="grey"],
+html[data-background-style='nightRider'] body[class*='virtual-server'] img[src*="blue"],
+html[data-background-style='nightRider'] body[class*='virtual-server'] img[src*="red"],
+html[data-background-style='nightRider'] body[class*='virtual-server'] img[src*="usage-"],
+html[data-background-style='nightRider'] body[class*='server-manager'] img[src*="grey"],
+html[data-background-style='nightRider'] body[class*='server-manager'] img[src*="blue"],
+html[data-background-style='nightRider'] body[class*='server-manager'] img[src*="red"],
+html[data-background-style='nightRider'] body[class*='server-manager'] img[src*="usage-"] {
+    filter: saturate(0.6) brightness(0.6) contrast(0.5) hue-rotate(-29deg);
+    -webkit-filter: saturate(0.6) brightness(0.6) contrast(0.5) hue-rotate(-29deg)
+}

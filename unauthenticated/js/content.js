@@ -2418,7 +2418,7 @@ $("a").each(function() {
         $(this).addClass("no_effect")
     }
 });
-if ($current_page_full == $_____link_full + "/virtual-server/domain_form.cgi" || $current_page_full == $_____link_full + "/server-manager/list_images.cgi") {
+if ($current_page_full == $_____link_full + "/virtual-server/domain_form.cgi" || $current_page_full == $_____link_full + "/server-manager/list_images.cgi" || $current_page_full == $_____link_full + "/virtual-server/bwgraph.cgi") {
     $(".panel-body > a").each(function() {
         $(this).addClass("btn btn-inverse btn-tiny ui_link_replaced").removeClass("ui_link");
         $(this).text($(this).text().replace(/\.$/, ""))
@@ -2429,10 +2429,13 @@ if ($current_page_full == $_____link_full + "/virtual-server/domain_form.cgi" ||
         }).wrap('<span class="btn btn-info btn-tiny btn-automated"></span>')
     });
     $.each($(".btn-automated"), function() {
-        if ($(this).text().length < 4) {
+        if ($(this).text().replace(/[\t\n]+/g, " ").length < 4) {
             $(this).remove()
         } else {
-            $(this).text($(this).text().replace("|", "").replace("|", "").replace(/(?:\r\n|\r|\n)/g, ""))
+            $(this).text($(this).text().replace("|", "").replace("|", "").replace(/(?:\r\n|\r|\n)/g, ""));
+            if ($(this).prev().is("img")) {
+                $(this).removeClass().addClass("margined-left-3")
+            }
         }
     });
     $(".panel-body > b").css("margin-right", "7px");
