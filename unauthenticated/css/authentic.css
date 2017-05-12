@@ -9724,10 +9724,11 @@ body[class*='virtual-server'] img[src*="red"],
 body[class*='virtual-server'] img[src*="usage-"],
 body[class*='server-manager'] img[src*="grey"],
 body[class*='server-manager'] img[src*="blue"],
+body[class*='server-manager'] img[src*="purple"],
 body[class*='server-manager'] img[src*="red"],
 body[class*='server-manager'] img[src*="usage-"] {
-    filter: saturate(1.2) brightness(1.2) contrast(1) hue-rotate(-29deg);
-    -webkit-filter: saturate(1.2) brightness(1.2) contrast(1) hue-rotate(-29deg)
+    filter: saturate(1.2) brightness(1.2) contrast(1) hue-rotate(-31deg);
+    -webkit-filter: saturate(1.2) brightness(1.2) contrast(1) hue-rotate(-31deg)
 }
 
 body[class*='krb5'] input[name='kdc'],

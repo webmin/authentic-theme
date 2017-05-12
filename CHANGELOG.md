@@ -1,9 +1,10 @@
 ## Changelog
 
-#### Version 18.48-patch4 (May 12, 2017)
+#### Version 18.48-patch5 (May 12, 2017)
 * Added image color correction to obsolete table graphs
 * Added ability to manage theme config by users without home directory
 * Added ability for automatic switching to user mode upon entering its home directory in File Manager [#759](https://github.com/qooob/authentic-theme/issues/759)
+* Fixed bug [#764](https://github.com/qooob/authentic-theme/issues/764)
 
 #### Version 18.48 (May 6, 2017)
 * Added enhancements to page transitions, resulting in overall speed increase

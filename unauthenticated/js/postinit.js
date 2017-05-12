@@ -378,36 +378,45 @@ function f__lnk_t_btn(f, b, e, d, g, c, h, a) {
 }
 
 function f__toogle_palette() {
-    var a = $("body .user-link.palette-toggle"),
-        c = (a.find(".fa-sun").length ? 0 : 1),
-        g = (typeof t__wi_p.$('iframe[name="page"]') != "undefined" && t__wi_p.$('iframe[name="page"]').contents() && t__wi_p.$('iframe[name="page"]').contents().get(0)),
-        f = t__wi_p.$("html").attr("data-night-mode"),
-        d = t__wi_p.$("body").attr("data-default-theme"),
-        b = t__wi_p.$("html").attr("data-default-background-style");
-    if (!g) {
+    var b = $("body .user-link.palette-toggle"),
+        g = (b.find(".fa-sun").length ? 0 : 1),
+        a = t__wi_p.$('iframe[name="page"]').contents(),
+        j = (typeof a != "undefined" && a.contents() && a.contents().get(0)),
+        f = (typeof a != "undefined" && a.contents() && a.contents().length ? a.contents() : false),
+        d = t__wi_p.$("html").attr("data-night-mode"),
+        e = t__wi_p.$("body").attr("data-default-theme"),
+        i = t__wi_p.$("html").attr("data-default-background-style"),
+        h = "input, textarea",
+        k = $(h).is(":focus");
+    if (j) {
+        if (f.find(h).is(":focus") || k) {
+            return
+        }
+    }
+    if (!j) {
         return
     }
     if ($(t__wi_p.page.document).find(".modal.in:visible").length) {
         return
     }
-    var e = ((t__wi_p.page.$source_path == t__wi_p.page.$_____link + "sysinfo.cgi" && $access_level == "0") ? 330 : 0);
-    if (e) {
+    var c = ((t__wi_p.page.$source_path == t__wi_p.page.$_____link + "sysinfo.cgi" && $access_level == "0") ? 330 : 0);
+    if (c) {
         $(t__wi_p.page.document).find("body").addClass("bg-puff-out");
         setTimeout(function() {
             t__wi_p.page.location.reload()
-        }, (e * 4.2))
+        }, (c * 4.2))
     }
     setTimeout(function() {
-        if (c === 1) {
-            a.find(".fa-moon").removeClass("fa-moon").addClass("fa-sun vertical-align-middle");
+        if (g === 1) {
+            b.find(".fa-moon").removeClass("fa-moon").addClass("fa-sun vertical-align-middle");
             $(t__wi_p.page.document).find(".settings_navigation_color_toggle").addClass("hidden");
-            var h = $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]');
+            var l = $(t__wi_p.top.document).find('head link[href*="palettes"][data-palette]');
             $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/gunmetal." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
             $(t__wi_p.page.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/nightrider." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
             setTimeout(function() {
                 t__wi_p.$("body").attr("data-theme", "gunmetal");
                 $(t__wi_p.page.document).find("body").attr("data-theme", "gunmetal");
-                h.remove();
+                l.remove();
                 t__wi_p.$("html").attr("data-background-style", "nightRider");
                 $(t__wi_p.page.document).find("html").attr("data-background-style", "nightRider");
                 t__wi_p.$("html").attr("data-night-mode", 1);
@@ -419,15 +428,15 @@ function f__toogle_palette() {
             t__wi_p.page.window.__isNM = 1
         } else {
             $(t__wi_p.page.document).find(".settings_navigation_color_toggle").removeClass("hidden");
-            a.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
-            var i = $(t__wi_p.top.document).find('head link[href*="gunmetal"]');
-            t__wi_p.$("body").attr("data-default-theme") != "blue" && $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + d.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
+            b.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
+            var m = $(t__wi_p.top.document).find('head link[href*="gunmetal"]');
+            t__wi_p.$("body").attr("data-default-theme") != "blue" && $(t__wi_p.top.document).find("head").append('<link href="' + $webprefix + "/unauthenticated/css/palettes/" + e.toLowerCase() + "." + $load____ext + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>');
             setTimeout(function() {
-                t__wi_p.$("body").attr("data-theme", d);
-                $(t__wi_p.page.document).find("body").attr("data-theme", d);
-                i.remove();
-                t__wi_p.$("html").attr("data-background-style", b);
-                $(t__wi_p.page.document).find("html").attr("data-background-style", b);
+                t__wi_p.$("body").attr("data-theme", e);
+                $(t__wi_p.page.document).find("body").attr("data-theme", e);
+                m.remove();
+                t__wi_p.$("html").attr("data-background-style", i);
+                $(t__wi_p.page.document).find("html").attr("data-background-style", i);
                 t__wi_p.$("html").attr("data-night-mode", 0);
                 $(t__wi_p.page.document).find("html").attr("data-night-mode", 0);
                 settings_background_color !== "nightRider" && $(t__wi_p.page.document).find('head link[href*="nightrider"]').remove()
@@ -438,7 +447,7 @@ function f__toogle_palette() {
             t__wi_p.page.window.__isNM = 0
         }
         t__wi_p.manageConfig("save")
-    }, (e * 2))
+    }, (c * 2))
 }
 
 function ported_shell_clear_cmd(a) {
