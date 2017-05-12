@@ -255,8 +255,8 @@ theme_xhred_filemanager_renaming_selected=Benenne Auswahl um.
 theme_xhred_filemanager_creating_directory=Lege Verzeichnis an
 theme_xhred_filemanager_creating_file=LEge Datei an
 theme_xhred_filemanager_downloading_from=Downloade von
-theme_xhred_filemanager_setting_permissions=Ändere Rechte der ausgewählten Dateien auf <strong><em>%value</em></strong>.
-theme_xhred_filemanager_changing_ownership=Ändere Besitzer der ausgewählten Dateien auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_setting_permissions=Rechte der ausgewählten Dateien auf <strong><em>%value</em> ändern</strong>.
+theme_xhred_filemanager_changing_ownership=Besitzer der ausgewählten Dateien auf <strong><em>%value</em> ändern</strong>.
 theme_xhred_filemanager_compressing_selected=Packe ausgewählte Dateien im Hintergrund.
 theme_xhred_filemanager_refreshing=Lade Verzeichnisinhalt enu.
 theme_xhred_filemanager_copying_successful=Erfolgreich in Zwischenablage kopiert.
@@ -355,7 +355,7 @@ theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 theme_settings_virtualmin=Virtualmin virtuelle Server
 theme_settings_cloudmin=Cloudmin gemanagte System
 settings_right_thirdparties_options_title=Optionen für Drittanbieter Module
-theme_xhred_filemanager_context_calculate_size=Berechne freien Platz im Leerraum
+theme_xhred_filemanager_context_calculate_size=Freien Platz im Leerraum berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
 theme_xhred_filemanager_context_bookmark_current=Pfad zum aktuell geöffneten Lesezeichen
 theme_xhred_filemanager_context_transfer=Übertragung
@@ -371,12 +371,12 @@ settings_switch_rdisplay=Schalter in umgekehrter Reihenfolge anzeigen
 settings_switch_rdisplay_description=Diese Einstellung ermöglicht es die Schalter oben links anders herum anzuordnen. Neuladen der Seite erforderlich.
 
 #17.63
-theme_xhred_filemanager_context_calculate_selected_size=Berechne Größe der Auswahl
-theme_xhred_filemanager_selected_entries=%value Elemente ausgewählt
+theme_xhred_filemanager_context_calculate_selected_size=Größe der Auswahl berechnen
+theme_xhred_filemanager_selected_entries=%value ausgewählt
 theme_xhred_filemanager_manual_path=Pfad händisch eingeben
 
 theme_xhred_datatable_semptytable=Keine Daten in Tabelle
-theme_xhred_datatable_sinfo=Einträge _START_ bis _END_ von insgesamt _TOTAL_ Einträgen
+theme_xhred_datatable_sinfo=Einträge _START_ bis _END_ von _TOTAL_ insgesammt
 theme_xhred_datatable_sinfoempty=Keine Einträge zum anzeigen
 theme_xhred_datatable_slengthmenu=Zeige _MENU_ Einträge 
 theme_xhred_datatable_sloadingrecords=Lade...
@@ -390,7 +390,7 @@ theme_xhred_global_save=Speichern
 theme_xhred_global_save_and_close=Speichen und beenden
 theme_xhred_global_close_without_saving=Beenden ohne zu speichern
 theme_xhred_global_continue_editing=Bearbeitung fortsetzen
-theme_xhred_filemanager_context_download_file=Downloaden
+theme_xhred_filemanager_context_download_file=Herunterladen
 
 #17.65
 settings_sysinfo_easypie_charts_width=Breite der Diagramme
@@ -509,7 +509,7 @@ filemanager_global_info_total2=Total: $1 Dateien und $2 Verzeichnis
 filemanager_global_info_total3=Total: $1 Datei und $2 Verzeichnisse
 filemanager_global_info_total4=Total: $1 Dateien und $2 Verzeichnisse
 
-theme_xhred_filemanager_selected_entry=Ausgewählt: %value Eintrag
+theme_xhred_filemanager_selected_entry=%value ausgwählt
 
 theme_xhred_filemanager_search_query=Suchanfrage
 theme_xhred_filemanager_search_match=Suche in Ergbnissen
@@ -539,6 +539,7 @@ theme_xhred_filemanager_settings_notification_type_warn_err=Warnungen und Fehler
 theme_xhred_filemanager_settings_notification_type_err=Nur Fehler
 
 theme_xhred_filemanager_settings_tabs_remember_state=Inhalt der Tabs beim ersten Laden wieder herstellen
+
 theme_xhred_filemanager_context_open_new_tab=In neuem Tab öffnen
 
 theme_xhred_xsql_fit_content_screen_height=Fit database table content in screen height
@@ -608,13 +609,13 @@ left_netdata=Echtzeit Monitoring
 settings_leftmenu_netdata=Netdata Echtzeit Monitoring Link anzeigen
 settings_leftmenu_netdata_link=Netdata bevorzugter Server Link
 
-theme_xhred_filemanager_context_chattr=Ändere Eigenschaften
-theme_xhred_filemanager_changing_attributes=Ändere Eigenschaften der markierten Datei(en) auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_context_chattr=Eigenschaften ändern
+theme_xhred_filemanager_changing_attributes=Eigenschaften der markierten Datei(en) auf <strong><em>%value</em> ändern</strong>.
 theme_xhred_filemanager_successful_attributes_with_errors=Eigenschaften konnten nicht für alle betroffenen Elemente geändert werden:
 theme_xhred_filemanager_successful_attributes=Eigenschaften erfolgreich geändert.
 
-theme_xhred_filemanager_context_chcon=Ändere Sicherheits Kontext
-theme_xhred_filemanager_changing_secontext=Ändere Sicherheits Kontext der markierten Datei(en) auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_context_chcon=Sicherheits Kontext ändern
+theme_xhred_filemanager_changing_secontext=Sicherheits Kontext der markierten Datei(en) auf <strong><em>%value</em> ändern</strong>.
 theme_xhred_filemanager_successful_secontext_with_errors=Sicherheits Kontext konnten nicht für alle betroffenen Elemente geändert werden:
 theme_xhred_filemanager_successful_secontext=Sicherheits Kontext erfolgreich geändert.
 
@@ -667,7 +668,7 @@ theme_xhred_filemanager_link_to_clipboard=Name des symbolischen Links `<strong><
 
 #18.46
 theme_left_mail_prefs=Mail Einstellungen
-theme_left_mail_change_password=Ändere Passwort
+theme_left_mail_change_password=Passwort ändern
 theme_left_mail_account_functions=Konto Funktionen
 theme_xhred_global_dir_up=Zurück zum vorherigen Verzeichnis (Backspace)
 theme_xhred_global_module_config=Module Konfiguration
@@ -691,7 +692,7 @@ theme_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
 theme_force_upgrade_stable=Installiere aktuelle Release Version (stable)
 theme_xhred_source_encoding=Quellen Codierung
 theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Theme Updates.
-theme_xhred_encoding_manually_set=Ändere Codierung händisch
+theme_xhred_encoding_manually_set=Codierung händisch ändern
 theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Codierung geändert werden kann.
 
 
