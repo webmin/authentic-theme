@@ -140,12 +140,12 @@ settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
 settings_right_reload=Lade Standard Inhalts Seite
 settings_right_reload_description=Bei Umschalten zwischen den Tabs wird der Inhalt des rechten Frames neu geladen. Soll beim Umschalten der letzte Inhalt des Tabs durch den Standard Inhalt ersetzt werden?
 
-settings_right_hide_table_icons=Zeige Tabellen Symbole im rechten Fenster nicht an
+settings_right_hide_table_icons=Tabellen Symbole im rechten Fenster nicht anzeigen
 settings_right_hide_table_icons_description=Entferne Symbole aus allen Inhaltstabellen und zeige stattdessen Links an.
 settings_right_small_table_icons=Kleine Tabellen Symbole
 settings_right_small_table_icons_description=Mache Tabellen Symbole kleiner und zeige den Link als Tooltip
 settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
-settings_right_grayscaled_table_icons=Zeige farbige Tabellen Symbole nur bei Eingabe
+settings_right_grayscaled_table_icons=Farbige Tabellen Symbole nur bei Eingabe anzeigen
 
 settings_right_iconize_header_links=Ersetzte Links im Tabellenkopf durch Symbole
 settings_right_iconize_header_links_description=Wähle ob im Tabellenkopf Symbole oder Links angezeigt werden sollen.
@@ -153,13 +153,13 @@ settings_right_iconize_header_links_description=Wähle ob im Tabellenkopf Symbol
 settings_window_autoscroll=Bewege Fenster automatisch
 settings_window_autoscroll_description=Das Fenster wird automatisch nach unten bewegt wenn neue Inhalte vom Server empfangen werden. Beim automatischen Bewegen wird der Aktivitätsanzeige angezeigt. Das automatische Bewegen wird deaktiviert solbald der Benutzer den Scollbalken selbst bewegt.
 
-settings_leftmenu_section_hide_refresh_modules=Verstecke Eintrag<kbd>Module aktualisieren</kbd>
-settings_leftmenu_section_hide_unused_modules=Verstecke Eintrag<kbd>Nicht benutzte Module</kbd>
-settings_favorites=Zeige Knopf für Favoriten
-settings_leftmenu_button_language=Zeige Knopf für Sprachen
-settings_leftmenu_button_refresh=Zeige Knopf für Neu Laden
+settings_leftmenu_section_hide_refresh_modules=Eintrag<kbd>Module aktualisieren</kbd> verbergen
+settings_leftmenu_section_hide_unused_modules=Eintrag<kbd>Nicht benutzte Module</kbd> verbergen
+settings_favorites=Knopf für Favoriten anzeigen
+settings_leftmenu_button_language=Knopf Sprachen anzeigen
+settings_leftmenu_button_refresh=Knopf Neu Laden anzeigen
 
-settings_theme_options_button=Zeige Knopf Theme Einstellungen
+settings_theme_options_button=Knopf Theme Einstellungen anzeigen
 
 settings_hotkeys_active=Schalte Schnellzugriffs Tasten ein
 settings_hotkey_toggle_modifier=Schnellzugriffs Taste
@@ -176,13 +176,13 @@ settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
 settings_side_slider_background_refresh_time=Wartezeit bei Übertragung von Informationen im Hintergrund
 settings_side_slider_background_refresh_time_description=Gewünschte Wartezeit in Minuten bei Übertragung von Informationen im Hintergrund. Der kleinstmögliche Wert beträgt <code>1</code> Minute, der Standardwert ist <code>5</code> Minuten.
-settings_sysinfo_easypie_charts=Zeige Diagramm
+settings_sysinfo_easypie_charts=Diagramm anzeigen
 settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Theme
 settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
-settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
+settings_sysinfo_drive_status_on_new_line=CPU und Laufwerks Status auf eigener Zeile
 settings_sysinfo_expand_all_accordions=Alle Unterpunkte aufklappen
-settings_sysinfo_link_mini=Zeige Link zum Dashboard als Knopf
-settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menü als Symbol
+settings_sysinfo_link_mini=Link Dashboard als Knopf anzeigen
+settings_leftmenu_singlelink_icons=Links im Navigations Menü als Symbol anzeigen
 
 settings_right_page_defaults_title=Standard Titel
 settings_right_default_tab_webmin=Standard Tab nach Anmelden in Webmin
@@ -190,22 +190,22 @@ settings_right_default_tab_usermin=Standard Tab nach Anmelden in Usermin
 settings_right_virtualmin_default=Standard Tab für Virtualmin
 settings_right_cloudmin_default=Standard Tab für Cloudmin
 
-settings_leftmenu_vm_installscripts=Zeige Link <kbd>Installations Scripte</kbd> in Virtualmin
-settings_leftmenu_vm_webpages=Zeige Link <kbd>Bearbeite Web Seiten</kbd> in Virtualmin
-settings_leftmenu_vm_backup_amazon=Zeige Link <kbd>Amazon S3 Buckets</kbd> in Virtualmin
+settings_leftmenu_vm_installscripts=Link <kbd>Installations Scripte</kbd> in Virtualmin anzeigen
+settings_leftmenu_vm_webpages=Link <kbd>Bearbeite Web Seiten</kbd> in Virtualmin anzeigen
+settings_leftmenu_vm_backup_amazon=Link <kbd>Amazon S3 Buckets</kbd> in Virtualmin anzeigen
 
 settings_right_clear_local_cache=Lösche Zwischenspeicher
 settings_right_notification_slider_options_title=Optionen für seitlichen Schieber
-settings_side_slider_fixed=Zeige Schieber immer an
+settings_side_slider_fixed=Schieber immer ananzeigen
 settings_side_slider_palette=Farbpalette für Schieber
 settings_hotkey_toggle_slider=Schnellzugriffs Taste für Schieber
-settings_window_replace_timestamps=Enable dates substitutions
+settings_window_replace_timestamps=Erlaube Datum ersetzen
 settings_window_replaced_timestamp_format_short=Kurzes Datums Format
 settings_window_replaced_timestamp_format_full=Langes Datums Format
 settings_window_replaced_timestamps_options_description=Einstellung ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. Weitere Hinweise: <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
-settings_side_slider_enabled=Schalte Schieber ein
-settings_leftmenu_user_html=Zeige HTML Schnipsel
+settings_side_slider_enabled=Schieber einschalten
+settings_leftmenu_user_html=HTML Schnipsel anzeigen
 settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation agezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
 
 
@@ -227,8 +227,8 @@ theme_global_warning=Warnung
 theme_global_success=Erfolgreich
 theme_global_info=Information
 sysinfo_system_status_warning=Damit <strong>System Informationen</strong> angezeigt werden kann muss das Modul <em>System Status</em> in den Benutzer Einstellungen eingeschaltet sein.
-settings_leftmenu_section_hide_vm_and_cm_links=Zeige Link <kbd>Verstecke inaktive Module<kbd> nicht in der Navigation
-settings_leftmenu_user_html_only_for_administrator=Zeige HTML Schnipsel nur für Administratoren
+settings_leftmenu_section_hide_vm_and_cm_links=Link <kbd>inaktive Module<kbd> in der Navigation verbergen
+settings_leftmenu_user_html_only_for_administrator=HTML Schnipsel nur für Administratoren anzeigen
 theme_sysinfo_wmdocs=Webmin Dockmentation
 theme_sysinfo_vmdocs=Virtualmin Dockmentation
 theme_sysinfo_cmdocs=Cloudmin Dokumentation
@@ -367,7 +367,7 @@ theme_xhred_filemanager_title_symlink_target=Link Ziel
 right_unlimited=Unbeschränkt
 settings_leftmenu_width=Bevorzugte Breite
 settings_leftmenu_width_description=Standard Wert/aktueller Wert: <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
-settings_switch_rdisplay=Zeige Schalter in umgekehrter Reihenfolge
+settings_switch_rdisplay=Schalter in umgekehrter Reihenfolge anzeigen
 settings_switch_rdisplay_description=Diese Einstellung ermöglicht es die Schalter oben links anders herum anzuordnen. Neuladen der Seite erforderlich.
 
 #17.63
@@ -427,9 +427,9 @@ theme_xhred_filemanager_target_conflict_paste=Unter neuem Namen einfügen
 theme_xhred_editor_help_title=Editor Schnellzugriffs Tasten
 theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
 
-theme_xhred_filemanager_hide_toolbar=Verstecke Toolbar
-theme_xhred_filemanager_hide_actions=Verstecke Aktivitäten Zeile
-theme_xhred_filemanager_hovered_toolbar=Zeige Ausklappliste in der Toolbar beim Überfahren mit der Maus
+theme_xhred_filemanager_hide_toolbar=Toolbar verbergen
+theme_xhred_filemanager_hide_actions=Aktivitäten Zeile verbergen
+theme_xhred_filemanager_hovered_toolbar=Auwahlliste in der Toolbar beim Überfahren mit der Maus anzeigen
 theme_xhred_filemanager_context_delete_selected=Ausgewählte löschen
 
 #17.83
@@ -533,12 +533,13 @@ theme_xhred_filemanager_successful_compression_with_errors=Compression has finis
 theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <strong>`%file</strong> is located in <strong>`%path`</strong> directory.
 theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <strong>`%file</strong> should be located in <strong>`%path`</strong> directory.
 
-theme_xhred_filemanager_settings_notification_type=Type of notifications to display
-theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informations, warnings and errors
-theme_xhred_filemanager_settings_notification_type_warn_err=Warnings and errors
-theme_xhred_filemanager_settings_notification_type_err=Errors only
+theme_xhred_filemanager_settings_notification_type=Anzuzeigende Benachrichtigungen
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informationen, Warnungen und Fehler
+theme_xhred_filemanager_settings_notification_type_warn_err=Warnungen und Fehler
+theme_xhred_filemanager_settings_notification_type_err=Nur Fehler
 
-theme_xhred_filemanager_settings_tabs_remember_state=Restore previously used tabs on first load
+theme_xhred_filemanager_settings_tabs_remember_state=Inhalt der Tabs beim ersten Laden wieder herstellen
+
 theme_xhred_filemanager_context_open_new_tab=In neuem Tab öffnen
 
 theme_xhred_xsql_fit_content_screen_height=Fit database table content in screen height
@@ -571,7 +572,7 @@ settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 
 
 #18.30
-settings_leftmenu_vm_cm_dropdown_icons=Zeige Symbole in Virtualmin/Cloudmin Dropdown Liste
+settings_leftmenu_vm_cm_dropdown_icons=Symbole in Virtualmin/Cloudmin Dropdown Liste azeigen
 settings_font_family=Schriftart
 settings_font_family_description=Von den angezeigten Schriftenn wird <em>Roboto</em> mit dem Theme installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
 theme_xhred_global_shipped=integriert
@@ -589,12 +590,12 @@ theme_xhred_notification_no_data=Keine Daten vorhanden
 theme_xhred_notification_no_favorites=Keine Favoriten vorhanden
 theme_xhred_global_theme_version=Theme Version
 
-settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
-settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
-settings_side_slider_favorites_enabled=Zeige Tab Favoriten
+settings_side_slider_sysinfo_enabled=Tab Dashboard anzeigen
+settings_side_slider_notifications_enabled=Tab Benachrichtigungen anzeigen
+settings_side_slider_favorites_enabled=Tab Favoriten anzeigen
 settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
 settings_side_slider_tabs_hotkeys_description=Schnellzugriffs Tasten zum schnellen hin und her schalten zwischen den Tabs: <code>Meta+⇧+Tab/Meta+Tab</code>. Aktiv wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
-settings_show_terminal_link=Zeige Terminal Knopf
+settings_show_terminal_link=Knopf Terminal anzeigen
 
 theme_xhred_sysinfo_system_monitors=System Monitor
 theme_xhred_sysinfo_server_status=Server Status
@@ -605,7 +606,7 @@ theme_xhred_sysinfo_disk_quotas=Disk Quotas
 theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
 
 left_netdata=Echtzeit Monitoring
-settings_leftmenu_netdata=Zeige Netdata Echtzeit Monitoring Link
+settings_leftmenu_netdata=Netdata Echtzeit Monitoring Link anzeigen
 settings_leftmenu_netdata_link=Netdata bevorzugter Server Link
 
 theme_xhred_filemanager_context_chattr=Eigenschaften ändern
@@ -630,8 +631,8 @@ theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_button_tooltip=Zeige Tooltips auf Knöpfen
-settings_show_night_mode_link=Zeige Umschaltung Farbpalette
+settings_button_tooltip=Tooltips auf Knöpfen anzeigen
+settings_show_night_mode_link=Umschaltung Farbpalette anzeigen
 settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
 settings_title=Theme Konfiguration
 settings_subtitle=Für Benutzer
@@ -676,8 +677,8 @@ theme_xhred_global_return_to_module_index=Zurück zur Modul Übersicht
 
 
 #18.47
-settings_account_info_link_mini=Zeige Link Konto Informationen als Knopf
-theme_xhred_global_complete_changelog=Zeige Änderungsprotokoll
+settings_account_info_link_mini=Link Konto Informationen als Knopf anzeigen
+theme_xhred_global_complete_changelog=Änderungsprotokoll anzeigen
 theme_xhred_global_beta_version=Beta Version
 theme_xhred_global_release=Release
 theme_xhred_global_released_on=Veröffentlicht am
