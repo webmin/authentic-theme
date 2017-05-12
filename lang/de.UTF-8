@@ -100,12 +100,12 @@ settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Das erweiterbare Theme Design erlaubt es sehr einfach Teile der Benutzerschnittstelle zu verändern Man kann sowohl <em>CSS</em> als auch <em>JavaScript</em> mit benutzerdefinierten Regeln für <emStyle</em und <em>Script</em> Erweiterungen anpassen. Im folgenden ein paar Beispiele zum bessseren Verständis der zugrundeliegenden Idee. Das Anpassen der Hintergrundfarbe erfolgt durch Einfügen von Style-Regeln in die CSS Erweiterung: <code>body {background-color: Gainsboro}</code>. Das Anpassen der Breite ein Knopfes erfolgt durch Einfügen von JavaScript-Anweisungen: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. In der Praxis wird es aber doch etwas komplexer sein als heir beschrieben.
 settings_right_theme_logos=Theme
 settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency. After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
+settings_right_logos_title=Hier kann man die Theme Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Größe der Logos beträgt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterstützung für den Hintergrund Kanals benötigt wird. Hinweise für weitere Anpassungen am Logo: After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
 settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo für nicht angemeldete Benutzer
 
 settings_right_current_theme=Aktuelles Theme
-settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
+settings_right_title=Aus dieser Seite lassen die Einstellungen für <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a> anpassen. Die Einstellungen bleiben auch nach einem Theme Update erhaletn.
 settings_right_theme_left_configuration_title=Authentic Theme Konfiguration
 settings_right_theme_left_extensions_title=Authentic Theme Erweiterungs Editor
 settings_right_theme_left_logo_title=Authentic Theme Logo Einstellungen
@@ -115,21 +115,21 @@ settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen f�
 settings_right_window_options_title=Optionen für Fenster
 settings_right_navigation_menu_title=Optionen für Navigations Menü
 settings_right_table_options_title=Optionen für Tabellen
-settings_security_title=Optionen für Sicherheits Hinweise
-settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_security_title=Optionen für Sicherheits Warnungen
+settings_security_description=Sicherheits Warnungen ermöglichen es Mail Benachrichtungen bei bestimmten Vorkomnissen zu versenden.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Optionen für Schnellzugriffs Tasten
 settings_right_sysinfo_page_options_title=Optionen für System Informationen
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>apache.</code> If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
-settings_hotkey_custom_1=Custom link <code>1</code>
-settings_hotkey_custom_2=Custom link <code>2</code>
-settings_hotkey_custom_3=Custom link <code>3</code>
-settings_hotkey_custom_4=Custom link <code>4</code>
-settings_hotkey_custom_5=Custom link <code>5</code>
-settings_hotkey_custom_6=Custom link <code>6</code>
-settings_hotkey_custom_7=Custom link <code>7</code>
-settings_hotkey_custom_8=Custom link <code>8</code>
-settings_hotkey_custom_9=Custom link <code>9</code>
+settings_right_hotkey_custom_options_description=Benutzerdefinierte Links erlauben es die Ziffertasten <code>1</code> bis <code>9</code> als Schnellzugriffs Tasten für beliebige Webmin/Usermin/Virtualmin/Cloudmin <code>URLs</code> einzurichten. Die <code>URL</code> erhält man wenn man sich nur den rechten Frame anzeigen läßt, z.B. mit einem rechtsklick auf die rechte Inhalts Seite und der Auswahl "Nur diesem Frame anzeigen". Wichtig: Es darf nur das letzte Teilstück der <code>URL</code> verwendet werden! Zum Aufrufen der Apache Configuration muss der Eintrag in Benuterzdefinierter Link 1 <code>apache</code> sein, ohne fürende oder folgende Schrägstiche (/).
+settings_hotkey_custom_1=Benutzerdefinierter Link <code>1</code>
+settings_hotkey_custom_2=Benutzerdefinierter Link <code>2</code>
+settings_hotkey_custom_3=Benutzerdefinierter Link <code>3</code>
+settings_hotkey_custom_4=Benutzerdefinierter Link <code>4</code>
+settings_hotkey_custom_5=Benutzerdefinierter Link <code>5</code>
+settings_hotkey_custom_6=Benutzerdefinierter Link <code>6</code>
+settings_hotkey_custom_7=Benutzerdefinierter Link <code>7</code>
+settings_hotkey_custom_8=Benutzerdefinierter Link <code>8</code>
+settings_hotkey_custom_9=Benutzerdefinierter Link <code>9</code>
 
 settings_navigation_color=Farbpalette für Navigations Menü
 settings_background_color=Farbpalette für Inhalts Seite
@@ -137,21 +137,21 @@ settings_animation_left=Anminationen im Navigations Menü einschalten
 settings_animation_tabs=Anminationen in den Tabs einschalten
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
-settings_right_reload=Lade Standad Inhalts Seite
-settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+settings_right_reload=Lade Standard Inhalts Seite
+settings_right_reload_description=Bei Umschalten zwischen den Tabs wird der Inhalt des rechten Frames neu geladen. Soll beim Umschalten der letzte Inhalt des Tabs durch den Standard Inhalt ersetzt werden?
 
-settings_right_hide_table_icons=Zeige Tabellen Icons im rechten Fenster nicht an
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
+settings_right_hide_table_icons=Zeige Tabellen Symbole im rechten Fenster nicht an
+settings_right_hide_table_icons_description=Entferne Symbole aus allen Inhaltstabellen und zeige stattdessen Links an.
 settings_right_small_table_icons=Kleine Tabellen Symbole
-settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
+settings_right_small_table_icons_description=Mache Tabellen Symbole kleiner und zeige den Link als Tooltip
 settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
 settings_right_grayscaled_table_icons=Zeige farbige Tabellen Symbole nur bei Eingabe
 
 settings_right_iconize_header_links=Ersetzte Links im Tabellenkopf durch Symbole
-settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
+settings_right_iconize_header_links_description=Wähle ob im Tabellenkopf Symbole oder Links angezeigt werden sollen.
 
 settings_window_autoscroll=Bewege Fenster automatisch
-settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
+settings_window_autoscroll_description=Das Fenster wird automatisch nach unten bewegt wenn neue Inhalte vom Server empfangen werden. Beim automatischen Bewegen wird der Aktivitätsanzeige angezeigt. Das automatische Bewegen wird deaktiviert solbald der Benutzer den Scollbalken selbst bewegt.
 
 settings_leftmenu_section_hide_refresh_modules=Verstecke Eintrag<kbd>Module aktualisieren</kbd>
 settings_leftmenu_section_hide_unused_modules=Verstecke Eintrag<kbd>Nicht benutzte Module</kbd>
@@ -174,13 +174,13 @@ settings_hotkey_favorites=Schnellzugriffs Taste für Favoriten
 settings_hotkey_focus_search=Schnellzugriffs Taste für Suchfeld
 settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
-settings_side_slider_background_refresh_time=Timeout for background information update
-settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
+settings_side_slider_background_refresh_time=Wartezeit bei Übertragung von Informationen im Hintergrund
+settings_side_slider_background_refresh_time_description=Gewünschte Wartezeit in Minuten bei Übertragung von Informationen im Hintergrund. Der kleinstmögliche Wert beträgt <code>1</code> Minute, der Standardwert ist <code>5</code> Minuten.
 settings_sysinfo_easypie_charts=Zeige Diagramm
 settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Theme
 settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Zeige CPU und Laufwerks Status auf eigener Zeile
-settings_sysinfo_expand_all_accordions=Make all accordions expanded
+settings_sysinfo_expand_all_accordions=Alle Unterpunkte aufklappen
 settings_sysinfo_link_mini=Zeige Link zum Dashboard als Knopf
 settings_leftmenu_singlelink_icons=Zeige einzelne Links im Navigations Menü als Symbol
 
@@ -202,11 +202,11 @@ settings_hotkey_toggle_slider=Schnellzugriffs Taste für Schieber
 settings_window_replace_timestamps=Enable dates substitutions
 settings_window_replaced_timestamp_format_short=Kurzes Datums Format
 settings_window_replaced_timestamp_format_full=Langes Datums Format
-settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
+settings_window_replaced_timestamps_options_description=Einstellung ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. Weitere Hinweise: <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
 settings_side_slider_enabled=Schalte Schieber ein
 settings_leftmenu_user_html=Zeige HTML Schnipsel
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation agezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
 
 
 theme_changelog=Changelog
@@ -573,13 +573,13 @@ settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Zeige Symbole in Virtualmin/Cloudmin Dropdown Liste
 settings_font_family=Schriftart
-settings_font_family_description=Von den angezeigten Schriftenn wird nur <em>Roboto</em> mit dem Thema installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal auf deinem Computer installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt.
-theme_xhred_global_shipped=Verschickt
+settings_font_family_description=Von den angezeigten Schriftenn wird <em>Roboto</em> mit dem Theme installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
+theme_xhred_global_shipped=integriert
 theme_xhred_global_available=Vorhanden
 theme_xhred_global_not_available=Nicht vorhanden
-theme_xhred_global_default=Default
-theme_xhred_global_system_default=System default
-theme_xhred_global_local_system_default=Local system default
+theme_xhred_global_default=Standard
+theme_xhred_global_system_default=System Standard
+theme_xhred_global_local_system_default=Lokaler System Standard
 theme_xhred_global_stats=Statistik
 theme_xhred_global_notifications=Benachrichtigungen
 theme_xhred_global_favorites=Favoriten
@@ -593,7 +593,7 @@ settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
 settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
 settings_side_slider_favorites_enabled=Zeige Tab Favoriten
 settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
-settings_side_slider_tabs_hotkeys_description=Schnelles hin und her schalten zwischen den Tabs mit den Schnellzugriffs Tasten <code>Meta+⇧+Tab/Meta+Tab</code>, wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
+settings_side_slider_tabs_hotkeys_description=Schnellzugriffs Tasten zum schnellen hin und her schalten zwischen den Tabs: <code>Meta+⇧+Tab/Meta+Tab</code>. Aktiv wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
 settings_show_terminal_link=Zeige Terminal Knopf
 
 theme_xhred_sysinfo_system_monitors=System Monitor
@@ -604,19 +604,19 @@ theme_xhred_sysinfo_vm_package_updates=Virtualmin Paket Updates
 theme_xhred_sysinfo_disk_quotas=Disk Quotas
 theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
 
-left_netdata=Realtime Monitoring
-settings_leftmenu_netdata=Show Netdata realtime monitoring link
-settings_leftmenu_netdata_link=Netdata server preferred link
+left_netdata=Echtzeit Monitoring
+settings_leftmenu_netdata=Zeige Netdata Echtzeit Monitoring Link
+settings_leftmenu_netdata_link=Netdata bevorzugter Server Link
 
-theme_xhred_filemanager_context_chattr=Change attributes
-theme_xhred_filemanager_changing_attributes=Setting attributes to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_successful_attributes_with_errors=Attributes haven't been set successfully for all objects:
-theme_xhred_filemanager_successful_attributes=Attributes have been set successfully.
+theme_xhred_filemanager_context_chattr=Ändere Eigenschaften
+theme_xhred_filemanager_changing_attributes=Ändere Eigenschaften der markierten Datei(en) auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_successful_attributes_with_errors=Eigenschaften konnten nicht für alle betroffenen Objekte geändert werden:
+theme_xhred_filemanager_successful_attributes=Eigenschaften erfolgreich geändert.
 
-theme_xhred_filemanager_context_chcon=Change security context
-theme_xhred_filemanager_changing_secontext=Changing security context to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
-theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
+theme_xhred_filemanager_context_chcon=Ändere Sicherheits Kontext
+theme_xhred_filemanager_changing_secontext=Ändere Sicherheits Kontext der markierten Datei(en) auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_successful_secontext_with_errors=Sicherheits Kontext konnten nicht für alle betroffenen Objekte geändert werden:
+theme_xhred_filemanager_successful_secontext=Sicherheits Kontext erfolgreich geändert.
 
 theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
 
