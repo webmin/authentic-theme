@@ -573,13 +573,13 @@ settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Zeige Symbole in Virtualmin/Cloudmin Dropdown Liste
 settings_font_family=Schriftart
-settings_font_family_description=Von den angezeigten Schriftenn wird nur <em>Roboto</em> mit dem Thema installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal auf deinem Computer installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt.
-theme_xhred_global_shipped=Verschickt
+settings_font_family_description=Von den angezeigten Schriftenn wird <em>Roboto</em> mit dem Theme installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
+theme_xhred_global_shipped=integriert
 theme_xhred_global_available=Vorhanden
 theme_xhred_global_not_available=Nicht vorhanden
-theme_xhred_global_default=Default
-theme_xhred_global_system_default=System default
-theme_xhred_global_local_system_default=Local system default
+theme_xhred_global_default=Standard
+theme_xhred_global_system_default=System Standard
+theme_xhred_global_local_system_default=Lokaler System Standard
 theme_xhred_global_stats=Statistik
 theme_xhred_global_notifications=Benachrichtigungen
 theme_xhred_global_favorites=Favoriten
@@ -593,7 +593,7 @@ settings_side_slider_sysinfo_enabled=Zeige Tab Dashboard
 settings_side_slider_notifications_enabled=Zeige Tab Benachrichtigungen
 settings_side_slider_favorites_enabled=Zeige Tab Favoriten
 settings_side_slider_tabs_hotkeys=Schalte Schnellzugrffs Tasten zum Umschalten der Tabs ein
-settings_side_slider_tabs_hotkeys_description=Schnelles hin und her schalten zwischen den Tabs mit den Schnellzugriffs Tasten <code>Meta+⇧+Tab/Meta+Tab</code>, wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
+settings_side_slider_tabs_hotkeys_description=Schnellzugriffs Tasten zum schnellen hin und her schalten zwischen den Tabs: <code>Meta+⇧+Tab/Meta+Tab</code>. Aktiv wenn die globale Option zur Nutzung der Schnellzugriffs Tasten eingeschaltet ist.
 settings_show_terminal_link=Zeige Terminal Knopf
 
 theme_xhred_sysinfo_system_monitors=System Monitor
@@ -604,19 +604,19 @@ theme_xhred_sysinfo_vm_package_updates=Virtualmin Paket Updates
 theme_xhred_sysinfo_disk_quotas=Disk Quotas
 theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
 
-left_netdata=Realtime Monitoring
-settings_leftmenu_netdata=Show Netdata realtime monitoring link
-settings_leftmenu_netdata_link=Netdata server preferred link
+left_netdata=Echtzeit Monitoring
+settings_leftmenu_netdata=Zeige Netdata Echtzeit Monitoring Link
+settings_leftmenu_netdata_link=Netdata bevorzugter Server Link
 
-theme_xhred_filemanager_context_chattr=Change attributes
-theme_xhred_filemanager_changing_attributes=Setting attributes to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_successful_attributes_with_errors=Attributes haven't been set successfully for all objects:
-theme_xhred_filemanager_successful_attributes=Attributes have been set successfully.
+theme_xhred_filemanager_context_chattr=Ändere Eigenschaften
+theme_xhred_filemanager_changing_attributes=Ändere Eigenschaften der markierten Datei(en) auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_successful_attributes_with_errors=Eigenschaften konnten nicht für alle betroffenen Objekte geändert werden:
+theme_xhred_filemanager_successful_attributes=Eigenschaften erfolgreich geändert.
 
-theme_xhred_filemanager_context_chcon=Change security context
-theme_xhred_filemanager_changing_secontext=Changing security context to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
-theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
+theme_xhred_filemanager_context_chcon=Ändere Sicherheits Kontext
+theme_xhred_filemanager_changing_secontext=Ändere Sicherheits Kontext der markierten Datei(en) auf <strong><em>%value</em></strong>.
+theme_xhred_filemanager_successful_secontext_with_errors=Sicherheits Kontext konnten nicht für alle betroffenen Objekte geändert werden:
+theme_xhred_filemanager_successful_secontext=Sicherheits Kontext erfolgreich geändert.
 
 theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
 
