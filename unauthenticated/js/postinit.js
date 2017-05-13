@@ -1952,8 +1952,8 @@ function __dlm(b) {
             if ((product_name() !== "Virtualmin" && product_name() !== "Cloudmin") && product_name() !== "Webmin" && product_name() !== "Usermin" && (t__wi_p.$('a[href*="' + $___source_path + '"]:first' + __samn() + "").length || t__wi_p.$('a[data-href*="' + $___source_path + '"]:first' + __samn() + "").length)) {
                 __sam($___source_path, false)
             } else {
-                if ((product_name() !== "Virtualmin" && product_name() !== "Cloudmin") && (t__wi_p.$('a[href*="' + $___source_dir + '"]:first' + __samn() + "").length || t__wi_p.$('a[data-href*="' + $___source_dir + '"]:first' + __samn() + "").length) || ((access_level() == 2 || access_level() == 4) && t___wi.location.search == "?virtualmin")) {
-                    __sam($___source_dir, false)
+                if ((product_name() !== "Virtualmin" && product_name() !== "Cloudmin") && (t__wi_p.$('a[href*="' + $___source_dir.slice($webprefix.length) + '"]:first' + __samn() + "").length || t__wi_p.$('a[data-href*="' + $___source_dir.slice($webprefix.length) + '"]:first' + __samn() + "").length) || ((access_level() == 2 || access_level() == 4) && t___wi.location.search == "?virtualmin")) {
+                    __sam($___source_dir.slice($webprefix.length), false)
                 } else {
                     if ($__source_file) {
                         __sam($__source_file, true)
