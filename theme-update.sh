@@ -17,8 +17,8 @@ clear
 
 # help requested output usage
 if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
-    echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script
-    echo "Usage:  ./`basename $0` { [-repo:path] [-beta] | [-release] | [-release:number] }"
+    echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script"
+    echo "Usage:  ./`basename $0` { [-repo:yourname/authentic-theme] [-beta] | [-release] | [-release:number] }"
     exit 0
 fi
 
