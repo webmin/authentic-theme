@@ -55,7 +55,7 @@ else
         if [[ "$1" == *":"* ]] && [[ "$1" != *"latest"* ]]; then
           RRELEASE=${1##*:}
         else
-          RRELEASE=`curl -s -L https://raw.githubusercontent.com/${HOST}/${REPO}/VERSION.txt`
+          RRELEASE=`curl -s -L https://raw.githubusercontent.com/${HOST}/${REPO}/master/VERSION.txt`
         fi
         echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $RRELEASE (${HOST}/${REPO})..."
         RS="$(git clone --depth 1 --branch $RRELEASE -q https://github.com/${HOST}/${REPO}.git "$DIR/.~authentic-theme" 2>&1)"
