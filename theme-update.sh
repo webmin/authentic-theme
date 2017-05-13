@@ -31,7 +31,7 @@ if [[ "$1" == *"-repo"* ]]; then
         else
           echo "./`basename $0`: found -repo without parameter"
           exit 0
-     from $[HOST}/${REPO}   fi
+        fi
 fi
 
 # Ask user to confirm update operation
