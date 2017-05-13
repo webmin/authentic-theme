@@ -64,7 +64,7 @@ else
         fi
       else
         echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (${HOST}/${REPO})..."
-        git clone --depth 1 --quiet https://github.com/$[HOST}/${REPO}.git "$DIR/.~authentic-theme"
+        git clone --depth 1 --quiet https://github.com/${HOST}/${REPO}.git "$DIR/.~authentic-theme"
       fi
 
       # Checking for possible errors
