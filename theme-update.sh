@@ -35,7 +35,7 @@ if [[ "$1" == *"-repo"* ]]; then
 fi
 
 # Ask user to confirm update operation
-read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] from $[HOST}/${REPO}" -n 1 -r
+read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] from ${HOST}/${REPO}" -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
   echo -e "\e[49;1;35;82mOperation aborted.\e[0m"
@@ -55,15 +55,15 @@ else
         if [[ "$1" == *":"* ]] && [[ "$1" != *"latest"* ]]; then
           RRELEASE=${1##*:}
         else
-          RRELEASE=`curl -s -L https://raw.githubusercontent.com/$[HOST}/${REPO}/VERSION.txt`
+          RRELEASE=`curl -s -L https://raw.githubusercontent.com/${HOST}/${REPO}/VERSION.txt`
         fi
-        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $RRELEASE ($[HOST}/${REPO})..."
-        RS="$(git clone --depth 1 --branch $RRELEASE -q https://github.com/$[HOST}/${REPO}.git "$DIR/.~authentic-theme" 2>&1)"
+        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $RRELEASE (${HOST}/${REPO})..."
+        RS="$(git clone --depth 1 --branch $RRELEASE -q https://github.com/${HOST}/${REPO}.git "$DIR/.~authentic-theme" 2>&1)"
         if [[ "$RS" == *"ould not find remote branch"* ]]; then
           ERROR="Release ${RRELEASE} doesn't exist. "
         fi
       else
-        echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m ($[HOST}/${REPO})..."
+        echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (${HOST}/${REPO})..."
         git clone --depth 1 --quiet https://github.com/$[HOST}/${REPO}.git "$DIR/.~authentic-theme"
       fi
 
