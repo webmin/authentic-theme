@@ -2219,7 +2219,7 @@ function t__cm___init(g, i, f, j, d, m, k) {
     function e() {
         var a = 0;
         if (t__wi_p.$load____ext === "src") {
-            a = $('html head link[href*="css/jquery.jspanel."]:first')
+            a = $('html head link[href*="css/jquery.datatables."]:first')
         } else {
             a = $('html head link[href*="css/bundle."]:first')
         }
@@ -2280,7 +2280,7 @@ function f__cm_viewer() {
     function c() {
         var d = 0;
         if (t__wi_p.$load____ext === "src") {
-            d = $('html head link[href*="css/jquery.jspanel."]:first')
+            d = $('html head link[href*="css/jquery.datatables."]:first')
         } else {
             d = $('html head link[href*="css/bundle."]:first')
         }

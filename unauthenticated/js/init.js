@@ -230,6 +230,289 @@ function __slm() {
     }
 }
 __slm();
+! function(b, a) {
+    "function" == typeof define && define.amd ? define([], a) : "object" == typeof exports ? module.exports = a() : b.sortable = a()
+}(this, function() {
+    function ar(c, a, d) {
+        var b = null;
+        return 0 === a ? c : function() {
+            var f = d || this,
+                g = arguments;
+            clearTimeout(b), b = setTimeout(function() {
+                c.apply(f, g)
+            }, a)
+        }
+    }
+    var ae, ak, ag = [],
+        aw = [],
+        aj = function(b, a, c) {
+            return void 0 === c ? b && b.h5s && b.h5s.data && b.h5s.data[a] : (b.h5s = b.h5s || {}, b.h5s.data = b.h5s.data || {}, b.h5s.data[a] = c, void 0)
+        },
+        an = function(a) {
+            a.h5s && delete a.h5s.data
+        },
+        af = function(b, a) {
+            return (b.matches || b.matchesSelector || b.msMatchesSelector || b.mozMatchesSelector || b.webkitMatchesSelector || b.oMatchesSelector).call(b, a)
+        },
+        am = function(c, a) {
+            if (!a) {
+                return Array.prototype.slice.call(c)
+            }
+            for (var d = [], b = 0; b < c.length; ++b) {
+                "string" == typeof a && af(c[b], a) && d.push(c[b]), a.indexOf(c[b]) !== -1 && d.push(c[b])
+            }
+            return d
+        },
+        at = function(c, a, d) {
+            if (c instanceof Array) {
+                for (var b = 0; b < c.length; ++b) {
+                    at(c[b], a, d)
+                }
+            } else {
+                c.addEventListener(a, d), c.h5s = c.h5s || {}, c.h5s.events = c.h5s.events || {}, c.h5s.events[a] = d
+            }
+        },
+        au = function(b, a) {
+            if (b instanceof Array) {
+                for (var c = 0; c < b.length; ++c) {
+                    au(b[c], a)
+                }
+            } else {
+                b.h5s && b.h5s.events && b.h5s.events[a] && (b.removeEventListener(a, b.h5s.events[a]), delete b.h5s.events[a])
+            }
+        },
+        aq = function(c, a, d) {
+            if (c instanceof Array) {
+                for (var b = 0; b < c.length; ++b) {
+                    aq(c[b], a, d)
+                }
+            } else {
+                c.setAttribute(a, d)
+            }
+        },
+        ad = function(b, a) {
+            if (b instanceof Array) {
+                for (var c = 0; c < b.length; ++c) {
+                    ad(b[c], a)
+                }
+            } else {
+                b.removeAttribute(a)
+            }
+        },
+        ai = function(b) {
+            var a = b.getClientRects()[0];
+            return {
+                left: a.left + window.scrollX,
+                top: a.top + window.scrollY
+            }
+        },
+        ao = function(a) {
+            au(a, "dragstart"), au(a, "dragend"), au(a, "selectstart"), au(a, "dragover"), au(a, "dragenter"), au(a, "drop")
+        },
+        ap = function(a) {
+            au(a, "dragover"), au(a, "dragenter"), au(a, "drop")
+        },
+        al = function(b, a) {
+            b.dataTransfer.effectAllowed = "move", b.dataTransfer.setData("text", ""), b.dataTransfer.setDragImage && b.dataTransfer.setDragImage(a.draggedItem, a.x, a.y)
+        },
+        ac = function(b, a) {
+            return a.x || (a.x = parseInt(b.pageX - ai(a.draggedItem).left)), a.y || (a.y = parseInt(b.pageY - ai(a.draggedItem).top)), a
+        },
+        Z = function(a) {
+            return {
+                draggedItem: a
+            }
+        },
+        av = function(b, a) {
+            var c = Z(a);
+            c = ac(b, c), al(b, c)
+        },
+        R = function(a) {
+            an(a), ad(a, "aria-dropeffect")
+        },
+        aa = function(a) {
+            ad(a, "aria-grabbed"), ad(a, "draggable"), ad(a, "role")
+        },
+        Q = function(b, a) {
+            return b === a || void 0 !== aj(b, "connectWith") && aj(b, "connectWith") === aj(a, "connectWith")
+        },
+        ab = function(f, c) {
+            var g, d = [];
+            if (!c) {
+                return f
+            }
+            for (var b = 0; b < f.length; ++b) {
+                g = f[b].querySelectorAll(c), d = d.concat(Array.prototype.slice.call(g))
+            }
+            return d
+        },
+        V = function(c) {
+            var a = aj(c, "opts") || {},
+                d = am(j(c), a.items),
+                b = ab(d, a.handle);
+            ap(c), R(c), au(b, "mousedown"), ao(d), aa(d)
+        },
+        X = function(f) {
+            var c = aj(f, "opts"),
+                g = am(j(f), c.items),
+                d = ab(g, c.handle);
+            aq(f, "aria-dropeffect", "move"), aj(f, "_disabled", "false"), aq(d, "draggable", "true");
+            var b = (document || window.document).createElement("span");
+            "function" != typeof b.dragDrop || c.disableIEFix || at(d, "mousedown", function() {
+                if (g.indexOf(this) !== -1) {
+                    this.dragDrop()
+                } else {
+                    for (var a = this.parentElement; g.indexOf(a) === -1;) {
+                        a = a.parentElement
+                    }
+                    a.dragDrop()
+                }
+            })
+        },
+        U = function(c) {
+            var a = aj(c, "opts"),
+                d = am(j(c), a.items),
+                b = ab(d, a.handle);
+            aq(c, "aria-dropeffect", "none"), aj(c, "_disabled", "true"), aq(b, "draggable", "false"), au(b, "mousedown")
+        },
+        B = function(c) {
+            var a = aj(c, "opts"),
+                d = am(j(c), a.items),
+                b = ab(d, a.handle);
+            aj(c, "_disabled", "false"), ao(d), au(b, "mousedown"), ap(c)
+        },
+        K = function(a) {
+            return a.parentElement ? Array.prototype.indexOf.call(a.parentElement.children, a) : 0
+        },
+        G = function(a) {
+            return !!a.parentNode
+        },
+        z = function(b, a) {
+            if ("string" != typeof b) {
+                return b
+            }
+            var c = document.createElement(a);
+            return c.innerHTML = b, c.firstChild
+        },
+        k = function(b, a) {
+            b.parentElement.insertBefore(a, b)
+        },
+        J = function(b, a) {
+            b.parentElement.insertBefore(a, b.nextElementSibling)
+        },
+        H = function(a) {
+            a.parentNode && a.parentNode.removeChild(a)
+        },
+        F = function(b, a) {
+            var c = document.createEvent("Event");
+            return a && (c.detail = a), c.initEvent(b, !1, !0), c
+        },
+        ax = function(b, a) {
+            aw.forEach(function(c) {
+                Q(b, c) && c.dispatchEvent(a)
+            })
+        },
+        j = function(a) {
+            return a.children
+        },
+        ah = function(b, d) {
+            var a = String(d);
+            return d = function(f) {
+                var c = {
+                    connectWith: !1,
+                    placeholder: null,
+                    disableIEFix: !1,
+                    placeholderClass: "sortable-placeholder",
+                    draggingClass: "sortable-dragging",
+                    hoverClass: !1,
+                    debounce: 0,
+                    maxItems: 0
+                };
+                for (var g in f) {
+                    c[g] = f[g]
+                }
+                return c
+            }(d), d && "function" == typeof d.getChildren && (j = d.getChildren), "string" == typeof b && (b = document.querySelectorAll(b)), b instanceof window.Element && (b = [b]), b = Array.prototype.slice.call(b), b.forEach(function(l) {
+                if (/enable|disable|destroy/.test(a)) {
+                    return void ah[a](l)
+                }
+                d = aj(l, "opts") || d, aj(l, "opts", d), B(l);
+                var n, o, f, t = am(j(l), d.items),
+                    p = d.placeholder;
+                if (p || (p = document.createElement(/^ul|ol$/i.test(l.tagName) ? "li" : "div")), p = z(p, l.tagName), p.classList.add.apply(p.classList, d.placeholderClass.split(" ")), !l.getAttribute("data-sortable-id")) {
+                    var u = aw.length;
+                    aw[u] = l, aq(l, "data-sortable-id", u), aq(t, "data-item-sortable-id", u)
+                }
+                if (aj(l, "items", d.items), ag.push(p), d.connectWith && aj(l, "connectWith", d.connectWith), X(l), aq(t, "role", "option"), aq(t, "aria-grabbed", "false"), d.hoverClass) {
+                    var q = "sortable-over";
+                    "string" == typeof d.hoverClass && (q = d.hoverClass), at(t, "mouseenter", function() {
+                        this.classList.add(q)
+                    }), at(t, "mouseleave", function() {
+                        this.classList.remove(q)
+                    })
+                }
+                d.maxItems && "number" == typeof d.maxItems && (f = d.maxItems), at(t, "dragstart", function(g) {
+                    g.stopImmediatePropagation(), d.handle && !af(g.target, d.handle) || "false" === this.getAttribute("draggable") || (av(g, this), this.classList.add(d.draggingClass), ae = this, aq(ae, "aria-grabbed", "true"), n = K(ae), ak = parseInt(window.getComputedStyle(ae).height), o = this.parentElement, ax(l, F("sortstart", {
+                        item: ae,
+                        placeholder: p,
+                        startparent: o
+                    })))
+                }), at(t, "dragend", function() {
+                    var g;
+                    ae && (ae.classList.remove(d.draggingClass), aq(ae, "aria-grabbed", "false"), ae.style.display = ae.oldDisplay, delete ae.oldDisplay, ag.forEach(H), g = this.parentElement, ax(l, F("sortstop", {
+                        item: ae,
+                        startparent: o
+                    })), n === K(ae) && o === g || ax(l, F("sortupdate", {
+                        item: ae,
+                        index: am(j(g), aj(g, "items")).indexOf(ae),
+                        oldindex: t.indexOf(ae),
+                        elementIndex: K(ae),
+                        oldElementIndex: n,
+                        startparent: o,
+                        endparent: g
+                    })), ae = null, ak = null)
+                }), at([l, p], "drop", function(g) {
+                    var h;
+                    Q(l, ae.parentElement) && (g.preventDefault(), g.stopPropagation(), h = ag.filter(G)[0], J(h, ae), ae.dispatchEvent(F("dragend")))
+                });
+                var r = ar(function(w, g) {
+                        if (ae) {
+                            if (t.indexOf(w) !== -1) {
+                                var y = parseInt(window.getComputedStyle(w).height),
+                                    h = K(p),
+                                    m = K(w);
+                                if (d.forcePlaceholderSize && (p.style.height = ak + "px"), y > ak) {
+                                    var x = y - ak,
+                                        v = ai(w).top;
+                                    if (h < m && g < v + x) {
+                                        return
+                                    }
+                                    if (h > m && g > v + y - x) {
+                                        return
+                                    }
+                                }
+                                void 0 === ae.oldDisplay && (ae.oldDisplay = ae.style.display), "none" !== ae.style.display && (ae.style.display = "none"), h < m ? J(w, p) : k(w, p), ag.filter(function(i) {
+                                    return i !== p
+                                }).forEach(H)
+                            } else {
+                                ag.indexOf(w) !== -1 || am(j(w), d.items).length || (ag.forEach(H), w.appendChild(p))
+                            }
+                        }
+                    }, d.debounce),
+                    c = function(g) {
+                        ae && Q(l, ae.parentElement) && "true" !== aj(l, "_disabled") && (f && am(j(l), aj(l, "items")).length >= f || (g.preventDefault(), g.stopPropagation(), g.dataTransfer.dropEffect = "move", r(this, g.pageY)))
+                    };
+                at(t.concat(l), "dragover", c), at(t.concat(l), "dragenter", c)
+            }), b
+        };
+    return ah.destroy = function(a) {
+        V(a)
+    }, ah.enable = function(a) {
+        X(a)
+    }, ah.disable = function(a) {
+        U(a)
+    }, ah
+});
 (function(c) {
     function a(g) {
         var f = c(this);

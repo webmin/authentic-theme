@@ -584,8 +584,18 @@ html[data-background-style='nightRider'] .file-manager .ui_checked_columns.direc
     background: #2f3238
 }
 
-html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light {
-    color: rgba(255, 255, 255, .76);
+html[data-background-style='nightRider'] .jsPanel .jsPanel-content {
+    border-top-color: #292c32 !important
+}
+
+html[data-background-style='nightRider'] .file-manager .jsPanel-title,
+html[data-background-style='nightRider'] .file-manager .jsPanel-replacement .jsPanel-title,
+html[data-background-style='nightRider'] .file-manager .jsPanel-replacement .jsPanel-btn span {
+    color: rgba(255, 255, 255, .66) !important
+}
+
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr {
+    color: rgba(255, 255, 255, .66);
     border: 1px solid #393c41;
     border-bottom-color: 0;
     background: #292c32
@@ -597,23 +607,23 @@ html[data-background-style='nightRider'] .file-manager .table .cspinner .cspinne
     border-left-color: #777
 }
 
-html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light ._filemanager_file_editor_save .cspinner .cspinner-icon {
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr ._filemanager_file_editor_save .cspinner .cspinner-icon {
     border-top-color: #aaa;
     border-left-color: #fff
 }
 
-html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light i:hover,
-html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light span:hover {
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr i:not(.fa-edit):hover,
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr span:hover {
     color: #69768d
 }
 
 html[data-background-style='nightRider'] .fa-question-circle.-helper:hover,
-html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light h3 small,
-html[data-background-style='nightRider'] .file-manager .jsPanel-hdr.jsPanel-theme-light h3 {
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr h3 small,
+html[data-background-style='nightRider'] .file-manager .jsPanel-hdr h3 {
     color: #ddd
 }
 
-html[data-background-style='nightRider'] .file-manager .jsPanel-content.jsPanel-theme-light {
+html[data-background-style='nightRider'] .file-manager .jsPanel-content {
     outline: 1px solid #2a2c2e
 }
 
@@ -1974,4 +1984,9 @@ html[data-background-style='nightRider'] body[class*='server-manager'] img[src*=
 html[data-background-style='nightRider'] body[class*='server-manager'] img[src*="usage-"] {
     filter: saturate(0.6) brightness(0.6) contrast(0.5) hue-rotate(-29deg);
     -webkit-filter: saturate(0.6) brightness(0.6) contrast(0.5) hue-rotate(-29deg)
+}
+
+html[data-background-style='nightRider'] .file-manager .tabs-top>ul.nav li.sortable-dragging,
+html[data-background-style='nightRider'] .file-manager .tabs-top>ul.nav li.sortable-placeholder {
+    border-color: #666
 }

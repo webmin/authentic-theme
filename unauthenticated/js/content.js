@@ -179,6 +179,17 @@ function f__g() {
     return b
 }
 
+function f__s__init() {
+    var a = "#favorites-menu > div > nav > ul";
+    t__wi_p.sortable(a, "destroy");
+    t__wi_p.sortable(a, {
+        items: ":not(.favorites-title)",
+        forcePlaceholderSize: false
+    })[0].addEventListener("sortupdate", function(b) {
+        f__u()
+    })
+}
+
 function f__u() {
     $.ajax({
         type: "POST",
@@ -190,7 +201,8 @@ function f__u() {
             t__wi_p.fetch_right_pane_favorites()
         },
         error: function(b) {}
-    })
+    });
+    f__s__init()
 }
 
 function f__a(d, f, e) {
@@ -198,7 +210,7 @@ function f__a(d, f, e) {
         t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-no-message").addClass("hidden");
         t__wi_p.$("#favorites-menu .favorites-menu-content .favorites-title sup a").removeClass("hidden")
     }
-    t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").after('						<li class="menu-exclude ui-sortable-handle">                        	<a class="menu-exclude-link" target="page" href="' + d + '"><i data-product="' + e + '" class="wbm-' + e + "" + (e == "virtualmin" ? "" : "") + ' wbm-sm">&nbsp;</i><span class="f__c">                            ' + f + '                        	&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-fw fa-times"></i></small></span></a>                    	</li>					')
+    t__wi_p.$("#favorites-menu .favorites-menu-content li.favorites-title").after('						<li class="menu-exclude" draggable="true">                        	<a class="menu-exclude-link" target="page" href="' + d + '"><i data-product="' + e + '" class="wbm-' + e + "" + (e == "virtualmin" ? "" : "") + ' wbm-sm">&nbsp;</i><span class="f__c">                            ' + f + '                        	&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-fw fa-times"></i></small></span></a>                    	</li>					')
 }
 
 function f__us() {
@@ -209,12 +221,10 @@ function f__us() {
 }
 
 function f__r(b) {
-    t__wi_p.$("#favorites-menu .favorites-menu-content").find('a[href="' + b + '"]').parent("li").effect("drop", {}, 300, function() {
-        $(this).remove();
-        $("#headln2c > .favorites").addClass("fa-star-o").removeClass("fa-star text-warning");
-        f__us();
-        f__u()
-    })
+    t__wi_p.$("#favorites-menu .favorites-menu-content").find('a[href="' + b + '"]').parent("li").remove();
+    $("#headln2c > .favorites").addClass("fa-star-o").removeClass("fa-star text-warning");
+    f__us();
+    f__u()
 }
 
 function f__dt() {
@@ -267,15 +277,7 @@ $("body").on("click", "#headln2c > .favorites", function(m) {
         f__r(k)
     }
 });
-if (typeof jQuery.ui == "object") {
-    t__wi_p.$("#favorites-menu > div > nav > ul").sortable({
-        revert: true,
-        delay: 100,
-        update: function() {
-            f__u()
-        }
-    })
-}
+f__s__init();
 t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
     $(this).find("small").removeClass("hidden")
 }).on("mouseleave", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {

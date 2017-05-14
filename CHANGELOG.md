@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 18.48-patch6 (May 13, 2017)
+#### Version 18.48-patch7 (May 14, 2017)
+* Added ability to edit multiple files at once, in side-by-side panels in File Manager [#629](https://github.com/qooob/authentic-theme/issues/629#issuecomment-296484593)
 * Added image color correction to obsolete table graphs
 * Added ability to manage theme config by users without home directory
 * Added ability for automatic switching to user mode upon entering its home directory in File Manager [#759](https://github.com/qooob/authentic-theme/issues/759)

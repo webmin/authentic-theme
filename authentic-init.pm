@@ -135,10 +135,9 @@ sub embed_header
     if ( $args[3] eq '1' ) {
 
         my @css = ( 'bootstrap',      'bootstrap.tagsinput', 'datepicker', 'fontawesome-animation',
-                    'jquery.jspanel', 'jquery.datatables',   'fontbase',   'authentic' );
+                    'jquery.datatables',   'fontbase',   'authentic' );
 
         my @js = ( 'timeplot',                  'jquery',
-                   'jquery-ui',                 'jquery.jspanel',
                    'jquery.scrollintoview',     'bootbox',
                    'jquery.purl',               'bootstrap',
                    'bootstrap.tagsinput',       'datepicker',
@@ -198,7 +197,7 @@ sub embed_header
                     'nprogress', 'messenger',             'select2',          'fontbase',
                     'authentic' );
 
-        my @js = ( 'jquery',              'jquery-ui',        'bootstrap',  'jquery.scrollbar',
+        my @js = ( 'jquery',              'bootstrap',  'jquery.scrollbar',
                    'jquery.autocomplete', 'momentjs',         'favico',     'select2',
                    'jquery.purl',         'jquery.injectCSS', 'transition', 'nprogress',
                    'messenger',           'init' );
