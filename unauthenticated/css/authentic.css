@@ -4165,7 +4165,7 @@ body.syslog .CodeMirror {
 
 .CodeMirror-wrap,
 .panel-body>form>.CodeMirror {
-    border: 1px solid #efefef
+    border: 0
 }
 
 .CodeMirror-gutters {
@@ -6582,9 +6582,36 @@ td.ui_checked_checkbox {
     margin-right: -50px
 }
 
+nav.favorites-menu ul {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
 nav.favorites-menu li {
     list-style: none;
-    text-align: center
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+.file-manager .tabs-top>ul.nav li.sortable-placeholder,
+nav.favorites-menu li.sortable-placeholder {
+    border: 1px dashed #ccc;
+    height: 54px
+}
+
+.file-manager .tabs-top>ul.nav li.sortable-placeholder {
+    width: 40px;
+    height: 28px
+}
+
+.file-manager .tabs-top>ul.nav li.sortable-dragging,
+nav.favorites-menu li.sortable-dragging {
+    background: 0;
+    border: 1px dashed #ccc
 }
 
 nav.favorites-menu li span.f__c {
@@ -6596,7 +6623,6 @@ nav.favorites-menu li a {
     font-size: 2em;
     display: block;
     margin: 0 auto;
-    padding: 8px 20px 5px 20px;
     color: rgba(255, 255, 255, .8)
 }
 
@@ -8207,6 +8233,10 @@ ul.messenger .messenger-message {
     color: #333
 }
 
+.file-manager #__f__c__m {
+    z-index: 10000
+}
+
 .file-manager #__f__c__m .file-manager-remove-bookmark {
     margin-top: 3px;
     margin-right: 1px
@@ -8279,16 +8309,47 @@ ul.messenger .messenger-message {
     background-color: #337ab7
 }
 
-.file-manager .jsPanel {
-    z-index: 1000
+.file-manager .jsPanel .dropdown {
+    position: absolute;
+    right: 85px;
+    top: 3px
 }
 
-.file-manager .jsPanel {
-    opacity: 0
+@-moz-document url-prefix() {
+    .file-manager .jsPanel .dropdown {
+        top: 2px
+    }
+}
+
+.file-manager .jsPanel .dropdown-menu {
+    top: 24px;
+    min-width: 200px
+}
+
+.file-manager .jsPanel .dropdown-menu li {
+    text-align: right
+}
+
+.file-manager .jsPanel .dropdown-menu li a {
+    padding: 1.4px 8px
+}
+
+.file-manager .jsPanel .dropdown-menu .divider {
+    margin: 1px 0
+}
+
+.file-manager .jsPanel:not(.jspShown) {
+    opacity: 0 !important
+}
+
+.file-manager .jsPanel-hdr {
+    height: 28px
 }
 
 .file-manager .jsPanel-hdr h3 {
-    font-variant: initial
+    font-variant: initial;
+    margin: 1px 5px 10px 8px;
+    text-overflow: inherit
 }
 
 .file-manager .jsPanel-hdr h3 i {
@@ -8298,22 +8359,18 @@ ul.messenger .messenger-message {
 .file-manager .jsPanel-hdr h3 strong {
     font-size: 80% !important;
     display: inline-block;
-    margin-top: 4px;
-    padding: 2px 4px 1px 4px
+    padding: 1px 4px 1px 4px
 }
 
 .file-manager ._filemanager_file_editor_save .cspinner {
-    top: -3px;
+    top: -1px;
     left: 2px;
-    margin-left: 1.5px
+    margin-left: 4px
 }
 
 @-moz-document url-prefix() {
     .file-manager .breadcrumb {
         padding: 7px 15px 6px 15px
-    }
-    .file-manager ._filemanager_file_editor_save .cspinner {
-        top: -4px
     }
 }
 
@@ -8321,28 +8378,88 @@ ul.messenger .messenger-message {
     bottom: 4px
 }
 
-.file-manager .jsPanel-state-minimized {
-    margin-right: 5px;
-    margin-left: 5px
+.jsPanel-controlbar .jsPanel-btn {
+    margin-top: -8px
 }
 
-.file-manager .jsPanel .jsPanel-hdr .jsPanel-hdr-r .jsPanel-btn-small,
-.file-manager .jsPanel .jsPanel-hdr .jsPanel-hdr-r .jsPanel-btn-norm,
-.file-manager .jsPanel-state-minimized .jsPanel-hdr .fa-pencil-square-o {
+.jsPanel-controlbar .jsPanel-btn .jsglyph-close {
+    margin-right: 5px
+}
+
+.jsPanel-controlbar .jsPanel-btn-minimize {
+    margin-top: -1px
+}
+
+.jsPanel-controlbar .jsPanel-btn-save {
+    margin-top: -8px;
+    margin-right: 37px
+}
+
+.jsPanel-controlbar .jsPanel-btn-help {
+    margin-right: 4px
+}
+
+.jsPanel-controlbar .jsPanel-btn-save i:hover {
+    color: #8a8a8a
+}
+
+.file-manager .jsPanel .jsPanel-hdr .fa-edit {
+    margin-right: 2px;
+    vertical-align: -9%
+}
+
+#jsPanel-replacement-container,
+.jsPanel-minimized-box {
+    z-index: 1000
+}
+
+.file-manager .jsPanel-replacement {
+    margin-right: -1px !important;
+    margin-left: 5px !important;
+    margin-bottom: 3px !important;
+    height: 28px !important;
+    box-shadow: 0 0 2px rgba(0, 33, 50, .1), 0 2px 25px rgba(17, 38, 60, .3)
+}
+
+.file-manager .jsPanel-replacement .jsPanel-controlbar {
+    -webkit-transform: scale(.82);
+    -moz-transform: scale(.82);
+    -ms-transform: scale(.82);
+    -o-transform: scale(.82);
+    transform: scale(.82);
+    margin-top: -6px;
+    margin-right: -6px
+}
+
+.file-manager .jsPanel-replacement .jsPanel-titlebar h3 {
+    font-size: 12px;
+    margin: 4px 2px 10px 2px
+}
+
+.file-manager .jsPanel-replacement .jsPanel-hdr .fa-edit {
     display: none !important
 }
 
-.file-manager .jsPanel-btn-help>.fa-question-circle,
 .file-manager .jsPanel-btn-save>.fa-floppy-o {
     display: block !important
 }
 
-.file-manager .jsPanel-state-minimized .jsPanel-btn-help {
-    display: none !important;
-    cursor: default !important
+.jsPanel .jsPanel-content {
+    border-top-color: #f5f5f5 !important
 }
 
-.file-manager .jsPanel-state-minimized div[data-encoding-label] {
+.file-manager .jsPanel div[data-encoding-label] {
+    margin-right: 13px;
+    margin-top: -12px
+}
+
+@-moz-document url-prefix() {
+    .file-manager .jsPanel div[data-encoding-label] {
+        margin-top: -10px
+    }
+}
+
+.file-manager .jsPanel-replacement div[data-encoding-label] {
     display: none;
     overflow: hidden;
     max-width: 1px;
@@ -8374,11 +8491,8 @@ ul.messenger .messenger-message {
     color: #222
 }
 
-.file-manager .jsPanel-content.jsPanel-theme-light {
-    font-family: 'Roboto';
-    color: #222;
-    outline: 1px solid #d1d1d1;
-    background: none repeat scroll 0 0 #fff
+.file-manager .jsPanel-content {
+    background: #272822
 }
 
 .file-manager .jsPanel-theme-light .ui-icon-gripsmall-diagonal-se {
@@ -9873,10 +9987,6 @@ a.cke_button,
     font-family: 'Authentic'
 }
 
-.jsglyph-minimize {
-    margin-top: 3px
-}
-
 .jsglyph-minimize:before {
     content: '\f0b6'
 }
@@ -9885,7 +9995,11 @@ a.cke_button,
     content: '\f0b8'
 }
 
-.jsglyph-remove:before {
+.jsglyph-normalize:before {
+    content: '\f0d9'
+}
+
+.jsglyph-close:before {
     content: '\f044'
 }
 
@@ -10394,6 +10508,10 @@ screen and (max-height:600px) {
 
 .hr-darker {
     border-color: rgba(200, 200, 200, 0.5)
+}
+
+[draggable=true] {
+    -khtml-user-drag: element
 }
 
 .modal-list-users hr {
