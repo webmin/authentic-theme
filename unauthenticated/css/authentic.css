@@ -8721,6 +8721,10 @@ body[class*='file-manager'] #list_form tbody tr:hover,
     white-space: nowrap
 }
 
+.file-manager .container-fluid {
+    margin-bottom: 80px
+}
+
 .dropdown-submenu {
     position: relative
 }

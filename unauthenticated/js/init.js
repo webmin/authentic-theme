@@ -777,7 +777,7 @@ if (t__wi_p.$___________initial === 1) {
                     localStorage.setItem(($hostname + "-" + a), t__wi_p[a]);
                     window[a] = t__wi_p[a]
                 })
-            }, 250);
+            }, 500);
             __mss();
             t__wi_p.fetch_right_pane_favorites()
         }
