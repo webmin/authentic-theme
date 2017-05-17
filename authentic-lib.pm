@@ -712,8 +712,7 @@ sub print_left_menu
                     elsif ( index( $link, '/virtual-server/edit_newresels.cgi' ) > -1 ) {
                         $icon = '<i class="fa fa-fw fa-cog"></i>';
                     }
-                    elsif ( index( $link, '/virtual-server/bwgraph.cgi' ) > -1 && $id ne 'cat_logs' )
-                    {
+                    elsif ( index( $link, '/virtual-server/bwgraph.cgi' ) > -1 && $id ne 'cat_logs' ) {
                         $icon = '<i class="fa fa-fw fa-line-chart"></i>';
                     }
                 }
@@ -2151,6 +2150,25 @@ sub settings_get_select_navigation_color
 
 }
 
+sub settings_get_select_editor_color
+{
+    my ( $v, $k ) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+
+            <option value="monokai"'
+      . ( $v eq 'monokai' && ' selected' ) . '>'
+      . $Atext{'theme_xhred_global_dark'} . ' ('
+      . $Atext{'theme_xhred_global_default'}
+      . ')</option>
+
+            <option value="elegant"'
+      . ( $v eq 'elegant' && ' selected' ) . '>' . $Atext{'theme_xhred_global_light'} . '</option>
+
+
+        </select>';
+
+}
+
 sub _settings
 {
     my ( $t, $k, $v ) = @_;
@@ -2200,6 +2218,8 @@ sub _settings
             '1',
             'settings_hue_level_content',
             '0',
+            'settings_cm_editor_palette',
+            'monokai',
             'settings_hide_top_loader',
             'false',
             'settings_animation_left',
@@ -2292,8 +2312,6 @@ sub _settings
 
             '__',
             _settings( 'fa', 'table', &Atext('settings_right_table_options_title') ),
-            'settings_right_iconize_header_links',
-            'true',
             'settings_right_hide_table_icons',
             'false',
             'settings_right_small_table_icons',
@@ -2795,6 +2813,9 @@ sub _settings
         }
         elsif ( $k eq 'settings_background_color' ) {
             $v = settings_get_select_background_color( $v, $k );
+        }
+        elsif ( $k eq 'settings_cm_editor_palette' ) {
+            $v = settings_get_select_editor_color( $v, $k );
         }
         elsif ( $k eq 'settings_side_slider_palette' ) {
             $v = '<select class="ui_select" name="' . $k . '">

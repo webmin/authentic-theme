@@ -1579,7 +1579,7 @@ function ___f__tw() {
                 data: false,
                 dataType: "JSON",
                 success: function(f) {
-                    $g__v__home_base = encodeURIComponentSafe(f.home_base)
+                    $g__v__home_base = jQuery.isEmptyObject(f) ? $g__user__home : encodeURIComponentSafe(f.home_base)
                 },
                 error: function(f) {}
             });
@@ -3200,7 +3200,9 @@ function ___f__tw() {
                 });
                 $(k + " " + m).modal("show")
             },
-            error: function(k) {}
+            error: function(k) {
+                console.log(k)
+            }
         })
     });
     $("body").on("click", "#file-manager-new-instance:not(.disabled_no_styling)", function(f) {

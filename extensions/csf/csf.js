@@ -175,7 +175,7 @@ function csf_init() {
                         value: R,
                         lineNumbers: Q,
                         mode: null,
-                        theme: (with_frame ? f.settings_cm_view_palette : "monokai"),
+                        theme: ((with_frame && !f.__isNM) ? f.settings_cm_editor_palette : "monokai"),
                         readOnly: true,
                         viewportMargin: Infinity
                     });
@@ -485,7 +485,7 @@ function csf_init() {
                 },
                 styleActiveLine: true,
                 lineWrapping: true,
-                theme: (with_frame ? f.settings_cm_editor_palette : "monokai")
+                theme: ((with_frame && !f.__isNM) ? f.settings_cm_editor_palette : "monokai")
             });
             $window_height = ($(window).outerHeight() - ($(window).outerHeight() / 2));
             g.setSize($parent_width, $window_height);

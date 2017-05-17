@@ -78,7 +78,6 @@ typeof settings_hotkey_custom_6 == "undefined" ? settings_hotkey_custom_6 = fals
 typeof settings_hotkey_custom_7 == "undefined" ? settings_hotkey_custom_7 = false : false;
 typeof settings_hotkey_custom_8 == "undefined" ? settings_hotkey_custom_8 = false : false;
 typeof settings_hotkey_custom_9 == "undefined" ? settings_hotkey_custom_9 = false : false;
-typeof settings_right_iconize_header_links == "undefined" ? settings_right_iconize_header_links = true : false;
 typeof settings_side_slider_background_refresh_time == "undefined" ? settings_side_slider_background_refresh_time = 5 : false;
 typeof settings_leftmenu_width == "undefined" ? settings_leftmenu_width = 260 : false;
 typeof settings_sysinfo_easypie_charts == "undefined" ? settings_sysinfo_easypie_charts = true : false;
@@ -517,6 +516,7 @@ function manageConfig(d) {
         t__wi_p.settings_font_family != "undefind" && (a.settings_font_family = t__wi_p.settings_font_family);
         t__wi_p.settings_navigation_color != "undefind" && (a.settings_navigation_color = t__wi_p.settings_navigation_color);
         t__wi_p.settings_background_color != "undefind" && (a.settings_background_color = t__wi_p.settings_background_color);
+        t__wi_p.settings_cm_editor_palette != "undefind" && (a.settings_cm_editor_palette = t__wi_p.settings_cm_editor_palette);
         t__wi_p.settings_button_tooltip != "undefind" && (a.settings_button_tooltip = t__wi_p.settings_button_tooltip);
         t__wi_p.settings_hide_top_loader != "undefind" && (a.settings_hide_top_loader = t__wi_p.settings_hide_top_loader);
         t__wi_p.settings_animation_left != "undefind" && (a.settings_animation_left = t__wi_p.settings_animation_left);

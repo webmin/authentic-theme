@@ -4163,6 +4163,11 @@ body.syslog .CodeMirror {
     font-size: 12px
 }
 
+.CodeMirror.cm-s-elegant,
+.panel-body>form>.CodeMirror.cm-s-elegant {
+    border: 1px solid #efefef
+}
+
 .CodeMirror-wrap,
 .panel-body>form>.CodeMirror {
     border: 0

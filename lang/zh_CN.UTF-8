@@ -157,9 +157,6 @@ settings_right_small_table_icons_description=與小的和顯示圖標鏈接使�
 settings_right_animate_table_icons=表中圖標聚焦動畫
 settings_right_grayscaled_table_icons=只在獲得焦點時啟用灰度表的圖標和顏色
 
-settings_right_iconize_header_links=更換表頭與圖標鏈接
-settings_right_iconize_header_links_description=選擇是使用圖標代替老式表頭的鏈接還是保留舊樣式的文本鏈接
-
 settings_window_autoscroll=自動窗口滾動
 settings_window_autoscroll_description=伺服器端填充頁面完成時，執行窗口自動滾動。微調按鈕將在該功能被觸發時自動隱藏。由用戶來完成預期的鼠標滾動時，將自動停止滾動；此時在頁面的最下方重新啟動它，使快按兩次鼠標滾動。
 
@@ -715,3 +712,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light

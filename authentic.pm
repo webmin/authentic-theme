@@ -80,8 +80,7 @@ sub theme_header
             print &get_html_status_line(1);
             print "</td></tr> <tr>\n";
         }
-        print '<td id="headln2l" width="25%" align="left"'
-          . ( $__settings{'settings_right_iconize_header_links'} ne 'false' && ' class="invisible"' ) . '>';
+        print '<td id="headln2l" width="25%" align="left" class="invisible">';
         if ( get_env('http_webmin_servers') && !$tconfig{'framed'} ) {
             print "<a href='get_env('http_webmin_servers')'>", "$text{'header_servers'}</a><br>\n";
         }

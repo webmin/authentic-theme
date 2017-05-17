@@ -156,9 +156,6 @@ settings_right_small_table_icons_description=Mostra icones petites en les taules
 settings_right_animate_table_icons=Habilita l'animació de les icones
 settings_right_grayscaled_table_icons=Mostra les icones sense color
 
-settings_right_iconize_header_links=Mostrar icones en els encapçalaments
-settings_right_iconize_header_links_description=Aquesta opció et permet visualitzar els enllaços dels encapçalaments de les taules com a icones.
-
 settings_window_autoscroll=Habilita el desplaçament automàtic
 settings_window_autoscroll_description=Habilitant aquesta opció la pàgina es desplaça automàticament cap avall amagant la barra de desplaçament.
 
@@ -717,3 +714,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light

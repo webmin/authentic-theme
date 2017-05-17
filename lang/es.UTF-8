@@ -156,9 +156,6 @@ settings_right_small_table_icons_description=Substitute standard size table icon
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
 
-settings_right_iconize_header_links=Replace table header's links with icons
-settings_right_iconize_header_links_description=Choose whether to replace old style table header's links with icons or keep old style text links
-
 settings_window_autoscroll=Automatic window scroll
 settings_window_autoscroll_description=Perform window automatic scroll down, upon page is populated from server-side. Spinner will be automatically hidden upon this feature is triggered. Intended mouse-scroll done by user, will make autoscroll stop; to restart it, make double mouse-scroll, being at the very bottom of the page.
 
@@ -717,3 +714,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light

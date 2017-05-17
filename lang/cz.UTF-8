@@ -155,9 +155,6 @@ settings_right_small_table_icons_description=Nahradit standardní velikost ikon 
 settings_right_animate_table_icons=Animovat ikony tabulek při výberu
 settings_right_grayscaled_table_icons=Nechat ikony černobílé a zbarvit je pouze při najetí myši
 
-settings_right_iconize_header_links=Nahradit odkazy v hlavičkách tabulek ikonami
-settings_right_iconize_header_links_description=Zvolte, jestli chcete nahradit starý styl odkazů v hlavičkách tabulek ikonamy nebo ponechat textové odkazy
-
 settings_window_autoscroll=Automatické skrolování okna
 settings_window_autoscroll_description=Provádět automatické skrolování okna při načtení dalších dat ze serveru. Posuvník bude automaticky skryt. Záměrné skrolování uživatelem vypne automatické skrolování. Pro jeho znovuzapnutí je třeba posunout se na úplný konec stránky.
 
@@ -717,3 +714,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light

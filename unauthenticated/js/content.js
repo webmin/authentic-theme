@@ -1829,61 +1829,60 @@ if ($("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1)
     !$("body").hasClass("file-manager") && $("body").addClass("file-manager");
     $("#headln2l").prepend("<a onClick='window.open(\"" + $_____link_full + '/help.cgi/authentic-theme/file-manager", "help", "toolbar=no,menubar=no,scrollbars=yes,width=600,height=400,resizable=yes"); return false\' href="' + $_____link_full + '/help.cgi/authentic-theme/file-manager"></a>')
 }
-if (settings_right_iconize_header_links) {
-    $.each($(".panel-heading > table.header > tbody > tr > td > a"), function() {
-        if ($(this).attr("href") && $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == $__current_directory || ($(this).attr("href").indexOf("index.cgi") > -1 && $current_directory == $_____link + "openvpn/") || ($(this).attr("href").indexOf("index.cgi?") > -1 && $current_directory == $_____link + "spam/") || $(this).attr("href").indexOf("restart_zone.cgi") > -1 || $(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1 || $(this).attr("href").indexOf("start.cgi") > -1 || $(this).attr("href").indexOf("stop.cgi") > -1 || ($(this).attr("href") == "//" && ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi")) || $(this).attr("href").indexOf("delete_") > -1 || $(this).attr("href").indexOf("list_mail.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1 || $(this).attr("href").indexOf("help.cgi") > -1) {
-            $.each($(this).next("br"), function() {
-                $(this).remove()
-            });
-            $.each($(this).prev("br"), function() {
-                $(this).remove()
-            });
-            if ($(this).attr("href").indexOf("help.cgi") > -1) {
-                var d = $(this),
-                    c = $(this).parent("td");
-                $(this).remove();
-                c.append(d)
-            }
-            if ($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == $__current_directory || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
+var $table_header_links = $(".panel-heading > table.header > tbody > tr > td > a");
+$.each($table_header_links, function() {
+    if ($(this).attr("href") && $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == $__current_directory || ($(this).attr("href").indexOf("index.cgi") > -1 && $current_directory == $_____link + "openvpn/") || ($(this).attr("href").indexOf("index.cgi?") > -1 && $current_directory == $_____link + "spam/") || $(this).attr("href").indexOf("restart_zone.cgi") > -1 || $(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1 || $(this).attr("href").indexOf("start.cgi") > -1 || $(this).attr("href").indexOf("stop.cgi") > -1 || ($(this).attr("href") == "//" && ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi")) || $(this).attr("href").indexOf("delete_") > -1 || $(this).attr("href").indexOf("list_mail.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1 || $(this).attr("href").indexOf("help.cgi") > -1) {
+        $.each($(this).next("br"), function() {
+            $(this).remove()
+        });
+        $.each($(this).prev("br"), function() {
+            $(this).remove()
+        });
+        if ($(this).attr("href").indexOf("help.cgi") > -1) {
+            var d = $(this),
+                c = $(this).parent("td");
+            $(this).remove();
+            c.append(d)
+        }
+        if ($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == $__current_directory || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
+            $iconized_class = "fa-arrow-left";
+            $(this).data("title", "").data("back", 1)
+        } else {
+            if ($(this).attr("href") == "//" && ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi")) {
                 $iconized_class = "fa-arrow-left";
-                $(this).data("title", "").data("back", 1)
+                $(this).attr("href", ($_____link_full + "/webmin/edit_themes.cgi")).data("title", "").data("back", 1)
             } else {
-                if ($(this).attr("href") == "//" && ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi")) {
-                    $iconized_class = "fa-arrow-left";
-                    $(this).attr("href", ($_____link_full + "/webmin/edit_themes.cgi")).data("title", "").data("back", 1)
+                if ($(this).attr("href").indexOf("config.cgi") > -1) {
+                    $iconized_class = "fa-cog";
+                    $(this).data("title", "")
                 } else {
-                    if ($(this).attr("href").indexOf("config.cgi") > -1) {
-                        $iconized_class = "fa-cog";
-                        $(this).data("title", "")
+                    if ($(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1) {
+                        $iconized_class = "fa-refresh"
                     } else {
-                        if ($(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1) {
-                            $iconized_class = "fa-refresh"
+                        if ($(this).attr("href").indexOf("restart_zone.cgi") > -1) {
+                            $iconized_class = "fa-retweet"
                         } else {
-                            if ($(this).attr("href").indexOf("restart_zone.cgi") > -1) {
-                                $iconized_class = "fa-retweet"
+                            if ($(this).attr("href").indexOf("start.cgi") > -1) {
+                                $iconized_class = "fa-play"
                             } else {
-                                if ($(this).attr("href").indexOf("start.cgi") > -1) {
-                                    $iconized_class = "fa-play"
+                                if ($(this).attr("href").indexOf("stop.cgi") > -1) {
+                                    $iconized_class = "fa-square"
                                 } else {
-                                    if ($(this).attr("href").indexOf("stop.cgi") > -1) {
-                                        $iconized_class = "fa-square"
+                                    if ($(this).attr("href").indexOf("man/search.cgi") > -1) {
+                                        $iconized_class = "fa-search"
                                     } else {
-                                        if ($(this).attr("href").indexOf("man/search.cgi") > -1) {
-                                            $iconized_class = "fa-search"
+                                        if ($(this).attr("href").indexOf("delete_") > -1) {
+                                            $iconized_class = "fa-trash-o"
                                         } else {
-                                            if ($(this).attr("href").indexOf("delete_") > -1) {
-                                                $iconized_class = "fa-trash-o"
+                                            if ($(this).attr("href").indexOf("list_mail.cgi") > -1) {
+                                                $iconized_class = "fa-inbox"
                                             } else {
-                                                if ($(this).attr("href").indexOf("list_mail.cgi") > -1) {
-                                                    $iconized_class = "fa-inbox"
+                                                if ($(this).attr("href").indexOf("index.cgi") > -1 && $current_directory == $_____link + "openvpn/") {
+                                                    $iconized_class = "fa-cogs"
                                                 } else {
-                                                    if ($(this).attr("href").indexOf("index.cgi") > -1 && $current_directory == $_____link + "openvpn/") {
-                                                        $iconized_class = "fa-cogs"
-                                                    } else {
-                                                        if ($(this).attr("href").indexOf("index.cgi?") > -1 && $current_directory == $_____link + "spam/") {
-                                                            $iconized_class = "fa-arrow-left";
-                                                            $(this).data("back", 1)
-                                                        }
+                                                    if ($(this).attr("href").indexOf("index.cgi?") > -1 && $current_directory == $_____link + "spam/") {
+                                                        $iconized_class = "fa-arrow-left";
+                                                        $(this).data("back", 1)
                                                     }
                                                 }
                                             }
@@ -1895,40 +1894,40 @@ if (settings_right_iconize_header_links) {
                     }
                 }
             }
-            var e = $(this).attr("href").indexOf("help.cgi") > -1;
-            if (e) {
-                $iconized_class = "fa-question-circle";
-                $(this).data("title", "")
+        }
+        var e = $(this).attr("href").indexOf("help.cgi") > -1;
+        if (e) {
+            $iconized_class = "fa-question-circle";
+            $(this).data("title", "")
+        }
+        $(this).data("toggle", "tooltip").data("title", upperFirstLowerAll(e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? (!is__m($g__o__f_m) ? lang("theme_xhred_global_prev_page") : "") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
+        $(this).contents().filter(function() {
+            return this.nodeType == 3
+        }).remove();
+        $(this).tooltip({
+            container: "body",
+            placement: "auto top"
+        });
+        if ((($current_directory == $_____link + "apache/" || $current_directory == $_____link + "proftpd/") && ($(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1)) || $(this).parent("td").find("a") && $(this).parent("td").find("a").length == 1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
+            if (($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1) && $("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
+                $(this).attr("style", "margin-right: 0 !important; padding: 6px 12px")
+            } else {
+                $(this).attr("style", "margin-right: 0 !important")
             }
-            $(this).data("toggle", "tooltip").data("title", upperFirstLowerAll(e ? lang("theme_xhred_global_help") : ($(this).data("back") === 1 ? (!is__m($g__o__f_m) ? lang("theme_xhred_global_prev_page") : "") : $(this).text()))).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>');
-            $(this).contents().filter(function() {
-                return this.nodeType == 3
-            }).remove();
-            $(this).tooltip({
-                container: "body",
-                placement: "auto top"
-            });
-            if ((($current_directory == $_____link + "apache/" || $current_directory == $_____link + "proftpd/") && ($(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1)) || $(this).parent("td").find("a") && $(this).parent("td").find("a").length == 1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
-                if (($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1) && $("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
-                    $(this).attr("style", "margin-right: 0 !important; padding: 6px 12px")
-                } else {
-                    $(this).attr("style", "margin-right: 0 !important")
-                }
-            }
         }
-        $("#headln2l").removeClass("invisible")
-    });
-    $("body").on("click", "#headln2l a", function(a) {
-        if (unbuffered_header()) {
-            return
-        }
-        if ($(this).find(".fa-arrow-left").length) {
-            a.preventDefault();
-            a.stopPropagation();
-            window.history.back()
-        }
-    })
-}
+    }
+    $("#headln2l").removeClass("invisible")
+});
+$("body").on("click", "#headln2l a", function(a) {
+    if (unbuffered_header()) {
+        return
+    }
+    if ($(this).find(".fa-arrow-left").length) {
+        a.preventDefault();
+        a.stopPropagation();
+        window.history.back()
+    }
+});
 if ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi") {
     if (t__wi_p.$('link[href*="/unauthenticated/css/styles.css"]').length) {
         t__wi_p.$('link[href*="/unauthenticated/css/styles.css"]').attr("href", t__wi_p.$('link[href*="/unauthenticated/css/styles.css"]').attr("href").split("?")[0] + "?" + (new Date()).getTime())

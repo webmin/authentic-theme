@@ -147,9 +147,6 @@ settings_right_small_table_icons_description=Mache Tabellen Symbole kleiner und 
 settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
 settings_right_grayscaled_table_icons=Farbige Tabellen Symbole nur bei Eingabe anzeigen
 
-settings_right_iconize_header_links=Ersetzte Links im Tabellenkopf durch Symbole
-settings_right_iconize_header_links_description=Wähle ob im Tabellenkopf Symbole oder Links angezeigt werden sollen.
-
 settings_window_autoscroll=Bewege Fenster automatisch
 settings_window_autoscroll_description=Das Fenster wird automatisch nach unten bewegt wenn neue Inhalte vom Server empfangen werden. Beim automatischen Bewegen wird der Aktivitätsanzeige angezeigt. Das automatische Bewegen wird deaktiviert solbald der Benutzer den Scollbalken selbst bewegt.
 
@@ -708,3 +705,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light

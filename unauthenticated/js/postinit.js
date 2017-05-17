@@ -2159,7 +2159,7 @@ function t__cm___init(g, i, f, j, d, m, k) {
                         "Ctrl-Space": "autocomplete"
                     },
                     styleActiveLine: true,
-                    theme: settings_cm_editor_palette
+                    theme: (__isNM ? "monokai" : t__wi_p.settings_cm_editor_palette)
                 });
                 window["__cm_editor_" + r].setOption("mode", x);
                 if (a != "rpm") {
@@ -2269,7 +2269,7 @@ function f__cm_viewer() {
                     value: e,
                     lineNumbers: true,
                     mode: null,
-                    theme: settings_cm_view_palette,
+                    theme: (__isNM ? "monokai" : t__wi_p.settings_cm_editor_palette),
                     readOnly: true
                 })
             }).promise().done(function() {})

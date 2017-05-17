@@ -156,9 +156,6 @@ settings_right_small_table_icons_description=Substituează pictogramele tabelelo
 settings_right_animate_table_icons=Animează pictogramele tabelelor la focus pe el
 settings_right_grayscaled_table_icons=Tranformă în scala gri pictogramele tabelelor și colorează-le doar la focus pe el
 
-settings_right_iconize_header_links=Înlocuiește linkurile antetelor tabelelor cu pictograme
-settings_right_iconize_header_links_description=Alege fie să înlocuiești vechile linkuri ale antetelor tabelelor cu pictograme sau păstrează stilul vechi al linkurilor gen text
-
 settings_window_autoscroll=Defilare automată a ferestrei
 settings_window_autoscroll_description=Execută defilare în jos automat pentru fereastră, atunci când pagina este populată de către server. Spinner se va ascunde automat la declanșarea acestei caracteristici. Defilarea cu mausul inițiată de către utilizator, va inhiba defilatrea automată; pentru a-l restarta, execută o defilare dublă cu mausul în subsolul paginii.
 
@@ -709,3 +706,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light

@@ -1261,6 +1261,9 @@ function set_rp_tt() {
 }
 
 function fetch_right_pane_favorites() {
+    if (typeof window.page.f__g != "function") {
+        return
+    }
     var a = window.page.f__g(),
         c = $("#right-side-tabs .no-favorites_data");
     $("#right-side-tabs .favorites-dcontainer .right_pane_favorites_link, #right-side-tabs .favorites-dcontainer .right_pane_favorites_num").remove();

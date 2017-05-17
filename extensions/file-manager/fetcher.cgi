@@ -33,4 +33,6 @@ if ( is_root() ) {
             print_json( {'home_base' => $user_home_base} );
         }
     }
+} else {
+  print_json({});
 }

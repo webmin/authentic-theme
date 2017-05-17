@@ -38,6 +38,14 @@ print ui_table_row( $Atext{'settings_navigation_color'},
                                                      ),
                                                      'settings_navigation_color'
                     ) );
+print ui_table_row( $Atext{'settings_cm_editor_palette'},
+                    settings_get_select_editor_color(
+                                                     ( $__settings{'settings_cm_editor_palette'} ne 'undefined'
+                                                       ? $__settings{'settings_cm_editor_palette'}
+                                                       : 'monokai'
+                                                     ),
+                                                     'settings_cm_editor_palette'
+                    ) );
 
 print ui_table_row( undef, '<b>' . $Atext{'settings_right_navigation_menu_title'} . '</b>', 2 );
 

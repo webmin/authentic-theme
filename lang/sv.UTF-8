@@ -155,9 +155,6 @@ settings_right_small_table_icons_description=Ersätt tabellikonerna med små iko
 settings_right_animate_table_icons=Animera tabellikonerna när de hamnar i fokus
 settings_right_grayscaled_table_icons=Låt tabellikonerna vara gråa och ta fram färgen när den hamnar i fokus
 
-settings_right_iconize_header_links=Ersätt tabellrubriklänkarna med ikoner
-settings_right_iconize_header_links_description=Välj om du vill ersätta den gamla tabellrubriklänkarna med ikoner eller behålla de gamla stiltextlänkarna
-
 settings_window_autoscroll=Automatisk fönsterrullning
 settings_window_autoscroll_description=Utför automatisk fönsterrullning neråt, när sidan uppdateras från serversidan. Den roterande pilen kommer att döljas automatiskt när denna funktionen aktiveras. När en musrullning utförs av användaren, inaktiveras den automatiska rullningen; för att starta den igen, gör en dubbelt musrullning, när du är längst ner på sidan.
 
@@ -715,3 +712,5 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
 theme_xhred_filemanager_editor_refresh_content=Refresh Content
 theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light
