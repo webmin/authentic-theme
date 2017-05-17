@@ -1449,7 +1449,7 @@ function __f____r(h, o, k, e, n) {
                 $("#__f__c__m").css("display", "none");
                 setTimeout(function() {
                     __f___us_a();
-                    typeof t__wi_p.sortable == "function" && sortable($(".tabs-top > ul.nav"))
+                    typeof sortable == "function" && sortable($(".tabs-top > ul.nav"))
                 }, 10)
             },
             error: function(b) {}
@@ -1569,7 +1569,7 @@ function ___f__tw() {
         } else {
             $(".panel-body").append('			<div>                <div class="tabs-top">                    <ul class="nav nav-tabs">                        <li class="active ui-sortable-handle"><a href="#tab-1" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="auto top" data-title="/">/</span></a></li>                    </ul>                    <div class="tab-content">                        <div class="tab-pane fade in active" id="tab-1">                        </div>                    </div>                </div>            </div>        ');
             $("#list_form").detach().appendTo("#tab-1");
-            typeof t__wi_p.sortable == "function" && sortable($(".tabs-top > ul.nav"), {});
+            typeof sortable == "function" && sortable($(".tabs-top > ul.nav"), {});
             if (config_portable_module_filemanager_remember_tabs && __f___ld__tb_stored_chk()) {
                 __f___ld__tb_stored()
             }
@@ -3230,7 +3230,7 @@ function ___f__tw() {
             __f___up__tb_vis();
             __f___up__tb_store();
             setTimeout(function() {
-                typeof t__wi_p.sortable == "function" && sortable($(".tabs-top > ul.nav"))
+                typeof sortable == "function" && sortable($(".tabs-top > ul.nav"))
             }, 100)
         } else {
             tab___to______delete = f;

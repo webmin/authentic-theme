@@ -337,7 +337,7 @@ function __si__bg_upd_exec() {
                         }
                         if (o == "warning_si") {
                             var x = $("#right-side-tabs .info-container .warning-list-data");
-                            x.html(s.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace("type='submit'", "formtarget='page' type='submit'").replace("class='ui_submit", "class='ui_submit btn btn-default btn-xs").replace('ui_form_end_submit" type="button"', 'ui_form_end_submit" type="submit" formtarget="page"').replace("ui_form_end_submit", "ui_form_end_submit btn-tiny"));
+                            x.html(s.replace(/<(script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace(/type='submit'/g, "formtarget='page' type='submit'").replace(/class='ui_submit/g, "class='ui_submit btn btn-default btn-xs").replace(/ui_form_end_submit" type="button"/g, 'ui_form_end_submit" type="submit" formtarget="page"').replace(/ui_form_end_submit/g, "ui_form_end_submit btn-tiny"));
                             ((s == "<br>") && x.empty())
                         }
                         if (o == "extended_si") {

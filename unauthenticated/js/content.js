@@ -184,11 +184,11 @@ function f__s__init() {
     if (typeof t__wi_p.sortable != "function" || !t__wi_p.$("#favorites-menu > div > nav > ul").length) {
         return
     }
-    t__wi_p.sortable(a, "destroy");
     t__wi_p.sortable(a, {
         items: ":not(.favorites-title)",
         forcePlaceholderSize: false
-    })[0].addEventListener("sortupdate", function(b) {
+    }).bind("sortupdate", function() {
+        console.log("sortend");
         f__u()
     })
 }
@@ -205,7 +205,7 @@ function f__u() {
         },
         error: function(b) {}
     });
-    f__s__init()
+    t__wi_p.sortable("#favorites-menu > div > nav > ul")
 }
 
 function f__a(d, f, e) {
@@ -280,7 +280,7 @@ $("body").on("click", "#headln2c > .favorites", function(m) {
         f__r(k)
     }
 });
-f__s__init();
+t__wi_p.$___________initial === 1 && f__s__init();
 t__wi_p.$("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
     $(this).find("small").removeClass("hidden")
 }).on("mouseleave", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
