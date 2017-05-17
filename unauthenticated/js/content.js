@@ -1850,7 +1850,7 @@ if (settings_right_iconize_header_links) {
             } else {
                 if ($(this).attr("href") == "//" && ($source_path == $_____link + "settings-editor_read.cgi" || $source_path == $_____link + "settings-upload.cgi")) {
                     $iconized_class = "fa-arrow-left";
-                    $(this).attr("href", "/webmin/edit_themes.cgi").data("title", "").data("back", 1)
+                    $(this).attr("href", ($_____link_full + "/webmin/edit_themes.cgi")).data("title", "").data("back", 1)
                 } else {
                     if ($(this).attr("href").indexOf("config.cgi") > -1) {
                         $iconized_class = "fa-cog";

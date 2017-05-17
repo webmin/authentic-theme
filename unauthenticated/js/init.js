@@ -771,11 +771,13 @@ function s(d) {
 }
 if (t__wi_p.$___________initial === 1) {
     t__wi_p.$('iframe[name="page"]').on("load", function() {
-        if (t__wi_p.$___________initial === 1 && typeof $__post_init_script != "undefined") {
-            $.each(manageConfig("get_options"), function(b, a) {
-                localStorage.setItem(($hostname + "-" + a), t__wi_p[a]);
-                window[a] = t__wi_p[a]
-            });
+        if (typeof $__post_init_script != "undefined") {
+            setTimeout(function() {
+                $.each(manageConfig("get_options"), function(b, a) {
+                    localStorage.setItem(($hostname + "-" + a), t__wi_p[a]);
+                    window[a] = t__wi_p[a]
+                })
+            }, 250);
             __mss();
             t__wi_p.fetch_right_pane_favorites()
         }

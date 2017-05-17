@@ -40,7 +40,7 @@ print '
   . ( !-r $root_directory . "/authentic-theme/images/logo.png" && ' disabled' )
   . '" style="display: inline; width: 40px; height: 28px; margin-right: 0px !important; margin-top: 2px !important; margin-left: 3px;" type="button"'
   . ( -r $root_directory . "/authentic-theme/images/logo.png"
-      && ' data-image="/images/logo.png?' . time() . '"' )
+      && ' data-image="' . $gconfig{'webprefix'} . '/images/logo.png?' . time() . '"' )
   . '>
                                         <i class="fa fa-fw fa-eye text-muted" style="font-size: 11px; pointer-events: none; margin-top: -1px;"></i>
                                     </button>
@@ -64,7 +64,7 @@ print '
   . ( !-r $root_directory . "/authentic-theme/images/logo_welcome.png" && ' disabled' )
   . '" style="display: inline; width: 40px; height: 28px; margin-right: 0px !important; margin-top: 2px !important; margin-left: 3px;" type="button"'
   . ( -r $root_directory . "/authentic-theme/images/logo_welcome.png"
-      && ' data-image="/images/logo_welcome.png?' . time() . '"' )
+      && ' data-image="' . $gconfig{'webprefix'} . '/images/logo_welcome.png?' . time() . '"' )
   . '>
                                         <i class="fa fa-fw fa-eye text-muted" style="font-size: 11px; pointer-events: none; margin-top: -1px;"></i>
                                     </button>
