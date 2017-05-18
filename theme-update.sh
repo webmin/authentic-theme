@@ -85,6 +85,7 @@ else
           fi
         fi
       else
+
         # Post fail commands
         rm -rf "$DIR/.~authentic-theme"
         echo -e "\e[49;0;31;82m${ERROR}Updating Authentic Theme, failed.\e[0m"

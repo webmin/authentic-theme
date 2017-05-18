@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -188,7 +188,6 @@ function f__s__init() {
         items: ":not(.favorites-title)",
         forcePlaceholderSize: false
     }).bind("sortupdate", function() {
-        console.log("sortend");
         f__u()
     })
 }
@@ -1349,7 +1348,7 @@ var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authen
 if ($__remove_theme_version && $__remove_theme_version.indexOf("git") > -1) {
     $__remove_theme_version = parseFloat($__remove_theme_version).toFixed(2)
 }
-var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + $__remove_theme_version + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
+var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + ($__remove_theme_version.split("-")[0]) + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search == "?updating-webmin-theme") {
     setTimeout(function() {
         $iframe = t__wi_p.$('iframe[name="page"]').contents();

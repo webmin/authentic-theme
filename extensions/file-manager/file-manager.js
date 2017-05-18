@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1531,6 +1531,7 @@ function ___f__tw() {
             }
         }
         d();
+        !$g__v__nav && $(".container-fluid").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15").parents("html").addClass("single_tab");
         if ($__source_file == "config.cgi") {
             $('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"], textarea[name="bookmarks"]').parents("td.col_value").parent("tr").addClass("hidden");
             $("#columns_size").parent(".awobject").remove();
@@ -2747,7 +2748,7 @@ function ___f__tw() {
                                     o = u;
                                 var N = ($("body").data("charset") != "UTF-8"),
                                     M = $(P).find(".ui_form"),
-                                    R = ("<strong>" + (escape_html(decodeURIComponentSafe(G)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
+                                    R = ("<strong>" + (escape_html(decodeURIComponentSafe(G)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? (access_level() == 2 ? ($g__user__home + $("#path").val()) : $("#path").val()) : (access_level() == 2 ? $g__user__home : "/")))) + ")") + "</strong>"),
                                     n = this,
                                     W = $(n),
                                     Q = (parseInt(m.attr("id").replace("jsPanel-", "")) + 1);
@@ -2947,12 +2948,19 @@ function ___f__tw() {
                                 })
                             }
                         },
-                        setstatus: "maximize",
                         maximizedMargin: {
                             top: 10,
                             right: 10,
                             bottom: 10,
                             left: 10
+                        },
+                        panelSize: {
+                            width: ($(window).width() * 0.9),
+                            height: ($(window).height() * 0.7)
+                        },
+                        dblclicks: {
+                            title: "normalize",
+                            content: "maximize"
                         },
                         headerControls: {
                             smallify: "remove"

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1188,7 +1188,11 @@ html[data-post='viewlogs'][data-background-style='nightRider'] table.dataTable {
 html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading,
 html[data-module='csf'][data-background-style='nightRider'] .panel._devcon .panel-heading,
 html[data-module='csf'][data-background-style='nightRider'] .panel._devcon {
-    border-color: #3a3e43
+    border-color: #3a3e43 !important
+}
+
+html[data-module='csf'][data-background-style='nightRider'] .panel-body>form>.panel.panel-default>.panel-body>.panel-heading {
+    border-width: 1px !important
 }
 
 html[data-post='servercheck'][data-background-style='nightRider'] div[style*="clear: both;padding"] {
