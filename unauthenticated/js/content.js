@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -187,8 +187,7 @@ function f__s__init() {
     t__wi_p.sortable(a, {
         items: ":not(.favorites-title)",
         forcePlaceholderSize: false
-    }).bind("sortupdate", function() {
-        console.log("sortend");
+    }).on("sortupdate", function() {
         f__u()
     })
 }
@@ -1349,7 +1348,7 @@ var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authen
 if ($__remove_theme_version && $__remove_theme_version.indexOf("git") > -1) {
     $__remove_theme_version = parseFloat($__remove_theme_version).toFixed(2)
 }
-var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + $__remove_theme_version + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
+var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + ($__remove_theme_version.split("-")[0]) + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search == "?updating-webmin-theme") {
     setTimeout(function() {
         $iframe = t__wi_p.$('iframe[name="page"]').contents();
@@ -1666,6 +1665,7 @@ f__lnk_t_btn(["/virtual-server/", "/virtual-server/index.cgi", "/virtual-server/
 f__lnk_t_btn(["/quota/", "/quota/index.cgi"], ".table tbody td.td_tag", 'a[href*="activate.cgi"][href*="&active=3"]', "btn btn-warning btn-xxs vertical-align-top margined-top-2", "fa-ban");
 f__lnk_t_btn(["/quota/", "/quota/index.cgi"], ".table tbody td.td_tag", 'a[href*="activate.cgi"][href*="&active=0"]', "btn btn-success btn-xxs vertical-align-top margined-top-2", "fa-check-circle-o");
 f__lnk_t_btn(["/virtualmin-google-analytics/", "/virtualmin-google-analytics/index.cgi"], ".table tbody td.td_tag", 'a[href*="edit.cgi"]', "btn btn-warning btn-xxs vertical-align-top margined-top-2", "fa-pencil-square");
+f__lnk_t_btn(["/apache/", "/apache/index.cgi"], ".table tbody tr td:last-child", "a.ui_link", "btn btn-transparent btn-link-bordered btn-xxs vertical-align-top margined-top-2", "fa-external-link");
 if ($('body[class*="status"]').length && $__source_file == "edit_mon.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_sched.cgi" || $current_page_full == $_____link_full + "/ldap-server/edit_schema.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/mailboxes/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/list_folders.cgi" || $current_page_full == $_____link_full + "/phpini/" || $current_page_full == $_____link_full + "/phpini/index.cgi" || $current_page_full == $_____link_full + "/fsdump/" || $current_page_full == $_____link_full + "/fsdump/index.cgi" || $current_page_full == $_____link_full + "/fdisk/" || $current_page_full == $_____link_full + "/fdisk/index.cgi" || $current_page_full == $_____link_full + "/virtualmin-awstats/" || $current_page_full == $_____link_full + "/virtualmin-awstats/index.cgi" || $current_page_full == $_____link_full + "/syslog/" || $current_page_full == $_____link_full + "/syslog/index.cgi") {
     $.each($('tr td:last-child:contains("|")'), function() {
         if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi") {

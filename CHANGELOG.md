@@ -1,11 +1,11 @@
 ## Changelog
 
-#### Version 18.48-patch17 (May 17, 2017)
-* Added ability to edit multiple files at once, in side-by-side panels in File Manager [#629](https://github.com/qooob/authentic-theme/issues/629#issuecomment-301401776)
+#### Version 18.49 (May 19, 2017)
+* Added ability to edit multiple files at once, in side-by-side panels in File Manager [#629](https://github.com/qooob/authentic-theme/issues/629#issuecomment-301333725)
 * Added image color correction to obsolete table graphs
 * Added ability to manage theme config by users without home directory
 * Added ability for automatic switching to user mode upon entering its home directory in File Manager [#759](https://github.com/qooob/authentic-theme/issues/759)
-* Fixed bugs [#764](https://github.com/qooob/authentic-theme/issues/764) [#770](https://github.com/qooob/authentic-theme/issues/770) [#772](https://github.com/qooob/authentic-theme/issues/772) [#777](https://github.com/qooob/authentic-theme/issues/777) [#778](https://github.com/qooob/authentic-theme/issues/778)
+* Fixed bugs [#764](https://github.com/qooob/authentic-theme/issues/764) [#770](https://github.com/qooob/authentic-theme/issues/770) [#772](https://github.com/qooob/authentic-theme/issues/772) [#777](https://github.com/qooob/authentic-theme/issues/777) [#778](https://github.com/qooob/authentic-theme/issues/778) [#782](https://github.com/qooob/authentic-theme/issues/782)
 
 #### Version 18.48 (May 6, 2017)
 * Added enhancements to page transitions, resulting in overall speed increase

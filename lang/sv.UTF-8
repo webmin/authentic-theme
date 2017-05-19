@@ -696,21 +696,21 @@ theme_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
 theme_force_upgrade_stable=Installera senaste versionen (stabil)
 theme_xhred_source_encoding=Källkodning
 theme_update_footer=Hittar du fel i temat får du gärna rapportera dem på $1. Följ temat på $2 för de senaste uppdateringarna.
-theme_xhred_encoding_manually_set=Manually set encoding
-theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+theme_xhred_encoding_manually_set=Ange kodning manuellt
+theme_xhred_filemanager_save_to_change_encoding=Filen måste sparas innan kodningen ändras.
 
 
 #18.49
-theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
-theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
-theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
-theme_xhred_filemanager_user_switch_current_user=Current user
-theme_xhred_filemanager_user_switch_option=Automatically switch to user mode upon entering its home directory
-theme_xhred_filemanager_editor_align_panels_horizontally=Align Panels Horizontally
-theme_xhred_filemanager_editor_align_panels_vertically=Align Panels Vertically
-theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
-theme_xhred_filemanager_editor_refresh_content=Refresh Content
-theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
-theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
-theme_xhred_global_dark=Dark
-theme_xhred_global_light=Light
+theme_xhred_filemanager_user_switch=Byt till användare (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=Genom att byta användarnamn i listan här under, kommer fortsatta operationer utföras som denna användaren.
+theme_xhred_filemanager_user_switch_description_back=För att växla tillbaka till standardläge välj det första alternativet i listan.
+theme_xhred_filemanager_user_switch_current_user=Nuvarande användare
+theme_xhred_filemanager_user_switch_option=Byt automatiskt till användarläge när hemkatalogen öppnas
+theme_xhred_filemanager_editor_align_panels_horizontally=Justera panelerna horisontellt
+theme_xhred_filemanager_editor_align_panels_vertically=Justera panelerna vertikalt
+theme_xhred_filemanager_editor_toggle_soft_wrap=Växla mjuk radbrytning
+theme_xhred_filemanager_editor_refresh_content=Uppdatera innehåll
+theme_xhred_filemanager_save_to_refresh_content=Filen måste sparas innan innehållet uppdateras.
+theme_xhred_filemanager_save_to_refresh_content_proc=Uppdaterar filinnehåll.
+theme_xhred_global_dark=Mörkt
+theme_xhred_global_light=Ljust
