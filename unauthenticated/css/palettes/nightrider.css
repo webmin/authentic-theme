@@ -1,3 +1,9 @@
+/*!
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
+ * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
+ * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+ */
+
 html[data-background-style='nightRider'],
 html[data-background-style='nightRider'] body,
 html[data-background-style='nightRider'] .container:not(.form-signin-banner),
@@ -247,6 +253,12 @@ html[data-background-style='nightRider'] table.ui_grid_table tbody {
 
 html[data-background-style='nightRider'] pre:not(.CodeMirror-line) {
     border: 1px solid #424449
+}
+
+html[data-background-style='nightRider'] .CodeMirror,
+html[data-background-style='nightRider'] .panel-body>form>.CodeMirror {
+    border: 1px solid #393c41;
+    border-top: 0
 }
 
 html[data-background-style='nightRider'] pre:not(.CodeMirror-line),
@@ -508,7 +520,11 @@ html[data-background-style='nightRider'] .file-manager .btn-group.pull-right>but
 
 html[data-background-style='nightRider'] .file-manager .dropdown-menu {
     border: 1px solid rgba(66, 68, 73, .78);
-    background: rgba(47, 50, 56, .82)
+    background: rgba(47, 50, 56, .95)
+}
+
+html[data-background-style='nightRider'] .file-manager .dropdown-menu li.disabled {
+    opacity: .5
 }
 
 html[data-background-style='nightRider'] .dropdown-submenu>a:after {
@@ -583,7 +599,7 @@ html[data-background-style='nightRider'] .file-manager .ui_checked_columns.direc
 }
 
 html[data-background-style='nightRider'] .file-manager .jsPanel .dropdown {
-    top: 4px
+    top: 3px
 }
 
 html[data-background-style='nightRider'] .file-manager .jsPanel .dropdown-menu li html[data-background-style='nightRider'] .file-manager .jsPanel .dropdown-menu li a {
@@ -592,12 +608,21 @@ html[data-background-style='nightRider'] .file-manager .jsPanel .dropdown-menu l
 
 @-moz-document url-prefix() {
     html[data-background-style='nightRider'] .file-manager .jsPanel .dropdown {
-        top: 3px
+        top: 2px
     }
 }
 
+html[data-background-style='nightRider'] .jsPanel .jsPanel-headerbar {
+    margin-top: -2px
+}
+
+html[data-background-style='nightRider'] .jsPanel .jsPanel-headerbar [data-encoding-label] {
+    margin-top: -10px
+}
+
 html[data-background-style='nightRider'] .jsPanel .jsPanel-content {
-    border-top-color: #292c32 !important
+    border-top-color: transparent !important;
+    border-bottom: 1px solid #393c41
 }
 
 html[data-background-style='nightRider'] .file-manager .jsPanel-title,
@@ -633,10 +658,6 @@ html[data-background-style='nightRider'] .fa-question-circle.-helper:hover,
 html[data-background-style='nightRider'] .file-manager .jsPanel-hdr h3 small,
 html[data-background-style='nightRider'] .file-manager .jsPanel-hdr h3 {
     color: #ddd
-}
-
-html[data-background-style='nightRider'] .file-manager .jsPanel-content {
-    outline: 1px solid #2a2c2e
 }
 
 html[data-background-style='nightRider'] .file-manager .jsPanel-hdr>.jsPanel-hdr-r {

@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -100,7 +100,7 @@ try {
 } catch (e) {
     t__wi_p = window
 }
-if (typeof localStorage === "object") {
+if (typeof localStorage == "object") {
     try {
         localStorage.setItem("d41d8cd98f00", 1);
         localStorage.removeItem("d41d8cd98f00");
@@ -129,6 +129,24 @@ if (!String.prototype.startsWith) {
             return this.indexOf(b, a) === a
         }
     }
+}
+
+function detect_msbrowser() {
+    var c = window.navigator.userAgent;
+    var b = c.indexOf("MSIE ");
+    if (b > 0) {
+        return parseInt(c.substring(b + 5, c.indexOf(".", b)), 10)
+    }
+    var a = c.indexOf("Trident/");
+    if (a > 0) {
+        var f = c.indexOf("rv:");
+        return parseInt(c.substring(f + 3, c.indexOf(".", f)), 10)
+    }
+    var d = c.indexOf("Edge/");
+    if (d > 0) {
+        return parseInt(c.substring(d + 5, c.indexOf(".", d)), 10)
+    }
+    return false
 }
 
 function escape_html(b) {
@@ -196,7 +214,7 @@ function upperFirst(a) {
 }
 
 function upperFirstLowerAll(a) {
-    return upperFirst(a.toLowerCase())
+    return (a.length ? upperFirst(a.toLowerCase()) : a)
 }
 Object.defineProperty(Array.prototype, "reOrder", {
     enumerable: false,
@@ -769,9 +787,12 @@ function s(d) {
     f.src = d;
     g.appendChild(f)
 }
-if (t__wi_p.$___________initial === 1) {
+if (t__wi_p.$___________initial === 1 || detect_msbrowser()) {
+    if (detect_msbrowser()) {
+        t__wi_p.$('iframe[name="page"]').unbind("load")
+    }
     t__wi_p.$('iframe[name="page"]').on("load", function() {
-        if (typeof $__post_init_script != "undefined") {
+        if (t__wi_p.$___________initial === 1 && typeof $__post_init_script != "undefined") {
             setTimeout(function() {
                 $.each(manageConfig("get_options"), function(b, a) {
                     localStorage.setItem(($hostname + "-" + a), t__wi_p[a]);

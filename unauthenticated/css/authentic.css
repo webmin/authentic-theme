@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -631,6 +631,14 @@ br.lh0 {
     color: #aaa
 }
 
+@media screen and (-ms-high-contrast:active),
+(-ms-high-contrast:none) {
+    .graph-container>.graph>.bar {
+        border-right: 2px solid #ddd;
+        background-color: #f0f0f0
+    }
+}
+
 .graph-container>.graph>.bar span {
     position: absolute;
     left: 1em
@@ -662,8 +670,12 @@ br.lh0 {
     text-shadow: none !important
 }
 
-#webmin_search_form {
+.search-form-container {
     margin-top: 12px !important;
+    display: block
+}
+
+#webmin_search_form {
     margin-bottom: 18px !important
 }
 
@@ -5746,6 +5758,27 @@ input.btn-warning.active,
     background-color: #ec971f
 }
 
+html[data-background-style='nightRider'] .btn-warning {
+    color: #bfc9d3 !important;
+    border-color: rgba(247, 175, 62, .68) !important;
+    background-color: rgba(247, 175, 62, .07) !important
+}
+
+html[data-background-style='nightRider'] .btn-warning:focus,
+html[data-background-style='nightRider'] .btn-warning.focus {
+    color: #fff !important;
+    border-color: #f7af3e !important;
+    outline: 0 !important;
+    background-color: rgba(247, 175, 62, .1) !important;
+    box-shadow: none !important
+}
+
+html[data-background-style='nightRider'] .btn-warning:hover {
+    color: #fff !important;
+    border-color: #f7af3e !important;
+    background-color: rgba(247, 175, 62, .1) !important
+}
+
 .btn-link-bordered:hover,
 .btn-link-bordered:focus,
 .btn-link-bordered:active,
@@ -8317,12 +8350,12 @@ ul.messenger .messenger-message {
 .file-manager .jsPanel .dropdown {
     position: absolute;
     right: 85px;
-    top: 3px
+    top: 4px
 }
 
 @-moz-document url-prefix() {
     .file-manager .jsPanel .dropdown {
-        top: 2px
+        top: 3px
     }
 }
 
@@ -8348,7 +8381,8 @@ ul.messenger .messenger-message {
 }
 
 .file-manager .jsPanel-hdr {
-    height: 28px
+    height: 28px;
+    border-top: 1px solid #e6e6e6
 }
 
 .file-manager .jsPanel-hdr h3 {
@@ -8728,6 +8762,11 @@ body[class*='file-manager'] #list_form tbody tr:hover,
 
 .file-manager .container-fluid {
     margin-bottom: 80px
+}
+
+html.single_tab,
+html.single_tab body.file-manager {
+    height: 99%
 }
 
 .dropdown-submenu {
@@ -10839,6 +10878,14 @@ html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='wi
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width:-'],
 html[data-background-style='nightRider'] .graph-container>.graph>.bar[style^='width: -'] {
     color: #aaa
+}
+
+@media screen and (-ms-high-contrast:active),
+(-ms-high-contrast:none) {
+    html[data-background-style='nightRider'] .graph-container>.graph>.bar {
+        border-right-color: #515151 !important;
+        background-color: #444950 !important
+    }
 }
 
 html[data-background-style='nightRider'] font[color='green'],

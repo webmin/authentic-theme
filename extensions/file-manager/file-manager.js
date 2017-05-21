@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1502,7 +1502,8 @@ function __f___us_tl() {
 }
 
 function __f___tl_v() {
-    return '. <span class="total_selected">' + lang("theme_xhred_filemanager_selected_entries").replace("%value", "<span>0</span>") + '</span> <span class="label label-warning total_size hidden"><span class="total_size_data"></span></span>'
+    var a = (lang("theme_xhred_filemanager_selected_entries").replace("%value", "<span>0</span>"));
+    return '. <span class="total_selected">' + a + '</span> <span class="label label-warning total_size hidden"><span class="total_size_data"></span></span>'
 }
 
 function ___f__tw() {
@@ -1531,6 +1532,7 @@ function ___f__tw() {
             }
         }
         d();
+        !$g__v__nav && $(".container-fluid").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15").parents("html").addClass("single_tab");
         if ($__source_file == "config.cgi") {
             $('input[name="per_page"], input[name="disable_pagination"], input[name="menu_style"], textarea[name="bookmarks"]').parents("td.col_value").parent("tr").addClass("hidden");
             $("#columns_size").parent(".awobject").remove();
@@ -1730,7 +1732,7 @@ function ___f__tw() {
         $("body").on("mousemove", function(f) {
             $(this).data("mousePageX", f.pageX).data("mousePageY", f.pageY)
         });
-        $("body").on((window.navigator.platform === "MacIntel" ? "mouseup" : "click"), ".___f_m__q__ .ui_checked_columns", function(f) {
+        $("body").on(((window.navigator.platform === "MacIntel" && !___is_Safari) ? "mouseup" : "click"), ".___f_m__q__:visible .ui_checked_columns", function(f) {
             if (f.ctrlKey) {
                 if ($(f.target).is('input[name="name"].iawobject')) {
                     return
@@ -2747,7 +2749,7 @@ function ___f__tw() {
                                     o = u;
                                 var N = ($("body").data("charset") != "UTF-8"),
                                     M = $(P).find(".ui_form"),
-                                    R = ("<strong>" + (escape_html(decodeURIComponentSafe(G)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? $("#path").val() : "/"))) + ")") + "</strong>"),
+                                    R = ("<strong>" + (escape_html(decodeURIComponentSafe(G)) + " (" + escape_html(decodeURIComponentSafe(($("#path").val() ? (access_level() == 2 ? ($g__user__home + $("#path").val()) : $("#path").val()) : (access_level() == 2 ? $g__user__home : "/")))) + ")") + "</strong>"),
                                     n = this,
                                     W = $(n),
                                     Q = (parseInt(m.attr("id").replace("jsPanel-", "")) + 1);
@@ -2947,12 +2949,19 @@ function ___f__tw() {
                                 })
                             }
                         },
-                        setstatus: "maximize",
                         maximizedMargin: {
                             top: 10,
                             right: 10,
                             bottom: 10,
                             left: 10
+                        },
+                        panelSize: {
+                            width: ($(window).width() * 0.9),
+                            height: ($(window).height() * 0.7)
+                        },
+                        dblclicks: {
+                            title: "normalize",
+                            content: "maximize"
                         },
                         headerControls: {
                             smallify: "remove"
