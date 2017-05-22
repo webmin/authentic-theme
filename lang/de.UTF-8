@@ -100,7 +100,7 @@ settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Das erweiterbare Theme Design erlaubt es sehr einfach Teile der Benutzerschnittstelle zu verändern Man kann sowohl <em>CSS</em> als auch <em>JavaScript</em> mit benutzerdefinierten Regeln für <emStyle</em und <em>Script</em> Erweiterungen anpassen. Im folgenden ein paar Beispiele zum bessseren Verständis der zugrundeliegenden Idee. Das Anpassen der Hintergrundfarbe erfolgt durch Einfügen von Style-Regeln in die CSS Erweiterung: <code>body {background-color: Gainsboro}</code>. Das Anpassen der Breite ein Knopfes erfolgt durch Einfügen von JavaScript-Anweisungen: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. In der Praxis wird es aber doch etwas komplexer sein als heir beschrieben.
 settings_right_theme_logos=Theme Logos
 settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Hier kann man die Theme Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Größe der Logos beträgt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterstützung für den Hintergrund Kanals benötigt wird. Hinweise für weitere Anpassungen am Logo: After logo is set up, in case you need to, you can manipulate it with extensible <a href="/settings-editor_read.cgi"><em>CSS</em></a> and <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a>, accessing it by its class name, which is correspondingly <code>._logo</code> and <code>._logo_welcome</code> to <em>authenticated</em> and <em>unauthenticated</em> types.
+settings_right_logos_title=Hier kann man die Theme Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Größe der Logos beträgt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterstützung für den Hintergrund Kanals benötigt wird. Falls sie möchten, können sie unter <tt>Theme Erweiterungen</tt> <a href="/settings-editor_read.cgi"><em>CSS</em></a> und <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a> hinzufügen. Die CSS-Klassen zum Ansprechen der Logos sind <code>._logo</code> und <code>._logo_welcome</code>.
 settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo für nicht angemeldete Benutzer
 
@@ -116,7 +116,7 @@ settings_right_window_options_title=Optionen für Fenster
 settings_right_navigation_menu_title=Optionen für Navigations Menü
 settings_right_table_options_title=Optionen für Tabellen
 settings_security_title=Optionen für Sicherheits Warnungen
-settings_security_description=Sicherheits Warnungen ermöglichen es Mail Benachrichtungen bei bestimmten Vorkomnissen zu versenden.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_security_description=Sicherheits Warnungen ermöglichen es Mail Benachrichtungen bei bestimmten Vorkomnissen zu versenden.<br class="lh0">Format: <code>Nachricht|Betreff|Liste Benutzer/Mail Adresse|Liste ignorierter IPv4/IPv6 Adressen</code><br class="lh0">Beispiel: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Ergebis: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Optionen für Schnellzugriffs Tasten
 settings_right_sysinfo_page_options_title=Optionen für System Informationen
 
@@ -199,15 +199,15 @@ settings_hotkey_toggle_slider=Schnellzugriffs Taste für Schieber
 settings_window_replace_timestamps=Erlaube Datum ersetzen
 settings_window_replaced_timestamp_format_short=Kurzes Datums Format
 settings_window_replaced_timestamp_format_full=Langes Datums Format
-settings_window_replaced_timestamps_options_description=Einstellung ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. Weitere Hinweise: <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
+settings_window_replaced_timestamps_options_description=Wählen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur für entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, müssen sie als Modul Entwickler den Conatinern zur Datumsanzeige die Atribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis Schieber</i>. Standardmäßig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gewählten Sprache in Webmin/Usermin abhängig.
 
 settings_side_slider_enabled=Schieber einschalten
 settings_leftmenu_user_html=HTML Schnipsel anzeigen
 settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation agezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
 
 
-theme_changelog=Changelog
-theme_conference=Theme Conference
+theme_changelog=Änderungs Historie
+theme_conference=Theme Konferenz
 theme_development_support=Entwicklungsunterstützung
 theme_donate=Spende
 theme_download=Download
@@ -223,7 +223,7 @@ theme_global_error=Fehler
 theme_global_warning=Warnung
 theme_global_success=Erfolgreich
 theme_global_info=Information
-sysinfo_system_status_warning=Damit <strong>System Informationen</strong> angezeigt werden kann muss das Modul <em>System Status</em> in den Benutzer Einstellungen eingeschaltet sein.
+sysinfo_system_status_warning=Damit <strong>System Informationen</strong> angezeigt werden, muss das Modul <em>System Status</em> in den Benutzer Einstellungen eingeschaltet sein.
 settings_leftmenu_section_hide_vm_and_cm_links=Link <kbd>inaktive Module<kbd> in der Navigation verbergen
 settings_leftmenu_user_html_only_for_administrator=HTML Schnipsel nur für Administratoren anzeigen
 theme_sysinfo_wmdocs=Webmin Dockmentation
@@ -403,7 +403,7 @@ theme_xhred_datatable_semptydirectory=Verzeichnis ist leer
 theme_xhred_filemanager_context_clipboard=Pfad in Zwischeablage kopieren
 theme_xhred_global_warning=Warnung
 theme_xhred_global_close=Schließen
-theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Andern Sie die Srache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Theme</em> die Standard Einstellungen überschreiben.</span>
+theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Ändern Sie die Srache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Theme</em> die Standard Einstellungen überschreiben.</span>
 
 theme_xhred_filemanager__no_bookmarks=Keine Lesezeichen vorhanden
 theme_xhred_filemanager_unbookmark_success=Verzeichnis <strong><em>%value</em></strong> wurde erfolgreich aus den Lesezeichen entfernt.
@@ -468,7 +468,7 @@ theme_xhred_global_no_such_command=Es scheind das Programm <tt>%cmd</tt> ist nic
 
 theme_xhred_global_notice=Hinweis
 
-theme_xhred_updates_disabled_notice=Es wurde erkannt das Sie keine Benachrichtigung für Updates von <em>Authentic Theme</em> eingeschaltet haben! <br><br>Das einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Einstellungen</strong></a> erlaubt ihnen mit einem Mausklick die  neueste Theme Version zu installieren, sobald sie verfügbar ist.
+theme_xhred_updates_disabled_notice=Es wurde erkannt das die Benachrichtigung für Updates von <em>Authentic Theme</em> ausgeschaltet ist! <br><br>Das einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Einstellungen</strong></a> erlaubt es mit einem Mausklick die neueste Theme Version zu installieren, sobald sie verfügbar ist.
 
 
 #18.00
@@ -515,20 +515,20 @@ theme_xhred_filemanager_search_replace=Ersetze in Ergebnissen
 theme_xhred_global_find=Suche
 theme_xhred_global_replace=Ersetze
 
-theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
-theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
+theme_xhred_filemanager_searching_matching=Suche nach Dateien/Verzeichnissen deren Name auf <em>`%value`</em> passt und folgenden Text Text enthalten <em>`%text`</em>.
+theme_xhred_filemanager_searching_replacing=Ersetze Text <em>`%text`</em> durch <em>`%replace`</em> in Dateien deren Name <em>`%value`</em> enthält.
 
-theme_xhred_filemanager_search_replaced_multi=Found and replaced in <strong>%value</strong> files.
-theme_xhred_filemanager_search_replaced=Found and replaced in <strong>1</strong> file.
+theme_xhred_filemanager_search_replaced_multi=Suchen und ersetzen in <strong>%value</strong> Dateien ausgeführt.
+theme_xhred_filemanager_search_replaced=Suchen und ersetzen in <strong>1</strong> Datei ausgeführt.
 
-theme_xhred_filemanager_successful_permissions_with_errors=Permissions have been changed successfully but not for all objects:
+theme_xhred_filemanager_successful_permissions_with_errors=Rechte konnten nicht für alle Objekte geändert werden:
 
-theme_xhred_filemanager_successful_ownership_with_errors=Ownership has not been changed successfully for all objects:
-theme_xhred_filemanager_successful_ownership_with_errors_fatal=Ownership can't be changed due to following errors:
+theme_xhred_filemanager_successful_ownership_with_errors=Besitzer konnte nicht für alle Objekte geändert werden::
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=Besitzer konnte wegen folgender Fehler nicht geändert werden:
 
-theme_xhred_filemanager_successful_compression_with_errors=Compression has finished with the following errors:
-theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <strong>`%file</strong> is located in <strong>`%path`</strong> directory.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <strong>`%file</strong> should be located in <strong>`%path`</strong> directory.
+theme_xhred_filemanager_successful_compression_with_errors=Komprimieren wurde mit folgenden Fehlermedlungen abgeschlossen:
+theme_xhred_filemanager_successful_compression_bg=Komprimieren erfolgreich durchgeführt. Die Archiv Datei <strong>`%file</strong> befindet sich im Verzeichnis <strong>`%path`</strong>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Komrimieren wurd mit Fehlern abgeschlossen. Die Archiv Datei <strong>`%file</strong> befindet sich im Verzeichnis <strong>`%path`</strong>.
 
 theme_xhred_filemanager_settings_notification_type=Anzuzeigende Benachrichtigungen
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informationen, Warnungen und Fehler
@@ -539,12 +539,12 @@ theme_xhred_filemanager_settings_tabs_remember_state=Inhalt der Tabs beim ersten
 
 theme_xhred_filemanager_context_open_new_tab=In neuem Tab öffnen
 
-theme_xhred_xsql_fit_content_screen_height=Fit database table content in screen height
+theme_xhred_xsql_fit_content_screen_height=Passe Tabelle mit Datenbank Inhalte an Fensterhöhe an
 
-theme_xhred_datatable_filter_visible_tables=Filter Visible Table(s)
-theme_xhred_module_help=Module help
+theme_xhred_datatable_filter_visible_tables=Sichtbare Tabelle(n) filtern
+theme_xhred_module_help=Module Hilfe
 
-theme_xhred_server_process_running=Server process is still running!? Are you sure that you want to navigate away and have no access to output information? Even if you leave now the process will not be terminated.
+theme_xhred_server_process_running=Server Vorgang noch nicht abgeschlossen! Sind Sie sicher das sie die Seite verlasen möchten und das Ergebnis nicht sehen wollen? Der Vorgang läuft im Hintergund weiter.
 
 
 #18.03
