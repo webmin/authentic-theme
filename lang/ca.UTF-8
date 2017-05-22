@@ -20,7 +20,7 @@ body_real=Memoria real
 body_time=Hora del sistema
 body_updates=Actualitzacions de paquets
 body_updays=$1 dies, $2 hores, $3 minuts
-body_uphours=$1 hores, $2 minutes
+body_uphours=$1 hores, $2 minuts
 body_upmins=$1 minuts
 body_upneed=Hi ha disponibles $1 actualitzacions
 body_upneed1=Hi ha disponibles $1 actualitzacions
@@ -52,7 +52,7 @@ login_reset=Restableix
 login_save=Recorda'm
 login_signin=Entrar
 login_success=CORRECTE
-login_token=Token
+login_token=Identificador
 login_user=Usuari
 login_warning=ERROR
 
@@ -367,7 +367,7 @@ theme_xhred_filemanager_context_bookmark_current=Marca la ruta actual
 theme_xhred_filemanager_context_transfer=Transfereix
 
 #17.54
-theme_xhred_filemanager_title_symlink_target=Objectiu de l'enllaç
+theme_xhred_filemanager_title_symlink_target=Adreça de l'enllaç
 
 #17.60
 right_unlimited=Il·limitat
@@ -400,8 +400,8 @@ theme_xhred_global_continue_editing=Continuar editant
 theme_xhred_filemanager_context_download_file=Descarregar
 
 #17.65
-settings_sysinfo_easypie_charts_width= -Amplada de línia
-settings_sysinfo_easypie_charts_scale= -Escala
+settings_sysinfo_easypie_charts_width= Amplada de línia
+settings_sysinfo_easypie_charts_scale= Escala
 
 #17.72
 settings_window_exclusion_description=Estableix els mòduls que s'exclouran del mecanisme de presentació. Això et permetrà no visualitzar els mòduls que puguin donar algun tipus d'error de visualització. El nom del mòdul es basa en el nom del seu directori. És possible utilitzar caràcters comodí (Ex.  <kbd>*</kbd>).
@@ -673,46 +673,46 @@ theme_xhred_filemanager_link_to_clipboard=El nom de l'enllaç `<strong><em>%valu
 
 
 #18.46
-theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
-theme_left_mail_account_functions=Account Functions
-theme_xhred_global_dir_up=Go to previous directory (Backspace)
-theme_xhred_global_module_config=Module config
-theme_xhred_global_return=Return
-theme_xhred_global_return_to_module_index=Return to module index
+theme_left_mail_prefs=Preferències de correu electrònic
+theme_left_mail_change_password=Canviar la contrasenya
+theme_left_mail_account_functions=Funcions del compte
+theme_xhred_global_dir_up=Anar a la carpeta anterior (Retrocés)
+theme_xhred_global_module_config=Configuració del mòdul
+theme_xhred_global_return=Retrocedir
+theme_xhred_global_return_to_module_index=Anar a l'índex del mòdul
 
 
 #18.47
-settings_account_info_link_mini=Show account information link as button
-theme_xhred_global_complete_changelog=Complete changelog
-theme_xhred_global_beta_version=Beta version
-theme_xhred_global_release=Release
-theme_xhred_global_released_on=Released on
-theme_xhred_global_committed_on=Committed on
-theme_xhred_global_resolved_issues=Resolved issues in %value releases
+settings_account_info_link_mini=Mostrar l'enllaç d'informació del compte com un botó
+theme_xhred_global_complete_changelog=Registre de canvis
+theme_xhred_global_beta_version=Versió beta
+theme_xhred_global_release=Versió
+theme_xhred_global_released_on=Alliberada el
+theme_xhred_global_committed_on=Realitzada el
+theme_xhred_global_resolved_issues=Problemes resolts en %value
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_force_upgrade_beta=Install latest development version (beta)
-theme_force_upgrade_stable=Install latest release version (stable)
-theme_xhred_source_encoding=Source encoding
-theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
-theme_xhred_encoding_manually_set=Manually set encoding
-theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+theme_force_upgrade=Actualització manual
+theme_force_upgrade_beta=Instal·la l'última versió beta disponible
+theme_force_upgrade_stable=Instal·la l'última versió estable disponible
+theme_xhred_source_encoding=Codi font
+theme_update_footer=Per tal de millorar dia a dia, t'agraïm que ens informis de qualsevol error que trobis a $1. Segueix-nos al canal de $2 per estar assabentat de les últimes novetats.
+theme_xhred_encoding_manually_set=Escriure directament el codi font
+theme_xhred_filemanager_save_to_change_encoding=L'arxiu s'ha de desar prèviament per tal de poder canviar el codi.
 
 
 #18.49
-theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
-theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
-theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
-theme_xhred_filemanager_user_switch_current_user=Current user
-theme_xhred_filemanager_user_switch_option=Automatically switch to user mode upon entering its home directory
-theme_xhred_filemanager_editor_align_panels_horizontally=Align Panels Horizontally
-theme_xhred_filemanager_editor_align_panels_vertically=Align Panels Vertically
-theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
-theme_xhred_filemanager_editor_refresh_content=Refresh Content
-theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
-theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
-theme_xhred_global_dark=Dark
-theme_xhred_global_light=Light
+theme_xhred_filemanager_user_switch=Canviar a l'usuari (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=Selecciona un usuari de la llista per tal de treballar amb aquest usuari.
+theme_xhred_filemanager_user_switch_description_back=Per a canviar un altre cop al mode predeterminat selecciona la primera opció.
+theme_xhred_filemanager_user_switch_current_user=Usuari actual
+theme_xhred_filemanager_user_switch_option=Automàticament canvia al mode d'usuari en el moment d'entrar al seu directori d'inici
+theme_xhred_filemanager_editor_align_panels_horizontally=Alinear els panells horitzontalment
+theme_xhred_filemanager_editor_align_panels_vertically=Alinear els panells verticalment
+theme_xhred_filemanager_editor_toggle_soft_wrap=Alternar
+theme_xhred_filemanager_editor_refresh_content=Refresca el contingut
+theme_xhred_filemanager_save_to_refresh_content=L'arxiu s'ha de desar prèviament per tal de refrescar el seu contingut.
+theme_xhred_filemanager_save_to_refresh_content_proc=Refrescant el contingut de l'arxiu.
+theme_xhred_global_dark=Fosc
+theme_xhred_global_light=Clar
