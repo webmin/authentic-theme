@@ -548,20 +548,20 @@ theme_xhred_server_process_running=Server Vorgang noch nicht abgeschlossen! Sind
 
 
 #18.03
-settings_global_options_title=Global options
-settings_global_passgen_format=Password generator
-settings_global_passgen_format_description=Set the length and character type used in the generated password. First value is numerical, which is the length of the password, immediately followed by <code>|</code> as a delimiter. Next is the type, where you can use numbers <code>0-9</code>, letters <code>a-z</code> and/or <code>A-Z</code>, and special characters <code>#</code>. All of these sets can be used together or individually, using comma as a delimiter. Default value equals to <code>12|a-z,A-Z,0-9,#</code>, which represents password with 12 characters in length, containing upper and lower case letters, numbers and special characters.
-theme_xhred_password_generator_new=Generate New Password<br> (To Clipboard)
-theme_xhred_password_generator_new_success=Generated password %password has been copied to clipboard successfully.
+settings_global_options_title=Globale Einstellungen
+settings_global_passgen_format=Passwort Generator
+settings_global_passgen_format_description=Setze Länge und die zu verwendende Zeichen für das zu generierende Passwort. Der erste Wert ist die Länge des Passworts, gefolgt von <code>|</code> als Trennzeichen. Als nächstes folgen die zu verwendeden Zeichen, hier können Ziffern<code>0-9</code>, Buchstaben <code>a-z</code> und/oder <code>A-Z</code> und Sonderzeichen <code>#</code> angegeben werden. Jede dieser Angaben kann alleine oder als kommasepariert Liste eingetragen werden. Der Stanrdardwwert ist <code>12|a-z,A-Z,0-9,#</code>, d.h. das generierte Passwort ist 12 zeichen lang und besteht aus Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen.
+theme_xhred_password_generator_new=Neues Passwort erzeugen<br> (In Zwischenablage)
+theme_xhred_password_generator_new_success=Erzeugtes Passwort %password wurde in Zwischenablage kopiert.
 
 
 #18.08
 theme_fileformat_perl=Perl
-theme_fileformat_perl_placeholder=This file must end with `1;` to work successfully. (http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl)
+theme_fileformat_perl_placeholder=Die Datei muss mit `1;` enden, siehe http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl
 
 
 #18.10
-theme_error_access_not_root=Access denied: User needs access to the <em>Webmin Configuration</em> module to edit theme configuration
+theme_error_access_not_root=Zugriff verweigert: Der Benutzer benötigt Zugriff auf die <em>Webmin Konfiguration</em>, um die Theme Einstellungen zu bearbeiten
 
 
 #18.20
@@ -571,7 +571,7 @@ settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Symbole in Virtualmin/Cloudmin Dropdown Liste azeigen
 settings_font_family=Schriftart
-settings_font_family_description=Von den angezeigten Schriftenn wird <em>Roboto</em> mit dem Theme installiert und als Standard verwendet. Alle anderen Schriftarten müssen lokal installiert sein. Mit einer lokalen Schrift werden die Seiten eventuell schneller angezeigt, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
+settings_font_family_description=Die Schriftart <em>Roboto</em> wurde mit dem Theme installiert und wird als Standard verwendet. Alle anderen Schriftarten müssen lokal vorhanden sein. Mit einer lokalen Schriftart werden die Seiten schneller aufgebaut, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
 theme_xhred_global_shipped=integriert
 theme_xhred_global_available=Vorhanden
 theme_xhred_global_not_available=Nicht vorhanden
@@ -599,8 +599,8 @@ theme_xhred_sysinfo_server_status=Server Status
 theme_xhred_sysinfo_software_versions=Software Versionen
 theme_xhred_sysinfo_recent_logins=Letzte Anmeldungen
 theme_xhred_sysinfo_vm_package_updates=Virtualmin Paket Updates
-theme_xhred_sysinfo_disk_quotas=Disk Quotas
-theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
+theme_xhred_sysinfo_disk_quotas=Festplatten Kontingent
+theme_xhred_sysinfo_bandwidth_quotas=Netzwerk Kontingent
 
 left_netdata=Echtzeit Monitoring
 settings_leftmenu_netdata=Netdata Echtzeit Monitoring Link anzeigen
@@ -622,12 +622,12 @@ theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
 #18.40
 theme_new_password_header=Setze neues Benutzer Passwort
 login_reset=Passwort wiederherstellen
-theme_xhred_move_top=Move to top
-theme_xhred_move_bottom=Move to bottom
-theme_xhred_move_up=Move up
-theme_xhred_move_down=Move down
-theme_xhred_add_after=Add after
-theme_xhred_add_before=Add before
+theme_xhred_move_top=An den Anfang
+theme_xhred_move_bottom=An das Ende
+theme_xhred_move_up=Nach oben
+theme_xhred_move_down=nach unten
+theme_xhred_add_after=Danach einfügen
+theme_xhred_add_before=Davor einfügen
 settings_button_tooltip=Tooltips auf Knöpfen anzeigen
 settings_show_night_mode_link=Umschaltung Farbpalette anzeigen
 settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
@@ -649,8 +649,8 @@ theme_xhred_global_select=Auswählen
 theme_xhred_global_ok=OK
 settings_sysinfo_theme_patched_updates=Inklusive gepatcher Versionen
 settings_sysinfo_theme_patched_updates_description=Damit dies funktioniert, muss das <code>git</code> Programm installiert sein.
-theme_git_patch_available=Aktuell verfügbarer Patch
-theme_git_patch_no_git_message=Damit die neueste Patch von Github installiert werden können, muss das <code>git</code> Programm installiert sein.
+theme_git_patch_available=Aktuell verfügbare Korrekturen
+theme_git_patch_no_git_message=Damit die neueste Korrekturen von Github installiert werden können, muss das <code>git</code> Programm installiert sein.
 theme_git_patch_update_success_message=Theme Update für Webmin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
 theme_git_patch_update_success_message2=Theme Update für Webmin and Usermin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
 theme_xhred_git_patch_update=Theme Update fehlgeschlagen. Versuche es bitte selbst auf der Kommandozeile auszuführen.
@@ -698,12 +698,12 @@ theme_xhred_filemanager_user_switch=Schneller Benutzerwechsel (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Nach Auswahl eines Benutzers aus der Liste werden nachfolgende Operationen unter diesem Benutzer-Account ausgeführt.
 theme_xhred_filemanager_user_switch_description_back=Zum Zücksetzen auf den Standard Benutzer bitte die erste Option in der Liste auswählen.
 theme_xhred_filemanager_user_switch_current_user=Aktueller Benutzer
-theme_xhred_filemanager_user_switch_option=Automatischer Benutzerwechsel wenn man in das Heimatverzeichnis des Benutzers wechselt
-theme_xhred_filemanager_editor_align_panels_horizontally=Align Panels Horizontally
-theme_xhred_filemanager_editor_align_panels_vertically=Align Panels Vertically
-theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
-theme_xhred_filemanager_editor_refresh_content=Refresh Content
-theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
-theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
-theme_xhred_global_dark=Dark
-theme_xhred_global_light=Light
+theme_xhred_filemanager_user_switch_option=Automatischer Benutzerwechsel wenn man in das Heimatverzeichnis eines Benutzers wechselt
+theme_xhred_filemanager_editor_align_panels_horizontally=Tableau hotizontal ausrichetn
+theme_xhred_filemanager_editor_align_panels_vertically=Tableau vertikal ausrichten
+theme_xhred_filemanager_editor_toggle_soft_wrap=Sanfter Umbruch umschalten
+theme_xhred_filemanager_editor_refresh_content=Inhalt aktualisieren
+theme_xhred_filemanager_save_to_refresh_content=Datei muss gespeichert werden, damit der Inhalt aktualisiert werden kann.
+theme_xhred_filemanager_save_to_refresh_content_proc=Datei Inhalt aktualisieren.
+theme_xhred_global_dark=Dunkel
+theme_xhred_global_light=Hell
