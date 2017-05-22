@@ -1,0 +1,110 @@
+<i class="hidden theme_xhred_editor_help"></i>
+<h5><strong>Cerca/Substitueix</strong>
+</h5>
+ <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup>
+ <thead valign="bottom"> <tr><th class="head">Tecla</th>
+ <th class="head">Comanda</th>
+ </tr>
+ </thead>
+ <tbody valign="top"> <tr><td>Ctrl + F</td>
+ <td>Cerca</td>
+ </tr>
+ <tr><td>Ctrl + H</td>
+ <td>Substitueix</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + R</td>
+ <td>Substitueix-ho tot</td>
+ </tr>
+ <tr><td>Ctrl + G</td>
+ <td>Cercar el següent</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ +  G</td>
+ <td>Cercar l'anterior</td>
+ </tr>
+ <tr><td>Alt + G</td>
+ <td>Salta a la línia</td>
+ </tr>
+ </tbody>
+ </table>
+ <h5><strong>Manipulació del text</strong>
+</h5>
+ <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup>
+ <thead valign="bottom"> <tr><th class="head">Tecla</th>
+ <th class="head">Comanda</th>
+ </tr>
+ </thead>
+ <tbody valign="top"> <tr><td>Ctrl + KU</td>
+ <td>Transforma en majúscules</td>
+ </tr>
+ <tr><td>Ctrl + KL</td>
+ <td>Transforma en minúscules</td>
+ </tr>
+ </tbody>
+ </table>
+ <h5><strong>Editant</strong>
+</h5>
+ <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup>
+ <thead valign="bottom"> <tr><th class="head">Tecla</th>
+ <th class="head">Comanda</th>
+ </tr>
+ </thead>
+ <tbody valign="top"> <tr><td>Ctrl + Space</td>
+ <td>Habilita autocompletar</td>
+ </tr>
+ <tr><td>Ctrl + X</td>
+ <td>Talla la línia</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + ↑</td>
+ <td>Moure línia/selecció cap amunt</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + ↓</td>
+ <td>Moure línia/selecció cap avall</td>
+ </tr>
+ <tr><td>Ctrl + L</td>
+ <td>Selecciona la línia - Repeteix per seleccionar les següents línies</td>
+ </tr>
+ <tr><td>Ctrl + D</td>
+ <td>Selecciona paraula - Repeteix per seleccionar les altres</td>
+ </tr>
+ <tr><td>Ctrl + M</td>
+ <td>Salta per tancar parèntesis. Repeteix per obrir parèntesis</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + M</td>
+ <td>Selecciona tots els continguts de dins el parèntesis actual</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + K</td>
+ <td>Elimina la línia</td>
+ </tr>
+ <tr><td>Ctrl + KK</td>
+ <td>Elimina des del cursos fins al final de la línia</td>
+ </tr>
+ <tr><td>Ctrl + K + retrocés</td>
+ <td>Elimina des del cursor fins al principi de la línia</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + D</td>
+ <td>Duplica les línies</td>
+ </tr>
+ <tr><td>Ctrl + J</td>
+ <td>Ajunta la línia de sota amb el final de la línia actual</td>
+ </tr>
+ <tr><td>Ctrl + /</td>
+ <td>Comenta/descomenta la línia actual</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + /</td>
+ <td>Comenta la selecció actual</td>
+ </tr>
+ <tr><td>Ctrl + Y</td>
+ <td>Desfés, o repeteix la última comanda</td>
+ </tr>
+ <tr><td>Ctrl + ⇧ + V</td>
+ <td>Enganxa</td>
+ </tr>
+ <tr><td>Ctrl + Space</td>
+ <td>Selecciona la següent suggerència automàtica</td>
+ </tr>
+ <tr><td>Ctrl + U</td>
+ <td>desfer suau; salta cap a l'últim canvi realitzat desfent el canvi quan es repeteixi</td>
+ </tr>
+ </tbody>
+ </table>
+
