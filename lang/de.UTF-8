@@ -94,22 +94,22 @@ settings_right_restoring=Zurücksetzen
 settings_right_saved=Gespeichert
 settings_right_saving=Speichern
 
-settings_right_theme_extensions=Themen Erweiterungen
-settings_right_theme_extensions_title=Themen Erweiterungen
+settings_right_theme_extensions=Design Erweiterungen
+settings_right_theme_extensions_title=Design Erweiterungen
 settings_right_file_edit=Bearbeite Erweitungs Datei:
-settings_right_extensions_title=Das erweiterbare Theme Design erlaubt es sehr einfach Teile der Benutzerschnittstelle zu verändern Man kann sowohl <em>CSS</em> als auch <em>JavaScript</em> mit benutzerdefinierten Regeln für <emStyle</em und <em>Script</em> Erweiterungen anpassen. Im folgenden ein paar Beispiele zum bessseren Verständis der zugrundeliegenden Idee. Das Anpassen der Hintergrundfarbe erfolgt durch Einfügen von Style-Regeln in die CSS Erweiterung: <code>body {background-color: Gainsboro}</code>. Das Anpassen der Breite ein Knopfes erfolgt durch Einfügen von JavaScript-Anweisungen: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. In der Praxis wird es aber doch etwas komplexer sein als heir beschrieben.
-settings_right_theme_logos=Theme Logos
-settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Hier kann man die Theme Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Größe der Logos beträgt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterstützung für den Hintergrund Kanals benötigt wird. Falls sie möchten, können sie unter <tt>Theme Erweiterungen</tt> <a href="/settings-editor_read.cgi"><em>CSS</em></a> und <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a> hinzufügen. Die CSS-Klassen zum Ansprechen der Logos sind <code>._logo</code> und <code>._logo_welcome</code>.
+settings_right_extensions_title=Das erweiterbare Design Design erlaubt es sehr einfach Teile der Benutzerschnittstelle zu verändern Man kann sowohl <em>CSS</em> als auch <em>JavaScript</em> mit benutzerdefinierten Regeln für <emStyle</em und <em>Script</em> Erweiterungen anpassen. Im folgenden ein paar Beispiele zum bessseren Verständis der zugrundeliegenden Idee. Das Anpassen der Hintergrundfarbe erfolgt durch Einfügen von Style-Regeln in die CSS Erweiterung: <code>body {background-color: Gainsboro}</code>. Das Anpassen der Breite ein Knopfes erfolgt durch Einfügen von JavaScript-Anweisungen: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. In der Praxis wird es aber doch etwas komplexer sein als heir beschrieben.
+settings_right_theme_logos=Design Logos
+settings_right_theme_logos_title=Design Logos
+settings_right_logos_title=Hier kann man die Design Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Größe der Logos beträgt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterstützung für den Hintergrund Kanals benötigt wird. Falls sie möchten, können sie unter <tt>Design Erweiterungen</tt> <a href="/settings-editor_read.cgi"><em>CSS</em></a> und <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a> hinzufügen. Die CSS-Klassen zum Ansprechen der Logos sind <code>._logo</code> und <code>._logo_welcome</code>.
 settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo für nicht angemeldete Benutzer
 
-settings_right_current_theme=Aktuelles Theme
-settings_right_title=Aus dieser Seite lassen die Einstellungen für <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a> anpassen. Die Einstellungen bleiben auch nach einem Theme Update erhaletn.
-settings_right_theme_left_configuration_title=Authentic Theme Konfiguration
-settings_right_theme_left_extensions_title=Authentic Theme Erweiterungs Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Einstellungen
-settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Theme
+settings_right_current_theme=Aktuelles Design
+settings_right_title=Aus dieser Seite lassen die Einstellungen für <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhaletn.
+settings_right_theme_left_configuration_title=Authentic Design Konfiguration
+settings_right_theme_left_extensions_title=Authentic Design Erweiterungs Editor
+settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen
+settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Design
 
 
 settings_right_window_options_title=Optionen für Fenster
@@ -156,7 +156,7 @@ settings_favorites=Knopf für Favoriten anzeigen
 settings_leftmenu_button_language=Knopf Sprachen anzeigen
 settings_leftmenu_button_refresh=Knopf Neu Laden anzeigen
 
-settings_theme_options_button=Knopf Theme Einstellungen anzeigen
+settings_theme_options_button=Knopf Design Einstellungen anzeigen
 
 settings_hotkeys_active=Schalte Schnellzugriffs Tasten ein
 settings_hotkey_toggle_modifier=Schnellzugriffs Taste
@@ -174,7 +174,7 @@ settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 settings_side_slider_background_refresh_time=Wartezeit bei Übertragung von Informationen im Hintergrund
 settings_side_slider_background_refresh_time_description=Gewünschte Wartezeit in Minuten bei Übertragung von Informationen im Hintergrund. Der kleinstmögliche Wert beträgt <code>1</code> Minute, der Standardwert ist <code>5</code> Minuten.
 settings_sysinfo_easypie_charts=Diagramm anzeigen
-settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Theme
+settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Design
 settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
 settings_sysinfo_drive_status_on_new_line=CPU und Laufwerks Status auf eigener Zeile
 settings_sysinfo_expand_all_accordions=Alle Unterpunkte aufklappen
@@ -207,15 +207,15 @@ settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code d
 
 
 theme_changelog=Änderungs Historie
-theme_conference=Theme Konferenz
+theme_conference=Design Konferenz
 theme_development_support=Entwicklungsunterstützung
 theme_donate=Spende
 theme_download=Download
-theme_name=Authentic Theme
+theme_name=Authentic Design
 theme_update=Update
 theme_update_available=Neueste verfügbare Release
 theme_update_notice=Aktualisieren und Datenschutz
-theme_version=Theme-Version
+theme_version=Design-Version
 
 
 # Version 17.40
@@ -282,8 +282,8 @@ theme_xhred_filemanager_successful_directory_creation=Verzeichnis `<strong>%valu
 theme_xhred_filemanager_successful_file_creation=Datzei `<strong>%value</strong>` erfolgreich erzeugt.
 
 theme_xhred_notifications_packages_updates=Paket Update
-theme_xhred_notifications_theme_update=Theme Update
-theme_xhred_notifications_theme_update_message=Es ist eine neue Version <em>%v</em> von <strong>Authentic Theme</strong> verfügbar. Bitte updaten.
+theme_xhred_notifications_theme_update=Design Update
+theme_xhred_notifications_theme_update_message=Es ist eine neue Version <em>%v</em> des <strong>Authentic Design</strong> verfügbar. Bitte updaten.
 theme_xhred_notifications_firewall_update=Firewall Update
 theme_xhred_notifications_firewall_update_message=Es ist eine neue Version <em>%v</em> von <strong>ConfigServer Server Security und Firewall</strong> verfügbar. Bitte updaten.
 
@@ -394,16 +394,16 @@ settings_sysinfo_easypie_charts_width=Breite der Diagramme
 settings_sysinfo_easypie_charts_scale=Skalenlänge der Diagramme
 
 #17.72
-settings_window_exclusion_description=Liste der Module die von der automatischen Anpassung an das Theme ausgenommen sind. Diese Einstellung ermöglicht die Nutzung von alten oder unbeḱannten Modulen die nicht korrekt angezeigt werden. Den Namen eines Moduls erkennen sie am Linkziel wenn sie mit der Maus über den Menüeintrag in der Navigation fahren. Die Eingabe von <kbd>*</kbd> deaktivert die Anpassung aller Module.
+settings_window_exclusion_description=Liste der Module die von der automatischen Anpassung an das Design ausgenommen sind. Diese Einstellung ermöglicht die Nutzung von alten oder unbeḱannten Modulen die nicht korrekt angezeigt werden. Den Namen eines Moduls erkennen sie am Linkziel wenn sie mit der Maus über den Menüeintrag in der Navigation fahren. Die Eingabe von <kbd>*</kbd> deaktivert die Anpassung aller Module.
 settings_window_exclusion_list=Module ausschließen
 
 #17.80
-right_return_theme_options=Theme Optionen
+right_return_theme_options=Design Optionen
 theme_xhred_datatable_semptydirectory=Verzeichnis ist leer
 theme_xhred_filemanager_context_clipboard=Pfad in Zwischeablage kopieren
 theme_xhred_global_warning=Warnung
 theme_xhred_global_close=Schließen
-theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Ändern Sie die Srache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Theme</em> die Standard Einstellungen überschreiben.</span>
+theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Ändern Sie die Srache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Design</em> die Standard Einstellungen überschreiben.</span>
 
 theme_xhred_filemanager__no_bookmarks=Keine Lesezeichen vorhanden
 theme_xhred_filemanager_unbookmark_success=Verzeichnis <strong><em>%value</em></strong> wurde erfolgreich aus den Lesezeichen entfernt.
@@ -468,7 +468,7 @@ theme_xhred_global_no_such_command=Es scheind das Programm <tt>%cmd</tt> ist nic
 
 theme_xhred_global_notice=Hinweis
 
-theme_xhred_updates_disabled_notice=Es wurde erkannt das die Benachrichtigung für Updates von <em>Authentic Theme</em> ausgeschaltet ist! <br><br>Das einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Einstellungen</strong></a> erlaubt es mit einem Mausklick die neueste Theme Version zu installieren, sobald sie verfügbar ist.
+theme_xhred_updates_disabled_notice=Es wurde erkannt das die Benachrichtigung für Updates von <em>Authentic Design</em> ausgeschaltet ist! <br><br>Das einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Design Einstellungen</strong></a> erlaubt es mit einem Mausklick die neueste Design Version zu installieren, sobald sie verfügbar ist.
 
 
 #18.00
@@ -561,7 +561,7 @@ theme_fileformat_perl_placeholder=Die Datei muss mit `1;` enden, siehe http://st
 
 
 #18.10
-theme_error_access_not_root=Zugriff verweigert: Der Benutzer benötigt Zugriff auf die <em>Webmin Konfiguration</em>, um die Theme Einstellungen zu bearbeiten
+theme_error_access_not_root=Zugriff verweigert: Der Benutzer benötigt Zugriff auf die <em>Webmin Konfiguration</em>, um die Design Einstellungen zu bearbeiten
 
 
 #18.20
@@ -571,7 +571,7 @@ settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Symbole in Virtualmin/Cloudmin Dropdown Liste azeigen
 settings_font_family=Schriftart
-settings_font_family_description=Die Schriftart <em>Roboto</em> wurde mit dem Theme installiert und wird als Standard verwendet. Alle anderen Schriftarten müssen lokal vorhanden sein. Mit einer lokalen Schriftart werden die Seiten schneller aufgebaut, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
+settings_font_family_description=Die Schriftart <em>Roboto</em> wurde mit dem Design installiert und wird als Standard verwendet. Alle anderen Schriftarten müssen lokal vorhanden sein. Mit einer lokalen Schriftart werden die Seiten schneller aufgebaut, daher kann es sinvoll sein auch <em>Roboto</em> lokal zu installieren.
 theme_xhred_global_shipped=integriert
 theme_xhred_global_available=Vorhanden
 theme_xhred_global_not_available=Nicht vorhanden
@@ -585,7 +585,7 @@ theme_xhred_global_cpu_load=CPU Auslastung
 theme_xhred_notification_none=Keine Benachrichtigungen vorhanden
 theme_xhred_notification_no_data=Keine Daten vorhanden
 theme_xhred_notification_no_favorites=Keine Favoriten vorhanden
-theme_xhred_global_theme_version=Theme Version
+theme_xhred_global_theme_version=Design Version
 
 settings_side_slider_sysinfo_enabled=Tab Dashboard anzeigen
 settings_side_slider_notifications_enabled=Tab Benachrichtigungen anzeigen
@@ -631,7 +631,7 @@ theme_xhred_add_before=Davor einfügen
 settings_button_tooltip=Tooltips auf Knöpfen anzeigen
 settings_show_night_mode_link=Umschaltung Farbpalette anzeigen
 settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
-settings_title=Theme Konfiguration
+settings_title=Design Konfiguration
 settings_subtitle=Für Benutzer
 
 theme_tooltip_night_mode=Tag/Nacht Modus umschalten
@@ -651,10 +651,10 @@ settings_sysinfo_theme_patched_updates=Inklusive gepatcher Versionen
 settings_sysinfo_theme_patched_updates_description=Damit dies funktioniert, muss das <code>git</code> Programm installiert sein.
 theme_git_patch_available=Aktuell verfügbare Korrekturen
 theme_git_patch_no_git_message=Damit die neueste Korrekturen von Github installiert werden können, muss das <code>git</code> Programm installiert sein.
-theme_git_patch_update_success_message=Theme Update für Webmin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
-theme_git_patch_update_success_message2=Theme Update für Webmin and Usermin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
-theme_xhred_git_patch_update=Theme Update fehlgeschlagen. Versuche es bitte selbst auf der Kommandozeile auszuführen.
-theme_xhred_git_patch_initiated=Theme Update wurde angestoßen.
+theme_git_patch_update_success_message=Design Update für Webmin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
+theme_git_patch_update_success_message2=Design Update für Webmin und Usermin war erfolgreich. Aktuell installierte Version ist <tt>$1</tt>. Lade neu...
+theme_xhred_git_patch_update=Design Update fehlgeschlagen. Versuche es bitte selbst auf der Kommandozeile auszuführen.
+theme_xhred_git_patch_initiated=Design Update wurde angestoßen.
 theme_xhred_global_prev_page=Eine Seite zurück
 theme_xhred_global_help=Hilfe
 settings_right_soft_updates_page_options_title=Software Updates
@@ -684,11 +684,11 @@ theme_xhred_global_resolved_issues=Gelöste Probleme in %value Release
 
 
 #18.48
-theme_force_upgrade=Erzwinge Theme Update
+theme_force_upgrade=Erzwinge Design Update
 theme_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
 theme_force_upgrade_stable=Installiere aktuelle Release Version (stable)
 theme_xhred_source_encoding=Quellen Codierung
-theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Theme Updates.
+theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Design Updates.
 theme_xhred_encoding_manually_set=Codierung händisch ändern
 theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Codierung geändert werden kann.
 
