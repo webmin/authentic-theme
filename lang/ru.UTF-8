@@ -719,3 +719,7 @@ theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to 
 theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
 theme_xhred_global_dark=Dark
 theme_xhred_global_light=Light
+theme_xhred_global_minimize=Minimize
+theme_xhred_global_maximize=Maximize
+theme_xhred_global_normalize=Normalize
+theme_xhred_global_set_encoding=Set encoding

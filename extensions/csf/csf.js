@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -651,7 +651,11 @@ function csf_init() {
             selector: 'a[data-toggle="tooltip"]',
             container: "body",
             placement: "auto top",
-            html: true
+            html: true,
+            delay: {
+                show: 800,
+                hide: 30
+            }
         })
     }, 100)
 };

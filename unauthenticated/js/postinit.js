@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -49,7 +49,8 @@ var $_url = URI(t___wi.location),
 const __ua__ = window.navigator.userAgent,
     ___is_iOS = (!!__ua__.match(/iPad/i) || !!__ua__.match(/iPhone/i)),
     ___is_webkit = (!!__ua__.match(/WebKit/i)),
-    ___is_iOSSafari = (___is_iOS && ___is_webkit && !__ua__.match(/CriOS/i) && !__ua__.match(/OPiOS/i));
+    ___is_iOSSafari = (___is_iOS && ___is_webkit && !__ua__.match(/CriOS/i) && !__ua__.match(/OPiOS/i)),
+    ___is_Safari = (navigator.vendor && navigator.vendor.indexOf("Apple") > -1 && navigator.userAgent && !navigator.userAgent.match("CriOS"));
 if ($webprefix) {
     $webprefix = ($webprefix + "/").replace(/\/\//g, "/");
     $webprefix_full = $webprefix;
@@ -537,6 +538,17 @@ function t__lo__btn_md() {
     return '<span class="cspinner in-btn-md" style="position: relative"><span class="cspinner-icon dark" style="width:12px; height:12px; margin-right: 7px;"></span></span>'
 }
 
+function get_selected_text() {
+    if (t___wi.getSelection) {
+        return t___wi.getSelection().toString()
+    } else {
+        if (document.selection) {
+            return document.selection.createRange().text
+        }
+    }
+    return ""
+}
+
 function __ie__() {
     var b = 0;
     var c = (/MSIE (\d+\.\d+);/.test(navigator.userAgent));
@@ -552,17 +564,6 @@ function __ie__() {
         b = 11
     }
     return b
-}
-
-function get_selected_text() {
-    if (t___wi.getSelection) {
-        return t___wi.getSelection().toString()
-    } else {
-        if (document.selection) {
-            return document.selection.createRange().text
-        }
-    }
-    return ""
 }
 
 function modal_dismiss() {
@@ -832,15 +833,7 @@ function t__s(b) {
                 t__wi_p.history.pushState(null, null, $_____link_full + "/?virtualmin");
                 t__wi_p.$("#wrapper").data("virtual-server", 2);
                 t__wi_p.$("#wrapper").data("server-manager", -1);
-                t__wi_p.$("#wrapper").data("webmail", -1);
-                if (typeof t___wi.page.t__vm_l == "function") {
-                    var c = URI.parseQuery(URI(t___wi.page.location).query())["dom"];
-                    if (c) {
-                        setTimeout(function() {
-                            t___wi.t__vm_l(c)
-                        }, 301)
-                    }
-                }
+                t__wi_p.$("#wrapper").data("webmail", -1)
             } else {
                 if (b == "open_cloudmin") {
                     t__wi_p.history.pushState(null, null, $_____link_full + "/?cloudmin");
@@ -2343,9 +2336,20 @@ function f__g_notifications(b, d, a) {
 if (is__mf("syslog", "save_log.cgi")) {
     $(".container-fluid.col-lg-10.col-lg-offset-1").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15")
 }
-if (___is_iOS) {
+if (___is_iOS || detect_msbrowser()) {
     $("head").append('  <style media="all" id="ipad-css" type="text/css">      .modal-backdrop.in {      	display: none !important;      }      </style>  ')
 }
+$("body").on("click", "#quota-virtual-server-collapse a.ui_link, #bw-virtual-server-collapse a.ui_link", function() {
+    var d = URI.parseQuery(URI($(this).attr("href")).query())["dom"],
+        c = "open_virtualmin",
+        b = t__wi_p.$('.switch-toggle input:not([id="' + c + '"]):checked').length;
+    if (b) {
+        t__s(c)
+    } else {}
+    setTimeout(function() {
+        t__wi_p.t__vm_l(d)
+    }, 300)
+});
 $(document).on("click", function(b) {
     if ($(b.target).attr("class") && $(b.target).attr("class").indexOf("select2") === 0) {} else {
         if (t__wi_p.$("aside select") && t__wi_p.$("aside select").length > 0 && t__wi_p.$("aside select").hasClass("select2-hidden-accessible")) {

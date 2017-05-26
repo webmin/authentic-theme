@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -607,7 +607,7 @@ sub print_search
 {
     if ( -r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'} ) {
         print
-'<li class="menu-container"><form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
+'<li class="menu-container search-form-container"><form id="webmin_search_form" action="webmin_search.cgi" target="page" role="search">'
           . "\n";
         print '<div class="form-group">' . "\n";
         if ( $t_uri_virtualmin != -1 ) {
@@ -1123,7 +1123,10 @@ sub get_sysinfo_vars
 
         # Build version response message
         if ( &Version::Compare::version_compare( $remote_version, $installed_version ) == 1 ) {
-            my $git_version_remote = index( $remote_version, '-git-' ) != -1;
+            my $git_version_remote  = index( $remote_version, '-git-' ) != -1;
+            my $remote_version_tag  = $remote_version;
+            my @_remote_version_tag = split /-/, $remote_version_tag;
+            $remote_version_tag = $_remote_version_tag[0];
             $authentic_theme_version =
                 '<a href="https://github.com/qooob/authentic-theme" target="_blank">'
               . $Atext{'theme_name'} . '</a> '
@@ -1152,7 +1155,7 @@ sub get_sysinfo_vars
               . '" class="btn btn-xxs btn-warning'
               . ( $git_version_remote ? ' hidden' : '' )
               . '" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/'
-              . $remote_version
+              . $remote_version_tag
               . '/authentic-theme-'
               . $remote_version
               . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>'
@@ -3019,7 +3022,9 @@ sub get_xhr_request
 
         }
         elsif ( $in{'xhr-encoding_convert'} eq '1' ) {
-            switch_to_remote_user();
+            if ( $get_user_level ne '1' ) {
+                switch_to_remote_user();
+            }
             my $data;
             use Encode qw( encode decode );
             eval {
@@ -3062,7 +3067,7 @@ sub get_xhr_request
                     backquote_logged(
                              "yes | $usermin_root/authentic-theme/theme-update.sh -$version_type -no-restart");
                 }
-                my $tversion = ( theme_git_version(1) ? theme_git_version(1) : theme_version('version') );
+                my $tversion = ( theme_git_version(1) ? theme_git_version(1) : theme_version('full') );
                 @update_rs = {
                                "success" => ( $usermin
                                               ? Atext( 'theme_git_patch_update_success_message2', $tversion )

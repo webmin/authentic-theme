@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -10,7 +10,7 @@ do "authentic-theme/authentic-lib.pm";
 
 !foreign_available("webmin") && error( $Atext{'theme_error_access_not_root'} );
 
-&ui_print_header( $in{'file'}, $Atext{'settings_right_theme_logos_title'}, undef );
+&ui_print_header( $in{'file'}, $Atext{'settings_right_theme_logos_title'}, undef, undef, undef, 1 );
 
 print '' . &Atext('settings_right_logos_title') . '
             <p></p>';

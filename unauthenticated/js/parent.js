@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -1442,7 +1442,11 @@ if (!!settings_button_tooltip) {
     $("body").tooltip({
         selector: 'li[data-toggle="tooltip"], li > a[data-toggle="tooltip"].menu-exclude-link, label[data-toggle="tooltip"]',
         container: "body",
-        html: true
+        html: true,
+        delay: {
+            show: 800,
+            hide: 30
+        }
     })
 }
 $("body").on("click", ".user-link.palette-toggle", function(a) {

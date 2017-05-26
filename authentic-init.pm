@@ -1,5 +1,5 @@
 #
-# Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -134,8 +134,10 @@ sub embed_header
 
     if ( $args[3] eq '1' ) {
 
-        my @css = ( 'bootstrap',      'bootstrap.tagsinput', 'datepicker', 'fontawesome-animation',
-                    'jquery.datatables',   'fontbase',   'authentic' );
+        my @css = ( 'bootstrap',         'bootstrap.tagsinput',
+                    'datepicker',        'fontawesome-animation',
+                    'jquery.datatables', 'fontbase',
+                    'authentic' );
 
         my @js = ( 'timeplot',                  'jquery',
                    'jquery.scrollintoview',     'bootbox',
@@ -197,10 +199,10 @@ sub embed_header
                     'nprogress', 'messenger',             'select2',          'fontbase',
                     'authentic' );
 
-        my @js = ( 'jquery',              'bootstrap',  'jquery.scrollbar',
-                   'jquery.autocomplete', 'momentjs',         'favico',     'select2',
-                   'jquery.purl',         'jquery.injectCSS', 'transition', 'nprogress',
-                   'messenger',           'init' );
+        my @js = ( 'jquery',           'bootstrap',  'jquery.scrollbar', 'jquery.autocomplete',
+                   'momentjs',         'favico',     'select2',          'jquery.purl',
+                   'jquery.injectCSS', 'transition', 'nprogress',        'messenger',
+                   'init' );
 
         if ( $args[2] eq 'debug' ) {
             foreach my $css (@css) {
@@ -561,7 +563,7 @@ sub init_vars
     our $t_uri__i = get_env('request_uri');
     our %__settings = ( settings_default(),
                         settings( $config_directory . "/authentic-theme/settings.js", 'settings_' ),
-                        settings( get_tuconfig_file(),                     'settings_' ) );
+                        settings( get_tuconfig_file(),                                'settings_' ) );
     our ( %text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m,
           $t_var_product_m );
 
@@ -605,7 +607,7 @@ sub init_funcs
 sub usermin_available
 {
     my ($_module) = @_;
-    $_module = ( $_module ? '/' . $_module : undef );
+    $_module = ( $_module ? ( $_module eq '__version' ? $_module : ( '/' . $_module ) ) : undef );
     $__usermin_root = $root_directory;
     $__usermin_root =~ s/webmin/usermin/;
     $__usermin_config = $config_directory;
@@ -615,10 +617,11 @@ sub usermin_available
         mkdir( $__usermin_config . '/authentic-theme', 0755 );
     }
 
-    if (    -r $__usermin_root . $_module
+    if ( ( -r $__usermin_root . $_module || $_module eq '__version' )
          && -r $__usermin_root . '/web-lib-funcs.pl' )
     {
-        return 1;
+        my $usermin_version = read_file_lines( $__usermin_config . '/version', 1 )->[0];
+        return ( $_module eq '__version' ? $usermin_version : 1 );
     }
     else {
         return 0;
@@ -1091,15 +1094,23 @@ sub theme_git_version
 sub theme_version
 {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '18.47';
-    my $sh__ln__c___version = '18.48';
+    my $sh__ln__p___version = '18.48';
+    my $sh__ln__c___version = '18.49';
     my $sh__ln__g___version = theme_git_version('uncond');
-    ( ( !$switch ) && ( $sh__ln__c___version =~ s/\.//ig ) );
     (     ( !$switch && $sh__ln__g___version )
        && ( $sh__ln__c___version = $sh__ln__g___version, ( $sh__ln__c___version =~ s/\.|-|git//ig ) ) );
 
     if ( theme_mode() eq 'debug' && !$switch && $sh__ln__g___version ) {
         $sh__ln__c___version .= time();
+    }
+    elsif ( ( !$switch || $switch eq 'full' ) && !$sh__ln__g___version ) {
+        $sh__ln__c___version = read_file_lines( $root_directory . "/authentic-theme/VERSION.txt", 1 )->[0];
+        if ( $switch ne 'full' ) {
+            $sh__ln__c___version =~ s/\.|-//ig;
+            if ( length($sh__ln__c___version) < 5 ) {
+                $sh__ln__c___version .= "0";
+            }
+        }
     }
     return $sh__ln__c___version;
 }

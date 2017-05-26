@@ -1,6 +1,6 @@
 ## Contents
 * [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download (18.48)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.48/authentic-theme-18.48.wbt.gz)
+* [Download (18.49)![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases/download/18.49/authentic-theme-18.49.wbt.gz)
 * [About](#about)
 * [FAQ](#faq)
 * [Troubleshoot](#troubleshoot)
@@ -39,23 +39,23 @@
 #### Recommended modules
 * Installed _Net::SSLeay_ module, to make automatic update notifications work
 
-#### Browser support
+#### Supported browsers
 
-###### ![](https://rostovtsev.ru/pub/media/icons/chrome-16.png) Chrome 24+
+###### ![](https://rostovtsev.ru/pub/media/icons/chrome-16.png) Chrome 58+ (recommended)
 
-###### ![](https://rostovtsev.ru/pub/media/icons/firefox-16.png) Firefox 5+
+###### ![](https://rostovtsev.ru/pub/media/icons/firefox-16.png) Firefox 53+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/opera-16.png) Opera 18+
+###### ![](https://rostovtsev.ru/pub/media/icons/opera-16.png) Opera 45+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/safari-16.png) Safari 6+
+###### ![](https://rostovtsev.ru/pub/media/icons/safari-16.png) Safari 10+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 20+
+###### ![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 40+
 
 
 ### FAQ
 
 #### PGP signature verification
-After adding theme's [_public key_](https://github.com/qooob/authentic-theme/blob/master/THEME.pgp) to your keyring, you can check that the downloaded file that you want to install is original and unmodified, by verifying its signature with running `gpg --verify authentic-theme-18.48.wbt.gz-sig.asc authentic-theme-18.48.wbt.gz` command in the console.
+After adding theme's [_public key_](https://github.com/qooob/authentic-theme/blob/master/THEME.pgp) to your keyring, you can check that the downloaded file that you want to install is original and unmodified, by verifying its signature with running `gpg --verify authentic-theme-18.49.wbt.gz-sig.asc authentic-theme-18.49.wbt.gz` command in the console.
 
 #### How to update _Authentic_ Theme manually?
 Theme can be easily updated manually. Please make sure that you have `git` command installed on your system. Using console, do the following:
@@ -112,7 +112,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 #### Translations
 * [Richard van Laak](https://github.com/Rvanlaak) (Dutch)
-* [Kjetil Elde](https://github.com/w00p) (Norwegian)
+* Stein-Aksel Basma, [Kjetil Elde](https://github.com/w00p) (Norwegian)
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
 * [Kay Marquardt](https://github.com/gnadelwartz), [Michael Keck](https://github.com/mkkeck) (German)
 * [Silviu-Ionut Radu](https://github.com/sealview) (Romanian)

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -101,6 +101,12 @@ if ( $get_user_level eq '0' || $get_user_level eq '4' ) {
 
         # Webmin version
         &print_table_row( &Atext('body_webmin'), $webmin_version, 'sysinfo_webmin_version' );
+
+        # Usermin version
+        my $usermin_version = usermin_available('__version');
+        if ($usermin_version) {
+          print_table_row( &Atext('body_usermin'), $usermin_version, 'sysinfo_usermin_version' );
+        }
 
         # Virtualmin version
         if ($virtualmin_version) {
@@ -236,6 +242,12 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
 
     # Webmin version
     &print_table_row( &Atext('body_webmin'), get_webmin_version(), 'sysinfo_webmin_version' );
+
+    # Usermin version
+    my $usermin_version = usermin_available('__version');
+    if ($usermin_version) {
+      print_table_row( &Atext('body_usermin'), $usermin_version, 'sysinfo_usermin_version' );
+    }
 
     # Print Virtualmin version
     if ($has_virtualmin) {

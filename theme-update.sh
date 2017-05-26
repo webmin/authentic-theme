@@ -14,9 +14,9 @@ CURRENT=$PWD
 clear
 
 if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
-    echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script"
-    echo "Usage:  ./`basename $0` { [-beta] | [-release] | [-release:number] }"
-    exit 0
+  echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script"
+  echo "Usage:  ./`basename $0` { [-beta] | [-release] | [-release:number] }"
+  exit 0
 fi
 
 # Ask user to confirm update operation
@@ -39,11 +39,22 @@ else
       if [[ "$1" == *"-release"* ]]; then
         if [[ "$1" == *":"* ]] && [[ "$1" != *"latest"* ]]; then
           RRELEASE=${1##*:}
+          PRRELEASE="--branch ${RRELEASE} --quiet"
+          PRRELEASETAG=${1##*:}
         else
           RRELEASE=`curl -s -L https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt`
+          DEV=$(curl -s --head -w %{http_code} https://raw.githubusercontent.com/qooob/authentic-theme/master/version -o /dev/null)
+          if [[ "$DEV" == "404" ]]; then
+            PRRELEASE="--quiet"
+            PRRELEASETAG=$RRELEASE
+          else
+            PRRELEASE="--branch ${RRELEASE:0:5} --quiet"
+            PRRELEASETAG=${RRELEASE:0:5}
+          fi
         fi
-        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $RRELEASE (https://github.com/qooob/authentic-theme)..."
-        RS="$(git clone --depth 1 --branch $RRELEASE -q https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme" 2>&1)"
+
+        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $PRRELEASETAG (https://github.com/qooob/authentic-theme)..."
+        RS="$(git clone --depth 1 $PRRELEASE https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme" 2>&1)"
         if [[ "$RS" == *"ould not find remote branch"* ]]; then
           ERROR="Release ${RRELEASE} doesn't exist. "
         fi
@@ -85,6 +96,7 @@ else
           fi
         fi
       else
+
         # Post fail commands
         rm -rf "$DIR/.~authentic-theme"
         echo -e "\e[49;0;31;82m${ERROR}Updating Authentic Theme, failed.\e[0m"

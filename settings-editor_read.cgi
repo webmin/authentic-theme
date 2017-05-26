@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+# Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -16,7 +16,7 @@ my @files = ( $config_directory . '/authentic-theme/styles.css',
               $config_directory . '/authentic-theme/favorites.json',
               $config_directory . '/authentic-theme/custom-lang' );
 $in{'file'} = $files[0] if ( !$in{'file'} );
-&ui_print_header( $in{'file'}, $Atext{'settings_right_theme_extensions_title'}, undef );
+&ui_print_header( $in{'file'}, $Atext{'settings_right_theme_extensions_title'}, undef, undef, undef, 1 );
 print '' . &Atext('settings_right_extensions_title') . '
             <p></p>';
 print "<form class=\"margined-bottom-3\">\n";

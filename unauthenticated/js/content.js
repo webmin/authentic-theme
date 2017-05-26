@@ -1,5 +1,5 @@
 /*!
- * Authentic Theme 18.48 (https://github.com/qooob/authentic-theme)
+ * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
@@ -187,8 +187,7 @@ function f__s__init() {
     t__wi_p.sortable(a, {
         items: ":not(.favorites-title)",
         forcePlaceholderSize: false
-    }).bind("sortupdate", function() {
-        console.log("sortend");
+    }).on("sortupdate", function() {
         f__u()
     })
 }
@@ -774,7 +773,11 @@ $("body").tooltip({
     selector: '[data-toggle="tooltip"], [data-toggle="virtualmin-license"], .panel-body td a',
     container: "body",
     placement: "auto top",
-    html: true
+    html: true,
+    delay: {
+        show: 800,
+        hide: 30
+    }
 });
 $.each($("div.barchart"), function() {
     var d = $(this).find('img[src*="red.gif"]'),
@@ -1349,7 +1352,7 @@ var $___remove_theme_version = localStorage.getItem($hostname + "-sysinfo_authen
 if ($__remove_theme_version && $__remove_theme_version.indexOf("git") > -1) {
     $__remove_theme_version = parseFloat($__remove_theme_version).toFixed(2)
 }
-var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + $__remove_theme_version + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
+var $__theme_link_upd = "https://github.com/qooob/authentic-theme/releases/download/" + ($__remove_theme_version.split("-")[0]) + "/authentic-theme-" + $__remove_theme_version + ".wbt.gz";
 if ($current_page_full && $current_page_full.indexOf("/webmin/edit_themes.cgi") > -1 && t__wi_p.location.search == "?updating-webmin-theme") {
     setTimeout(function() {
         $iframe = t__wi_p.$('iframe[name="page"]').contents();
@@ -1666,6 +1669,7 @@ f__lnk_t_btn(["/virtual-server/", "/virtual-server/index.cgi", "/virtual-server/
 f__lnk_t_btn(["/quota/", "/quota/index.cgi"], ".table tbody td.td_tag", 'a[href*="activate.cgi"][href*="&active=3"]', "btn btn-warning btn-xxs vertical-align-top margined-top-2", "fa-ban");
 f__lnk_t_btn(["/quota/", "/quota/index.cgi"], ".table tbody td.td_tag", 'a[href*="activate.cgi"][href*="&active=0"]', "btn btn-success btn-xxs vertical-align-top margined-top-2", "fa-check-circle-o");
 f__lnk_t_btn(["/virtualmin-google-analytics/", "/virtualmin-google-analytics/index.cgi"], ".table tbody td.td_tag", 'a[href*="edit.cgi"]', "btn btn-warning btn-xxs vertical-align-top margined-top-2", "fa-pencil-square");
+f__lnk_t_btn(["/apache/", "/apache/index.cgi"], ".table tbody tr td:last-child", "a.ui_link", "btn btn-transparent btn-link-bordered btn-xxs vertical-align-top margined-top-2", "fa-external-link");
 if ($('body[class*="status"]').length && $__source_file == "edit_mon.cgi" || $current_page_full == $_____link_full + "/virtual-server/list_sched.cgi" || $current_page_full == $_____link_full + "/ldap-server/edit_schema.cgi" || $current_page_full == $_____link_full + "/software/list_pack.cgi" || $current_page_full == $_____link_full + "/mailboxes/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/view_mail.cgi" || $current_page_full == $_____link_full + "/mailbox/list_folders.cgi" || $current_page_full == $_____link_full + "/phpini/" || $current_page_full == $_____link_full + "/phpini/index.cgi" || $current_page_full == $_____link_full + "/fsdump/" || $current_page_full == $_____link_full + "/fsdump/index.cgi" || $current_page_full == $_____link_full + "/fdisk/" || $current_page_full == $_____link_full + "/fdisk/index.cgi" || $current_page_full == $_____link_full + "/virtualmin-awstats/" || $current_page_full == $_____link_full + "/virtualmin-awstats/index.cgi" || $current_page_full == $_____link_full + "/syslog/" || $current_page_full == $_____link_full + "/syslog/index.cgi") {
     $.each($('tr td:last-child:contains("|")'), function() {
         if ($current_page_full == $_____link_full + "/virtual-server/list_sched.cgi") {
@@ -1906,7 +1910,11 @@ $.each($table_header_links, function() {
         }).remove();
         $(this).tooltip({
             container: "body",
-            placement: "auto top"
+            placement: "auto top",
+            delay: {
+                show: 800,
+                hide: 30
+            }
         });
         if ((($current_directory == $_____link + "apache/" || $current_directory == $_____link + "proftpd/") && ($(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1)) || $(this).parent("td").find("a") && $(this).parent("td").find("a").length == 1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1) {
             if (($(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href").indexOf("config.cgi") > -1) && $("body").attr("class") && $("body").attr("class").indexOf($g__o__f_m) > -1) {
@@ -3407,12 +3415,16 @@ $("body").on("click", ".ui_form_end_submit:not(.disabled), .page_footer_submit:n
     if ($(this).hasClass("page_footer_submit")) {
         a = 1000
     } else {
-        if ($(this).parents('form[action="fetch.cgi"]').length) {
+        if ($(this).parents('form[action="fetch.cgi"]').length || $(this).parents('form[action="download.cgi"]').length) {
             a = 1000;
             b = 1
         }
     }
     f__mgk_sp($(this), false, a, b)
+}).on("submit", 'form[action="fetch.cgi"], form[action="download.cgi"]', function() {
+    setTimeout(function() {
+        __lre()
+    }, 1000)
 });
 $(".dataTable .ui_checked_checkbox").parent("tr").parent("tbody").prev("thead").find("th:first-child").addClass("opacity-0 pointer-events-none");
 $("table tr.thead td").addClass("tdhead");
@@ -4034,6 +4046,26 @@ $.each($(".gl-icon-container"), function(a, b) {
         $(this).find("a:first").prepend('<i class="fa fa-fw fa-edit text-semi-dark text-dark-hoverd gl-icon-edit"></i>')
     }
 });
+if (is__mf("virtual-server", "index.cgi")) {
+    $("body").on("click", 'a[href*="edit_domain.cgi"], a[href*="list_users.cgi"], a[href*="list_aliases.cgi"]', function(b) {
+        var d = URI.parseQuery(URI($(this).attr("href")).query())["dom"],
+            c = t__wi_p.$('select[name="dom"]'),
+            a = c.val();
+        if (d != a) {
+            t__wi_p.t__vm_l(d)
+        }
+    })
+}
+if (is__mf("server-manager", "index.cgi")) {
+    $("body").on("click", 'a[href*="edit_serv.cgi"], a[href*="mass_update_form.cgi"]', function(b) {
+        var d = URI.parseQuery(URI($(this).attr("href")).query())["id"],
+            c = t__wi_p.$('select[name="sid"]'),
+            a = c.val();
+        if (d != a) {
+            t__wi_p.t__cm_l(d)
+        }
+    })
+}
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {
         return
