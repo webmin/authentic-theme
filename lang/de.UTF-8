@@ -182,26 +182,26 @@ settings_sysinfo_link_mini=Link Dashboard als Knopf anzeigen
 settings_leftmenu_singlelink_icons=Links im Navigations Menü als Symbol anzeigen
 
 settings_right_page_defaults_title=Standard Titel
-settings_right_default_tab_webmin=Standard Tab nach Anmelden in Webmin
-settings_right_default_tab_usermin=Standard Tab nach Anmelden in Usermin
-settings_right_virtualmin_default=Standard Tab für Virtualmin
-settings_right_cloudmin_default=Standard Tab für Cloudmin
+settings_right_default_tab_webmin=Standard Kategorie nach Anmelden in Webmin
+settings_right_default_tab_usermin=Standard Kategorie nach Anmelden in Usermin
+settings_right_virtualmin_default=Standard Kategorie für Virtualmin
+settings_right_cloudmin_default=Standard Kategorie für Cloudmin
 
 settings_leftmenu_vm_installscripts=Link <kbd>Installations Scripte</kbd> in Virtualmin anzeigen
 settings_leftmenu_vm_webpages=Link <kbd>Bearbeite Web Seiten</kbd> in Virtualmin anzeigen
 settings_leftmenu_vm_backup_amazon=Link <kbd>Amazon S3 Buckets</kbd> in Virtualmin anzeigen
 
 settings_right_clear_local_cache=Lösche Zwischenspeicher
-settings_right_notification_slider_options_title=Optionen für seitlichen Schieber
-settings_side_slider_fixed=Schieber immer ananzeigen
-settings_side_slider_palette=Farbpalette für Schieber
-settings_hotkey_toggle_slider=Schnellzugriffs Taste für Schieber
+settings_right_notification_slider_options_title=Optionen für schwebende Benachrichtigungen
+settings_side_slider_fixed=Schwebende Benachrichtigungen immer ananzeigen
+settings_side_slider_palette=Farbpalette für schwebende Benachrichtigungen
+settings_hotkey_toggle_slider=Schnellzugriffs Taste für schwebende Benachrichtigungen
 settings_window_replace_timestamps=Erlaube Datum ersetzen
 settings_window_replaced_timestamp_format_short=Kurzes Datums Format
 settings_window_replaced_timestamp_format_full=Langes Datums Format
-settings_window_replaced_timestamps_options_description=Wählen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur für entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, müssen sie als Modul Entwickler den Conatinern zur Datumsanzeige die Atribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis Schieber</i>. Standardmäßig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gewählten Sprache in Webmin/Usermin abhängig.
+settings_window_replaced_timestamps_options_description=Wählen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur für entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, müssen sie als Modul Entwickler den Conatinern zur Datumsanzeige die Atribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis schwebende Benachrichtigungen</i>. Standardmäßig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gewählten Sprache in Webmin/Usermin abhängig.
 
-settings_side_slider_enabled=Schieber einschalten
+settings_side_slider_enabled=Schwebende Benachrichtigungen einschalten
 settings_leftmenu_user_html=HTML Schnipsel anzeigen
 settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation agezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
 
@@ -293,7 +293,7 @@ theme_xhred_notifications_firewall_danger_message=Es scheint das <strong>ConfigS
 theme_xhred_notifications_firewall_warning=Firewall Warnung
 
 #17.50
-settings_force_default_tab=Erzwinge Standard Tab für Webmin
+settings_force_default_tab=Erzwinge Standard Kategorie für Webmin
 settings_force_default_tab_description=Mit dieser Einstellung wird der Standard Inhalt des Tabs ebenfalls neu geladen. Achtung! Es ist nicht möglich den gewpnschten TAB über die URL anzuwählen, jegliche URL wird ignoriert.
 
 settings_grayscale_level_navigation=Graustufen Filter
@@ -550,7 +550,7 @@ theme_xhred_server_process_running=Server Vorgang noch nicht abgeschlossen! Sind
 #18.03
 settings_global_options_title=Globale Einstellungen
 settings_global_passgen_format=Passwort Generator
-settings_global_passgen_format_description=Setze Länge und die zu verwendende Zeichen für das zu generierende Passwort. Der erste Wert ist die Länge des Passworts, gefolgt von <code>|</code> als Trennzeichen. Als nächstes folgen die zu verwendeden Zeichen, hier können Ziffern<code>0-9</code>, Buchstaben <code>a-z</code> und/oder <code>A-Z</code> und Sonderzeichen <code>#</code> angegeben werden. Jede dieser Angaben kann alleine oder als kommasepariert Liste eingetragen werden. Der Stanrdardwwert ist <code>12|a-z,A-Z,0-9,#</code>, d.h. das generierte Passwort ist 12 zeichen lang und besteht aus Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen.
+settings_global_passgen_format_description=Einstellung für Länge und der für das zu generierende Passwort zu verwendenden Zeichen. Der Stanrdardwwert ist <code>12|a-z,A-Z,0-9,#</code>, d.h. das generierte Passwort ist 12 Zeichen lang und besteht aus Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen. Erklärung: Die Zahl legt die Länge des Passworts fest. Nach dem Trennzeichen <code>|</code> folgen, getrennt durch Kommata, die für das Passwort zu verwendenden Zeichen: Ziffern <code>0-9</code>, Kleinbuchstaben <code>a-z</code>, GROSSBUCHSTABEN <code>A-Z</code> und Sonderzeichen <code>#</code>. Jede dieser Angaben kann einzeln oder als komma-separierte Liste verwendet werden. 
 theme_xhred_password_generator_new=Neues Passwort erzeugen<br> (In Zwischenablage)
 theme_xhred_password_generator_new_success=Erzeugtes Passwort %password wurde in Zwischenablage kopiert.
 
@@ -687,10 +687,10 @@ theme_xhred_global_resolved_issues=Gelöste Probleme in %value Release
 theme_force_upgrade=Erzwinge Design Update
 theme_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
 theme_force_upgrade_stable=Installiere aktuelle Release Version (stable)
-theme_xhred_source_encoding=Quellen Codierung
+theme_xhred_source_encoding=Quellen Enkodierung
 theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Design Updates.
-theme_xhred_encoding_manually_set=Codierung händisch ändern
-theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Codierung geändert werden kann.
+theme_xhred_encoding_manually_set=Enkodierung händisch ändern
+theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Enkodierung geändert werden kann.
 
 
 #18.49
@@ -707,7 +707,7 @@ theme_xhred_filemanager_save_to_refresh_content=Datei muss gespeichert werden, d
 theme_xhred_filemanager_save_to_refresh_content_proc=Datei Inhalt aktualisieren.
 theme_xhred_global_dark=Dunkel
 theme_xhred_global_light=Hell
-theme_xhred_global_minimize=Minimize
-theme_xhred_global_maximize=Maximize
-theme_xhred_global_normalize=Normalize
-theme_xhred_global_set_encoding=Set encoding
+theme_xhred_global_minimize=Minimieren
+theme_xhred_global_maximize=Maximieren
+theme_xhred_global_normalize=Normal
+theme_xhred_global_set_encoding=Enkodierung setzen
