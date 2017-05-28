@@ -29,7 +29,7 @@ body_upsec=$1 verfügbare Updates, davon $2 Sicherheits-Updates
 body_upsec1=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
 body_upsec2=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
 body_upsec3=$1 Paket Updates verfügbar, davon $2 Sicherheits-Updates
-body_uptime=System-BetriebszeitSt
+body_uptime=System-Betriebszeit
 body_used=$1 gesamt / $2 genutzt
 body_used_and_free=$1 gesamt / $2 freien / $3 genutzt
 body_usermin=Usermin-Version
@@ -193,7 +193,7 @@ settings_leftmenu_vm_backup_amazon=Link <kbd>Amazon S3 Buckets</kbd> in Virtualm
 
 settings_right_clear_local_cache=Lösche Zwischenspeicher
 settings_right_notification_slider_options_title=Optionen für schwebende Benachrichtigungen
-settings_side_slider_fixed=schwebende Benachrichtigungen immer ananzeigen
+settings_side_slider_fixed=Schwebende Benachrichtigungen immer ananzeigen
 settings_side_slider_palette=Farbpalette für schwebende Benachrichtigungen
 settings_hotkey_toggle_slider=Schnellzugriffs Taste für schwebende Benachrichtigungen
 settings_window_replace_timestamps=Erlaube Datum ersetzen
@@ -201,7 +201,7 @@ settings_window_replaced_timestamp_format_short=Kurzes Datums Format
 settings_window_replaced_timestamp_format_full=Langes Datums Format
 settings_window_replaced_timestamps_options_description=Wählen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur für entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, müssen sie als Modul Entwickler den Conatinern zur Datumsanzeige die Atribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis schwebende Benachrichtigungen</i>. Standardmäßig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gewählten Sprache in Webmin/Usermin abhängig.
 
-settings_side_slider_enabled=schwebende Benachrichtigungen einschalten
+settings_side_slider_enabled=Schwebende Benachrichtigungen einschalten
 settings_leftmenu_user_html=HTML Schnipsel anzeigen
 settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation agezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
 
