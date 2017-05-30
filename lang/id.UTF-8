@@ -1,0 +1,724 @@
+body_cp=CPU
+body_cpu=Rata-rata beban CPU
+body_cpuinfo=Informasi prosesor
+body_cputemps=Suhu CPU
+body_cputype=$5, $8 core
+body_disk=Ruang disk lokal
+body_driveerr=$1 error!
+body_drivefailed=Pemeriksaan SMART gagal!
+body_drivetemps=Suhu drive
+body_firewall=Versi firewall
+body_header0=Informasi Sistem
+body_header1=Informasi akun
+body_host=Nama host sistem
+body_kernel=Kernel dan CPU
+body_kernelon=$1 $2 pada $3
+body_load=$1 (1 men) $2 (5 men) $3 (15 men)
+body_os=Sistem operasi
+body_procs=Proses berjalan
+body_real=Memori nyata
+body_time=Waktu sistem
+body_updates=Pembaruan paket
+body_updays=$1 hari, $2 jam, $3 menit
+body_uphours=$1 jam, $2 menit
+body_upmins=$1 menit
+body_upneed=$1 pembaruan paket tersedia
+body_upneed1=$1 pembaruan paket tersedia
+body_upok=Semua paket sudah yang paling baru
+body_upsec=$1 pembaruan paket tersedia, $2 di antaranya merupakan pembaruan keamanan
+body_upsec1=$1 pembaruan paket tersedia, $2 di antaranya merupakan pembaruan keamanan
+body_upsec2=$1 pembaruan paket tersedia, $2 di antaranya merupakan pembaruan keamanan
+body_upsec3=$1 pembaruan paket tersedia, $2 di antaranya merupakan pembaruan keamanan
+body_uptime=Sistem uptime
+body_used=$1 total / $2 digunakan
+body_used_and_free=$1 total / $2 bebas / $3 digunakan
+body_usermin=Versi Usermin
+body_virt=Memori virtual
+body_webmin=Versi Webmin
+
+left_favorites=Favorit
+left_favorites_no=Belum ada item favorit yang ditambahkan...
+left_feedback=Kirim umpan balik
+left_home=Informasi sistem
+left_others=Lainnya
+left_refresh_modules=Muat ulang modul
+left_search=Cari
+left_statistics=Statistik Sistem
+
+login_danger=Bahaya!
+login_message=Anda harus memasukkan nama pengguna dan kata sandi untuk masuk ke server
+login_pass=Kata sandi
+login_save=Ingat aku
+login_signin=Masuk
+login_success=Berhasil!
+login_token=Token
+login_user=Nama pengguna
+login_warning=Peringatan!
+
+right_aliases=Server alias
+right_bw=Penggunaan bandwidth dan batasan
+right_dom=Nama server Anda
+right_faliases=Alias surel
+right_fdbs=Basisdata
+right_fdoms=Virtual Servers
+right_from=Masuk dari
+right_fusers2=Pengguna FTP
+right_fusers=Pengguna Mail/FTP
+right_fvm2=Mesin Virtual
+right_fweb=Website Virtual
+right_licenceheader_vm2=Lisensi Cloudmin
+right_login=Masuk sebagai
+right_not=Belum terpasang
+right_of=$1 dari $2
+right_quota=Penggunaan Disk dan kuota
+right_reselip=(Pengecer $1)
+right_sharedip=(IP bersama)
+right_slcheck=Periksa ulang lisensi Cloudmin
+right_subs=Sub-server
+right_virtdocs2=Dokumentasi tambahan
+right_virtualmin=Versi Virtualmin
+right_vlcheck=Periksa ulang lisensi Virtualmin
+right_vm2=Versi Cloudmin
+
+session_failed=Gagal masuk. Silakan coba lagi.
+session_logout=Berhasil keluar. Gunakan formulir berikut untuk masuk kembali.
+session_timed_out=Sesi berakhir setalah tidak aktif selama $1 menit.
+session_twofailed=Otentikasi dua faktor gagal: $1
+
+
+
+
+
+
+
+
+
+
+settings_right_options=Pilihan
+settings_right_restore_defaults=Pulihkan default
+settings_right_restored=Dipulihkan
+settings_right_restoring=Memulihkan
+settings_right_saved=Tersimpan
+settings_right_saving=Menyimpan
+
+settings_right_theme_extensions=Ekstensi tema
+settings_right_theme_extensions_title=Ekstensi tema
+settings_right_file_edit=Sunting berkas ekstensi:
+settings_right_extensions_title=Desain ekstensi tema, memungkinkan Anda untuk memanipulasi bagian tertentu pada antarmuka dengan mudah. Ada kemungkinan untuk mengakses keduanya <em>CSS</em> Dan <em>JavaScript</em>, dengan menulis ekstensi <em>styles</em>/<em>scripts</em>. Berikut merupakan contoh polosnya, dibuat untuk membantu Anda memahami ide dasar aplikasinya. Misalnya, untuk mengganti warna latar belakang, tambahkan style berikut ke ekstensi CSS: <code>body {background-color: Gainsboro}</code>. Menggunakan JavaScript, untuk mengganti lebar tombol kirim, tambahkan kode berikut ke ekstensi JavaScript: <code>$('button[type="submit"]').animate({width: "100%"}, 1000)</code>. Akan tetapi, pada prakteknya, ini akan menjadi lebih rumit dari hal tersebut.
+
+settings_right_theme_logos=Logo tema
+settings_right_theme_logos_title=Logo tema
+settings_right_logos_title=Logo tema dapat dengan mudah diatur di sini, untuk pengguna terotentikasi dan tidak terotentikasi. Ukuran logo direkomendasikan adalah <kbd>180x90</kbd> dan hanya format <kbd>.png</kbd> yang didukung, untuk menyediakan transparansi alpha. Setelah logo diatur, jika diperlukan, Anda dapat memanipulasinya dengan <a href="/settings-editor_read.cgi"><em>CSS</em></a> dan <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em>JavaScript</em></a> yang dapat diperluas, mengaksesnya dengan nama class-nya, yang mana masing-masing <code>._logo</code> dan <code>._logo_welcome</code> untuk tipe <em>terotentikasi</em> dan <em>tidak terotentikasi</em>.
+settings_right_logo_authenticated_users=Logo untuk pengguna terotentikasi
+settings_right_logo_unauthenticated_users=Logo untuk pengguna tidak terotentikasi
+
+settings_right_current_theme=Tema saat ini
+settings_right_title=Halaman ini memungkinkan Anda untuk mengonfigurasi pilihan untuk <a href="https://github.com/qooob/authentic-theme" target="_blank">Tema Authentic</a>. Pengaturan aan disimpan saat tema diperbarui.
+settings_right_theme_left_configuration_title=Konfigurasi Tema Authentic
+settings_right_theme_left_extensions_title=Penyunting Esktensi Tema Authentic
+settings_right_theme_left_logo_title=Kontrol Logo Tema Authentic
+settings_right_theme_configurable_options_title=Pilihan yang dapat dikonfigurasi untuk tema Authentic
+
+
+settings_right_window_options_title=Pilihan jendela
+settings_right_navigation_menu_title=Pilihan menu navigasi
+settings_right_table_options_title=Pilihan tabel
+settings_security_title=Security Alerts options
+settings_security_description=Peringatan keamanan memungkinkan Anda mengatur surel notifikasi ketuka terjadi suatu event. (Perintah <code>mail</code> pada Linux diperlukan agar fitur ini dapat bekerja)<br class="lh0">Format: <code>Pesan|Judul|Daftar pengguna/surel dipisahkan dengan koma|Daftar IPv4/IPv6 yang diabaikan dipisahkan dengan koma</code><br class="lh0">Pengunaan: <code>%3 peringatan berhasil masuk untuk pengguna %1 dari %2|%3 peringatan berhasil masuk|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Keluaran: <code>Dari: root, Ke: root, Judul: Peringatan berhasil masuk Webmin, Pesan: Peringatan berhasil masuk Webmin untuk pengguna root ari 2.3.4.5</code>
+settings_right_hotkey_options_title=Pilihan Hotkey
+settings_right_sysinfo_page_options_title=Laman pilihan Informasi Sistem
+
+settings_right_hotkey_custom_options_description=Tautan khusus memungkinkan Anda untuk menggunakan digit antara <code>1</code> hingga <code>9</code> untuk mengakses dengan cepat <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code> dapat diambil dari konten frame laman yang sedang dibuka, dengan membaca sumbernya. <code>URL</code> tidak menggunakan garis miring di depannya dan tidak memilik awalan, ini penting. Misalnya, untuk berpindah ke Apache dengan cepat, atur field <code>tautan khusus 1</code> dengan <code>apache.</code> Jika modifier hotkey default diatur ke <code>Alt,</code> dengan meng-klik <code>Alt+1</code>, akan membuka modul Apache Anda
+settings_hotkey_custom_1=Tautan khusus <code>1</code>
+settings_hotkey_custom_2=Tautan khusus <code>2</code>
+settings_hotkey_custom_3=Tautan khusus <code>3</code>
+settings_hotkey_custom_4=Tautan khusus <code>4</code>
+settings_hotkey_custom_5=Tautan khusus <code>5</code>
+settings_hotkey_custom_6=Tautan khusus <code>6</code>
+settings_hotkey_custom_7=Tautan khusus <code>7</code>
+settings_hotkey_custom_8=Tautan khusus <code>8</code>
+settings_hotkey_custom_9=Tautan khusus <code>9</code>
+
+settings_navigation_color=Palet warna menu navigasi
+settings_background_color=Palet warna laman konten
+settings_animation_left=Aktifkan animasi pada menu navigasi
+settings_animation_tabs=Aktifkan animasi pada tab
+settings_loader_top=Aktifkan progress loader laman pada bagian atas layar
+settings_loader_left=Aktifkan spinner untuk menu navigasi
+settings_right_reload=Muat konten laman default
+settings_right_reload_description=Ketika berpindah tab, konten laman frame kanan dimuat ulang. Jangan pertahankan frame kanan saat ini tetap terbuka dan muat ulang dengan default?
+
+settings_right_hide_table_icons=Sembunyikan tabel ikon untuk frame kanan
+settings_right_hide_table_icons_description=Sepenuhnya hapus ikon dari tabel laman konten dan tampilkan tautan murni dengan chevron yang tepat
+settings_right_small_table_icons=Ikon tabel kecil
+settings_right_small_table_icons_description=Gantikan ikon tabel ukuran standar dengan yang kecil dan ikon tampilan link menggunakan tooltip
+settings_right_animate_table_icons=Animasikan ikon tabel pada fokus
+settings_right_grayscaled_table_icons=Abu-abu-kan ikon tabel dan hanya membawa warna pada fokus
+
+settings_right_iconize_header_links=Ganti tautan header tabel dengan ikon
+settings_right_iconize_header_links_description=Pilih apakah akan mengganti gaya lama tautan tabel header dengan ikon atau tetap menggunakan gaya lama tautan teks
+
+settings_window_autoscroll=Otomatis menggulung jendela
+settings_window_autoscroll_description=Gulung otomatis jendela ke bawah, saat halaman dikumpulkan dari sisi server. Spinner akan otomatis disembunyikan pada fitur ini yang dipicu. Ditujukan mouse-scroll yang dilakukan oleh pengguna, akan membuat autoscroll stop; Untuk me-restart, mouse-scroll ganda, berada di bagian paling bawah halaman.
+
+settings_leftmenu_section_hide_refresh_modules=Sembunyikantautan modul refresh
+settings_leftmenu_section_hide_unused_modules=Sembunyikan bagian modul yang tidak terpakai
+settings_favorites=Tampilkan tombol favorit
+settings_leftmenu_button_language=Tampilkan tombol bahasa
+settings_leftmenu_button_refresh=Tampilkan tombol muat ulang
+
+settings_theme_options_button=Tampilkan tombol pengaturan tema
+
+settings_hotkeys_active=Aktifkan penggunaan hotkey
+settings_hotkey_toggle_modifier=Pengubah hotkey
+settings_hotkey_toggle_key_webmin=Hotkey untuk Webmin
+settings_hotkey_toggle_key_virtualmin=Hotkey untuk Virtualmin
+settings_hotkey_toggle_key_cloudmin=Hotkey untuk Cloudmin
+settings_hotkey_toggle_key_usermin=Hotkey untuk Usermin
+settings_hotkey_toggle_key_webmail=Hotkey untuk Mail
+settings_hotkey_sysinfo=Hotkey untuk dashboard
+settings_hotkey_shell=Hotkey untuk shell
+settings_hotkey_favorites=Hotkey untuk favorit
+settings_hotkey_focus_search=Hotkey untuk kotak pencarian
+settings_hotkey_reload=Hotkey halaman yang dimuat ulang
+
+settings_side_slider_background_refresh_time=Kehabisan waktu untuk memperbarui informasi di latar belakang
+settings_side_slider_background_refresh_time_description=Atur batasan waktu untuk memperbarui slider notifikasi pada panggilan di latar belakang. Nilai yang dimaksud adalah dalam menit. Waktu minimal yang direkomendasikan adalah <code>1</code> menit. Secara default ditetapkan <code>5</code> menit. Nilai desimal juga dapat digunakan.
+settings_sysinfo_easypie_charts=Tampilkan grafik
+settings_sysinfo_theme_updates=Periksa untuk pembaruan Tema Authentic
+settings_sysinfo_csf_updates=Periksa untuk pembaruan ConfigServer Security & Firewall
+settings_sysinfo_drive_status_on_new_line=Perlihatkan status CPU dan drives masing-masing pada tiap baris
+settings_sysinfo_expand_all_accordions=Buat semua akordeon terkembang
+settings_sysinfo_link_mini=Tampilkan tautan informasi sistem sebagai tombol
+settings_leftmenu_singlelink_icons=Tampilkan ikon untuk tautan tunggal pada menu navigasi
+
+settings_right_page_defaults_title=Halaman default
+settings_right_default_tab_webmin=Tab default setelah masuk ke Webmin
+settings_right_default_tab_usermin=Tab default setelah masuk ke Usermin
+settings_right_virtualmin_default=Halaman default untuk Virtualmin
+settings_right_cloudmin_default=Halaman default untuk Cloudmin
+
+settings_leftmenu_vm_installscripts=Tampilkan skrip instalasi pada Virtualmin
+settings_leftmenu_vm_webpages=Tampilkan tautan penyunting laman web di Virtualmin
+settings_leftmenu_vm_backup_amazon=Tampilkan tautan Amazon S3 buckets pada Virtualmin
+
+settings_right_clear_local_cache=Kosongkan cache
+settings_right_notification_slider_options_title=Pilihan slider samping
+settings_side_slider_fixed=Pertahankan slider selalu terlihat
+settings_side_slider_palette=Palet slider
+settings_hotkey_toggle_slider=Hotkey untuk slider
+settings_window_replace_timestamps=Aktifkan penggantian tanggal
+settings_window_replaced_timestamp_format_short=Format tanggal/waktu pendek
+settings_window_replaced_timestamp_format_full=format tanggal/waktu lengkap
+settings_window_replaced_timestamps_options_description=Tweak pengaturan waktu/tanggal untuk mengatur keluaran yang diinginkan untuk menampilkan tanggal secara penuh atau pendek <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='Opsi ini tidak memiliki efek global dan hanya diaktifkan jika pemicu khusus digunakan oleh pengembang modul. Setiap pengembang modul dapat menambahkan atribut  `data-convertible-timestamp-full="unix-timestamp"` atau  `data-convertible-timestamp-short="unix-timestamp"` ke wadah untuk menampilkan tanggal yang ditentukan oleh pengguna dengan mudah.'></sup> Pilihan built-in ini berpengaruh pada halama <i>Pemberitahuan Slider</i> dan <i>Informasi Sistem</i> (pada baris <i>Waktu sistem</i>). Secara default, format lengkap sama dengan <code>LLLL</code> dan singkatnya adalah <code>L, LTS</code>. Keluaran waktu berbeda untuk lokasi yang berbeda. Locale didasarkan pada pengaturan bahasa Webmin
+
+settings_side_slider_enabled=Aktifkan slider
+settings_leftmenu_user_html=Tampilkan cuplikan HTML
+settings_leftmenu_user_html_description=Teks yang ditetapkan pengguna atau kode HTML akan disuntikkan ke bagian bawah menu navigasi. Ini dapat digunakan untuk tujuan identifikasi. Misalnya, untuk membuat nama host Anda secara eksplisit, Anda dapat menambahkan kolom  <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+
+
+theme_changelog=Catatan perubahan
+theme_conference=Konferensi Tema
+theme_development_support=Dukungan Pengembangan
+theme_donate=Donasi
+theme_download=Unduh
+theme_name=Tema Authentic
+theme_update=Pembaruan
+theme_force_update=Paksa perbarui
+theme_update_available=Rilis terkini yang tersedia
+theme_update_notice=Pemberitahuan Pembaruan
+theme_version=Versi tema
+
+
+# Version 17.40
+theme_global_error=Kesalahan
+theme_global_warning=Peringatan
+theme_global_success=Sukses
+theme_global_info=Informasi
+sysinfo_system_status_warning=Agar <strong>Informasi Sistem</strong> ditampilkan, Anda harus mengaktifkan modul <em>Status Sistem</em> di pengaturan pengguna.
+settings_leftmenu_section_hide_vm_and_cm_links=Sembunyikan tautan modul yang digukung dari menu navigasi
+settings_leftmenu_user_html_only_for_administrator=Tampilkan cuplikan HTML hanya untuk administrator
+theme_sysinfo_wmdocs=Dokumentasi Webmin
+theme_sysinfo_vmdocs=Dokumentasi Virtualmin
+theme_sysinfo_cmdocs=Dokumentasi Cloudmin
+theme_fileformat_css=CSS
+theme_fileformat_json=JSON
+theme_fileformat_js=Javascript
+theme_fileformat_plain_text=Teks polos
+
+theme_xhred_titles_wm=Webmin
+theme_xhred_titles_um=Usermin
+theme_xhred_titles_dashboard=Dasbor
+theme_xhred_titles_mail=Surel
+theme_xhred_titles_vm=Virtualmin
+theme_xhred_titles_cm=Cloudmin
+theme_xhred_titles_thirdlane=Thirdlane
+
+theme_xhred_global_please_wait=Harap tunggu...
+theme_xhred_filemanager_copying_selected=Menyalin yang dipilih.
+theme_xhred_filemanager_cutting_selected=Memotong yang dipilih.
+theme_xhred_filemanager_pasting_selected=Menempelkan dari papan klip.
+theme_xhred_filemanager_unpacking_archive=Membongkar berkas yang dipilih.
+theme_xhred_filemanager_deleting_selected=Menghapus berkas yang dipilih.
+theme_xhred_filemanager_renaming_selected=Mengganti nama berkas yang dipilih.
+theme_xhred_filemanager_creating_directory=Membuat direktori
+theme_xhred_filemanager_creating_file=Membuat berkas
+theme_xhred_filemanager_downloading_from=Mengunduh dari
+theme_xhred_filemanager_setting_permissions=Menyetel izin ke <strong><em>%value</em></strong> pada berkas yang dipilih.
+theme_xhred_filemanager_changing_ownership=Mengganti kepemilikan <strong><em>%value</em></strong> pada berkas yang dipilih.
+theme_xhred_filemanager_compressing_selected=Mengompres yang dipiliih di latar belakang.
+theme_xhred_filemanager_refreshing=Menyegarkan konten direktori.
+theme_xhred_filemanager_copying_successful=Berhasil menyalin ke papan klip.
+theme_xhred_filemanager_cutting_successful=Berhasil memotong ke papan klip.
+theme_xhred_filemanager_pasting_successful=Berhasil menempel dari papan klip.
+theme_xhred_filemanager_bookmark_success=Direktori <strong><em>%value</em></strong> telah berhasil ditambahkan ke markah Anda.
+theme_xhred_filemanager_searching=Mencari <em>`%value`</em> kecocokan nama berkas/direktori.
+theme_xhred_filemanager_search_founds=Ditemukan kecocokan <strong>%value</strong>.
+theme_xhred_filemanager_search_found=Ditemukan <strong>1</strong> kecocokan.
+theme_xhred_filemanager_search_no_matches=Tidak ada yang ditemukan.
+theme_xhred_filemanager_nothing_is_selected=Tidak ada yang dipilih!
+theme_xhred_filemanager_saving_file=Berkas `<strong><em>%value</em></strong>` sedang didimpan.
+theme_xhred_filemanager_file_saved=Berkas `<strong><em>%value</em></strong>` telah berhasil disimpan.
+theme_xhred_filemanager_not_editable=Tidak dapat menyunting tipe yang dipilih.
+theme_xhred_filemanager_not_decompressable=Tidak dapat membongkar jenis berkas ini.
+theme_xhred_filemanager_no_selection_to_copy=Tidak ada direktori/berkas yang akan disalin.
+theme_xhred_filemanager_no_selection_to_cut=Tidak ada direktori/berkas yang akan dipotong.
+theme_xhred_filemanager_empty_clipboard=Papan klip kosong.
+
+theme_xhred_filemanager_successful_extraction=Ekstraksi berkas terpilih berhasil.
+theme_xhred_filemanager_successful_deletion=Berhasil menghapus.
+theme_xhred_filemanager_successful_permissions=Hak akses telah berhasil diubah.
+theme_xhred_filemanager_successful_ownership=Kepemilikan telah berhasil diubah.
+theme_xhred_filemanager_successful_compression=Kompresi telah berhasil.
+theme_xhred_filemanager_successful_directory_creation=Direktori `<strong>%value</strong>` berhasil dibuat.
+theme_xhred_filemanager_successful_file_creation=Berkas `<strong>%value</strong>` telah berhasil dibuat.
+
+theme_xhred_notifications_packages_updates=Pembaruan paket
+theme_xhred_notifications_theme_update=Pembaruan Tema
+theme_xhred_notifications_theme_update_message=Versi baru <em>%v</em> dari <strong>Tema Authentic</strong> tersedia. Silakan diperbarui.
+theme_xhred_notifications_firewall_update=Pembaruan Firewall
+theme_xhred_notifications_firewall_update_message=Versi terbaru <em>%v</em> dari <strong>ConfigServer Server Security and Firewall</strong> tersedia. Silakan diperbarui.
+
+theme_xhred_notifications_firewall_danger=Firewall Berbahaya
+theme_xhred_notifications_firewall_danger_message=Sepertinya <strong>ConfigServer Server Security and Firewall</strong> <span class="badge badge-danger">tidak berjalan</span> atau telah dihentikan! Jangan biarkan server Anda terpapar, periksa pengaturan firewall (%v)
+
+theme_xhred_notifications_firewall_warning=Peringatan Firewall
+
+#17.50
+settings_force_default_tab=Paksa tab default ke Webmin
+settings_force_default_tab_description=Fitur ini akan memaksa tab pada jendela reload juga. PERINGATAN! Tidak mungkin memilih tab yang diinginkan menggunakan URL, karena setiap kueri lokasi akan diabaikan.
+
+settings_grayscale_level_navigation=Filter abu-abu
+settings_grayscale_level_navigation_description=Nilai default/saat ini <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=Filter Sepia
+settings_sepia_level_navigation_description=Nilai default/saat ini <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturate_level_navigation=Filter Saturasi
+settings_saturate_level_navigation_description=Nilai default/saat ini <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_hue_level_navigation=Filter Hue-rotate
+settings_hue_level_navigation_description=Nilai default/saat ini <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_invert_level_navigation=Balikkan filter
+settings_invert_level_navigation_description=Nilai default/saat ini <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=Filter kecerahan
+settings_brightness_level_navigation_description=Nilai default/saat ini <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=Filter kontras
+settings_contrast_level_navigation_description=Nilai default/saat ini <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
+settings_grayscale_level_content=Filter abu-abu
+settings_grayscale_level_content_description=Nilai default/saat ini <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
+settings_saturate_level_content=Filter Saturasi
+settings_saturate_level_content_description=Nilai default/saat ini <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
+settings_hue_level_content=Filter Hue-rotate
+settings_hue_level_content_description=Nilai default/saat ini <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
+
+settings_cm_view_palette=Penambil palet warna
+settings_cm_editor_palette=Penyunting palet warna
+
+theme_xhred_filemanager_context_select_all=Pilih Semua
+theme_xhred_filemanager_context_select_invert=Balikkan pilihan
+theme_xhred_filemanager_context_refresh=Segarkan
+theme_xhred_filemanager_context_newfile=Buat berkas baru
+theme_xhred_filemanager_context_newfoder=Buat direktori baru
+theme_xhred_filemanager_context_copy=Salin
+theme_xhred_filemanager_context_cut=Potong
+theme_xhred_filemanager_context_paste=Tempel
+theme_xhred_filemanager_context_chmod=Ubah hak akses
+theme_xhred_filemanager_context_chown=Ubah kepemilikan
+
+#17.51
+theme_xhred_filemanager_context_new=Baru
+theme_xhred_filemanager_context_newarchive=Buat arsip baru
+theme_xhred_filemanager_context_delete=Hapus
+theme_xhred_filemanager_context_rename=Ganti nama
+theme_xhred_filemanager_context_edit=Sunting
+theme_xhred_filemanager_context_extract=Ekstrak
+theme_xhred_filemanager_context_goto=Buka lokasi item
+theme_xhred_filemanager_context_properties=Properti
+theme_xhred_filemanager_context_search=Cari
+
+#17.52
+theme_xhred_filemanager_context_deselect_all=Batalkan semua pilihan
+theme_xhred_filemanager_context_upload=Unggah ke direktori saat ini
+theme_xhred_filemanager_context_download=Unduh dari URL
+
+#17.53
+theme_settings_virtualmin=Virtualmin Virtual Server
+theme_settings_cloudmin=Cloudmin Managed Systems
+settings_right_thirdparties_options_title=Pilihan modul pihak ketiga
+theme_xhred_filemanager_context_calculate_size=Hitung ukuran spasi
+theme_xhred_filemanager_context_bookmarks=Bookmarks
+theme_xhred_filemanager_context_bookmark_current=Bookmark lokasi yang sedang dibuka
+theme_xhred_filemanager_context_transfer=Kirim
+
+#17.54
+theme_xhred_filemanager_title_symlink_target=Target tautan
+
+#17.60
+right_unlimited=Tak terbatas
+settings_leftmenu_width=Lebar yang lebih disuka
+settings_leftmenu_width_description=Lebar default/saat ini <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=Balikkan keluaran switch
+settings_switch_rdisplay_description=Pilihan ini memungkinkan Anda mengatur urutan yang berbeda untuk tombol kiri atas. Setepah mengubah pilihan ini, muat ulang halaman secara lengkap, hal ini diperlukan untuk menerapkan pengaturan baru.
+
+#17.63
+theme_xhred_filemanager_context_calculate_selected_size=Hitung ukurang yang terpilih
+theme_xhred_filemanager_selected_entries=Terpilih: %value entries
+theme_xhred_filemanager_manual_path=Masukkan lokasi secara manual
+
+theme_xhred_datatable_semptytable=Data tidak tersedia di dalam tabel
+theme_xhred_datatable_sinfo=Menampilkan _START_ ke _END_ dari _TOTAL_ entri
+theme_xhred_datatable_sinfoempty=Menampilkan 0 ke 0 dari 0 entri
+theme_xhred_datatable_slengthmenu=Tampilkan _MENU_ entri
+theme_xhred_datatable_sloadingrecords=Memuat...
+theme_xhred_datatable_sprocessing=Memroses...
+theme_xhred_datatable_szerorecords=Tidak ditemukan catatan yang cocok
+
+#17.64
+theme_xhred_filemanager_file_edit_but_not_saved=Berkas telah disunting namun belum disimpan.
+theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Apa yang ingin Anda lakukan?
+theme_xhred_global_save=Simpan
+theme_xhred_global_save_and_close=Simpan dan Tutup
+theme_xhred_global_close_without_saving=Tutup tanpa menyimpan
+theme_xhred_global_continue_editing=Lanjutkan menyunting
+theme_xhred_filemanager_context_download_file=Mengunduh
+
+#17.65
+settings_sysinfo_easypie_charts_width=Lebar grafik
+settings_sysinfo_easypie_charts_scale=Skala panjang grafik
+
+#17.72
+settings_window_exclusion_description=Tetapkan daftar modul yang akan dikecualikan dari mekanisme rendering buit-in. Fitur ini akan memberikan dukungan untuk modul usang/sukarela, yang gagal ditampilkan dengan benar. Untuk menonaktifkan rendering untuk modul tertentu Anda harus menentukan namanya. Nama modul didasarkan pada nama direktori dan dapat ditemukan saat mengarahkan kursor pada tautan di menu navigasi. Mungkin juga untuk melewatkan tanda bintang tunggal <kbd>*</kbd> untuk menonaktifkan rendering built-in untuk semua modul.
+settings_window_exclusion_list=Modul yang dikecualikan
+
+#17.80
+right_return_theme_options=pilihan tema
+theme_xhred_datatable_semptydirectory=Direktori kosong
+theme_xhred_filemanager_context_clipboard=Salin lokasi ke papan klip
+theme_xhred_global_warning=Peringatan
+theme_xhred_global_close=Tutup
+theme_xhred_encoding_warning=Anda terdeteksi menggunakan set karakter non-unicodem yang mana tidak disarankan. Karakter aneh <tt>Â</tt> mungkin muncul dalam mode penyunting teks dan/atau masalah pengkodean lainnya yang akan terjadi. <br><br>Ubah bahasa di <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i>Konfigurasi %prod</strong></a> ke <code>%lang.UTF-8</code> dan pastikan, peramban Anda mendeteksi dengan benar. <span class="_hidden_"><br><br>Perhatikan, bahwa modul built-in <em>Webmin</em>, dinamai <em>Ubah Bahasa dan Tema</em> dapat menggantikan pengaturan global.</span>
+
+theme_xhred_filemanager__no_bookmarks=Tidak ada bookmarks tersimpan
+theme_xhred_filemanager_unbookmark_success=Direktori <strong><em>%value</em></strong> telah berhasil dihapus dari bookmark Anda.
+theme_xhred_filemanager_bookmark=Bookmark direktori saat ini
+theme_xhred_filemanager_unbookmark=Hapus bookmark direktori saat ini
+theme_xhred_filemanager_move_into_self=Anda tidak dapat memindahkan direktori ke dalam dirinya sendiri! Direktori tujuan ada di dalam direktori sumber.
+theme_xhred_filemanager_pasting_and_copying_1=Sumber yang terpilih telah berhasil ditempel dengan nama baru.
+theme_xhred_filemanager_pasting_and_copying_2=Sumber yang terpilih telah berhasil ditempel dengan nama baru.
+theme_xhred_filemanager_pasting_and_replacing_1=Target yang ada telah berhasil diganti dengan yang baru.
+theme_xhred_filemanager_pasting_and_replacing_2=Target yang ada telah berhasil diganti dengan yang beru.
+theme_xhred_filemanager_target_conflict_1=Konflik target
+theme_xhred_filemanager_target_conflict_2=Konflik target
+theme_xhred_filemanager_target_conflict_message_1=Target yang ditempelkan sudah ada! Apa yang lebih suka Anda lakukan?
+theme_xhred_filemanager_target_conflict_message_2=Target yang ditempelkan sudah ada! Apa yang lebih suka Anda lakukan?
+theme_xhred_filemanager_target_conflict_replace=Gabungkan dan ganti
+theme_xhred_filemanager_target_conflict_paste=Tempelkan dengan nama baru
+
+theme_xhred_editor_help_title=Penyunting Pintasan Keyboard
+theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Cari/Ganti</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tombol ditekan</th> <th class="head">Perintah</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Cari</td> </tr> <tr><td>Ctrl + H</td> <td>Ganti</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Ganti semua</td> </tr> <tr><td>Ctrl + G</td> <td>Cari berikutnya</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Cari sebelumnya</td> </tr> <tr><td>Alt + G</td> <td>Lompat ke baris</td> </tr> </tbody> </table> <h5><strong>Manipulasi teks</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tombol ditekan</th> <th class="head">Perintah</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Ubah ke huruf besar</td> </tr> <tr><td>Ctrl + KL</td> <td>Ubah ke huruf kecil</td> </tr> </tbody> </table> <h5><strong>Menyunting</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tombol ditekan</th> <th class="head">Perintah</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Spasi</td> <td>Aktifkan pelengkapan otomatis</td> </tr> <tr><td>Ctrl + X</td> <td>Potong baris</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Pindah baris/Seleksi atas</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Pindah baris/seleksi bawah</td> </tr> <tr><td>Ctrl + L</td> <td>Seleksi baris - Ulangi untuk memilih baris berikutnya</td> </tr> <tr><td>Ctrl + D</td> <td>Seleksi kata - Ulangi pilih kejadian lainnya</td> </tr> <tr><td>Ctrl + M</td> <td>Langsung ke tanda kurung tutup. Ulangiuntuk melompat ke tanda kurung pembukaan</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Pilih semua isi dari tanda kurung saat ini</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Hapus baris</td> </tr> <tr><td>Ctrl + KK</td> <td>Hapus dari kursor ke ujung baris</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Hapus dari kursor ke awal baris</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Gandakan baris</td> </tr> <tr><td>Ctrl + J</td> <td>Gabungkan bari bawah ke akhir baris saat ini</td> </tr> <tr><td>Ctrl + /</td> <td>Beri komentar/hapus komentar di baris saat ini</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Blok komentar yang sedang dipilih</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, atau ulangi perintah pintasan keyboard terakhir</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Tempel dan indentasi dengan benar</td> </tr> <tr><td>Ctrl + Space</td> <td>Pilih saran pelengkapan otomatis berikutnya</td> </tr> <tr><td>Ctrl + U</td> <td>Undo lembut; Melompat ke perubahan terakir Anda sebelum mengganti perubahan saat diulang</td> </tr> </tbody> </table>
+
+theme_xhred_filemanager_hide_toolbar=Sembunyikan toolbar
+theme_xhred_filemanager_hide_actions=Sembunyikan kolom aksi
+theme_xhred_filemanager_hovered_toolbar=Aktifkan dropdown pada toolbar pada saat mouse hover
+theme_xhred_filemanager_context_delete_selected=Hapus yang dipilih
+
+#17.83
+theme_xhred_database_adding_new_row=Menambahkan baris baru
+theme_xhred_database_editing_row=Menyunting baris terpilih
+theme_xhred_database_editing_rows=Menyunting baris terpilih
+theme_xhred_database_adding_new_row_data=Atur data
+
+#17.84
+theme_xhred_datatable_filter=Saring
+
+theme_xhred_global_update=Perbarui
+theme_xhred_global_update_and_return=Perbarui dan kembali
+theme_xhred_global_update_and_close=Perbarui dan tutup
+theme_xhred_global_back=Kembali
+theme_xhred_global_cancel=Batal
+
+theme_xhred_database_add_row_successful=Baris baru telah berhasil ditambahkan
+theme_xhred_database_edit_row_successful=Baris terpilih telah berhasil diperbarui
+theme_xhred_database_edit_rows_successful=Baris terpilih telah berhasil diperbarui
+theme_xhred_database_edit_row_delete_successful=Baris terpilih telah berhasil dihapus
+theme_xhred_database_edit_rows_delete_successful=Berhasil menghapus baris terpilih <em>%n</em>
+theme_xhred_database_edit_field_delete_successful=Field terpilih telah berhasil dihapus
+theme_xhred_database_edit_fields_delete_successful=Berhasil menghapus baris terpilih <em>%n</em>
+theme_xhred_database_edit_selected_row=Menyunting baris terpilih
+theme_xhred_database_edit_selected_rows=Menyunting baris terpilih
+theme_xhred_database_add_new_row=Tambahkan baris
+theme_xhred_database_delete_selected_row=Hapus baris terpilih
+theme_xhred_database_delete_selected_rows=Hapus baris terpilih
+theme_xhred_database_delete_selected_field=Hapus field terpilih
+theme_xhred_database_delete_selected_fields=Hapus field terpilih
+theme_xhred_database_object_selected_delete=Hapus objek terpilih
+theme_xhred_database_objects_selected_delete=Hapus objek terpilih
+theme_xhred_database_db_selected_drop=Buang basisdata terpilih
+theme_xhred_database_dbs_selected_drop=Buang basisdata terpilih
+theme_xhred_database_edit_but_not_saved=Data tabel telah disunting namun tidak disimpan.
+
+theme_xhred_global_no_such_command=Tampaknya <tt>%cmd</tt> yang dapat dieksekusi tidak terinstal atau tidak dijalankan pada sistem.
+
+theme_xhred_global_notice=Pemberitahuan
+
+theme_xhred_updates_disabled_notice=Anda yakin tidak mengaktifkan pemberitahuan untuk pembaruan <em>Tema Authentic</em>? <br><br>Mengaktifkan fitur ini di <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i>Konfigurasi Tema</strong></a> akan membantu Anda memperbaharui ke versi terbaru dalam satu klik segera setelah keluar.
+
+
+#18.00
+theme_xhred_global_file=Berkas
+theme_xhred_global_directory=Direktori
+theme_xhred_global_no_target=Target tidak ada atau tidak dapat diakses
+theme_xhred_global_error_code=Kode error
+theme_xhred_global_on=Hidup
+theme_xhred_global_off=Mati
+theme_xhred_global_all=Semua
+theme_xhred_global_none=Tidak ada
+theme_xhred_global_yes=Ya
+theme_xhred_global_no=Tidak
+
+theme_xhred_filemanager_new_tab=Tambahkan Tab Baru (Ctrl+Space)
+theme_xhred_datatable_no_search_results=<span class="h5">Tidak menemukan hasil</span><br>Coba pencarian lain
+
+theme_xhred_filemanager_buffer_error=Gagal menyisipkan ke buffer - izin ditolak.
+
+filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` sudah ada di `<strong><tt>$2</tt></strong>`
+filemanager_create_object_denied=Tidak dapat membuat $3 `<strong><em>$1</em></strong>` di `<strong><tt>$2</tt></strong>` - izin ditolak.
+
+filemanager_paste_warning=Tidak dapat menyisipkan ke target. Ada kemungkinan bahwa objek yang diminta bisa saja diganti <em>diganti namanya, dipindahkan</em> atau <em>dihapus</em> saat/sebelum menempelkan. Penyebab lain yang mungkin adalah bahwa tujuan tidak dapat ditulis. Mungkin sebaiknya periksa atribut objek tersebut.
+
+theme_xhred_filemanager_delete_warning=Penghapusan telahberhasil dilakukan namun tidak untuk semua objek. Ada kemungkinan bahwa objjek yang diminta bisa saja  <em>diganti nama</em> atau <em>dipindah</em> sebelum dihapus. Izin yang dibatasi (atribut) adalah kemungkinan penyebab lainnya. Pesan kesalahan:
+
+
+filemanager_rename_exists=$3 dengan nama `<strong><em>$1</em></strong>` telah ada di `<strong><tt>$2</tt></strong>`
+filemanager_rename_denied=Tidak dapat mengganti nama $3. Ini mungkin terjadi karena sumber $3 telah dihapus atau karena izin yang dibatasi.
+
+theme_xhred_filemanager_successful_rename=Telah berhasil mengganti nama `<strong><em><s>%from</s></em></strong>` ke `<strong><em>%to</em></strong>`.
+
+filemanager_global_info_total1=Total: $1 berkas dan $2 direktori
+filemanager_global_info_total2=Total: $1 berkas dan $2 direktori
+filemanager_global_info_total3=Total: $1 berkas dan $2 direktori
+filemanager_global_info_total4=Total: $1 berkas dan $2 direktori
+
+theme_xhred_filemanager_selected_entry=Dipilih: entri %value
+
+theme_xhred_filemanager_search_query=Query mask
+theme_xhred_filemanager_search_match=Temukan dalam hasil
+theme_xhred_filemanager_search_replace=Ganti dalam hasil
+
+theme_xhred_global_find=Cari
+theme_xhred_global_replace=Ganti
+
+theme_xhred_filemanager_searching_matching=Pencarian untuk <em>`%value`</em> berkas/direktori yang cocok, berisi teks <em>`%text`</em>.
+theme_xhred_filemanager_searching_replacing=Mengganti <em>`%text`</em> yang cocok dengan <em>`%replace`</em> dalam berkas yang mengandung <em>`%value`</em>.
+
+theme_xhred_filemanager_search_replaced_multi=Ditemukan dan diganti dengan berkas <strong>%value</strong>.
+theme_xhred_filemanager_search_replaced=Ditemukan dan diganti dengan <strong>1</strong> berkas.
+
+theme_xhred_filemanager_successful_permissions_with_errors=Izin telah berhasil diubah namun tidak untuk semua objek:
+
+theme_xhred_filemanager_successful_ownership_with_errors=Kepemilikan belum berhasil diubah untuk semua objek:
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=Kepemilikan belum dapat diubah karena kesalahan berikut:
+
+theme_xhred_filemanager_successful_compression_with_errors=Kompresi telah berhasil dengan kesalahan berikut:
+theme_xhred_filemanager_successful_compression_bg=Kompresi telah selesai. Berkas terkompresi <strong>`%file</strong> terletak di direktori <strong>`%path`</strong>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresi telah selesai dengan kesalahan. Berkas terkompresi <strong>`%file</strong> seharusnya terletak di direktori <strong>`%path`</strong>.
+
+theme_xhred_filemanager_settings_notification_type=Tipe notifikasi untuk ditampilkan
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informasi, peringatan dan kesalahan
+theme_xhred_filemanager_settings_notification_type_warn_err=Peringatan dan kesalahan
+theme_xhred_filemanager_settings_notification_type_err=Hanya kesalahan
+
+theme_xhred_filemanager_settings_tabs_remember_state=Pulihkan tab sebelumnya yang digunakan pada saat pertama kali dimuat
+theme_xhred_filemanager_context_open_new_tab=Buka di tab baru
+
+theme_xhred_xsql_fit_content_screen_height=Cocokkan isi tabel basisdata di tinggi layar
+
+theme_xhred_datatable_filter_visible_tables=Saring Tabel Terlihat
+theme_xhred_module_help=Bantuan Modul
+
+theme_xhred_server_process_running=Proses server masih berjalan!? Apakah Anda yakin ingin menavigasi dan tidak memiliki akses ke informasi keluaran? Bahkan jika Anda pergii sekarang prosesnya tidak akan dihentikan.
+
+
+#18.03
+settings_global_options_title=Pilihan Global
+settings_global_passgen_format=Generator kata sandi
+settings_global_passgen_format_description=Tetapkan panjang dan jenis karakter yang digunakan dalam kata kunci yang dihasilkan. Nilai pertama adalah numerik, yaitu panjang kata sandi, diikuti oleh <code>|</code> sebagai pembatas. Selanjutnya adalah tipe, di mana Anda dapat menggunakan angka <code>0-9</code>, huruf <code>a-z</code> dan/atau <code>A-Z</code>, dan karakter khusus <code>#</code>. Semua rangkaian ini dapat digunakan bersama atau secara individu, menggunakan koma sebagai pembatas. Nilai default sama dengan <code>12|a-z,A-Z,0-9,#</code>, yang mewakili kata sandi dengan panjang 12 karakter, berrisi huruf besar, kecil, angka dan karakter khusus.
+theme_xhred_password_generator_new=Ciptakan kata sandi baru<br> (Ke Papan Klip)
+theme_xhred_password_generator_new_success=Kata sandi %password yang baru diciptakan telah berhasil disalin ke papan klip.
+
+
+#18.08
+theme_fileformat_perl=Perl
+theme_fileformat_perl_placeholder=Berkas ini harus diakhiri dengan `1;` agar dapat bekerja dengan baik. (http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl)
+
+
+#18.10
+theme_error_access_not_root=Izin ditolak: Pengguna perlu mengakses modul <em>Konfigurasi Webmin</em> untuk menyunting konfigurasi tema
+
+
+#18.20
+settings_hide_top_loader=Sembunyikan pita kemajuan di atas dan loadernya
+
+
+#18.30
+settings_leftmenu_vm_cm_dropdown_icons=Tampilkan ikon simbolis pada drop-down di Virtualmin/Cloudmin
+settings_font_family=Keluarga fonta
+settings_font_family_description=Di antara semua varian 'fonta' yang ditampilkan <em>Roboto</em> dibawa oleh tema dan ditetapkan sebagai default. Fonta lainnya harus dipasang di komputer lokal agar dapat bekerja. Dengan menggunakan fonta lokal, yang default tidak dimuat, yang akan menghasilkan beban tema yang lebih cepat
+theme_xhred_global_shipped=Dibawa
+theme_xhred_global_available=Tersedia
+theme_xhred_global_not_available=Tidak tersedia
+theme_xhred_global_default=Default
+theme_xhred_global_system_default=Default Sistem
+theme_xhred_global_local_system_default=Default lokal sistem
+theme_xhred_global_stats=Statistik
+theme_xhred_global_notifications=Pemberitahuan
+theme_xhred_global_favorites=Kesukaan
+theme_xhred_global_cpu_load=CPU load
+theme_xhred_notification_none=Tanpa pemberitahuan
+theme_xhred_notification_no_data=Tidak ada data yang dikoleksi
+theme_xhred_notification_no_favorites=Tidak ada data kesukaan
+theme_xhred_global_theme_version=Versi Tema
+
+settings_side_slider_sysinfo_enabled=Tampilkan tab dashboard
+settings_side_slider_notifications_enabled=Tampilkan tab pemberitahuan
+settings_side_slider_favorites_enabled=Tampilkan tab kesukaan
+settings_side_slider_tabs_hotkeys=Enable hotkeys for switching tabs
+settings_side_slider_tabs_hotkeys_description=Anda dapat menggunakan tombol pintas keyboard untuk beralih tab bolak-balik menggunakan <code>Meta+⇧+Tab/Meta+Tab</code> jika opsi global untuk penggunaan hotkey diaktifkan
+settings_show_terminal_link=Tampilkan tombol terminal
+
+theme_xhred_sysinfo_system_monitors=Monitor Sistem
+theme_xhred_sysinfo_server_status=Status Peladen
+theme_xhred_sysinfo_software_versions=Versi Perangkat Lunak
+theme_xhred_sysinfo_recent_logins=Masuk Terbaru
+theme_xhred_sysinfo_vm_package_updates=Pembaruan Paket Virtualmin
+theme_xhred_sysinfo_disk_quotas=Kuota Disk
+theme_xhred_sysinfo_bandwidth_quotas=Kuota Banwidth
+
+left_netdata=Pemantauan Realtime
+settings_leftmenu_netdata=Tampilkan tautan pemantauan realtime Netdata
+settings_leftmenu_netdata_link=Tautan pilihan server Netdata
+
+theme_xhred_filemanager_context_chattr=Ubah atribut
+theme_xhred_filemanager_changing_attributes=Menetapkan atribut ke <strong><em>%value</em></strong> pada berkas yang dipilih.
+theme_xhred_filemanager_successful_attributes_with_errors=Atribut belum berhasil dibuat untuk semua objek:
+theme_xhred_filemanager_successful_attributes=Atribut telah berhasil ditetapkan.
+
+theme_xhred_filemanager_context_chcon=Ubah konteks keamanan
+theme_xhred_filemanager_changing_secontext=Mengubah konteks keamanan menjadi <strong><em>%value</em></strong> pada berkas terpilih.
+theme_xhred_filemanager_successful_secontext_with_errors=Konteks keamanan belum berhasil diubah untuk semua objek:
+theme_xhred_filemanager_successful_secontext=Konteks keamanan telah berhasil diubah.
+
+theme_xhred_global_no_results_found=Tidak ada hasil yang ditemukan
+
+
+#18.40
+theme_new_password_header=Atur kata sandi baru untuk pengguna
+settings_sysinfo_theme_beta_updates=Sertakan versi beta
+login_reset=Pemulihan kata sandi
+theme_xhred_move_top=Pindahkan ke atas
+theme_xhred_move_bottom=Pindahkan ke bawah
+theme_xhred_move_up=Naikkan
+theme_xhred_move_down=Turunkan
+theme_xhred_add_after=Tambahkan setelah
+theme_xhred_add_before=Tambahkan sebelumnya
+settings_button_tooltip=Tampilkan tooltip pada tombol
+settings_show_night_mode_link=Tampilkan palet toggle
+settings_hotkey_toggle_key_night_mode=Hotkey palet untuk beralih gelap/terang
+settings_title=Konfigurasi Tema
+settings_subtitle=Untuk pengguna
+
+theme_tooltip_night_mode=Beralih mode Siang/malam
+theme_tooltip_terminal_link=Terminal
+theme_tooltip_language_link=Bahasa
+theme_tooltip_switch_user=Berganti pengguna
+theme_tooltip_logout=Keluar
+theme_tooltip_edit_user=Sunting pengguna
+
+
+#18.45
+settings_sysinfo_easypie_charts_size=Diameter grafik
+theme_xhred_global_choose=Pilih
+theme_xhred_global_select=Pilih
+theme_xhred_global_ok=OK
+settings_sysinfo_theme_patched_updates=Termasuk versi pathc
+settings_sysinfo_theme_patched_updates_description=Agar opsi ini berhasil, perintah <code>git</code> harus diinstall di sistem Anda
+theme_git_patch_available=Patch terbaru yang tersedia
+theme_git_patch_no_git_message=Untuk menginstal path terbaru langsung dari GitHub Anda harus memastikan bahwa perintah <code>git</code> terinstall.
+theme_git_patch_update_success_message=Pembaruan tema untuk Webmin berhasil. Versi yang terinstall saat ini <tt>$1</tt>. Memuat ulang...
+theme_git_patch_update_success_message2=Pembaruan tema untuk Webmin dan Usermin telah berhasil. Versi yang terinstall saat ini <tt>$1</tt>. Memuat ulang...
+theme_xhred_git_patch_update=Pembaruan tema gagal. Coba gunakan konsol untuk melakukannya secara manual.
+theme_xhred_git_patch_initiated=Pembaruan tema telah diinisiasi.
+theme_xhred_global_prev_page=Kembali satu halaman
+theme_xhred_global_help=Bantuan
+settings_right_soft_updates_page_options_title=Pembaruan perangkat lunak
+theme_xhred_git_compare_changes=Bandingkan perubahan
+theme_xhred_filemanager_link_to_clipboard=Nama tautan simbolis `<strong><em>%value</em></strong>` telah disalin ke papan klip.
+
+
+#18.46
+theme_left_mail_prefs=Preferensi Surel
+theme_left_mail_change_password=Ubah Kata sandi
+theme_left_mail_account_functions=Fungsi Akun
+theme_xhred_global_dir_up=Kembali ke direktori sebelumnya (Backspace)
+theme_xhred_global_module_config=Konfigurasi Modul
+theme_xhred_global_return=Kembali
+theme_xhred_global_return_to_module_index=Kembali ke indeks modul
+
+
+#18.47
+settings_account_info_link_mini=Tampilkan tautan informasi akun sebagai tombol
+theme_xhred_global_complete_changelog=Catatan perubahan lengkap
+theme_xhred_global_beta_version=Versi Beta
+theme_xhred_global_release=Rilis
+theme_xhred_global_released_on=Dirilis pada
+theme_xhred_global_committed_on=Dikomit pada
+theme_xhred_global_resolved_issues=Isu terselesaikan dalam rilis %value
+
+
+#18.48
+theme_force_upgrade=Paksa pembaruan tema
+theme_force_upgrade_beta=Install versi pengembangan terbaru (beta)
+theme_force_upgrade_stable=Install versi rilis terkini (stabil)
+theme_xhred_source_encoding=Sumber encoding
+theme_update_footer=Mohon melaporkan bug ke repositori $1. Ikuti kanal tema $2 untuk pembaruan terkini.
+theme_xhred_encoding_manually_set=Atur encoding secara manual
+theme_xhred_filemanager_save_to_change_encoding=Berkas harus disimpan, agar encoding dapat diubah.
+
+
+#18.49
+theme_xhred_filemanager_user_switch=Beralih ke pengguna (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=Dengan memilih nama pengguna yang tercantum di bawah ini, Anda akan beralih operasi lebih lanjut untuk dilakukan sebagai pengguna ini.
+theme_xhred_filemanager_user_switch_description_back=Untuk kembali ke mode default pilih opsi pertama yang dipilih.
+theme_xhred_filemanager_user_switch_current_user=Pengguna saat ini
+theme_xhred_filemanager_user_switch_option=Secara otomatis beralih ke mode pengguna saat masuk ke direktori home
+theme_xhred_filemanager_editor_align_panels_horizontally=Ratakan panel secara horizontal
+theme_xhred_filemanager_editor_align_panels_vertically=Ratakan panel secara vertikal
+theme_xhred_filemanager_editor_toggle_soft_wrap=Beralih Lipatan Lembut
+theme_xhred_filemanager_editor_refresh_content=Segarkan ulang Konten
+theme_xhred_filemanager_save_to_refresh_content=Berkas harus disimpan, agar kontennya dapat disegarkan.
+theme_xhred_filemanager_save_to_refresh_content_proc=Menyegarkan konten berkas
+theme_xhred_global_dark=Gelap
+theme_xhred_global_light=Cerah
+theme_xhred_global_minimize=Minimalkan
+theme_xhred_global_maximize=Maksimalkan
+theme_xhred_global_normalize=Normalkan
+theme_xhred_global_set_encoding=Atur encoding
