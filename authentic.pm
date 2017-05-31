@@ -1153,6 +1153,7 @@ sub theme_ui_buttons_row
     return
         "<form action='$script' class='ui_buttons_form'>\n"
       . $hiddens
+      . "<table>"
       . "<tr class='ui_buttons_row'> "
       . "<td nowrap width=20% valign=top class=ui_buttons_label>"
       . ( $before ? $before . " " : "" )
@@ -1162,6 +1163,7 @@ sub theme_ui_buttons_row
       . "<td width=80% valign=top class=ui_buttons_value>"
       . $desc
       . "</td></tr>\n"
+      . "</table>\n"
       . "</form>\n";
 }
 
