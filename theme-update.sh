@@ -42,8 +42,8 @@ else
           PRRELEASE="--branch ${RRELEASE} --quiet"
           PRRELEASETAG=${1##*:}
         else
-          RRELEASE=`curl -s -L https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt`
-          DEV=$(curl -s --head -w %{http_code} https://raw.githubusercontent.com/qooob/authentic-theme/master/version -o /dev/null)
+          RRELEASE=`curl -s -L https://raw.githubusercontent.com/qooob/authentic-theme/18/VERSION.txt`
+          DEV=$(curl -s --head -w %{http_code} https://raw.githubusercontent.com/qooob/authentic-theme/18/version -o /dev/null)
           if [[ "$DEV" == "404" ]]; then
             PRRELEASE="--quiet"
             PRRELEASETAG=$RRELEASE

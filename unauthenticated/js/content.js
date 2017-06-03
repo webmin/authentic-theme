@@ -1,7 +1,7 @@
 /*!
  * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
- * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/18/LICENSE)
  */
 ;
 charset_warning();
@@ -1295,7 +1295,7 @@ $("body").on("hide.bs.modal", "#update_notice", function() {
             if (________multi_in_branch) {
                 $modal_h4_first.after('                <a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator" style="margin-top: -28px;">' + ________version_curr_text + '<span class="smaller">-' + lang("theme_xhred_global_release").toLowerCase() + " </span></a>")
             }
-            $modal_h4_first.append('<a data-toggle="tooltip" data-html="true" data-title="<strong>' + lang("theme_xhred_global_complete_changelog") + "</strong><br>" + (lang("theme_xhred_global_released_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>')
+            $modal_h4_first.append('<a data-toggle="tooltip" data-html="true" data-title="<strong>' + lang("theme_xhred_global_complete_changelog") + "</strong><br>" + (lang("theme_xhred_global_released_on") + ": <em>" + __release_date_time) + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/18/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>')
         }
     }
     var h = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
@@ -2162,7 +2162,7 @@ $(".help_popup").on("click", function(f) {
                         l = $(".link-github").text();
                     $(".link-theme").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + n + "</em></a>");
                     $(".link-theme2").replaceWith('<a href="https://github.com/qooob/authentic-theme" target="_blank"><em>' + k + "</em></a>");
-                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + j + "</span></em></a>");
+                    $(".link-changelog").replaceWith('<a href="https://github.com/qooob/authentic-theme/blob/18/CHANGELOG.md" target="_blank" class="label label-default pull-right link-changelog"><em class="fa fa-fw fa-history" style="font-size: 90%">&nbsp;&nbsp;<span class="font-family-default">' + j + "</span></em></a>");
                     $(".link-changelog").detach().appendTo(".at-help .popover-title");
                     $(".link-me").replaceWith('<a href="http://rostovtsev.ru" target="_blank"><em>' + i + "</em></a>");
                     $(".link-donation").replaceWith('<a target="_blank" class="badge fa fa-fw fa-paypal" style="font-size: 11px; background-color: #5bc0de;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;lc=us&amp;business=programming%40rostovtsev%2eru&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"> <span class="font-family-default">' + o + "</span></a>");
@@ -4047,24 +4047,27 @@ $.each($(".gl-icon-container"), function(a, b) {
     }
 });
 if (is__mf("virtual-server", "index.cgi")) {
-    $("body").on("click", 'a[href*="edit_domain.cgi"], a[href*="list_users.cgi"], a[href*="list_aliases.cgi"]', function(b) {
-        var d = URI.parseQuery(URI($(this).attr("href")).query())["dom"],
-            c = t__wi_p.$('select[name="dom"]'),
-            a = c.val();
-        if (d != a) {
-            t__wi_p.t__vm_l(d)
+    $("body").on("click", 'a[href*="edit_domain.cgi"], a[href*="list_users.cgi"], a[href*="list_aliases.cgi"]', function(e) {
+        var g = URI.parseQuery(URI($(this).attr("href")).query())["dom"],
+            h = t__wi_p.$('select[name="dom"]'),
+            f = h.val();
+        if (g != f) {
+            t__wi_p.t__vm_l(g)
         }
     })
 }
 if (is__mf("server-manager", "index.cgi")) {
-    $("body").on("click", 'a[href*="edit_serv.cgi"], a[href*="mass_update_form.cgi"]', function(b) {
-        var d = URI.parseQuery(URI($(this).attr("href")).query())["id"],
-            c = t__wi_p.$('select[name="sid"]'),
-            a = c.val();
-        if (d != a) {
-            t__wi_p.t__cm_l(d)
+    $("body").on("click", 'a[href*="edit_serv.cgi"], a[href*="mass_update_form.cgi"]', function(e) {
+        var g = URI.parseQuery(URI($(this).attr("href")).query())["id"],
+            h = t__wi_p.$('select[name="sid"]'),
+            f = h.val();
+        if (g != f) {
+            t__wi_p.t__cm_l(g)
         }
     })
+}
+if (is__mf("webmin", "refresh_modules.cgi")) {
+    t__wi_p.f__l_reload()
 }
 t___wi.onbeforeunload = function(b) {
     if ($('form[action*="export"]:visible').length || ($__relative_url && $__relative_url.indexOf("software/list_pack.cgi?package=") > -1)) {

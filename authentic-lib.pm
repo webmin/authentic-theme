@@ -1,7 +1,7 @@
 #
 # Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/18/LICENSE)
 #
 
 our ( %in, %text, %config );
@@ -1148,7 +1148,7 @@ sub get_sysinfo_vars
               . ( $git_version_remote ? 'fa-git-pull' : 'fa-refresh' )
               . '">&nbsp;</i>'
               . $Atext{'theme_update'} . '</a>'
-              . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
+              . '<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/18/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $Atext{'theme_changelog'} . '</a>'
               . '<a data-remove-version="'
               . $remote_version
@@ -1932,7 +1932,7 @@ sub get_authentic_version
         # Get remote version if allowed
         http_download( 'raw.githubusercontent.com',
                        '443',
-                       '/qooob/authentic-theme/master/'
+                       '/qooob/authentic-theme/18/'
                          . ( $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true'
                              ? 'VERSION.txt'
                              : 'version'
@@ -1944,7 +1944,7 @@ sub get_authentic_version
 
         # In case there was a release and no Git patches available
         if ( !$remote_version ) {
-            http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
+            http_download( 'raw.githubusercontent.com', '443', '/qooob/authentic-theme/18/VERSION.txt',
                            \$remote_version, \$error, undef, 1, undef, undef, 5 );
         }
 

@@ -1,7 +1,7 @@
 /*!
  * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
- * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/18/LICENSE)
  */
 
 html[data-background-style='nightRider'],
@@ -1906,6 +1906,11 @@ html[data-background-style='nightRider'] form[action='backup_sched.cgi'] table.t
 html[data-background-style='nightRider'] form[action='backup.cgi/backup.tgz'] table.table:nth-child(3) .table-hardcoded tr td.col_value,
 html[data-background-style='nightRider'] form[action='restore.cgi'] table.table:nth-child(3) .table-hardcoded tr td.col_value {
     border: 1px solid rgba(66, 68, 73, .59) !important
+}
+
+html[data-background-style='nightRider'] body[data-uri*="virtual-server/backup_form"] .table-condensed.opener_table_style.opener_table_style_small>tbody>tr._c__op_r>td,
+html[data-background-style='nightRider'] body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small {
+    border: 1px solid #383a3f !important
 }
 
 html[data-background-style='nightRider'] .timeplot-container {

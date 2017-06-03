@@ -3,7 +3,7 @@
 #
 # Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/18/LICENSE)
 #
 
 do "authentic-theme/authentic-lib.pm";
@@ -290,7 +290,7 @@ elsif ( $get_user_level eq '1' || $get_user_level eq '2' ) {
           . ( $git_version_local ? $git_version_local : $installed_version ) . '. '
           . $Atext{'theme_update_available'} . ' '
           . $remote_version
-          . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+          . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/18/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
           . ''
           . $Atext{'theme_changelog'} . '</a>';
     }
@@ -447,7 +447,7 @@ elsif ( $get_user_level eq '3' ) {
           . ( $git_version_local ? $git_version_local : $installed_version ) . '. '
           . $Atext{'theme_update_available'} . ' '
           . $remote_version
-          . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
+          . '&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/18/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
           . ''
           . $Atext{'theme_changelog'} . '</a>';
     }

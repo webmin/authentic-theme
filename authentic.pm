@@ -1,7 +1,7 @@
 #
 # Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
 # Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/18/LICENSE)
 #
 
 do "authentic-theme/authentic-init.pm";
@@ -29,7 +29,7 @@ sub theme_header
       . '" data-default-theme="'
       . $__settings{'settings_navigation_color'}
       . '" data-theme-version="'
-      . (theme_git_version() ? theme_git_version() : theme_version('version'))
+      . ( theme_git_version() ? theme_git_version() : theme_version('version') )
       . '" data-theme-git-version="'
       . theme_git_version('uncond')
       . '" data-level="'
@@ -185,7 +185,8 @@ sub theme_footer
     }
 
     print "</div>\n";
-    if (    get_env('script_name') ne '/session_login.cgi'
+    if (    !@_
+         && get_env('script_name') ne '/session_login.cgi'
          && get_env('script_name') ne '/pam_login.cgi' )
     {
         my $prefix;
@@ -668,7 +669,7 @@ sub theme_ui_yesno_radio
     my ( $name, $value, $yes, $no, $dis ) = @_;
     $yes = 1 if ( !defined($yes) );
     $no  = 0 if ( !defined($no) );
-    if ( $value =~ /^[0-9,.E]+$/ || !$value) {
+    if ( $value =~ /^[0-9,.E]+$/ || !$value ) {
         $value = int($value);
     }
     return ui_radio( $name, $value, [ [ $yes, $text{'yes'} ], [ $no, $text{'no'} ] ], $dis );
@@ -1144,6 +1145,11 @@ sub theme_ui_hidden_table_start
     return $rv;
 }
 
+sub theme_ui_buttons_start
+{
+    return "<table width='100%' class='ui_buttons_table'>\n<tr><td>";
+}
+
 sub theme_ui_buttons_row
 {
     my ( $script, $label, $desc, $hiddens, $after, $before ) = @_;
@@ -1153,6 +1159,7 @@ sub theme_ui_buttons_row
     return
         "<form action='$script' class='ui_buttons_form'>\n"
       . $hiddens
+      . "<table>"
       . "<tr class='ui_buttons_row'> "
       . "<td nowrap width=20% valign=top class=ui_buttons_label>"
       . ( $before ? $before . " " : "" )
@@ -1162,7 +1169,13 @@ sub theme_ui_buttons_row
       . "<td width=80% valign=top class=ui_buttons_value>"
       . $desc
       . "</td></tr>\n"
+      . "</table>\n"
       . "</form>\n";
+}
+
+sub theme_ui_buttons_end
+{
+    return "</td></tr></table>\n";
 }
 
 sub theme_ui_radio_table

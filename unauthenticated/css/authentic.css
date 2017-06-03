@@ -1,7 +1,7 @@
 /*!
  * Authentic Theme 18.49 (https://github.com/qooob/authentic-theme)
  * Copyright 2014-2017 Ilia Rostovtsev <programming@rostovtsev.ru>
- * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/18/LICENSE)
  */
 
 [class^='wbm-']:before,
@@ -9171,6 +9171,31 @@ form[action='save_check.cgi']>b+br {
 
 form[action='delete_jobs.cgi'] {
     margin-top: 6px
+}
+
+body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small .link_hover_effect.btn-tiny.btn-default,
+body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small input {
+    margin-left: 2px !important
+}
+
+body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small {
+    background-color: transparent;
+    border: 1px solid #eee !important
+}
+
+body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small .link_hover_effect_style {
+    background-color: transparent !important;
+    font-size: 13px;
+    padding: 0
+}
+
+body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small span {
+    line-height: 20px !important
+}
+
+body[data-uri*="virtual-server/backup_form"] .table-condensed.opener_table_style.opener_table_style_small>tbody>tr._c__op_r>td {
+    border-bottom: 1px solid #eee !important;
+    line-height: 18px !important
 }
 
 body[class*='proftpd'] form[action*='save'] input[type='submit'] {
