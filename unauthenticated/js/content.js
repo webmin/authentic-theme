@@ -2684,7 +2684,7 @@ if ($current_page_full == $_____link_full + "/cluster-passwd/edit_passwd.cgi") {
         }
     })
 }
-if (t___wi.location.pathname == "/virtual-server/history.cgi" || t___wi.location.pathname == "/server-manager/bwgraph.cgi" || t___wi.location.pathname == "/server-manager/history.cgi" || t___wi.location.pathname == "/server-manager/one_history.cgi") {
+if (t___wi.location.pathname == "/virtual-server/pro/history.cgi" || t___wi.location.pathname == "/server-manager/bwgraph.cgi" || t___wi.location.pathname == "/server-manager/history.cgi" || t___wi.location.pathname == "/server-manager/one_history.cgi") {
     $("body").find("table.ui_form_end_buttons .btn.btn-default.submitter.ui_submit").addClass("btn-success");
     $(".panel-body > table tr td b").each(function(d, c) {
         $(this).addClass("btn btn-success btn-tiny ui_link_replaced")

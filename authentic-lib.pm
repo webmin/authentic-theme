@@ -561,9 +561,9 @@ sub print_sysstat_link
          && ( $t_uri_cloudmin != -1 || $t_uri_virtualmin != -1 ) )
     {
         if ( $t_uri_cloudmin == -1
-             && -d $root_directory . "/virtual-server/timeplot" )
+             && -d $root_directory . "/virtual-server/pro/timeplot" )
         {
-            $link = 'virtual-server';
+            $link = 'virtual-server/pro';
         }
         elsif ( $t_uri_cloudmin != -1
                 && -d $root_directory . "/server-manager/timeplot" )
@@ -663,7 +663,7 @@ sub print_left_menu
             if (    $item->{'type'} eq 'item'
                  && $link ne add_webprefix("/virtual-server/edit_lang.cgi")
                  && $link ne add_webprefix("/virtual-server/edit_lang.cgi")
-                 && $link ne add_webprefix("/virtual-server/history.cgi") )
+                 && $link ne add_webprefix("/virtual-server/pro/history.cgi") )
             {
 
                 # Define an icon for the link/accordion
@@ -740,10 +740,14 @@ sub print_left_menu
                     elsif ( index( $link, '/virtual-server/list_databases.cgi' ) > -1 ) {
                         $icon = '<i class="fa fa-fw fa-database"></i>';
                     }
-                    elsif (    index( $link, '/virtual-server/list_scripts.cgi' ) > -1
-                            || index( $link, '/server-manager/mass_update_form.cgi' ) > -1 )
+                    elsif (index($link, '/virtual-server/list_scripts.cgi') > -1 ||
+                            index($link, '/server-manager/mass_update_form.cgi') > -1)
                     {
-                        $icon = '<i class="fa fa-fw fa-archive"></i>';
+                        $icon = '<i class="fa fa-fw fa-update scaled1"></i>';
+                    }
+                    elsif (index($link, '/filemin/index.cgi') > -1 )
+                    {
+                        $icon = '<i class="fa fa-fw fa-file-manager scaled2"></i>';
                     }
 
                     elsif ( index( $link, '/virtual-server/edit_html.cgi' ) > -1 ) {
@@ -766,6 +770,9 @@ sub print_left_menu
                             || $link =~ /^ftps:\/\// )
                     {
                         $icon = '<i class="fa fa-fw fa-external-link"></i>';
+                    }
+                    elsif ( index( $link, '/servers/link.cgi' ) > -1 ) {
+                        $icon = '<i class="fa fa-fw fa-webmin scaled1_5"></i>';
                     }
 
                 }

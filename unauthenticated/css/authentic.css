@@ -445,6 +445,23 @@ h6,
     padding-right: 10px
 }
 
+#sidebar ul li:not(.user-link) .fa.scaled1 {
+    font-size: 14px;
+    margin-left: -1px
+}
+
+#sidebar ul li:not(.user-link) .fa.scaled1_5 {
+    font-size: 15px;
+    margin-left: -1px;
+    margin-right: -2px
+}
+
+#sidebar ul li:not(.user-link) .fa.scaled2 {
+    font-size: 16px;
+    margin-left: -1px;
+    margin-right: -3px
+}
+
 #sidebar ul li:not(.user-link) .fa.fa-dashboard {
     font-size: 16px;
     margin-right: -4px

@@ -1449,7 +1449,9 @@ function __f____r(h, o, k, e, n) {
                 $("#__f__c__m").css("display", "none");
                 setTimeout(function() {
                     __f___us_a();
-                    typeof sortable == "function" && sortable($(".tabs-top > ul.nav"))
+                    if (typeof sortable == "function") {
+                        sortable($(".tabs-top > ul.nav"))
+                    }
                 }, 10)
             },
             error: function(b) {}
@@ -1571,7 +1573,11 @@ function ___f__tw() {
         } else {
             $(".panel-body").append('			<div>                <div class="tabs-top">                    <ul class="nav nav-tabs">                        <li class="active ui-sortable-handle"><a href="#tab-1" data-toggle="tab"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path data-toggle="tooltip" data-placement="auto top" data-title="/">/</span></a></li>                    </ul>                    <div class="tab-content">                        <div class="tab-pane fade in active" id="tab-1">                        </div>                    </div>                </div>            </div>        ');
             $("#list_form").detach().appendTo("#tab-1");
-            typeof sortable == "function" && sortable($(".tabs-top > ul.nav"), {});
+            if (typeof sortable == "function") {
+                sortable($(".tabs-top > ul.nav")).on("sortupdate", function() {
+                    __f___up__tb_store()
+                })
+            }
             if (config_portable_module_filemanager_remember_tabs && __f___ld__tb_stored_chk()) {
                 __f___ld__tb_stored()
             }
@@ -3268,7 +3274,9 @@ function ___f__tw() {
             __f___up__tb_vis();
             __f___up__tb_store();
             setTimeout(function() {
-                typeof sortable == "function" && sortable($(".tabs-top > ul.nav"))
+                if (typeof sortable == "function") {
+                    sortable($(".tabs-top > ul.nav"))
+                }
             }, 100)
         } else {
             tab___to______delete = f;
@@ -3385,5 +3393,17 @@ t__cm___init(0, 0, 0, 0, 0, 0, 1);
 setTimeout(function() {
     $("." + $__f__rf_s + "").trigger("click");
     t__wi_p.$____loader_block__ = 0;
-    __lre()
+    __lre();
+    setTimeout(function() {
+        var b = $hostname + "-tmp_thirdparty_filemanager_open_tab";
+        if (localStorage.getItem(b)) {
+            var a = decodeURIComponentSafe(decode_html(localStorage.getItem(b)));
+            if ($.inArray(escape_html(a), __f___ld__tb_stored_chk()) === -1) {
+                __f___nt(a, 1)
+            } else {
+                $('span[data-tab-path][data-original-title="' + escape_html(a) + '"]').trigger("click")
+            }
+            localStorage.removeItem(b)
+        }
+    }, 310)
 }, 1200);

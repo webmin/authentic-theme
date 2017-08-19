@@ -522,6 +522,12 @@ $("body").on("click", ".navigation > li .navigation_external_link", function(a) 
     b = $(this);
     window.open(b.attr("href"), "_blank")
 });
+$("aside").on("click", 'a[data-href*="/filemin/index.cgi?"]', function() {
+    if ($t_uri_virtualmin) {
+        var a = decodeURIComponentSafe(decode_html(URI.parseQuery(URI($(this).data("href")).query())["path"]));
+        localStorage.setItem($hostname + "-tmp_thirdparty_filemanager_open_tab", a)
+    }
+});
 $("body").on("click", ".navigation > li:not('.sub-wrapper'):not('.menu-container'):not('.navigation_external')", function(g) {
     g.preventDefault();
     g.stopPropagation();

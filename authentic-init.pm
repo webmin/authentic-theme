@@ -339,7 +339,7 @@ sub embed_styles
 sub embed_pm_scripts
 {
     my $scripts = $config_directory . "/authentic-theme/scripts.pm";
-    if ( -r $scripts ) {
+    if (-r $scripts && -s $scripts) {
         require $scripts;
     }
 }
@@ -541,7 +541,7 @@ sub embed_footer
 
 sub is_st_p
 {
-    return (    index( $t_uri__i, '/virtual-server/history.cgi' ) == -1
+    return (    index( $t_uri__i, '/virtual-server/pro/history.cgi' ) == -1
              && index( $t_uri__i, '/server-manager/bwgraph.cgi' ) == -1
              && index( $t_uri__i, '/server-manager/history.cgi' ) == -1
              && index( $t_uri__i, '/server-manager/one_history.cgi' ) == -1 )
