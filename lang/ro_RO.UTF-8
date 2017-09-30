@@ -1,0 +1,717 @@
+body_cp=Procesor
+body_cpu=Media utilizare Procesor
+body_cpuinfo=Informaţii Procesor
+body_cputemps=Temperaturi Procesoare
+body_cputype=$5, $8 miezuri
+body_disk=Spațiul discului local
+body_driveerr=$1 erori!
+body_drivefailed=Verificarea SMART a eșuat!
+body_drivetemps=Temperaturile discurilor
+body_firewall=Versiunea Firewall
+body_header0=Informații despre Sistem
+body_header1=Informații despre Cont
+body_host=Numele de Host al Sistemului
+body_kernel=Kernel și Procesor
+body_kernelon=$1 $2 pe $3
+body_load=$1 (1 min) $2 (5 min) $3 (15 min)
+body_os=Sistem de Operare
+body_procs=Procese în derulare
+body_real=Memorie reală
+body_time=Timpul Sistemului
+body_updates=Pachete de actializat
+body_updays=$1 zile, $2 ore, $3 minute
+body_uphours=$1 ore, $2 minute
+body_upmins=$1 minute
+body_upneed=Sunt disponibile $1 pachete de actualizat
+body_upneed1=$1 pachet disponibil pentru actualizare
+body_upok=Toate pachetele instalate sunt la zi
+body_upsec=Sunt disponibile $1 pachete de actualizat, din care $2 sunt actualizări de securitate
+body_upsec1=$1 pachete disponibile pentru actualizare, din care $2 este este actualizare de securitate
+body_upsec2=$1 pachet disponibil pentru actualizare, din care $2 sunt actualizări de securitate
+body_upsec3=$1 pachet disponibil pentru actualizare, din care $2 este este actualizare de securitate
+body_uptime=Durata activă a Sistemului
+body_used=$1 total / $2 utilizat
+body_used_and_free=$1 total / $2 liber / $3 utilizat
+body_usermin=Versiunea Usermin
+body_virt=Memorie Virtuală
+body_webmin=Versiunea Webmin
+
+left_favorites=Favorite
+left_favorites_no=Momentan nu au fost adăugate Favorite...
+left_feedback=Trimite Feedback
+left_home=Informații despre Sistem
+left_others=Altele
+left_refresh_modules=Împrospătează Modulele
+left_search=Caută
+left_statistics=Statistici Sistem
+
+login_danger=Pericol!
+login_message=Trebuie să introduci un utilizator şi parolă pentru a te autentifica în Server
+login_pass=Parola
+login_reset=Resetează
+login_save=Ține-mă minte
+login_signin=Intră
+login_success=Suces!
+login_token=Jeton Token
+login_user=Utilizator
+login_warning=Atentie!
+
+right_aliases=Servere alias
+right_bw=Lăţime de bandă folosită şi limita
+right_dom=Numele serverului tău
+right_faliases=Pseudonime Email
+right_fdbs=Baze de date
+right_fdoms=Servere Virtuale
+right_from=Autentificat de la
+right_fusers2=Utilizatori FTP
+right_fusers=Utilizatori Email/FTP
+right_fvm2=Mașini Virtuale
+right_fweb=Site-uri Virtuale
+right_licenceheader_vm2=Licențe Cloudmin
+right_login=Autentificat ca
+right_not=Neinstalat
+right_of=$1 din $2
+right_quota=Disc utilizat și cota
+right_reselip=(Reseller $1)
+right_sharedip=(IP Partajat)
+right_slcheck=Verifică din nou Licența Cloudmin
+right_subs=Sub-servere
+right_virtdocs2=Documente Suplimentare
+right_virtualmin=Versiune Virtualmin
+right_vlcheck=Verifică din nou Licența Virtualmin
+right_vm2=Versiunea Cloudmin
+
+session_failed=Autentificare eșuată. Te rog încearcă din nou.
+session_logout=Decontectare reușită. Utilizați formularul de mai jos pentru re-autentificare.
+session_timed_out=Sesiunea a expirat după $1 minute de inactivitate.
+session_twofailed=Autentificarea cu factor dublu a eșuat: $1
+
+
+
+
+
+
+
+
+
+
+settings_right_options=Opțiuni
+settings_right_restore_defaults=Restaurare setări implicite
+settings_right_restored=Restaurat
+settings_right_restoring=În curs de restaurare
+settings_right_saved=Salvat
+settings_right_saving=În curs de salvare
+
+settings_right_theme_extensions=Extensii pentru temă
+settings_right_theme_extensions_title=Extensiile Temei
+settings_right_file_edit=Editează fișierele temei:
+settings_right_extensions_title=Proiectarea extinsă a Temei, vă permite manipularea cu ușurință a părților vizate din interfață.
+
+settings_right_theme_logos=Logo-urile temei
+settings_right_theme_logos_title=Logo-urile Temei
+settings_right_logos_title=Logo-urile temei pot fi ușor configurate aici, pentru ambele moduri, atât pentru utilizatorii autentificați cât și neautentificați. Dimensiunea recomandată a logo-ului este <kbd>180x90</kbd> pixeli și singurul format acceptat este <kbd>.png</kbd>, pentru a asigura transpatența în mod ALPHA.
+settings_right_logo_authenticated_users=Logo pentru utilizatori autentificați
+settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentificați
+
+settings_right_current_theme=Temă curentă
+settings_right_title=Această pagină îți permite modificarea <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Configurările vor fi înregistrate după Actualizarea Temei.
+settings_right_theme_left_configuration_title=Configurația Authentic Theme
+settings_right_theme_left_extensions_title=Editor de Extensii Authentic Theme
+settings_right_theme_left_logo_title=Administrare Logo Authentic Theme
+settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
+
+
+settings_right_window_options_title=Opțiunile de Fereastră
+settings_right_navigation_menu_title=Opțiunile Meniului de Navigare
+settings_right_table_options_title=Opțiuni pentru Tabele
+settings_security_title=Opțiuni pentru Alerte de Securitate
+settings_security_description=Alertele de securitate vă va lăsa să configurați notificări prin email asupra unor evenimente.<br class="lh0">Format: <code>Mesaj|Subiect|Lista de utilizatori/emailuri separare prin virgulă|Lista IPv4/IPv6 ignorate, separate prin virgulă</code><br class="lh0">Utilizare: <code>%3 alerta autentificare reușită pentru utilizator %1 din %2|%3 alerta autentificare reuşită|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Generat: <code>From: root, To: root, Subject: Webmin alerta autentificare reuşită, Message: Webmin alertă autentificare reuşită pentru utilizator root de la 2.3.4.5</code>
+settings_right_hotkey_options_title=Opțiuni Hotkeys
+settings_right_sysinfo_page_options_title=Opțiuni pagină Informații de Sistem
+
+settings_right_hotkey_custom_options_description=Legăturile personalizate îți dă voie sa folosești cifre de la <code>1</code> la <code>9</code> pentru a accesa orice <code>URL</code> valid Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code>-ul poate fi extras din cardul din dreapta al paginii curente, citindu-i sursa. Este important ca <code>URL</code>-ul să nu aibă slash-uri la început și să nu folosească prefixe. Ca exemplu, pentru a trece rapid la Apache, configurează câmpul <code>legătură personalizată 1</code> <code>/apache/</code>. Dacă tasta pentru hotkey este implicit <code>Alt,</code> făcând click <code>Alt+1</code>, va deschide modulul Apache.
+settings_hotkey_custom_1=Legătură personalizată <code>1</code>
+settings_hotkey_custom_2=Legătură personalizată <code>2</code>
+settings_hotkey_custom_3=Legătură personalizată <code>3</code>
+settings_hotkey_custom_4=Legătură personalizată <code>4</code>
+settings_hotkey_custom_5=Legătură personalizată <code>5</code>
+settings_hotkey_custom_6=Legătură personalizată <code>6</code>
+settings_hotkey_custom_7=Legătură personalizată <code>7</code>
+settings_hotkey_custom_8=Legătură personalizată <code>8</code>
+settings_hotkey_custom_9=Legătură personalizată <code>9</code>
+
+settings_navigation_color=Culoare meniu navigare
+settings_background_color=Culoare pagina conţinut
+settings_animation_left=Activează animația în meniul de navigare
+settings_animation_tabs=Activează animația in taburi
+settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
+settings_loader_left=Activează spinner pentru meniul de navigare
+settings_right_reload=Încarcă pagina cu conținut implicit
+settings_right_reload_description=Când defilezi prin taburi, pagina cu conținut din cadrul din drepta se reîncarcă. Nu păstrezi conținutul paginii deja deschise din cardul din drepta și reîncarci cu conținutul standard?
+
+settings_right_hide_table_icons=Ascunde pictogramele tabelelor din cadrul din dreapta
+settings_right_hide_table_icons_description=Elimină complet pictogramele din tabelele paginii de conținut și afișează doar linkuri cu săgeată la dreapta
+settings_right_small_table_icons=Pictograme mici in tabele
+settings_right_small_table_icons_description=Substituează pictogramele tabelelor de dimensiune standard cu unele mici și afișează linkul pictogramelor folosind chenar cu descriere
+settings_right_animate_table_icons=Animează pictogramele tabelelor la focus pe el
+settings_right_grayscaled_table_icons=Tranformă în scala gri pictogramele tabelelor și colorează-le doar la focus pe el
+
+settings_leftmenu_section_hide_refresh_modules=Ascunde linkul <kbd>Împrospătează Module</kbd>
+settings_leftmenu_section_hide_unused_modules=Ascunde linkul <kbd>Module Neutilizate</kbd>
+settings_favorites=Arată butonul pentru favorite
+settings_leftmenu_button_language=Atată butonul limbi
+settings_leftmenu_button_refresh=Arată butonul reîmprospătare
+
+settings_theme_options_button=Arată butonul setări de temă
+
+settings_hotkeys_active=Activează utilizarea Taste Rapide
+settings_hotkey_toggle_modifier=Modificator de Taste Rapide
+settings_hotkey_toggle_key_webmin=Tastă Rapidă pentru Webmin
+settings_hotkey_toggle_key_virtualmin=Tastă Rapidă pentru Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tastă Rapidă pentru Cloudmin
+settings_hotkey_toggle_key_usermin=Tastă Rapidă pentru Usermin
+settings_hotkey_toggle_key_webmail=Tastă Rapidă pentru Mail
+settings_hotkey_sysinfo=Hotkey for dashboard
+settings_hotkey_shell=Hotkey for terminal
+settings_hotkey_favorites=Tastă Rapidă pentru Favorite
+settings_hotkey_focus_search=Tastă Rapidă pentru câmpul de căutare
+settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
+
+settings_side_slider_background_refresh_time=Expirare timp pentru actualizări de informații în fundal
+settings_side_slider_background_refresh_time_description=Aplică timpul de expirare dorit pentru actualizări de stare și informații de sistem ce rulează cereri în fundal. Valoare trebuie să fie în minute. Valoarea minimă recomandată este de <code>1</code> minut. Configuarea implicită este de <code>5</code> minute. Se pot folosi valori zecimale.
+settings_sysinfo_easypie_charts=Afișează diagrame
+settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
+settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall
+settings_sysinfo_drive_status_on_new_line=Afișează starea Procesorului și a Discurilor fiecare pe un nou rând
+settings_sysinfo_expand_all_accordions=Menține toate acordeoanele extinse
+settings_sysinfo_link_mini=Afișează linkul Informații de Sistem ca buton
+
+settings_right_page_defaults_title=Pagini implicite
+settings_right_default_tab_webmin=Tabul implicit după autentificarea în Webmin
+settings_right_default_tab_usermin=Tabul implicit după autentificarea în Usermin
+settings_right_virtualmin_default=Paginia implicită pentru Virtualmin
+settings_right_cloudmin_default=Paginia implicită pentru Cloudmin
+
+settings_right_clear_local_cache=Eliberează Cache-ul
+settings_right_notification_slider_options_title=Side slider options
+settings_side_slider_fixed=Menține întotdeauna sliderul vizibil
+settings_side_slider_palette=Culoare Slider
+settings_hotkey_toggle_slider=Hotkey for slider
+settings_window_replace_timestamps=Activează substituirea datelor
+settings_window_replaced_timestamp_format_short=Formă scurtă dată/oră
+settings_window_replaced_timestamp_format_full=Formă întreagă dată/oră
+settings_window_replaced_timestamps_options_description=Ajustează setările dată/oră după bunul plac pentru afișarea în <code><a href="http://momentjs.com" target="_blank">formă</a></code> scurtă sau întreagă. <sup class="fa fa-question-circle" title='Această opțiune nu are efecte globale și se aplică doar dacă sunt folosite anumite module speciale de către dezvoltatori. Oricare dezvoltator de module poate adăuga atributul`data-convertible-timestamp-full="unix-timestamp"` sau `data-convertible-timestamp-short="unix-timestamp"` containerului pentru a afișa cu ușurință datele desemnate de utilizator.'></sup> Această opțiune Pre-Construită are efect în pagina <i>Sliderul de Notificări</i> și <i>Informații de Sistem</i> (de pe rândul <i>Timpul în sistem</i>). Implicit, forma între echivalează cu <code>LLLL</code> și forma scurtă este <code>L, LTS</code>. Expunerea timpului este diferit pentru localizări diferite. Localizarea este bazată pe setările de limbă ale Webmin.
+
+settings_side_slider_enabled=Activează slider
+settings_leftmenu_user_html=Arată fragmente HTML
+settings_leftmenu_user_html_description=Text definit de utilizator sau cod HTML va fi injectat în subsolul meniului de navigare. Poate fi folosit în scopuri de identificare. Exemplu, pentru a arăta în mod explicit numele gazdei, poți adăuga câmpului <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code> unde hostname = numele gazdei
+
+
+theme_changelog=Jurnal schimbări
+theme_conference=Conferință Temă
+theme_development_support=Asistență Developement
+theme_donate=Donează
+theme_download=Descarcă
+theme_name=Authentic Theme
+theme_update=Actualizează
+theme_update_available=Ultima versiune disponibilă
+theme_update_notice=Notificare de Actualizare
+theme_version=Versiunea Temei
+
+
+# Version 17.40
+theme_global_error=Eroare
+theme_global_warning=Atenționare
+theme_global_success=Succes
+theme_global_info=Informație
+sysinfo_system_status_warning=Pentru a avea afișat <strong>Informații despre Sistem</strong> va trebui să activezi modulul <em>Statistici Sistem</em> în configurațiile utilizatorului.
+settings_leftmenu_user_html_only_for_administrator=Arată fragmente HTML numia pentru administratori
+theme_sysinfo_wmdocs=Documentație Webmin
+theme_sysinfo_vmdocs=Documentație Virtualmin
+theme_sysinfo_cmdocs=Documentație Cloudmin
+theme_fileformat_css=CSS
+theme_fileformat_json=JSON
+theme_fileformat_js=Javascript
+theme_fileformat_plain_text=Plain Text
+
+theme_xhred_titles_wm=Webmin
+theme_xhred_titles_um=Usermin
+theme_xhred_titles_dashboard=Panou Principal
+theme_xhred_titles_mail=Email
+theme_xhred_titles_vm=Virtualmin
+theme_xhred_titles_cm=Cloudmin
+theme_xhred_titles_thirdlane=Thirdlane
+
+theme_xhred_global_please_wait=Te rog așteaptă...
+theme_xhred_filemanager_copying_selected=Copiez selecțiile.
+theme_xhred_filemanager_cutting_selected=Tai selecțiile.
+theme_xhred_filemanager_pasting_selected=Alipesc din clipboard.
+theme_xhred_filemanager_unpacking_archive=Desfac arhiva.
+theme_xhred_filemanager_deleting_selected=Șterg selecțiile.
+theme_xhred_filemanager_renaming_selected=Redenumesc selecțiile.
+theme_xhred_filemanager_creating_directory=Creez dosar
+theme_xhred_filemanager_creating_file=Creez fișier
+theme_xhred_filemanager_downloading_from=Descar de la
+theme_xhred_filemanager_setting_permissions=Setez permisiuni pentru <strong><em>%value</em></strong> pe fișier(ele) selectat(e).
+theme_xhred_filemanager_changing_ownership=Modifica proprietatea pentru <strong><em>%value</em></strong> pe fișier(ele) selectat(e).
+theme_xhred_filemanager_compressing_selected=Compressing selected in the background.
+theme_xhred_filemanager_refreshing=Reîmprospătez conșinutul dosarului.
+theme_xhred_filemanager_copying_successful=Copiere cu succes în clipboard.
+theme_xhred_filemanager_cutting_successful=Tăiere cu succes în clipboard.
+theme_xhred_filemanager_pasting_successful=Alipirea din clipboard efectuată cu succes.
+theme_xhred_filemanager_bookmark_success=Dosar <strong><em>%value</em></strong> a fost adăugat cu succes la favorite.
+theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
+theme_xhred_filemanager_search_founds=Găsit <strong>%value</strong> potriviri.
+theme_xhred_filemanager_search_found=Găsit <strong>1</strong> potrivire.
+theme_xhred_filemanager_search_no_matches=Nicio potrivire găsită.
+theme_xhred_filemanager_nothing_is_selected=Nu-i nimic selectat!
+theme_xhred_filemanager_saving_file=Fișier `<strong><em>%value</em></strong>` în curs de salvare.
+theme_xhred_filemanager_file_saved=Fișier `<strong><em>%value</em></strong>` salvat cu succes.
+theme_xhred_filemanager_not_editable=Nu pot edita acest gen de selecție.
+theme_xhred_filemanager_not_decompressable=Nu pot decomprima acest gen de fișier.
+theme_xhred_filemanager_no_selection_to_copy=Niciun dosar/fișier selectat pentru copiere.
+theme_xhred_filemanager_no_selection_to_cut=Niciun dosar/fișier selectat pentru tăiere.
+theme_xhred_filemanager_empty_clipboard=Clipboard-ul este gol.
+
+theme_xhred_filemanager_successful_extraction=Dezarhivare efectuată cu succes.
+theme_xhred_filemanager_successful_deletion=Ștergere efectuată cu succes.
+theme_xhred_filemanager_successful_permissions=Permisiunile au fost modificate cu succes.
+theme_xhred_filemanager_successful_ownership=Proprietatea a fost schimbată cu succes.
+theme_xhred_filemanager_successful_compression=Comprimarea s-a finașizat cu succes.
+theme_xhred_filemanager_successful_directory_creation=Dosar `<strong>%value</strong>` creat cu succes.
+theme_xhred_filemanager_successful_file_creation=Fișier `<strong>%value</strong>` creat cu succes.
+
+theme_xhred_notifications_packages_updates=Actualizări de Pachete
+theme_xhred_notifications_theme_update=Actualizări de Temă
+theme_xhred_notifications_theme_update_message=O nouă versiune <em>%v</em> a <strong>Authentic Theme</strong> este disponibilă. Te rog actualizează.
+theme_xhred_notifications_firewall_update=Actualizare de Firewall
+theme_xhred_notifications_firewall_update_message=O nouă versiune <em>%v</em> a <strong>ConfigServer Server Security și Firewall</strong> este disponibilă. Te rog actualizează.
+
+theme_xhred_notifications_firewall_danger=Pericol Firewall
+theme_xhred_notifications_firewall_danger_message=Se pare că <strong>ConfigServer Server Security și Firewall</strong> <span class="badge badge-danger">nu-i activ</span> sau s-a oprit! Nu-ți lăsa serverul expus, verifică setările Firewall-ului (%v)
+
+theme_xhred_notifications_firewall_warning=Atenționare Firewall
+
+#17.50
+settings_grayscale_level_navigation=Filtru nuanţe de gri
+settings_grayscale_level_navigation_description=Valori implicite/curente <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=Filtru nuanţe sepia
+settings_sepia_level_navigation_description=Valori implicite/curente <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturate_level_navigation=Filtru nuanţe saturate
+settings_saturate_level_navigation_description=Valori implicite/curente <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_hue_level_navigation=Filtru cu nuanţe inversate
+settings_hue_level_navigation_description=Valori implicite/curente <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_invert_level_navigation=Filtru de inversare
+settings_invert_level_navigation_description=Valori implicite/curente <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=Filtru de strălucire
+settings_brightness_level_navigation_description=Valori implicite/curente <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=Filtru de contrast
+settings_contrast_level_navigation_description=Valori implicite/curente <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
+settings_grayscale_level_content=Filtru nuanţe de gri
+settings_grayscale_level_content_description=Valori implicite/curente <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
+settings_saturate_level_content=Filtru nuanşe saturate
+settings_saturate_level_content_description=Valori implicite/curente <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
+settings_hue_level_content=Filtru cu nuanţe inversate
+settings_hue_level_content_description=Valori implicite/curente <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
+
+settings_cm_view_palette=Vizualizator paletă de culori
+settings_cm_editor_palette=Editor paletă de culori
+
+theme_xhred_filemanager_context_select_all=Selectează ot
+theme_xhred_filemanager_context_select_invert=Inversează Selecţia
+theme_xhred_filemanager_context_refresh=Reîmprospătează
+theme_xhred_filemanager_context_newfile=Crează fişier nou
+theme_xhred_filemanager_context_newfoder=Crează director nou
+theme_xhred_filemanager_context_copy=Copiază
+theme_xhred_filemanager_context_cut=Taie
+theme_xhred_filemanager_context_paste=Lipeşte
+theme_xhred_filemanager_context_chmod=Schimbă Permisiuni
+theme_xhred_filemanager_context_chown=Schimbă Proprietate
+
+#17.51
+theme_xhred_filemanager_context_new=Nou
+theme_xhred_filemanager_context_newarchive=Crează o nouă arhivă
+theme_xhred_filemanager_context_delete=Şterge
+theme_xhred_filemanager_context_rename=Redenumeşte
+theme_xhred_filemanager_context_edit=Editează
+theme_xhred_filemanager_context_extract=Despachetează
+theme_xhred_filemanager_context_goto=Deschide Locaţia Articolului
+theme_xhred_filemanager_context_properties=Proprietăţi
+theme_xhred_filemanager_context_search=Caută
+
+#17.52
+theme_xhred_filemanager_context_deselect_all=Deselectează Tot
+theme_xhred_filemanager_context_upload=Încarcă în directorul curent
+theme_xhred_filemanager_context_download=Descarcă din URL de la distanţă
+
+#17.53
+theme_settings_virtualmin=Virtualmin Servere Virtuale
+theme_settings_cloudmin=Cloudmin Sisteme Administrate
+settings_right_thirdparties_options_title=Opţiunile modulelor terţe
+theme_xhred_filemanager_context_calculate_size=Calculează dimensiunea la spacebar
+theme_xhred_filemanager_context_bookmarks=Marcaje
+theme_xhred_filemanager_context_bookmark_current=Marchează calea deschisă acum
+theme_xhred_filemanager_context_transfer=Transferă
+
+#17.54
+theme_xhred_filemanager_title_symlink_target=Ţintă Link
+
+#17.60
+right_unlimited=Nelimitat
+settings_leftmenu_width=Lăţimea preferată
+settings_leftmenu_width_description=Lăţimea implicită/curentă <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=Buton de inversare
+settings_switch_rdisplay_description=Această opţiune îţi permite configurarea ordinii difertie pentru butoanele din stânga sus. După modificarea opţiuni, este necesară reîncărcarea paginii pentru a se aplica modificarea.
+
+
+#17.63
+theme_xhred_filemanager_context_calculate_selected_size=Calculează dimensiunea selectată
+theme_xhred_filemanager_selected_entries=Selectat: %value intrări
+theme_xhred_filemanager_manual_path=Introdu calea manual
+
+theme_xhred_datatable_semptytable=NU sunt date disponibile
+theme_xhred_datatable_sinfo=Afişez de la _START_ până la _END_ din _TOTAL_ intrări
+theme_xhred_datatable_sinfoempty=Afişez de la 0 până la 0 din 0 intrări
+theme_xhred_datatable_slengthmenu=Afişez _MENU_ intrări
+theme_xhred_datatable_sloadingrecords=Încarc
+theme_xhred_datatable_sprocessing=Procesez...
+theme_xhred_datatable_szerorecords=Nico înregistrare potrivită
+
+#17.64
+theme_xhred_filemanager_file_edit_but_not_saved=Fişierul a fost editat dar n-a fost salvat.
+theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Ce doreşti să faci?
+theme_xhred_global_save=Salvează
+theme_xhred_global_save_and_close=Salvează şi închide
+theme_xhred_global_close_without_saving=Închide fără să salvezi
+theme_xhred_global_continue_editing=Continuă editarea
+theme_xhred_filemanager_context_download_file=Descarcă
+
+#17.65
+settings_sysinfo_easypie_charts_width=Lăţime grafice
+settings_sysinfo_easypie_charts_scale=Scalează lungimea graficelor
+
+#17.80
+right_return_theme_options=Opţiuni temă
+theme_xhred_datatable_semptydirectory=Directorul este gol
+theme_xhred_filemanager_context_clipboard=Copiați calea în clipboard
+theme_xhred_global_warning=Atenţie
+theme_xhred_global_close=Închide
+theme_xhred_encoding_warning=Am detectat că utilizați un set de caractere non-unicode, care nu este recomandat. Un caracter ciudat <tt>Â</tt> ar putea apărea în modul editor-text și/sau alte probleme de codare vor apărea. <br><br>Schimbă limba în <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuraţie</strong></a> pentru <code>%lang.UTF-8</code> şi asigurăte că şi browserul tău îl detectează corect. <span class="_hidden_"><br><br>Atenţie, modulele <em>Webmin</em> incorporate, denumit <em>Modifică Limba şi Tema</em> pot suprascrie setările globale.</span>
+
+theme_xhred_filemanager__no_bookmarks=Niciun marcaj salvat
+theme_xhred_filemanager_unbookmark_success=Directorul <strong><em>%value</em></strong> a fost eliminat cu succes din marcaje.
+theme_xhred_filemanager_bookmark=Marchează directorul curent
+theme_xhred_filemanager_unbookmark=Demarchează directorul current
+theme_xhred_filemanager_move_into_self=Nu poţi muta un director în el însuşi! Directorul destinarat este în directorul sursă.
+theme_xhred_filemanager_pasting_and_copying_1=Sursa selectată a fost lipită cu succes sub noul nume.
+theme_xhred_filemanager_pasting_and_copying_2=Sursele selectate au fost lipite cu succes sub noile nume.
+theme_xhred_filemanager_pasting_and_replacing_1=Ţinta existentă a fost înlocuită cu succes cu cea nouă.
+theme_xhred_filemanager_pasting_and_replacing_2=Ţintele existente au fost înlocuite cu succes de cele noi.
+theme_xhred_filemanager_target_conflict_1=Conflict de obiectiv.
+theme_xhred_filemanager_target_conflict_2=Conflict de obiective.
+theme_xhred_filemanager_target_conflict_message_1=Ţinta lipită există deja! Ce preferi să faci?
+theme_xhred_filemanager_target_conflict_message_2=Ţintele lipite există deja! Ce preferisa faci?
+theme_xhred_filemanager_target_conflict_replace=Îmbinare sau înlocuire
+theme_xhred_filemanager_target_conflict_paste=Lipeşte cu nume nou
+
+theme_xhred_editor_help_title=Editor Scurtături de Tastatură
+theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Caută/Înlocuieşte</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Comandă</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Caută</td> </tr> <tr><td>Ctrl + H</td> <td>Înlocuieşte</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Înlocuieşte tot</td> </tr> <tr><td>Ctrl + G</td> <td>Caută următorul</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Caută anterior</td> </tr> <tr><td>Alt + G</td> <td>Sări la linia</td> </tr> </tbody> </table> <h5><strong>Manipularea textului</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Comandă</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transformaţi în Litere Mari</td> </tr> <tr><td>Ctrl + KL</td> <td>Transformaţi în Litere Mici</td> </tr> </tbody> </table> <h5><strong>Editare</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Comandă</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activează Autocompletarea</td> </tr> <tr><td>Ctrl + X</td> <td>Taie rândul</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Mută rândul/selecţia sus</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Mută rândul/selecţia jos</td> </tr> <tr><td>Ctrl + L</td> <td>Selectează rîndul - Repetă selectarea la rândurile următoare</td></tr> <tr><td>Ctrl + D</td> <td>Selectează cuvânt - Repetă selecţia la alte evenimente</td></tr> <tr><td>Ctrl + M</td> <td>Sări la inchiderea parantezelor Repetă săritura la parantezele deschise</td></tr> <tr><td>Ctrl + ⇧ + M</td> <td>Selectează tot conţinutul parentezelor curente</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Şterge Rîndul</td> </tr> <tr><td>Ctrl + KK</td> <td>Şterge de la cursor până la sfârşitul rândului</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Şterge de la cursor până la începutul rândului</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplică rând(uri)</td> </tr> <tr><td>Ctrl + J</td> <td>Alăturați linia de mai jos până la sfârșitul liniei curente</td></tr> <tr><td>Ctrl + /</td> <td>Comentează/de-comentează rândul curent</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Blochează comentarea selecţiei curente</td> </tr> <tr><td>Ctrl + Y</td> <td>Refă, sau repetă ultima comandă scurtătură de tastatură</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Lipiți și indentați corect</td> </tr> <tr><td>Ctrl + Space</td> <td>Selectaţi următoarea sugestie din autocompletare</td> </tr> <tr><td>Ctrl + U</td> <td>Desfă uşor; sare la ultima schimbare înainte de a anula modificarea atunci când se repetă</td> </tr> </tbody> </table>
+
+theme_xhred_filemanager_hide_toolbar=Ascunde bara de instrumente
+theme_xhred_filemanager_hide_actions=Ascunde coloana de acţiuni
+theme_xhred_filemanager_hovered_toolbar=Activează meniuri în bara de instrumente la planarea cursorului
+theme_xhred_filemanager_context_delete_selected=Şterge ce-i selectat
+
+#17.83
+theme_xhred_database_adding_new_row=Adăugarea unui rând nou
+theme_xhred_database_editing_row=Editarea rândului selectat
+theme_xhred_database_editing_rows=Editarea rândurilor selectate
+theme_xhred_database_adding_new_row_data=Setare date
+
+#17.84
+theme_xhred_datatable_filter=Filttru
+
+theme_xhred_global_update=Actualizează
+theme_xhred_global_update_and_return=Actualizează şi întoarce-te
+theme_xhred_global_update_and_close=Actualizează şi închide
+theme_xhred_global_back=Înapoi
+theme_xhred_global_cancel=Renunţă
+
+theme_xhred_database_add_row_successful=Rândul nou a fost adăugat cu succes
+theme_xhred_database_edit_row_successful=Rândul selectat a fost actualizat cu succes
+theme_xhred_database_edit_rows_successful=Rândurile selectate au fost actualizate cu succes
+theme_xhred_database_edit_row_delete_successful=Rândul selectat a fost șters cu succes
+theme_xhred_database_edit_rows_delete_successful=S-au șters cu succes <em>%n</em> rânduri selectate
+theme_xhred_database_edit_field_delete_successful=Câmpul selectat a fost șters cu succes
+theme_xhred_database_edit_fields_delete_successful=S-au șters cu succes <em>%n</em> câmpuri selectate
+theme_xhred_database_edit_selected_row=Editează rând selectat
+theme_xhred_database_edit_selected_rows=Editează rânduri selectate
+theme_xhred_database_add_new_row=Adaugă rând
+theme_xhred_database_delete_selected_row=Şterge rând selectat
+theme_xhred_database_delete_selected_rows=Şterge rânduri selectate
+theme_xhred_database_delete_selected_field=Şterge câmp selectat
+theme_xhred_database_delete_selected_fields=Şterge câmpuri selectate
+theme_xhred_database_object_selected_delete=Şterge obiect selectat
+theme_xhred_database_objects_selected_delete=Şterge obiecte selectate
+theme_xhred_database_db_selected_drop=Scoateți baza de date selectată
+theme_xhred_database_dbs_selected_drop=Scoateţi bazele de date selectate
+theme_xhred_database_edit_but_not_saved=Datele din tabel au fost editate, dar nu au fost salvate.
+
+theme_xhred_global_no_such_command=Se pare că executabilul <tt>%cmd</tt> nu este instalat sau nu este in calea sistem tău.
+
+theme_xhred_global_notice=Notificare
+
+theme_xhred_updates_disabled_notice=Am detectat că nu ai activate notificările pentru actualizările <em>Authentic Theme</em>? <br><br>Activarea acestor în <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Configurare Temă</strong></a> te va ajuta să actualizezi la ultima versiune cu un singur click imediat ce este publicat.
+
+
+#18.00
+theme_xhred_global_file=Fişier
+theme_xhred_global_directory=Director
+theme_xhred_global_no_target=Obiectivul nu există sau nu este accesibil
+theme_xhred_global_error_code=Cod de eroare
+theme_xhred_global_on=Deschis
+theme_xhred_global_off=Închis
+theme_xhred_global_all=Toate
+theme_xhred_global_none=Nimic
+theme_xhred_global_yes=Da
+theme_xhred_global_no=Nu
+
+theme_xhred_filemanager_new_tab=Adauga un nou tab (Ctrl+Space)
+theme_xhred_datatable_no_search_results=<span class="h5">Niciun rezultat găsit</span><br>Încearcă o căutare diferită
+
+theme_xhred_filemanager_buffer_error=Eşuare la lipirea fişierelor în tampon - acces refuzat.
+
+filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` există deja în `<strong><tt>$2</tt></strong>`
+filemanager_create_object_denied=Nu pot crea $3 `<strong><em>$1</em></strong>` în `<strong><tt>$2</tt></strong>` - acces refuzat.
+
+filemanager_paste_warning=Eşuare în lipirea obiectiv(elor). Este posibil ca obiectiv(ele) cerute să fi fost <em>redenumite, mutate</em> sau <em>şterse</em> în timp/înaintea lipirii. O altă posibilă cauză este aceea ca destinaţia să nu poată fi scrisă. Merită verificate atributele obiectivului.
+
+theme_xhred_filemanager_delete_warning=Ştergerea s-a finalizat cu succes, dar nu toate obiectele. Este posibil ca obiectul(/ele) cerut(e) să fi fost <em>redenumit(e)</em> sau <em>mutat(e)</em> înainte de ştergere. Permisiuni restricţionate (atribute) sunt o altă posibilă cauză.Mesaj de eroare:
+
+
+filemanager_rename_exists=$3 cu numele `<strong><em>$1</em></strong>` există deja în `<strong><tt>$2</tt></strong>`
+filemanager_rename_denied=Nu pot redenumi $3. Aceasta se poate întâmpla deaorece sursa $3 a fost muatată sau are permisiuni restricţionate.
+
+theme_xhred_filemanager_successful_rename=Redenumirea `<strong><em><s>%from</s></em></strong>` în `<strong><em>%to</em></strong>` efectuată cu succes.
+
+filemanager_global_info_total1=Total: $1 fişier şi $2 director
+filemanager_global_info_total2=Total: $1 fişiere şi $2 director
+filemanager_global_info_total3=Total: $1 fişier şi $2 directoare
+filemanager_global_info_total4=Total: $1 fişiere şi $2 directoare
+
+theme_xhred_filemanager_selected_entry=Selectat: %value intrare
+
+theme_xhred_filemanager_search_query=Mască de interogare
+theme_xhred_filemanager_search_match=Caută şi înlocuieşte
+theme_xhred_filemanager_search_replace=Înlocuieşte rezultatele
+
+theme_xhred_global_find=Caută
+theme_xhred_global_replace=Înlocuiește
+
+theme_xhred_filemanager_searching_matching=Căutarea pentru <em>`%value`</em> potrivirea numelor de fişiere/directoare care conţin <em>`%text`</em> ca text.
+theme_xhred_filemanager_searching_replacing=Înlocuirea potrivirilor <em>`%text`</em> cu <em>`%replace`</em> în fisiere cu nume conţinând <em>`%value`</em>.
+
+theme_xhred_filemanager_search_replaced_multi=Găsit şi înlocuit în <strong>%value</strong> fişiere.
+theme_xhred_filemanager_search_replaced=Găsit şi înlocuit în <strong>1</strong> fişier.
+
+theme_xhred_filemanager_successful_permissions_with_errors=Permisiunile au fost modificate cu succes dar nu la toate obiectele:
+
+theme_xhred_filemanager_successful_ownership_with_errors=Proprietatea a fost modificată cu succes pentru toate obiectele:
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=Proprietatea nu poate fi modificată din cauza erorilor următoare:
+
+theme_xhred_filemanager_successful_compression_with_errors=Comprimarea s-a efectuat cu următoarele erori:
+theme_xhred_filemanager_successful_compression_bg=Comprimarea s-a efectuat cu succes. Fişierul comprimat<strong>`%file</strong> se află în directorul <strong>`%path`</strong>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Compresia s-a efectuat cu erori.Fişierul comprimat <strong>`%file</strong> ar trebui să se afle în directorul <strong>`%path`</strong>.
+
+theme_xhred_filemanager_settings_notification_type=Tipuri de notificări pentru afişare.
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informaţii, atenţionări şi erori
+theme_xhred_filemanager_settings_notification_type_warn_err=Atenţionări şi erori
+theme_xhred_filemanager_settings_notification_type_err=Doar erori
+
+theme_xhred_filemanager_settings_tabs_remember_state=Restaurează filele utilizate anterior la prima încărcare
+theme_xhred_filemanager_context_open_new_tab=Deschide întro filă nouă
+
+theme_xhred_xsql_fit_content_screen_height=Ajustează conținutului tabelului bază de date în înălțimea ecranului
+
+theme_xhred_datatable_filter_visible_tables=Filtrează Tabel(ele) Vizibile
+theme_xhred_module_help=Ajutorul modulului
+
+theme_xhred_server_process_running=Procesul serverului încă rulează!? Sunteți sigur că doriți să navigați și să nu aveți acces la informațiile generate? Chiar dacă ieşiţi acum, procesul nu va fi terminat.
+
+
+#18.03
+settings_global_options_title=Opţiuni globale
+settings_global_passgen_format=Generator de parolă
+settings_global_passgen_format_description=Configuraţi lungimea și tipul de caractere utilizate în parola generată. Prima valoare este numerică, adică lungimea parolei, urmată imediat de <code>|</code> ca delimitator. Următorul tip este tipul unde puteți utiliza numerele <code>0-9</code>, literele <code>a-z</code> și/sau <code>A-Z</code>, şi caratcere speciale<code>#</coe>. Toate aceste seturi pot fi utilizate împreună sau individual, folosind virgulă ca delimitator. Valoarea implicită este egală cu <code>12|a-z,A-Z,0-9,#</code>, care reprezintă o parolă cu lungimea de 12 caractere, conținând litere mari, mici și caractere speciale.
+theme_xhred_password_generator_new=Generează Parola Nouă<br> (În Clipboard)
+theme_xhred_password_generator_new_success=Parola generată %password s-a copiat cu succes în clipboard.
+
+
+#18.08
+theme_fileformat_perl=Perl
+theme_fileformat_perl_placeholder=Aces fişier trebuie să se termine cu `1;` ca să poată funcţiona cu succes.
+
+
+#18.10
+theme_error_access_not_root=Acces refuzat: Utilizatorul are nevoie de acces la modulul <em>Configurări Webmin</em> pentru a edita configurația temei
+
+
+#18.20
+settings_hide_top_loader=Ascunde bara de progress şi încărcătorul
+
+
+#18.30
+settings_leftmenu_vm_cm_dropdown_icons=Afișați pictogramele simbolice în meniul derulant în Virtualmin/Cloudmin
+settings_font_family=Familia de fonturi
+settings_font_family_description=Dintre toate variantele prezentate de fonturi <em>Roboto</em> este livrat odataă cu tema și setat ca implicit. Celelalte fonturi trebuie să fie instalate pe calculatorul local pentru a lucra. Prin utilizarea fonturilor locale, cea implicită nu este încărcată, ceea ce va duce la încărcarea mai rapidă a temelor
+theme_xhred_global_shipped=Livrat
+theme_xhred_global_available=Disponibil
+theme_xhred_global_not_available=Indisponibil
+theme_xhred_global_default=Implicit
+theme_xhred_global_system_default=Implicit de sistem
+theme_xhred_global_local_system_default=Implicite locale de sistem
+theme_xhred_global_stats=Statistici
+theme_xhred_global_notifications=Notificări
+theme_xhred_global_favorites=Favorite
+theme_xhred_global_cpu_load=Încărcare CPU
+theme_xhred_notification_none=Fără notificări
+theme_xhred_notification_no_data=Fără date colectate
+theme_xhred_notification_no_favorites=Fără favorite
+theme_xhred_global_theme_version=Versiunea temei
+
+settings_side_slider_sysinfo_enabled=Afișați fila tabloului de bord
+settings_side_slider_notifications_enabled=Afișați fila notificări
+settings_side_slider_favorites_enabled=Afișați fila Favorite
+settings_show_terminal_link=Afișați butonul terminalului
+
+theme_xhred_sysinfo_system_monitors=Monitorizări Sitem
+theme_xhred_sysinfo_server_status=Starea Serverului
+theme_xhred_sysinfo_software_versions=Versiuni Software
+theme_xhred_sysinfo_recent_logins=Autentificări Recente
+theme_xhred_sysinfo_vm_package_updates=Pachete de actualizări Virtualmin
+theme_xhred_sysinfo_disk_quotas=Cote de Disc
+theme_xhred_sysinfo_bandwidth_quotas=Cote de bandă
+
+left_netdata=Monitorizarea în Timp Real
+settings_leftmenu_netdata=Afișați linkul de monitorizare Netdata în timp real
+settings_leftmenu_netdata_link=Link server preferat de Netdata
+
+theme_xhred_filemanager_context_chattr=Schimbă Atribute
+theme_xhred_filemanager_changing_attributes=Aplic atributele <strong><em>%value</em></strong> fişierelor selectate..
+theme_xhred_filemanager_successful_attributes_with_errors=Nu s-au aplicat atributele tuturor obiecteleor:
+theme_xhred_filemanager_successful_attributes=Atributele s-au aplicat cu succes.
+
+theme_xhred_filemanager_context_chcon=Modifică contextul de securitate
+theme_xhred_filemanager_changing_secontext=Schimb contextul de securitate ca <strong><em>%value</em></strong> fişierelor selectate.
+theme_xhred_filemanager_successful_secontext_with_errors=Contextul de securitate nu a fost schimbat cu succes pentru toate obiectele:
+theme_xhred_filemanager_successful_secontext=Contextul de securitate s-a schimbat cu succes.
+
+theme_xhred_global_no_results_found=N-am găsit rezultate
+
+
+#18.40
+theme_new_password_header=Aplica noua parolă pentru utilizator
+login_reset=Recuperare parolă
+theme_xhred_move_top=Mută la început
+theme_xhred_move_bottom=Mută la sfârşit
+theme_xhred_move_up=Mută sus
+theme_xhred_move_down=Mută jos
+theme_xhred_add_after=Adaugă după
+theme_xhred_add_before=Adaugă înaintea
+settings_button_tooltip=Arată sugestii la butoane
+settings_show_night_mode_link=Afişaţi comutare paletă
+settings_hotkey_toggle_key_night_mode=Tastă rapidă pentru comutare întunecat/luminos
+settings_title=Configurare Temă
+settings_subtitle=Pentru utilizator
+
+theme_tooltip_night_mode=Comutare mod Zi/Noapte
+theme_tooltip_terminal_link=Terminal
+theme_tooltip_language_link=Limbă
+theme_tooltip_switch_user=Schimbă utilizator
+theme_tooltip_logout=Ieşire
+theme_tooltip_edit_user=Editare utilizator
+
+
+#18.45
+settings_sysinfo_easypie_charts_size=Diametru grafice
+theme_xhred_global_choose=Alege
+theme_xhred_global_select=Selectează
+theme_xhred_global_ok=OK
+settings_sysinfo_theme_patched_updates=Inclusiv versiuni patch-uite
+settings_sysinfo_theme_updates_description=Ca această opţiune să funcţioneze, comanda <code>git</code> trebuie să fie instalată pe sistem
+theme_git_patch_available=Ultimile patch-uri disponibile
+theme_git_patch_no_git_message=Ca să instalezi ulimile patch-uri direct de pe GitHub asigurăte ca ai comanda <code>git</code> instalată.
+theme_git_patch_update_success_message=Actualizarea temei pentru Webmin efectuată. Versiunea curentă instalată este <tt>$1</tt>. Reîncarc...
+theme_git_patch_update_success_message2=Actualizarea temelor pentru Webmin şi Usermin efectuată. Versiunea curentă instalată este <tt>$1</tt>. Reîncarc...
+theme_xhred_git_patch_update=Actualizare temă eşuată.Încearcă să foloseşti consola pentru instalare manuală.
+theme_xhred_git_patch_initiated=Actualizare temă inişiată.
+theme_xhred_global_prev_page=Înapoi o pagină
+theme_xhred_global_help=Ajutor
+settings_right_soft_updates_page_options_title=Actualizări Software
+theme_xhred_git_compare_changes=Compară schimbările
+theme_xhred_filemanager_link_to_clipboard=Numele link-ului simbolic `<strong><em>%value</em></strong>` a fost copiat în clipboard.
+
+
+
+#18.46
+theme_left_mail_prefs=Preferinţe de email
+theme_left_mail_change_password=Schimbă parola
+theme_left_mail_account_functions=Funcţiile contului
+theme_xhred_global_dir_up=Mergi la directorul precedent (Backspace)
+theme_xhred_global_module_config=Configurare modul
+theme_xhred_global_return=Întoarce-te
+theme_xhred_global_return_to_module_index=Întoarce-te la indexul modulului
+
+
+#18.47
+settings_account_info_link_mini=Afişează link-ul informaţia contului ca buton
+theme_xhred_global_complete_changelog=Changelog complet
+theme_xhred_global_beta_version=Versiune Beta
+theme_xhred_global_release=Release
+theme_xhred_global_released_on=Eliberat pe
+theme_xhred_global_committed_on=Comis pe
+theme_xhred_global_resolved_issues=Probleme rezolvate în %value
+theme_force_upgrade=Forţează actualizarea temei folosind ultima publicare de pe GitHub
+
+
+#18.49
+theme_xhred_filemanager_user_switch=Comută la utilizator (Ctrl+M)
+theme_xhred_filemanager_user_switch_description=Selectând utilizatorul listat mai jos, vei schimba modalitatea de operare, urmând a fi efectuate sub acest utilizator.
+theme_xhred_filemanager_user_switch_description_back=Pentru a reveni la modul implicit, alegeți prima opțiune din selecţie.
+theme_xhred_filemanager_user_switch_current_user=Utilizator curent
+theme_xhred_filemanager_user_switch_option=Comutați automat la modul Utilizator la accesarea directorului său home
+theme_xhred_filemanager_editor_align_panels_horizontally=Align Panels Horizontally
+theme_xhred_filemanager_editor_align_panels_vertically=Align Panels Vertically
+theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
+theme_xhred_filemanager_editor_refresh_content=Refresh Content
+theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
+theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
+theme_xhred_global_dark=Dark
+theme_xhred_global_light=Light
+theme_xhred_global_minimize=Minimize
+theme_xhred_global_maximize=Maximize
+theme_xhred_global_normalize=Normalize
+theme_xhred_global_set_encoding=Set encoding
+
+
+#19.00
+theme_xhred_sysinfo_update_start=System information is being recollected.
+theme_xhred_sysinfo_update_end=System information has been recollected successfully.
+theme_xhred_sysinfo_update_failed=System information can't be recollected. Try again later.
+
+theme_xhred_global_development_version=Development version
+
+right_vm_server_summary=Virtual Server Summary
+
+settings_webmin_default_module=Default module for Webmin
+
+theme_xhred_global_unbeforeunload_title=Changes you made may not be saved
+theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
+theme_xhred_global_continue=Continue
+
+theme_xhred_global_automatic_refresh=Automatic refresh
+theme_xhred_global_second=Second
+theme_xhred_global_seconds=Seconds
+theme_xhred_global_minute=Minute
+theme_xhred_global_minutes=Minutes
