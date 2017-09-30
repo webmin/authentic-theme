@@ -696,29 +696,29 @@ theme_xhred_filemanager_save_to_refresh_content=Filen måste sparas innan inneh�
 theme_xhred_filemanager_save_to_refresh_content_proc=Uppdaterar filinnehåll.
 theme_xhred_global_dark=Mörkt
 theme_xhred_global_light=Ljust
-theme_xhred_global_minimize=Minimize
-theme_xhred_global_maximize=Maximize
-theme_xhred_global_normalize=Normalize
-theme_xhred_global_set_encoding=Set encoding
+theme_xhred_global_minimize=Minimera
+theme_xhred_global_maximize=Maximera
+theme_xhred_global_normalize=Återställ nedåt
+theme_xhred_global_set_encoding=Ange kodning
 
 
 #19.00
-theme_xhred_sysinfo_update_start=System information is being recollected.
-theme_xhred_sysinfo_update_end=System information has been recollected successfully.
-theme_xhred_sysinfo_update_failed=System information can't be recollected. Try again later.
+theme_xhred_sysinfo_update_start=Systeminformationen samlas in.
+theme_xhred_sysinfo_update_end=Systeminformationen har samlats in.
+theme_xhred_sysinfo_update_failed=Det gick inte att samla in systeminformationen. Försök igen senare.
 
-theme_xhred_global_development_version=Development version
+theme_xhred_global_development_version=Utvecklingsversion
 
-right_vm_server_summary=Virtual Server Summary
+right_vm_server_summary=Sammanfattning av virtuell server
 
-settings_webmin_default_module=Default module for Webmin
+settings_webmin_default_module=Standardmodul för Webmin
 
-theme_xhred_global_unbeforeunload_title=Changes you made may not be saved
-theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
-theme_xhred_global_continue=Continue
+theme_xhred_global_unbeforeunload_title=Ändringar du gjort kanske inte sparas
+theme_xhred_global_unbeforeunload_message=Om du fortsätter, kan ändringar du gjort på denna sidan gå förlorade.
+theme_xhred_global_continue=Fortsätt
 
-theme_xhred_global_automatic_refresh=Automatic refresh
-theme_xhred_global_second=Second
-theme_xhred_global_seconds=Seconds
-theme_xhred_global_minute=Minute
-theme_xhred_global_minutes=Minutes
+theme_xhred_global_automatic_refresh=Automatisk uppdatering
+theme_xhred_global_second=Sekund
+theme_xhred_global_seconds=Sekunder
+theme_xhred_global_minute=Minut
+theme_xhred_global_minutes=Minuter
