@@ -225,6 +225,26 @@ theme_update_available = Lirimi i fundit në dispozicion
 theme_update_notice = Njoftim për azhurnim
 theme_version = Versioni i temës
 
+# 19.00
+theme_xhred_sysinfo_update_start = Informacioni i sistemit është duke u rikujtuar.
+theme_xhred_sysinfo_update_end = Informacioni i sistemit është rikthyer me sukses.
+theme_xhred_sysinfo_update_failed = Informacioni i sistemit nuk mund të kujtohet. Provo përsëri më vonë.
+
+theme_xhred_global_development_version = Versioni i zhvillimit
+
+right_vm_server_summary = Përmbledhje e Serverit Virtual
+
+settings_webmin_default_module = Moduli i paracaktuar për Webmin
+
+theme_xhred_global_unbeforeunload_title = Ndryshimet që keni bërë mund të mos ruhen
+theme_xhred_global_unbeforeunload_message = Nëse vazhdoni, ndryshimet e pashpenzuara në këtë faqe mund të humbasin përgjithmonë.
+theme_xhred_global_continue = Vazhdo
+
+theme_xhred_global_automatic_refresh = Refresh automatike
+theme_xhred_global_second = Sekond
+theme_xhred_global_seconds = Sekonda
+theme_xhred_global_minute = Minutë
+theme_xhred_global_minutes = Minuta
 
 # Versioni 17.40
 theme_global_error = Gabim
