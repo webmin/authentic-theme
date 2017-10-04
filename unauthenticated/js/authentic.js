@@ -62,11 +62,6 @@ if (get_server_data("debug")) {
             get_server_data("available-modules", JSON.parse(e))
         }
     }), theme_config("load")), $(function() {
-        /*!
-         * Authentic Theme (https://github.com/qooob/authentic-theme)
-         * Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-         * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
-         */
         1 === v___initial_load && v___available_navigation && (page_display(), navigation_display());
         var e = window.navigator.userAgent,
             t = !!e.match(/iPad/i) || !!e.match(/iPhone/i),
@@ -667,7 +662,7 @@ if (get_server_data("debug")) {
                 data: !1,
                 dataType: "text",
                 success: function(e) {
-                    get_pjax_content(v___location_prefix + "/sysinfo.cgi", ["success", messenger, ['<i class="fa fa-lg fa-fw fa-refresh-fi"></i>' + theme_language("theme_xhred_sysinfo_update_end"), 4, "success", "sysinfoRecollect"], 0])
+                    get_pjax_content(v___location_prefix + "/sysinfo.cgi", ["success", theme_messenger, ['<i class="fa fa-lg fa-fw fa-refresh-fi"></i>' + theme_language("theme_xhred_sysinfo_update_end"), 4, "success", "sysinfoRecollect"], 0])
                 },
                 error: function(e) {
                     theme_messenger('<i class="fa fa-lg fa-fw fa-refresh-fi"></i>' + theme_language("theme_xhred_sysinfo_update_failed"), 20, "error", "sysinfoRecollect")
