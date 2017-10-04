@@ -300,7 +300,7 @@ theme_xhred_notifications_firewall_danger_message = Duket se <strong> Siguria e 
 
 theme_xhred_notifications_firewall_warning = Paralajmërimi i Firewall
 
-# 17.50
+#17.50
 settings_force_default_tab = Fillo skedën e paracaktuar për Webmin
 settings_force_default_tab_description = Kjo veçori do të detyrojë edhe kartën e parazgjedhur në rimbushjen e dritares gjithashtu.Kujdes!Nuk do të jetë e mundur të zgjedhësh për skedën e dëshiruar duke përdorur URL-në, pasi çdo kërkesë lokacioni do të injorohet.
 
@@ -340,7 +340,7 @@ theme_xhred_filemanager_context_paste = Ngjit
 theme_xhred_filemanager_context_chmod = Ndrysho lejet
 theme_xhred_filemanager_context_chown = Ndrysho pronësinë
 
-# 17.51
+#17.51
 theme_xhred_filemanager_context_new = New
 theme_xhred_filemanager_context_newarchive = Krijo arkiv të ri
 theme_xhred_filemanager_context_delete = Fshije
@@ -351,12 +351,12 @@ theme_xhred_filemanager_context_goto = Hapni vendndodhjen e artikullit
 theme_xhred_filemanager_context_properties = Properties
 theme_xhred_filemanager_context_search = Kërko
 
-# 17.52
+#17.52
 theme_xhred_filemanager_context_deselect_all = Përzgjidhni të gjitha
 theme_xhred_filemanager_context_upload = Ngarko në direktorinë aktuale
 theme_xhred_filemanager_context_download = Shkarko nga URL-ja e largët
 
-# 17.53
+#17.53
 theme_settings_virtualmin = Serverat virtuale Virtualmin
 theme_settings_cloudmin = Cloudmin Sistemet e Menaxhuara
 settings_right_thirdparties_options_title = Mundësitë e moduleve të palëve të treta
@@ -365,17 +365,17 @@ theme_xhred_filemanager_context_bookmarks = Bookmarks
 theme_xhred_filemanager_context_bookmark_current = Shënoji shtegun aktualisht të hapur
 theme_xhred_filemanager_context_transfer = Transfer
 
-# 17.54
+#17.54
 theme_xhred_filemanager_title_symlink_target = Lidhu objektivin
 
-# 17.60
+#17.60
 right_unlimited = limit
 settings_leftmenu_width = Gjerësia e preferuar
 settings_leftmenu_width_description = Parametri / gjerësia aktuale <code> 260 </ code> / <code data-name = "settings_leftmenu_width"> 0 </ code>
 settings_switch_rdisplay = Dalja e kalimit të kundërt
 settings_switch_rdisplay_description = Ky opsion ju lejon të vendosni porosi të ndryshme për çelsat e majta të majtë.Pas ndryshimit të këtij opsioni, duhet të rifreskohet faqja e plotë për të aplikuar cilësime të reja.
 
-# 17.63
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size = Llogaritni madhësinë e përzgjedhur
 theme_xhred_filemanager_selected_entries = Zgjedhur:% entries vlerë
 theme_xhred_filemanager_manual_path = Futni rrugën manualisht
@@ -388,7 +388,7 @@ theme_xhred_datatable_sloadingrecords = Loading ...
 theme_xhred_datatable_sprocessing = Përpunimi ...
 theme_xhred_datatable_szerorecords = Nuk u gjetën të dhëna që përputhen
 
-# 17.64
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved = Skedari është redaktuar, por nuk është ruajtur.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do = Çfarë doni të bëni?
 theme_xhred_global_save = Save
@@ -397,15 +397,11 @@ theme_xhred_global_close_without_saving = Mbyll pa kursyer
 theme_xhred_global_continue_editing = Vazhdo redaktimin
 theme_xhred_filemanager_context_download_file = Download
 
-17
+#17.65
 settings_sysinfo_easypie_charts_width = Gjerësia e tabelave
 settings_sysinfo_easypie_charts_scale = Gjatësia e skicave të shkallës
 
-17
-settings_window_exclusion_description = Caktoni listën e moduleve që do të përjashtohen nga mekanizmi i paraqitjes së ndërtuar.Ky funksion do të ofrojë mbështetje për modulet e vjetëruara / vullnetarisht të ndërtuara, të cilat nuk janë shfaqur si duhet. Për të çaktivizuar paraqitjen e disa moduleve duhet të specifikoni emrin e tij. Emri i modulit bazohet në emrin e tij të direktorisë dhe mund të gjendet kur fluturon në linkun e saj në menunë e navigimit. Është gjithashtu e mundur të kalosh asterikun e vetëm <kbd> * </ kbd> për të çaktivizuar renditjen e ndërtuar për të gjitha modulet.
-settings_window_exclusion_list = Modulet për të përjashtuar
-
-# 17.80
+#17.80
 right_return_theme_options = opsionet e temës
 theme_xhred_datatable_semptydirectory = Drejtori është bosh
 theme_xhred_filemanager_context_clipboard = Kopjo rrugën në clipboard
@@ -437,13 +433,13 @@ theme_xhred_filemanager_hide_actions = Fshih kolonat e veprimeve
 theme_xhred_filemanager_hovered_toolbar = Aktivizo dropdown-in në shiritin e veglave në hoverin e miut
 theme_xhred_filemanager_context_delete_selected = Fshije përzgjedhur
 
-# 17.83
+#17.83
 theme_xhred_database_adding_new_row = Shtimi i rreshtit të ri
 theme_xhred_database_editing_row = Redaktimi i rreshtit të përzgjedhur
 theme_xhred_database_editing_rows = Redaktimi i rreshtave të zgjedhura
 theme_xhred_database_adding_new_row_data = Vendosni të dhëna
 
-# 17.84
+#17.84
 theme_xhred_datatable_filter = Filtri
 
 theme_xhred_global_update = Update
@@ -479,7 +475,7 @@ theme_xhred_global_notice = Njoftimi
 theme_xhred_updates_disabled_notice = Zbuluar që ju nuk keni njoftime të aktivizuara për <em> Theme Autentike </ em> përditësime?<br> <br> Mundësimi i kësaj karakteristike në <a href="%link" class="label label-default"> <strong> <i class = "fa fa-cogs"> </ i> Konfigurimi i temave </ strong > </a> do t'ju ndihmojë të përditësoni versionin më të fundit në një klik të vetëm sa më shpejt që të jetë jashtë.
 
 
-# 18.00
+#18.00
 theme_xhred_global_file = dokumentit
 theme_xhred_global_directory = Directory
 theme_xhred_global_no_target = Target nuk ekziston ose nuk është i arritshëm
@@ -554,7 +550,7 @@ theme_xhred_module_help = Ndihma e modulit
 theme_xhred_server_process_running = Procesi i serverit akoma vazhdon !?Jeni i sigurt se doni të lundroni larg dhe të mos keni qasje në informacionet e prodhimit?Edhe nëse largoheni tani, procesi nuk do të përfundojë.
 
 
-# 18.03
+#18.03
 settings_global_options_title = Opsionet globale
 settings_global_passgen_format = Gjenerator i fjalëkalimeve
 settings_global_passgen_format_description = Vendosni gjatësinë dhe karakterin e përdorur në fjalëkalimin e gjeneruar.Vlera e parazgjedhur është <code> 12 | az, AZ, 0-9, # </ code>, e cila përfaqëson fjalëkalimin me 12 shkronja në gjatësi, që përmbajnë shkronja të mëdha dhe të vogla, numra dhe shkronja të veçanta.Vlera e parë është numerike, e cila është gjatësia e fjalëkalimit, e ndjekur menjëherë nga <code> | </ code> si një delimiter.Tjetër është tipi, ku mund të përdorni numra <code> 0-9 </ code>, shkronja <code> az </ code> dhe / ose <code> AZ </ code> / code>.Të gjitha këto grupe mund të përdoren së bashku ose individualisht, duke përdorur presje si një delimiter.
@@ -562,20 +558,20 @@ theme_xhred_password_generator_new = Gjeni Fjalëkalimin e ri (Për Clipboard)
 theme_xhred_password_generator_new_success = Fjalëkalimi i krijuar %password është kopjuar me sukses në clipboard.
 
 
-# 18.08
+#18.08
 theme_fileformat_perl = Perl
 theme_fileformat_perl_placeholder = Kjo skedar duhet të përfundojë me `1;` për të punuar me sukses. (Http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl)
 
 
-# 18.10
+#18.10
 theme_error_access_not_root = Hyrja e mohuar: Përdoruesi ka nevojë për qasje në modulin <em> Webmin Configuration </ em> për të modifikuar konfigurimin e temës
 
 
-# 18.20
+#18.20
 settings_hide_top_loader = Fshih barin e përparimit të përparimit dhe ngarkuesin e tij
 
 
-# 18.30
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons = Shfaq ikonat simbolike në drop-down në Virtualmin / Cloudmin
 settings_font_family = Familja e shkronjave
 settings_font_family_description = Në mesin e varianteve të paraqitura <em> Roboto </ em> është dërguar me temën dhe është vendosur si parazgjedhje.Gërmat e tjera duhet të instalohen në kompjuterin tuaj lokal në mënyrë që të punojnë.Duke përdorur fontet lokalë, default nuk është e ngarkuar, gjë që do të rezultojë në ngarkim më të shpejtë të temës
@@ -626,7 +622,7 @@ theme_xhred_filemanager_successful_secontext = Konteksti i sigurisë është ndr
 theme_xhred_global_no_results_found = Nuk u gjetën rezultate
 
 
-# 18.40
+#18.40
 theme_new_password_header = Vendos fjalëkalimin e ri për përdoruesit
 login_reset = Rimëkëmbja e fjalëkalimeve
 theme_xhred_move_top = Lëviz në krye
@@ -649,7 +645,7 @@ theme_tooltip_logout = Dil jashtë
 theme_tooltip_edit_user = Modifiko përdoruesin
 
 
-# 18.45
+#18.45
 settings_sysinfo_easypie_charts_size = Diametri i tabelave
 theme_xhred_global_choose = Zgjidh
 theme_xhred_global_select = Zgjidh
@@ -669,7 +665,7 @@ theme_xhred_git_compare_changes = Krahasoni ndryshimet
 theme_xhred_filemanager_link_to_clipboard = Emri i lidhjes simbolike `<strong> <em>% vlera </ em> </ strong>` është kopjuar në clipboard.
 
 
-# 18.46
+#18.46
 theme_left_mail_prefs = Preferencat e postës
 theme_left_mail_change_password = Ndrysho fjalëkalimin
 theme_left_mail_account_functions = Funksionet e llogarisë
@@ -679,7 +675,7 @@ theme_xhred_global_return = kthimit
 theme_xhred_global_return_to_module_index = Kthimi në indeksin e modulit
 
 
-# 18.47
+#18.47
 settings_account_info_link_mini = Shfaq lidhjen e informacionit të llogarisë si buton
 theme_xhred_global_complete_changelog = Ndryshimi i plotë i ndryshimit
 theme_xhred_global_beta_version = Versioni Beta
@@ -689,7 +685,7 @@ theme_xhred_global_committed_on = Të angazhuar
 theme_xhred_global_resolved_issues = Çështjet e zgjidhura në lëshimet e vlerës së%
 
 
-(2.2)
+#18.48
 theme_force_upgrade = Force theme update
 theme_force_upgrade_beta = Instalo versionin më të fundit të zhvillimit (beta)
 theme_force_upgrade_stable = Instalo versionin e fundit të lëshimit (të qëndrueshëm)
@@ -699,7 +695,7 @@ theme_xhred_encoding_manually_set = Caktuar kodimin manualisht
 theme_xhred_filemanager_save_to_change_encoding = Skeda duhet të ruhet, me qëllim që të lejojë ndryshimin e kodimit.
 
 
-# 18.49
+#18.49
 theme_xhred_filemanager_user_switch = Kalo në përdorues (Ctrl + M)
 theme_xhred_filemanager_user_switch_description = Duke përzgjedhur emrin e përdoruesit të listuar më poshtë, do të kaloni operacione të mëtejshme për t'u kryer si ky përdorues.
 theme_xhred_filemanager_user_switch_description_back = Për t'u kthyer në modalitetin e parazgjedhur zgjidhni opsionin e parë në përzgjedhje.
@@ -720,22 +716,22 @@ theme_xhred_global_set_encoding = Cakto kodimin
 
 
 #19.00
-theme_xhred_sysinfo_update_start=System information is being recollected.
-theme_xhred_sysinfo_update_end=System information has been recollected successfully.
-theme_xhred_sysinfo_update_failed=System information can't be recollected. Try again later.
+theme_xhred_sysinfo_update_start = Informacioni i sistemit është duke u rikujtuar.
+theme_xhred_sysinfo_update_end = Informacioni i sistemit është rikthyer me sukses.
+theme_xhred_sysinfo_update_failed = Informacioni i sistemit nuk mund të kujtohet. Provo përsëri më vonë.
 
-theme_xhred_global_development_version=Development version
+theme_xhred_global_development_version = Versioni i zhvillimit
 
-right_vm_server_summary=Virtual Server Summary
+right_vm_server_summary = Përmbledhje e Serverit Virtual
 
-settings_webmin_default_module=Default module for Webmin
+settings_webmin_default_module = Moduli i paracaktuar për Webmin
 
-theme_xhred_global_unbeforeunload_title=Changes you made may not be saved
-theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
-theme_xhred_global_continue=Continue
+theme_xhred_global_unbeforeunload_title = Ndryshimet që keni bërë mund të mos ruhen
+theme_xhred_global_unbeforeunload_message = Nëse vazhdoni, ndryshimet e pashpenzuara në këtë faqe mund të humbasin përgjithmonë.
+theme_xhred_global_continue = Vazhdo
 
-theme_xhred_global_automatic_refresh=Automatic refresh
-theme_xhred_global_second=Second
-theme_xhred_global_seconds=Seconds
-theme_xhred_global_minute=Minute
-theme_xhred_global_minutes=Minutes
+theme_xhred_global_automatic_refresh = Refresh automatike
+theme_xhred_global_second = Sekond
+theme_xhred_global_seconds = Sekonda
+theme_xhred_global_minute = Minutë
+theme_xhred_global_minutes = Minuta
