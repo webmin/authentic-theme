@@ -8573,6 +8573,12 @@ ul.messenger .messenger-message {
     border-bottom-left-radius: 0 !important
 }
 
+@media screen and (max-width:767px) {
+    .btn-hidden.hidden {
+        display: inline-block!important;
+    }
+}
+
 tr.thead+script+tr.thead,
 tr.thead+tr.thead {
     border: 0 !important
