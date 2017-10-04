@@ -3013,7 +3013,7 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
                 <hr>
                 <h4 data-development style="margin-top:20px;">'
       . $Atext{'theme_development_support'} .
-      '&nbsp;&nbsp;<a href="https://github.com/qooob/authentic-theme#donation" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
+      '&nbsp;&nbsp;<a href="https://github.com/qooob/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
       .
       Atext(
         'theme_update_footer',
