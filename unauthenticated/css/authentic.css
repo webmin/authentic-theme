@@ -10666,6 +10666,9 @@ screen and (max-height:600px) {
     .loader {
         margin: -20px 0 !important
     }
+    .btn-hidden.hidden {
+        display: inline-block !important
+    }
 }
 
 td.ui_buttons_label td.ui_buttons_value {
