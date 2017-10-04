@@ -473,7 +473,7 @@ function get_pjax_event_end_funcs(e) {
         })[0], get_server_data("data-module", v___module), page_render(1)
     }, 40), Test.strContains(v___location_directory, v___module_file_manager) && setTimeout(function() {
         ___f__tw()
-    }, 40), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0)
+    }, 40), Core.curModule("csf") || get_server_data("post", 0, 1), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0)
 }
 
 function get_pjax_action_submit(e, t) {
@@ -744,11 +744,16 @@ function theme_config($action, callBack) {
     }
 }
 
-function get_server_data(e, t) {
-    var i = $("html"),
-        a = $("body");
-    if (void 0 === t) return e.startsWith("data-") ? i.attr(e) : i.data(e);
-    e.startsWith("data-") ? i.attr(e, t).data(e.replace("data-", ""), t) : i.data(e, t).data("data-" + e, t), "data-uri" !== e && "data-module" !== e || (a.attr(e, t), "data-module" === e && a.removeClass().addClass(t))
+function get_server_data(e, t, i) {
+    var a = $("html"),
+        n = $("body"),
+        s = "data-" + e,
+        _ = e.replace("data-", "");
+    if (void 0 !== i) e.startsWith("data-") ? (a.removeAttr(e), a.removeData(_)) : (a.removeAttr(s), a.removeData(e));
+    else {
+        if (void 0 === t) return e.startsWith("data-") ? a.attr(e) : a.data(e);
+        e.startsWith("data-") ? a.attr(e, t).data(_, t) : a.data(e, t).attr(s), "data-uri" !== e && "data-module" !== e || (n.attr(e, t), "data-module" === e && n.removeClass().addClass(t))
+    }
 }
 
 function get_navigation_module_name() {
