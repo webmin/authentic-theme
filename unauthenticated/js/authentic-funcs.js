@@ -395,6 +395,17 @@ function navigation_select_label() {
     }
 }
 
+function navigation_form_control(e) {
+    var t = $("aside select");
+    e ? $.each($("aside").find("forms"), function() {
+        $(this).replaceTagName("form")
+    }).promise().done(function() {
+        navigation_init_select()
+    }) : (!!t.data("select2") && t.select2("destroy"), $.each($("aside").find("form"), function() {
+        $(this).replaceTagName("forms")
+    }))
+}
+
 function navigation_filter_reset() {
     var e = "-webkit-filter: grayscale(0) sepia(0) saturate(1) hue-rotate(0deg) invert(0) brightness(1) contrast(1); filter: grayscale(0) sepia(0) saturate(1) hue-rotate(0deg) invert(0) brightness(1) contrast(1);";
     $(".visible-xs.mobile-menu-toggler").attr("style", "position: fixed;" + e), $("aside, .visible-xs.mobile-menu-toggler").attr("style", "z-index: 10; overflow: visible; transform: translate(" + settings_leftmenu_width + "px, 0px);" + e), $('input[name="settings_grayscale_level_navigation"], input[name="settings_sepia_level_navigation"], input[name="settings_hue_level_navigation"], input[name="settings_invert_level_navigation"]').val(0), $('input[name="settings_saturate_level_navigation"], input[name="settings_brightness_level_navigation"], input[name="settings_contrast_level_navigation"]').val(1), $('input[name="settings_grayscale_level_navigation"], input[name="settings_sepia_level_navigation"], input[name="settings_saturate_level_navigation"], input[name="settings_hue_level_navigation"], input[name="settings_invert_level_navigation"], input[name="settings_brightness_level_navigation"], input[name="settings_contrast_level_navigation"]').each(function() {
