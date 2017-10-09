@@ -2891,6 +2891,11 @@ form.ui_form>input+select {
     margin-right: 3px !important
 }
 
+.ui_table_end_submit_right {
+    margin-top: -35px;
+    float: right
+}
+
 br+.ui_form_end_submit,
 br+.ui_form_end_submit~.ui_form_end_submit,
 br+.end_submits,
@@ -10682,6 +10687,11 @@ td.ui_buttons_value {
 
 td[data-nowrap] {
     white-space: nowrap
+}
+
+html[data-uri*="virtual-server/delete_domain.cgi"] font[size="+1"] {
+    font-size: inherit;
+    color: #e8433f
 }
 
 @media screen and (-ms-high-contrast:active),
