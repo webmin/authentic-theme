@@ -22,7 +22,9 @@ if (get_server_data("debug")) {
                 var n = $.active;
                 if (n && ($.active = n - 1), Test.strContains(s.url, "/csf/index.cgi")) return void theme_reload()
             }
-        }), $(document).on("pjax:start", function(e, t) {}), $(document).on("pjax:beforeReplace", function(e, t) {}), $(document).on("ready pjax:beforeSend", function(e, t, i) {
+        }), $(document).on("pjax:start", function(e, t) {}), $(document).on("pjax:beforeReplace", function(e, t) {
+            navigation_form_control(0)
+        }), $(document).on("ready pjax:beforeSend", function(e, t, i) {
             settings_loader_top && NProgress.start(), v___module === v___module_file_manager && "function" == typeof __f_____undel && (jsPanel.closeChildpanels("body"), __f_____undel()), "csf" === v___module && "function" == typeof __c_____undel && __c_____undel(), "mysql" !== v___module && "postgresql" !== v___module || "function" != typeof __sql_____undel || __sql_____undel(), "syslog" === v___module && "number" == typeof refreshTimer && clearInterval(refreshTimer);
             var a = $(e.relatedTarget),
                 s = a.attr("href");
@@ -36,7 +38,7 @@ if (get_server_data("debug")) {
         }), $(document).on("pjax:complete", function(e, t, i) {
             settings_loader_top && NProgress.done(), t && session_check(t)
         }), $(document).on("ready pjax:end", function(e, t) {
-            get_pjax_event_end(e, t)
+            navigation_form_control(1), get_pjax_event_end(e, t)
         }), $(document).on("pjax:popstate", function(e, t) {
             setTimeout(function() {
                 get_pjax_event_end_funcs(0)
@@ -88,8 +90,9 @@ if (get_server_data("debug")) {
                 s && set_switch_position(a), e ? setTimeout(function() {
                     $("aside select").val() != i && ("dom" === e ? get_navigation_menu_virtualmin(i) : "id" === e && get_navigation_menu_cloudmin(i))
                 }, 300) : s && get_navigation_menu_webmin()
-            }), $(document).on("click", function(e) {
-                $(e.target).attr("class") && 0 === $(e.target).attr("class").indexOf("select2") || $("aside select") && $("aside select").length > 0 && $("aside select").hasClass("select2-hidden-accessible") && $("aside select").select2("close")
+            }), $("body").on("click", function(e) {
+                var t = $("aside select");
+                $(e.target).attr("class") && 0 === $(e.target).attr("class").indexOf("select2") || t && t.length > 0 && t.hasClass("select2-hidden-accessible") && t.select2("close")
             }), $("a").each(function() {
                 $(this).find("img").length && $(this).css("text-decoration", "none")
             }), $("body").on("keydown", function(e) {
