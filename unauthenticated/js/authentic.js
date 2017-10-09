@@ -694,8 +694,8 @@ if (get_server_data("debug")) {
                 t = $(this).parent(".btn-group").next('input[type="submit"].hidden');
             e.length || (e = t);
             var i = e.parent(),
-                a = e.parents("form");
-            if (!a.length) return (a = e.closest("form")).length || (a = i.prev("form")), a.length || (a = i.prev().prev("form")), a.length || (a = i.prev().prev().prev("form")), a.length || (a = i.prev().prev().prev().prev("form")), a.length || (a = i.prev().prev().prev().prev().prev("form")), a.length || (a = i.prev().prev().prev().prev().prev().prev("form")), a.append(a.nextUntil(i)), void $.each(i.find("select, input"), function() {
+                a = (i.parent("tr").find("form"), e.parents("form"));
+            if (!a.length) return (a = e.closest("form")).length || (a = i.prev("form")), a.length || (a = i.prev().prev("form")), a.length || (a = i.prev().prev().prev("form")), a.append(a.nextUntil(i)), void $.each(i.find("select, input"), function() {
                 $("<input>").attr({
                     type: "hidden",
                     name: $(this).attr("name") ? $(this).attr("name") : $(this).attr("id"),
