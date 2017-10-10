@@ -418,17 +418,24 @@ function get_pjax_push(e) {
 }
 
 function get_pjax_type(e) {
-    var t = new String;
-    if (e && e.href && (t = e.href.match(/([^\/]*)\/*$/)[1]), Test.string(e)) {
-        var i = e.replace(v___location_origin, "");
-        if (a = $('form[action="' + i + '"]:visible').attr("method")) return a;
-        if (!a) {
-            var a = (a = $('form[action="' + i + '"]').attr("method")) || $('form[action="' + URI(i).filename() + '"]').attr("method"),
-                n = $('form[action="' + i + '"]').attr("enctype");
-            return a || n ? "multipart/form-data" === n ? "POST" : a : "GET"
+    new String;
+    if (e && e.href && e.href.match(/([^\/]*)\/*$/)[1], Test.string(e)) {
+        var t = e.replace(v___location_origin, ""),
+            i = t.replace("/" + v___module + "/", ""),
+            a = $('form[action="' + t + '"]:visible'),
+            n = (a = a.length ? a : $('form[action="' + i + '"]:visible')).attr("method");
+        if ("multipart/form-data" === a.attr("enctype")) return "POST";
+        if (n) return n;
+        if (!n) {
+            var n = (n = $('form[action="' + t + '"]').attr("method")) || $('form[action="' + URI(t).filename() + '"]').attr("method"),
+                s = $('form[action="' + t + '"]').attr("enctype");
+            return n || s ? "multipart/form-data" === s ? "POST" : n : "GET"
         }
+    } else if ("object" == typeof e && $(e).is("form")) {
+        var _ = e.attr("method");
+        if (_) return _
     }
-    return "shell" === t || e === v___location_prefix + "/shell/" || e && Test.strContains(e, ".cgi?") && !Test.strContains(e, "config.cgi?") ? "GET" : "POST"
+    return e && Test.strContains(e, ".cgi?") && !Test.strContains(e, "config.cgi?") ? "GET" : "POST"
 }
 
 function get_pjax_content(e, t) {
@@ -2855,34 +2862,37 @@ function unbuffered_header_processor(e, t) {
             name: n,
             value: s || _
         }).appendTo(a);
-        Test.strContains(a.attr("enctype"), "multipart/form-data");
-        if ($formData = a.serialize(), $("input:file:visible").val()) return v___theme_force_buffered = 1, void a.submit()
+        var r = Test.strContains(a.attr("enctype"), "multipart/form-data"),
+            o = r ? new FormData(a[0]) : a.serialize();
+        if ($("input:file:visible").val()) return v___theme_force_buffered = 1, void a.submit()
     }
-    var r = 0,
-        o = 0,
-        l = t ? i.target.action : e,
+    var l = 0,
         c = 0,
-        d = $('div[data-dcontainer="1"] > .panel.panel-default').clone();
+        d = t ? i.target.action : e,
+        h = 0,
+        p = $('div[data-dcontainer="1"] > .panel.panel-default').clone();
     NProgress.start(), set_onbeforeunload_status(1, 1), progressive_request = $.ajax({
         xhr: function() {
             var e = new window.XMLHttpRequest;
             return e.addEventListener("progress", function(e) {
                 var t = e.target.responseText,
                     i = $(t).filter('div[data-dcontainer="1"]').html();
-                if (!!i && o++, 0 === c && (window.history.pushState(null, "", e.currentTarget.responseURL), c = 1, $(window).on("popstate.unbuffered", function() {
-                        $('.container-fluid[data-dcontainer="1"]').html(d), $(this).unbind("popstate.unbuffered"), setTimeout(function() {
+                if (!!i && c++, 0 === h && (window.history.pushState(null, "", e.currentTarget.responseURL), h = 1, $(window).on("popstate.unbuffered", function() {
+                        $('.container-fluid[data-dcontainer="1"]').html(p), $(this).unbind("popstate.unbuffered"), setTimeout(function() {
                             get_pjax_event_end_funcs(0)
                         }, 40)
-                    })), o > 3 && !r) i && ($('div[data-dcontainer="1"]').html(i), r++, unbuffered_header_processor_allow_scroll() && ($(".__page").hasScrollBar() ? $(".__page").scrollTop($(".__page")[0].scrollHeight) : $(".__page").scrollTop(0)), $(".__page").addClass("progressing"), get_pjax_event_end(!1, e.target));
-                else if (r) {
+                    })), c > 3 && !l) i && ($('div[data-dcontainer="1"]').html(i), l++, unbuffered_header_processor_allow_scroll() && ($(".__page").hasScrollBar() ? $(".__page").scrollTop($(".__page")[0].scrollHeight) : $(".__page").scrollTop(0)), $(".__page").addClass("progressing"), get_pjax_event_end(!1, e.target));
+                else if (l) {
                     var a = extract_content(t, '<div class="panel-body">', "</div>", 0);
                     a && $('div[data-dcontainer="1"]').find(".panel-body").html(a), unbuffered_header_processor_allow_scroll() && $(".__page").scrollTop($(".__page")[0].scrollHeight)
                 }
             }, !1), e
         },
-        type: get_pjax_type(t && i.target.method ? i.target.method : l),
-        url: l,
-        data: !!t && $formData,
+        type: get_pjax_type(a || d),
+        url: d,
+        processData: !t || !r,
+        contentType: (!t || !r) && "application/x-www-form-urlencoded; charset=UTF-8",
+        data: !!t && o,
         complete: function(e) {
             $('div[data-dcontainer="1"]').html($(e.responseText).filter('div[data-dcontainer="1"]').html()), get_pjax_event_end(!1, e), unbuffered_header_processor_allow_scroll() && $(".__page").scrollTop($(".__page")[0].scrollHeight), $(".__page").removeClass("progressing"), NProgress.done(), set_onbeforeunload_status(0, 1), unbuffered_header_post(e)
         }
