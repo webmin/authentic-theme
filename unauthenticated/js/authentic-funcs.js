@@ -567,9 +567,8 @@ function set_side_slider_visibility(e) {
 }
 
 function set_side_slider_labels() {
-    setTimeout(function() {
-        $('a[href*="#right-side-tabs-sysinfo"]').text(theme_language("theme_xhred_titles_dashboard")), $('a[href*="#right-side-tabs-notifications"]').text(theme_language("theme_xhred_global_notifications")), $('a[href*="#right-side-tabs-favorites"]').text(theme_language("theme_xhred_global_favorites")), $(".theme_xhred_notification_no_data").text(theme_language("theme_xhred_notification_no_data").toUpperCase()), $(".theme_xhred_notification_no_favorites").text(theme_language("theme_xhred_notification_no_favorites").toUpperCase()), $(".theme_xhred_notification_none").text(theme_language("theme_xhred_notification_none").toUpperCase())
-    }, 200)
+    var e = theme_language("theme_xhred_titles_dashboard");
+    void 0 !== e ? ($('a[href*="#right-side-tabs-sysinfo"]').text(e), $('a[href*="#right-side-tabs-notifications"]').text(theme_language("theme_xhred_global_notifications")), $('a[href*="#right-side-tabs-favorites"]').text(theme_language("theme_xhred_global_favorites")), $(".theme_xhred_notification_no_data").text(theme_language("theme_xhred_notification_no_data").toUpperCase()), $(".theme_xhred_notification_no_favorites").text(theme_language("theme_xhred_notification_no_favorites").toUpperCase()), $(".theme_xhred_notification_none").text(theme_language("theme_xhred_notification_none").toUpperCase())) : setTimeout(set_side_slider_labels, 200)
 }
 
 function theme_password_generator() {
