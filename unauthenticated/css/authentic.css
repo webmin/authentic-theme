@@ -9075,7 +9075,9 @@ td.selectable label:not(.lawobject) {
 }
 
 .ui_checked_checkbox {
-    min-width: 40px
+    min-width: 40px !important;
+    max-width: 40px !important;
+    width: 40px !important
 }
 
 td.col-no-styling:hover,
@@ -10645,10 +10647,52 @@ screen and (max-height:600px) {
     }
 }
 
-@media(min-width:1190px) {
+@media(min-width:1200px) {
+    .col-lg-10 {
+        width: 100%
+    }
+    .col-lg-offset-1 {
+        margin-left: 0
+    }
+}
+
+@media(min-width:1920px) {
     .container:not(.session_login),
     .container-fluid {
         margin-top: 30px
+    }
+    .col-lg-10 {
+        width: 83.33333333%
+    }
+    .col-lg-offset-1 {
+        margin-left: 8.33333333%
+    }
+    html[data-slider-fixed="1"] .container:not(.session_login),
+    html[data-slider-fixed="1"] .container-fluid {
+        margin-top: 15px
+    }
+    html[data-slider-fixed="1"] .col-lg-10 {
+        width: 100%
+    }
+    html[data-slider-fixed="1"] .col-lg-offset-1 {
+        margin-left: 0
+    }
+}
+
+@media(min-width:2560px) {
+    .container:not(.session_login),
+    .container-fluid,
+    html[data-slider-fixed="1"] .container:not(.session_login),
+    html[data-slider-fixed="1"] .container-fluid {
+        margin-top: 30px
+    }
+    .col-lg-10,
+    html[data-slider-fixed="1"] .col-lg-10 {
+        width: 83.33333333%
+    }
+    .col-lg-offset-1,
+    html[data-slider-fixed="1"] .col-lg-offset-1 {
+        margin-left: 8.33333333%
     }
 }
 
