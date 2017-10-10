@@ -1,5 +1,19 @@
 ## Changelog
 
+#### Version 19.00-patch3 (October 10, 2017)
+* Fix form-data encoding detection [#842](https://github.com/qooob/authentic-theme/issues/842)
+
+#### Version 19.00-patch2 (October 09, 2017)
+* Fix navigation menu refresh upon post commands [#851](https://github.com/qooob/authentic-theme/issues/851)
+* Fix to run embeded scripts from modules consistently [#850](https://github.com/qooob/authentic-theme/issues/850)
+
+#### Version 19.00-patch1 (October 04, 2017)
+* Swedish language update [#836](https://github.com/qooob/authentic-theme/issues/836)
+* Albanian language update [#837](https://github.com/qooob/authentic-theme/issues/837)
+* Display buttons on mobile view without hovering [#821](https://github.com/qooob/authentic-theme/issues/821)
+* Fix missing reference error, when recollecting sysinfo [#838](https://github.com/qooob/authentic-theme/issues/838)
+
+
 #### Version 19.00 (September 30, 2017)
 * Single-page application design delivers you the fastest and smoothest _UX_ you've ever experienced
 * Multiple stability and usability enhancements
