@@ -605,11 +605,10 @@ if (get_server_data("debug")) {
             $(this);
             var e = $("aside").css("left");
             ___________content_initial_ = $("#content").css("margin-left"), ________version_date_obj = $(this).find(".modal-body > h4:first-child"), ________version_curr_text = ________version_date_obj.text().split(/\s+/)[1], ________version_first_text = $(".version_separator:last").text(), ________multi_in_branch = $(".version_separator").length, _____version__x = ________version_first_text + "..." + ________version_curr_text, __release_time = v___theme_version_git.slice(-4, -2) + ":" + v___theme_version_git.slice(-2), _____release_date_ = ________version_date_obj.text().match(/\(([^)]+)\)/), _____release_date = !!_____release_date_ && _____release_date_[1], __release_date_time = _____release_date + (__release_time.length > 2 ? ", " + __release_time : "");
-            var t = theme_language("theme_xhred_global_release").toLowerCase(),
-                i = $(".version_separator"),
-                a = theme_language("theme_xhred_global_development_version");
-            $.each(i, function() {
-                $(this).attr("target", "_blank"), -1 === $(this).text().indexOf(t) && -1 === $(this).text().indexOf("-beta") && -1 === $(this).text().indexOf("-RC") && $(this).append('<span class="smaller">-' + t + " </span>")
+            var t = $(".version_separator"),
+                i = theme_language("theme_xhred_global_development_version");
+            $.each(t, function() {
+                $(this).attr("target", "_blank")
             }), setTimeout(function() {
                 $(".container-fluid").addClass("bg-filter-blur-grayscale-opacity50")
             }, 0), $("#content").animate({
@@ -617,29 +616,32 @@ if (get_server_data("debug")) {
             }, 450), $("aside").animate({
                 "margin-left": e
             }, 450), $(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50");
-            var s = $(this).find(".modal-body h4");
-            if ($modal_h4_first = $(this).find(".modal-body h4:first"), !$(this).find(".modal-body h4:first .diffctl").length) {
-                o = new RegExp(RegExp.quote(________version_curr_text), "g");
-                if (________multi_in_branch && (s.replaceText(o, "<span>" + _____version__x + "</span>"), s.replaceText(/Version/, "Versions")), s.length && $(this).find('.modal-body h4:contains("patch")').length) {
-                    var n = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
-                    $modal_h4_first.append('<a data-toggle="tooltip" data-title="<strong>' + theme_language("theme_xhred_git_compare_changes") + "</strong><br>" + theme_language("theme_xhred_global_committed_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + n + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>'), $modal_h4_first.after('<span class="version_separator" style="margin-top: -32px;margin-right: 0;">            <span class="smaller text-danger"><span>' + a + "</span></span></span>")
-                } else $modal_h4_first.append('<a target="_blank" data-toggle="tooltip" data-html="true" data-title="<strong>' + theme_language("theme_xhred_global_complete_changelog") + "</strong><br>" + theme_language("theme_xhred_global_released_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>').append('<a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator margined-top-10">' + ________version_curr_text + "</a>")
+            var a = $(this).find(".modal-body h4"),
+                s = $(this).find(".modal-body h4:first");
+            if (!$(this).find(".modal-body h4:first .diffctl").length) {
+                l = new RegExp(RegExp.quote(________version_curr_text), "g");
+                ________multi_in_branch && (a.replaceText(l, "<span>" + _____version__x + "</span>"), a.replaceText(/Version/, "Versions"));
+                var n = $(this).find('.modal-body h4:contains("patch")').length;
+                if (a.length && n) {
+                    var o = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
+                    s.append('<a data-toggle="tooltip" data-title="<strong>' + theme_language("theme_xhred_git_compare_changes") + "</strong><br>" + theme_language("theme_xhred_global_committed_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + o + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>'), s.after('<span class="version_separator version_dev" style="margin-top: -32px;margin-right: 0;">            <span class="smaller text-danger"><span>' + i + "</span></span></span>")
+                } else s.append('<a target="_blank" data-toggle="tooltip" data-html="true" data-title="<strong>' + theme_language("theme_xhred_global_complete_changelog") + "</strong><br>" + theme_language("theme_xhred_global_released_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>').append('<a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator margined-top-10">' + ________version_curr_text + "</a>")
             }
-            var o = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
-            s.replaceText(o, "");
-            var l = [];
+            var l = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
+            a.replaceText(l, "");
+            var r = [];
             $.each($(this).find('li span:contains("Fixed bugs")'), function() {
                 var e = $(this),
                     t = $(this).parent("li"),
                     i = t.parent("ul"),
                     a = t.find("a:not(.bctl)"),
                     s = a.length;
-                ________multi_in_branch ? (l.push(a), 1 === i.find("li").length && (i.prev("hr").prev("a").remove(), i.prev("hr").remove(), i.addClass("no-data")), t.remove()) : (e.html([e.text().slice(0, 6), s + " ", e.text().slice(6)].join("")), t.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
+                ________multi_in_branch ? (r.push(a), 1 === i.find("li").length && (i.prev("hr").prev("a").remove(), i.prev("hr").remove(), i.addClass("no-data")), t.remove()) : (e.html([e.text().slice(0, 6), s + " ", e.text().slice(6)].join("")), t.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
                     a.toggleClass("hidden"), t.find("a.bctl i").toggleClass("fa-minus-square-o")
                 }), a.addClass("obj-popup hidden"))
             }).promise().done(function() {
                 if (________multi_in_branch && !$(".bctl").length) {
-                    $(".modal-body h4[data-development]").prev("hr").before('      <hr class="hr-dashed margined-top-15">      <div data-bugs><ul><li><span data-fixed-bugs data-fixed-bugs-obj>Fixed bugs</span><span data-bugs-container></span></li></ul></div>'), $(".modal-body span[data-bugs-container]").append(l);
+                    $(".modal-body h4[data-development]").prev("hr").before('      <hr class="hr-dashed margined-top-15">      <div data-bugs><ul><li><span data-fixed-bugs data-fixed-bugs-obj>Fixed bugs</span><span data-bugs-container></span></li></ul></div>'), $(".modal-body span[data-bugs-container]").append(r);
 
                     function e(e, t) {
                         return parseInt($(t).text().replace("#", "")) < parseInt($(e).text().replace("#", "")) ? 1 : -1
@@ -654,6 +656,13 @@ if (get_server_data("debug")) {
                     var s = $("div[data-bugs]"),
                         n = s.find("a:not(.bctl)").length;
                     !n && s.prev(".hr-dashed").remove(), !n && s.remove()
+                }
+                var o = $(".modal#update_notice h4 span");
+                if (Test.strContains(o.text(), "...") && Test.strContains(o.text(), "patch")) {
+                    var l = parseInt(o.text().split("...")[1].substr(-1, 1));
+                    console.log(l), l && $.each($(".version_separator:not(.version_dev)"), function(e, t) {
+                        e + 1 != l && $(this).addClass("hidden")
+                    })
                 }
             })
         }), $("body").on("click contextmenu", 'a[data-href*="/webmin/edit_webmincron.cgi"]', function(e) {
