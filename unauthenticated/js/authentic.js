@@ -660,7 +660,7 @@ if (get_server_data("debug")) {
                 var o = $(".modal#update_notice h4 span");
                 if (Test.strContains(o.text(), "...") && Test.strContains(o.text(), "patch")) {
                     var l = parseInt(o.text().split("...")[1].substr(-1, 1));
-                    console.log(l), l && $.each($(".version_separator:not(.version_dev)"), function(e, t) {
+                    l && $.each($(".version_separator:not(.version_dev)"), function(e, t) {
                         e + 1 != l && $(this).addClass("hidden")
                     })
                 }
