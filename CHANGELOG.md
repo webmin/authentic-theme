@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.00-patch4 (October 11, 2017)
+* Fix failproof update captions for _Side Slider_ [#853](https://github.com/qooob/authentic-theme/issues/853)
+* Fix container offset to be shown only on high resolution screens [#852](https://github.com/qooob/authentic-theme/issues/852)
+* Fix missing trailing slashes for directories in requests
+* Fix refreshing issues [#844](https://github.com/qooob/authentic-theme/issues/844) [#848](https://github.com/qooob/authentic-theme/issues/848) [webmin/webmin#652](https://github.com/webmin/webmin/pull/652)
+
 #### Version 19.00-patch3 (October 10, 2017)
 * Fix form-data encoding detection [#842](https://github.com/qooob/authentic-theme/issues/842)
 
@@ -18,7 +24,7 @@
 * Single-page application design delivers you the fastest and smoothest _UX_ you've ever experienced
 * Multiple stability and usability enhancements
 * Dropped support for _Internet Explorer 11_ [#818](https://github.com/qooob/authentic-theme/issues/818)
-* Fixed bugs [#754](https://github.com/qooob/authentic-theme/issues/754) [#786](https://github.com/qooob/authentic-theme/issues/786) [#807](https://github.com/qooob/authentic-theme/issues/807) [#812](https://github.com/qooob/authentic-theme/issues/812) [#822](https://github.com/qooob/authentic-theme/issues/822) [#825](https://github.com/qooob/authentic-theme/issues/825) [#827](https://github.com/qooob/authentic-theme/issues/827) [#832](https://github.com/qooob/authentic-theme/issues/832) [#833](https://github.com/qooob/authentic-theme/issues/833) [#v53082](https://www.virtualmin.com/node/53082) [#v53174](https://www.virtualmin.com/node/53174) [#v53358](https://www.virtualmin.com/node/53358) [#v53722](https://www.virtualmin.com/node/53722) [#c10414](https://forum.configserver.com/viewtopic.php?f=5&t=10414#p28652)
+* Fixed bugs [#754](https://github.com/qooob/authentic-theme/issues/754) [#786](https://github.com/qooob/authentic-theme/issues/786) [#807](https://github.com/qooob/authentic-theme/issues/807) [#812](https://github.com/qooob/authentic-theme/issues/812) [#822](https://github.com/qooob/authentic-theme/issues/822) [#825](https://github.com/qooob/authentic-theme/issues/825) [#827](https://github.com/qooob/authentic-theme/issues/827) [#832](https://github.com/qooob/authentic-theme/issues/832) [#833](https://github.com/qooob/authentic-theme/issues/833) [virtualmin.com/53082](https://www.virtualmin.com/node/53082) [virtualmin.com/53174](https://www.virtualmin.com/node/53174) [virtualmin.com/53358](https://www.virtualmin.com/node/53358) [virtualmin.com/53722](https://www.virtualmin.com/node/53722) [configserver.com/10414](https://forum.configserver.com/viewtopic.php?f=5&t=10414#p28652)
 
 <!--- separator --->
 
