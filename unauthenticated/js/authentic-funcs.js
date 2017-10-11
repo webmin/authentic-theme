@@ -268,7 +268,8 @@ function navigation_init_select() {
         e.length && (e.removeAttr("onchange disabled"), !!e.data("select2") && e.select2("destroy"), e.unbind("select2:select"), e.select2({
             minimumResultsForSearch: $.browser.mobile ? -1 : 5
         }), setTimeout(function() {
-            e.data("select2").open(), e.data("select2").close()
+            var t = e.data("select2");
+            t && (t.open(), t.close())
         }, 1), e.on("select2:select", function(e) {
             "dom" === e.currentTarget.id ? (get_navigation_menu_virtualmin(e.currentTarget.value), get_default_virtualmin_content(e.currentTarget.value)) : "sid" === e.currentTarget.id && (get_navigation_menu_cloudmin(e.currentTarget.value), get_default_cloudmin_content(e.currentTarget.value))
         }), e.on("select2:open", function(e) {
@@ -365,7 +366,7 @@ function navigation_update(e) {
     if (!get_onbeforeunload_status()) {
         var e = void 0 === e || -1 == e || "" == e ? $("aside select").val() : e,
             t = $t_uri_virtualmin ? "virtualmin" : $t_uri_cloudmin ? "cloudmin" : $t_uri_usermin ? "usermin" : $t_uri_webmin ? "webmin" : "mail";
-        navigation_render_start(), "webmin" == t ? (set_switch_position("webmin"), get_navigation_menu_webmin("webmin", 1)) : "virtualmin" == t ? (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(e, 1)) : "cloudmin" == t ? (set_switch_position("cloudmin"), get_navigation_menu_cloudmin(e, 1)) : "usermin" == t ? (set_switch_position("usermin"), get_navigation_menu_webmin("usermin", 1)) : "mail" == t && (set_switch_position("webmail"), get_navigation_menu_webmin("webmail", 1))
+        navigation_render_start(), "webmin" == t ? (set_switch_position("webmin"), get_navigation_menu_webmin("webmin")) : "virtualmin" == t ? (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(e)) : "cloudmin" == t ? (set_switch_position("cloudmin"), get_navigation_menu_cloudmin(e)) : "usermin" == t ? (set_switch_position("usermin"), get_navigation_menu_webmin("usermin")) : "mail" == t && (set_switch_position("webmail"), get_navigation_menu_webmin("webmail"))
     }
 }
 
@@ -567,8 +568,9 @@ function set_side_slider_visibility(e) {
 }
 
 function set_side_slider_labels() {
-    var e = theme_language("theme_xhred_titles_dashboard");
-    void 0 !== e ? ($('a[href*="#right-side-tabs-sysinfo"]').text(e), $('a[href*="#right-side-tabs-notifications"]').text(theme_language("theme_xhred_global_notifications")), $('a[href*="#right-side-tabs-favorites"]').text(theme_language("theme_xhred_global_favorites")), $(".theme_xhred_notification_no_data").text(theme_language("theme_xhred_notification_no_data").toUpperCase()), $(".theme_xhred_notification_no_favorites").text(theme_language("theme_xhred_notification_no_favorites").toUpperCase()), $(".theme_xhred_notification_none").text(theme_language("theme_xhred_notification_none").toUpperCase())) : setTimeout(set_side_slider_labels, 200)
+    var e = $('a[href*="#right-side-tabs-sysinfo"]'),
+        t = theme_language("theme_xhred_titles_dashboard");
+    e.length && void 0 !== t ? (e.text(t), $('a[href*="#right-side-tabs-notifications"]').text(theme_language("theme_xhred_global_notifications")), $('a[href*="#right-side-tabs-favorites"]').text(theme_language("theme_xhred_global_favorites")), $(".theme_xhred_notification_no_data").text(theme_language("theme_xhred_notification_no_data").toUpperCase()), $(".theme_xhred_notification_no_favorites").text(theme_language("theme_xhred_notification_no_favorites").toUpperCase()), $(".theme_xhred_notification_none").text(theme_language("theme_xhred_notification_none").toUpperCase())) : setTimeout(set_side_slider_labels, 200)
 }
 
 function theme_password_generator() {
@@ -767,6 +769,27 @@ function get_server_data(e, t, i) {
         if (void 0 === t) return e.startsWith("data-") ? a.attr(e) : a.data(e);
         e.startsWith("data-") ? a.attr(e, t).data(_, t) : a.data(e, t).attr(s), "data-uri" !== e && "data-module" !== e || (n.attr(e, t), "data-module" === e && n.removeClass().addClass(t))
     }
+}
+
+function control_server_tmp_var(e, t, i, a, n, s) {
+    return $.ajax({
+        type: "POST",
+        url: v___location_prefix + "/index.cgi/?xhr-tmp_var=1&xhr-tmp_var_action=" + e + "&xhr-tmp_var_name=" + t + "&xhr-tmp_var_value=" + i + "&xhr-tmp_var_keep=" + a,
+        data: !1,
+        dataType: "text",
+        success: function(e) {
+            "function" == typeof n && (!e.length || e.length && 1 === s) && n()
+        },
+        error: function(e) {}
+    })
+}
+
+function get_server_tmp_var(e, t, i, a) {
+    return control_server_tmp_var("get", e, !1, t, i, a)
+}
+
+function set_server_tmp_var(e, t) {
+    control_server_tmp_var("set", e, t)
 }
 
 function get_navigation_module_name() {
@@ -996,26 +1019,26 @@ function bind_sameorigin() {
     })
 }
 
-function get_navigation_menu_webmin(e, t) {
+function get_navigation_menu_webmin(e) {
     get_onbeforeunload_status() || 0 != navigation_dashboard_switch_available() && v___location_path != v___location_prefix + "/webmin/edit_themes.cgi" || (navigation_render_start(), $.ajax({
         type: "GET",
         url: v___location_prefix + "/index.cgi/?xhr-navigation=1&xhr-navigation-type=" + ("webmail" == e ? "webmail" : "webmin"),
         data: !1,
         dataType: "text",
         success: function(e) {
-            $("body ul.navigation").html(e), navigation_render_end(), e && navigation_detect()
+            $("body ul.navigation").html(e), navigation_render_end(), navigation_detect()
         }
     }), get_navigation_menu_buttons())
 }
 
-function get_navigation_menu_virtualmin(e, t) {
+function get_navigation_menu_virtualmin(e) {
     get_onbeforeunload_status() || (navigation_render_start(), $.ajax({
         type: "GET",
         url: v___location_prefix + "/index.cgi/?xhr-navigation=1&xhr-navigation-type=virtualmin" + (e ? "&dom=" + e : settings_right_virtualmin_default ? "&dom=" + settings_right_virtualmin_default : ""),
         data: !1,
         dataType: "text",
         success: function(e) {
-            $("body ul.navigation").html(e), navigation_render_end(), get_navigation_menu_virtualmin_summary(), e && navigation_detect()
+            $("body ul.navigation").html(e), navigation_render_end(), get_navigation_menu_virtualmin_summary(), navigation_detect()
         }
     }), get_navigation_menu_buttons())
 }
@@ -1029,14 +1052,14 @@ function get_navigation_menu_virtualmin_summary() {
     }
 }
 
-function get_navigation_menu_cloudmin(e, t) {
+function get_navigation_menu_cloudmin(e) {
     get_onbeforeunload_status() || (navigation_render_start(), $.ajax({
         type: "GET",
         url: v___location_prefix + "/index.cgi/?xhr-navigation=1&xhr-navigation-type=cloudmin" + (e || 0 === e ? "&sid=" + e : settings_right_cloudmin_default ? "&sid=" + settings_right_cloudmin_default : ""),
         data: !1,
         dataType: "text",
         success: function(e) {
-            $("body ul.navigation").html(e), theme_shell_link_control(), navigation_render_end(), e && navigation_detect()
+            $("body ul.navigation").html(e), theme_shell_link_control(), navigation_render_end(), navigation_detect()
         }
     }), get_navigation_menu_buttons())
 }
@@ -2153,7 +2176,7 @@ function page_render(e) {
                 }
                 $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == v___location_directory_trail_slashed || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1 ? ($iconized_class = "fa-arrow-left", $(this).data("title", "").data("back", 1)) : "//" != $(this).attr("href") || v___location_path_lead_unslashed != v___location_prefix_unslashed_trail_slashed + "settings-editor_read.cgi" && v___location_path_lead_unslashed != v___location_prefix_unslashed_trail_slashed + "settings-upload.cgi" ? $(this).attr("href").indexOf("config.cgi") > -1 ? ($iconized_class = "fa-cog", $(this).data("title", "")) : $(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1 ? $iconized_class = "fa-refresh" : $(this).attr("href").indexOf("restart_zone.cgi") > -1 ? $iconized_class = "fa-retweet" : $(this).attr("href").indexOf("start.cgi") > -1 ? $iconized_class = "fa-play" : $(this).attr("href").indexOf("stop.cgi") > -1 ? $iconized_class = "fa-square" : $(this).attr("href").indexOf("man/search.cgi") > -1 ? $iconized_class = "fa-search" : $(this).attr("href").indexOf("delete_") > -1 ? $iconized_class = "fa-trash-o" : $(this).attr("href").indexOf("list_mail.cgi") > -1 ? $iconized_class = "fa-inbox" : $(this).attr("href").indexOf("index.cgi") > -1 && v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "openvpn/" ? $iconized_class = "fa-cogs" : $(this).attr("href").indexOf("index.cgi?") > -1 && v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "spam/" && ($iconized_class = "fa-arrow-left", $(this).data("back", 1)) : ($iconized_class = "fa-arrow-left", $(this).attr("href", v___location_prefix + "/webmin/edit_themes.cgi").data("title", "").data("back", 1));
                 var i = $(this).attr("href").indexOf("help.cgi") > -1;
-                i && ($iconized_class = "fa-question-circle", $(this).data("title", "")), $(this).data("toggle", "tooltip").data("title", Convert.strUpInitial(i ? theme_language("theme_xhred_global_help") : 1 === $(this).data("back") ? (Core.curModule(v___module_file_manager), "") : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>'), $(this).contents().filter(function() {
+                i && ($iconized_class = "fa-question-circle", $(this).data("title", "")), $(this).data("toggle", "tooltip").data("title", Convert.strUpInitial(i ? theme_language("theme_xhred_global_help") : 1 === $(this).data("back") ? Core.curModule(v___module_file_manager) ? "" : theme_language("theme_xhred_global_return_to_module_index") : $(this).text())).attr("data-container", "body").addClass("btn btn-link text-lighter").removeClass("ui_link").append('<i class="fa ' + $iconized_class + '"></i>'), $(this).contents().filter(function() {
                     return 3 == this.nodeType
                 }).remove(), $(this).tooltip({
                     container: "body",
