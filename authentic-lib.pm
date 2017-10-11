@@ -2706,6 +2706,12 @@ sub get_xhr_request
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
             print resolve_links(get_access_data('root') . $in{'xhr-get_symlink_path'});
+        } elsif ($in{'xhr-tmp_var'} eq '1') {
+            if ($in{'xhr-tmp_var_action'} eq 'set') {
+                set_tmp_var($in{'xhr-tmp_var_name'}, $in{'xhr-tmp_var_value'});
+            } elsif ($in{'xhr-tmp_var_action'} eq 'get') {
+                print get_tmp_var($in{'xhr-tmp_var_name'}, $in{'xhr-tmp_var_keep'});
+            }
         } elsif ($in{'xhr-get_autocompletes'} eq '1') {
             my @data =
               get_autocomplete_shell($in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'});
@@ -3013,7 +3019,7 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
                 <hr>
                 <h4 data-development style="margin-top:20px;">'
       . $Atext{'theme_development_support'} .
-      '&nbsp;&nbsp;<a href="https://github.com/qooob/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
+'&nbsp;&nbsp;<a href="https://github.com/qooob/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
       .
       Atext(
         'theme_update_footer',

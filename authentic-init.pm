@@ -97,12 +97,6 @@ sub embed_header
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
     print '  <head>', "\n";
-    if ($t_uri__i =~ /xnavigation=1/) {
-        print '  <meta http-equiv="refresh" content="0; url=' . (get_env('https') ? 'https://' : 'http://') .
-          (get_env('http_x_forwarded_server') ? get_env('http_x_forwarded_server') : get_env('http_host')) .
-          $gconfig{'webprefix'} . '">';
-        exit;
-    }
     print '  <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     print '  <title>', $args[0], '</title>', "\n";
     print '  <link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
