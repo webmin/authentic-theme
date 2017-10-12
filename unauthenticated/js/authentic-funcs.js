@@ -147,11 +147,11 @@ function get_bundle_csf() {
     }))
 }
 
-function get_bundle_file_manager() {
+function get_bundle_file_manager(e) {
     $("head");
-    var e = v___server_extensions_path + "/file-manager/file-manager." + v___source_type + ".js?" + v___theme_version_plain;
-    Test.arrContains(o___gotten_scripts, e) || $.getScript("" + e, function(t, i, a) {
-        o___gotten_scripts.push(e)
+    var t = v___server_extensions_path + "/file-manager/file-manager." + v___source_type + ".js?" + v___theme_version_plain;
+    Test.arrContains(o___gotten_scripts, t) || $.getScript("" + t, function(i, a, n) {
+        o___gotten_scripts.push(t), e && ___f__tw()
     })
 }
 
@@ -487,7 +487,7 @@ function get_pjax_event_end_funcs(e) {
             return 0 !== e.length
         })[0], get_server_data("data-module", v___module), page_render(1)
     }, 40), Test.strContains(v___location_directory, v___module_file_manager) && setTimeout(function() {
-        ___f__tw()
+        "function" == typeof ___f__tw ? ___f__tw() : get_bundle_file_manager(1)
     }, 40), Core.curModule("csf") || get_server_data("post", 0, 1), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0)
 }
 
@@ -2899,7 +2899,7 @@ function unbuffered_header_processor(e, t) {
             return e.addEventListener("progress", function(e) {
                 var t = e.target.responseText,
                     i = $(t).filter('div[data-dcontainer="1"]').html();
-                if (!!i && c++, 0 === h && (window.history.pushState(null, "", e.currentTarget.responseURL), h = 1, $(window).on("popstate.unbuffered", function() {
+                if (!!i && c++, 0 === h && (window.history.pushState(null, "", e.currentTarget.responseURL + (Test.strContains(e.currentTarget.responseURL, "?") ? "&" : "?") + $__theme_navigation), h = 1, $(window).on("popstate.unbuffered", function() {
                         $('.container-fluid[data-dcontainer="1"]').html(p), $(this).unbind("popstate.unbuffered"), setTimeout(function() {
                             get_pjax_event_end_funcs(0)
                         }, 40)
