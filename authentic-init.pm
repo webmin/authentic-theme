@@ -965,16 +965,18 @@ sub set_tmp_var
     my $tmp = 'tmp';
     my %var;
 
+    $key =~ tr/A-Za-z0-9//cd;
+
     $var{$key} = $value;
 
-    write_file(('/' . $tmp . '/.' . $tmp . '_' . $key . '_' . $remote_user), \%var);
+    write_file(('/' . $tmp . '/.' . ($tmp . '_' . get_product_name()) . '_' . $key . '_' . $remote_user), \%var);
 }
 
 sub get_tmp_var
 {
     my ($key, $keep) = @_;
     my $tmp      = 'tmp';
-    my $tmp_file = '/' . $tmp . '/.' . $tmp . '_' . $key . '_' . $remote_user;
+    my $tmp_file = '/' . $tmp . '/.' . ($tmp . '_' . get_product_name()) . '_' . $key . '_' . $remote_user;
 
     read_file($tmp_file, \%tmp_var);
     if (!$keep) {

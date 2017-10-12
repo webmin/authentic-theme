@@ -21,7 +21,8 @@ if (dashboard_switch()
             ||
             (
                 (!$__settings{'settings_right_default_tab_usermin'} ||
-                 $__settings{'settings_right_default_tab_usermin'} eq '/'
+                 $__settings{'settings_right_default_tab_usermin'} eq '/' ||
+                 !foreign_available("mailbox")
                 ) &&
                 get_product_name() eq 'usermin'))
     ) ||
@@ -70,9 +71,7 @@ if (dashboard_switch()
                     $__print_hidden++;
                 }
 
-                if (($minfo->{'dir'} ne 'virtual-server' && $minfo->{'dir'} ne 'server-manager') ||
-                    (($minfo->{'dir'} eq 'virtual-server' || $minfo->{'dir'} eq 'server-manager')))
-                {
+                if ($minfo->{'dir'} ne 'mailbox') {
                     &print_category_link("$gconfig{'webprefix'}/$minfo->{'dir'}/"
                                            .
                                            ( "/$minfo->{'dir'}/" =~ 'filemin' ? 'index.cgi?path=/' :
@@ -146,7 +145,9 @@ elsif (
     print_netdata_link();
 }
 
-elsif ($__settings{'settings_right_default_tab_usermin'} =~ /mail/ || $in{'xhr-navigation-type'} eq 'webmail') {
+elsif (foreign_available("mailbox") &&
+       ($__settings{'settings_right_default_tab_usermin'} =~ /mail/ || $in{'xhr-navigation-type'} eq 'webmail'))
+{
 
     print_left_menu('mailbox', \@leftitems, 0, 0, 0, $in{'xhr-navigation-type'});
 

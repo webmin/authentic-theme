@@ -144,9 +144,14 @@ sub print_switch_webmin
     print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"'
       .
       (
-        ((($__settings{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
-           (!$__settings{'settings_right_default_tab_usermin'} ||
-             ($__settings{'settings_right_default_tab_usermin'} eq '/' && get_product_name() eq 'usermin'))
+        ((($__settings{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin'))
+           || (
+               (!$__settings{'settings_right_default_tab_usermin'} ||
+                $__settings{'settings_right_default_tab_usermin'} eq '/' ||
+                !foreign_available("mailbox")
+               ) &&
+               get_product_name() eq 'usermin'
+           )
         ) ? " checked" : ""
       ) .
       '>
