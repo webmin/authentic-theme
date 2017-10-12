@@ -488,7 +488,9 @@ function get_pjax_event_end_funcs(e) {
         })[0], get_server_data("data-module", v___module), page_render(1)
     }, 40), Test.strContains(v___location_directory, v___module_file_manager) && setTimeout(function() {
         "function" == typeof ___f__tw ? ___f__tw() : get_bundle_file_manager(1)
-    }, 40), Core.curModule("csf") || get_server_data("post", 0, 1), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0)
+    }, 40), Core.curModule("csf") || get_server_data("post", 0, 1), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0), setTimeout(function() {
+        v___available_navigation && set_server_tmp_var("goto", location.href.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, ""))
+    }, 100)
 }
 
 function get_pjax_action_submit(e, t) {
@@ -774,7 +776,7 @@ function get_server_data(e, t, i) {
 function control_server_tmp_var(e, t, i, a, n, s) {
     return $.ajax({
         type: "POST",
-        url: v___location_prefix + "/index.cgi/?xhr-tmp_var=1&xhr-tmp_var_action=" + e + "&xhr-tmp_var_name=" + t + "&xhr-tmp_var_value=" + i + "&xhr-tmp_var_keep=" + a,
+        url: v___location_prefix + "/index.cgi/?xhr-tmp_var=1&xhr-tmp_var_action=" + e + "&xhr-tmp_var_name=" + t + "&xhr-tmp_var_value=" + (i ? Convert.uriEncodeComponent(i) : i) + "&xhr-tmp_var_keep=" + a,
         data: !1,
         dataType: "text",
         success: function(e) {
@@ -1084,23 +1086,25 @@ function get_default_content() {
         dataType: "text",
         success: function(e) {
             $("#____switch").html(e), $____switch = $("#____switch").text();
-            var t = v___location_prefix + (3 == v___user_level && Core.moduleAvailable("mailbox") && $t_uri_webmail ? "/mailbox/index.cgi?id=INBOX" : ("/" == $____switch.substring(0, 1) ? "" : "/") + $____switch);
+            var t = v___location_prefix + (3 == v___user_level && Core.moduleAvailable("mailbox") && $t_uri_webmail ? "/mailbox/index.cgi?id=INBOX" : 3 == v___user_level ? "/sysinfo.cgi" : ("/" == $____switch.substring(0, 1) ? "" : "/") + $____switch);
             (Test.strContains(t, "mysql") || Test.strContains(t, "postgresql")) && get_bundle_sql(), Test.strContains(t, v___module_file_manager) && get_bundle_file_manager(), Test.strContains(t, "csf") && get_bundle_csf(), get_pjax_content(t), $("#____switch").remove()
         }
     }))
 }
 
-function get_default_virtualmin_content(e) {
-    if (!get_onbeforeunload_status()) {
-        var t, i = "/virtual-server";
-        t = 1 == get_server_data("initial-wizard") ? i + "/wizard.cgi" : !1 !== e ? i + "/summary_domain.cgi?dom=" + e : "sysinfo.cgi" == settings_right_virtualmin_default || "" == settings_right_virtualmin_default ? "/sysinfo.cgi" : "index.cgi" == settings_right_virtualmin_default ? i + "/index.cgi" : i + "/summary_domain.cgi?dom=" + settings_right_virtualmin_default, get_pjax_content(v___location_prefix + t)
+function get_default_virtualmin_content(e, t) {
+    if (!get_onbeforeunload_status() || t) {
+        var i, a = "/virtual-server";
+        if (i = 1 == get_server_data("initial-wizard") ? a + "/wizard.cgi" : !1 !== e ? a + "/summary_domain.cgi?dom=" + e : "sysinfo.cgi" == settings_right_virtualmin_default || "" == settings_right_virtualmin_default ? "/sysinfo.cgi" : "index.cgi" == settings_right_virtualmin_default ? a + "/index.cgi" : a + "/summary_domain.cgi?dom=" + settings_right_virtualmin_default, t) return v___location_prefix + i;
+        get_pjax_content(v___location_prefix + i)
     }
 }
 
-function get_default_cloudmin_content(e) {
-    if (!get_onbeforeunload_status()) {
-        var t;
-        t = !1 === e || settings_right_cloudmin_default || "0" == settings_right_cloudmin_default ? "sysinfo.cgi" == settings_right_cloudmin_default || "" == settings_right_cloudmin_default && "0" != settings_right_cloudmin_default ? "sysinfo.cgi" : "index.cgi" == settings_right_cloudmin_default ? "server-manager/index.cgi" : "server-manager/edit_serv.cgi?id=" + settings_right_cloudmin_default : "server-manager/edit_serv.cgi?id=" + e, get_pjax_content(v___location_prefix + "/" + t)
+function get_default_cloudmin_content(e, t) {
+    if (!get_onbeforeunload_status() || t) {
+        var i;
+        if (i = !1 === e || settings_right_cloudmin_default || "0" == settings_right_cloudmin_default ? "sysinfo.cgi" == settings_right_cloudmin_default || "" == settings_right_cloudmin_default && "0" != settings_right_cloudmin_default ? "sysinfo.cgi" : "index.cgi" == settings_right_cloudmin_default ? "server-manager/index.cgi" : "server-manager/edit_serv.cgi?id=" + settings_right_cloudmin_default : "server-manager/edit_serv.cgi?id=" + e, t) return v___location_prefix + "/" + i;
+        get_pjax_content(v___location_prefix + "/" + i)
     }
 }
 
