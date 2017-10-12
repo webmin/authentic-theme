@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.00-patch5 (October 12, 2017)
+* Fix code leaks in File Manager making irrelevant tabs disappear
+* Fix refreshing taking to previously used page
+* Fix opening current page into new tab [#853/comment-335612375](https://github.com/qooob/authentic-theme/issues/853#issuecomment-335612375)
+* Fix issues with navigation menu display in certain cases [#849](https://github.com/qooob/authentic-theme/issues/849)
+
 #### Version 19.00-patch4 (October 11, 2017)
 * Fix failproof update captions for _Side Slider_ [#853](https://github.com/qooob/authentic-theme/issues/853)
 * Fix container offset to be shown only on high resolution screens [#852](https://github.com/qooob/authentic-theme/issues/852)
