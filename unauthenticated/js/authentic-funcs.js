@@ -2920,7 +2920,7 @@ function unbuffered_header_processor(e, t) {
         contentType: (!t || !r) && "application/x-www-form-urlencoded; charset=UTF-8",
         data: !!t && o,
         complete: function(e) {
-            $('div[data-dcontainer="1"]').html($(e.responseText).filter('div[data-dcontainer="1"]').html()), get_pjax_event_end(!1, e), unbuffered_header_processor_allow_scroll() && $(".__page").scrollTop($(".__page")[0].scrollHeight), $(".__page").removeClass("progressing"), NProgress.done(), set_onbeforeunload_status(0, 1), unbuffered_header_post(e)
+            $('div[data-dcontainer="1"]').html($(e.responseText).filter('div[data-dcontainer="1"]').html()), get_pjax_event_end(!1, e), unbuffered_header_processor_allow_scroll() && $(".__page").scrollTop($(".__page")[0].scrollHeight), $(".__page").removeClass("progressing"), NProgress.done(), set_onbeforeunload_status(0, 1), unbuffered_header_post(e), Core.curModuleFile("package-updates", "update.cgi") && information_update()
         }
     })
 }
