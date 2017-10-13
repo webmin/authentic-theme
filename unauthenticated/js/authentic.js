@@ -139,7 +139,7 @@ if (get_server_data("debug")) {
                     $t_uri_virtualmin && (get_navigation_menu_virtualmin_summary(), get_default_virtualmin_content(!1)), $t_uri_cloudmin && get_default_cloudmin_content(!1), $t_uri_virtualmin || $t_uri_cloudmin || get_default_content()
                 };
                 $.when(get_server_tmp_var("goto", 0, e)).then(function(t, i, a) {
-                    if (a.responseText && !unbuffered_header_processor_allow(a.responseText)) {
+                    if (a.responseText) {
                         if (Test.strContains(a.responseText, "virtual-server")) {
                             var s = URI.parseQuery(URI(a.responseText).query()).dom;
                             (!$t_uri_virtualmin || $t_uri_virtualmin && s != $('select[name="dom"]').val()) && (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(s || !1))
