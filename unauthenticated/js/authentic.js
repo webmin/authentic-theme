@@ -22,10 +22,12 @@ if (get_server_data("debug")) {
                 var n = $.active;
                 if (n && ($.active = n - 1), Test.strContains(s.url, "/csf/index.cgi")) return void theme_reload()
             }
-        }), $(document).on("pjax:start", function(e, t) {}), $(document).on("pjax:beforeReplace", function(e, t) {
+        }), $(document).on("pjax:start", function(e, t) {
+            get_server_data("loading", 1)
+        }), $(document).on("pjax:beforeReplace", function(e, t) {
             navigation_form_control(0)
         }), $(document).on("ready pjax:beforeSend", function(e, t, i) {
-            settings_loader_top && NProgress.start(), v___module === v___module_file_manager && "function" == typeof __f_____undel && (jsPanel.closeChildpanels("body"), __f_____undel()), "csf" === v___module && "function" == typeof __c_____undel && __c_____undel(), "mysql" !== v___module && "postgresql" !== v___module || "function" != typeof __sql_____undel || __sql_____undel(), "syslog" === v___module && "number" == typeof refreshTimer && clearInterval(refreshTimer);
+            settings_loader_top && NProgress.start(), v___module === v___module_file_manager && "function" == typeof __f_____undel && (jsPanel.closeChildpanels("body"), __f_____undel()), "csf" === v___module && "function" == typeof __c_____undel && __c_____undel(i.url), "mysql" !== v___module && "postgresql" !== v___module || "function" != typeof __sql_____undel || __sql_____undel(), "syslog" === v___module && "number" == typeof refreshTimer && clearInterval(refreshTimer);
             var a = $(e.relatedTarget),
                 s = a.attr("href");
             s = s || i.url.replace(v___location_origin, ""), clicked_in_nav_menu = a.parent().is("[data-linked], .favorites-dcontainer, .menu-exclude.ui-sortable-handle") || "object" == typeof i.callback && "reference" === i.callback[0], clicked_in_nav_menu && ((Test.strContains(s, "mysql") || Test.strContains(s, "postgresql")) && get_bundle_sql(), Test.strContains(s, v___module_file_manager) && get_bundle_file_manager(), Test.strContains(s, "csf") && get_bundle_csf()), "object" == typeof i.callback && "beforeSend" === i.callback[0] && (i.callback[3] ? setTimeout(function() {
@@ -36,7 +38,7 @@ if (get_server_data("debug")) {
                 window[s.callback[1].apply(this, s.callback[2])]
             }, s.callback[3]) : window[s.callback[1].apply(this, s.callback[2])])
         }), $(document).on("pjax:complete", function(e, t, i) {
-            settings_loader_top && NProgress.done(), t && session_check(t)
+            settings_loader_top && NProgress.done(), t && session_check(t), get_server_data("loading", 0, 1)
         }), $(document).on("ready pjax:end", function(e, t) {
             navigation_form_control(1), get_pjax_event_end(e, t)
         }), $(document).on("pjax:popstate", function(e, t) {
@@ -106,7 +108,7 @@ if (get_server_data("debug")) {
                     session_check(e)
                 },
                 beforeSend: function(e, t) {
-                    t.url = t.url.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, "")
+                    t.url = navigation_trigger(t.url, 1)
                 }
             })), function() {
                 if ("function" == typeof Messenger.Message) {
@@ -139,7 +141,7 @@ if (get_server_data("debug")) {
                     $t_uri_virtualmin && (get_navigation_menu_virtualmin_summary(), get_default_virtualmin_content(!1)), $t_uri_cloudmin && get_default_cloudmin_content(!1), $t_uri_virtualmin || $t_uri_cloudmin || get_default_content()
                 };
                 $.when(get_server_tmp_var("goto", 0, e)).then(function(t, i, a) {
-                    if (a.responseText) {
+                    if (a.responseText && !get_server_data("initial-wizard")) {
                         if (Test.strContains(a.responseText, "virtual-server")) {
                             var s = URI.parseQuery(URI(a.responseText).query()).dom;
                             (!$t_uri_virtualmin || $t_uri_virtualmin && s != $('select[name="dom"]').val()) && (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(s || !1))
@@ -226,25 +228,27 @@ if (get_server_data("debug")) {
             }), $(".switch-toggle").on("contextmenu", "label", function(e) {
                 e.preventDefault();
                 var t = $(this).attr("for").replace("open_", "");
-                if ($(this).prev("input").is(":checked")) set_server_tmp_var("goto", v___location_href), setTimeout(function() {
-                    theme_open_new_tab(v___location_href)
-                }, 200);
-                else if ("virtualmin" === t || "cloudmin" === t) {
-                    var i;
-                    i = "cloudmin" === t ? get_default_cloudmin_content(!1, 1) : get_default_virtualmin_content(!1, 1);
-                    var a = Test.strContains(i, "?") ? i + "&" + $__theme_navigation : i + "?" + $__theme_navigation;
-                    set_server_tmp_var("goto", a), setTimeout(function() {
-                        theme_open_new_tab(a)
+                if ($(this).prev("input").is(":checked")) {
+                    var i = v___location_href;
+                    set_server_tmp_var("goto", navigation_trigger(i, 1)), setTimeout(function() {
+                        theme_open_new_tab(i)
+                    }, 200)
+                } else if ("virtualmin" === t || "cloudmin" === t) {
+                    var a;
+                    a = "cloudmin" === t ? "/server-manager/index.cgi" : "/virtual-server/index.cgi";
+                    var s = navigation_trigger(a, 2);
+                    set_server_tmp_var("goto", navigation_trigger(s, 1)), setTimeout(function() {
+                        theme_open_new_tab(s)
                     }, 200)
                 } else if ("webmail" === t) {
-                    s = v___location_prefix + "/mailbox/index.cgi?" + $__theme_navigation;
-                    set_server_tmp_var("goto", s), setTimeout(function() {
-                        theme_open_new_tab(s)
+                    n = v___location_prefix + "/mailbox/index.cgi?" + $__theme_navigation;
+                    set_server_tmp_var("goto", navigation_trigger(n, 1)), setTimeout(function() {
+                        theme_open_new_tab(n)
                     }, 200)
                 } else {
-                    var s = v___location_prefix + "/sysinfo.cgi?" + $__theme_navigation;
-                    set_server_tmp_var("goto", s), setTimeout(function() {
-                        theme_open_new_tab(s)
+                    var n = v___location_prefix + "/sysinfo.cgi?" + $__theme_navigation;
+                    set_server_tmp_var("goto", navigation_trigger(n, 1)), setTimeout(function() {
+                        theme_open_new_tab(n)
                     }, 200)
                 }
             }), $(".switch-toggle").on("click", "input.dynamic", function(e) {
@@ -270,8 +274,8 @@ if (get_server_data("debug")) {
             });
             var n = $("body").find(".-shell-port-"),
                 o = n.find('input[data-command="true"]'),
-                _ = n.find("div[data-output]"),
-                r = n.find(".-shell-port-container"),
+                r = n.find("div[data-output]"),
+                _ = n.find(".-shell-port-container"),
                 l = n.data("autocomplete");
             if ($(window).keydown(function(e) {
                     var t = $("body").find(".-shell-port-").hasClass("opened");
@@ -312,7 +316,7 @@ if (get_server_data("debug")) {
                                     } else g ? d ? c || i[2] ? o.val($.trim(i[0]) + " " + $.trim(i[1]) + " " + e[0]) : o.val($.trim(i[0]) + " " + $.trim($.trim(i[1]).split(":")[0]) + ":" + e[0] + " ") : o.val($.trim(i[0]) + " " + e[0] + ":") : o.val(e[0] + " ");
                                 else if (t > 1) {
                                     var n = "<b>" + $(".-shell-port-type").text() + " " + Convert.htmlEscape(o.val()) + "</b>\n";
-                                    _.find("pre").append(n), _.find("pre").append(Convert.htmlEscape(e.join("\n") + "\n")), r.scrollTop(r[0].scrollHeight)
+                                    r.find("pre").append(n), r.find("pre").append(Convert.htmlEscape(e.join("\n") + "\n")), _.scrollTop(_[0].scrollHeight)
                                 }
                                 setTimeout(function() {
                                     o.focus().mousedown()
@@ -326,7 +330,7 @@ if (get_server_data("debug")) {
                     if (t) {
                         var a = 0,
                             s = 0,
-                            r = 0,
+                            _ = 0,
                             l = $(".form-control.sidebar-search"),
                             d = $t_uri_cloudmin && $('a[target="page"][href*="/server-manager/save_serv.cgi"][href*="shell=1"]').length,
                             c = 0,
@@ -336,7 +340,7 @@ if (get_server_data("debug")) {
                             if (!Core.moduleAvailable("shell")) return;
                             p = v___location_prefix + "/shell/index.cgi"
                         }
-                        if ((t || l.is(":focus")) && 8 === e.keyCode && (__shell_commands__i__ = 0), t ? (a = $.trim(o.val()), s = 1, r = 1) : (a = l.val(), s = void 0 !== l.val(), r = 0), (r || s && (!a.trim() || a.trim().startsWith("!"))) && (38 == e.keyCode || 40 == e.keyCode)) {
+                        if ((t || l.is(":focus")) && 8 === e.keyCode && (__shell_commands__i__ = 0), t ? (a = $.trim(o.val()), s = 1, _ = 1) : (a = l.val(), s = void 0 !== l.val(), _ = 0), (_ || s && (!a.trim() || a.trim().startsWith("!"))) && (38 == e.keyCode || 40 == e.keyCode)) {
                             e.preventDefault(), e.stopPropagation(), void 0 === localStorage.getItem(v___server_hostname + "-shell_commands") && localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify({}));
                             var f = JSON.parse(localStorage.getItem(v___server_hostname + "-shell_commands")),
                                 g = f ? f.length : 0;
@@ -367,12 +371,12 @@ if (get_server_data("debug")) {
                         if (27 === x) return void theme_shell_close(n);
                         if (o.is(":focus") || check_selected_text() || (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey || o.val(o.val() + String.fromCharCode(e.which).toLowerCase()), o.focus()), (y && 13 === x || w) && (Core.moduleAvailable("shell") || d)) {
                             if (1 === v___shell_processing) return;
-                            v___shell_processing = 1, ("clear" == y || "reset" == y || "exit" == y || w) && (_.find("pre").html(""), theme_shell_clear(o), "exit" == y && theme_shell_close(n)), "cd ~" == y && (k = y, y = "cd " + v.attr("data-home"));
+                            v___shell_processing = 1, ("clear" == y || "reset" == y || "exit" == y || w) && (r.find("pre").html(""), theme_shell_clear(o), "exit" == y && theme_shell_close(n)), "cd ~" == y && (k = y, y = "cd " + v.attr("data-home"));
                             var C = !1;
                             if ("cd /" == y && (C = "/"), "history -c" == y) {
                                 localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify({}));
                                 D = "<b>" + $(".-shell-port-type").text() + " " + y + "</b>\n";
-                                _.find("pre").append(D), theme_shell_clear(o), h.scrollTop(h[0].scrollHeight);
+                                r.find("pre").append(D), theme_shell_clear(o), h.scrollTop(h[0].scrollHeight);
                                 var T = '<form class="hidden" role="form" action="' + p + '" method="post" enctype="multipart/form-data">                            ' + (d ? '<input type="hidden" id="id" name="id" value="' + $("#sid").val() + '">' : "") + '                            <input type="hidden" id="clearcmds" name="clearcmds" value="clearcmds">                            <input type="hidden" id="pwd" name="pwd" value="' + b + '">                          </form>',
                                     S = new FormData($(T)[0]);
                                 $.ajax({
@@ -398,7 +402,7 @@ if (get_server_data("debug")) {
                                     for (i = 0; i < P + 1 - a; i++) s += " ";
                                     "string" == typeof t && (D += e + 1 + s + t + "\n")
                                 }).promise().done(function() {
-                                    _.find("pre").append(D), h.scrollTop(h[0].scrollHeight)
+                                    r.find("pre").append(D), h.scrollTop(h[0].scrollHeight)
                                 })
                             }
                             if ("clear" == y || "reset" == y || "exit" == y || y.startsWith("history") || w) return v___shell_processing = 0, __shell_commands__i__ = 0, theme_shell_adapt(), void o.focus();
@@ -418,7 +422,7 @@ if (get_server_data("debug")) {
                                         a = $(e).find('select[name="pcmd"] option').map(function() {
                                             return Convert.htmlEscape($(this).val())
                                         }).get().reOrder(-1, 0).reverse();
-                                    localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify(a)), newPwd = $(e).find('input[name="pwd"]').val(), _.find("pre").append(k ? i.replace(new RegExp(y, "g"), k) : i), v.text(C || (newPwd == v.attr("data-home") ? "~" : newPwd.split("/").filter(function(e) {
+                                    localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify(a)), newPwd = $(e).find('input[name="pwd"]').val(), r.find("pre").append(k ? i.replace(new RegExp(y, "g"), k) : i), v.text(C || (newPwd == v.attr("data-home") ? "~" : newPwd.split("/").filter(function(e) {
                                         return "" != $.trim(e)
                                     }).slice(-1)[0])).attr("data-pwd", C || newPwd).attr("title", C || newPwd), theme_shell_adapt(), theme_shell_clear(o), h.scrollTop(h[0].scrollHeight), setTimeout(function() {
                                         v___shell_processing = 0, __shell_commands__i__ = 0, o.removeAttr("readonly").focus()
@@ -664,29 +668,29 @@ if (get_server_data("debug")) {
             var a = $(this).find(".modal-body h4"),
                 s = $(this).find(".modal-body h4:first");
             if (!$(this).find(".modal-body h4:first .diffctl").length) {
-                _ = new RegExp(RegExp.quote(________version_curr_text), "g");
-                ________multi_in_branch && (a.replaceText(_, "<span>" + _____version__x + "</span>"), a.replaceText(/Version/, "Versions"));
+                r = new RegExp(RegExp.quote(________version_curr_text), "g");
+                ________multi_in_branch && (a.replaceText(r, "<span>" + _____version__x + "</span>"), a.replaceText(/Version/, "Versions"));
                 var n = $(this).find('.modal-body h4:contains("patch")').length;
                 if (a.length && n) {
                     var o = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
                     s.append('<a data-toggle="tooltip" data-title="<strong>' + theme_language("theme_xhred_git_compare_changes") + "</strong><br>" + theme_language("theme_xhred_global_committed_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + o + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>'), s.after('<span class="version_separator version_dev" style="margin-top: -32px;margin-right: 0;">            <span class="smaller text-danger"><span>' + i + "</span></span></span>")
                 } else s.append('<a target="_blank" data-toggle="tooltip" data-html="true" data-title="<strong>' + theme_language("theme_xhred_global_complete_changelog") + "</strong><br>" + theme_language("theme_xhred_global_released_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>').append('<a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator margined-top-10">' + ________version_curr_text + "</a>")
             }
-            var _ = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
-            a.replaceText(_, "");
-            var r = [];
+            var r = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
+            a.replaceText(r, "");
+            var _ = [];
             $.each($(this).find('li span:contains("Fixed bugs")'), function() {
                 var e = $(this),
                     t = $(this).parent("li"),
                     i = t.parent("ul"),
                     a = t.find("a:not(.bctl)"),
                     s = a.length;
-                ________multi_in_branch ? (r.push(a), 1 === i.find("li").length && (i.prev("hr").prev("a").remove(), i.prev("hr").remove(), i.addClass("no-data")), t.remove()) : (e.html([e.text().slice(0, 6), s + " ", e.text().slice(6)].join("")), t.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
+                ________multi_in_branch ? (_.push(a), 1 === i.find("li").length && (i.prev("hr").prev("a").remove(), i.prev("hr").remove(), i.addClass("no-data")), t.remove()) : (e.html([e.text().slice(0, 6), s + " ", e.text().slice(6)].join("")), t.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
                     a.toggleClass("hidden"), t.find("a.bctl i").toggleClass("fa-minus-square-o")
                 }), a.addClass("obj-popup hidden"))
             }).promise().done(function() {
                 if (________multi_in_branch && !$(".bctl").length) {
-                    $(".modal-body h4[data-development]").prev("hr").before('      <hr class="hr-dashed margined-top-15">      <div data-bugs><ul><li><span data-fixed-bugs data-fixed-bugs-obj>Fixed bugs</span><span data-bugs-container></span></li></ul></div>'), $(".modal-body span[data-bugs-container]").append(r);
+                    $(".modal-body h4[data-development]").prev("hr").before('      <hr class="hr-dashed margined-top-15">      <div data-bugs><ul><li><span data-fixed-bugs data-fixed-bugs-obj>Fixed bugs</span><span data-bugs-container></span></li></ul></div>'), $(".modal-body span[data-bugs-container]").append(_);
 
                     function e(e, t) {
                         return parseInt($(t).text().replace("#", "")) < parseInt($(e).text().replace("#", "")) ? 1 : -1
@@ -704,9 +708,9 @@ if (get_server_data("debug")) {
                 }
                 var o = $(".modal#update_notice h4 span");
                 if (Test.strContains(o.text(), "...") && Test.strContains(o.text(), "patch")) {
-                    var _ = parseInt(o.text().split("...")[1].substr(-1, 1));
-                    _ && $.each($(".version_separator:not(.version_dev)"), function(e, t) {
-                        e + 1 != _ && $(this).addClass("hidden")
+                    var r = parseInt(o.text().split("...")[1].substr(-1, 1));
+                    r && $.each($(".version_separator:not(.version_dev)"), function(e, t) {
+                        e + 1 != r && $(this).addClass("hidden")
                     })
                 }
             })
@@ -839,14 +843,14 @@ if (get_server_data("debug")) {
                 var o = s[1].replace("encodeURIComponent(ifield.value)", "refInputCurrValSafe");
                 o = o.replace('"+"', "").replace('"+', "").replace("refInputCurrValSafe", a);
 
-                function _(e, t, a, s, o) {
-                    var _;
-                    _ = o ? '                <div class="modal-footer">                  <div class="input-group">                    <input data-role="tagsinput" class="form-control ui_textbox" type="text" value="' + (i ? i.replace(/ /g, ",") : "") + '">                    <span class="input-group-btn mppopup_multi_done">                      <button type="button" class="btn btn-success heighter-28"><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + theme_language("theme_xhred_global_select") + "</button>                    </span>                  </div>                </div>" : '                <div class="modal-footer">                  <div class="input-group">                    <input class="form-control ui_textbox" data-mppopup_value type="text" value="' + (refInput.is("textarea") ? "" : i) + '">                    <span class="input-group-btn mppopup_string_done">                      <button type="button" class="btn btn-success heighter-28" data-mppopup_confirm><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + theme_language("theme_xhred_global_select") + "</button>                    </span>                  </div>                </div>";
-                    var r = '                    <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                      <div class="modal-dialog" role="document">                      <div class="modal-content">                        <div class="modal-header">                          <button type="button" class="close" data-dismiss="modal" aria-label="' + theme_language("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                          <h4 class="modal-title">                            <div class="mppopup_filter">                              <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + theme_language("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                            </div>                          </h4>                        </div>                        <div class="modal-body ' + n + '">                          ' + e + "                        </div>                          " + _ + "                      </div>                    </div>                  </div>              ";
-                    $("body").append(r), refInput.addClass("refInputData"), $("body .mppopup").modal("show")
+                function r(e, t, a, s, o) {
+                    var r;
+                    r = o ? '                <div class="modal-footer">                  <div class="input-group">                    <input data-role="tagsinput" class="form-control ui_textbox" type="text" value="' + (i ? i.replace(/ /g, ",") : "") + '">                    <span class="input-group-btn mppopup_multi_done">                      <button type="button" class="btn btn-success heighter-28"><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + theme_language("theme_xhred_global_select") + "</button>                    </span>                  </div>                </div>" : '                <div class="modal-footer">                  <div class="input-group">                    <input class="form-control ui_textbox" data-mppopup_value type="text" value="' + (refInput.is("textarea") ? "" : i) + '">                    <span class="input-group-btn mppopup_string_done">                      <button type="button" class="btn btn-success heighter-28" data-mppopup_confirm><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + theme_language("theme_xhred_global_select") + "</button>                    </span>                  </div>                </div>";
+                    var _ = '                    <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                      <div class="modal-dialog" role="document">                      <div class="modal-content">                        <div class="modal-header">                          <button type="button" class="close" data-dismiss="modal" aria-label="' + theme_language("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                          <h4 class="modal-title">                            <div class="mppopup_filter">                              <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + theme_language("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                            </div>                          </h4>                        </div>                        <div class="modal-body ' + n + '">                          ' + e + "                        </div>                          " + r + "                      </div>                    </div>                  </div>              ";
+                    $("body").append(_), refInput.addClass("refInputData"), $("body .mppopup").modal("show")
                 }
 
-                function r(e) {
+                function _(e) {
                     e[1].startsWith("/") ? $v__mpp__g_op = e[1] : $v__mpp__g_op = "/" + e[1]
                 }
                 $.ajax({
@@ -857,7 +861,7 @@ if (get_server_data("debug")) {
                     success: function(e) {
                         var t = e,
                             i = e.match('<frame.*?src="([^"]+)"');
-                        if ($.isArray(i) && i[1] && -1 === i[1].indexOf("&multi=1")) r(i), $.ajax({
+                        if ($.isArray(i) && i[1] && -1 === i[1].indexOf("&multi=1")) _(i), $.ajax({
                             type: "POST",
                             url: $v__mpp__g_op,
                             data: !1,
@@ -866,24 +870,24 @@ if (get_server_data("debug")) {
                                 var t = e.replace(/<(!doctype|script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace(/<\/body>|<\/html>/gi, ""),
                                     i = $(t).filter(".table").html(),
                                     a = $(t).filter(".table").prev("b").html();
-                                _(t = chooser_breadcrumbs(a) + '<table class="table table-hover table-condensed table-striped">' + i + "</table>", 0, 0, refInput, 0)
+                                r(t = chooser_breadcrumbs(a) + '<table class="table table-hover table-condensed table-striped">' + i + "</table>", 0, 0, refInput, 0)
                             }
                         });
-                        else if ($.isArray(i)) r(i), $.ajax({
+                        else if ($.isArray(i)) _(i), $.ajax({
                             type: "POST",
                             url: $v__mpp__g_op,
                             data: !1,
                             dataType: "text",
                             success: function(e) {
                                 var t = e.replace(/<(!doctype|script|link|meta)\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/(script|link|meta)>/gi, "").replace(/<\/body>|<\/html>/gi, "");
-                                _(t = '<table class="table table-hover table-condensed table-striped type2">' + $(t).filter("table").html() + "</table>", 0, 0, refInput, 1)
+                                r(t = '<table class="table table-hover table-condensed table-striped type2">' + $(t).filter("table").html() + "</table>", 0, 0, refInput, 1)
                             }
                         });
                         else {
                             if ($.isArray(i) && -1 === i[1].indexOf("&multi=1")) return;
                             var a = t,
                                 s = $(a).filter("table").html();
-                            _('<table class="table table-hover table-condensed table-striped type2" data-target="' + refInput + '">' + s + "</table>", 0, 0, refInput, 0)
+                            r('<table class="table table-hover table-condensed table-striped type2" data-target="' + refInput + '">' + s + "</table>", 0, 0, refInput, 0)
                         }
                     }
                 })
@@ -892,7 +896,7 @@ if (get_server_data("debug")) {
             var t = theme_password_generator();
             $("body").append('<button class="hidden tmp-clipboard-obj" data-clipboard-text="' + t + '"></button>');
             var i = new Clipboard(".tmp-clipboard-obj");
-            $(".tmp-clipboard-obj").trigger("click"), $(".tmp-clipboard-obj").remove(), i.destroy(), theme_messenger('<i class="fa fa-lg fa-fw fa-key-plus"></i>' + theme_language("theme_xhred_password_generator_new_success").replace("%password", '&nbsp;<code class="vertical-align-middle">' + t + "</code>&nbsp;"), 10, "success", "newGeneratedPassword")
+            $(".tmp-clipboard-obj").trigger("click"), $(".tmp-clipboard-obj").remove(), i.destroy(), theme_messenger('<i class="fa fa-lg fa-fw fa-key-plus"></i>' + theme_language("theme_xhred_password_generator_new_success").replace("%password", '&nbsp;<code class="vertical-align-middle">' + Convert.htmlEscape(t) + "</code>&nbsp;"), 10, "success", "newGeneratedPassword")
         }), $("body").on("click", 'aside li[data-linked] a[href="' + v___location_prefix + '/shell/"], aside a[href="' + v___location_prefix + '/server-manager/shell.cgi"], aside a[href*="shell=1"]', function(e) {
             e.preventDefault(), e.stopPropagation(), $(".user-link.ported-console:visible").trigger("click")
         }), $("body").on("change", 'form[action*="save_log.cgi"] select[name="idx"]', function(e) {
