@@ -289,6 +289,10 @@ function navigation_init_select() {
     })
 }
 
+function navigation_trigger(e, t) {
+    return 1 === t && (e = e.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, "")), 2 === t && (Test.strContains(e, $__theme_navigation) || (e = Test.strContains(e, "?") ? e + "&" + $__theme_navigation : e + "?" + $__theme_navigation)), e
+}
+
 function navigation_init_autocomplete(e, t) {
     if ("c" != e || ($(".autocomplete-suggestions").remove(), $(".form-control.sidebar-search").removeAttr("disabled"), $(".form-control.sidebar-search").autocomplete("dispose"), $(".form-control.sidebar-search").val(""), !t)) {
         var i = {};
@@ -462,7 +466,7 @@ function get_pjax_event_end(e, t) {
         var i = t.responseText.replace(/<body\b[^<]*(?:(?!<\/body>)<[^<]*)*<\/body>/gim, "").replace(/<head\b[^<]*(?:(?!<\/head>)<[^<]*)*<\/head>/gim, "").replace("<!DOCTYPE html>", "").replace("<html", '<div id="xhtml0"').replace("</html>", "</div>"),
             a = $(i).filter("#xhtml0");
         $(a[0].attributes).each(function() {
-            "id" !== this.nodeName && (this.nodeName, "data-redirect" === this.nodeName && this.nodeValue && history.replaceState({}, null, this.nodeValue), get_server_data(this.nodeName, this.nodeValue))
+            "id" !== this.nodeName && (this.nodeName, "data-redirect" === this.nodeName && this.nodeValue && this.nodeValue != "/?" + $__theme_navigation && history.replaceState({}, null, this.nodeValue), get_server_data(this.nodeName, this.nodeValue))
         }).promise().done(function() {
             if (get_pjax_event_end_funcs(1), $.each($(".container-fluid img"), function() {
                     var e = $(this),
@@ -480,17 +484,18 @@ function get_pjax_event_end(e, t) {
 }
 
 function get_pjax_event_end_funcs(e) {
-    page_init(), e || setTimeout(function() {
-        get_server_data("data-title-initial", $("#headln2c span[data-main_title]").text()), get_server_data("data-script-name", v___location_path), get_server_data("data-uri", v___location_resource);
-        var e = new RegExp("^" + v___location_prefix, "i");
-        v___module = get_server_data("data-uri").replace(e, "").split("/").filter(function(e) {
-            return 0 !== e.length
-        })[0], get_server_data("data-module", v___module), page_render(1)
-    }, 40), Test.strContains(v___location_directory, v___module_file_manager) && setTimeout(function() {
-        "function" == typeof ___f__tw ? ___f__tw() : get_bundle_file_manager(1)
-    }, 40), Core.curModule("csf") || get_server_data("post", 0, 1), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0), setTimeout(function() {
-        v___available_navigation && (unbuffered_header_processor_allow(location.href) || "csf" === v___module || set_server_tmp_var("goto", location.href.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, "")))
-    }, 100)
+    if (page_init(), e || setTimeout(function() {
+            get_server_data("data-title-initial", $("#headln2c span[data-main_title]").text()), get_server_data("data-script-name", v___location_path), get_server_data("data-uri", v___location_resource);
+            var e = new RegExp("^" + v___location_prefix, "i");
+            v___module = get_server_data("data-uri").replace(e, "").split("/").filter(function(e) {
+                return 0 !== e.length
+            })[0], get_server_data("data-module", v___module), page_render(1)
+        }, 40), Test.strContains(v___location_directory, v___module_file_manager) && setTimeout(function() {
+            "function" == typeof ___f__tw ? ___f__tw() : get_bundle_file_manager(1)
+        }, 40), Core.curModule("csf") || get_server_data("post", 0, 1), e && page_render(0), $(".tooltip").tooltip("hide"), $(".popover").popover("hide"), theme_title_generate(), navigation_detect(), e && $(".__page").scrollTop(0), v___available_navigation) {
+        var t = navigation_trigger(v___location.href, 1).replace(v___location_origin + v___location_prefix, "");
+        "" == t || "/" == t || "/index.cgi" == t || unbuffered_header_processor_allow(v___location.href) || "csf" === v___module || set_server_tmp_var("goto", navigation_trigger(v___location.href, 1))
+    }
 }
 
 function get_pjax_action_submit(e, t) {
@@ -1028,7 +1033,7 @@ function get_navigation_menu_webmin(e) {
         data: !1,
         dataType: "text",
         success: function(e) {
-            $("body ul.navigation").html(e), navigation_render_end(), navigation_detect()
+            $("body ul.navigation").html(e), navigation_render_end(), !get_server_data("loading") && navigation_detect()
         }
     }), get_navigation_menu_buttons())
 }
@@ -1040,7 +1045,7 @@ function get_navigation_menu_virtualmin(e) {
         data: !1,
         dataType: "text",
         success: function(e) {
-            $("body ul.navigation").html(e), navigation_render_end(), get_navigation_menu_virtualmin_summary(), navigation_detect()
+            $("body ul.navigation").html(e), navigation_render_end(), get_navigation_menu_virtualmin_summary(), !get_server_data("loading") && navigation_detect()
         }
     }), get_navigation_menu_buttons())
 }
@@ -1061,7 +1066,7 @@ function get_navigation_menu_cloudmin(e) {
         data: !1,
         dataType: "text",
         success: function(e) {
-            $("body ul.navigation").html(e), theme_shell_link_control(), navigation_render_end(), navigation_detect()
+            $("body ul.navigation").html(e), theme_shell_link_control(), navigation_render_end(), !get_server_data("loading") && navigation_detect()
         }
     }), get_navigation_menu_buttons())
 }
@@ -1536,7 +1541,7 @@ function favorites_get() {
         var t = $(this).text(),
             i = $(this).attr("href"),
             a = $(this).find(".wbm-sm").attr("data-product");
-        favorite = {}, favorite.link = i.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, ""), favorite.title = t.trim(), favorite.icon = "virtualmin" == a ? a + "" : a, e.push(favorite)
+        favorite = {}, favorite.link = navigation_trigger(i, 1), favorite.title = t.trim(), favorite.icon = "virtualmin" == a ? a + "" : a, e.push(favorite)
     }), e
 }
 
@@ -1565,7 +1570,7 @@ function favorites_save() {
 
 function favorites_add(e, t, i) {
     var a = "favorites-menu .favorites-menu-content";
-    0 === favorites_check() && ($("#" + a + " li.favorites-no-message").addClass("hidden"), $("#" + a + " .favorites-title sup a").removeClass("hidden")), $("#" + a + " li.favorites-title").after('<li class="menu-exclude" draggable="true"><a class="menu-exclude-link" target="page" href="' + e.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, "") + '"><i data-product="' + i + '" class="wbm-' + i + ' wbm-sm">&nbsp;</i><span class="f__c">' + t + '&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-fw fa-times"></i></small></span></a></li>')
+    0 === favorites_check() && ($("#" + a + " li.favorites-no-message").addClass("hidden"), $("#" + a + " .favorites-title sup a").removeClass("hidden")), $("#" + a + " li.favorites-title").after('<li class="menu-exclude" draggable="true"><a class="menu-exclude-link" target="page" href="' + navigation_trigger(e, 1) + '"><i data-product="' + i + '" class="wbm-' + i + ' wbm-sm">&nbsp;</i><span class="f__c">' + t + '&nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i class="fa fa-fw fa-times"></i></small></span></a></li>')
 }
 
 function favorites_empty() {
@@ -1574,15 +1579,15 @@ function favorites_empty() {
 }
 
 function favorites_remove(e) {
-    $("#favorites-menu .favorites-menu-content").find('a[href="' + e.replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, "") + '"]').parent("li").remove(), $("#headln2c > .favorites, .xcustom-favorites").addClass("fa-star-o").removeClass("fa-star text-warning"), favorites_empty(), favorites_save()
+    $("#favorites-menu .favorites-menu-content").find('a[href="' + navigation_trigger(e, 1) + '"]').parent("li").remove(), $("#headln2c > .favorites, .xcustom-favorites").addClass("fa-star-o").removeClass("fa-star text-warning"), favorites_empty(), favorites_save()
 }
 
 function favorites_detect() {
     var e = $("#favorites-menu .favorites-menu-content li:not(.exclude) a").map(function(e, t) {
-            return $(t).attr("href").replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, "")
+            return navigation_trigger($(t).attr("href"), 1)
         }).toArray(),
         t = $("#headln2c > .favorites, .xcustom-favorites"),
-        i = URI(v___location).resource().replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, ""),
+        i = navigation_trigger(URI(v___location).resource(), 1),
         a = i + "index.cgi";
     $.inArray(i, e) > -1 || $.inArray(a, e) > -1 ? t.addClass("fa-star").removeClass("fa-star-o") : t.removeClass("fa-star").addClass("fa-star-o")
 }
@@ -2738,7 +2743,7 @@ function page_render(e) {
 }
 
 function page_init() {
-    "undefined" == typeof v___initial_load && (v___initial_load = 1), "undefined" == typeof v___title_initial && (v___title_initial = get_server_data("title-initial")), "undefined" == typeof v___theme_updated && (v___theme_updated = 0), v___location = location, $__theme_name__ = "authentic", $__theme_navigation = "xnavigation=1", v___user_level = get_server_data("access-level"), v___shell_type = 0 == v___user_level ? "#" : "$", v___shell_processing = 0, v___debug = get_server_data("debug"), v___source_type = "debug" == v___debug ? "src" : "min", v___available_usermin = get_server_data("usermin"), "undefined" == typeof v___available_navigation && (v___available_navigation = get_server_data("navigation")), v___available_session = get_server_data("session"), v___blocked_navigation = $(document.activeElement).is("li.has-sub, a[data-has-sub-link]") ? 1 : 0, v___server_username = get_server_data("user"), v___server_userhome = get_server_data("user-home"), v___module = get_server_data("module"), v___script_name = get_server_data("script-name").replace(/^\//g, ""), v___module_file_manager = "file" + (Core.moduleAvailable("file-manager") ? "-manager" : "min"), v___server_hostname = get_server_data("hostname"), v___server_sestatus = get_server_data("sestatus"), v___theme_version = get_server_data("theme-version").toString(), v___theme_version_git = get_server_data("theme-git-version").toString(), v___theme_version_plain = v___theme_version.replace(".", ""), v___theme_force_buffered = 0, v___theme_night_mode = "1" == get_server_data("data-night-mode") ? 1 : 0, v___theme_night_mode_enabled = "undefined" != typeof settings_background_color && "nightRider" === settings_background_color ? 1 : v___theme_night_mode, o___gotten_scripts = "undefined" == typeof o___gotten_scripts ? [] : o___gotten_scripts, v___URI = URI(v___location), v___location_protocol = v___URI.protocol(), v___location_port = v___URI.port(), v___location_origin = v___URI.origin(), v___location_hostname = v___URI.hostname(), v___location_href = v___location.href, v___location_path = v___URI.path().replace(/\/+/g, "/"), v___location_path_unslashed = v___location_path.replace(/^\//g, "").replace(/\/$/g, ""), v___location_path_lead_unslashed = v___location_path.replace(/^\//g, ""), v___location_file = v___URI.filename(), v___location_directory = v___URI.directory(), v___location_directory_trail_slashed = v___location_directory ? v___location_directory.endsWith("/") ? v___location_directory : v___location_directory + "/" : "/", v___location_directory_unslashed = v___location_directory.replace(/^\//g, "").replace(/\/$/g, ""), v___location_directory_unslashed_trail_slashed = v___location_directory_unslashed + "/", v___location_query = v___URI.query().replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, ""), v___location_resource = v___URI.resource().replace("?" + $__theme_navigation, "").replace("&" + $__theme_navigation, ""), v___location_resource_unslashed = v___location_resource.replace(/^\//g, "").replace(/\/$/g, ""), v___location_prefix = get_server_data("webprefix"), v___location_prefix_unslashed_trail_slashed = v___location_prefix.replace(/^\//g, "").replace(/\/$/g, "") + "/", "/" === v___location_prefix_unslashed_trail_slashed && (v___location_prefix_unslashed_trail_slashed = ""), v___server_extensions_path = v___location_prefix + "/extensions",
+    "undefined" == typeof v___initial_load && (v___initial_load = 1), "undefined" == typeof v___title_initial && (v___title_initial = get_server_data("title-initial")), "undefined" == typeof v___theme_updated && (v___theme_updated = 0), v___location = location, $__theme_name__ = "authentic", $__theme_navigation = "xnavigation=1", v___user_level = get_server_data("access-level"), v___shell_type = 0 == v___user_level ? "#" : "$", v___shell_processing = 0, v___debug = get_server_data("debug"), v___source_type = "debug" == v___debug ? "src" : "min", v___available_usermin = get_server_data("usermin"), "undefined" == typeof v___available_navigation && (v___available_navigation = get_server_data("navigation")), v___available_session = get_server_data("session"), v___blocked_navigation = $(document.activeElement).is("li.has-sub, a[data-has-sub-link]") ? 1 : 0, v___server_username = get_server_data("user"), v___server_userhome = get_server_data("user-home"), v___module = get_server_data("module"), v___script_name = get_server_data("script-name").replace(/^\//g, ""), v___module_file_manager = "file" + (Core.moduleAvailable("file-manager") ? "-manager" : "min"), v___server_hostname = get_server_data("hostname"), v___server_sestatus = get_server_data("sestatus"), v___theme_version = get_server_data("theme-version").toString(), v___theme_version_git = get_server_data("theme-git-version").toString(), v___theme_version_plain = v___theme_version.replace(".", ""), v___theme_force_buffered = 0, v___theme_night_mode = "1" == get_server_data("data-night-mode") ? 1 : 0, v___theme_night_mode_enabled = "undefined" != typeof settings_background_color && "nightRider" === settings_background_color ? 1 : v___theme_night_mode, o___gotten_scripts = "undefined" == typeof o___gotten_scripts ? [] : o___gotten_scripts, v___URI = URI(v___location), v___location_protocol = v___URI.protocol(), v___location_port = v___URI.port(), v___location_origin = v___URI.origin(), v___location_hostname = v___URI.hostname(), v___location_href = v___location.href, v___location_path = v___URI.path().replace(/\/+/g, "/"), v___location_path_unslashed = v___location_path.replace(/^\//g, "").replace(/\/$/g, ""), v___location_path_lead_unslashed = v___location_path.replace(/^\//g, ""), v___location_file = v___URI.filename(), v___location_directory = v___URI.directory(), v___location_directory_trail_slashed = v___location_directory ? v___location_directory.endsWith("/") ? v___location_directory : v___location_directory + "/" : "/", v___location_directory_unslashed = v___location_directory.replace(/^\//g, "").replace(/\/$/g, ""), v___location_directory_unslashed_trail_slashed = v___location_directory_unslashed + "/", v___location_query = navigation_trigger(v___URI.query(), 1), v___location_resource = navigation_trigger(v___URI.resource(), 1), v___location_resource_unslashed = v___location_resource.replace(/^\//g, "").replace(/\/$/g, ""), v___location_prefix = get_server_data("webprefix"), v___location_prefix_unslashed_trail_slashed = v___location_prefix.replace(/^\//g, "").replace(/\/$/g, "") + "/", "/" === v___location_prefix_unslashed_trail_slashed && (v___location_prefix_unslashed_trail_slashed = ""), v___server_extensions_path = v___location_prefix + "/extensions",
         // $t___license_vm = get_server_data("virtual-server-license"),
         // $t___license_cm = get_server_data("server-manager-license"),
         update_navigation_module_name()
