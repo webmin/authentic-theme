@@ -523,7 +523,7 @@ if (get_server_data("debug")) {
                 theme_toggle_night_mode()
             }), $("body").on("click", ".user-link.ported-console", function(e) {
                 theme_shell_check_available() && theme_shell_open(n)
-            }), slider_add_no_notifications(), slider_check_notifications(), moment.locale(get_server_data("language"))
+            }), slider_add_no_notifications(), slider_check_notifications()
         }
         $("body").on("click", "#headln2c > .favorites, .xcustom-favorites", function(e) {
             e.preventDefault();

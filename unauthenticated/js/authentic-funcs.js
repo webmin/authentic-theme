@@ -2734,7 +2734,7 @@ function page_render(e) {
             }
         }), v___available_navigation && window.matchMedia("(max-width: 767px)").matches && (navigation_lock_width(), set_side_slider_visibility()), "undefined" != typeof v___user_level && 0 != v___user_level && (settings_right_virtualmin_default = "sysinfo.cgi", settings_right_cloudmin_default = "sysinfo.cgi"), $("body").hasClass("session_login") && setTimeout(function() {
             page_display()
-        }, 200)
+        }, 200), moment.locale(get_server_data("language-full"))
 }
 
 function page_init() {
