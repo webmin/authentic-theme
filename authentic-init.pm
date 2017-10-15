@@ -870,7 +870,7 @@ sub theme_version
     ((!$switch && $sh__ln__g___version) &&
      ($sh__ln__c___version = $sh__ln__g___version, ($sh__ln__c___version =~ s/\.|-|git//ig)));
 
-    if (theme_mode() eq 'debug' && !$switch && $sh__ln__g___version) {
+    if (!$switch && $sh__ln__g___version) {
         $sh__ln__c___version .= time();
     } elsif ((!$switch || $switch eq 'full') && !$sh__ln__g___version) {
         $sh__ln__c___version = read_file_lines($root_directory . "/$current_theme/VERSION.txt", 1)->[0];
