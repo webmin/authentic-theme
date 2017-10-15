@@ -366,7 +366,7 @@ function navigation_update(e) {
     if (!get_onbeforeunload_status()) {
         var e = void 0 === e || -1 == e || "" == e ? $("aside select").val() : e,
             t = $t_uri_virtualmin ? "virtualmin" : $t_uri_cloudmin ? "cloudmin" : $t_uri_usermin ? "usermin" : $t_uri_webmin ? "webmin" : "mail";
-        navigation_render_start(), "webmin" == t ? (set_switch_position("webmin"), get_navigation_menu_webmin("webmin")) : "virtualmin" == t ? (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(e)) : "cloudmin" == t ? (set_switch_position("cloudmin"), get_navigation_menu_cloudmin(e)) : "usermin" == t ? (set_switch_position("usermin"), get_navigation_menu_webmin("usermin")) : "mail" == t && (set_switch_position("webmail"), get_navigation_menu_webmin("webmail"))
+        "webmin" == t ? (set_switch_position("webmin"), get_navigation_menu_webmin("webmin")) : "virtualmin" == t ? (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(e)) : "cloudmin" == t ? (set_switch_position("cloudmin"), get_navigation_menu_cloudmin(e)) : "usermin" == t ? (set_switch_position("usermin"), get_navigation_menu_webmin("usermin")) : "mail" == t && (set_switch_position("webmail"), get_navigation_menu_webmin("webmail"))
     }
 }
 
@@ -1022,7 +1022,7 @@ function bind_sameorigin() {
 }
 
 function get_navigation_menu_webmin(e) {
-    get_onbeforeunload_status() || 0 != navigation_dashboard_switch_available() && v___location_path != v___location_prefix + "/webmin/edit_themes.cgi" || (navigation_render_start(), $.ajax({
+    get_onbeforeunload_status() || (navigation_render_start(), $.ajax({
         type: "GET",
         url: v___location_prefix + "/index.cgi/?xhr-navigation=1&xhr-navigation-type=" + ("webmail" == e ? "webmail" : "webmin"),
         data: !1,
@@ -1109,7 +1109,7 @@ function get_default_cloudmin_content(e, t) {
 }
 
 function get_navigation_and_content(e, t, i) {
-    get_onbeforeunload_status() || ("virtualmin" === e ? (get_navigation_menu_virtualmin(!1), 1 != settings_right_reload && 1 !== t || 1 === i || get_default_virtualmin_content(!1)) : "cloudmin" === e ? (get_navigation_menu_cloudmin(!1), 1 != settings_right_reload && 1 !== t || 1 === i || get_default_cloudmin_content(!1)) : (get_navigation_menu_webmin(e), 1 != settings_right_reload && 1 !== t || 1 === i || get_default_content()))
+    get_onbeforeunload_status() || ("virtualmin" === e ? (get_navigation_menu_virtualmin(!1), 1 != settings_right_reload && 1 !== t || 1 === i || get_default_virtualmin_content(!1)) : "cloudmin" === e ? (get_navigation_menu_cloudmin(!1), 1 != settings_right_reload && 1 !== t || 1 === i || get_default_cloudmin_content(!1)) : (0 == navigation_dashboard_switch_available() && get_navigation_menu_webmin(e), 1 != settings_right_reload && 1 !== t || 1 === i || get_default_content()))
 }
 
 function information_update() {
