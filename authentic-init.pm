@@ -479,12 +479,17 @@ sub dashboard_switch
 
 sub get_current_user_language
 {
-    return
-      substr(
-             ($gconfig{ 'lang' . '_' . $base_remote_user } ? $gconfig{ 'lang' . '_' . $base_remote_user } :
-                $gconfig{'lang'}
-             ),
-             0, 2);
+    my ($full) = @_;
+    my $language = substr(
+                          ($gconfig{ 'lang' . '_' . $base_remote_user } ? $gconfig{ 'lang' . '_' . $base_remote_user } :
+                             $gconfig{'lang'}
+                          ),
+                          0,
+                          ($full ? 5 : 2));
+
+    $language =~ s/\..*//;
+    $language =~ s/_/-/;
+    return lc($language);
 }
 
 sub get_filters
@@ -914,12 +919,12 @@ sub header_html_data
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $__settings{'settings_navigation_color'}) . '"') .
-      '' .
-      ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') . ' data-theme-version="' .
-      (theme_git_version() ? theme_git_version() : theme_version('version')) . '" data-theme-git-version="' .
-      theme_git_version('uncond') . '" data-level="' . $get_user_level . '" data-user-home="' .
-      get_user_home() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() . '" data-language="' .
-      get_current_user_language() . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
+      '' . ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') .
+      ' data-theme-version="' . (theme_git_version() ? theme_git_version() : theme_version('version')) .
+      '" data-theme-git-version="' . theme_git_version('uncond') . '" data-level="' .
+      $get_user_level . '" data-user-home="' . get_user_home() . '" data-user="' . $remote_user . '" data-dashboard="' .
+      dashboard_switch() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
+      get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
       '" data-redirect="' . get_tmp_var('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
       '" data-webprefix="' . $gconfig{'webprefix'} . '" data-current-product="' . get_product_name() . '" data-module="' .
       ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : get_env('request_uri')) .
@@ -975,7 +980,7 @@ sub set_tmp_var
 sub get_tmp_var
 {
     my ($key, $keep) = @_;
-    my $tmp      = 'tmp';
+    my $tmp = 'tmp';
     my $tmp_file = '/' . $tmp . '/.' . ($tmp . '_' . get_product_name()) . '_' . $key . '_' . $remote_user;
 
     read_file($tmp_file, \%tmp_var);
