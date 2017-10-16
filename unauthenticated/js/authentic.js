@@ -23,7 +23,7 @@ if (get_server_data("debug")) {
                 if (n && ($.active = n - 1), Test.strContains(s.url, "/csf/index.cgi")) return void theme_reload()
             }
         }), $(document).on("pjax:start", function(e, t) {
-            get_server_data("loading", 1)
+            get_server_data("loading", 1), "number" == typeof set_server_tmp_var_timeout && clearTimeout(set_server_tmp_var_timeout)
         }), $(document).on("pjax:beforeReplace", function(e, t) {
             navigation_form_control(0)
         }), $(document).on("ready pjax:beforeSend", function(e, t, i) {
@@ -916,7 +916,7 @@ if (get_server_data("debug")) {
             window.onbeforeunload = function() {
                 if (get_onbeforeunload_status()) return "object" == typeof NProgress && NProgress.done(), !0;
                 window.setTimeout(function() {
-                    v___available_navigation || "object" == typeof NProgress && NProgress.start()
+                    v___available_navigation ? "csf" === v___module && (window.location = v___location_prefix ? v___location_prefix + "/" : "/") : "object" == typeof NProgress && NProgress.start()
                 }, 0), window.onbeforeunload = null
             }, $(function() {
                 v___available_navigation || "object" == typeof NProgress && NProgress.done()
