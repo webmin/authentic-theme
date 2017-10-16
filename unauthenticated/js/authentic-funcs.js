@@ -496,7 +496,7 @@ function get_pjax_event_end_funcs(e) {
         var t = navigation_trigger(v___location.href, 1).replace(v___location_origin + v___location_prefix, "");
         "" == t || "/" == t || "/index.cgi" == t || unbuffered_header_processor_allow(v___location.href) || "csf" === v___module || (set_server_tmp_var_timeout = setTimeout(function() {
             set_server_tmp_var("goto", navigation_trigger(v___location.href, 1))
-        }, 3e3))
+        }, 1500))
     }
 }
 
@@ -972,11 +972,11 @@ function editor_background_save(e) {
             13 == e.keyCode && e.ctrlKey && !e.shiftKey ? s.trigger("click") : 13 == e.keyCode && e.ctrlKey && e.shiftKey && _.trigger("click")
         });
         var r = 'button[type="submit"]:not(.disabled)';
-        $("body").undelegate(r, "click"), $("body").on("click", r, function(e) {
+        $("body").undelegate(r, "click.cm"), $("body").on("click.cm", r, function(e) {
             set_onbeforeunload_status(0, 0), $("button").addClass("disabled").find(".fa.fa-arrow-circle-o-left").addClass("invisible").after('<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: -0.5px; margin-left: -28px;"><span class="cspinner-icon dark small"></span></span></span>'), s.attr("data-form-onbeforeunload", 0)
         });
         var o = 'button[data-form="submitter"]:not(.disabled)';
-        $("body").undelegate(o, "click"), $("body").on("click", o, function(e) {
+        $("body").undelegate(o, "click.cm"), $("body").on("click.cm", o, function(e) {
             e.preventDefault();
             var t = $(this).parents("form"),
                 a = (t.attr("enctype") && t.attr("enctype").indexOf("form-data") > -1 ? 0 : 1) ? t.serialize() : new FormData(t[0]);
@@ -1699,7 +1699,10 @@ function popover_visibility_position(e) {
 }
 
 function page_render(e) {
-    if (update_navigation_module_name(), e && "undefined" != typeof __cm_editor_static && (__cm_editor_static.toTextArea(), $('button[data-form="submitter"]').unwrap(), $('.CodeMirror, button[data-form="submitter"] + button, .-helper.__helper').remove()), $("body").find('a[href*="virtual-server/switch_user.cgi"]').attr("target", "_parent"), $("body").attr("style", get_server_data("style")), $.each($('select[onchange="form.submit()"]'), function() {
+    if (update_navigation_module_name(), e && "undefined" != typeof __cm_editor_static && (__cm_editor_static.toTextArea(), $('button[data-form="submitter"]').unwrap(), $('.CodeMirror, button[data-form="submitter"] + button, .-helper.__helper').remove()), function() {
+            var e = $("body");
+            e.off("mousedown.cm1 keydown.cm1"), e.undelegate('button[type="submit"]:not(.disabled)', "click.cm"), e.undelegate('button[data-form="submitter"]:not(.disabled)', "click.cm")
+        }(), $("body").find('a[href*="virtual-server/switch_user.cgi"]').attr("target", "_parent"), $("body").attr("style", get_server_data("style")), $.each($('select[onchange="form.submit()"]'), function() {
             $(this).removeAttr("onchange").addClass("onchange_form_submit_triggger")
         }), editor_init_check()) {
         var t = $('select[name="file"]');
