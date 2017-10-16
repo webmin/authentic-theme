@@ -716,3 +716,7 @@ theme_xhred_global_second=Second
 theme_xhred_global_seconds=Seconds
 theme_xhred_global_minute=Minute
 theme_xhred_global_minutes=Minutes
+
+
+#19.01
+theme_xhred_browser_warning=To have the best experience with server panel on your computer, use a supported, up-to-date browser.<br><br><em>Internet Explorer</em> is no longer supported.<br><br>Recommended browsers are <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
