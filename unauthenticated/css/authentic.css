@@ -9184,6 +9184,11 @@ input.dataTable-mirror,
     font-size: 12px
 }
 
+.dataTable thead th a.ui_link {
+    pointer-events: none;
+    color: inherit
+}
+
 .ui_buttons_table .ui_buttons_row .ui_buttons_value .table-hardcoded tbody tr td b {
     margin-right: 3px;
     margin-left: 3px
@@ -9556,6 +9561,10 @@ body[data-module='bind8'] .ui_form_end_submit+input.hidden+.awcheckbox {
 
 body[class*='bind8'][data-uri*='edit_zonekey.cgi'] .panel-body>p:first-child {
     margin-bottom: 5px
+}
+
+body[class*='bind8'] div>div>div.panel-body>form>div.table-responsive>table.table-subtable>tbody>tr>td>table>tbody>tr>td>span.awradio {
+    vertical-align: sub
 }
 
 font[color='#ff4400'],
