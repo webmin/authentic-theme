@@ -3,7 +3,16 @@
  * Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
-const Convert = {
+const browser = {
+        internet_explorer_version: function() {
+            var t = 0,
+                n = /MSIE (\d+\.\d+);/.test(navigator.userAgent),
+                r = !!navigator.userAgent.match(/Trident\/7.0/),
+                e = navigator.userAgent.indexOf("rv:11.0");
+            return n && (t = new Number(RegExp.$1)), -1 != navigator.appVersion.indexOf("MSIE 10") && (t = 10), r && -1 != e && (t = 11), t
+        }
+    },
+    Convert = {
         arrFlip: function(t) {
             var n, r = {};
             for (n in t) t.hasOwnProperty(n) && (r[t[n]] = n);
