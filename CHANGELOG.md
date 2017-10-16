@@ -1,30 +1,27 @@
 ## Changelog
 
-#### Version 19.00-patch5 (October 12, 2017)
+#### Version 19.01 (October 16, 2017)
+* Fix to keep trailing dot at the end of the DNS records [webmin/webmin#639/comment-333394539](https://github.com/webmin/webmin/issues/639#issuecomment-333394539)
+* Fix password generator to escape HTML, when passed into messenger
+* Fix navigation menu to be displayed after refreshing modules [#859](https://github.com/qooob/authentic-theme/issues/859)
+* Fix pie-charts to be refreshed properly on no data [#857](https://github.com/qooob/authentic-theme/issues/857)
+* Fix displaying locale for different countries with the same language [#855](https://github.com/qooob/authentic-theme/issues/855)
 * Fix code leaks in File Manager making irrelevant tabs disappear
-* Fix refreshing taking to previously used page
+* Fix page reloading to take back to previously used page
 * Fix opening current page into new tab [#853/comment-335612375](https://github.com/qooob/authentic-theme/issues/853#issuecomment-335612375)
 * Fix issues with navigation menu display in certain cases [#849](https://github.com/qooob/authentic-theme/issues/849)
-
-#### Version 19.00-patch4 (October 11, 2017)
-* Fix failproof update captions for _Side Slider_ [#853](https://github.com/qooob/authentic-theme/issues/853)
+* Fix failproof display captions for _Side Slider_ [#853](https://github.com/qooob/authentic-theme/issues/853)
 * Fix container offset to be shown only on high resolution screens [#852](https://github.com/qooob/authentic-theme/issues/852)
 * Fix missing trailing slashes for directories in requests
-* Fix refreshing issues [#844](https://github.com/qooob/authentic-theme/issues/844) [#848](https://github.com/qooob/authentic-theme/issues/848) [webmin/webmin#652](https://github.com/webmin/webmin/pull/652)
-
-#### Version 19.00-patch3 (October 10, 2017)
-* Fix form-data encoding detection [#842](https://github.com/qooob/authentic-theme/issues/842)
-
-#### Version 19.00-patch2 (October 09, 2017)
+* Fix reloading issues [#844](https://github.com/qooob/authentic-theme/issues/844) [#848](https://github.com/qooob/authentic-theme/issues/848) [webmin/webmin#652](https://github.com/webmin/webmin/pull/652)
+* Fix form-data encoding detection [#842](https://github.com/qooob/authentic-theme/issues/842) [virtualmin.com/53995](https://www.virtualmin.com/node/53995)
 * Fix navigation menu refresh upon post commands [#851](https://github.com/qooob/authentic-theme/issues/851)
-* Fix to run embeded scripts from modules consistently [#850](https://github.com/qooob/authentic-theme/issues/850)
-
-#### Version 19.00-patch1 (October 04, 2017)
+* Fix to run embeded scripts from modules consistently [#850](https://github.com/qooob/authentic-theme/issues/850) [virtualmin.com/53811](https://www.virtualmin.com/node/53811)
+* Fix missing reference error, when recollecting sysinfo [#838](https://github.com/qooob/authentic-theme/issues/838)
+* Fix to display buttons on mobile view without hovering [#821](https://github.com/qooob/authentic-theme/issues/821)
+* Fix to update server information after installing new packages [#856](https://github.com/qooob/authentic-theme/issues/856)
 * Swedish language update [#836](https://github.com/qooob/authentic-theme/issues/836)
 * Albanian language update [#837](https://github.com/qooob/authentic-theme/issues/837)
-* Display buttons on mobile view without hovering [#821](https://github.com/qooob/authentic-theme/issues/821)
-* Fix missing reference error, when recollecting sysinfo [#838](https://github.com/qooob/authentic-theme/issues/838)
-
 
 #### Version 19.00 (September 30, 2017)
 * Single-page application design delivers you the fastest and smoothest _UX_ you've ever experienced
