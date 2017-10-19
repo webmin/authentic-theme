@@ -2622,7 +2622,7 @@ function page_render(e) {
         }), Core.curModuleFile("server-manager", "index.cgi") && $('a[href*="edit_serv.cgi"], a[href*="mass_update_form.cgi"]').on("click", function(e) {
             var t = URI.parseQuery(URI($(this).attr("href")).query()).id;
             t != $('select[name="sid"]').val() && get_navigation_menu_cloudmin(t)
-        }), Core.curModuleFile("webmin", "refresh_modules.cgi") && navigation_update(-1), v___location_path == v___location_prefix + "/proc/index_search.cgi" && $(".col_header").removeClass("col_header"), 1 == get_server_data("notice") && (v___theme_updated = 1), $('input[type="file"]').bootstrapFileInput(), setTimeout(function() {
+        }), (Core.curModuleFile("webmin", "refresh_modules.cgi") || Test.strContains(v___location_query, "refresh=1")) && navigation_update(-1), v___location_path == v___location_prefix + "/proc/index_search.cgi" && $(".col_header").removeClass("col_header"), 1 == get_server_data("notice") && (v___theme_updated = 1), $('input[type="file"]').bootstrapFileInput(), setTimeout(function() {
             $.each($(".file-input-wrapper > span"), function() {
                 $(this).html('<i class="fa fa-fw fa-paperclip">')
             })
