@@ -168,6 +168,12 @@ function theme_open_new_tab(e) {
     $("body").append('<a href="' + e + '" target="_blank" class="hidden" id="theme_open_new_tab"></a>'), $("#theme_open_new_tab").simulateUserClick().remove()
 }
 
+function theme_to_new_tab() {
+    $.each($('a[href*="virtualmin-awstats/view.cgi?config="],             .virtualmin-awstats a[href*="view.cgi?config="],             a.ui_link_replaced[href*="search.cgi/webminlog"]   '), function() {
+        $(this).addClass("--to-new-tab")
+    })
+}
+
 function theme_reload() {
     window.location.href = location.origin + v___location_prefix
 }
@@ -207,15 +213,17 @@ function navigation_detect(e, t) {
     else {
         if (void 0 === t) {
             if (v___blocked_navigation) return;
-            $('.navigation a[href^="' + v___location_resource + '"]:not([data-parent-hidden]):first').length && (e = v___location_resource);
+            var i = 1,
+                a = $('.navigation a[href*="' + v___location_path + '"]:not([data-parent-hidden]):first');
+            $('.navigation a[href^="' + v___location_resource + '"]:not([data-parent-hidden]):first').length ? (e = v___location_resource, i = 0) : Test.strContains(v___location_file, "cgi") && a.length && (e = a.attr("href"), i = 0);
             var e = e ? e.replace("/edit_users.cgi", "/list_users.cgi").replace("/edit_user.cgi", "/list_users.cgi").replace("/edit_alias.cgi", "/list_aliases.cgi").replace("/edit_database.cgi", "/list_databases.cgi").replace("/save_database.cgi", "/list_databases.cgi").replace("/edit_script.cgi", "/list_scripts.cgi").replace("/script_form.cgi", "/list_scripts.cgi") : e;
-            Test.strContains(v___location_resource, "config.cgi") && (e = $t_uri_virtualmin ? v___location_prefix + "/config.cgi?virtual-server" : $t_uri_cloudmin ? v___location_prefix + "/config.cgi?server-manager" : v___location_prefix + "/" + v___location_query + "/");
-            var i = $t_uri_webmin || $t_uri_usermin;
-            if (!e && i)
+            i && Test.strContains(v___location_resource, "config.cgi") && (e = $t_uri_virtualmin ? v___location_prefix + "/config.cgi?virtual-server" : $t_uri_cloudmin ? v___location_prefix + "/config.cgi?server-manager" : v___location_prefix + "/" + v___location_query + "/");
+            var n = $t_uri_webmin || $t_uri_usermin;
+            if (!e && n)
                 if (Test.strContains(v___location_file, ".cgi") && !Test.strContains(v___location_file, "sysinfo.cgi")) e = v___location_path.replace(v___location_file, ""), page_extended() && (e = v___location_prefix + "/webmin/");
                 else if (!e) {
-                var a = new RegExp("^" + v___location_prefix, "i");
-                e = get_server_data("data-uri").replace(a, "").split("/").filter(function(e) {
+                var s = new RegExp("^" + v___location_prefix, "i");
+                e = get_server_data("data-uri").replace(s, "").split("/").filter(function(e) {
                     return 0 !== e.length
                 })[0], e = v___location_prefix + "/" + e
             }
@@ -232,7 +240,7 @@ function navigation_render_start() {
 }
 
 function navigation_render_end() {
-    $("aside ul.user-html").removeClass("invisible"), $("body aside .mCSB_scrollTools, body ul.navigation, body ul.user-links").css("visibility", "visible"), $("#_menu_loader").remove(), navigation_init_select(), navigation_select_label()
+    $("aside ul.user-html").removeClass("invisible"), $("body aside .mCSB_scrollTools, body ul.navigation, body ul.user-links").css("visibility", "visible"), $("#_menu_loader").remove(), navigation_init_select(), navigation_select_label(), theme_to_new_tab()
 }
 
 function navigation_display() {
@@ -2748,7 +2756,7 @@ function page_render(e) {
             }
         }), v___available_navigation && window.matchMedia("(max-width: 767px)").matches && (navigation_lock_width(), set_side_slider_visibility()), "undefined" != typeof v___user_level && 0 != v___user_level && (settings_right_virtualmin_default = "sysinfo.cgi", settings_right_cloudmin_default = "sysinfo.cgi"), $("body").hasClass("session_login") && setTimeout(function() {
             page_display()
-        }, 200), moment.locale(get_server_data("language-full"))
+        }, 200), moment.locale(get_server_data("language-full")), theme_to_new_tab()
 }
 
 function page_init() {

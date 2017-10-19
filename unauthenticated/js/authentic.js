@@ -81,7 +81,7 @@ if (get_server_data("debug")) {
             }), $("body").on("click", ".file-input-wrapper", function() {
                 var e = $(this).prev('input[type="radio"]').add($(this).parent("td").prev("td").find('input[type="radio"]'));
                 1 === e.length && e.prop("checked", !0)
-            }), $("body").on("click", '.--to-new-tab, a.ui_link_replaced[href*="search.cgi/webminlog"]', function() {
+            }), $("body").on("click", ".--to-new-tab", function() {
                 $(this).attr("target", "_blank")
             }), $("body").on("click", ".favorites-menu a.menu-exclude-link, .right_pane_favorites_link", function() {
                 var e = Test.strContains($(this).attr("href"), "/virtual-server/") ? "dom" : !!Test.strContains($(this).attr("href"), "/server-manager/") && "id",
