@@ -7852,18 +7852,6 @@ input[name]:not([type='image']):not(.sidebar-search):not([type='button']):not([t
     color: #555
 }
 
-ul.messenger.messenger-fixed.messenger-on-top,
-ul.messenger.messenger-fixed.messenger-on-bottom {
-    bottom: 13px;
-    left: 58%
-}
-
-html[data-slider-fixed='1'] ul.messenger.messenger-fixed.messenger-on-top,
-html[data-slider-fixed='1'] ul.messenger.messenger-fixed.messenger-on-bottom {
-    bottom: 13px;
-    left: 49%
-}
-
 ul.messenger-theme-air .messenger-message.message-warning:hover,
 ul.messenger-theme-air .messenger-message.message-warning {
     background-color: #f0ad4e
@@ -7916,18 +7904,11 @@ ul.messenger .messenger-message-inner ul {
     margin: 3px 10px 0
 }
 
-@media(max-width:960px) {
+@media(max-width:768px) {
     ul.messenger.messenger-fixed.messenger-on-top,
     ul.messenger.messenger-fixed.messenger-on-bottom {
-        left: 10%;
-        width: 70%;
-        margin-left: -270px
-    }
-    html[data-slider-fixed='1'] ul.messenger.messenger-fixed.messenger-on-top,
-    html[data-slider-fixed='1'] ul.messenger.messenger-fixed.messenger-on-bottom {
-        left: 20%;
-        width: 40%;
-        margin-left: -10px
+        left: 15%;
+        width: 70%
     }
 }
 
@@ -10629,6 +10610,24 @@ screen and (max-height:600px) {
 
 .modal-list-users hr {
     margin-bottom: 13px
+}
+
+@media(max-width:460px) {
+    body[data-uri*="sysinfo.cgi"] .col-xs-6 {
+        width: 100%
+    }
+}
+
+@media(min-width:768px) and (max-width:960px) {
+    html[data-slider-fixed="1"] body[data-uri*="sysinfo.cgi"] .col-xs-6 {
+        width: 100%
+    }
+}
+
+@media(max-width:1280px) and (min-width:960px) {
+    html[data-slider-fixed="1"] body[data-uri*="sysinfo.cgi"] .col-md-6 {
+        width: 50%
+    }
 }
 
 @media(min-width:768px) {
