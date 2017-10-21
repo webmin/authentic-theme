@@ -1007,11 +1007,36 @@ sub theme_ui_radio_table
 
 sub theme_redirect
 {
-    my $protocol = get_env('https') ? 'https://' : 'http://';
-    my $host     = $protocol . get_env('http_host');
-    my $location = replace($host, (get_env('http_origin') . $gconfig{'webprefix'}), $_[1]);
-    set_tmp_var('redirected', ($location . ($location =~ /\?/ ? "&" : "?") . "xnavigation=1"));
-    print "Location: $location\n\n";
+    use File::Basename;
+    my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix) = (
+                                        $_[1],
+                                        (get_env('https') ? 'https://' : 'http://'),
+                                        get_env('http_x_forwarded_host'),
+                                        get_env('http_host'), (!get_env('http_referer') || dirname(get_env('http_referer'))),
+                                        $gconfig{'webprefix'});
+
+    my $redirect;
+    if (!$proxy || $link =~ /\Q$nonproxy/) {
+        $redirect = $nonproxy;
+    } else {
+        $redirect = $proxy;
+    }
+
+    my $location = replace(($protocol . $redirect), undef, $_[1]);
+    my $location_use = (($location && $location ne '/' && $location ne '/?' . $xnav) ? 1 : 0);
+
+    if ($location_use) {
+        if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix)) {
+            $location = ($prefix . $location);
+
+        }
+
+        set_tmp_var('redirected', $location);
+        print "Location: $location\n\n";
+    } else {
+        print "Location: $link\n\n";
+    }
+
 }
 
 sub theme_post_save_domain

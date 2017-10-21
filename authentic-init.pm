@@ -403,6 +403,8 @@ sub init_vars
     our $t_uri___i;
     our $t_uri____i;
 
+    our $xnav = "xnavigation=1";
+
     our %gaccess = &get_module_acl();
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
@@ -415,7 +417,7 @@ sub init_funcs
 
     # Embed debug functions
     if (theme_mode() eq 'debug') {
-        require "$root_directory/$current_theme/.debug.pm";
+        do "$root_directory/$current_theme/.debug.pm";
     }
 }
 

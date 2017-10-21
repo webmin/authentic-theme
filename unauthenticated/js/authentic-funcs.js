@@ -474,7 +474,7 @@ function get_pjax_event_end(e, t) {
         var i = t.responseText.replace(/<body\b[^<]*(?:(?!<\/body>)<[^<]*)*<\/body>/gim, "").replace(/<head\b[^<]*(?:(?!<\/head>)<[^<]*)*<\/head>/gim, "").replace("<!DOCTYPE html>", "").replace("<html", '<div id="xhtml0"').replace("</html>", "</div>"),
             a = $(i).filter("#xhtml0");
         $(a[0].attributes).each(function() {
-            "id" !== this.nodeName && (this.nodeName, "data-redirect" === this.nodeName && this.nodeValue && this.nodeValue != "/?" + $__theme_navigation && history.replaceState({}, null, this.nodeValue), get_server_data(this.nodeName, this.nodeValue))
+            "id" !== this.nodeName && (this.nodeName, v___available_navigation && "data-redirect" === this.nodeName && this.nodeValue && this.nodeValue != "/?" + $__theme_navigation && history.replaceState({}, null, navigation_trigger(this.nodeValue, 2)), get_server_data(this.nodeName, this.nodeValue))
         }).promise().done(function() {
             if (get_pjax_event_end_funcs(1), $.each($(".container-fluid img"), function() {
                     var e = $(this),
@@ -2708,7 +2708,7 @@ function page_render(e) {
             e.preventDefault();
             var t, i = $(this).parent("span").attr("data-charts").split("_")[1];
             "cpu" == i && Core.moduleAvailable("proc") ? t = v___location_prefix + "/proc/index_cpu.cgi" : "mem" != i && "virt" != i || !Core.moduleAvailable("proc") ? "disk" == i && Core.moduleAvailable("disk-usage") ? t = v___location_prefix + "/disk-usage" : "disk" == i && Core.moduleAvailable("quota") && (t = v___location_prefix + "/quota/list_users.cgi?dir=%2F") : t = v___location_prefix + "/proc/index_size.cgi", t.length && get_pjax_content(t)
-        })), $t_uri_virtualmin && Core.curModuleFileQuery("syslog", "save_log.cgi", "view=1") && ($('select[name="idx"] option').filter(function() {
+        }), !v___available_navigation && $('a[href="/?updated"], a[data-href="#theme-info"]').remove()), $t_uri_virtualmin && Core.curModuleFileQuery("syslog", "save_log.cgi", "view=1") && ($('select[name="idx"] option').filter(function() {
             return this.text == $.trim($("span[data-sub_title] tt").text())
         }).attr("selected", !0), $('select[name="idx"]').addClass("hidden")), Core.curModuleFileQuery("syslog", "save_log.cgi", "view=1")) {
         var m = ".panel-body .fa-refresh-fi",
