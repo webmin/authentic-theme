@@ -1205,14 +1205,6 @@ html:not([data-background-style='nightRider']) body:not(.csf):not(.backup-config
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2)
 }
 
-.right-side-tabs .tab-pane .info-container .badge-custom.bg-warning {
-    background-color: #efe9ce
-}
-
-.right-side-tabs .tab-pane .info-container .badge-custom.bg-danger {
-    background-color: #d2adad
-}
-
 .right-side-tabs .tab-pane .info-container .description {
     overflow: hidden;
     padding-right: 2px;
@@ -5248,6 +5240,26 @@ i[data-port-href] {
 
 .bg-white:hover {
     background-color: #fff
+}
+
+.bg-success {
+    background-color: #b3cbaa !important
+}
+
+.bg-info {
+    background-color: #95abb6 !important
+}
+
+.bg-warning {
+    background-color: #b0a878 !important
+}
+
+.bg-danger {
+    background-color: #c29393 !important
+}
+
+.bg-primary {
+    background-color: #698ba8 !important
 }
 
 .badge {

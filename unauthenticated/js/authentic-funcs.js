@@ -1256,24 +1256,24 @@ function information_update() {
                             var r = 0;
                             $.each($(i).filter(".badge-cpustatus"), function(e, t) {
                                 var a = parseInt($(this).text().split(":")[1]),
-                                    n = a <= 30 ? "--bg-info" : a > 30 && a <= 60 ? "--bg-success" : a > 60 && a <= 80 ? "bg-warning" : a > 80 ? "bg-danger" : "";
-                                $(this).text().indexOf("°C") > -1 || (n = a <= 86 ? "--bg-info" : a > 86 && a <= 140 ? "--bg-success" : a > 140 && a <= 176 ? "bg-warning" : a > 176 ? "bg-danger" : ""), "bg-warning" != n && "bg-danger" != n || (r = 1), $("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus").length || $('strong[data-stats="cpu"] + br[data-stats="cpu"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[e]).html($(this).text()).removeClass(function(e, t) {
+                                    n = a;
+                                label = a <= 30 ? "bg-info" : a > 30 && a <= 60 ? "bg-success" : a > 60 && a <= 80 ? "bg-warning" : a > 80 ? "bg-danger" : "", is_celcius = $(this).text().indexOf("°C") > -1, is_fan_rpm = $(this).text().indexOf("RPM") > -1, is_celcius || is_fan_rpm ? is_fan_rpm && (label = n <= 1600 ? "bg-info" : n > 1600 && n <= 2100 ? "bg-success" : n > 2100 && n <= 2800 ? "bg-warning" : n > 2800 ? "bg-danger" : "") : label = a <= 86 ? "bg-info" : a > 86 && a <= 140 ? "bg-success" : a > 140 && a <= 176 ? "bg-warning" : a > 176 ? "bg-danger" : "", "bg-warning" != label && "bg-danger" != label || (r = 1), $("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus").length || $('strong[data-stats="cpu"] + br[data-stats="cpu"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[e]).html($(this).text()).removeClass(function(e, t) {
                                     return (t.match(/(^|\s)bg-\S+/g) || []).join(" ")
-                                }).addClass(n)
+                                }).addClass(label)
                             }).promise().done(function() {
-                                r ? $('.info-container [data-stats="cpu"]').removeClass("hidden") : $('.info-container [data-stats="cpu"]').addClass("hidden")
+                                r || "undefined" != typeof config_custom_force_display_cpu_sensors ? $('.info-container [data-stats="cpu"]').removeClass("hidden") : $('.info-container [data-stats="cpu"]').addClass("hidden")
                             })
                         }
                         if ("hdd_temperature" == e) {
                             var _ = 0;
                             $.each($(i), function(e, t) {
                                 var a = parseInt($(this).text().split(":")[1]),
-                                    n = a <= 30 ? "--bg-info" : a > 30 && a <= 60 ? "--bg-success" : a > 60 && a <= 80 ? "bg-warning" : a > 80 ? "bg-danger" : "";
-                                $(this).text().indexOf("°C") > -1 || (n = a <= 86 ? "--bg-info" : a > 86 && a <= 140 ? "--bg-success" : a > 140 && a <= 176 ? "bg-warning" : a > 176 ? "bg-danger" : ""), "bg-warning" != n && "bg-danger" != n || (_ = 1), $("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)").length || $('strong[data-stats="drive"] + br[data-stats="drive"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[e]).html($(this).text()).removeClass(function(e, t) {
+                                    n = a <= 30 ? "bg-info" : a > 30 && a <= 60 ? "bg-success" : a > 60 && a <= 80 ? "bg-warning" : a > 80 ? "bg-danger" : "";
+                                $(this).text().indexOf("°C") > -1 || (n = a <= 86 ? "bg-info" : a > 86 && a <= 140 ? "bg-success" : a > 140 && a <= 176 ? "bg-warning" : a > 176 ? "bg-danger" : ""), "bg-warning" != n && "bg-danger" != n || (_ = 1), $("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)").length || $('strong[data-stats="drive"] + br[data-stats="drive"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[e]).html($(this).text()).removeClass(function(e, t) {
                                     return (t.match(/(^|\s)bg-\S+/g) || []).join(" ")
                                 }).addClass(n)
                             }).promise().done(function() {
-                                _ ? $('.info-container [data-stats="drive"]').removeClass("hidden") : $('.info-container [data-stats="drive"]').addClass("hidden")
+                                _ || "undefined" != typeof config_custom_force_display_drive_sensors ? $('.info-container [data-stats="drive"]').removeClass("hidden") : $('.info-container [data-stats="drive"]').addClass("hidden")
                             })
                         }
                         if ("uptime" == e || "running_proc" == e) {
