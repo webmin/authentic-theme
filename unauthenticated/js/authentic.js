@@ -710,7 +710,7 @@ if (get_server_data("debug")) {
                 if (Test.strContains(o.text(), "...") && Test.strContains(o.text(), "patch")) {
                     var r = parseInt(o.text().split("...")[1].substr(-1, 1));
                     r && $.each($(".version_separator:not(.version_dev)"), function(e, t) {
-                        e + 1 != r && $(this).addClass("hidden")
+                        e + 1 != r ? $(this).addClass("hidden") : $(this).text($(this).text() + "-" + theme_language("theme_xhred_global_release").toLowerCase())
                     })
                 }
             })

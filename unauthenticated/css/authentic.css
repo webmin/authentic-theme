@@ -6706,8 +6706,9 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
 }
 
 .-helper.__helper,
-.cursor-pointer {
-    cursor: pointer
+.cursor-pointer,
+.cursor-pointer a.ui_link {
+    cursor: pointer !important
 }
 
 .cursor-alias {
