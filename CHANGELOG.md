@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.01-patch1 (October 23, 2017)
+* Fix to display color for labels and allow to force show sensors information in Side Slider [#867](https://github.com/qooob/authentic-theme/issues/867)
+* Fix to manage redirect properly with various proxy configurations [#857/comment-338026476](https://github.com/qooob/authentic-theme/issues/857#issuecomment-338026476)
+* Fix CSS issue displaying columns on System Information page [#860](https://github.com/qooob/authentic-theme/issues/860)
+* Fix to detect links in navigation menu with certain patterns [#862](https://github.com/qooob/authentic-theme/issues/862)
+* Fix to update navigation menu on query containing trigger
+
 #### Version 19.01 (October 16, 2017)
 * Fix to keep trailing dot at the end of the DNS records [webmin/webmin#639/comment-333394539](https://github.com/webmin/webmin/issues/639#issuecomment-333394539)
 * Fix password generator to escape HTML, when passed into messenger
@@ -10,7 +17,7 @@
 * Fix page reloading to take back to previously used page
 * Fix opening current page into new tab [#853/comment-335612375](https://github.com/qooob/authentic-theme/issues/853#issuecomment-335612375)
 * Fix issues with navigation menu display in certain cases [#849](https://github.com/qooob/authentic-theme/issues/849)
-* Fix failproof display captions for _Side Slider_ [#853](https://github.com/qooob/authentic-theme/issues/853)
+* Fix failproof display captions for Side Slider [#853](https://github.com/qooob/authentic-theme/issues/853)
 * Fix container offset to be shown only on high resolution screens [#852](https://github.com/qooob/authentic-theme/issues/852)
 * Fix missing trailing slashes for directories in requests
 * Fix reloading issues [#844](https://github.com/qooob/authentic-theme/issues/844) [#848](https://github.com/qooob/authentic-theme/issues/848) [webmin/webmin#652](https://github.com/webmin/webmin/pull/652)
