@@ -115,7 +115,7 @@ h6,
     overflow-x: initial
 }
 
-html[data-script-name*="virtual-server/wizard.cgi"] .table-responsive>.table>tbody>tr>td {
+html[data-script-name*='virtual-server/wizard.cgi'] .table-responsive>.table>tbody>tr>td {
     white-space: normal
 }
 
@@ -455,19 +455,14 @@ html[data-script-name*="virtual-server/wizard.cgi"] .table-responsive>.table>tbo
 
 #sidebar ul li:not(.user-link) .fa.scaled1_5 {
     font-size: 15px;
-    margin-left: -1px;
-    margin-right: -2px
+    margin-right: -2px;
+    margin-left: -1px
 }
 
 #sidebar ul li:not(.user-link) .fa.scaled2 {
     font-size: 16px;
-    margin-left: -1px;
-    margin-right: -3px
-}
-
-#sidebar ul li:not(.user-link) .fa. #sidebar ul li:not(.user-link) .fa.fa-dashboard {
-    font-size: 16px;
-    margin-right: -4px
+    margin-right: -3px;
+    margin-left: -1px
 }
 
 @-moz-document url-prefix() {
@@ -480,7 +475,7 @@ html[data-script-name*="virtual-server/wizard.cgi"] .table-responsive>.table>tbo
     }
 }
 
-#system-status a[data-refresh="system-status"] {
+#system-status a[data-refresh='system-status'] {
     margin: -7px -12px;
     padding: 5px 11px;
     color: white
@@ -752,9 +747,9 @@ br.lh0 {
 }
 
 .right-side-tabs .list-group-item .authentic_update {
-    padding: 1.5px 3px;
     line-height: 12px;
-    height: 15px
+    height: 15px;
+    padding: 1.5px 3px
 }
 
 .right-side-tabs .list-group-item .authentic_update {
@@ -1192,6 +1187,7 @@ html:not([data-background-style='nightRider']) body:not(.csf):not(.backup-config
     min-width: 59px
 }
 
+#system-status .badge-custom,
 .right-side-tabs .tab-pane .info-container .badge-custom {
     font-size: 9px;
     line-height: 10px;
@@ -1203,6 +1199,15 @@ html:not([data-background-style='nightRider']) body:not(.csf):not(.backup-config
     background-color: #ccc;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2)
+}
+
+#system-status .badge-custom {
+    font-size: 10px;
+    line-height: 12px;
+    margin-right: 2px !important;
+    padding: 2.3px 4px 1.2px 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15)
 }
 
 .right-side-tabs .tab-pane .info-container .description {
@@ -1455,8 +1460,8 @@ _:-ms-fullscreen,
 }
 
 .right-side-tabs[data-background-style='grey'] #right-side-tabs-notifications .right-side-tabs-notification div.media-body>small {
-    color: #bbb;
-    word-break: break-all
+    word-break: break-all;
+    color: #bbb
 }
 
 .right-side-tabs[data-background-style='grey'] .list-group>a.list-group-item div.media-body>i:hover {
@@ -1804,9 +1809,9 @@ aside .form-control:focus:-ms-input-placeholder {
 }
 
 .modal-backdrop.fade.in {
+    z-index: 10900;
     opacity: .30;
-    filter: alpha(opacity=50);
-    z-index: 10900
+    filter: alpha(opacity=50)
 }
 
 .modal.fade2 .modal-dialog {
@@ -2226,8 +2231,8 @@ body .dataTables_wrapper>.dataTables_filter input {
 body .dataTables_wrapper>.dataTables_filter {
     position: absolute;
     right: 1px;
-    margin-top: -24px;
-    display: none
+    display: none;
+    margin-top: -24px
 }
 
 .dataTables_filter input {
@@ -2884,8 +2889,8 @@ form.ui_form>input+select {
 }
 
 .ui_table_end_submit_right {
-    margin-top: -35px;
-    float: right
+    float: right;
+    margin-top: -35px
 }
 
 br+.ui_form_end_submit,
@@ -3152,10 +3157,10 @@ input[type='button']:not(.btn-success):not(.btn-primary):not(.btn-info):not(.btn
     line-height: 0 !important;
     width: 40px;
     height: 28px;
+    margin-bottom: 2px;
     padding-top: 5px !important;
     padding-right: 5px !important;
-    padding-left: 5px !important;
-    margin-bottom: 2px
+    padding-left: 5px !important
 }
 
 button.file_chooser_button {
@@ -3792,6 +3797,10 @@ table>thead>tr>th {
 
 .table-title b>tt {
     clear: both
+}
+
+.table-title tt {
+    font-size: 17px !important
 }
 
 .thead .tdhead {
@@ -4593,10 +4602,10 @@ tr.atshover:hover td.atscontent span {
 }
 
 .vertical-align {
-    flex-direction: row;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row
+    -ms-flex-direction: row;
+    flex-direction: row
 }
 
 .vertical-align>[class^='col-'],
@@ -4605,8 +4614,8 @@ tr.atshover:hover td.atscontent span {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-align: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center
@@ -5017,8 +5026,7 @@ tr[bgcolor='#feffff']>td:last-child {
 .ui_buttons_value,
 .table table tbody tr td.col_label *:not(i):not(.btn):not(.awobject):not(input):not(code):not(.ui_select):not(.form-control):not([type='button']),
 .table table tbody tr td.col_value *:not(i):not(.btn):not(.awobject):not(input):not(code):not(.ui_select):not(.form-control):not([type='button']),
-.ui_value table tr td,
-{
+.ui_value table tr td {
     vertical-align: baseline
 }
 
@@ -5242,24 +5250,48 @@ i[data-port-href] {
     background-color: #fff
 }
 
-.bg-success {
-    background-color: #b3cbaa !important
-}
-
-.bg-info {
-    background-color: #95abb6 !important
-}
-
-.bg-warning {
-    background-color: #b0a878 !important
-}
-
-.bg-danger {
-    background-color: #c29393 !important
+.bg-semi-transparent {
+    background-color: rgba(74, 74, 74, 0.17) !important
 }
 
 .bg-primary {
+    background-color: #3391e2 !important
+}
+
+.bg-success {
+    background-color: #dff0d8 !important
+}
+
+.bg-info {
+    background-color: #d9edf7 !important
+}
+
+.bg-warning {
+    background-color: #fcf8e3 !important
+}
+
+.bg-danger {
+    background-color: #f2dede !important
+}
+
+.bg-primary-dark {
     background-color: #698ba8 !important
+}
+
+.bg-success-dark {
+    background-color: #b3cbaa !important
+}
+
+.bg-info-dark {
+    background-color: #95abb6 !important
+}
+
+.bg-warning-dark {
+    background-color: #b0a878 !important
+}
+
+.bg-danger-dark {
+    background-color: #c29393 !important
 }
 
 .badge {
@@ -6339,7 +6371,7 @@ select+input[type='button'],
 input.btn.heighter-34:not(.btn-lg):not(.ui_form_end_submit),
 .btn.heighter-34:not(.btn-lg):not(.ui_form_end_submit),
 .table-hardcoded tbody tr td .submitter.heighter-34:not(.btn-lg):not(.ui_form_end_submit),
-.heighter-34:not(.btn-lg):not(.ui_form_end_submit):not([data-command="true"]):not(.sidebar-search) {
+.heighter-34:not(.btn-lg):not(.ui_form_end_submit):not([data-command='true']):not(.sidebar-search) {
     font-size: 14px !important;
     line-height: 18px !important;
     height: 34px !important;
@@ -6656,8 +6688,8 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
 }
 
 #headln2c {
-    width: 50%;
     font-size: 14px;
+    width: 50%;
     text-align: center
 }
 
@@ -6668,14 +6700,14 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
 
 #headln2c span[data-main_title]+br {
     display: block;
-    content: "";
-    margin-top: -3px
+    margin-top: -3px;
+    content: ''
 }
 
 #headln2c>i.favorites {
     position: absolute;
-    margin-left: -35px;
-    margin-top: 3px
+    margin-top: 3px;
+    margin-left: -35px
 }
 
 .xcustom-favorites.fa.fa-star,
@@ -7587,9 +7619,9 @@ body:not([data-module*='man']) .col_header b {
     padding: 2px 0 !important;
     text-align: center !important;
     border: 1px solid #f1f1f1 !important;
-    background-color: #f7f7f7 !important;
+    border-right-color: #eaeaea !important;
     border-left-color: #eaeaea !important;
-    border-right-color: #eaeaea !important
+    background-color: #f7f7f7 !important
 }
 
 html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_header b[data-first-child] {
@@ -8794,11 +8826,11 @@ html.single_tab body {
 }
 
 .label-transparent-50 {
-    background-color: rgba(255, 255, 255, 0.5)
+    background-color: rgba(255, 255, 255, .5)
 }
 
 .label-transparent-35 {
-    background-color: rgba(255, 255, 255, 0.35)
+    background-color: rgba(255, 255, 255, .35)
 }
 
 .vertical-align-text-bottom {
@@ -8976,8 +9008,8 @@ html[data-script-name*='settings-editor_read.cgi'] .fa-question-circle.-helper {
 }
 
 .popover._helper {
-    max-width: 320px;
-    z-index: 9999
+    z-index: 9999;
+    max-width: 320px
 }
 
 .popover.module-help {
@@ -9069,9 +9101,9 @@ td.selectable label:not(.lawobject) {
 }
 
 .ui_checked_checkbox {
+    width: 40px !important;
     min-width: 40px !important;
-    max-width: 40px !important;
-    width: 40px !important
+    max-width: 40px !important
 }
 
 td.col-no-styling:hover,
@@ -9116,20 +9148,20 @@ form[action='change_users.cgi'] a[href*='edit_user.cgi?']:not([href*='edit_user.
 
 .btn-filter-top-right label {
     display: none;
+    overflow: hidden;
     width: 110px;
-    margin: -10px 10px -10px -10px;
-    overflow: hidden
+    margin: -10px 10px -10px -10px
 }
 
 .btn-filter-top-right .filter_mirror_clear {
     position: absolute;
-    left: 8px;
-    top: 10px
+    top: 10px;
+    left: 8px
 }
 
 .btn-filter-top-right input {
-    background: transparent;
-    max-width: 73px
+    max-width: 73px;
+    background: transparent
 }
 
 form[action='delete_pack.cgi']~td>button {
@@ -9265,29 +9297,29 @@ form[action='delete_jobs.cgi'] {
     margin-top: 6px
 }
 
-body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small .link_hover_effect.btn-tiny.btn-default,
-body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small input {
+body[data-uri*='virtual-server/backup_form'] .opener_container .opener_table_cell_style_small .link_hover_effect.btn-tiny.btn-default,
+body[data-uri*='virtual-server/backup_form'] .opener_container .opener_table_cell_style_small input {
     margin-left: 2px !important
 }
 
-body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small {
-    background-color: transparent;
-    border: 1px solid #eee !important
+body[data-uri*='virtual-server/backup_form'] .opener_container .opener_table_cell_style_small {
+    border: 1px solid #eee !important;
+    background-color: transparent
 }
 
-body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small .link_hover_effect_style {
-    background-color: transparent !important;
+body[data-uri*='virtual-server/backup_form'] .opener_container .opener_table_cell_style_small .link_hover_effect_style {
     font-size: 13px;
-    padding: 0
+    padding: 0;
+    background-color: transparent !important
 }
 
-body[data-uri*="virtual-server/backup_form"] .opener_container .opener_table_cell_style_small span {
+body[data-uri*='virtual-server/backup_form'] .opener_container .opener_table_cell_style_small span {
     line-height: 20px !important
 }
 
-body[data-uri*="virtual-server/backup_form"] .table-condensed.opener_table_style.opener_table_style_small>tbody>tr._c__op_r>td {
-    border-bottom: 1px solid #eee !important;
-    line-height: 18px !important
+body[data-uri*='virtual-server/backup_form'] .table-condensed.opener_table_style.opener_table_style_small>tbody>tr._c__op_r>td {
+    line-height: 18px !important;
+    border-bottom: 1px solid #eee !important
 }
 
 body[class*='proftpd'] form[action*='save'] input[type='submit'] {
@@ -10150,8 +10182,8 @@ body .mppopup .modal-body .table tr td a[onclick*='fileclick'][onclick*=', 1']:h
 }
 
 body .mppopup button[data-mppopup_confirm] {
-    line-height: 22px !important;
-    font-size: 12px !important
+    font-size: 12px !important;
+    line-height: 22px !important
 }
 
 body .mppopup .modal-body .table tr td {
@@ -10353,10 +10385,10 @@ body.sysstats .graph_table a img {
 .no-controls,
 .no-controls:after,
 .no-controls:before {
+    pointer-events: none;
     color: transparent !important;
-    background-color: transparent !important;
     background: none !important;
-    pointer-events: none
+    background-color: transparent !important
 }
 
 html[data-background-style='gainsboro'],
@@ -10626,19 +10658,19 @@ screen and (max-height:600px) {
 }
 
 @media(max-width:460px) {
-    body[data-uri*="sysinfo.cgi"] .col-xs-6 {
+    body[data-uri*='sysinfo.cgi'] .col-xs-6 {
         width: 100%
     }
 }
 
 @media(min-width:768px) and (max-width:960px) {
-    html[data-slider-fixed="1"] body[data-uri*="sysinfo.cgi"] .col-xs-6 {
+    html[data-slider-fixed='1'] body[data-uri*='sysinfo.cgi'] .col-xs-6 {
         width: 100%
     }
 }
 
 @media(max-width:1280px) and (min-width:960px) {
-    html[data-slider-fixed="1"] body[data-uri*="sysinfo.cgi"] .col-md-6 {
+    html[data-slider-fixed='1'] body[data-uri*='sysinfo.cgi'] .col-md-6 {
         width: 50%
     }
 }
@@ -10688,14 +10720,14 @@ screen and (max-height:600px) {
     .col-lg-offset-1 {
         margin-left: 8.33333333%
     }
-    html[data-slider-fixed="1"] .container:not(.session_login),
-    html[data-slider-fixed="1"] .container-fluid {
+    html[data-slider-fixed='1'] .container:not(.session_login),
+    html[data-slider-fixed='1'] .container-fluid {
         margin-top: 15px
     }
-    html[data-slider-fixed="1"] .col-lg-10 {
+    html[data-slider-fixed='1'] .col-lg-10 {
         width: 100%
     }
-    html[data-slider-fixed="1"] .col-lg-offset-1 {
+    html[data-slider-fixed='1'] .col-lg-offset-1 {
         margin-left: 0
     }
 }
@@ -10703,16 +10735,16 @@ screen and (max-height:600px) {
 @media(min-width:2560px) {
     .container:not(.session_login),
     .container-fluid,
-    html[data-slider-fixed="1"] .container:not(.session_login),
-    html[data-slider-fixed="1"] .container-fluid {
+    html[data-slider-fixed='1'] .container:not(.session_login),
+    html[data-slider-fixed='1'] .container-fluid {
         margin-top: 30px
     }
     .col-lg-10,
-    html[data-slider-fixed="1"] .col-lg-10 {
+    html[data-slider-fixed='1'] .col-lg-10 {
         width: 83.33333333%
     }
     .col-lg-offset-1,
-    html[data-slider-fixed="1"] .col-lg-offset-1 {
+    html[data-slider-fixed='1'] .col-lg-offset-1 {
         margin-left: 8.33333333%
     }
 }
@@ -10742,8 +10774,8 @@ screen and (max-height:600px) {
 }
 
 td.ui_buttons_label td.ui_buttons_value {
-    vertical-align: top;
-    width: 20%
+    width: 20%;
+    vertical-align: top
 }
 
 td.ui_buttons_value {
@@ -10754,7 +10786,7 @@ td[data-nowrap] {
     white-space: nowrap
 }
 
-html[data-uri*="virtual-server/delete_domain.cgi"] font[size="+1"] {
+html[data-uri*='virtual-server/delete_domain.cgi'] font[size='+1'] {
     font-size: inherit;
     color: #e8433f
 }

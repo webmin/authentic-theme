@@ -6,37 +6,37 @@
 const browser = {
         internet_explorer_version: function() {
             var t = 0,
-                n = /MSIE (\d+\.\d+);/.test(navigator.userAgent),
-                r = !!navigator.userAgent.match(/Trident\/7.0/),
+                r = /MSIE (\d+\.\d+);/.test(navigator.userAgent),
+                n = !!navigator.userAgent.match(/Trident\/7.0/),
                 e = navigator.userAgent.indexOf("rv:11.0");
-            return n && (t = new Number(RegExp.$1)), -1 != navigator.appVersion.indexOf("MSIE 10") && (t = 10), r && -1 != e && (t = 11), t
+            return r && (t = new Number(RegExp.$1)), -1 != navigator.appVersion.indexOf("MSIE 10") && (t = 10), n && -1 != e && (t = 11), t
         }
     },
     Convert = {
         arrFlip: function(t) {
-            var n, r = {};
-            for (n in t) t.hasOwnProperty(n) && (r[t[n]] = n);
-            return r
+            var r, n = {};
+            for (r in t) t.hasOwnProperty(r) && (n[t[r]] = r);
+            return n
         },
-        uriDecodeComponent: function(t, n) {
-            var r, e, o, a = new String,
+        uriDecodeComponent: function(t, r) {
+            var n, e, a, o = new String,
                 i = 0;
-            if (void 0 === n && (n = 0), r = t ? t.split(/(%(?:d0|d1)%.{2})/) : [], $.isEmptyObject(r)) return t;
-            for (e = r.length; i < e; i++) {
+            if (void 0 === r && (r = 0), n = t ? t.split(/(%(?:d0|d1)%.{2})/) : [], $.isEmptyObject(n)) return t;
+            for (e = n.length; i < e; i++) {
                 try {
-                    o = decodeURIComponent(r[i])
+                    a = decodeURIComponent(n[i])
                 } catch (t) {
-                    o = n ? r[i].replace(/%(?!\d+)/g, "%25") : r[i]
+                    a = r ? n[i].replace(/%(?!\d+)/g, "%25") : n[i]
                 }
-                a += o
+                o += a
             }
-            return a
+            return o
         },
         uriEncodeComponent: function(t) {
             return this.uriDecodeComponent(t) === t && (t = encodeURIComponent(t)), t
         },
         htmlEscape: function(t) {
-            var n = {
+            var r = {
                 "&": "&amp;",
                 "<": "&lt;",
                 ">": "&gt;",
@@ -45,11 +45,11 @@ const browser = {
                 "=": "&#61;"
             };
             return String(t).replace(/[&<>"'=]/g, function(t) {
-                return n[t]
+                return r[t]
             })
         },
         htmlUnEscape: function(t) {
-            var n = [
+            var r = [
                 ["amp", "&"],
                 ["apos", "'"],
                 ["#x27", "'"],
@@ -63,16 +63,16 @@ const browser = {
                 ["quot", '"']
             ];
             if (t)
-                for (var r = 0, e = n.length; r < e; ++r) t = String(t).replace(new RegExp("&" + n[r][0] + ";", "g"), n[r][1]);
+                for (var n = 0, e = r.length; n < e; ++n) t = String(t).replace(new RegExp("&" + r[n][0] + ";", "g"), r[n][1]);
             return t || ""
         },
         htmlStrip: function(t) {
             return $("<div></div>").html(t).text()
         },
         pathnamePopLast: function(t) {
-            var n = ~t.indexOf("%2F") ? "%2F" : "/",
-                r = t.split(n);
-            return r.pop(), r.join(n) || "/"
+            var r = ~t.indexOf("%2F") ? "%2F" : "/",
+                n = t.split(r);
+            return n.pop(), n.join(r) || "/"
         },
         strUpFirst: function(t) {
             return t.charAt(0).toUpperCase() + t.slice(1).toLowerCase()
@@ -82,10 +82,10 @@ const browser = {
         }
     },
     Core = {
-        fnExtend: function(t, n) {
+        fnExtend: function(t, r) {
             window[t] = function(t) {
                 return function() {
-                    t(), n()
+                    t(), r()
                 }
             }(window[t])
         },
@@ -95,14 +95,25 @@ const browser = {
         moduleAvailable: function(t) {
             return void 0 != get_server_data(t) ? get_server_data(t) : $.inArray(t, get_server_data("available-modules")) > -1
         },
-        curModuleFileQuery: function(t, n, r) {
-            return $('body[class*="' + t + '"]').length && v___location_file == n && v___location_query && -1 !== v___location_query.indexOf(r)
+        curModuleFileQuery: function(t, r, n) {
+            return $('body[class*="' + t + '"]').length && v___location_file == r && v___location_query && -1 !== v___location_query.indexOf(n)
         },
-        curModuleFile: function(t, n) {
-            return $('body[class*="' + t + '"]').length && v___location_file == n
+        curModuleFile: function(t, r) {
+            return $('body[class*="' + t + '"]').length && v___location_file == r
         },
         curModule: function(t) {
             return $('body[class*="' + t + '"]').length
+        }
+    },
+    HTML = {
+        label: {
+            temperature: function(t, r) {
+                var n = "bg-semi-transparent";
+                return r ? t <= 30 ? n : t > 30 && t <= 60 ? n : t > 60 && t <= 80 ? "bg-warning" : t > 80 ? "bg-danger" : "" : t <= 86 ? n : t > 86 && t <= 140 ? n : t > 140 && t <= 176 ? "bg-warning" : t > 176 ? "bg-danger" : ""
+            },
+            rpm: function(t) {
+                return t <= 2 * rpmFactor ? bg_semi_tr : t > 2 * rpmFactor && t <= 3 * rpmFactor ? bg_semi_tr : t > 3 * rpmFactor && t <= 4 * rpmFactor ? bg_warn : t > 4 * rpmFactor ? bg_danger : ""
+            }
         }
     },
     Test = {
@@ -118,24 +129,33 @@ const browser = {
         string: function(t) {
             return "string" == typeof t || t instanceof String ? 1 : 0
         },
-        strContains: function(t, n) {
-            return "string" == typeof t && !!~t.indexOf(n)
+        strContains: function(t, r) {
+            return "string" == typeof t && !!~t.indexOf(r)
         },
-        arrContains: function(t, n, r) {
-            return void 0 === r && (r = 0), t = $.inArray(n, t), r ? t : -1 < t ? 1 : 0
+        arrContains: function(t, r, n) {
+            return void 0 === n && (n = 0), t = $.inArray(r, t), n ? t : -1 < t ? 1 : 0
         },
-        arrIntersect: function(t, n) {
-            var r = [];
+        arrIntersect: function(t, r) {
+            var n = [];
             return $.each(t, function(t, e) {
-                n.match(new RegExp(e, "gi")) && r.push(e)
-            }), !$.isEmptyObject(r)
+                r.match(new RegExp(e, "gi")) && n.push(e)
+            }), !$.isEmptyObject(n)
         },
         scrolledIntoView: function(t) {
-            var n = $(t),
-                r = $(window),
-                e = r.scrollTop(),
-                o = e + r.height(),
-                a = n.offset().top;
-            return a + n.height() <= o && a >= e
+            var r = $(t),
+                n = $(window),
+                e = n.scrollTop(),
+                a = e + n.height(),
+                o = r.offset().top;
+            return o + r.height() <= a && o >= e
+        }
+    },
+    time = {
+        tictac: function(t) {
+            var r = "convertible-timestamp-full",
+                n = $("[data-" + r + "]");
+            n.parent().contents().filter(function() {
+                return 3 === this.nodeType
+            }).remove(), n.data(r, parseInt(n.data(r)) + 1), "undefined" != typeof moment && n.text(moment.unix(n.data(r)).format(settings_window_replaced_timestamp_format_full)), !t && setInterval(this.tictac, 1e3)
         }
     };

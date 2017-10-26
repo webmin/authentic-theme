@@ -2131,11 +2131,11 @@ sub _settings
             'settings_sysinfo_easypie_charts_size',
             '172',
             'settings_sysinfo_easypie_charts_width',
-            '4',
+            '2',
             'settings_sysinfo_easypie_charts_scale',
             '8',
             'settings_sysinfo_drive_status_on_new_line',
-            'true',
+            'false',
             'settings_sysinfo_expand_all_accordions',
             'false',
 
