@@ -27,7 +27,7 @@ if (get_server_data("debug")) {
         }), $(document).on("pjax:beforeReplace", function(e, t) {
             navigation_form_control(0)
         }), $(document).on("ready pjax:beforeSend", function(e, t, i) {
-            settings_loader_top && NProgress.start(), v___module === v___module_file_manager && "function" == typeof __f_____undel && (jsPanel.closeChildpanels("body"), __f_____undel()), "csf" === v___module && "function" == typeof __c_____undel && __c_____undel(i.url), "mysql" !== v___module && "postgresql" !== v___module || "function" != typeof __sql_____undel || __sql_____undel(), "syslog" === v___module && "number" == typeof refreshTimer && clearInterval(refreshTimer);
+            progress.start(), v___module === v___module_file_manager && "function" == typeof __f_____undel && (jsPanel.closeChildpanels("body"), __f_____undel()), "csf" === v___module && "function" == typeof __c_____undel && __c_____undel(i.url), "mysql" !== v___module && "postgresql" !== v___module || "function" != typeof __sql_____undel || __sql_____undel(), "syslog" === v___module && "number" == typeof refreshTimer && clearInterval(refreshTimer);
             var a = $(e.relatedTarget),
                 s = a.attr("href");
             s = s || i.url.replace(v___location_origin, ""), clicked_in_nav_menu = a.parent().is("[data-linked], .favorites-dcontainer, .menu-exclude.ui-sortable-handle") || "object" == typeof i.callback && "reference" === i.callback[0], clicked_in_nav_menu && ((Test.strContains(s, "mysql") || Test.strContains(s, "postgresql")) && get_bundle_sql(), Test.strContains(s, v___module_file_manager) && get_bundle_file_manager(), Test.strContains(s, "csf") && get_bundle_csf()), "object" == typeof i.callback && "beforeSend" === i.callback[0] && (i.callback[3] ? setTimeout(function() {
@@ -38,7 +38,9 @@ if (get_server_data("debug")) {
                 window[s.callback[1].apply(this, s.callback[2])]
             }, s.callback[3]) : window[s.callback[1].apply(this, s.callback[2])])
         }), $(document).on("pjax:complete", function(e, t, i) {
-            settings_loader_top && NProgress.done(), t && session_check(t), get_server_data("loading", 0, 1)
+            setTimeout(function() {
+                $(".container-fluid-loading").length || progress.end()
+            }, 100), t && session_check(t), get_server_data("loading", 0, 1)
         }), $(document).on("ready pjax:end", function(e, t) {
             navigation_form_control(1), get_pjax_event_end(e, t)
         }), $(document).on("pjax:popstate", function(e, t) {
@@ -168,11 +170,7 @@ if (get_server_data("debug")) {
                 }, 150)
             });
             information_check();
-            settings_loader_top && "object" == typeof NProgress && NProgress.configure({
-                showSpinner: !1,
-                trickleRate: .09,
-                trickleSpeed: 100
-            }), navigator.userAgent.match(/(iPod|iPhone|iPad)/) && $("#content").attr("style", "-webkit-overflow-scrolling: touch !important; overflow-y: scroll !important;"), $('a[target="page"][href="link/"]').first().length && $('a[target="page"][href="link/"]').first().attr("target", "blank"), $("aside").on("click", ".select2-container .select2-selection__arrow b", function(e) {
+            progress.configure(), navigator.userAgent.match(/(iPod|iPhone|iPad)/) && $("#content").attr("style", "-webkit-overflow-scrolling: touch !important; overflow-y: scroll !important;"), $('a[target="page"][href="link/"]').first().length && $('a[target="page"][href="link/"]').first().attr("target", "blank"), $("aside").on("click", ".select2-container .select2-selection__arrow b", function(e) {
                 e.preventDefault(), e.stopPropagation()
             }), $("aside").on("click", 'a[href*="/file/"], a[href*="history.cgi"]', function(e) {
                 e.preventDefault(), e.stopPropagation(), window.open($(this).attr("href"), "_blank")
@@ -375,8 +373,8 @@ if (get_server_data("debug")) {
                             var C = !1;
                             if ("cd /" == y && (C = "/"), "history -c" == y) {
                                 localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify({}));
-                                D = "<b>" + $(".-shell-port-type").text() + " " + y + "</b>\n";
-                                r.find("pre").append(D), theme_shell_clear(o), h.scrollTop(h[0].scrollHeight);
+                                P = "<b>" + $(".-shell-port-type").text() + " " + y + "</b>\n";
+                                r.find("pre").append(P), theme_shell_clear(o), h.scrollTop(h[0].scrollHeight);
                                 var T = '<form class="hidden" role="form" action="' + p + '" method="post" enctype="multipart/form-data">                            ' + (d ? '<input type="hidden" id="id" name="id" value="' + $("#sid").val() + '">' : "") + '                            <input type="hidden" id="clearcmds" name="clearcmds" value="clearcmds">                            <input type="hidden" id="pwd" name="pwd" value="' + b + '">                          </form>',
                                     S = new FormData($(T)[0]);
                                 $.ajax({
@@ -392,17 +390,17 @@ if (get_server_data("debug")) {
                                 })
                             } else if (y.startsWith("history")) {
                                 theme_shell_clear(o);
-                                var j = JSON.parse(localStorage.getItem(v___server_hostname + "-shell_commands")),
-                                    I = j ? j.length : 0,
-                                    P = I ? I.toString().length : 0,
-                                    D = "<b>" + $(".-shell-port-type").text() + " " + y + "</b>\n";
-                                $.each($(j), function(e, t) {
+                                var I = JSON.parse(localStorage.getItem(v___server_hostname + "-shell_commands")),
+                                    j = I ? I.length : 0,
+                                    D = j ? j.toString().length : 0,
+                                    P = "<b>" + $(".-shell-port-type").text() + " " + y + "</b>\n";
+                                $.each($(I), function(e, t) {
                                     var a = e.toString().length,
                                         s = "";
-                                    for (i = 0; i < P + 1 - a; i++) s += " ";
-                                    "string" == typeof t && (D += e + 1 + s + t + "\n")
+                                    for (i = 0; i < D + 1 - a; i++) s += " ";
+                                    "string" == typeof t && (P += e + 1 + s + t + "\n")
                                 }).promise().done(function() {
-                                    r.find("pre").append(D), h.scrollTop(h[0].scrollHeight)
+                                    r.find("pre").append(P), h.scrollTop(h[0].scrollHeight)
                                 })
                             }
                             if ("clear" == y || "reset" == y || "exit" == y || y.startsWith("history") || w) return v___shell_processing = 0, __shell_commands__i__ = 0, theme_shell_adapt(), void o.focus();
@@ -529,7 +527,7 @@ if (get_server_data("debug")) {
                 theme_shell_check_available() && theme_shell_open(n)
             }), slider_add_no_notifications(), slider_check_notifications()
         }
-        $("body").on("click", "#headln2c > .favorites, .xcustom-favorites", function(e) {
+        $("body").on("click", "#headln2c > .favorites:not(.dummy), .xcustom-favorites:not(.dummy)", function(e) {
             e.preventDefault();
             var t = URI(v___location).resource();
             if ($(this).hasClass("fa-star-o")) {
@@ -914,12 +912,12 @@ if (get_server_data("debug")) {
             page_resized(), theme_shell_adapt()
         }), setTimeout(function() {
             window.onbeforeunload = function() {
-                if (get_onbeforeunload_status()) return "object" == typeof NProgress && NProgress.done(), !0;
+                if (get_onbeforeunload_status()) return progress.end(), !0;
                 window.setTimeout(function() {
-                    v___available_navigation ? "csf" === v___module && (window.location = v___location_prefix ? v___location_prefix + "/" : "/") : "object" == typeof NProgress && NProgress.start()
+                    v___available_navigation ? "csf" === v___module && (window.location = v___location_prefix ? v___location_prefix + "/" : "/") : progress.start()
                 }, 0), window.onbeforeunload = null
             }, $(function() {
-                v___available_navigation || "object" == typeof NProgress && NProgress.done()
+                v___available_navigation || progress.end()
             }), "debug" === get_server_data("debug") && (window.onerror = function(e, t, i) {
                 console.log("Error", {
                     acc: "error",

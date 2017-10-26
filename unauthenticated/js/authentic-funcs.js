@@ -489,7 +489,7 @@ function get_pjax_event_end(e, t) {
 }
 
 function get_pjax_event_end_funcs(e) {
-    if (page_init(), e || setTimeout(function() {
+    if (page_init(), v___module === v___module_file_manager && page.handle.content.preloader(), e || setTimeout(function() {
             get_server_data("data-title-initial", $("#headln2c span[data-main_title]").text()), get_server_data("data-script-name", v___location_path), get_server_data("data-uri", v___location_resource);
             var e = new RegExp("^" + v___location_prefix, "i");
             v___module = get_server_data("data-uri").replace(e, "").split("/").filter(function(e) {
@@ -721,7 +721,7 @@ function spinnerfy_buttons(e, t, i, a) {
     }, 10), "undefind" == typeof i && (i = !1), "undefind" == typeof a && (a = !1), (d[3] || i) && setTimeout(function() {
         e.removeClass("disabled"), c.removeClass("invisible"), e.find(".cspinner_container").remove()
     }, i || d[3]), a && setTimeout(function() {
-        NProgress.done()
+        progress.end()
     }, 400)
 }
 
@@ -2915,7 +2915,7 @@ function unbuffered_header_processor(e, t) {
         h = t ? n : e,
         p = 0,
         f = $('div[data-dcontainer="1"] > .panel.panel-default').clone();
-    NProgress.start(), set_onbeforeunload_status(1, 1), progressive_request = $.ajax({
+    progress.start(), set_onbeforeunload_status(1, 1), progressive_request = $.ajax({
         xhr: function() {
             var e = new window.XMLHttpRequest;
             return e.addEventListener("progress", function(e) {
@@ -2938,7 +2938,7 @@ function unbuffered_header_processor(e, t) {
         contentType: (!t || !o) && "application/x-www-form-urlencoded; charset=UTF-8",
         data: !!t && l,
         complete: function(e) {
-            $('div[data-dcontainer="1"]').html($(e.responseText).filter('div[data-dcontainer="1"]').html()), get_pjax_event_end(!1, e), unbuffered_header_processor_allow_scroll() && $(".__page").scrollTop($(".__page")[0].scrollHeight), $(".__page").removeClass("progressing"), NProgress.done(), set_onbeforeunload_status(0, 1), unbuffered_header_post(e), Core.curModuleFile("package-updates", "update.cgi") && information_update()
+            $('div[data-dcontainer="1"]').html($(e.responseText).filter('div[data-dcontainer="1"]').html()), get_pjax_event_end(!1, e), unbuffered_header_processor_allow_scroll() && $(".__page").scrollTop($(".__page")[0].scrollHeight), $(".__page").removeClass("progressing"), progress.end(), set_onbeforeunload_status(0, 1), unbuffered_header_post(e), Core.curModuleFile("package-updates", "update.cgi") && information_update()
         }
     })
 }

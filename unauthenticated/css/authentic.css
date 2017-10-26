@@ -1971,6 +1971,11 @@ aside .form-control:focus:-ms-input-placeholder {
     -webkit-filter: blur(1px)
 }
 
+.filter-blur-hard {
+    filter: blur(5px);
+    -webkit-filter: blur(5px)
+}
+
 .bg-filter-blur-grayscale-opacity50 {
     filter: opacity(50%) blur(1px) grayscale(100%) !important;
     -webkit-filter: opacity(50%) blur(1px) grayscale(100%) !important
@@ -5251,7 +5256,7 @@ i[data-port-href] {
 }
 
 .bg-semi-transparent {
-    background-color: rgba(74, 74, 74, 0.17) !important
+    background-color: rgba(74, 74, 74, .17) !important
 }
 
 .bg-primary {
@@ -6294,6 +6299,88 @@ td.ui_grid_cell {
     margin-top: 15px
 }
 
+.container-fluid-loading {
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: progress
+}
+
+.container-fluid-loading .fa {
+    font-size: 28px;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -34.5px;
+    cursor: progress
+}
+
+.container-fluid-loading:before,
+.container-fluid-loading:after {
+    display: table;
+    content: ' '
+}
+
+.container-fluid-loading:after {
+    clear: both
+}
+
+.panel-loading {
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-top-width: 4px;
+    border-radius: 4px;
+    background-color: #fff
+}
+
+.panel-loading .cspinner {
+    position: relative;
+    top: 40%;
+    left: 49%
+}
+
+.panel-loading .cspinner .cspinner-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px
+}
+
+.panel-default-loading {
+    border-color: rgba(150, 150, 150, .45);
+    border-top-color: rgba(228, 228, 228, .83);
+    border-radius: 0;
+    -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, .02);
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .02)
+}
+
+.panel-heading-loading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-radius: 0 !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px
+}
+
+.panel-default-loading>.panel-heading-loading {
+    color: #333;
+    border-color: #ddd;
+    background-color: #f5f5f5
+}
+
+.panel-default-loading>.panel-heading-loading span {
+    font-size: 24px;
+    margin-left: .5px
+}
+
+.panel-body-loading {
+    overflow: auto;
+    padding-top: 12px;
+    padding-bottom: 7px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .050);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .050)
+}
+
 body .container-fluid {
     pointer-events: none;
     opacity: 0
@@ -6715,14 +6802,14 @@ nav.favorites-menu .favorites-menu-content>li>h1 {
     color: #eaa747 !important
 }
 
-.xcustom-favorites.fa-star:hover:before,
-#headln2c .favorites.fa-star:hover:before {
+.xcustom-favorites.fa-star:not(.dummy):hover:before,
+#headln2c .favorites.fa-star:not(.dummy):hover:before {
     content: '\f091';
     color: #5c5c5c
 }
 
-.xcustom-favorites.fa-star-o:hover,
-#headln2c .favorites.fa-star-o:hover {
+.xcustom-favorites.fa-star-o:not(.dummy):hover,
+#headln2c .favorites.fa-star-o:not(.dummy):hover {
     color: #eba94c
 }
 
@@ -8585,7 +8672,7 @@ ul.messenger .messenger-message {
 
 .file-manager .at-o__f_m-favorites-dropdown a,
 .file-manager .breadcrumb>li a {
-    white-space: pre
+    white-space: nowrap
 }
 
 .file-manager .breadcrumb>li a+span[data-tree] {
@@ -10711,7 +10798,8 @@ screen and (max-height:600px) {
 
 @media(min-width:1920px) {
     .container:not(.session_login),
-    .container-fluid {
+    .container-fluid,
+    .container-fluid-loading {
         margin-top: 30px
     }
     .col-lg-10 {
@@ -10721,7 +10809,8 @@ screen and (max-height:600px) {
         margin-left: 8.33333333%
     }
     html[data-slider-fixed='1'] .container:not(.session_login),
-    html[data-slider-fixed='1'] .container-fluid {
+    html[data-slider-fixed='1'] .container-fluid,
+    html[data-slider-fixed='1'] .container-fluid-loading {
         margin-top: 15px
     }
     html[data-slider-fixed='1'] .col-lg-10 {
@@ -10735,8 +10824,10 @@ screen and (max-height:600px) {
 @media(min-width:2560px) {
     .container:not(.session_login),
     .container-fluid,
+    .container-fluid-loading,
     html[data-slider-fixed='1'] .container:not(.session_login),
-    html[data-slider-fixed='1'] .container-fluid {
+    html[data-slider-fixed='1'] .container-fluid,
+    html[data-slider-fixed='1'] .container-fluid-loading {
         margin-top: 30px
     }
     .col-lg-10,
