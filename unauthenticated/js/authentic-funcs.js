@@ -37,8 +37,8 @@ function filter_match(e, t, i) {
         if (a.length > 0)
             for (var n = 0; n < a.length; n++) {
                 var s = a[n],
-                    r = s.className;
-                (i || r === t) && (i && null === r.match(t) || (s.style.display = e ? "" : "none"))
+                    _ = s.className;
+                (i || _ === t) && (i && null === _.match(t) || (s.style.display = e ? "" : "none"))
             }
         return a
     };
@@ -46,10 +46,10 @@ function filter_match(e, t, i) {
         var n = a(!1);
         if (n.length > 0)
             for (var s = 0; s < n.length; s++) {
-                var r = n[s].className;
-                if ((i || r === t) && (!i || null !== r.match(t)))
-                    for (var _ = n[s].getElementsByTagName("a"), o = 0; o < _.length; o++) {
-                        var l = _[o].innerHTML.trim();
+                var _ = n[s].className;
+                if ((i || _ === t) && (!i || null !== _.match(t)))
+                    for (var r = n[s].getElementsByTagName("a"), o = 0; o < r.length; o++) {
+                        var l = r[o].innerHTML.trim();
                         "" !== (l = l.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, "")) && (l = l.toLowerCase()).match(e.toLowerCase()) && (n[s].style.display = "")
                     }
             }
@@ -94,8 +94,8 @@ function theme_date_chooser(e, t, i, a) {
         language: get_server_data("language"),
         autoclose: !0
     }).on("hide", function(a) {
-        var r = !!s.val() && s.val().split("-");
-        s.val(""), r && ($(e).val(parseInt(r[2])), $(t).val(parseInt(r[1]) - n), $(i).val(parseInt(r[0])))
+        var _ = !!s.val() && s.val().split("-");
+        s.val(""), _ && ($(e).val(parseInt(_[2])), $(t).val(parseInt(_[1]) - n), $(i).val(parseInt(_[0])))
     }).focus()
 }
 
@@ -121,10 +121,10 @@ function extract_content(e, t, i, a) {
     if (!e) return 0;
     var n = a ? 0 : t.length,
         s = a ? i.length : 0,
-        r = e.indexOf(t),
-        _ = e.indexOf(i, r),
-        o = -1 === _ ? e.length : _;
-    return e.slice(r + n, o + s)
+        _ = e.indexOf(t),
+        r = e.indexOf(i, _),
+        o = -1 === r ? e.length : r;
+    return e.slice(_ + n, o + s)
 }
 
 function get_form_data(e) {
@@ -328,13 +328,13 @@ function navigation_init_autocomplete(e, t) {
                     }
                 }
             }),
-            r = {};
+            _ = {};
         $.each($('li:not(.menu-exclude):not(.user-link) > ul.sub:not([id^="global_"]) > li:not(.menu-exclude):not(.user-link) > a'), function(e, t) {
-            r[("/" == $(this).attr("href").substring(0, 1) ? "" : "/") + $(this).attr("href")] = $.trim($(this).text())
+            _[("/" == $(this).attr("href").substring(0, 1) ? "" : "/") + $(this).attr("href")] = $.trim($(this).text())
         }), $('li:not(.menu-exclude):not(.user-link) > a[target="page"]:not([data-href="/acl/edit_user.cgi"],[data-href="/virtual-server/index.cgi"],[data-href="/sysinfo.cgi"],[data-href="/virtual-server/pro/history.cgi"], [data-href="/mailbox/list_folders.cgi"], [data-href="/mailbox/list_ifolders.cgi"], [data-href="/mailbox/list_addresses.cgi"], [data-href="/filter/edit_forward.cgi"], [data-href="/filter/edit_auto.cgi"], [data-href="/filter/edit_auto.cgi"], [data-href="/filter/"], [data-href="/mailbox/edit_sig.cgi"])').each(function(e, t) {
-            $t_uri_usermin || navigation_dashboard_switch_available() || (r[$(this).attr("data-href")] = $.trim($(this).text()))
+            $t_uri_usermin || navigation_dashboard_switch_available() || (_[$(this).attr("data-href")] = $.trim($(this).text()))
         });
-        var _ = $.map(r, function(e, t) {
+        var r = $.map(_, function(e, t) {
                 if ("undefined" != t && !Test.strContains(t, "/shell") && !Test.strContains(t, "shell=1")) return {
                     value: e,
                     url: t,
@@ -355,7 +355,7 @@ function navigation_init_autocomplete(e, t) {
                     category: $("aside select").data("autocomplete-title")
                 }
             }
-        }).concat(s).concat(_).concat(a);
+        }).concat(s).concat(r).concat(a);
         $(".form-control.sidebar-search").on("keydown", function(e) {
             34 != e.keyCode && 33 != e.keyCode && 20 != e.keyCode && 17 != e.keyCode && 16 != e.keyCode && 9 != e.keyCode || (e.preventDefault(), e.stopPropagation())
         }), $(".form-control.sidebar-search").autocomplete({
@@ -442,8 +442,8 @@ function get_pjax_type(e) {
             return n || s ? "multipart/form-data" === s ? "post" : n : "get"
         }
     } else if ("object" == typeof e && $(e).is("form")) {
-        var r = e.attr("method");
-        return r || "get"
+        var _ = e.attr("method");
+        return _ || "get"
     }
     return e && Test.strContains(e, ".cgi?") && !Test.strContains(e, "config.cgi?") ? "GET" : "POST"
 }
@@ -517,11 +517,11 @@ function get_pjax_action_submit(e, t) {
                 a = $(i).attr("name"),
                 n = $.trim(i.value) ? $.trim(i.value) : $.trim(i.innerText),
                 s = i.value,
-                r = i.type,
-                _ = i.nodeName.toLowerCase(),
+                _ = i.type,
+                r = i.nodeName.toLowerCase(),
                 o = $(e.target).find('[name="' + a + '"]'),
                 l = o.attr("type");
-            ("input" !== _ || o.val() == s && "submit" !== l) && ("button" !== _ || $.trim(o.text()) == n && "submit" !== l) || "button" !== l && "submit" !== l && "submit" !== r || $("<input>").attr({
+            ("input" !== r || o.val() == s && "submit" !== l) && ("button" !== r || $.trim(o.text()) == n && "submit" !== l) || "button" !== l && "submit" !== l && "submit" !== _ || $("<input>").attr({
                 type: "hidden",
                 name: a,
                 value: n || s
@@ -615,21 +615,21 @@ function array_swap(e) {
     return t
 }
 
-function theme_buttonify(e, t, i, a, n, s, r, _, o, l) {
-    void 0 === n && (n = !1), void 0 === s && (s = ""), void 0 === r && (r = ""), (void 0 === _ || 0 == _) && (_ = ""), (void 0 === o || 0 == o) && (o = !1), (void 0 === l || 0 == l) && (l = !1), $.each(e, function(e, c) {
-        v___location_path == v___location_prefix + c && (1 !== s && (s = s.split("~"), r = r.split("~")), $.each($(s), function(e, i) {
+function theme_buttonify(e, t, i, a, n, s, _, r, o, l) {
+    void 0 === n && (n = !1), void 0 === s && (s = ""), void 0 === _ && (_ = ""), (void 0 === r || 0 == r) && (r = ""), (void 0 === o || 0 == o) && (o = !1), (void 0 === l || 0 == l) && (l = !1), $.each(e, function(e, c) {
+        v___location_path == v___location_prefix + c && (1 !== s && (s = s.split("~"), _ = _.split("~")), $.each($(s), function(e, i) {
             if (1 !== s) {
                 var a = new RegExp(RegExp.quote(i), "g");
-                $(t + ':not(.f__lnk_t_btn):contains("' + i + '")').replaceText(a, r[e])
+                $(t + ':not(.f__lnk_t_btn):contains("' + i + '")').replaceText(a, _[e])
             }
         }).promise().done(function() {
             var e = "",
                 s = "";
-            _ && _.indexOf("~") > -1 && (_ = _.split("~"), e = _[0], s = _[1]), $.each($(t).find(i), function() {
+            r && r.indexOf("~") > -1 && (r = r.split("~"), e = r[0], s = r[1]), $.each($(t).find(i), function() {
                 if (!$(this).parents(t).hasClass("f__lnk_t_btn")) {
                     if (o) {
-                        var r = new RegExp(RegExp.quote(o), "g");
-                        $(this).parent().replaceText(r, l || "")
+                        var _ = new RegExp(RegExp.quote(o), "g");
+                        $(this).parent().replaceText(_, l || "")
                     }
                     a && a.indexOf("__center__") > -1 && $(i).parent().addClass("text-center"), $(this).html(e + $(this).text().replace(/\.\.$/, "") + s).addClass(a).removeClass("ui_link").prepend(n ? '<i class="fa fa-fw margined-left--3 ' + n + '" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>' : ""), $(this).parent(t).addClass("f__lnk_t_btn")
                 }
@@ -653,8 +653,8 @@ function theme_toggle_night_mode() {
             }, 3), v___theme_night_mode_enabled = 1, v___theme_night_mode = 1
         } else {
             $("body").find(".settings_navigation_color_toggle").removeClass("hidden"), e.find(".fa-sun").removeClass("fa-sun vertical-align-middle").addClass("fa-moon");
-            var r = $("html").find('head link[href*="gunmetal"]');
-            "blue" != get_server_data("data-default-theme") && $("html").find("head").append('<link href="' + v___location_prefix + "/unauthenticated/css/palettes/" + i.toLowerCase() + "." + v___source_type + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>'), get_server_data("data-theme", i), r.remove(), get_server_data("data-background-style", a), get_server_data("data-night-mode", 0), "nightRider" !== settings_background_color && $("html").find('head link[href*="nightrider"]').remove(), v___theme_night_mode_enabled = "nightRider" === settings_background_color ? 1 : 0, v___theme_night_mode = 0
+            var _ = $("html").find('head link[href*="gunmetal"]');
+            "blue" != get_server_data("data-default-theme") && $("html").find("head").append('<link href="' + v___location_prefix + "/unauthenticated/css/palettes/" + i.toLowerCase() + "." + v___source_type + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>'), get_server_data("data-theme", i), _.remove(), get_server_data("data-background-style", a), get_server_data("data-night-mode", 0), "nightRider" !== settings_background_color && $("html").find('head link[href*="nightrider"]').remove(), v___theme_night_mode_enabled = "nightRider" === settings_background_color ? 1 : 0, v___theme_night_mode = 0
         }
         v___location_path_lead_unslashed == v___location_prefix_unslashed_trail_slashed + "sysinfo.cgi" && "0" == v___user_level ? (setTimeout(function() {
             $.each($(".piechart"), function() {
@@ -709,14 +709,14 @@ function theme_spinner_small() {
 function spinnerfy_buttons(e, t, i, a) {
     var n = !!(e.attr("onclick") && -1 !== e.attr("onclick").indexOf("blank") || e.parents("form").attr("target") && -1 !== e.parents("form").attr("target").indexOf("blank")),
         s = e.hasClass("heighter-28"),
-        r = "28px" == e.css("height"),
-        _ = e.hasClass("btn-lg"),
+        _ = "28px" == e.css("height"),
+        r = e.hasClass("btn-lg"),
         o = Core.curModule("server-manager") ? 2 : 0,
         l = e.find(".fa").hasClass("fa-1_25x"),
         c = e.find(".fa"),
         d = void 0 !== t && 0 != t && t,
-        h = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (d ? d[0] + "px" : !s && !r || l || _ ? l ? "1.6px" : _ ? "1.5px" : "0" : -.5 + o + "px") + " !important; margin-left: " + (d ? d[1] + "px" : !s && !r || l || _ ? _ ? "-28px" : s || r || !l ? "-25.5px" : "-27.5px" : "-23.5px") + ' !important;"><span class="cspinner-icon white ' + (d ? d[2] ? d[2] : "" : s || r ? "smaller" : "small") + '"></span></span></span>',
-        p = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (d ? d[0] + "px" : !s && !r || l || _ ? l ? "1.6px" : _ ? "1.5px" : "0" : -.5 + o + "px") + " !important; margin-left: " + (d ? d[1] + "px" : !s && !r || l || _ ? _ ? "-28px" : s || r || !l ? "-25.5px" : "-27.5px" : "-23.5px") + '  !important;"><span class="cspinner-icon dark ' + (d ? d[2] ? d[2] : "" : s || r ? "smaller" : "small") + '"></span></span></span>';
+        h = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (d ? d[0] + "px" : !s && !_ || l || r ? l ? "1.6px" : r ? "1.5px" : "0" : -.5 + o + "px") + " !important; margin-left: " + (d ? d[1] + "px" : !s && !_ || l || r ? r ? "-28px" : s || _ || !l ? "-25.5px" : "-27.5px" : "-23.5px") + ' !important;"><span class="cspinner-icon white ' + (d ? d[2] ? d[2] : "" : s || _ ? "smaller" : "small") + '"></span></span></span>',
+        p = '<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: ' + (d ? d[0] + "px" : !s && !_ || l || r ? l ? "1.6px" : r ? "1.5px" : "0" : -.5 + o + "px") + " !important; margin-left: " + (d ? d[1] + "px" : !s && !_ || l || r ? r ? "-28px" : s || _ || !l ? "-25.5px" : "-27.5px" : "-23.5px") + '  !important;"><span class="cspinner-icon dark ' + (d ? d[2] ? d[2] : "" : s || _ ? "smaller" : "small") + '"></span></span></span>';
     setTimeout(function() {
         !n && e.addClass("disabled")
     }, 10), c.length && !n && setTimeout(function() {
@@ -780,11 +780,11 @@ function get_server_data(e, t, i) {
     var a = $("html"),
         n = $("body"),
         s = "data-" + e,
-        r = e.replace("data-", "");
-    if (void 0 !== i) e.startsWith("data-") ? (a.removeAttr(e), a.removeData(r)) : (a.removeAttr(s), a.removeData(e));
+        _ = e.replace("data-", "");
+    if (void 0 !== i) e.startsWith("data-") ? (a.removeAttr(e), a.removeData(_)) : (a.removeAttr(s), a.removeData(e));
     else {
         if (void 0 === t) return e.startsWith("data-") ? a.attr(e) : a.data(e);
-        e.startsWith("data-") ? a.attr(e, t).data(r, t) : a.data(e, t).attr(s), "data-uri" !== e && "data-module" !== e || (n.attr(e, t), "data-module" === e && n.removeClass().addClass(t))
+        e.startsWith("data-") ? a.attr(e, t).data(_, t) : a.data(e, t).attr(s), "data-uri" !== e && "data-module" !== e || (n.attr(e, t), "data-module" === e && n.removeClass().addClass(t))
     }
 }
 
@@ -898,7 +898,7 @@ function navigation_dashboard_switch_select() {
 
 function theme_messenger(e, t, i, a, n) {
     var s = void 0 === a ? 1 : a,
-        r = void 0 === n || n;
+        _ = void 0 === n || n;
     if ($('body[class^="' + v___module_file_manager + '"]').length) {
         if ("4" == config_portable_module_filemanager_notification_type && "info" != i && "warning" != i && "error" != i) return;
         if ("2" == config_portable_module_filemanager_notification_type && "warning" != i && "error" != i) return
@@ -907,7 +907,7 @@ function theme_messenger(e, t, i, a, n) {
         message: e,
         hideAfter: t,
         theme: "air",
-        showCloseButton: r,
+        showCloseButton: _,
         type: i,
         id: s
     }))
@@ -917,18 +917,18 @@ function theme_message_dismiss(e) {
     void 0 !== window["Messenger_" + e] && window["Messenger_" + e].hide()
 }
 
-function theme_alert(e, t, i, a, n, s, r, _) {
-    (void 0 === i || 0 == i) && (i = !1), (void 0 === a || 0 == a) && (a = "md"), (void 0 === n || 0 == n) && (n = "danger"), (void 0 === s || 0 == s) && (s = "exclamation-triangle"), (void 0 === r || 0 == r) && (r = "7"), (void 0 === _ || 0 == _) && (_ = !1);
+function theme_alert(e, t, i, a, n, s, _, r) {
+    (void 0 === i || 0 == i) && (i = !1), (void 0 === a || 0 == a) && (a = "md"), (void 0 === n || 0 == n) && (n = "danger"), (void 0 === s || 0 == s) && (s = "exclamation-triangle"), (void 0 === _ || 0 == _) && (_ = "7"), (void 0 === r || 0 == r) && (r = !1);
     $.isArray(i);
     var o = "modal-global-notification",
-        l = '<div class="modal fade' + r + " " + o + '" tabindex="-1" role="dialog"><div class="modal-dialog modal-' + a + '"><div class="modal-content"><div class="modal-header background-' + n + ' background--bordered"><button type="button" class="close" data-dismiss="modal" aria-label="' + theme_language("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button><h4 class="modal-title"><i class="fa fa-fw fa-' + s + '">&nbsp;&nbsp;</i> ' + (theme_language(e) ? theme_language(e) : e) + '</h4></div><div class="modal-body"><p>' + (theme_language(t) ? theme_language(t) : t) + "</p><div" + ($.isArray(i) ? "" : ' class="hidden"') + '><button class="btn btn-default btn-xs btn-block margined-bottom-1" type="button" data-toggle="collapse" data-target="#collapse-' + o + '" aria-expanded="false" aria-controls="collapse-' + o + '">' + theme_language(i[0]) + '</button><div class="collapse" id="collapse-' + o + '"><div class="well">' + i[1] + "</div></div></div></div></div></div></div>";
+        l = '<div class="modal fade' + _ + " " + o + '" tabindex="-1" role="dialog"><div class="modal-dialog modal-' + a + '"><div class="modal-content"><div class="modal-header background-' + n + ' background--bordered"><button type="button" class="close" data-dismiss="modal" aria-label="' + theme_language("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button><h4 class="modal-title"><i class="fa fa-fw fa-' + s + '">&nbsp;&nbsp;</i> ' + (theme_language(e) ? theme_language(e) : e) + '</h4></div><div class="modal-body"><p>' + (theme_language(t) ? theme_language(t) : t) + "</p><div" + ($.isArray(i) ? "" : ' class="hidden"') + '><button class="btn btn-default btn-xs btn-block margined-bottom-1" type="button" data-toggle="collapse" data-target="#collapse-' + o + '" aria-expanded="false" aria-controls="collapse-' + o + '">' + theme_language(i[0]) + '</button><div class="collapse" id="collapse-' + o + '"><div class="well">' + i[1] + "</div></div></div></div></div></div></div>";
     setTimeout(function() {
         $("body").hasClass("modal-open") || ($("body").append(l), $("." + o).modal("show"), $("." + o).on("click", ".modal-body a.label", function(e) {
             $("." + o).modal("hide")
         }), $("." + o).on("hidden.bs.modal", function(e) {
             $("." + o).remove()
         }))
-    }, _)
+    }, r)
 }
 
 function theme_alert_charset() {
@@ -971,16 +971,16 @@ function editor_background_save(e) {
         $(".container-fluid select").val() ? $(".container-fluid select").val() : $(".container-fluid .table-title").text() ? $(".container-fluid .table-title").text() : $(".container-fluid .panel-body tt:first").text() ? $(".container-fluid .panel-body tt:first").text() : $(".container-fluid #headln2c tt:first").text() && $(".container-fluid #headln2c tt:first").text();
         a.parents("table.ui_form_end_buttons").prev("br").remove(), a.parents("table.ui_form_end_buttons").prev("div.table-responsive").attr("style", "margin-bottom: -4px !important"), a.replaceWith('\t\t\t<span class="btn-group" style="margin-top: ' + n + '">\t\t\t\t<button type="button" class="btn btn-' + (e ? "warning" : "success") + ' btn-34 margined-top-5" data-form="submitter" data-form-onbeforeunload="' + (e ? "1" : "0") + '"><i class="fa fa-fw fa-floppy-o">&nbsp;&nbsp;</i>' + theme_language("theme_xhred_global_save") + '&nbsp;</button>\t\t\t\t<button type="submit" class="btn btn-default btn-34 margined-top-5"><i class="fa fa-fw fa-arrow-circle-o-left">&nbsp;&nbsp;</i>' + theme_language("theme_xhred_global_save_and_close") + "&nbsp;</button>\t\t\t</span>\t\t");
         var s = $('.container-fluid button[type="button"]:not(.ui_form_end_submit)'),
-            r = $('.container-fluid button[type="submit"]:not(.ui_form_end_submit)');
+            _ = $('.container-fluid button[type="submit"]:not(.ui_form_end_submit)');
         window.__cm_editor_static.on("change", function(e, i) {
             __cm_editor_static.save(), s.addClass("btn-warning").removeClass("btn-success").attr("data-form-onbeforeunload", 1), t()
         }), $("body").off("mousedown.cm1"), $("body").on("mousedown.cm1", ".CodeMirror", function(e) {
             t()
         }), $("body").off("keydown.cm1"), $("body").on("keydown.cm1", function(e) {
-            13 == e.keyCode && e.ctrlKey && !e.shiftKey ? s.trigger("click") : 13 == e.keyCode && e.ctrlKey && e.shiftKey && r.trigger("click")
+            13 == e.keyCode && e.ctrlKey && !e.shiftKey ? s.trigger("click") : 13 == e.keyCode && e.ctrlKey && e.shiftKey && _.trigger("click")
         });
-        var _ = 'button[type="submit"]:not(.disabled)';
-        $("body").undelegate(_, "click.cm"), $("body").on("click.cm", _, function(e) {
+        var r = 'button[type="submit"]:not(.disabled)';
+        $("body").undelegate(r, "click.cm"), $("body").on("click.cm", r, function(e) {
             set_onbeforeunload_status(0, 0), $("button").addClass("disabled").find(".fa.fa-arrow-circle-o-left").addClass("invisible").after('<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: -0.5px; margin-left: -28px;"><span class="cspinner-icon dark small"></span></span></span>'), s.attr("data-form-onbeforeunload", 0)
         });
         var o = 'button[data-form="submitter"]:not(.disabled)';
@@ -1150,25 +1150,25 @@ function information_update() {
                             "local_time" == e && settings_window_replace_timestamps ? n && n.length ? (s = $(t).find('span[data-id="sysinfo_' + e + '"] a').data("convertible-timestamp-full"), a.html(n.html(moment.unix(s).format(settings_window_replaced_timestamp_format_full)))) : (s = $(t).find('span[data-id="sysinfo_' + e + '"] > span').data("convertible-timestamp-full"), a.html(moment.unix(s).format(settings_window_replaced_timestamp_format_full))) : n && n.length && a.html(n.html(s))
                         }
                         if (page_sysinfo_sensor_update_label(), $(t).find('.piechart[data-charts="sysinfo_' + e + '"]').length) {
-                            var r = $("body").find('.piechart[data-charts="sysinfo_' + e + '"]');
-                            r.length && !isNaN(parseInt(i)) && r.data("easyPieChart").update(i)
+                            var _ = $("body").find('.piechart[data-charts="sysinfo_' + e + '"]');
+                            _.length && !isNaN(parseInt(i)) && _.data("easyPieChart").update(i)
                         }
                         "cpu_percent" != e && "mem_percent" != e && "virt_percent" != e && "disk_percent" != e || localStorage.setItem(v___server_hostname + "-sysinfo_" + e + "_seen", i), $(t).find(".modal-backdrop").remove()
                     }
                     if ($__id__ = moment().unix(), "cpu_percent" == e || "mem_percent" == e || "virt_percent" == e || "disk_percent" == e || "csf_title" == e || "csf_remote_version" == e || "authentic_remote_version" == e || "package_message" == e ? localStorage.getItem(v___server_hostname + "-sysinfo_" + e) || localStorage.setItem(v___server_hostname + "-sysinfo_" + e, i) : i && null != i && NaN != i ? localStorage.setItem(v___server_hostname + "-sysinfo_" + e, i) : localStorage.setItem(v___server_hostname + "-sysinfo_" + e, ""), localStorage.getItem(v___server_hostname + "-sysinfo_package_message_initial") || localStorage.setItem(v___server_hostname + "-sysinfo_package_message_initial", 1), "authentic_theme_version" == e && !localStorage.getItem(v___server_hostname + "-sysinfo_theme_current_version") && i && localStorage.setItem(v___server_hostname + "-sysinfo_theme_current_version", i.match(/^\d+|\d+\b|\d+(?=\w)/g)[0] + "." + i.match(/^\d+|\d+\b|\d+(?=\w)/g)[1]), "csf_data" == e && !localStorage.getItem(v___server_hostname + "-sysinfo_csf_current_version") && i && localStorage.setItem(v___server_hostname + "-sysinfo_csf_current_version", i.match(/^\d+|\d+\b|\d+(?=\w)/g)[0] + "." + i.match(/^\d+|\d+\b|\d+(?=\w)/g)[1]), "csf_title" == e || "csf_data" == e || "csf_remote_version" == e || "authentic_remote_version" == e || "authentic_theme_version" == e || "package_message" == e) {
                         if ("package_message" === e) {
                             if ((localStorage.getItem(v___server_hostname + "-sysinfo_" + e) != i || 1 == localStorage.getItem(v___server_hostname + "-sysinfo_package_message_initial")) && i && i.indexOf("badge-danger") > -1) {
-                                var _ = theme_language("theme_xhred_notifications_packages_updates"),
+                                var r = theme_language("theme_xhred_notifications_packages_updates"),
                                     o = $(i).html().replace(/badge-danger/g, "badge-success");
                                 localStorage.setItem(v___server_hostname + "-notifications_" + $__id__ + "_package_message", JSON.stringify({
-                                    title: _,
+                                    title: r,
                                     time: $__id__,
                                     timestamp: $__id__,
                                     message: o,
                                     readStatus: 0,
                                     type: e,
                                     link: $(i).attr("href")
-                                })), slider_mark_group_notifications_read("package_message"), localStorage.setItem(v___server_hostname + "-sysinfo_" + e, i), localStorage.setItem(v___server_hostname + "-sysinfo_package_message_initial", 0), notifications(_, o, e)
+                                })), slider_mark_group_notifications_read("package_message"), localStorage.setItem(v___server_hostname + "-sysinfo_" + e, i), localStorage.setItem(v___server_hostname + "-sysinfo_package_message_initial", 0), notifications(r, o, e)
                             } else "package_message" === e && localStorage.setItem(v___server_hostname + "-sysinfo_" + e, i);
                             $(i).find("i.badge:first-child").length || slider_mark_group_notifications_read("package_message")
                         }
@@ -1223,11 +1223,11 @@ function information_update() {
                             var a = (i = i.split("|"))[0],
                                 n = i[1],
                                 s = i[2],
-                                r = i[3],
-                                _ = (i[4], i[5], i[6], i[7]);
-                            if (_ = _.replace("*Port Scan*", s && r ? 'Port <i data-port-href="http://www.speedguide.net/port.php?port=' + r + '" class="badge bg-dark-red">' + r + "</i> scan" : "Port scan"), !localStorage.getItem(v___server_hostname + "-allowed_trigger_" + (a + n.replace(/\./g, "0")) + "_csf_deny")) {
+                                _ = i[3],
+                                r = (i[4], i[5], i[6], i[7]);
+                            if (r = r.replace("*Port Scan*", s && _ ? 'Port <i data-port-href="http://www.speedguide.net/port.php?port=' + _ + '" class="badge bg-dark-red">' + _ + "</i> scan" : "Port scan"), !localStorage.getItem(v___server_hostname + "-allowed_trigger_" + (a + n.replace(/\./g, "0")) + "_csf_deny")) {
                                 var o = theme_language("theme_xhred_notifications_firewall_warning"),
-                                    l = _ + (s && r ? " <span>(" + s + ":" + r + ")</span>" : "");
+                                    l = r + (s && _ ? " <span>(" + s + ":" + _ + ")</span>" : "");
                                 localStorage.setItem(v___server_hostname + "-notifications_" + (a + n.replace(/\./g, "0")) + "_csf_deny", JSON.stringify({
                                     title: o,
                                     time: $__id__,
@@ -1253,28 +1253,28 @@ function information_update() {
                             n.html(moment.unix(s).format(settings_window_replaced_timestamp_format_full)), time.tictac(1)
                         }
                         if ("cpu_temperature" == e) {
-                            var r = 0;
+                            var _ = 0;
                             $.each($(i).filter(".badge-cpustatus"), function(e, t) {
                                 var a, n = parseInt($(this).text().split(":")[1]),
                                     s = n,
-                                    _ = $(this).text().indexOf("°C") > -1;
-                                "bg-warning" != (a = $(this).text().indexOf("RPM") > -1 ? HTML.label.rpm(s) : HTML.label.temperature(n, _)) && "bg-danger" != a || (r = 1), $("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus").length || $('strong[data-stats="cpu"] + br[data-stats="cpu"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[e]).html($(this).text()).removeClass(function(e, t) {
+                                    r = $(this).text().indexOf("°C") > -1;
+                                "bg-warning" != (a = $(this).text().indexOf("RPM") > -1 ? HTML.label.rpm(s) : HTML.label.temperature(n, r)) && "bg-danger" != a || (_ = 1), $("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus").length || $('strong[data-stats="cpu"] + br[data-stats="cpu"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus.badge-cpustatus")[e]).html($(this).text()).removeClass(function(e, t) {
                                     return (t.match(/(^|\s)bg-\S+/g) || []).join(" ")
                                 }).addClass(a + "-dark")
                             }).promise().done(function() {
-                                r || "undefined" != typeof config_custom_force_display_cpu_sensors ? $('.info-container [data-stats="cpu"]').removeClass("hidden") : $('.info-container [data-stats="cpu"]').addClass("hidden")
+                                _ || "undefined" != typeof config_custom_force_display_cpu_sensors ? $('.info-container [data-stats="cpu"]').removeClass("hidden") : $('.info-container [data-stats="cpu"]').addClass("hidden")
                             })
                         }
                         if ("hdd_temperature" == e) {
-                            var _ = 0;
+                            var r = 0;
                             $.each($(i).filter(".badge-drivestatus:not(.badge-cpustatus)"), function(e, t) {
                                 var a, n = parseInt($(this).text().split(":")[1]),
                                     s = $(this).text().indexOf("°C") > -1;
-                                "bg-warning" != (a = HTML.label.temperature(n, s)) && "bg-danger" != a || (_ = 1), $("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)").length || $('strong[data-stats="drive"] + br[data-stats="drive"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[e]).html($(this).text()).removeClass(function(e, t) {
+                                "bg-warning" != (a = HTML.label.temperature(n, s)) && "bg-danger" != a || (r = 1), $("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)").length || $('strong[data-stats="drive"] + br[data-stats="drive"]').after(i.replace(/<br>|&nbsp;/gi, "")), $($("#right-side-tabs .info-container .badge-drivestatus:not(.badge-cpustatus)")[e]).html($(this).text()).removeClass(function(e, t) {
                                     return (t.match(/(^|\s)bg-\S+/g) || []).join(" ")
                                 }).addClass(a + "-dark")
                             }).promise().done(function() {
-                                _ || "undefined" != typeof config_custom_force_display_drive_sensors ? $('.info-container [data-stats="drive"]').removeClass("hidden") : $('.info-container [data-stats="drive"]').addClass("hidden")
+                                r || "undefined" != typeof config_custom_force_display_drive_sensors ? $('.info-container [data-stats="drive"]').removeClass("hidden") : $('.info-container [data-stats="drive"]').addClass("hidden")
                             })
                         }
                         if ("uptime" == e || "running_proc" == e) {
@@ -1342,12 +1342,12 @@ function slider_check_notifications() {
                 a = JSON.parse(t),
                 n = a.title,
                 s = a.time,
-                r = a.timestamp,
-                _ = a.message,
+                _ = a.timestamp,
+                r = a.message,
                 o = a.readStatus,
                 l = a.type,
                 c = a.link;
-            $current_localData_notifications[s + "_" + n] = i + "~~~~" + n + "~~~~" + s + "~~~~" + r + "~~~~" + _ + "~~~~" + o + "~~~~" + l + "~~~~" + c, $('.list-group-item[id="' + i + '"][data-type="' + l + '"]').length && $('.list-group-item[id="' + i + '"][data-type="' + l + '"] .list-group-item-heading small').text(moment.unix(s).fromNow())
+            $current_localData_notifications[s + "_" + n] = i + "~~~~" + n + "~~~~" + s + "~~~~" + _ + "~~~~" + r + "~~~~" + o + "~~~~" + l + "~~~~" + c, $('.list-group-item[id="' + i + '"][data-type="' + l + '"]').length && $('.list-group-item[id="' + i + '"][data-type="' + l + '"] .list-group-item-heading small').text(moment.unix(s).fromNow())
         }
     });
     var package_message_num = Object.values($current_localData_notifications).filter(function(e) {
@@ -1410,8 +1410,8 @@ function slider_mark_group_notifications_read(e) {
     })
 }
 
-function slider_add_notification(e, t, i, a, n, s, r, _) {
-    $(".right-side-tabs .list-group").prepend('  \t\t\t<a class="list-group-item right-side-tabs-notification' + ("1" == s ? " opacity-0_3" : "") + '" data-type="' + r + '" id="' + e + '" href="' + _ + '">  \t\t\t    <div class="media-body">  \t\t\t    <i class="fa fa-fw fa-trash-o pull-right hidden"></i>  \t\t\t    <i class="fa fa-fw fa-clear-all pull-right hidden"></i>  \t\t\t        <div class="list-group-item-heading">' + t + " <small>" + moment.unix(i).fromNow() + "</small></div>  \t\t\t        <small>" + n + "</small>  \t\t\t    </div>  \t\t\t</a>  \t\t\t"), $(".right-side-tabs-no-notifications").remove(), slider_display_notification_badges(), v___initial_load || slider_add_no_notifications()
+function slider_add_notification(e, t, i, a, n, s, _, r) {
+    $(".right-side-tabs .list-group").prepend('  \t\t\t<a class="list-group-item right-side-tabs-notification' + ("1" == s ? " opacity-0_3" : "") + '" data-type="' + _ + '" id="' + e + '" href="' + r + '">  \t\t\t    <div class="media-body">  \t\t\t    <i class="fa fa-fw fa-trash-o pull-right hidden"></i>  \t\t\t    <i class="fa fa-fw fa-clear-all pull-right hidden"></i>  \t\t\t        <div class="list-group-item-heading">' + t + " <small>" + moment.unix(i).fromNow() + "</small></div>  \t\t\t        <small>" + n + "</small>  \t\t\t    </div>  \t\t\t</a>  \t\t\t"), $(".right-side-tabs-no-notifications").remove(), slider_display_notification_badges(), v___initial_load || slider_add_no_notifications()
 }
 
 function slider_add_no_notifications() {
@@ -1450,50 +1450,19 @@ function editor_html_init(e) {
         var n = "%REV%" == CKEDITOR.revision || !!CKEDITOR.plugins.get("wysiwygarea"),
             s = CKEDITOR.document.getById(e[0]);
         if (n) {
-            var r = get_server_data("language");
+            var _ = get_server_data("language");
             CKEDITOR.replace(e[0], {
-                language: "zh" == r ? "zh-cn" : r
+                language: "zh" == _ ? "zh-cn" : _
             })
         } else s.setAttribute("contenteditable", "true"), CKEDITOR.inline(e[0]);
         if (!0 === e[2])
-            for (var _ in CKEDITOR.instances) CKEDITOR.instances[_].on("change", function(e) {
+            for (var r in CKEDITOR.instances) CKEDITOR.instances[r].on("change", function(e) {
                 e.removeListener(), set_onbeforeunload_status(1, 0)
             });
         "edit_web" === e[3] && setTimeout(function() {
             $("hr + b").removeClass("hidden"), $(".__tmp__spinner").remove()
         }, 100)
     })
-}
-
-function table_data_filter() {
-    $(".__page .dataTables_filter").length && setTimeout(function() {
-        $(".btn-filter-top-right").length || ($("#headln2r .btn-group a").addClass("pull-left").attr("style", ""), $("#headln2r .btn-group").prepend('        <a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-title="' + theme_language("theme_xhred_datatable_filter") + '" data-container="body">          <label>          &nbsp;&nbsp;<span class="fa fa-times-circle-o vertical-align-middle filter_mirror_clear text-lighter"></span>            <input type="text" class="dataTable-mirror" placeholder="' + theme_language("theme_xhred_datatable_filter") + '">          </label>          <i class="fa fa-filter"></i>        </a>      ')), $(".container-fluid .nav.nav-tabs").length && $("body").on("shown.bs.tab", 'a[data-toggle="tab"]', function(e) {
-            var t = $(e.target).parent(".active");
-            t.data("filter-value") ? $(".dataTable-mirror").val(t.data("filter-value")).trigger("keyup") : $(".dataTable-mirror").val("").trigger("keyup"), table_data_filter_toggle_visibility()
-        }), $(".dataTables_filter").hide(), $(".filter_mirror_clear").mousedown(function(e) {
-            $(e.target).is(".filter_mirror_clear") && table_data_filter_clear()
-        }), $(".btn-filter-top-right").click(function(e) {
-            !$(e.target).is("input") && $(this).find("label").slideToggle(300, function() {
-                $(this).find("input").focus()
-            })
-        }), $(".dataTable-mirror").keydown(function(e) {
-            76 == e.keyCode && e.ctrlKey && (e.preventDefault(), e.stopPropagation(), table_data_filter_clear())
-        }).keyup(function(e) {
-            $(".container-fluid .nav.nav-tabs").length ? ($(".nav-tabs li.active").data("filter-value", $(this).val()), $(".active .dataTables_filter input").val($(this).val()).trigger("keyup")) : $(".dataTables_filter input").val($(this).val()).trigger("keyup"), $.trim($(this).val()).length > 0 ? ($(".btn-filter-top-right span").removeClass("text-lighter"), $(".btn-filter-top-right i").addClass("text-danger")) : ($(".btn-filter-top-right span").addClass("text-lighter"), $(".btn-filter-top-right i").removeClass("text-danger"))
-        }), $(".btn-filter-top-right input").blur(function(e) {
-            $(this).parent("label").slideToggle(0)
-        }), table_data_filter_toggle_visibility()
-    }, 0)
-}
-
-function table_data_filter_toggle_visibility() {
-    $(".container-fluid .nav.nav-tabs").length && $(".active .dataTables_filter").length || !$(".container-fluid .nav.nav-tabs").length && $(".dataTables_filter").length ? $(".btn-filter-top-right").show() : $(".btn-filter-top-right").hide()
-}
-
-function table_data_filter_clear() {
-    var e = $(".btn-filter-top-right .dataTable-mirror"),
-        t = $(".btn-filter-top-right input");
-    e.val("").trigger("keyup"), t.is(":visible") && t.trigger("blur")
 }
 
 function table_data_init(e, t, i, a) {
@@ -1603,8 +1572,8 @@ function page_sysinfo_sensor_update_label() {
         var i, a = $(this).text(),
             n = parseInt(a.split(":")[1]),
             s = n,
-            r = a.indexOf("°C") > -1;
-        i = a.indexOf("RPM") > -1 ? HTML.label.rpm(s) : HTML.label.temperature(n, r), Test.string(i) && $(this).removeClass(function(e, t) {
+            _ = a.indexOf("°C") > -1;
+        i = a.indexOf("RPM") > -1 ? HTML.label.rpm(s) : HTML.label.temperature(n, _), Test.string(i) && $(this).removeClass(function(e, t) {
             return (t.match(/(^|\s)bg-\S+/g) || []).join(" ")
         }).addClass(i)
     })
@@ -1642,13 +1611,13 @@ function page_radios_evolve() {
         } else if (0 !== e.length || 0 !== $(this).next("label").length || 1 !== $(this).prev("label").length || t) {
             if (0 === e.length && 0 === $(this).next("label").length && !t) {
                 $(this).addClass("iawobject");
-                var r = $(this).attr("name");
-                r && (r = $(this).attr("name").replace(".", "").replace(/:/g, "").replace(/\//g, "").replace("%", "")), $(this).attr("id") || $("#" + r).length || $(this).attr("id", r), $(this).after('<label class="lawobject" for="' + Convert.htmlEscape($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>'), $(this).next("label").addBack().wrapAll('<span class="aw' + a + ' awobject awobjectm"></span>')
+                var _ = $(this).attr("name");
+                _ && (_ = $(this).attr("name").replace(".", "").replace(/:/g, "").replace(/\//g, "").replace("%", "")), $(this).attr("id") || $("#" + _).length || $(this).attr("id", _), $(this).after('<label class="lawobject" for="' + Convert.htmlEscape($(this).attr("id") ? $(this).attr("id") : $(this).attr("name")) + '">&nbsp;</label>'), $(this).next("label").addBack().wrapAll('<span class="aw' + a + ' awobject awobjectm"></span>')
             }
         } else {
-            var _ = $(this).prev("label"),
-                o = _.text();
-            $(this).addClass("iawobject"), $(this).attr("id") || $("#" + $(this).attr("name")).length || $(this).attr("id", $(this).attr("name")), $(this).after('<label class="lawobject" for="' + Convert.htmlEscape($(this).attr("name")) + '-aur0">' + o + "</label>"), $(this).next("label").addBack().wrapAll('<span class="aw' + a + ' awobject awobjectm"></span>'), $(this).attr("id", $(this).attr("name") + "-aur0").removeClass("form-control").css("width", "initial"), _.remove()
+            var r = $(this).prev("label"),
+                o = r.text();
+            $(this).addClass("iawobject"), $(this).attr("id") || $("#" + $(this).attr("name")).length || $(this).attr("id", $(this).attr("name")), $(this).after('<label class="lawobject" for="' + Convert.htmlEscape($(this).attr("name")) + '-aur0">' + o + "</label>"), $(this).next("label").addBack().wrapAll('<span class="aw' + a + ' awobject awobjectm"></span>'), $(this).attr("id", $(this).attr("name") + "-aur0").removeClass("form-control").css("width", "initial"), r.remove()
         }
         1 === e.length && 0 === $(this).next("label").length && ($(this).addClass("iawobject"), $("#" + e.attr("name")).length ? $("#" + e.attr("name")).length || e.attr("id", e.attr("name")) : $(this).attr("id", e.attr("name")), $(this).after('<label class="lawobject" for="' + Convert.htmlEscape(i ? $(this).attr("id") : e.attr("name")) + '">' + i + "</label>"), $(this).next("label").addBack().wrapAll('<span class="aw' + a + ' awobject awobjectm"></span>'), t && $($___text).remove())
     })
@@ -1686,9 +1655,9 @@ function chooser_control(e, t, i) {
         } else $(".refInputData").val(e.replace(/\/\/+/g, "/"));
         var n = $(".refInputData").parent("td").prev("td").find('input[type="radio"]'),
             s = $(".refInputData").parent("span").prev("span").find('input[type="radio"]'),
-            r = $(".refInputData").prev("span").find('input[type="radio"]'),
-            _ = $(".refInputData").prev("select").find('option[value="*"]');
-        s.length ? s.trigger("click") : r.length ? r.trigger("click") : _.length ? _.parent("select").val("*").trigger("change") : n.trigger("click")
+            _ = $(".refInputData").prev("span").find('input[type="radio"]'),
+            r = $(".refInputData").prev("select").find('option[value="*"]');
+        s.length ? s.trigger("click") : _.length ? _.trigger("click") : r.length ? r.parent("select").val("*").trigger("change") : n.trigger("click")
     }
     t && $("body .mppopup").modal("hide")
 }
@@ -1875,7 +1844,7 @@ function page_render(e) {
                         })
                     }
 
-                    function r(e) {
+                    function _(e) {
                         void 0 === e && (e = $('input[name="settings_sysinfo_theme_updates"]:checked'));
                         var t = ["settings_sysinfo_theme_patched_updates"];
                         "true" == e.val() ? $.each(t, function(e, t) {
@@ -1884,9 +1853,9 @@ function page_render(e) {
                             $('input[name="' + t + '"]').prop("disabled", !0).addClass("disabled")
                         }))
                     }
-                    $("#atsettings").html(e);
-                    var _ = $("div#atsettings").find(".ui_form");
-                    $__theme_text_right_save = _.data("text-save"), $__theme_text_right_saved = _.data("text-settings_right_saved"), $__theme_text_right_saving = _.data("text-settings_right_saving"), $__theme_text_right_restore_defaults = _.data("text-settings_right_restore_defaults"), $__theme_text_right_restored = _.data("text-settings_right_restored"), $__theme_text_right_restoring = _.data("text-settings_right_restoring"), $__theme_text_right_error = _.data("text-error"), $('.container-fluid .nav-tabs a[href="#atsettings"]').text(_.data("text-current_theme")), $("div#atsettings").removeClass("text-center"), t(), theme_settings_update();
+                    $("#atsettings").html(e), page.render.module_config([0, 1]);
+                    var r = $("div#atsettings").find(".ui_form");
+                    $__theme_text_right_save = r.data("text-save"), $__theme_text_right_saved = r.data("text-settings_right_saved"), $__theme_text_right_saving = r.data("text-settings_right_saving"), $__theme_text_right_restore_defaults = r.data("text-settings_right_restore_defaults"), $__theme_text_right_restored = r.data("text-settings_right_restored"), $__theme_text_right_restoring = r.data("text-settings_right_restoring"), $__theme_text_right_error = r.data("text-error"), $('.container-fluid .nav-tabs a[href="#atsettings"]').text(r.data("text-current_theme")), $("div#atsettings").removeClass("text-center"), t(), theme_settings_update();
                     var o = $("body").find(".fa.fa-sub-title").parent("span");
                     $(o).next("br").remove(), $(o).next("div.smaller").attr("style", "margin-top: -15px !important"), o.remove(), i(), $('input[name="settings_right_hide_table_icons"]').on("change", function() {
                         i($(this))
@@ -1896,8 +1865,8 @@ function page_render(e) {
                         n($(this))
                     }), s(), $('input[name="settings_sysinfo_easypie_charts"]').on("change", function() {
                         s($(this))
-                    }), r(), $('input[name="settings_sysinfo_theme_updates"]').on("change", function() {
-                        r($(this))
+                    }), _(), $('input[name="settings_sysinfo_theme_updates"]').on("change", function() {
+                        _($(this))
                     }), $('select[name="settings_navigation_color"]').on("click keyup change", function(e) {
                         var t = $(this).val();
                         get_server_data("data-theme", t), $("link[data-palette]").remove(), "blue" != t && $("head").append('<link href="' + v___location_prefix + "/unauthenticated/css/palettes/" + t.toLowerCase() + "." + v___source_type + ".css?" + $.now() + '" rel="stylesheet" type="text/css" data-palette>'), get_server_data("data-default-theme", t), $("body .user-link.palette-toggle").find(".fa-sun").trigger("click"), theme_settings_update()
@@ -2072,15 +2041,15 @@ function page_render(e) {
             $(this).replaceWith('<i class="fa fa-fw fa-lg fa-arrow-circle-o-right text-semi-light vertical-align-baseline"></i>')
         })), Core.curModule("mailboxes") || Core.curModule("mailbox")) {
         var s = 'form.ui_form[action="index.cgi"]',
-            r = "fa fa-fw fa-lg text-semi-light vertical-align-baseline fa-angle-";
+            _ = "fa fa-fw fa-lg text-semi-light vertical-align-baseline fa-angle-";
         $(s + ' img[src*="images/left"], center img[src*="images/left"]').each(function() {
-            $(this).replaceWith('<i class="' + r + 'left"></i>')
+            $(this).replaceWith('<i class="' + _ + 'left"></i>')
         }), $(s + ' img[src*="images/right"], center img[src*="images/right"]').each(function() {
-            $(this).replaceWith('<i class="' + r + 'right"></i>')
+            $(this).replaceWith('<i class="' + _ + 'right"></i>')
         }), $(s + ' img[src*="images/first"]').each(function() {
-            $(this).replaceWith('<i class="' + r + 'double-left"></i>')
+            $(this).replaceWith('<i class="' + _ + 'double-left"></i>')
         }), $(s + ' img[src*="images/last"]').each(function() {
-            $(this).replaceWith('<i class="' + r + 'double-right"></i>')
+            $(this).replaceWith('<i class="' + _ + 'double-right"></i>')
         })
     }
     if (Core.curModule("mailbox") && $.each($('[onclick*="document.forms"]'), function() {
@@ -2114,9 +2083,13 @@ function page_render(e) {
         }), (Core.curModule("proc") || Core.curModule("firewall") || Core.curModule("firewall6") || Core.curModule("shorewall") || Core.curModule("shorewall6") || Core.curModuleFile("pam", "edit_pam.cgi") || Core.curModule("filter")) && ($("td a img[src], td label a img[src]").parents("td").addClass("text-center"), $('td img[src*="images/gap.gif"]').replaceWith('<i class="fa fa-fw fa-caret-down invisible"></i>'), $('td a img[src*="images/down.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_move_down") + '" class="fa fa-fw fa-move-down cursor-pointer"></i>'), $('td a img[src*="images/up.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_move_up") + '" class="fa fa-fw  fa-move-up cursor-pointer"></i>'), $('td a img[src*="images/after.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_add_after") + '" class="fa fa-fw fa-level-down cursor-pointer"></i>'), $('td a img[src*="images/before.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_add_before") + '" class="fa fa-fw fa-level-down fa-flip-vertical cursor-pointer"></i>')), (Core.curModule("squid") || Core.curModule("cron")) && ($('td a img[src*="images/movedown.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_move_down") + '" class="fa fa-fw fa-move-down cursor-pointer"></i>'), $('td a img[src*="images/moveup.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_move_up") + '" class="fa fa-fw fa-move-up cursor-pointer"></i>')), Core.curModule("cron") && ($('td a img[src*="images/bottom.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_move_bottom") + '" class="fa fa-fw fa-level-down cursor-pointer"></i>'), $('td a img[src*="images/top.gif"]').replaceWith('<i title="' + theme_language("theme_xhred_move_top") + '" class="fa fa-fw fa-level-down fa-flip-vertical cursor-pointer"></i>')), $("input").each(function(e, t) {
             "images/ok.gif" == $(this).attr("src") && ($(t).attr("src", v___location_prefix + "/" + $(this).attr("src")), $(this).parents("td").attr("style", "white-space: nowrap"))
         }), !e) {
+        if ("config.cgi" === v___location_file || "uconfig.cgi" === v___location_file || "settings-user.cgi" === v___location_file) {
+            var r = [];
+            "settings-user.cgi" === v___location_file && (r = [1, 1, 0]), page.render.module_config(r)
+        }
         if (!$(".ui_table tr td").has(".ui_grid_table.table-hardcoded") || v___location_directory_unslashed_trail_slashed != v___location_prefix_unslashed_trail_slashed + "passwd/" && v___location_directory_unslashed_trail_slashed != v___location_prefix_unslashed_trail_slashed + "mailboxes/" && v___location_path != v___location_prefix + "/usermin/list_configs.cgi" || ($(".ui_table tr td .ui_grid_table.table-hardcoded").parents("table").css("border", "1px solid #f0f0f0"), $(".ui_table tr td .ui_grid_table.table-hardcoded").addClass("table").parents("tr").css("border", "1px solid #f0f0f0")), ($("body").attr("class") && $('body[class="custom"]').length || $("body").attr("class") && 0 === $("body").attr("class").search(/custom\d+$/)) && "view.cgi" == v___location_file) {
-            var _ = $('form[action="save.cgi"]').find(".table-title").find("tt").text();
-            $('form[action="save.cgi"]').find(".table-title").find("b").empty().append("<tt>" + _ + "</tt>")
+            var o = $('form[action="save.cgi"]').find(".table-title").find("tt").text();
+            $('form[action="save.cgi"]').find(".table-title").find("b").empty().append("<tt>" + o + "</tt>")
         }
         if ($.each($("form > table"), function() {
                 $(this).next('input[type="submit"]') && $(this).attr("style")
@@ -2159,10 +2132,10 @@ function page_render(e) {
             $('td a.ui_link[href*="view.cgi"]').html('<i class="fa fa-fw fa-eye-fi fa-1_25x"></i>').addClass("ui_link_replaced btn btn-default btn-xxs").removeClass("heighter-34").attr("style", "margin-top: 2px !important; margin-bottom: 0 !important; margin-right: 15px").removeClass("ui_link").prepend('<i class="fa fa-fw fa-eye hidden" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>')
         }
         if (v___location_path == v___location_prefix + "/fdisk/edit_disk.cgi") {
-            var o = [];
+            var l = [];
             $.each($(".panel-body > table.table.table-striped tbody tr"), function(e, t) {
-                ($(this).find("td:nth-child(3)").find('img[src*="images/use"]').length || $(this).find("td:nth-child(3)").find('img[src*="images/gap"]').length) && ($(this).find("td:nth-child(3)").remove(), o.push(e))
-            }), $.isEmptyObject(o) || ($(".panel-body > table.table.table-striped thead").find("th:nth-child(3)").remove(), delete o)
+                ($(this).find("td:nth-child(3)").find('img[src*="images/use"]').length || $(this).find("td:nth-child(3)").find('img[src*="images/gap"]').length) && ($(this).find("td:nth-child(3)").remove(), l.push(e))
+            }), $.isEmptyObject(l) || ($(".panel-body > table.table.table-striped thead").find("th:nth-child(3)").remove(), delete l)
         }
         v___location_path == v___location_prefix + "/virtual-server/edit_link.cgi" && $(".table-hardcoded").find('input[name="open"]').parent("td").parent("tr").remove(), v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "init/" && $('.table.table-striped.table-condensed tr.tr_tag td.td_tag input[type="checkbox"]').each(function(e, t) {
             $(this).attr("style", "vertical-align: middle !important")
@@ -2195,8 +2168,8 @@ function page_render(e) {
         }), $("table thead th:not(.table-title)").each(function() {
             $(this).css("border-top", "none"), $(this).css("border-bottom", "none")
         }), $("body").attr("class") && $("body").attr("class").indexOf(v___module_file_manager) > -1 && (!$("body").hasClass("file-manager") && $("body").addClass("file-manager"), $("#headln2l").prepend("<a onClick='window.open(\"" + v___location_prefix + '/help.cgi/authentic-theme/file-manager", "help", "toolbar=no,menubar=no,scrollbars=yes,width=600,height=400,resizable=yes"); return false\' href="' + v___location_prefix + '/help.cgi/authentic-theme/file-manager"></a>'));
-        var l = $(".panel-heading > table.header > tbody > tr > td > a");
-        $.each(l, function() {
+        var c = $(".panel-heading > table.header > tbody > tr > td > a");
+        $.each(c, function() {
             if ($(this).attr("href") && $(this).attr("href").indexOf("config.cgi") > -1 || $(this).attr("href").indexOf("man/search.cgi") > -1 || $(this).attr("href").indexOf("/index.cgi") > -1 || $(this).attr("href") == v___location_directory_trail_slashed || $(this).attr("href").indexOf("index.cgi") > -1 && v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "openvpn/" || $(this).attr("href").indexOf("index.cgi?") > -1 && v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "spam/" || $(this).attr("href").indexOf("restart_zone.cgi") > -1 || $(this).attr("href").indexOf("restart.cgi") > -1 || $(this).attr("href").indexOf("apply.cgi") > -1 || $(this).attr("href").indexOf("start.cgi") > -1 || $(this).attr("href").indexOf("stop.cgi") > -1 || "//" == $(this).attr("href") && (v___location_path_lead_unslashed == v___location_prefix_unslashed_trail_slashed + "settings-editor_read.cgi" || v___location_path_lead_unslashed == v___location_prefix_unslashed_trail_slashed + "settings-upload.cgi") || $(this).attr("href").indexOf("delete_") > -1 || $(this).attr("href").indexOf("list_mail.cgi") > -1 || $(this).attr("href").indexOf("/virtual-") > -1 || $(this).attr("href").indexOf("/virtualmin-") > -1 || $(this).attr("href").indexOf("/server-") > -1 || $(this).attr("href").indexOf("help.cgi") > -1) {
                 if ($.each($(this).next("br"), function() {
                         $(this).remove()
@@ -2253,11 +2226,11 @@ function page_render(e) {
                         }))
                     }), $help_body = a.find("._tmp_help_content").html(), a.find("._tmp_help_content").remove();
                     var s = '<button type="button" class="close pull-right close-popover-trigger font-size-120p">&times;</button>',
-                        r = t.attr("href").indexOf("showpass.cgi") > -1;
-                    r && (s = ""), t.popover({
+                        _ = t.attr("href").indexOf("showpass.cgi") > -1;
+                    _ && (s = ""), t.popover({
                         html: !0,
-                        container: "body",
-                        template: '<div class="popover module-help' + (r ? " showpass-popover" : "") + '" role="tooltip" style="z-index: ' + (2147483642 + 10 * $(".module-help").length) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+                        container: ".container-fluid",
+                        template: '<div class="popover module-help' + (_ ? " showpass-popover" : "") + '" role="tooltip" style="z-index: ' + (2147483642 + 10 * $(".module-help").length) + '"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
                         title: function() {
                             return s + $help_title
                         },
@@ -2374,8 +2347,8 @@ function page_render(e) {
             }), $.each($(".container-fluid .ui_buttons_row input, .container-fluid .ui_buttons_row select"), function() {
                 $(this).addClass("heighter-34")
             }), Core.curModuleFile("gnupg", "list_keys.cgi") && $('.container-fluid input[id="id"]').addClass("heighter-34"), Core.curModuleFile("virtual-server", "edit_script.cgi")) {
-            var c = $('input[name="version"]');
-            c.length && c.attr("style", c.attr("style").replace("n: middle", "n: bottom !important")).addClass("heighter-34")
+            var d = $('input[name="version"]');
+            d.length && d.attr("style", d.attr("style").replace("n: middle", "n: bottom !important")).addClass("heighter-34")
         }
         if ($.each($("tr > .ui_form"), function() {
                 $(this).next().next("td").find("input.submitter") && $(this).next().next("td").find("input.submitter").addClass("heighter-34")
@@ -2386,11 +2359,11 @@ function page_render(e) {
                     34 == $(this).next("input").outerHeight() || 34 == $(this).prev("input").outerHeight() ? $(this).addClass("heighter-34").removeClass("heighter-28") : 28 != $(this).next("input").outerHeight() && 28 != $(this).prev("input").outerHeight() || $(this).addClass("heighter-28").removeClass("heighter-34")
                 })
             }, 1), Core.curModule("term")) {
-            var d = $("iframe");
-            if (d.length) {
-                var h = d;
-                h.on("load", function() {
-                    h.contents().find("#term").css("width", "99.3%").css("height", "576px").css("margin-top", "4px")
+            var h = $("iframe");
+            if (h.length) {
+                var p = h;
+                p.on("load", function() {
+                    p.contents().find("#term").css("width", "99.3%").css("height", "576px").css("margin-top", "4px")
                 }), $(this).next("br").remove().next('input[type="button"]').remove(), $(this).next('input[type="button"]').remove(), $(this).next("p").remove()
             }
         }
@@ -2468,25 +2441,25 @@ function page_render(e) {
             })
         }), v___location_path == v___location_prefix + "/cpan/edit_mod.cgi" && $('.container-fluid form[action="download.cgi"]').next().next().next().find(".submitter.ui_submit").addClass("heighter-34"), v___location_path != v___location_prefix + "/cpan/" && v___location_path != v___location_prefix + "/cpan/index.cgi" || $('input[name="cpan"]').next("button").append('<i class="fa fa-fw fa-files-o vertical-align-middle" style="font-size:11px; margin-top: -6px; pointer-events: none"></i>').attr("style", "width: 40px; height: 28px; vertical-align:middle !important; margin-top:2px; margin-bottom:2px;"), $("form").find(".icons-row:not(.inline-row)").length && ($("form").find(".icons-row").addClass("_processed_"), $("form").find(".icons-row").css("border-top", "1px solid #efefef").css("border-bottom", "1px solid #efefef"), $("form").find(".icons-row").find(".icons-container").addClass("icons-container-stretched"));
 
-        function p() {
+        function f() {
             $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
                 "padding-top": "8px",
                 "padding-bottom": "8px"
             }), $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef").css("border-bottom", "1px solid #efefef")
         }
 
-        function f() {
+        function g() {
             $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
                 "padding-top": "8px"
             }), $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-top", "1px solid #efefef")
         }
 
-        function g() {
+        function u() {
             $("body").find(".icons-row:not(._processed_):not(.inline-row)").css({
                 "padding-bottom": "6px"
             }), $("body").find(".icons-row:not(._processed_):not(.inline-row)").css("border-bottom", "1px solid #efefef")
         }
-        v___location_path != v___location_prefix + "/lvm/" && v___location_path != v___location_prefix + "/virtualmin-support/" && v___location_path != v___location_prefix + "/proftpd/virt_index.cgi" && v___location_path != v___location_prefix + "/dhcpd/" && v___location_path != v___location_prefix + "/dhcpd/index.cgi" && v___location_path != v___location_prefix + "/cluster-usermin/" && v___location_path != v___location_prefix + "/cluster-usermin/index.cgi" && v___location_path != v___location_prefix + "/cluster-useradmin/" && v___location_path != v___location_prefix + "/cluster-useradmin/index.cgi" && v___location_path != v___location_prefix + "/cluster-webmin/" && v___location_path != v___location_prefix + "/cluster-webmin/index.cgi" || p(), v___location_path != v___location_prefix + "/proftpd/" && v___location_path != v___location_prefix + "/proftpd/index.cgi" && v___location_path != v___location_prefix + "/bacula-backup/" && v___location_path != v___location_prefix + "/bacula-backup/index.cgi" || f(), v___location_path == v___location_prefix + "//" && g();
+        v___location_path != v___location_prefix + "/lvm/" && v___location_path != v___location_prefix + "/virtualmin-support/" && v___location_path != v___location_prefix + "/proftpd/virt_index.cgi" && v___location_path != v___location_prefix + "/dhcpd/" && v___location_path != v___location_prefix + "/dhcpd/index.cgi" && v___location_path != v___location_prefix + "/cluster-usermin/" && v___location_path != v___location_prefix + "/cluster-usermin/index.cgi" && v___location_path != v___location_prefix + "/cluster-useradmin/" && v___location_path != v___location_prefix + "/cluster-useradmin/index.cgi" && v___location_path != v___location_prefix + "/cluster-webmin/" && v___location_path != v___location_prefix + "/cluster-webmin/index.cgi" || f(), v___location_path != v___location_prefix + "/proftpd/" && v___location_path != v___location_prefix + "/proftpd/index.cgi" && v___location_path != v___location_prefix + "/bacula-backup/" && v___location_path != v___location_prefix + "/bacula-backup/index.cgi" || g(), v___location_path == v___location_prefix + "//" && u();
         if ($.each($(".row.icons-row.inline-row"), function(e, t) {
                 $(this).find("a.icon_link").contents().filter(function() {
                     return 3 == this.nodeType
@@ -2506,30 +2479,30 @@ function page_render(e) {
             }), !$t_uri_cloudmin || v___location_path != v___location_prefix + "/server-manager/add_form.cgi" && v___location_path != v___location_prefix + "/server-manager/scan_form.cgi" || $.each($("label"), function() {
                 $(this).find("br").remove()
             }), (v___location_path == v___location_prefix + "/mysql/view_table.cgi" || v___location_path == v___location_prefix + "/postgresql/view_table.cgi") && $("td.td_tag > table.table-hardcoded")) {
-            var u = $("td.td_tag > table.table-hardcoded").parents("table").find("thead").find("tr").find("th").length;
-            $("td.td_tag > table.table-hardcoded").parent("td.td_tag").attr("colspan", u).attr("style", "padding: 1px !important;")
+            var m = $("td.td_tag > table.table-hardcoded").parents("table").find("thead").find("tr").find("th").length;
+            $("td.td_tag > table.table-hardcoded").parent("td.td_tag").attr("colspan", m).attr("style", "padding: 1px !important;")
         }
         if (v___location_path == v___location_prefix + "/virtual-server/backup_form.cgi" && v___location_href && v___location_href.indexOf("?sched=") > -1 && ($("body > div > div > div.panel-body > form > table:nth-child(4) > tbody > tr:nth-child(2) > td").css("display", "table-cell"), setTimeout(function() {
                 $("a[href=\"javascript:hidden_opener('hiddendiv_adddest', 'hiddenopener_adddest')\"]").next().attr("style", "").addClass("btn btn-tiny btn-default")
             }, 10)), "/config.cgi" === v___location_path && $("thead tr th.table-title").prepend('<i class="fa fa-fw fa-cogs vertical-align-text-bottom"></i>&nbsp;&nbsp;'), $.each($('form[action="save_global.cgi"], form[action="save_iptables.cgi"], form[action="save_domain.cgi"],form[action="domain_setup.cgi"],form[action="mass_create.cgi"],form[action="save_roundrobin.cgi"],form[action="save_alert.cgi"], body.time form[action="apply.cgi"]'), function() {
                 $(this).find(".col_header").removeClass("col_header")
             }), (check_location_resource("/virtual-server/edit_newchangelog.cgi") || check_location_resource("/server-manager/edit_newchangelog.cgi") || check_location_resource("/shell/") || check_location_resource("/shell/index.cgi") || check_location_resource("/server-manager/shell.cgi")) && $("td.col_value.col_value").removeClass("col_header"), check_location_resource("/ldap-server/edit_ldif.cgi") && $("span > input.ui_opt_textbox").unwrap(), v___location_path == v___location_prefix + "/server-manager/gvnc.cgi" && $("body.server-manager p > object").css("height", "100%").parent("p").attr("style", "display: block; height: " + parseInt($(window).outerHeight() / 1.4) + "px"), v___location_path == v___location_prefix + "/spam/edit_simple.cgi" || v___location_path == v___location_prefix + "/spam/edit_header.cgi") {
-            var m = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:first-child"),
-                v = (b = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:last-child")).find("a");
-            m.append(v), b.remove(), m.find("a").addClass("table_title_links pull-right btn btn-xs btn-grey").attr("style", "position: absolute; right: 23px; margin-top: 7px !important;")
+            var v = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:first-child"),
+                b = (x = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:last-child")).find("a");
+            v.append(b), x.remove(), v.find("a").addClass("table_title_links pull-right btn btn-xs btn-grey").attr("style", "position: absolute; right: 23px; margin-top: 7px !important;")
         }
         if (v___location_path == v___location_prefix + "/server-manager/edit_pass.cgi" && $('form[action="save_pass.cgi"]').find('a[href*="edit_pass.cgi?"]:not(.btn)').length) {
-            var m = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:first-child"),
-                b = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:last-child"),
-                v = b.find("a");
-            m.append(v), b.remove(), m.find("a").addClass("table_title_links pull-right btn btn-info btn-tiny").attr("style", "position: absolute; right: 20px; margin-top: 3px !important;")
+            var v = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:first-child"),
+                x = $(".ui_form .table-responsive table.table.table-striped.table-condensed.table-subtable > thead tr th:last-child"),
+                b = x.find("a");
+            v.append(b), x.remove(), v.find("a").addClass("table_title_links pull-right btn btn-info btn-tiny").attr("style", "position: absolute; right: 20px; margin-top: 3px !important;")
         }
         if ($('.panel-default + a[href="/virtual-server/"]').attr("href", "/virtual-server/index.cgi"), $('.panel-default + a[href="/server-manager/"]').attr("href", "/server-manager/index.cgi"), v___location_directory_trail_slashed == v___location_prefix + "/virtual-server/" ? $("#headln2l > a:first-child .fa-arrow-left").parent("a").attr("href", "/virtual-server/index.cgi") : v___location_directory_trail_slashed == v___location_prefix + "/server-manager/" && $("#headln2l > a:first-child .fa-arrow-left").parent("a").attr("href", "/server-manager/index.cgi"), v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "acl/") {
             $("body.acl > div > div > div.panel-body > form > div > table > tbody > tr > td > table > tbody > tr:nth-child(1) > td > table > tbody").attr("style", "border: 0 !important");
-            var x = $("br").next(".ui_grid_table.table-hardcoded").find("tbody").attr("style", "border: 1px solid #" + (v___theme_night_mode_enabled || v___theme_night_mode ? "393b3f" : "eee") + " !important").parent("table").prev("br").prev("b");
-            $("br").next(".ui_grid_table.table-hardcoded").css("margin-bottom", "3px"), $.each(x, function(e, t) {
+            var y = $("br").next(".ui_grid_table.table-hardcoded").find("tbody").attr("style", "border: 1px solid #" + (v___theme_night_mode_enabled || v___theme_night_mode ? "393b3f" : "eee") + " !important").parent("table").prev("br").prev("b");
+            $("br").next(".ui_grid_table.table-hardcoded").css("margin-bottom", "3px"), $.each(y, function(e, t) {
                 "" == $(this).text() && ($(this).next("br").remove(), $(this).remove())
-            }), x.attr("style", "margin-bottom: -3px !important").next("br").remove()
+            }), y.attr("style", "margin-bottom: -3px !important").next("br").remove()
         }
         $('body[class*="bandwidth"]').length && $(".fa.fa-calendar.file_chooser_button_attached").attr("style", "font-size: 11px; margin-top: 9px !important; pointer-events: none; margin-left: -27px !important;"), v___location_path != v___location_prefix + "/mysql/exec_form.cgi" && v___location_path != v___location_prefix + "/postgresql/exec_form.cgi" || ($('select[name="old"], input[name="clear"], select[name="charset"]').removeClass("heighter-34").addClass("heighter-28"), $('input[name="clear"]').attr("style", "margin-bottom: 3px !important;"), $('select[name="old"]').attr("style", "margin-bottom: 3px !important; margin-right: 0 !important;")), "config.cgi" != v___location_file && "uconfig.cgi" != v___location_file || "mysql" != v___location_query && "postgresql" != v___location_query || $('input[name="style"]').parents("td.col_value").parent("tr").after('\t\t<tr>\t\t\t<td class="col_label"><b>' + theme_language("theme_xhred_xsql_fit_content_screen_height") + '</b></td>\t\t\t<td class="col_value"><span>\t\t\t<span class="awradio awobject">\t\t\t\t<input class="iawobject" name="config_portable_module_xsql_fit_content_screen_height" id="config_portable_module_xsql_fit_content_screen_height_1" value="true"' + (config_portable_module_xsql_fit_content_screen_height ? " checked" : "") + ' type="radio">\t\t\t\t<label class="lawobject" for="config_portable_module_xsql_fit_content_screen_height_1">' + theme_language("theme_xhred_global_yes") + '</label>\t\t\t\t<input class="iawobject" name="config_portable_module_xsql_fit_content_screen_height" id="config_portable_module_xsql_fit_content_screen_height_0" value="false"' + (config_portable_module_xsql_fit_content_screen_height ? "" : " checked") + ' type="radio">\t\t\t\t<label class="lawobject" for="config_portable_module_xsql_fit_content_screen_height_0">' + theme_language("theme_xhred_global_no") + "</label>\t\t\t</span>\t\t</span></td>\t\t</tr>\t"), $(".ui_post_header.hidden").html() && $(".ui_post_header.hidden").html().length > 5 && ($("#headln2c").append("<span data-sub_title>" + $(".ui_post_header.hidden").html() + "</span>"), $(".ui_post_header.hidden").remove())
     }
@@ -2567,8 +2540,8 @@ function page_render(e) {
                 ("virtual-server" == $(this).val() || "server-manager" == $(this).val()) && $(this).remove()
             })), v___location_path != v___location_prefix + "/webmin/edit_ui.cgi" && v___location_path != v___location_prefix + "/usermin/edit_ui.cgi" || ($('select[name*="sysinfo"], input[name*="sizefile_def"], input[name*="sizeuser_def"], input[name*="sizemodule_def"], input[name*="sizeusers_def"], input[name*="sizemodules_w"], input[name*="cs_link_def"], input[name*="cs_header_def"], input[name*="cs_table_def"], input[name*="cs_text_def"], input[name*="cs_page_def"], input[name*="width_def"], input[name*="height_def"], input[name*="sizedate_def"], input[name*="texttitles"]').parents("td.col_value").parent("tr").addClass("hidden"), $(".sub_table_container tr td.no-border").parent("tr").addClass("hidden")), (check_location_resource("/config.cgi?virtual-server") || check_location_resource("/config.cgi?server-manager")) && $('input[name="theme_image"], input[name="theme_link"], input[name="theme_alt"]').parents("td.col_value").parent("tr").hide(), v___location_path == v___location_prefix + "/virtual-server/edit_resel.cgi" && $('input[name="logo"][id="logo"], input[name="link"]').parents("td.col_value").parent("tr").hide(), v___location_path == v___location_prefix + "/virtual-server/edit_newfeatures.cgi" && ($('tr td:last-child label:contains("|")').replaceText(/\|/gi, ""), $("td a.ui_link").addClass("ui_link_replaced btn btn-info btn-xxs").removeClass("heighter-34").removeClass("ui_link").prepend('<i class="fa fa-fw fa-eye hidden" style="vertical-align: baseline !important">&nbsp;&nbsp;</i>')), $("#headln2l .btn .fa-arrow-left").length) {
             $("body").attr("class") && $("body").attr("class").indexOf(v___module_file_manager) > -1 || $("#headln2l .btn .fa-arrow-left").parent("a").attr("href", $("#headln2l .btn .fa-arrow-left").parent("a").attr("href").replace("index.cgi", ""));
-            var y = URI(v___location);
-            v___location_file = y.filename()
+            var w = URI(v___location);
+            v___location_file = w.filename()
         }
         $("#headln2r, #headln2l").prepend('<div class="btn-group">').append("</div>"), $("#headln2r a").detach().appendTo("#headln2r .btn-group"), $("#headln2l a").detach().appendTo("#headln2l .btn-group"), $.each($(".ui_form_end_submit"), function() {
             if (v___location_path_lead_unslashed != v___location_prefix_unslashed_trail_slashed + "proc/edit_proc.cgi" && "edit_dbase.cgi" != v___location_file && "edit_pam.cgi" != v___location_file && "list_records.cgi" != v___location_file && !Core.curModule("mailbox") && !Core.curModule("mailboxes")) {
@@ -2582,18 +2555,18 @@ function page_render(e) {
         }), $.each($(".btn-group").find("span"), function() {
             $(this).not("[class]").length && !$.trim($(this).text()).length && $(this).remove()
         }), 2 === $(".panel-default").nextAll("a.btn.btn-primary").length && $(".panel-default").next("a.btn.btn-primary").find(".fa.fa-arrow-left").removeClass("fa-arrow-left").addClass("fa-arrow-circle-o-left"), 3 === $(".panel-default").nextAll("a.btn.btn-primary").length && ($(".panel-default").next("a.btn.btn-primary").next("a.btn.btn-primary").find(".fa.fa-arrow-left").removeClass("fa-arrow-left").addClass("fa-arrow-circle-left"), $(".panel-default").next("a.btn.btn-primary").find(".fa.fa-arrow-left").removeClass("fa-arrow-left").addClass("fa-arrow-circle-o-left")), v___location_path == v___location_prefix + "/init/reboot.cgi" && $("input.btn-success").removeClass("btn-success").addClass("btn-warning"), v___location_path == v___location_prefix + "/init/shutdown.cgi" && $("input.btn-success").removeClass("btn-success").addClass("btn-danger"), v___available_navigation || page_display(), $(".dataTable .ui_checked_checkbox").parent("tr").parent("tbody").prev("thead").find("th:first-child").addClass("opacity-0 pointer-events-none"), $("table tr.thead td").addClass("tdhead"), (Core.curModuleFile("virtual-server", "edit_newchroot.cgi") || Core.curModuleFile("virtual-server", "edit_newglobal.cgi") || Core.curModuleFile("virtual-server", "edit_newshells.cgi") || Core.curModuleFile("virtual-server", "edit_newfields.cgi") || Core.curModuleFile("server-manager", "edit_docker.cgi") || Core.curModuleFile("server-manager", "edit_vserver.cgi") || Core.curModuleFile("server-manager", "edit_zone.cgi") || Core.curModuleFile("server-manager", "edit_openvz.cgi") || Core.curModuleFile("server-manager", "list_locations.cgi") || Core.curModuleFile("server-manager", "edit_lxc.cgi") || Core.curModuleFile("server-manager", "list_ips.cgi") || $('body[class*="bind8"]').length && v___location_file || $('body[class*="status"]').length && "edit_mon.cgi" == v___location_file || $('body[class*="custom"]').length && "edit_sql.cgi" == v___location_file || $('body[class*="custom"]').length && "edit_cmd.cgi" == v___location_file || $('body[class*="custom"]').length && "edit_file.cgi" == v___location_file) && $(".table").removeClass("table-hover");
-        var w = $(".fa-toggle-switch-off").parent("button.btn-default");
-        1 === w.length && "1" == w.parent("td").find('input[type="radio"]:checked').val() && w.find(".fa-toggle-switch-off").addClass("fa-toggle-switch").removeClass("fa-toggle-switch-off"), w.parents("td").addClass("vertical-align-bottom");
-        var k = $('form[action*="manual"] > select[name="file"], form[action*="manual.cgi"] > select[name="manual"], form[action*="edit_"] > select[name="file"]');
-        k.length && (k.addClass("heighter-34"), $('form[action*="manual"], form[action*="edit_"]').css("margin-bottom", "2px")), Core.curModule("firewalld") && ($("select#zone").addClass("heighter-34"), $('form[action="save_ifaces.cgi"] button').addClass("heighter-28-force")), $('body[class*="proftpd"] .table-hardcoded tr td > input + input.btn.btn-default').removeClass("heighter-28").addClass("heighter-34").prev("input").addClass("heighter-34"), $('body[class*="proftpd"] form[action="find_ftpaccess.cgi"] > input:first-child').removeClass("heighter-34").addClass("heighter-28"), "edit_simple.cgi" == v___location_file && $('body[class*="spam"]').length && $("tr td").contents().filter(function() {
+        var k = $(".fa-toggle-switch-off").parent("button.btn-default");
+        1 === k.length && "1" == k.parent("td").find('input[type="radio"]:checked').val() && k.find(".fa-toggle-switch-off").addClass("fa-toggle-switch").removeClass("fa-toggle-switch-off"), k.parents("td").addClass("vertical-align-bottom");
+        var C = $('form[action*="manual"] > select[name="file"], form[action*="manual.cgi"] > select[name="manual"], form[action*="edit_"] > select[name="file"]');
+        C.length && (C.addClass("heighter-34"), $('form[action*="manual"], form[action*="edit_"]').css("margin-bottom", "2px")), Core.curModule("firewalld") && ($("select#zone").addClass("heighter-34"), $('form[action="save_ifaces.cgi"] button').addClass("heighter-28-force")), $('body[class*="proftpd"] .table-hardcoded tr td > input + input.btn.btn-default').removeClass("heighter-28").addClass("heighter-34").prev("input").addClass("heighter-34"), $('body[class*="proftpd"] form[action="find_ftpaccess.cgi"] > input:first-child').removeClass("heighter-34").addClass("heighter-28"), "edit_simple.cgi" == v___location_file && $('body[class*="spam"]').length && $("tr td").contents().filter(function() {
             return 3 == this.nodeType
         }).remove(), "edit_awl.cgi" == v___location_file && $('body[class*="spam"]').length && $('input[name="user"]').next("input").addBack().addClass("heighter-34"), Core.curModuleFile("usermin", "list_sessions.cgi") && $('.container-fluid #user, .container-fluid input[type="button"]').addClass("heighter-34"), (Core.curModuleFile("htaccess-htpasswd", "") || Core.curModuleFile("htaccess-htpasswd", "index.cgi")) && ($("#search, .file_chooser_button").addClass("heighter-34").css("margin-bottom", "-1px"), $("#search").css("margin-top", "0")), (Core.curModuleFile("mailboxes", "") || Core.curModuleFile("mailboxes", "index.cgi")) && $("#user, .file_chooser_button").addClass("heighter-34 vertical-align-middle").css("margin-bottom", "-1px"), Core.curModuleFile("mailboxes", "list_mail.cgi") && $("#mfolder1, #mfolder2").addClass("heighter-34").css("margin-bottom", "-1px").css("margin-top", "-1px"), Core.curModuleFile("quota", "list_users.cgi") && $("#user, #user + input").addClass("heighter-34"), Core.curModuleFile("quota", "list_groups.cgi") && $("#group, #group + input").addClass("heighter-34"), (Core.curModuleFile("apache", "htaccess.cgi") || Core.curModuleFile("virtualmin-registrar", "index.cgi") || Core.curModuleFile("virtualmin-registrar", "")) && $(".ui_form_end_submit").addClass("heighter-28-force");
-        var C = $('form:not([action="save_log.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > select,\t\t\t\t\t\t\t   form:not([action="save_log.cgi"], [action="save_net.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > input,\t\t\t\t\t\t\t   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > select,\t\t\t\t\t\t\t   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > input,\t\t\t\t\t\t\t   form[action="save_newglobal.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_newfields.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_newfields.cgi"] > table tbody tr td select,\t\t\t\t\t\t\t   form[action="save_newshells.cgi"] > table tbody tr td select,\t\t\t\t\t\t\t   form[action="save_newshells.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_linkcats.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_gen.cgi"] > table tbody tr td input\t\t\t\t\t\t\t   ');
-        $.each(C, function(e, t) {
+        var O = $('form:not([action="save_log.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > select,\t\t\t\t\t\t\t   form:not([action="save_log.cgi"], [action="save_net.cgi"]) .table-responsive .table .sub_table_container .table tbody tr td > input,\t\t\t\t\t\t\t   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > select,\t\t\t\t\t\t\t   form:not([action="save_user.cgi"], [action="save_group.cgi"]) .table td.opener_container td.col_value table tbody tr td > input,\t\t\t\t\t\t\t   form[action="save_newglobal.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_newfields.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_newfields.cgi"] > table tbody tr td select,\t\t\t\t\t\t\t   form[action="save_newshells.cgi"] > table tbody tr td select,\t\t\t\t\t\t\t   form[action="save_newshells.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_linkcats.cgi"] > table tbody tr td input,\t\t\t\t\t\t\t   form[action="save_gen.cgi"] > table tbody tr td input\t\t\t\t\t\t\t   ');
+        $.each(O, function(e, t) {
             $(this).parent().find("input[data-mmclick]").length || $(this).parent().find("button[data-mmclick]").length || $(this).parent().find('input[onclick*="window.open"]').length || $(this).parent().find('button[onclick*="window.open"]').length || ($(this).prev(".awobject").length ? $(this).css("width", "auto") : 1 == $(this).parent().find('input:not([type="checkbox"], [type="radio"]), select').length ? $(this).css("width", "100%").css("min-width", "100%") : 2 == $(this).parent().find('input:not([type="checkbox"], [type="radio"]), select').length && ($(this).parent().find("input, select").first().css("width", "39%"), $(this).parent().find("input, select").last().css("width", "60%").css("float", "right")))
         }), Core.curModuleFile("virtual-server", "edit_newstyles.cgi") ? $('a[onclick^="window.open(\\"thumb_style.cgi?"]').html('<i class="fa fa-fw fa-external-link"></i>').addClass("btn btn-default btn-xxs margined-top--3") : Core.curModule("virtual-server") && $('a[onclick^="window.open(\\"thumb_style.cgi?"]').html('<i class="fa fa-fw fa-external-link" style="margin-top: 7px;"></i>').addClass("btn btn-default heighter-28-force");
-        var O = '        body button[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),        body input[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),                body button[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"]    ';
-        if ($(O).length && $(O).each(function() {
+        var T = '        body button[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),        body input[onclick*="window.open"][onclick*="choose"][onclick*="chooser.cgi"]:not([onclick*="_chooser.cgi"]),                body button[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="standard_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="third_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="user_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="my_group_chooser.cgi"],                body button[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"],        body input[onclick*="window.open"][onclick*="choose"][onclick*="module_chooser.cgi"]    ';
+        if ($(T).length && $(T).each(function() {
                 $(this).attr("data-mmclick", $(this).attr("onclick")).removeAttr("onclick"), chooser_get_target($(this), 0).length && $(this).css("margin-left", "-8px")
             }), (Core.curModuleFile("virtualmin-nginx", "") || Core.curModuleFile("virtualmin-awstats", "") || Core.curModuleFile("fdisk", "edit_disk.cgi") || Core.curModuleFile("virtual-server", "edit_newlinks.cgi") || Core.curModuleFile("virtualmin-dav", "list_shares.cgi") || v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "pam/" && !v___location_file || v___location_directory_unslashed_trail_slashed == v___location_prefix_unslashed_trail_slashed + "syslog/" && !v___location_file || v___location_path == v___location_prefix + "/postfix/master.cgi") && setTimeout(function() {
                 var e = $('.panel-body > .ui_link, .panel-body > .ui_link_replaced,\t\t\t\t\t body[data-uri*="virtualmin-awstats"] .panel-body > form > .ui_link_replaced,\t\t\t\t\t body[data-uri*="edit_disk.cgi"] .panel-body p > a.ui_link_replaced,\t\t\t\t\t body[data-uri*="edit_newlinks.cgi"] .panel-body > form > .ui_link_replaced,\t\t\t\t\t body[data-uri*="edit_newlinks.cgi"] .panel-body > .ui_emptymsg + p > .ui_link_replaced'),
@@ -2602,14 +2575,14 @@ function page_render(e) {
                 $("#headln2r .btn-group a").addClass("pull-left").attr("style", ""), $("#headln2r .btn-group").prepend('\t\t<a href="' + (v___available_navigation ? v___location_directory_trail_slashed : "") + i + '" class="btn btn-link text-lighter text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-container="body" data-title="' + t + '">\t\t\t<i class="fa fa-plus"></i>\t\t</a>\t'), e.next("br").remove(), e.remove()
             }, 0), v___theme_night_mode_enabled || v___theme_night_mode) {
             if ($(".opener_shown").length > 0) {
-                var T = $(".opener_container, .opener_container:hidden").find(".ui_grid_table, .ui_grid_table:hidden");
-                T.length && $.each(T, function(e, t) {
+                var S = $(".opener_container, .opener_container:hidden").find(".ui_grid_table, .ui_grid_table:hidden");
+                S.length && $.each(S, function(e, t) {
                     $(this).parent("td").attr("style", "padding: 0 !important")
                 })
             }
             if ($(".opener_table_style_small").length > 0) {
-                var S = $(".opener_table_style_small, .opener_table_style_small:hidden").find(".sub_table_container.table-hardcoded, .sub_table_container.table-hardcoded:hidden");
-                S.length && $.each(S, function(e, t) {
+                var I = $(".opener_table_style_small, .opener_table_style_small:hidden").find(".sub_table_container.table-hardcoded, .sub_table_container.table-hardcoded:hidden");
+                I.length && $.each(I, function(e, t) {
                     $(this).parent("td").attr("style", "padding: 0 !important"), $(this).find("tbody tr td").attr("style", "padding-left: 3px !important; padding-right: 3px !important")
                 })
             }
@@ -2635,13 +2608,13 @@ function page_render(e) {
         }, 1)
     }
     if (editor_init_check() && editor_init($("textarea"), !1, !1, "static", !1, !0, !1, e), viewer_init_check() && viewer_init(), settings_sysinfo_easypie_charts && v___location_path == v___location_prefix + "/sysinfo.cgi") {
-        var I = v___theme_night_mode_enabled || v___theme_night_mode ? 1 : 0;
+        var M = v___theme_night_mode_enabled || v___theme_night_mode ? 1 : 0;
         $("body").find("#system-status").find(".piechart").easyPieChart({
             barColor: function(e) {
-                return e < 50 ? I ? "#269373" : "#5cb85c" : e < 85 ? I ? "#c38d40" : "#f0ad4e" : "#cb3935"
+                return e < 50 ? M ? "#269373" : "#5cb85c" : e < 85 ? M ? "#c38d40" : "#f0ad4e" : "#cb3935"
             },
-            trackColor: I ? "#3b424b" : "#f8f8f8",
-            scaleColor: I ? "#3b424b" : "#dfe0e0",
+            trackColor: M ? "#3b424b" : "#f8f8f8",
+            scaleColor: M ? "#3b424b" : "#dfe0e0",
             size: parseInt(settings_sysinfo_easypie_charts_size),
             scaleLength: parseInt(settings_sysinfo_easypie_charts_scale),
             trackWidth: parseInt(settings_sysinfo_easypie_charts_width),
@@ -2671,7 +2644,7 @@ function page_render(e) {
                 }
             }
         }).promise().done(function() {
-            table_data_filter()
+            page.render.content.filter.init()
         }), $(".select_all").on("click", function() {
             $(this).parents("form").find('.icons-row div[class*="icons-container"]').length && $.each($(".icons-row .hidden-forged-6"), function() {
                 $(this).parents('div[class*="icons-container"]').addClass("highlighted"), $(this).parents('div[class*="icons-container"]').find(".fa-select").removeClass("fa-select").addClass("fa-selected")
@@ -2709,15 +2682,15 @@ function page_render(e) {
         }), !v___available_navigation && $('a[href="/?updated"], a[data-href="#theme-info"]').remove(), page_sysinfo_sensor_update_label()), $t_uri_virtualmin && Core.curModuleFileQuery("syslog", "save_log.cgi", "view=1") && ($('select[name="idx"] option').filter(function() {
             return this.text == $.trim($("span[data-sub_title] tt").text())
         }).attr("selected", !0), $('select[name="idx"]').addClass("hidden")), Core.curModuleFileQuery("syslog", "save_log.cgi", "view=1")) {
-        var m = ".panel-body .fa-refresh-fi",
-            M = localStorage.getItem(v___server_hostname + "-option_" + v___module + "_refresh"),
-            j = m + ", .panel-body .refresh-timer-timeout",
-            q = '<span class="label label-transparent-35 label-sm margined-top-1 refresh-timer-timeout">' + (M || "0") + "&nbsp;</span>";
-        $.each($(m + ":not([data-processed])").parent("button"), function(e, t) {
-            if ($(this).find("i").attr("data-processed", 1), $(this).wrap('<div class="btn-group' + (1 === e ? " dropup" : "") + '"></div>'), $(this).after('<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-original-title="" title="" aria-expanded="false"><i class="fa fa-caret-down"></i></button><ul class="dropdown-menu dropdown-menu-right refresh-timer-select"><li><a data-off data-timeout="0">' + theme_language("theme_xhred_global_automatic_refresh") + ": " + theme_language("theme_xhred_global_off") + '</a></li><li class="divider"></li><li><a data-on data-timeout="5">5 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="15">15 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="30">30 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="60">60 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="120">2 ' + theme_language("theme_xhred_global_minutes") + '</a></li><li><a data-on data-timeout="300">5 ' + theme_language("theme_xhred_global_minutes") + "</a></li></ul>"), M && "0" != M) {
-                var i = $(j);
-                $(this).find("i").before(q), $(this).find("i").remove();
-                var a = M;
+        var v = ".panel-body .fa-refresh-fi",
+            j = localStorage.getItem(v___server_hostname + "-option_" + v___module + "_refresh"),
+            q = v + ", .panel-body .refresh-timer-timeout",
+            F = '<span class="label label-transparent-35 label-sm margined-top-1 refresh-timer-timeout">' + (j || "0") + "&nbsp;</span>";
+        $.each($(v + ":not([data-processed])").parent("button"), function(e, t) {
+            if ($(this).find("i").attr("data-processed", 1), $(this).wrap('<div class="btn-group' + (1 === e ? " dropup" : "") + '"></div>'), $(this).after('<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-original-title="" title="" aria-expanded="false"><i class="fa fa-caret-down"></i></button><ul class="dropdown-menu dropdown-menu-right refresh-timer-select"><li><a data-off data-timeout="0">' + theme_language("theme_xhred_global_automatic_refresh") + ": " + theme_language("theme_xhred_global_off") + '</a></li><li class="divider"></li><li><a data-on data-timeout="5">5 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="15">15 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="30">30 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="60">60 ' + theme_language("theme_xhred_global_seconds") + '</a></li><li><a data-on data-timeout="120">2 ' + theme_language("theme_xhred_global_minutes") + '</a></li><li><a data-on data-timeout="300">5 ' + theme_language("theme_xhred_global_minutes") + "</a></li></ul>"), j && "0" != j) {
+                var i = $(q);
+                $(this).find("i").before(F), $(this).find("i").remove();
+                var a = j;
                 "number" == typeof refreshTimer && clearInterval(refreshTimer), refreshTimer = setInterval(function() {
                     --a, $(".refresh-timer-timeout").text(a), a <= 0 && ($(i[0]).parent().trigger("click"), clearInterval(refreshTimer))
                 }, 1e3)
@@ -2725,15 +2698,15 @@ function page_render(e) {
         }).promise().done(function() {
             $(".refresh-timer-select li").click(function() {
                 "number" == typeof refreshTimer && clearInterval(refreshTimer);
-                var e = '<span class="label label-transparent-35 label-sm margined-top-1 refresh-timer-timeout">' + (M || "0") + "&nbsp;</span>";
-                localStorage.setItem(v___server_hostname + "-option_" + v___module + "_refresh", $(this).find("a").data("timeout")), M = localStorage.getItem(v___server_hostname + "-option_" + v___module + "_refresh");
-                var t = $(j).parent();
-                if (M && "0" != M) {
-                    t.find(".refresh-timer-timeout").length || t.prepend(e), t.find(".refresh-timer-timeout").html(M + "&nbsp;"), $(".fa-refresh-fi").remove();
-                    var i = M;
+                var e = '<span class="label label-transparent-35 label-sm margined-top-1 refresh-timer-timeout">' + (j || "0") + "&nbsp;</span>";
+                localStorage.setItem(v___server_hostname + "-option_" + v___module + "_refresh", $(this).find("a").data("timeout")), j = localStorage.getItem(v___server_hostname + "-option_" + v___module + "_refresh");
+                var t = $(q).parent();
+                if (j && "0" != j) {
+                    t.find(".refresh-timer-timeout").length || t.prepend(e), t.find(".refresh-timer-timeout").html(j + "&nbsp;"), $(".fa-refresh-fi").remove();
+                    var i = j;
                     refreshTimer = setInterval(function() {
                         if (--i, $(".refresh-timer-timeout").text(i), i <= 0) {
-                            var e = $(j);
+                            var e = $(q);
                             $(e[0]).parent().trigger("click"), clearInterval(refreshTimer)
                         }
                     }, 1e3)
@@ -2768,8 +2741,8 @@ function editor_init_check() {
     return 1 === $("textarea").length && ("data" === $("textarea").attr("name") || "text" === $("textarea").attr("name") || "conf" === $("textarea").attr("name") || "script" === $("textarea").attr("name") || v___location_file.indexOf("manual") > -1) ? Core.curModule("gnupg") || Core.curModuleFile("virtual-server", "mass_ucreate_form.cgi") || Core.curModuleFile("virtual-server", "mass_create_form.cgi") || Core.curModuleFile("server-manager", "edit_pubkey.cgi") || Core.curModuleFile("server-manager", "edit_key.cgi") || check_location_resource("/config.cgi?server-manager") || Core.curModuleFile("useradmin", "batch_form.cgi") || Core.curModuleFile("useradmin", "gbatch_form.cgi") || "mass_form.cgi" == v___location_file || "notes" === $("textarea").attr("id") ? 0 : 1 : 0
 }
 
-function editor_init(e, t, i, a, n, s, r, _) {
-    (r = void 0 !== r && 0 != r) || (n = void 0 !== n && 0 != n, s = void 0 !== s && 0 != s, $.each(e, function(r, o) {
+function editor_init(e, t, i, a, n, s, _, r) {
+    (_ = void 0 !== _ && 0 != _) || (n = void 0 !== n && 0 != n, s = void 0 !== s && 0 != s, $.each(e, function(_, o) {
         $(this);
         var l = ["phpini", "bind8"];
         $("#headln2l a").attr("href") ? $page = $("#headln2l a").attr("href").split("/")[1] : $page = null, l.indexOf($page) >= 0 && $(this).data("name", "data"), CodeMirror.modeURL = v___location_prefix + "/unauthenticated/js/codemirror/mode/%N/%N.js";
@@ -2825,11 +2798,11 @@ function editor_init(e, t, i, a, n, s, r, _) {
             });
             var u = $(".container-fluid > .panel > .panel-body").attr("data-cm-line"),
                 m = $(".container-fluid > .panel > .panel-body").attr("data-cm-state");
-            _ && u && __cm_editor_static.setCursor(parseInt(u.split(",")[0]), parseInt(u.split(",")[1])), "edit_cron.cgi" != $current_file && v___location_path != v___location_prefix + "/virtualmin-password-recovery/" && v___location_path != v___location_prefix + "/bind8/forward_form.cgi" && ($resize = i || 2.8, i ? (window["__cm_editor_" + a].on("change", function(t, i) {
+            r && u && __cm_editor_static.setCursor(parseInt(u.split(",")[0]), parseInt(u.split(",")[1])), "edit_cron.cgi" != $current_file && v___location_path != v___location_prefix + "/virtualmin-password-recovery/" && v___location_path != v___location_prefix + "/bind8/forward_form.cgi" && ($resize = i || 2.8, i ? (window["__cm_editor_" + a].on("change", function(t, i) {
                 e.val(window["__cm_editor_" + a].getValue()), $(":focus").parents(".jsPanel").is(".jsPanel") && ($(":focus").parents(".jsPanel").find("._filemanager_file_editor_save").addClass("text-danger __locked__"), $(":focus").parents(".jsPanel").find("select[data-encoding]").addClass("pointer-events-none"))
             }), window["__cm_editor_" + a].setSize($resize[0], $resize[1])) : ($window_height = $(window).outerHeight() - $(window).outerHeight() / $resize, window["__cm_editor_" + a].setSize(null, $window_height), $(window).resize(function() {
                 $window_height = $(window).outerHeight() - $(window).outerHeight() / $resize, window["__cm_editor_" + a].setSize(null, $window_height)
-            }))), $(".sub_table_container").find(".CodeMirror").length && ($(".sub_table_container").addClass("xcontent-force-no-styling"), $(".panel-body").addClass("xqcontent-forced")), editor_background_save(_ && !!u && "true" == m)
+            }))), $(".sub_table_container").find(".CodeMirror").length && ($(".sub_table_container").addClass("xcontent-force-no-styling"), $(".panel-body").addClass("xqcontent-forced")), editor_background_save(r && !!u && "true" == m)
         }
     }))
 }
@@ -2902,16 +2875,16 @@ function unbuffered_header_processor(e, t) {
             a = $(i.target),
             n = i.target.action,
             s = $(document.activeElement).attr("name"),
-            r = $.trim(document.activeElement.innerText),
-            _ = document.activeElement.value;
-        a.find('input[name="' + s + '"]') && a.find('input[name="' + s + '"]').val() == (r || _) || $("<input>").attr({
+            _ = $.trim(document.activeElement.innerText),
+            r = document.activeElement.value;
+        a.find('input[name="' + s + '"]') && a.find('input[name="' + s + '"]').val() == (_ || r) || $("<input>").attr({
             type: "hidden",
             name: s,
-            value: r || _
+            value: _ || r
         }).appendTo(a);
         var o = Test.strContains(a.attr("enctype"), "multipart/form-data"),
             l = o ? new FormData(a[0]) : a.serialize();
-        if (o || (l = Test.strContains(l, s + "=") ? l : l + "&" + s + "=" + _), $("input:file:visible").val()) return v___theme_force_buffered = 1, void a.submit()
+        if (o || (l = Test.strContains(l, s + "=") ? l : l + "&" + s + "=" + r), $("input:file:visible").val()) return v___theme_force_buffered = 1, void a.submit()
     }
     var c = 0,
         d = 0,
@@ -2967,7 +2940,11 @@ browser.internet_explorer_version() > 5 && browser.internet_explorer_version() <
         return -1 !== a && a === t
     }), String.prototype.startsWith || String.prototype.startsWith || (String.prototype.startsWith = function(e, t) {
         return t = t || 0, this.indexOf(e, t) === t
-    })), Object.defineProperty(Array.prototype, "reOrder", {
+    })), $.extend($.expr[":"], {
+        containsi: function(e, t, i, a) {
+            return (e.textContent || e.innerText || "").toLowerCase().indexOf((i[3] || "").toLowerCase()) >= 0
+        }
+    }), Object.defineProperty(Array.prototype, "reOrder", {
         enumerable: !1,
         value: function(e, t) {
             if (t >= this.length)
@@ -2986,8 +2963,8 @@ browser.internet_explorer_version() > 5 && browser.internet_explorer_version() <
     function(e) {
         e.fn.replaceTagName = function(t) {
             for (var i = [], a = this.length; a--;) {
-                for (var n = document.createElement(t), s = this[a], r = s.attributes, _ = r.length - 1; _ >= 0; _--) {
-                    var o = r[_];
+                for (var n = document.createElement(t), s = this[a], _ = s.attributes, r = _.length - 1; r >= 0; r--) {
+                    var o = _[r];
                     n.setAttribute(o.name, o.value)
                 }
                 n.innerHTML = s.innerHTML, e(s).after(n).remove(), i[a - 1] = n
@@ -3007,13 +2984,13 @@ browser.internet_explorer_version() > 5 && browser.internet_explorer_version() <
     function(e) {
         e.fn.replaceText = function(t, i, a) {
             return this.each(function() {
-                var n, s, r = this.firstChild,
-                    _ = [];
-                if (r)
+                var n, s, _ = this.firstChild,
+                    r = [];
+                if (_)
                     do {
-                        3 === r.nodeType && (s = (n = r.nodeValue).replace(t, i)) !== n && (!a && /</.test(s) ? (e(r).before(s), _.push(r)) : r.nodeValue = s)
-                    } while (r = r.nextSibling);
-                _.length && e(_).remove()
+                        3 === _.nodeType && (s = (n = _.nodeValue).replace(t, i)) !== n && (!a && /</.test(s) ? (e(_).before(s), r.push(_)) : _.nodeValue = s)
+                    } while (_ = _.nextSibling);
+                r.length && e(r).remove()
             })
         }
     }(jQuery), jQuery.fn.hasScrollBar = function() {
@@ -3026,12 +3003,12 @@ browser.internet_explorer_version() > 5 && browser.internet_explorer_version() <
             timeout: 2500
         }, e), $(this).each(function(i, a) {
             function n() {
-                r.removeClass(e.className).data("confirmed", !1).find(".tmp_question").remove()
+                _.removeClass(e.className).data("confirmed", !1).find(".tmp_question").remove()
             }
-            var s, r = $(a);
-            r.html();
-            r.data("confirmed", !1), r.on("click.confirm", function(i) {
-                i.preventDefault(), r.data("confirmed") ? (t.call(r, i), n()) : (r.data("confirmed", !0), r.append('<em class="tmp_question">?</em>').addClass(e.className).bind("mouseout.confirm", function() {
+            var s, _ = $(a);
+            _.html();
+            _.data("confirmed", !1), _.on("click.confirm", function(i) {
+                i.preventDefault(), _.data("confirmed") ? (t.call(_, i), n()) : (_.data("confirmed", !0), _.append('<em class="tmp_question">?</em>').addClass(e.className).bind("mouseout.confirm", function() {
                     s = setTimeout(n, e.timeout)
                 }).bind("mouseover.confirm", function() {
                     clearTimeout(s)

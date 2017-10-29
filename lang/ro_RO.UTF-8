@@ -719,3 +719,7 @@ theme_xhred_global_minutes=Minutes
 
 #19.01
 theme_xhred_browser_warning=To have the best experience with server panel on your computer, use a supported, up-to-date browser.<br><br><em>Internet Explorer</em> is no longer supported.<br><br>Recommended browsers are <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
+
+
+#19.02
+theme_xhred_filter_accordions_content=Filter content of accordions

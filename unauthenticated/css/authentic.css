@@ -2908,6 +2908,10 @@ table+.end_submits,
     margin-top: 4px !important
 }
 
+.container-fluid .panel-group+.ui_form_end_buttons {
+    margin-top: -12px !important
+}
+
 .table-responsive+input+.btn-group.end_submits,
 table+input+.btn-group.end_submits {
     margin-top: 6px
@@ -3016,6 +3020,43 @@ select+select {
     overflow: auto;
     padding-top: 17px;
     padding-bottom: 13px
+}
+
+.panel-group .panel-body {
+    padding: 15px
+}
+
+.panel-group .panel-body.inner {
+    padding: 0 2px
+}
+
+html[data-uri*='config.cgi'] ._c__op_d,
+.panel-group#conf-_-gr .panel-heading {
+    text-align: center !important
+}
+
+html[data-uri*='config.cgi'] td .opener_trigger.opener_container_opened[id]:before,
+html[data-uri*='config.cgi'] td .opener_trigger[id]:before,
+.panel-group#conf-_-gr .panel-heading a:before {
+    right: 15px
+}
+
+html[data-uri*='config.cgi'] td .opener_trigger.opener_container_opened[id]:before,
+html[data-uri*='config.cgi'] td .opener_trigger[id]:before {
+    right: 31px
+}
+
+html[data-uri*='config.cgi'] td .opener_trigger.opener_container_closed[id]:before,
+.panel-group#conf-_-gr .panel-heading a[aria-expanded='false']:before {
+    content: '\f084'
+}
+
+.panel-group#conf-_-gr .panel-heading a[aria-expanded='true']:before {
+    right: 13px
+}
+
+html[data-uri*='config.cgi'] td .opener_trigger.opener_container_opened[id]:before {
+    right: 29px
 }
 
 .refresh-timer-timeout {
@@ -4382,6 +4423,10 @@ body.syslog .CodeMirror {
 .__logo.inited {
     -webkit-transform: translate(0, -140px) !important;
     transform: translate(0, -140px) !important
+}
+
+.strike-out {
+    text-decoration: line-through
 }
 
 .opacity-0 {
@@ -7711,6 +7756,10 @@ body:not([data-module*='man']) .col_header b {
     background-color: #f7f7f7 !important
 }
 
+body:not([data-module*='man']) .col_header b.text-left {
+    text-align: left !important
+}
+
 html[data-script-name*='settings-user.cgi'] body:not([data-module*='man']) .col_header b[data-first-child] {
     border-top: 0 !important
 }
@@ -9036,6 +9085,10 @@ fieldset[disabled] .form-control,
     border-radius: 0 !important
 }
 
+.panel-heading {
+    padding: 9px 15px 8px 15px
+}
+
 .table-hover ._c__op_r:hover,
 .table-hover ._c__op_d:hover,
 .table-hover ._c__op_r,
@@ -9233,6 +9286,15 @@ form[action='change_users.cgi'] a[href*='edit_user.cgi?']:not([href*='edit_user.
     text-decoration: none !important
 }
 
+.text-left {
+    text-align: left !important
+}
+
+.text-right {
+    text-align: right !important
+}
+
+.btn-accordion-filter label,
 .btn-filter-top-right label {
     display: none;
     overflow: hidden;
@@ -9240,12 +9302,14 @@ form[action='change_users.cgi'] a[href*='edit_user.cgi?']:not([href*='edit_user.
     margin: -10px 10px -10px -10px
 }
 
+.btn-accordion-filter .filter_mirror_clear,
 .btn-filter-top-right .filter_mirror_clear {
     position: absolute;
     top: 10px;
     left: 8px
 }
 
+.btn-accordion-filter input,
 .btn-filter-top-right input {
     max-width: 73px;
     background: transparent
@@ -10498,6 +10562,10 @@ html[data-background-style='gainsboro'] .panel.panel-default {
     border-top-color: rgba(228, 228, 228, .83);
     -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, .02);
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .02)
+}
+
+html[data-background-style='gainsboro'] .container-fluid .panel-body .panel.panel-default {
+    border-color: #e8e8e8 !important
 }
 
 @-webkit-keyframes obj-popup {

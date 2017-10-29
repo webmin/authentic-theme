@@ -9,7 +9,7 @@ if (get_server_data("debug")) {
     } catch (e) {
         Storage.prototype._setItem = Storage.prototype.setItem, Storage.prototype.setItem = function() {}, $_v__ls__a = 0
     }
-    if (page_init(), $___________lrs_r_l = 0, $___________left = v___available_navigation ? 1 : 0, "undefined" == typeof settings_mailbox_slash_delimiter && (settings_mailbox_slash_delimiter = !0), "undefined" == typeof settings_right_reload && (settings_right_reload = !0), "undefined" == typeof settings_right_default_tab_usermin && (settings_right_default_tab_usermin = "/"), "undefined" == typeof settings_right_virtualmin_default && (settings_right_virtualmin_default = "sysinfo.cgi"), "undefined" == typeof settings_right_cloudmin_default && (settings_right_cloudmin_default = "sysinfo.cgi"), "undefined" == typeof settings_font_family && (settings_font_family = 0), "undefined" == typeof settings_navigation_color && (settings_navigation_color = "blue"), "undefined" == typeof settings_background_color && (settings_background_color = "gainsboro"), "undefined" == typeof settings_hide_top_loader && (settings_hide_top_loader = !1), "undefined" == typeof settings_show_night_mode_link && (settings_show_night_mode_link = !0), "undefined" == typeof settings_theme_options_button && (settings_theme_options_button = !0), "undefined" == typeof settings_leftmenu_button_refresh && (settings_leftmenu_button_refresh = !1), "undefined" == typeof settings_cm_view_palette && (settings_cm_view_palette = "monokai"), "undefined" == typeof settings_cm_editor_palette && (settings_cm_editor_palette = "monokai"), "undefined" == typeof settings_side_slider_palette && (settings_side_slider_palette = "grey"), "undefined" == typeof settings_side_slider_enabled && (settings_side_slider_enabled = !0), "undefined" == typeof settings_side_slider_fixed && (settings_side_slider_fixed = !1), "undefined" == typeof settings_side_slider_sysinfo_enabled && (settings_side_slider_sysinfo_enabled = !0), "undefined" == typeof settings_side_slider_notifications_enabled && (settings_side_slider_notifications_enabled = !0), "undefined" == typeof settings_side_slider_favorites_enabled && (settings_side_slider_favorites_enabled = !0), config_portable_module_filemanager_hide_actions = "undefined" == typeof localStorage || "false" != localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_hide_actions"), config_portable_module_filemanager_hide_toolbar = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_hide_toolbar"), config_portable_module_filemanager_hovered_toolbar = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_hovered_toolbar"), config_portable_module_filemanager_notification_type = "undefined" != typeof localStorage && localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_notification_type") ? localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_notification_type") : 2, config_portable_module_filemanager_calculate_size = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_calculate_size"), config_portable_module_filemanager_switch_user = "undefined" == typeof localStorage || "false" != localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_switch_user"), config_portable_module_filemanager_remember_tabs = "undefined" == typeof localStorage || "false" != localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_remember_tabs"), config_portable_module_xsql_fit_content_screen_height = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_xsql_fit_content_screen_height"), "undefined" == typeof settings_hotkeys_active && (settings_hotkeys_active = !0), "undefined" == typeof settings_button_tooltip && (settings_button_tooltip = !0), "undefined" == typeof settings_hotkey_toggle_modifier && (settings_hotkey_toggle_modifier = "altKey"), "undefined" == typeof settings_hotkey_toggle_key_webmin && (settings_hotkey_toggle_key_webmin = "w"), "undefined" == typeof settings_hotkey_toggle_key_virtualmin && (settings_hotkey_toggle_key_virtualmin = "v"), "undefined" == typeof settings_hotkey_toggle_key_cloudmin && (settings_hotkey_toggle_key_cloudmin = "c"), "undefined" == typeof settings_hotkey_toggle_key_usermin && (settings_hotkey_toggle_key_usermin = "u"), "undefined" == typeof settings_hotkey_toggle_key_webmail && (settings_hotkey_toggle_key_webmail = "m"), "undefined" == typeof settings_hotkey_toggle_key_night_mode && (settings_hotkey_toggle_key_night_mode = "l"), "undefined" == typeof settings_hotkey_shell && (settings_hotkey_shell = "k"), "undefined" == typeof settings_hotkey_sysinfo && (settings_hotkey_sysinfo = "i"), "undefined" == typeof settings_hotkey_favorites && (settings_hotkey_favorites = "f"), "undefined" == typeof settings_hotkey_focus_search && (settings_hotkey_focus_search = "s"), "undefined" == typeof settings_hotkey_toggle_slider && (settings_hotkey_toggle_slider = "n"), "undefined" == typeof settings_hotkey_reload && (settings_hotkey_reload = "r"), "undefined" == typeof settings_global_passgen_format && (settings_global_passgen_format = "12|a-z,A-Z,0-9,#"), "undefined" == typeof settings_window_replace_timestamps && (settings_window_replace_timestamps = !0), "undefined" == typeof settings_window_replaced_timestamp_format_full && (settings_window_replaced_timestamp_format_full = "LLLL"), "undefined" == typeof settings_window_replaced_timestamp_format_short && (settings_window_replaced_timestamp_format_short = "L, LTS"), "undefined" == typeof settings_leftmenu_vm_cm_dropdown_icons && (settings_leftmenu_vm_cm_dropdown_icons = !0), "undefined" == typeof settings_hotkey_custom_1 && (settings_hotkey_custom_1 = !1), "undefined" == typeof settings_hotkey_custom_2 && (settings_hotkey_custom_2 = !1), "undefined" == typeof settings_hotkey_custom_3 && (settings_hotkey_custom_3 = !1), "undefined" == typeof settings_hotkey_custom_4 && (settings_hotkey_custom_4 = !1), "undefined" == typeof settings_hotkey_custom_5 && (settings_hotkey_custom_5 = !1), "undefined" == typeof settings_hotkey_custom_6 && (settings_hotkey_custom_6 = !1), "undefined" == typeof settings_hotkey_custom_7 && (settings_hotkey_custom_7 = !1), "undefined" == typeof settings_hotkey_custom_8 && (settings_hotkey_custom_8 = !1), "undefined" == typeof settings_hotkey_custom_9 && (settings_hotkey_custom_9 = !1), "undefined" == typeof settings_side_slider_background_refresh_time && (settings_side_slider_background_refresh_time = 5), "undefined" == typeof settings_leftmenu_width && (settings_leftmenu_width = 260), "undefined" == typeof settings_sysinfo_easypie_charts && (settings_sysinfo_easypie_charts = !0), "undefined" == typeof settings_sysinfo_easypie_charts_size ? settings_sysinfo_easypie_charts_size = 172 : settings_sysinfo_easypie_charts_size = parseInt(settings_sysinfo_easypie_charts_size), "undefined" == typeof settings_sysinfo_easypie_charts_width ? settings_sysinfo_easypie_charts_width = 2 : settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width), "undefined" == typeof settings_sysinfo_easypie_charts_scale ? settings_sysinfo_easypie_charts_scale = 8 : settings_sysinfo_easypie_charts_scale = parseInt(settings_sysinfo_easypie_charts_scale), "undefined" == typeof settings_sysinfo_theme_updates && (settings_sysinfo_theme_updates = !1), "undefined" == typeof settings_sysinfo_theme_patched_updates && (settings_sysinfo_theme_patched_updates = !1), "undefined" == typeof settings_sysinfo_csf_updates && (settings_sysinfo_csf_updates = !1), "undefined" == typeof settings_sysinfo_link_mini && (settings_sysinfo_link_mini = !1), "undefined" == typeof settings_loader_top && (settings_loader_top = !0), "undefined" == typeof settings_animation_left && (settings_animation_left = !0), settings_animation_left ? $settings_animation_left_slide_time = 180 : $settings_animation_left_slide_time = 0, "undefined" == typeof settings_animation_tabs && (settings_animation_tabs = !0), settings_animation_tabs ? $settings_animation_tabs_slide_time = 180 : $settings_animation_tabs_slide_time = 0, "undefined" == typeof settings_show_terminal_link && (settings_show_terminal_link = !0), "undefined" == typeof settings_favorites && (settings_favorites = !0), $_v__ls__a ? _v__ls__a = "" : _v__ls__a = " hidden", $(".mobile-menu-toggler:visible").length && set_side_slider_visibility(0), navigation_display(), v___available_navigation ? (page_adjust(settings_leftmenu_width, 0), navigation_lock_width()) : $("head").append('<style id="__tmp_no_overflow">body {overflow: hidden}</style>'), $("html").on("dblclick", "body", function() {
+    if (page_init(), $___________lrs_r_l = 0, $___________left = v___available_navigation ? 1 : 0, "undefined" == typeof settings_mailbox_slash_delimiter && (settings_mailbox_slash_delimiter = !0), "undefined" == typeof settings_right_reload && (settings_right_reload = !0), "undefined" == typeof settings_right_default_tab_usermin && (settings_right_default_tab_usermin = "/"), "undefined" == typeof settings_right_virtualmin_default && (settings_right_virtualmin_default = "sysinfo.cgi"), "undefined" == typeof settings_right_cloudmin_default && (settings_right_cloudmin_default = "sysinfo.cgi"), "undefined" == typeof settings_font_family && (settings_font_family = 0), "undefined" == typeof settings_navigation_color && (settings_navigation_color = "blue"), "undefined" == typeof settings_background_color && (settings_background_color = "gainsboro"), "undefined" == typeof settings_hide_top_loader && (settings_hide_top_loader = !1), "undefined" == typeof settings_show_night_mode_link && (settings_show_night_mode_link = !0), "undefined" == typeof settings_theme_options_button && (settings_theme_options_button = !0), "undefined" == typeof settings_leftmenu_button_refresh && (settings_leftmenu_button_refresh = !1), "undefined" == typeof settings_cm_view_palette && (settings_cm_view_palette = "monokai"), "undefined" == typeof settings_cm_editor_palette && (settings_cm_editor_palette = "monokai"), "undefined" == typeof settings_side_slider_palette && (settings_side_slider_palette = "grey"), "undefined" == typeof settings_side_slider_enabled && (settings_side_slider_enabled = !0), "undefined" == typeof settings_side_slider_fixed && (settings_side_slider_fixed = !1), "undefined" == typeof settings_side_slider_sysinfo_enabled && (settings_side_slider_sysinfo_enabled = !0), "undefined" == typeof settings_side_slider_notifications_enabled && (settings_side_slider_notifications_enabled = !0), "undefined" == typeof settings_side_slider_favorites_enabled && (settings_side_slider_favorites_enabled = !0), config_portable_module_filemanager_hide_actions = "undefined" == typeof localStorage || "false" != localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_hide_actions"), config_portable_module_filemanager_hide_toolbar = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_hide_toolbar"), config_portable_module_filemanager_hovered_toolbar = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_hovered_toolbar"), config_portable_module_filemanager_notification_type = "undefined" != typeof localStorage && localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_notification_type") ? localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_notification_type") : 2, config_portable_module_filemanager_calculate_size = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_calculate_size"), config_portable_module_filemanager_switch_user = "undefined" == typeof localStorage || "false" != localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_switch_user"), config_portable_module_filemanager_remember_tabs = "undefined" == typeof localStorage || "false" != localStorage.getItem(v___server_hostname + "-config_portable_module_filemanager_remember_tabs"), config_portable_module_xsql_fit_content_screen_height = "undefined" != typeof localStorage && "true" == localStorage.getItem(v___server_hostname + "-config_portable_module_xsql_fit_content_screen_height"), "undefined" == typeof settings_hotkeys_active && (settings_hotkeys_active = !0), "undefined" == typeof settings_button_tooltip && (settings_button_tooltip = !0), "undefined" == typeof settings_hotkey_toggle_modifier && (settings_hotkey_toggle_modifier = "altKey"), "undefined" == typeof settings_hotkey_toggle_key_webmin && (settings_hotkey_toggle_key_webmin = "w"), "undefined" == typeof settings_hotkey_toggle_key_virtualmin && (settings_hotkey_toggle_key_virtualmin = "v"), "undefined" == typeof settings_hotkey_toggle_key_cloudmin && (settings_hotkey_toggle_key_cloudmin = "c"), "undefined" == typeof settings_hotkey_toggle_key_usermin && (settings_hotkey_toggle_key_usermin = "u"), "undefined" == typeof settings_hotkey_toggle_key_webmail && (settings_hotkey_toggle_key_webmail = "m"), "undefined" == typeof settings_hotkey_toggle_key_night_mode && (settings_hotkey_toggle_key_night_mode = "l"), "undefined" == typeof settings_hotkey_shell && (settings_hotkey_shell = "k"), "undefined" == typeof settings_hotkey_sysinfo && (settings_hotkey_sysinfo = "i"), "undefined" == typeof settings_hotkey_favorites && (settings_hotkey_favorites = "f"), "undefined" == typeof settings_hotkey_focus_search && (settings_hotkey_focus_search = "s"), "undefined" == typeof settings_hotkey_toggle_slider && (settings_hotkey_toggle_slider = "n"), "undefined" == typeof settings_hotkey_reload && (settings_hotkey_reload = "r"), "undefined" == typeof settings_global_passgen_format && (settings_global_passgen_format = "12|a-z,A-Z,0-9,#"), "undefined" == typeof settings_window_replace_timestamps && (settings_window_replace_timestamps = !0), "undefined" == typeof settings_window_replaced_timestamp_format_full && (settings_window_replaced_timestamp_format_full = "LLLL"), "undefined" == typeof settings_window_replaced_timestamp_format_short && (settings_window_replaced_timestamp_format_short = "L, LTS"), "undefined" == typeof settings_leftmenu_vm_cm_dropdown_icons && (settings_leftmenu_vm_cm_dropdown_icons = !0), "undefined" == typeof settings_hotkey_custom_1 && (settings_hotkey_custom_1 = !1), "undefined" == typeof settings_hotkey_custom_2 && (settings_hotkey_custom_2 = !1), "undefined" == typeof settings_hotkey_custom_3 && (settings_hotkey_custom_3 = !1), "undefined" == typeof settings_hotkey_custom_4 && (settings_hotkey_custom_4 = !1), "undefined" == typeof settings_hotkey_custom_5 && (settings_hotkey_custom_5 = !1), "undefined" == typeof settings_hotkey_custom_6 && (settings_hotkey_custom_6 = !1), "undefined" == typeof settings_hotkey_custom_7 && (settings_hotkey_custom_7 = !1), "undefined" == typeof settings_hotkey_custom_8 && (settings_hotkey_custom_8 = !1), "undefined" == typeof settings_hotkey_custom_9 && (settings_hotkey_custom_9 = !1), "undefined" == typeof settings_side_slider_background_refresh_time && (settings_side_slider_background_refresh_time = 5), "undefined" == typeof settings_leftmenu_width && (settings_leftmenu_width = 260), "undefined" == typeof settings_sysinfo_easypie_charts && (settings_sysinfo_easypie_charts = !0), "undefined" == typeof settings_sysinfo_easypie_charts_size ? settings_sysinfo_easypie_charts_size = 172 : settings_sysinfo_easypie_charts_size = parseInt(settings_sysinfo_easypie_charts_size), "undefined" == typeof settings_sysinfo_easypie_charts_width ? settings_sysinfo_easypie_charts_width = 2 : settings_sysinfo_easypie_charts_width = parseInt(settings_sysinfo_easypie_charts_width), "undefined" == typeof settings_sysinfo_easypie_charts_scale ? settings_sysinfo_easypie_charts_scale = 8 : settings_sysinfo_easypie_charts_scale = parseInt(settings_sysinfo_easypie_charts_scale), "undefined" == typeof settings_sysinfo_theme_updates && (settings_sysinfo_theme_updates = !1), "undefined" == typeof settings_sysinfo_theme_patched_updates && (settings_sysinfo_theme_patched_updates = !1), "undefined" == typeof settings_sysinfo_csf_updates && (settings_sysinfo_csf_updates = !1), "undefined" == typeof settings_sysinfo_link_mini && (settings_sysinfo_link_mini = !1), "undefined" == typeof settings_loader_top && (settings_loader_top = !0), "undefined" == typeof settings_animation_left && (settings_animation_left = !0), settings_animation_left ? $settings_animation_left_slide_time = 120 : $settings_animation_left_slide_time = 0, "undefined" == typeof settings_animation_tabs && (settings_animation_tabs = !1), settings_animation_tabs ? $settings_animation_tabs_slide_time = 160 : $settings_animation_tabs_slide_time = 0, "undefined" == typeof settings_show_terminal_link && (settings_show_terminal_link = !0), "undefined" == typeof settings_favorites && (settings_favorites = !0), $_v__ls__a ? _v__ls__a = "" : _v__ls__a = " hidden", $(".mobile-menu-toggler:visible").length && set_side_slider_visibility(0), navigation_display(), v___available_navigation ? (page_adjust(settings_leftmenu_width, 0), navigation_lock_width()) : $("head").append('<style id="__tmp_no_overflow">body {overflow: hidden}</style>'), $("html").on("dblclick", "body", function() {
             1 != $(this).find(".container-fluid").css("opacity") && page_display()
         }), $.support.pjax && v___available_navigation) {
         var $t_av__excluded_selectors = ':not([target="_blank"]):not([href^="#"]):not([data-href^="#"]):not([data-toggle="collapse"]):not([href*="javascript:"]):not(.has-sub):not([data-has-sub-link]):not([onclick])';
@@ -17,10 +17,10 @@ if (get_server_data("debug")) {
             e.preventDefault(), get_onbeforeunload_status() ? get_onbeforeunload_message(e, this) : get_pjax_action_submit(e, this)
         }), $(document).on("click", "a" + $t_av__excluded_selectors, function(e) {
             get_onbeforeunload_status() ? (e.preventDefault(), get_onbeforeunload_message(e, this)) : get_pjax_action_click(e, this)
-        }), $(document).on("pjax:error", function(e, t, i, a, s) {
+        }), $(document).on("pjax:error", function(e, t, i, a, n) {
             if ("error" === i) {
-                var n = $.active;
-                if (n && ($.active = n - 1), Test.strContains(s.url, "/csf/index.cgi")) return void theme_reload()
+                var s = $.active;
+                if (s && ($.active = s - 1), Test.strContains(n.url, "/csf/index.cgi")) return void theme_reload()
             }
         }), $(document).on("pjax:start", function(e, t) {
             get_server_data("loading", 1), "number" == typeof set_server_tmp_var_timeout && clearTimeout(set_server_tmp_var_timeout)
@@ -29,14 +29,14 @@ if (get_server_data("debug")) {
         }), $(document).on("ready pjax:beforeSend", function(e, t, i) {
             progress.start(), v___module === v___module_file_manager && "function" == typeof __f_____undel && (jsPanel.closeChildpanels("body"), __f_____undel()), "csf" === v___module && "function" == typeof __c_____undel && __c_____undel(i.url), "mysql" !== v___module && "postgresql" !== v___module || "function" != typeof __sql_____undel || __sql_____undel(), "syslog" === v___module && "number" == typeof refreshTimer && clearInterval(refreshTimer);
             var a = $(e.relatedTarget),
-                s = a.attr("href");
-            s = s || i.url.replace(v___location_origin, ""), clicked_in_nav_menu = a.parent().is("[data-linked], .favorites-dcontainer, .menu-exclude.ui-sortable-handle") || "object" == typeof i.callback && "reference" === i.callback[0], clicked_in_nav_menu && ((Test.strContains(s, "mysql") || Test.strContains(s, "postgresql")) && get_bundle_sql(), Test.strContains(s, v___module_file_manager) && get_bundle_file_manager(), Test.strContains(s, "csf") && get_bundle_csf()), "object" == typeof i.callback && "beforeSend" === i.callback[0] && (i.callback[3] ? setTimeout(function() {
+                n = a.attr("href");
+            n = n || i.url.replace(v___location_origin, ""), clicked_in_nav_menu = a.parent().is("[data-linked], .favorites-dcontainer, .menu-exclude.ui-sortable-handle") || "object" == typeof i.callback && "reference" === i.callback[0], clicked_in_nav_menu && ((Test.strContains(n, "mysql") || Test.strContains(n, "postgresql")) && get_bundle_sql(), Test.strContains(n, v___module_file_manager) && get_bundle_file_manager(), Test.strContains(n, "csf") && get_bundle_csf()), "object" == typeof i.callback && "beforeSend" === i.callback[0] && (i.callback[3] ? setTimeout(function() {
                 window[i.callback[1].apply(this, i.callback[2])]
             }, i.callback[3]) : window[i.callback[1].apply(this, i.callback[2])])
-        }), $(document).on("pjax:success", function(e, t, i, a, s) {
-            "object" == typeof s.callback && "success" === s.callback[0] && (s.callback[3] ? setTimeout(function() {
-                window[s.callback[1].apply(this, s.callback[2])]
-            }, s.callback[3]) : window[s.callback[1].apply(this, s.callback[2])])
+        }), $(document).on("pjax:success", function(e, t, i, a, n) {
+            "object" == typeof n.callback && "success" === n.callback[0] && (n.callback[3] ? setTimeout(function() {
+                window[n.callback[1].apply(this, n.callback[2])]
+            }, n.callback[3]) : window[n.callback[1].apply(this, n.callback[2])])
         }), $(document).on("pjax:complete", function(e, t, i) {
             setTimeout(function() {
                 $(".container-fluid-loading").length || progress.end()
@@ -72,9 +72,9 @@ if (get_server_data("debug")) {
         var e = window.navigator.userAgent,
             t = !!e.match(/iPad/i) || !!e.match(/iPhone/i),
             a = !!e.match(/WebKit/i),
-            s = t && a && !e.match(/CriOS/i) && !e.match(/OPiOS/i);
+            n = t && a && !e.match(/CriOS/i) && !e.match(/OPiOS/i);
         navigator.vendor && navigator.vendor.indexOf("Apple") > -1 && navigator.userAgent && navigator.userAgent.match("CriOS");
-        if (bind_sameorigin(), time.tictac(), s && $("html").css("overflow", "auto"), Core.curModuleFile("syslog", "save_log.cgi") && $(".container-fluid.col-lg-10.col-lg-offset-1").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15"), !v___available_navigation && $(".container-fluid").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15").parents("html").addClass("single_tab"), $("body").on("click", "#quota-virtual-server-collapse a.ui_link, #quota-virtual-server-1-collapse a.ui_link, #bw-virtual-server-collapse a.ui_link, #bw-virtual-server-1-collapse a.ui_link", function() {
+        if (bind_sameorigin(), time.tictac(), n && $("html").css("overflow", "auto"), Core.curModuleFile("syslog", "save_log.cgi") && $(".container-fluid.col-lg-10.col-lg-offset-1").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15"), !v___available_navigation && $(".container-fluid").removeClass("col-lg-10 col-lg-offset-1").addClass("margined-top-15").parents("html").addClass("single_tab"), $("body").on("click", "#quota-virtual-server-collapse a.ui_link, #quota-virtual-server-1-collapse a.ui_link, #bw-virtual-server-collapse a.ui_link, #bw-virtual-server-1-collapse a.ui_link", function() {
                 var e = URI.parseQuery(URI($(this).attr("href")).query()).dom,
                     t = "virtualmin";
                 $('.switch-toggle input:not([id="open_' + t + '"]):checked').length && set_switch_position(t), setTimeout(function() {
@@ -90,10 +90,10 @@ if (get_server_data("debug")) {
                     t = Test.strContains($(this).attr("href"), "gparent") ? "gparent" : e,
                     i = URI.parseQuery(URI($(this).attr("href")).query())[t],
                     a = "dom" === e ? "virtualmin" : "id" === e ? "cloudmin" : "webmin",
-                    s = $('.switch-toggle input:not([id="open_' + a + '"]):checked').length;
-                s && set_switch_position(a), e ? setTimeout(function() {
+                    n = $('.switch-toggle input:not([id="open_' + a + '"]):checked').length;
+                n && set_switch_position(a), e ? setTimeout(function() {
                     $("aside select").val() != i && ("dom" === e ? get_navigation_menu_virtualmin(i) : "id" === e && get_navigation_menu_cloudmin(i))
-                }, 300) : s && get_navigation_menu_webmin()
+                }, 300) : n && get_navigation_menu_webmin()
             }), $("body").on("click", function(e) {
                 var t = $("aside select");
                 $(e.target).attr("class") && 0 === $(e.target).attr("class").indexOf("select2") || t && t.length > 0 && t.hasClass("select2-hidden-accessible") && t.select2("close")
@@ -102,7 +102,7 @@ if (get_server_data("debug")) {
             }), $("body").on("keydown", function(e) {
                 var t = e.keyCode ? e.keyCode : e.which,
                     i = String.fromCharCode(t).toLowerCase();
-                $('aside input[name="search"]').is(":focus") || $(".-shell-port-").hasClass("opened") || v___location_path != v___location_prefix + "/server-manager/gvnc.cgi" && v___location_path != v___location_prefix + "/server-manager/login.cgi" && v___location_path != v___location_prefix + "/telnet/" && v___location_path != v___location_prefix + "/telnet/index.cgi" && v___location_path != v___location_prefix + "/stunnel/" && v___location_path != v___location_prefix + "/stunnel/index.cgi" && ($("input").is(":focus") || $("select").is(":focus") || $("textarea").is(":focus") || $(".modal.in").length || !i || !/[a-zA-Z0-9]/.test(i) || e.ctrlKey || e.altKey || e.metaKey || 106 === t || 107 === t || 109 === t || 112 === t || 113 === t || 114 === t || 115 === t || 116 === t || 117 === t || 118 === t || 119 === t || 120 === t || 121 === t || 122 === t || 123 === t || ($(".dataTables_filter label input").length ? ($(".btn-filter-top-right").trigger("click"), $(".btn-filter-top-right .dataTable-mirror").focus().trigger("keyup")) : setTimeout(function() {
+                $('aside input[name="search"]').is(":focus") || $(".-shell-port-").hasClass("opened") || v___location_path != v___location_prefix + "/server-manager/gvnc.cgi" && v___location_path != v___location_prefix + "/server-manager/login.cgi" && v___location_path != v___location_prefix + "/telnet/" && v___location_path != v___location_prefix + "/telnet/index.cgi" && v___location_path != v___location_prefix + "/stunnel/" && v___location_path != v___location_prefix + "/stunnel/index.cgi" && ($("input").is(":focus") || $("select").is(":focus") || $("textarea").is(":focus") || $(".modal.in").length || !i || !/[a-zA-Z0-9]/.test(i) || e.ctrlKey || e.altKey || e.metaKey || 106 === t || 107 === t || 109 === t || 112 === t || 113 === t || 114 === t || 115 === t || 116 === t || 117 === t || 118 === t || 119 === t || 120 === t || 121 === t || 122 === t || 123 === t || ($(".dataTables_filter label input").length || $(".btn-accordion-filter").length ? ($(".btn-filter-top-right, .btn-accordion-filter").trigger("click"), $(".btn-filter-top-right .dataTable-mirror, .btn-accordion-filter .dataTable-mirror").focus().trigger("keyup")) : setTimeout(function() {
                     e.shiftKey && "1" == i ? $('aside input[name="search"]').focus().val("!") : $('aside input[name="search"]').focus().val(i)
                 }, 1)))
             }), v___available_navigation && ($(document).ajaxSend(function(e, t, i) {}).ajaxStop(function() {}), $.ajaxSetup({
@@ -115,20 +115,20 @@ if (get_server_data("debug")) {
             })), function() {
                 if ("function" == typeof Messenger.Message) {
                     var e, t, i, a = {}.hasOwnProperty,
-                        s = function(e, t) {
+                        n = function(e, t) {
                             function i() {
                                 this.constructor = e
                             }
-                            for (var s in t) a.call(t, s) && (e[s] = t[s]);
+                            for (var n in t) a.call(t, n) && (e[n] = t[n]);
                             return i.prototype = t.prototype, e.prototype = new i, e.__super__ = t.prototype, e
                         };
                     e = jQuery, i = '<div class="messenger-spinner">\n    <span class="messenger-spinner-side messenger-spinner-side-left">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n    <span class="messenger-spinner-side messenger-spinner-side-right">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n</div>', t = function(t) {
                         function a() {
                             return a.__super__.constructor.apply(this, arguments)
                         }
-                        return s(a, t), a.prototype.template = function(t) {
-                            var s;
-                            return (s = a.__super__.template.apply(this, arguments)).append(e(i)), s
+                        return n(a, t), a.prototype.template = function(t) {
+                            var n;
+                            return (n = a.__super__.template.apply(this, arguments)).append(e(i)), n
                         }, a
                     }(Messenger.Message), Messenger.themes.air = {
                         Message: t
@@ -145,11 +145,11 @@ if (get_server_data("debug")) {
                 $.when(get_server_tmp_var("goto", 0, e)).then(function(t, i, a) {
                     if (a.responseText && !get_server_data("initial-wizard")) {
                         if (Test.strContains(a.responseText, "virtual-server")) {
-                            var s = URI.parseQuery(URI(a.responseText).query()).dom;
-                            (!$t_uri_virtualmin || $t_uri_virtualmin && s != $('select[name="dom"]').val()) && (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(s || !1))
+                            var n = URI.parseQuery(URI(a.responseText).query()).dom;
+                            (!$t_uri_virtualmin || $t_uri_virtualmin && n != $('select[name="dom"]').val()) && (set_switch_position("virtualmin"), get_navigation_menu_virtualmin(n || !1))
                         } else if (Test.strContains(a.responseText, "server-manager")) {
-                            var n = URI.parseQuery(URI(a.responseText).query()).id;
-                            (!$t_uri_cloudmin || $t_uri_cloudmin && n != $('select[name="sid"]').val()) && (set_switch_position("cloudmin"), get_navigation_menu_cloudmin(n))
+                            var s = URI.parseQuery(URI(a.responseText).query()).id;
+                            (!$t_uri_cloudmin || $t_uri_cloudmin && s != $('select[name="sid"]').val()) && (set_switch_position("cloudmin"), get_navigation_menu_cloudmin(s))
                         } else $t_uri_webmin || 3 == v___user_level || (set_switch_position("webmin"), get_navigation_menu_webmin("webmin")), 3 == v___user_level && !$t_uri_webmail && Test.strContains(a.responseText, "mailbox") && Core.moduleAvailable("mailbox") ? (set_switch_position("webmail"), setTimeout(function() {
                             get_navigation_menu_webmin("webmail")
                         }, 10)) : 3 != v___user_level || $t_uri_usermin || Test.strContains(a.responseText, "mailbox") || (set_switch_position("usermin"), setTimeout(function() {
@@ -234,19 +234,19 @@ if (get_server_data("debug")) {
                 } else if ("virtualmin" === t || "cloudmin" === t) {
                     var a;
                     a = "cloudmin" === t ? "/server-manager/index.cgi" : "/virtual-server/index.cgi";
-                    var s = navigation_trigger(a, 2);
+                    var n = navigation_trigger(a, 2);
+                    set_server_tmp_var("goto", navigation_trigger(n, 1)), setTimeout(function() {
+                        theme_open_new_tab(n)
+                    }, 200)
+                } else if ("webmail" === t) {
+                    s = v___location_prefix + "/mailbox/index.cgi?" + $__theme_navigation;
                     set_server_tmp_var("goto", navigation_trigger(s, 1)), setTimeout(function() {
                         theme_open_new_tab(s)
                     }, 200)
-                } else if ("webmail" === t) {
-                    n = v___location_prefix + "/mailbox/index.cgi?" + $__theme_navigation;
-                    set_server_tmp_var("goto", navigation_trigger(n, 1)), setTimeout(function() {
-                        theme_open_new_tab(n)
-                    }, 200)
                 } else {
-                    var n = v___location_prefix + "/sysinfo.cgi?" + $__theme_navigation;
-                    set_server_tmp_var("goto", navigation_trigger(n, 1)), setTimeout(function() {
-                        theme_open_new_tab(n)
+                    var s = v___location_prefix + "/sysinfo.cgi?" + $__theme_navigation;
+                    set_server_tmp_var("goto", navigation_trigger(s, 1)), setTimeout(function() {
+                        theme_open_new_tab(s)
                     }, 200)
                 }
             }), $(".switch-toggle").on("click", "input.dynamic", function(e) {
@@ -270,27 +270,27 @@ if (get_server_data("debug")) {
             }), __shell_commands__i__ = 0, $(".form-control.sidebar-search").focus(function(e) {
                 $(".__logo").addClass("inited"), e.preventDefault(), e.stopPropagation(), __shell_commands__i__ = 0
             });
-            var n = $("body").find(".-shell-port-"),
-                o = n.find('input[data-command="true"]'),
-                r = n.find("div[data-output]"),
-                _ = n.find(".-shell-port-container"),
-                l = n.data("autocomplete");
+            var s = $("body").find(".-shell-port-"),
+                o = s.find('input[data-command="true"]'),
+                r = s.find("div[data-output]"),
+                _ = s.find(".-shell-port-container"),
+                l = s.data("autocomplete");
             if ($(window).keydown(function(e) {
                     var t = $("body").find(".-shell-port-").hasClass("opened");
                     if (t || (navigation_focus_search(e), theme_shortcuts(e)), 38 === e.keyCode && (o.is(":focus") && t || $(".form-control.sidebar-search").is(":focus")) && e.preventDefault(), 9 === e.keyCode && o.is(":focus") && t) {
                         if (e.preventDefault(), !l) return;
                         var i = o.val().trim().split(/\s+(?!-)/),
                             a = i.length,
-                            s = i[0] && -1 === i[0].indexOf("-") ? 0 : 1,
+                            n = i[0] && -1 === i[0].indexOf("-") ? 0 : 1,
                             d = i[1] && -1 === i[1].indexOf(":") ? 0 : 1,
                             c = o.val().endsWith(" "),
                             p = "service" === $.trim(i[0]),
                             f = "systemctl" === $.trim(i[0]),
                             g = $.trim(i[0]) && $.trim(i[0]).startsWith("chown"),
-                            u = 1 !== i.length || !o.val().length || s || c ? p || f ? "services" : g ? "permissions" : "lists" : "commands";
+                            u = 1 !== i.length || !o.val().length || n || c ? p || f ? "services" : g ? "permissions" : "lists" : "commands";
                         if (!$.trim(o.val()).length) return;
                         var m = o.val(),
-                            h = n.find(".-shell-port-pwd").attr("data-pwd");
+                            h = s.find(".-shell-port-pwd").attr("data-pwd");
                         if ("services" === u) {
                             if ("systemctl" === (u = p ? "service" : "systemctl") && 3 !== i.length) return;
                             m = "service" == u ? $.trim(i[1]) : $.trim(i[2]), "service" === $.trim(i[0]) && (2 === i.length && c || 3 === i.length) && (m = 3 === i.length ? "::::" + $.trim(i[1]) + "::::" + $.trim(i[2]) : "::::" + $.trim(i[1]))
@@ -309,12 +309,12 @@ if (get_server_data("debug")) {
                                 if (1 === t)
                                     if ("service" === u || "systemctl" === u || "lists" === u) {
                                         var a = $.trim(i[0]),
-                                            s = $.trim(i[0]) + " " + $.trim(i[1]);
-                                        "lists" === u ? ("cd" === a && e[0].endsWith("/") || "cd" !== a) && ("cd" === a || "cat" === a ? o.val(a + " " + e[0]) : $.trim(i[2]) ? o.val(s + " " + e[0]) : o.val(a + " " + e[0])) : "service" !== a || 2 !== i.length && 3 !== i.length ? "systemctl" === a && 3 === i.length && o.val(a + " " + $.trim(i[1]) + " " + e[0]) : 2 === i.length ? o.val(a + " " + e[0] + " ") : 3 === i.length && o.val($.trim(i[0]) + " " + $.trim(i[1]) + " " + e[0])
+                                            n = $.trim(i[0]) + " " + $.trim(i[1]);
+                                        "lists" === u ? ("cd" === a && e[0].endsWith("/") || "cd" !== a) && ("cd" === a || "cat" === a ? o.val(a + " " + e[0]) : $.trim(i[2]) ? o.val(n + " " + e[0]) : o.val(a + " " + e[0])) : "service" !== a || 2 !== i.length && 3 !== i.length ? "systemctl" === a && 3 === i.length && o.val(a + " " + $.trim(i[1]) + " " + e[0]) : 2 === i.length ? o.val(a + " " + e[0] + " ") : 3 === i.length && o.val($.trim(i[0]) + " " + $.trim(i[1]) + " " + e[0])
                                     } else g ? d ? c || i[2] ? o.val($.trim(i[0]) + " " + $.trim(i[1]) + " " + e[0]) : o.val($.trim(i[0]) + " " + $.trim($.trim(i[1]).split(":")[0]) + ":" + e[0] + " ") : o.val($.trim(i[0]) + " " + e[0] + ":") : o.val(e[0] + " ");
                                 else if (t > 1) {
-                                    var n = "<b>" + $(".-shell-port-type").text() + " " + Convert.htmlEscape(o.val()) + "</b>\n";
-                                    r.find("pre").append(n), r.find("pre").append(Convert.htmlEscape(e.join("\n") + "\n")), _.scrollTop(_[0].scrollHeight)
+                                    var s = "<b>" + $(".-shell-port-type").text() + " " + Convert.htmlEscape(o.val()) + "</b>\n";
+                                    r.find("pre").append(s), r.find("pre").append(Convert.htmlEscape(e.join("\n") + "\n")), _.scrollTop(_[0].scrollHeight)
                                 }
                                 setTimeout(function() {
                                     o.focus().mousedown()
@@ -327,7 +327,7 @@ if (get_server_data("debug")) {
                     var t = $("body").find(".-shell-port-").hasClass("opened");
                     if (t) {
                         var a = 0,
-                            s = 0,
+                            n = 0,
                             _ = 0,
                             l = $(".form-control.sidebar-search"),
                             d = $t_uri_cloudmin && $('a[target="page"][href*="/server-manager/save_serv.cgi"][href*="shell=1"]').length,
@@ -338,7 +338,7 @@ if (get_server_data("debug")) {
                             if (!Core.moduleAvailable("shell")) return;
                             p = v___location_prefix + "/shell/index.cgi"
                         }
-                        if ((t || l.is(":focus")) && 8 === e.keyCode && (__shell_commands__i__ = 0), t ? (a = $.trim(o.val()), s = 1, _ = 1) : (a = l.val(), s = void 0 !== l.val(), _ = 0), (_ || s && (!a.trim() || a.trim().startsWith("!"))) && (38 == e.keyCode || 40 == e.keyCode)) {
+                        if ((t || l.is(":focus")) && 8 === e.keyCode && (__shell_commands__i__ = 0), t ? (a = $.trim(o.val()), n = 1, _ = 1) : (a = l.val(), n = void 0 !== l.val(), _ = 0), (_ || n && (!a.trim() || a.trim().startsWith("!"))) && (38 == e.keyCode || 40 == e.keyCode)) {
                             e.preventDefault(), e.stopPropagation(), void 0 === localStorage.getItem(v___server_hostname + "-shell_commands") && localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify({}));
                             var f = JSON.parse(localStorage.getItem(v___server_hostname + "-shell_commands")),
                                 g = f ? f.length : 0;
@@ -353,23 +353,23 @@ if (get_server_data("debug")) {
                             }
                             return
                         }
-                        if (s && a.trim().startsWith("!") && 27 == e.keyCode) return e.preventDefault(), e.stopPropagation(), void l.val("").focus();
-                        if (s && a.trim().startsWith("!") && 13 == e.keyCode && (l.addClass("_shell_form_"), e.preventDefault(), e.stopPropagation(), 1 == Core.moduleAvailable("shell") || d)) {
-                            o.val(a.trim().substring(1)).focus(), theme_shell_open(n);
+                        if (n && a.trim().startsWith("!") && 27 == e.keyCode) return e.preventDefault(), e.stopPropagation(), void l.val("").focus();
+                        if (n && a.trim().startsWith("!") && 13 == e.keyCode && (l.addClass("_shell_form_"), e.preventDefault(), e.stopPropagation(), 1 == Core.moduleAvailable("shell") || d)) {
+                            o.val(a.trim().substring(1)).focus(), theme_shell_open(s);
                             var m = $.Event("keyup");
                             m.keyCode = 13, o.trigger(m)
                         }
-                        var h = n.find(".-shell-port-container"),
-                            v = n.find(".-shell-port-pwd"),
+                        var h = s.find(".-shell-port-container"),
+                            v = s.find(".-shell-port-pwd"),
                             b = v.attr("data-pwd"),
                             y = $.trim(o.val()),
                             k = 0,
                             x = e.keyCode ? e.keyCode : e.which,
                             w = e.altKey && "l" == String.fromCharCode(e.which).toLowerCase();
-                        if (27 === x) return void theme_shell_close(n);
+                        if (27 === x) return void theme_shell_close(s);
                         if (o.is(":focus") || check_selected_text() || (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey || o.val(o.val() + String.fromCharCode(e.which).toLowerCase()), o.focus()), (y && 13 === x || w) && (Core.moduleAvailable("shell") || d)) {
                             if (1 === v___shell_processing) return;
-                            v___shell_processing = 1, ("clear" == y || "reset" == y || "exit" == y || w) && (r.find("pre").html(""), theme_shell_clear(o), "exit" == y && theme_shell_close(n)), "cd ~" == y && (k = y, y = "cd " + v.attr("data-home"));
+                            v___shell_processing = 1, ("clear" == y || "reset" == y || "exit" == y || w) && (r.find("pre").html(""), theme_shell_clear(o), "exit" == y && theme_shell_close(s)), "cd ~" == y && (k = y, y = "cd " + v.attr("data-home"));
                             var C = !1;
                             if ("cd /" == y && (C = "/"), "history -c" == y) {
                                 localStorage.setItem(v___server_hostname + "-shell_commands", JSON.stringify({}));
@@ -396,9 +396,9 @@ if (get_server_data("debug")) {
                                     P = "<b>" + $(".-shell-port-type").text() + " " + y + "</b>\n";
                                 $.each($(I), function(e, t) {
                                     var a = e.toString().length,
-                                        s = "";
-                                    for (i = 0; i < D + 1 - a; i++) s += " ";
-                                    "string" == typeof t && (P += e + 1 + s + t + "\n")
+                                        n = "";
+                                    for (i = 0; i < D + 1 - a; i++) n += " ";
+                                    "string" == typeof t && (P += e + 1 + n + t + "\n")
                                 }).promise().done(function() {
                                     r.find("pre").append(P), h.scrollTop(h[0].scrollHeight)
                                 })
@@ -524,7 +524,7 @@ if (get_server_data("debug")) {
             }), $("body").on("click", ".user-link.palette-toggle", function(e) {
                 theme_toggle_night_mode()
             }), $("body").on("click", ".user-link.ported-console", function(e) {
-                theme_shell_check_available() && theme_shell_open(n)
+                theme_shell_check_available() && theme_shell_open(s)
             }), slider_add_no_notifications(), slider_check_notifications()
         }
         $("body").on("click", "#headln2c > .favorites:not(.dummy), .xcustom-favorites:not(.dummy)", function(e) {
@@ -534,10 +534,10 @@ if (get_server_data("debug")) {
                 $(this).removeClass("fa-star-o").addClass("fa-star text-warning");
                 var i = $("#headln2c > span[data-main_title]").text(),
                     a = $(".has-sub.active").text().trim(),
-                    s = $(".sub_active").text().trim(),
-                    n = "",
+                    n = $(".sub_active").text().trim(),
+                    s = "",
                     o = "";
-                ($t_uri_virtualmin || $t_uri_cloudmin) && (n = $("aside .ui_select option:selected").text()), $('body[class^="' + v___module_file_manager + '"]').length && (o = (o = URI.parseQuery(URI(v___location).query()).path) ? "[" + o + "]" : "[/]"), favorites_add(t, (n.length ? n + " - " : "") + (a.length ? a + "/" : "") + (s.length ? s + (i.trim().length ? ": " : "") : "") + i.trim() + (o.length ? " " + o : ""), $t_uri_virtualmin ? "virtualmin" : $t_uri_cloudmin ? "cloudmin" : "webmin"), favorites_save()
+                ($t_uri_virtualmin || $t_uri_cloudmin) && (s = $("aside .ui_select option:selected").text()), $('body[class^="' + v___module_file_manager + '"]').length && (o = (o = URI.parseQuery(URI(v___location).query()).path) ? "[" + o + "]" : "[/]"), favorites_add(t, (s.length ? s + " - " : "") + (a.length ? a + "/" : "") + (n.length ? n + (i.trim().length ? ": " : "") : "") + i.trim() + (o.length ? " " + o : ""), $t_uri_virtualmin ? "virtualmin" : $t_uri_cloudmin ? "cloudmin" : "webmin"), favorites_save()
             } else $(this).addClass("fa-star-o").removeClass("fa-star text-warning"), favorites_remove(t)
         }), 1 === v___initial_load && favorites_init(), $("#favorites-menu .favorites-menu-content").on("mouseover", "li:not(.exclude) span.f__c, li:not(.exclude) span.f__c small", function() {
             $(this).find("small").removeClass("hidden")
@@ -613,10 +613,10 @@ if (get_server_data("debug")) {
             var t = $(this),
                 i = $("body").add($(".__page")),
                 a = $("aside").add($("#right-side-tabs")).add($(".__page")),
-                s = "1" == t.data("stable") ? "-release" : "-beta";
+                n = "1" == t.data("stable") ? "-release" : "-beta";
             i.addClass("pointer-events-none"), set_onbeforeunload_status(1, 0), a.addClass("bg-filter-blur-grayscale-opacity50"), theme_messenger('<i class="fa fa-lg fa-fw fa-git-pull"></i>' + theme_language("theme_xhred_git_patch_initiated") + " " + theme_language("theme_xhred_global_please_wait") + '&nbsp;&nbsp;&nbsp;<span class="cspinner"><span class="cspinner-icon white smallest margined-top-4"></span></span>', 1800, "info", "themeUpgrade", 0), $.ajax({
                 type: "POST",
-                url: v___location_prefix + "/index.cgi?xhr-update=1&xhr-update-type=" + s,
+                url: v___location_prefix + "/index.cgi?xhr-update=1&xhr-update-type=" + n,
                 data: !1,
                 dataType: "json",
                 success: function(e) {
@@ -664,15 +664,15 @@ if (get_server_data("debug")) {
                 "margin-left": e
             }, 450), $(".right-side-tabs, .right-side-tabs-toggler").addClass("pointer-events-none bg-filter-grayscale-opacity50");
             var a = $(this).find(".modal-body h4"),
-                s = $(this).find(".modal-body h4:first");
+                n = $(this).find(".modal-body h4:first");
             if (!$(this).find(".modal-body h4:first .diffctl").length) {
                 r = new RegExp(RegExp.quote(________version_curr_text), "g");
                 ________multi_in_branch && (a.replaceText(r, "<span>" + _____version__x + "</span>"), a.replaceText(/Version/, "Versions"));
-                var n = $(this).find('.modal-body h4:contains("patch")').length;
-                if (a.length && n) {
+                var s = $(this).find('.modal-body h4:contains("patch")').length;
+                if (a.length && s) {
                     var o = parseFloat($(this).find('.modal-body a[href*="authentic-theme/releases"]:first').text().match(/-?(?:\d+(?:\.\d*)?|\.\d+)/)[0]);
-                    s.append('<a data-toggle="tooltip" data-title="<strong>' + theme_language("theme_xhred_git_compare_changes") + "</strong><br>" + theme_language("theme_xhred_global_committed_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + o + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>'), s.after('<span class="version_separator version_dev" style="margin-top: -32px;margin-right: 0;">            <span class="smaller text-danger"><span>' + i + "</span></span></span>")
-                } else s.append('<a target="_blank" data-toggle="tooltip" data-html="true" data-title="<strong>' + theme_language("theme_xhred_global_complete_changelog") + "</strong><br>" + theme_language("theme_xhred_global_released_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>').append('<a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator margined-top-10">' + ________version_curr_text + "</a>")
+                    n.append('<a data-toggle="tooltip" data-title="<strong>' + theme_language("theme_xhred_git_compare_changes") + "</strong><br>" + theme_language("theme_xhred_global_committed_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/compare/' + o + '...master"><i class="fa fa-lg fa-git-pull fa-flip-horizontal"></i></a>'), n.after('<span class="version_separator version_dev" style="margin-top: -32px;margin-right: 0;">            <span class="smaller text-danger"><span>' + i + "</span></span></span>")
+                } else n.append('<a target="_blank" data-toggle="tooltip" data-html="true" data-title="<strong>' + theme_language("theme_xhred_global_complete_changelog") + "</strong><br>" + theme_language("theme_xhred_global_released_on") + ": <em>" + __release_date_time + '</em>" class="btn btn-transparent diffctl changelogctl text-dark text-force-link-hover" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-1_50x fa-changelog' + (________multi_in_branch ? " multi-ver" : " single_ver") + '"></i></a>').append('<a href="https://github.com/qooob/authentic-theme/releases/tag/' + ________version_curr_text + '" class="version_separator margined-top-10">' + ________version_curr_text + "</a>")
             }
             var r = new RegExp(RegExp.quote("(" + _____release_date + ")"), "g");
             a.replaceText(r, "");
@@ -682,8 +682,8 @@ if (get_server_data("debug")) {
                     t = $(this).parent("li"),
                     i = t.parent("ul"),
                     a = t.find("a:not(.bctl)"),
-                    s = a.length;
-                ________multi_in_branch ? (_.push(a), 1 === i.find("li").length && (i.prev("hr").prev("a").remove(), i.prev("hr").remove(), i.addClass("no-data")), t.remove()) : (e.html([e.text().slice(0, 6), s + " ", e.text().slice(6)].join("")), t.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
+                    n = a.length;
+                ________multi_in_branch ? (_.push(a), 1 === i.find("li").length && (i.prev("hr").prev("a").remove(), i.prev("hr").remove(), i.addClass("no-data")), t.remove()) : (e.html([e.text().slice(0, 6), n + " ", e.text().slice(6)].join("")), t.find("a:first").before('<a class="btn btn-xxs btn-transparent bctl margined-right-8 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
                     a.toggleClass("hidden"), t.find("a.bctl i").toggleClass("fa-minus-square-o")
                 }), a.addClass("obj-popup hidden"))
             }).promise().done(function() {
@@ -700,9 +700,9 @@ if (get_server_data("debug")) {
                     t.html([t.text().slice(0, 6), a + " ", t.text().slice(6)].join("")), t.append('<a class="btn btn-xxs btn-transparent bctl margined-left-4 text-semi-dark text-force-link-hover" style="padding-left: 1px; padding-right: 1px" href="javascript:;" ><i class="fa fa-plus-square-o"></i></a>'), t.find("a.bctl").click(function(e) {
                         i.toggleClass("hidden"), t.find("a.bctl i").toggleClass("fa-minus-square-o")
                     }), i.addClass("obj-popup hidden");
-                    var s = $("div[data-bugs]"),
-                        n = s.find("a:not(.bctl)").length;
-                    !n && s.prev(".hr-dashed").remove(), !n && s.remove()
+                    var n = $("div[data-bugs]"),
+                        s = n.find("a:not(.bctl)").length;
+                    !s && n.prev(".hr-dashed").remove(), !s && n.remove()
                 }
                 var o = $(".modal#update_notice h4 span");
                 if (Test.strContains(o.text(), "...") && Test.strContains(o.text(), "patch")) {
@@ -819,32 +819,32 @@ if (get_server_data("debug")) {
                 if (13 != t || 1 !== i.length || e.shiftKey) {
                     if (13 == t && 1 === i.length && e.shiftKey) {
                         a.trigger("click").trigger("dblclick");
-                        var s = $(".mppopup .mppopup_multi_done:visible");
-                        s.length && setTimeout(function() {
-                            s.trigger("click")
+                        var n = $(".mppopup .mppopup_multi_done:visible");
+                        n.length && setTimeout(function() {
+                            n.trigger("click")
                         }, 240)
                     }
                 } else a.trigger("click");
                 $(".mppopup table tbody tr.noresults").length || $(".mppopup table tbody").append('<tr class="hidden noresults"><td class="text-center" colspan="' + $(".mppopup table tbody tr:first-child td").length + '">' + theme_language("theme_xhred_global_no_results_found") + "</td></tr>");
-                var n = $(".mppopup table tbody tr:visible:not(.noresults)"),
+                var s = $(".mppopup table tbody tr:visible:not(.noresults)"),
                     o = $(".mppopup table tbody tr.noresults");
-                n.length ? o.addClass("hidden") : o.removeClass("hidden")
+                s.length ? o.addClass("hidden") : o.removeClass("hidden")
             }
         }), $("body").on("click", "button[data-mmclick]:not(.disabled), input[data-mmclick]:not(.disabled)", function(e) {
             e.preventDefault(), e.stopPropagation(), refInput = chooser_get_target($(this), 1);
             var t = $(this),
                 i = refInput.val(),
                 a = encodeURIComponent(i),
-                s = $(this).attr("data-mmclick").match("window.open\\(['\"]*(.*?)(\\s*['\"]*,.*?)"),
-                n = s[1].match(/(\w+\.[a-z]{3,4})/gi)[0].replace(".cgi", "");
-            if (t.addClass("disabled").attr("disabled", "disabled"), s[1]) {
-                var o = s[1].replace("encodeURIComponent(ifield.value)", "refInputCurrValSafe");
+                n = $(this).attr("data-mmclick").match("window.open\\(['\"]*(.*?)(\\s*['\"]*,.*?)"),
+                s = n[1].match(/(\w+\.[a-z]{3,4})/gi)[0].replace(".cgi", "");
+            if (t.addClass("disabled").attr("disabled", "disabled"), n[1]) {
+                var o = n[1].replace("encodeURIComponent(ifield.value)", "refInputCurrValSafe");
                 o = o.replace('"+"', "").replace('"+', "").replace("refInputCurrValSafe", a);
 
-                function r(e, t, a, s, o) {
+                function r(e, t, a, n, o) {
                     var r;
                     r = o ? '                <div class="modal-footer">                  <div class="input-group">                    <input data-role="tagsinput" class="form-control ui_textbox" type="text" value="' + (i ? i.replace(/ /g, ",") : "") + '">                    <span class="input-group-btn mppopup_multi_done">                      <button type="button" class="btn btn-success heighter-28"><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + theme_language("theme_xhred_global_select") + "</button>                    </span>                  </div>                </div>" : '                <div class="modal-footer">                  <div class="input-group">                    <input class="form-control ui_textbox" data-mppopup_value type="text" value="' + (refInput.is("textarea") ? "" : i) + '">                    <span class="input-group-btn mppopup_string_done">                      <button type="button" class="btn btn-success heighter-28" data-mppopup_confirm><i class="fa fa-fw fa-circle-check"> </i>&nbsp;' + theme_language("theme_xhred_global_select") + "</button>                    </span>                  </div>                </div>";
-                    var _ = '                    <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                      <div class="modal-dialog" role="document">                      <div class="modal-content">                        <div class="modal-header">                          <button type="button" class="close" data-dismiss="modal" aria-label="' + theme_language("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                          <h4 class="modal-title">                            <div class="mppopup_filter">                              <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + theme_language("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                            </div>                          </h4>                        </div>                        <div class="modal-body ' + n + '">                          ' + e + "                        </div>                          " + r + "                      </div>                    </div>                  </div>              ";
+                    var _ = '                    <div class="modal fade fade5 mppopup" tabindex="-1" role="dialog">                      <div class="modal-dialog" role="document">                      <div class="modal-content">                        <div class="modal-header">                          <button type="button" class="close" data-dismiss="modal" aria-label="' + theme_language("theme_xhred_global_close") + '"><span aria-hidden="true">&times;</span></button>                          <h4 class="modal-title">                            <div class="mppopup_filter">                              <input class="form-control ui_textbox mppopup_filter_input" style="opacity: 0" type="text" placeholder="' + theme_language("theme_xhred_datatable_filter") + '" size="50" onkeyup="filter_match(this.value,\'row\',true);">                            </div>                          </h4>                        </div>                        <div class="modal-body ' + s + '">                          ' + e + "                        </div>                          " + r + "                      </div>                    </div>                  </div>              ";
                     $("body").append(_), refInput.addClass("refInputData"), $("body .mppopup").modal("show")
                 }
 
@@ -884,8 +884,8 @@ if (get_server_data("debug")) {
                         else {
                             if ($.isArray(i) && -1 === i[1].indexOf("&multi=1")) return;
                             var a = t,
-                                s = $(a).filter("table").html();
-                            r('<table class="table table-hover table-condensed table-striped type2" data-target="' + refInput + '">' + s + "</table>", 0, 0, refInput, 0)
+                                n = $(a).filter("table").html();
+                            r('<table class="table table-hover table-condensed table-striped type2" data-target="' + refInput + '">' + n + "</table>", 0, 0, refInput, 0)
                         }
                     }
                 })
@@ -918,11 +918,6 @@ if (get_server_data("debug")) {
                 }, 0), window.onbeforeunload = null
             }, $(function() {
                 v___available_navigation || progress.end()
-            }), "debug" === get_server_data("debug") && (window.onerror = function(e, t, i) {
-                console.log("Error", {
-                    acc: "error",
-                    data: "Error:" + e + " URL:" + t + " L:" + i
-                })
             })
         }, 100), theme_alert_charset(), favorites_detect(), page_render(0), setTimeout(function() {
             v___initial_load = 0
