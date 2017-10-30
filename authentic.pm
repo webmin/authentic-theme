@@ -519,6 +519,35 @@ sub theme_ui_password
     return $rv;
 }
 
+sub theme_ui_select
+{
+
+my ($name, $value, $opts, $size, $multiple, $missing, $dis, $tags) = @_;
+my $rv;
+$rv .= "<select class='ui_select' ".
+       "name=\"".&quote_escape($name)."\" ".
+       ($size ? " size='$size'" : "").
+       ($multiple ? " multiple" : "").
+       ($dis ? " disabled=true" : "").($tags ? " ".$tags : "").">\n";
+my ($o, %opt, $s);
+my %sel = ref($value) ? ( map { $_, 1 } @$value ) : ( $value, 1 );
+foreach $o (@$opts) {
+	$o = [ $o ] if (!ref($o));
+	$rv .= "<option value=\"".&quote_escape($o->[0])."\"".
+	       ($sel{$o->[0]} ? " selected" : "").($o->[2] ne '' ? " ".$o->[2] : "").">".
+	       ($o->[1] || $o->[0])."</option>\n";
+	$opt{$o->[0]}++;
+	}
+foreach $s (keys %sel) {
+	if (!$opt{$s} && $missing) {
+		$rv .= "<option value=\"".&quote_escape($s)."\"".
+		       " selected>".($s eq "" ? "&nbsp;" : $s)."</option>\n";
+		}
+	}
+$rv .= "</select>\n";
+return $rv;
+}
+
 sub theme_ui_radio
 {
     my ($name, $val, $opts, $dis) = @_;
