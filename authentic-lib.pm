@@ -884,7 +884,7 @@ sub print_easypie_charts
     print_easypie_chart(
         $columns,
         (($virt_percent || $virt_percent eq "0") ? $virt_percent : 'NaN')
-        ,    # -sin(9**9**9)
+        ,
         (($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $Atext{'body_virt2'} :
            $Atext{'body_virt'}
         ),
