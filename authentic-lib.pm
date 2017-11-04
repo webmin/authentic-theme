@@ -881,14 +881,12 @@ sub print_easypie_charts
                            $Atext{'body_real'}
                         ),
                         'sysinfo_mem_percent');
-    print_easypie_chart(
-        $columns,
-        (($virt_percent || $virt_percent eq "0") ? $virt_percent : 'NaN')
-        ,
-        (($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $Atext{'body_virt2'} :
-           $Atext{'body_virt'}
-        ),
-        'sysinfo_virt_percent');
+    print_easypie_chart($columns,
+                        (($virt_percent || $virt_percent eq "0") ? $virt_percent : 'NaN'),
+                        (($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $Atext{'body_virt2'} :
+                           $Atext{'body_virt'}
+                        ),
+                        'sysinfo_virt_percent');
 
     # Disk usage
     print_easypie_chart($columns,
@@ -1063,8 +1061,9 @@ sub get_sysinfo_vars
               ) .
               '" class="btn btn-xxs btn-' . ($git_version_remote ? 'warning' : 'success') .
               ' authentic_update" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw ' .
-              ($git_version_remote ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $Atext{'theme_update'} . '</a>' .
-'<a class="btn btn-xxs btn-info" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
+              ($git_version_remote ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $Atext{'theme_update'} .
+              '</a>' . '<a class="btn btn-xxs btn-info ' . ($git_version_remote ? 'hidden' : 'btn-info') .
+'" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $Atext{'theme_changelog'}
               . '</a>' . '<a data-remove-version="' .
               $remote_version . '" class="btn btn-xxs btn-warning' . ($git_version_remote ? ' hidden' : '') .
