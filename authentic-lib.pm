@@ -393,7 +393,7 @@ sub get_extended_sysinfo
                           ' disable-animations'
                       ) .
                       '">
-                        <div class="panel-heading" role="tab" id="'
+                        <div class="panel-heading" data-toggle="collapse" data-target="#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" role="tab" id="'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '">
                           <h4 class="panel-title">
                             <a data-toggle="collapse" href="#'
@@ -1582,8 +1582,7 @@ sub print_panel
            ' disable-animations'
       ) .
       '">
-                  <div class="panel-heading" role="tab" id="'
-      . $id . '">
+                  <div class="panel-heading" data-toggle="collapse" data-target="#' . $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" href="#'
       . $id . '-collapse" aria-expanded="'

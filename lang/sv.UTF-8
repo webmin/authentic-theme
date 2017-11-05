@@ -731,3 +731,8 @@ theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanele
 #19.02
 theme_xhred_filter_content=Filtrera innehåll
 theme_xhred_log_file_empty=Loggfilen är tom
+
+
+#19.03
+theme_xhred_config_configurable_options=Configurable options
+theme_xhred_filter_content_no_matches_query=No content matches %str query
