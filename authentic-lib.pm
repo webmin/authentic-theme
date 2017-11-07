@@ -2163,13 +2163,6 @@ sub _settings
             }
         }
 
-        if (!&foreign_available("server-manager") &&
-            !foreign_available("virtual-server") &&
-            !usermin_available('mailbox'))
-        {
-            push(@_s_e, 'settings_right_page_defaults_title');
-        }
-
         # List of settings for Virtualmin
         my @s_vm_e = ('settings_right_virtualmin_default', 'settings_hotkey_toggle_key_virtualmin');
 
