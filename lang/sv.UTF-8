@@ -723,7 +723,6 @@ theme_xhred_global_seconds=Sekunder
 theme_xhred_global_minute=Minut
 theme_xhred_global_minutes=Minuter
 
-
 #19.01
 theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanelen på din dator, använd en uppdaterad aktuell webbläsare.<br><br><em>Internet Explorer</em> stöds inte längre.<br><br>Rekommenderade webbläsare är <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em>, <em>Safari</em> eller <em>Edge</em>.
 
@@ -736,3 +735,4 @@ theme_xhred_log_file_empty=Loggfilen är tom
 #19.03
 theme_xhred_config_configurable_options=Konfigurerbara alternativ
 theme_xhred_filter_content_no_matches_query=Inget matchar ditt filter %str
+theme_xhred_toggle_accordions=Växla dragspelets synlighet

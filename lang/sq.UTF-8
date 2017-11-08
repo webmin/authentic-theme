@@ -749,3 +749,4 @@ theme_xhred_log_file_empty=Log file is empty
 #19.03
 theme_xhred_config_configurable_options=Configurable options
 theme_xhred_filter_content_no_matches_query=No content matches %str query
+theme_xhred_toggle_accordions=Toggle accordions visibility
