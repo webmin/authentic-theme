@@ -1,6 +1,10 @@
 ## Changelog
 
-#### Version 19.02-1 (November 7, 2017)
+#### Version 19.02-patch1 (November 08, 2017)
+* Fix to display missing tooltip for content filter and expand buttons [#880](https://github.com/qooob/authentic-theme/issues/880)
+* Fix to toggle accordions properly [#878/comment-341989960](https://github.com/qooob/authentic-theme/issues/878#issuecomment-341989960)
+
+#### Version 19.02 (November 7, 2017)
 * Add to wrap long configuration pages into accordions for faster navigation
 * Add to focus first form element on page render [#871](https://github.com/qooob/authentic-theme/issues/871) [virtualmin.com/53791](https://www.virtualmin.com/node/53791)
 * Fix to make collapsible header clickable [#878](https://github.com/qooob/authentic-theme/issues/878)
