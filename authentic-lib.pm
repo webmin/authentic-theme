@@ -393,8 +393,9 @@ sub get_extended_sysinfo
                           ' disable-animations'
                       ) .
                       '">
-                        <div class="panel-heading" data-toggle="collapse" data-target="#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" role="tab" id="'
-                      . $info->{'id'} . '-' . $info->{'module'} . $x . '">
+                        <div class="panel-heading" data-toggle="collapse" data-target="#' .
+                      $info->{'id'} . '-' . $info->{'module'} .
+                      $x . '-collapse" role="tab" id="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
                           <h4 class="panel-title">
                             <a data-toggle="collapse" href="#'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" aria-expanded="'
@@ -1582,7 +1583,8 @@ sub print_panel
            ' disable-animations'
       ) .
       '">
-                  <div class="panel-heading" data-toggle="collapse" data-target="#' . $id . '-collapse" role="tab" id="' . $id . '">
+                  <div class="panel-heading" data-toggle="collapse" data-target="#' .
+      $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" href="#'
       . $id . '-collapse" aria-expanded="'
@@ -2715,8 +2717,9 @@ sub get_xhr_request
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type = $in{'xhr-update-type'};
-            if (!has_command('git')) {
-                @update_rs = { "no_git" => $Atext{'theme_git_patch_no_git_message'}, };
+            if (!has_command('git') || !has_command('bash')) {
+                @update_rs = { "no_git" =>
+                      replace((!has_command('bash') ? '>git<' : '~'), '>bash<', $Atext{'theme_git_patch_no_git_message'}), };
                 print get_json(\@update_rs);
             } else {
                 my $usermin = usermin_available();
