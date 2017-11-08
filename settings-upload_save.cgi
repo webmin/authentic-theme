@@ -13,11 +13,13 @@ require(dirname(__FILE__) . "/authentic-lib.pm");
 
 theme_config_dir_available();
 
-my $lr  = "/$current_theme/logo.png";
-my $lrd = "/$current_theme/images/logo.png";
+my $ls  = "logo.png";
+my $lr  = "/$current_theme/$ls";
+my $lrd = "/$current_theme/images/$ls";
 
-my $lw  = "/$current_theme/logo_welcome.png";
-my $lwd = "/$current_theme/images/logo_welcome.png";
+my $lsw = "logo_welcome.png";
+my $lw  = "/$current_theme/$lsw";
+my $lwd = "/$current_theme/images/$lsw";
 
 if (usermin_available()) {
     (our $_usermin_config_directory = $config_directory) =~ s/webmin/usermin/;
@@ -68,7 +70,5 @@ if ($in{'unauthenticated_logo'} eq "1" &&
 }
 
 copy_source_dest($config_directory . $lr, $root_directory . "/$current_theme/images");
-
 copy_source_dest($config_directory . $lw, $root_directory . "/$current_theme/images");
-
 redirect('/settings-upload.cgi?saved=1');
