@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.02-patch2 (November 09, 2017)
+* Fix to check _bash_ command presence for theme update script to work on FreeBSD systems
+
 #### Version 19.02-patch1 (November 08, 2017)
 * Fix to display missing tooltip for content filter and expand buttons [#880](https://github.com/qooob/authentic-theme/issues/880)
 * Fix to toggle accordions properly [#878/comment-341989960](https://github.com/qooob/authentic-theme/issues/878#issuecomment-341989960)
