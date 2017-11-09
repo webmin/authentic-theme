@@ -707,7 +707,7 @@ right_vm_server_summary=Virtual Server Summary
 
 settings_webmin_default_module=Default module for Webmin
 
-theme_xhred_global_unbeforeunload_title=Changes you made may not be saved
+theme_xhred_global_unbeforeunload_title=Changes you have made may not be saved
 theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
 theme_xhred_global_continue=Continue
 
