@@ -735,4 +735,4 @@ theme_xhred_log_file_empty=Loggfilen är tom
 #19.03
 theme_xhred_config_configurable_options=Konfigurerbara alternativ
 theme_xhred_filter_content_no_matches_query=Inget matchar ditt filter %str
-theme_xhred_toggle_accordions=Växla dragspelets synlighet
+theme_xhred_toggle_accordions=Utvidga/dra ihop menyraderna
