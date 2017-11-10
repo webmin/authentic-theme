@@ -674,6 +674,13 @@ theme_xhred_global_committed_on=Comis pe
 theme_xhred_global_resolved_issues=Probleme rezolvate în %value
 theme_force_upgrade=Forţează actualizarea temei folosind ultima publicare de pe GitHub
 
+#18.48
+theme_xhred_force_upgrade_beta=Install latest development version (beta)
+theme_xhred_force_upgrade_stable=Install latest release version (stable)
+theme_xhred_source_encoding=Source encoding
+theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
+theme_xhred_encoding_manually_set=Manually set encoding
+theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
 
 #18.49
 theme_xhred_filemanager_user_switch=Comută la utilizator (Ctrl+M)
@@ -730,3 +737,8 @@ theme_xhred_log_file_empty=Log file is empty
 theme_xhred_config_configurable_options=Configurable options
 theme_xhred_filter_content_no_matches_query=No content matches %str query
 theme_xhred_toggle_accordions=Toggle accordions visibility
+theme_xhred_global_whats_new=What's new
+theme_xhred_global_report_an_issue=Report an issue
+theme_xhred_global_theme_configuration=Theme configuration
+theme_xhred_global_official_website=Official website
+theme_xhred_global_about_theme=About theme

@@ -673,8 +673,8 @@ theme_xhred_global_resolved_issues=Resolved issues in %value releases
 
 #18.48
 theme_force_upgrade=Force update theme
-theme_force_upgrade_beta=Install latest development version (beta)
-theme_force_upgrade_stable=Install latest release version (stable)
+theme_xhred_force_upgrade_beta=Install latest development version (beta)
+theme_xhred_force_upgrade_stable=Install latest release version (stable)
 theme_xhred_source_encoding=Source encoding
 theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
 theme_xhred_encoding_manually_set=Manually set encoding
@@ -736,3 +736,8 @@ theme_xhred_log_file_empty=Log file is empty
 theme_xhred_config_configurable_options=Configurable options
 theme_xhred_filter_content_no_matches_query=No content matches %str query
 theme_xhred_toggle_accordions=Toggle accordions visibility
+theme_xhred_global_whats_new=What's new
+theme_xhred_global_report_an_issue=Report an issue
+theme_xhred_global_theme_configuration=Theme configuration
+theme_xhred_global_official_website=Official website
+theme_xhred_global_about_theme=About theme

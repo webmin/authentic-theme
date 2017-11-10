@@ -2559,9 +2559,9 @@ sub _settings
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
                                          <li><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-package-install margined-right-8"></i>'
-              . $Atext{'theme_force_upgrade_stable'} . '</a></li>
+              . $Atext{'theme_xhred_force_upgrade_stable'} . '</a></li>
                                          <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-git-commit margined-right-8"></i>'
-              . $Atext{'theme_force_upgrade_beta'} . '</a></li>
+              . $Atext{'theme_xhred_force_upgrade_beta'} . '</a></li>
                                        </ul>
                                    </span>'
             :

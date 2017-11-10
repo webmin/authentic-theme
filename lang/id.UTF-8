@@ -678,8 +678,8 @@ theme_xhred_global_resolved_issues=Isu terselesaikan dalam rilis %value
 
 #18.48
 theme_force_upgrade=Paksa pembaruan tema
-theme_force_upgrade_beta=Install versi pengembangan terbaru (beta)
-theme_force_upgrade_stable=Install versi rilis terkini (stabil)
+theme_xhred_force_upgrade_beta=Install versi pengembangan terbaru (beta)
+theme_xhred_force_upgrade_stable=Install versi rilis terkini (stabil)
 theme_xhred_source_encoding=Sumber encoding
 theme_update_footer=Mohon melaporkan bug ke repositori $1. Ikuti kanal tema $2 untuk pembaruan terkini.
 theme_xhred_encoding_manually_set=Atur encoding secara manual
@@ -741,3 +741,8 @@ theme_xhred_log_file_empty=Log file is empty
 theme_xhred_config_configurable_options=Configurable options
 theme_xhred_filter_content_no_matches_query=No content matches %str query
 theme_xhred_toggle_accordions=Toggle accordions visibility
+theme_xhred_global_whats_new=What's new
+theme_xhred_global_report_an_issue=Report an issue
+theme_xhred_global_theme_configuration=Theme configuration
+theme_xhred_global_official_website=Official website
+theme_xhred_global_about_theme=About theme

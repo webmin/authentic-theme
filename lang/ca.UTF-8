@@ -676,8 +676,8 @@ theme_xhred_global_resolved_issues=Problemes resolts en %value
 
 #18.48
 theme_force_upgrade=Actualització manual
-theme_force_upgrade_beta=Instal·la l'última versió beta disponible
-theme_force_upgrade_stable=Instal·la l'última versió estable disponible
+theme_xhred_force_upgrade_beta=Instal·la l'última versió beta disponible
+theme_xhred_force_upgrade_stable=Instal·la l'última versió estable disponible
 theme_xhred_source_encoding=Codi font
 theme_update_footer=Per tal de millorar dia a dia, t'agraïm que ens informis de qualsevol error que trobis a $1. Segueix-nos al canal de $2 per estar assabentat de les últimes novetats.
 theme_xhred_encoding_manually_set=Escriure directament el codi font
@@ -739,3 +739,8 @@ theme_xhred_log_file_empty=Log file is empty
 theme_xhred_config_configurable_options=Configurable options
 theme_xhred_filter_content_no_matches_query=No content matches %str query
 theme_xhred_toggle_accordions=Toggle accordions visibility
+theme_xhred_global_whats_new=What's new
+theme_xhred_global_report_an_issue=Report an issue
+theme_xhred_global_theme_configuration=Theme configuration
+theme_xhred_global_official_website=Official website
+theme_xhred_global_about_theme=About theme
