@@ -1,6 +1,11 @@
 ## Changelog
 
+#### Version 19.02-patch3 (November 11, 2017)
+* Add quick accessibility menu for products and its references [#886](https://github.com/qooob/authentic-theme/issues/886)
+
 #### Version 19.02-patch2 (November 09, 2017)
+* Add return to System Information page after applied theme update [#882](https://github.com/qooob/authentic-theme/issues/882)
+* Fix to respect onbeforeunload state when triggering switch [#883](https://github.com/qooob/authentic-theme/issues/883)
 * Fix to check _bash_ command presence for theme update script to work on FreeBSD systems
 
 #### Version 19.02-patch1 (November 08, 2017)
@@ -10,8 +15,6 @@
 #### Version 19.02 (November 7, 2017)
 * Add to wrap long configuration pages into accordions for faster navigation
 * Add to focus first form element on page render [#871](https://github.com/qooob/authentic-theme/issues/871) [virtualmin.com/53791](https://www.virtualmin.com/node/53791)
-* Fix to make collapsible header clickable [#878](https://github.com/qooob/authentic-theme/issues/878)
-* Fix to properly submit forms with messy HTML [#875](https://github.com/qooob/authentic-theme/issues/875)
 * Fix to respect onbeforeunload state before triggering autocomplete
 * Fix menu detection in Virtualmin/Features & Plugins
 * Fix to support latest version of ConfigServer Security & Firewall
@@ -19,16 +22,8 @@
 * Fix to support for Virtualmin/Edit Web Pages
 * Fix HTML editor load failure on proxy configurations
 * Fix to revert bookmark editor in File Manager configuration
-* Fix form submissions to work properly in macOS/iOS [#872](https://github.com/qooob/authentic-theme/issues/872)
-* Fix loading of File Manager in Safari browsers [#874](https://github.com/qooob/authentic-theme/issues/874)
-* Fix to escape names for checkboxes and radios properly [#834](https://github.com/qooob/authentic-theme/issues/834)
-* Fix don't switch to remote user in case working as root [#869](https://github.com/qooob/authentic-theme/issues/869)
-* Fix needless checkbox selection upon clicking on the row  [#866](https://github.com/qooob/authentic-theme/issues/866)
-* Fix to display color for labels and allow to force show sensors information in Side Slider [#867](https://github.com/qooob/authentic-theme/issues/867)
-* Fix to manage redirect properly with various proxy configurations [#857/comment-338026476](https://github.com/qooob/authentic-theme/issues/857#issuecomment-338026476)
-* Fix CSS issue displaying columns on System Information page [#860](https://github.com/qooob/authentic-theme/issues/860)
-* Fix to detect links in navigation menu with certain patterns [#862](https://github.com/qooob/authentic-theme/issues/862)
 * Fix to update navigation menu on query containing trigger
+* Fixed bugs [#834](https://github.com/qooob/authentic-theme/issues/834) [#857/comment-338026476](https://github.com/qooob/authentic-theme/issues/857#issuecomment-338026476) [#860](https://github.com/qooob/authentic-theme/issues/860) [#862](https://github.com/qooob/authentic-theme/issues/862) [#866](https://github.com/qooob/authentic-theme/issues/866) [#867](https://github.com/qooob/authentic-theme/issues/867) [#869](https://github.com/qooob/authentic-theme/issues/869) [#872](https://github.com/qooob/authentic-theme/issues/872) [#874](https://github.com/qooob/authentic-theme/issues/874) [#875](https://github.com/qooob/authentic-theme/issues/875) [#878](https://github.com/qooob/authentic-theme/issues/878)
 
 #### Version 19.01 (October 16, 2017)
 * Fix to keep trailing dot at the end of the DNS records [webmin/webmin#639/comment-333394539](https://github.com/webmin/webmin/issues/639#issuecomment-333394539)
