@@ -1198,8 +1198,9 @@ sub get_sysinfo_vars
                 $cpu_temperature .=
 '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu" style="margin-right:3px; margin-bottom: 3px"> Core '
                   . $t->{'core'}
-                  . ': ' .
-                  int($t->{'temp'}) . '&#176;C</span>' .
+                  . ': ' . (get_module_config_data('system-status', 'collect_units') ?
+                            (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#8457;") : (int($t->{'temp'}) . '&#176;C ')) .
+                  '</span>' .
                   ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
             }
         }
@@ -1221,8 +1222,9 @@ sub get_sysinfo_vars
                 }
                 $hdd_temperature .=
 '<span class="badge-custom badge-drivestatus" data-stats="drive" style="margin-right:3px; margin-bottom: 3px">'
-                  . $short . ': ' .
-                  int($t->{'temp'}) . '&#176;C ' . $emsg . '</span>' .
+                  . $short . ': ' . (get_module_config_data('system-status', 'collect_units') ?
+                                     (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#8457;") : (int($t->{'temp'}) . '&#176;C ')) .
+                  $emsg . '</span>' .
                   ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
             }
         }
