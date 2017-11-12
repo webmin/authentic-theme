@@ -1199,7 +1199,8 @@ sub get_sysinfo_vars
 '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu" style="margin-right:3px; margin-bottom: 3px"> Core '
                   . $t->{'core'}
                   . ': ' . (get_module_config_data('system-status', 'collect_units') ?
-                            (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#8457;") : (int($t->{'temp'}) . '&#176;C ')) .
+                            (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
+                            (int($t->{'temp'}) . '&#176;C ')) .
                   '</span>' .
                   ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
             }
@@ -1223,7 +1224,8 @@ sub get_sysinfo_vars
                 $hdd_temperature .=
 '<span class="badge-custom badge-drivestatus" data-stats="drive" style="margin-right:3px; margin-bottom: 3px">'
                   . $short . ': ' . (get_module_config_data('system-status', 'collect_units') ?
-                                     (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#8457;") : (int($t->{'temp'}) . '&#176;C ')) .
+                                     (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
+                                     (int($t->{'temp'}) . '&#176;C ')) .
                   $emsg . '</span>' .
                   ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
             }
@@ -1648,7 +1650,7 @@ sub embed_logo
         }
         if (-r $root_directory . "/$current_theme/images/" . $logo . ".png") {
             print '<div class="__' . $logo . ' _' . $logo . '">';
-            print '<img src="' . $gconfig{'webprefix'} . '/images/' . $logo . '.png">';
+            print '<img src="' . $gconfig{'webprefix'} . '/images/' . $logo . '.png?' . time() . '">';
             print '</div>' . "\n";
         }
     }
