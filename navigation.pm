@@ -101,7 +101,6 @@ if (dashboard_switch()
           $Atext{'left_refresh_modules'} . '</span></a></li>' . "\n";
     }
     print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
-    print_sysstat_link();
     print_netdata_link();
 
     if (&get_product_name() eq 'webmin' &&
@@ -127,8 +126,6 @@ elsif (!$__settings{'settings_right_default_tab_webmin'} ||
     print_left_menu('virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'});
     print_sysinfo_link();
     print_sysstat_link();
-    print_netdata_link();
-
 }
 
 elsif (
@@ -141,8 +138,6 @@ elsif (
 
     print_left_menu('server-manager', \@leftitems, 0, 0, $in{'sid'}, $in{'xhr-navigation-type'});
     print_sysinfo_link();
-    print_sysstat_link();
-    print_netdata_link();
 }
 
 elsif (foreign_available("mailbox") &&
