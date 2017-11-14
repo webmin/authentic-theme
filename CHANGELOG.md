@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.02-patch4 (November 14, 2017)
+* Fix to treat Webminstats/Panorama General page as progressive  [#889](https://github.com/qooob/authentic-theme/issues/889)
+* Fix regular expression breaking links in chooser
+* Fix to display statistics links in navigation menu selectively [#890](https://github.com/qooob/authentic-theme/issues/890)
+* Fix to respect user defined units for temperatures [#887](https://github.com/qooob/authentic-theme/issues/887)
+* Fix to prevent failure of form submissions on Apple devices [#872](https://github.com/qooob/authentic-theme/issues/872)
+* Fix to clear cached logotypes after reupload [#888](https://github.com/qooob/authentic-theme/issues/888)
+
 #### Version 19.02-patch3 (November 11, 2017)
 * Add quick accessibility menu for products and its references [#886](https://github.com/qooob/authentic-theme/issues/886)
 
