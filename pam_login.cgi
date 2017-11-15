@@ -43,7 +43,7 @@ if ($gconfig{'loginbanner'} &&
     embed_login_head();
     print '<body class="session_login pam_login" data-style="' . get_filters('content') . '">' . "\n";
     print
-'<div class="form-signin-banner container session_login pam_login alert alert-danger"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
+'<div class="form-signin-banner container session_login pam_login alert alert-danger" data-dcontainer="1"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
       . "\n";
     $url = $in{'page'};
     open(BANNER, $gconfig{'loginbanner'});
@@ -76,7 +76,7 @@ print '<html data-background-style="'
   '" data-night-mode="' . theme_night_mode() . '" class="session_login pam_login">', "\n";
 embed_login_head();
 print '<body class="session_login pam_login" data-style="' . get_filters('content') . '">' . "\n";
-print '<div class="container session_login pam_login">' . "\n";
+print '<div class="container session_login pam_login" data-dcontainer="1">' . "\n";
 
 if (defined($in{'failed'})) {
 

@@ -742,3 +742,5 @@ theme_xhred_global_report_an_issue=Report an issue
 theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
+theme_xhred_connection_error=Connection error
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>

@@ -741,3 +741,5 @@ theme_xhred_global_report_an_issue=Rapportera ett fel
 theme_xhred_global_theme_configuration=Temakonfiguration
 theme_xhred_global_official_website=Officiell hemsida
 theme_xhred_global_about_theme=Om temat
+theme_xhred_connection_error=Anslutningsfel
+theme_xhred_connection_error_details=Det går inte att upprätta en anslutning till servern på <strong>%server</strong>. <ul><li>Kontrollera om servern körs</li><li>Kontrollera anslutningen</li><li>Kontrollera proxyn och brandväggen</li></ul>

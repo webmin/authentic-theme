@@ -89,10 +89,10 @@ if ($miniserv{'logout'} &&
 {
     print '<li class="user-link __logout-link">';
     if ($main::session_id) {
-        print '<a' . get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link" href="' .
+        print '<a data-nref' . get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link" href="' .
           $gconfig{'webprefix'} . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
     } else {
-        print '<a' .
+        print '<a data-nref' .
           get_button_tooltip('theme_tooltip_switch_user', undef, 'auto top') . ' class="menu-exclude-link" href="' .
           $gconfig{'webprefix'} . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
     }
