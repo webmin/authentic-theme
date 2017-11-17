@@ -82,18 +82,18 @@ if (defined($in{'failed'})) {
 
     print '<div class="alert alert-warning">' . "\n";
     print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
-    print $Atext{'session_failed'} . "\n";
+    print '<span>' . $Atext{'session_failed'} . "</span>\n";
     print '</div>' . "\n";
 
 } elsif ($in{'logout'}) {
     print '<div class="alert alert-success">' . "\n";
     print '<strong><i class ="fa fa-check"></i> ' . $Atext{'login_success'} . '</strong><br />' . "\n";
-    print $Atext{'session_logout'} . "\n";
+    print '<span>' . $Atext{'session_logout'} . "</span>\n";
     print '</div>' . "\n";
 } elsif ($in{'timed_out'}) {
     print '<div class="alert alert-warning">' . "\n";
     print '<strong><i class ="fa fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
-    print &Atext('session_timed_out', int($in{'timed_out'} / 60)) . "\n";
+    print '<span>' . &Atext('session_timed_out', int($in{'timed_out'} / 60)) . "</span>\n";
     print '</div>' . "\n";
 }
 print "$text{'pam_prefix'}\n";
@@ -125,7 +125,7 @@ if (!$in{'password'}) {
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print '<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
-      &Atext('login_user') . '" ' . ' autofocus>' . "\n";
+      &Atext('theme_xhred_login_user') . '" ' . ' autofocus>' . "\n";
     print '</div>' . "\n";
 } else {
 
@@ -133,7 +133,7 @@ if (!$in{'password'}) {
     print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
     print
       '<input type="password" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
-      &Atext('login_pass') . '" autofocus>' . "\n";
+      &Atext('theme_xhred_login_pass') . '" autofocus>' . "\n";
     print '</div>' . "\n";
 }
 

@@ -47,13 +47,13 @@ left_statistics=Estatísticas do Sistema
 
 login_danger=Perigo!
 login_message=Você deve digitar um nome de usuário e senha para acessar o servidor no
-login_pass=Senha
+theme_xhred_login_pass=Senha
 login_reset=Restabelecer
 login_save=Lembre de mim
 login_signin=Entrar
 login_success=Sucesso!
-login_token=Token
-login_user=Nome de usuário
+theme_xhred_login_token=Token
+theme_xhred_login_user=Nome de usuário
 login_warning=Aviso!
 
 right_aliases=Alias servidores
@@ -81,7 +81,7 @@ right_virtualmin=Versão Virtualmin
 right_vlcheck=Verifique novamente licença Virtualmin
 right_vm2=Versão Cloudmin
 
-session_failed=Login falhou. Por favor, tente novamente.
+session_failed=Wrong password, please try again.
 session_logout=Logout com sucesso. Utilize o formulário abaixo para efetuar o login novamente.
 session_timed_out=Sessão expirou após $1 minutos de inatividade.
 session_twofailed=Autenticação Two-factor falhou: $1
@@ -628,7 +628,7 @@ settings_subtitle=For user
 theme_tooltip_night_mode=Day/night mode toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
+theme_xhred_tooltip_switch_user=Switch user
 theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
 
@@ -745,4 +745,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

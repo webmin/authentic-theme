@@ -47,12 +47,12 @@ left_statistics=Systemstatistik
 
 login_danger=Varning!
 login_message=Du måste ange ett användarnamn och lösenord för att logga in på servern på
-login_pass=Lösenord
+theme_xhred_login_pass=Lösenord
 login_save=Kom ihåg mig
 login_signin=Logga in
 login_success=Lyckad!
-login_token=Token
-login_user=Användarnamn
+theme_xhred_login_token=Token
+theme_xhred_login_user=Användarnamn
 login_warning=Varning!
 
 right_aliases=Alias-servrar
@@ -80,7 +80,7 @@ right_virtualmin=Virtualmin-version
 right_vlcheck=Omkontrollera Virtualmin-licensen
 right_vm2=Cloudmin-version
 
-session_failed=Inloggningen misslyckades. Försök igen.
+session_failed=Wrong password, please try again.
 session_logout=Du har loggats ut. Använd rutan här under för att logga in igen.
 session_timed_out=Sessionen har gått ut efter $1 minuter av inaktivitet.
 session_twofailed=Tvåfaktorsautentisering misslyckades: $1
@@ -626,7 +626,7 @@ settings_subtitle=För användaren
 theme_tooltip_night_mode=Växla mellan dag-/nattläge
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Språk
-theme_tooltip_switch_user=Växla användare
+theme_xhred_tooltip_switch_user=Växla användare
 theme_tooltip_logout=Logga ut
 theme_tooltip_edit_user=Redigera användare
 
@@ -742,4 +742,9 @@ theme_xhred_global_theme_configuration=Temakonfiguration
 theme_xhred_global_official_website=Officiell hemsida
 theme_xhred_global_about_theme=Om temat
 theme_xhred_connection_error=Anslutningsfel
-theme_xhred_connection_error_details=Det går inte att upprätta en anslutning till servern på <strong>%server</strong>. <ul><li>Kontrollera om servern körs</li><li>Kontrollera anslutningen</li><li>Kontrollera proxyn och brandväggen</li></ul>
+theme_xhred_connection_error_details=Det går inte att upprätta en anslutning till servern på <strong>%server</strong>. <ul><li>Kontrollera om servern körs</li><li>Kontrollera anslutningen</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

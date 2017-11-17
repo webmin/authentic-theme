@@ -78,25 +78,25 @@ print '<div class="container session_login" data-dcontainer="1">' . "\n";
 if (defined($in{'failed'})) {
     if ($in{'twofactor_msg'}) {
         print "<h3>",, "</h3><p></p>\n";
-        print '<div class="alert alert-warning">' . "\n";
+        print '<div class="alert alert-warning" data-twofactor>' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} .
-          '</strong><br />' . &Atext('session_twofailed', &html_escape($in{'twofactor_msg'})) . "\n";
+          '</strong><br /><span>' . &Atext('session_twofailed', &html_escape($in{'twofactor_msg'})) . "</span>\n";
         print '</div>' . "\n";
     } else {
         print '<div class="alert alert-warning">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
-        print $Atext{'session_failed'} . "\n";
+        print '<span>' . $Atext{'session_failed'} . "</span>\n";
         print '</div>' . "\n";
     }
 } elsif ($in{'logout'}) {
     print '<div class="alert alert-success">' . "\n";
     print '<strong><i class ="fa fa-check"></i> ' . $Atext{'login_success'} . '</strong><br />' . "\n";
-    print $Atext{'session_logout'} . "\n";
+    print '<span>' . $Atext{'session_logout'} . "</span>\n";
     print '</div>' . "\n";
 } elsif ($in{'timed_out'}) {
     print '<div class="alert alert-warning">' . "\n";
     print '<strong><i class ="fa fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
-    print &Atext('session_timed_out', int($in{'timed_out'} / 60)) . "\n";
+    print '<span>' . &Atext('session_timed_out', int($in{'timed_out'} / 60)) . "</span>\n";
     print '</div>' . "\n";
 }
 print "$text{'session_prefix'}\n";
@@ -126,19 +126,19 @@ $tag = $gconfig{'noremember'} ? 'autocomplete="off"' : '';
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
 print '<input type="text" class="form-control session_login" name="user" autocomplete="off" placeholder="' .
-  &Atext('login_user') . '" ' . $tag . ' autofocus>' . "\n";
+  &Atext('theme_xhred_login_user') . '" ' . $tag . ' autofocus>' . "\n";
 print '</div>' . "\n";
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
 print '<input type="password" class="form-control session_login" name="pass" autocomplete="off" placeholder="' .
-  &Atext('login_pass') . '"  ' . $tag . '>' . "\n";
+  &Atext('theme_xhred_login_pass') . '"  ' . $tag . '>' . "\n";
 print '</div>' . "\n";
 
 if ($miniserv{'twofactor_provider'}) {
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
     print '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" placeholder="' .
-      &Atext('login_token') . '">' . "\n";
+      &Atext('theme_xhred_login_token') . '">' . "\n";
     print '</div>' . "\n";
 }
 if (!$gconfig{'noremember'}) {

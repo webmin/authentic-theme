@@ -47,13 +47,13 @@ left_statistics=Systemstatistik
 
 login_danger=Gefahr!
 login_message=Bitte mit Nutzernamen und Passwort anmelden.
-login_pass=Passwort
+theme_xhred_login_pass=Passwort
 login_reset=Abbrechen
 login_save=Angemeldet bleiben
 login_signin=Anmelden
 login_success=Erfolgreich!
-login_token=Token
-login_user=Nutzername
+theme_xhred_login_token=Token
+theme_xhred_login_user=Nutzername
 login_warning=Warnung!
 
 right_aliases=Server Aliase
@@ -81,7 +81,7 @@ right_virtualmin=Virtualmin Version
 right_vlcheck=Überprüfen Sie Virtualmin Lizenz
 right_vm2=Cloudmin Version
 
-session_failed=Die Anmeldung ist fehlgeschlagen. Bitte versuchen sie es erneut.
+session_failed=Wrong password, please try again.
 session_logout=Erfolgreich abgemeldet. Für eine erneute Anmeldung bitte das folgende Formular nutzen.
 session_timed_out=Sitzung wurde nach $1 Minuten Inaktivität abgebrochen.
 session_twofailed=2-Faktor-Authentifizierung fehlgeschlagen: $1
@@ -619,7 +619,7 @@ settings_subtitle=Für Benutzer
 theme_tooltip_night_mode=Tag/Nacht Modus umschalten
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Sprache
-theme_tooltip_switch_user=Benutzer wechseln
+theme_xhred_tooltip_switch_user=Benutzer wechseln
 theme_tooltip_logout=Abmelden
 theme_tooltip_edit_user=Benutzer bearbeiten
 
@@ -737,4 +737,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

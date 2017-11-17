@@ -47,13 +47,13 @@ left_statistics=系統統計資料
 
 login_danger=危險!
 login_message=您必須輸入帳號和密碼以登入伺服器:
-login_pass=密碼
+theme_xhred_login_pass=密碼
 login_reset=重設
 login_save=保持登入狀態
 login_signin=登入
 login_success=成功!
-login_token=訊標
-login_user=用戶名
+theme_xhred_login_token=訊標
+theme_xhred_login_user=用戶名
 login_warning=警告!
 
 right_aliases=別名服務器
@@ -81,7 +81,7 @@ right_virtualmin=Virtualmin 版本
 right_vlcheck=重新檢查 Virtualmin 許可證
 right_vm2=Cloudmin 版本
 
-session_failed=登入失敗。請再試一次。
+session_failed=Wrong password, please try again.
 session_logout=登出成功。使用下面的表單重新登入。
 session_timed_out=對話在 $1 分鐘不活動後超時。
 session_twofailed=雙因素認證失敗: $1
@@ -625,7 +625,7 @@ settings_subtitle=對於用戶
 theme_tooltip_night_mode=晝/夜模式切換
 theme_tooltip_terminal_link=終端
 theme_tooltip_language_link=語言
-theme_tooltip_switch_user=啟/禁用用戶
+theme_xhred_tooltip_switch_user=啟/禁用用戶
 theme_tooltip_logout=登出
 theme_tooltip_edit_user=編輯用戶
 
@@ -742,4 +742,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

@@ -47,13 +47,13 @@ left_statistics=Statistiky systému
 
 login_danger=Nebezpečí!
 login_message=Pro přihlášení na server musíte zadat uživatelské jméno a heslo
-login_pass=Heslo
+theme_xhred_login_pass=Heslo
 login_reset=Reset
 login_save=Pamatuj si mě
 login_signin=Přihlásit
 login_success=Úspěch!
-login_token=Token
-login_user=Uživatelské jméno
+theme_xhred_login_token=Token
+theme_xhred_login_user=Uživatelské jméno
 login_warning=Varování!
 
 right_aliases=Alias servery
@@ -81,7 +81,7 @@ right_virtualmin=Verze Virtualminu
 right_vlcheck=Překontrolovat licenci Virtualminu
 right_vm2=Verze Cloudminu
 
-session_failed=Přihlášení se nezdařilo. Zkuste to prosím znovu.
+session_failed=Wrong password, please try again.
 session_logout=Odhlášení úspěšné. Pro opětovné přihlášení využijte formulář níže.
 session_timed_out=Platnost sezení vypršela po $1 minutách neaktivity.
 session_twofailed=Dvou-faktorová autentizace selhala: $1
@@ -628,7 +628,7 @@ settings_subtitle=For user
 theme_tooltip_night_mode=Day/night mode toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
+theme_xhred_tooltip_switch_user=Switch user
 theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
 
@@ -745,4 +745,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

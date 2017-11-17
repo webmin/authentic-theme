@@ -47,13 +47,13 @@ left_statistics=System Statistikker
 
 login_danger=Advarsel!
 login_message=Du skal indtaste et brugernavn og en adgangskode for at logge in på denne server
-login_pass=Adgangskdoe
+theme_xhred_login_pass=Adgangskdoe
 login_reset=Nulstil
 login_save=Husk mig
 login_signin=Log ind
 login_success=succes!
-login_token=Token
-login_user=Brugernavn
+theme_xhred_login_token=Token
+theme_xhred_login_user=Brugernavn
 login_warning=Advarsel!
 
 right_aliases=Alias servere
@@ -81,7 +81,7 @@ right_virtualmin=Virtualmin version
 right_vlcheck=Re-Check Virtualmin License
 right_vm2=Cloudmin version
 
-session_failed=Login fejlede. Prøv venligst igen.
+session_failed=Wrong password, please try again.
 session_logout=Loggede ud uden fejl. Brug formen under for at logge ind igen.
 session_timed_out=Sessionen udløb efter $1 minutters inaktivitet.
 session_twofailed=To-faktor godkendelse fejlede: $1
@@ -628,7 +628,7 @@ settings_subtitle=For user
 theme_tooltip_night_mode=Day/night mode toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
+theme_xhred_tooltip_switch_user=Switch user
 theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
 
@@ -745,4 +745,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

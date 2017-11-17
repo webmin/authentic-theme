@@ -47,13 +47,13 @@ left_statistics=Statistiche di sistema
 
 login_danger=Pericolo!
 login_message=Devi inserire nome utente e password per effettuare il login
-login_pass=Password
+theme_xhred_login_pass=Password
 login_reset=Reimposta
 login_save=Ricordami
 login_signin=Entra
 login_success=Successo!
-login_token=Token
-login_user=Nome Utente
+theme_xhred_login_token=Token
+theme_xhred_login_user=Nome Utente
 login_warning=Attenzione!
 
 right_aliases=Alias server
@@ -81,7 +81,7 @@ right_virtualmin=Versione Virtualmin
 right_vlcheck=Ri-controlla licenza Virtualmin
 right_vm2=Versione Cloudmin
 
-session_failed=Login fallito. Per favore prova di nuovo.
+session_failed=Wrong password, please try again.
 session_logout=Logout riuscito. Usa il form di seguito per loggarti di nuovo.
 session_timed_out=Sessione scaduta dopo $1 minuti di inattività.
 session_twofailed=Autenticazione a due fattori fallita: $1
@@ -628,7 +628,7 @@ settings_subtitle=For user
 theme_tooltip_night_mode=Day/night mode toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
+theme_xhred_tooltip_switch_user=Switch user
 theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
 
@@ -745,4 +745,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in

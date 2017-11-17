@@ -47,13 +47,13 @@ left_statistics=Systeem statistieken
 
 login_danger=Let op!
 login_message=Geef een gebruikersnaam en wachtwoord op om in te loggen op de server
-login_pass=Wachtwoord
+theme_xhred_login_pass=Wachtwoord
 login_reset=Resetten
 login_save=Onthoud mij
 login_signin=Inloggen
 login_success=Succesvol!
-login_token=Token
-login_user=Gebruikersnaam
+theme_xhred_login_token=Token
+theme_xhred_login_user=Gebruikersnaam
 login_warning=Waarschuwing!
 
 right_aliases=Alias servers
@@ -81,7 +81,7 @@ right_virtualmin=Virtualmin versie
 right_vlcheck=Virtualmin licentie opnieuw controleren
 right_vm2=Cloudmin versie
 
-session_failed=Inloggen mislukt. Probeer opnieuw in te loggen.
+session_failed=Wrong password, please try again.
 session_logout=Succesvol uitgelogd. Gebruik het formulier om opnieuw in te loggen.
 session_timed_out=Sessie is verlopen na $1 minuten inactiviteit.
 session_twofailed=Two-factor authenticatie mislukt: $1
@@ -628,7 +628,7 @@ settings_subtitle=For user
 theme_tooltip_night_mode=Day/night mode toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
-theme_tooltip_switch_user=Switch user
+theme_xhred_tooltip_switch_user=Switch user
 theme_tooltip_logout=Sign out
 theme_tooltip_edit_user=Edit user
 
@@ -745,4 +745,9 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li><li>Check the proxy and the firewall</li></ul>
+theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_session_expired=Session expired
+theme_xhred_session_unlocked=Session unlocked
+theme_xhred_session_expired_details=You have been logged out due to inactivity
+theme_xhred_signing_in=Signing in
+theme_xhred_signing_success=Successfully signed in
