@@ -1046,7 +1046,7 @@ sub get_sysinfo_vars
         use Version::Compare;
 
         # Build version response message
-        if (&Version::Compare::version_compare($remote_version, $installed_version) == 1) {
+        if (Version::Compare::version_compare(replace('git-', '', $remote_version), replace('git-', '', $installed_version)) == 1) {
             my $git_version_remote  = $remote_version =~ /-git-/;
             my $remote_version_tag  = $remote_version;
             my @_remote_version_tag = split /-/, $remote_version_tag;
