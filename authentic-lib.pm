@@ -1046,7 +1046,9 @@ sub get_sysinfo_vars
         use Version::Compare;
 
         # Build version response message
-        if (Version::Compare::version_compare(replace('git-', '', $remote_version), replace('git-', '', $installed_version)) == 1) {
+        if (Version::Compare::version_compare(replace('git-', '', $remote_version), replace('git-', '', $installed_version))
+            == 1)
+        {
             my $git_version_remote  = $remote_version =~ /-git-/;
             my $remote_version_tag  = $remote_version;
             my @_remote_version_tag = split /-/, $remote_version_tag;
@@ -1197,10 +1199,12 @@ sub get_sysinfo_vars
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
 '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu" style="margin-right:3px; margin-bottom: 3px"> Core '
-                  . $t->{'core'}
-                  . ': ' . (get_module_config_data('system-status', 'collect_units') ?
-                            (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
-                            (int($t->{'temp'}) . '&#176;C ')) .
+                  . $t->{'core'} . ': '
+                  .
+                  ( get_module_config_data('system-status', 'collect_units') ?
+                      (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
+                      (int($t->{'temp'}) . '&#176;C ')
+                  ) .
                   '</span>' .
                   ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
             }
@@ -1223,9 +1227,12 @@ sub get_sysinfo_vars
                 }
                 $hdd_temperature .=
 '<span class="badge-custom badge-drivestatus" data-stats="drive" style="margin-right:3px; margin-bottom: 3px">'
-                  . $short . ': ' . (get_module_config_data('system-status', 'collect_units') ?
-                                     (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
-                                     (int($t->{'temp'}) . '&#176;C ')) .
+                  . $short . ': '
+                  .
+                  ( get_module_config_data('system-status', 'collect_units') ?
+                      (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
+                      (int($t->{'temp'}) . '&#176;C ')
+                  ) .
                   $emsg . '</span>' .
                   ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
             }
@@ -2713,6 +2720,15 @@ sub get_xhr_request
                 set_tmp_var($in{'xhr-tmp_var_name'}, $in{'xhr-tmp_var_value'});
             } elsif ($in{'xhr-tmp_var_action'} eq 'get') {
                 print get_tmp_var($in{'xhr-tmp_var_name'}, $in{'xhr-tmp_var_keep'});
+            }
+        } elsif ($in{'xhr-shell-pop'}) {
+            my $file    = "$config_directory/shell/previous.$remote_user";
+            my $index   = (int($in{'xhr-shell-pop'}) - 1);
+            my $history = read_file_lines($file);
+            if (@$history[$index]) {
+                splice(@$history, $index, 1);
+                flush_file_lines($file);
+                print 1;
             }
         } elsif ($in{'xhr-get_autocompletes'} eq '1') {
             my @data =
