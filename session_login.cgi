@@ -85,7 +85,7 @@ if (defined($in{'failed'})) {
     } else {
         print '<div class="alert alert-warning">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
-        print '<span>' . $Atext{'session_failed'} . "</span>\n";
+        print '<span>' . $Atext{'theme_xhred_session_failed'} . "</span>\n";
         print '</div>' . "\n";
     }
 } elsif ($in{'logout'}) {

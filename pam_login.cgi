@@ -82,7 +82,7 @@ if (defined($in{'failed'})) {
 
     print '<div class="alert alert-warning">' . "\n";
     print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $Atext{'login_warning'} . '</strong><br />' . "\n";
-    print '<span>' . $Atext{'session_failed'} . "</span>\n";
+    print '<span>' . $Atext{'theme_xhred_session_failed'} . "</span>\n";
     print '</div>' . "\n";
 
 } elsif ($in{'logout'}) {
@@ -97,7 +97,7 @@ if (defined($in{'failed'})) {
     print '</div>' . "\n";
 }
 print "$text{'pam_prefix'}\n";
-print '<form method="post" target="_top" action="' . $gconfig{'webprefix'} .
+print '<form method="post" action="' . $gconfig{'webprefix'} .
   '/pam_login.cgi" class="form-signin session_login pam_login clearfix" role="form" onsubmit="spinner()">' . "\n";
 print ui_hidden("cid", $in{'cid'});
 
