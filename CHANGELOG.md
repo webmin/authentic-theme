@@ -1,24 +1,22 @@
 ## Changelog
 
-#### Version 19.02-patch4 (November 14, 2017)
+#### Version 19.03 (November 19, 2017)
+* Add ability to remove commands from history list of drop-down terminal [#828](https://github.com/qooob/authentic-theme/issues/828)
+* Add pop-up authentication screen to let user reauthenticate on session expire [#892](https://github.com/qooob/authentic-theme/issues/892)
+* Add to produce user-friendly message in case server can't be reached [#846](https://github.com/qooob/authentic-theme/issues/846)
+* Add quick accessibility menu for products and its references [#886](https://github.com/qooob/authentic-theme/issues/886)
+* Add return to System Information page after applied theme update [#882](https://github.com/qooob/authentic-theme/issues/882)
 * Fix to treat Webminstats/Panorama General page as progressive  [#889](https://github.com/qooob/authentic-theme/issues/889)
 * Fix regular expression breaking links in chooser
 * Fix to display statistics links in navigation menu selectively [#890](https://github.com/qooob/authentic-theme/issues/890)
 * Fix to respect user defined units for temperatures [#887](https://github.com/qooob/authentic-theme/issues/887)
 * Fix to prevent failure of form submissions on Apple devices [#872](https://github.com/qooob/authentic-theme/issues/872)
 * Fix to clear cached logotypes after reupload [#888](https://github.com/qooob/authentic-theme/issues/888)
-
-#### Version 19.02-patch3 (November 11, 2017)
-* Add quick accessibility menu for products and its references [#886](https://github.com/qooob/authentic-theme/issues/886)
-
-#### Version 19.02-patch2 (November 09, 2017)
-* Add return to System Information page after applied theme update [#882](https://github.com/qooob/authentic-theme/issues/882)
 * Fix to respect onbeforeunload state when triggering switch [#883](https://github.com/qooob/authentic-theme/issues/883)
 * Fix to check _bash_ command presence for theme update script to work on FreeBSD systems
-
-#### Version 19.02-patch1 (November 08, 2017)
 * Fix to display missing tooltip for content filter and expand buttons [#880](https://github.com/qooob/authentic-theme/issues/880)
 * Fix to toggle accordions properly [#878/comment-341989960](https://github.com/qooob/authentic-theme/issues/878#issuecomment-341989960)
+* Fixed bugs [#893](https://github.com/qooob/authentic-theme/issues/893) [#895](https://github.com/qooob/authentic-theme/issues/895) [#897](https://github.com/qooob/authentic-theme/issues/897)
 
 #### Version 19.02 (November 7, 2017)
 * Add to wrap long configuration pages into accordions for faster navigation
