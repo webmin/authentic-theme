@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.03-patch1 (November 27, 2017)
+* Add real-time monitoring  [#896](https://github.com/qooob/authentic-theme/issues/896)
+
 #### Version 19.03 (November 19, 2017)
 * Add ability to remove commands from history list of drop-down terminal [#828](https://github.com/qooob/authentic-theme/issues/828)
 * Add pop-up authentication screen to let user reauthenticate on session expire [#892](https://github.com/qooob/authentic-theme/issues/892)
