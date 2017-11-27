@@ -2137,6 +2137,10 @@ sub _settings
 
             '__',
             _settings('fa', 'info-circle', &Atext('settings_right_sysinfo_page_options_title')),
+            'settings_sysinfo_real_time_status',
+            'true',
+            'settings_sysinfo_real_time_timeout',
+            '500',
             'settings_sysinfo_easypie_charts',
             'true',
             'settings_sysinfo_easypie_charts_size',
@@ -2324,6 +2328,7 @@ sub _settings
                  $k eq 'settings_hotkey_sysinfo'                      ||
                  $k eq 'settings_hotkey_favorites'                    ||
                  $k eq 'settings_side_slider_background_refresh_time' ||
+                 $k eq 'settings_sysinfo_real_time_timeout'         ||
                  $k eq 'settings_sysinfo_easypie_charts_size'         ||
                  $k eq 'settings_sysinfo_easypie_charts_width'        ||
                  $k eq 'settings_sysinfo_easypie_charts_scale')
@@ -2341,7 +2346,7 @@ sub _settings
                 $k eq 'settings_sysinfo_easypie_charts_width'        ||
                 $k eq 'settings_sysinfo_easypie_charts_scale') ?
               ' width: 36px; ' :
-              ($k eq 'settings_sysinfo_easypie_charts_size' ? ' width: 48px; ' : ' width: 95%; ');
+              (($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ? ' width: 48px; ' : ' width: 95%; ');
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
