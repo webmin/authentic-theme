@@ -124,7 +124,7 @@ print '<p class="form-signin-paragraph">' . &Atext('login_message') . '<strong> 
 if (!$in{'password'}) {
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-    print '<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
+    print '<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocapitalize="none" placeholder="' .
       &Atext('theme_xhred_login_user') . '" ' . ' autofocus>' . "\n";
     print '</div>' . "\n";
 } else {

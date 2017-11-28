@@ -125,7 +125,7 @@ print '<p class="form-signin-paragraph">' . &Atext('login_message') . '<strong> 
 $tag = $gconfig{'noremember'} ? 'autocomplete="off"' : '';
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-print '<input type="text" class="form-control session_login" name="user" autocomplete="off" placeholder="' .
+print '<input type="text" class="form-control session_login" name="user" autocomplete="off" autocapitalize="none" placeholder="' .
   &Atext('theme_xhred_login_user') . '" ' . $tag . ' autofocus>' . "\n";
 print '</div>' . "\n";
 print '<div class="input-group form-group">' . "\n";
