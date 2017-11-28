@@ -737,7 +737,8 @@ sub print_left_menu
                       ''
                   ) .
                   '>' . "\n";
-                print '<a target="' . ($item->{'target'} ? '_blank' : 'page') . '" '
+                print '<a ' .
+                  ($link !~ /switch_user/ ? ' target="' . ($item->{'target'} ? '_blank' : 'page') . '" ' : '') . ' '
                   .
                   ( (!$group && !$item->{'target'}) ? "class=\"navigation_module_trigger\" " :
                       ''
@@ -2328,7 +2329,7 @@ sub _settings
                  $k eq 'settings_hotkey_sysinfo'                      ||
                  $k eq 'settings_hotkey_favorites'                    ||
                  $k eq 'settings_side_slider_background_refresh_time' ||
-                 $k eq 'settings_sysinfo_real_time_timeout'         ||
+                 $k eq 'settings_sysinfo_real_time_timeout'           ||
                  $k eq 'settings_sysinfo_easypie_charts_size'         ||
                  $k eq 'settings_sysinfo_easypie_charts_width'        ||
                  $k eq 'settings_sysinfo_easypie_charts_scale')
@@ -2346,7 +2347,8 @@ sub _settings
                 $k eq 'settings_sysinfo_easypie_charts_width'        ||
                 $k eq 'settings_sysinfo_easypie_charts_scale') ?
               ' width: 36px; ' :
-              (($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ? ' width: 48px; ' : ' width: 95%; ');
+              (($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
+                ' width: 48px; ' : ' width: 95%; ');
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
@@ -3145,7 +3147,7 @@ sub get_button_tooltip
     my $the_key = ucfirst($__settings{$key});
 
     return ($__settings{'settings_button_tooltip'} ne 'false' ?
-              (' data-placement="' . $placement . '" data-toggle="tooltip" data-title="'
+              (' data-container="body" data-placement="' . $placement . '" data-toggle="tooltip" data-title="'
                  .
                  ($Atext{$label}
                     .

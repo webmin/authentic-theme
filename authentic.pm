@@ -1055,9 +1055,8 @@ sub theme_redirect
     my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/) ? 1 : 0);
 
     if ($location_use) {
-        if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix)) {
+        if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix) && $location !~ /:\/\//) {
             $location = ($prefix . $location);
-
         }
 
         set_tmp_var('redirected', $location);
