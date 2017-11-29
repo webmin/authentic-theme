@@ -522,30 +522,29 @@ sub theme_ui_password
 sub theme_ui_select
 {
 
-my ($name, $value, $opts, $size, $multiple, $missing, $dis, $tags) = @_;
-my $rv;
-$rv .= "<select class='ui_select' ".
-       "name=\"".&quote_escape($name)."\" ".
-       ($size ? " size='$size'" : "").
-       ($multiple ? " multiple" : "").
-       ($dis ? " disabled=true" : "").($tags ? " ".$tags : "").">\n";
-my ($o, %opt, $s);
-my %sel = ref($value) ? ( map { $_, 1 } @$value ) : ( $value, 1 );
-foreach $o (@$opts) {
-	$o = [ $o ] if (!ref($o));
-	$rv .= "<option value=\"".&quote_escape($o->[0])."\"".
-	       ($sel{$o->[0]} ? " selected" : "").($o->[2] ne '' ? " ".$o->[2] : "").">".
-	       ($o->[1] || $o->[0])."</option>\n";
-	$opt{$o->[0]}++;
-	}
-foreach $s (keys %sel) {
-	if (!$opt{$s} && $missing) {
-		$rv .= "<option value=\"".&quote_escape($s)."\"".
-		       " selected>".($s eq "" ? "&nbsp;" : $s)."</option>\n";
-		}
-	}
-$rv .= "</select>\n";
-return $rv;
+    my ($name, $value, $opts, $size, $multiple, $missing, $dis, $tags) = @_;
+    my $rv;
+    $rv .=
+      "<select class='ui_select' " . "name=\"" . &quote_escape($name) .
+      "\" " . ($size ? " size='$size'" : "") . ($multiple ? " multiple" : "") . ($dis ? " disabled=true" : "") .
+      ($tags ? " " . $tags : "") . ">\n";
+    my ($o, %opt, $s);
+    my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
+    foreach $o (@$opts) {
+        $o = [$o] if (!ref($o));
+        $rv .=
+          "<option value=\"" .
+          &quote_escape($o->[0]) . "\"" . ($sel{ $o->[0] } ? " selected" : "") . ($o->[2] ne '' ? " " . $o->[2] : "") . ">" .
+          ($o->[1] || $o->[0]) . "</option>\n";
+        $opt{ $o->[0] }++;
+    }
+    foreach $s (keys %sel) {
+        if (!$opt{$s} && $missing) {
+            $rv .= "<option value=\"" . &quote_escape($s) . "\"" . " selected>" . ($s eq "" ? "&nbsp;" : $s) . "</option>\n";
+        }
+    }
+    $rv .= "</select>\n";
+    return $rv;
 }
 
 sub theme_ui_radio
@@ -1065,6 +1064,19 @@ sub theme_redirect
         print "Location: $link\n\n";
     }
 
+}
+
+sub theme_js_redirect
+{
+    my ($url, $window) = @_;
+
+    $window ||= "window";
+    if ($url =~ /^\//) {
+        $url = $gconfig{'webprefix'} . $url;
+    }
+
+    return "$Atext{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('" .
+      quote_escape($url) . "');}, 3000);</script>\n";
 }
 
 sub theme_post_save_domain

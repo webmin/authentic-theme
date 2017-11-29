@@ -761,3 +761,4 @@ theme_xhred_global_reauthenticate=Reauthenticate
 settings_sysinfo_real_time_status=Enable real-time monitoring
 settings_sysinfo_real_time_timeout=Interval for performing update
 settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
+theme_xhred_global_redirecting=Redirecting
