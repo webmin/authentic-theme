@@ -1687,13 +1687,12 @@ sub embed_login_head
 
     print '<link href="' .
       $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+    print
+      '<script>function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
 
     embed_css_night_rider();
     embed_css_fonts();
     embed_styles(1);
-
-    print '<script src="' .
-      $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version() . '"></script>' . "\n";
     print '</head>', "\n";
 }
 

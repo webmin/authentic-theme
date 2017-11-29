@@ -153,8 +153,7 @@ if (!$in{'password'}) {
     print '<button class="btn btn-default" type="submit" name="restart"><i class="fa fa-backup fa-1_25x"></i>&nbsp;&nbsp;' .
       &Atext('pam_restart') . '</button>' . "\n";
 }
-print
-'<script>function spinner(){var x=$(".fa-sign-in"),s =\'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';x.addClass("invisible").after(s);x.parent(".btn").addClass("disabled")}</script>';
+
 print '</div>';
 print '</form>' . "\n";
 print "$text{'pam_postfix'}\n";

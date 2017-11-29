@@ -160,8 +160,6 @@ if ($text{'session_postfix'} =~ "href") {
       . '</button>' . "\n";
 }
 
-print
-'<script>function spinner(){var x=$(".fa-sign-in"),s =\'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';x.addClass("invisible").after(s);x.parent(".btn").addClass("disabled")}</script>';
 print '</div>';
 print '</form>' . "\n";
 
