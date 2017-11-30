@@ -1688,7 +1688,7 @@ sub embed_login_head
     print '<link href="' .
       $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version() . '" rel="stylesheet">' . "\n";
     print
-      '<script>function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
+'<script>function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
 
     embed_css_night_rider();
     embed_css_fonts();
@@ -2140,7 +2140,7 @@ sub _settings
             'settings_sysinfo_real_time_status',
             'true',
             'settings_sysinfo_real_time_timeout',
-            '500',
+            '1000',
             'settings_sysinfo_easypie_charts',
             'true',
             'settings_sysinfo_easypie_charts_size',
@@ -2344,10 +2344,10 @@ sub _settings
                 $k eq 'settings_hotkey_favorites'                    ||
                 $k eq 'settings_side_slider_background_refresh_time' ||
                 $k eq 'settings_sysinfo_easypie_charts_width'        ||
-                $k eq 'settings_sysinfo_easypie_charts_scale') ?
-              ' width: 36px; ' :
-              (($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
-                ' width: 48px; ' : ' width: 95%; ');
+                $k eq 'settings_sysinfo_easypie_charts_scale') ? ' width: 36px; ' :
+              ( ($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
+                  ' width: 48px; ' :
+                  ' width: 95%; ');
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
@@ -2792,11 +2792,11 @@ sub get_xhr_request
                                      "cpu_temperature"          => $cpu_temperature,
                                      "hdd_temperature"          => $hdd_temperature,
                                      "uptime"                   => $uptime,
-                                     "running_proc"             => $running_proc,
-                                     "load"                     => $load,
-                                     "real_memory"              => $real_memory,
-                                     "virtual_memory"           => $virtual_memory,
-                                     "disk_space"               => $disk_space,
+                                     "proc"                     => $running_proc,
+                                     "cpu"                      => $load,
+                                     "mem"                      => $real_memory,
+                                     "virt"                     => $virtual_memory,
+                                     "disk"                     => $disk_space,
                                      "package_message"          => $package_message,
                                      "csf_title"                => $csf_title,
                                      "csf_data"                 => $csf_data,

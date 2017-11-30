@@ -149,28 +149,28 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
 
         # Running processes
         if ($running_proc) {
-            &print_table_row($Atext{'body_procs'}, $running_proc, 'sysinfo_running_proc');
+            &print_table_row($Atext{'body_procs'}, $running_proc, 'sysinfo_proc');
         }
 
         # Load averages
         if ($load) {
-            &print_table_row($Atext{'body_cpu'}, $load, 'sysinfo_load');
+            &print_table_row($Atext{'body_cpu'}, $load, 'sysinfo_cpu');
         }
 
         # Real memory details
         if ($real_memory) {
-            &print_table_row($Atext{'body_real'}, $real_memory, 'sysinfo_real_memory');
+            &print_table_row($Atext{'body_real'}, $real_memory, 'sysinfo_mem');
         }
 
         # Virtual memory details
         if ($virtual_memory) {
-            &print_table_row($Atext{'body_virt'}, $virtual_memory, 'sysinfo_virtual_memory');
+            &print_table_row($Atext{'body_virt'}, $virtual_memory, 'sysinfo_virt');
         }
 
         # Local disk space
         if ($disk_space) {
             &print_table_row(
-                $Atext{'body_disk'}, $disk_space, 'sysinfo_disk_space'
+                $Atext{'body_disk'}, $disk_space, 'sysinfo_disk'
 
             );
         }

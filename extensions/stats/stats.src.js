@@ -10,7 +10,7 @@
 // Register statistics object
 const stats = {
   general: {
-    timeout: 500,
+    timeout: 1000,
     stopped: 1,
     call: {},
 
@@ -24,7 +24,7 @@ const stats = {
 
         this.call = $.ajax({
           context: this,
-          url: v___server_extensions_path + "/stats/stats.cgi?xhr-stats=general",
+          url: v___location_prefix + "/stats.cgi?xhr-stats=general",
           success: function(data) {
 
             // Take half a second delay, render and restart
@@ -45,8 +45,11 @@ const stats = {
       // Iterate through response
       Object.entries(data).map(([target, data]) => {
         let v = parseInt(data),
+          vo = (typeof data === 'object' ? data[(data.length - 1)] : false),
+          vt = (vo ? vo : v),
           $pc = $('#system-status .piechart[data-charts*="' + target + '"]'),
-          $lc = $('.info-container .' + target + '_percent');
+          $lc = $('.info-container .' + target + '_percent'),
+          $od = $('#system-status span[data-id="sysinfo_' + target + '"], .info-container span[data-data="' + target + '"]');
 
         if (Number.isInteger(v)) {
 
@@ -61,16 +64,18 @@ const stats = {
 
             // Update line-charts' text
             let $dp = $lc.find('.description'),
-              $tx = $dp.text().split(/\s+/),
-              $ts;
+              $lb = $dp.text().split(":")[0];
 
-            $.each($tx, function(id, vd) {
-              if (vd.includes(':')) {
-                $tx[id + 1] = (v + '%');
-                $ts = id;
-              }
-            })
-            $dp.text($tx.join(' ')).attr('title', $tx.splice($ts + 2, Infinity).join(' ').slice(1, -1));
+            $dp.attr('title', vo).text($lb + ": " + v + '% (' + vo + ')');
+          }
+
+          // Update other data
+          if ($od.length) {
+            if ($od.find('a').length) {
+              $od.find('a').text(vt);
+            } else {
+              $od.text(vt);
+            }
           }
         }
       })
