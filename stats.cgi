@@ -7,7 +7,7 @@
 BEGIN {push(@INC, "..");}
 use WebminCore;
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+use lib (dirname(__FILE__) . '/lib');
 use JSON qw( encode_json );
 
 init_config();
