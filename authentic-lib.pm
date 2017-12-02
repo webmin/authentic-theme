@@ -1099,7 +1099,7 @@ sub get_sysinfo_vars
 
             # Define CSF actual version if allowed
             if ($__settings{'settings_sysinfo_csf_updates'} eq 'true' &&
-                $get_user_level eq '0')
+                $get_user_level eq '0' && $in =~ /xhr-/)
             {
                 http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error, undef,
                               undef, undef, undef, 5);
@@ -1713,7 +1713,7 @@ sub get_authentic_version
 
     $installed_version =~ s/^\s+|\s+$//g;
 
-    if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0') {
+    if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' && $in =~ /xhr-/) {
 
         # Get remote version if allowed
         http_download('raw.githubusercontent.com',
