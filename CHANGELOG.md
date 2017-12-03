@@ -1,7 +1,9 @@
 ## Changelog
 
-#### Version 19.03-patch1 (November 27, 2017)
-* Add real-time monitoring  [#896](https://github.com/qooob/authentic-theme/issues/896)
+#### Version 19.04 (December 03, 2017)
+* Add real-time monitoring [#896](https://github.com/qooob/authentic-theme/issues/896)
+* Fix Running Processes module not submitting forms [#912](https://github.com/qooob/authentic-theme/issues/912)
+* Fixed bugs [#898](https://github.com/qooob/authentic-theme/issues/898) [#900](https://github.com/qooob/authentic-theme/issues/900) [#902](https://github.com/qooob/authentic-theme/issues/902) [#905](https://github.com/qooob/authentic-theme/issues/905) [#906](https://github.com/qooob/authentic-theme/issues/906) [#913](https://github.com/qooob/authentic-theme/issues/913) [virtualmin.com/54476](https://www.virtualmin.com/node/54476)
 
 #### Version 19.03 (November 19, 2017)
 * Add ability to remove commands from history list of drop-down terminal [#828](https://github.com/qooob/authentic-theme/issues/828)
@@ -9,41 +11,21 @@
 * Add to produce user-friendly message in case server can't be reached [#846](https://github.com/qooob/authentic-theme/issues/846)
 * Add quick accessibility menu for products and its references [#886](https://github.com/qooob/authentic-theme/issues/886)
 * Add return to System Information page after applied theme update [#882](https://github.com/qooob/authentic-theme/issues/882)
-* Fix to treat Webminstats/Panorama General page as progressive  [#889](https://github.com/qooob/authentic-theme/issues/889)
-* Fix regular expression breaking links in chooser
-* Fix to display statistics links in navigation menu selectively [#890](https://github.com/qooob/authentic-theme/issues/890)
-* Fix to respect user defined units for temperatures [#887](https://github.com/qooob/authentic-theme/issues/887)
-* Fix to prevent failure of form submissions on Apple devices [#872](https://github.com/qooob/authentic-theme/issues/872)
-* Fix to clear cached logotypes after reupload [#888](https://github.com/qooob/authentic-theme/issues/888)
-* Fix to respect onbeforeunload state when triggering switch [#883](https://github.com/qooob/authentic-theme/issues/883)
-* Fix to check _bash_ command presence for theme update script to work on FreeBSD systems
-* Fix to display missing tooltip for content filter and expand buttons [#880](https://github.com/qooob/authentic-theme/issues/880)
-* Fix to toggle accordions properly [#878/comment-341989960](https://github.com/qooob/authentic-theme/issues/878#issuecomment-341989960)
-* Fixed bugs [#893](https://github.com/qooob/authentic-theme/issues/893) [#895](https://github.com/qooob/authentic-theme/issues/895) [#897](https://github.com/qooob/authentic-theme/issues/897)
+* Fixed bugs [#872](https://github.com/qooob/authentic-theme/issues/872) [#878/comment-341989960](https://github.com/qooob/authentic-theme/issues/878#issuecomment-341989960) [#880](https://github.com/qooob/authentic-theme/issues/880) [#883](https://github.com/qooob/authentic-theme/issues/883) [#887](https://github.com/qooob/authentic-theme/issues/887) [#888](https://github.com/qooob/authentic-theme/issues/888) [#889](https://github.com/qooob/authentic-theme/issues/889) [#890](https://github.com/qooob/authentic-theme/issues/890) [#893](https://github.com/qooob/authentic-theme/issues/893) [#895](https://github.com/qooob/authentic-theme/issues/895) [#897](https://github.com/qooob/authentic-theme/issues/897)
 
 #### Version 19.02 (November 7, 2017)
 * Add to wrap long configuration pages into accordions for faster navigation
+* Add to support latest version of ConfigServer Security & Firewall
 * Add to focus first form element on page render [#871](https://github.com/qooob/authentic-theme/issues/871) [virtualmin.com/53791](https://www.virtualmin.com/node/53791)
-* Fix to respect onbeforeunload state before triggering autocomplete
-* Fix menu detection in Virtualmin/Features & Plugins
-* Fix to support latest version of ConfigServer Security & Firewall
-* Fix leaking File Manager CSS/JavaScript into Side Slider
-* Fix to support for Virtualmin/Edit Web Pages
-* Fix HTML editor load failure on proxy configurations
-* Fix to revert bookmark editor in File Manager configuration
-* Fix to update navigation menu on query containing trigger
+* Add to revert bookmark editor in File Manager configuration
 * Fixed bugs [#834](https://github.com/qooob/authentic-theme/issues/834) [#857/comment-338026476](https://github.com/qooob/authentic-theme/issues/857#issuecomment-338026476) [#860](https://github.com/qooob/authentic-theme/issues/860) [#862](https://github.com/qooob/authentic-theme/issues/862) [#866](https://github.com/qooob/authentic-theme/issues/866) [#867](https://github.com/qooob/authentic-theme/issues/867) [#869](https://github.com/qooob/authentic-theme/issues/869) [#872](https://github.com/qooob/authentic-theme/issues/872) [#874](https://github.com/qooob/authentic-theme/issues/874) [#875](https://github.com/qooob/authentic-theme/issues/875) [#878](https://github.com/qooob/authentic-theme/issues/878)
 
 #### Version 19.01 (October 16, 2017)
-* Fix to keep trailing dot at the end of the DNS records [webmin/webmin#639/comment-333394539](https://github.com/webmin/webmin/issues/639#issuecomment-333394539)
-* Fix password generator to escape HTML, when passed into messenger
-* Fix code leaks in File Manager making irrelevant tabs disappear
+* Add container offset to be shown only on high resolution screens
 * Fix page reloading to take back to previously used page
-* Fix container offset to be shown only on high resolution screens
-* Fix missing trailing slashes for directories in requests
 * Swedish language update [#836](https://github.com/qooob/authentic-theme/issues/836)
 * Albanian language update [#837](https://github.com/qooob/authentic-theme/issues/837)
-* Fixed bugs [#821](https://github.com/qooob/authentic-theme/issues/821) [#838](https://github.com/qooob/authentic-theme/issues/838) [#842](https://github.com/qooob/authentic-theme/issues/842) [#844](https://github.com/qooob/authentic-theme/issues/844) [#848](https://github.com/qooob/authentic-theme/issues/848) [#849](https://github.com/qooob/authentic-theme/issues/849) [#850](https://github.com/qooob/authentic-theme/issues/850) [#851](https://github.com/qooob/authentic-theme/issues/851) [#852](https://github.com/qooob/authentic-theme/issues/852) [#853](https://github.com/qooob/authentic-theme/issues/853) [#855](https://github.com/qooob/authentic-theme/issues/855) [#856](https://github.com/qooob/authentic-theme/issues/856) [#857](https://github.com/qooob/authentic-theme/issues/857) [#859](https://github.com/qooob/authentic-theme/issues/859)
+* Fixed bugs [#821](https://github.com/qooob/authentic-theme/issues/821) [#838](https://github.com/qooob/authentic-theme/issues/838) [#842](https://github.com/qooob/authentic-theme/issues/842) [#844](https://github.com/qooob/authentic-theme/issues/844) [#848](https://github.com/qooob/authentic-theme/issues/848) [#849](https://github.com/qooob/authentic-theme/issues/849) [#850](https://github.com/qooob/authentic-theme/issues/850) [#851](https://github.com/qooob/authentic-theme/issues/851) [#852](https://github.com/qooob/authentic-theme/issues/852) [#853](https://github.com/qooob/authentic-theme/issues/853) [#855](https://github.com/qooob/authentic-theme/issues/855) [#856](https://github.com/qooob/authentic-theme/issues/856) [#857](https://github.com/qooob/authentic-theme/issues/857) [#859](https://github.com/qooob/authentic-theme/issues/859) [webmin/webmin#639/comment-333394539](https://github.com/webmin/webmin/issues/639#issuecomment-333394539)
 
 #### Version 19.00 (September 30, 2017)
 * Single-page application design delivers you the fastest and smoothest _UX_ you've ever experienced
