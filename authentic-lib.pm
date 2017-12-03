@@ -386,7 +386,7 @@ sub get_extended_sysinfo
                       ($__settings{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
 
                     $returned_sysinfo .= '
-                    <div data-sorter="'
+                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="'
                       . $info->{'module'} . '" class="panel panel-default'
                       .
                       ( $__settings{'settings_animation_tabs'} ne 'false' ? '' :
@@ -1508,8 +1508,17 @@ sub get_col_num
     my $col = $max_col / $num_col;
     return $col;
 }
-
 sub print_table_row
+{
+    my ($title, $content, $id) = @_;
+    print '<tr>' . "\n";
+    print '<td style="width:30%;"><strong>' . $title . '</strong></td>' . "\n";
+    print '<td  style="width:70%;"><span data-id="' .
+      $id . '">' . $content . '</span></td>' . "\n";
+    print '</tr>' . "\n";
+}
+
+sub print_table_row_responsive
 {
     my ($title, $content, $id, $title2, $content2, $id2) = @_;
     print '<tr>' . "\n";

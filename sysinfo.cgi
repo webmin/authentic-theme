@@ -172,7 +172,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
         while (scalar(@table_data) > 0) {
             $left  = shift(@table_data);
             $right = shift(@table_data);
-            print_table_row(@$left, @$right);
+            print_table_row_responsive(@$left, @$right);
         }
 
         print '</table>' . "\n";
