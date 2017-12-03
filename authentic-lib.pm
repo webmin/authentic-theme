@@ -347,7 +347,7 @@ sub get_sysinfo_warning
     $returned_data .= '<br>';
     foreach my $info (@info) {
         if ($info->{'type'} eq 'warning') {
-            $returned_data .= &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1);
+            $returned_data .= replace("btn-", "btn-tiny btn-", &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1));
         }
     }
     return $returned_data;
@@ -1099,7 +1099,8 @@ sub get_sysinfo_vars
 
             # Define CSF actual version if allowed
             if ($__settings{'settings_sysinfo_csf_updates'} eq 'true' &&
-                $get_user_level eq '0' && $in =~ /xhr-/)
+                $get_user_level eq '0' &&
+                $in =~ /xhr-/)
             {
                 http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error, undef,
                               undef, undef, undef, 5);
@@ -1510,12 +1511,17 @@ sub get_col_num
 
 sub print_table_row
 {
-    my ($title, $content, $id) = @_;
+    my ($title, $content, $id, $title2, $content2, $id2) = @_;
     print '<tr>' . "\n";
-    print '<td style="width:30%;vertical-align:middle; padding:8px;"><strong>' . $title . '</strong></td>' . "\n";
-    print '<td  style="width:70%; vertical-align:middle; padding:8px;"><span data-id="' .
-      $id . '">' . $content . '</span></td>' . "\n";
-    print '</tr>' . "\n";
+    print '<td style="width:' .
+      ($title2 ? '20' : '') . '%;"><strong>' . $title . '</strong></td>' . "\n";
+    print '<td  style="width:' .
+      ($title2 ? '30' : '') . '%;"><span data-id="' . $id . '">' . $content . '</span></td>' . "\n";
+    if ($title2) {
+        print '<td style="width:15%;"><strong>' . $title2 . '</strong></td>' . "\n";
+        print '<td  style="width:35%;"><span data-id="' . $id2 . '">' . $content2 . '</span></td>' . "\n";
+        print '</tr>' . "\n";
+    }
 }
 
 sub print_favorites

@@ -26,25 +26,17 @@ if ($get_user_level ne '4' && &foreign_available("system-status")
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">' . ($get_user_level eq '3' ? $Atext{'body_header1'} : $Atext{'body_header0'})
       .
-      ( ($get_user_level ne '1' && $get_user_level ne '2' && $get_user_level ne '3' && &foreign_available("webmin")) ?
-          '<a href="/?updated" target="_top" data-href="' . $gconfig{'webprefix'} .
-'/webmin/edit_webmincron.cgi" data-refresh="system-status" class="btn btn-success pull-right"><i class="fa fa-refresh"></i></a>'
-        :
-          '')
-      .
       ( $cloudmin_config{'docs_link'} &&
-          &foreign_available("server-manager") ?
-          '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-8px ' .
-          ($get_user_level eq '0' ? '15' : '-11') . 'px;" href="' . $cloudmin_config{'docs_link'} .
+          foreign_available("server-manager") ?
+          '<a class="btn btn-default pull-right extra_documentation_links" href="' . $cloudmin_config{'docs_link'} .
           '"target="_blank"><i class="fa fa-book"> </i> ' . $cloudmin_config{'docs_text'} . '</a>' :
           undef
       ) .
       '
             '
       . ($virtualmin_config{'docs_link'} &&
-           &foreign_available("virtual-server") ?
-           '<a class="btn btn-default pull-right extra_documentation_links" style="margin:-8px ' .
-           ($get_user_level eq '0' ? '15' : '-11') . 'px;" href="' . $virtualmin_config{'docs_link'} .
+           foreign_available("virtual-server") ?
+           '<a class="btn btn-default pull-right extra_documentation_links" href="' . $virtualmin_config{'docs_link'} .
            '"target="_blank"><i class="fa fa-book"> </i> ' . $virtualmin_config{'docs_text'} . '</a>' :
            undef
       ) .
@@ -77,108 +69,112 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
             print_easypie_charts($cpu_percent, $mem_percent, $virt_percent, $disk_percent);
         }
 
-        print '<table class="table table-hover">' . "\n";
+        print '<table class="table table-hover margined-top-25">' . "\n";
+
+        my @table_data;
 
         # Hostname
         if ($host) {
-            &print_table_row(&Atext('body_host'), $host, 'sysinfo_host');
+            push @table_data, [Atext('body_host'), $host, sysinfo_host];
         }
 
         # Operating system
         if ($os) {
-            &print_table_row(&Atext('body_os'), $os, 'sysinfo_os');
+            push @table_data, [Atext('body_os'), $os, sysinfo_os];
         }
 
         # Webmin version
-        &print_table_row(&Atext('body_webmin'), $webmin_version, 'sysinfo_webmin_version');
+        push @table_data, [Atext('body_webmin'), $webmin_version, sysinfo_webmin_version];
 
         # Usermin version
         my $usermin_version = usermin_available('__version');
         if ($usermin_version) {
-            print_table_row(&Atext('body_usermin'), $usermin_version, 'sysinfo_usermin_version');
+            push @table_data, [Atext('body_usermin'), $usermin_version, sysinfo_usermin_version];
         }
 
         # Virtualmin version
         if ($virtualmin_version) {
-            print_table_row($Atext{'right_virtualmin'}, $virtualmin_version, 'sysinfo_virtualmin_version');
+
+            push @table_data, [$Atext{'right_virtualmin'}, $virtualmin_version, sysinfo_virtualmin_version];
         }
 
         # Cloudmin version
         if ($cloudmin_version) {
-            print_table_row($Atext{'right_vm2'}, $cloudmin_version, 'sysinfo_cloudmin_version');
+            push @table_data, [$Atext{'right_vm2'}, $cloudmin_version, sysinfo_cloudmin_version];
         }
 
         # Theme version
         if ($authentic_theme_version) {
-            &print_table_row($Atext{'theme_version'}, $authentic_theme_version, 'sysinfo_authentic_theme_version');
+            push @table_data, [$Atext{'theme_version'}, $authentic_theme_version, sysinfo_authentic_theme_version];
         }
 
         # ConfigServer Security & Firewall version
         if ($csf_title && $csf_data) {
-            &print_table_row(
-                $csf_title, $csf_data, 'sysinfo_csf_data'
-
-            );
+            push @table_data, [$csf_title, $csf_data, sysinfo_csf_data];
         }
 
         #System time
-        &print_table_row(&Atext('body_time'), $local_time, 'sysinfo_local_time');
+        push @table_data, [Atext('body_time'), $local_time, sysinfo_local_time];
 
         # Kernel and arch
         if ($kernel_arch) {
-            &print_table_row(&Atext('body_kernel'), $kernel_arch, 'sysinfo_kernel_arch');
+            push @table_data, [Atext('body_kernel'), $kernel_arch, sysinfo_kernel_arch];
         }
 
         # CPU Type and cores
         if ($cpu_type) {
-            &print_table_row($Atext{'body_cpuinfo'}, $cpu_type, 'sysinfo_cpu_type');
+            push @table_data, [$Atext{'body_cpuinfo'}, $cpu_type, sysinfo_cpu_type];
         }
 
         # Temperatures
         if ($cpu_temperature) {
-            &print_table_row($Atext{'body_cputemps'}, $cpu_temperature, 'sysinfo_cpu_temperature');
+            push @table_data, [$Atext{'body_cputemps'}, $cpu_temperature, sysinfo_cpu_temperature];
         }
         if ($hdd_temperature) {
-            &print_table_row($Atext{'body_drivetemps'}, $hdd_temperature, 'sysinfo_hdd_temperature');
+            push @table_data, [$Atext{'body_drivetemps'}, $hdd_temperature, sysinfo_hdd_temperature];
         }
 
         # System uptime
         if ($uptime) {
-            &print_table_row($Atext{'body_uptime'}, $uptime, 'sysinfo_uptime');
+            push @table_data, [$Atext{'body_uptime'}, $uptime, sysinfo_uptime];
         }
 
         # Running processes
         if ($running_proc) {
-            &print_table_row($Atext{'body_procs'}, $running_proc, 'sysinfo_proc');
+            push @table_data, [$Atext{'body_procs'}, $running_proc, sysinfo_proc];
         }
 
         # Load averages
         if ($load) {
-            &print_table_row($Atext{'body_cpu'}, $load, 'sysinfo_cpu');
+            push @table_data, [$Atext{'body_cpu'}, $load, sysinfo_cpu];
         }
 
         # Real memory details
         if ($real_memory) {
-            &print_table_row($Atext{'body_real'}, $real_memory, 'sysinfo_mem');
+            push @table_data, [$Atext{'body_real'}, $real_memory, sysinfo_mem];
         }
 
         # Virtual memory details
         if ($virtual_memory) {
-            &print_table_row($Atext{'body_virt'}, $virtual_memory, 'sysinfo_virt');
+            push @table_data, [$Atext{'body_virt'}, $virtual_memory, sysinfo_virt];
         }
 
         # Local disk space
         if ($disk_space) {
-            &print_table_row(
-                $Atext{'body_disk'}, $disk_space, 'sysinfo_disk'
-
-            );
+            push @table_data, [$Atext{'body_disk'}, $disk_space, sysinfo_disk];
         }
 
         # Package updates
         if ($package_message) {
-            &print_table_row($Atext{'body_updates'}, $package_message, 'sysinfo_package_message');
+            push @table_data, [$Atext{'body_updates'}, $package_message, sysinfo_package_message];
         }
+
+        while (scalar(@table_data) > 0) {
+            $left  = shift(@table_data);
+            $right = shift(@table_data);
+            print_table_row(@$left, @$right);
+        }
+
         print '</table>' . "\n";
 
         # Print System Warning
