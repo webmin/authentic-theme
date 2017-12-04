@@ -623,7 +623,7 @@ sub get_button_style
     } elsif ($entry =~ /uninstall/ || $entry eq 'drecs_ok') {
         $class = "danger ";
         $icon =~ s/%icon/times-circle-o/ig;
-    } elsif ($entry =~ /upgrade/) {
+    } elsif ($entry =~ /upgrade/ || $entry =~ /massscript_ok/ || $entry =~ /massg_ok/) {
         $class = "info ";
         $icon =~ s/%icon/update/ig;
     } elsif ($entry =~ /index_srefresh/) {
@@ -866,8 +866,8 @@ sub theme_git_version
 sub theme_version
 {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '19.02';
-    my $sh__ln__c___version = '19.03';
+    my $sh__ln__p___version = '19.03';
+    my $sh__ln__c___version = '19.04';
     my $sh__ln__g___version = theme_git_version('uncond');
     ((!$switch && $sh__ln__g___version) &&
      ($sh__ln__c___version = $sh__ln__g___version, ($sh__ln__c___version =~ s/\.|-|git//ig)));
