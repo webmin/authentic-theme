@@ -1,6 +1,6 @@
 Before posting an issue, please search through closed/opened issues to make sure that the answer to your questions hasn't been answered already.
 
-Please make sure that you have latest theme (19.03) and Webmin (1.860) versions installed.
+Please make sure that you have latest theme (19.04) and Webmin (1.870) versions installed.
 
 Provide the following information:
 * What is your server-side OS and its version?
