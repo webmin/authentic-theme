@@ -743,17 +743,17 @@ theme_xhred_global_official_website=Officiell hemsida
 theme_xhred_global_about_theme=Om temat
 theme_xhred_connection_error=Anslutningsfel
 theme_xhred_connection_error_details=Det går inte att upprätta en anslutning till servern på <strong>%server</strong>. <ul><li>Kontrollera om servern körs</li><li>Kontrollera anslutningen</li></ul>
-theme_xhred_session_expired=Session expired
-theme_xhred_session_unlocked=Session unlocked
-theme_xhred_session_expired_details=You have been logged out due to inactivity.
-theme_xhred_signing_in=Signing in
-theme_xhred_signing_success=Successfully signed in!
-theme_xhred_session_failed_password=Wrong password, please try again.
-theme_xhred_global_reauthenticate=Reauthenticate
+theme_xhred_session_expired=Sessionen har gått ut
+theme_xhred_session_unlocked=Sessionen är upplåst
+theme_xhred_session_expired_details=Du har loggats ut på grund av inaktivitet.
+theme_xhred_signing_in=Loggar in
+theme_xhred_signing_success=Inloggad!
+theme_xhred_session_failed_password=Fel lösenord, försök igen.
+theme_xhred_global_reauthenticate=Verifiera igen
 
 
 #19.04
-settings_sysinfo_real_time_status=Enable real-time monitoring
-settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
-theme_xhred_global_redirecting=Redirecting
+settings_sysinfo_real_time_status=Aktivera realtidsövervakning
+settings_sysinfo_real_time_timeout=Uppdateringsintervall
+settings_sysinfo_real_time_timeout_description=Ställ in önskat intervall för uppdatering av övervakningen i bakgrunden. Värdet är i millisekunder. Håll detta värde så lågt som möjligt för att förhindra förlust av kortsiktiga data.
+theme_xhred_global_redirecting=Omdirigerar
