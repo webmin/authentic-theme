@@ -1207,8 +1207,7 @@ sub get_sysinfo_vars
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
-                  '</span>' .
-                  ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
+                  '</span>&nbsp;';
             }
         }
         if ($info->{'drivetemps'}) {
@@ -1235,8 +1234,7 @@ sub get_sysinfo_vars
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
-                  $emsg . '</span>' .
-                  ($__settings{'settings_sysinfo_drive_status_on_new_line'} eq 'true' ? '<br>' : '&nbsp;');
+                  $emsg . '</span>&nbsp;';
             }
         }
 
@@ -2164,8 +2162,6 @@ sub _settings
             '2',
             'settings_sysinfo_easypie_charts_scale',
             '8',
-            'settings_sysinfo_drive_status_on_new_line',
-            'false',
             'settings_sysinfo_expand_all_accordions',
             'false',
 
