@@ -148,6 +148,10 @@ sub theme_footer
     {
         embed_js_scripts();
     }
+    if ($__settings{'settings_hide_top_loader'} ne 'true') {
+      print '<div class="top-aprogress"></div>', "\n";
+    }
+
     print '</body>', "\n";
     print '</html>', "\n";
 }
