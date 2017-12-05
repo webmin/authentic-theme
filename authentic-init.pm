@@ -969,21 +969,27 @@ sub get_env
 sub set_tmp_var
 {
     my ($key, $value) = @_;
-    my $tmp = 'tmp';
+    my $tmp  = 'tmp';
+    my $salt = encode_base64($main::session_id);
     my %var;
 
+    $salt =~ tr/A-Za-z0-9//cd;
     $key =~ tr/A-Za-z0-9//cd;
 
     $var{$key} = $value;
 
-    write_file(('/' . $tmp . '/.' . ($tmp . '_' . get_product_name()) . '_' . $key . '_' . $remote_user), \%var);
+    write_file(('/' . $tmp . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
 }
 
 sub get_tmp_var
 {
     my ($key, $keep) = @_;
-    my $tmp = 'tmp';
-    my $tmp_file = '/' . $tmp . '/.' . ($tmp . '_' . get_product_name()) . '_' . $key . '_' . $remote_user;
+    my $tmp  = 'tmp';
+    my $salt = encode_base64($main::session_id);
+
+    $salt =~ tr/A-Za-z0-9//cd;
+
+    my $tmp_file = ('/' . $tmp . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
     read_file($tmp_file, \%tmp_var);
     if (!$keep) {
