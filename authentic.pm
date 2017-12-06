@@ -148,8 +148,12 @@ sub theme_footer
     {
         embed_js_scripts();
     }
-    if ($__settings{'settings_hide_top_loader'} ne 'true') {
-      print '<div class="top-aprogress"></div>', "\n";
+
+    if ($__settings{'settings_hide_top_loader'} ne 'true' &&
+        get_env('script_name') ne '/session_login.cgi' &&
+        get_env('script_name') ne '/pam_login.cgi')
+    {
+        print '<div class="top-aprogress"></div>', "\n";
     }
 
     print '</body>', "\n";
@@ -1079,8 +1083,10 @@ sub theme_js_redirect
         $url = $gconfig{'webprefix'} . $url;
     }
 
-    return "$Atext{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('" .
-      quote_escape($url) . "');}, 3000);</script>\n";
+    return
+"$Atext{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('"
+      . quote_escape($url)
+      . "');}, 3000);</script>\n";
 }
 
 sub theme_post_save_domain
