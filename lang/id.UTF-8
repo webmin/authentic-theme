@@ -179,8 +179,6 @@ settings_hotkey_favorites=Hotkey untuk favorit
 settings_hotkey_focus_search=Hotkey untuk kotak pencarian
 settings_hotkey_reload=Hotkey halaman yang dimuat ulang
 
-settings_side_slider_background_refresh_time=Kehabisan waktu untuk memperbarui informasi di latar belakang
-settings_side_slider_background_refresh_time_description=Atur batasan waktu untuk memperbarui slider notifikasi pada panggilan di latar belakang. Nilai yang dimaksud adalah dalam menit. Waktu minimal yang direkomendasikan adalah <code>1</code> menit. Secara default ditetapkan <code>5</code> menit. Nilai desimal juga dapat digunakan.
 settings_sysinfo_easypie_charts=Tampilkan grafik
 settings_sysinfo_theme_updates=Periksa untuk pembaruan Tema Authentic
 settings_sysinfo_csf_updates=Periksa untuk pembaruan ConfigServer Security & Firewall

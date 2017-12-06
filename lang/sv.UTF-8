@@ -176,8 +176,6 @@ settings_hotkey_favorites=Snabbtangent för favoriter
 settings_hotkey_focus_search=Snabbtangent för sökfält
 settings_hotkey_reload=Snabbtangent för siduppdatering
 
-settings_side_slider_background_refresh_time=Timeout för uppdateringar av bakgrundsinformation
-settings_side_slider_background_refresh_time_description=Ställ in önskad timeout för uppdatering av aviseringar i bakgrunden. Tiden är i minuter och lägsta tiden är <code>1</code> minut. Standardvärdet är <code>5</code> minuter. Det går även bra att använda decimalvärden.
 settings_sysinfo_easypie_charts=Visa diagram
 settings_sysinfo_theme_updates=Se om det finns uppdateringar till Authentic Theme
 settings_sysinfo_csf_updates=Se om det finns uppdateringar till ConfigServer Security & Firewall

@@ -179,8 +179,6 @@ settings_hotkey_favorites=Hotkey për të preferuarat
 settings_hotkey_focus_search=Hotkey për fushën e kërkimit
 settings_hotkey_reload=Hotkey për rifreskimin e faqes
 
-settings_side_slider_background_refresh_time=Kohëzgjatja për përditësimin e informacionit të sfondit
-settings_side_slider_background_refresh_time_description=Vendosni kohën e dëshiruar për përditësimin e skedarit të njoftimit në thirrjet e sfondit.Vlera do të duhej të ishte në minuta.Vlera minimale e rekomanduar është <code> 1 </ code> minutë.Default është vendosur në minuta <code> 5 </ code>.Vlerat dhjetore mund të përdoren gjithashtu.
 settings_sysinfo_easypie_charts=Shfaq tabela
 settings_sysinfo_theme_updates=Kontrolloni për përditësime autentike të temës
 settings_sysinfo_csf_updates=Kontrolloni për përditësimet e Sigurisë & ​​Firewall të ConfigServer

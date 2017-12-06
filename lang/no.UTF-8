@@ -213,8 +213,6 @@ settings_sepia_level_navigation=Sepia filter
 settings_sepia_level_navigation_description=Standard/gjeldende verdier <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_show_night_mode_link=Vis palettbryter
 settings_show_terminal_link=Vis terminal-knapp
-settings_side_slider_background_refresh_time=Tidsavbrudd for bakgrunnsinformasjon oppdatering
-settings_side_slider_background_refresh_time_description=Angi ønsket tidsavbrudd for oppdatering av varslingsglass i bakgrunnssamtaler. Verdien er ment å være i minutter. Minimum anbefalt verdi er <code>1</code> minutt. Standard er satt til <code>5</code> minutter. Desimalverdier kan også brukes.
 settings_side_slider_enabled=Aktiver slider
 settings_side_slider_favorites_enabled=Vis Favoritter-fane
 settings_side_slider_fixed=Hold glidebryter alltid synlig

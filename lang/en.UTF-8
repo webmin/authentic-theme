@@ -176,8 +176,6 @@ settings_hotkey_favorites=Hotkey for favorites
 settings_hotkey_focus_search=Hotkey for search field
 settings_hotkey_reload=Hotkey for page reload
 
-settings_side_slider_background_refresh_time=Timeout for background information update
-settings_side_slider_background_refresh_time_description=Set desired timeout for updating notification slider in background calls. The value meant to be in minutes. Minimum recommended value is <code>1</code> minute. Default is set to <code>5</code> minutes. Decimal values can also be used.
 settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates

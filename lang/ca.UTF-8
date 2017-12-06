@@ -177,8 +177,6 @@ settings_hotkey_favorites=Drecera pels favorits
 settings_hotkey_focus_search=Drecera per cerques
 settings_hotkey_reload=Drecera per recarregar pàgina
 
-settings_side_slider_background_refresh_time=Freqüència d'actualització de les notificacions
-settings_side_slider_background_refresh_time_description=Estableix un temps d'espera, en minuts, per actualitzar les notificacions.
 settings_sysinfo_easypie_charts=Mostrar les gràfiques
 settings_sysinfo_theme_updates=Comprova actualitzacions del tema
 settings_sysinfo_csf_updates=Comprova les actualitzacions de seguretat i tallafocs

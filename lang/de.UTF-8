@@ -168,8 +168,6 @@ settings_hotkey_favorites=Schnellzugriffs Taste für Favoriten
 settings_hotkey_focus_search=Schnellzugriffs Taste für Suchfeld
 settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
-settings_side_slider_background_refresh_time=Wartezeit bei Übertragung von Informationen im Hintergrund
-settings_side_slider_background_refresh_time_description=Gewünschte Wartezeit in Minuten bei Übertragung von Informationen im Hintergrund. Der kleinstmögliche Wert beträgt <code>1</code> Minute, der Standardwert ist <code>5</code> Minuten.
 settings_sysinfo_easypie_charts=Diagramm anzeigen
 settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Design
 settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall

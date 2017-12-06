@@ -177,8 +177,6 @@ settings_hotkey_favorites=Tastă Rapidă pentru Favorite
 settings_hotkey_focus_search=Tastă Rapidă pentru câmpul de căutare
 settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
 
-settings_side_slider_background_refresh_time=Expirare timp pentru actualizări de informații în fundal
-settings_side_slider_background_refresh_time_description=Aplică timpul de expirare dorit pentru actualizări de stare și informații de sistem ce rulează cereri în fundal. Valoare trebuie să fie în minute. Valoarea minimă recomandată este de <code>1</code> minut. Configuarea implicită este de <code>5</code> minute. Se pot folosi valori zecimale.
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
 settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall

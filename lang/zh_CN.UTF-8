@@ -177,7 +177,6 @@ settings_hotkey_favorites=我的最愛熱鍵
 settings_hotkey_focus_search=搜尋熱鍵
 settings_hotkey_reload=重載熱鍵
 
-settings_side_slider_background_refresh_time=超時資訊更新 該值單位為分鐘。最小的推薦值為 <code>1</code> 分鐘。默認設置為 <code>5</code> 分鐘。也可以使用十進制值。
 settings_sysinfo_easypie_charts=顯示圖表
 settings_sysinfo_theme_updates=檢查 Authentic 主題更新
 settings_sysinfo_csf_updates=檢查 ConfigServer 安全與防火牆更新

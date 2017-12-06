@@ -347,7 +347,7 @@ sub get_sysinfo_warning
     $returned_data .= '<br>';
     foreach my $info (@info) {
         if ($info->{'type'} eq 'warning') {
-            $returned_data .= replace("btn-", "btn-tiny btn-", &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1));
+            $returned_data .= replace("ui_submit ui_form_end_submit", "btn-tiny ui_submit ui_form_end_submit", &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1));
         }
     }
     return $returned_data;
@@ -2049,8 +2049,6 @@ sub _settings
             'true',
             'settings_side_slider_palette',
             'grey',
-            'settings_side_slider_background_refresh_time',
-            '5',
 
             '__',
             _settings('fa', 'bars', &Atext('settings_right_navigation_menu_title')),
@@ -2338,7 +2336,6 @@ sub _settings
                  $k eq 'settings_hotkey_shell'                        ||
                  $k eq 'settings_hotkey_sysinfo'                      ||
                  $k eq 'settings_hotkey_favorites'                    ||
-                 $k eq 'settings_side_slider_background_refresh_time' ||
                  $k eq 'settings_sysinfo_real_time_timeout'           ||
                  $k eq 'settings_sysinfo_easypie_charts_size'         ||
                  $k eq 'settings_sysinfo_easypie_charts_width'        ||
@@ -2353,7 +2350,6 @@ sub _settings
                 $k eq 'settings_hotkey_shell'                        ||
                 $k eq 'settings_hotkey_sysinfo'                      ||
                 $k eq 'settings_hotkey_favorites'                    ||
-                $k eq 'settings_side_slider_background_refresh_time' ||
                 $k eq 'settings_sysinfo_easypie_charts_width'        ||
                 $k eq 'settings_sysinfo_easypie_charts_scale') ? ' width: 36px; ' :
               ( ($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
@@ -2814,6 +2810,7 @@ sub get_xhr_request
                                      "csf_remote_version"       => $csf_remote_version,
                                      "authentic_remote_version" => $authentic_remote_version,
                                      "csf_deny"                 => csf_temporary_list(),
+                                     "collect_interval"         => get_module_config_data('system-status', 'collect_interval'),
                                      "extended_si"              => get_extended_sysinfo(\@info, undef),
                                      "warning_si"               => get_sysinfo_warning(@info), };
                 print get_json(@updated_info);
