@@ -8,7 +8,7 @@ BEGIN {push(@INC, "..");}
 use WebminCore;
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
-use JSON qw( encode_json );
+use JSON qw( );
 
 init_config();
 ReadParse();
@@ -56,4 +56,4 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
 }
 
 print "Content-type: application/json\n\n";
-print encode_json(\%data);
+print JSON->new->latin1->encode(\%data);
