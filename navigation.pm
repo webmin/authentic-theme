@@ -128,11 +128,10 @@ elsif (!$__settings{'settings_right_default_tab_webmin'} ||
     print_sysstat_link();
 }
 
-elsif (
+elsif (!$__settings{'settings_right_default_tab_webmin'} ||
        (foreign_available("server-manager") &&
         $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
-        $in{'xhr-navigation-type'} ne 'virtualmin'
-       ) ||
+        $in{'xhr-navigation-type'} ne 'virtualmin') ||
        $in{'xhr-navigation-type'} eq 'cloudmin')
 {
 
