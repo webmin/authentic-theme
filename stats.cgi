@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 #
 # Authentic Theme (https://github.com/qooob/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
@@ -35,10 +37,18 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             $data{'io'} = [$cpuusage[5], $cpuusage[6]];
 
             # Memory stats
-            $data{'mem'} = [(100 - int(($memory[1] / $memory[0]) * 100)),
-                            text('body_used', nice_size(($memory[0]) * 1000), nice_size(($memory[0] - $memory[1]) * 1000))];
-            $data{'virt'} = [(100 - int(($memory[3] / $memory[2]) * 100)),
-                             text('body_used', nice_size(($memory[2]) * 1000), nice_size(($memory[2] - $memory[3]) * 1000))];
+            $data{'mem'} = (
+                           @memory && $memory[0] ?
+                             [(100 - int(($memory[1] / $memory[0]) * 100)),
+                              text('body_used', nice_size(($memory[0]) * 1000), nice_size(($memory[0] - $memory[1]) * 1000))
+                             ] :
+                             []);
+            $data{'virt'} = (
+                           @memory && $memory[2] ?
+                             [(100 - int(($memory[3] / $memory[2]) * 100)),
+                              text('body_used', nice_size(($memory[2]) * 1000), nice_size(($memory[2] - $memory[3]) * 1000))
+                             ] :
+                             []);
             $data{'proc'} = scalar(@processes);
         }
 
