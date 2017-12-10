@@ -97,6 +97,7 @@ sub embed_header
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
     print '  <head>', "\n";
+    embed_noscript();
     print '  <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     print '  <title>', $args[0], '</title>', "\n";
     print '  <link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
@@ -330,6 +331,66 @@ sub embed_js_scripts
     } else {
         unlink $root_directory . "/$current_theme/unauthenticated/js/scripts.js";
     }
+}
+
+sub embed_noscript
+{
+    my $noscript = <<EOF;
+      <style>
+        html[data-background-style="gainsboro"]
+        {
+          background-color: #d6d6d6;
+        }
+        html[data-background-style="nightRider"]
+        {
+          background-color: #1a1c20;
+        }
+        html[data-background-style="nightRider"] div
+        {
+          color: #979ba080;
+        }
+        body > div[data-noscript] ~ *
+        {
+            display: none !important;
+        }
+        div[data-noscript]
+        {
+            visibility: hidden;
+
+            animation: 2s noscript-fadein;
+            animation-delay: 1s;
+            text-align: center;
+
+            animation-fill-mode: forwards;
+        }
+        \@keyframes noscript-fadein
+        {
+            0%
+            {
+                opacity: 0;
+            }
+            100%
+            {
+                visibility: visible;
+
+                opacity: 1;
+            }
+        }
+      </style>
+      <noscript>
+        <div data-noscript>
+          <div>
+            <span class="fa fa-3x fa-exclamation-triangle margined-top-20 text-danger"></span>
+          </div>
+          <h2>$Atext{'body_no_javascript_title'}</h2>
+          <p>$Atext{'body_no_javascript_message'}</p>
+        </div>
+      </noscript>
+EOF
+
+  $noscript =~ tr/\r\n//d;
+  $noscript =~ s/\s+/ /g;
+  print $noscript, "\n";
 }
 
 sub embed_footer
@@ -913,10 +974,10 @@ sub header_html_data
     my ($module, $skip, @args) = @_;
     return 'data-hostname="' .
       get_display_hostname() . '" data-title-initial="' . $args[0] . '" data-debug="' . theme_mode() . '" data-session="' .
-      ($remote_user ? 1 : 0) . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
+      ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
-      ' data-slider-fixed="' . ($__settings{'settings_side_slider_fixed'} eq "true" ? 1 : 0) .
+      ' data-slider-fixed="' . ($__settings{'settings_side_slider_fixed'} eq "true" ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' . foreign_available("shell") .
       '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . usermin_available() .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .

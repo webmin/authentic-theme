@@ -758,3 +758,8 @@ settings_sysinfo_real_time_status=Enable real-time monitoring
 settings_sysinfo_real_time_timeout=Interval for performing update
 settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
 theme_xhred_global_redirecting=Redirecting
+
+
+#19.05
+body_no_javascript_title=JavaScript is disabled
+body_no_javascript_message=Please enable javascript and refresh the page

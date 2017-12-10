@@ -1688,6 +1688,7 @@ sub embed_login_head
     my $ext = (theme_mode() eq 'debug' ? 'src' : 'min');
 
     print '<head>',                 "\n";
+    embed_noscript();
     print '<meta charset="utf-8">', "\n";
     print '<title>',                $title, '</title>', "\n";
     print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
