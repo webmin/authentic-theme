@@ -24,7 +24,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
 
         if (foreign_check("proc")) {
             foreign_require("proc");
-            my @cpuusage  = proc::get_cpu_io_usage();
+            my @cpuusage  = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ( );
             my @cpuinfo   = proc::get_cpu_info();
             my @memory    = proc::get_memory_info();
             my @processes = proc::list_processes();
