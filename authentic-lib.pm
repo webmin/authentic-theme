@@ -347,7 +347,9 @@ sub get_sysinfo_warning
     $returned_data .= '<br>';
     foreach my $info (@info) {
         if ($info->{'type'} eq 'warning') {
-            $returned_data .= replace("ui_submit ui_form_end_submit", "btn-tiny ui_submit ui_form_end_submit", &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1));
+            $returned_data .= replace("ui_submit ui_form_end_submit",
+                                      "btn-tiny ui_submit ui_form_end_submit",
+                                      &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1));
         }
     }
     return $returned_data;
@@ -386,8 +388,8 @@ sub get_extended_sysinfo
                       ($__settings{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
 
                     $returned_sysinfo .= '
-                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="'
-                      . $info->{'module'} . '" class="panel panel-default'
+                    <div  data-referrer="' .
+                      $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel panel-default'
                       .
                       ( $__settings{'settings_animation_tabs'} ne 'false' ? '' :
                           ' disable-animations'
@@ -1506,13 +1508,13 @@ sub get_col_num
     my $col = $max_col / $num_col;
     return $col;
 }
+
 sub print_table_row
 {
     my ($title, $content, $id) = @_;
     print '<tr>' . "\n";
     print '<td style="width:30%;"><strong>' . $title . '</strong></td>' . "\n";
-    print '<td  style="width:70%;"><span data-id="' .
-      $id . '">' . $content . '</span></td>' . "\n";
+    print '<td  style="width:70%;"><span data-id="' . $id . '">' . $content . '</span></td>' . "\n";
     print '</tr>' . "\n";
 }
 
@@ -1520,8 +1522,7 @@ sub print_table_row_responsive
 {
     my ($title, $content, $id, $title2, $content2, $id2) = @_;
     print '<tr>' . "\n";
-    print '<td style="width:' .
-      ($title2 ? '20' : '') . '%;"><strong>' . $title . '</strong></td>' . "\n";
+    print '<td style="width:' . ($title2 ? '20' : '') . '%;"><strong>' . $title . '</strong></td>' . "\n";
     print '<td  style="width:' .
       ($title2 ? '30' : '') . '%;"><span data-id="' . $id . '">' . $content . '</span></td>' . "\n";
     if ($title2) {
@@ -1687,10 +1688,10 @@ sub embed_login_head
 
     my $ext = (theme_mode() eq 'debug' ? 'src' : 'min');
 
-    print '<head>',                 "\n";
+    print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
-    print '<title>',                $title, '</title>', "\n";
+    print '<title>', $title, '</title>', "\n";
     print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
       .
       ( (&get_product_name() eq 'usermin') ? '-usermin' :
@@ -2170,6 +2171,8 @@ sub _settings
             'false',
             'settings_sysinfo_theme_patched_updates',
             'false',
+            'settings_sysinfo_theme_usermin',
+            'false',
             'settings_sysinfo_csf_updates',
             'false');
 
@@ -2208,7 +2211,7 @@ sub _settings
         }
 
         # List of settings for Usermin
-        my @s_um_e = ('settings_hotkey_toggle_key_usermin');
+        my @s_um_e = ('settings_hotkey_toggle_key_usermin', 'settings_sysinfo_theme_usermin');
         if (!usermin_available()) {
             foreach my $e (@s_um_e) {
                 push(@_s_e, $e);
@@ -2330,28 +2333,28 @@ sub _settings
             ';
 
         } elsif ($k =~ /settings_security_notify_on_/ ||
-                 $k =~ /settings_hotkey_toggle_key_/                  ||
-                 $k eq 'settings_hotkey_focus_search'                 ||
-                 $k eq 'settings_hotkey_toggle_slider'                ||
-                 $k eq 'settings_hotkey_reload'                       ||
-                 $k eq 'settings_hotkey_shell'                        ||
-                 $k eq 'settings_hotkey_sysinfo'                      ||
-                 $k eq 'settings_hotkey_favorites'                    ||
-                 $k eq 'settings_sysinfo_real_time_timeout'           ||
-                 $k eq 'settings_sysinfo_easypie_charts_size'         ||
-                 $k eq 'settings_sysinfo_easypie_charts_width'        ||
+                 $k =~ /settings_hotkey_toggle_key_/           ||
+                 $k eq 'settings_hotkey_focus_search'          ||
+                 $k eq 'settings_hotkey_toggle_slider'         ||
+                 $k eq 'settings_hotkey_reload'                ||
+                 $k eq 'settings_hotkey_shell'                 ||
+                 $k eq 'settings_hotkey_sysinfo'               ||
+                 $k eq 'settings_hotkey_favorites'             ||
+                 $k eq 'settings_sysinfo_real_time_timeout'    ||
+                 $k eq 'settings_sysinfo_easypie_charts_size'  ||
+                 $k eq 'settings_sysinfo_easypie_charts_width' ||
                  $k eq 'settings_sysinfo_easypie_charts_scale')
         {
 
             my $width =
               ($k =~ /settings_hotkey_toggle_key_/ ||
-                $k eq 'settings_hotkey_focus_search'                 ||
-                $k eq 'settings_hotkey_toggle_slider'                ||
-                $k eq 'settings_hotkey_reload'                       ||
-                $k eq 'settings_hotkey_shell'                        ||
-                $k eq 'settings_hotkey_sysinfo'                      ||
-                $k eq 'settings_hotkey_favorites'                    ||
-                $k eq 'settings_sysinfo_easypie_charts_width'        ||
+                $k eq 'settings_hotkey_focus_search'          ||
+                $k eq 'settings_hotkey_toggle_slider'         ||
+                $k eq 'settings_hotkey_reload'                ||
+                $k eq 'settings_hotkey_shell'                 ||
+                $k eq 'settings_hotkey_sysinfo'               ||
+                $k eq 'settings_hotkey_favorites'             ||
+                $k eq 'settings_sysinfo_easypie_charts_width' ||
                 $k eq 'settings_sysinfo_easypie_charts_scale') ? ' width: 36px; ' :
               ( ($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
                   ' width: 48px; ' :
@@ -2756,7 +2759,7 @@ sub get_xhr_request
                       replace((!has_command('bash') ? '>git<' : '~'), '>bash<', $Atext{'theme_git_patch_no_git_message'}), };
                 print get_json(\@update_rs);
             } else {
-                my $usermin = usermin_available();
+                my $usermin = (usermin_available() && $__settings{'settings_sysinfo_theme_usermin'} eq 'true');
                 my $usermin_root;
                 backquote_logged("yes | $root_directory/$current_theme/theme-update.sh -$version_type -no-restart");
                 if ($usermin) {
@@ -2811,9 +2814,9 @@ sub get_xhr_request
                                      "csf_remote_version"       => $csf_remote_version,
                                      "authentic_remote_version" => $authentic_remote_version,
                                      "csf_deny"                 => csf_temporary_list(),
-                                     "collect_interval"         => get_module_config_data('system-status', 'collect_interval'),
-                                     "extended_si"              => get_extended_sysinfo(\@info, undef),
-                                     "warning_si"               => get_sysinfo_warning(@info), };
+                                     "collect_interval" => get_module_config_data('system-status', 'collect_interval'),
+                                     "extended_si" => get_extended_sysinfo(\@info, undef),
+                                     "warning_si"  => get_sysinfo_warning(@info), };
                 print get_json(@updated_info);
             } else {
                 print get_json_empty();
