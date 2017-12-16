@@ -775,3 +775,6 @@ theme_xhred_global_redirecting=Redirecting
 body_no_javascript_title=JavaScript is disabled
 body_no_javascript_message=Please enable javascript and refresh the page
 settings_sysinfo_theme_usermin=Should running theme updates affect Usermin
+theme_xhred_connection_lost=Connection lost
+theme_xhred_connection_success=Connection successful
+theme_xhred_connection_success_details=Connection to the server has been re-established.

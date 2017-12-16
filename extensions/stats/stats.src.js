@@ -25,6 +25,9 @@ const stats = {
         this.call = $.ajax({
           context: this,
           url: v___location_prefix + "/stats.cgi?xhr-stats=general",
+          error: function() {
+            v___theme_stats_error = 1;
+          },
           success: function(data) {
 
             // Take half a second delay, render and restart
