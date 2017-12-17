@@ -1038,6 +1038,9 @@ sub set_tmp_var
     $salt =~ tr/A-Za-z0-9//cd;
     $key =~ tr/A-Za-z0-9//cd;
 
+    $value =~ s/[?|&]$xnav//g;
+    $value =~ s/[^\p{L}\p{N},;:.%&#=_@\+\?\-\/]//g;
+
     $var{$key} = $value;
 
     write_file(('/' . $tmp . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
