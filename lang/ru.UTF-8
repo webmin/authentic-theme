@@ -98,12 +98,12 @@ session_twofailed=Ошибка двухфакторной аутентифика
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=Настройки
+settings_right_restore_defaults=Востановить по умолчанию
+settings_right_restored=Востановить
+settings_right_restoring=Востановленно
+settings_right_saved=Сохранить
+settings_right_saving=Сохранено
 
 settings_right_theme_extensions=Theme extensions
 settings_right_theme_extensions_title=Theme Extensions
@@ -116,7 +116,7 @@ settings_right_logos_title=Theme logos can be easily set here, for both, authent
 settings_right_logo_authenticated_users=Logo for authenticated users
 settings_right_logo_unauthenticated_users=Logo for unauthenticated users
 
-settings_right_current_theme=Current theme
+settings_right_current_theme=Текущая тема
 settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
 settings_right_theme_left_configuration_title=Authentic Theme Configuration
 settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
@@ -124,13 +124,13 @@ settings_right_theme_left_logo_title=Authentic Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
+settings_right_window_options_title=Настройки окна
+settings_right_navigation_menu_title=Настройка меню навигации
 settings_right_table_options_title=Table options
 settings_security_title=Security Alerts options
 settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_hotkey_options_title=Настройка горячих клавишь
+settings_right_sysinfo_page_options_title=Настройки станицы системной информации
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
 settings_hotkey_custom_1=Custom link <code>1</code>
@@ -159,26 +159,26 @@ settings_right_small_table_icons_description=Substitute standard size table icon
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=Не показывать <kbd>Обновить модули</kbd> 
+settings_leftmenu_section_hide_unused_modules=Не показывать <kbd>Неиспользуемые модули</kbd> 
+settings_favorites=Показывать кнопку избранное
+settings_leftmenu_button_language=Показывать кнопку язык
+settings_leftmenu_button_refresh=Показывать кнопку обновить
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=Показывать кнопку настройки темы
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_hotkeys_active=Включить использование горячих клавиш
+settings_hotkey_toggle_modifier=Первая горячая клавиша
+settings_hotkey_toggle_key_webmin=Горячая клавиша для Webmin
+settings_hotkey_toggle_key_virtualmin=Горячая клавиша для Virtualmin
+settings_hotkey_toggle_key_cloudmin=Горячая клавиша для Cloudmin
+settings_hotkey_toggle_key_usermin=Горячая клавиша для Usermin
+settings_hotkey_toggle_key_webmail=Горячая клавиша для Mail
+settings_hotkey_sysinfo=Горячая клавиша для перехода к станице системной информации
+settings_hotkey_shell=Горячая клавиша для терминала
+settings_hotkey_favorites=Горячая клавиша для избранного
+settings_hotkey_focus_search=Горячая клавиша для поля поиска
+settings_hotkey_reload=Горячая клавиша для перезагрузки страницы
 
 settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
@@ -199,11 +199,11 @@ settings_side_slider_fixed=Keep slider always visible
 settings_side_slider_palette=Slider palette
 settings_hotkey_toggle_slider=Hotkey for slider
 settings_window_replace_timestamps=Enable dates substitutions
-settings_window_replaced_timestamp_format_short=Short date/time format
-settings_window_replaced_timestamp_format_full=Full date/time format
+settings_window_replaced_timestamp_format_short=Короткий формат даты/времени
+settings_window_replaced_timestamp_format_full=Полный формат даты/времени
 settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
-settings_side_slider_enabled=Enable slider
+settings_side_slider_enabled=Включить боковую панель
 settings_leftmenu_user_html=Show HTML snippet
 settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
@@ -221,10 +221,10 @@ theme_version=Версия темы
 
 
 # Version 17.40
-theme_global_error=Error
-theme_global_warning=Warning
-theme_global_success=Success
-theme_global_info=Information
+theme_global_error=Ошибка
+theme_global_warning=Внимание
+theme_global_success=Удачно
+theme_global_info=Информация
 sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
 settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
 theme_sysinfo_wmdocs=Webmin documentation
@@ -243,10 +243,10 @@ theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Please wait...
-theme_xhred_filemanager_copying_selected=Copying selected.
-theme_xhred_filemanager_cutting_selected=Cutting selected.
-theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
+theme_xhred_global_please_wait=Пожалуйста подождите...
+theme_xhred_filemanager_copying_selected=Выделите для копирования.
+theme_xhred_filemanager_cutting_selected=Выделите длч вырезания.
+theme_xhred_filemanager_pasting_selected=Вставить в буфер обмена.
 theme_xhred_filemanager_unpacking_archive=Unpacking selected file(s).
 theme_xhred_filemanager_deleting_selected=Deleting selected.
 theme_xhred_filemanager_renaming_selected=Renaming selected.
@@ -274,17 +274,17 @@ theme_xhred_filemanager_no_selection_to_copy=No directories/files selected to co
 theme_xhred_filemanager_no_selection_to_cut=No directories/files selected to cut.
 theme_xhred_filemanager_empty_clipboard=Clipboard is empty.
 
-theme_xhred_filemanager_successful_extraction=Extraction of selected file(s) was successful.
-theme_xhred_filemanager_successful_deletion=Deletion was successful.
+theme_xhred_filemanager_successful_extraction=Файлы успешно извлечены.
+theme_xhred_filemanager_successful_deletion=Удаление успешно.
 theme_xhred_filemanager_successful_permissions=Permissions have been changed successfully.
 theme_xhred_filemanager_successful_ownership=Ownership has been changed successfully.
-theme_xhred_filemanager_successful_compression=Compression has successfully finished.
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
-theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
+theme_xhred_filemanager_successful_compression=Компрессия успешно завершена.
+theme_xhred_filemanager_successful_directory_creation=Папка `<strong>%value</strong>` успешно создана.
+theme_xhred_filemanager_successful_file_creation=Файл `<strong>%value</strong>` создан успешно.
 
 theme_xhred_notifications_packages_updates=Packages Update
 theme_xhred_notifications_theme_update=Theme Update
-theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
+theme_xhred_notifications_theme_update_message=Обнаружена новая версия <em>%v</em>  <strong>Authentic Theme</strong>. Пожалуйста обновитесь.
 theme_xhred_notifications_firewall_update=Firewall Update
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
 
@@ -319,27 +319,27 @@ settings_hue_level_content_description=Default/current values <code>0</code>°/<
 settings_cm_view_palette=Viewer color palette
 settings_cm_editor_palette=Editor color palette
 
-theme_xhred_filemanager_context_select_all=Select All
+theme_xhred_filemanager_context_select_all=Выбрать все
 theme_xhred_filemanager_context_select_invert=Invert Selection
-theme_xhred_filemanager_context_refresh=Refresh
-theme_xhred_filemanager_context_newfile=Create new file
-theme_xhred_filemanager_context_newfoder=Create new directory
-theme_xhred_filemanager_context_copy=Copy
-theme_xhred_filemanager_context_cut=Cut
-theme_xhred_filemanager_context_paste=Paste
+theme_xhred_filemanager_context_refresh=Обновить
+theme_xhred_filemanager_context_newfile=Создать новый файл
+theme_xhred_filemanager_context_newfoder=Создать новую папку
+theme_xhred_filemanager_context_copy=Копировать
+theme_xhred_filemanager_context_cut=Вырезать
+theme_xhred_filemanager_context_paste=Вставить
 theme_xhred_filemanager_context_chmod=Change Permissions
 theme_xhred_filemanager_context_chown=Change Ownership
 
 #17.51
-theme_xhred_filemanager_context_new=New
-theme_xhred_filemanager_context_newarchive=Create new archive
-theme_xhred_filemanager_context_delete=Delete
-theme_xhred_filemanager_context_rename=Rename
-theme_xhred_filemanager_context_edit=Edit
-theme_xhred_filemanager_context_extract=Extract
+theme_xhred_filemanager_context_new=Новый
+theme_xhred_filemanager_context_newarchive=Создать новый архив
+theme_xhred_filemanager_context_delete=Удалить
+theme_xhred_filemanager_context_rename=Переименовать
+theme_xhred_filemanager_context_edit=Редактировать
+theme_xhred_filemanager_context_extract=Извлечь
 theme_xhred_filemanager_context_goto=Open Item Location
-theme_xhred_filemanager_context_properties=Properties
-theme_xhred_filemanager_context_search=Search
+theme_xhred_filemanager_context_properties=Свойства
+theme_xhred_filemanager_context_search=Поиск
 
 #17.52
 theme_xhred_filemanager_context_deselect_all=Deselect All
@@ -382,11 +382,11 @@ theme_xhred_datatable_szerorecords=No matching records found
 #17.64
 theme_xhred_filemanager_file_edit_but_not_saved=File has been edited but hasn't been saved.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=What do you want to do?
-theme_xhred_global_save=Save
-theme_xhred_global_save_and_close=Save and close
-theme_xhred_global_close_without_saving=Close without saving
-theme_xhred_global_continue_editing=Continue editing
-theme_xhred_filemanager_context_download_file=Download
+theme_xhred_global_save=Сохранить
+theme_xhred_global_save_and_close=Сохранить и закрыть
+theme_xhred_global_close_without_saving=Закрыть не сохраняя
+theme_xhred_global_continue_editing=Продолжить редактирование
+theme_xhred_filemanager_context_download_file=Загрузить
 
 #17.65
 settings_sysinfo_easypie_charts_width=Width of charts
@@ -397,7 +397,7 @@ right_return_theme_options=theme options
 theme_xhred_datatable_semptydirectory=Directory is empty
 theme_xhred_filemanager_context_clipboard=Copy path to clipboard
 theme_xhred_global_warning=Warning
-theme_xhred_global_close=Close
+theme_xhred_global_close=Закрыть
 theme_xhred_encoding_warning=Detected that you are using non-unicode character set, which is not recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
 
 theme_xhred_filemanager__no_bookmarks=No saved bookmarks
@@ -431,13 +431,13 @@ theme_xhred_database_editing_rows=Editing selected rows
 theme_xhred_database_adding_new_row_data=Set data
 
 #17.84
-theme_xhred_datatable_filter=Filter
+theme_xhred_datatable_filter=Фильтр
 
-theme_xhred_global_update=Update
-theme_xhred_global_update_and_return=Update and return
-theme_xhred_global_update_and_close=Update and close
-theme_xhred_global_back=Back
-theme_xhred_global_cancel=Cancel
+theme_xhred_global_update=Обновить
+theme_xhred_global_update_and_return=Обновить и вернуться
+theme_xhred_global_update_and_close=Обновить и закрыть
+theme_xhred_global_back=Вернуться
+theme_xhred_global_cancel=Отменить
 
 theme_xhred_database_add_row_successful=New row was successfully added
 theme_xhred_database_edit_row_successful=Selected row was successfully updated
@@ -467,16 +467,16 @@ theme_xhred_updates_disabled_notice=Detected that you don't have enabled notific
 
 
 #18.00
-theme_xhred_global_file=File
-theme_xhred_global_directory=Directory
+theme_xhred_global_file=Файл
+theme_xhred_global_directory=Директория
 theme_xhred_global_no_target=Target doesn't exist or not accessible
 theme_xhred_global_error_code=Error code
-theme_xhred_global_on=On
-theme_xhred_global_off=Off
-theme_xhred_global_all=All
+theme_xhred_global_on=Включить
+theme_xhred_global_off=Выключить
+theme_xhred_global_all=Все
 theme_xhred_global_none=None
-theme_xhred_global_yes=Yes
-theme_xhred_global_no=No
+theme_xhred_global_yes=Да
+theme_xhred_global_no=Нет
 
 theme_xhred_filemanager_new_tab=Add new tab (Ctrl+Space)
 theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
@@ -507,8 +507,8 @@ theme_xhred_filemanager_search_query=Query mask
 theme_xhred_filemanager_search_match=Find in results
 theme_xhred_filemanager_search_replace=Replace in results
 
-theme_xhred_global_find=Find
-theme_xhred_global_replace=Replace
+theme_xhred_global_find=Поиск
+theme_xhred_global_replace=Заменить
 
 theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
 theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
@@ -542,11 +542,11 @@ theme_xhred_server_process_running=Server process is still running!? Are you sur
 
 
 #18.03
-settings_global_options_title=Global options
-settings_global_passgen_format=Password generator
+settings_global_options_title=Глобальные настройки
+settings_global_passgen_format=Генератор паролей
 settings_global_passgen_format_description=Set the length and character type used in the generated password. First value is numerical, which is the length of the password, immediately followed by <code>|</code> as a delimiter. Next is the type, where you can use numbers <code>0-9</code>, letters <code>a-z</code> and/or <code>A-Z</code>, and special characters <code>#</code>. All of these sets can be used together or individually, using comma as a delimiter. Default value equals to <code>12|a-z,A-Z,0-9,#</code>, which represents password with 12 characters in length, containing upper and lower case letters, numbers and special characters.
-theme_xhred_password_generator_new=Generate New Password<br> (To Clipboard)
-theme_xhred_password_generator_new_success=Generated password %password has been copied to clipboard successfully.
+theme_xhred_password_generator_new=Сгенерировать новый пароль<br> (В буфер обмена)
+theme_xhred_password_generator_new_success=Сгенерированный пароль %password скопирован в буфер обмена.
 
 
 #18.08
@@ -573,28 +573,28 @@ theme_xhred_global_default=Default
 theme_xhred_global_system_default=System default
 theme_xhred_global_local_system_default=Local system default
 theme_xhred_global_stats=Stats
-theme_xhred_global_notifications=Notifications
-theme_xhred_global_favorites=Favorites
+theme_xhred_global_notifications=Уведомления
+theme_xhred_global_favorites=Избранное
 theme_xhred_global_cpu_load=CPU load
 theme_xhred_notification_none=No notifications
 theme_xhred_notification_no_data=No collected data
 theme_xhred_notification_no_favorites=No favorites data
-theme_xhred_global_theme_version=Theme version
+theme_xhred_global_theme_version=Версия темы
 
 settings_side_slider_sysinfo_enabled=Show dashboard tab
 settings_side_slider_notifications_enabled=Show notifications tab
 settings_side_slider_favorites_enabled=Show favorites tab
 settings_show_terminal_link=Show terminal button
 
-theme_xhred_sysinfo_system_monitors=System Monitors
-theme_xhred_sysinfo_server_status=Servers Status
+theme_xhred_sysinfo_system_monitors=Системный Монитор
+theme_xhred_sysinfo_server_status=Статус Серверов
 theme_xhred_sysinfo_software_versions=Software Versions
-theme_xhred_sysinfo_recent_logins=Recent Logins
-theme_xhred_sysinfo_vm_package_updates=Virtualmin Package Updates
-theme_xhred_sysinfo_disk_quotas=Disk Quotas
+theme_xhred_sysinfo_recent_logins=Последние входившие
+theme_xhred_sysinfo_vm_package_updates=Обновление пакетов Virtualmin
+theme_xhred_sysinfo_disk_quotas=Дисковые квоты
 theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
 
-left_netdata=Realtime Monitoring
+left_netdata=Открыть Netdata
 settings_leftmenu_netdata=Show Netdata realtime monitoring link
 settings_leftmenu_netdata_link=Netdata server preferred link
 
@@ -612,8 +612,8 @@ theme_xhred_global_no_results_found=No results found
 
 
 #18.40
-theme_new_password_header=Set new password for user
-login_reset=Password recovery
+theme_new_password_header=Установить новый пароль для пользователя
+login_reset=Востановление пароля
 theme_xhred_move_top=Move to top
 theme_xhred_move_bottom=Move to bottom
 theme_xhred_move_up=Move up
@@ -623,15 +623,15 @@ theme_xhred_add_before=Add before
 settings_button_tooltip=Show tooltip on buttons
 settings_show_night_mode_link=Show palette toggle
 settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
-settings_title=Theme Configuration
-settings_subtitle=For user
+settings_title=Настройка темы
+settings_subtitle=Для пользователя
 
 theme_tooltip_night_mode=Day/night mode toggle
-theme_tooltip_terminal_link=Terminal
-theme_tooltip_language_link=Language
-theme_xhred_tooltip_switch_user=Switch user
-theme_tooltip_logout=Sign out
-theme_tooltip_edit_user=Edit user
+theme_tooltip_terminal_link=Терминал
+theme_tooltip_language_link=Язык
+theme_xhred_tooltip_switch_user=Сменить пользователя
+theme_tooltip_logout=Записать
+theme_tooltip_edit_user=Редактировать пользователя
 
 
 #18.45
@@ -646,18 +646,18 @@ theme_git_patch_no_git_message=In order to install latest updates directly from 
 theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
 theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
 theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme update has been initiated.
+theme_xhred_git_patch_initiated=Начато обновление темы.
 theme_xhred_global_prev_page=Go back one page
-theme_xhred_global_help=Help
+theme_xhred_global_help=Помощь
 settings_right_soft_updates_page_options_title=Software updates
-theme_xhred_git_compare_changes=Compare changes
+theme_xhred_git_compare_changes=Сравнить изменения
 theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
 
 
 
 #18.46
 theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
+theme_left_mail_change_password=Сменить Пароль
 theme_left_mail_account_functions=Account Functions
 theme_xhred_global_dir_up=Go to previous directory (Backspace)
 theme_xhred_global_module_config=Module config
@@ -676,9 +676,9 @@ theme_xhred_global_resolved_issues=Resolved issues in %value releases
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_xhred_force_upgrade_beta=Install latest development version (beta)
-theme_xhred_force_upgrade_stable=Install latest release version (stable)
+theme_force_upgrade=Быстро обновить тему
+theme_xhred_force_upgrade_beta=Установить последнюю бета версию
+theme_xhred_force_upgrade_stable=Установить последнюю стабильную версию
 theme_xhred_source_encoding=Source encoding
 theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
 theme_xhred_encoding_manually_set=Manually set encoding
@@ -718,9 +718,9 @@ settings_webmin_default_module=Default module for Webmin
 
 theme_xhred_global_unbeforeunload_title=Changes you have made may not be saved
 theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
-theme_xhred_global_continue=Continue
+theme_xhred_global_continue=Продолжить
 
-theme_xhred_global_automatic_refresh=Automatic refresh
+theme_xhred_global_automatic_refresh=Автоматическое обновление
 theme_xhred_global_second=Second
 theme_xhred_global_seconds=Seconds
 theme_xhred_global_minute=Minute
@@ -740,11 +740,11 @@ theme_xhred_log_file_empty=Log file is empty
 theme_xhred_config_configurable_options=Configurable options
 theme_xhred_filter_content_no_matches_query=No content matches %str query
 theme_xhred_toggle_accordions=Toggle accordions visibility
-theme_xhred_global_whats_new=What's new
+theme_xhred_global_whats_new=Что нового
 theme_xhred_global_report_an_issue=Report an issue
-theme_xhred_global_theme_configuration=Theme configuration
-theme_xhred_global_official_website=Official website
-theme_xhred_global_about_theme=About theme
+theme_xhred_global_theme_configuration=Настройка темы
+theme_xhred_global_official_website=Официальный сайт
+theme_xhred_global_about_theme=О теме
 theme_xhred_connection_error=Connection error
 theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
 theme_xhred_session_expired=Session expired
@@ -757,8 +757,8 @@ theme_xhred_global_reauthenticate=Reauthenticate
 
 
 #19.04
-settings_sysinfo_real_time_status=Enable real-time monitoring
-settings_sysinfo_real_time_timeout=Interval for performing update
+settings_sysinfo_real_time_status=Включить мониторинг в реальном времени
+settings_sysinfo_real_time_timeout=Интервал обновления значений
 settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
 theme_xhred_global_redirecting=Redirecting
 
