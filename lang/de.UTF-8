@@ -695,67 +695,66 @@ theme_xhred_global_set_encoding=Enkodierung setzen
 
 
 #19.00
-theme_xhred_sysinfo_update_start=System information is being recollected.
-theme_xhred_sysinfo_update_end=System information has been recollected successfully.
-theme_xhred_sysinfo_update_failed=System information can't be recollected. Try again later.
+theme_xhred_sysinfo_update_start=System Informationen werden neu geladen.
+theme_xhred_sysinfo_update_end=System Informationen wurden erfolgreich neu geladen.
+theme_xhred_sysinfo_update_failed=System Informationen konnten nicht geladren werden.
 
-theme_xhred_global_development_version=Development version
+theme_xhred_global_development_version=Entwicklunger Version
 
-right_vm_server_summary=Virtual Server Summary
+right_vm_server_summary=Virtual Server Zusammenfassung
+settings_webmin_default_module=Standard Modul für Webmin
 
-settings_webmin_default_module=Default module for Webmin
+theme_xhred_global_unbeforeunload_title=Deine Änderungen wurden noch nicht gespeichert
+theme_xhred_global_unbeforeunload_message=Mit Weiter könten Deine nicht gespeicherten Änderungen auf dieser Seite könnten verloren gehen.
+theme_xhred_global_continue=Weiter
 
-theme_xhred_global_unbeforeunload_title=Changes you have made may not be saved
-theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
-theme_xhred_global_continue=Continue
-
-theme_xhred_global_automatic_refresh=Automatic refresh
-theme_xhred_global_second=Second
-theme_xhred_global_seconds=Seconds
+theme_xhred_global_automatic_refresh=Automatisch neu laden
+theme_xhred_global_second=Sekunde
+theme_xhred_global_seconds=Sekunden
 theme_xhred_global_minute=Minute
-theme_xhred_global_minutes=Minutes
+theme_xhred_global_minutes=Minuten
 
 
 #19.01
-theme_xhred_browser_warning=To have the best experience with server panel on your computer, use a supported, up-to-date browser.<br><br><em>Internet Explorer</em> is no longer supported.<br><br>Recommended browsers are <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
+theme_xhred_browser_warning=Für die beste Unterstützung des Server Panles auf deinem Computer verwende einen aktuellen, unterstützen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterstützt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
 
 
 #19.02
-theme_xhred_filter_content=Filter content
-theme_xhred_log_file_empty=Log file is empty
+theme_xhred_filter_content=Filtere Inhalt
+theme_xhred_log_file_empty=Log Datei ist leer
 
 
 #19.03
-theme_xhred_config_configurable_options=Configurable options
-theme_xhred_filter_content_no_matches_query=No content matches %str query
-theme_xhred_toggle_accordions=Toggle accordions visibility
-theme_xhred_global_whats_new=What's new
-theme_xhred_global_report_an_issue=Report an issue
-theme_xhred_global_theme_configuration=Theme configuration
-theme_xhred_global_official_website=Official website
-theme_xhred_global_about_theme=About theme
-theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
-theme_xhred_session_expired=Session expired
-theme_xhred_session_unlocked=Session unlocked
-theme_xhred_session_expired_details=You have been logged out due to inactivity.
-theme_xhred_signing_in=Signing in
-theme_xhred_signing_success=Successfully signed in!
-theme_xhred_session_failed_password=Wrong password, please try again.
-theme_xhred_global_reauthenticate=Reauthenticate
+theme_xhred_config_configurable_options=Einstellbare Optionen
+theme_xhred_filter_content_no_matches_query=Kein Inhalt für Anfrage %str gefunden
+theme_xhred_toggle_accordions=Sichtbarkeit der Akkordeons umschalten
+theme_xhred_global_whats_new=Was gibt es Neues
+theme_xhred_global_report_an_issue=Melde einen Fehler
+theme_xhred_global_theme_configuration=Design Einstellungen
+theme_xhred_global_official_website=Offizielle Webseite
+theme_xhred_global_about_theme=Über das Design
+theme_xhred_connection_error=Fehler beim Verbinden
+theme_xhred_connection_error_details=Es konnte keine Verbindung zum Server <strong>%server</strong> hergestellt werden. <ul><li>Prüfe den Server Status</li><li>Prüfe die Verbindung</li></ul>
+theme_xhred_session_expired=Sizung abgelaufen
+theme_xhred_session_unlocked=Sitzung wieder hergestellt
+theme_xhred_session_expired_details=Du wurde wegen Inaktivität abgemeldet.
+theme_xhred_signing_in=Melde an
+theme_xhred_signing_success=Erfolgreich angemeldet!
+theme_xhred_session_failed_password=Falsches Passwort, versuche es nochmal.
+theme_xhred_global_reauthenticate=Erneut anmelden
 
 
 #19.04
-settings_sysinfo_real_time_status=Enable real-time monitoring
-settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
-theme_xhred_global_redirecting=Redirecting
+settings_sysinfo_real_time_status=Echtzeitüberwachung einschalten
+settings_sysinfo_real_time_timeout=Aktualisierungsintervall
+settings_sysinfo_real_time_timeout_description=Lege das Intervall für die Aktualisierung von Daten im Hintergrund fest. Der Wert sollte in Millisekunden angegeben werden. Halte den Wert so niedrig wie möglich, um den Verlust von Kurzzeitdaten zu vermeiden.
+theme_xhred_global_redirecting=Umleiten
 
 
 #19.05
-body_no_javascript_title=JavaScript is disabled
-body_no_javascript_message=Please enable javascript and refresh the page
-settings_sysinfo_theme_usermin=Should running theme updates affect Usermin
-theme_xhred_connection_lost=Connection lost
-theme_xhred_connection_success=Connection successful
-theme_xhred_connection_success_details=Connection to the server has been re-established.
+body_no_javascript_title=JavaScript ist abgeschaltet
+body_no_javascript_message=Bitte JavasScript einschalten und Seite neu Laden
+settings_sysinfo_theme_usermin=Soll auch ein Design Update für Usermin erflogen
+theme_xhred_connection_lost=Verbindung verloren
+theme_xhred_connection_success=Erfolgreich verbunden
+theme_xhred_connection_success_details=Verbindung zum Server wurde wieder hergestellt.
