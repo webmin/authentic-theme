@@ -747,14 +747,14 @@ theme_xhred_global_reauthenticate=Erneut anmelden
 #19.04
 settings_sysinfo_real_time_status=Echtzeitüberwachung einschalten
 settings_sysinfo_real_time_timeout=Aktualisierungsintervall
-settings_sysinfo_real_time_timeout_description=Lege das Intervall für die Aktualisierung von Daten im Hintergrund fest. Der Wert sollte in Millisekunden angegeben werden. Halte den Wert so niedrig wie möglich, um den Verlust von Kurzzeitdaten zu vermeiden.
+settings_sysinfo_real_time_timeout_description=Legt das Intervall für die Aktualisierung von Daten im Hintergrund fest. Der Wert sollte in Millisekunden angegeben werden. Halte den Wert so niedrig wie möglich, um den Verlust von Kurzzeitdaten zu vermeiden.
 theme_xhred_global_redirecting=Umleiten
 
 
 #19.05
 body_no_javascript_title=JavaScript ist abgeschaltet
 body_no_javascript_message=Bitte JavasScript einschalten und Seite neu Laden
-settings_sysinfo_theme_usermin=Soll auch ein Design Update für Usermin erflogen
+settings_sysinfo_theme_usermin=Design Update auch für Usermin durchführen
 theme_xhred_connection_lost=Verbindung verloren
 theme_xhred_connection_success=Erfolgreich verbunden
 theme_xhred_connection_success_details=Verbindung zum Server wurde wieder hergestellt.
