@@ -1202,7 +1202,7 @@ sub get_sysinfo_vars
         if ($info->{'cputemps'}) {
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
-'<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu" style="margin-right:3px; margin-bottom: 3px"> Core '
+'<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core '
                   . $t->{'core'} . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
@@ -1219,17 +1219,17 @@ sub get_sysinfo_vars
                 my $emsg;
                 if ($t->{'errors'}) {
                     $emsg .=
-'&nbsp;&nbsp;<span class="label label-warning bg-warning" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
+'&nbsp;&nbsp;<span class="label bg-primary-dark status-error">'
                       . &Atext('body_driveerr', $t->{'errors'})
                       . "</span>";
                 } elsif ($t->{'failed'}) {
                     $emsg .=
-'&nbsp;&nbsp;<span class="label label-danger bg-danger" style="vertical-align: middle; max-height: 11px; display: inline-block; line-height: 9px;">'
+'&nbsp;&nbsp;<span class="label bg-danger-dark status-error">'
                       . &Atext('body_drivefailed')
                       . '</span>';
                 }
                 $hdd_temperature .=
-'<span class="badge-custom badge-drivestatus" data-stats="drive" style="margin-right:3px; margin-bottom: 3px">'
+'<span class="badge-custom badge-drivestatus" data-stats="drive">'
                   . $short . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
