@@ -116,11 +116,14 @@ if (dashboard_switch()
     }
 }
 
-elsif (!$__settings{'settings_right_default_tab_webmin'} ||
-       (foreign_available("virtual-server") &&
-        $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
-        $in{'xhr-navigation-type'} ne 'cloudmin') ||
-       $in{'xhr-navigation-type'} eq 'virtualmin')
+elsif (
+       ((!$__settings{'settings_right_default_tab_webmin'} && $in{'xhr-navigation-type'} ne 'cloudmin') ||
+        (foreign_available("virtual-server") &&
+         $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
+         $in{'xhr-navigation-type'} ne 'cloudmin') ||
+        $in{'xhr-navigation-type'} eq 'virtualmin'
+       ) &&
+       get_product_name() ne 'usermin')
 {
 
     print_left_menu('virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'});
@@ -128,11 +131,14 @@ elsif (!$__settings{'settings_right_default_tab_webmin'} ||
     print_sysstat_link();
 }
 
-elsif (!$__settings{'settings_right_default_tab_webmin'} ||
-       (foreign_available("server-manager") &&
-        $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
-        $in{'xhr-navigation-type'} ne 'virtualmin') ||
-       $in{'xhr-navigation-type'} eq 'cloudmin')
+elsif (
+       (!$__settings{'settings_right_default_tab_webmin'} ||
+        (foreign_available("server-manager") &&
+         $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+         $in{'xhr-navigation-type'} ne 'virtualmin') ||
+        $in{'xhr-navigation-type'} eq 'cloudmin'
+       ) &&
+       get_product_name() ne 'usermin')
 {
 
     print_left_menu('server-manager', \@leftitems, 0, 0, $in{'sid'}, $in{'xhr-navigation-type'});
