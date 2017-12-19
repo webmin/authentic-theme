@@ -1059,7 +1059,7 @@ sub theme_redirect
     }
 
     my $location = replace(($protocol . $redirect), undef, $_[1]);
-    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/) ? 1 : 0);
+    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/) ? 1 : 0);
 
     if ($location_use) {
         if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix) && $location !~ /:\/\//) {
