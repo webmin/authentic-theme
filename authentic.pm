@@ -21,9 +21,6 @@ sub theme_header
         print "<table class=\"header\"><tr>\n";
 
         print '<td id="headln2l" class="invisible">';
-        if (get_env('http_webmin_servers') && !$tconfig{'framed'}) {
-            print "<a href='get_env('http_webmin_servers')'>", "$text{'header_servers'}</a><br>\n";
-        }
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
             my $nolo = get_env('anonymous_user') ||
@@ -1059,7 +1056,7 @@ sub theme_redirect
     }
 
     my $location = replace(($protocol . $redirect), undef, $_[1]);
-    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/) ? 1 : 0);
+    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/ && !get_env('http_webmin_servers')) ? 1 : 0);
 
     if ($location_use) {
         if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix) && $location !~ /:\/\//) {
