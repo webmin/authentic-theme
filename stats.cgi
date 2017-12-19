@@ -24,7 +24,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
 
         if (foreign_check("proc")) {
             foreign_require("proc");
-            my @cpuusage  = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ( );
+            my @cpuusage  = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ();
             my @cpuinfo   = proc::get_cpu_info();
             my @memory    = proc::get_memory_info();
             my @processes = proc::list_processes();
@@ -38,13 +38,13 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
 
             # Memory stats
             $data{'mem'} = (
-                           @memory && $memory[0] ?
+                           @memory && $memory[0] && $memory[0] > 0 ?
                              [(100 - int(($memory[1] / $memory[0]) * 100)),
                               text('body_used', nice_size(($memory[0]) * 1000), nice_size(($memory[0] - $memory[1]) * 1000))
                              ] :
                              []);
             $data{'virt'} = (
-                           @memory && $memory[2] ?
+                           @memory && $memory[2] && $memory[2] > 0 ?
                              [(100 - int(($memory[3] / $memory[2]) * 100)),
                               text('body_used', nice_size(($memory[2]) * 1000), nice_size(($memory[2] - $memory[3]) * 1000))
                              ] :
