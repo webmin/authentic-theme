@@ -43,12 +43,14 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                               text('body_used', nice_size(($memory[0]) * 1000), nice_size(($memory[0] - $memory[1]) * 1000))
                              ] :
                              []);
-            $data{'virt'} = (
+            if ($memory[2] > 0) {
+                $data{'virt'} = (
                            @memory && $memory[2] ?
                              [(100 - int(($memory[3] / $memory[2]) * 100)),
                               text('body_used', nice_size(($memory[2]) * 1000), nice_size(($memory[2] - $memory[3]) * 1000))
                              ] :
                              []);
+            }
             $data{'proc'} = scalar(@processes);
         }
 
