@@ -728,10 +728,10 @@ sub get_button_style
         $icon =~ s/%icon/files-o/ig;
     } elsif ($entry =~ /reboot/ ||
              $entry eq 'view_refresh' ||
-             $entry =~ /refreshmods_title/ ||
+             $entry =~ /refreshmods/ ||
              $entry eq 'index_buttinit')
     {
-        if ($entry =~ /refreshmods_title/) {
+        if ($entry =~ /refreshmods/) {
             $class = "primary ";
         } elsif ($entry ne 'reboot_ok' && $entry ne 'index_reboot' ||
                  $entry eq 'index_buttinit')
