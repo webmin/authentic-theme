@@ -464,6 +464,9 @@ sub init_vars
     our $t_uri___i;
     our $t_uri____i;
 
+    my ($server_prefix) = parse_servers_path();
+    our $global_prefix = ($server_prefix ? $server_prefix : $gconfig{'webprefix'});
+
     our $xnav = "xnavigation=1";
 
     our %gaccess = &get_module_acl();
@@ -927,8 +930,8 @@ sub theme_git_version
 sub theme_version
 {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '19.03';
-    my $sh__ln__c___version = '19.04';
+    my $sh__ln__p___version = '19.04';
+    my $sh__ln__c___version = '19.05';
     my $sh__ln__g___version = theme_git_version('uncond');
     ((!$switch && $sh__ln__g___version) &&
      ($sh__ln__c___version = $sh__ln__g___version, ($sh__ln__c___version =~ s/\.|-|git//ig)));
@@ -972,7 +975,7 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-hostname="' .
+    return 'data-host="' . get_env('http_host') . '" data-hostname="' .
       get_display_hostname() . '" data-title-initial="' . $args[0] . '" data-debug="' . theme_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
@@ -990,7 +993,7 @@ sub header_html_data
       dashboard_switch() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
       '" data-redirect="' . get_tmp_var('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
-      '" data-webprefix="' . $gconfig{'webprefix'} . '" data-current-product="' . get_product_name() . '" data-module="' .
+      '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
       ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : get_env('request_uri')) .
       '" data-progress="' . ($__settings{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
@@ -1062,6 +1065,23 @@ sub get_tmp_var
     }
 
     return $tmp_var{$key};
+}
+
+sub parse_servers_path
+{
+    my ($parent) = $ENV{'HTTP_WEBMIN_PATH'};
+
+    if ($parent) {
+        my ($parent_link) = $parent =~ /\/(\d+)\//;
+        my $parent_split = '/servers/link.cgi/';
+        my @parent_host = split(/\Q$parent_split/, $parent);
+        my $parent_prefix = $gconfig{'webprefix'} . $parent_split . $parent_link;
+
+        return ($parent_prefix, $parent, $parent_link, $parent_host[0]);
+
+    } else {
+        return (undef, undef, undef, undef);
+    }
 }
 
 sub get_user_home

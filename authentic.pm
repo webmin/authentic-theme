@@ -1041,12 +1041,12 @@ sub theme_ui_radio_table
 sub theme_redirect
 {
     use File::Basename;
-    my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix) = (
+    my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (
                                         $_[1],
                                         (get_env('https') ? 'https://' : 'http://'),
                                         get_env('http_x_forwarded_host'),
                                         get_env('http_host'), (!get_env('http_referer') || dirname(get_env('http_referer'))),
-                                        $gconfig{'webprefix'});
+                                        $gconfig{'webprefix'}, get_env('server_port'));
 
     my $redirect;
     if (!$proxy || $link =~ /\Q$nonproxy/) {
@@ -1056,11 +1056,16 @@ sub theme_redirect
     }
 
     my $location = replace(($protocol . $redirect), undef, $_[1]);
-    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/ && !get_env('http_webmin_servers')) ? 1 : 0);
+    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/) ? 1 : 0);
 
     if ($location_use) {
         if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix) && $location !~ /:\/\//) {
             $location = ($prefix . $location);
+        }
+
+        my ($parent_prefix, $parent, $parent_link, $parent_host) = parse_servers_path();
+        if ($parent) {
+            $location = replace((':' . $port), $parent_host . "/servers/link.cgi/$parent_link", $location);
         }
 
         set_tmp_var('redirected', $location);
