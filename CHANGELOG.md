@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.05 (December 20, 2017)
+* Add continuous mode for top loader [#913](https://github.com/qooob/authentic-theme/issues/913)
+* Add complete support for Servers Index module
+* Add user-friendly message requiring to enable JavaScript [#930](https://github.com/qooob/authentic-theme/issues/930)
+* Fix UX for Firefox users improving elements alignment
+* Fix multiple crucial issues
+* Fixed bugs [#824](https://github.com/qooob/authentic-theme/issues/824) [#923](https://github.com/qooob/authentic-theme/issues/923) [#925](https://github.com/qooob/authentic-theme/issues/925) [#927](https://github.com/qooob/authentic-theme/issues/927) [#928](https://github.com/qooob/authentic-theme/issues/928) [#933](https://github.com/qooob/authentic-theme/issues/933)
+
 #### Version 19.04 (December 04, 2017)
 * Add real-time monitoring [#896](https://github.com/qooob/authentic-theme/issues/896)
 * Fixed bugs [#898](https://github.com/qooob/authentic-theme/issues/898) [#900](https://github.com/qooob/authentic-theme/issues/900) [#902](https://github.com/qooob/authentic-theme/issues/902) [#905](https://github.com/qooob/authentic-theme/issues/905) [#906](https://github.com/qooob/authentic-theme/issues/906) [#912](https://github.com/qooob/authentic-theme/issues/912) [#913](https://github.com/qooob/authentic-theme/issues/913) [webmin/webmin#711](https://github.com/webmin/webmin/pull/711) [virtualmin.com/54475](https://www.virtualmin.com/node/54475) [virtualmin.com/54476](https://www.virtualmin.com/node/54476)
