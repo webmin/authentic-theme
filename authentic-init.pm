@@ -464,7 +464,7 @@ sub init_vars
     our $t_uri___i;
     our $t_uri____i;
 
-    my ($server_prefix) = parse_servers_path();
+    my ($server_link, $server_prefix) = parse_servers_path();
     our $global_prefix = ($server_prefix ? $server_prefix : $gconfig{'webprefix'});
 
     our $xnav = "xnavigation=1";
@@ -1072,17 +1072,14 @@ sub parse_servers_path
     my ($parent) = $ENV{'HTTP_WEBMIN_PATH'};
 
     if ($parent) {
-        my ($parent_link) = $parent =~ /\/(\d+)\//;
-        my $parent_split = '/servers/link.cgi/';
-        my @parent_host = split(/\Q$parent_split/, $parent);
-        my $parent_prefix = $gconfig{'webprefix'} . $parent_split . $parent_link;
-
-        return ($parent_prefix, $parent, $parent_link, $parent_host[0]);
-
+        my ($parent_link)   = $parent =~ /(\S*link\.cgi\/[\d]{8,16}+)/;
+        my ($parent_prefix) = $parent_link =~ /(\/servers\/link.cgi\S*)/;
+        return ($parent_link, $parent_prefix);
     } else {
-        return (undef, undef, undef, undef);
+        return (undef, undef);
     }
 }
+
 
 sub get_user_home
 {

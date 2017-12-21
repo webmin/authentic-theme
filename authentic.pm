@@ -1063,9 +1063,9 @@ sub theme_redirect
             $location = ($prefix . $location);
         }
 
-        my ($parent_prefix, $parent, $parent_link, $parent_host) = parse_servers_path();
+        my ($parent) = parse_servers_path();
         if ($parent) {
-            $location = replace((':' . $port), $parent_host . "/servers/link.cgi/$parent_link", $location);
+            $location = replace((':' . $port), $parent, $location);
         }
 
         set_tmp_var('redirected', $location);
