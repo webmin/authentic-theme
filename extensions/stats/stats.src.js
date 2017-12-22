@@ -82,7 +82,7 @@ const stats = {
           }
         }
       })
-      this.query();
+      v___theme_state_visible && this.query();
     },
 
     // Stop querying
@@ -94,6 +94,15 @@ const stats = {
       setTimeout(() => {
         this.stopped = 1, this.call = {};
       }, this.timeout + 2);
+    },
+
+    // Check to enable stats after stop
+    enable: function() {
+      if (typeof stats === "object") {
+          this.timeout = settings_sysinfo_real_time_timeout;
+          this.stopped = 1;
+          this.query();
+      }
     }
   }
 }
