@@ -98,7 +98,7 @@ const stats = {
 
     // Check to enable stats after stop
     enable: function() {
-      if (typeof stats === "object") {
+      if (settings_sysinfo_real_time_status) {
           this.timeout = settings_sysinfo_real_time_timeout;
           this.stopped = 1;
           this.query();
