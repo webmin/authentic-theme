@@ -818,6 +818,17 @@ sub print_left_menu
                 print $item->{'desc'}, "\n";
                 if ($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') {
                     my $default = get_default_target();
+                    my @dname = [
+                        map {
+                            [$_->{'id'}, virtual_server::shorten_domain_name($_),
+                             "title=\"" . virtual_server::show_domain_name($_) . "\""]
+                          }
+                          grep {
+                            virtual_server::can_edit_domain($_)
+                          }
+                          sort {
+                            $a->{'dom'} cmp $b->{'dom'}
+                          } virtual_server::list_domains()];
                     print ui_select(
                         ($item->{'name'} eq 'dname' ? 'dom' :
                            $item->{'name'}
@@ -827,13 +838,7 @@ sub print_left_menu
                                $item->{'value'}
                            )
                         ),
-                        (
-                         $item->{'name'} eq 'dname' ? [map {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
-                                                       grep {&virtual_server::can_edit_domain($_)}
-                                                       sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
-                           ] :
-                           $item->{'menu'}
-                        ),
+                        ($item->{'name'} eq 'dname' ? @dname : $item->{'menu'}),
                         1, 0, 0, 0,
                         "data-autocomplete-title=\"
                             "
@@ -1202,8 +1207,8 @@ sub get_sysinfo_vars
         if ($info->{'cputemps'}) {
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
-'<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core '
-                  . $t->{'core'} . ': '
+                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core ' .
+                  $t->{'core'} . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
@@ -1219,18 +1224,14 @@ sub get_sysinfo_vars
                 my $emsg;
                 if ($t->{'errors'}) {
                     $emsg .=
-'&nbsp;&nbsp;<span class="label bg-primary-dark status-error">'
-                      . &Atext('body_driveerr', $t->{'errors'})
-                      . "</span>";
+                      '&nbsp;&nbsp;<span class="label bg-primary-dark status-error">' .
+                      &Atext('body_driveerr', $t->{'errors'}) . "</span>";
                 } elsif ($t->{'failed'}) {
                     $emsg .=
-'&nbsp;&nbsp;<span class="label bg-danger-dark status-error">'
-                      . &Atext('body_drivefailed')
-                      . '</span>';
+                      '&nbsp;&nbsp;<span class="label bg-danger-dark status-error">' .
+                      &Atext('body_drivefailed') . '</span>';
                 }
-                $hdd_temperature .=
-'<span class="badge-custom badge-drivestatus" data-stats="drive">'
-                  . $short . ': '
+                $hdd_temperature .= '<span class="badge-custom badge-drivestatus" data-stats="drive">' . $short . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
