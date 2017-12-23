@@ -1046,7 +1046,7 @@ sub set_tmp_var
 
     $var{$key} = $value;
 
-    write_file(('/' . $tmp . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
+    write_file((get_tmp_dirname() . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
 }
 
 sub get_tmp_var
@@ -1056,8 +1056,7 @@ sub get_tmp_var
     my $salt = encode_base64($main::session_id);
 
     $salt =~ tr/A-Za-z0-9//cd;
-
-    my $tmp_file = ('/' . $tmp . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+    my $tmp_file = (get_tmp_dirname() . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
     read_file($tmp_file, \%tmp_var);
     if (!$keep) {
@@ -1066,6 +1065,24 @@ sub get_tmp_var
 
     return $tmp_var{$key};
 }
+
+sub get_tmp_dirname
+{
+    my $tmp_base =
+      $gconfig{ 'tempdir_' . get_module_name() } ? $gconfig{ 'tempdir_' . get_module_name() } :
+      $gconfig{'tempdir'}                         ? $gconfig{'tempdir'} :
+      $ENV{'TEMP'} && $ENV{'TEMP'} ne "/tmp" ? $ENV{'TEMP'} :
+      $ENV{'TMP'}  && $ENV{'TMP'} ne "/tmp"  ? $ENV{'TMP'} :
+      -d "c:/temp" ? "c:/temp" :
+      "/tmp/.webmin";
+    my $tmp_dir =
+      -d $remote_user_info[7] && !$gconfig{'nohometemp'} ? "$remote_user_info[7]/.tmp" :
+      @remote_user_info ? $tmp_base . "-" . $remote_user :
+      $< != 0           ? $tmp_base . "-" . getpwuid($<) :
+      $tmp_base;
+    return $tmp_dir;
+}
+
 
 sub parse_servers_path
 {
