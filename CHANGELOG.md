@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.06 (December 24, 2017)
+* Add progressive output for inbuilt console command [#955](https://github.com/qooob/authentic-theme/issues/955)
+* Fix to query real-time monitoring only on active window [#960](https://github.com/qooob/authentic-theme/issues/960)
+* Fix file downloads; display download progress
+* Fixed bugs [#959](https://github.com/qooob/authentic-theme/issues/959)
+
 #### Version 19.05 (December 20, 2017)
 * Add continuous mode for top loader [#913](https://github.com/qooob/authentic-theme/issues/913)
 * Add complete support for Servers Index module
