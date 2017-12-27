@@ -8,34 +8,32 @@
 #
 
 use File::Basename;
-use lib ( dirname(__FILE__) . '/../../lib' );
+use lib (dirname(__FILE__) . '/../../lib');
 
-require( dirname(__FILE__) . '/file-manager-lib.pm' );
+require(dirname(__FILE__) . '/file-manager-lib.pm');
 
-my $mask = trim( $in{'query'} );
+my $mask = trim($in{'query'});
 my $criteria;
 my $insensitive;
-if ( $in{'caseins'} ) {
+if ($in{'caseins'}) {
     $criteria    = '-iname';
     $insensitive = 'i';
-}
-else {
+} else {
     $criteria = '-name';
 }
-@list = split( '\n', &backquote_logged( "find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*") ) );
+@list = split('\n', &backquote_logged("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
 
-my $query = quotemeta( trim( $in{'grepstring'} ) );
-if ( length $query ) {
+my $query = quotemeta(trim($in{'grepstring'}));
+if (length $query) {
     my @matched;
 
     foreach my $file (@list) {
         if ($insensitive) {
-            if ( read_file_contents($file) =~ /$query/i ) {
+            if (read_file_contents($file) =~ /$query/i) {
                 push @matched, $file;
             }
-        }
-        else {
-            if ( read_file_contents($file) =~ /$query/ ) {
+        } else {
+            if (read_file_contents($file) =~ /$query/) {
                 push @matched, $file;
             }
         }
@@ -44,16 +42,15 @@ if ( length $query ) {
     @list = @matched;
 }
 
-my $replace = trim( $in{'grepreplace'} );
-if ( length $query && length $replace ) {
+my $replace = trim($in{'grepreplace'});
+if (length $query && length $replace) {
     foreach my $file (@list) {
         if ($insensitive) {
-            ( my $fc = read_file_contents($file) ) =~ s/$query/$replace/gi;
-            write_file_contents( $file, $fc );
-        }
-        else {
-            ( my $fc = read_file_contents($file) ) =~ s/$query/$replace/g;
-            write_file_contents( $file, $fc );
+            (my $fc = read_file_contents($file)) =~ s/$query/$replace/gi;
+            write_file_contents($file, $fc);
+        } else {
+            (my $fc = read_file_contents($file)) =~ s/$query/$replace/g;
+            write_file_contents($file, $fc);
         }
     }
 }
