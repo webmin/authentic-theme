@@ -20,15 +20,18 @@ if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
 fi
 
 # look for git in PATH or strange locations (Synology NAS, HP-UX)
-GIT=`which git`
-if [[ "${GIT}" == ""  ]] ; then
-    GIT="git"
-    # git not in PATH, search for alternate locations
-    for INSTALL in /opt/git/git /opt/git/bin/git /usr/local/bin/git /usr/local/git/bin/git
-    do
-        [[ -f "${INSTALL}" && -x "${INSTALL}" ]] && GIT="${INSTALL}" && break
-    done
+GIT="git"
+# use path from miniser.conf
+echo -en "${CYAN}search minserv.conf ... ${NC}"
+if [[ -f "/etc/webmin/miniserv.conf" ]] ; then
+	# default location
+    MINICONF="/etc/webmin/miniserv.conf"
+else
+    # possible other locations
+    MINICONF=`find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep ${PROD} | head -n 1`
+    echo  -e "${ORANGE}found: ${MINICONF}${NC} (alternative location)"
 fi
+[[ "${MINICONF}" != "" ]] && export path=`grep path= ${MINICONF}| sed 's/^path=//'`
 
 # Ask user to confirm update operation
 read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
