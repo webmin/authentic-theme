@@ -336,6 +336,7 @@ sub embed_js_scripts
 sub embed_noscript
 {
     my $noscript = <<EOF;
+      <noscript>
       <style>
         html[data-background-style="gainsboro"]
         {
@@ -345,9 +346,13 @@ sub embed_noscript
         {
           background-color: #1a1c20;
         }
-        html[data-background-style="nightRider"] div
+        html[data-background-style="nightRider"] div[data-noscript]
         {
           color: #979ba080;
+        }
+        html[data-slider-fixed='1']
+        {
+          margin-right: 0 !important;
         }
         body > div[data-noscript] ~ *
         {
@@ -377,11 +382,8 @@ sub embed_noscript
             }
         }
       </style>
-      <noscript>
         <div data-noscript>
-          <div>
-            <span class="fa fa-3x fa-exclamation-triangle margined-top-20 text-danger"></span>
-          </div>
+          <div class="fa fa-3x fa-exclamation-triangle margined-top-20 text-danger"></div>
           <h2>$Atext{'body_no_javascript_title'}</h2>
           <p>$Atext{'body_no_javascript_message'}</p>
         </div>
