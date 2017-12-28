@@ -820,7 +820,8 @@ sub print_left_menu
                     my $default = get_default_target();
                     my @dname = [
                         map {
-                            [$_->{'id'}, virtual_server::shorten_domain_name($_),
+                            [$_->{'id'},
+                             virtual_server::shorten_domain_name($_),
                              "title=\"" . virtual_server::show_domain_name($_) . "\""]
                           }
                           grep {
@@ -2740,7 +2741,14 @@ sub get_xhr_request
                 print get_tmp_var($in{'xhr-tmp_var_name'}, $in{'xhr-tmp_var_keep'});
             }
         } elsif ($in{'xhr-shell-pop'}) {
-            my $file    = "$config_directory/shell/previous.$remote_user";
+            my $file;
+            if ($in{'xhr-shell-cms'} eq "1") {
+                my $id = $in{'xhr-shell-cmsid'};
+                $id =~ s/[^\p{L}\p{N}.\-\/]//g;
+                $file = "$config_directory/server-manager/previous/$id";
+            } else {
+                $file = "$config_directory/shell/previous.$remote_user";
+            }
             my $index   = (int($in{'xhr-shell-pop'}) - 1);
             my $history = read_file_lines($file);
             if (@$history[$index]) {
