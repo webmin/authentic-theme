@@ -1,7 +1,10 @@
 ## Changelog
 
+#### Version 19.07 (December 28, 2017)
+* Fixed upcoming bugs
+
 #### Version 19.06 (December 24, 2017)
-* Add progressive output for inbuilt console command [#955](https://github.com/qooob/authentic-theme/issues/955)
+* Add progressive output for inbuilt command shell [#955](https://github.com/qooob/authentic-theme/issues/955)
 * Fix to query real-time monitoring only on active window [#960](https://github.com/qooob/authentic-theme/issues/960)
 * Fix file downloads; display download progress
 * Fixed bugs [#959](https://github.com/qooob/authentic-theme/issues/959)

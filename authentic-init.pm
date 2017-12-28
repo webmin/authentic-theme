@@ -932,8 +932,8 @@ sub theme_git_version
 sub theme_version
 {
     my ($switch)            = @_;
-    my $sh__ln__p___version = '19.05';
-    my $sh__ln__c___version = '19.06';
+    my $sh__ln__p___version = '19.06';
+    my $sh__ln__c___version = '19.07';
     my $sh__ln__g___version = theme_git_version('uncond');
     ((!$switch && $sh__ln__g___version) &&
      ($sh__ln__c___version = $sh__ln__g___version, ($sh__ln__c___version =~ s/\.|-|git//ig)));
