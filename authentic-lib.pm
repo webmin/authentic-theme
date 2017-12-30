@@ -818,18 +818,21 @@ sub print_left_menu
                 print $item->{'desc'}, "\n";
                 if ($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') {
                     my $default = get_default_target();
-                    my @dname = [
-                        map {
-                            [$_->{'id'},
-                             virtual_server::shorten_domain_name($_),
-                             "title=\"" . virtual_server::show_domain_name($_) . "\""]
-                          }
-                          grep {
-                            virtual_server::can_edit_domain($_)
-                          }
-                          sort {
-                            $a->{'dom'} cmp $b->{'dom'}
-                          } virtual_server::list_domains()];
+                    my @dname;
+                    if ($item->{'name'} eq 'dname') {
+                        @dname = [
+                            map {
+                                [$_->{'id'},
+                                 virtual_server::shorten_domain_name($_),
+                                 "title=\"" . virtual_server::show_domain_name($_) . "\""]
+                              }
+                              grep {
+                                virtual_server::can_edit_domain($_)
+                              }
+                              sort {
+                                $a->{'dom'} cmp $b->{'dom'}
+                              } virtual_server::list_domains()];
+                    }
                     print ui_select(
                         ($item->{'name'} eq 'dname' ? 'dom' :
                            $item->{'name'}
