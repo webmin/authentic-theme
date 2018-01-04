@@ -1285,6 +1285,11 @@ sub get_sysinfo_vars
             # Virtual memory details
             $virtual_memory =
               &Atext('body_used', nice_size(($m[2]) * 1000), nice_size(($m[2] - $m[3]) * 1000));
+
+            if (get_text_direction() ne "1") {
+                $real_memory    = reverse_text($real_memory,    "/");
+                $virtual_memory = reverse_text($virtual_memory, "/");
+            }
         }
 
         # Local disk space
@@ -1293,6 +1298,10 @@ sub get_sysinfo_vars
                                  nice_size($info->{'disk_total'}),
                                  nice_size($info->{'disk_free'}),
                                  nice_size($info->{'disk_total'} - $info->{'disk_free'}));
+
+            if (get_text_direction() ne "1") {
+                $disk_space = reverse_text($disk_space, "/");
+            }
         }
 
         # Package updates

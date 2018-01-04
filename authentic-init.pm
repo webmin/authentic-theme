@@ -390,9 +390,9 @@ sub embed_noscript
       </noscript>
 EOF
 
-  $noscript =~ tr/\r\n//d;
-  $noscript =~ s/\s+/ /g;
-  print $noscript, "\n";
+    $noscript =~ tr/\r\n//d;
+    $noscript =~ s/\s+/ /g;
+    print $noscript, "\n";
 }
 
 sub embed_footer
@@ -442,6 +442,13 @@ sub Atext
     my $rv = $Atext{ $_[0] };
     $rv =~ s/\$(\d+)/$1 < @_ ? $_[$1] : '$'.$1/ge;
     return $rv;
+}
+
+sub reverse_text
+{
+    my ($str, $delimiter) = @_;
+    my @strings = reverse(split(/\Q$delimiter\E/, $str));
+    return join(" " . $delimiter . " ", @strings);
 }
 
 sub init_vars
@@ -610,9 +617,9 @@ sub get_user_level
 
 sub set_user_level
 {
-  if ($get_user_level ne '0' && $get_user_level ne '1') {
-      switch_to_remote_user();
-  }
+    if ($get_user_level ne '0' && $get_user_level ne '1') {
+        switch_to_remote_user();
+    }
 }
 
 sub get_initial_wizard
@@ -737,7 +744,7 @@ sub get_button_style
         $icon =~ s/%icon/files-o/ig;
     } elsif ($entry =~ /reboot/ ||
              $entry eq 'view_refresh' ||
-             $entry =~ /refreshmods/ ||
+             $entry =~ /refreshmods/  ||
              $entry eq 'index_buttinit')
     {
         if ($entry =~ /refreshmods/) {
@@ -997,9 +1004,9 @@ sub header_html_data
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $__settings{'settings_navigation_color'}) . '"') .
       '' . ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') .
       ' data-theme-version="' . (theme_git_version() ? theme_git_version() : theme_version('version')) .
-      '" data-theme-git-version="' . theme_git_version('uncond') . '" data-level="' .
-      $get_user_level . '" data-user-home="' . get_user_home() . '" data-user="' . $remote_user . '" data-dashboard="' .
-      dashboard_switch() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
+      '" data-theme-git-version="' . theme_git_version('uncond') . '" data-level="' . $get_user_level .
+      '" data-user-home="' . get_user_home() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
+      '" data-rtl="' . get_text_direction() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
       '" data-redirect="' . get_tmp_var('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
       '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
@@ -1046,7 +1053,6 @@ sub set_tmp_var
     my $salt = encode_base64($main::session_id);
     my %var;
 
-
     $salt =~ tr/A-Za-z0-9//cd;
     $key =~ tr/A-Za-z0-9//cd;
 
@@ -1090,7 +1096,6 @@ sub parse_servers_path
     }
 }
 
-
 sub get_user_home
 {
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
@@ -1122,6 +1127,16 @@ sub get_raw
     } else {
         return 0;
     }
+}
+
+sub get_text_direction
+{
+    if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {
+        return 1;
+    } else {
+        return 0;
+    }
+
 }
 
 sub ltrim
