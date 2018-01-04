@@ -4,6 +4,9 @@
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
+use File::Basename;
+do(dirname(__FILE__) . "/authentic-funcs.pm");
+
 init_vars();
 init_funcs();
 
@@ -442,13 +445,6 @@ sub Atext
     my $rv = $Atext{ $_[0] };
     $rv =~ s/\$(\d+)/$1 < @_ ? $_[$1] : '$'.$1/ge;
     return $rv;
-}
-
-sub reverse_text
-{
-    my ($str, $delimiter) = @_;
-    my @strings = reverse(split(/\Q$delimiter\E/, $str));
-    return join(" " . $delimiter . " ", @strings);
 }
 
 sub init_vars
@@ -1006,7 +1002,7 @@ sub header_html_data
       ' data-theme-version="' . (theme_git_version() ? theme_git_version() : theme_version('version')) .
       '" data-theme-git-version="' . theme_git_version('uncond') . '" data-level="' . $get_user_level .
       '" data-user-home="' . get_user_home() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
-      '" data-rtl="' . get_text_direction() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
+      '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
       '" data-redirect="' . get_tmp_var('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
       '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
@@ -1127,45 +1123,6 @@ sub get_raw
     } else {
         return 0;
     }
-}
-
-sub get_text_direction
-{
-    if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {
-        return 1;
-    } else {
-        return 0;
-    }
-
-}
-
-sub ltrim
-{
-    my $s = shift;
-    $s =~ s/^\s+//;
-    return $s;
-}
-
-sub rtrim
-{
-    my $s = shift;
-    $s =~ s/\s+$//;
-    return $s;
-}
-
-sub trim
-{
-    my $s = shift;
-    $s =~ s/^\s+|\s+$//g;
-    return $s;
-}
-
-sub replace
-{
-    my ($from, $to, $string) = @_;
-    $string =~ s/\Q$from\E/$to/ig;
-
-    return $string;
 }
 
 sub get_link

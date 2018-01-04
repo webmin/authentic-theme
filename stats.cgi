@@ -12,6 +12,8 @@ use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 use JSON qw( );
 
+do(dirname(__FILE__) . "/authentic-funcs.pm");
+
 init_config();
 ReadParse();
 
@@ -60,7 +62,16 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                              text('body_used_and_free',      nice_size($disk_space[0]),
                                   nice_size($disk_space[1]), nice_size($disk_space[0] - $disk_space[1])
                              )];
+        }
 
+        # Reverse output for LTR users
+        if (get_text_ltr()) {
+            my @watched = ('mem', 'virt', 'disk');
+            foreach my $key (@watched) {
+                if ($data{$key} && $data{$key}[1]) {
+                    $data{$key}[1] = reverse_text($data{$key}[1], "/");
+                }
+            }
         }
     }
 }

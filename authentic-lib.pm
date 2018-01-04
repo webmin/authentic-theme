@@ -1283,12 +1283,16 @@ sub get_sysinfo_vars
               &Atext('body_used', nice_size(($m[0]) * 1000), nice_size(($m[0] - $m[1]) * 1000));
 
             # Virtual memory details
-            $virtual_memory =
-              &Atext('body_used', nice_size(($m[2]) * 1000), nice_size(($m[2] - $m[3]) * 1000));
+            if ($m[2] > 0) {
+                $virtual_memory =
+                  &Atext('body_used', nice_size(($m[2]) * 1000), nice_size(($m[2] - $m[3]) * 1000));
+            }
 
-            if (get_text_direction() ne "1") {
-                $real_memory    = reverse_text($real_memory,    "/");
-                $virtual_memory = reverse_text($virtual_memory, "/");
+            if (get_text_ltr()) {
+                $real_memory = reverse_text($real_memory, "/");
+                if ($virtual_memory) {
+                    $virtual_memory = reverse_text($virtual_memory, "/");
+                }
             }
         }
 
@@ -1299,7 +1303,7 @@ sub get_sysinfo_vars
                                  nice_size($info->{'disk_free'}),
                                  nice_size($info->{'disk_total'} - $info->{'disk_free'}));
 
-            if (get_text_direction() ne "1") {
+            if ($disk_space && get_text_ltr()) {
                 $disk_space = reverse_text($disk_space, "/");
             }
         }
