@@ -2717,9 +2717,8 @@ sub get_xhr_request
             print get_json(\@dirs);
 
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
-            if ($get_user_level ne '0' && $get_user_level ne '1') {
-                switch_to_remote_user();
-            }
+            set_user_level();
+
             my $data;
             use Encode qw( encode decode );
             eval {

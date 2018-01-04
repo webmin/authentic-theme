@@ -608,6 +608,13 @@ sub get_user_level
     return ($a, $c, $b);
 }
 
+sub set_user_level
+{
+  if ($get_user_level ne '0' && $get_user_level ne '1') {
+      switch_to_remote_user();
+  }
+}
+
 sub get_initial_wizard
 {
     # Going to Post-Installation Wizard
@@ -1036,9 +1043,9 @@ sub get_env
 sub set_tmp_var
 {
     my ($key, $value) = @_;
-    my $tmp  = 'tmp';
     my $salt = encode_base64($main::session_id);
     my %var;
+
 
     $salt =~ tr/A-Za-z0-9//cd;
     $key =~ tr/A-Za-z0-9//cd;
@@ -1048,17 +1055,19 @@ sub set_tmp_var
 
     $var{$key} = $value;
 
-    write_file((get_tmp_dirname() . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
+    set_user_level();
+    write_file(tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
 }
 
 sub get_tmp_var
 {
     my ($key, $keep) = @_;
-    my $tmp  = 'tmp';
     my $salt = encode_base64($main::session_id);
 
     $salt =~ tr/A-Za-z0-9//cd;
-    my $tmp_file = (get_tmp_dirname() . '/.' . $tmp . '_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+
+    set_user_level();
+    my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
     read_file($tmp_file, \%tmp_var);
     if (!$keep) {
@@ -1067,24 +1076,6 @@ sub get_tmp_var
 
     return $tmp_var{$key};
 }
-
-sub get_tmp_dirname
-{
-    my $tmp_base =
-      $gconfig{ 'tempdir_' . get_module_name() } ? $gconfig{ 'tempdir_' . get_module_name() } :
-      $gconfig{'tempdir'}                         ? $gconfig{'tempdir'} :
-      $ENV{'TEMP'} && $ENV{'TEMP'} ne "/tmp" ? $ENV{'TEMP'} :
-      $ENV{'TMP'}  && $ENV{'TMP'} ne "/tmp"  ? $ENV{'TMP'} :
-      -d "c:/temp" ? "c:/temp" :
-      "/tmp/.webmin";
-    my $tmp_dir =
-      -d $remote_user_info[7] && !$gconfig{'nohometemp'} ? "$remote_user_info[7]/.tmp" :
-      @remote_user_info ? $tmp_base . "-" . $remote_user :
-      $< != 0           ? $tmp_base . "-" . getpwuid($<) :
-      $tmp_base;
-    return $tmp_dir;
-}
-
 
 sub parse_servers_path
 {
