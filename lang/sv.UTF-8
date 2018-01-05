@@ -181,7 +181,7 @@ settings_sysinfo_theme_updates=Se om det finns uppdateringar till Authentic Them
 settings_sysinfo_csf_updates=Se om det finns uppdateringar till ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Visa CPU och diskstatus på varsin rad
 settings_sysinfo_expand_all_accordions=Expandera alla ihopfällda menyer
-settings_sysinfo_link_mini=Show dashboard link as button
+settings_sysinfo_link_mini=Visa översiktslänk som en knapp
 
 settings_right_page_defaults_title=Standardsidor
 settings_right_default_tab_webmin=Standardflik vid inloggning i Webmin
@@ -767,5 +767,5 @@ theme_xhred_connection_success_details=Anslutningen till servern har återupprä
 
 
 #19.08
-settings_store_current_url_on_reload=Load previously used page after refresh
-theme_xhred_return_home=Return to panel index
+settings_store_current_url_on_reload=Ladda tidigare använd sida efter uppdatering
+theme_xhred_return_home=Återgå till panelindex
