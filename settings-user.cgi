@@ -45,6 +45,11 @@ print ui_table_row($Atext{'settings_cm_editor_palette'},
                                                     ),
                                                     'settings_cm_editor_palette'
                    ));
+print ui_table_row($Atext{'settings_store_current_url_on_reload'},
+                   ui_yesno_radio('settings_store_current_url_on_reload',
+                                  $__settings{'settings_store_current_url_on_reload'},
+                                  "true", "false"
+                   ));
 
 print ui_table_row(undef, '<b>' . $Atext{'settings_right_navigation_menu_title'} . '</b>', 2);
 

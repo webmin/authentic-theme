@@ -764,3 +764,7 @@ settings_sysinfo_theme_usermin=Ska pågående temauppdateringar påverka Usermin
 theme_xhred_connection_lost=Frånkopplad
 theme_xhred_connection_success=Ansluten
 theme_xhred_connection_success_details=Anslutningen till servern har återupprättats.
+
+
+#19.08
+settings_store_current_url_on_reload=Load previously used page after refresh

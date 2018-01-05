@@ -2044,6 +2044,8 @@ sub _settings
             'true',
             'settings_right_reload',
             'true',
+            'settings_store_current_url_on_reload',
+            'false',
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',

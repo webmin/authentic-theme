@@ -66,6 +66,7 @@ sub settings_default
     $c{'settings_font_family'}                  = '0';
     $c{'settings_navigation_color'}             = 'blue';
     $c{'settings_background_color'}             = 'gainsboro';
+    $c{'settings_store_current_url_on_reload'}  = 'false';
     $c{'settings_button_tooltip'}               = 'true';
     $c{'settings_hide_top_loader'}              = 'false';
     $c{'settings_animation_left'}               = 'true';
@@ -235,7 +236,6 @@ sub embed_settings
 
     # User configuration
     if (-r $user_config_file) {
-
         copy_source_dest($user_config_file, $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js);
         print '  <script src="' . $gconfig{'webprefix'} . '/' . $str_unauthenticated .
           '/' . $str_js . '/' . $str_settings . '_' . $remote_user . '.' . $str_js . '?' . $cur_time . '"></script>' . "\n";
@@ -1057,7 +1057,6 @@ sub set_tmp_var
 
     $var{$key} = $value;
 
-    set_user_level();
     write_file(tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
 }
 
@@ -1068,7 +1067,6 @@ sub get_tmp_var
 
     $salt =~ tr/A-Za-z0-9//cd;
 
-    set_user_level();
     my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
     read_file($tmp_file, \%tmp_var);
