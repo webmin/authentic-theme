@@ -762,3 +762,4 @@ theme_xhred_connection_success_details=Verbindung zum Server wurde wieder herges
 
 #19.08
 settings_store_current_url_on_reload=Load previously used page after refresh
+theme_xhred_return_home=Return to panel index

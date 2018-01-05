@@ -773,3 +773,4 @@ theme_xhred_connection_success_details=Connection to the server has been re-esta
 
 #19.08
 settings_store_current_url_on_reload=Load previously used page after refresh
+theme_xhred_return_home=Return to panel index
