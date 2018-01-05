@@ -332,7 +332,7 @@ sub print_sysinfo_link
         print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
           ($__settings{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
           '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') . '"></i> <span>' .
-          ($user ? $Atext{'body_header1'} : $Atext{'body_header0'}) . '</span></a></li>' . "\n";
+          ($user ? $Atext{'body_header1'} : $Atext{'theme_xhred_titles_dashboard'}) . '</span></a></li>' . "\n";
     }
 }
 

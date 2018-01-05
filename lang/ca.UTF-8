@@ -182,7 +182,7 @@ settings_sysinfo_theme_updates=Comprova actualitzacions del tema
 settings_sysinfo_csf_updates=Comprova les actualitzacions de seguretat i tallafocs
 settings_sysinfo_drive_status_on_new_line=Mostrar l'estat del CPU i dels discs en línies diferents
 settings_sysinfo_expand_all_accordions=Expandeix-ho tot
-settings_sysinfo_link_mini=Mostrar l'enllaç d'informació del sistema com a un botó
+settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Pàgines per defecte
 settings_right_default_tab_webmin=Pàgina per defecte de Webmin

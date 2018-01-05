@@ -184,7 +184,7 @@ settings_sysinfo_theme_updates=Kontrolloni për përditësime autentike të tem�
 settings_sysinfo_csf_updates=Kontrolloni për përditësimet e Sigurisë & ​​Firewall të ConfigServer
 settings_sysinfo_drive_status_on_new_line=Shfaq CPU dhe disqet statusin secili në linjë të re
 settings_sysinfo_expand_all_accordions=Bëni të gjitha harmonikat të zgjeruara
-settings_sysinfo_link_mini=Shfaq lidhjen e informacionit të sistemit si buton
+settings_sysinfo_link_mini=Show dashboard link as button
 settings_leftmenu_singlelink_icons=Shfaq ikonat për lidhje të vetme në menunë e navigimit
 
 settings_right_page_defaults_title=Faqet e paracaktuar

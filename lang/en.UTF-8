@@ -181,7 +181,7 @@ settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
 settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show system information link as button
+settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Default pages
 settings_right_default_tab_webmin=Default tab after logging in to Webmin

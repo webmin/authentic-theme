@@ -13,7 +13,7 @@ if ($__settings{'settings_sysinfo_link_mini'} eq 'true' &&
       .
       get_button_tooltip(
                          (  $get_user_level eq '3' ? 'body_header1' :
-                              'body_header0'
+                              'theme_xhred_titles_dashboard'
                          ),
                          'settings_hotkey_sysinfo',
                          'auto top'

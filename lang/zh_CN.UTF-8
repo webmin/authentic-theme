@@ -182,7 +182,7 @@ settings_sysinfo_theme_updates=檢查 Authentic 主題更新
 settings_sysinfo_csf_updates=檢查 ConfigServer 安全與防火牆更新
 settings_sysinfo_drive_status_on_new_line=顯示 CPU 和各新線驅動器狀態
 settings_sysinfo_expand_all_accordions=讓所有的手風琴菜單展開
-settings_sysinfo_link_mini=將系統信息鏈接顯示為按鈕
+settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=默認頁
 settings_right_default_tab_webmin=登入 Webmin 後的默認標籤
