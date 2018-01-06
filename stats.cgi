@@ -58,10 +58,13 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             foreign_require("mount");
             my @disk_space = mount::local_disk_space();
 
-            $data{'disk'} = [int(($disk_space[0] - $disk_space[1]) / $disk_space[0] * 100),
-                             text('body_used_and_free',      nice_size($disk_space[0]),
-                                  nice_size($disk_space[1]), nice_size($disk_space[0] - $disk_space[1])
-                             )];
+            $data{'disk'} = (@disk_space && $disk_space[0] && $disk_space[0] > 0 ?
+                               [int(($disk_space[0] - $disk_space[1]) / $disk_space[0] * 100),
+                                text('body_used_and_free',      nice_size($disk_space[0]),
+                                     nice_size($disk_space[1]), nice_size($disk_space[0] - $disk_space[1])
+                                )
+                               ] :
+                               []);
         }
 
         # Reverse output for LTR users
