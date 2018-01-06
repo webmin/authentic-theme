@@ -151,6 +151,17 @@ sub print_switch_webmin
                 !foreign_available("mailbox")
                ) &&
                get_product_name() eq 'usermin'
+           ) ||
+           ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
+           ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+             ($get_user_level eq '1' || $get_user_level eq '2'))
+           ||
+           (
+             $get_user_level ne '3' && (
+                 (!foreign_available("virtual-server") && !$__settings{'settings_right_default_tab_webmin'}) ||
+                   (!foreign_available("virtual-server") && $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/)
+                   || (!foreign_available("server-manager") &&
+                       $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/))
            )
         ) ? " checked" : ""
       ) .
@@ -186,9 +197,13 @@ sub print_switch_virtualmin
 {
     print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"'
       .
-      ( !$__settings{'settings_right_default_tab_webmin'} ||
-          (foreign_available("virtual-server") && $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/) ?
-          " checked" :
+      (
+        (
+         (!$__settings{'settings_right_default_tab_webmin'} ||
+            ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/)
+         ) &&
+           $get_user_level ne '4'
+        ) ? " checked" :
           ""
       ) .
       '>
@@ -203,8 +218,8 @@ sub print_switch_cloudmin
 {
     print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"'
       .
-      ( (foreign_available("server-manager") && $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/) ?
-          " checked" :
+      ( (!$__settings{'settings_right_default_tab_webmin'} && $get_user_level eq '4') ||
+          ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/) ? " checked" :
           ""
       ) .
       '>
@@ -331,8 +346,8 @@ sub print_sysinfo_link
     if (dashboard_switch() ne '1') {
         print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
           ($__settings{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
-          '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') . '"></i> <span>' .
-          $Atext{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
+          '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') .
+          '"></i> <span>' . $Atext{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
     }
 }
 
@@ -2971,8 +2986,8 @@ sub init
 {
     # Don't log XHR requests
     if (!$gconfig{'nolog'}) {
-      $gconfig{'nolog'} = ".*xhr.*";
-      save_module_config(\%gconfig, "");
+        $gconfig{'nolog'} = ".*xhr.*";
+        save_module_config(\%gconfig, "");
     }
 
     # Make sure that config directory exists

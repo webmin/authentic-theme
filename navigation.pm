@@ -26,7 +26,29 @@ if (dashboard_switch()
                 ) &&
                 get_product_name() eq 'usermin'))
     ) ||
-    $in{'xhr-navigation-type'} eq 'webmin')
+    $in{'xhr-navigation-type'} eq 'webmin' ||
+    ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
+        $get_user_level eq '4' &&
+        !$in{'xhr-navigation-type'}) ||
+    ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+        ($get_user_level eq '1' || $get_user_level eq '2') &&
+        !$in{'xhr-navigation-type'}) ||
+
+    (
+     $get_user_level ne '3' && (
+                                (!foreign_available("virtual-server")              &&
+                                 !$__settings{'settings_right_default_tab_webmin'} &&
+                                 !$in{'xhr-navigation-type'}                       &&
+                                 $get_user_level ne '4'
+                                ) ||
+                                (!foreign_available("virtual-server") &&
+                                 $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
+                                 !$in{'xhr-navigation-type'}) ||
+                                (!foreign_available("server-manager") &&
+                                 $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+                                 !$in{'xhr-navigation-type'})))
+
+  )
 {
     print_search();
 
@@ -123,9 +145,9 @@ elsif (
          $in{'xhr-navigation-type'} ne 'cloudmin') ||
         $in{'xhr-navigation-type'} eq 'virtualmin'
        ) &&
-       get_product_name() ne 'usermin')
+       get_product_name() ne 'usermin' &&
+       $get_user_level ne '4')
 {
-
     print_left_menu('virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'});
     print_sysinfo_link();
     print_sysstat_link();
