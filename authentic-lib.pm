@@ -2969,6 +2969,11 @@ sub init_type
 
 sub init
 {
+    # Don't log XHR requests
+    if (!$gconfig{'nolog'}) {
+      $gconfig{'nolog'} = ".*xhr.*";
+      save_module_config(\%gconfig, "");
+    }
 
     # Make sure that config directory exists
     theme_config_dir_available();
