@@ -4,7 +4,8 @@
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
-do "$current_theme/authentic-init.pm";
+use File::Basename;
+do(dirname(__FILE__) . "/authentic-init.pm");
 
 sub theme_header
 {

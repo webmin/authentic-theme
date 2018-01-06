@@ -15,7 +15,7 @@ our (%in, %text, %config);
 init_type();
 init_config();
 
-require "$current_theme/authentic-init.pm";
+require(dirname(__FILE__) . "/authentic-init.pm");
 
 sub authentic
 {
@@ -2686,9 +2686,9 @@ sub get_xhr_request
         head();
 
         if ($in{'xhr-navigation'} eq '1') {
-            require "$current_theme/navigation.pm";
+            require(dirname(__FILE__) . "/navigation.pm");
         } elsif ($in{'xhr-buttons'} eq '1') {
-            require "$current_theme/buttons.pm";
+            require(dirname(__FILE__) . "/buttons.pm");
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
@@ -2697,7 +2697,7 @@ sub get_xhr_request
             } elsif ($in{'restore'} eq '1') {
                 _settings('restore', undef, undef);
             } else {
-                require "$current_theme/settings.pm";
+                require(dirname(__FILE__) . "/settings.pm");
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
@@ -3007,12 +3007,12 @@ sub content
 
     # Navigation
     print '<ul class="navigation">' . "\n";
-    require "$current_theme/navigation.pm";
+    require(dirname(__FILE__) . "/navigation.pm");
     print '</ul>' . "\n";
 
     # Buttons
     print '<br><br><ul class="user-links">';
-    require "$current_theme/buttons.pm";
+    require(dirname(__FILE__) . "/buttons.pm");
     print '</ul>';
 
     # Custom text
