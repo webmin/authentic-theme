@@ -538,9 +538,9 @@ sub usermin_available
 
 sub dashboard_switch
 {
-    if (!&foreign_available("virtual-server") &&
-        !&foreign_available("server-manager") &&
-        &get_product_name() ne 'usermin')
+    if (!foreign_available("virtual-server") &&
+        !foreign_available("server-manager") &&
+        (get_product_name() ne 'usermin' || (get_product_name() eq 'usermin' && !foreign_available("mailbox"))))
     {
         return 1;
     } else {

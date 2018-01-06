@@ -61,9 +61,12 @@ print ui_table_row($Atext{'settings_animation_left'},
                    ui_yesno_radio('settings_animation_left', $__settings{'settings_animation_left'}, "true", "false"));
 print ui_table_row($Atext{'settings_animation_tabs'},
                    ui_yesno_radio('settings_animation_tabs', $__settings{'settings_animation_tabs'}, "true", "false"));
-print ui_table_row(
-                 ($get_user_level eq '3' ? $Atext{'settings_account_info_link_mini'} : $Atext{'settings_sysinfo_link_mini'}),
-                 ui_yesno_radio('settings_sysinfo_link_mini', $__settings{'settings_sysinfo_link_mini'}, "true", "false"));
+if (dashboard_switch() ne '1') {
+    print ui_table_row($Atext{'settings_sysinfo_link_mini'},
+                       ui_yesno_radio('settings_sysinfo_link_mini', $__settings{'settings_sysinfo_link_mini'},
+                                      "true",                       "false"
+                       ));
+}
 print ui_table_row($Atext{'settings_show_night_mode_link'},
                    ui_yesno_radio('settings_show_night_mode_link', $__settings{'settings_show_night_mode_link'},
                                   "true",                          "false"

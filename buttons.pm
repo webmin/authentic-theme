@@ -9,16 +9,8 @@ our $user = $remote_user;
 if ($__settings{'settings_sysinfo_link_mini'} eq 'true' &&
     dashboard_switch() ne '1')
 {
-    print '<li data-linked'
-      .
-      get_button_tooltip(
-                         (  $get_user_level eq '3' ? 'body_header1' :
-                              'theme_xhred_titles_dashboard'
-                         ),
-                         'settings_hotkey_sysinfo',
-                         'auto top'
-      ) .
-      ' class="user-link">';
+    print '<li data-linked' .
+      get_button_tooltip('theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto top') . ' class="user-link">';
     print '<a class="menu-exclude-link sidebar_sysinfo_link" href="' .
       $gconfig{'webprefix'} . '/sysinfo.cgi"><i class="fa fa-fw fa-' .
       ($get_user_level eq '3' ? 'user-circle' : 'dashboard') . '"></i></a>';
@@ -89,7 +81,8 @@ if ($miniserv{'logout'} &&
 {
     print '<li class="user-link __logout-link">';
     if ($main::session_id) {
-        print '<a data-nref' . get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link" href="' .
+        print '<a data-nref' .
+          get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link" href="' .
           $gconfig{'webprefix'} . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
     } else {
         print '<a data-nref' .
