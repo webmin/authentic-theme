@@ -156,12 +156,12 @@ sub print_switch_webmin
            ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
              ($get_user_level eq '1' || $get_user_level eq '2'))
            ||
-           (
-             $get_user_level ne '3' && (
-                 (!foreign_available("virtual-server") && !$__settings{'settings_right_default_tab_webmin'}) ||
-                   (!foreign_available("virtual-server") && $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/)
-                   || (!foreign_available("server-manager") &&
-                       $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/))
+           ( $get_user_level ne '3' &&
+             (   (!foreign_available("virtual-server") && !$__settings{'settings_right_default_tab_webmin'}) ||
+                 (!foreign_available("virtual-server") && $__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/)
+                 ||
+                 (!foreign_available("server-manager") &&
+                     $__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/))
            )
         ) ? " checked" : ""
       ) .
@@ -834,7 +834,8 @@ sub print_left_menu
                 if ($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') {
                     my $default = get_default_target();
                     my @dname;
-                    if ($item->{'name'} eq 'dname') {
+
+                    if ($item->{'name'} eq 'dname' && foreign_available('virtual-server')) {
                         @dname = [
                             map {
                                 [$_->{'id'},
@@ -2544,13 +2545,15 @@ sub _settings
                 </select>';
         } elsif ($k eq 'settings_right_virtualmin_default') {
             get_user_level();
-            $v = &ui_select($k, $v,
-                            [[undef,       undef],
-                             ['index.cgi', $Atext{'theme_settings_virtualmin'}],
-                             map {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
-                               grep {&virtual_server::can_edit_domain($_)}
-                               sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
-                            ]);
+            if (foreign_available('virtual-server')) {
+                $v = &ui_select($k, $v,
+                                [[undef,       undef],
+                                 ['index.cgi', $Atext{'theme_settings_virtualmin'}],
+                                 map {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
+                                   grep {&virtual_server::can_edit_domain($_)}
+                                   sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
+                                ]);
+            }
         } elsif ($k eq 'settings_right_cloudmin_default') {
             get_user_level();
             @servers = &server_manager::list_available_managed_servers_sorted();
