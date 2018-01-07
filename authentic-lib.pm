@@ -2988,9 +2988,12 @@ sub init_type
 sub init
 {
     # Don't log XHR requests
-    if (!$gconfig{'nolog'}) {
-        $gconfig{'nolog'} = ".*xhr.*";
-        save_module_config(\%gconfig, "");
+    my %tmp_miniserv;
+    get_miniserv_config(\%tmp_miniserv);
+    if (!$tmp_miniserv{'nolog'}) {
+        $tmp_miniserv{'nolog'} = ".*xhr.*";
+        put_miniserv_config(\%tmp_miniserv);
+        reload_miniserv();
     }
 
     # Make sure that config directory exists
