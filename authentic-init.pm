@@ -998,10 +998,11 @@ sub header_html_data
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $__settings{'settings_navigation_color'}) . '"') .
-      '' . ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') .
-      ' data-theme-version="' . (theme_git_version() ? theme_git_version() : theme_version('version')) .
-      '" data-theme-git-version="' . theme_git_version('uncond') . '" data-level="' . $get_user_level .
-      '" data-user-home="' . get_user_home() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
+      '' .
+      ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') . ' data-theme-version="' .
+      (theme_git_version() ? theme_git_version() : theme_version('version')) . '" data-theme-git-version="' .
+      theme_git_version('uncond') . '" data-level="' . $get_user_level . '" data-user-home="' . get_user_home() .
+      '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
       '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
       '" data-redirect="' . get_tmp_var('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
@@ -1093,7 +1094,13 @@ sub parse_servers_path
 sub get_user_home
 {
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
-    return @my_user_info[7];
+    return $my_user_info[7];
+}
+
+sub get_user_id
+{
+    my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
+    return $my_user_info[2];
 }
 
 sub get_tuconfig_file
