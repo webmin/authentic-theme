@@ -771,3 +771,9 @@ theme_xhred_connection_success_details=Connection to the server has been re-esta
 #19.08
 settings_store_current_url_on_reload=Load previously used page after refresh
 theme_xhred_return_home=Return to panel index
+theme_xhred_global_upload=Upload
+theme_xhred_global_select_files=Select file(s)
+theme_xhred_global_file_selected=file selected
+theme_xhred_global_files_selected=files selected
+theme_xhred_global_reset=Reset
+theme_xhred_upload_initial_info=Drag and drop files here or click to select
