@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.08 (January 08, 2018)
+* Add drag and drop file uploads to File Manager [#979](https://github.com/qooob/authentic-theme/issues/979#issuecomment-355857544)
+* Fix not to log XHR requests [webmin/webmin#740](https://github.com/webmin/webmin/issues/740)
+* Fix HTML editor mode for mail [#977](https://github.com/qooob/authentic-theme/issues/977)
+* Fix navigation menu and product switch to be set correctly in different modes
+* Fix HTML editor's controls for night mode
+* Fixed bugs [#970](https://github.com/qooob/authentic-theme/issues/970) [#971](https://github.com/qooob/authentic-theme/issues/971) [#976](https://github.com/qooob/authentic-theme/issues/976) [virtualmin.com/54918](https://www.virtualmin.com/node/54918)
+
 #### Version 19.07 (December 28, 2017)
 * Fixed upcoming bugs
 
