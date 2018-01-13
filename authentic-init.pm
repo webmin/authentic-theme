@@ -1047,7 +1047,7 @@ sub get_env
 sub set_tmp_var
 {
     my ($key, $value) = @_;
-    my $salt = encode_base64($main::session_id);
+    my $salt = substr(encode_base64($main::session_id), 0, 16);
     my %var;
 
     $salt =~ tr/A-Za-z0-9//cd;
@@ -1064,7 +1064,7 @@ sub set_tmp_var
 sub get_tmp_var
 {
     my ($key, $keep) = @_;
-    my $salt = encode_base64($main::session_id);
+    my $salt = substr(encode_base64($main::session_id), 0, 16);
 
     $salt =~ tr/A-Za-z0-9//cd;
 
