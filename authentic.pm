@@ -1072,6 +1072,8 @@ sub theme_redirect
         set_tmp_var('redirected', $location);
         print "Location: $location\n\n";
     } else {
+        $link =~ s/(\?|&)\Q$xnav\E//ig;
+        set_tmp_var('redirected', $link);
         print "Location: $link\n\n";
     }
 
