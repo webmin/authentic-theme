@@ -1231,11 +1231,11 @@ html[data-background-style=nightRider] body:not(.csf):not(.backup-config) #right
 }
 
 [data-stats] .status-error {
-    vertical-align: middle;
-    max-height: 10px;
-    display: inline-block;
     line-height: 6px;
-    margin-top: -2px
+    display: inline-block;
+    max-height: 10px;
+    margin-top: -2px;
+    vertical-align: middle
 }
 
 #system-status .badge-custom,
@@ -8710,8 +8710,8 @@ ul.messenger .messenger-message {
 
 .file-manager form[name=chmod] input[name=t_total]::-webkit-inner-spin-button,
 .file-manager form[name=chmod] input[name=t_total]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    padding-right: 4px
+    padding-right: 4px;
+    -webkit-appearance: none
 }
 
 .dropdown-menu>li.bm_e__me>span {
@@ -9825,11 +9825,11 @@ body[data-uri*='virtual-server/backup_form'] .table-condensed.opener_table_style
     border-bottom: 1px solid #eee !important
 }
 
-body[data-uri*="usermin/edit_acl.cgi"] form[action*="save_acl.cgi"] .ui_grid_table tbody {
+body[data-uri*='usermin/edit_acl.cgi'] form[action*='save_acl.cgi'] .ui_grid_table tbody {
     border: 1px solid #eee
 }
 
-body[data-uri*="usermin/edit_acl.cgi"] form[action*="save_acl.cgi"] .ui_grid_table tbody tr td {
+body[data-uri*='usermin/edit_acl.cgi'] form[action*='save_acl.cgi'] .ui_grid_table tbody tr td {
     padding: 1px 4px !important
 }
 
@@ -10020,41 +10020,41 @@ html[data-level='3'] #system-status+#extended_sysinfo-1+br~br {
 }
 
 @media all and (max-width:1600px) {
-    html[data-slider-fixed='1'][data-access-level="0"] #system-status .table {
+    html[data-slider-fixed='1'][data-access-level='0'] #system-status .table {
         width: 100%
     }
-    html[data-slider-fixed='1'][data-access-level="0"] #system-status .table tr:hover {
+    html[data-slider-fixed='1'][data-access-level='0'] #system-status .table tr:hover {
         background-color: transparent !important
     }
-    html[data-slider-fixed='1'][data-access-level="0"] #system-status .table tr td:nth-child(odd) {
+    html[data-slider-fixed='1'][data-access-level='0'] #system-status .table tr td:nth-child(odd) {
         display: inline-block;
         min-width: 34%
     }
-    html[data-slider-fixed='1'][data-access-level="0"] #system-status .table tr td:nth-child(even) {
+    html[data-slider-fixed='1'][data-access-level='0'] #system-status .table tr td:nth-child(even) {
         display: inline-block;
         min-width: 64%
     }
-    html[data-slider-fixed='1'][data-access-level="0"] #system-status .table tr {
+    html[data-slider-fixed='1'][data-access-level='0'] #system-status .table tr {
         display: block
     }
 }
 
 @media all and (max-width:1280px) {
-    html[data-slider-fixed='0'][data-access-level="0"] #system-status .table {
+    html[data-slider-fixed='0'][data-access-level='0'] #system-status .table {
         width: 100%
     }
-    html[data-slider-fixed='0'][data-access-level="0"] #system-status .table tr:hover {
+    html[data-slider-fixed='0'][data-access-level='0'] #system-status .table tr:hover {
         background-color: transparent !important
     }
-    html[data-slider-fixed='0'][data-access-level="0"] #system-status .table tr td:nth-child(odd) {
+    html[data-slider-fixed='0'][data-access-level='0'] #system-status .table tr td:nth-child(odd) {
         display: inline-block;
         min-width: 34%
     }
-    html[data-slider-fixed='0'][data-access-level="0"] #system-status .table tr td:nth-child(even) {
+    html[data-slider-fixed='0'][data-access-level='0'] #system-status .table tr td:nth-child(even) {
         display: inline-block;
         min-width: 64%
     }
-    html[data-slider-fixed='0'][data-access-level="0"] #system-status .table tr {
+    html[data-slider-fixed='0'][data-access-level='0'] #system-status .table tr {
         display: block
     }
 }
@@ -10191,12 +10191,12 @@ html[data-webprefix*='servers/link.cgi/'] body.servers .container-fluid {
     -webkit-filter: opacity(50%) blur(1px) grayscale(100%)
 }
 
-html[data-webprefix*="servers/link.cgi/"] a[href$="servers/"].right_pane_favorites_link,
-html[data-webprefix*="servers/link.cgi/"] aside li[data-linked] a[href$="servers/"],
-html[data-webprefix*="servers/link.cgi/"] li.menu-exclude.ui-sortable-handle>a[href$="servers/"].menu-exclude-link {
-    opacity: .4;
+html[data-webprefix*='servers/link.cgi/'] a[href$='servers/'].right_pane_favorites_link,
+html[data-webprefix*='servers/link.cgi/'] aside li[data-linked] a[href$='servers/'],
+html[data-webprefix*='servers/link.cgi/'] li.menu-exclude.ui-sortable-handle>a[href$='servers/'].menu-exclude-link {
+    text-decoration: line-through;
     pointer-events: none;
-    text-decoration: line-through
+    opacity: .4
 }
 
 body[class=acl] .panel-body>h3 {
@@ -10954,8 +10954,8 @@ body.sysstats .graph_table a img {
 }
 
 .-shell-port- pre>b {
-    margin-left: -9.5px;
-    display: inline-block
+    display: inline-block;
+    margin-left: -9.5px
 }
 
 .-shell-port- pre {
@@ -11677,14 +11677,14 @@ html[data-slider-fixed='1'] .bottom_progresses {
 }
 
 .bottom_progress {
+    position: relative;
     display: inline-block;
     float: right;
-    position: relative;
-    background-color: #68686866;
     width: 40px;
     height: 150px;
     margin-left: 15px;
-    animation: 1s ease-out 0s 1 slideInFromLeft
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    background-color: #68686866
 }
 
 .bottom_progress.no-animation {
@@ -11737,10 +11737,10 @@ html[data-slider-fixed='1'] .bottom_progresses {
     bottom: 0;
     width: 41px;
     height: 100%;
+    animation: Gradient 1s ease infinite;
     border-right: 1px solid rgba(138, 138, 138, .35);
     background: linear-gradient(-45deg, rgba(54, 54, 54, .55), rgba(54, 54, 54, .75), rgba(54, 54, 54, .55), rgba(54, 54, 54, .75));
-    background-size: 400% 400%;
-    animation: Gradient 1s ease infinite
+    background-size: 400% 400%
 }
 
 @-webkit-keyframes Gradient {
@@ -11780,8 +11780,8 @@ html[data-slider-fixed='1'] .bottom_progresses {
 }
 
 .bottom_progress_horizontal+.bottom_progress_horizontal {
-    margin-right: 148px;
-    clear: none
+    clear: none;
+    margin-right: 148px
 }
 
 .bottom_progress_level.success {
@@ -11802,10 +11802,10 @@ html[data-slider-fixed='1'] .bottom_progresses {
 }
 
 .bottom_progress_horizontal .bottom_progress_overlay {
-    margin-top: 115px;
-    margin-left: -90px;
+    display: inline-block;
     width: 220px;
-    display: inline-block
+    margin-top: 115px;
+    margin-left: -90px
 }
 
 .bottom_progress_horizontal .bottom_progress_overlay .bottom_progress_data {
@@ -11821,13 +11821,13 @@ html[data-slider-fixed='1'] .bottom_progresses {
     font-size: 14px;
     position: absolute;
     display: inline-block;
+    overflow: hidden;
     width: 240px;
     height: 20px;
     margin-top: 114px;
     margin-left: -50px;
     transform: rotate(90deg);
-    text-align: center;
-    overflow: hidden
+    text-align: center
 }
 
 .bottom_progress_horizontal .bottom_progress_filename>.fa {
