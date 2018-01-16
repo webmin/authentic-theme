@@ -66,7 +66,6 @@ sub settings_default
     $c{'settings_font_family'}                  = '0';
     $c{'settings_navigation_color'}             = 'blue';
     $c{'settings_background_color'}             = 'gainsboro';
-    $c{'settings_store_current_url_on_reload'}  = 'false';
     $c{'settings_button_tooltip'}               = 'true';
     $c{'settings_hide_top_loader'}              = 'false';
     $c{'settings_animation_left'}               = 'true';
