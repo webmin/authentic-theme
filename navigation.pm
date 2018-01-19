@@ -17,13 +17,8 @@ if (dashboard_switch()
     (   $in{'xhr-navigation-type'} ne 'virtualmin' &&
         $in{'xhr-navigation-type'} ne 'cloudmin'   &&
         $in{'xhr-navigation-type'} ne 'webmail'    &&
-        (      (($__settings{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin'))
-            ||
-            (
-                (!$__settings{'settings_right_default_tab_usermin'} ||
-                 $__settings{'settings_right_default_tab_usermin'} eq '/' ||
-                 !foreign_available("mailbox")
-                ) &&
+        (   (($__settings{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
+            (($__settings{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
                 get_product_name() eq 'usermin'))
     ) ||
     $in{'xhr-navigation-type'} eq 'webmin' ||
@@ -167,8 +162,10 @@ elsif (
     print_sysinfo_link();
 }
 
-elsif (foreign_available("mailbox") &&
-       ($__settings{'settings_right_default_tab_usermin'} =~ /mail/ || $in{'xhr-navigation-type'} eq 'webmail'))
+elsif (
+      foreign_available("mailbox") &&
+      ((!$__settings{'settings_right_default_tab_usermin'} || $__settings{'settings_right_default_tab_usermin'} =~ /mail/) ||
+        $in{'xhr-navigation-type'} eq 'webmail'))
 {
 
     print_left_menu('mailbox', \@leftitems, 0, 0, 0, $in{'xhr-navigation-type'});

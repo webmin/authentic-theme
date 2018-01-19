@@ -144,14 +144,9 @@ sub print_switch_webmin
     print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"'
       .
       (
-        ((($__settings{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin'))
-           || (
-               (!$__settings{'settings_right_default_tab_usermin'} ||
-                $__settings{'settings_right_default_tab_usermin'} eq '/' ||
-                !foreign_available("mailbox")
-               ) &&
-               get_product_name() eq 'usermin'
-           ) ||
+        ((($__settings{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
+           (($__settings{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
+             get_product_name() eq 'usermin') ||
            ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
            ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
              ($get_user_level eq '1' || $get_user_level eq '2'))
@@ -232,8 +227,13 @@ sub print_switch_cloudmin
 
 sub print_switch_webmail
 {
-    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"' .
-      ($__settings{'settings_right_default_tab_usermin'} =~ /mail/ ? " checked" : "") . '>
+    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"'
+      .
+      ( (!$__settings{'settings_right_default_tab_usermin'} || $__settings{'settings_right_default_tab_usermin'} =~ /mail/)
+        ? " checked" :
+          ""
+      ) .
+      '>
           <label'
       . get_button_tooltip('theme_xhred_titles_mail', 'settings_hotkey_toggle_key_webmail', 'auto right') .
       ' for="open_webmail">
@@ -2022,7 +2022,7 @@ sub _settings
             'settings_right_cloudmin_default',
             'sysinfo.cgi',
             'settings_right_default_tab_usermin',
-            '/',
+            'mail',
 
             '__',
             _settings('fa', 'desktop',   &Atext('settings_global_options_title')),
