@@ -245,27 +245,13 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
         &print_table_row($Atext{'right_virtualmin'}, $Atext{'right_not'});
     }
 
-    # Print Theme version/updates
-    get_authentic_version();
-
-    # Build response message
-    if ($remote_version <= $installed_version) {
-        $authentic_theme_version =
-          '<a href="https://github.com/qooob/authentic-theme" target="_blank">' .
-          $Atext{'theme_name'} . '</a> ' . ($git_version_local ? $git_version_local : $installed_version) .
-          '<div class="btn-group margined-left-4"><a href="' . $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
-          $gconfig{'webprefix'} . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
-          $Atext{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
-'<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
-    } else {
-        $authentic_theme_version =
-          '' . $Atext{'theme_name'} . ' ' . ($git_version_local ? $git_version_local : $installed_version) .
-          '. ' . $Atext{'theme_update_available'} . ' ' . $remote_version .
-'&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
-          . ''
-          . $Atext{'theme_changelog'} . '</a>';
-    }
-    &print_table_row($Atext{'theme_version'}, $authentic_theme_version);
+    &print_table_row($Atext{'theme_version'},
+                     '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+                       '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
+                       $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
+                       '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+                       $Atext{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
+'<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>');
 
     if ($get_user_level ne '1') {
 
@@ -380,28 +366,13 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     # Usermin version
     &print_table_row(&Atext('body_usermin'), &get_webmin_version());
 
-    # Theme version/updates
-    get_authentic_version();
-
-    # Build response message
-
-    if ($remote_version <= $installed_version) {
-        $authentic_theme_version =
-          '<a href="https://github.com/qooob/authentic-theme" target="_blank">' .
-          $Atext{'theme_name'} . '</a> ' . ($git_version_local ? $git_version_local : $installed_version) .
-          '<div class="btn-group margined-left-4"><a href="' . $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
-          $gconfig{'webprefix'} . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
-          $Atext{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
-'<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
-    } else {
-        $authentic_theme_version =
-          '' . $Atext{'theme_name'} . ' ' . ($git_version_local ? $git_version_local : $installed_version) .
-          '. ' . $Atext{'theme_update_available'} . ' ' . $remote_version .
-'&nbsp;&nbsp;<a class="btn btn-xs btn-info" style="padding:0 6px; line-height: 12px; height:15px;font-size:11px" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o" style="padding-top:1px">&nbsp;</i>'
-          . ''
-          . $Atext{'theme_changelog'} . '</a>';
-    }
-    &print_table_row($Atext{'theme_version'}, $authentic_theme_version);
+    &print_table_row($Atext{'theme_version'},
+                     '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+                       '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
+                       $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
+                       '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+                       $Atext{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
+'<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>');
 
     print '</table>' . "\n";
 

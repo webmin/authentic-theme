@@ -1067,40 +1067,41 @@ sub get_sysinfo_vars
         }
 
         # Theme version/updates
-        get_authentic_version();
-
-        $authentic_remote_version = $remote_version;
-
-        use Version::Compare;
+        $authentic_remote_version    = theme_remote_version();
+        $authentic_installed_version = theme_version();
 
         # Build version response message
-        if (Version::Compare::version_compare(replace('git-', '', $remote_version), replace('git-', '', $installed_version))
-            == 1)
+        use Version::Compare;
+        if (
+            Version::Compare::version_compare(replace('beta-', '', $authentic_remote_version),
+                                              replace('beta-', '', $authentic_installed_version)
+            ) == 1)
         {
-            my $git_version_remote  = $remote_version =~ /-git-/;
-            my $remote_version_tag  = $remote_version;
-            my @_remote_version_tag = split /-/, $remote_version_tag;
-            $remote_version_tag = $_remote_version_tag[0];
+            my $authentic_remote_beta        = $authentic_remote_version =~ /beta/;
+            my $authentic_remote_version_tag = $authentic_remote_version;
+            my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
+            $authentic_remote_version_tag = $_remote_version_tag[0];
+
             $authentic_theme_version =
               '<a href="https://github.com/qooob/authentic-theme" target="_blank">' .
-              $Atext{'theme_name'} . '</a> ' . ($git_version_local ? $git_version_local : $installed_version) .
-              '. ' . ($git_version_remote ? $Atext{'theme_git_patch_available'} : $Atext{'theme_update_available'}) .
-              ' ' . $remote_version . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
+              $Atext{'theme_name'} . '</a> ' . $authentic_installed_version .
+              '. ' . ($authentic_remote_beta ? $Atext{'theme_git_patch_available'} : $Atext{'theme_update_available'}) .
+              ' ' . $authentic_remote_version . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
               .
-              ( $git_version_remote ? 1 :
+              ( $authentic_remote_beta ? 1 :
                   0
               ) .
-              '" class="btn btn-xxs btn-' . ($git_version_remote ? 'warning' : 'success') .
+              '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
               ' authentic_update" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw ' .
-              ($git_version_remote ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $Atext{'theme_update'} .
-              '</a>' . '<a class="btn btn-xxs btn-info ' . ($git_version_remote ? 'hidden' : 'btn-info') .
+              ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $Atext{'theme_update'} .
+              '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $Atext{'theme_changelog'}
               . '</a>' . '<a data-remove-version="' .
-              $remote_version . '" class="btn btn-xxs btn-warning' . ($git_version_remote ? ' hidden' : '') .
+              $authentic_remote_version . '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
               '" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/' .
-              $remote_version_tag .
-              '/authentic-theme-' . $remote_version . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
+              $authentic_remote_version_tag .
+              '/authentic-theme-' . $authentic_remote_version . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
               $Atext{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href="' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
@@ -1108,9 +1109,8 @@ sub get_sysinfo_vars
 
         } else {
             $authentic_theme_version =
-              '<a href="https://github.com/qooob/authentic-theme" target="_blank">' .
-              $Atext{'theme_name'} . '</a> ' . ($git_version_local ? $git_version_local : $installed_version) .
-              '<div class="btn-group margined-left-4"><a href="' .
+              '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4"><a href="' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
               $Atext{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
@@ -1387,19 +1387,19 @@ sub csf_mod
         open(my $fh, '>', $csf_header_mod) or die $!;
 
         print $fh '<link data-hostname="' .
-          &get_display_hostname() . '" data-version="' . (theme_version() . '-' . $x_version) .
+          &get_display_hostname() . '" data-version="' . (theme_version(1) . '-' . $x_version) .
           '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
         print $fh '<link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+          $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
         print $fh '<link href="' . $gconfig{'webprefix'} .
-          '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+          '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 
         if (!$__settings{'settings_font_family'}) {
             print $fh '<link href="' . $gconfig{'webprefix'} .
-              '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+              '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
         } elsif ($__settings{'settings_font_family'} != '1') {
             print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' .
-              $__settings{'settings_font_family'} . '.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+              $__settings{'settings_font_family'} . '.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
         }
 
         if (-r $styles) {
@@ -1415,9 +1415,9 @@ sub csf_mod
           time() . '"></script>' . "\n";
 
         print $fh '<link href="' .
-          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
         print $fh '<script src="' .
-          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . theme_version() . '"></script>' . "\n";
+          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . theme_version(1) . '"></script>' . "\n";
 
         close $fh;
 
@@ -1754,7 +1754,7 @@ sub embed_login_head
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
     print '<link href="' .
-      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     print
 '<script>function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
 
@@ -1764,51 +1764,23 @@ sub embed_login_head
     print '</head>', "\n";
 }
 
-sub get_authentic_version
+sub theme_remote_version
 {
 
-    our $remote_version;
-    our $git_version_local = theme_git_version('uncond');
-
-    # Get local version
-    our $installed_version = read_file_lines($root_directory . "/$current_theme/VERSION.txt", 1);
-    $installed_version = $installed_version->[0];
-
-    # Get local git version if available
-    if (theme_git_version()) {
-        $installed_version = theme_git_version();
-    }
-
-    $installed_version =~ s/^\s+|\s+$//g;
+    my $authentic_remote_version;
 
     if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' && $in =~ /xhr-/) {
+        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
+                      \$authentic_remote_version, \$error, undef, 1, undef, undef, 5);
+        $authentic_remote_version =~ s/^\s+|\s+$//g;
 
-        # Get remote version if allowed
-        http_download('raw.githubusercontent.com',
-                      '443',
-                      '/qooob/authentic-theme/master/'
-                        .
-                        ( $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true' ? 'VERSION.txt' :
-                            'version'
-                        ) .
-                        '',
-                      \$remote_version,
-                      \$error,
-                      undef, 1, undef, undef, 5);
-
-        # In case there was a release and no Git patches available
-        if (!$remote_version) {
-            http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
-                          \$remote_version, \$error, undef, 1, undef, undef, 5);
+        if ($authentic_remote_version =~ /beta/ && $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true') {
+            $authentic_remote_version = '0';
         }
-
-        # Trim versions' number
-        $remote_version =~ s/^\s+|\s+$//g;
     } else {
-        $remote_version = '0';
+        $authentic_remote_version = '0';
     }
-
-    return ($installed_version, $remote_version);
+    return $authentic_remote_version;
 }
 
 sub theme_config_dir_available
@@ -2828,7 +2800,7 @@ sub get_xhr_request
                     $usermin_root =~ s/webmin/usermin/;
                     backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh -$version_type -no-restart");
                 }
-                my $tversion = (theme_git_version(1) ? theme_git_version(1) : theme_version('full'));
+                my $tversion = theme_version();
                 @update_rs = {
                                "success" => ($usermin ? Atext('theme_git_patch_update_success_message2', $tversion) :
                                                Atext('theme_git_patch_update_success_message', $tversion)
@@ -3106,6 +3078,7 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
     $changelog_data =~ s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;
 
+    my @version = split(/ /, $changelog_version[0]);
     my $changelog_content = '
       <div class="modal fade fade9" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-update">
@@ -3118,7 +3091,7 @@ s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releas
       . $Atext{'theme_update_notice'} . '</h4>
               </div>
               <div class="modal-body" style="font-weight: 300">
-                <h4>Version ' . $changelog_version[0] . '</h4>
+                <h4>Version ' . $version[1] . '</h4>
                 <ul>
                   ' . $changelog_data . '
                 </ul>

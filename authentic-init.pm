@@ -137,7 +137,7 @@ sub embed_header
         if ($args[2] eq 'debug') {
             foreach my $css (@css) {
                 print '  <link href="' . $gconfig{'webprefix'} .
-                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
         } else {
@@ -160,7 +160,7 @@ sub embed_header
                 }
 
                 print '  <script src="' .
-                  $gconfig{'webprefix'} . '/unauthenticated/js/' . $js . '.src.js?' . theme_version() . '"></script>' . "\n";
+                  $gconfig{'webprefix'} . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -170,7 +170,7 @@ sub embed_header
         if ($args[2] eq 'debug') {
             foreach my $css (@css) {
                 print '  <link href="' . $gconfig{'webprefix'} .
-                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
         } else {
@@ -184,7 +184,7 @@ sub embed_header
         {
             print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($__settings{'settings_navigation_color'})) . '.' .
-              ($args[2] eq 'debug' ? 'src' : 'min') . '.css?' . theme_version() . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2] eq 'debug' ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -201,7 +201,7 @@ sub embed_header
                 }
 
                 print '  <script src="' .
-                  $gconfig{'webprefix'} . '/unauthenticated/js/' . $js . '.src.js?' . theme_version() . '"></script>' . "\n";
+                  $gconfig{'webprefix'} . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -278,18 +278,18 @@ sub embed_css_fonts
 
     if (!$__settings{'settings_font_family'} || $__settings{'settings_font_family'} eq 'undefined') {
         print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
-          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     } elsif ($__settings{'settings_font_family'} != '1') {
         print '  <link href="' .
           $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $__settings{'settings_font_family'} . '.' .
-          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     }
 }
 
 sub embed_css_bundle
 {
     print '  <link href="' .
-      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version() . '" rel="stylesheet">' . "\n";
+      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
 
@@ -297,7 +297,7 @@ sub embed_css_night_rider
 {
     if (theme_night_mode()) {
         print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
-          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version() . '" rel="stylesheet" data-palette>' . "\n";
+          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
@@ -305,20 +305,20 @@ sub embed_css_content_palette
 {
     if (theme_night_mode()) {
         print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
-          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version() . '" rel="stylesheet" data-palette>' . "\n";
+          (theme_mode() eq 'debug' ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
 sub embed_js_timeplot
 {
     print '  <script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/timeplot.' .
-      (theme_mode() eq 'debug' ? 'src' : 'min') . '.js?' . theme_version() . '"></script>' . "\n";
+      (theme_mode() eq 'debug' ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
 }
 
 sub embed_js_bundle
 {
     print '  <script src="' .
-      $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version() . '"></script>' . "\n";
+      $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
 }
 
 sub embed_js_scripts
@@ -414,7 +414,7 @@ sub embed_footer
             get_module_name() =~ /postgresql/)
         {
             print '  <script src="' . $gconfig{'webprefix'} . '/extensions/sql.' .
-              ($args[0] eq 'debug' ? 'src' : 'min') . '.js?' . theme_version() . '"></script>' . "\n";
+              ($args[0] eq 'debug' ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
         }
 
         # Load `File Manager` specific scripts
@@ -422,7 +422,7 @@ sub embed_footer
             get_module_name() =~ /filemin/)
         {
             print '  <script src="' . $gconfig{'webprefix'} . '/extensions/file-manager/file-manager.' .
-              ($args[0] eq 'debug' ? 'src' : 'min') . '.js?' . theme_version() . '"></script>' . "\n";
+              ($args[0] eq 'debug' ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
         }
 
     }
@@ -679,6 +679,7 @@ sub get_button_style
              $entry =~ /delq_confirm/  ||
              $entry =~ /umass_del2/    ||
              $entry =~ /index_gmass/   ||
+             $entry =~ /master_del/    ||
              $entry eq 'html_dtitle')
     {
         $class = "danger ";
@@ -924,41 +925,20 @@ sub theme_night_mode
     }
 }
 
-sub theme_git_version
-{
-    my ($force)          = @_;
-    my $git_version      = undef;
-    my $git_version_file = $root_directory . "/$current_theme/version";
-    if (-e $git_version_file &&
-        ($__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force))
-    {
-        $git_version = read_file_lines($git_version_file, 1);
-        $git_version = $git_version->[0];
-    }
-    return $git_version;
-}
-
 sub theme_version
 {
-    my ($switch)            = @_;
-    my $sh__ln__p___version = '19.07';
-    my $sh__ln__c___version = '19.08';
-    my $sh__ln__g___version = theme_git_version('uncond');
-    ((!$switch && $sh__ln__g___version) &&
-     ($sh__ln__c___version = $sh__ln__g___version, ($sh__ln__c___version =~ s/\.|-|git//ig)));
+    my ($string) = @_;
+    my $version  = read_file_lines($root_directory . "/$current_theme/VERSION.txt", 1)->[0];
 
-    if (!$switch && $sh__ln__g___version) {
-        $sh__ln__c___version .= time();
-    } elsif ((!$switch || $switch eq 'full') && !$sh__ln__g___version) {
-        $sh__ln__c___version = read_file_lines($root_directory . "/$current_theme/VERSION.txt", 1)->[0];
-        if ($switch ne 'full') {
-            $sh__ln__c___version =~ s/\.|-//ig;
-            if (length($sh__ln__c___version) < 5) {
-                $sh__ln__c___version .= "0";
-            }
-        }
+    if ($string) {
+      $version =~ s/beta|\.|-//ig;
+
+      if (theme_mode() eq 'debug') {
+        $version .= time();
+      }
     }
-    return $sh__ln__c___version;
+
+    return $version;
 }
 
 sub theme_mode
@@ -999,8 +979,7 @@ sub header_html_data
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $__settings{'settings_navigation_color'}) . '"') .
       '' .
       ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') . ' data-theme-version="' .
-      (theme_git_version() ? theme_git_version() : theme_version('version')) . '" data-theme-git-version="' .
-      theme_git_version('uncond') . '" data-level="' . $get_user_level . '" data-user-home="' . get_user_home() .
+      theme_version(0) . '" data-level="' . $get_user_level . '" data-user-home="' . get_user_home() .
       '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
       '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
