@@ -1474,19 +1474,38 @@ sub csf_mod
 
 sub csf_temporary_list
 {
-    if (&foreign_check("csf") && &foreign_available("csf")) {
+    if (foreign_check("csf") && foreign_available("csf")) {
+        my $let = "/etc/csf/csf.allow";
+        my $ban = "/etc/csf/csf.deny";
+        my $cnf = "/etc/csf/csf.conf";
+        my $tmp = "/var/lib/csf/csf.tempban";
+        my $log = "/var/lib/csf/stats/iptables_log";
+
+        my @p;
         my @t;
         my @l;
 
-        if (-e "/var/lib/csf/csf.tempban" && !-z "/var/lib/csf/csf.tempban") {
-            open($IN, "<", "/var/lib/csf/csf.tempban") or die $!;
+        if (-e $cnf && !-z $cnf) {
+            my @q;
+            my $x = read_file_contents($let) . read_file_contents($ban);
+            my $z = read_file_contents($cnf);
+            (@p) = $z =~ /(?:PORTS_|TCP_IN|UDP_IN).*=\s*"([\d+,]+)"/g;
+            (@q) = $x =~ /^(?:(?!#).).*\|(?:d|s)=([\d+,]+)\|/gm;
+            if (@p || @q) {
+                @p = array_unique(split(",", join(",", (@p, @q))));
+            }
+
+        }
+
+        if (-e $tmp && !-z $tmp) {
+            open($IN, "<", $tmp) or die $!;
             @t = <$IN>;
             chomp @t;
             close($IN);
         }
 
-        if (@t && -e "/var/lib/csf/stats/iptables_log") {
-            open($IN, "<", "/var/lib/csf/stats/iptables_log") or die $!;
+        if (@t && -e $log) {
+            open($IN, "<", $log) or die $!;
             flock($IN, LOCK_SH);
             my @i = <$IN>;
             close($IN);
@@ -1507,7 +1526,7 @@ sub csf_temporary_list
                 foreach my $h (reverse @t) {
                     if (!length $h) {next}
                     my ($a, $b, $d, $e, $f, $g) = split(/\|/, $h);
-                    if ($r eq $b) {
+                    if ($r eq $b && ((!$k || !@p) || ($k ~~ @p))) {
                         push @l, $a . '|' . $b . '|' . $w . '|' . $k . '|' . $d . '|' . $e . '|' . $f . '|' . $g;
                     }
                 }
