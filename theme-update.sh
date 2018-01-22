@@ -19,6 +19,20 @@ if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
   exit 0
 fi
 
+# look for git in PATH or strange locations (Synology NAS, HP-UX)
+GIT="git"
+# use path from miniser.conf
+echo -en "${CYAN}search minserv.conf ... ${NC}"
+if [[ -f "/etc/webmin/miniserv.conf" ]] ; then
+	# default location
+    MINICONF="/etc/webmin/miniserv.conf"
+else
+    # possible other locations
+    MINICONF=`find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep ${PROD} | head -n 1`
+    echo  -e "${ORANGE}found: ${MINICONF}${NC} (alternative location)"
+fi
+[[ "${MINICONF}" != "" ]] && export path=`grep path= ${MINICONF}| sed 's/^path=//'`
+
 # Ask user to confirm update operation
 read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
 echo
@@ -32,7 +46,7 @@ else
   else
 
     # Require `git` command availability
-    if type git >/dev/null 2>&1
+    if type ${GIT} >/dev/null 2>&1
     then
 
       # Pull latest changes
@@ -54,13 +68,13 @@ else
         fi
 
         echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $PRRELEASETAG (https://github.com/qooob/authentic-theme)..."
-        RS="$(git clone --depth 1 $PRRELEASE https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme" 2>&1)"
+        RS="$(${GIT} clone --depth 1 $PRRELEASE https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme" 2>&1)"
         if [[ "$RS" == *"ould not find remote branch"* ]]; then
           ERROR="Release ${RRELEASE} doesn't exist. "
         fi
       else
         echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (https://github.com/qooob/authentic-theme)..."
-        git clone --depth 1 --quiet https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme"
+        ${GIT} clone --depth 1 --quiet https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme"
       fi
 
       # Checking for possible errors
