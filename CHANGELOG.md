@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 19.09-beta1 (January 22, 2018)
+* Add support for detecting encoding using special comment in file's content [#987](https://github.com/qooob/authentic-theme/issues/987)
+* Add better highlights for Apache and Nginx configuration files [#981](https://github.com/qooob/authentic-theme/issues/981)
+* Add padding for collapsed panels' container based on navigation width
+* Fix to improve development versions control [@c22908d](https://github.com/qooob/authentic-theme/commit/c22908d24155a96de8d30061a074d01d75a43cdc)
+* Fix to generate security notification, only for mentioned ports for ConfigServer Security & Firewall [@5b957fe](https://github.com/qooob/authentic-theme/commit/5b957fe8f75ca5d16eebe7fb241c07ff926319e7)
+* Fix internal redirects [#982](https://github.com/qooob/authentic-theme/issues/982)
+* Fix to secure session id [@b85d67d](https://github.com/qooob/authentic-theme/commit/b85d67d56260d8bb285e7a2a93d8620dc8ac4ea5)
+* Fix to set mail tab to be default in Usermin
+
 #### Version 19.08 (January 08, 2018)
 * Add drag and drop file uploads to File Manager [#979](https://github.com/qooob/authentic-theme/issues/979#issuecomment-355857544)
 * Fix not to log XHR requests [webmin/webmin#740](https://github.com/webmin/webmin/issues/740)
@@ -7,6 +17,8 @@
 * Fix navigation menu and product switch to be set correctly in different modes
 * Fix HTML editor's controls for night mode
 * Fixed bugs [#970](https://github.com/qooob/authentic-theme/issues/970) [#971](https://github.com/qooob/authentic-theme/issues/971) [#976](https://github.com/qooob/authentic-theme/issues/976) [virtualmin.com/54918](https://www.virtualmin.com/node/54918)
+
+<!--- separator --->
 
 #### Version 19.07 (December 28, 2017)
 * Fixed upcoming bugs
@@ -57,7 +69,6 @@
 * Dropped support for _Internet Explorer 11_ [#818](https://github.com/qooob/authentic-theme/issues/818)
 * Fixed bugs [#754](https://github.com/qooob/authentic-theme/issues/754) [#786](https://github.com/qooob/authentic-theme/issues/786) [#807](https://github.com/qooob/authentic-theme/issues/807) [#812](https://github.com/qooob/authentic-theme/issues/812) [#822](https://github.com/qooob/authentic-theme/issues/822) [#825](https://github.com/qooob/authentic-theme/issues/825) [#827](https://github.com/qooob/authentic-theme/issues/827) [#832](https://github.com/qooob/authentic-theme/issues/832) [#833](https://github.com/qooob/authentic-theme/issues/833) [webmin/webmin#652](https://github.com/webmin/webmin/pull/652) [virtualmin.com/53995](https://www.virtualmin.com/node/53995) [virtualmin.com/53811](https://www.virtualmin.com/node/53811) [virtualmin.com/53082](https://www.virtualmin.com/node/53082) [virtualmin.com/53174](https://www.virtualmin.com/node/53174) [virtualmin.com/53358](https://www.virtualmin.com/node/53358) [virtualmin.com/53722](https://www.virtualmin.com/node/53722) [configserver.com/10414](https://forum.configserver.com/viewtopic.php?f=5&t=10414#p28652)
 
-<!--- separator --->
 
 ---------------------------------
 &nbsp;&nbsp;[18.00](https://github.com/qooob/authentic-theme/blob/18/CHANGELOG.md#version-1800-may-26-2016)
