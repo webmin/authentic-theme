@@ -11,7 +11,7 @@ for (my $i = 0; $i < scalar(@settings) - 1; $i += 2) {
     if ($settings[$i] ne '__') {
         print _settings('content', $settings[$i], $settings[$i + 1]);
     } else {
-        my @section = split /\~/, $settings[$i + 1];
+        my @section = split(/\~/, $settings[$i + 1]);
         print _settings('section', $section[0], $section[1]);
     }
 }
