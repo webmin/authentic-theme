@@ -9,6 +9,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="$(echo $DIR | sed 's/\/authentic-theme.*//g')"
 PROD=${DIR##*/}
 CURRENT=$PWD
+GIT="git"
+CURL="curl"
+REPO="qooob/authentic-theme"
 
 # Clear the screen for better readability
 clear
@@ -18,20 +21,6 @@ if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
   echo "Usage:  ./`basename $0` { [-beta] | [-release] | [-release:number] }"
   exit 0
 fi
-
-# look for git in PATH or strange locations (Synology NAS, HP-UX)
-GIT="git"
-# use path from miniser.conf
-echo -en "${CYAN}search minserv.conf ... ${NC}"
-if [[ -f "/etc/webmin/miniserv.conf" ]] ; then
-	# default location
-    MINICONF="/etc/webmin/miniserv.conf"
-else
-    # possible other locations
-    MINICONF=`find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep ${PROD} | head -n 1`
-    echo  -e "${ORANGE}found: ${MINICONF}${NC} (alternative location)"
-fi
-[[ "${MINICONF}" != "" ]] && export path=`grep path= ${MINICONF}| sed 's/^path=//'`
 
 # Ask user to confirm update operation
 read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
@@ -44,11 +33,28 @@ else
   if [[ $EUID -ne 0 ]]; then
     echo -e "\e[49;0;31;82mError: This command has to be run under the root user.\e[0m"
   else
+    if ! type ${GIT} >/dev/null 2>&1
+    then
+      # Use `PATH` from Webmin `config` file
+      if [[ -f "/etc/webmin/config" ]] ; then
+        WMCONF="/etc/webmin/config"
+      else
+        WMCONF=`find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep ${PROD} | head -n 1`
+        WMCONF="${WMCONF/miniserv.conf/config}"
+      fi
+      # Export `PATH` using Webmin `config` file directive
+      if [[ "${WMCONF}" ]]; then
+        echo ${WMCONF}
+        WMCONFPATH=$(grep -Po '(?<=^path=).*$' ${WMCONF})
+        if [[ "${WMCONFPATH}" ]]; then
+          export path=$WMCONFPATH
+        fi
+      fi
+    fi
 
     # Require `git` command availability
     if type ${GIT} >/dev/null 2>&1
     then
-
       # Pull latest changes
       if [[ "$1" == *"-release"* ]]; then
         if [[ "$1" == *":"* ]] && [[ "$1" != *"latest"* ]]; then
@@ -56,30 +62,31 @@ else
           PRRELEASE="--branch ${RRELEASE} --quiet"
           PRRELEASETAG=${1##*:}
         else
-          RRELEASE=`curl -s -L https://raw.githubusercontent.com/qooob/authentic-theme/master/VERSION.txt`
-          DEV=$(curl -s --head -w %{http_code} https://raw.githubusercontent.com/qooob/authentic-theme/master/version -o /dev/null)
-          if [[ "$DEV" == "404" ]]; then
-            PRRELEASE="--quiet"
-            PRRELEASETAG=$RRELEASE
+          if type ${CURL} >/dev/null 2>&1
+          then
+            LINK=`curl -s https://api.github.com/repos/$REPO/releases/latest | grep browser_download_url | head -n 20 | cut -d '"' -f 4 | grep rpm`
+            VERSION=`curl -s https://api.github.com/repos/$REPO/releases/latest | grep tag_name | head -n 1`
+            [[ $VERSION =~ [0-9]+\.[0-9]+ ]]
+            PRRELEASE="--branch ${BASH_REMATCH[0]} --quiet"
+            PRRELEASETAG=${BASH_REMATCH[0]}
           else
-            PRRELEASE="--branch ${RRELEASE:0:5} --quiet"
-            PRRELEASETAG=${RRELEASE:0:5}
+            echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m";
+            exit
           fi
         fi
 
-        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $PRRELEASETAG (https://github.com/qooob/authentic-theme)..."
-        RS="$(${GIT} clone --depth 1 $PRRELEASE https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme" 2>&1)"
+        echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $PRRELEASETAG (https://github.com/$REPO)..."
+        RS="$(${GIT} clone --depth 1 $PRRELEASE https://github.com/$REPO.git "$DIR/.~authentic-theme" 2>&1)"
         if [[ "$RS" == *"ould not find remote branch"* ]]; then
           ERROR="Release ${RRELEASE} doesn't exist. "
         fi
       else
-        echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (https://github.com/qooob/authentic-theme)..."
-        ${GIT} clone --depth 1 --quiet https://github.com/qooob/authentic-theme.git "$DIR/.~authentic-theme"
+        echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (https://github.com/$REPO)..."
+        ${GIT} clone --depth 1 --quiet https://github.com/$REPO.git "$DIR/.~authentic-theme"
       fi
 
       # Checking for possible errors
       if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/VERSION.txt" ]; then
-
         # Post successful commands
         rm -rf "$DIR/authentic-theme"/*
         mv "$DIR/.~authentic-theme"/* "$DIR/authentic-theme/"
@@ -96,11 +103,7 @@ else
         rm -f "$DIR/authentic-theme/README.md"
         find "$DIR/authentic-theme/" -name "*.src*" -delete
 
-        if [ $? -eq 0 ] && [ -f "$DIR/authentic-theme/version" ]; then
-          echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/version`, done.\e[0m"
-        else
-          echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/VERSION.txt`, done.\e[0m"
-        fi
+        echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/VERSION.txt`, done.\e[0m"
 
         # Restart Webmin/Usermin in case it's running
         if [ "$2" != "-no-restart" ]; then
@@ -111,7 +114,6 @@ else
           fi
         fi
       else
-
         # Post fail commands
         rm -rf "$DIR/.~authentic-theme"
         echo -e "\e[49;0;31;82m${ERROR}Updating Authentic Theme, failed.\e[0m"
