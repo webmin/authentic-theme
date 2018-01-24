@@ -2804,9 +2804,9 @@ sub get_xhr_request
 
                     my ($atversion) = $compatible =~ /^version=(.*)/gm;
 
-                    my (@compatibles) = $compatible =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-                    my $wmversion     = $compatibles[2];
-                    my $umversion     = $compatibles[5];
+                    $compatible =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
+                    my $wmversion     = $3 ? $3 : $1;
+                    my $umversion     = $2;
 
                     if ($atversion                          &&
                         $wmversion                          &&
