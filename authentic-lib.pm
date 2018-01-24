@@ -1073,8 +1073,8 @@ sub get_sysinfo_vars
         # Build version response message
         use Version::Compare;
         if (
-            Version::Compare::version_compare(replace('beta-', '', $authentic_remote_version),
-                                              replace('beta-', '', $authentic_installed_version)
+            Version::Compare::version_compare(replace('beta', '', $authentic_remote_version),
+                                              replace('beta', '', $authentic_installed_version)
             ) == 1)
         {
             my $authentic_remote_beta        = $authentic_remote_version =~ /beta/;
