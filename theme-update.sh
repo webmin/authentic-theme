@@ -52,6 +52,11 @@ else
       fi
     fi
 
+    # Clear cache if present
+    if [ -d "$DIR/.~authentic-theme" ] ; then
+      rm -rf "$DIR/.~authentic-theme"
+    fi
+
     # Require `git` command availability
     if type ${GIT} >/dev/null 2>&1
     then
@@ -74,7 +79,6 @@ else
             exit
           fi
         fi
-
         echo -e "\e[49;1;34;182mPulling in latest release of\e[0m \e[49;1;37;182mAuthentic Theme\e[0m $PRRELEASETAG (https://github.com/$REPO)..."
         RS="$(${GIT} clone --depth 1 $PRRELEASE https://github.com/$REPO.git "$DIR/.~authentic-theme" 2>&1)"
         if [[ "$RS" == *"ould not find remote branch"* ]]; then
@@ -83,6 +87,40 @@ else
       else
         echo -e "\e[49;1;34;182mPulling in latest changes for\e[0m \e[49;1;37;182mAuthentic Theme\e[0m (https://github.com/$REPO)..."
         ${GIT} clone --depth 1 --quiet https://github.com/$REPO.git "$DIR/.~authentic-theme"
+      fi
+
+      # Check version compatibility
+      if [ -z ${WEBMIN_CONFIG} ]; then
+        DVER=$(grep -Po '(?<=^depends=).*$' "$DIR/.~authentic-theme/theme.info")
+        TVER=$(grep -Po '(?<=^version=).*$' "$DIR/.~authentic-theme/theme.info")
+        PVER=`head -n 1 $DIR/version`
+        RVER=$(echo "$DVER" | cut -d ' ' -f 1)
+
+        if [ $PROD == "usermin" ]; then
+          if [ ${#TVER} -ge "8" ]; then
+            RVER=$(echo "$DVER" | cut -d ' ' -f 2)
+          else
+            RVER=0
+          fi
+        fi
+
+        if [[ $RVER > $PVER ]]; then
+          echo "
+Warning! Development version of Authentic Theme "${TVER^}" requires
+latest and/or possibly unreleased version of "${PROD^}" "${RVER^}", to work
+properly. Your current version of "${PROD^}" is "${PVER^}". There might be
+incompatible changes, that could stop the theme from working as designed.
+It is recommended to upgrade "${PROD^}" to the latest development version, by
+running \`update-from-repo.sh\` script from \`"$DIR"\` directory."
+
+          read -p "Do you want to continue to force install the theme anyway? [y/N] " -n 1 -r
+          echo
+          if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            rm -rf "$DIR/.~authentic-theme"
+            echo -e "\e[49;1;35;82mOperation aborted.\e[0m"
+            exit
+          fi
+        fi
       fi
 
       # Checking for possible errors
@@ -121,7 +159,5 @@ else
     else
       echo -e "\e[49;0;33;82mError: Command \`git\` is not installed or not in the \`PATH\`.\e[0m";
     fi
-
   fi
-
 fi
