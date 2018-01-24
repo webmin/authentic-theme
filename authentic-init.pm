@@ -159,8 +159,8 @@ sub embed_header
                     next;
                 }
 
-                print '  <script src="' .
-                  $gconfig{'webprefix'} . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
+                print '  <script src="' . $gconfig{'webprefix'} .
+                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -200,8 +200,8 @@ sub embed_header
                     next;
                 }
 
-                print '  <script src="' .
-                  $gconfig{'webprefix'} . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
+                print '  <script src="' . $gconfig{'webprefix'} .
+                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -928,14 +928,14 @@ sub theme_night_mode
 sub theme_version
 {
     my ($string) = @_;
-    my $version  = read_file_lines($root_directory . "/$current_theme/VERSION.txt", 1)->[0];
+    my $version = read_file_lines($root_directory . "/$current_theme/VERSION.txt", 1)->[0];
 
     if ($string) {
-      $version =~ s/beta|\.|-//ig;
+        $version =~ s/beta|\.|-//ig;
 
-      if (theme_mode() eq 'debug') {
-        $version .= time();
-      }
+        if (theme_mode() eq 'debug') {
+            $version .= time();
+        }
     }
 
     return $version;
@@ -1012,8 +1012,14 @@ sub get_version
 
 sub get_version_full
 {
-    my ($version) = @_;
-    return $version =~ /([0-9]+[.][0-9]+(?:-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
+    my ($version, $beta) = @_;
+    ($version) = $version =~ /([0-9]+[.][0-9]+(?:-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
+
+    if ($version =~ /beta/ && $beta) {
+        return undef;
+    }
+
+    return $version;
 }
 
 sub get_env

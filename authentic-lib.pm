@@ -2787,11 +2787,94 @@ sub get_xhr_request
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type = $in{'xhr-update-type'};
+            my $update_force = $in{'xhr-update-force'};
             if (!has_command('git') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
                       replace((!has_command('bash') ? '>git<' : '~'), '>bash<', $Atext{'theme_git_patch_no_git_message'}), };
                 print get_json(\@update_rs);
             } else {
+                if ($version_type =~ /beta/ && $update_force ne "1") {
+                    my $compatible;
+                    my $force_button =
+'<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">'
+                      . $Atext{'theme_xhred_global_click_here'} . '</a>';
+
+                    http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
+                                  \$compatible, \$error, undef, 1, undef, undef, 5);
+
+                    my ($atversion) = $compatible =~ /^version=(.*)/gm;
+
+                    my (@compatibles) = $compatible =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
+                    my $wmversion     = $compatibles[2];
+                    my $umversion     = $compatibles[5];
+
+                    if ($atversion                          &&
+                        $wmversion                          &&
+                        $umversion                          &&
+                        (get_webmin_version() < $wmversion) &&
+                        (usermin_available('__version') < $umversion &&
+                            $__settings{'settings_sysinfo_theme_usermin'} eq 'true'))
+                    {
+                        @update_rs = {
+                                       "incompatible" => (
+                                                Atext(
+                                                     'theme_git_patch_incompatible_message', $Atext{'theme_name'},
+                                                     $atversion,                             $Atext{'theme_xhred_titles_wm'},
+                                                     $wmversion,                             $Atext{'theme_xhred_titles_um'},
+                                                     $umversion
+                                                  ) .
+                                                  " "
+                                                  .
+                                                  Atext(
+                                                    'theme_git_patch_incompatible_message_desc',
+                                                    $force_button,
+                                                    ($Atext{'theme_xhred_titles_wm'} . "/" . $Atext{'theme_xhred_titles_um'})
+                                                  )
+                                       ) };
+                        print get_json(\@update_rs);
+                        exit;
+                    } elsif ($atversion &&
+                             $wmversion &&
+                             (get_webmin_version() < $wmversion))
+                    {
+                        @update_rs = {
+                                       "incompatible" => (
+                                                          Atext(
+                                                              'theme_git_patch_incompatible_message_s', $Atext{'theme_name'},
+                                                              $atversion, $Atext{'theme_xhred_titles_wm'},
+                                                              $wmversion
+                                                            ) .
+                                                            " "
+                                                            .
+                                                            Atext('theme_git_patch_incompatible_message_desc', $force_button,
+                                                                  $Atext{'theme_xhred_titles_wm'}
+                                                            )
+                                       ) };
+                        print get_json(\@update_rs);
+                        exit;
+                    }
+                    elsif ($atversion &&
+                           $umversion &&
+                           (usermin_available('__version') < $umversion &&
+                            $__settings{'settings_sysinfo_theme_usermin'} eq 'true'))
+                    {
+                        @update_rs = {
+                                       "incompatible" => (
+                                                          Atext(
+                                                              'theme_git_patch_incompatible_message_s', $Atext{'theme_name'},
+                                                              $atversion, $Atext{'theme_xhred_titles_um'},
+                                                              $umversion
+                                                            ) .
+                                                            " "
+                                                            .
+                                                            Atext('theme_git_patch_incompatible_message_desc', $force_button,
+                                                                  $Atext{'theme_xhred_titles_um'}
+                                                            )
+                                       ) };
+                        print get_json(\@update_rs);
+                        exit;
+                    }
+                }
                 my $usermin = (usermin_available() && $__settings{'settings_sysinfo_theme_usermin'} eq 'true');
                 my $usermin_root;
                 backquote_logged("yes | $root_directory/$current_theme/theme-update.sh -$version_type -no-restart");
@@ -2957,17 +3040,6 @@ sub get_default_right
     }
 }
 
-sub init_error
-{
-    if (!-d $root_directory . "/authentic-theme" &&
-        -d $root_directory . "/authentic-theme-master")
-    {
-        die(
-"ATTENTION:\nHave you downloaded Authentic Theme from GitHub, and unpacked it manually\nto Webmin directory? In this case you need to rename theme directory from\n`authentic-theme-master` to `authentic-theme` in order to make theme work.\nAfterward, you will need to reset the theme again in Webmin Configuration.\n"
-        );
-    }
-}
-
 sub init_type
 {
     (($ENV{'CONTENT_TYPE'} =~ /multipart\/form-data/i) ? ReadParseMime() :
@@ -2994,9 +3066,6 @@ sub init
       undef;
     $t_uri__i =~ /server-manager/ ? ($t_uri___i = ($in{'serv'} ? $in{'serv'} : $in{'server'})) :
       undef;
-
-    # User-friendly message for those installing from GitHub
-    init_error();
 
     # Provide unobstructive access for AJAX calls
     get_xhr_request();
@@ -3062,7 +3131,7 @@ sub update_notice
         /#### Version(.*?)<!--- separator --->/s)[0];
     if ($changelog_data) {
         $changelog_data =~
-s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releases\/tag\/@{[get_version_full($1)]}$2" class="version_separator">@{[get_version_full($1)]}$2<\/a><hr><ul>/g;
+s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releases\/tag\/@{[get_version_full($1)]}" class="version_separator">@{[get_version_full($1, 1)]}<\/a><hr><ul>/g;
     } else {
         $changelog_data =
           (read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md") =~
