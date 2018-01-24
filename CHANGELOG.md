@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.09-beta2 (January 24, 2018)
+* Add Webmin/Usermin version check, before installing development version of the theme using UI [#966](https://github.com/qooob/authentic-theme/issues/966)
+
 #### Version 19.09-beta1 (January 22, 2018)
 * Add support for detecting encoding using special comment in file's content [#987](https://github.com/qooob/authentic-theme/issues/987)
 * Add better highlights for Apache and Nginx configuration files [#981](https://github.com/qooob/authentic-theme/issues/981)
