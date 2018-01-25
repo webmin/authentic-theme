@@ -457,7 +457,7 @@ sub init_vars
 
     our %Atext = (&load_language($current_theme), %Atext);
 
-    if ($t_uri__i =~ /sysinfo.cgi/) {
+    if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
         our %Atext = (&load_language('virtual-server'), %Atext);
         our %Atext = (&load_language('server-manager'), %Atext);
     }
