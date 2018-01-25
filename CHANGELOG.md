@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.09-beta3 (January 25, 2018)
+* Fix menu detection for ambiguous link entries [#994](https://github.com/qooob/authentic-theme/issues/994)
+* Fix dozen of other minor bugs
+
 #### Version 19.09-beta2 (January 24, 2018)
 * Add Webmin/Usermin version check, before installing development version of the theme using UI [#966](https://github.com/qooob/authentic-theme/issues/966)
 
