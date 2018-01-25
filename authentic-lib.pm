@@ -2196,8 +2196,6 @@ sub _settings
             'false',
             'settings_sysinfo_theme_patched_updates',
             'false',
-            'settings_sysinfo_theme_usermin',
-            'false',
             'settings_sysinfo_csf_updates',
             'false');
 
@@ -2236,7 +2234,7 @@ sub _settings
         }
 
         # List of settings for Usermin
-        my @s_um_e = ('settings_hotkey_toggle_key_usermin', 'settings_sysinfo_theme_usermin');
+        my @s_um_e = ('settings_hotkey_toggle_key_usermin');
         if (!usermin_available()) {
             foreach my $e (@s_um_e) {
                 push(@_s_e, $e);
@@ -2812,8 +2810,7 @@ sub get_xhr_request
                         $wmversion                          &&
                         $umversion                          &&
                         (get_webmin_version() < $wmversion) &&
-                        (usermin_available('__version') < $umversion &&
-                            $__settings{'settings_sysinfo_theme_usermin'} eq 'true'))
+                        (usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
@@ -2855,8 +2852,7 @@ sub get_xhr_request
                     }
                     elsif ($atversion &&
                            $umversion &&
-                           (usermin_available('__version') < $umversion &&
-                            $__settings{'settings_sysinfo_theme_usermin'} eq 'true'))
+                           (usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
@@ -2875,7 +2871,7 @@ sub get_xhr_request
                         exit;
                     }
                 }
-                my $usermin = (usermin_available() && $__settings{'settings_sysinfo_theme_usermin'} eq 'true');
+                my $usermin = usermin_available();
                 my $usermin_root;
                 backquote_logged("yes | $root_directory/$current_theme/theme-update.sh -$version_type -no-restart");
                 if ($usermin) {

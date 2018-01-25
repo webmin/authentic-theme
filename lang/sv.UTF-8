@@ -759,7 +759,6 @@ theme_xhred_global_redirecting=Omdirigerar
 #19.05
 body_no_javascript_title=Javascript är inaktiverat
 body_no_javascript_message=Aktivera javascript och uppdatera sidan
-settings_sysinfo_theme_usermin=Ska pågående temauppdateringar påverka Usermin
 theme_xhred_connection_lost=Frånkopplad
 theme_xhred_connection_success=Ansluten
 theme_xhred_connection_success_details=Anslutningen till servern har återupprättats.
