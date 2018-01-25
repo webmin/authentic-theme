@@ -40,14 +40,14 @@ else
         WMCONF="/etc/webmin/config"
       else
         WMCONF=`find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep ${PROD} | head -n 1`
-        WMCONF="${WMCONF/miniserv.conf/config}"
+        WMCONF="${WMCONF##*/}/config"
       fi
       # Export `PATH` using Webmin `config` file directive
       if [[ "${WMCONF}" ]]; then
         echo ${WMCONF}
         WMCONFPATH=$(grep -Po '(?<=^path=).*$' ${WMCONF})
         if [[ "${WMCONFPATH}" ]]; then
-          export path=$WMCONFPATH
+          export PATH="${PATH}:$WMCONFPATH"
         fi
       fi
     fi
