@@ -696,7 +696,7 @@ sub get_button_style
     {
         $class = "success ";
         $icon =~ s/%icon/package-install fa-1_25x/ig;
-    } elsif ($entry =~ /uninstall/ || $entry eq 'drecs_ok') {
+    } elsif ($entry =~ /uninstall/ || $entry =~ /edit_uninst/ || $entry eq 'drecs_ok') {
         $class = "danger ";
         $icon =~ s/%icon/times-circle-o/ig;
     } elsif ($entry =~ /upgrade/ || $entry =~ /massscript_ok/ || $entry =~ /massg_ok/) {
@@ -736,7 +736,7 @@ sub get_button_style
         $icon =~ s/%icon/clear-all fa-1_25x/ig;
     } elsif ($entry =~ /history_ok/) {
         $icon =~ s/%icon/area-chart/ig;
-    } elsif ($entry =~ /edit_open/) {
+    } elsif ($entry =~ /edit_open/ || $entry =~ /edit_list/) {
         $icon =~ s/%icon/files-o/ig;
     } elsif ($entry =~ /reboot/ ||
              $entry eq 'view_refresh' ||
