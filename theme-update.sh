@@ -47,7 +47,7 @@ else
         echo ${WMCONF}
         WMCONFPATH=$(grep -Po '(?<=^path=).*$' ${WMCONF})
         if [[ "${WMCONFPATH}" ]]; then
-          export path=$WMCONFPATH
+          export PATH="${PATH}:$WMCONFPATH"
         fi
       fi
     fi
