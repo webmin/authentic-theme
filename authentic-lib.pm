@@ -1533,7 +1533,7 @@ sub csf_temporary_list
                 foreach my $h (reverse @t) {
                     if (!length $h) {next}
                     my ($a, $b, $d, $e, $f, $g) = split(/\|/, $h);
-                    if ($r eq $b && ($d =~ /\d/g || $g =~ /failed|many/gi || $k ~~ @p)) {
+                    if ($r eq $b && ($d =~ /\d/g || $g =~ /failed|\(CT\)/gi || $k ~~ @p)) {
                         push @l, $a . '|' . $b . '|' . $w . '|' . $k . '|' . $d . '|' . $e . '|' . $f . '|' . $g;
                     }
                 }
