@@ -852,6 +852,8 @@ sub get_button_style
         $icon =~ s/%icon/rotate-3d fa-1_25x margined-left--3 margined-right--3/ig;
     } elsif ($entry =~ /csv/) {
         $icon =~ s/%icon/export/ig;
+    } elsif ($entry =~ /restore/) {
+        $icon =~ s/%icon/restore fa-1_25x/ig;
     } elsif ($entry eq 'backup_title' ||
              $entry eq 'dbase_backup' ||
              $entry eq 'backup_ok'    ||
