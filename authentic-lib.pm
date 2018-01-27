@@ -1526,7 +1526,7 @@ sub csf_temporary_list
                 foreach my $h (reverse @t) {
                     if (!length $h) {next}
                     my ($a, $b, $d, $e, $f, $g) = split(/\|/, $h);
-                    if ($r eq $b && ((!$k || !@p) || ($k ~~ @p))) {
+                    if ($r eq $b && ($d =~ /\d/g || $g =~ /failed|many/gi || $k ~~ @p)) {
                         push @l, $a . '|' . $b . '|' . $w . '|' . $k . '|' . $d . '|' . $e . '|' . $f . '|' . $g;
                     }
                 }
@@ -2803,10 +2803,10 @@ sub get_xhr_request
                     my ($atversion) = $compatible =~ /^version=(.*)/gm;
 
                     $compatible =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-                    my $wmversion     = $3 ? $3 : $1;
-                    my $umversion     = $2;
+                    my $wmversion = $3 ? $3 : $1;
+                    my $umversion = $2;
 
-                    if ($atversion                          &&
+                    if ($atversion &&
                         $wmversion                          &&
                         $umversion                          &&
                         (get_webmin_version() < $wmversion) &&
@@ -2849,10 +2849,9 @@ sub get_xhr_request
                                        ) };
                         print get_json(\@update_rs);
                         exit;
-                    }
-                    elsif ($atversion &&
-                           $umversion &&
-                           (usermin_available('__version') < $umversion))
+                    } elsif ($atversion &&
+                             $umversion &&
+                             (usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
