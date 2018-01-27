@@ -1430,7 +1430,14 @@ sub csf_mod
         close $fh;
 
         open(my $fh, '>', $csf_htmltag_mod) or die $!;
-        print $fh ' ' . replace("\"", "'", header_html_data('csf', '1', (get_html_framed_title(), 0, 0, '1'))) . '';
+        print $fh ' '
+          .
+          replace("\"", "'",
+                  header_html_data('csf', '1',
+                                   ("ConfigServer Security & Firewall — " . get_html_framed_title(), 0, 0, '1')
+                  )
+          ) .
+          '';
         close $fh;
 
         open(my $fh, '>', $csf_bodytag_mod) or die $!;
