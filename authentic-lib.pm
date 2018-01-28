@@ -1521,23 +1521,29 @@ sub csf_temporary_list
             my $c = 0;
 
             my $s = scalar @i;
-            for (my $x = 0; $x < $s; $x++) {
-                $c++;
-                my $u = $i[$x];
-                my ($o, $l) = split(/\|/, $u);
-                my ($r, $w, $k);
-                if ($l =~ /SRC=(\S+)/) {$r = $1}
-                if ($l =~ /DST=(\S+)/) {$w = $1}
-                if ($l =~ /DPT=(\d+)/) {$k = $1}
+            my @g;
 
-                foreach my $h (reverse @t) {
-                    if (!length $h) {next}
+            foreach my $h (reverse @t) {
+                if ($h) {
                     my ($a, $b, $d, $e, $f, $g) = split(/\|/, $h);
-                    if ($r eq $b && ($d =~ /\d/g || $g =~ /failed|\(CT\)/gi || $k ~~ @p)) {
-                        push @l, $a . '|' . $b . '|' . $w . '|' . $k . '|' . $d . '|' . $e . '|' . $f . '|' . $g;
+                    my ($ll, $dl) = (undef, '|');
+                    for (my $x = 0; $x < $s; $x++) {
+                        $c++;
+                        my $u = $i[$x];
+                        my ($o, $l) = split(/\|/, $u);
+                        my ($r, $w, $k);
+                        if ($l =~ /SRC=(\S+)/) {$r = $1}
+                        if ($l =~ /DST=(\S+)/) {$w = $1}
+                        if ($l =~ /DPT=(\d+)/) {$k = $1}
+                        if (($r eq $b && $k ~~ @p) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
+                            $ll = ($a . $dl . $b . $dl . $w . $dl . $k . $dl . $d . $dl . $e . $dl . $f . $dl . $g);
+                            if (!($g ~~ @g) && !($ll ~~ @l)) {
+                                push @g, $g;
+                                push @l, $ll;
+                            }
+                        }
                     }
                 }
-
             }
         }
 
