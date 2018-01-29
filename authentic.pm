@@ -242,10 +242,11 @@ sub theme_popup_window_button
 
 sub theme_ui_upload
 {
-    my ($name, $size, $dis, $tags) = @_;
+    my ($name, $size, $dis, $tags, $multiple) = @_;
     $size = &ui_max_text_width($size);
     return "<input style='margin: 4px 0;' class='ui_upload' type=file name=\"" .
       &quote_escape($name) . "\" " . "size=$size " . ($dis ? "disabled=true" : "") .
+      ($multiple ? " multiple" : "").
       ($tags ? " " . $tags : "") . ">";
 }
 
