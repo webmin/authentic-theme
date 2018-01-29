@@ -992,7 +992,7 @@ sub get_sysinfo_vars
         $ip = " ($ip)" if ($ip);
         my $host = &get_system_hostname() . $ip;
         if (&foreign_available("net")) {
-            $host = '<a href="' . $gconfig{'webprefix'} . '/net/list_dns.cgi">' . $host . '</a>';
+            $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
         }
 
         # Operating System Info
@@ -1027,8 +1027,9 @@ sub get_sysinfo_vars
                       . ' Pro <div class="btn-group margined-left-4">'
                       .
                       ( ($vs_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" title="' . $Atext{'right_vlcheck'} . '" href="' .
-                          $gconfig{'webprefix'} . '/virtual-server/licence.cgi"><i class="fa fa-refresh"></i></a></div>' :
+                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          $Atext{'right_vlcheck'} . '" href=\'' .
+                          $gconfig{'webprefix'} . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
@@ -1056,8 +1057,9 @@ sub get_sysinfo_vars
                       . ' Pro <div class="btn-group margined-left-4">'
                       .
                       ( ($vm2_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" title="' . $Atext{'right_slcheck'} . '" href="' .
-                          $gconfig{'webprefix'} . '/server-manager/licence.cgi"><i class="fa fa-refresh"></i></a></div>' :
+                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          $Atext{'right_slcheck'} . '" href=\'' .
+                          $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
@@ -1092,7 +1094,7 @@ sub get_sysinfo_vars
                   0
               ) .
               '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
-              ' authentic_update" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw ' .
+              ' authentic_update" href=\'' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
               ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $Atext{'theme_update'} .
               '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
@@ -1102,17 +1104,17 @@ sub get_sysinfo_vars
               '" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/' .
               $authentic_remote_version_tag .
               '/authentic-theme-' . $authentic_remote_version . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
-              $Atext{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href="' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
+              $Atext{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
+              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
+              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
               $Atext{'settings_right_options'} . '</a>' . '</div>';
 
         } else {
             $authentic_theme_version =
               '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
-              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4"><a href="' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4"><a href=\'' .
+              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
+              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
               $Atext{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
 '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
         }
@@ -1151,8 +1153,8 @@ sub get_sysinfo_vars
 ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
               );
             $csf_data = (
-                '<a href="' .
-                  $gconfig{'webprefix'} . '/csf/index.cgi" data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
+                '<a href=\'' .
+                  $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
                   $csf_installed_version . ''
 
                   . ($csf_update_required eq '1' ?
@@ -1203,7 +1205,7 @@ sub get_sysinfo_vars
         $local_time = localtime($_time);
         if (foreign_available("time")) {
             $local_time = '<a data-convertible-timestamp-full="' .
-              $_time . '" href=' . $gconfig{'webprefix'} . '/time/>' . $local_time . '</a>';
+              $_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
         } else {
             $local_time = '<span data-convertible-timestamp-full="' . $_time . '" >' . localtime($_time) . '</span>';
         }
@@ -1272,14 +1274,14 @@ sub get_sysinfo_vars
             $uptime_text = &Atext('body_upmins', $minute);
         }
 
-        $uptime = '<a href=' . $gconfig{'webprefix'} . '/init/>' . $uptime_text . '</a>';
+        $uptime = '<a href=\'' . $gconfig{'webprefix'} . '/init/\'>' . $uptime_text . '</a>';
 
         # Running processes
         if (&foreign_check("proc")) {
             @procs        = &proc::list_processes();
             $running_proc = scalar(@procs);
             if (&foreign_available("proc")) {
-                $running_proc = '<a href=' . $gconfig{'webprefix'} . '/proc/index_tree.cgi>' . $running_proc . '</a>';
+                $running_proc = '<a href=\'' . $gconfig{'webprefix'} . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
             }
         }
 
@@ -1326,8 +1328,9 @@ sub get_sysinfo_vars
 
         # Package updates
         if (&foreign_available("package-updates") && $info->{'poss'}) {
-            @poss = @{ $info->{'poss'} };
-            @secs = grep {$_->{'security'}} @poss;
+            my $msg;
+            my @poss = @{ $info->{'poss'} };
+            my @secs = grep {$_->{'security'}} @poss;
 
             my $poss = scalar(@poss);
             my $secs = scalar(@secs);
@@ -1345,11 +1348,11 @@ sub get_sysinfo_vars
             } else {
                 $msg = $Atext{'body_upok'};
             }
-            if (&foreign_available("package-updates")) {
-                $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger font-style-normal\'> $1 <\/i>"/eg;
-                $package_message =
-                  '<a href="' . $gconfig{'webprefix'} . '/package-updates/index.cgi?mode=updates">' . $msg . '</a>';
-            }
+
+            $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger font-style-normal\'> $1 <\/i>"/eg;
+            $package_message =
+              '<a href=\'' . $gconfig{'webprefix'} . '/package-updates/index.cgi?mode=updates\'>' . $msg . '</a>';
+
         }
 
         return ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
