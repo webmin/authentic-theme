@@ -2823,7 +2823,7 @@ sub get_xhr_request
                         $wmversion                          &&
                         $umversion                          &&
                         (get_webmin_version() < $wmversion) &&
-                        (usermin_available('__version') < $umversion))
+                        (usermin_available() && usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
@@ -2864,7 +2864,7 @@ sub get_xhr_request
                         exit;
                     } elsif ($atversion &&
                              $umversion &&
-                             (usermin_available('__version') < $umversion))
+                             (usermin_available() && usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
