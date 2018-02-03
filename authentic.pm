@@ -174,7 +174,9 @@ sub theme_file_chooser_button
         ($w, $h) = split(/x/, $gconfig{'db_sizefile'});
     }
     return
-"<button class='btn btn-default file_chooser_button' style='width: 40px; height: 28px; vertical-align:middle !important;' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'><i class=\"fa fa-fw fa-files-o vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i></button>\n";
+"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
+  <i class=\"fa fa-fw fa-files-o vertical-align-middle\"></i>
+ </button>\n";
 }
 
 sub theme_user_chooser_button
@@ -188,7 +190,9 @@ sub theme_user_chooser_button
         ($w, $h) = split(/x/, $gconfig{'db_sizeuser'});
     }
     return
-"<input type=button style=\"width:40px;\"  onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>\n";
+"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
+  <i class=\"fa fa-user-o vertical-align-middle\" ></i>
+</button>\n";
 }
 
 sub theme_group_chooser_button
@@ -202,17 +206,15 @@ sub theme_group_chooser_button
         ($w, $h) = split(/x/, $gconfig{'db_sizeuser'});
     }
     return
-"<input type=button style=\"width:40px;\" onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>\n";
+"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
+      <i class=\"fa fa-group-o vertical-align-middle\" ></i>
+    </button>\n";
 }
 
 sub theme_date_chooser_button
 {
-    my ($w, $h) = (320, 270);
-    if ($gconfig{'db_sizedate'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizedate'});
-    }
     return
-"<input type=button style=\"width:40px;\" onclick='theme_date_chooser(window.dfield = form.$_[0], window.mfield = form.$_[1], window.yfield = form.$_[2], this)' value=\"   \"><i class=\"fa fa-fw fa-calendar file_chooser_button_attached\" style=\"font-size:11px; margin-top: 10px; margin-left: -27px; pointer-events: none\"></i>\n";
+"<button data-day=\"$_[0]\" data-month=\"$_[1]\" data-year=\"$_[2]\" type=button class=\"btn btn-default heighter-28 chooser_button date_chooser_button\"><i class=\"fa fa-fw fa-calendar\"></i></button>\n";
 }
 
 sub theme_popup_window_button
@@ -245,9 +247,8 @@ sub theme_ui_upload
 {
     my ($name, $size, $dis, $tags, $multiple) = @_;
     $size = &ui_max_text_width($size);
-    return "<input style='margin: 4px 0;' class='ui_upload' type=file name=\"" .
-      &quote_escape($name) . "\" " . "size=$size " . ($dis ? "disabled=true" : "") .
-      ($multiple ? " multiple" : "").
+    return "<input class='ui_upload' type=file name=\"" .
+      &quote_escape($name) . "\" " . "size=$size " . ($dis ? "disabled=true" : "") . ($multiple ? " multiple" : "") .
       ($tags ? " " . $tags : "") . ">";
 }
 

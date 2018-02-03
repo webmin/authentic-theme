@@ -728,8 +728,9 @@ sub get_button_style
         $icon =~ s/%icon/times-circle-o/ig;
     } elsif ($entry eq 'ticket_submit') {
         $icon =~ s/%icon/question-circle/ig;
-    } elsif ($entry eq 'passwd_change') {
+    } elsif ($entry =~ /passwd_change/ || $entry =~ /password/) {
         $icon =~ s/%icon/key-li/ig;
+        $class = "warning ";
     } elsif ($entry eq 'newnotify_ok') {
         $icon =~ s/%icon/send fa-1_25x/ig;
     } elsif ($entry eq 'nf_seen') {
