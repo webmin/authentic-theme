@@ -1,27 +1,25 @@
 ## Changelog
 
-#### Version 19.09-beta4 (January 29, 2018)
+#### Version 19.09 (February 06, 2018)
+* Add better highlights for Apache and Nginx configuration files [#981](https://github.com/qooob/authentic-theme/issues/981)
+* Add support for detecting encoding using special comment in file's content [#987](https://github.com/qooob/authentic-theme/issues/987)
+* Add Webmin/Usermin version check, before installing development version of the theme using UI [#966](https://github.com/qooob/authentic-theme/issues/966)
+* Add support for fast navigation using anchors [#1005](https://github.com/qooob/authentic-theme/issues/1005)
+* Add improved support for Usermin
+* Add padding for collapsed panels' container based on navigation width
+* Add close button for inbuilt command shell
 * Fix code highlight for PHP files [#997](https://github.com/qooob/authentic-theme/issues/997)
 * Fix occasionally losing messages for server notifications
 * Fix issues with links and page refresh for Servers Index module
 * Fix navigation trigger being appended twice
-* Fix dozen of other minor bugs
-
-#### Version 19.09-beta3 (January 25, 2018)
 * Fix menu detection for ambiguous link entries [#994](https://github.com/qooob/authentic-theme/issues/994)
-
-#### Version 19.09-beta2 (January 24, 2018)
-* Add Webmin/Usermin version check, before installing development version of the theme using UI [#966](https://github.com/qooob/authentic-theme/issues/966)
-
-#### Version 19.09-beta1 (January 22, 2018)
-* Add support for detecting encoding using special comment in file's content [#987](https://github.com/qooob/authentic-theme/issues/987)
-* Add better highlights for Apache and Nginx configuration files [#981](https://github.com/qooob/authentic-theme/issues/981)
-* Add padding for collapsed panels' container based on navigation width
+* Fix version comparison logic
 * Fix to improve development versions control [@c22908d](https://github.com/qooob/authentic-theme/commit/c22908d24155a96de8d30061a074d01d75a43cdc)
 * Fix to generate security notification, only for mentioned ports for ConfigServer Security & Firewall [@5b957fe](https://github.com/qooob/authentic-theme/commit/5b957fe8f75ca5d16eebe7fb241c07ff926319e7)
 * Fix internal redirects [#982](https://github.com/qooob/authentic-theme/issues/982)
 * Fix to secure session id [@b85d67d](https://github.com/qooob/authentic-theme/commit/b85d67d56260d8bb285e7a2a93d8620dc8ac4ea5)
 * Fix to set mail tab to be default in Usermin
+* Fix scores of other unreported bugs
 
 #### Version 19.08 (January 08, 2018)
 * Add drag and drop file uploads to File Manager [#979](https://github.com/qooob/authentic-theme/issues/979#issuecomment-355857544)
