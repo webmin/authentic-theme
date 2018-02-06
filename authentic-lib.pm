@@ -1073,11 +1073,12 @@ sub get_sysinfo_vars
         $authentic_installed_version = theme_version();
 
         # Build version response message
-        use Version::Compare;
         if (
-            Version::Compare::version_compare(replace('beta', '', $authentic_remote_version),
-                                              replace('beta', '', $authentic_installed_version)
-            ) == 1)
+            (
+             (($authentic_remote_version !~ /beta/ && $authentic_installed_version =~ /beta/) &&
+              $authentic_remote_version ge substr($authentic_installed_version, 0, 5)
+             ) ||
+             $authentic_remote_version gt $authentic_installed_version))
         {
             my $authentic_remote_beta        = $authentic_remote_version =~ /beta/;
             my $authentic_remote_version_tag = $authentic_remote_version;
@@ -1791,7 +1792,7 @@ sub theme_remote_version
         $authentic_remote_version =~ s/^\s+|\s+$//g;
 
         if ($authentic_remote_version =~ /beta/ && $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true') {
-            $authentic_remote_version = '0';
+            $authentic_remote_version = substr($authentic_remote_version, 0, 5);
         }
     } else {
         $authentic_remote_version = '0';
