@@ -641,6 +641,8 @@ sub get_button_style
 
     if ($entry eq 'edit_createnow' || $entry eq 'edit_savenow') {
         $icon =~ s/%icon/backup fa-1_25x/ig;
+    } elsif ($entry =~ /changeip/ || $entry =~ /newips/) {
+        $icon =~ s/%icon/pencil-square-o/ig;
     } elsif ($entry =~ /save/ ||
              $entry eq 'backup_ok2'    ||
              $entry eq 'sharedips_ok'  ||
@@ -680,6 +682,7 @@ sub get_button_style
              $entry =~ /umass_del2/    ||
              $entry =~ /index_gmass/   ||
              $entry =~ /master_del/    ||
+             $entry =~ /newstyles_del/ ||
              $entry eq 'html_dtitle')
     {
         $class = "danger ";
@@ -728,11 +731,9 @@ sub get_button_style
         $icon =~ s/%icon/times-circle-o/ig;
     } elsif ($entry eq 'ticket_submit') {
         $icon =~ s/%icon/question-circle/ig;
-    } elsif ($entry =~ /passwd_change/ || $entry =~ /password/) {
+    } elsif ($entry =~ /passwd_change/) {
         $icon =~ s/%icon/key-li/ig;
         $class = "warning ";
-    } elsif ($entry eq 'newnotify_ok') {
-        $icon =~ s/%icon/send fa-1_25x/ig;
     } elsif ($entry eq 'nf_seen') {
         $icon =~ s/%icon/clear-all fa-1_25x/ig;
     } elsif ($entry =~ /history_ok/) {
@@ -821,8 +822,11 @@ sub get_button_style
             $class = "primary ";
         }
         $icon =~ s/%icon/clock/ig;
-    } elsif ($entry =~ /uedit_mail/) {
-        $icon =~ s/%icon/envelope/ig;
+    } elsif ($entry =~ /uedit_mail/ || $entry eq 'newnotify_ok') {
+        $icon =~ s/%icon/envelope-o/ig;
+    } elsif ($entry =~ /sendmail/) {
+        $icon =~ s/%icon/envelope-o/ig;
+        $class = "info ";
     } elsif ($entry =~ /uedit_swit/ || $entry eq 'user_switch') {
         $icon =~ s/%icon/webmin/ig;
     } elsif ($entry =~ /uedit_logins/ ||
@@ -858,6 +862,7 @@ sub get_button_style
     } elsif ($entry eq 'backup_title' ||
              $entry eq 'dbase_backup' ||
              $entry eq 'backup_ok'    ||
+             $entry =~ /export/       ||
              $entry eq 'backup_now')
     {
         $icon =~ s/%icon/backup fa-1_25x/ig;
@@ -907,11 +912,22 @@ sub get_button_style
     } elsif ($entry eq 'index_mass3') {
         $class = "success ";
         $icon =~ s/%icon/toggle-switch-off  fa-1_25x/ig;
-    } elsif ($entry eq 'index_ok' ||
-             $entry eq 'assignment_ok' ||
-             $entry eq 'lang_ok')
-    {
+    } elsif ($entry =~ /lang/) {
+        $icon =~ s/%icon/globe/ig;
+        $class = "warning ";
+    } elsif ($entry =~ /_ok/) {
         $icon =~ s/%icon/check-circle-o/ig;
+        $class = "success ";
+    } elsif ($entry =~ /_change/ && $entry ne "edit_change" && $entry ne "trace_change") {
+        $class = "warning ";
+        $icon =~ s/%icon/pencil-square-o/ig;
+    } elsif ($entry =~ /lkeys_sok2/) {
+        $class = "success ";
+        $icon =~ s/%icon/key/ig;
+    } elsif ($entry =~ /letsencrypt_title/ || $entry =~ /cert_letsonly/ || $entry =~ /ssl_copycert/) {
+        $icon =~ s/%icon/certificate/ig;
+    } elsif ($entry =~ /index_tree/) {
+        $icon =~ s/%icon/tree/ig;
     } else {
         $icon = undef;
     }

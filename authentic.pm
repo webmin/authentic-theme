@@ -221,7 +221,12 @@ sub theme_popup_window_button
 {
     my ($url, $w, $h, $scroll, $fields) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
-    my $rv = "<input class='btn btn-default' style='height: 28px; vertical-align:middle !important;' type=button onClick='";
+    my $icon = "fa-files-o";
+    if ($url =~ /third_chooser|standard_chooser/) {
+        $icon = "fa-world";
+    }
+
+    my $rv = "<button class='btn btn-default chooser_button' type=button onClick='";
     foreach my $m (@$fields) {
         $rv .= "$m->[0] = form.$m->[1]; ";
     }
@@ -238,8 +243,7 @@ sub theme_popup_window_button
         $rv .= "chooser.$m->[0] = $m->[0]; ";
         $rv .= "window.$m->[0] = $m->[0]; ";
     }
-    $rv .=
-"' value=\"   \"><i class=\"fa fa-fw fa-files-o file_chooser_button_attached vertical-align-middle\" style=\"font-size:11px; pointer-events: none\"></i>";
+    $rv .= "'><i class=\"fa $icon vertical-align-middle\" ></i></button>";
     return $rv;
 }
 

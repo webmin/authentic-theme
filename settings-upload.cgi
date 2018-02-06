@@ -33,7 +33,7 @@ print '
                                 <td class="col_value">'
   . ui_yesno_radio("authenticated_logo", (-r $config_directory . "/$current_theme/logo.png" ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value">
-                                    <button class="btn btn-default file_chooser_button file_chooser_button_preview'
+                                    <button class="btn btn-default chooser_button file_chooser_button_preview'
   . (!-r $root_directory . "/$current_theme/images/logo.png" && ' disabled') .
   '" type="button"' . (-r $root_directory . "/$current_theme/images/logo.png" &&
                        ' data-image="' . $gconfig{'webprefix'} . '/images/logo.png?' . time() . '"') .
@@ -53,7 +53,7 @@ print '
   . ui_yesno_radio("unauthenticated_logo", (-r $config_directory . "/$current_theme/logo_welcome.png" ? "1" : "0"), "1", "0")
   . '</td>
                                 <td class="col_value">
-                                    <button class="btn btn-default file_chooser_button file_chooser_button_preview'
+                                    <button class="btn btn-default chooser_button file_chooser_button_preview'
   . (!-r $root_directory . "/$current_theme/images/logo_welcome.png" && ' disabled') .
   '" type="button"' . (-r $root_directory . "/$current_theme/images/logo_welcome.png" &&
                        ' data-image="' . $gconfig{'webprefix'} . '/images/logo_welcome.png?' . time() . '"') .
