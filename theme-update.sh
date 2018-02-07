@@ -16,7 +16,7 @@ REPO="qooob/authentic-theme"
 # Clear the screen for better readability
 clear
 
-if [[ "$1" == "-h" || "$1" == "--help" ]] ; then
+if [[ "$1" == "-h" || "$1" == "-help" || "$1" == "--help" ]] ; then
   echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script"
   echo "Usage:  ./`basename $0` { [-beta] | [-release] | [-release:number] }"
   exit 0
@@ -70,7 +70,7 @@ else
           then
             LINK=`curl -s https://api.github.com/repos/$REPO/releases/latest | grep browser_download_url | head -n 20 | cut -d '"' -f 4 | grep rpm`
             VERSION=`curl -s https://api.github.com/repos/$REPO/releases/latest | grep tag_name | head -n 1`
-            [[ $VERSION =~ [0-9]+\.[0-9]+ ]]
+            [[ $VERSION =~ [0-9]+\.[0-9]+|[0-9]+\.[0-9]+\.[0-9]+ ]]
             PRRELEASE="--branch ${BASH_REMATCH[0]} --quiet"
             PRRELEASETAG=${BASH_REMATCH[0]}
           else
