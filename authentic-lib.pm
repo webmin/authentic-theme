@@ -935,8 +935,10 @@ sub print_easypie_chart
     my ($columns, $percent, $label, $id) = @_;
     print '<div class="col-md-' . $columns . ' col-md-6 col-xs-6 text-center">' . "\n";
     print '<span class="piechart" data-charts="' . $id . '" data-percent="' . $percent . '">
-        <span class="percent"></span>
-        <span class="label">' . $label . '</span>
+        <div class="data-cnt">
+          <span class="percent"></span>
+          <span class="label">' . $label . '</span>
+        </div>
     </span>';
     print '</div>' . "\n";
 }
