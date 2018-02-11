@@ -129,10 +129,6 @@ running \`update-from-repo.sh\` script from \`"$DIR"\` directory."
         mv "$DIR/.~authentic-theme"/* "$DIR/authentic-theme/"
         rm -rf "$DIR/.~authentic-theme"
 
-        if [[ $PROD = "usermin" ]]; then
-          rm -f "$DIR/authentic-theme/update"
-        fi
-
         # Local clear
         if [ -f "$DIR/authentic-theme/.debug.pm" ]; then
           rm -f "$DIR/authentic-theme/.debug.pm"
