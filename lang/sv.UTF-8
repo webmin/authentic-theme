@@ -775,7 +775,7 @@ theme_xhred_upload_initial_info=Dra och släpp filer här eller klicka för att 
 
 
 #19.09
-theme_xhred_global_empty=Empty
+theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=klicka här
 theme_git_patch_incompatible_message=Utvecklingsversionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 <em>$4</em> och $5 <em>$6</em> för att fungera korrekt.
 theme_git_patch_incompatible_message_s=Utvecklingsversionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 <em>$4</em> för att fungera korrekt.
