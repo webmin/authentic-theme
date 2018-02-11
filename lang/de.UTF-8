@@ -769,8 +769,8 @@ theme_xhred_upload_initial_info=Datei(en) hierher ziehen oder zum Ausw&auml;hlen
 
 
 #19.09
-theme_xhred_global_empty=Empty
-theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Development version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Development version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
-theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
+theme_xhred_global_empty=Leer
+theme_xhred_global_click_here=Hier klicken
+theme_git_patch_incompatible_message=Die Entwickler Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von $3 <em>$4</em> und $5 <em>$6</em>.
+theme_git_patch_incompatible_message_s=Die Entwickler Version von $1 <em>$2</em>  ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von$3 <em>$4</em>.
+theme_git_patch_incompatible_message_desc=Es k&ouml;nnteb m&ouml;glicherweise nicht kompatible &Auml;nderungen enthalten sein, die verhindern das das Desgin korrekt funktioniert. Damit diese Warnung nicht angezeigt wird und das Desgin $1 installiert oder aktualisiert wird, aktualisiere $2 auf der Kommandozeile auf die aktuelle Entwicklerversiontion mit dem Script <kbd>update-from-repo.sh</kbd>.
