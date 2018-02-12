@@ -123,7 +123,7 @@ running \`update-from-repo.sh\` script from \`"$DIR"\` directory."
       fi
 
       # Checking for possible errors
-      if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/VERSION.txt" ]; then
+      if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/theme.info" ]; then
         # Post successful commands
         rm -rf "$DIR/authentic-theme"/*
         mv "$DIR/.~authentic-theme"/* "$DIR/authentic-theme/"
@@ -136,7 +136,8 @@ running \`update-from-repo.sh\` script from \`"$DIR"\` directory."
         rm -f "$DIR/authentic-theme/README.md"
         find "$DIR/authentic-theme/" -name "*.src*" -delete
 
-        echo -e "\e[49;32;5;82mUpdating to Authentic Theme `head -n 1 $DIR/authentic-theme/VERSION.txt`, done.\e[0m"
+        TVER=$(grep -Po '(?<=^version=).*$' "$DIR/authentic-theme/theme.info")
+        echo -e "\e[49;32;5;82mUpdating to Authentic Theme $TVER, done.\e[0m"
 
         # Restart Webmin/Usermin in case it's running
         if [ "$2" != "-no-restart" ]; then

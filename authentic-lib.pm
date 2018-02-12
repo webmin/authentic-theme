@@ -1789,9 +1789,10 @@ sub theme_remote_version
     my $authentic_remote_version;
 
     if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' && $in =~ /xhr-/) {
-        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/VERSION.txt',
-                      \$authentic_remote_version, \$error, undef, 1, undef, undef, 5);
-        $authentic_remote_version =~ s/^\s+|\s+$//g;
+      http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
+                    \$authentic_remote_version, \$error, undef, 1, undef, undef, 5);
+      my (%authentic_remote_version) = $authentic_remote_version =~ /(.*?)=(.*)/g;
+      $authentic_remote_version = $authentic_remote_version{'version'};
 
         if ($authentic_remote_version =~ /beta/ && $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true') {
             $authentic_remote_version = substr($authentic_remote_version, 0, 5);
