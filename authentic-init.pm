@@ -947,8 +947,8 @@ sub theme_night_mode
 sub theme_version
 {
     my ($string) = @_;
-    my %tinfo = get_theme_info($current_theme);
-    my $version = $tinfo{'version'};
+    my %tinfo    = get_theme_info($current_theme);
+    my $version  = $tinfo{'version'};
 
     if ($string) {
         $version =~ s/beta|\.|-//ig;

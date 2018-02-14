@@ -774,3 +774,4 @@ theme_xhred_global_click_here=Hier klicken
 theme_git_patch_incompatible_message=Die Entwickler Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von $3 <em>$4</em> und $5 <em>$6</em>.
 theme_git_patch_incompatible_message_s=Die Entwickler Version von $1 <em>$2</em>  ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von$3 <em>$4</em>.
 theme_git_patch_incompatible_message_desc=Es k&ouml;nnteb m&ouml;glicherweise nicht kompatible &Auml;nderungen enthalten sein, die verhindern das das Desgin korrekt funktioniert. Damit diese Warnung nicht angezeigt wird und das Desgin $1 installiert oder aktualisiert wird, aktualisiere $2 auf der Kommandozeile auf die aktuelle Entwicklerversiontion mit dem Script <kbd>update-from-repo.sh</kbd>.
+theme_xhred_global_outdated=This version is outdated

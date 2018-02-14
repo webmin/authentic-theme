@@ -89,12 +89,12 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
         # Usermin version
         my $usermin_version = usermin_available('__version');
         if ($usermin_version) {
-            push @table_data, [Atext('body_usermin'), $usermin_version, sysinfo_usermin_version];
+            push @table_data,
+              [Atext('body_usermin'), product_version_update($usermin_version, 'u'), sysinfo_usermin_version];
         }
 
         # Virtualmin version
         if ($virtualmin_version) {
-
             push @table_data, [$Atext{'right_virtualmin'}, $virtualmin_version, sysinfo_virtualmin_version];
         }
 

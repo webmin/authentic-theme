@@ -1006,7 +1006,7 @@ sub get_sysinfo_vars
 
         #Webmin version
         $webmin_version =
-          &get_webmin_version() .
+          product_version_update(get_webmin_version(), 'w') .
 ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
           . $Atext{'theme_sysinfo_wmdocs'}
           . '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
@@ -1022,7 +1022,7 @@ sub get_sysinfo_vars
             $__virtual_server_version =~ s/.gpl//igs;
 
             $virtualmin_version = (
-                $__virtual_server_version . " " . (
+                product_version_update($__virtual_server_version, 'v') . " " . (
                     $vs_license eq '0' ? '' :
                       ''
 
@@ -1052,7 +1052,7 @@ sub get_sysinfo_vars
             $__server_manager_version =~ s/.gpl//igs;
 
             $cloudmin_version = (
-                $__server_manager_version . " " . (
+                product_version_update($__server_manager_version, 'c') . " " . (
                     $vm2_license eq '0' ? '' :
                       ''
 
@@ -1158,7 +1158,7 @@ sub get_sysinfo_vars
             $csf_data = (
                 '<a href=\'' .
                   $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
-                  $csf_installed_version . ''
+                  product_version_update($csf_installed_version, 'f') . ''
 
                   . ($csf_update_required eq '1' ?
                        '. ' . $Atext{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;' :
@@ -1789,10 +1789,10 @@ sub theme_remote_version
     my $authentic_remote_version;
 
     if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' && $in =~ /xhr-/) {
-      http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
-                    \$authentic_remote_version, \$error, undef, 1, undef, undef, 5);
-      my (%authentic_remote_version) = $authentic_remote_version =~ /(.*?)=(.*)/g;
-      $authentic_remote_version = $authentic_remote_version{'version'};
+        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
+                      \$authentic_remote_version, \$error, undef, 1, undef, undef, 5);
+        my (%authentic_remote_version) = $authentic_remote_version =~ /(.*?)=(.*)/g;
+        $authentic_remote_version = $authentic_remote_version{'version'};
 
         if ($authentic_remote_version =~ /beta/ && $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true') {
             $authentic_remote_version = substr($authentic_remote_version, 0, 5);

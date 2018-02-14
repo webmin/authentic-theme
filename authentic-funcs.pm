@@ -50,4 +50,23 @@ sub replace
     return $string;
 }
 
+sub product_version_update
+{
+    my ($v, $p) = @_;
+    my ($wv, $uv, $vv, $cv, $fv) = ('1.872', '1.734', '6.02', '9.3', '11.06');
+
+    if (($p eq "w" && $v < $wv) ||
+        ($p eq "u" && $v < $uv) ||
+        ($p eq "v" && $v < $vv) ||
+        ($p eq "c" && $v < $cv) ||
+        ($p eq "f" && $v < $fv))
+    {
+        return (
+               '<span data-toggle="tooltip" data-placement="auto top" data-title="' . $Atext{'theme_xhred_global_outdated'} .
+                 '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>');
+    } else {
+        return $v;
+    }
+}
+
 1;

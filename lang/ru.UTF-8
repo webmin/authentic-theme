@@ -786,3 +786,4 @@ theme_xhred_global_click_here=click here
 theme_git_patch_incompatible_message=Development version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
 theme_git_patch_incompatible_message_s=Development version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
 theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
+theme_xhred_global_outdated=This version is outdated
