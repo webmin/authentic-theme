@@ -1,5 +1,14 @@
 ## Changelog
 
+#### Version 19.09.1 (February 14, 2018)
+* Add highlight of matched strings for code-viewer
+* Add listener for user interaction before triggering autofocus [virtualmin.com/55770](https://www.virtualmin.com/node/55770)
+* Add Swedish and German language translation updates
+* Fix print issues in mail modules [#1012](https://github.com/qooob/authentic-theme/issues/1012)
+* Fix update script to support minor versions
+* Fix to re-enable accurate security notifications for ConfigServer Security & Firewall
+* Fix numerous of other small issues
+
 #### Version 19.09 (February 06, 2018)
 * Add better highlights for Apache and Nginx configuration files [#981](https://github.com/qooob/authentic-theme/issues/981)
 * Add support for detecting encoding using special comment in file's content [#987](https://github.com/qooob/authentic-theme/issues/987)
