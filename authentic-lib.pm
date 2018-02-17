@@ -1541,9 +1541,9 @@ sub csf_temporary_list
                         if ($l =~ /SRC=(\S+)/) {$r = $1}
                         if ($l =~ /DST=(\S+)/) {$w = $1}
                         if ($l =~ /DPT=(\d+)/) {$k = $1}
-                        if (($r eq $b && array_contains($k, 0, @p)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
+                        if (($r eq $b && array_contains('loose', $k, @p)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
                             $ll = ($a . $dl . $b . $dl . $w . $dl . $k . $dl . $d . $dl . $e . $dl . $f . $dl . $g);
-                            if (!array_contains($g, 0, @g) && !array_contains($ll, 0, @l)) {
+                            if (!array_contains('loose', $g, @g) && !array_contains('loose', $ll, @l)) {
                                 push @g, $g;
                                 push @l, $ll;
                             }
@@ -3452,25 +3452,37 @@ sub string_starts_with
     }
 }
 
+sub string_contains
+{
+    my ($string, $search) = @_;
+
+    if (index($string, $search) != -1) {
+        return 1;
+    } else {
+        return 0;
+    }
+
+}
+
 sub array_contains
 {
-    my ($needle, $exact, @greedy_haystack) = @_;
-    my $match;
+    my ($e, $n, @a) = @_;
+    my $m;
 
-    if ($exact == 1) {
-        if (grep(/^\Q$needle\E$/i, @greedy_haystack)) {
+    if ($e eq 'exact') {
+        if (grep(/^\Q$n\E$/, @a)) {
             return 1;
         } else {
             return 0;
         }
     } else {
-        for (@greedy_haystack) {
-            if (index($_, $needle) != -1) {
-                $match = 1;
+        for (@a) {
+            if (string_contains($_, $n)) {
+                $m = 1;
                 last;
             }
         }
-        if ($match) {
+        if ($m) {
             return 1;
         } else {
             return 0;
