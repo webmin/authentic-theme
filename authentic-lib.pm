@@ -1541,9 +1541,9 @@ sub csf_temporary_list
                         if ($l =~ /SRC=(\S+)/) {$r = $1}
                         if ($l =~ /DST=(\S+)/) {$w = $1}
                         if ($l =~ /DPT=(\d+)/) {$k = $1}
-                        if (($r eq $b && $k ~~ @p) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
+                        if (($r eq $b && array_contains($k, 0, @p)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
                             $ll = ($a . $dl . $b . $dl . $w . $dl . $k . $dl . $d . $dl . $e . $dl . $f . $dl . $g);
-                            if (!($g ~~ @g) && !($ll ~~ @l)) {
+                            if (!array_contains($g, 0, @g) && !array_contains($ll, 0, @l)) {
                                 push @g, $g;
                                 push @l, $ll;
                             }
@@ -3450,6 +3450,33 @@ sub string_starts_with
     } else {
         return 0;
     }
+}
+
+sub array_contains
+{
+    my ($needle, $exact, @greedy_haystack) = @_;
+    my $match;
+
+    if ($exact == 1) {
+        if (grep(/^\Q$needle\E$/i, @greedy_haystack)) {
+            return 1;
+        } else {
+            return 0;
+        }
+    } else {
+        for (@greedy_haystack) {
+            if (index($_, $needle) != -1) {
+                $match = 1;
+                last;
+            }
+        }
+        if ($match) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    return 0;
 }
 
 sub array_unique
