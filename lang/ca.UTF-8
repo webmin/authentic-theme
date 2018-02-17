@@ -636,9 +636,9 @@ settings_sysinfo_easypie_charts_size=Mida de les gràfiques
 theme_xhred_global_choose=Escull
 theme_xhred_global_select=Selecciona
 theme_xhred_global_ok=D'acord
-settings_sysinfo_theme_patched_updates=Including development versions
+settings_sysinfo_theme_patched_updates=Incloure versions de desenvolupament
 settings_sysinfo_theme_updates_description=Per tal de que funcioni, cal tenir la comanda git instal·lada en el sistema.
-theme_git_patch_available=Latest development version
+theme_git_patch_available=Última versió de desenvolupament
 theme_git_patch_no_git_message=Per tal d'instal·lar les últimes correccions directament de GitHub, cal tenir la comanda git instal·lada en el sistema.
 theme_git_patch_update_success_message=L'actualització del tema de Webmin s'ha instal·lat correctament. La versió actual és <tt>$1</tt>. Recarregant...
 theme_git_patch_update_success_message2=L'actualització del tema de Webmin i Usermin s'ha instal·lat correctament. La versió actual és <tt>$1</tt>. Recarregant...
@@ -702,85 +702,85 @@ theme_xhred_global_set_encoding=Set encoding
 
 
 #19.00
-theme_xhred_sysinfo_update_start=System information is being recollected.
-theme_xhred_sysinfo_update_end=System information has been recollected successfully.
-theme_xhred_sysinfo_update_failed=System information can't be recollected. Try again later.
+theme_xhred_sysinfo_update_start=S'està obtinguent la informació del sistema.
+theme_xhred_sysinfo_update_end=S'ha obtingut correctament la informació del sistema.
+theme_xhred_sysinfo_update_failed=No s'ha pogut obtenir la informació del sistema, torna-ho a intentar.
 
-theme_xhred_global_development_version=Development version
+theme_xhred_global_development_version=Versió de desenvolupament
 
-right_vm_server_summary=Virtual Server Summary
+right_vm_server_summary=Resum del servidor virtual
 
-settings_webmin_default_module=Default module for Webmin
+settings_webmin_default_module=Mòdul per defecte de Webmin
 
-theme_xhred_global_unbeforeunload_title=Changes you have made may not be saved
-theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
-theme_xhred_global_continue=Continue
+theme_xhred_global_unbeforeunload_title=Podria ser que els canvis realitzats no es desessin
+theme_xhred_global_unbeforeunload_message=Si continues, els canvis que no hagis desat es perdran.
+theme_xhred_global_continue=Continuar
 
-theme_xhred_global_automatic_refresh=Automatic refresh
-theme_xhred_global_second=Second
-theme_xhred_global_seconds=Seconds
-theme_xhred_global_minute=Minute
-theme_xhred_global_minutes=Minutes
+theme_xhred_global_automatic_refresh=Actualització automàtica
+theme_xhred_global_second=Segon
+theme_xhred_global_seconds=Segons
+theme_xhred_global_minute=Minut
+theme_xhred_global_minutes=Minuts
 
 
 #19.01
-theme_xhred_browser_warning=To have the best experience with server panel on your computer, use a supported, up-to-date browser.<br><br><em>Internet Explorer</em> is no longer supported.<br><br>Recommended browsers are <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
+theme_xhred_browser_warning=Per tenir la millor experiència amb el panell del servidor en el teu ordinador, utilitza un navegador compatible i actualitzat a l'última versió disponible.<br><br>Actualment Internet Explorer ja no és compatible.<br><br>Els navegadors recomanats són: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> <em>Microsoft Edge</em> o <em>Safari</em>, .
 
 
 #19.02
-theme_xhred_filter_content=Filter content
-theme_xhred_log_file_empty=Log file is empty
+theme_xhred_filter_content=Filtrar el contingut
+theme_xhred_log_file_empty=L'arxiu de registre està buit
 
 
 #19.03
-theme_xhred_config_configurable_options=Configurable options
-theme_xhred_filter_content_no_matches_query=No content matches %str query
-theme_xhred_toggle_accordions=Toggle accordions visibility
-theme_xhred_global_whats_new=What's new
-theme_xhred_global_report_an_issue=Report an issue
-theme_xhred_global_theme_configuration=Theme configuration
-theme_xhred_global_official_website=Official website
-theme_xhred_global_about_theme=About theme
-theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
-theme_xhred_session_expired=Session expired
-theme_xhred_session_unlocked=Session unlocked
-theme_xhred_session_expired_details=You have been logged out due to inactivity.
-theme_xhred_signing_in=Signing in
-theme_xhred_signing_success=Successfully signed in!
-theme_xhred_session_failed_password=Wrong password, please try again.
-theme_xhred_global_reauthenticate=Reauthenticate
+theme_xhred_config_configurable_options=Opcions configurables
+theme_xhred_filter_content_no_matches_query=Cap contingut correspon amb la cerca %str
+theme_xhred_toggle_accordions=Canviar a vista d'acordió
+theme_xhred_global_whats_new=Què hi ha de nou
+theme_xhred_global_report_an_issue=Informa d'un problema
+theme_xhred_global_theme_configuration=Configuració del tema
+theme_xhred_global_official_website=Lloc web oficial
+theme_xhred_global_about_theme=En quan al tema
+theme_xhred_connection_error=Error de connexió
+theme_xhred_connection_error_details=No es pot establir connexió amb el servidor <strong>%server</strong>. <ul><li>Comprova l'estat del servidor</li><li>Comprova la connexió</li></ul>
+theme_xhred_session_expired=Sessió caducada
+theme_xhred_session_unlocked=Sessió desbloquejada
+theme_xhred_session_expired_details=S'ha tancat la sessió per inactivitat.
+theme_xhred_signing_in=Iniciar la sessió
+theme_xhred_signing_success=Inici de sessió correcta!
+theme_xhred_session_failed_password=Contrasenya incorrecta, torna-ho a intentar.
+theme_xhred_global_reauthenticate=Tornar a autenticar
 
 
 #19.04
-settings_sysinfo_real_time_status=Enable real-time monitoring
-settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
-theme_xhred_global_redirecting=Redirecting
+settings_sysinfo_real_time_status=Habilitar la monitorització en temps real
+settings_sysinfo_real_time_timeout=Interval d'actualització
+settings_sysinfo_real_time_timeout_description=Estableix un interval per tal d'actualitzar el monitoratge en segon pla. El valor representa el temps en mil·lisegons. Escull un valor tan baix com sigui possible per evitar la pèrdua de la informació de curt termini.
+theme_xhred_global_redirecting=Redirigint
 
 
 #19.05
-body_no_javascript_title=JavaScript is disabled
-body_no_javascript_message=Please enable javascript and refresh the page
-theme_xhred_connection_lost=Connection lost
-theme_xhred_connection_success=Connection successful
-theme_xhred_connection_success_details=Connection to the server has been re-established.
+body_no_javascript_title=JavaScript està deshabilitat
+body_no_javascript_message=Habilita el javascript actualitza la pàgina
+theme_xhred_connection_lost=S'ha perdut la connexió
+theme_xhred_connection_success=S'ha connectat correctament
+theme_xhred_connection_success_details=S'ha tornat a establir la connexió amb el servidor.
 
 
 #19.08
-theme_xhred_return_home=Return to panel index
-theme_xhred_global_upload=Upload
-theme_xhred_global_select_files=Select file(s)
-theme_xhred_global_file_selected=file selected
-theme_xhred_global_files_selected=files selected
-theme_xhred_global_reset=Reset
-theme_xhred_upload_initial_info=Drag and drop files here or click to select
+theme_xhred_return_home=Tornar a l'inici del panell
+theme_xhred_global_upload=Carregar
+theme_xhred_global_select_files=Seleccionar arxius
+theme_xhred_global_file_selected=S'ha seleccionat l'arxiu
+theme_xhred_global_files_selected=S'han seleccionat els arxius
+theme_xhred_global_reset=Restablir
+theme_xhred_upload_initial_info=Arrossega i deixa anar els arxius aquí, o bé, Prem amb el ratolí per a seleccionar-los
 
 
 #19.09
-theme_xhred_global_empty=Empty
-theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Development version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Development version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
-theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
-theme_xhred_global_outdated=This version is outdated
+theme_xhred_global_empty=Buit
+theme_xhred_global_click_here=Prem amb el ratolí aquí
+theme_git_patch_incompatible_message=Versió de desenvolupament de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> i $5 <em>$6</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message_s=Versió de desenvolupament de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message_desc=Podrien haver-hi canvis incompatibles que provoquessin un funcionament no desitjat del tema. Per ignorar aquest avís i forçar la instal·lació del tema $1, o bé actualitza $2 a l'última versió de desenvolupament utilitzant la consola i iniciant l'script <kbd>update-from-repo.sh</kbd>.
+theme_xhred_global_outdated=Aquesta versió no està actualizada
