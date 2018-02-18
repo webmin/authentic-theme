@@ -1541,9 +1541,9 @@ sub csf_temporary_list
                         if ($l =~ /SRC=(\S+)/) {$r = $1}
                         if ($l =~ /DST=(\S+)/) {$w = $1}
                         if ($l =~ /DPT=(\d+)/) {$k = $1}
-                        if (($r eq $b && array_contains('loose', $k, @p)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
+                        if (($r eq $b && array_contains(\@p, $k)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
                             $ll = ($a . $dl . $b . $dl . $w . $dl . $k . $dl . $d . $dl . $e . $dl . $f . $dl . $g);
-                            if (!array_contains('loose', $g, @g) && !array_contains('loose', $ll, @l)) {
+                            if (!array_contains(\@g, $g) && !array_contains(\@l, $ll)) {
                                 push @g, $g;
                                 push @l, $ll;
                             }
@@ -3440,69 +3440,6 @@ sub get_autocomplete_shell
         @rs = @rs_tmp;
     }
     return @rs;
-}
-
-sub string_starts_with
-{
-    my ($string, $search) = @_;
-    if ($string =~ m/^\Q$search/) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
-sub string_contains
-{
-    my ($string, $search) = @_;
-
-    if (index($string, $search) != -1) {
-        return 1;
-    } else {
-        return 0;
-    }
-
-}
-
-sub array_contains
-{
-    my ($e, $n, @a) = @_;
-    my $m;
-
-    if ($e eq 'exact') {
-        if (grep(/^\Q$n\E$/, @a)) {
-            return 1;
-        } else {
-            return 0;
-        }
-    } else {
-        for (@a) {
-            if (string_contains($_, $n)) {
-                $m = 1;
-                last;
-            }
-        }
-        if ($m) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-    return 0;
-}
-
-sub array_unique
-{
-    my @unique;
-    my %seen;
-
-    foreach my $value (@_) {
-        if (!$seen{$value}++) {
-            $value =~ tr/\r\n//d;
-            push @unique, $value;
-        }
-    }
-    return @unique;
 }
 
 1;

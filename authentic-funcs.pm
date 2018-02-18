@@ -69,4 +69,39 @@ sub product_version_update
     }
 }
 
+sub string_contains
+{
+    return (index($_[0], $_[1]) != -1);
+}
+
+sub string_starts_with
+{
+    my ($string, $search) = @_;
+    if ($string =~ m/^\Q$search/) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+sub array_contains
+{
+    my ($array_reference, $search, $loose) = @_;
+    return (!$loose ? (grep {$_ eq $search} @$array_reference) : (grep {index($_, $search) != -1} @$array_reference));
+}
+
+sub array_unique
+{
+    my @unique;
+    my %seen;
+
+    foreach my $value (@_) {
+        if (!$seen{$value}++) {
+            $value =~ tr/\r\n//d;
+            push @unique, $value;
+        }
+    }
+    return @unique;
+}
+
 1;
