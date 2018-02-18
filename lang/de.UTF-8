@@ -133,8 +133,8 @@ settings_hotkey_custom_9=Benutzerdefinierter Link <code>9</code>
 
 settings_navigation_color=Farbpalette für Navigations Menü
 settings_background_color=Farbpalette für Inhalts Seite
-settings_animation_left=Anminationen im Navigations Menü einschalten
-settings_animation_tabs=Anminationen in den Tabs einschalten
+settings_animation_left=Animnationen im Navigations Menü einschalten
+settings_animation_tabs=Animnationen in den Tabs einschalten
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
 settings_right_reload=Lade Standard Inhalts Seite
@@ -189,11 +189,11 @@ settings_hotkey_toggle_slider=Schnellzugriffs Taste für schwebende Benachrichti
 settings_window_replace_timestamps=Erlaube Datum ersetzen
 settings_window_replaced_timestamp_format_short=Kurzes Datums Format
 settings_window_replaced_timestamp_format_full=Langes Datums Format
-settings_window_replaced_timestamps_options_description=Wählen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur für entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, müssen sie als Modul Entwickler den Conatinern zur Datumsanzeige die Atribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis schwebende Benachrichtigungen</i>. Standardmäßig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gewählten Sprache in Webmin/Usermin abhängig.
+settings_window_replaced_timestamps_options_description=Wählen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur für entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, müssen sie als Modul Entwickler den Containern zur Datumsanzeige die Attribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis schwebende Benachrichtigungen</i>. Standardmäßig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gewählten Sprache in Webmin/Usermin abhängig.
 
 settings_side_slider_enabled=Schwebende Benachrichtigungen einschalten
 settings_leftmenu_user_html=HTML Schnipsel anzeigen
-settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation agezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
+settings_leftmenu_user_html_description=Benuterzdefinerter Text oder HTML Code der unterhalb der linken Navigation angezeigt wird. z.B. um ein Logo oder einen Hinweis anzuzeigen.
 
 
 theme_changelog=Änderungs Historie
@@ -239,12 +239,12 @@ theme_xhred_filemanager_unpacking_archive=Entpacke auswahlgewählte Dateien.
 theme_xhred_filemanager_deleting_selected=Lösche Auswahl.
 theme_xhred_filemanager_renaming_selected=Benenne Auswahl um.
 theme_xhred_filemanager_creating_directory=Lege Verzeichnis an
-theme_xhred_filemanager_creating_file=LEge Datei an
+theme_xhred_filemanager_creating_file=Lege Datei an
 theme_xhred_filemanager_downloading_from=Downloade von
 theme_xhred_filemanager_setting_permissions=Rechte der ausgewählten Dateien auf <strong><em>%value</em> ändern</strong>.
 theme_xhred_filemanager_changing_ownership=Besitzer der ausgewählten Dateien auf <strong><em>%value</em> ändern</strong>.
 theme_xhred_filemanager_compressing_selected=Packe ausgewählte Dateien im Hintergrund.
-theme_xhred_filemanager_refreshing=Lade Verzeichnisinhalt enu.
+theme_xhred_filemanager_refreshing=Lade Verzeichnisinhalt neu.
 theme_xhred_filemanager_copying_successful=Erfolgreich in Zwischenablage kopiert.
 theme_xhred_filemanager_cutting_successful=Erfolgreich in Zwischenablage ausgeschnitten.
 theme_xhred_filemanager_pasting_successful=Erfolgreich aus Zwischenablage eingefügt.
@@ -253,7 +253,7 @@ theme_xhred_filemanager_searching=Suche Verzeichnisse/Dateien die auf Suchbegrif
 theme_xhred_filemanager_search_founds=<strong>%value</strong> Übereinstimmungen gefunden.
 theme_xhred_filemanager_search_found=<strong>Eine</strong> Übereinstimmungen gefunden.
 theme_xhred_filemanager_search_no_matches=Keine Übereinstimmungen gefunden.
-theme_xhred_filemanager_nothing_is_selected=Nichts Ausgewählt!
+theme_xhred_filemanager_nothing_is_selected=Nichts ausgewählt!
 theme_xhred_filemanager_saving_file=Datei `<strong><em>%value</em></strong>` wird gespeichert.
 theme_xhred_filemanager_file_saved=Datei `<strong><em>%value</em></strong>` erfolgreich gespeichert.
 theme_xhred_filemanager_not_editable=Kann diese Auswahl nicht bearbeiten.
@@ -385,7 +385,7 @@ theme_xhred_datatable_semptydirectory=Verzeichnis ist leer
 theme_xhred_filemanager_context_clipboard=Pfad in Zwischeablage kopieren
 theme_xhred_global_warning=Warnung
 theme_xhred_global_close=Schließen
-theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Ändern Sie die Srache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Design</em> die Standard Einstellungen überschreiben.</span>
+theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern führen z.B. zu ungewöhlichen Zeichen wie <tt>Â</tt>. <br><br>Ändern Sie die Sprache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Design</em> die Standard Einstellungen überschreiben.</span>
 
 theme_xhred_filemanager__no_bookmarks=Keine Lesezeichen vorhanden
 theme_xhred_filemanager_unbookmark_success=Verzeichnis <strong><em>%value</em></strong> wurde erfolgreich aus den Lesezeichen entfernt.
@@ -408,7 +408,7 @@ theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h
 
 theme_xhred_filemanager_hide_toolbar=Toolbar verbergen
 theme_xhred_filemanager_hide_actions=Aktivitäten Zeile verbergen
-theme_xhred_filemanager_hovered_toolbar=Auwahlliste in der Toolbar beim Überfahren mit der Maus anzeigen
+theme_xhred_filemanager_hovered_toolbar=Auswahlliste in der Toolbar beim Überfahren mit der Maus anzeigen
 theme_xhred_filemanager_context_delete_selected=Ausgewählte löschen
 
 #17.83
@@ -437,20 +437,20 @@ theme_xhred_database_edit_selected_row=Ausgewählte Zeile bearbeiten
 theme_xhred_database_edit_selected_rows=Ausgewählte Zeilen bearbeiten
 theme_xhred_database_add_new_row=Zeile hinzufügen
 theme_xhred_database_delete_selected_row=Ausgewählte Zeile löschen
-theme_xhred_database_delete_selected_rows=Ausgewählte Zeilev löschen
+theme_xhred_database_delete_selected_rows=Ausgewählte Zeilen löschen
 theme_xhred_database_delete_selected_field=Ausgewähltes Feld löschen
 theme_xhred_database_delete_selected_fields=Ausgewählte Felder löschen
 theme_xhred_database_object_selected_delete=Ausgewählte Element löschen
 theme_xhred_database_objects_selected_delete=Ausgewählte Elemente löschen
 theme_xhred_database_db_selected_drop=Ausgewählte Datenbank löschen
 theme_xhred_database_dbs_selected_drop=Ausgewählte Datenbanken löschen
-theme_xhred_database_edit_but_not_saved=Datenbank Tablle würde verändert aber nicht gespeichert.
+theme_xhred_database_edit_but_not_saved=Datenbank Tabelle würde verändert aber nicht gespeichert.
 
-theme_xhred_global_no_such_command=Es scheind das Programm <tt>%cmd</tt> ist nicht installiert oder nicht im System Pfad.
+theme_xhred_global_no_such_command=Es scheint das Programm <tt>%cmd</tt> ist nicht installiert oder nicht im System Pfad.
 
 theme_xhred_global_notice=Hinweis
 
-theme_xhred_updates_disabled_notice=Es wurde erkannt das die Benachrichtigung für Updates von <em>Authentic Design</em> ausgeschaltet ist! <br><br>Das einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Design Einstellungen</strong></a> erlaubt es mit einem Mausklick die neueste Design Version zu installieren, sobald sie verfügbar ist.
+theme_xhred_updates_disabled_notice=Es wurde erkannt das die Benachrichtigung für Updates von <em>Authentic Design</em> ausgeschaltet ist! <br><br>Das Einschalten dieser Funktion in den <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Design Einstellungen</strong></a> erlaubt es mit einem Mausklick die neueste Design Version zu installieren, sobald sie verfügbar ist.
 
 
 #18.00
@@ -473,7 +473,7 @@ theme_xhred_filemanager_buffer_error=Dateien nicht in den Zwischenspeicher kopie
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` existiert bereits in `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Anlegen von $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` nicht möglich - keine Berechtigung.
 
-filemanager_paste_warning=Einfügen im Ziel fehlgeschagen. Möglicherweise wurden die Quell Elemente <em>umbenannt, verschoben</em> doer <em>gelöscht</em>. Alternativ fehlt Ihnen die Schreibberechtigung im Ziel, dies sollten sie überprüfen.
+filemanager_paste_warning=Einfügen im Ziel fehlgeschagen. Möglicherweise wurden die Quell Elemente <em>umbenannt, verschoben</em> oder <em>gelöscht</em>. Alternativ fehlt Ihnen die Schreibberechtigung im Ziel, dies sollten sie überprüfen.
 
 theme_xhred_filemanager_delete_warning=Nicht alle Elemente wurden erfolgreich gelöscht. Möglicherweise wurden die Quell Elemente <em>umbenannt oder verschoben</em>. Alternativ fehlt Ihnen die Löschberechtigung. Fehlermeldung:
 
@@ -497,7 +497,7 @@ theme_xhred_filemanager_search_replace=Ersetze in Ergebnissen
 theme_xhred_global_find=Suche
 theme_xhred_global_replace=Ersetze
 
-theme_xhred_filemanager_searching_matching=Suche nach Dateien/Verzeichnissen deren Name auf <em>`%value`</em> passt und folgenden Text Text enthalten <em>`%text`</em>.
+theme_xhred_filemanager_searching_matching=Suche nach Dateien/Verzeichnissen deren Name auf <em>`%value`</em> passt und folgenden Text enthalten <em>`%text`</em>.
 theme_xhred_filemanager_searching_replacing=Ersetze Text <em>`%text`</em> durch <em>`%replace`</em> in Dateien deren Name <em>`%value`</em> enthält.
 
 theme_xhred_filemanager_search_replaced_multi=Suchen und ersetzen in <strong>%value</strong> Dateien ausgeführt.
@@ -526,7 +526,7 @@ theme_xhred_xsql_fit_content_screen_height=Passe Tabelle mit Datenbank Inhalte a
 theme_xhred_datatable_filter_visible_tables=Sichtbare Tabelle(n) filtern
 theme_xhred_module_help=Module Hilfe
 
-theme_xhred_server_process_running=Server Vorgang noch nicht abgeschlossen! Sind Sie sicher das sie die Seite verlasen möchten und das Ergebnis nicht sehen wollen? Der Vorgang läuft im Hintergund weiter.
+theme_xhred_server_process_running=Server Vorgang noch nicht abgeschlossen! Sind Sie sicher das sie die Seite verlassen möchten und das Ergebnis nicht sehen wollen? Der Vorgang läuft im Hintergund weiter.
 
 
 #18.03
@@ -704,7 +704,7 @@ right_vm_server_summary=Virtual Server Zusammenfassung
 settings_webmin_default_module=Standard Modul für Webmin
 
 theme_xhred_global_unbeforeunload_title=Deine Änderungen wurden noch nicht gespeichert
-theme_xhred_global_unbeforeunload_message=Mit Weiter könten Deine nicht gespeicherten Änderungen auf dieser Seite könnten verloren gehen.
+theme_xhred_global_unbeforeunload_message=Mit Weiter könnten Deine nicht gespeicherten Änderungen auf dieser Seite verloren gehen.
 theme_xhred_global_continue=Weiter
 
 theme_xhred_global_automatic_refresh=Automatisch neu laden
@@ -715,7 +715,7 @@ theme_xhred_global_minutes=Minuten
 
 
 #19.01
-theme_xhred_browser_warning=Für die beste Unterstützung des Server Panles auf deinem Computer verwende einen aktuellen, unterstützen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterstützt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
+theme_xhred_browser_warning=Für die beste Unterstützung des Server Panels auf deinem Computer verwende einen aktuellen, unterstützen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterstützt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
 
 
 #19.02
@@ -734,9 +734,9 @@ theme_xhred_global_official_website=Offizielle Webseite
 theme_xhred_global_about_theme=Über das Design
 theme_xhred_connection_error=Fehler beim Verbinden
 theme_xhred_connection_error_details=Es konnte keine Verbindung zum Server <strong>%server</strong> hergestellt werden. <ul><li>Prüfe den Server Status</li><li>Prüfe die Verbindung</li></ul>
-theme_xhred_session_expired=Sizung abgelaufen
+theme_xhred_session_expired=Sitzung abgelaufen
 theme_xhred_session_unlocked=Sitzung wieder hergestellt
-theme_xhred_session_expired_details=Du wurde wegen Inaktivität abgemeldet.
+theme_xhred_session_expired_details=Du wurdest wegen Inaktivität abgemeldet.
 theme_xhred_signing_in=Melde an
 theme_xhred_signing_success=Erfolgreich angemeldet!
 theme_xhred_session_failed_password=Falsches Passwort, versuche es nochmal.
@@ -759,7 +759,7 @@ theme_xhred_connection_success_details=Verbindung zum Server wurde wieder herges
 
 
 #19.08
-theme_xhred_return_home=Zur&uuml; zur Startseite
+theme_xhred_return_home=Zur&uuml;ck zur Startseite
 theme_xhred_global_upload=Hochladen
 theme_xhred_global_select_files=Datei(en) ausw&auml;hlen
 theme_xhred_global_file_selected=Datei ausgew&auml;lt
