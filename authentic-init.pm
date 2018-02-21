@@ -766,6 +766,9 @@ sub get_button_style
     } elsif ($entry eq "ddrop_empty") {
         $class = "warning ";
         $icon =~ s/%icon/times-circle-o/ig;
+    } elsif ($entry =~ /kvms_start/) {
+        $class = "success ";
+        $icon =~ s/%icon/server-add/ig;
     } elsif ($entry =~ /start/) {
         $class = "success ";
         $icon =~ s/%icon/play/ig;
