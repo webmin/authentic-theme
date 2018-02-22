@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.09.2 (February 22, 2018)
+* Add fail proof method of extracting page content with broken HTML [webmin/webmin#825](https://github.com/webmin/webmin/issues/825)
+* Add better Cloudmin support and fixed corresponding issues
+* Add German and Catalan language translation updates
+* Fix to drop using smartmatch [#1014](https://github.com/qooob/authentic-theme/issues/1014)
+* Fix to contrast the look of the pop-up reauthentication screen
+* Fix various UI issues
+
 #### Version 19.09.1 (February 14, 2018)
 * Add highlight of matched strings for code-viewer
 * Add listener for user interaction before triggering autofocus [virtualmin.com/55770](https://www.virtualmin.com/node/55770)
