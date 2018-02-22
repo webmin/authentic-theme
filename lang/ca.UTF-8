@@ -780,7 +780,7 @@ theme_xhred_upload_initial_info=Arrossega i deixa anar els arxius aquí, o bé, 
 #19.09
 theme_xhred_global_empty=Buit
 theme_xhred_global_click_here=Prem amb el ratolí aquí
-theme_git_patch_incompatible_message=Versió de desenvolupament de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> i $5 <em>$6</em> per tal de funcionar correctament.
-theme_git_patch_incompatible_message_s=Versió de desenvolupament de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> i $5 <em>$6</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message_s=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> per tal de funcionar correctament.
 theme_git_patch_incompatible_message_desc=Podrien haver-hi canvis incompatibles que provoquessin un funcionament no desitjat del tema. Per ignorar aquest avís i forçar la instal·lació del tema $1, o bé actualitza $2 a l'última versió de desenvolupament utilitzant la consola i iniciant l'script <kbd>update-from-repo.sh</kbd>.
 theme_xhred_global_outdated=Aquesta versió no està actualizada

@@ -2811,7 +2811,7 @@ sub get_xhr_request
                       replace((!has_command('bash') ? '>git<' : '~'), '>bash<', $Atext{'theme_git_patch_no_git_message'}), };
                 print get_json(\@update_rs);
             } else {
-                if ($version_type =~ /beta/ && $update_force ne "1") {
+                if ($update_force ne "1") {
                     my $compatible;
                     my $force_button =
 '<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">'
