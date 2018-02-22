@@ -1036,7 +1036,7 @@ sub get_version
 sub get_version_full
 {
     my ($version, $beta) = @_;
-    ($version) = $version =~ /([0-9]+[.][0-9]+(?:-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
+    ($version) = $version =~ /([0-9]+[.][0-9]+(?:.\d+|-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
 
     if ($version =~ /beta/ && $beta) {
         return undef;
