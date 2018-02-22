@@ -643,6 +643,9 @@ sub get_button_style
         $icon =~ s/%icon/backup fa-1_25x/ig;
     } elsif ($entry =~ /changeip/ || $entry =~ /newips/) {
         $icon =~ s/%icon/pencil-square-o/ig;
+    } elsif ($entry eq 'kvms_start' || $entry eq 'docker_reg') {
+        $class = "success ";
+        $icon =~ s/%icon/server-add/ig;
     } elsif ($entry =~ /save/ ||
              $entry eq 'backup_ok2'    ||
              $entry eq 'sharedips_ok'  ||
@@ -766,9 +769,6 @@ sub get_button_style
     } elsif ($entry eq "ddrop_empty") {
         $class = "warning ";
         $icon =~ s/%icon/times-circle-o/ig;
-    } elsif ($entry =~ /kvms_start/) {
-        $class = "success ";
-        $icon =~ s/%icon/server-add/ig;
     } elsif ($entry =~ /start/) {
         $class = "success ";
         $icon =~ s/%icon/play/ig;
