@@ -74,11 +74,11 @@ right_of=$1 von insgesamt $2
 right_quota=Festplattennutzung und Limits
 right_reselip=(Wiederverk&auml;ufer $1)
 right_sharedip=(Gemeinsame IP)
-right_slcheck=&uuml;berpr&uuml;fen Sie die Cloudmin Lizenz
+right_slcheck=&Uuml;berpr&uuml;fen Sie die Cloudmin Lizenz
 right_subs=Untergeordnete Server
 right_virtdocs2=Zus&auml;tzliche Dokumentation
 right_virtualmin=Virtualmin Version
-right_vlcheck=&uuml;berpr&uuml;fen Sie Virtualmin Lizenz
+right_vlcheck=&Uuml;berpr&uuml;fen Sie Virtualmin Lizenz
 right_vm2=Cloudmin Version
 
 theme_xhred_session_failed=Anmeldung fehlgeschlagen. Bitte versuche es erneut.
@@ -341,7 +341,7 @@ settings_right_thirdparties_options_title=Optionen f&uuml;r Drittanbieter Module
 theme_xhred_filemanager_context_calculate_size=Freien Platz im Leerraum berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
 theme_xhred_filemanager_context_bookmark_current=Pfad zum aktuell ge&ouml;ffneten Lesezeichen
-theme_xhred_filemanager_context_transfer=&uuml;bertragung
+theme_xhred_filemanager_context_transfer=&Uuml;bertragung
 
 #17.54
 theme_xhred_filemanager_title_symlink_target=Link Ziel
@@ -731,7 +731,7 @@ theme_xhred_global_whats_new=Was gibt es Neues
 theme_xhred_global_report_an_issue=Melde einen Fehler
 theme_xhred_global_theme_configuration=Design Einstellungen
 theme_xhred_global_official_website=Offizielle Webseite
-theme_xhred_global_about_theme=&uuml;ber das Design
+theme_xhred_global_about_theme=&Uuml;ber das Design
 theme_xhred_connection_error=Fehler beim Verbinden
 theme_xhred_connection_error_details=Es konnte keine Verbindung zum Server <strong>%server</strong> hergestellt werden. <ul><li>Pr&uuml;fe den Server Status</li><li>Pr&uuml;fe die Verbindung</li></ul>
 theme_xhred_session_expired=Sitzung abgelaufen
