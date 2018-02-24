@@ -1,5 +1,5 @@
 body_cp=Prozessor
-body_cpu=Durchschnitlliche Prozessor-Auslastung
+body_cpu=Durchschnittliche Prozessor-Auslastung
 body_cpuinfo=Prozessorinformation
 body_cputemps=Prozessor-Temperatur
 body_cputype=$5, $8 Kerne
