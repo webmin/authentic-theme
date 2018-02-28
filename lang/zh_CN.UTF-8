@@ -1,3 +1,7 @@
+
+
+#19.10
+theme_xhred_filemanager_edit_html=Edit as HTML
 body_cp=CPU
 body_cpu=CPU 負載
 body_cpuinfo=CPU 資訊
@@ -782,3 +786,7 @@ theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> r
 theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
 theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
 theme_xhred_global_outdated=This version is outdated
+
+
+#19.10
+theme_xhred_filemanager_edit_html=Edit as HTML

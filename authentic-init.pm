@@ -129,8 +129,8 @@ sub embed_header
               'contextmenu',       'pjax',                      'jquery.scrollbar',    'jquery.autocomplete',
               'codemirror',        'momentjs',                  'favico',              'select2',
               'jquery.purl',       'jquery.injectCSS',          'jquery.mobile',       'transition',
-              'nprogress',         'messenger',                 'sortable',            'authentic-objs',
-              'authentic-funcs',   'authentic');
+              'nprogress',         'messenger',                 'sortable',            'any-resize-event',
+              'authentic-objs',    'authentic-funcs',           'authentic');
 
     if ($args[3] eq '1') {
 
