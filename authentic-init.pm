@@ -550,13 +550,23 @@ sub dashboard_switch
 sub get_current_user_language
 {
     my ($full) = @_;
-    my $language = substr(
-                          ($gconfig{ 'lang' . '_' . $base_remote_user } ? $gconfig{ 'lang' . '_' . $base_remote_user } :
-                             $gconfig{'lang'}
-                          ),
-                          0,
-                          ($full ? 5 : 2));
+    my $language;
+    my @languages;
+    my $language_browser = $gconfig{'acceptlang'};
 
+    if ($language_browser) {
+        $language = $ENV{'HTTP_ACCEPT_LANGUAGE'};
+        $language =~ s/;.*//;
+        @languages = split /,/, $language;
+        $language = $languages[0];
+    }
+
+    if (($language_browser && !$language) || !$language_browser) {
+        $language = $gconfig{ 'lang' . '_' . $base_remote_user };
+        $language = ($language ? $language : $gconfig{'lang'});
+    }
+
+    $language = substr($language, 0, ($full ? 5 : 2));
     $language =~ s/\..*//;
     $language =~ s/_/-/;
     return lc($language);
