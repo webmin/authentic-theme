@@ -194,10 +194,6 @@ settings_right_notification_slider_options_title=Sidomenyalternativ
 settings_side_slider_fixed=Visa alltid sidomeny
 settings_side_slider_palette=Sidomenypalett
 settings_hotkey_toggle_slider=Snabbtangent för sidomeny
-settings_window_replace_timestamps=Aktivera datumsubstitutioner
-settings_window_replaced_timestamp_format_short=Kort datum/tids-format
-settings_window_replaced_timestamp_format_full=Fullt datum/tids-format
-settings_window_replaced_timestamps_options_description=Justera full/kort datum och tid till önskat visnings-<code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='Detta alternativ har inte global effekt och aktiveras endast om det finns särskilda triggers som används av modulutvecklare. Alla modulutvecklare kan själva lägga till `data-convertible-timestamp-full="unix-timestamp"` eller `data-convertible-timestamp-short="unix-timestamp"` attribut till behållaren för att visa användardefinierade datum.'></sup> Detta alternativ påverkar inbyggda funktioner som <i>Sidoaviseringsmenyn</i> och <i>Systeminformationsidan</i> (på raden <i>Systemtiden</i>). Som standard är, fullformat det samma som <code>LLLL</code> och som kort är det <code>L, LTS</code>. Tidsformat är olika för olika språk. Språket baseras på Webmins språkinställningar.
 
 settings_side_slider_enabled=Aktivera sidomeny
 settings_leftmenu_user_html=Visa HTML-utdrag
@@ -785,3 +781,16 @@ theme_xhred_global_outdated=Denna versionen är för gammal
 
 #19.10
 theme_xhred_filemanager_edit_html=Redigera som HTML
+theme_xhred_global_example=Example
+theme_xhred_global_output_example=Output example
+theme_xhred_title_language_locale=Language and Locale
+theme_xhred_title_locale_config=Locale configuration
+theme_xhred_title_webmin_ui_locale=Webmin UI locale
+theme_xhred_title_locale_auto=Automatic, based on selected language
+theme_xhred_global_manual=Manual
+theme_xhred_title_locale_config_format=Locale language and format
+theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
+theme_xhred_title_locale_lang_based=Locale language
+theme_xhred_title_locale_full=Full format
+theme_xhred_title_locale_long=Long format
+theme_xhred_title_locale_short=Short format

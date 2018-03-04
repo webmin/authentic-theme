@@ -234,10 +234,6 @@ settings_sysinfo_theme_updates_description=For at denne innstillingen skal virke
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_theme_options_button=VIs knapp for tema innstillinger
 settings_title=Tema konfigurasjon
-settings_window_replace_timestamps=Aktiver dato-erstatninger
-settings_window_replaced_timestamp_format_full=Langt dato/tidsformat
-settings_window_replaced_timestamp_format_short=Kort dato/tidsformat
-settings_window_replaced_timestamps_options_description=Tilpass dato/tids-innstillinger for å angi ønsket utdata for visning av datoer i full eller kort <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='Dette alternativet har ingen global effekt og aktiveres bare hvis spesielle utløsere brukes av modulutvikler. En hvilken som helst modulutvikler kan ganske enkelt legge til 'data-convertible-timestamp-full="unix-timestamp"' eller 'data-convertible-timestamp-short="unix-timestamp"' attributt til beholderen for å enkelt vise brukerdefinerte datoer.'></sup> Innbygget har dette alternativet effekt i <i>Notifikasjon Slider</i> og <i>Systeminformasjon</i>-siden (på rad <i>Tid på system</i>). Som standard er fullt format lik <code>LLLL</code> og kort er <code>L, LTS</code>. Tidsformatet er forskjellig for forskjellige lokaliteter. Språk er basert på Webmin språkinnstillinger.
 sysinfo_system_status_warning=For å ha vise <strong>Systeminformasjon</strong> må du aktivere <em>System Status</em> modulen i brukerinnstillingene.
 theme_changelog=Endringslogg
 theme_conference=Tema Konferanse
@@ -645,3 +641,16 @@ theme_xhred_global_outdated=This version is outdated
 
 #19.10
 theme_xhred_filemanager_edit_html=Edit as HTML
+theme_xhred_global_example=Example
+theme_xhred_global_output_example=Output example
+theme_xhred_title_language_locale=Language and Locale
+theme_xhred_title_locale_config=Locale configuration
+theme_xhred_title_webmin_ui_locale=Webmin UI locale
+theme_xhred_title_locale_auto=Automatic, based on selected language
+theme_xhred_global_manual=Manual
+theme_xhred_title_locale_config_format=Locale language and format
+theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
+theme_xhred_title_locale_lang_based=Locale language
+theme_xhred_title_locale_full=Full format
+theme_xhred_title_locale_long=Long format
+theme_xhred_title_locale_short=Short format

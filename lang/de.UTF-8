@@ -186,10 +186,6 @@ settings_right_notification_slider_options_title=Optionen f&uuml;r schwebende Be
 settings_side_slider_fixed=Schwebende Benachrichtigungen immer ananzeigen
 settings_side_slider_palette=Farbpalette f&uuml;r schwebende Benachrichtigungen
 settings_hotkey_toggle_slider=Schnellzugriffs Taste f&uuml;r schwebende Benachrichtigungen
-settings_window_replace_timestamps=Erlaube Datum ersetzen
-settings_window_replaced_timestamp_format_short=Kurzes Datums Format
-settings_window_replaced_timestamp_format_full=Langes Datums Format
-settings_window_replaced_timestamps_options_description=W&auml;hlen Sie ob die Datumsanzeige im kurzen oder langen <code><a href="http://momentjs.com" target="_blank">Format</a></code> erfolgen soll. : <sup class="fa fa-question-circle" title='Diese Einstellung funktioniert nur f&uuml;r entsprechend angepasste Module. Damit die benutzerdefinierte Datumsanzeige in eimen Modul funktioniert, m&uuml;ssen sie als Modul Entwickler den Containern zur Datumsanzeige die Attribute `data-convertible-timestamp-full="unix-timestamp"` oder `data-convertible-timestamp-short="unix-timestamp"` zuzuweisen.'></sup> Diese Option beeinflusst derzeit nur die Datumsanzeige in den <i>System Informationen</i> und im <i>Hinweis schwebende Benachrichtigungen</i>. Standardm&auml;&szligig wird <code>LLLL</code> als langes und <code>L, LTS</code> als kurzes Datumsformat verwendet. Die Ausgabe des Datums ist auch von der gew&auml;hlten Sprache in Webmin/Usermin abh&auml;ngig.
 
 settings_side_slider_enabled=Schwebende Benachrichtigungen einschalten
 settings_leftmenu_user_html=HTML Schnipsel anzeigen
@@ -779,3 +775,16 @@ theme_xhred_global_outdated=Diese Version ist veraltet
 
 #19.10
 theme_xhred_filemanager_edit_html=Edit as HTML
+theme_xhred_global_example=Example
+theme_xhred_global_output_example=Output example
+theme_xhred_title_language_locale=Language and Locale
+theme_xhred_title_locale_config=Locale configuration
+theme_xhred_title_webmin_ui_locale=Webmin UI locale
+theme_xhred_title_locale_auto=Automatic, based on selected language
+theme_xhred_global_manual=Manual
+theme_xhred_title_locale_config_format=Locale language and format
+theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
+theme_xhred_title_locale_lang_based=Locale language
+theme_xhred_title_locale_full=Full format
+theme_xhred_title_locale_long=Long format
+theme_xhred_title_locale_short=Short format

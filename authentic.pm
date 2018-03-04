@@ -1046,6 +1046,16 @@ sub theme_ui_radio_table
     return $rv;
 }
 
+sub theme_make_date
+{
+    my ($s, $o, $f) = @_;
+    my $t = "x-md";
+    my $d = "<$t-d>$s";
+    ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ";0")) . "</$t-d>");
+    (!$o && ($d .= " <$t-t>$s</$t-t>"));
+    return $d;
+}
+
 sub theme_redirect
 {
     use File::Basename;

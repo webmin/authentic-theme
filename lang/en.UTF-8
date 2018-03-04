@@ -194,10 +194,6 @@ settings_right_notification_slider_options_title=Side slider options
 settings_side_slider_fixed=Keep slider always visible
 settings_side_slider_palette=Slider palette
 settings_hotkey_toggle_slider=Hotkey for slider
-settings_window_replace_timestamps=Enable dates substitutions
-settings_window_replaced_timestamp_format_short=Short date/time format
-settings_window_replaced_timestamp_format_full=Full date/time format
-settings_window_replaced_timestamps_options_description=Tweak date/time settings to set desired output for displaying dates in full or short <code><a href="http://momentjs.com" target="_blank">format</a></code>. <sup class="fa fa-question-circle" title='This option does not have global effect and only activated if special triggers are used by module developer. Any module developer can simply add `data-convertible-timestamp-full="unix-timestamp"` or `data-convertible-timestamp-short="unix-timestamp"` attribute to the container to easily display user defined dates.'></sup> In-built this option has effect in <i>Notification Slider</i> and <i>System Information</i> page (on the row <i>Time on system</i>). By default, full format equals to <code>LLLL</code> and short is <code>L, LTS</code>. The time output is different for different locales. Locale is based on Webmin language settings.
 
 settings_side_slider_enabled=Enable slider
 settings_leftmenu_user_html=Show HTML snippet
@@ -785,3 +781,16 @@ theme_xhred_global_outdated=This version is outdated
 
 #19.10
 theme_xhred_filemanager_edit_html=Edit as HTML
+theme_xhred_global_example=Example
+theme_xhred_global_output_example=Output example
+theme_xhred_title_language_locale=Language and Locale
+theme_xhred_title_locale_config=Locale configuration
+theme_xhred_title_webmin_ui_locale=Webmin UI locale
+theme_xhred_title_locale_auto=Automatic, based on selected language
+theme_xhred_global_manual=Manual
+theme_xhred_title_locale_config_format=Locale language and format
+theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
+theme_xhred_title_locale_lang_based=Locale language
+theme_xhred_title_locale_full=Full format
+theme_xhred_title_locale_long=Long format
+theme_xhred_title_locale_short=Short format

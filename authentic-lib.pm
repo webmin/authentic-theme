@@ -2036,7 +2036,7 @@ sub _settings
             'mail',
 
             '__',
-            _settings('fa', 'desktop',   &Atext('settings_global_options_title')),
+            _settings('fa', 'desktop', &Atext('settings_global_options_title')),
             'settings_font_family',
             '0',
             'settings_navigation_color',
@@ -2074,16 +2074,7 @@ sub _settings
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',
-            _settings('fa', 'sub-title', '' . "~" . &Atext('settings_window_replaced_timestamps_options_description')),
-            'settings_window_replace_timestamps',
-            'true',
-            'settings_window_replaced_timestamp_format_full',
-            'LLLL',
-            'settings_window_replaced_timestamp_format_short',
-            'L, LTS',
-
-            '__',
-            _settings('fa', 'bell', &Atext('settings_right_notification_slider_options_title')),
+            _settings('fa', 'bell',    &Atext('settings_right_notification_slider_options_title')),
             'settings_side_slider_enabled',
             'true',
             'settings_side_slider_fixed',
@@ -2473,29 +2464,24 @@ sub _settings
             ';
 
         } elsif ($k eq 'settings_hotkey_custom_1' ||
-                 $k eq 'settings_hotkey_custom_2'                       ||
-                 $k eq 'settings_hotkey_custom_3'                       ||
-                 $k eq 'settings_hotkey_custom_4'                       ||
-                 $k eq 'settings_hotkey_custom_5'                       ||
-                 $k eq 'settings_hotkey_custom_6'                       ||
-                 $k eq 'settings_hotkey_custom_7'                       ||
-                 $k eq 'settings_hotkey_custom_8'                       ||
-                 $k eq 'settings_hotkey_custom_9'                       ||
-                 $k eq 'settings_leftmenu_netdata_link'                 ||
-                 $k eq 'settings_leftmenu_user_html'                    ||
-                 $k eq 'settings_global_passgen_format'                 ||
-                 $k eq 'settings_window_replaced_timestamp_format_full' ||
-                 $k eq 'settings_window_replaced_timestamp_format_short')
+                 $k eq 'settings_hotkey_custom_2'       ||
+                 $k eq 'settings_hotkey_custom_3'       ||
+                 $k eq 'settings_hotkey_custom_4'       ||
+                 $k eq 'settings_hotkey_custom_5'       ||
+                 $k eq 'settings_hotkey_custom_6'       ||
+                 $k eq 'settings_hotkey_custom_7'       ||
+                 $k eq 'settings_hotkey_custom_8'       ||
+                 $k eq 'settings_hotkey_custom_9'       ||
+                 $k eq 'settings_leftmenu_netdata_link' ||
+                 $k eq 'settings_leftmenu_user_html'    ||
+                 $k eq 'settings_global_passgen_format')
         {
             my $width = ' width: 40%; ';
 
             if ($k eq 'settings_global_passgen_format') {
                 $width = ' width: 30%; ';
             }
-            if ($k eq 'settings_window_replaced_timestamp_format_full' ||
-                $k eq 'settings_window_replaced_timestamp_format_short' ||
-                $k eq 'settings_leftmenu_netdata_link')
-            {
+            if ($k eq 'settings_leftmenu_netdata_link') {
                 $width = ' width: 50%; ';
             } elsif ($k eq 'settings_leftmenu_user_html') {
                 $width = ' width: 95%; ';
@@ -2734,6 +2720,20 @@ sub get_xhr_request
             print get_theme_language();
         } elsif ($in{'xhr-get_available_modules'} eq '1') {
             print get_available_modules('json');
+        } elsif ($in{'xhr-get_theme_locale_languages'} eq '1') {
+            my %__config = settings(get_tuconfig_file(), 'config_');
+            print ui_select(
+                "config_portable_theme_locale_languages",
+                ($__config{'config_portable_theme_locale_languages'} ? $__config{'config_portable_theme_locale_languages'} :
+                   get_before_delimiter($current_lang, '.')
+                ),
+                [
+                 map {
+                     !string_contains(lc($_->{'lang'}), 'utf') ?
+                       [get_before_delimiter(lc(replace('_', '-', $_->{'lang'})), '.'), $_->{'desc'}] :
+                       ()
+                 } list_languages()
+                ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
             print nice_size($size) . '|' . $size;

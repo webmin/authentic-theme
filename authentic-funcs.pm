@@ -104,4 +104,12 @@ sub array_unique
     return @unique;
 }
 
+sub get_before_delimiter
+{
+    my ($v, $d) = @_;
+
+    $v =~ /^(.*)\Q$d\E/;
+    return ($1 ? $1 : $v);
+}
+
 1;
