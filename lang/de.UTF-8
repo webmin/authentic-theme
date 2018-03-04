@@ -346,8 +346,8 @@ theme_xhred_filemanager_title_symlink_target=Link Ziel
 right_unlimited=Unbeschr&auml;nkt
 settings_leftmenu_width=Bevorzugte Breite
 settings_leftmenu_width_description=Standard Wert/aktueller Wert: <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
-settings_switch_rdisplay=Schalter in umgekehrter Reihenfolge anzeigen
-settings_switch_rdisplay_description=Diese Einstellung erm&ouml;glicht es die Schalter oben links anders herum anzuordnen. Neuladen der Seite erforderlich.
+settings_switch_rdisplay=Schaltfl&auml;chen in umgekehrter Reihenfolge anzeigen
+settings_switch_rdisplay_description=Diese Einstellung erm&ouml;glicht es die Schaltfl&auml;chen oben links anders herum anzuordnen. Neuladen der Seite erforderlich.
 
 #17.63
 theme_xhred_filemanager_context_calculate_selected_size=Gr&ouml;&szlige der Auswahl berechnen
@@ -767,24 +767,24 @@ theme_xhred_upload_initial_info=Datei(en) hierher ziehen oder zum Ausw&auml;hlen
 #19.09
 theme_xhred_global_empty=Leer
 theme_xhred_global_click_here=Hier klicken
-theme_git_patch_incompatible_message=Installiere diese Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von $3 <em>$4</em> und $5 <em>$6</em>.
-theme_git_patch_incompatible_message_s=Die installierte Version von $1 <em>$2</em>  ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von$3 <em>$4</em>.
-theme_git_patch_incompatible_message_desc=Es k&ouml;nnten m&ouml;glicherweise nicht kompatible &Auml;nderungen enthalten sein, die verhindern das das Desgin korrekt funktioniert. Damit diese Warnung nicht angezeigt wird und das Desgin $1 installiert oder aktualisiert wird, aktualisiere $2 auf der Kommandozeile auf die aktuelle Entwicklerversiontion mit dem Script <kbd>update-from-repo.sh</kbd>.
+theme_git_patch_incompatible_message=Die installierte Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version <em>$4</em> von $3 und $5 <em>$6</em>.
+theme_git_patch_incompatible_message_s=Die installierte Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version <em>$4</em> von $3.
+theme_git_patch_incompatible_message_desc=Es k&ouml;nnten m&ouml;glicherweise nicht kompatible &Auml;nderungen enthalten sein, die verhindern das das Desgin korrekt funktioniert. Damit diese Warnung nicht angezeigt wird und das Desgin installiert oder aktualisiert wird $1 oder aktualisiere $2 auf der Kommandozeile auf die aktuelle Entwicklerversiontion mit dem Script <kbd>update-from-repo.sh</kbd>.
 theme_xhred_global_outdated=Diese Version ist veraltet
 
 
 #19.10
-theme_xhred_filemanager_edit_html=Edit as HTML
-theme_xhred_global_example=Example
-theme_xhred_global_output_example=Output example
-theme_xhred_title_language_locale=Language and Locale
-theme_xhred_title_locale_config=Locale configuration
-theme_xhred_title_webmin_ui_locale=Webmin UI locale
-theme_xhred_title_locale_auto=Automatic, based on selected language
-theme_xhred_global_manual=Manual
-theme_xhred_title_locale_config_format=Locale language and format
-theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
-theme_xhred_title_locale_lang_based=Locale language
-theme_xhred_title_locale_full=Full format
-theme_xhred_title_locale_long=Long format
-theme_xhred_title_locale_short=Short format
+theme_xhred_filemanager_edit_html=Als HTML bearbeiten
+theme_xhred_global_example=Beispiel
+theme_xhred_global_output_example=Beispiel Anzeige
+theme_xhred_title_language_locale=Sprache und Anzeigeeinstellungen
+theme_xhred_title_locale_config=Spracheinstellungen
+theme_xhred_title_webmin_ui_locale=Webmin UI Anzeigeeinstellungen
+theme_xhred_title_locale_auto=Automatisch, aufgrund der ausgew&auml;hlten Sprache
+theme_xhred_global_manual=H&auml;ndisch
+theme_xhred_title_locale_config_format=Anzeige-Sprache und Formate
+theme_xhred_title_locale_config_format_ui=Webmin UI Anzeige-Sprache und Formate
+theme_xhred_title_locale_lang_based=Anzeige-Sprache
+theme_xhred_title_locale_full=Deatilliertes Format
+theme_xhred_title_locale_long=Langes Format
+theme_xhred_title_locale_short=Kurzes Format
