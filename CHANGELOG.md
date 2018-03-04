@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.10-beta1 (March 04, 2018)
+* Add date/time conversion support based on locale [#1035](https://github.com/qooob/authentic-theme/issues/1035)
+* Add HTML editor to File Manager [#1031](https://github.com/qooob/authentic-theme/issues/1031)
+* Add to display Apache/Nginx access and error logs' URL strings decoded [webmin/webmin#686](https://github.com/webmin/webmin/issues/686)
+* Fix lost language strings on session expire [#1020](https://github.com/qooob/authentic-theme/issues/1020)
+
 #### Version 19.09.2 (February 22, 2018)
 * Add fail proof method of extracting page content with broken HTML [webmin/webmin#825](https://github.com/webmin/webmin/issues/825)
 * Add better Cloudmin support and fixed corresponding issues
