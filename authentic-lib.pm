@@ -2813,12 +2813,21 @@ sub get_xhr_request
             } else {
                 if ($update_force ne "1") {
                     my $compatible;
+                    my $latest_release;
                     my $force_button =
 '<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">'
                       . $Atext{'theme_xhred_global_click_here'} . '</a>';
 
-                    http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
-                                  \$compatible, \$error, undef, 1, undef, undef, 5);
+                    if ($version_type eq '-release') {
+                        http_download('api.github.com', '443', '/repos/qooob/authentic-theme/releases/latest',
+                                      \$latest_release, \$error, undef, 1, undef, undef, 5);
+                        $latest_release =~ /tag_name":"(.*?)"/;
+                        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/' . $1 . '/theme.info',
+                                      \$compatible, \$error, undef, 1, undef, undef, 5);
+                    } else {
+                        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
+                                      \$compatible, \$error, undef, 1, undef, undef, 5);
+                    }
 
                     my ($atversion) = $compatible =~ /^version=(.*)/gm;
 
