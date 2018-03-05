@@ -1795,7 +1795,7 @@ sub theme_remote_version
         $authentic_remote_version = $authentic_remote_version{'version'};
 
         if ($authentic_remote_version =~ /beta/ && $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true') {
-            $authentic_remote_version = substr($authentic_remote_version, 0, 5);
+            $authentic_remote_version = '0';
         }
     } else {
         $authentic_remote_version = '0';
