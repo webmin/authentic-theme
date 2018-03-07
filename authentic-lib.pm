@@ -2092,6 +2092,8 @@ sub _settings
 
             '__',
             _settings('fa', 'bars', &Atext('settings_right_navigation_menu_title')),
+            'settings_navigation_always_collapse',
+            'false',
             'settings_leftmenu_width',
             '260',
             'settings_switch_rdisplay',
@@ -3104,7 +3106,9 @@ sub content
 {
 
     # Mobile toggle
-    print '<div class="visible-xs mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
+    print '<div class="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
+  'mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
+
     print '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' .
       "\n";
     print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
