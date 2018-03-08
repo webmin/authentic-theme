@@ -874,6 +874,7 @@ sub get_button_style
         $icon =~ s/%icon/restore fa-1_25x/ig;
     } elsif ($entry eq 'backup_title' ||
              $entry eq 'dbase_backup' ||
+             $entry eq 'index_dump' ||
              $entry eq 'backup_ok'    ||
              $entry =~ /export/       ||
              $entry eq 'backup_now')
