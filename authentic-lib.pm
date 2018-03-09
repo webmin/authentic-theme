@@ -1774,8 +1774,7 @@ sub embed_login_head
 
     print '<link href="' .
       $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    print
-'<script>setTimeout(function(){var a=document.querySelectorAll(\'input[type="password"]\');i=0;
+    print '<script>setTimeout(function(){var a=document.querySelectorAll(\'input[type="password"]\');i=0;
 for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i].offsetHeight?1:0;b.classList.add("input_warning_caps");b.setAttribute("title","Caps Lock");d&&b.classList.add("large");a[i].classList.add("use_input_warning_caps");a[i].parentNode.insertBefore(b,a[i].nextSibling);a[i].addEventListener("blur",function(){this.nextSibling.classList.remove("visible")});a[i].addEventListener("keydown",function(c){"function"===typeof c.getModifierState&&((state=20===c.keyCode?!c.getModifierState("CapsLock"):
 c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};},100);function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
 
@@ -3071,7 +3070,7 @@ sub get_default_right
 sub init_type
 {
     (($ENV{'CONTENT_TYPE'} =~ /multipart\/form-data/i) ? ReadParseMime() :
-       ReadParse());
+       ($ENV{'SCRIPT_NAME'} =~ /session_login|pam_login/i ? ReadParse(undef, undef, undef, 2) : ReadParse()));
 }
 
 sub init
@@ -3107,7 +3106,7 @@ sub content
 
     # Mobile toggle
     print '<div class="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
-  'mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
+      'mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
 
     print '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' .
       "\n";
