@@ -53,7 +53,7 @@ sub replace
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv) = ('1.872', '1.734', '6.02', '9.3', '11.06');
+    my ($wv, $uv, $vv, $cv, $fv) = ('1.880', '1.740', '6.02', '9.3', '12.00');
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
