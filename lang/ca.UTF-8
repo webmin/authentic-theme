@@ -29,7 +29,7 @@ body_upsec=$1 actualitzacions de paquets estan disponibles, dels quals $2 són a
 body_upsec1=$1 actualitzacions de paquets estan disponibles, dels quals $2 són actualitzacions de seguretat
 body_upsec2=$1 actualitzacions de paquets estan disponibles, dels quals $2 són actualitzacions de seguretat
 body_upsec3=$1 actualitzacions de paquets estan disponibles, dels quals $2 són actualitzacions de seguretat
-body_uptime=Temps total del sistema
+body_uptime=Temps en funcionament
 body_used=$1 total / $2 utilitzat
 body_used_and_free=$1 total / $2 lliure / $3 utilitzat
 body_usermin=Versió d'Usermin
@@ -184,7 +184,7 @@ settings_sysinfo_drive_status_on_new_line=Mostrar l'estat del CPU i dels discs e
 settings_sysinfo_expand_all_accordions=Expandeix-ho tot
 settings_sysinfo_link_mini=Show dashboard link as button
 
-settings_right_page_defaults_title=Pàgines per defecte
+settings_right_page_defaults_title=Pàgina per defecte
 settings_right_default_tab_webmin=Pàgina per defecte de Webmin
 settings_right_default_tab_usermin=Pàgina per defecte d'Usermin
 settings_right_virtualmin_default=Pàgina per defecte de Virtualmin
@@ -195,10 +195,6 @@ settings_right_notification_slider_options_title=Opcions del panell dret
 settings_side_slider_fixed=Mantenir sempre visible
 settings_side_slider_palette=Color del fons
 settings_hotkey_toggle_slider=Dreceres del panell dret
-settings_window_replace_timestamps=Habilita la substitució de dates
-settings_window_replaced_timestamp_format_short=Format de data/hora curta
-settings_window_replaced_timestamp_format_full=Format de data/hora llarga
-settings_window_replaced_timestamps_options_description=Modifica la configuració de la data i hora per obtenir el <code><a href="http://momentjs.com" target="_blank">format</a></code> desitjat. Aquesta opció només té efectes al panell de notificacions i en la informació del sistema. Per defecte el format llarg correspon a <code>LLLL</code> i el curt <code>L, LTS</code>. El format és diferent per a cada zona horària.
 
 settings_side_slider_enabled=Habilitar el panell dret
 settings_leftmenu_user_html=Mostrar retall HTML
@@ -735,7 +731,7 @@ theme_xhred_log_file_empty=L'arxiu de registre està buit
 #19.03
 theme_xhred_config_configurable_options=Opcions configurables
 theme_xhred_filter_content_no_matches_query=Cap contingut correspon amb la cerca %str
-theme_xhred_toggle_accordions=Canviar a vista d'acordió
+theme_xhred_toggle_accordions=Expandir/Contraure tot
 theme_xhred_global_whats_new=Què hi ha de nou
 theme_xhred_global_report_an_issue=Informa d'un problema
 theme_xhred_global_theme_configuration=Configuració del tema
@@ -780,7 +776,25 @@ theme_xhred_upload_initial_info=Arrossega i deixa anar els arxius aquí, o bé, 
 #19.09
 theme_xhred_global_empty=Buit
 theme_xhred_global_click_here=Prem amb el ratolí aquí
-theme_git_patch_incompatible_message=Versió de desenvolupament de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> i $5 <em>$6</em> per tal de funcionar correctament.
-theme_git_patch_incompatible_message_s=Versió de desenvolupament de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> i $5 <em>$6</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message_s=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> per tal de funcionar correctament.
 theme_git_patch_incompatible_message_desc=Podrien haver-hi canvis incompatibles que provoquessin un funcionament no desitjat del tema. Per ignorar aquest avís i forçar la instal·lació del tema $1, o bé actualitza $2 a l'última versió de desenvolupament utilitzant la consola i iniciant l'script <kbd>update-from-repo.sh</kbd>.
 theme_xhred_global_outdated=Aquesta versió no està actualizada
+
+
+#19.10
+theme_xhred_filemanager_edit_html=Editar com a HTML
+theme_xhred_global_example=Exemple
+theme_xhred_global_output_example=Exemple de sortida
+theme_xhred_title_language_locale=Idioma
+theme_xhred_title_locale_config=Configuració de l'idioma
+theme_xhred_title_webmin_ui_locale=Idioma del Webmin
+theme_xhred_title_locale_auto=Automàtic, segons l'idioma seleccionat
+theme_xhred_global_manual=Manual
+theme_xhred_title_locale_config_format=Idioma i format
+theme_xhred_title_locale_config_format_ui=Idioma i format del Webmin
+theme_xhred_title_locale_lang_based=Idioma
+theme_xhred_title_locale_full=Format complet
+theme_xhred_title_locale_long=Format llarg
+theme_xhred_title_locale_short=Format curt
+settings_navigation_always_collapse=Sempre comprimit
