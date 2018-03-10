@@ -874,7 +874,7 @@ sub get_button_style
         $icon =~ s/%icon/restore fa-1_25x/ig;
     } elsif ($entry eq 'backup_title' ||
              $entry eq 'dbase_backup' ||
-             $entry eq 'index_dump' ||
+             $entry eq 'index_dump'   ||
              $entry eq 'backup_ok'    ||
              $entry =~ /export/       ||
              $entry eq 'backup_now')
@@ -963,11 +963,11 @@ sub theme_version
     my ($string) = @_;
     my %tinfo    = get_theme_info($current_theme);
     my $version  = $tinfo{'version'};
+    my $development = string_contains($version, '-');
 
     if ($string) {
         $version =~ s/beta|\.|-//ig;
-
-        if (theme_mode() eq 'debug') {
+        if (theme_mode() eq 'debug' || $development) {
             $version .= time();
         }
     }
@@ -1006,7 +1006,7 @@ sub header_html_data
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-navigation-collapsed="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' . ($__settings{'settings_side_slider_fixed'} eq "true" ? '1' : '0') .
+      '" data-slider-fixed="' .        ($__settings{'settings_side_slider_fixed'} eq "true"          ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' . foreign_available("shell") .
       '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . usermin_available() .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
