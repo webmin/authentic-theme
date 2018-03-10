@@ -53,7 +53,8 @@ sub replace
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv) = ('1.880', '1.740', '6.02', '9.3', '12.00');
+    my ($wv, $uv, $vv, $cv, $fv, $d) =
+      ('1.880', '1.740', '6.02', '9.3', '12.00', $__settings{'settings_sysinfo_theme_patched_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -62,8 +63,10 @@ sub product_version_update
         ($p eq "f" && $v < $fv))
     {
         return (
+             ($d eq 'true' || ($d ne 'true' && $p eq "f")) ?
                '<span data-toggle="tooltip" data-placement="auto top" data-title="' . $Atext{'theme_xhred_global_outdated'} .
-                 '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>');
+               '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>' :
+               $v);
     } else {
         return $v;
     }
