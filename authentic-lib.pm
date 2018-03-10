@@ -1502,7 +1502,7 @@ sub csf_temporary_list
             my @q;
             my $x = read_file_contents($let) . read_file_contents($ban);
             my $z = read_file_contents($cnf);
-            (@p) = $z =~ /(?:PORTS_|TCP_IN|UDP_IN).*=\s*"([\d+,]+)"/g;
+            (@p) = $z =~ /(?:TCP_IN|UDP_IN|TCP6_IN|UDP6_IN|PORTS_TCP|PORTS_UDP|CT_PORTS|CLUSTER_PORT|PORTS_webmin|PORTS_sshd).*=\s*"([\d+,]+)"/g;
             (@q) = $x =~ /^(?:(?!#).).*\|(?:d|s)=([\d+,]+)\|/gm;
             if (@p || @q) {
                 @p = array_unique(split(",", join(",", (@p, @q))));
