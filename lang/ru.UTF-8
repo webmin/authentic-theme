@@ -801,3 +801,4 @@ theme_xhred_title_locale_full=Full format
 theme_xhred_title_locale_long=Long format
 theme_xhred_title_locale_short=Short format
 settings_navigation_always_collapse=Always collapsed
+settings_side_slider_fixed_description=This option is only available on SXGA+ screens with minimum resolution of 1400 horizontal pixels and with disabled option for keeping navigation always collapsed.
