@@ -564,6 +564,7 @@ sub theme_ui_radio
 {
     my ($name, $val, $opts, $dis) = @_;
     my ($rv, $o);
+    my $rand = int rand(1e4);
     foreach $o (@$opts) {
         my $id = &quote_escape($name . "_" . $o->[0]);
         my $label = $o->[1] || $o->[0];
@@ -577,11 +578,11 @@ sub theme_ui_radio
         $rv .= 'value="' . &quote_escape($o->[0]) . '" ';
         $rv .= ($o->[0] eq $val ? 'checked ' : '');
         $rv .= ($dis ? 'disabled="true" ' : '');
-        $rv .= 'id="' . $id . '" ';
+        $rv .= 'id="' . $id . '_' . $rand . '" ';
         $rv .= $o->[2] . ' ';
         $rv .= '>' . "\n";
         $rv .= '<label class="lawobject" ';
-        $rv .= 'for="' . $id . '">' . "\n";
+        $rv .= 'for="' . $id . '_' . $rand . '">' . "\n";
         $rv .= '' . (length trim($label) ? trim($label) : '&nbsp;') . "\n";
         $rv .= '</label></span>' . $after . "\n";
     }
@@ -605,6 +606,8 @@ sub theme_ui_oneradio
     my ($name, $value, $label, $sel, $tags, $dis) = @_;
     my $id = &quote_escape("${name}_${value}");
     my $after;
+    my $rand = int rand(1e4);
+
     if ($label =~ /^([^<]*)(<[\000-\377]*)$/) {
         $label = $1;
         $after = $2;
@@ -612,10 +615,10 @@ sub theme_ui_oneradio
     my $ret =
       "<span class=\"awradio awobject\"><input class=\"iawobject\" type=\"radio\" name=\"" .
       &quote_escape($name) . "\" " . "value=\"" .
-      &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\"" .
+      &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\_$rand\"" .
       ($tags ? " " . $tags : "") . ">";
     $ret .=
-      ' <label class="lawobject" for="' . $id . '">' . (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>';
+      ' <label class="lawobject" for="' . $id . '_' . $rand . '">' . (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
@@ -624,14 +627,15 @@ sub theme_ui_checkbox
 {
     my ($name, $value, $label, $sel, $tags, $dis) = @_;
     my $after;
+    my $rand = int rand(1e4);
     if ($label =~ /^([^<]*)(<[\000-\377]*)$/) {
         $label = $1;
         $after = $2;
     }
     return "<span class=\"awcheckbox awobject\"><input class=\"iawobject\" type=\"checkbox\" " .
       "name=\"" . &quote_escape($name) . "\" " . "value=\"" . &quote_escape($value) . "\" " .
-      ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"" . &quote_escape("${name}_${value}") . "\"" .
-      ($tags ? " " . $tags : "") . "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}") . '">' .
+      ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" .
+      ($tags ? " " . $tags : "") . "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
       (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>' . $after;
 }
 

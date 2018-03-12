@@ -234,7 +234,7 @@ sub print_content
 
     # Render current directory entries
     print &ui_form_start("", "post", undef, "id='list_form'");
-    @ui_columns = ('<input id="select-unselect" type="checkbox" onclick="selectUnselect(this)" />', '');
+    @ui_columns = ('<input class="_select-unselect_" type="checkbox" onclick="selectUnselect(this)" />', '');
     push @ui_columns, ('<span data-head-name>' . $text{'name'} . '</span>');
     push @ui_columns, ('<span data-head-type>' . $text{'type'} . '</span>')
       if ($userconfig{'columns'} =~ /type/);
