@@ -1,5 +1,14 @@
 ## Changelog
 
+#### Version 19.10-beta2 (March 12, 2018)
+* Add an option to File Manager to choose number of records per page [webmin/webmin#857](https://github.com/webmin/webmin/issues/857)
+* Add an option to allow navigation menu to be always collapsed [#1032](https://github.com/qooob/authentic-theme/issues/1032)
+* Add displaying notification upon enabled caps-lock for password inputs [#1039](https://github.com/qooob/authentic-theme/issues/1039)
+* Fix stuck pagination issue in File Manager [virtualmin.com/55770](https://www.virtualmin.com/node/55770)
+* Fix form submission for strict methods [#1042](https://github.com/qooob/authentic-theme/issues/1042)
+* Fix to disallow multiple field to keep PCI scanners happy [webmin/webmin@16445b6](https://github.com/webmin/webmin/commit/16445b60e2ba64f57c548c6d409aac22c7100986)
+* Fix to preserve newlines when wrapping configuration pages [#1045](https://github.com/qooob/authentic-theme/issues/1045)
+
 #### Version 19.10-beta1 (March 04, 2018)
 * Add date/time conversion support based on locale [#1035](https://github.com/qooob/authentic-theme/issues/1035)
 * Add HTML editor to File Manager [#1031](https://github.com/qooob/authentic-theme/issues/1031)
