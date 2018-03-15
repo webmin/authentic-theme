@@ -711,7 +711,7 @@ theme_xhred_global_minutes=Minuten
 
 
 #19.01
-theme_xhred_browser_warning=F&uuml;r die beste Unterst&uuml;tzung des Server Panels auf deinem Computer verwende einen aktuellen, unterst&uuml;tzen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterst&uuml;tzt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>.
+theme_xhred_browser_warning=F&uuml;r die beste Unterst&uuml;tzung des Server Panels auf deinem Computer verwende einen aktuellen, unterst&uuml;tzen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterst&uuml;tzt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
 
 
 #19.02

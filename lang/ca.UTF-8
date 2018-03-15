@@ -720,7 +720,7 @@ theme_xhred_global_minutes=Minuts
 
 
 #19.01
-theme_xhred_browser_warning=Per tenir la millor experiència amb el panell del servidor en el teu ordinador, utilitza un navegador compatible i actualitzat a l'última versió disponible.<br><br>Actualment Internet Explorer ja no és compatible.<br><br>Els navegadors recomanats són: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> <em>Microsoft Edge</em> o <em>Safari</em>, .
+theme_xhred_browser_warning=Per tenir la millor experiència amb el panell del servidor en el teu ordinador, utilitza un navegador compatible i actualitzat a l'última versió disponible.<br><br>Actualment Internet Explorer ja no és compatible.<br><br>Els navegadors recomanats són: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> <em>Microsoft Edge</em> o <em>Safari</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
 
 
 #19.02

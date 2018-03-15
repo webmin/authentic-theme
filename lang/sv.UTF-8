@@ -717,7 +717,7 @@ theme_xhred_global_minute=Minut
 theme_xhred_global_minutes=Minuter
 
 #19.01
-theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanelen på din dator, använd en uppdaterad aktuell webbläsare.<br><br><em>Internet Explorer</em> stöds inte längre.<br><br>Rekommenderade webbläsare är <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em>, <em>Safari</em> eller <em>Edge</em>.
+theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanelen på din dator, använd en uppdaterad aktuell webbläsare.<br><br><em>Internet Explorer</em> stöds inte längre.<br><br>Rekommenderade webbläsare är <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em>, <em>Safari</em> eller <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
 
 
 #19.02
