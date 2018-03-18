@@ -113,11 +113,11 @@ settings_right_logo_authenticated_users=認証済みユーザーのロゴ
 settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 
 settings_right_current_theme=現在のテーマ
-settings_right_title=このページでは、<a href="https://github.com/qooob/authentic-theme" target="_blank">本格的なテーマ</a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
-settings_right_theme_left_configuration_title=本格的なテーマの構成
-settings_right_theme_left_extensions_title=本格的なテーマ拡張エディタ
-settings_right_theme_left_logo_title=本物のテーマのロゴコントロール
-settings_right_theme_configurable_options_title=本格的なテーマのための設定可能なオプション
+settings_right_title=このページでは、<a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
+settings_right_theme_left_configuration_title= Authentic Theme の構成
+settings_right_theme_left_extensions_title=Authentic Theme 拡張エディタ
+settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
+settings_right_theme_configurable_options_title= Authentic Theme のための設定可能なオプション
 
 
 settings_right_window_options_title=ウィンドウ オプション
@@ -205,7 +205,7 @@ theme_conference=テーマ会議
 theme_development_support=開発支援
 theme_donate=寄付
 theme_download=ダウンロード
-theme_name=本格的なテーマ
+theme_name=Authentic Theme 
 theme_update=更新
 theme_update_available=利用可能な最新リリース
 theme_update_notice=更新通知
