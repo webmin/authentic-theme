@@ -334,7 +334,7 @@ theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 theme_settings_virtualmin=Virtualmin virtuelle Server
 theme_settings_cloudmin=Cloudmin gemanagte System
 settings_right_thirdparties_options_title=Optionen f&uuml;r Drittanbieter Module
-theme_xhred_filemanager_context_calculate_size=Freien Platz im Leerraum berechnen
+theme_xhred_filemanager_context_calculate_size=Freien Platz berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
 theme_xhred_filemanager_context_bookmark_current=Pfad zum aktuell ge&ouml;ffneten Lesezeichen
 theme_xhred_filemanager_context_transfer=&Uuml;bertragung
@@ -380,7 +380,7 @@ right_return_theme_options=Design Optionen
 theme_xhred_datatable_semptydirectory=Verzeichnis ist leer
 theme_xhred_filemanager_context_clipboard=Pfad in Zwischeablage kopieren
 theme_xhred_global_warning=Warnung
-theme_xhred_global_close=Schlie&szligen
+theme_xhred_global_close=Schlie&szlig;en
 theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern f&uuml;hren z.B. zu ungew&ouml;hlichen Zeichen wie <tt>Â</tt>. <br><br>&auml;ndern Sie die Sprache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Design</em> die Standard Einstellungen &uuml;berschreiben.</span>
 
 theme_xhred_filemanager__no_bookmarks=Keine Lesezeichen vorhanden
@@ -404,7 +404,7 @@ theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h
 
 theme_xhred_filemanager_hide_toolbar=Toolbar verbergen
 theme_xhred_filemanager_hide_actions=Aktivit&auml;ten Zeile verbergen
-theme_xhred_filemanager_hovered_toolbar=Auswahlliste in der Toolbar beim &uuml;berfahren mit der Maus anzeigen
+theme_xhred_filemanager_hovered_toolbar=Auswahlliste in der Toolbar beim &Uuml;berfahren mit der Maus anzeigen
 theme_xhred_filemanager_context_delete_selected=Ausgew&auml;hlte l&ouml;schen
 
 #17.83
