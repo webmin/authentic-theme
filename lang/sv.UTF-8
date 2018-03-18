@@ -717,7 +717,7 @@ theme_xhred_global_minute=Minut
 theme_xhred_global_minutes=Minuter
 
 #19.01
-theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanelen på din dator, använd en uppdaterad aktuell webbläsare.<br><br><em>Internet Explorer</em> stöds inte längre.<br><br>Rekommenderade webbläsare är <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em>, <em>Safari</em> eller <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
+theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanelen på din dator, använd en uppdaterad aktuell webbläsare.<br><br><em>Internet Explorer</em> stöds inte längre.<br><br>Rekommenderade webbläsare är <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em>, <em>Safari</em> eller <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Du skulle kunna ladda ner en portabel webbläsare som inte kräver installation, för att kringgå begränsningarna.</div>
 
 
 #19.02
@@ -794,17 +794,17 @@ theme_xhred_title_locale_lang_based=Nationella språkinställningar
 theme_xhred_title_locale_full=Fullt format
 theme_xhred_title_locale_long=Långt format
 theme_xhred_title_locale_short=Kort format
-settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on SXGA+ screens with minimum resolution of 1400 horizontal pixels and with disabled option for keeping navigation always collapsed.
-theme_xhred_filemanager_records_per_page=Default number of records per page
-theme_xhred_filemanager_sorting=Default sorting type
-theme_xhred_filemanager_sorting_asc=Ascending
-theme_xhred_filemanager_sorting_desc=Descending
-theme_xhred_filemanager_sorting_by_name=Name
-theme_xhred_filemanager_sorting_by_type=Type
-theme_xhred_filemanager_sorting_by_size=Size
-theme_xhred_filemanager_sorting_by_ownership=Ownership
-theme_xhred_filemanager_sorting_by_permissions=Permissions
-theme_xhred_filemanager_sorting_by_attributes=Attributes
-theme_xhred_filemanager_sorting_by_selinux=Security context
-theme_xhred_filemanager_sorting_by_last_mod_time=Last modification time
+settings_navigation_always_collapse=Alltid ihopfällda
+settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på SXGA+-skärmar med en minsta upplösning på 1400 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld.
+theme_xhred_filemanager_records_per_page=Standard antal poster per sida
+theme_xhred_filemanager_sorting=Standard sorteringsordning
+theme_xhred_filemanager_sorting_asc=Stigande
+theme_xhred_filemanager_sorting_desc=Fallande
+theme_xhred_filemanager_sorting_by_name=Namn
+theme_xhred_filemanager_sorting_by_type=Typ
+theme_xhred_filemanager_sorting_by_size=Storlek
+theme_xhred_filemanager_sorting_by_ownership=Ägare
+theme_xhred_filemanager_sorting_by_permissions=Behörigheter
+theme_xhred_filemanager_sorting_by_attributes=Attributer
+theme_xhred_filemanager_sorting_by_selinux=Säkerhetsinnehåll
+theme_xhred_filemanager_sorting_by_last_mod_time=Senast ändrad tid

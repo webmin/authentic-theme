@@ -11,7 +11,7 @@ sub theme_header
 {
 
     (get_raw() && return);
-    embed_header(($_[0], $_[7], theme_mode(), (@_ > 1 ? '1' : '0')));
+    embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
 
     print '<body ' . header_body_data(undef) . '>' . "\n";
     if (@_ > 1 && $_[1] ne 'stripped') {
@@ -128,7 +128,7 @@ sub theme_footer
   </div>
 </div>', "\n";
     }
-    embed_footer((theme_mode()),
+    embed_footer((theme_debug_mode()),
                  (
                   (get_module_name()                                        ||
                      get_env('request_uri') =~ /\/config.cgi\?/             ||
@@ -618,7 +618,8 @@ sub theme_ui_oneradio
       &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\_$rand\"" .
       ($tags ? " " . $tags : "") . ">";
     $ret .=
-      ' <label class="lawobject" for="' . $id . '_' . $rand . '">' . (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>';
+      ' <label class="lawobject" for="' . $id . '_' . $rand . '">' .
+      (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
@@ -633,9 +634,10 @@ sub theme_ui_checkbox
         $after = $2;
     }
     return "<span class=\"awcheckbox awobject\"><input class=\"iawobject\" type=\"checkbox\" " .
-      "name=\"" . &quote_escape($name) . "\" " . "value=\"" . &quote_escape($value) . "\" " .
-      ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" .
-      ($tags ? " " . $tags : "") . "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
+      "name=\"" . &quote_escape($name) .
+      "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") .
+      " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" . ($tags ? " " . $tags : "") .
+      "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
       (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>' . $after;
 }
 
