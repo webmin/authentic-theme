@@ -94,59 +94,59 @@ session_twofailed= 二要素認証に失敗しました:$1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=オプション
+settings_right_restore_defaults=既定値の復元
+settings_right_restored=復元
+settings_right_restoring=復元
+settings_right_saved=保存
+settings_right_saving=保存
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.
+settings_right_theme_extensions=テーマの拡張機能
+settings_right_theme_extensions_title=テーマの拡張機能
+settings_right_file_edit=拡張ファイルの編集:
+settings_right_extensions_title=テーマの豊富なデザインは、簡単にインターフェイスのターゲット部分に操作することができます。
 
-settings_right_theme_logos=Theme logos
-settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+settings_right_theme_logos=テーマのロゴ
+settings_right_theme_logos_title=テーマのロゴ
+settings_right_logos_title= テーマのロゴは、認証されたユーザと未認証ユーザーの両方に対して簡単に設定できます。推奨ロゴサイズは <kbd>180x90</kbd> ピクセルで、サポートされている唯一の形式は <kbd>.png</kbd> で、アルファ透過性を提供します。
+settings_right_logo_authenticated_users=認証済みユーザーのロゴ
+settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 
-settings_right_current_theme=Current theme
-settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Authentic Theme Configuration
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+settings_right_current_theme=現在のテーマ
+settings_right_title=このページでは、<a href="https://github.com/qooob/authentic-theme" target="_blank">本格的なテーマ</a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
+settings_right_theme_left_configuration_title=本格的なテーマの構成
+settings_right_theme_left_extensions_title=本格的なテーマ拡張エディタ
+settings_right_theme_left_logo_title=本物のテーマのロゴコントロール
+settings_right_theme_configurable_options_title=本格的なテーマのための設定可能なオプション
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
-settings_security_description=Security alerts will let you setup email notifications upon certain  events. (Linux <code>mail</code> command is required for this feature to work)<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_window_options_title=ウィンドウ オプション
+settings_right_navigation_menu_title=ナビゲーションメニューオプション
+settings_right_table_options_title=テーブルオプション
+settings_security_title=セキュリティ警告オプション
+settings_security_description= セキュリティ警告は、特定のイベントに電子メール通知をセットアップできるようになります。(Linux の <code>mail</code> コマンドは、この機能を動作させるために必要です)<br class="lh0">形式:<code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">使用:<code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0">出力:<code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_right_hotkey_options_title=ホットキーオプション
+settings_right_sysinfo_page_options_title=システム情報ページのオプション
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
-settings_hotkey_custom_1=Custom link <code>1</code>
-settings_hotkey_custom_2=Custom link <code>2</code>
-settings_hotkey_custom_3=Custom link <code>3</code>
-settings_hotkey_custom_4=Custom link <code>4</code>
-settings_hotkey_custom_5=Custom link <code>5</code>
-settings_hotkey_custom_6=Custom link <code>6</code>
-settings_hotkey_custom_7=Custom link <code>7</code>
-settings_hotkey_custom_8=Custom link <code>8</code>
-settings_hotkey_custom_9=Custom link <code>9</code>
+settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/で/Cloudmin <code>URL.</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
+settings_hotkey_custom_1=カスタムリンク <code>1</code>
+settings_hotkey_custom_2=カスタムリンク <code>2</code>
+settings_hotkey_custom_3=カスタムリンク <code>3</code>
+settings_hotkey_custom_4=カスタムリンク <code>4</code>
+settings_hotkey_custom_5=カスタムリンク <code>5</code>
+settings_hotkey_custom_6=カスタムリンク <code>6</code>
+settings_hotkey_custom_7=カスタムリンク <code>7</code>
+settings_hotkey_custom_8=カスタムリンク <code>8</code>
+settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
-settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
-settings_loader_top=Enable page progress loader on top of the screen
-settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default content page
-settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
+settings_navigation_color=ナビゲーションメニューのカラーパレット
+settings_background_color=コンテンツページのカラーパレット
+settings_animation_left=ナビゲーションメニューでアニメーションを有効にする
+settings_animation_tabs=タブでアニメーションを有効にする
+settings_loader_top=画面上でページの進行状況ローダーを有効にする
+settings_loader_left=ナビゲーションメニューのスピナーを有効にする
+settings_right_reload=既定のコンテンツページの読み込み
+settings_right_reload_description=タブを切り替えると、右フレームのコンテンツページが再読み込みされます。現在開いている右フレームのコンテンツページを維持し、デフォルトでリロードしないでください?
 
 settings_right_hide_table_icons=Hide table icons for the right frame
 settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
