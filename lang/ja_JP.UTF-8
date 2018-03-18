@@ -19,8 +19,8 @@ body_procs=プロセスの実行
 body_real=実メモリー
 body_time=システム上の時間
 body_updates=パッケージアップデート
-body_updays=$1 日, $2 時, $3 分
-body_uphours=$1 時, $2 分
+body_updays=$1日と$2時間, $3 分
+body_uphours=$1時間, $2分
 body_upmins=$1 分
 body_upneed= $1のパッケージアップデートが利用可能です
 body_upneed1=$1のパッケージアップデートが利用可能です
@@ -94,122 +94,122 @@ session_twofailed= 二要素認証に失敗しました:$1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=オプション
+settings_right_restore_defaults=既定値の復元
+settings_right_restored=復元
+settings_right_restoring=復元
+settings_right_saved=保存
+settings_right_saving=保存
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.
+settings_right_theme_extensions=テーマの拡張機能
+settings_right_theme_extensions_title=テーマの拡張機能
+settings_right_file_edit=拡張ファイルの編集:
+settings_right_extensions_title=テーマの豊富なデザインは、簡単にインターフェイスのターゲット部分に操作することができます。
 
-settings_right_theme_logos=Theme logos
-settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+settings_right_theme_logos=テーマのロゴ
+settings_right_theme_logos_title=テーマのロゴ
+settings_right_logos_title= テーマのロゴは、認証されたユーザと未認証ユーザーの両方に対して簡単に設定できます。推奨ロゴサイズは <kbd>180x90</kbd> ピクセルで、サポートされている唯一の形式は <kbd>.png</kbd> で、アルファ透過性を提供します。
+settings_right_logo_authenticated_users=認証済みユーザーのロゴ
+settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 
-settings_right_current_theme=Current theme
-settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Authentic Theme Configuration
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
-
-
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
-settings_security_description=Security alerts will let you setup email notifications upon certain  events. (Linux <code>mail</code> command is required for this feature to work)<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=System Information page options
-
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
-settings_hotkey_custom_1=Custom link <code>1</code>
-settings_hotkey_custom_2=Custom link <code>2</code>
-settings_hotkey_custom_3=Custom link <code>3</code>
-settings_hotkey_custom_4=Custom link <code>4</code>
-settings_hotkey_custom_5=Custom link <code>5</code>
-settings_hotkey_custom_6=Custom link <code>6</code>
-settings_hotkey_custom_7=Custom link <code>7</code>
-settings_hotkey_custom_8=Custom link <code>8</code>
-settings_hotkey_custom_9=Custom link <code>9</code>
-
-settings_navigation_color=Navigation menu color palette
-settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
-settings_loader_top=Enable page progress loader on top of the screen
-settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default content page
-settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
-
-settings_right_hide_table_icons=Hide table icons for the right frame
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
-settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
-
-settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
-settings_leftmenu_section_hide_unused_modules=Hide un-used modules section
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
-
-settings_theme_options_button=Show theme settings button
-
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
-
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
-settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show dashboard link as button
-
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
-
-settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Side slider options
-settings_side_slider_fixed=Keep always visible
-settings_side_slider_palette=Slider palette
-settings_hotkey_toggle_slider=Hotkey for slider
-
-settings_side_slider_enabled=Enable slider
-settings_leftmenu_user_html=Show HTML snippet
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+settings_right_current_theme=現在のテーマ
+settings_right_title=このページでは、<a href="https://github.com/qooob/authentic-theme" target="_blank">本格的なテーマ</a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
+settings_right_theme_left_configuration_title=本格的なテーマの構成
+settings_right_theme_left_extensions_title=本格的なテーマ拡張エディタ
+settings_right_theme_left_logo_title=本物のテーマのロゴコントロール
+settings_right_theme_configurable_options_title=本格的なテーマのための設定可能なオプション
 
 
-theme_changelog=Changelog
-theme_conference=Theme Conference
-theme_development_support=Development Support
-theme_donate=Donate
-theme_download=Download
-theme_name=Authentic Theme
-theme_update=Update
-theme_update_available=Latest available release
-theme_update_notice=Update Notice
-theme_version=Theme version
+settings_right_window_options_title=ウィンドウ オプション
+settings_right_navigation_menu_title=ナビゲーションメニューオプション
+settings_right_table_options_title=テーブルオプション
+settings_security_title=セキュリティ警告オプション
+settings_security_description= セキュリティ警告は、特定のイベントに電子メール通知をセットアップできるようになります。(Linux の <code>mail</code> コマンドは、この機能を動作させるために必要です)<br class="lh0">形式:<code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">使用:<code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0">出力:<code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
+settings_right_hotkey_options_title=ホットキーオプション
+settings_right_sysinfo_page_options_title=システム情報ページのオプション
+
+settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/で/Cloudmin <code>URL.</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
+settings_hotkey_custom_1=カスタムリンク <code>1</code>
+settings_hotkey_custom_2=カスタムリンク <code>2</code>
+settings_hotkey_custom_3=カスタムリンク <code>3</code>
+settings_hotkey_custom_4=カスタムリンク <code>4</code>
+settings_hotkey_custom_5=カスタムリンク <code>5</code>
+settings_hotkey_custom_6=カスタムリンク <code>6</code>
+settings_hotkey_custom_7=カスタムリンク <code>7</code>
+settings_hotkey_custom_8=カスタムリンク <code>8</code>
+settings_hotkey_custom_9=カスタムリンク <code>9</code>
+
+settings_navigation_color=ナビゲーションメニューのカラーパレット
+settings_background_color=コンテンツページのカラーパレット
+settings_animation_left=ナビゲーションメニューでアニメーションを有効にする
+settings_animation_tabs=タブでアニメーションを有効にする
+settings_loader_top=画面上でページの進行状況ローダーを有効にする
+settings_loader_left=ナビゲーションメニューのスピナーを有効にする
+settings_right_reload=既定のコンテンツページの読み込み
+settings_right_reload_description=タブを切り替えると、右フレームのコンテンツページが再読み込みされます。現在開いている右フレームのコンテンツページを維持し、デフォルトでリロードしないでください?
+
+settings_right_hide_table_icons=右フレームのテーブルアイコンを非表示にする
+settings_right_hide_table_icons_description=完全にコンテンツページのテーブルからアイコンを削除し、右シェブロンとプレーンリンクを表示する
+settings_right_small_table_icons=小さなテーブルのアイコン
+settings_right_small_table_icons_description=標準サイズのテーブルアイコンを小さなものに置き換え、ツールヒントを使用してアイコンを表示するリンク
+settings_right_animate_table_icons=フォーカスのテーブルアイコンをアニメートする
+settings_right_grayscaled_table_icons=グレースケールテーブルのアイコンとフォーカスのみの色をもたらす
+
+settings_leftmenu_section_hide_refresh_modules=非表示の更新モジュールのリンク 
+settings_leftmenu_section_hide_unused_modules=非表示使用されていないモジュールセクション 
+settings_favorites = [お気に入りの表示] ボタン 
+settings_leftmenu_button_language=表示言語ボタン 
+settings_leftmenu_button_refresh=[更新の表示] ボタン
+
+settings_theme_options_button=[テーマの設定を表示] ボタン
+
+settings_hotkeys_active=ホットキーの使用を有効にする
+settings_hotkey_toggle_modifier=ホットキー修飾子
+settings_hotkey_toggle_key_webmin=Webmin のホットキー
+settings_hotkey_toggle_key_virtualmin=でのホットキー
+settings_hotkey_toggle_key_cloudmin=Cloudmin のホットキー
+settings_hotkey_toggle_key_usermin=Usermin のホットキー
+settings_hotkey_toggle_key_webmail=メールのホットキー
+settings_hotkey_sysinfo=ダッシュボードのホットキー
+settings_hotkey_shell=ターミナル用ホットキー
+settings_hotkey_favorites=お気に入りのホットキー
+settings_hotkey_focus_search=検索フィールドのホットキー
+settings_hotkey_reload=ページのリロードのためのホットキー
+
+settings_sysinfo_easypie_charts=グラフの表示
+settings_sysinfo_theme_updates=本物のテーマの更新をチェック
+settings_sysinfo_csf_updates=ConfigServer のセキュリティとファイアウォールの更新を確認する
+settings_sysinfo_drive_status_on_new_line=新しい行に CPU とドライブのステータスを表示する
+settings_sysinfo_expand_all_accordions=すべてのアコーディオンを拡張
+settings_sysinfo_link_mini=ダッシュボードリンクをボタンとして表示
+
+settings_right_page_defaults_title=既定のページ
+settings_right_default_tab_webmin=webmin にログインした後のデフォルトタブ
+settings_right_default_tab_usermin=Usermin にログインした後のデフォルトのタブ
+settings_right_virtualmin_default=Usermin にログインした後のデフォルトのタブ
+settings_right_cloudmin_default=Cloudmin の既定のページ
+
+settings_right_clear_local_cache=キャッシュのクリア
+settings_right_notification_slider_options_title=サイドスライダオプション
+settings_side_slider_fixed=常に表示しておく
+settings_side_slider_palette=スライダパレット
+settings_hotkey_toggle_slider=スライダのホットキー
+
+settings_side_slider_enabled=スライダを有効にする
+settings_leftmenu_user_html=HTML スニペットの表示
+settings_leftmenu_user_html_description= ユーザー定義のテキストまたは HTML コードは、ナビゲーションメニューの下部に挿入されます。これは、識別の目的で使用することができます。たとえば、ホスト名を明示的に表示するには、フィールドに追加します。<code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+
+
+theme_changelog=変更ログ
+theme_conference=テーマ会議
+theme_development_support=開発支援
+theme_donate=寄付
+theme_download=ダウンロード
+theme_name=本格的なテーマ
+theme_update=更新
+theme_update_available=利用可能な最新リリース
+theme_update_notice=更新通知
+theme_version=テーマバージョン
 
 
 # Version 17.40
