@@ -88,6 +88,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [Samsul Ma'arif](https://github.com/samsulmaarif) (Indonesian)
 * [Adalen Vladi](https://github.com/adalenv) (Albanian)
 * Stein-Aksel Basma, [Kjetil Elde](https://github.com/w00p) (Norwegian)
+* [Kosugikun](https://github.com/kosugikun) (Japanese)
 
 ## Donate
  It takes countless hours to develop and maintain this project. Donations show appreciation. Your donation would help me to pay my bills and _excite future development_.

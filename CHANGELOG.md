@@ -1,10 +1,20 @@
 ## Changelog
 
+#### Version 19.10-beta3 (March 18, 2018)
+* Add an option to File Manager to choose default sorting in module configuration
+* Add German translation to locale help [#1052](https://github.com/qooob/authentic-theme/issues/1052)
+* Add Japanese, German and Swedish language translation updates
+* Fix stuck cache issue for browsers after theme update
+* Fix post change theme behaviour [#1050](https://github.com/qooob/authentic-theme/issues/1050)
+* Fix to display side slider in kiosk mode on first load
+* Fix in File Manager for download and HTML editor invocation; fix tab initialization; fix filtering response
+* Fix editor to highlight only selected words
+
 #### Version 19.10-beta2 (March 12, 2018)
 * Add an option to File Manager to choose number of records per page [webmin/webmin#857](https://github.com/webmin/webmin/issues/857)
 * Add an option to allow navigation menu to be always collapsed [#1032](https://github.com/qooob/authentic-theme/issues/1032)
 * Add displaying notification upon enabled caps-lock for password inputs [#1039](https://github.com/qooob/authentic-theme/issues/1039)
-* Fix stuck pagination issue in File Manager [virtualmin.com/55770](https://www.virtualmin.com/node/55770)
+* Fix stuck pagination issue in File Manager [virtualmin.com/56381](https://www.virtualmin.com/node/56381)
 * Fix form submission for strict methods [#1042](https://github.com/qooob/authentic-theme/issues/1042)
 * Fix to disallow multiple field to keep PCI scanners happy [webmin/webmin@16445b6](https://github.com/webmin/webmin/commit/16445b60e2ba64f57c548c6d409aac22c7100986)
 * Fix to preserve newlines when wrapping configuration pages [#1045](https://github.com/qooob/authentic-theme/issues/1045)

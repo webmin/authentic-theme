@@ -1070,7 +1070,7 @@ sub get_sysinfo_vars
                 ));
         }
 
-        # Theme version/updates
+        # Theme version/update
         $authentic_remote_version    = theme_remote_version();
         $authentic_installed_version = theme_version();
 
@@ -1377,7 +1377,7 @@ sub csf_mod
         foreign_available("csf") &&
         $current_theme =~ /authentic-theme/)
     {
-        my $ext = (theme_mode() eq 'debug' ? 'src' : 'min');
+        my $ext = (theme_debug_mode() ? 'src' : 'min');
 
         my $styles  = $root_directory . "/$current_theme/unauthenticated/css/styles.css";
         my $scripts = $root_directory . "/$current_theme/unauthenticated/js/styles.js";
@@ -1388,12 +1388,9 @@ sub csf_mod
         my $csf_htmltag_mod = $root_directory . "/$current_theme/extensions/csf/csf.htmltag";
         my $csf_bodytag_mod = $root_directory . "/$current_theme/extensions/csf/csf.bodytag";
 
-        my $x_version = "02";
-
         open(my $fh, '>', $csf_header_mod) or die $!;
 
-        print $fh '<link data-hostname="' .
-          &get_display_hostname() . '" data-version="' . (theme_version(1) . '-' . $x_version) .
+        print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' . (theme_version(1)) .
           '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
         print $fh '<link href="' .
           $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
@@ -1417,8 +1414,8 @@ sub csf_mod
               time() . '"></script>' . "\n";
         }
 
-        print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' .
-          time() . '"></script>' . "\n";
+        print $fh '<script src="' .
+          $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
 
         print $fh '<link href="' .
           $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
@@ -1502,7 +1499,8 @@ sub csf_temporary_list
             my @q;
             my $x = read_file_contents($let) . read_file_contents($ban);
             my $z = read_file_contents($cnf);
-            (@p) = $z =~ /(?:TCP_IN|UDP_IN|TCP6_IN|UDP6_IN|PORTS_TCP|PORTS_UDP|CT_PORTS|CLUSTER_PORT|PORTS_webmin|PORTS_sshd).*=\s*"([\d+,]+)"/g;
+            (@p) = $z =~
+/(?:TCP_IN|UDP_IN|TCP6_IN|UDP6_IN|PORTS_TCP|PORTS_UDP|CT_PORTS|CLUSTER_PORT|PORTS_webmin|PORTS_sshd).*=\s*"([\d+,]+)"/g;
             (@q) = $x =~ /^(?:(?!#).).*\|(?:d|s)=([\d+,]+)\|/gm;
             if (@p || @q) {
                 @p = array_unique(split(",", join(",", (@p, @q))));
@@ -1758,7 +1756,7 @@ sub head
 sub embed_login_head
 {
 
-    my $ext = (theme_mode() eq 'debug' ? 'src' : 'min');
+    my $ext = (theme_debug_mode() ? 'src' : 'min');
 
     print '<head>', "\n";
     embed_noscript();
