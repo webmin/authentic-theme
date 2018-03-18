@@ -19,8 +19,8 @@ body_procs=プロセスの実行
 body_real=実メモリー
 body_time=システム上の時間
 body_updates=パッケージアップデート
-body_updays=$1 日, $2 時, $3 分
-body_uphours=$1 時, $2 分
+body_updays=$1日と$2時間, $3 分
+body_uphours=$1時間, $2分
 body_upmins=$1 分
 body_upneed= $1のパッケージアップデートが利用可能です
 body_upneed1=$1のパッケージアップデートが利用可能です
@@ -148,68 +148,68 @@ settings_loader_left=ナビゲーションメニューのスピナーを有効�
 settings_right_reload=既定のコンテンツページの読み込み
 settings_right_reload_description=タブを切り替えると、右フレームのコンテンツページが再読み込みされます。現在開いている右フレームのコンテンツページを維持し、デフォルトでリロードしないでください?
 
-settings_right_hide_table_icons=Hide table icons for the right frame
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
-settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+settings_right_hide_table_icons=右フレームのテーブルアイコンを非表示にする
+settings_right_hide_table_icons_description=完全にコンテンツページのテーブルからアイコンを削除し、右シェブロンとプレーンリンクを表示する
+settings_right_small_table_icons=小さなテーブルのアイコン
+settings_right_small_table_icons_description=標準サイズのテーブルアイコンを小さなものに置き換え、ツールヒントを使用してアイコンを表示するリンク
+settings_right_animate_table_icons=フォーカスのテーブルアイコンをアニメートする
+settings_right_grayscaled_table_icons=グレースケールテーブルのアイコンとフォーカスのみの色をもたらす
 
-settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
-settings_leftmenu_section_hide_unused_modules=Hide un-used modules section
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=非表示の更新モジュールのリンク 
+settings_leftmenu_section_hide_unused_modules=非表示使用されていないモジュールセクション 
+settings_favorites = [お気に入りの表示] ボタン 
+settings_leftmenu_button_language=表示言語ボタン 
+settings_leftmenu_button_refresh=[更新の表示] ボタン
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=[テーマの設定を表示] ボタン
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_hotkeys_active=ホットキーの使用を有効にする
+settings_hotkey_toggle_modifier=ホットキー修飾子
+settings_hotkey_toggle_key_webmin=Webmin のホットキー
+settings_hotkey_toggle_key_virtualmin=でのホットキー
+settings_hotkey_toggle_key_cloudmin=Cloudmin のホットキー
+settings_hotkey_toggle_key_usermin=Usermin のホットキー
+settings_hotkey_toggle_key_webmail=メールのホットキー
+settings_hotkey_sysinfo=ダッシュボードのホットキー
+settings_hotkey_shell=ターミナル用ホットキー
+settings_hotkey_favorites=お気に入りのホットキー
+settings_hotkey_focus_search=検索フィールドのホットキー
+settings_hotkey_reload=ページのリロードのためのホットキー
 
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
-settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show dashboard link as button
+settings_sysinfo_easypie_charts=グラフの表示
+settings_sysinfo_theme_updates=本物のテーマの更新をチェック
+settings_sysinfo_csf_updates=ConfigServer のセキュリティとファイアウォールの更新を確認する
+settings_sysinfo_drive_status_on_new_line=新しい行に CPU とドライブのステータスを表示する
+settings_sysinfo_expand_all_accordions=すべてのアコーディオンを拡張
+settings_sysinfo_link_mini=ダッシュボードリンクをボタンとして表示
 
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
+settings_right_page_defaults_title=既定のページ
+settings_right_default_tab_webmin=webmin にログインした後のデフォルトタブ
+settings_right_default_tab_usermin=Usermin にログインした後のデフォルトのタブ
+settings_right_virtualmin_default=Usermin にログインした後のデフォルトのタブ
+settings_right_cloudmin_default=Cloudmin の既定のページ
 
-settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Side slider options
-settings_side_slider_fixed=Keep always visible
-settings_side_slider_palette=Slider palette
-settings_hotkey_toggle_slider=Hotkey for slider
+settings_right_clear_local_cache=キャッシュのクリア
+settings_right_notification_slider_options_title=サイドスライダオプション
+settings_side_slider_fixed=常に表示しておく
+settings_side_slider_palette=スライダパレット
+settings_hotkey_toggle_slider=スライダのホットキー
 
-settings_side_slider_enabled=Enable slider
-settings_leftmenu_user_html=Show HTML snippet
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
+settings_side_slider_enabled=スライダを有効にする
+settings_leftmenu_user_html=HTML スニペットの表示
+settings_leftmenu_user_html_description= ユーザー定義のテキストまたは HTML コードは、ナビゲーションメニューの下部に挿入されます。これは、識別の目的で使用することができます。たとえば、ホスト名を明示的に表示するには、フィールドに追加します。<code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
 
 
-theme_changelog=Changelog
-theme_conference=Theme Conference
-theme_development_support=Development Support
-theme_donate=Donate
-theme_download=Download
-theme_name=Authentic Theme
-theme_update=Update
-theme_update_available=Latest available release
-theme_update_notice=Update Notice
-theme_version=Theme version
+theme_changelog=変更ログ
+theme_conference=テーマ会議
+theme_development_support=開発支援
+theme_donate=寄付
+theme_download=ダウンロード
+theme_name=本格的なテーマ
+theme_update=更新
+theme_update_available=利用可能な最新リリース
+theme_update_notice=更新通知
+theme_version=テーマバージョン
 
 
 # Version 17.40
