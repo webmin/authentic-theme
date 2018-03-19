@@ -213,15 +213,15 @@ theme_version=テーマバージョン
 
 
 # Version 17.40
-theme_global_error=Error
-theme_global_warning=Warning
-theme_global_success=Success
-theme_global_info=Information
-sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
-settings_leftmenu_user_html_only_for_administrator=Show HTML snippet for administrators only
-theme_sysinfo_wmdocs=Webmin documentation
-theme_sysinfo_vmdocs=Virtualmin documentation
-theme_sysinfo_cmdocs=Cloudmin documentation
+theme_global_error=エラー
+theme_global_warning=警告
+theme_global_success=成功
+theme_global_info=情報
+sysinfo_system_status_warning=[<strong>システム情報</strong>] が表示されるようにするには、[ユーザー設定] で [<em>システムステータス</em>] モジュールを有効にする必要があります。
+settings_leftmenu_user_html_only_for_administrator=管理者のみの HTML スニペットを表示する
+theme_sysinfo_wmdocs=Webmin ドキュメント
+theme_sysinfo_vmdocs=Virtualmin ドキュメント
+theme_sysinfo_cmdocs=Cloudmin ドキュメント
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
@@ -229,98 +229,98 @@ theme_fileformat_plain_text=Plain Text
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
-theme_xhred_titles_dashboard=Dashboard
+theme_xhred_titles_dashboard=ダッシュボード
 theme_xhred_titles_mail=Mail
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Please wait...
-theme_xhred_filemanager_copying_selected=Copying selected.
-theme_xhred_filemanager_cutting_selected=Cutting selected.
-theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
-theme_xhred_filemanager_unpacking_archive=Unpacking selected file(s).
-theme_xhred_filemanager_deleting_selected=Deleting selected.
-theme_xhred_filemanager_renaming_selected=Renaming selected.
-theme_xhred_filemanager_creating_directory=Creating directory
-theme_xhred_filemanager_creating_file=Creating file
-theme_xhred_filemanager_downloading_from=Downloading from
-theme_xhred_filemanager_setting_permissions=Setting permissions to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_changing_ownership=Changing ownership to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_compressing_selected=Compressing selected in the background.
-theme_xhred_filemanager_refreshing=Refreshing directory content.
-theme_xhred_filemanager_copying_successful=Copy to clipboard successful.
-theme_xhred_filemanager_cutting_successful=Cut to clipboard successful.
-theme_xhred_filemanager_pasting_successful=Paste from clipboard was successful.
-theme_xhred_filemanager_bookmark_success=Directory <strong><em>%value</em></strong> was successfully added to your bookmarks.
-theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
-theme_xhred_filemanager_search_founds=Found <strong>%value</strong> matches.
-theme_xhred_filemanager_search_found=Found <strong>1</strong> match.
-theme_xhred_filemanager_search_no_matches=No matches found.
-theme_xhred_filemanager_nothing_is_selected=Nothing is selected!
-theme_xhred_filemanager_saving_file=File `<strong><em>%value</em></strong>` is being saved.
-theme_xhred_filemanager_file_saved=File `<strong><em>%value</em></strong>` has been successfully saved.
-theme_xhred_filemanager_not_editable=Can not edit this type of selection.
-theme_xhred_filemanager_not_decompressable=Can not decompress this type of file.
-theme_xhred_filemanager_no_selection_to_copy=No directories/files selected to copy.
-theme_xhred_filemanager_no_selection_to_cut=No directories/files selected to cut.
-theme_xhred_filemanager_empty_clipboard=Clipboard is empty.
+theme_xhred_global_please_wait=お待ちください...
+theme_xhred_filemanager_copying_selected=コピーが選択されました。
+theme_xhred_filemanager_cutting_selected=カットが選択されました。
+theme_xhred_filemanager_pasting_selected=クリップボードから貼り付けます。
+theme_xhred_filemanager_unpacking_archive=選択したファイルを展開しています。
+theme_xhred_filemanager_deleting_selected=選択を削除します。
+theme_xhred_filemanager_renaming_selected=選択した名前の変更。
+theme_xhred_filemanager_creating_directory=ディレクトリの作成
+theme_xhred_filemanager_creating_file=ファイルの作成
+theme_xhred_filemanager_downloading_from=からのダウンロード
+theme_xhred_filemanager_setting_permissions=選択したファイルの<strong><em>%value</em></strong>へのアクセス許可を設定しています。
+theme_xhred_filemanager_changing_ownership=選択したファイルの所有権を<strong><em>%value </em></strong>に変更しています。
+theme_xhred_filemanager_compressing_selected=バックグラウンドで選択された圧縮。
+theme_xhred_filemanager_refreshing=ディレクトリの内容を更新する。
+theme_xhred_filemanager_copying_successful=クリップボードにコピーに成功しました。
+theme_xhred_filemanager_cutting_successful=クリップボードへの切り取りが成功しました。
+theme_xhred_filemanager_pasting_successful=クリップボードから貼り付けが成功しました。
+theme_xhred_filemanager_bookmark_success=ディレクトリ<strong><em>%value </em></strong>がブックマークに正常に追加されました。
+theme_xhred_filemanager_searching= ファイル/ディレクトリの名前に一致する<em>'%value'</em>を検索しています。
+theme_xhred_filemanager_search_founds=<strong>%value</strong>が一致しました。
+theme_xhred_filemanager_search_found=<strong>1</strong>つ一致するものが見つかりました。
+theme_xhred_filemanager_search_no_matches=一致するものが見つかりません。
+theme_xhred_filemanager_nothing_is_selected=何も選択されていない!
+theme_xhred_filemanager_saving_file= ファイル '<strong><em>%value</em></strong>' が保存されています。
+theme_xhred_filemanager_file_saved= ファイル '<strong><em>%value</em></strong>' は正常に保存されました。
+theme_xhred_filemanager_not_editable=この種類の選択を編集することはできません。
+theme_xhred_filemanager_not_decompressable=このタイプのファイルを解凍することはできません。
+theme_xhred_filemanager_no_selection_to_copy=コピーするディレクトリ/ファイルが選択されていません。
+theme_xhred_filemanager_no_selection_to_cut=カットするディレクトリ/ファイルが選択されていません。
+theme_xhred_filemanager_empty_clipboard=クリップボードは空です。
 
-theme_xhred_filemanager_successful_extraction=Extraction of selected file(s) was successful.
-theme_xhred_filemanager_successful_deletion=Deletion was successful.
-theme_xhred_filemanager_successful_permissions=Permissions have been changed successfully.
-theme_xhred_filemanager_successful_ownership=Ownership has been changed successfully.
-theme_xhred_filemanager_successful_compression=Compression has successfully finished.
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
-theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
+theme_xhred_filemanager_successful_extraction=選択したファイルの抽出に成功しました。
+theme_xhred_filemanager_successful_deletion=削除に成功しました。
+theme_xhred_filemanager_successful_permissions=アクセス許可が正常に変更されました。
+theme_xhred_filemanager_successful_ownership=アクセス許可が正常に変更されました。
+theme_xhred_filemanager_successful_compression=圧縮は正常に終了しました。
+theme_xhred_filemanager_successful_directory_creation=ディレクトリ '<strong>%value</strong>' が正常に作成されました。
+theme_xhred_filemanager_successful_file_creation=ファイル '<strong>%value</strong>' が正常に作成されました。
 
-theme_xhred_notifications_packages_updates=Packages Update
-theme_xhred_notifications_theme_update=Theme Update
-theme_xhred_notifications_theme_update_message=A new version <em>%v</em> of <strong>Authentic Theme</strong> is available. Please update.
-theme_xhred_notifications_firewall_update=Firewall Update
-theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+theme_xhred_notifications_packages_updates=パッケージの更新
+theme_xhred_notifications_theme_update=テーマの更新
+theme_xhred_notifications_theme_update_message=<strong>Authentic Theme </strong>の新しいバージョン<em>%v</em>が利用可能です。更新してください。
+theme_xhred_notifications_firewall_update=ファイアウォールの更新
+theme_xhred_notifications_firewall_update_message=<strong>ConfigServer サーバーセキュリティとファイアウォール</strong>の新しいバージョン<em>%v</em>が利用可能です。更新してください。
 
-theme_xhred_notifications_firewall_danger=Firewall Danger
-theme_xhred_notifications_firewall_danger_message=It appears that <strong>ConfigServer Server Security and Firewall</strong> is <span class="badge badge-danger">not running</span> or has been stopped! Don't leave your server exposed, check for the firewall settings (%v)
+theme_xhred_notifications_firewall_danger=ファイアウォールの危険性
+theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer サーバーのセキュリティとファイアウォール</strong>が実行されて<span class="badge badge-danger">いない</span>か、または停止していることが表示されます。サーバーを公開したままにしないで、ファイアウォールの設定を確認してください(%v)
 
-theme_xhred_notifications_firewall_warning=Firewall Warning
+theme_xhred_notifications_firewall_warning=ファイアウォールの警告
 
 #17.50
-settings_grayscale_level_navigation=Grayscale filter
-settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
-settings_sepia_level_navigation=Sepia filter
-settings_sepia_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Saturate filter
-settings_saturate_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
-settings_hue_level_navigation=Hue-rotate filter
-settings_hue_level_navigation_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
-settings_invert_level_navigation=Invert filter
-settings_invert_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
-settings_brightness_level_navigation=Brightness filter
-settings_brightness_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
-settings_contrast_level_navigation=Contrast filter
-settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+settings_grayscale_level_navigation=グレースケールフィルタ
+settings_grayscale_level_navigation_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=セピアフィルター
+settings_sepia_level_navigation_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturate_level_navigation=飽和フィルタ
+settings_saturate_level_navigation_description=デフォルト/電流値 <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_hue_level_navigation=色相-フィルタを回転させる
+settings_hue_level_navigation_description=デフォルト/電流値 <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_invert_level_navigation=反転フィルタ
+settings_invert_level_navigation_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=輝度フィルタ
+settings_brightness_level_navigation_description=デフォルト/電流値 <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=コントラストフィルタ
+settings_contrast_level_navigation_description=Defdqmault/電流値 <code>1</code> /<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_grayscale_level_content=Grayscale filter
-settings_grayscale_level_content_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
-settings_saturate_level_content=Saturate filter
-settings_saturate_level_content_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
-settings_hue_level_content=Hue-rotate filter
-settings_hue_level_content_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
+settings_grayscale_level_content=グレースケールフィルタ
+settings_grayscale_level_content_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
+settings_saturate_level_content=飽和フィルタ
+settings_saturate_level_content_description=デフォルト/電流値 <code>1</code> /<code data-name="settings_saturate_level_content">0</code>
+settings_hue_level_content=色相-フィルタを回転させる
+settings_hue_level_content_description=デフォルト/電流値<code>0</code>°/ <code data-name="settings_hue_level_content">0</code> °
 
-settings_cm_view_palette=Viewer color palette
-settings_cm_editor_palette=Editor color palette
+settings_cm_view_palette=ビューアーのカラーパレット
+settings_cm_editor_palette=エディタのカラーパレット
 
-theme_xhred_filemanager_context_select_all=Select All
-theme_xhred_filemanager_context_select_invert=Invert Selection
-theme_xhred_filemanager_context_refresh=Refresh
-theme_xhred_filemanager_context_newfile=Create new file
-theme_xhred_filemanager_context_newfoder=Create new directory
-theme_xhred_filemanager_context_copy=Copy
-theme_xhred_filemanager_context_cut=Cut
-theme_xhred_filemanager_context_paste=Paste
-theme_xhred_filemanager_context_chmod=Change permissions
-theme_xhred_filemanager_context_chown=Change ownership
+theme_xhred_filemanager_context_select_all=すべて選択
+theme_xhred_filemanager_context_select_invert=選択の反転
+theme_xhred_filemanager_context_refresh=更新
+theme_xhred_filemanager_context_newfile= 新しいファイルの作成
+theme_xhred_filemanager_context_newfoder=新しいディレクトリの作成
+theme_xhred_filemanager_context_copy=コピー
+theme_xhred_filemanager_context_cut=カット
+theme_xhred_filemanager_context_paste=ペースト
+theme_xhred_filemanager_context_chmod=アクセス許可の変更
+theme_xhred_filemanager_context_chown=所有権の変更
 
 #17.51
 theme_xhred_filemanager_context_new=New
