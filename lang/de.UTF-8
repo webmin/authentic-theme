@@ -334,7 +334,7 @@ theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 theme_settings_virtualmin=Virtualmin virtuelle Server
 theme_settings_cloudmin=Cloudmin gemanagte System
 settings_right_thirdparties_options_title=Optionen f&uuml;r Drittanbieter Module
-theme_xhred_filemanager_context_calculate_size=Freien Platz im Leerraum berechnen
+theme_xhred_filemanager_context_calculate_size=Freien Platz berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
 theme_xhred_filemanager_context_bookmark_current=Pfad zum aktuell ge&ouml;ffneten Lesezeichen
 theme_xhred_filemanager_context_transfer=&Uuml;bertragung
@@ -380,7 +380,7 @@ right_return_theme_options=Design Optionen
 theme_xhred_datatable_semptydirectory=Verzeichnis ist leer
 theme_xhred_filemanager_context_clipboard=Pfad in Zwischeablage kopieren
 theme_xhred_global_warning=Warnung
-theme_xhred_global_close=Schlie&szligen
+theme_xhred_global_close=Schlie&szlig;en
 theme_xhred_encoding_warning=Es wurde ein nicht Unicode kompatibler Zeichensatz erkannt. Dies kann zu Darstellungsfehlern f&uuml;hren z.B. zu ungew&ouml;hlichen Zeichen wie <tt>Â</tt>. <br><br>&auml;ndern Sie die Sprache in den <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Einstellungen</strong></a> auf <code>%lang.UTF-8</code>. <span class="_hidden_"><br><br>Beachten Sie das die Einstellungen im <em>Webmin</em> Modul  <em>Sprache und Design</em> die Standard Einstellungen &uuml;berschreiben.</span>
 
 theme_xhred_filemanager__no_bookmarks=Keine Lesezeichen vorhanden
@@ -404,7 +404,7 @@ theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h
 
 theme_xhred_filemanager_hide_toolbar=Toolbar verbergen
 theme_xhred_filemanager_hide_actions=Aktivit&auml;ten Zeile verbergen
-theme_xhred_filemanager_hovered_toolbar=Auswahlliste in der Toolbar beim &uuml;berfahren mit der Maus anzeigen
+theme_xhred_filemanager_hovered_toolbar=Auswahlliste in der Toolbar beim &Uuml;berfahren mit der Maus anzeigen
 theme_xhred_filemanager_context_delete_selected=Ausgew&auml;hlte l&ouml;schen
 
 #17.83
@@ -711,7 +711,7 @@ theme_xhred_global_minutes=Minuten
 
 
 #19.01
-theme_xhred_browser_warning=F&uuml;r die beste Unterst&uuml;tzung des Server Panels auf deinem Computer verwende einen aktuellen, unterst&uuml;tzen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterst&uuml;tzt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
+theme_xhred_browser_warning=F&uuml;r die beste Unterst&uuml;tzung des Server Panels auf deinem Computer verwende einen aktuellen, unterst&uuml;tzen Browser.<br><br><em>Internet Explorer</em> wird nicht mehr unterst&uuml;tzt.<br><br>Empfohlene Browser: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Alternativ kannst Du auch eine portable Version einer der genannten Browsers herunterladen.</div>
 
 
 #19.02
@@ -791,14 +791,14 @@ theme_xhred_title_locale_short=Kurzes Format
 settings_navigation_always_collapse=Men&uuml; immer eingeklappt
 settings_side_slider_fixed_description=Diese Einstellung ist nur auf SXGA+ Bildschirmen mit einer Aufl&ouml;sung von mehr als 1400 horizontalen Bildpunken und nicht eingeschalteter Einstellung "Men&uuml; immer eingeklappt" ausw&auml;hlbar.
 theme_xhred_filemanager_records_per_page=Standard Einstellung f&uuml;r anzuzeigende Zeilen pro Seite
-theme_xhred_filemanager_sorting=Default sorting type
-theme_xhred_filemanager_sorting_asc=Ascending
-theme_xhred_filemanager_sorting_desc=Descending
+theme_xhred_filemanager_sorting=Standardm&auml;&szlig;ig sortieren nach Typ
+theme_xhred_filemanager_sorting_asc=Aufsteigend
+theme_xhred_filemanager_sorting_desc=Absteigend
 theme_xhred_filemanager_sorting_by_name=Name
-theme_xhred_filemanager_sorting_by_type=Type
-theme_xhred_filemanager_sorting_by_size=Size
-theme_xhred_filemanager_sorting_by_ownership=Ownership
-theme_xhred_filemanager_sorting_by_permissions=Permissions
-theme_xhred_filemanager_sorting_by_attributes=Attributes
-theme_xhred_filemanager_sorting_by_selinux=Security context
-theme_xhred_filemanager_sorting_by_last_mod_time=Last modification time
+theme_xhred_filemanager_sorting_by_type=Typ
+theme_xhred_filemanager_sorting_by_size=Gr&ouml;&szlig;e
+theme_xhred_filemanager_sorting_by_ownership=Besitzer
+theme_xhred_filemanager_sorting_by_permissions=Berechtigungen
+theme_xhred_filemanager_sorting_by_attributes=Attribute
+theme_xhred_filemanager_sorting_by_selinux=Security Kontext
+theme_xhred_filemanager_sorting_by_last_mod_time=Letzte &Auml;nderung
