@@ -422,207 +422,207 @@ theme_xhred_database_editing_rows= 選択した行の編集
 theme_xhred_database_adding_new_row_data= データを設定する
 
 #17.84
-theme_xhred_datatable_filter=Filter
+theme_xhred_datatable_filter= フィルタ
 
-theme_xhred_global_update=Update
-theme_xhred_global_update_and_return=Update and return
-theme_xhred_global_update_and_close=Update and close
-theme_xhred_global_back=Back
-theme_xhred_global_cancel=Cancel
+theme_xhred_global_update= 更新
+theme_xhred_global_update_and_return= 更新と返却
+theme_xhred_global_update_and_close= 更新と終了
+theme_xhred_global_back= バック
+theme_xhred_global_cancel= キャンセル
 
-theme_xhred_database_add_row_successful=New row was successfully added
-theme_xhred_database_edit_row_successful=Selected row was successfully updated
-theme_xhred_database_edit_rows_successful=Selected rows were successfully updated
-theme_xhred_database_edit_row_delete_successful=Selected row was successfully deleted
-theme_xhred_database_edit_rows_delete_successful=Successfully deleted <em>%n</em> selected rows
-theme_xhred_database_edit_field_delete_successful=Selected field was successfully deleted
-theme_xhred_database_edit_fields_delete_successful=Successfully deleted <em>%n</em> selected fields
-theme_xhred_database_edit_selected_row=Edit selected row
-theme_xhred_database_edit_selected_rows=Edit selected rows
-theme_xhred_database_add_new_row=Add row
-theme_xhred_database_delete_selected_row=Delete selected row
-theme_xhred_database_delete_selected_rows=Delete selected rows
-theme_xhred_database_delete_selected_field=Delete selected field
-theme_xhred_database_delete_selected_fields=Delete selected fields
-theme_xhred_database_object_selected_delete=Delete selected object
-theme_xhred_database_objects_selected_delete=Delete selected objects
-theme_xhred_database_db_selected_drop=Drop selected database
-theme_xhred_database_dbs_selected_drop=Drop selected databases
-theme_xhred_database_edit_but_not_saved=Table data has been edited but not saved.
+theme_xhred_database_add_row_successful= 新しい行が正常に追加されました
+theme_xhred_database_edit_row_successful= 選択した行が正常に更新されました
+theme_xhred_database_edit_rows_successful= 選択した行が正常に更新されました
+theme_xhred_database_edit_row_delete_successful= 選択した行が正常に削除されました
+theme_xhred_database_edit_rows_delete_successful= 選択した行を<em>%n</em>削除しました
+theme_xhred_database_edit_field_delete_successful= 選択したフィールドは正常に削除されました
+theme_xhred_database_edit_fields_delete_successful= 選択したフィールドを<em>%n</em>削除しました
+theme_xhred_database_edit_selected_row= 選択した行を編集する
+theme_xhred_database_edit_selected_rows= 選択した行を編集する
+theme_xhred_database_add_new_row= 行を追加する
+theme_xhred_database_delete_selected_row= 選択した行を削除する
+theme_xhred_database_delete_selected_rows= 選択した行を削除する
+theme_xhred_database_delete_selected_field= 選択したフィールドを削除
+theme_xhred_database_delete_selected_fields= 選択したフィールドを削除する
+theme_xhred_database_object_selected_delete= 選択したオブジェクトを削除する
+theme_xhred_database_objects_selected_delete= 選択したオブジェクトを削除する
+theme_xhred_database_db_selected_drop= 選択したデータベースを削除
+theme_xhred_database_dbs_selected_drop= 選択したデータベースを削除する
+theme_xhred_database_edit_but_not_saved= テーブルデータは編集されましたが保存されませんでした。
 
-theme_xhred_global_no_such_command=It appears that <tt>%cmd</tt> executable is not installed or not in the path on your system.
+theme_xhred_global_no_such_command= 実行可能ファイル<tt>%cmd </ tt>がインストールされていないか、システムのパスに存在しないようです。
 
-theme_xhred_global_notice=Notice
-
-theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
+theme_xhred_global_notice= 通知
+# Authentic Theme
+theme_xhred_updates_disabled_notice= <em>Authentic Theme</em>の更新に関する通知を有効にしていないことが検出されましたか？ <br> <br> <a href="%link" class="label label-default"> <strong> <i class = "fa fa-cogs"> </i>テーマ設定</ strong>でこの機能を有効にする> </a>をクリックすると、すぐにワンクリックで最新バージョンにアップデートするのに役立ちます。
 
 
 #18.00
-theme_xhred_global_file=File
-theme_xhred_global_directory=Directory
-theme_xhred_global_no_target=Target doesn't exist or not accessible
-theme_xhred_global_error_code=Error code
-theme_xhred_global_on=On
-theme_xhred_global_off=Off
-theme_xhred_global_all=All
-theme_xhred_global_none=None
-theme_xhred_global_yes=Yes
-theme_xhred_global_no=No
+theme_xhred_global_file= ファイル
+theme_xhred_global_directory= ディレクトリ
+theme_xhred_global_no_target= ターゲットが存在しないか、アクセスできない
+theme_xhred_global_error_code= エラーコード
+theme_xhred_global_on=オン
+theme_xhred_global_off=オフ
+theme_xhred_global_all= すべて
+theme_xhred_global_none= なし
+theme_xhred_global_yes= はい
+theme_xhred_global_no= いいえ
 
-theme_xhred_filemanager_new_tab=Add new tab (Ctrl+Space)
-theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
+theme_xhred_filemanager_new_tab= 新しいタブを追加 (Ctrl+Space)
+theme_xhred_datatable_no_search_results= <span class ="h5">結果が見つかりませんでした。</span><br>別の検索を試してください
 
-theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
+theme_xhred_filemanager_buffer_error= ファイルをバッファに貼り付けることができませんでした - 許可が拒否されました。
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Can't create $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - permission denied.
+filemanager_create_object_exists= <strong><tt>$2</tt></strong>に既に$ 3<strong> <em>$1</em>
+filemanager_create_object_denied= `<strong><tt>$2</tt></ strong>`で$3`<strong><em>$1</em></strong>`を作成できません。
 
-filemanager_paste_warning=Failed to paste target(s). It is possible that requested object(s) could have been <em>renamed, moved</em> or <em>deleted</em> while/before pasting. Another possible cause is that destination is not writable.  It is worth checking objects' attributes.
+filemanager_paste_warning= ターゲットを貼り付けることができませんでした。貼り付けの前/中に要求されたオブジェクトが<em>名前変更、移動</em>、または<em>削除</em>されている可能性があります。別の考えられる原因は、宛先が書き込み可能でないことです。オブジェクトの属性をチェックする価値があります。
 
-theme_xhred_filemanager_delete_warning=Deletion has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before deletion. Restricted permissions (attributes) is another possible cause.  Error message:
+theme_xhred_filemanager_delete_warning= 削除は正常に終了しましたが、すべてのオブジェクトに対して正常に終了しませんでした。削除する前に、要求されたオブジェクトを<em>名前を変更</em>または<em>移動</em>できた可能性があります。制限されたアクセス許可（属性）は別の考えられる原因です。エラーメッセージ:
 
 
-filemanager_rename_exists=$3 with name `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
-filemanager_rename_denied=Can not rename the $3. This might happen because the source $3 has been removed or due to restricted permissions.
+filemanager_rename_exists= <strong> <em>$1</em></strong>という名前の$3は既に<strong><tt>$2</tt>
+filemanager_rename_denied=$3の名前を変更できません。これは、ソース$3が削除されているか、アクセス権が制限されているために発生する可能性があります。
 
-theme_xhred_filemanager_successful_rename=Renaming `<strong><em><s>%from</s></em></strong>` to `<strong><em>%to</em></strong>` was successful.
+theme_xhred_filemanager_successful_rename= '<strong><em><s>%from ' から</s></em></strong>'<strong><em>%to</em></strong>' への名前変更は成功しました。
 
-filemanager_global_info_total1=Total: $1 file and $2 directory
-filemanager_global_info_total2=Total: $1 files and $2 directory
-filemanager_global_info_total3=Total: $1 file and $2 directories
-filemanager_global_info_total4=Total: $1 files and $2 directories
+filemanager_global_info_total1= 合計:$1ファイルと$2ディレクトリ
+filemanager_global_info_total2= 合計:$1ファイルと$2ディレクトリ
+filemanager_global_info_total3= 合計:$1ファイルと$2ディレクトリ
+filemanager_global_info_total4= 合計:$1ファイルと$2ディレクトリ
 
-theme_xhred_filemanager_selected_entry=Selected: %value entry
+theme_xhred_filemanager_selected_entry= 選択:%value入力
 
-theme_xhred_filemanager_search_query=Query mask
-theme_xhred_filemanager_search_match=Find in results
-theme_xhred_filemanager_search_replace=Replace in results
+theme_xhred_filemanager_search_query= クエリマスク
+theme_xhred_filemanager_search_match= 結果内の検索
+theme_xhred_filemanager_search_replace= 結果の置換
 
-theme_xhred_global_find=Find
-theme_xhred_global_replace=Replace
+theme_xhred_global_find= 検索
+theme_xhred_global_replace= 置換
 
-theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
-theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
+theme_xhred_filemanager_searching_matching= <em>`%text`</ em>テキストを含むファイル/ディレクトリの名前と一致する<em>`%value`</em>を検索します。
+theme_xhred_filemanager_searching_replacing= <em>`%value`</em>を含む名前のファイルで<em>`％text`</em>を<em>`%replace`</em>に置き換えます。
 
-theme_xhred_filemanager_search_replaced_multi=Found and replaced in <strong>%value</strong> files.
-theme_xhred_filemanager_search_replaced=Found and replaced in <strong>1</strong> file.
+theme_xhred_filemanager_search_replaced_multi= 検索され、<strong>%value</strong>ファイルに置き換えられました。
+theme_xhred_filemanager_search_replaced= 見つけられ、<strong>1</strong>ファイルに置き換えられました。
 
-theme_xhred_filemanager_successful_permissions_with_errors=Permissions have been changed successfully but not for all objects:
+theme_xhred_filemanager_successful_permissions_with_errors= パーミッションは正常に変更されましたが、すべてのオブジェクトに対して変更されていません:
 
-theme_xhred_filemanager_successful_ownership_with_errors=Ownership has not been changed successfully for all objects:
-theme_xhred_filemanager_successful_ownership_with_errors_fatal=Ownership can't be changed due to following errors:
+theme_xhred_filemanager_successful_ownership_with_errors= 所有権は、すべてのオブジェクトに対して正常に変更されていません。:
+theme_xhred_filemanager_successful_ownership_with_errors_fatal= 所有権は、以下のエラーのために変更することはできません。:
 
-theme_xhred_filemanager_successful_compression_with_errors=Compression has finished with the following errors:
-theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <strong>`%file</strong> is located in <strong>`%path`</strong> directory.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <strong>`%file</strong> should be located in <strong>`%path`</strong> directory.
+theme_xhred_filemanager_successful_compression_with_errors= 圧縮は次のエラーで終了しました:
+theme_xhred_filemanager_successful_compression_bg= 圧縮は正常に終了しました。圧縮ファイル<strong> `%file </strong>は、<strong>`%path` </strong>ディレクトリにあります。
+theme_xhred_filemanager_successful_compression_bg_with_errors= 圧縮は正常に終了しました。圧縮ファイル<strong> `%file </strong>は、<strong>`%path` </strong>ディレクトリにあります。
 
-theme_xhred_filemanager_settings_notification_type=Type of notifications to display
-theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informations, warnings and errors
-theme_xhred_filemanager_settings_notification_type_warn_err=Warnings and errors
-theme_xhred_filemanager_settings_notification_type_err=Errors only
+theme_xhred_filemanager_settings_notification_type= 表示する通知のタイプ
+theme_xhred_filemanager_settings_notification_type_inf_warn_err= 情報、警告、エラー
+theme_xhred_filemanager_settings_notification_type_warn_err= 警告とエラー
+theme_xhred_filemanager_settings_notification_type_err= エラーのみ
 
-theme_xhred_filemanager_settings_tabs_remember_state=Restore previously used tabs on first load
-theme_xhred_filemanager_context_open_new_tab=Open in new tab
+theme_xhred_filemanager_settings_tabs_remember_state= 最初の読み込み時に以前に使用されたタブを復元する
+theme_xhred_filemanager_context_open_new_tab= 新しいタブで開く
 
-theme_xhred_xsql_fit_content_screen_height=Fit database table content in screen height
+theme_xhred_xsql_fit_content_screen_height= 画面の高さに合わせてデータベーステーブルの内容を合わせる
 
-theme_xhred_datatable_filter_visible_tables=Filter Visible Table(s)
-theme_xhred_module_help=Module help
+theme_xhred_datatable_filter_visible_tables= フィルタ可視表
+theme_xhred_module_help= モジュールヘルプ
 
-theme_xhred_server_process_running=Server process is still running!? Are you sure that you want to navigate away and have no access to output information? Even if you leave now the process will not be terminated.
+theme_xhred_server_process_running= サーバープロセスはまだ実行中です！移動して情報を出力する権限がないと確信していますか？今すぐ出てもプロセスは終了しません。
 
 
 #18.03
-settings_global_options_title=Global options
-settings_global_passgen_format=Password generator
-settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>12|a-z,A-Z,0-9,#</code>, which represents password with 12 characters in length, containing upper and lower case letters, numbers and special characters. First value is numerical, which is the length of the password, immediately followed by <code>|</code> as a delimiter. Next is the type, where you can use numbers <code>0-9</code>, letters <code>a-z</code> and/or <code>A-Z</code>, and special characters <code>#</code>. All of these sets can be used together or individually, using comma as a delimiter.
-theme_xhred_password_generator_new=Generate New Password<br> (To Clipboard)
-theme_xhred_password_generator_new_success=Generated password %password has been copied to clipboard successfully.
+settings_global_options_title= グローバルオプション
+settings_global_passgen_format= パスワードジェネレータ
+settings_global_passgen_format_description=生成されたパスワードに使用されている長さと文字タイプを設定します。デフォルト値は、大文字と小文字、数字、特殊文字を含む12文字のパスワードを表す<code>12|a-z、A-Z、0-9、＃</code>と同じです。最初の値は数値です。これはパスワードの長さで、区切り文字としてすぐに<code>|</code>が続きます。次に<code>0-9 </code>、<code>az</code>や/または<code>AZ</code>という数字と<code>＃</code>これらのセットは、コンマを区切り文字として使用して、一緒に使用することも個別に使用することもできます。
+theme_xhred_password_generator_new= 新しいパスワードを生成<br>(クリップボードに)
+theme_xhred_password_generator_new_success= 生成されたパスワード%passwordがクリップボードに正常にコピーされました。
 
 
 #18.08
 theme_fileformat_perl=Perl
-theme_fileformat_perl_placeholder=This file must end with `1;` to work successfully.
+theme_fileformat_perl_placeholder= このファイルは正常に動作するには `1;`で終わらなければなりません。
 
 
 #18.10
-theme_error_access_not_root=Access denied: User needs access to the <em>Webmin Configuration</em> module to edit theme configuration
+theme_error_access_not_root= アクセスが拒否されました:テーマ設定を編集するには、<em> Webmin Configuration </em>モジュールにアクセスする必要があります
 
 
 #18.20
-settings_hide_top_loader=Hide top progress bar
+settings_hide_top_loader= 上部の進行状況バーを非表示にする
 
 
 #18.30
-settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
-settings_font_family=Font family
-settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your local computer in order to work. By using local fonts, the default one is not loaded, which will result in faster theme load
-theme_xhred_global_shipped=Shipped
-theme_xhred_global_available=Available
-theme_xhred_global_not_available=Not available
-theme_xhred_global_default=Default
-theme_xhred_global_system_default=System default
-theme_xhred_global_local_system_default=Local system default
-theme_xhred_global_stats=Stats
-theme_xhred_global_notifications=Notifications
-theme_xhred_global_favorites=Favorites
-theme_xhred_global_cpu_load=CPU load
-theme_xhred_notification_none=No notifications
-theme_xhred_notification_no_data=No collected data
-theme_xhred_notification_no_favorites=No favorites data
-theme_xhred_global_theme_version=Theme version
+settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
+settings_font_family= フォントファミリー
+settings_font_family_description= 提示されたすべてのフォントの中で、<em>Roboto</em>はテーマとともに出荷され、デフォルトとして設定されています。他のフォントは、動作させるためにローカルコンピュータにインストールする必要があります。ローカルフォントを使用すると、デフォルトのフォントが読み込まれないため、テーマの読み込み速度が向上します
+theme_xhred_global_shipped= 出荷された
+theme_xhred_global_available= 利用可能
+theme_xhred_global_not_available= 利用不可
+theme_xhred_global_default= デフォルト
+theme_xhred_global_system_default= システムのデフォルト
+theme_xhred_global_local_system_default= ローカルシステムのデフォルト
+theme_xhred_global_stats= 統計
+theme_xhred_global_notifications= 通知
+theme_xhred_global_favorites= お気に入り
+theme_xhred_global_cpu_load= CPU負荷
+theme_xhred_notification_none= 通知なし
+theme_xhred_notification_no_data= 収集されたデータなし
+theme_xhred_notification_no_favorites= お気に入りのデータがありません
+theme_xhred_global_theme_version= テーマバージョン
 
-settings_side_slider_sysinfo_enabled=Show dashboard tab
-settings_side_slider_notifications_enabled=Show notifications tab
-settings_side_slider_favorites_enabled=Show favorites tab
-settings_show_terminal_link=Show terminal button
+settings_side_slider_sysinfo_enabled= ダッシュボードタブを表示する
+settings_side_slider_notifications_enabled= 通知タブを表示
+settings_side_slider_favorites_enabled= お気に入りタブを表示する
+settings_show_terminal_link= 端末の表示ボタン
 
-theme_xhred_sysinfo_system_monitors=System Monitors
-theme_xhred_sysinfo_server_status=Servers Status
-theme_xhred_sysinfo_software_versions=Software Versions
-theme_xhred_sysinfo_recent_logins=Recent Logins
-theme_xhred_sysinfo_vm_package_updates=Virtualmin Package Updates
-theme_xhred_sysinfo_disk_quotas=Disk Quotas
-theme_xhred_sysinfo_bandwidth_quotas=Bandwidth Quotas
+theme_xhred_sysinfo_system_monitors= システムモニタ
+theme_xhred_sysinfo_server_status= サーバーステータス
+theme_xhred_sysinfo_software_versions= ソフトウェアバージョン
+theme_xhred_sysinfo_recent_logins= 最近のログイン
+theme_xhred_sysinfo_vm_package_updates= Virtualminパッケージのアップデート
+theme_xhred_sysinfo_disk_quotas= ディスククォータ
+theme_xhred_sysinfo_bandwidth_quotas= 帯域幅の割り当て
 
-left_netdata=Realtime Monitoring
-settings_leftmenu_netdata=Show Netdata realtime monitoring link
-settings_leftmenu_netdata_link=Netdata server preferred link
+left_netdata= リアルタイム監視
+settings_leftmenu_netdata= Netdataリアルタイム監視リンクを表示する
+settings_leftmenu_netdata_link= Netdataサーバーの優先リンク
 
-theme_xhred_filemanager_context_chattr=Change attributes
-theme_xhred_filemanager_changing_attributes=Setting attributes to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_successful_attributes_with_errors=Attributes haven't been set successfully for all objects:
-theme_xhred_filemanager_successful_attributes=Attributes have been set successfully.
+theme_xhred_filemanager_context_chattr= 属性の変更
+theme_xhred_filemanager_changing_attributes= 選択したファイルの属性を<strong><em>%value</em></strong>に設定します。
+theme_xhred_filemanager_successful_attributes_with_errors= 属性がすべてのオブジェクトに対して正常に設定されていません:
+theme_xhred_filemanager_successful_attributes= 属性が正常に設定されました。
 
-theme_xhred_filemanager_context_chcon=Change security context
-theme_xhred_filemanager_changing_secontext=Changing security context to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
-theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
+theme_xhred_filemanager_context_chcon= セキュリティコンテキストを変更する
+theme_xhred_filemanager_changing_secontext= 選択したファイルのセキュリティコンテキストを<strong><em>%valie</em></strong>に変更します。
+theme_xhred_filemanager_successful_secontext_with_errors= セキュリティコンテキストは、すべてのオブジェクトに対して正常に変更されていません。:
+theme_xhred_filemanager_successful_secontext= セキュリティコンテキストが正常に変更されました。
 
-theme_xhred_global_no_results_found=No results found
+theme_xhred_global_no_results_found= 結果が見つかりません
 
 
 #18.40
-theme_new_password_header=Set new password for user
-login_reset=Password recovery
-theme_xhred_move_top=Move to top
-theme_xhred_move_bottom=Move to bottom
-theme_xhred_move_up=Move up
-theme_xhred_move_down=Move down
-theme_xhred_add_after=Add after
-theme_xhred_add_before=Add before
-settings_button_tooltip=Show tooltip on buttons
-settings_show_night_mode_link=Show palette toggle
-settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
-settings_title=Theme Configuration
-settings_subtitle=For user
+theme_new_password_header= ユーザーの新しいパスワードを設定する
+login_reset= パスワードの復元
+theme_xhred_move_top= 一番上に移動
+theme_xhred_move_bottom= 下に移動
+theme_xhred_move_up= 上がる
+theme_xhred_move_down= 下に移動
+theme_xhred_add_after= 後で追加する
+theme_xhred_add_before= 前に追加
+settings_button_tooltip= ボタンのツールチップを表示する
+settings_show_night_mode_link= パレットを表示する
+settings_hotkey_toggle_key_night_mode= ダーク/ライトパレットを切り替えるためのホットキー
+settings_title= テーマ構成
+settings_subtitle= ユーザーの場合
 
-theme_tooltip_night_mode=Day/night mode toggle
-theme_tooltip_terminal_link=Terminal
-theme_tooltip_language_link=Language
-theme_xhred_tooltip_switch_user=Switch user
-theme_tooltip_logout=Sign out
-theme_tooltip_edit_user=Edit user
+theme_tooltip_night_mode= 昼/夜モードの切り替え
+theme_tooltip_terminal_link= ターミナル
+theme_tooltip_language_link= 言語
+theme_xhred_tooltip_switch_user= ユーザーを切り替える
+theme_tooltip_logout= サインアウト
+theme_tooltip_edit_user= ユーザーを編集する
 
 
 #18.45
