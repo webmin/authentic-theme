@@ -380,46 +380,46 @@ theme_xhred_global_continue_editing= 編集を続ける
 theme_xhred_filemanager_context_download_file=ダウンロード
 
 #17.65
-settings_sysinfo_easypie_charts_width=Width of charts
-settings_sysinfo_easypie_charts_scale=Scale length of charts
+settings_sysinfo_easypie_charts_width= グラフの幅
+settings_sysinfo_easypie_charts_scale= グラフの長さのスケール
 
 #17.80
-right_return_theme_options=theme options
-theme_xhred_datatable_semptydirectory=Directory is empty
-theme_xhred_filemanager_context_clipboard=Copy path to clipboard
-theme_xhred_global_warning=Warning
-theme_xhred_global_close=Close
-theme_xhred_encoding_warning=Detected that you are using non-unicode character set, which is not recommended. Strange <tt>Â</tt> character might appear in text-editor mode and/or other encoding issues are going to happen. <br><br>Change language in <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i> %prod Configuration</strong></a> to <code>%lang.UTF-8</code> and make sure, that your browser also detected it correctly. <span class="_hidden_"><br><br>Pay attention, that <em>Webmin</em> in-built module, named <em>Change Language and Theme</em> can override global settings.</span>
+right_return_theme_options= テーマのオプション
+theme_xhred_datatable_semptydirectory= ディレクトリが空です
+theme_xhred_filemanager_context_clipboard= パスをクリップボードにコピーする
+theme_xhred_global_warning= 警告
+theme_xhred_global_close= 閉じる
+theme_xhred_encoding_warning= 非 unicode 文字セットを使用していることを検出しましたが、これは推奨されません。奇妙な<tt>Â</tt>文字がテキストエディタモードで表示されたり、その他のエンコードの問題が発生することがあります。<br><br><a href=""%link"" class=""label" label-primary"=""><strong>%prod<i class=""fa" fa-cog"=""></i> </strong></a>の言語をに変更 <code>%lang.UTF-8</code> し、ブラウザでも正しく検出されたことを確認します。<span class=""_hidden_""><br><br>注意を払って、 <em>Webmin</em>の組み込みモジュールでは、 <em>言語とテーマの変更</em>という名前のグローバル設定を上書きできます。</span>
 
-theme_xhred_filemanager__no_bookmarks=No saved bookmarks
-theme_xhred_filemanager_unbookmark_success=Directory <strong><em>%value</em></strong> was successfully removed from your bookmarks.
-theme_xhred_filemanager_bookmark=Bookmark current directory
-theme_xhred_filemanager_unbookmark=Unbookmark current directory
-theme_xhred_filemanager_move_into_self=You cannot move a directory into itself! The destination directory is inside the source directory.
-theme_xhred_filemanager_pasting_and_copying_1=Selected source has been pasted with the new name successfully.
-theme_xhred_filemanager_pasting_and_copying_2=Selected sources have been pasted with the new names successfully.
-theme_xhred_filemanager_pasting_and_replacing_1=Existing target has been replaced with new successfully.
-theme_xhred_filemanager_pasting_and_replacing_2=Existing targets have been replaced with new successfully.
-theme_xhred_filemanager_target_conflict_1=Target conflict
-theme_xhred_filemanager_target_conflict_2=Targets conflicts
-theme_xhred_filemanager_target_conflict_message_1=Pasted target already exists! What do you prefer to do?
-theme_xhred_filemanager_target_conflict_message_2=Pasted targets already exist! What do you prefer to do?
-theme_xhred_filemanager_target_conflict_replace=Merge and replace
-theme_xhred_filemanager_target_conflict_paste=Paste with new name
+theme_xhred_filemanager__no_bookmarks=保存したブックマークがありません
+theme_xhred_filemanager_unbookmark_success= ディレクトリ<strong><em>%value </em> </strong>がブックマークから正常に削除されました。
+theme_xhred_filemanager_bookmark= ブックマークカレントディレクトリ
+theme_xhred_filemanager_unbookmark= 現在のディレクトリのブックマークを解除する
+theme_xhred_filemanager_move_into_self= ディレクトリを自分自身に移動することはできません！宛先ディレクトリはソースディレクトリ内にあります。
+theme_xhred_filemanager_pasting_and_copying_1= 選択したソースが新しい名前で正常に貼り付けられました。
+theme_xhred_filemanager_pasting_and_copying_2= 選択したソースに新しい名前が貼り付けられました。
+theme_xhred_filemanager_pasting_and_replacing_1= 既存のターゲットは新しいものに正常に置き換えられました。
+theme_xhred_filemanager_pasting_and_replacing_2= 既存のターゲットは新しいものに置き換えられました。
+theme_xhred_filemanager_target_conflict_1= ターゲットの競合
+theme_xhred_filemanager_target_conflict_2= ターゲットの競合
+theme_xhred_filemanager_target_conflict_message_1= ペーストされたターゲットは既に存在します！あなたは何をしたいですか？
+theme_xhred_filemanager_target_conflict_message_2= ペーストされたターゲットは既に存在します！あなたは何をしたいですか？
+theme_xhred_filemanager_target_conflict_replace= マージと置き換える
+theme_xhred_filemanager_target_conflict_paste= 新しい名前で貼り付ける
 
-theme_xhred_editor_help_title=Editor Keyboard Shortcuts
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
+theme_xhred_editor_help_title= エディタのキーボードショートカット
+theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong> 検索/置換 </strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head"> キープレス </th> <th class="head">コマンド</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td> 検索 </td> </tr> <tr><td>Ctrl + H</td> <td> 置換 </td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td> すべてを置換 </td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td> 前の検索 </td> </tr> <tr><td>Alt + G</td> <td> 行にジャンプ </td> </tr> </tbody> </table> <h5><strong> テキスト操作 </strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">キープレス</th> <th class="head">コマンド</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td> 大文字に変換 </td> </tr> <tr><td>Ctrl + KL</td> <td> 小文字に変換 </td> </tr> </tbody> </table> <h5><strong> 編集 </strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">キープレス</th> <th class="head">コマンド</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td> オートコンプリートを有効にする </td> </tr> <tr><td>Ctrl + X</td> <td> 切り取り </td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td> 行/選択範囲を上に移動 </td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td> 行/選択を下に移動 </td> </tr> <tr><td>Ctrl + L</td> <td> 行を選択 - 次の行を選択するために繰り返します。 </td> </tr> <tr><td>Ctrl + D</td> <td> 単語を選択 - 他のものを繰り返し選択 </td> </tr> <tr><td>Ctrl + M</td> <td> 閉じ括弧にジャンプ繰り返して括弧を開きます </td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td> 現在のかっこのすべての内容を選択する </td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td> 行の削除 </td> </tr> <tr><td>Ctrl + KK</td> <td> カーソルから行末までの削除 </td> </tr> <tr><td>Ctrl + K + Backspace</td> <td> 行の先頭からカーソルから削除 </td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td> 重複する行 </td> </tr> <tr><td>Ctrl + J</td> <td> 下の行を現在の行の末尾に結合する </td> </tr> <tr><td>Ctrl + /</td> <td> 現在の行のコメント/コメント解除 </td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td> コメントの現在の選択をブロックする </td> </tr> <tr><td>Ctrl + Y</td> <td> やり直し、または最後のキーボードショートカットコマンドの繰り返し </td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td> 正しくペーストしてインデントする </td> </tr> <tr><td>Ctrl + Space</td> <td> 次のオートコンプリート提案を選択 </td> </tr> <tr><td>Ctrl + U</td> <td> ソフト元に戻す。繰り返したときに元に戻す前に最後の変更にジャンプします </td> </tr> </tbody> </table>
 
-theme_xhred_filemanager_hide_toolbar=Hide toolbar
-theme_xhred_filemanager_hide_actions=Hide actions column
-theme_xhred_filemanager_hovered_toolbar=Activate dropdown in toolbar on mouse hover
-theme_xhred_filemanager_context_delete_selected=Delete selected
+theme_xhred_filemanager_hide_toolbar= ツールバーを非表示
+theme_xhred_filemanager_hide_actions= 操作の列を非表示
+theme_xhred_filemanager_hovered_toolbar= マウス・ホバー上のツールバーのドロップダウンをアクティブにする
+theme_xhred_filemanager_context_delete_selected= 選択を削除します
 
 #17.83
-theme_xhred_database_adding_new_row=Adding new row
-theme_xhred_database_editing_row=Editing selected row
-theme_xhred_database_editing_rows=Editing selected rows
-theme_xhred_database_adding_new_row_data=Set data
+theme_xhred_database_adding_new_row= 新しい行を追加する
+theme_xhred_database_editing_row= 選択した行の編集
+theme_xhred_database_editing_rows= 選択した行の編集
+theme_xhred_database_adding_new_row_data= データを設定する
 
 #17.84
 theme_xhred_datatable_filter=Filter
