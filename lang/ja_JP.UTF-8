@@ -450,11 +450,11 @@ theme_xhred_database_db_selected_drop= 選択したデータベースを削除
 theme_xhred_database_dbs_selected_drop= 選択したデータベースを削除する
 theme_xhred_database_edit_but_not_saved= テーブルデータは編集されましたが保存されませんでした。
 
-theme_xhred_global_no_such_command= 実行可能ファイル<tt>%cmd </ tt>がインストールされていないか、システムのパスに存在しないようです。
+theme_xhred_global_no_such_command= 実行可能ファイル<tt>%cmd </tt>がインストールされていないか、システムのパスに存在しないようです。
 
 theme_xhred_global_notice= 通知
 # Authentic Theme
-theme_xhred_updates_disabled_notice= <em>Authentic Theme</em>の更新に関する通知を有効にしていないことが検出されましたか？ <br> <br> <a href="%link" class="label label-default"> <strong> <i class = "fa fa-cogs"> </i>テーマ設定</ strong>でこの機能を有効にする> </a>をクリックすると、すぐにワンクリックで最新バージョンにアップデートするのに役立ちます。
+theme_xhred_updates_disabled_notice= <em>Authentic Theme</em>の更新に関する通知を有効にしていないことが検出されましたか？ <br> <br> <a href="%link" class="label label-default"> <strong> <i class = "fa fa-cogs"> </i>テーマ設定</strong>でこの機能を有効にする> </a>をクリックすると、すぐにワンクリックで最新バージョンにアップデートするのに役立ちます。
 
 
 #18.00
@@ -470,12 +470,12 @@ theme_xhred_global_yes= はい
 theme_xhred_global_no= いいえ
 
 theme_xhred_filemanager_new_tab= 新しいタブを追加 (Ctrl+Space)
-theme_xhred_datatable_no_search_results= <span class ="h5">結果が見つかりませんでした。</span><br>別の検索を試してください
+theme_xhred_datatable_no_search_results= <span class="h5">結果が見つかりませんでした。</span><br>別の検索を試してください
 
 theme_xhred_filemanager_buffer_error= ファイルをバッファに貼り付けることができませんでした - 許可が拒否されました。
 
 filemanager_create_object_exists= <strong><tt>$2</tt></strong>に既に$ 3<strong> <em>$1</em>
-filemanager_create_object_denied= `<strong><tt>$2</tt></ strong>`で$3`<strong><em>$1</em></strong>`を作成できません。
+filemanager_create_object_denied= `<strong><tt>$2</tt></strong>`で$3`<strong><em>$1</em></strong>`を作成できません。
 
 filemanager_paste_warning= ターゲットを貼り付けることができませんでした。貼り付けの前/中に要求されたオブジェクトが<em>名前変更、移動</em>、または<em>削除</em>されている可能性があります。別の考えられる原因は、宛先が書き込み可能でないことです。オブジェクトの属性をチェックする価値があります。
 
@@ -501,7 +501,7 @@ theme_xhred_filemanager_search_replace= 結果の置換
 theme_xhred_global_find= 検索
 theme_xhred_global_replace= 置換
 
-theme_xhred_filemanager_searching_matching= <em>`%text`</ em>テキストを含むファイル/ディレクトリの名前と一致する<em>`%value`</em>を検索します。
+theme_xhred_filemanager_searching_matching= <em>`%text`</em>テキストを含むファイル/ディレクトリの名前と一致する<em>`%value`</em>を検索します。
 theme_xhred_filemanager_searching_replacing= <em>`%value`</em>を含む名前のファイルで<em>`％text`</em>を<em>`%replace`</em>に置き換えます。
 
 theme_xhred_filemanager_search_replaced_multi= 検索され、<strong>%value</strong>ファイルに置き換えられました。
