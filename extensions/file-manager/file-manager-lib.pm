@@ -97,6 +97,40 @@ sub get_request_uri
     return %c;
 }
 
+sub get_tree
+{
+    my ($p, $d) = @_;
+    my $df = int($d);
+    my %r;
+    my @r;
+
+    my $wanted = sub {
+        my $td = $File::Find::name;
+        my $dc = $td =~ tr[/][];
+        my $dd = ($df > 0 ? $df : undef);
+        if (-d $td && ($dc <= $dd || !$dd)) {
+            $td =~ s|^\Q$p\E/?||;
+            if ($r{$td} || !$td) {
+                return
+            }
+            my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
+            my $pp = $p ne '/' ? $p : undef;
+            my $c = $r{$td} =
+              { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
+            defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
+        }
+    };
+    my $preprocess = sub {
+        sort @_;
+    };
+    find(
+         {  wanted     => $wanted,
+            preprocess => $preprocess
+         },
+         $p);
+    return \@r;
+}
+
 sub head
 {
     print "Content-type: text/html\n\n";
