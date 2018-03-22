@@ -106,7 +106,7 @@ sub get_tree
 
     my $wanted = sub {
         my $td = $File::Find::name;
-        if (-d $td) {
+        if (-d $td && !-l $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
                 return
