@@ -626,52 +626,52 @@ theme_tooltip_edit_user= ユーザーを編集する
 
 
 #18.45
-settings_sysinfo_easypie_charts_size=Diameter of charts
-theme_xhred_global_choose=Choose
-theme_xhred_global_select=Select
+settings_sysinfo_easypie_charts_size= グラフの直径
+theme_xhred_global_choose= 選択する
+theme_xhred_global_select= 選択
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
-settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
-theme_git_patch_available=Latest development version
-theme_git_patch_no_git_message=In order to install latest updates directly from GitHub, you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme update has been initiated.
-theme_xhred_global_prev_page=Go back one page
-theme_xhred_global_help=Help
-settings_right_soft_updates_page_options_title=Software updates
-theme_xhred_git_compare_changes=Compare changes
-theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
+settings_sysinfo_theme_patched_updates= 開発バージョンを含む
+settings_sysinfo_theme_updates_description= このオプションを有効にするには、システムに<code>git</code>コマンドをインストールする必要があります
+theme_git_patch_available= 最新の開発版
+theme_git_patch_no_git_message= 最新のアップデートをGitHubから直接インストールするには、<code>git</code>コマンドがインストールされていることを確認する必要があります。
+theme_git_patch_update_success_message= Webminのテーマ更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
+theme_git_patch_update_success_message2= WebminとUserminのテーマ更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
+theme_xhred_git_patch_update= テーマの更新に失敗しました。手動で行うにはコンソールを使用してみてください。
+theme_xhred_git_patch_initiated= テーマの更新が開始されました。
+theme_xhred_global_prev_page= 1ページ前に戻る
+theme_xhred_global_help=ヘルプ
+settings_right_soft_updates_page_options_title= ソフトウェアの更新
+theme_xhred_git_compare_changes= 変更を比較する
+theme_xhred_filemanager_link_to_clipboard= シンボリックリンクの名前 `<strong> <em>%value</em></strong> 'がクリップボードにコピーされました。
 
 
 #18.46
-theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
-theme_left_mail_account_functions=Account Functions
-theme_xhred_global_dir_up=Go to previous directory (Backspace)
-theme_xhred_global_module_config=Module config
-theme_xhred_global_return=Return
-theme_xhred_global_return_to_module_index=Return to module index
+theme_left_mail_prefs= メールの設定
+theme_left_mail_change_password= パスワードを変更する
+theme_left_mail_account_functions= アカウント機能
+theme_xhred_global_dir_up= 前のディレクトリに移動する（Backspace）
+theme_xhred_global_module_config= モジュール構成
+theme_xhred_global_return= 戻る
+theme_xhred_global_return_to_module_index= モジュールインデックスに戻る
 
 
 #18.47
-theme_xhred_global_complete_changelog=Complete changelog
-theme_xhred_global_beta_version=Beta version
-theme_xhred_global_release=Release
-theme_xhred_global_released_on=Released on
-theme_xhred_global_committed_on=Committed on
-theme_xhred_global_resolved_issues=Resolved issues in %value releases
+theme_xhred_global_complete_changelog= 完全な変更ログ
+theme_xhred_global_beta_version= ベータ版
+theme_xhred_global_release= リリース
+theme_xhred_global_released_on= リリース日
+theme_xhred_global_committed_on= コミットした
+theme_xhred_global_resolved_issues= %valueリリースで解決された問題
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_xhred_force_upgrade_beta=Install latest development version (beta)
-theme_xhred_force_upgrade_stable=Install latest release version (stable)
-theme_xhred_source_encoding=Source encoding
-theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
-theme_xhred_encoding_manually_set=Manually set encoding
-theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+theme_force_upgrade= 更新テーマを強制する
+theme_xhred_force_upgrade_beta= 最新の開発版をインストールする(ベータ版)
+theme_xhred_force_upgrade_stable= 最新リリース版をインストールする(安定版)
+theme_xhred_source_encoding= ソースエンコーディング
+theme_update_footer= $1のリポジトリにバグを報告してください。テーマの$2チャンネルをフォローして、最新のアップデートを入手してください。
+theme_xhred_encoding_manually_set= 手動でエンコーディングを設定する
+theme_xhred_filemanager_save_to_change_encoding= エンコーディングを変更できるようにするには、ファイルを保存する必要があります。
 
 
 #18.49
