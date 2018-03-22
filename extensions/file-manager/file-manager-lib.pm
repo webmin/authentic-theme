@@ -99,16 +99,14 @@ sub get_request_uri
 
 sub get_tree
 {
-    my ($p, $d) = @_;
+    my ($p, $d, $e) = @_;
     my $df = int($d);
     my %r;
     my @r;
 
     my $wanted = sub {
         my $td = $File::Find::name;
-        my $dc = $td =~ tr[/][];
-        my $dd = ($df > 0 ? $df : undef);
-        if (-d $td && ($dc <= $dd || !$dd)) {
+        if (-d $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
                 return
@@ -121,6 +119,21 @@ sub get_tree
         }
     };
     my $preprocess = sub {
+        my $td = $File::Find::name;
+        my $d  = $td =~ tr[/][];
+
+        if ($e && $p eq "/" && $d == 1) {
+            if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
+                return
+            }
+        }
+        my $dd = ($df > 0 ? ($df + 1) : 0);
+        if ($dd) {
+            if ($d < $dd) {
+                return sort @_;
+            }
+            return;
+        }
         sort @_;
     };
     find(
