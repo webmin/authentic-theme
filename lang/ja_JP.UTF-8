@@ -626,191 +626,191 @@ theme_tooltip_edit_user= ユーザーを編集する
 
 
 #18.45
-settings_sysinfo_easypie_charts_size=Diameter of charts
-theme_xhred_global_choose=Choose
-theme_xhred_global_select=Select
+settings_sysinfo_easypie_charts_size= グラフの直径
+theme_xhred_global_choose= 選択する
+theme_xhred_global_select= 選択
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
-settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
-theme_git_patch_available=Latest development version
-theme_git_patch_no_git_message=In order to install latest updates directly from GitHub, you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
-theme_xhred_git_patch_initiated=Theme update has been initiated.
-theme_xhred_global_prev_page=Go back one page
-theme_xhred_global_help=Help
-settings_right_soft_updates_page_options_title=Software updates
-theme_xhred_git_compare_changes=Compare changes
-theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
+settings_sysinfo_theme_patched_updates= 開発バージョンを含む
+settings_sysinfo_theme_updates_description= このオプションを有効にするには、システムに<code>git</code>コマンドをインストールする必要があります
+theme_git_patch_available= 最新の開発版
+theme_git_patch_no_git_message= 最新のアップデートをGitHubから直接インストールするには、<code>git</code>コマンドがインストールされていることを確認する必要があります。
+theme_git_patch_update_success_message= Webminのテーマ更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
+theme_git_patch_update_success_message2= WebminとUserminのテーマ更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
+theme_xhred_git_patch_update= テーマの更新に失敗しました。手動で行うにはコンソールを使用してみてください。
+theme_xhred_git_patch_initiated= テーマの更新が開始されました。
+theme_xhred_global_prev_page= 1ページ前に戻る
+theme_xhred_global_help=ヘルプ
+settings_right_soft_updates_page_options_title= ソフトウェアの更新
+theme_xhred_git_compare_changes= 変更を比較する
+theme_xhred_filemanager_link_to_clipboard= シンボリックリンクの名前 `<strong> <em>%value</em></strong> 'がクリップボードにコピーされました。
 
 
 #18.46
-theme_left_mail_prefs=Mail Preferences
-theme_left_mail_change_password=Change Password
-theme_left_mail_account_functions=Account Functions
-theme_xhred_global_dir_up=Go to previous directory (Backspace)
-theme_xhred_global_module_config=Module config
-theme_xhred_global_return=Return
-theme_xhred_global_return_to_module_index=Return to module index
+theme_left_mail_prefs= メールの設定
+theme_left_mail_change_password= パスワードを変更する
+theme_left_mail_account_functions= アカウント機能
+theme_xhred_global_dir_up= 前のディレクトリに移動する（Backspace）
+theme_xhred_global_module_config= モジュール構成
+theme_xhred_global_return= 戻る
+theme_xhred_global_return_to_module_index= モジュールインデックスに戻る
 
 
 #18.47
-theme_xhred_global_complete_changelog=Complete changelog
-theme_xhred_global_beta_version=Beta version
-theme_xhred_global_release=Release
-theme_xhred_global_released_on=Released on
-theme_xhred_global_committed_on=Committed on
-theme_xhred_global_resolved_issues=Resolved issues in %value releases
+theme_xhred_global_complete_changelog= 完全な変更ログ
+theme_xhred_global_beta_version= ベータ版
+theme_xhred_global_release= リリース
+theme_xhred_global_released_on= リリース日
+theme_xhred_global_committed_on= コミットした
+theme_xhred_global_resolved_issues= %valueリリースで解決された問題
 
 
 #18.48
-theme_force_upgrade=Force update theme
-theme_xhred_force_upgrade_beta=Install latest development version (beta)
-theme_xhred_force_upgrade_stable=Install latest release version (stable)
-theme_xhred_source_encoding=Source encoding
-theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme's $2 channel for the latest updates.
-theme_xhred_encoding_manually_set=Manually set encoding
-theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
+theme_force_upgrade= 更新テーマを強制する
+theme_xhred_force_upgrade_beta= 最新の開発版をインストールする(ベータ版)
+theme_xhred_force_upgrade_stable= 最新リリース版をインストールする(安定版)
+theme_xhred_source_encoding= ソースエンコーディング
+theme_update_footer= $1のリポジトリにバグを報告してください。テーマの$2チャンネルをフォローして、最新のアップデートを入手してください。
+theme_xhred_encoding_manually_set= 手動でエンコーディングを設定する
+theme_xhred_filemanager_save_to_change_encoding= エンコーディングを変更できるようにするには、ファイルを保存する必要があります。
 
 
 #18.49
-theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
-theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
-theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
-theme_xhred_filemanager_user_switch_current_user=Current user
-theme_xhred_filemanager_user_switch_option=Automatically switch to user mode upon entering its home directory
-theme_xhred_filemanager_editor_align_panels_horizontally=Align Panels Horizontally
-theme_xhred_filemanager_editor_align_panels_vertically=Align Panels Vertically
-theme_xhred_filemanager_editor_toggle_soft_wrap=Toggle Soft Wrap
-theme_xhred_filemanager_editor_refresh_content=Refresh Content
-theme_xhred_filemanager_save_to_refresh_content=File must be saved, in order to allow its content to be refreshed.
-theme_xhred_filemanager_save_to_refresh_content_proc=Refreshing file content.
-theme_xhred_global_dark=Dark
-theme_xhred_global_light=Light
-theme_xhred_global_minimize=Minimize
-theme_xhred_global_maximize=Maximize
-theme_xhred_global_normalize=Normalize
-theme_xhred_global_set_encoding=Set encoding
+theme_xhred_filemanager_user_switch= ユーザーに切り替え (Ctrl+M)
+theme_xhred_filemanager_user_switch_description= 下記のユーザー名を選択することで、このユーザーとして実行される操作を切り替えることができます。
+theme_xhred_filemanager_user_switch_description_back= デフォルトモードに戻すには、selectの最初のオプションを選択します。
+theme_xhred_filemanager_user_switch_current_user= 現在の使用者
+theme_xhred_filemanager_user_switch_option= ホームディレクトリに入ると自動的にユーザモードに切り替わります
+theme_xhred_filemanager_editor_align_panels_horizontally= 水平にパネルを整列する
+theme_xhred_filemanager_editor_align_panels_vertically= パネルの垂直方向の整列
+theme_xhred_filemanager_editor_toggle_soft_wrap= ソフトラバーの切り替え
+theme_xhred_filemanager_editor_refresh_content= コンテンツをリフレッシュする
+theme_xhred_filemanager_save_to_refresh_content= コンテンツをリフレッシュできるようにするには、ファイルを保存する必要があります。
+theme_xhred_filemanager_save_to_refresh_content_proc= ファイルの内容を更新しています。
+theme_xhred_global_dark= ダーク
+theme_xhred_global_light= 光
+theme_xhred_global_minimize= 最小化する
+theme_xhred_global_maximize= 最大化する
+theme_xhred_global_normalize= ノーマライズ
+theme_xhred_global_set_encoding= エンコーディングの設定
 
 
 #19.00
-theme_xhred_sysinfo_update_start=System information is being recollected.
-theme_xhred_sysinfo_update_end=System information has been recollected successfully.
-theme_xhred_sysinfo_update_failed=System information can't be recollected. Try again later.
+theme_xhred_sysinfo_update_start= システム情報が再収集されています。
+theme_xhred_sysinfo_update_end= システム情報が正常に再収集されました。
+theme_xhred_sysinfo_update_failed= システム情報を再収集することはできません。あとでもう一度試してみてください。
 
-theme_xhred_global_development_version=Development version
+theme_xhred_global_development_version= 開発版
 
-right_vm_server_summary=Virtual Server Summary
+right_vm_server_summary= 仮想サーバーの概要
 
-settings_webmin_default_module=Default module for Webmin
+settings_webmin_default_module= Webminのデフォルトモジュール
 
-theme_xhred_global_unbeforeunload_title=Changes you have made may not be saved
-theme_xhred_global_unbeforeunload_message=If you continue, unsaved changes on this page could be permanently lost.
-theme_xhred_global_continue=Continue
+theme_xhred_global_unbeforeunload_title= あなたが行った変更は保存されないかもしれません
+theme_xhred_global_unbeforeunload_message= 続行すると、このページの保存されていない変更が永久に失われる可能性があります。
+theme_xhred_global_continue= 持続する
 
-theme_xhred_global_automatic_refresh=Automatic refresh
-theme_xhred_global_second=Second
-theme_xhred_global_seconds=Seconds
-theme_xhred_global_minute=Minute
-theme_xhred_global_minutes=Minutes
+theme_xhred_global_automatic_refresh= 自動リフレッシュ
+theme_xhred_global_second= 二番目
+theme_xhred_global_seconds= 秒
+theme_xhred_global_minute= 分
+theme_xhred_global_minutes= 分
 
 
 #19.01
-theme_xhred_browser_warning=To have the best experience with server panel on your computer, use a supported, up-to-date browser.<br><br><em>Internet Explorer</em> is no longer supported.<br><br>Recommended browsers are <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
+theme_xhred_browser_warning=コンピュータのサーバーパネルで最高の操作性を実現するには、サポートされている最新のブラウザを使用します。<br><br><em>Internet Explorer</em>はサポートされなくなりました。<br><br>推奨されるブラウザは、 <em>Chrome</em>、 <em>Firefox</em>、 <em>Opera</em> 、<em>サファリ</em>、<em>エッジ</em>です。<div class="alert alert-warning margined-top-10 margined-bottom--8">あなたは、インストールを必要としないブラウザのポータブルバージョンをダウンロードすることができます, 課された制限をバイパスする.</div>
 
 
 #19.02
-theme_xhred_filter_content=Filter content
-theme_xhred_log_file_empty=Log file is empty
+theme_xhred_filter_content= フィルタの内容
+theme_xhred_log_file_empty= ログファイルが空です
 
 
 #19.03
-theme_xhred_config_configurable_options=Configurable options
-theme_xhred_filter_content_no_matches_query=No content matches %str query
-theme_xhred_toggle_accordions=Toggle accordions visibility
-theme_xhred_global_whats_new=What's new
-theme_xhred_global_report_an_issue=Report an issue
-theme_xhred_global_theme_configuration=Theme configuration
-theme_xhred_global_official_website=Official website
+theme_xhred_config_configurable_options= 設定可能なオプション
+theme_xhred_filter_content_no_matches_query= %strクエリと一致するコンテンツがありません
+theme_xhred_toggle_accordions= アコーディオンの可視性を切り替える
+theme_xhred_global_whats_new= 新着情報
+theme_xhred_global_report_an_issue= 問題を報告する
+theme_xhred_global_theme_configuration= テーマ設定
+theme_xhred_global_official_website= 公式ウェブサイト
 theme_xhred_global_about_theme=About theme
-theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
-theme_xhred_session_expired=Session expired
-theme_xhred_session_unlocked=Session unlocked
-theme_xhred_session_expired_details=You have been logged out due to inactivity.
-theme_xhred_signing_in=Signing in
-theme_xhred_signing_success=Successfully signed in!
-theme_xhred_session_failed_password=Wrong password, please try again.
-theme_xhred_global_reauthenticate=Reauthenticate
+theme_xhred_connection_error= 接続エラー
+theme_xhred_connection_error_details= <strong>%server </strong>にサーバーへの接続を確立できません。 <li> <li>サーバーの状態を確認する</li> <li>接続を確認する</li> </ul>
+theme_xhred_session_expired= セッションの有効期限が切れ
+theme_xhred_session_unlocked= セッションロックが解除されました
+theme_xhred_session_expired_details= あなたは非アクティブのためにログアウトされました。
+theme_xhred_signing_in= サインイン
+theme_xhred_signing_success= ログインに成功しました！
+theme_xhred_session_failed_password= パスワードが間違っています。もう一度お試しください。
+theme_xhred_global_reauthenticate= 再認証
 
 
 #19.04
-settings_sysinfo_real_time_status=Enable real-time monitoring
-settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
-theme_xhred_global_redirecting=Redirecting
+settings_sysinfo_real_time_status= リアルタイム監視を有効にする
+settings_sysinfo_real_time_timeout= 更新を実行する間隔
+settings_sysinfo_real_time_timeout_description= バックグラウンドでモニターを更新する間隔を設定します。値はミリ秒単位で表します。短期間のデータの損失を防ぐため、この値はできるだけ低くしてください。
+theme_xhred_global_redirecting= リダイレクト
 
 
 #19.05
-body_no_javascript_title=JavaScript is disabled
-body_no_javascript_message=Please enable javascript and refresh the page
-theme_xhred_connection_lost=Connection lost
-theme_xhred_connection_success=Connection successful
-theme_xhred_connection_success_details=Connection to the server has been re-established.
+body_no_javascript_title= JavaScriptが無効です
+body_no_javascript_message= JavaScriptを有効にしてページを更新してください
+theme_xhred_connection_lost= 接続切断
+theme_xhred_connection_success= 接続成功
+theme_xhred_connection_success_details= サーバーへの接続が再確立されました。
 
 
 #19.08
-theme_xhred_return_home=Return to panel index
-theme_xhred_global_upload=Upload
-theme_xhred_global_select_files=Select file(s)
-theme_xhred_global_file_selected=file selected
-theme_xhred_global_files_selected=files selected
-theme_xhred_global_reset=Reset
-theme_xhred_upload_initial_info=Drag and drop files here or click to select
+theme_xhred_return_home= パネルインデックスに戻る
+theme_xhred_global_upload= アップロード
+theme_xhred_global_select_files= ファイルを選択
+theme_xhred_global_file_selected= 選択されたファイル
+theme_xhred_global_files_selected= 選択されたファイル
+theme_xhred_global_reset= リセット
+theme_xhred_upload_initial_info= ここにファイルをドラッグアンドドロップするか、クリックして選択します
 
 
 #19.09
-theme_xhred_global_empty=Empty
-theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
-theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
-theme_xhred_global_outdated=This version is outdated
+theme_xhred_global_empty= 空
+theme_xhred_global_click_here= ここをクリック
+theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $ 6 </em>の最新版および/または未発売版が適切に動作する必要があります。
+theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3 em>$4</em>が必要です。
+theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$ 1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
+theme_xhred_global_outdated= このバージョンは古くなっています
 
 
 #19.10
-theme_xhred_filemanager_edit_html=Edit as HTML
-theme_xhred_global_example=Example
-theme_xhred_global_output_example=Output example
-theme_xhred_title_language_locale=Language and Locale
-theme_xhred_title_locale_config=Locale configuration
-theme_xhred_title_webmin_ui_locale=Webmin UI locale
-theme_xhred_title_locale_auto=Automatic, based on selected language
-theme_xhred_global_manual=Manual
-theme_xhred_title_locale_config_format=Locale language and format
-theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
-theme_xhred_title_locale_lang_based=Locale language
-theme_xhred_title_locale_full=Full format
-theme_xhred_title_locale_long=Long format
-theme_xhred_title_locale_short=Short format
-settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on SXGA+ screens with minimum resolution of 1400 horizontal pixels and with disabled option for keeping navigation always collapsed.
-theme_xhred_filemanager_records_per_page=Default number of records per page
-theme_xhred_filemanager_sorting=Default sorting type
-theme_xhred_filemanager_sorting_asc=Ascending
-theme_xhred_filemanager_sorting_desc=Descending
-theme_xhred_filemanager_sorting_by_name=Name
-theme_xhred_filemanager_sorting_by_type=Type
-theme_xhred_filemanager_sorting_by_size=Size
-theme_xhred_filemanager_sorting_by_ownership=Ownership
-theme_xhred_filemanager_sorting_by_permissions=Permissions
-theme_xhred_filemanager_sorting_by_attributes=Attributes
-theme_xhred_filemanager_sorting_by_selinux=Security context
-theme_xhred_filemanager_sorting_by_last_mod_time=Last modification time
-theme_xhred_filemanager_tree_view_toggle=Tree-view toggle
-theme_xhred_filemanager_hide_tree_view=Enable tree-view panel
-theme_xhred_filemanager_tree_view_depth=Extracted tree-view depth on initial load
-theme_xhred_global_unlimited=Unlimited
-theme_xhred_filemanager_tree_exclude_on_first_load=Exclude inessential directories from traversing on initial load for tree-view
-theme_xhred_filemanager_tree_expand_search=Expand all branches that contain matches while filtering tree-view
+theme_xhred_filemanager_edit_html= HTMLを編集
+theme_xhred_global_example= 例
+theme_xhred_global_output_example= 出力例
+theme_xhred_title_language_locale= ローカル言語
+theme_xhred_title_locale_config= ロケール設定
+theme_xhred_title_webmin_ui_locale= Webmin ローカルUI
+theme_xhred_title_locale_auto= 選択された言語に基づく自動
+theme_xhred_global_manual= マニュアル
+theme_xhred_title_locale_config_format= ローカル言語とフォーマット
+theme_xhred_title_locale_config_format_ui= WebminのUIローカル言語とフォーマット
+theme_xhred_title_locale_lang_based= ローカル言語
+theme_xhred_title_locale_full= フルフォーマット
+theme_xhred_title_locale_long= ロングフォーマット
+theme_xhred_title_locale_short= 短い形式
+settings_navigation_always_collapse= 常に折りたたまれている
+settings_side_slider_fixed_description= このオプションは、最小解像度1400水平ピクセルのSXGA +画面でのみ使用でき、常にナビゲーションを無効にするオプションは無効になっています。
+theme_xhred_filemanager_records_per_page= ページあたりのデフォルトレコード数
+theme_xhred_filemanager_sorting= デフォルトのソートタイプ
+theme_xhred_filemanager_sorting_asc= 上昇
+theme_xhred_filemanager_sorting_desc= 降順
+theme_xhred_filemanager_sorting_by_name= 名前
+theme_xhred_filemanager_sorting_by_type= タイプ
+theme_xhred_filemanager_sorting_by_size= サイズ
+theme_xhred_filemanager_sorting_by_ownership= 所有
+theme_xhred_filemanager_sorting_by_permissions= アクセス許可
+theme_xhred_filemanager_sorting_by_attributes= 属性
+theme_xhred_filemanager_sorting_by_selinux= セキュリティコンテキスト
+theme_xhred_filemanager_sorting_by_last_mod_time= 最終更新時刻
+theme_xhred_filemanager_tree_view_toggle= ツリービューの切り替え
+theme_xhred_filemanager_hide_tree_view= ツリービューパネルを有効にする
+theme_xhred_filemanager_tree_view_depth= 初期荷重時に抽出したツリービューの深さ
+theme_xhred_global_unlimited= 無制限
+theme_xhred_filemanager_tree_exclude_on_first_load= ツリービューの初期読み込み時のトラバースからなディレクトリを除外する
+theme_xhred_filemanager_tree_expand_search= ツリービューのフィルタ処理中に一致するすべての分岐を展開する
