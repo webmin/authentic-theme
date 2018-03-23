@@ -59,21 +59,18 @@ else
     # Require `git` command availability
     if type ${GIT} >/dev/null 2>&1
     then
-
-      # Grab latest version of the update script for Webmin/Usermin
+      # Try to download latest version of the update script for Webmin/Usermin
       if type ${CURL} >/dev/null 2>&1
       then
-        # moce old script away in case something went wrong
+        # Backup current script file first in case something goes wrong
         mv $DIR/update-from-repo.sh $DIR/update-from-repo.sh.bak
+        # Get latest update script
         curl -s -o $DIR/update-from-repo.sh https://raw.githubusercontent.com/webmin/webmin/master/update-from-repo.sh
-        if [[ "$?" -ne 0 ]] ; then
-            echo -e "\e[49;0;33;82mWaring: Update for update-from-repo.sh failed. Copy back old version\e[0m";
-            mv $DIR/update-from-repo.sh.bak $DIR/update-from-repo.sh
+        if [ $? -eq 0 ]; then
+          chmod +x $DIR/update-from-repo.sh
+        else
+          mv $DIR/update-from-repo.sh.bak $DIR/update-from-repo.sh
         fi
-        chmod +x $DIR/update-from-repo.sh
-      else
-        echo -e "\e[49;0;33;82mWarning: Command \`curl\` is not installed or not in the \`PATH\`. update-from-repo.sh is not updated.\e[0m";
-        # do update anyway, ^missing curl should not stop updateing authenetic-theme
       fi
 
       # Pull latest changes
@@ -153,8 +150,7 @@ running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m direc
         find "$DIR/authentic-theme/" -name "*.src*" -delete
 
         TVER=$(grep -Po '(?<=^version=).*$' "$DIR/authentic-theme/theme.info" 2>&1)
-        GRPERR2=$?
-        if [ $GRPERR2 -eq 0 ]; then
+        if [ $? -eq 0 ]; then
           echo -e "\e[49;32;5;82mUpdating to Authentic Theme $TVER, done.\e[0m"
         else
           echo -e "\e[49;32;5;82mUpdating to the latest Authentic Theme, done.\e[0m"
