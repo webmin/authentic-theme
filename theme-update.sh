@@ -63,17 +63,17 @@ else
       # Grab latest version of the update script for Webmin/Usermin
       if type ${CURL} >/dev/null 2>&1
       then
-		# moce old script away in case something went wrong
-		mv $DIR/update-from-repo.sh $DIR/update-from-repo.sh.bak
+        # moce old script away in case something went wrong
+        mv $DIR/update-from-repo.sh $DIR/update-from-repo.sh.bak
         curl -s -o $DIR/update-from-repo.sh https://raw.githubusercontent.com/webmin/webmin/master/update-from-repo.sh
-		if [[ "$?" -ne 0 ]] ; then
-			echo -e "\e[49;0;33;82mWaring: Update for update-from-repo.sh failed. Copy back old version\e[0m";
-			mv $DIR/update-from-repo.sh.bak $DIR/update-from-repo.sh
-		fi
+        if [[ "$?" -ne 0 ]] ; then
+            echo -e "\e[49;0;33;82mWaring: Update for update-from-repo.sh failed. Copy back old version\e[0m";
+            mv $DIR/update-from-repo.sh.bak $DIR/update-from-repo.sh
+        fi
         chmod +x $DIR/update-from-repo.sh
       else
         echo -e "\e[49;0;33;82mWarning: Command \`curl\` is not installed or not in the \`PATH\`. update-from-repo.sh is not updated.\e[0m";
-	    # do update anyway, ^missing curl should not stop updateing authenetic-theme
+        # do update anyway, ^missing curl should not stop updateing authenetic-theme
       fi
 
       # Pull latest changes
