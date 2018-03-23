@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.10-beta4 (March 21, 2018)
+* Add advanced tree-view to File Manager [#1066](https://github.com/qooob/authentic-theme/issues/1066)
+
 #### Version 19.10-beta3 (March 18, 2018)
 * Add an option to File Manager to choose default sorting in module configuration
 * Add German translation to locale help [#1052](https://github.com/qooob/authentic-theme/issues/1052)
@@ -24,6 +27,8 @@
 * Add HTML editor to File Manager [#1031](https://github.com/qooob/authentic-theme/issues/1031)
 * Add to display Apache/Nginx access and error logs' URL strings decoded [webmin/webmin#686](https://github.com/webmin/webmin/issues/686)
 * Fix lost language strings on session expire [#1020](https://github.com/qooob/authentic-theme/issues/1020)
+
+<!--- separator --->
 
 #### Version 19.09.2 (February 22, 2018)
 * Add fail proof method of extracting page content with broken HTML [webmin/webmin#825](https://github.com/webmin/webmin/issues/825)
@@ -63,7 +68,6 @@
 * Fix to set mail tab to be default in Usermin
 * Fix scores of other unreported bugs
 
-<!--- separator --->
 
 #### Version 19.08 (January 08, 2018)
 * Add drag and drop file uploads to File Manager [#979](https://github.com/qooob/authentic-theme/issues/979#issuecomment-355857544)
