@@ -2769,6 +2769,8 @@ sub get_xhr_request
                                        ));
             };
             print $data;
+        } elsif ($in{'xhr-get_user_level'} eq '1') {
+            print $get_user_level;
         } elsif ($in{'xhr-get_update_notice'} eq '1') {
             print update_notice();
         } elsif ($in{'xhr-get_nice_size'} eq '1') {

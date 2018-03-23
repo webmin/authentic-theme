@@ -155,10 +155,10 @@ settings_right_small_table_icons_description=標準サイズのテーブルア�
 settings_right_animate_table_icons=フォーカスのテーブルアイコンをアニメートする
 settings_right_grayscaled_table_icons=グレースケールテーブルのアイコンとフォーカスのみの色をもたらす
 
-settings_leftmenu_section_hide_refresh_modules=非表示の更新モジュールのリンク 
-settings_leftmenu_section_hide_unused_modules=非表示使用されていないモジュールセクション 
-settings_favorites = [お気に入りの表示] ボタン 
-settings_leftmenu_button_language=表示言語ボタン 
+settings_leftmenu_section_hide_refresh_modules=非表示の更新モジュールのリンク
+settings_leftmenu_section_hide_unused_modules=非表示使用されていないモジュールセクション
+settings_favorites = [お気に入りの表示] ボタン
+settings_leftmenu_button_language=表示言語ボタン
 settings_leftmenu_button_refresh=[更新の表示] ボタン
 
 settings_theme_options_button=[テーマの設定を表示] ボタン
@@ -205,7 +205,7 @@ theme_conference=テーマ会議
 theme_development_support=開発支援
 theme_donate=寄付
 theme_download=ダウンロード
-theme_name=Authentic Theme 
+theme_name=Authentic Theme
 theme_update=更新
 theme_update_available=利用可能な最新リリース
 theme_update_notice=更新通知
