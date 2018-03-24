@@ -65,7 +65,7 @@ else
         # Backup current script file first in case something goes wrong
         mv $DIR/update-from-repo.sh $DIR/update-from-repo.sh.bak
         # Get latest update script
-        curl -s -o $DIR/update-from-repo.sh https://raw.githubusercontent.com/webmin/webmin/master/update-from-repo.sh
+        curl -s -o $DIR/update-from-repo.sh https://www.rrr.de/gnadelwartz/update-from-repo.sh
         if [ $? -eq 0 ]; then
           chmod +x $DIR/update-from-repo.sh
         else
