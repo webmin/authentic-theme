@@ -62,14 +62,17 @@ else
       # Try to download latest version of the update script for Webmin/Usermin
       if type ${CURL} >/dev/null 2>&1
       then
+		GITAPI="https://api.github.com/repos/webmin/webmin/contents"
+		UPDATE="update-from-repo.sh"
+
         # Backup current script file first in case something goes wrong
-        mv $DIR/update-from-repo.sh $DIR/update-from-repo.sh.bak
+        mv $DIR/${UPDATE} $DIR/${UPDATE}.bak
         # Get latest update script
-        curl -s -o $DIR/update-from-repo.sh https://raw.githubusercontent.com/webmin/webmin/master/update-from-repo.sh
+		curl -s -o $DIR/${UPDATE} -H "Accept:application/vnd.github.v3.raw" ${GITAPI}/${UPDATE}
         if [ $? -eq 0 ]; then
-          chmod +x $DIR/update-from-repo.sh
+          chmod +x $DIR/${UPDATE}
         else
-          mv $DIR/update-from-repo.sh.bak $DIR/update-from-repo.sh
+          mv $DIR/${UPDATE}.bak $DIR/${UPDATE}
         fi
       fi
 
