@@ -10,13 +10,13 @@ body_drivetemps=駆動温度
 body_firewall=ファイアウォールバージョン
 body_header0=システムインフォメーション
 body_header1=アカウント情報
-body_host=システムホスト名
+body_host=ホスト名
 body_kernel=カーネルとCPU
 body_kernelon=$1 $2 上で $3
 body_load=$1 (1 分) $2 (5 分) $3 (15 分)
-body_os=オペレーティング·システム
+body_os=OS
 body_procs=プロセスの実行
-body_real=実メモリー
+body_real=RAM
 body_time=システム上の時間
 body_updates=パッケージアップデート
 body_updays=$1日と$2時間, $3 分
@@ -389,7 +389,7 @@ theme_xhred_datatable_semptydirectory= ディレクトリが空です
 theme_xhred_filemanager_context_clipboard= パスをクリップボードにコピーする
 theme_xhred_global_warning= 警告
 theme_xhred_global_close= 閉じる
-theme_xhred_encoding_warning= 非 unicode 文字セットを使用していることを検出しましたが、これは推奨されません。奇妙な<tt>Â</tt>文字がテキストエディタモードで表示されたり、その他のエンコードの問題が発生することがあります。<br><br><a href=""%link"" class=""label" label-primary"=""><strong>%prod<i class=""fa" fa-cog"=""></i> </strong></a>の言語をに変更 <code>%lang.UTF-8</code> し、ブラウザでも正しく検出されたことを確認します。<span class=""_hidden_""><br><br>注意を払って、 <em>Webmin</em>の組み込みモジュールでは、 <em>言語とテーマの変更</em>という名前のグローバル設定を上書きできます。</span>
+theme_xhred_encoding_warning= 非Unicode文字セットを使用していることが検出されましたが、これはお勧めしません。奇妙な<tt>Â</tt>文字がテキストエディタモードで表示されたり、その他のエンコーディングの問題が発生する可能性があります。 <br><br><a href="%link" class="label label-primary"> <i class = "fa fa-cog"> </i>%prod設定</ strong>の言語を変更してください> </a>から<code>%lang.UTF-8 </code>に移動して、ブラウザが正しく検出したことを確認してください。 <span class = "_ hidden _"> <br><br><em> Webmin </em>の内蔵モジュールは、<em>言語とテーマの変更</em>でグローバル設定を上書きできることに注意してください。 </span>
 
 theme_xhred_filemanager__no_bookmarks=保存したブックマークがありません
 theme_xhred_filemanager_unbookmark_success= ディレクトリ<strong><em>%value </em> </strong>がブックマークから正常に削除されました。
