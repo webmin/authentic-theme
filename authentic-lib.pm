@@ -1785,21 +1785,39 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
 sub theme_remote_version
 {
 
-    my $authentic_remote_version;
+    my ($data, $force_stable_check, $force_beta_check) = @_;
+
+    my $remote_version = '0';
+    my $remote_release;
+    my $error;
 
     if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' && $in =~ /xhr-/) {
-        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
-                      \$authentic_remote_version, \$error, undef, 1, undef, undef, 5);
-        my (%authentic_remote_version) = $authentic_remote_version =~ /(.*?)=(.*)/g;
-        $authentic_remote_version = $authentic_remote_version{'version'};
 
-        if ($authentic_remote_version =~ /beta/ && $__settings{'settings_sysinfo_theme_patched_updates'} ne 'true') {
-            $authentic_remote_version = '0';
+        if (($__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force_beta_check) && !$force_stable_check) {
+            http_download('api.github.com', '443', '/repos/qooob/authentic-theme/contents/theme.info',
+                          \$remote_version, \$error, undef, 1, undef, undef, 5, undef, undef,
+                          { 'accept', 'application/vnd.github.v3.raw' });
+
+        } else {
+            http_download('api.github.com', '443', '/repos/qooob/authentic-theme/releases/latest',
+                          \$remote_release, \$error, undef, 1, undef, undef, 5);
+            $remote_release =~ /tag_name":"(.*?)"/;
+            http_download('api.github.com',                                                  '443',
+                          '/repos/qooob/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
+                          \$error,                                                           undef,
+                          1,                                                                 undef,
+                          undef,                                                             5,
+                          undef,                                                             undef,
+                          { 'accept', 'application/vnd.github.v3.raw' });
         }
-    } else {
-        $authentic_remote_version = '0';
     }
-    return $authentic_remote_version;
+    if ($data) {
+        return $remote_version;
+    } else {
+        ($remote_version) = $remote_version =~ /^version=(.*)/m;
+        return $remote_version;
+    }
+
 }
 
 sub theme_config_dir_available
@@ -2822,14 +2840,9 @@ sub get_xhr_request
                       . $Atext{'theme_xhred_global_click_here'} . '</a>';
 
                     if ($version_type eq '-release') {
-                        http_download('api.github.com', '443', '/repos/qooob/authentic-theme/releases/latest',
-                                      \$latest_release, \$error, undef, 1, undef, undef, 5);
-                        $latest_release =~ /tag_name":"(.*?)"/;
-                        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/' . $1 . '/theme.info',
-                                      \$compatible, \$error, undef, 1, undef, undef, 5);
+                        $compatible = theme_remote_version(1, 1);
                     } else {
-                        http_download('raw.githubusercontent.com', '443', '/qooob/authentic-theme/master/theme.info',
-                                      \$compatible, \$error, undef, 1, undef, undef, 5);
+                        $compatible = theme_remote_version(1, 0, 1);
                     }
 
                     my ($atversion) = $compatible =~ /^version=(.*)/gm;
