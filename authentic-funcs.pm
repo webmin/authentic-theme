@@ -54,7 +54,7 @@ sub product_version_update
 {
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.880', '1.740', '6.02', '9.3', '12.00', $__settings{'settings_sysinfo_theme_patched_updates'});
+      ('1.880', '1.740', '6.02', '9.3', '12.01', $__settings{'settings_sysinfo_theme_patched_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -105,6 +105,16 @@ sub array_unique
         }
     }
     return @unique;
+}
+
+sub get_pretty_dev_version
+{
+    my ($v) = @_;
+    my $s = 5;
+    if (length($v) > ($s + 1)) {
+        $v = substr($v, 0, $s) . "." . substr($v, $s, $s - 1) . "." . substr($v, $s * 2 - 1);
+    }
+    return $v;
 }
 
 sub get_before_delimiter

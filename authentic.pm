@@ -116,6 +116,7 @@ sub theme_footer
         my $hostname = ($prefix) = split(/\./, get_display_hostname());
         print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
   <div class="-shell-port-container">
+    <div data-shell-config><i class="fa fa-lg fa-cogs"></i></div>
     <div class="-shell-port-close"></div>
     <div data-output="true"><pre data-xconsole></pre></div>
     <div class="-shell-port-cmd">
