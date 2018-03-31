@@ -1,10 +1,14 @@
 ## Changelog
 
+#### Version 19.12-beta1 (March 31, 2018)
+* Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/qooob/authentic-theme/issues/968)
+* Fix Mailman module not submitting forms [virtualmin.com/55729](https://virtualmin.com/node/55729)
+
 #### Version 19.11 (March 28, 2018)
 * Fix failing File Manager initial load for specific configurations [#1090](https://github.com/qooob/authentic-theme/issues/1090)
 * Fix date/time conversion for side slider
 * Fix external links always open on new tab
-* Fix container width when used with fixed right slider
+* Fix container width when used with fixed side slider
 
 #### Version 19.10 (March 28, 2018)
 * Add advanced tree-view to File Manager [#1066](https://github.com/qooob/authentic-theme/issues/1066)
