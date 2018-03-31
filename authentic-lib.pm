@@ -2096,6 +2096,8 @@ sub _settings
             'true',
             'settings_side_slider_fixed',
             'false',
+            'settings_side_slider_fixed_toggle',
+            'false',
             'settings_side_slider_sysinfo_enabled',
             'true',
             'settings_side_slider_notifications_enabled',

@@ -795,7 +795,7 @@ theme_xhred_title_locale_full=Fullt format
 theme_xhred_title_locale_long=Långt format
 theme_xhred_title_locale_short=Kort format
 settings_navigation_always_collapse=Alltid ihopfällda
-settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på SXGA+-skärmar med en minsta upplösning på 1400 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld.
+settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på HD-skärmar med en minsta upplösning på 1366 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld.
 theme_xhred_filemanager_records_per_page=Standard antal poster per sida
 theme_xhred_filemanager_sorting=Standard sorteringsordning
 theme_xhred_filemanager_sorting_asc=Stigande
@@ -814,3 +814,15 @@ theme_xhred_filemanager_tree_view_depth=Expanderat trädvysdjup vid uppstart (mi
 theme_xhred_global_unlimited=Obegränsat
 theme_xhred_filemanager_tree_exclude_on_first_load=Uteslut mindre viktiga mappar från att genomsökas vid uppstart av trädvyn (laddar snabbare)
 theme_xhred_filemanager_tree_expand_search=Expandera alla grenar som innehåller matchningar när trädvyn filtreras
+
+
+#19.12
+theme_xhred_tooltip_side_slider_sync_sysinfo=Force to synchronize background status collection
+theme_xhred_tooltip_side_slider_go_to_dashboard=Go to dashboard
+theme_xhred_tooltip_side_slider_open_favorites_control=Open favorites control
+theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
+theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
+theme_xhred_global_settings=Settings
+theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
+settings_side_slider_fixed_toggle=Show pin/unpin toggle
+settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met

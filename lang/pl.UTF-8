@@ -798,7 +798,7 @@ theme_xhred_title_locale_full=Full format
 theme_xhred_title_locale_long=Long format
 theme_xhred_title_locale_short=Short format
 settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on SXGA+ screens with minimum resolution of 1400 horizontal pixels and with disabled option for keeping navigation always collapsed.
+settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed.
 theme_xhred_filemanager_records_per_page=Default number of records per page
 theme_xhred_filemanager_sorting=Default sorting type
 theme_xhred_filemanager_sorting_asc=Ascending
@@ -817,3 +817,15 @@ theme_xhred_filemanager_tree_view_depth=Extracted tree-view depth on initial loa
 theme_xhred_global_unlimited=Unlimited
 theme_xhred_filemanager_tree_exclude_on_first_load=Exclude inessential directories from traversing on initial load for tree-view (loads faster)
 theme_xhred_filemanager_tree_expand_search=Expand all branches that contain matches while filtering tree-view
+
+
+#19.12
+theme_xhred_tooltip_side_slider_sync_sysinfo=Force to synchronize background status collection
+theme_xhred_tooltip_side_slider_go_to_dashboard=Go to dashboard
+theme_xhred_tooltip_side_slider_open_favorites_control=Open favorites control
+theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
+theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
+theme_xhred_global_settings=Settings
+theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
+settings_side_slider_fixed_toggle=Show pin/unpin toggle
+settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met
