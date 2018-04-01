@@ -1,7 +1,9 @@
 ## Changelog
 
-#### Version 19.12-beta1 (March 31, 2018)
+#### Version 19.12 (April 01, 2018)
 * Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/qooob/authentic-theme/issues/968)
+* Add an option to always display vertical scrollbar [#1092](https://github.com/qooob/authentic-theme/issues/1092)
+* Fix side slider being stuck on unsaved configuration [#1093](https://github.com/qooob/authentic-theme/issues/1093)
 * Fix Mailman module not submitting forms [virtualmin.com/55729](https://virtualmin.com/node/55729)
 
 #### Version 19.11 (March 28, 2018)
