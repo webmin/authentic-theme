@@ -46,6 +46,11 @@ print ui_table_row($Atext{'settings_cm_editor_palette'},
                                                     'settings_cm_editor_palette'
                    ));
 
+print ui_table_row($Atext{'settings_right_page_hide_persistent_vscroll'},
+                   ui_yesno_radio('settings_right_page_hide_persistent_vscroll',
+                                  $__settings{'settings_right_page_hide_persistent_vscroll'},
+                                  "true", "false"
+                   ));
 print ui_table_row(undef, '<b>' . $Atext{'settings_right_navigation_menu_title'} . '</b>', 2);
 
 print ui_table_row($Atext{'settings_button_tooltip'},

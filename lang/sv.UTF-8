@@ -826,3 +826,4 @@ theme_xhred_global_settings=Inställningar
 theme_xhred_tooltip_side_slider_pinned=Fäst/ta bort sidomenyn
 settings_side_slider_fixed_toggle=Visa växla fäst/ta bort
 settings_side_slider_fixed_toggle_description=Detta alternativ visar en växlaknapp på nedersta raden i sidomenyn som tillåter dig att växla funktionen direkt, men bara om villkoren i tidigare alternativ är uppfyllda
+settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
