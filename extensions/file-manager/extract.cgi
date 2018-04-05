@@ -26,7 +26,7 @@ foreach my $name (split(/\0/, $in{'name'})) {
         &backquote_logged("7z x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($cwd));
     } elsif ($archive_type =~ /\/zip/) {
         &backquote_logged("unzip -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
-    } elsif ($archive_type =~ /\/x-rar/) {
+    } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
         &backquote_logged("unrar x -r -y -o+ " . quotemeta("$cwd/$name") . " " . quotemeta($cwd));
     } elsif ($archive_type =~ "/x-rpm" || $archive_type =~ /\/x-deb/) {
         my $dir = fileparse("$cwd/$name", qr/\.[^.]*/);
