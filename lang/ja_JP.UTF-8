@@ -827,3 +827,7 @@ theme_xhred_tooltip_side_slider_pinned= ピン/ピン止め側のスライダ
 settings_side_slider_fixed_toggle= ピンの表示/固定解除の切り替え
 settings_side_slider_fixed_toggle_description= このオプションは、横のスライダの下の行にトグルを表示し、前のオプションの条件が満たされた場合にその表示をトグルで切り替えることができます
 settings_right_page_hide_persistent_vscroll= 垂直スクロールバーを隠す
+
+
+#19.13
+settings_sysinfo_theme_updates_for_usermin=Should running theme updates affect Usermin

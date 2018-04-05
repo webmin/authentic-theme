@@ -1791,7 +1791,7 @@ sub theme_remote_version
     my $remote_release;
     my $error;
 
-    if ($__settings{'settings_sysinfo_theme_updates'} eq 'true' && $get_user_level eq '0' && $in =~ /xhr-/) {
+    if (($__settings{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
 
         if (($__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force_beta_check) && !$force_stable_check) {
             http_download('api.github.com', '443', '/repos/qooob/authentic-theme/contents/theme.info',
@@ -2093,7 +2093,7 @@ sub _settings
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',
-            _settings('fa', 'bell', &Atext('settings_right_notification_slider_options_title')),
+            _settings('fa', 'bell',    &Atext('settings_right_notification_slider_options_title')),
             'settings_side_slider_enabled',
             'true',
             'settings_side_slider_fixed',
@@ -2230,6 +2230,8 @@ sub _settings
             'false',
             'settings_sysinfo_theme_patched_updates',
             'false',
+            'settings_sysinfo_theme_updates_for_usermin',
+            'true',
             'settings_sysinfo_csf_updates',
             'false');
 
@@ -2268,7 +2270,7 @@ sub _settings
         }
 
         # List of settings for Usermin
-        my @s_um_e = ('settings_hotkey_toggle_key_usermin');
+        my @s_um_e = ('settings_hotkey_toggle_key_usermin', 'settings_sysinfo_theme_updates_for_usermin');
         if (!usermin_available()) {
             foreach my $e (@s_um_e) {
                 push(@_s_e, $e);
@@ -2829,8 +2831,9 @@ sub get_xhr_request
             print get_json(\@data);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
-            my $version_type = $in{'xhr-update-type'};
-            my $update_force = $in{'xhr-update-force'};
+            my $version_type            = $in{'xhr-update-type'};
+            my $update_force            = $in{'xhr-update-force'};
+            my $usermin_enabled_updates = ($__settings{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
                       replace((!has_command('bash') ? '>git<' : '~'), '>bash<', $Atext{'theme_git_patch_no_git_message'}), };
@@ -2859,7 +2862,7 @@ sub get_xhr_request
                         $wmversion                          &&
                         $umversion                          &&
                         (get_webmin_version() < $wmversion) &&
-                        (usermin_available() && usermin_available('__version') < $umversion))
+                        (usermin_available() && $usermin_enabled_updates && usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
@@ -2899,8 +2902,8 @@ sub get_xhr_request
                         print get_json(\@update_rs);
                         exit;
                     } elsif ($atversion &&
-                             $umversion &&
-                             (usermin_available() && usermin_available('__version') < $umversion))
+                            $umversion &&
+                            (usermin_available() && $usermin_enabled_updates && usermin_available('__version') < $umversion))
                     {
                         @update_rs = {
                                        "incompatible" => (
@@ -2919,7 +2922,7 @@ sub get_xhr_request
                         exit;
                     }
                 }
-                my $usermin = usermin_available();
+                my $usermin = (usermin_available() && $usermin_enabled_updates);
                 my $usermin_root;
                 backquote_logged("yes | $root_directory/$current_theme/theme-update.sh -$version_type -no-restart");
                 if ($usermin) {
