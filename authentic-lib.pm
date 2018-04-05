@@ -2080,6 +2080,8 @@ sub _settings
             '0',
             'settings_cm_editor_palette',
             'monokai',
+            'settings_right_page_hide_persistent_vscroll',
+            'true',
             'settings_hide_top_loader',
             'false',
             'settings_animation_left',
@@ -2091,10 +2093,12 @@ sub _settings
             'settings_global_passgen_format',
             '12|a-z,A-Z,0-9,#',
             '__',
-            _settings('fa', 'bell',    &Atext('settings_right_notification_slider_options_title')),
+            _settings('fa', 'bell', &Atext('settings_right_notification_slider_options_title')),
             'settings_side_slider_enabled',
             'true',
             'settings_side_slider_fixed',
+            'false',
+            'settings_side_slider_fixed_toggle',
             'false',
             'settings_side_slider_sysinfo_enabled',
             'true',
@@ -3161,7 +3165,8 @@ sub content
     print_favorites();
 
     # Content
-    print '<div id="content" class="__page">' . "\n";
+    print '<div id="content" class="__page' .
+      ($__settings{'settings_right_page_hide_persistent_vscroll'} eq 'false' ? ' fvscroll' : undef) . '">' . "\n";
 
     print '  <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
 }

@@ -795,7 +795,7 @@ theme_xhred_title_locale_full=Fullt format
 theme_xhred_title_locale_long=Långt format
 theme_xhred_title_locale_short=Kort format
 settings_navigation_always_collapse=Alltid ihopfällda
-settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på SXGA+-skärmar med en minsta upplösning på 1400 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld.
+settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på HD-skärmar med en minsta upplösning på 1366 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld.
 theme_xhred_filemanager_records_per_page=Standard antal poster per sida
 theme_xhred_filemanager_sorting=Standard sorteringsordning
 theme_xhred_filemanager_sorting_asc=Stigande
@@ -808,9 +808,22 @@ theme_xhred_filemanager_sorting_by_permissions=Behörigheter
 theme_xhred_filemanager_sorting_by_attributes=Attributer
 theme_xhred_filemanager_sorting_by_selinux=Säkerhetsinnehåll
 theme_xhred_filemanager_sorting_by_last_mod_time=Senast ändrad tid
-theme_xhred_filemanager_tree_view_toggle=Tree-view toggle
-theme_xhred_filemanager_hide_tree_view=Enable tree-view panel
-theme_xhred_filemanager_tree_view_depth=Extracted tree-view depth on initial load (smaller loads faster)
-theme_xhred_global_unlimited=Unlimited
-theme_xhred_filemanager_tree_exclude_on_first_load=Exclude inessential directories from traversing on initial load for tree-view (loads faster)
-theme_xhred_filemanager_tree_expand_search=Expand all branches that contain matches while filtering tree-view
+theme_xhred_filemanager_tree_view_toggle=Växla trädvy
+theme_xhred_filemanager_hide_tree_view=Aktivera trädvy
+theme_xhred_filemanager_tree_view_depth=Expanderat trädvysdjup vid uppstart (mindre laddas snabbare)
+theme_xhred_global_unlimited=Obegränsat
+theme_xhred_filemanager_tree_exclude_on_first_load=Uteslut mindre viktiga mappar från att genomsökas vid uppstart av trädvyn (laddar snabbare)
+theme_xhred_filemanager_tree_expand_search=Expandera alla grenar som innehåller matchningar när trädvyn filtreras
+
+
+#19.12
+theme_xhred_tooltip_side_slider_sync_sysinfo=Tvinga till att synkronisera bakgrundsstatusinsamling
+theme_xhred_tooltip_side_slider_go_to_dashboard=Gå till översikt
+theme_xhred_tooltip_side_slider_open_favorites_control=Öppna favoritkontrollen
+theme_xhred_tooltip_side_slider_delete_all_notification=Ta bort alla aviseringar
+theme_xhred_tooltip_side_slider_mark_read_all_notification=Markera alla aviseringar som lästa
+theme_xhred_global_settings=Inställningar
+theme_xhred_tooltip_side_slider_pinned=Fäst/ta bort sidomenyn
+settings_side_slider_fixed_toggle=Visa växla fäst/ta bort
+settings_side_slider_fixed_toggle_description=Detta alternativ visar en växlaknapp på nedersta raden i sidomenyn som tillåter dig att växla funktionen direkt, men bara om villkoren i tidigare alternativ är uppfyllda
+settings_right_page_hide_persistent_vscroll=Dölj permanent vertikal rullningslist

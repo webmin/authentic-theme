@@ -63,31 +63,32 @@ sub settings_filter
 sub settings_default
 {
     my %c;
-    $c{'settings_font_family'}                  = '0';
-    $c{'settings_navigation_color'}             = 'blue';
-    $c{'settings_background_color'}             = 'gainsboro';
-    $c{'settings_button_tooltip'}               = 'true';
-    $c{'settings_hide_top_loader'}              = 'false';
-    $c{'settings_animation_left'}               = 'true';
-    $c{'settings_animation_tabs'}               = 'true';
-    $c{'settings_sysinfo_link_mini'}            = 'false';
-    $c{'settings_show_night_mode_link'}         = 'true';
-    $c{'settings_theme_options_button'}         = 'true';
-    $c{'settings_leftmenu_button_refresh'}      = 'false';
-    $c{'settings_hotkeys_active'}               = 'true';
-    $c{'settings_hotkey_toggle_modifier'}       = 'altKey';
-    $c{'settings_hotkey_toggle_key_webmin'}     = 'w';
-    $c{'settings_hotkey_toggle_key_virtualmin'} = 'v';
-    $c{'settings_hotkey_toggle_key_cloudmin'}   = 'c';
-    $c{'settings_hotkey_toggle_key_usermin'}    = 'u';
-    $c{'settings_hotkey_toggle_key_webmail'}    = 'm';
-    $c{'settings_hotkey_shell'}                 = 'k';
-    $c{'settings_hotkey_sysinfo'}               = 'i';
-    $c{'settings_hotkey_toggle_slider'}         = 'n';
-    $c{'settings_hotkey_favorites'}             = 'f';
-    $c{'settings_hotkey_focus_search'}          = 's';
-    $c{'settings_hotkey_reload'}                = 'r';
-    $c{'settings_hotkey_toggle_key_night_mode'} = 'l';
+    $c{'settings_font_family'}                        = '0';
+    $c{'settings_navigation_color'}                   = 'blue';
+    $c{'settings_background_color'}                   = 'gainsboro';
+    $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
+    $c{'settings_button_tooltip'}                     = 'true';
+    $c{'settings_hide_top_loader'}                    = 'false';
+    $c{'settings_animation_left'}                     = 'true';
+    $c{'settings_animation_tabs'}                     = 'true';
+    $c{'settings_sysinfo_link_mini'}                  = 'false';
+    $c{'settings_show_night_mode_link'}               = 'true';
+    $c{'settings_theme_options_button'}               = 'true';
+    $c{'settings_leftmenu_button_refresh'}            = 'false';
+    $c{'settings_hotkeys_active'}                     = 'true';
+    $c{'settings_hotkey_toggle_modifier'}             = 'altKey';
+    $c{'settings_hotkey_toggle_key_webmin'}           = 'w';
+    $c{'settings_hotkey_toggle_key_virtualmin'}       = 'v';
+    $c{'settings_hotkey_toggle_key_cloudmin'}         = 'c';
+    $c{'settings_hotkey_toggle_key_usermin'}          = 'u';
+    $c{'settings_hotkey_toggle_key_webmail'}          = 'm';
+    $c{'settings_hotkey_shell'}                       = 'k';
+    $c{'settings_hotkey_sysinfo'}                     = 'i';
+    $c{'settings_hotkey_toggle_slider'}               = 'n';
+    $c{'settings_hotkey_favorites'}                   = 'f';
+    $c{'settings_hotkey_focus_search'}                = 's';
+    $c{'settings_hotkey_reload'}                      = 'r';
+    $c{'settings_hotkey_toggle_key_night_mode'}       = 'l';
 
     return %c;
 }

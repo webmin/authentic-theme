@@ -795,7 +795,7 @@ theme_xhred_title_locale_full= フルフォーマット
 theme_xhred_title_locale_long= ロングフォーマット
 theme_xhred_title_locale_short= 短い形式
 settings_navigation_always_collapse= 常に折りたたまれている
-settings_side_slider_fixed_description= このオプションは、最小解像度1400水平ピクセルのSXGA +画面でのみ使用でき、常にナビゲーションを無効にするオプションは無効になっています。
+settings_side_slider_fixed_description= このオプションは、最小解像度1366水平ピクセルのHD画面でのみ使用でき、常にナビゲーションを無効にするオプションは無効になっています。
 theme_xhred_filemanager_records_per_page= ページあたりのデフォルトレコード数
 theme_xhred_filemanager_sorting= デフォルトのソートタイプ
 theme_xhred_filemanager_sorting_asc= 上昇
@@ -814,3 +814,16 @@ theme_xhred_filemanager_tree_view_depth= 初期荷重時に抽出したツリー
 theme_xhred_global_unlimited= 無制限
 theme_xhred_filemanager_tree_exclude_on_first_load= ツリービューの初期読み込み時のトラバースからなディレクトリを除外する
 theme_xhred_filemanager_tree_expand_search= ツリービューのフィルタ処理中に一致するすべての分岐を展開する
+
+
+#19.12
+theme_xhred_tooltip_side_slider_sync_sysinfo=Force to synchronize background status collection
+theme_xhred_tooltip_side_slider_go_to_dashboard=Go to dashboard
+theme_xhred_tooltip_side_slider_open_favorites_control=Open favorites control
+theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
+theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
+theme_xhred_global_settings=Settings
+theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
+settings_side_slider_fixed_toggle=Show pin/unpin toggle
+settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met
+settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
