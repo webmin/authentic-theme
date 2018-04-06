@@ -369,7 +369,7 @@ sub print_content
             if (($type =~ /application-zip/ && has_command('unzip')) ||
                 ($type =~ /application-x-7z-compressed/ &&
                     has_command('7z')) ||
-                ($type =~ /application-x-rar/ &&
+                ($type =~ /application-x-rar|application-vnd\.rar/ &&
                     has_command('unrar')) ||
                 ($type =~ /application-x-rpm/ &&
                     has_command('rpm2cpio') &&

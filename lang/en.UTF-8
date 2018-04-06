@@ -827,3 +827,7 @@ theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
 settings_side_slider_fixed_toggle=Show pin/unpin toggle
 settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met
 settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
+
+
+#19.13
+settings_sysinfo_theme_updates_for_usermin=Should running theme updates affect Usermin
