@@ -844,4 +844,4 @@ settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
 
 
 #19.13
-settings_sysinfo_theme_updates_for_usermin=Should running theme updates affect Usermin
+settings_sysinfo_theme_updates_for_usermin=Installing theme updates affect Usermin
