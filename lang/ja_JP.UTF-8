@@ -830,4 +830,4 @@ settings_right_page_hide_persistent_vscroll= 垂直スクロールバーを隠�
 
 
 #19.13
-settings_sysinfo_theme_updates_for_usermin=Should running theme updates affect Usermin
+settings_sysinfo_theme_updates_for_usermin= テーマの更新を実行するとUserminに影響を与える必要があります。
