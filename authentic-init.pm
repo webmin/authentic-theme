@@ -440,13 +440,21 @@ sub Atext
 sub init_vars
 {
 
-    our $t_uri__i = get_env('request_uri');
     our %__settings = (settings_default(),
                        settings($config_directory . "/$current_theme/settings.js", 'settings_'),
                        settings(get_tuconfig_file(),                               'settings_'));
     our (%text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m, $t_var_product_m);
 
     our %Atext = (&load_language($current_theme), %Atext);
+
+    our $t_uri__i = get_env('request_uri');
+    if ($in !~ /xhr-/) {
+        if ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
+            $t_uri__i = 'virtual-server';
+        } elsif ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
+            $t_uri__i = 'server-manager';
+        }
+    }
 
     if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
         our %Atext = (&load_language('virtual-server'), %Atext);
