@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.13-beta1 (April 08, 2018)
+* Add showing available theme versions on configuration page [#1097](https://github.com/qooob/authentic-theme/issues/1097)
+* Add ability to exclude Usermin from theme updates
+* Fix initial menu content after login for defaults [#1099](https://github.com/qooob/authentic-theme/issues/1099)
+* Fix missing default form method [webmin/webmin#893](https://github.com/webmin/webmin/issues/893)
+* Japanese and Swedish language translation updates
+
 #### Version 19.12 (April 01, 2018)
 * Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/qooob/authentic-theme/issues/968)
 * Add an option to always display vertical scrollbar [#1092](https://github.com/qooob/authentic-theme/issues/1092)
