@@ -2839,6 +2839,11 @@ sub get_xhr_request
             my @data =
               get_autocomplete_shell($in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'});
             print get_json(\@data);
+        } elsif ($in{'xhr-theme_latest_version'} eq '1') {
+            my @current_versions;
+            push(@current_versions,
+                 (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
+            print get_json(\@current_versions);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = $in{'xhr-update-type'};
