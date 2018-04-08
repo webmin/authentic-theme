@@ -1022,7 +1022,7 @@ sub theme_ui_buttons_row
     if (ref($hiddens)) {
         $hiddens = join("\n", map {&ui_hidden(@$_)} @$hiddens);
     }
-    return "<form action='$script' class='ui_buttons_form'>\n" .
+    return "<form action='$script' method='post' class='ui_buttons_form'>\n" .
       $hiddens . "<table>" . "<tr class='ui_buttons_row'> " . "<td data-nowrap class=ui_buttons_label>" .
       ($before ? $before . " " : "") . &ui_submit($label) . ($after ? " " . $after : "") .
       "</td>\n" . "<td class=ui_buttons_value>" . $desc . "</td></tr>\n" . "</table>\n" . "</form>\n";
