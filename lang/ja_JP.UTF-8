@@ -831,3 +831,10 @@ settings_right_page_hide_persistent_vscroll= 垂直スクロールバーを隠�
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin= テーマの更新を実行するとUserminに影響を与える必要があります。
+<<<<<<< HEAD
+=======
+theme_xhred_global_installed_version=Installed version
+theme_xhred_global_installed_and_latest_version=Installed and latest version
+theme_xhred_global_latest_stable=Latest stable
+theme_xhred_global_latest_beta=Latest beta
+>>>>>>> upstream/master

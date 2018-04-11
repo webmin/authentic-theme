@@ -2374,7 +2374,9 @@ sub _settings
 
             # Force disabled state
             if (!has_command('git') &&
-                ($k eq 'settings_sysinfo_theme_updates' || $k eq 'settings_sysinfo_theme_patched_updates'))
+                ($k eq 'settings_sysinfo_theme_updates' ||
+                    $k eq 'settings_sysinfo_theme_patched_updates' ||
+                    $k eq 'settings_sysinfo_theme_updates_for_usermin'))
             {
                 $disabled = " pointer-events-none";
             }
@@ -2634,9 +2636,17 @@ sub _settings
                                     <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
           . $Atext{'settings_right_clear_local_cache'} . '</a>
          ' . (
-            $get_user_level eq '0' && has_command('git') ?
-              '                     <span class="dropup">
-                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            $get_user_level eq '0' ?
+              '                     <span class="dropup"'
+              .
+              ( has_command('git') ?
+                  undef :
+                  get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
+              ) .
+              '>
+                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover' .
+              (has_command('git') ? undef : ' disabled') .
+              '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                          <i class="fa fa-fw fa-download-cloud margined-right-8"></i>'
               . $Atext{'theme_force_upgrade'} . '&nbsp;&nbsp;
                                          <span class="caret"></span>
@@ -2829,6 +2839,11 @@ sub get_xhr_request
             my @data =
               get_autocomplete_shell($in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'});
             print get_json(\@data);
+        } elsif ($in{'xhr-theme_latest_version'} eq '1') {
+            my @current_versions;
+            push(@current_versions,
+                 (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
+            print get_json(\@current_versions);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = $in{'xhr-update-type'};
@@ -3313,21 +3328,22 @@ sub manage_theme_config
 
 sub get_button_tooltip
 {
-    my ($label, $key, $placement) = @_;
+    my ($label, $key, $placement, $html, $force) = @_;
 
     my $mod_key = $__settings{'settings_hotkey_toggle_modifier'};
-    my $the_key = ucfirst($__settings{$key});
+    my $hot_key = ($key ? ucfirst($__settings{$key}) : undef);
 
-    return ($__settings{'settings_button_tooltip'} ne 'false' ?
-              (' data-container="body" data-placement="' . $placement . '" data-toggle="tooltip" data-title="'
+    return (($__settings{'settings_button_tooltip'} ne 'false' || $force) ?
+              (' data-container="body" data-placement="' .
+                 $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
                  .
                  ($Atext{$label}
                     .
                     (length $__settings{'settings_hotkeys_active'} &&
                        $__settings{'settings_hotkeys_active'} ne 'false' &&
-                       $the_key ?
+                       $hot_key ?
                        " (" .
-                       ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $the_key . ")" :
+                       ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
                        ''
                     )
                  ) .
