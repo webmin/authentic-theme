@@ -2084,6 +2084,8 @@ sub _settings
             'true',
             'settings_hide_top_loader',
             'false',
+            'settings_perform_content_scrolling',
+            'true',
             'settings_animation_left',
             'true',
             'settings_animation_tabs',

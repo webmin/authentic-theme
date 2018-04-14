@@ -695,3 +695,4 @@ theme_xhred_global_installed_version=Installed version
 theme_xhred_global_installed_and_latest_version=Installed and latest version
 theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
+settings_perform_content_scrolling=Enable content scrolling for progressive output
