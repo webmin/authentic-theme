@@ -450,8 +450,8 @@ sub theme_ui_form_start
 
     $rv .= '<form class="ui_form" ';
     $rv .= 'action="' . &html_escape($script) . '" ';
-    $rv .= ($method eq 'get' ? 'method="get" ' :
-              ($method eq 'form-data' ? 'method="post" enctype="multipart/form-data" ' : 'method="post" '));
+    $rv .= ($method eq 'post' ? 'method="post" ' :
+              ($method eq 'form-data' ? 'method="post" enctype="multipart/form-data" ' : 'method="get" '));
     $rv .= ($target ? 'target="' . $target . '" ' : '');
     $rv .= ($tags   ? $tags                       : '');
     $rv .= '>' . "\n";
