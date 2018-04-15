@@ -450,9 +450,8 @@ sub theme_ui_form_start
 
     $rv .= '<form class="ui_form" ';
     $rv .= 'action="' . &html_escape($script) . '" ';
-    $rv .= ($method eq 'post'        ? 'method="post" ' :
-              $method eq 'form-data' ? 'method="post" enctype="multipart/form-data" ' :
-              'method="get" ');
+    $rv .= ($method eq 'post' ? 'method="post" ' :
+              ($method eq 'form-data' ? 'method="post" enctype="multipart/form-data" ' : 'method="get" '));
     $rv .= ($target ? 'target="' . $target . '" ' : '');
     $rv .= ($tags   ? $tags                       : '');
     $rv .= '>' . "\n";
@@ -1060,7 +1059,7 @@ sub theme_make_date
     my $d = "<$t-d>$s";
     ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ";0")) . "</$t-d>");
     (!$o && ($d .= " <$t-t>$s</$t-t>"));
-    return $d;
+    return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
 }
 
 sub theme_redirect

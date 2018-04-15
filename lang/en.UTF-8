@@ -148,7 +148,7 @@ settings_loader_left=Enable spinner for navigation menu
 settings_right_reload=Load default content page
 settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
-settings_right_hide_table_icons=Hide table icons for the right frame
+settings_right_hide_table_icons=Hide table icons
 settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
 settings_right_small_table_icons=Small table icons
 settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
@@ -830,8 +830,9 @@ settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
 
 
 #19.13
-settings_sysinfo_theme_updates_for_usermin=Installing theme updates affect Usermin
+settings_sysinfo_theme_updates_for_usermin=Install theme updates for Usermin as well
 theme_xhred_global_installed_version=Installed version
 theme_xhred_global_installed_and_latest_version=Installed and latest version
 theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
+settings_perform_content_scrolling=Enable content scrolling for progressive output
