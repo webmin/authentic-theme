@@ -1,11 +1,18 @@
 ## Changelog
 
+#### Version 19.13-beta2 (April 16, 2018)
+* Add high contrast mode [virtualmin.com/56725](https://virtualmin.com/node/56725) [virtualmin.com/56817](https://virtualmin.com/node/56817)
+* Add ability to refresh page content that was submitted by form [#972](https://github.com/qooob/authentic-theme/issues/972)
+* Fix printing date/time for non UI calls
+* Fix select/invert buttons logic for disabled and single checkboxes
+* Fix numerous of other issues and made dozens of improvements
+
 #### Version 19.13-beta1 (April 08, 2018)
 * Add showing available theme versions on configuration page [#1097](https://github.com/qooob/authentic-theme/issues/1097)
 * Add ability to exclude Usermin from theme updates
+* Add Japanese and Swedish language translation updates
 * Fix initial menu content after login for defaults [#1099](https://github.com/qooob/authentic-theme/issues/1099)
-* Fix missing default form method [webmin/webmin#893](https://github.com/webmin/webmin/issues/893)
-* Japanese and Swedish language translation updates
+* Fix missing default form method  [#893/comment-379585204](https://github.com/webmin/webmin/issues/893#issuecomment-379585204)
 
 #### Version 19.12 (April 01, 2018)
 * Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/qooob/authentic-theme/issues/968)
