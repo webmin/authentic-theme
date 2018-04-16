@@ -66,6 +66,7 @@ sub settings_default
     $c{'settings_font_family'}                        = '0';
     $c{'settings_navigation_color'}                   = 'blue';
     $c{'settings_background_color'}                   = 'gainsboro';
+    $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_button_tooltip'}                     = 'true';
     $c{'settings_hide_top_loader'}                    = 'false';
@@ -254,6 +255,13 @@ sub embed_styles
     {
         unlink $root_directory . "/$current_theme/unauthenticated/css/styles.css";
     }
+
+    if ($__settings{'settings_contrast_mode'} eq 'true') {
+        print '  <link href="' .
+          $gconfig{'webprefix'} . '/unauthenticated/css/high-contrast.' . (theme_debug_mode() ? 'src' : 'min') . '.css?' .
+          time() . '" rel="stylesheet" data-high-contrast>' . "\n";
+    }
+
 }
 
 sub embed_pm_scripts
@@ -1011,8 +1019,9 @@ sub header_html_data
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
-      ' data-navigation-collapsed="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' .        ($__settings{'settings_side_slider_fixed'} eq "true"          ? '1' : '0') .
+      ' data-high-contrast="' .         ($__settings{'settings_contrast_mode'} eq 'true'              ? '1' : '0') .
+      '" data-navigation-collapsed="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
+      '" data-slider-fixed="' .         ($__settings{'settings_side_slider_fixed'} eq "true"          ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' . foreign_available("shell") .
       '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . usermin_available() .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .

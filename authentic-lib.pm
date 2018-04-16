@@ -2084,6 +2084,8 @@ sub _settings
             'true',
             'settings_hide_top_loader',
             'false',
+            'settings_contrast_mode',
+            'false',
             'settings_perform_content_scrolling',
             'true',
             'settings_animation_left',
