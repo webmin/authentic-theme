@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.13-beta3 (April 17, 2018)
+* Add ability to File Manager to interrupt current directory load request
+* Add trigger to File Manager to refresh directory contents on closing inbuilt command shell
+* Fix error handler for invalid path on initial load in File Manager
+* Fix to bring back logo support in reseller accounts
+
 #### Version 19.13-beta2 (April 16, 2018)
 * Add high contrast mode [virtualmin.com/56725](https://virtualmin.com/node/56725) [virtualmin.com/56817](https://virtualmin.com/node/56817)
 * Add ability to refresh page content that was submitted by form [#972](https://github.com/qooob/authentic-theme/issues/972)
