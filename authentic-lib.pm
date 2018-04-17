@@ -1740,11 +1740,25 @@ sub embed_logo
                                  $usermin_root_directory . "/$current_theme/images");
             }
         }
-        if (-r $root_directory . "/$current_theme/images/" . $logo . ".png") {
-            print '<div class="__' . $logo . ' _' . $logo . '">';
-            print '<img src="' . $gconfig{'webprefix'} . '/images/' . $logo . '.png?' . time() . '">';
-            print '</div>' . "\n";
+
+    }
+
+    my $logo_target = ('<img src="' . $gconfig{'webprefix'} . '/images/' . $logo . '.png?' . time() . '">');
+    if ($get_user_level eq '1') {
+        my %reseller = get_user_acl(undef, 'virtual-server');
+        if (length $reseller{'logo'} > 4 && $reseller{'link'}) {
+            $logo_target = ('<a class="pointer-events-auto" target="_blank" href="' .
+                            $reseller{'link'} . '"><img src="' . $reseller{'logo'} . '"></a>');
+        } elsif ($reseller{'logo'}) {
+            $logo_target = ('<img src="' . $reseller{'logo'} . '">');
         }
+
+    }
+
+    if ((-r $root_directory . "/$current_theme/images/" . $logo . ".png" && $logo_target !~ '="none"') || $logo_target =~ 'http') {
+        print '<div class="__' . $logo . ' _' . $logo . '">';
+        print $logo_target;
+        print '</div>' . "\n";
     }
 }
 
@@ -3373,6 +3387,33 @@ sub get_theme_language
     }
 
     get_json(\%s);
+
+}
+
+sub get_user_acl
+{
+    my ($key, $module) = @_;
+
+    if ($module) {
+        $module = '/' . $module;
+    }
+    my $acl = "$config_directory$module/$remote_user.acl";
+
+    my $config = read_file_contents($acl);
+    my %config = $config =~ /(.*?)=(.*)/g;
+
+    if (-r $acl) {
+
+        my %config = $config =~ /(.*?)=(.*)/g;
+
+        if ($key) {
+            return $config{$key};
+        } else {
+            return %config;
+        }
+    } else {
+        return undef;
+    }
 
 }
 
