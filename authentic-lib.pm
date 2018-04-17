@@ -1709,55 +1709,32 @@ sub parse_license_date
 sub embed_logo
 {
 
-    my $logo;
-    my $usermin_config_directory;
-    my $usermin_root_directory;
+    my $lgt;
+    my $img;
 
     ((get_env('script_name') eq '/session_login.cgi' || get_env('script_name') eq '/pam_login.cgi') ?
-       ($logo = 'logo_welcome') :
-       ($logo = 'logo'));
+       ($lgt = 'logo_welcome') :
+       ($lgt = 'logo'));
 
-    if (usermin_available()) {
-        ($usermin_config_directory = $config_directory) =~ s/webmin/usermin/;
-        ($usermin_root_directory   = $root_directory) =~ s/webmin/usermin/;
-
+    my $lnk = $config_directory . "/$current_theme/" . $lgt . ".png";
+    if (-r $lnk) {
+        $img = ('<img src="data:image/png;base64,' . encode_base64(read_file_contents($lnk)) . '">');
     }
 
-    if (-r $config_directory . "/$current_theme/" . $logo . ".png") {
-        if ($get_user_level eq '0' &&
-            (-s $config_directory .
-                "/$current_theme/" . $logo . ".png" ne -s $root_directory . "/$current_theme/images/" . $logo . ".png" ||
-                -s $usermin_config_directory . "/$current_theme/" .
-                $logo . ".png" ne -s $usermin_root_directory . "/$current_theme/images/" . $logo . ".png"))
-        {
-            # Update logo for Webmin
-            copy_source_dest($config_directory . "/$current_theme/" . $logo . ".png",
-                             $root_directory . "/$current_theme/images");
-
-            # Push logo update in case Usermin is installed
-            if (usermin_available()) {
-                copy_source_dest($usermin_config_directory . "/$current_theme/" . $logo . ".png",
-                                 $usermin_root_directory . "/$current_theme/images");
-            }
-        }
-
-    }
-
-    my $logo_target = ('<img src="' . $gconfig{'webprefix'} . '/images/' . $logo . '.png?' . time() . '">');
     if ($get_user_level eq '1') {
         my %reseller = get_user_acl(undef, 'virtual-server');
         if (length $reseller{'logo'} > 4 && $reseller{'link'}) {
-            $logo_target = ('<a class="pointer-events-auto" target="_blank" href="' .
-                            $reseller{'link'} . '"><img src="' . $reseller{'logo'} . '"></a>');
+            $img = ('<a class="pointer-events-auto" target="_blank" href="' .
+                    $reseller{'link'} . '"><img src="' . $reseller{'logo'} . '"></a>');
         } elsif ($reseller{'logo'}) {
-            $logo_target = ('<img src="' . $reseller{'logo'} . '">');
+            $img = ('<img src="' . $reseller{'logo'} . '">');
         }
 
     }
 
-    if ((-r $root_directory . "/$current_theme/images/" . $logo . ".png" && $logo_target !~ '="none"') || $logo_target =~ 'http') {
-        print '<div class="__' . $logo . ' _' . $logo . '">';
-        print $logo_target;
+    if ($img && $img !~ /="none"/) {
+        print '<div class="__' . $lgt . ' _' . $lgt . '">';
+        print $img;
         print '</div>' . "\n";
     }
 }
