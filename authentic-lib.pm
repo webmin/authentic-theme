@@ -2051,12 +2051,6 @@ sub _settings
             '1',
             'settings_contrast_level_navigation',
             '1',
-            'settings_grayscale_level_content',
-            '0',
-            'settings_saturate_level_content',
-            '1',
-            'settings_hue_level_content',
-            '0',
             'settings_cm_editor_palette',
             'monokai',
             'settings_right_page_hide_persistent_vscroll',
@@ -2427,10 +2421,7 @@ sub _settings
                  $k eq 'settings_invert_level_navigation'     ||
                  $k eq 'settings_brightness_level_navigation' ||
                  $k eq 'settings_contrast_level_navigation'   ||
-                 $k eq 'settings_grayscale_level_content'     ||
-                 $k eq 'settings_saturate_level_content'      ||
-                 $k eq 'settings_leftmenu_width'              ||
-                 $k eq 'settings_hue_level_content')
+                 $k eq 'settings_leftmenu_width')
         {
 
             my $range_max = '1';
@@ -2440,13 +2431,10 @@ sub _settings
             if ($k eq 'settings_grayscale_level_navigation' ||
                 $k eq 'settings_sepia_level_navigation'    ||
                 $k eq 'settings_saturate_level_navigation' ||
-                $k eq 'settings_invert_level_navigation'   ||
-                $k eq 'settings_grayscale_level_content'   ||
-                $k eq 'settings_saturate_level_content')
+                $k eq 'settings_invert_level_navigation')
             {
 
-                if ($k eq 'settings_saturate_level_navigation' ||
-                    $k eq 'settings_saturate_level_content')
+                if ($k eq 'settings_saturate_level_navigation')
                 {
                     $range_max = '3';
                 }
@@ -2457,8 +2445,7 @@ sub _settings
                 $range_min  = '0.1';
                 $range_max  = '3';
                 $range_step = '0.01';
-            } elsif ($k eq 'settings_hue_level_navigation' ||
-                     $k eq 'settings_hue_level_content')
+            } elsif ($k eq 'settings_hue_level_navigation')
             {
                 $range_min  = '-360';
                 $range_max  = '360';
@@ -3124,7 +3111,7 @@ sub content
 
     # Mobile toggle
     print '<div class="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
-      'mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
+      'mobile-menu-toggler" style="position: fixed; ' . get_filters() . '">';
 
     print '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' .
       "\n";
@@ -3132,7 +3119,7 @@ sub content
     print '</button>' . "\n";
     print '</div>' . "\n";
 
-    print '<aside style="z-index:10; ' . get_filters('navigation') . '" id="sidebar" class="hidden-xs">' . "\n";
+    print '<aside style="z-index:10; ' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
 
     &print_switch();
 
@@ -3344,7 +3331,8 @@ sub get_theme_language
     foreach my $key (keys %text) {
         if ($key !~ /_xhred_/ &&
             $key !~ /body_/ &&
-            $key !~ /right_/)
+            $key !~ /right_/ &&
+            $key !~ /_level_navigation/)
         {
             next;
         }

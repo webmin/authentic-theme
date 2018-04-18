@@ -66,6 +66,13 @@ sub settings_default
     $c{'settings_font_family'}                        = '0';
     $c{'settings_navigation_color'}                   = 'blue';
     $c{'settings_background_color'}                   = 'gainsboro';
+    $c{'settings_grayscale_level_navigation'}         = '0';
+    $c{'settings_sepia_level_navigation'}             = '0';
+    $c{'settings_saturate_level_navigation'}          = '1';
+    $c{'settings_hue_level_navigation'}               = '0';
+    $c{'settings_invert_level_navigation'}            = '0';
+    $c{'settings_brightness_level_navigation'}        = '1';
+    $c{'settings_contrast_level_navigation'}          = '1';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_button_tooltip'}                     = 'true';
@@ -559,24 +566,19 @@ sub get_current_user_language
 
 sub get_filters
 {
-    my ($type) = @_;
-    return foreign_available('webmin') ?
-      '-webkit-filter: grayscale(' . $__settings{ 'settings_grayscale_level_' . $type . '' } .
-      ') ' . ($type eq 'navigation' && 'sepia(' . $__settings{ 'settings_sepia_level_' . $type . '' } . ')') .
-      ' saturate(' . $__settings{ 'settings_saturate_level_' . $type . '' } .
-      ') hue-rotate(' . $__settings{ 'settings_hue_level_' . $type . '' } . 'deg)' . ($type eq 'navigation' &&
-                                              ' invert(' . $__settings{ 'settings_invert_level_' . $type . '' } .
-                                              ') brightness(' . $__settings{ 'settings_brightness_level_' . $type . '' } .
-                                              ') contrast(' . $__settings{ 'settings_contrast_level_' . $type . '' } . ')') .
-      '; filter: grayscale(' . $__settings{ 'settings_grayscale_level_' . $type . '' } .
-      ') ' . ($type eq 'navigation' && 'sepia(' . $__settings{ 'settings_sepia_level_' . $type . '' } . ')') .
-      ' saturate(' . $__settings{ 'settings_saturate_level_' . $type . '' } .
-      ') hue-rotate(' . $__settings{ 'settings_hue_level_' . $type . '' } . 'deg)' . ($type eq 'navigation' &&
-                                              ' invert(' . $__settings{ 'settings_invert_level_' . $type . '' } .
-                                              ') brightness(' . $__settings{ 'settings_brightness_level_' . $type . '' } .
-                                              ') contrast(' . $__settings{ 'settings_contrast_level_' . $type . '' } . ')') .
-      ';' :
-      undef;
+    return '-webkit-filter: grayscale(' . $__settings{ 'settings_grayscale_level_navigation' } .
+      ') ' . 'sepia(' . $__settings{ 'settings_sepia_level_navigation' } . ')' .
+      ' saturate(' . $__settings{ 'settings_saturate_level_navigation' } .
+      ') hue-rotate(' . $__settings{ 'settings_hue_level_navigation' } . 'deg)' . ' invert(' . $__settings{ 'settings_invert_level_navigation' } .
+                                              ') brightness(' . $__settings{ 'settings_brightness_level_navigation' } .
+                                              ') contrast(' . $__settings{ 'settings_contrast_level_navigation' } . ')' .
+      '; filter: grayscale(' . $__settings{ 'settings_grayscale_level_navigation' } .
+      ') ' . 'sepia(' . $__settings{ 'settings_sepia_level_navigation' } . ')' .
+      ' saturate(' . $__settings{ 'settings_saturate_level_navigation' } .
+      ') hue-rotate(' . $__settings{ 'settings_hue_level_navigation' } . 'deg)' . ' invert(' . $__settings{ 'settings_invert_level_navigation' } .
+                                              ') brightness(' . $__settings{ 'settings_brightness_level_navigation' } .
+                                              ') contrast(' . $__settings{ 'settings_contrast_level_navigation' } . ')' .
+      ';';
 }
 
 sub get_user_level
