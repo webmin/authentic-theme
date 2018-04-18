@@ -101,17 +101,17 @@ sub embed_header
 
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
-    print '  <head>', "\n";
+    print ' <head>', "\n";
     embed_noscript();
-    print '  <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
-    print '  <title>', $args[0], '</title>', "\n";
-    print '  <link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
+    print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
+    print ' <title>', $args[0], '</title>', "\n";
+    print ' <link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
       .
       ( (&get_product_name() eq 'usermin') ? '-usermin' :
           '-webmin'
       ) .
       '.ico">' . "\n";
-    print '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
     ($args[1] && (print($args[1] . "\n")));
 
@@ -128,7 +128,7 @@ sub embed_header
 
         if ($args[2]) {
             foreach my $css (@css) {
-                print '  <link href="' . $gconfig{'webprefix'} .
+                print ' <link href="' . $gconfig{'webprefix'} .
                   '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
@@ -139,7 +139,7 @@ sub embed_header
 
         embed_css_night_rider();
 
-        embed_styles(0);
+        embed_styles();
         embed_settings();
 
         if ($args[2]) {
@@ -151,7 +151,7 @@ sub embed_header
                     next;
                 }
 
-                print '  <script src="' . $gconfig{'webprefix'} .
+                print ' <script src="' . $gconfig{'webprefix'} .
                   '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
@@ -161,7 +161,7 @@ sub embed_header
 
         if ($args[2]) {
             foreach my $css (@css) {
-                print '  <link href="' . $gconfig{'webprefix'} .
+                print ' <link href="' . $gconfig{'webprefix'} .
                   '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
@@ -174,13 +174,13 @@ sub embed_header
         if ((length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
         {
-            print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
+            print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($__settings{'settings_navigation_color'})) . '.' .
               ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
-        embed_styles(1);
+        embed_styles();
         embed_settings();
 
         if ($args[2]) {
@@ -192,7 +192,7 @@ sub embed_header
                     next;
                 }
 
-                print '  <script src="' . $gconfig{'webprefix'} .
+                print ' <script src="' . $gconfig{'webprefix'} .
                   '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
@@ -206,60 +206,39 @@ sub embed_header
 
 sub embed_settings
 {
-    my $str_unauthenticated = "unauthenticated";
-    my $str_settings        = "settings";
-    my $str_js              = "js";
-    my $cur_time            = time();
-    my $global_config_file  = ($config_directory . "/" . $current_theme . "/" . $str_settings . "." . $str_js);
-    my $user_config_file    = (get_tuconfig_file());
-    my $js_directory        = "/" . $current_theme . "/" . $str_unauthenticated . "/" . $str_js;
-    my $js_root_directory   = ($root_directory . $js_directory);
+
+    my $str_settings       = "settings";
+    my $str_js             = "js";
+    my $global_config_file = ($config_directory . "/" . $current_theme . "/" . $str_settings . "." . $str_js);
+    my $user_config_file   = (get_tuconfig_file());
 
     # Global configuration
     if (-r $global_config_file) {
-
-        copy_source_dest($global_config_file, $js_root_directory);
-        print '  <script src="' . $gconfig{'webprefix'} . '/' . $str_unauthenticated .
-          '/' . $str_js . '/' . $str_settings . '.' . $str_js . '?' . $cur_time . '"></script>' . "\n";
-    } elsif (-r $js_root_directory . "/" . $str_settings . "." . $str_js && !-r $global_config_file) {
-        unlink $js_root_directory . "/" . $str_settings . "." . $str_js;
+        $global_config_file = read_file_contents($global_config_file);
+        $global_config_file =~ tr/\r\n/;/d;
+        print ' <script>' . $global_config_file . '</script>' . "\n";
     }
 
     # User configuration
     if (-r $user_config_file) {
-        copy_source_dest($user_config_file, $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js);
-        print '  <script src="' . $gconfig{'webprefix'} . '/' . $str_unauthenticated .
-          '/' . $str_js . '/' . $str_settings . '_' . $remote_user . '.' . $str_js . '?' . $cur_time . '"></script>' . "\n";
-    } elsif (-r $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js &&
-             !-r $user_config_file)
-    {
-        unlink $js_root_directory . "/" . $str_settings . "_" . $remote_user . "." . $str_js;
+        $user_config_file = read_file_contents($user_config_file);
+        $user_config_file =~ tr/\r\n/;/d;
+        print ' <script>' . $user_config_file . '</script>' . "\n";
     }
 }
 
 sub embed_styles
 {
-    my ($force) = @_;
-    if (-r $config_directory . "/$current_theme/styles.css") {
-        if ($force ||
-            (-s $config_directory .
-                "/$current_theme/styles.css" ne -s $root_directory . "/$current_theme/unauthenticated/css/styles.css"))
-        {
-            copy_source_dest($config_directory . "/$current_theme/styles.css",
-                             $root_directory . "/$current_theme/unauthenticated/css");
-        }
-        print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' .
-          time() . '" rel="stylesheet">' . "\n";
-    } elsif (-r $root_directory . "/$current_theme/unauthenticated/css/styles.css" &&
-             !-r $config_directory . "/$current_theme/styles.css")
-    {
-        unlink $root_directory . "/$current_theme/unauthenticated/css/styles.css";
-    }
-
     if ($__settings{'settings_contrast_mode'} eq 'true') {
-        print '  <link href="' .
+        print ' <link href="' .
           $gconfig{'webprefix'} . '/unauthenticated/css/high-contrast.' . (theme_debug_mode() ? 'src' : 'min') . '.css?' .
           time() . '" rel="stylesheet" data-high-contrast>' . "\n";
+    }
+
+    my $css = $config_directory . "/$current_theme/styles.css";
+    if (-r $css) {
+        print ' <link data-custom-style href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($css))) . '" rel="stylesheet">' . "\n";
     }
 
 }
@@ -276,10 +255,10 @@ sub embed_css_fonts
 {
 
     if (!$__settings{'settings_font_family'} || $__settings{'settings_font_family'} eq 'undefined') {
-        print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
+        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     } elsif ($__settings{'settings_font_family'} != '1') {
-        print '  <link href="' .
+        print ' <link href="' .
           $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $__settings{'settings_font_family'} . '.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     }
@@ -287,7 +266,7 @@ sub embed_css_fonts
 
 sub embed_css_bundle
 {
-    print '  <link href="' .
+    print ' <link href="' .
       $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
@@ -295,7 +274,7 @@ sub embed_css_bundle
 sub embed_css_night_rider
 {
     if (theme_night_mode()) {
-        print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
+        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
@@ -303,20 +282,20 @@ sub embed_css_night_rider
 sub embed_css_content_palette
 {
     if (theme_night_mode()) {
-        print '  <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
+        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
 sub embed_js_timeplot
 {
-    print '  <script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/timeplot.' .
+    print ' <script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/timeplot.' .
       (theme_debug_mode() ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
 }
 
 sub embed_js_bundle
 {
-    print '  <script src="' .
+    print ' <script src="' .
       $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
 }
 
@@ -325,12 +304,11 @@ sub embed_js_scripts
 
     (get_stripped() && return);
 
-    if (-r $config_directory . "/$current_theme/scripts.js" && -s $config_directory . "/$current_theme/scripts.js") {
-        copy_source_dest($config_directory . "/$current_theme/scripts.js",
-                         $root_directory . "/$current_theme/unauthenticated/js");
-        print '  <script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/scripts.js?' . time() . '"></script>' . "\n";
-    } else {
-        unlink $root_directory . "/$current_theme/unauthenticated/js/scripts.js";
+    my $js = $config_directory . "/$current_theme/scripts.js";
+    if (-r $js) {
+        $js = read_file_contents($js);
+        $js =~ tr/\r\n/;/d;
+        print ' <script data-custom-script>' . $js . '</script>' . "\n";
     }
 }
 
@@ -412,7 +390,7 @@ sub embed_footer
         if (get_module_name() =~ /mysql/ ||
             get_module_name() =~ /postgresql/)
         {
-            print '  <script src="' . $gconfig{'webprefix'} . '/extensions/sql.' .
+            print ' <script src="' . $gconfig{'webprefix'} . '/extensions/sql.' .
               ($args[0] ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
         }
 
@@ -420,7 +398,7 @@ sub embed_footer
         if (get_module_name() =~ /file-manager/ ||
             get_module_name() =~ /filemin/)
         {
-            print '  <script src="' . $gconfig{'webprefix'} . '/extensions/file-manager/file-manager.' .
+            print ' <script src="' . $gconfig{'webprefix'} . '/extensions/file-manager/file-manager.' .
               ($args[0] ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
         }
 

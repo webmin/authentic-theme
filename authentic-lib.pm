@@ -1769,7 +1769,7 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
 
     embed_css_night_rider();
     embed_css_fonts();
-    embed_styles(1);
+    embed_styles();
     print '</head>', "\n";
 }
 
@@ -3181,7 +3181,7 @@ sub content
     print '<div id="content" class="__page' .
       ($__settings{'settings_right_page_hide_persistent_vscroll'} eq 'false' ? ' fvscroll' : undef) . '">' . "\n";
 
-    print '  <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
+    print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
 }
 
 sub update_notice

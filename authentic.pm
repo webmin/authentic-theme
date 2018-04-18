@@ -15,7 +15,7 @@ sub theme_header
 
     print '<body ' . header_body_data(undef) . '>' . "\n";
     if (@_ > 1 && $_[1] ne 'stripped') {
-        print '  <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
+        print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
