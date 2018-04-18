@@ -1379,14 +1379,11 @@ sub csf_mod
     {
         my $ext = (theme_debug_mode() ? 'src' : 'min');
 
-        my $styles  = $root_directory . "/$current_theme/unauthenticated/css/styles.css";
-        my $scripts = $root_directory . "/$current_theme/unauthenticated/js/styles.js";
-
-        my $csf_header_mod  = $root_directory . "/$current_theme/extensions/csf/csf.header";
-        my $csf_body_mod    = $root_directory . "/$current_theme/extensions/csf/csf.body";
-        my $csf_footer_mod  = $root_directory . "/$current_theme/extensions/csf/csf.footer";
-        my $csf_htmltag_mod = $root_directory . "/$current_theme/extensions/csf/csf.htmltag";
-        my $csf_bodytag_mod = $root_directory . "/$current_theme/extensions/csf/csf.bodytag";
+        my $csf_header_mod  = $config_directory . "/$current_theme/csf.header";
+        my $csf_body_mod    = $config_directory . "/$current_theme/csf.body";
+        my $csf_footer_mod  = $config_directory . "/$current_theme/csf.footer";
+        my $csf_htmltag_mod = $config_directory . "/$current_theme/csf.htmltag";
+        my $csf_bodytag_mod = $config_directory . "/$current_theme/csf.bodytag";
 
         open(my $fh, '>', $csf_header_mod) or die $!;
 
@@ -1403,15 +1400,6 @@ sub csf_mod
         } elsif ($__settings{'settings_font_family'} != '1') {
             print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' .
               $__settings{'settings_font_family'} . '.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        }
-
-        if (-r $styles) {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' .
-              time() . '" rel="stylesheet">' . "\n";
-        }
-        if (-r $scripts) {
-            print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/scripts.js?' .
-              time() . '"></script>' . "\n";
         }
 
         print $fh '<script src="' .
