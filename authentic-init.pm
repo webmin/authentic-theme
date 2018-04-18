@@ -236,7 +236,7 @@ sub embed_styles
     }
 
     my $css = $config_directory . "/$current_theme/styles.css";
-    if (-r $css) {
+    if (-r $css && -s $css) {
         print ' <link data-custom-style href="data:text/css;base64,' .
           trim(encode_base64(read_file_contents($css))) . '" rel="stylesheet">' . "\n";
     }
@@ -305,7 +305,7 @@ sub embed_js_scripts
     (get_stripped() && return);
 
     my $js = $config_directory . "/$current_theme/scripts.js";
-    if (-r $js) {
+    if (-r $js && -s $js) {
         $js = read_file_contents($js);
         $js =~ tr/\r\n/;/d;
         print ' <script data-custom-script>' . $js . '</script>' . "\n";
