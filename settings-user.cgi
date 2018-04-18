@@ -45,6 +45,8 @@ print ui_table_row($Atext{'settings_cm_editor_palette'},
                                                     ),
                                                     'settings_cm_editor_palette'
                    ));
+print ui_table_row($Atext{'settings_contrast_mode'},
+                   ui_yesno_radio('settings_contrast_mode', $__settings{'settings_contrast_mode'}, "true", "false"));
 
 print ui_table_row($Atext{'settings_right_page_hide_persistent_vscroll'},
                    ui_yesno_radio('settings_right_page_hide_persistent_vscroll',

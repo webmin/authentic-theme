@@ -13,6 +13,9 @@ require(dirname(__FILE__) . "/authentic-lib.pm");
 
 &ui_print_header($in{'file'}, $Atext{'settings_right_theme_logos_title'}, undef, undef, undef, 1);
 
+my $lga = $config_directory . "/$current_theme/logo.png";
+my $lgg = $config_directory . "/$current_theme/logo_welcome.png";
+
 print '' . &Atext('settings_right_logos_title') . '
             <p></p>';
 print &ui_form_start("settings-upload_save.cgi", "form-data");
@@ -31,18 +34,15 @@ print '
                                 <td class="col_label"><b>'
   . $Atext{'settings_right_logo_authenticated_users'} . '</b></td>
                                 <td class="col_value">'
-  . ui_yesno_radio("authenticated_logo", (-r $config_directory . "/$current_theme/logo.png" ? "1" : "0"), "1", "0") . '</td>
+  . ui_yesno_radio("authenticated_logo", (-r $lga ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value">
                                     <button class="btn btn-default chooser_button file_chooser_button_preview'
-  . (!-r $root_directory . "/$current_theme/images/logo.png" && ' disabled') .
-  '" type="button"' . (-r $root_directory . "/$current_theme/images/logo.png" &&
-                       ' data-image="' . $gconfig{'webprefix'} . '/images/logo.png?' . time() . '"') .
-  '>
+  . (!-r $lga && ' disabled') . '" type="button"' .
+  (-r $lga && ' data-image-lga data-image="data:image/png;base64,' . encode_base64(read_file_contents($lga)) . '"') . '>
                                         <i class="fa fa-fw fa-eye text-muted"></i>
                                     </button>
                                     <input class="ui_upload'
-  . (!-r $config_directory . "/$current_theme/logo.png" && ' disabled') .
-  '" type=file name="authenticated_logo_file" accept=".png" size="40" >
+  . (!-r $lga && ' disabled') . '" type=file name="authenticated_logo_file" accept=".png" size="40" >
 
                                 </td>
                             </tr>
@@ -50,19 +50,15 @@ print '
                                 <td class="col_label"><b>'
   . $Atext{'settings_right_logo_unauthenticated_users'} . '</b></td>
                                 <td class="col_value" >'
-  . ui_yesno_radio("unauthenticated_logo", (-r $config_directory . "/$current_theme/logo_welcome.png" ? "1" : "0"), "1", "0")
-  . '</td>
+  . ui_yesno_radio("unauthenticated_logo", (-r $lgg ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value">
                                     <button class="btn btn-default chooser_button file_chooser_button_preview'
-  . (!-r $root_directory . "/$current_theme/images/logo_welcome.png" && ' disabled') .
-  '" type="button"' . (-r $root_directory . "/$current_theme/images/logo_welcome.png" &&
-                       ' data-image="' . $gconfig{'webprefix'} . '/images/logo_welcome.png?' . time() . '"') .
-  '>
+  . (!-r $lgg && ' disabled') . '" type="button"' .
+  (-r $lgg && ' data-image-lgg data-image="data:image/png;base64,' . encode_base64(read_file_contents($lgg)) . '"') . '>
                                         <i class="fa fa-fw fa-eye text-muted"></i>
                                     </button>
                                     <input class="ui_upload'
-  . (!-r $config_directory . "/$current_theme/logo_welcome.png" && ' disabled') .
-  '" type=file name="unauthenticated_logo_file" accept=".png" size="40">
+  . (!-r $lgg && ' disabled') . '" type=file name="unauthenticated_logo_file" accept=".png" size="40">
                                 </td>
                             </tr>
                         </tbody>
