@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.13-beta4 (April 18, 2018)
+* Add ability for regular user to control color filters for navigation menu
+* Fix to use other means for storing user configuration data to avoid modifying the package files
+
 #### Version 19.13-beta3 (April 17, 2018)
 * Add ability to File Manager to interrupt current directory load request
 * Add trigger to File Manager to refresh directory contents on closing inbuilt command shell
