@@ -732,7 +732,7 @@ sub print_left_menu
                 }
 
                 # Print Virtual Server Summary link
-                if ($get_user_level eq '0' &&
+                if (($get_user_level eq '0' || $get_user_level eq '1') &&
                     $__custom_link eq '0' &&
                     $link =~ /\/virtual-server\/domain_form.cgi/ &&
                     domain_available_count())
@@ -2434,8 +2434,7 @@ sub _settings
                 $k eq 'settings_invert_level_navigation')
             {
 
-                if ($k eq 'settings_saturate_level_navigation')
-                {
+                if ($k eq 'settings_saturate_level_navigation') {
                     $range_max = '3';
                 }
                 $range_step = '0.1';
@@ -2445,8 +2444,7 @@ sub _settings
                 $range_min  = '0.1';
                 $range_max  = '3';
                 $range_step = '0.01';
-            } elsif ($k eq 'settings_hue_level_navigation')
-            {
+            } elsif ($k eq 'settings_hue_level_navigation') {
                 $range_min  = '-360';
                 $range_max  = '360';
                 $range_step = '1';
@@ -3330,7 +3328,7 @@ sub get_theme_language
     my %s;
     foreach my $key (keys %text) {
         if ($key !~ /_xhred_/ &&
-            $key !~ /body_/ &&
+            $key !~ /body_/  &&
             $key !~ /right_/ &&
             $key !~ /_level_navigation/)
         {
