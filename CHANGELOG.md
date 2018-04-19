@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.13-beta5 (April 19, 2018)
+* Fix post download invalidly replaced URL
+* Fix loading correspondent navigation menu if clicked from virtual servers/managed systems
+* Fix logic for accordions on configuration pages
+* Fix navigation detection for ambiguous links
+* Fix chooser positioning for some modules
+
 #### Version 19.13-beta4 (April 18, 2018)
 * Add ability for regular user to control color filters for navigation menu
 * Fix to use other means for storing user configuration data to avoid modifying the package files
