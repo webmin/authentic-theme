@@ -818,7 +818,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Markera alla aviserin
 theme_xhred_global_settings=Inställningar
 theme_xhred_tooltip_side_slider_pinned=Fäst/ta bort sidomenyn
 settings_side_slider_fixed_toggle=Visa växla fäst/ta bort
-settings_side_slider_fixed_toggle_description=Detta alternativ visar en växlaknapp på nedersta raden i sidomenyn som tillåter dig att växla funktionen direkt, men bara om villkoren i tidigare alternativ är uppfyllda
+settings_side_slider_fixed_toggle_description=Detta alternativ visar en växlaknapp på nedersta raden i sidomenyn som tillåter dig att växla funktionen direkt, men bara om villkoren i tidigare alternativ är uppfyllda.
 settings_right_page_hide_persistent_vscroll=Dölj permanent vertikal rullningslist
 
 
@@ -830,3 +830,4 @@ theme_xhred_global_latest_stable=Senaste stabila
 theme_xhred_global_latest_beta=Senaste betan
 settings_perform_content_scrolling=Aktivera automatisk sidrullning för progressiv utmatning
 settings_contrast_mode=Aktivera högkontrastläge
+settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
