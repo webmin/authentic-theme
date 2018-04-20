@@ -305,13 +305,6 @@ settings_brightness_level_navigation_description=Default/current values <code>1<
 settings_contrast_level_navigation=Contrast filter
 settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_grayscale_level_content=Grayscale filter
-settings_grayscale_level_content_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_content">0</code>
-settings_saturate_level_content=Saturate filter
-settings_saturate_level_content_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_content">0</code>
-settings_hue_level_content=Hue-rotate filter
-settings_hue_level_content_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_content">0</code>°
-
 settings_cm_view_palette=Viewer color palette
 settings_cm_editor_palette=Editor color palette
 
@@ -831,7 +824,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notification
 theme_xhred_global_settings=Settings
 theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
 settings_side_slider_fixed_toggle=Show pin/unpin toggle
-settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met
+settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met.
 settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
 
 
@@ -843,3 +836,4 @@ theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
+settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.

@@ -18,7 +18,7 @@ $charset = &get_charset();
 print '<!DOCTYPE HTML>', "\n";
 print '<html data-background-style="' . $__settings{'settings_background_color'} . '" class="session_login">', "\n";
 embed_login_head();
-print '<body class="session_login" data-style="' . get_filters('content') . '">' . "\n";
+print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";
 
 if ($in{'expired'} == 2) {

@@ -732,7 +732,7 @@ sub print_left_menu
                 }
 
                 # Print Virtual Server Summary link
-                if ($get_user_level eq '0' &&
+                if (($get_user_level eq '0' || $get_user_level eq '1') &&
                     $__custom_link eq '0' &&
                     $link =~ /\/virtual-server\/domain_form.cgi/ &&
                     domain_available_count())
@@ -1379,14 +1379,11 @@ sub csf_mod
     {
         my $ext = (theme_debug_mode() ? 'src' : 'min');
 
-        my $styles  = $root_directory . "/$current_theme/unauthenticated/css/styles.css";
-        my $scripts = $root_directory . "/$current_theme/unauthenticated/js/styles.js";
-
-        my $csf_header_mod  = $root_directory . "/$current_theme/extensions/csf/csf.header";
-        my $csf_body_mod    = $root_directory . "/$current_theme/extensions/csf/csf.body";
-        my $csf_footer_mod  = $root_directory . "/$current_theme/extensions/csf/csf.footer";
-        my $csf_htmltag_mod = $root_directory . "/$current_theme/extensions/csf/csf.htmltag";
-        my $csf_bodytag_mod = $root_directory . "/$current_theme/extensions/csf/csf.bodytag";
+        my $csf_header_mod  = $config_directory . "/$current_theme/csf.header";
+        my $csf_body_mod    = $config_directory . "/$current_theme/csf.body";
+        my $csf_footer_mod  = $config_directory . "/$current_theme/csf.footer";
+        my $csf_htmltag_mod = $config_directory . "/$current_theme/csf.htmltag";
+        my $csf_bodytag_mod = $config_directory . "/$current_theme/csf.bodytag";
 
         open(my $fh, '>', $csf_header_mod) or die $!;
 
@@ -1403,15 +1400,6 @@ sub csf_mod
         } elsif ($__settings{'settings_font_family'} != '1') {
             print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' .
               $__settings{'settings_font_family'} . '.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        }
-
-        if (-r $styles) {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/styles.css?' .
-              time() . '" rel="stylesheet">' . "\n";
-        }
-        if (-r $scripts) {
-            print $fh '<script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/scripts.js?' .
-              time() . '"></script>' . "\n";
         }
 
         print $fh '<script src="' .
@@ -1769,7 +1757,7 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
 
     embed_css_night_rider();
     embed_css_fonts();
-    embed_styles(1);
+    embed_styles();
     print '</head>', "\n";
 }
 
@@ -2063,12 +2051,6 @@ sub _settings
             '1',
             'settings_contrast_level_navigation',
             '1',
-            'settings_grayscale_level_content',
-            '0',
-            'settings_saturate_level_content',
-            '1',
-            'settings_hue_level_content',
-            '0',
             'settings_cm_editor_palette',
             'monokai',
             'settings_right_page_hide_persistent_vscroll',
@@ -2439,10 +2421,7 @@ sub _settings
                  $k eq 'settings_invert_level_navigation'     ||
                  $k eq 'settings_brightness_level_navigation' ||
                  $k eq 'settings_contrast_level_navigation'   ||
-                 $k eq 'settings_grayscale_level_content'     ||
-                 $k eq 'settings_saturate_level_content'      ||
-                 $k eq 'settings_leftmenu_width'              ||
-                 $k eq 'settings_hue_level_content')
+                 $k eq 'settings_leftmenu_width')
         {
 
             my $range_max = '1';
@@ -2452,26 +2431,20 @@ sub _settings
             if ($k eq 'settings_grayscale_level_navigation' ||
                 $k eq 'settings_sepia_level_navigation'    ||
                 $k eq 'settings_saturate_level_navigation' ||
-                $k eq 'settings_invert_level_navigation'   ||
-                $k eq 'settings_grayscale_level_content'   ||
-                $k eq 'settings_saturate_level_content')
+                $k eq 'settings_invert_level_navigation')
             {
 
-                if ($k eq 'settings_saturate_level_navigation' ||
-                    $k eq 'settings_saturate_level_content')
-                {
+                if ($k eq 'settings_saturate_level_navigation') {
                     $range_max = '3';
                 }
-                $range_step = '0.1';
+                $range_step = '0.01';
             } elsif ($k eq 'settings_brightness_level_navigation' ||
                      $k eq 'settings_contrast_level_navigation')
             {
                 $range_min  = '0.1';
                 $range_max  = '3';
                 $range_step = '0.01';
-            } elsif ($k eq 'settings_hue_level_navigation' ||
-                     $k eq 'settings_hue_level_content')
-            {
+            } elsif ($k eq 'settings_hue_level_navigation') {
                 $range_min  = '-360';
                 $range_max  = '360';
                 $range_step = '1';
@@ -3136,7 +3109,7 @@ sub content
 
     # Mobile toggle
     print '<div class="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
-      'mobile-menu-toggler" style="position: fixed; ' . get_filters('navigation') . '">';
+      'mobile-menu-toggler" style="position: fixed; ' . get_filters() . '">';
 
     print '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' .
       "\n";
@@ -3144,7 +3117,7 @@ sub content
     print '</button>' . "\n";
     print '</div>' . "\n";
 
-    print '<aside style="z-index:10; ' . get_filters('navigation') . '" id="sidebar" class="hidden-xs">' . "\n";
+    print '<aside style="z-index:10; ' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
 
     &print_switch();
 
@@ -3181,7 +3154,7 @@ sub content
     print '<div id="content" class="__page' .
       ($__settings{'settings_right_page_hide_persistent_vscroll'} eq 'false' ? ' fvscroll' : undef) . '">' . "\n";
 
-    print '  <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
+    print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
 }
 
 sub update_notice
@@ -3355,8 +3328,9 @@ sub get_theme_language
     my %s;
     foreach my $key (keys %text) {
         if ($key !~ /_xhred_/ &&
-            $key !~ /body_/ &&
-            $key !~ /right_/)
+            $key !~ /body_/  &&
+            $key !~ /right_/ &&
+            $key !~ /_level_navigation/)
         {
             next;
         }
