@@ -2437,7 +2437,7 @@ sub _settings
                 if ($k eq 'settings_saturate_level_navigation') {
                     $range_max = '3';
                 }
-                $range_step = '0.1';
+                $range_step = '0.01';
             } elsif ($k eq 'settings_brightness_level_navigation' ||
                      $k eq 'settings_contrast_level_navigation')
             {
