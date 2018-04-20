@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.13-beta6 (April 20, 2018)
+* Add ability to open appropriate link when clicking on HTML5 notifications
+* Fix showing post apply notifications for ConfigServer Security & Firewall
+
 #### Version 19.13-beta5 (April 19, 2018)
 * Fix post download invalidly replaced URL
 * Fix loading correspondent navigation menu if clicked from virtual servers/managed systems
