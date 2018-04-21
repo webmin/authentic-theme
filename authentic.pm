@@ -548,12 +548,13 @@ sub theme_ui_select
         $rv .=
           "<option value=\"" .
           &quote_escape($o->[0]) . "\"" . ($sel{ $o->[0] } ? " selected" : "") . ($o->[2] ne '' ? " " . $o->[2] : "") . ">" .
-          ($o->[1] || $o->[0]) . "</option>\n";
+          (html_escape($o->[1] || $o->[0])) . "</option>\n";
         $opt{ $o->[0] }++;
     }
     foreach $s (keys %sel) {
         if (!$opt{$s} && $missing) {
-            $rv .= "<option value=\"" . &quote_escape($s) . "\"" . " selected>" . ($s eq "" ? "&nbsp;" : $s) . "</option>\n";
+            $rv .= "<option value=\"" . &quote_escape($s) . "\"" . " selected>" .
+              ($s eq "" ? "&nbsp;" : html_escape($s)) . "</option>\n";
         }
     }
     $rv .= "</select>\n";
