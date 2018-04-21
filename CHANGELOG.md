@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.13-beta7 (April 21, 2018)
+* Add improvements to page history steps and other core crucial mechanisms
+* Fix internal locale conversion work for all elements [virtualmin.com/56882](https://virtualmin.com/node/56882)
+
 #### Version 19.13-beta6 (April 20, 2018)
 * Add ability to open appropriate link when clicking on HTML5 notifications
 * Fix showing post apply notifications for ConfigServer Security & Firewall
