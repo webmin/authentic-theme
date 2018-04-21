@@ -831,3 +831,4 @@ theme_xhred_global_latest_beta= 最新のβ版
 settings_perform_content_scrolling= プログレッシブ出力のコンテンツスクロールを有効にする
 settings_contrast_mode= ハイコントラストモードを有効にする
 settings_side_slider_enabled_description= この機能を使用するには、<em>システムステータス</em>モジュールを有効にする必要があります。
+theme_xhred_global_firewall=Firewall

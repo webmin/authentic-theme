@@ -831,3 +831,4 @@ theme_xhred_global_latest_beta=Senaste betan
 settings_perform_content_scrolling=Aktivera automatisk sidrullning för progressiv utmatning
 settings_contrast_mode=Aktivera högkontrastläge
 settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
+theme_xhred_global_firewall=Firewall

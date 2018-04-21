@@ -845,3 +845,4 @@ theme_xhred_global_latest_beta=Latest beta
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
 settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
+theme_xhred_global_firewall=Firewall
