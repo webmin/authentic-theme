@@ -541,20 +541,22 @@ sub theme_ui_select
       "<select class='ui_select' " . "name=\"" . &quote_escape($name) .
       "\" " . ($size ? " size='$size'" : "") . ($multiple ? " multiple" : "") . ($dis ? " disabled=true" : "") .
       ($tags ? " " . $tags : "") . ">\n";
-    my ($o, %opt, $s);
+    my ($o, %opt, $s, $v);
     my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
+    my $t = 'x-md-';
     foreach $o (@$opts) {
         $o = [$o] if (!ref($o));
+        $v = ($o->[1] || $o->[0]);
         $rv .=
           "<option value=\"" .
           &quote_escape($o->[0]) . "\"" . ($sel{ $o->[0] } ? " selected" : "") . ($o->[2] ne '' ? " " . $o->[2] : "") . ">" .
-          (html_escape($o->[1] || $o->[0])) . "</option>\n";
+          (string_contains($v, $t) ? html_escape($v) : $v) . "</option>\n";
         $opt{ $o->[0] }++;
     }
     foreach $s (keys %sel) {
         if (!$opt{$s} && $missing) {
             $rv .= "<option value=\"" . &quote_escape($s) . "\"" . " selected>" .
-              ($s eq "" ? "&nbsp;" : html_escape($s)) . "</option>\n";
+              ($s eq "" ? "&nbsp;" : (string_contains($s, $t) ? html_escape($s) : $s)) . "</option>\n";
         }
     }
     $rv .= "</select>\n";
