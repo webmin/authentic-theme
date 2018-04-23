@@ -1,43 +1,35 @@
 ## Changelog
 
-#### Version 19.13-beta7 (April 21, 2018)
-* Add improvements to page history steps and other core crucial mechanisms
-* Fix internal locale conversion work for all elements [virtualmin.com/56882](https://virtualmin.com/node/56882)
-
-#### Version 19.13-beta6 (April 20, 2018)
+#### Version 19.13 (April 23, 2018)
+* Add perfected mechanisms for controlling page cache and dealing with history steps
+* Add high contrast mode [virtualmin.com/56725](https://virtualmin.com/node/56725) [virtualmin.com/56817](https://virtualmin.com/node/56817)
+* Add ability to refresh page content that was submitted by form [#972](https://github.com/qooob/authentic-theme/issues/972)
+* Add ability for regular user to control color filters for navigation menu
+* Add ability to hide Webmin switch in server owner mode [#1116](https://github.com/qooob/authentic-theme/issues/1116)
 * Add ability to open appropriate link when clicking on HTML5 notifications
+* Add ability to File Manager to interrupt current directory load request
+* Add trigger to File Manager to refresh directory contents on closing inbuilt command shell
+* Add showing available theme versions on configuration page [#1097](https://github.com/qooob/authentic-theme/issues/1097)
+* Add ability to exclude Usermin from theme updates
+* Add Japanese and Swedish language translation updates
+* Fix to intense buttons saturation and contrast
+* Fix internal locale conversion work for all elements [virtualmin.com/56882](https://virtualmin.com/node/56882)
 * Fix showing post apply notifications for ConfigServer Security & Firewall
-
-#### Version 19.13-beta5 (April 19, 2018)
-* Fix post download invalidly replaced URL
+* Fix post download invalidly replacing URL
 * Fix loading correspondent navigation menu if clicked from virtual servers/managed systems
 * Fix logic for accordions on configuration pages
 * Fix navigation detection for ambiguous links
 * Fix chooser positioning for some modules
-
-#### Version 19.13-beta4 (April 18, 2018)
-* Add ability for regular user to control color filters for navigation menu
 * Fix to use other means for storing user configuration data to avoid modifying the package files
-
-#### Version 19.13-beta3 (April 17, 2018)
-* Add ability to File Manager to interrupt current directory load request
-* Add trigger to File Manager to refresh directory contents on closing inbuilt command shell
 * Fix error handler for invalid path on initial load in File Manager
 * Fix to bring back logo support in reseller accounts
-
-#### Version 19.13-beta2 (April 16, 2018)
-* Add high contrast mode [virtualmin.com/56725](https://virtualmin.com/node/56725) [virtualmin.com/56817](https://virtualmin.com/node/56817)
-* Add ability to refresh page content that was submitted by form [#972](https://github.com/qooob/authentic-theme/issues/972)
 * Fix printing date/time for non UI calls
 * Fix select/invert buttons logic for disabled and single checkboxes
-* Fix numerous of other issues and made dozens of improvements
-
-#### Version 19.13-beta1 (April 08, 2018)
-* Add showing available theme versions on configuration page [#1097](https://github.com/qooob/authentic-theme/issues/1097)
-* Add ability to exclude Usermin from theme updates
-* Add Japanese and Swedish language translation updates
 * Fix initial menu content after login for defaults [#1099](https://github.com/qooob/authentic-theme/issues/1099)
 * Fix missing default form method  [#893/comment-379585204](https://github.com/webmin/webmin/issues/893#issuecomment-379585204)
+* Fix numerous of other issues and made dozens of improvements
+
+<!--- separator --->
 
 #### Version 19.12 (April 01, 2018)
 * Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/qooob/authentic-theme/issues/968)
@@ -77,7 +69,6 @@
 * Fix lost language strings on session expire [#1020](https://github.com/qooob/authentic-theme/issues/1020)
 * Fix buttons in table rows to open correct link
 
-<!--- separator --->
 
 #### Version 19.09.2 (February 22, 2018)
 * Add fail proof method of extracting page content with broken HTML [webmin/webmin#825](https://github.com/webmin/webmin/issues/825)
