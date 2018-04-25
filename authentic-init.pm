@@ -441,18 +441,19 @@ sub init_vars
 
     our %Atext = (&load_language($current_theme), %Atext);
 
-    our $t_uri__i = get_env('request_uri');
+    our $t_uri__i = get_env('http_x_pjax_url');
+
+    if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
+      our %Atext = (&load_language('virtual-server'), %Atext);
+      our %Atext = (&load_language('server-manager'), %Atext);
+    }
+
     if ($in !~ /xhr-/) {
         if ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
             $t_uri__i = 'virtual-server';
         } elsif ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
             $t_uri__i = 'server-manager';
         }
-    }
-
-    if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
-        our %Atext = (&load_language('virtual-server'), %Atext);
-        our %Atext = (&load_language('server-manager'), %Atext);
     }
 
     our ($has_virtualmin, $get_user_level, $has_cloudmin) = get_user_level();
