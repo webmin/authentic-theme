@@ -2068,6 +2068,8 @@ sub _settings
             'true',
             'settings_hide_top_loader',
             'false',
+            'settings_enable_container_offset',
+            'true',
             'settings_contrast_mode',
             'false',
             'settings_perform_content_scrolling',

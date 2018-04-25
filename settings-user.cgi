@@ -45,6 +45,10 @@ print ui_table_row($Atext{'settings_cm_editor_palette'},
                                                     ),
                                                     'settings_cm_editor_palette'
                    ));
+print ui_table_row($Atext{'settings_enable_container_offset'},
+                   ui_yesno_radio('settings_enable_container_offset', $__settings{'settings_enable_container_offset'},
+                                  "true",                             "false"
+                   ));
 print ui_table_row($Atext{'settings_contrast_mode'},
                    ui_yesno_radio('settings_contrast_mode', $__settings{'settings_contrast_mode'}, "true", "false"));
 

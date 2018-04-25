@@ -73,6 +73,7 @@ sub settings_default
     $c{'settings_invert_level_navigation'}            = '0';
     $c{'settings_brightness_level_navigation'}        = '1';
     $c{'settings_contrast_level_navigation'}          = '1';
+    $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_button_tooltip'}                     = 'true';
@@ -529,7 +530,8 @@ sub usermin_available
 
 sub get_webmin_switch_mode
 {
-    my $mode = ((!length $__settings{'settings_show_webmin_tab'} || $__settings{'settings_show_webmin_tab'} eq 'true') ? 1 : 0);
+    my $mode =
+      ((!length $__settings{'settings_show_webmin_tab'} || $__settings{'settings_show_webmin_tab'} eq 'true') ? 1 : 0);
 
     if ($__settings{'settings_show_webmin_tab'} eq 'false') {
         $mode = 0;
