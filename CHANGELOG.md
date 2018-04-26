@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.14 (April 26, 2018)
+* Add ability to download directories in File Manager
+* Add an option to enable/disable container offset [virtualmin.com/56924](https://virtualmin.com/node/56924)
+* Fix automatic refresh to be more specific about triggering [virtualmin.com/56923](https://virtualmin.com/node/56923)
+* Fix downloads work correctly in Upload and Download module [virtualmin.com/56925](https://virtualmin.com/node/56925)
+* Fix detection of initially requested page based on custom header [virtualmin.com/56916](https://virtualmin.com/node/56916)
+
 #### Version 19.13 (April 23, 2018)
 * Add perfected mechanisms for controlling page cache and dealing with history steps
 * Add high contrast mode [virtualmin.com/56725](https://virtualmin.com/node/56725) [virtualmin.com/56817](https://virtualmin.com/node/56817)
