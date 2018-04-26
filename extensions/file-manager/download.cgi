@@ -14,7 +14,8 @@ use Time::Local;
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my $command;
-my $extension = "tar.gz";
+my $has_zip   = has_command('zip');
+my $extension = $has_zip ? "zip" : "tar.gz";
 my $filename  = $in{'filename'};
 my $target    = tempname("$filename.$extension");
 
@@ -41,8 +42,12 @@ if ($in{'cancel'} eq '1') {
         }
     }
 } else {
+    if ($has_zip) {
+        $command = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta($target);
+    } else {
+        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd);
+    }
 
-    $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd);
     foreach my $name (split(/\0/, $in{'name'})) {
         $name =~ s/$in{'cwd'}\///ig;
         if (-e ($cwd . '/' . $name)) {
