@@ -180,7 +180,7 @@ sub print_switch_webmin
 sub print_switch_dashboard
 {
     print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"' .
-      ($t_uri__i =~ /sysinfo/ ? " checked" : "") . '>
+      (($t_uri__i =~ /sysinfo/ || ($get_user_level eq '2' && get_webmin_switch_mode() ne '1')) ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto right') .
       ' for="open_dashboard" style="padding-top: 1px;">
@@ -194,7 +194,8 @@ sub print_switch_virtualmin
       .
       (
         (
-         (!$__settings{'settings_right_default_tab_webmin'} ||
+         (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
+            !$__settings{'settings_right_default_tab_webmin'} ||
             ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/)
          ) &&
            $get_user_level ne '4'
@@ -259,8 +260,13 @@ sub print_switch
     if ($t_var_product_m eq '1') {
         if ($o eq 'd') {
             if ($get_user_level eq '2') {
-                print_switch_webmin();
+                if (get_webmin_switch_mode() eq '1') {
+                    print_switch_webmin();
+                }
                 print_switch_virtualmin();
+                if (get_webmin_switch_mode() ne '1') {
+                    print_switch_dashboard();
+                }
 
             } else {
                 print_switch_webmin();
@@ -268,8 +274,13 @@ sub print_switch
             }
         } else {
             if ($get_user_level eq '2') {
+                if (get_webmin_switch_mode() ne '1') {
+                    print_switch_dashboard();
+                }
                 print_switch_virtualmin();
-                print_switch_webmin();
+                if (get_webmin_switch_mode() eq '1') {
+                    print_switch_webmin();
+                }
 
             } else {
                 print_switch_dashboard();
@@ -2057,6 +2068,8 @@ sub _settings
             'true',
             'settings_hide_top_loader',
             'false',
+            'settings_enable_container_offset',
+            'true',
             'settings_contrast_mode',
             'false',
             'settings_perform_content_scrolling',
@@ -2094,6 +2107,8 @@ sub _settings
             '260',
             'settings_switch_rdisplay',
             'false',
+            'settings_show_webmin_tab',
+            'true',
             'settings_button_tooltip',
             'true',
             'settings_leftmenu_section_hide_refresh_modules',
@@ -2230,7 +2245,8 @@ sub _settings
         }
 
         # List of settings for Virtualmin
-        my @s_vm_e = ('settings_right_virtualmin_default', 'settings_hotkey_toggle_key_virtualmin');
+        my @s_vm_e =
+          ('settings_right_virtualmin_default', 'settings_show_webmin_tab', 'settings_hotkey_toggle_key_virtualmin');
 
         if (!foreign_available("virtual-server")) {
             foreach my $e (@s_vm_e) {
@@ -2520,9 +2536,7 @@ sub _settings
               . '
 
                 </select>';
-        }
-
-        elsif ($k eq 'settings_hotkey_toggle_modifier') {
+        } elsif ($k eq 'settings_hotkey_toggle_modifier') {
             $v = '<select class="ui_select" name="' . $k . '">
                     <option value="altKey"'
               . ($v eq 'altKey' && ' selected') . '>Alt</option>

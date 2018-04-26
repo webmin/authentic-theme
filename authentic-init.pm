@@ -73,6 +73,7 @@ sub settings_default
     $c{'settings_invert_level_navigation'}            = '0';
     $c{'settings_brightness_level_navigation'}        = '1';
     $c{'settings_contrast_level_navigation'}          = '1';
+    $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_button_tooltip'}                     = 'true';
@@ -440,18 +441,19 @@ sub init_vars
 
     our %Atext = (&load_language($current_theme), %Atext);
 
-    our $t_uri__i = get_env('request_uri');
+    our $t_uri__i = get_env('http_x_pjax_url');
+
+    if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
+      our %Atext = (&load_language('virtual-server'), %Atext);
+      our %Atext = (&load_language('server-manager'), %Atext);
+    }
+
     if ($in !~ /xhr-/) {
         if ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
             $t_uri__i = 'virtual-server';
         } elsif ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
             $t_uri__i = 'server-manager';
         }
-    }
-
-    if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
-        our %Atext = (&load_language('virtual-server'), %Atext);
-        our %Atext = (&load_language('server-manager'), %Atext);
     }
 
     our ($has_virtualmin, $get_user_level, $has_cloudmin) = get_user_level();
@@ -527,11 +529,23 @@ sub usermin_available
 
 }
 
+sub get_webmin_switch_mode
+{
+    my $mode =
+      ((!length $__settings{'settings_show_webmin_tab'} || $__settings{'settings_show_webmin_tab'} eq 'true') ? 1 : 0);
+
+    if ($__settings{'settings_show_webmin_tab'} eq 'false') {
+        $mode = 0;
+    }
+    return $mode;
+}
+
 sub dashboard_switch
 {
-    if (!foreign_available("virtual-server") &&
-        !foreign_available("server-manager") &&
-        (get_product_name() ne 'usermin' || (get_product_name() eq 'usermin' && !foreign_available("mailbox"))))
+    if (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
+        (!foreign_available("virtual-server") &&
+            !foreign_available("server-manager") &&
+            (get_product_name() ne 'usermin' || (get_product_name() eq 'usermin' && !foreign_available("mailbox")))))
     {
         return 1;
     } else {
@@ -566,19 +580,18 @@ sub get_current_user_language
 
 sub get_filters
 {
-    return '-webkit-filter: grayscale(' . $__settings{ 'settings_grayscale_level_navigation' } .
-      ') ' . 'sepia(' . $__settings{ 'settings_sepia_level_navigation' } . ')' .
-      ' saturate(' . $__settings{ 'settings_saturate_level_navigation' } .
-      ') hue-rotate(' . $__settings{ 'settings_hue_level_navigation' } . 'deg)' . ' invert(' . $__settings{ 'settings_invert_level_navigation' } .
-                                              ') brightness(' . $__settings{ 'settings_brightness_level_navigation' } .
-                                              ') contrast(' . $__settings{ 'settings_contrast_level_navigation' } . ')' .
-      '; filter: grayscale(' . $__settings{ 'settings_grayscale_level_navigation' } .
-      ') ' . 'sepia(' . $__settings{ 'settings_sepia_level_navigation' } . ')' .
-      ' saturate(' . $__settings{ 'settings_saturate_level_navigation' } .
-      ') hue-rotate(' . $__settings{ 'settings_hue_level_navigation' } . 'deg)' . ' invert(' . $__settings{ 'settings_invert_level_navigation' } .
-                                              ') brightness(' . $__settings{ 'settings_brightness_level_navigation' } .
-                                              ') contrast(' . $__settings{ 'settings_contrast_level_navigation' } . ')' .
-      ';';
+    return '-webkit-filter: grayscale(' . $__settings{'settings_grayscale_level_navigation'} .
+      ') ' . 'sepia(' . $__settings{'settings_sepia_level_navigation'} .
+      ')' . ' saturate(' . $__settings{'settings_saturate_level_navigation'} . ') hue-rotate(' .
+      $__settings{'settings_hue_level_navigation'} . 'deg)' . ' invert(' . $__settings{'settings_invert_level_navigation'} .
+      ') brightness(' . $__settings{'settings_brightness_level_navigation'} .
+      ') contrast(' . $__settings{'settings_contrast_level_navigation'} .
+      ')' . '; filter: grayscale(' . $__settings{'settings_grayscale_level_navigation'} .
+      ') ' . 'sepia(' . $__settings{'settings_sepia_level_navigation'} .
+      ')' . ' saturate(' . $__settings{'settings_saturate_level_navigation'} . ') hue-rotate(' .
+      $__settings{'settings_hue_level_navigation'} . 'deg)' . ' invert(' . $__settings{'settings_invert_level_navigation'} .
+      ') brightness(' . $__settings{'settings_brightness_level_navigation'} .
+      ') contrast(' . $__settings{'settings_contrast_level_navigation'} . ')' . ';';
 }
 
 sub get_user_level

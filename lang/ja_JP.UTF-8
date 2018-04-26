@@ -831,3 +831,13 @@ theme_xhred_global_latest_beta= 最新のβ版
 settings_perform_content_scrolling= プログレッシブ出力のコンテンツスクロールを有効にする
 settings_contrast_mode= ハイコントラストモードを有効にする
 settings_side_slider_enabled_description= この機能を使用するには、<em>システムステータス</em>モジュールを有効にする必要があります。
+theme_xhred_global_firewall= ファイアーウォール
+theme_xhred_settings_show_webmin_tab= サーバー所有者のナビゲーションメニューにWebminスイッチを表示する
+
+
+#19.14
+settings_enable_container_offset= コンテナオフセットを有効にする
+settings_enable_container_offset_description= このオプションは、横1920ピクセルの最小解像度の画面でのみ機能します
+theme_xhred_filemanager_preparing_download= ダウンロードの準備中。 %number個のファイルをアーカイブしています。 %dotsをお待ちください
+theme_xhred_filemanager_prepared_download= ダウンロードの準備ができました。 %number個のファイルをアーカイブしました。
+theme_xhred_filemanager_canceled_download= ダウンロードがキャンセルされました。
