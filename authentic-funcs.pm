@@ -125,4 +125,17 @@ sub get_before_delimiter
     return ($1 ? $1 : $v);
 }
 
+sub directory_empty
+{
+    if (-e $_[0] && -d $_[0]) {
+        opendir my $dir, $_[0] or die $!;
+        if (grep !/^\.\.?$/, readdir $dir) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    return -1;
+}
+
 1;
