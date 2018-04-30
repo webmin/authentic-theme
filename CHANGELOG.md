@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.15 (April 30, 2018)
+* Fix bugs
+
 #### Version 19.14 (April 26, 2018)
 * Add ability to download directories in File Manager
 * Add an option to enable/disable container offset [virtualmin.com/56924](https://virtualmin.com/node/56924)
