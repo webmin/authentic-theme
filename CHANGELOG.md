@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.16 (May 2, 2018)
+* Fix to perfect progressive output processor [sourceforge.net/5112](https://sourceforge.net/p/webadmin/bugs/5112)
+
 #### Version 19.15 (April 30, 2018)
 * Fix bugs
 
