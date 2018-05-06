@@ -1,5 +1,6 @@
 #
 # Authentic Theme (https://github.com/qooob/authentic-theme)
+# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
@@ -9,7 +10,7 @@ set_module($request_uri{'module'});
 get_libs($request_uri{'module'});
 
 our %text = (load_language($current_theme), %text);
-our %text = (load_language($request_uri{'module'}), %text);
+%text = (load_language($request_uri{'module'}), %text);
 
 our $checked_path;
 
