@@ -14,13 +14,14 @@ use Time::Local;
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my $command;
-my $has_zip   = has_command('zip');
-my $extension = $has_zip ? "zip" : "tar.gz";
-my $filename  = $in{'filename'};
-my $target    = tempname("$filename.$extension");
+my $has_zip    = has_command('zip');
+my $extension  = $has_zip ? "zip" : "tar.gz";
+my $filename   = $in{'filename'};
+my $target_dir = tempname("$filename");
+my $target     = "$target_dir/$filename.$extension";
 
 if ($in{'cancel'} eq '1') {
-    unlink($target);
+    unlink_file($target_dir);
 } elsif ($in{'download'} eq '1') {
     my $file = simplify_path($target);
     for $allowed_path (@allowed_paths) {
@@ -37,11 +38,12 @@ if ($in{'cancel'} eq '1') {
                 print $_;
             }
             close FILE;
-            unlink($target);
+            unlink_file($target_dir);
             last;
         }
     }
 } else {
+    mkdir($target_dir, 0755);
     if ($has_zip) {
         $command = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta($target);
     } else {

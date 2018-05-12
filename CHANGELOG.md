@@ -1,5 +1,20 @@
 ## Changelog
 
+#### Version 19.18 (May 12, 2018)
+* Fix bugs in new tree-view for mail folders
+
+#### Version 19.17 (May 12, 2018)
+* Add new tree-view for mail folders [#431](https://github.com/qooob/authentic-theme/issues/431)
+* Add Swedish and Albanian language translation updates
+* Fix help tooltip to be used inside of any container [#1134](https://github.com/qooob/authentic-theme/issues/1134)
+* Fix File-Manager minor bugs [#1137](https://github.com/qooob/authentic-theme/issues/1137) [#1138](https://github.com/qooob/authentic-theme/issues/1138)
+
+#### Version 19.16 (May 2, 2018)
+* Fix to perfect progressive output processor [sourceforge.net/5112](https://sourceforge.net/p/webadmin/bugs/5112)
+
+#### Version 19.15 (April 30, 2018)
+* Fix bugs
+
 #### Version 19.14 (April 26, 2018)
 * Add ability to download directories in File Manager
 * Add an option to enable/disable container offset [virtualmin.com/56924](https://virtualmin.com/node/56924)
