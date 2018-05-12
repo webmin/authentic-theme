@@ -25,7 +25,9 @@ const mail = (function() {
         js: v___server_js_path
       },
       var: {
-        mail: $t_uri_webmail
+        mail: function() {
+          return $t_uri_webmail
+        }
       }
     };
 
@@ -43,14 +45,6 @@ const mail = (function() {
           folders: 'data-mail-folders'
         },
       };
-
-    // Load dependencies
-    (() => {
-      _g.load.bundle(_g.path.js + "/" + data.files.fancytree,
-        _g.path.css + "/" + data.files.fancytree,
-        (_g.var.mail ? [get] : 0), 1
-      );
-    })();
 
     // Get folders data
     function get(key) {
@@ -74,6 +68,12 @@ const mail = (function() {
     let tree = {
       container: '[' + data.selectors.folders + ']',
       init: function(source) {
+
+        // Load dependencies
+        if (typeof $.ui !== 'object') {
+          this.load();
+          return;
+        }
 
         // Insert tree container
         if ($(data.selectors.navigation + ' ' + this.container).length === 0) {
@@ -111,6 +111,12 @@ const mail = (function() {
       expand: function(node) {
         let expanded = node.isExpanded();
         !expanded && node.toggleExpanded();
+      },
+      load: function() {
+        _g.load.bundle(_g.path.js + "/" + data.files.fancytree,
+          _g.path.css + "/" + data.files.fancytree,
+          (_g.var.mail() ? [get] : 0), 1
+        );
       },
       reload: function(source) {
         let tree = $(this.container).fancytree("getTree");
