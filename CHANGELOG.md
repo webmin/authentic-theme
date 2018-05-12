@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.18 (May 12, 2018)
+* Fix bugs in new tree-view for mail folders
+
 #### Version 19.17 (May 12, 2018)
 * Add new tree-view for mail folders [#431](https://github.com/qooob/authentic-theme/issues/431)
 * Add Swedish and Albanian language translation updates
