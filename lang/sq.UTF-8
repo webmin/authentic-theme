@@ -723,135 +723,135 @@ theme_xhred_global_minute=Minutë
 theme_xhred_global_minutes=Minuta
 
 
-#19.01
-theme_xhred_browser_warning=To have the best experience with server panel on your computer, use a supported, up-to-date browser.<br><br><em>Internet Explorer</em> is no longer supported.<br><br>Recommended browsers are <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">You could download portable version of a browser, that doesn't require installation, to bypass imposed limitations.</div>
+# 19.01
+theme_xhred_browser_warning = Për të pasur përvojën më të mirë me panelin e serverit në kompjuterin tuaj, përdorni një shfletues të mbështetur dhe të përditësuar. <br> <br> <em> Internet Explorer </ em> nuk mbështetet më. > Shfletuesit e rekomanduar janë <em> Chrome </ em>, <em> Firefox </ em>, <em> Opera </ em> ose <em> Safari </ em>, <em> Edge </ em>. </ div> </ div> </ div> </ div> </ div> </ div> </ div> </ div> </ div> <div class = "alert alert-
 
 
-#19.02
-theme_xhred_filter_content=Filter content
-theme_xhred_log_file_empty=Log file is empty
+# 19.02
+theme_xhred_filter_content = Filtro përmbajtje
+theme_xhred_log_file_empty = Dosja e logit është bosh
 
 
-#19.03
-theme_xhred_config_configurable_options=Configurable options
-theme_xhred_filter_content_no_matches_query=No content matches %str query
-theme_xhred_toggle_accordions=Toggle accordions visibility
-theme_xhred_global_whats_new=What's new
-theme_xhred_global_report_an_issue=Report an issue
-theme_xhred_global_theme_configuration=Theme configuration
-theme_xhred_global_official_website=Official website
-theme_xhred_global_about_theme=About theme
-theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
-theme_xhred_session_expired=Session expired
-theme_xhred_session_unlocked=Session unlocked
-theme_xhred_session_expired_details=You have been logged out due to inactivity.
-theme_xhred_signing_in=Signing in
-theme_xhred_signing_success=Successfully signed in!
-theme_xhred_session_failed_password=Wrong password, please try again.
-theme_xhred_global_reauthenticate=Reauthenticate
+# 19.03
+theme_xhred_config_configurable_options = Opsionet e konfigurueshme
+theme_xhred_filter_content_no_matches_query = Asnjë përmbajtje nuk përputhet me% str query
+theme_xhred_toggle_accordions = Dukshmëria e harmonikave
+theme_xhred_global_whats_new = Çka është e re
+theme_xhred_global_report_an_issue = Raporto një problem
+theme_xhred_global_theme_configuration = Konfigurimi i temave
+theme_xhred_global_official_website = Faqja zyrtare e internetit
+theme_xhred_global_about_theme = Rreth temës
+theme_xhred_connection_error = Gabim i lidhjes
+theme_xhred_connection_error_details = Nuk mund të krijojë një lidhje me serverin në <strong>% server </ strong>. <ul> <li> Kontrolloni statusin e serverit </ li> <li> Kontrolloni lidhjen </ li> </ ul>
+theme_xhred_session_expired = Sesioni skadoi
+theme_xhred_session_unlocked = Sesioni i hapur
+theme_xhred_session_expired_details = Ju keni dalë jashtë për shkak të pasivitetit.
+theme_xhred_signing_in = Nënshkrimi
+theme_xhred_signing_success = Regjistrohu me sukses!
+theme_xhred_session_failed_password = Fjalëkalimi i gabuar, provo përsëri.
+theme_xhred_global_reauthenticate = Reauthenticate
 
 
-#19.04
-settings_sysinfo_real_time_status=Enable real-time monitoring
-settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
-theme_xhred_global_redirecting=Redirecting
+# 19.04
+settings_sysinfo_real_time_status = Aktivizo monitorimin në kohë reale
+settings_sysinfo_real_time_timeout = Interval për kryerjen e përditësimit
+settings_sysinfo_real_time_timeout_description = Vendosni intervalin e dëshiruar për përditësimin e monitorëve në sfond. Vlera do të duhej të ishte në milisekonda. Mbajeni këtë vlerë sa më të ulët që të jetë e mundur për të parandaluar humbjen e të dhënave afatshkurtra.
+theme_xhred_global_redirecting = Redirecting
 
 
-#19.05
-body_no_javascript_title=JavaScript is disabled
-body_no_javascript_message=Please enable javascript and refresh the page
-theme_xhred_connection_lost=Connection lost
-theme_xhred_connection_success=Connection successful
-theme_xhred_connection_success_details=Connection to the server has been re-established.
+# 19.05
+body_no_javascript_title = JavaScript është çaktivizuar
+body_no_javascript_message = Ju lutemi të aktivizoni javascript dhe rifreskoni faqen
+theme_xhred_connection_lost = Lidhja e humbur
+theme_xhred_connection_success = Lidhja është e suksesshme
+theme_xhred_connection_success_details = Lidhja me serverin është rivendosur.
 
 
-#19.08
-theme_xhred_return_home=Return to panel index
-theme_xhred_global_upload=Upload
-theme_xhred_global_select_files=Select file(s)
-theme_xhred_global_file_selected=file selected
-theme_xhred_global_files_selected=files selected
-theme_xhred_global_reset=Reset
-theme_xhred_upload_initial_info=Drag and drop files here or click to select
+# 19.08
+theme_xhred_return_home = Kthimi në indeksin e panelit
+theme_xhred_global_upload = Ngarko
+theme_xhred_global_select_files = Zgjidh skedarët (s)
+theme_xhred_global_file_selected = skedari i zgjedhur
+theme_xhred_global_files_selected = skedarët e zgjedhur
+theme_xhred_global_reset = Reset
+theme_xhred_upload_initial_info = Drag and drop fotografi këtu ose klikoni për të zgjedhur
 
 
-#19.09
-theme_xhred_global_empty=Empty
-theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
-theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
-theme_xhred_global_outdated=This version is outdated
+# 19.09
+theme_xhred_global_empty = bosh
+theme_xhred_global_click_here = kliko këtu
+theme_git_patch_incompatible_message = Instalimi i këtij versioni prej $ 1 <em> $ 2 </ em> kërkon versionin e fundit dhe / ose ndoshta unreleased prej $ 3 <em> $ 4 </ em> dhe $ 5 <em> $ 6 </ em> për të punuar si duhet.
+theme_git_patch_incompatible_message_s = Instalimi i këtij versioni prej $ 1 <em> $ 2 </ em> kërkon versionin e fundit dhe / ose ndoshta unreleased prej $ 3 <em> $ 4 </ em> për të punuar si duhet.
+theme_git_patch_incompatible_message_desc = Mund të ketë ndryshime të papajtueshme, të cilat mund ta ndalojnë temën që të punojë siç është projektuar. Për ta anashkaluar këtë paralajmërim, dhe forca të instaloni temën gjithsesi $ 1 ose përmirësuar $ 2 në versionin më të fundit të zhvillimit duke përdorur konsolin e parë, duke xhiruar skriptin <kbd> update-from-repo.sh </ kbd> nga drejtoria e tij.
+theme_xhred_global_outdated = Ky version është i vjetëruar
 
 
-#19.10
-theme_xhred_filemanager_edit_html=Edit as HTML
-theme_xhred_global_example=Example
-theme_xhred_global_output_example=Output example
-theme_xhred_title_language_locale=Language and Locale
-theme_xhred_title_locale_config=Locale configuration
-theme_xhred_title_webmin_ui_locale=Webmin UI locale
-theme_xhred_title_locale_auto=Automatic, based on selected language
-theme_xhred_global_manual=Manual
-theme_xhred_title_locale_config_format=Locale language and format
-theme_xhred_title_locale_config_format_ui=Webmin UI locale language and format
-theme_xhred_title_locale_lang_based=Locale language
-theme_xhred_title_locale_full=Full format
-theme_xhred_title_locale_long=Long format
-theme_xhred_title_locale_short=Short format
-settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed.
-theme_xhred_filemanager_records_per_page=Default number of records per page
-theme_xhred_filemanager_sorting=Default sorting type
-theme_xhred_filemanager_sorting_asc=Ascending
-theme_xhred_filemanager_sorting_desc=Descending
-theme_xhred_filemanager_sorting_by_name=Name
-theme_xhred_filemanager_sorting_by_type=Type
-theme_xhred_filemanager_sorting_by_size=Size
-theme_xhred_filemanager_sorting_by_ownership=Ownership
-theme_xhred_filemanager_sorting_by_permissions=Permissions
-theme_xhred_filemanager_sorting_by_attributes=Attributes
-theme_xhred_filemanager_sorting_by_selinux=Security context
-theme_xhred_filemanager_sorting_by_last_mod_time=Last modification time
-theme_xhred_filemanager_tree_view_toggle=Tree-view toggle
-theme_xhred_filemanager_hide_tree_view=Enable tree-view panel
-theme_xhred_filemanager_tree_view_depth=Extracted tree-view depth on initial load (smaller loads faster)
-theme_xhred_global_unlimited=Unlimited
-theme_xhred_filemanager_tree_exclude_on_first_load=Exclude inessential directories from traversing on initial load for tree-view (loads faster)
-theme_xhred_filemanager_tree_expand_search=Expand all branches that contain matches while filtering tree-view
+# 19.10
+theme_xhred_filemanager_edit_html = Modifiko si HTML
+theme_xhred_global_example = Shembull
+theme_xhred_global_output_example = Shembull i daljes
+theme_xhred_title_language_locale = Gjuha dhe Lokale
+theme_xhred_title_locale_config = Konfigurimi lokal
+theme_xhred_title_webmin_ui_locale = Ueb lokal i Webmin
+theme_xhred_title_locale_auto = Automatik, bazuar në gjuhën e përzgjedhur
+theme_xhred_global_manual = manuale
+theme_xhred_title_locale_config_format = Gjuha lokale dhe formati
+theme_xhred_title_locale_config_format_ui = Webmin UI gjuha dhe formati lokal
+theme_xhred_title_locale_lang_based = Gjuha lokale
+theme_xhred_title_locale_full = Formati i plote
+theme_xhred_title_locale_long = Formati i gjatë
+theme_xhred_title_locale_short = Format i shkurtër
+settings_navigation_always_collapse = Gjithmonë u shemb
+settings_side_slider_fixed_description = Ky opsion është i disponueshëm vetëm në ekranet me rezolucion HD me rezolucion minimal prej 1366 piksel horizontal dhe me opsion me aftësi të kufizuara për mbajtjen e navigacionit gjithnjë të shembur.
+theme_xhred_filemanager_records_per_page = Numri i paracaktuar i të dhënave për faqe
+theme_xhred_filemanager_sorting = Lloji i klasifikimit të parazgjedhur
+theme_xhred_filemanager_sorting_asc = ngjitje
+theme_xhred_filemanager_sorting_desc = zbritje
+theme_xhred_filemanager_sorting_by_name = Emër
+theme_xhred_filemanager_sorting_by_type = Lloji
+theme_xhred_filemanager_sorting_by_size = Size
+theme_xhred_filemanager_sorting_by_ownership = Pronësia
+theme_xhred_filemanager_sorting_by_permissions = Permissions
+theme_xhred_filemanager_sorting_by_attributes = atributet
+theme_xhred_filemanager_sorting_by_selinux = Konteksti i sigurisë
+theme_xhred_filemanager_sorting_by_last_mod_time = Ora e fundit e modifikimit
+theme_xhred_filemanager_tree_view_toggle = Këmbyllja e pamjes së drurit
+theme_xhred_filemanager_hide_tree_view = Aktivizo panelin e pemës
+theme_xhred_filemanager_tree_view_depth = Nxjerrja e thellësisë së pamjes së pemës në ngarkesën fillestare (ngarkesat më të vogla më të shpejta)
+theme_xhred_global_unlimited = limit
+theme_xhred_filemanager_tree_exclude_on_first_load = Përjashtimi i drejtorive të pasigurtë nga kalimi në ngarkesën fillestare për pamjen e pemës (ngarkesa më e shpejtë)
+theme_xhred_filemanager_tree_expand_search = Zgjero të gjitha degët që përmbajnë ndeshje ndërsa filtrojnë pemë-pamje
 
 
-#19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Force to synchronize background status collection
-theme_xhred_tooltip_side_slider_go_to_dashboard=Go to dashboard
-theme_xhred_tooltip_side_slider_open_favorites_control=Open favorites control
-theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
-theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
-theme_xhred_global_settings=Settings
-theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
-settings_side_slider_fixed_toggle=Show pin/unpin toggle
-settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met.
-settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
+# 19.12
+theme_xhred_tooltip_side_slider_sync_sysinfo = Forca për të sinkronizuar mbledhjen e statusit të sfondit
+theme_xhred_tooltip_side_slider_go_to_dashboard = Shko te paneli i kontrollit
+theme_xhred_tooltip_side_slider_open_favorites_control = Kontrolli i preferuar i preferuar
+theme_xhred_tooltip_side_slider_delete_all_notification = Fshi të gjitha njoftimet
+theme_xhred_tooltip_side_slider_mark_read_all_notification = Shënoni të gjitha njoftimet si të lexuara
+theme_xhred_global_settings = Settings
+theme_xhred_tooltip_side_slider_pinned = Rrëshqitni anën / unpin
+settings_side_slider_fixed_toggle = Trego prekësin / unpin
+settings_side_slider_fixed_toggle_description = Ky opsion do të shfaqë këmbyesën, në rrëshqitësin anësor, në rreshtin e poshtme, duke lejuar që të ndryshojë pamjen e tij në fluturim, nëse kushtet në opsionin e mëparshëm janë plotësuar.
+settings_right_page_hide_persistent_vscroll = Fshih shiritin vertikal të vazhdueshëm
 
 
-#19.13
-settings_sysinfo_theme_updates_for_usermin=Install theme updates for Usermin as well
-theme_xhred_global_installed_version=Installed version
-theme_xhred_global_installed_and_latest_version=Installed and latest version
-theme_xhred_global_latest_stable=Latest stable
-theme_xhred_global_latest_beta=Latest beta
-settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
-settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
-theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+# 19.13
+settings_sysinfo_theme_updates_for_usermin = Instalo përditësimet e temave edhe për Usermin
+theme_xhred_global_installed_version = Versioni i instaluar
+theme_xhred_global_installed_and_latest_version = Versioni i instaluar dhe i fundit
+theme_xhred_global_latest_stable = Stabilizimi i fundit
+theme_xhred_global_latest_beta = beta e fundit
+settings_perform_content_scrolling = Aktivizo skriptimin automatik të faqes për dalje progresive
+settings_contrast_mode = Aktivizo modalitetin e kontrastit të lartë
+settings_side_slider_enabled_description = Ky funksion kërkon që moduli <em> Statusi i sistemit </ em> të aktivizohet.
+theme_xhred_global_firewall = firewall
+theme_xhred_settings_show_webmin_tab = Shfaq kalimin e Webmin në menunë e navigimit për pronarët e serverëve
 
 
-#19.14
-settings_enable_container_offset=Enable container offset
-settings_enable_container_offset_description=This option will only work on screens with minimum resolution of 1920 horizontal pixels
-theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
-theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
-theme_xhred_filemanager_canceled_download=Download canceled.
+# 19.14
+settings_enable_container_offset = Aktivizo kompensimin e enës
+settings_enable_container_offset_description = Ky opsion do të punojë vetëm në ekranet me rezolucion minimal prej 1920 piksel horizontal
+theme_xhred_filemanager_preparing_download = Përgatitja e shkarkimit. Arkivimi i skedarëve të numrave%. Ju lutem prisni% dots
+theme_xhred_filemanager_prepared_download = Shkarkimi është i gatshëm. Dosja e arkivuar e numrave të%.
+theme_xhred_filemanager_canceled_download = Shkarkimi i anuluar.
