@@ -19,9 +19,10 @@ foreach my $folder (@folders_data) {
         next;
     }
 
-    my ($total, $unread, $special) = mailbox_folder_unread($folder);
-    if (!should_show_unread($folder)) {
-        $unread = 0;
+    my $unread;
+    if (should_show_unread($folder)) {
+        my ($total_count, $unread_count, $special_count) = mailbox_folder_unread($folder);
+        $unread = $unread_count;
     }
 
     my $id = $folder->{'id'} || $folder->{'file'};
@@ -31,12 +32,10 @@ foreach my $folder (@folders_data) {
     my $key    = replace(' ', '_', $id);
     my $title  = folders_title_unseen(html_escape($child ? $child : $name), $unread);
     my $active = ($in{'key'} eq $key ? 1 : 0);
-    my $data = $temporary{$fid} = { key     => $key,
-                                    title   => $title,
-                                    active  => $active,
-                                    total   => $total,
-                                    unread  => $unread,
-                                    special => $special };
+    my $data = $temporary{$fid} = { key    => $key,
+                                    title  => $title,
+                                    active => $active,
+                                    unread => $unread, };
     defined $parent ? (push @{ $temporary{$parent}{children} }, $data) : (push(@folders, $data));
 }
 get_json(@folders);
