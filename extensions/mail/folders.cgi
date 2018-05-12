@@ -24,18 +24,19 @@ foreach my $folder (@folders_data) {
         $unread = 0;
     }
 
-    my $id = $folder->{'id'};
-    my ($parent, $child) = $id =~ m|^ (.+) \. ([^\.]+) \z|x;
+    my $id = $folder->{'id'} || $folder->{'file'};
+    my ($fid) = $id =~ m#([^/]+)$#;
+    my ($parent, $child) = $fid =~ m|^ (.+) \. ([^\.]+) \z|x;
     my $name   = $folder->{'name'};
     my $key    = replace(' ', '_', $id);
     my $title  = folders_title_unseen(html_escape($child ? $child : $name), $unread);
     my $active = ($in{'key'} eq $key ? 1 : 0);
-    my $data = $temporary{$id} = { key     => $key,
-                                   title   => $title,
-                                   active  => $active,
-                                   total   => $total,
-                                   unread  => $unread,
-                                   special => $special };
+    my $data = $temporary{$fid} = { key     => $key,
+                                    title   => $title,
+                                    active  => $active,
+                                    total   => $total,
+                                    unread  => $unread,
+                                    special => $special };
     defined $parent ? (push @{ $temporary{$parent}{children} }, $data) : (push(@folders, $data));
 }
 get_json(@folders);
