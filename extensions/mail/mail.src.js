@@ -54,7 +54,7 @@ const mail = (function() {
 
     // Get folders data
     function get(key) {
-      key = key ? ('?key=' + key) : String();
+      key = key ? ('?key=' + key.replace(/&/g, '%26')) : String();
 
       $.post(_g.path.extensions + "/mail/folders.cgi" + key + "", function(source) {
         if (!!key) {

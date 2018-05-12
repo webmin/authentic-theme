@@ -72,9 +72,18 @@ sub get_json
     }
 }
 
-sub folders_escape_key
+sub folders_key_escape
 {
-    return quote_escape(replace(' ', '_', $_[0]));
+    my ($str) = @_;
+    $str =~ s/%26/&/g;
+    return replace(' ', '_', $str);
+}
+
+sub folders_title_escape
+{
+    my ($str) = @_;
+    $str =~ s/\\&quot;/"/g;
+    return $str;
 }
 
 sub folders_title_unseen

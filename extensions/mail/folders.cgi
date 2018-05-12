@@ -29,9 +29,9 @@ foreach my $folder (@folders_data) {
     my ($fid) = $id =~ m#([^/]+)$#;
     my ($parent, $child) = $fid =~ m|^ (.+) \. ([^\.]+) \z|x;
     my $name   = $folder->{'name'};
-    my $key    = folders_escape_key($id);
-    my $title  = folders_title_unseen(html_escape($child ? $child : $name), $unread);
-    my $active = (folders_escape_key($in{'key'}) eq $key ? 1 : 0);
+    my $key    = folders_key_escape($id);
+    my $title  = folders_title_escape(folders_title_unseen(html_escape($child ? $child : $name), $unread));
+    my $active = (folders_key_escape($in{'key'}) eq $key ? 1 : 0);
     my $data = $temporary{$fid} = { key    => $key,
                                     title  => $title,
                                     active => $active,
