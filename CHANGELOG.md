@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 19.20-beta1 (May 12, 2018)
+* Add Swedish and Albanian language translation updates
+* Fix help tooltip to be used inside of any container [#1134](https://github.com/qooob/authentic-theme/issues/1134)
+
+
 #### Version 19.16 (May 2, 2018)
 * Fix to perfect progressive output processor [sourceforge.net/5112](https://sourceforge.net/p/webadmin/bugs/5112)
 

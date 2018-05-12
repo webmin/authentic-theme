@@ -644,11 +644,16 @@ sub print_left_menu
     my $__hr           = 0;
     my $__custom_print = 0;
     my $__custom_link  = 0;
+    my $__mail_spinner = 0;
     foreach my $item (@$items) {
         if ($module eq $item->{'module'} || $group) {
 
             my $link = add_webprefix($item->{'link'});
             my $icon;
+
+            if (string_contains($link, 'mailbox/index.cgi?id')) {
+              next;
+            }
 
             if ($item->{'type'} eq 'item' &&
                 $link ne add_webprefix("/virtual-server/edit_lang.cgi") &&
@@ -788,8 +793,8 @@ sub print_left_menu
                 my $c = $item->{'id'};
                 if ($item->{'module'} ne 'mailbox') {
                     &print_category($c, $item->{'desc'});
+                    print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $c . '">' . "\n";
                 }
-                print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $c . '">' . "\n";
                 print_left_menu($module, $item->{'members'}, 1, $c);
 
                 if (($c eq 'global_setting' || $c eq 'global_settings' && &foreign_available("webmin")) &&
@@ -822,7 +827,9 @@ sub print_left_menu
                     print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $Atext{'settings_title'}, 1);
                     $__custom_print++;
                 }
-                print "</ul></li>\n";
+                if ($item->{'module'} ne 'mailbox') {
+                  print "</ul></li>\n";
+                }
             } elsif ($item->{'type'} eq 'hr') {
                 if ($__hr eq '1') {
                     print_search();
