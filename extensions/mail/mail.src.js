@@ -103,7 +103,9 @@ const mail = (function() {
         !expanded && node.toggleExpanded();
       },
       reload: function(data) {
-        $(this.container).fancytree("getTree").reload(data);
+        let tree = $(this.container).fancytree("getTree");
+        tree.$container.empty();
+        tree.reload(data);
         setTimeout(() => {
           this.adjust();
           this.expand(this.get_active_node());
