@@ -72,6 +72,11 @@ sub get_json
     }
 }
 
+sub folders_escape_key
+{
+    return quote_escape(replace(' ', '_', $_[0]));
+}
+
 sub folders_title_unseen
 {
     my ($folder, $count) = @_;
