@@ -627,10 +627,10 @@ settings_sysinfo_theme_patched_updates= 開発バージョンを含む
 settings_sysinfo_theme_updates_description= このオプションを有効にするには、システムに<code>git</code>コマンドをインストールする必要があります
 theme_git_patch_available= 最新の開発版
 theme_git_patch_no_git_message= 最新のアップデートをGitHubから直接インストールするには、<code>git</code>コマンドがインストールされていることを確認する必要があります。
-theme_git_patch_update_success_message= Webminのテーマ更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
-theme_git_patch_update_success_message2= WebminとUserminのテーマ更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
-theme_xhred_git_patch_update= テーマの更新に失敗しました。手動で行うにはコンソールを使用してみてください。
-theme_xhred_git_patch_initiated= テーマの更新が開始されました。
+theme_git_patch_update_success_message= Authentic Themeの最新バージョン<tt>V$1</tt>へのアップデートが成功しました。ただ今、アップデート内容を反映しています。しばらくお待ちください。
+theme_git_patch_update_success_message2= Authentic Themeの更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
+theme_xhred_git_patch_update= Authentic Themeの更新に失敗しました。手動で行うにはコンソールを使用してみてください。
+theme_xhred_git_patch_initiated= Authentic Themeの更新が開始されました。
 theme_xhred_global_prev_page= 1ページ前に戻る
 theme_xhred_global_help=ヘルプ
 settings_right_soft_updates_page_options_title= ソフトウェアの更新
@@ -658,7 +658,7 @@ theme_xhred_global_resolved_issues= %valueリリースで解決された問題
 
 
 #18.48
-theme_force_upgrade= 更新テーマを強制する
+theme_force_upgrade=強制的にアップデート
 theme_xhred_force_upgrade_beta= 最新の開発版をインストールする(ベータ版)
 theme_xhred_force_upgrade_stable= 最新リリース版をインストールする(安定版)
 theme_xhred_source_encoding= ソースエンコーディング
