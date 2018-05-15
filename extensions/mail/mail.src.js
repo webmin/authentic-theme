@@ -12,21 +12,28 @@ const mail = (function() {
   let
 
     // Import globals
-    _g = {
-      load: load,
-      load_content: get_pjax_content,
-      link: v___location_origin + v___location_prefix + '/mailbox/index.cgi?id=',
-      lang: {
-        noRecords: theme_language('theme_xhred_datatable_szerorecords')
-      },
+    extend = {
       path: {
         extensions: v___server_extensions_path,
         css: v___server_css_path,
         js: v___server_js_path
       },
       var: {
-        mail: function() {
+        mail: () => {
           return $t_uri_webmail
+        }
+      },
+      content: get_pjax_content,
+      load: load,
+      plugin: {
+        scroll: (target, options) => {
+          if (typeof target === 'string') {
+            $(target).mCustomScrollbar(options)
+          } else {
+            $(target[0]).mCustomScrollbar('scrollTo', target[1], {
+              scrollOffset: [$(target[0]), 3, 4]
+            })
+          }
         }
       }
     };
@@ -35,38 +42,40 @@ const mail = (function() {
   const folders = (function() {
     let
 
-      // Define data
+      // Define module static properties
       data = {
-        files: {
+        file: {
           fancytree: 'jquery.fancytree'
         },
-        selectors: {
+        selector: {
           navigation: 'aside .navigation',
           folders: 'data-mail-folders'
         },
-      };
-
-    // Get folders data
-    function get(key) {
-      key = key ? ('?key=' + key.replace(/&/g, '%26')) : String();
-
-      $.post(_g.path.extensions + "/mail/folders.cgi" + key + "", function(source) {
-        if (!!key) {
-          tree.reload(source)
-        } else {
-          tree.init(source)
+        options: {
+          tree: {
+            escapeTitles: false,
+            autoActivate: false,
+            autoScroll: true,
+            keyboard: false,
+            toggleEffect: false,
+          },
+          scroll: {
+            axis: "xy",
+            theme: "minimal",
+            keyboard: false,
+            scrollInertia: 300,
+            scrollButtons: true,
+            autoHideScrollbar: false,
+          }
+        },
+        url: {
+          link: v___location_origin + v___location_prefix + '/mailbox/index.cgi?id=',
         }
-      });
-    }
-
-    // Adjust folders into view
-    function adjust() {
-      tree.adjust();
-    }
+      };
 
     // Tree object literal
     let tree = {
-      container: '[' + data.selectors.folders + ']',
+      container: '[' + data.selector.folders + ']',
       init: function(source) {
 
         // Load dependencies
@@ -76,46 +85,33 @@ const mail = (function() {
         }
 
         // Insert tree container
-        if ($(data.selectors.navigation + ' ' + this.container).length === 0) {
-          $(data.selectors.navigation).prepend('<div ' + data.selectors.folders + '></div>');
+        if ($(data.selector.navigation + ' ' + this.container).length === 0) {
+          $(data.selector.navigation).prepend('<div ' + data.selector.folders + '></div>');
         } else {
           return;
         }
 
         // Instantiate tree
-        $(this.container).fancytree({
+        $(this.container).fancytree(Object.assign(data.options.tree, {
           source: source,
-          escapeTitles: false,
-          autoActivate: false,
-          autoScroll: true,
-          keyboard: false,
-          toggleEffect: false,
-          init: (e, d) => {},
           activate: (e, d) => {
             this.adjust();
             this.expand(d.node);
-            _g.load_content(_g.link + encodeURIComponent(d.node.key));
+            extend.content(data.url.link + encodeURIComponent(d.node.key));
           }
-        });
+        }));
 
         // Make the container scrollable
-        $(this.container).mCustomScrollbar({
-          axis: "xy",
-          theme: "minimal",
-          keyboard: false,
-          scrollInertia: 300,
-          scrollButtons: true,
-          autoHideScrollbar: false,
-        });
+        extend.plugin.scroll(this.container, data.options.scroll)
       },
       expand: function(node) {
         let expanded = node.isExpanded();
         !expanded && node.toggleExpanded();
       },
       load: function() {
-        _g.load.bundle(_g.path.js + "/" + data.files.fancytree,
-          _g.path.css + "/" + data.files.fancytree,
-          (_g.var.mail() ? [get] : 0), 1
+        extend.load.bundle(extend.path.js + "/" + data.file.fancytree,
+          extend.path.css + "/" + data.file.fancytree,
+          (extend.var.mail() ? [get] : 0), 1
         );
       },
       reload: function(source) {
@@ -130,14 +126,29 @@ const mail = (function() {
       adjust: function() {
         let $_ = this.get_active_node();
         if ($_ && $_.li && $($_.li).length) {
-          $(this.container).mCustomScrollbar("scrollTo", $($_.li), {
-            scrollOffset: [$(this.container), 3, 4]
-          })
+          extend.plugin.scroll([this.container, $($_.li)]);
         }
       },
       get_active_node: function() {
-        return $(this.container).fancytree("getActiveNode");
+        return $(this.container).fancytree("getActiveNode")
       }
+    }
+
+    // Get folders data
+    function get(key) {
+      key = key ? ('?key=' + key.replace(/&/g, '%26')) : String();
+      $.post(extend.path.extensions + "/mail/folders.cgi" + key + "", function(source) {
+        if (!!key) {
+          tree.reload(source)
+        } else {
+          tree.init(source)
+        }
+      });
+    }
+
+    // Adjust folders into view
+    function adjust() {
+      tree.adjust();
     }
 
     // Reveal sub-modules ;;
