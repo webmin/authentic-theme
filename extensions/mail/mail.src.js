@@ -4,8 +4,11 @@
  * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
  */
 
+/* jshint strict: true */
 /* jshint esversion: 6 */
 /* jshint jquery: true */
+
+'use strict';
 
 // Mail module
 const mail = (function() {
@@ -14,12 +17,14 @@ const mail = (function() {
     // Import globals
     extend = {
       path: {
+        origin: v___location_origin,
+        prefix: v___location_prefix,
         extensions: v___server_extensions_path,
         css: v___server_css_path,
         js: v___server_js_path
       },
-      var: {
-        mail: () => {
+      variable: {
+        mail_switch: () => {
           return $t_uri_webmail
         }
       },
@@ -60,26 +65,42 @@ const mail = (function() {
             toggleEffect: false,
           },
           scroll: {
-            axis: "xy",
-            theme: "minimal",
+            axis: 'xy',
+            theme: 'minimal',
             keyboard: false,
             scrollInertia: 300,
             scrollButtons: true,
             autoHideScrollbar: false,
           }
         },
+        plugin: {
+          tree: (source) => {
+            source = (source === 'get' ? 'getTree' :
+              (source === 'node' ? 'getActiveNode' :
+                Object.assign(data.options.tree, {
+                  source: source,
+                  activate: (e, d) => {
+                    tree.adjust();
+                    tree.expand(d.node);
+                    extend.content(data.url.link + encodeURIComponent(d.node.key));
+                  }
+                })));
+            return $(tree.container).fancytree(source)
+          }
+        },
         url: {
-          link: v___location_origin + v___location_prefix + '/mailbox/index.cgi?id=',
+          link: extend.path.origin + extend.path.prefix + '/mailbox/index.cgi?id=',
         }
       };
 
     // Tree object literal
     let tree = {
+      fetched: 0,
       container: '[' + data.selector.folders + ']',
       init: function(source) {
 
         // Load dependencies
-        if (typeof $.ui !== 'object') {
+        if (this.fetched === 0) {
           this.load();
           return;
         }
@@ -92,14 +113,7 @@ const mail = (function() {
         }
 
         // Instantiate tree
-        $(this.container).fancytree(Object.assign(data.options.tree, {
-          source: source,
-          activate: (e, d) => {
-            this.adjust();
-            this.expand(d.node);
-            extend.content(data.url.link + encodeURIComponent(d.node.key));
-          }
-        }));
+        data.plugin.tree(source)
 
         // Make the container scrollable
         extend.plugin.scroll(this.container, data.options.scroll)
@@ -109,13 +123,14 @@ const mail = (function() {
         !expanded && node.toggleExpanded();
       },
       load: function() {
-        extend.load.bundle(extend.path.js + "/" + data.file.fancytree,
-          extend.path.css + "/" + data.file.fancytree,
-          (extend.var.mail() ? [get] : 0), 1
+        this.fetched = 1;
+        extend.load.bundle(extend.path.js + '/' + data.file.fancytree,
+          extend.path.css + '/' + data.file.fancytree,
+          (extend.variable.mail_switch() ? [get] : 0), 1
         );
       },
       reload: function(source) {
-        let tree = $(this.container).fancytree("getTree");
+        let tree = data.plugin.tree('get');
         tree.$container.empty();
         tree.reload(source);
         setTimeout(() => {
@@ -130,14 +145,14 @@ const mail = (function() {
         }
       },
       get_active_node: function() {
-        return $(this.container).fancytree("getActiveNode")
+        return data.plugin.tree('node');
       }
     }
 
     // Get folders data
     function get(key) {
       key = key ? ('?key=' + key.replace(/&/g, '%26')) : String();
-      $.post(extend.path.extensions + "/mail/folders.cgi" + key + "", function(source) {
+      $.post(extend.path.extensions + '/mail/folders.cgi' + key + '', function(source) {
         if (!!key) {
           tree.reload(source)
         } else {
