@@ -3,7 +3,6 @@
 #
 # Authentic Theme (https://github.com/qooob/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
 #
 
