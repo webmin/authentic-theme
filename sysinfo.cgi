@@ -90,7 +90,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
         my $usermin_version = usermin_available('__version');
         if ($usermin_version) {
             push @table_data,
-              [ Atext('body_usermin'), product_version_update(get_pretty_dev_version($usermin_version), 'u'),
+              [ Atext('body_usermin'), product_version_update($usermin_version, 'u'),
                 sysinfo_usermin_version];
         }
 
@@ -223,12 +223,12 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     &print_table_row($Atext{'right_from'}, get_env('remote_host'));
 
     # Webmin version
-    &print_table_row(&Atext('body_webmin'), get_pretty_dev_version(get_webmin_version()), 'sysinfo_webmin_version');
+    &print_table_row(&Atext('body_webmin'), get_webmin_version(), 'sysinfo_webmin_version');
 
     # Usermin version
     my $usermin_version = usermin_available('__version');
     if ($usermin_version) {
-        print_table_row(&Atext('body_usermin'), get_pretty_dev_version($usermin_version), 'sysinfo_usermin_version');
+        print_table_row(&Atext('body_usermin'), $usermin_version, 'sysinfo_usermin_version');
     }
 
     # Print Virtualmin version
@@ -365,7 +365,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     &print_table_row(&Atext('body_os'), $os);
 
     # Usermin version
-    &print_table_row(&Atext('body_usermin'), get_pretty_dev_version(get_webmin_version()));
+    &print_table_row(&Atext('body_usermin'), get_webmin_version());
 
     &print_table_row($Atext{'theme_version'},
                      '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .

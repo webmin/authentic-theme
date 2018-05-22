@@ -1024,7 +1024,7 @@ sub get_sysinfo_vars
 
         #Webmin version
         $webmin_version =
-          product_version_update(get_pretty_dev_version(get_webmin_version()), 'w') .
+          product_version_update(get_webmin_version(), 'w') .
 ' <div class="btn-group margined-left-4"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="'
           . $Atext{'theme_sysinfo_wmdocs'}
           . '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';

@@ -107,16 +107,6 @@ sub array_unique
     return @unique;
 }
 
-sub get_pretty_dev_version
-{
-    my ($v) = @_;
-    my $s = 5;
-    if (length($v) > ($s + 1)) {
-        $v = substr($v, 0, $s) . "." . substr($v, $s, $s - 1) . "." . substr($v, $s * 2 - 1);
-    }
-    return $v;
-}
-
 sub get_before_delimiter
 {
     my ($v, $d) = @_;
