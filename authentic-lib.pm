@@ -3138,7 +3138,7 @@ sub content
     print '</button>' . "\n";
     print '</div>' . "\n";
 
-    print '<aside style="z-index:10; ' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
+    print '<aside style="' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
 
     &print_switch();
 
