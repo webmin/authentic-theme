@@ -652,7 +652,7 @@ sub print_left_menu
             my $icon;
 
             if (string_contains($link, 'mailbox/index.cgi?id')) {
-              next;
+                next;
             }
 
             if ($item->{'type'} eq 'item' &&
@@ -828,7 +828,7 @@ sub print_left_menu
                     $__custom_print++;
                 }
                 if ($item->{'module'} ne 'mailbox') {
-                  print "</ul></li>\n";
+                    print "</ul></li>\n";
                 }
             } elsif ($item->{'type'} eq 'hr') {
                 if ($__hr eq '1') {
@@ -2982,8 +2982,8 @@ sub get_xhr_request
                                      "authentic_remote_version" => $authentic_remote_version,
                                      "csf_deny"                 => csf_temporary_list(),
                                      "collect_interval" => get_module_config_data('system-status', 'collect_interval'),
-                                     "extended_si" => get_extended_sysinfo(\@info, undef),
-                                     "warning_si"  => get_sysinfo_warning(@info), };
+                                     "extended_si"      => get_extended_sysinfo(\@info, undef),
+                                     "warning_si"       => get_sysinfo_warning(@info), };
                 print get_json(@updated_info);
             } else {
                 print get_json_empty();
@@ -3184,8 +3184,7 @@ sub update_notice
       (read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md") =~
         /#### Version(.*?)<!--- separator --->/s)[0];
     if ($changelog_data) {
-        $changelog_data =~
-s/###(.*?)\)/<\/ul><a href="https:\/\/github.com\/qooob\/authentic-theme\/releases\/tag\/@{[get_version_full($1)]}" class="version_separator">@{[get_version_full($1, 1)]}<\/a><hr><ul>/g;
+        $changelog_data =~ s/###(.*?)\)/<\/ul>@{[get_version_link($1, 2)]}<hr><ul>/g;
     } else {
         $changelog_data =
           (read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md") =~
