@@ -1,23 +1,23 @@
 ## Changelog
 
-#### Version 19.18 (May 12, 2018)
-* Fix bugs in new tree-view for mail folders
+#### Version 19.19 (May 27, 2018)
+* Add improved context menu to File Manager [#1147](https://github.com/qooob/authentic-theme/issues/1147)
+* Add Japanese and German language translation updates
+* Fix issues with navigation menu on touch-enabled devices [#1143](https://github.com/qooob/authentic-theme/issues/1143) [virtualmin.com/57264](https://virtualmin.com/node/57264)
+* Fix to perfect context menu positioning in File Manager [#1141](https://github.com/qooob/authentic-theme/issues/1141)
+* Fix forms submitting data from previous calls on history actions [#1144](https://github.com/qooob/authentic-theme/issues/1144)
+* Fix to adjust folder container height accordingly
+* Fix numerous of other bugs
 
-#### Version 19.17 (May 12, 2018)
+#### Version 19.14...19.18 (May 12, 2018)
 * Add new tree-view for mail folders [#431](https://github.com/qooob/authentic-theme/issues/431)
+* Add ability to download directories in File Manager
+* Add an option to enable/disable container offset [virtualmin.com/56924](https://virtualmin.com/node/56924)
 * Add Swedish and Albanian language translation updates
 * Fix help tooltip to be used inside of any container [#1134](https://github.com/qooob/authentic-theme/issues/1134)
 * Fix File-Manager minor bugs [#1137](https://github.com/qooob/authentic-theme/issues/1137) [#1138](https://github.com/qooob/authentic-theme/issues/1138)
-
-#### Version 19.16 (May 2, 2018)
+* Fix bugs in new tree-view for mail folders
 * Fix to perfect progressive output processor [sourceforge.net/5112](https://sourceforge.net/p/webadmin/bugs/5112)
-
-#### Version 19.15 (April 30, 2018)
-* Fix bugs
-
-#### Version 19.14 (April 26, 2018)
-* Add ability to download directories in File Manager
-* Add an option to enable/disable container offset [virtualmin.com/56924](https://virtualmin.com/node/56924)
 * Fix automatic refresh to be more specific about triggering [virtualmin.com/56923](https://virtualmin.com/node/56923)
 * Fix downloads work correctly in Upload and Download module [virtualmin.com/56925](https://virtualmin.com/node/56925)
 * Fix detection of initially requested page based on custom header [virtualmin.com/56916](https://virtualmin.com/node/56916)
