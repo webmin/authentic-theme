@@ -105,7 +105,7 @@ settings_right_logo_authenticated_users=Logo f&uuml;r angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo f&uuml;r nicht angemeldete Benutzer
 
 settings_right_current_theme=Aktuelles Design
-settings_right_title=Aus dieser Seite lassen die Einstellungen f&uuml;r <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhalten.
+settings_right_title=Aus dieser Seite lassen die Einstellungen f&uuml;r <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhalten.
 settings_right_theme_left_configuration_title=Authentic Design Konfiguration
 settings_right_theme_left_extensions_title=Authentic Design Erweiterungs Editor
 settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen

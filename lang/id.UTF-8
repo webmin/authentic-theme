@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logo untuk pengguna terotentikasi
 settings_right_logo_unauthenticated_users=Logo untuk pengguna tidak terotentikasi
 
 settings_right_current_theme=Tema saat ini
-settings_right_title=Halaman ini memungkinkan Anda untuk mengonfigurasi pilihan untuk <a href="https://github.com/qooob/authentic-theme" target="_blank">Tema Authentic</a>. Pengaturan aan disimpan saat tema diperbarui.
+settings_right_title=Halaman ini memungkinkan Anda untuk mengonfigurasi pilihan untuk <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Tema Authentic</a>. Pengaturan aan disimpan saat tema diperbarui.
 settings_right_theme_left_configuration_title=Konfigurasi Tema Authentic
 settings_right_theme_left_extensions_title=Penyunting Esktensi Tema Authentic
 settings_right_theme_left_logo_title=Kontrol Logo Tema Authentic

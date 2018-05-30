@@ -114,7 +114,7 @@ settings_right_logo_authenticated_users=Logotip per a usuaris autenticats
 settings_right_logo_unauthenticated_users=Logotip per usuaris no autenticats
 
 settings_right_current_theme=Tema actual
-settings_right_title=Equesta pàgina et permet configurar les opcions per a l'<a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Cal que desis els canvis per tal que les modificacions quedin gravades.
+settings_right_title=Equesta pàgina et permet configurar les opcions per a l'<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Cal que desis els canvis per tal que les modificacions quedin gravades.
 settings_right_theme_left_configuration_title=Configuració de l'Authentic Theme
 settings_right_theme_left_extensions_title=Editor de Complements
 settings_right_theme_left_logo_title=Gestió del logotip

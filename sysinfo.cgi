@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -247,7 +247,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     }
 
     &print_table_row($Atext{'theme_version'},
-                     '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+                     '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
                        '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
                        $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
                        '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
@@ -368,7 +368,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     &print_table_row(&Atext('body_usermin'), get_webmin_version());
 
     &print_table_row($Atext{'theme_version'},
-                     '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+                     '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
                        '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
                        $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
                        '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .

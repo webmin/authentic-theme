@@ -114,7 +114,7 @@ settings_right_logo_authenticated_users=Logo pentru utilizatori autentificați
 settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentificați
 
 settings_right_current_theme=Temă curentă
-settings_right_title=Această pagină îți permite modificarea <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Configurările vor fi înregistrate după Actualizarea Temei.
+settings_right_title=Această pagină îți permite modificarea <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Configurările vor fi înregistrate după Actualizarea Temei.
 settings_right_theme_left_configuration_title=Configurația Authentic Theme
 settings_right_theme_left_extensions_title=Editor de Extensii Authentic Theme
 settings_right_theme_left_logo_title=Administrare Logo Authentic Theme

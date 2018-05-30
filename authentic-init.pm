@@ -1,7 +1,7 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -1086,7 +1086,7 @@ sub get_version_link
     if ($type eq '2') {
         return "<span class=\"versionSeparator\">" . get_version_full($version, 1) . "</span>";
     } else {
-        return '<a href="https://github.com/qooob/authentic-theme/releases/tag/' .
+        return '<a href="https://github.com/authentic-theme/authentic-theme/releases/tag/' .
           get_version_full($version) . '" class="versionSeparator">' . get_version_full($version, 1) . '</a>';
     }
 

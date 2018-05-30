@@ -114,7 +114,7 @@ settings_right_logo_authenticated_users=Logo voor geauthenticeerde gebruikers
 settings_right_logo_unauthenticated_users=Logo voor niet geauthenticeerde gebruikers
 
 settings_right_current_theme=Huidige thema
-settings_right_title=Op deze pagina kunnen configuratie-opties gewijzigd worden voor <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. De opties worden opgeslagen bij een update van het thema.
+settings_right_title=Op deze pagina kunnen configuratie-opties gewijzigd worden voor <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. De opties worden opgeslagen bij een update van het thema.
 settings_right_theme_left_configuration_title=Authentic Theme configuratie
 settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
 settings_right_theme_left_logo_title=Authentic Theme Logo Control

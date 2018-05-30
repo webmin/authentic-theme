@@ -195,7 +195,7 @@ settings_right_theme_left_logo_title=Authentic tema logokontroll
 settings_right_theme_logos=Tema logoer
 settings_right_theme_logos_title=Tema logoer
 settings_right_thirdparties_options_title=Innstillinger for tredje-parts moduler
-settings_right_title=Denne siden lar deg konfigurere innstillinger for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic tema</a>. Innstillinger vil bli lagret ved oppdatering av tema.
+settings_right_title=Denne siden lar deg konfigurere innstillinger for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic tema</a>. Innstillinger vil bli lagret ved oppdatering av tema.
 settings_right_virtualmin_default=Standard side for Virtualmin
 settings_right_window_options_title=Vindu innstillinger
 settings_saturate_level_navigation=Metningsfilter

@@ -1,10 +1,10 @@
 ## Contents
-* [Changelog](https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md)
-* [Download![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/qooob/authentic-theme/releases)
+* [Changelog](https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md)
+* [Download![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/authentic-theme/authentic-theme/releases)
 * [About](#about)
 * [FAQ](#faq)
 * [Development](#development)
-* [Donate![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/qooob/authentic-theme#donate)
+* [Donate![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/authentic-theme/authentic-theme#donate)
 * [License](#license)
 
 ## About
@@ -78,7 +78,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
 * [Kay Marquardt](https://github.com/gnadelwartz), [Michael Keck](https://github.com/mkkeck) (German)
 * [Silviu-Ionut Radu](https://github.com/sealview) (Romanian)
-* [Ilia Rostovtsev](https://github.com/qooob) (Russian)
+* [Ilia Rostovtsev](https://github.com/rostovtsev) (Russian)
 * [David Canalias](https://github.com/diathesaron) (Catalan)
 * [Sopor Spr](https://github.com/Sopor-) (Swedish)
 * [7stars](https://github.com/7starsone) (Spanish, French, Portuguese)
@@ -105,4 +105,4 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ## License
 
-**Authentic Theme** is released under the [MIT License](https://github.com/qooob/authentic-theme/blob/master/LICENSE).
+**Authentic Theme** is released under the [MIT License](https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE).

@@ -1,7 +1,7 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 BEGIN {push(@INC, "..");}
@@ -1106,7 +1106,7 @@ sub get_sysinfo_vars
             $authentic_remote_version_tag = $_remote_version_tag[0];
 
             $authentic_theme_version =
-              '<a href="https://github.com/qooob/authentic-theme" target="_blank">' .
+              '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
               $Atext{'theme_name'} . '</a> ' . $authentic_installed_version .
               '. ' . ($authentic_remote_beta ? $Atext{'theme_git_patch_available'} : $Atext{'theme_update_available'}) .
               ' ' . $authentic_remote_version . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
@@ -1118,11 +1118,11 @@ sub get_sysinfo_vars
               ' authentic_update" href=\'' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
               ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $Atext{'theme_update'} .
               '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
-'" target="_blank" href="https://github.com/qooob/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
+'" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $Atext{'theme_changelog'}
               . '</a>' . '<a data-remove-version="' .
               $authentic_remote_version . '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
-              '" target="_blank" href="https://github.com/qooob/authentic-theme/releases/download/' .
+              '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
               $authentic_remote_version_tag .
               '/authentic-theme-' . $authentic_remote_version . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
               $Atext{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
@@ -1132,7 +1132,7 @@ sub get_sysinfo_vars
 
         } else {
             $authentic_theme_version =
-              '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+              '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
               '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4"><a href=\'' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
@@ -1791,16 +1791,16 @@ sub theme_remote_version
     if (($__settings{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
 
         if (($__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force_beta_check) && !$force_stable_check) {
-            http_download('api.github.com', '443', '/repos/qooob/authentic-theme/contents/theme.info',
+            http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/contents/theme.info',
                           \$remote_version, \$error, undef, 1, undef, undef, 5, undef, undef,
                           { 'accept', 'application/vnd.github.v3.raw' });
 
         } else {
-            http_download('api.github.com', '443', '/repos/qooob/authentic-theme/releases/latest',
+            http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
                           \$remote_release, \$error, undef, 1, undef, undef, 5);
             $remote_release =~ /tag_name":"(.*?)"/;
             http_download('api.github.com',                                                  '443',
-                          '/repos/qooob/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
+                          '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
                           \$error,                                                           undef,
                           1,                                                                 undef,
                           undef,                                                             5,
@@ -3220,11 +3220,11 @@ sub update_notice
                 <hr>
                 <h4 data-development style="margin-top:20px;">'
       . $Atext{'theme_development_support'} .
-'&nbsp;&nbsp;<a href="https://github.com/qooob/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
+'&nbsp;&nbsp;<a href="https://github.com/authentic-theme/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
       .
       Atext(
         'theme_update_footer',
-'<a class="badge fa fa-github" target="_blank" href="https://github.com/qooob/authentic-theme/issues"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;GitHub</span></a>',
+'<a class="badge fa fa-github" target="_blank" href="https://github.com/authentic-theme/authentic-theme/issues"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;GitHub</span></a>',
 '<a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;Twitter</span></a>'
       ) .
       '

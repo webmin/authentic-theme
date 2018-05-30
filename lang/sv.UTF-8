@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logotyper för autentiserade användare
 settings_right_logo_unauthenticated_users=Logotyper för obehöriga användare
 
 settings_right_current_theme=Aktuellt tema
-settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
+settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
 settings_right_theme_left_configuration_title=Konfiguration av Authentic Theme
 settings_right_theme_left_extensions_title=Tilläggsredigerare för Authentic Theme
 settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
