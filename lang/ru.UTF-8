@@ -847,3 +847,7 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
