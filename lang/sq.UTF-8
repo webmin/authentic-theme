@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logo për përdoruesit e legalizuar
 settings_right_logo_unauthenticated_users=Logo për përdoruesit e paautorizuar
 
 settings_right_current_theme=Tema aktuale
-settings_right_title=Kjo faqe ju lejon të konfiguroni opsionet për <a href="https://github.com/qooob/authentic-theme" target="_blank"> Theme Authentic </a>.Cilësimet do të ruhen pas përditësimit të temës.
+settings_right_title=Kjo faqe ju lejon të konfiguroni opsionet për <a href="https://github.com/authentic-theme/authentic-theme" target="_blank"> Theme Authentic </a>.Cilësimet do të ruhen pas përditësimit të temës.
 settings_right_theme_left_configuration_title=Konfigurimi i Authentic Theme
 settings_right_theme_left_extensions_title=Redaktuesi i A Zgjerimeve të Authentic Theme
 settings_right_theme_left_logo_title=Kontrolli i Autentik i Logo
@@ -855,3 +855,7 @@ settings_enable_container_offset_description = Ky opsion do të punojë vetëm n
 theme_xhred_filemanager_preparing_download = Përgatitja e shkarkimit. Arkivimi i skedarëve të numrave%. Ju lutem prisni% dots
 theme_xhred_filemanager_prepared_download = Shkarkimi është i gatshëm. Dosja e arkivuar e numrave të%.
 theme_xhred_filemanager_canceled_download = Shkarkimi i anuluar.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive

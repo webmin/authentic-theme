@@ -117,7 +117,7 @@ settings_right_logo_authenticated_users=Logo for authenticated users
 settings_right_logo_unauthenticated_users=Logo for unauthenticated users
 
 settings_right_current_theme=Текущая тема
-settings_right_title=This page allows you to configure options for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
+settings_right_title=This page allows you to configure options for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
 settings_right_theme_left_configuration_title=Authentic Theme Configuration
 settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
 settings_right_theme_left_logo_title=Authentic Theme Logo Control
@@ -847,3 +847,7 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive

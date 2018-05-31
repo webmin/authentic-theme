@@ -11,7 +11,7 @@ PROD=${DIR##*/}
 CURRENT=$PWD
 GIT="git"
 CURL="curl"
-REPO="qooob/authentic-theme"
+REPO="authentic-theme/authentic-theme"
 
 # Clear the screen for better readability
 clear

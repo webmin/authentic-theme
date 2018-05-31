@@ -1,10 +1,9 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -15,7 +14,8 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my $command;
 my $has_zip    = has_command('zip');
-my $extension  = $has_zip ? "zip" : "tar.gz";
+my $do_zip     = ($in{'do_zip'} eq '1' ? 1 : 0);
+my $extension  = (($has_zip && $do_zip) ? "zip" : "tar.gz");
 my $filename   = $in{'filename'};
 my $target_dir = tempname("$filename");
 my $target     = "$target_dir/$filename.$extension";
@@ -44,7 +44,7 @@ if ($in{'cancel'} eq '1') {
     }
 } else {
     mkdir($target_dir, 0755);
-    if ($has_zip) {
+    if ($has_zip && $do_zip) {
         $command = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta($target);
     } else {
         $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd);

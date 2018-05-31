@@ -105,7 +105,7 @@ settings_right_logo_authenticated_users=Logo f&uuml;r angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo f&uuml;r nicht angemeldete Benutzer
 
 settings_right_current_theme=Aktuelles Design
-settings_right_title=Aus dieser Seite lassen die Einstellungen f&uuml;r <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhalten.
+settings_right_title=Aus dieser Seite lassen die Einstellungen f&uuml;r <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhalten.
 settings_right_theme_left_configuration_title=Authentic Design Konfiguration
 settings_right_theme_left_extensions_title=Authentic Design Erweiterungs Editor
 settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen
@@ -804,34 +804,38 @@ theme_xhred_filemanager_tree_expand_search=Erweitere beim Suchen alle Verzeichni
 
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Force to synchronize background status collection
-theme_xhred_tooltip_side_slider_go_to_dashboard=Go to dashboard
-theme_xhred_tooltip_side_slider_open_favorites_control=Open favorites control
-theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
-theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
-theme_xhred_global_settings=Settings
-theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
-settings_side_slider_fixed_toggle=Show pin/unpin toggle
-settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met.
-settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
+theme_xhred_tooltip_side_slider_sync_sysinfo=Erzwinge Synchronisation der Hintergund Daten Sammlung
+theme_xhred_tooltip_side_slider_go_to_dashboard=Gehe zum Dashboard
+theme_xhred_tooltip_side_slider_open_favorites_control=&Ouml;ffne Favoriten Einstellungen
+theme_xhred_tooltip_side_slider_delete_all_notification=L&ouml;sche alle Benachrichtigungen
+theme_xhred_tooltip_side_slider_mark_read_all_notification=Markiere alle Benachrichtigungen als gelesen
+theme_xhred_global_settings=Einstellungen
+theme_xhred_tooltip_side_slider_pinned=Befestige seitlichen Schieber
+settings_side_slider_fixed_toggle=Zeige Befestigungs Umschalter
+settings_side_slider_fixed_toggle_description=Diese Einstellung zeigt den Umschalter zum Befestigen des seitlichen Schiebers in der untersten Zeile. Damit kannst Du jederzeit zwichen befestigt und nicht befestigt umschalten.
+settings_right_page_hide_persistent_vscroll=Verstecke den vertikalen Schiebebalken
 
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Design Update auch für Usermin durchführen
-theme_xhred_global_installed_version=Installed version
-theme_xhred_global_installed_and_latest_version=Installed and latest version
-theme_xhred_global_latest_stable=Latest stable
-theme_xhred_global_latest_beta=Latest beta
-settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
-settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
+theme_xhred_global_installed_version=Installierte Version
+theme_xhred_global_installed_and_latest_version=Installierte und letzte Version
+theme_xhred_global_latest_stable=Letzte stabile
+theme_xhred_global_latest_beta=Letzte Beta
+settings_perform_content_scrolling=Automatisches Seitenrollen für progressive Ausgabe einschalten
+settings_contrast_mode=Hoher Kontrast Modus einschalten
+settings_side_slider_enabled_description=Für diese Option muss das <em>System Status</em> Modul eingeschaltet sein.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+theme_xhred_settings_show_webmin_tab=Webmin Schaltfl&auml;che im Navigations Men&uuml; f&uuml; Server Besitzer
 
 
 #19.14
-settings_enable_container_offset=Enable container offset
-settings_enable_container_offset_description=This option will only work on screens with minimum resolution of 1920 horizontal pixels
-theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
-theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
-theme_xhred_filemanager_canceled_download=Download canceled.
+settings_enable_container_offset=Container Abstand einschalten
+settings_enable_container_offset_description=Diese Option funktioniert nur auf Bildschirmen mit einer minimalen Aufl&ouml;sung von 1920 horizontale Bildpunkten.
+theme_xhred_filemanager_preparing_download=Bereite Herunterladen vor. Archiviere %number Dateien. Bitte warten%dots
+theme_xhred_filemanager_prepared_download=Herunterladen bereit. %number Dateien archiviert.
+theme_xhred_filemanager_canceled_download=Herunterladen abgebrochen.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive

@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logotyper för autentiserade användare
 settings_right_logo_unauthenticated_users=Logotyper för obehöriga användare
 
 settings_right_current_theme=Aktuellt tema
-settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
+settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
 settings_right_theme_left_configuration_title=Konfiguration av Authentic Theme
 settings_right_theme_left_extensions_title=Tilläggsredigerare för Authentic Theme
 settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
@@ -841,3 +841,7 @@ settings_enable_container_offset_description=Detta alternativet fungerar bara p�
 theme_xhred_filemanager_preparing_download=Förbereder nerladdning. Arkiverar %number fil(er). Vänta%dots
 theme_xhred_filemanager_prepared_download=Klar för nerladdning. Arkiverat %number fil(er).
 theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive

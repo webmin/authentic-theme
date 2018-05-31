@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=認証済みユーザーのロゴ
 settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 
 settings_right_current_theme=現在のテーマ
-settings_right_title=このページでは、<a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
+settings_right_title=このページでは、<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
 settings_right_theme_left_configuration_title= Authentic Theme の構成
 settings_right_theme_left_extensions_title=Authentic Theme 拡張エディタ
 settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
@@ -841,3 +841,7 @@ settings_enable_container_offset_description= このオプションは、横1920
 theme_xhred_filemanager_preparing_download= ダウンロードの準備中。 %number個のファイルをアーカイブしています。 %dotsをお待ちください
 theme_xhred_filemanager_prepared_download= ダウンロードの準備ができました。 %number個のファイルをアーカイブしました。
 theme_xhred_filemanager_canceled_download= ダウンロードがキャンセルされました。
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive

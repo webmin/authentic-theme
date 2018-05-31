@@ -1,7 +1,7 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 sub get_text_ltr
@@ -105,16 +105,6 @@ sub array_unique
         }
     }
     return @unique;
-}
-
-sub get_pretty_dev_version
-{
-    my ($v) = @_;
-    my $s = 5;
-    if (length($v) > ($s + 1)) {
-        $v = substr($v, 0, $s) . "." . substr($v, $s, $s - 1) . "." . substr($v, $s * 2 - 1);
-    }
-    return $v;
 }
 
 sub get_before_delimiter
