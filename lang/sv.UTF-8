@@ -844,4 +844,4 @@ theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.
 
 
 #19.19
-theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_xhred_filemanager_settings_force_tar_download=Använd <code>tar</code> även om <code>zip</code> finns tillgängligt när du laddar ner som arkiv
