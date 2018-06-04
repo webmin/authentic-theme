@@ -1089,7 +1089,13 @@ sub theme_nice_size
     }
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;
-    return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+
+    if ($_[1] == -1) {
+        return $sz . " " . $uname;
+    } else {
+        return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+    }
+
 }
 
 sub theme_redirect

@@ -1319,12 +1319,12 @@ sub get_sysinfo_vars
 
             # Real memory details
             $real_memory =
-              &Atext('body_used', nice_size(($m[0]) * 1000), nice_size(($m[0] - $m[1]) * 1000));
+              &Atext('body_used', nice_size(($m[0]) * 1000, -1), nice_size(($m[0] - $m[1]) * 1000, -1));
 
             # Virtual memory details
             if ($m[2] > 0) {
                 $virtual_memory =
-                  &Atext('body_used', nice_size(($m[2]) * 1000), nice_size(($m[2] - $m[3]) * 1000));
+                  &Atext('body_used', nice_size(($m[2]) * 1000, -1), nice_size(($m[2] - $m[3]) * 1000, -1));
             }
 
             if (get_text_ltr()) {
@@ -1338,9 +1338,9 @@ sub get_sysinfo_vars
         # Local disk space
         if ($info->{'disk_total'} && $info->{'disk_total'}) {
             $disk_space = &Atext('body_used_and_free',
-                                 nice_size($info->{'disk_total'}),
-                                 nice_size($info->{'disk_free'}),
-                                 nice_size($info->{'disk_total'} - $info->{'disk_free'}));
+                                 nice_size($info->{'disk_total'}, -1),
+                                 nice_size($info->{'disk_free'}, -1),
+                                 nice_size($info->{'disk_total'} - $info->{'disk_free'}, -1));
 
             if ($disk_space && get_text_ltr()) {
                 $disk_space = reverse_text($disk_space, "/");
@@ -2760,7 +2760,7 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
-            print nice_size($size) . '|' . $size;
+            print nice_size($size, -1) . '|' . $size;
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";
@@ -2797,7 +2797,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_update_notice'} eq '1') {
             print update_notice();
         } elsif ($in{'xhr-get_nice_size'} eq '1') {
-            print nice_size($in{'xhr-get_nice_size_sum'});
+            print nice_size($in{'xhr-get_nice_size_sum'}, -1);
         } elsif ($in{'xhr-get_command_exists'} eq '1') {
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
