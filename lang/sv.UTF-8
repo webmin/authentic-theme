@@ -845,3 +845,9 @@ theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download=Använd <code>tar</code> även om <code>zip</code> finns tillgängligt när du laddar ner som arkiv
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
