@@ -318,7 +318,7 @@ sub print_content
         unless (-e $request_uri{'module'} . '/' . $img) {
             $img = "images/icons/mime/unknown.png";
         }
-        $size = &nice_size($list[$count - 1][8]);
+        $size = &local_nice_size($list[$count - 1][8]);
         $user =
           getpwuid($list[$count - 1][5]) ?
           getpwuid($list[$count - 1][5]) :
@@ -420,6 +420,34 @@ sub print_content
     print '</body>';
     print '</html>';
 
+}
+
+sub local_nice_size
+{
+    my %Atext = (&load_language($current_theme), %Atext);
+    my ($units, $uname);
+    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_PB'};
+    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_TB'};
+    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_GB'};
+    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
+        $units = 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_MB'};
+    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
+        $units = 1024;
+        $uname = $Atext{'theme_nice_size_kB'};
+    } else {
+        $units = 1;
+        $uname = $Atext{'theme_nice_size_b'};
+    }
+    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
+    $sz =~ s/\.00$//;
+    return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
 }
 
 sub paster
