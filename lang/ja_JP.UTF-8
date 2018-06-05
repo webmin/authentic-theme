@@ -126,7 +126,7 @@ settings_right_table_options_title=テーブルオプション
 settings_security_title=セキュリティ警告オプション
 settings_security_description= セキュリティ警告は、特定のイベントに電子メール通知をセットアップできるようになります。(Linux の <code>mail</code> コマンドは、この機能を動作させるために必要です)<br class="lh0">形式:<code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">使用:<code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0">出力:<code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=ホットキーオプション
-settings_right_sysinfo_page_options_title=システム情報ページのオプション
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/で/Cloudmin <code>URL.</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
 settings_hotkey_custom_1=カスタムリンク <code>1</code>
@@ -851,4 +851,6 @@ theme_nice_size_GB=GB
 theme_nice_size_MB=MB
 theme_nice_size_kB=kB
 theme_nice_size_b=bytes
-
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems

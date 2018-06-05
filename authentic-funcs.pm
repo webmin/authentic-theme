@@ -4,6 +4,25 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
+sub settings
+{
+    my ($f, $e) = @_;
+    my %c;
+    if (-r $f) {
+        my $k = read_file_contents($f);
+        my %k = $k =~ /(.*?)=(.*)/g;
+        delete @k{ grep(!/^$e/, keys %k) };
+        foreach $s (keys %k) {
+            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
+            $k{$s} =~ s/\\'/'/g;
+            $c{$s} .= $k{$s};
+        }
+        return %c;
+    } else {
+        return %c;
+    }
+}
+
 sub get_text_ltr
 {
     if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {

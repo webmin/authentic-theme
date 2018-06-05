@@ -18,6 +18,7 @@ init_config();
 ReadParse();
 
 our %text = load_language($current_theme);
+my %settings = settings($config_directory . "/$current_theme/settings.js", 'settings_');
 
 my %data;
 if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
@@ -54,7 +55,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             $data{'proc'} = scalar(@processes);
         }
 
-        if (foreign_check("mount")) {
+        if (foreign_check("mount") && $settings{'settings_sysinfo_real_time_status_disk'} ne 'false') {
             foreign_require("mount");
             my @disk_space = mount::local_disk_space();
 

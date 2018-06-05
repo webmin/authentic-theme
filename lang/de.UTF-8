@@ -118,7 +118,7 @@ settings_right_table_options_title=Optionen f&uuml;r Tabellen
 settings_security_title=Optionen f&uuml;r Sicherheits Warnungen
 settings_security_description=Sicherheits Warnungen erm&ouml;glichen es Mail Benachrichtungen bei bestimmten Vorkomnissen zu versenden.<br class="lh0">Format: <code>Nachricht|Betreff|Liste Benutzer/Mail Adresse|Liste ignorierter IPv4/IPv6 Adressen</code><br class="lh0">Beispiel: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Ergebis: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Optionen f&uuml;r Schnellzugriffs Tasten
-settings_right_sysinfo_page_options_title=Optionen f&uuml;r System Informationen
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Benutzerdefinierte Links erlauben es die Ziffertasten <code>1</code> bis <code>9</code> als Schnellzugriffs Tasten f&uuml;r beliebige Webmin/Usermin/Virtualmin/Cloudmin <code>URLs</code> einzurichten. Die <code>URL</code> erh&auml;lt man wenn man sich nur den rechten Frame anzeigen l&auml;&szligt, z.B. mit einem rechtsklick auf die rechte Inhalts Seite und der Auswahl "Nur diesem Frame anzeigen". Wichtig: Es darf nur das letzte Teilst&uuml;ck der <code>URL</code> verwendet werden! Zum Aufrufen der Apache Configuration muss der Eintrag in Benuterzdefinierter Link 1 <code>/apache/</code> sein, ohne f&uuml;rende oder folgende Schr&auml;gstiche (/).
 settings_hotkey_custom_1=Benutzerdefinierter Link <code>1</code>
@@ -845,3 +845,6 @@ theme_nice_size_GB=GB
 theme_nice_size_MB=MB
 theme_nice_size_kB=kB
 theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems

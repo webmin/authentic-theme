@@ -127,7 +127,7 @@ settings_right_table_options_title=Možnosti tabulek
 settings_security_title=Možnosti bezpečnostních upozornění
 settings_security_description=Bezpečnostní upozornění umožňují nastavit emailové notifikace na základě konkrétních událostí.<br class="lh0">Formát: <code>Zpráva|Předmět|Seznam uživatelů/emailových adres oddělených čárkou|Seznam ignorovaných IPv4/IPv6 adres</code><br class="lh0">Použití: <code>%3 upozornění na úspěšné přihlášení uživatele %1 z adresy %2|%3 úspěšné přihlášení|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Výstup: <code>From: root, To: root, Subject: Webmin úspěšné přihlášení, Message: Webmin upozornění na úspěšné přihlášení uživatele root z adresy 2.3.4.5</code>
 settings_right_hotkey_options_title=Nastavení klávesových zkratek
-settings_right_sysinfo_page_options_title=Nastavení stránky System Information
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Vlastní odkazy umožňují použít čísla od <code>1</code> do <code>9</code> pro rychlý přístup k jakékoliv Webmin/Usermin/Virtualmin/Cloudmin <code>URL adrese.</code> <code>URL adresu</code> je možné získat z aktuálně otevřeného pravého rámce po zhlédnutí jeho zdrojového kódu. Je důležité, aby <code>URL adresa</code> neobsahovala žádné lomítko na začátku a neobsahovala žádný prefix. Například tedy k rychlému přístupu k Apache, nastavte hodnotu pole pro <code>vlastní link 1</code> jako <code>/apache/</code>. Pokud je přepínač klávesových zkratek nastavený na <code>Alt,</code> pak se klávesovou zkratkou <code>Alt+1</code>, dostanete na stránku Apache.
 settings_hotkey_custom_1=Vlastní odkaz <code>1</code>
@@ -853,3 +853,6 @@ theme_nice_size_GB=GB
 theme_nice_size_MB=MB
 theme_nice_size_kB=kB
 theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems

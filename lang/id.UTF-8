@@ -126,7 +126,7 @@ settings_right_table_options_title=Pilihan tabel
 settings_security_title=Security Alerts options
 settings_security_description=Peringatan keamanan memungkinkan Anda mengatur surel notifikasi ketuka terjadi suatu event. (Perintah <code>mail</code> pada Linux diperlukan agar fitur ini dapat bekerja)<br class="lh0">Format: <code>Pesan|Judul|Daftar pengguna/surel dipisahkan dengan koma|Daftar IPv4/IPv6 yang diabaikan dipisahkan dengan koma</code><br class="lh0">Pengunaan: <code>%3 peringatan berhasil masuk untuk pengguna %1 dari %2|%3 peringatan berhasil masuk|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Keluaran: <code>Dari: root, Ke: root, Judul: Peringatan berhasil masuk Webmin, Pesan: Peringatan berhasil masuk Webmin untuk pengguna root ari 2.3.4.5</code>
 settings_right_hotkey_options_title=Pilihan Hotkey
-settings_right_sysinfo_page_options_title=Laman pilihan Informasi Sistem
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Tautan khusus memungkinkan Anda untuk menggunakan digit antara <code>1</code> hingga <code>9</code> untuk mengakses dengan cepat <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code> dapat diambil dari konten frame laman yang sedang dibuka, dengan membaca sumbernya. <code>URL</code> tidak menggunakan garis miring di depannya dan tidak memilik awalan, ini penting. Misalnya, untuk berpindah ke Apache dengan cepat, atur field <code>tautan khusus 1</code> dengan <code>/apache/</code>. Jika modifier hotkey default diatur ke <code>Alt,</code> dengan meng-klik <code>Alt+1</code>, akan membuka modul Apache Anda
 settings_hotkey_custom_1=Tautan khusus <code>1</code>
@@ -856,3 +856,6 @@ theme_nice_size_GB=GB
 theme_nice_size_MB=MB
 theme_nice_size_kB=kB
 theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
