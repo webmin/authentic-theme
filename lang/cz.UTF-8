@@ -856,3 +856,4 @@ theme_nice_size_b=bytes
 settings_sysinfo_real_time_status_options=Real-time monitoring options
 settings_sysinfo_real_time_status_disk=Enable for disks
 settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
