@@ -128,7 +128,7 @@ settings_security_title=Beveiligingsmelding opties
 settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Hotkey opties
 
-settings_right_sysinfo_page_options_title=System Information page options
+settings_right_sysinfo_page_options_title=Dashboard options
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
 settings_hotkey_custom_1=Custom link <code>1</code>
 settings_hotkey_custom_2=Custom link <code>2</code>
@@ -848,3 +848,13 @@ theme_xhred_filemanager_canceled_download=Download canceled.
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)

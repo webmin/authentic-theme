@@ -12,7 +12,7 @@ use lib (dirname(__FILE__) . '/../../lib');
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
-if (is_root()) {
+if (is_root() && supports_users()) {
 
     if ($in{'list_users'} || $in{'home_base'}) {
         foreign_require("useradmin");

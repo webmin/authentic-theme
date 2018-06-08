@@ -127,7 +127,7 @@ settings_right_table_options_title=Opțiuni pentru Tabele
 settings_security_title=Opțiuni pentru Alerte de Securitate
 settings_security_description=Alertele de securitate vă va lăsa să configurați notificări prin email asupra unor evenimente.<br class="lh0">Format: <code>Mesaj|Subiect|Lista de utilizatori/emailuri separare prin virgulă|Lista IPv4/IPv6 ignorate, separate prin virgulă</code><br class="lh0">Utilizare: <code>%3 alerta autentificare reușită pentru utilizator %1 din %2|%3 alerta autentificare reuşită|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Generat: <code>From: root, To: root, Subject: Webmin alerta autentificare reuşită, Message: Webmin alertă autentificare reuşită pentru utilizator root de la 2.3.4.5</code>
 settings_right_hotkey_options_title=Opțiuni Hotkeys
-settings_right_sysinfo_page_options_title=Opțiuni pagină Informații de Sistem
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Legăturile personalizate îți dă voie sa folosești cifre de la <code>1</code> la <code>9</code> pentru a accesa orice <code>URL</code> valid Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code>-ul poate fi extras din cardul din dreapta al paginii curente, citindu-i sursa. Este important ca <code>URL</code>-ul să nu aibă slash-uri la început și să nu folosească prefixe. Ca exemplu, pentru a trece rapid la Apache, configurează câmpul <code>legătură personalizată 1</code> <code>/apache/</code>. Dacă tasta pentru hotkey este implicit <code>Alt,</code> făcând click <code>Alt+1</code>, va deschide modulul Apache.
 settings_hotkey_custom_1=Legătură personalizată <code>1</code>
@@ -846,3 +846,13 @@ theme_xhred_filemanager_canceled_download=Download canceled.
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)

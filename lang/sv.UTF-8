@@ -126,7 +126,7 @@ settings_right_table_options_title=Tabellalternativ
 settings_security_title=Alternativ för säkerhetsvarningar
 settings_security_description=Säkerhetsvarningar låter dig ställa in e-postaviseringar på vissa händelser. (Linux <code>mail</code>-kommandot krävs för den här funktionen ska fungera)<br class="lh0">Format: <code>Meddelande|Ämne|Kommaseparerad lista med användare/e-postadresser|Kommaseparerad lista av ignorerade IPv4/IPv6</code><br class="lh0">Användning: <code>%3 lyckad inloggningsmeddelande för användare %1 från %2|%3 lyckad inloggningsmeddelande|root,användare@exempel.se|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>Från: root, Till: root, Ämne: Webmin lyckad inloggningsmeddelande, Meddelande: Webmin lyckad inloggningsmeddelande för användaren root från 2.3.4.5</code>
 settings_right_hotkey_options_title=Snabbtangentalternativ
-settings_right_sysinfo_page_options_title=Alternativ för systeminformationsidan
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>/apache/</code>. Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
 settings_hotkey_custom_1=Egen länk <code>1</code>
@@ -845,3 +845,13 @@ theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download=Använd <code>tar</code> även om <code>zip</code> finns tillgängligt när du laddar ner som arkiv
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)

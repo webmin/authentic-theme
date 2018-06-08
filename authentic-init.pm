@@ -10,25 +10,6 @@ do(dirname(__FILE__) . "/authentic-funcs.pm");
 init_vars();
 init_funcs();
 
-sub settings
-{
-    my ($f, $e) = @_;
-    my %c;
-    if (-r $f) {
-        my $k = read_file_contents($f);
-        my %k = $k =~ /(.*?)=(.*)/g;
-        delete @k{ grep(!/^$e/, keys %k) };
-        foreach $s (keys %k) {
-            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
-            $k{$s} =~ s/\\'/'/g;
-            $c{$s} .= $k{$s};
-        }
-        return %c;
-    } else {
-        return %c;
-    }
-}
-
 sub settings_filter
 {
     my (%in_data) = @_;
@@ -1159,12 +1140,18 @@ sub parse_servers_path
 
 sub get_user_home
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[7];
 }
 
 sub get_user_id
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[2];
 }

@@ -15,7 +15,7 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 my %errors;
 my $error_fatal;
 
-if (!$in{'owner'} or !$in{'group'}) {
+if (!$in{'owner'} || !$in{'group'} || !supports_users()) {
     redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 

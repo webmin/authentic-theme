@@ -127,7 +127,7 @@ settings_right_table_options_title=Opcions de les taules
 settings_security_title=Opcions de les alertes de seguretat
 settings_security_description=Les alertes de seguretat permeten configurar l'enviament de notificacions per correu en determinats esdeveniments.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Opcions de les dreceres
-settings_right_sysinfo_page_options_title=Opcions de la pàgina d'informació del sistema
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Les dreceres personalitzades permeten utilitzar els dígits del 1 fins al 9 per tal d'accedir de forma ràpida a qualsevol element. La URL es pot obtenir mirant el seu orígen. És important que la URL no tingui la barra inclinada ni utilitzi cap prefixe.</br>Per exemple, per accedir ràpidament al mòdul Apache cal definir al camp "Drecera 1", el paràmetre <code>/apache/</code>. Si la opció de drecera està configurat a ALT, prement "Alt+1" s'obrirà el mòdul d'apache.
 settings_hotkey_custom_1=Drecera <code>1</code>
@@ -848,3 +848,13 @@ theme_xhred_filemanager_canceled_download=Download canceled.
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
