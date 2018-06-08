@@ -110,7 +110,7 @@ sub get_tree
         if (-d $td && !-l $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
-                return
+                return;
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
             my $pp = $p ne '/' ? $p : undef;
@@ -125,7 +125,7 @@ sub get_tree
 
         if ($e && $p eq "/" && $d == 1) {
             if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
-                return
+                return;
             }
         }
         my $dd = ($df > 0 ? ($df + 1) : 0);
@@ -319,14 +319,16 @@ sub print_content
             $img = "images/icons/mime/unknown.png";
         }
         $size = &local_nice_size($list[$count - 1][8]);
-        $user =
-          getpwuid($list[$count - 1][5]) ?
-          getpwuid($list[$count - 1][5]) :
-          $list[$count - 1][5];
-        $group =
-          getgrgid($list[$count - 1][6]) ?
-          getgrgid($list[$count - 1][6]) :
-          $list[$count - 1][6];
+        if (supports_users()) {
+            my $uid = getpwuid($list[$count - 1][5]);
+            my $gid = getgrgid($list[$count - 1][6]);
+            $user  = $uid ? $uid : $list[$count - 1][5];
+            $group = $gid ? $gid : $list[$count - 1][6];
+        } else {
+            $user  = $list[$count - 1][5];
+            $group = $list[$count - 1][6];
+        }
+
         $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
 
         if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/) {
@@ -481,6 +483,9 @@ sub paster
 
 sub switch_to_user
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my ($username) = @_;
     my @uinfo = getpwnam($username);
     if (@uinfo) {

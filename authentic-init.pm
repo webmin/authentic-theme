@@ -1140,12 +1140,18 @@ sub parse_servers_path
 
 sub get_user_home
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[7];
 }
 
 sub get_user_id
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[2];
 }
