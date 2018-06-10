@@ -27,12 +27,10 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
 
         if (foreign_check("proc")) {
             foreign_require("proc");
-            my @cpuusage  = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ();
-            my @cpuinfo   = proc::get_cpu_info();
-            my @memory    = proc::get_memory_info();
-            my @processes = proc::list_processes();
 
             # CPU stats and load average
+            my @cpuinfo = proc::get_cpu_info();
+            my @cpuusage = defined(proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ();
             $data{'cpu'} =
               [int($cpuusage[0] + $cpuusage[1] + $cpuusage[3]), text('body_load', ($cpuinfo[0], $cpuinfo[1], $cpuinfo[2]))];
 
@@ -40,18 +38,25 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             $data{'io'} = [$cpuusage[5], $cpuusage[6]];
 
             # Memory stats
-            $data{'mem'} = (
+            my @memory;
+            eval "\@memory = proc::get_memory_info()";
+            if (@memory) {
+                $data{'mem'} = (
                            @memory && $memory[0] && $memory[0] > 0 ?
                              [(100 - int(($memory[1] / $memory[0]) * 100)),
                               text('body_used', nice_size(($memory[0]) * 1000), nice_size(($memory[0] - $memory[1]) * 1000))
                              ] :
                              []);
-            $data{'virt'} = (
+                $data{'virt'} = (
                            @memory && $memory[2] && $memory[2] > 0 ?
                              [(100 - int(($memory[3] / $memory[2]) * 100)),
                               text('body_used', nice_size(($memory[2]) * 1000), nice_size(($memory[2] - $memory[3]) * 1000))
                              ] :
                              []);
+            }
+
+            # Number of running processes
+            my @processes = proc::list_processes();
             $data{'proc'} = scalar(@processes);
         }
 
