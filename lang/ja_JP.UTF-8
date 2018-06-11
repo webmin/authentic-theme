@@ -855,3 +855,21 @@ settings_sysinfo_real_time_status_options= リアルタイムの監視オプシ�
 settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
 settings_sysinfo_real_time_status_disk_description= 低速/大容量ファイルシステム上のディスクのリアルタイム監視を無効にすると便利な場合があります
 theme_xhred_title_locale_non_ui_config= 非UI形式（自動メールやエクスポートされたファイルなど）
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)
