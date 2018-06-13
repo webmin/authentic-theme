@@ -4,15 +4,35 @@
  * Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
  */
 
+/* jshint strict: true */
 /* jshint esversion: 6 */
 /* jshint jquery: true */
 
-// Register statistics object
+'use strict';
+
+// Stats module
 const stats = {
   general: {
     timeout: 1000,
     stopped: 1,
+    error: 0,
+    requery: 0,
     call: {},
+
+    // Import globals
+    extend: {
+      prefix: v___location_prefix,
+      error: connection_error,
+      state: () => {
+        return v___theme_state_visible
+      },
+      enabled: () => {
+        return settings_sysinfo_real_time_status
+      },
+      timeout: () => {
+        return settings_sysinfo_real_time_timeout
+      },
+    },
 
     // Get data
     query: function() {
@@ -24,11 +44,27 @@ const stats = {
 
         this.call = $.ajax({
           context: this,
-          url: v___location_prefix + "/stats.cgi?xhr-stats=general",
-          error: function() {
-            v___theme_stats_error = 1;
+          url: this.extend.prefix + "/stats.cgi?xhr-stats=general",
+          error: function(xhr) {
+
+            // Set error counter
+            this.error++;
+
+            // Show error
+            if (this.error > 3) {
+              this.extend.error(xhr, 1), this.stopped = 1, this.error = 0, this.requery = 0;
+              return;
+            }
+
+            // Retry again
+            !this.requery && (this.requery = setTimeout(() => {
+              this.stopped = 1, this.requery = 0, this.query();
+            }, 3000));
           },
           success: function(data) {
+
+            // Reset error counter
+            this.error = 0;
 
             // Take half a second delay, render and restart
             setTimeout(() => {
@@ -82,7 +118,7 @@ const stats = {
           }
         }
       })
-      v___theme_state_visible && this.query();
+      this.extend.state() && this.query();
     },
 
     // Stop querying
@@ -98,10 +134,8 @@ const stats = {
 
     // Check to enable stats after stop
     enable: function() {
-      if (settings_sysinfo_real_time_status) {
-          this.timeout = settings_sysinfo_real_time_timeout;
-          this.stopped = 1;
-          this.query();
+      if (this.extend.enabled()) {
+        this.timeout = this.extend.timeout(), this.stopped = 1, this.query();
       }
     }
   }
