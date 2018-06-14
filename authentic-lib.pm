@@ -1285,25 +1285,28 @@ sub get_sysinfo_vars
         }
 
         # System uptime
-        &foreign_require("proc");
-        my ($day, $hour, $minute) = &proc::get_system_uptime();
-        if ($day) {
-            $uptime_text = &Atext('body_updays', $day, $hour, $minute);
-        } elsif ($minute && $hour) {
-            $uptime_text = &Atext('body_uphours', $hour, $minute);
-        } elsif ($minute) {
-            $uptime_text = &Atext('body_upmins', $minute);
-        }
+        if (foreign_check("proc") && foreign_available("proc")) {
+            foreign_require("proc");
 
-        $uptime = '<a href=\'' . $gconfig{'webprefix'} . '/init/\'>' . $uptime_text . '</a>';
+            my @system_uptime = defined(&proc::get_system_uptime) ? proc::get_system_uptime() : ();
+            if (@system_uptime) {
+                my ($day, $hour, $minute) = @system_uptime;
+                if ($day) {
+                    $uptime_text = &Atext('body_updays', $day, $hour, $minute);
+                } elsif ($minute && $hour) {
+                    $uptime_text = &Atext('body_uphours', $hour, $minute);
+                } elsif ($minute) {
+                    $uptime_text = &Atext('body_upmins', $minute);
+                }
 
-        # Running processes
-        if (&foreign_check("proc")) {
-            @procs        = &proc::list_processes();
-            $running_proc = scalar(@procs);
-            if (&foreign_available("proc")) {
-                $running_proc = '<a href=\'' . $gconfig{'webprefix'} . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
+                $uptime = '<a href=\'' . $gconfig{'webprefix'} . '/init/\'>' . $uptime_text . '</a>';
+
             }
+
+            # Running processes
+            my @procs = proc::list_processes();
+            $running_proc = scalar(@procs);
+            $running_proc = '<a href=\'' . $gconfig{'webprefix'} . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
         }
 
         # Load averages
@@ -1338,8 +1341,8 @@ sub get_sysinfo_vars
         # Local disk space
         if ($info->{'disk_total'} && $info->{'disk_total'}) {
             $disk_space = &Atext('body_used_and_free',
-                                 nice_size($info->{'disk_total'}, -1),
-                                 nice_size($info->{'disk_free'}, -1),
+                                 nice_size($info->{'disk_total'},                        -1),
+                                 nice_size($info->{'disk_free'},                         -1),
                                  nice_size($info->{'disk_total'} - $info->{'disk_free'}, -1));
 
             if ($disk_space && get_text_ltr()) {
@@ -1791,20 +1794,24 @@ sub theme_remote_version
     if (($__settings{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
 
         if (($__settings{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force_beta_check) && !$force_stable_check) {
-            http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/contents/theme.info',
-                          \$remote_version, \$error, undef, 1, undef, undef, 5, undef, undef,
+            http_download('api.github.com',                                             '443',
+                          '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
+                          \$error,                                                      undef,
+                          1,                                                            undef,
+                          undef,                                                        5,
+                          undef,                                                        undef,
                           { 'accept', 'application/vnd.github.v3.raw' });
 
         } else {
             http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
                           \$remote_release, \$error, undef, 1, undef, undef, 5);
             $remote_release =~ /tag_name":"(.*?)"/;
-            http_download('api.github.com',                                                  '443',
+            http_download('api.github.com',                                                            '443',
                           '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
-                          \$error,                                                           undef,
-                          1,                                                                 undef,
-                          undef,                                                             5,
-                          undef,                                                             undef,
+                          \$error,                                                                     undef,
+                          1,                                                                           undef,
+                          undef,                                                                       5,
+                          undef,                                                                       undef,
                           { 'accept', 'application/vnd.github.v3.raw' });
         }
     }
@@ -2152,7 +2159,7 @@ sub _settings
             'false',
 
             '__',
-            _settings('fa', 'bell',    &Atext('settings_right_notification_slider_options_title')),
+            _settings('fa', 'bell', &Atext('settings_right_notification_slider_options_title')),
             'settings_side_slider_enabled',
             'true',
             'settings_side_slider_fixed',
