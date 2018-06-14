@@ -22,7 +22,7 @@ ReadParse();
 
 our %text = load_language($current_theme);
 my %settings = settings($config_directory . "/$current_theme/settings.js", 'settings_');
-my $foreign_mount_allowed = $settings{'settings_sysinfo_real_time_status_disk'} ne 'false' ? 1 : 0;
+my $foreign_mount_allowed = (!scalar %settings || $settings{'settings_sysinfo_real_time_status_disk'} eq 'true') ? 1 : 0;
 
 my %data;
 if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
