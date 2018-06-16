@@ -766,9 +766,9 @@ theme_xhred_upload_initial_info= ここにファイルをドラッグアンド�
 #19.09
 theme_xhred_global_empty= 空
 theme_xhred_global_click_here= ここをクリック
-theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $ 6 </em>の最新版および/または未発売版が適切に動作する必要があります。
+theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $6 </em>の最新版および/または未発売版が適切に動作する必要があります。
 theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3 em>$4</em>が必要です。
-theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$ 1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
+theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
 theme_xhred_global_outdated= このバージョンは古くなっています
 
 
@@ -858,18 +858,18 @@ theme_xhred_title_locale_non_ui_config= 非UI形式（自動メールやエク�
 
 
 #19.20
-extensions_mail_current_position=Messages $1 to $2 of $3
-extensions_mail_sort_by_sender=Sort by sender
-extensions_mail_sort_by_recipient=Sort by recipient
-extensions_mail_sort_by_date=Sort by date
-extensions_mail_sort_by_size=Sort by size
-extensions_mail_sort_by_spam=Sort by spam score
-extensions_mail_sort_by_subject=Sort by subject
-extensions_mail_security_signed_by=Signed by
-extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
-extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
-extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
-extensions_mail_flag_important=Message marked as important
-extensions_mail_flag_attachment=Message has an attachment
-extensions_mail_flag_spam_score=Spam score
-extensions_mail_header_no_subject=(no subject)
+extensions_mail_current_position=Messages $1 to $2 of $3 メッセージ$1〜$2 の $3
+extensions_mail_sort_by_sender= 差出人で並べ替え
+extensions_mail_sort_by_recipient= 受信者で並べ替え
+extensions_mail_sort_by_date= 日付けで並び替え
+extensions_mail_sort_by_size= サイズで並べ替え
+extensions_mail_sort_by_spam= スパムスコアで並べ替え
+extensions_mail_sort_by_subject= 件名で並べ替え
+extensions_mail_security_signed_by= によって署名されました
+extensions_mail_security_spf= 送信者ポリシーフレームワーク <em>(SPF)</em>
+extensions_mail_security_dkim= ドメインキーで特定されたメール <em>(DKIM)</em>
+extensions_mail_security_encryption= 標準暗号化 <em>(TLS)</em>
+extensions_mail_flag_important= 重要とマークされたメッセージ
+extensions_mail_flag_attachment= メッセージに添付ファイルがあります
+extensions_mail_flag_spam_score= スパムスコア
+extensions_mail_header_no_subject=(件名なし)
