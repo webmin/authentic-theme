@@ -121,18 +121,6 @@ if (
     }
     print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
     print_netdata_link();
-
-    if (&get_product_name() eq 'webmin' &&
-        !get_env('anonymous_user')    &&
-        $gconfig{'nofeedbackcc'} != 2 &&
-        $gaccess{'feedback'}          &&
-        $gconfig{'feedback_to'} ||
-        &get_product_name() eq 'usermin' && !get_env('anonymous_user') && $gconfig{'feedback'})
-    {
-        print '<li data-linked><a href="' . $gconfig{'webprefix'} .
-          '/feedback_form.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-envelope"></i> <span>' .
-          $Atext{'left_feedback'} . '</span></a></li>' . "\n";
-    }
 }
 
 elsif (
