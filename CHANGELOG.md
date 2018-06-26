@@ -1,11 +1,13 @@
 ## Changelog
 
-#### Version 19.19 (June 6, 2018)
+#### Version 19.19 (June 26, 2018)
 * Add improved context menu to File Manager [#1147](https://github.com/authentic-theme/authentic-theme/issues/1147)
 * Add ability to disable real-time monitoring for disks  [#1062](https://github.com/authentic-theme/authentic-theme/issues/1062)
 * Add to restore ability to set format for displayed dates in non-UI mode
 * Add ability to force _tar_ command when downloading as archive in File Manager
 * Add Japanese and German language translation updates
+* Fix missing logo due to prior code refactoring
+* Fix escaping file name for uploads [#1162](https://github.com/authentic-theme/authentic-theme/issues/1162)
 * Fix issues with navigation menu on touch-enabled devices [#1143](https://github.com/authentic-theme/authentic-theme/issues/1143) [virtualmin.com/57264](https://virtualmin.com/node/57264)
 * Fix to perfect context menu positioning in File Manager [#1141](https://github.com/authentic-theme/authentic-theme/issues/1141)
 * Fix forms submitting data from previous calls on history actions [#1144](https://github.com/authentic-theme/authentic-theme/issues/1144)
