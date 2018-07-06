@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=認証済みユーザーのロゴ
 settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 
 settings_right_current_theme=現在のテーマ
-settings_right_title=このページでは、<a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
+settings_right_title=このページでは、<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
 settings_right_theme_left_configuration_title= Authentic Theme の構成
 settings_right_theme_left_extensions_title=Authentic Theme 拡張エディタ
 settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
@@ -126,7 +126,7 @@ settings_right_table_options_title=テーブルオプション
 settings_security_title=セキュリティ警告オプション
 settings_security_description= セキュリティ警告は、特定のイベントに電子メール通知をセットアップできるようになります。(Linux の <code>mail</code> コマンドは、この機能を動作させるために必要です)<br class="lh0">形式:<code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">使用:<code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0">出力:<code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=ホットキーオプション
-settings_right_sysinfo_page_options_title=システム情報ページのオプション
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/で/Cloudmin <code>URL.</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
 settings_hotkey_custom_1=カスタムリンク <code>1</code>
@@ -605,7 +605,7 @@ theme_xhred_move_down= 下に移動
 theme_xhred_add_after= 後で追加する
 theme_xhred_add_before= 前に追加
 settings_button_tooltip= ボタンのツールチップを表示する
-settings_show_night_mode_link= パレットを表示する
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode= ダーク/ライトパレットを切り替えるためのホットキー
 settings_title= テーマ構成
 settings_subtitle= ユーザーの場合
@@ -766,9 +766,9 @@ theme_xhred_upload_initial_info= ここにファイルをドラッグアンド�
 #19.09
 theme_xhred_global_empty= 空
 theme_xhred_global_click_here= ここをクリック
-theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $ 6 </em>の最新版および/または未発売版が適切に動作する必要があります。
+theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $6 </em>の最新版および/または未発売版が適切に動作する必要があります。
 theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3 em>$4</em>が必要です。
-theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$ 1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
+theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
 theme_xhred_global_outdated= このバージョンは古くなっています
 
 
@@ -841,3 +841,35 @@ settings_enable_container_offset_description= このオプションは、横1920
 theme_xhred_filemanager_preparing_download= ダウンロードの準備中。 %number個のファイルをアーカイブしています。 %dotsをお待ちください
 theme_xhred_filemanager_prepared_download= ダウンロードの準備ができました。 %number個のファイルをアーカイブしました。
 theme_xhred_filemanager_canceled_download= ダウンロードがキャンセルされました。
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download= <code>zip</code>コマンドが利用可能であっても、アーカイブとしてダウンロードするときに<code>tar</code>コマンドを強制します
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options= リアルタイムの監視オプション
+settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
+settings_sysinfo_real_time_status_disk_description= 低速/大容量ファイルシステム上のディスクのリアルタイム監視を無効にすると便利な場合があります
+theme_xhred_title_locale_non_ui_config= 非UI形式（自動メールやエクスポートされたファイルなど）
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3 メッセージ$1〜$2 の $3
+extensions_mail_sort_by_sender= 差出人で並べ替え
+extensions_mail_sort_by_recipient= 受信者で並べ替え
+extensions_mail_sort_by_date= 日付けで並び替え
+extensions_mail_sort_by_size= サイズで並べ替え
+extensions_mail_sort_by_spam= スパムスコアで並べ替え
+extensions_mail_sort_by_subject= 件名で並べ替え
+extensions_mail_security_signed_by= によって署名されました
+extensions_mail_security_spf= 送信者ポリシーフレームワーク <em>(SPF)</em>
+extensions_mail_security_dkim= ドメインキーで特定されたメール <em>(DKIM)</em>
+extensions_mail_security_encryption= 標準暗号化 <em>(TLS)</em>
+extensions_mail_flag_important= 重要とマークされたメッセージ
+extensions_mail_flag_attachment= メッセージに添付ファイルがあります
+extensions_mail_flag_spam_score= スパムスコア
+extensions_mail_header_no_subject=(件名なし)

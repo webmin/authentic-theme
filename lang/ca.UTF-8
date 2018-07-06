@@ -114,7 +114,7 @@ settings_right_logo_authenticated_users=Logotip per a usuaris autenticats
 settings_right_logo_unauthenticated_users=Logotip per usuaris no autenticats
 
 settings_right_current_theme=Tema actual
-settings_right_title=Equesta pàgina et permet configurar les opcions per a l'<a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Cal que desis els canvis per tal que les modificacions quedin gravades.
+settings_right_title=Equesta pàgina et permet configurar les opcions per a l'<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Cal que desis els canvis per tal que les modificacions quedin gravades.
 settings_right_theme_left_configuration_title=Configuració de l'Authentic Theme
 settings_right_theme_left_extensions_title=Editor de Complements
 settings_right_theme_left_logo_title=Gestió del logotip
@@ -127,7 +127,7 @@ settings_right_table_options_title=Opcions de les taules
 settings_security_title=Opcions de les alertes de seguretat
 settings_security_description=Les alertes de seguretat permeten configurar l'enviament de notificacions per correu en determinats esdeveniments.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Opcions de les dreceres
-settings_right_sysinfo_page_options_title=Opcions de la pàgina d'informació del sistema
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Les dreceres personalitzades permeten utilitzar els dígits del 1 fins al 9 per tal d'accedir de forma ràpida a qualsevol element. La URL es pot obtenir mirant el seu orígen. És important que la URL no tingui la barra inclinada ni utilitzi cap prefixe.</br>Per exemple, per accedir ràpidament al mòdul Apache cal definir al camp "Drecera 1", el paràmetre <code>/apache/</code>. Si la opció de drecera està configurat a ALT, prement "Alt+1" s'obrirà el mòdul d'apache.
 settings_hotkey_custom_1=Drecera <code>1</code>
@@ -607,7 +607,7 @@ theme_xhred_move_down=Moure a baix
 theme_xhred_add_after=Afegir després
 theme_xhred_add_before=Afegir abans
 settings_button_tooltip=Mostrar informació contextual en els botons
-settings_show_night_mode_link=Mostrar el botó d'intercanvi entre els modes clar i fosc
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode=Drecera per canviar entre el modes clar i fosc
 settings_title=Configuració del tema
 settings_subtitle=Per a l'usuari
@@ -844,3 +844,35 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)

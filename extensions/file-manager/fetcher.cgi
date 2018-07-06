@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -12,7 +12,7 @@ use lib (dirname(__FILE__) . '/../../lib');
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
-if (is_root()) {
+if (is_root() && supports_users()) {
 
     if ($in{'list_users'} || $in{'home_base'}) {
         foreign_require("useradmin");

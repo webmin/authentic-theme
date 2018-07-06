@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -90,7 +90,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
         my $usermin_version = usermin_available('__version');
         if ($usermin_version) {
             push @table_data,
-              [ Atext('body_usermin'), product_version_update(get_pretty_dev_version($usermin_version), 'u'),
+              [ Atext('body_usermin'), product_version_update($usermin_version, 'u'),
                 sysinfo_usermin_version];
         }
 
@@ -223,12 +223,12 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     &print_table_row($Atext{'right_from'}, get_env('remote_host'));
 
     # Webmin version
-    &print_table_row(&Atext('body_webmin'), get_pretty_dev_version(get_webmin_version()), 'sysinfo_webmin_version');
+    &print_table_row(&Atext('body_webmin'), get_webmin_version(), 'sysinfo_webmin_version');
 
     # Usermin version
     my $usermin_version = usermin_available('__version');
     if ($usermin_version) {
-        print_table_row(&Atext('body_usermin'), get_pretty_dev_version($usermin_version), 'sysinfo_usermin_version');
+        print_table_row(&Atext('body_usermin'), $usermin_version, 'sysinfo_usermin_version');
     }
 
     # Print Virtualmin version
@@ -247,7 +247,7 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     }
 
     &print_table_row($Atext{'theme_version'},
-                     '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+                     '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
                        '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
                        $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
                        '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
@@ -365,10 +365,10 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
     &print_table_row(&Atext('body_os'), $os);
 
     # Usermin version
-    &print_table_row(&Atext('body_usermin'), get_pretty_dev_version(get_webmin_version()));
+    &print_table_row(&Atext('body_usermin'), get_webmin_version());
 
     &print_table_row($Atext{'theme_version'},
-                     '<a href="https://github.com/qooob/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
+                     '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $Atext{'theme_name'} .
                        '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
                        $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
                        '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .

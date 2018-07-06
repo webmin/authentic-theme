@@ -114,7 +114,7 @@ settings_right_logo_authenticated_users=Logo pro autentizované uživatele
 settings_right_logo_unauthenticated_users=Logo pro neautentizované uživatele
 
 settings_right_current_theme=Aktuální téma
-settings_right_title=Tato stránka umožňuje upravit nastavení tématu <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Nastavení budou uložena jen do té doby, než bude provedena aktualizace tématu samotného.
+settings_right_title=Tato stránka umožňuje upravit nastavení tématu <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Nastavení budou uložena jen do té doby, než bude provedena aktualizace tématu samotného.
 settings_right_theme_left_configuration_title=Konfigurace tématu Authentic Theme
 settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
 settings_right_theme_left_logo_title=Authentic Theme Logo Control
@@ -127,7 +127,7 @@ settings_right_table_options_title=Možnosti tabulek
 settings_security_title=Možnosti bezpečnostních upozornění
 settings_security_description=Bezpečnostní upozornění umožňují nastavit emailové notifikace na základě konkrétních událostí.<br class="lh0">Formát: <code>Zpráva|Předmět|Seznam uživatelů/emailových adres oddělených čárkou|Seznam ignorovaných IPv4/IPv6 adres</code><br class="lh0">Použití: <code>%3 upozornění na úspěšné přihlášení uživatele %1 z adresy %2|%3 úspěšné přihlášení|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Výstup: <code>From: root, To: root, Subject: Webmin úspěšné přihlášení, Message: Webmin upozornění na úspěšné přihlášení uživatele root z adresy 2.3.4.5</code>
 settings_right_hotkey_options_title=Nastavení klávesových zkratek
-settings_right_sysinfo_page_options_title=Nastavení stránky System Information
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Vlastní odkazy umožňují použít čísla od <code>1</code> do <code>9</code> pro rychlý přístup k jakékoliv Webmin/Usermin/Virtualmin/Cloudmin <code>URL adrese.</code> <code>URL adresu</code> je možné získat z aktuálně otevřeného pravého rámce po zhlédnutí jeho zdrojového kódu. Je důležité, aby <code>URL adresa</code> neobsahovala žádné lomítko na začátku a neobsahovala žádný prefix. Například tedy k rychlému přístupu k Apache, nastavte hodnotu pole pro <code>vlastní link 1</code> jako <code>/apache/</code>. Pokud je přepínač klávesových zkratek nastavený na <code>Alt,</code> pak se klávesovou zkratkou <code>Alt+1</code>, dostanete na stránku Apache.
 settings_hotkey_custom_1=Vlastní odkaz <code>1</code>
@@ -606,7 +606,7 @@ theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
 settings_button_tooltip=Show tooltip on buttons
-settings_show_night_mode_link=Show palette toggle
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
 settings_title=Theme Configuration
 settings_subtitle=For user
@@ -843,3 +843,35 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)

@@ -1,7 +1,7 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -1060,9 +1060,43 @@ sub theme_make_date
     my ($s, $o, $f) = @_;
     my $t = "x-md";
     my $d = "<$t-d>$s";
-    ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ";0")) . "</$t-d>");
+    ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ($f == -1 ? ";-1" : ";0"))) .
+     "</$t-d>");
     (!$o && ($d .= " <$t-t>$s</$t-t>"));
     return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
+}
+
+sub theme_nice_size
+{
+    my ($units, $uname);
+    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_PB'};
+    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_TB'};
+    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_GB'};
+    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
+        $units = 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_MB'};
+    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
+        $units = 1024;
+        $uname = $Atext{'theme_nice_size_kB'};
+    } else {
+        $units = 1;
+        $uname = $Atext{'theme_nice_size_b'};
+    }
+    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
+    $sz =~ s/\.00$//;
+
+    if ($_[1] == -1) {
+        return $sz . " " . $uname;
+    } else {
+        return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+    }
+
 }
 
 sub theme_redirect

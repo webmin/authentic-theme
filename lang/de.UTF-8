@@ -105,7 +105,7 @@ settings_right_logo_authenticated_users=Logo f&uuml;r angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo f&uuml;r nicht angemeldete Benutzer
 
 settings_right_current_theme=Aktuelles Design
-settings_right_title=Aus dieser Seite lassen die Einstellungen f&uuml;r <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhalten.
+settings_right_title=Aus dieser Seite lassen die Einstellungen f&uuml;r <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Design</a> anpassen. Die Einstellungen bleiben auch nach einem Design Update erhalten.
 settings_right_theme_left_configuration_title=Authentic Design Konfiguration
 settings_right_theme_left_extensions_title=Authentic Design Erweiterungs Editor
 settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen
@@ -118,7 +118,7 @@ settings_right_table_options_title=Optionen f&uuml;r Tabellen
 settings_security_title=Optionen f&uuml;r Sicherheits Warnungen
 settings_security_description=Sicherheits Warnungen erm&ouml;glichen es Mail Benachrichtungen bei bestimmten Vorkomnissen zu versenden.<br class="lh0">Format: <code>Nachricht|Betreff|Liste Benutzer/Mail Adresse|Liste ignorierter IPv4/IPv6 Adressen</code><br class="lh0">Beispiel: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Ergebis: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=Optionen f&uuml;r Schnellzugriffs Tasten
-settings_right_sysinfo_page_options_title=Optionen f&uuml;r System Informationen
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Benutzerdefinierte Links erlauben es die Ziffertasten <code>1</code> bis <code>9</code> als Schnellzugriffs Tasten f&uuml;r beliebige Webmin/Usermin/Virtualmin/Cloudmin <code>URLs</code> einzurichten. Die <code>URL</code> erh&auml;lt man wenn man sich nur den rechten Frame anzeigen l&auml;&szligt, z.B. mit einem rechtsklick auf die rechte Inhalts Seite und der Auswahl "Nur diesem Frame anzeigen". Wichtig: Es darf nur das letzte Teilst&uuml;ck der <code>URL</code> verwendet werden! Zum Aufrufen der Apache Configuration muss der Eintrag in Benuterzdefinierter Link 1 <code>/apache/</code> sein, ohne f&uuml;rende oder folgende Schr&auml;gstiche (/).
 settings_hotkey_custom_1=Benutzerdefinierter Link <code>1</code>
@@ -598,7 +598,7 @@ theme_xhred_move_down=nach unten
 theme_xhred_add_after=Danach einf&uuml;gen
 theme_xhred_add_before=Davor einf&uuml;gen
 settings_button_tooltip=Tooltips auf Kn&ouml;pfen anzeigen
-settings_show_night_mode_link=Umschaltung Farbpalette anzeigen
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
 settings_title=Design Konfiguration
 settings_subtitle=F&uuml;r Benutzer
@@ -804,34 +804,66 @@ theme_xhred_filemanager_tree_expand_search=Erweitere beim Suchen alle Verzeichni
 
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Force to synchronize background status collection
-theme_xhred_tooltip_side_slider_go_to_dashboard=Go to dashboard
-theme_xhred_tooltip_side_slider_open_favorites_control=Open favorites control
-theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
-theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
-theme_xhred_global_settings=Settings
-theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
-settings_side_slider_fixed_toggle=Show pin/unpin toggle
-settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met.
-settings_right_page_hide_persistent_vscroll=Hide persistent vertical scrollbar
+theme_xhred_tooltip_side_slider_sync_sysinfo=Erzwinge Synchronisation der Hintergund Daten Sammlung
+theme_xhred_tooltip_side_slider_go_to_dashboard=Gehe zum Dashboard
+theme_xhred_tooltip_side_slider_open_favorites_control=&Ouml;ffne Favoriten Einstellungen
+theme_xhred_tooltip_side_slider_delete_all_notification=L&ouml;sche alle Benachrichtigungen
+theme_xhred_tooltip_side_slider_mark_read_all_notification=Markiere alle Benachrichtigungen als gelesen
+theme_xhred_global_settings=Einstellungen
+theme_xhred_tooltip_side_slider_pinned=Befestige seitlichen Schieber
+settings_side_slider_fixed_toggle=Zeige Befestigungs Umschalter
+settings_side_slider_fixed_toggle_description=Diese Einstellung zeigt den Umschalter zum Befestigen des seitlichen Schiebers in der untersten Zeile. Damit kannst Du jederzeit zwichen befestigt und nicht befestigt umschalten.
+settings_right_page_hide_persistent_vscroll=Verstecke den vertikalen Schiebebalken
 
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Design Update auch für Usermin durchführen
-theme_xhred_global_installed_version=Installed version
-theme_xhred_global_installed_and_latest_version=Installed and latest version
-theme_xhred_global_latest_stable=Latest stable
-theme_xhred_global_latest_beta=Latest beta
-settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
-settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
+theme_xhred_global_installed_version=Installierte Version
+theme_xhred_global_installed_and_latest_version=Installierte und letzte Version
+theme_xhred_global_latest_stable=Letzte stabile
+theme_xhred_global_latest_beta=Letzte Beta
+settings_perform_content_scrolling=Automatisches Seitenrollen für progressive Ausgabe einschalten
+settings_contrast_mode=Hoher Kontrast Modus einschalten
+settings_side_slider_enabled_description=Für diese Option muss das <em>System Status</em> Modul eingeschaltet sein.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+theme_xhred_settings_show_webmin_tab=Webmin Schaltfl&auml;che im Navigations Men&uuml; f&uuml; Server Besitzer
 
 
 #19.14
-settings_enable_container_offset=Enable container offset
-settings_enable_container_offset_description=This option will only work on screens with minimum resolution of 1920 horizontal pixels
-theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
-theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
-theme_xhred_filemanager_canceled_download=Download canceled.
+settings_enable_container_offset=Container Abstand einschalten
+settings_enable_container_offset_description=Diese Option funktioniert nur auf Bildschirmen mit einer minimalen Aufl&ouml;sung von 1920 horizontale Bildpunkten.
+theme_xhred_filemanager_preparing_download=Bereite Herunterladen vor. Archiviere %number Dateien. Bitte warten%dots
+theme_xhred_filemanager_prepared_download=Herunterladen bereit. %number Dateien archiviert.
+theme_xhred_filemanager_canceled_download=Herunterladen abgebrochen.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)

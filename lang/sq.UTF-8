@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logo për përdoruesit e legalizuar
 settings_right_logo_unauthenticated_users=Logo për përdoruesit e paautorizuar
 
 settings_right_current_theme=Tema aktuale
-settings_right_title=Kjo faqe ju lejon të konfiguroni opsionet për <a href="https://github.com/qooob/authentic-theme" target="_blank"> Theme Authentic </a>.Cilësimet do të ruhen pas përditësimit të temës.
+settings_right_title=Kjo faqe ju lejon të konfiguroni opsionet për <a href="https://github.com/authentic-theme/authentic-theme" target="_blank"> Theme Authentic </a>.Cilësimet do të ruhen pas përditësimit të temës.
 settings_right_theme_left_configuration_title=Konfigurimi i Authentic Theme
 settings_right_theme_left_extensions_title=Redaktuesi i A Zgjerimeve të Authentic Theme
 settings_right_theme_left_logo_title=Kontrolli i Autentik i Logo
@@ -126,7 +126,7 @@ settings_right_table_options_title=Opsionet e tabelës
 settings_security_title=Opsione të Alarmeve të Sigurisë
 settings_security_description=Alarmet e sigurisë do t'ju lejojnë të konfiguroni njoftimet e postës elektronike pas ngjarjeve të caktuara.(Komanda Linux <code> mail </ code> kërkohet për këtë funksion të funksionojë) <br class="lh0"> Formati: <code> Mesazhi | Subjekti | Lista e ndarë e emrave të përdoruesve / email | / IPv6 </ code> <br class="lh0"> Përdorimi: <code>% 3 alarm identifikimi i suksesshëm për përdoruesin% 1 nga% 2 |% 3 login login i suksesshëm | root, user @ example.org | 1.2.3.4, 5.6.7.8 </ code> <br class="lh0"> Produkti: <code> Nga: root, Për: rrënjë, Subjekt: Webmin alarm i suksesshëm i identifikimit, Mesazhi: Webmin login i suksesshëm për perdoruesin root nga 2.3.4.5 </ code>
 settings_right_hotkey_options_title=Opsionet Hotkey
-settings_right_sysinfo_page_options_title=Opsionet e faqes së Informacionit të Sistemit
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Lidhjet e personalizuara ju mundësojnë të përdorni shifrat nga <code> 1 </ code> tek <code> 9 </ code> për të hyrë në mënyrë të shpejtë çdo URL të vlefshme Webmin / Usermin / Virtualmin / Cloudmin <code>. </ code > URL <code> </ code> mund të nxirret nga faqja e përmbajtjes së kornizës aktualisht të hapur, duke lexuar burimin e saj.Është e rëndësishme që <code> URL </ code> të mos ketë asnjë prerje në fillim dhe nuk përdor prefikse.Për shembull, të kaloni me shpejtësi në Apache, vendosni në <code> lidhje me porosi 1 </ code> fushë <code> apache. </ Code> Nëse modifikuesi i parazgjedhur i hotkeys të caktuar në <code> Alt, klikoni < kodi> Alt + 1 </ code>, do të hapë modulin Apache
 settings_hotkey_custom_1=Lidhje e personalizuar <code> 1 </ code>
@@ -619,7 +619,7 @@ theme_xhred_move_down=Zhvendos poshtë
 theme_xhred_add_after=Shto pas
 theme_xhred_add_before=Shto përpara
 settings_button_tooltip=Shfaq butonin e butonit në butonat
-settings_show_night_mode_link=Trego palosjen e kullës
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode=Hotkey për ndryshimin e gamës së errët / dritë
 settings_title=Konfigurimi i temës
 settings_subtitle=Për përdoruesit
@@ -855,3 +855,35 @@ settings_enable_container_offset_description = Ky opsion do të punojë vetëm n
 theme_xhred_filemanager_preparing_download = Përgatitja e shkarkimit. Arkivimi i skedarëve të numrave%. Ju lutem prisni% dots
 theme_xhred_filemanager_prepared_download = Shkarkimi është i gatshëm. Dosja e arkivuar e numrave të%.
 theme_xhred_filemanager_canceled_download = Shkarkimi i anuluar.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)

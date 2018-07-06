@@ -1,7 +1,7 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -9,25 +9,6 @@ do(dirname(__FILE__) . "/authentic-funcs.pm");
 
 init_vars();
 init_funcs();
-
-sub settings
-{
-    my ($f, $e) = @_;
-    my %c;
-    if (-r $f) {
-        my $k = read_file_contents($f);
-        my %k = $k =~ /(.*?)=(.*)/g;
-        delete @k{ grep(!/^$e/, keys %k) };
-        foreach $s (keys %k) {
-            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
-            $k{$s} =~ s/\\'/'/g;
-            $c{$s} .= $k{$s};
-        }
-        return %c;
-    } else {
-        return %c;
-    }
-}
 
 sub settings_filter
 {
@@ -444,8 +425,8 @@ sub init_vars
     our $t_uri__i = get_env('http_x_pjax_url');
 
     if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
-      our %Atext = (&load_language('virtual-server'), %Atext);
-      our %Atext = (&load_language('server-manager'), %Atext);
+        our %Atext = (&load_language('virtual-server'), %Atext);
+        our %Atext = (&load_language('server-manager'), %Atext);
     }
 
     if ($in !~ /xhr-/) {
@@ -1053,6 +1034,45 @@ sub get_version
     return $version =~ /([0-9]+[.][0-9]+)/;
 }
 
+sub get_version_range
+{
+    my ($start, $end, $step) = @_;
+    $step ||= 1;
+    return map {sprintf("%.2f", $_ * $step)} (sprintf("%.2f", $start / $step) .. sprintf("%.2f", $end / $step));
+
+}
+
+sub get_version_link
+{
+    my ($version, $type) = @_;
+
+    if ($version =~ /\.\.\./) {
+        ($version) = $version =~ /([0-9]+[.][0-9]+\.\.\.[0-9]+[.][0-9]+)/;
+        my $links_start = '<div class="pull-right versionSeparatorContainer">';
+        my $links_end   = '</div>';
+        my @versions    = split(/\.\.\./, $version);
+
+        if ($type eq '1' || $type eq '2') {
+            return "$links_start <span class=\"versionSeparator\">$version</span> $links_end";
+        }
+
+        @versions = get_version_range($versions[0], $versions[1], 0.01);
+        foreach my $version (@versions) {
+            $links_start .= get_version_link($version) . " ";
+        }
+        $links_start .= $links_end;
+        return $links_start;
+    }
+
+    if ($type eq '2') {
+        return "<span class=\"versionSeparator\">" . get_version_full($version, 1) . "</span>";
+    } else {
+        return '<a href="https://github.com/authentic-theme/authentic-theme/releases/tag/' .
+          get_version_full($version) . '" class="versionSeparator">' . get_version_full($version, 1) . '</a>';
+    }
+
+}
+
 sub get_version_full
 {
     my ($version, $beta) = @_;
@@ -1120,12 +1140,18 @@ sub parse_servers_path
 
 sub get_user_home
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[7];
 }
 
 sub get_user_id
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[2];
 }

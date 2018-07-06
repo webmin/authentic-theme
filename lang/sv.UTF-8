@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logotyper för autentiserade användare
 settings_right_logo_unauthenticated_users=Logotyper för obehöriga användare
 
 settings_right_current_theme=Aktuellt tema
-settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
+settings_right_title=Denna sida låter dig ställa in alternativ för <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Inställningarna sparas vid temauppdateringen.
 settings_right_theme_left_configuration_title=Konfiguration av Authentic Theme
 settings_right_theme_left_extensions_title=Tilläggsredigerare för Authentic Theme
 settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
@@ -126,7 +126,7 @@ settings_right_table_options_title=Tabellalternativ
 settings_security_title=Alternativ för säkerhetsvarningar
 settings_security_description=Säkerhetsvarningar låter dig ställa in e-postaviseringar på vissa händelser. (Linux <code>mail</code>-kommandot krävs för den här funktionen ska fungera)<br class="lh0">Format: <code>Meddelande|Ämne|Kommaseparerad lista med användare/e-postadresser|Kommaseparerad lista av ignorerade IPv4/IPv6</code><br class="lh0">Användning: <code>%3 lyckad inloggningsmeddelande för användare %1 från %2|%3 lyckad inloggningsmeddelande|root,användare@exempel.se|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>Från: root, Till: root, Ämne: Webmin lyckad inloggningsmeddelande, Meddelande: Webmin lyckad inloggningsmeddelande för användaren root från 2.3.4.5</code>
 settings_right_hotkey_options_title=Snabbtangentalternativ
-settings_right_sysinfo_page_options_title=Alternativ för systeminformationsidan
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>/apache/</code>. Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
 settings_hotkey_custom_1=Egen länk <code>1</code>
@@ -605,7 +605,7 @@ theme_xhred_move_down=Flytta neråt
 theme_xhred_add_after=Lägg till efter
 theme_xhred_add_before=Lägg till före
 settings_button_tooltip=Visa verktygstips för knappar
-settings_show_night_mode_link=Visa palettväxling
+settings_show_night_mode_link=Visa knapp för dag-/nattläge
 settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla mellan mörk/ljus palett
 settings_title=Temakonfiguration
 settings_subtitle=För användaren
@@ -841,3 +841,35 @@ settings_enable_container_offset_description=Detta alternativet fungerar bara p�
 theme_xhred_filemanager_preparing_download=Förbereder nerladdning. Arkiverar %number fil(er). Vänta%dots
 theme_xhred_filemanager_prepared_download=Klar för nerladdning. Arkiverat %number fil(er).
 theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Använd <code>tar</code> även om <code>zip</code> finns tillgängligt när du laddar ner som arkiv
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Alternativ för realtidsövervakning
+settings_sysinfo_real_time_status_disk=Aktiverad för diskar
+settings_sysinfo_real_time_status_disk_description=Det kan vara lönt att inaktivera realtidsövervakning för diskar på långsamma/stora filsystem
+theme_xhred_title_locale_non_ui_config=Icke-UI-format (som i automatiserade e-postmeddelanden och exporterade filer)
+
+
+#19.20
+extensions_mail_current_position=Meddelande $1 till $2 av $3
+extensions_mail_sort_by_sender=Sortera efter avsändare
+extensions_mail_sort_by_recipient=Sortera efter mottagare
+extensions_mail_sort_by_date=Sortera efter datum
+extensions_mail_sort_by_size=Sortera efter storlek
+extensions_mail_sort_by_spam=Sortera efter spam score
+extensions_mail_sort_by_subject=Sortera efter ämne
+extensions_mail_security_signed_by=Signerad av
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standardkryptering <em>(TLS)</em>
+extensions_mail_flag_important=Meddelande markerat som viktigt
+extensions_mail_flag_attachment=Meddelandet har bifogade filer
+extensions_mail_flag_spam_score=Spam-poäng
+extensions_mail_header_no_subject=(saknar ämne)

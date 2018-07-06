@@ -1,13 +1,16 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
-
+use strict;
+use warnings;
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
+
+our (%in);
 
 require(dirname(__FILE__) . '/mail-lib.pm');
 

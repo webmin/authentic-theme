@@ -1,8 +1,27 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+
+sub settings
+{
+    my ($f, $e) = @_;
+    my %c;
+    if (-r $f) {
+        my $k = read_file_contents($f);
+        my %k = $k =~ /(.*?)=(.*)/g;
+        delete @k{ grep(!/^$e/, keys %k) };
+        foreach $s (keys %k) {
+            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
+            $k{$s} =~ s/\\'/'/g;
+            $c{$s} .= $k{$s};
+        }
+        return %c;
+    } else {
+        return %c;
+    }
+}
 
 sub get_text_ltr
 {
@@ -105,16 +124,6 @@ sub array_unique
         }
     }
     return @unique;
-}
-
-sub get_pretty_dev_version
-{
-    my ($v) = @_;
-    my $s = 5;
-    if (length($v) > ($s + 1)) {
-        $v = substr($v, 0, $s) . "." . substr($v, $s, $s - 1) . "." . substr($v, $s * 2 - 1);
-    }
-    return $v;
 }
 
 sub get_before_delimiter

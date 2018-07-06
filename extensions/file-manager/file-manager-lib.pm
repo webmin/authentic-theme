@@ -1,8 +1,8 @@
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 our %request_uri = get_request_uri();
@@ -110,7 +110,7 @@ sub get_tree
         if (-d $td && !-l $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
-                return
+                return;
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
             my $pp = $p ne '/' ? $p : undef;
@@ -125,7 +125,7 @@ sub get_tree
 
         if ($e && $p eq "/" && $d == 1) {
             if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
-                return
+                return;
             }
         }
         my $dd = ($df > 0 ? ($df + 1) : 0);
@@ -318,15 +318,17 @@ sub print_content
         unless (-e $request_uri{'module'} . '/' . $img) {
             $img = "images/icons/mime/unknown.png";
         }
-        $size = &nice_size($list[$count - 1][8]);
-        $user =
-          getpwuid($list[$count - 1][5]) ?
-          getpwuid($list[$count - 1][5]) :
-          $list[$count - 1][5];
-        $group =
-          getgrgid($list[$count - 1][6]) ?
-          getgrgid($list[$count - 1][6]) :
-          $list[$count - 1][6];
+        $size = &local_nice_size($list[$count - 1][8]);
+        if (supports_users()) {
+            my $uid = getpwuid($list[$count - 1][5]);
+            my $gid = getgrgid($list[$count - 1][6]);
+            $user  = $uid ? $uid : $list[$count - 1][5];
+            $group = $gid ? $gid : $list[$count - 1][6];
+        } else {
+            $user  = $list[$count - 1][5];
+            $group = $list[$count - 1][6];
+        }
+
         $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
 
         if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/) {
@@ -422,6 +424,34 @@ sub print_content
 
 }
 
+sub local_nice_size
+{
+    my %Atext = (&load_language($current_theme), %Atext);
+    my ($units, $uname);
+    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_PB'};
+    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_TB'};
+    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
+        $units = 1024 * 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_GB'};
+    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
+        $units = 1024 * 1024;
+        $uname = $Atext{'theme_nice_size_MB'};
+    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
+        $units = 1024;
+        $uname = $Atext{'theme_nice_size_kB'};
+    } else {
+        $units = 1;
+        $uname = $Atext{'theme_nice_size_b'};
+    }
+    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
+    $sz =~ s/\.00$//;
+    return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+}
+
 sub paster
 {
     my ($c, $f, $s, $d, $r, $m) = @_;
@@ -453,6 +483,9 @@ sub paster
 
 sub switch_to_user
 {
+    if (!supports_users()) {
+        return undef;
+    }
     my ($username) = @_;
     my @uinfo = getpwnam($username);
     if (@uinfo) {

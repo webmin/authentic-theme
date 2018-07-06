@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
 #
-# Authentic Theme (https://github.com/qooob/authentic-theme)
+# Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
-# Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+# Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
 use File::Basename;
@@ -15,7 +15,7 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 my %errors;
 my $error_fatal;
 
-if (!$in{'owner'} or !$in{'group'}) {
+if (!$in{'owner'} || !$in{'group'} || !supports_users()) {
     redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 

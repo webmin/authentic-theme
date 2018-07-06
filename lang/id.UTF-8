@@ -113,7 +113,7 @@ settings_right_logo_authenticated_users=Logo untuk pengguna terotentikasi
 settings_right_logo_unauthenticated_users=Logo untuk pengguna tidak terotentikasi
 
 settings_right_current_theme=Tema saat ini
-settings_right_title=Halaman ini memungkinkan Anda untuk mengonfigurasi pilihan untuk <a href="https://github.com/qooob/authentic-theme" target="_blank">Tema Authentic</a>. Pengaturan aan disimpan saat tema diperbarui.
+settings_right_title=Halaman ini memungkinkan Anda untuk mengonfigurasi pilihan untuk <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Tema Authentic</a>. Pengaturan aan disimpan saat tema diperbarui.
 settings_right_theme_left_configuration_title=Konfigurasi Tema Authentic
 settings_right_theme_left_extensions_title=Penyunting Esktensi Tema Authentic
 settings_right_theme_left_logo_title=Kontrol Logo Tema Authentic
@@ -126,7 +126,7 @@ settings_right_table_options_title=Pilihan tabel
 settings_security_title=Security Alerts options
 settings_security_description=Peringatan keamanan memungkinkan Anda mengatur surel notifikasi ketuka terjadi suatu event. (Perintah <code>mail</code> pada Linux diperlukan agar fitur ini dapat bekerja)<br class="lh0">Format: <code>Pesan|Judul|Daftar pengguna/surel dipisahkan dengan koma|Daftar IPv4/IPv6 yang diabaikan dipisahkan dengan koma</code><br class="lh0">Pengunaan: <code>%3 peringatan berhasil masuk untuk pengguna %1 dari %2|%3 peringatan berhasil masuk|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Keluaran: <code>Dari: root, Ke: root, Judul: Peringatan berhasil masuk Webmin, Pesan: Peringatan berhasil masuk Webmin untuk pengguna root ari 2.3.4.5</code>
 settings_right_hotkey_options_title=Pilihan Hotkey
-settings_right_sysinfo_page_options_title=Laman pilihan Informasi Sistem
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Tautan khusus memungkinkan Anda untuk menggunakan digit antara <code>1</code> hingga <code>9</code> untuk mengakses dengan cepat <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code> dapat diambil dari konten frame laman yang sedang dibuka, dengan membaca sumbernya. <code>URL</code> tidak menggunakan garis miring di depannya dan tidak memilik awalan, ini penting. Misalnya, untuk berpindah ke Apache dengan cepat, atur field <code>tautan khusus 1</code> dengan <code>/apache/</code>. Jika modifier hotkey default diatur ke <code>Alt,</code> dengan meng-klik <code>Alt+1</code>, akan membuka modul Apache Anda
 settings_hotkey_custom_1=Tautan khusus <code>1</code>
@@ -610,7 +610,7 @@ theme_xhred_move_down=Turunkan
 theme_xhred_add_after=Tambahkan setelah
 theme_xhred_add_before=Tambahkan sebelumnya
 settings_button_tooltip=Tampilkan tooltip pada tombol
-settings_show_night_mode_link=Tampilkan palet toggle
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode=Hotkey palet untuk beralih gelap/terang
 settings_title=Konfigurasi Tema
 settings_subtitle=Untuk pengguna
@@ -846,3 +846,35 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)

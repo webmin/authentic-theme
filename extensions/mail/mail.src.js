@@ -1,7 +1,7 @@
 /*!
- * Authentic Theme (https://github.com/qooob/authentic-theme)
+ * Authentic Theme (https://github.com/authentic-theme/authentic-theme)
  * Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
- * Licensed under MIT (https://github.com/qooob/authentic-theme/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
  */
 
 /* jshint strict: true */
@@ -97,6 +97,13 @@ const mail = (function() {
     let tree = {
       fetched: 0,
       container: '[' + data.selector.folders + ']',
+      container_adjust: function() {
+        let container = $(this.container + ' >:first'),
+          content = $(this.container + ' >>:first');
+        if (container.height() > content.height()) {
+          container.css('height', content.height())
+        }
+      },
       init: function(source) {
 
         // Load dependencies
@@ -117,6 +124,9 @@ const mail = (function() {
 
         // Make the container scrollable
         extend.plugin.scroll(this.container, data.options.scroll)
+
+        // Adjust container height
+        this.container_adjust();
       },
       expand: function(node) {
         let expanded = node.isExpanded();
@@ -135,17 +145,18 @@ const mail = (function() {
         tree.reload(source);
         setTimeout(() => {
           this.adjust();
-          this.expand(this.get_active_node());
+          this.expand(this.node());
         }, 1e2);
       },
+      node: function() {
+        return data.plugin.tree('node');
+      },
       adjust: function() {
-        let $_ = this.get_active_node();
+        let $_ = this.node();
         if ($_ && $_.li && $($_.li).length) {
           extend.plugin.scroll([this.container, $($_.li)]);
         }
-      },
-      get_active_node: function() {
-        return data.plugin.tree('node');
+        this.container_adjust();
       }
     }
 

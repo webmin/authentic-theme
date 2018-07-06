@@ -184,7 +184,7 @@ settings_right_saving=Lagrer
 settings_right_small_table_icons=Små tabellikoner
 settings_right_small_table_icons_description=Erstatt standard størrelse tabellikoner med små ikoner og vis ikonenes lenke som verktøytips
 settings_right_soft_updates_page_options_title=Programvareoppdateringer
-settings_right_sysinfo_page_options_title=Innstillinger for Systeminformasjonsside
+settings_right_sysinfo_page_options_title=Dashboard options
 settings_right_table_options_title=Tabell innstillinger
 settings_right_theme_configurable_options_title=Konfigurerbare innstillinger for Authentic tema
 settings_right_theme_extensions=Tema utvidelser
@@ -195,7 +195,7 @@ settings_right_theme_left_logo_title=Authentic tema logokontroll
 settings_right_theme_logos=Tema logoer
 settings_right_theme_logos_title=Tema logoer
 settings_right_thirdparties_options_title=Innstillinger for tredje-parts moduler
-settings_right_title=Denne siden lar deg konfigurere innstillinger for <a href="https://github.com/qooob/authentic-theme" target="_blank">Authentic tema</a>. Innstillinger vil bli lagret ved oppdatering av tema.
+settings_right_title=Denne siden lar deg konfigurere innstillinger for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic tema</a>. Innstillinger vil bli lagret ved oppdatering av tema.
 settings_right_virtualmin_default=Standard side for Virtualmin
 settings_right_window_options_title=Vindu innstillinger
 settings_saturate_level_navigation=Metningsfilter
@@ -204,7 +204,7 @@ settings_security_description=Sikkerhetsvarsler lar deg sette opp e-postvarsler 
 settings_security_title=Innstillinger for sikkerhetsvarsler
 settings_sepia_level_navigation=Sepia filter
 settings_sepia_level_navigation_description=Standard/gjeldende verdier <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_show_night_mode_link=Vis palettbryter
+settings_show_night_mode_link=Show day/night mode toggle
 settings_show_terminal_link=Vis terminal-knapp
 settings_side_slider_enabled=Aktiver slider
 settings_side_slider_favorites_enabled=Vis Favoritter-fane
@@ -702,3 +702,35 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)

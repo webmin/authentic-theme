@@ -131,7 +131,7 @@ settings_right_logo_authenticated_users=對已驗證用戶的 Logo
 settings_right_logo_unauthenticated_users=對未經驗證用戶的 Logo
 
 settings_right_current_theme=當前主題
-settings_right_title=此頁面允許您配置<a href="https://github.com/qooob/authentic-theme" target="_blank">主題</A>選項。設置將在主題更新時儲存。
+settings_right_title=此頁面允許您配置<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">主題</A>選項。設置將在主題更新時儲存。
 settings_right_theme_left_configuration_title=Authentic 主題配置
 settings_right_theme_left_extensions_title=Authentic 主題編輯器擴展
 settings_right_theme_left_logo_title=Authentic 主題標誌控制
@@ -144,7 +144,7 @@ settings_right_table_options_title=表選項
 settings_security_title=安全警報選項
 settings_security_description=安全警報將讓你在特定事件接到電子郵件通知。(需要 Linux 的 <code>mail</code> 命令來啟用此功能)<br class="lh0">格式: <code>訊息|主題|逗號分隔的用戶或Email表|逗號分隔的忽略 IPv4/IPv6 表</code><br class="lh0">使用例: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
 settings_right_hotkey_options_title=熱鍵選項
-settings_right_sysinfo_page_options_title=系統資訊頁面選項
+settings_right_sysinfo_page_options_title=Dashboard options
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
 settings_hotkey_custom_1=自定義鏈接 <code>1</code>
@@ -623,7 +623,7 @@ theme_xhred_move_down=向下移動
 theme_xhred_add_after=在內容後添加
 theme_xhred_add_before=在內容前添加
 settings_button_tooltip=顯示工具提示上的按鈕
-settings_show_night_mode_link=顯示調色板
+settings_show_night_mode_link=Show day/night mode toggle
 settings_hotkey_toggle_key_night_mode=切換暗/亮調色板熱鍵
 settings_title=主題配置
 settings_subtitle=對於用戶
@@ -860,3 +860,35 @@ settings_enable_container_offset_description=This option will only work on scree
 theme_xhred_filemanager_preparing_download=Preparing download. Archiving %number file(s). Please wait%dots
 theme_xhred_filemanager_prepared_download=Download is ready. Archived %number file(s).
 theme_xhred_filemanager_canceled_download=Download canceled.
+
+
+#19.19
+theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
+theme_nice_size_PB=PB
+theme_nice_size_TB=TB
+theme_nice_size_GB=GB
+theme_nice_size_MB=MB
+theme_nice_size_kB=kB
+theme_nice_size_b=bytes
+settings_sysinfo_real_time_status_options=Real-time monitoring options
+settings_sysinfo_real_time_status_disk=Enable for disks
+settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
+theme_xhred_title_locale_non_ui_config=Non-UI format (like in automated emails and exported files)
+
+
+#19.20
+extensions_mail_current_position=Messages $1 to $2 of $3
+extensions_mail_sort_by_sender=Sort by sender
+extensions_mail_sort_by_recipient=Sort by recipient
+extensions_mail_sort_by_date=Sort by date
+extensions_mail_sort_by_size=Sort by size
+extensions_mail_sort_by_spam=Sort by spam score
+extensions_mail_sort_by_subject=Sort by subject
+extensions_mail_security_signed_by=Signed by
+extensions_mail_security_spf=Sender Policy Framework <em>(SPF)</em>
+extensions_mail_security_dkim=DomainKeys Identified Mail <em>(DKIM)</em>
+extensions_mail_security_encryption=Standard encryption <em>(TLS)</em>
+extensions_mail_flag_important=Message marked as important
+extensions_mail_flag_attachment=Message has an attachment
+extensions_mail_flag_spam_score=Spam score
+extensions_mail_header_no_subject=(no subject)
