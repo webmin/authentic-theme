@@ -6,6 +6,7 @@
 * Add to restore ability to set format for displayed dates in non-UI mode
 * Add ability to force _tar_ command when downloading as archive in File Manager
 * Add Japanese and German language translation updates
+* Add theme [channel](https://t.me/authentic_theme) on Telegram
 * Fix missing logo due to prior code refactoring
 * Fix escaping file name for uploads [#1162](https://github.com/authentic-theme/authentic-theme/issues/1162)
 * Fix issues with navigation menu on touch-enabled devices [#1143](https://github.com/authentic-theme/authentic-theme/issues/1143) [virtualmin.com/57264](https://virtualmin.com/node/57264)
