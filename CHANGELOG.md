@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.20-beta1 (July 25, 2018)
+* Add brand new listing and controls for mail in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
+* Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authenticsome -theme/issues/1175)
+
+<!--- separator --->
+
 #### Version 19.19 (June 26, 2018)
 * Add improved context menu to File Manager [#1147](https://github.com/authentic-theme/authentic-theme/issues/1147)
 * Add ability to disable real-time monitoring for disks  [#1062](https://github.com/authentic-theme/authentic-theme/issues/1062)
@@ -58,7 +64,6 @@
 * Fix missing default form method  [#893/comment-379585204](https://github.com/webmin/webmin/issues/893#issuecomment-379585204)
 * Fix numerous of other issues and made dozens of improvements
 
-<!--- separator --->
 
 #### Version 19.12 (April 01, 2018)
 * Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/authentic-theme/authentic-theme/issues/968)

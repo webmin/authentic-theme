@@ -629,19 +629,7 @@ sub theme_ui_oneradio
 
 sub theme_ui_checkbox
 {
-    my ($name, $value, $label, $sel, $tags, $dis) = @_;
-    my $after;
-    my $rand = int rand(1e4);
-    if ($label =~ /^([^<]*)(<[\000-\377]*)$/) {
-        $label = $1;
-        $after = $2;
-    }
-    return "<span class=\"awcheckbox awobject\"><input class=\"iawobject\" type=\"checkbox\" " .
-      "name=\"" . &quote_escape($name) .
-      "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") .
-      " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" . ($tags ? " " . $tags : "") .
-      "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
-      (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>' . $after;
+    return theme_ui_checkbox_local(@_);
 }
 
 sub theme_ui_textarea
@@ -1057,13 +1045,7 @@ sub theme_ui_radio_table
 
 sub theme_make_date
 {
-    my ($s, $o, $f) = @_;
-    my $t = "x-md";
-    my $d = "<$t-d>$s";
-    ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ($f == -1 ? ";-1" : ";0"))) .
-     "</$t-d>");
-    (!$o && ($d .= " <$t-t>$s</$t-t>"));
-    return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
+    return theme_make_date_local(@_);
 }
 
 sub theme_nice_size
@@ -1101,7 +1083,11 @@ sub theme_nice_size
 
 sub theme_redirect
 {
-    use File::Basename;
+    if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
+      print "Content-type: text/html;\n\n";
+      return
+    }
+
     my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (
                                         $_[1],
                                         (get_env('https') ? 'https://' : 'http://'),
