@@ -177,7 +177,7 @@ settings_hotkey_focus_search=検索フィールドのホットキー
 settings_hotkey_reload=ページのリロードのためのホットキー
 
 settings_sysinfo_easypie_charts=グラフの表示
-settings_sysinfo_theme_updates=本物のテーマの更新をチェック
+settings_sysinfo_theme_updates=Authentic Themaの更新をチェック
 settings_sysinfo_csf_updates=ConfigServer のセキュリティとファイアウォールの更新を確認する
 settings_sysinfo_drive_status_on_new_line=新しい行に CPU とドライブのステータスを表示する
 settings_sysinfo_expand_all_accordions=すべてのアコーディオンを拡張
@@ -627,7 +627,7 @@ settings_sysinfo_theme_patched_updates= 開発バージョンを含む
 settings_sysinfo_theme_updates_description= このオプションを有効にするには、システムに<code>git</code>コマンドをインストールする必要があります
 theme_git_patch_available= 最新の開発版
 theme_git_patch_no_git_message= 最新のアップデートをGitHubから直接インストールするには、<code>git</code>コマンドがインストールされていることを確認する必要があります。
-theme_git_patch_update_success_message= Authentic Themeの最新バージョン<tt>V$1</tt>へのアップデートが成功しました。ただ今、アップデート内容を反映しています。しばらくお待ちください。
+theme_git_patch_update_success_message= Authentic Themeの最新バージョン<tt>V$1</tt>へのアップデートが成功しました。ただ今、アップデートを反映しています。しばらくお待ちください。
 theme_git_patch_update_success_message2= Authentic Themeの更新は成功しました。現在インストールされているバージョンは<tt>$1</tt>です。再読み込み中...
 theme_xhred_git_patch_update= Authentic Themeの更新に失敗しました。手動で行うにはコンソールを使用してみてください。
 theme_xhred_git_patch_initiated= Authentic Themeの更新が開始されました。
