@@ -993,9 +993,9 @@ sub header_html_data
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
-      ' data-high-contrast="' .         ($__settings{'settings_contrast_mode'} eq 'true'              ? '1' : '0') .
+      ' data-high-contrast="' . ($__settings{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
       '" data-navigation-collapsed="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' .         ($__settings{'settings_side_slider_fixed'} eq "true"          ? '1' : '0') .
+      '" data-slider-fixed="' . ($__settings{'settings_side_slider_fixed'} eq "true" && $get_user_level eq '0' ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' . foreign_available("shell") .
       '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . usermin_available() .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
