@@ -769,23 +769,4 @@ sub ui_table_tbody_end
     return '</tbody></table>';
 }
 
-sub print_hash
-{
-    print "Content-type: text/html\n\n";
-    my (%d) = @_;
-
-    use Data::Dumper;
-    print Dumper(\%d);
-}
-
-sub print_array
-{
-    print "Content-type: text/html\n\n";
-    my ($____v) = @_;
-    use Data::Dumper;
-    print '<pre style="color: red">';
-    print Dumper $____v;
-    print '</pre>';
-}
-
 1;
