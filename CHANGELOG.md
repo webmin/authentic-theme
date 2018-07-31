@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.20-beta2 (July 31, 2018)
+* Add Japanese and German language translation updates
+* Add column sorting and filter to Virtualmin/DNS Records page
+* Fix to prevent showing container offset for certain pages (File Manager, Mail Listing and Editors)
+* Fix excessive escaping for upload progress data in File Manager [#1174](https://github.com/authentic-theme/authenticsome -theme/issues/1174)
+* Fix read mail link not loading content  [#1177](https://github.com/authentic-theme/authenticsome -theme/issues/1177)
+
 #### Version 19.20-beta1 (July 25, 2018)
 * Add brand new listing and controls for mail in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
 * Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authenticsome -theme/issues/1175)
