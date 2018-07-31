@@ -399,7 +399,7 @@ const mail = (function() {
        * @returns {number}
        */
       preview_length = () => {
-        return parseInt($(window).width() / 12);
+        return parseInt($(window).width() / 10);
       },
 
 
@@ -825,7 +825,7 @@ const mail = (function() {
        * Submits changes to the server
        *
        * @param {string} data      Response object with data for current page
-       * @param {object} actions   Action(s) to submit be submitted
+       * @param {object} actions   Action(s) to be submitted
        * @param {object} messages  Array of message ids to process
        * @param {int}    [refetch] Refetch current folder's content from the server
        * @param {int}    [reset]   Reset message selection
