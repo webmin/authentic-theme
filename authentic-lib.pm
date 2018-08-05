@@ -2848,7 +2848,7 @@ sub get_xhr_request
             print get_json(\@current_versions);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
-            my $version_type            = $in{'xhr-update-type'};
+            my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};
             my $usermin_enabled_updates = ($__settings{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('bash')) {
