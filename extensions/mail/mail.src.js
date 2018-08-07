@@ -87,7 +87,7 @@ const mail = (function() {
             trigger: 'hover',
             container: 'body',
             delay: {
-              show: 800,
+              show: 600,
               hide: 30
             }
           });
@@ -122,8 +122,8 @@ const mail = (function() {
             quota: 'row row-quota',
           },
           column: {
-            6: 'col-lg-6',
-            12: 'col-lg-12',
+            6: 'col-xs-6',
+            12: 'col-xs-12',
           },
           button: {
             default: 'btn btn-default',
@@ -190,6 +190,7 @@ const mail = (function() {
         },
         mail: {
           checkbox: 'input[data-check]',
+          flag: 'mail-list-trow-flag-security',
           special: {
             star: 'star',
             starred: 'fa-star star',
@@ -596,7 +597,8 @@ const mail = (function() {
             move: $$.element('controls.move.dropdown')
           },
           checkbox = $($$.$.controls.select.checkbox),
-          checkboxes = $$.$.mail.checkbox;
+          checkboxes = $$.$.mail.checkbox,
+          flags = $$.selector('mail.flag');
 
         /**
          * Event listeners for selecting all messages
@@ -611,6 +613,16 @@ const mail = (function() {
           let $input = $(this).find('input');
           !$(event.target).is($input) && $input.prop('checked', !$input.is(':checked')).trigger('change');
         })
+
+        /**
+        * Event listeners for selecting all messages
+        *
+        * @returns {void}
+        */
+        $(flags).on('click', function(event) {
+            event.stopPropagation()
+        })
+
 
         /**
          * Event listener for selecting specific type of multiple messages
@@ -666,6 +678,8 @@ const mail = (function() {
           storage.set(id, state, status, starred, data);
           $(checked).length === $(checkboxes).length ? checkbox.prop('checked', 1) : checkbox.prop('checked', 0);
         });
+
+
 
         /**
          * Event listener for deleting message(s)
