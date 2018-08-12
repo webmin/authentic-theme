@@ -7,6 +7,7 @@
 #
 use strict;
 use warnings;
+
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
 
@@ -22,14 +23,10 @@ foreach my $folder (@folders_data) {
         next;
     }
 
-    my $unread;
-    if (should_show_unread($folder)) {
-        my ($total_count, $unread_count, $special_count) = mailbox_folder_unread($folder);
-        $unread = $unread_count;
-    }
+    my ($total, $unread, $special) = folder_counts($folder);
 
     my $id = $folder->{'id'} || $folder->{'file'};
-    my ($fid) = $id =~ m#([^/]+)$#;
+    my ($fid) = folders_process($id =~ m#([^/]+)$#);
     my ($parent, $child) = $fid =~ m|^ (.+) \. ([^\.]+) \z|x;
     my $name   = $folder->{'name'};
     my $key    = folders_key_escape($id);
