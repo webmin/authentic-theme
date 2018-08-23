@@ -139,14 +139,25 @@ sub folders_select
 {
     my ($folders, $folder, $type) = @_;
     my @opts;
-    my $name;
+    my $id;
+    my $offset = 0;
+
     push(@opts, [undef, undef]);
+    push(@opts, [-1,    $text{'sform_all'}]);
+    push(@opts, [-2,    $text{'sform_local'}]);
+
     foreach my $f (@$folders) {
         $f->{'name'} =~ tr/\./\//d;
-        $name = ($type ? folder_name($f) : $f->{'index'});
-        push(@opts, [$name, $f->{'name'}]);
+        $id = ($type ? folder_name($f) : $f->{'index'});
+        if ($f->{'name'} =~ /^INBOX\//) {
+            $f->{'name'} =~ tr/INBOX/Inbox/d;
+            splice(@opts, (4 + $offset), 0, [$id, $f->{'name'}]);
+            $offset++;
+        } else {
+            push(@opts, [$id, $f->{'name'}]);
+        }
     }
-    return ui_select(undef, undef, \@opts, 0, 0, 0, 0);
+    return ui_select(undef, undef, \@opts);
 }
 
 sub folder_counts
@@ -159,6 +170,22 @@ sub folder_counts
         ($total, $unread, $special) = mailbox_folder_unread($folder);
     }
     return (int($total), int($unread), int($special));
+}
+
+sub folder_data
+{
+    my ($folder) = @_;
+    my ($folder_id, $folder_file, $folder_name) = ($folder->{'id'}, $folder->{'file'}, $folder->{'name'});
+
+    if ($in{'searched_folder_id'}) {
+        $folder_id = $in{'searched_folder_id'};
+    }
+
+    if ($in{'searched_folder_file'}) {
+        $folder_file = $in{'searched_folder_file'};
+    }
+
+    return ($folder_id, $folder_file, $folder_name);
 }
 
 sub message_avatar
@@ -435,7 +462,7 @@ sub message_pagination_link
 # Generate sort link for messages
 sub messages_sort_link
 {
-    my ($title, $field, $folder, $start) = @_;
+    my ($title, $field, $folder, $start, %searched) = @_;
     my ($sortfield, $sortdir) = get_sort_field($folder);
     my $dir = $sortfield eq $field ? !$sortdir : 0;
     my $img =
@@ -443,8 +470,9 @@ sub messages_sort_link
       $sortfield eq $field && !$dir ? "sort-asc" :
       "sort-inactive";
     if ($folder->{'sortable'} && $userconfig{'show_sort'}) {
-        return "<a href='sort.cgi?field=" . &urlize($field) . "&dir=" . &urlize($dir) . "&folder=" .
-          &urlize($folder->{'index'}) . "&start=" . &urlize($start) . "'><i class=\"fa fa-fw fa-$img\"> </i>$title";
+        return "<a data-href='sort.cgi?returned_format=json&field=" .
+          &urlize($field) . "&dir=" . &urlize($dir) . "&folder=" . &urlize($folder->{'index'}) .
+          "&start=" . &urlize($start) . hash_to_query('&', %searched) . "'><i class=\"fa fa-fw fa-$img\"> </i>$title";
     } else {
         return $title;
     }
@@ -523,6 +551,12 @@ sub messages_list
         my $idx = $m->{'idx'};
         my $id  = $m->{'id'};
         my @cols;
+
+        # Trim folder id for search
+        my $searched_folder_id = $in{'searched_folder_id'};
+        if (defined($searched_folder_id)) {
+            $id = trim(replace(folders_key_escape($searched_folder_id), '', $id));
+        }
 
         # Special flag
         my ($unread, $starred, $flag_reply, $flag_special, $flag_security, $flags_all, $flags_dns) =

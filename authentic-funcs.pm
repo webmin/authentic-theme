@@ -175,4 +175,10 @@ sub directory_empty
     return -1;
 }
 
+sub hash_to_query
+{
+    my ($c, %h) = @_;
+    return $c . join(q{&}, map {qq{$_=@{[urlize($h{$_})]}}} keys %h);
+}
+
 1;

@@ -70,21 +70,45 @@ if ($end < $start) {
     ($start, @mail) = messages_fetch($start, $end, $perpage, $in{'jump'}, $folder, !$userconfig{'show_body'}, \@error);
 }
 
+# Store default folders data
+my $folder_index = $folder->{'index'};
+my $folder_id    = $folder->{'id'};
+my $folder_file  = $folder->{'file'};
+my $folder_name  = $folder->{'name'};
+
+# Searched messages
+my %searched;
+if ($in{'searched'}) {
+    %searched = ('searched'              => $in{'searched'},
+                 'searched_message'      => $in{'searched_message'},
+                 'searched_folder_index' => $in{'searched_folder_index'},
+                 'searched_folder_name'  => $in{'searched_folder_name'},
+                 'searched_folder_id'    => $in{'searched_folder_id'},
+                 'searched_folder_file'  => $in{'searched_folder_file'},);
+
+    $mails{'searched'}              = $searched{'searched'};
+    $mails{'searched_message'}      = $searched{'searched_message'};
+    $mails{'searched_folder_index'} = $searched{'searched_folder_index'};
+    $mails{'searched_folder_name'}  = $searched{'searched_folder_name'};
+    $mails{'searched_folder_id'}    = folders_key_escape($searched{'searched_folder_id'});
+    $mails{'searched_folder_file'}  = $searched{'searched_folder_file'};
+}
+
 # Refresh timeout
 $mails{'refresh'} = $userconfig{'refresh'} || 5;
 
 #Folder index
-$mails{'folder_index'} = int($folder->{'index'});
+$mails{'folder_index'} = int($folder_index);
 
 #Folder id
-$mails{'folder_id'} = folders_key_escape(($folder->{'id'} || $folder->{'file'}));
+$mails{'folder_id'} = folders_key_escape(($folder_id || $folder_file));
 
 # Folder breadcrumb
-my @folders_breadcrumb = split(/\./, $folder->{'name'});
+my @folders_breadcrumb = split(/\./, $folder_name);
 $mails{'folder_breadcrumb'} = \@folders_breadcrumb;
 
 # Folder title
-$mails{'folder_title'} = $folder->{'name'};
+$mails{'folder_title'} = $folder_name;
 
 # Folder name
 $mails{'folder_name'} = $folders_breadcrumb[-1];
@@ -133,10 +157,20 @@ if (@mail) {
             'buttons' => [['delete' => $text{'mail_delete'}], ['forward' => $text{'mail_forward'}]],
             'dropdowns' => [
                 [
-                 'move' => [['move1' => $folders_select_by_id],
-                            ['copy1' => ui_span(theme_ui_checkbox_local('copy_only', undef, $text{'extensions_mail_move_copy_only'}, undef, "data-copy-only"), 'pull-left') .
-                               ui_span(ui_btn($text{'theme_xhred_global_move'}, 'default disabled', 'data-transfer-submit'), 'pull-right')
-                            ],
+                 'move' => [
+                      ['move1' => $folders_select_by_id],
+                      ['copy1' =>
+                         ui_span(
+                                 theme_ui_checkbox_local('copy_only', undef, $text{'extensions_mail_move_copy_only'},
+                                                         undef, "data-copy-only"
+                                 ),
+                                 'pull-left'
+                         )
+                         .
+                         ui_span(
+                           ui_btn($text{'theme_xhred_global_move'}, 'default disabled', 'data-transfer-submit'), 'pull-right'
+                         )
+                      ],
                  ]
                 ],
                 [
@@ -185,8 +219,8 @@ if (@mail) {
 # Form for managing mail
 $mails{'form_list'} = { 'target' => 'delete_mail.cgi',
                         (
-                         'hidden' => { 'id'      => folders_key_escape(($folder->{'id'} || $folder->{'file'})),
-                                       'folder'  => $folder->{'index'},
+                         'hidden' => { 'id'      => folders_key_escape(($folder_id || $folder_file)),
+                                       'folder'  => $folder_index,
                                        'mod'     => modification_time($folder),
                                        'start'   => $start || defined,
                                        'confirm' => 1,
@@ -204,17 +238,17 @@ my ($sorted) = get_sort_field($folder);
 my $showfrom = $folder->{'show_from'};
 my $list_sort_from;
 if ($showfrom) {
-    $list_sort_from = messages_sort_link($text{'extensions_mail_sort_by_sender'}, "from", $folder, $start);
+    $list_sort_from = messages_sort_link($text{'extensions_mail_sort_by_sender'}, "from", $folder, $start, %searched);
 }
 my $showto = $folder->{'show_to'};
 my $list_sort_to;
 
 if ($showto) {
-    $list_sort_to = messages_sort_link($text{'extensions_mail_sort_by_recipient'}, "to", $folder, $start);
+    $list_sort_to = messages_sort_link($text{'extensions_mail_sort_by_recipient'}, "to", $folder, $start, %searched);
 }
 my $list_sort_spam;
 if ($folder->{'spam'}) {
-    $list_sort_spam = messages_sort_link($text{'extensions_mail_sort_by_spam'}, "x-spam-status", $folder, $start);
+    $list_sort_spam = messages_sort_link($text{'extensions_mail_sort_by_spam'}, "x-spam-status", $folder, $start, %searched);
 }
 
 # Mail list content
@@ -227,16 +261,16 @@ $mails{'list'} = {
     'sort' => {
         'from'    => $list_sort_from,
         'to'      => $list_sort_to,
-        'date'    => messages_sort_link($text{'extensions_mail_sort_by_date'}, "date", $folder, $start),
-        'size'    => messages_sort_link($text{'extensions_mail_sort_by_size'}, "size", $folder, $start),
+        'date'    => messages_sort_link($text{'extensions_mail_sort_by_date'}, "date", $folder, $start, %searched),
+        'size'    => messages_sort_link($text{'extensions_mail_sort_by_size'}, "size", $folder, $start, %searched),
         'spam'    => $list_sort_spam,
-        'subject' => messages_sort_link($text{'extensions_mail_sort_by_subject'}, "subject", $folder, $start),
+        'subject' => messages_sort_link($text{'extensions_mail_sort_by_subject'}, "subject", $folder, $start, %searched),
 
     },
-    'messages'  => $list_mails,
-    'sorted' => (
+    'messages' => $list_mails,
+    'sorted'   => (
         $sorted ?
-"<a @{[ui_tooltip($text{'extensions_mail_search_filter_reset'})]} href='sort.cgi?folder=$folder->{'index'}&start=$start' class=\"fa fa-fw fa-filter-clear text-danger\"></a>"
+"<a @{[ui_tooltip($text{'extensions_mail_search_filter_reset'})]} data-href='sort.cgi?returned_format=json&folder=$folder_index&start=$start@{[hash_to_query('&', %searched)]}' class=\"fa fa-fw fa-filter-clear text-danger\"></a>"
         :
           undef
     ) };
