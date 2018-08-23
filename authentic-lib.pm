@@ -2814,7 +2814,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_command_exists'} eq '1') {
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
-            print resolve_links(get_access_data('root') . $in{'xhr-get_symlink_path'});
+            print resolve_links(get_access_data('root') . urlize($in{'xhr-get_symlink_path'}));
         } elsif ($in{'xhr-tmp_var'} eq '1') {
             if ($in{'xhr-tmp_var_action'} eq 'set') {
                 set_tmp_var($in{'xhr-tmp_var_name'}, $in{'xhr-tmp_var_value'});
@@ -2848,7 +2848,7 @@ sub get_xhr_request
             print get_json(\@current_versions);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
-            my $version_type            = $in{'xhr-update-type'};
+            my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};
             my $usermin_enabled_updates = ($__settings{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('bash')) {

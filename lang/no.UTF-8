@@ -309,7 +309,6 @@ theme_xhred_datatable_slengthmenu=Vise _MENU_ oppføringer
 theme_xhred_datatable_sloadingrecords=Laster
 theme_xhred_datatable_sprocessing=Behandler...
 theme_xhred_datatable_szerorecords=Ingen matchende oppføringer funnet
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Finn/Erstatt</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tastetrykk</th> <th class="head">Kommando</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Finn</td> </tr> <tr><td>Ctrl + H</td> <td>Erstatt</td> </tr> <tr><td>Ctrl + â§ + R</td> <td>Erstatt alle</td> </tr> <tr><td>Ctrl + G</td> <td>Finn neste</td> </tr> <tr><td>Ctrl + â§ + G</td> <td>Finn forrige</td> </tr> <tr><td>Alt + G</td> <td>Gå til linje</td> </tr> </tbody> </table> <h5><strong>Tekst manipulasjon</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tastetrykk</th> <th class="head">Kommando</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Endre til STORE bokstaver</td> </tr> <tr><td>Ctrl + KL</td> <td>Endre til små bokstaver</td> </tr> </tbody> </table> <h5><strong>Redigering</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tastetrykk</th> <th class="head">Kommando</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Mellomrom</td> <td>Aktiver autofullfør</td> </tr> <tr><td>Ctrl + X</td> <td>Klipp ut linje</td> </tr> <tr><td>Ctrl + â§ + â</td> <td>Flytt linje/utvalg opp</td> </tr> <tr><td>Ctrl + â§ + â</td> <td>Flytt linje/utvalg ned</td> </tr> <tr><td>Ctrl + L</td> <td>Velg linje - Gjenta for å velge neste linjer</td> </tr> <tr><td>Ctrl + D</td> <td>Velg ord - Gjenta velger andre forekomster</td> </tr> <tr><td>Ctrl + M</td> <td>Gå til lukkende parentes Gjenta for å gå til lukkende parentes</td> </tr> <tr><td>Ctrl + â§ + M</td> <td>Velg alt innhold i aktiv parentes</td> </tr> <tr><td>Ctrl + â§ + K</td> <td>Slett linje</td> </tr> <tr><td>Ctrl + KK</td> <td>Slegg fra markør til slutten av linje</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Slett fra markør til starten av linje</td> </tr> <tr><td>Ctrl + â§ + D</td> <td>Dupliser linje(r)</td> </tr> <tr><td>Ctrl + J</td> <td>Lim linjen under op slutten av gjeldende linje</td> </tr> <tr><td>Ctrl + /</td> <td>Kommenter/av-kommenter gjeldende linje</td> </tr> <tr><td>Ctrl + â§ + /</td> <td>Blokk-kommenter gjeldende utvalg</td> </tr> <tr><td>Ctrl + Y</td> <td>Gjør på nytt eller gjenta siste tastatur-snarvei kommando</td> </tr> <tr><td>Ctrl + â§ + V</td> <td>Lim inn og indenter korrekt</td> </tr> <tr><td>Ctrl + Mellomrom</td> <td>Velg neste auto-fullfør forslag</td> </tr> <tr><td>Ctrl + U</td> <td>mykt angre; går til din siste endring før angring av endring, hvis gjentatt</td> </tr> </tbody> </table>
 theme_xhred_editor_help_title=Editor tastatur-snarveier
 theme_xhred_encoding_manually_set=Set koding manuelt
 theme_xhred_encoding_warning=Oppdaget at du bruker ikke-unicode tegnsett, som ikke anbefales. Merkelig <tt>Ã</tt>-tegn kan vises i tekstredigeringsmodus og/eller du kan oppleve andre kodingsproblemer.<br><br>Endre språk i <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i>%prod Konfigurasjon</strong></a> til <code>%lang.UTF-8</code> og sørg for at nettleseren din også oppdager det riktig.<span class="_hidden_"><br><br>Vær oppmerksom på at den innebygde <em>Webmin</em> modulen  <em>Endre språk og tema</em> kan overstyre globale innstillinger.</span>
@@ -782,3 +781,23 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment

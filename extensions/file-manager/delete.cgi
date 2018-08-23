@@ -16,7 +16,7 @@ my %errors;
 
 foreach my $name (split(/\0/, $in{'name'})) {
     $name = simplify_path($name);
-    if (!&unlink_logged($cwd . '/' . $name)) {
+    if (!&unlink_file($cwd . '/' . $name)) {
         $errors{ urlize(html_escape($name)) } = "$text{'error_delete'}";
     }
 }

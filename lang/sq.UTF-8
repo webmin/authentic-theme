@@ -413,7 +413,6 @@ theme_xhred_filemanager_target_conflict_replace=Bashkimi dhe zëvendësimi
 theme_xhred_filemanager_target_conflict_paste=Ngjit me emër të ri
 
 theme_xhred_editor_help_title=Shkurtoret e shkrimit të tastierës
-theme_xhred_editor_help_content=<i class="theme_xhred_editor_help fshehur"> </ strong> </ h5> <strong> Gjej / Replace </ h5> <table class="tryezë tabelë-kondensuar tabelë-hover" </ span> </ span> </ span> </ span> </ span> </ span> </ span> </ span> </ span> </ span> </ span> Ctrl + F </ td> <td> </ td> </ td> </ td> <tr> <td> Ctrl + ⇧ + R </ td> <td> Replace all </ td> </ td> </ td> <td> Ctrl + ⇧ + G </ td> <td> Gjetja e mëparshme </ tr> <tr> <td> <tr> <td> Ctrl + G </ td> </ td> </ td> </ td> <td> </ td> </ tr> <tr> <td> <strong> </ collaps> </ col> </ col> </ col> </ strong> </ h5> <table class="tabela tabelë-kondensuar tabelë-hover" </ th> </ th> </ tr> </ td> </ td> <td> <td> <td> <td> tr> <td> Ctrl + KU </ td> <td> Transformo në Uppercase </ td> </ t </ td> </ td> </ td> </ td> </ td> </ td> <td> Ctrl + KL </ td> <td> h5> <table class="table table-hover" tabelë> <col width="70%"> </ colgroup> <thead valign="bottom"> < <tr> <th>=<header> </ span> </ span> </ span> </ span> </ tr> <tr> Ctrl + Space </ td> <td> </ td> <td> </ td> <td> </ td> <td> Ctrl + ⇧ + ↑ </ td> <td> Ctrl + ⇧ + ↑ </ td> <td> Lëvizni vijën / përzgjedhjen lart </ td> <tr> <td> Ctrl + L </ td> <td> Ctrl + D </ td> <td> Ctrl + L </ td> <td> Zgjidh vijën - Përsëritni për të zgjedhur linjat e ardhshme </ td> / td> <td> Përzgjidh fjalë - Përsërit zgjidhni të gjitha ngjarjet e tjera </ td> </ tr> <tr> <td> Ctrl + M </ td> <td> Ctrl + ⇧ + M </ td> <td> Përzgjidhni të gjitha përmbajtjet e kllapave aktuale </ tr> / td> <td> Fshije Linjën </ Ctrl + K + Backspace </ td> <tr> <td> Ctrl + KK </ td> <td> Ctrl + ⇧ + D </ td> <td> Duplicate line (s) </ td> </ td> </ tr> <td> <td> > <tr> <td> Ctrl + J </ td> <td> Bashkojuni linjës më poshtë në fund të vijës aktuale </ td> </ tr> <tr> <td> Ctrl + / </ td> <td > Komento / un-comment line aktuale </ td> </ tr> <tr> <td> Ctrl + ⇧ + / </ td> <td> td> Ctrl + Y </ td> <td> Redo, ose përsëris komandën e fundit të tastierës së tastierës </ td> <tr> <td> Ctrl + ⇧ + V </ td> </ td> <td> </ td> <td> Ctrl + Hapësira </ td> <td> Zgjidh sugjerimin e ardhshëm automatik të plotë </ td> </ tr> <tr> <td> Ctrl + > <td> soft undo; hedhje në ndryshimin tuaj të fundit para se të prishni ndryshimin kur përsëritet </ td> </ tr> </ tbody> </ table>
 
 theme_xhred_filemanager_hide_toolbar=Fshih toolbarin
 theme_xhred_filemanager_hide_actions=Fshih kolonat e veprimeve
@@ -935,3 +934,23 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment

@@ -419,7 +419,6 @@ theme_xhred_filemanager_target_conflict_replace=合併和替換
 theme_xhred_filemanager_target_conflict_paste=以新名稱粘貼
 
 theme_xhred_editor_help_title=編輯器快速鍵
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">按鍵</th> <th class="head">指令</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>搜尋</td> </tr> <tr><td>Ctrl + H</td> <td>替換</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>全部替換</td> </tr> <tr><td>Ctrl + G</td> <td>搜尋後一個</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>搜尋前一個</td> </tr> <tr><td>Alt + G</td> <td>跳到某行</td> </tr> </tbody> </table> <h5><strong>文本操作</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">按鍵</th> <th class="head">指令</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>轉至大寫</td> </tr> <tr><td>Ctrl + KL</td> <td>轉至小寫</td> </tr> </tbody> </table> <h5><strong>編輯</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">指令</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>啟用自動補全</td> </tr> <tr><td>Ctrl + X</td> <td>剪下行</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>向上移動行/選中內容</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>向下移動行/選中內容</td> </tr> <tr><td>Ctrl + L</td> <td>選擇行 - 重複以選擇下一行</td> </tr> <tr><td>Ctrl + D</td> <td>選擇詞 - 重複以選擇下一匹配</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>刪除行</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar=隱藏工具欄
 theme_xhred_filemanager_hide_actions=隱藏操作列
@@ -940,3 +939,23 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment

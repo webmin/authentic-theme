@@ -139,14 +139,25 @@ sub folders_select
 {
     my ($folders, $folder, $type) = @_;
     my @opts;
-    my $name;
+    my $id;
+    my $offset = 0;
+
     push(@opts, [undef, undef]);
+    push(@opts, [-1,    $text{'sform_all'}]);
+    push(@opts, [-2,    $text{'sform_local'}]);
+
     foreach my $f (@$folders) {
         $f->{'name'} =~ tr/\./\//d;
-        $name = ($type ? folder_name($f) : $f->{'index'});
-        push(@opts, [$name, $f->{'name'}]);
+        $id = ($type ? folder_name($f) : $f->{'index'});
+        if ($f->{'name'} =~ /^INBOX\//) {
+            $f->{'name'} =~ tr/INBOX/Inbox/d;
+            splice(@opts, (4 + $offset), 0, [$id, $f->{'name'}]);
+            $offset++;
+        } else {
+            push(@opts, [$id, $f->{'name'}]);
+        }
     }
-    return ui_select(undef, undef, \@opts, 0, 0, 0, 0);
+    return ui_select(undef, undef, \@opts);
 }
 
 sub folder_counts
@@ -161,6 +172,22 @@ sub folder_counts
     return (int($total), int($unread), int($special));
 }
 
+sub folder_data
+{
+    my ($folder) = @_;
+    my ($folder_id, $folder_file, $folder_name) = ($folder->{'id'}, $folder->{'file'}, $folder->{'name'});
+
+    if ($in{'searched_folder_id'}) {
+        $folder_id = $in{'searched_folder_id'};
+    }
+
+    if ($in{'searched_folder_file'}) {
+        $folder_file = $in{'searched_folder_file'};
+    }
+
+    return ($folder_id, $folder_file, $folder_name);
+}
+
 sub message_avatar
 {
     my ($sender) = @_;
@@ -168,7 +195,7 @@ sub message_avatar
 
     return
       '</td><td><span class="mail-list-avatar-container"><span class="mail-list-avatar"><img src="//www.gravatar.com/avatar/'
-      . $hash . '?d=mm&s=40" alt></span></span></td>';
+      . $hash . '?d=mm&s=30" alt></span></span></td>';
 }
 
 sub message_addressee
@@ -205,9 +232,19 @@ sub message_details
 
         my $from  = message_addressee($header->{'from'});
         my $reply = message_addressee($header->{'reply-to'});
-        my $to    = message_addressee($header->{'to'});
-        my $cc    = message_addressee($header->{'cc'});
-        my $bcc   = message_addressee($header->{'bcc'});
+        if ($reply) {
+            my @characters = split(//, $reply);
+            my $length = 66;
+            if (scalar(@characters) > $length) {
+                $reply =
+                  join("", @characters[0 .. $length]) . "..." .
+                  join("", @characters[$#characters - $length / 2 .. $#characters]);
+            }
+        }
+
+        my $to  = message_addressee($header->{'to'});
+        my $cc  = message_addressee($header->{'cc'});
+        my $bcc = message_addressee($header->{'bcc'});
 
         my $date = $header->{'date'};
 
@@ -338,7 +375,10 @@ sub message_flags
 
     my @security;
     my ($security_data, $security_status) = message_details($mail, $folder);
-    my $security = ui_icon('info-circle-o text-' . $security_status . ' mail-list-dkim', $security_data, 'bottom');
+    my $security;
+    if ($security_data) {
+        $security = ui_icon('caret-down text-light mail-list-dkim', $security_data, 'bottom');
+    }
 
     my @all;
     my $all;
@@ -422,7 +462,7 @@ sub message_pagination_link
 # Generate sort link for messages
 sub messages_sort_link
 {
-    my ($title, $field, $folder, $start) = @_;
+    my ($title, $field, $folder, $start, %searched) = @_;
     my ($sortfield, $sortdir) = get_sort_field($folder);
     my $dir = $sortfield eq $field ? !$sortdir : 0;
     my $img =
@@ -430,8 +470,9 @@ sub messages_sort_link
       $sortfield eq $field && !$dir ? "sort-asc" :
       "sort-inactive";
     if ($folder->{'sortable'} && $userconfig{'show_sort'}) {
-        return "<a href='sort.cgi?field=" . &urlize($field) . "&dir=" . &urlize($dir) . "&folder=" .
-          &urlize($folder->{'index'}) . "&start=" . &urlize($start) . "'><i class=\"fa fa-fw fa-$img\"> </i>$title";
+        return "<a data-href='sort.cgi?returned_format=json&field=" .
+          &urlize($field) . "&dir=" . &urlize($dir) . "&folder=" . &urlize($folder->{'index'}) .
+          "&start=" . &urlize($start) . hash_to_query('&', %searched) . "'><i class=\"fa fa-fw fa-$img\"> </i>$title";
     } else {
         return $title;
     }
@@ -511,6 +552,12 @@ sub messages_list
         my $id  = $m->{'id'};
         my @cols;
 
+        # Trim folder id for search
+        my $searched_folder_id = $in{'searched_folder_id'};
+        if (defined($searched_folder_id)) {
+            $id = trim(replace(folders_key_escape($searched_folder_id), '', $id));
+        }
+
         # Special flag
         my ($unread, $starred, $flag_reply, $flag_special, $flag_security, $flags_all, $flags_dns) =
           message_flags($m, $folder->{'sent'}, $folder);
@@ -533,10 +580,15 @@ sub messages_list
         }
         $dcolumn .= ui_span_row('trow trow-flag-security') . $flag_security . ui_span_row();
         $dcolumn .= ui_span_row();
+        $dcolumn .= ui_span_row();
 
-        $dcolumn .= ui_span_row('row mrow mrow-container');
+        push(@dcolumn, $dcolumn);
+        push(@cols,    @dcolumn);
+
+        my @bcolumn;
+        my $bcolumn;
         my $subject = encode_guess(simplify_subject($m->{'header'}->{'subject'}), 'subject');
-        $dcolumn .= ui_span_row('mrow mrow-subject') . $flag_reply .
+        $bcolumn .= ui_span_row('mrow mrow-subject') . $flag_reply .
           ($subject ? $subject : $text{'extensions_mail_header_no_subject'}) . ui_span_row();
         my $preview;
         if ($userconfig{'show_body'}) {
@@ -547,15 +599,13 @@ sub messages_list
                 $preview = html_escape($preview_data);
                 $preview = encode_guess($preview, 'preview');
                 if (length $preview > 2) {
-                    $dcolumn .= ui_span_row('mrow mrow-preview') . " - " . $preview . ui_span_row();
+                    $bcolumn .= ui_span_row('mrow mrow-preview') . " - " . $preview . ui_span_row();
                 }
             }
         }
-        $dcolumn .= ui_span_row();
-        $dcolumn .= ui_span_row();
 
-        push(@dcolumn, $dcolumn);
-        push(@cols,    @dcolumn);
+        push(@bcolumn, $bcolumn);
+        push(@cols,    @bcolumn);
 
         my @fcolumn;
         my $fcolumn;
@@ -580,11 +630,12 @@ sub messages_list
         my $scolumn;
         $scolumn = ui_span_row('srow srow-container');
 
-        $scolumn .=
-          ui_span_row('row mrow mrow-date') . theme_make_date_local($m->{'header'}->{'date'}, 1, -1) . ui_span_row();
         my ($sorted) = get_sort_field($folder);
         if ($sorted eq 'size') {
             $scolumn .= ui_span_row('row brow brow-size') . nice_size($m->{'size'}, 1024) . ui_span_row();
+        } else {
+            $scolumn .=
+              ui_span_row('row mrow mrow-date') . theme_make_date_local($m->{'header'}->{'date'}, 1, -1) . ui_span_row();
         }
 
         $scolumn .= ui_span_row();
@@ -655,7 +706,7 @@ sub ui_message_list_column
     my $i;
     for ($i = 0; $i < @$cols; $i++) {
         $rv .= "<td>";
-        if ($cols->[$i] !~ /<a\s+href|<input|<select|<textarea/) {
+        if ($cols->[$i] !~ /<a\s+href|<span|<i|<input|<select|<textarea/) {
             $rv .= "<label for=\"" . quote_escape("${checkname}_${checkvalue}") . "\">";
         }
         $rv .= ($cols->[$i] !~ /\S/ ? "<br>" : $cols->[$i]);
@@ -769,23 +820,23 @@ sub ui_table_tbody_end
     return '</tbody></table>';
 }
 
-sub print_hash
-{
-    print "Content-type: text/html\n\n";
-    my (%d) = @_;
-
-    use Data::Dumper;
-    print Dumper(\%d);
-}
-
-sub print_array
-{
-    print "Content-type: text/html\n\n";
-    my ($____v) = @_;
-    use Data::Dumper;
-    print '<pre style="color: red">';
-    print Dumper $____v;
-    print '</pre>';
-}
+# sub print_hash
+# {
+#     print "Content-type: text/html\n\n";
+#     my (%d) = @_;
+#
+#     use Data::Dumper;
+#     print Dumper(\%d);
+# }
+#
+# sub print_array
+# {
+#     print "Content-type: text/html\n\n";
+#     my ($____v) = @_;
+#     use Data::Dumper;
+#     print '<pre style="color: red">';
+#     print Dumper $____v;
+#     print '</pre>';
+# }
 
 1;
