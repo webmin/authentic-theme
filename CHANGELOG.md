@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.20-beta3 (August 23, 2018)
+* Add mail search for mail in Usermin
+* Add Swedish language translation update
+* Fix directory download issue in user mode in File Manager [virtualmin.com/58448](https://virtualmin.com/node/58448)
+* Fix not to scroll confirmation page for Package Updates on Debian
+* Fix not to log deleted files in File Manager
+
 #### Version 19.20-beta2 (July 31, 2018)
 * Add Japanese and German language translation updates
 * Add column sorting and filter to Virtualmin/DNS Records page
