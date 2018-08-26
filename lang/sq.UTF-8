@@ -2,9 +2,9 @@ body_cp=CPU
 body_cpu=Mesataret e ngarkesës së CPU
 body_cpuinfo=Informacioni i procesorit
 body_cputemps=Temperaturat e CPU
-body_cputype=$ 5, $ 8 berthama
+body_cputype=$5, $8 berthama
 body_disk=Hapësira e diskut
-body_driveerr=$ 1 gabime!
+body_driveerr=$1 gabime!
 body_drivefailed=Kontrolli SMART dështoi!
 body_drivetemps=Temperaturat e Diskut
 body_firewall=Versioni i Firewall
@@ -12,26 +12,26 @@ body_header0=Informacioni i Sistemit
 body_header1=Informacioni i llogarisë
 body_host=Emri i host-it të sistemit
 body_kernel=Kernel dhe CPU
-body_kernelon=$ 1 $ 2 në $ 3
-body_load=$ 1 (1 min) $ 2 (5 min) $ 3 (15 minuta)
+body_kernelon=$1 $2 në $3
+body_load=$1 (1 min) $2 (5 min) $3 (15 minuta)
 body_os=Sistemi operativ
 body_procs=Proceset aktive
 body_real=Memorie reale
 body_time=Koha në sistem
 body_updates=Përditësimet e paketës
-body_updays=$ 1 ditë, $ 2 orë, $ 3 minuta
-body_uphours=$ 1 orë, $ 2 minuta
-body_upmins=$ 1 minuta
-body_upneed=$ 1 përditësime të pakos janë në dispozicion
-body_upneed1=Përditësimi i paketës $ 1 është i disponueshëm
+body_updays=$1 ditë, $2 orë, $3 minuta
+body_uphours=$1 orë, $2 minuta
+body_upmins=$1 minuta
+body_upneed=$1 përditësime të pakos janë në dispozicion
+body_upneed1=Përditësimi i paketës $1 është i disponueshëm
 body_upok=Të gjitha paketat e instaluara janë të përditësuara
-body_upsec=$ 1 përditësime të pakos janë në dispozicion, prej të cilave $ 2 janë përditësime të sigurisë
-body_upsec1=$ 1 përditësime të pakos janë në dispozicion, prej të cilave $ 2 është azhurnimi i sigurisë
-body_upsec2=Përditësimi i paketës $ 1 është në dispozicion, prej të cilave $ 2 janë përditësime të sigurisë
-body_upsec3=Përditësimi i paketës $ 1 është në dispozicion, prej të cilave $ 2 është azhurnimi i sigurisë
+body_upsec=$1 përditësime të pakos janë në dispozicion, prej të cilave $2 janë përditësime të sigurisë
+body_upsec1=$1 përditësime të pakos janë në dispozicion, prej të cilave $2 është azhurnimi i sigurisë
+body_upsec2=Përditësimi i paketës $1 është në dispozicion, prej të cilave $2 janë përditësime të sigurisë
+body_upsec3=Përditësimi i paketës $1 është në dispozicion, prej të cilave $2 është azhurnimi i sigurisë
 body_uptime=Koha nga ndezja e sistemit
-body_used=$ 1 total / $ 2 përdorur
-body_used_and_free=$ 1 gjithsej / $ 2 falas / $ 3 të përdorura
+body_used=$1 total / $2 përdorur
+body_used_and_free=$1 gjithsej / $2 falas / $3 të përdorura
 body_usermin=Versioni i Usemin
 body_virt=Memorie virtuale
 body_webmin=Versioni i Webmin
@@ -69,9 +69,9 @@ right_fweb=Uebsitet virtuale
 right_licenceheader_vm2=Licencat e Cloudmin
 right_login=Regjistruar si
 right_not=Nuk është instaluar
-right_of=$ 1 nga $ 2
+right_of=$1 nga $2
 right_quota=Përdorimi i diskut dhe kuota
-right_reselip=(Rishitës $ 1)
+right_reselip=(Rishitës $1)
 right_amedip=(IP e përbashkët)
 right_slcheck=Ri-Kontrolloni Licencën Cloudmin
 right_subs=Nen-serverat
@@ -83,7 +83,7 @@ right_vm2=Versioni i Cloudmin
 theme_xhred_session_failed=Login failed. Please try again.
 session_logout=Dolet me sukses.Përdorni formularin e mëposhtëm për t'u identifikuar përsëri.
 session_timed_out=Sesioni përfundoi pas 1 minutash pasiviteti.
-session_twofailed=Autentifikimi me dy faktorë dështoi: $ 1
+session_twofailed=Autentifikimi me dy faktorë dështoi: $1
 
 
 
@@ -104,11 +104,11 @@ settings_right_saving=Po Ruan
 settings_right_theme_extensions=Shtesat e temave
 settings_right_theme_extensions_title=Zgjerimet e Temës
 settings_right_file_edit=Ndrysho skedarin e zgjerimit:
-settings_right_extensions_title=Dizajni i gjerë i temave, ju mundëson manipulimin me lehtësi në pjesët e synuara të ndërfaqes.Është e mundur që të hyni si <em> CSS </ em> dhe <em> JavaScript </ em>, duke shkruar zgjerime me porosi <em> stilet </ em> / <em> skriptet </ em>.Në vijim janë shembujt e thjeshtë, të bërë për t'ju ndihmuar të kuptoni idenë bazë të zbatimit të saj.Për shembull, për të ndryshuar ngjyrën e sfondit, shtoni stilin e mëposhtëm në shtrirjen CSS: <code> body {background-color: Gainsboro} </ code>.Duke përdorur JavaScript, për të ndryshuar gjerësinë e butonit të paraqitjes, shtoni kodin e mëposhtëm në zgjerimin e JavaScript: <code> $ ('button [type="submit"]') animate ({width: "100%"}, 1000) </ code >.Megjithatë, në praktikë, do të jetë më e ndërlikuar se kaq.
+settings_right_extensions_title=Dizajni i gjerë i temave, ju mundëson manipulimin me lehtësi në pjesët e synuara të ndërfaqes.Është e mundur që të hyni si <em> CSS </em> dhe <em> JavaScript </em>, duke shkruar zgjerime me porosi <em> stilet </em> / <em> skriptet </em>.Në vijim janë shembujt e thjeshtë, të bërë për t'ju ndihmuar të kuptoni idenë bazë të zbatimit të saj.Për shembull, për të ndryshuar ngjyrën e sfondit, shtoni stilin e mëposhtëm në shtrirjen CSS: <code> body {background-color: Gainsboro} </code>.Duke përdorur JavaScript, për të ndryshuar gjerësinë e butonit të paraqitjes, shtoni kodin e mëposhtëm në zgjerimin e JavaScript: <code> $('button [type="submit"]') animate ({width: "100%"}, 1000) </code >.Megjithatë, në praktikë, do të jetë më e ndërlikuar se kaq.
 
 settings_right_theme_logos=Logot e temave
 settings_right_theme_logos_title=Logot e Theme
-settings_right_logos_title=Logot e temave mund të vendosen lehtë këtu, për të dy, përdoruesit e autentikuar dhe të paautorizuar.Madhësia e rekomanduar e logos është <kbd> 180x90 </ kbd> dhe formati i vetëm i mbështetur është <kbd> .png </ kbd>, për të siguruar transparencën alfa.Pasi që të krijohet logo, në rast se keni nevojë, mund ta manipuloni atë me <a href="/settings-editor_read.cgi"> <em> CSS </ em> </a> dhe <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em> JavaScript </ em> </a>, duke e qasur atë sipas emrit të klasës, e cila është <code> ._ logo </ code> dhe <code > ._ logo_welcome </ code> te <em> autentifikuara </ em> dhe <em> paautorizuar </ em> lloje.
+settings_right_logos_title=Logot e temave mund të vendosen lehtë këtu, për të dy, përdoruesit e autentikuar dhe të paautorizuar.Madhësia e rekomanduar e logos është <kbd> 180x90 </kbd> dhe formati i vetëm i mbështetur është <kbd> .png </kbd>, për të siguruar transparencën alfa.Pasi që të krijohet logo, në rast se keni nevojë, mund ta manipuloni atë me <a href="/settings-editor_read.cgi"> <em> CSS </em> </a> dhe <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em> JavaScript </em> </a>, duke e qasur atë sipas emrit të klasës, e cila është <code> ._ logo </code> dhe <code > ._ logo_welcome </code> te <em> autentifikuara </em> dhe <em> paautorizuar </em> lloje.
 settings_right_logo_authenticated_users=Logo për përdoruesit e legalizuar
 settings_right_logo_unauthenticated_users=Logo për përdoruesit e paautorizuar
 
@@ -124,20 +124,20 @@ settings_right_window_options_title=Opsionet e dritares
 settings_right_navigation_menu_title=Mundësitë e menysë së navigimit
 settings_right_table_options_title=Opsionet e tabelës
 settings_security_title=Opsione të Alarmeve të Sigurisë
-settings_security_description=Alarmet e sigurisë do t'ju lejojnë të konfiguroni njoftimet e postës elektronike pas ngjarjeve të caktuara.(Komanda Linux <code> mail </ code> kërkohet për këtë funksion të funksionojë) <br class="lh0"> Formati: <code> Mesazhi | Subjekti | Lista e ndarë e emrave të përdoruesve / email | / IPv6 </ code> <br class="lh0"> Përdorimi: <code>% 3 alarm identifikimi i suksesshëm për përdoruesin% 1 nga% 2 |% 3 login login i suksesshëm | root, user @ example.org | 1.2.3.4, 5.6.7.8 </ code> <br class="lh0"> Produkti: <code> Nga: root, Për: rrënjë, Subjekt: Webmin alarm i suksesshëm i identifikimit, Mesazhi: Webmin login i suksesshëm për perdoruesin root nga 2.3.4.5 </ code>
+settings_security_description=Alarmet e sigurisë do t'ju lejojnë të konfiguroni njoftimet e postës elektronike pas ngjarjeve të caktuara.(Komanda Linux <code> mail </code> kërkohet për këtë funksion të funksionojë) <br class="lh0"> Formati: <code> Mesazhi | Subjekti | Lista e ndarë e emrave të përdoruesve / email | / IPv6 </code> <br class="lh0"> Përdorimi: <code>% 3 alarm identifikimi i suksesshëm për përdoruesin% 1 nga% 2 |% 3 login login i suksesshëm | root, user @ example.org | 1.2.3.4, 5.6.7.8 </code> <br class="lh0"> Produkti: <code> Nga: root, Për: rrënjë, Subjekt: Webmin alarm i suksesshëm i identifikimit, Mesazhi: Webmin login i suksesshëm për perdoruesin root nga 2.3.4.5 </code>
 settings_right_hotkey_options_title=Opsionet Hotkey
 settings_right_sysinfo_page_options_title=Dashboard options
 
-settings_right_hotkey_custom_options_description=Lidhjet e personalizuara ju mundësojnë të përdorni shifrat nga <code> 1 </ code> tek <code> 9 </ code> për të hyrë në mënyrë të shpejtë çdo URL të vlefshme Webmin / Usermin / Virtualmin / Cloudmin <code>. </ code > URL <code> </ code> mund të nxirret nga faqja e përmbajtjes së kornizës aktualisht të hapur, duke lexuar burimin e saj.Është e rëndësishme që <code> URL </ code> të mos ketë asnjë prerje në fillim dhe nuk përdor prefikse.Për shembull, të kaloni me shpejtësi në Apache, vendosni në <code> lidhje me porosi 1 </ code> fushë <code> apache. </ Code> Nëse modifikuesi i parazgjedhur i hotkeys të caktuar në <code> Alt, klikoni < kodi> Alt + 1 </ code>, do të hapë modulin Apache
-settings_hotkey_custom_1=Lidhje e personalizuar <code> 1 </ code>
-settings_hotkey_custom_2=Lidhje e personalizuar <code> 2 </ code>
-settings_hotkey_custom_3=Lidhje e personalizuar <code> 3 </ code>
-settings_hotkey_custom_4=Lidhje e personalizuar <code> 4 </ code>
-settings_hotkey_custom_5=Lidhje e personalizuar <code> 5 </ code>
-settings_hotkey_custom_6=Lidhje e personalizuar <code> 6 </ code>
-settings_hotkey_custom_7=Lidhje e personalizuar <code> 7 </ code>
-settings_hotkey_custom_8=Lidhje e personalizuar <code> 8 </ code>
-settings_hotkey_custom_9=Lidhje e personalizuar <code> 9 </ code>
+settings_right_hotkey_custom_options_description=Lidhjet e personalizuara ju mundësojnë të përdorni shifrat nga <code> 1 </code> tek <code> 9 </code> për të hyrë në mënyrë të shpejtë çdo URL të vlefshme Webmin / Usermin / Virtualmin / Cloudmin <code>. </code > URL <code> </code> mund të nxirret nga faqja e përmbajtjes së kornizës aktualisht të hapur, duke lexuar burimin e saj.Është e rëndësishme që <code> URL </code> të mos ketë asnjë prerje në fillim dhe nuk përdor prefikse.Për shembull, të kaloni me shpejtësi në Apache, vendosni në <code> lidhje me porosi 1 </code> fushë <code> apache. </Code> Nëse modifikuesi i parazgjedhur i hotkeys të caktuar në <code> Alt, klikoni < kodi> Alt + 1 </code>, do të hapë modulin Apache
+settings_hotkey_custom_1=Lidhje e personalizuar <code> 1 </code>
+settings_hotkey_custom_2=Lidhje e personalizuar <code> 2 </code>
+settings_hotkey_custom_3=Lidhje e personalizuar <code> 3 </code>
+settings_hotkey_custom_4=Lidhje e personalizuar <code> 4 </code>
+settings_hotkey_custom_5=Lidhje e personalizuar <code> 5 </code>
+settings_hotkey_custom_6=Lidhje e personalizuar <code> 6 </code>
+settings_hotkey_custom_7=Lidhje e personalizuar <code> 7 </code>
+settings_hotkey_custom_8=Lidhje e personalizuar <code> 8 </code>
+settings_hotkey_custom_9=Lidhje e personalizuar <code> 9 </code>
 
 settings_navigation_color=Paleta e ngjyrave të menysë të navigimit
 settings_background_color=Paleta ngjyra e faqes së përmbajtjes
@@ -225,7 +225,7 @@ theme_global_error=Gabim
 theme_global_warning=Lajmerim
 theme_global_success=Sukses
 theme_global_info=Informacion
-sysinfo_system_status_warning=Në mënyrë që të shfaqet <strong> Informacioni i Sistemit </ strong>, do të duhet të aktivizoni modulin <em> Statusin e Sistemit </ em> në cilësimet e përdoruesit.
+sysinfo_system_status_warning=Në mënyrë që të shfaqet <strong> Informacioni i Sistemit </strong>, do të duhet të aktivizoni modulin <em> Statusin e Sistemit </em> në cilësimet e përdoruesit.
 settings_leftmenu_section_hide_vm_and_cm_links=Fshih lidhjet e moduleve të mbështetura nga menuja e navigimit
 settings_leftmenu_user_html_only_for_administrator=Shfaq snippet e HTML vetëm për administratorët
 theme_sysinfo_wmdocs=Dokumentacioni i Webmin
@@ -254,21 +254,21 @@ theme_xhred_filemanager_renaming_selected=Riemërimi i zgjedhur.
 theme_xhred_filemanager_creating_directory=Krijimi i direktorisë
 theme_xhred_filemanager_creating_file=Krijimi i skedarit
 theme_xhred_filemanager_downloading_from=Shkarkimi nga
-theme_xhred_filemanager_setting_permissions=Vendosja e lejeve në <strong> <em>% value </ em> </ strong> në skedarët e zgjedhur.
-theme_xhred_filemanager_changing_ownership=Ndryshimi i pronësisë në <strong> <em>% vlera </ em> </ strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_setting_permissions=Vendosja e lejeve në <strong> <em>% value </em> </strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_changing_ownership=Ndryshimi i pronësisë në <strong> <em>% vlera </em> </strong> në skedarët e zgjedhur.
 theme_xhred_filemanager_compressing_selected=Shtypja e përzgjedhur në sfond.
 theme_xhred_filemanager_refreshing=Përmbajtja freskuese e direktorisë.
 theme_xhred_filemanager_copying_successful=Kopjo në clipboard i suksesshëm.
 theme_xhred_filemanager_cutting_successful=Pritini në clipboard të suksesshëm.
 theme_xhred_filemanager_pasting_successful=Ngjit nga clipboard ishte i suksesshëm.
-theme_xhred_filemanager_bookmark_success=Drejtoria <strong> <em>% vlera </ em> </ strong> u shtua me sukses në faqeshënuesit tuaj.
-theme_xhred_filemanager_searching=Duke kërkuar <em> `% value` </ em> përputhjen e emrave të dosjeve / drejtorive.
-theme_xhred_filemanager_search_founds=Gjetur <strong>% vlera </ strong> përputhet.
-theme_xhred_filemanager_search_found=U gjet ndeshje <strong> 1 </ strong>.
+theme_xhred_filemanager_bookmark_success=Drejtoria <strong> <em>% vlera </em> </strong> u shtua me sukses në faqeshënuesit tuaj.
+theme_xhred_filemanager_searching=Duke kërkuar <em> `% value` </em> përputhjen e emrave të dosjeve / drejtorive.
+theme_xhred_filemanager_search_founds=Gjetur <strong>% vlera </strong> përputhet.
+theme_xhred_filemanager_search_found=U gjet ndeshje <strong> 1 </strong>.
 theme_xhred_filemanager_search_no_matches=Nuk u gjet asnjë ndeshje.
 theme_xhred_filemanager_nothing_is_selected=Asgjë nuk është zgjedhur!
-theme_xhred_filemanager_saving_file=Skeda `<strong> <em>% value </ em> </ strong>` po ruhet.
-theme_xhred_filemanager_file_saved=Skeda `<strong> <em>% value </ em> </ strong>` është ruajtur me sukses.
+theme_xhred_filemanager_saving_file=Skeda `<strong> <em>% value </em> </strong>` po ruhet.
+theme_xhred_filemanager_file_saved=Skeda `<strong> <em>% value </em> </strong>` është ruajtur me sukses.
 theme_xhred_filemanager_not_editable=Nuk mund të modifikoj këtë lloj përzgjedhjeje.
 theme_xhred_filemanager_not_decompressable=Nuk mund ta shpërbëjë këtë lloj skedari.
 theme_xhred_filemanager_no_selection_to_copy=Asnjë drejtori / skedar i përzgjedhur për t'u kopjuar.
@@ -280,17 +280,17 @@ theme_xhred_filemanager_successful_deletion=Deletimi ishte i suksesshëm.
 theme_xhred_filemanager_successful_permissions=Lejet janë ndryshuar me sukses.
 theme_xhred_filemanager_successful_ownership=Pronësia është ndryshuar me sukses.
 theme_xhred_filemanager_successful_compression=Kompresimi ka mbaruar me sukses.
-theme_xhred_filemanager_successful_directory_creation=Drejtoria `<strong>% vlera </ strong>` u krijua me sukses.
-theme_xhred_filemanager_successful_file_creation=Skeda `<strong>% vlera </ strong>` u krijua me sukses.
+theme_xhred_filemanager_successful_directory_creation=Drejtoria `<strong>% vlera </strong>` u krijua me sukses.
+theme_xhred_filemanager_successful_file_creation=Skeda `<strong>% vlera </strong>` u krijua me sukses.
 
 theme_xhred_notifications_packages_updates=Përditësimi i Paketave
 theme_xhred_notifications_theme_update=Përditësim i temës
-theme_xhred_notifications_theme_update_message=Është në dispozicion një version i ri <em>% v </ em> i <strong> Theme autentik </ strong>. Ju lutemi update.
+theme_xhred_notifications_theme_update_message=Është në dispozicion një version i ri <em>% v </em> i <strong> Theme autentik </strong>. Ju lutemi update.
 theme_xhred_notifications_firewall_update=Update Firewall
-theme_xhred_notifications_firewall_update_message=Është në dispozicion një version i ri <em>% v </ em> i <strong> Sigurisë dhe Firewall të Serverit ConfigServer </ strong>. Ju lutemi update.
+theme_xhred_notifications_firewall_update_message=Është në dispozicion një version i ri <em>% v </em> i <strong> Sigurisë dhe Firewall të Serverit ConfigServer </strong>. Ju lutemi update.
 
 theme_xhred_notifications_firewall_danger=Rrezik Firewall
-theme_xhred_notifications_firewall_danger_message=Duket se <strong> Siguria e Serverit të Sigurisë dhe Firewall </ strong> është <span class="badge-danger"> nuk funksionon </ span> ose është ndalur!Mos e lini ekspozuar serverin tuaj, kontrolloni për cilësimet e firewall (% v)
+theme_xhred_notifications_firewall_danger_message=Duket se <strong> Siguria e Serverit të Sigurisë dhe Firewall </strong> është <span class="badge-danger"> nuk funksionon </span> ose është ndalur!Mos e lini ekspozuar serverin tuaj, kontrolloni për cilësimet e firewall (% v)
 
 theme_xhred_notifications_firewall_warning=Paralajmërimi i Firewall
 
@@ -299,19 +299,19 @@ settings_force_default_tab=Fillo skedën e paracaktuar për Webmin
 settings_force_default_tab_description=Kjo veçori do të detyrojë edhe kartën e parazgjedhur në rimbushjen e dritares gjithashtu.Kujdes!Nuk do të jetë e mundur të zgjedhësh për skedën e dëshiruar duke përdorur URL-në, pasi çdo kërkesë lokacioni do të injorohet.
 
 settings_grayscale_level_navigation=Filtri me ngjyrë gri
-settings_grayscale_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </ code> / <code data-name="settings_grayscale_level_navigation"> 0 </ code>
+settings_grayscale_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </code> / <code data-name="settings_grayscale_level_navigation"> 0 </code>
 settings_sepia_level_navigation=Filtër Sepia
-settings_sepia_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </ code> / <code data-name="settings_sepia_level_navigation"> 0 </ code>
+settings_sepia_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </code> / <code data-name="settings_sepia_level_navigation"> 0 </code>
 settings_saturate_level_navigation=Filtër i ngopur
-settings_saturate_level_navigation_description=Parametrat / vlera aktuale <code> 1 </ code> / <code data-name="settings_saturate_level_navigation"> 0 </ code>
+settings_saturate_level_navigation_description=Parametrat / vlera aktuale <code> 1 </code> / <code data-name="settings_saturate_level_navigation"> 0 </code>
 settings_hue_level_navigation=Hue-rotate filter
-settings_hue_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </ code> ° / <code data-name="settings_hue_level_navigation"> 0 </ code>
+settings_hue_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </code> ° / <code data-name="settings_hue_level_navigation"> 0 </code>
 settings_invert_level_navigation=Filtri i përmbysur
-settings_invert_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </ code> / <code data-name="settings_invert_level_navigation"> 0 </ code>
+settings_invert_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 0 </code> / <code data-name="settings_invert_level_navigation"> 0 </code>
 settings_brightness_level_navigation=Filtri i ndriçimit
-settings_brightness_level_navigation_description=Parametrat / vlera aktuale <code> 1 </ code> / <code data-name="settings_brightness_level_navigation"> 0 </ code>
+settings_brightness_level_navigation_description=Parametrat / vlera aktuale <code> 1 </code> / <code data-name="settings_brightness_level_navigation"> 0 </code>
 settings_contrast_level_navigation=Filtri i Kontrasti
-settings_contrast_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 1 </ code> / <code data-name="settings_contrast_level_navigation"> 0 </ code>
+settings_contrast_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 1 </code> / <code data-name="settings_contrast_level_navigation"> 0 </code>
 
 settings_cm_view_palette=Paleta ngjyra e shikuesit
 settings_cm_editor_palette=Paleta e ngjyrave të redaktorit
@@ -358,7 +358,7 @@ theme_xhred_filemanager_title_symlink_target=Lidhu objektivin
 #17.60
 right_unlimited=limit
 settings_leftmenu_width=Gjerësia e preferuar
-settings_leftmenu_width_description=Parametri / gjerësia aktuale <code> 260 </ code> / <code data-name="settings_leftmenu_width"> 0 </ code>
+settings_leftmenu_width_description=Parametri / gjerësia aktuale <code> 260 </code> / <code data-name="settings_leftmenu_width"> 0 </code>
 settings_switch_rdisplay=Dalja e kalimit të kundërt
 settings_switch_rdisplay_description=Ky opsion ju lejon të vendosni porosi të ndryshme për çelsat e majta të majtë.Pas ndryshimit të këtij opsioni, duhet të rifreskohet faqja e plotë për të aplikuar cilësime të reja.
 
@@ -394,10 +394,10 @@ theme_xhred_datatable_semptydirectory=Drejtori është bosh
 theme_xhred_filemanager_context_clipboard=Kopjo rrugën në clipboard
 theme_xhred_global_warning=Lajmerim
 theme_xhred_global_close=Mbylle
-theme_xhred_encoding_warning=Zbuluar që po përdorni një set karakteresh jo-unicode, e cila nuk rekomandohet.Karakteri i çuditshëm <tt> </ tt> mund të shfaqet në modalitetin e përpunimit të tekstit dhe / ose çështje të tjera të kodimit do të ndodhin. <br> <br> Ndrysho gjuhën në <a href="%link" class="label label-primary"> <strong> <i class="fa fa-cog"> </ i> Produkti Konfigurimi </ strong > </a> në <code>% lang.UTF-8 </ code> dhe sigurohuni që edhe shfletuesi juaj ta zbulojë atë saktë. <span class="_ fshehur _"> <br> <br> Kujdes, <em> Webmin </ em> moduli i ndërtuar, i emërtuar <em> Ndrysho gjuhën dhe temën </ em> mund të anashkalojë cilësimet globale. </ span>
+theme_xhred_encoding_warning=Zbuluar që po përdorni një set karakteresh jo-unicode, e cila nuk rekomandohet.Karakteri i çuditshëm <tt> </tt> mund të shfaqet në modalitetin e përpunimit të tekstit dhe / ose çështje të tjera të kodimit do të ndodhin. <br> <br> Ndrysho gjuhën në <a href="%link" class="label label-primary"> <strong> <i class="fa fa-cog"> </i> Produkti Konfigurimi </strong > </a> në <code>% lang.UTF-8 </code> dhe sigurohuni që edhe shfletuesi juaj ta zbulojë atë saktë. <span class="_ fshehur _"> <br> <br> Kujdes, <em> Webmin </em> moduli i ndërtuar, i emërtuar <em> Ndrysho gjuhën dhe temën </em> mund të anashkalojë cilësimet globale. </span>
 
 theme_xhred_filemanager__no_bookmarks=Nuk ka faqeresa të ruajtura
-theme_xhred_filemanager_unbookmark_success=Drejtoria <strong> <em>% vlera </ em> </ strong> u hoq me sukses nga faqeshënuesit tuaj.
+theme_xhred_filemanager_unbookmark_success=Drejtoria <strong> <em>% vlera </em> </strong> u hoq me sukses nga faqeshënuesit tuaj.
 theme_xhred_filemanager_bookmark=Emëroni direktorinë aktuale
 theme_xhred_filemanager_unbookmark=Lista Unbookmark aktuale
 theme_xhred_filemanager_move_into_self=Ju nuk mund të lëvizni një direktori në vetvete!Lista e destinacionit është brenda dosjes së burimit.
@@ -438,9 +438,9 @@ theme_xhred_database_add_row_successful=Rresht i ri u shtua me sukses
 theme_xhred_database_edit_row_successful=Rreshti i përzgjedhur u përditësua me sukses
 theme_xhred_database_edit_rows_successful=Rreshtat e përzgjedhur u përditësuan me sukses
 theme_xhred_database_edit_row_delete_successful=Rreshti i përzgjedhur u fshi me sukses
-theme_xhred_database_edit_rows_delete_successful=Fshihet me sukses <em>% n </ em> rreshta të zgjedhura
+theme_xhred_database_edit_rows_delete_successful=Fshihet me sukses <em>% n </em> rreshta të zgjedhura
 theme_xhred_database_edit_field_delete_successful=Fusha e përzgjedhur u fshi me sukses
-theme_xhred_database_edit_fields_delete_successful=fshihet me sukses <em>% n </ em> fusha të zgjedhura
+theme_xhred_database_edit_fields_delete_successful=fshihet me sukses <em>% n </em> fusha të zgjedhura
 theme_xhred_database_edit_selected_row=Modifiko rreshtin e përzgjedhur
 theme_xhred_database_edit_selected_rows=Redakto rreshtave të zgjedhura
 theme_xhred_database_add_new_row=Shto rresht
@@ -454,11 +454,11 @@ theme_xhred_database_db_selected_drop=Hiq bazën e të dhënave të përzgjedhur
 theme_xhred_database_dbs_selected_drop=Hiq bazat e të dhënave të zgjedhura
 theme_xhred_database_edit_but_not_saved=Të dhënat e tabelës janë redaktuar, por nuk janë ruajtur.
 
-theme_xhred_global_no_such_command=Duket se <tt>% cmd </ tt> ekzekutues nuk është i instaluar ose jo në rrugën në sistemin tuaj.
+theme_xhred_global_no_such_command=Duket se <tt>% cmd </tt> ekzekutues nuk është i instaluar ose jo në rrugën në sistemin tuaj.
 
 theme_xhred_global_notice=Njoftimi
 
-theme_xhred_updates_disabled_notice=Zbuluar që ju nuk keni njoftime të aktivizuara për <em> Theme Autentike </ em> përditësime?<br> <br> Mundësimi i kësaj karakteristike në <a href="%link" class="label label-default"> <strong> <i class="fa fa-cogs"> </ i> Konfigurimi i temave </ strong > </a> do t'ju ndihmojë të përditësoni versionin më të fundit në një klik të vetëm sa më shpejt që të jetë jashtë.
+theme_xhred_updates_disabled_notice=Zbuluar që ju nuk keni njoftime të aktivizuara për <em> Theme Autentike </em> përditësime?<br> <br> Mundësimi i kësaj karakteristike në <a href="%link" class="label label-default"> <strong> <i class="fa fa-cogs"> </i> Konfigurimi i temave </strong > </a> do t'ju ndihmojë të përditësoni versionin më të fundit në një klik të vetëm sa më shpejt që të jetë jashtë.
 
 
 #18.00
@@ -474,27 +474,27 @@ theme_xhred_global_yes=Po
 theme_xhred_global_no=No
 
 theme_xhred_filemanager_new_tab=Shto tab të ri (Ctrl + Space)
-theme_xhred_datatable_no_search_results=<span class="h5"> Nuk u gjetën rezultate </ span> <br> Provoni një kërkim të ndryshëm
+theme_xhred_datatable_no_search_results=<span class="h5"> Nuk u gjetën rezultate </span> <br> Provoni një kërkim të ndryshëm
 
 theme_xhred_filemanager_buffer_error=Dështoi në ngjitjen e skedarëve në tampon - leja e refuzuar.
 
-filemanager_create_object_exists=$ 3 <strong> <em> $ 1 </ em> </ strong> `tashmë ekziston në` <strong> <tt> $ 2 </ tt> </ strong> `
-filemanager_create_object_denied=Nuk mund të krijoj $ 3 </ strong> <em> $ 1 </ strong> <strong> <tt> $ 2 </ strong> `- leja mohohet.
+filemanager_create_object_exists=$3 <strong> <em> $1 </em> </strong> `tashmë ekziston në` <strong> <tt> $2 </tt> </strong> `
+filemanager_create_object_denied=Nuk mund të krijoj $3 </strong> <em> $1 </strong> <strong> <tt> $2 </strong> `- leja mohohet.
 
-filemanager_paste_warning=Dështoi në ngjitjen e objektivave.Është e mundur që objekti (et) e kërkuar të mund të ishte <em> riemëruar, zhvendosur </ em> ose <em> fshirë </ em> ndërsa / para ngjitjes.Një tjetër shkak i mundshëm është se destinacioni nuk është i shkrueshëm.Vlen të vëzhgohen atributet e objekteve.
+filemanager_paste_warning=Dështoi në ngjitjen e objektivave.Është e mundur që objekti (et) e kërkuar të mund të ishte <em> riemëruar, zhvendosur </em> ose <em> fshirë </em> ndërsa / para ngjitjes.Një tjetër shkak i mundshëm është se destinacioni nuk është i shkrueshëm.Vlen të vëzhgohen atributet e objekteve.
 
-theme_xhred_filemanager_delete_warning=Deletimi ka përfunduar me sukses, por jo për të gjitha objektet.Është e mundur që objekti (et) e kërkuar të ishte <em> riemëruar </ em> ose <em> lëvizur </ em> para fshirjes.Lejet e kufizuara (atributet) janë një shkak tjetër i mundshëm.Mesazhi i gabimit:
+theme_xhred_filemanager_delete_warning=Deletimi ka përfunduar me sukses, por jo për të gjitha objektet.Është e mundur që objekti (et) e kërkuar të ishte <em> riemëruar </em> ose <em> lëvizur </em> para fshirjes.Lejet e kufizuara (atributet) janë një shkak tjetër i mundshëm.Mesazhi i gabimit:
 
 
 filemanager_rename_exists=$3 me emrin `<strong><em>$1</em></strong>`ekziston `<strong><tt>$2</tt></strong>`
-filemanager_rename_denied=Nuk mund të riemërtoj $ 3.Kjo mund të ndodhë sepse burimi $ 3 është hequr ose për shkak të lejeve të kufizuara.
+filemanager_rename_denied=Nuk mund të riemërtoj $3.Kjo mund të ndodhë sepse burimi $3 është hequr ose për shkak të lejeve të kufizuara.
 
-theme_xhred_filemanager_successful_rename=Duke përmendur `<strong> <em> <s>% nga </ s> </ em> </ strong>` në `<strong> <em>% to </ em> </ strong>` ishte e suksesshme.
+theme_xhred_filemanager_successful_rename=Duke përmendur `<strong> <em> <s>% nga </s> </em> </strong>` në `<strong> <em>% to </em> </strong>` ishte e suksesshme.
 
-filemanager_global_info_total1=Gjithsej: dosje $ 1 dhe dosje $ 2
-filemanager_global_info_total2=Total: $ 1 fotografi dhe $ 2 direktori
-filemanager_global_info_total3=Gjithsej: $ 1 file dhe $ 2 directories
-filemanager_global_info_total4=Gjithsej: $ 1 fotografi dhe $ 2 drejtori
+filemanager_global_info_total1=Gjithsej: dosje $1 dhe dosje $2
+filemanager_global_info_total2=Total: $1 fotografi dhe $2 direktori
+filemanager_global_info_total3=Gjithsej: $1 file dhe $2 directories
+filemanager_global_info_total4=Gjithsej: $1 fotografi dhe $2 drejtori
 
 theme_xhred_filemanager_selected_entry=Zgjedhur:% hyrja e vlerës
 
@@ -505,11 +505,11 @@ theme_xhred_filemanager_search_replace=Replace në rezultatet
 theme_xhred_global_find=Gjej
 theme_xhred_global_replace=Replace
 
-theme_xhred_filemanager_searching_matching=Duke kërkuar <em> `% value` </ em> që përputhen me emrat e dosjeve / drejtorive, që përmbajnë tekstin <em>`% text` </ em>.
-theme_xhred_filemanager_searching_replacing=Zëvendësimi i ndeshjeve <em> `% text` </ em> me <em>`% replace` </ em> në skedarë me emra që përmbajnë <em> `% value` </ em>.
+theme_xhred_filemanager_searching_matching=Duke kërkuar <em> `% value` </em> që përputhen me emrat e dosjeve / drejtorive, që përmbajnë tekstin <em>`% text` </em>.
+theme_xhred_filemanager_searching_replacing=Zëvendësimi i ndeshjeve <em> `% text` </em> me <em>`% replace` </em> në skedarë me emra që përmbajnë <em> `% value` </em>.
 
-theme_xhred_filemanager_search_replaced_multi=Gjetur dhe zëvendësuar në <strong>% value </ strong> skedarë.
-theme_xhred_filemanager_search_replaced=Gjetur dhe zëvendësuar në skedarin <strong> 1 </ strong>.
+theme_xhred_filemanager_search_replaced_multi=Gjetur dhe zëvendësuar në <strong>% value </strong> skedarë.
+theme_xhred_filemanager_search_replaced=Gjetur dhe zëvendësuar në skedarin <strong> 1 </strong>.
 
 theme_xhred_filemanager_successful_permissions_with_errors=Lejet janë ndryshuar me sukses, por jo për të gjitha objektet:
 
@@ -517,8 +517,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Pronësia nuk është n
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Pronësia nuk mund të ndryshohet për shkak të gabimeve në vijim:
 
 theme_xhred_filemanager_successful_compression_with_errors=Kompresimi ka përfunduar me gabimet e mëposhtme:
-theme_xhred_filemanager_successful_compression_bg=Kompresimi ka mbaruar me sukses.Dosja e kompresuar <strong> `% file </ strong> gjendet në direktorinë <strong>`% path` </ strong>.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresimi ka përfunduar me gabime.Dosja e kompresuar <strong> `% file </ strong> duhet të gjendet në direktorinë <strong>`% path` </ strong>.
+theme_xhred_filemanager_successful_compression_bg=Kompresimi ka mbaruar me sukses.Dosja e kompresuar <strong> `% file </strong> gjendet në direktorinë <strong>`% path` </strong>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresimi ka përfunduar me gabime.Dosja e kompresuar <strong> `% file </strong> duhet të gjendet në direktorinë <strong>`% path` </strong>.
 
 theme_xhred_filemanager_settings_notification_type=Lloji i njoftimeve për t'u shfaqur
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informata, paralajmërime dhe gabime
@@ -539,7 +539,7 @@ theme_xhred_server_process_running=Procesi i serverit akoma vazhdon !?Jeni i sig
 #18.03
 settings_global_options_title=Opsionet globale
 settings_global_passgen_format=Gjenerator i fjalëkalimeve
-settings_global_passgen_format_description=Vendosni gjatësinë dhe karakterin e përdorur në fjalëkalimin e gjeneruar.Vlera e parazgjedhur është <code> 12 | az, AZ, 0-9, # </ code>, e cila përfaqëson fjalëkalimin me 12 shkronja në gjatësi, që përmbajnë shkronja të mëdha dhe të vogla, numra dhe shkronja të veçanta.Vlera e parë është numerike, e cila është gjatësia e fjalëkalimit, e ndjekur menjëherë nga <code> | </ code> si një delimiter.Tjetër është tipi, ku mund të përdorni numra <code> 0-9 </ code>, shkronja <code> az </ code> dhe / ose <code> AZ </ code> / code>.Të gjitha këto grupe mund të përdoren së bashku ose individualisht, duke përdorur presje si një delimiter.
+settings_global_passgen_format_description=Vendosni gjatësinë dhe karakterin e përdorur në fjalëkalimin e gjeneruar.Vlera e parazgjedhur është <code> 12 | az, AZ, 0-9, # </code>, e cila përfaqëson fjalëkalimin me 12 shkronja në gjatësi, që përmbajnë shkronja të mëdha dhe të vogla, numra dhe shkronja të veçanta.Vlera e parë është numerike, e cila është gjatësia e fjalëkalimit, e ndjekur menjëherë nga <code> | </code> si një delimiter.Tjetër është tipi, ku mund të përdorni numra <code> 0-9 </code>, shkronja <code> az </code> dhe / ose <code> AZ </code> / code>.Të gjitha këto grupe mund të përdoren së bashku ose individualisht, duke përdorur presje si një delimiter.
 theme_xhred_password_generator_new=Gjeni Fjalëkalimin e ri (Për Clipboard)
 theme_xhred_password_generator_new_success=Fjalëkalimi i krijuar %password është kopjuar me sukses në clipboard.
 
@@ -550,7 +550,7 @@ theme_fileformat_perl_placeholder=Kjo skedar duhet të përfundojë me `1;` për
 
 
 #18.10
-theme_error_access_not_root=Hyrja e mohuar: Përdoruesi ka nevojë për qasje në modulin <em> Webmin Configuration </ em> për të modifikuar konfigurimin e temës
+theme_error_access_not_root=Hyrja e mohuar: Përdoruesi ka nevojë për qasje në modulin <em> Webmin Configuration </em> për të modifikuar konfigurimin e temës
 
 
 #18.20
@@ -560,7 +560,7 @@ settings_hide_top_loader=Fshih barin e përparimit të përparimit dhe ngarkuesi
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Shfaq ikonat simbolike në drop-down në Virtualmin / Cloudmin
 settings_font_family=Familja e shkronjave
-settings_font_family_description=Në mesin e varianteve të paraqitura <em> Roboto </ em> është dërguar me temën dhe është vendosur si parazgjedhje.Gërmat e tjera duhet të instalohen në kompjuterin tuaj lokal në mënyrë që të punojnë.Duke përdorur fontet lokalë, default nuk është e ngarkuar, gjë që do të rezultojë në ngarkim më të shpejtë të temës
+settings_font_family_description=Në mesin e varianteve të paraqitura <em> Roboto </em> është dërguar me temën dhe është vendosur si parazgjedhje.Gërmat e tjera duhet të instalohen në kompjuterin tuaj lokal në mënyrë që të punojnë.Duke përdorur fontet lokalë, default nuk është e ngarkuar, gjë që do të rezultojë në ngarkim më të shpejtë të temës
 theme_xhred_global_shipped=Ngarkuar
 = Theme_xhred_global_available dispozicion
 theme_xhred_global_not_available=Nuk është në dispozicion
@@ -580,7 +580,7 @@ settings_side_slider_sysinfo_enabled=Trego skedën e pultit
 settings_side_slider_notifications_enabled=Trego skedën e njoftimeve
 settings_side_slider_favorites_enabled=Trego skedarët e preferencave
 settings_side_slider_tabs_hotkeys=Aktivizo hotkey-et për kalimin e tabs
-settings_side_slider_tabs_hotkeys_description=Ju mund të përdorni hotkeys të tastierës për të ndryshuar tabs mbrapa me radhë duke përdorur <code> Meta + ⇧ + Tab / Meta + Tab </ code> në rast se opsioni global për përdorimin e hotkeys është aktivizuar
+settings_side_slider_tabs_hotkeys_description=Ju mund të përdorni hotkeys të tastierës për të ndryshuar tabs mbrapa me radhë duke përdorur <code> Meta + ⇧ + Tab / Meta + Tab </code> në rast se opsioni global për përdorimin e hotkeys është aktivizuar
 settings_show_terminal_link=Trego butonin e terminalit
 
 theme_xhred_sysinfo_system_monitors=Vëzhguesit e Sistemit
@@ -596,12 +596,12 @@ settings_leftmenu_netdata=Shfaq lidhjen e monitorimit në kohë reale të Netdat
 settings_leftmenu_netdata_link=Lidhja e preferuar e serverit Netdata
 
 theme_xhred_filemanager_context_chattr=Ndrysho atributet
-theme_xhred_filemanager_changing_attributes=Vendosja e atributeve në <strong> <em>% vlera </ em> </ strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_changing_attributes=Vendosja e atributeve në <strong> <em>% vlera </em> </strong> në skedarët e zgjedhur.
 theme_xhred_filemanager_successful_attributes_with_errors=Atributet nuk janë vendosur me sukses për të gjitha objektet:
 theme_xhred_filemanager_successful_attributes=Atributet janë vendosur me sukses.
 
 theme_xhred_filemanager_context_chcon=Ndrysho kontekstin e sigurisë
-theme_xhred_filemanager_changing_secontext=Ndryshimi i kontekstit të sigurisë në <strong> <em>% vlera </ em> </ strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_changing_secontext=Ndryshimi i kontekstit të sigurisë në <strong> <em>% vlera </em> </strong> në skedarët e zgjedhur.
 theme_xhred_filemanager_successful_secontext_with_errors=Konteksti i sigurisë nuk është ndryshuar me sukses për të gjitha objektet:
 theme_xhred_filemanager_successful_secontext=Konteksti i sigurisë është ndryshuar me sukses.
 
@@ -637,18 +637,18 @@ theme_xhred_global_choose=Zgjidh
 theme_xhred_global_select=Zgjidh
 theme_xhred_global_ok=OK
 settings_sysinfo_theme_patched_updates=Including development versions
-settings_sysinfo_theme_patched_updates_description=Për ta bërë këtë opsion të funksionojë, komanda <code> git </ code> duhet të instalohet në sistemin tuaj
+settings_sysinfo_theme_patched_updates_description=Për ta bërë këtë opsion të funksionojë, komanda <code> git </code> duhet të instalohet në sistemin tuaj
 theme_git_patch_available=Latest development version
-theme_git_patch_no_git_message=Në mënyrë që të instaloni arna të fundit direkt nga GitHub ju duhet të siguroheni që komanda <code> git </ code> është instaluar.
-theme_git_patch_update_success_message=Përditësimi i temës për Webmin ishte i suksesshëm.Versioni i instaluar aktualisht është <tt> $ 1 </ tt>.Ringarkimi...
-theme_git_patch_update_success_message2=Përditësimi i temës për Webmin dhe Usermin ishte i suksesshëm.Versioni i instaluar aktualisht është <tt> $ 1 </ tt>.Ringarkimi...
+theme_git_patch_no_git_message=Në mënyrë që të instaloni arna të fundit direkt nga GitHub ju duhet të siguroheni që komanda <code> git </code> është instaluar.
+theme_git_patch_update_success_message=Përditësimi i temës për Webmin ishte i suksesshëm.Versioni i instaluar aktualisht është <tt> $1 </tt>.Ringarkimi...
+theme_git_patch_update_success_message2=Përditësimi i temës për Webmin dhe Usermin ishte i suksesshëm.Versioni i instaluar aktualisht është <tt> $1 </tt>.Ringarkimi...
 theme_xhred_git_patch_update=Azhurnimi i temës ka dështuar.Provoni të përdorni tastierë për ta bërë atë me dorë.
 theme_xhred_git_patch_initiated=Përditësimi i temës është iniciuar.
 theme_xhred_global_prev_page=Kthehu një faqe
 theme_xhred_global_help=Ndihmë
 settings_right_soft_updates_page_options_title=Përditësimet e softuerit
 theme_xhred_git_compare_changes=Krahasoni ndryshimet
-theme_xhred_filemanager_link_to_clipboard=Emri i lidhjes simbolike `<strong> <em>% vlera </ em> </ strong>` është kopjuar në clipboard.
+theme_xhred_filemanager_link_to_clipboard=Emri i lidhjes simbolike `<strong> <em>% vlera </em> </strong>` është kopjuar në clipboard.
 
 
 #18.46
@@ -675,7 +675,7 @@ theme_force_upgrade=Force theme update
 theme_xhred_force_upgrade_beta=Instalo versionin më të fundit të zhvillimit (beta)
 theme_xhred_force_upgrade_stable=Instalo versionin e fundit të lëshimit (të qëndrueshëm)
 theme_xhred_source_encoding=Encoding burim
-theme_update_footer=Ju lutemi të raportoni fajlli për $ 1 depo.Ndiqni kanalin $ 2 të temës për përditësimet e fundit.
+theme_update_footer=Ju lutemi të raportoni fajlli për $1 depo.Ndiqni kanalin $2 të temës për përditësimet e fundit.
 theme_xhred_encoding_manually_set=Caktuar kodimin manualisht
 theme_xhred_filemanager_save_to_change_encoding=Skeda duhet të ruhet, me qëllim që të lejojë ndryshimin e kodimit.
 
@@ -723,7 +723,7 @@ theme_xhred_global_minutes=Minuta
 
 
 # 19.01
-theme_xhred_browser_warning = Për të pasur përvojën më të mirë me panelin e serverit në kompjuterin tuaj, përdorni një shfletues të mbështetur dhe të përditësuar. <br> <br> <em> Internet Explorer </ em> nuk mbështetet më. > Shfletuesit e rekomanduar janë <em> Chrome </ em>, <em> Firefox </ em>, <em> Opera </ em> ose <em> Safari </ em>, <em> Edge </ em>. </ div> </ div> </ div> </ div> </ div> </ div> </ div> </ div> </ div> <div class = "alert alert-
+theme_xhred_browser_warning = Për të pasur përvojën më të mirë me panelin e serverit në kompjuterin tuaj, përdorni një shfletues të mbështetur dhe të përditësuar. <br> <br> <em> Internet Explorer </em> nuk mbështetet më. > Shfletuesit e rekomanduar janë <em> Chrome </em>, <em> Firefox </em>, <em> Opera </em> ose <em> Safari </em>, <em> Edge </em>. </div> </div> </div> </div> </div> </div> </div> </div> </div> <div class = "alert alert-
 
 
 # 19.02
@@ -741,7 +741,7 @@ theme_xhred_global_theme_configuration = Konfigurimi i temave
 theme_xhred_global_official_website = Faqja zyrtare e internetit
 theme_xhred_global_about_theme = Rreth temës
 theme_xhred_connection_error = Gabim i lidhjes
-theme_xhred_connection_error_details = Nuk mund të krijojë një lidhje me serverin në <strong>% server </ strong>. <ul> <li> Kontrolloni statusin e serverit </ li> <li> Kontrolloni lidhjen </ li> </ ul>
+theme_xhred_connection_error_details = Nuk mund të krijojë një lidhje me serverin në <strong>% server </strong>. <ul> <li> Kontrolloni statusin e serverit </li> <li> Kontrolloni lidhjen </li> </ul>
 theme_xhred_session_expired = Sesioni skadoi
 theme_xhred_session_unlocked = Sesioni i hapur
 theme_xhred_session_expired_details = Ju keni dalë jashtë për shkak të pasivitetit.
@@ -779,9 +779,9 @@ theme_xhred_upload_initial_info = Drag and drop fotografi këtu ose klikoni për
 # 19.09
 theme_xhred_global_empty = bosh
 theme_xhred_global_click_here = kliko këtu
-theme_git_patch_incompatible_message = Instalimi i këtij versioni prej $ 1 <em> $ 2 </ em> kërkon versionin e fundit dhe / ose ndoshta unreleased prej $ 3 <em> $ 4 </ em> dhe $ 5 <em> $ 6 </ em> për të punuar si duhet.
-theme_git_patch_incompatible_message_s = Instalimi i këtij versioni prej $ 1 <em> $ 2 </ em> kërkon versionin e fundit dhe / ose ndoshta unreleased prej $ 3 <em> $ 4 </ em> për të punuar si duhet.
-theme_git_patch_incompatible_message_desc = Mund të ketë ndryshime të papajtueshme, të cilat mund ta ndalojnë temën që të punojë siç është projektuar. Për ta anashkaluar këtë paralajmërim, dhe forca të instaloni temën gjithsesi $ 1 ose përmirësuar $ 2 në versionin më të fundit të zhvillimit duke përdorur konsolin e parë, duke xhiruar skriptin <kbd> update-from-repo.sh </ kbd> nga drejtoria e tij.
+theme_git_patch_incompatible_message = Instalimi i këtij versioni prej $1 <em> $2 </em> kërkon versionin e fundit dhe / ose ndoshta unreleased prej $3 dhe $5 për të punuar si duhet.
+theme_git_patch_incompatible_message_s = Instalimi i këtij versioni prej $1 <em> $2 </em> kërkon versionin e fundit dhe / ose ndoshta unreleased prej $3 për të punuar si duhet.
+theme_git_patch_incompatible_message_desc = Mund të ketë ndryshime të papajtueshme, të cilat mund ta ndalojnë temën që të punojë siç është projektuar. Për ta anashkaluar këtë paralajmërim, dhe forca të instaloni temën gjithsesi $1 ose përmirësuar $2 në versionin më të fundit të zhvillimit duke përdorur konsolin e parë, duke xhiruar skriptin <kbd> update-from-repo.sh </kbd> nga drejtoria e tij.
 theme_xhred_global_outdated = Ky version është i vjetëruar
 
 
@@ -843,7 +843,7 @@ theme_xhred_global_latest_stable = Stabilizimi i fundit
 theme_xhred_global_latest_beta = beta e fundit
 settings_perform_content_scrolling = Aktivizo skriptimin automatik të faqes për dalje progresive
 settings_contrast_mode = Aktivizo modalitetin e kontrastit të lartë
-settings_side_slider_enabled_description = Ky funksion kërkon që moduli <em> Statusi i sistemit </ em> të aktivizohet.
+settings_side_slider_enabled_description = Ky funksion kërkon që moduli <em> Statusi i sistemit </em> të aktivizohet.
 theme_xhred_global_firewall = firewall
 theme_xhred_settings_show_webmin_tab = Shfaq kalimin e Webmin në menunë e navigimit për pronarët e serverëve
 

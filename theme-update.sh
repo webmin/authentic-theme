@@ -123,10 +123,10 @@ else
         if [ $GRPERR  -eq 0 ]; then
           if [[ $RVER > $PVER ]]; then
             echo -e "
-\e[47;1;31;82mWarning!\e[0m Installing this version of \e[49;1;37;182mAuthentic Theme\e[0m \e[49;32;5;82m"${TVER^}"\e[0m requires
-latest and/or possibly unreleased version of \e[49;1;37;182m"${PROD^}"\e[0m \e[49;32;5;82m"${RVER^}"\e[0m, to work
-properly. Your current version of \e[49;1;37;182m"${PROD^}"\e[0m is \e[5;49;33m"${PVER^}"\e[0m. There might be
-incompatible changes, that could stop the theme from working as designed.
+\e[47;1;31;82mWarning!\e[0m Installing this version of \e[49;1;37;182mAuthentic Theme\e[0m \e[49;32m"${TVER^}"\e[0m requires
+latest and/or possibly unreleased version of \e[49;1;37;182m"${PROD^}"\e[0m to work properly.
+Your current version of \e[49;1;37;182m"${PROD^}"\e[0m is \e[49;33m"${PVER^}"\e[0m. There might be incompatible
+changes, that could stop the theme from working as designed.
 It is recommended to upgrade \e[49;1;37;182m"${PROD^}"\e[0m to the latest development version, by
 running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m directory."
 
@@ -154,9 +154,9 @@ running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m direc
 
         TVER=$(grep -Po '(?<=^version=).*$' "$DIR/authentic-theme/theme.info" 2>&1)
         if [ $? -eq 0 ]; then
-          echo -e "\e[49;32;5;82mUpdating to Authentic Theme $TVER, done.\e[0m"
+          echo -e "\e[49;32mUpdating to Authentic Theme $TVER, done.\e[0m"
         else
-          echo -e "\e[49;32;5;82mUpdating to the latest Authentic Theme, done.\e[0m"
+          echo -e "\e[49;32mUpdating to the latest Authentic Theme, done.\e[0m"
         fi
 
         # Restart Webmin/Usermin in case it's running
