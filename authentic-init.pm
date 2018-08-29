@@ -512,13 +512,9 @@ sub usermin_available
 
 sub get_webmin_switch_mode
 {
-    my $mode =
-      ((!length $__settings{'settings_show_webmin_tab'} || $__settings{'settings_show_webmin_tab'} eq 'true') ? 1 : 0);
-
-    if ($__settings{'settings_show_webmin_tab'} eq 'false') {
-        $mode = 0;
-    }
-    return $mode;
+    my $user = $remote_user;
+    $user =~ s/-//g;
+    return ($__settings{"settings_show_webmin_tab_$user"} ne "false" ? 1 : 0);
 }
 
 sub dashboard_switch

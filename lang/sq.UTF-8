@@ -845,7 +845,7 @@ settings_perform_content_scrolling = Aktivizo skriptimin automatik të faqes pë
 settings_contrast_mode = Aktivizo modalitetin e kontrastit të lartë
 settings_side_slider_enabled_description = Ky funksion kërkon që moduli <em> Statusi i sistemit </em> të aktivizohet.
 theme_xhred_global_firewall = firewall
-theme_xhred_settings_show_webmin_tab = Shfaq kalimin e Webmin në menunë e navigimit për pronarët e serverëve
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 # 19.14
