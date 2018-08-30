@@ -190,6 +190,15 @@ sub embed_header
 
     }
     embed_js_scripts();
+
+    # Head theme overlay
+    print "$tconfig{'headhtml'}\n" if ($tconfig{'headhtml'});
+    if ($tconfig{'headinclude'}) {
+        my ($theme, $overlay) = split(' ', $gconfig{'theme'});
+        my $file_contents = read_file_contents("$root_directory/$overlay/$tconfig{'headinclude'}");;
+        $file_contents = replace_meta($file_contents);
+        print $file_contents;
+    }
     print '</head>', "\n";
 }
 

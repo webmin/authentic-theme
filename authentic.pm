@@ -13,12 +13,31 @@ sub theme_header
     (get_raw() && return);
     embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
 
-    print '<body ' . header_body_data(undef) . '>' . "\n";
+    print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     if (@_ > 1 && $_[1] ne 'stripped') {
+
+        # Pre-body theme overlay
+        if (defined(&theme_prebody)) {
+            &theme_prebody(@_);
+        }
+        my $prebody  = $tconfig{'prebody'};
+        if ($prebody) {
+            $prebody = replace_meta($prebody);
+            print "$prebody\n";
+        }
+        if ($tconfig{'prebodyinclude'}) {
+            my ($theme, $overlay) = split(' ', $gconfig{'theme'});
+            my $file_contents = read_file_contents("$root_directory/$overlay/$tconfig{'prebodyinclude'}");
+            $file_contents = replace_meta($file_contents);
+            print $file_contents;
+        }
+
+        # Print default container
         print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
+        print $tconfig{'preheader'};
         print "<table class=\"header\"><tr>\n";
 
         print '<td id="headln2l" class="invisible">';
@@ -154,6 +173,22 @@ sub theme_footer
         get_env('script_name') ne '/pam_login.cgi')
     {
         print '<div class="top-aprogress"></div>', "\n";
+    }
+
+    # Post-body header overlay
+    my $postbody = $tconfig{'postbody'};
+    if ($postbody) {
+        $postbody = replace_meta($postbody);
+        print "$postbody\n";
+    }
+    if ($tconfig{'postbodyinclude'}) {
+        my ($theme, $overlay) = split(' ', $gconfig{'theme'});
+        my $file_contents = read_file_contents("$root_directory/$overlay/$tconfig{'postbodyinclude'}");
+        $file_contents = replace_meta($file_contents);
+        print $file_contents;
+    }
+    if (defined(&theme_postbody)) {
+        &theme_postbody(@_);
     }
 
     print '</body>', "\n";
@@ -1084,8 +1119,8 @@ sub theme_nice_size
 sub theme_redirect
 {
     if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
-      print "Content-type: text/html;\n\n";
-      return
+        print "Content-type: text/html;\n\n";
+        return;
     }
 
     my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (
