@@ -1779,6 +1779,7 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
     embed_css_night_rider();
     embed_css_fonts();
     embed_styles();
+    embed_overlay_head();
     print '</head>', "\n";
 }
 

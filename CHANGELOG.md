@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 19.20-beta4 (August 24, 2018)
+* Add polyfills to support _Object.values_ and _Object.entries_ methods for older browsers
+* Fix sorting by size issue in File Manager for folders
+* Fix notifications alignment for multiple configurations  [#1186](https://github.com/authentic-theme/authenticsome -theme/issues/1186)
+
 #### Version 19.20-beta3 (August 23, 2018)
 * Add mail search for mail in Usermin
 * Add Swedish language translation update

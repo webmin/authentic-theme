@@ -41,7 +41,8 @@ if ($gconfig{'loginbanner'} &&
       ) .
       '" data-night-mode="' . theme_night_mode() . '" class="session_login pam_login">', "\n";
     embed_login_head();
-    print '<body class="session_login pam_login">' . "\n";
+    print '<body class="session_login pam_login" ' . $tconfig{'inbody'} . '>' . "\n";
+    embed_overlay_prebody();
     print
 '<div class="form-signin-banner container session_login pam_login alert alert-danger" data-dcontainer="1"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
       . "\n";
@@ -75,7 +76,8 @@ print '<html data-background-style="'
   ) .
   '" data-night-mode="' . theme_night_mode() . '" class="session_login pam_login">', "\n";
 embed_login_head();
-print '<body class="session_login pam_login">' . "\n";
+print '<body class="session_login pam_login" ' . $tconfig{'inbody'} . '>' . "\n";
+embed_overlay_prebody();
 print '<div class="container session_login pam_login" data-dcontainer="1">' . "\n";
 
 if (defined($in{'failed'})) {
@@ -124,8 +126,10 @@ print '<p class="form-signin-paragraph">' . &Atext('login_message') . '<strong> 
 if (!$in{'password'}) {
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-    print '<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocapitalize="none" placeholder="' .
-      &Atext('theme_xhred_login_user') . '" ' . ' autofocus>' . "\n";
+    print
+'<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocapitalize="none" placeholder="'
+      . &Atext('theme_xhred_login_user')
+      . '" ' . ' autofocus>' . "\n";
     print '</div>' . "\n";
 } else {
 
