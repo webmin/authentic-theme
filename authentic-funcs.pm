@@ -97,6 +97,22 @@ sub replace
     return $string;
 }
 
+sub replace_meta
+{
+    my ($string) = @_;
+
+    my $hostname   = &get_display_hostname();
+    my $version    = &get_webmin_version();
+    my $os_type    = $gconfig{'real_os_type'} || $gconfig{'os_type'};
+    my $os_version = $gconfig{'real_os_version'} || $gconfig{'os_version'};
+    $string =~ s/%HOSTNAME%/$hostname/g;
+    $string =~ s/%VERSION%/$version/g;
+    $string =~ s/%USER%/$remote_user/g;
+    $string =~ s/%OS%/$os_type $os_version/g;
+
+    return $string;
+}
+
 sub product_version_update
 {
     my ($v, $p) = @_;

@@ -765,8 +765,8 @@ theme_xhred_upload_initial_info=Dra och släpp filer här eller klicka för att 
 #19.09
 theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=klicka här
-theme_git_patch_incompatible_message=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 <em>$4</em> och $5 <em>$6</em> för att fungera korrekt.
-theme_git_patch_incompatible_message_s=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 <em>$4</em> för att fungera korrekt.
+theme_git_patch_incompatible_message=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 och $5 för att fungera korrekt.
+theme_git_patch_incompatible_message_s=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 för att fungera korrekt.
 theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar, som gör att temat slutar fungera som det är tänkt. För att kringgå denna varning och ändå tvinga installera temat $1, eller uppgradera $2 till den senaste utvecklingsversionen via konsolen, genom att köra skriptet <kbd>update-from-repo.sh</kbd> från dess katalog.
 theme_xhred_global_outdated=Denna versionen är för gammal
 
@@ -831,7 +831,7 @@ settings_perform_content_scrolling=Aktivera automatisk sidrullning för progress
 settings_contrast_mode=Aktivera högkontrastläge
 settings_side_slider_enabled_description=Denna funktionen kräver att modulen <em>Systemstatus</em> är aktiverad.
 theme_xhred_global_firewall=Brandvägg
-theme_xhred_settings_show_webmin_tab=Visa Webmin i navigeringsmenyn för serverägare
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -921,22 +921,22 @@ theme_xhred_global_total=Totalt
 theme_xhred_global_selected=Markerade
 theme_xhred_mail_new_message=Nytt meddelande
 
-theme_xhred_mail_search_simple=Show search options
-theme_xhred_mail_search_advanced=Hide search options
-theme_xhred_mail_search_clear=Clear search results
-theme_xhred_mail_search_empty=No messages matched your search
-theme_xhred_mail_search_search_mail=Search mail
-theme_xhred_mail_search_from=From
-theme_xhred_mail_search_to=To
-theme_xhred_mail_search_subject=Subject
-theme_xhred_mail_search_has_words=Has the words
-theme_xhred_mail_search_doesnt_have_words=Does not have
-theme_xhred_mail_search_with_status=With status
-theme_xhred_mail_search_with_status_any=Any
-theme_xhred_mail_search_with_status_unread=Unread
-theme_xhred_mail_search_with_status_read=Read
-theme_xhred_mail_search_with_status_special=Special
-theme_xhred_mail_search_search_in=Search in
-theme_xhred_mail_search_limit_results=Limit search results
-theme_xhred_mail_search_limit_results_yes=Yes, search only through
-theme_xhred_mail_search_has_attach=Has attachment
+theme_xhred_mail_search_simple=Visa sökalternativ
+theme_xhred_mail_search_advanced=Dölj sökalternativ
+theme_xhred_mail_search_clear=Rensa sökresultat
+theme_xhred_mail_search_empty=Inga meddelande matchade din sökning
+theme_xhred_mail_search_search_mail=Sök e-post
+theme_xhred_mail_search_from=Från
+theme_xhred_mail_search_to=Till
+theme_xhred_mail_search_subject=Ämne
+theme_xhred_mail_search_has_words=Innehåller orden
+theme_xhred_mail_search_doesnt_have_words=Innehåller inte orden
+theme_xhred_mail_search_with_status=Med status
+theme_xhred_mail_search_with_status_any=Alla
+theme_xhred_mail_search_with_status_unread=Oläst
+theme_xhred_mail_search_with_status_read=Läst
+theme_xhred_mail_search_with_status_special=Särskild
+theme_xhred_mail_search_search_in=Sök i
+theme_xhred_mail_search_limit_results=Begränsa sökresultat
+theme_xhred_mail_search_limit_results_yes=Ja, sök endast igenom
+theme_xhred_mail_search_has_attach=Har bifogade filer

@@ -13,12 +13,17 @@ sub theme_header
     (get_raw() && return);
     embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
 
-    print '<body ' . header_body_data(undef) . '>' . "\n";
+    print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
+    embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
+
+
+        # Print default container
         print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
+        print $tconfig{'preheader'};
         print "<table class=\"header\"><tr>\n";
 
         print '<td id="headln2l" class="invisible">';
@@ -155,6 +160,9 @@ sub theme_footer
     {
         print '<div class="top-aprogress"></div>', "\n";
     }
+
+    # Post-body header overlay
+    embed_overlay_postbody();
 
     print '</body>', "\n";
     print '</html>', "\n";
@@ -1084,8 +1092,8 @@ sub theme_nice_size
 sub theme_redirect
 {
     if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
-      print "Content-type: text/html;\n\n";
-      return
+        print "Content-type: text/html;\n\n";
+        return;
     }
 
     my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (

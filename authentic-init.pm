@@ -190,7 +190,58 @@ sub embed_header
 
     }
     embed_js_scripts();
+
+    # Head theme overlay
+    embed_overlay_head();
+
     print '</head>', "\n";
+}
+
+sub embed_overlay_head
+{
+    print "$tconfig{'headhtml'}\n" if ($tconfig{'headhtml'});
+    if ($tconfig{'headinclude'}) {
+        my ($theme, $overlay) = split(' ', $gconfig{'theme'});
+        my $file_contents = read_file_contents("$root_directory/$overlay/$tconfig{'headinclude'}");
+        $file_contents = replace_meta($file_contents);
+        print $file_contents;
+    }
+}
+
+sub embed_overlay_prebody
+{
+    if (defined(&theme_prebody)) {
+        &theme_prebody(@_);
+    }
+    my $prebody = $tconfig{'prebody'};
+    if ($prebody) {
+        $prebody = replace_meta($prebody);
+        print "$prebody\n";
+    }
+    if ($tconfig{'prebodyinclude'}) {
+        my ($theme, $overlay) = split(' ', $gconfig{'theme'});
+        my $file_contents = read_file_contents("$root_directory/$overlay/$tconfig{'prebodyinclude'}");
+        $file_contents = replace_meta($file_contents);
+        print $file_contents;
+    }
+}
+
+sub embed_overlay_postbody
+{
+    my $postbody = $tconfig{'postbody'};
+    if ($postbody) {
+        $postbody = replace_meta($postbody);
+        print "$postbody\n";
+    }
+    if ($tconfig{'postbodyinclude'}) {
+        my ($theme, $overlay) = split(' ', $gconfig{'theme'});
+        my $file_contents = read_file_contents("$root_directory/$overlay/$tconfig{'postbodyinclude'}");
+        $file_contents = replace_meta($file_contents);
+        print $file_contents;
+    }
+    if (defined(&theme_postbody)) {
+        &theme_postbody(@_);
+    }
 }
 
 sub embed_settings
@@ -512,13 +563,9 @@ sub usermin_available
 
 sub get_webmin_switch_mode
 {
-    my $mode =
-      ((!length $__settings{'settings_show_webmin_tab'} || $__settings{'settings_show_webmin_tab'} eq 'true') ? 1 : 0);
-
-    if ($__settings{'settings_show_webmin_tab'} eq 'false') {
-        $mode = 0;
-    }
-    return $mode;
+    my $user = $remote_user;
+    $user =~ s/-//g;
+    return ($__settings{"settings_show_webmin_tab_$user"} ne "false" ? 1 : 0);
 }
 
 sub dashboard_switch

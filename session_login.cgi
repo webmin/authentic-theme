@@ -38,7 +38,8 @@ if ($gconfig{'loginbanner'} &&
       ) .
       '" class="session_login">', "\n";
     embed_login_head();
-    print '<body class="session_login">' . "\n";
+    print '<body class="session_login" ' . $tconfig{'inbody'} . '>' . "\n";
+    embed_overlay_prebody();
     print
 '<div class="form-signin-banner container session_login alert alert-danger" data-dcontainer="1"><i class="fa fa-3x fa-exclamation-triangle"></i><br><br>'
       . "\n";
@@ -72,7 +73,8 @@ print '<html data-background-style="'
   ) .
   '" class="session_login">', "\n";
 embed_login_head();
-print '<body class="session_login">' . "\n";
+print '<body class="session_login" ' . $tconfig{'inbody'} . '>' . "\n";
+embed_overlay_prebody();
 print '<div class="container session_login" data-dcontainer="1">' . "\n";
 
 if (defined($in{'failed'})) {
@@ -125,8 +127,10 @@ print '<p class="form-signin-paragraph">' . &Atext('login_message') . '<strong> 
 $tag = $gconfig{'noremember'} ? 'autocomplete="off"' : '';
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-print '<input type="text" class="form-control session_login" name="user" autocomplete="off" autocapitalize="none" placeholder="' .
-  &Atext('theme_xhred_login_user') . '" ' . $tag . ' autofocus>' . "\n";
+print
+  '<input type="text" class="form-control session_login" name="user" autocomplete="off" autocapitalize="none" placeholder="'
+  . &Atext('theme_xhred_login_user')
+  . '" ' . $tag . ' autofocus>' . "\n";
 print '</div>' . "\n";
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
