@@ -765,8 +765,8 @@ theme_xhred_upload_initial_info= ここにファイルをドラッグアンド�
 #19.09
 theme_xhred_global_empty= 空
 theme_xhred_global_click_here= ここをクリック
-theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $6 </em>の最新版および/または未発売版が適切に動作する必要があります。
-theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3 em>$4</em>が必要です。
+theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3と$5の最新版および/または未発売版が適切に動作する必要があります。
+theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3が必要です。
 theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
 theme_xhred_global_outdated= このバージョンは古くなっています
 
@@ -831,7 +831,7 @@ settings_perform_content_scrolling= プログレッシブ出力のコンテン�
 settings_contrast_mode= ハイコントラストモードを有効にする
 settings_side_slider_enabled_description= この機能を使用するには、<em>システムステータス</em>モジュールを有効にする必要があります。
 theme_xhred_global_firewall= ファイアーウォール
-theme_xhred_settings_show_webmin_tab= サーバー所有者のナビゲーションメニューにWebminスイッチを表示する
+theme_xhred_settings_show_webmin_tab= ナビゲーションメニューにWebminスイッチを表示しますか？
 
 
 #19.14
