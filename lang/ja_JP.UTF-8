@@ -831,7 +831,7 @@ settings_perform_content_scrolling= プログレッシブ出力のコンテン�
 settings_contrast_mode= ハイコントラストモードを有効にする
 settings_side_slider_enabled_description= この機能を使用するには、<em>システムステータス</em>モジュールを有効にする必要があります。
 theme_xhred_global_firewall= ファイアーウォール
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
+theme_xhred_settings_show_webmin_tab= ナビゲーションメニューにWebminスイッチを表示しますか？
 
 
 #19.14
