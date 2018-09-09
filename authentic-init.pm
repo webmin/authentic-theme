@@ -471,13 +471,13 @@ sub init_vars
                        settings(get_tuconfig_file(),                               'settings_'));
     our (%text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m, $t_var_product_m);
 
-    our %Atext = (&load_language($current_theme), %Atext);
+    our %Atext = (load_language($current_theme), %Atext);
 
     our $t_uri__i = get_env('http_x_pjax_url');
 
     if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
-        our %Atext = (&load_language('virtual-server'), %Atext);
-        our %Atext = (&load_language('server-manager'), %Atext);
+        %Atext = (load_language('virtual-server'), %Atext);
+        %Atext = (load_language('server-manager'), %Atext);
     }
 
     if ($in !~ /xhr-/) {
@@ -672,7 +672,7 @@ sub get_button_style
     my ($mod, $label) = @_;
 
     my %_lang = reverse load_language($mod);
-    my $entry = $_lang{ &quote_escape($label) };
+    my $entry = $_lang{ quote_escape($label) };
 
     my $class = "default";
     my $icon  = '<i class="fa fa-fw fa-%icon"></i>';

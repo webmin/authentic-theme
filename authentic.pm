@@ -786,16 +786,15 @@ sub theme_ui_alert_box
 {
     my ($msg, $class, $style, $new_line) = @_;
     my ($rv, $type, $tmsg, $fa);
-    my %text = (&load_language($current_theme), %text);
 
     if ($class eq "success") {
-        $type = 'alert-success', $tmsg = ($text{'theme_global_success'} . '!'), $fa = 'fa-check-circle';
+        $type = 'alert-success', $tmsg = ($Atext{'theme_global_success'} . '!'), $fa = 'fa-check-circle';
     } elsif ($class eq "info") {
-        $type = 'alert-info', $tmsg = ($text{'theme_global_info'} . '!'), $fa = 'fa-info-circle';
+        $type = 'alert-info', $tmsg = ($Atext{'theme_global_info'} . '!'), $fa = 'fa-info-circle';
     } elsif ($class eq "warn") {
-        $type = 'alert-warning', $tmsg = ($text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
+        $type = 'alert-warning', $tmsg = ($Atext{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
-        $type = 'alert-danger', $tmsg = ($text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+        $type = 'alert-danger', $tmsg = ($Atext{'theme_global_error'} . '!'), $fa = 'fa-bolt';
     }
 
     $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";

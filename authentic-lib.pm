@@ -3356,11 +3356,8 @@ sub get_button_tooltip
 
 sub get_theme_language
 {
-
-    my %text = &load_language($current_theme);
-
     my %s;
-    foreach my $key (keys %text) {
+    foreach my $key (keys %Atext) {
         if ($key !~ /_xhred_/ &&
             $key !~ /body_/  &&
             $key !~ /right_/ &&
