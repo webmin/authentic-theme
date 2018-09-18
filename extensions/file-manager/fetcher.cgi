@@ -6,9 +6,11 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+
+our (%in);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -21,7 +23,7 @@ if (is_root() && supports_users()) {
 
         if ($in{'list_users'}) {
             my %users;
-            while (($name, $passwd, $uid, $gid, $quota, $comment, $gcos, $dir, $shell) = getpwent) {
+            while (my ($name, $passwd, $uid, $gid, $quota, $comment, $gcos, $dir, $shell) = getpwent) {
                 if ($dir =~ /\Q$user_home_base\E/) {
                     $users{$name} = $uid . ":" . $gid . ":" . $dir;
                 }

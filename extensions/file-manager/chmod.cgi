@@ -6,9 +6,11 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+
+our (%in, %text, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -75,7 +77,7 @@ if ($in{'applyto'} eq '4') {
 
 # Selected directories and subdirectories
 if ($in{'applyto'} eq '5') {
-    foreach $name (split(/\0/, $in{'name'})) {
+    foreach my $name (split(/\0/, $in{'name'})) {
         if (-d "$cwd/$name") {
             if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
                 $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");

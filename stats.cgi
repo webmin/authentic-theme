@@ -6,14 +6,15 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
-use warnings;
-our ($current_theme);
 
-BEGIN {push(@INC, "..");}
-use WebminCore;
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 use JSON qw( );
+
+use WebminCore;
+BEGIN {push(@INC, "..");}
+
+our ($current_theme);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
 
@@ -89,7 +90,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             my @watched = ('mem', 'virt', 'disk');
             foreach my $key (@watched) {
                 if ($data{$key} && $data{$key}[1]) {
-                    $data{$key}[1] = reverse_text($data{$key}[1], "/");
+                    $data{$key}[1] = reverse_string($data{$key}[1], "/");
                 }
             }
         }

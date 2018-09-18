@@ -344,8 +344,8 @@ theme_xhred_filemanager_context_upload=Ngarko në direktorinë aktuale
 theme_xhred_filemanager_context_download=Shkarko nga URL-ja e largët
 
 #17.53
-theme_settings_virtualmin=Serverat virtuale Virtualmin
-theme_settings_cloudmin=Cloudmin Sistemet e Menaxhuara
+theme_config_virtualmin=Serverat virtuale Virtualmin
+theme_config_cloudmin=Cloudmin Sistemet e Menaxhuara
 settings_right_thirdparties_options_title=Mundësitë e moduleve të palëve të treta
 theme_xhred_filemanager_context_calculate_size=Llogaritni madhësinë në spacebar
 theme_xhred_filemanager_context_bookmarks=Bookmarks

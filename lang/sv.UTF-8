@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=Ladda upp till nuvarande katalog
 theme_xhred_filemanager_context_download=Ladda ner från fjärr-URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Servers
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Servers
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Tredjeparts modulalternativ
 theme_xhred_filemanager_context_calculate_size=Beräkna storleken med mellanslagstangenten
 theme_xhred_filemanager_context_bookmarks=Bokmärken

@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=上传到当前目录
 theme_xhred_filemanager_context_download=远程 URL 下载
 
 #17.53
-theme_settings_virtualmin=Virtualmin 虚拟服务器
-theme_settings_cloudmin=Cloudmin 管理系统
+theme_config_virtualmin=Virtualmin 虚拟服务器
+theme_config_cloudmin=Cloudmin 管理系统
 settings_right_thirdparties_options_title=第三方模块选项
 theme_xhred_filemanager_context_calculate_size=按下空格键计算大小
 theme_xhred_filemanager_context_bookmarks=书签

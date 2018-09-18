@@ -5,11 +5,15 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
+
+our (%in, $in, $current_theme, $config_directory, %theme_text);
+
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
-!foreign_available("webmin") && error($Atext{'theme_error_access_not_root'});
+!foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 
 theme_config_dir_available();
 

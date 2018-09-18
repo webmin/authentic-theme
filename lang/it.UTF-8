@@ -333,8 +333,8 @@ theme_xhred_filemanager_context_upload=Upload to current directory
 theme_xhred_filemanager_context_download=Download from remote URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Servers
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Servers
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Third-parties modules options
 theme_xhred_filemanager_context_calculate_size=Calculate size on spacebar
 theme_xhred_filemanager_context_bookmarks=Bookmarks

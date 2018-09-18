@@ -333,8 +333,8 @@ theme_xhred_filemanager_context_upload=Puja a la carpeta actual
 theme_xhred_filemanager_context_download=Descarrega des d'una ubicació remota
 
 #17.53
-theme_settings_virtualmin=Servidors virtuals de Virtualmin
-theme_settings_cloudmin=Sistemes gestionats per Cloudmin
+theme_config_virtualmin=Servidors virtuals de Virtualmin
+theme_config_cloudmin=Sistemes gestionats per Cloudmin
 settings_right_thirdparties_options_title=Opcions dels mòduls de tercers
 theme_xhred_filemanager_context_calculate_size=Calcula la mida
 theme_xhred_filemanager_context_bookmarks=Marcadors

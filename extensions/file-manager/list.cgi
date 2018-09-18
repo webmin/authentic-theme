@@ -6,9 +6,11 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+
+our (%text, $cwd);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -18,7 +20,7 @@ unless (opendir(DIR, $cwd)) {
 }
 
 # Push file names with full paths to array, filtering out "." and ".."
-@list = map {&simplify_path("$cwd/$_")} grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
+our @list = map {&simplify_path("$cwd/$_")} grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
 closedir(DIR);
 
 print_content();

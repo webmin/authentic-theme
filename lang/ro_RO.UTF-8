@@ -333,8 +333,8 @@ theme_xhred_filemanager_context_upload=Încarcă în directorul curent
 theme_xhred_filemanager_context_download=Descarcă din URL de la distanţă
 
 #17.53
-theme_settings_virtualmin=Virtualmin Servere Virtuale
-theme_settings_cloudmin=Cloudmin Sisteme Administrate
+theme_config_virtualmin=Virtualmin Servere Virtuale
+theme_config_cloudmin=Cloudmin Sisteme Administrate
 settings_right_thirdparties_options_title=Opţiunile modulelor terţe
 theme_xhred_filemanager_context_calculate_size=Calculează dimensiunea la spacebar
 theme_xhred_filemanager_context_bookmarks=Marcaje

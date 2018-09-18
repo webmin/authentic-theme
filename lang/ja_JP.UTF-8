@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=現在のディレクトリにアップ�
 theme_xhred_filemanager_context_download=リモート URL からダウンロード
 
 #17.53
-theme_settings_virtualmin=で仮想サーバー
-theme_settings_cloudmin=Cloudmin 管理システム
+theme_config_virtualmin=で仮想サーバー
+theme_config_cloudmin=Cloudmin 管理システム
 settings_right_thirdparties_options_title=サードパーティモジュールのオプション
 theme_xhred_filemanager_context_calculate_size=スペースバーのサイズを計算する
 theme_xhred_filemanager_context_bookmarks=ブックマーク

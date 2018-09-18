@@ -3,12 +3,23 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
+
+our (@theme_bundle_css,            @theme_bundle_js,          %module_text_reversed, %theme_config,
+     %theme_text,                  %theme_temp_data,          $get_user_level,       $global_prefix,
+     $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir, $has_usermin_version,
+     $has_usermin,                 $has_virtualmin,           $theme_module_query_id,           $t_uri___i,
+     $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,  $t_var_product_m,
+     $t_var_switch_m,              $xnav,                     %config,               %gaccess,
+     %gconfig,                     %in,                       %tconfig,              %text,
+     $base_remote_user,            $config_directory,         $current_lang,         $current_theme,
+     $remote_user,                 $root_directory,           $theme_root_directory, $title);
+
 do(dirname(__FILE__) . "/authentic-funcs.pm");
 
 init_vars();
-init_funcs();
 
 sub settings_filter
 {
@@ -116,7 +127,7 @@ sub embed_header
     if ($args[3] eq '1') {
 
         if ($args[2]) {
-            foreach my $css (@css) {
+            foreach my $css (@theme_bundle_css) {
                 print ' <link href="' . $gconfig{'webprefix'} .
                   '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
@@ -132,7 +143,7 @@ sub embed_header
         embed_settings();
 
         if ($args[2]) {
-            foreach my $js (@js) {
+            foreach my $js (@theme_bundle_js) {
 
                 if (is_st_p() &&
                     $js eq 'timeplot')
@@ -149,7 +160,7 @@ sub embed_header
     } else {
 
         if ($args[2]) {
-            foreach my $css (@css) {
+            foreach my $css (@theme_bundle_css) {
                 print ' <link href="' . $gconfig{'webprefix'} .
                   '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
@@ -160,11 +171,11 @@ sub embed_header
 
         embed_css_night_rider();
 
-        if ((length $__settings{'settings_navigation_color'} && $__settings{'settings_navigation_color'} ne 'blue') ||
+        if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
         {
             print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
-              (theme_night_mode() ? 'gunmetal' : lc($__settings{'settings_navigation_color'})) . '.' .
+              (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
               ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
@@ -173,7 +184,7 @@ sub embed_header
         embed_settings();
 
         if ($args[2]) {
-            foreach my $js (@js) {
+            foreach my $js (@theme_bundle_js) {
 
                 if (is_st_p() &&
                     $js eq 'timeplot')
@@ -269,7 +280,7 @@ sub embed_settings
 
 sub embed_styles
 {
-    if ($__settings{'settings_contrast_mode'} eq 'true') {
+    if ($theme_config{'settings_contrast_mode'} eq 'true') {
         print ' <link href="' .
           $gconfig{'webprefix'} . '/unauthenticated/css/high-contrast.' . (theme_debug_mode() ? 'src' : 'min') . '.css?' .
           time() . '" rel="stylesheet" data-high-contrast>' . "\n";
@@ -294,12 +305,12 @@ sub embed_pm_scripts
 sub embed_css_fonts
 {
 
-    if (!$__settings{'settings_font_family'} || $__settings{'settings_font_family'} eq 'undefined') {
+    if (!$theme_config{'settings_font_family'} || $theme_config{'settings_font_family'} eq 'undefined') {
         print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    } elsif ($__settings{'settings_font_family'} != '1') {
+    } elsif ($theme_config{'settings_font_family'} != '1') {
         print ' <link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $__settings{'settings_font_family'} . '.' .
+          $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $theme_config{'settings_font_family'} . '.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     }
 }
@@ -403,8 +414,8 @@ sub embed_noscript
       </style>
         <div data-noscript>
           <div class="fa fa-3x fa-exclamation-triangle margined-top-20 text-danger"></div>
-          <h2>$Atext{'body_no_javascript_title'}</h2>
-          <p>$Atext{'body_no_javascript_message'}</p>
+          <h2>$theme_text{'body_no_javascript_title'}</h2>
+          <p>$theme_text{'body_no_javascript_message'}</p>
         </div>
       </noscript>
 EOF
@@ -447,52 +458,61 @@ sub embed_footer
 
 sub is_st_p
 {
-    return ($t_uri__i !~ /\/virtual-server\/pro\/history.cgi/ &&
-            $t_uri__i !~ /\/server-manager\/bwgraph.cgi/ &&
-            $t_uri__i !~ /\/server-manager\/history.cgi/ &&
-            $t_uri__i !~ /\/server-manager\/one_history.cgi/) ?
+    return ($theme_requested_url !~ /\/virtual-server\/pro\/history.cgi/ &&
+            $theme_requested_url !~ /\/server-manager\/bwgraph.cgi/ &&
+            $theme_requested_url !~ /\/server-manager\/history.cgi/ &&
+            $theme_requested_url !~ /\/server-manager\/one_history.cgi/) ?
       1 :
       0;
 }
 
-sub Atext
+sub theme_text
 {
 
-    my $rv = $Atext{ $_[0] };
+    my $rv = $theme_text{ $_[0] };
     $rv =~ s/\$(\d+)/$1 < @_ ? $_[$1] : '$'.$1/ge;
     return $rv;
 }
 
 sub init_vars
 {
-
-    our %__settings = (settings_default(),
-                       settings($config_directory . "/$current_theme/settings.js", 'settings_'),
-                       settings(get_tuconfig_file(),                               'settings_'));
-    our (%text, %in, %gconfig, $current_theme, $root_directory, $theme_root_directory, $t_var_switch_m, $t_var_product_m);
-
-    our %Atext = (load_language($current_theme), %Atext);
-
-    our $t_uri__i = get_env('http_x_pjax_url');
-
-    if ($t_uri__i =~ /sysinfo.cgi/ || $in =~ /xhr-info/) {
-        %Atext = (load_language('virtual-server'), %Atext);
-        %Atext = (load_language('server-manager'), %Atext);
+    if (theme_debug_mode()) {
+        do "$root_directory/$current_theme/.debug.pm";
     }
 
-    if ($in !~ /xhr-/) {
-        if ($__settings{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
-            $t_uri__i = 'virtual-server';
-        } elsif ($__settings{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
-            $t_uri__i = 'server-manager';
+    our %theme_text = (load_language($current_theme), %text);
+
+    our %theme_config = (settings_default(),
+                         settings($config_directory . "/$current_theme/settings.js", 'settings_'),
+                         settings(get_tuconfig_file(),                               'settings_'));
+
+    our $theme_requested_url         = (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
+    our $theme_requested_from_module = get_env('http_x_requested_from');
+    our $theme_requested_from_tab    = get_env('http_x_requested_from_tab');
+
+    if ($theme_requested_url =~ /sysinfo.cgi/ || (grep {/xhr-info/} keys %in)) {
+        if (foreign_available("virtual-server")) {
+            %theme_text = (load_language('virtual-server'), %theme_text);
+        }
+        if (foreign_available("server-manager")) {
+            %theme_text = (load_language('server-manager'), %theme_text);
+        }
+    }
+
+    if (!(grep {/xhr-/} keys %in)) {
+        if ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
+            $theme_requested_url = 'virtual-server';
+        } elsif ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
+            $theme_requested_url = 'server-manager';
         }
     }
 
     our ($has_virtualmin, $get_user_level, $has_cloudmin) = get_user_level();
+    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_data();
 
     our $t_uri__x = get_env('script_name');
     our $t_uri___i;
-    our $t_uri____i;
+    our $theme_module_query_id;
 
     my ($server_link, $server_prefix) = parse_servers_path();
     our $global_prefix = ($server_prefix ? $server_prefix : $gconfig{'webprefix'});
@@ -504,15 +524,7 @@ sub init_vars
     our %cookies = get_cookies();
 
     our ($t_var_switch_m, $t_var_product_m) = get_swith_mode();
-}
 
-sub init_funcs
-{
-
-    # Embed debug functions
-    if (theme_debug_mode()) {
-        do "$root_directory/$current_theme/.debug.pm";
-    }
 }
 
 sub licenses
@@ -537,35 +549,41 @@ sub licenses
     }
 }
 
-sub usermin_available
+sub get_usermin_data
 {
-    my ($_module) = @_;
-    $_module = ($_module ? ($_module eq '__version' ? $_module : ('/' . $_module)) : undef);
-    $__usermin_root = $root_directory;
-    $__usermin_root =~ s/webmin/usermin/;
-    $__usermin_config = $config_directory;
-    $__usermin_config =~ s/webmin/usermin/;
+    my ($module) = @_;
+    my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
 
-    if (!-d $__usermin_config . '/' . $current_theme) {
-        mkdir($__usermin_config . '/' . $current_theme, 0755);
-    }
+    $has_usermin_root_dir = $root_directory;
+    $has_usermin_conf_dir = $config_directory;
+    $has_usermin_root_dir =~ s/web/user/;
+    $has_usermin_conf_dir =~ s/web/user/;
 
-    if ((-r $__usermin_root . $_module || $_module eq '__version') &&
-        -r $__usermin_root . '/web-lib-funcs.pl')
-    {
-        my $usermin_version = read_file_lines($__usermin_config . '/version', 1)->[0];
-        return ($_module eq '__version' ? $usermin_version : 1);
+    if ($module) {
+        if (-r "$has_usermin_root_dir/$module") {
+            return 1;
+        } else {
+            return 0;
+        }
     } else {
-        return 0;
-    }
+        if (!-d $has_usermin_conf_dir . '/' . $current_theme) {
+            mkdir($has_usermin_conf_dir . '/' . $current_theme, 0755);
+        }
 
+        if (-r $has_usermin_root_dir . '/web-lib-funcs.pl') {
+            $has_usermin = 1;
+        }
+
+        $has_usermin_version = read_file_lines($has_usermin_conf_dir . '/version', 1)->[0];
+        return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
+    }
 }
 
 sub get_webmin_switch_mode
 {
     my $user = $remote_user;
     $user =~ s/-//g;
-    return ($__settings{"settings_show_webmin_tab_$user"} ne "false" ? 1 : 0);
+    return ($theme_config{"settings_show_webmin_tab_$user"} ne "false" ? 1 : 0);
 }
 
 sub dashboard_switch
@@ -608,18 +626,20 @@ sub get_current_user_language
 
 sub get_filters
 {
-    return '-webkit-filter: grayscale(' . $__settings{'settings_grayscale_level_navigation'} .
-      ') ' . 'sepia(' . $__settings{'settings_sepia_level_navigation'} .
-      ')' . ' saturate(' . $__settings{'settings_saturate_level_navigation'} . ') hue-rotate(' .
-      $__settings{'settings_hue_level_navigation'} . 'deg)' . ' invert(' . $__settings{'settings_invert_level_navigation'} .
-      ') brightness(' . $__settings{'settings_brightness_level_navigation'} .
-      ') contrast(' . $__settings{'settings_contrast_level_navigation'} .
-      ')' . '; filter: grayscale(' . $__settings{'settings_grayscale_level_navigation'} .
-      ') ' . 'sepia(' . $__settings{'settings_sepia_level_navigation'} .
-      ')' . ' saturate(' . $__settings{'settings_saturate_level_navigation'} . ') hue-rotate(' .
-      $__settings{'settings_hue_level_navigation'} . 'deg)' . ' invert(' . $__settings{'settings_invert_level_navigation'} .
-      ') brightness(' . $__settings{'settings_brightness_level_navigation'} .
-      ') contrast(' . $__settings{'settings_contrast_level_navigation'} . ')' . ';';
+    return '-webkit-filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
+      ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
+      ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
+      ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
+      'deg)' . ' invert(' . $theme_config{'settings_invert_level_navigation'} .
+      ') brightness(' . $theme_config{'settings_brightness_level_navigation'} .
+      ') contrast(' . $theme_config{'settings_contrast_level_navigation'} .
+      ')' . '; filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
+      ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
+      ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
+      ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
+      'deg)' . ' invert(' . $theme_config{'settings_invert_level_navigation'} .
+      ') brightness(' . $theme_config{'settings_brightness_level_navigation'} .
+      ') contrast(' . $theme_config{'settings_contrast_level_navigation'} . ')' . ';';
 }
 
 sub get_user_level
@@ -634,6 +654,7 @@ sub get_user_level
         &foreign_require("virtual-server", "virtual-server-lib.pl");
     }
     if ($b) {
+        no warnings 'once';
         $c = $server_manager::access{'owner'} ? 4 : 0;
     } elsif ($a) {
         $c =
@@ -669,10 +690,10 @@ sub get_initial_wizard
 
 sub get_button_style
 {
-    my ($mod, $label) = @_;
+    my ($label) = @_;
 
-    my %_lang = reverse load_language($mod);
-    my $entry = $_lang{ quote_escape($label) };
+    my %text  = module_text_reversed();
+    my $entry = $text{ quote_escape($label) };
 
     my $class = "default";
     my $icon  = '<i class="fa fa-fw fa-%icon"></i>';
@@ -979,7 +1000,7 @@ sub get_button_style
 
 sub theme_night_mode
 {
-    if ($__settings{'settings_force_night_mode'} eq '1') {
+    if ($theme_config{'settings_force_night_mode'} eq '1') {
         return 1;
     } else {
         return 0;
@@ -1039,25 +1060,25 @@ sub header_html_data
       '" data-title-initial="' . $args[0] . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
-      '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
-      ' data-high-contrast="' . ($__settings{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
-      '" data-navigation-collapsed="' . ($__settings{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' . ($__settings{'settings_side_slider_fixed'} eq "true" && $get_user_level eq '0' ? '1' : '0') .
-      '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' . foreign_available("shell") .
-      '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . usermin_available() .
+      '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') . ' data-high-contrast="' .
+      ($theme_config{'settings_contrast_mode'} eq 'true'              ? '1' : '0') . '" data-navigation-collapsed="' .
+      ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') . '" data-slider-fixed="' .
+      ($theme_config{'settings_side_slider_fixed'} eq "true" && $get_user_level eq '0' ? '1' : '0') .
+      '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' .
+      foreign_available("shell") . '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . $has_usermin .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
-      ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $__settings{'settings_navigation_color'}) . '"') .
-      '' . ($skip ? '' : ' data-default-theme="' . $__settings{'settings_navigation_color'} . '"') .
+      ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
+      . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
       ' data-theme-version="' . theme_version(0) . '" data-theme-mversion="' .
       theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() .
       '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
       '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
-      '" data-redirect="' . get_tmp_var('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
+      '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
       '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
       ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : get_env('request_uri')) .
-      '" data-progress="' . ($__settings{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
+      '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
 
@@ -1138,7 +1159,7 @@ sub get_env
     return $ENV{ uc($key) };
 }
 
-sub set_tmp_var
+sub set_theme_temp_data
 {
     my ($key, $value) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
@@ -1155,7 +1176,7 @@ sub set_tmp_var
     write_file(tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
 }
 
-sub get_tmp_var
+sub get_theme_temp_data
 {
     my ($key, $keep) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
@@ -1164,12 +1185,12 @@ sub get_tmp_var
 
     my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
-    read_file($tmp_file, \%tmp_var);
+    read_file($tmp_file, \%theme_temp_data);
     if (!$keep) {
         unlink_file($tmp_file);
     }
 
-    return $tmp_var{$key};
+    return $theme_temp_data{$key};
 }
 
 sub parse_servers_path

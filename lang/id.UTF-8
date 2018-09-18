@@ -336,8 +336,8 @@ theme_xhred_filemanager_context_upload=Unggah ke direktori saat ini
 theme_xhred_filemanager_context_download=Unduh dari URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Server
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Server
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Pilihan modul pihak ketiga
 theme_xhred_filemanager_context_calculate_size=Hitung ukuran spasi
 theme_xhred_filemanager_context_bookmarks=Bookmarks

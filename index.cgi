@@ -5,7 +5,9 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
+
 require(dirname(__FILE__) . "/authentic-lib.pm");
 authentic();

@@ -324,8 +324,8 @@ theme_xhred_filemanager_context_upload=In aktuelles Verzeichnis hochladen
 theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 
 #17.53
-theme_settings_virtualmin=Virtualmin virtuelle Server
-theme_settings_cloudmin=Cloudmin gemanagte System
+theme_config_virtualmin=Virtualmin virtuelle Server
+theme_config_cloudmin=Cloudmin gemanagte System
 settings_right_thirdparties_options_title=Optionen f&uuml;r Drittanbieter Module
 theme_xhred_filemanager_context_calculate_size=Freien Platz berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
