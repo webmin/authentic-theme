@@ -42,11 +42,6 @@ sub get_libs
 
     switch_to_user($in{'username'});
 
-    if (!$in{'error'}) {
-        set_response();
-        set_response_count();
-    }
-
     $checked_path = $path;
     if (join(" , ", @allowed_paths) ne '/') {
         $checked_path =~ s/$in{'cwd'}\//\//ig;
