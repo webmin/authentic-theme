@@ -107,8 +107,8 @@ settings_right_theme_extensions_title=Complements
 settings_right_file_edit=Edita l'arxiu del complement:
 settings_right_extensions_title=El disseny obert del tema et permet manipular fàcilment parts específiques de la interfície.
 
-settings_right_theme_logos=Logotip
-settings_right_theme_logos_title=Logotip
+theme_xhred_settings_right_theme_logos=Logotip
+theme_xhred_settings_right_theme_logos_title=Logotip
 settings_right_logos_title=Els logotips, tant pels usuaris autenticats com no, es poden configurar aquí. Es recomana utilitzar una imatge de 180x90 píxels utilitzant el format PNG si es vol utilitzar transparència.
 settings_right_logo_authenticated_users=Logotip per a usuaris autenticats
 settings_right_logo_unauthenticated_users=Logotip per usuaris no autenticats
@@ -943,3 +943,9 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control

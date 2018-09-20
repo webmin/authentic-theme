@@ -811,8 +811,10 @@ sub print_left_menu
                                          $theme_text{'settings_right_theme_left_configuration_title'}, 1);
                     &print_category_link($gconfig{'webprefix'} . "/settings-editor_read.cgi",
                                          $theme_text{'settings_right_theme_left_extensions_title'}, 1);
-                    &print_category_link($gconfig{'webprefix'} . "/settings-upload.cgi",
+                    &print_category_link($gconfig{'webprefix'} . "/settings-logos.cgi",
                                          $theme_text{'settings_right_theme_left_logo_title'}, 1);
+                    &print_category_link($gconfig{'webprefix'} . "/settings-backgrounds.cgi",
+                                         $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, 1);
 
                     $__custom_print++;
 
@@ -1788,6 +1790,7 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
 
     embed_css_night_rider();
     embed_css_fonts();
+    embed_background();
     embed_styles();
     embed_overlay_head();
     print '</head>', "\n";
@@ -2689,8 +2692,12 @@ sub theme_settings
           $theme_text{'settings_right_theme_extensions'} . '</a>
                                     <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="'
           . $gconfig{'webprefix'} .
-          '/settings-upload.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>' .
-          $theme_text{'settings_right_theme_logos'} . '</a>
+          '/settings-logos.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>' .
+          $theme_text{'theme_xhred_settings_right_theme_logos'} . '</a>
+                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="'
+          . $gconfig{'webprefix'} .
+          '/settings-backgrounds.cgi"><i class="fa fa-fw fa-image" style="margin-right:7px;"></i>' .
+          $theme_text{'theme_xhred_settings_right_theme_bgs'} . '</a>
                                 </div>
                             </td>
                         </tr>

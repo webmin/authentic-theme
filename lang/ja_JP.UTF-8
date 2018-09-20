@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=テーマの拡張機能
 settings_right_file_edit=拡張ファイルの編集:
 settings_right_extensions_title=テーマの豊富なデザインは、簡単にインターフェイスのターゲット部分に操作することができます。
 
-settings_right_theme_logos=テーマのロゴ
-settings_right_theme_logos_title=テーマのロゴ
+theme_xhred_settings_right_theme_logos=テーマのロゴ
+theme_xhred_settings_right_theme_logos_title=テーマのロゴ
 settings_right_logos_title= テーマのロゴは、認証されたユーザと未認証ユーザーの両方に対して簡単に設定できます。推奨ロゴサイズは <kbd>180x90</kbd> ピクセルで、サポートされている唯一の形式は <kbd>.png</kbd> で、アルファ透過性を提供します。
 settings_right_logo_authenticated_users=認証済みユーザーのロゴ
 settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
@@ -115,7 +115,7 @@ settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 settings_right_current_theme=現在のテーマ
 settings_right_title=このページでは、<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
 settings_right_theme_left_configuration_title= Authentic Theme の構成
-settings_right_theme_left_extensions_title=Authentic Theme 拡張エディタ
+settings_right_theme_left_extensions_title=Theme 拡張エディタ
 settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
 settings_right_theme_configurable_options_title= Authentic Theme のための設定可能なオプション
 
@@ -940,3 +940,9 @@ theme_xhred_mail_search_search_in= 検索する
 theme_xhred_mail_search_limit_results= 検索結果を制限する
 theme_xhred_mail_search_limit_results_yes= はい、検索のみ
 theme_xhred_mail_search_has_attach= 添付ファイルあり
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control

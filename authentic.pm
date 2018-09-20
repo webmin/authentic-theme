@@ -155,7 +155,8 @@ sub theme_footer
                      get_env('request_uri') =~ /\/webmin_search.cgi\?/      ||
                      get_env('request_uri') =~ /\/settings-user.cgi/        ||
                      get_env('request_uri') =~ /\/settings-editor_read.cgi/ ||
-                     get_env('request_uri') =~ /\/settings-upload.cgi/
+                     get_env('request_uri') =~ /\/settings-logos.cgi/       ||
+                     get_env('request_uri') =~ /\/settings-backgrounds.cgi/
                   ) ? '1' : '0'
                  ),
                  $_[0]);

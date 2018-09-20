@@ -73,8 +73,10 @@ if (
                                         $theme_text{'settings_right_theme_left_configuration_title'}, 1);
                     print_category_link($gconfig{'webprefix'} . "/settings-editor_read.cgi",
                                         $theme_text{'settings_right_theme_left_extensions_title'}, 1);
-                    print_category_link($gconfig{'webprefix'} . "/settings-upload.cgi",
+                    print_category_link($gconfig{'webprefix'} . "/settings-logos.cgi",
                                         $theme_text{'settings_right_theme_left_logo_title'}, 1);
+                    print_category_link($gconfig{'webprefix'} . "/settings-backgrounds.cgi",
+                                        $theme_text{'settings_right_theme_left_background_title'}, 1);
                     $__custom_print++;
 
                 } elsif (!foreign_available("webmin") && $__custom_print eq '0') {

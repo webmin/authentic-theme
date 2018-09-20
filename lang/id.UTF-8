@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=Ekstensi tema
 settings_right_file_edit=Sunting berkas ekstensi:
 settings_right_extensions_title=Desain ekstensi tema, memungkinkan Anda untuk memanipulasi bagian tertentu pada antarmuka dengan mudah.
 
-settings_right_theme_logos=Logo tema
-settings_right_theme_logos_title=Logo tema
+theme_xhred_settings_right_theme_logos=Logo tema
+theme_xhred_settings_right_theme_logos_title=Logo tema
 settings_right_logos_title=Logo tema dapat dengan mudah diatur di sini, untuk pengguna terotentikasi dan tidak terotentikasi. Ukuran logo direkomendasikan adalah <kbd>180x90</kbd> dan hanya format <kbd>.png</kbd> yang didukung, untuk menyediakan transparansi alpha.
 settings_right_logo_authenticated_users=Logo untuk pengguna terotentikasi
 settings_right_logo_unauthenticated_users=Logo untuk pengguna tidak terotentikasi
@@ -945,3 +945,9 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control

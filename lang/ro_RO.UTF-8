@@ -107,8 +107,8 @@ settings_right_theme_extensions_title=Extensiile Temei
 settings_right_file_edit=Editează fișierele temei:
 settings_right_extensions_title=Proiectarea extinsă a Temei, vă permite manipularea cu ușurință a părților vizate din interfață.
 
-settings_right_theme_logos=Logo-urile temei
-settings_right_theme_logos_title=Logo-urile Temei
+theme_xhred_settings_right_theme_logos=Logo-urile temei
+theme_xhred_settings_right_theme_logos_title=Logo-urile Temei
 settings_right_logos_title=Logo-urile temei pot fi ușor configurate aici, pentru ambele moduri, atât pentru utilizatorii autentificați cât și neautentificați. Dimensiunea recomandată a logo-ului este <kbd>180x90</kbd> pixeli și singurul format acceptat este <kbd>.png</kbd>, pentru a asigura transpatența în mod ALPHA.
 settings_right_logo_authenticated_users=Logo pentru utilizatori autentificați
 settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentificați
@@ -941,3 +941,9 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control

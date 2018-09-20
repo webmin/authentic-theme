@@ -107,17 +107,17 @@ settings_right_theme_extensions_title=Thema extensies
 settings_right_file_edit=Extensie bestand wijzigen:
 settings_right_extensions_title=Thema uitbreidbaar design, stelt je in staat om delen van de interface te wijzigen.
 
-settings_right_theme_logos=Thema logo's
-settings_right_theme_logos_title=Thema Logo's
+theme_xhred_settings_right_theme_logos=Thema logo's
+theme_xhred_settings_right_theme_logos_title=Thema Logo's
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
 settings_right_logo_authenticated_users=Logo voor geauthenticeerde gebruikers
 settings_right_logo_unauthenticated_users=Logo voor niet geauthenticeerde gebruikers
 
 settings_right_current_theme=Huidige thema
 settings_right_title=Op deze pagina kunnen configuratie-opties gewijzigd worden voor <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. De opties worden opgeslagen bij een update van het thema.
-settings_right_theme_left_configuration_title=Authentic Theme configuratie
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
+settings_right_theme_left_configuration_title=Theme configuratie
+settings_right_theme_left_extensions_title=Theme Extensions Editor
+settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Configureerbare opties voor Authentic Theme
 
 
@@ -943,3 +943,9 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control

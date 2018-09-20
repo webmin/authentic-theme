@@ -7,15 +7,15 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,            @theme_bundle_js,          %module_text_reversed, %theme_config,
-     %theme_text,                  %theme_temp_data,          $get_user_level,       $global_prefix,
-     $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir, $has_usermin_version,
-     $has_usermin,                 $has_virtualmin,           $theme_module_query_id,           $t_uri___i,
-     $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,  $t_var_product_m,
-     $t_var_switch_m,              $xnav,                     %config,               %gaccess,
-     %gconfig,                     %in,                       %tconfig,              %text,
-     $base_remote_user,            $config_directory,         $current_lang,         $current_theme,
-     $remote_user,                 $root_directory,           $theme_root_directory, $title);
+our (@theme_bundle_css,            @theme_bundle_js,          %module_text_reversed,  %theme_config,
+     %theme_text,                  %theme_temp_data,          $get_user_level,        $global_prefix,
+     $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,  $has_usermin_version,
+     $has_usermin,                 $has_virtualmin,           $theme_module_query_id, $t_uri___i,
+     $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,   $t_var_product_m,
+     $t_var_switch_m,              $xnav,                     %config,                %gaccess,
+     %gconfig,                     %in,                       %tconfig,               %text,
+     $base_remote_user,            $config_directory,         $current_lang,          $current_theme,
+     $remote_user,                 $root_directory,           $theme_root_directory,  $title);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
 
@@ -139,6 +139,7 @@ sub embed_header
 
         embed_css_night_rider();
 
+        embed_background();
         embed_styles();
         embed_settings();
 
@@ -180,6 +181,7 @@ sub embed_header
 
         }
 
+        embed_background();
         embed_styles();
         embed_settings();
 
@@ -292,6 +294,38 @@ sub embed_styles
           trim(encode_base64(read_file_contents($css))) . '" rel="stylesheet">' . "\n";
     }
 
+}
+
+sub embed_background
+{
+    my $background_type;
+
+    ((get_env('script_name') eq '/session_login.cgi' || get_env('script_name') eq '/pam_login.cgi') ?
+       ($background_type = 'content') :
+       ($background_type = 'aside'));
+
+    my $lnk = $config_directory . "/$current_theme/background_" . $background_type . ".png";
+    if (-r $lnk) {
+        my $background_base64 = encode_base64(read_file_contents($lnk));
+        my $background_css;
+        if ($background_type eq 'content') {
+            $background_css = <<EOF;
+              <style>
+              body.session_login {
+                background: url(data:image/png;base64,$background_base64) no-repeat center center fixed;
+                background-size: cover;
+              }
+
+              html.session_login .container:not(.form-signin-banner) {
+                background-color: transparent !important;
+              }
+              </style>
+EOF
+            $background_css =~ tr/\r\n//d;
+            $background_css =~ s/\s+/ /g;
+            print $background_css, "\n";
+        }
+    }
 }
 
 sub embed_pm_scripts

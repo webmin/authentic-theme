@@ -15,15 +15,13 @@ require(dirname(__FILE__) . "/authentic-lib.pm");
 
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 
-&ui_print_header($in{'file'}, $theme_text{'settings_right_theme_logos_title'}, undef, undef, undef, 1);
+&ui_print_header($in{'file'}, $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, undef, undef, undef, 1);
 
-my $lga = $config_directory . "/$current_theme/logo.png";
-my $lgg = $config_directory . "/$current_theme/logo_welcome.png";
+my $bg_content = $config_directory . "/$current_theme/background_content.png";
 
-print '' . &theme_text('settings_right_logos_title') . '
+print '' . $theme_text{'settings_right_bgs_title'} . '
             <p></p>';
-print &ui_form_start("settings-upload_save.cgi", "form-data");
-print &ui_hidden("path", $config_directory), "\n";
+print &ui_form_start("settings-backgrounds_save.cgi", "form-data");
 print '
 <div class="table-responsive">
     <table class="table table-striped table-condensed table-subtable">
@@ -36,33 +34,18 @@ print '
                         <tbody>
                             <tr class="atshover">
                                 <td class="col_label"><b>'
-  . $theme_text{'settings_right_logo_authenticated_users'} . '</b></td>
-                                <td class="col_value">'
-  . ui_yesno_radio("authenticated_logo", (-r $lga ? "1" : "0"), "1", "0") . '</td>
-                                <td class="col_value">
-                                    <button class="btn btn-default chooser_button file_chooser_button_preview'
-  . (!-r $lga && ' disabled') . '" type="button"' .
-  (-r $lga && ' data-image-lga data-image="data:image/png;base64,' . encode_base64(read_file_contents($lga)) . '"') . '>
-                                        <i class="fa fa-fw fa-eye text-muted"></i>
-                                    </button>
-                                    <input class="ui_upload'
-  . (!-r $lga && ' disabled') . '" type=file name="authenticated_logo_file" accept=".png" size="40" >
-
-                                </td>
-                            </tr>
-                            <tr class="atshover">
-                                <td class="col_label"><b>'
-  . $theme_text{'settings_right_logo_unauthenticated_users'} . '</b></td>
+  . $theme_text{'settings_right_bg_unauthenticated_users'} . '</b></td>
                                 <td class="col_value" >'
-  . ui_yesno_radio("unauthenticated_logo", (-r $lgg ? "1" : "0"), "1", "0") . '</td>
+  . ui_yesno_radio("unauthenticated_bg", (-r $bg_content ? "1" : "0"), "1", "0") . '</td>
                                 <td class="col_value">
                                     <button class="btn btn-default chooser_button file_chooser_button_preview'
-  . (!-r $lgg && ' disabled') . '" type="button"' .
-  (-r $lgg && ' data-image-lgg data-image="data:image/png;base64,' . encode_base64(read_file_contents($lgg)) . '"') . '>
+  . (!-r $bg_content && ' disabled') . '" type="button"' . (-r $bg_content &&
+        ' data-image-bg_content data-image="data:image/png;base64,' . encode_base64(read_file_contents($bg_content)) . '"') .
+  '>
                                         <i class="fa fa-fw fa-eye text-muted"></i>
                                     </button>
                                     <input class="ui_upload'
-  . (!-r $lgg && ' disabled') . '" type=file name="unauthenticated_logo_file" accept=".png" size="40">
+  . (!-r $bg_content && ' disabled') . '" type=file name="unauthenticated_bg_file" accept=".png" size="40">
                                 </td>
                             </tr>
                         </tbody>
@@ -80,13 +63,17 @@ print '
   '" type="submit" name="save" id="saved"><i class="fa fa-fw fa-check-square-o"></i> ' .
   $theme_text{'settings_right_saved'} . ' </button>
                 <button class="btn btn-success file-editor-save page_footer_ajax_submit'
-  . ($in{'saved'} eq 1 && ' hidden') .
-  '" type="submit" name="save" id="save"><i class="fa fa-fw fa-floppy-o"></i> ' . $theme_text{'theme_xhred_global_save'} . ' </button>
+  . ($in{'saved'} eq 1 && ' hidden') . '" type="submit" name="save" id="save"><i class="fa fa-fw fa-floppy-o"></i> ' .
+  $theme_text{'theme_xhred_global_save'} . ' </button>
             </td>
             <td align="right">
                 <a class="btn btn-default page_footer_ajax_submit" href="'
   . $gconfig{'webprefix'} .
-  '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o"> </i> ' . &theme_text('settings_right_theme_extensions') . '
+  '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o"> </i> ' . $theme_text{'settings_right_theme_extensions'} . '
+                </a>
+                <a class="btn btn-default page_footer_ajax_submit" href="'
+  . $gconfig{'webprefix'} . '/settings-logos.cgi"><i class="fa fa-fw fa-file-image-o"> </i> ' .
+  $theme_text{'theme_xhred_settings_right_theme_logos'} . '
                 </a>
             </td>
         </tr>
