@@ -8,6 +8,7 @@ use strict;
 use File::Basename;
 use lib (dirname(__FILE__) . "/lib");
 
+use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
 use Fcntl qw( :flock );
 use JSON qw( decode_json );
@@ -3025,6 +3026,19 @@ sub get_xhr_request
             } else {
                 print get_json_empty();
             }
+        } elsif ($in{'xhr-search-in-file'} eq '1') {
+            set_user_level();
+            my @files = split(/,/, $in{'xhr-search-in-file-files'});
+            my $match = trim($in{'xhr-search-in-file-string'});
+            my @match;
+            fdo {
+                my ($file, $line, $text) = @_;
+                if ($text =~ /\Q$match\E/i) {
+                    push(@match, ([$files[$file] => [html_escape(substr($text, 0, 120)), $line]]));
+                }
+            }
+            @files;
+            print get_json(\@match);
         }
 
         exit;
