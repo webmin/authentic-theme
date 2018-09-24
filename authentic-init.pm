@@ -298,6 +298,10 @@ sub embed_styles
 
 sub embed_background
 {
+    if ($ENV{'HTTP_X_REQUESTED_WITH'} eq "XMLHttpRequest") {
+        return;
+    }
+
     my $background_type;
 
     ((get_env('script_name') eq '/session_login.cgi' || get_env('script_name') eq '/pam_login.cgi') ?
