@@ -1223,6 +1223,22 @@ sub get_theme_temp_data
 
     my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
+    # Process multiple goto requests
+    if ($key eq 'goto') {
+        my (%theme_goto_temp);
+        my $tmp_dir = tempname_dir();
+        my @gotos;
+        opendir(my $dir, $tmp_dir) || die "Can't open temporary directory $tmp_dir: $!";
+        @gotos = grep {/^\.theme/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
+        closedir $dir;
+        foreach (@gotos) {
+            read_file("$tmp_dir/$_", \%theme_goto_temp);
+            my $url_hex = unpack("H*", $theme_goto_temp{'goto'});
+            $tmp_file =
+              tempname('.theme_' . $salt . '_' . $url_hex . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+        }
+    }
+
     read_file($tmp_file, \%theme_temp_data);
     if (!$keep) {
         unlink_file($tmp_file);
