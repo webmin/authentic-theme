@@ -1233,7 +1233,7 @@ sub get_theme_temp_data
         closedir $dir;
         foreach (@gotos) {
             read_file("$tmp_dir/$_", \%theme_goto_temp);
-            my $url_hex = unpack("H*", $theme_goto_temp{'goto'});
+            my $url_hex = substr(unpack("H*", $theme_goto_temp{'goto'}), -180);
             $tmp_file =
               tempname('.theme_' . $salt . '_' . $url_hex . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
         }
