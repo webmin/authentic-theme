@@ -192,9 +192,9 @@ sub message_avatar
     my ($sender, $blank) = @_;
     my $hash = $blank ? undef : md5_hex($sender);
 
-    return
-      '</td><td><span class="mail-list-avatar-container"><span class="mail-list-avatar"><img src="//www.gravatar.com/avatar/'
-      . $hash . '?d=' . ($blank ? "blank" : "mm") . '&s=30" alt></span></span></td>';
+    return '</td><td data-blank="' . ($blank ? '1' : '0') . '"><span class="mail-list-avatar-container"><span data-blank="' .
+      ($blank ? '1'     : '0') . '" class="mail-list-avatar"><img src="//www.gravatar.com/avatar/' . $hash . '?d=' .
+      ($blank ? "blank" : "mm") . '&s=30" alt></span></span></td>';
 }
 
 sub message_addressee
