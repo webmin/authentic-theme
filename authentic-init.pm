@@ -56,7 +56,7 @@ sub settings_default
 {
     my %c;
     $c{'settings_font_family'}                        = '0';
-    $c{'settings_navigation_color'}                   = 'blue';
+    $c{'settings_navigation_color'}                   = 'white';
     $c{'settings_background_color'}                   = 'gainsboro';
     $c{'settings_grayscale_level_navigation'}         = '0';
     $c{'settings_sepia_level_navigation'}             = '0';
@@ -172,7 +172,11 @@ sub embed_header
 
         embed_css_night_rider();
 
-        if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
+        if (
+            (length $theme_config{'settings_navigation_color'} &&
+             $theme_config{'settings_navigation_color'} ne 'blue' &&
+             $theme_config{'settings_navigation_color'} ne 'white'
+            ) ||
             theme_night_mode())
         {
             print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
