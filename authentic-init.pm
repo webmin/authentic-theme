@@ -1211,6 +1211,8 @@ sub set_theme_temp_data
     $key =~ tr/A-Za-z0-9//cd;
 
     $value =~ s/[?|&]$xnav//g;
+    $value =~ s/[?|&]randomized=[\d]+//g;
+    $value =~ s/.cgi&/.cgi?/g;
     $value =~ s/[^\p{L}\p{N},;:.%&#=_@\+\?\-\/]//g;
 
     $var{$key} = $value;
@@ -1248,7 +1250,12 @@ sub get_theme_temp_data
         unlink_file($tmp_file);
     }
 
-    return $theme_temp_data{$key};
+    my $data = $theme_temp_data{$key};
+    $data =~ s/[?|&]$xnav//g;
+    $data =~ s/[?|&]randomized=[\d]+//g;
+    $data =~ s/.cgi&/.cgi?/g;
+
+    return $data;
 }
 
 sub parse_servers_path
