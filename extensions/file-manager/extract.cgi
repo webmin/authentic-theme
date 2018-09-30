@@ -6,14 +6,16 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+
+our (%in, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 foreach my $name (split(/\0/, $in{'name'})) {
-    $archive_type = mimetype($cwd . '/' . $name);
+    my $archive_type = mimetype($cwd . '/' . $name);
     if ($archive_type =~ /x-bzip/) {
         &backquote_logged("tar xvjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
     } elsif ($archive_type =~ /x-tar/ ||

@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=Tematillägg
 settings_right_file_edit=Redigera tilläggsfil:
 settings_right_extensions_title=Theme extensive design, gör det lätt för dig att ändra på utvalda delar i gränssnittet.
 
-settings_right_theme_logos=Temalogotyper
-settings_right_theme_logos_title=Temalogotyper
+theme_xhred_settings_right_theme_logos=Temalogotyper
+theme_xhred_settings_right_theme_logos_title=Temalogotyper
 settings_right_logos_title=Temalogotyper sätter du enkelt här, för både, behöriga och obehöriga användare. Rekommenderas logotypstorlek är<kbd>180x90</kbd> pixlar och bildformatet måste vara <kbd>.png</kbd>, för att förse alfagenomskinlighet.
 settings_right_logo_authenticated_users=Logotyper för autentiserade användare
 settings_right_logo_unauthenticated_users=Logotyper för obehöriga användare
@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=Ladda upp till nuvarande katalog
 theme_xhred_filemanager_context_download=Ladda ner från fjärr-URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Servers
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Servers
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Tredjeparts modulalternativ
 theme_xhred_filemanager_context_calculate_size=Beräkna storleken med mellanslagstangenten
 theme_xhred_filemanager_context_bookmarks=Bokmärken
@@ -940,3 +940,14 @@ theme_xhred_mail_search_search_in=Sök i
 theme_xhred_mail_search_limit_results=Begränsa sökresultat
 theme_xhred_mail_search_limit_results_yes=Ja, sök endast igenom
 theme_xhred_mail_search_has_attach=Har bifogade filer
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3

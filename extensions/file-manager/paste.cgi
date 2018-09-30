@@ -6,9 +6,11 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+
+our (%in, %request_uri, $cwd, $base, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -19,7 +21,7 @@ my $act = $arr[0];
 my $dir = $arr[1];
 chomp($act);
 chomp($dir);
-$from = abs_path($base . $dir);
+my $from = abs_path($base . $dir);
 my @errors;
 my $mv = ($act eq "copy"            ? 0 : 1);
 my $fr = (length $request_uri{'ua'} ? 1 : 0);
@@ -29,6 +31,7 @@ for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
     chomp($arr[$i]);
     $arr[$i] = simplify_path($arr[$i]);
 
+    my $out;
     if ((-e "$cwd/$arr[$i]") && $cwd ne $from && !$fr) {
         set_response('ep');
     } else {

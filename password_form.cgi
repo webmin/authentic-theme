@@ -5,18 +5,22 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
+
+our (%in, %gconfig, %text, $pragma_no_cache, %theme_text, %theme_config);
+
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
 $pragma_no_cache = 1;
 $ENV{'MINISERV_INTERNAL'} || die "Can only be called by miniserv.pl";
 
-$charset = &get_charset();
+my $charset = &get_charset();
 &PrintHeader($charset);
 
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-background-style="' . $__settings{'settings_background_color'} . '" class="session_login">', "\n";
+print '<html data-background-style="' . $theme_config{'settings_background_color'} . '" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";
@@ -42,8 +46,8 @@ print ui_hidden("expired", $in{'expired'});
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
      <span>'
-  . (&get_product_name() eq 'webmin' ? $Atext{'theme_xhred_titles_wm'} :
-       $Atext{'theme_xhred_titles_um'}
+  . (&get_product_name() eq 'webmin' ? $theme_text{'theme_xhred_titles_wm'} :
+       $theme_text{'theme_xhred_titles_um'}
   ) .
   '</span></h2>' . "\n";
 
@@ -51,6 +55,7 @@ print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
 embed_logo();
 
 # Login message
+my $host;
 if ($gconfig{'realname'}) {
     $host = &get_display_hostname();
 } else {
@@ -60,30 +65,30 @@ if ($gconfig{'realname'}) {
 }
 
 print '<p class="form-signin-paragraph">' .
-  Atext('theme_new_password_header') . ' <em><strong>' . $in{'user'} . '</strong></em></p>' . "\n";
+  theme_text('theme_new_password_header') . ' <em><strong>' . $in{'user'} . '</strong></em></p>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>' . "\n";
 print '<input type="password" class="form-control session_login" name="old" autocomplete="off" placeholder="' .
-  Atext('password_old') . '" autocomplete="off">' . "\n";
+  theme_text('password_old') . '" autocomplete="off">' . "\n";
 print '</div>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
 print '<input type="password" class="form-control session_login" name="new1" autocomplete="off" placeholder="' .
-  Atext('password_new1') . '" autocomplete="off">' . "\n";
+  theme_text('password_new1') . '" autocomplete="off">' . "\n";
 print '</div>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
 print '<input type="password" class="form-control session_login" name="new2" autocomplete="off" placeholder="' .
-  Atext('password_new2') . '" autocomplete="off">' . "\n";
+  theme_text('password_new2') . '" autocomplete="off">' . "\n";
 print '</div>' . "\n";
 
 print '<div class="form-group">';
 print
 '<button class="btn btn-primary" type="submit" style="margin-top: 0 !important; width: 100%"><i class="fa fa-unlock"></i>&nbsp;&nbsp;'
-  . &Atext('password_ok')
+  . &theme_text('password_ok')
   . '</button>' . "\n";
 print
 '<script>function spinner(){var x=$(".fa.fa-unlock"),s =\'<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 2px; margin-left: -22px;"><span class="cspinner-icon white small"></span></span></span>\';x.addClass("invisible").after(s);x.parent(".btn").addClass("disabled")}</script>';

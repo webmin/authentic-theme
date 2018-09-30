@@ -4,7 +4,6 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
-use warnings;
 
 use File::Basename;
 use JSON;
@@ -190,12 +189,12 @@ sub folder_data
 
 sub message_avatar
 {
-    my ($sender) = @_;
-    my $hash = md5_hex($sender);
+    my ($sender, $blank) = @_;
+    my $hash = $blank ? undef : md5_hex($sender);
 
-    return
-      '</td><td><span class="mail-list-avatar-container"><span class="mail-list-avatar"><img src="//www.gravatar.com/avatar/'
-      . $hash . '?d=mm&s=30" alt></span></span></td>';
+    return '</td><td data-blank="' . ($blank ? '1' : '0') . '"><span class="mail-list-avatar-container"><span data-blank="' .
+      ($blank ? '1'     : '0') . '" class="mail-list-avatar"><img src="//www.gravatar.com/avatar/' . $hash . '?d=' .
+      ($blank ? "blank" : "mm") . '&s=30" alt></span></span></td>';
 }
 
 sub message_addressee
@@ -653,9 +652,7 @@ sub messages_list
         #Mark unread
         push(@colattrs, " data-unread=\"$unread\" data-starred=\"$starred\"");
 
-        $list_mails .=
-          ui_message_list_column(\@cols, \@colattrs, "d", $id, message_sender($m->{'header'}->{'to'}), editable_mail($m));
-
+        $list_mails .= ui_message_list_column(\@cols, \@colattrs, "d", $id, $m, $folder);
         update_delivery_notification($mail[$i], $folder);
     }
 
@@ -663,7 +660,7 @@ sub messages_list
     return $list_mails;
 }
 
-sub message_sender
+sub message_email_address
 {
     my ($message_header_addressee) = @_;
     my @sender_addresses = split_addresses($message_header_addressee);
@@ -693,14 +690,16 @@ sub message_select_link
 
 sub ui_message_list_column
 {
-    my ($cols, $trattrs, $checkname, $checkvalue, $sender, $editable) = @_;
+    my ($cols, $trattrs, $checkname, $checkvalue, $message, $folder) = @_;
     my $rv;
+    my $editable = editable_mail($message);
+
     $rv .= "<tr  " . $trattrs->[0] . " class='ui_checked_columns'>\n";
     $rv .= "<td class='" . ($editable ? 'ui_checked_checkbox' : undef) . "'>";
     if ($editable) {
         $rv .= theme_ui_checkbox_local($checkname, $checkvalue, undef, undef, "data-check") . "";
     }
-    $rv .= message_avatar($sender);
+    $rv .= message_avatar(message_email_address($message->{'header'}->{'from'}), $folder->{'sent'});
     $rv .= '</td>';
 
     my $i;

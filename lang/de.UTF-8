@@ -98,8 +98,8 @@ settings_right_theme_extensions=Design Erweiterungen
 settings_right_theme_extensions_title=Design Erweiterungen
 settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Das erweiterbare Design erlaubt es sehr einfach Teile der Benutzerschnittstelle
-settings_right_theme_logos=Design Logos
-settings_right_theme_logos_title=Design Logos
+theme_xhred_settings_right_theme_logos=Design Logos
+theme_xhred_settings_right_theme_logos_title=Design Logos
 settings_right_logos_title=Hier kann man die Design Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Gr&ouml;&szlige der Logos betr&auml;gt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterst&uuml;tzung f&uuml;r den Hintergrund Kanals ben&ouml;tigt wird.
 settings_right_logo_authenticated_users=Logo f&uuml;r angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo f&uuml;r nicht angemeldete Benutzer
@@ -324,8 +324,8 @@ theme_xhred_filemanager_context_upload=In aktuelles Verzeichnis hochladen
 theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 
 #17.53
-theme_settings_virtualmin=Virtualmin virtuelle Server
-theme_settings_cloudmin=Cloudmin gemanagte System
+theme_config_virtualmin=Virtualmin virtuelle Server
+theme_config_cloudmin=Cloudmin gemanagte System
 settings_right_thirdparties_options_title=Optionen f&uuml;r Drittanbieter Module
 theme_xhred_filemanager_context_calculate_size=Freien Platz berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
@@ -934,3 +934,14 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3

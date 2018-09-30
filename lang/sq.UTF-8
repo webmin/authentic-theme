@@ -106,9 +106,9 @@ settings_right_theme_extensions_title=Zgjerimet e Temës
 settings_right_file_edit=Ndrysho skedarin e zgjerimit:
 settings_right_extensions_title=Dizajni i gjerë i temave, ju mundëson manipulimin me lehtësi në pjesët e synuara të ndërfaqes.Është e mundur që të hyni si <em> CSS </em> dhe <em> JavaScript </em>, duke shkruar zgjerime me porosi <em> stilet </em> / <em> skriptet </em>.Në vijim janë shembujt e thjeshtë, të bërë për t'ju ndihmuar të kuptoni idenë bazë të zbatimit të saj.Për shembull, për të ndryshuar ngjyrën e sfondit, shtoni stilin e mëposhtëm në shtrirjen CSS: <code> body {background-color: Gainsboro} </code>.Duke përdorur JavaScript, për të ndryshuar gjerësinë e butonit të paraqitjes, shtoni kodin e mëposhtëm në zgjerimin e JavaScript: <code> $('button [type="submit"]') animate ({width: "100%"}, 1000) </code >.Megjithatë, në praktikë, do të jetë më e ndërlikuar se kaq.
 
-settings_right_theme_logos=Logot e temave
-settings_right_theme_logos_title=Logot e Theme
-settings_right_logos_title=Logot e temave mund të vendosen lehtë këtu, për të dy, përdoruesit e autentikuar dhe të paautorizuar.Madhësia e rekomanduar e logos është <kbd> 180x90 </kbd> dhe formati i vetëm i mbështetur është <kbd> .png </kbd>, për të siguruar transparencën alfa.Pasi që të krijohet logo, në rast se keni nevojë, mund ta manipuloni atë me <a href="/settings-editor_read.cgi"> <em> CSS </em> </a> dhe <a href="/settings-editor_read.cgi?file=%path%/authentic-theme/scripts.js"><em> JavaScript </em> </a>, duke e qasur atë sipas emrit të klasës, e cila është <code> ._ logo </code> dhe <code > ._ logo_welcome </code> te <em> autentifikuara </em> dhe <em> paautorizuar </em> lloje.
+theme_xhred_settings_right_theme_logos=Logot e temave
+theme_xhred_settings_right_theme_logos_title=Logot e Theme
+settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
 settings_right_logo_authenticated_users=Logo për përdoruesit e legalizuar
 settings_right_logo_unauthenticated_users=Logo për përdoruesit e paautorizuar
 
@@ -344,8 +344,8 @@ theme_xhred_filemanager_context_upload=Ngarko në direktorinë aktuale
 theme_xhred_filemanager_context_download=Shkarko nga URL-ja e largët
 
 #17.53
-theme_settings_virtualmin=Serverat virtuale Virtualmin
-theme_settings_cloudmin=Cloudmin Sistemet e Menaxhuara
+theme_config_virtualmin=Serverat virtuale Virtualmin
+theme_config_cloudmin=Cloudmin Sistemet e Menaxhuara
 settings_right_thirdparties_options_title=Mundësitë e moduleve të palëve të treta
 theme_xhred_filemanager_context_calculate_size=Llogaritni madhësinë në spacebar
 theme_xhred_filemanager_context_bookmarks=Bookmarks
@@ -954,3 +954,14 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3

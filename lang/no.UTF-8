@@ -192,8 +192,8 @@ settings_right_theme_extensions_title=Tema utvidelser
 settings_right_theme_left_configuration_title=Authentic tema Konfigurasjon
 settings_right_theme_left_extensions_title=Authentic tema utvidelses-editor
 settings_right_theme_left_logo_title=Authentic tema logokontroll
-settings_right_theme_logos=Tema logoer
-settings_right_theme_logos_title=Tema logoer
+theme_xhred_settings_right_theme_logos=Tema logoer
+theme_xhred_settings_right_theme_logos_title=Tema logoer
 settings_right_thirdparties_options_title=Innstillinger for tredje-parts moduler
 settings_right_title=Denne siden lar deg konfigurere innstillinger for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic tema</a>. Innstillinger vil bli lagret ved oppdatering av tema.
 settings_right_virtualmin_default=Standard side for Virtualmin
@@ -257,8 +257,8 @@ theme_left_mail_change_password=Endre passord
 theme_left_mail_prefs=E-post innstillinger
 theme_name=Authentic tema
 theme_new_password_header=Sett nytt passord for bruker
-theme_settings_cloudmin=Cloudmin administrerte systemer
-theme_settings_virtualmin=Virtualmin Virtuelle tjenere
+theme_config_cloudmin=Cloudmin administrerte systemer
+theme_config_virtualmin=Virtualmin Virtuelle tjenere
 theme_sysinfo_cmdocs=Cloudmin dokumentasjon
 theme_sysinfo_vmdocs=Virtualmin dokumentasjon
 theme_sysinfo_wmdocs=Webmin dokumentasjon
@@ -801,3 +801,14 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3

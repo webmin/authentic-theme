@@ -107,17 +107,17 @@ settings_right_theme_extensions_title=Theme Extensions
 settings_right_file_edit=Edit extension file:
 settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.
 
-settings_right_theme_logos=Theme logos
-settings_right_theme_logos_title=Theme Logos
+theme_xhred_settings_right_theme_logos=Theme logos
+theme_xhred_settings_right_theme_logos_title=Theme Logos
 settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
 settings_right_logo_authenticated_users=Logo for authenticated users
 settings_right_logo_unauthenticated_users=Logo for unauthenticated users
 
 settings_right_current_theme=Current theme
 settings_right_title=This page allows you to configure options for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Authentic Theme Configuration
-settings_right_theme_left_extensions_title=Authentic Theme Extensions Editor
-settings_right_theme_left_logo_title=Authentic Theme Logo Control
+settings_right_theme_left_configuration_title=Theme Configuration
+settings_right_theme_left_extensions_title=Theme Extensions Editor
+settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
 
@@ -333,8 +333,8 @@ theme_xhred_filemanager_context_upload=Upload to current directory
 theme_xhred_filemanager_context_download=Download from remote URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Servers
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Servers
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Third-parties modules options
 theme_xhred_filemanager_context_calculate_size=Calculate size on spacebar
 theme_xhred_filemanager_context_bookmarks=Bookmarks
@@ -943,3 +943,14 @@ theme_xhred_mail_search_search_in=Search in
 theme_xhred_mail_search_limit_results=Limit search results
 theme_xhred_mail_search_limit_results_yes=Yes, search only through
 theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3

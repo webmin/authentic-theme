@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=主题扩展
 settings_right_file_edit=编辑扩展文件：
 settings_right_extensions_title=可扩展的主题设计，使您可以轻松操作界面的目标部分。
 
-settings_right_theme_logos=主题 Logo
-settings_right_theme_logos_title=主题 Logo
+theme_xhred_settings_right_theme_logos=主题 Logo
+theme_xhred_settings_right_theme_logos_title=主题 Logo
 settings_right_logos_title=对于经过身份验证和未经身份验证的用户，可以在此处轻松设置主题 Logo。建议的 Logo大小为 <kbd>180x90</kbd> 像素，唯一支持的格式为 <kbd>.png</kbd> 以提供 Alpha 透明度。
 settings_right_logo_authenticated_users=已验证用户 Logo
 settings_right_logo_unauthenticated_users=未验证用户 Logo
@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=上传到当前目录
 theme_xhred_filemanager_context_download=远程 URL 下载
 
 #17.53
-theme_settings_virtualmin=Virtualmin 虚拟服务器
-theme_settings_cloudmin=Cloudmin 管理系统
+theme_config_virtualmin=Virtualmin 虚拟服务器
+theme_config_cloudmin=Cloudmin 管理系统
 settings_right_thirdparties_options_title=第三方模块选项
 theme_xhred_filemanager_context_calculate_size=按下空格键计算大小
 theme_xhred_filemanager_context_bookmarks=书签
@@ -940,3 +940,14 @@ theme_xhred_mail_search_search_in=搜索自
 theme_xhred_mail_search_limit_results=限制搜索结果
 theme_xhred_mail_search_limit_results_yes=是的，仅通过以下搜索
 theme_xhred_mail_search_has_attach=包含附件
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3

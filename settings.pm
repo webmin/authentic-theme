@@ -3,18 +3,19 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
-our @_s_e = _settings('exclusions', undef, undef);
-my @settings = _settings('get', undef, undef);
-print _settings('header', undef, undef);
+theme_settings('exclusions', undef, undef);
+my @settings = theme_settings('get', undef, undef);
+print theme_settings('header', undef, undef);
 for (my $i = 0; $i < scalar(@settings) - 1; $i += 2) {
     if ($settings[$i] ne '__') {
-        print _settings('content', $settings[$i], $settings[$i + 1]);
+        print theme_settings('content', $settings[$i], $settings[$i + 1]);
     } else {
         my @section = split(/\~/, $settings[$i + 1]);
-        print _settings('section', $section[0], $section[1]);
+        print theme_settings('section', $section[0], $section[1]);
     }
 }
-print _settings('footer', undef, undef);
+print theme_settings('footer', undef, undef);
 
 1;
