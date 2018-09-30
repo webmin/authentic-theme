@@ -941,13 +941,13 @@ theme_xhred_mail_search_limit_results= 検索結果を制限する
 theme_xhred_mail_search_limit_results_yes= はい、検索のみ
 theme_xhred_mail_search_has_attach= 添付ファイルあり
 
-theme_xhred_settings_right_theme_bgs=Theme backgrounds
-theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
-settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
-settings_right_bg_unauthenticated_users=Background for unauthenticated users
-settings_right_theme_left_background_title=Theme Background Control
+theme_xhred_settings_right_theme_bgs= テーマの背景
+theme_xhred_settings_right_theme_bgs_title= テーマの背景
+settings_right_bgs_title= ログインページのテーマの背景をここで設定できます。アルファ透明度を提供するためにサポートされているフォーマットは<kbd> .png </kbd>のみです。
+settings_right_bg_unauthenticated_users= 認証されていないユーザーの背景
+settings_right_theme_left_background_title= テーマバックグラウンドコントロール
 
-theme_xhred_find_in_config_files=Find in config files
-theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
-theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
-theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+theme_xhred_find_in_config_files= 設定ファイルで検索
+theme_xhred_find_in_config_files_result_found_single= $2のファイルに$3の結果が見つかりました
+theme_xhred_find_in_config_files_result_found_multi= $2のファイルに$3の検索結果が見つかりました
+theme_xhred_find_in_config_files_results_found= $2のファイルに$3の検索結果が見つかりました
