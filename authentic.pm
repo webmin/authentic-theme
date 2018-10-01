@@ -374,10 +374,12 @@ sub theme_ui_columns_start
     $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
-    for ($i = 0; $i < @$heads; $i++) {
-        $rv .= '<th>';
-        $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
-        $rv .= '</th>' . "\n";
+    if (ref($heads)) {
+        for ($i = 0; $i < @$heads; $i++) {
+            $rv .= '<th>';
+            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
+            $rv .= '</th>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
@@ -391,10 +393,12 @@ sub theme_ui_columns_row
     my ($rv, $i);
 
     $rv .= '<tr class="tr_tag">' . "\n";
-    for ($i = 0; $i < @$cols; $i++) {
-        $rv .= '<td class="td_tag">' . "\n";
-        $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
-        $rv .= '</td>' . "\n";
+    if (ref($cols)) {
+        for ($i = 0; $i < @$cols; $i++) {
+            $rv .= '<td class="td_tag">' . "\n";
+            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
+            $rv .= '</td>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
 
@@ -408,10 +412,12 @@ sub theme_ui_columns_header
 
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
-    for ($i = 0; $i < @$cols; $i++) {
-        $rv .= '<th>';
-        $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
-        $rv .= '</th>' . "\n";
+    if (ref($cols)) {
+        for ($i = 0; $i < @$cols; $i++) {
+            $rv .= '<th>';
+            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
+            $rv .= '</th>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
