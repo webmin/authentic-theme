@@ -2136,6 +2136,8 @@ sub theme_settings
             '8',
             'settings_sysinfo_expand_all_accordions',
             'false',
+            'settings_sysinfo_max_servers',
+            '10',
 
             '__',
             theme_settings('fa', 'bars', &theme_text('settings_right_navigation_menu_title')),
@@ -2282,8 +2284,8 @@ sub theme_settings
         }
 
         # Exclude list of settings for Virtualmin
-        my @s_vm_e =
-          ('settings_right_virtualmin_default', 'settings_show_webmin_tab', 'settings_hotkey_toggle_key_virtualmin');
+        my @s_vm_e = ('settings_right_virtualmin_default',     'settings_show_webmin_tab',
+                      'settings_hotkey_toggle_key_virtualmin', 'settings_sysinfo_max_servers');
 
         if (!foreign_available("virtual-server")) {
             foreach my $e (@s_vm_e) {
@@ -2434,7 +2436,8 @@ sub theme_settings
                  $k eq 'settings_sysinfo_real_time_timeout'    ||
                  $k eq 'settings_sysinfo_easypie_charts_size'  ||
                  $k eq 'settings_sysinfo_easypie_charts_width' ||
-                 $k eq 'settings_sysinfo_easypie_charts_scale')
+                 $k eq 'settings_sysinfo_easypie_charts_scale' ||
+                 $k eq 'settings_sysinfo_max_servers')
         {
 
             my $width =
@@ -2446,7 +2449,8 @@ sub theme_settings
                 $k eq 'settings_hotkey_sysinfo'               ||
                 $k eq 'settings_hotkey_favorites'             ||
                 $k eq 'settings_sysinfo_easypie_charts_width' ||
-                $k eq 'settings_sysinfo_easypie_charts_scale') ? ' width: 36px; ' :
+                $k eq 'settings_sysinfo_easypie_charts_scale' ||
+                $k eq 'settings_sysinfo_max_servers') ? ' width: 36px; ' :
               ( ($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
                   ' width: 50px; ' :
                   ' width: 95%; ');

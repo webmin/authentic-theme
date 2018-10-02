@@ -965,3 +965,6 @@ theme_xhred_find_in_config_files=Find in config files
 theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
 theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
 theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+settings_sysinfo_max_servers=Maximum virtual servers to show
