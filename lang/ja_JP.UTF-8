@@ -953,4 +953,6 @@ theme_xhred_find_in_config_files_result_found_multi= $2のファイルに$3の�
 theme_xhred_find_in_config_files_results_found= $2のファイルに$3の検索結果が見つかりました
 
 theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
 settings_sysinfo_max_servers=Maximum virtual servers to show
