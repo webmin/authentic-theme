@@ -19,8 +19,9 @@ if (!$in{'name'}) {
     redirect("list.cgi?path=$path_urlized&module=$in{'module'}");
 }
 
-my $is_symlink = (-l "$cwd/$in{'name'}_symlink");
-if ($is_symlink || -d "$cwd/$in{'name'}_symlink" || -e "$cwd/$in{'name'}_symlink" || -d "$cwd/$in{'name'}_symlink") {
+my $symlink = "$cwd/$in{'name'}_symlink";
+my $is_symlink = (-l $symlink);
+if ($is_symlink || -d $symlink || -e $symlink) {
     print_error(
           (
            text('filemanager_create_object_exists',
@@ -29,6 +30,6 @@ if ($is_symlink || -d "$cwd/$in{'name'}_symlink" || -e "$cwd/$in{'name'}_symlink
            )
           ));
 } else {
-    symlink_file("$cwd/$in{'name'}", "$cwd/$in{'name'}_symlink");
+    symlink_file("$cwd/$in{'name'}", $symlink);
     redirect("list.cgi?path=$path_urlized&module=$in{'module'}");
 }
