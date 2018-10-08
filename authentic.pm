@@ -1145,10 +1145,62 @@ sub theme_redirect
         print "Location: $location\n\n";
     } else {
         $link =~ s/(\?|&)\Q$xnav\E//ig;
-        set_theme_temp_data('redirected', $link);
-        print "Location: $link\n\n";
+        if (!theme_redirect_download($link)) {
+            set_theme_temp_data('redirected', $link);
+            print "Location: $link\n\n";
+        }
     }
 
+}
+
+sub theme_header_redirect_download
+{
+    my ($url, $delay, $body) = @_;
+
+    head();
+    print "<!DOCTYPE html>\n";
+    print "<html>\n";
+    print "<head>\n";
+    print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
+      .
+      ( (&get_product_name() eq 'usermin') ? '-usermin' :
+          '-webmin'
+      ) .
+      '.ico">' . "\n";
+    print '<meta charset="' . get_charset() . '">', "\n";
+    print "<meta data-predownload http-equiv=\"refresh\" content=\"$delay;url=$url\">\n";
+    print "</head>\n";
+    if ($body) {
+        print "<body>\n";
+        print $body . "\n";
+        print "</body>\n";
+    }
+    print '</html>';
+
+}
+
+sub theme_redirect_download
+{
+    if ($_[0] =~ /fetch.cgi/) {
+        my $query = get_env('query_string');
+        my $show  = $query =~ /show=1/ ? 1 : 0;
+        my $delay = $_[0] =~ /unzip=1/ ? 1 : 0;
+        my $zip   = $_[0] =~ /.zip/ ? 1 : 0;
+        my $body;
+
+        if ($delay) {
+            $body = $theme_text{'theme_xhred_download_is_being_prepared'};
+        }
+        if (!$delay && !$show) {
+            $body = $theme_text{'right_download_is_ready'};
+        }
+
+        theme_header_redirect_download($_[0], $delay, $body);
+
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 sub theme_js_redirect

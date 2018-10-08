@@ -956,3 +956,7 @@ theme_xhred_filemanager_context_symlink=Create new symbolic link
 theme_xhred_global_symbolic=Symbolic link
 theme_xhred_global_target=Target
 settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
