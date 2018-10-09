@@ -1436,7 +1436,9 @@ const mail = (function() {
                     }
                   }
                 })));
-            return $(tree.container).fancytree(source)
+            if ($(tree.container).length) {
+              return $(tree.container).fancytree(source);
+            }
           }
         },
         url: {
@@ -1544,7 +1546,7 @@ const mail = (function() {
      */
     const set = (key) => {
       let tree = data.plugin.tree('get');
-      tree.activateKey(key)
+      (tree !== undefined && tree.activateKey === 'function') && tree.activateKey(key);
     }
 
     /**
