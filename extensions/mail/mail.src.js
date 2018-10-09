@@ -1544,9 +1544,15 @@ const mail = (function() {
      *
      * @return {void}
      */
-    const set = (key) => {
+    const set = function(key) {
       let tree = data.plugin.tree('get');
-      (tree !== undefined && tree.activateKey === 'function') && tree.activateKey(key);
+      if (typeof tree === 'object' && typeof tree.activateKey === 'function') {
+        tree.activateKey(key)
+      } else {
+        setTimeout(() => {
+          this.set(key);
+        }, 1e2);
+      }
     }
 
     /**
