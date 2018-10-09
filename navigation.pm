@@ -172,7 +172,7 @@ elsif (foreign_available("mailbox") &&
       $theme_text{'theme_left_mail_prefs'} . '</span></a></li>' . "\n";
 
     print '<li data-linked><a href="' .
-      $gconfig{'webprefix'} . '/changepass" class="navigation_module_trigger"><i class="fa fa-fw fa-key"></i> <span>' .
+      $gconfig{'webprefix'} . '/changepass/" class="navigation_module_trigger"><i class="fa fa-fw fa-key"></i> <span>' .
       $theme_text{'theme_left_mail_change_password'} . '</span></a></li>' . "\n";
 
     print_sysinfo_link(1);
