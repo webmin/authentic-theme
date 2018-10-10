@@ -1255,6 +1255,13 @@ sub theme_post_change_theme
     }
 }
 
+sub theme_post_change_modules
+{
+    print '<script>';
+    print 'theme_post_save=-1', "\n";
+    print '</script>';
+}
+
 $main::cloudmin_no_create_links = 1;
 $main::cloudmin_no_edit_buttons = 1;
 $main::cloudmin_no_global_links = 1;
