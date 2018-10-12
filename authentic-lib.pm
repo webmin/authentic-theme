@@ -18,7 +18,7 @@ use WebminCore;
 BEGIN {push(@INC, "..");}
 
 our (
-    %in, %text, %config, %gconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user, $theme_root_directory,
+    %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user, $theme_root_directory,
     $current_theme, $root_directory,
 
     %theme_text, %module_text_reversed, %theme_config, $get_user_level, $theme_requested_url,
@@ -1807,8 +1807,7 @@ sub theme_remote_version
     my $error;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
-
-        if (($theme_config{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force_beta_check) && !$force_stable_check)
+        if (($tconfig{'show_beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check)
         {
             http_download('api.github.com',                                             '443',
                           '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
@@ -2260,8 +2259,6 @@ sub theme_settings
             theme_settings('fa', 'info-circle', &theme_text('settings_right_soft_updates_page_options_title')),
             'settings_sysinfo_theme_updates',
             'false',
-            'settings_sysinfo_theme_patched_updates',
-            'false',
             'settings_sysinfo_theme_updates_for_usermin',
             'true',
             'settings_sysinfo_csf_updates',
@@ -2407,7 +2404,6 @@ sub theme_settings
             # Force disabled state
             if (!has_command('git') &&
                 ($k eq 'settings_sysinfo_theme_updates' ||
-                    $k eq 'settings_sysinfo_theme_patched_updates' ||
                     $k eq 'settings_sysinfo_theme_updates_for_usermin'))
             {
                 $disabled = " pointer-events-none";

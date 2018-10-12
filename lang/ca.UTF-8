@@ -624,7 +624,6 @@ settings_sysinfo_easypie_charts_size=Mida de les gràfiques
 theme_xhred_global_choose=Escull
 theme_xhred_global_select=Selecciona
 theme_xhred_global_ok=D'acord
-settings_sysinfo_theme_patched_updates=Incloure versions de desenvolupament
 settings_sysinfo_theme_updates_description=Per tal de que funcioni, cal tenir la comanda git instal·lada en el sistema.
 theme_git_patch_available=Última versió de desenvolupament
 theme_git_patch_no_git_message=Per tal d'instal·lar les últimes correccions directament de GitHub, cal tenir la comanda git instal·lada en el sistema.

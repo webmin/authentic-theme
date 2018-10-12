@@ -622,7 +622,6 @@ settings_sysinfo_easypie_charts_size= グラフの直径
 theme_xhred_global_choose= 選択する
 theme_xhred_global_select= 選択
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates= 開発バージョンを含む
 settings_sysinfo_theme_updates_description= このオプションを有効にするには、システムに<code>git</code>コマンドをインストールする必要があります
 theme_git_patch_available= 最新の開発版
 theme_git_patch_no_git_message= 最新のアップデートをGitHubから直接インストールするには、<code>git</code>コマンドがインストールされていることを確認する必要があります。

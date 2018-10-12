@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%module_text_reversed, %theme_text, %theme_config, %gconfig, $current_lang_info, $remote_user, $webmin_script_type);
+our (%module_text_reversed, %theme_text, %theme_config, %gconfig, %tconfig, $current_lang_info, $remote_user, $webmin_script_type);
 
 sub settings
 {
@@ -120,7 +120,7 @@ sub product_version_update
 {
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.890', '1.740', '6.03', '9.3', '12.06', $theme_config{'settings_sysinfo_theme_patched_updates'});
+      ('1.890', '1.740', '6.03', '9.3', '12.06', $tconfig{'show_beta_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -128,7 +128,7 @@ sub product_version_update
         ($p eq "c" && $v < $cv) ||
         ($p eq "f" && $v < $fv))
     {
-        return (($d eq 'true' || ($d ne 'true' && $p eq "f")) ?
+        return (($d eq '1' || ($d ne '1' && $p eq "f")) ?
                   '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
                   $theme_text{'theme_xhred_global_outdated'} .
                   '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>' :

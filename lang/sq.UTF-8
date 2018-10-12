@@ -636,7 +636,6 @@ settings_sysinfo_easypie_charts_size=Diametri i tabelave
 theme_xhred_global_choose=Zgjidh
 theme_xhred_global_select=Zgjidh
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_patched_updates_description=Për ta bërë këtë opsion të funksionojë, komanda <code> git </code> duhet të instalohet në sistemin tuaj
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=Në mënyrë që të instaloni arna të fundit direkt nga GitHub ju duhet të siguroheni që komanda <code> git </code> është instaluar.

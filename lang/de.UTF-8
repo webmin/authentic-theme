@@ -615,7 +615,6 @@ settings_sysinfo_easypie_charts_size=Durchmesser der Diagramme
 theme_xhred_global_choose=Ausw&auml;hlen
 theme_xhred_global_select=Ausw&auml;hlen
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Auch auf Beta Versionen pr&uuml;fen?
 settings_sysinfo_theme_updates_description=Damit dies funktioniert, muss das Programm <code>git</code> installiert sein.
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=Damit die neuesten Aktualisierungen von Github installiert werden k&ouml;nnen, muss das Programm <code>git</code> installiert sein.

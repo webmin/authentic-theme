@@ -627,7 +627,6 @@ settings_sysinfo_easypie_charts_size=Diameter of charts
 theme_xhred_global_choose=Choose
 theme_xhred_global_select=Select
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=In order to install latest updates directly from GitHub, you must make sure that <code>git</code> command is installed.

@@ -223,7 +223,6 @@ settings_sysinfo_easypie_charts_size=Diameter for diagrammer
 settings_sysinfo_easypie_charts_width=Diagram bredde
 settings_sysinfo_expand_all_accordions=Utvid alle trekkspill
 settings_sysinfo_link_mini=Show dashboard link as button
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=For at denne innstillingen skal virke må <code>git</code> kommandoen være installert på systemet ditt
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_theme_options_button=VIs knapp for tema innstillinger
