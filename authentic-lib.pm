@@ -1771,6 +1771,9 @@ sub embed_login_head
 
     my $ext = (theme_debug_mode() ? 'src' : 'min');
 
+    # Define page title
+    my $title = $text{'session_header'};
+
     print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
