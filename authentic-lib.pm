@@ -1144,11 +1144,11 @@ sub get_sysinfo_vars
         } else {
             $authentic_theme_version =
               '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $theme_text{'theme_name'} .
-              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4"><a href=\'' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
-              $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
-'<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
+              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4">' .
+'<a data-href="#theme-info" class="btn btn-default btn-xxs"><i class="fa fa-info-circle"></i></a><a href=\'' .
+$gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
+$gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+$theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
         }
 
         #ConfigServer Security & Firewall
@@ -2777,8 +2777,6 @@ sub get_xhr_request
             } elsif ($in{'load'} eq '1') {
                 print manage_theme_config('load');
             }
-        } elsif ($in{'xhr-get_theme_language'} eq '1') {
-            print get_theme_language();
         } elsif ($in{'xhr-get_available_modules'} eq '1') {
             print get_available_modules('json');
         } elsif ($in{'xhr-get_theme_locale_languages'} eq '1') {
@@ -3178,6 +3176,10 @@ sub init
 
 sub content
 {
+    # Print object with language strings
+    print '<script>';
+    print 'var v___theme_language = ' . get_theme_language();
+    print '</script>';
 
     # Mobile toggle
     print '<div class="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
