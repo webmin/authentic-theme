@@ -521,13 +521,14 @@ sub get_extended_sysinfo
                         }
                     } elsif ($info->{'type'} eq 'chart') {
                         foreach my $t (@{ $info->{'chart'} }) {
-                            my $unlimited = 0;
-                            my $percent_1 = '&nbsp;' . int($t->{'chart'}[1]) . '%';
-                            my $percent_2 = '&nbsp;' . int($t->{'chart'}[2]) . '%';
-
+                            my $unlimited         = 0;
                             my $percent_width_1   = int($t->{'chart'}[1]);
                             my $percent_width_2   = int($t->{'chart'}[2]);
                             my $percent_width_sum = $percent_width_1 + $percent_width_2;
+                            my $is_2              = defined($t->{'chart'}[2]);
+
+                            my $percent_1 = '&nbsp;' . $percent_width_1 . '%';
+                            my $percent_2 = '&nbsp;' . $percent_width_2 . '%';
 
                             my $dd = $theme_text{'right_out'};
                             $dd =~ s/\s|&nbsp;|\$1|\$2//g;
@@ -546,13 +547,13 @@ sub get_extended_sysinfo
                             } else {
                                 $color = 'red';
                             }
-                            if ($unlimited) {
+                            if ($unlimited || $percent_width_sum == 0) {
                                 $color = 'gray';
                             }
 
                             my $bar;
-                            if ($percent_width_2 && !$unlimited) {
-                                $bar = '<strong '
+                            if ($is_2 && !$unlimited && $percent_width_2) {
+                                $bar = '<strong data-first '
                                   .
                                   get_button_tooltip('edit_allquotah', undef, undef, 1, 1,
                                                      '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse', '(') .
@@ -567,7 +568,7 @@ sub get_extended_sysinfo
                             } else {
                                 $bar = '<strong '
                                   .
-                                  ( defined($t->{'chart'}[2]) ?
+                                  ( $is_2 ?
                                       get_button_tooltip('edit_allquotah', undef, undef, 1, 1,
                                                          '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse',
                                                          '(') :
