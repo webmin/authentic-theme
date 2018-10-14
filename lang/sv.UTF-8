@@ -224,7 +224,7 @@ theme_sysinfo_vmdocs=Virtualmin-dokumentation
 theme_sysinfo_cmdocs=Cloudmin-dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Oformatterad text
 
 theme_xhred_titles_wm=Webmin

@@ -225,7 +225,7 @@ theme_sysinfo_vmdocs=Documentație Virtualmin
 theme_sysinfo_cmdocs=Documentație Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Plain Text
 
 theme_xhred_titles_wm=Webmin
