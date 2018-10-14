@@ -18,7 +18,8 @@ use WebminCore;
 BEGIN {push(@INC, "..");}
 
 our (
-    %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user, $theme_root_directory,
+    %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user,
+    $theme_root_directory,
     $current_theme, $root_directory,
 
     %theme_text, %module_text_reversed, %theme_config, $get_user_level, $theme_requested_url,
@@ -520,14 +521,60 @@ sub get_extended_sysinfo
                         }
                     } elsif ($info->{'type'} eq 'chart') {
                         foreach my $t (@{ $info->{'chart'} }) {
-                            my $percent       = '&nbsp;' . $t->{'chart'}[1] . '%';
-                            my $percent_width = $t->{'chart'}[1];
-                            my $dd            = $theme_text{'right_out'};
+                            my $unlimited = 0;
+                            my $percent_1 = '&nbsp;' . int($t->{'chart'}[1]) . '%';
+                            my $percent_2 = '&nbsp;' . int($t->{'chart'}[2]) . '%';
+
+                            my $percent_width_1   = int($t->{'chart'}[1]);
+                            my $percent_width_2   = int($t->{'chart'}[2]);
+                            my $percent_width_sum = $percent_width_1 + $percent_width_2;
+
+                            my $dd = $theme_text{'right_out'};
                             $dd =~ s/\s|&nbsp;|\$1|\$2//g;
 
                             if ($t->{"value"} !~ /\Q$dd/) {
-                                $percent       = '&nbsp;' . $theme_text{'right_unlimited'};
-                                $percent_width = '0';
+                                $percent_1       = '&nbsp;' . $theme_text{'right_unlimited'};
+                                $percent_width_1 = '0';
+                                $unlimited       = 1;
+                            }
+
+                            my $color;
+                            if ($percent_width_sum <= 49) {
+                                $color = 'green';
+                            } elsif ($percent_width_sum <= 90) {
+                                $color = 'yellow';
+                            } else {
+                                $color = 'red';
+                            }
+                            if ($unlimited) {
+                                $color = 'gray';
+                            }
+
+                            my $bar;
+                            if ($percent_width_2 && !$unlimited) {
+                                $bar = '<strong '
+                                  .
+                                  get_button_tooltip('edit_allquotah', undef, undef, 1, 1,
+                                                     '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse', '(') .
+                                  ' class="bar ' .
+                                  $color . '" style="width:' . $percent_width_1 . '%;">' . $percent_1 . '</strong>';
+                                $bar .= '<strong '
+                                  .
+                                  get_button_tooltip('edit_dbquota', undef, undef, 1, 1,
+                                                     '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse', '(') .
+                                  ' class="bar ' .
+                                  $color . '" style="width:' . $percent_width_2 . '%;">' . $percent_2 . '</strong>';
+                            } else {
+                                $bar = '<strong '
+                                  .
+                                  ( defined($t->{'chart'}[2]) ?
+                                      get_button_tooltip('edit_allquotah', undef, undef, 1, 1,
+                                                         '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse',
+                                                         '(') :
+                                      undef
+                                  ) .
+                                  ' class="bar ' .
+                                  $color . '" style="width:' . $percent_width_1 . '%;">' . $percent_1 . '</strong>';
                             }
 
                             $returned_sysinfo .= '<tr>
@@ -537,10 +584,7 @@ sub get_extended_sysinfo
                               '</td>
                                 <td style="width:60%">
                                 <div class="graph-container">
-                                    <div class="graph">
-                                        <strong class="bar" style="width:'
-                              . $percent_width . '%;">' . $percent . '</strong>
-                                    </div>
+                                    <div class="graph">' . $bar . '</div>
                                 </div>
                                 </td>
                                       <td style="width:15%">'
@@ -1145,10 +1189,10 @@ sub get_sysinfo_vars
             $authentic_theme_version =
               '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $theme_text{'theme_name'} .
               '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4">' .
-'<a data-href="#theme-info" class="btn btn-default btn-xxs"><i class="fa fa-info-circle"></i></a><a href=\'' .
-$gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
-$gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
-$theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
+              '<a data-href="#theme-info" class="btn btn-default btn-xxs"><i class="fa fa-info-circle"></i></a><a href=\'' .
+              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
+              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+              $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
         }
 
         #ConfigServer Security & Firewall
@@ -1810,8 +1854,7 @@ sub theme_remote_version
     my $error;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
-        if (($tconfig{'show_beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check)
-        {
+        if (($tconfig{'show_beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check) {
             http_download('api.github.com',                                             '443',
                           '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
                           \$error,                                                      undef,
@@ -3372,16 +3415,24 @@ sub manage_theme_config
 
 sub get_button_tooltip
 {
-    my ($label, $key, $placement, $html, $force) = @_;
+    my ($label, $key, $placement, $html, $force, $container, $br_label_on) = @_;
 
     my $mod_key = $theme_config{'settings_hotkey_toggle_modifier'};
     my $hot_key = ($key ? ucfirst($theme_config{$key}) : undef);
+    if (!$container) {
+        $container = 'body';
+    }
+    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
+    if ($br_label_on) {
+        my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
+        $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
+    }
 
     return (($theme_config{'settings_button_tooltip'} ne 'false' || $force) ?
-              (' data-container="body" data-placement="' .
+              (' data-container="' . $container . '" data-placement="' .
                  $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
                  .
-                 ($theme_text{$label}
+                 ($tooltip_text
                     .
                     (length $theme_config{'settings_hotkeys_active'} &&
                        $theme_config{'settings_hotkeys_active'} ne 'false' &&
