@@ -16,12 +16,12 @@ require(dirname(__FILE__) . "/authentic-lib.pm");
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 
 theme_config_dir_available();
-
-unlink_file($in{'file'});
-write_file_contents($in{'file'}, $in{'data'});
+my $file = html_escape($in{'file'});
+unlink_file($file);
+write_file_contents($file, $in{'data'});
 
 if ($has_usermin) {
-    (my $_file = $in{'file'}) =~ s/webmin/usermin/;
+    (my $_file = $file) =~ s/webmin/usermin/;
     unlink_file($_file);
     write_file_contents($_file, $in{'data'});
 }
