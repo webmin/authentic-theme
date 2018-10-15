@@ -3,8 +3,21 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
+
+our ($get_user_level,           $xnav,                           %theme_config,
+     %theme_text,               %config,                         %gconfig,
+     %tconfig,                  %text,                           $basic_virtualmin_domain,
+     $basic_virtualmin_menu,    $cb,                             $tb,
+     $cloudmin_no_create_links, $cloudmin_no_edit_buttons,       $cloudmin_no_global_links,
+     $current_theme,            $done_theme_post_save_server,    $mailbox_no_addressbook_button,
+     $mailbox_no_folder_button, $module_index_link,              $module_index_name,
+     $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode, $page_capture,
+     $remote_user,              $root_directory,                 $session_id,
+     $ui_formcount,             $user_module_config_directory);
+
 do(dirname(__FILE__) . "/authentic-init.pm");
 
 sub theme_header
@@ -13,12 +26,16 @@ sub theme_header
     (get_raw() && return);
     embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
 
-    print '<body ' . header_body_data(undef) . '>' . "\n";
+    print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
+    embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
+
+        # Print default container
         print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
+        print $tconfig{'preheader'};
         print "<table class=\"header\"><tr>\n";
 
         print '<td id="headln2l" class="invisible">';
@@ -92,6 +109,7 @@ sub theme_header
 sub theme_footer
 {
     (get_raw() && return);
+    my %this_module_info = &get_module_info(&get_module_name());
     for (my $i = 0; $i + 1 < @_; $i += 2) {
         my $url = $_[$i];
         if ($url ne '/' || !$tconfig{'noindex'}) {
@@ -137,7 +155,8 @@ sub theme_footer
                      get_env('request_uri') =~ /\/webmin_search.cgi\?/      ||
                      get_env('request_uri') =~ /\/settings-user.cgi/        ||
                      get_env('request_uri') =~ /\/settings-editor_read.cgi/ ||
-                     get_env('request_uri') =~ /\/settings-upload.cgi/
+                     get_env('request_uri') =~ /\/settings-logos.cgi/       ||
+                     get_env('request_uri') =~ /\/settings-backgrounds.cgi/
                   ) ? '1' : '0'
                  ),
                  $_[0]);
@@ -149,12 +168,15 @@ sub theme_footer
         embed_js_scripts();
     }
 
-    if ($__settings{'settings_hide_top_loader'} ne 'true' &&
+    if ($theme_config{'settings_hide_top_loader'} ne 'true' &&
         get_env('script_name') ne '/session_login.cgi' &&
         get_env('script_name') ne '/pam_login.cgi')
     {
         print '<div class="top-aprogress"></div>', "\n";
     }
+
+    # Post-body header overlay
+    embed_overlay_postbody();
 
     print '</body>', "\n";
     print '</html>', "\n";
@@ -259,7 +281,7 @@ sub theme_ui_upload
 
 sub theme_icons_table
 {
-    my $hide_table_icons = ($__settings{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0);
+    my $hide_table_icons = ($theme_config{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0);
     print '<div class="row icons-row' . (!$hide_table_icons && ' vertical-align') . '">' . "\n";
     for (my $i = 0; $i < @{ $_[0] }; $i++) {
 
@@ -276,7 +298,7 @@ sub theme_icons_table
 sub theme_generate_icon
 {
     my ($icon, $title, $link, $href, $width, $height, $before, $after) = @_;
-    if ($__settings{'settings_right_hide_table_icons'} eq 'true') {
+    if ($theme_config{'settings_right_hide_table_icons'} eq 'true') {
         print '<div>';
         print $before;
         print '<a' . ($before ? ' class="inline-block"' : ' ') .
@@ -287,9 +309,9 @@ sub theme_generate_icon
     } else {
         my $icon_outer = $icon;
         $icon =~ s/images//g;
-        my $grayscaled_table_icons = ($__settings{'settings_right_grayscaled_table_icons'} ne 'false' ? 0 :
+        my $grayscaled_table_icons = ($theme_config{'settings_right_grayscaled_table_icons'} ne 'false' ? 0 :
                                         1);
-        my $animate_table_icons = ($__settings{'settings_right_animate_table_icons'} ne 'false' ? 0 :
+        my $animate_table_icons = ($theme_config{'settings_right_animate_table_icons'} ne 'false' ? 0 :
                                      1);
         (my $___svg = $icon) =~ s/.gif/.svg/;
 
@@ -303,7 +325,7 @@ sub theme_generate_icon
                         $icon_outer ? $icon_outer :
                         ($gconfig{'webprefix'} . "/images/not_found.svg"));
 
-        if ($__settings{'settings_right_small_table_icons'} eq 'true') {
+        if ($theme_config{'settings_right_small_table_icons'} eq 'true') {
             print '<div class="col-xs-1 small-icons-container' .
               (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
               '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
@@ -324,7 +346,7 @@ sub theme_generate_icon
         } else {
             print '<div class="col-xs-1 icons-container' . (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
               '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
-              '" data-title="' . (($__settings{'settings_right_small_table_icons'} eq 'true') ? $title : '') .
+              '" data-title="' . (($theme_config{'settings_right_small_table_icons'} eq 'true') ? $title : '') .
               '" data-toggle="tooltip" data-placement="auto top" data-container="body">';
             if ($_[6] || $_[7]) {
                 if ($_[6]) {
@@ -352,10 +374,12 @@ sub theme_ui_columns_start
     $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
-    for ($i = 0; $i < @$heads; $i++) {
-        $rv .= '<th>';
-        $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
-        $rv .= '</th>' . "\n";
+    if (ref($heads)) {
+        for ($i = 0; $i < @$heads; $i++) {
+            $rv .= '<th>';
+            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
+            $rv .= '</th>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
@@ -369,10 +393,12 @@ sub theme_ui_columns_row
     my ($rv, $i);
 
     $rv .= '<tr class="tr_tag">' . "\n";
-    for ($i = 0; $i < @$cols; $i++) {
-        $rv .= '<td class="td_tag">' . "\n";
-        $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
-        $rv .= '</td>' . "\n";
+    if (ref($cols)) {
+        for ($i = 0; $i < @$cols; $i++) {
+            $rv .= '<td class="td_tag">' . "\n";
+            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
+            $rv .= '</td>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
 
@@ -386,10 +412,12 @@ sub theme_ui_columns_header
 
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
-    for ($i = 0; $i < @$cols; $i++) {
-        $rv .= '<th>';
-        $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
-        $rv .= '</th>' . "\n";
+    if (ref($cols)) {
+        for ($i = 0; $i < @$cols; $i++) {
+            $rv .= '<th>';
+            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
+            $rv .= '</th>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
@@ -507,7 +535,7 @@ sub theme_ui_textbox
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
     $rv .= ($dis ? 'disabled="true" ' : '');
-    $fv .= ($max ? 'maxlength="' . $max . '" ' : '');
+    $rv .= ($max ? 'maxlength="' . $max . '" ' : '');
     $rv .= ($tags ? $tags : '');
     $rv .= '>' . "\n";
 
@@ -525,7 +553,7 @@ sub theme_ui_password
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
     $rv .= ($dis ? 'disabled="true" ' : '');
-    $fv .= ($max ? 'maxlength="' . $max . '" ' : '');
+    $rv .= ($max ? 'maxlength="' . $max . '" ' : '');
     $rv .= ($tags ? $tags : '');
     $rv .= '>' . "\n";
 
@@ -646,8 +674,7 @@ sub theme_ui_textarea
 sub theme_ui_submit
 {
     my ($label, $name, $dis, $tags) = @_;
-    my ($entry, $class, $icon) =
-      get_button_style(get_module_name(), $label);
+    my ($entry, $class, $icon) = get_button_style($label);
 
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
@@ -778,16 +805,15 @@ sub theme_ui_alert_box
 {
     my ($msg, $class, $style, $new_line) = @_;
     my ($rv, $type, $tmsg, $fa);
-    my %text = (&load_language($current_theme), %text);
 
     if ($class eq "success") {
-        $type = 'alert-success', $tmsg = ($text{'theme_global_success'} . '!'), $fa = 'fa-check-circle';
+        $type = 'alert-success', $tmsg = ($theme_text{'theme_global_success'} . '!'), $fa = 'fa-check-circle';
     } elsif ($class eq "info") {
-        $type = 'alert-info', $tmsg = ($text{'theme_global_info'} . '!'), $fa = 'fa-info-circle';
+        $type = 'alert-info', $tmsg = ($theme_text{'theme_global_info'} . '!'), $fa = 'fa-info-circle';
     } elsif ($class eq "warn") {
-        $type = 'alert-warning', $tmsg = ($text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
+        $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
-        $type = 'alert-danger', $tmsg = ($text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+        $type = 'alert-danger', $tmsg = ($theme_text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
     }
 
     $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";
@@ -877,9 +903,9 @@ sub theme_ui_table_row
 sub theme_ui_table_hr
 {
     my $rv;
-    if ($ui_table_pos) {
+    if ($main::ui_table_pos) {
         $rv .= "</tr>\n";
-        $ui_table_pos = 0;
+        $main::ui_table_pos = 0;
     }
     $rv .= "<tr> " . "<td colspan=$main::ui_table_cols class='no-border'><hr></td></tr>\n";
     return $rv;
@@ -888,8 +914,8 @@ sub theme_ui_table_hr
 sub theme_ui_opt_textbox
 {
     my ($name, $value, $size, $opt1, $opt2, $dis, $extra, $max, $tags) = @_;
-    my $dis1 = &js_disable_inputs([$name, @$extra], []);
-    my $dis2 = &js_disable_inputs([], [$name, @$extra]);
+    my $dis1 = &js_disable_inputs([$name, (defined($extra) ? @$extra : ())], []);
+    my $dis2 = &js_disable_inputs([], [$name, (defined($extra) ? @$extra : ())]);
     my $rv;
     $size = &ui_max_text_width($size);
     $rv .= &ui_radio($name . "_def",
@@ -911,11 +937,11 @@ sub theme_ui_checked_columns_row
     my $rv;
     $rv .= "<tr" . ($cb ? " " . $cb : "") . " class='ui_checked_columns'>\n";
     $rv .=
-      "<td class='ui_checked_checkbox' " .
-      $tdtags->[0] . ">" . &ui_checkbox($checkname, $checkvalue, undef, $checked, $tags, $disabled) . "</td>\n";
+      "<td class='ui_checked_checkbox' " . (ref($tdtags) ? $tdtags->[0] : '') .
+      ">" . &ui_checkbox($checkname, $checkvalue, undef, $checked, $tags, $disabled) . "</td>\n";
     my $i;
     for ($i = 0; $i < @$cols; $i++) {
-        $rv .= "<td " . $tdtags->[$i + 1] . ">";
+        $rv .= "<td " . (ref($tdtags) ? $tdtags->[$i + 1] : '') . ">";
         if ($cols->[$i] !~ /<a\s+href|<input|<select|<textarea/) {
             $rv .= "<label for=\"" . &quote_escape("${checkname}_${checkvalue}") . "\">";
         }
@@ -1053,22 +1079,22 @@ sub theme_nice_size
     my ($units, $uname);
     if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_PB'};
+        $uname = $theme_text{'theme_nice_size_PB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_TB'};
+        $uname = $theme_text{'theme_nice_size_TB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_GB'};
+        $uname = $theme_text{'theme_nice_size_GB'};
     } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
         $units = 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_MB'};
+        $uname = $theme_text{'theme_nice_size_MB'};
     } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
         $units = 1024;
-        $uname = $Atext{'theme_nice_size_kB'};
+        $uname = $theme_text{'theme_nice_size_kB'};
     } else {
         $units = 1;
-        $uname = $Atext{'theme_nice_size_b'};
+        $uname = $theme_text{'theme_nice_size_b'};
     }
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;
@@ -1084,8 +1110,8 @@ sub theme_nice_size
 sub theme_redirect
 {
     if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
-      print "Content-type: text/html;\n\n";
-      return
+        print "Content-type: text/html;\n\n";
+        return;
     }
 
     my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (
@@ -1115,14 +1141,66 @@ sub theme_redirect
             $location = replace((':' . $port), $parent, $location);
         }
 
-        set_tmp_var('redirected', $location);
+        set_theme_temp_data('redirected', $location);
         print "Location: $location\n\n";
     } else {
         $link =~ s/(\?|&)\Q$xnav\E//ig;
-        set_tmp_var('redirected', $link);
-        print "Location: $link\n\n";
+        if (!theme_redirect_download($link)) {
+            set_theme_temp_data('redirected', $link);
+            print "Location: $link\n\n";
+        }
     }
 
+}
+
+sub theme_header_redirect_download
+{
+    my ($url, $delay, $body) = @_;
+
+    head();
+    print "<!DOCTYPE html>\n";
+    print "<html>\n";
+    print "<head>\n";
+    print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
+      .
+      ( (&get_product_name() eq 'usermin') ? '-usermin' :
+          '-webmin'
+      ) .
+      '.ico">' . "\n";
+    print '<meta charset="' . get_charset() . '">', "\n";
+    print "<meta data-predownload http-equiv=\"refresh\" content=\"$delay;url=$url\">\n";
+    print "</head>\n";
+    if ($body) {
+        print "<body>\n";
+        print $body . "\n";
+        print "</body>\n";
+    }
+    print '</html>';
+
+}
+
+sub theme_redirect_download
+{
+    if ($_[0] =~ /fetch.cgi/) {
+        my $query = get_env('query_string');
+        my $show  = $query =~ /show=1/ ? 1 : 0;
+        my $delay = $_[0] =~ /unzip=1/ ? 1 : 0;
+        my $zip   = $_[0] =~ /.zip/ ? 1 : 0;
+        my $body;
+
+        if ($delay) {
+            $body = $theme_text{'theme_xhred_download_is_being_prepared'};
+        }
+        if (!$delay && !$show) {
+            $body = $theme_text{'right_download_is_ready'};
+        }
+
+        theme_header_redirect_download($_[0], $delay, $body);
+
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 sub theme_js_redirect
@@ -1135,7 +1213,7 @@ sub theme_js_redirect
     }
 
     return
-"$Atext{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('"
+"$theme_text{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('"
       . quote_escape($url)
       . "');}, 3000);</script>\n";
 }
@@ -1175,6 +1253,13 @@ sub theme_post_change_theme
         unlink_file('/etc/csf/csf.header');
         unlink_file('/etc/csf/csf.footer');
     }
+}
+
+sub theme_post_change_modules
+{
+    print '<script>';
+    print 'theme_post_save=-1', "\n";
+    print '</script>';
 }
 
 $main::cloudmin_no_create_links = 1;

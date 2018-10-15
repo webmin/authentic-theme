@@ -4,7 +4,6 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
-use warnings;
 
 use File::Basename;
 use JSON;
@@ -139,14 +138,25 @@ sub folders_select
 {
     my ($folders, $folder, $type) = @_;
     my @opts;
-    my $name;
+    my $id;
+    my $offset = 0;
+
     push(@opts, [undef, undef]);
+    push(@opts, [-1,    $text{'sform_all'}]);
+    push(@opts, [-2,    $text{'sform_local'}]);
+
     foreach my $f (@$folders) {
         $f->{'name'} =~ tr/\./\//d;
-        $name = ($type ? folder_name($f) : $f->{'index'});
-        push(@opts, [$name, $f->{'name'}]);
+        $id = ($type ? folder_name($f) : $f->{'index'});
+        if ($f->{'name'} =~ /^INBOX\//) {
+            $f->{'name'} =~ tr/INBOX/Inbox/d;
+            splice(@opts, (4 + $offset), 0, [$id, $f->{'name'}]);
+            $offset++;
+        } else {
+            push(@opts, [$id, $f->{'name'}]);
+        }
     }
-    return ui_select(undef, undef, \@opts, 0, 0, 0, 0);
+    return ui_select(undef, undef, \@opts);
 }
 
 sub folder_counts
@@ -161,14 +171,30 @@ sub folder_counts
     return (int($total), int($unread), int($special));
 }
 
+sub folder_data
+{
+    my ($folder) = @_;
+    my ($folder_id, $folder_file, $folder_name) = ($folder->{'id'}, $folder->{'file'}, $folder->{'name'});
+
+    if ($in{'searched_folder_id'}) {
+        $folder_id = $in{'searched_folder_id'};
+    }
+
+    if ($in{'searched_folder_file'}) {
+        $folder_file = $in{'searched_folder_file'};
+    }
+
+    return ($folder_id, $folder_file, $folder_name);
+}
+
 sub message_avatar
 {
-    my ($sender) = @_;
-    my $hash = md5_hex($sender);
+    my ($sender, $blank) = @_;
+    my $hash = $blank ? undef : md5_hex($sender);
 
-    return
-      '</td><td><span class="mail-list-avatar-container"><span class="mail-list-avatar"><img src="//www.gravatar.com/avatar/'
-      . $hash . '?d=mm&s=30" alt></span></span></td>';
+    return '</td><td data-blank="' . ($blank ? '1' : '0') . '"><span class="mail-list-avatar-container"><span data-blank="' .
+      ($blank ? '1'     : '0') . '" class="mail-list-avatar"><img src="//www.gravatar.com/avatar/' . $hash . '?d=' .
+      ($blank ? "blank" : "mm") . '&s=30" alt></span></span></td>';
 }
 
 sub message_addressee
@@ -435,7 +461,7 @@ sub message_pagination_link
 # Generate sort link for messages
 sub messages_sort_link
 {
-    my ($title, $field, $folder, $start) = @_;
+    my ($title, $field, $folder, $start, %searched) = @_;
     my ($sortfield, $sortdir) = get_sort_field($folder);
     my $dir = $sortfield eq $field ? !$sortdir : 0;
     my $img =
@@ -443,8 +469,9 @@ sub messages_sort_link
       $sortfield eq $field && !$dir ? "sort-asc" :
       "sort-inactive";
     if ($folder->{'sortable'} && $userconfig{'show_sort'}) {
-        return "<a href='sort.cgi?field=" . &urlize($field) . "&dir=" . &urlize($dir) . "&folder=" .
-          &urlize($folder->{'index'}) . "&start=" . &urlize($start) . "'><i class=\"fa fa-fw fa-$img\"> </i>$title";
+        return "<a data-href='sort.cgi?returned_format=json&field=" .
+          &urlize($field) . "&dir=" . &urlize($dir) . "&folder=" . &urlize($folder->{'index'}) .
+          "&start=" . &urlize($start) . hash_to_query('&', %searched) . "'><i class=\"fa fa-fw fa-$img\"> </i>$title";
     } else {
         return $title;
     }
@@ -523,6 +550,12 @@ sub messages_list
         my $idx = $m->{'idx'};
         my $id  = $m->{'id'};
         my @cols;
+
+        # Trim folder id for search
+        my $searched_folder_id = $in{'searched_folder_id'};
+        if (defined($searched_folder_id)) {
+            $id = trim(replace(folders_key_escape($searched_folder_id), '', $id));
+        }
 
         # Special flag
         my ($unread, $starred, $flag_reply, $flag_special, $flag_security, $flags_all, $flags_dns) =
@@ -619,9 +652,7 @@ sub messages_list
         #Mark unread
         push(@colattrs, " data-unread=\"$unread\" data-starred=\"$starred\"");
 
-        $list_mails .=
-          ui_message_list_column(\@cols, \@colattrs, "d", $id, message_sender($m->{'header'}->{'to'}), editable_mail($m));
-
+        $list_mails .= ui_message_list_column(\@cols, \@colattrs, "d", $id, $m, $folder);
         update_delivery_notification($mail[$i], $folder);
     }
 
@@ -629,7 +660,7 @@ sub messages_list
     return $list_mails;
 }
 
-sub message_sender
+sub message_email_address
 {
     my ($message_header_addressee) = @_;
     my @sender_addresses = split_addresses($message_header_addressee);
@@ -659,14 +690,16 @@ sub message_select_link
 
 sub ui_message_list_column
 {
-    my ($cols, $trattrs, $checkname, $checkvalue, $sender, $editable) = @_;
+    my ($cols, $trattrs, $checkname, $checkvalue, $message, $folder) = @_;
     my $rv;
+    my $editable = editable_mail($message);
+
     $rv .= "<tr  " . $trattrs->[0] . " class='ui_checked_columns'>\n";
     $rv .= "<td class='" . ($editable ? 'ui_checked_checkbox' : undef) . "'>";
     if ($editable) {
         $rv .= theme_ui_checkbox_local($checkname, $checkvalue, undef, undef, "data-check") . "";
     }
-    $rv .= message_avatar($sender);
+    $rv .= message_avatar(message_email_address($message->{'header'}->{'from'}), $folder->{'sent'});
     $rv .= '</td>';
 
     my $i;

@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=テーマの拡張機能
 settings_right_file_edit=拡張ファイルの編集:
 settings_right_extensions_title=テーマの豊富なデザインは、簡単にインターフェイスのターゲット部分に操作することができます。
 
-settings_right_theme_logos=テーマのロゴ
-settings_right_theme_logos_title=テーマのロゴ
+theme_xhred_settings_right_theme_logos=テーマのロゴ
+theme_xhred_settings_right_theme_logos_title=テーマのロゴ
 settings_right_logos_title= テーマのロゴは、認証されたユーザと未認証ユーザーの両方に対して簡単に設定できます。推奨ロゴサイズは <kbd>180x90</kbd> ピクセルで、サポートされている唯一の形式は <kbd>.png</kbd> で、アルファ透過性を提供します。
 settings_right_logo_authenticated_users=認証済みユーザーのロゴ
 settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
@@ -115,7 +115,7 @@ settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 settings_right_current_theme=現在のテーマ
 settings_right_title=このページでは、<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme </a>のオプションを設定できます。設定は、テーマの更新時に保存されます。
 settings_right_theme_left_configuration_title= Authentic Theme の構成
-settings_right_theme_left_extensions_title=Authentic Theme 拡張エディタ
+settings_right_theme_left_extensions_title=Theme 拡張エディタ
 settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
 settings_right_theme_configurable_options_title= Authentic Theme のための設定可能なオプション
 
@@ -142,7 +142,7 @@ settings_hotkey_custom_9=カスタムリンク <code>9</code>
 settings_navigation_color=ナビゲーションメニューのカラーパレット
 settings_background_color=コンテンツページのカラーパレット
 settings_animation_left=ナビゲーションメニューでアニメーションを有効にする
-settings_animation_tabs=タブでアニメーションを有効にする
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
 settings_right_reload=既定のコンテンツページの読み込み
@@ -224,7 +224,7 @@ theme_sysinfo_vmdocs=Virtualmin ドキュメント
 theme_sysinfo_cmdocs=Cloudmin ドキュメント
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Plain Text
 
 theme_xhred_titles_wm=Webmin
@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=現在のディレクトリにアップ�
 theme_xhred_filemanager_context_download=リモート URL からダウンロード
 
 #17.53
-theme_settings_virtualmin=で仮想サーバー
-theme_settings_cloudmin=Cloudmin 管理システム
+theme_config_virtualmin=で仮想サーバー
+theme_config_cloudmin=Cloudmin 管理システム
 settings_right_thirdparties_options_title=サードパーティモジュールのオプション
 theme_xhred_filemanager_context_calculate_size=スペースバーのサイズを計算する
 theme_xhred_filemanager_context_bookmarks=ブックマーク
@@ -401,7 +401,6 @@ theme_xhred_filemanager_target_conflict_replace= マージと置き換える
 theme_xhred_filemanager_target_conflict_paste= 新しい名前で貼り付ける
 
 theme_xhred_editor_help_title= エディタのキーボードショートカット
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong> 検索/置換 </strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head"> キープレス </th> <th class="head">コマンド</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td> 検索 </td> </tr> <tr><td>Ctrl + H</td> <td> 置換 </td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td> すべてを置換 </td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td> 前の検索 </td> </tr> <tr><td>Alt + G</td> <td> 行にジャンプ </td> </tr> </tbody> </table> <h5><strong> テキスト操作 </strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">キープレス</th> <th class="head">コマンド</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td> 大文字に変換 </td> </tr> <tr><td>Ctrl + KL</td> <td> 小文字に変換 </td> </tr> </tbody> </table> <h5><strong> 編集 </strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">キープレス</th> <th class="head">コマンド</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td> オートコンプリートを有効にする </td> </tr> <tr><td>Ctrl + X</td> <td> 切り取り </td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td> 行/選択範囲を上に移動 </td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td> 行/選択を下に移動 </td> </tr> <tr><td>Ctrl + L</td> <td> 行を選択 - 次の行を選択するために繰り返します。 </td> </tr> <tr><td>Ctrl + D</td> <td> 単語を選択 - 他のものを繰り返し選択 </td> </tr> <tr><td>Ctrl + M</td> <td> 閉じ括弧にジャンプ繰り返して括弧を開きます </td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td> 現在のかっこのすべての内容を選択する </td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td> 行の削除 </td> </tr> <tr><td>Ctrl + KK</td> <td> カーソルから行末までの削除 </td> </tr> <tr><td>Ctrl + K + Backspace</td> <td> 行の先頭からカーソルから削除 </td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td> 重複する行 </td> </tr> <tr><td>Ctrl + J</td> <td> 下の行を現在の行の末尾に結合する </td> </tr> <tr><td>Ctrl + /</td> <td> 現在の行のコメント/コメント解除 </td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td> コメントの現在の選択をブロックする </td> </tr> <tr><td>Ctrl + Y</td> <td> やり直し、または最後のキーボードショートカットコマンドの繰り返し </td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td> 正しくペーストしてインデントする </td> </tr> <tr><td>Ctrl + Space</td> <td> 次のオートコンプリート提案を選択 </td> </tr> <tr><td>Ctrl + U</td> <td> ソフト元に戻す。繰り返したときに元に戻す前に最後の変更にジャンプします </td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar= ツールバーを非表示
 theme_xhred_filemanager_hide_actions= 操作の列を非表示
@@ -623,7 +622,6 @@ settings_sysinfo_easypie_charts_size= グラフの直径
 theme_xhred_global_choose= 選択する
 theme_xhred_global_select= 選択
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates= 開発バージョンを含む
 settings_sysinfo_theme_updates_description= このオプションを有効にするには、システムに<code>git</code>コマンドをインストールする必要があります
 theme_git_patch_available= 最新の開発版
 theme_git_patch_no_git_message= 最新のアップデートをGitHubから直接インストールするには、<code>git</code>コマンドがインストールされていることを確認する必要があります。
@@ -766,8 +764,8 @@ theme_xhred_upload_initial_info= ここにファイルをドラッグアンド�
 #19.09
 theme_xhred_global_empty= 空
 theme_xhred_global_click_here= ここをクリック
-theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3<em>$4</em>と$5<em> $6 </em>の最新版および/または未発売版が適切に動作する必要があります。
-theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3 em>$4</em>が必要です。
+theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3と$5の最新版および/または未発売版が適切に動作する必要があります。
+theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>をインストールするには、最新のバージョンまたはリリースされていないバージョンの$3が必要です。
 theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
 theme_xhred_global_outdated= このバージョンは古くなっています
 
@@ -832,7 +830,7 @@ settings_perform_content_scrolling= プログレッシブ出力のコンテン�
 settings_contrast_mode= ハイコントラストモードを有効にする
 settings_side_slider_enabled_description= この機能を使用するには、<em>システムステータス</em>モジュールを有効にする必要があります。
 theme_xhred_global_firewall= ファイアーウォール
-theme_xhred_settings_show_webmin_tab= サーバー所有者のナビゲーションメニューにWebminスイッチを表示する
+theme_xhred_settings_show_webmin_tab= ナビゲーションメニューにWebminスイッチを表示しますか？
 
 
 #19.14
@@ -921,3 +919,43 @@ extensions_mail_move_copy_only= 移動しないでください。コピーして
 theme_xhred_global_total= 合計
 theme_xhred_global_selected= 選択された
 theme_xhred_mail_new_message= 新しいメッセージ
+
+theme_xhred_mail_search_simple= 検索オプションを表示
+theme_xhred_mail_search_advanced= 検索オプションを隠す
+theme_xhred_mail_search_clear= 検索結果をクリア
+theme_xhred_mail_search_empty= 検索に一致するメッセージはありません
+theme_xhred_mail_search_search_mail= メールを検索
+theme_xhred_mail_search_from= より
+theme_xhred_mail_search_to= へ
+theme_xhred_mail_search_subject= 件名
+theme_xhred_mail_search_has_words= 言葉を持っている
+theme_xhred_mail_search_doesnt_have_words= 持っていない
+theme_xhred_mail_search_with_status= ステータス付き
+theme_xhred_mail_search_with_status_any= どれか
+theme_xhred_mail_search_with_status_unread= 未読
+theme_xhred_mail_search_with_status_read= 読む
+theme_xhred_mail_search_with_status_special= 特別
+theme_xhred_mail_search_search_in= 検索する
+theme_xhred_mail_search_limit_results= 検索結果を制限する
+theme_xhred_mail_search_limit_results_yes= はい、検索のみ
+theme_xhred_mail_search_has_attach= 添付ファイルあり
+
+theme_xhred_settings_right_theme_bgs= テーマの背景
+theme_xhred_settings_right_theme_bgs_title= テーマの背景
+settings_right_bgs_title= ログインページのテーマの背景をここで設定できます。アルファ透明度を提供するためにサポートされているフォーマットは<kbd> .png </kbd>のみです。
+settings_right_bg_unauthenticated_users= 認証されていないユーザーの背景
+settings_right_theme_left_background_title= テーマバックグラウンドコントロール
+
+theme_xhred_find_in_config_files= 設定ファイルで検索
+theme_xhred_find_in_config_files_result_found_single= $2のファイルに$3の結果が見つかりました
+theme_xhred_find_in_config_files_result_found_multi= $2のファイルに$3の検索結果が見つかりました
+theme_xhred_find_in_config_files_results_found= $2のファイルに$3の検索結果が見つかりました
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..

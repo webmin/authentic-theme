@@ -1,15 +1,41 @@
 ## Changelog
 
+#### Version 19.20-beta5 (September 30, 2018) [4 Year Anniversary] :clap: :balloon: :gift:
+* Add ability to search for text when editing config files manually [#1198](https://github.com/authentic-theme/authentic-theme/issues/1198)
+* Add support to setup and display background for login page [#1195](https://github.com/authentic-theme/authentic-theme/issues/1195)
+* Add significant UI improvements to Custom module for default mode
+* Add ability to open multiple tabs simultaneously (quickly) [#1196](https://github.com/authentic-theme/authentic-theme/issues/1196)
+* Add to enable _use strict_ for production and _use warnings_ for debug
+* Set navigation menu to default to White palette
+* Fix to improve experience for opening new tabs using _modifier key + click_
+* Fix connection error message appearing on slow connections [sourceforge.net/5059](https://sourceforge.net/p/webadmin/bugs/5059) [sourceforge.net/5187](https://sourceforge.net/p/webadmin/bugs/5187)
+* Fix using only sender's email address with Gravatar in Mail [#431/comment-423205990](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-423205990)
+* Fix to clear cookies right after its used in File Manager [sourceforge.net/5096](https://sourceforge.net/p/webadmin/bugs/5096)
+* Fix to optimize language load
+
+#### Version 19.20-beta4 (September 5, 2018)
+* Add theme overlays native support [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
+* Add polyfills to support _Object.values_ and _Object.entries_ methods for older browsers
+* Fix sorting by size issue in File Manager for folders
+* Fix notifications alignment for multiple configurations [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
+
+#### Version 19.20-beta3 (August 23, 2018)
+* Add mail search for mail in Usermin
+* Add Swedish language translation update
+* Fix directory download issue in user mode in File Manager [virtualmin.com/58448](https://virtualmin.com/node/58448)
+* Fix not to scroll confirmation page for Package Updates on Debian
+* Fix not to log deleted files in File Manager
+
 #### Version 19.20-beta2 (July 31, 2018)
 * Add Japanese and German language translation updates
 * Add column sorting and filter to Virtualmin/DNS Records page
 * Fix to prevent showing container offset for certain pages (File Manager, Mail Listing and Editors)
-* Fix excessive escaping for upload progress data in File Manager [#1174](https://github.com/authentic-theme/authenticsome -theme/issues/1174)
-* Fix read mail link not loading content  [#1177](https://github.com/authentic-theme/authenticsome -theme/issues/1177)
+* Fix excessive escaping for upload progress data in File Manager [#1174](https://github.com/authentic-theme/authentic-theme/issues/1174)
+* Fix read mail link not loading content  [#1177](https://github.com/authentic-theme/authentic-theme/issues/1177)
 
 #### Version 19.20-beta1 (July 25, 2018)
 * Add brand new listing and controls for mail in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
-* Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authenticsome -theme/issues/1175)
+* Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authentic-theme/issues/1175)
 
 <!--- separator --->
 

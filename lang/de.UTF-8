@@ -98,8 +98,8 @@ settings_right_theme_extensions=Design Erweiterungen
 settings_right_theme_extensions_title=Design Erweiterungen
 settings_right_file_edit=Bearbeite Erweitungs Datei:
 settings_right_extensions_title=Das erweiterbare Design erlaubt es sehr einfach Teile der Benutzerschnittstelle
-settings_right_theme_logos=Design Logos
-settings_right_theme_logos_title=Design Logos
+theme_xhred_settings_right_theme_logos=Design Logos
+theme_xhred_settings_right_theme_logos_title=Design Logos
 settings_right_logos_title=Hier kann man die Design Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Gr&ouml;&szlige der Logos betr&auml;gt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterst&uuml;tzung f&uuml;r den Hintergrund Kanals ben&ouml;tigt wird.
 settings_right_logo_authenticated_users=Logo f&uuml;r angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo f&uuml;r nicht angemeldete Benutzer
@@ -134,7 +134,7 @@ settings_hotkey_custom_9=Benutzerdefinierter Link <code>9</code>
 settings_navigation_color=Farbpalette f&uuml;r Navigations Men&uuml;
 settings_background_color=Farbpalette f&uuml;r Inhalts Seite
 settings_animation_left=Animnationen im Navigations Men&uuml; einschalten
-settings_animation_tabs=Animnationen in den Tabs einschalten
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Men&uuml; einschalten
 settings_right_reload=Lade Standard Inhalts Seite
@@ -216,7 +216,7 @@ theme_sysinfo_vmdocs=Virtualmin Dokmentation
 theme_sysinfo_cmdocs=Cloudmin Dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Nur Text
 
 theme_xhred_titles_wm=Webmin
@@ -324,8 +324,8 @@ theme_xhred_filemanager_context_upload=In aktuelles Verzeichnis hochladen
 theme_xhred_filemanager_context_download=Von entfernert URL herunterladen
 
 #17.53
-theme_settings_virtualmin=Virtualmin virtuelle Server
-theme_settings_cloudmin=Cloudmin gemanagte System
+theme_config_virtualmin=Virtualmin virtuelle Server
+theme_config_cloudmin=Cloudmin gemanagte System
 settings_right_thirdparties_options_title=Optionen f&uuml;r Drittanbieter Module
 theme_xhred_filemanager_context_calculate_size=Freien Platz berechnen
 theme_xhred_filemanager_context_bookmarks=Lesezeichen
@@ -393,7 +393,6 @@ theme_xhred_filemanager_target_conflict_replace=Vereinigen und ersetzen
 theme_xhred_filemanager_target_conflict_paste=Unter neuem Namen einf&uuml;gen
 
 theme_xhred_editor_help_title=Editor Schnellzugriffs Tasten
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar=Toolbar verbergen
 theme_xhred_filemanager_hide_actions=Aktivit&auml;ten Zeile verbergen
@@ -616,7 +615,6 @@ settings_sysinfo_easypie_charts_size=Durchmesser der Diagramme
 theme_xhred_global_choose=Ausw&auml;hlen
 theme_xhred_global_select=Ausw&auml;hlen
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Auch auf Beta Versionen pr&uuml;fen?
 settings_sysinfo_theme_updates_description=Damit dies funktioniert, muss das Programm <code>git</code> installiert sein.
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=Damit die neuesten Aktualisierungen von Github installiert werden k&ouml;nnen, muss das Programm <code>git</code> installiert sein.
@@ -760,8 +758,8 @@ theme_xhred_upload_initial_info=Datei(en) hierher ziehen oder zum Ausw&auml;hlen
 #19.09
 theme_xhred_global_empty=Leer
 theme_xhred_global_click_here=Hier klicken
-theme_git_patch_incompatible_message=Die installierte Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version <em>$4</em> von $3 und $5 <em>$6</em>.
-theme_git_patch_incompatible_message_s=Die installierte Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version <em>$4</em> von $3.
+theme_git_patch_incompatible_message=Die installierte Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von $3 und $5.
+theme_git_patch_incompatible_message_s=Die installierte Version von $1 <em>$2</em> ben&ouml;tigt die neueste, evtl. noch nicht ver&ouml;ffentliche Version von $3.
 theme_git_patch_incompatible_message_desc=Es k&ouml;nnten m&ouml;glicherweise nicht kompatible &Auml;nderungen enthalten sein, die verhindern das das Desgin korrekt funktioniert. Damit diese Warnung nicht angezeigt wird und das Desgin installiert oder aktualisiert wird $1 oder aktualisiere $2 auf der Kommandozeile auf die aktuelle Entwicklerversiontion mit dem Script <kbd>update-from-repo.sh</kbd>.
 theme_xhred_global_outdated=Diese Version ist veraltet
 
@@ -826,7 +824,7 @@ settings_perform_content_scrolling=Automatisches Seitenrollen für progressive A
 settings_contrast_mode=Hoher Kontrast Modus einschalten
 settings_side_slider_enabled_description=Für diese Option muss das <em>System Status</em> Modul eingeschaltet sein.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Webmin Schaltfl&auml;che im Navigations Men&uuml; f&uuml; Server Besitzer
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -881,7 +879,7 @@ extensions_mail_pagination_left=Vorherige
 theme_xhred_global_move=Verschieben
 theme_xhred_global_copy=Kopieren
 theme_xhred_mail_more=Mehr
-theme_xhred_mail_copy_only=und in Posteingeng verschieben 
+theme_xhred_mail_copy_only=und in Posteingeng verschieben
 theme_xhred_global_sort=Sortieren
 theme_xhred_global_search=Suchen
 theme_xhred_global_delete=L&ouml;schen
@@ -915,3 +913,43 @@ extensions_mail_move_copy_only=und in Posteingeng verschieben
 theme_xhred_global_total=Gesammt
 theme_xhred_global_selected=Ausge&auml;hlt
 theme_xhred_mail_new_message=Neue Nachricht
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..

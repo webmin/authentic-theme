@@ -6,9 +6,12 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
+use strict;
+
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
 use Time::Local;
+
+our (%in, $cwd);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -24,24 +27,20 @@ if ($in{'cancel'} eq '1') {
     unlink_file($target_dir);
 } elsif ($in{'download'} eq '1') {
     my $file = simplify_path($target);
-    for $allowed_path (@allowed_paths) {
-        if (is_under_directory($allowed_path, $file)) {
-            my $size = -s "$target";
-            print "Content-Type: application/x-download\n";
-            print "Content-Disposition: attachment; filename=\"$filename.$extension\"\n";
-            print "Content-Length: $size\n\n";
-            open(FILE, "< $file") or die "can't open $file: $!";
-            binmode FILE;
-            local $/ = \102400;
+    my $size = -s "$target";
+    print "Content-Type: application/x-download\n";
+    print "Content-Disposition: attachment; filename=\"$filename.$extension\"\n";
+    print "Content-Length: $size\n\n";
+    open(FILE, "< $file") or die "can't open $file: $!";
+    binmode FILE;
+    local $/ = \102400;
 
-            while (<FILE>) {
-                print $_;
-            }
-            close FILE;
-            unlink_file($target_dir);
-            last;
-        }
+    while (<FILE>) {
+        print $_;
     }
+    close FILE;
+    unlink_file($target_dir);
+    last;
 } else {
     mkdir($target_dir, 0755);
     if ($has_zip && $do_zip) {

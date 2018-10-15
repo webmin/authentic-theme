@@ -107,8 +107,8 @@ settings_right_theme_extensions_title=Extensiile Temei
 settings_right_file_edit=Editează fișierele temei:
 settings_right_extensions_title=Proiectarea extinsă a Temei, vă permite manipularea cu ușurință a părților vizate din interfață.
 
-settings_right_theme_logos=Logo-urile temei
-settings_right_theme_logos_title=Logo-urile Temei
+theme_xhred_settings_right_theme_logos=Logo-urile temei
+theme_xhred_settings_right_theme_logos_title=Logo-urile Temei
 settings_right_logos_title=Logo-urile temei pot fi ușor configurate aici, pentru ambele moduri, atât pentru utilizatorii autentificați cât și neautentificați. Dimensiunea recomandată a logo-ului este <kbd>180x90</kbd> pixeli și singurul format acceptat este <kbd>.png</kbd>, pentru a asigura transpatența în mod ALPHA.
 settings_right_logo_authenticated_users=Logo pentru utilizatori autentificați
 settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentificați
@@ -143,7 +143,7 @@ settings_hotkey_custom_9=Legătură personalizată <code>9</code>
 settings_navigation_color=Culoare meniu navigare
 settings_background_color=Culoare pagina conţinut
 settings_animation_left=Activează animația în meniul de navigare
-settings_animation_tabs=Activează animația in taburi
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
 settings_loader_left=Activează spinner pentru meniul de navigare
 settings_right_reload=Încarcă pagina cu conținut implicit
@@ -225,7 +225,7 @@ theme_sysinfo_vmdocs=Documentație Virtualmin
 theme_sysinfo_cmdocs=Documentație Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Plain Text
 
 theme_xhred_titles_wm=Webmin
@@ -333,8 +333,8 @@ theme_xhred_filemanager_context_upload=Încarcă în directorul curent
 theme_xhred_filemanager_context_download=Descarcă din URL de la distanţă
 
 #17.53
-theme_settings_virtualmin=Virtualmin Servere Virtuale
-theme_settings_cloudmin=Cloudmin Sisteme Administrate
+theme_config_virtualmin=Virtualmin Servere Virtuale
+theme_config_cloudmin=Cloudmin Sisteme Administrate
 settings_right_thirdparties_options_title=Opţiunile modulelor terţe
 theme_xhred_filemanager_context_calculate_size=Calculează dimensiunea la spacebar
 theme_xhred_filemanager_context_bookmarks=Marcaje
@@ -403,7 +403,6 @@ theme_xhred_filemanager_target_conflict_replace=Îmbinare sau înlocuire
 theme_xhred_filemanager_target_conflict_paste=Lipeşte cu nume nou
 
 theme_xhred_editor_help_title=Editor Scurtături de Tastatură
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Caută/Înlocuieşte</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Comandă</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Caută</td> </tr> <tr><td>Ctrl + H</td> <td>Înlocuieşte</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Înlocuieşte tot</td> </tr> <tr><td>Ctrl + G</td> <td>Caută următorul</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Caută anterior</td> </tr> <tr><td>Alt + G</td> <td>Sări la linia</td> </tr> </tbody> </table> <h5><strong>Manipularea textului</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Comandă</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transformaţi în Litere Mari</td> </tr> <tr><td>Ctrl + KL</td> <td>Transformaţi în Litere Mici</td> </tr> </tbody> </table> <h5><strong>Editare</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Comandă</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activează Autocompletarea</td> </tr> <tr><td>Ctrl + X</td> <td>Taie rândul</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Mută rândul/selecţia sus</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Mută rândul/selecţia jos</td> </tr> <tr><td>Ctrl + L</td> <td>Selectează rîndul - Repetă selectarea la rândurile următoare</td></tr> <tr><td>Ctrl + D</td> <td>Selectează cuvânt - Repetă selecţia la alte evenimente</td></tr> <tr><td>Ctrl + M</td> <td>Sări la inchiderea parantezelor Repetă săritura la parantezele deschise</td></tr> <tr><td>Ctrl + ⇧ + M</td> <td>Selectează tot conţinutul parentezelor curente</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Şterge Rîndul</td> </tr> <tr><td>Ctrl + KK</td> <td>Şterge de la cursor până la sfârşitul rândului</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Şterge de la cursor până la începutul rândului</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplică rând(uri)</td> </tr> <tr><td>Ctrl + J</td> <td>Alăturați linia de mai jos până la sfârșitul liniei curente</td></tr> <tr><td>Ctrl + /</td> <td>Comentează/de-comentează rândul curent</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Blochează comentarea selecţiei curente</td> </tr> <tr><td>Ctrl + Y</td> <td>Refă, sau repetă ultima comandă scurtătură de tastatură</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Lipiți și indentați corect</td> </tr> <tr><td>Ctrl + Space</td> <td>Selectaţi următoarea sugestie din autocompletare</td> </tr> <tr><td>Ctrl + U</td> <td>Desfă uşor; sare la ultima schimbare înainte de a anula modificarea atunci când se repetă</td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar=Ascunde bara de instrumente
 theme_xhred_filemanager_hide_actions=Ascunde coloana de acţiuni
@@ -625,7 +624,6 @@ settings_sysinfo_easypie_charts_size=Diametru grafice
 theme_xhred_global_choose=Alege
 theme_xhred_global_select=Selectează
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=Ca această opţiune să funcţioneze, comanda <code>git</code> trebuie să fie instalată pe sistem
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=Ca să instalezi ulimile patch-uri direct de pe GitHub asigurăte ca ai comanda <code>git</code> instalată.
@@ -767,8 +765,8 @@ theme_xhred_upload_initial_info=Drag and drop files here or click to select
 #19.09
 theme_xhred_global_empty=Empty
 theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
+theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 and $5 to work properly.
+theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 to work properly.
 theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
 theme_xhred_global_outdated=This version is outdated
 
@@ -833,7 +831,7 @@ settings_perform_content_scrolling=Enable automatic page scrolling for progressi
 settings_contrast_mode=Enable high contrast mode
 settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -922,3 +920,43 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..

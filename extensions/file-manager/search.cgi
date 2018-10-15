@@ -6,9 +6,11 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 
 use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+
+our (%in, $cwd);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -21,7 +23,7 @@ if ($in{'caseins'}) {
 } else {
     $criteria = '-name';
 }
-@list = split('\n', &backquote_logged("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
+our @list = split('\n', &backquote_logged("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
 
 my $query = quotemeta(trim($in{'grepstring'}));
 if (length $query) {

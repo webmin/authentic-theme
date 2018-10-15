@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=Ekstensi tema
 settings_right_file_edit=Sunting berkas ekstensi:
 settings_right_extensions_title=Desain ekstensi tema, memungkinkan Anda untuk memanipulasi bagian tertentu pada antarmuka dengan mudah.
 
-settings_right_theme_logos=Logo tema
-settings_right_theme_logos_title=Logo tema
+theme_xhred_settings_right_theme_logos=Logo tema
+theme_xhred_settings_right_theme_logos_title=Logo tema
 settings_right_logos_title=Logo tema dapat dengan mudah diatur di sini, untuk pengguna terotentikasi dan tidak terotentikasi. Ukuran logo direkomendasikan adalah <kbd>180x90</kbd> dan hanya format <kbd>.png</kbd> yang didukung, untuk menyediakan transparansi alpha.
 settings_right_logo_authenticated_users=Logo untuk pengguna terotentikasi
 settings_right_logo_unauthenticated_users=Logo untuk pengguna tidak terotentikasi
@@ -142,7 +142,7 @@ settings_hotkey_custom_9=Tautan khusus <code>9</code>
 settings_navigation_color=Palet warna menu navigasi
 settings_background_color=Palet warna laman konten
 settings_animation_left=Aktifkan animasi pada menu navigasi
-settings_animation_tabs=Aktifkan animasi pada tab
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Aktifkan progress loader laman pada bagian atas layar
 settings_loader_left=Aktifkan spinner untuk menu navigasi
 settings_right_reload=Muat konten laman default
@@ -228,7 +228,7 @@ theme_sysinfo_vmdocs=Dokumentasi Virtualmin
 theme_sysinfo_cmdocs=Dokumentasi Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Teks polos
 
 theme_xhred_titles_wm=Webmin
@@ -336,8 +336,8 @@ theme_xhred_filemanager_context_upload=Unggah ke direktori saat ini
 theme_xhred_filemanager_context_download=Unduh dari URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Server
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Server
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Pilihan modul pihak ketiga
 theme_xhred_filemanager_context_calculate_size=Hitung ukuran spasi
 theme_xhred_filemanager_context_bookmarks=Bookmarks
@@ -405,7 +405,6 @@ theme_xhred_filemanager_target_conflict_replace=Gabungkan dan ganti
 theme_xhred_filemanager_target_conflict_paste=Tempelkan dengan nama baru
 
 theme_xhred_editor_help_title=Penyunting Pintasan Keyboard
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Cari/Ganti</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tombol ditekan</th> <th class="head">Perintah</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Cari</td> </tr> <tr><td>Ctrl + H</td> <td>Ganti</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Ganti semua</td> </tr> <tr><td>Ctrl + G</td> <td>Cari berikutnya</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Cari sebelumnya</td> </tr> <tr><td>Alt + G</td> <td>Lompat ke baris</td> </tr> </tbody> </table> <h5><strong>Manipulasi teks</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tombol ditekan</th> <th class="head">Perintah</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Ubah ke huruf besar</td> </tr> <tr><td>Ctrl + KL</td> <td>Ubah ke huruf kecil</td> </tr> </tbody> </table> <h5><strong>Menyunting</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tombol ditekan</th> <th class="head">Perintah</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Spasi</td> <td>Aktifkan pelengkapan otomatis</td> </tr> <tr><td>Ctrl + X</td> <td>Potong baris</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Pindah baris/Seleksi atas</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Pindah baris/seleksi bawah</td> </tr> <tr><td>Ctrl + L</td> <td>Seleksi baris - Ulangi untuk memilih baris berikutnya</td> </tr> <tr><td>Ctrl + D</td> <td>Seleksi kata - Ulangi pilih kejadian lainnya</td> </tr> <tr><td>Ctrl + M</td> <td>Langsung ke tanda kurung tutup. Ulangiuntuk melompat ke tanda kurung pembukaan</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Pilih semua isi dari tanda kurung saat ini</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Hapus baris</td> </tr> <tr><td>Ctrl + KK</td> <td>Hapus dari kursor ke ujung baris</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Hapus dari kursor ke awal baris</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Gandakan baris</td> </tr> <tr><td>Ctrl + J</td> <td>Gabungkan bari bawah ke akhir baris saat ini</td> </tr> <tr><td>Ctrl + /</td> <td>Beri komentar/hapus komentar di baris saat ini</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Blok komentar yang sedang dipilih</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, atau ulangi perintah pintasan keyboard terakhir</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Tempel dan indentasi dengan benar</td> </tr> <tr><td>Ctrl + Space</td> <td>Pilih saran pelengkapan otomatis berikutnya</td> </tr> <tr><td>Ctrl + U</td> <td>Undo lembut; Melompat ke perubahan terakir Anda sebelum mengganti perubahan saat diulang</td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar=Sembunyikan toolbar
 theme_xhred_filemanager_hide_actions=Sembunyikan kolom aksi
@@ -628,7 +627,6 @@ settings_sysinfo_easypie_charts_size=Diameter grafik
 theme_xhred_global_choose=Pilih
 theme_xhred_global_select=Pilih
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=Agar opsi ini berhasil, perintah <code>git</code> harus diinstall di sistem Anda
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=Untuk menginstal path terbaru langsung dari GitHub Anda harus memastikan bahwa perintah <code>git</code> terinstall.
@@ -771,8 +769,8 @@ theme_xhred_upload_initial_info=Drag and drop files here or click to select
 #19.09
 theme_xhred_global_empty=Empty
 theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
+theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 and $5 to work properly.
+theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 to work properly.
 theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
 theme_xhred_global_outdated=This version is outdated
 
@@ -837,7 +835,7 @@ settings_perform_content_scrolling=Enable automatic page scrolling for progressi
 settings_contrast_mode=Enable high contrast mode
 settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -926,3 +924,43 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..

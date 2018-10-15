@@ -6,7 +6,6 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
-use warnings;
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
@@ -23,12 +22,13 @@ foreach my $folder (@folders_data) {
         next;
     }
 
-    my ($total, $unread, $special) = folder_counts($folder);
+    my ($total,     $unread,      $special)     = folder_counts($folder);
+    my ($folder_id, $folder_file, $folder_name) = folder_data($folder);
 
-    my $id = $folder->{'id'} || $folder->{'file'};
+    my $id = $folder_id || $folder_file;
     my ($fid) = folders_process($id =~ m#([^/]+)$#);
     my ($parent, $child) = $fid =~ m|^ (.+) \. ([^\.]+) \z|x;
-    my $name   = $folder->{'name'};
+    my $name   = $folder_name;
     my $key    = folders_key_escape($id);
     my $title  = folders_title_escape(folders_title_unseen(html_escape($child ? $child : $name), $unread));
     my $active = (folders_key_escape($in{'key'}) eq $key ? 1 : 0);

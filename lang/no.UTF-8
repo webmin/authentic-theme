@@ -94,7 +94,7 @@ session_logout=Du har blitt logget ut. Bruk skjema under for å logge inn igjen.
 session_timed_out=Økta gikk ut etter $ 1 minutter uten aktivitet.
 session_twofailed=To-faktor autentisering feilet: $1
 settings_animation_left=Aktiver animasjon i navigasjonsmeny
-settings_animation_tabs=Aktiver animasjon i faner
+settings_animation_tabs=Enable animation in content page
 settings_background_color=Fargepalett for innholdsside
 settings_brightness_level_navigation=Brightness filter
 settings_brightness_level_navigation_description=Standard/gjeldende verdier <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
@@ -192,8 +192,8 @@ settings_right_theme_extensions_title=Tema utvidelser
 settings_right_theme_left_configuration_title=Authentic tema Konfigurasjon
 settings_right_theme_left_extensions_title=Authentic tema utvidelses-editor
 settings_right_theme_left_logo_title=Authentic tema logokontroll
-settings_right_theme_logos=Tema logoer
-settings_right_theme_logos_title=Tema logoer
+theme_xhred_settings_right_theme_logos=Tema logoer
+theme_xhred_settings_right_theme_logos_title=Tema logoer
 settings_right_thirdparties_options_title=Innstillinger for tredje-parts moduler
 settings_right_title=Denne siden lar deg konfigurere innstillinger for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic tema</a>. Innstillinger vil bli lagret ved oppdatering av tema.
 settings_right_virtualmin_default=Standard side for Virtualmin
@@ -223,7 +223,6 @@ settings_sysinfo_easypie_charts_size=Diameter for diagrammer
 settings_sysinfo_easypie_charts_width=Diagram bredde
 settings_sysinfo_expand_all_accordions=Utvid alle trekkspill
 settings_sysinfo_link_mini=Show dashboard link as button
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=For at denne innstillingen skal virke må <code>git</code> kommandoen være installert på systemet ditt
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_theme_options_button=VIs knapp for tema innstillinger
@@ -236,7 +235,7 @@ theme_donate=Donasjon
 theme_download=Last ned
 theme_error_access_not_root=Tilgang nektet: Brukeren må ha tilgang til modulen <em>Webmin konfigurasjon</em> for å redigere tema-konfigurasjon
 theme_fileformat_css=CSS
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_json=JSON
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Denne filen må slutte med `1;` for å virke ordentlig.
@@ -257,8 +256,8 @@ theme_left_mail_change_password=Endre passord
 theme_left_mail_prefs=E-post innstillinger
 theme_name=Authentic tema
 theme_new_password_header=Sett nytt passord for bruker
-theme_settings_cloudmin=Cloudmin administrerte systemer
-theme_settings_virtualmin=Virtualmin Virtuelle tjenere
+theme_config_cloudmin=Cloudmin administrerte systemer
+theme_config_virtualmin=Virtualmin Virtuelle tjenere
 theme_sysinfo_cmdocs=Cloudmin dokumentasjon
 theme_sysinfo_vmdocs=Virtualmin dokumentasjon
 theme_sysinfo_wmdocs=Webmin dokumentasjon
@@ -309,7 +308,6 @@ theme_xhred_datatable_slengthmenu=Vise _MENU_ oppføringer
 theme_xhred_datatable_sloadingrecords=Laster
 theme_xhred_datatable_sprocessing=Behandler...
 theme_xhred_datatable_szerorecords=Ingen matchende oppføringer funnet
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Finn/Erstatt</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tastetrykk</th> <th class="head">Kommando</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Finn</td> </tr> <tr><td>Ctrl + H</td> <td>Erstatt</td> </tr> <tr><td>Ctrl + â§ + R</td> <td>Erstatt alle</td> </tr> <tr><td>Ctrl + G</td> <td>Finn neste</td> </tr> <tr><td>Ctrl + â§ + G</td> <td>Finn forrige</td> </tr> <tr><td>Alt + G</td> <td>Gå til linje</td> </tr> </tbody> </table> <h5><strong>Tekst manipulasjon</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tastetrykk</th> <th class="head">Kommando</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Endre til STORE bokstaver</td> </tr> <tr><td>Ctrl + KL</td> <td>Endre til små bokstaver</td> </tr> </tbody> </table> <h5><strong>Redigering</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tastetrykk</th> <th class="head">Kommando</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Mellomrom</td> <td>Aktiver autofullfør</td> </tr> <tr><td>Ctrl + X</td> <td>Klipp ut linje</td> </tr> <tr><td>Ctrl + â§ + â</td> <td>Flytt linje/utvalg opp</td> </tr> <tr><td>Ctrl + â§ + â</td> <td>Flytt linje/utvalg ned</td> </tr> <tr><td>Ctrl + L</td> <td>Velg linje - Gjenta for å velge neste linjer</td> </tr> <tr><td>Ctrl + D</td> <td>Velg ord - Gjenta velger andre forekomster</td> </tr> <tr><td>Ctrl + M</td> <td>Gå til lukkende parentes Gjenta for å gå til lukkende parentes</td> </tr> <tr><td>Ctrl + â§ + M</td> <td>Velg alt innhold i aktiv parentes</td> </tr> <tr><td>Ctrl + â§ + K</td> <td>Slett linje</td> </tr> <tr><td>Ctrl + KK</td> <td>Slegg fra markør til slutten av linje</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Slett fra markør til starten av linje</td> </tr> <tr><td>Ctrl + â§ + D</td> <td>Dupliser linje(r)</td> </tr> <tr><td>Ctrl + J</td> <td>Lim linjen under op slutten av gjeldende linje</td> </tr> <tr><td>Ctrl + /</td> <td>Kommenter/av-kommenter gjeldende linje</td> </tr> <tr><td>Ctrl + â§ + /</td> <td>Blokk-kommenter gjeldende utvalg</td> </tr> <tr><td>Ctrl + Y</td> <td>Gjør på nytt eller gjenta siste tastatur-snarvei kommando</td> </tr> <tr><td>Ctrl + â§ + V</td> <td>Lim inn og indenter korrekt</td> </tr> <tr><td>Ctrl + Mellomrom</td> <td>Velg neste auto-fullfør forslag</td> </tr> <tr><td>Ctrl + U</td> <td>mykt angre; går til din siste endring før angring av endring, hvis gjentatt</td> </tr> </tbody> </table>
 theme_xhred_editor_help_title=Editor tastatur-snarveier
 theme_xhred_encoding_manually_set=Set koding manuelt
 theme_xhred_encoding_warning=Oppdaget at du bruker ikke-unicode tegnsett, som ikke anbefales. Merkelig <tt>Ã</tt>-tegn kan vises i tekstredigeringsmodus og/eller du kan oppleve andre kodingsproblemer.<br><br>Endre språk i <a href="%link" class="label label-primary"><strong><i class="fa fa-cog"></i>%prod Konfigurasjon</strong></a> til <code>%lang.UTF-8</code> og sørg for at nettleseren din også oppdager det riktig.<span class="_hidden_"><br><br>Vær oppmerksom på at den innebygde <em>Webmin</em> modulen  <em>Endre språk og tema</em> kan overstyre globale innstillinger.</span>
@@ -627,8 +625,8 @@ theme_xhred_upload_initial_info=Drag and drop files here or click to select
 #19.09
 theme_xhred_global_empty=Empty
 theme_xhred_global_click_here=click here
-theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> and $5 <em>$6</em> to work properly.
-theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 <em>$4</em> to work properly.
+theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 and $5 to work properly.
+theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 to work properly.
 theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
 theme_xhred_global_outdated=This version is outdated
 
@@ -693,7 +691,7 @@ settings_perform_content_scrolling=Enable automatic page scrolling for progressi
 settings_contrast_mode=Enable high contrast mode
 settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -782,3 +780,43 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..

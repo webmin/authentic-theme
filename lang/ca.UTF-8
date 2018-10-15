@@ -107,8 +107,8 @@ settings_right_theme_extensions_title=Complements
 settings_right_file_edit=Edita l'arxiu del complement:
 settings_right_extensions_title=El disseny obert del tema et permet manipular fàcilment parts específiques de la interfície.
 
-settings_right_theme_logos=Logotip
-settings_right_theme_logos_title=Logotip
+theme_xhred_settings_right_theme_logos=Logotip
+theme_xhred_settings_right_theme_logos_title=Logotip
 settings_right_logos_title=Els logotips, tant pels usuaris autenticats com no, es poden configurar aquí. Es recomana utilitzar una imatge de 180x90 píxels utilitzant el format PNG si es vol utilitzar transparència.
 settings_right_logo_authenticated_users=Logotip per a usuaris autenticats
 settings_right_logo_unauthenticated_users=Logotip per usuaris no autenticats
@@ -143,7 +143,7 @@ settings_hotkey_custom_9=Drecera <code>9</code>
 settings_navigation_color=Color del menú de navegació
 settings_background_color=Color del fons
 settings_animation_left=Habilita l'animació en el menú de navegació
-settings_animation_tabs=Habilita l'animació en les pestanyes
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Habilitar la barra de progrés superior
 settings_loader_left=Habilitar el selector pel menú de navegació
 settings_right_reload=Carrega els continguts per dectecte de la pàgina
@@ -225,7 +225,7 @@ theme_sysinfo_vmdocs=Documentació de Virtualmin
 theme_sysinfo_cmdocs=Documentació de Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Text pla
 
 theme_xhred_titles_wm=Webmin
@@ -333,8 +333,8 @@ theme_xhred_filemanager_context_upload=Puja a la carpeta actual
 theme_xhred_filemanager_context_download=Descarrega des d'una ubicació remota
 
 #17.53
-theme_settings_virtualmin=Servidors virtuals de Virtualmin
-theme_settings_cloudmin=Sistemes gestionats per Cloudmin
+theme_config_virtualmin=Servidors virtuals de Virtualmin
+theme_config_cloudmin=Sistemes gestionats per Cloudmin
 settings_right_thirdparties_options_title=Opcions dels mòduls de tercers
 theme_xhred_filemanager_context_calculate_size=Calcula la mida
 theme_xhred_filemanager_context_bookmarks=Marcadors
@@ -403,7 +403,6 @@ theme_xhred_filemanager_target_conflict_replace=Substitueix
 theme_xhred_filemanager_target_conflict_paste=Enganxar amb un nou nom
 
 theme_xhred_editor_help_title=Editor de dreceres de teclat
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Cerca/Substitueix</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tecla</th> <th class="head">Comanda</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Cerca</td> </tr> <tr><td>Ctrl + H</td> <td>Substitueix</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Substitueix-ho tot</td> </tr> <tr><td>Ctrl + G</td> <td>Cercar el següent</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Cercar l'anterior</td> </tr> <tr><td>Alt + G</td> <td>Salta a la línia</td> </tr> </tbody> </table> <h5><strong>Manipulació del text</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tecla</th> <th class="head">Comanda</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transforma en majúscules</td> </tr> <tr><td>Ctrl + KL</td> <td>Transforma en minúscules</td> </tr> </tbody> </table> <h5><strong>Editant</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Tecla</th> <th class="head">Comanda</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Habilita autocompletar</td> </tr> <tr><td>Ctrl + X</td> <td>Talla la línia</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Moure línia/selecció cap amunt</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Moure línia/selecció cap avall</td> </tr> <tr><td>Ctrl + L</td> <td>Selecciona la línia - Repeteix per seleccionar les següents línies</td> </tr> <tr><td>Ctrl + D</td> <td>Selecciona paraula - Repeteix per seleccionar les altres</td> </tr> <tr><td>Ctrl + M</td> <td>Salta per tancar parèntesis. Repeteix per obrir parèntesis</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Selecciona tots els continguts de dins el parèntesis actual</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Elimina la línia</td> </tr> <tr><td>Ctrl + KK</td> <td>Elimina des del cursos fins al final de la línia</td> </tr> <tr><td>Ctrl + K + retrocés</td> <td>Elimina des del cursor fins al principi de la línia</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplica les línies</td> </tr> <tr><td>Ctrl + J</td> <td>Ajunta la línia de sota amb el final de la línia actual</td> </tr> <tr><td>Ctrl + /</td> <td>Comenta/descomenta la línia actual</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Comenta la selecció actual</td> </tr> <tr><td>Ctrl + Y</td> <td>Desfés, o repeteix la última comanda</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Enganxa</td> </tr> <tr><td>Ctrl + Space</td> <td>Selecciona la següent suggerència automàtica</td> </tr> <tr><td>Ctrl + U</td> <td>desfer suau; salta cap a l'últim canvi realitzat desfent el canvi quan es repeteixi</td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar=Amagar la barra d'eines
 theme_xhred_filemanager_hide_actions=Amagar la columna d'accions
@@ -625,7 +624,6 @@ settings_sysinfo_easypie_charts_size=Mida de les gràfiques
 theme_xhred_global_choose=Escull
 theme_xhred_global_select=Selecciona
 theme_xhred_global_ok=D'acord
-settings_sysinfo_theme_patched_updates=Incloure versions de desenvolupament
 settings_sysinfo_theme_updates_description=Per tal de que funcioni, cal tenir la comanda git instal·lada en el sistema.
 theme_git_patch_available=Última versió de desenvolupament
 theme_git_patch_no_git_message=Per tal d'instal·lar les últimes correccions directament de GitHub, cal tenir la comanda git instal·lada en el sistema.
@@ -769,8 +767,8 @@ theme_xhred_upload_initial_info=Arrossega i deixa anar els arxius aquí, o bé, 
 #19.09
 theme_xhred_global_empty=Buit
 theme_xhred_global_click_here=Prem amb el ratolí aquí
-theme_git_patch_incompatible_message=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> i $5 <em>$6</em> per tal de funcionar correctament.
-theme_git_patch_incompatible_message_s=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 <em>$4</em> per tal de funcionar correctament.
+theme_git_patch_incompatible_message=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 i $5 per tal de funcionar correctament.
+theme_git_patch_incompatible_message_s=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 per tal de funcionar correctament.
 theme_git_patch_incompatible_message_desc=Podrien haver-hi canvis incompatibles que provoquessin un funcionament no desitjat del tema. Per ignorar aquest avís i forçar la instal·lació del tema $1, o bé actualitza $2 a l'última versió de desenvolupament utilitzant la consola i iniciant l'script <kbd>update-from-repo.sh</kbd>.
 theme_xhred_global_outdated=Aquesta versió no està actualizada
 
@@ -835,7 +833,7 @@ settings_perform_content_scrolling=Enable automatic page scrolling for progressi
 settings_contrast_mode=Enable high contrast mode
 settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu for server owners
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -924,3 +922,43 @@ extensions_mail_move_copy_only=Don't move, just copy it
 theme_xhred_global_total=Total
 theme_xhred_global_selected=Selected
 theme_xhred_mail_new_message=New message
+
+theme_xhred_mail_search_simple=Show search options
+theme_xhred_mail_search_advanced=Hide search options
+theme_xhred_mail_search_clear=Clear search results
+theme_xhred_mail_search_empty=No messages matched your search
+theme_xhred_mail_search_search_mail=Search mail
+theme_xhred_mail_search_from=From
+theme_xhred_mail_search_to=To
+theme_xhred_mail_search_subject=Subject
+theme_xhred_mail_search_has_words=Has the words
+theme_xhred_mail_search_doesnt_have_words=Does not have
+theme_xhred_mail_search_with_status=With status
+theme_xhred_mail_search_with_status_any=Any
+theme_xhred_mail_search_with_status_unread=Unread
+theme_xhred_mail_search_with_status_read=Read
+theme_xhred_mail_search_with_status_special=Special
+theme_xhred_mail_search_search_in=Search in
+theme_xhred_mail_search_limit_results=Limit search results
+theme_xhred_mail_search_limit_results_yes=Yes, search only through
+theme_xhred_mail_search_has_attach=Has attachment
+
+theme_xhred_settings_right_theme_bgs=Theme backgrounds
+theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
+settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bg_unauthenticated_users=Background for unauthenticated users
+settings_right_theme_left_background_title=Theme Background Control
+
+theme_xhred_find_in_config_files=Find in config files
+theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
+theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
+theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..

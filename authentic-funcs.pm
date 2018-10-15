@@ -3,6 +3,9 @@
 # Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
+
+our (%module_text_reversed, %theme_text, %theme_config, %gconfig, %tconfig, $current_lang_info, $remote_user, $webmin_script_type);
 
 sub settings
 {
@@ -12,7 +15,7 @@ sub settings
         my $k = read_file_contents($f);
         my %k = $k =~ /(.*?)=(.*)/g;
         delete @k{ grep(!/^$e/, keys %k) };
-        foreach $s (keys %k) {
+        foreach my $s (keys %k) {
             $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
             $k{$s} =~ s/\\'/'/g;
             $c{$s} .= $k{$s};
@@ -61,7 +64,7 @@ sub get_text_ltr
 
 }
 
-sub reverse_text
+sub reverse_string
 {
     my ($str, $delimiter) = @_;
     my @strings = reverse(split(/\Q$delimiter\E/, $str));
@@ -97,11 +100,27 @@ sub replace
     return $string;
 }
 
+sub replace_meta
+{
+    my ($string) = @_;
+
+    my $hostname   = &get_display_hostname();
+    my $version    = &get_webmin_version();
+    my $os_type    = $gconfig{'real_os_type'} || $gconfig{'os_type'};
+    my $os_version = $gconfig{'real_os_version'} || $gconfig{'os_version'};
+    $string =~ s/%HOSTNAME%/$hostname/g;
+    $string =~ s/%VERSION%/$version/g;
+    $string =~ s/%USER%/$remote_user/g;
+    $string =~ s/%OS%/$os_type $os_version/g;
+
+    return $string;
+}
+
 sub product_version_update
 {
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.880', '1.740', '6.02', '9.3', '12.01', $__settings{'settings_sysinfo_theme_patched_updates'});
+      ('1.890', '1.740', '6.03', '9.3', '12.06', $tconfig{'show_beta_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -109,11 +128,11 @@ sub product_version_update
         ($p eq "c" && $v < $cv) ||
         ($p eq "f" && $v < $fv))
     {
-        return (
-             ($d eq 'true' || ($d ne 'true' && $p eq "f")) ?
-               '<span data-toggle="tooltip" data-placement="auto top" data-title="' . $Atext{'theme_xhred_global_outdated'} .
-               '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>' :
-               $v);
+        return (($d eq '1' || ($d ne '1' && $p eq "f")) ?
+                  '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
+                  $theme_text{'theme_xhred_global_outdated'} .
+                  '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>' :
+                  $v);
     } else {
         return $v;
     }
@@ -173,6 +192,26 @@ sub directory_empty
         }
     }
     return -1;
+}
+
+sub hash_to_query
+{
+    my ($c, %h) = @_;
+    return $c . join(q{&}, map {qq{$_=@{[urlize($h{$_})]}}} keys %h);
+}
+
+sub head
+{
+    print "Content-type: text/html\n\n";
+}
+
+sub module_text_reversed
+{
+    if (!%module_text_reversed) {
+        %module_text_reversed = load_language(get_module_name());
+        %module_text_reversed = reverse %module_text_reversed;
+    }
+    return %module_text_reversed;
 }
 
 1;

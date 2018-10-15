@@ -4,15 +4,24 @@
 # Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
+
+use File::Basename;
+use lib (dirname(__FILE__) . '/../../lib');
+
+use Cwd 'abs_path';
+use Encode qw(decode encode);
+use File::MimeInfo;
+use POSIX;
+use JSON qw( decode_json );
+
+our (%access, %in, %text, @remote_user_info, $base_remote_user, $current_theme,
+     %userconfig, @allowed_paths, @list, $base, $cwd, $path);
+our $checked_path;
 
 our %request_uri = get_request_uri();
 set_module($request_uri{'module'});
 get_libs($request_uri{'module'});
-
-our %text = (load_language($current_theme), %text);
-%text = (load_language($request_uri{'module'}), %text);
-
-our $checked_path;
 
 sub set_module
 {
@@ -25,14 +34,7 @@ sub get_libs
 {
     my ($module) = @_;
 
-    use Cwd 'abs_path';
-    use Encode qw(decode encode);
-    use File::Basename;
-    use File::MimeInfo;
-    use POSIX;
-    use JSON qw( decode_json );
-
-    require(get_env('document_root') . '/' . $module . '/filemin-lib.pl');
+    require(get_env('document_root') . '/' . $module . '/' . $module . '-lib.pl');
 
     &ReadParse();
 
@@ -40,16 +42,12 @@ sub get_libs
 
     switch_to_user($in{'username'});
 
-    if (!$in{'error'}) {
-        set_response();
-        set_response_count();
-    }
-
     $checked_path = $path;
     if (join(" , ", @allowed_paths) ne '/') {
         $checked_path =~ s/$in{'cwd'}\//\//ig;
     }
 
+    %text = (load_language($current_theme), load_language($module), %text);
 }
 
 sub get_type
@@ -169,7 +167,7 @@ sub fatal_errors
     head();
     print $text{'errors_occured'};
     print "<ul>";
-    foreach $error (@errors) {
+    foreach my $error (@errors) {
         print("<li>$error</li>");
     }
     print "</ul>";
@@ -187,7 +185,6 @@ sub print_error
 
 sub print_content
 {
-
     my $setype = get_selinux_command_type();
     my %secontext;
     my %attributes;
@@ -196,6 +193,7 @@ sub print_content
     if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
 
         # Leave only allowed
+        my @tmp_list;
         for $path (@allowed_paths) {
             my $slashed = $path;
             $slashed .= "/" if ($slashed !~ /\/$/);
@@ -231,13 +229,13 @@ sub print_content
     }
 
     # Get info about directory entries
-    @info = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
+    my @info = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
 
     # Filter out folders
-    @folders = map {$_} grep {$_->[15] == 1} @info;
+    my @folders = map {$_} grep {$_->[15] == 1} @info;
 
     # Filter out files
-    @files = map {$_} grep {$_->[15] != 1} @info;
+    my @files = map {$_} grep {$_->[15] != 1} @info;
 
     # Sort stuff by name
     @folders = sort {$a->[0] cmp $b->[0]} @folders;
@@ -247,17 +245,17 @@ sub print_content
     undef(@list);
     push @list, @folders, @files;
 
-    @allowed_for_edit = split(/\s+/, $access{'allowed_for_edit'});
-    %allowed_for_edit = map {$_ => 1} @allowed_for_edit;
+    my @allowed_for_edit = split(/\s+/, $access{'allowed_for_edit'});
+    my %allowed_for_edit = map {$_ => 1} @allowed_for_edit;
 
     # Set icons variables
-    $edit_icon    = "<i class='fa fa-edit' alt='$text{'edit'}'></i>";
-    $rename_icon  = "<i class='fa fa-font' title='$text{'rename'}'></i>";
-    $extract_icon = "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
-    $goto_icon    = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
+    my $edit_icon    = "<i class='fa fa-edit' alt='$text{'edit'}'></i>";
+    my $rename_icon  = "<i class='fa fa-font' title='$text{'rename'}'></i>";
+    my $extract_icon = "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
+    my $goto_icon    = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
 
-    $page      = 1;
-    $pagelimit = 4294967295;
+    my $page      = 1;
+    my $pagelimit = 4294967295;
 
     my $info_total;
     my $info_files   = scalar @files;
@@ -282,7 +280,7 @@ sub print_content
 
     # Render current directory entries
     print &ui_form_start("", "post", undef, "id='list_form'");
-    @ui_columns = ('<input class="_select-unselect_" type="checkbox" onclick="selectUnselect(this)" />', '');
+    my @ui_columns = ('<input class="_select-unselect_" type="checkbox" onclick="selectUnselect(this)" />', '');
     push @ui_columns, ('<span data-head-name>' . $text{'name'} . '</span>');
     push @ui_columns, ('<span data-head-type>' . $text{'type'} . '</span>')
       if ($userconfig{'columns'} =~ /type/);
@@ -307,10 +305,10 @@ sub print_content
         my $link = $list[$count - 1][0];
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
-        $vlink = html_escape($link);
+        my $vlink = html_escape($link);
         $vlink = decode('UTF-8', $vlink, Encode::FB_DEFAULT);
-        $hlink = html_escape($vlink);
-        $path  = html_escape($path);
+        my $hlink = html_escape($vlink);
+        $path = html_escape($path);
 
         my $type = $list[$count - 1][14];
         $type =~ s/\//\-/g;
@@ -318,7 +316,9 @@ sub print_content
         unless (-e $request_uri{'module'} . '/' . $img) {
             $img = "images/icons/mime/unknown.png";
         }
-        $size = &local_nice_size($list[$count - 1][8]);
+        my $size = &local_nice_size($list[$count - 1][8]);
+        my $user;
+        my $group;
         if (supports_users()) {
             my $uid = getpwuid($list[$count - 1][5]);
             my $gid = getgrgid($list[$count - 1][6]);
@@ -329,21 +329,22 @@ sub print_content
             $group = $list[$count - 1][6];
         }
 
-        $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
-
+        my $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
+        my $selinux;
         if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/) {
             $selinux = $list[$count - 1][17];
         }
 
+        my $attributes;
         if (get_attr_status() && $userconfig{'columns'} =~ /attributes/) {
             $attributes = $list[$count - 1][18];
         }
 
-        $mod_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][10]));
+        my $mod_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][10]));
 
-        $actions =
+        my $actions =
 "<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$hlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
-
+        my $href;
         if ($list[$count - 1][15] == 1) {
             if ($path eq '/' . $link) {
                 $href = "index.cgi?path=" . &urlize("$path");
@@ -351,7 +352,7 @@ sub print_content
                 $href = "index.cgi?path=" . &urlize("$path/$link");
             }
         } else {
-            ($fname, $fpath, $fsuffix) =
+            my ($fname, $fpath, $fsuffix) =
               fileparse($list[$count - 1][0]);
             if ($base ne '/') {
                 $fpath =~ s/^\Q$base\E//g;
@@ -396,7 +397,8 @@ sub print_content
                   "&file=" . &urlize($link) . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        @row_data = ("<a href='$href'><img src=\"$img\"></a>", "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
+        my @row_data =
+          ("<a href='$href'><img src=\"$img\"></a>", "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
         push @row_data, $type if ($userconfig{'columns'} =~ /type/);
         push @row_data, $actions;
         push @row_data, $size if ($userconfig{'columns'} =~ /size/);
@@ -426,26 +428,26 @@ sub print_content
 
 sub local_nice_size
 {
-    my %Atext = (&load_language($current_theme), %Atext);
+    # my %text = (load_language($current_theme), %text);
     my ($units, $uname);
     if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_PB'};
+        $uname = $text{'theme_nice_size_PB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_TB'};
+        $uname = $text{'theme_nice_size_TB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_GB'};
+        $uname = $text{'theme_nice_size_GB'};
     } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
         $units = 1024 * 1024;
-        $uname = $Atext{'theme_nice_size_MB'};
+        $uname = $text{'theme_nice_size_MB'};
     } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
         $units = 1024;
-        $uname = $Atext{'theme_nice_size_kB'};
+        $uname = $text{'theme_nice_size_kB'};
     } else {
         $units = 1;
-        $uname = $Atext{'theme_nice_size_b'};
+        $uname = $text{'theme_nice_size_b'};
     }
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;
@@ -458,7 +460,7 @@ sub paster
     my $x;
     my $j = $c . '/' . $f;
     if (!$r && -f $j ne -d $j) {
-        for (my $t = 1; $t <= inf; $t += 1) {
+        for (my $t = 1;; $t += 1) {
             if (!-e ($j . '(' . $t . ')')) {
                 $x = $t;
                 last;

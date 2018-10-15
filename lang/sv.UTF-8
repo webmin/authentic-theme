@@ -106,8 +106,8 @@ settings_right_theme_extensions_title=Tematillägg
 settings_right_file_edit=Redigera tilläggsfil:
 settings_right_extensions_title=Theme extensive design, gör det lätt för dig att ändra på utvalda delar i gränssnittet.
 
-settings_right_theme_logos=Temalogotyper
-settings_right_theme_logos_title=Temalogotyper
+theme_xhred_settings_right_theme_logos=Temalogotyper
+theme_xhred_settings_right_theme_logos_title=Temalogotyper
 settings_right_logos_title=Temalogotyper sätter du enkelt här, för både, behöriga och obehöriga användare. Rekommenderas logotypstorlek är<kbd>180x90</kbd> pixlar och bildformatet måste vara <kbd>.png</kbd>, för att förse alfagenomskinlighet.
 settings_right_logo_authenticated_users=Logotyper för autentiserade användare
 settings_right_logo_unauthenticated_users=Logotyper för obehöriga användare
@@ -142,7 +142,7 @@ settings_hotkey_custom_9=Egen länk <code>9</code>
 settings_navigation_color=Färgpalett för navigeringsmeny
 settings_background_color=Färgpalett för innehållssida
 settings_animation_left=Aktivera animation i navigeringsmenyn
-settings_animation_tabs=Aktivera animation i flikar
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
 settings_right_reload=Ladda standard innehållssida
@@ -224,7 +224,7 @@ theme_sysinfo_vmdocs=Virtualmin-dokumentation
 theme_sysinfo_cmdocs=Cloudmin-dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Oformatterad text
 
 theme_xhred_titles_wm=Webmin
@@ -332,8 +332,8 @@ theme_xhred_filemanager_context_upload=Ladda upp till nuvarande katalog
 theme_xhred_filemanager_context_download=Ladda ner från fjärr-URL
 
 #17.53
-theme_settings_virtualmin=Virtualmin Virtual Servers
-theme_settings_cloudmin=Cloudmin Managed Systems
+theme_config_virtualmin=Virtualmin Virtual Servers
+theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Tredjeparts modulalternativ
 theme_xhred_filemanager_context_calculate_size=Beräkna storleken med mellanslagstangenten
 theme_xhred_filemanager_context_bookmarks=Bokmärken
@@ -401,7 +401,6 @@ theme_xhred_filemanager_target_conflict_replace=Slå ihop och ersätta
 theme_xhred_filemanager_target_conflict_paste=Klistra in med nytt namn
 
 theme_xhred_editor_help_title=Editor Keyboard Shortcuts
-theme_xhred_editor_help_content=<i class="hidden theme_xhred_editor_help"></i><h5><strong>Find/Replace</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + F</td> <td>Find</td> </tr> <tr><td>Ctrl + H</td> <td>Replace</td> </tr> <tr><td>Ctrl + ⇧ + R</td> <td>Replace all</td> </tr> <tr><td>Ctrl + G</td> <td>Find next</td> </tr> <tr><td>Ctrl + ⇧ +  G</td> <td>Find previous</td> </tr> <tr><td>Alt + G</td> <td>Jump to line</td> </tr> </tbody> </table> <h5><strong>Text manipulation</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + KU</td> <td>Transform to Uppercase</td> </tr> <tr><td>Ctrl + KL</td> <td>Transform to Lowercase</td> </tr> </tbody> </table> <h5><strong>Editing</strong></h5> <table class="table table-condensed table-hover"> <colgroup> <col width="30%"> <col width="70%"> </colgroup> <thead valign="bottom"> <tr><th class="head">Keypress</th> <th class="head">Command</th> </tr> </thead> <tbody valign="top"> <tr><td>Ctrl + Space</td> <td>Activate autocompletion</td> </tr> <tr><td>Ctrl + X</td> <td>Cut line</td> </tr> <tr><td>Ctrl + ⇧ + ↑</td> <td>Move line/selection up</td> </tr> <tr><td>Ctrl + ⇧ + ↓</td> <td>Move line/selection down</td> </tr> <tr><td>Ctrl + L</td> <td>Select line - Repeat to select next lines</td> </tr> <tr><td>Ctrl + D</td> <td>Select word - Repeat select others occurrences</td> </tr> <tr><td>Ctrl + M</td> <td>Jump to closing parentheses Repeat to jump to opening parentheses</td> </tr> <tr><td>Ctrl + ⇧ + M</td> <td>Select all contents of the current parentheses</td> </tr> <tr><td>Ctrl + ⇧ + K</td> <td>Delete Line</td> </tr> <tr><td>Ctrl + KK</td> <td>Delete from cursor to end of line</td> </tr> <tr><td>Ctrl + K + Backspace</td> <td>Delete from cursor to start of line</td> </tr> <tr><td>Ctrl + ⇧ + D</td> <td>Duplicate line(s)</td> </tr> <tr><td>Ctrl + J</td> <td>Join line below to the end of the current line</td> </tr> <tr><td>Ctrl + /</td> <td>Comment/un-comment current line</td> </tr> <tr><td>Ctrl + ⇧ + /</td> <td>Block comment current selection</td> </tr> <tr><td>Ctrl + Y</td> <td>Redo, or repeat last keyboard shortcut command</td> </tr> <tr><td>Ctrl + ⇧ + V</td> <td>Paste and indent correctly</td> </tr> <tr><td>Ctrl + Space</td> <td>Select next auto-complete suggestion</td> </tr> <tr><td>Ctrl + U</td> <td>soft undo; jumps to your last change before undoing change when repeated</td> </tr> </tbody> </table>
 
 theme_xhred_filemanager_hide_toolbar=Dölj verktygsfält
 theme_xhred_filemanager_hide_actions=Dölj åtgärdskolumn
@@ -623,7 +622,6 @@ settings_sysinfo_easypie_charts_size=Diameter diagram
 theme_xhred_global_choose=Välj
 theme_xhred_global_select=Markera
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=För att denna funktionen ska fungera måste <code>git</code> vara installerad i ditt system
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=För att kunna installera de senaste patcharna direkt från GitHub måste du se till att kommandot <code>git</code> är installerat.
@@ -766,8 +764,8 @@ theme_xhred_upload_initial_info=Dra och släpp filer här eller klicka för att 
 #19.09
 theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=klicka här
-theme_git_patch_incompatible_message=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 <em>$4</em> och $5 <em>$6</em> för att fungera korrekt.
-theme_git_patch_incompatible_message_s=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 <em>$4</em> för att fungera korrekt.
+theme_git_patch_incompatible_message=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 och $5 för att fungera korrekt.
+theme_git_patch_incompatible_message_s=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 för att fungera korrekt.
 theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar, som gör att temat slutar fungera som det är tänkt. För att kringgå denna varning och ändå tvinga installera temat $1, eller uppgradera $2 till den senaste utvecklingsversionen via konsolen, genom att köra skriptet <kbd>update-from-repo.sh</kbd> från dess katalog.
 theme_xhred_global_outdated=Denna versionen är för gammal
 
@@ -832,7 +830,7 @@ settings_perform_content_scrolling=Aktivera automatisk sidrullning för progress
 settings_contrast_mode=Aktivera högkontrastläge
 settings_side_slider_enabled_description=Denna funktionen kräver att modulen <em>Systemstatus</em> är aktiverad.
 theme_xhred_global_firewall=Brandvägg
-theme_xhred_settings_show_webmin_tab=Visa Webmin i navigeringsmenyn för serverägare
+theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 
 #19.14
@@ -921,3 +919,43 @@ extensions_mail_move_copy_only=Flytta inte det, kopiera det bara
 theme_xhred_global_total=Totalt
 theme_xhred_global_selected=Markerade
 theme_xhred_mail_new_message=Nytt meddelande
+
+theme_xhred_mail_search_simple=Visa sökalternativ
+theme_xhred_mail_search_advanced=Dölj sökalternativ
+theme_xhred_mail_search_clear=Rensa sökresultat
+theme_xhred_mail_search_empty=Inga meddelande matchade din sökning
+theme_xhred_mail_search_search_mail=Sök e-post
+theme_xhred_mail_search_from=Från
+theme_xhred_mail_search_to=Till
+theme_xhred_mail_search_subject=Ämne
+theme_xhred_mail_search_has_words=Innehåller orden
+theme_xhred_mail_search_doesnt_have_words=Innehåller inte orden
+theme_xhred_mail_search_with_status=Med status
+theme_xhred_mail_search_with_status_any=Alla
+theme_xhred_mail_search_with_status_unread=Oläst
+theme_xhred_mail_search_with_status_read=Läst
+theme_xhred_mail_search_with_status_special=Särskild
+theme_xhred_mail_search_search_in=Sök i
+theme_xhred_mail_search_limit_results=Begränsa sökresultat
+theme_xhred_mail_search_limit_results_yes=Ja, sök endast igenom
+theme_xhred_mail_search_has_attach=Har bifogade filer
+
+theme_xhred_settings_right_theme_bgs=Temabakgrunder
+theme_xhred_settings_right_theme_bgs_title=Temabakgrunder
+settings_right_bgs_title=Temabakgrunden för inloggningssidan kan anges här. Det enda formatet som stöder alfagenomskinlighet är <kbd>.png</kbd>.
+settings_right_bg_unauthenticated_users=Bakgrund för oautentiserade användare
+settings_right_theme_left_background_title=Kontroll av temabakgrund
+
+theme_xhred_find_in_config_files=Sök i konfigurationsfiler
+theme_xhred_find_in_config_files_result_found_single=$3 hittades $1 gång i $2 fil
+theme_xhred_find_in_config_files_result_found_multi=$3 hittades $1 gånger i $2 fil
+theme_xhred_find_in_config_files_results_found=$3 hittades $1 gånger i $2 filer
+
+theme_xhred_filemanager_context_symlink=Skapa ny symbolisk länk
+theme_xhred_global_symbolic=Symbolisk länk
+theme_xhred_global_target=Mål
+settings_sysinfo_max_servers=Maximalt antal virtuella servrar som ska visas
+
+right_download_is_ready=Din nerladdning är redo.
+theme_xhred_download_is_being_prepared=Din nerladdning förbereds. Det kan ta ett tag. Vänta...
+theme_xhred_backup_is_being_prepared=Din säkerhetskopia förbereds. Det kan ta ett tag. Vänta...
