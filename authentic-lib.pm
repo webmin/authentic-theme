@@ -3035,7 +3035,8 @@ sub get_xhr_request
             ) = get_sysinfo_vars();
 
             if (&foreign_available("system-status")) {
-                my @info = &list_combined_system_info({ 'qshow', 1 });
+                my @info =
+                  &list_combined_system_info({ 'qshow' => 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} });
                 my @updated_info = { "data"                     => 1,
                                      "cpu_percent"              => $cpu_percent,
                                      "mem_percent"              => $mem_percent,

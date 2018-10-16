@@ -55,7 +55,7 @@ if ($get_user_level ne '4' && &foreign_available("system-status")
 }
 
 # Get system info to show
-my @info = &list_combined_system_info({ 'qshow', 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} });
+my @info = &list_combined_system_info({ 'qshow' => 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} });
 
 if ($get_user_level eq '0' || $get_user_level eq '4') {
 
