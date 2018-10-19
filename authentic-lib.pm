@@ -704,7 +704,7 @@ sub print_left_menu
             my $link = add_webprefix($item->{'link'});
             my $icon;
 
-            if (string_contains($link, 'mailbox/index.cgi?id')) {
+            if ($theme_config{'settings_mail_ui'} ne 'false' && string_contains($link, 'mailbox/index.cgi?id')) {
                 next;
             }
 

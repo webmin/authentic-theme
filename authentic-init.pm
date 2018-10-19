@@ -90,6 +90,7 @@ sub settings_default
     $c{'settings_hotkey_focus_search'}                = 's';
     $c{'settings_hotkey_reload'}                      = 'r';
     $c{'settings_hotkey_toggle_key_night_mode'}       = 'l';
+    $c{'settings_mail_ui'}                            = 'true';
 
     return %c;
 }

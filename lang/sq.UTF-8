@@ -973,3 +973,5 @@ settings_sysinfo_max_servers=Maximum virtual servers to show
 right_download_is_ready=Your download is ready.
 theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
 theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
+
+settings_mail_ui=Enable new mail UI
