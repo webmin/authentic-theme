@@ -951,13 +951,13 @@ theme_xhred_find_in_config_files_result_found_single= $2のファイルに$3の�
 theme_xhred_find_in_config_files_result_found_multi= $2のファイルに$3の検索結果が見つかりました
 theme_xhred_find_in_config_files_results_found= $2のファイルに$3の検索結果が見つかりました
 
-theme_xhred_filemanager_context_symlink=Create new symbolic link
-theme_xhred_global_symbolic=Symbolic link
-theme_xhred_global_target=Target
-settings_sysinfo_max_servers=Maximum virtual servers to show
+theme_xhred_filemanager_context_symlink= 新しいシンボリックリンクを作成する
+theme_xhred_global_symbolic= シンボリックリンク
+theme_xhred_global_target= ターゲット
+settings_sysinfo_max_servers= 表示する仮想サーバーの最大数
 
-right_download_is_ready=Your download is ready.
-theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
-theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
+right_download_is_ready= ダウンロードの準備ができました。
+theme_xhred_download_is_being_prepared= あなたのダウンロードは準備中です。それには時間がかかることがあります。お待ちください..
+theme_xhred_backup_is_being_prepared= バックアップを準備中です。それには時間がかかることがあります。お待ちください..
 
-settings_mail_ui=Enable new mail UI
+settings_mail_ui= 新しいメールUIを有効にする
