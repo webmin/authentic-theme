@@ -18,7 +18,8 @@ use WebminCore;
 BEGIN {push(@INC, "..");}
 
 our (
-    %in, %text, %config, %gconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user, $theme_root_directory,
+    %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user,
+    $theme_root_directory,
     $current_theme, $root_directory,
 
     %theme_text, %module_text_reversed, %theme_config, $get_user_level, $theme_requested_url,
@@ -520,14 +521,61 @@ sub get_extended_sysinfo
                         }
                     } elsif ($info->{'type'} eq 'chart') {
                         foreach my $t (@{ $info->{'chart'} }) {
-                            my $percent       = '&nbsp;' . $t->{'chart'}[1] . '%';
-                            my $percent_width = $t->{'chart'}[1];
-                            my $dd            = $theme_text{'right_out'};
+                            my $unlimited         = 0;
+                            my $percent_width_1   = int($t->{'chart'}[1]);
+                            my $percent_width_2   = int($t->{'chart'}[2]);
+                            my $percent_width_sum = $percent_width_1 + $percent_width_2;
+                            my $is_2              = defined($t->{'chart'}[2]);
+
+                            my $percent_1 = '&nbsp;' . $percent_width_1 . '%';
+                            my $percent_2 = '&nbsp;' . $percent_width_2 . '%';
+
+                            my $dd = $theme_text{'right_out'};
                             $dd =~ s/\s|&nbsp;|\$1|\$2//g;
 
                             if ($t->{"value"} !~ /\Q$dd/) {
-                                $percent       = '&nbsp;' . $theme_text{'right_unlimited'};
-                                $percent_width = '0';
+                                $percent_1       = '&nbsp;' . $theme_text{'right_unlimited'};
+                                $percent_width_1 = '0';
+                                $unlimited       = 1;
+                            }
+
+                            my $color;
+                            if ($percent_width_sum <= 49) {
+                                $color = 'green';
+                            } elsif ($percent_width_sum <= 90) {
+                                $color = 'yellow';
+                            } else {
+                                $color = 'red';
+                            }
+                            if ($unlimited || $percent_width_sum == 0) {
+                                $color = 'gray';
+                            }
+
+                            my $bar;
+                            if ($is_2 && !$unlimited && $percent_width_2) {
+                                $bar = '<strong data-first '
+                                  .
+                                  get_button_tooltip('edit_allquotah', undef, undef, 1, 1,
+                                                     '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse', '(') .
+                                  ' class="bar ' .
+                                  $color . '" style="width:' . $percent_width_1 . '%;">' . $percent_1 . '</strong>';
+                                $bar .= '<strong '
+                                  .
+                                  get_button_tooltip('edit_dbquota', undef, undef, 1, 1,
+                                                     '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse', '(') .
+                                  ' class="bar ' .
+                                  $color . '" style="width:' . $percent_width_2 . '%;">' . $percent_2 . '</strong>';
+                            } else {
+                                $bar = '<strong '
+                                  .
+                                  ( $is_2 ?
+                                      get_button_tooltip('edit_allquotah', undef, undef, 1, 1,
+                                                         '#' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse',
+                                                         '(') :
+                                      undef
+                                  ) .
+                                  ' class="bar ' .
+                                  $color . '" style="width:' . $percent_width_1 . '%;">' . $percent_1 . '</strong>';
                             }
 
                             $returned_sysinfo .= '<tr>
@@ -537,10 +585,7 @@ sub get_extended_sysinfo
                               '</td>
                                 <td style="width:60%">
                                 <div class="graph-container">
-                                    <div class="graph">
-                                        <strong class="bar" style="width:'
-                              . $percent_width . '%;">' . $percent . '</strong>
-                                    </div>
+                                    <div class="graph">' . $bar . '</div>
                                 </div>
                                 </td>
                                       <td style="width:15%">'
@@ -659,7 +704,7 @@ sub print_left_menu
             my $link = add_webprefix($item->{'link'});
             my $icon;
 
-            if (string_contains($link, 'mailbox/index.cgi?id')) {
+            if ($theme_config{'settings_mail_ui'} ne 'false' && string_contains($link, 'mailbox/index.cgi?id')) {
                 next;
             }
 
@@ -1144,11 +1189,11 @@ sub get_sysinfo_vars
         } else {
             $authentic_theme_version =
               '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' . $theme_text{'theme_name'} .
-              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4"><a href=\'' .
+              '</a> ' . $authentic_installed_version . '<div class="btn-group margined-left-4">' .
+              '<a data-href="#theme-info" class="btn btn-default btn-xxs"><i class="fa fa-info-circle"></i></a><a href=\'' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' class="btn btn-default btn-xxs btn-hidden hidden" title="' .
-              $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
-'<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>';
+              $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
         }
 
         #ConfigServer Security & Firewall
@@ -1771,6 +1816,9 @@ sub embed_login_head
 
     my $ext = (theme_debug_mode() ? 'src' : 'min');
 
+    # Define page title
+    my $title = $text{'session_header'};
+
     print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
@@ -1807,9 +1855,7 @@ sub theme_remote_version
     my $error;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
-
-        if (($theme_config{'settings_sysinfo_theme_patched_updates'} eq 'true' || $force_beta_check) && !$force_stable_check)
-        {
+        if (($tconfig{'show_beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check) {
             http_download('api.github.com',                                             '443',
                           '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
                           \$error,                                                      undef,
@@ -2136,6 +2182,8 @@ sub theme_settings
             '8',
             'settings_sysinfo_expand_all_accordions',
             'false',
+            'settings_sysinfo_max_servers',
+            '10',
 
             '__',
             theme_settings('fa', 'bars', &theme_text('settings_right_navigation_menu_title')),
@@ -2258,8 +2306,6 @@ sub theme_settings
             theme_settings('fa', 'info-circle', &theme_text('settings_right_soft_updates_page_options_title')),
             'settings_sysinfo_theme_updates',
             'false',
-            'settings_sysinfo_theme_patched_updates',
-            'false',
             'settings_sysinfo_theme_updates_for_usermin',
             'true',
             'settings_sysinfo_csf_updates',
@@ -2282,8 +2328,8 @@ sub theme_settings
         }
 
         # Exclude list of settings for Virtualmin
-        my @s_vm_e =
-          ('settings_right_virtualmin_default', 'settings_show_webmin_tab', 'settings_hotkey_toggle_key_virtualmin');
+        my @s_vm_e = ('settings_right_virtualmin_default',     'settings_show_webmin_tab',
+                      'settings_hotkey_toggle_key_virtualmin', 'settings_sysinfo_max_servers');
 
         if (!foreign_available("virtual-server")) {
             foreach my $e (@s_vm_e) {
@@ -2405,7 +2451,6 @@ sub theme_settings
             # Force disabled state
             if (!has_command('git') &&
                 ($k eq 'settings_sysinfo_theme_updates' ||
-                    $k eq 'settings_sysinfo_theme_patched_updates' ||
                     $k eq 'settings_sysinfo_theme_updates_for_usermin'))
             {
                 $disabled = " pointer-events-none";
@@ -2434,7 +2479,8 @@ sub theme_settings
                  $k eq 'settings_sysinfo_real_time_timeout'    ||
                  $k eq 'settings_sysinfo_easypie_charts_size'  ||
                  $k eq 'settings_sysinfo_easypie_charts_width' ||
-                 $k eq 'settings_sysinfo_easypie_charts_scale')
+                 $k eq 'settings_sysinfo_easypie_charts_scale' ||
+                 $k eq 'settings_sysinfo_max_servers')
         {
 
             my $width =
@@ -2446,7 +2492,8 @@ sub theme_settings
                 $k eq 'settings_hotkey_sysinfo'               ||
                 $k eq 'settings_hotkey_favorites'             ||
                 $k eq 'settings_sysinfo_easypie_charts_width' ||
-                $k eq 'settings_sysinfo_easypie_charts_scale') ? ' width: 36px; ' :
+                $k eq 'settings_sysinfo_easypie_charts_scale' ||
+                $k eq 'settings_sysinfo_max_servers') ? ' width: 36px; ' :
               ( ($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
                   ' width: 50px; ' :
                   ' width: 95%; ');
@@ -2777,8 +2824,6 @@ sub get_xhr_request
             } elsif ($in{'load'} eq '1') {
                 print manage_theme_config('load');
             }
-        } elsif ($in{'xhr-get_theme_language'} eq '1') {
-            print get_theme_language();
         } elsif ($in{'xhr-get_available_modules'} eq '1') {
             print get_available_modules('json');
         } elsif ($in{'xhr-get_theme_locale_languages'} eq '1') {
@@ -2990,7 +3035,8 @@ sub get_xhr_request
             ) = get_sysinfo_vars();
 
             if (&foreign_available("system-status")) {
-                my @info = &list_combined_system_info({ 'qshow', 1 });
+                my @info =
+                  &list_combined_system_info({ 'qshow' => 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} });
                 my @updated_info = { "data"                     => 1,
                                      "cpu_percent"              => $cpu_percent,
                                      "mem_percent"              => $mem_percent,
@@ -3178,7 +3224,6 @@ sub init
 
 sub content
 {
-
     # Mobile toggle
     print '<div class="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
       'mobile-menu-toggler" style="position: fixed; ' . get_filters() . '">';
@@ -3286,20 +3331,6 @@ sub update_notice
     return $changelog_content;
 }
 
-sub get_json
-{
-    if (@_) {
-        return JSON->new->latin1->encode(@_);
-    } else {
-        return JSON->new->latin1->encode({});
-    }
-}
-
-sub get_json_empty
-{
-    return JSON->new->latin1->encode({});
-}
-
 sub get_cookies
 {
 
@@ -3367,16 +3398,24 @@ sub manage_theme_config
 
 sub get_button_tooltip
 {
-    my ($label, $key, $placement, $html, $force) = @_;
+    my ($label, $key, $placement, $html, $force, $container, $br_label_on) = @_;
 
     my $mod_key = $theme_config{'settings_hotkey_toggle_modifier'};
     my $hot_key = ($key ? ucfirst($theme_config{$key}) : undef);
+    if (!$container) {
+        $container = 'body';
+    }
+    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
+    if ($br_label_on) {
+        my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
+        $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
+    }
 
     return (($theme_config{'settings_button_tooltip'} ne 'false' || $force) ?
-              (' data-container="body" data-placement="' .
+              (' data-container="' . $container . '" data-placement="' .
                  $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
                  .
-                 ($theme_text{$label}
+                 ($tooltip_text
                     .
                     (length $theme_config{'settings_hotkeys_active'} &&
                        $theme_config{'settings_hotkeys_active'} ne 'false' &&
@@ -3389,24 +3428,6 @@ sub get_button_tooltip
                  '"'
               ) :
               ' ');
-}
-
-sub get_theme_language
-{
-    my %s;
-    foreach my $key (keys %theme_text) {
-        if ($key !~ /_xhred_/ &&
-            $key !~ /body_/  &&
-            $key !~ /right_/ &&
-            $key !~ /_level_navigation/)
-        {
-            next;
-        }
-        $s{$key} .= $theme_text{$key};
-    }
-
-    get_json(\%s);
-
 }
 
 sub get_user_acl

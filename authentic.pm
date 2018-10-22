@@ -374,10 +374,12 @@ sub theme_ui_columns_start
     $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
-    for ($i = 0; $i < @$heads; $i++) {
-        $rv .= '<th>';
-        $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
-        $rv .= '</th>' . "\n";
+    if (ref($heads)) {
+        for ($i = 0; $i < @$heads; $i++) {
+            $rv .= '<th>';
+            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
+            $rv .= '</th>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
@@ -391,10 +393,12 @@ sub theme_ui_columns_row
     my ($rv, $i);
 
     $rv .= '<tr class="tr_tag">' . "\n";
-    for ($i = 0; $i < @$cols; $i++) {
-        $rv .= '<td class="td_tag">' . "\n";
-        $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
-        $rv .= '</td>' . "\n";
+    if (ref($cols)) {
+        for ($i = 0; $i < @$cols; $i++) {
+            $rv .= '<td class="td_tag">' . "\n";
+            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
+            $rv .= '</td>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
 
@@ -408,10 +412,12 @@ sub theme_ui_columns_header
 
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
-    for ($i = 0; $i < @$cols; $i++) {
-        $rv .= '<th>';
-        $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
-        $rv .= '</th>' . "\n";
+    if (ref($cols)) {
+        for ($i = 0; $i < @$cols; $i++) {
+            $rv .= '<th>';
+            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
+            $rv .= '</th>' . "\n";
+        }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
@@ -1139,10 +1145,62 @@ sub theme_redirect
         print "Location: $location\n\n";
     } else {
         $link =~ s/(\?|&)\Q$xnav\E//ig;
-        set_theme_temp_data('redirected', $link);
-        print "Location: $link\n\n";
+        if (!theme_redirect_download($link)) {
+            set_theme_temp_data('redirected', $link);
+            print "Location: $link\n\n";
+        }
     }
 
+}
+
+sub theme_header_redirect_download
+{
+    my ($url, $delay, $body) = @_;
+
+    head();
+    print "<!DOCTYPE html>\n";
+    print "<html>\n";
+    print "<head>\n";
+    print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
+      .
+      ( (&get_product_name() eq 'usermin') ? '-usermin' :
+          '-webmin'
+      ) .
+      '.ico">' . "\n";
+    print '<meta charset="' . get_charset() . '">', "\n";
+    print "<meta data-predownload http-equiv=\"refresh\" content=\"$delay;url=$url\">\n";
+    print "</head>\n";
+    if ($body) {
+        print "<body>\n";
+        print $body . "\n";
+        print "</body>\n";
+    }
+    print '</html>';
+
+}
+
+sub theme_redirect_download
+{
+    if ($_[0] =~ /fetch.cgi/) {
+        my $query = get_env('query_string');
+        my $show  = $query =~ /show=1/ ? 1 : 0;
+        my $delay = $_[0] =~ /unzip=1/ ? 1 : 0;
+        my $zip   = $_[0] =~ /.zip/ ? 1 : 0;
+        my $body;
+
+        if ($delay) {
+            $body = $theme_text{'theme_xhred_download_is_being_prepared'};
+        }
+        if (!$delay && !$show) {
+            $body = $theme_text{'right_download_is_ready'};
+        }
+
+        theme_header_redirect_download($_[0], $delay, $body);
+
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 sub theme_js_redirect
@@ -1195,6 +1253,13 @@ sub theme_post_change_theme
         unlink_file('/etc/csf/csf.header');
         unlink_file('/etc/csf/csf.footer');
     }
+}
+
+sub theme_post_change_modules
+{
+    print '<script>';
+    print 'theme_post_save=-1', "\n";
+    print '</script>';
 }
 
 $main::cloudmin_no_create_links = 1;

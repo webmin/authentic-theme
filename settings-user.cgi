@@ -61,6 +61,8 @@ print ui_table_row($theme_text{'settings_right_page_hide_persistent_vscroll'},
                                   $theme_config{'settings_right_page_hide_persistent_vscroll'},
                                   "true", "false"
                    ));
+print ui_table_row($theme_text{'settings_mail_ui'},
+                   ui_yesno_radio('settings_mail_ui', $theme_config{'settings_mail_ui'}, "true", "false"));
 print ui_table_row(undef, '<b>' . $theme_text{'settings_right_navigation_menu_title'} . '</b>', 2);
 
 print ui_table_row($theme_text{'settings_button_tooltip'},

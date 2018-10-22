@@ -18,12 +18,6 @@ get_miniserv_config(\%miniserv);
 our %theme_config = (settings($config_directory . "/$current_theme/settings-admin", 'settings_'),
                      settings($config_directory . "/$current_theme/settings-root",  'settings_'));
 
-# Define page title
-my $title = $text{'session_header'};
-if ($gconfig{'showhost'}) {
-    $title = &get_display_hostname() . " : " . $title;
-}
-
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} &&
     get_env('http_cookie') !~ /banner=1/ &&

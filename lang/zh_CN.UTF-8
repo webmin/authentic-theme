@@ -142,7 +142,7 @@ settings_hotkey_custom_9=自定义链接 <code>9</code>
 settings_navigation_color=导航菜单调色板
 settings_background_color=内容页面调色板
 settings_animation_left=启用导航菜单动画
-settings_animation_tabs=启用标签动画
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
 settings_right_reload=加载默认内容页面
@@ -224,7 +224,7 @@ theme_sysinfo_vmdocs=Virtualmin 文档
 theme_sysinfo_cmdocs=Cloudmin 文档
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=纯文本
 
 theme_xhred_titles_wm=Webmin
@@ -622,7 +622,6 @@ settings_sysinfo_easypie_charts_size=图表直径
 theme_xhred_global_choose=选择
 theme_xhred_global_select=选择
 theme_xhred_global_ok=确认
-settings_sysinfo_theme_patched_updates=包含开发版本
 settings_sysinfo_theme_updates_description=为了使此选项有效，必须在系统上安装 <code>git</code> 命令
 theme_git_patch_available=最新开发版本
 theme_git_patch_no_git_message=要直接从 GitHub 安装最新更新，您必须确保安装了 <code>git</code> 命令。
@@ -951,3 +950,14 @@ theme_xhred_find_in_config_files=Find in config files
 theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
 theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
 theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
+
+settings_mail_ui=Enable new mail UI

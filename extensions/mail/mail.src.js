@@ -64,6 +64,8 @@ const mail = (function() {
       plugin: {
         json_to_query: Convert.json_to_query,
         timestamp: time.localize,
+        offset_adjust: page.handle.content.offset,
+
         select: (data, size = '34') => {
           if (Array.isArray(data)) {
             data[0].select2(data[1])
@@ -1364,6 +1366,7 @@ const mail = (function() {
 
           _.plugin.timestamp();
           _.plugin.tooltip();
+          _.plugin.offset_adjust(true);
           _.rows();
           folders.set(data.searched_folder_id || data.folder_id);
           events(data);
@@ -1436,7 +1439,9 @@ const mail = (function() {
                     }
                   }
                 })));
-            return $(tree.container).fancytree(source)
+            if ($(tree.container).length) {
+              return $(tree.container).fancytree(source);
+            }
           }
         },
         url: {
@@ -1542,9 +1547,15 @@ const mail = (function() {
      *
      * @return {void}
      */
-    const set = (key) => {
+    const set = function(key) {
       let tree = data.plugin.tree('get');
-      tree.activateKey(key)
+      if (typeof tree === 'object' && typeof tree.activateKey === 'function') {
+        tree.activateKey(key)
+      } else {
+        setTimeout(() => {
+          this.set(key);
+        }, 1e2);
+      }
     }
 
     /**

@@ -15,7 +15,7 @@ require(dirname(__FILE__) . "/authentic-lib.pm");
 
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 
-&ui_print_header($in{'file'}, $theme_text{'theme_xhred_settings_right_theme_logos_title'}, undef, undef, undef, 1);
+&ui_print_header(html_escape($in{'file'}), $theme_text{'theme_xhred_settings_right_theme_logos_title'}, undef, undef, undef, 1);
 
 my $lga = $config_directory . "/$current_theme/logo.png";
 my $lgg = $config_directory . "/$current_theme/logo_welcome.png";

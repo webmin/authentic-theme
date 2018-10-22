@@ -142,7 +142,7 @@ settings_hotkey_custom_9=Egen länk <code>9</code>
 settings_navigation_color=Färgpalett för navigeringsmeny
 settings_background_color=Färgpalett för innehållssida
 settings_animation_left=Aktivera animation i navigeringsmenyn
-settings_animation_tabs=Aktivera animation i flikar
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
 settings_right_reload=Ladda standard innehållssida
@@ -224,7 +224,7 @@ theme_sysinfo_vmdocs=Virtualmin-dokumentation
 theme_sysinfo_cmdocs=Cloudmin-dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Oformatterad text
 
 theme_xhred_titles_wm=Webmin
@@ -622,7 +622,6 @@ settings_sysinfo_easypie_charts_size=Diameter diagram
 theme_xhred_global_choose=Välj
 theme_xhred_global_select=Markera
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=För att denna funktionen ska fungera måste <code>git</code> vara installerad i ditt system
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=För att kunna installera de senaste patcharna direkt från GitHub måste du se till att kommandot <code>git</code> är installerat.
@@ -941,13 +940,24 @@ theme_xhred_mail_search_limit_results=Begränsa sökresultat
 theme_xhred_mail_search_limit_results_yes=Ja, sök endast igenom
 theme_xhred_mail_search_has_attach=Har bifogade filer
 
-theme_xhred_settings_right_theme_bgs=Theme backgrounds
-theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
-settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
-settings_right_bg_unauthenticated_users=Background for unauthenticated users
-settings_right_theme_left_background_title=Theme Background Control
+theme_xhred_settings_right_theme_bgs=Temabakgrunder
+theme_xhred_settings_right_theme_bgs_title=Temabakgrunder
+settings_right_bgs_title=Temabakgrunden för inloggningssidan kan anges här. Det enda formatet som stöder alfagenomskinlighet är <kbd>.png</kbd>.
+settings_right_bg_unauthenticated_users=Bakgrund för oautentiserade användare
+settings_right_theme_left_background_title=Kontroll av temabakgrund
 
-theme_xhred_find_in_config_files=Find in config files
-theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
-theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
-theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+theme_xhred_find_in_config_files=Sök i konfigurationsfiler
+theme_xhred_find_in_config_files_result_found_single=$3 hittades $1 gång i $2 fil
+theme_xhred_find_in_config_files_result_found_multi=$3 hittades $1 gånger i $2 fil
+theme_xhred_find_in_config_files_results_found=$3 hittades $1 gånger i $2 filer
+
+theme_xhred_filemanager_context_symlink=Skapa ny symbolisk länk
+theme_xhred_global_symbolic=Symbolisk länk
+theme_xhred_global_target=Mål
+settings_sysinfo_max_servers=Maximalt antal virtuella servrar som ska visas
+
+right_download_is_ready=Din nerladdning är redo.
+theme_xhred_download_is_being_prepared=Din nerladdning förbereds. Det kan ta ett tag. Vänta...
+theme_xhred_backup_is_being_prepared=Din säkerhetskopia förbereds. Det kan ta ett tag. Vänta...
+
+settings_mail_ui=Enable new mail UI

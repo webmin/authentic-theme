@@ -142,7 +142,7 @@ settings_hotkey_custom_9=Custom link <code>9</code>
 settings_navigation_color=Navigation menu color palette
 settings_background_color=Content page color palette
 settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in tabs
+settings_animation_tabs=Enable animation in content page
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_right_reload=Load default content page
@@ -224,7 +224,7 @@ theme_sysinfo_vmdocs=Virtualmin documentation
 theme_sysinfo_cmdocs=Cloudmin documentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=Javascript
+theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Plain Text
 
 theme_xhred_titles_wm=Webmin
@@ -622,7 +622,6 @@ settings_sysinfo_easypie_charts_size=Diameter of charts
 theme_xhred_global_choose=Choose
 theme_xhred_global_select=Select
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_patched_updates=Including development versions
 settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=In order to install latest updates directly from GitHub, you must make sure that <code>git</code> command is installed.
@@ -954,3 +953,14 @@ theme_xhred_find_in_config_files=Find in config files
 theme_xhred_find_in_config_files_result_found_single=$1 result found in $2 file for $3
 theme_xhred_find_in_config_files_result_found_multi=$1 results found in $2 file for $3
 theme_xhred_find_in_config_files_results_found=$1 results found in $2 files for $3
+
+theme_xhred_filemanager_context_symlink=Create new symbolic link
+theme_xhred_global_symbolic=Symbolic link
+theme_xhred_global_target=Target
+settings_sysinfo_max_servers=Maximum virtual servers to show
+
+right_download_is_ready=Your download is ready.
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
+
+settings_mail_ui=Enable new mail UI
