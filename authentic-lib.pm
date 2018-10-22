@@ -3224,11 +3224,6 @@ sub init
 
 sub content
 {
-    # Print object with language strings
-    print '<script>';
-    print 'var v___theme_language = ' . get_theme_language();
-    print '</script>';
-
     # Mobile toggle
     print '<div class="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
       'mobile-menu-toggler" style="position: fixed; ' . get_filters() . '">';
@@ -3336,20 +3331,6 @@ sub update_notice
     return $changelog_content;
 }
 
-sub get_json
-{
-    if (@_) {
-        return JSON->new->latin1->encode(@_);
-    } else {
-        return JSON->new->latin1->encode({});
-    }
-}
-
-sub get_json_empty
-{
-    return JSON->new->latin1->encode({});
-}
-
 sub get_cookies
 {
 
@@ -3447,24 +3428,6 @@ sub get_button_tooltip
                  '"'
               ) :
               ' ');
-}
-
-sub get_theme_language
-{
-    my %s;
-    foreach my $key (keys %theme_text) {
-        if ($key !~ /_xhred_/ &&
-            $key !~ /body_/  &&
-            $key !~ /right_/ &&
-            $key !~ /_level_navigation/)
-        {
-            next;
-        }
-        $s{$key} .= $theme_text{$key};
-    }
-
-    get_json(\%s);
-
 }
 
 sub get_user_acl

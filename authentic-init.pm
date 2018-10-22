@@ -121,6 +121,11 @@ sub embed_header
         return;
     }
 
+    # Print object with language strings
+    print '<script>';
+    print 'var v___theme_language = ' . get_theme_language();
+    print '</script>';
+
     if ($args[2]) {
         do(dirname(__FILE__) . "/dependencies.pm");
     }

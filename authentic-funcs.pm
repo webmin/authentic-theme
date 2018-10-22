@@ -54,6 +54,34 @@ sub theme_make_date_local
     return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
 }
 
+sub get_json
+{
+    convert_to_json(@_);
+}
+
+sub get_json_empty
+{
+    return JSON->new->latin1->encode({});
+}
+
+sub get_theme_language
+{
+    my %s;
+    foreach my $key (keys %theme_text) {
+        if ($key !~ /_xhred_/ &&
+            $key !~ /body_/  &&
+            $key !~ /right_/ &&
+            $key !~ /_level_navigation/)
+        {
+            next;
+        }
+        $s{$key} .= $theme_text{$key};
+    }
+
+    get_json(\%s);
+
+}
+
 sub get_text_ltr
 {
     if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {
