@@ -11,7 +11,6 @@ use lib (dirname(__FILE__) . "/lib");
 use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
 use Fcntl qw( :flock );
-use JSON qw( decode_json );
 use Time::Local;
 
 use WebminCore;
@@ -1618,9 +1617,9 @@ sub csf_temporary_list
             }
         }
 
-        get_json(\@l);
+        convert_to_json(\@l);
     } else {
-        get_json_empty();
+        convert_to_json();
     }
 }
 
@@ -1690,7 +1689,7 @@ sub print_favorites
 
     if ($f && $f =~ m/"favorites":/) {
         my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
-        my $fc = decode_json($f);
+        my $fc = convert_from_json($f);
         foreach my $favorite (@{ $fc->{'favorites'} }) {
             if (length($favorite->{"link"})) {
                 print '
@@ -2820,7 +2819,7 @@ sub get_xhr_request
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
-                print manage_theme_config('save');
+                manage_theme_config('save');
             } elsif ($in{'load'} eq '1') {
                 print manage_theme_config('load');
             }
@@ -2860,7 +2859,7 @@ sub get_xhr_request
             closedir $dirs;
 
             @dirs = sort {"\L$a" cmp "\L$b"} @dirs;
-            print get_json(\@dirs);
+            print convert_to_json(\@dirs);
 
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
             set_user_level();
@@ -2908,12 +2907,12 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_autocompletes'} eq '1') {
             my @data =
               get_autocomplete_shell($in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'});
-            print get_json(\@data);
+            print convert_to_json(\@data);
         } elsif ($in{'xhr-theme_latest_version'} eq '1') {
             my @current_versions;
             push(@current_versions,
                  (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
-            print get_json(\@current_versions);
+            print convert_to_json(\@current_versions);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
@@ -2924,7 +2923,7 @@ sub get_xhr_request
                                  replace((!has_command('bash') ? '>git<' : '~'), '>bash<',
                                          $theme_text{'theme_git_patch_no_git_message'}
                                  ), };
-                print get_json(\@update_rs);
+                print convert_to_json(\@update_rs);
             } else {
                 if ($update_force ne "1") {
                     my $compatible;
@@ -2967,7 +2966,7 @@ sub get_xhr_request
                                           ($theme_text{'theme_xhred_titles_wm'} . "/" . $theme_text{'theme_xhred_titles_um'})
                                         )
                                   ) };
-                        print get_json(\@update_rs);
+                        print convert_to_json(\@update_rs);
                         exit;
                     } elsif ($atversion &&
                              $wmversion &&
@@ -2986,7 +2985,7 @@ sub get_xhr_request
                                                                   $theme_text{'theme_xhred_titles_wm'}
                                                        )
                                        ) };
-                        print get_json(\@update_rs);
+                        print convert_to_json(\@update_rs);
                         exit;
                     } elsif ($atversion &&
                              $umversion &&
@@ -3005,7 +3004,7 @@ sub get_xhr_request
                                                                   $theme_text{'theme_xhred_titles_um'}
                                                        )
                                        ) };
-                        print get_json(\@update_rs);
+                        print convert_to_json(\@update_rs);
                         exit;
                     }
                 }
@@ -3022,7 +3021,7 @@ sub get_xhr_request
                                "success" => ($usermin ? theme_text('theme_git_patch_update_success_message2', $tversion) :
                                                theme_text('theme_git_patch_update_success_message', $tversion)
                                ) };
-                print get_json(\@update_rs);
+                print convert_to_json(\@update_rs);
             }
         } elsif ($in{'xhr-info'} eq '1') {
             our ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
@@ -3068,9 +3067,9 @@ sub get_xhr_request
                                      "collect_interval" => get_module_config_data('system-status', 'collect_interval'),
                                      "extended_si"      => get_extended_sysinfo(\@info, undef),
                                      "warning_si"       => get_sysinfo_warning(@info), };
-                print get_json(@updated_info);
+                print convert_to_json(\@updated_info);
             } else {
-                print get_json_empty();
+                print convert_to_json();
             }
         } elsif ($in{'xhr-search-in-file'} eq '1') {
             set_user_level();
@@ -3084,7 +3083,7 @@ sub get_xhr_request
                 }
             }
             @files;
-            print get_json(\@match);
+            print convert_to_json(\@match);
         }
 
         exit;
@@ -3370,7 +3369,7 @@ sub get_available_modules
         }
     }
     if ($json eq 'json') {
-        get_json(\@mods);
+        return convert_to_json(\@mods);
     } else {
         return @mods;
     }
@@ -3389,9 +3388,9 @@ sub manage_theme_config
         my $tuconfig_file = (get_tuconfig_file());
         if (-f $tuconfig_file) {
             my %tuconfig = (settings($tuconfig_file, 'config_portable_'));
-            get_json(\%tuconfig);
+            return convert_to_json(\%tuconfig);
         } else {
-            get_json_empty();
+            return convert_to_json();
         }
     }
 }

@@ -54,16 +54,6 @@ sub theme_make_date_local
     return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
 }
 
-sub get_json
-{
-    convert_to_json(@_);
-}
-
-sub get_json_empty
-{
-    return JSON->new->latin1->encode({});
-}
-
 sub get_theme_language
 {
     my %s;
@@ -78,7 +68,7 @@ sub get_theme_language
         $s{$key} .= $theme_text{$key};
     }
 
-    get_json(\%s);
+    return convert_to_json(\%s);
 
 }
 

@@ -234,4 +234,4 @@ $search{'query'} = $in{'search'};
 
 # Redirect to it
 &pop3_logout_all();
-get_json(\%search);
+print_json(\%search);

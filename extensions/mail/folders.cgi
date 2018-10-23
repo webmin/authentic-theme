@@ -38,4 +38,4 @@ foreach my $folder (@folders_data) {
                                     unread => $unread, };
     defined $parent ? (push @{ $temporary{$parent}{children} }, $data) : (push(@folders, $data));
 }
-get_json(@folders);
+print_json(\@folders);

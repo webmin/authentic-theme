@@ -277,4 +277,4 @@ $mails{'list'} = {
 save_last_folder_id($folder);
 pop3_logout();
 
-get_json(\%mails);
+print_json(\%mails);

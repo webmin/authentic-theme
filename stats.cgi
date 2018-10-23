@@ -9,7 +9,6 @@ use strict;
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
-use JSON qw( );
 
 use WebminCore;
 BEGIN {push(@INC, "..");}
@@ -97,5 +96,4 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
     }
 }
 
-print "Content-type: application/json\n\n";
-print JSON->new->latin1->encode(\%data);
+print_json(\%data);
