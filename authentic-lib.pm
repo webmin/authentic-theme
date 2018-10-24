@@ -877,7 +877,8 @@ sub print_left_menu
                                              $theme_text{'right_slcheck'}, 1);
                     }
 
-                } elsif (!foreign_available("webmin") && $__custom_print eq '0') {
+                } elsif (!foreign_available("webmin") && $__custom_print eq '0' &&
+                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true') {
                     print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
                 }
@@ -2210,6 +2211,8 @@ sub theme_settings
             'true',
             'settings_theme_options_button',
             'true',
+            'settings_show_theme_configuration_for_admins_only',
+            'false',
             'settings_leftmenu_button_language',
             'false',
             'settings_leftmenu_button_refresh',
@@ -2315,7 +2318,18 @@ sub theme_settings
 
     if ($t eq 'exclusions') {
 
-        # Exclude list of combined settings for Virtualmin/Cloudmin/Usermin
+        # Exclude list of combined settings for UserminVirtualmin/Cloudmin
+        my @s_vc_e = ('settings_show_theme_configuration_for_admins_only');
+
+        if (!&foreign_available("server-manager") &&
+            !foreign_available("virtual-server") && !get_usermin_data("mailbox"))
+        {
+            foreach my $e (@s_vc_e) {
+                push(@theme_settings_excluded, $e);
+            }
+        }
+
+        # Exclude list of combined settings for Virtualmin/Cloudmin
         my @s_vc_e = ('settings_right_default_tab_webmin', 'settings_right_reload');
 
         if (!&foreign_available("server-manager") &&

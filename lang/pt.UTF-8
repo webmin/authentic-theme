@@ -964,3 +964,6 @@ theme_xhred_download_is_being_prepared=Your download is being prepared. It may t
 theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
 
 settings_mail_ui=Enable new mail UI
+
+settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
+settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations

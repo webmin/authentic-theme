@@ -50,7 +50,8 @@ if ($get_user_level eq '0' &&
     print '</li>';
 }
 
-if ($theme_config{'settings_theme_options_button'} ne 'false') {
+if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne 'false') || 
+    ($get_user_level ne '0' && $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')) {
     print '<li data-linked' .
       get_button_tooltip('settings_title', undef, 'auto top') . ' class="user-link theme-options cursor-pointer">';
     if ($get_user_level eq '0' && foreign_available('webmin')) {

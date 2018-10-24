@@ -961,3 +961,6 @@ theme_xhred_download_is_being_prepared= あなたのダウンロードは準備�
 theme_xhred_backup_is_being_prepared= バックアップを準備中です。それには時間がかかることがあります。お待ちください..
 
 settings_mail_ui= 新しいメールUIを有効にする
+
+settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
+settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
