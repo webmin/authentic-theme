@@ -94,7 +94,7 @@ const mail = (function() {
           }
         },
         tooltip: () => {
-          $('[data-tooltip="mailbox"').tooltip({
+          $('[data-tooltip="mailbox"]').tooltip({
             html: true,
             trigger: 'hover',
             container: 'body',
