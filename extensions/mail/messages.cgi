@@ -231,6 +231,15 @@ $mails{'form_list'} = { 'target' => 'delete_mail.cgi',
 if (@error) {
     $mails{'error'} = text('mail_err', $error[0] == 0 ? $error[1] : text('save_elogin', $error[1]));
 }
+if ($in{'error_fatal'} eq '1') {
+    my $error_message = $in{'error'};
+    my $errors        = $mails{'error'};
+    if ($errors) {
+        $mails{'error'} = { error => [$errors, $error_message] };
+    } else {
+        $mails{'error'} = { error => [$error_message] };
+    }
+}
 
 # Mail list sorter
 my ($sorted) = get_sort_field($folder);
