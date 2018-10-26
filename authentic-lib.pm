@@ -19,7 +19,7 @@ BEGIN {push(@INC, "..");}
 our (
     %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user,
     $theme_root_directory,
-    $current_theme, $root_directory,
+    $current_theme, $root_directory, $config_directory,
 
     %theme_text, %module_text_reversed, %theme_config, $get_user_level, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
@@ -487,7 +487,7 @@ sub get_extended_sysinfo
                       $open . '" role="tabpanel" aria-labelledby="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
                       <div class="panel-body">';
 
-                    if ($info->{'id'} ne 'plugin_virtualmin-notes') {
+                    if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
                         $returned_sysinfo .=
 '<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-hover"><tbody>';
                     }
@@ -596,7 +596,7 @@ sub get_extended_sysinfo
                         $returned_sysinfo .= $info->{'html'};
                     }
 
-                    if ($info->{'id'} ne 'plugin_virtualmin-notes') {
+                    if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
                         $returned_sysinfo .= '</tbody></table></div>';
                     }
 
@@ -877,8 +877,10 @@ sub print_left_menu
                                              $theme_text{'right_slcheck'}, 1);
                     }
 
-                } elsif (!foreign_available("webmin") && $__custom_print eq '0' &&
-                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true') {
+                } elsif (!foreign_available("webmin") &&
+                         $__custom_print eq '0' &&
+                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')
+                {
                     print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
                 }
@@ -2322,7 +2324,8 @@ sub theme_settings
         my @s_vc_e = ('settings_show_theme_configuration_for_admins_only');
 
         if (!&foreign_available("server-manager") &&
-            !foreign_available("virtual-server") && !get_usermin_data("mailbox"))
+            !foreign_available("virtual-server") &&
+            !get_usermin_data("mailbox"))
         {
             foreach my $e (@s_vc_e) {
                 push(@theme_settings_excluded, $e);
