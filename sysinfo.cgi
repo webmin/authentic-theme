@@ -255,8 +255,14 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
                      '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
                        $theme_text{'theme_name'} .
                        '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
-                       $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
-                       '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+                       $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
+                       $gconfig{'webprefix'} . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden'
+                       .
+                       ( !foreign_available("webmin") &&
+                           $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true' ? ' hidden-force' :
+                           undef
+                       ) .
+                       '" title="' .
                        $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
 '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>');
 
@@ -377,8 +383,14 @@ if ($get_user_level eq '0' || $get_user_level eq '4') {
                      '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
                        $theme_text{'theme_name'} .
                        '</a> ' . theme_version() . '<div class="btn-group margined-left-4"><a href="' .
-                       $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' . $gconfig{'webprefix'} .
-                       '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden" title="' .
+                       $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
+                       $gconfig{'webprefix'} . '/settings-user.cgi" class="btn btn-default btn-xxs btn-hidden hidden'
+                       .
+                       ( !foreign_available("webmin") &&
+                           $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true' ? ' hidden-force' :
+                           undef
+                       ) .
+                       '" title="' .
                        $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a> ' .
 '<a data-href="#theme-info" class="btn btn-default btn-xxs btn-hidden hidden"><i class="fa fa-info-circle"></i></a></div>');
 
