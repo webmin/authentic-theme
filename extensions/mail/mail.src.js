@@ -64,6 +64,8 @@ const mail = (function() {
       plugin: {
         json_to_query: Convert.json_to_query,
         timestamp: time.localize,
+        offset_adjust: page.handle.content.offset,
+
         select: (data, size = '34') => {
           if (Array.isArray(data)) {
             data[0].select2(data[1])
@@ -92,7 +94,7 @@ const mail = (function() {
           }
         },
         tooltip: () => {
-          $('[data-tooltip="mailbox"').tooltip({
+          $('[data-tooltip="mailbox"]').tooltip({
             html: true,
             trigger: 'hover',
             container: 'body',
@@ -903,7 +905,7 @@ const mail = (function() {
             // Submit simple search query
             if (advanced_form_hidden()) {
               if (simple_query.search) {
-                $.post(_.path.prefix + '/' + _.variable.module.name() + '/mail_search.cgi?returned_format=json&simple=1&' + _.plugin.json_to_query(simple_query), function(data) {
+                $.post(_.path.prefix + '/' + _.variable.module.name() + '/mail_search.cgi?returned_format=json&json-error=1&simple=1&' + _.plugin.json_to_query(simple_query), function(data) {
                   messages.get(data);
                 });
               }
@@ -966,7 +968,7 @@ const mail = (function() {
               query.attach = ~~$elements_attach[0].checked;
 
               // Run the query
-              $.post(_.path.prefix + '/' + _.variable.module.name() + '/mail_search.cgi?returned_format=json&' + _.plugin.json_to_query(query), function(data) {
+              $.post(_.path.prefix + '/' + _.variable.module.name() + '/mail_search.cgi?returned_format=json&json-error=1&' + _.plugin.json_to_query(query), function(data) {
                 messages.get(data);
               });
             }
@@ -1140,12 +1142,21 @@ const mail = (function() {
           },
           messages_list = (data.list.messages ? data.list.messages.replace(/�/g, '') : String());
 
-        let messages_list_available = messages_list.length > 128 ? 1 : 0;
+        // Check for errors first
+        if (data.error) {
+          let errors = data.error.error;
+          for (let i = 0; i < errors.length; i++) {
+            _.notification(['exclamation-circle', errors[i]], 20, "error", i, 1, ['top', 'center']);
+          }
+          return
+        }
 
+        let messages_list_available = messages_list.length > 128 ? 1 : 0;
         if (!messages_list_available && data.searched) {
           _.notification(['search', _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 0, ['top', 'right'])
           return
         }
+
         // Empty current panel and define target
         container.empty().append($$.create.$('layout.panel'));
         let panel = container.find($$.selector('layout.panel'));
@@ -1364,6 +1375,7 @@ const mail = (function() {
 
           _.plugin.timestamp();
           _.plugin.tooltip();
+          _.plugin.offset_adjust(true);
           _.rows();
           folders.set(data.searched_folder_id || data.folder_id);
           events(data);

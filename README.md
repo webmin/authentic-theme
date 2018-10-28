@@ -43,10 +43,13 @@
 ## FAQ
 
 ### How to update _Authentic_ Theme manually?
-Go to theme configuration and hit _Force update theme_ button to install either _stable_ or _production_ version of the theme.
+Go to theme configuration and hit _Force update theme_ button to install either _stable_ or _development_ version of the theme.
 
 ### How to update _Authentic_ Theme automatically?
 The theme has built-in feature to notify administrative users to install updates. To enable this feature, turn on _Check for Authentic Theme updates_ in theme configuration.
+
+### How to show beta updates notifications for the theme?
+Go to theme folder, find _config_ file, open it and change the value from _0_ to _1_ for _show_beta_updates_ option.
 
 ### How do I customize the theme?
 Theme has configurable options. There, as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.

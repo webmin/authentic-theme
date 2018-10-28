@@ -1,6 +1,27 @@
 ## Changelog
 
-#### Version 19.20-beta5 (September 30, 2018) [4 Year Anniversary] :clap: :balloon: :gift:
+#### Version 19.20-beta6 (October 21, 2018)
+* Add support for creating symbolic links in File Manager [#629/comment-426615864](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-426615864)
+* Add ability to control number of shown virtual servers on Dashboard [#1200](https://github.com/authentic-theme/authentic-theme/issues/1200)
+* Add to display database quota along with disk space on Dashboard  [#1206](https://github.com/authentic-theme/authentic-theme/issues/1206)
+* Add ability to disable new mail UI
+* Fix premature load of mail folders resulting in fatal error
+* Fix sporadic load errors and folder detection bug in mail
+* Fix to always adjust offset of mail view container
+* Fix snippet options to be saved correctly
+* Fix to detect favorites despite presence of home page pointer [#1211](https://github.com/authentic-theme/authentic-theme/issues/1211)
+* Fix data filter to support paste event; improve its performance [#1207](https://github.com/authentic-theme/authentic-theme/issues/1207)
+* Fix to utilize fail proof load method for theme language strings [#1203/comment-429554824](https://github.com/authentic-theme/authentic-theme/issues/1203#issuecomment-429554824)
+* Fix not to leak hostname and product version on login page [webmin/webmin#972](https://github.com/webmin/webmin/issues/972)
+* Fix to improve editor's height and its save buttons positioning
+* Fix to catch pages with progressive output called from autocomplete menu
+* Fix download issues across UI [virtualmin.com/58225](https://virtualmin.com/node/58225) [sourceforge.net/5176](https://sourceforge.net/p/webadmin/bugs/5176)
+* Fix module link detection at navigation menu in Usermin
+* Fix Cloudmin's Mass Run commands module UI and scroll to bottom when done
+* Fix to stretch viewer/editor container to full width in ConfigServer Security & Firewall version
+* Fix to avoid File Manager to load bundle check on foreign modules
+
+#### Version 19.20-beta5 (September 30, 2018)
 * Add ability to search for text when editing config files manually [#1198](https://github.com/authentic-theme/authentic-theme/issues/1198)
 * Add support to setup and display background for login page [#1195](https://github.com/authentic-theme/authentic-theme/issues/1195)
 * Add significant UI improvements to Custom module for default mode

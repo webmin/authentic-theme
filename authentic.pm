@@ -1155,9 +1155,9 @@ sub theme_redirect
 
 sub theme_header_redirect_download
 {
-    my ($url, $delay, $body) = @_;
+    my ($url, $delay, $message) = @_;
 
-    head();
+    PrintHeader();
     print "<!DOCTYPE html>\n";
     print "<html>\n";
     print "<head>\n";
@@ -1168,13 +1168,17 @@ sub theme_header_redirect_download
       ) .
       '.ico">' . "\n";
     print '<meta charset="' . get_charset() . '">', "\n";
-    print "<meta data-predownload http-equiv=\"refresh\" content=\"$delay;url=$url\">\n";
     print "</head>\n";
-    if ($body) {
-        print "<body>\n";
-        print $body . "\n";
-        print "</body>\n";
+    my $script =
+      '<form data-predownload action="' .
+      $url . '" method="post" name="redirect"></form><script>setTimeout(function(){document.forms.redirect.submit()}, ' .
+      ($delay ? $delay . "000" : 0) . ');</script>';
+    print "<body>\n";
+    print $script . "\n";
+    if ($message) {
+        print $message . "\n";
     }
+    print "</body>\n";
     print '</html>';
 
 }
@@ -1186,16 +1190,16 @@ sub theme_redirect_download
         my $show  = $query =~ /show=1/ ? 1 : 0;
         my $delay = $_[0] =~ /unzip=1/ ? 1 : 0;
         my $zip   = $_[0] =~ /.zip/ ? 1 : 0;
-        my $body;
+        my $message;
 
         if ($delay) {
-            $body = $theme_text{'theme_xhred_download_is_being_prepared'};
+            $message = $theme_text{'theme_xhred_download_is_being_prepared'};
         }
         if (!$delay && !$show) {
-            $body = $theme_text{'right_download_is_ready'};
+            $message = $theme_text{'right_download_is_ready'};
         }
 
-        theme_header_redirect_download($_[0], $delay, $body);
+        theme_header_redirect_download($_[0], $delay, $message);
 
         return 1;
     } else {

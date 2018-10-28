@@ -90,6 +90,7 @@ sub settings_default
     $c{'settings_hotkey_focus_search'}                = 's';
     $c{'settings_hotkey_reload'}                      = 'r';
     $c{'settings_hotkey_toggle_key_night_mode'}       = 'l';
+    $c{'settings_mail_ui'}                            = 'true';
 
     return %c;
 }
@@ -119,6 +120,11 @@ sub embed_header
         print '</head>';
         return;
     }
+
+    # Print object with language strings
+    print '<script>';
+    print 'var v___theme_language = ' . get_theme_language();
+    print '</script>';
 
     if ($args[2]) {
         do(dirname(__FILE__) . "/dependencies.pm");

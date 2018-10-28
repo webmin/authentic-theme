@@ -41,4 +41,4 @@ if ($in{'mark'} eq 'starred') {
     }
 }
 
-get_json(\%email);
+print_json(\%email);

@@ -13,7 +13,6 @@ use Cwd 'abs_path';
 use Encode qw(decode encode);
 use File::MimeInfo;
 use POSIX;
-use JSON qw( decode_json );
 
 our (%access, %in, %text, @remote_user_info, $base_remote_user, $current_theme,
      %userconfig, @allowed_paths, @list, $base, $cwd, $path);
@@ -60,22 +59,12 @@ sub get_type
     }
 }
 
-sub get_json
-{
-    return JSON->new->latin1->encode(@_);
-}
-
-sub print_json
-{
-    head(), print get_json(@_);
-}
-
 sub get_errors
 {
     my %errors = %{ $_[0] };
 
     if (scalar %errors) {
-        return JSON->new->latin1->encode(\%errors);
+        return convert_to_json(\%errors);
     } else {
         return undef;
     }
