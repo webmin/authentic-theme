@@ -271,7 +271,7 @@ theme_update=Oppdater
 theme_update_available=Siste tilgjengelige versjon
 theme_update_footer=Vær snill å rapportere feil til $ 1 depot. Følg temaets $ 2 kanal for de siste oppdateringene.
 theme_update_notice=Oppdateringsmelding
-theme_version=Temaversjon
+theme_version=Authentic theme version
 theme_xhred_add_after=Legg til etter
 theme_xhred_add_before=Legg til før
 theme_xhred_database_add_new_row=Legg til rad
@@ -825,3 +825,6 @@ settings_mail_ui=Enable new mail UI
 
 settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
 settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+
+theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
+
