@@ -978,3 +978,6 @@ settings_mail_ui=Enable new mail UI
 
 settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
 settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+
+theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
+
