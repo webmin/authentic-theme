@@ -962,3 +962,9 @@ settings_show_theme_configuration_for_admins_only_error=Access denied: Administr
 theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
 settings_hotkey_navigation=Hotkey for toggling navigation menu
 
+theme_xhred_search_in_webmin=Search Webmin
+theme_xhred_search_in_usermin=Search Usermin
+theme_xhred_search_in_virtualserver=Search Virtualmin
+theme_xhred_search_in_servermanager=Search Cloudmin
+
+

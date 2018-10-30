@@ -663,13 +663,6 @@ sub print_search
         print '<li class="menu-container search-form-container"><form id="webmin_search_form" action="' .
           $gconfig{'webprefix'} . '/webmin_search.cgi" role="search">' . "\n";
         print '<div class="form-group">' . "\n";
-        if ($theme_requested_from_tab =~ /virtual-server/) {
-            print '<input type="hidden" class="form-control" name="mod" value="virtual-server">' . "\n";
-        }
-        if ($theme_requested_from_tab =~ /server-manager/) {
-            print '<input type="hidden" class="form-control" name="mod" value="server-manager">' . "\n";
-        }
-
         print '<i class="fa fa-search"></i>' . "\n";
         print '<input type="text" class="form-control sidebar-search" name="search" placeholder="' .
           $theme_text{'left_search'} . '">' . "\n";
