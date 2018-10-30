@@ -973,4 +973,5 @@ theme_xhred_search_in_usermin=Search Usermin
 theme_xhred_search_in_virtualserver=Search Virtualmin
 theme_xhred_search_in_servermanager=Search Cloudmin
 
+theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
 
