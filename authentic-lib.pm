@@ -444,7 +444,7 @@ sub get_extended_sysinfo
                             <a data-toggle="collapse" href="#'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" aria-expanded="'
                       .
-                      ( ($info->{'open'} || $theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true') ? 'true' :
+                      ( ($info->{'open'} || $info->{'id'} eq 'domain' || $theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true') ? 'true' :
                           'false'
                       ) .
                       '" aria-controls="' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse">
