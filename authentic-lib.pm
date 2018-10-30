@@ -444,7 +444,11 @@ sub get_extended_sysinfo
                             <a data-toggle="collapse" href="#'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" aria-expanded="'
                       .
-                      ( ($info->{'open'} || $info->{'id'} eq 'domain' || $theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true') ? 'true' :
+                      (
+                        ($info->{'open'} ||
+                           $info->{'id'} eq 'domain' ||
+                           $theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true'
+                        ) ? 'true' :
                           'false'
                       ) .
                       '" aria-controls="' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse">
@@ -666,8 +670,8 @@ sub print_search
             print '<input type="hidden" class="form-control" name="mod" value="server-manager">' . "\n";
         }
 
-        print
-          '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="' .
+        print '<i class="fa fa-search"></i>' . "\n";
+        print '<input type="text" class="form-control sidebar-search" name="search" placeholder="' .
           $theme_text{'left_search'} . '">' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
@@ -1015,24 +1019,27 @@ sub print_sysstats_panel_end
 }
 
 sub print_sysstats_panel_start
-{    
+{
     my ($info_ref) = @_;
-    
+
     my $recollect;
     if ($info_ref) {
-      my @recollect = @{$info_ref};
-      @recollect = grep {$_->{'id'} =~ /recollect/} @recollect;
-      if (@recollect) {
-        $recollect = '<span class="btn btn-transparent-link pull-right _sync_sysinfo_cnt"><i class="fa fa-fw fa fa-reload _sync_sysinfo_" '. get_button_tooltip('theme_xhred_tooltip_side_slider_sync_sysinfo', undef, 'auto right').'></i></span>';
-      }
+        my @recollect = @{$info_ref};
+        @recollect = grep {$_->{'id'} =~ /recollect/} @recollect;
+        if (@recollect) {
+            $recollect =
+'<span class="btn btn-transparent-link pull-right _sync_sysinfo_cnt"><i class="fa fa-fw fa fa-reload _sync_sysinfo_" '
+              . get_button_tooltip('theme_xhred_tooltip_side_slider_sync_sysinfo', undef, 'auto right')
+              . '></i></span>';
+        }
     }
     my %virtualmin_config = foreign_config('virtual-server');
     my %cloudmin_config   = foreign_config('server-manager');
 
     print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
-    print '<h3 class="panel-title">'.$recollect.'' .
-      ($get_user_level eq '3' ? $theme_text{'body_header1'} : $theme_text{'body_header0'})
+    print '<h3 class="panel-title">' .
+      $recollect . '' . ($get_user_level eq '3' ? $theme_text{'body_header1'} : $theme_text{'body_header0'})
       .
       ( $cloudmin_config{'docs_link'} &&
           foreign_available("server-manager") ?
@@ -2380,6 +2387,8 @@ sub theme_settings
             'k',
             'settings_hotkey_sysinfo',
             'i',
+            'settings_hotkey_navigation',
+            'a',
             'settings_hotkey_toggle_slider',
             'n',
             'settings_hotkey_favorites',
@@ -2591,6 +2600,7 @@ sub theme_settings
         } elsif ($k =~ /settings_security_notify_on_/ ||
                  $k =~ /settings_hotkey_toggle_key_/           ||
                  $k eq 'settings_hotkey_focus_search'          ||
+                 $k eq 'settings_hotkey_navigation'            ||
                  $k eq 'settings_hotkey_toggle_slider'         ||
                  $k eq 'settings_hotkey_reload'                ||
                  $k eq 'settings_hotkey_shell'                 ||
@@ -2606,6 +2616,7 @@ sub theme_settings
             my $width =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'          ||
+                $k eq 'settings_hotkey_navigation'            ||
                 $k eq 'settings_hotkey_toggle_slider'         ||
                 $k eq 'settings_hotkey_reload'                ||
                 $k eq 'settings_hotkey_shell'                 ||
@@ -2620,6 +2631,7 @@ sub theme_settings
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
+                $k eq 'settings_hotkey_navigation' ||
                 $k eq 'settings_hotkey_toggle_slider' ||
                 $k eq 'settings_hotkey_reload'        ||
                 $k eq 'settings_hotkey_shell'         ||

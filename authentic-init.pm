@@ -85,6 +85,7 @@ sub settings_default
     $c{'settings_hotkey_toggle_key_webmail'}          = 'm';
     $c{'settings_hotkey_shell'}                       = 'k';
     $c{'settings_hotkey_sysinfo'}                     = 'i';
+    $c{'settings_hotkey_navigation'}                  = 'a';
     $c{'settings_hotkey_toggle_slider'}               = 'n';
     $c{'settings_hotkey_favorites'}                   = 'f';
     $c{'settings_hotkey_focus_search'}                = 's';
