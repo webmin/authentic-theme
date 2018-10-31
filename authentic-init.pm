@@ -7,7 +7,7 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,            @theme_bundle_js,          %module_text_full,  %theme_config,
+our (@theme_bundle_css,            @theme_bundle_js,          %module_text_full,      %theme_config,
      %theme_text,                  %theme_temp_data,          $get_user_level,        $global_prefix,
      $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,  $has_usermin_version,
      $has_usermin,                 $has_virtualmin,           $theme_module_query_id, $t_uri___i,
@@ -741,7 +741,7 @@ sub get_button_style
 {
 
     my $label = quote_escape(@_);
-    
+
     my %module_text = module_text_full();
     my (@keys) = grep {$module_text{$_} eq $label} keys %module_text;
 
@@ -757,12 +757,12 @@ sub get_button_style
         $class = "success ";
         $icon  = "server-add";
     } elsif (string_contains($keys, "save") ||
-             string_contains($keys, "backup_ok2",    1) ||
-             string_contains($keys, "sharedips_ok",  1) ||
+             string_contains($keys, "backup_ok2")    ||
+             string_contains($keys, "sharedips_ok")  ||
              string_contains($keys, "categories_ok") ||
-             string_contains($keys, "frame_ok",      1) ||
-             string_contains($keys, "newquotas_ok",  1) ||
-             string_contains($keys, "newdynip_ok",   1))
+             string_contains($keys, "frame_ok")      ||
+             string_contains($keys, "newquotas_ok")  ||
+             string_contains($keys, "newdynip_ok"))
     {
         $class = "success ";
         $icon  = "check-circle";
@@ -777,26 +777,26 @@ sub get_button_style
     {
         $class = "info ";
         $icon  = "refresh";
-    } elsif ((string_contains($keys, "delete") && string_contains($keys, "users_delete")) ||
-             string_contains($keys, "wipe",          1) ||
-             string_contains($keys, "ddrop_ok",      1) ||
-             string_contains($keys, "dbs_dok",       1) ||
-             string_contains($keys, "tprivs_dok",    1) ||
-             string_contains($keys, "hosts_dok",     1) ||
-             string_contains($keys, "cprivs_dok",    1) ||
-             string_contains($keys, "dbase_drop",    1) ||
-             string_contains($keys, "ddrop_title",   1) ||
+    } elsif ((string_contains($keys, "delete") && !string_contains($keys, "users_delete")) ||
+             string_contains($keys, "wipe")       ||
+             string_contains($keys, "ddrop_ok")   ||
+             string_contains($keys, "dbs_dok")    ||
+             string_contains($keys, "tprivs_dok") ||
+             string_contains($keys, "hosts_dok", 1) ||
+             string_contains($keys, "cprivs_dok") ||
+             string_contains($keys, "dbase_drop") ||
+             string_contains($keys, "ddrop_title", 1) ||
              string_contains($keys, "dbase_delete2") ||
-             string_contains($keys, "table_drop",    1) ||
-             string_contains($keys, "tdrop_title",   1) ||
-             string_contains($keys, "tdrop_ok",      1) ||
-             string_contains($keys, "index_drops",   1) ||
-             string_contains($keys, "delq_confirm",  1) ||
-             string_contains($keys, "umass_del2",    1) ||
-             string_contains($keys, "index_gmass",   1) ||
-             string_contains($keys, "master_del",    1) ||
+             string_contains($keys, "table_drop")    ||
+             string_contains($keys, "tdrop_title",  1) ||
+             string_contains($keys, "tdrop_ok",     1) ||
+             string_contains($keys, "index_drops",  1) ||
+             string_contains($keys, "delq_confirm", 1) ||
+             string_contains($keys, "umass_del2") ||
+             string_contains($keys, "index_gmass", 1) ||
+             string_contains($keys, "master_del")    ||
              string_contains($keys, "newstyles_del") ||
-             string_contains($keys, "html_dtitle",   1))
+             string_contains($keys, "html_dtitle", 1))
     {
         $class = "danger ";
 
@@ -835,8 +835,8 @@ sub get_button_style
         $icon = "arrow-circle-o-left";
     } elsif (string_contains($keys, "tmpl_nnext") ||
              string_contains($keys, "wizard_next") ||
-             string_contains($keys, "tmpl_cnext",  1) ||
-             string_contains($keys, "tmpl_snext",  1) ||
+             string_contains($keys, "tmpl_cnext")  ||
+             string_contains($keys, "tmpl_snext")  ||
              string_contains($keys, "download_cont"))
     {
         $icon = "arrow-circle-o-right";
@@ -855,21 +855,21 @@ sub get_button_style
         $icon = "files-o";
     } elsif (string_contains($keys, "reboot") ||
              string_contains($keys, "view_refresh") ||
-             string_contains($keys, "refreshmods",  1) ||
+             string_contains($keys, "refreshmods")  ||
              string_contains($keys, "index_buttinit"))
     {
         if (string_contains($keys, "refreshmods")) {
             $class = "primary ";
-        } elsif (string_contains($keys, "index_reboot") ||
+        } elsif (!string_contains($keys, "reboot_ok") && !string_contains($keys, "index_reboot") ||
                  string_contains($keys, "index_buttinit"))
         {
             $class = "warning ";
         }
         $icon = "refresh-fi fa-1_25x";
     } elsif (string_contains($keys, "search") ||
-             string_contains($keys, "index_broad",    1) ||
+             string_contains($keys, "index_broad")    ||
              string_contains($keys, "scripts_findok") ||
-             string_contains($keys, "kill_title",     1))
+             string_contains($keys, "kill_title"))
     {
         $class = "info ";
         $icon  = "search";
@@ -909,18 +909,18 @@ sub get_button_style
     } elsif (string_contains($keys, "shell_clearcmds")) {
         $icon = "broom fa-1_25x";
     } elsif (string_contains($keys, "index_boot") ||
-             string_contains($keys, "index_bootup",      1) ||
-             string_contains($keys, "index_atboot",      1) ||
+             string_contains($keys, "index_bootup")      ||
+             string_contains($keys, "index_atboot")      ||
              string_contains($keys, "massdomains_disok") ||
-             string_contains($keys, "disable",           1))
+             string_contains($keys, "disable"))
     {
         $icon = "toggle-switch-off fa-1_25x";
     } elsif (string_contains($keys, "index_global") ||
-             string_contains($keys, "umass_ok",    1) ||
-             string_contains($keys, "vars_edit",   1) ||
+             string_contains($keys, "umass_ok")    ||
+             string_contains($keys, "vars_edit")   ||
              string_contains($keys, "lusers_mass") ||
-             string_contains($keys, "root_ok",     1) ||
-             string_contains($keys, "index_edit",  1))
+             string_contains($keys, "root_ok")     ||
+             string_contains($keys, "index_edit"))
     {
         $class = "primary ";
         $icon  = "pencil-square-o";
@@ -953,13 +953,15 @@ sub get_button_style
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     }
-    elsif ((string_contains($keys, "add") && string_contains($keys, "edit_addinc")) ||
-           (string_contains($keys, "create") &&
-            string_contains($keys, "user_priv_create_view")) ||
-           string_contains($keys, "index_crnow") ||
-           string_contains($keys, "view_new",    1) ||
-           string_contains($keys, "mass_ok",     1) ||
-           string_contains($keys, "rmass_ok",    1))
+    elsif (
+        (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
+        ||
+        (string_contains($keys, "create") &&
+            !string_contains($keys, "user_priv_create_view")) ||
+        string_contains($keys, "index_crnow") ||
+        string_contains($keys, "view_new")    ||
+        string_contains($keys, "mass_ok")     ||
+        string_contains($keys, "rmass_ok"))
     {
         $class = "success ";
         $icon  = "plus-circle";
@@ -974,17 +976,17 @@ sub get_button_style
         $icon = "restore fa-1_25x";
     } elsif (string_contains($keys, "backup_title") ||
              string_contains($keys, "dbase_backup") ||
-             string_contains($keys, "index_dump",   1) ||
-             string_contains($keys, "backup_ok",    1) ||
-             string_contains($keys, "export",       1) ||
-             string_contains($keys, "backup_now",   1))
+             string_contains($keys, "index_dump")   ||
+             string_contains($keys, "backup_ok")    ||
+             string_contains($keys, "export")       ||
+             string_contains($keys, "backup_now"))
     {
         $icon = "backup fa-1_25x";
     } elsif (string_contains($keys, "dbase_exec") ||
-             string_contains($keys, "exec_exec",         1) ||
+             string_contains($keys, "exec_exec")         ||
              string_contains($keys, "user_priv_execute") ||
-             string_contains($keys, "exec_title",        1) ||
-             string_contains($keys, "exec_tabexec",      1))
+             string_contains($keys, "exec_title")        ||
+             string_contains($keys, "exec_tabexec"))
     {
         $icon = "database";
     } elsif (string_contains($keys, "create_view") ||
@@ -1011,10 +1013,10 @@ sub get_button_style
         $class = "primary ";
         $icon  = "download";
     } elsif (string_contains($keys, "umass_del1") ||
-             string_contains($keys, "gdel_del",    1) ||
-             string_contains($keys, "gdel_title",  1) ||
+             string_contains($keys, "gdel_del")    ||
+             string_contains($keys, "gdel_title")  ||
              string_contains($keys, "drecs_title") ||
-             string_contains($keys, "rdmass_ok",   1))
+             string_contains($keys, "rdmass_ok"))
     {
         $icon = "times-circle-o";
     } elsif (string_contains($keys, "users_delete")) {
@@ -1032,7 +1034,10 @@ sub get_button_style
     } elsif (string_contains($keys, "_ok")) {
         $icon  = "check-circle-o";
         $class = "success ";
-    } elsif (string_contains($keys, "_change") && string_contains($keys, "trace_change")) {
+    } elsif (string_contains($keys, "_change") &&
+             !string_contains($keys, "edit_change") &&
+             !string_contains($keys, "trace_change"))
+    {
         $class = "warning ";
         $icon  = "pencil-square-o";
     } elsif (string_contains($keys, "lkeys_sok2")) {
