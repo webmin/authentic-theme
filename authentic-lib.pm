@@ -21,7 +21,7 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory,
 
-    %theme_text, %module_text_reversed, %theme_config, $get_user_level, $theme_requested_url,
+    %theme_text, %module_text_full, %theme_config, $get_user_level, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
     $has_usermin,              $has_usermin_version,
     $has_usermin_root_dir, $has_usermin_conf_dir, $t_var_switch_m, $t_var_product_m);

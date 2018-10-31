@@ -7,7 +7,7 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,            @theme_bundle_js,          %module_text_reversed,  %theme_config,
+our (@theme_bundle_css,            @theme_bundle_js,          %module_text_full,  %theme_config,
      %theme_text,                  %theme_temp_data,          $get_user_level,        $global_prefix,
      $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,  $has_usermin_version,
      $has_usermin,                 $has_virtualmin,           $theme_module_query_id, $t_uri___i,
@@ -739,312 +739,316 @@ sub get_initial_wizard
 
 sub get_button_style
 {
-    my ($label) = @_;
 
-    my %text  = module_text_reversed();
-    my $entry = $text{ quote_escape($label) };
+    my $label = quote_escape(@_);
+    
+    my %module_text = module_text_full();
+    my (@keys) = grep {$module_text{$_} eq $label} keys %module_text;
 
+    my $keys = "@keys";
+    my $icon;
     my $class = "default";
-    my $icon  = '<i class="fa fa-fw fa-%icon"></i>';
 
-    if ($entry eq 'edit_createnow' || $entry eq 'edit_savenow') {
-        $icon =~ s/%icon/backup fa-1_25x/ig;
-    } elsif ($entry =~ /changeip/ || $entry =~ /newips/) {
-        $icon =~ s/%icon/pencil-square-o/ig;
-    } elsif ($entry eq 'kvms_start' || $entry eq 'docker_reg') {
+    if (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
+        $icon = "backup fa-1_25x";
+    } elsif (string_contains($keys, "newips")) {
+        $icon = "pencil-square-o";
+    } elsif (string_contains($keys, "docker_reg")) {
         $class = "success ";
-        $icon =~ s/%icon/server-add/ig;
-    } elsif ($entry =~ /save/ ||
-             $entry eq 'backup_ok2'    ||
-             $entry eq 'sharedips_ok'  ||
-             $entry eq 'categories_ok' ||
-             $entry eq 'frame_ok'      ||
-             $entry eq 'newquotas_ok'  ||
-             $entry eq 'newdynip_ok')
+        $icon  = "server-add";
+    } elsif (string_contains($keys, "save") ||
+             string_contains($keys, "backup_ok2",    1) ||
+             string_contains($keys, "sharedips_ok",  1) ||
+             string_contains($keys, "categories_ok") ||
+             string_contains($keys, "frame_ok",      1) ||
+             string_contains($keys, "newquotas_ok",  1) ||
+             string_contains($keys, "newdynip_ok",   1))
     {
         $class = "success ";
-        $icon =~ s/%icon/check-circle/ig;
-    } elsif ($entry eq 'form_ok') {
+        $icon  = "check-circle";
+    } elsif (string_contains($keys, "form_ok")) {
         $class = "success ";
-        $icon =~ s/%icon/check-circle/ig;
-    } elsif ($entry =~ /apply/) {
+        $icon  = "check-circle";
+    } elsif (string_contains($keys, "apply")) {
         $class = "info ";
-        $icon =~ s/%icon/check-circle-o/ig;
-    } elsif ($entry =~ /update/ ||
-             $entry =~ /index_sync/)
+        $icon  = "check-circle-o";
+    } elsif (string_contains($keys, "update") ||
+             string_contains($keys, "index_sync"))
     {
         $class = "info ";
-        $icon =~ s/%icon/refresh/ig;
-    } elsif (($entry =~ /delete/ && $entry ne 'users_delete') ||
-             $entry =~ /wipe/          ||
-             $entry =~ /ddrop_ok/      ||
-             $entry =~ /dbs_dok/       ||
-             $entry =~ /tprivs_dok/    ||
-             $entry =~ /hosts_dok/     ||
-             $entry =~ /cprivs_dok/    ||
-             $entry =~ /dbase_drop/    ||
-             $entry =~ /ddrop_title/   ||
-             $entry =~ /dbase_delete2/ ||
-             $entry =~ /table_drop/    ||
-             $entry =~ /tdrop_title/   ||
-             $entry =~ /tdrop_ok/      ||
-             $entry =~ /index_drops/   ||
-             $entry =~ /delq_confirm/  ||
-             $entry =~ /umass_del2/    ||
-             $entry =~ /index_gmass/   ||
-             $entry =~ /master_del/    ||
-             $entry =~ /newstyles_del/ ||
-             $entry eq 'html_dtitle')
+        $icon  = "refresh";
+    } elsif ((string_contains($keys, "delete") && string_contains($keys, "users_delete")) ||
+             string_contains($keys, "wipe",          1) ||
+             string_contains($keys, "ddrop_ok",      1) ||
+             string_contains($keys, "dbs_dok",       1) ||
+             string_contains($keys, "tprivs_dok",    1) ||
+             string_contains($keys, "hosts_dok",     1) ||
+             string_contains($keys, "cprivs_dok",    1) ||
+             string_contains($keys, "dbase_drop",    1) ||
+             string_contains($keys, "ddrop_title",   1) ||
+             string_contains($keys, "dbase_delete2") ||
+             string_contains($keys, "table_drop",    1) ||
+             string_contains($keys, "tdrop_title",   1) ||
+             string_contains($keys, "tdrop_ok",      1) ||
+             string_contains($keys, "index_drops",   1) ||
+             string_contains($keys, "delq_confirm",  1) ||
+             string_contains($keys, "umass_del2",    1) ||
+             string_contains($keys, "index_gmass",   1) ||
+             string_contains($keys, "master_del",    1) ||
+             string_contains($keys, "newstyles_del") ||
+             string_contains($keys, "html_dtitle",   1))
     {
         $class = "danger ";
 
-        $icon =~ s/%icon/times-circle/ig;
-    } elsif ($entry =~ /twofactor_enable/) {
+        $icon = "times-circle";
+    } elsif (string_contains($keys, "twofactor_enable")) {
         $class = "info ";
-        $icon =~ s/%icon/lock/ig;
-    } elsif ($entry =~ /twofactor_disable/) {
+        $icon  = "lock";
+    } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
-        $icon =~ s/%icon/unlock/ig;
-    } elsif (($entry =~ /install/ || $entry =~ /recsok/ || $entry eq 'scripts_iok' || $entry eq 'right_upok') &&
-             $entry !~ /uninstall/)
+        $icon  = "unlock";
+    } elsif ((string_contains($keys, "recsok") || string_contains($keys, "right_upok")) &&
+             string_contains($keys, "uninstall"))
     {
         $class = "success ";
-        $icon =~ s/%icon/package-install fa-1_25x/ig;
-    } elsif ($entry =~ /uninstall/ || $entry =~ /edit_uninst/ || $entry eq 'drecs_ok') {
+        $icon  = "package-install fa-1_25x";
+    } elsif (string_contains($keys, "edit_uninst") || string_contains($keys, "drecs_ok")) {
         $class = "danger ";
-        $icon =~ s/%icon/times-circle-o/ig;
-    } elsif ($entry =~ /upgrade/ || $entry =~ /massscript_ok/ || $entry =~ /massg_ok/) {
+        $icon  = "times-circle-o";
+    } elsif (string_contains($keys, "massg_ok")) {
         $class = "info ";
-        $icon =~ s/%icon/update/ig;
-    } elsif ($entry =~ /index_srefresh/) {
-        $icon =~ s/%icon/user-md/ig;
-    } elsif ($entry =~ /quota/) {
-        $icon =~ s/%icon/pie-chart/ig;
-    } elsif ($entry =~ /addboot/ ||
-             $entry =~ /enable/ ||
-             $entry eq 'massdomains_enaok')
+        $icon  = "update";
+    } elsif (string_contains($keys, "index_srefresh")) {
+        $icon = "user-md";
+    } elsif (string_contains($keys, "quota")) {
+        $icon = "pie-chart";
+    } elsif (string_contains($keys, "addboot") ||
+             string_contains($keys, "enable") ||
+             string_contains($keys, "massdomains_enaok"))
     {
-        $icon =~ s/%icon/toggle-switch  fa-1_25x/ig;
-    } elsif ($entry =~ /shutdown/) {
-        $icon =~ s/%icon/power-off/ig;
-    } elsif ($entry =~ /docker_reg/) {
-        $icon =~ s/%icon/check-circle-o/ig;
-    } elsif ($entry eq 'tmpl_nprev' || $entry eq 'wizard_prev') {
-        $icon =~ s/%icon/arrow-circle-o-left/ig;
-    } elsif ($entry eq 'tmpl_nnext' ||
-             $entry eq 'wizard_next' ||
-             $entry eq 'tmpl_cnext'  ||
-             $entry eq 'tmpl_snext'  ||
-             $entry eq 'download_cont')
+        $icon = "toggle-switch  fa-1_25x";
+    } elsif (string_contains($keys, "shutdown")) {
+        $icon = "power-off";
+    } elsif (string_contains($keys, "docker_reg")) {
+        $icon = "check-circle-o";
+    } elsif (string_contains($keys, "wizard_prev")) {
+        $icon = "arrow-circle-o-left";
+    } elsif (string_contains($keys, "tmpl_nnext") ||
+             string_contains($keys, "wizard_next") ||
+             string_contains($keys, "tmpl_cnext",  1) ||
+             string_contains($keys, "tmpl_snext",  1) ||
+             string_contains($keys, "download_cont"))
     {
-        $icon =~ s/%icon/arrow-circle-o-right/ig;
-    } elsif ($entry =~ /cancel/) {
-        $icon =~ s/%icon/times-circle-o/ig;
-    } elsif ($entry eq 'ticket_submit') {
-        $icon =~ s/%icon/question-circle/ig;
-    } elsif ($entry =~ /passwd_change/) {
-        $icon =~ s/%icon/key-li/ig;
+        $icon = "arrow-circle-o-right";
+    } elsif (string_contains($keys, "cancel")) {
+        $icon = "times-circle-o";
+    } elsif (string_contains($keys, "ticket_submit")) {
+        $icon = "question-circle";
+    } elsif (string_contains($keys, "passwd_change")) {
+        $icon  = "key-li";
         $class = "warning ";
-    } elsif ($entry eq 'nf_seen') {
-        $icon =~ s/%icon/clear-all fa-1_25x/ig;
-    } elsif ($entry =~ /history_ok/) {
-        $icon =~ s/%icon/area-chart/ig;
-    } elsif ($entry =~ /edit_open/ || $entry =~ /edit_list/) {
-        $icon =~ s/%icon/files-o/ig;
-    } elsif ($entry =~ /reboot/ ||
-             $entry eq 'view_refresh' ||
-             $entry =~ /refreshmods/  ||
-             $entry eq 'index_buttinit')
+    } elsif (string_contains($keys, "nf_seen")) {
+        $icon = "clear-all fa-1_25x";
+    } elsif (string_contains($keys, "history_ok")) {
+        $icon = "area-chart";
+    } elsif (string_contains($keys, "edit_list")) {
+        $icon = "files-o";
+    } elsif (string_contains($keys, "reboot") ||
+             string_contains($keys, "view_refresh") ||
+             string_contains($keys, "refreshmods",  1) ||
+             string_contains($keys, "index_buttinit"))
     {
-        if ($entry =~ /refreshmods/) {
+        if (string_contains($keys, "refreshmods")) {
             $class = "primary ";
-        } elsif ($entry ne 'reboot_ok' && $entry ne 'index_reboot' ||
-                 $entry eq 'index_buttinit')
+        } elsif (string_contains($keys, "index_reboot") ||
+                 string_contains($keys, "index_buttinit"))
         {
             $class = "warning ";
         }
-        $icon =~ s/%icon/refresh-fi fa-1_25x/ig;
-    } elsif ($entry =~ /search/ ||
-             $entry =~ /index_broad/ ||
-             $entry eq 'scripts_findok' ||
-             $entry eq 'kill_title')
+        $icon = "refresh-fi fa-1_25x";
+    } elsif (string_contains($keys, "search") ||
+             string_contains($keys, "index_broad",    1) ||
+             string_contains($keys, "scripts_findok") ||
+             string_contains($keys, "kill_title",     1))
     {
         $class = "info ";
-        $icon =~ s/%icon/search/ig;
-    } elsif ($entry =~ /restart/ || $entry eq 'edit_kill') {
+        $icon  = "search";
+    } elsif (string_contains($keys, "restart") || string_contains($keys, "edit_kill")) {
         $class = "warning ";
-        $icon =~ s/%icon/refresh/ig;
-    } elsif ($entry eq "ddrop_empty") {
+        $icon  = "refresh";
+    } elsif (string_contains($keys, "ddrop_empty")) {
         $class = "warning ";
-        $icon =~ s/%icon/times-circle-o/ig;
-    } elsif ($entry =~ /start/) {
+        $icon  = "times-circle-o";
+    } elsif (string_contains($keys, "start")) {
         $class = "success ";
-        $icon =~ s/%icon/play/ig;
-    } elsif ($entry =~ /index_stop/ ||
-             $entry =~ /edit_stopnow/)
+        $icon  = "play";
+    } elsif (string_contains($keys, "index_stop") ||
+             string_contains($keys, "edit_stopnow"))
     {
         $class = "danger ";
-        $icon =~ s/%icon/stop/ig;
-    } elsif ($entry =~ /ok_ok/) {
-        $icon =~ s/%icon/check-square-o/ig;
+        $icon  = "stop";
+    } elsif (string_contains($keys, "ok_ok")) {
+        $icon  = "check-square-o";
         $class = "success ";
-    } elsif ($entry =~ /index_delboot/) {
+    } elsif (string_contains($keys, "index_delboot")) {
         $class = "grey ";
-        $icon =~ s/%icon/toggle-switch-off fa-1_25x/ig;
-    } elsif ($entry =~ /index_refsel/ ||
-             $entry eq 'index_reset' ||
-             $entry eq 'index_regen' ||
-             $entry eq 'index_reload')
+        $icon  = "toggle-switch-off fa-1_25x";
+    } elsif (string_contains($keys, "index_refsel") ||
+             string_contains($keys, "index_reset") ||
+             string_contains($keys, "index_regen") ||
+             string_contains($keys, "index_reload"))
     {
         $class = "warning ";
-        $icon =~ s/%icon/refresh/ig;
-    } elsif ($entry eq 'index_script') {
-        $icon =~ s/%icon/update/ig;
-    } elsif ($entry =~ /status/) {
-        $icon =~ s/%icon/info-circle/ig;
-    } elsif ($entry eq 'index_clear' || $entry eq 'shell_clear') {
-        $icon =~ s/%icon/history/ig;
-    } elsif ($entry eq 'index_clearcmds' || $entry eq 'shell_clearcmds') {
-        $icon =~ s/%icon/broom fa-1_25x/ig;
-    } elsif ($entry eq 'index_boot' ||
-             $entry eq 'index_bootup'      ||
-             $entry eq 'index_atboot'      ||
-             $entry eq 'massdomains_disok' ||
-             $entry =~ /disable/)
+        $icon  = "refresh";
+    } elsif (string_contains($keys, "index_script")) {
+        $icon = "update";
+    } elsif (string_contains($keys, "status")) {
+        $icon = "info-circle";
+    } elsif (string_contains($keys, "shell_clear")) {
+        $icon = "history";
+    } elsif (string_contains($keys, "shell_clearcmds")) {
+        $icon = "broom fa-1_25x";
+    } elsif (string_contains($keys, "index_boot") ||
+             string_contains($keys, "index_bootup",      1) ||
+             string_contains($keys, "index_atboot",      1) ||
+             string_contains($keys, "massdomains_disok") ||
+             string_contains($keys, "disable",           1))
     {
-        $icon =~ s/%icon/toggle-switch-off fa-1_25x/ig;
-    } elsif ($entry =~ /index_global/ ||
-             $entry eq 'umass_ok'    ||
-             $entry eq 'vars_edit'   ||
-             $entry eq 'lusers_mass' ||
-             $entry eq 'root_ok'     ||
-             $entry eq 'index_edit')
+        $icon = "toggle-switch-off fa-1_25x";
+    } elsif (string_contains($keys, "index_global") ||
+             string_contains($keys, "umass_ok",    1) ||
+             string_contains($keys, "vars_edit",   1) ||
+             string_contains($keys, "lusers_mass") ||
+             string_contains($keys, "root_ok",     1) ||
+             string_contains($keys, "index_edit",  1))
     {
         $class = "primary ";
-        $icon =~ s/%icon/pencil-square-o/ig;
-    } elsif ($entry =~ /clone/) {
-        $icon =~ s/%icon/clone/ig;
-    } elsif ($entry =~ /index_tmpls/) {
-        $icon =~ s/%icon/table-edit fa-1_25x/ig;
-    } elsif ($entry =~ /index_sched/ ||
-             $entry =~ /sched_title/)
+        $icon  = "pencil-square-o";
+    } elsif (string_contains($keys, "clone")) {
+        $icon = "clone";
+    } elsif (string_contains($keys, "index_tmpls")) {
+        $icon = "table-edit fa-1_25x";
+    } elsif (string_contains($keys, "index_sched") ||
+             string_contains($keys, "sched_title"))
     {
-        if ($entry =~ /sched_title/) {
+        if (string_contains($keys, "sched_title")) {
             $class = "primary ";
         }
-        $icon =~ s/%icon/clock/ig;
-    } elsif ($entry =~ /uedit_mail/ || $entry eq 'newnotify_ok') {
-        $icon =~ s/%icon/envelope-o/ig;
-    } elsif ($entry =~ /sendmail/) {
-        $icon =~ s/%icon/envelope-o/ig;
+        $icon = "clock";
+    } elsif (string_contains($keys, "uedit_mail") || string_contains($keys, "newnotify_ok")) {
+        $icon = "envelope-o";
+    } elsif (string_contains($keys, "sendmail")) {
+        $icon  = "envelope-o";
         $class = "info ";
-    } elsif ($entry =~ /uedit_swit/ || $entry eq 'user_switch') {
-        $icon =~ s/%icon/webmin/ig;
-    } elsif ($entry =~ /uedit_logins/ ||
-             $entry =~ /index_logins/ ||
-             $entry eq 'login_enable')
+    } elsif (string_contains($keys, "uedit_swit") || string_contains($keys, "user_switch")) {
+        $icon = "webmin";
+    } elsif (string_contains($keys, "uedit_logins") ||
+             string_contains($keys, "index_logins") ||
+             string_contains($keys, "login_enable"))
     {
-        $icon =~ s/%icon/key/ig;
-    } elsif ($entry =~ /index_who/) {
-        $icon =~ s/%icon/sign-in/ig;
-    } elsif ($entry eq 'dbase_add' || $entry eq 'databases_import') {
+        $icon = "key";
+    } elsif (string_contains($keys, "index_who")) {
+        $icon = "sign-in";
+    } elsif (string_contains($keys, "databases_import")) {
         $class = "success ";
-        $icon =~ s/%icon/database-plus fa-1_25x/ig;
+        $icon  = "database-plus fa-1_25x";
     }
-    elsif (($entry =~ /add/ && $entry ne 'dbase_addview' && $entry ne 'edit_addinc') ||
-           ($entry =~ /create/ &&
-            $entry ne 'user_priv_create_view') ||
-           $entry =~ /index_crnow/ ||
-           $entry eq 'view_new'    ||
-           $entry eq 'mass_ok'     ||
-           $entry eq 'rmass_ok')
+    elsif ((string_contains($keys, "add") && string_contains($keys, "edit_addinc")) ||
+           (string_contains($keys, "create") &&
+            string_contains($keys, "user_priv_create_view")) ||
+           string_contains($keys, "index_crnow") ||
+           string_contains($keys, "view_new",    1) ||
+           string_contains($keys, "mass_ok",     1) ||
+           string_contains($keys, "rmass_ok",    1))
     {
         $class = "success ";
-        $icon =~ s/%icon/plus-circle/ig;
-    } elsif ($entry =~ /force_title/ ||
-             $entry =~ /index_force/)
+        $icon  = "plus-circle";
+    } elsif (string_contains($keys, "force_title") ||
+             string_contains($keys, "index_force"))
     {
         $class = "warning ";
-        $icon =~ s/%icon/rotate-3d fa-1_25x margined-left--3 margined-right--3/ig;
-    } elsif ($entry =~ /csv/) {
-        $icon =~ s/%icon/export/ig;
-    } elsif ($entry =~ /restore/) {
-        $icon =~ s/%icon/restore fa-1_25x/ig;
-    } elsif ($entry eq 'backup_title' ||
-             $entry eq 'dbase_backup' ||
-             $entry eq 'index_dump'   ||
-             $entry eq 'backup_ok'    ||
-             $entry =~ /export/       ||
-             $entry eq 'backup_now')
+        $icon  = "rotate-3d fa-1_25x margined-left--3 margined-right--3";
+    } elsif (string_contains($keys, "csv")) {
+        $icon = "export";
+    } elsif (string_contains($keys, "restore")) {
+        $icon = "restore fa-1_25x";
+    } elsif (string_contains($keys, "backup_title") ||
+             string_contains($keys, "dbase_backup") ||
+             string_contains($keys, "index_dump",   1) ||
+             string_contains($keys, "backup_ok",    1) ||
+             string_contains($keys, "export",       1) ||
+             string_contains($keys, "backup_now",   1))
     {
-        $icon =~ s/%icon/backup fa-1_25x/ig;
-    } elsif ($entry =~ /dbase_exec/ ||
-             $entry =~ /exec_exec/         ||
-             $entry =~ /user_priv_execute/ ||
-             $entry =~ /exec_title/        ||
-             $entry =~ /exec_tabexec/)
+        $icon = "backup fa-1_25x";
+    } elsif (string_contains($keys, "dbase_exec") ||
+             string_contains($keys, "exec_exec",         1) ||
+             string_contains($keys, "user_priv_execute") ||
+             string_contains($keys, "exec_title",        1) ||
+             string_contains($keys, "exec_tabexec",      1))
     {
-        $icon =~ s/%icon/database/ig;
-    } elsif ($entry =~ /create_view/ ||
-             $entry =~ /addview/ ||
-             $entry eq "view_title1")
+        $icon = "database";
+    } elsif (string_contains($keys, "create_view") ||
+             string_contains($keys, "addview") ||
+             string_contains($keys, "view_title1"))
     {
-        $icon =~ s/%icon/list/ig;
-    } elsif ($entry eq 'table_data') {
-        $icon =~ s/%icon/database-outline/ig;
-    } elsif ($entry eq 'index_title1' || $entry eq 'table_index') {
-        $icon =~ s/%icon/key-plus fa-1_25x/ig;
-    } elsif ($entry eq 'transfer_transferok') {
-        $icon =~ s/%icon/transform fa-1_25x/ig;
-    } elsif ($entry eq 'transfer_uploadok' ||
-             $entry eq 'transfer_tabupload' ||
-             $entry eq 'html_uploadok')
+        $icon = "list";
+    } elsif (string_contains($keys, "table_data")) {
+        $icon = "database-outline";
+    } elsif (string_contains($keys, "table_index")) {
+        $icon = "key-plus fa-1_25x";
+    } elsif (string_contains($keys, "transfer_transferok")) {
+        $icon = "transform fa-1_25x";
+    } elsif (string_contains($keys, "transfer_uploadok") ||
+             string_contains($keys, "transfer_tabupload") ||
+             string_contains($keys, "html_uploadok"))
     {
         $class = "primary ";
-        $icon =~ s/%icon/upload/ig;
-    } elsif ($entry eq 'index_down' || $entry eq 'transfer_downloadok') {
+        $icon  = "upload";
+    } elsif (string_contains($keys, "transfer_downloadok")) {
         $class = "primary ";
-        $icon =~ s/%icon/download/ig;
-    } elsif ($entry eq 'index_up' || $entry eq 'download_need') {
+        $icon  = "download";
+    } elsif (string_contains($keys, "download_need")) {
         $class = "primary ";
-        $icon =~ s/%icon/download/ig;
-    } elsif ($entry =~ /umass_del1/ ||
-             $entry =~ /gdel_del/    ||
-             $entry =~ /gdel_title/  ||
-             $entry eq 'drecs_title' ||
-             $entry eq 'rdmass_ok')
+        $icon  = "download";
+    } elsif (string_contains($keys, "umass_del1") ||
+             string_contains($keys, "gdel_del",    1) ||
+             string_contains($keys, "gdel_title",  1) ||
+             string_contains($keys, "drecs_title") ||
+             string_contains($keys, "rdmass_ok",   1))
     {
-        $icon =~ s/%icon/times-circle-o/ig;
-    } elsif ($entry eq 'users_dok' || $entry eq 'users_delete') {
+        $icon = "times-circle-o";
+    } elsif (string_contains($keys, "users_delete")) {
         $class = "danger ";
-        $icon =~ s/%icon/user-times/ig;
-    } elsif ($entry eq 'index_mass2') {
+        $icon  = "user-times";
+    } elsif (string_contains($keys, "index_mass2")) {
         $class = "warning ";
-        $icon =~ s/%icon/toggle-switch  fa-1_25x/ig;
-    } elsif ($entry eq 'index_mass3') {
+        $icon  = "toggle-switch  fa-1_25x";
+    } elsif (string_contains($keys, "index_mass3")) {
         $class = "success ";
-        $icon =~ s/%icon/toggle-switch-off  fa-1_25x/ig;
-    } elsif ($entry =~ /lang/) {
-        $icon =~ s/%icon/globe/ig;
+        $icon  = "toggle-switch-off  fa-1_25x";
+    } elsif (string_contains($keys, "lang")) {
+        $icon  = "globe";
         $class = "warning ";
-    } elsif ($entry =~ /_ok/) {
-        $icon =~ s/%icon/check-circle-o/ig;
+    } elsif (string_contains($keys, "_ok")) {
+        $icon  = "check-circle-o";
         $class = "success ";
-    } elsif ($entry =~ /_change/ && $entry ne "edit_change" && $entry ne "trace_change") {
+    } elsif (string_contains($keys, "_change") && string_contains($keys, "trace_change")) {
         $class = "warning ";
-        $icon =~ s/%icon/pencil-square-o/ig;
-    } elsif ($entry =~ /lkeys_sok2/) {
+        $icon  = "pencil-square-o";
+    } elsif (string_contains($keys, "lkeys_sok2")) {
         $class = "success ";
-        $icon =~ s/%icon/key/ig;
-    } elsif ($entry =~ /letsencrypt_title/ || $entry =~ /cert_letsonly/ || $entry =~ /ssl_copycert/) {
-        $icon =~ s/%icon/certificate/ig;
-    } elsif ($entry =~ /index_tree/) {
-        $icon =~ s/%icon/tree/ig;
-    } else {
-        $icon = undef;
+        $icon  = "key";
+    } elsif (string_contains($keys, "ssl_copycert")) {
+        $icon = "certificate";
+    } elsif (string_contains($keys, "index_tree")) {
+        $icon = "tree";
     }
 
-    return ($entry, $class, $icon);
+    if ($icon) {
+        $icon = "<i class=\"fa fa-fw fa-$icon\"></i>";
+    }
+
+    return ($keys, $class, $icon);
 }
 
 sub theme_night_mode

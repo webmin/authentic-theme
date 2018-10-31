@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%module_text_reversed, %theme_text, %theme_config, %gconfig, %tconfig, $current_lang_info, $remote_user, $webmin_script_type);
+our (%module_text_full, %theme_text, %theme_config, %gconfig, %tconfig, $current_lang_info, $remote_user, $webmin_script_type);
 
 sub settings
 {
@@ -223,13 +223,12 @@ sub head
     print "Content-type: text/html\n\n";
 }
 
-sub module_text_reversed
+sub module_text_full
 {
-    if (!%module_text_reversed) {
-        %module_text_reversed = load_language(get_module_name());
-        %module_text_reversed = reverse %module_text_reversed;
+    if (!%module_text_full) {
+        %module_text_full = load_language(get_module_name());
     }
-    return %module_text_reversed;
+    return %module_text_full;
 }
 
 1;
