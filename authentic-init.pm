@@ -778,25 +778,25 @@ sub get_button_style
         $class = "info ";
         $icon  = "refresh";
     } elsif ((string_contains($keys, "delete") && !string_contains($keys, "users_delete")) ||
-             string_contains($keys, "wipe")       ||
-             string_contains($keys, "ddrop_ok")   ||
-             string_contains($keys, "dbs_dok")    ||
-             string_contains($keys, "tprivs_dok") ||
-             string_contains($keys, "hosts_dok", 1) ||
-             string_contains($keys, "cprivs_dok") ||
-             string_contains($keys, "dbase_drop") ||
-             string_contains($keys, "ddrop_title", 1) ||
+             string_contains($keys, "wipe")          ||
+             string_contains($keys, "ddrop_ok")      ||
+             string_contains($keys, "dbs_dok")       ||
+             string_contains($keys, "tprivs_dok")    ||
+             string_contains($keys, "hosts_dok")     ||
+             string_contains($keys, "cprivs_dok")    ||
+             string_contains($keys, "dbase_drop")    ||
+             string_contains($keys, "ddrop_title")   ||
              string_contains($keys, "dbase_delete2") ||
              string_contains($keys, "table_drop")    ||
-             string_contains($keys, "tdrop_title",  1) ||
-             string_contains($keys, "tdrop_ok",     1) ||
-             string_contains($keys, "index_drops",  1) ||
-             string_contains($keys, "delq_confirm", 1) ||
-             string_contains($keys, "umass_del2") ||
-             string_contains($keys, "index_gmass", 1) ||
+             string_contains($keys, "tdrop_title")   ||
+             string_contains($keys, "tdrop_ok")      ||
+             string_contains($keys, "index_drops")   ||
+             string_contains($keys, "delq_confirm")  ||
+             string_contains($keys, "umass_del2")    ||
+             string_contains($keys, "index_gmass")   ||
              string_contains($keys, "master_del")    ||
              string_contains($keys, "newstyles_del") ||
-             string_contains($keys, "html_dtitle", 1))
+             string_contains($keys, "html_dtitle"))
     {
         $class = "danger ";
 
