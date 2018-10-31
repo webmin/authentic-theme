@@ -2624,7 +2624,7 @@ sub theme_settings
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
-                $k eq 'settings_hotkey_navigation' ||
+                $k eq 'settings_hotkey_navigation'    ||
                 $k eq 'settings_hotkey_toggle_slider' ||
                 $k eq 'settings_hotkey_reload'        ||
                 $k eq 'settings_hotkey_shell'         ||
@@ -3044,9 +3044,10 @@ sub get_xhr_request
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};
             my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
-            if (!has_command('git') || !has_command('bash')) {
+            if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
-                                 replace((!has_command('bash') ? '>git<' : '~'), '>bash<',
+                                 replace((!has_command('curl') || !has_command('bash') ? '>git<' : '~'),
+                                         (!has_command('curl') ? '>curl<' : '>bash<'),
                                          $theme_text{'theme_git_patch_no_git_message'}
                                  ), };
                 print convert_to_json(\@update_rs);
