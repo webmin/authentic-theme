@@ -807,15 +807,27 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
-    } elsif ((string_contains($keys, "recsok") || string_contains($keys, "right_upok")) &&
-             string_contains($keys, "uninstall"))
+    }
+    elsif (
+           (string_contains($keys, "install")     ||
+            string_contains($keys, "recsok")      ||
+            string_contains($keys, "scripts_iok") ||
+            string_contains($keys, "right_upok")
+           ) &&
+           !string_contains($keys, "uninstall"))
     {
         $class = "success ";
         $icon  = "package-install fa-1_25x";
-    } elsif (string_contains($keys, "edit_uninst") || string_contains($keys, "drecs_ok")) {
+    } elsif (string_contains($keys, "uninstall") ||
+             string_contains($keys, "edit_uninst") ||
+             string_contains($keys, "drecs_ok"))
+    {
         $class = "danger ";
         $icon  = "times-circle-o";
-    } elsif (string_contains($keys, "massg_ok")) {
+    } elsif (string_contains($keys, "upgrade") ||
+             string_contains($keys, "massg_ok") ||
+             string_contains($keys, "massscript_ok"))
+    {
         $class = "info ";
         $icon  = "update";
     } elsif (string_contains($keys, "index_srefresh")) {
@@ -831,7 +843,7 @@ sub get_button_style
         $icon = "power-off";
     } elsif (string_contains($keys, "docker_reg")) {
         $icon = "check-circle-o";
-    } elsif (string_contains($keys, "wizard_prev")) {
+    } elsif (string_contains($keys, "tmpl_nprev") || string_contains($keys, "wizard_prev")) {
         $icon = "arrow-circle-o-left";
     } elsif (string_contains($keys, "tmpl_nnext") ||
              string_contains($keys, "wizard_next") ||
@@ -851,7 +863,7 @@ sub get_button_style
         $icon = "clear-all fa-1_25x";
     } elsif (string_contains($keys, "history_ok")) {
         $icon = "area-chart";
-    } elsif (string_contains($keys, "edit_list")) {
+    } elsif (string_contains($keys, "edit_open") || string_contains($keys, "edit_list")) {
         $icon = "files-o";
     } elsif (string_contains($keys, "reboot") ||
              string_contains($keys, "view_refresh") ||
@@ -904,9 +916,9 @@ sub get_button_style
         $icon = "update";
     } elsif (string_contains($keys, "status")) {
         $icon = "info-circle";
-    } elsif (string_contains($keys, "shell_clear")) {
+    } elsif (string_contains($keys, "index_clear") || string_contains($keys, "shell_clear")) {
         $icon = "history";
-    } elsif (string_contains($keys, "shell_clearcmds")) {
+    } elsif (string_contains($keys, "index_clearcmds") || string_contains($keys, "shell_clearcmds")) {
         $icon = "broom fa-1_25x";
     } elsif (string_contains($keys, "index_boot") ||
              string_contains($keys, "index_bootup")      ||
@@ -949,7 +961,7 @@ sub get_button_style
         $icon = "key";
     } elsif (string_contains($keys, "index_who")) {
         $icon = "sign-in";
-    } elsif (string_contains($keys, "databases_import")) {
+    } elsif (string_contains($keys, "dbase_add") || string_contains($keys, "databases_import")) {
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     }
@@ -996,7 +1008,7 @@ sub get_button_style
         $icon = "list";
     } elsif (string_contains($keys, "table_data")) {
         $icon = "database-outline";
-    } elsif (string_contains($keys, "table_index")) {
+    } elsif (string_contains($keys, "index_title1") || string_contains($keys, "table_index")) {
         $icon = "key-plus fa-1_25x";
     } elsif (string_contains($keys, "transfer_transferok")) {
         $icon = "transform fa-1_25x";
@@ -1006,10 +1018,10 @@ sub get_button_style
     {
         $class = "primary ";
         $icon  = "upload";
-    } elsif (string_contains($keys, "transfer_downloadok")) {
+    } elsif (string_contains($keys, "index_down") || string_contains($keys, "transfer_downloadok")) {
         $class = "primary ";
         $icon  = "download";
-    } elsif (string_contains($keys, "download_need")) {
+    } elsif (string_contains($keys, "index_up") || string_contains($keys, "download_need")) {
         $class = "primary ";
         $icon  = "download";
     } elsif (string_contains($keys, "umass_del1") ||
@@ -1019,7 +1031,7 @@ sub get_button_style
              string_contains($keys, "rdmass_ok"))
     {
         $icon = "times-circle-o";
-    } elsif (string_contains($keys, "users_delete")) {
+    } elsif (string_contains($keys, "users_dok") || string_contains($keys, "users_delete")) {
         $class = "danger ";
         $icon  = "user-times";
     } elsif (string_contains($keys, "index_mass2")) {
@@ -1043,7 +1055,10 @@ sub get_button_style
     } elsif (string_contains($keys, "lkeys_sok2")) {
         $class = "success ";
         $icon  = "key";
-    } elsif (string_contains($keys, "ssl_copycert")) {
+    } elsif (string_contains($keys, "letsencrypt_title") ||
+             string_contains($keys, "cert_letsonly") ||
+             string_contains($keys, "ssl_copycert"))
+    {
         $icon = "certificate";
     } elsif (string_contains($keys, "index_tree")) {
         $icon = "tree";
