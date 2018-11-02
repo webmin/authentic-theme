@@ -2267,7 +2267,7 @@ sub theme_settings
             'settings_right_reload',
             'true',
             'settings_global_passgen_format',
-            '12|a-z,A-Z,0-9,#',
+            '15|a-z,A-Z,0-9',
 
             '__',
             theme_settings('fa', 'info-circle', &theme_text('settings_sysinfo_real_time_status_options')),

@@ -146,7 +146,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=Aktifkan progress loader laman pada bagian atas layar
 settings_loader_left=Aktifkan spinner untuk menu navigasi
 settings_right_reload=Muat konten laman default
-settings_right_reload_description=Ketika berpindah tab, konten laman frame kanan dimuat ulang. Jangan pertahankan frame kanan saat ini tetap terbuka dan muat ulang dengan default?
 
 settings_right_hide_table_icons=Sembunyikan tabel ikon untuk frame kanan
 settings_right_hide_table_icons_description=Sepenuhnya hapus ikon dari tabel laman konten dan tampilkan tautan murni dengan chevron yang tepat
@@ -200,8 +199,6 @@ settings_hotkey_toggle_slider=Hotkey untuk slider
 
 settings_side_slider_enabled=Aktifkan slider
 settings_leftmenu_user_html=Tampilkan cuplikan HTML
-settings_leftmenu_user_html_description=Teks yang ditetapkan pengguna atau kode HTML akan disuntikkan ke bagian bawah menu navigasi. Ini dapat digunakan untuk tujuan identifikasi. Misalnya, untuk membuat nama host Anda secara eksplisit, Anda dapat menambahkan kolom  <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
-
 
 theme_changelog=Catatan perubahan
 theme_conference=Konferensi Tema
@@ -531,7 +528,7 @@ theme_xhred_server_process_running=Proses server masih berjalan!? Apakah Anda ya
 #18.03
 settings_global_options_title=Pilihan Global
 settings_global_passgen_format=Generator kata sandi
-settings_global_passgen_format_description=Tetapkan panjang dan jenis karakter yang digunakan dalam kata kunci yang dihasilkan. Nilai pertama adalah numerik, yaitu panjang kata sandi, diikuti oleh <code>|</code> sebagai pembatas. Selanjutnya adalah tipe, di mana Anda dapat menggunakan angka <code>0-9</code>, huruf <code>a-z</code> dan/atau <code>A-Z</code>, dan karakter khusus <code>#</code>. Semua rangkaian ini dapat digunakan bersama atau secara individu, menggunakan koma sebagai pembatas. Nilai default sama dengan <code>12|a-z,A-Z,0-9,#</code>, yang mewakili kata sandi dengan panjang 12 karakter, berrisi huruf besar, kecil, angka dan karakter khusus.
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Ciptakan kata sandi baru<br> (Ke Papan Klip)
 theme_xhred_password_generator_new_success=Kata sandi %password yang baru diciptakan telah berhasil disalin ke papan klip.
 
@@ -552,8 +549,6 @@ settings_hide_top_loader=Sembunyikan pita kemajuan di atas dan loadernya
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Tampilkan ikon simbolis pada drop-down di Virtualmin/Cloudmin
 settings_font_family=Keluarga fonta
-settings_font_family_description=Di antara semua varian 'fonta' yang ditampilkan <em>Roboto</em> dibawa oleh tema dan ditetapkan sebagai default. Fonta lainnya harus dipasang di komputer lokal agar dapat bekerja. Dengan menggunakan fonta lokal, yang default tidak dimuat, yang akan menghasilkan beban tema yang lebih cepat
-theme_xhred_global_shipped=Dibawa
 theme_xhred_global_available=Tersedia
 theme_xhred_global_not_available=Tidak tersedia
 theme_xhred_global_default=Default
@@ -744,7 +739,7 @@ theme_xhred_global_reauthenticate=Reauthenticate
 #19.04
 settings_sysinfo_real_time_status=Enable real-time monitoring
 settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
+settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data
 theme_xhred_global_redirecting=Redirecting
 
 
@@ -791,7 +786,7 @@ theme_xhred_title_locale_full=Full format
 theme_xhred_title_locale_long=Long format
 theme_xhred_title_locale_short=Short format
 settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed.
+settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed
 theme_xhred_filemanager_records_per_page=Default number of records per page
 theme_xhred_filemanager_sorting=Default sorting type
 theme_xhred_filemanager_sorting_asc=Ascending
@@ -833,7 +828,6 @@ theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 

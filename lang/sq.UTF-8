@@ -146,7 +146,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=Aktivizo ngarkuesin e përparimit të faqes në krye të ekranit
 settings_loader_left=Aktivizo spinner për menunë e navigimit
 settings_right_reload=Ngarko faqen e përmbajtjes
-settings_right_reload_description=Kur kaloni skedat, faqja e përmbajtjes së kornizës së djathtë rifreskohet.Mos mbani aktualisht të hapur faqen e përmbajtjes së kornizës së djathtë dhe rifreskoni me parazgjedhje?
 
 settings_right_hide_table_icons=Fshih ikonat e tabelës për kornizën e duhur
 settings_right_hide_table_icons_description=Hiqni plotësisht ikonat nga tabelat e faqeve të përmbajtjes dhe shfaqni lidhje të thjeshta me djathtas të drejtë
@@ -205,8 +204,6 @@ settings_hotkey_toggle_slider=Hotkey për slider
 
 settings_side_slider_enabled=Aktivizo rreshqitesin
 settings_leftmenu_user_html=Shfaq fragmentin e HTML
-settings_leftmenu_user_html_description=Teksti i definuar nga përdoruesi ose kodi HTML do të injektohen në fund të menysë së navigimit.Ajo mund të përdoret për qëllime identifikimi.Për shembull, për të treguar në mënyrë eksplicite emrin e hostit tuaj, mund të shtoni në fushën <code style="white-space: nowrap;"> & gt; hostname: 10000 & lt; / kbd & gt;
-
 
 theme_changelog=Ndryshimet
 theme_conference=Konferencë me temë
@@ -539,7 +536,7 @@ theme_xhred_server_process_running=Procesi i serverit akoma vazhdon !?Jeni i sig
 #18.03
 settings_global_options_title=Opsionet globale
 settings_global_passgen_format=Gjenerator i fjalëkalimeve
-settings_global_passgen_format_description=Vendosni gjatësinë dhe karakterin e përdorur në fjalëkalimin e gjeneruar.Vlera e parazgjedhur është <code> 12 | az, AZ, 0-9, # </code>, e cila përfaqëson fjalëkalimin me 12 shkronja në gjatësi, që përmbajnë shkronja të mëdha dhe të vogla, numra dhe shkronja të veçanta.Vlera e parë është numerike, e cila është gjatësia e fjalëkalimit, e ndjekur menjëherë nga <code> | </code> si një delimiter.Tjetër është tipi, ku mund të përdorni numra <code> 0-9 </code>, shkronja <code> az </code> dhe / ose <code> AZ </code> / code>.Të gjitha këto grupe mund të përdoren së bashku ose individualisht, duke përdorur presje si një delimiter.
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Gjeni Fjalëkalimin e ri (Për Clipboard)
 theme_xhred_password_generator_new_success=Fjalëkalimi i krijuar %password është kopjuar me sukses në clipboard.
 
@@ -560,9 +557,7 @@ settings_hide_top_loader=Fshih barin e përparimit të përparimit dhe ngarkuesi
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Shfaq ikonat simbolike në drop-down në Virtualmin / Cloudmin
 settings_font_family=Familja e shkronjave
-settings_font_family_description=Në mesin e varianteve të paraqitura <em> Roboto </em> është dërguar me temën dhe është vendosur si parazgjedhje.Gërmat e tjera duhet të instalohen në kompjuterin tuaj lokal në mënyrë që të punojnë.Duke përdorur fontet lokalë, default nuk është e ngarkuar, gjë që do të rezultojë në ngarkim më të shpejtë të temës
-theme_xhred_global_shipped=Ngarkuar
-= Theme_xhred_global_available dispozicion
+theme_xhred_global_available dispozicion
 theme_xhred_global_not_available=Nuk është në dispozicion
 theme_xhred_global_default=parazgjedhur
 theme_xhred_global_system_default=Parametrat e sistemit
@@ -800,7 +795,7 @@ theme_xhred_title_locale_full = Formati i plote
 theme_xhred_title_locale_long = Formati i gjatë
 theme_xhred_title_locale_short = Format i shkurtër
 settings_navigation_always_collapse = Gjithmonë u shemb
-settings_side_slider_fixed_description = Ky opsion është i disponueshëm vetëm në ekranet me rezolucion HD me rezolucion minimal prej 1366 piksel horizontal dhe me opsion me aftësi të kufizuara për mbajtjen e navigacionit gjithnjë të shembur.
+settings_side_slider_fixed_description = Ky opsion është i disponueshëm vetëm në ekranet me rezolucion HD me rezolucion minimal prej 1366 piksel horizontal dhe me opsion me aftësi të kufizuara për mbajtjen e navigacionit gjithnjë të shembur
 theme_xhred_filemanager_records_per_page = Numri i paracaktuar i të dhënave për faqe
 theme_xhred_filemanager_sorting = Lloji i klasifikimit të parazgjedhur
 theme_xhred_filemanager_sorting_asc = ngjitje
@@ -842,7 +837,6 @@ theme_xhred_global_latest_stable = Stabilizimi i fundit
 theme_xhred_global_latest_beta = beta e fundit
 settings_perform_content_scrolling = Aktivizo skriptimin automatik të faqes për dalje progresive
 settings_contrast_mode = Aktivizo modalitetin e kontrastit të lartë
-settings_side_slider_enabled_description = Ky funksion kërkon që moduli <em> Statusi i sistemit </em> të aktivizohet.
 theme_xhred_global_firewall = firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 

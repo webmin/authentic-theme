@@ -146,7 +146,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
 settings_right_reload=既定のコンテンツページの読み込み
-settings_right_reload_description=タブを切り替えると、右フレームのコンテンツページが再読み込みされます。現在開いている右フレームのコンテンツページを維持し、デフォルトでリロードしないでください?
 
 settings_right_hide_table_icons=右フレームのテーブルアイコンを非表示にする
 settings_right_hide_table_icons_description=完全にコンテンツページのテーブルからアイコンを削除し、右シェブロンとプレーンリンクを表示する
@@ -197,8 +196,6 @@ settings_hotkey_toggle_slider=スライダのホットキー
 
 settings_side_slider_enabled=スライダを有効にする
 settings_leftmenu_user_html=HTML スニペットの表示
-settings_leftmenu_user_html_description= ユーザー定義のテキストまたは HTML コードは、ナビゲーションメニューの下部に挿入されます。これは、識別の目的で使用することができます。たとえば、ホスト名を明示的に表示するには、フィールドに追加します。<code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
-
 
 theme_changelog=変更ログ
 theme_conference=テーマ会議
@@ -527,7 +524,7 @@ theme_xhred_server_process_running= サーバープロセスはまだ実行中�
 #18.03
 settings_global_options_title= グローバルオプション
 settings_global_passgen_format= パスワードジェネレータ
-settings_global_passgen_format_description=生成されたパスワードに使用されている長さと文字タイプを設定します。デフォルト値は、大文字と小文字、数字、特殊文字を含む12文字のパスワードを表す<code>12|a-z、A-Z、0-9、＃</code>と同じです。最初の値は数値です。これはパスワードの長さで、区切り文字としてすぐに<code>|</code>が続きます。次に<code>0-9 </code>、<code>az</code>や/または<code>AZ</code>という数字と<code>＃</code>これらのセットは、コンマを区切り文字として使用して、一緒に使用することも個別に使用することもできます。
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new= 新しいパスワードを生成<br>(クリップボードに)
 theme_xhred_password_generator_new_success= 生成されたパスワード%passwordがクリップボードに正常にコピーされました。
 
@@ -548,8 +545,6 @@ settings_hide_top_loader= 上部の進行状況バーを非表示にする
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
 settings_font_family= フォントファミリー
-settings_font_family_description= 提示されたすべてのフォントの中で、<em>Roboto</em>はテーマとともに出荷され、デフォルトとして設定されています。他のフォントは、動作させるためにローカルコンピュータにインストールする必要があります。ローカルフォントを使用すると、デフォルトのフォントが読み込まれないため、テーマの読み込み速度が向上します
-theme_xhred_global_shipped= 出荷された
 theme_xhred_global_available= 利用可能
 theme_xhred_global_not_available= 利用不可
 theme_xhred_global_default= デフォルト
@@ -786,7 +781,7 @@ theme_xhred_title_locale_full= フルフォーマット
 theme_xhred_title_locale_long= ロングフォーマット
 theme_xhred_title_locale_short= 短い形式
 settings_navigation_always_collapse= 常に折りたたまれている
-settings_side_slider_fixed_description= このオプションは、最小解像度1366水平ピクセルのHD画面でのみ使用でき、常にナビゲーションを無効にするオプションは無効になっています。
+settings_side_slider_fixed_description= このオプションは、最小解像度1366水平ピクセルのHD画面でのみ使用でき、常にナビゲーションを無効にするオプションは無効になっています
 theme_xhred_filemanager_records_per_page= ページあたりのデフォルトレコード数
 theme_xhred_filemanager_sorting= デフォルトのソートタイプ
 theme_xhred_filemanager_sorting_asc= 上昇
@@ -828,7 +823,6 @@ theme_xhred_global_latest_stable= 最新の安定版
 theme_xhred_global_latest_beta= 最新のβ版
 settings_perform_content_scrolling= プログレッシブ出力のコンテンツスクロールを有効にする
 settings_contrast_mode= ハイコントラストモードを有効にする
-settings_side_slider_enabled_description= この機能を使用するには、<em>システムステータス</em>モジュールを有効にする必要があります。
 theme_xhred_global_firewall= ファイアーウォール
 theme_xhred_settings_show_webmin_tab= ナビゲーションメニューにWebminスイッチを表示しますか？
 
