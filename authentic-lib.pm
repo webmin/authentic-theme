@@ -2380,8 +2380,6 @@ sub theme_settings
             'k',
             'settings_hotkey_sysinfo',
             'i',
-            'settings_hotkey_navigation',
-            'a',
             'settings_hotkey_toggle_slider',
             'n',
             'settings_hotkey_favorites',
@@ -2390,6 +2388,10 @@ sub theme_settings
             's',
             'settings_hotkey_reload',
             'r',
+            'settings_hotkey_navigation',
+            'a',
+            'settings_hotkey_slider',
+            'e',
             'settings_hotkey_toggle_key_night_mode',
             'l', '__',
             theme_settings('fa', 'sub-title', '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
@@ -2594,6 +2596,7 @@ sub theme_settings
                  $k =~ /settings_hotkey_toggle_key_/           ||
                  $k eq 'settings_hotkey_focus_search'          ||
                  $k eq 'settings_hotkey_navigation'            ||
+                 $k eq 'settings_hotkey_slider'                ||
                  $k eq 'settings_hotkey_toggle_slider'         ||
                  $k eq 'settings_hotkey_reload'                ||
                  $k eq 'settings_hotkey_shell'                 ||
@@ -2610,6 +2613,7 @@ sub theme_settings
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'          ||
                 $k eq 'settings_hotkey_navigation'            ||
+                $k eq 'settings_hotkey_slider'                ||
                 $k eq 'settings_hotkey_toggle_slider'         ||
                 $k eq 'settings_hotkey_reload'                ||
                 $k eq 'settings_hotkey_shell'                 ||
@@ -2625,6 +2629,7 @@ sub theme_settings
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
                 $k eq 'settings_hotkey_navigation'    ||
+                $k eq 'settings_hotkey_slider'        ||
                 $k eq 'settings_hotkey_toggle_slider' ||
                 $k eq 'settings_hotkey_reload'        ||
                 $k eq 'settings_hotkey_shell'         ||
