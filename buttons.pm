@@ -8,6 +8,12 @@ use strict;
 our (%in,               %gconfig,        %miniserv,     $remote_user, $root_directory,
      $t_uri_virtualmin, $t_uri_cloudmin, %theme_config, $get_user_level);
 
+print '<li data-collapse-trigger-container data-linked' .
+  get_button_tooltip('theme_xhred_tooltip_navigation_pinned', 'settings_hotkey_navigation', 'auto top') .
+  ' class="user-link cursor-pointer">';
+print '<span class="pd-lf-rt-6"><i data-collapse-trigger="1" class="fa fa2 fa-fw fa2-collapse-left vertical-align-middle"></i></span>';
+print '</li>';
+
 if ($theme_config{'settings_sysinfo_link_mini'} eq 'true' &&
     dashboard_switch() ne '1')
 {
@@ -36,7 +42,7 @@ if ($theme_config{'settings_show_terminal_link'} ne 'false' &&
 {
     print '<li data-linked' . get_button_tooltip('theme_tooltip_terminal_link', 'settings_hotkey_shell', 'auto top') .
       ' class="user-link ported-console cursor-pointer">';
-    print '<span><i class="fa fa-fw fa-terminal"></i></span>';
+    print '<span class="pd-rt-4"><i class="fa fa-fw fa-terminal"></i></span>';
     print '</li>';
 }
 
@@ -46,12 +52,15 @@ if ($get_user_level eq '0' &&
     print '<li data-linked' . get_button_tooltip('left_favorites', 'settings_hotkey_favorites', 'auto top') .
       ' class="user-link favorites cursor-pointer' .
       ($theme_config{'settings_favorites'} ne 'false' ? '' : ' hidden') . '">';
-    print '<span><i class="fa fa-fw fa-star"></i></span>';
+    print '<span class="pd-rt-4"><i class="fa fa-fw fa-star"></i></span>';
     print '</li>';
 }
 
-if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne 'false') || 
-    ($get_user_level ne '0' && $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')) {
+if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne 'false') ||
+    ($get_user_level ne '0' &&
+        $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true' &&
+        $theme_config{'settings_theme_options_button'} ne 'false'))
+{
     print '<li data-linked' .
       get_button_tooltip('settings_title', undef, 'auto top') . ' class="user-link theme-options cursor-pointer">';
     if ($get_user_level eq '0' && foreign_available('webmin')) {
@@ -87,11 +96,11 @@ if ($miniserv{'logout'} &&
     print '<li class="user-link __logout-link">';
     if ($main::session_id) {
         print '<a data-nref' .
-          get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link" href="' .
+          get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link pd-rt-4" href="' .
           $gconfig{'webprefix'} . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
     } else {
         print '<a data-nref' .
-          get_button_tooltip('theme_xhred_tooltip_switch_user', undef, 'auto top') . ' class="menu-exclude-link" href="' .
+          get_button_tooltip('theme_xhred_tooltip_switch_user', undef, 'auto top') . ' class="menu-exclude-link pd-rt-4" href="' .
           $gconfig{'webprefix'} . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
     }
     print '</li>';
@@ -104,7 +113,7 @@ if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
         $in{'xhr-buttons-type'} eq '1'))
 {
     print '<li data-linked' . get_button_tooltip('settings_tooltip_language_link', undef, 'auto top') . ' class="user-link">
-                    <a class="menu-exclude-link" href="'
+                    <a class="menu-exclude-link pd-rt-4" href="'
       . $gconfig{'webprefix'} . '/virtual-server/edit_lang.cgi">
                         <i class="fa fa-fw fa-globe"></i>
                     </a>
@@ -113,13 +122,13 @@ if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
          $theme_config{'settings_leftmenu_button_language'} eq 'true')
 {
     print '<li data-linked' . get_button_tooltip('settings_tooltip_language_link', undef, 'auto top') .
-      ' class="user-link"><a class="menu-exclude-link" href="' .
+      ' class="user-link"><a class="menu-exclude-link pd-rt-4" href="' .
       $gconfig{'webprefix'} . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
 
 print '<li data-linked' .
   get_button_tooltip('theme_xhred_filemanager_context_refresh', 'settings_hotkey_reload', 'auto top') .
   ' class="user-link' . ($theme_config{'settings_leftmenu_button_refresh'} ne 'true' && ' hidden') .
-  '"><a class="menu-exclude-link" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
+  '"><a class="menu-exclude-link pd-rt-4" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
 
 1;

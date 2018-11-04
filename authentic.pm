@@ -674,13 +674,13 @@ sub theme_ui_textarea
 sub theme_ui_submit
 {
     my ($label, $name, $dis, $tags) = @_;
-    my ($entry, $class, $icon) = get_button_style($label);
+    my ($keys, $class, $icon) = get_button_style($label);
 
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name) . "\"" : "") .
-      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"" .
-      $entry . "\">" . &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
+      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
+      &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
           ""

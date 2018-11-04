@@ -147,7 +147,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=Habilitar la barra de progrés superior
 settings_loader_left=Habilitar el selector pel menú de navegació
 settings_right_reload=Carrega els continguts per dectecte de la pàgina
-settings_right_reload_description=Quan es canvia de pestanya, el contingut del marc dret es torna a carregar. Vols descartar el contingut actual i regarregar amb els valors per defecte?
 
 settings_right_hide_table_icons=Amagar les icones
 settings_right_hide_table_icons_description=Mostra enllaços en comptes d'icones en les taules.
@@ -198,8 +197,6 @@ settings_hotkey_toggle_slider=Dreceres del panell dret
 
 settings_side_slider_enabled=Habilitar el panell dret
 settings_leftmenu_user_html=Mostrar retall HTML
-settings_leftmenu_user_html_description=El codi HTML s'injectarà al final del menú de navegació. Es pot utilitzar per identificar el sistema, per exemple.
-
 
 theme_changelog=Notes de la versió
 theme_conference=Conversa del tema
@@ -529,7 +526,7 @@ theme_xhred_server_process_running=El procés encara està en execussió. Encara
 #18.03
 settings_global_options_title=Opcions generals
 settings_global_passgen_format=Generador de contrasenyes
-settings_global_passgen_format_description=Estableix la llargada i els tipus de caràcters per a generar la contrasenya. El primer valor és numèric i estableix la llargada de la contrasenya, seguit per <code>|</code> com a delimitador. Tipus de caràcters: Números (<code>0-9</code>), lletres en minúscula (<code>a-z</code>), lletres en majúscula (<code>A-Z</code>), caràcters especials (<code>#</code>). El valor per defecte és: <code>12|a-z,A-Z,0-9,#</code>.
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Genera una nova contrasenya<br> (Al porta-retalls)
 theme_xhred_password_generator_new_success=S'ha generat la contrasenya %password i s'ha copiat al porta-retalls.
 
@@ -550,8 +547,6 @@ settings_hide_top_loader=Amagar la barra de progrés
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Mostra icones simbòliques a Virtualmin/Cloudmin
 settings_font_family=Tipus de lletra
-settings_font_family_description=Per defecte s'utilitza el tipus de lletra Roboto. Pots selecionar et tipus de lletra que vulguis però tingues en compte que cal tenir-los instal·lats en el teu ordinador.
-theme_xhred_global_shipped=Enviat
 theme_xhred_global_available=Disponible
 theme_xhred_global_not_available=No disponible
 theme_xhred_global_default=Per defecte
@@ -789,7 +784,7 @@ theme_xhred_title_locale_full=Format complet
 theme_xhred_title_locale_long=Format llarg
 theme_xhred_title_locale_short=Format curt
 settings_navigation_always_collapse=Sempre comprimit
-settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed.
+settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed
 theme_xhred_filemanager_records_per_page=Default number of records per page
 theme_xhred_filemanager_sorting=Default sorting type
 theme_xhred_filemanager_sorting_asc=Ascending
@@ -831,7 +826,6 @@ theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
@@ -969,4 +963,15 @@ settings_show_theme_configuration_for_admins_only=Show theme settings button for
 settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
 
 theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
+settings_hotkey_navigation=Hotkey for toggling navigation menu
+
+theme_xhred_search_in_webmin=Search Webmin
+theme_xhred_search_in_usermin=Search Usermin
+theme_xhred_search_in_virtualserver=Search Virtualmin
+theme_xhred_search_in_servermanager=Search Cloudmin
+
+theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
+
+settings_hotkey_slider=Hotkey for toggling side slider
+
 

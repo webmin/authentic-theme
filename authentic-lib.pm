@@ -21,7 +21,7 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory,
 
-    %theme_text, %module_text_reversed, %theme_config, $get_user_level, $theme_requested_url,
+    %theme_text, %module_text_full, %theme_config, $get_user_level, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
     $has_usermin,              $has_usermin_version,
     $has_usermin_root_dir, $has_usermin_conf_dir, $t_var_switch_m, $t_var_product_m);
@@ -444,7 +444,11 @@ sub get_extended_sysinfo
                             <a data-toggle="collapse" href="#'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" aria-expanded="'
                       .
-                      ( ($info->{'open'} || $theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true') ? 'true' :
+                      (
+                        ($info->{'open'} ||
+                           $info->{'id'} eq 'domain' ||
+                           $theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true'
+                        ) ? 'true' :
                           'false'
                       ) .
                       '" aria-controls="' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse">
@@ -659,15 +663,8 @@ sub print_search
         print '<li class="menu-container search-form-container"><form id="webmin_search_form" action="' .
           $gconfig{'webprefix'} . '/webmin_search.cgi" role="search">' . "\n";
         print '<div class="form-group">' . "\n";
-        if ($theme_requested_from_tab =~ /virtual-server/) {
-            print '<input type="hidden" class="form-control" name="mod" value="virtual-server">' . "\n";
-        }
-        if ($theme_requested_from_tab =~ /server-manager/) {
-            print '<input type="hidden" class="form-control" name="mod" value="server-manager">' . "\n";
-        }
-
-        print
-          '<i class="fa fa-search"></i><input type="text" class="form-control sidebar-search" name="search" placeholder="' .
+        print '<i class="fa fa-search"></i>' . "\n";
+        print '<input type="text" class="form-control sidebar-search" name="search" placeholder="' .
           $theme_text{'left_search'} . '">' . "\n";
         print '</div>' . "\n";
         print '</form></li>' . "\n";
@@ -1015,24 +1012,27 @@ sub print_sysstats_panel_end
 }
 
 sub print_sysstats_panel_start
-{    
+{
     my ($info_ref) = @_;
-    
+
     my $recollect;
     if ($info_ref) {
-      my @recollect = @{$info_ref};
-      @recollect = grep {$_->{'id'} =~ /recollect/} @recollect;
-      if (@recollect) {
-        $recollect = '<span class="btn btn-transparent-link pull-right _sync_sysinfo_cnt"><i class="fa fa-fw fa fa-reload _sync_sysinfo_" '. get_button_tooltip('theme_xhred_tooltip_side_slider_sync_sysinfo', undef, 'auto right').'></i></span>';
-      }
+        my @recollect = @{$info_ref};
+        @recollect = grep {$_->{'id'} =~ /recollect/} @recollect;
+        if (@recollect) {
+            $recollect =
+'<span class="btn btn-transparent-link pull-right _sync_sysinfo_cnt"><i class="fa fa-fw fa fa-reload _sync_sysinfo_" '
+              . get_button_tooltip('theme_xhred_tooltip_side_slider_sync_sysinfo', undef, 'auto right')
+              . '></i></span>';
+        }
     }
     my %virtualmin_config = foreign_config('virtual-server');
     my %cloudmin_config   = foreign_config('server-manager');
 
     print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
-    print '<h3 class="panel-title">'.$recollect.'' .
-      ($get_user_level eq '3' ? $theme_text{'body_header1'} : $theme_text{'body_header0'})
+    print '<h3 class="panel-title">' .
+      $recollect . '' . ($get_user_level eq '3' ? $theme_text{'body_header1'} : $theme_text{'body_header0'})
       .
       ( $cloudmin_config{'docs_link'} &&
           foreign_available("server-manager") ?
@@ -2267,7 +2267,7 @@ sub theme_settings
             'settings_right_reload',
             'true',
             'settings_global_passgen_format',
-            '12|a-z,A-Z,0-9,#',
+            '15|a-z,A-Z,0-9',
 
             '__',
             theme_settings('fa', 'info-circle', &theme_text('settings_sysinfo_real_time_status_options')),
@@ -2388,6 +2388,10 @@ sub theme_settings
             's',
             'settings_hotkey_reload',
             'r',
+            'settings_hotkey_navigation',
+            'a',
+            'settings_hotkey_slider',
+            'e',
             'settings_hotkey_toggle_key_night_mode',
             'l', '__',
             theme_settings('fa', 'sub-title', '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
@@ -2591,6 +2595,8 @@ sub theme_settings
         } elsif ($k =~ /settings_security_notify_on_/ ||
                  $k =~ /settings_hotkey_toggle_key_/           ||
                  $k eq 'settings_hotkey_focus_search'          ||
+                 $k eq 'settings_hotkey_navigation'            ||
+                 $k eq 'settings_hotkey_slider'                ||
                  $k eq 'settings_hotkey_toggle_slider'         ||
                  $k eq 'settings_hotkey_reload'                ||
                  $k eq 'settings_hotkey_shell'                 ||
@@ -2606,6 +2612,8 @@ sub theme_settings
             my $width =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'          ||
+                $k eq 'settings_hotkey_navigation'            ||
+                $k eq 'settings_hotkey_slider'                ||
                 $k eq 'settings_hotkey_toggle_slider'         ||
                 $k eq 'settings_hotkey_reload'                ||
                 $k eq 'settings_hotkey_shell'                 ||
@@ -2620,6 +2628,8 @@ sub theme_settings
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||
                 $k eq 'settings_hotkey_focus_search'  ||
+                $k eq 'settings_hotkey_navigation'    ||
+                $k eq 'settings_hotkey_slider'        ||
                 $k eq 'settings_hotkey_toggle_slider' ||
                 $k eq 'settings_hotkey_reload'        ||
                 $k eq 'settings_hotkey_shell'         ||
@@ -3039,9 +3049,10 @@ sub get_xhr_request
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};
             my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
-            if (!has_command('git') || !has_command('bash')) {
+            if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
-                                 replace((!has_command('bash') ? '>git<' : '~'), '>bash<',
+                                 replace((!has_command('curl') || !has_command('bash') ? '>git<' : '~'),
+                                         (!has_command('curl') ? '>curl<' : '>bash<'),
                                          $theme_text{'theme_git_patch_no_git_message'}
                                  ), };
                 print convert_to_json(\@update_rs);
