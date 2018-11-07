@@ -1121,12 +1121,16 @@ sub get_sysinfo_vars
         $uptime,             $running_proc,       $load,                    $real_memory,
         $virtual_memory,     $disk_space,         $package_message,         $csf_title,
         $csf_data,           $csf_remote_version, $authentic_remote_version);
-    #
+    
     if (@info) {
         $info_arr = @info[0]->{'raw'};
         $info     = @$info_arr[0];
     } else {
         return;
+    }
+
+    if (!@$info_arr) {
+      return; 
     }
 
     $webmin_version_str = @$info_arr[1]->{'webmin_version'};
@@ -3167,6 +3171,7 @@ sub get_xhr_request
             ) = get_sysinfo_vars(\@info);
 
             my @updated_info = { "data"                     => 1,
+                                 "is_data"                  => $webmin_version_str,
                                  "cpu_percent"              => $cpu_percent,
                                  "mem_percent"              => $mem_percent,
                                  "virt_percent"             => $virt_percent,
