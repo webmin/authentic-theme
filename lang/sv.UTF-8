@@ -954,21 +954,21 @@ right_download_is_ready=Din nerladdning är redo.
 theme_xhred_download_is_being_prepared=Din nerladdning förbereds. Det kan ta ett tag. Vänta...
 theme_xhred_backup_is_being_prepared=Din säkerhetskopia förbereds. Det kan ta ett tag. Vänta...
 
-settings_mail_ui=Enable new mail UI
+settings_mail_ui=Aktivera nytt e-postanvändargränssnitt
 
-settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
-settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+settings_show_theme_configuration_for_admins_only=Visa endast temainställningar för administratörer
+settings_show_theme_configuration_for_admins_only_error=Åtkomst nekad: Administratören har blockerat åtkomst till användaranpassningar
 
-theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
-settings_hotkey_navigation=Hotkey for toggling navigation menu
+theme_xhred_tooltip_navigation_pinned=Fäst/ta bort navigeringsmeny
+settings_hotkey_navigation=Snabbtangent för att växla navigeringsmenyn
 
-theme_xhred_search_in_webmin=Search Webmin
-theme_xhred_search_in_usermin=Search Usermin
-theme_xhred_search_in_virtualserver=Search Virtualmin
-theme_xhred_search_in_servermanager=Search Cloudmin
+theme_xhred_search_in_webmin=Sök Webmin
+theme_xhred_search_in_usermin=Sök Usermin
+theme_xhred_search_in_virtualserver=Sök Virtualmin
+theme_xhred_search_in_servermanager=Sök Cloudmin
 
-theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
+theme_xhred_filemanager_context_clipboard_selection=Kopiera markerat till urklippet
 
-settings_hotkey_slider=Hotkey for toggling side slider
+settings_hotkey_slider=Snabbtangent för att växla sidomenyn
 
 
