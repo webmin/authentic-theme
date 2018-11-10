@@ -155,26 +155,8 @@ sub get_swith_mode
 
 sub print_switch_webmin
 {
-    print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"'
-      .
-      (
-        ((($theme_config{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
-           (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
-             get_product_name() eq 'usermin') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
-             ($get_user_level eq '1' || $get_user_level eq '2'))
-           ||
-           ( $get_user_level ne '3' &&
-             (   (!foreign_available("virtual-server") && !$theme_config{'settings_right_default_tab_webmin'}) ||
-                 (!foreign_available("virtual-server") && $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/)
-                 ||
-                 (!foreign_available("server-manager") &&
-                     $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/))
-           )
-        ) ? " checked" : ""
-      ) .
-      '>
+    print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"' .
+      (is_switch_webmin() ? " checked" : "") . '>
         <label'
       . get_button_tooltip(
                            (get_product_name() eq 'usermin' ? 'theme_xhred_titles_um' :
@@ -205,19 +187,8 @@ sub print_switch_dashboard
 
 sub print_switch_virtualmin
 {
-    print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"'
-      .
-      (
-        (
-         (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
-            !$theme_config{'settings_right_default_tab_webmin'} ||
-            ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/)
-         ) &&
-           $get_user_level ne '4'
-        ) ? " checked" :
-          ""
-      ) .
-      '>
+    print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"' .
+      (is_switch_virtualmin() ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_vm', 'settings_hotkey_toggle_key_virtualmin', 'auto right') .
       ' for="open_virtualmin">
@@ -227,13 +198,8 @@ sub print_switch_virtualmin
 
 sub print_switch_cloudmin
 {
-    print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"'
-      .
-      ( (!$theme_config{'settings_right_default_tab_webmin'} && $get_user_level eq '4') ||
-          ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) ? " checked" :
-          ""
-      ) .
-      '>
+    print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"' .
+      (is_switch_cloudmin() ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_cm', 'settings_hotkey_toggle_key_cloudmin', 'auto right') .
       ' for="open_cloudmin">
@@ -243,15 +209,8 @@ sub print_switch_cloudmin
 
 sub print_switch_webmail
 {
-    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"'
-      .
-      (
-        (!$theme_config{'settings_right_default_tab_usermin'} ||
-           $theme_config{'settings_right_default_tab_usermin'} =~ /mail/
-        ) ? " checked" :
-          ""
-      ) .
-      '>
+    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"' .
+      (is_switch_webmail() ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_mail', 'settings_hotkey_toggle_key_webmail', 'auto right') .
       ' for="open_webmail">
@@ -1121,7 +1080,7 @@ sub get_sysinfo_vars
         $uptime,             $running_proc,       $load,                    $real_memory,
         $virtual_memory,     $disk_space,         $package_message,         $csf_title,
         $csf_data,           $csf_remote_version, $authentic_remote_version);
-    
+
     if (@info) {
         $info_arr = @info[0]->{'raw'};
         $info     = @$info_arr[0];
@@ -1130,7 +1089,7 @@ sub get_sysinfo_vars
     }
 
     if (!@$info_arr) {
-      return; 
+        return;
     }
 
     $webmin_version_str = @$info_arr[1]->{'webmin_version'};
@@ -1918,13 +1877,8 @@ sub embed_login_head
     print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
+    embed_favicon();
     print '<title>', $title, '</title>', "\n";
-    print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
-      .
-      ( (&get_product_name() eq 'usermin') ? '-usermin' :
-          '-webmin'
-      ) .
-      '.ico">' . "\n";
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
     print '<link href="' .

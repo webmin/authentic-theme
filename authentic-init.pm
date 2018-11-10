@@ -96,6 +96,38 @@ sub settings_default
     return %c;
 }
 
+sub embed_favicon
+{
+    my $product = get_product_name() eq 'usermin' ? 'usermin' : 'webmin';
+
+    if ($main::session_id && (get_env('script_name') ne '/session_login.cgi' && get_env('script_name') ne '/pam_login.cgi')) {
+        if ($product eq 'usermin' && is_switch_webmail()) {
+            $product = 'mailbox';
+        } elsif ($product ne 'usermin' && is_switch_virtualmin()) {
+            $product = 'virtualmin';
+        } elsif ($product ne 'usermin' && is_switch_cloudmin()) {
+            $product = 'cloudmin';
+        }
+    }
+    my $favicon_path = $gconfig{'webprefix'} . '/images/favicons/' . $product;
+    my $ref_link     = 'data-link-ref';
+    print '<link ' .
+      $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">';
+    print '<link ' .
+      $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">';
+    print '<link ' .
+      $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">';
+    print '<link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' .
+      $favicon_path . '/favicon-16x16.png?' .
+      time() . '">';
+    print '<link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">';
+    print '<link ' . $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">';
+    print '<meta name="msapplication-TileColor" content="#3d74ca">';
+    print '<meta ' . $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">';
+    print '<meta name="theme-color" content="#3d74ca">';
+
+}
+
 sub embed_header
 {
     my (@args) = @_;
@@ -106,13 +138,9 @@ sub embed_header
     print ' <head>', "\n";
     embed_noscript();
     print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
+    embed_favicon();
     print ' <title>', $args[0], '</title>', "\n";
-    print ' <link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
-      .
-      ( (&get_product_name() eq 'usermin') ? '-usermin' :
-          '-webmin'
-      ) .
-      '.ico">' . "\n";
+
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
     ($args[1] && (print($args[1] . "\n")));

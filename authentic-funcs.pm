@@ -5,7 +5,8 @@
 #
 use strict;
 
-our (%module_text_full, %theme_text, %theme_config, %gconfig, %tconfig, $current_lang_info, $remote_user, $webmin_script_type);
+our (%module_text_full,  %theme_text,  %theme_config,   %gconfig, %tconfig,
+     $current_lang_info, $remote_user, $get_user_level, $webmin_script_type);
 
 sub settings
 {
@@ -229,6 +230,52 @@ sub module_text_full
         %module_text_full = load_language(get_module_name());
     }
     return %module_text_full;
+}
+
+sub is_switch_webmin
+{
+    return (
+        ((($theme_config{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
+           (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
+             get_product_name() eq 'usermin') ||
+           ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
+           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+             ($get_user_level eq '1' || $get_user_level eq '2'))
+           ||
+           ( $get_user_level ne '3' &&
+             (   (!foreign_available("virtual-server") && !$theme_config{'settings_right_default_tab_webmin'}) ||
+                 (!foreign_available("virtual-server") && $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/)
+                 ||
+                 (!foreign_available("server-manager") &&
+                     $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/))
+           )
+        ) ? 1 : 0);
+}
+
+sub is_switch_virtualmin
+{
+    return (
+            (
+             (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
+                !$theme_config{'settings_right_default_tab_webmin'} ||
+                ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/)
+             ) &&
+               $get_user_level ne '4'
+            ) ? 1 : 0);
+}
+
+sub is_switch_cloudmin
+{
+    return ((!$theme_config{'settings_right_default_tab_webmin'} && $get_user_level eq '4') ||
+            ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) ? 1 : 0);
+}
+
+sub is_switch_webmail
+{
+    return (
+            (!$theme_config{'settings_right_default_tab_usermin'} ||
+               $theme_config{'settings_right_default_tab_usermin'} =~ /mail/
+            ) ? 1 : 0);
 }
 
 1;
