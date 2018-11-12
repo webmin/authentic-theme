@@ -538,6 +538,7 @@ settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Symbole in Virtualmin/Cloudmin Dropdown Liste azeigen
 settings_font_family=Schriftart
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Vorhanden
 theme_xhred_global_not_available=Nicht vorhanden
 theme_xhred_global_default=Standard

@@ -545,6 +545,7 @@ settings_hide_top_loader= 上部の進行状況バーを非表示にする
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
 settings_font_family= フォントファミリー
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available= 利用可能
 theme_xhred_global_not_available= 利用不可
 theme_xhred_global_default= デフォルト

@@ -545,6 +545,7 @@ settings_hide_top_loader=Göm övre förlopps- och laddindikatorn
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Visa symboliska ikoner i drag-och-släpp i Virtualmin/Cloudmin
 settings_font_family=Typsnitt
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Tillgängliga
 theme_xhred_global_not_available=Inte tillgängliga
 theme_xhred_global_default=Standard

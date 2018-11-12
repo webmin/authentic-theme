@@ -547,6 +547,7 @@ settings_hide_top_loader=Ascunde bara de progress şi încărcătorul
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Afișați pictogramele simbolice în meniul derulant în Virtualmin/Cloudmin
 settings_font_family=Familia de fonturi
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Disponibil
 theme_xhred_global_not_available=Indisponibil
 theme_xhred_global_default=Implicit

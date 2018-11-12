@@ -549,6 +549,7 @@ settings_hide_top_loader=Sembunyikan pita kemajuan di atas dan loadernya
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Tampilkan ikon simbolis pada drop-down di Virtualmin/Cloudmin
 settings_font_family=Keluarga fonta
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Tersedia
 theme_xhred_global_not_available=Tidak tersedia
 theme_xhred_global_default=Default

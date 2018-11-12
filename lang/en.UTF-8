@@ -545,6 +545,7 @@ settings_hide_top_loader=Hide top progress bar
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
 settings_font_family=Font family
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Available
 theme_xhred_global_not_available=Not available
 theme_xhred_global_default=Default
