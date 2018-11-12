@@ -1339,10 +1339,11 @@ sub get_sysinfo_vars
     $_time      = time();
     $local_time = localtime($_time);
     if (foreign_available("time")) {
-        $local_time = '<a data-convertible-timestamp-full="' .
-          $_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+        $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
+          $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
     } else {
-        $local_time = '<span data-convertible-timestamp-full="' . $_time . '" >' . localtime($_time) . '</span>';
+        $local_time = '<span data-convertible-timestamp-full="' .
+          $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
     }
 
     # Kernel and arch
