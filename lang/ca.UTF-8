@@ -547,6 +547,7 @@ settings_hide_top_loader=Amagar la barra de progrés
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Mostra icones simbòliques a Virtualmin/Cloudmin
 settings_font_family=Tipus de lletra
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Disponible
 theme_xhred_global_not_available=No disponible
 theme_xhred_global_default=Per defecte

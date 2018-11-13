@@ -545,6 +545,7 @@ settings_hide_top_loader=隐藏顶部进度条
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=在 Virtualmin/Cloudmin 中的下拉列表中显示符号图标
 settings_font_family=字体族
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=可用
 theme_xhred_global_not_available=不适用
 theme_xhred_global_default=默认

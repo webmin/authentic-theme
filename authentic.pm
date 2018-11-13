@@ -1,6 +1,6 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -1161,13 +1161,8 @@ sub theme_header_redirect_download
     print "<!DOCTYPE html>\n";
     print "<html>\n";
     print "<head>\n";
-    print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
-      .
-      ( (&get_product_name() eq 'usermin') ? '-usermin' :
-          '-webmin'
-      ) .
-      '.ico">' . "\n";
     print '<meta charset="' . get_charset() . '">', "\n";
+    embed_favicon();
     print "</head>\n";
     my $script =
       '<form data-predownload action="' .

@@ -557,6 +557,7 @@ settings_hide_top_loader=Fshih barin e përparimit të përparimit dhe ngarkuesi
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Shfaq ikonat simbolike në drop-down në Virtualmin / Cloudmin
 settings_font_family=Familja e shkronjave
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available dispozicion
 theme_xhred_global_not_available=Nuk është në dispozicion
 theme_xhred_global_default=parazgjedhur
