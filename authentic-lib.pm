@@ -389,8 +389,8 @@ sub get_extended_sysinfo
                       ($theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
 
                     $returned_sysinfo .= '
-                    <div  data-referrer="' .
-                      $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel panel-default'
+                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} .
+                      '" class="panel panel-default' . ($info->{'level'} ? ' panel-' . $info->{'level'} . '' : undef) . ''
                       .
                       ( $theme_config{'settings_animation_tabs'} ne 'false' ? '' :
                           ' disable-animations'
