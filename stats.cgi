@@ -6,6 +6,7 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+no warnings 'uninitialized';
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
@@ -13,7 +14,7 @@ use lib (dirname(__FILE__) . '/lib');
 use WebminCore;
 BEGIN {push(@INC, "..");}
 
-our ($current_theme);
+our (%in, $config_directory, $current_theme);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
 
