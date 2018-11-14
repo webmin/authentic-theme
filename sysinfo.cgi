@@ -146,7 +146,7 @@ if ($has_stats) {
     print '</tbody></table>' . "\n";
 
     # Print System Warning
-    print get_sysinfo_warning(@info);
+    print get_sysinfo_warning(\@info);
 
     print_sysstats_panel_end();
 

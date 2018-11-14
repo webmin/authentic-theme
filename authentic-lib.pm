@@ -340,18 +340,23 @@ sub print_sysinfo_link
 
 sub get_sysinfo_warning
 {
-    my (@info) = @_;
+    my ($info_ref) = @_;
     my $returned_data = '';
 
     # Show notifications first
-    @info =
-      sort {($b->{'type'} eq 'warning') <=> ($a->{'type'} eq 'warning')} @info;
-    $returned_data .= '<br>';
-    foreach my $info (@info) {
-        if ($info->{'type'} eq 'warning') {
-            $returned_data .= replace("ui_submit ui_form_end_submit",
-                                      "btn-tiny ui_submit ui_form_end_submit",
-                                      &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn', undef, 1));
+    if (ref($info_ref)) {
+        @{$info_ref} =
+          sort {($b->{'type'} eq 'warning') <=> ($a->{'type'} eq 'warning')} @{$info_ref};
+        $returned_data .= '<br>';
+        foreach my $info (@{$info_ref}) {
+            if ($info->{'type'} eq 'warning') {
+                $returned_data .= replace("ui_submit ui_form_end_submit",
+                                          "btn-tiny ui_submit ui_form_end_submit",
+                                          &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn',
+                                                        undef, 1,
+                                                        $info->{'desc'} || undef
+                                          ));
+            }
         }
     }
     return $returned_data;
@@ -370,6 +375,7 @@ sub get_extended_sysinfo
                 $info->{'type'} ne 'link'            &&
                 $info->{'module'} ne 'mailbox'       &&
                 $info->{'module'} ne 'system-status' &&
+                $info->{'type'} ne 'warning'         &&
                 $a->{'type'} ne 'warning'            &&
                 $b->{'type'} ne 'warning')
             {
@@ -383,14 +389,15 @@ sub get_extended_sysinfo
                 }
 
                 if ($info->{'id'} && $charts_not_supported eq 'no') {
-
                     my $open =
                       ($info->{'open'} || $info->{'id'} eq 'domain') ? ' in' :
                       ($theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
 
                     $returned_sysinfo .= '
-                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} .
-                      '" class="panel panel-default' . ($info->{'level'} ? ' panel-' . $info->{'level'} . '' : undef) . ''
+                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel ' .
+                      ($info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
+                        'panel-default') .
+                      ''
                       .
                       ( $theme_config{'settings_animation_tabs'} ne 'false' ? '' :
                           ' disable-animations'
@@ -447,7 +454,10 @@ sub get_extended_sysinfo
                     <div id="'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" class="panel-collapse collapse' .
                       $open . '" role="tabpanel" aria-labelledby="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
-                      <div class="panel-body">';
+                      <div class="panel-body ' .
+                      ($info->{'level'} ? ' alert-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '' :
+                        undef) .
+                      '">';
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
                         $returned_sysinfo .=
@@ -3156,7 +3166,7 @@ sub get_xhr_request
                                  "csf_deny"                 => csf_temporary_list(),
                                  "collect_interval"         => get_module_config_data('system-status', 'collect_interval'),
                                  "extended_si"              => get_extended_sysinfo(\@info, undef),
-                                 "warning_si"               => get_sysinfo_warning(@info), };
+                                 "warning_si"               => get_sysinfo_warning(\@info), };
             print convert_to_json(\@updated_info);
         } elsif ($in{'xhr-search-in-file'} eq '1') {
             set_user_level();

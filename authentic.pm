@@ -803,7 +803,7 @@ sub theme_ui_hr
 
 sub theme_ui_alert_box
 {
-    my ($msg, $class, $style, $new_line) = @_;
+    my ($msg, $class, $style, $new_line, $desc_to_title) = @_;
     my ($rv, $type, $tmsg, $fa);
 
     if ($class eq "success") {
@@ -814,6 +814,10 @@ sub theme_ui_alert_box
         $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+    }
+
+    if ($desc_to_title) {
+        $tmsg = $desc_to_title;
     }
 
     $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";
@@ -1170,6 +1174,7 @@ sub theme_header_redirect_download
       ($delay ? $delay . "000" : 0) . ');</script>';
     print "<body>\n";
     print $script . "\n";
+
     if ($message) {
         print $message . "\n";
     }

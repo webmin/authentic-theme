@@ -1,61 +1,44 @@
 ## Changelog
 
-#### Version 19.20-beta6 (October 21, 2018)
+#### Version 19.20 (November 14, 2018)
+* Add brand new mail listing, search and controls for mailbox module in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
+* Add ability to search for text when editing config files manually [#1198](https://github.com/authentic-theme/authentic-theme/issues/1198)
+* Add support to setup and display background for login page [#1195](https://github.com/authentic-theme/authentic-theme/issues/1195)
+* Add optimisations to bring speed to Dashboard; rely on core subroutines to extract data
+* Add brand favicons to display for each module [#1227](https://github.com/authentic-theme/authentic-theme/issues/1227)
+* Add to display database quota along with disk space on Dashboard [#1206](https://github.com/authentic-theme/authentic-theme/issues/1206)
+* Add ability to stop/start automatic scrolling on user interaction [#1224](https://github.com/authentic-theme/authentic-theme/issues/1224)
+* Add ability to manually select syntax for editor in File Manager and Custom Commands module [#1222](https://github.com/authentic-theme/authentic-theme/issues/1222)
+* Add significant UI improvements to Custom Commands module for default mode
 * Add support for creating symbolic links in File Manager [#629/comment-426615864](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-426615864)
 * Add ability to control number of shown virtual servers on Dashboard [#1200](https://github.com/authentic-theme/authentic-theme/issues/1200)
-* Add to display database quota along with disk space on Dashboard  [#1206](https://github.com/authentic-theme/authentic-theme/issues/1206)
+* Add ability to open multiple tabs simultaneously (quickly) [#1196](https://github.com/authentic-theme/authentic-theme/issues/1196)
+* Add theme overlays native support [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
 * Add ability to disable new mail UI
-* Fix premature load of mail folders resulting in fatal error
-* Fix sporadic load errors and folder detection bug in mail
-* Fix to always adjust offset of mail view container
-* Fix snippet options to be saved correctly
+* Add Japanese, German and Swedish language translation update
+* Set navigation menu to default to White palette upon fresh installs
+* Fix guessing button type mechanism [#1157](https://github.com/authentic-theme/authentic-theme/issues/1157)
 * Fix to detect favorites despite presence of home page pointer [#1211](https://github.com/authentic-theme/authentic-theme/issues/1211)
 * Fix data filter to support paste event; improve its performance [#1207](https://github.com/authentic-theme/authentic-theme/issues/1207)
 * Fix to utilize fail proof load method for theme language strings [#1203/comment-429554824](https://github.com/authentic-theme/authentic-theme/issues/1203#issuecomment-429554824)
+* Fix MySQL/PostgreSQL vertical row editing interface mode; fix back (cancel) button
 * Fix not to leak hostname and product version on login page [webmin/webmin#972](https://github.com/webmin/webmin/issues/972)
+* Fix download issues across UI [virtualmin.com/58225](https://virtualmin.com/node/58225) [sourceforge.net/5176](https://sourceforge.net/p/webadmin/bugs/5176)
+* Fix referer error when downloading file in some browsers [virtualmin.com/59234](https://virtualmin.com/node/59234)
+* Fix connection error message appearing on slow connections [sourceforge.net/5059](https://sourceforge.net/p/webadmin/bugs/5059) [sourceforge.net/5187](https://sourceforge.net/p/webadmin/bugs/5187)
+* Fix to display local time on Dashboard [sourceforge.net/5212](https://sourceforge.net/p/webadmin/bugs/5212)
+* Fix module link detection at navigation menu in Usermin
 * Fix to improve editor's height and its save buttons positioning
 * Fix to catch pages with progressive output called from autocomplete menu
-* Fix download issues across UI [virtualmin.com/58225](https://virtualmin.com/node/58225) [sourceforge.net/5176](https://sourceforge.net/p/webadmin/bugs/5176)
-* Fix module link detection at navigation menu in Usermin
-* Fix Cloudmin's Mass Run commands module UI and scroll to bottom when done
 * Fix to stretch viewer/editor container to full width in ConfigServer Security & Firewall version
 * Fix to avoid File Manager to load bundle check on foreign modules
-
-#### Version 19.20-beta5 (September 30, 2018)
-* Add ability to search for text when editing config files manually [#1198](https://github.com/authentic-theme/authentic-theme/issues/1198)
-* Add support to setup and display background for login page [#1195](https://github.com/authentic-theme/authentic-theme/issues/1195)
-* Add significant UI improvements to Custom module for default mode
-* Add ability to open multiple tabs simultaneously (quickly) [#1196](https://github.com/authentic-theme/authentic-theme/issues/1196)
-* Add to enable _use strict_ for production and _use warnings_ for debug
-* Set navigation menu to default to White palette
-* Fix to improve experience for opening new tabs using _modifier key + click_
-* Fix connection error message appearing on slow connections [sourceforge.net/5059](https://sourceforge.net/p/webadmin/bugs/5059) [sourceforge.net/5187](https://sourceforge.net/p/webadmin/bugs/5187)
-* Fix using only sender's email address with Gravatar in Mail [#431/comment-423205990](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-423205990)
-* Fix to clear cookies right after its used in File Manager [sourceforge.net/5096](https://sourceforge.net/p/webadmin/bugs/5096)
-* Fix to optimize language load
-
-#### Version 19.20-beta4 (September 5, 2018)
-* Add theme overlays native support [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
-* Add polyfills to support _Object.values_ and _Object.entries_ methods for older browsers
-* Fix sorting by size issue in File Manager for folders
+* Fix sorting by size issue in File Manager for folders being redundant
 * Fix notifications alignment for multiple configurations [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
-
-#### Version 19.20-beta3 (August 23, 2018)
-* Add mail search for mail in Usermin
-* Add Swedish language translation update
 * Fix directory download issue in user mode in File Manager [virtualmin.com/58448](https://virtualmin.com/node/58448)
 * Fix not to scroll confirmation page for Package Updates on Debian
 * Fix not to log deleted files in File Manager
-
-#### Version 19.20-beta2 (July 31, 2018)
-* Add Japanese and German language translation updates
-* Add column sorting and filter to Virtualmin/DNS Records page
-* Fix to prevent showing container offset for certain pages (File Manager, Mail Listing and Editors)
 * Fix excessive escaping for upload progress data in File Manager [#1174](https://github.com/authentic-theme/authentic-theme/issues/1174)
-* Fix read mail link not loading content  [#1177](https://github.com/authentic-theme/authentic-theme/issues/1177)
-
-#### Version 19.20-beta1 (July 25, 2018)
-* Add brand new listing and controls for mail in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
+* Fix read mail link not loading content [#1177](https://github.com/authentic-theme/authentic-theme/issues/1177)
 * Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authentic-theme/issues/1175)
 
 <!--- separator --->
