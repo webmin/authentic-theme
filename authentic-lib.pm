@@ -394,9 +394,11 @@ sub get_extended_sysinfo
                       ($theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
 
                     $returned_sysinfo .= '
-                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel ' .
-                      ($info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
-                        'panel-default') .
+                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
+                      .
+                      ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
+                          'panel-default'
+                      ) .
                       ''
                       .
                       ( $theme_config{'settings_animation_tabs'} ne 'false' ? '' :
@@ -454,9 +456,10 @@ sub get_extended_sysinfo
                     <div id="'
                       . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse" class="panel-collapse collapse' .
                       $open . '" role="tabpanel" aria-labelledby="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
-                      <div class="panel-body ' .
-                      ($info->{'level'} ? ' alert-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '' :
-                        undef) .
+                      <div class="panel-body '
+                      . ($info->{'level'} ? ' alert-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '' :
+                           undef
+                      ) .
                       '">';
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
@@ -1217,15 +1220,19 @@ sub get_sysinfo_vars
     if ($get_user_level eq '0') {
 
         # Theme version/update
-        $authentic_remote_version = theme_remote_version();
+        my $authentic_remote_data       = theme_remote_version(1);
         my $authentic_installed_version = theme_version();
+        my $incompatible                = theme_update_incompatible($authentic_remote_data);
 
-        if (
+        ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
+
+        if (   (!$incompatible || ($incompatible && $authentic_remote_version =~ /beta/))
+            &&
             (
-             (($authentic_remote_version !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-              $authentic_remote_version ge substr($authentic_installed_version, 0, 5)
-             ) ||
-             $authentic_remote_version gt $authentic_installed_version))
+                (($authentic_remote_version !~ /beta/ && $authentic_installed_version =~ /beta/) &&
+                 $authentic_remote_version ge substr($authentic_installed_version, 0, 5)
+                ) ||
+                $authentic_remote_version gt $authentic_installed_version))
         {
             my $authentic_remote_beta        = $authentic_remote_version =~ /beta/;
             my $authentic_remote_version_tag = $authentic_remote_version;
@@ -1904,6 +1911,90 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
     embed_styles();
     embed_overlay_head();
     print '</head>', "\n";
+}
+
+sub theme_update_incompatible
+{
+    my ($authentic_remote_data) = @_;
+
+    my $webmin_compatible_version;
+    my $usermin_compatible_version;
+    my @notice;
+    my $force_button =
+'<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">'
+                      . $theme_text{'theme_xhred_global_click_here'} . '</a>';
+    my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
+    my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
+
+    $authentic_remote_data =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
+    $webmin_compatible_version = $3 ? $3 : $1;
+    $usermin_compatible_version = $2;
+
+    if (
+
+        ($authentic_remote_version                           &&
+         $webmin_compatible_version                          &&
+         $usermin_compatible_version                         &&
+         (get_webmin_version() < $webmin_compatible_version) &&
+         ($has_usermin && $usermin_enabled_updates && $has_usermin_version < $usermin_compatible_version))
+
+      )
+    {
+        @notice = {
+                    "incompatible" => (
+                           theme_text('theme_git_patch_incompatible_message', $theme_text{'theme_name'},
+                                      $authentic_remote_version,              $theme_text{'theme_xhred_titles_wm'},
+                                      $webmin_compatible_version,             $theme_text{'theme_xhred_titles_um'},
+                                      $usermin_compatible_version
+                             ) .
+                             " "
+                             .
+                             theme_text('theme_git_patch_incompatible_message_desc',
+                                        $force_button,
+                                        ($theme_text{'theme_xhred_titles_wm'} . "/" . $theme_text{'theme_xhred_titles_um'})
+                             )
+                    ) };
+    } elsif (
+
+        ($authentic_remote_version && $webmin_compatible_version && (get_webmin_version() < $webmin_compatible_version))
+
+      )
+    {
+        @notice = {
+                    "incompatible" => (
+                                       theme_text('theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
+                                                  $authentic_remote_version, $theme_text{'theme_xhred_titles_wm'},
+                                                  $webmin_compatible_version
+                                         ) .
+                                         " "
+                                         .
+                                         theme_text('theme_git_patch_incompatible_message_desc', $force_button,
+                                                    $theme_text{'theme_xhred_titles_wm'}
+                                         )
+                    ) };
+    } elsif (
+
+        ($authentic_remote_version   &&
+         $usermin_compatible_version &&
+         ($has_usermin && $usermin_enabled_updates && $has_usermin_version < $usermin_compatible_version))
+
+      )
+    {
+        @notice = {
+                    "incompatible" => (
+                                       theme_text('theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
+                                                  $authentic_remote_version, $theme_text{'theme_xhred_titles_um'},
+                                                  $usermin_compatible_version
+                                         ) .
+                                         " "
+                                         .
+                                         theme_text('theme_git_patch_incompatible_message_desc', $force_button,
+                                                    $theme_text{'theme_xhred_titles_um'}
+                                         )
+                    ) };
+    }
+
+    return @notice;
 }
 
 sub theme_remote_version
@@ -3027,84 +3118,16 @@ sub get_xhr_request
                 print convert_to_json(\@update_rs);
             } else {
                 if ($update_force ne "1") {
-                    my $compatible;
-                    my $latest_release;
-                    my $force_button =
-'<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">'
-                      . $theme_text{'theme_xhred_global_click_here'} . '</a>';
+                    my $authentic_remote_data;
 
                     if ($version_type eq '-release') {
-                        $compatible = theme_remote_version(1, 1);
+                        $authentic_remote_data = theme_remote_version(1, 1);
                     } else {
-                        $compatible = theme_remote_version(1, 0, 1);
+                        $authentic_remote_data = theme_remote_version(1, 0, 1);
                     }
 
-                    my ($atversion) = $compatible =~ /^version=(.*)/gm;
-
-                    $compatible =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-                    my $wmversion = $3 ? $3 : $1;
-                    my $umversion = $2;
-
-                    if ($atversion &&
-                        $wmversion                          &&
-                        $umversion                          &&
-                        (get_webmin_version() < $wmversion) &&
-                        ($has_usermin && $usermin_enabled_updates && $has_usermin_version < $umversion))
-                    {
-                        @update_rs = {
-                                  "incompatible" => (
-                                      theme_text(
-                                                'theme_git_patch_incompatible_message', $theme_text{'theme_name'},
-                                                $atversion,                             $theme_text{'theme_xhred_titles_wm'},
-                                                $wmversion,                             $theme_text{'theme_xhred_titles_um'},
-                                                $umversion
-                                        ) .
-                                        " "
-                                        .
-                                        theme_text(
-                                          'theme_git_patch_incompatible_message_desc',
-                                          $force_button,
-                                          ($theme_text{'theme_xhred_titles_wm'} . "/" . $theme_text{'theme_xhred_titles_um'})
-                                        )
-                                  ) };
-                        print convert_to_json(\@update_rs);
-                        exit;
-                    } elsif ($atversion &&
-                             $wmversion &&
-                             (get_webmin_version() < $wmversion))
-                    {
-                        @update_rs = {
-                                       "incompatible" => (
-                                                     theme_text(
-                                                         'theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
-                                                         $atversion, $theme_text{'theme_xhred_titles_wm'},
-                                                         $wmversion
-                                                       ) .
-                                                       " "
-                                                       .
-                                                       theme_text('theme_git_patch_incompatible_message_desc', $force_button,
-                                                                  $theme_text{'theme_xhred_titles_wm'}
-                                                       )
-                                       ) };
-                        print convert_to_json(\@update_rs);
-                        exit;
-                    } elsif ($atversion &&
-                             $umversion &&
-                             ($has_usermin && $usermin_enabled_updates && $has_usermin_version < $umversion))
-                    {
-                        @update_rs = {
-                                       "incompatible" => (
-                                                     theme_text(
-                                                         'theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
-                                                         $atversion, $theme_text{'theme_xhred_titles_um'},
-                                                         $umversion
-                                                       ) .
-                                                       " "
-                                                       .
-                                                       theme_text('theme_git_patch_incompatible_message_desc', $force_button,
-                                                                  $theme_text{'theme_xhred_titles_um'}
-                                                       )
-                                       ) };
+                    @update_rs = theme_update_incompatible($authentic_remote_data);
+                    if (@update_rs) {
                         print convert_to_json(\@update_rs);
                         exit;
                     }
