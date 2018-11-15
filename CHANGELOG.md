@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.21 (November 15, 2018)
+* Add an error message upon theme update for no connection to GitHub or its API rate limit excess
+* Fix not to show updates for releases with dependency issue
+
 #### Version 19.20 (November 14, 2018)
 * Add brand new mail listing, search and controls for mailbox module in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
 * Add ability to search for text when editing config files manually [#1198](https://github.com/authentic-theme/authentic-theme/issues/1198)
