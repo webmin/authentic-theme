@@ -1225,17 +1225,22 @@ sub get_sysinfo_vars
         my $incompatible                = theme_update_incompatible($authentic_remote_data);
 
         ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
+        my $authentic_remote_version_local = $authentic_remote_version;
 
-        if (   (!$incompatible || ($incompatible && $authentic_remote_version =~ /beta/))
+        if ($incompatible && $authentic_remote_version_local !~ /beta/) {
+            $authentic_remote_version = $authentic_installed_version;
+        }
+
+        if (   (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
             &&
             (
-                (($authentic_remote_version !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-                 $authentic_remote_version ge substr($authentic_installed_version, 0, 5)
+                (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
+                 $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
                 ) ||
-                $authentic_remote_version gt $authentic_installed_version))
+                $authentic_remote_version_local gt $authentic_installed_version))
         {
-            my $authentic_remote_beta        = $authentic_remote_version =~ /beta/;
-            my $authentic_remote_version_tag = $authentic_remote_version;
+            my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
+            my $authentic_remote_version_tag = $authentic_remote_version_local;
             my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
             $authentic_remote_version_tag = $_remote_version_tag[0];
 
@@ -1243,7 +1248,7 @@ sub get_sysinfo_vars
               '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
               $theme_text{'theme_name'} . '</a> ' . $authentic_installed_version . '. ' .
               ($authentic_remote_beta ? $theme_text{'theme_git_patch_available'} : $theme_text{'theme_update_available'}) .
-              ' ' . $authentic_remote_version . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
+              ' ' . $authentic_remote_version_local . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
               .
               ( $authentic_remote_beta ? 1 :
                   0
@@ -1254,11 +1259,11 @@ sub get_sysinfo_vars
               '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $theme_text{'theme_changelog'}
-              . '</a>' . '<a data-remove-version="' .
-              $authentic_remote_version . '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
+              . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
+              '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
               '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
               $authentic_remote_version_tag .
-              '/authentic-theme-' . $authentic_remote_version . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
+              '/authentic-theme-' . $authentic_remote_version_local . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
               $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
               $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
