@@ -1921,8 +1921,8 @@ sub theme_update_incompatible
     my $usermin_compatible_version;
     my @notice;
     my $force_button =
-'<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">'
-                      . $theme_text{'theme_xhred_global_click_here'} . '</a>';
+      '<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">' .
+      $theme_text{'theme_xhred_global_click_here'} . '</a>';
     my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
     my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
 
@@ -3124,6 +3124,12 @@ sub get_xhr_request
                         $authentic_remote_data = theme_remote_version(1, 1);
                     } else {
                         $authentic_remote_data = theme_remote_version(1, 0, 1);
+                    }
+
+                    if ($authentic_remote_data eq '0') {
+                        @update_rs = { "no_connection" => $theme_text{'theme_git_update_locked'} };
+                        print convert_to_json(\@update_rs);
+                        exit;
                     }
 
                     @update_rs = theme_update_incompatible($authentic_remote_data);
