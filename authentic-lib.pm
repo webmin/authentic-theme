@@ -1194,7 +1194,7 @@ sub get_sysinfo_vars
 
         $vm2_license = licenses('cm');
 
-        $__server_manager_version = @$info_arr[3]->{'cm_version'} || @$info_arr[2]->{'cm_version'};
+        $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} : @$info_arr[2]->{'cm_version'});
         $__server_manager_version =~ s/.gpl//igs;
 
         $cloudmin_version = (
