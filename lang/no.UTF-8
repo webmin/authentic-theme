@@ -198,7 +198,7 @@ settings_security_description=Sikkerhetsvarsler lar deg sette opp e-postvarsler 
 settings_security_title=Innstillinger for sikkerhetsvarsler
 settings_sepia_level_navigation=Sepia filter
 settings_sepia_level_navigation_description=Standard/gjeldende verdier <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_show_night_mode_link=Show day/night mode toggle
+settings_show_night_mode_link=Show day/night mode button
 settings_show_terminal_link=Vis terminal-knapp
 settings_side_slider_enabled=Aktiver slider
 settings_side_slider_favorites_enabled=Vis Favoritter-fane
@@ -832,3 +832,5 @@ theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
 settings_hotkey_slider=Hotkey for toggling side slider
 
 theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+
+settings_collapse_navigation_link=Show pin/unpin button

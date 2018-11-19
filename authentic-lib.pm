@@ -2374,6 +2374,8 @@ sub theme_settings
             'false',
             'settings_leftmenu_section_hide_unused_modules',
             'false',
+            'settings_collapse_navigation_link',
+            'true',
             'settings_sysinfo_link_mini',
             'false',
             'settings_show_night_mode_link',

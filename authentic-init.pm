@@ -72,6 +72,7 @@ sub settings_default
     $c{'settings_hide_top_loader'}                    = 'false';
     $c{'settings_animation_left'}                     = 'true';
     $c{'settings_animation_tabs'}                     = 'true';
+    $c{'settings_collapse_navigation_link'}           = 'true';
     $c{'settings_sysinfo_link_mini'}                  = 'false';
     $c{'settings_show_night_mode_link'}               = 'true';
     $c{'settings_theme_options_button'}               = 'true';

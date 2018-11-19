@@ -10,8 +10,10 @@ our (%in,               %gconfig,        %miniserv,     $remote_user, $root_dire
 
 print '<li data-collapse-trigger-container data-linked' .
   get_button_tooltip('theme_xhred_tooltip_navigation_pinned', 'settings_hotkey_navigation', 'auto top') .
-  ' class="user-link cursor-pointer">';
-print '<span class="pd-lf-rt-6"><i data-collapse-trigger="1" class="fa fa2 fa-fw fa2-collapse-left vertical-align-middle"></i></span>';
+  ' class="user-link cursor-pointer' .
+  ($theme_config{'settings_collapse_navigation_link'} eq 'false' && ' hidden') . '">';
+print
+'<span class="pd-lf-rt-6"><i data-collapse-trigger="1" class="fa fa2 fa-fw fa2-collapse-left vertical-align-middle"></i></span>';
 print '</li>';
 
 if ($theme_config{'settings_sysinfo_link_mini'} eq 'true' &&
@@ -99,8 +101,8 @@ if ($miniserv{'logout'} &&
           get_button_tooltip('theme_tooltip_logout', undef, 'auto top') . ' class="menu-exclude-link pd-rt-4" href="' .
           $gconfig{'webprefix'} . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
     } else {
-        print '<a data-nref' .
-          get_button_tooltip('theme_xhred_tooltip_switch_user', undef, 'auto top') . ' class="menu-exclude-link pd-rt-4" href="' .
+        print '<a data-nref' . get_button_tooltip('theme_xhred_tooltip_switch_user', undef, 'auto top') .
+          ' class="menu-exclude-link pd-rt-4" href="' .
           $gconfig{'webprefix'} . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
     }
     print '</li>';
@@ -129,6 +131,6 @@ if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
 print '<li data-linked' .
   get_button_tooltip('theme_xhred_filemanager_context_refresh', 'settings_hotkey_reload', 'auto top') .
   ' class="user-link' . ($theme_config{'settings_leftmenu_button_refresh'} ne 'true' && ' hidden') .
-  '"><a class="menu-exclude-link pd-rt-4" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
+'"><a class="menu-exclude-link pd-rt-4" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
 
 1;

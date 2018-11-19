@@ -75,6 +75,10 @@ print ui_table_row($theme_text{'settings_animation_left'},
                    ui_yesno_radio('settings_animation_left', $theme_config{'settings_animation_left'}, "true", "false"));
 print ui_table_row($theme_text{'settings_animation_tabs'},
                    ui_yesno_radio('settings_animation_tabs', $theme_config{'settings_animation_tabs'}, "true", "false"));
+print ui_table_row($theme_text{'settings_collapse_navigation_link'},
+                       ui_yesno_radio('settings_collapse_navigation_link', $theme_config{'settings_collapse_navigation_link'},
+                                      "true",                       "false"
+                       ));
 if (dashboard_switch() ne '1') {
     print ui_table_row($theme_text{'settings_sysinfo_link_mini'},
                        ui_yesno_radio('settings_sysinfo_link_mini', $theme_config{'settings_sysinfo_link_mini'},

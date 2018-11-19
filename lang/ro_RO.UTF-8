@@ -602,7 +602,7 @@ theme_xhred_move_down=Mută jos
 theme_xhred_add_after=Adaugă după
 theme_xhred_add_before=Adaugă înaintea
 settings_button_tooltip=Arată sugestii la butoane
-settings_show_night_mode_link=Show day/night mode toggle
+settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Tastă rapidă pentru comutare întunecat/luminos
 settings_title=Configurare Temă
 settings_subtitle=Pentru utilizator
@@ -974,3 +974,5 @@ theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
 settings_hotkey_slider=Hotkey for toggling side slider
 
 theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+
+settings_collapse_navigation_link=Show pin/unpin button
