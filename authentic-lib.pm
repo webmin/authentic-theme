@@ -1105,7 +1105,7 @@ sub get_sysinfo_vars
         return;
     }
 
-    $webmin_version_str = @$info_arr[1]->{'webmin_version'};
+    $webmin_version_str = (defined(@$info_arr[1]) ? @$info_arr[1]->{'webmin_version'} : undef);
 
     # Require memory information
     my @m;
@@ -1155,7 +1155,7 @@ sub get_sysinfo_vars
 
     #Webmin version
     $webmin_version =
-      product_version_update($webmin_version_str, 'w') . ' <div class="btn-group margined-left-4' .
+      product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' .
       $is_hidden_link . '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
       $theme_text{'theme_sysinfo_wmdocs'} .
       '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
@@ -1164,8 +1164,8 @@ sub get_sysinfo_vars
     if ($has_virtualmin) {
         my ($vs_license, $__virtual_server_version);
 
-        $vs_license               = licenses('vm');
-        $__virtual_server_version = @$info_arr[2]->{'vm_version'};
+        $vs_license = licenses('vm');
+        $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
         $__virtual_server_version =~ s/.gpl//igs;
 
         $virtualmin_version = (
@@ -1194,7 +1194,8 @@ sub get_sysinfo_vars
 
         $vm2_license = licenses('cm');
 
-        $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} : @$info_arr[2]->{'cm_version'});
+        $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
+                                       (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
         $__server_manager_version =~ s/.gpl//igs;
 
         $cloudmin_version = (
