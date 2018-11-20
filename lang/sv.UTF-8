@@ -972,6 +972,6 @@ theme_xhred_filemanager_context_clipboard_selection=Kopiera markerat till urklip
 
 settings_hotkey_slider=Snabbtangent för att växla sidomenyn
 
-theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+theme_git_update_locked=Uppdatering av temat kan inte slutföras på grund av att det finns inte anslutning till GitHub eller så har gränsvärdet för API:t överskridits. Oautentiserade förfrågningar tillåter endast upp till 60 förfrågningar per timme. Prova igen senare eller använd konsolen och gör en manuell uppdatering via uppdateringsskriptet.
 
-settings_collapse_navigation_link=Show pin/unpin button
+settings_collapse_navigation_link=Visa knappen fäst/ta bort
