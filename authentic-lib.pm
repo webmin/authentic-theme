@@ -938,44 +938,55 @@ sub print_easypie_charts
 {
     my ($cpu_percent, $mem_percent, $virt_percent, $disk_percent) = @_;
 
-    print '<div class="row" style="margin: 0;">' . "\n";
-    my $columns = '3';
+    if (defined($cpu_percent) || defined($mem_percent) || defined($virt_percent) || defined($disk_percent)) {
 
-    # CPU usage
-    print_easypie_chart($columns,
-                        (($cpu_percent || $cpu_percent eq "0") ? $cpu_percent :
-                           'NaN'
-                        ),
-                        $theme_text{'body_cp'},
-                        'sysinfo_cpu_percent');
+        print '<div class="row" style="margin: 0;">' . "\n";
+        my $columns = '3';
 
-    # Memory allocation
-    print_easypie_chart($columns,
-                        (($mem_percent || $mem_percent eq "0") ? $mem_percent :
-                           'NaN'
-                        ),
-                        (($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $theme_text{'body_real2'} :
-                           $theme_text{'body_real'}
-                        ),
-                        'sysinfo_mem_percent');
-    print_easypie_chart($columns,
-                        (($virt_percent || $virt_percent eq "0") ? $virt_percent : 'NaN'),
-                        (($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $theme_text{'body_virt2'} :
-                           $theme_text{'body_virt'}
-                        ),
-                        'sysinfo_virt_percent');
+        # CPU usage
+        defined($cpu_percent)
+          &&
+          print_easypie_chart($columns,
+                              (   ($cpu_percent || $cpu_percent eq "0") ? $cpu_percent :
+                                    'NaN'
+                              ),
+                              $theme_text{'body_cp'},
+                              'sysinfo_cpu_percent');
 
-    # Disk usage
-    print_easypie_chart($columns,
-                        (($disk_percent || $disk_percent eq "0") ? $disk_percent :
-                           'NaN'
-                        ),
-                        (($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $theme_text{'body_disk2'} :
-                           $theme_text{'body_disk'}
-                        ),
-                        'sysinfo_disk_percent');
+        # Memory allocation
+        defined($mem_percent)
+          &&
+          print_easypie_chart($columns,
+                              (   ($mem_percent || $mem_percent eq "0") ? $mem_percent :
+                                    'NaN'
+                              ),
+                              (   ($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $theme_text{'body_real2'} :
+                                    $theme_text{'body_real'}
+                              ),
+                              'sysinfo_mem_percent');
+        defined($virt_percent)
+          &&
+          print_easypie_chart($columns,
+                              (($virt_percent || $virt_percent eq "0") ? $virt_percent : 'NaN'),
+                              (   ($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $theme_text{'body_virt2'} :
+                                    $theme_text{'body_virt'}
+                              ),
+                              'sysinfo_virt_percent');
 
-    print '</div>' . "\n";
+        # Disk usage
+        defined($disk_percent)
+          &&
+          print_easypie_chart($columns,
+                              (   ($disk_percent || $disk_percent eq "0") ? $disk_percent :
+                                    'NaN'
+                              ),
+                              (   ($current_lang eq 'ru' || $current_lang eq 'ru.UTF-8') ? $theme_text{'body_disk2'} :
+                                    $theme_text{'body_disk'}
+                              ),
+                              'sysinfo_disk_percent');
+
+        print '</div>' . "\n";
+    }
 }
 
 sub print_sysstats_panel_end
@@ -1072,6 +1083,18 @@ sub theme_list_combined_system_info
     return &list_combined_system_info({ 'qshow' => 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} });
 }
 
+sub show_sysinfo_section
+{
+    my ($s) = @_;
+    my %access = &get_module_acl(undef, 'system-status');
+    $access{'show'} ||= "";
+    if ($access{'show'} eq '*') {
+        return 1;
+    } else {
+        return &indexof($s, split(/\s+/, $access{'show'})) >= 0;
+    }
+}
+
 sub get_sysinfo_vars
 {
     my ($info_ref) = @_;
@@ -1114,409 +1137,435 @@ sub get_sysinfo_vars
     }
 
     # Easypie charts numbers
-    if ($info->{'cpu'}) {
+    if (show_sysinfo_section('cpu') && $info->{'cpu'}) {
         my @c = @{ $info->{'cpu'} };
         $cpu_percent = $c[0] + $c[1] + $c[3];
         $cpu_percent = int($cpu_percent);
     }
-    if (@m && $m[0]) {
-        $mem_percent = ($m[0] - $m[1]) / $m[0] * 100;
-        $mem_percent = int($mem_percent);
-    }
-    if (@m && $m[2]) {
-        $virt_percent = ($m[2] - $m[3]) / $m[2] * 100;
-        $virt_percent = int($virt_percent);
-    }
-    if ($info->{'disk_total'}) {
-        my ($total, $free) =
-          ($info->{'disk_total'}, $info->{'disk_free'});
-        $disk_percent = ($total - $free) / $total * 100;
-        $disk_percent = int($disk_percent);
-    }
 
-    # Operation system
-    my $ip =
-      $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
-      &to_ipaddress(get_system_hostname());
-    $ip = " ($ip)" if ($ip);
-    $host = &get_system_hostname() . $ip;
-    if (&foreign_available("net")) {
-        $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
+    if (show_sysinfo_section('mem')) {
+        if (@m && $m[0]) {
+            $mem_percent = ($m[0] - $m[1]) / $m[0] * 100;
+            $mem_percent = int($mem_percent);
+        }
+        if (@m && $m[2]) {
+            $virt_percent = ($m[2] - $m[3]) / $m[2] * 100;
+            $virt_percent = int($virt_percent);
+        }
+    }
+    if (show_sysinfo_section('disk')) {
+        if ($info->{'disk_total'}) {
+            my ($total, $free) =
+              ($info->{'disk_total'}, $info->{'disk_free'});
+            $disk_percent = ($total - $free) / $total * 100;
+            $disk_percent = int($disk_percent);
+        }
     }
 
-    # Operating System Info
-    if ($gconfig{'os_version'} eq '*') {
-        $os = $gconfig{'real_os_type'};
-    } else {
-        $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
-    }
+    if (show_sysinfo_section('host')) {
 
-    my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
-
-    #Webmin version
-    $webmin_version =
-      product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' .
-      $is_hidden_link . '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
-      $theme_text{'theme_sysinfo_wmdocs'} .
-      '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
-
-    # Virtualmin version
-    if ($has_virtualmin) {
-        my ($vs_license, $__virtual_server_version);
-
-        $vs_license = licenses('vm');
-        $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
-        $__virtual_server_version =~ s/.gpl//igs;
-
-        $virtualmin_version = (
-            product_version_update($__virtual_server_version, 'v') . " " . (
-                $vs_license eq '0' ? '' :
-                  ''
-
-                  . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
-                  .
-                  ( ($vs_license eq '1') ?
-                      ' <a data-license class="btn btn-default btn-xxs" title="' .
-                      $theme_text{'right_vlcheck'} . '" href=\'' .
-                      $gconfig{'webprefix'} . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
-                      '</div>'
-                  ) .
-                  '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                  $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
-                  '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
-
-            ));
-    }
-
-    # Cloudmin version
-    if ($has_cloudmin) {
-        my ($vm2_license, $__server_manager_version);
-
-        $vm2_license = licenses('cm');
-
-        $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
-                                       (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
-        $__server_manager_version =~ s/.gpl//igs;
-
-        $cloudmin_version = (
-            product_version_update($__server_manager_version, 'c') . " " . (
-                $vm2_license eq '0' ? '' :
-                  ''
-
-                  . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
-                  .
-                  ( ($vm2_license eq '1') ?
-                      ' <a data-license class="btn btn-default btn-xxs" title="' .
-                      $theme_text{'right_slcheck'} . '" href=\'' .
-                      $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
-                      '</div>'
-                  ) .
-                  '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                  $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
-                  '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
-            ));
-    }
-
-    # Fetch theme version
-    if ($get_user_level eq '0') {
-
-        # Theme version/update
-        my $authentic_remote_data       = theme_remote_version(1);
-        my $authentic_installed_version = theme_version();
-        my $incompatible                = theme_update_incompatible($authentic_remote_data);
-
-        ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
-        my $authentic_remote_version_local = $authentic_remote_version;
-
-        if ($incompatible && $authentic_remote_version_local !~ /beta/) {
-            $authentic_remote_version = $authentic_installed_version;
+        # Operation system
+        my $ip =
+          $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
+          &to_ipaddress(get_system_hostname());
+        $ip = " ($ip)" if ($ip);
+        $host = &get_system_hostname() . $ip;
+        if (&foreign_available("net")) {
+            $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
         }
 
-        if (   (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
-            &&
-            (
-                (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-                 $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
-                ) ||
-                $authentic_remote_version_local gt $authentic_installed_version))
-        {
-            my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
-            my $authentic_remote_version_tag = $authentic_remote_version_local;
-            my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
-            $authentic_remote_version_tag = $_remote_version_tag[0];
+        # Operating System Info
+        if ($gconfig{'os_version'} eq '*') {
+            $os = $gconfig{'real_os_type'};
+        } else {
+            $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
+        }
 
-            $authentic_theme_version =
-              '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
-              $theme_text{'theme_name'} . '</a> ' . $authentic_installed_version . '. ' .
-              ($authentic_remote_beta ? $theme_text{'theme_git_patch_available'} : $theme_text{'theme_update_available'}) .
-              ' ' . $authentic_remote_version_local . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
-              .
-              ( $authentic_remote_beta ? 1 :
-                  0
-              ) .
-              '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
-              ' authentic_update" href=\'' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
-              ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
-              '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
+        my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
+
+        #Webmin version
+        $webmin_version =
+          product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' .
+          $is_hidden_link . '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
+          $theme_text{'theme_sysinfo_wmdocs'} .
+          '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
+
+        # Virtualmin version
+        if ($has_virtualmin) {
+            my ($vs_license, $__virtual_server_version);
+
+            $vs_license = licenses('vm');
+            $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
+            $__virtual_server_version =~ s/.gpl//igs;
+
+            $virtualmin_version = (
+                product_version_update($__virtual_server_version, 'v') . " " . (
+                    $vs_license eq '0' ? '' :
+                      ''
+
+                      . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
+                      .
+                      ( ($vs_license eq '1') ?
+                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          $theme_text{'right_vlcheck'} . '" href=\'' .
+                          $gconfig{'webprefix'} . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
+                          '</div>'
+                      ) .
+                      '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
+                      $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
+                      '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
+
+                ));
+        }
+
+        # Cloudmin version
+        if ($has_cloudmin) {
+            my ($vm2_license, $__server_manager_version);
+
+            $vm2_license = licenses('cm');
+
+            $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
+                                           (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
+            $__server_manager_version =~ s/.gpl//igs;
+
+            $cloudmin_version = (
+                product_version_update($__server_manager_version, 'c') . " " . (
+                    $vm2_license eq '0' ? '' :
+                      ''
+
+                      . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
+                      .
+                      ( ($vm2_license eq '1') ?
+                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          $theme_text{'right_slcheck'} . '" href=\'' .
+                          $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
+                          '</div>'
+                      ) .
+                      '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
+                      $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
+'" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
+                ));
+        }
+
+        # Fetch theme version
+        if ($get_user_level eq '0') {
+
+            # Theme version/update
+            my $authentic_remote_data       = theme_remote_version(1);
+            my $authentic_installed_version = theme_version();
+            my $incompatible                = theme_update_incompatible($authentic_remote_data);
+
+            ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
+            my $authentic_remote_version_local = $authentic_remote_version;
+
+            if ($incompatible && $authentic_remote_version_local !~ /beta/) {
+                $authentic_remote_version = $authentic_installed_version;
+            }
+
+            if (   (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
+                &&
+                (
+                    (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
+                     $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
+                    ) ||
+                    $authentic_remote_version_local gt $authentic_installed_version))
+            {
+                my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
+                my $authentic_remote_version_tag = $authentic_remote_version_local;
+                my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
+                $authentic_remote_version_tag = $_remote_version_tag[0];
+
+                $authentic_theme_version =
+                  '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
+                  $theme_text{'theme_name'} . '</a> ' . $authentic_installed_version . '. ' .
+                  ($authentic_remote_beta ? $theme_text{'theme_git_patch_available'} : $theme_text{'theme_update_available'})
+                  . ' ' . $authentic_remote_version_local . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
+                  .
+                  ( $authentic_remote_beta ? 1 :
+                      0
+                  ) .
+                  '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
+                  ' authentic_update" href=\'' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
+                  ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
+                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
-              . $theme_text{'theme_changelog'}
-              . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
-              '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
-              '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
-              $authentic_remote_version_tag .
-              '/authentic-theme-' . $authentic_remote_version_local . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
-              $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
-              $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
-              $theme_text{'settings_right_options'} . '</a>' . '</div>';
+                  . $theme_text{'theme_changelog'}
+                  . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
+                  '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
+                  '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
+                  $authentic_remote_version_tag . '/authentic-theme-' .
+                  $authentic_remote_version_local . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
+                  $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
+                  $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
+                  $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
+                  $theme_text{'settings_right_options'} . '</a>' . '</div>';
 
+            } else {
+                $authentic_theme_version = get_theme_user_link();
+            }
         } else {
             $authentic_theme_version = get_theme_user_link();
         }
-    } else {
-        $authentic_theme_version = get_theme_user_link();
-    }
 
-    #ConfigServer Security & Firewall
-    if (&foreign_check("csf") && &foreign_available("csf")) {
+        #ConfigServer Security & Firewall
+        if (&foreign_check("csf") && &foreign_available("csf")) {
 
-        # Define CSF installed version
-        my $csf_update_required;
-        my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
-        $csf_installed_version = $csf_installed_version->[0];
+            # Define CSF installed version
+            my $csf_update_required;
+            my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
+            $csf_installed_version = $csf_installed_version->[0];
 
-        # Define CSF actual version if allowed
-        if ($theme_config{'settings_sysinfo_csf_updates'} eq 'true' &&
-            $get_user_level eq '0' &&
-            $in =~ /xhr-/)
-        {
-            http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, undef, undef,
-                          undef, undef, undef, 5);
+            # Define CSF actual version if allowed
+            if ($theme_config{'settings_sysinfo_csf_updates'} eq 'true' &&
+                $get_user_level eq '0' &&
+                $in =~ /xhr-/)
+            {
+                http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, undef, undef,
+                              undef, undef, undef, 5);
 
-            # Trim versions' number
-            $csf_installed_version =~ s/^\s+|\s+$//g;
-            $csf_remote_version =~ s/^\s+|\s+$//g;
-        } else {
-            $csf_remote_version = '0';
-        }
+                # Trim versions' number
+                $csf_installed_version =~ s/^\s+|\s+$//g;
+                $csf_remote_version =~ s/^\s+|\s+$//g;
+            } else {
+                $csf_remote_version = '0';
+            }
 
-        if ($csf_remote_version <= $csf_installed_version) {
-            $csf_update_required = '0';
-        } else {
-            $csf_update_required = '1';
-        }
+            if ($csf_remote_version <= $csf_installed_version) {
+                $csf_update_required = '0';
+            } else {
+                $csf_update_required = '1';
+            }
 
-        $csf_title = $theme_text{'body_firewall'} . ' '
-          .
-          ( `pgrep lfd` ? '' :
+            $csf_title = $theme_text{'body_firewall'} . ' '
+              .
+              ( `pgrep lfd` ? '' :
 ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
-          );
-        $csf_data = (
-            '<a href=\'' .
-              $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
-              product_version_update($csf_installed_version, 'f') . ''
+              );
+            $csf_data = (
+                '<a href=\'' .
+                  $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
+                  product_version_update($csf_installed_version, 'f') . ''
 
-              . ($csf_update_required eq '1' ?
-                   '. ' . $theme_text{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;' :
-                   '&nbsp;&nbsp;&nbsp;'
-              ) .
-              '
-            <form action="/csf/index.cgi" method="post" class="hidden" id="csf_lfdstatus">
-                <input type="hidden" name="action" value="lfdstatus">
-            </form>
-            <form action="/csf/index.cgi" method="post" class="hidden" id="csf_upgrade">
-                <input type="hidden" name="action" value="upgrade">
-            </form>
-            <form action="/csf/index.cgi" method="post" class="hidden" id="csf_temporary_ip_entries">
-                <input type="hidden" name="action" value="temp">
-            </form>
-            <form action="/csf/index.cgi" method="post" class="hidden" id="csf_search_system_log">
-                <input type="hidden" name="action" value="loggrep">
-            </form>
-            <form action="/csf/index.cgi" method="post" class="hidden" id="csf_denyf">
-                <input type="hidden" name="action" value="denyf">
-            </form>
-        '
-              . (
-                $csf_update_required eq '1' ?
-                  '<div class="btn-group">
-            <a class="btn btn-xxs btn-success csf csf-submit" data-id="csf_upgrade"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
-                  . $theme_text{'theme_update'} . '</a>
-            <a class="btn btn-xxs btn-info csf" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
-                  . $theme_text{'theme_changelog'} . '</a>
-            <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
-                  . $theme_text{'theme_download'} . '</a>
-        </div>'
-                :
-                  '<div class="btn-group" data-no-update>
-           <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Search system logs" data-id="csf_search_system_log"><i class="fa fa-fw fa-filter"></i></a>
-           <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Temporary IP entries" data-id="csf_temporary_ip_entries"><i class="fa fa-fw fa-ban"></i></a>
-           <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-id="csf_denyf"><i class="fa fa-fw fa-trash-o"></i> Flush all blocks</a>
+                  . ($csf_update_required eq '1' ?
+                       '. ' . $theme_text{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;' :
+                       '&nbsp;&nbsp;&nbsp;'
+                  ) .
+                  '
+              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_lfdstatus">
+                  <input type="hidden" name="action" value="lfdstatus">
+              </form>
+              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_upgrade">
+                  <input type="hidden" name="action" value="upgrade">
+              </form>
+              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_temporary_ip_entries">
+                  <input type="hidden" name="action" value="temp">
+              </form>
+              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_search_system_log">
+                  <input type="hidden" name="action" value="loggrep">
+              </form>
+              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_denyf">
+                  <input type="hidden" name="action" value="denyf">
+              </form>
+          '
+                  . (
+                    $csf_update_required eq '1' ?
+                      '<div class="btn-group">
+              <a class="btn btn-xxs btn-success csf csf-submit" data-id="csf_upgrade"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
+                      . $theme_text{'theme_update'} . '</a>
+              <a class="btn btn-xxs btn-info csf" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
+                      . $theme_text{'theme_changelog'} . '</a>
+              <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
+                      . $theme_text{'theme_download'} . '</a>
           </div>'
-              ) .
-              '');
-    }
-
-    #System time
-    my ($_time);
-    $_time      = time();
-    $local_time = localtime($_time);
-    if (foreign_available("time")) {
-        $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
-          $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
-    } else {
-        $local_time = '<span data-convertible-timestamp-full="' .
-          $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
-    }
-
-    # Kernel and arch
-    if ($info->{'kernel'}) {
-        $kernel_arch =
-          &theme_text('body_kernelon',                $info->{'kernel'}->{'os'},
-                      $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'});
-    }
-
-    # CPU Type and cores
-    my @c;
-    if ($info->{'load'}) {
-        @c = @{ $info->{'load'} };
-        if (@c > 3) {
-            $cpu_type = &theme_text('body_cputype', @c);
-        }
-    }
-
-    # Temperatures
-    if ($info->{'cputemps'}) {
-        foreach my $t (@{ $info->{'cputemps'} }) {
-            $cpu_temperature .=
-              '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core ' .
-              $t->{'core'} . ': '
-              .
-              ( get_module_config_data('system-status', 'collect_units') ?
-                  (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
-                  (int($t->{'temp'}) . '&#176;C ')
-              ) .
-              '</span>&nbsp;';
-        }
-    }
-    if ($info->{'drivetemps'}) {
-        foreach my $t (@{ $info->{'drivetemps'} }) {
-            my $short = $t->{'device'};
-            $short =~ s/^\/dev\///;
-            my $emsg;
-            if ($t->{'errors'}) {
-                $emsg .=
-                  '&nbsp;&nbsp;<span class="label bg-primary-dark status-error">' .
-                  &theme_text('body_driveerr', $t->{'errors'}) . "</span>";
-            } elsif ($t->{'failed'}) {
-                $emsg .=
-                  '&nbsp;&nbsp;<span class="label bg-danger-dark status-error">' .
-                  &theme_text('body_drivefailed') . '</span>';
-            }
-            $hdd_temperature .= '<span class="badge-custom badge-drivestatus" data-stats="drive">' . $short . ': '
-              .
-              ( get_module_config_data('system-status', 'collect_units') ?
-                  (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
-                  (int($t->{'temp'}) . '&#176;C ')
-              ) .
-              $emsg . '</span>&nbsp;';
-        }
-    }
-
-    # System uptime
-    if (foreign_check("proc") && foreign_available("proc")) {
-        foreign_require("proc");
-
-        my @system_uptime = defined(&proc::get_system_uptime) ? proc::get_system_uptime() : ();
-        if (@system_uptime) {
-            my ($day, $hour, $minute) = @system_uptime;
-            my $uptime_text;
-            if ($day) {
-                $uptime_text = &theme_text('body_updays', $day, $hour, $minute);
-            } elsif ($minute && $hour) {
-                $uptime_text = &theme_text('body_uphours', $hour, $minute);
-            } elsif ($minute) {
-                $uptime_text = &theme_text('body_upmins', $minute);
-            }
-
-            $uptime = '<a href=\'' . $gconfig{'webprefix'} . '/init/\'>' . $uptime_text . '</a>';
-
+                    :
+                      '<div class="btn-group" data-no-update>
+             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Search system logs" data-id="csf_search_system_log"><i class="fa fa-fw fa-filter"></i></a>
+             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Temporary IP entries" data-id="csf_temporary_ip_entries"><i class="fa fa-fw fa-ban"></i></a>
+             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-id="csf_denyf"><i class="fa fa-fw fa-trash-o"></i> Flush all blocks</a>
+            </div>'
+                  ) .
+                  '');
         }
 
-        # Running processes
-        my @procs = proc::list_processes();
-        $running_proc = scalar(@procs);
-        $running_proc = '<a href=\'' . $gconfig{'webprefix'} . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
-    }
-
-    # Load averages
-    if ($info->{'load'}) {
-        my @c = @{ $info->{'load'} };
-        if (@c) {
-            $load = &theme_text('body_load', @c);
-        }
-    }
-
-    # Memory
-    if ($info->{'mem'}) {
-
-        # Real memory details
-        $real_memory =
-          &theme_text('body_used', nice_size(($m[0]) * 1000, -1), nice_size(($m[0] - $m[1]) * 1000, -1));
-
-        # Virtual memory details
-        if ($m[2] > 0) {
-            $virtual_memory =
-              &theme_text('body_used', nice_size(($m[2]) * 1000, -1), nice_size(($m[2] - $m[3]) * 1000, -1));
-        }
-
-        if (get_text_ltr()) {
-            $real_memory = reverse_string($real_memory, "/");
-            if ($virtual_memory) {
-                $virtual_memory = reverse_string($virtual_memory, "/");
-            }
-        }
-    }
-
-    # Local disk space
-    if ($info->{'disk_total'} && $info->{'disk_total'}) {
-        $disk_space = &theme_text('body_used_and_free',
-                                  nice_size($info->{'disk_total'},                        -1),
-                                  nice_size($info->{'disk_free'},                         -1),
-                                  nice_size($info->{'disk_total'} - $info->{'disk_free'}, -1));
-
-        if ($disk_space && get_text_ltr()) {
-            $disk_space = reverse_string($disk_space, "/");
-        }
-    }
-
-    # Package updates
-    if (&foreign_available("package-updates") && $info->{'poss'}) {
-        my $msg;
-        my @poss = @{ $info->{'poss'} };
-        my @secs = grep {$_->{'security'}} @poss;
-
-        my $poss = scalar(@poss);
-        my $secs = scalar(@secs);
-
-        if ($poss && $secs) {
-            $msg = &theme_text(
-                               ($poss gt 1 &&
-                                  $secs gt 1 ? 'body_upsec'  : $poss gt 1 &&
-                                  $secs eq 1 ? 'body_upsec1' : $poss eq 1 &&
-                                  $secs gt 1 ? 'body_upsec2' : 'body_upsec3'
-                               ),
-                               $poss, $secs);
-        } elsif ($poss) {
-            $msg = &theme_text(($poss gt 1 ? 'body_upneed' : 'body_upneed1'), $poss);
+        #System time
+        my ($_time);
+        $_time      = time();
+        $local_time = localtime($_time);
+        if (foreign_available("time")) {
+            $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
+              $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
         } else {
-            $msg = $theme_text{'body_upok'};
+            $local_time = '<span data-convertible-timestamp-full="' .
+              $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
+        }
+    }
+
+    if (show_sysinfo_section('cpu')) {
+
+        # Kernel and arch
+        if ($info->{'kernel'}) {
+            $kernel_arch =
+              &theme_text('body_kernelon',                $info->{'kernel'}->{'os'},
+                          $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'});
         }
 
-        $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger font-style-normal\'> $1 <\/i>"/eg;
-        $package_message =
-          '<a href=\'' . $gconfig{'webprefix'} . '/package-updates/index.cgi?mode=updates\'>' . $msg . '</a>';
+        # CPU Type and cores
+        my @c;
+        if ($info->{'load'}) {
+            @c = @{ $info->{'load'} };
+            if (@c > 3) {
+                $cpu_type = &theme_text('body_cputype', @c);
+            }
+        }
+    }
 
+    if (show_sysinfo_section('temp')) {
+
+        # Temperatures
+        if ($info->{'cputemps'}) {
+            foreach my $t (@{ $info->{'cputemps'} }) {
+                $cpu_temperature .=
+                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core ' .
+                  $t->{'core'} . ': '
+                  .
+                  ( get_module_config_data('system-status', 'collect_units') ?
+                      (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
+                      (int($t->{'temp'}) . '&#176;C ')
+                  ) .
+                  '</span>&nbsp;';
+            }
+        }
+        if ($info->{'drivetemps'}) {
+            foreach my $t (@{ $info->{'drivetemps'} }) {
+                my $short = $t->{'device'};
+                $short =~ s/^\/dev\///;
+                my $emsg;
+                if ($t->{'errors'}) {
+                    $emsg .=
+                      '&nbsp;&nbsp;<span class="label bg-primary-dark status-error">' .
+                      &theme_text('body_driveerr', $t->{'errors'}) . "</span>";
+                } elsif ($t->{'failed'}) {
+                    $emsg .=
+                      '&nbsp;&nbsp;<span class="label bg-danger-dark status-error">' .
+                      &theme_text('body_drivefailed') . '</span>';
+                }
+                $hdd_temperature .= '<span class="badge-custom badge-drivestatus" data-stats="drive">' . $short . ': '
+                  .
+                  ( get_module_config_data('system-status', 'collect_units') ?
+                      (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
+                      (int($t->{'temp'}) . '&#176;C ')
+                  ) .
+                  $emsg . '</span>&nbsp;';
+            }
+        }
+    }
+
+    if (show_sysinfo_section('load')) {
+
+        # System uptime
+        if (foreign_check("proc") && foreign_available("proc")) {
+            foreign_require("proc");
+
+            my @system_uptime = defined(&proc::get_system_uptime) ? proc::get_system_uptime() : ();
+            if (@system_uptime) {
+                my ($day, $hour, $minute) = @system_uptime;
+                my $uptime_text;
+                if ($day) {
+                    $uptime_text = &theme_text('body_updays', $day, $hour, $minute);
+                } elsif ($minute && $hour) {
+                    $uptime_text = &theme_text('body_uphours', $hour, $minute);
+                } elsif ($minute) {
+                    $uptime_text = &theme_text('body_upmins', $minute);
+                }
+
+                $uptime = '<a href=\'' . $gconfig{'webprefix'} . '/init/\'>' . $uptime_text . '</a>';
+
+            }
+
+            # Running processes
+            my @procs = proc::list_processes();
+            $running_proc = scalar(@procs);
+            $running_proc = '<a href=\'' . $gconfig{'webprefix'} . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
+        }
+
+        # Load averages
+        if ($info->{'load'}) {
+            my @c = @{ $info->{'load'} };
+            if (@c) {
+                $load = &theme_text('body_load', @c);
+            }
+        }
+    }
+
+    if (show_sysinfo_section('mem')) {
+
+        # Memory
+        if ($info->{'mem'}) {
+
+            # Real memory details
+            $real_memory =
+              &theme_text('body_used', nice_size(($m[0]) * 1000, -1), nice_size(($m[0] - $m[1]) * 1000, -1));
+
+            # Virtual memory details
+            if ($m[2] > 0) {
+                $virtual_memory =
+                  &theme_text('body_used', nice_size(($m[2]) * 1000, -1), nice_size(($m[2] - $m[3]) * 1000, -1));
+            }
+
+            if (get_text_ltr()) {
+                $real_memory = reverse_string($real_memory, "/");
+                if ($virtual_memory) {
+                    $virtual_memory = reverse_string($virtual_memory, "/");
+                }
+            }
+        }
+    }
+
+    if (show_sysinfo_section('disk')) {
+
+        # Local disk space
+        if ($info->{'disk_total'} && $info->{'disk_total'}) {
+            $disk_space = &theme_text('body_used_and_free',
+                                      nice_size($info->{'disk_total'},                        -1),
+                                      nice_size($info->{'disk_free'},                         -1),
+                                      nice_size($info->{'disk_total'} - $info->{'disk_free'}, -1));
+
+            if ($disk_space && get_text_ltr()) {
+                $disk_space = reverse_string($disk_space, "/");
+            }
+        }
+    }
+
+    if (show_sysinfo_section('poss')) {
+
+        # Package updates
+        if (&foreign_available("package-updates") && $info->{'poss'}) {
+            my $msg;
+            my @poss = @{ $info->{'poss'} };
+            my @secs = grep {$_->{'security'}} @poss;
+
+            my $poss = scalar(@poss);
+            my $secs = scalar(@secs);
+
+            if ($poss && $secs) {
+                $msg = &theme_text(
+                                   ($poss gt 1 &&
+                                      $secs gt 1 ? 'body_upsec'  : $poss gt 1 &&
+                                      $secs eq 1 ? 'body_upsec1' : $poss eq 1 &&
+                                      $secs gt 1 ? 'body_upsec2' : 'body_upsec3'
+                                   ),
+                                   $poss, $secs);
+            } elsif ($poss) {
+                $msg = &theme_text(($poss gt 1 ? 'body_upneed' : 'body_upneed1'), $poss);
+            } else {
+                $msg = $theme_text{'body_upok'};
+            }
+
+            $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger font-style-normal\'> $1 <\/i>"/eg;
+            $package_message =
+              '<a href=\'' . $gconfig{'webprefix'} . '/package-updates/index.cgi?mode=updates\'>' . $msg . '</a>';
+
+        }
     }
 
     return ($webmin_version_str, $cpu_percent,        $mem_percent,             $virt_percent,
@@ -3173,7 +3222,6 @@ sub get_xhr_request
             ) = get_sysinfo_vars(\@info);
 
             my @updated_info = { "data"                     => 1,
-                                 "is_data"                  => $webmin_version_str,
                                  "cpu_percent"              => $cpu_percent,
                                  "mem_percent"              => $mem_percent,
                                  "virt_percent"             => $virt_percent,
