@@ -1109,13 +1109,13 @@ sub get_sysinfo_vars
     @info = grep {$_->{'id'} eq 'sysinfo'} @info;
 
     # Define used vars
-    my ($webmin_version_str, $cpu_percent,        $mem_percent,             $virt_percent,
-        $disk_percent,       $host,               $os,                      $webmin_version,
-        $virtualmin_version, $cloudmin_version,   $authentic_theme_version, $local_time,
-        $kernel_arch,        $cpu_type,           $cpu_temperature,         $hdd_temperature,
-        $uptime,             $running_proc,       $load,                    $real_memory,
-        $virtual_memory,     $disk_space,         $package_message,         $csf_title,
-        $csf_data,           $csf_remote_version, $authentic_remote_version);
+    my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+        $host,               $os,                      $webmin_version,  $virtualmin_version,
+        $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+        $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+        $running_proc,       $load,                    $real_memory,     $virtual_memory,
+        $disk_space,         $package_message,         $csf_title,       $csf_data,
+        $csf_remote_version, $authentic_remote_version);
 
     if (@info) {
         $info_arr = @info[0]->{'raw'};
@@ -1127,8 +1127,6 @@ sub get_sysinfo_vars
     if (!@$info_arr) {
         return;
     }
-
-    $webmin_version_str = (defined(@$info_arr[1]) ? @$info_arr[1]->{'webmin_version'} : undef);
 
     # Require memory information
     my @m;
@@ -1568,13 +1566,13 @@ sub get_sysinfo_vars
         }
     }
 
-    return ($webmin_version_str, $cpu_percent,        $mem_percent,             $virt_percent,
-            $disk_percent,       $host,               $os,                      $webmin_version,
-            $virtualmin_version, $cloudmin_version,   $authentic_theme_version, $local_time,
-            $kernel_arch,        $cpu_type,           $cpu_temperature,         $hdd_temperature,
-            $uptime,             $running_proc,       $load,                    $real_memory,
-            $virtual_memory,     $disk_space,         $package_message,         $csf_title,
-            $csf_data,           $csf_remote_version, $authentic_remote_version);
+    return ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+            $host,               $os,                      $webmin_version,  $virtualmin_version,
+            $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+            $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+            $running_proc,       $load,                    $real_memory,     $virtual_memory,
+            $disk_space,         $package_message,         $csf_title,       $csf_data,
+            $csf_remote_version, $authentic_remote_version);
 
 }
 
@@ -3212,13 +3210,13 @@ sub get_xhr_request
             }
         } elsif ($in{'xhr-info'} eq '1') {
             my @info = theme_list_combined_system_info();
-            our ($webmin_version_str, $cpu_percent,        $mem_percent,             $virt_percent,
-                 $disk_percent,       $host,               $os,                      $webmin_version,
-                 $virtualmin_version, $cloudmin_version,   $authentic_theme_version, $local_time,
-                 $kernel_arch,        $cpu_type,           $cpu_temperature,         $hdd_temperature,
-                 $uptime,             $running_proc,       $load,                    $real_memory,
-                 $virtual_memory,     $disk_space,         $package_message,         $csf_title,
-                 $csf_data,           $csf_remote_version, $authentic_remote_version
+            our ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+                 $host,               $os,                      $webmin_version,  $virtualmin_version,
+                 $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+                 $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+                 $running_proc,       $load,                    $real_memory,     $virtual_memory,
+                 $disk_space,         $package_message,         $csf_title,       $csf_data,
+                 $csf_remote_version, $authentic_remote_version
             ) = get_sysinfo_vars(\@info);
 
             my @updated_info = { "data"                     => 1,
