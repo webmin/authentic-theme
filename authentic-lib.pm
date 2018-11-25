@@ -1318,8 +1318,12 @@ sub get_sysinfo_vars
                 $get_user_level eq '0' &&
                 $in =~ /xhr-/)
             {
-                http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, undef, undef,
-                              undef, undef, undef, 5);
+                $csf_remote_version = theme_cached('version-csf-stable');
+                if (!$csf_remote_version) {
+                    http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, undef, undef,
+                                  undef, undef, undef, 5);
+                    theme_cached('version-csf-stable', $csf_remote_version);
+                }
 
                 # Trim versions' number
                 $csf_installed_version =~ s/^\s+|\s+$//g;
@@ -1968,13 +1972,17 @@ c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.n
 
 sub theme_update_incompatible
 {
-    my ($authentic_remote_data) = @_;
+    my ($authentic_remote_data, $force_stable) = @_;
 
     my $webmin_compatible_version;
     my $usermin_compatible_version;
     my @notice;
+
+    $force_stable ||= 0;
+
     my $force_button =
-      '<a data-git="1" data-stable="0" data-force="1" class="authentic_update text-darker" href="javascript:;">' .
+      '<a data-git="1" data-stable="' .
+      $force_stable . '" data-force="1" class="authentic_update text-darker" href="javascript:;">' .
       $theme_text{'theme_xhred_global_click_here'} . '</a>';
     my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
     my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
@@ -2053,33 +2061,46 @@ sub theme_update_incompatible
 sub theme_remote_version
 {
 
-    my ($data, $force_stable_check, $force_beta_check) = @_;
+    my ($data, $force_stable_check, $force_beta_check, $nocache) = @_;
 
-    my $remote_version = '0';
+    my $remote_version = 0;
     my $remote_release;
     my $error;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
         if (($tconfig{'show_beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check) {
-            http_download('api.github.com',                                             '443',
-                          '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
-                          \$error,                                                      undef,
-                          1,                                                            undef,
-                          undef,                                                        5,
-                          undef,                                                        undef,
-                          { 'accept', 'application/vnd.github.v3.raw' });
+            if (!$nocache) {
+                $remote_version = theme_cached('version-theme-development');
+            }
+            if (!$remote_version) {
+                http_download('api.github.com',                                             '443',
+                              '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
+                              \$error,                                                      undef,
+                              1,                                                            undef,
+                              undef,                                                        5,
+                              undef,                                                        undef,
+                              { 'accept', 'application/vnd.github.v3.raw' });
+                theme_cached('version-theme-development', $remote_version);
+
+            }
 
         } else {
-            http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
-                          \$remote_release, \$error, undef, 1, undef, undef, 5);
-            $remote_release =~ /tag_name":"(.*?)"/;
-            http_download('api.github.com',                                                            '443',
-                          '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
-                          \$error,                                                                     undef,
-                          1,                                                                           undef,
-                          undef,                                                                       5,
-                          undef,                                                                       undef,
-                          { 'accept', 'application/vnd.github.v3.raw' });
+            if (!$nocache) {
+                $remote_version = theme_cached('version-theme-stable');
+            }
+            if (!$remote_version) {
+                http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
+                              \$remote_release, \$error, undef, 1, undef, undef, 5);
+                $remote_release =~ /tag_name":"(.*?)"/;
+                http_download('api.github.com',                                                            '443',
+                              '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
+                              \$error,                                                                     undef,
+                              1,                                                                           undef,
+                              undef,                                                                       5,
+                              undef,                                                                       undef,
+                              { 'accept', 'application/vnd.github.v3.raw' });
+                theme_cached('version-theme-stable', $remote_version);
+            }
         }
     }
     if ($data) {
@@ -2089,6 +2110,57 @@ sub theme_remote_version
         return $remote_version;
     }
 
+}
+
+sub theme_cached
+{
+    my ($id) = @_;
+    $id || die "Can't use undefined as cache filename";
+
+    my $theme_var_dir = theme_var_dir();
+    my $fcached       = "$theme_var_dir/$id";
+    my @cached        = stat($fcached);
+    my $ctime         = $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
+    my $cache         = read_file_contents($fcached);
+    my $cdata         = $cache ? unserialise_variable($cache) : undef;
+    my @data;
+
+    if (@cached && $cached[9] > time() - $ctime) {
+        @data = @$cdata;
+    } else {
+        if ($_[1]) {
+            push(@data, $_[1]);
+            my $fh = "cache";
+            open_tempfile($fh, ">$fcached");
+            print_tempfile($fh, serialise_variable(\@data));
+            close_tempfile($fh);
+        }
+    }
+    return wantarray ? @data : $data[0];
+}
+
+sub theme_var_dir
+{
+
+    my $product_var = get_env('webmin_var');
+    if (!$product_var) {
+        open(VARPATH, "$config_directory/var-path");
+        chop($product_var = <VARPATH>);
+        close(VARPATH);
+    }
+
+    my $var_dir       = $product_var . "/modules";
+    my $theme_var_dir = "$var_dir/$current_theme";
+
+    if (!-d $var_dir) {
+        mkdir($var_dir, 0700);
+    }
+    if (!-d $theme_var_dir) {
+        mkdir($theme_var_dir, 0700);
+    } else {
+        chmod(0700, $theme_var_dir);
+    }
+    return $theme_var_dir;
 }
 
 sub theme_config_dir_available
@@ -2533,10 +2605,12 @@ sub theme_settings
             theme_settings('fa', 'info-circle', &theme_text('settings_right_soft_updates_page_options_title')),
             'settings_sysinfo_theme_updates',
             'false',
-            'settings_sysinfo_theme_updates_for_usermin',
-            'true',
             'settings_sysinfo_csf_updates',
-            'false');
+            'false',
+            'settings_cache_interval',
+            '86400',
+            'settings_sysinfo_theme_updates_for_usermin',
+            'true');
 
         return (@settings);
     }
@@ -2874,6 +2948,27 @@ sub theme_settings
                     <option value="metaKey"'
               . ($v eq 'metaKey' && ' selected') . '>Meta</option>
                 </select>';
+        } elsif ($k eq 'settings_cache_interval') {
+            $v = '<select class="ui_select" name="' . $k . '">
+                    <option value="3600"' .
+              ($v eq '3600' && ' selected') . '>' . $theme_text{'settings_cache_interval_1h'} . '</option>
+                    <option value="43200"' .
+              ($v eq '43200' && ' selected') . '>' . $theme_text{'settings_cache_interval_12h'} . '</option>
+                    <option value="86400"' .
+              ($v eq '86400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1d'} . '</option>
+                    <option value="604800"' .
+              ($v eq '604800' && ' selected') . '>' . $theme_text{'settings_cache_interval_7d'} . '</option>
+                    <option value="1209600"' .
+              ($v eq '1209600' && ' selected') . '>' . $theme_text{'settings_cache_interval_14d'} . '</option>
+                    <option value="2419200"' .
+              ($v eq '2419200' && ' selected') . '>' . $theme_text{'settings_cache_interval_1m'} . '</option>
+                    <option value="7257600"' .
+              ($v eq '7257600' && ' selected') . '>' . $theme_text{'settings_cache_interval_3m'} . '</option>
+                    <option value="14515200"' .
+              ($v eq '14515200' && ' selected') . '>' . $theme_text{'settings_cache_interval_6m'} . '</option>
+                    <option value="29030400"' .
+              ($v eq '29030400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1y'} . '</option>
+                </select>';
         } elsif ($k eq 'settings_right_virtualmin_default') {
             get_user_level();
             if (foreign_available('virtual-server')) {
@@ -3159,6 +3254,11 @@ sub get_xhr_request
             push(@current_versions,
                  (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
             print convert_to_json(\@current_versions);
+        } elsif ($in{'xhr-theme_clear_cache'} eq '1' && $get_user_level eq '0') {
+            my $theme_var_dir = theme_var_dir();
+            unlink_file("$theme_var_dir/version-theme-stable");
+            unlink_file("$theme_var_dir/version-theme-development");
+            unlink_file("$theme_var_dir/version-csf-stable");
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
@@ -3176,9 +3276,9 @@ sub get_xhr_request
                     my $authentic_remote_data;
 
                     if ($version_type eq '-release') {
-                        $authentic_remote_data = theme_remote_version(1, 1);
+                        $authentic_remote_data = theme_remote_version(1, 1, undef, 1);
                     } else {
-                        $authentic_remote_data = theme_remote_version(1, 0, 1);
+                        $authentic_remote_data = theme_remote_version(1, 0, 1, 1);
                     }
 
                     if ($authentic_remote_data eq '0') {
@@ -3187,7 +3287,7 @@ sub get_xhr_request
                         exit;
                     }
 
-                    @update_rs = theme_update_incompatible($authentic_remote_data);
+                    @update_rs = theme_update_incompatible($authentic_remote_data, ($version_type eq '-release' ? 1 : 0));
                     if (@update_rs) {
                         print convert_to_json(\@update_rs);
                         exit;
@@ -3195,11 +3295,11 @@ sub get_xhr_request
                 }
                 my $usermin = ($has_usermin && $usermin_enabled_updates);
                 my $usermin_root;
-                backquote_logged("yes | $root_directory/$current_theme/theme-update.sh -$version_type -no-restart");
+                backquote_logged("yes | $root_directory/$current_theme/theme-update.sh $version_type -no-restart");
                 if ($usermin) {
                     $usermin_root = $root_directory;
                     $usermin_root =~ s/webmin/usermin/;
-                    backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh -$version_type -no-restart");
+                    backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart");
                 }
                 my $tversion = theme_version();
                 @update_rs = {

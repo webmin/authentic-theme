@@ -975,3 +975,14 @@ settings_hotkey_slider=Snabbtangent för att växla sidomenyn
 theme_git_update_locked=Uppdatering av temat kan inte slutföras på grund av att det finns inte anslutning till GitHub eller så har gränsvärdet för API:t överskridits. Oautentiserade förfrågningar tillåter endast upp till 60 förfrågningar per timme. Prova igen senare eller använd konsolen och gör en manuell uppdatering via uppdateringsskriptet.
 
 settings_collapse_navigation_link=Visa knappen fäst/ta bort
+
+settings_cache_interval=Interval for running updates check
+settings_cache_interval_1h=every hour
+settings_cache_interval_12h=every 12 hours
+settings_cache_interval_1d=once a day
+settings_cache_interval_7d=every week
+settings_cache_interval_14d=twice a month
+settings_cache_interval_1m=once a month
+settings_cache_interval_3m=once every 3 months
+settings_cache_interval_6m=twice a year
+settings_cache_interval_1y=once a year
