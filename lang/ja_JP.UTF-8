@@ -524,7 +524,7 @@ theme_xhred_server_process_running= サーバープロセスはまだ実行中�
 #18.03
 settings_global_options_title= グローバルオプション
 settings_global_passgen_format= パスワードジェネレータ
-settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
+settings_global_passgen_format_description= 生成されたパスワードに使用されている長さと文字タイプを設定します。デフォルト値は、大文字と小文字を含む15文字のパスワードを表す<code>a-z、A-Z、0-9</code>と同じです。 <code>＃</code>ハッシュ記号を使用して特殊文字を追加することもできます
 theme_xhred_password_generator_new= 新しいパスワードを生成<br>(クリップボードに)
 theme_xhred_password_generator_new_success= 生成されたパスワード%passwordがクリップボードに正常にコピーされました。
 
@@ -545,7 +545,7 @@ settings_hide_top_loader= 上部の進行状況バーを非表示にする
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
 settings_font_family= フォントファミリー
-theme_xhred_global_shipped=Shipped
+theme_xhred_global_shipped= 出荷された
 theme_xhred_global_available= 利用可能
 theme_xhred_global_not_available= 利用不可
 theme_xhred_global_default= デフォルト
@@ -950,14 +950,6 @@ theme_xhred_filemanager_context_symlink= 新しいシンボリックリンクを
 theme_xhred_global_symbolic= シンボリックリンク
 theme_xhred_global_target= ターゲット
 settings_sysinfo_max_servers= 表示する仮想サーバーの最大数
-<<<<<<< HEAD
-
-right_download_is_ready= ダウンロードの準備ができました。
-theme_xhred_download_is_being_prepared= あなたのダウンロードは準備中です。それには時間がかかることがあります。お待ちください..
-theme_xhred_backup_is_being_prepared= バックアップを準備中です。それには時間がかかることがあります。お待ちください..
-
-settings_mail_ui= 新しいメールUIを有効にする
-=======
 
 right_download_is_ready= ダウンロードの準備ができました。
 theme_xhred_download_is_being_prepared= あなたのダウンロードは準備中です。それには時間がかかることがあります。お待ちください..
@@ -965,33 +957,32 @@ theme_xhred_backup_is_being_prepared= バックアップを準備中です。そ
 
 settings_mail_ui= 新しいメールUIを有効にする
 
-settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
-settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+settings_show_theme_configuration_for_admins_only= 管理者のみのテーマ設定ボタンを表示
+settings_show_theme_configuration_for_admins_only_error= アクセスが拒否されました:管理者がユーザーのカスタム設定へのアクセスをブロックしました
 
-theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
-settings_hotkey_navigation=Hotkey for toggling navigation menu
+theme_xhred_tooltip_navigation_pinned= ピン固定/ピン固定解除メニュー
+settings_hotkey_navigation= ナビゲーションメニューを切り替えるホットキー
 
-theme_xhred_search_in_webmin=Search Webmin
-theme_xhred_search_in_usermin=Search Usermin
-theme_xhred_search_in_virtualserver=Search Virtualmin
-theme_xhred_search_in_servermanager=Search Cloudmin
+theme_xhred_search_in_webmin= Webminを検索
+theme_xhred_search_in_usermin= 検索Usermin
+theme_xhred_search_in_virtualserver= Virtualminを検索
+theme_xhred_search_in_servermanager= 検索Cloudmin
 
-theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
+theme_xhred_filemanager_context_clipboard_selection= 選択をクリップボードにコピーする
 
-settings_hotkey_slider=Hotkey for toggling side slider
+settings_hotkey_slider= サイドスライダをトグルするためのホットキー
 
-theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+theme_git_update_locked= テーマの更新は、GitHubに接続していないか、またはそのAPIの制限を超えているため、完了できません。後者の認証されていない要求の場合、レート制限により1時間に最大60個の要求が許可されます。後で再試行するか、コンソールを使用して手動で更新スクリプトを実行してください。
 
-settings_collapse_navigation_link=Show pin/unpin button
+settings_collapse_navigation_link= ピン/ピン解除ボタンを表示する
 
-settings_cache_interval=Interval for running updates check
-settings_cache_interval_1h=every hour
-settings_cache_interval_12h=every 12 hours
-settings_cache_interval_1d=once a day
-settings_cache_interval_7d=every week
-settings_cache_interval_14d=twice a month
-settings_cache_interval_1m=once a month
-settings_cache_interval_3m=once every 3 months
-settings_cache_interval_6m=twice a year
-settings_cache_interval_1y=once a year
->>>>>>> upstream/master
+settings_cache_interval= 更新プログラムのチェック間隔
+settings_cache_interval_1h= 毎時
+settings_cache_interval_12h= 12時間ごと
+settings_cache_interval_1d= 一日一回
+settings_cache_interval_7d= 毎週
+settings_cache_interval_14d= 月二回
+settings_cache_interval_1m= 1ヶ月に1回
+settings_cache_interval_3m= 3ヶ月に1回
+settings_cache_interval_6m= 年二回
+settings_cache_interval_1y= 一年に一度
