@@ -1,17 +1,17 @@
 ## Contents
 * [Changelog](https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md)
-* [Download![](https://rostovtsev.ru/pub/media/icons/download-23x14.png)](https://github.com/authentic-theme/authentic-theme/releases)
+* [Download![](https://rostovtsev.io/pub/media/icons/download-23x14.png)](https://github.com/authentic-theme/authentic-theme/releases)
 * [About](#about)
 * [FAQ](#faq)
 * [Development](#development)
-* [Donate![](https://rostovtsev.ru/pub/media/icons/heart-23x15.png)](https://github.com/authentic-theme/authentic-theme#donate)
+* [Donate![](https://rostovtsev.io/pub/media/icons/heart-23x15.png)](https://github.com/authentic-theme/authentic-theme#donate)
 * [License](#license)
 
 ## About
 **Authentic Theme** is modern, ultrafast single-page application for [Webmin/](https://github.com/webmin/webmin)[Usermin](https://github.com/webmin/usermin) that is made with _love_. Managing servers, operating systems and applications has never been so easy.
 
-![](https://rostovtsev.ru/pub/media/screenshots/19.00-1.gif)
-![](https://rostovtsev.ru/pub/media/screenshots/screenshot-pallets-1710.png)
+![](https://rostovtsev.io/pub/media/screenshots/19.00-1.gif)
+![](https://rostovtsev.io/pub/media/screenshots/screenshot-pallets-1710.png)
 
 ### Features
 * Configurable theme options using _Webmin_/_Usermin_ UI, with ability to embed user logos, custom styles and scripts
@@ -29,15 +29,15 @@
 
 ### Supported browsers
 
-###### ![](https://rostovtsev.ru/pub/media/icons/chrome-16.png) Chrome 60+ (recommended)
+###### ![](https://rostovtsev.io/pub/media/icons/chrome-16.png) Chrome 60+ (recommended)
 
-###### ![](https://rostovtsev.ru/pub/media/icons/firefox-16.png) Firefox 56+
+###### ![](https://rostovtsev.io/pub/media/icons/firefox-16.png) Firefox 56+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/safari-16.png) Safari 11+
+###### ![](https://rostovtsev.io/pub/media/icons/safari-16.png) Safari 11+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/opera-16.png) Opera 46+
+###### ![](https://rostovtsev.io/pub/media/icons/opera-16.png) Opera 46+
 
-###### ![](https://rostovtsev.ru/pub/media/icons/edge-16.png) Edge 40+
+###### ![](https://rostovtsev.io/pub/media/icons/edge-16.png) Edge 40+
 
 
 ## FAQ
@@ -68,13 +68,13 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ## Development
 ### Lead developer
-* [Ilia Rostovtsev](https://rostovtsev.ru)  [![](https://rostovtsev.ru/pub/media/icons/stackoverflow-18x17.jpg)](http://stackoverflow.com/users/1455661/ilia-rostovtsev)
+* [Ilia Rostovtsev](https://rostovtsev.io)  [![](https://rostovtsev.io/pub/media/icons/stackoverflow-18x17.jpg)](http://stackoverflow.com/users/1455661/ilia-rostovtsev)
 
 ### Contributions
 
 #### Code
-* [Jamie Cameron](https://www.linkedin.com/in/jamiecameron2/)
-* [Joe Cooper](https://www.linkedin.com/in/swelljoe/)
+* [Jamie Cameron](https://github.com/jcameron)
+* [Joe Cooper](https://github.com/swelljoe)
 
 #### Translations
 * [Richard van Laak](https://github.com/Rvanlaak) (Dutch)
@@ -96,15 +96,15 @@ Theme only re-renders this module and adds support for code highlight, when edit
 ## Donate
  It takes countless hours to develop and maintain this project. Donations show appreciation. Your donation would help me to pay my bills and _excite future development_.
 
-[![](https://rostovtsev.ru/pub/media/icons/bitcoin-175-207-2.png)](http://rostovtsev.ru/pub/api/donation/bitcoin.html)
+[![](https://rostovtsev.io/pub/media/icons/bitcoin-175-207-2.png)](http://rostovtsev.io/pub/api/donation/bitcoin.html)
 <br>
-[![](https://rostovtsev.ru/pub/media/icons/litecoin-175-42-1.png)](http://rostovtsev.ru/pub/api/donation/litecoin.html)
+[![](https://rostovtsev.io/pub/media/icons/litecoin-175-42-1.png)](http://rostovtsev.io/pub/api/donation/litecoin.html)
 <br>
-[![](https://rostovtsev.ru/pub/media/icons/ethereum-175-42-5.png)](http://rostovtsev.ru/pub/api/donation/ethereum.html)
+[![](https://rostovtsev.io/pub/media/icons/ethereum-175-42-5.png)](http://rostovtsev.io/pub/api/donation/ethereum.html)
 <br>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://rostovtsev.ru/pub/media/icons/paypal-175x45.png)</a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=programming%40rostovtsev%2eru&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://rostovtsev.io/pub/media/icons/paypal-175x45.png)</a>
 <br>
-[![](https://rostovtsev.ru/pub/media/icons/yandex-175x38.png)](http://rostovtsev.ru/pub/api/donation/yandex.html)
+[![](https://rostovtsev.io/pub/media/icons/yandex-175x38.png)](http://rostovtsev.io/pub/api/donation/yandex.html)
 
 ## License
 

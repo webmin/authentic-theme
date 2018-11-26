@@ -1,6 +1,6 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -674,13 +674,13 @@ sub theme_ui_textarea
 sub theme_ui_submit
 {
     my ($label, $name, $dis, $tags) = @_;
-    my ($entry, $class, $icon) = get_button_style($label);
+    my ($keys, $class, $icon) = get_button_style($label);
 
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name) . "\"" : "") .
-      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"" .
-      $entry . "\">" . &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
+      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
+      &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
           ""
@@ -803,7 +803,7 @@ sub theme_ui_hr
 
 sub theme_ui_alert_box
 {
-    my ($msg, $class, $style, $new_line) = @_;
+    my ($msg, $class, $style, $new_line, $desc_to_title) = @_;
     my ($rv, $type, $tmsg, $fa);
 
     if ($class eq "success") {
@@ -814,6 +814,10 @@ sub theme_ui_alert_box
         $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+    }
+
+    if ($desc_to_title) {
+        $tmsg = $desc_to_title;
     }
 
     $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";
@@ -1155,26 +1159,26 @@ sub theme_redirect
 
 sub theme_header_redirect_download
 {
-    my ($url, $delay, $body) = @_;
+    my ($url, $delay, $message) = @_;
 
-    head();
+    PrintHeader();
     print "<!DOCTYPE html>\n";
     print "<html>\n";
     print "<head>\n";
-    print '<link rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon'
-      .
-      ( (&get_product_name() eq 'usermin') ? '-usermin' :
-          '-webmin'
-      ) .
-      '.ico">' . "\n";
     print '<meta charset="' . get_charset() . '">', "\n";
-    print "<meta data-predownload http-equiv=\"refresh\" content=\"$delay;url=$url\">\n";
+    embed_favicon();
     print "</head>\n";
-    if ($body) {
-        print "<body>\n";
-        print $body . "\n";
-        print "</body>\n";
+    my $script =
+      '<form data-predownload action="' .
+      $url . '" method="post" name="redirect"></form><script>setTimeout(function(){document.forms.redirect.submit()}, ' .
+      ($delay ? $delay . "000" : 0) . ');</script>';
+    print "<body>\n";
+    print $script . "\n";
+
+    if ($message) {
+        print $message . "\n";
     }
+    print "</body>\n";
     print '</html>';
 
 }
@@ -1186,16 +1190,16 @@ sub theme_redirect_download
         my $show  = $query =~ /show=1/ ? 1 : 0;
         my $delay = $_[0] =~ /unzip=1/ ? 1 : 0;
         my $zip   = $_[0] =~ /.zip/ ? 1 : 0;
-        my $body;
+        my $message;
 
         if ($delay) {
-            $body = $theme_text{'theme_xhred_download_is_being_prepared'};
+            $message = $theme_text{'theme_xhred_download_is_being_prepared'};
         }
         if (!$delay && !$show) {
-            $body = $theme_text{'right_download_is_ready'};
+            $message = $theme_text{'right_download_is_ready'};
         }
 
-        theme_header_redirect_download($_[0], $delay, $body);
+        theme_header_redirect_download($_[0], $delay, $message);
 
         return 1;
     } else {

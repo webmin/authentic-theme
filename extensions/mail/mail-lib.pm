@@ -1,12 +1,11 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
 
 use File::Basename;
-use JSON;
 use Digest::MD5 qw(md5_hex);
 use Encode qw( encode decode );
 
@@ -70,17 +69,6 @@ sub set_module
     my $module = get_module();
     set_env('foreign_module_name', $module);
     set_env('foreign_root_directory', (get_env('document_root') . '/' . $module));
-}
-
-sub get_json
-{
-    my (@obj) = @_;
-    print "Content-type: application/json; charset=utf-8\n\n";
-    if (scalar(@_)) {
-        print JSON->new->latin1->encode(\@_);
-    } else {
-        print JSON->new->latin1->encode({});
-    }
 }
 
 sub encode_guess

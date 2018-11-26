@@ -146,7 +146,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
 settings_right_reload=加载默认内容页面
-settings_right_reload_description=切换选项卡时，重新加载右框架内容页面。不保持当前打开的右框内容页面并默认重新加载？
 
 settings_right_hide_table_icons=隐藏表图标
 settings_right_hide_table_icons_description=从内容页面表中完全删除图标，并使用右侧纯链接
@@ -197,8 +196,6 @@ settings_hotkey_toggle_slider=滑块快捷键
 
 settings_side_slider_enabled=启用滑块
 settings_leftmenu_user_html=显示 HTML 片段
-settings_leftmenu_user_html_description=用户定义的文本或 HTML 代码将注入导航菜单的底部。它可用于识别目的。例如，要明确显示您的主机名，您可以添加到字段 <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
-
 
 theme_changelog=更新日志
 theme_conference=主题会议
@@ -209,7 +206,7 @@ theme_name=Authentic 主题
 theme_update=更新
 theme_update_available=最新版本
 theme_update_notice=更新通知
-theme_version=主题版本
+theme_version=Authentic theme version
 
 
 # Version 17.40
@@ -527,7 +524,7 @@ theme_xhred_server_process_running=服务器进程仍在运行！？您确定要
 #18.03
 settings_global_options_title=全局选项
 settings_global_passgen_format=密码生成器
-settings_global_passgen_format_description=设置生成的密码中使用的长度和字符类型。默认值使用 <code>12|a-z，A-Z，0-9，#</code> 表示密码长度为12个字符，包含大写和小写字母，数字和特殊字符。第一个值是数字，它是密码的长度，紧接着是 <code>|</code> 作为分隔符。接下来是类型，您可以使用数字 <code>0-9</code>，字母 <code>a-z</code> 和/或 <code>A-Z</code>，以及特殊字符 <code>#</code>。所有这些集合可以一起使用或单独使用，使用逗号作为分隔符。
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=生成新密码（点击复制到剪贴板）
 theme_xhred_password_generator_new_success=生成的密码 %password 已被成功复制到剪贴板。
 
@@ -548,8 +545,7 @@ settings_hide_top_loader=隐藏顶部进度条
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=在 Virtualmin/Cloudmin 中的下拉列表中显示符号图标
 settings_font_family=字体族
-settings_font_family_description=在所有呈现的字体中，<em>Roboto</em> 随主题一起提供，并设置为默认值。必须在本地计算机上安装其他字体才能工作。通过使用本地字体而非加载默认字体将加速主题的加载
-theme_xhred_global_shipped=已送出
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=可用
 theme_xhred_global_not_available=不适用
 theme_xhred_global_default=默认
@@ -786,7 +782,7 @@ theme_xhred_title_locale_full=全格式
 theme_xhred_title_locale_long=长格式
 theme_xhred_title_locale_short=短格式
 settings_navigation_always_collapse=总是折叠
-settings_side_slider_fixed_description=此选项仅适用于最低分辨率为 1366 水平像素的高清屏幕，并且具有禁用选项以保持导航始终折叠。
+settings_side_slider_fixed_description=此选项仅适用于最低分辨率为 1366 水平像素的高清屏幕，并且具有禁用选项以保持导航始终折叠
 theme_xhred_filemanager_records_per_page=每页的默认记录数
 theme_xhred_filemanager_sorting=默认排序类型
 theme_xhred_filemanager_sorting_asc=升序
@@ -828,7 +824,6 @@ theme_xhred_global_latest_stable=最新稳定版
 theme_xhred_global_latest_beta=最新 beta 版
 settings_perform_content_scrolling=为渐进式输出启用页面自动滚动
 settings_contrast_mode=启用高对比度模式
-settings_side_slider_enabled_description=此功能需要启用<em>系统状态</em>模块。
 theme_xhred_global_firewall=防火墙
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
@@ -961,3 +956,33 @@ theme_xhred_download_is_being_prepared=Your download is being prepared. It may t
 theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
 
 settings_mail_ui=Enable new mail UI
+
+settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
+settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+
+theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
+settings_hotkey_navigation=Hotkey for toggling navigation menu
+
+theme_xhred_search_in_webmin=Search Webmin
+theme_xhred_search_in_usermin=Search Usermin
+theme_xhred_search_in_virtualserver=Search Virtualmin
+theme_xhred_search_in_servermanager=Search Cloudmin
+
+theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
+
+settings_hotkey_slider=Hotkey for toggling side slider
+
+theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+
+settings_collapse_navigation_link=Show pin/unpin button
+
+settings_cache_interval=Interval for running updates check
+settings_cache_interval_1h=every hour
+settings_cache_interval_12h=every 12 hours
+settings_cache_interval_1d=once a day
+settings_cache_interval_7d=every week
+settings_cache_interval_14d=twice a month
+settings_cache_interval_1m=once a month
+settings_cache_interval_3m=once every 3 months
+settings_cache_interval_6m=twice a year
+settings_cache_interval_1y=once a year

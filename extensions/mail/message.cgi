@@ -2,7 +2,7 @@
 
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -41,4 +41,4 @@ if ($in{'mark'} eq 'starred') {
     }
 }
 
-get_json(\%email);
+print_json(\%email);

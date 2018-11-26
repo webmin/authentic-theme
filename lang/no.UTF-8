@@ -105,10 +105,8 @@ settings_contrast_level_navigation=Kontrast filter
 settings_contrast_level_navigation_description=Standard/gjeldende verdier <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_favorites=Vis Favoritter-knapp
 settings_font_family=Skrift-familie
-settings_font_family_description=Blant alle presenterte skrift-varianter leveres <em>Roboto</em> med temaet og er satt som standard. De andre skriftene må være installert på din lokale maskin for å fungere. Ved å bruke lokale skrifter, blir standard font ikke lastet, noe som vil resultere i raskere lasting av tema
-settings_global_options_title=Globale innstillinger
 settings_global_passgen_format=Passord generator
-settings_global_passgen_format_description=Angi lengde og tegntype som brukes i genererte passord. Første verdi er numerisk, og angir passord lengden, umiddelbart etterfulgt av <code>|</code> som skilletegn. Neste er typen, hvor du kan bruke tall <code>0-9</code>, bokstaver <code>a-z</code> og eller <code>A-Z</code>, og spesialtegn <code>#</code>. Alle disse settene kan brukes sammen eller enkeltvis, bruk komma som skilletegn mellom dem. Standardverdien er <code>12|a-z,A-Z,0-9,#</code>, som angir passord med 12 tegns lengde, og som inneholder små og store bokstaver, tall og spesialtegn.
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 settings_grayscale_level_navigation=Gråskala filter
 settings_grayscale_level_navigation_description=Standard/gjeldende verdier <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_hide_top_loader=Skjul fremdriftslinjen på toppen og lasteren dens
@@ -146,8 +144,6 @@ settings_leftmenu_netdata_link=Foretrukket lenke for Netdata tjener
 settings_leftmenu_section_hide_refresh_modules=Skjul lenken <kbd>Oppfrisk moduler</kbd>
 settings_leftmenu_section_hide_unused_modules=Skjul lenken <kbd>Ubrukte moduler</kbd>
 settings_leftmenu_user_html=Vis HTML snippet
-settings_leftmenu_user_html_description=Brukerdefinert tekst eller HTML-kode settes inn nederst i navigasjonsmenyen. Den kan brukes til identifikasjonsformål. Hvis du for eksempel vil vise vertsnavnet ditt eksplisitt, kan du legge til feltet <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
-settings_leftmenu_user_html_only_for_administrator=Vis HTML snippet kun for administratorer
 settings_leftmenu_vm_cm_dropdown_icons=Vis symbolske ikoner i neddtrekk i Virtualmin/Cloudmin
 settings_leftmenu_width=Foretrukket bredde
 settings_leftmenu_width_description=Standard/gjeldende bredde <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
@@ -175,8 +171,6 @@ settings_right_notification_slider_options_title=Notification Slider options
 settings_right_options=Innstillinger
 settings_right_page_defaults_title=Standard sider
 settings_right_reload=Last standard innholdsside
-settings_right_reload_description=Når du bytter faner, lastes innholdet på høyre ramme på nytt. Ikke behold høyre rammeinnholdsside og last på nytt med standard innholdsside?
-settings_right_restore_defaults=Gjenopprett standardverdier
 settings_right_restored=Gjenopprettet
 settings_right_restoring=Gjenoppretter
 settings_right_saved=Lagret
@@ -204,7 +198,7 @@ settings_security_description=Sikkerhetsvarsler lar deg sette opp e-postvarsler 
 settings_security_title=Innstillinger for sikkerhetsvarsler
 settings_sepia_level_navigation=Sepia filter
 settings_sepia_level_navigation_description=Standard/gjeldende verdier <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_show_night_mode_link=Show day/night mode toggle
+settings_show_night_mode_link=Show day/night mode button
 settings_show_terminal_link=Vis terminal-knapp
 settings_side_slider_enabled=Aktiver slider
 settings_side_slider_favorites_enabled=Vis Favoritter-fane
@@ -271,7 +265,7 @@ theme_update=Oppdater
 theme_update_available=Siste tilgjengelige versjon
 theme_update_footer=Vær snill å rapportere feil til $ 1 depot. Følg temaets $ 2 kanal for de siste oppdateringene.
 theme_update_notice=Oppdateringsmelding
-theme_version=Temaversjon
+theme_version=Authentic theme version
 theme_xhred_add_after=Legg til etter
 theme_xhred_add_before=Legg til før
 theme_xhred_database_add_new_row=Legg til rad
@@ -600,7 +594,7 @@ theme_xhred_global_reauthenticate=Reauthenticate
 #19.04
 settings_sysinfo_real_time_status=Enable real-time monitoring
 settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
+settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data
 theme_xhred_global_redirecting=Redirecting
 
 
@@ -647,7 +641,7 @@ theme_xhred_title_locale_full=Full format
 theme_xhred_title_locale_long=Long format
 theme_xhred_title_locale_short=Short format
 settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed.
+settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed
 theme_xhred_filemanager_records_per_page=Default number of records per page
 theme_xhred_filemanager_sorting=Default sorting type
 theme_xhred_filemanager_sorting_asc=Ascending
@@ -689,7 +683,6 @@ theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
@@ -822,3 +815,33 @@ theme_xhred_download_is_being_prepared=Your download is being prepared. It may t
 theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
 
 settings_mail_ui=Enable new mail UI
+
+settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
+settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+
+theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
+settings_hotkey_navigation=Hotkey for toggling navigation menu
+
+theme_xhred_search_in_webmin=Search Webmin
+theme_xhred_search_in_usermin=Search Usermin
+theme_xhred_search_in_virtualserver=Search Virtualmin
+theme_xhred_search_in_servermanager=Search Cloudmin
+
+theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
+
+settings_hotkey_slider=Hotkey for toggling side slider
+
+theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+
+settings_collapse_navigation_link=Show pin/unpin button
+
+settings_cache_interval=Interval for running updates check
+settings_cache_interval_1h=every hour
+settings_cache_interval_12h=every 12 hours
+settings_cache_interval_1d=once a day
+settings_cache_interval_7d=every week
+settings_cache_interval_14d=twice a month
+settings_cache_interval_1m=once a month
+settings_cache_interval_3m=once every 3 months
+settings_cache_interval_6m=twice a year
+settings_cache_interval_1y=once a year

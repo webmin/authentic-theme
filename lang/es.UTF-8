@@ -147,7 +147,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_right_reload=Load default content page
-settings_right_reload_description=When switching tabs, right frame content page is reloaded. Do not keep currently opened right frame content page and reload with default?
 
 settings_right_hide_table_icons=Hide table icons
 settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
@@ -194,12 +193,10 @@ settings_right_clear_local_cache=Clear cache
 settings_right_notification_slider_options_title=Side slider options
 settings_side_slider_fixed=Keep always visible
 settings_side_slider_palette=Slider palette
-settings_hotkey_toggle_slider=Hotkey for slider
+settings_hotkey_toggle_slider=Hotkey for side slider
 
 settings_side_slider_enabled=Enable slider
 settings_leftmenu_user_html=Show HTML snippet
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
-
 
 theme_changelog=Notas de la versión
 theme_conference=Theme Conference
@@ -210,7 +207,7 @@ theme_name=Authentic Tema
 theme_update=Actualizar
 theme_update_available=La última versión disponible
 theme_update_notice=Notificación de actualización
-theme_version=Versión Tema
+theme_version=Authentic theme version
 
 
 # Version 17.40
@@ -349,7 +346,7 @@ right_unlimited=Unlimited
 settings_leftmenu_width=Preferable width
 settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Show switches reversed
-settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required.
+settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required
 
 
 #17.63
@@ -529,7 +526,7 @@ theme_xhred_server_process_running=Server process is still running!? Are you sur
 #18.03
 settings_global_options_title=Global options
 settings_global_passgen_format=Password generator
-settings_global_passgen_format_description=Set the length and character type used in the generated password. First value is numerical, which is the length of the password, immediately followed by <code>|</code> as a delimiter. Next is the type, where you can use numbers <code>0-9</code>, letters <code>a-z</code> and/or <code>A-Z</code>, and special characters <code>#</code>. All of these sets can be used together or individually, using comma as a delimiter. Default value equals to <code>12|a-z,A-Z,0-9,#</code>, which represents password with 12 characters in length, containing upper and lower case letters, numbers and special characters.
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Generate New Password<br> (To Clipboard)
 theme_xhred_password_generator_new_success=Generated password %password has been copied to clipboard successfully.
 
@@ -550,7 +547,6 @@ settings_hide_top_loader=Hide top progress bar
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
 settings_font_family=Font family
-settings_font_family_description=Among all presented fonts' variants <em>Roboto</em> is shipped with the theme and set as default. The other fonts must be installed on your local computer in order to work. By using local fonts, the default one is not loaded, which will result in faster theme load
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Available
 theme_xhred_global_not_available=Not available
@@ -606,7 +602,7 @@ theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
 settings_button_tooltip=Show tooltip on buttons
-settings_show_night_mode_link=Show day/night mode toggle
+settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
 settings_title=Theme Configuration
 settings_subtitle=For user
@@ -742,7 +738,7 @@ theme_xhred_global_reauthenticate=Reauthenticate
 #19.04
 settings_sysinfo_real_time_status=Enable real-time monitoring
 settings_sysinfo_real_time_timeout=Interval for performing update
-settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data.
+settings_sysinfo_real_time_timeout_description=Set desired interval for updating monitors in background. The value meant to be in milliseconds. Keep this value as low as possible to prevent loss of short-term data
 theme_xhred_global_redirecting=Redirecting
 
 
@@ -789,7 +785,7 @@ theme_xhred_title_locale_full=Full format
 theme_xhred_title_locale_long=Long format
 theme_xhred_title_locale_short=Short format
 settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed.
+settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed
 theme_xhred_filemanager_records_per_page=Default number of records per page
 theme_xhred_filemanager_sorting=Default sorting type
 theme_xhred_filemanager_sorting_asc=Ascending
@@ -831,7 +827,6 @@ theme_xhred_global_latest_stable=Latest stable
 theme_xhred_global_latest_beta=Latest beta
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
-settings_side_slider_enabled_description=This feature requires <em>System Status</em> module to be enabled.
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
@@ -964,3 +959,33 @@ theme_xhred_download_is_being_prepared=Your download is being prepared. It may t
 theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
 
 settings_mail_ui=Enable new mail UI
+
+settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
+settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+
+theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
+settings_hotkey_navigation=Hotkey for toggling navigation menu
+
+theme_xhred_search_in_webmin=Search Webmin
+theme_xhred_search_in_usermin=Search Usermin
+theme_xhred_search_in_virtualserver=Search Virtualmin
+theme_xhred_search_in_servermanager=Search Cloudmin
+
+theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
+
+settings_hotkey_slider=Hotkey for toggling side slider
+
+theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+
+settings_collapse_navigation_link=Show pin/unpin button
+
+settings_cache_interval=Interval for running updates check
+settings_cache_interval_1h=every hour
+settings_cache_interval_12h=every 12 hours
+settings_cache_interval_1d=once a day
+settings_cache_interval_7d=every week
+settings_cache_interval_14d=twice a month
+settings_cache_interval_1m=once a month
+settings_cache_interval_3m=once every 3 months
+settings_cache_interval_6m=twice a year
+settings_cache_interval_1y=once a year

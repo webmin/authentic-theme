@@ -146,7 +146,6 @@ settings_animation_tabs=Enable animation in content page
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
 settings_right_reload=Ladda standard innehållssida
-settings_right_reload_description=När du byter flikar, uppdateras den högra sidan. Behåll inte den nuvarande högra sidans innehåll och uppdatera den som standard?
 
 settings_right_hide_table_icons=Dölj tabellikonerna för högra ramen
 settings_right_hide_table_icons_description=Ta bort samtliga ikoner från tabellerna och visa i stället endast textlänkar med en högersparre
@@ -197,8 +196,6 @@ settings_hotkey_toggle_slider=Snabbtangent för sidomeny
 
 settings_side_slider_enabled=Aktivera sidomeny
 settings_leftmenu_user_html=Visa HTML-utdrag
-settings_leftmenu_user_html_description=User defined text or HTML code will be injected to the bottom of the navigation menu. It can be used for identification purposes. For example, to make explicitly show your hostname, you could add to the field <code style="white-space: nowrap;">&lt;br&gt;&lt;kbd&gt;hostname:10000&lt;/kbd&gt;</code>
-
 
 theme_changelog=Ändringslogg
 theme_conference=Temakonferens
@@ -209,7 +206,7 @@ theme_name=Authentic Theme
 theme_update=Uppdatera
 theme_update_available=Senaste tillgängliga version
 theme_update_notice=Uppdateringsmeddelande
-theme_version=Temaversion
+theme_version=Authentic theme version
 
 
 # Version 17.40
@@ -527,7 +524,7 @@ theme_xhred_server_process_running=Serverprocessen körs fortfarande? Är du sä
 #18.03
 settings_global_options_title=Globala alternativ
 settings_global_passgen_format=Lösenordsskapare
-settings_global_passgen_format_description=Ange längden och teckentypen som ska användas i det nya lösenordet. Första värdet är numeriskt, vilket är längden på lösenordet, och direkt efter följer <code>|</code> som en avgränsare. Sen kommer texentypen, där du kan använda siffrorna <code>0-9</code>, bokstäverna <code>a-z</code> och/eller <code>A-Z</code>, och även specialtecknen <code>#</code>. Dessa uppsättningar kan användas tillsammans eller var för sig, med hjälp av kommatecken som avgränsare. Standardvärdet är <code>12|a-z,A-Z,0-9,#</code>, vilket motsvarar ett lösenord på 12 tecken, som innehåller både versala och gemena bokstäver, nummer och specialtecken.
+settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Skapa nytt lösenord<br> (till urklippet)
 theme_xhred_password_generator_new_success=Det nya lösenordet %password har blivit kopierat till urklippet.
 
@@ -548,8 +545,7 @@ settings_hide_top_loader=Göm övre förlopps- och laddindikatorn
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Visa symboliska ikoner i drag-och-släpp i Virtualmin/Cloudmin
 settings_font_family=Typsnitt
-settings_font_family_description=Bland alla typsnitt är <em>Roboto</em> satt som standardtypsnitt på temat. De andra typsnitten måste installeras lokalt på din dator för att det ska fungera. När du använder lokala typsnitt, är inte standardtypsnittet laddat, vilken innebär att temat laddas fortare
-theme_xhred_global_shipped=Medföljer
+theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Tillgängliga
 theme_xhred_global_not_available=Inte tillgängliga
 theme_xhred_global_default=Standard
@@ -786,7 +782,7 @@ theme_xhred_title_locale_full=Fullt format
 theme_xhred_title_locale_long=Långt format
 theme_xhred_title_locale_short=Kort format
 settings_navigation_always_collapse=Alltid ihopfällda
-settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på HD-skärmar med en minsta upplösning på 1366 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld.
+settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på HD-skärmar med en minsta upplösning på 1366 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld
 theme_xhred_filemanager_records_per_page=Standard antal poster per sida
 theme_xhred_filemanager_sorting=Standard sorteringsordning
 theme_xhred_filemanager_sorting_asc=Stigande
@@ -828,7 +824,6 @@ theme_xhred_global_latest_stable=Senaste stabila
 theme_xhred_global_latest_beta=Senaste betan
 settings_perform_content_scrolling=Aktivera automatisk sidrullning för progressiv utmatning
 settings_contrast_mode=Aktivera högkontrastläge
-settings_side_slider_enabled_description=Denna funktionen kräver att modulen <em>Systemstatus</em> är aktiverad.
 theme_xhred_global_firewall=Brandvägg
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
@@ -960,4 +955,34 @@ right_download_is_ready=Din nerladdning är redo.
 theme_xhred_download_is_being_prepared=Din nerladdning förbereds. Det kan ta ett tag. Vänta...
 theme_xhred_backup_is_being_prepared=Din säkerhetskopia förbereds. Det kan ta ett tag. Vänta...
 
-settings_mail_ui=Enable new mail UI
+settings_mail_ui=Aktivera nytt e-postanvändargränssnitt
+
+settings_show_theme_configuration_for_admins_only=Visa endast temainställningar för administratörer
+settings_show_theme_configuration_for_admins_only_error=Åtkomst nekad: Administratören har blockerat åtkomst till användaranpassningar
+
+theme_xhred_tooltip_navigation_pinned=Fäst/ta bort navigeringsmeny
+settings_hotkey_navigation=Snabbtangent för att växla navigeringsmenyn
+
+theme_xhred_search_in_webmin=Sök Webmin
+theme_xhred_search_in_usermin=Sök Usermin
+theme_xhred_search_in_virtualserver=Sök Virtualmin
+theme_xhred_search_in_servermanager=Sök Cloudmin
+
+theme_xhred_filemanager_context_clipboard_selection=Kopiera markerat till urklippet
+
+settings_hotkey_slider=Snabbtangent för att växla sidomenyn
+
+theme_git_update_locked=Uppdatering av temat kan inte slutföras på grund av att det finns inte anslutning till GitHub eller så har gränsvärdet för API:t överskridits. Oautentiserade förfrågningar tillåter endast upp till 60 förfrågningar per timme. Prova igen senare eller använd konsolen och gör en manuell uppdatering via uppdateringsskriptet.
+
+settings_collapse_navigation_link=Visa knappen fäst/ta bort
+
+settings_cache_interval=Interval for running updates check
+settings_cache_interval_1h=every hour
+settings_cache_interval_12h=every 12 hours
+settings_cache_interval_1d=once a day
+settings_cache_interval_7d=every week
+settings_cache_interval_14d=twice a month
+settings_cache_interval_1m=once a month
+settings_cache_interval_3m=once every 3 months
+settings_cache_interval_6m=twice a year
+settings_cache_interval_1y=once a year

@@ -2,7 +2,7 @@
 
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -234,4 +234,4 @@ $search{'query'} = $in{'search'};
 
 # Redirect to it
 &pop3_logout_all();
-get_json(\%search);
+print_json(\%search);

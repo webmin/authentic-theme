@@ -2,7 +2,7 @@
 
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -38,4 +38,4 @@ foreach my $folder (@folders_data) {
                                     unread => $unread, };
     defined $parent ? (push @{ $temporary{$parent}{children} }, $data) : (push(@folders, $data));
 }
-get_json(@folders);
+print_json(\@folders);

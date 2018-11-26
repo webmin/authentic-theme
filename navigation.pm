@@ -1,6 +1,6 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Rostovtsev <programming@rostovtsev.ru>
+# Copyright Ilia Rostovtsev <programming@rostovtsev.io>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -79,7 +79,8 @@ if (
                                         $theme_text{'settings_right_theme_left_background_title'}, 1);
                     $__custom_print++;
 
-                } elsif (!foreign_available("webmin") && $__custom_print eq '0') {
+                } elsif (!foreign_available("webmin") && $__custom_print eq '0' &&
+                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true') {
                     print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
                 }
