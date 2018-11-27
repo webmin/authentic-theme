@@ -1309,6 +1309,7 @@ sub get_sysinfo_vars
         if (&foreign_check("csf") && &foreign_available("csf")) {
 
             # Define CSF installed version
+            my $error;
             my $csf_update_required;
             my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
             $csf_installed_version = $csf_installed_version->[0];
@@ -1320,9 +1321,9 @@ sub get_sysinfo_vars
             {
                 $csf_remote_version = theme_cached('version-csf-stable');
                 if (!$csf_remote_version) {
-                    http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, undef, undef,
-                                  undef, undef, undef, 5);
-                    theme_cached('version-csf-stable', $csf_remote_version);
+                    http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
+                                  undef, undef, undef, undef, 5);
+                    theme_cached('version-csf-stable', $csf_remote_version, $error);
                 }
 
                 # Trim versions' number
@@ -2080,7 +2081,7 @@ sub theme_remote_version
                               undef,                                                        5,
                               undef,                                                        undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
-                theme_cached('version-theme-development', $remote_version);
+                theme_cached('version-theme-development', $remote_version, $error);
 
             }
 
@@ -2099,7 +2100,7 @@ sub theme_remote_version
                               undef,                                                                       5,
                               undef,                                                                       undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
-                theme_cached('version-theme-stable', $remote_version);
+                theme_cached('version-theme-stable', $remote_version, $error);
             }
         }
     }
@@ -2126,10 +2127,29 @@ sub theme_cached
     my @data;
 
     if (@cached && $cached[9] > time() - $ctime) {
+
+        # Use cache for now
         @data = @$cdata;
     } else {
-        if ($_[1]) {
+        if ($_[2]) {
+            if ($cdata) {
+
+                # Error: Use current cache for another period
+                @data = @$cdata;
+            } else {
+
+                # Error: No cache available
+                return undef;
+            }
+        } elsif ($_[1]) {
+
+            # Use supplied data
             push(@data, $_[1]);
+        }
+
+        if (@data) {
+
+            # Write cache
             my $fh = "cache";
             open_tempfile($fh, ">$fcached");
             print_tempfile($fh, serialise_variable(\@data));
