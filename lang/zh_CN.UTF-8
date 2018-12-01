@@ -986,3 +986,5 @@ settings_cache_interval_1m=once a month
 settings_cache_interval_3m=once every 3 months
 settings_cache_interval_6m=twice a year
 settings_cache_interval_1y=once a year
+
+theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.

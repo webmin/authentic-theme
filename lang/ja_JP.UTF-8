@@ -986,3 +986,5 @@ settings_cache_interval_1m= 1ヶ月に1回
 settings_cache_interval_3m= 3ヶ月に1回
 settings_cache_interval_6m= 年二回
 settings_cache_interval_1y= 一年に一度
+
+theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.
