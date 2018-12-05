@@ -451,10 +451,10 @@ const mail = (function() {
    *
    * @since 19.20
    *
-   * @return {object}                Reveals messages module API
-   * @return {type} messages.get     Lists messages with default sorting
-   * @return {type} messages.sort    Lists messages with requested sorting
-   * @return {type} messages.storage Accesses messages data storage
+   * @return {object}                    Reveals messages module API
+   * @return {void} messages.get         Lists messages with default sorting
+   * @return {void} messages.sort        Lists messages with requested sorting
+   * @return {object} messages.storage   Accesses messages data storage
    */
   const messages = (function() {
 
@@ -669,6 +669,7 @@ const mail = (function() {
 
         // Import targets
         let button = {
+            compose: $$.$.controls.compose.button, 
             search: $$.element('controls.search.dropdown'),
             refresh: $$.element('controls.refresh.button'),
             delete: $$.element('controls.delete'),
@@ -1078,8 +1079,9 @@ const mail = (function() {
          *
          * @returns {void}
          */
-        $($$.$.controls.compose.button).off('click');
-        $($$.$.controls.compose.button).on('click', function() {
+        $(folders.data.selector.navigation)
+          .off('click', button.compose)
+          .on('click', button.compose, function() {
           _.content(_.variable.module.link() + '/reply_mail.cgi?new=1&folder=0');
         })
       },
@@ -1398,10 +1400,11 @@ const mail = (function() {
    *
    * @since 19.17
    *
-   * @return {object}              Reveals folders module API
-   * @return {type} folders.get    Retrieve mail folders
-   * @return {type} folders.set    Mark folder as active
-   * @return {type} folders.adjust Adjust active folder into view
+   * @return {object}                    Reveals folders module API
+   * @return {void}   folders.get        Retrieve mail folders
+   * @return {void}   folders.set        Mark folder as active
+   * @return {void}   folders.adjust     Adjust active folder into view
+   * @return {object} folders.data       Returns module properties
    */
   const folders = (function() {
     let
@@ -1580,7 +1583,8 @@ const mail = (function() {
     return {
       get: get,
       set: set,
-      adjust: adjust
+      adjust: adjust,
+      data: data
     }
   })()
 
