@@ -21,16 +21,16 @@ print '<div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1
 
 # Get system info to show
 my @info = theme_list_combined_system_info();
-my ($has_stats,          $cpu_percent,        $mem_percent,             $virt_percent,
-    $disk_percent,       $host,               $os,                      $webmin_version,
-    $virtualmin_version, $cloudmin_version,   $authentic_theme_version, $local_time,
-    $kernel_arch,        $cpu_type,           $cpu_temperature,         $hdd_temperature,
-    $uptime,             $running_proc,       $load,                    $real_memory,
-    $virtual_memory,     $disk_space,         $package_message,         $csf_title,
-    $csf_data,           $csf_remote_version, $authentic_remote_version
+my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
+    $host,               $os,                      $webmin_version,  $virtualmin_version,
+    $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
+    $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
+    $running_proc,       $load,                    $real_memory,     $virtual_memory,
+    $disk_space,         $package_message,         $csf_title,       $csf_data,
+    $csf_remote_version, $authentic_remote_version
 ) = get_sysinfo_vars(\@info);
 
-if ($has_stats) {
+if ($get_user_level ne '3') {
     print_sysstats_panel_start(\@info);
 
     # Easypie charts
@@ -52,13 +52,15 @@ if ($has_stats) {
         push @table_data, [theme_text('body_os'), $os, 'sysinfo_os'];
     }
 
-    # Webmin version
-    push @table_data, [theme_text('body_webmin'), $webmin_version, 'sysinfo_webmin_version'];
+    # Webmin and Usermin versions
+    if ($webmin_version) {
+        push @table_data, [theme_text('body_webmin'), $webmin_version, 'sysinfo_webmin_version'];
 
-    # Usermin version
-    if ($has_usermin) {
-        push @table_data,
-          [theme_text('body_usermin'), product_version_update($has_usermin_version, 'u'), 'sysinfo_usermin_version'];
+        # Usermin version
+        if ($has_usermin) {
+            push @table_data,
+              [theme_text('body_usermin'), product_version_update($has_usermin_version, 'u'), 'sysinfo_usermin_version'];
+        }
     }
 
     # Virtualmin version
@@ -82,7 +84,9 @@ if ($has_stats) {
     }
 
     #System time
-    push @table_data, [theme_text('body_time'), $local_time, 'sysinfo_local_time'];
+    if ($local_time) {
+        push @table_data, [theme_text('body_time'), $local_time, 'sysinfo_local_time'];
+    }
 
     # Kernel and arch
     if ($kernel_arch) {
@@ -152,7 +156,7 @@ if ($has_stats) {
 
     print get_extended_sysinfo(\@info, '-1');
 
-} elsif ($get_user_level eq '3') {
+} else {
 
     my @mailbox = grep {$_->{'module'} eq 'mailbox'} @info;
     my @quota   = grep {$_->{'module'} eq 'quota'} @info;
@@ -175,12 +179,6 @@ if ($has_stats) {
     }
     $commonmods_data .= ui_table_end();
     print_panel(1, 'account_functions', $theme_text{'theme_left_mail_account_functions'}, ($commonmods_data));
-} else {
-
-    # print_array(\@info);
-    print get_extended_sysinfo(\@info, '-1');
-
 }
-
 print '</div>' . "\n";
 footer('stripped');

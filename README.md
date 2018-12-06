@@ -83,7 +83,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [Silviu-Ionut Radu](https://github.com/sealview) (Romanian)
 * [Ilia Rostovtsev](https://github.com/rostovtsev) (Russian)
 * [David Canalias](https://github.com/diathesaron) (Catalan)
-* [Sopor Spr](https://github.com/Sopor-) (Swedish)
+* [Sopor](https://github.com/Sopor-) (Swedish)
 * [7stars](https://github.com/7starsone) (Spanish, French, Portuguese)
 * [miyorineko](https://github.com/miyorineko), [dreista](https://github.com/Dreista) (Chinese)
 * [jlndk](https://github.com/jlndk) (Danish)

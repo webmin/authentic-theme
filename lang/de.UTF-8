@@ -593,7 +593,7 @@ theme_xhred_move_down=nach unten
 theme_xhred_add_after=Danach einf&uuml;gen
 theme_xhred_add_before=Davor einf&uuml;gen
 settings_button_tooltip=Tooltips auf Kn&ouml;pfen anzeigen
-settings_show_night_mode_link=Show day/night mode toggle
+settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
 settings_title=Design Konfiguration
 settings_subtitle=F&uuml;r Benutzer
@@ -967,3 +967,18 @@ theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
 settings_hotkey_slider=Hotkey for toggling side slider
 
 theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
+
+settings_collapse_navigation_link=Show pin/unpin button
+
+settings_cache_interval=Interval for running updates check
+settings_cache_interval_1h=every hour
+settings_cache_interval_12h=every 12 hours
+settings_cache_interval_1d=once a day
+settings_cache_interval_7d=every week
+settings_cache_interval_14d=twice a month
+settings_cache_interval_1m=once a month
+settings_cache_interval_3m=once every 3 months
+settings_cache_interval_6m=twice a year
+settings_cache_interval_1y=once a year
+
+theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.

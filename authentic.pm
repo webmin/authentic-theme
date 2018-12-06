@@ -820,7 +820,7 @@ sub theme_ui_alert_box
         $tmsg = $desc_to_title;
     }
 
-    $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";
+    $rv .= '<div class="alert ' . $type . '" style=" ' . $style . '">' . "\n";
     $rv .= '<i class="fa fa-fw ' . $fa . '"></i> <strong>' . $tmsg . '</strong>';
     $rv .= ($new_line ? '<br>' : '&nbsp;') . "\n";
     $rv .= $msg . "\n";
