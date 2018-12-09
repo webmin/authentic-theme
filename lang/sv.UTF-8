@@ -988,3 +988,8 @@ settings_cache_interval_6m=två gånger om året
 settings_cache_interval_1y=en gång om året
 
 theme_xhred_reload_notification=Temakonfiguration har ändrats, men inte sparats. Sidan laddas därför om för att återställas till nuvarande inställningar.
+
+
+#19.22
+theme_xhred_global_save_as=Save as
+theme_xhred_editor_save_file_as=Save file as

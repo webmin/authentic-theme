@@ -1002,3 +1002,8 @@ settings_cache_interval_6m=twice a year
 settings_cache_interval_1y=once a year
 
 theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.
+
+
+#19.22
+theme_xhred_global_save_as=Save as
+theme_xhred_editor_save_file_as=Save file as
