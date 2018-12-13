@@ -139,7 +139,7 @@ sub product_version_update
 {
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.890', '1.740', '6.03', '9.3', '12.06', $tconfig{'show_beta_updates'});
+      ('1.900', '1.750', '6.03', '9.3', '12.09', $tconfig{'beta_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||

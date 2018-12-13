@@ -2069,7 +2069,7 @@ sub theme_remote_version
     my $error;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
-        if (($tconfig{'show_beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check) {
+        if (($tconfig{'beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check) {
             if (!$nocache) {
                 $remote_version = theme_cached('version-theme-development');
             }
