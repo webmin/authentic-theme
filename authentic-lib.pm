@@ -13,8 +13,8 @@ use Encode qw( encode decode );
 use Fcntl qw( :flock );
 use Time::Local;
 
-use WebminCore;
 BEGIN {push(@INC, "..");}
+use WebminCore;
 
 our (
     %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user,
