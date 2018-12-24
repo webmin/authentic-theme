@@ -976,15 +976,20 @@ theme_git_update_locked=Uppdatering av temat kan inte slutföras på grund av at
 
 settings_collapse_navigation_link=Visa knappen fäst/ta bort
 
-settings_cache_interval=Interval for running updates check
-settings_cache_interval_1h=every hour
-settings_cache_interval_12h=every 12 hours
-settings_cache_interval_1d=once a day
-settings_cache_interval_7d=every week
-settings_cache_interval_14d=twice a month
-settings_cache_interval_1m=once a month
-settings_cache_interval_3m=once every 3 months
-settings_cache_interval_6m=twice a year
-settings_cache_interval_1y=once a year
+settings_cache_interval=Intervall för uppdateringskontroll
+settings_cache_interval_1h=varje timme
+settings_cache_interval_12h=var tolfte timme
+settings_cache_interval_1d=en gång om dagen
+settings_cache_interval_7d=varje vecka
+settings_cache_interval_14d=två gånger i månaden
+settings_cache_interval_1m=en gång i månaden
+settings_cache_interval_3m=en gång var tredje månad
+settings_cache_interval_6m=två gånger om året
+settings_cache_interval_1y=en gång om året
 
-theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.
+theme_xhred_reload_notification=Temakonfiguration har ändrats, men inte sparats. Sidan laddas därför om för att återställas till nuvarande inställningar.
+
+
+#19.22
+theme_xhred_global_save_as=Spara som
+theme_xhred_editor_save_file_as=Spara fil som

@@ -11,8 +11,8 @@ no warnings 'uninitialized';
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 
-use WebminCore;
 BEGIN {push(@INC, "..");}
+use WebminCore;
 
 our (%in, $config_directory, $current_theme);
 

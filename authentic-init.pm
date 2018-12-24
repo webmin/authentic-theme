@@ -551,11 +551,14 @@ sub init_vars
         do "$root_directory/$current_theme/.debug.pm";
     }
 
-    our %theme_text = (load_language($current_theme), %text);
-
+    my %tconfig_local = settings("$config_directory/$current_theme/config");
+    our %tconfig = (%tconfig, %tconfig_local);
+    
     our %theme_config = (settings_default(),
                          settings($config_directory . "/$current_theme/settings.js", 'settings_'),
                          settings(get_tuconfig_file(),                               'settings_'));
+
+    our %theme_text = (load_language($current_theme), %text);
 
     our $theme_requested_url         = (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
     our $theme_requested_from_module = get_env('http_x_requested_from');
