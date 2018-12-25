@@ -1,5 +1,25 @@
 ## Changelog
 
+#### Version 19.22 (December 25, 2018) &nbsp;&nbsp;:christmas_tree:
+* Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)
+* Add ability to resize tree-view in File Manager [#1271](https://github.com/authentic-theme/authentic-theme/issues/1271)
+* Add hotkey for toggling word wrap in file viewers [#1264](https://github.com/authentic-theme/authentic-theme/issues/1264)
+* Add improved context menu interactions for File Manager [#1184](https://github.com/authentic-theme/authentic-theme/issues/1184) [#1240](https://github.com/authentic-theme/authentic-theme/issues/1240)
+* Add warning modal for unsaved forms [#1248](https://github.com/authentic-theme/authentic-theme/issues/1248)
+* Add theme pre-reload message [#1248/comment-443444767](https://github.com/authentic-theme/authentic-theme/issues/1248#issuecomment-443444767)
+* Add an option to hide pin/unpin navigation menu button [#1241](https://github.com/authentic-theme/authentic-theme/issues/1241)
+* Add styling and progressive output for Custom Commands module when cloned [sourceforge.net/5211](https://sourceforge.net/p/webadmin/bugs/5211)
+* Fix interactions and restoration of tabs on first load in File Manager [#1246](https://github.com/authentic-theme/authentic-theme/issues/1246)
+* Fix new styling for Custom Commands module respect columns config option [#1245](https://github.com/authentic-theme/authentic-theme/issues/1245)
+* Fix to improve page auto-scroll user interactions
+* Fix code highlight in PHP mixed content mode [#1239](https://github.com/authentic-theme/authentic-theme/issues/1239)
+* Fix sporadic fatal errors in File Manager [sourceforge.net/5096](https://sourceforge.net/p/webadmin/bugs/5096)
+* Fix missing configuration button for Read User Mail module [#1238](https://github.com/authentic-theme/authentic-theme/issues/1238)
+* Fix compose button malfunction on initial load in mail [#1260](https://github.com/authentic-theme/authentic-theme/issues/1260)
+* Fix detecting other modifier key being pressed (in-built hotkey functionality)
+* Fix backup all databases section for MySQL/PostgreSQL database server
+* Fix to revert default navigation menu color to _Royal Blue_
+
 #### Version 19.21 (November 15, 2018)
 * Add an error message upon theme update for no connection to GitHub or its API rate limit excess
 * Fix not to show updates for releases with dependency issue
@@ -20,7 +40,6 @@
 * Add theme overlays native support [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
 * Add ability to disable new mail UI
 * Add Japanese, German and Swedish language translation update
-* Set navigation menu to default to White palette upon fresh installs
 * Fix guessing button type mechanism [#1157](https://github.com/authentic-theme/authentic-theme/issues/1157)
 * Fix to detect favorites despite presence of home page pointer [#1211](https://github.com/authentic-theme/authentic-theme/issues/1211)
 * Fix data filter to support paste event; improve its performance [#1207](https://github.com/authentic-theme/authentic-theme/issues/1207)
