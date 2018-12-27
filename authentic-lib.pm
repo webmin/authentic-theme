@@ -1300,7 +1300,7 @@ sub get_sysinfo_vars
                   $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
                   $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
                   $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
-                  $theme_text{'settings_right_options'} . '</a>' . '</div>';
+                  $theme_text{'theme_xhred_global_configuration'} . '</a>' . '</div>';
 
             } else {
                 $authentic_theme_version = get_theme_user_link();
