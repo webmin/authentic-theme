@@ -1260,13 +1260,17 @@ sub get_sysinfo_vars
                 $authentic_remote_version = $authentic_installed_version;
             }
 
-            if (   (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
-                &&
-                (
-                    (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-                     $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
-                    ) ||
-                    $authentic_remote_version_local gt $authentic_installed_version))
+            if (
+                $theme_config{'settings_sysinfo_theme_updates'} eq 'true' && (
+                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
+                    &&
+                    (
+                        (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
+                         $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
+                        ) ||
+                        $authentic_remote_version_local gt $authentic_installed_version)
+
+                ))
             {
                 my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
