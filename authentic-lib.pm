@@ -1507,16 +1507,21 @@ sub get_sysinfo_vars
     if (show_sysinfo_section('mem')) {
 
         # Memory
-        if ($info->{'mem'}) {
+        if (@m) {
 
             # Real memory details
-            $real_memory =
-              &theme_text('body_used', nice_size(($m[0]) * 1000, -1), nice_size(($m[0] - $m[1]) * 1000, -1));
+            if ($m[0] && $m[1]) {
+                $real_memory =
+                  &theme_text($m[4] ? 'body_used_cached_total' : 'body_used',
+                              nice_size(($m[0]) * 1024,         -1),
+                              nice_size(($m[0] - $m[1]) * 1024, -1),
+                              ($m[4] ? nice_size($m[4] * 1024, -1) : undef));
+            }
 
             # Virtual memory details
             if ($m[2] > 0) {
                 $virtual_memory =
-                  &theme_text('body_used', nice_size(($m[2]) * 1000, -1), nice_size(($m[2] - $m[3]) * 1000, -1));
+                  &theme_text('body_used', nice_size(($m[2]) * 1024, -1), nice_size(($m[2] - $m[3]) * 1024, -1));
             }
 
             if (get_text_ltr()) {
