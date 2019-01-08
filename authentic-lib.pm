@@ -54,9 +54,9 @@ sub print_category
                       'servers'           => 'fa-rocket',
                       'other'             => 'fa-gavel',
                       'info'              => 'fa-info',
-                      'hardware'          => 'fa-hdd-o',
-                      'global_hardware'   => 'fa-hdd-o',
-                      'global_storage'    => 'fa-hdd-o',
+                      'hardware'          => 'fa-hdd-o scaled1_5',
+                      'global_hardware'   => 'fa-hdd-o scaled1_5',
+                      'global_storage'    => 'fa-hdd-o scaled1_5',
                       'cluster'           => 'fa-power-off',
                       'global_cluster'    => 'fa-power-off',
                       'unused'            => 'fa-puzzle-piece',
@@ -90,10 +90,11 @@ sub print_category
                       'global_services'   => 'fa-puzzle-piece',
                       'cat_services'      => 'fa-puzzle-piece',
                       'create_new'        => 'fa-plus',
+                      'create_add'        => 'fa-plus',
                       'global_gce'        => 'fa-google',
-                      'global_ec2'        => 'fa-cubes',
+                      'global_ec2'        => 'fa2 fa2-amazon scaled1_5',
                       'global_hosts'      => 'fa-globe',
-                      'global_virtualmin' => 'fa-sun-o',
+                      'global_virtualmin' => 'fa-virtualmin scaled1_5',
                       'global_owners'     => 'fa-users',
                       'global_monitor'    => 'fa-desktop',
                       'global_settings'   => 'fa-cloud',
@@ -756,6 +757,10 @@ sub print_left_menu
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
                 } elsif ($link =~ /\/server-manager\/edit_pass.cgi/) {
                     $icon = '<i class="fa fa-fw fa-key"></i>';
+                } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
+                    $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
+                } elsif ($link =~ /\/server-manager\/create_form.cgi/) {
+                    $icon = '<i class="fa fa-fw fa-server-add scaled1"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/) {
                     if ($link =~ /refresh=1/) {
                         $icon = '<i class="fa fa-fw fa-refresh"></i>';
