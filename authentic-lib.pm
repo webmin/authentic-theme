@@ -812,7 +812,7 @@ sub print_left_menu
                 print "\n";
 
             } elsif ($item->{'type'} eq 'html') {
-                print '<li class="menu-container menu-status hidden">' . $item->{'html'} . '</li>';
+                print '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' . $item->{'html'} . '</span></li>';
             } elsif ($item->{'type'} eq 'cat') {
 
                 # Skip printing Webmin category because there is a switch for it
