@@ -175,6 +175,7 @@ sub embed_header
         embed_background();
         embed_styles();
         embed_settings();
+        embed_tconfig();
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
@@ -217,6 +218,7 @@ sub embed_header
         embed_background();
         embed_styles();
         embed_settings();
+        embed_tconfig();
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
@@ -311,6 +313,11 @@ sub embed_settings
         $user_config_file =~ tr/\r\n/;/d;
         print ' <script>' . $user_config_file . '</script>' . "\n";
     }
+}
+
+sub embed_tconfig
+{
+    print ' <script>tconfig_beta_updates=' . ($tconfig{'beta_updates'} ne '1' ? 0 : 1) . '</script>' . "\n";
 }
 
 sub embed_styles
@@ -553,7 +560,7 @@ sub init_vars
 
     my %tconfig_local = settings("$config_directory/$current_theme/config");
     our %tconfig = (%tconfig, %tconfig_local);
-    
+
     our %theme_config = (settings_default(),
                          settings($config_directory . "/$current_theme/settings.js", 'settings_'),
                          settings(get_tuconfig_file(),                               'settings_'));
