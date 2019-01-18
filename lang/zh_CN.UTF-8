@@ -599,7 +599,6 @@ theme_xhred_move_up=向上移动
 theme_xhred_move_down=向下移动
 theme_xhred_add_after=在內容后添加
 theme_xhred_add_before=在內容前添加
-settings_button_tooltip=显示工具提示按钮
 settings_show_night_mode_link=显示调色板切换
 settings_hotkey_toggle_key_night_mode=切换暗/亮调色板快捷键
 settings_title=主题配置

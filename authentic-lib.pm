@@ -812,7 +812,8 @@ sub print_left_menu
                 print "\n";
 
             } elsif ($item->{'type'} eq 'html') {
-                print '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' . $item->{'html'} . '</span></li>';
+                print '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
+                  $item->{'html'} . '</span></li>';
             } elsif ($item->{'type'} eq 'cat') {
 
                 # Skip printing Webmin category because there is a switch for it
@@ -1641,7 +1642,7 @@ sub csf_mod
         close $fh2;
 
         open(my $fh3, '>', $csf_footer_mod) or die $!;
-        print $fh3 '</div><script>!v___available_navigation && csf_init()</script>' . "\n";
+        print $fh3 '</div><script>!$.support.spa && csf_init()</script>' . "\n";
         close $fh3;
 
         open(my $fh4, '>', $csf_htmltag_mod) or die $!;
@@ -2302,7 +2303,7 @@ sub get_theme_user_link
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
     return '' . theme_version() .
-      ' <div class="btn-group margined-left-4"><a data-href="#theme-info" class="btn btn-default btn-xxs' .
+      ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" class="btn btn-default btn-xxs' .
       ($is_hidden . $is_hidden_link) .
       '"><i class="fa fa-info-circle"></i></a><a href="' . ($gconfig{'webprefix'} . $link) . '" data-href="' .
       ($gconfig{'webprefix'} . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" title="' .
@@ -2521,8 +2522,6 @@ sub theme_settings
             'settings_switch_rdisplay',
             'false',
             'settings_show_webmin_tab',
-            'true',
-            'settings_button_tooltip',
             'true',
             'settings_leftmenu_section_hide_refresh_modules',
             'false',
@@ -3075,7 +3074,7 @@ sub theme_settings
           . $text{'save'} . '</a>
                                     <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
           . $theme_text{'settings_right_restore_defaults'} . '</a>
-                                    <a style="min-width:132px" class="btn btn-default" id="atclearcache"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
+                                    <a style="min-width:132px" class="btn btn-default" onclick="theme_cache_clear(this);"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
           . $theme_text{'settings_right_clear_local_cache'} . '</a>
          ' . (
             $get_user_level eq '0' ?
@@ -3723,23 +3722,20 @@ sub get_button_tooltip
         $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
     }
 
-    return (($theme_config{'settings_button_tooltip'} ne 'false' || $force) ?
-              (' data-container="' . $container . '" data-placement="' .
-                 $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
-                 .
-                 ($tooltip_text
-                    .
-                    (length $theme_config{'settings_hotkeys_active'} &&
-                       $theme_config{'settings_hotkeys_active'} ne 'false' &&
-                       $hot_key ?
-                       " (" .
-                       ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
-                       ''
-                    )
-                 ) .
-                 '"'
-              ) :
-              ' ');
+    return (
+           ' data-container="' . $container . '" data-placement="' .
+             $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
+             .
+             ($tooltip_text
+                .
+                (length $theme_config{'settings_hotkeys_active'} &&
+                   $theme_config{'settings_hotkeys_active'} ne 'false' &&
+                   $hot_key ?
+                   " (" . ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
+                   ''
+                )
+             ) .
+             '"');
 }
 
 sub get_user_acl

@@ -98,7 +98,6 @@ settings_animation_tabs=Enable animation in content page
 settings_background_color=Fargepalett for innholdsside
 settings_brightness_level_navigation=Brightness filter
 settings_brightness_level_navigation_description=Standard/gjeldende verdier <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
-settings_button_tooltip=Vis verktøytips på knapper
 settings_cm_editor_palette=Editor fargepalett
 settings_cm_view_palette=Viewer color palette
 settings_contrast_level_navigation=Kontrast filter

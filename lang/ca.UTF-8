@@ -601,7 +601,6 @@ theme_xhred_move_up=Moure a dalt
 theme_xhred_move_down=Moure a baix
 theme_xhred_add_after=Afegir després
 theme_xhred_add_before=Afegir abans
-settings_button_tooltip=Mostrar informació contextual en els botons
 settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Drecera per canviar entre el modes clar i fosc
 settings_title=Configuració del tema

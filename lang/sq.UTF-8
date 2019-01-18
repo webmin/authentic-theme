@@ -613,7 +613,6 @@ theme_xhred_move_up=Lëvizni lart
 theme_xhred_move_down=Zhvendos poshtë
 theme_xhred_add_after=Shto pas
 theme_xhred_add_before=Shto përpara
-settings_button_tooltip=Shfaq butonin e butonit në butonat
 settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Hotkey për ndryshimin e gamës së errët / dritë
 settings_title=Konfigurimi i temës

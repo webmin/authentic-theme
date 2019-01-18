@@ -604,7 +604,6 @@ theme_xhred_move_up=Naikkan
 theme_xhred_move_down=Turunkan
 theme_xhred_add_after=Tambahkan setelah
 theme_xhred_add_before=Tambahkan sebelumnya
-settings_button_tooltip=Tampilkan tooltip pada tombol
 settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Hotkey palet untuk beralih gelap/terang
 settings_title=Konfigurasi Tema

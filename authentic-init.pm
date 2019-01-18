@@ -68,7 +68,6 @@ sub settings_default
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
-    $c{'settings_button_tooltip'}                     = 'true';
     $c{'settings_hide_top_loader'}                    = 'false';
     $c{'settings_animation_left'}                     = 'true';
     $c{'settings_animation_tabs'}                     = 'true';
@@ -110,19 +109,21 @@ sub embed_favicon
 
     my $favicon_path = $gconfig{'webprefix'} . '/images/favicons/' . $product;
     my $ref_link     = 'data-link-ref';
-    print '<link ' .
-      $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">';
-    print '<link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">';
-    print '<link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">';
-    print '<link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">';
-    print '<link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">';
-    print '<link ' . $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">';
-    print '<meta name="msapplication-TileColor" content="#3d74ca">';
-    print '<meta ' . $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">';
-    print '<meta name="theme-color" content="#3d74ca">';
+    print ' <link ' .
+      $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">' . "\n";
+    print ' <link ' .
+      $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">' . "\n";
+    print ' <link ' . $ref_link .
+      ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">' . "\n";
+    print ' <link ' .
+      $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
+    print ' <link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">' . "\n";
+    print ' <link ' .
+      $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
+    print ' <meta name="msapplication-TileColor" content="#3d74ca">' . "\n";
+    print ' <meta ' .
+      $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">' . "\n";
+    print ' <meta name="theme-color" content="#3d74ca">' . "\n";
 
 }
 
@@ -148,10 +149,19 @@ sub embed_header
         return;
     }
 
+    # Print default options
+    print " <script src=\"$gconfig{'webprefix'}/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
+    print ' <script>';
+    print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
+    print "</script>\n";
+
+    embed_settings();
+    embed_tconfig();
+
     # Print object with language strings
-    print '<script>';
+    print ' <script>';
     print 'var v___theme_language = ' . get_theme_language();
-    print '</script>';
+    print "</script>\n";
 
     if ($args[2]) {
         do(dirname(__FILE__) . "/dependencies.pm");
@@ -174,8 +184,6 @@ sub embed_header
 
         embed_background();
         embed_styles();
-        embed_settings();
-        embed_tconfig();
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
@@ -217,8 +225,6 @@ sub embed_header
 
         embed_background();
         embed_styles();
-        embed_settings();
-        embed_tconfig();
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {

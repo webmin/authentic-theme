@@ -63,7 +63,7 @@ const mail = (function() {
             },
             plugin: {
                 json_to_query: Convert.json_to_query,
-                timestamp: time.localize,
+                timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
 
                 select: (data, size = '34') => {

@@ -599,7 +599,6 @@ theme_xhred_move_up=Flytta uppåt
 theme_xhred_move_down=Flytta neråt
 theme_xhred_add_after=Lägg till efter
 theme_xhred_add_before=Lägg till före
-settings_button_tooltip=Visa verktygstips för knappar
 settings_show_night_mode_link=Visa knapp för dag-/nattläge
 settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla mellan mörk/ljus palett
 settings_title=Temakonfiguration

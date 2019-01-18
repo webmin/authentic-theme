@@ -601,7 +601,6 @@ theme_xhred_move_up=Mută sus
 theme_xhred_move_down=Mută jos
 theme_xhred_add_after=Adaugă după
 theme_xhred_add_before=Adaugă înaintea
-settings_button_tooltip=Arată sugestii la butoane
 settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Tastă rapidă pentru comutare întunecat/luminos
 settings_title=Configurare Temă

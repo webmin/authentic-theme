@@ -592,7 +592,6 @@ theme_xhred_move_up=Nach oben
 theme_xhred_move_down=nach unten
 theme_xhred_add_after=Danach einf&uuml;gen
 theme_xhred_add_before=Davor einf&uuml;gen
-settings_button_tooltip=Tooltips auf Kn&ouml;pfen anzeigen
 settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Schnellzugriffs Taste zum Umschalten der hell/dunkel Farbpalette
 settings_title=Design Konfiguration

@@ -599,7 +599,6 @@ theme_xhred_move_up= 上がる
 theme_xhred_move_down= 下に移動
 theme_xhred_add_after= 後で追加する
 theme_xhred_add_before= 前に追加
-settings_button_tooltip= ボタンのツールチップを表示する
 settings_show_night_mode_link= 昼/夜モード切り替え
 settings_hotkey_toggle_key_night_mode= ダーク/ライトパレットを切り替えるためのホットキー
 settings_title= テーマ構成
