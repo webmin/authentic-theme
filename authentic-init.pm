@@ -176,7 +176,6 @@ sub embed_header
             }
             embed_css_fonts();
         } else {
-
             embed_css_bundle();
         }
 
@@ -201,7 +200,6 @@ sub embed_header
             embed_js_bundle();
         }
     } else {
-
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
                 print ' <link href="' . $gconfig{'webprefix'} .
