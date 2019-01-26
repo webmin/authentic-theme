@@ -7,15 +7,16 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,            @theme_bundle_js,          %module_text_full,      %theme_config,
-     %theme_text,                  %theme_temp_data,          $get_user_level,        $global_prefix,
-     $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,  $has_usermin_version,
-     $has_usermin,                 $has_virtualmin,           $theme_module_query_id, $t_uri___i,
-     $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,   $t_var_product_m,
-     $t_var_switch_m,              $xnav,                     %config,                %gaccess,
-     %gconfig,                     %in,                       %tconfig,               %text,
-     $base_remote_user,            $config_directory,         $current_lang,          $current_theme,
-     $remote_user,                 $root_directory,           $theme_root_directory,  $title);
+our (@theme_bundle_css,    @theme_bundle_js,             %module_text_full,         %theme_config,
+     %theme_text,          %theme_temp_data,             $get_user_level,           $global_prefix,
+     $forced_prefix,       $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,
+     $has_usermin_version, $has_usermin,                 $has_virtualmin,           $theme_module_query_id,
+     $t_uri___i,           $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,
+     $t_var_product_m,     $t_var_switch_m,              $xnav,                     %config,
+     %gaccess,             %gconfig,                     %in,                       %tconfig,
+     %text,                $base_remote_user,            $config_directory,         $current_lang,
+     $current_theme,       $remote_user,                 $root_directory,           $theme_root_directory,
+     $title);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
 
@@ -601,6 +602,8 @@ sub init_vars
 
     my ($server_link, $server_prefix) = parse_servers_path();
     our $global_prefix = ($server_prefix ? $server_prefix : $gconfig{'webprefix'});
+
+    our $forced_prefix = $in{'webprefix'};
 
     our $xnav = "xnavigation=1";
 

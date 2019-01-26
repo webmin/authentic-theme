@@ -21,7 +21,7 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory,
 
-    %theme_text, %module_text_full, %theme_config, $get_user_level, $theme_requested_url,
+    %theme_text, %module_text_full, %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
     $has_usermin,              $has_usermin_version,
     $has_usermin_root_dir, $has_usermin_conf_dir, $t_var_switch_m, $t_var_product_m);
@@ -1292,8 +1292,9 @@ sub get_sysinfo_vars
                   ( $authentic_remote_beta ? 1 :
                       0
                   ) .
-                  '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
-                  ' authentic_update" href=\'' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
+                  '" class="btn btn-xxs btn-' .
+                  ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
+                  ($global_prefix || $gconfig{'webprefix'}) . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
                   '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
@@ -1301,11 +1302,11 @@ sub get_sysinfo_vars
                   . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
                   '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
                   '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
-                  $authentic_remote_version_tag . '/authentic-theme-' .
-                  $authentic_remote_version_local . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
-                  $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
-                  $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' data-href=\'' .
-                  $gconfig{'webprefix'} . '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
+                  $authentic_remote_version_tag . '/authentic-theme-' . $authentic_remote_version_local .
+                  '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' . $theme_text{'theme_download'} .
+                  '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' . ($global_prefix || $gconfig{'webprefix'}) .
+                  '/webmin/edit_themes.cgi\' data-href=\'' . ($global_prefix || $gconfig{'webprefix'}) .
+                  '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
                   $theme_text{'theme_xhred_global_configuration'} . '</a>' . '</div>';
 
             } else {
@@ -2303,10 +2304,11 @@ sub get_theme_user_link
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
     return '' . theme_version() .
-      ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" class="btn btn-default btn-xxs' .
-      ($is_hidden . $is_hidden_link) .
-      '"><i class="fa fa-info-circle"></i></a><a href="' . ($gconfig{'webprefix'} . $link) . '" data-href="' .
-      ($gconfig{'webprefix'} . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" title="' .
+' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" class="btn btn-default btn-xxs'
+      . ($is_hidden . $is_hidden_link)
+      . '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
+      '" data-href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
+      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" title="' .
       $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
 }
 
