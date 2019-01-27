@@ -783,10 +783,15 @@ sub print_left_menu
                     $link =~ /\/virtual-server\/domain_form.cgi/ &&
                     domain_available_count())
                 {
-                    print '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                      $gconfig{'webprefix'} .
-                      '/virtual-server/summary_domain.cgi?dom=$#DOM"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                      $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                    my $dom_id = $item->{'link'};
+                    $dom_id =~ /gparent=(\d*)/;
+                    $dom_id = $1;
+                    if ($dom_id) {
+                      print '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
+                        $gconfig{'webprefix'} .
+                        '/virtual-server/summary_domain.cgi?dom=' . $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
+                        $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                    }
                 }
 
                 # Set variable in case it hasn't been set before
