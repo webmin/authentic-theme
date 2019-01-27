@@ -56,10 +56,10 @@ const mail = (function() {
             content: get_pjax_content,
             load: load,
             language: theme_language,
-            notification: theme_messenger,
+            notification: plugins.messenger.post,
             rows: page_table_rows_control,
             navigation: {
-                reset: navigation_clear
+                reset: plugins.navigation.reset
             },
             plugin: {
                 json_to_query: Convert.json_to_query,
