@@ -1334,7 +1334,7 @@ sub parse_servers_path
 
     if ($parent) {
         my ($parent_link)   = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix) = $parent_link =~ /(\/servers\/link.cgi\S*)/;
+        my ($parent_prefix) = $parent_link =~ /(\/servers\/link.cgi\/\S*\d)/;
         return ($parent_link, $parent_prefix);
     } else {
         return (undef, undef);
