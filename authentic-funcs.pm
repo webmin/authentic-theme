@@ -278,4 +278,11 @@ sub is_switch_webmail
             ) ? 1 : 0);
 }
 
+sub strip_html
+{
+    my ($string) = @_;
+    $string =~ s|<.+?>||g;
+    return $string;
+}
+
 1;

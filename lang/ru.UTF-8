@@ -1001,3 +1001,13 @@ theme_xhred_editor_save_file_as=Save file as
 theme_xhred_global_configuration=Configuration
 
 body_used_cached_total=$1 total / $3 cached / $2 used
+
+
+#19.23
+theme_xhred_favorites_add=Add to favorites
+theme_xhred_favorites_remove=Remove from favorites
+theme_xhred_select_deselect=Select/deselect current item
+theme_xhred_edit_current=Edit current item
+theme_xhred_search_in_file=Search in files
+left_toggle_navigation_menu=Toggle navigation visibility
+theme_xhred_side_slider_toggle=Toggle side slider visibility

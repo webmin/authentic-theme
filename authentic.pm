@@ -135,8 +135,9 @@ sub theme_footer
         my $host = ($prefix ? $prefix : get_display_hostname());
         print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
   <div class="-shell-port-container">
-    <div data-shell-config><i class="fa fa-lg fa-cogs"></i></div>
-    <div class="-shell-port-close"></div>
+    <div data-shell-config><i aria-label="' .
+          $theme_text{'theme_xhred_global_configuration'} . '" class="fa fa-lg fa-cogs"></i></div>
+    <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
     <div data-output="true"><pre data-xconsole></pre></div>
     <div class="-shell-port-cmd">
       <span class="-shell-port-prompt"><span class="-shell-port-type">['

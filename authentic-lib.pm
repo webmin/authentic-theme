@@ -787,10 +787,10 @@ sub print_left_menu
                     $dom_id =~ /gparent=(\d*)/;
                     $dom_id = $1;
                     if ($dom_id) {
-                      print '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                        $gconfig{'webprefix'} .
-                        '/virtual-server/summary_domain.cgi?dom=' . $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                        $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                        print '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
+                          $gconfig{'webprefix'} . '/virtual-server/summary_domain.cgi?dom=' .
+                          $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
+                          $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
                     }
                 }
 
@@ -1833,9 +1833,9 @@ sub print_favorites
               <li class="menu-exclude exclude favorites-title">
                 <h1><i class="fa fa-star-o"></i>&nbsp;&nbsp;'
       . $theme_text{'left_favorites'} .
-'<sup style="position: absolute; margin: 25px 0 0 -10px;" class="hidden">&nbsp;&nbsp;<small class="text-white"> <a href="'
-      . $gconfig{'webprefix'}
-      . '/settings-editor_read.cgi?file=' .
+'<sup style="position: absolute; margin: 25px 0 0 -10px;" class="hidden">&nbsp;&nbsp;<small class="text-white"> <a aria-label="'
+      . $theme_text{'theme_xhred_filemanager_context_edit'}
+      . '" href="' . $gconfig{'webprefix'} . '/settings-editor_read.cgi?file=' .
       $config_directory . '/' . $current_theme . '/favorites.json" class="fa fa-pencil-square-o' .
       ($f =~ m/"favorites":/ ? '' : ' hidden') . '" style="display: inline; font-size: 1em;"></a></small></sup></h1>
               </li>';
@@ -1868,7 +1868,7 @@ sub print_favorites
         </ul>
       </nav>
     </div>
-    <a class="favorites-menu-close">
+    <a aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="favorites-menu-close">
       <div class="favorites-menu-icon">
         <div class="favorites-menu-bar"></div>
         <div class="favorites-menu-bar"></div>
@@ -3547,8 +3547,8 @@ sub content
     print '<div class="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
       'mobile-menu-toggler" style="position: fixed; ' . get_filters() . '">';
 
-    print '<button type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' .
-      "\n";
+    print '<button aria-label="' . $theme_text{'left_toggle_navigation_menu'} .
+      '" type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' . "\n";
     print '<i class="fa fa-fw fa-lg fa-bars"></i>' . "\n";
     print '</button>' . "\n";
     print '</div>' . "\n";
@@ -3730,7 +3730,7 @@ sub get_button_tooltip
     }
 
     return (
-           ' data-container="' . $container . '" data-placement="' .
+           ' aria-label="' . strip_html($tooltip_text) . '" data-container="' . $container . '" data-placement="' .
              $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
              .
              ($tooltip_text
