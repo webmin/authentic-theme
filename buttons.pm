@@ -5,8 +5,7 @@
 #
 use strict;
 
-our (%in,               %gconfig,        %miniserv,     $remote_user, $root_directory,
-     $t_uri_virtualmin, $t_uri_cloudmin, %theme_config, $get_user_level);
+our (%in, %gconfig, %miniserv, $remote_user, $root_directory, %theme_config, $get_user_level);
 
 print '<li data-collapse-trigger-container data-linked' .
   get_button_tooltip('theme_xhred_tooltip_navigation_pinned', 'settings_hotkey_navigation', 'auto top') .
@@ -63,13 +62,15 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true' &&
         $theme_config{'settings_theme_options_button'} ne 'false'))
 {
-    print '<li data-linked' .
-      get_button_tooltip('settings_title', undef, 'auto top') . ' class="user-link theme-options cursor-pointer">';
+    print '<li data-linked class="user-link theme-options cursor-pointer">';
+    my $tooltip = get_button_tooltip('settings_title', undef, 'auto top');
     if ($get_user_level eq '0' && foreign_available('webmin')) {
-        print '<a class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
+        print '<a' .
+          $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
           $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
     } else {
-        print '<a class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
+        print '<a' .
+          $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
           $gconfig{'webprefix'} . '/settings-user.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
     }
     print '</li>';
@@ -110,11 +111,9 @@ if ($miniserv{'logout'} &&
 
 if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
     $theme_config{'settings_leftmenu_button_language'} eq 'true' &&
-    ($t_uri_virtualmin != -1 ||
-        $t_uri_cloudmin != -1 ||
-        $in{'xhr-buttons-type'} eq '1'))
+    ($in{'xhr-buttons-type'} eq '1'))
 {
-    print '<li data-linked' . get_button_tooltip('settings_tooltip_language_link', undef, 'auto top') . ' class="user-link">
+    print '<li data-linked' . get_button_tooltip('theme_tooltip_language_link', undef, 'auto top') . ' class="user-link">
                     <a class="menu-exclude-link pd-rt-4" href="'
       . $gconfig{'webprefix'} . '/virtual-server/edit_lang.cgi">
                         <i class="fa fa-fw fa-globe"></i>
@@ -123,7 +122,7 @@ if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
 } elsif (&foreign_available("change-user") &&
          $theme_config{'settings_leftmenu_button_language'} eq 'true')
 {
-    print '<li data-linked' . get_button_tooltip('settings_tooltip_language_link', undef, 'auto top') .
+    print '<li data-linked' . get_button_tooltip('theme_xhred_title_language_locale', undef, 'auto top') .
       ' class="user-link"><a class="menu-exclude-link pd-rt-4" href="' .
       $gconfig{'webprefix'} . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }

@@ -93,6 +93,13 @@ const mail = (function() {
                         })
                     }
                 },
+                arialabel: () => {
+                    let arialabel = 'aria-label';
+                    document.querySelectorAll('[data-tooltip="mailbox"]:not(' + arialabel + ')').forEach(
+                        t => t.setAttribute(arialabel, t.getAttribute('data-title'))
+                    )
+
+                },
                 tooltip: () => {
                     $('[data-tooltip="mailbox"]').tooltip({
                         html: true,
@@ -1382,6 +1389,7 @@ const mail = (function() {
                     }
 
                     _.plugin.timestamp();
+                    _.plugin.arialabel();
                     _.plugin.tooltip();
                     _.plugin.offset_adjust(true);
                     _.rows();
