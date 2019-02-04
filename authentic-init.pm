@@ -1330,7 +1330,7 @@ sub get_theme_temp_data
 
 sub parse_servers_path
 {
-    my ($parent) = $ENV{'HTTP_WEBMIN_PATH'};
+    my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
 
     if ($parent) {
         my ($parent_link)   = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
