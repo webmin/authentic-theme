@@ -1189,7 +1189,7 @@ sub header_html_data
       get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
       '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
       '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
-      ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : get_env('request_uri')) .
+      ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : un_urlize(get_env('request_uri'))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
