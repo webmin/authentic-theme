@@ -572,7 +572,8 @@ sub init_vars
 
     our %theme_text = (load_language($current_theme), %text);
 
-    our $theme_requested_url         = (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
+    our $theme_requested_url =
+      (get_env('http_webmin_path') || get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
     our $theme_requested_from_module = get_env('http_x_requested_from');
     our $theme_requested_from_tab    = get_env('http_x_requested_from_tab');
 
@@ -1182,14 +1183,14 @@ sub header_html_data
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-theme-version="' . theme_version(0) . '" data-theme-mversion="' .
-      theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() .
-      '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
-      '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
-      get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
-      '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
-      '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
-      ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : un_urlize(get_env('request_uri'))) .
+      ' data-theme-version="' . theme_version(0) . '" data-theme-mversion="' . theme_version(0, 1) . '"  data-level="' .
+      $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() . '" data-user="' .
+      $remote_user . '" data-dashboard="' . dashboard_switch() . '" data-ltr="' . get_text_ltr() . '" data-language="' .
+      get_current_user_language() . '" data-language-full="' . get_current_user_language(1) . '" data-charset="' .
+      get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
+      '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $global_prefix .
+      '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
+      '" data-uri="' . ($module ? "/$module/" : un_urlize(get_env('request_uri'))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
