@@ -9,7 +9,7 @@ use File::Basename;
 
 our (@theme_bundle_css,    @theme_bundle_js,             %module_text_full,         %theme_config,
      %theme_text,          %theme_temp_data,             $get_user_level,           $global_prefix,
-     $forced_prefix,       $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,
+     $parent_webprefix,    $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,
      $has_usermin_version, $has_usermin,                 $has_virtualmin,           $theme_module_query_id,
      $t_uri___i,           $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,
      $t_var_product_m,     $t_var_switch_m,              $xnav,                     %config,
@@ -594,17 +594,16 @@ sub init_vars
         }
     }
 
-    our ($has_virtualmin, $get_user_level, $has_cloudmin) = get_user_level();
+    our ($get_user_level, $has_virtualmin, $has_cloudmin) = get_user_level();
     our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_data();
 
     our $t_uri__x = get_env('script_name');
     our $t_uri___i;
     our $theme_module_query_id;
 
-    my ($server_link, $server_prefix) = parse_servers_path();
-    our $global_prefix = ($server_prefix ? $server_prefix : $gconfig{'webprefix'});
-
-    our $forced_prefix = $in{'webprefix'};
+    my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
+    our $global_prefix = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
+    our $parent_webprefix = $parent_webprefix_local;
 
     our $xnav = "xnavigation=1";
 
@@ -733,29 +732,29 @@ sub get_filters
 
 sub get_user_level
 {
-    my ($a, $b, $c);
-    $b = &foreign_available("server-manager");
-    $a = &foreign_available("virtual-server");
-    if ($b) {
+    my ($level, $has_virtualmin, $has_cloudmin);
+    $has_cloudmin   = &foreign_available("server-manager");
+    $has_virtualmin = &foreign_available("virtual-server");
+    if ($has_cloudmin) {
         &foreign_require("server-manager", "server-manager-lib.pl");
     }
-    if ($a) {
+    if ($has_virtualmin) {
         &foreign_require("virtual-server", "virtual-server-lib.pl");
     }
-    if ($b) {
+    if ($has_cloudmin) {
         no warnings 'once';
-        $c = $server_manager::access{'owner'} ? 4 : 0;
-    } elsif ($a) {
-        $c =
+        $level = $server_manager::access{'owner'} ? 4 : 0;
+    } elsif ($has_virtualmin) {
+        $level =
           &virtual_server::master_admin()   ? 0 :
           &virtual_server::reseller_admin() ? 1 :
           2;
     } elsif (&get_product_name() eq "usermin") {
-        $c = 3;
+        $level = 3;
     } else {
-        $c = 0;
+        $level = 0;
     }
-    return ($a, $c, $b);
+    return ($level, $has_virtualmin, $has_cloudmin);
 }
 
 sub set_user_level
@@ -1183,12 +1182,13 @@ sub header_html_data
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-theme-version="' . theme_version(0) . '" data-theme-mversion="' . theme_version(0, 1) . '"  data-level="' .
-      $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() . '" data-user="' .
-      $remote_user . '" data-dashboard="' . dashboard_switch() . '" data-ltr="' . get_text_ltr() . '" data-language="' .
-      get_current_user_language() . '" data-language-full="' . get_current_user_language(1) . '" data-charset="' .
-      get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
-      '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $global_prefix .
+      ' data-theme-version="' . theme_version(0) .
+      '" data-theme-mversion="' . theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' .
+      get_user_home() . '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' .
+      dashboard_switch() . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
+      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' .
+      theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
+      get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
       '" data-uri="' . ($module ? "/$module/" : un_urlize(get_env('request_uri'))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
@@ -1334,9 +1334,11 @@ sub parse_servers_path
     my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
 
     if ($parent) {
-        my ($parent_link)   = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix) = $parent_link =~ /(\/servers\/link.cgi\/\S*\d)/;
-        return ($parent_link, $parent_prefix);
+        my ($parent_link)      = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
+        my ($parent_prefix)    = $parent_link =~ /:\d+(.*\/link.cgi\/\S*\d)/;
+        my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
+
+        return ($parent_prefix, $parent_webprefix);
     } else {
         return (undef, undef);
     }

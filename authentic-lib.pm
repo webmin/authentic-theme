@@ -3012,7 +3012,6 @@ sub theme_settings
               ($v eq '29030400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1y'} . '</option>
                 </select>';
         } elsif ($k eq 'settings_right_virtualmin_default') {
-            get_user_level();
             if (foreign_available('virtual-server')) {
                 $v = &ui_select($k, $v,
                                 [[undef,       undef],
@@ -3024,7 +3023,6 @@ sub theme_settings
             }
         } elsif ($k eq 'settings_right_cloudmin_default') {
             if (&foreign_available('server-manager')) {
-                get_user_level();
                 my @servers = &server_manager::list_available_managed_servers_sorted();
                 $v = &ui_select($k, $v,
                                 [[undef,       undef],
