@@ -562,6 +562,55 @@ sub theme_ui_password
     return $rv;
 }
 
+sub theme_ui_page_flipper
+{
+    my ($msg, $inputs, $cgi, $left, $right, $farleft, $farright, $below) = @_;
+    my $rv    = "<center class='ui_page_flipper'>";
+    my $class = 'fa fa-fw fa-lg text-semi-light vertical-align-baseline';
+    $rv .= &ui_form_start($cgi) if ($cgi);
+
+    # Far left link, if needed
+    if (@_ > 5) {
+        if ($farleft) {
+            $rv .= "<a href='$farleft'>" . "<i class='$class fa-angle-double-left'></i></a>\n";
+        } else {
+            $rv .= "<i class='$class fa-angle-double-left disabled'></i>\n";
+        }
+    }
+
+    # Left link
+    if ($left) {
+        $rv .= "<a href='$left'>" . "<i class='$class fa-angle-left'></i></a>\n";
+    } else {
+        $rv .= "<i class='$class fa-angle-left disabled'></i>\n";
+    }
+
+    # Message and inputs
+    $rv .= $msg;
+    $rv .= " " . $inputs if ($inputs);
+
+    # Right link
+    if ($right) {
+        $rv .= "<a href='$right'>" . "<i class='$class fa-angle-right'></i></a>\n";
+    } else {
+        $rv .= "<i class='$class fa-angle-right disabled'></i>\n";
+    }
+
+    # Far right link, if needed
+    if (@_ > 5) {
+        if ($farright) {
+            $rv .= "<a href='$farright'>" . "<i class='$class fa-angle-double-right'></i></a>\n";
+        } else {
+            $rv .= "<i class='$class fa-angle-double-right disabled'></i>\n";
+        }
+    }
+
+    $rv .= "<br>" . $below if ($below);
+    $rv .= &ui_form_end()  if ($cgi);
+    $rv .= "</center>\n";
+    return $rv;
+}
+
 sub theme_ui_select
 {
 
