@@ -1852,8 +1852,7 @@ sub print_favorites
                   $favorite->{"icon"} . '" class="wbm-' . $favorite->{"icon"} . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $favorite->{"title"} . '
                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i aria-label="'
-                  . $theme_text{'theme_xhred_favorites_remove'}
-                  . '" class="fa fa-times"></i></small></span>
+                  . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
                   </a>
               </li>';
             }
@@ -3712,37 +3711,6 @@ sub manage_theme_config
             return convert_to_json();
         }
     }
-}
-
-sub get_button_tooltip
-{
-    my ($label, $key, $placement, $html, $force, $container, $br_label_on) = @_;
-
-    my $mod_key = $theme_config{'settings_hotkey_toggle_modifier'};
-    my $hot_key = ($key ? ucfirst($theme_config{$key}) : undef);
-    if (!$container) {
-        $container = 'body';
-    }
-    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
-    if ($br_label_on) {
-        my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
-        $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
-    }
-
-    return (
-           ' aria-label="' . strip_html($tooltip_text) . '" data-container="' . $container . '" data-placement="' .
-             $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
-             .
-             ($tooltip_text
-                .
-                (length $theme_config{'settings_hotkeys_active'} &&
-                   $theme_config{'settings_hotkeys_active'} ne 'false' &&
-                   $hot_key ?
-                   " (" . ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
-                   ''
-                )
-             ) .
-             '"');
 }
 
 sub get_user_acl

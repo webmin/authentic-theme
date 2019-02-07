@@ -999,3 +999,5 @@ theme_xhred_edit_current=Edit current item
 theme_xhred_search_in_file=Search in files
 left_toggle_navigation_menu=Toggle navigation visibility
 theme_xhred_side_slider_toggle=Toggle side slider visibility
+right_pagination_first=First
+right_pagination_last=Last

@@ -572,7 +572,9 @@ sub theme_ui_page_flipper
     # Far left link, if needed
     if (@_ > 5) {
         if ($farleft) {
-            $rv .= "<a href='$farleft'>" . "<i class='$class fa-angle-double-left'></i></a>\n";
+            $rv .=
+              "<a href='$farleft'>" . "<i " . get_button_tooltip('right_pagination_first', undef, 'auto top') .
+              "class='$class fa-angle-double-left'></i></a>\n";
         } else {
             $rv .= "<i class='$class fa-angle-double-left disabled'></i>\n";
         }
@@ -580,7 +582,9 @@ sub theme_ui_page_flipper
 
     # Left link
     if ($left) {
-        $rv .= "<a href='$left'>" . "<i class='$class fa-angle-left'></i></a>\n";
+        $rv .=
+          "<a href='$left'>" . "<i " . get_button_tooltip('extensions_mail_pagination_left', undef, 'auto top') .
+          "class='$class fa-angle-left'></i></a>\n";
     } else {
         $rv .= "<i class='$class fa-angle-left disabled'></i>\n";
     }
@@ -591,7 +595,9 @@ sub theme_ui_page_flipper
 
     # Right link
     if ($right) {
-        $rv .= "<a href='$right'>" . "<i class='$class fa-angle-right'></i></a>\n";
+        $rv .=
+          "<a href='$right'>" . "<i " . get_button_tooltip('extensions_mail_pagination_right', undef, 'auto top') .
+          "class='$class fa-angle-right'></i></a>\n";
     } else {
         $rv .= "<i class='$class fa-angle-right disabled'></i>\n";
     }
@@ -599,7 +605,9 @@ sub theme_ui_page_flipper
     # Far right link, if needed
     if (@_ > 5) {
         if ($farright) {
-            $rv .= "<a href='$farright'>" . "<i class='$class fa-angle-double-right'></i></a>\n";
+            $rv .=
+              "<a href='$farright'>" . "<i " . get_button_tooltip('right_pagination_last', undef, 'auto top') .
+              "class='$class fa-angle-double-right'></i></a>\n";
         } else {
             $rv .= "<i class='$class fa-angle-double-right disabled'></i>\n";
         }
