@@ -128,6 +128,7 @@ if (
     }
     print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
     print_netdata_link();
+    print_left_custom_links();
 }
 
 elsif (

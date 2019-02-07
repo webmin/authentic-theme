@@ -664,6 +664,27 @@ sub add_webprefix
     return $link;
 }
 
+sub print_left_custom_links
+{
+    my $extra = $theme_config{'settings_leftmenu_custom_links'};
+
+    if ($extra) {
+        $extra = replace('\'', '"', un_urlize($extra));
+        if ($extra && $extra =~ m/"extra":/) {
+            my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
+            my $extra_json = convert_from_json($extra);
+            foreach my $e (@{ $extra_json->{'extra'} }) {
+                if (length($e->{"link"})) {
+                    my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
+                    my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
+                    print '<li ' . $type . '><a href="' . $e->{"link"} . '" class="' . $type_class .
+                      '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
+                }
+            }
+        }
+    }
+}
+
 sub print_left_menu
 {
     my ($module, $items, $group, $id, $selected, $xhr) = @_;
@@ -2561,6 +2582,8 @@ sub theme_settings
             '',
             'settings_leftmenu_user_html_only_for_administrator',
             'false',
+            'settings_leftmenu_custom_links',
+            '',
 
             '__',
             theme_settings('fa', 'bell', &theme_text('settings_right_notification_slider_options_title')),
@@ -2929,6 +2952,7 @@ sub theme_settings
                  $k eq 'settings_hotkey_custom_9'       ||
                  $k eq 'settings_leftmenu_netdata_link' ||
                  $k eq 'settings_leftmenu_user_html'    ||
+                 $k eq 'settings_leftmenu_custom_links' ||
                  $k eq 'settings_global_passgen_format')
         {
             my $width = ' width: 40%; ';
@@ -2938,7 +2962,7 @@ sub theme_settings
             }
             if ($k eq 'settings_leftmenu_netdata_link') {
                 $width = ' width: 50%; ';
-            } elsif ($k eq 'settings_leftmenu_user_html') {
+            } elsif ($k eq 'settings_leftmenu_user_html' || $k eq 'settings_leftmenu_custom_links') {
                 $width = ' width: 95%; ';
             }
 
@@ -3049,12 +3073,15 @@ sub theme_settings
 
                 </select>';
         }
-
+        my $description = $theme_text{ $k . '_description' };
         return '
             <tr class="atshover">
                 <td class="col_label atscontent"><b>'
-          . $theme_text{$k} . '</b>' . ($theme_text{ $k . '_description' } &&
-                            '<div class="smaller text-normal no-padding">' . $theme_text{ $k . '_description' } . '</div>') .
+          . $theme_text{$k} . '</b>' . ($description &&
+'<sup class="fa fa-fw fa-0_85x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-title="'
+            . $theme_text{$k}
+            . '" data-content="' . html_escape($description) . '"></sup>')
+          .
           '</td>
                 <td class="col_value atscontent"><span>'
           . $v . '</span></td>
