@@ -1064,7 +1064,7 @@ const mail = (function() {
                     .on('click', function() {
                         let action = $(this).data('form-action'),
                             messages = storage.get(),
-                            refetch = /white|black/.test(action)
+                            refetch = /razor|black/.test(action);
 
                         submit(data, {
                             [action]: 1
