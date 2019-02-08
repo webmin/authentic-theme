@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %gconfig, %miniserv, %tconfig, %text, $config_directory, $current_theme, %theme_text);
+our (%in, %gconfig, %tconfig, %text, $config_directory, $current_theme, %theme_text);
 
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
