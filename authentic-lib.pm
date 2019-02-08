@@ -1987,7 +1987,7 @@ sub head
 
 sub embed_login_head
 {
-
+    my ($inline) = @_;
     my $ext = (theme_debug_mode() ? 'src' : 'min');
 
     # Define page title
@@ -1996,22 +1996,94 @@ sub embed_login_head
     print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
-    embed_favicon();
+    embed_favicon($inline);
     print '<title>', $title, '</title>', "\n";
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
-    print '<link href="' .
-      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    print '<script>setTimeout(function(){var a=document.querySelectorAll(\'input[type="password"]\');i=0;
-for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i].offsetHeight?1:0;b.classList.add("input_warning_caps");b.setAttribute("title","Caps Lock");d&&b.classList.add("large");a[i].classList.add("use_input_warning_caps");a[i].parentNode.insertBefore(b,a[i].nextSibling);a[i].addEventListener("blur",function(){this.nextSibling.classList.remove("visible")});a[i].addEventListener("keydown",function(c){"function"===typeof c.getModifierState&&((state=20===c.keyCode?!c.getModifierState("CapsLock"):
-c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};},100);function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
+    if ($inline) {
+        my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/bundle.min.css");
+        print '<style>';
+        print $file_contents;
+        print '</style>';
 
-    embed_css_night_rider();
-    embed_css_fonts();
+        if (theme_night_mode()) {
+            my $file_contents =
+              read_file_contents("$root_directory/$current_theme/unauthenticated/css/palettes/nightrider.min.css");
+            print '<style>';
+            print $file_contents;
+            print '</style>';
+        }
+        my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/fonts-roboto.min.css");
+        print '<style>';
+        print $file_contents;
+        print '</style>';
+
+    } else {
+        print '<link href="' .
+          $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+
+        print
+'<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
+for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i].offsetHeight?1:0;b.classList.add("input_warning_caps");b.setAttribute("title","Caps Lock");d&&b.classList.add("large");a[i].classList.add("use_input_warning_caps");a[i].parentNode.insertBefore(b,a[i].nextSibling);a[i].addEventListener("blur",function(){this.nextSibling.classList.remove("visible")});a[i].addEventListener("keydown",function(c){"function"===typeof c.getModifierState&&((state=20===c.keyCode?!c.getModifierState("CapsLock"):
+c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
+
+        embed_css_night_rider();
+        embed_css_fonts();
+    }
+
     embed_background();
     embed_styles();
     embed_overlay_head();
     print '</head>', "\n";
+}
+
+sub error_40x
+{
+    my %miniserv;
+    get_miniserv_config(\%miniserv);
+
+    our %theme_config = (settings($config_directory . "/$current_theme/settings-admin", 'settings_'),
+                         settings($config_directory . "/$current_theme/settings-root",  'settings_'));
+
+    # Get block time to refresh the page afterwards
+    my $block_time =
+      $miniserv{'blockhost_time'} < $miniserv{'blockuser_time'} ? $miniserv{'blockuser_time'} : $miniserv{'blockhost_time'};
+    if ($block_time < 30) {
+        $block_time = 30;
+    }
+    $block_time += 5;
+
+    my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+    my $sidname = "sid";
+    print "Auth-type: auth-required=1\r\n";
+    print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
+    print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
+    print "Set-Cookie: redirect=1; path=/\r\n";
+    print "Set-Cookie: testing=1; path=/$sec\r\n";
+    my $charset = &get_charset();
+    &PrintHeader($charset);
+    print '<!DOCTYPE HTML>', "\n";
+    print '<html data-background-style="'
+      .
+      ( theme_night_mode() ? 'nightRider' :
+          'gainsboro'
+      ) .
+      '" class="error_40x">', "\n";
+    embed_login_head(1);
+    print '<body class="session_login error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
+    print '<meta http-equiv="refresh" content="' . $block_time . '; url=' .
+      ($gconfig{'webprefix'} ? $gconfig{'webprefix'} : '/') . '">';
+    embed_overlay_prebody();
+    print '<div class="container error_40x" data-dcontainer="1">' . "\n";
+
+    if (defined($in{'code'})) {
+        print "<h3>",, "</h3><p></p>\n";
+        print '<div class="alert alert-danger">' . "\n";
+        print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
+          $in{'code'} . '</strong><br /><span>' . $in{'message'} . "</span>\n";
+        print '</div>' . "\n";
+    }
+    &footer();
 }
 
 sub theme_update_incompatible

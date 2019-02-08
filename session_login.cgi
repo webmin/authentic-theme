@@ -9,11 +9,17 @@ use strict;
 
 use File::Basename;
 
-our (%in, %gconfig, %miniserv, %tconfig, %text, $charset, $config_directory, $current_theme, %theme_text);
+our (%in, %gconfig, %miniserv, %tconfig, %text, $config_directory, $current_theme, %theme_text);
 
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
+my %miniserv;
 get_miniserv_config(\%miniserv);
+
+my $charset = &get_charset();
+
+# Check to add error handler
+error_40x_handler();
 
 our %theme_config = (settings($config_directory . "/$current_theme/settings-admin", 'settings_'),
                      settings($config_directory . "/$current_theme/settings-root",  'settings_'));
@@ -62,7 +68,6 @@ print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
 print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
 print "Set-Cookie: redirect=1; path=/\r\n";
 print "Set-Cookie: testing=1; path=/$sec\r\n";
-$charset = &get_charset();
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
 print '<html data-background-style="'

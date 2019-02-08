@@ -99,6 +99,7 @@ sub settings_default
 
 sub embed_favicon
 {
+    my ($inline) = @_;
     my $product = get_product_name() eq 'usermin' ? 'usermin' : 'webmin';
 
     if ($get_user_level eq '1' || $get_user_level eq '2') {
@@ -110,14 +111,26 @@ sub embed_favicon
 
     my $favicon_path = $gconfig{'webprefix'} . '/images/favicons/' . $product;
     my $ref_link     = 'data-link-ref';
-    print ' <link ' .
-      $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">' . "\n";
-    print ' <link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">' . "\n";
-    print ' <link ' . $ref_link .
-      ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">' . "\n";
-    print ' <link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
+    if ($inline) {
+        my $favicon_spath = "$root_directory/$current_theme/images/favicons/$product";
+        print ' <link ' . $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/apple-touch-icon.png'))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/favicon-32x32.png'))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png'))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png'))) . '">' . "\n";
+    } else {
+        print ' <link ' .
+          $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">' . "\n";
+        print ' <link ' .
+          $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">' . "\n";
+        print ' <link ' . $ref_link .
+          ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">' . "\n";
+        print ' <link ' .
+          $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
+    }
     print ' <link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">' . "\n";
     print ' <link ' .
       $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
@@ -1439,6 +1452,29 @@ sub get_button_tooltip
                 )
              ) .
              '"');
+}
+
+sub error_40x_handler
+{
+    my %miniserv;
+    get_miniserv_config(\%miniserv);
+    if ($_[0]) {
+        if ($miniserv{'error_handler_403'}) {
+            $miniserv{'error_handler_401'} = undef;
+            $miniserv{'error_handler_403'} = undef;
+            $miniserv{'error_handler_404'} = undef;
+            put_miniserv_config(\%miniserv);
+            reload_miniserv();
+        }
+    } else {
+        if (!$miniserv{'error_handler_403'}) {
+            $miniserv{'error_handler_401'} = "401.cgi";
+            $miniserv{'error_handler_403'} = "403.cgi";
+            $miniserv{'error_handler_404'} = "404.cgi";
+            put_miniserv_config(\%miniserv);
+            reload_miniserv();
+        }
+    }
 }
 
 1;

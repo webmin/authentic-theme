@@ -129,7 +129,11 @@ sub theme_footer
     }
 
     print "</div>\n";
-    if (!@_ && get_env('script_name') ne '/session_login.cgi' && get_env('script_name') ne '/pam_login.cgi') {
+    if (!@_ &&
+        get_env('script_name') ne '/session_login.cgi' &&
+        get_env('script_name') ne '/pam_login.cgi'     &&
+        $main::session_id)
+    {
         my $prefix;
         my $hostname = ($prefix) = split(/\./, get_display_hostname());
         my $host = ($prefix ? $prefix : get_display_hostname());
@@ -1312,10 +1316,14 @@ sub theme_post_save_server
 
 sub theme_post_change_theme
 {
+    # Clear modifications
     if (&foreign_check("csf") && &foreign_available("csf")) {
         unlink_file('/etc/csf/csf.header');
         unlink_file('/etc/csf/csf.footer');
     }
+
+    # Remove error handler
+    error_40x_handler(1);
 }
 
 sub theme_post_change_modules
