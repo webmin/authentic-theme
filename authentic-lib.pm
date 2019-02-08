@@ -3074,6 +3074,7 @@ sub theme_settings
                 </select>';
         }
         my $description = $theme_text{ $k . '_description' };
+        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click hover' : 'hover';
         return '
             <tr class="atshover">
                 <td class="col_label atscontent"><b>'
@@ -3081,11 +3082,12 @@ sub theme_settings
           .
           (
             $description && (
-                string_contains($k, 'level_navigation') ?
+                $k =~ /level_navigation|leftmenu_width/ ?
                 '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-title="'
-                . $theme_text{$k}
-                . '" data-content="' . html_escape($description) . '"></sup>'
+'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-trigger="'
+                . $popover_trigger .
+                '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>' .
+                ($k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
             )
           ) .
           '</td>
