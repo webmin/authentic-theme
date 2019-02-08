@@ -3077,11 +3077,17 @@ sub theme_settings
         return '
             <tr class="atshover">
                 <td class="col_label atscontent"><b>'
-          . $theme_text{$k} . '</b>' . ($description &&
-'<sup class="fa fa-fw fa-0_85x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-title="'
-            . $theme_text{$k}
-            . '" data-content="' . html_escape($description) . '"></sup>')
+          . $theme_text{$k} . '</b>'
           .
+          (
+            $description && (
+                string_contains($k, 'level_navigation') ?
+                '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-title="'
+                . $theme_text{$k}
+                . '" data-content="' . html_escape($description) . '"></sup>'
+            )
+          ) .
           '</td>
                 <td class="col_value atscontent"><span>'
           . $v . '</span></td>
