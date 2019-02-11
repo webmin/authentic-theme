@@ -849,7 +849,7 @@ const mail = (function() {
                  */
                 button.forward.on('click', function() {
                     // Produce notification (temporary)
-                    _.notification(['exclamation-triangle', 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['top', 'right'])
+                    _.notification(['exclamation-triangle', 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['top', 'center'])
                 });
 
                 /**
@@ -1114,17 +1114,20 @@ const mail = (function() {
                 let form = data.form_list,
                     target = _.variable.module.link() + `/${form.target}?`,
                     hidden = form.hidden,
-                    searched_index = data.searched_folder_index;
+                    searched_index = data.searched_folder_index,
+                    mail_system = parseInt(data.mail_system);
 
                 hidden = _.plugin.json_to_query(hidden) + '&noredirect=1&';
-                if (searched_index) {
+
+                // Focus actual folder instead of virtual
+                if (searched_index && (mail_system === 2 || mail_system === 4)) {
                     hidden = hidden.replace(/folder=\d+/, `folder=${searched_index}`)
                 }
 
                 actions = _.plugin.json_to_query(actions);
                 messages = `&d=${messages.join('&d=')}`;
                 refetch && (loader.start(), _.notification('hide-all'));
-                $.post(target + hidden + actions + messages, function() {
+                $.post(target + hidden + actions + encodeURI(messages), function() {
                     if (reset) {
                         storage.reset();
                     }
@@ -1168,7 +1171,7 @@ const mail = (function() {
 
                 let messages_list_available = messages_list.length > 128 ? 1 : 0;
                 if (!messages_list_available && data.searched) {
-                    _.notification(['search', _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 0, ['top', 'right'])
+                    _.notification(['search', _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 0, ['top', 'center'])
                     return
                 }
 
@@ -1393,7 +1396,7 @@ const mail = (function() {
                     _.plugin.tooltip();
                     _.plugin.offset_adjust(true);
                     _.rows();
-                    folders.set(data.searched_folder_id || data.folder_id);
+                    folders.set(data);
                     events(data);
                     messages.storage.restore();
 
@@ -1575,6 +1578,21 @@ const mail = (function() {
          */
         const set = function(key) {
             let tree = data.plugin.tree('get');
+
+            // Detect source 
+            if (typeof key === 'object') {
+                let search = {
+                        id: key.searched_folder_id,
+                        file: key.searched_folder_file,
+                    },
+                    id = key.folder_id;
+                if (search.file && search.id != null && key.mail_system != 2 && key.mail_system != 4) {
+                    key = search.file
+                } else {
+                    key = search.id || id;
+                }
+            }
+
             if (typeof tree === 'object' && typeof tree.activateKey === 'function') {
                 tree.activateKey(key)
             } else {

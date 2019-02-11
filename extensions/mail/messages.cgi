@@ -283,6 +283,8 @@ $mails{'list'} = {
           undef
     ) };
 
+$mails{'mail_system'} = $config{'mail_system'};
+
 save_last_folder_id($folder);
 pop3_logout();
 
