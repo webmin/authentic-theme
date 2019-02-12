@@ -1111,6 +1111,7 @@ const mail = (function() {
              * @returns {void}
              */
             submit = (data, actions, messages, refetch = 0, reset = 0) => {
+                console.log(1, actions, refetch, reset)
                 let form = data.form_list,
                     target = _.variable.module.link() + `/${form.target}?`,
                     hidden = form.hidden,
