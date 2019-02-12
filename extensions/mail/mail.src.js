@@ -139,6 +139,7 @@ const mail = (function() {
                         controls: 'row row-controls',
                         messages: 'row row-messages colorify',
                         quota: 'row row-quota',
+                        centered: 'row text-center',
                     },
                     column: {
                         3: 'col-xs-3',
@@ -243,7 +244,7 @@ const mail = (function() {
                     pagination: 'pagination-title',
                     settings: 'btn btn-default fa fa-cog'
                 },
-                mail: {
+                messages: {
                     checkbox: 'input[data-check]',
                     flag: 'mail-list-trow-flag-security',
                     special: {
@@ -251,6 +252,9 @@ const mail = (function() {
                         starred: 'fa-star star',
                         unstarred: 'fa-star-o star',
                     },
+                    row: {
+                        empty: 'fa fa-fw fa-1_50x fa-inbox'
+                    }
                 },
             },
 
@@ -571,7 +575,7 @@ const mail = (function() {
                  */
                 restore: function() {
                     let data = this.get(),
-                        checkboxes = $$.$.mail.checkbox;
+                        checkboxes = $$.$.messages.checkbox;
 
                     $(checkboxes).filter((i, t) => {
                         data.includes(t.value) && $(t).prop('checked', 1)
@@ -587,7 +591,7 @@ const mail = (function() {
                  * @returns {void}
                  */
                 reset: function() {
-                    let checkboxes = $$.$.mail.checkbox;
+                    let checkboxes = $$.$.messages.checkbox;
                     $(this.target).data('messages', {})
                     $(checkboxes + ':checked').prop('checked', 0).trigger('change');
                 },
@@ -619,7 +623,7 @@ const mail = (function() {
                  * @returns {void}
                  */
                 set: function(action, messages) {
-                    let $messages = $($$.$.mail.checkbox).filter((i, c) => {
+                    let $messages = $($$.$.messages.checkbox).filter((i, c) => {
                             return messages.includes(c.value)
                         }),
                         $targets = $messages.parent().parents('td').parents('tr');
@@ -688,9 +692,9 @@ const mail = (function() {
                         delete: $$.element('controls.delete'),
                         forward: $$.element('controls.forward'),
                         special: {
-                            star: $$.selector('mail.special.star'),
-                            starred: $$.selector('mail.special.starred'),
-                            unstarred: $$.selector('mail.special.unstarred'),
+                            star: $$.selector('messages.special.star'),
+                            starred: $$.selector('messages.special.starred'),
+                            unstarred: $$.selector('messages.special.unstarred'),
                         }
                     },
                     dropdown = {
@@ -708,8 +712,8 @@ const mail = (function() {
                         search: $$.element('controls.search.dropdown')
                     },
                     checkbox = $($$.$.controls.select.checkbox),
-                    checkboxes = $$.$.mail.checkbox,
-                    flags = $$.selector('mail.flag');
+                    checkboxes = $$.$.messages.checkbox,
+                    flags = $$.selector('messages.flag');
 
                 /**
                  * Event listeners for selecting all messages
@@ -1012,7 +1016,7 @@ const mail = (function() {
                     event.stopImmediatePropagation();
                     let $this = $(this),
                         $row = $(event.target).parents('td').parent('tr'),
-                        target = $$.$.mail.special,
+                        target = $$.$.messages.special,
                         id = $row.find('input[value]').val(),
                         state = $(event.target).is($(button.special.starred)) ? 1 : 0,
                         unread = +$row.attr('data-unread'),
@@ -1111,7 +1115,6 @@ const mail = (function() {
              * @returns {void}
              */
             submit = (data, actions, messages, refetch = 0, reset = 0) => {
-                console.log(1, actions, refetch, reset)
                 let form = data.form_list,
                     target = _.variable.module.link() + `/${form.target}?`,
                     hidden = form.hidden,
@@ -1142,6 +1145,26 @@ const mail = (function() {
             },
 
             /**
+             * Render static page
+             *
+             * @param {string} page Returns HTML for static page
+             *
+             * @returns {string}
+             */
+            row = (text, icon) => {
+
+                let row = String(),
+                    centered_row = $$.create.$('layout.row.centered');
+
+                row = $(centered_row)
+                    .append((icon ? $$.create.icon(icon) : String()) +
+                        '<div class="text-uppercase"> ' + text + ' </div>');
+
+                return row;
+
+            },
+
+            /**
              * Render messages and controls
              *
              * @param {object} source Response object with data for current page
@@ -1151,15 +1174,7 @@ const mail = (function() {
             render = (source) => {
                 let container = $$.element('layout.container'),
                     data = source[0],
-                    controls = {
-                        select: data.form_list.buttons.select,
-                        submit: data.form_list.buttons.submit
-                    },
-                    pagination = {
-                        link: (data.pagination_arrow_last || data.pagination_arrow_first || String()),
-                        title: (data.pagination_arrow_last ? _.language('theme_xhred_mail_pagination_last') : (data.pagination_arrow_first ? _.language('theme_xhred_mail_pagination_first') : false))
-                    },
-                    messages_list = (data.list.messages ? data.list.messages.replace(/�/g, '') : String());
+                    messages_list = ((data.list.messages && data.form_list.buttons) ? data.list.messages.replace(/�/g, '') : String());
 
                 // Check for errors first
                 if (data.error) {
@@ -1182,6 +1197,15 @@ const mail = (function() {
 
                 // Inject data to the panel
                 if (messages_list_available) {
+                    let controls = {
+                        select: data.form_list.buttons.select,
+                        submit: data.form_list.buttons.submit
+                    },
+                    pagination = {
+                        link: (data.pagination_arrow_last || data.pagination_arrow_first || String()),
+                        title: (data.pagination_arrow_last ? _.language('theme_xhred_mail_pagination_last') : (data.pagination_arrow_first ? _.language('theme_xhred_mail_pagination_first') : false))
+                    }
+
                     panel
                         .append($$.create.$('layout.row.controls'))
                         .find($$.selector('layout.row.controls'))
@@ -1402,7 +1426,7 @@ const mail = (function() {
                     messages.storage.restore();
 
                 } else {
-                    panel.append('No Mail')
+                    panel.append(row((data.folder_index === 0 ? _.language('theme_xhred_mail_no_new_mail') : _.language('theme_xhred_mail_no_mail') ), 'messages.row.empty'))
                 }
             }
 

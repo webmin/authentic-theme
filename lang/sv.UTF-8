@@ -1010,3 +1010,5 @@ right_pagination_last=Sist
 settings_leftmenu_custom_links=Extra poster
 settings_leftmenu_custom_links_description=Du kan ha anpassade, extra länkar injicerad i navigeringsmenyn. Det kräver att du skickar ett giltigt JSON-objekt som en sträng.<br><br><strong>Exempel:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
 theme_xhred_file_editor=Filredigerare
+theme_xhred_mail_no_mail=No mail
+theme_xhred_mail_no_new_mail=No new mail

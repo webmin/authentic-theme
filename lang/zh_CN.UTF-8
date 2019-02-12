@@ -1010,3 +1010,5 @@ right_pagination_last=Last
 settings_leftmenu_custom_links=Extra entries
 settings_leftmenu_custom_links_description=You can have custom, extra links injected into navigation menu. It will require you to pass valid JSON object as a string.<br><br><strong>Example:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
 theme_xhred_file_editor=File Editor
+theme_xhred_mail_no_mail=No mail
+theme_xhred_mail_no_new_mail=No new mail
