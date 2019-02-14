@@ -1187,7 +1187,7 @@ const mail = (function() {
 
                 let messages_list_available = messages_list.length > 128 ? 1 : 0;
                 if (!messages_list_available && data.searched) {
-                    _.notification(['search', _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 0, ['top', 'center'])
+                    _.notification(['search', _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 1, ['top', 'center'])
                     return
                 }
 
