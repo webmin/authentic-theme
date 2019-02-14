@@ -195,49 +195,34 @@ sub theme_popup_prehead
 
 sub theme_file_chooser_button
 {
-    my $form   = defined($_[2]) ? $_[2] : 0;
     my $chroot = defined($_[3]) ? $_[3] : "/";
     my $add    = int($_[4]);
-    my ($w, $h) = (520, 600);
-    if ($gconfig{'db_sizefile'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizefile'});
-    }
-    return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
-  <i class=\"fa fa-fw fa-files-o vertical-align-middle\"></i>
- </button>\n";
+    my $link   = "chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value)";
+    my $icon   = 'fa-fw fa-files-o';
+
+    return get_chooser_button_template($link, $icon);
 }
 
 sub theme_user_chooser_button
 {
-    my $form = defined($_[2]) ? $_[2] : 0;
-    my $w    = $_[1]          ? 500   : 300;
-    my $h    = 600;
-    if ($_[1] && $gconfig{'db_sizeusers'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeusers'});
-    } elsif (!$_[1] && $gconfig{'db_sizeuser'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeuser'});
-    }
-    return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
-  <i class=\"fa fa-user-o vertical-align-middle\" ></i>
-</button>\n";
+    my $link = "user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value)";
+    my $icon = 'fa-user-o';
+
+    return get_chooser_button_template($link, $icon);
 }
 
 sub theme_group_chooser_button
 {
-    my $form = defined($_[2]) ? $_[2] : 0;
-    my $w    = $_[1]          ? 500   : 300;
-    my $h    = 600;
-    if ($_[1] && $gconfig{'db_sizeusers'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeusers'});
-    } elsif (!$_[1] && $gconfig{'db_sizeuser'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeuser'});
-    }
-    return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
-      <i class=\"fa fa-group-o vertical-align-middle\" ></i>
-    </button>\n";
+    my $link = "group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value)";
+    my $icon = 'fa-group-o';
+    return get_chooser_button_template($link, $icon);
+}
+
+sub theme_interfaces_chooser_button
+{
+    my $link = "net/interface_chooser.cgi?multi=$_[1]&interface=\"+encodeURIComponent(ifield.value)";
+    my $icon = 'fa2 fa2-plus-network';
+    return get_chooser_button_template($link, $icon);
 }
 
 sub theme_date_chooser_button
