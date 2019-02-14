@@ -1017,3 +1017,5 @@ settings_leftmenu_custom_links_description=You can have custom, extra links inje
 theme_xhred_file_editor=File Editor
 theme_xhred_mail_no_mail=No mail
 theme_xhred_mail_no_new_mail=No new mail
+theme_xhred_editor_set_syntax=Set syntax
+theme_xhred_global_menu=Menu
