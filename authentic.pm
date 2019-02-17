@@ -132,7 +132,9 @@ sub theme_footer
     if (!@_ &&
         get_env('script_name') ne '/session_login.cgi' &&
         get_env('script_name') ne '/pam_login.cgi'     &&
-        $main::session_id)
+        get_env('script_name') ne '/401.cgi'           &&
+        get_env('script_name') ne '/403.cgi'           &&
+        get_env('script_name') ne '/404.cgi')
     {
         my $prefix;
         my $hostname = ($prefix) = split(/\./, get_display_hostname());
