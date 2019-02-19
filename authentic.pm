@@ -1301,6 +1301,14 @@ sub theme_post_save_server
     }
 }
 
+sub theme_select_server
+{
+    my ($s) = @_;
+    print '<script>';
+    print 'theme_post_save=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
+    print '</script>';
+}
+
 sub theme_post_change_theme
 {
     # Clear modifications
