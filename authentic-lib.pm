@@ -3376,14 +3376,7 @@ sub get_xhr_request
                 print get_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_keep'});
             }
         } elsif ($in{'xhr-shell-pop'}) {
-            my $file;
-            if ($in{'xhr-shell-cms'} eq "1") {
-                my $id = $in{'xhr-shell-cmsid'};
-                $id =~ s/[^\p{L}\p{N}.\-\/]//g;
-                $file = "$config_directory/server-manager/previous/$id";
-            } else {
-                $file = "$config_directory/shell/previous.$remote_user";
-            }
+            my $file    = get_history_shell_file();
             my $index   = (int($in{'xhr-shell-pop'}) - 1);
             my $history = read_file_lines($file);
             if (@$history[$index]) {
@@ -3391,6 +3384,12 @@ sub get_xhr_request
                 flush_file_lines($file);
                 print 1;
             }
+        } elsif ($in{'xhr-shell-insert'}) {
+            my $file    = get_history_shell_file();
+            my $history = read_file_lines($file);
+            push(@$history, $in{'xhr-shell-inserted'}) if ($in{'xhr-shell-inserted'});
+            flush_file_lines($file);
+            print convert_to_json($history);
         } elsif ($in{'xhr-get_autocompletes'} eq '1') {
             my @data =
               get_autocomplete_shell($in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'});
@@ -3865,6 +3864,20 @@ sub get_module_config_data
         return undef;
     }
 
+}
+
+sub get_history_shell_file
+{
+    my $file;
+    if ($in{'xhr-shell-cms'} eq "1") {
+        my $id = $in{'xhr-shell-cmsid'};
+        $id =~ s/[^\p{L}\p{N}.\-\/]//g;
+        $file = "$config_directory/server-manager/previous/$id";
+    } else {
+        $file = "$config_directory/shell/previous.$remote_user";
+    }
+
+    return $file;
 }
 
 sub get_autocomplete_shell
