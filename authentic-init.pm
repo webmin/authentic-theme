@@ -1430,7 +1430,7 @@ sub get_button_tooltip
     my $mod_key = $theme_config{'settings_hotkey_toggle_modifier'};
     my $hot_key = ($key ? ucfirst($theme_config{$key}) : undef);
     if (!$container) {
-        $container = 'body';
+        $container = '#content';
     }
     my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
     if ($br_label_on) {
