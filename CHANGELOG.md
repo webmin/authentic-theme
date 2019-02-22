@@ -2,6 +2,7 @@
 
 #### Version 19.31 (February 22, 2019)
 * Fix to prevent preloader appearing on progressive pages
+* Fix update notice to prevent grouping strings without link
 
 #### Version 19.30 (February 22, 2019)
 * Add major code refactor, clear and optimize
@@ -24,6 +25,7 @@
 * Fix over a hundred of other minor bugs and made other improvements
 
 <!--- separator --->
+
 
 #### Version 19.22 (December 25, 2018)
 * Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)
