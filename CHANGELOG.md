@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.31 (February 22, 2019)
+* Fix to prevent preloader appearing on progressive pages
+
 #### Version 19.30 (February 22, 2019)
 * Add major code refactor, clear and optimize
 * Add command shell port reverse search, and ability to interrupt currently running command [#991](https://github.com/authentic-theme/authentic-theme/issues/991)
