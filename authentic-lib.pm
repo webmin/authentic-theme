@@ -1869,7 +1869,8 @@ sub print_favorites
                 print '
               <li class="menu-exclude ui-sortable-handle">
                   <a class="menu-exclude-link" href="'
-                  . $gconfig{'webprefix'} . $favorite->{"link"} . '"><i data-product="' .
+                  . (string_starts_with($favorite->{"link"}, "!edit") ? undef : $gconfig{'webprefix'}) .
+                  $favorite->{"link"} . '"><i data-product="' .
                   $favorite->{"icon"} . '" class="wbm-' . $favorite->{"icon"} . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $favorite->{"title"} . '
                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i aria-label="'
