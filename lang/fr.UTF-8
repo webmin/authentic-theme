@@ -155,8 +155,8 @@ settings_right_small_table_icons_description=Substitute standard size table icon
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
 
-settings_leftmenu_section_hide_refresh_modules=Hide <kbd>Refresh Modules</kbd> link
-settings_leftmenu_section_hide_unused_modules=Hide <kbd>Unused Modules</kbd> link
+settings_leftmenu_section_hide_refresh_modules=Hide Refresh Modules link
+settings_leftmenu_section_hide_unused_modules=Hide Unused Modules link
 settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button

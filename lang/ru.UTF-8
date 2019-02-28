@@ -158,8 +158,8 @@ settings_right_small_table_icons_description=Substitute standard size table icon
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
 
-settings_leftmenu_section_hide_refresh_modules=Не показывать <kbd>Обновить модули</kbd>
-settings_leftmenu_section_hide_unused_modules=Не показывать <kbd>Неиспользуемые модули</kbd>
+settings_leftmenu_section_hide_refresh_modules=Не показывать Обновить модули
+settings_leftmenu_section_hide_unused_modules=Не показывать Неиспользуемые модули
 settings_favorites=Показывать кнопку избранное
 settings_leftmenu_button_language=Показывать кнопку язык
 settings_leftmenu_button_refresh=Показывать кнопку обновить

@@ -154,8 +154,8 @@ settings_right_small_table_icons_description=Nahradit standardní velikost ikon 
 settings_right_animate_table_icons=Animovat ikony tabulek při výberu
 settings_right_grayscaled_table_icons=Nechat ikony černobílé a zbarvit je pouze při najetí myši
 
-settings_leftmenu_section_hide_refresh_modules=Schovat odkaz <kbd>Refresh Modules</kbd>
-settings_leftmenu_section_hide_unused_modules=Schovat odkaz <kbd>Unused Modules</kbd>
+settings_leftmenu_section_hide_refresh_modules=Schovat odkaz Refresh Modules
+settings_leftmenu_section_hide_unused_modules=Schovat odkaz Unused Modules
 settings_favorites=Show favorites button
 settings_leftmenu_button_language=Zobrazit tlačítko pro nastavení jazyka
 settings_leftmenu_button_refresh=Zobrazit tlačítko pro obnovení

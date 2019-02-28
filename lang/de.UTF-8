@@ -146,8 +146,8 @@ settings_right_small_table_icons_description=Mache Tabellen Symbole kleiner und 
 settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
 settings_right_grayscaled_table_icons=Farbige Tabellen Symbole nur bei Eingabe anzeigen
 
-settings_leftmenu_section_hide_refresh_modules=Eintrag<kbd>Module aktualisieren</kbd> verbergen
-settings_leftmenu_section_hide_unused_modules=Eintrag<kbd>Nicht benutzte Module</kbd> verbergen
+settings_leftmenu_section_hide_refresh_modules=Eintrag Module aktualisieren verbergen
+settings_leftmenu_section_hide_unused_modules=Eintrag Nicht benutzte Module verbergen
 settings_favorites=Knopf f&uuml;r Favoriten anzeigen
 settings_leftmenu_button_language=Knopf Sprachen anzeigen
 settings_leftmenu_button_refresh=Knopf Neu Laden anzeigen
