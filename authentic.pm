@@ -435,6 +435,16 @@ sub theme_ui_link
           "<a class='ui_link" . ($class ? " " . $class : "") . "' href='$href'" . ($tags ? " " . $tags : "") . ">$text</a>");
 }
 
+sub theme_ui_links_row
+{
+
+    my ($links) = @_;
+    @$links = map {string_contains($_, '<a') ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"} @$links;
+    return @$links ?
+      "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
+      "";
+}
+
 sub theme_select_all_link
 {
 
@@ -1305,7 +1315,7 @@ sub theme_select_server
 {
     my ($s) = @_;
     print '<script>';
-    print 'theme_post_save=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
+    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
     print '</script>';
 }
 
