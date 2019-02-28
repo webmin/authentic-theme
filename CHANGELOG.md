@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.32-beta1 (March 01, 2019)
+* Add to use UI library to print links row
+* Fix multiple navigation menu reload on select server command
+* Fix multi select buttons to contain standard string by default (support all encodings)
+* Fix to prevent adding web-prefix to favorites containing file editor
+
 #### Version 19.31 (February 22, 2019)
 * Fix to prevent preloader appearing on progressive pages
 * Fix update notice to prevent grouping strings without link
