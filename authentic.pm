@@ -439,10 +439,14 @@ sub theme_ui_links_row
 {
 
     my ($links) = @_;
-    @$links = map {string_contains($_, '<a') ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"} @$links;
-    return @$links ?
-      "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
-      "";
+    my $link = "<a";
+    if (string_contains("@$links", $link)) {
+        @$links =
+          map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"} @$links;
+        return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" : "";
+    } else {
+        return @$links ? join(", ", @$links) . ".<br>\n" : "";
+    }
 }
 
 sub theme_select_all_link
