@@ -1,5 +1,58 @@
 ## Changelog
 
+#### Version 19.32-beta1 (March 01, 2019)
+* Add to use UI library to print links row
+* Fix multiple navigation menu reload on select server command
+* Fix multi select buttons to contain standard string by default (support all encodings)
+* Fix to prevent adding web-prefix to favorites containing file editor
+
+#### Version 19.31 (February 22, 2019)
+* Fix to prevent preloader appearing on progressive pages
+* Fix update notice to prevent grouping strings without link
+
+#### Version 19.30 (February 22, 2019)
+* Add major code refactor, clear and optimize
+* Add command shell port reverse search, and ability to interrupt currently running command [#991](https://github.com/authentic-theme/authentic-theme/issues/991)
+* Add ability to add file editor to favorites [#1270](https://github.com/authentic-theme/authentic-theme/issues/1270)
+* Add ability to auto-remove favorites that no longer exist [#1197](https://github.com/authentic-theme/authentic-theme/issues/1197)
+* Add error handlers for server responses [#1047](https://github.com/authentic-theme/authentic-theme/issues/1047)
+* Add ability to select/deselect a range of checked table rows by holding shift [webmin/usermin#45](https://github.com/webmin/usermin/issues/45)
+* Add ability for user to inject custom links into navigation menu [904](https://github.com/authentic-theme/authentic-theme/issues/904)
+* Add display corresponded hostname in command shell port when used with Cloudmin
+* Add enhancements for screen reader accessibility [#1284](https://github.com/authentic-theme/authentic-theme/issues/1284)
+* Add support for displaying cached memory from system status [webmin/webmin@5344bac](https://github.com/webmin/webmin/commit/5344bacaec3bc1b1524fc59a96b67fdb99774076)
+* Add support for nested servers index usage
+* Add pre-compressed .gz files for faster initial load
+* Fix displaying quotas in servers index
+* Fix fatal error when trying to split on array (affected module Linux IPv6 Firewall)
+* Fix to improve color combinations for navigation menu palettes
+* Fix to balance multi selects
+* Fix status label placement in Cloudmin navigation
+* Fix over a hundred of other minor bugs and made other improvements
+
+<!--- separator --->
+
+
+#### Version 19.22 (December 25, 2018)
+* Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)
+* Add ability to resize tree-view in File Manager [#1271](https://github.com/authentic-theme/authentic-theme/issues/1271)
+* Add hotkey for toggling word wrap in file viewers [#1264](https://github.com/authentic-theme/authentic-theme/issues/1264)
+* Add improved context menu interactions for File Manager [#1184](https://github.com/authentic-theme/authentic-theme/issues/1184) [#1240](https://github.com/authentic-theme/authentic-theme/issues/1240)
+* Add warning modal for unsaved forms [#1248](https://github.com/authentic-theme/authentic-theme/issues/1248)
+* Add theme pre-reload message [#1248/comment-443444767](https://github.com/authentic-theme/authentic-theme/issues/1248#issuecomment-443444767)
+* Add an option to hide pin/unpin navigation menu button [#1241](https://github.com/authentic-theme/authentic-theme/issues/1241)
+* Add styling and progressive output for Custom Commands module when cloned [sourceforge.net/5211](https://sourceforge.net/p/webadmin/bugs/5211)
+* Fix interactions and restoration of tabs on first load in File Manager [#1246](https://github.com/authentic-theme/authentic-theme/issues/1246)
+* Fix new styling for Custom Commands module respect columns config option [#1245](https://github.com/authentic-theme/authentic-theme/issues/1245)
+* Fix to improve page auto-scroll user interactions
+* Fix code highlight in PHP mixed content mode [#1239](https://github.com/authentic-theme/authentic-theme/issues/1239)
+* Fix sporadic fatal errors in File Manager [sourceforge.net/5096](https://sourceforge.net/p/webadmin/bugs/5096)
+* Fix missing configuration button for Read User Mail module [#1238](https://github.com/authentic-theme/authentic-theme/issues/1238)
+* Fix compose button malfunction on initial load in mail [#1260](https://github.com/authentic-theme/authentic-theme/issues/1260)
+* Fix detecting other modifier key being pressed (in-built hotkey functionality)
+* Fix backup all databases section for MySQL/PostgreSQL database server
+* Fix to revert default navigation menu color to _Royal Blue_
+
 #### Version 19.21 (November 15, 2018)
 * Add an error message upon theme update for no connection to GitHub or its API rate limit excess
 * Fix not to show updates for releases with dependency issue
@@ -20,7 +73,6 @@
 * Add theme overlays native support [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
 * Add ability to disable new mail UI
 * Add Japanese, German and Swedish language translation update
-* Set navigation menu to default to White palette upon fresh installs
 * Fix guessing button type mechanism [#1157](https://github.com/authentic-theme/authentic-theme/issues/1157)
 * Fix to detect favorites despite presence of home page pointer [#1211](https://github.com/authentic-theme/authentic-theme/issues/1211)
 * Fix data filter to support paste event; improve its performance [#1207](https://github.com/authentic-theme/authentic-theme/issues/1207)
@@ -45,7 +97,6 @@
 * Fix read mail link not loading content [#1177](https://github.com/authentic-theme/authentic-theme/issues/1177)
 * Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authentic-theme/issues/1175)
 
-<!--- separator --->
 
 #### Version 19.19 (June 26, 2018)
 * Add improved context menu to File Manager [#1147](https://github.com/authentic-theme/authentic-theme/issues/1147)

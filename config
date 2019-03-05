@@ -5,4 +5,4 @@ framed=0
 functions=authentic.pm
 inframe=0
 noindex=1
-show_beta_updates=0
+beta_updates=0

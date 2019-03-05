@@ -231,12 +231,12 @@ $mails{'form_list'} = { 'target' => 'delete_mail.cgi',
 if (@error) {
     $mails{'error'} = text('mail_err', $error[0] == 0 ? $error[1] : text('save_elogin', $error[1]));
 }
-if ($in{'error_fatal'} eq '1') {
+my $errors = $mails{'error'};
+if ($in{'error_fatal'} eq '1' || $errors) {
     my $error_message = $in{'error'};
-    my $errors        = $mails{'error'};
     if ($errors) {
-        $mails{'error'} = { error => [$errors, $error_message] };
-    } else {
+        $mails{'error'} = { error => ($error_message ? [$errors, $error_message] : [$errors]) };
+    } elsif ($error_message) {
         $mails{'error'} = { error => [$error_message] };
     }
 }
@@ -282,6 +282,8 @@ $mails{'list'} = {
         :
           undef
     ) };
+
+$mails{'mail_system'} = $config{'mail_system'};
 
 save_last_folder_id($folder);
 pop3_logout();

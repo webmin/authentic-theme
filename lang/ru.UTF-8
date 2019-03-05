@@ -158,8 +158,8 @@ settings_right_small_table_icons_description=Substitute standard size table icon
 settings_right_animate_table_icons=Animate table icons on focus
 settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
 
-settings_leftmenu_section_hide_refresh_modules=Не показывать <kbd>Обновить модули</kbd>
-settings_leftmenu_section_hide_unused_modules=Не показывать <kbd>Неиспользуемые модули</kbd>
+settings_leftmenu_section_hide_refresh_modules=Не показывать Обновить модули
+settings_leftmenu_section_hide_unused_modules=Не показывать Неиспользуемые модули
 settings_favorites=Показывать кнопку избранное
 settings_leftmenu_button_language=Показывать кнопку язык
 settings_leftmenu_button_refresh=Показывать кнопку обновить
@@ -604,7 +604,6 @@ theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_button_tooltip=Show tooltip on buttons
 settings_show_night_mode_link=Show day/night mode button
 settings_hotkey_toggle_key_night_mode=Hotkey for toggling dark/light palette
 settings_title=Настройка темы
@@ -800,7 +799,7 @@ theme_xhred_filemanager_sorting_by_ownership=Ownership
 theme_xhred_filemanager_sorting_by_permissions=Permissions
 theme_xhred_filemanager_sorting_by_attributes=Attributes
 theme_xhred_filemanager_sorting_by_selinux=Security context
-theme_xhred_filemanager_sorting_by_last_mod_time=Last modification time
+theme_xhred_filemanager_sorting_by_last_mod_time=Modified
 theme_xhred_filemanager_tree_view_toggle=Tree-view toggle
 theme_xhred_filemanager_hide_tree_view=Enable tree-view panel
 theme_xhred_filemanager_tree_view_depth=Extracted tree-view depth on initial load (smaller loads faster)
@@ -992,3 +991,33 @@ settings_cache_interval_1m=once a month
 settings_cache_interval_3m=once every 3 months
 settings_cache_interval_6m=twice a year
 settings_cache_interval_1y=once a year
+
+theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.
+
+
+#19.22
+theme_xhred_global_save_as=Save as
+theme_xhred_editor_save_file_as=Save file as
+theme_xhred_global_configuration=Configuration
+
+body_used_cached_total=$1 total / $3 cached / $2 used
+
+
+#19.23
+theme_xhred_favorites_add=Add to favorites
+theme_xhred_favorites_remove=Remove from favorites
+theme_xhred_select_deselect=Select/deselect current item
+theme_xhred_edit_current=Edit current item
+theme_xhred_search_in_file=Search in files
+left_toggle_navigation_menu=Toggle navigation visibility
+theme_xhred_side_slider_toggle=Toggle side slider visibility
+right_pagination_first=First
+right_pagination_last=Last
+settings_leftmenu_custom_links=Extra entries
+settings_leftmenu_custom_links_description=You can have custom, extra links injected into navigation menu. It will require you to pass valid JSON object as a string.<br><br><strong>Example:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
+theme_xhred_file_editor=File Editor
+theme_xhred_mail_no_mail=No mail
+theme_xhred_mail_no_new_mail=No new mail
+theme_xhred_editor_set_syntax=Set syntax
+theme_xhred_global_menu=Menu
+theme_xhred_shell_aborted=Operation aborted

@@ -11,8 +11,8 @@ no warnings 'uninitialized';
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 
-use WebminCore;
 BEGIN {push(@INC, "..");}
+use WebminCore;
 
 our (%in, $config_directory, $current_theme);
 
@@ -49,16 +49,19 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             # Memory stats
             my @memory = defined(&proc::get_memory_info) ? proc::get_memory_info() : ();
             if (@memory) {
-                $data{'mem'} = (
-                           @memory && $memory[0] && $memory[0] > 0 ?
-                             [(100 - int(($memory[1] / $memory[0]) * 100)),
-                              text('body_used', nice_size(($memory[0]) * 1000), nice_size(($memory[0] - $memory[1]) * 1000))
-                             ] :
-                             []);
+                $data{'mem'} = (@memory && $memory[0] && $memory[0] > 0 ?
+                                  [(100 - int(($memory[1] / $memory[0]) * 100)),
+                                   text(($memory[4] ? 'body_used_cached_total' : 'body_used'),
+                                        nice_size($memory[0] * 1024),
+                                        nice_size(($memory[0] - $memory[1]) * 1024),
+                                        ($memory[4] ? nice_size($memory[4] * 1024) : undef)
+                                   )
+                                  ] :
+                                  []);
                 $data{'virt'} = (
                            @memory && $memory[2] && $memory[2] > 0 ?
                              [(100 - int(($memory[3] / $memory[2]) * 100)),
-                              text('body_used', nice_size(($memory[2]) * 1000), nice_size(($memory[2] - $memory[3]) * 1000))
+                              text('body_used', nice_size(($memory[2]) * 1024), nice_size(($memory[2] - $memory[3]) * 1024))
                              ] :
                              []);
             }

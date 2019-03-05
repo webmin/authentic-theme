@@ -129,18 +129,26 @@ sub theme_footer
     }
 
     print "</div>\n";
-    if (!@_ && get_env('script_name') ne '/session_login.cgi' && get_env('script_name') ne '/pam_login.cgi') {
+    if (!@_ &&
+        get_env('script_name') ne '/session_login.cgi' &&
+        get_env('script_name') ne '/pam_login.cgi'     &&
+        get_env('script_name') ne '/401.cgi'           &&
+        get_env('script_name') ne '/403.cgi'           &&
+        get_env('script_name') ne '/404.cgi')
+    {
         my $prefix;
         my $hostname = ($prefix) = split(/\./, get_display_hostname());
+        my $host = ($prefix ? $prefix : get_display_hostname());
         print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
   <div class="-shell-port-container">
-    <div data-shell-config><i class="fa fa-lg fa-cogs"></i></div>
-    <div class="-shell-port-close"></div>
+    <div data-shell-config><i aria-label="' .
+          $theme_text{'theme_xhred_global_configuration'} . '" class="fa fa-lg fa-cogs"></i></div>
+    <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
     <div data-output="true"><pre data-xconsole></pre></div>
     <div class="-shell-port-cmd">
       <span class="-shell-port-prompt"><span class="-shell-port-type">['
           . $remote_user .
-          '@' . ($prefix ? $prefix : get_display_hostname()) . ' <span class="-shell-port-pwd" data-home="' .
+          '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
           get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
 '</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
     </div>
@@ -189,49 +197,34 @@ sub theme_popup_prehead
 
 sub theme_file_chooser_button
 {
-    my $form   = defined($_[2]) ? $_[2] : 0;
     my $chroot = defined($_[3]) ? $_[3] : "/";
     my $add    = int($_[4]);
-    my ($w, $h) = (520, 600);
-    if ($gconfig{'db_sizefile'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizefile'});
-    }
-    return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
-  <i class=\"fa fa-fw fa-files-o vertical-align-middle\"></i>
- </button>\n";
+    my $link   = "chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value)";
+    my $icon   = 'fa-fw fa-files-o';
+
+    return get_chooser_button_template($link, $icon);
 }
 
 sub theme_user_chooser_button
 {
-    my $form = defined($_[2]) ? $_[2] : 0;
-    my $w    = $_[1]          ? 500   : 300;
-    my $h    = 600;
-    if ($_[1] && $gconfig{'db_sizeusers'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeusers'});
-    } elsif (!$_[1] && $gconfig{'db_sizeuser'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeuser'});
-    }
-    return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
-  <i class=\"fa fa-user-o vertical-align-middle\" ></i>
-</button>\n";
+    my $link = "user_chooser.cgi?multi=$_[1]&user=\"+encodeURIComponent(ifield.value)";
+    my $icon = 'fa-user-o';
+
+    return get_chooser_button_template($link, $icon);
 }
 
 sub theme_group_chooser_button
 {
-    my $form = defined($_[2]) ? $_[2] : 0;
-    my $w    = $_[1]          ? 500   : 300;
-    my $h    = 600;
-    if ($_[1] && $gconfig{'db_sizeusers'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeusers'});
-    } elsif (!$_[1] && $gconfig{'db_sizeuser'}) {
-        ($w, $h) = split(/x/, $gconfig{'db_sizeuser'});
-    }
-    return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value), \"chooser\", \"toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=$w,height=$h\"); chooser.ifield = ifield; window.ifield = ifield'>
-      <i class=\"fa fa-group-o vertical-align-middle\" ></i>
-    </button>\n";
+    my $link = "group_chooser.cgi?multi=$_[1]&group=\"+encodeURIComponent(ifield.value)";
+    my $icon = 'fa-group-o';
+    return get_chooser_button_template($link, $icon);
+}
+
+sub theme_interfaces_chooser_button
+{
+    my $link = "net/interface_chooser.cgi?multi=$_[1]&interface=\"+encodeURIComponent(ifield.value)";
+    my $icon = 'fa2 fa2-plus-network';
+    return get_chooser_button_template($link, $icon);
 }
 
 sub theme_date_chooser_button
@@ -442,6 +435,20 @@ sub theme_ui_link
           "<a class='ui_link" . ($class ? " " . $class : "") . "' href='$href'" . ($tags ? " " . $tags : "") . ">$text</a>");
 }
 
+sub theme_ui_links_row
+{
+
+    my ($links) = @_;
+    my $link = "<a";
+    if (string_contains("@$links", $link)) {
+        @$links =
+          map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"} @$links;
+        return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" : "";
+    } else {
+        return @$links ? join(", ", @$links) . ".<br>\n" : "";
+    }
+}
+
 sub theme_select_all_link
 {
 
@@ -557,6 +564,63 @@ sub theme_ui_password
     $rv .= ($tags ? $tags : '');
     $rv .= '>' . "\n";
 
+    return $rv;
+}
+
+sub theme_ui_page_flipper
+{
+    my ($msg, $inputs, $cgi, $left, $right, $farleft, $farright, $below) = @_;
+    my $rv    = "<center class='ui_page_flipper'>";
+    my $class = 'fa fa-fw fa-lg text-semi-light vertical-align-baseline';
+    $rv .= &ui_form_start($cgi) if ($cgi);
+
+    # Far left link, if needed
+    if (@_ > 5) {
+        if ($farleft) {
+            $rv .=
+              "<a href='$farleft'>" . "<i " . get_button_tooltip('right_pagination_first', undef, 'auto top') .
+              "class='$class fa-angle-double-left'></i></a>\n";
+        } else {
+            $rv .= "<i class='$class fa-angle-double-left disabled'></i>\n";
+        }
+    }
+
+    # Left link
+    if ($left) {
+        $rv .=
+          "<a href='$left'>" . "<i " . get_button_tooltip('extensions_mail_pagination_left', undef, 'auto top') .
+          "class='$class fa-angle-left'></i></a>\n";
+    } else {
+        $rv .= "<i class='$class fa-angle-left disabled'></i>\n";
+    }
+
+    # Message and inputs
+    $rv .= $msg;
+    $rv .= " " . $inputs if ($inputs);
+
+    # Right link
+    if ($right) {
+        $rv .=
+          "<a href='$right'>" . "<i " . get_button_tooltip('extensions_mail_pagination_right', undef, 'auto top') .
+          "class='$class fa-angle-right'></i></a>\n";
+    } else {
+        $rv .= "<i class='$class fa-angle-right disabled'></i>\n";
+    }
+
+    # Far right link, if needed
+    if (@_ > 5) {
+        if ($farright) {
+            $rv .=
+              "<a href='$farright'>" . "<i " . get_button_tooltip('right_pagination_last', undef, 'auto top') .
+              "class='$class fa-angle-double-right'></i></a>\n";
+        } else {
+            $rv .= "<i class='$class fa-angle-double-right disabled'></i>\n";
+        }
+    }
+
+    $rv .= "<br>" . $below if ($below);
+    $rv .= &ui_form_end()  if ($cgi);
+    $rv .= "</center>\n";
     return $rv;
 }
 
@@ -820,7 +884,7 @@ sub theme_ui_alert_box
         $tmsg = $desc_to_title;
     }
 
-    $rv .= '<div class="alert ' . $type . '" style="margin-bottom: 4px; ' . $style . '">' . "\n";
+    $rv .= '<div class="alert ' . $type . '" style=" ' . $style . '">' . "\n";
     $rv .= '<i class="fa fa-fw ' . $fa . '"></i> <strong>' . $tmsg . '</strong>';
     $rv .= ($new_line ? '<br>' : '&nbsp;') . "\n";
     $rv .= $msg . "\n";
@@ -1251,12 +1315,24 @@ sub theme_post_save_server
     }
 }
 
+sub theme_select_server
+{
+    my ($s) = @_;
+    print '<script>';
+    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
+    print '</script>';
+}
+
 sub theme_post_change_theme
 {
+    # Clear modifications
     if (&foreign_check("csf") && &foreign_available("csf")) {
         unlink_file('/etc/csf/csf.header');
         unlink_file('/etc/csf/csf.footer');
     }
+
+    # Remove error handler
+    error_40x_handler(1);
 }
 
 sub theme_post_change_modules

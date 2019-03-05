@@ -112,7 +112,7 @@ if (
         } elsif ($gconfig{"notabs_${base_remote_user}"} eq '2' || $gconfig{"notabs"} eq '1') {
             foreach my $minfo (@{ $c->{'modules'} }) {
                 print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/' . $minfo->{'dir'} .
-'" class="navigation_module_trigger navigation_trigger_single_link"><i class="fa fa-fw fa-link"></i>  <span>'
+'" class="navigation_module_trigger link_type_convert_single_link"><i class="fa fa-fw fa-link"></i>  <span>'
                   . $minfo->{'desc'}
                   . '</span></a></li>' . "\n";
             }
@@ -128,6 +128,7 @@ if (
     }
     print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
     print_netdata_link();
+    print_left_custom_links();
 }
 
 elsif (

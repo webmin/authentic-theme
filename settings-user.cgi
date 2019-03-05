@@ -67,8 +67,6 @@ print ui_table_row($theme_text{'settings_mail_ui'},
                    ui_yesno_radio('settings_mail_ui', $theme_config{'settings_mail_ui'}, "true", "false"));
 print ui_table_row(undef, '<b>' . $theme_text{'settings_right_navigation_menu_title'} . '</b>', 2);
 
-print ui_table_row($theme_text{'settings_button_tooltip'},
-                   ui_yesno_radio('settings_button_tooltip', $theme_config{'settings_button_tooltip'}, "true", "false"));
 print ui_table_row($theme_text{'settings_hide_top_loader'},
                    ui_yesno_radio('settings_hide_top_loader', $theme_config{'settings_hide_top_loader'}, "true", "false"));
 print ui_table_row($theme_text{'settings_animation_left'},

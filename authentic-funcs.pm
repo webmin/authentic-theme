@@ -139,7 +139,7 @@ sub product_version_update
 {
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.890', '1.740', '6.03', '9.3', '12.06', $tconfig{'show_beta_updates'});
+      ('1.900', '1.750', '6.03', '9.3', '12.09', $tconfig{'beta_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -198,6 +198,15 @@ sub get_before_delimiter
 
     $v =~ /^(.*)\Q$d\E/;
     return ($1 ? $1 : $v);
+}
+
+sub get_chooser_button_template
+{
+    my ($onclick, $icon) = @_;
+    return
+"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/$onclick, \"chooser\"); chooser.ifield = ifield; window.ifield = ifield'>
+  <i class=\"fa $icon vertical-align-middle\"></i>
+ </button>\n";
 }
 
 sub directory_empty
@@ -276,6 +285,13 @@ sub is_switch_webmail
             (!$theme_config{'settings_right_default_tab_usermin'} ||
                $theme_config{'settings_right_default_tab_usermin'} =~ /mail/
             ) ? 1 : 0);
+}
+
+sub strip_html
+{
+    my ($string) = @_;
+    $string =~ s|<.+?>||g;
+    return $string;
 }
 
 1;

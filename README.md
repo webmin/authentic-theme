@@ -22,7 +22,7 @@
 * Extended support for _File Manager_ and _ConfigServer Security & Firewall_ modules
 
 ### Requirements
-* Webmin _1.850+_ (required), Usermin _1.720+_ (optional), Virtualmin _6.00+_ (optional), Cloudmin _9.20+_ (optional)
+* Webmin _1.900+_ (required), Usermin _1.750+_ (optional), Virtualmin _6.00+_ (optional), Cloudmin _9.20+_ (optional)
 
 ### Recommended modules
 * Installed _Net::SSLeay_ module, to make automatic update notifications work
@@ -49,7 +49,7 @@ Go to theme configuration and hit _Force update theme_ button to install either 
 The theme has built-in feature to notify administrative users to install updates. To enable this feature, turn on _Check for Authentic Theme updates_ in theme configuration.
 
 ### How to show beta updates notifications for the theme?
-Go to theme folder, find _config_ file, open it and change the value from _0_ to _1_ for _show_beta_updates_ option.
+Go to theme configuration folder under Webmin, create/find _config_ file, open it and add/change the value from _0_ to _1_ for _beta_updates_ option.
 
 ### How do I customize the theme?
 Theme has configurable options. There, as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.
@@ -83,7 +83,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [Silviu-Ionut Radu](https://github.com/sealview) (Romanian)
 * [Ilia Rostovtsev](https://github.com/rostovtsev) (Russian)
 * [David Canalias](https://github.com/diathesaron) (Catalan)
-* [Sopor Spr](https://github.com/Sopor-) (Swedish)
+* [Sopor](https://github.com/Sopor-) (Swedish)
 * [7stars](https://github.com/7starsone) (Spanish, French, Portuguese)
 * [miyorineko](https://github.com/miyorineko), [dreista](https://github.com/Dreista) (Chinese)
 * [jlndk](https://github.com/jlndk) (Danish)
