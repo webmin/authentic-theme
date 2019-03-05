@@ -929,7 +929,12 @@ sub get_button_style
         {
             $class = "warning ";
         }
-        $icon = "refresh-fi fa-1_25x";
+
+        if (string_contains($keys, "view_refresh")) {
+            $icon = "refresh-fi fa-1_25x";
+        } else {
+            $icon = "refresh-mdi fa-1_25x";
+        }
     } elsif (string_contains($keys, "search") ||
              string_contains($keys, "index_broad")    ||
              string_contains($keys, "scripts_findok") ||

@@ -997,7 +997,7 @@ theme_xhred_global_configuration=Configuration
 body_used_cached_total=$1 total / $3 cached / $2 used
 
 
-#19.23
+#19.30
 theme_xhred_favorites_add=Add to favorites
 theme_xhred_favorites_remove=Remove from favorites
 theme_xhred_select_deselect=Select/deselect current item
@@ -1015,3 +1015,8 @@ theme_xhred_mail_no_new_mail=No new mail
 theme_xhred_editor_set_syntax=Set syntax
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Operation aborted
+
+
+#19.32
+theme_xhred_connection_reboot=Rebooting
+theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
