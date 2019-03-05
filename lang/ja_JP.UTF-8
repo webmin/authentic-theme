@@ -985,36 +985,33 @@ settings_cache_interval_1m= 1ヶ月に1回
 settings_cache_interval_3m= 3ヶ月に1回
 settings_cache_interval_6m= 年二回
 settings_cache_interval_1y= 一年に一度
-<<<<<<< HEAD
-=======
 
-theme_xhred_reload_notification=Theme configuration has been changed but not saved. The page will be reloaded, to reset to current settings.
+theme_xhred_reload_notification= テーマ設定は変更されましたが保存されていません。現在の設定にリセットするために、ページがリロードされます。
 
 
 #19.22
-theme_xhred_global_save_as=Save as
-theme_xhred_editor_save_file_as=Save file as
-theme_xhred_global_configuration=Configuration
+theme_xhred_global_save_as= 名前を付けて保存
+theme_xhred_editor_save_file_as= ファイルに名前を付けて保存
+theme_xhred_global_configuration= 設定
 
-body_used_cached_total=$1 total / $3 cached / $2 used
+body_used_cached_total= 合計 $1/キャッシュ $3/使用済み $2
 
 
 #19.23
-theme_xhred_favorites_add=Add to favorites
-theme_xhred_favorites_remove=Remove from favorites
-theme_xhred_select_deselect=Select/deselect current item
-theme_xhred_edit_current=Edit current item
-theme_xhred_search_in_file=Search in files
-left_toggle_navigation_menu=Toggle navigation visibility
-theme_xhred_side_slider_toggle=Toggle side slider visibility
-right_pagination_first=First
-right_pagination_last=Last
-settings_leftmenu_custom_links=Extra entries
-settings_leftmenu_custom_links_description=You can have custom, extra links injected into navigation menu. It will require you to pass valid JSON object as a string.<br><br><strong>Example:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
-theme_xhred_file_editor=File Editor
-theme_xhred_mail_no_mail=No mail
-theme_xhred_mail_no_new_mail=No new mail
-theme_xhred_editor_set_syntax=Set syntax
-theme_xhred_global_menu=Menu
-theme_xhred_shell_aborted=Operation aborted
->>>>>>> upstream/master
+theme_xhred_favorites_add= お気に入りに追加
+theme_xhred_favorites_remove= お気に入りから削除
+theme_xhred_select_deselect= 現在のアイテムを選択/選択解除
+theme_xhred_edit_current= 現在のアイテムを編集
+theme_xhred_search_in_file= ファイルを検索する
+left_toggle_navigation_menu= ナビゲーションの表示/非表示を切り替える
+theme_xhred_side_slider_toggle= サイドスライダーの表示/非表示を切り替えます
+right_pagination_first= 最初
+right_pagination_last= 最終
+settings_leftmenu_custom_links= 追加エントリー
+settings_leftmenu_custom_links_description= ナビゲーションメニューにカスタムの追加リンクを挿入することができます。有効なJSONオブジェクトを文字列として渡す必要があります。 <br><br><strong>例:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
+theme_xhred_file_editor= ファイルエディタ
+theme_xhred_mail_no_mail= メールなし
+theme_xhred_mail_no_new_mail= 新着メールはありません
+theme_xhred_editor_set_syntax= 構文を設定する
+theme_xhred_global_menu= メニュー
+theme_xhred_shell_aborted= 操作は中止されました
