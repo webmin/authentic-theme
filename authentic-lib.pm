@@ -649,17 +649,17 @@ sub print_search
 sub add_webprefix
 {
     my ($link) = @_;
+    my $webprefix = $gconfig{'webprefix'};
 
     if (substr($link, -5) eq '&amp;') {
         $link = substr($link, 0, -5);
     }
 
-    if ($link !~ /^http/) {
-        $link = ($link !~ /^\Q$gconfig{'webprefix'}/ ? $gconfig{'webprefix'} . $link : $link);
-
-        if ($link !~ /^\//) {
+    if (!string_starts_with($link, "http") && !string_starts_with($link, "ftp") && !string_starts_with($link, "www")) {
+        if (!string_starts_with($link, "/")) {
             $link = "/" . $link;
         }
+        $link = (!string_starts_with($link, $webprefix) ? ($webprefix . $link) : $link);
     }
     return $link;
 }
