@@ -2408,7 +2408,7 @@ sub get_theme_user_link
       . ($is_hidden . $is_hidden_link)
       . '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
       '" data-href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
-      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" title="' .
+      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
       $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
 }
 
