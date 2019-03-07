@@ -1319,7 +1319,7 @@ sub theme_select_server
 {
     my ($s) = @_;
     print '<script>';
-    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
+    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '0') . '', "\n";
     print '</script>';
 }
 
