@@ -667,14 +667,13 @@ sub add_webprefix
 sub print_left_custom_links
 {
     my $extra = $theme_config{'settings_leftmenu_custom_links'};
-
     if ($extra) {
         $extra = replace('\'', '"', un_urlize($extra));
         if ($extra && $extra =~ m/"extra":/) {
             my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
             my $extra_json = convert_from_json($extra);
             foreach my $e (@{ $extra_json->{'extra'} }) {
-                if (length($e->{"link"})) {
+                if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
                     print '<li ' . $type . '><a href="' . $e->{"link"} . '" class="' . $type_class .
@@ -3014,6 +3013,8 @@ sub theme_settings
               . $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
             ';
 
+        } elsif ($k eq 'settings_leftmenu_custom_links') {
+            $v = ui_textarea($k, $v, 1);
         } elsif ($k eq 'settings_hotkey_custom_1' ||
                  $k eq 'settings_hotkey_custom_2'       ||
                  $k eq 'settings_hotkey_custom_3'       ||
@@ -3025,7 +3026,6 @@ sub theme_settings
                  $k eq 'settings_hotkey_custom_9'       ||
                  $k eq 'settings_leftmenu_netdata_link' ||
                  $k eq 'settings_leftmenu_user_html'    ||
-                 $k eq 'settings_leftmenu_custom_links' ||
                  $k eq 'settings_global_passgen_format')
         {
             my $width = ' width: 40%; ';
@@ -3035,7 +3035,7 @@ sub theme_settings
             }
             if ($k eq 'settings_leftmenu_netdata_link') {
                 $width = ' width: 50%; ';
-            } elsif ($k eq 'settings_leftmenu_user_html' || $k eq 'settings_leftmenu_custom_links') {
+            } elsif ($k eq 'settings_leftmenu_user_html') {
                 $width = ' width: 95%; ';
             }
 

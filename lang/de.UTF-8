@@ -1002,7 +1002,6 @@ theme_xhred_side_slider_toggle=Sichbarkeit seitliche Benachrichtigungen umschalt
 right_pagination_first=Erste
 right_pagination_last=Letzte
 settings_leftmenu_custom_links=Zus&auml;tzliche Eintr&auml;ge
-settings_leftmenu_custom_links_description=Hiermit kannst Du zus&auml;tzliche Links in die Navigation einf&uuml;gen. Dazu musst Du ein valides JSON Objekt als Zeichenkette eingeben.<br><br><strong>Beispiel:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
 theme_xhred_file_editor=Datei Editor
 theme_xhred_mail_no_mail=Keine Mail
 theme_xhred_mail_no_new_mail=Keine neue Mail
@@ -1014,3 +1013,4 @@ theme_xhred_shell_aborted=Operation wurde abgebrochen
 #19.32
 theme_xhred_connection_reboot=Rebooting
 theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
+settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
