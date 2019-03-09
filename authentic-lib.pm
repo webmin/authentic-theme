@@ -470,7 +470,7 @@ sub get_extended_sysinfo
                     if ($info->{'type'} ne 'html') {
                         $returned_sysinfo .= '<table class="table table-striped table-hover"><tbody>';
                     }
-                    
+
                     if ($info->{'type'} eq 'table' &&
                         (   $info->{'module'} ne 'system-status' &&
                             $info->{'type'} ne 'link'
@@ -2077,7 +2077,7 @@ sub error_40x
       ) .
       '" class="error_40x">', "\n";
     embed_login_head(1);
-    print '<body class="session_login error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
+    print '<body class="error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
     print '<meta http-equiv="refresh" content="' . $block_time . '; url=' .
       ($gconfig{'webprefix'} ? $gconfig{'webprefix'} : '/') . '">';
     embed_overlay_prebody();
