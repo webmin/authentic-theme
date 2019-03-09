@@ -464,10 +464,13 @@ sub get_extended_sysinfo
                       '">';
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
-                        $returned_sysinfo .=
-'<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-hover"><tbody>';
+                        $returned_sysinfo .= '<div class="table-responsive" style="width:99.8%">';
                     }
 
+                    if ($info->{'type'} ne 'html') {
+                        $returned_sysinfo .= '<table class="table table-striped table-hover"><tbody>';
+                    }
+                    
                     if ($info->{'type'} eq 'table' &&
                         (   $info->{'module'} ne 'system-status' &&
                             $info->{'type'} ne 'link'
@@ -502,7 +505,11 @@ sub get_extended_sysinfo
                     }
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
-                        $returned_sysinfo .= '</tbody></table></div>';
+                        my $cltbody;
+                        if ($info->{'type'} ne 'html') {
+                            $cltbody = "</tbody></table>";
+                        }
+                        $returned_sysinfo .= "$cltbody</div>";
                     }
 
                     $returned_sysinfo .= '</div>
