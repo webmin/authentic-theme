@@ -2076,7 +2076,7 @@ sub error_40x
           'gainsboro'
       ) .
       '" class="error_40x">', "\n";
-    embed_login_head(1);
+    embed_login_head(!$main::session_id);
     print '<body class="error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
     print '<meta http-equiv="refresh" content="' . $block_time . '; url=' .
       ($gconfig{'webprefix'} ? $gconfig{'webprefix'} : '/') . '">';
@@ -2084,10 +2084,9 @@ sub error_40x
     print '<div class="container error_40x" data-dcontainer="1">' . "\n";
 
     if (defined($in{'code'})) {
-        print "<h3>",, "</h3><p></p>\n";
-        print '<div class="alert alert-danger">' . "\n";
+        print '<div class="alert alert-danger error_40x">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
-          $in{'code'} . '</strong><br /><span>' . $in{'message'} . "</span>\n";
+          $in{'code'} . '</strong><br><span>' . $in{'message'} . "</span>\n";
         print '</div>' . "\n";
     }
     &footer();
