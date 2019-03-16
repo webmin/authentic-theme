@@ -141,8 +141,6 @@ settings_hotkey_custom_9=自定义链接 <code>9</code>
 
 settings_navigation_color=导航菜单调色板
 settings_background_color=内容页面调色板
-settings_animation_left=启用导航菜单动画
-settings_animation_tabs=Enable animation in content page
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
 settings_right_reload=加载默认内容页面

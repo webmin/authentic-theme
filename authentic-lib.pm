@@ -400,12 +400,7 @@ sub get_extended_sysinfo
                       ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
                           'panel-default'
                       ) .
-                      ''
-                      .
-                      ( $theme_config{'settings_animation_tabs'} ne 'false' ? '' :
-                          ' disable-animations'
-                      ) .
-                      '">
+                      ' disable-animations">
                         <div class="panel-heading" data-toggle="collapse" data-target="#' .
                       $info->{'id'} . '-' . $info->{'module'} .
                       $x . '-collapse" role="tab" id="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
@@ -1922,11 +1917,7 @@ sub print_panel
     my ($opened, $id, $title, $data) = @_;
 
     print '
-              <div class="panel panel-default'
-      . ($theme_config{'settings_animation_tabs'} ne 'false' ? '' :
-           ' disable-animations'
-      ) .
-      '">
+              <div class="panel panel-default disable-animations">
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
@@ -2586,10 +2577,6 @@ sub theme_settings
             'settings_contrast_mode',
             'false',
             'settings_perform_content_scrolling',
-            'true',
-            'settings_animation_left',
-            'true',
-            'settings_animation_tabs',
             'true',
             'settings_right_reload',
             'true',

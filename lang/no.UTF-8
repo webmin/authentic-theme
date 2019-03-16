@@ -93,8 +93,6 @@ theme_xhred_session_failed=Login failed. Please try again.
 session_logout=Du har blitt logget ut. Bruk skjema under for å logge inn igjen.
 session_timed_out=Økta gikk ut etter $ 1 minutter uten aktivitet.
 session_twofailed=To-faktor autentisering feilet: $1
-settings_animation_left=Aktiver animasjon i navigasjonsmeny
-settings_animation_tabs=Enable animation in content page
 settings_background_color=Fargepalett for innholdsside
 settings_brightness_level_navigation=Brightness filter
 settings_brightness_level_navigation_description=Standard/gjeldende verdier <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>

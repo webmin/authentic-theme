@@ -145,8 +145,6 @@ settings_hotkey_custom_9=Custom link <code>9</code>
 
 settings_navigation_color=Navigation menu color palette
 settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in content page
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_right_reload=Load default content page
