@@ -866,7 +866,9 @@ const mail = (function() {
                     $dropdown_search_advanced_all = dropdown.search.find('[name="search-wordsin"]');
 
                 // Set current folder first
-                $dropdown_search_select[0].value = data.searched_folder_index || data.folder_index;
+                if ($dropdown_search_select.length) {
+                    $dropdown_search_select[0].value = data.searched_folder_index || data.folder_index;
+                }
 
                 // Initialize folders select
                 _.plugin.select($dropdown_search_select);
@@ -875,7 +877,6 @@ const mail = (function() {
                     event.stopPropagation();
                     let $target = $(event.target),
                         $advanced_form = dropdown.search.find('[' + $$.$.controls.search.data.form.advanced + ']'),
-                        $submit = $($$.$.controls.search.submit),
                         advanced_form_hidden = () => window.getComputedStyle($advanced_form[0]).display === 'none';
 
                     // Close and return
@@ -1198,13 +1199,13 @@ const mail = (function() {
                 // Inject data to the panel
                 if (messages_list_available) {
                     let controls = {
-                        select: data.form_list.buttons.select,
-                        submit: data.form_list.buttons.submit
-                    },
-                    pagination = {
-                        link: (data.pagination_arrow_last || data.pagination_arrow_first || String()),
-                        title: (data.pagination_arrow_last ? _.language('theme_xhred_mail_pagination_last') : (data.pagination_arrow_first ? _.language('theme_xhred_mail_pagination_first') : false))
-                    }
+                            select: data.form_list.buttons.select,
+                            submit: data.form_list.buttons.submit
+                        },
+                        pagination = {
+                            link: (data.pagination_arrow_last || data.pagination_arrow_first || String()),
+                            title: (data.pagination_arrow_last ? _.language('theme_xhred_mail_pagination_last') : (data.pagination_arrow_first ? _.language('theme_xhred_mail_pagination_first') : false))
+                        }
 
                     panel
                         .append($$.create.$('layout.row.controls'))
@@ -1426,7 +1427,8 @@ const mail = (function() {
                     messages.storage.restore();
 
                 } else {
-                    panel.append(row((data.folder_index === 0 ? _.language('theme_xhred_mail_no_new_mail') : _.language('theme_xhred_mail_no_mail') ), 'messages.row.empty'))
+                    events();
+                    panel.append(row((data.folder_index === 0 ? _.language('theme_xhred_mail_no_new_mail') : _.language('theme_xhred_mail_no_mail')), 'messages.row.empty'))
                 }
             }
 
