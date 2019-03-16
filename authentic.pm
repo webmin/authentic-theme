@@ -1172,53 +1172,27 @@ sub theme_nice_size
     } else {
         return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
     }
-
 }
 
 sub theme_redirect
 {
     if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
-        print "Content-type: text/html;\n\n";
+        head();
         return;
     }
 
-    my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (
-                                        $_[1],
-                                        (get_env('https') ? 'https://' : 'http://'),
-                                        get_env('http_x_forwarded_host'),
-                                        get_env('http_host'), (!get_env('http_referer') || dirname(get_env('http_referer'))),
-                                        $gconfig{'webprefix'}, get_env('server_port'));
+    my ($link) = $_[0] || $_[1];
 
-    my $redirect;
-    if (!$proxy || $link =~ /\Q$nonproxy/) {
-        $redirect = $nonproxy;
-    } else {
-        $redirect = $proxy;
+    my ($parent) = parse_servers_path();
+    if ($parent) {
+        ($link) = $_[1] =~ /:\d+(.*)/;
+        $link = "$parent$link";
     }
 
-    my $location = replace(($protocol . $redirect), undef, $_[1]);
-    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/) ? 1 : 0);
-
-    if ($location_use) {
-        if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix) && $location !~ /:\/\//) {
-            $location = ($prefix . $location);
-        }
-
-        my ($parent) = parse_servers_path();
-        if ($parent) {
-            $location = replace((':' . $port), $parent, $location);
-        }
-
-        set_theme_temp_data('redirected', $location);
-        print "Location: $location\n\n";
-    } else {
-        $link =~ s/(\?|&)\Q$xnav\E//ig;
-        if (!theme_redirect_download($link)) {
-            set_theme_temp_data('redirected', $link);
-            print "Location: $link\n\n";
-        }
+    if (!theme_redirect_download($link)) {
+        set_theme_temp_data('redirected', $link);
+        print "Location: $link\n\n";
     }
-
 }
 
 sub theme_header_redirect_download
@@ -1244,7 +1218,6 @@ sub theme_header_redirect_download
     }
     print "</body>\n";
     print '</html>';
-
 }
 
 sub theme_redirect_download
