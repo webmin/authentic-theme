@@ -400,7 +400,7 @@ sub get_extended_sysinfo
                       ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
                           'panel-default'
                       ) .
-                      ' disable-animations">
+                      '">
                         <div class="panel-heading" data-toggle="collapse" data-target="#' .
                       $info->{'id'} . '-' . $info->{'module'} .
                       $x . '-collapse" role="tab" id="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
@@ -1917,7 +1917,7 @@ sub print_panel
     my ($opened, $id, $title, $data) = @_;
 
     print '
-              <div class="panel panel-default disable-animations">
+              <div class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
