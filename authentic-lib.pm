@@ -1216,8 +1216,8 @@ sub get_sysinfo_vars
 
         #Webmin version
         $webmin_version =
-          product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' .
-          $is_hidden_link . '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
+          product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
+          '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
           '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
 
@@ -1237,13 +1237,13 @@ sub get_sysinfo_vars
                       . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                       .
                       ( ($vs_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_vlcheck'} . '" href=\'' .
                           $gconfig{'webprefix'} . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                      $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
+                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
                       '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
 
                 ));
@@ -1267,13 +1267,13 @@ sub get_sysinfo_vars
                       . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                       .
                       ( ($vm2_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_slcheck'} . '" href=\'' .
                           $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                      $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
+                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
 '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
                 ));
         }
@@ -2400,10 +2400,11 @@ sub get_theme_user_link
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
     return '' . theme_version() .
-' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" class="btn btn-default btn-xxs'
-      . ($is_hidden . $is_hidden_link)
-      . '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
-      '" data-href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
+' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" data-container="body" title="'
+      . $theme_text{'theme_update_notice'}
+      . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
+      '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
+      '" data-href="' .                                    (($global_prefix || $gconfig{'webprefix'}) . $link) .
       '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
       $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
 }
