@@ -73,6 +73,7 @@ sub settings_default
     $c{'settings_collapse_navigation_link'}           = 'true';
     $c{'settings_sysinfo_link_mini'}                  = 'false';
     $c{'settings_show_night_mode_link'}               = 'true';
+    $c{'settings_show_terminal_link'}                 = 'true';
     $c{'settings_favorites'}                          = 'true';
     $c{'settings_theme_options_button'}               = 'true';
     $c{'settings_leftmenu_button_refresh'}            = 'false';

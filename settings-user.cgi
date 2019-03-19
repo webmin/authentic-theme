@@ -88,6 +88,12 @@ print ui_table_row($theme_text{'settings_show_night_mode_link'},
                    ui_yesno_radio('settings_show_night_mode_link', $theme_config{'settings_show_night_mode_link'},
                                   "true",                          "false"
                    ));
+if (foreign_available("shell")) {
+    print ui_table_row($theme_text{'settings_show_terminal_link'},
+                       ui_yesno_radio('settings_show_terminal_link', $theme_config{'settings_show_terminal_link'},
+                                      "true",                        "false"
+                       ));
+}
 print ui_table_row($theme_text{'settings_favorites'},
                    ui_yesno_radio('settings_favorites', $theme_config{'settings_favorites'}, "true", "false"));
 print ui_table_row($theme_text{'settings_theme_options_button'},
