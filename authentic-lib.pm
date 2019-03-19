@@ -1846,8 +1846,15 @@ sub print_table_row_responsive
 sub print_favorites
 {
 
-    my $f = &read_file_contents($config_directory . "/$current_theme/favorites.json");
+    # Support for previous installs
+    my $ff = $config_directory . "/$current_theme/favorites.json";
+    if (-r $ff) {
+        my $ffn = $ff;
+        $ffn =~ s/\.json/-$remote_user.json/;
+        rename_file($ff, $ffn);
+    }
 
+    my $f = &read_file_contents($config_directory . "/$current_theme/favorites-$remote_user.json");
     print '<div id="favorites-menu">
     <div class="favorites-menu-outer">
       <nav class="favorites-menu">
@@ -1857,8 +1864,9 @@ sub print_favorites
       . $theme_text{'left_favorites'} .
 '<sup style="position: absolute; margin: 25px 0 0 -10px;" class="hidden">&nbsp;&nbsp;<small class="text-white"> <a aria-label="'
       . $theme_text{'theme_xhred_filemanager_context_edit'}
-      . '" href="' . $gconfig{'webprefix'} . '/settings-editor_read.cgi?file=' .
-      $config_directory . '/' . $current_theme . '/favorites.json" class="fa fa-pencil-square-o' .
+      . '" href="' .
+      $gconfig{'webprefix'} . '/settings-editor_' . (foreign_available('webmin') ? undef : 'favorites_') . 'read.cgi?file=' .
+      $config_directory . '/' . $current_theme . '/favorites-' . $remote_user . '.json" class="fa fa-pencil-square-o' .
       ($f =~ m/"favorites":/ ? '' : ' hidden') . '" style="display: inline; font-size: 1em;"></a></small></sup></h1>
               </li>';
 

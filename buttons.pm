@@ -47,15 +47,11 @@ if ($theme_config{'settings_show_terminal_link'} ne 'false' &&
     print '</li>';
 }
 
-if ($get_user_level eq '0' &&
-    foreign_available('webmin'))
-{
-    print '<li data-linked' . get_button_tooltip('left_favorites', 'settings_hotkey_favorites', 'auto top') .
-      ' class="user-link favorites cursor-pointer' .
-      ($theme_config{'settings_favorites'} ne 'false' ? '' : ' hidden') . '">';
-    print '<span class="pd-rt-4"><i class="fa fa-fw fa-star"></i></span>';
-    print '</li>';
-}
+print '<li data-linked' . get_button_tooltip('left_favorites', 'settings_hotkey_favorites', 'auto top') .
+  ' class="user-link favorites cursor-pointer' .
+  ($theme_config{'settings_favorites'} ne 'false' ? '' : ' hidden') . '">';
+print '<span class="pd-rt-4"><i class="fa fa-fw fa-star"></i></span>';
+print '</li>';
 
 if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne 'false') ||
     ($get_user_level ne '0' &&

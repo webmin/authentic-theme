@@ -9,18 +9,17 @@ use strict;
 
 use File::Basename;
 
-our (%in, $in, $current_theme, $config_directory, $remote_user, %theme_text);
+our (%in, %gconfig, %theme_text, $config_directory, $current_theme, $remote_user, $has_usermin);
 
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
 theme_config_dir_available();
 
-$in =~ s/\t\n\r//g;
-$in =~ /\{(?:\{.*\}|[^{])*\}/sg;
-
 my $file = $config_directory . "/$current_theme/favorites-$remote_user.json";
-my $content = $in{'favorites'};
-
 unlink_file($file);
-write_file_contents($file, $content);
-head();
+write_file_contents($file, $in{'data'});
+if ($ENV{'HTTP_X_PJAX'} eq "true") {
+    redirect($gconfig{'webprefix'} . "/sysinfo.cgi");
+} else {
+    head();
+}

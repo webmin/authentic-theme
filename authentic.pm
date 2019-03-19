@@ -129,41 +129,17 @@ sub theme_footer
     }
 
     print "</div>\n";
-    if (!@_ &&
-        get_env('script_name') ne '/session_login.cgi' &&
-        get_env('script_name') ne '/pam_login.cgi'     &&
-        get_env('script_name') ne '/401.cgi'           &&
-        get_env('script_name') ne '/403.cgi'           &&
-        get_env('script_name') ne '/404.cgi')
-    {
-        my $prefix;
-        my $hostname = ($prefix) = split(/\./, get_display_hostname());
-        my $host = ($prefix ? $prefix : get_display_hostname());
-        print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
-  <div class="-shell-port-container">
-    <div data-shell-config><i aria-label="' .
-          $theme_text{'theme_xhred_global_configuration'} . '" class="fa fa-lg fa-cogs"></i></div>
-    <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
-    <div data-output="true"><pre data-xconsole></pre></div>
-    <div class="-shell-port-cmd">
-      <span class="-shell-port-prompt"><span class="-shell-port-type">['
-          . $remote_user .
-          '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
-          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
-'</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
-    </div>
-  </div>
-</div>', "\n";
-    }
+    embed_port_shell();
     embed_footer((theme_debug_mode()),
                  (
-                  (get_module_name()                                        ||
-                     get_env('request_uri') =~ /\/config.cgi\?/             ||
-                     get_env('request_uri') =~ /\/uconfig.cgi\?/            ||
-                     get_env('request_uri') =~ /\/webmin_search.cgi\?/      ||
-                     get_env('request_uri') =~ /\/settings-user.cgi/        ||
-                     get_env('request_uri') =~ /\/settings-editor_read.cgi/ ||
-                     get_env('request_uri') =~ /\/settings-logos.cgi/       ||
+                  (get_module_name()                                                  ||
+                     get_env('request_uri') =~ /\/config.cgi\?/                       ||
+                     get_env('request_uri') =~ /\/uconfig.cgi\?/                      ||
+                     get_env('request_uri') =~ /\/webmin_search.cgi\?/                ||
+                     get_env('request_uri') =~ /\/settings-user.cgi/                  ||
+                     get_env('request_uri') =~ /\/settings-editor_read.cgi/           ||
+                     get_env('request_uri') =~ /\/settings-editor_favorites_read.cgi/ ||
+                     get_env('request_uri') =~ /\/settings-logos.cgi/                 ||
                      get_env('request_uri') =~ /\/settings-backgrounds.cgi/
                   ) ? '1' : '0'
                  ),
