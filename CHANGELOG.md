@@ -1,5 +1,17 @@
 ## Changelog
 
+#### Version 19.32-beta2 (March 24, 2019)
+* Add significant improvements to directory listing in File Manager [@8cdb7a4](https://github.com/authentic-theme/authentic-theme/commit/8cdb7a4eaf9c691dc9f26d5769b102b340f19802)
+* Add ability for any user use favorites
+* Add ability to store opened/closed state of collapsible panels on Dashboard upon page refresh [@b201085](https://github.com/authentic-theme/authentic-theme/commit/b201085b5ea13d2c1c8f35986b24126ba81076f5)
+* Add user friendly message upon server reboot [#1307](https://github.com/authentic-theme/authentic-theme/issues/1307)
+* Add redirecting all 40x and 50x errors into UI
+* Fix to design look of Webalizer usage statistics
+* Fix navigation menu linking issue when web-prefix is used (affected module Cloudmin)
+* Fix config file editor and paneled file editor work together (on page enter/refresh)
+* Fix to improve editor's width and height calculations
+* Fix compose mail button not working on empty mail folder
+
 #### Version 19.32-beta1 (March 01, 2019)
 * Add to use UI library to print links row
 * Fix multiple navigation menu reload on select server command
