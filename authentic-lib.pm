@@ -3831,13 +3831,10 @@ sub get_user_acl
     }
     my $acl = "$config_directory$module/$remote_user.acl";
 
-    my $config = read_file_contents($acl);
-    my %config = $config =~ /(.*?)=(.*)/g;
+    my %config;
+    read_file($acl, \%config);
 
     if (-r $acl) {
-
-        my %config = $config =~ /(.*?)=(.*)/g;
-
         if ($key) {
             return $config{$key};
         } else {
@@ -3855,8 +3852,8 @@ sub get_module_config_data
 
     if (-r $config_directory . '/' . $module . '/config') {
 
-        my $config = &read_file_contents($config_directory . '/' . $module . '/config');
-        my %config = $config =~ /(.*?)=(.*)/g;
+        my %config;
+        read_file(($config_directory . '/' . $module . '/config'), \%config);
 
         if ($key) {
             return $config{$key};
