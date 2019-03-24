@@ -99,6 +99,7 @@ var settings_mailbox_slash_delimiter = true,
 
 
     config_portable_module_filemanager_records_per_page = 30,
+    config_portable_module_filemanager_records_for_server_pagination = 300,
     config_portable_module_filemanager_default_sort = 0,
     config_portable_module_filemanager_hide_tree_view = false,
     config_portable_module_filemanager_tree_expand_search = true,

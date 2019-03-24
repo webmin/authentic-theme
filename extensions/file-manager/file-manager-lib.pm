@@ -85,6 +85,86 @@ sub get_request_uri
     return %c;
 }
 
+sub get_pagination
+{
+
+    my ($page, $pages, $query) = @_;
+
+    our ($path);
+
+    my $search_case_insensitive = $in{'caseins'};
+    my $search_grep = $in{'grepstring'};
+
+    my $left  = $page - 2;
+    my $right = $page + 3;
+    my @range;
+    my $last;
+    my $pagination;
+    my $invisible = $pages == 1 ? ' invisible' : undef;
+
+    my $start = sub {
+        my $start;
+        my $disabled = ($page == 1 ? " disabled" : undef);
+
+        $start = "<div class=\"dataTables_paginate paging_simple_numbers spaginates$invisible\">";
+        $start .= '<ul class="pagination">';
+        $start .= "<li class='paginate_button previous$disabled'>";
+        $start .= '<a href="#"><i class="fa fa-fw fa-angle-left"></i></a>';
+        $start .= "</li>";
+        return $start;
+    };
+
+    my $current = sub {
+        my ($i) = @_;
+        my $end;
+        my $active = ($page eq $i ? " active" : undef);
+        $end = "<li class='paginate_button$active'>";
+        $end .= "<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&caseins=$search_case_insensitive&grepstring=$search_grep'>$i</a>";
+        $end .= "</li>";
+        return $end;
+    };
+
+    my $range = sub {
+        my $range;
+        $range = '<li class="paginate_button disabled">';
+        $range .= '<a href="#">…</a>';
+        $range .= "</li>";
+
+    };
+
+    my $end = sub {
+        my $end;
+        my $disabled = ($page == $pages ? " disabled" : undef);
+        $end = "<li class='paginate_button next$disabled'>";
+        $end .= '<a href="#"><i class="fa fa-fw fa-angle-right"></i></a>';
+        $end .= "</li>";
+        $end .= '</ul>';
+        $end .= '</div>';
+        return $end;
+    };
+
+    for (my $i = 1; $i <= $pages; $i++) {
+        if ($i == 1 || $i == $pages || $i >= $left && $i < $right) {
+            push(@range, $i);
+        }
+    }
+
+    foreach my $i (@range) {
+        if ($last) {
+            if ($i - $last == 2) {
+                $pagination .= &$current($last + 1);
+            } elsif ($i - $last != 1) {
+                $pagination .= &$range();
+            }
+        }
+        $pagination .= &$current($i);
+        $last = $i;
+    }
+
+    $pagination = &$start() . $pagination . &$end();
+    return $pagination;
+}
+
 sub get_tree
 {
     my ($p, $d, $e) = @_;
@@ -137,6 +217,16 @@ sub head
     print "Content-type: text/html\n\n";
 }
 
+sub extra_query
+{
+    my $page     = $in{'page'};
+    my $query    = $in{'query'};
+    my $paginate = $in{'paginate'};
+    my $caseins = $in{'caseins'};
+    my $grepstring = $in{'grepstring'};
+    return "&page=$page&query=$query&paginate=$paginate&caseins=$caseins&grepstring=$grepstring";
+}
+
 sub set_response
 {
     my ($c) = @_;
@@ -164,11 +254,58 @@ sub fatal_errors
 
 sub print_error
 {
-    my ($error) = @_;
-
-    head();
-    print $error;
+    my ($err_msg) = @_;
+    my %err;
+    $err{'error'} = $err_msg;
+    print_json([\%err]);
     exit;
+
+}
+
+sub exec_search
+{
+    my $mask = trim($in{'query'});
+    my $criteria;
+    my $insensitive;
+    if ($in{'caseins'}) {
+        $criteria    = '-iname';
+        $insensitive = 'i';
+    } else {
+        $criteria = '-name';
+    }
+    our @list = split('\n', &backquote_logged("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
+
+    my $query = quotemeta(trim($in{'grepstring'}));
+    if (length $query) {
+        my @matched;
+
+        foreach my $file (@list) {
+            if ($insensitive) {
+                if (read_file_contents($file) =~ /$query/i) {
+                    push @matched, $file;
+                }
+            } else {
+                if (read_file_contents($file) =~ /$query/) {
+                    push @matched, $file;
+                }
+            }
+        }
+        undef(@list);
+        @list = @matched;
+    }
+
+    my $replace = trim($in{'grepreplace'});
+    if (length $query && length $replace) {
+        foreach my $file (@list) {
+            if ($insensitive) {
+                (my $fc = read_file_contents($file)) =~ s/$query/$replace/gi;
+                write_file_contents($file, $fc);
+            } else {
+                (my $fc = read_file_contents($file)) =~ s/$query/$replace/g;
+                write_file_contents($file, $fc);
+            }
+        }
+    }
 
 }
 
@@ -177,6 +314,12 @@ sub print_content
     my $setype = get_selinux_command_type();
     my %secontext;
     my %attributes;
+
+    # In case of search trim the list accordingly
+    my $query = $in{'query'};
+    if ($query) {
+        exec_search();
+    }
 
     # Filter out not allowed entries
     if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
@@ -234,6 +377,9 @@ sub print_content
     undef(@list);
     push @list, @folders, @files;
 
+    my %list_data;
+    my $list_length = scalar(@list);
+
     my @allowed_for_edit = split(/\s+/, $access{'allowed_for_edit'});
     my %allowed_for_edit = map {$_ => 1} @allowed_for_edit;
 
@@ -243,12 +389,43 @@ sub print_content
     my $extract_icon = "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
     my $goto_icon    = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
 
+    my $info_total;
+    my $info_files   = scalar(@files);
+    my $info_folders = scalar(@folders);
+
     my $page      = 1;
     my $pagelimit = 4294967295;
+    my $pages     = 0;
 
-    my $info_total;
-    my $info_files   = scalar @files;
-    my $info_folders = scalar @folders;
+    my $max_allowed = int($userconfig{'max_allowed'});
+    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 2000) {
+        $max_allowed = 300;
+    }
+
+    my $totals            = $info_files + $info_folders;
+    my $server_pagination = undef;
+    $list_data{'pagination_limit'} = undef;
+
+    if ($totals > $max_allowed || $query) {
+        $page = $in{'page'} || 1;
+        $pagelimit = $in{'paginate'} || $userconfig{'per_page'} || 30;
+        $pages = ceil(($list_length) / $pagelimit);
+        $server_pagination = get_pagination($page, $pages, $query);
+        $list_data{'pagination_limit'} = $in{'paginate'} || undef;
+
+        my $pagination_text = $text{'theme_xhred_datatable_sinfo'};
+        my $start           = $page * $pagelimit - $pagelimit + 1;
+        my $end             = $page * $pagelimit;
+        if ($end > $totals) {
+            $end = $totals;
+        }
+        $pagination_text =~ s/_START_/$start/ig;
+        $pagination_text =~ s/_END_/$end/ig;
+        $pagination_text =~ s/_TOTAL_/$totals/ig;
+        $list_data{'pagination_text'} = $pagination_text;
+    }
+
+    $list_data{'pagination'} = $server_pagination;
 
     if ($info_files eq 1 && $info_folders eq 1) {
         $info_total = 'filemanager_global_info_total1';
@@ -260,15 +437,11 @@ sub print_content
         $info_total = 'filemanager_global_info_total4';
     }
 
-    head();
-    print '<!DOCTYPE html>';
-    print '<html>';
-    print '<head></head>';
-    print '<body>';
-    print "<div class='total'>" . text($info_total, $info_files, $info_folders) . "</div>";
+    $list_data{'total'} = "<div class='total'>" . text($info_total, $info_files, $info_folders) . "</div>";
 
     # Render current directory entries
-    print &ui_form_start("", "post", undef, "id='list_form'");
+    $list_data{'form'} = &ui_form_start("", "post", undef, "id='list_form'");
+
     my @ui_columns = ('<input class="_select-unselect_" type="checkbox" onclick="selectUnselect(this)" />', '');
     push @ui_columns, ('<span data-head-name>' . $text{'name'} . '</span>');
     push @ui_columns, ('<span data-head-type>' . $text{'type'} . '</span>')
@@ -287,9 +460,9 @@ sub print_content
     push @ui_columns, ('<span data-head-last_mod_time>' . $text{'last_mod_time'} . '</span>')
       if ($userconfig{'columns'} =~ /last_mod_time/);
 
-    print &ui_columns_start(\@ui_columns);
+    $list_data{'rows'} = '';
     for (my $count = 1 + $pagelimit * ($page - 1); $count <= $pagelimit + $pagelimit * ($page - 1); $count++) {
-        if ($count > scalar(@list)) {last;}
+        if ($count > $list_length) {last;}
         my $class = $count & 1 ? "odd" : "even";
         my $link = $list[$count - 1][0];
         $link =~ s/\Q$cwd\E\///;
@@ -401,18 +574,21 @@ sub print_content
           if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/);
         push @row_data, $mod_time
           if ($userconfig{'columns'} =~ /last_mod_time/);
-        print &ui_checked_columns_row(\@row_data, "", "name", $vlink);
-    }
-    print ui_columns_end();
-    print &ui_hidden("path", $path), "\n";
-    print '</form>';
-    print '<div class="error_message">' . $in{'error'} . '</div>'
-      if (length $in{'error'});
-    print '<div class="error_fatal">' . $in{'error_fatal'} . '</div>'
-      if (length $in{'error_fatal'});
-    print '</body>';
-    print '</html>';
 
+        $list_data{'rows'} .= &ui_checked_columns_row(\@row_data, "", "name", $vlink);
+    }
+
+    $list_data{'form'} .= &ui_hidden("path", $path), "\n";
+    $list_data{'form'} .= '</form>';
+    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}     : undef);
+    $list_data{'error'}       = (length $in{'error'}       ? $in{'error'}       : undef);
+    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
+    $list_data{'page_requested'}       = $in{'page'};
+    $list_data{'pagination_requested'} = $in{'paginate'};
+    $list_data{'totals'} = $totals;
+    $list_data{'searched'} = $query ? 1 : 0;
+
+    print_json([\%list_data]);
 }
 
 sub local_nice_size

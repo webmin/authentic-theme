@@ -24,8 +24,11 @@ if (!$in{'owner'} || !$in{'group'} || !supports_users()) {
 (my $login, my $pass, my $uid, my $gid) = getpwnam($in{'owner'});
 my $grid = getgrnam($in{'group'});
 my $recursive;
-if   ($in{'recursive'} eq 'true') {$recursive = '-R';}
-else                              {$recursive = '';}
+if ($in{'recursive'} eq 'true') {
+    $recursive = '-R';
+} else {
+    $recursive = '';
+}
 
 if (!defined $login) {
     $errors{ $in{'owner'} } = $text{'error_user_not_found'};
@@ -46,5 +49,5 @@ if (!scalar %errors) {
     }
 }
 
-redirect('list.cgi?path=' .
-         urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal);
+redirect('list.cgi?path=' . urlize($path) .
+         '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());

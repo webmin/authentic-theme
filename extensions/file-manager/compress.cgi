@@ -41,4 +41,4 @@ foreach my $name (split(/\0/, $in{'name'})) {
 
 system_logged($command);
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors));
+redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
