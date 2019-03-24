@@ -3371,7 +3371,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_command_exists'} eq '1') {
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
-            print resolve_links(get_access_data('root') . urlize($in{'xhr-get_symlink_path'}));
+            print resolve_links(get_access_data('root') . un_urlize($in{'xhr-get_symlink_path'}));
         } elsif ($in{'xhr-theme_temp_data'} eq '1') {
             if ($in{'xhr-theme_temp_data_action'} eq 'set') {
                 set_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_value'});
