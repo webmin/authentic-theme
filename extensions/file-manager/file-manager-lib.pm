@@ -292,7 +292,7 @@ sub exec_search
     } else {
         $criteria = '-name';
     }
-    our @list = split('\n', &backquote_command("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
+    our @list = split('\n', &backquote_command("find -L " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
 
     my $query = quotemeta(trim($in{'grepstring'}));
     if (length $query) {
