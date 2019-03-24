@@ -14,8 +14,9 @@ use Encode qw(decode encode);
 use File::MimeInfo;
 use POSIX;
 
-our (%access, %in, %text, @remote_user_info, $base_remote_user, $current_theme,
-     %userconfig, @allowed_paths, @list, $base, $cwd, $path);
+our (%access,           %in,            %text,       @remote_user_info, $base_remote_user,
+     $config_directory, $current_theme, %userconfig, @allowed_paths,    @list,
+     $base,             $cwd,           $path,       $remote_user);
 our $checked_path;
 
 our %request_uri = get_request_uri();
@@ -85,6 +86,23 @@ sub get_request_uri
     return %c;
 }
 
+sub get_user_config
+{
+    my ($k) = @_;
+
+    my %t;
+    read_file("$config_directory/$current_theme/settings-$remote_user", \%t);
+
+    if ($k) {
+        my $v = $t{$k};
+        $v =~ s/'|;//g;
+        return $v;
+    } else {
+        my %c = map {(my $v = $t{$_}) =~ s/'|;//g; $_ => $v} keys %t;
+        return %c;
+    }
+}
+
 sub get_pagination
 {
 
@@ -93,7 +111,7 @@ sub get_pagination
     our ($path);
 
     my $search_case_insensitive = $in{'caseins'};
-    my $search_grep = $in{'grepstring'};
+    my $search_grep             = $in{'grepstring'};
 
     my $left  = $page - 2;
     my $right = $page + 3;
@@ -119,7 +137,8 @@ sub get_pagination
         my $end;
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
-        $end .= "<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&caseins=$search_case_insensitive&grepstring=$search_grep'>$i</a>";
+        $end .=
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&caseins=$search_case_insensitive&grepstring=$search_grep'>$i</a>";
         $end .= "</li>";
         return $end;
     };
@@ -219,10 +238,10 @@ sub head
 
 sub extra_query
 {
-    my $page     = $in{'page'};
-    my $query    = $in{'query'};
-    my $paginate = $in{'paginate'};
-    my $caseins = $in{'caseins'};
+    my $page       = $in{'page'};
+    my $query      = $in{'query'};
+    my $paginate   = $in{'paginate'};
+    my $caseins    = $in{'caseins'};
     my $grepstring = $in{'grepstring'};
     return "&page=$page&query=$query&paginate=$paginate&caseins=$caseins&grepstring=$grepstring";
 }
@@ -273,7 +292,7 @@ sub exec_search
     } else {
         $criteria = '-name';
     }
-    our @list = split('\n', &backquote_logged("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
+    our @list = split('\n', &backquote_command("find " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
 
     my $query = quotemeta(trim($in{'grepstring'}));
     if (length $query) {
@@ -407,8 +426,9 @@ sub print_content
     $list_data{'pagination_limit'} = undef;
 
     if ($totals > $max_allowed || $query) {
-        $page = $in{'page'} || 1;
-        $pagelimit = $in{'paginate'} || $userconfig{'per_page'} || 30;
+        my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
+        $page = int($in{'page'}) || 1;
+        $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($list_length) / $pagelimit);
         $server_pagination = get_pagination($page, $pages, $query);
         $list_data{'pagination_limit'} = $in{'paginate'} || undef;
@@ -585,8 +605,8 @@ sub print_content
     $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
     $list_data{'page_requested'}       = $in{'page'};
     $list_data{'pagination_requested'} = $in{'paginate'};
-    $list_data{'totals'} = $totals;
-    $list_data{'searched'} = $query ? 1 : 0;
+    $list_data{'totals'}               = $totals;
+    $list_data{'searched'}             = $query ? 1 : 0;
 
     print_json([\%list_data]);
 }
