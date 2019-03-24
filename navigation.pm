@@ -79,8 +79,10 @@ if (
                                         $theme_text{'settings_right_theme_left_background_title'}, 1);
                     $__custom_print++;
 
-                } elsif (!foreign_available("webmin") && $__custom_print eq '0' &&
-                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true') {
+                } elsif (!foreign_available("webmin") &&
+                         $__custom_print eq '0' &&
+                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')
+                {
                     print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
                 }
@@ -112,7 +114,7 @@ if (
         } elsif ($gconfig{"notabs_${base_remote_user}"} eq '2' || $gconfig{"notabs"} eq '1') {
             foreach my $minfo (@{ $c->{'modules'} }) {
                 print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/' . $minfo->{'dir'} .
-'" class="navigation_module_trigger navigation_trigger_single_link"><i class="fa fa-fw fa-link"></i>  <span>'
+'" class="navigation_module_trigger link_type_convert_single_link"><i class="fa fa-fw fa-link"></i>  <span>'
                   . $minfo->{'desc'}
                   . '</span></a></li>' . "\n";
             }
@@ -128,17 +130,20 @@ if (
     }
     print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
     print_netdata_link();
+    print_left_custom_links();
 }
 
-elsif (
-       ((!$theme_config{'settings_right_default_tab_webmin'} && $in{'xhr-navigation-type'} ne 'cloudmin') ||
-        (foreign_available("virtual-server") &&
-         $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
-         $in{'xhr-navigation-type'} ne 'cloudmin') ||
-        $in{'xhr-navigation-type'} eq 'virtualmin'
-       ) &&
-       get_product_name() ne 'usermin' &&
-       $get_user_level ne '4')
+elsif ($get_user_level eq '2' && dashboard_switch()
+       ||
+       (
+        ((!$theme_config{'settings_right_default_tab_webmin'} && $in{'xhr-navigation-type'} ne 'cloudmin') ||
+         (foreign_available("virtual-server") &&
+             $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
+             $in{'xhr-navigation-type'} ne 'cloudmin') ||
+         $in{'xhr-navigation-type'} eq 'virtualmin'
+        ) &&
+        get_product_name() ne 'usermin' &&
+        $get_user_level ne '4'))
 {
     print_left_menu('virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'});
     print_sysinfo_link();

@@ -15,7 +15,7 @@ our (%in, %text, $cwd, $path);
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 if (!$in{'name'}) {
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
 }
 
 my $type;
@@ -34,7 +34,7 @@ if (-e "$cwd/$in{'name'}") {
                 ));
 } else {
     if (&rename_file($cwd . '/' . $in{'file'}, $cwd . '/' . $in{'name'})) {
-        redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+        redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
     } else {
         print_error(
                     (

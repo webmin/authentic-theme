@@ -18,8 +18,11 @@ my $recursive;
 my %errors;
 my $error_fatal;
 
-if   ($in{'recursive'} eq 'true') {$recursive = '-R';}
-else                              {$recursive = '';}
+if ($in{'recursive'} eq 'true') {
+    $recursive = '-R';
+} else {
+    $recursive = '';
+}
 
 if (!$in{'label'}) {
     redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
@@ -32,5 +35,5 @@ foreach my $file (split(/\0/, $in{'name'})) {
     }
 }
 
-redirect('list.cgi?path=' .
-         urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal);
+redirect('list.cgi?path=' . urlize($path) .
+         '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());

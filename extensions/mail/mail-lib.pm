@@ -539,12 +539,6 @@ sub messages_list
         my $id  = $m->{'id'};
         my @cols;
 
-        # Trim folder id for search
-        my $searched_folder_id = $in{'searched_folder_id'};
-        if (defined($searched_folder_id)) {
-            $id = trim(replace(folders_key_escape($searched_folder_id), '', $id));
-        }
-
         # Special flag
         my ($unread, $starred, $flag_reply, $flag_special, $flag_security, $flags_all, $flags_dns) =
           message_flags($m, $folder->{'sent'}, $folder);
@@ -639,6 +633,12 @@ sub messages_list
 
         #Mark unread
         push(@colattrs, " data-unread=\"$unread\" data-starred=\"$starred\"");
+
+        # Trim folder id when using search
+        my $searched_folder_id = $in{'searched_folder_id'};
+        if (defined($searched_folder_id)) {
+            $id = trim(replace(folders_key_escape($searched_folder_id), '', $id));
+        }
 
         $list_mails .= ui_message_list_column(\@cols, \@colattrs, "d", $id, $m, $folder);
         update_delivery_notification($mail[$i], $folder);

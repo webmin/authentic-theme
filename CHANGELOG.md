@@ -1,6 +1,51 @@
 ## Changelog
 
-#### Version 19.22 (December 25, 2018) &nbsp;&nbsp;:christmas_tree:
+#### Version 19.32-beta2 (March 24, 2019)
+* Add significant improvements to directory listing in File Manager [@8cdb7a4](https://github.com/authentic-theme/authentic-theme/commit/8cdb7a4eaf9c691dc9f26d5769b102b340f19802)
+* Add ability for any user use favorites
+* Add ability to store opened/closed state of collapsible panels on Dashboard upon page refresh [@b201085](https://github.com/authentic-theme/authentic-theme/commit/b201085b5ea13d2c1c8f35986b24126ba81076f5)
+* Add user friendly message upon server reboot [#1307](https://github.com/authentic-theme/authentic-theme/issues/1307)
+* Add redirecting all 40x and 50x errors into UI
+* Fix to design look of Webalizer usage statistics
+* Fix navigation menu linking issue when web-prefix is used (affected module Cloudmin)
+* Fix config file editor and paneled file editor work together (on page enter/refresh)
+* Fix to improve editor's width and height calculations
+* Fix compose mail button not working on empty mail folder
+
+#### Version 19.32-beta1 (March 01, 2019)
+* Add to use UI library to print links row
+* Fix multiple navigation menu reload on select server command
+* Fix multi select buttons to contain standard string by default (support all encodings)
+* Fix to prevent adding web-prefix to favorites containing file editor
+
+#### Version 19.31 (February 22, 2019)
+* Fix to prevent preloader appearing on progressive pages
+* Fix update notice to prevent grouping strings without link
+
+#### Version 19.30 (February 22, 2019)
+* Add major code refactor, clear and optimize
+* Add command shell port reverse search, and ability to interrupt currently running command [#991](https://github.com/authentic-theme/authentic-theme/issues/991)
+* Add ability to add file editor to favorites [#1270](https://github.com/authentic-theme/authentic-theme/issues/1270)
+* Add ability to auto-remove favorites that no longer exist [#1197](https://github.com/authentic-theme/authentic-theme/issues/1197)
+* Add error handlers for server responses [#1047](https://github.com/authentic-theme/authentic-theme/issues/1047)
+* Add ability to select/deselect a range of checked table rows by holding shift [webmin/usermin#45](https://github.com/webmin/usermin/issues/45)
+* Add ability for user to inject custom links into navigation menu [904](https://github.com/authentic-theme/authentic-theme/issues/904)
+* Add display corresponded hostname in command shell port when used with Cloudmin
+* Add enhancements for screen reader accessibility [#1284](https://github.com/authentic-theme/authentic-theme/issues/1284)
+* Add support for displaying cached memory from system status [webmin/webmin@5344bac](https://github.com/webmin/webmin/commit/5344bacaec3bc1b1524fc59a96b67fdb99774076)
+* Add support for nested servers index usage
+* Add pre-compressed .gz files for faster initial load
+* Fix displaying quotas in servers index
+* Fix fatal error when trying to split on array (affected module Linux IPv6 Firewall)
+* Fix to improve color combinations for navigation menu palettes
+* Fix to balance multi selects
+* Fix status label placement in Cloudmin navigation
+* Fix over a hundred of other minor bugs and made other improvements
+
+<!--- separator --->
+
+
+#### Version 19.22 (December 25, 2018)
 * Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)
 * Add ability to resize tree-view in File Manager [#1271](https://github.com/authentic-theme/authentic-theme/issues/1271)
 * Add hotkey for toggling word wrap in file viewers [#1264](https://github.com/authentic-theme/authentic-theme/issues/1264)
@@ -64,7 +109,6 @@
 * Fix read mail link not loading content [#1177](https://github.com/authentic-theme/authentic-theme/issues/1177)
 * Fix dark palettes erroneously applying some rules to content page [#1175](https://github.com/authentic-theme/authentic-theme/issues/1175)
 
-<!--- separator --->
 
 #### Version 19.19 (June 26, 2018)
 * Add improved context menu to File Manager [#1147](https://github.com/authentic-theme/authentic-theme/issues/1147)

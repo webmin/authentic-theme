@@ -141,8 +141,6 @@ settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
 settings_navigation_color=ナビゲーションメニューのカラーパレット
 settings_background_color=コンテンツページのカラーパレット
-settings_animation_left=ナビゲーションメニューでアニメーションを有効にする
-settings_animation_tabs=Enable animation in content page
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
 settings_right_reload=既定のコンテンツページの読み込み
@@ -599,7 +597,6 @@ theme_xhred_move_up= 上がる
 theme_xhred_move_down= 下に移動
 theme_xhred_add_after= 後で追加する
 theme_xhred_add_before= 前に追加
-settings_button_tooltip= ボタンのツールチップを表示する
 settings_show_night_mode_link= 昼/夜モード切り替え
 settings_hotkey_toggle_key_night_mode= ダーク/ライトパレットを切り替えるためのホットキー
 settings_title= テーマ構成
@@ -993,3 +990,34 @@ theme_xhred_reload_notification=Theme configuration has been changed but not sav
 #19.22
 theme_xhred_global_save_as=Save as
 theme_xhred_editor_save_file_as=Save file as
+theme_xhred_global_configuration=Configuration
+
+body_used_cached_total=$1 total / $3 cached / $2 used
+
+
+#19.30
+theme_xhred_favorites_add=Add to favorites
+theme_xhred_favorites_remove=Remove from favorites
+theme_xhred_select_deselect=Select/deselect current item
+theme_xhred_edit_current=Edit current item
+theme_xhred_search_in_file=Search in files
+left_toggle_navigation_menu=Toggle navigation visibility
+theme_xhred_side_slider_toggle=Toggle side slider visibility
+right_pagination_first=First
+right_pagination_last=Last
+settings_leftmenu_custom_links=Extra entries
+theme_xhred_file_editor=File Editor
+theme_xhred_mail_no_mail=No mail
+theme_xhred_mail_no_new_mail=No new mail
+theme_xhred_editor_set_syntax=Set syntax
+theme_xhred_global_menu=Menu
+theme_xhred_shell_aborted=Operation aborted
+
+
+#19.32
+theme_xhred_connection_reboot=Rebooting
+theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
+settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
+left_favorites_edit=Edit Favorites
+left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
+theme_xhred_filemanager_records_for_server_pagination=Default number of items in directory to initiate server pagination

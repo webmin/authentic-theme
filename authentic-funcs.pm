@@ -200,6 +200,15 @@ sub get_before_delimiter
     return ($1 ? $1 : $v);
 }
 
+sub get_chooser_button_template
+{
+    my ($onclick, $icon) = @_;
+    return
+"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/$onclick, \"chooser\"); chooser.ifield = ifield; window.ifield = ifield'>
+  <i class=\"fa $icon vertical-align-middle\"></i>
+ </button>\n";
+}
+
 sub directory_empty
 {
     if (-e $_[0] && -d $_[0]) {
@@ -276,6 +285,13 @@ sub is_switch_webmail
             (!$theme_config{'settings_right_default_tab_usermin'} ||
                $theme_config{'settings_right_default_tab_usermin'} =~ /mail/
             ) ? 1 : 0);
+}
+
+sub strip_html
+{
+    my ($string) = @_;
+    $string =~ s|<.+?>||g;
+    return $string;
 }
 
 1;

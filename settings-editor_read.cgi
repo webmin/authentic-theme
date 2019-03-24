@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, $current_theme, $config_directory, %theme_text);
+our (%in, $current_theme, $config_directory, $remote_user, %theme_text);
 
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
@@ -18,7 +18,7 @@ require(dirname(__FILE__) . "/authentic-lib.pm");
 my @files = ($config_directory . "/$current_theme/styles.css",
              $config_directory . "/$current_theme/scripts.js",
              $config_directory . "/$current_theme/scripts.pm",
-             $config_directory . "/$current_theme/favorites.json",
+             $config_directory . "/$current_theme/favorites-$remote_user.json",
              $config_directory . "/$current_theme/custom-lang");
 my $file = html_escape($in{'file'});
 $file = $files[0] if (!$file);

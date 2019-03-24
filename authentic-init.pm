@@ -7,15 +7,16 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,            @theme_bundle_js,          %module_text_full,      %theme_config,
-     %theme_text,                  %theme_temp_data,          $get_user_level,        $global_prefix,
-     $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,  $has_usermin_version,
-     $has_usermin,                 $has_virtualmin,           $theme_module_query_id, $t_uri___i,
-     $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,   $t_var_product_m,
-     $t_var_switch_m,              $xnav,                     %config,                %gaccess,
-     %gconfig,                     %in,                       %tconfig,               %text,
-     $base_remote_user,            $config_directory,         $current_lang,          $current_theme,
-     $remote_user,                 $root_directory,           $theme_root_directory,  $title);
+our (@theme_bundle_css,    @theme_bundle_js,             %module_text_full,         %theme_config,
+     %theme_text,          %theme_temp_data,             $get_user_level,           $global_prefix,
+     $parent_webprefix,    $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,
+     $has_usermin_version, $has_usermin,                 $has_virtualmin,           $theme_module_query_id,
+     $t_uri___i,           $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,
+     $t_var_product_m,     $t_var_switch_m,              $xnav,                     %config,
+     %gaccess,             %gconfig,                     %in,                       %tconfig,
+     %text,                $base_remote_user,            $config_directory,         $current_lang,
+     $current_theme,       $remote_user,                 $root_directory,           $theme_root_directory,
+     $title);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
 
@@ -68,13 +69,12 @@ sub settings_default
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
-    $c{'settings_button_tooltip'}                     = 'true';
     $c{'settings_hide_top_loader'}                    = 'false';
-    $c{'settings_animation_left'}                     = 'true';
-    $c{'settings_animation_tabs'}                     = 'true';
     $c{'settings_collapse_navigation_link'}           = 'true';
     $c{'settings_sysinfo_link_mini'}                  = 'false';
     $c{'settings_show_night_mode_link'}               = 'true';
+    $c{'settings_show_terminal_link'}                 = 'true';
+    $c{'settings_favorites'}                          = 'true';
     $c{'settings_theme_options_button'}               = 'true';
     $c{'settings_leftmenu_button_refresh'}            = 'false';
     $c{'settings_hotkeys_active'}                     = 'true';
@@ -99,6 +99,7 @@ sub settings_default
 
 sub embed_favicon
 {
+    my ($inline) = @_;
     my $product = get_product_name() eq 'usermin' ? 'usermin' : 'webmin';
 
     if ($get_user_level eq '1' || $get_user_level eq '2') {
@@ -110,19 +111,33 @@ sub embed_favicon
 
     my $favicon_path = $gconfig{'webprefix'} . '/images/favicons/' . $product;
     my $ref_link     = 'data-link-ref';
-    print '<link ' .
-      $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">';
-    print '<link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">';
-    print '<link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">';
-    print '<link ' .
-      $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">';
-    print '<link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">';
-    print '<link ' . $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">';
-    print '<meta name="msapplication-TileColor" content="#3d74ca">';
-    print '<meta ' . $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">';
-    print '<meta name="theme-color" content="#3d74ca">';
+    if ($inline) {
+        my $favicon_spath = "$root_directory/$current_theme/images/favicons/$product";
+        print ' <link ' . $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/apple-touch-icon.png'))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/favicon-32x32.png'))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png'))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
+          trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png'))) . '">' . "\n";
+    } else {
+        print ' <link ' .
+          $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">' . "\n";
+        print ' <link ' .
+          $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">' . "\n";
+        print ' <link ' . $ref_link .
+          ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">' . "\n";
+        print ' <link ' .
+          $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
+    }
+    print ' <link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">' . "\n";
+    print ' <link ' .
+      $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
+    print ' <meta name="msapplication-TileColor" content="#3d74ca">' . "\n";
+    print ' <meta ' .
+      $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">' . "\n";
+    print ' <meta name="theme-color" content="#3d74ca">' . "\n";
 
 }
 
@@ -148,10 +163,19 @@ sub embed_header
         return;
     }
 
+    # Print default options
+    print " <script src=\"$gconfig{'webprefix'}/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
+    print ' <script>';
+    print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
+    print "</script>\n";
+
+    embed_settings();
+    embed_tconfig();
+
     # Print object with language strings
-    print '<script>';
+    print ' <script>';
     print 'var v___theme_language = ' . get_theme_language();
-    print '</script>';
+    print "</script>\n";
 
     if ($args[2]) {
         do(dirname(__FILE__) . "/dependencies.pm");
@@ -166,7 +190,6 @@ sub embed_header
             }
             embed_css_fonts();
         } else {
-
             embed_css_bundle();
         }
 
@@ -174,7 +197,6 @@ sub embed_header
 
         embed_background();
         embed_styles();
-        embed_settings();
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
@@ -192,7 +214,6 @@ sub embed_header
             embed_js_bundle();
         }
     } else {
-
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
                 print ' <link href="' . $gconfig{'webprefix'} .
@@ -216,7 +237,6 @@ sub embed_header
 
         embed_background();
         embed_styles();
-        embed_settings();
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
@@ -311,6 +331,11 @@ sub embed_settings
         $user_config_file =~ tr/\r\n/;/d;
         print ' <script>' . $user_config_file . '</script>' . "\n";
     }
+}
+
+sub embed_tconfig
+{
+    print ' <script>tconfig_beta_updates=' . ($tconfig{'beta_updates'} ne '1' ? 0 : 1) . '</script>' . "\n";
 }
 
 sub embed_styles
@@ -496,6 +521,36 @@ EOF
     print $noscript, "\n";
 }
 
+sub embed_port_shell
+{
+    if (!@_ &&
+        get_env('script_name') ne '/session_login.cgi' &&
+        get_env('script_name') ne '/pam_login.cgi'     &&
+        get_env('script_name') ne '/401.cgi'           &&
+        get_env('script_name') ne '/403.cgi'           &&
+        get_env('script_name') ne '/404.cgi')
+    {
+        my $prefix;
+        my $hostname = ($prefix) = split(/\./, get_display_hostname());
+        my $host = ($prefix ? $prefix : get_display_hostname());
+        print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
+  <div class="-shell-port-container">
+    <div data-shell-config><i aria-label="' .
+          $theme_text{'theme_xhred_global_configuration'} . '" class="fa fa-lg fa-cogs"></i></div>
+    <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
+    <div data-output="true"><pre data-xconsole></pre></div>
+    <div class="-shell-port-cmd">
+      <span class="-shell-port-prompt"><span class="-shell-port-type">['
+          . $remote_user .
+          '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
+          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
+'</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
+    </div>
+  </div>
+</div>', "\n";
+    }
+}
+
 sub embed_footer
 {
     my (@args) = @_;
@@ -553,14 +608,15 @@ sub init_vars
 
     my %tconfig_local = settings("$config_directory/$current_theme/config");
     our %tconfig = (%tconfig, %tconfig_local);
-    
+
     our %theme_config = (settings_default(),
                          settings($config_directory . "/$current_theme/settings.js", 'settings_'),
                          settings(get_tuconfig_file(),                               'settings_'));
 
     our %theme_text = (load_language($current_theme), %text);
 
-    our $theme_requested_url         = (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
+    our $theme_requested_url =
+      (get_env('http_webmin_path') || get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
     our $theme_requested_from_module = get_env('http_x_requested_from');
     our $theme_requested_from_tab    = get_env('http_x_requested_from_tab');
 
@@ -581,15 +637,16 @@ sub init_vars
         }
     }
 
-    our ($has_virtualmin, $get_user_level, $has_cloudmin) = get_user_level();
+    our ($get_user_level, $has_virtualmin, $has_cloudmin) = get_user_level();
     our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_data();
 
     our $t_uri__x = get_env('script_name');
     our $t_uri___i;
     our $theme_module_query_id;
 
-    my ($server_link, $server_prefix) = parse_servers_path();
-    our $global_prefix = ($server_prefix ? $server_prefix : $gconfig{'webprefix'});
+    my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
+    our $global_prefix = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
+    our $parent_webprefix = $parent_webprefix_local;
 
     our $xnav = "xnavigation=1";
 
@@ -718,29 +775,29 @@ sub get_filters
 
 sub get_user_level
 {
-    my ($a, $b, $c);
-    $b = &foreign_available("server-manager");
-    $a = &foreign_available("virtual-server");
-    if ($b) {
+    my ($level, $has_virtualmin, $has_cloudmin);
+    $has_cloudmin   = &foreign_available("server-manager");
+    $has_virtualmin = &foreign_available("virtual-server");
+    if ($has_cloudmin) {
         &foreign_require("server-manager", "server-manager-lib.pl");
     }
-    if ($a) {
+    if ($has_virtualmin) {
         &foreign_require("virtual-server", "virtual-server-lib.pl");
     }
-    if ($b) {
+    if ($has_cloudmin) {
         no warnings 'once';
-        $c = $server_manager::access{'owner'} ? 4 : 0;
-    } elsif ($a) {
-        $c =
+        $level = $server_manager::access{'owner'} ? 4 : 0;
+    } elsif ($has_virtualmin) {
+        $level =
           &virtual_server::master_admin()   ? 0 :
           &virtual_server::reseller_admin() ? 1 :
           2;
     } elsif (&get_product_name() eq "usermin") {
-        $c = 3;
+        $level = 3;
     } else {
-        $c = 0;
+        $level = 0;
     }
-    return ($a, $c, $b);
+    return ($level, $has_virtualmin, $has_cloudmin);
 }
 
 sub set_user_level
@@ -902,7 +959,12 @@ sub get_button_style
         {
             $class = "warning ";
         }
-        $icon = "refresh-fi fa-1_25x";
+
+        if (string_contains($keys, "view_refresh")) {
+            $icon = "refresh-fi fa-1_25x";
+        } else {
+            $icon = "refresh-mdi fa-1_25x";
+        }
     } elsif (string_contains($keys, "search") ||
              string_contains($keys, "index_broad")    ||
              string_contains($keys, "scripts_findok") ||
@@ -1168,14 +1230,15 @@ sub header_html_data
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-theme-version="' . theme_version(0) . '" data-theme-mversion="' .
-      theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() .
-      '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' . dashboard_switch() .
-      '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() . '" data-language-full="' .
-      get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' . theme_post_update() .
-      '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' . get_initial_wizard() .
-      '" data-webprefix="' . $global_prefix . '" data-current-product="' . get_product_name() . '" data-module="' .
-      ($module ? "$module" : get_module_name()) . '" data-uri="' . ($module ? "/$module/" : get_env('request_uri')) .
+      ' data-theme-version="' . theme_version(0) .
+      '" data-theme-mversion="' . theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' .
+      get_user_home() . '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' .
+      dashboard_switch() . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
+      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' .
+      theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
+      get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
+      '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
+      '" data-uri="' . ($module ? "/$module/" : un_urlize(get_env('request_uri'))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
@@ -1316,12 +1379,14 @@ sub get_theme_temp_data
 
 sub parse_servers_path
 {
-    my ($parent) = $ENV{'HTTP_WEBMIN_PATH'};
+    my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
 
     if ($parent) {
-        my ($parent_link)   = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix) = $parent_link =~ /(\/servers\/link.cgi\S*)/;
-        return ($parent_link, $parent_prefix);
+        my ($parent_link)      = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
+        my ($parent_prefix)    = $parent_link =~ /:\d+(.*\/link.cgi\/\S*\d)/;
+        my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
+
+        return ($parent_prefix, $parent_webprefix);
     } else {
         return (undef, undef);
     }
@@ -1391,6 +1456,60 @@ sub get_link
 
     return [$url, $1];
 
+}
+
+sub get_button_tooltip
+{
+    my ($label, $key, $placement, $html, $force, $container, $br_label_on) = @_;
+
+    my $mod_key = $theme_config{'settings_hotkey_toggle_modifier'};
+    my $hot_key = ($key ? ucfirst($theme_config{$key}) : undef);
+    if (!$container) {
+        $container = '#content';
+    }
+    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
+    if ($br_label_on) {
+        my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
+        $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
+    }
+
+    return (
+           ' aria-label="' . strip_html($tooltip_text) . '" data-container="' . $container . '" data-placement="' .
+             $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
+             .
+             ($tooltip_text
+                .
+                (length $theme_config{'settings_hotkeys_active'} &&
+                   $theme_config{'settings_hotkeys_active'} ne 'false' &&
+                   $hot_key ?
+                   " (" . ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
+                   ''
+                )
+             ) .
+             '"');
+}
+
+sub error_40x_handler
+{
+    my %miniserv;
+    get_miniserv_config(\%miniserv);
+    if ($_[0]) {
+        if ($miniserv{'error_handler_403'}) {
+            $miniserv{'error_handler_401'} = undef;
+            $miniserv{'error_handler_403'} = undef;
+            $miniserv{'error_handler_404'} = undef;
+            put_miniserv_config(\%miniserv);
+            reload_miniserv();
+        }
+    } else {
+        if (!$miniserv{'error_handler_403'}) {
+            $miniserv{'error_handler_401'} = "401.cgi";
+            $miniserv{'error_handler_403'} = "403.cgi";
+            $miniserv{'error_handler_404'} = "404.cgi";
+            put_miniserv_config(\%miniserv);
+            reload_miniserv();
+        }
+    }
 }
 
 1;
