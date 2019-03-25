@@ -430,7 +430,7 @@ sub print_content
 
     $list_data{'pagination'} = $server_pagination;
     my $total_with_pagination;
-    if ($list_data{'pagination_limit'}) {
+    if ($server_pagination) {
         $total_with_pagination = "_paginated";
     }
 
