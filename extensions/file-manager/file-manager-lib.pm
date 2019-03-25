@@ -15,8 +15,8 @@ use File::MimeInfo;
 use POSIX;
 
 our (%access,           %in,            %text,       @remote_user_info, $base_remote_user,
-     $config_directory, $current_theme, %userconfig, @allowed_paths,    @list,
-     $base,             $cwd,           $path,       $remote_user);
+     $config_directory, $current_theme, %userconfig, @allowed_paths,    $base,
+     $cwd,              $path,          $remote_user);
 our $checked_path;
 
 our %request_uri = get_request_uri();
@@ -184,53 +184,6 @@ sub get_pagination
     return $pagination;
 }
 
-sub get_tree
-{
-    my ($p, $d, $e) = @_;
-    my $df = int($d);
-    my %r;
-    my @r;
-
-    my $wanted = sub {
-        my $td = $File::Find::name;
-        if (-d $td && !-l $td) {
-            $td =~ s|^\Q$p\E/?||;
-            if ($r{$td} || !$td) {
-                return;
-            }
-            my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
-            my $pp = $p ne '/' ? $p : undef;
-            my $c = $r{$td} =
-              { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
-            defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
-        }
-    };
-    my $preprocess = sub {
-        my $td = $File::Find::name;
-        my $d  = $td =~ tr[/][];
-
-        if ($e && $p eq "/" && $d == 1) {
-            if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
-                return;
-            }
-        }
-        my $dd = ($df > 0 ? ($df + 1) : 0);
-        if ($dd) {
-            if ($d < $dd) {
-                return sort @_;
-            }
-            return;
-        }
-        sort @_;
-    };
-    find(
-         {  wanted     => $wanted,
-            preprocess => $preprocess
-         },
-         $p);
-    return \@r;
-}
-
 sub head
 {
     print "Content-type: text/html\n\n";
@@ -283,78 +236,106 @@ sub print_error
 
 sub exec_search
 {
-    my $mask = trim($in{'query'});
-    my $criteria;
+    my (@list)   = @_;
+    my $mask     = $in{'query'};
+    my $grep     = quotemeta($in{'grepstring'});
+    my $replace  = $in{'grepreplace'};
+    my $case     = $in{'caseins'};
+    my $criteria = '-name';
     my $insensitive;
-    if ($in{'caseins'}) {
+
+    if ($case) {
         $criteria    = '-iname';
         $insensitive = 'i';
-    } else {
-        $criteria = '-name';
     }
-    our @list = split('\n', &backquote_command("find -L " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
 
-    my $query = quotemeta(trim($in{'grepstring'}));
-    if (length $query) {
-        my @matched;
+    @list = split('\n', &backquote_command("find -L " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
 
-        foreach my $file (@list) {
-            if ($insensitive) {
-                if (read_file_contents($file) =~ /$query/i) {
-                    push @matched, $file;
+    if (length $grep || length $replace) {
+
+        if (length $grep) {
+            my @matched;
+
+            foreach my $file (@list) {
+                if ($insensitive) {
+                    if (read_file_contents($file) =~ /$grep/i) {
+                        push @matched, $file;
+                    }
+                } else {
+                    if (read_file_contents($file) =~ /$grep/) {
+                        push @matched, $file;
+                    }
                 }
-            } else {
-                if (read_file_contents($file) =~ /$query/) {
-                    push @matched, $file;
+            }
+            undef(@list);
+            @list = @matched;
+        }
+
+        if (length $grep && length $replace) {
+            foreach my $file (@list) {
+                if ($insensitive) {
+                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/gi;
+                    write_file_contents($file, $fc);
+                } else {
+                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/g;
+                    write_file_contents($file, $fc);
                 }
             }
         }
-        undef(@list);
-        @list = @matched;
     }
 
-    my $replace = trim($in{'grepreplace'});
-    if (length $query && length $replace) {
-        foreach my $file (@list) {
-            if ($insensitive) {
-                (my $fc = read_file_contents($file)) =~ s/$query/$replace/gi;
-                write_file_contents($file, $fc);
-            } else {
-                (my $fc = read_file_contents($file)) =~ s/$query/$replace/g;
-                write_file_contents($file, $fc);
-            }
-        }
-    }
+    return @list;
 
 }
 
 sub print_content
 {
+    my %list_data;
+    my $query = $in{'query'};
+
+    unless (opendir(DIR, $cwd)) {
+        print_error("$text{'theme_global_error'}: <tt>`$cwd`</tt>- $!.");
+        exit;
+    }
+
+    my @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
+    closedir(DIR);
+
+    # In case of search trim the list accordingly
+    if ($query) {
+        @list = exec_search(@list);
+    }
+
+    my $page      = 1;
+    my $pagelimit = 4294967295;
+    my $pages     = 0;
+
+    my $max_allowed = int($userconfig{'max_allowed'});
+    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 2000) {
+        $max_allowed = 300;
+    }
+
+    my $totals         = scalar(@list);
+    my $totals_spliced = $totals;
+
+    my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
+
+    if ($totals > $max_allowed || $query) {
+        $page = int($in{'page'}) || 1;
+        $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
+        my $splice_start = $pagelimit * ($page - 1);
+        my $splice_end = $pagelimit;
+
+        @list = sort {$a cmp $b} @list;
+        @list = splice(@list, $splice_start, $splice_end);
+        $totals_spliced = scalar(@list);
+    }
+
+    @list = map {&simplify_path("$cwd/$_")} @list;
+
     my $setype = get_selinux_command_type();
     my %secontext;
     my %attributes;
-
-    # In case of search trim the list accordingly
-    my $query = $in{'query'};
-    if ($query) {
-        exec_search();
-    }
-
-    # Filter out not allowed entries
-    if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
-
-        # Leave only allowed
-        my @tmp_list;
-        for $path (@allowed_paths) {
-            my $slashed = $path;
-            $slashed .= "/" if ($slashed !~ /\/$/);
-            push @tmp_list, grep {$slashed =~ /^$_\// || $_ =~ /$slashed/} @list;
-        }
-
-        # Remove duplicates
-        my %hash = map {$_, 1} @tmp_list;
-        @list = keys %hash;
-    }
 
     # List attributes
     if ($userconfig{'columns'} =~ /attributes/ && get_attr_status()) {
@@ -396,8 +377,25 @@ sub print_content
     undef(@list);
     push @list, @folders, @files;
 
-    my %list_data;
-    my $list_length = scalar(@list);
+    my $info_total;
+    my $info_files   = scalar(@files);
+    my $info_folders = scalar(@folders);
+
+    # Filter out not allowed entries
+    if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
+
+        # Leave only allowed
+        my @tmp_list;
+        for $path (@allowed_paths) {
+            my $slashed = $path;
+            $slashed .= "/" if ($slashed !~ /\/$/);
+            push @tmp_list, grep {$slashed =~ /^$_\// || $_ =~ /$slashed/} @list;
+        }
+
+        # Remove duplicates
+        my %hash = map {$_, 1} @tmp_list;
+        @list = keys %hash;
+    }
 
     my @allowed_for_edit = split(/\s+/, $access{'allowed_for_edit'});
     my %allowed_for_edit = map {$_ => 1} @allowed_for_edit;
@@ -408,28 +406,13 @@ sub print_content
     my $extract_icon = "<i class='fa fa-external-link' alt='$text{'extract_archive'}'></i>";
     my $goto_icon    = "<i class='fa fa-arrow-right' alt='$text{'goto_folder'}'></i>";
 
-    my $info_total;
-    my $info_files   = scalar(@files);
-    my $info_folders = scalar(@folders);
-
-    my $page      = 1;
-    my $pagelimit = 4294967295;
-    my $pages     = 0;
-
-    my $max_allowed = int($userconfig{'max_allowed'});
-    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 2000) {
-        $max_allowed = 300;
-    }
-
-    my $totals            = $info_files + $info_folders;
     my $server_pagination = undef;
     $list_data{'pagination_limit'} = undef;
 
     if ($totals > $max_allowed || $query) {
-        my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
-        $pages = ceil(($list_length) / $pagelimit);
+        $pages = ceil(($totals) / $pagelimit);
         $server_pagination = get_pagination($page, $pages, $query);
         $list_data{'pagination_limit'} = $in{'paginate'} || undef;
 
@@ -446,18 +429,21 @@ sub print_content
     }
 
     $list_data{'pagination'} = $server_pagination;
-
-    if ($info_files eq 1 && $info_folders eq 1) {
-        $info_total = 'filemanager_global_info_total1';
-    } elsif ($info_files ne 1 && $info_folders eq 1) {
-        $info_total = 'filemanager_global_info_total2';
-    } elsif ($info_files eq 1 && $info_folders ne 1) {
-        $info_total = 'filemanager_global_info_total3';
-    } else {
-        $info_total = 'filemanager_global_info_total4';
+    my $total_with_pagination;
+    if ($list_data{'pagination_limit'}) {
+        $total_with_pagination = "_paginated";
     }
 
-    $list_data{'total'} = "<div class='total'>" . text($info_total, $info_files, $info_folders) . "</div>";
+    if ($info_files eq 1 && $info_folders eq 1) {
+        $info_total = ('filemanager_global_info' . $total_with_pagination . '_total1');
+    } elsif ($info_files ne 1 && $info_folders eq 1) {
+        $info_total = ('filemanager_global_info' . $total_with_pagination . '_total2');
+    } elsif ($info_files eq 1 && $info_folders ne 1) {
+        $info_total = ('filemanager_global_info' . $total_with_pagination . '_total3');
+    } else {
+        $info_total = ('filemanager_global_info' . $total_with_pagination . '_total4');
+    }
+    $list_data{'total'} = "<div class='total'>" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
 
     # Render current directory entries
     $list_data{'form'} = &ui_form_start("", "post", undef, "id='list_form'");
@@ -481,8 +467,8 @@ sub print_content
       if ($userconfig{'columns'} =~ /last_mod_time/);
 
     $list_data{'rows'} = '';
-    for (my $count = 1 + $pagelimit * ($page - 1); $count <= $pagelimit + $pagelimit * ($page - 1); $count++) {
-        if ($count > $list_length) {last;}
+    for (my $count = 1; $count <= $totals_spliced; $count++) {
+        if ($count > $totals) {last;}
         my $class = $count & 1 ? "odd" : "even";
         my $link = $list[$count - 1][0];
         $link =~ s/\Q$cwd\E\///;
@@ -609,6 +595,53 @@ sub print_content
     $list_data{'searched'}             = $query ? 1 : 0;
 
     print_json([\%list_data]);
+}
+
+sub get_tree
+{
+    my ($p, $d, $e) = @_;
+    my $df = int($d);
+    my %r;
+    my @r;
+
+    my $wanted = sub {
+        my $td = $File::Find::name;
+        if (-d $td && !-l $td) {
+            $td =~ s|^\Q$p\E/?||;
+            if ($r{$td} || !$td) {
+                return;
+            }
+            my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
+            my $pp = $p ne '/' ? $p : undef;
+            my $c = $r{$td} =
+              { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
+            defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
+        }
+    };
+    my $preprocess = sub {
+        my $td = $File::Find::name;
+        my $d  = $td =~ tr[/][];
+
+        if ($e && $p eq "/" && $d == 1) {
+            if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
+                return;
+            }
+        }
+        my $dd = ($df > 0 ? ($df + 1) : 0);
+        if ($dd) {
+            if ($d < $dd) {
+                return sort @_;
+            }
+            return;
+        }
+        sort @_;
+    };
+    find(
+         {  wanted     => $wanted,
+            preprocess => $preprocess
+         },
+         $p);
+    return \@r;
 }
 
 sub local_nice_size
