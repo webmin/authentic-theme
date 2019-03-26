@@ -12,5 +12,4 @@ use File::Basename;
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
-exec_search();
 print_content();

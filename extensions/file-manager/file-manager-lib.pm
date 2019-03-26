@@ -12,6 +12,8 @@ use lib (dirname(__FILE__) . '/../../lib');
 use Cwd 'abs_path';
 use Encode qw(decode encode);
 use File::MimeInfo;
+use File::Find;
+use File::Grep qw( fdo );
 use POSIX;
 
 our (%access,           %in,            %text,       @remote_user_info, $base_remote_user,
@@ -110,6 +112,7 @@ sub get_pagination
 
     our ($path);
 
+    my $search_follow_symlinks  = $in{'follow'};
     my $search_case_insensitive = $in{'caseins'};
     my $search_grep             = $in{'grepstring'};
 
@@ -138,7 +141,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&caseins=$search_case_insensitive&grepstring=$search_grep'>$i</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep'>$i</a>";
         $end .= "</li>";
         return $end;
     };
@@ -194,9 +197,10 @@ sub extra_query
     my $page       = $in{'page'};
     my $query      = $in{'query'};
     my $paginate   = $in{'paginate'};
+    my $follow     = $in{'follow'};
     my $caseins    = $in{'caseins'};
     my $grepstring = $in{'grepstring'};
-    return "&page=$page&query=$query&paginate=$paginate&caseins=$caseins&grepstring=$grepstring";
+    return "&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring";
 }
 
 sub set_response
@@ -236,45 +240,60 @@ sub print_error
 
 sub exec_search
 {
-    my (@list)   = @_;
-    my $mask     = $in{'query'};
-    my $grep     = quotemeta($in{'grepstring'});
-    my $replace  = $in{'grepreplace'};
-    my $case     = $in{'caseins'};
-    my $criteria = '-name';
-    my $insensitive;
+    my $mask    = $in{'query'};
+    my $grep    = $in{'grepstring'};
+    my $replace = $in{'grepreplace'};
+    my $caseins = $in{'caseins'};
+    my $follow  = ($in{'follow'} ? 1 : 0);
 
-    if ($case) {
-        $criteria    = '-iname';
-        $insensitive = 'i';
-    }
+    my @results;
 
-    @list = split('\n', &backquote_command("find -L " . quotemeta($cwd) . " $criteria " . quotemeta("*$mask*")));
+    find(
+        {
+           wanted => sub {
+               my $found = $File::Find::name;
+               if ($found ne $path) {
+                   my $found_text = $found;
+                   my $mask_text  = $mask;
+                   if ($caseins) {
+                       $found_text = lc($found_text);
+                       $mask_text  = lc($mask_text);
+                   }
+                   if (index($found_text, $mask_text) != -1) {
+                       $found =~ s/^\Q$cwd\E//g;
+                       push(@results, $found);
+                   }
 
+               }
+           },
+           follow      => $follow,
+           follow_skip => 2,
+        },
+        $cwd);
+
+    my @replaces;
     if (length $grep || length $replace) {
-
         if (length $grep) {
+            @results = map {&simplify_path("$cwd/$_")} @results;
             my @matched;
+            fdo {
+                my ($file, $line, $text) = @_;
+                if (index($text, $grep) != -1) {
+                    push(@replaces, $results[$file]);
 
-            foreach my $file (@list) {
-                if ($insensitive) {
-                    if (read_file_contents($file) =~ /$grep/i) {
-                        push @matched, $file;
-                    }
-                } else {
-                    if (read_file_contents($file) =~ /$grep/) {
-                        push @matched, $file;
-                    }
+                    $results[$file] =~ s/^\Q$cwd\E//g;
+                    push(@matched, $results[$file]);
                 }
             }
-            undef(@list);
-            @list = @matched;
-        }
+            @results;
+            undef(@results);
+            @results = @matched;
 
-        if (length $grep && length $replace) {
-            foreach my $file (@list) {
-                if ($insensitive) {
-                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/gi;
+        }
+        if (length $replace) {
+            foreach my $file (@replaces) {
+                if ($caseins) {
+                    (my $fc = read_file_contents($file)) =~ s/\Q$grep\E/$replace/gi;
                     write_file_contents($file, $fc);
                 } else {
                     (my $fc = read_file_contents($file)) =~ s/$grep/$replace/g;
@@ -283,9 +302,7 @@ sub exec_search
             }
         }
     }
-
-    return @list;
-
+    return @results;
 }
 
 sub print_content
@@ -303,7 +320,7 @@ sub print_content
 
     # In case of search trim the list accordingly
     if ($query) {
-        @list = exec_search(@list);
+        @list = exec_search();
     }
 
     my $page      = 1;
@@ -315,12 +332,13 @@ sub print_content
         $max_allowed = 300;
     }
 
-    my $totals         = scalar(@list);
-    my $totals_spliced = $totals;
+    my $totals                    = scalar(@list);
+    my $totals_spliced            = $totals;
+    my $server_pagination_enabled = ($totals > $max_allowed || $query);
 
     my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
 
-    if ($totals > $max_allowed || $query) {
+    if ($server_pagination_enabled) {
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         my $splice_start = $pagelimit * ($page - 1);
@@ -362,20 +380,18 @@ sub print_content
 
     # Get info about directory entries
     my @info = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
-
-    # Filter out folders
     my @folders = map {$_} grep {$_->[15] == 1} @info;
+    my @files   = map {$_} grep {$_->[15] != 1} @info;
 
-    # Filter out files
-    my @files = map {$_} grep {$_->[15] != 1} @info;
-
-    # Sort stuff by name
-    @folders = sort {$a->[0] cmp $b->[0]} @folders;
-    @files   = sort {$a->[0] cmp $b->[0]} @files;
-
-    # Recreate list
-    undef(@list);
-    push @list, @folders, @files;
+    if ($server_pagination_enabled) {
+        undef(@list);
+        push(@list, @info);
+    } else {
+        @folders = sort {$a->[0] cmp $b->[0]} @folders;
+        @files   = sort {$a->[0] cmp $b->[0]} @files;
+        undef(@list);
+        push(@list, @folders, @files);
+    }
 
     my $info_total;
     my $info_files   = scalar(@files);
@@ -409,7 +425,7 @@ sub print_content
     my $server_pagination = undef;
     $list_data{'pagination_limit'} = undef;
 
-    if ($totals > $max_allowed || $query) {
+    if (($totals > $max_allowed || $query)) {
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
@@ -565,8 +581,8 @@ sub print_content
                   "&file=" . &urlize($link) . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        my @row_data =
-          ("<a href='$href'><img src=\"$img\"></a>", "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
+        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"><img src=\"$img\"></a>",
+                        "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
         push @row_data, $type if ($userconfig{'columns'} =~ /type/);
         push @row_data, $actions;
         push @row_data, $size if ($userconfig{'columns'} =~ /size/);

@@ -1032,3 +1032,4 @@ filemanager_global_info_paginated_total1=Partial: $1 file and $2 directory of $3
 filemanager_global_info_paginated_total2=Partial: $1 files and $2 directory of $3 entries on $4 pages
 filemanager_global_info_paginated_total3=Partial: $1 file and $2 directories of $3 entries on $4 pages
 filemanager_global_info_paginated_total4=Partial: $1 files and $2 directories of $3 entries on $4 pages
+theme_xhred_filemanager_search_follow_symlinks=Follow symlinks
