@@ -692,7 +692,7 @@ sub paster
 {
     my ($c, $f, $s, $d, $r, $m) = @_;
     my $x;
-    my $j = $c . '/' . $f;
+    my $j = $c . ($f =~ m/^\// ? undef : '/') . $f;
     if (!$r && -f $j ne -d $j) {
         for (my $t = 1;; $t += 1) {
             if (!-e ($j . '(' . $t . ')')) {
@@ -701,7 +701,8 @@ sub paster
             }
         }
     }
-    if ($m && $j =~ /\Q$s\E/) {
+    $s =~ s/\/\//\//g;
+    if ($m && -d $j && $j =~ /^\Q$s\E/) {
         set_response('merr');
         return;
     }
