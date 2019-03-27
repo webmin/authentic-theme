@@ -105,6 +105,11 @@ sub get_user_config
     }
 }
 
+sub kill_previous
+{
+    kill_byname($_[0], 9);
+}
+
 sub get_pagination
 {
 

@@ -12,4 +12,6 @@ use File::Basename;
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
+kill_previous($0);
+
 print_content();

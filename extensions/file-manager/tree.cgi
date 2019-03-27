@@ -15,6 +15,8 @@ our (%in, %text, @allowed_paths, $cwd, $base, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
+kill_previous($0);
+
 no warnings 'once';
 unless (opendir(DIR, $cwd)) {
     fatal_errors("$text{'theme_global_error'}: <tt>`$cwd`</tt>- $!.");
