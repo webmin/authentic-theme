@@ -706,7 +706,17 @@ sub paster
         set_response('merr');
         return;
     }
-    my ($o, $e) = copy_source_dest($s, $j . (!$x ? '' : '(' . $x . ')'));
+    if (-d $j) {
+        $j = $j . (!$x ? '' : '(' . $x . ')');
+    } else {
+        my ($jn, $je) = $j =~ /(.*)\.(.*)/;
+        if ($je) {
+            $j = $jn . (!$x ? '' : '(' . $x . ')') . ".$je";
+        } else {
+            $j = $j . (!$x ? '' : '(' . $x . ')');
+        }
+    }
+    my ($o, $e) = copy_source_dest($s, $j);
     if ($x) {
         set_response('cc');
     }
