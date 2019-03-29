@@ -49,7 +49,9 @@ if ($in{'cancel'} eq '1') {
         $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd);
     }
 
-    foreach my $name (split(/\0/, $in{'name'})) {
+    my @entries_list = get_entries_list();
+
+    foreach my $name (@entries_list) {
         $name =~ s/$in{'cwd'}\///ig;
         if (-e ($cwd . '/' . $name)) {
             $command .= " " . quotemeta($name);

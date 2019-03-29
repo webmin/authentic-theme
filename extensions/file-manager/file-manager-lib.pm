@@ -192,6 +192,30 @@ sub get_pagination
     return $pagination;
 }
 
+sub test_all_items_query
+{
+    return $in{'all_items'} eq '3' ? 3 : 0;
+}
+
+sub get_entries_list
+{
+    my @entries_list;
+    if (test_all_items_query()) {
+        find(
+            {
+               wanted => sub {
+                   my $found = $File::Find::name;
+                   push(@entries_list, $_);
+               },
+            },
+            $cwd);
+        @entries_list = grep {$_ ne '.' && $_ ne '..'} @entries_list;
+    } else {
+        @entries_list = split(/\0/, $in{'name'});
+    }
+    return @entries_list;
+}
+
 sub head
 {
     print "Content-type: text/html\n\n";
@@ -205,7 +229,9 @@ sub extra_query
     my $follow     = $in{'follow'};
     my $caseins    = $in{'caseins'};
     my $grepstring = $in{'grepstring'};
-    return "&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring";
+    my $all_items  = $in{'all_items'};
+    return
+"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&all_items=$all_items";
 }
 
 sub set_response
@@ -346,6 +372,11 @@ sub print_content
     if ($server_pagination_enabled) {
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
+        $pages = ceil(($totals) / $pagelimit);
+        if ($page > $pages) {
+            $page = $pages;
+            $in{'page'} = $page;
+        }
         my $splice_start = $pagelimit * ($page - 1);
         my $splice_end = $pagelimit;
 
@@ -434,6 +465,10 @@ sub print_content
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
+        if ($page > $pages) {
+            $page = $pages;
+            $in{'page'} = $page;
+        }
         $server_pagination = get_pagination($page, $pages, $query);
         $list_data{'pagination_limit'} = $in{'paginate'} || undef;
 
@@ -610,10 +645,11 @@ sub print_content
     $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}     : undef);
     $list_data{'error'}       = (length $in{'error'}       ? $in{'error'}       : undef);
     $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
-    $list_data{'page_requested'}       = $in{'page'};
+    $list_data{'page_requested'}       = $page;
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;
     $list_data{'searched'}             = $query ? 1 : 0;
+    $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
 
     print_json([\%list_data]);
 }

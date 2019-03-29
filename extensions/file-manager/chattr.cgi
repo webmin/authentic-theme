@@ -33,7 +33,9 @@ $label =~ s/\\-/-/g;
 $label =~ s/\\+//g;
 $label =~ tr/a-zA-Z\-\+ //dc;
 
-foreach my $file (split(/\0/, $in{'name'})) {
+my @entries_list = get_entries_list();
+
+foreach my $file (@entries_list) {
     $file = simplify_path($file);
     if (system_logged("chattr $recursive " . $label . " " . quotemeta("$cwd/$file")) != 0) {
         $errors{ html_escape($file) } = lc("$text{'attr_label_error_proc'}: $?");

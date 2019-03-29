@@ -17,6 +17,13 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 open(my $fh, "<" . &get_paste_buffer_file()) or die "Error: $!";
 my @arr = <$fh>;
 close($fh);
+if (test_all_items_query()) {
+    my @entries_list;
+    my @entries_list_entries= get_entries_list();
+    push(@entries_list, $arr[0], $arr[1], @entries_list_entries);
+    undef(@arr);
+    @arr = @entries_list;
+}
 my $act = $arr[0];
 my $dir = $arr[1];
 chomp($act);

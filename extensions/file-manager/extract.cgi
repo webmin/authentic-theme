@@ -14,7 +14,9 @@ our (%in, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
-foreach my $name (split(/\0/, $in{'name'})) {
+my @entries_list = get_entries_list();
+
+foreach my $name (@entries_list) {
     my $archive_type = mimetype($cwd . '/' . $name);
     if ($archive_type =~ /x-bzip/) {
         &backquote_logged("tar xvjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
@@ -42,4 +44,4 @@ foreach my $name (split(/\0/, $in{'name'})) {
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());

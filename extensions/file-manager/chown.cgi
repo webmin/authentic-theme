@@ -40,8 +40,10 @@ if (!defined $grid) {
     $error_fatal = 1;
 }
 
+my @entries_list = get_entries_list();
+
 if (!scalar %errors) {
-    foreach my $name (split(/\0/, $in{'name'})) {
+    foreach my $name (@entries_list) {
         $name = simplify_path($name);
         if (!$name || system_logged("chown $recursive $uid:$grid " . quotemeta("$cwd/$name")) != 0) {
             $errors{ urlize($name) } = lc("$text{'error_chown'}: $?");

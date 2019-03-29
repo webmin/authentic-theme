@@ -30,7 +30,8 @@ if ($in{'method'} eq 'tar') {
     $extension = ".zip";
 }
 
-foreach my $name (split(/\0/, $in{'name'})) {
+my @entries_list = get_entries_list();
+foreach my $name (@entries_list) {
     $name =~ s/$in{'cwd'}\///ig;
     $command .= " " . quotemeta($name);
 
