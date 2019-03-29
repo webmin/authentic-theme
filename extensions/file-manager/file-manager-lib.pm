@@ -290,7 +290,7 @@ sub exec_search
            wanted => sub {
                my $found = $File::Find::name;
                if ($found ne $path) {
-                   my $found_text = $found;
+                   my $found_text = $_;
                    my $mask_text  = $mask;
                    if ($caseins) {
                        $found_text = lc($found_text);
