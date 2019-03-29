@@ -107,7 +107,35 @@ sub get_user_config
 
 sub kill_previous
 {
-    kill_byname($_[0], 9);
+    my $pid = get_token($_[0]);
+    if ($pid) {
+        kill(9, $pid);
+    }
+    set_token($_[0], $_[1]);
+}
+
+sub set_token
+{
+    my ($key, $value) = @_;
+    my %var;
+
+    $key =~ tr/A-Za-z0-9//cd;
+    $var{$key} = $value;
+    write_file(tempname('.theme_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
+}
+
+sub get_token
+{
+    my ($key) = @_;
+
+    $key =~ tr/A-Za-z0-9//cd;
+
+    my $tmp_file = tempname('.theme_' . get_product_name() . '_' . $key . '_' . $remote_user);
+
+    my %theme_temp_data;
+    read_file($tmp_file, \%theme_temp_data);
+    unlink_file($tmp_file);
+    return $theme_temp_data{$key};
 }
 
 sub get_pagination

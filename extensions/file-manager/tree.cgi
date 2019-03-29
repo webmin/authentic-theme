@@ -15,7 +15,7 @@ our (%in, %text, @allowed_paths, $cwd, $base, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
-kill_previous($0);
+kill_previous($0, $$);
 
 no warnings 'once';
 unless (opendir(DIR, $cwd)) {
