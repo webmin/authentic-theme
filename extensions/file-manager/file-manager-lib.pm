@@ -120,6 +120,7 @@ sub get_pagination
     my $search_follow_symlinks  = $in{'follow'};
     my $search_case_insensitive = $in{'caseins'};
     my $search_grep             = $in{'grepstring'};
+    my $all_items               = $in{'all_items'};
 
     my $left  = $page - 2;
     my $right = $page + 3;
@@ -146,7 +147,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep'>$i</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&all_items=$all_items'>$i</a>";
         $end .= "</li>";
         return $end;
     };
@@ -201,15 +202,19 @@ sub get_entries_list
 {
     my @entries_list;
     if (test_all_items_query()) {
-        find(
-            {
-               wanted => sub {
-                   my $found = $File::Find::name;
-                   push(@entries_list, $_);
-               },
-            },
-            $cwd);
-        @entries_list = grep {$_ ne '.' && $_ ne '..'} @entries_list;
+        if ($in{'query'}) {
+            @entries_list = exec_search('list');
+        } else {
+            find(
+                {
+                   wanted => sub {
+                       my $found = $File::Find::name;
+                       push(@entries_list, $_);
+                   },
+                },
+                $cwd);
+            @entries_list = grep {$_ ne '.' && $_ ne '..'} @entries_list;
+        }
     } else {
         @entries_list = split(/\0/, $in{'name'});
     }
@@ -271,11 +276,12 @@ sub print_error
 
 sub exec_search
 {
+    my ($list)  = @_;
     my $mask    = $in{'query'};
     my $grep    = $in{'grepstring'};
     my $replace = $in{'grepreplace'};
     my $caseins = $in{'caseins'};
-    my $follow  = ($in{'follow'} ? 1 : 0);
+    my $follow = ($in{'follow'} ? 1 : 0);
 
     my @results;
 
@@ -291,7 +297,11 @@ sub exec_search
                        $mask_text  = lc($mask_text);
                    }
                    if (index($found_text, $mask_text) != -1) {
-                       $found =~ s/^\Q$cwd\E//g;
+                       if ($list) {
+                           $found = $_;
+                       } else {
+                           $found =~ s/^\Q$cwd\E//g;
+                       }
                        push(@results, $found);
                    }
 
@@ -365,7 +375,7 @@ sub print_content
 
     my $totals                    = scalar(@list);
     my $totals_spliced            = $totals;
-    my $server_pagination_enabled = ($totals > $max_allowed || $query);
+    my $server_pagination_enabled = ($totals > $max_allowed || ($query && $totals));
 
     my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
 
@@ -650,6 +660,7 @@ sub print_content
     $list_data{'totals'}               = $totals;
     $list_data{'searched'}             = $query ? 1 : 0;
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
+    $list_data{'flush_reset'}          = $in{'flush_reset'} ? 1 : 0;
 
     print_json([\%list_data]);
 }
