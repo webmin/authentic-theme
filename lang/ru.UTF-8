@@ -1037,5 +1037,5 @@ theme_xhred_filemanager_mass_select=Select all %1 items across %2 pages?
 theme_xhred_filemanager_mass_selected=All %1 items are selected in the current directory.
 theme_xhred_filemanager_mass_select_clear=Clear selection
 theme_xhred_filemanager_mass_selected_for_delete=Selected %1 items in %2 directory
-theme_xhred_filemanager_mass_selected_no_zip=Using <tt>zip</tt> command not supported when running against all files in directory
+theme_xhred_filemanager_mass_selected_no_zip=Using <tt>zip</tt> command not supported when running against all items in directory
 
