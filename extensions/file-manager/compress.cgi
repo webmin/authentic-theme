@@ -22,21 +22,25 @@ my %errors;
 my $command;
 my $extension;
 
+my @entries_list = get_entries_list();
+
 if ($in{'method'} eq 'tar') {
-    $command   = "tar czf " . quotemeta("$cwd/$in{'arch'}.tar.gz") . " -C " . quotemeta($cwd);
+    my $list = transname();
+    open my $fh, ">", $list or die $!;
+    print $fh "$_\n" for @entries_list;
+    close $fh;
+    $command   = "tar czf " . quotemeta("$cwd/$in{'arch'}.tar.gz") . " -C " . quotemeta($cwd) . " -T " . $list;
     $extension = ".tar.gz";
 } elsif ($in{'method'} eq 'zip') {
     $command   = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta("$cwd/$in{'arch'}.zip");
     $extension = ".zip";
-}
+    foreach my $name (@entries_list) {
+        $name =~ s/$in{'cwd'}\///ig;
+        $command .= " " . quotemeta($name);
 
-my @entries_list = get_entries_list();
-foreach my $name (@entries_list) {
-    $name =~ s/$in{'cwd'}\///ig;
-    $command .= " " . quotemeta($name);
-
-    if (!-e ($cwd . '/' . $name)) {
-        $errors{ urlize(html_escape($name)) } = lc($text{'theme_xhred_global_no_target'});
+        if (!-e ($cwd . '/' . $name)) {
+            $errors{ urlize(html_escape($name)) } = lc($text{'theme_xhred_global_no_target'});
+        }
     }
 }
 
