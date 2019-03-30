@@ -138,6 +138,11 @@ sub get_token
     return $theme_temp_data{$key};
 }
 
+sub string_starts_with
+{
+    return substr($_[0], 0, length($_[1])) eq $_[1];
+}
+
 sub get_pagination
 {
 
@@ -374,6 +379,12 @@ sub exec_search
     return @results;
 }
 
+sub server_pagination_enabled
+{
+    my ($totals, $max_allowed, $query) = @_;
+    return ($totals > $max_allowed || ($query && $totals));
+}
+
 sub print_content
 {
     my %list_data;
@@ -392,6 +403,26 @@ sub print_content
         @list = exec_search();
     }
 
+    # Filter out not allowed entries
+    if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
+
+        # Leave only allowed
+        my @tmp_list;
+        for $path (@allowed_paths) {
+            my $slashed = $path;
+            $slashed .= "/" if ($slashed !~ /\/$/);
+            push @tmp_list, grep {
+                string_starts_with($slashed, "$cwd/$_/") ||
+                  index($slashed, $_) != -1 ||
+                  index("$cwd/$_", $slashed) != -1
+            } @list;
+        }
+
+        # Remove duplicates
+        my %hash = map {$_, 1} @tmp_list;
+        @list = keys %hash;
+    }
+
     my $page      = 1;
     my $pagelimit = 4294967295;
     my $pages     = 0;
@@ -401,13 +432,12 @@ sub print_content
         $max_allowed = 300;
     }
 
-    my $totals                    = scalar(@list);
-    my $totals_spliced            = $totals;
-    my $server_pagination_enabled = ($totals > $max_allowed || ($query && $totals));
+    my $totals         = scalar(@list);
+    my $totals_spliced = $totals;
 
     my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
 
-    if ($server_pagination_enabled) {
+    if (server_pagination_enabled($totals, $max_allowed, $query)) {
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
@@ -457,7 +487,7 @@ sub print_content
     my @folders = map {$_} grep {$_->[15] == 1} @info;
     my @files   = map {$_} grep {$_->[15] != 1} @info;
 
-    if ($server_pagination_enabled) {
+    if (server_pagination_enabled($totals, $max_allowed, $query)) {
         undef(@list);
         push(@list, @info);
     } else {
@@ -471,22 +501,6 @@ sub print_content
     my $info_files   = scalar(@files);
     my $info_folders = scalar(@folders);
 
-    # Filter out not allowed entries
-    if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
-
-        # Leave only allowed
-        my @tmp_list;
-        for $path (@allowed_paths) {
-            my $slashed = $path;
-            $slashed .= "/" if ($slashed !~ /\/$/);
-            push @tmp_list, grep {$slashed =~ /^$_\// || $_ =~ /$slashed/} @list;
-        }
-
-        # Remove duplicates
-        my %hash = map {$_, 1} @tmp_list;
-        @list = keys %hash;
-    }
-
     my @allowed_for_edit = split(/\s+/, $access{'allowed_for_edit'});
     my %allowed_for_edit = map {$_ => 1} @allowed_for_edit;
 
@@ -499,7 +513,7 @@ sub print_content
     my $server_pagination = undef;
     $list_data{'pagination_limit'} = undef;
 
-    if (($totals > $max_allowed || $query)) {
+    if (server_pagination_enabled($totals, $max_allowed, $query)) {
         $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);

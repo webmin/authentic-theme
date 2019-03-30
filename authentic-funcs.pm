@@ -164,12 +164,7 @@ sub string_contains
 
 sub string_starts_with
 {
-    my ($string, $search) = @_;
-    if ($string =~ m/^\Q$search/) {
-        return 1;
-    } else {
-        return 0;
-    }
+    return substr($_[0], 0, length($_[1])) eq $_[1];
 }
 
 sub array_contains
