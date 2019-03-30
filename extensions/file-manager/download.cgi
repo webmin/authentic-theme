@@ -18,7 +18,7 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 my $command;
 my $has_zip    = has_command('zip');
 my $do_zip     = ($in{'do_zip'} eq '1' ? 1 : 0);
-my $extension  = (($has_zip && $do_zip) ? "zip" : "tar.gz");
+my $extension  = (($has_zip && $do_zip && !test_all_items_query()) ? "zip" : "tar.gz");
 my $filename   = $in{'filename'};
 my $target_dir = tempname("$filename");
 my $target     = "$target_dir/$filename.$extension";
@@ -43,20 +43,23 @@ if ($in{'cancel'} eq '1') {
     last;
 } else {
     mkdir($target_dir, 0755);
-    if ($has_zip && $do_zip) {
-        $command = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta($target);
-    } else {
-        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd);
-    }
-
     my @entries_list = get_entries_list();
-
-    foreach my $name (@entries_list) {
-        $name =~ s/$in{'cwd'}\///ig;
-        if (-e ($cwd . '/' . $name)) {
-            $command .= " " . quotemeta($name);
+    if ($has_zip && $do_zip && !test_all_items_query()) {
+        $command = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta($target);
+        foreach my $name (@entries_list) {
+            $name =~ s/$in{'cwd'}\///ig;
+            if (-e ($cwd . '/' . $name)) {
+                $command .= " " . quotemeta($name);
+            }
         }
+    } else {
+        my $list = transname();
+        open my $fh, ">", $list or die $!;
+        print $fh "$_\n" for @entries_list;
+        close $fh;
+        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd) . " -T " . $list;
     }
+
     system_logged($command);
 }
 head();
