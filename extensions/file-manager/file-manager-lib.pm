@@ -551,7 +551,10 @@ sub print_content
     } else {
         $info_total = ('filemanager_global_info' . $total_with_pagination . '_total4');
     }
-    $list_data{'total'} = "<div class='total'>" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
+    $list_data{'total'} =
+      "<div class='total'>" . ($query ? ($text{'filemanager_global_search_results'} . ": ") :
+                               ($server_pagination ? ($text{'filemanager_global_paginated_results'} . ": ") : undef)) .
+      "" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
 
     # Render current directory entries
     $list_data{'form'} = &ui_form_start("", "post", undef, "id='list_form'");

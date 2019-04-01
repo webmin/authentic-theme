@@ -1033,4 +1033,6 @@ theme_xhred_filemanager_mass_selected=All %1 items are selected in the current d
 theme_xhred_filemanager_mass_select_clear=Clear selection
 theme_xhred_filemanager_mass_selected_for_delete=Selected %1 items in %2 directory
 theme_xhred_filemanager_mass_selected_no_zip=Using <tt>zip</tt> command not supported when running against all items in directory
+filemanager_global_search_results=Search results
+filemanager_global_paginated_results=Paginated
 
