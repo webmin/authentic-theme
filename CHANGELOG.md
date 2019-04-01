@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 19.32-beta3 (April 01, 2019)
+* Add improved BIND syntax highlight for manual editors
+* Add an ability to select all items in directory on all pages for further operations in File Manager
+* Add ability to select all items in directory for further operations in File Manager
+* Add ability to pass to compress and download unlimited number of items File Manager
+* Fix paste into itself error appearing wrong in some cases in File Manager
+* Fix paste with the same name for files, while keeping extension in File Manager
+* Fix to prevent multiple alike processes running possibly causing server going out of memory in File Manager
+* Fiх sporadic tree-view errors in File Manager [#1213](https://github.com/authentic-theme/authentic-theme/issues/1213)
+
 #### Version 19.32-beta2 (March 24, 2019)
 * Add significant improvements to directory listing in File Manager [@8cdb7a4](https://github.com/authentic-theme/authentic-theme/commit/8cdb7a4eaf9c691dc9f26d5769b102b340f19802)
 * Add ability for any user use favorites
