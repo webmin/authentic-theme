@@ -1023,11 +1023,8 @@ sub theme_ui_hidden_start
     }
     my $divid    = "hiddendiv_$name";
     my $openerid = "hiddenopener_$name";
-    my $defimg =
-      $status ? "" :
-      "";
     my $defclass = $status ? 'opener_shown' : 'opener_hidden';
-    $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a>\n";
+    $rv .= "<a class=\"hidden\" href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a>\n";
     $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\">$title</a><br>\n";
     $rv .= "<div class='$defclass' id='$divid'>\n";
     return $rv;
@@ -1042,9 +1039,6 @@ sub theme_ui_hidden_table_start
     }
     my $divid    = "hiddendiv_$name";
     my $openerid = "hiddenopener_$name";
-    my $defimg =
-      $status ? "" :
-      "";
     my $defclass =
       $status ? 'opener_shown' :
       'opener_hidden';
@@ -1059,7 +1053,7 @@ sub theme_ui_hidden_table_start
         $rv .= "<tr" . ($tb ? " " . $tb : "") . "><td>";
         if (defined($heading)) {
             $rv .=
-"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
+"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
         }
         if (defined($rightheading)) {
             $rv .= "<td align=right>$rightheading</td>";
