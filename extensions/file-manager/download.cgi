@@ -47,7 +47,6 @@ if ($in{'cancel'} eq '1') {
     if ($has_zip && $do_zip && !test_all_items_query()) {
         $command = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta($target);
         foreach my $name (@entries_list) {
-            $name =~ s/$in{'cwd'}\///ig;
             if (-e ($cwd . '/' . $name)) {
                 $command .= " " . quotemeta($name);
             }

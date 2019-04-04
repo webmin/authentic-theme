@@ -35,7 +35,6 @@ if ($in{'method'} eq 'tar') {
     $command   = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta("$cwd/$in{'arch'}.zip");
     $extension = ".zip";
     foreach my $name (@entries_list) {
-        $name =~ s/$in{'cwd'}\///ig;
         $command .= " " . quotemeta($name);
 
         if (!-e ($cwd . '/' . $name)) {
