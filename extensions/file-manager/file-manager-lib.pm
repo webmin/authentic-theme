@@ -551,9 +551,11 @@ sub print_content
     } else {
         $info_total = ('filemanager_global_info' . $total_with_pagination . '_total4');
     }
-    $list_data{'total'} =
-      "<div class='total'>" . ($query ? ($text{'filemanager_global_search_results'} . ": ") :
-                               ($server_pagination ? ($text{'filemanager_global_paginated_results'} . ": ") : undef)) .
+    $list_data{'total'} = "<div class='total'>"
+      .
+      ( $query ? ($text{'filemanager_global_search_results'} . ": ") :
+          ($server_pagination ? ($text{'filemanager_global_paginated_results'} . ": ") : undef)
+      ) .
       "" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
 
     # Render current directory entries
@@ -595,31 +597,6 @@ sub print_content
         unless (-e $request_uri{'module'} . '/' . $img) {
             $img = "images/icons/mime/unknown.png";
         }
-        my $size = &local_nice_size($list[$count - 1][8]);
-        my $user;
-        my $group;
-        if (supports_users()) {
-            my $uid = getpwuid($list[$count - 1][5]);
-            my $gid = getgrgid($list[$count - 1][6]);
-            $user  = $uid ? $uid : $list[$count - 1][5];
-            $group = $gid ? $gid : $list[$count - 1][6];
-        } else {
-            $user  = $list[$count - 1][5];
-            $group = $list[$count - 1][6];
-        }
-
-        my $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
-        my $selinux;
-        if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/) {
-            $selinux = $list[$count - 1][17];
-        }
-
-        my $attributes;
-        if (get_attr_status() && $userconfig{'columns'} =~ /attributes/) {
-            $attributes = $list[$count - 1][18];
-        }
-
-        my $mod_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][10]));
 
         my $actions =
 "<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$hlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
@@ -678,21 +655,68 @@ sub print_content
         }
         my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"><img src=\"$img\"></a>",
                         "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
-        push @row_data, $type if ($userconfig{'columns'} =~ /type/);
+        my @td_tags = (undef, 'class="col-icon"', 'class="col-name"');
+        if ($userconfig{'columns'} =~ /type/) {
+            push(@row_data, $type);
+            push(@td_tags,  'class="col-type"');
+        }
         push @row_data, $actions;
-        push @row_data, $size if ($userconfig{'columns'} =~ /size/);
-        push @row_data, $user . ':' . $group
-          if ($userconfig{'columns'} =~ /owner_user/);
-        push @row_data, $permissions
-          if ($userconfig{'columns'} =~ /permissions/);
-        push @row_data, $attributes
-          if (get_attr_status() && $userconfig{'columns'} =~ /attributes/);
-        push @row_data, $selinux
-          if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/);
-        push @row_data, $mod_time
-          if ($userconfig{'columns'} =~ /last_mod_time/);
+        push(@td_tags, 'class="col-actions"');
 
-        $list_data{'rows'} .= &ui_checked_columns_row(\@row_data, "", "name", $vlink);
+        if ($userconfig{'columns'} =~ /size/) {
+            my $size = &local_nice_size($list[$count - 1][8]);
+            push @row_data,
+              (
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
+                  . $size . "</span>");
+            push(@td_tags, undef);
+        }
+        if ($userconfig{'columns'} =~ /owner_user/) {
+            my $user;
+            my $group;
+            if (supports_users()) {
+                my $uid = getpwuid($list[$count - 1][5]);
+                my $gid = getgrgid($list[$count - 1][6]);
+                $user  = $uid ? $uid : $list[$count - 1][5];
+                $group = $gid ? $gid : $list[$count - 1][6];
+            } else {
+                $user  = $list[$count - 1][5];
+                $group = $list[$count - 1][6];
+            }
+            push @row_data,
+              (
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_user_group_id'}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
+                  . $user . ':' . $group . "</span>");
+            push(@td_tags, 'class="col-ownership"');
+        }
+
+        if ($userconfig{'columns'} =~ /permissions/) {
+            my $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
+            push @row_data, $permissions;
+            push(@td_tags, 'class=col-permissions');
+        }
+
+        if (get_attr_status() && $userconfig{'columns'} =~ /attributes/) {
+            push @row_data, $list[$count - 1][18];
+            push(@td_tags, 'class="col-attrs"');
+        }
+        if (get_selinux_status() && $userconfig{'columns'} =~ /selinux/) {
+            push @row_data, $list[$count - 1][17];
+            push(@td_tags, 'class="col-selinux"');
+        }
+
+        if ($userconfig{'columns'} =~ /last_mod_time/) {
+            my $access_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][9]));
+            my $mod_time    = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][10]));
+            my $change_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][11]));
+            push @row_data,
+              (
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
+                  . $mod_time . "</span>");
+            push(@td_tags, 'class="col-time"');
+        }
+
+        $list_data{'rows'} .= &ui_checked_columns_row(\@row_data, \@td_tags, "name", $vlink);
     }
 
     $list_data{'form'} .= &ui_hidden("path", $path), "\n";
@@ -783,6 +807,13 @@ sub local_nice_size
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;
     return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+}
+
+sub nice_number
+{
+    my ($number) = @_;
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    return $number;
 }
 
 sub paster

@@ -55,6 +55,13 @@ sub theme_make_date_local
     return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
 }
 
+sub nice_number
+{
+    my ($number) = @_;
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    return $number;
+}
+
 sub get_theme_language
 {
     my %s;
