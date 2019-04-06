@@ -341,6 +341,9 @@ sub theme_ui_columns_start
     my ($rv, $i);
 
     $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
+    if ($title) {
+        $rv .= "<caption>$title</caption>\n";
+    }
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
     if (ref($heads)) {
@@ -352,6 +355,7 @@ sub theme_ui_columns_start
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
+    $rv .= '<tbody>' . "\n";
 
     return $rv;
 }
@@ -398,7 +402,7 @@ sub theme_ui_columns_end
 {
     my $rv;
 
-    $rv .= '</table>' . "\n";
+    $rv .= '</tbody></table>' . "\n";
 
     return $rv;
 }
