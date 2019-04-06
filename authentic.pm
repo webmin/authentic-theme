@@ -345,7 +345,7 @@ sub theme_ui_columns_start
     $rv .= '<tr>' . "\n";
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
-            $rv .= '<th>';
+            $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
@@ -364,7 +364,7 @@ sub theme_ui_columns_row
     $rv .= '<tr class="tr_tag">' . "\n";
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
-            $rv .= '<td class="td_tag">' . "\n";
+            $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
             $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
@@ -383,7 +383,7 @@ sub theme_ui_columns_header
     $rv .= '<tr>' . "\n";
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
-            $rv .= '<th>';
+            $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
