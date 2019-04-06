@@ -1032,5 +1032,7 @@ filemanager_global_access_change_time=Last access/change time
 filemanager_global_user_group_id=Numeric user/group
 filemanager_global_size_in_bytes=Size in bytes
 theme_xhred_global_command_completed=Command completed
+theme_xhred_global_toggle_password_visibility=Toggle password visibility
+
 
 
