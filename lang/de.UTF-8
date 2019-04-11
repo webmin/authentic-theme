@@ -1011,7 +1011,7 @@ theme_xhred_shell_aborted=Operation wurde abgebrochen
 #19.32
 theme_xhred_connection_reboot=Neustart
 theme_xhred_connection_reboot_details=Der Server wird neu gestartet. Bitte warten...
-settings_leftmenu_custom_links_description=Es ist m&ouml;ch einen zus&auml;tzlichen Eintrag im Navigations Men&uuml; zu erzeugen<br><br> Die Angaben <em>title</em>, <em>link</em> und <em>icon</em> sind zwingend erforderlich. Optional kannst du angeben in welchem Modus der Link angezeigt wird. Gib dazu einen <em>level</em> wert, mit einer kommaseparierten Liste mit folgenden Werten ein: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> Dazu musst du ein validens JSON Objekt als Zeichenkette &uuml;bergeben, so wie in diesem Beispiel: <hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
+settings_leftmenu_custom_links_description=Es ist m&ouml;glich einen zus&auml;tzlichen Eintrag im Navigations Men&uuml; zu erzeugen<br><br> Die Angaben <em>title</em>, <em>link</em> und <em>icon</em> sind zwingend erforderlich. Optional kannst du angeben in welchem Modus der Link angezeigt wird. Gib dazu einen <em>level</em> wert, mit einer kommaseparierten Liste mit folgenden Werten ein: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> Dazu musst du ein validens JSON Objekt als Zeichenkette &uuml;bergeben, so wie in diesem Beispiel: <hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
 left_favorites_edit=Favoriten Bearbeiten
 left_favorites_edit_desc=Auf dieser Seite kannst du die Favoriten bearbeiten. Das Bearbeiten sollte vorsichtig erfolgen, da keine &Uml;berpr&uunl;ng Deiner Eingaben durchgef&uuml;hrr wird.
 theme_xhred_filemanager_records_for_server_pagination=Standard Anzahl der Eintr&auml;ge pro Seite der Serveranzeige
@@ -1027,11 +1027,11 @@ theme_xhred_filemanager_mass_select_clear=Auswahl l&ouml;schen
 theme_xhred_filemanager_mass_selected_for_delete=%1 Eintr&auml;ge in %2 Verzeichnissen ausgew&auml;hlt
 theme_xhred_filemanager_mass_selected_no_zip=Es ist nicht m&ouml;glich den <tt>Zip</tt> Befehl zu verwenden wenn alle Eintr&auml;ge eines Verzeichnisses ausgew&auml;lt sind.
 filemanager_global_search_results=Such Ergebnisse
-filemanager_global_paginated_results=Paginated
-filemanager_global_access_change_time=Zeit des letzten Zugriffs/&Aunl;nderung
+filemanager_global_paginated_results=Seitenzahl
+filemanager_global_access_change_time=Zeit des letzten Zugriffs/&Auml;nderung
 filemanager_global_user_group_id=Numerischer Benutzer/Gruppe
 filemanager_global_size_in_bytes=Gr&ouml;&szlig;e in Bytes
-theme_xhred_global_command_completed=Befehl komplettierr
+theme_xhred_global_command_completed=Befehl komplettiert
 theme_xhred_global_toggle_password_visibility=Sichbarkeit des Passworts umschalten
 
 
