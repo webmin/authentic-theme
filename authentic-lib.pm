@@ -3331,7 +3331,7 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
-            print nice_size($size, -1) . '|' . $size;
+            print nice_size($size, -1) . '|' . nice_number($size);
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";

@@ -667,7 +667,7 @@ sub print_content
             my $size = &local_nice_size($list[$count - 1][8]);
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
                   . $size . "</span>");
             push(@td_tags, undef);
         }
