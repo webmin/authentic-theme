@@ -5,8 +5,8 @@
 #
 use strict;
 
-our (%module_text_full,  %theme_text,  %theme_config,   %gconfig, %tconfig,
-     $current_lang_info, $remote_user, $get_user_level, $webmin_script_type);
+our (%module_text_full,  %theme_text,     %theme_config, %gconfig,        %tconfig,
+     $current_lang_info, $root_directory, $remote_user,  $get_user_level, $webmin_script_type);
 
 sub settings
 {
@@ -78,6 +78,38 @@ sub get_theme_language
 
     return convert_to_json(\%s);
 
+}
+
+sub get_gpg_keys
+{
+    my $gpglib = $root_directory . "/webmin/gnupg-lib.pl";
+    if (-r $gpglib) {
+        do $gpglib;
+        my %webminconfig = foreign_config("webmin");
+        my $gpgpath      = $webminconfig{'gpg'} || "gpg";
+        my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');
+        my @keys         = list_keys_sorted();
+        my @keys_secret  = sort {lc($a->{'name'}->[0]) cmp lc($b->{'name'}->[0])} list_secret_keys();
+        my %keys_;
+        my %keys_secret_;
+
+        foreach my $k (@keys) {
+            my $name = $k->{'name'}->[0];
+            $name =~ s/\(.*?\)//gs;
+            if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
+                $keys_{ $k->{'key'} } = trim($name) . " ($k->{'email'}->[0] [$k->{'key'}/$k->{'size'}, $k->{'date'}])";
+            }
+        }
+        foreach my $k (@keys_secret) {
+            my $name = $k->{'name'}->[0];
+            $name =~ s/\(.*?\)//gs;
+            if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
+                $keys_secret_{ $k->{'key'} } =
+                  trim($name) . " ($k->{'email'}->[0] [$k->{'key'}/$k->{'size'}, $k->{'date'}])";
+            }
+        }
+        return (\%keys_, \%keys_secret_, $gpgpath);
+    }
 }
 
 sub get_text_ltr

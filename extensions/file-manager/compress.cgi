@@ -23,17 +23,36 @@ my $command;
 my $extension;
 
 my @entries_list = get_entries_list();
+my $delete       = $in{'arcmove'} ? 1 : 0;
+my $encrypt      = $in{'arcencr'} ? 1 : 0;
+my $password     = $in{'arcencr_val'};
+my $key_id       = quotemeta($in{'arkkey'});
+my $gpgpath      = quotemeta($in{'gpgpath'});
 
 if ($in{'method'} eq 'tar') {
     my $list = transname();
     open my $fh, ">", $list or die $!;
     print $fh "$_\n" for @entries_list;
     close $fh;
-    $command   = "tar czf " . quotemeta("$cwd/$in{'arch'}.tar.gz") . " -C " . quotemeta($cwd) . " -T " . $list;
-    $extension = ".tar.gz";
+
+    my $file  = "$cwd/$in{'arch'}.tar.gz";
+    my $fileq = quotemeta($file);
+    $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . " -T " . $list;
+    system_logged($command);
+
+    if ($encrypt && $key_id) {
+        my $gpg = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
+        if (system_logged($gpg) != 0) {
+            $errors{ html_escape($file) } = "$text{'filemanager_archive_gpg_error'}: $?";
+        }
+        unlink_file($file);
+    }
 } elsif ($in{'method'} eq 'zip') {
-    $command   = "cd " . quotemeta($cwd) . " && zip -r " . quotemeta("$cwd/$in{'arch'}.zip");
-    $extension = ".zip";
+    my $pparam = undef;
+    if ($encrypt && $password) {
+        $pparam = (" -P " . quotemeta($password) . " ");
+    }
+    $command = "cd " . quotemeta($cwd) . " && zip $pparam -r " . quotemeta("$cwd/$in{'arch'}.zip");
     foreach my $name (@entries_list) {
         $command .= " " . quotemeta($name);
 
@@ -41,8 +60,18 @@ if ($in{'method'} eq 'tar') {
             $errors{ urlize(html_escape($name)) } = lc($text{'theme_xhred_global_no_target'});
         }
     }
+    system_logged($command);
 }
 
-system_logged($command);
+if ($delete) {
+    if (!%errors) {
+        foreach my $name (@entries_list) {
+            unlink_file("$cwd/$name");
+        }
+    } else {
+        $errors{ $text{'theme_xhred_filemanager_archive_move_to'} } = $text{'filemanager_archive_move_to_archive_failed'};
+    }
+
+}
 
 redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

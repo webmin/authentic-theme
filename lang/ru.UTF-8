@@ -1045,6 +1045,14 @@ filemanager_global_user_group_id=Numeric user/group
 theme_xhred_filemanager_global_size_in_bytes=Size in bytes
 theme_xhred_global_command_completed=Command completed
 theme_xhred_global_toggle_password_visibility=Toggle password visibility
+theme_xhred_login_passphrase=Passphrase
+theme_xhred_filemanager_archive_gpg_no_keys=No keys available
+filemanager_archive_gpg_error=GPG error
+filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
+theme_xhred_filemanager_archive_move_to=Move to archive
+theme_xhred_global_encrypt=Encrypt
+
+
 
 
 

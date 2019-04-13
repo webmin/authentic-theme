@@ -3362,6 +3362,13 @@ sub get_xhr_request
                                        ));
             };
             print $data;
+        } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
+            my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
+            my %keys;
+            $keys{'public'}  = $public;
+            $keys{'secret'}  = $secret;
+            $keys{'gpgpath'} = $gpgpath;
+            print convert_to_json(\%keys);
         } elsif ($in{'xhr-get_user_level'} eq '1') {
             print $get_user_level;
         } elsif ($in{'xhr-get_update_notice'} eq '1') {
@@ -3371,7 +3378,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_command_exists'} eq '1') {
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
-            print (resolve_links(get_access_data('root') . ($in{'xhr-get_symlink_path'})));
+            print(resolve_links(get_access_data('root') . ($in{'xhr-get_symlink_path'})));
         } elsif ($in{'xhr-theme_temp_data'} eq '1') {
             if ($in{'xhr-theme_temp_data_action'} eq 'set') {
                 set_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_value'});

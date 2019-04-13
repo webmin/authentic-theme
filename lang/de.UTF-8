@@ -1033,6 +1033,10 @@ filemanager_global_user_group_id=Numerischer Benutzer/Gruppe
 theme_xhred_filemanager_global_size_in_bytes=Gr&ouml;&szlig;e in Bytes
 theme_xhred_global_command_completed=Befehl komplettiert
 theme_xhred_global_toggle_password_visibility=Sichbarkeit des Passworts umschalten
-
-
+theme_xhred_login_passphrase=Passphrase
+theme_xhred_filemanager_archive_gpg_no_keys=No keys available
+filemanager_archive_gpg_error=GPG error
+filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
+theme_xhred_filemanager_archive_move_to=Move to archive
+theme_xhred_global_encrypt=Encrypt
 
