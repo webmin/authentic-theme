@@ -867,7 +867,6 @@ sub switch_to_user
     if (@uinfo) {
         switch_to_unix_user(\@uinfo);
     }
-
 }
 
 sub is_root

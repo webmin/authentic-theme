@@ -1039,4 +1039,5 @@ filemanager_archive_gpg_error=GPG error
 filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
 theme_xhred_filemanager_archive_move_to=Move to archive
 theme_xhred_global_encrypt=Encrypt
+theme_xhred_filemanager_gpg_select_the_key=Select the key
 

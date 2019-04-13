@@ -112,6 +112,21 @@ sub get_gpg_keys
     }
 }
 
+sub switch_to_unix_user_local
+{
+    if (!supports_users()) {
+        return undef;
+    }
+    my ($username) = @_;
+    if (!$username) {
+        $username = $in{'username'} || $in{'switch_to_username'};
+    }
+    my @uinfo = getpwnam($username);
+    if (@uinfo) {
+        switch_to_unix_user(\@uinfo);
+    }
+}
+
 sub get_text_ltr
 {
     if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {

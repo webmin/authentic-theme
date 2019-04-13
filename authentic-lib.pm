@@ -3363,6 +3363,7 @@ sub get_xhr_request
             };
             print $data;
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
+            switch_to_unix_user_local();
             my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;
