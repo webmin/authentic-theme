@@ -5,8 +5,9 @@
 #
 use strict;
 
-our (%module_text_full,  %theme_text,     %theme_config, %gconfig,        %tconfig,
-     $current_lang_info, $root_directory, $remote_user,  $get_user_level, $webmin_script_type);
+our (%in,          %module_text_full, %theme_text,        %theme_config,
+     %gconfig,     %tconfig,          $current_lang_info, $root_directory,
+     $remote_user, $get_user_level,   $webmin_script_type);
 
 sub settings
 {
