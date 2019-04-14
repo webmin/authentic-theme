@@ -222,6 +222,12 @@ sub string_starts_with
     return substr($_[0], 0, length($_[1])) eq $_[1];
 }
 
+sub string_ends_with
+{
+    my $length = length($_[1]);
+    return substr($_[0], -$length, $length) eq $_[1];
+}
+
 sub array_contains
 {
     my ($array_reference, $search, $loose) = @_;

@@ -143,6 +143,12 @@ sub string_starts_with
     return substr($_[0], 0, length($_[1])) eq $_[1];
 }
 
+sub string_ends_with
+{
+    my $length = length($_[1]);
+    return substr($_[0], -$length, $length) eq $_[1];
+}
+
 sub get_pagination
 {
 
@@ -626,24 +632,30 @@ sub print_content
                   "$actions<a class='action-link' href='edit_file.cgi?file=" . &urlize($link) .
                   "&path=" . &urlize($path) . "' title='$text{'edit'}' data-container='body'>$edit_icon</a>";
             }
-            if (($type =~ /application-zip/ && has_command('unzip')) ||
-                ($type =~ /application-x-7z-compressed/ &&
+            my $type_archive = $type;
+            if (string_ends_with($link, '.gpg')) {
+                my $link_gpg = $link;
+                $link_gpg =~ s/$\.gpg//;
+                $type_archive = mimetype($link_gpg);
+            }
+            if (($type_archive =~ /application-zip/ && has_command('unzip')) ||
+                ($type_archive =~ /application-x-7z-compressed/ &&
                     has_command('7z')) ||
-                ($type =~ /application-x-rar|application-vnd\.rar/ &&
+                ($type_archive =~ /application-x-rar|application-vnd\.rar/ &&
                     has_command('unrar')) ||
-                ($type =~ /application-x-rpm/ &&
+                ($type_archive =~ /application-x-rpm/ &&
                     has_command('rpm2cpio') &&
                     has_command('cpio')) ||
-                ($type =~ /application-x-deb/ &&
+                ($type_archive =~ /application-x-deb/ &&
                     has_command('dpkg'))
                 ||
                 (
-                    ($type =~ /x-compressed-tar/ || $type =~ /-x-tar/ ||
-                     ($type =~ /-x-bzip/ &&
+                    ($type_archive =~ /x-compressed-tar/ || $type_archive =~ /-x-tar/ ||
+                     ($type_archive =~ /-x-bzip/ &&
                          has_command('bzip2')) ||
-                     ($type =~ /-gzip/ &&
+                     ($type_archive =~ /-gzip/ &&
                          has_command('gzip')) ||
-                     ($type =~ /-x-xz/ &&
+                     ($type_archive =~ /-x-xz/ &&
                          has_command('xz'))
                     ) &&
                     has_command('tar')))
