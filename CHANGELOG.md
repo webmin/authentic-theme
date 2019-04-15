@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 19.32-beta4 (April 15, 2019)
+* Add ability for File Manager to encrypt/decrypt an archive
+* Add tooltips with size in bytes, numeric user/group and last access/change time to File Manager
+* Add ability to select/deselect a range of checked table rows by holding shift in File Manager
+* Add password meter
+* Add intuitive folder refresh hotkey (Ctrl+R) in File Manager
+* Add hotkeys (Ctrl+A/Ctrl+⇧+A) to selec/deselect all items in File Manager
+* Add send browser notification when progressive output is finished and user not looking at the page
+* Add to update file size after closing file editor in File Manager
+* Fix to improve and optimize initial load for File Manager
+
 #### Version 19.32-beta3 (April 01, 2019)
 * Add improved BIND syntax highlight for manual editors
 * Add an ability to select all items in directory on all pages for further operations in File Manager
@@ -53,7 +64,6 @@
 * Fix over a hundred of other minor bugs and made other improvements
 
 <!--- separator --->
-
 
 #### Version 19.22 (December 25, 2018)
 * Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)
