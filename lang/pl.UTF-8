@@ -1049,8 +1049,13 @@ filemanager_archive_move_to_archive_failed=Can't move files to archive due to co
 theme_xhred_filemanager_archive_move_to=Move to archive
 theme_xhred_global_encrypt=Encrypt
 theme_xhred_filemanager_gpg_select_the_key=Select the key
-
-
-
-
-
+theme_xhred_filemanager_context_extract_encrypted=Extract options
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=Password or passphrase
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=Enter the password to decrypt compressed file. Enter your GPG key's passphrase if set.
+theme_xhred_global_decrypt=Decrypt
+filemanager_archive_password_required=Password required to decrypt archive
+filemanager_archive_password_wrong=Provided password is incorrect
+filemanager_archive_file_not_found=File doesn't exist
+filemanager_archive_gpg_private_error=No secret key available or key's passphrase is incorrect
+theme_xhred_filemanager_errors_extraction=The following errors occurred while extracting
+theme_xhred_filemanager_extract_option_delete_afterwards=Delete archive after successful extraction

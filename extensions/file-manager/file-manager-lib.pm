@@ -607,7 +607,11 @@ sub print_content
         my $actions =
 "<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$hlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
         my $href;
+        my $is_archive = 0;
+        my $is_file    = 1;
+        my $is_gpg     = 0;
         if ($list[$count - 1][15] == 1) {
+            $is_file = 0;
             if ($path eq '/' . $link) {
                 $href = "index.cgi?path=" . &urlize("$path");
             } else {
@@ -635,14 +639,15 @@ sub print_content
             my $type_archive = $type;
             if (string_ends_with($link, '.gpg')) {
                 my $link_gpg = $link;
-                $link_gpg =~ s/$\.gpg//;
+                $link_gpg =~ s/\.gpg$//;
                 $type_archive = mimetype($link_gpg);
+                $is_gpg       = 1;
             }
             if (($type_archive =~ /application-zip/ && has_command('unzip')) ||
                 ($type_archive =~ /application-x-7z-compressed/ &&
                     has_command('7z')) ||
                 ($type_archive =~ /application-x-rar|application-vnd\.rar/ &&
-                    has_command('unrar')) ||
+                    (has_command('unrar') || has_command('unar'))) ||
                 ($type_archive =~ /application-x-rpm/ &&
                     has_command('rpm2cpio') &&
                     has_command('cpio')) ||
@@ -660,6 +665,7 @@ sub print_content
                     ) &&
                     has_command('tar')))
             {
+                $is_archive = 1;
                 $actions =
                   "$actions <a class='action-link' href='extract.cgi?path=" . &urlize($path) .
                   "&file=" . &urlize($link) . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
@@ -667,7 +673,10 @@ sub print_content
         }
         my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"><img src=\"$img\"></a>",
                         "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
-        my @td_tags = (undef, 'class="col-icon"', 'class="col-name"');
+        my @td_tags = (undef,
+                       'class="col-icon"',
+                       'class="col-name" data-xarchive="' .
+                         $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' . $is_gpg . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
@@ -736,6 +745,7 @@ sub print_content
     $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}     : undef);
     $list_data{'error'}       = (length $in{'error'}       ? $in{'error'}       : undef);
     $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
+    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}      : undef);
     $list_data{'page_requested'}       = $page;
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;

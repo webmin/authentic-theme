@@ -25,7 +25,7 @@ my $extension;
 my @entries_list = get_entries_list();
 my $delete       = $in{'arcmove'} ? 1 : 0;
 my $encrypt      = $in{'arcencr'} ? 1 : 0;
-my $password     = $in{'arcencr_val'};
+my $password     = decode_base64($in{'arcencr_val'});
 my $key_id       = quotemeta($in{'arkkey'});
 my $gpgpath      = quotemeta($in{'gpgpath'});
 
@@ -38,17 +38,17 @@ if ($in{'method'} eq 'tar') {
     my $file  = "$cwd/$in{'arch'}.tar.gz";
     my $fileq = quotemeta($file);
     $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . " -T " . $list;
-    system_logged($command);
+    system($command);
 
     if ($encrypt && $key_id) {
         my $gpg = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
-        if (system_logged($gpg) != 0) {
+        if (system($gpg) != 0) {
             $errors{ html_escape($file) } = "$text{'filemanager_archive_gpg_error'}: $?";
         }
         unlink_file($file);
     }
 } elsif ($in{'method'} eq 'zip') {
-    my $pparam = undef;
+    my $pparam;
     if ($encrypt && $password) {
         $pparam = (" -P " . quotemeta($password) . " ");
     }
@@ -60,7 +60,7 @@ if ($in{'method'} eq 'tar') {
             $errors{ urlize(html_escape($name)) } = lc($text{'theme_xhred_global_no_target'});
         }
     }
-    system_logged($command);
+    system($command);
 }
 
 if ($delete) {
