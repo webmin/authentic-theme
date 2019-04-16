@@ -1289,23 +1289,27 @@ sub get_sysinfo_vars
             ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
             my $authentic_remote_version_local = $authentic_remote_version;
 
-            if ($incompatible && $authentic_remote_version_local !~ /beta/) {
+            if ($incompatible && $authentic_remote_version_local !~ /alpha|beta|RC/) {
                 $authentic_remote_version = $authentic_installed_version;
             }
 
             if (
                 $theme_config{'settings_sysinfo_theme_updates'} eq 'true' && (
-                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
+                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /alpha|beta|RC/))
                     &&
                     (
-                        (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-                         $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
+                        (
+                         ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
+                          $authentic_installed_version =~ /alpha|beta|RC/
+                         ) &&
+                         lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
-                        $authentic_remote_version_local gt $authentic_installed_version)
+                        lc($authentic_remote_version_local) gt lc($authentic_installed_version))
 
                 ))
             {
-                my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
+                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
+                my $authentic_remote_alpha_rc    = $authentic_remote_version_local =~ /alpha|RC/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -1323,7 +1327,7 @@ sub get_sysinfo_vars
                   ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
                   ($global_prefix || $gconfig{'webprefix'}) . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
-                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
+                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_rc ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                   . $theme_text{'theme_changelog'}
                   . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .

@@ -1180,7 +1180,7 @@ sub theme_version
     }
 
     if ($string) {
-        $version =~ s/beta[\d+]|\.|-//ig;
+        $version =~ s/(alpha|beta|RC)[\d+]|\.|-//ig;
         if (theme_debug_mode() || $development) {
             $version .= (time() . $mversion);
         } else {
@@ -1307,7 +1307,7 @@ sub get_version_full
     my ($version, $beta) = @_;
     ($version) = $version =~ /([0-9]+[.][0-9]+(?:.\d+|-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
 
-    if ($version =~ /beta/ && $beta) {
+    if ($version =~ /alpha|beta|RC/ && $beta) {
         return undef;
     }
 
