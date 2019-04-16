@@ -27,7 +27,6 @@ my $delete       = $in{'arcmove'} ? 1 : 0;
 my $encrypt      = $in{'arcencr'} ? 1 : 0;
 my $password     = decode_base64($in{'arcencr_val'});
 my $key_id       = quotemeta($in{'arkkey'});
-my $gpgpath      = quotemeta($in{'gpgpath'});
 
 if ($in{'method'} eq 'tar') {
     my $list = transname();
@@ -41,7 +40,9 @@ if ($in{'method'} eq 'tar') {
     system($command);
 
     if ($encrypt && $key_id) {
-        my $gpg = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
+        my %webminconfig = foreign_config("webmin");
+        my $gpgpath      = quotemeta($webminconfig{'gpg'} || "gpg");
+        my $gpg          = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
         if (system($gpg) != 0) {
             $errors{ html_escape($file) } = "$text{'filemanager_archive_gpg_error'}: $?";
         }

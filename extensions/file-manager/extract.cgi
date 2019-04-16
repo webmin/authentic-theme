@@ -31,7 +31,7 @@ foreach my $name (@entries_list) {
     $iname      = $name;
     if (string_ends_with($name, '.gpg')) {
         my %webminconfig = foreign_config("webmin");
-        my $gpgpath = $webminconfig{'gpg'} || "gpg";
+        my $gpgpath = quotemeta($webminconfig{'gpg'} || "gpg");
         $gpg = 1;
         $name =~ s/\.gpg$//;
         my $pparam_gpg;
@@ -89,6 +89,9 @@ foreach my $name (@entries_list) {
 
     if (($delete || $gpg) && ($status == 0 && $status_gpg == 0)) {
         unlink_file("$cwd/$name");
+        if ($delete && $gpg) {
+            unlink_file("$cwd/$iname");
+        }
     }
 
     if ($status != 0 || $status_gpg != 0) {
