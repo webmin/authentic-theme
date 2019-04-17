@@ -637,9 +637,9 @@ sub print_content
                   "&path=" . &urlize($path) . "' title='$text{'edit'}' data-container='body'>$edit_icon</a>";
             }
             my $type_archive = $type;
-            if (string_ends_with($link, '.gpg')) {
+            if (string_ends_with($link, '.gpg') || string_ends_with($link, '.pgp')) {
                 my $link_gpg = $link;
-                $link_gpg =~ s/\.gpg$//;
+                $link_gpg =~ s/\.(gpg|pgp)$//;
                 $type_archive = mimetype($link_gpg);
                 $is_gpg       = 1;
             }
