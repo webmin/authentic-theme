@@ -3,7 +3,6 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.io>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -29,11 +28,11 @@ foreach my $name (@entries_list) {
     $status_gpg = 0;
     $gpg        = 0;
     $iname      = $name;
-    if (string_ends_with($name, '.gpg')) {
+    if (string_ends_with($name, '.gpg') || string_ends_with($name, '.pgp')) {
         my %webminconfig = foreign_config("webmin");
         my $gpgpath = quotemeta($webminconfig{'gpg'} || "gpg");
         $gpg = 1;
-        $name =~ s/\.gpg$//;
+        $name =~ s/\.(gpg|pgp)$//;
         my $pparam_gpg;
         if ($password) {
             $pparam_gpg = (" --batch --yes --passphrase " . quotemeta($password) . " ");
