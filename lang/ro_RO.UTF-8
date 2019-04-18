@@ -439,7 +439,7 @@ theme_xhred_database_db_selected_drop=Scoateți baza de date selectată
 theme_xhred_database_dbs_selected_drop=Scoateţi bazele de date selectate
 theme_xhred_database_edit_but_not_saved=Datele din tabel au fost editate, dar nu au fost salvate.
 
-theme_xhred_global_no_such_command=Se pare că executabilul <tt>%cmd</tt> nu este instalat sau nu este in calea sistem tău.
+theme_xhred_global_no_such_command=Se pare că executabilul <tt>$1</tt> nu este instalat sau nu este in calea sistem tău.
 
 theme_xhred_global_notice=Notificare
 

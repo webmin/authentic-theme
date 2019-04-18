@@ -42,6 +42,11 @@ if ($in{'method'} eq 'tar') {
         my %webminconfig = foreign_config("webmin");
         my $gpgpath      = quotemeta($webminconfig{'gpg'} || "gpg");
         my $gpg          = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
+        
+        if (!has_command($gpgpath)) {
+            $errors{ $text{'theme_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
+        }
+
         if (system($gpg) != 0) {
             $errors{ html_escape($file) } = "$text{'filemanager_archive_gpg_error'}: $?";
         }

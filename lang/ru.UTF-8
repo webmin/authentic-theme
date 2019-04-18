@@ -442,7 +442,7 @@ theme_xhred_database_db_selected_drop=Drop selected database
 theme_xhred_database_dbs_selected_drop=Drop selected databases
 theme_xhred_database_edit_but_not_saved=Table data has been edited but not saved.
 
-theme_xhred_global_no_such_command=It appears that <tt>%cmd</tt> executable is not installed or not in the path on your system.
+theme_xhred_global_no_such_command=It appears that <tt>$1</tt> executable is not installed or not in the path on your system.
 
 theme_xhred_global_notice=Notice
 

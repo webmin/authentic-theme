@@ -441,7 +441,7 @@ theme_xhred_database_db_selected_drop=Buang basisdata terpilih
 theme_xhred_database_dbs_selected_drop=Buang basisdata terpilih
 theme_xhred_database_edit_but_not_saved=Data tabel telah disunting namun tidak disimpan.
 
-theme_xhred_global_no_such_command=Tampaknya <tt>%cmd</tt> yang dapat dieksekusi tidak terinstal atau tidak dijalankan pada sistem.
+theme_xhred_global_no_such_command=Tampaknya <tt>$1</tt> yang dapat dieksekusi tidak terinstal atau tidak dijalankan pada sistem.
 
 theme_xhred_global_notice=Pemberitahuan
 

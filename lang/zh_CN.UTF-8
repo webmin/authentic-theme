@@ -437,7 +437,7 @@ theme_xhred_database_db_selected_drop=删除所选数据库
 theme_xhred_database_dbs_selected_drop=删除选定的数据库
 theme_xhred_database_edit_but_not_saved=表数据已编辑但未保存。
 
-theme_xhred_global_no_such_command=似乎 <tt>%cmd</tt> 可执行文件未安装或未安装在系统的路径中。
+theme_xhred_global_no_such_command=似乎 <tt>$1</tt> 可执行文件未安装或未安装在系统的路径中。
 
 theme_xhred_global_notice=注意
 

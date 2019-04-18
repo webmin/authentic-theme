@@ -439,7 +439,7 @@ theme_xhred_database_db_selected_drop=Elimina la base de dades seleccionada
 theme_xhred_database_dbs_selected_drop=Elimina les base de dades seleccionades
 theme_xhred_database_edit_but_not_saved=La informació de la taula s'ha modificat però encara no s'ha desat.
 
-theme_xhred_global_no_such_command=Sembla que la comanda <tt>%cmd</tt> no està instal·lada o no es troba en la ruta per defecte en el sistema.
+theme_xhred_global_no_such_command=Sembla que la comanda <tt>$1</tt> no està instal·lada o no es troba en la ruta per defecte en el sistema.
 
 theme_xhred_global_notice=Notificació
 

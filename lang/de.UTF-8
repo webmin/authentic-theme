@@ -429,7 +429,7 @@ theme_xhred_database_db_selected_drop=Ausgew&auml;hlte Datenbank l&ouml;schen
 theme_xhred_database_dbs_selected_drop=Ausgew&auml;hlte Datenbanken l&ouml;schen
 theme_xhred_database_edit_but_not_saved=Datenbank Tabelle w&uuml;rde ver&auml;ndert aber nicht gespeichert.
 
-theme_xhred_global_no_such_command=Es scheint das Programm <tt>%cmd</tt> ist nicht installiert oder nicht im System Pfad.
+theme_xhred_global_no_such_command=Es scheint das Programm <tt>$1</tt> ist nicht installiert oder nicht im System Pfad.
 
 theme_xhred_global_notice=Hinweis
 

@@ -437,7 +437,7 @@ theme_xhred_database_db_selected_drop=Släpp markerad databas
 theme_xhred_database_dbs_selected_drop=Släpp markerade databaser
 theme_xhred_database_edit_but_not_saved=Tabelldatan har redigerats men inte sparats.
 
-theme_xhred_global_no_such_command=Det verkar som att den körbara filen <tt>%cmd</tt> inte är installerad eller den finns inte i systemsökvägen.
+theme_xhred_global_no_such_command=Det verkar som att den körbara filen <tt>$1</tt> inte är installerad eller den finns inte i systemsökvägen.
 
 theme_xhred_global_notice=Notera
 

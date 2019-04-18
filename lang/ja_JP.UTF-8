@@ -437,7 +437,7 @@ theme_xhred_database_db_selected_drop= 選択したデータベースを削除
 theme_xhred_database_dbs_selected_drop= 選択したデータベースを削除する
 theme_xhred_database_edit_but_not_saved= テーブルデータは編集されましたが保存されませんでした。
 
-theme_xhred_global_no_such_command= 実行可能ファイル<tt>%cmd </tt>がインストールされていないか、システムのパスに存在しないようです。
+theme_xhred_global_no_such_command= 実行可能ファイル<tt>$1 </tt>がインストールされていないか、システムのパスに存在しないようです。
 
 theme_xhred_global_notice= 通知
 # Authentic Theme
