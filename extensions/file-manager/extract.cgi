@@ -24,6 +24,7 @@ my $password = decode_base64($in{'password'});
 my $delete   = $in{'delete'};
 
 foreach my $name (@entries_list) {
+    my $no_command;
     $status     = 0;
     $status_gpg = 0;
     $gpg        = 0;
@@ -35,11 +36,18 @@ foreach my $name (@entries_list) {
         $name =~ s/\.(gpg|pgp)$//;
         my $pparam_gpg;
         if ($password) {
-            $pparam_gpg = (" --batch --yes --passphrase " . quotemeta($password) . " ");
+            $pparam_gpg = (" --batch --yes --passphrase-fd 0 ");
         }
-        $status_gpg =
-          system("cd @{[quotemeta($cwd)]} && $gpgpath $pparam_gpg --output @{[quotemeta($name)]} --decrypt " .
-                 quotemeta("$cwd/$iname"));
+        $status_gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $pparam_gpg --output @{[quotemeta($name)]} --decrypt " .
+          quotemeta("$cwd/$iname");
+
+        open my $fh => "| $status_gpg" or $no_command = 1;
+        print $fh quotemeta($password);
+        close $fh;
+        $status_gpg = $?;
+        if (!has_command($gpgpath) || $no_command) {
+            $errors{ $text{'theme_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
+        }
     }
 
     my $archive_type = mimetype($cwd . '/' . $name);
@@ -86,7 +94,7 @@ foreach my $name (@entries_list) {
         }
     }
 
-    if (($delete || $gpg) && ($status == 0 && $status_gpg == 0)) {
+    if (!%errors && ($delete || $gpg) && ($status == 0 && $status_gpg == 0)) {
         unlink_file("$cwd/$name");
         if ($delete && $gpg) {
             unlink_file("$cwd/$iname");

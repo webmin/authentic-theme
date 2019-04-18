@@ -22,6 +22,7 @@ my $passphrase = decode_base64($in{'passphrase'});
 
 my %webminconfig = foreign_config("webmin");
 my $gpgpath = quotemeta($webminconfig{'gpg'} || "gpg");
+my $no_command;
 
 foreach my $name (@entries_list) {
     next if (-d "$cwd/$name");
@@ -39,21 +40,27 @@ foreach my $name (@entries_list) {
         my $key = quotemeta($in{'key'});
         $gpg =
 "cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($iname)]}.gpg --recipient $key @{[quotemeta($name)]}";
+        $status = system($gpg);
 
     } elsif ($action eq "decrypt") {
         my $extra;
         if ($passphrase) {
-            $extra = (" --batch --yes --passphrase @{[quotemeta($passphrase)]}");
+            $extra = (" --batch --yes --passphrase-fd 0 ");
         }
         $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($iname)]} --decrypt @{[quotemeta($name)]}";
     }
-
-    $status = system($gpg);
+    open my $fh => "| $gpg" or $no_command = 1;
+    print $fh quotemeta($passphrase);
+    close $fh;
+    $status = $?;
 
     if ($delete && $status == 0) {
         unlink_file("$cwd/$name");
     }
 
+    if (!has_command($gpgpath) || $no_command) {
+        $errors{ $text{'theme_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
+    }
     if ($status != 0) {
         if ($status == 512) {
             $errors{ html_escape($name) } = $text{'filemanager_archive_gpg_private_error'};
