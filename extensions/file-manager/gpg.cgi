@@ -45,14 +45,20 @@ foreach my $name (@entries_list) {
     } elsif ($action eq "decrypt") {
         my $extra;
         if ($passphrase) {
-            $extra = (" --batch --yes --passphrase-fd 0 ");
+            my $gpg_ver = get_gpg_version($gpgpath);
+            if ($gpg_ver ge '2.1') {
+                $extra = " --pinentry-mode loopback ";
+            } else {
+                $extra = " --yes --batch  ";
+            }
+            $extra .= "  --passphrase-fd 0 ";
         }
         $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($iname)]} --decrypt @{[quotemeta($name)]}";
+        open my $fh => "| $gpg" or $no_command = 1;
+        print $fh $passphrase;
+        close $fh;
+        $status = $?;
     }
-    open my $fh => "| $gpg" or $no_command = 1;
-    print $fh $passphrase;
-    close $fh;
-    $status = $?;
 
     if ($delete && $status == 0) {
         unlink_file("$cwd/$name");

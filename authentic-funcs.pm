@@ -95,18 +95,20 @@ sub get_gpg_keys
         my %keys_secret_;
 
         foreach my $k (@keys) {
+            my $key = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
-            if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
-                $keys_{ $k->{'key'} } = trim($name) . " ($k->{'email'}->[0] [$k->{'key'}/$k->{'size'}, $k->{'date'}])";
+            if ($_[0] || (!$_[0] && !grep(/^$key$/, @keys_avoided))) {
+                $keys_{ $k->{'key'} } = trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
             }
         }
         foreach my $k (@keys_secret) {
+            my $key = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
             if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
                 $keys_secret_{ $k->{'key'} } =
-                  trim($name) . " ($k->{'email'}->[0] [$k->{'key'}/$k->{'size'}, $k->{'date'}])";
+                  trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
             }
         }
         return (\%keys_, \%keys_secret_, $gpgpath);

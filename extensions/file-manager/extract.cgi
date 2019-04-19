@@ -36,8 +36,15 @@ foreach my $name (@entries_list) {
         $name =~ s/\.(gpg|pgp)$//;
         my $pparam_gpg;
         if ($password) {
-            $pparam_gpg = (" --batch --yes --passphrase-fd 0 ");
+            my $gpg_ver = get_gpg_version($gpgpath);
+            if ($gpg_ver ge '2.1') {
+                $pparam_gpg = " --pinentry-mode loopback ";
+            } else {
+                $pparam_gpg = " --yes --batch  ";
+            }
+            $pparam_gpg .= "  --passphrase-fd 0 ";
         }
+
         $status_gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $pparam_gpg --output @{[quotemeta($name)]} --decrypt " .
           quotemeta("$cwd/$iname");
 

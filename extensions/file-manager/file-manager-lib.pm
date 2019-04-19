@@ -879,6 +879,17 @@ sub paster
 
 }
 
+sub get_gpg_version() {
+    my ($gpgpath) = @_;
+    if (!$gpgpath) {
+        $gpgpath = "gpg";
+    }
+    my $gpg = quotemeta($gpgpath);
+    $gpg = `$gpg --version`;
+    $gpg =~ /(\*|\d+(\.\d+){0,2})/;
+    return $1;
+}
+
 sub switch_to_user
 {
     if (!supports_users()) {
