@@ -42,7 +42,7 @@ foreach my $name (@entries_list) {
           quotemeta("$cwd/$iname");
 
         open my $fh => "| $status_gpg" or $no_command = 1;
-        print $fh quotemeta($password);
+        print $fh $password;
         close $fh;
         $status_gpg = $?;
         if (!has_command($gpgpath) || $no_command) {

@@ -50,7 +50,7 @@ foreach my $name (@entries_list) {
         $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($iname)]} --decrypt @{[quotemeta($name)]}";
     }
     open my $fh => "| $gpg" or $no_command = 1;
-    print $fh quotemeta($passphrase);
+    print $fh $passphrase;
     close $fh;
     $status = $?;
 
