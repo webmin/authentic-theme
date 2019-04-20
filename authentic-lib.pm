@@ -3053,16 +3053,18 @@ sub theme_settings
         } elsif ($k eq 'settings_right_default_tab_webmin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-              . ($v eq '/' && ' selected') . '>Webmin</option>
+              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_wm'} . '</option>
 
                 '
               . (&foreign_available("virtual-server") &&
-                 ' <option value="virtualmin"' . ($v eq 'virtualmin' && ' selected') . '>Virtualmin</option> ') .
+                 ' <option value="virtualmin"' .
+                 ($v eq 'virtualmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_vm'} . '</option> ') .
               '
 
                '
               . (&foreign_available("server-manager") &&
-                 ' <option value="cloudmin"' . ($v eq 'cloudmin' && ' selected') . '>Cloudmin</option>') .
+                 ' <option value="cloudmin"' .
+                 ($v eq 'cloudmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_cm'} . '</option>') .
               '
                 </select>';
         } elsif ($k eq 'settings_webmin_default_module') {
@@ -3076,11 +3078,13 @@ sub theme_settings
         } elsif ($k eq 'settings_right_default_tab_usermin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-              . ($v eq '/' && ' selected') . '>Usermin</option>
+              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>
 
                 '
-              . (get_usermin_data('mailbox') && ' <option value="mail"' . ($v eq 'mail' && ' selected') . '>Mail</option> ')
-              . '
+              . (get_usermin_data('mailbox') &&
+                 ' <option value="mail"' .
+                 ($v eq 'mail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
+              '
 
                 </select>';
         } elsif ($k eq 'settings_hotkey_toggle_modifier') {

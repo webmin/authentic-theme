@@ -53,7 +53,7 @@ foreach my $name (@entries_list) {
         close $fh;
         $status_gpg = $?;
         if (!has_command($gpgpath) || $no_command) {
-            $errors{ $text{'theme_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
         }
     }
 

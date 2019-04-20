@@ -44,7 +44,7 @@ if ($in{'method'} eq 'tar') {
         my $gpg          = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
         
         if (!has_command($gpgpath)) {
-            $errors{ $text{'theme_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
         }
 
         if (system($gpg) != 0) {

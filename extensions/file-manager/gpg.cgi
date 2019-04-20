@@ -65,7 +65,7 @@ foreach my $name (@entries_list) {
     }
 
     if (!has_command($gpgpath) || $no_command) {
-        $errors{ $text{'theme_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
+        $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
     }
     if ($status != 0) {
         if ($status == 512) {

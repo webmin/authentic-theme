@@ -397,7 +397,7 @@ sub print_content
     my $query = $in{'query'};
 
     unless (opendir(DIR, $cwd)) {
-        print_error("$text{'theme_global_error'}: <tt>`$cwd`</tt>- $!.");
+        print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
         exit;
     }
 

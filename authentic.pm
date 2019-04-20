@@ -862,7 +862,7 @@ sub theme_ui_alert_box
     } elsif ($class eq "warn") {
         $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
-        $type = 'alert-danger', $tmsg = ($theme_text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+        $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     }
 
     if ($desc_to_title) {
