@@ -30,8 +30,7 @@ foreach my $name (@entries_list) {
     $gpg        = 0;
     $iname      = $name;
     if (string_ends_with($name, '.gpg') || string_ends_with($name, '.pgp')) {
-        my %webminconfig = foreign_config("webmin");
-        my $gpgpath = quotemeta($webminconfig{'gpg'} || "gpg");
+        my $gpgpath = get_gpg_path();
         $gpg = 1;
         $name =~ s/\.(gpg|pgp)$//;
         my $pparam_gpg;

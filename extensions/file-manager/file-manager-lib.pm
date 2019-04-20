@@ -889,6 +889,16 @@ sub get_gpg_version
     return $1;
 }
 
+sub get_gpg_path
+{
+    my $gnupg        = 'gnupg';
+    my $gnupg_target = foreign_available($gnupg) ? $gnupg : get_product_name();
+    my %gpgconfig    = foreign_config($gnupg_target);
+    my $gpgpath      = quotemeta($gpgconfig{'gpg'} || "gpg");
+    return $gpgpath;
+
+}
+
 sub switch_to_user
 {
     if (!supports_users()) {

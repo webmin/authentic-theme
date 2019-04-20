@@ -20,20 +20,20 @@ my $action     = $in{'action'};
 my $delete     = $in{'delete'};
 my $passphrase = decode_base64($in{'passphrase'});
 
-my %webminconfig = foreign_config("webmin");
-my $gpgpath = quotemeta($webminconfig{'gpg'} || "gpg");
+my $gpgpath = get_gpg_path();
 my $no_command;
 
 foreach my $name (@entries_list) {
     next if (-d "$cwd/$name");
-    my $localtime = POSIX::strftime('%Y%m%d-%H%M%S', localtime());
+    my $localtime = POSIX::strftime('%H%M%S', localtime());
     my ($iname, $fname, $fext);
     my $gpg;
 
     $iname = $name;
     $iname =~ s/\.(gpg|pgp)$// if ($action eq "decrypt");
     ($fname, $fext) = $iname =~ /^(?|(.*)\.(tar\.gz)|(.*)\.(.*)|(.*))$/;
-    $iname  = $fname . "_" . $action . "ed_$localtime." . $fext;
+    $fext = ".$fext" if ($fext);
+    $iname = $fname . "_" . substr($action, 0, 1) . "$localtime" . $fext;
     $status = 0;
 
     if ($action eq "encrypt") {
