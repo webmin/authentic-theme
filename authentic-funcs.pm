@@ -83,11 +83,13 @@ sub get_theme_language
 
 sub get_gpg_keys
 {
-    my $gpglib = $root_directory . "/webmin/gnupg-lib.pl";
+    my $gnupg  = 'gnupg';
+    my $target = foreign_available($gnupg) ? $gnupg : get_product_name();
+    my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
     if (-r $gpglib) {
         do $gpglib;
-        my %webminconfig = foreign_config("webmin");
-        my $gpgpath      = $webminconfig{'gpg'} || "gpg";
+        my %gpgconfig    = foreign_config($target);
+        my $gpgpath      = $gpgconfig{'gpg'} || "gpg";
         my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');
         my @keys         = list_keys_sorted();
         my @keys_secret  = sort {lc($a->{'name'}->[0]) cmp lc($b->{'name'}->[0])} list_secret_keys();
