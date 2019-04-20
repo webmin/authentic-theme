@@ -879,12 +879,11 @@ sub paster
 
 }
 
-sub get_gpg_version() {
-    my ($gpgpath) = @_;
-    if (!$gpgpath) {
-        $gpgpath = "gpg";
-    }
-    my $gpg = quotemeta($gpgpath);
+sub get_gpg_version
+{
+    my ($gpg) = @_;
+    $gpg = "gpg" if (!$gpg);
+    $gpg = quotemeta($gpg);
     $gpg = `$gpg --version`;
     $gpg =~ /(\*|\d+(\.\d+){0,2})/;
     return $1;
