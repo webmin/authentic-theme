@@ -18,7 +18,7 @@ my %errors;
 my $status;
 my $action     = $in{'action'};
 my $delete     = $in{'delete'};
-my $passphrase = decode_base64($in{'passphrase'});
+my $passphrase = $in{'passphrase'};
 
 my $gpgpath = get_gpg_path();
 my $no_command;
@@ -31,7 +31,7 @@ foreach my $name (@entries_list) {
 
     $iname = $name;
     $iname =~ s/\.(gpg|pgp)$// if ($action eq "decrypt");
-    ($fname, $fext) = $iname =~ /^(?|(.*)\.(tar\.gz)|(.*)\.(.*)|(.*))$/;
+    ($fname, $fext) = $iname =~ /^(?|(.*)\.(tar\.gz)|(.*)\.(wbt\.gz)|(.*)\.(.*)|(.*))$/;
     $fext = ".$fext" if ($fext);
     $iname = $fname . "_" . substr($action, 0, 1) . "$localtime" . $fext;
     $status = 0;

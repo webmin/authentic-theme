@@ -20,7 +20,7 @@ my $status_gpg;
 my $pparam;
 my $iname;
 my $gpg;
-my $password = decode_base64($in{'password'});
+my $password = $in{'password'};
 my $delete   = $in{'delete'};
 
 foreach my $name (@entries_list) {

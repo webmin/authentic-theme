@@ -24,7 +24,7 @@ my $extension;
 my @entries_list = get_entries_list();
 my $delete       = $in{'arcmove'} ? 1 : 0;
 my $encrypt      = $in{'arcencr'} ? 1 : 0;
-my $password     = decode_base64($in{'arcencr_val'});
+my $password     = $in{'arcencr_val'};
 my $key_id       = quotemeta($in{'arkkey'});
 
 if ($in{'method'} eq 'tar') {
