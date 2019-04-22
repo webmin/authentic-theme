@@ -1484,6 +1484,7 @@ const mail = (function() {
                         (source === 'node' ? 'getActiveNode' :
                             Object.assign(data.options.tree, {
                                 source: source,
+                                scrollParent: $('[' + $$.$.tree.container + ']'),
                                 click: (e, d) => {
                                     if (d.targetType === 'title') {
                                         setTimeout(() => {

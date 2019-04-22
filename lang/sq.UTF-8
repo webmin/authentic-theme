@@ -124,7 +124,7 @@ settings_right_window_options_title=Opsionet e dritares
 settings_right_navigation_menu_title=Mundësitë e menysë së navigimit
 settings_right_table_options_title=Opsionet e tabelës
 settings_security_title=Opsione të Alarmeve të Sigurisë
-settings_security_description=Alarmet e sigurisë do t'ju lejojnë të konfiguroni njoftimet e postës elektronike pas ngjarjeve të caktuara.(Komanda Linux <code> mail </code> kërkohet për këtë funksion të funksionojë) <br class="lh0"> Formati: <code> Mesazhi | Subjekti | Lista e ndarë e emrave të përdoruesve / email | / IPv6 </code> <br class="lh0"> Përdorimi: <code>% 3 alarm identifikimi i suksesshëm për përdoruesin% 1 nga% 2 |% 3 login login i suksesshëm | root, user @ example.org | 1.2.3.4, 5.6.7.8 </code> <br class="lh0"> Produkti: <code> Nga: root, Për: rrënjë, Subjekt: Webmin alarm i suksesshëm i identifikimit, Mesazhi: Webmin login i suksesshëm për perdoruesin root nga 2.3.4.5 </code>
+settings_security_description=Alarmet e sigurisë do t'ju lejojnë të konfiguroni njoftimet e postës elektronike pas ngjarjeve të caktuara.(Komanda Linux <code> mail </code> kërkohet për këtë funksion të funksionojë) <br class="lh0"> Formati: <code> Mesazhi | Subjekti | Lista e ndarë e emrave të përdoruesve / email | / IPv6 </code> <br class="lh0"> Përdorimi: <code>%3 alarm identifikimi i suksesshëm për përdoruesin %1 nga %2 | %3 login login i suksesshëm | root, user @ example.org | 1.2.3.4, 5.6.7.8 </code> <br class="lh0"> Produkti: <code> Nga: root, Për: rrënjë, Subjekt: Webmin alarm i suksesshëm i identifikimit, Mesazhi: Webmin login i suksesshëm për perdoruesin root nga 2.3.4.5 </code>
 settings_right_hotkey_options_title=Opsionet Hotkey
 settings_right_sysinfo_page_options_title=Dashboard options
 
@@ -216,7 +216,7 @@ theme_version=Authentic theme version
 
 
 # Versioni 17.40
-theme_global_error=Gabim
+theme_xhred_global_error=Gabim
 theme_global_warning=Lajmerim
 theme_global_success=Sukses
 theme_global_info=Informacion
@@ -249,21 +249,21 @@ theme_xhred_filemanager_renaming_selected=Riemërimi i zgjedhur.
 theme_xhred_filemanager_creating_directory=Krijimi i direktorisë
 theme_xhred_filemanager_creating_file=Krijimi i skedarit
 theme_xhred_filemanager_downloading_from=Shkarkimi nga
-theme_xhred_filemanager_setting_permissions=Vendosja e lejeve në <strong> <em>% value </em> </strong> në skedarët e zgjedhur.
-theme_xhred_filemanager_changing_ownership=Ndryshimi i pronësisë në <strong> <em>% vlera </em> </strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_setting_permissions=Vendosja e lejeve në <strong> <em>%value </em> </strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_changing_ownership=Ndryshimi i pronësisë në <strong> <em>%vlera </em> </strong> në skedarët e zgjedhur.
 theme_xhred_filemanager_compressing_selected=Shtypja e përzgjedhur në sfond.
 theme_xhred_filemanager_refreshing=Përmbajtja freskuese e direktorisë.
 theme_xhred_filemanager_copying_successful=Kopjo në clipboard i suksesshëm.
 theme_xhred_filemanager_cutting_successful=Pritini në clipboard të suksesshëm.
 theme_xhred_filemanager_pasting_successful=Ngjit nga clipboard ishte i suksesshëm.
-theme_xhred_filemanager_bookmark_success=Drejtoria <strong> <em>% vlera </em> </strong> u shtua me sukses në faqeshënuesit tuaj.
-theme_xhred_filemanager_searching=Duke kërkuar <em> `% value` </em> përputhjen e emrave të dosjeve / drejtorive.
-theme_xhred_filemanager_search_founds=Gjetur <strong>% vlera </strong> përputhet.
+theme_xhred_filemanager_bookmark_success=Drejtoria <strong> <em>%vlera </em> </strong> u shtua me sukses në faqeshënuesit tuaj.
+theme_xhred_filemanager_searching=Duke kërkuar <em> `%value` </em> përputhjen e emrave të dosjeve / drejtorive.
+theme_xhred_filemanager_search_founds=Gjetur <strong>%vlera </strong> përputhet.
 theme_xhred_filemanager_search_found=U gjet ndeshje <strong> 1 </strong>.
 theme_xhred_filemanager_search_no_matches=Nuk u gjet asnjë ndeshje.
 theme_xhred_filemanager_nothing_is_selected=Asgjë nuk është zgjedhur!
-theme_xhred_filemanager_saving_file=Skeda `<strong> <em>% value </em> </strong>` po ruhet.
-theme_xhred_filemanager_file_saved=Skeda `<strong> <em>% value </em> </strong>` është ruajtur me sukses.
+theme_xhred_filemanager_saving_file=Skeda `<strong> <em>%value </em> </strong>` po ruhet.
+theme_xhred_filemanager_file_saved=Skeda `<strong> <em>%value </em> </strong>` është ruajtur me sukses.
 theme_xhred_filemanager_not_editable=Nuk mund të modifikoj këtë lloj përzgjedhjeje.
 theme_xhred_filemanager_not_decompressable=Nuk mund ta shpërbëjë këtë lloj skedari.
 theme_xhred_filemanager_no_selection_to_copy=Asnjë drejtori / skedar i përzgjedhur për t'u kopjuar.
@@ -275,17 +275,17 @@ theme_xhred_filemanager_successful_deletion=Deletimi ishte i suksesshëm.
 theme_xhred_filemanager_successful_permissions=Lejet janë ndryshuar me sukses.
 theme_xhred_filemanager_successful_ownership=Pronësia është ndryshuar me sukses.
 theme_xhred_filemanager_successful_compression=Kompresimi ka mbaruar me sukses.
-theme_xhred_filemanager_successful_directory_creation=Drejtoria `<strong>% vlera </strong>` u krijua me sukses.
-theme_xhred_filemanager_successful_file_creation=Skeda `<strong>% vlera </strong>` u krijua me sukses.
+theme_xhred_filemanager_successful_directory_creation=Drejtoria `<strong>%vlera </strong>` u krijua me sukses.
+theme_xhred_filemanager_successful_file_creation=Skeda `<strong>%vlera </strong>` u krijua me sukses.
 
 theme_xhred_notifications_packages_updates=Përditësimi i Paketave
 theme_xhred_notifications_theme_update=Përditësim i temës
-theme_xhred_notifications_theme_update_message=Është në dispozicion një version i ri <em>% v </em> i <strong> Theme autentik </strong>. Ju lutemi update.
+theme_xhred_notifications_theme_update_message=Është në dispozicion një version i ri <em>%v </em> i <strong> Theme autentik </strong>. Ju lutemi update.
 theme_xhred_notifications_firewall_update=Update Firewall
-theme_xhred_notifications_firewall_update_message=Është në dispozicion një version i ri <em>% v </em> i <strong> Sigurisë dhe Firewall të Serverit ConfigServer </strong>. Ju lutemi update.
+theme_xhred_notifications_firewall_update_message=Është në dispozicion një version i ri <em>%v </em> i <strong> Sigurisë dhe Firewall të Serverit ConfigServer </strong>. Ju lutemi update.
 
 theme_xhred_notifications_firewall_danger=Rrezik Firewall
-theme_xhred_notifications_firewall_danger_message=Duket se <strong> Siguria e Serverit të Sigurisë dhe Firewall </strong> është <span class="badge-danger"> nuk funksionon </span> ose është ndalur!Mos e lini ekspozuar serverin tuaj, kontrolloni për cilësimet e firewall (% v)
+theme_xhred_notifications_firewall_danger_message=Duket se <strong> Siguria e Serverit të Sigurisë dhe Firewall </strong> është <span class="badge-danger"> nuk funksionon </span> ose është ndalur!Mos e lini ekspozuar serverin tuaj, kontrolloni për cilësimet e firewall (%v)
 
 theme_xhred_notifications_firewall_warning=Paralajmërimi i Firewall
 
@@ -359,7 +359,7 @@ settings_switch_rdisplay_description=Ky opsion ju lejon të vendosni porosi të 
 
 #17.63
 theme_xhred_filemanager_context_calculate_selected_size=Llogaritni madhësinë e përzgjedhur
-theme_xhred_filemanager_selected_entries=Zgjedhur:% entries vlerë
+theme_xhred_filemanager_selected_entries=Zgjedhur: %entries vlerë
 theme_xhred_filemanager_manual_path=Futni rrugën manualisht
 
 theme_xhred_datatable_semptytable=Nuk ka të dhëna në tabelë
@@ -389,10 +389,10 @@ theme_xhred_datatable_semptydirectory=Drejtori është bosh
 theme_xhred_filemanager_context_clipboard=Kopjo rrugën në clipboard
 theme_xhred_global_warning=Lajmerim
 theme_xhred_global_close=Mbylle
-theme_xhred_encoding_warning=Zbuluar që po përdorni një set karakteresh jo-unicode, e cila nuk rekomandohet.Karakteri i çuditshëm <tt> </tt> mund të shfaqet në modalitetin e përpunimit të tekstit dhe / ose çështje të tjera të kodimit do të ndodhin. <br> <br> Ndrysho gjuhën në <a href="%link" class="label label-primary"> <strong> <i class="fa fa-cog"> </i> Produkti Konfigurimi </strong > </a> në <code>% lang.UTF-8 </code> dhe sigurohuni që edhe shfletuesi juaj ta zbulojë atë saktë. <span class="_ fshehur _"> <br> <br> Kujdes, <em> Webmin </em> moduli i ndërtuar, i emërtuar <em> Ndrysho gjuhën dhe temën </em> mund të anashkalojë cilësimet globale. </span>
+theme_xhred_encoding_warning=Zbuluar që po përdorni një set karakteresh jo-unicode, e cila nuk rekomandohet.Karakteri i çuditshëm <tt> </tt> mund të shfaqet në modalitetin e përpunimit të tekstit dhe / ose çështje të tjera të kodimit do të ndodhin. <br> <br> Ndrysho gjuhën në <a href="%link" class="label label-primary"> <strong> <i class="fa fa-cog"> </i> Produkti Konfigurimi </strong > </a> në <code>%lang.UTF-8 </code> dhe sigurohuni që edhe shfletuesi juaj ta zbulojë atë saktë. <span class="_ fshehur _"> <br> <br> Kujdes, <em> Webmin </em> moduli i ndërtuar, i emërtuar <em> Ndrysho gjuhën dhe temën </em> mund të anashkalojë cilësimet globale. </span>
 
 theme_xhred_filemanager__no_bookmarks=Nuk ka faqeresa të ruajtura
-theme_xhred_filemanager_unbookmark_success=Drejtoria <strong> <em>% vlera </em> </strong> u hoq me sukses nga faqeshënuesit tuaj.
+theme_xhred_filemanager_unbookmark_success=Drejtoria <strong> <em>%vlera </em> </strong> u hoq me sukses nga faqeshënuesit tuaj.
 theme_xhred_filemanager_bookmark=Emëroni direktorinë aktuale
 theme_xhred_filemanager_unbookmark=Lista Unbookmark aktuale
 theme_xhred_filemanager_move_into_self=Ju nuk mund të lëvizni një direktori në vetvete!Lista e destinacionit është brenda dosjes së burimit.
@@ -433,9 +433,9 @@ theme_xhred_database_add_row_successful=Rresht i ri u shtua me sukses
 theme_xhred_database_edit_row_successful=Rreshti i përzgjedhur u përditësua me sukses
 theme_xhred_database_edit_rows_successful=Rreshtat e përzgjedhur u përditësuan me sukses
 theme_xhred_database_edit_row_delete_successful=Rreshti i përzgjedhur u fshi me sukses
-theme_xhred_database_edit_rows_delete_successful=Fshihet me sukses <em>% n </em> rreshta të zgjedhura
+theme_xhred_database_edit_rows_delete_successful=Fshihet me sukses <em>%n </em> rreshta të zgjedhura
 theme_xhred_database_edit_field_delete_successful=Fusha e përzgjedhur u fshi me sukses
-theme_xhred_database_edit_fields_delete_successful=fshihet me sukses <em>% n </em> fusha të zgjedhura
+theme_xhred_database_edit_fields_delete_successful=fshihet me sukses <em>%n </em> fusha të zgjedhura
 theme_xhred_database_edit_selected_row=Modifiko rreshtin e përzgjedhur
 theme_xhred_database_edit_selected_rows=Redakto rreshtave të zgjedhura
 theme_xhred_database_add_new_row=Shto rresht
@@ -449,7 +449,7 @@ theme_xhred_database_db_selected_drop=Hiq bazën e të dhënave të përzgjedhur
 theme_xhred_database_dbs_selected_drop=Hiq bazat e të dhënave të zgjedhura
 theme_xhred_database_edit_but_not_saved=Të dhënat e tabelës janë redaktuar, por nuk janë ruajtur.
 
-theme_xhred_global_no_such_command=Duket se <tt>% cmd </tt> ekzekutues nuk është i instaluar ose jo në rrugën në sistemin tuaj.
+theme_xhred_global_no_such_command=Duket se <tt>$1</tt> ekzekutues nuk është i instaluar ose jo në rrugën në sistemin tuaj.
 
 theme_xhred_global_notice=Njoftimi
 
@@ -484,14 +484,14 @@ theme_xhred_filemanager_delete_warning=Deletimi ka përfunduar me sukses, por jo
 filemanager_rename_exists=$3 me emrin `<strong><em>$1</em></strong>`ekziston `<strong><tt>$2</tt></strong>`
 filemanager_rename_denied=Nuk mund të riemërtoj $3.Kjo mund të ndodhë sepse burimi $3 është hequr ose për shkak të lejeve të kufizuara.
 
-theme_xhred_filemanager_successful_rename=Duke përmendur `<strong> <em> <s>% nga </s> </em> </strong>` në `<strong> <em>% to </em> </strong>` ishte e suksesshme.
+theme_xhred_filemanager_successful_rename=Duke përmendur `<strong> <em> <s>%nga </s> </em> </strong>` në `<strong> <em>%to </em> </strong>` ishte e suksesshme.
 
 filemanager_global_info_total1=Gjithsej: dosje $1 dhe dosje $2
 filemanager_global_info_total2=Total: $1 fotografi dhe $2 direktori
 filemanager_global_info_total3=Gjithsej: $1 file dhe $2 directories
 filemanager_global_info_total4=Gjithsej: $1 fotografi dhe $2 drejtori
 
-theme_xhred_filemanager_selected_entry=Zgjedhur:% hyrja e vlerës
+theme_xhred_filemanager_selected_entry=Zgjedhur: %hyrja e vlerës
 
 theme_xhred_filemanager_search_query=Maska e pyetjeve
 theme_xhred_filemanager_search_match=Gjej në rezultate
@@ -500,10 +500,10 @@ theme_xhred_filemanager_search_replace=Replace në rezultatet
 theme_xhred_global_find=Gjej
 theme_xhred_global_replace=Replace
 
-theme_xhred_filemanager_searching_matching=Duke kërkuar <em> `% value` </em> që përputhen me emrat e dosjeve / drejtorive, që përmbajnë tekstin <em>`% text` </em>.
-theme_xhred_filemanager_searching_replacing=Zëvendësimi i ndeshjeve <em> `% text` </em> me <em>`% replace` </em> në skedarë me emra që përmbajnë <em> `% value` </em>.
+theme_xhred_filemanager_searching_matching=Duke kërkuar <em> `%value` </em> që përputhen me emrat e dosjeve / drejtorive, që përmbajnë tekstin <em>`%text` </em>.
+theme_xhred_filemanager_searching_replacing=Zëvendësimi i ndeshjeve <em> `%text` </em> me <em>`%replace` </em> në skedarë me emra që përmbajnë <em> `%value` </em>.
 
-theme_xhred_filemanager_search_replaced_multi=Gjetur dhe zëvendësuar në <strong>% value </strong> skedarë.
+theme_xhred_filemanager_search_replaced_multi=Gjetur dhe zëvendësuar në <strong>%value </strong> skedarë.
 theme_xhred_filemanager_search_replaced=Gjetur dhe zëvendësuar në skedarin <strong> 1 </strong>.
 
 theme_xhred_filemanager_successful_permissions_with_errors=Lejet janë ndryshuar me sukses, por jo për të gjitha objektet:
@@ -512,8 +512,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Pronësia nuk është n
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Pronësia nuk mund të ndryshohet për shkak të gabimeve në vijim:
 
 theme_xhred_filemanager_successful_compression_with_errors=Kompresimi ka përfunduar me gabimet e mëposhtme:
-theme_xhred_filemanager_successful_compression_bg=Kompresimi ka mbaruar me sukses.Dosja e kompresuar <strong> `% file </strong> gjendet në direktorinë <strong>`% path` </strong>.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresimi ka përfunduar me gabime.Dosja e kompresuar <strong> `% file </strong> duhet të gjendet në direktorinë <strong>`% path` </strong>.
+theme_xhred_filemanager_successful_compression_bg=Kompresimi ka mbaruar me sukses.Dosja e kompresuar <strong> `%file </strong> gjendet në direktorinë <strong>`%path` </strong>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresimi ka përfunduar me gabime.Dosja e kompresuar <strong> `%file </strong> duhet të gjendet në direktorinë <strong>`%path` </strong>.
 
 theme_xhred_filemanager_settings_notification_type=Lloji i njoftimeve për t'u shfaqur
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informata, paralajmërime dhe gabime
@@ -590,12 +590,12 @@ settings_leftmenu_netdata=Shfaq lidhjen e monitorimit në kohë reale të Netdat
 settings_leftmenu_netdata_link=Lidhja e preferuar e serverit Netdata
 
 theme_xhred_filemanager_context_chattr=Ndrysho atributet
-theme_xhred_filemanager_changing_attributes=Vendosja e atributeve në <strong> <em>% vlera </em> </strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_changing_attributes=Vendosja e atributeve në <strong> <em>%vlera </em> </strong> në skedarët e zgjedhur.
 theme_xhred_filemanager_successful_attributes_with_errors=Atributet nuk janë vendosur me sukses për të gjitha objektet:
 theme_xhred_filemanager_successful_attributes=Atributet janë vendosur me sukses.
 
 theme_xhred_filemanager_context_chcon=Ndrysho kontekstin e sigurisë
-theme_xhred_filemanager_changing_secontext=Ndryshimi i kontekstit të sigurisë në <strong> <em>% vlera </em> </strong> në skedarët e zgjedhur.
+theme_xhred_filemanager_changing_secontext=Ndryshimi i kontekstit të sigurisë në <strong> <em>%vlera </em> </strong> në skedarët e zgjedhur.
 theme_xhred_filemanager_successful_secontext_with_errors=Konteksti i sigurisë nuk është ndryshuar me sukses për të gjitha objektet:
 theme_xhred_filemanager_successful_secontext=Konteksti i sigurisë është ndryshuar me sukses.
 
@@ -640,7 +640,7 @@ theme_xhred_global_prev_page=Kthehu një faqe
 theme_xhred_global_help=Ndihmë
 settings_right_soft_updates_page_options_title=Përditësimet e softuerit
 theme_xhred_git_compare_changes=Krahasoni ndryshimet
-theme_xhred_filemanager_link_to_clipboard=Emri i lidhjes simbolike `<strong> <em>% vlera </em> </strong>` është kopjuar në clipboard.
+theme_xhred_filemanager_link_to_clipboard=Emri i lidhjes simbolike `<strong> <em>%vlera </em> </strong>` është kopjuar në clipboard.
 
 
 #18.46
@@ -725,7 +725,7 @@ theme_xhred_log_file_empty = Dosja e logit është bosh
 
 # 19.03
 theme_xhred_config_configurable_options = Opsionet e konfigurueshme
-theme_xhred_filter_content_no_matches_query = Asnjë përmbajtje nuk përputhet me% str query
+theme_xhred_filter_content_no_matches_query = Asnjë përmbajtje nuk përputhet me %str query
 theme_xhred_toggle_accordions = Dukshmëria e harmonikave
 theme_xhred_global_whats_new = Çka është e re
 theme_xhred_global_report_an_issue = Raporto një problem
@@ -733,7 +733,7 @@ theme_xhred_global_theme_configuration = Konfigurimi i temave
 theme_xhred_global_official_website = Faqja zyrtare e internetit
 theme_xhred_global_about_theme = Rreth temës
 theme_xhred_connection_error = Gabim i lidhjes
-theme_xhred_connection_error_details = Nuk mund të krijojë një lidhje me serverin në <strong>% server </strong>. <ul> <li> Kontrolloni statusin e serverit </li> <li> Kontrolloni lidhjen </li> </ul>
+theme_xhred_connection_error_details = Nuk mund të krijojë një lidhje me serverin në <strong>%server </strong>. <ul> <li> Kontrolloni statusin e serverit </li> <li> Kontrolloni lidhjen </li> </ul>
 theme_xhred_session_expired = Sesioni skadoi
 theme_xhred_session_unlocked = Sesioni i hapur
 theme_xhred_session_expired_details = Ju keni dalë jashtë për shkak të pasivitetit.
@@ -842,7 +842,7 @@ theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 # 19.14
 settings_enable_container_offset = Aktivizo kompensimin e enës
 settings_enable_container_offset_description = Ky opsion do të punojë vetëm në ekranet me rezolucion minimal prej 1920 piksel horizontal
-theme_xhred_filemanager_preparing_download = Përgatitja e shkarkimit. Arkivimi i skedarëve të numrave%. Ju lutem prisni% dots
+theme_xhred_filemanager_preparing_download = Përgatitja e shkarkimit. Arkivimi i skedarëve të numrave%. Ju lutem prisni %dots
 theme_xhred_filemanager_prepared_download = Shkarkimi është i gatshëm. Dosja e arkivuar e numrave të%.
 theme_xhred_filemanager_canceled_download = Shkarkimi i anuluar.
 
@@ -1035,3 +1035,50 @@ settings_leftmenu_custom_links_description=It is possible to have custom, extra 
 left_favorites_edit=Edit Favorites
 left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
 theme_xhred_filemanager_records_for_server_pagination=Default number of items in directory to initiate server pagination
+
+filemanager_global_info_paginated_total1=$1 file and $2 directory of $3 items on $4 pages
+filemanager_global_info_paginated_total2=$1 files and $2 directory of $3 items on $4 pages
+filemanager_global_info_paginated_total3=$1 file and $2 directories of $3 items on $4 pages
+filemanager_global_info_paginated_total4=$1 files and $2 directories of $3 items on $4 pages
+theme_xhred_filemanager_search_follow_symlinks=Follow symlinks
+theme_xhred_filemanager_mass_select=Select all %1 items across %2 pages?
+theme_xhred_filemanager_mass_selected=All %1 items are selected in the current directory.
+theme_xhred_filemanager_mass_select_clear=Clear selection
+theme_xhred_filemanager_mass_selected_for_delete=Selected %1 items in %2 directory
+theme_xhred_filemanager_mass_selected_no_zip=Using <tt>zip</tt> command not supported when running against all items in directory
+filemanager_global_search_results=Search results
+filemanager_global_paginated_results=Paginated
+filemanager_global_access_change_time=Last access/change time
+filemanager_global_user_group_id=Numeric user/group
+theme_xhred_filemanager_global_size_in_bytes=Size in bytes
+theme_xhred_global_command_completed=Command completed
+theme_xhred_global_toggle_password_visibility=Toggle password visibility
+theme_xhred_login_passphrase=Passphrase
+theme_xhred_filemanager_archive_gpg_no_keys=No keys available
+filemanager_archive_gpg_error=GPG error
+filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
+theme_xhred_filemanager_archive_move_to=Move to archive
+theme_xhred_global_encrypt=Encrypt
+theme_xhred_filemanager_gpg_select_the_key=Select the key
+theme_xhred_filemanager_context_extract_encrypted=Extract options
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=Password or passphrase
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=Enter the password to decrypt compressed file(s). Enter your GPG key's passphrase if set.
+theme_xhred_global_decrypt=Decrypt
+filemanager_archive_password_required=Password required to decrypt archive
+filemanager_archive_password_wrong=Provided password is incorrect
+filemanager_archive_file_not_found=File doesn't exist
+filemanager_archive_gpg_private_error=No secret key available or key's passphrase is incorrect
+theme_xhred_filemanager_errors_extraction=The following errors occurred while extracting
+theme_xhred_filemanager_extract_option_delete_afterwards=Delete archive after successful extraction
+
+theme_xhred_login_passphrase_desc=Enter your GPG key's passphrase if set.
+theme_xhred_filemanager_encrypt_option_delete_afterwards=Delete file after successful encryption
+theme_xhred_filemanager_decrypt_option_delete_afterwards=Delete file after successful decryption
+theme_xhred_filemanager_encrypt_gpg_key=Using key
+theme_xhred_filemanager_errors_encrypt=The following errors occurred while encrypting
+theme_xhred_filemanager_errors_decrypt=The following errors occurred while decrypting
+theme_xhred_filemanager_crypt_encrypt=Files are being encrypted.
+theme_xhred_filemanager_crypt_decrypt=Files are being decrypted.
+theme_xhred_filemanager_crypt_encrypted=Encryption of selected files was successful.
+theme_xhred_filemanager_crypt_decrypted=Decryption of selected files was successful.
+theme_xhred_filemanager_batch_error=It also includes truncated results of %1 familiar errors.

@@ -706,6 +706,12 @@ sub get_usermin_data
         }
 
         $has_usermin_version = read_file_lines($has_usermin_conf_dir . '/version', 1)->[0];
+        if (length($has_usermin_version) > 6) {
+            $has_usermin_version =
+              substr($has_usermin_version, 0, 5) . "." .
+              substr($has_usermin_version, 5, 5 - 1) . "." .
+              substr($has_usermin_version, 5 * 2 - 1);
+        }
         return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
     }
 }
@@ -1180,7 +1186,7 @@ sub theme_version
     }
 
     if ($string) {
-        $version =~ s/beta[\d+]|\.|-//ig;
+        $version =~ s/(alpha|beta|RC)[\d+]|\.|-//ig;
         if (theme_debug_mode() || $development) {
             $version .= (time() . $mversion);
         } else {
@@ -1307,7 +1313,7 @@ sub get_version_full
     my ($version, $beta) = @_;
     ($version) = $version =~ /([0-9]+[.][0-9]+(?:.\d+|-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
 
-    if ($version =~ /beta/ && $beta) {
+    if ($version =~ /alpha|beta|RC/ && $beta) {
         return undef;
     }
 

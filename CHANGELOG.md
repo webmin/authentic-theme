@@ -1,5 +1,26 @@
 ## Changelog
 
+#### Version 19.32-beta4 (April 15, 2019)
+* Add ability for File Manager to encrypt/decrypt an archive
+* Add tooltips with size in bytes, numeric user/group and last access/change time to File Manager
+* Add ability to select/deselect a range of checked table rows by holding shift in File Manager
+* Add password meter
+* Add intuitive folder refresh hotkey (Ctrl+R) in File Manager
+* Add hotkeys (Ctrl+A/Ctrl+⇧+A) to selec/deselect all items in File Manager
+* Add send browser notification when progressive output is finished and user not looking at the page
+* Add to update file size after closing file editor in File Manager
+* Fix to improve and optimize initial load for File Manager
+
+#### Version 19.32-beta3 (April 01, 2019)
+* Add improved BIND syntax highlight for manual editors
+* Add an ability to select all items in directory on all pages for further operations in File Manager
+* Add ability to select all items in directory for further operations in File Manager
+* Add ability to pass to compress and download unlimited number of items File Manager
+* Fix paste into itself error appearing wrong in some cases in File Manager
+* Fix paste with the same name for files, while keeping extension in File Manager
+* Fix to prevent multiple alike processes running possibly causing server going out of memory in File Manager
+* Fiх sporadic tree-view errors in File Manager [#1213](https://github.com/authentic-theme/authentic-theme/issues/1213)
+
 #### Version 19.32-beta2 (March 24, 2019)
 * Add significant improvements to directory listing in File Manager [@8cdb7a4](https://github.com/authentic-theme/authentic-theme/commit/8cdb7a4eaf9c691dc9f26d5769b102b340f19802)
 * Add ability for any user use favorites
@@ -43,7 +64,6 @@
 * Fix over a hundred of other minor bugs and made other improvements
 
 <!--- separator --->
-
 
 #### Version 19.22 (December 25, 2018)
 * Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)

@@ -208,7 +208,7 @@ theme_version=Authentic theme version
 
 
 # Version 17.40
-theme_global_error=エラー
+theme_xhred_global_error=エラー
 theme_global_warning=警告
 theme_global_success=成功
 theme_global_info=情報
@@ -437,7 +437,7 @@ theme_xhred_database_db_selected_drop= 選択したデータベースを削除
 theme_xhred_database_dbs_selected_drop= 選択したデータベースを削除する
 theme_xhred_database_edit_but_not_saved= テーブルデータは編集されましたが保存されませんでした。
 
-theme_xhred_global_no_such_command= 実行可能ファイル<tt>%cmd </tt>がインストールされていないか、システムのパスに存在しないようです。
+theme_xhred_global_no_such_command= 実行可能ファイル<tt>$1 </tt>がインストールされていないか、システムのパスに存在しないようです。
 
 theme_xhred_global_notice= 通知
 # Authentic Theme
@@ -1021,3 +1021,50 @@ settings_leftmenu_custom_links_description=It is possible to have custom, extra 
 left_favorites_edit=Edit Favorites
 left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
 theme_xhred_filemanager_records_for_server_pagination=Default number of items in directory to initiate server pagination
+
+filemanager_global_info_paginated_total1=$1 file and $2 directory of $3 items on $4 pages
+filemanager_global_info_paginated_total2=$1 files and $2 directory of $3 items on $4 pages
+filemanager_global_info_paginated_total3=$1 file and $2 directories of $3 items on $4 pages
+filemanager_global_info_paginated_total4=$1 files and $2 directories of $3 items on $4 pages
+theme_xhred_filemanager_search_follow_symlinks=Follow symlinks
+theme_xhred_filemanager_mass_select=Select all %1 items across %2 pages?
+theme_xhred_filemanager_mass_selected=All %1 items are selected in the current directory.
+theme_xhred_filemanager_mass_select_clear=Clear selection
+theme_xhred_filemanager_mass_selected_for_delete=Selected %1 items in %2 directory
+theme_xhred_filemanager_mass_selected_no_zip=Using <tt>zip</tt> command not supported when running against all items in directory
+filemanager_global_search_results=Search results
+filemanager_global_paginated_results=Paginated
+filemanager_global_access_change_time=Last access/change time
+filemanager_global_user_group_id=Numeric user/group
+theme_xhred_filemanager_global_size_in_bytes=Size in bytes
+theme_xhred_global_command_completed=Command completed
+theme_xhred_global_toggle_password_visibility=Toggle password visibility
+theme_xhred_login_passphrase=Passphrase
+theme_xhred_filemanager_archive_gpg_no_keys=No keys available
+filemanager_archive_gpg_error=GPG error
+filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
+theme_xhred_filemanager_archive_move_to=Move to archive
+theme_xhred_global_encrypt=Encrypt
+theme_xhred_filemanager_gpg_select_the_key=Select the key
+theme_xhred_filemanager_context_extract_encrypted=Extract options
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=Password or passphrase
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=Enter the password to decrypt compressed file(s). Enter your GPG key's passphrase if set.
+theme_xhred_global_decrypt=Decrypt
+filemanager_archive_password_required=Password required to decrypt archive
+filemanager_archive_password_wrong=Provided password is incorrect
+filemanager_archive_file_not_found=File doesn't exist
+filemanager_archive_gpg_private_error=No secret key available or key's passphrase is incorrect
+theme_xhred_filemanager_errors_extraction=The following errors occurred while extracting
+theme_xhred_filemanager_extract_option_delete_afterwards=Delete archive after successful extraction
+
+theme_xhred_login_passphrase_desc=Enter your GPG key's passphrase if set.
+theme_xhred_filemanager_encrypt_option_delete_afterwards=Delete file after successful encryption
+theme_xhred_filemanager_decrypt_option_delete_afterwards=Delete file after successful decryption
+theme_xhred_filemanager_encrypt_gpg_key=Using key
+theme_xhred_filemanager_errors_encrypt=The following errors occurred while encrypting
+theme_xhred_filemanager_errors_decrypt=The following errors occurred while decrypting
+theme_xhred_filemanager_crypt_encrypt=Files are being encrypted.
+theme_xhred_filemanager_crypt_decrypt=Files are being decrypted.
+theme_xhred_filemanager_crypt_encrypted=Encryption of selected files was successful.
+theme_xhred_filemanager_crypt_decrypted=Decryption of selected files was successful.
+theme_xhred_filemanager_batch_error=It also includes truncated results of %1 familiar errors.

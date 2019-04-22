@@ -341,17 +341,21 @@ sub theme_ui_columns_start
     my ($rv, $i);
 
     $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
+    if ($title) {
+        $rv .= "<caption>$title</caption>\n";
+    }
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
-            $rv .= '<th>';
+            $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
+    $rv .= '<tbody>' . "\n";
 
     return $rv;
 }
@@ -364,7 +368,7 @@ sub theme_ui_columns_row
     $rv .= '<tr class="tr_tag">' . "\n";
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
-            $rv .= '<td class="td_tag">' . "\n";
+            $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
             $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
@@ -383,7 +387,7 @@ sub theme_ui_columns_header
     $rv .= '<tr>' . "\n";
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
-            $rv .= '<th>';
+            $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
@@ -398,7 +402,7 @@ sub theme_ui_columns_end
 {
     my $rv;
 
-    $rv .= '</table>' . "\n";
+    $rv .= '</tbody></table>' . "\n";
 
     return $rv;
 }
@@ -416,12 +420,17 @@ sub theme_ui_links_row
 
     my ($links) = @_;
     my $link = "<a";
-    if (string_contains("@$links", $link)) {
-        @$links =
-          map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"} @$links;
-        return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" : "";
-    } else {
-        return @$links ? join(", ", @$links) . ".<br>\n" : "";
+    if (ref($links)) {
+        if (string_contains("@$links", $link)) {
+            @$links =
+              map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"}
+              @$links;
+            return
+              @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
+              "";
+        } else {
+            return @$links ? join(", ", @$links) . ".<br>\n" : "";
+        }
     }
 }
 
@@ -853,7 +862,7 @@ sub theme_ui_alert_box
     } elsif ($class eq "warn") {
         $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
-        $type = 'alert-danger', $tmsg = ($theme_text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+        $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     }
 
     if ($desc_to_title) {
@@ -1018,11 +1027,8 @@ sub theme_ui_hidden_start
     }
     my $divid    = "hiddendiv_$name";
     my $openerid = "hiddenopener_$name";
-    my $defimg =
-      $status ? "" :
-      "";
     my $defclass = $status ? 'opener_shown' : 'opener_hidden';
-    $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a>\n";
+    $rv .= "<a class=\"hidden\" href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a>\n";
     $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\">$title</a><br>\n";
     $rv .= "<div class='$defclass' id='$divid'>\n";
     return $rv;
@@ -1037,9 +1043,6 @@ sub theme_ui_hidden_table_start
     }
     my $divid    = "hiddendiv_$name";
     my $openerid = "hiddenopener_$name";
-    my $defimg =
-      $status ? "" :
-      "";
     my $defclass =
       $status ? 'opener_shown' :
       'opener_hidden';
@@ -1054,7 +1057,7 @@ sub theme_ui_hidden_table_start
         $rv .= "<tr" . ($tb ? " " . $tb : "") . "><td>";
         if (defined($heading)) {
             $rv .=
-"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
+"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
         }
         if (defined($rightheading)) {
             $rv .= "<td align=right>$rightheading</td>";

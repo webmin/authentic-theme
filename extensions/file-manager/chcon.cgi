@@ -3,7 +3,6 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.io>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -28,7 +27,9 @@ if (!$in{'label'}) {
     redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 
-foreach my $file (split(/\0/, $in{'name'})) {
+my @entries_list = get_entries_list();
+
+foreach my $file (@entries_list) {
     $file = simplify_path($file);
     if (system_logged("chcon $recursive " . quotemeta("$in{'label'}") . " " . quotemeta("$cwd/$file")) != 0) {
         $errors{ html_escape($file) } = lc("$text{'context_label_error_proc'}: $?");

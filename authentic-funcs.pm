@@ -5,8 +5,9 @@
 #
 use strict;
 
-our (%module_text_full,  %theme_text,  %theme_config,   %gconfig, %tconfig,
-     $current_lang_info, $remote_user, $get_user_level, $webmin_script_type);
+our (%in,          %module_text_full, %theme_text,        %theme_config,
+     %gconfig,     %tconfig,          $current_lang_info, $root_directory,
+     $remote_user, $get_user_level,   $webmin_script_type);
 
 sub settings
 {
@@ -55,6 +56,13 @@ sub theme_make_date_local
     return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
 }
 
+sub nice_number
+{
+    my ($number) = @_;
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    return $number;
+}
+
 sub get_theme_language
 {
     my %s;
@@ -71,6 +79,57 @@ sub get_theme_language
 
     return convert_to_json(\%s);
 
+}
+
+sub get_gpg_keys
+{
+    my $gnupg  = 'gnupg';
+    my $target = foreign_available($gnupg) ? $gnupg : get_product_name();
+    my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
+    if (-r $gpglib) {
+        do $gpglib;
+        my %gpgconfig    = foreign_config($target);
+        my $gpgpath      = $gpgconfig{'gpg'} || "gpg";
+        my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');
+        my @keys         = list_keys_sorted();
+        my @keys_secret  = sort {lc($a->{'name'}->[0]) cmp lc($b->{'name'}->[0])} list_secret_keys();
+        my %keys_;
+        my %keys_secret_;
+
+        foreach my $k (@keys) {
+            my $key = substr($k->{'key'}, -8, 8);
+            my $name = $k->{'name'}->[0];
+            $name =~ s/\(.*?\)//gs;
+            if ($_[0] || (!$_[0] && !grep(/^$key$/, @keys_avoided))) {
+                $keys_{ $k->{'key'} } = trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
+            }
+        }
+        foreach my $k (@keys_secret) {
+            my $key = substr($k->{'key'}, -8, 8);
+            my $name = $k->{'name'}->[0];
+            $name =~ s/\(.*?\)//gs;
+            if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
+                $keys_secret_{ $k->{'key'} } =
+                  trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
+            }
+        }
+        return (\%keys_, \%keys_secret_, $gpgpath);
+    }
+}
+
+sub switch_to_unix_user_local
+{
+    if (!supports_users()) {
+        return undef;
+    }
+    my ($username) = @_;
+    if (!$username) {
+        $username = $in{'username'} || $in{'switch_to_username'};
+    }
+    my @uinfo = getpwnam($username);
+    if (@uinfo) {
+        switch_to_unix_user(\@uinfo);
+    }
 }
 
 sub get_text_ltr
@@ -164,12 +223,13 @@ sub string_contains
 
 sub string_starts_with
 {
-    my ($string, $search) = @_;
-    if ($string =~ m/^\Q$search/) {
-        return 1;
-    } else {
-        return 0;
-    }
+    return substr($_[0], 0, length($_[1])) eq $_[1];
+}
+
+sub string_ends_with
+{
+    my $length = length($_[1]);
+    return substr($_[0], -$length, $length) eq $_[1];
 }
 
 sub array_contains

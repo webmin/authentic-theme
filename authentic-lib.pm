@@ -1289,23 +1289,27 @@ sub get_sysinfo_vars
             ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
             my $authentic_remote_version_local = $authentic_remote_version;
 
-            if ($incompatible && $authentic_remote_version_local !~ /beta/) {
+            if ($incompatible && $authentic_remote_version_local !~ /alpha|beta|RC/) {
                 $authentic_remote_version = $authentic_installed_version;
             }
 
             if (
                 $theme_config{'settings_sysinfo_theme_updates'} eq 'true' && (
-                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
+                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /alpha|beta|RC/))
                     &&
                     (
-                        (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-                         $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
+                        (
+                         ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
+                          $authentic_installed_version =~ /alpha|beta|RC/
+                         ) &&
+                         lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
-                        $authentic_remote_version_local gt $authentic_installed_version)
+                        lc($authentic_remote_version_local) gt lc($authentic_installed_version))
 
                 ))
             {
-                my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
+                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
+                my $authentic_remote_alpha_rc    = $authentic_remote_version_local =~ /alpha|RC/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -1323,7 +1327,7 @@ sub get_sysinfo_vars
                   ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
                   ($global_prefix || $gconfig{'webprefix'}) . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
-                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
+                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_rc ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                   . $theme_text{'theme_changelog'}
                   . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
@@ -2408,7 +2412,7 @@ sub get_theme_user_link
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
     return '' . theme_version() .
-' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" data-container="body" title="'
+' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
       '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
@@ -3049,16 +3053,18 @@ sub theme_settings
         } elsif ($k eq 'settings_right_default_tab_webmin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-              . ($v eq '/' && ' selected') . '>Webmin</option>
+              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_wm'} . '</option>
 
                 '
               . (&foreign_available("virtual-server") &&
-                 ' <option value="virtualmin"' . ($v eq 'virtualmin' && ' selected') . '>Virtualmin</option> ') .
+                 ' <option value="virtualmin"' .
+                 ($v eq 'virtualmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_vm'} . '</option> ') .
               '
 
                '
               . (&foreign_available("server-manager") &&
-                 ' <option value="cloudmin"' . ($v eq 'cloudmin' && ' selected') . '>Cloudmin</option>') .
+                 ' <option value="cloudmin"' .
+                 ($v eq 'cloudmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_cm'} . '</option>') .
               '
                 </select>';
         } elsif ($k eq 'settings_webmin_default_module') {
@@ -3072,11 +3078,13 @@ sub theme_settings
         } elsif ($k eq 'settings_right_default_tab_usermin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-              . ($v eq '/' && ' selected') . '>Usermin</option>
+              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>
 
                 '
-              . (get_usermin_data('mailbox') && ' <option value="mail"' . ($v eq 'mail' && ' selected') . '>Mail</option> ')
-              . '
+              . (get_usermin_data('mailbox') &&
+                 ' <option value="mail"' .
+                 ($v eq 'mail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
+              '
 
                 </select>';
         } elsif ($k eq 'settings_hotkey_toggle_modifier') {
@@ -3331,7 +3339,7 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
-            print nice_size($size, -1) . '|' . $size;
+            print nice_size($size, -1) . '|' . nice_number($size);
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";
@@ -3362,6 +3370,14 @@ sub get_xhr_request
                                        ));
             };
             print $data;
+        } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
+            switch_to_unix_user_local();
+            my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
+            my %keys;
+            $keys{'public'}  = $public;
+            $keys{'secret'}  = $secret;
+            $keys{'gpgpath'} = $gpgpath;
+            print convert_to_json(\%keys);
         } elsif ($in{'xhr-get_user_level'} eq '1') {
             print $get_user_level;
         } elsif ($in{'xhr-get_update_notice'} eq '1') {
@@ -3371,7 +3387,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_command_exists'} eq '1') {
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
-            print resolve_links(get_access_data('root') . un_urlize($in{'xhr-get_symlink_path'}));
+            print(resolve_links(get_access_data('root') . ($in{'xhr-get_symlink_path'})));
         } elsif ($in{'xhr-theme_temp_data'} eq '1') {
             if ($in{'xhr-theme_temp_data_action'} eq 'set') {
                 set_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_value'});

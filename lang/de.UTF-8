@@ -200,7 +200,7 @@ theme_version=Authentic theme version
 
 
 # Version 17.40
-theme_global_error=Fehler
+theme_xhred_global_error=Fehler
 theme_global_warning=Warnung
 theme_global_success=Erfolgreich
 theme_global_info=Information
@@ -429,7 +429,7 @@ theme_xhred_database_db_selected_drop=Ausgew&auml;hlte Datenbank l&ouml;schen
 theme_xhred_database_dbs_selected_drop=Ausgew&auml;hlte Datenbanken l&ouml;schen
 theme_xhred_database_edit_but_not_saved=Datenbank Tabelle w&uuml;rde ver&auml;ndert aber nicht gespeichert.
 
-theme_xhred_global_no_such_command=Es scheint das Programm <tt>%cmd</tt> ist nicht installiert oder nicht im System Pfad.
+theme_xhred_global_no_such_command=Es scheint das Programm <tt>$1</tt> ist nicht installiert oder nicht im System Pfad.
 
 theme_xhred_global_notice=Hinweis
 
@@ -1009,9 +1009,56 @@ theme_xhred_shell_aborted=Operation wurde abgebrochen
 
 
 #19.32
-theme_xhred_connection_reboot=Rebooting
-theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
-settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
-left_favorites_edit=Edit Favorites
-left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
-theme_xhred_filemanager_records_for_server_pagination=Default number of items in directory to initiate server pagination
+theme_xhred_connection_reboot=Neustart
+theme_xhred_connection_reboot_details=Der Server wird neu gestartet. Bitte warten...
+settings_leftmenu_custom_links_description=Es ist m&ouml;glich einen zus&auml;tzlichen Eintrag im Navigations Men&uuml; zu erzeugen<br><br> Die Angaben <em>title</em>, <em>link</em> und <em>icon</em> sind zwingend erforderlich. Optional kannst du angeben in welchem Modus der Link angezeigt wird. Gib dazu einen <em>level</em> wert, mit einer kommaseparierten Liste mit folgenden Werten ein: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> Dazu musst du ein validens JSON Objekt als Zeichenkette &uuml;bergeben, so wie in diesem Beispiel: <hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
+left_favorites_edit=Favoriten Bearbeiten
+left_favorites_edit_desc=Auf dieser Seite kannst du die Favoriten bearbeiten. Das Bearbeiten sollte vorsichtig erfolgen, da keine &Uml;berpr&uunl;ng Deiner Eingaben durchgef&uuml;hrr wird.
+theme_xhred_filemanager_records_for_server_pagination=Standard Anzahl der Eintr&auml;ge pro Seite der Serveranzeige
+
+filemanager_global_info_paginated_total1=$1 Datei und $2 Verzeichnis von $3 Eimtr&auml;gen auf $4 Seiten
+filemanager_global_info_paginated_total2=$1 Dateien und $2 Verzeichnis von $3 Eintr&auml;gen auf $4 Seiten
+filemanager_global_info_paginated_total3=$1 Datei und $2 Verzeihnissen von $3 Eintr&auml;gen auf $4 Seiten
+filemanager_global_info_paginated_total4=$1 Dateien und $2 Verzeichnissen $3 Eintr&auml;gen auf $4 Seiten
+theme_xhred_filemanager_search_follow_symlinks=Folge symbolischen Verweisen
+theme_xhred_filemanager_mass_select=Selektiere all %1 Eintr&auml;ge von %2 Seiten?
+theme_xhred_filemanager_mass_selected=Alle %1 Eintr&auml;ge im aktuellen Vezeichnis sind ausgew&auml;hlt.
+theme_xhred_filemanager_mass_select_clear=Auswahl l&ouml;schen
+theme_xhred_filemanager_mass_selected_for_delete=%1 Eintr&auml;ge in %2 Verzeichnissen ausgew&auml;hlt
+theme_xhred_filemanager_mass_selected_no_zip=Es ist nicht m&ouml;glich den <tt>Zip</tt> Befehl zu verwenden wenn alle Eintr&auml;ge eines Verzeichnisses ausgew&auml;lt sind.
+filemanager_global_search_results=Such Ergebnisse
+filemanager_global_paginated_results=Seitenzahl
+filemanager_global_access_change_time=Zeit des letzten Zugriffs/&Auml;nderung
+filemanager_global_user_group_id=Numerischer Benutzer/Gruppe
+theme_xhred_filemanager_global_size_in_bytes=Gr&ouml;&szlig;e in Bytes
+theme_xhred_global_command_completed=Befehl komplettiert
+theme_xhred_global_toggle_password_visibility=Sichbarkeit des Passworts umschalten
+theme_xhred_login_passphrase=Passphrase
+theme_xhred_filemanager_archive_gpg_no_keys=No keys available
+filemanager_archive_gpg_error=GPG error
+filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
+theme_xhred_filemanager_archive_move_to=Move to archive
+theme_xhred_global_encrypt=Encrypt
+theme_xhred_filemanager_gpg_select_the_key=Select the key
+theme_xhred_filemanager_context_extract_encrypted=Extract options
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=Password or passphrase
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=Enter the password to decrypt compressed file(s). Enter your GPG key's passphrase if set.
+theme_xhred_global_decrypt=Decrypt
+filemanager_archive_password_required=Password required to decrypt archive
+filemanager_archive_password_wrong=Provided password is incorrect
+filemanager_archive_file_not_found=File doesn't exist
+filemanager_archive_gpg_private_error=No secret key available or key's passphrase is incorrect
+theme_xhred_filemanager_errors_extraction=The following errors occurred while extracting
+theme_xhred_filemanager_extract_option_delete_afterwards=Delete archive after successful extraction
+
+theme_xhred_login_passphrase_desc=Enter your GPG key's passphrase if set.
+theme_xhred_filemanager_encrypt_option_delete_afterwards=Delete file after successful encryption
+theme_xhred_filemanager_decrypt_option_delete_afterwards=Delete file after successful decryption
+theme_xhred_filemanager_encrypt_gpg_key=Using key
+theme_xhred_filemanager_errors_encrypt=The following errors occurred while encrypting
+theme_xhred_filemanager_errors_decrypt=The following errors occurred while decrypting
+theme_xhred_filemanager_crypt_encrypt=Files are being encrypted.
+theme_xhred_filemanager_crypt_decrypt=Files are being decrypted.
+theme_xhred_filemanager_crypt_encrypted=Encryption of selected files was successful.
+theme_xhred_filemanager_crypt_decrypted=Decryption of selected files was successful.
+theme_xhred_filemanager_batch_error=It also includes truncated results of %1 familiar errors.
