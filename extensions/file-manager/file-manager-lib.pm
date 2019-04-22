@@ -138,6 +138,11 @@ sub get_token
     return $theme_temp_data{$key};
 }
 
+sub string_contains
+{
+    return (index($_[0], $_[1]) != -1);
+}
+
 sub string_starts_with
 {
     return substr($_[0], 0, length($_[1])) eq $_[1];
@@ -310,7 +315,6 @@ sub print_error
     $err{'error'} = $err_msg;
     print_json([\%err]);
     exit;
-
 }
 
 sub exec_search
@@ -395,18 +399,18 @@ sub print_content
 {
     my %list_data;
     my $query = $in{'query'};
-
-    unless (opendir(DIR, $cwd)) {
-        print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
-        exit;
-    }
-
-    my @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
-    closedir(DIR);
+    my @list;
 
     # In case of search trim the list accordingly
     if ($query) {
         @list = exec_search();
+    } else {
+        unless (opendir(DIR, $cwd)) {
+            print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
+            exit;
+        }
+        @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
+        closedir(DIR);
     }
 
     # Filter out not allowed entries
@@ -610,6 +614,7 @@ sub print_content
         my $is_archive = 0;
         my $is_file    = 1;
         my $is_gpg     = 0;
+        my $is_img     = 0;
         if ($list[$count - 1][15] == 1) {
             $is_file = 0;
             if ($path eq '/' . $link) {
@@ -629,7 +634,8 @@ sub print_content
                   "$actions<a class='action-link' " .
                   "href='index.cgi?path=" . &urlize($fpath) . "' " . "title='$text{'goto_folder'}'>$goto_icon</a>";
             }
-            if ($type =~ /text-/ or
+            if ($type =~ /text-/ ||
+                $type =~ /svg\+xml/ ||
                 exists($allowed_for_edit{$type}))
             {
                 $actions =
@@ -637,7 +643,10 @@ sub print_content
                   "&path=" . &urlize($path) . "' title='$text{'edit'}' data-container='body'>$edit_icon</a>";
             }
             my $type_archive = $type;
-            if (string_ends_with($link, '.gpg') || string_ends_with($link, '.pgp')) {
+            if ($type =~ /^image/) {
+                $is_img = 1;
+            }
+            if ($type =~ /application-pgp-encrypted/) {
                 my $link_gpg = $link;
                 $link_gpg =~ s/\.(gpg|pgp)$//;
                 $type_archive = mimetype($link_gpg);
@@ -675,8 +684,8 @@ sub print_content
                         "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
         my @td_tags = (undef,
                        'class="col-icon"',
-                       'class="col-name" data-xarchive="' .
-                         $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' . $is_gpg . '"');
+                       'class="col-name" data-xarchive="' . $is_archive .
+                         '" data-xfile="' . $is_file . '" data-gpg="' . $is_gpg . '" data-img="' . $is_img . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
@@ -828,6 +837,9 @@ sub local_nice_size
     }
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;
+    if ($_[1] == -1) {
+        return $sz . " " . $uname;
+    }
     return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
 }
 
@@ -877,6 +889,19 @@ sub paster
 
     return $e;
 
+}
+
+sub get_element_index
+{
+    my ($arr, $elem) = @_;
+    my $idx;
+    for my $i (0 .. $#$arr) {
+        if ($arr->[$i] eq $elem) {
+            $idx = $i;
+            last;
+        }
+    }
+    return $idx;
 }
 
 sub get_gpg_version

@@ -76,7 +76,6 @@ sub get_theme_language
         }
         $s{$key} .= $theme_text{$key};
     }
-
     return convert_to_json(\%s);
 
 }
