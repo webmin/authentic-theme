@@ -1,14 +1,19 @@
 ## Changelog
 
+#### Version 19.32-beta5 (April 22, 2019)
+* Add ability to preview images directly on the server in File Manager [#1323](https://github.com/authentic-theme/authentic-theme/issues/1323)
+* Add ability to encrypt/decrypt files in File Manager [#1322](https://github.com/authentic-theme/authentic-theme/issues/1322)
+
 #### Version 19.32-beta4 (April 15, 2019)
-* Add ability for File Manager to encrypt/decrypt an archive
+* Add ability for File Manager to encrypt/decrypt archives [#1320](https://github.com/authentic-theme/authentic-theme/issues/1320)
 * Add tooltips with size in bytes, numeric user/group and last access/change time to File Manager
 * Add ability to select/deselect a range of checked table rows by holding shift in File Manager
-* Add password meter
 * Add intuitive folder refresh hotkey (Ctrl+R) in File Manager
-* Add hotkeys (Ctrl+A/Ctrl+⇧+A) to selec/deselect all items in File Manager
-* Add send browser notification when progressive output is finished and user not looking at the page
+* Add hotkeys (Ctrl+A/Ctrl+⇧+A) to select/deselect all items in File Manager
 * Add to update file size after closing file editor in File Manager
+* Add password meter and password visibility toggle
+* Add send browser notification when progressive output is finished and user not looking at the page
+* Fix history steps for progressive pages
 * Fix to improve and optimize initial load for File Manager
 
 #### Version 19.32-beta3 (April 01, 2019)
