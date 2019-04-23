@@ -818,7 +818,7 @@ sub get_initial_wizard
     # Going to Post-Installation Wizard
     if ($get_user_level eq '0') {
         our %virtualmin_config = foreign_config('virtual-server');
-        if ($virtualmin_config{'wizard_run'} ne '1') {
+        if (defined($virtualmin_config{'wizard_run'}) && $virtualmin_config{'wizard_run'} ne '1') {
             return 1;
         }
     }
@@ -1349,6 +1349,8 @@ sub get_theme_temp_data
 {
     my ($key, $keep) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $data;
+    my %theme_temp_data;
 
     $salt =~ tr/A-Za-z0-9//cd;
 
@@ -1359,23 +1361,25 @@ sub get_theme_temp_data
         my (%theme_goto_temp);
         my $tmp_dir = tempname_dir();
         my @gotos;
-        opendir(my $dir, $tmp_dir) || die "Can't open temporary directory $tmp_dir: $!";
-        @gotos = grep {/^\.theme/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
+        opendir(my $dir, $tmp_dir);
+        @gotos = grep {/^\.theme/ && $_ =~ /$salt/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
         closedir $dir;
         foreach (@gotos) {
-            read_file("$tmp_dir/$_", \%theme_goto_temp);
-            my $url_hex = substr(unpack("H*", $theme_goto_temp{'goto'}), -180);
-            $tmp_file =
-              tempname('.theme_' . $salt . '_' . $url_hex . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+            $tmp_file = "$tmp_dir/$_";
+            if (-r $tmp_file) {
+                read_file($tmp_file, \%theme_temp_data);
+                last;
+            }
         }
+    } else {
+        read_file($tmp_file, \%theme_temp_data);
     }
 
-    read_file($tmp_file, \%theme_temp_data);
-    if (!$keep) {
+    if (!$keep && -r $tmp_file) {
         unlink_file($tmp_file);
     }
 
-    my $data = $theme_temp_data{$key};
+    $data = $theme_temp_data{$key};
     $data =~ s/[?|&]$xnav//g;
     $data =~ s/[?|&]randomized=[\d]+//g;
     $data =~ s/.cgi&/.cgi?/g;
