@@ -187,7 +187,7 @@ if (has_command('identify')) {
         my $update_error         = html_escape(text('global_deps_error', "<kbd>$pkgname</kbd>"));
         my $installing_text      = html_escape(text('global_deps_installing', "<code>$pkgname</code>"));
         my $install_link =
-"$gconfig{'webprefix'}/$package_updates/update.cgi?source=3&confirm=1&u=$pkgname&redir=$redir&redirdesc=File%20Manager&xnavigation=1";
+"$gconfig{'webprefix'}/$package_updates/update.cgi?source=3&confirm=1&mode=new&u=$pkgname&redir=$redir&redirdesc=File%20Manager&xnavigation=1";
         $data{'error'} .= " "
           .
           text('theme_xhred_filemanager_preview_images_deps_error2',
