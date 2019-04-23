@@ -130,7 +130,7 @@ if (has_command('identify')) {
                         my $file_out = "$file.bak~";
                         my $convert_size = (($w > $h ? undef : 'x') . ($orientation > $factor ? $factor : $orientation));
                         system(
-"convert -quality 80% -resize $convert_size @{[quotemeta($file)]} $auto_orient @{[quotemeta($file_out)]}");
+"convert -quality 60% -resize $convert_size @{[quotemeta($file)]} $auto_orient @{[quotemeta($file_out)]}");
 
                         # Store smaller version data
                         $file_encoded = encode_base64(read_file_contents($file_out));
@@ -154,17 +154,19 @@ if (has_command('identify')) {
                 }
             }
 
-            push(@items,
-                 {  index => $index,
-                    title => html_escape("$filename (@{[local_nice_size($files_size, -1)]})"),
-                    file  => $filename,
-                    cwd   => $cwd,
-                    src   => ("data:$type;base64,$file_encoded"),
-                    p     => $processed,
-                    w     => int($w),
-                    h     => int($h),
-                 });
-            $index++;
+            if ($file_encoded) {
+                push(@items,
+                     {  index => $index,
+                        title => html_escape("$filename (@{[local_nice_size($files_size, -1)]})"),
+                        file  => $filename,
+                        cwd   => $cwd,
+                        src   => ("data:$type;base64,$file_encoded"),
+                        p     => $processed,
+                        w     => int($w),
+                        h     => int($h),
+                     });
+                $index++;
+            }
         }
     }
     if (@items) {
