@@ -107,35 +107,34 @@ sub get_user_config
 
 sub kill_previous
 {
-    my $pid = get_token($_[0]);
+    my $pid = tokenize($_[0]);
     if ($pid) {
         kill(9, $pid);
     }
-    set_token($_[0], $_[1]);
+    tokenize($_[0], $_[1]);
 }
 
-sub set_token
+sub tokenize
 {
     my ($key, $value) = @_;
+    my $salt = substr(encode_base64($main::session_id), 0, 16);
     my %var;
 
+    $key =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
+    $key = $1;
     $key =~ tr/A-Za-z0-9//cd;
+
+    my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
     $var{$key} = $value;
-    write_file(tempname('.theme_' . get_product_name() . '_' . $key . '_' . $remote_user), \%var);
-}
 
-sub get_token
-{
-    my ($key) = @_;
-
-    $key =~ tr/A-Za-z0-9//cd;
-
-    my $tmp_file = tempname('.theme_' . get_product_name() . '_' . $key . '_' . $remote_user);
-
-    my %theme_temp_data;
-    read_file($tmp_file, \%theme_temp_data);
-    unlink_file($tmp_file);
-    return $theme_temp_data{$key};
+    if ($value) {
+        write_file($tmp_file, \%var);
+    } else {
+        my %theme_temp_data;
+        read_file($tmp_file, \%theme_temp_data);
+        unlink_file($tmp_file);
+        return $theme_temp_data{$key};
+    }
 }
 
 sub string_contains
