@@ -3218,22 +3218,23 @@ sub theme_settings
           . $text{'save'} . '</a>
                                     <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
           . $theme_text{'settings_right_restore_defaults'} . '</a>
-                                    <a style="min-width:132px" class="btn btn-default" onclick="theme_cache_clear(this);"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
-          . $theme_text{'settings_right_clear_local_cache'} . '</a>
+                                    <a style="min-width:132px" class="btn btn-default" onclick="theme_cache_clear(this);" '
+          . get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1) .
+          '><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>' .
+          $theme_text{'settings_right_clear_local_cache'} . '</a>
          ' . (
             $get_user_level eq '0' ?
-              '                     <span class="dropup"'
+              '                     <span id="force_update_menu_cnt" class="dropup"'
               .
               ( has_command('git') ?
-                  undef :
+                  get_button_tooltip('settings_update_theme_tooltip', undef, undef, 1, 1, '#force_update_menu_cnt') :
                   get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
               ) .
               '>
                                        <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover' .
               (has_command('git') ? undef : ' disabled') .
               '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>'
-              . $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
+                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' . $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
                                          <span class="caret"></span>
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
