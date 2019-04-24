@@ -3234,7 +3234,8 @@ sub theme_settings
                                        <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover' .
               (has_command('git') ? undef : ' disabled') .
               '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' . $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
+                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' .
+              $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
                                          <span class="caret"></span>
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
