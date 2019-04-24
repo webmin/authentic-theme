@@ -2307,6 +2307,26 @@ sub theme_var_dir
     return $theme_var_dir;
 }
 
+sub clear_theme_cache
+{
+    my ($root) = @_;
+    my $salt          = substr(encode_base64($main::session_id), 0, 16);
+    my $theme_var_dir = theme_var_dir();
+    my $tmp_dir       = tempname_dir();
+
+    # Clear cached files
+    if ($root) {
+        unlink_file("$theme_var_dir/version-theme-stable");
+        unlink_file("$theme_var_dir/version-theme-development");
+        unlink_file("$theme_var_dir/version-csf-stable");
+    }
+
+    # Clear session specific temporary files
+    opendir(my $dir, $tmp_dir);
+    grep {unlink_file("$tmp_dir/$_") if (/^\.theme/ && $_ =~ /$salt/)} readdir($dir);
+    closedir $dir;
+}
+
 sub theme_config_dir_available
 {
     my $_wm_at_conf_dir = $config_directory . '/' . $current_theme;
@@ -3418,11 +3438,9 @@ sub get_xhr_request
             push(@current_versions,
                  (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
             print convert_to_json(\@current_versions);
-        } elsif ($in{'xhr-theme_clear_cache'} eq '1' && $get_user_level eq '0') {
-            my $theme_var_dir = theme_var_dir();
-            unlink_file("$theme_var_dir/version-theme-stable");
-            unlink_file("$theme_var_dir/version-theme-development");
-            unlink_file("$theme_var_dir/version-csf-stable");
+        } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
+            my $is_root = $get_user_level eq '0';
+            clear_theme_cache($is_root);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
