@@ -54,6 +54,14 @@ print ui_table_row($theme_text{'settings_cm_editor_palette'},
                                                     ),
                                                     'settings_cm_editor_palette'
                    ));
+print ui_table_row($theme_text{'settings_document_title'},
+                   settings_get_select_document_title(
+                                                      ($theme_config{'settings_document_title'} ne 'undefined' ?
+                                                         $theme_config{'settings_document_title'} :
+                                                         '1'
+                                                      ),
+                                                      'settings_document_title'
+                   ));
 print ui_table_row($theme_text{'settings_enable_container_offset'},
                    ui_yesno_radio('settings_enable_container_offset',
                                   $theme_config{'settings_enable_container_offset'},

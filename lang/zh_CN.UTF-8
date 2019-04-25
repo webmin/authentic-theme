@@ -1087,4 +1087,9 @@ theme_xhred_global_next_arrow_right=Next (arrow right)
 settings_reset_cache_tooltip=Reset theme's cache from any page, by clicking <br><code>Ctrl + Alt + Meta + ⇧ + R</code><br> hotkey
 settings_update_theme_tooltip=Run theme update from any page. Update to the latest development version, by clicking <br><code>Ctrl + Alt + Meta + ⇧ + U</code><br> hotkey; to install latest stable, use same combo without Meta key
 theme_xhred_clear_cache_initiated=Clearing cache and reloading.
+settings_document_title=Document title options
+settings_document_title_option_1=Display current page in front of hostname
+settings_document_title_option_2=Display hostname in front of current page
+settings_document_title_option_3=Don't append hostname
+settings_document_title_option_4=Don't append current page
 

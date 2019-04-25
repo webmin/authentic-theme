@@ -2556,6 +2556,28 @@ sub settings_get_select_editor_color
 
 }
 
+sub settings_get_select_document_title
+{
+    my ($v, $k) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+
+                    <option value="1"'
+      . ($v eq '1' && ' selected') .
+      '>' . $theme_text{'settings_document_title_option_1'} . ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+
+                    <option value="2"'
+      . ($v eq '2' && ' selected') . '>' . $theme_text{'settings_document_title_option_2'} . '</option>
+                    
+                    <option value="3"'
+      . ($v eq '3' && ' selected') . '>' . $theme_text{'settings_document_title_option_3'} . '</option>
+                
+                <option value="4"'
+      . ($v eq '4' && ' selected') . '>' . $theme_text{'settings_document_title_option_4'} . '</option>
+
+                </select>';
+
+}
+
 sub theme_settings
 {
     my ($t, $k, $v) = @_;
@@ -2601,6 +2623,8 @@ sub theme_settings
             '1',
             'settings_cm_editor_palette',
             'monokai',
+            'settings_document_title',
+            '1',
             'settings_right_page_hide_persistent_vscroll',
             'true',
             'settings_hide_top_loader',
@@ -3175,6 +3199,8 @@ sub theme_settings
               . ($v eq 'white' && ' selected') . '>White</option>
 
                 </select>';
+        } elsif ($k eq 'settings_document_title') {
+            $v = settings_get_select_document_title($v, $k);
         }
         my $description = $theme_text{ $k . '_description' };
         my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click hover' : 'hover';

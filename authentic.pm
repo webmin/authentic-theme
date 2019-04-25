@@ -87,12 +87,14 @@ sub theme_header
         }
         print "</td>\n";
         if ($_[1]) {
-            print "<td id=\"headln2c\">", "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
+            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
+              "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
-            print "<td id='headln2c'>", ($ts ? "<span data-main_title>" : ""), $_[0], ($ts ? "</span>" : "");
+            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
+              ($ts ? "<span data-main_title>" : ""), $_[0], ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
             print "</td>\n";
         }
