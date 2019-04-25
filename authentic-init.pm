@@ -153,7 +153,7 @@ sub embed_header
     embed_noscript();
     print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     embed_favicon();
-    print ' <title>', $args[0], '</title>', "\n";
+    print ' <title>', theme_text('settings_title_initial_loading', ucfirst(get_product_name())), '</title>', "\n";
 
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
@@ -1223,8 +1223,8 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() .
-      '" data-title-initial="' . $args[0] . '" data-debug="' . theme_debug_mode() . '" data-session="' .
+    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
+      format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') . ' data-high-contrast="' .

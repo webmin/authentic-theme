@@ -353,4 +353,12 @@ sub strip_html
     return $string;
 }
 
+sub format_document_title
+
+{
+    my ($title_initial) = $_[0] =~ /(?|.*:\s+(.*)|(.*))/;
+    my ($product, $os_type) = $title_initial =~ /(?|(.*\d+).*(\(.*)|(.*\d+))/;
+    return ($os_type ? "$product $os_type" : $product);
+}
+
 1;
