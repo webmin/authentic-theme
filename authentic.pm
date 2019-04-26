@@ -1162,12 +1162,27 @@ sub theme_redirect
         return;
     }
 
-    my ($link) = $_[0] || $_[1];
-
+    my ($arg1, $arg2) = ($_[0], $_[1]);
+    my ($link) = $arg1 || $arg2;
     my ($parent) = parse_servers_path();
     if ($parent) {
-        ($link) = $_[1] =~ /:\d+(.*)/;
+        ($link) = $arg2 =~ /:\d+(.*)/;
         $link = "$parent$link";
+    } else {
+        my $prefix = $gconfig{'webprefix'};
+        if (defined($arg1) && !$arg1) {
+            my ($redirect) = $arg2 =~ /\/\/\S+?(\/\S*)/;
+            if ($redirect) {
+                my $noredir = $gconfig{'webprefixnoredir'};
+                if ($noredir) {
+                    $redirect = "$prefix$redirect";
+                }
+                $arg1 = $redirect;
+            }
+        } elsif (string_starts_with($arg1, '/')) {
+            $arg1 = "$prefix$arg1";
+        }
+        $link = $arg1 || $arg2;
     }
 
     if (!theme_redirect_download($link)) {
