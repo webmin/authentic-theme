@@ -1162,32 +1162,32 @@ sub theme_redirect
         return;
     }
 
+    my $prefix   = $gconfig{'webprefix'};
+    my $noredir  = $gconfig{'webprefixnoredir'};
+    my $relredir = $gconfig{'relative_redir'};
     my ($arg1, $arg2) = ($_[0], $_[1]);
     my ($link) = $arg1 || $arg2;
+    my ($relative) = $arg2;
+    if (!$relredir) {
+        ($relative) = $arg2 =~ /\/\/\S+?(\/\S*)/;
+    }
+    $relative = "$prefix$relative" if ($relative && $noredir);
+
     my ($parent) = parse_servers_path();
     if ($parent) {
         ($link) = $arg2 =~ /:\d+(.*)/;
-        $link = "$parent$link";
+        $relative = "$parent$link";
     } else {
-        my $prefix = $gconfig{'webprefix'};
         if (defined($arg1) && !$arg1) {
-            my ($redirect) = $arg2 =~ /\/\/\S+?(\/\S*)/;
-            if ($redirect) {
-                my $noredir = $gconfig{'webprefixnoredir'};
-                if ($noredir) {
-                    $redirect = "$prefix$redirect";
-                }
-                $arg1 = $redirect;
-            }
+            $arg1 = $relative;
         } elsif (string_starts_with($arg1, '/')) {
             $arg1 = "$prefix$arg1";
         }
-        $link = $arg1 || $arg2;
     }
 
-    if (!theme_redirect_download($link)) {
-        set_theme_temp_data('redirected', $link);
-        print "Location: $link\n\n";
+    if (!theme_redirect_download($relative)) {
+        set_theme_temp_data('redirected', $relative);
+        print "Location: $relative\n\n";
     }
 }
 
