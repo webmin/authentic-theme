@@ -30,6 +30,14 @@ print ui_table_start(
 
 print ui_table_row(undef, '<b data-first-child>' . $theme_text{'settings_global_options_title'} . '</b>', 2);
 
+print ui_table_row($theme_text{'settings_document_title'},
+                   settings_get_select_document_title(
+                                                      ($theme_config{'settings_document_title'} ne 'undefined' ?
+                                                         $theme_config{'settings_document_title'} :
+                                                         '1'
+                                                      ),
+                                                      'settings_document_title'
+                   ));
 print ui_table_row($theme_text{'settings_font_family'},
                    settings_get_select_font_family(
                                                    ($theme_config{'settings_font_family'} ne 'undefined' ?
@@ -53,14 +61,6 @@ print ui_table_row($theme_text{'settings_cm_editor_palette'},
                                                        'monokai'
                                                     ),
                                                     'settings_cm_editor_palette'
-                   ));
-print ui_table_row($theme_text{'settings_document_title'},
-                   settings_get_select_document_title(
-                                                      ($theme_config{'settings_document_title'} ne 'undefined' ?
-                                                         $theme_config{'settings_document_title'} :
-                                                         '1'
-                                                      ),
-                                                      'settings_document_title'
                    ));
 print ui_table_row($theme_text{'settings_enable_container_offset'},
                    ui_yesno_radio('settings_enable_container_offset',

@@ -2581,12 +2581,12 @@ sub settings_get_select_document_title
       <option value="8"'
       . ($v eq '8' && ' selected') .
       '>' . theme_text('settings_document_title_option_8', ucfirst(get_product_name())) . '</option>
-      <option value="6"'
-      . ($v eq '6' && ' selected') .
-      '>' . theme_text('settings_document_title_option_6', ucfirst(get_product_name())) . '</option>
       <option value="9"'
       . ($v eq '9' && ' selected') .
       '>' . theme_text('settings_document_title_option_9', ucfirst(get_product_name())) . '</option>
+      <option value="6"'
+      . ($v eq '6' && ' selected') .
+      '>' . theme_text('settings_document_title_option_6', ucfirst(get_product_name())) . '</option>
       </select>';
 
 }
@@ -2616,6 +2616,8 @@ sub theme_settings
 
             '__',
             theme_settings('fa', 'desktop', &theme_text('settings_global_options_title')),
+            'settings_document_title',
+            '1',
             'settings_font_family',
             '0',
             'settings_navigation_color',
@@ -2636,8 +2638,6 @@ sub theme_settings
             '1',
             'settings_cm_editor_palette',
             'monokai',
-            'settings_document_title',
-            '1',
             'settings_right_page_hide_persistent_vscroll',
             'true',
             'settings_hide_top_loader',
