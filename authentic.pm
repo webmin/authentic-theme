@@ -1301,12 +1301,9 @@ sub theme_select_server
 
 sub theme_post_change_theme
 {
-    # Clear modifications
-    if (&foreign_check("csf") && &foreign_available("csf")) {
-        unlink_file('/etc/csf/csf.header');
-        unlink_file('/etc/csf/csf.footer');
-    }
-
+    # Clear module modifications
+    lib_csf_control('unload');
+    
     # Remove error handler
     error_40x_handler(1);
 }

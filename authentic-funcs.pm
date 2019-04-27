@@ -86,7 +86,7 @@ sub get_gpg_keys
     my $target = foreign_available($gnupg) ? $gnupg : get_product_name();
     my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
     if (-r $gpglib) {
-        do $gpglib;
+        do($gpglib);
         my %gpgconfig    = foreign_config($target);
         my $gpgpath      = $gpgconfig{'gpg'} || "gpg";
         my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');

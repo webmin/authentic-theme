@@ -1099,5 +1099,7 @@ settings_document_title_option_6=username@hostname - $1 version (OS type) — Mo
 settings_document_title_option_7=Module — $1
 settings_document_title_option_8=hostname — Module
 settings_document_title_option_9=username@hostname — Module
-settings_title_initial_loading=Welcome to $1
+theme_xhred_csf=ConfigServer Security & Firewall
+theme_xhred_global_version=version
+theme_xhred_notify_patching_module_style=Applying initial UI patch for $1 and reloading.
 

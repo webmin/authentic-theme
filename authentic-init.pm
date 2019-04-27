@@ -393,9 +393,9 @@ EOF
 
 sub embed_pm_scripts
 {
-    my $scripts = $config_directory . "/$current_theme/scripts.pm";
+    my $scripts = "$config_directory/$current_theme/scripts.pm";
     if (-r $scripts && -s $scripts) {
-        require $scripts;
+        require($scripts);
     }
 }
 
@@ -604,7 +604,7 @@ sub theme_text
 sub init_vars
 {
     if (theme_debug_mode()) {
-        do "$root_directory/$current_theme/.debug.pm";
+        do("$root_directory/$current_theme/.debug.pm");
     }
 
     my %tconfig_local = settings("$config_directory/$current_theme/config");
@@ -1519,6 +1519,19 @@ sub error_40x_handler
             $miniserv{'error_handler_404'} = "404.cgi";
             put_miniserv_config(\%miniserv);
             reload_miniserv();
+        }
+    }
+}
+
+sub lib_csf_control
+{
+    my ($action) = @_;
+    if (foreign_check("csf") && foreign_available("csf") && $current_theme =~ /authentic-theme/) {
+        require("$root_directory/$current_theme/extensions/csf/csf-lib.pm");
+        if ($action eq 'load') {
+            csf_mod();
+        } elsif ($action eq 'unload') {
+            csf_clear();
         }
     }
 }

@@ -10,7 +10,6 @@ use lib (dirname(__FILE__) . "/lib");
 
 use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
-use Fcntl qw( :flock );
 use Time::Local;
 
 BEGIN {push(@INC, "..");}
@@ -1387,9 +1386,8 @@ sub get_sysinfo_vars
 ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
               );
             $csf_data = (
-                '<a href=\'' .
-                  $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
-                  product_version_update($csf_installed_version, 'f') . ''
+                '<a href=\'' . $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">' .
+                  $theme_text{'theme_xhred_csf'} . '</a> ' . product_version_update($csf_installed_version, 'f') . ''
 
                   . ($csf_update_required eq '1' ?
                        '. ' . $theme_text{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;' :
@@ -1626,180 +1624,6 @@ sub get_sysinfo_vars
             $disk_space,         $package_message,         $csf_title,       $csf_data,
             $csf_remote_version, $authentic_remote_version);
 
-}
-
-sub csf_mod
-{
-    if (foreign_check("csf") &&
-        foreign_available("csf") &&
-        $current_theme =~ /authentic-theme/)
-    {
-        my $ext = (theme_debug_mode() ? 'src' : 'min');
-
-        my $csf_header_mod  = $config_directory . "/$current_theme/csf.header";
-        my $csf_body_mod    = $config_directory . "/$current_theme/csf.body";
-        my $csf_footer_mod  = $config_directory . "/$current_theme/csf.footer";
-        my $csf_htmltag_mod = $config_directory . "/$current_theme/csf.htmltag";
-        my $csf_bodytag_mod = $config_directory . "/$current_theme/csf.bodytag";
-
-        open(my $fh, '>', $csf_header_mod) or die $!;
-
-        print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' . (theme_version(1)) .
-          '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
-        print $fh '<link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} .
-          '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-
-        if (!$theme_config{'settings_font_family'}) {
-            print $fh '<link href="' . $gconfig{'webprefix'} .
-              '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        } elsif ($theme_config{'settings_font_family'} != '1') {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' .
-              $theme_config{'settings_font_family'} . '.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        }
-
-        print $fh '<script src="' .
-          $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
-
-        print $fh '<link href="' .
-          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        print $fh '<script src="' .
-          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . theme_version(1) . '"></script>' . "\n";
-
-        close $fh;
-
-        open(my $fh2, '>', $csf_body_mod) or die $!;
-        print $fh2 '<div class="container-fluid col-lg-10 col-lg-offset-1 csf-container" data-dcontainer="1">' . "\n";
-        close $fh2;
-
-        open(my $fh3, '>', $csf_footer_mod) or die $!;
-        print $fh3 '</div><script>!$.support.spa && csf_init()</script>' . "\n";
-        close $fh3;
-
-        open(my $fh4, '>', $csf_htmltag_mod) or die $!;
-        print $fh4 ' '
-          .
-          replace("\"", "'",
-                  header_html_data('csf', '1',
-                                   ("ConfigServer Security & Firewall — " . get_html_framed_title(), 0, 0, '1')
-                  )
-          ) .
-          '';
-        close $fh4;
-
-        open(my $fh5, '>', $csf_bodytag_mod) or die $!;
-        print $fh5 ' ' . replace("\"", "'", header_body_data('csf')) . '';
-        close $fh5;
-
-        my $csf_etc      = "/etc/csf";
-        my $csf_prefix   = "csf.";
-        my $csf_header   = $csf_etc . "/" . $csf_prefix . "header";
-        my $csf_body     = $csf_etc . "/" . $csf_prefix . "body";
-        my $csf_footer   = $csf_etc . "/" . $csf_prefix . "footer";
-        my $csf_html_tag = $csf_etc . "/" . $csf_prefix . "htmltag";
-        my $csf_body_tag = $csf_etc . "/" . $csf_prefix . "bodytag";
-        if (-e $csf_etc && -d $csf_etc) {
-            copy_source_dest($csf_header_mod, $csf_etc);
-
-            copy_source_dest($csf_body_mod, $csf_etc);
-
-            copy_source_dest($csf_footer_mod, $csf_etc);
-
-            copy_source_dest($csf_htmltag_mod, $csf_etc);
-
-            copy_source_dest($csf_bodytag_mod, $csf_etc);
-
-        }
-        my $csf_ui   = uc('style' . '_' . 'custom');
-        my $csf_conf = ($csf_etc . "/" . $csf_prefix . "conf");
-
-        if (-f $csf_conf &&
-            !-f $config_directory . "/$current_theme/" . $csf_prefix . "ui-introduced")
-        {
-
-            (my $fc = read_file_contents($csf_conf)) =~ s/$csf_ui = "0"/$csf_ui = "1"/g;
-
-            write_file_contents($csf_conf,                                                              $fc);
-            write_file_contents($config_directory . "/$current_theme/" . $csf_prefix . "ui-introduced", "\n");
-        }
-
-    }
-}
-
-sub csf_temporary_list
-{
-    if (foreign_check("csf") && foreign_available("csf")) {
-        my $let = "/etc/csf/csf.allow";
-        my $ban = "/etc/csf/csf.deny";
-        my $cnf = "/etc/csf/csf.conf";
-        my $tmp = "/var/lib/csf/csf.tempban";
-        my $log = "/var/lib/csf/stats/iptables_log";
-
-        my @p;
-        my @t;
-        my @l;
-
-        if (-e $cnf && !-z $cnf) {
-            my @q;
-            my $x = read_file_contents($let) . read_file_contents($ban);
-            my $z = read_file_contents($cnf);
-            (@p) = $z =~
-/(?:TCP_IN|UDP_IN|TCP6_IN|UDP6_IN|PORTS_TCP|PORTS_UDP|CT_PORTS|CLUSTER_PORT|PORTS_webmin|PORTS_sshd).*=\s*"([\d+,]+)"/g;
-            (@q) = $x =~ /^(?:(?!#).).*\|(?:d|s)=([\d+,]+)\|/gm;
-            if (@p || @q) {
-                @p = array_unique(split(",", join(",", (@p, @q))));
-            }
-
-        }
-
-        if (-e $tmp && !-z $tmp) {
-            open(my $IN, "<", $tmp) or die $!;
-            @t = <$IN>;
-            chomp @t;
-            close($IN);
-        }
-
-        if (@t && -e $log) {
-            open(my $IN, "<", $log) or die $!;
-            flock($IN, LOCK_SH);
-            my @i = <$IN>;
-            close($IN);
-            chomp @i;
-            @i = reverse @i;
-            my $c = 0;
-
-            my $s = scalar @i;
-            my @g;
-
-            foreach my $h (reverse @t) {
-                if ($h) {
-                    my ($a, $b, $d, $e, $f, $g) = split(/\|/, $h);
-                    my ($ll, $dl) = (undef, '|');
-                    for (my $x = 0; $x < $s; $x++) {
-                        $c++;
-                        my $u = $i[$x];
-                        my ($o, $l) = split(/\|/, $u);
-                        my ($r, $w, $k);
-                        if ($l =~ /SRC=(\S+)/) {$r = $1}
-                        if ($l =~ /DST=(\S+)/) {$w = $1}
-                        if ($l =~ /DPT=(\d+)/) {$k = $1}
-                        if (($r eq $b && array_contains(\@p, $k)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
-                            $ll = ($a . $dl . $b . $dl . $w . $dl . $k . $dl . $d . $dl . $e . $dl . $f . $dl . $g);
-                            if (!array_contains(\@g, $g) && !array_contains(\@l, $ll)) {
-                                push @g, $g;
-                                push @l, $ll;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        convert_to_json(\@l);
-    } else {
-        convert_to_json();
-    }
 }
 
 sub get_current_user_config
@@ -3542,6 +3366,10 @@ sub get_xhr_request
                  $csf_remote_version, $authentic_remote_version
             ) = get_sysinfo_vars(\@info);
 
+            # Load module lib if available
+            lib_csf_control();
+
+            # Build update info
             my @updated_info = { "data"                     => 1,
                                  "cpu_percent"              => $cpu_percent,
                                  "mem_percent"              => $mem_percent,
@@ -3569,7 +3397,7 @@ sub get_xhr_request
                                  "csf_data"                 => $csf_data,
                                  "csf_remote_version"       => $csf_remote_version,
                                  "authentic_remote_version" => $authentic_remote_version,
-                                 "csf_deny"                 => csf_temporary_list(),
+                                 "csf_deny"                 => (defined(&csf_temporary_list) ? csf_temporary_list() : undef),
                                  "collect_interval"         => get_module_config_data('system-status', 'collect_interval'),
                                  "extended_si"              => get_extended_sysinfo(\@info, undef),
                                  "warning_si"               => get_sysinfo_warning(\@info), };
@@ -3720,8 +3548,8 @@ sub init
     # Provide unobstructive access for AJAX calls
     get_xhr_request();
 
-    # ConfigServer Security Firewall mod
-    csf_mod();
+    # Load module lib if available
+    lib_csf_control('load');
 }
 
 sub content
