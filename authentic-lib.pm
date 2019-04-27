@@ -1346,89 +1346,8 @@ sub get_sysinfo_vars
             $authentic_theme_version = get_theme_user_link();
         }
 
-        #ConfigServer Security & Firewall
-        if (&foreign_check("csf") && &foreign_available("csf")) {
-
-            # Define CSF installed version
-            my $error;
-            my $csf_update_required;
-            my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
-            $csf_installed_version = $csf_installed_version->[0];
-
-            # Define CSF actual version if allowed
-            if ($theme_config{'settings_sysinfo_csf_updates'} eq 'true' &&
-                $get_user_level eq '0' &&
-                $in =~ /xhr-/)
-            {
-                $csf_remote_version = theme_cached('version-csf-stable');
-                if (!$csf_remote_version) {
-                    http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
-                                  undef, undef, undef, undef, 5);
-                    theme_cached('version-csf-stable', $csf_remote_version, $error);
-                }
-
-                # Trim versions' number
-                $csf_installed_version =~ s/^\s+|\s+$//g;
-                $csf_remote_version =~ s/^\s+|\s+$//g;
-            } else {
-                $csf_remote_version = '0';
-            }
-
-            if ($csf_remote_version <= $csf_installed_version) {
-                $csf_update_required = '0';
-            } else {
-                $csf_update_required = '1';
-            }
-
-            $csf_title = $theme_text{'body_firewall'} . ' '
-              .
-              ( `pgrep lfd` ? '' :
-' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
-              );
-            $csf_data = (
-                '<a href=\'' . $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">' .
-                  $theme_text{'theme_xhred_csf'} . '</a> ' . product_version_update($csf_installed_version, 'f') . ''
-
-                  . ($csf_update_required eq '1' ?
-                       '. ' . $theme_text{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;' :
-                       '&nbsp;&nbsp;&nbsp;'
-                  ) .
-                  '
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_lfdstatus">
-                  <input type="hidden" name="action" value="lfdstatus">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_upgrade">
-                  <input type="hidden" name="action" value="upgrade">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_temporary_ip_entries">
-                  <input type="hidden" name="action" value="temp">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_search_system_log">
-                  <input type="hidden" name="action" value="loggrep">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_denyf">
-                  <input type="hidden" name="action" value="denyf">
-              </form>
-          '
-                  . (
-                    $csf_update_required eq '1' ?
-                      '<div class="btn-group">
-              <a class="btn btn-xxs btn-success csf csf-submit" data-id="csf_upgrade"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
-                      . $theme_text{'theme_update'} . '</a>
-              <a class="btn btn-xxs btn-info csf" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
-                      . $theme_text{'theme_changelog'} . '</a>
-              <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
-                      . $theme_text{'theme_download'} . '</a>
-          </div>'
-                    :
-                      '<div class="btn-group" data-no-update>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Search system logs" data-id="csf_search_system_log"><i class="fa fa-fw fa-filter"></i></a>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Temporary IP entries" data-id="csf_temporary_ip_entries"><i class="fa fa-fw fa-ban"></i></a>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-id="csf_denyf"><i class="fa fa-fw fa-trash-o"></i> Flush all blocks</a>
-            </div>'
-                  ) .
-                  '');
-        }
+        # Load ConfigServer Security & Firewall lib if available
+        ($csf_title, $csf_data, $csf_remote_version) = lib_csf_control('strings');
 
         #System time
         my ($_time);
@@ -3365,9 +3284,6 @@ sub get_xhr_request
                  $disk_space,         $package_message,         $csf_title,       $csf_data,
                  $csf_remote_version, $authentic_remote_version
             ) = get_sysinfo_vars(\@info);
-
-            # Load module lib if available
-            lib_csf_control();
 
             # Build update info
             my @updated_info = { "data"                     => 1,

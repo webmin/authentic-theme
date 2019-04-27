@@ -1532,6 +1532,8 @@ sub lib_csf_control
             csf_mod();
         } elsif ($action eq 'unload') {
             csf_clear();
+        } elsif ($action eq 'strings') {
+            return csf_strings();
         }
     }
 }
