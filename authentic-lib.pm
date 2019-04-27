@@ -34,7 +34,7 @@ require(dirname(__FILE__) . "/authentic-init.pm");
 sub authentic
 {
     init();
-    header($title);
+    header([$title]);
     content();
     footer();
 }

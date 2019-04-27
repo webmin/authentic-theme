@@ -7,16 +7,16 @@ use strict;
 
 use File::Basename;
 
-our ($get_user_level,           $xnav,                           %theme_config,
-     %theme_text,               %config,                         %gconfig,
-     %tconfig,                  %text,                           $basic_virtualmin_domain,
-     $basic_virtualmin_menu,    $cb,                             $tb,
-     $cloudmin_no_create_links, $cloudmin_no_edit_buttons,       $cloudmin_no_global_links,
-     $current_theme,            $done_theme_post_save_server,    $mailbox_no_addressbook_button,
-     $mailbox_no_folder_button, $module_index_link,              $module_index_name,
-     $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode, $page_capture,
-     $remote_user,              $root_directory,                 $session_id,
-     $ui_formcount,             $user_module_config_directory);
+our ($get_user_level,                $xnav,                     %theme_config,
+     %theme_text,                    %config,                   %gconfig,
+     %tconfig,                       %text,                     $basic_virtualmin_domain,
+     $basic_virtualmin_menu,         $cb,                       $tb,
+     $title,                         $cloudmin_no_create_links, $cloudmin_no_edit_buttons,
+     $cloudmin_no_global_links,      $current_theme,            $done_theme_post_save_server,
+     $mailbox_no_addressbook_button, $mailbox_no_folder_button, $module_index_link,
+     $module_index_name,             $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode,
+     $page_capture,                  $remote_user,              $root_directory,
+     $session_id,                    $ui_formcount,             $user_module_config_directory);
 
 do(dirname(__FILE__) . "/authentic-init.pm");
 
@@ -24,8 +24,9 @@ sub theme_header
 {
 
     (get_raw() && return);
-    embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
-
+    my $tref = ref($_[0]) eq 'ARRAY';
+    my $ttitle = $tref ? $_[0]->[0] : $_[0];
+    embed_header((("$ttitle - $title"), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)));
     print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
@@ -88,13 +89,13 @@ sub theme_header
         print "</td>\n";
         if ($_[1]) {
             print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
-              "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
+              "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
             print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
-              ($ts ? "<span data-main_title>" : ""), $_[0], ($ts ? "</span>" : "");
+              ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
             print "</td>\n";
         }
