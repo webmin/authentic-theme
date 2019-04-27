@@ -420,7 +420,7 @@ sub theme_ui_link
 sub theme_ui_links_row
 {
 
-    my ($links) = @_;
+    my ($links, $nopuncs) = @_;
     my $link = "<a";
     if (ref($links)) {
         if (string_contains("@$links", $link)) {
@@ -431,7 +431,13 @@ sub theme_ui_links_row
               @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
               "";
         } else {
-            return @$links ? join(", ", @$links) . ".<br>\n" : "";
+            if ($nopuncs == 1) {
+                return @$links ? join(", ", @$links) . "<br>\n" : "";
+            } elsif ($nopuncs == 2) {
+                return @$links ? join(" ", @$links) . "<br>\n" : "";
+            } else {
+                return @$links ? join(", ", @$links) . ".<br>\n" : "";
+            }
         }
     }
 }
