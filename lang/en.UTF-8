@@ -1103,3 +1103,4 @@ settings_document_title_option_9=username@hostname — Module
 theme_xhred_csf=ConfigServer Security & Firewall
 theme_xhred_global_version=version
 theme_xhred_notify_patching_module_style=Applying initial UI patch for $1 and reloading.
+theme_xhred_global_error_more_details_online=Note: Please read more about this error and how to solve it, in our %1wiki page%1 online.
