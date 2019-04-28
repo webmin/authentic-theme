@@ -488,6 +488,7 @@ const mail = (function() {
                     function(data) {
                         render(data);
                         loader.end();
+                        _.document_title(0, _.language('theme_xhred_titles_mail'));
                     });
             },
 
@@ -1548,9 +1549,6 @@ const mail = (function() {
 
                 // Adjust container height
                 this.container_adjust();
-
-                // Update mail document title
-                _.document_title(0, _.language('theme_xhred_titles_mail'));
             },
             expand: function(node) {
                 let expanded = node.isExpanded();
