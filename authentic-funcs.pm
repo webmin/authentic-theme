@@ -76,7 +76,6 @@ sub get_theme_language
         }
         $s{$key} .= $theme_text{$key};
     }
-
     return convert_to_json(\%s);
 
 }
@@ -87,7 +86,7 @@ sub get_gpg_keys
     my $target = foreign_available($gnupg) ? $gnupg : get_product_name();
     my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
     if (-r $gpglib) {
-        do $gpglib;
+        do($gpglib);
         my %gpgconfig    = foreign_config($target);
         my $gpgpath      = $gpgconfig{'gpg'} || "gpg";
         my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');
@@ -352,6 +351,13 @@ sub strip_html
     my ($string) = @_;
     $string =~ s|<.+?>||g;
     return $string;
+}
+
+sub format_document_title
+{
+    my ($title_initial) = $_[0] =~ /(?|.*:\s+(.*)|(.*))/;
+    my ($product, $os_type) = $title_initial =~ /(?|(.*\d+).*(\(.*)|(.*\d+))/;
+    return ($os_type ? "$product $os_type" : $product);
 }
 
 1;

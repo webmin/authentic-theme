@@ -68,6 +68,7 @@ sub settings_default
     $c{'settings_contrast_level_navigation'}          = '1';
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
+    $c{'settings_document_title'}                     = '1';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_hide_top_loader'}                    = 'false';
     $c{'settings_collapse_navigation_link'}           = 'true';
@@ -152,7 +153,7 @@ sub embed_header
     embed_noscript();
     print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     embed_favicon();
-    print ' <title>', $args[0], '</title>', "\n";
+    print ' <title>', ($args[4] ? ucfirst(get_product_name()) : $args[0]), '</title>', "\n";
 
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
@@ -392,9 +393,9 @@ EOF
 
 sub embed_pm_scripts
 {
-    my $scripts = $config_directory . "/$current_theme/scripts.pm";
+    my $scripts = "$config_directory/$current_theme/scripts.pm";
     if (-r $scripts && -s $scripts) {
-        require $scripts;
+        require($scripts);
     }
 }
 
@@ -603,7 +604,7 @@ sub theme_text
 sub init_vars
 {
     if (theme_debug_mode()) {
-        do "$root_directory/$current_theme/.debug.pm";
+        do("$root_directory/$current_theme/.debug.pm");
     }
 
     my %tconfig_local = settings("$config_directory/$current_theme/config");
@@ -818,7 +819,7 @@ sub get_initial_wizard
     # Going to Post-Installation Wizard
     if ($get_user_level eq '0') {
         our %virtualmin_config = foreign_config('virtual-server');
-        if ($virtualmin_config{'wizard_run'} ne '1') {
+        if (defined($virtualmin_config{'wizard_run'}) && $virtualmin_config{'wizard_run'} ne '1') {
             return 1;
         }
     }
@@ -1222,8 +1223,8 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() .
-      '" data-title-initial="' . $args[0] . '" data-debug="' . theme_debug_mode() . '" data-session="' .
+    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
+      format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') . ' data-high-contrast="' .
@@ -1349,6 +1350,8 @@ sub get_theme_temp_data
 {
     my ($key, $keep) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $data;
+    my %theme_temp_data;
 
     $salt =~ tr/A-Za-z0-9//cd;
 
@@ -1359,23 +1362,25 @@ sub get_theme_temp_data
         my (%theme_goto_temp);
         my $tmp_dir = tempname_dir();
         my @gotos;
-        opendir(my $dir, $tmp_dir) || die "Can't open temporary directory $tmp_dir: $!";
-        @gotos = grep {/^\.theme/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
+        opendir(my $dir, $tmp_dir);
+        @gotos = grep {/^\.theme/ && $_ =~ /$salt/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
         closedir $dir;
         foreach (@gotos) {
-            read_file("$tmp_dir/$_", \%theme_goto_temp);
-            my $url_hex = substr(unpack("H*", $theme_goto_temp{'goto'}), -180);
-            $tmp_file =
-              tempname('.theme_' . $salt . '_' . $url_hex . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+            $tmp_file = "$tmp_dir/$_";
+            if (-r $tmp_file) {
+                read_file($tmp_file, \%theme_temp_data);
+                last;
+            }
         }
+    } else {
+        read_file($tmp_file, \%theme_temp_data);
     }
 
-    read_file($tmp_file, \%theme_temp_data);
-    if (!$keep) {
+    if (!$keep && -r $tmp_file) {
         unlink_file($tmp_file);
     }
 
-    my $data = $theme_temp_data{$key};
+    $data = $theme_temp_data{$key};
     $data =~ s/[?|&]$xnav//g;
     $data =~ s/[?|&]randomized=[\d]+//g;
     $data =~ s/.cgi&/.cgi?/g;
@@ -1514,6 +1519,21 @@ sub error_40x_handler
             $miniserv{'error_handler_404'} = "404.cgi";
             put_miniserv_config(\%miniserv);
             reload_miniserv();
+        }
+    }
+}
+
+sub lib_csf_control
+{
+    my ($action) = @_;
+    if (foreign_check("csf") && foreign_available("csf") && $current_theme =~ /authentic-theme/) {
+        require("$root_directory/$current_theme/extensions/csf/csf-lib.pm");
+        if ($action eq 'load') {
+            csf_mod();
+        } elsif ($action eq 'unload') {
+            csf_clear();
+        } elsif ($action eq 'strings') {
+            return csf_strings();
         }
     }
 }

@@ -7,16 +7,16 @@ use strict;
 
 use File::Basename;
 
-our ($get_user_level,           $xnav,                           %theme_config,
-     %theme_text,               %config,                         %gconfig,
-     %tconfig,                  %text,                           $basic_virtualmin_domain,
-     $basic_virtualmin_menu,    $cb,                             $tb,
-     $cloudmin_no_create_links, $cloudmin_no_edit_buttons,       $cloudmin_no_global_links,
-     $current_theme,            $done_theme_post_save_server,    $mailbox_no_addressbook_button,
-     $mailbox_no_folder_button, $module_index_link,              $module_index_name,
-     $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode, $page_capture,
-     $remote_user,              $root_directory,                 $session_id,
-     $ui_formcount,             $user_module_config_directory);
+our ($get_user_level,                $xnav,                     %theme_config,
+     %theme_text,                    %config,                   %gconfig,
+     %tconfig,                       %text,                     $basic_virtualmin_domain,
+     $basic_virtualmin_menu,         $cb,                       $tb,
+     $title,                         $cloudmin_no_create_links, $cloudmin_no_edit_buttons,
+     $cloudmin_no_global_links,      $current_theme,            $done_theme_post_save_server,
+     $mailbox_no_addressbook_button, $mailbox_no_folder_button, $module_index_link,
+     $module_index_name,             $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode,
+     $page_capture,                  $remote_user,              $root_directory,
+     $session_id,                    $ui_formcount,             $user_module_config_directory);
 
 do(dirname(__FILE__) . "/authentic-init.pm");
 
@@ -24,8 +24,11 @@ sub theme_header
 {
 
     (get_raw() && return);
-    embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
-
+    my $tref = ref($_[0]) eq 'ARRAY';
+    my $ttitle = $tref ? $_[0]->[0] : $_[0];
+    embed_header(
+        (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
+        ));
     print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
@@ -87,12 +90,14 @@ sub theme_header
         }
         print "</td>\n";
         if ($_[1]) {
-            print "<td id=\"headln2c\">", "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
+            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
+              "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
-            print "<td id='headln2c'>", ($ts ? "<span data-main_title>" : ""), $_[0], ($ts ? "</span>" : "");
+            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
+              ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
             print "</td>\n";
         }
@@ -418,7 +423,7 @@ sub theme_ui_link
 sub theme_ui_links_row
 {
 
-    my ($links) = @_;
+    my ($links, $nopuncs) = @_;
     my $link = "<a";
     if (ref($links)) {
         if (string_contains("@$links", $link)) {
@@ -429,7 +434,13 @@ sub theme_ui_links_row
               @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
               "";
         } else {
-            return @$links ? join(", ", @$links) . ".<br>\n" : "";
+            if ($nopuncs == 1) {
+                return @$links ? join(", ", @$links) . "<br>\n" : "";
+            } elsif ($nopuncs == 2) {
+                return @$links ? join(" ", @$links) . "<br>\n" : "";
+            } else {
+                return @$links ? join(", ", @$links) . ".<br>\n" : "";
+            }
         }
     }
 }
@@ -1160,17 +1171,32 @@ sub theme_redirect
         return;
     }
 
-    my ($link) = $_[0] || $_[1];
+    my $prefix   = $gconfig{'webprefix'};
+    my $noredir  = $gconfig{'webprefixnoredir'};
+    my $relredir = $gconfig{'relative_redir'};
+    my ($arg1, $arg2) = ($_[0], $_[1]);
+    my ($link) = $arg1 || $arg2;
+    my ($relative) = $arg2;
+    if (!$relredir) {
+        ($relative) = $arg2 =~ /\/\/\S+?(\/\S*)/;
+    }
+    $relative = "$prefix$relative" if ($relative && $noredir);
 
     my ($parent) = parse_servers_path();
     if ($parent) {
-        ($link) = $_[1] =~ /:\d+(.*)/;
-        $link = "$parent$link";
+        ($link) = $arg2 =~ /:\d+(.*)/;
+        $relative = "$parent$link";
+    } else {
+        if (defined($arg1) && !$arg1) {
+            $arg1 = $relative;
+        } elsif (string_starts_with($arg1, '/')) {
+            $arg1 = "$prefix$arg1";
+        }
     }
 
-    if (!theme_redirect_download($link)) {
-        set_theme_temp_data('redirected', $link);
-        print "Location: $link\n\n";
+    if (!theme_redirect_download($relative)) {
+        set_theme_temp_data('redirected', $relative);
+        print "Location: $relative\n\n";
     }
 }
 
@@ -1277,11 +1303,8 @@ sub theme_select_server
 
 sub theme_post_change_theme
 {
-    # Clear modifications
-    if (&foreign_check("csf") && &foreign_available("csf")) {
-        unlink_file('/etc/csf/csf.header');
-        unlink_file('/etc/csf/csf.footer');
-    }
+    # Clear module modifications
+    lib_csf_control('unload');
 
     # Remove error handler
     error_40x_handler(1);

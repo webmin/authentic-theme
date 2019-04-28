@@ -58,6 +58,7 @@ const mail = (function() {
             language: theme_language,
             notification: plugins.messenger.post,
             rows: page_table_rows_control,
+            document_title: theme_title_generate,
             navigation: {
                 reset: plugins.navigation.reset
             },
@@ -487,6 +488,7 @@ const mail = (function() {
                     function(data) {
                         render(data);
                         loader.end();
+                        _.document_title(0, _.language('theme_xhred_titles_mail'));
                     });
             },
 
@@ -1453,58 +1455,58 @@ const mail = (function() {
     const folders = (function() {
         let
 
-        // Define module static properties
+            // Define module static properties
             data = {
-            file: {
-                fancytree: 'jquery.fancytree'
-            },
-            selector: {
-                navigation: 'aside .navigation'
-            },
-            options: {
-                tree: {
-                    escapeTitles: false,
-                    autoActivate: false,
-                    autoScroll: true,
-                    keyboard: false,
-                    toggleEffect: false,
+                file: {
+                    fancytree: 'jquery.fancytree'
                 },
-                scroll: {
-                    axis: 'xy',
-                    theme: 'minimal',
-                    keyboard: false,
-                    scrollInertia: 300,
-                    scrollButtons: true,
-                    autoHideScrollbar: false,
-                }
-            },
-            plugin: {
-                tree: (source) => {
-                    source = (source === 'get' ? 'getTree' :
-                        (source === 'node' ? 'getActiveNode' :
-                            Object.assign(data.options.tree, {
-                                source: source,
-                                scrollParent: $('[' + $$.$.tree.container + ']'),
-                                click: (e, d) => {
-                                    if (d.targetType === 'title') {
-                                        setTimeout(() => {
-                                            tree.adjust();
-                                        }, 1e2);
-                                        _.content(data.url.link + encodeURIComponent(d.node.key));
-                                        messages.storage.reset();
-                                        _.navigation.reset();
-                                    }
-                                }
-                            })));
-                    if ($(tree.container).length) {
-                        return $(tree.container).fancytree(source);
+                selector: {
+                    navigation: 'aside .navigation'
+                },
+                options: {
+                    tree: {
+                        escapeTitles: false,
+                        autoActivate: false,
+                        autoScroll: true,
+                        keyboard: false,
+                        toggleEffect: false,
+                    },
+                    scroll: {
+                        axis: 'xy',
+                        theme: 'minimal',
+                        keyboard: false,
+                        scrollInertia: 300,
+                        scrollButtons: true,
+                        autoHideScrollbar: false,
                     }
+                },
+                plugin: {
+                    tree: (source) => {
+                        source = (source === 'get' ? 'getTree' :
+                            (source === 'node' ? 'getActiveNode' :
+                                Object.assign(data.options.tree, {
+                                    source: source,
+                                    scrollParent: $('[' + $$.$.tree.container + ']'),
+                                    click: (e, d) => {
+                                        if (d.targetType === 'title') {
+                                            setTimeout(() => {
+                                                tree.adjust();
+                                            }, 1e2);
+                                            _.content(data.url.link + encodeURIComponent(d.node.key));
+                                            messages.storage.reset();
+                                            _.navigation.reset();
+                                        }
+                                    }
+                                })));
+                        if ($(tree.container).length) {
+                            return $(tree.container).fancytree(source);
+                        }
+                    }
+                },
+                url: {
+                    link: _.path.origin + _.path.prefix + '/mailbox/index.cgi?id=',
                 }
-            },
-            url: {
-                link: _.path.origin + _.path.prefix + '/mailbox/index.cgi?id=',
-            }
-        };
+            };
 
         /**
          * Tree sub-module ;;
@@ -1540,10 +1542,10 @@ const mail = (function() {
                 }
 
                 // Instantiate tree
-                data.plugin.tree(source)
+                data.plugin.tree(source);
 
                 // Make the container scrollable
-                _.plugin.scroll(this.container, data.options.scroll)
+                _.plugin.scroll(this.container, data.options.scroll);
 
                 // Adjust container height
                 this.container_adjust();
