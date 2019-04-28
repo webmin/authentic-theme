@@ -354,7 +354,6 @@ sub strip_html
 }
 
 sub format_document_title
-
 {
     my ($title_initial) = $_[0] =~ /(?|.*:\s+(.*)|(.*))/;
     my ($product, $os_type) = $title_initial =~ /(?|(.*\d+).*(\(.*)|(.*\d+))/;

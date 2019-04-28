@@ -26,7 +26,9 @@ sub theme_header
     (get_raw() && return);
     my $tref = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
-    embed_header((("$ttitle - $title"), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)));
+    embed_header(
+        (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
+        ));
     print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
@@ -1303,7 +1305,7 @@ sub theme_post_change_theme
 {
     # Clear module modifications
     lib_csf_control('unload');
-    
+
     # Remove error handler
     error_40x_handler(1);
 }
