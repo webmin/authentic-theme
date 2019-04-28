@@ -58,6 +58,7 @@ const mail = (function() {
             language: theme_language,
             notification: plugins.messenger.post,
             rows: page_table_rows_control,
+            document_title: theme_title_generate,
             navigation: {
                 reset: plugins.navigation.reset
             },
@@ -1540,13 +1541,16 @@ const mail = (function() {
                 }
 
                 // Instantiate tree
-                data.plugin.tree(source)
+                data.plugin.tree(source);
 
                 // Make the container scrollable
-                _.plugin.scroll(this.container, data.options.scroll)
+                _.plugin.scroll(this.container, data.options.scroll);
 
                 // Adjust container height
                 this.container_adjust();
+
+                // Update mail document title
+                _.document_title(0, _.language('theme_xhred_titles_mail'));
             },
             expand: function(node) {
                 let expanded = node.isExpanded();
