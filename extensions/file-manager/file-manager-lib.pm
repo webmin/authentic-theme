@@ -338,7 +338,7 @@ sub exec_search
                        $found_text = lc($found_text);
                        $mask_text  = lc($mask_text);
                    }
-                   if (index($found_text, $mask_text) != -1) {
+                   if ($mask_text eq "*" || index($found_text, $mask_text) != -1) {
                        if ($list) {
                            $found = $_;
                        } else {
@@ -379,7 +379,7 @@ sub exec_search
                     (my $fc = read_file_contents($file)) =~ s/\Q$grep\E/$replace/gi;
                     write_file_contents($file, $fc);
                 } else {
-                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/g;
+                    (my $fc = read_file_contents($file)) =~ s/\Q$grep\E/$replace/g;
                     write_file_contents($file, $fc);
                 }
             }
