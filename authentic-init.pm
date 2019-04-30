@@ -819,7 +819,7 @@ sub get_initial_wizard
     # Going to Post-Installation Wizard
     if ($get_user_level eq '0') {
         our %virtualmin_config = foreign_config('virtual-server');
-        if (defined($virtualmin_config{'wizard_run'}) && $virtualmin_config{'wizard_run'} ne '1') {
+        if (%virtualmin_config && $virtualmin_config{'wizard_run'} ne '1') {
             return 1;
         }
     }
