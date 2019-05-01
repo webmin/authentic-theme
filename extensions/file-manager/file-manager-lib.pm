@@ -322,11 +322,11 @@ sub exec_search
 {
     my ($list)  = @_;
     my $mask    = $in{'query'};
+    my $grep    = $in{'grepstring'};
     my $replace = $in{'grepreplace'};
     my $caseins = $in{'caseins'};
-    my $follow = ($in{'follow'} ? 1                 : 0);
-    my $regex  = ($in{'regex'}  ? 1                 : 0);
-    my $grep   = ($regex        ? $in{'grepstring'} : quotemeta($in{'grepstring'}));
+    my $follow = ($in{'follow'} ? 1 : 0);
+    my $regex  = ($in{'regex'}  ? 1 : 0);
     my @results;
 
     find(
