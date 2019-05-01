@@ -163,6 +163,7 @@ sub get_pagination
     my $search_follow_symlinks  = $in{'follow'};
     my $search_case_insensitive = $in{'caseins'};
     my $search_grep             = $in{'grepstring'};
+    my $regex                   = $in{'regex'};
     my $all_items               = $in{'all_items'};
 
     my $left  = $page - 2;
@@ -190,7 +191,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&all_items=$all_items'>$i</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&regex=$regex&all_items=$all_items'>$i</a>";
         $end .= "</li>";
         return $end;
     };
@@ -277,9 +278,10 @@ sub extra_query
     my $follow     = $in{'follow'};
     my $caseins    = $in{'caseins'};
     my $grepstring = $in{'grepstring'};
+    my $regex      = $in{'regex'};
     my $all_items  = $in{'all_items'};
     return
-"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&all_items=$all_items";
+"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&regex=$regex&all_items=$all_items";
 }
 
 sub set_response
@@ -320,11 +322,11 @@ sub exec_search
 {
     my ($list)  = @_;
     my $mask    = $in{'query'};
-    my $grep    = $in{'grepstring'};
     my $replace = $in{'grepreplace'};
     my $caseins = $in{'caseins'};
-    my $follow = ($in{'follow'} ? 1 : 0);
-
+    my $follow = ($in{'follow'} ? 1                 : 0);
+    my $regex  = ($in{'regex'}  ? 1                 : 0);
+    my $grep   = ($regex        ? $in{'grepstring'} : quotemeta($in{'grepstring'}));
     my @results;
 
     find(
@@ -338,10 +340,9 @@ sub exec_search
                        $found_text = lc($found_text);
                        $mask_text  = lc($mask_text);
                    }
-                   my $sanitized_mask_text = $mask_text;
-                   $sanitized_mask_text =~ s/\s+/\\ /g;
-                   $sanitized_mask_text =~ s/`/\\`/g;
-                   if (index($found_text, $mask_text) != -1 || $mask_text eq "*" || $found_text =~ /$sanitized_mask_text/) {
+                   if ((!$regex && (index($found_text, $mask_text) != -1 || $mask_text eq "*")) ||
+                       ($regex && $found_text =~ /$mask_text/))
+                   {
                        if ($list) {
                            $found = $_;
                        } else {
@@ -363,11 +364,18 @@ sub exec_search
             my @matched;
             fdo {
                 my ($file, $line, $text) = @_;
-                if (index($text, $grep) != -1) {
-                    push(@replaces, $results[$file]);
-
+                if ($caseins) {
+                    $text = lc($text);
+                    $grep = lc($grep);
+                }
+                if ((!$regex && index($text, $grep) != -1) || ($regex && $text =~ /$grep/)) {
+                    if (!grep(/^\Q$results[$file]\E$/, @replaces)) {
+                        push(@replaces, $results[$file]);
+                    }
                     $results[$file] =~ s/^\Q$cwd\E//g;
-                    push(@matched, $results[$file]);
+                    if (!grep(/^\Q$results[$file]\E$/, @matched)) {
+                        push(@matched, $results[$file]);
+                    }
                 }
             }
             @results;
@@ -378,10 +386,10 @@ sub exec_search
         if (length $replace) {
             foreach my $file (@replaces) {
                 if ($caseins) {
-                    (my $fc = read_file_contents($file)) =~ s/\Q$grep\E/$replace/gi;
+                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/gi;
                     write_file_contents($file, $fc);
                 } else {
-                    (my $fc = read_file_contents($file)) =~ s/\Q$grep\E/$replace/g;
+                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/g;
                     write_file_contents($file, $fc);
                 }
             }
