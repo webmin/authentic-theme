@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.33 (May 01, 2019)
+* Add to let user use regex as filename mask in File Manager when searching [@066e11b](https://github.com/authentic-theme/authentic-theme/commit/066e11b54a17c30d6d85b7648ce32b09644e8bf2)
+* Fix other small issue
+
 #### Version 19.32 (April 28, 2019)
 * Add significant improvements to directory listing (support of 1m+ files) in File Manager [@8cdb7a4](https://github.com/authentic-theme/authentic-theme/commit/8cdb7a4eaf9c691dc9f26d5769b102b340f19802)
 * Add ability to preview images directly on the server in File Manager [#1323](https://github.com/authentic-theme/authentic-theme/issues/1323#issue-435839231)
@@ -20,7 +24,7 @@
 * Add to update file size after closing file editor in File Manager
 * Add send browser notification when progressive output is finished and user not looking at the page
 * Add improved BIND syntax highlight for manual editors
-* Add ability for any user use favorites
+* Add ability for any user to use favorites
 * Add improved error handling
 * Fix paste into itself error appearing wrong in some cases in File Manager
 * Fix to improve and optimize initial load for File Manager
