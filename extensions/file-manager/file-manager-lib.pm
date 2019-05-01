@@ -338,7 +338,10 @@ sub exec_search
                        $found_text = lc($found_text);
                        $mask_text  = lc($mask_text);
                    }
-                   if ($mask_text eq "*" || index($found_text, $mask_text) != -1) {
+                   my $sanitized_mask_text = $mask_text;
+                   $sanitized_mask_text =~ s/\s+/\\ /g;
+                   $sanitized_mask_text =~ s/`/\\`/g;
+                   if (index($found_text, $mask_text) != -1 || $mask_text eq "*" || $found_text =~ /$sanitized_mask_text/) {
                        if ($list) {
                            $found = $_;
                        } else {
@@ -346,7 +349,6 @@ sub exec_search
                        }
                        push(@results, $found);
                    }
-
                }
            },
            follow      => $follow,
