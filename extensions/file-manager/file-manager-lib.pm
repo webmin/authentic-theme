@@ -348,7 +348,9 @@ sub exec_search
                        } else {
                            $found =~ s/^\Q$cwd\E//g;
                        }
-                       push(@results, $found);
+                       if ($follow || (!$follow && !-l $_)) {
+                           push(@results, $found);
+                       }
                    }
                }
            },
