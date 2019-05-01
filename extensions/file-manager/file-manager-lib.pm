@@ -372,25 +372,26 @@ sub exec_search
                     if (!grep(/^\Q$results[$file]\E$/, @replaces)) {
                         push(@replaces, $results[$file]);
                     }
-                    $results[$file] =~ s/^\Q$cwd\E//g;
-                    if (!grep(/^\Q$results[$file]\E$/, @matched)) {
-                        push(@matched, $results[$file]);
+                    (my $sfile = $results[$file]) =~ s/^\Q$cwd\E//g;
+                    if (!grep(/^\Q$sfile\E$/, @matched)) {
+                        push(@matched, $sfile);
                     }
                 }
             }
             @results;
             undef(@results);
             @results = @matched;
-
         }
         if (length $replace) {
             foreach my $file (@replaces) {
-                if ($caseins) {
-                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/gi;
-                    write_file_contents($file, $fc);
-                } else {
-                    (my $fc = read_file_contents($file)) =~ s/$grep/$replace/g;
-                    write_file_contents($file, $fc);
+                if (-r $file) {
+                    if ($caseins) {
+                        (my $fc = read_file_contents($file)) =~ s/$grep/$replace/gi;
+                        write_file_contents($file, $fc);
+                    } else {
+                        (my $fc = read_file_contents($file)) =~ s/$grep/$replace/g;
+                        write_file_contents($file, $fc);
+                    }
                 }
             }
         }
