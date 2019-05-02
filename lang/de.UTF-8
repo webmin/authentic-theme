@@ -1100,5 +1100,5 @@ theme_xhred_global_error_more_details_online=Hinweis: Lese mehr zu diesem Fehler
 #19.33
 theme_xhred_filemanager_search_file_mask=Datei Maske
 theme_xhred_filemanager_search_regex=Regul&auml;rer Ausdruck
-theme_xhred_upload_successful=<span>$1 files</span> have been successfully uploaded to $2 directory
-theme_xhred_upload_successful_single=<span>$1 file</span> has been successfully uploaded to $2 directory
+theme_xhred_upload_successful=<span>$1 Dateien</span> wurden erfolgreich in Verzeichnis $2 hochgeladen
+theme_xhred_upload_successful_single=<span>$1 Dateie</span> wurde erfolgreich in Verzeichnis $2 hochgeladen
