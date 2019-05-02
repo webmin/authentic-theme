@@ -1101,5 +1101,10 @@ theme_xhred_csf=ConfigServer Security & Firewall
 theme_xhred_global_version=version
 theme_xhred_notify_patching_module_style=Verkställer inledande UI-fix för $1 och uppdaterar.
 theme_xhred_global_error_more_details_online=Obs: Läs mer om detta felet och hur du löser det i vårt %1wiki page%1 online.
+
+
+#19.33
 theme_xhred_filemanager_search_file_mask=Filmask
 theme_xhred_filemanager_search_regex=Reguljärt uttryck
+theme_xhred_upload_successful=<span>$1 files</span> have been successfully uploaded to $2 directory
+theme_xhred_upload_successful_single=<span>$1 file</span> has been successfully uploaded to $2 directory
