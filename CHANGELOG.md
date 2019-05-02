@@ -1,8 +1,9 @@
 ## Changelog
 
-#### Version 19.33-beta2 (May 02, 2019)
+#### Version 19.33-beta3 (May 02, 2019)
 * Add to let user use regex as filename mask in File Manager when searching [@066e11b](https://github.com/authentic-theme/authentic-theme/commit/066e11b54a17c30d6d85b7648ce32b09644e8bf2)
 * Add to use regex in find results in File Manager when searching/replacing [@ee71b71](https://github.com/authentic-theme/authentic-theme/commit/ee71b71d1413bd25794fdd3726b29484250b318a)
+* Add drag and drop with progress, for file uploads in Upload and Download module [#1334](https://github.com/authentic-theme/authentic-theme/issues/1334)
 * Fix occasional broken initial theme reload state
 
 #### Version 19.32 (April 28, 2019)
