@@ -331,7 +331,7 @@ sub print_sysinfo_link
 {
     my ($user) = @_;
     if (dashboard_switch() ne '1') {
-        print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
+        print '<li data-linked data-after><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
           ($theme_config{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
           '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') .
           '"></i> <span>' . $theme_text{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
@@ -605,7 +605,7 @@ sub print_sysstat_link
             $link = 'server-manager';
         }
         if ($link) {
-            print '<li data-linked><a href="' . $gconfig{'webprefix'} .
+            print '<li data-linked data-after><a href="' . $gconfig{'webprefix'} .
               '/' . $link . '/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>' .
               $theme_text{'left_statistics'} . '</span></a></li>' . "\n";
         }
@@ -624,7 +624,7 @@ sub print_netdata_link
         }
 
         if ($link) {
-            print '<li class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
+            print '<li data-after class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
               '" class="navigation_external_link leftmenu_netdata_link"><i class="fa fa-fw fa-line-chart"></i> <span>' .
               $theme_text{'left_netdata'} . '</span></a></li>' . "\n";
         }
@@ -677,7 +677,7 @@ sub print_left_custom_links
                 if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' . $type . '><a href="' . $e->{"link"} . '" class="' . $type_class .
+                    print '<li ' . $type . ' data-after><a href="' . $e->{"link"} . '" class="' . $type_class .
                       '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
                 }
             }
