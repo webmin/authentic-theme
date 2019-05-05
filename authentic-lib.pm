@@ -2338,7 +2338,7 @@ sub settings_get_select_document_title
 sub settings_get_select_default_module
 {
     my ($name, $value) = @_;
-    my @modules = get_all_module_infos();
+    my @modules = get_available_module_infos();
     my $select = ui_select($name, $value,
                            [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
                               sort {$a->{'desc'} cmp $b->{'desc'}} @modules
