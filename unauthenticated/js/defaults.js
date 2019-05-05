@@ -29,6 +29,7 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_contrast_mode = false,
     settings_enable_container_offset = true,
+    settings_usermin_default_module = 'sysinfo.cgi',
     settings_document_title = 1,
     settings_right_page_hide_persistent_vscroll = true,
 

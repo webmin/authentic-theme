@@ -331,7 +331,8 @@ sub print_sysinfo_link
 {
     my ($user) = @_;
     if (dashboard_switch() ne '1') {
-        print '<li data-linked data-after><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
+        print '<li data-linked data-after><a href="' .
+          $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
           ($theme_config{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
           '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') .
           '"></i> <span>' . $theme_text{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
@@ -2334,6 +2335,17 @@ sub settings_get_select_document_title
 
 }
 
+sub settings_get_select_default_module
+{
+    my ($name, $value) = @_;
+    my @modules = get_all_module_infos();
+    my $select = ui_select($name, $value,
+                           [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
+                              sort {$a->{'desc'} cmp $b->{'desc'}} @modules
+                           ]);
+    return $select;
+}
+
 sub theme_settings
 {
     my ($t, $k, $v) = @_;
@@ -2868,13 +2880,7 @@ sub theme_settings
               '
                 </select>';
         } elsif ($k eq 'settings_webmin_default_module') {
-            my @modules = get_all_module_infos();
-            my $select = ui_select("goto_webmin_default_module",
-                                   $gconfig{'gotomodule'},
-                                   [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
-                                      sort {$a->{'desc'} cmp $b->{'desc'}} @modules
-                                   ]);
-            $v = $select;
+            $v = settings_get_select_default_module('goto_webmin_default_module', $gconfig{'gotomodule'});
         } elsif ($k eq 'settings_right_default_tab_usermin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'

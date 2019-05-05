@@ -68,6 +68,7 @@ sub settings_default
     $c{'settings_contrast_level_navigation'}          = '1';
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
+    $c{'settings_usermin_default_module'}             = 'sysinfo.cgi';
     $c{'settings_document_title'}                     = '1';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_hide_top_loader'}                    = 'false';
