@@ -106,6 +106,7 @@ const mail = (function() {
                         html: true,
                         trigger: 'hover',
                         container: 'body',
+                        sanitize: false,
                         delay: {
                             show: 600,
                             hide: 30

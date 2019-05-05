@@ -331,7 +331,8 @@ sub print_sysinfo_link
 {
     my ($user) = @_;
     if (dashboard_switch() ne '1') {
-        print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
+        print '<li data-linked data-after><a href="' .
+          $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
           ($theme_config{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
           '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') .
           '"></i> <span>' . $theme_text{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
@@ -605,7 +606,7 @@ sub print_sysstat_link
             $link = 'server-manager';
         }
         if ($link) {
-            print '<li data-linked><a href="' . $gconfig{'webprefix'} .
+            print '<li data-linked data-after><a href="' . $gconfig{'webprefix'} .
               '/' . $link . '/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>' .
               $theme_text{'left_statistics'} . '</span></a></li>' . "\n";
         }
@@ -624,7 +625,7 @@ sub print_netdata_link
         }
 
         if ($link) {
-            print '<li class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
+            print '<li data-after class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
               '" class="navigation_external_link leftmenu_netdata_link"><i class="fa fa-fw fa-line-chart"></i> <span>' .
               $theme_text{'left_netdata'} . '</span></a></li>' . "\n";
         }
@@ -677,7 +678,7 @@ sub print_left_custom_links
                 if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' . $type . '><a href="' . $e->{"link"} . '" class="' . $type_class .
+                    print '<li ' . $type . ' data-after><a href="' . $e->{"link"} . '" class="' . $type_class .
                       '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
                 }
             }
@@ -2334,6 +2335,17 @@ sub settings_get_select_document_title
 
 }
 
+sub settings_get_select_default_module
+{
+    my ($name, $value) = @_;
+    my @modules = get_available_module_infos();
+    my $select = ui_select($name, $value,
+                           [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
+                              sort {$a->{'desc'} cmp $b->{'desc'}} @modules
+                           ]);
+    return $select;
+}
+
 sub theme_settings
 {
     my ($t, $k, $v) = @_;
@@ -2868,13 +2880,7 @@ sub theme_settings
               '
                 </select>';
         } elsif ($k eq 'settings_webmin_default_module') {
-            my @modules = get_all_module_infos();
-            my $select = ui_select("goto_webmin_default_module",
-                                   $gconfig{'gotomodule'},
-                                   [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
-                                      sort {$a->{'desc'} cmp $b->{'desc'}} @modules
-                                   ]);
-            $v = $select;
+            $v = settings_get_select_default_module('goto_webmin_default_module', $gconfig{'gotomodule'});
         } elsif ($k eq 'settings_right_default_tab_usermin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
@@ -2958,8 +2964,9 @@ sub theme_settings
         } elsif ($k eq 'settings_document_title') {
             $v = settings_get_select_document_title($v, $k);
         }
-        my $description = $theme_text{ $k . '_description' };
-        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click hover' : 'hover';
+        my $description     = $theme_text{ $k . '_description' };
+        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click' : 'hover';
+        my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
         return '
             <tr class="atshover">
                 <td class="col_label atscontent"><b>'
@@ -2967,12 +2974,12 @@ sub theme_settings
           .
           (
             $description && (
-                $k =~ /level_navigation|leftmenu_width/ ?
-                '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-trigger="'
-                . $popover_trigger .
-                '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>' .
-                ($k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
+                      $k =~ /level_navigation|leftmenu_width/ ?
+                      '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                      '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
+                      $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
+                      '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>' .
+                      ($k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
             )
           ) .
           '</td>

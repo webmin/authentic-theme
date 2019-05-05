@@ -23,6 +23,7 @@ const stats = {
     extend: {
       prefix: v___location_prefix,
       error: connection_error,
+      prevent: theme_updating,
       state: () => {
         return v___theme_state_visible
       },
@@ -41,6 +42,11 @@ const stats = {
       this.stopped && (() => {
         this.stopped = 0;
         this.call = {};
+
+        // Disable stats upon theme update
+        if (this.extend.prevent()) {
+          return
+        }
 
         this.call = $.ajax({
           context: this,

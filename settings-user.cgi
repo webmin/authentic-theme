@@ -30,6 +30,10 @@ print ui_table_start(
 
 print ui_table_row(undef, '<b data-first-child>' . $theme_text{'settings_global_options_title'} . '</b>', 2);
 
+print ui_table_row($theme_text{'settings_usermin_default_module'},
+                   settings_get_select_default_module('settings_usermin_default_module',
+                                                      $theme_config{'settings_usermin_default_module'}
+                   ));
 print ui_table_row($theme_text{'settings_document_title'},
                    settings_get_select_document_title(
                                                       ($theme_config{'settings_document_title'} ne 'undefined' ?
