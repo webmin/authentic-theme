@@ -326,7 +326,7 @@ sub print_error
     my ($err_msg) = @_;
     my %err;
     $err{'error'} = $err_msg;
-    print_json_local([\%err]);
+    print_json([\%err]);
     exit;
 }
 
