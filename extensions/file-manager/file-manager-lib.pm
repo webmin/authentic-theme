@@ -15,6 +15,7 @@ use File::MimeInfo;
 use File::Find;
 use File::Grep qw( fdo );
 use POSIX;
+use JSON::PP;
 
 our (%access,           %in,            %text,       @remote_user_info, $base_remote_user,
      $config_directory, $current_theme, %userconfig, @allowed_paths,    $base,
@@ -309,12 +310,23 @@ sub fatal_errors
     print "</ul>";
 }
 
+sub convert_to_json_local
+{
+    return JSON::PP->new->utf8->encode((@_ ? @_ : {}));
+}
+
+sub print_json_local
+{
+    print "Content-type: application/json;\n\n";
+    print convert_to_json_local(@_);
+}
+
 sub print_error
 {
     my ($err_msg) = @_;
     my %err;
     $err{'error'} = $err_msg;
-    print_json([\%err]);
+    print_json_local([\%err]);
     exit;
 }
 
@@ -774,7 +786,7 @@ sub print_content
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
     $list_data{'flush_reset'}          = $in{'flush_reset'} ? 1 : 0;
 
-    print_json([\%list_data]);
+    print_json_local([\%list_data]);
 }
 
 sub get_tree
