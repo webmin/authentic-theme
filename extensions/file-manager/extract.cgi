@@ -60,7 +60,7 @@ foreach my $name (@entries_list) {
     if ($archive_type =~ /x-tar/ || $archive_type =~ /x-compressed-tar/) {
         $status = system("tar xpf " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
     } elsif ($archive_type =~ /x-bzip/) {
-        system("tar xvjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
+        system("tar xjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
     } elsif ($archive_type =~ /\/gzip/) {
         my $gz_cmd = has_command('gunzip') || has_command('gzip');
         system("$gz_cmd -d -f -k " . quotemeta("$cwd/$name"));
