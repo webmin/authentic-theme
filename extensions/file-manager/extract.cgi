@@ -78,7 +78,7 @@ foreach my $name (@entries_list) {
         }
         my $unzip_out = `unzip --help`;
         my $uu = ($unzip_out =~ /-UU/ ? '-UU' : undef);
-        $status = system("unzip $pparam $uu -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
+        $status = system("unzip $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
 
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
         if ($password) {
