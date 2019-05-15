@@ -17,9 +17,9 @@ use File::Grep qw( fdo );
 use POSIX;
 use JSON::PP;
 
-our (%access,           %in,            %text,       @remote_user_info, $base_remote_user,
-     $config_directory, $current_theme, %userconfig, @allowed_paths,    $base,
-     $cwd,              $path,          $remote_user);
+our (%access,           %gconfig,          %in,            %text,       @remote_user_info,
+     $base_remote_user, $config_directory, $current_theme, %userconfig, @allowed_paths,
+     $base,             $cwd,              $path,          $remote_user);
 our $checked_path;
 
 our %request_uri = get_request_uri();
@@ -310,9 +310,15 @@ sub fatal_errors
     print "</ul>";
 }
 
+sub utf8_decode
+{
+    my ($text) = @_;
+    return decode('UTF-8', $text, Encode::FB_DEFAULT);
+}
+
 sub convert_to_json_local
 {
-    return JSON::PP->new->utf8->encode((@_ ? @_ : {}));
+    return JSON::PP->new->encode((@_ ? @_ : {}));
 }
 
 sub print_json_local
@@ -621,7 +627,7 @@ sub print_content
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
         my $vlink = html_escape($link);
-        $vlink = decode('UTF-8', $vlink, Encode::FB_DEFAULT);
+        $vlink = utf8_decode($vlink);
         my $hlink = html_escape($vlink);
         $path = html_escape($path);
 
@@ -692,7 +698,7 @@ sub print_content
                      ($type_archive =~ /-x-bzip/ &&
                          has_command('bzip2')) ||
                      ($type_archive =~ /-gzip/ &&
-                         has_command('gzip')) ||
+                         (has_command('gzip') || has_command('gunzip'))) ||
                      ($type_archive =~ /-x-xz/ &&
                          has_command('xz'))
                     ) &&
@@ -775,10 +781,10 @@ sub print_content
 
     $list_data{'form'} .= &ui_hidden("path", $path), "\n";
     $list_data{'form'} .= '</form>';
-    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}     : undef);
-    $list_data{'error'}       = (length $in{'error'}       ? $in{'error'}       : undef);
-    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
-    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}      : undef);
+    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}            : undef);
+    $list_data{'error'}       = (length $in{'error'}       ? utf8_decode($in{'error'}) : undef);
+    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'}        : undef);
+    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}             : undef);
     $list_data{'page_requested'}       = $page;
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;
@@ -958,6 +964,11 @@ sub switch_to_user
     if (@uinfo) {
         switch_to_unix_user(\@uinfo);
     }
+}
+
+sub is_linux
+{
+    return $gconfig{'os_type'} =~ /-linux$/;
 }
 
 sub is_root
