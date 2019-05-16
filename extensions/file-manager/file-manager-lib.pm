@@ -773,7 +773,7 @@ sub print_content
               (
 "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
                   . $mod_time . "</span>");
-            push(@td_tags, 'class="col-time"');
+            push(@td_tags, 'data-order="' . ($list[$count - 1][10]) . '" class="col-time"');
         }
 
         $list_data{'rows'} .= &ui_checked_columns_row(\@row_data, \@td_tags, "name", $vlink);
