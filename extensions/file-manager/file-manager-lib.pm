@@ -181,7 +181,7 @@ sub get_pagination
         $start = "<div class=\"dataTables_paginate paging_simple_numbers spaginates$invisible\">";
         $start .= '<ul class="pagination">';
         $start .= "<li class='paginate_button previous$disabled'>";
-        $start .= '<a href="#"><i class="fa fa-fw fa-angle-left"></i></a>';
+        $start .= '<a><i class="fa fa-fw fa-angle-left"></i></a>';
         $start .= "</li>";
         return $start;
     };
@@ -200,7 +200,7 @@ sub get_pagination
     my $range = sub {
         my $range;
         $range = '<li class="paginate_button disabled">';
-        $range .= '<a href="#">…</a>';
+        $range .= '<a>...</a>';
         $range .= "</li>";
 
     };
@@ -209,7 +209,7 @@ sub get_pagination
         my $end;
         my $disabled = ($page == $pages ? " disabled" : undef);
         $end = "<li class='paginate_button next$disabled'>";
-        $end .= '<a href="#"><i class="fa fa-fw fa-angle-right"></i></a>';
+        $end .= '<a><i class="fa fa-fw fa-angle-right"></i></a>';
         $end .= "</li>";
         $end .= '</ul>';
         $end .= '</div>';
@@ -593,8 +593,8 @@ sub print_content
     }
     $list_data{'total'} = "<div class='total'>"
       .
-      ( $query ? ($text{'filemanager_global_search_results'} . ": ") :
-          ($server_pagination ? ($text{'filemanager_global_paginated_results'} . ": ") : undef)
+      ( $query ? (trim($text{'filemanager_global_search_results'}) . ": ") :
+          ($server_pagination ? (trim($text{'filemanager_global_paginated_results'}) . ": ") : undef)
       ) .
       "" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
 
