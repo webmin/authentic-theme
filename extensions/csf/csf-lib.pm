@@ -21,6 +21,7 @@ my $csf_body     = "$csf_conf/$body";
 my $csf_footer   = "$csf_conf/$footer";
 my $csf_html_tag = "$csf_conf/$htmltag";
 my $csf_body_tag = "$csf_conf/$bodytag";
+my $csf_ui_patch = "$config_directory/$current_theme/csf.ui";
 
 sub csf_clear
 {
@@ -29,6 +30,7 @@ sub csf_clear
     unlink_file($csf_footer);
     unlink_file($csf_html_tag);
     unlink_file($csf_body_tag);
+    unlink_file($csf_ui_patch);
 }
 
 sub csf_strings
@@ -188,10 +190,10 @@ sub csf_mod
     my $csf_ui   = uc('style' . '_' . 'custom');
     my $csf_conf = ("$csf_conf/csf.conf");
 
-    if (-f $csf_conf && !-f "$config_directory/$current_theme/csf.ui-introduced") {
+    if (-f $csf_conf && !-f $csf_ui_patch) {
         (my $fc = read_file_contents($csf_conf)) =~ s/$csf_ui = "0"/$csf_ui = "1"/g;
         write_file_contents($csf_conf,                                            $fc);
-        write_file_contents("$config_directory/$current_theme/csf.ui-introduced", "\n");
+        write_file_contents($csf_ui_patch, "\n");
     }
 }
 

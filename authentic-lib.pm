@@ -3338,6 +3338,8 @@ sub get_xhr_request
             }
             @files;
             print convert_to_json(\@match);
+        } elsif ($in{'xhr-csf-unload'} eq '1') {
+            lib_csf_control('unload');
         }
 
         exit;
