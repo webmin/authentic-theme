@@ -570,9 +570,9 @@ sub print_content
         if ($end > $totals) {
             $end = $totals;
         }
-        $pagination_text =~ s/_START_/$start/ig;
-        $pagination_text =~ s/_END_/$end/ig;
-        $pagination_text =~ s/_TOTAL_/$totals/ig;
+        $pagination_text =~ s/_START_/@{[nice_number($start, ",")]}/ig;
+        $pagination_text =~ s/_END_/@{[nice_number($end, ",")]}/ig;
+        $pagination_text =~ s/_TOTAL_/@{[nice_number($totals, ",")]}/ig;
         $list_data{'pagination_text'} = $pagination_text;
     }
 
@@ -596,7 +596,15 @@ sub print_content
       ( $query ? (trim($text{'filemanager_global_search_results'}) . ": ") :
           ($server_pagination ? (trim($text{'filemanager_global_paginated_results'}) . ": ") : undef)
       ) .
-      "" . text(nice_number($info_total, ","), nice_number($info_files, ","), nice_number($info_folders, ","), nice_number($totals, ","), nice_number($pages, ",")) . "</div>";
+      ""
+      .
+      text(nice_number($info_total,   ","),
+           nice_number($info_files,   ","),
+           nice_number($info_folders, ","),
+           nice_number($totals,       ","),
+           nice_number($pages,        ",")
+      ) .
+      "</div>";
 
     # Render current directory entries
     $list_data{'form'} = &ui_form_start("", "post", undef, "id='list_form'");
