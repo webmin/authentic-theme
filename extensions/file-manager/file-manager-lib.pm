@@ -192,7 +192,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&regex=$regex&all_items=$all_items'>$i</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&regex=$regex&all_items=$all_items'>@{[nice_number($i, ',')]}</a>";
         $end .= "</li>";
         return $end;
     };
@@ -596,7 +596,7 @@ sub print_content
       ( $query ? (trim($text{'filemanager_global_search_results'}) . ": ") :
           ($server_pagination ? (trim($text{'filemanager_global_paginated_results'}) . ": ") : undef)
       ) .
-      "" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
+      "" . text(nice_number($info_total, ","), nice_number($info_files, ","), nice_number($info_folders, ","), nice_number($totals, ","), nice_number($pages, ",")) . "</div>";
 
     # Render current directory entries
     $list_data{'form'} = &ui_form_start("", "post", undef, "id='list_form'");
@@ -875,8 +875,9 @@ sub local_nice_size
 
 sub nice_number
 {
-    my ($number) = @_;
-    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    my ($number, $delimiter) = @_;
+    $delimiter = " " if (!$delimiter);
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
     return $number;
 }
 

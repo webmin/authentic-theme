@@ -58,8 +58,9 @@ sub theme_make_date_local
 
 sub nice_number
 {
-    my ($number) = @_;
-    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    my ($number, $delimiter) = @_;
+    $delimiter = " " if (!$delimiter);
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
     return $number;
 }
 
