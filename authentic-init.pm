@@ -154,7 +154,10 @@ sub embed_header
     embed_noscript();
     print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     embed_favicon();
-    print ' <title>', ($args[4] ? ucfirst(get_product_name()) : $args[0]), '</title>', "\n";
+    print ' <title>',
+      ($args[4] ?
+        (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
+        $args[0]), '</title>', "\n";
 
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
