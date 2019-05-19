@@ -53,7 +53,7 @@ sub csf_strings
         $csf_remote_version = theme_cached('version-csf-stable');
         if (!$csf_remote_version) {
             http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
-                          undef, undef, undef, undef, 5);
+                          undef, undef, undef, undef, 30);
             theme_cached('version-csf-stable', $csf_remote_version, $error);
         }
 

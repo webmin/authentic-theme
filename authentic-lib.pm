@@ -1946,7 +1946,7 @@ sub theme_remote_version
                               '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
                               \$error,                                                      undef,
                               1,                                                            undef,
-                              undef,                                                        5,
+                              undef,                                                        30,
                               undef,                                                        undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
                 theme_cached('version-theme-development', $remote_version, $error);
@@ -1959,13 +1959,13 @@ sub theme_remote_version
             }
             if (!$remote_version) {
                 http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
-                              \$remote_release, \$error, undef, 1, undef, undef, 5);
+                              \$remote_release, \$error, undef, 1, undef, undef, 30);
                 $remote_release =~ /tag_name":"(.*?)"/;
                 http_download('api.github.com',                                                            '443',
                               '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
                               \$error,                                                                     undef,
                               1,                                                                           undef,
-                              undef,                                                                       5,
+                              undef,                                                                       30,
                               undef,                                                                       undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
                 theme_cached('version-theme-stable', $remote_version, $error);
