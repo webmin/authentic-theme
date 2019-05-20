@@ -68,13 +68,15 @@ sub settings_default
     $c{'settings_contrast_level_navigation'}          = '1';
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
+    $c{'settings_usermin_default_module'}             = 'sysinfo.cgi';
+    $c{'settings_document_title'}                     = '1';
     $c{'settings_right_page_hide_persistent_vscroll'} = 'true';
     $c{'settings_hide_top_loader'}                    = 'false';
-    $c{'settings_animation_left'}                     = 'true';
-    $c{'settings_animation_tabs'}                     = 'true';
     $c{'settings_collapse_navigation_link'}           = 'true';
     $c{'settings_sysinfo_link_mini'}                  = 'false';
     $c{'settings_show_night_mode_link'}               = 'true';
+    $c{'settings_show_terminal_link'}                 = 'true';
+    $c{'settings_favorites'}                          = 'true';
     $c{'settings_theme_options_button'}               = 'true';
     $c{'settings_leftmenu_button_refresh'}            = 'false';
     $c{'settings_hotkeys_active'}                     = 'true';
@@ -152,7 +154,10 @@ sub embed_header
     embed_noscript();
     print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     embed_favicon();
-    print ' <title>', $args[0], '</title>', "\n";
+    print ' <title>',
+      ($args[4] ?
+        (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
+        $args[0]), '</title>', "\n";
 
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
@@ -392,9 +397,9 @@ EOF
 
 sub embed_pm_scripts
 {
-    my $scripts = $config_directory . "/$current_theme/scripts.pm";
+    my $scripts = "$config_directory/$current_theme/scripts.pm";
     if (-r $scripts && -s $scripts) {
-        require $scripts;
+        require($scripts);
     }
 }
 
@@ -521,6 +526,36 @@ EOF
     print $noscript, "\n";
 }
 
+sub embed_port_shell
+{
+    if (!@_ &&
+        get_env('script_name') ne '/session_login.cgi' &&
+        get_env('script_name') ne '/pam_login.cgi'     &&
+        get_env('script_name') ne '/401.cgi'           &&
+        get_env('script_name') ne '/403.cgi'           &&
+        get_env('script_name') ne '/404.cgi')
+    {
+        my $prefix;
+        my $hostname = ($prefix) = split(/\./, get_display_hostname());
+        my $host = ($prefix ? $prefix : get_display_hostname());
+        print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
+  <div class="-shell-port-container">
+    <div data-shell-config><i aria-label="' .
+          $theme_text{'theme_xhred_global_configuration'} . '" class="fa fa-lg fa-cogs"></i></div>
+    <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
+    <div data-output="true"><pre data-xconsole></pre></div>
+    <div class="-shell-port-cmd">
+      <span class="-shell-port-prompt"><span class="-shell-port-type">['
+          . $remote_user .
+          '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
+          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
+'</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
+    </div>
+  </div>
+</div>', "\n";
+    }
+}
+
 sub embed_footer
 {
     my (@args) = @_;
@@ -573,7 +608,7 @@ sub theme_text
 sub init_vars
 {
     if (theme_debug_mode()) {
-        do "$root_directory/$current_theme/.debug.pm";
+        do("$root_directory/$current_theme/.debug.pm");
     }
 
     my %tconfig_local = settings("$config_directory/$current_theme/config");
@@ -676,6 +711,12 @@ sub get_usermin_data
         }
 
         $has_usermin_version = read_file_lines($has_usermin_conf_dir . '/version', 1)->[0];
+        if (length($has_usermin_version) > 6) {
+            $has_usermin_version =
+              substr($has_usermin_version, 0, 5) . "." .
+              substr($has_usermin_version, 5, 5 - 1) . "." .
+              substr($has_usermin_version, 5 * 2 - 1);
+        }
         return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
     }
 }
@@ -782,7 +823,7 @@ sub get_initial_wizard
     # Going to Post-Installation Wizard
     if ($get_user_level eq '0') {
         our %virtualmin_config = foreign_config('virtual-server');
-        if ($virtualmin_config{'wizard_run'} ne '1') {
+        if (%virtualmin_config && $virtualmin_config{'wizard_run'} ne '1') {
             return 1;
         }
     }
@@ -929,7 +970,12 @@ sub get_button_style
         {
             $class = "warning ";
         }
-        $icon = "refresh-fi fa-1_25x";
+
+        if (string_contains($keys, "view_refresh")) {
+            $icon = "refresh-fi fa-1_25x";
+        } else {
+            $icon = "refresh-mdi fa-1_25x";
+        }
     } elsif (string_contains($keys, "search") ||
              string_contains($keys, "index_broad")    ||
              string_contains($keys, "scripts_findok") ||
@@ -1145,7 +1191,7 @@ sub theme_version
     }
 
     if ($string) {
-        $version =~ s/beta[\d+]|\.|-//ig;
+        $version =~ s/(alpha|beta|RC)[\d+]|\.|-//ig;
         if (theme_debug_mode() || $development) {
             $version .= (time() . $mversion);
         } else {
@@ -1181,8 +1227,8 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() .
-      '" data-title-initial="' . $args[0] . '" data-debug="' . theme_debug_mode() . '" data-session="' .
+    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
+      format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') . ' data-high-contrast="' .
@@ -1272,7 +1318,7 @@ sub get_version_full
     my ($version, $beta) = @_;
     ($version) = $version =~ /([0-9]+[.][0-9]+(?:.\d+|-alpha[\d]+|-beta[\d]+|-RC[\d]+|))/;
 
-    if ($version =~ /beta/ && $beta) {
+    if ($version =~ /alpha|beta|RC/ && $beta) {
         return undef;
     }
 
@@ -1308,6 +1354,8 @@ sub get_theme_temp_data
 {
     my ($key, $keep) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $data;
+    my %theme_temp_data;
 
     $salt =~ tr/A-Za-z0-9//cd;
 
@@ -1318,23 +1366,25 @@ sub get_theme_temp_data
         my (%theme_goto_temp);
         my $tmp_dir = tempname_dir();
         my @gotos;
-        opendir(my $dir, $tmp_dir) || die "Can't open temporary directory $tmp_dir: $!";
-        @gotos = grep {/^\.theme/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
+        opendir(my $dir, $tmp_dir);
+        @gotos = grep {/^\.theme/ && $_ =~ /$salt/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
         closedir $dir;
         foreach (@gotos) {
-            read_file("$tmp_dir/$_", \%theme_goto_temp);
-            my $url_hex = substr(unpack("H*", $theme_goto_temp{'goto'}), -180);
-            $tmp_file =
-              tempname('.theme_' . $salt . '_' . $url_hex . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+            $tmp_file = "$tmp_dir/$_";
+            if (-r $tmp_file) {
+                read_file($tmp_file, \%theme_temp_data);
+                last;
+            }
         }
+    } else {
+        read_file($tmp_file, \%theme_temp_data);
     }
 
-    read_file($tmp_file, \%theme_temp_data);
-    if (!$keep) {
+    if (!$keep && -r $tmp_file) {
         unlink_file($tmp_file);
     }
 
-    my $data = $theme_temp_data{$key};
+    $data = $theme_temp_data{$key};
     $data =~ s/[?|&]$xnav//g;
     $data =~ s/[?|&]randomized=[\d]+//g;
     $data =~ s/.cgi&/.cgi?/g;
@@ -1473,6 +1523,21 @@ sub error_40x_handler
             $miniserv{'error_handler_404'} = "404.cgi";
             put_miniserv_config(\%miniserv);
             reload_miniserv();
+        }
+    }
+}
+
+sub lib_csf_control
+{
+    my ($action) = @_;
+    if (foreign_check("csf") && foreign_available("csf") && $current_theme =~ /authentic-theme/) {
+        require("$root_directory/$current_theme/extensions/csf/csf-lib.pm");
+        if ($action eq 'load') {
+            csf_mod();
+        } elsif ($action eq 'unload') {
+            csf_clear();
+        } elsif ($action eq 'strings') {
+            return csf_strings();
         }
     }
 }

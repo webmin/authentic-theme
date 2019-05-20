@@ -39,7 +39,7 @@ body_webmin=Wersja Webmina
 left_favorites=Favorites
 left_favorites_no=There were no favorites added yet...
 left_feedback=Wyślij opinię
-left_home=Informacje o systemie
+theme_xhred_global_sys_info=Informacje o systemie
 left_others=Inne
 left_refresh_modules=Odśwież moduły
 left_search=Szukaj
@@ -142,8 +142,6 @@ settings_hotkey_custom_9=Custom link <code>9</code>
 
 settings_navigation_color=Navigation menu color palette
 settings_background_color=Content page color palette
-settings_animation_left=Enable animation in navigation menu
-settings_animation_tabs=Enable animation in content page
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_right_reload=Load default content page
@@ -211,7 +209,7 @@ theme_version=Authentic theme version
 
 
 # Version 17.40
-theme_global_error=Error
+theme_xhred_global_error=Error
 theme_global_warning=Warning
 theme_global_success=Success
 theme_global_info=Information
@@ -351,13 +349,13 @@ settings_switch_rdisplay_description=This option allows you to set different ord
 
 #17.63
 theme_xhred_filemanager_context_calculate_selected_size=Calculate selected size
-theme_xhred_filemanager_selected_entries=Selected: %value entries
+theme_xhred_filemanager_selected_entries=Selected: %value items
 theme_xhred_filemanager_manual_path=Enter path manually
 
 theme_xhred_datatable_semptytable=No data available in table
-theme_xhred_datatable_sinfo=Showing _START_ to _END_ of _TOTAL_ entries
-theme_xhred_datatable_sinfoempty=Showing 0 to 0 of 0 entries
-theme_xhred_datatable_slengthmenu=Show _MENU_ entries
+theme_xhred_datatable_sinfo=Showing _START_ to _END_ of _TOTAL_ items
+theme_xhred_datatable_sinfoempty=Showing 0 to 0 of 0 items
+theme_xhred_datatable_slengthmenu=Show _MENU_ items
 theme_xhred_datatable_sloadingrecords=Loading
 theme_xhred_datatable_sprocessing=Processing...
 theme_xhred_datatable_szerorecords=No matching records found
@@ -441,7 +439,7 @@ theme_xhred_database_db_selected_drop=Drop selected database
 theme_xhred_database_dbs_selected_drop=Drop selected databases
 theme_xhred_database_edit_but_not_saved=Table data has been edited but not saved.
 
-theme_xhred_global_no_such_command=It appears that <tt>%cmd</tt> executable is not installed or not in the path on your system.
+theme_xhred_global_no_such_command=It appears that <tt>$1</tt> executable is not installed or not in the path on your system.
 
 theme_xhred_global_notice=Notice
 
@@ -483,7 +481,7 @@ filemanager_global_info_total2=Total: $1 files and $2 directory
 filemanager_global_info_total3=Total: $1 file and $2 directories
 filemanager_global_info_total4=Total: $1 files and $2 directories
 
-theme_xhred_filemanager_selected_entry=Selected: %value entry
+theme_xhred_filemanager_selected_entry=Selected: %value item
 
 theme_xhred_filemanager_search_query=Query mask
 theme_xhred_filemanager_search_match=Find in results
@@ -792,8 +790,8 @@ theme_xhred_filemanager_sorting_desc=Descending
 theme_xhred_filemanager_sorting_by_name=Name
 theme_xhred_filemanager_sorting_by_type=Type
 theme_xhred_filemanager_sorting_by_size=Size
-theme_xhred_filemanager_sorting_by_ownership=Ownership
-theme_xhred_filemanager_sorting_by_permissions=Permissions
+theme_xhred_filemanager_sorting_by_ownership=Owner
+theme_xhred_filemanager_sorting_by_permissions=Mode
 theme_xhred_filemanager_sorting_by_attributes=Attributes
 theme_xhred_filemanager_sorting_by_selinux=Security context
 theme_xhred_filemanager_sorting_by_last_mod_time=Modified
@@ -1000,7 +998,7 @@ theme_xhred_global_configuration=Configuration
 body_used_cached_total=$1 total / $3 cached / $2 used
 
 
-#19.23
+#19.30
 theme_xhred_favorites_add=Add to favorites
 theme_xhred_favorites_remove=Remove from favorites
 theme_xhred_select_deselect=Select/deselect current item
@@ -1011,10 +1009,106 @@ theme_xhred_side_slider_toggle=Toggle side slider visibility
 right_pagination_first=First
 right_pagination_last=Last
 settings_leftmenu_custom_links=Extra entries
-settings_leftmenu_custom_links_description=You can have custom, extra links injected into navigation menu. It will require you to pass valid JSON object as a string.<br><br><strong>Example:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
 theme_xhred_file_editor=File Editor
 theme_xhred_mail_no_mail=No mail
 theme_xhred_mail_no_new_mail=No new mail
 theme_xhred_editor_set_syntax=Set syntax
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Operation aborted
+
+
+#19.32
+theme_xhred_connection_reboot=Rebooting
+theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
+settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
+left_favorites_edit=Edit Favorites
+left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
+theme_xhred_filemanager_records_for_server_pagination=Default number of items in directory to initiate server pagination
+
+filemanager_global_info_paginated_total1=$1 file and $2 directory of $3 items on $4 pages
+filemanager_global_info_paginated_total2=$1 files and $2 directory of $3 items on $4 pages
+filemanager_global_info_paginated_total3=$1 file and $2 directories of $3 items on $4 pages
+filemanager_global_info_paginated_total4=$1 files and $2 directories of $3 items on $4 pages
+theme_xhred_filemanager_search_follow_symlinks=Follow symlinks
+theme_xhred_filemanager_mass_select=Select all %1 items across %2 pages?
+theme_xhred_filemanager_mass_selected=All %1 items are selected in the current directory.
+theme_xhred_filemanager_mass_select_clear=Clear selection
+theme_xhred_filemanager_mass_selected_for_delete=Selected %1 items in %2 directory
+theme_xhred_filemanager_mass_selected_no_zip=Using <tt>zip</tt> command not supported when running against all items in directory
+filemanager_global_search_results=Search results
+filemanager_global_paginated_results=Paginated
+filemanager_global_access_change_time=Last access/change time
+filemanager_global_user_group_id=Numeric user/group
+theme_xhred_filemanager_global_size_in_bytes=Size in bytes
+theme_xhred_global_command_completed=Command completed
+theme_xhred_global_toggle_password_visibility=Toggle password visibility
+theme_xhred_login_passphrase=Passphrase
+theme_xhred_filemanager_archive_gpg_no_keys=No keys available
+filemanager_archive_gpg_error=GPG error
+filemanager_archive_move_to_archive_failed=Can't move files to archive due to concurrent errors
+theme_xhred_filemanager_archive_move_to=Move to archive
+theme_xhred_global_encrypt=Encrypt
+theme_xhred_filemanager_gpg_select_the_key=Select the key
+theme_xhred_filemanager_context_extract_encrypted=Extract options
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=Password or passphrase
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=Enter the password to decrypt compressed file(s). Enter your GPG key's passphrase if set.
+theme_xhred_global_decrypt=Decrypt
+filemanager_archive_password_required=Password required to decrypt archive
+filemanager_archive_password_wrong=Provided password is incorrect
+filemanager_archive_file_not_found=File doesn't exist
+filemanager_archive_gpg_private_error=No secret key available or key's passphrase is incorrect
+theme_xhred_filemanager_errors_extraction=The following errors occurred while extracting
+theme_xhred_filemanager_extract_option_delete_afterwards=Delete archive after successful extraction
+
+theme_xhred_login_passphrase_desc=Enter your GPG key's passphrase if set.
+theme_xhred_filemanager_encrypt_option_delete_afterwards=Delete file after successful encryption
+theme_xhred_filemanager_decrypt_option_delete_afterwards=Delete file after successful decryption
+theme_xhred_filemanager_encrypt_gpg_key=Using key
+theme_xhred_filemanager_errors_encrypt=The following errors occurred while encrypting
+theme_xhred_filemanager_errors_decrypt=The following errors occurred while decrypting
+theme_xhred_filemanager_crypt_encrypt=Files are being encrypted.
+theme_xhred_filemanager_crypt_decrypt=Files are being decrypted.
+theme_xhred_filemanager_crypt_encrypted=Encryption of selected files was successful.
+theme_xhred_filemanager_crypt_decrypted=Decryption of selected files was successful.
+theme_xhred_filemanager_batch_error=It also includes truncated results of %1 familiar errors.
+
+theme_xhred_global_preview_img=Preview image
+theme_xhred_global_preview_img_sel=Preview selected images
+theme_xhred_global_preview_img_all=Preview all images
+theme_xhred_filemanager_preview_images_building=The image gallery is being generated for preview.
+theme_xhred_filemanager_preview_images_deps_error1=It's necessary to have <code>ImageMagick</code> package installed on your system to have this feature working.
+theme_xhred_filemanager_preview_images_deps_error2=You can $1 to have it installed for you automatically.
+theme_xhred_filemanager_preview_images_error=The image gallery can not be generated.
+global_deps_installed=The package $1 was successfully installed.
+global_deps_error=The package $1 wasn't installed successfully. Please install it manually.
+global_deps_installing=The package $1 is being installed.
+theme_xhred_global_toggle_fullscreen=Toggle fullscreen
+theme_xhred_global_zoom_in_out=Zoom in/out
+theme_xhred_global_prev_arrow_left=Previous (arrow left)
+theme_xhred_global_next_arrow_right=Next (arrow right)
+
+settings_reset_cache_tooltip=Reset theme's cache from any page, by clicking <br><code>Ctrl + Alt + Meta + ⇧ + R</code><br> hotkey
+settings_update_theme_tooltip=Run theme update from any page. Update to the latest development version, by clicking <br><code>Ctrl + Alt + Meta + ⇧ + U</code><br> hotkey; to install latest stable, use same combo without Meta key
+theme_xhred_clear_cache_initiated=Clearing cache and reloading.
+settings_document_title=Document title format
+settings_document_title_option_3=Module
+settings_document_title_option_1=Module — $1 version (OS type)
+settings_document_title_option_2=$1 version (OS type) — Module
+settings_document_title_option_4=$1 version (OS type)
+settings_document_title_option_5=hostname - $1 version (OS type) — Module
+settings_document_title_option_6=username@hostname - $1 version (OS type) — Module
+settings_document_title_option_7=Module — $1
+settings_document_title_option_8=hostname — Module
+settings_document_title_option_9=username@hostname — Module
+theme_xhred_csf=ConfigServer Security & Firewall
+theme_xhred_global_version=version
+theme_xhred_notify_patching_module_style=Applying initial UI patch for $1 and reloading.
+theme_xhred_global_error_more_details_online=Note: Please read more about this error and how to solve it, in our %1wiki page%1 online.
+
+
+#19.33
+theme_xhred_filemanager_search_file_mask=File mask
+theme_xhred_filemanager_search_regex=Regular expression
+theme_xhred_upload_successful=<span>$1 files</span> have been successfully uploaded to $2 directory
+theme_xhred_upload_successful_single=<span>$1 file</span> has been successfully uploaded to $2 directory
+settings_usermin_default_module=Default module

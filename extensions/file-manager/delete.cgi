@@ -16,11 +16,13 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my %errors;
 
-foreach my $name (split(/\0/, $in{'name'})) {
+my @entries_list = get_entries_list();
+
+foreach my $name (@entries_list) {
     $name = simplify_path($name);
     if (!&unlink_file($cwd . '/' . $name)) {
         $errors{ urlize(html_escape($name)) } = "$text{'error_delete'}";
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors));
+redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

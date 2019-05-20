@@ -10,7 +10,6 @@ use lib (dirname(__FILE__) . "/lib");
 
 use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
-use Fcntl qw( :flock );
 use Time::Local;
 
 BEGIN {push(@INC, "..");}
@@ -34,7 +33,7 @@ require(dirname(__FILE__) . "/authentic-init.pm");
 sub authentic
 {
     init();
-    header($title);
+    header([$title]);
     content();
     footer();
 }
@@ -332,7 +331,8 @@ sub print_sysinfo_link
 {
     my ($user) = @_;
     if (dashboard_switch() ne '1') {
-        print '<li data-linked><a href="' . $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
+        print '<li data-linked data-after><a href="' .
+          $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
           ($theme_config{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
           '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') .
           '"></i> <span>' . $theme_text{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
@@ -400,11 +400,6 @@ sub get_extended_sysinfo
                       ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
                           'panel-default'
                       ) .
-                      ''
-                      .
-                      ( $theme_config{'settings_animation_tabs'} ne 'false' ? '' :
-                          ' disable-animations'
-                      ) .
                       '">
                         <div class="panel-heading" data-toggle="collapse" data-target="#' .
                       $info->{'id'} . '-' . $info->{'module'} .
@@ -464,8 +459,11 @@ sub get_extended_sysinfo
                       '">';
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
-                        $returned_sysinfo .=
-'<div class="table-responsive" style="width:99.8%"><table class="table table-striped table-hover"><tbody>';
+                        $returned_sysinfo .= '<div class="table-responsive" style="width:99.8%">';
+                    }
+
+                    if ($info->{'type'} ne 'html') {
+                        $returned_sysinfo .= '<table class="table table-striped table-hover"><tbody>';
                     }
 
                     if ($info->{'type'} eq 'table' &&
@@ -502,7 +500,11 @@ sub get_extended_sysinfo
                     }
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
-                        $returned_sysinfo .= '</tbody></table></div>';
+                        my $cltbody;
+                        if ($info->{'type'} ne 'html') {
+                            $cltbody = "</tbody></table>";
+                        }
+                        $returned_sysinfo .= "$cltbody</div>";
                     }
 
                     $returned_sysinfo .= '</div>
@@ -604,7 +606,7 @@ sub print_sysstat_link
             $link = 'server-manager';
         }
         if ($link) {
-            print '<li data-linked><a href="' . $gconfig{'webprefix'} .
+            print '<li data-linked data-after><a href="' . $gconfig{'webprefix'} .
               '/' . $link . '/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>' .
               $theme_text{'left_statistics'} . '</span></a></li>' . "\n";
         }
@@ -623,7 +625,7 @@ sub print_netdata_link
         }
 
         if ($link) {
-            print '<li class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
+            print '<li data-after class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
               '" class="navigation_external_link leftmenu_netdata_link"><i class="fa fa-fw fa-line-chart"></i> <span>' .
               $theme_text{'left_netdata'} . '</span></a></li>' . "\n";
         }
@@ -649,17 +651,17 @@ sub print_search
 sub add_webprefix
 {
     my ($link) = @_;
+    my $webprefix = $gconfig{'webprefix'};
 
     if (substr($link, -5) eq '&amp;') {
         $link = substr($link, 0, -5);
     }
 
-    if ($link !~ /^http/) {
-        $link = ($link !~ /^\Q$gconfig{'webprefix'}/ ? $gconfig{'webprefix'} . $link : $link);
-
-        if ($link !~ /^\//) {
+    if (!string_starts_with($link, "http") && !string_starts_with($link, "ftp") && !string_starts_with($link, "www")) {
+        if (!string_starts_with($link, "/")) {
             $link = "/" . $link;
         }
+        $link = (!string_starts_with($link, $webprefix) ? ($webprefix . $link) : $link);
     }
     return $link;
 }
@@ -667,17 +669,16 @@ sub add_webprefix
 sub print_left_custom_links
 {
     my $extra = $theme_config{'settings_leftmenu_custom_links'};
-
     if ($extra) {
         $extra = replace('\'', '"', un_urlize($extra));
         if ($extra && $extra =~ m/"extra":/) {
             my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
             my $extra_json = convert_from_json($extra);
             foreach my $e (@{ $extra_json->{'extra'} }) {
-                if (length($e->{"link"})) {
+                if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' . $type . '><a href="' . $e->{"link"} . '" class="' . $type_class .
+                    print '<li ' . $type . ' data-after><a href="' . $e->{"link"} . '" class="' . $type_class .
                       '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
                 }
             }
@@ -1215,8 +1216,8 @@ sub get_sysinfo_vars
 
         #Webmin version
         $webmin_version =
-          product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' .
-          $is_hidden_link . '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" title="' .
+          product_version_update(get_webmin_version(), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
+          '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
           '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
 
@@ -1236,13 +1237,13 @@ sub get_sysinfo_vars
                       . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                       .
                       ( ($vs_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_vlcheck'} . '" href=\'' .
                           $gconfig{'webprefix'} . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                      $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
+                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
                       '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
 
                 ));
@@ -1266,13 +1267,13 @@ sub get_sysinfo_vars
                       . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                       .
                       ( ($vm2_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" title="' .
+                          ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_slcheck'} . '" href=\'' .
                           $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                      $is_hidden_link . '" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
+                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
 '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
                 ));
         }
@@ -1288,23 +1289,27 @@ sub get_sysinfo_vars
             ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
             my $authentic_remote_version_local = $authentic_remote_version;
 
-            if ($incompatible && $authentic_remote_version_local !~ /beta/) {
+            if ($incompatible && $authentic_remote_version_local !~ /alpha|beta|RC/) {
                 $authentic_remote_version = $authentic_installed_version;
             }
 
             if (
                 $theme_config{'settings_sysinfo_theme_updates'} eq 'true' && (
-                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /beta/))
+                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /alpha|beta|RC/))
                     &&
                     (
-                        (($authentic_remote_version_local !~ /beta/ && $authentic_installed_version =~ /beta/) &&
-                         $authentic_remote_version_local ge substr($authentic_installed_version, 0, 5)
+                        (
+                         ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
+                          $authentic_installed_version =~ /alpha|beta|RC/
+                         ) &&
+                         lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
-                        $authentic_remote_version_local gt $authentic_installed_version)
+                        lc($authentic_remote_version_local) gt lc($authentic_installed_version))
 
                 ))
             {
-                my $authentic_remote_beta        = $authentic_remote_version_local =~ /beta/;
+                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
+                my $authentic_remote_alpha_beta  = $authentic_remote_version_local =~ /alpha|beta/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -1322,7 +1327,7 @@ sub get_sysinfo_vars
                   ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
                   ($global_prefix || $gconfig{'webprefix'}) . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
-                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_beta ? 'hidden' : 'btn-info') .
+                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                   . $theme_text{'theme_changelog'}
                   . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
@@ -1342,90 +1347,8 @@ sub get_sysinfo_vars
             $authentic_theme_version = get_theme_user_link();
         }
 
-        #ConfigServer Security & Firewall
-        if (&foreign_check("csf") && &foreign_available("csf")) {
-
-            # Define CSF installed version
-            my $error;
-            my $csf_update_required;
-            my $csf_installed_version = read_file_lines('/etc/csf/version.txt', 1);
-            $csf_installed_version = $csf_installed_version->[0];
-
-            # Define CSF actual version if allowed
-            if ($theme_config{'settings_sysinfo_csf_updates'} eq 'true' &&
-                $get_user_level eq '0' &&
-                $in =~ /xhr-/)
-            {
-                $csf_remote_version = theme_cached('version-csf-stable');
-                if (!$csf_remote_version) {
-                    http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
-                                  undef, undef, undef, undef, 5);
-                    theme_cached('version-csf-stable', $csf_remote_version, $error);
-                }
-
-                # Trim versions' number
-                $csf_installed_version =~ s/^\s+|\s+$//g;
-                $csf_remote_version =~ s/^\s+|\s+$//g;
-            } else {
-                $csf_remote_version = '0';
-            }
-
-            if ($csf_remote_version <= $csf_installed_version) {
-                $csf_update_required = '0';
-            } else {
-                $csf_update_required = '1';
-            }
-
-            $csf_title = $theme_text{'body_firewall'} . ' '
-              .
-              ( `pgrep lfd` ? '' :
-' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
-              );
-            $csf_data = (
-                '<a href=\'' .
-                  $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">ConfigServer Security & Firewall</a> ' .
-                  product_version_update($csf_installed_version, 'f') . ''
-
-                  . ($csf_update_required eq '1' ?
-                       '. ' . $theme_text{'theme_update_available'} . ' ' . $csf_remote_version . '&nbsp;&nbsp;&nbsp;' :
-                       '&nbsp;&nbsp;&nbsp;'
-                  ) .
-                  '
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_lfdstatus">
-                  <input type="hidden" name="action" value="lfdstatus">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_upgrade">
-                  <input type="hidden" name="action" value="upgrade">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_temporary_ip_entries">
-                  <input type="hidden" name="action" value="temp">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_search_system_log">
-                  <input type="hidden" name="action" value="loggrep">
-              </form>
-              <form action="/csf/index.cgi" method="post" class="hidden" id="csf_denyf">
-                  <input type="hidden" name="action" value="denyf">
-              </form>
-          '
-                  . (
-                    $csf_update_required eq '1' ?
-                      '<div class="btn-group">
-              <a class="btn btn-xxs btn-success csf csf-submit" data-id="csf_upgrade"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
-                      . $theme_text{'theme_update'} . '</a>
-              <a class="btn btn-xxs btn-info csf" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
-                      . $theme_text{'theme_changelog'} . '</a>
-              <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
-                      . $theme_text{'theme_download'} . '</a>
-          </div>'
-                    :
-                      '<div class="btn-group" data-no-update>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Search system logs" data-id="csf_search_system_log"><i class="fa fa-fw fa-filter"></i></a>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Temporary IP entries" data-id="csf_temporary_ip_entries"><i class="fa fa-fw fa-ban"></i></a>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-id="csf_denyf"><i class="fa fa-fw fa-trash-o"></i> Flush all blocks</a>
-            </div>'
-                  ) .
-                  '');
-        }
+        # Load ConfigServer Security & Firewall lib if available
+        ($csf_title, $csf_data, $csf_remote_version) = lib_csf_control('strings');
 
         #System time
         my ($_time);
@@ -1623,180 +1546,6 @@ sub get_sysinfo_vars
 
 }
 
-sub csf_mod
-{
-    if (foreign_check("csf") &&
-        foreign_available("csf") &&
-        $current_theme =~ /authentic-theme/)
-    {
-        my $ext = (theme_debug_mode() ? 'src' : 'min');
-
-        my $csf_header_mod  = $config_directory . "/$current_theme/csf.header";
-        my $csf_body_mod    = $config_directory . "/$current_theme/csf.body";
-        my $csf_footer_mod  = $config_directory . "/$current_theme/csf.footer";
-        my $csf_htmltag_mod = $config_directory . "/$current_theme/csf.htmltag";
-        my $csf_bodytag_mod = $config_directory . "/$current_theme/csf.bodytag";
-
-        open(my $fh, '>', $csf_header_mod) or die $!;
-
-        print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' . (theme_version(1)) .
-          '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
-        print $fh '<link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        print $fh '<link href="' . $gconfig{'webprefix'} .
-          '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-
-        if (!$theme_config{'settings_font_family'}) {
-            print $fh '<link href="' . $gconfig{'webprefix'} .
-              '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        } elsif ($theme_config{'settings_font_family'} != '1') {
-            print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' .
-              $theme_config{'settings_font_family'} . '.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        }
-
-        print $fh '<script src="' .
-          $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
-
-        print $fh '<link href="' .
-          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-        print $fh '<script src="' .
-          $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . theme_version(1) . '"></script>' . "\n";
-
-        close $fh;
-
-        open(my $fh2, '>', $csf_body_mod) or die $!;
-        print $fh2 '<div class="container-fluid col-lg-10 col-lg-offset-1 csf-container" data-dcontainer="1">' . "\n";
-        close $fh2;
-
-        open(my $fh3, '>', $csf_footer_mod) or die $!;
-        print $fh3 '</div><script>!$.support.spa && csf_init()</script>' . "\n";
-        close $fh3;
-
-        open(my $fh4, '>', $csf_htmltag_mod) or die $!;
-        print $fh4 ' '
-          .
-          replace("\"", "'",
-                  header_html_data('csf', '1',
-                                   ("ConfigServer Security & Firewall — " . get_html_framed_title(), 0, 0, '1')
-                  )
-          ) .
-          '';
-        close $fh4;
-
-        open(my $fh5, '>', $csf_bodytag_mod) or die $!;
-        print $fh5 ' ' . replace("\"", "'", header_body_data('csf')) . '';
-        close $fh5;
-
-        my $csf_etc      = "/etc/csf";
-        my $csf_prefix   = "csf.";
-        my $csf_header   = $csf_etc . "/" . $csf_prefix . "header";
-        my $csf_body     = $csf_etc . "/" . $csf_prefix . "body";
-        my $csf_footer   = $csf_etc . "/" . $csf_prefix . "footer";
-        my $csf_html_tag = $csf_etc . "/" . $csf_prefix . "htmltag";
-        my $csf_body_tag = $csf_etc . "/" . $csf_prefix . "bodytag";
-        if (-e $csf_etc && -d $csf_etc) {
-            copy_source_dest($csf_header_mod, $csf_etc);
-
-            copy_source_dest($csf_body_mod, $csf_etc);
-
-            copy_source_dest($csf_footer_mod, $csf_etc);
-
-            copy_source_dest($csf_htmltag_mod, $csf_etc);
-
-            copy_source_dest($csf_bodytag_mod, $csf_etc);
-
-        }
-        my $csf_ui   = uc('style' . '_' . 'custom');
-        my $csf_conf = ($csf_etc . "/" . $csf_prefix . "conf");
-
-        if (-f $csf_conf &&
-            !-f $config_directory . "/$current_theme/" . $csf_prefix . "ui-introduced")
-        {
-
-            (my $fc = read_file_contents($csf_conf)) =~ s/$csf_ui = "0"/$csf_ui = "1"/g;
-
-            write_file_contents($csf_conf,                                                              $fc);
-            write_file_contents($config_directory . "/$current_theme/" . $csf_prefix . "ui-introduced", "\n");
-        }
-
-    }
-}
-
-sub csf_temporary_list
-{
-    if (foreign_check("csf") && foreign_available("csf")) {
-        my $let = "/etc/csf/csf.allow";
-        my $ban = "/etc/csf/csf.deny";
-        my $cnf = "/etc/csf/csf.conf";
-        my $tmp = "/var/lib/csf/csf.tempban";
-        my $log = "/var/lib/csf/stats/iptables_log";
-
-        my @p;
-        my @t;
-        my @l;
-
-        if (-e $cnf && !-z $cnf) {
-            my @q;
-            my $x = read_file_contents($let) . read_file_contents($ban);
-            my $z = read_file_contents($cnf);
-            (@p) = $z =~
-/(?:TCP_IN|UDP_IN|TCP6_IN|UDP6_IN|PORTS_TCP|PORTS_UDP|CT_PORTS|CLUSTER_PORT|PORTS_webmin|PORTS_sshd).*=\s*"([\d+,]+)"/g;
-            (@q) = $x =~ /^(?:(?!#).).*\|(?:d|s)=([\d+,]+)\|/gm;
-            if (@p || @q) {
-                @p = array_unique(split(",", join(",", (@p, @q))));
-            }
-
-        }
-
-        if (-e $tmp && !-z $tmp) {
-            open(my $IN, "<", $tmp) or die $!;
-            @t = <$IN>;
-            chomp @t;
-            close($IN);
-        }
-
-        if (@t && -e $log) {
-            open(my $IN, "<", $log) or die $!;
-            flock($IN, LOCK_SH);
-            my @i = <$IN>;
-            close($IN);
-            chomp @i;
-            @i = reverse @i;
-            my $c = 0;
-
-            my $s = scalar @i;
-            my @g;
-
-            foreach my $h (reverse @t) {
-                if ($h) {
-                    my ($a, $b, $d, $e, $f, $g) = split(/\|/, $h);
-                    my ($ll, $dl) = (undef, '|');
-                    for (my $x = 0; $x < $s; $x++) {
-                        $c++;
-                        my $u = $i[$x];
-                        my ($o, $l) = split(/\|/, $u);
-                        my ($r, $w, $k);
-                        if ($l =~ /SRC=(\S+)/) {$r = $1}
-                        if ($l =~ /DST=(\S+)/) {$w = $1}
-                        if ($l =~ /DPT=(\d+)/) {$k = $1}
-                        if (($r eq $b && array_contains(\@p, $k)) || $d =~ /\d/g || $g =~ /failed|\(CT\)/gi) {
-                            $ll = ($a . $dl . $b . $dl . $w . $dl . $k . $dl . $d . $dl . $e . $dl . $f . $dl . $g);
-                            if (!array_contains(\@g, $g) && !array_contains(\@l, $ll)) {
-                                push @g, $g;
-                                push @l, $ll;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        convert_to_json(\@l);
-    } else {
-        convert_to_json();
-    }
-}
-
 sub get_current_user_config
 {
     our ($___user) =
@@ -1845,8 +1594,15 @@ sub print_table_row_responsive
 sub print_favorites
 {
 
-    my $f = &read_file_contents($config_directory . "/$current_theme/favorites.json");
+    # Support for previous installs
+    my $ff = $config_directory . "/$current_theme/favorites.json";
+    if (-r $ff) {
+        my $ffn = $ff;
+        $ffn =~ s/\.json/-$remote_user.json/;
+        rename_file($ff, $ffn);
+    }
 
+    my $f = &read_file_contents($config_directory . "/$current_theme/favorites-$remote_user.json");
     print '<div id="favorites-menu">
     <div class="favorites-menu-outer">
       <nav class="favorites-menu">
@@ -1856,8 +1612,9 @@ sub print_favorites
       . $theme_text{'left_favorites'} .
 '<sup style="position: absolute; margin: 25px 0 0 -10px;" class="hidden">&nbsp;&nbsp;<small class="text-white"> <a aria-label="'
       . $theme_text{'theme_xhred_filemanager_context_edit'}
-      . '" href="' . $gconfig{'webprefix'} . '/settings-editor_read.cgi?file=' .
-      $config_directory . '/' . $current_theme . '/favorites.json" class="fa fa-pencil-square-o' .
+      . '" href="' .
+      $gconfig{'webprefix'} . '/settings-editor_' . (foreign_available('webmin') ? undef : 'favorites_') . 'read.cgi?file=' .
+      $config_directory . '/' . $current_theme . '/favorites-' . $remote_user . '.json" class="fa fa-pencil-square-o' .
       ($f =~ m/"favorites":/ ? '' : ' hidden') . '" style="display: inline; font-size: 1em;"></a></small></sup></h1>
               </li>';
 
@@ -1916,11 +1673,7 @@ sub print_panel
     my ($opened, $id, $title, $data) = @_;
 
     print '
-              <div class="panel panel-default'
-      . ($theme_config{'settings_animation_tabs'} ne 'false' ? '' :
-           ' disable-animations'
-      ) .
-      '">
+              <div class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
@@ -2070,18 +1823,17 @@ sub error_40x
           'gainsboro'
       ) .
       '" class="error_40x">', "\n";
-    embed_login_head(1);
-    print '<body class="session_login error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
+    embed_login_head(!$main::session_id);
+    print '<body class="error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
     print '<meta http-equiv="refresh" content="' . $block_time . '; url=' .
       ($gconfig{'webprefix'} ? $gconfig{'webprefix'} : '/') . '">';
     embed_overlay_prebody();
     print '<div class="container error_40x" data-dcontainer="1">' . "\n";
 
     if (defined($in{'code'})) {
-        print "<h3>",, "</h3><p></p>\n";
-        print '<div class="alert alert-danger">' . "\n";
+        print '<div class="alert alert-danger error_40x">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
-          $in{'code'} . '</strong><br /><span>' . $in{'message'} . "</span>\n";
+          $in{'code'} . '</strong><br><span>' . $in{'message'} . "</span>\n";
         print '</div>' . "\n";
     }
     &footer();
@@ -2194,7 +1946,7 @@ sub theme_remote_version
                               '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
                               \$error,                                                      undef,
                               1,                                                            undef,
-                              undef,                                                        5,
+                              undef,                                                        30,
                               undef,                                                        undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
                 theme_cached('version-theme-development', $remote_version, $error);
@@ -2207,13 +1959,13 @@ sub theme_remote_version
             }
             if (!$remote_version) {
                 http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
-                              \$remote_release, \$error, undef, 1, undef, undef, 5);
+                              \$remote_release, \$error, undef, 1, undef, undef, 30);
                 $remote_release =~ /tag_name":"(.*?)"/;
                 http_download('api.github.com',                                                            '443',
                               '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
                               \$error,                                                                     undef,
                               1,                                                                           undef,
-                              undef,                                                                       5,
+                              undef,                                                                       30,
                               undef,                                                                       undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
                 theme_cached('version-theme-stable', $remote_version, $error);
@@ -2297,6 +2049,26 @@ sub theme_var_dir
         chmod(0700, $theme_var_dir);
     }
     return $theme_var_dir;
+}
+
+sub clear_theme_cache
+{
+    my ($root) = @_;
+    my $salt          = substr(encode_base64($main::session_id), 0, 16);
+    my $theme_var_dir = theme_var_dir();
+    my $tmp_dir       = tempname_dir();
+
+    # Clear cached files
+    if ($root) {
+        unlink_file("$theme_var_dir/version-theme-stable");
+        unlink_file("$theme_var_dir/version-theme-development");
+        unlink_file("$theme_var_dir/version-csf-stable");
+    }
+
+    # Clear session specific temporary files
+    opendir(my $dir, $tmp_dir);
+    grep {unlink_file("$tmp_dir/$_") if (/^\.theme/ && $_ =~ /$salt/)} readdir($dir);
+    closedir $dir;
 }
 
 sub theme_config_dir_available
@@ -2404,11 +2176,12 @@ sub get_theme_user_link
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
     return '' . theme_version() .
-' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0);" class="btn btn-default btn-xxs'
-      . ($is_hidden . $is_hidden_link)
-      . '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
-      '" data-href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
-      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" title="' .
+' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
+      . $theme_text{'theme_update_notice'}
+      . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
+      '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
+      '" data-href="' .                                    (($global_prefix || $gconfig{'webprefix'}) . $link) .
+      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
       $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
 }
 
@@ -2527,6 +2300,52 @@ sub settings_get_select_editor_color
 
 }
 
+sub settings_get_select_document_title
+{
+    my ($v, $k) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+      <option value="3"'
+      . ($v eq '3' && ' selected') .
+      '>' . theme_text('settings_document_title_option_3', ucfirst(get_product_name())) . '</option>
+      <option value="7"'
+      . ($v eq '7' && ' selected') .
+      '>' . theme_text('settings_document_title_option_7', ucfirst(get_product_name())) . '</option>
+      <option value="1"'
+      . ($v eq '1' && ' selected') . '>' . theme_text('settings_document_title_option_1', ucfirst(get_product_name())) .
+      ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+      <option value="2"'
+      . ($v eq '2' && ' selected') .
+      '>' . theme_text('settings_document_title_option_2', ucfirst(get_product_name())) . '</option>
+      <option value="4"'
+      . ($v eq '4' && ' selected') .
+      '>' . theme_text('settings_document_title_option_4', ucfirst(get_product_name())) . '</option>
+      <option value="5"'
+      . ($v eq '5' && ' selected') .
+      '>' . theme_text('settings_document_title_option_5', ucfirst(get_product_name())) . '</option>
+      <option value="8"'
+      . ($v eq '8' && ' selected') .
+      '>' . theme_text('settings_document_title_option_8', ucfirst(get_product_name())) . '</option>
+      <option value="9"'
+      . ($v eq '9' && ' selected') .
+      '>' . theme_text('settings_document_title_option_9', ucfirst(get_product_name())) . '</option>
+      <option value="6"'
+      . ($v eq '6' && ' selected') .
+      '>' . theme_text('settings_document_title_option_6', ucfirst(get_product_name())) . '</option>
+      </select>';
+
+}
+
+sub settings_get_select_default_module
+{
+    my ($name, $value) = @_;
+    my @modules = get_available_module_infos();
+    my $select = ui_select($name, $value,
+                           [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
+                              sort {$a->{'desc'} cmp $b->{'desc'}} @modules
+                           ]);
+    return $select;
+}
+
 sub theme_settings
 {
     my ($t, $k, $v) = @_;
@@ -2552,6 +2371,8 @@ sub theme_settings
 
             '__',
             theme_settings('fa', 'desktop', &theme_text('settings_global_options_title')),
+            'settings_document_title',
+            '1',
             'settings_font_family',
             '0',
             'settings_navigation_color',
@@ -2581,10 +2402,6 @@ sub theme_settings
             'settings_contrast_mode',
             'false',
             'settings_perform_content_scrolling',
-            'true',
-            'settings_animation_left',
-            'true',
-            'settings_animation_tabs',
             'true',
             'settings_right_reload',
             'true',
@@ -3014,6 +2831,8 @@ sub theme_settings
               . $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
             ';
 
+        } elsif ($k eq 'settings_leftmenu_custom_links') {
+            $v = ui_textarea($k, $v, 1);
         } elsif ($k eq 'settings_hotkey_custom_1' ||
                  $k eq 'settings_hotkey_custom_2'       ||
                  $k eq 'settings_hotkey_custom_3'       ||
@@ -3025,7 +2844,6 @@ sub theme_settings
                  $k eq 'settings_hotkey_custom_9'       ||
                  $k eq 'settings_leftmenu_netdata_link' ||
                  $k eq 'settings_leftmenu_user_html'    ||
-                 $k eq 'settings_leftmenu_custom_links' ||
                  $k eq 'settings_global_passgen_format')
         {
             my $width = ' width: 40%; ';
@@ -3035,7 +2853,7 @@ sub theme_settings
             }
             if ($k eq 'settings_leftmenu_netdata_link') {
                 $width = ' width: 50%; ';
-            } elsif ($k eq 'settings_leftmenu_user_html' || $k eq 'settings_leftmenu_custom_links') {
+            } elsif ($k eq 'settings_leftmenu_user_html') {
                 $width = ' width: 95%; ';
             }
 
@@ -3047,34 +2865,32 @@ sub theme_settings
         } elsif ($k eq 'settings_right_default_tab_webmin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-              . ($v eq '/' && ' selected') . '>Webmin</option>
+              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_wm'} . '</option>
 
                 '
               . (&foreign_available("virtual-server") &&
-                 ' <option value="virtualmin"' . ($v eq 'virtualmin' && ' selected') . '>Virtualmin</option> ') .
+                 ' <option value="virtualmin"' .
+                 ($v eq 'virtualmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_vm'} . '</option> ') .
               '
 
                '
               . (&foreign_available("server-manager") &&
-                 ' <option value="cloudmin"' . ($v eq 'cloudmin' && ' selected') . '>Cloudmin</option>') .
+                 ' <option value="cloudmin"' .
+                 ($v eq 'cloudmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_cm'} . '</option>') .
               '
                 </select>';
         } elsif ($k eq 'settings_webmin_default_module') {
-            my @modules = get_all_module_infos();
-            my $select = ui_select("goto_webmin_default_module",
-                                   $gconfig{'gotomodule'},
-                                   [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
-                                      sort {$a->{'desc'} cmp $b->{'desc'}} @modules
-                                   ]);
-            $v = $select;
+            $v = settings_get_select_default_module('goto_webmin_default_module', $gconfig{'gotomodule'});
         } elsif ($k eq 'settings_right_default_tab_usermin') {
             $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-              . ($v eq '/' && ' selected') . '>Usermin</option>
+              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>
 
                 '
-              . (get_usermin_data('mailbox') && ' <option value="mail"' . ($v eq 'mail' && ' selected') . '>Mail</option> ')
-              . '
+              . (get_usermin_data('mailbox') &&
+                 ' <option value="mail"' .
+                 ($v eq 'mail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
+              '
 
                 </select>';
         } elsif ($k eq 'settings_hotkey_toggle_modifier') {
@@ -3145,9 +2961,12 @@ sub theme_settings
               . ($v eq 'white' && ' selected') . '>White</option>
 
                 </select>';
+        } elsif ($k eq 'settings_document_title') {
+            $v = settings_get_select_document_title($v, $k);
         }
-        my $description = $theme_text{ $k . '_description' };
-        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click hover' : 'hover';
+        my $description     = $theme_text{ $k . '_description' };
+        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click' : 'hover';
+        my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
         return '
             <tr class="atshover">
                 <td class="col_label atscontent"><b>'
@@ -3155,12 +2974,12 @@ sub theme_settings
           .
           (
             $description && (
-                $k =~ /level_navigation|leftmenu_width/ ?
-                '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help" data-html="true" data-toggle="popover" data-trigger="'
-                . $popover_trigger .
-                '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>' .
-                ($k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
+                      $k =~ /level_navigation|leftmenu_width/ ?
+                      '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                      '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
+                      $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
+                      '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>' .
+                      ($k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
             )
           ) .
           '</td>
@@ -3188,22 +3007,24 @@ sub theme_settings
           . $text{'save'} . '</a>
                                     <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
           . $theme_text{'settings_right_restore_defaults'} . '</a>
-                                    <a style="min-width:132px" class="btn btn-default" onclick="theme_cache_clear(this);"><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>'
-          . $theme_text{'settings_right_clear_local_cache'} . '</a>
+                                    <a style="min-width:132px" class="btn btn-default" onclick="theme_cache_clear(this);" '
+          . get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1) .
+          '><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>' .
+          $theme_text{'settings_right_clear_local_cache'} . '</a>
          ' . (
             $get_user_level eq '0' ?
-              '                     <span class="dropup"'
+              '                     <span id="force_update_menu_cnt" class="dropup"'
               .
               ( has_command('git') ?
-                  undef :
+                  get_button_tooltip('settings_update_theme_tooltip', undef, undef, 1, 1, '#force_update_menu_cnt') :
                   get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
               ) .
               '>
                                        <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover' .
               (has_command('git') ? undef : ' disabled') .
               '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>'
-              . $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
+                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' .
+              $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
                                          <span class="caret"></span>
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
@@ -3329,7 +3150,7 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
-            print nice_size($size, -1) . '|' . $size;
+            print nice_size($size, -1) . '|' . nice_number($size);
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";
@@ -3360,6 +3181,14 @@ sub get_xhr_request
                                        ));
             };
             print $data;
+        } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
+            switch_to_unix_user_local();
+            my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
+            my %keys;
+            $keys{'public'}  = $public;
+            $keys{'secret'}  = $secret;
+            $keys{'gpgpath'} = $gpgpath;
+            print convert_to_json(\%keys);
         } elsif ($in{'xhr-get_user_level'} eq '1') {
             print $get_user_level;
         } elsif ($in{'xhr-get_update_notice'} eq '1') {
@@ -3369,7 +3198,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_command_exists'} eq '1') {
             print has_command($in{'xhr-get_command_exists_name'});
         } elsif ($in{'xhr-get_symlink'} eq '1') {
-            print resolve_links(get_access_data('root') . urlize($in{'xhr-get_symlink_path'}));
+            print(resolve_links(get_access_data('root') . ($in{'xhr-get_symlink_path'})));
         } elsif ($in{'xhr-theme_temp_data'} eq '1') {
             if ($in{'xhr-theme_temp_data_action'} eq 'set') {
                 set_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_value'});
@@ -3400,11 +3229,9 @@ sub get_xhr_request
             push(@current_versions,
                  (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
             print convert_to_json(\@current_versions);
-        } elsif ($in{'xhr-theme_clear_cache'} eq '1' && $get_user_level eq '0') {
-            my $theme_var_dir = theme_var_dir();
-            unlink_file("$theme_var_dir/version-theme-stable");
-            unlink_file("$theme_var_dir/version-theme-development");
-            unlink_file("$theme_var_dir/version-csf-stable");
+        } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
+            my $is_root = $get_user_level eq '0';
+            clear_theme_cache($is_root);
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
@@ -3465,6 +3292,7 @@ sub get_xhr_request
                  $csf_remote_version, $authentic_remote_version
             ) = get_sysinfo_vars(\@info);
 
+            # Build update info
             my @updated_info = { "data"                     => 1,
                                  "cpu_percent"              => $cpu_percent,
                                  "mem_percent"              => $mem_percent,
@@ -3492,7 +3320,7 @@ sub get_xhr_request
                                  "csf_data"                 => $csf_data,
                                  "csf_remote_version"       => $csf_remote_version,
                                  "authentic_remote_version" => $authentic_remote_version,
-                                 "csf_deny"                 => csf_temporary_list(),
+                                 "csf_deny"                 => (defined(&csf_temporary_list) ? csf_temporary_list() : undef),
                                  "collect_interval"         => get_module_config_data('system-status', 'collect_interval'),
                                  "extended_si"              => get_extended_sysinfo(\@info, undef),
                                  "warning_si"               => get_sysinfo_warning(\@info), };
@@ -3510,6 +3338,8 @@ sub get_xhr_request
             }
             @files;
             print convert_to_json(\@match);
+        } elsif ($in{'xhr-csf-unload'} eq '1') {
+            lib_csf_control('unload');
         }
 
         exit;
@@ -3643,8 +3473,8 @@ sub init
     # Provide unobstructive access for AJAX calls
     get_xhr_request();
 
-    # ConfigServer Security Firewall mod
-    csf_mod();
+    # Load module lib if available
+    lib_csf_control('load');
 }
 
 sub content
@@ -3829,13 +3659,10 @@ sub get_user_acl
     }
     my $acl = "$config_directory$module/$remote_user.acl";
 
-    my $config = read_file_contents($acl);
-    my %config = $config =~ /(.*?)=(.*)/g;
+    my %config;
+    read_file($acl, \%config);
 
     if (-r $acl) {
-
-        my %config = $config =~ /(.*?)=(.*)/g;
-
         if ($key) {
             return $config{$key};
         } else {
@@ -3853,8 +3680,8 @@ sub get_module_config_data
 
     if (-r $config_directory . '/' . $module . '/config') {
 
-        my $config = &read_file_contents($config_directory . '/' . $module . '/config');
-        my %config = $config =~ /(.*?)=(.*)/g;
+        my %config;
+        read_file(($config_directory . '/' . $module . '/config'), \%config);
 
         if ($key) {
             return $config{$key};

@@ -1,10 +1,41 @@
 ## Changelog
 
-#### Version 19.32-beta1 (March 01, 2019)
-* Add to use UI library to print links row
-* Fix multiple navigation menu reload on select server command
-* Fix multi select buttons to contain standard string by default (support all encodings)
-* Fix to prevent adding web-prefix to favorites containing file editor
+#### Version 19.33 (May 06, 2019)
+* Add to let user use regex as filename mask in File Manager when searching [@066e11b](https://github.com/authentic-theme/authentic-theme/commit/066e11b54a17c30d6d85b7648ce32b09644e8bf2)
+* Add to use regex in find results in File Manager when searching/replacing [@ee71b71](https://github.com/authentic-theme/authentic-theme/commit/ee71b71d1413bd25794fdd3726b29484250b318a)
+* Add drag and drop with progress, for file uploads in Upload and Download module [#1334](https://github.com/authentic-theme/authentic-theme/issues/1334)
+* Add ability for Usermin user to select default module
+* Fix to perfect navigation menu autocomplete links generation, grouping and opening
+* Fix occasional broken initial theme post-reload state
+
+#### Version 19.32 (April 28, 2019)
+* Add significant improvements to directory listing (support of 1m+ files) in File Manager [@8cdb7a4](https://github.com/authentic-theme/authentic-theme/commit/8cdb7a4eaf9c691dc9f26d5769b102b340f19802)
+* Add ability to preview images directly on the server in File Manager [#1323](https://github.com/authentic-theme/authentic-theme/issues/1323#issue-435839231)
+* Add ability to encrypt/decrypt files in File Manager [#1322](https://github.com/authentic-theme/authentic-theme/issues/1322#issue-434304461)
+* Add ability for File Manager to encrypt/decrypt archives [#1320](https://github.com/authentic-theme/authentic-theme/issues/1320#issue-432834927)
+* Add password meter and password visibility toggle [#1327](https://github.com/authentic-theme/authentic-theme/issues/1327)
+* Add ability to change document title output [#1326](https://github.com/authentic-theme/authentic-theme/issues/1326#issuecomment-486816033)
+* Add user friendly message upon server reboot [#1307](https://github.com/authentic-theme/authentic-theme/issues/1307#issuecomment-469652215)
+* Add ability to store opened/closed state of collapsible panels on Dashboard upon page refresh [@b201085](https://github.com/authentic-theme/authentic-theme/commit/b201085b5ea13d2c1c8f35986b24126ba81076f5)
+* Add perfected history manipulation to move back and forth through the user's history
+* Add paste with the same name for files, while keeping extension in File Manager
+* Add ability to select all items in directory on all pages for further operations in File Manager
+* Add ability to select/deselect a range of checked table rows by holding shift in File Manager
+* Add tooltips with size in bytes, numeric user/group and last access/change time to File Manager
+* Add ability to pass to compress and download unlimited number of items in File Manager
+* Add intuitive folder refresh hotkey __(Ctrl+R)__ in File Manager
+* Add hotkeys __(Ctrl+A/Ctrl+⇧+A)__ to select/deselect all items in File Manager
+* Add to update file size after closing file editor in File Manager
+* Add send browser notification when progressive output is finished and user not looking at the page
+* Add improved BIND syntax highlight for manual editors
+* Add ability for any user to use favorites
+* Add improved error handling
+* Fix paste into itself error appearing wrong in some cases in File Manager
+* Fix to improve and optimize initial load for File Manager
+* Fix to prevent multiple alike processes running possibly causing server going out of memory in File Manager
+* Fiх sporadic tree-view errors in File Manager [#1213](https://github.com/authentic-theme/authentic-theme/issues/1213)
+* Fix to prettify the look of Webalizer usage statistics
+* Fix compose mail button not working on empty mail folder
 
 #### Version 19.31 (February 22, 2019)
 * Fix to prevent preloader appearing on progressive pages
@@ -31,7 +62,6 @@
 * Fix over a hundred of other minor bugs and made other improvements
 
 <!--- separator --->
-
 
 #### Version 19.22 (December 25, 2018)
 * Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)

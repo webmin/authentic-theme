@@ -16,10 +16,10 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 my $path_urlized = urlize($path);
 
 if (!$in{'name'}) {
-    redirect("list.cgi?path=$path_urlized&module=$in{'module'}");
+    redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }
 
-my $symlink = "$cwd/$in{'name'}_symlink";
+my $symlink    = "$cwd/$in{'name'}_symlink";
 my $is_symlink = (-l $symlink);
 if ($is_symlink || -d $symlink || -e $symlink) {
     print_error(
@@ -31,5 +31,5 @@ if ($is_symlink || -d $symlink || -e $symlink) {
           ));
 } else {
     symlink_file("$cwd/$in{'name'}", $symlink);
-    redirect("list.cgi?path=$path_urlized&module=$in{'module'}");
+    redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }

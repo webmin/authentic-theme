@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %theme_text, $has_usermin);
+our (%in, %gconfig, %theme_text, $has_usermin);
 
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
@@ -25,4 +25,8 @@ if ($has_usermin) {
     unlink_file($_file);
     write_file_contents($_file, $in{'data'});
 }
-redirect("/webmin/edit_themes.cgi");
+if ($ENV{'HTTP_X_PJAX'} eq "true") {
+    redirect($gconfig{'webprefix'} . "/webmin/edit_themes.cgi");
+} else {
+    head();
+}

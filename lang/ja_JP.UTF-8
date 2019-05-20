@@ -39,7 +39,7 @@ body_webmin=Webminバージョン
 left_favorites=お気に入り
 left_favorites_no=まだお気に入りは追加されていません...
 left_feedback=フィードバックを送信
-left_home=システムインフォメーション
+theme_xhred_global_sys_info=システムインフォメーション
 left_others=その他
 left_refresh_modules=モジュールをリフレッシュする
 left_search=検索
@@ -141,8 +141,6 @@ settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
 settings_navigation_color=ナビゲーションメニューのカラーパレット
 settings_background_color=コンテンツページのカラーパレット
-settings_animation_left=ナビゲーションメニューでアニメーションを有効にする
-settings_animation_tabs=Enable animation in content page
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
 settings_right_reload=既定のコンテンツページの読み込み
@@ -210,7 +208,7 @@ theme_version=Authentic theme version
 
 
 # Version 17.40
-theme_global_error=エラー
+theme_xhred_global_error=エラー
 theme_global_warning=警告
 theme_global_success=成功
 theme_global_info=情報
@@ -439,7 +437,7 @@ theme_xhred_database_db_selected_drop= 選択したデータベースを削除
 theme_xhred_database_dbs_selected_drop= 選択したデータベースを削除する
 theme_xhred_database_edit_but_not_saved= テーブルデータは編集されましたが保存されませんでした。
 
-theme_xhred_global_no_such_command= 実行可能ファイル<tt>%cmd </tt>がインストールされていないか、システムのパスに存在しないようです。
+theme_xhred_global_no_such_command= 実行可能ファイル<tt>$1 </tt>がインストールされていないか、システムのパスに存在しないようです。
 
 theme_xhred_global_notice= 通知
 # Authentic Theme
@@ -996,22 +994,117 @@ theme_xhred_global_configuration= 設定
 
 body_used_cached_total= 合計 $1/キャッシュ $3/使用済み $2
 
+#19.30
+theme_xhred_favorites_add=お気に入りに追加
+theme_xhred_favorites_remove=お気に入りから削除
+theme_xhred_select_deselect=現在のアイテムを選択/選択解除
+theme_xhred_edit_current=現在のアイテムを編集
+theme_xhred_search_in_file=ファイルを検索する
+left_toggle_navigation_menu=ナビゲーションの表示/非表示を切り替える
+theme_xhred_side_slider_toggle=サイドスライダーの表示/非表示を切り替えます
+right_pagination_first=最初
+right_pagination_last=最終
+settings_leftmenu_custom_links=追加エントリー
+theme_xhred_file_editor=ファイルエディタ
+theme_xhred_mail_no_mail=メールなし
+theme_xhred_mail_no_new_mail=新着メールはありません
+theme_xhred_editor_set_syntax=構文を設定する
+theme_xhred_global_menu=メニュー
+theme_xhred_shell_aborted=操作は中止されました
 
-#19.23
-theme_xhred_favorites_add= お気に入りに追加
-theme_xhred_favorites_remove= お気に入りから削除
-theme_xhred_select_deselect= 現在のアイテムを選択/選択解除
-theme_xhred_edit_current= 現在のアイテムを編集
-theme_xhred_search_in_file= ファイルを検索する
-left_toggle_navigation_menu= ナビゲーションの表示/非表示を切り替える
-theme_xhred_side_slider_toggle= サイドスライダーの表示/非表示を切り替えます
-right_pagination_first= 最初
-right_pagination_last= 最終
-settings_leftmenu_custom_links= 追加エントリー
-settings_leftmenu_custom_links_description= ナビゲーションメニューにカスタムの追加リンクを挿入することができます。有効なJSONオブジェクトを文字列として渡す必要があります。 <br><br><strong>例:</strong> <code>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</code>
-theme_xhred_file_editor= ファイルエディタ
-theme_xhred_mail_no_mail= メールなし
-theme_xhred_mail_no_new_mail= 新着メールはありません
-theme_xhred_editor_set_syntax= 構文を設定する
-theme_xhred_global_menu= メニュー
-theme_xhred_shell_aborted= 操作は中止されました
+
+#19.32
+theme_xhred_connection_reboot=再起動
+theme_xhred_connection_reboot_details=サーバーは再起動中です。 お待ちください..
+settings_leftmenu_custom_links_description=カスタムの追加リンクをナビゲーションメニューに挿入することができます。 <br> <br> <em> title </em>、<em> link </em>、<em> icon </em>というキーが必要です。 オプションで、<em> level </em>キーを値とともにカンマ区切りのリストで指定することで、どのログインモードでリンクを表示するかを定義できます。<br> <br> <em> 0 </ em >  - 管理者ログイン <br> <em> 1 </em>  - 販売代理店のログイン; <br> <em> 2 </em>  - サーバーの所有者のログイン; <br> <em> 3 </em>  - ユーザーのログイン; <br> < em> 4 </em>  - システム所有者のログイン。<br> <br>以下の例のように、有効なJSONオブジェクトを文字列として渡す必要があります。<hr> <pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre></pre>
+left_favorites_edit=お気に入りを編集
+left_favorites_edit_desc=このページを使用して、テーマのお気に入りユーザーファイルを手動で編集できます。 変更に対して構文やその他の妥当性検査は行われないため、これは慎重に行う必要があります。
+theme_xhred_filemanager_records_for_server_pagination=サーバーのページ区切りを開始するためのディレクトリ内のデフォルトのアイテム数
+
+filemanager_global_info_paginated_total1=$4ページの$3アイテムの$1ファイルと$2ディレクトリ
+filemanager_global_info_paginated_total2=$4ページの$3項目の$1ファイルと$2ディレクトリ
+filemanager_global_info_paginated_total3=$4ページの$3アイテムの$1ファイルと$2ディレクトリ
+filemanager_global_info_paginated_total4=$4ページの$3アイテムの$1ファイルと$2ディレクトリ
+theme_xhred_filemanager_search_follow_symlinks=シンボリックリンクをたどる
+theme_xhred_filemanager_mass_select=%2ページで%1個のアイテムをすべて選択しますか？
+theme_xhred_filemanager_mass_selected=現在のディレクトリですべての%1項目が選択されています。
+theme_xhred_filemanager_mass_select_clear=明確な選択
+theme_xhred_filemanager_mass_selected_for_delete=%2ディレクトリで選択された%1項目
+theme_xhred_filemanager_mass_selected_no_zip=<tt> zip </tt>コマンドの使用は、ディレクトリ内のすべてのアイテムに対して実行するとサポートされません
+filemanager_global_search_results=の検索結果
+filemanager_global_paginated_results=Paginated
+filemanager_global_access_change_time=最終アクセス/変更時刻
+filemanager_global_user_group_id=数値ユーザー/グループ
+theme_xhred_filemanager_global_size_in_bytes=バイト単位のサイズ
+theme_xhred_global_command_completed=コマンド完了
+theme_xhred_global_toggle_password_visibility=パスワードの表示/非表示を切り替える
+theme_xhred_login_passphrase=パスフレーズ
+theme_xhred_filemanager_archive_gpg_no_keys=利用可能なキーがありません
+filemanager_archive_gpg_error=GPGエラー
+filemanager_archive_move_to_archive_failed=同時エラーのため、ファイルをアーカイブに移動できません
+theme_xhred_filemanager_archive_move_to=アーカイブに移動
+theme_xhred_global_encrypt=暗号化
+theme_xhred_filemanager_gpg_select_the_key=キーを選択
+theme_xhred_filemanager_context_extract_encrypted=抽出オプション
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=パスワードまたはパスフレーズ
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=パスワードを入力して圧縮ファイルを復号化します。 設定されている場合は、GPGキーのパスフレーズを入力してください。
+theme_xhred_global_decrypt=復号化する
+filemanager_archive_password_required=アーカイブを復号化するために必要なパスワード
+filemanager_archive_password_wrong=提供されたパスワードが正しくありません
+filemanager_archive_file_not_found=ファイルが存在しません
+filemanager_archive_gpg_private_error=秘密鍵がないか、鍵のパスフレーズが正しくありません
+theme_xhred_filemanager_errors_extraction=抽出中に以下のエラーが発生しました
+theme_xhred_filemanager_extract_option_delete_afterwards=正常に抽出された後にアーカイブを削除する
+
+theme_xhred_login_passphrase_desc=設定されている場合は、GPGキーのパスフレーズを入力してください。
+theme_xhred_filemanager_encrypt_option_delete_afterwards=暗号化に成功したらファイルを削除する
+theme_xhred_filemanager_decrypt_option_delete_afterwards=復号化が成功した後にファイルを削除する
+theme_xhred_filemanager_encrypt_gpg_key=キーを使う
+theme_xhred_filemanager_errors_encrypt=暗号化中に次のエラーが発生しました
+theme_xhred_filemanager_errors_decrypt=復号化中に次のエラーが発生しました
+theme_xhred_filemanager_crypt_encrypt=ファイルは暗号化されています。
+theme_xhred_filemanager_crypt_decrypt=ファイルは復号化されています。
+theme_xhred_filemanager_crypt_encrypted=選択したファイルの暗号化は成功しました。
+theme_xhred_filemanager_crypt_decrypted=選択したファイルの復号化は成功しました。
+theme_xhred_filemanager_batch_error=また、%1のおなじみのエラーの切り捨てられた結果も含まれます。
+
+theme_xhred_global_preview_img=プレビュー画像
+theme_xhred_global_preview_img_sel=選択した画像をプレビューする
+theme_xhred_global_preview_img_all=すべての画像をプレビュー
+theme_xhred_filemanager_preview_images_building=イメージギャラリーはプレビュー用に生成されています。
+theme_xhred_filemanager_preview_images_deps_error1=この機能を動作させるには、<code> ImageMagick </code>パッケージをシステムにインストールしておく必要があります。
+theme_xhred_filemanager_preview_images_deps_error2=あなたはそれをあなたに自動的にインストールさせるために$1することができます。
+theme_xhred_filemanager_preview_images_error=画像ギャラリーは生成できません。
+global_deps_installed=パッケージ$1は正常にインストールされました。
+global_deps_error=パッケージ$1は正常にインストールされませんでした。 手動でインストールしてください。
+global_deps_installing=パッケージ$1がインストールされています。
+theme_xhred_global_toggle_fullscreen=フルスクリーン切り替え
+theme_xhred_global_zoom_in_out=ズームイン/ズームアウト
+theme_xhred_global_prev_arrow_left=前（左矢印）
+theme_xhred_global_next_arrow_right=次へ（右矢印）
+
+settings_reset_cache_tooltip=<br> <code> Ctrl + Alt +メタ+⇧+ R </code>をクリックして、任意のページからテーマのキャッシュをリセットします。<br> hotkey
+settings_update_theme_tooltip=任意のページからテーマの更新を実行します。 ホットキーをクリックして、最新の開発バージョンに更新します。<br> <code> Ctrl + Alt + Meta +⇧+ U </code> <br> 最新の安定版をインストールするには、Metaキーなしで同じコンボを使用します
+theme_xhred_clear_cache_initiated=キャッシュをクリアしてリロードします。
+settings_document_title=文書タイトルフォーマット
+settings_document_title_option_3=モジュール
+settings_document_title_option_1=モジュール -  $1バージョン（OSタイプ）
+settings_document_title_option_2=$1バージョン（OSタイプ） - モジュール
+settings_document_title_option_4=$1バージョン（OSタイプ）
+settings_document_title_option_5=ホスト名 -  $1バージョン（OSタイプ） - モジュール
+settings_document_title_option_6=username@hostname  -  $1バージョン（OSタイプ） - モジュール
+settings_document_title_option_7=モジュール — $1
+settings_document_title_option_8=hostname  - モジュール
+settings_document_title_option_9=username@hostname  - モジュール
+theme_xhred_csf=ConfigServerのセキュリティとファイアウォール
+theme_xhred_global_version=バージョン
+theme_xhred_notify_patching_module_style=最初のUIパッチを$1に適用してリロードします。
+theme_xhred_global_error_more_details_online=注：このエラーとその解決方法の詳細については、オンラインの5丁目%1wikiページ％1をご覧ください。
+
+
+#19.33
+theme_xhred_filemanager_search_file_mask=ファイルマスク
+theme_xhred_filemanager_search_regex=正規表現
+theme_xhred_upload_successful=<span> $1ファイル</span>は$2ディレクトリにアップロードされました
+theme_xhred_upload_successful_single=<span> $1ファイル</span>は$2ディレクトリにアップロードされました
+settings_usermin_default_module=デフォルトモジュール

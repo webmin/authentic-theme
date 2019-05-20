@@ -3,7 +3,6 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.io>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
@@ -17,6 +16,13 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 open(my $fh, "<" . &get_paste_buffer_file()) or die "Error: $!";
 my @arr = <$fh>;
 close($fh);
+if (test_all_items_query()) {
+    my @entries_list;
+    my @entries_list_entries= get_entries_list();
+    push(@entries_list, $arr[0], $arr[1], @entries_list_entries);
+    undef(@arr);
+    @arr = @entries_list;
+}
 my $act = $arr[0];
 my $dir = $arr[1];
 chomp($act);
@@ -42,8 +48,8 @@ for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
 
 if (scalar(@errors) > 0) {
     set_response('err');
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning'));
+    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') . extra_query());
 } else {
     set_response_count(scalar(@arr) - 2);
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1');
+    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
 }

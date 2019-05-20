@@ -9,18 +9,16 @@ use strict;
 
 use File::Basename;
 
-our (%in, $in, $current_theme, $config_directory, %theme_text);
+our (%in, $in, $current_theme, $config_directory, $remote_user, %theme_text);
 
 require(dirname(__FILE__) . "/authentic-lib.pm");
-
-!foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 
 theme_config_dir_available();
 
 $in =~ s/\t\n\r//g;
 $in =~ /\{(?:\{.*\}|[^{])*\}/sg;
 
-my $file    = $config_directory . "/$current_theme/favorites.json";
+my $file = $config_directory . "/$current_theme/favorites-$remote_user.json";
 my $content = $in{'favorites'};
 
 unlink_file($file);

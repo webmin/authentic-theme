@@ -29,6 +29,8 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_contrast_mode = false,
     settings_enable_container_offset = true,
+    settings_usermin_default_module = 'sysinfo.cgi',
+    settings_document_title = 1,
     settings_right_page_hide_persistent_vscroll = true,
 
     settings_side_slider_palette = "grey",
@@ -93,14 +95,13 @@ var settings_mailbox_slash_delimiter = true,
     settings_sysinfo_link_mini = false,
 
     settings_perform_content_scrolling = true,
-    settings_animation_left = true,
-    settings_animation_tabs = false,
     settings_show_terminal_link = true,
     settings_favorites = true,
     settings_mail_ui = true,
 
 
     config_portable_module_filemanager_records_per_page = 30,
+    config_portable_module_filemanager_records_for_server_pagination = 300,
     config_portable_module_filemanager_default_sort = 0,
     config_portable_module_filemanager_hide_tree_view = false,
     config_portable_module_filemanager_tree_expand_search = true,

@@ -18,9 +18,11 @@ my %errors;
 
 my $perms = $in{'perms'};
 
+my @entries_list = get_entries_list();
+
 # Selected directories and files only
 if ($in{'applyto'} eq '1') {
-    foreach my $name (split(/\0/, $in{'name'})) {
+    foreach my $name (@entries_list) {
         $name = simplify_path($name);
         if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
             $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
@@ -30,7 +32,7 @@ if ($in{'applyto'} eq '1') {
 
 # Selected files and directories and files in selected directories
 if ($in{'applyto'} eq '2') {
-    foreach my $name (split(/\0/, $in{'name'})) {
+    foreach my $name (@entries_list) {
         $name = simplify_path($name);
         if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
             $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
@@ -49,7 +51,7 @@ if ($in{'applyto'} eq '2') {
 
 # All (recursive)
 if ($in{'applyto'} eq '3') {
-    foreach my $name (split(/\0/, $in{'name'})) {
+    foreach my $name (@entries_list) {
         $name = simplify_path($name);
         if (system_logged("chmod -R " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
             $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
@@ -59,7 +61,7 @@ if ($in{'applyto'} eq '3') {
 
 # Selected files and files under selected directories and subdirectories
 if ($in{'applyto'} eq '4') {
-    foreach my $name (split(/\0/, $in{'name'})) {
+    foreach my $name (@entries_list) {
         $name = simplify_path($name);
         if (-f "$cwd/$name") {
             if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
@@ -77,7 +79,7 @@ if ($in{'applyto'} eq '4') {
 
 # Selected directories and subdirectories
 if ($in{'applyto'} eq '5') {
-    foreach my $name (split(/\0/, $in{'name'})) {
+    foreach my $name (@entries_list) {
         if (-d "$cwd/$name") {
             if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
                 $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
@@ -91,4 +93,4 @@ if ($in{'applyto'} eq '5') {
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors));
+redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

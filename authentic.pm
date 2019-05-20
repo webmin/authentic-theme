@@ -7,16 +7,16 @@ use strict;
 
 use File::Basename;
 
-our ($get_user_level,           $xnav,                           %theme_config,
-     %theme_text,               %config,                         %gconfig,
-     %tconfig,                  %text,                           $basic_virtualmin_domain,
-     $basic_virtualmin_menu,    $cb,                             $tb,
-     $cloudmin_no_create_links, $cloudmin_no_edit_buttons,       $cloudmin_no_global_links,
-     $current_theme,            $done_theme_post_save_server,    $mailbox_no_addressbook_button,
-     $mailbox_no_folder_button, $module_index_link,              $module_index_name,
-     $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode, $page_capture,
-     $remote_user,              $root_directory,                 $session_id,
-     $ui_formcount,             $user_module_config_directory);
+our ($get_user_level,                $xnav,                     %theme_config,
+     %theme_text,                    %config,                   %gconfig,
+     %tconfig,                       %text,                     $basic_virtualmin_domain,
+     $basic_virtualmin_menu,         $cb,                       $tb,
+     $title,                         $cloudmin_no_create_links, $cloudmin_no_edit_buttons,
+     $cloudmin_no_global_links,      $current_theme,            $done_theme_post_save_server,
+     $mailbox_no_addressbook_button, $mailbox_no_folder_button, $module_index_link,
+     $module_index_name,             $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode,
+     $page_capture,                  $remote_user,              $root_directory,
+     $session_id,                    $ui_formcount,             $user_module_config_directory);
 
 do(dirname(__FILE__) . "/authentic-init.pm");
 
@@ -24,8 +24,11 @@ sub theme_header
 {
 
     (get_raw() && return);
-    embed_header(($_[0], $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0')));
-
+    my $tref = ref($_[0]) eq 'ARRAY';
+    my $ttitle = $tref ? $_[0]->[0] : $_[0];
+    embed_header(
+        (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
+        ));
     print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
@@ -87,12 +90,14 @@ sub theme_header
         }
         print "</td>\n";
         if ($_[1]) {
-            print "<td id=\"headln2c\">", "<img alt=\"$_[0]\" src=\"$_[1]\"></td>\n";
+            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
+              "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
-            print "<td id='headln2c'>", ($ts ? "<span data-main_title>" : ""), $_[0], ($ts ? "</span>" : "");
+            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
+              ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
             print "</td>\n";
         }
@@ -129,41 +134,17 @@ sub theme_footer
     }
 
     print "</div>\n";
-    if (!@_ &&
-        get_env('script_name') ne '/session_login.cgi' &&
-        get_env('script_name') ne '/pam_login.cgi'     &&
-        get_env('script_name') ne '/401.cgi'           &&
-        get_env('script_name') ne '/403.cgi'           &&
-        get_env('script_name') ne '/404.cgi')
-    {
-        my $prefix;
-        my $hostname = ($prefix) = split(/\./, get_display_hostname());
-        my $host = ($prefix ? $prefix : get_display_hostname());
-        print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
-  <div class="-shell-port-container">
-    <div data-shell-config><i aria-label="' .
-          $theme_text{'theme_xhred_global_configuration'} . '" class="fa fa-lg fa-cogs"></i></div>
-    <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
-    <div data-output="true"><pre data-xconsole></pre></div>
-    <div class="-shell-port-cmd">
-      <span class="-shell-port-prompt"><span class="-shell-port-type">['
-          . $remote_user .
-          '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
-          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
-'</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
-    </div>
-  </div>
-</div>', "\n";
-    }
+    embed_port_shell();
     embed_footer((theme_debug_mode()),
                  (
-                  (get_module_name()                                        ||
-                     get_env('request_uri') =~ /\/config.cgi\?/             ||
-                     get_env('request_uri') =~ /\/uconfig.cgi\?/            ||
-                     get_env('request_uri') =~ /\/webmin_search.cgi\?/      ||
-                     get_env('request_uri') =~ /\/settings-user.cgi/        ||
-                     get_env('request_uri') =~ /\/settings-editor_read.cgi/ ||
-                     get_env('request_uri') =~ /\/settings-logos.cgi/       ||
+                  (get_module_name()                                                  ||
+                     get_env('request_uri') =~ /\/config.cgi\?/                       ||
+                     get_env('request_uri') =~ /\/uconfig.cgi\?/                      ||
+                     get_env('request_uri') =~ /\/webmin_search.cgi\?/                ||
+                     get_env('request_uri') =~ /\/settings-user.cgi/                  ||
+                     get_env('request_uri') =~ /\/settings-editor_read.cgi/           ||
+                     get_env('request_uri') =~ /\/settings-editor_favorites_read.cgi/ ||
+                     get_env('request_uri') =~ /\/settings-logos.cgi/                 ||
                      get_env('request_uri') =~ /\/settings-backgrounds.cgi/
                   ) ? '1' : '0'
                  ),
@@ -365,17 +346,21 @@ sub theme_ui_columns_start
     my ($rv, $i);
 
     $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
+    if ($title) {
+        $rv .= "<caption>$title</caption>\n";
+    }
     $rv .= '<thead>' . "\n";
     $rv .= '<tr>' . "\n";
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
-            $rv .= '<th>';
+            $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
     $rv .= '</tr>' . "\n";
     $rv .= '</thead>' . "\n";
+    $rv .= '<tbody>' . "\n";
 
     return $rv;
 }
@@ -388,7 +373,7 @@ sub theme_ui_columns_row
     $rv .= '<tr class="tr_tag">' . "\n";
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
-            $rv .= '<td class="td_tag">' . "\n";
+            $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
             $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
@@ -407,7 +392,7 @@ sub theme_ui_columns_header
     $rv .= '<tr>' . "\n";
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
-            $rv .= '<th>';
+            $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
@@ -422,7 +407,7 @@ sub theme_ui_columns_end
 {
     my $rv;
 
-    $rv .= '</table>' . "\n";
+    $rv .= '</tbody></table>' . "\n";
 
     return $rv;
 }
@@ -438,14 +423,25 @@ sub theme_ui_link
 sub theme_ui_links_row
 {
 
-    my ($links) = @_;
+    my ($links, $nopuncs) = @_;
     my $link = "<a";
-    if (string_contains("@$links", $link)) {
-        @$links =
-          map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"} @$links;
-        return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" : "";
-    } else {
-        return @$links ? join(", ", @$links) . ".<br>\n" : "";
+    if (ref($links)) {
+        if (string_contains("@$links", $link)) {
+            @$links =
+              map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"}
+              @$links;
+            return
+              @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
+              "";
+        } else {
+            if ($nopuncs == 1) {
+                return @$links ? join(", ", @$links) . "<br>\n" : "";
+            } elsif ($nopuncs == 2) {
+                return @$links ? join(" ", @$links) . "<br>\n" : "";
+            } else {
+                return @$links ? join(", ", @$links) . ".<br>\n" : "";
+            }
+        }
     }
 }
 
@@ -877,7 +873,7 @@ sub theme_ui_alert_box
     } elsif ($class eq "warn") {
         $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
     } elsif ($class eq "danger") {
-        $type = 'alert-danger', $tmsg = ($theme_text{'theme_global_error'} . '!'), $fa = 'fa-bolt';
+        $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     }
 
     if ($desc_to_title) {
@@ -1042,11 +1038,8 @@ sub theme_ui_hidden_start
     }
     my $divid    = "hiddendiv_$name";
     my $openerid = "hiddenopener_$name";
-    my $defimg =
-      $status ? "" :
-      "";
     my $defclass = $status ? 'opener_shown' : 'opener_hidden';
-    $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a>\n";
+    $rv .= "<a class=\"hidden\" href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a>\n";
     $rv .= "<a href=\"javascript:hidden_opener('$divid', '$openerid')\">$title</a><br>\n";
     $rv .= "<div class='$defclass' id='$divid'>\n";
     return $rv;
@@ -1061,9 +1054,6 @@ sub theme_ui_hidden_table_start
     }
     my $divid    = "hiddendiv_$name";
     my $openerid = "hiddenopener_$name";
-    my $defimg =
-      $status ? "" :
-      "";
     my $defclass =
       $status ? 'opener_shown' :
       'opener_hidden';
@@ -1078,7 +1068,7 @@ sub theme_ui_hidden_table_start
         $rv .= "<tr" . ($tb ? " " . $tb : "") . "><td>";
         if (defined($heading)) {
             $rv .=
-"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'>$defimg</a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
+"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
         }
         if (defined($rightheading)) {
             $rv .= "<td align=right>$rightheading</td>";
@@ -1172,53 +1162,40 @@ sub theme_nice_size
     } else {
         return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
     }
-
 }
 
 sub theme_redirect
 {
     if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
-        print "Content-type: text/html;\n\n";
+        head();
         return;
     }
 
-    my ($link, $protocol, $proxy, $nonproxy, $dirname, $prefix, $port) = (
-                                        $_[1],
-                                        (get_env('https') ? 'https://' : 'http://'),
-                                        get_env('http_x_forwarded_host'),
-                                        get_env('http_host'), (!get_env('http_referer') || dirname(get_env('http_referer'))),
-                                        $gconfig{'webprefix'}, get_env('server_port'));
+    my $origin   = $ENV{'HTTP_ORIGIN'};
+    my $prefix   = $gconfig{'webprefix'};
+    my $noredir  = $gconfig{'webprefixnoredir'};
+    my $relredir = $gconfig{'relative_redir'};
+    my ($arg1, $arg2) = ($_[0], $_[1]);
+    my ($link) = $arg1 || $arg2;
+    my ($url) = $arg2;
+    if (!$relredir) {
+        ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
+    }
+    $url = "$prefix$url" if ($url && $noredir);
 
-    my $redirect;
-    if (!$proxy || $link =~ /\Q$nonproxy/) {
-        $redirect = $nonproxy;
-    } else {
-        $redirect = $proxy;
+    my ($parent) = parse_servers_path();
+    if ($parent) {
+        ($link) = $arg2 =~ /:\d+(.*)/;
+        $url = "$parent$link";
+    } elsif (string_starts_with($arg1, 'http') && $arg1 !~ /$origin/) {
+        print "Location: $arg1\n\n";
+        return;
     }
 
-    my $location = replace(($protocol . $redirect), undef, $_[1]);
-    my $location_use = (($location && $location ne '/' && $location !~ /\Q$xnav/ && $link !~ /fetch.cgi/) ? 1 : 0);
-
-    if ($location_use) {
-        if ($gconfig{'webprefixnoredir'} && $dirname ne ($protocol . $redirect . $prefix) && $location !~ /:\/\//) {
-            $location = ($prefix . $location);
-        }
-
-        my ($parent) = parse_servers_path();
-        if ($parent) {
-            $location = replace((':' . $port), $parent, $location);
-        }
-
-        set_theme_temp_data('redirected', $location);
-        print "Location: $location\n\n";
-    } else {
-        $link =~ s/(\?|&)\Q$xnav\E//ig;
-        if (!theme_redirect_download($link)) {
-            set_theme_temp_data('redirected', $link);
-            print "Location: $link\n\n";
-        }
+    if (!theme_redirect_download($url)) {
+        set_theme_temp_data('redirected', $url);
+        print "Location: $url\n\n";
     }
-
 }
 
 sub theme_header_redirect_download
@@ -1244,7 +1221,6 @@ sub theme_header_redirect_download
     }
     print "</body>\n";
     print '</html>';
-
 }
 
 sub theme_redirect_download
@@ -1319,17 +1295,14 @@ sub theme_select_server
 {
     my ($s) = @_;
     print '<script>';
-    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
+    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '0') . '', "\n";
     print '</script>';
 }
 
 sub theme_post_change_theme
 {
-    # Clear modifications
-    if (&foreign_check("csf") && &foreign_available("csf")) {
-        unlink_file('/etc/csf/csf.header');
-        unlink_file('/etc/csf/csf.footer');
-    }
+    # Clear module modifications
+    lib_csf_control('unload');
 
     # Remove error handler
     error_40x_handler(1);
