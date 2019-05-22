@@ -1108,3 +1108,7 @@ theme_xhred_filemanager_search_regex=正規表現
 theme_xhred_upload_successful=<span> $1ファイル</span>は$2ディレクトリにアップロードされました
 theme_xhred_upload_successful_single=<span> $1ファイル</span>は$2ディレクトリにアップロードされました
 settings_usermin_default_module=デフォルトモジュール
+
+
+#19.34
+theme_xhred_search_in_file_open_external=Detach file to separate editor
