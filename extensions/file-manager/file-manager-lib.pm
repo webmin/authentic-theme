@@ -120,12 +120,16 @@ sub tokenize
     my ($key, $value) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
     my %var;
+    my $user = $remote_user;
+    my $tmp_file;
 
     $key =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $key = $1;
-    $key =~ tr/A-Za-z0-9//cd;
+    $key  =~ tr/A-Za-z0-9//cd;
+    $user =~ tr/A-Za-z0-9//cd;
+    $salt =~ tr/A-Za-z0-9//cd;
 
-    my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+    $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $user);
     $var{$key} = $value;
 
     if ($value) {
