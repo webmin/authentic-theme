@@ -1112,3 +1112,4 @@ settings_usermin_default_module=デフォルトモジュール
 
 #19.34
 theme_xhred_search_in_file_open_external=Detach file to separate editor
+theme_xhred_path_to_console=Open current path in terminal (Ctrl+Shift+L)
