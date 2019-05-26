@@ -365,9 +365,7 @@ sub exec_search
                    if ((!$regex && (index($found_text, $mask_text) != -1 || $mask_text eq "*")) ||
                        ($regex && $found_text =~ /$mask_text/))
                    {
-                       if ($list) {
-                           $found = $_;
-                       } else {
+                       if (!$list) {
                            $found =~ s/^\Q$cwd\E//g;
                        }
                        if ($follow || (!$follow && !-l $_)) {
