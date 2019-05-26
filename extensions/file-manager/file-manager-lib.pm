@@ -535,8 +535,8 @@ sub print_content
         undef(@list);
         push(@list, @info);
     } else {
-        @folders = sort {$a->[0] cmp $b->[0]} @folders;
-        @files   = sort {$a->[0] cmp $b->[0]} @files;
+        @folders = sort {"\L$a->[0]" cmp "\L$b->[0]"} @folders;
+        @files   = sort {"\L$a->[0]" cmp "\L$b->[0]"} @files;
         undef(@list);
         push(@list, @folders, @files);
     }
@@ -641,6 +641,20 @@ sub print_content
         my $vlink = html_escape($link);
         $vlink = utf8_decode($vlink);
         my $hlink = html_escape($vlink);
+
+        my $filename = $link;
+        $filename =~ /\/([^\/]+)$/;
+        if ($1 && $list[$count - 1][15] == 0) {
+            $filename = $1;
+        }
+        my $hlink_path = $hlink;
+        if ($query) {
+            if (!string_contains($hlink_path, '/') && $list[$count - 1][15] == 0) {
+                $hlink_path = undef;
+            }
+            $hlink_path =~ s/\/$filename$//;
+        }
+
         $path = html_escape($path);
 
         my $type = $list[$count - 1][14];
@@ -722,12 +736,14 @@ sub print_content
                   "&file=" . &urlize($link) . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"><img src=\"$img\"></a>",
-                        "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
+        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"" .
+                          ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . "><img src=\"$img\"></a>",
+                        "<a href=\"$href\" data-filemin-link=\"$hlink\"" .
+                          ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . ">$vlink</a>");
         my @td_tags = (undef,
                        'class="col-icon"',
                        'class="col-name" data-xarchive="' . $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' .
-                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $hlink . '"');
+                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $filename . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
