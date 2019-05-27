@@ -854,11 +854,11 @@ sub get_tree
         my $dd = ($df > 0 ? ($df + 1) : 0);
         if ($dd) {
             if ($d < $dd) {
-                return sort @_;
+                return sort {"\L$a" cmp "\L$b"} @_;
             }
             return;
         }
-        sort @_;
+        sort {"\L$a" cmp "\L$b"} @_;
     };
     find(
          {  wanted     => $wanted,
