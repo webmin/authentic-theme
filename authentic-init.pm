@@ -155,9 +155,11 @@ sub embed_header
     print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
     embed_favicon();
     print ' <title>',
-      ($args[4] ?
-        (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
-        $args[0]), '</title>', "\n";
+      ( $args[4] ?
+          (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
+          $args[0]
+      ),
+      '</title>', "\n";
 
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
@@ -650,7 +652,7 @@ sub init_vars
     our $theme_module_query_id;
 
     my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
-    our $global_prefix = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
+    our $global_prefix    = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
     our $parent_webprefix = $parent_webprefix_local;
 
     our $xnav = "xnavigation=1";
@@ -752,7 +754,7 @@ sub get_current_user_language
         $language = $ENV{'HTTP_ACCEPT_LANGUAGE'};
         $language =~ s/;.*//;
         @languages = split /,/, $language;
-        $language = $languages[0];
+        $language  = $languages[0];
     }
 
     if (($language_browser && !$language) || !$language_browser) {
@@ -900,14 +902,13 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
-    }
-    elsif (
-           (string_contains($keys, "install")     ||
-            string_contains($keys, "recsok")      ||
-            string_contains($keys, "scripts_iok") ||
-            string_contains($keys, "right_upok")
-           ) &&
-           !string_contains($keys, "uninstall"))
+    } elsif (
+             (string_contains($keys, "install")     ||
+              string_contains($keys, "recsok")      ||
+              string_contains($keys, "scripts_iok") ||
+              string_contains($keys, "right_upok")
+             ) &&
+             !string_contains($keys, "uninstall"))
     {
         $class = "success ";
         $icon  = "package-install fa-1_25x";
@@ -1062,8 +1063,7 @@ sub get_button_style
     } elsif (string_contains($keys, "dbase_add") || string_contains($keys, "databases_import")) {
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
-    }
-    elsif (
+    } elsif (
         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
         ||
         (string_contains($keys, "create") &&
@@ -1191,7 +1191,7 @@ sub theme_version
     }
 
     if ($string) {
-        $version =~ s/(alpha|beta|RC)[\d+]|\.|-//ig;
+        $version =~ s/(alpha|beta|RC)\d*|\.|-//ig;
         if (theme_debug_mode() || $development) {
             $version .= (time() . $mversion);
         } else {
@@ -1338,7 +1338,7 @@ sub set_theme_temp_data
     my %var;
 
     $salt =~ tr/A-Za-z0-9//cd;
-    $key =~ tr/A-Za-z0-9//cd;
+    $key  =~ tr/A-Za-z0-9//cd;
 
     $value =~ s/[?|&]$xnav//g;
     $value =~ s/[?|&]randomized=[\d]+//g;
