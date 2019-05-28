@@ -58,8 +58,9 @@ sub theme_make_date_local
 
 sub nice_number
 {
-    my ($number) = @_;
-    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    my ($number, $delimiter) = @_;
+    $delimiter = " " if (!$delimiter);
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
     return $number;
 }
 
@@ -96,7 +97,7 @@ sub get_gpg_keys
         my %keys_secret_;
 
         foreach my $k (@keys) {
-            my $key = substr($k->{'key'}, -8, 8);
+            my $key  = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
             if ($_[0] || (!$_[0] && !grep(/^$key$/, @keys_avoided))) {
@@ -104,7 +105,7 @@ sub get_gpg_keys
             }
         }
         foreach my $k (@keys_secret) {
-            my $key = substr($k->{'key'}, -8, 8);
+            my $key  = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
             if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
@@ -357,6 +358,7 @@ sub format_document_title
 {
     my ($title_initial) = $_[0] =~ /(?|.*:\s+(.*)|(.*))/;
     my ($product, $os_type) = $title_initial =~ /(?|(.*\d+).*(\(.*)|(.*\d+))/;
+    $os_type = undef if (length($os_type) < 4);
     return ($os_type ? "$product $os_type" : $product);
 }
 

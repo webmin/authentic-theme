@@ -1309,7 +1309,7 @@ sub get_sysinfo_vars
                 ))
             {
                 my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
-                my $authentic_remote_alpha_rc    = $authentic_remote_version_local =~ /alpha|RC/;
+                my $authentic_remote_alpha_beta  = $authentic_remote_version_local =~ /alpha|beta/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -1327,7 +1327,7 @@ sub get_sysinfo_vars
                   ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
                   ($global_prefix || $gconfig{'webprefix'}) . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
-                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_rc ? 'hidden' : 'btn-info') .
+                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
                   . $theme_text{'theme_changelog'}
                   . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
@@ -1946,7 +1946,7 @@ sub theme_remote_version
                               '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
                               \$error,                                                      undef,
                               1,                                                            undef,
-                              undef,                                                        5,
+                              undef,                                                        30,
                               undef,                                                        undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
                 theme_cached('version-theme-development', $remote_version, $error);
@@ -1959,13 +1959,13 @@ sub theme_remote_version
             }
             if (!$remote_version) {
                 http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
-                              \$remote_release, \$error, undef, 1, undef, undef, 5);
+                              \$remote_release, \$error, undef, 1, undef, undef, 30);
                 $remote_release =~ /tag_name":"(.*?)"/;
                 http_download('api.github.com',                                                            '443',
                               '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
                               \$error,                                                                     undef,
                               1,                                                                           undef,
-                              undef,                                                                       5,
+                              undef,                                                                       30,
                               undef,                                                                       undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
                 theme_cached('version-theme-stable', $remote_version, $error);
@@ -3338,6 +3338,8 @@ sub get_xhr_request
             }
             @files;
             print convert_to_json(\@match);
+        } elsif ($in{'xhr-csf-unload'} eq '1') {
+            lib_csf_control('unload');
         }
 
         exit;

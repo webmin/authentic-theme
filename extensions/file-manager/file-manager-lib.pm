@@ -15,10 +15,11 @@ use File::MimeInfo;
 use File::Find;
 use File::Grep qw( fdo );
 use POSIX;
+use JSON::PP;
 
-our (%access,           %in,            %text,       @remote_user_info, $base_remote_user,
-     $config_directory, $current_theme, %userconfig, @allowed_paths,    $base,
-     $cwd,              $path,          $remote_user);
+our (%access,           %gconfig,          %in,            %text,       @remote_user_info,
+     $base_remote_user, $config_directory, $current_theme, %userconfig, @allowed_paths,
+     $base,             $cwd,              $path,          $remote_user);
 our $checked_path;
 
 our %request_uri = get_request_uri();
@@ -119,12 +120,16 @@ sub tokenize
     my ($key, $value) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
     my %var;
+    my $user = $remote_user;
+    my $tmp_file;
 
     $key =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $key = $1;
-    $key =~ tr/A-Za-z0-9//cd;
+    $key  =~ tr/A-Za-z0-9//cd;
+    $user =~ tr/A-Za-z0-9//cd;
+    $salt =~ tr/A-Za-z0-9//cd;
 
-    my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+    $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $user);
     $var{$key} = $value;
 
     if ($value) {
@@ -180,7 +185,7 @@ sub get_pagination
         $start = "<div class=\"dataTables_paginate paging_simple_numbers spaginates$invisible\">";
         $start .= '<ul class="pagination">';
         $start .= "<li class='paginate_button previous$disabled'>";
-        $start .= '<a href="#"><i class="fa fa-fw fa-angle-left"></i></a>';
+        $start .= '<a><i class="fa fa-fw fa-angle-left"></i></a>';
         $start .= "</li>";
         return $start;
     };
@@ -191,7 +196,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&regex=$regex&all_items=$all_items'>$i</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&regex=$regex&all_items=$all_items'>@{[nice_number($i, ',')]}</a>";
         $end .= "</li>";
         return $end;
     };
@@ -199,7 +204,7 @@ sub get_pagination
     my $range = sub {
         my $range;
         $range = '<li class="paginate_button disabled">';
-        $range .= '<a href="#">…</a>';
+        $range .= '<a>...</a>';
         $range .= "</li>";
 
     };
@@ -208,7 +213,7 @@ sub get_pagination
         my $end;
         my $disabled = ($page == $pages ? " disabled" : undef);
         $end = "<li class='paginate_button next$disabled'>";
-        $end .= '<a href="#"><i class="fa fa-fw fa-angle-right"></i></a>';
+        $end .= '<a><i class="fa fa-fw fa-angle-right"></i></a>';
         $end .= "</li>";
         $end .= '</ul>';
         $end .= '</div>';
@@ -309,6 +314,23 @@ sub fatal_errors
     print "</ul>";
 }
 
+sub utf8_decode
+{
+    my ($text) = @_;
+    return decode('UTF-8', $text, Encode::FB_DEFAULT);
+}
+
+sub convert_to_json_local
+{
+    return JSON::PP->new->encode((@_ ? @_ : {}));
+}
+
+sub print_json_local
+{
+    print "Content-type: application/json;\n\n";
+    print convert_to_json_local(@_);
+}
+
 sub print_error
 {
     my ($err_msg) = @_;
@@ -343,9 +365,7 @@ sub exec_search
                    if ((!$regex && (index($found_text, $mask_text) != -1 || $mask_text eq "*")) ||
                        ($regex && $found_text =~ /$mask_text/))
                    {
-                       if ($list) {
-                           $found = $_;
-                       } else {
+                       if (!$list) {
                            $found =~ s/^\Q$cwd\E//g;
                        }
                        if ($follow || (!$follow && !-l $_)) {
@@ -460,7 +480,7 @@ sub print_content
     my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
 
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
-        $page = int($in{'page'}) || 1;
+        $page      = int($in{'page'})     || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
@@ -468,10 +488,10 @@ sub print_content
             $in{'page'} = $page;
         }
         my $splice_start = $pagelimit * ($page - 1);
-        my $splice_end = $pagelimit;
+        my $splice_end   = $pagelimit;
 
-        @list = sort {$a cmp $b} @list;
-        @list = splice(@list, $splice_start, $splice_end);
+        @list           = sort {$a cmp $b} @list;
+        @list           = splice(@list, $splice_start, $splice_end);
         $totals_spliced = scalar(@list);
     }
 
@@ -505,7 +525,7 @@ sub print_content
     }
 
     # Get info about directory entries
-    my @info = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
+    my @info    = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
     my @folders = map {$_} grep {$_->[15] == 1} @info;
     my @files   = map {$_} grep {$_->[15] != 1} @info;
 
@@ -513,8 +533,8 @@ sub print_content
         undef(@list);
         push(@list, @info);
     } else {
-        @folders = sort {$a->[0] cmp $b->[0]} @folders;
-        @files   = sort {$a->[0] cmp $b->[0]} @files;
+        @folders = sort {"\L$a->[0]" cmp "\L$b->[0]"} @folders;
+        @files   = sort {"\L$a->[0]" cmp "\L$b->[0]"} @files;
         undef(@list);
         push(@list, @folders, @files);
     }
@@ -536,7 +556,7 @@ sub print_content
     $list_data{'pagination_limit'} = undef;
 
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
-        $page = int($in{'page'}) || 1;
+        $page      = int($in{'page'})     || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
@@ -552,9 +572,9 @@ sub print_content
         if ($end > $totals) {
             $end = $totals;
         }
-        $pagination_text =~ s/_START_/$start/ig;
-        $pagination_text =~ s/_END_/$end/ig;
-        $pagination_text =~ s/_TOTAL_/$totals/ig;
+        $pagination_text =~ s/_START_/@{[nice_number($start, ",")]}/ig;
+        $pagination_text =~ s/_END_/@{[nice_number($end, ",")]}/ig;
+        $pagination_text =~ s/_TOTAL_/@{[nice_number($totals, ",")]}/ig;
         $list_data{'pagination_text'} = $pagination_text;
     }
 
@@ -575,10 +595,18 @@ sub print_content
     }
     $list_data{'total'} = "<div class='total'>"
       .
-      ( $query ? ($text{'filemanager_global_search_results'} . ": ") :
-          ($server_pagination ? ($text{'filemanager_global_paginated_results'} . ": ") : undef)
+      ( $query ? (trim($text{'filemanager_global_search_results'}) . ": ") :
+          ($server_pagination ? (trim($text{'filemanager_global_paginated_results'}) . ": ") : undef)
       ) .
-      "" . text($info_total, $info_files, $info_folders, $totals, $pages) . "</div>";
+      ""
+      .
+      text(nice_number($info_total,   ","),
+           nice_number($info_files,   ","),
+           nice_number($info_folders, ","),
+           nice_number($totals,       ","),
+           nice_number($pages,        ",")
+      ) .
+      "</div>";
 
     # Render current directory entries
     $list_data{'form'} = &ui_form_start("", "post", undef, "id='list_form'");
@@ -605,12 +633,26 @@ sub print_content
     for (my $count = 1; $count <= $totals_spliced; $count++) {
         if ($count > $totals) {last;}
         my $class = $count & 1 ? "odd" : "even";
-        my $link = $list[$count - 1][0];
+        my $link  = $list[$count - 1][0];
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
         my $vlink = html_escape($link);
-        $vlink = decode('UTF-8', $vlink, Encode::FB_DEFAULT);
+        $vlink = utf8_decode($vlink);
         my $hlink = html_escape($vlink);
+
+        my $filename = $link;
+        $filename =~ /\/([^\/]+)$/;
+        if ($1 && $list[$count - 1][15] == 0) {
+            $filename = $1;
+        }
+        my $hlink_path = $hlink;
+        if ($query) {
+            if (!string_contains($hlink_path, '/') && $list[$count - 1][15] == 0) {
+                $hlink_path = undef;
+            }
+            $hlink_path =~ s/\/$filename$//;
+        }
+
         $path = html_escape($path);
 
         my $type = $list[$count - 1][14];
@@ -680,7 +722,7 @@ sub print_content
                      ($type_archive =~ /-x-bzip/ &&
                          has_command('bzip2')) ||
                      ($type_archive =~ /-gzip/ &&
-                         has_command('gzip')) ||
+                         (has_command('gzip') || has_command('gunzip'))) ||
                      ($type_archive =~ /-x-xz/ &&
                          has_command('xz'))
                     ) &&
@@ -692,12 +734,14 @@ sub print_content
                   "&file=" . &urlize($link) . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"><img src=\"$img\"></a>",
-                        "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
+        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"" .
+                          ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . "><img src=\"$img\"></a>",
+                        "<a href=\"$href\" data-filemin-link=\"$hlink\"" .
+                          ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . ">$vlink</a>");
         my @td_tags = (undef,
                        'class="col-icon"',
-                       'class="col-name" data-xarchive="' . $is_archive .
-                         '" data-xfile="' . $is_file . '" data-gpg="' . $is_gpg . '" data-img="' . $is_img . '"');
+                       'class="col-name" data-xarchive="' . $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' .
+                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $filename . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
@@ -755,7 +799,7 @@ sub print_content
               (
 "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
                   . $mod_time . "</span>");
-            push(@td_tags, 'class="col-time"');
+            push(@td_tags, 'data-order="' . ($list[$count - 1][10]) . '" class="col-time"');
         }
 
         $list_data{'rows'} .= &ui_checked_columns_row(\@row_data, \@td_tags, "name", $vlink);
@@ -763,10 +807,10 @@ sub print_content
 
     $list_data{'form'} .= &ui_hidden("path", $path), "\n";
     $list_data{'form'} .= '</form>';
-    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}     : undef);
-    $list_data{'error'}       = (length $in{'error'}       ? $in{'error'}       : undef);
-    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
-    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}      : undef);
+    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}            : undef);
+    $list_data{'error'}       = (length $in{'error'}       ? utf8_decode($in{'error'}) : undef);
+    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'}        : undef);
+    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}             : undef);
     $list_data{'page_requested'}       = $page;
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;
@@ -774,7 +818,7 @@ sub print_content
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
     $list_data{'flush_reset'}          = $in{'flush_reset'} ? 1 : 0;
 
-    print_json([\%list_data]);
+    print_json_local([\%list_data]);
 }
 
 sub get_tree
@@ -793,7 +837,7 @@ sub get_tree
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
             my $pp = $p ne '/' ? $p : undef;
-            my $c = $r{$td} =
+            my $c  = $r{$td} =
               { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
             defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
         }
@@ -810,11 +854,11 @@ sub get_tree
         my $dd = ($df > 0 ? ($df + 1) : 0);
         if ($dd) {
             if ($d < $dd) {
-                return sort @_;
+                return sort {"\L$a" cmp "\L$b"} @_;
             }
             return;
         }
-        sort @_;
+        sort {"\L$a" cmp "\L$b"} @_;
     };
     find(
          {  wanted     => $wanted,
@@ -857,8 +901,9 @@ sub local_nice_size
 
 sub nice_number
 {
-    my ($number) = @_;
-    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1\ /g;
+    my ($number, $delimiter) = @_;
+    $delimiter = " " if (!$delimiter);
+    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
     return $number;
 }
 
@@ -946,6 +991,11 @@ sub switch_to_user
     if (@uinfo) {
         switch_to_unix_user(\@uinfo);
     }
+}
+
+sub is_linux
+{
+    return $gconfig{'os_type'} =~ /-linux$/;
 }
 
 sub is_root

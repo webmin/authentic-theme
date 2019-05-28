@@ -57,14 +57,16 @@ foreach my $name (@entries_list) {
     }
 
     my $archive_type = mimetype($cwd . '/' . $name);
-    if ($archive_type =~ /x-bzip/) {
-        system("tar xvjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
-    } elsif ($archive_type =~ /x-tar/ ||
-             $archive_type =~ /\/gzip/ ||
-             $archive_type =~ /x-xz/   ||
-             $archive_type =~ /x-compressed-tar/)
-    {
-        $status = system("tar xfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
+    if ($archive_type =~ /x-tar/ || $archive_type =~ /x-compressed-tar/) {
+        $status = system("tar xpf " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
+    } elsif ($archive_type =~ /x-bzip/) {
+        system("tar xjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
+    } elsif ($archive_type =~ /\/gzip/) {
+        my $gz_cmd = has_command('gunzip') || has_command('gzip');
+        system("$gz_cmd -d -f -k " . quotemeta("$cwd/$name"));
+    } elsif ($archive_type =~ /x-xz/) {
+        my $xz = has_command('xz');
+        system("$xz -d -f -k " . quotemeta("$cwd/$name"));
     } elsif ($archive_type =~ /x-7z/) {
         if ($password) {
             $pparam = (" -p" . quotemeta($password) . " ");
@@ -74,7 +76,9 @@ foreach my $name (@entries_list) {
         if ($password) {
             $pparam = (" -P " . quotemeta($password) . " ");
         }
-        $status = system("unzip $pparam -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
+        my $unzip_out = `unzip --help`;
+        my $uu = ($unzip_out =~ /-UU/ ? '-UU' : undef);
+        $status = system("unzip $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
 
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
         if ($password) {
