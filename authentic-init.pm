@@ -1193,9 +1193,9 @@ sub theme_version
     if ($string) {
         $version =~ s/(alpha|beta|RC)\d*|\.|-//ig;
         if (theme_debug_mode() || $development) {
-            $version .= (time() . $mversion);
+            $version .= (time() . "1$mversion");
         } else {
-            $version .= ('9999999999' . $mversion);
+            $version .= ('99999999999' . $mversion);
         }
     }
 
