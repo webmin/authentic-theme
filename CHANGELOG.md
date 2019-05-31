@@ -1,12 +1,13 @@
 ## Changelog
 
-#### Version 19.34 (May 28, 2019)
+#### Version 19.34-RC2 (May 30, 2019)
 * Add ability to detach file to separate editor when editing configs manually
 * Add ability to pass currently opened path in File Manager to console [#1359](https://github.com/authentic-theme/authentic-theme/issues/1359)
-* Add ability return to previous page when going directory up (or using Backspace hotkey) in File Manager
+* Add ability to remember and return to previous page when going back directory up in File Manager
 * Add number formatting in File Manager
 * Add improved hierarchy display for BIND DNS Server module
 * Add ability to revert content for file editor
+* Add improved UI for complex schedule chooser [#1342](https://github.com/authentic-theme/authentic-theme/issues/1342)
 * Fiх to respect redirects on progressive pages [webmin/webmin#1056](https://github.com/webmin/webmin/issues/1056)
 * Fiх to improve client-side sorting by name, to display folders ahead of files in File Manager [#1347](https://github.com/authentic-theme/authentic-theme/issues/1347)
 * Fiх to add view labels for zones, when searching [1347](https://github.com/authentic-theme/authentic-theme/issues/1336)
@@ -16,6 +17,7 @@
 * Fiх pagination delimiter and other small issues in File Manager
 * Fiх to have more distinctive scrollbar in navigation menu and right side slider
 * Fiх various issues with right slider (white palette and night mode)
+* Fix missing link icons in some module (Cluster modules in particular)
 
 #### Version 19.33 (May 06, 2019)
 * Add to let user use regex as filename mask in File Manager when searching [@066e11b](https://github.com/authentic-theme/authentic-theme/commit/066e11b54a17c30d6d85b7648ce32b09644e8bf2)
