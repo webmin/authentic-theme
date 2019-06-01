@@ -300,7 +300,7 @@ sub theme_generate_icon
         my $images_modules = 'images/modules';
         my $root_images    = $root_directory . "/$current_theme/$images_modules/";
         my $__icon = (-r $root_images . $icon            ? $wp . "/$images_modules" . $icon :
-                        $root_images . $mod . $icon      ? $wp . "/$images_modules/" . $mod . $icon :
+                        -r $root_images . $mod . $icon   ? $wp . "/$images_modules/" . $mod . $icon :
                         -r $root_images . $mod . $___svg ? $wp . "/$images_modules/" . $mod . $___svg :
                         $icon_outer                      ? $icon_outer :
                         ($wp . "/images/not_found.svg"));
