@@ -989,7 +989,7 @@ theme_xhred_reload_notification=Theme configuration has been changed but not sav
 
 
 #19.22
-theme_xhred_global_save_as=Save as
+theme_xhred_global_save_as=Save As
 theme_xhred_editor_save_file_as=Save file as
 theme_xhred_global_configuration=Configuration
 
@@ -1115,3 +1115,5 @@ settings_usermin_default_module=Default module
 #19.34
 theme_xhred_search_in_file_open_external=Detach file to separate editor
 theme_xhred_path_to_console=Open current path in terminal (Ctrl+Shift+L)
+theme_xhred_filemanager_editor_revert_content=Revert File
+theme_xhred_filemanager_editor_reverting_content=Dropping changes and reverting to original file content.
