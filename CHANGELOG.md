@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.34-RC2 (May 30, 2019)
+#### Version 19.34 (June 01, 2019)
 * Add ability to detach file to separate editor when editing configs manually
 * Add ability to pass currently opened path in File Manager to console [#1359](https://github.com/authentic-theme/authentic-theme/issues/1359)
 * Add ability to remember and return to previous page when going back directory up in File Manager
