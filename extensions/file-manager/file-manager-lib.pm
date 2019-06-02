@@ -120,12 +120,16 @@ sub tokenize
     my ($key, $value) = @_;
     my $salt = substr(encode_base64($main::session_id), 0, 16);
     my %var;
+    my $user = $remote_user;
+    my $tmp_file;
 
     $key =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $key = $1;
-    $key =~ tr/A-Za-z0-9//cd;
+    $key  =~ tr/A-Za-z0-9//cd;
+    $user =~ tr/A-Za-z0-9//cd;
+    $salt =~ tr/A-Za-z0-9//cd;
 
-    my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+    $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $user);
     $var{$key} = $value;
 
     if ($value) {
@@ -361,9 +365,7 @@ sub exec_search
                    if ((!$regex && (index($found_text, $mask_text) != -1 || $mask_text eq "*")) ||
                        ($regex && $found_text =~ /$mask_text/))
                    {
-                       if ($list) {
-                           $found = $_;
-                       } else {
+                       if (!$list) {
                            $found =~ s/^\Q$cwd\E//g;
                        }
                        if ($follow || (!$follow && !-l $_)) {
@@ -531,8 +533,8 @@ sub print_content
         undef(@list);
         push(@list, @info);
     } else {
-        @folders = sort {$a->[0] cmp $b->[0]} @folders;
-        @files   = sort {$a->[0] cmp $b->[0]} @files;
+        @folders = sort {"\L$a->[0]" cmp "\L$b->[0]"} @folders;
+        @files   = sort {"\L$a->[0]" cmp "\L$b->[0]"} @files;
         undef(@list);
         push(@list, @folders, @files);
     }
@@ -637,6 +639,20 @@ sub print_content
         my $vlink = html_escape($link);
         $vlink = utf8_decode($vlink);
         my $hlink = html_escape($vlink);
+
+        my $filename = $link;
+        $filename =~ /\/([^\/]+)$/;
+        if ($1 && $list[$count - 1][15] == 0) {
+            $filename = $1;
+        }
+        my $hlink_path = $hlink;
+        if ($query) {
+            if (!string_contains($hlink_path, '/') && $list[$count - 1][15] == 0) {
+                $hlink_path = undef;
+            }
+            $hlink_path =~ s/\/$filename$//;
+        }
+
         $path = html_escape($path);
 
         my $type = $list[$count - 1][14];
@@ -718,12 +734,14 @@ sub print_content
                   "&file=" . &urlize($link) . "' title='$text{'extract_archive'}' data-container='body'>$extract_icon</a> ";
             }
         }
-        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"><img src=\"$img\"></a>",
-                        "<a href=\"$href\" data-filemin-link=\"$hlink\">$vlink</a>");
+        my @row_data = ("<a href='$href' data-filemin-link=\"$hlink\"" .
+                          ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . "><img src=\"$img\"></a>",
+                        "<a href=\"$href\" data-filemin-link=\"$hlink\"" .
+                          ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . ">$vlink</a>");
         my @td_tags = (undef,
                        'class="col-icon"',
                        'class="col-name" data-xarchive="' . $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' .
-                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $hlink . '"');
+                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $filename . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
@@ -836,11 +854,11 @@ sub get_tree
         my $dd = ($df > 0 ? ($df + 1) : 0);
         if ($dd) {
             if ($d < $dd) {
-                return sort @_;
+                return sort {"\L$a" cmp "\L$b"} @_;
             }
             return;
         }
-        sort @_;
+        sort {"\L$a" cmp "\L$b"} @_;
     };
     find(
          {  wanted     => $wanted,

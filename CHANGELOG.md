@@ -1,5 +1,24 @@
 ## Changelog
 
+#### Version 19.34 (June 01, 2019)
+* Add ability to detach file to separate editor when editing configs manually
+* Add ability to pass currently opened path in File Manager to console [#1359](https://github.com/authentic-theme/authentic-theme/issues/1359)
+* Add ability to remember and return to previous page when going back directory up in File Manager
+* Add number formatting in File Manager
+* Add improved hierarchy display for BIND DNS Server module
+* Add ability to revert content for file editor
+* Add improved UI for complex schedule chooser [#1342](https://github.com/authentic-theme/authentic-theme/issues/1342)
+* Fiх to respect redirects on progressive pages [webmin/webmin#1056](https://github.com/webmin/webmin/issues/1056)
+* Fiх to improve client-side sorting by name, to display folders ahead of files in File Manager [#1347](https://github.com/authentic-theme/authentic-theme/issues/1347)
+* Fiх to add view labels for zones, when searching [1347](https://github.com/authentic-theme/authentic-theme/issues/1336)
+* Fiх redirects for external links [#1344](https://github.com/authentic-theme/authentic-theme/issues/1344)
+* Fiх sorting by modified date in File Manager [#1345](https://github.com/authentic-theme/authentic-theme/issues/1345)
+* Fiх post reinstall issues for ConfigServer Security & Firewall [#1341](https://github.com/authentic-theme/authentic-theme/issues/1341)
+* Fiх pagination delimiter and other small issues in File Manager
+* Fiх to have more distinctive scrollbar in navigation menu and right side slider
+* Fiх various issues with right slider (white palette and night mode)
+* Fix missing link icons in some module (Cluster modules in particular)
+
 #### Version 19.33 (May 06, 2019)
 * Add to let user use regex as filename mask in File Manager when searching [@066e11b](https://github.com/authentic-theme/authentic-theme/commit/066e11b54a17c30d6d85b7648ce32b09644e8bf2)
 * Add to use regex in find results in File Manager when searching/replacing [@ee71b71](https://github.com/authentic-theme/authentic-theme/commit/ee71b71d1413bd25794fdd3726b29484250b318a)
@@ -23,8 +42,8 @@
 * Add ability to select/deselect a range of checked table rows by holding shift in File Manager
 * Add tooltips with size in bytes, numeric user/group and last access/change time to File Manager
 * Add ability to pass to compress and download unlimited number of items in File Manager
-* Add intuitive folder refresh hotkey __(Ctrl+R)__ in File Manager
-* Add hotkeys __(Ctrl+A/Ctrl+⇧+A)__ to select/deselect all items in File Manager
+* Add intuitive folder refresh hotkey (Ctrl+R) in File Manager
+* Add hotkeys (Ctrl+A/Ctrl+⇧+A) to select/deselect all items in File Manager
 * Add to update file size after closing file editor in File Manager
 * Add send browser notification when progressive output is finished and user not looking at the page
 * Add improved BIND syntax highlight for manual editors

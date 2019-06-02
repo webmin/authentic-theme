@@ -459,7 +459,7 @@ sub get_extended_sysinfo
                       '">';
 
                     if ($info->{'id'} ne 'plugin_virtualmin-notes' && $info->{'id'} ne 'acl_logins') {
-                        $returned_sysinfo .= '<div class="table-responsive" style="width:99.8%">';
+                        $returned_sysinfo .= '<div class="table-responsive">';
                     }
 
                     if ($info->{'type'} ne 'html') {
