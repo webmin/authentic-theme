@@ -19,8 +19,8 @@ body_procs=プロセスの実行
 body_real=RAM
 body_time=システム上の時間
 body_updates=パッケージアップデート
-body_updays=$1日と$2時間,$3分
-body_uphours=$1時間,$2分
+body_updays=$1日と$2時間$3分
+body_uphours=$1時間$2分
 body_upmins=$1分
 body_upneed= $1のパッケージアップデートが利用可能です
 body_upneed1=$1のパッケージアップデートが利用可能です
@@ -30,8 +30,8 @@ body_upsec1=$1のパッケージアップデートを利用できます。その
 body_upsec2=$1のパッケージアップデートが利用できます。そのうち$2はセキュリティアップデートです
 body_upsec3=$1のパッケージアップデートを利用できます。そのうち$2はセキュリティアップデートです
 body_uptime=システム稼働時間
-body_used=$1合計/$2使用
-body_used_and_free=$1合計/$2フリー/$3使用
+body_used=$2使用中/$1合計
+body_used_and_free= $3使用中/$2フリー/$1合計
 body_usermin=Userminバージョン
 body_virt=仮想メモリ
 body_webmin=Webminバージョン
@@ -67,7 +67,7 @@ right_fusers=Mail/FTP ユーザー
 right_fvm2=仮想マシン
 right_fweb=仮装ウェブサイト
 right_licenceheader_vm2=Cloudminライセンス
-right_login=ログインした
+right_login=ログイン済
 right_not=インストールされていない
 right_of=$1 から $2
 right_quota=ディスク使用量とクォータ
@@ -82,8 +82,8 @@ right_vm2=Cloudminバージョン
 
 session_failed=ログインに失敗しました。もう一度お試しください。
 session_logout=ログアウトに成功しました。以下のフォームを使用して再度ログインしてください。
-session_timed_out= $1分後にセッションがタイムアウトしました。
-session_twofailed= 二要素認証に失敗しました:$1
+session_timed_out=$1分後にセッションがタイムアウトしました。
+session_twofailed=二段階認証に失敗しました:$1
 
 
 
@@ -128,7 +128,7 @@ settings_security_description= セキュリティ警告は、特定のイベン�
 settings_right_hotkey_options_title=ホットキーオプション
 settings_right_sysinfo_page_options_title=Dashboard options
 
-settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/で/Cloudmin <code>URL.</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
+settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/Cloudminの<code>URL</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
 settings_hotkey_custom_1=カスタムリンク <code>1</code>
 settings_hotkey_custom_2=カスタムリンク <code>2</code>
 settings_hotkey_custom_3=カスタムリンク <code>3</code>
@@ -195,7 +195,7 @@ settings_hotkey_toggle_slider=スライダのホットキー
 settings_side_slider_enabled=スライダを有効にする
 settings_leftmenu_user_html=HTML スニペットの表示
 
-theme_changelog=変更ログ
+theme_changelog=変更履歴
 theme_conference=テーマ会議
 theme_development_support=開発支援
 theme_donate=寄付
@@ -327,7 +327,7 @@ theme_xhred_filemanager_context_upload=現在のディレクトリにアップ�
 theme_xhred_filemanager_context_download=リモート URL からダウンロード
 
 #17.53
-theme_config_virtualmin=で仮想サーバー
+theme_config_virtualmin=仮想サーバー
 theme_config_cloudmin=Cloudmin 管理システム
 settings_right_thirdparties_options_title=サードパーティモジュールのオプション
 theme_xhred_filemanager_context_calculate_size=スペースバーのサイズを計算する
@@ -640,7 +640,7 @@ theme_xhred_global_return_to_module_index= モジュールインデックスに�
 
 
 #18.47
-theme_xhred_global_complete_changelog= 完全な変更ログ
+theme_xhred_global_complete_changelog= 完全な変更履歴
 theme_xhred_global_beta_version= ベータ版
 theme_xhred_global_release= リリース
 theme_xhred_global_released_on= リリース日
@@ -839,7 +839,7 @@ theme_nice_size_PB=PB
 theme_nice_size_TB=TB
 theme_nice_size_GB=GB
 theme_nice_size_MB=MB
-theme_nice_size_kB=kB
+theme_nice_size_kB=KB
 theme_nice_size_b=bytes
 settings_sysinfo_real_time_status_options= リアルタイムの監視オプション
 settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
@@ -894,7 +894,7 @@ extensions_mail_header_cc=cc
 extensions_mail_header_bcc=bcc
 extensions_mail_header_date= 日付
 extensions_mail_header_spam= スパム
-extensions_mail_header_mailed_by= 郵送先
+extensions_mail_header_mailed_by= 宛先
 extensions_mail_header_signed_by= によって署名されました
 extensions_mail_header_spf=received-spf
 extensions_mail_header_dkim=dkim-signature
@@ -961,7 +961,7 @@ theme_xhred_tooltip_navigation_pinned= ピン固定/ピン固定解除メニュ�
 settings_hotkey_navigation= ナビゲーションメニューを切り替えるホットキー
 
 theme_xhred_search_in_webmin= Webminを検索
-theme_xhred_search_in_usermin= 検索Usermin
+theme_xhred_search_in_usermin= Userminを検索
 theme_xhred_search_in_virtualserver= Virtualminを検索
 theme_xhred_search_in_servermanager= 検索Cloudmin
 
@@ -992,7 +992,7 @@ theme_xhred_global_save_as= 名前を付けて保存
 theme_xhred_editor_save_file_as= ファイルに名前を付けて保存
 theme_xhred_global_configuration= 設定
 
-body_used_cached_total= 合計 $1/キャッシュ $3/使用済み $2
+body_used_cached_total= 使用済み $2/キャッシュ $3/合計 $1
 
 #19.30
 theme_xhred_favorites_add=お気に入りに追加
@@ -1111,7 +1111,7 @@ settings_usermin_default_module=デフォルトモジュール
 
 
 #19.34
-theme_xhred_search_in_file_open_external=Detach file to separate editor
-theme_xhred_path_to_console=Open current path in terminal (Ctrl+Shift+L)
-theme_xhred_filemanager_editor_revert_content=Revert File
-theme_xhred_filemanager_editor_reverting_content=Dropping changes and reverting to original file content.
+theme_xhred_search_in_file_open_external=ファイルを別のエディタにデタッチ
+theme_xhred_path_to_console=ターミナルで現在のパスを開く(Ctrl + Shift + L)
+theme_xhred_filemanager_editor_revert_content=ファイルを元に戻す
+theme_xhred_filemanager_editor_reverting_content=変更をドロップして元のファイルの内容に戻す
