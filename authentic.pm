@@ -337,10 +337,13 @@ sub theme_generate_icon
 "<span style='position: absolute; top:2px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
                 }
             }
-            print "<a href=\"$link\" class=\"icon_link\" data-title=\"" .
-              (($_[6] || $_[7]) ? $title : (length $title > 40 ? "<span class='word-break-all'>$title</span>" : undef)) .
+            print "<a href=\"$link\" class=\"icon_link\" data-title=\""
+              .
+              ( ($_[6] || $_[7]) ? $title :
+                  (string_contains($title, '<tt') ? "<span class='word-break-all'>$title</span>" : undef)
+              ) .
               "\" data-toggle=\"tooltip\" data-placement=\"auto bottom\" data-container=\"body\" " .
-              (length $title > 40 ? " data-fbplacement" : undef) . ">" . '<img class="ui_icon' .
+              (string_contains($title, '<tt') ? " data-fbplacement" : undef) . ">" . '<img class="ui_icon' .
               ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt=""><br>';
             print "$title</a>\n";
             print '</div>';
