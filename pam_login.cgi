@@ -27,10 +27,10 @@ our %theme_config = (settings($config_directory . "/$current_theme/settings-admi
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} &&
     get_env('http_cookie') !~ /banner=1/ &&
-    !$in{'logout'}                       &&
-    !$in{'failed'}                       &&
-    !$in{'password'}                     &&
-    !$in{'error'}                        &&
+    !$in{'logout'}   &&
+    !$in{'failed'}   &&
+    !$in{'password'} &&
+    !$in{'error'}    &&
     $in{'initial'})
 {
 
@@ -139,10 +139,12 @@ if (!$in{'password'}) {
 } else {
 
     print '<div class="input-group form-group">' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
-    print
-      '<input type="password" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
-      &theme_text('theme_xhred_login_pass') . '" autofocus>' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-' .
+      ($in{'password'} ? 'lock' : 'qrcode') . '"></i></span>' . "\n";
+    print '<input type="' . ($in{'password'} ? 'password' : 'text') .
+      '" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
+      ($in{'password'} ? theme_text('theme_xhred_login_pass') : theme_text('theme_xhred_login_passphrase')) .
+      '" autofocus>' . "\n";
     print '</div>' . "\n";
 }
 
