@@ -140,10 +140,10 @@ if (!$in{'password'}) {
 
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-' .
-      ($in{'password'} ? 'lock' : 'qrcode') . '"></i></span>' . "\n";
-    print '<input type="' . ($in{'password'} ? 'password' : 'text') .
+      ($in{'passcode'} ? 'qrcode' : 'lock') . '"></i></span>' . "\n";
+    print '<input type="' . ($in{'passcode'} ? 'text' : 'password') .
       '" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
-      ($in{'password'} ? theme_text('theme_xhred_login_pass') : theme_text('theme_xhred_login_passphrase')) .
+      ($in{'passcode'} ? theme_text('theme_xhred_login_passphrase') : theme_text('theme_xhred_login_pass')) .
       '" autofocus>' . "\n";
     print '</div>' . "\n";
 }
