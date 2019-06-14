@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, $cwd, $path, $extensions_path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -77,7 +77,7 @@ foreach my $name (@entries_list) {
             $pparam = (" -P " . quotemeta($password) . " ");
         }
         my $unzip_out = `unzip --help`;
-        my $uu = ($unzip_out =~ /-UU/ ? '-UU' : undef);
+        my $uu        = ($unzip_out =~ /-UU/ ? '-UU' : undef);
         $status = system("unzip $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
 
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
@@ -94,7 +94,7 @@ foreach my $name (@entries_list) {
             $status = system("unrar $pparam x -r -y -o+ " . quotemeta("$cwd/$name") . " " . quotemeta($cwd));
         }
     } elsif ($archive_type =~ "/x-rpm" || $archive_type =~ /\/x-deb/) {
-        my $dir = fileparse("$cwd/$name", qr/\.[^.]*/);
+        my $dir  = fileparse("$cwd/$name", qr/\.[^.]*/);
         my $path = quotemeta("$cwd/$dir");
         system("mkdir $path");
         if ($archive_type =~ /\/x-rpm/) {
@@ -126,4 +126,5 @@ foreach my $name (@entries_list) {
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+redirect($extensions_path .
+         '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

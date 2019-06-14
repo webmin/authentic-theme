@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %request_uri, $cwd, $base, $path);
+our (%in, %request_uri, $cwd, $base, $path, $extensions_path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -18,7 +18,7 @@ my @arr = <$fh>;
 close($fh);
 if (test_all_items_query()) {
     my @entries_list;
-    my @entries_list_entries= get_entries_list();
+    my @entries_list_entries = get_entries_list();
     push(@entries_list, $arr[0], $arr[1], @entries_list_entries);
     undef(@arr);
     @arr = @entries_list;
@@ -48,8 +48,9 @@ for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
 
 if (scalar(@errors) > 0) {
     set_response('err');
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') . extra_query());
+    redirect($extensions_path . '/list.cgi?path=' .
+             urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') . extra_query());
 } else {
     set_response_count(scalar(@arr) - 2);
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
+    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
 }

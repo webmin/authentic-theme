@@ -18,7 +18,7 @@ my %errors;
 my $error_fatal;
 
 if (!$in{'owner'} || !$in{'group'} || !supports_users()) {
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 
 (my $login, my $pass, my $uid, my $gid) = getpwnam($in{'owner'});

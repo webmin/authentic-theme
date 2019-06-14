@@ -9,14 +9,14 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, $cwd, $path, $extensions_path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my $path_urlized = urlize($path);
 
 if (!$in{'name'}) {
-    redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+    redirect(("$extensions_path/list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }
 
 my $symlink    = "$cwd/$in{'name'}_symlink";
@@ -31,5 +31,5 @@ if ($is_symlink || -d $symlink || -e $symlink) {
           ));
 } else {
     symlink_file("$cwd/$in{'name'}", $symlink);
-    redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+    redirect(("$extensions_path/list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }

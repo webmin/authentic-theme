@@ -55,7 +55,12 @@ sub get_libs
         $checked_path =~ s/$in{'cwd'}\//\//ig;
     }
 
-    $extensions_path = "/extensions/file-manager";
+    my $prefix;
+    if ($gconfig{'relative_redir'}) {
+        $prefix = $gconfig{'webprefix'};
+    }
+    $extensions_path = "$prefix/extensions/file-manager";
+    
     %text            = (load_language($current_theme), load_language($module), %text);
 }
 

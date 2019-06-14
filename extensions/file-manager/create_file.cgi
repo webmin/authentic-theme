@@ -10,14 +10,14 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, $cwd, $path, $extensions_path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my $path_urlized = urlize($path);
 
 if (!$in{'name'}) {
-    redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+    redirect(("$extensions_path/list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }
 
 my $type;
@@ -37,7 +37,7 @@ if (-f "$cwd/$in{'name'}" || -d "$cwd/$in{'name'}") {
 } else {
     if (open my $fh, "> $cwd/$in{'name'}") {
         close($fh);
-        redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+        redirect(("$extensions_path/list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
     } else {
         print_error(
                     (
