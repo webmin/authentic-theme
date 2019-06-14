@@ -141,10 +141,9 @@ sub get_swith_mode
     {
         $t_var_switch_m  = '3';
         $t_var_product_m = '3';
-    }
-    elsif (&foreign_available("virtual-server") ||
-           &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
-                                                    !&foreign_available("server-manager")))
+    } elsif (&foreign_available("virtual-server") ||
+             &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
+                                                      !&foreign_available("server-manager")))
     {
         $t_var_switch_m  = '2';
         $t_var_product_m = '2';
@@ -315,7 +314,7 @@ sub print_switch
 
     }
     print '<a></a>
-            </div><br style="line-height:4.4">';
+            </div><div class="toggle-space"></div>';
 }
 
 sub print_category_link
@@ -751,17 +750,15 @@ sub print_left_menu
 
                 if ($link =~ /\/virtual-server\/domain_form.cgi/) {
                     $icon = '<i class="fa fa-fw fa-plus-square-o"></i>';
-                }
 
-                elsif ($link =~ /\/virtual-server\/edit_domain.cgi/ ||
-                       $link =~ /\/server-manager\/edit_serv.cgi/)
+                } elsif ($link =~ /\/virtual-server\/edit_domain.cgi/ ||
+                         $link =~ /\/server-manager\/edit_serv.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa-pencil-square-o"></i>';
                 } elsif ($link =~ /\/virtual-server\/view_domain.cgi/) {
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
-                }
 
-                elsif ($link =~ /\/virtual-server\/list_users.cgi/) {
+                } elsif ($link =~ /\/virtual-server\/list_users.cgi/) {
                     $icon = '<i class="fa fa-fw fa-users"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_aliases.cgi/) {
                     $icon = '<i class="fa fa-fw fa-envelope-o"></i>';
@@ -773,9 +770,8 @@ sub print_left_menu
                     $icon = '<i class="fa fa-fw fa-update scaled1"></i>';
                 } elsif ($link =~ /\/filemin\/index.cgi/) {
                     $icon = '<i class="fa fa-fw fa-file-manager scaled2"></i>';
-                }
 
-                elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
+                } elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
                 } elsif ($link =~ /\/server-manager\/edit_pass.cgi/) {
                     $icon = '<i class="fa fa-fw fa-key"></i>';
@@ -923,12 +919,8 @@ sub print_left_menu
                                  virtual_server::shorten_domain_name($_),
                                  "title=\"" . virtual_server::show_domain_name($_) . "\""]
                               }
-                              grep {
-                                virtual_server::can_edit_domain($_)
-                              }
-                              sort {
-                                $a->{'dom'} cmp $b->{'dom'}
-                              } virtual_server::list_domains()];
+                              grep {virtual_server::can_edit_domain($_)}
+                              sort {$a->{'dom'} cmp $b->{'dom'}} virtual_server::list_domains()];
                     }
                     print ui_select(
                         ($item->{'name'} eq 'dname' ? 'dom' :
@@ -1199,7 +1191,7 @@ sub get_sysinfo_vars
         my $ip =
           $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
           &to_ipaddress(get_system_hostname());
-        $ip = " ($ip)" if ($ip);
+        $ip   = " ($ip)" if ($ip);
         $host = &get_system_hostname() . $ip;
         if (&foreign_available("net")) {
             $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
@@ -1225,7 +1217,7 @@ sub get_sysinfo_vars
         if ($has_virtualmin) {
             my ($vs_license, $__virtual_server_version);
 
-            $vs_license = licenses('vm');
+            $vs_license               = licenses('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
 
@@ -1807,7 +1799,7 @@ sub error_40x
     }
     $block_time += 5;
 
-    my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+    my $sec     = lc(get_env('https')) eq 'on' ? "; secure" : "";
     my $sidname = "sid";
     print "Auth-type: auth-required=1\r\n";
     print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
@@ -1857,7 +1849,7 @@ sub theme_update_incompatible
     my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
 
     $authentic_remote_data =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-    $webmin_compatible_version = $3 ? $3 : $1;
+    $webmin_compatible_version  = $3 ? $3 : $1;
     $usermin_compatible_version = $2;
 
     if (
@@ -3393,10 +3385,9 @@ sub get_default_right
 
             }
         }
-    }
-    elsif ($theme_requested_url =~ /server-manager/ &&
-           ($t_uri___i ||
-            (   length $theme_config{'settings_right_cloudmin_default'} &&
+    } elsif ($theme_requested_url =~ /server-manager/ &&
+             ($t_uri___i ||
+              ( length $theme_config{'settings_right_cloudmin_default'} &&
                 $theme_config{'settings_right_cloudmin_default'} ne ''  &&
                 (\server_available($theme_config{'settings_right_cloudmin_default'}, 'id') ||
                     $theme_config{'settings_right_cloudmin_default'} eq 'index.cgi'))))
@@ -3550,7 +3541,7 @@ sub update_notice
     $changelog_data =~ s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;
 
-    my @version = split(/ /, $changelog_version[0]);
+    my @version           = split(/ /, $changelog_version[0]);
     my $changelog_content = '
       <div class="modal fade fade9" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-update">
@@ -3753,7 +3744,7 @@ sub get_autocomplete_shell
             $unit_tmp =~ s/\|/,/g;
             $unit_tmp =~ s/;/,/g;
 
-            my @units_tmp = split /,/, $unit_tmp;
+            my @units_tmp          = split /,/, $unit_tmp;
             my @units_possible_tmp = ('start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status');
             @rs_tmp = (@units_tmp ? @units_tmp : @units_possible_tmp);
             my @rs_cmd;
