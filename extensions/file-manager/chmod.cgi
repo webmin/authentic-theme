@@ -10,7 +10,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, $cwd, $path, $extensions_path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -93,4 +93,4 @@ if ($in{'applyto'} eq '5') {
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
