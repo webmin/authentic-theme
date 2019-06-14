@@ -1182,6 +1182,7 @@ sub theme_redirect
     }
 
     my $origin   = $ENV{'HTTP_ORIGIN'};
+    my $referer  = $ENV{'HTTP_REFERER'};
     my $prefix   = $gconfig{'webprefix'};
     my $noredir  = $gconfig{'webprefixnoredir'};
     my $relredir = $gconfig{'relative_redir'};
@@ -1197,7 +1198,9 @@ sub theme_redirect
     if ($parent) {
         ($link) = $arg2 =~ /:\d+(.*)/;
         $url = "$parent$link";
-    } elsif (string_starts_with($arg1, 'http') && $arg1 !~ /$origin/) {
+    } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/)) ||
+             string_contains($arg1, '../'))
+    {
         print "Location: $arg1\n\n";
         return;
     }
