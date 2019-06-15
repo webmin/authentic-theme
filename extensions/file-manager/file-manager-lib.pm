@@ -324,9 +324,11 @@ sub utf8_decode
     return decode('UTF-8', $text, Encode::FB_DEFAULT);
 }
 
-sub redirect_local {
+sub redirect_local
+{
     print "Location: $_[0]\n\n";
 }
+
 sub convert_to_json_local
 {
     return JSON::PP->new->encode((@_ ? @_ : {}));
