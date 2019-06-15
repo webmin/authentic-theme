@@ -1801,7 +1801,6 @@ sub error_40x
 
     my $sec     = lc(get_env('https')) eq 'on' ? "; secure" : "";
     my $sidname = "sid";
-    print "Auth-type: auth-required=1\r\n";
     print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
     print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
     print "Set-Cookie: redirect=1; path=/\r\n";
