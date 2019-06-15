@@ -60,8 +60,8 @@ sub get_libs
         $prefix = $gconfig{'webprefix'};
     }
     $extensions_path = "$prefix/extensions/file-manager";
-    
-    %text            = (load_language($current_theme), load_language($module), %text);
+
+    %text = (load_language($current_theme), load_language($module), %text);
 }
 
 sub get_type
