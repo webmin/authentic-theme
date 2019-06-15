@@ -10,12 +10,12 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path, $extensions_path);
+our (%in, %text, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 if (!$in{'name'}) {
-    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
 }
 
 $path = html_escape($path) || "/";
@@ -32,7 +32,7 @@ if (-e "$cwd/$in{'name'}") {
           (text('filemanager_rename_exists', html_escape($in{'name'}), $path, $text{ 'theme_xhred_global_' . $type . '' })));
 } else {
     if (&rename_file($cwd . '/' . $in{'file'}, $cwd . '/' . $in{'name'})) {
-        redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
+        redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
     } else {
         print_error(
                     (

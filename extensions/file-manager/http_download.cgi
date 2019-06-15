@@ -12,12 +12,12 @@ use strict;
 use File::Basename;
 use Time::Local;
 
-our (%in, %text, $cwd, $path, $extensions_path);
+our (%in, %text, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 if (!$in{'link'}) {
-    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
     return;
 }
 
@@ -44,7 +44,6 @@ if (!$host) {
         set_ownership_permissions($st[4], $st[5], undef, $full);
         @st = stat($cwd);
         $success .= text('http_done', nice_size($st[7]), "<tt>" . html_escape($full) . "</tt>");
-        redirect($extensions_path .
-                 '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&success=' . $success . extra_query());
+        redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&success=' . $success . extra_query());
     }
 }

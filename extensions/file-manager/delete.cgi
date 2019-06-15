@@ -10,7 +10,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path, $extensions_path);
+our (%in, %text, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -25,5 +25,5 @@ foreach my $name (@entries_list) {
     }
 }
 
-redirect($extensions_path .
-         '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+redirect_local(
+           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

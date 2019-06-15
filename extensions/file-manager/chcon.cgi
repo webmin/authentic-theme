@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path, $extensions_path);
+our (%in, %text, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -24,7 +24,7 @@ if ($in{'recursive'} eq 'true') {
 }
 
 if (!$in{'label'}) {
-    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 
 my @entries_list = get_entries_list();
@@ -36,5 +36,5 @@ foreach my $file (@entries_list) {
     }
 }
 
-redirect($extensions_path . '/list.cgi?path=' . urlize($path) .
-         '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());
+redirect_local('list.cgi?path=' . urlize($path) .
+             '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());

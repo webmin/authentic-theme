@@ -22,7 +22,6 @@ our (%access,           %gconfig,          %in,            %text,       @remote_
      $base,             $cwd,              $path,          $remote_user);
 our $checked_path;
 our $module_path;
-our $extensions_path;
 
 our %request_uri = get_request_uri();
 set_module($request_uri{'module'});
@@ -54,12 +53,6 @@ sub get_libs
     if (join(" , ", @allowed_paths) ne '/') {
         $checked_path =~ s/$in{'cwd'}\//\//ig;
     }
-
-    my $prefix;
-    if ($gconfig{'relative_redir'}) {
-        $prefix = $gconfig{'webprefix'};
-    }
-    $extensions_path = "$prefix/extensions/file-manager";
 
     %text = (load_language($current_theme), load_language($module), %text);
 }
@@ -331,6 +324,9 @@ sub utf8_decode
     return decode('UTF-8', $text, Encode::FB_DEFAULT);
 }
 
+sub redirect_local {
+    print "Location: $_[0]\n\n";
+}
 sub convert_to_json_local
 {
     return JSON::PP->new->encode((@_ ? @_ : {}));

@@ -9,12 +9,12 @@ use strict;
 
 use File::Basename;
 
-our (%in, %text, $cwd, $path, $extensions_path);
+our (%in, %text, $cwd, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 if (!$in{'arch'}) {
-    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 
 my %errors;
@@ -79,5 +79,5 @@ if ($delete) {
 
 }
 
-redirect($extensions_path .
-         '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+redirect_local(
+           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

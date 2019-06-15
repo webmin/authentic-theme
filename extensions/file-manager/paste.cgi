@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 
-our (%in, %request_uri, $cwd, $base, $path, $extensions_path);
+our (%in, %request_uri, $cwd, $base, $path);
 
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
@@ -48,9 +48,9 @@ for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
 
 if (scalar(@errors) > 0) {
     set_response('err');
-    redirect($extensions_path . '/list.cgi?path=' .
-             urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') . extra_query());
+    redirect_local('list.cgi?path=' .
+                 urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') . extra_query());
 } else {
     set_response_count(scalar(@arr) - 2);
-    redirect($extensions_path . '/list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
 }
