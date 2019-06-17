@@ -1484,7 +1484,7 @@ sub get_button_tooltip
     if (!$container) {
         $container = '#content';
     }
-    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
+    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : ($text{$label} ? $text{$label} : $label));
     if ($br_label_on) {
         my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
         $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
