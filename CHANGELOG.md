@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.35-RC1 (June 18, 2019)
+#### Version 19.35-RC2 (June 19, 2019)
 * Fix multiple bugs
 
 #### Version 19.34 (June 01, 2019)
