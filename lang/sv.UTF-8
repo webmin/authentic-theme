@@ -1113,6 +1113,6 @@ settings_usermin_default_module=Standardmodul
 
 #19.34
 theme_xhred_search_in_file_open_external=Redigera filen i friliggande redigerare
-theme_xhred_path_to_console=Öppna nuvarande sökväg i terminalen (Ctrl+Skift+L)
+theme_xhred_path_to_console=Öppna nuvarande sökväg i terminalen (Ctrl+Skift+K)
 theme_xhred_filemanager_editor_revert_content=Återställ fil
 theme_xhred_filemanager_editor_reverting_content=Återställ ändringarna till originalfilinnehåll.
