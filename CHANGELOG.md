@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 19.35-RC2 (June 19, 2019)
-* Fix multiple bugs
+#### Version 19.35-RC3 (June 20, 2019)
+* Fix multiple bugs and made various UI improvements
 
 #### Version 19.34 (June 01, 2019)
 * Add ability to detach file to separate editor when editing configs manually
