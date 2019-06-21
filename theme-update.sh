@@ -6,26 +6,28 @@
 
 # Get parent dir based on script's location
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DIR="$(echo $DIR | sed 's/\/authentic-theme.*//g')"
+DIR="$(echo "$DIR" | sed 's/\/authentic-theme.*//g')"
 PROD=${DIR##*/}
-CURRENT=$PWD
 GIT="git"
 CURL="curl"
 REPO="authentic-theme/authentic-theme"
+PARAMS="$*"
 
 # Clear the screen for better readability
 clear
 
 if [[ "$1" == "-h" || "$1" == "-help" || "$1" == "--help" ]] ; then
-  echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script"
-  echo "Usage:  ./`basename $0` { [-beta] | [-release] | [-release:number] }"
+  echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script - updates theme to the latest development or stable (release version)"
+  echo "Usage:  ./$(basename "$0") { [-force] | [-release] | [-release:number] }"
   exit 0
 fi
 
-# Ask user to confirm update operation
-read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
+# Ask user to confirm update operation unless force install requested
+if [[ "$PARAMS" != *"-force"* ]]; then
+  read -p "Would you like to update Authentic Theme for "${PROD^}"? [y/N] " -n 1 -r
+fi
 echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if [[ "$PARAMS" != *"-force"* ]] && [[ ! $REPLY =~ ^[Yy]$ ]]; then
   echo -e "\e[49;1;35;82mOperation aborted.\e[0m"
 else
 
@@ -36,15 +38,15 @@ else
     if ! type ${GIT} >/dev/null 2>&1
     then
       # Use `PATH` from Webmin `config` file
-      if [[ -f "/etc/webmin/config" ]] ; then
+      if [[ -f "/etc/webmin/config" ]]; then
         WMCONF="/etc/webmin/config"
       else
-        WMCONF=`find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep ${PROD} | head -n 1`
+        WMCONF=$(find /* -maxdepth 6 -name miniserv.conf 2>/dev/null | grep "${PROD}" | head -n 1)
         WMCONF="${WMCONF/miniserv.conf/config}"
       fi
       # Export `PATH` using Webmin `config` file directive
       if [[ "${WMCONF}" ]]; then
-        WMCONFPATH=$(grep -Po '(?<=^path=).*$' ${WMCONF})
+        WMCONFPATH=$(grep -Po '(?<=^path=).*$' "${WMCONF}")
         if [[ "${WMCONFPATH}" ]]; then
           export PATH="${PATH}:${WMCONFPATH}"
         fi
@@ -52,7 +54,7 @@ else
     fi
 
     # Clear cache if present
-    if [ -d "$DIR/.~authentic-theme" ] ; then
+    if [ -d "$DIR/.~authentic-theme" ]; then
       rm -rf "$DIR/.~authentic-theme"
     fi
 
@@ -66,13 +68,13 @@ else
         UPDATE="update-from-repo.sh"
 
         # Backup current script file first in case something goes wrong
-        mv $DIR/${UPDATE} $DIR/${UPDATE}.bak
+        mv "$DIR"/${UPDATE} "$DIR"/${UPDATE}.bak
         # Get latest update script
-        curl -s -o $DIR/${UPDATE} -H "Accept:application/vnd.github.v3.raw" ${GITAPI}/${UPDATE}
+        curl -s -o "$DIR"/${UPDATE} -H "Accept:application/vnd.github.v3.raw" ${GITAPI}/${UPDATE}
         if [ $? -eq 0 ]; then
-          chmod +x $DIR/${UPDATE}
+          chmod +x "$DIR"/${UPDATE}
         else
-          mv $DIR/${UPDATE}.bak $DIR/${UPDATE}
+          mv "$DIR"/${UPDATE}.bak "$DIR"/${UPDATE}
         fi
       else
         echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m";
@@ -80,16 +82,15 @@ else
       fi
       
       # Pull latest changes
-      if [[ "$1" == *"-release"* ]]; then
-        if [[ "$1" == *":"* ]] && [[ "$1" != *"latest"* ]]; then
+      if [[ "$PARAMS" == *"-release"* ]]; then
+        if [[ "$PARAMS" == *":"* ]] && [[ "$PARAMS" != *"latest"* ]]; then
           RRELEASE=${1##*:}
           PRRELEASE="--branch ${RRELEASE} --quiet"
           PRRELEASETAG=${1##*:}
         else
           if type ${CURL} >/dev/null 2>&1
           then
-            LINK=`curl -s https://api.github.com/repos/$REPO/releases/latest | grep browser_download_url | head -n 20 | cut -d '"' -f 4 | grep rpm`
-            VERSION=`curl -s https://api.github.com/repos/$REPO/releases/latest | grep tag_name | head -n 1`
+            VERSION=$(curl -s https://api.github.com/repos/$REPO/releases/latest | grep tag_name | head -n 1)
             [[ $VERSION =~ [0-9]+\.[0-9]+|[0-9]+\.[0-9]+\.[0-9]+ ]]
             PRRELEASE="--branch ${BASH_REMATCH[0]} --quiet"
             PRRELEASETAG=${BASH_REMATCH[0]}
@@ -109,11 +110,11 @@ else
       fi
 
       # Check version compatibility
-      if [ -z ${WEBMIN_CONFIG} ]; then
+      if [ -z "${WEBMIN_CONFIG}" ]; then
         DVER=$(grep -Po '(?<=^depends=).*$' "$DIR/.~authentic-theme/theme.info" 2>&1)
         TVER=$(grep -Po '(?<=^version=).*$' "$DIR/.~authentic-theme/theme.info" 2>&1)
         GRPERR=$?
-        PVER=`head -n 1 $DIR/version`
+        PVER=$(head -n 1 "$DIR"/version)
         RVER=$(echo "$DVER" | cut -d ' ' -f 1)
 
         if [ $PROD == "usermin" ]; then
@@ -133,11 +134,17 @@ changes, that could stop the theme from working as designed.
 It is recommended to upgrade \e[49;1;37;182m"${PROD^}"\e[0m to the latest development version, by
 running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m directory."
 
-            read -p "Do you want to continue to force install the theme anyway? [y/N] " -n 1 -r
+            if [[ "$PARAMS" != *"-force"* ]]; then
+              read -p "Do you want to continue to force install the theme anyway? [y/N] " -n 1 -r
+            fi
             echo
-            if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            if [[ "$PARAMS" == *"-force"* ]] || [[ ! $REPLY =~ ^[Yy]$ ]]; then
               rm -rf "$DIR/.~authentic-theme"
-              echo -e "\e[49;1;35;82mOperation aborted.\e[0m"
+              if [[ "$PARAMS" == *"-force"* ]]; then
+                echo -e "\e[49;1;35;82mOperation aborted. Can not update to incompatible version in force mode.\e[0m"
+              else
+                echo -e "\e[49;1;35;82mOperation aborted.\e[0m"
+              fi
               exit
             fi
           fi
@@ -164,10 +171,10 @@ running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m direc
 
         # Restart Webmin/Usermin in case it's running
         if [ "$2" != "-no-restart" ]; then
-          if ps aux | grep -v grep | grep $PROD/miniserv.pl > /dev/null
+          if ps aux | grep -v grep | grep "$PROD"/miniserv.pl > /dev/null
           then
             echo -e "\e[49;3;37;182mRestarting "${PROD^}"..\e[0m"
-            service $PROD restart >/dev/null 2>&1
+            service "$PROD" restart >/dev/null 2>&1
           fi
         fi
       else
