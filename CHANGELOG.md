@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.35-RC3 (June 21, 2019)
+#### Version 19.35-RC4 (June 21, 2019)
 * Add unread message count dynamic update for folders in Usermin [#1372](https://github.com/authentic-theme/authentic-theme/issues/1372)
 * Fix multiple bugs and made various UI improvements
 
