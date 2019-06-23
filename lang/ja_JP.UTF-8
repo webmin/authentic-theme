@@ -1112,6 +1112,6 @@ settings_usermin_default_module=デフォルトモジュール
 
 #19.34
 theme_xhred_search_in_file_open_external=ファイルを別のエディタにデタッチ
-theme_xhred_path_to_console=ターミナルで現在のパスを開く(Ctrl + Shift + K)
+theme_xhred_path_to_console=ターミナルで現在のパスを開く(Alt + Shift + K)
 theme_xhred_filemanager_editor_revert_content=ファイルを元に戻す
 theme_xhred_filemanager_editor_reverting_content=変更をドロップして元のファイルの内容に戻す
