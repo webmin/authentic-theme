@@ -27,10 +27,10 @@ our %theme_config = (settings($config_directory . "/$current_theme/settings-admi
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} &&
     get_env('http_cookie') !~ /banner=1/ &&
-    !$in{'logout'}   &&
-    !$in{'failed'}   &&
-    !$in{'password'} &&
-    !$in{'error'}    &&
+    !$in{'logout'}                       &&
+    !$in{'failed'}                       &&
+    !$in{'password'}                     &&
+    !$in{'error'}                        &&
     $in{'initial'})
 {
 
@@ -133,7 +133,7 @@ if (!$in{'password'}) {
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print
-'<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocapitalize="none" placeholder="'
+'<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
       . &theme_text('theme_xhred_login_user')
       . '" ' . ' autofocus>' . "\n";
     print '</div>' . "\n";
@@ -142,7 +142,7 @@ if (!$in{'password'}) {
     print '<span class="input-group-addon"><i class="fa fa-fw fa-' .
       ($in{'question'} =~ /code/i ? 'qrcode' : 'lock') . '"></i></span>' . "\n";
     print '<input type="' . ($in{'question'} =~ /code/i ? 'text' : 'password') .
-      '" class="form-control session_login pam_login" name="answer" autocomplete="off" placeholder="' .
+      '" class="form-control session_login pam_login" name="answer" autocomplete="off" autocorrect="off" placeholder="' .
       ($in{'question'} =~ /code/i ? theme_text('theme_xhred_login_passphrase') : theme_text('theme_xhred_login_pass')) .
       '" autofocus>' . "\n";
     print '</div>' . "\n";

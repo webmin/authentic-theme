@@ -131,25 +131,28 @@ if ($gconfig{'realname'}) {
     $host = &html_escape($host);
 }
 print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
-my $tag = $gconfig{'noremember'} ? 'autocomplete="off"' : '';
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
 print
-  '<input type="text" class="form-control session_login" name="user" autocomplete="off" autocapitalize="none" placeholder="'
+'<input type="text" class="form-control session_login" name="user" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
   . &theme_text('theme_xhred_login_user')
-  . '" ' . $tag . ' autofocus>' . "\n";
+  . '" autofocus>' . "\n";
 print '</div>' . "\n";
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
-print '<input type="password" class="form-control session_login" name="pass" autocomplete="off" placeholder="' .
-  &theme_text('theme_xhred_login_pass') . '"  ' . $tag . '>' . "\n";
+print
+  '<input type="password" class="form-control session_login" name="pass" autocomplete="off" autocorrect="off" placeholder="'
+  . &theme_text('theme_xhred_login_pass')
+  . '">' . "\n";
 print '</div>' . "\n";
 
 if ($miniserv{'twofactor_provider'}) {
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
-    print '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" placeholder="' .
-      &theme_text('theme_xhred_login_token') . '">' . "\n";
+    print
+'<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" autocorrect="off" placeholder="'
+      . &theme_text('theme_xhred_login_token')
+      . '">' . "\n";
     print '</div>' . "\n";
 }
 if (!$gconfig{'noremember'}) {

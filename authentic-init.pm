@@ -551,7 +551,7 @@ sub embed_port_shell
           . $remote_user .
           '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
           get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
-'</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
+'</span></span><input type="text" data-command="true" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
     </div>
   </div>
 </div>', "\n";
@@ -652,7 +652,7 @@ sub init_vars
     our $theme_module_query_id;
 
     my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
-    our $global_prefix    = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
+    our $global_prefix = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
     our $parent_webprefix = $parent_webprefix_local;
 
     our $xnav = "xnavigation=1";
@@ -754,7 +754,7 @@ sub get_current_user_language
         $language = $ENV{'HTTP_ACCEPT_LANGUAGE'};
         $language =~ s/;.*//;
         @languages = split /,/, $language;
-        $language  = $languages[0];
+        $language = $languages[0];
     }
 
     if (($language_browser && !$language) || !$language_browser) {
@@ -902,13 +902,14 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
-    } elsif (
-             (string_contains($keys, "install")     ||
-              string_contains($keys, "recsok")      ||
-              string_contains($keys, "scripts_iok") ||
-              string_contains($keys, "right_upok")
-             ) &&
-             !string_contains($keys, "uninstall"))
+    }
+    elsif (
+           (string_contains($keys, "install")     ||
+            string_contains($keys, "recsok")      ||
+            string_contains($keys, "scripts_iok") ||
+            string_contains($keys, "right_upok")
+           ) &&
+           !string_contains($keys, "uninstall"))
     {
         $class = "success ";
         $icon  = "package-install fa-1_25x";
@@ -1063,7 +1064,8 @@ sub get_button_style
     } elsif (string_contains($keys, "dbase_add") || string_contains($keys, "databases_import")) {
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
-    } elsif (
+    }
+    elsif (
         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
         ||
         (string_contains($keys, "create") &&
@@ -1340,7 +1342,7 @@ sub set_theme_temp_data
     my %var;
 
     $salt =~ tr/A-Za-z0-9//cd;
-    $key  =~ tr/A-Za-z0-9//cd;
+    $key =~ tr/A-Za-z0-9//cd;
 
     $value =~ s/[?|&]$xnav//g;
     $value =~ s/[?|&]randomized=[\d]+//g;
