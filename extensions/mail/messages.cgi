@@ -113,8 +113,15 @@ $mails{'folder_title'} = $folder_name;
 $mails{'folder_name'} = $folders_breadcrumb[-1];
 
 # Folder counts
-my $total = scalar(@mail);
-$mails{'total'} = $total;
+my ($total, $unread, $special, $folder_counts_allowed) = folder_counts($folder);
+if ($total || $unread || $special) {
+    $mails{'total'}   = $total;
+    $mails{'unread'}  = $unread;
+    $mails{'special'} = $special;
+}
+$total                          = scalar(@mail);
+$mails{'total'}                 = $total;
+$mails{'folder_counts_allowed'} = $folder_counts_allowed;
 
 # Folders select
 my $folders_select_by_id = folders_select(\@folders, $folder);
@@ -153,7 +160,7 @@ if (@mail) {
 
     $form_list_buttons = {
         'submit' => {
-            'buttons' => [['delete' => $text{'mail_delete'}], ['forward' => $text{'mail_forward'}]],
+            'buttons'   => [['delete' => $text{'mail_delete'}], ['forward' => $text{'mail_forward'}]],
             'dropdowns' => [
                 [
                  'move' => [

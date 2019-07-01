@@ -21,6 +21,7 @@ our (%access,           %gconfig,          %in,            %text,       @remote_
      $base_remote_user, $config_directory, $current_theme, %userconfig, @allowed_paths,
      $base,             $cwd,              $path,          $remote_user);
 our $checked_path;
+our $module_path;
 
 our %request_uri = get_request_uri();
 set_module($request_uri{'module'});
@@ -29,15 +30,18 @@ get_libs($request_uri{'module'});
 sub set_module
 {
     my ($module) = @_;
-    set_env('foreign_module_name', $module);
-    set_env('foreign_root_directory', (get_env('document_root') . '/' . $module));
+
+    $module_path = get_env('document_root') . '/' . $module;
+
+    set_env('foreign_module_name',    $module);
+    set_env('foreign_root_directory', $module_path);
 }
 
 sub get_libs
 {
     my ($module) = @_;
 
-    require(get_env('document_root') . '/' . $module . '/' . $module . '-lib.pl');
+    require($module_path . '/' . $module . '-lib.pl');
 
     &ReadParse();
 
@@ -318,6 +322,11 @@ sub utf8_decode
 {
     my ($text) = @_;
     return decode('UTF-8', $text, Encode::FB_DEFAULT);
+}
+
+sub redirect_local
+{
+    print "Location: $_[0]\n\n";
 }
 
 sub convert_to_json_local

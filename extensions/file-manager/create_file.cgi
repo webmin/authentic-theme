@@ -17,7 +17,7 @@ require(dirname(__FILE__) . '/file-manager-lib.pm');
 my $path_urlized = urlize($path);
 
 if (!$in{'name'}) {
-    redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+    redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }
 
 my $type;
@@ -37,7 +37,7 @@ if (-f "$cwd/$in{'name'}" || -d "$cwd/$in{'name'}") {
 } else {
     if (open my $fh, "> $cwd/$in{'name'}") {
         close($fh);
-        redirect(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+        redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
     } else {
         print_error(
                     (

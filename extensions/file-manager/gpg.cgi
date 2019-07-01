@@ -32,8 +32,8 @@ foreach my $name (@entries_list) {
     $iname = $name;
     $iname =~ s/\.(gpg|pgp)$// if ($action eq "decrypt");
     ($fname, $fext) = $iname =~ /^(?|(.*)\.(tar\.gz)|(.*)\.(wbt\.gz)|(.*)\.(.*)|(.*))$/;
-    $fext = ".$fext" if ($fext);
-    $iname = $fname . "_" . substr($action, 0, 1) . "$localtime" . $fext;
+    $fext   = ".$fext" if ($fext);
+    $iname  = $fname . "_" . substr($action, 0, 1) . "$localtime" . $fext;
     $status = 0;
 
     if ($action eq "encrypt") {
@@ -74,4 +74,5 @@ foreach my $name (@entries_list) {
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+redirect_local(
+           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

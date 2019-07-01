@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.35 (June 23, 2019)
+* Add unread message count dynamic update for mail folders in Usermin [#1372](https://github.com/authentic-theme/authentic-theme/issues/1372)
+* Add missing error handler for new drag & drop file uploads for Upload and Download module
+* Fix downloads for Virtualmin backup virtual servers, MySQL backup database, and other modules
+* Fix multiple bugs and made various UI improvements
+
 #### Version 19.34 (June 01, 2019)
 * Add ability to detach file to separate editor when editing configs manually
 * Add ability to pass currently opened path in File Manager to console [#1359](https://github.com/authentic-theme/authentic-theme/issues/1359)

@@ -337,8 +337,13 @@ sub theme_generate_icon
 "<span style='position: absolute; top:2px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
                 }
             }
-            print "<a href=\"$link\" class=\"icon_link\" data-title=\"" . (($_[6] || $_[7]) && $title) .
-              "\" data-toggle=\"tooltip\" data-placement=\"auto bottom\" data-container=\"body\">" . '<img class="ui_icon' .
+            print "<a href=\"$link\" class=\"icon_link\" data-title=\""
+              .
+              ( ($_[6] || $_[7]) ? $title :
+                  (string_contains($title, '<tt') ? "<span class='word-break-all'>$title</span>" : undef)
+              ) .
+              "\" data-toggle=\"tooltip\" data-placement=\"auto bottom\" data-container=\"body\" " .
+              (string_contains($title, '<tt') ? " data-fbplacement" : undef) . ">" . '<img class="ui_icon' .
               ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt=""><br>';
             print "$title</a>\n";
             print '</div>';
@@ -537,7 +542,7 @@ sub theme_ui_textbox
     my $rv;
 
     $rv .=
-'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; vertical-align: middle" class="form-control ui_textbox" type="text" ';
+'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
     $rv .= 'id="' . &quote_escape($name) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
@@ -556,7 +561,7 @@ sub theme_ui_password
     my $rv;
 
     $rv .=
-'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; vertical-align:middle" class="form-control ui_password" type="password" ';
+'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align:middle" class="form-control ui_password" type="password" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
@@ -992,7 +997,7 @@ sub theme_ui_opt_textbox
                      [[1, $opt1, "onClick='$dis1'"], [0, $opt2 || " ", "onClick='$dis2'"]], $dis) .
       "\n";
     $rv .=
-"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 0; min-width: 15%;' type='text' name=\""
+"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; min-width: 15%;' type='text' name=\""
       . &quote_escape($name)
       . "\" " . "size=$size value=\"" .
       &quote_escape($value) . "\"" . ($dis ? " disabled=true" : "") . ($max ? " maxlength=$max" : "") .
@@ -1177,6 +1182,7 @@ sub theme_redirect
     }
 
     my $origin   = $ENV{'HTTP_ORIGIN'};
+    my $referer  = $ENV{'HTTP_REFERER'};
     my $prefix   = $gconfig{'webprefix'};
     my $noredir  = $gconfig{'webprefixnoredir'};
     my $relredir = $gconfig{'relative_redir'};
@@ -1192,7 +1198,9 @@ sub theme_redirect
     if ($parent) {
         ($link) = $arg2 =~ /:\d+(.*)/;
         $url = "$parent$link";
-    } elsif (string_starts_with($arg1, 'http') && $arg1 !~ /$origin/) {
+    } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/)) ||
+             string_contains($arg1, '../'))
+    {
         print "Location: $arg1\n\n";
         return;
     }
