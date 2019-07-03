@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.36 (July 03, 2019)
+* Fix bugs
+
 #### Version 19.35 (June 23, 2019)
 * Add unread message count dynamic update for mail folders in Usermin [#1372](https://github.com/authentic-theme/authentic-theme/issues/1372)
 * Add missing error handler for new drag & drop file uploads for Upload and Download module
