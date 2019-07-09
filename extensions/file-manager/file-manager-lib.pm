@@ -729,7 +729,7 @@ sub print_content
             if (!string_contains($hlink_path, '/') && $list[$count - 1][15] == 0) {
                 $hlink_path = undef;
             }
-            $hlink_path =~ s/\/$filename$//;
+            $hlink_path =~ s/\/\Q$filename\E$//;
         }
 
         $path = html_escape($path);
