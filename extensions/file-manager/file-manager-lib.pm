@@ -405,11 +405,28 @@ sub cache_search_delete
     if (@results_cached) {
         @results_cached = grep {
             my $f = $_;
-            !grep $f =~ /^$_/, @$deleted_data
+            !grep $f =~ /^\Q$_\E/, @$deleted_data
         } @results_cached;
         cache_search($id, \@results_cached);
     }
 
+}
+
+sub cache_search_rename
+{
+    my ($id, $from, $to) = @_;
+
+    my @results_cached = cache_search($id);
+    if (@results_cached) {
+        my @updated_cache;
+        foreach my $file (@results_cached) {
+            if ($file eq "/$from") {
+                $file = "/$to";
+            }
+            push(@updated_cache, $file);
+        }
+        cache_search($id, \@updated_cache);
+    }
 }
 
 sub exec_search
