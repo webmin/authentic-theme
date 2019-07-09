@@ -129,7 +129,7 @@ sub tokenize
 
     $key =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $key = $1;
-    $key  =~ tr/A-Za-z0-9//cd;
+    $key =~ tr/A-Za-z0-9//cd;
     $user =~ tr/A-Za-z0-9//cd;
     $salt =~ tr/A-Za-z0-9//cd;
 
@@ -172,6 +172,7 @@ sub get_pagination
     my $search_follow_symlinks  = $in{'follow'};
     my $search_case_insensitive = $in{'caseins'};
     my $search_grep             = $in{'grepstring'};
+    my $fsid                    = $in{'fsid'};
     my $regex                   = $in{'regex'};
     my $all_items               = $in{'all_items'};
 
@@ -200,7 +201,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&regex=$regex&all_items=$all_items'>@{[nice_number($i, ',')]}</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&fsid=$fsid&regex=$regex&all_items=$all_items'>@{[nice_number($i, ',')]}</a>";
         $end .= "</li>";
         return $end;
     };
@@ -287,10 +288,11 @@ sub extra_query
     my $follow     = $in{'follow'};
     my $caseins    = $in{'caseins'};
     my $grepstring = $in{'grepstring'};
+    my $fsid       = $in{'fsid'};
     my $regex      = $in{'regex'};
     my $all_items  = $in{'all_items'};
     return
-"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&regex=$regex&all_items=$all_items";
+"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&fsid=$fsid&regex=$regex&all_items=$all_items";
 }
 
 sub set_response
@@ -349,16 +351,83 @@ sub print_error
     exit;
 }
 
+sub cache_search
+{
+    my ($id, $searched_data) = @_;
+    $id || return ();
+
+    my $tmp_dir       = tempname_dir();
+    my $fname         = ".$remote_user-file-manager-scache";
+    my $fcached       = $tmp_dir . "/$fname-$id";
+    my $dcached       = read_file_contents($fcached);
+    my $dcached_ready = $dcached ? unserialise_variable($dcached) : undef;
+    my @data;
+
+    # Clear previously cached data
+    opendir(my $dir, $tmp_dir);
+    my @tmps = grep {$_ =~ /$fname/} readdir($dir);
+    closedir $dir;
+    foreach (@tmps) {
+        my $file = "$tmp_dir/$_";
+        my @stat = stat($file);
+        if (@stat && $stat[9] < time() - (24 * 60 * 60)) {
+            unlink_file($file);
+        }
+    }
+
+    # Check if cache with requested id is available
+    if (!$searched_data && -r $fcached && @$dcached_ready) {
+
+        # Use cache for now
+        @data = @$dcached_ready;
+        if (@data) {
+            return @data;
+        } else {
+            return ();
+        }
+    } elsif ($searched_data) {
+
+        # Write cache
+        my $fh = "cache";
+        open_tempfile($fh, ">$fcached");
+        print_tempfile($fh, serialise_variable($searched_data));
+        close_tempfile($fh);
+    } else {
+        return ();
+    }
+}
+
+sub cache_search_delete
+{
+    my ($id, $deleted_data) = @_;
+
+    my @results_cached = cache_search($id);
+    if (@results_cached) {
+        @results_cached = grep {
+            my $f = $_;
+            !grep $f =~ /^$_/, @$deleted_data
+        } @results_cached;
+        cache_search($id, \@results_cached);
+    }
+
+}
+
 sub exec_search
 {
     my ($list)  = @_;
     my $mask    = $in{'query'};
     my $grep    = $in{'grepstring'};
+    my $fsid    = $in{'fsid'};
     my $replace = $in{'grepreplace'};
     my $caseins = $in{'caseins'};
     my $follow = ($in{'follow'} ? 1 : 0);
     my $regex  = ($in{'regex'}  ? 1 : 0);
     my @results;
+
+    my @results_cached = cache_search($fsid);
+    if (@results_cached) {
+        return @results_cached;
+    }
 
     find(
         {
@@ -389,8 +458,8 @@ sub exec_search
         $cwd);
 
     my @replaces;
-    if (length $grep || length $replace) {
-        if (length $grep) {
+    if (length($grep) || length($replace)) {
+        if (length($grep)) {
             @results = map {&simplify_path("$cwd/$_")} @results;
             my @matched;
             fdo {
@@ -413,7 +482,7 @@ sub exec_search
             undef(@results);
             @results = @matched;
         }
-        if (length $replace) {
+        if (length($replace)) {
             foreach my $file (@replaces) {
                 if (-r $file) {
                     if ($caseins) {
@@ -427,6 +496,7 @@ sub exec_search
             }
         }
     }
+    cache_search($fsid, \@results) if ($fsid && !length($replace));
     return @results;
 }
 
@@ -489,7 +559,7 @@ sub print_content
     my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
 
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
-        $page      = int($in{'page'})     || 1;
+        $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
@@ -497,10 +567,10 @@ sub print_content
             $in{'page'} = $page;
         }
         my $splice_start = $pagelimit * ($page - 1);
-        my $splice_end   = $pagelimit;
+        my $splice_end = $pagelimit;
 
-        @list           = sort {$a cmp $b} @list;
-        @list           = splice(@list, $splice_start, $splice_end);
+        @list = sort {$a cmp $b} @list;
+        @list = splice(@list, $splice_start, $splice_end);
         $totals_spliced = scalar(@list);
     }
 
@@ -534,7 +604,7 @@ sub print_content
     }
 
     # Get info about directory entries
-    my @info    = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
+    my @info = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
     my @folders = map {$_} grep {$_->[15] == 1} @info;
     my @files   = map {$_} grep {$_->[15] != 1} @info;
 
@@ -565,7 +635,7 @@ sub print_content
     $list_data{'pagination_limit'} = undef;
 
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
-        $page      = int($in{'page'})     || 1;
+        $page = int($in{'page'}) || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
@@ -642,7 +712,7 @@ sub print_content
     for (my $count = 1; $count <= $totals_spliced; $count++) {
         if ($count > $totals) {last;}
         my $class = $count & 1 ? "odd" : "even";
-        my $link  = $list[$count - 1][0];
+        my $link = $list[$count - 1][0];
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
         my $vlink = html_escape($link);
@@ -846,7 +916,7 @@ sub get_tree
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
             my $pp = $p ne '/' ? $p : undef;
-            my $c  = $r{$td} =
+            my $c = $r{$td} =
               { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
             defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
         }
