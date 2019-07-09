@@ -1115,3 +1115,8 @@ theme_xhred_search_in_file_open_external=ファイルを別のエディタにデ
 theme_xhred_path_to_console=ターミナルで現在のパスを開く(Alt + Shift + K)
 theme_xhred_filemanager_editor_revert_content=ファイルを元に戻す
 theme_xhred_filemanager_editor_reverting_content=変更をドロップして元のファイルの内容に戻す
+
+
+#19.37
+theme_xhred_filemanager_exclude_dirs=Exclude entries
+theme_xhred_filemanager_exclude_dirs_desc=Semicolon separated list of files or subdirectories to exclude

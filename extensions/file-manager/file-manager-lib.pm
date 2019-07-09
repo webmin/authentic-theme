@@ -173,6 +173,7 @@ sub get_pagination
     my $search_case_insensitive = $in{'caseins'};
     my $search_grep             = $in{'grepstring'};
     my $fsid                    = $in{'fsid'};
+    my $exclude                 = $in{'exclude'};
     my $regex                   = $in{'regex'};
     my $all_items               = $in{'all_items'};
 
@@ -201,7 +202,7 @@ sub get_pagination
         my $active = ($page eq $i ? " active" : undef);
         $end = "<li class='paginate_button$active'>";
         $end .=
-"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&fsid=$fsid&regex=$regex&all_items=$all_items'>@{[nice_number($i, ',')]}</a>";
+"<a class='spaginated' href='list.cgi?page=$i&path=@{[urlize($path)]}&query=@{[urlize($query)]}&follow=$search_follow_symlinks&caseins=$search_case_insensitive&grepstring=$search_grep&fsid=$fsid&exclude=$exclude&regex=$regex&all_items=$all_items'>@{[nice_number($i, ',')]}</a>";
         $end .= "</li>";
         return $end;
     };
@@ -289,10 +290,11 @@ sub extra_query
     my $caseins    = $in{'caseins'};
     my $grepstring = $in{'grepstring'};
     my $fsid       = $in{'fsid'};
+    my $exclude    = $in{'exclude'};
     my $regex      = $in{'regex'};
     my $all_items  = $in{'all_items'};
     return
-"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&fsid=$fsid&regex=$regex&all_items=$all_items";
+"&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&fsid=$fsid&exclude=$exclude&regex=$regex&all_items=$all_items";
 }
 
 sub set_response
@@ -435,11 +437,13 @@ sub exec_search
     my $mask    = $in{'query'};
     my $grep    = $in{'grepstring'};
     my $fsid    = $in{'fsid'};
+    my $exclude = $in{'exclude'};
     my $replace = $in{'grepreplace'};
     my $caseins = $in{'caseins'};
     my $follow = ($in{'follow'} ? 1 : 0);
     my $regex  = ($in{'regex'}  ? 1 : 0);
     my @results;
+    my @excludes;
 
     my @results_cached = cache_search($fsid);
     if (@results_cached) {
@@ -456,6 +460,10 @@ sub exec_search
                    if ($caseins) {
                        $found_text = lc($found_text);
                        $mask_text  = lc($mask_text);
+                       $exclude    = lc($exclude);
+                   }
+                   if ($exclude) {
+                       @excludes = split(';', $exclude);
                    }
                    if ((!$regex && (index($found_text, $mask_text) != -1 || $mask_text eq "*")) ||
                        ($regex && $found_text =~ /$mask_text/))
@@ -464,7 +472,17 @@ sub exec_search
                            $found =~ s/^\Q$cwd\E//g;
                        }
                        if ($follow || (!$follow && !-l $_)) {
-                           push(@results, $found);
+                           my $excluded;
+                           if (@excludes) {
+                               foreach my $e (@excludes) {
+                                   if ((!$regex && index($found, $e) != -1) || ($regex && $found =~ /$e/)) {
+                                       $excluded = 1;
+                                   }
+                               }
+                           }
+                           if (!$exclude || (@excludes && !$excluded)) {
+                               push(@results, $found);
+                           }
                        }
                    }
                }
