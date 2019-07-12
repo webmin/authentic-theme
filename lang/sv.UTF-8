@@ -1119,5 +1119,5 @@ theme_xhred_filemanager_editor_reverting_content=Återställ ändringarna till o
 
 
 #19.37
-theme_xhred_filemanager_exclude_dirs=Exclude entries
-theme_xhred_filemanager_exclude_dirs_desc=Semicolon separated list of files or subdirectories to exclude
+theme_xhred_filemanager_exclude_dirs=Uteslut poster
+theme_xhred_filemanager_exclude_dirs_desc=Semikolonseparerad lista över filer eller underkataloger till att utesluta
