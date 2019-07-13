@@ -24,7 +24,7 @@ sub theme_header
 {
 
     (get_raw() && return);
-    my $tref   = ref($_[0]) eq 'ARRAY';
+    my $tref = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
         (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
@@ -44,7 +44,7 @@ sub theme_header
         print '<td id="headln2l" class="invisible">';
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
-            my $nolo  = get_env('anonymous_user') ||
+            my $nolo = get_env('anonymous_user') ||
               get_env('ssl_user')   ||
               get_env('local_user') ||
               get_env('http_user_agent') =~ /webmin/i;
@@ -218,7 +218,7 @@ sub theme_popup_window_button
 {
     my ($url, $w, $h, $scroll, $fields) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
-    my $icon     = "fa-files-o";
+    my $icon = "fa-files-o";
     if ($url =~ /third_chooser|standard_chooser/) {
         $icon = "fa-world";
     }
@@ -441,7 +441,8 @@ sub theme_ui_links_row
             @$links =
               map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"}
               @$links;
-            return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
+            return
+              @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
               "";
         } else {
             if ($nopuncs == 1) {
@@ -641,7 +642,7 @@ sub theme_ui_select
       ($tags ? " " . $tags : "") . ">\n";
     my ($o, %opt, $s, $v);
     my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
-    my $t   = 'x-md-';
+    my $t = 'x-md-';
     foreach $o (@$opts) {
         $o = [$o] if (!ref($o));
         $v = ($o->[1] || $o->[0]);
@@ -667,7 +668,7 @@ sub theme_ui_radio
     my ($rv, $o);
     my $rand = int rand(1e4);
     foreach $o (@$opts) {
-        my $id    = &quote_escape($name . "_" . $o->[0]);
+        my $id = &quote_escape($name . "_" . $o->[0]);
         my $label = $o->[1] || $o->[0];
         my $after;
         if ($label =~ /^([\000-\377]*?)((<a\s+href|<input|<select|<textarea)[\000-\377]*)$/i) {
@@ -1188,7 +1189,7 @@ sub theme_redirect
     my $relredir = $gconfig{'relative_redir'};
     my ($arg1, $arg2) = ($_[0], $_[1]);
     my ($link) = $arg1 || $arg2;
-    my ($url)  = $arg2;
+    my ($url) = $arg2;
     if (!$relredir) {
         ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
     }
@@ -1198,9 +1199,11 @@ sub theme_redirect
     if ($parent) {
         ($link) = $arg2 =~ /:\d+(.*)/;
         $url = "$parent$link";
-    } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/)) ||
-             string_contains($arg1, '../'))
-    {
+    } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/))) {
+        print "Location: $arg1\n\n";
+        return;
+    } elsif (string_contains($arg1, '../')) {
+        set_theme_temp_data('redirected', $arg1) if ($arg1 !~ /switch\.cgi/);
         print "Location: $arg1\n\n";
         return;
     }
