@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.37-RC1 (July 11, 2019)
+#### Version 19.37-RC3 (July 14, 2019)
 * Add ability to exclude entries from search using semicolon separated list in File Manager
 * Add caching for searched results in File Manager for faster data management upon large search results
 * Add rename and delete operation support on cached search results in File Manager
