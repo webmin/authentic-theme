@@ -1,10 +1,11 @@
 ## Changelog
 
-#### Version 19.37-RC3 (July 14, 2019)
+#### Version 19.37-RC4 (July 15, 2019)
 * Add ability to exclude entries from search using semicolon separated list in File Manager
 * Add caching for searched results in File Manager for faster data management upon large search results
 * Add rename and delete operation support on cached search results in File Manager
 * Add support for updating alerts on Dashboard in background [#1380](https://github.com/authentic-theme/authentic-theme/issues/1380)
+* Fix to have greater accuracy when rendering iconed rows
 * Fix bugs
 
 #### Version 19.36 (July 03, 2019)
