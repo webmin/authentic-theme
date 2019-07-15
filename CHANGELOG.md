@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.37-RC4 (July 15, 2019)
+#### Version 19.37 (July 16, 2019)
 * Add ability to exclude entries from search using semicolon separated list in File Manager
 * Add caching for searched results in File Manager for faster data management upon large search results
 * Add rename and delete operation support on cached search results in File Manager
@@ -76,6 +76,7 @@
 #### Version 19.31 (February 22, 2019)
 * Fix to prevent preloader appearing on progressive pages
 * Fix update notice to prevent grouping strings without link
+* Fix other minor bugs
 
 #### Version 19.30 (February 22, 2019)
 * Add major code refactor, clear and optimize
