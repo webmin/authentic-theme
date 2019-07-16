@@ -465,7 +465,7 @@ sub exec_search
                    if ($exclude) {
                        @excludes = split(';', $exclude);
                    }
-                   if ((!$regex && (index($found_text, $mask_text) != -1 || $mask_text eq "*")) ||
+                   if (($mask_text eq "*" || !$regex && (index($found_text, $mask_text) != -1)) ||
                        ($regex && $found_text =~ /$mask_text/))
                    {
                        if (!$list) {
@@ -473,9 +473,11 @@ sub exec_search
                        }
                        if ($follow || (!$follow && !-l $_)) {
                            my $excluded;
+                           my $found_ = $found;
+                           $found_ = lc($found_) if ($caseins);
                            if (@excludes) {
                                foreach my $e (@excludes) {
-                                   if ((!$regex && index($found, $e) != -1) || ($regex && $found =~ /$e/)) {
+                                   if ((!$regex && index($found_, $e) != -1) || ($regex && $found_ =~ /$e/)) {
                                        $excluded = 1;
                                    }
                                }
