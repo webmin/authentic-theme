@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.38-RC1 (July 19, 2019)
+* Add to ship Roboto Mono font for smoother UX across platforms
+* Fiх minimum value for starting server pagination in File Manager [sourceforge.net/5286](https://sourceforge.net/p/webadmin/bugs/5286)
+* Fix to consider case sensitivity when excluding from search in File Manager
+
+
 #### Version 19.37 (July 16, 2019)
 * Add ability to exclude entries from search using semicolon separated list in File Manager
 * Add caching for searched results in File Manager for faster data management upon large search results
