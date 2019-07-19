@@ -129,7 +129,7 @@ sub tokenize
 
     $key =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $key = $1;
-    $key =~ tr/A-Za-z0-9//cd;
+    $key  =~ tr/A-Za-z0-9//cd;
     $user =~ tr/A-Za-z0-9//cd;
     $salt =~ tr/A-Za-z0-9//cd;
 
@@ -586,8 +586,8 @@ sub print_content
     my $pages     = 0;
 
     my $max_allowed = int($userconfig{'max_allowed'});
-    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 2000) {
-        $max_allowed = 300;
+    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 10000) {
+        $max_allowed = 1000;
     }
 
     my $totals         = scalar(@list);
@@ -596,7 +596,7 @@ sub print_content
     my $tuconfig_per_page = get_user_config('config_portable_module_filemanager_records_per_page');
 
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
-        $page = int($in{'page'}) || 1;
+        $page      = int($in{'page'})     || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
@@ -604,10 +604,16 @@ sub print_content
             $in{'page'} = $page;
         }
         my $splice_start = $pagelimit * ($page - 1);
-        my $splice_end = $pagelimit;
-
-        @list = sort {$a cmp $b} @list;
-        @list = splice(@list, $splice_start, $splice_end);
+        my $splice_end   = $pagelimit;
+        if ($totals > 100000) {
+            @list = sort {$a cmp $b} @list;
+        } else {
+            @list =
+              map $_->[0], sort {$a->[1] <=> $b->[1] || $a->[0] cmp $b->[0]}
+              map [$_, -f "$cwd/$_"],
+              @list;
+        }
+        @list           = splice(@list, $splice_start, $splice_end);
         $totals_spliced = scalar(@list);
     }
 
@@ -641,7 +647,7 @@ sub print_content
     }
 
     # Get info about directory entries
-    my @info = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
+    my @info    = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
     my @folders = map {$_} grep {$_->[15] == 1} @info;
     my @files   = map {$_} grep {$_->[15] != 1} @info;
 
@@ -672,7 +678,7 @@ sub print_content
     $list_data{'pagination_limit'} = undef;
 
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
-        $page = int($in{'page'}) || 1;
+        $page      = int($in{'page'})     || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
         $pages = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
@@ -749,7 +755,7 @@ sub print_content
     for (my $count = 1; $count <= $totals_spliced; $count++) {
         if ($count > $totals) {last;}
         my $class = $count & 1 ? "odd" : "even";
-        my $link = $list[$count - 1][0];
+        my $link  = $list[$count - 1][0];
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
         my $vlink = html_escape($link);
@@ -953,7 +959,7 @@ sub get_tree
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
             my $pp = $p ne '/' ? $p : undef;
-            my $c = $r{$td} =
+            my $c  = $r{$td} =
               { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
             defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
         }
