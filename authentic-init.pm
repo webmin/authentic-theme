@@ -133,7 +133,8 @@ sub embed_favicon
         print ' <link ' .
           $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
     }
-    print ' <link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">' . "\n";
+    print ' <link ' .
+      $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' . $favicon_path . '/manifest.json">' . "\n";
     print ' <link ' .
       $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
     print ' <meta name="msapplication-TileColor" content="#3d74ca">' . "\n";

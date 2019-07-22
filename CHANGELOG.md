@@ -1,5 +1,19 @@
 ## Changelog
 
+#### Version 19.38 (July 20, 2019)
+* Add to ship Roboto Mono font for smoother UX across platforms
+* Fiх minimum value for starting server pagination in File Manager [sourceforge.net/5286](https://sourceforge.net/p/webadmin/bugs/5286)
+* Fix to consider case sensitivity when excluding from search in File Manager
+* Fix bugs
+
+#### Version 19.37 (July 16, 2019)
+* Add ability to exclude entries from search using semicolon separated list in File Manager
+* Add caching for searched results in File Manager for faster data management upon large search results
+* Add rename and delete operation support on cached search results in File Manager
+* Add support for updating alerts on Dashboard in background [#1380](https://github.com/authentic-theme/authentic-theme/issues/1380)
+* Fix to have greater accuracy when rendering iconed rows
+* Fix bugs
+
 #### Version 19.36 (July 03, 2019)
 * Fix bugs
 
@@ -68,6 +82,7 @@
 #### Version 19.31 (February 22, 2019)
 * Fix to prevent preloader appearing on progressive pages
 * Fix update notice to prevent grouping strings without link
+* Fix other minor bugs
 
 #### Version 19.30 (February 22, 2019)
 * Add major code refactor, clear and optimize
