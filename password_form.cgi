@@ -69,20 +69,26 @@ print '<p class="form-signin-paragraph">' .
 
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>' . "\n";
-print '<input type="password" class="form-control session_login" name="old" autocomplete="off" placeholder="' .
-  theme_text('password_old') . '" autocomplete="off">' . "\n";
+print
+  '<input type="password" class="form-control session_login" name="old" autocomplete="off" autocorrect="off" placeholder="'
+  . theme_text('password_old')
+  . '">' . "\n";
 print '</div>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
-print '<input type="password" class="form-control session_login" name="new1" autocomplete="off" placeholder="' .
-  theme_text('password_new1') . '" autocomplete="off">' . "\n";
+print
+  '<input type="password" class="form-control session_login" name="new1" autocomplete="off" autocorrect="off" placeholder="'
+  . theme_text('password_new1')
+  . '">' . "\n";
 print '</div>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
 print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
-print '<input type="password" class="form-control session_login" name="new2" autocomplete="off" placeholder="' .
-  theme_text('password_new2') . '" autocomplete="off">' . "\n";
+print
+  '<input type="password" class="form-control session_login" name="new2" autocomplete="off" autocorrect="off" placeholder="'
+  . theme_text('password_new2')
+  . '">' . "\n";
 print '</div>' . "\n";
 
 print '<div class="form-group">';

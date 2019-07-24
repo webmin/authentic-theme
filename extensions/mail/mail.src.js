@@ -178,6 +178,8 @@ const mail = (function() {
                     container: 'data-mail-folders',
                     active: 'fancytree-active',
                     loader: 'fancytree-loader',
+                    title: 'fancytree-title',
+                    bubble: 'label label-danger',
                 },
                 controls: {
                     compose: {
@@ -1110,7 +1112,7 @@ const mail = (function() {
             /**
              * Submits changes to the server
              *
-             * @param {string} data      Response object with data for current page
+             * @param {object} data      Response object with data for current page
              * @param {object} actions   Action(s) to be submitted
              * @param {object} messages  Array of message ids to process
              * @param {int}    [refetch] Refetch current folder's content from the server
@@ -1139,7 +1141,7 @@ const mail = (function() {
                     if (reset) {
                         storage.reset();
                     }
-                    if (refetch) {
+                    if (refetch || data.folder_counts_allowed) {
                         $.post(_.path.extensions + '/mail/messages.cgi?' + hidden + 'show_body_len=' + preview_length() + '', function(data) {
                             render(data);
                             loader.end();
@@ -1426,6 +1428,7 @@ const mail = (function() {
                     _.plugin.offset_adjust(true);
                     _.rows();
                     folders.set(data);
+                    folders.update(data);
                     events(data);
                     messages.storage.restore();
 
@@ -1603,7 +1606,7 @@ const mail = (function() {
         /**
          * Mark mail folder as active
          *
-         * @param {string} key Folder name to set as active
+         * @param {string|object} key Extract folder name to set as active
          *
          * @return {void}
          */
@@ -1617,11 +1620,14 @@ const mail = (function() {
                         file: key.searched_folder_file,
                     },
                     id = key.folder_id;
+
+                // Sey active folder
                 if (search.file && search.id != null && key.mail_system != 2 && key.mail_system != 4) {
                     key = search.file
                 } else {
                     key = search.id || id;
                 }
+
             }
 
             if (typeof tree === 'object' && typeof tree.activateKey === 'function') {
@@ -1630,6 +1636,38 @@ const mail = (function() {
                 setTimeout(() => {
                     this.set(key);
                 }, 1e2);
+            }
+        }
+
+        /**
+         * Update mail folder unread counter
+         *
+         * @param {object} data Response object with data for current page
+         *
+         * @return {void}
+         */
+        const update = function(data) {
+            let allowed = data.folder_counts_allowed,
+                unread_count = data.unread,
+                $node_titles = $($$.selector('tree.title')),
+                active_node = $$.selector('tree.active'),
+                node_bubble = $$.selector('tree.bubble'),
+                $active_node_title = $(active_node).find($$.selector('tree.title')),
+                $active_node_bubble = $(active_node).find(node_bubble);
+
+            // Update active folder counter
+            if (allowed) {
+                if (unread_count) {
+                    if ($active_node_bubble.length) {
+                        $active_node_bubble.text(unread_count)
+                    } else {
+                        $active_node_title.append($$.create.$('tree.bubble', false, 'span', unread_count))
+                    }
+                } else {
+                    $active_node_bubble.remove();
+                }
+            } else {
+                $node_titles.find(node_bubble).remove();
             }
         }
 
@@ -1646,6 +1684,7 @@ const mail = (function() {
         return {
             get: get,
             set: set,
+            update: update,
             adjust: adjust,
             data: data
         }
@@ -1656,6 +1695,7 @@ const mail = (function() {
         folders: {
             get: folders.get,
             set: folders.set,
+            update: folders.update,
             adjust: folders.adjust
         },
         messages: {

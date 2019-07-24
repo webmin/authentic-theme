@@ -133,7 +133,8 @@ sub embed_favicon
         print ' <link ' .
           $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
     }
-    print ' <link ' . $ref_link . ' rel="manifest" href="' . $favicon_path . '/site.webmanifest">' . "\n";
+    print ' <link ' .
+      $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' . $favicon_path . '/manifest.json">' . "\n";
     print ' <link ' .
       $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
     print ' <meta name="msapplication-TileColor" content="#3d74ca">' . "\n";
@@ -551,7 +552,7 @@ sub embed_port_shell
           . $remote_user .
           '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
           get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
-'</span></span><input type="text" data-command="true" autocomplete="off" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
+'</span></span><input type="text" data-command="true" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
     </div>
   </div>
 </div>', "\n";
@@ -652,7 +653,7 @@ sub init_vars
     our $theme_module_query_id;
 
     my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
-    our $global_prefix    = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
+    our $global_prefix = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
     our $parent_webprefix = $parent_webprefix_local;
 
     our $xnav = "xnavigation=1";
@@ -754,7 +755,7 @@ sub get_current_user_language
         $language = $ENV{'HTTP_ACCEPT_LANGUAGE'};
         $language =~ s/;.*//;
         @languages = split /,/, $language;
-        $language  = $languages[0];
+        $language = $languages[0];
     }
 
     if (($language_browser && !$language) || !$language_browser) {
@@ -902,13 +903,14 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
-    } elsif (
-             (string_contains($keys, "install")     ||
-              string_contains($keys, "recsok")      ||
-              string_contains($keys, "scripts_iok") ||
-              string_contains($keys, "right_upok")
-             ) &&
-             !string_contains($keys, "uninstall"))
+    }
+    elsif (
+           (string_contains($keys, "install")     ||
+            string_contains($keys, "recsok")      ||
+            string_contains($keys, "scripts_iok") ||
+            string_contains($keys, "right_upok")
+           ) &&
+           !string_contains($keys, "uninstall"))
     {
         $class = "success ";
         $icon  = "package-install fa-1_25x";
@@ -1063,7 +1065,8 @@ sub get_button_style
     } elsif (string_contains($keys, "dbase_add") || string_contains($keys, "databases_import")) {
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
-    } elsif (
+    }
+    elsif (
         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
         ||
         (string_contains($keys, "create") &&
@@ -1231,10 +1234,12 @@ sub header_html_data
       format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
-      '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') . ' data-high-contrast="' .
-      ($theme_config{'settings_contrast_mode'} eq 'true'              ? '1' : '0') . '" data-navigation-collapsed="' .
-      ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') . '" data-slider-fixed="' .
-      ($theme_config{'settings_side_slider_fixed'} eq "true" && $get_user_level eq '0' ? '1' : '0') .
+      '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
+      ' data-high-contrast="' . ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
+      '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
+      '" data-slider-fixed="' . ($theme_config{'settings_side_slider_fixed'} eq "true" &&
+                                 $get_user_level eq '0' &&
+                                 $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' .
       foreign_available("shell") . '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . $has_usermin .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
@@ -1338,7 +1343,7 @@ sub set_theme_temp_data
     my %var;
 
     $salt =~ tr/A-Za-z0-9//cd;
-    $key  =~ tr/A-Za-z0-9//cd;
+    $key =~ tr/A-Za-z0-9//cd;
 
     $value =~ s/[?|&]$xnav//g;
     $value =~ s/[?|&]randomized=[\d]+//g;
@@ -1482,7 +1487,7 @@ sub get_button_tooltip
     if (!$container) {
         $container = '#content';
     }
-    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : $text{$label});
+    my $tooltip_text = ($theme_text{$label} ? $theme_text{$label} : ($text{$label} ? $text{$label} : $label));
     if ($br_label_on) {
         my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
         $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);

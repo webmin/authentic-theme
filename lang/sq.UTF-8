@@ -82,8 +82,8 @@ right_vm2=Versioni i Cloudmin
 
 theme_xhred_session_failed=Login failed. Please try again.
 session_logout=Dolet me sukses.Përdorni formularin e mëposhtëm për t'u identifikuar përsëri.
-session_timed_out=Sesioni përfundoi pas 1 minutash pasiviteti.
 session_twofailed=Autentifikimi me dy faktorë dështoi: $1
+session_timed_out=Sesioni përfundoi pas 1 minutash pasiviteti.
 
 
 
@@ -1127,6 +1127,11 @@ settings_usermin_default_module=Default module
 
 #19.34
 theme_xhred_search_in_file_open_external=Detach file to separate editor
-theme_xhred_path_to_console=Open current path in terminal (Ctrl+Shift+L)
+theme_xhred_path_to_console=Open current path in terminal (Alt+Shift+K)
 theme_xhred_filemanager_editor_revert_content=Revert File
 theme_xhred_filemanager_editor_reverting_content=Dropping changes and reverting to original file content.
+
+
+#19.37
+theme_xhred_filemanager_exclude_dirs=Exclude entries
+theme_xhred_filemanager_exclude_dirs_desc=Semicolon separated list of files or subdirectories to exclude

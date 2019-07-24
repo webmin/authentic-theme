@@ -150,13 +150,15 @@ sub folders_select
 sub folder_counts
 {
     my ($folder) = @_;
+    my $allowed = should_show_unread($folder);
     my $total;
     my $unread;
     my $special;
-    if (should_show_unread($folder)) {
+
+    if ($allowed) {
         ($total, $unread, $special) = mailbox_folder_unread($folder);
     }
-    return (int($total), int($unread), int($special));
+    return (int($total), int($unread), int($special), int($allowed));
 }
 
 sub folder_data
@@ -221,7 +223,7 @@ sub message_details
         my $reply = message_addressee($header->{'reply-to'});
         if ($reply) {
             my @characters = split(//, $reply);
-            my $length = 66;
+            my $length     = 66;
             if (scalar(@characters) > $length) {
                 $reply =
                   join("", @characters[0 .. $length]) . "..." .
@@ -284,7 +286,7 @@ sub message_details
         }
 
         my $encrypted = $encryption ? 'lock text-success' : 'unlocked text-danger fa-flip-horizontal';
-        my $lock = 'lock';
+        my $lock      = 'lock';
         $status = 'info';
         if ($dkim && !$encryption) {
             $status = 'warning';
@@ -469,7 +471,7 @@ sub messages_sort_link
 sub message_fetch
 {
     my ($id, $folder) = @_;
-    my $mail = mailbox_get_mail($folder, $id, 0);
+    my $mail        = mailbox_get_mail($folder, $id, 0);
     my $read_status = get_mail_read($folder, $mail);
 
     return ($mail, $read_status);
@@ -515,7 +517,7 @@ sub messages_fetch
     my @mail = mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
     if ($start >= @mail && $jump) {
         $start = @mail - $perpage;
-        @mail = mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
+        @mail  = mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
     }
     return ($start, @mail);
 }
@@ -661,7 +663,7 @@ sub message_select_link
     my @rows;
     if ($folder) {
         for (my $i = $start; $i <= $end; $i++) {
-            my $m = $mail->[$i];
+            my $m    = $mail->[$i];
             my $read = get_mail_read($folder, $m);
             if ($status == 0 && !($read & 1) ||
                 $status == 1 && ($read & 1) ||

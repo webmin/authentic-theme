@@ -315,7 +315,7 @@ sub print_switch
 
     }
     print '<a></a>
-            </div><br style="line-height:4.4">';
+            </div><div class="toggle-space"></div>';
 }
 
 sub print_category_link
@@ -751,17 +751,15 @@ sub print_left_menu
 
                 if ($link =~ /\/virtual-server\/domain_form.cgi/) {
                     $icon = '<i class="fa fa-fw fa-plus-square-o"></i>';
-                }
 
-                elsif ($link =~ /\/virtual-server\/edit_domain.cgi/ ||
-                       $link =~ /\/server-manager\/edit_serv.cgi/)
+                } elsif ($link =~ /\/virtual-server\/edit_domain.cgi/ ||
+                         $link =~ /\/server-manager\/edit_serv.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa-pencil-square-o"></i>';
                 } elsif ($link =~ /\/virtual-server\/view_domain.cgi/) {
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
-                }
 
-                elsif ($link =~ /\/virtual-server\/list_users.cgi/) {
+                } elsif ($link =~ /\/virtual-server\/list_users.cgi/) {
                     $icon = '<i class="fa fa-fw fa-users"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_aliases.cgi/) {
                     $icon = '<i class="fa fa-fw fa-envelope-o"></i>';
@@ -773,9 +771,8 @@ sub print_left_menu
                     $icon = '<i class="fa fa-fw fa-update scaled1"></i>';
                 } elsif ($link =~ /\/filemin\/index.cgi/) {
                     $icon = '<i class="fa fa-fw fa-file-manager scaled2"></i>';
-                }
 
-                elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
+                } elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
                 } elsif ($link =~ /\/server-manager\/edit_pass.cgi/) {
                     $icon = '<i class="fa fa-fw fa-key"></i>';
@@ -1809,7 +1806,6 @@ sub error_40x
 
     my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
     my $sidname = "sid";
-    print "Auth-type: auth-required=1\r\n";
     print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
     print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
     print "Set-Cookie: redirect=1; path=/\r\n";
@@ -1983,7 +1979,7 @@ sub theme_remote_version
 
 sub theme_cached
 {
-    my ($id) = @_;
+    my ($id, $cvalue, $error) = @_;
     $id || die "Can't use undefined as cache filename";
 
     my $theme_var_dir = theme_var_dir();
@@ -1999,7 +1995,9 @@ sub theme_cached
         # Use cache for now
         @data = @$cdata;
     } else {
-        if ($_[2]) {
+
+        # Error when catching remote data
+        if ($error) {
             if ($cdata) {
 
                 # Error: Use current cache for another period
@@ -2009,10 +2007,10 @@ sub theme_cached
                 # Error: No cache available
                 return undef;
             }
-        } elsif ($_[1]) {
+        } elsif ($cvalue) {
 
             # Use supplied data
-            push(@data, $_[1]);
+            push(@data, $cvalue);
         }
 
         if (@data) {

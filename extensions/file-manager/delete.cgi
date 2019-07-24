@@ -15,14 +15,23 @@ our (%in, %text, $cwd, $path);
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 my %errors;
+my @deleted_entries;
 
 my @entries_list = get_entries_list();
+my $fsid         = $in{'fsid'};
 
 foreach my $name (@entries_list) {
     $name = simplify_path($name);
     if (!&unlink_file($cwd . '/' . $name)) {
         $errors{ urlize(html_escape($name)) } = "$text{'error_delete'}";
+    } else {
+        push(@deleted_entries, $name);
     }
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+if ($fsid) {
+    cache_search_delete($fsid, \@deleted_entries);
+}
+
+redirect_local(
+           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());

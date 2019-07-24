@@ -1106,13 +1106,18 @@ theme_xhred_global_error_more_details_online=Obs: Läs mer om detta felet och hu
 #19.33
 theme_xhred_filemanager_search_file_mask=Filmask
 theme_xhred_filemanager_search_regex=Reguljärt uttryck
-theme_xhred_upload_successful=<span>$1 files</span> have been successfully uploaded to $2 directory
-theme_xhred_upload_successful_single=<span>$1 file</span> has been successfully uploaded to $2 directory
-settings_usermin_default_module=Default module
+theme_xhred_upload_successful=<span>$1 filer</span> har laddats upp till mappen $2
+theme_xhred_upload_successful_single=<span>$1 fil</span> har laddats upp till mappen $2
+settings_usermin_default_module=Standardmodul
 
 
 #19.34
-theme_xhred_search_in_file_open_external=Detach file to separate editor
-theme_xhred_path_to_console=Open current path in terminal (Ctrl+Shift+L)
-theme_xhred_filemanager_editor_revert_content=Revert File
-theme_xhred_filemanager_editor_reverting_content=Dropping changes and reverting to original file content.
+theme_xhred_search_in_file_open_external=Redigera filen i friliggande redigerare
+theme_xhred_path_to_console=Öppna nuvarande sökväg i terminalen (Alt+Skift+K)
+theme_xhred_filemanager_editor_revert_content=Återställ fil
+theme_xhred_filemanager_editor_reverting_content=Återställ ändringarna till originalfilinnehåll.
+
+
+#19.37
+theme_xhred_filemanager_exclude_dirs=Uteslut poster
+theme_xhred_filemanager_exclude_dirs_desc=Semikolonseparerad lista över filer eller underkataloger till att utesluta

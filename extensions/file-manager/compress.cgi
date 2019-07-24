@@ -14,7 +14,7 @@ our (%in, %text, $cwd, $path);
 require(dirname(__FILE__) . '/file-manager-lib.pm');
 
 if (!$in{'arch'}) {
-    redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
 }
 
 my %errors;
@@ -42,7 +42,7 @@ if ($in{'method'} eq 'tar') {
         my %webminconfig = foreign_config("webmin");
         my $gpgpath      = quotemeta($webminconfig{'gpg'} || "gpg");
         my $gpg          = "$gpgpath --encrypt --always-trust --recipient $key_id $fileq";
-        
+
         if (!has_command($gpgpath)) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
         }
@@ -79,4 +79,5 @@ if ($delete) {
 
 }
 
-redirect('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+redirect_local(
+           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
