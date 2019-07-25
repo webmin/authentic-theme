@@ -141,10 +141,9 @@ sub get_swith_mode
     {
         $t_var_switch_m  = '3';
         $t_var_product_m = '3';
-    }
-    elsif (&foreign_available("virtual-server") ||
-           &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
-                                                    !&foreign_available("server-manager")))
+    } elsif (&foreign_available("virtual-server") ||
+             &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
+                                                      !&foreign_available("server-manager")))
     {
         $t_var_switch_m  = '2';
         $t_var_product_m = '2';
@@ -920,12 +919,8 @@ sub print_left_menu
                                  virtual_server::shorten_domain_name($_),
                                  "title=\"" . virtual_server::show_domain_name($_) . "\""]
                               }
-                              grep {
-                                virtual_server::can_edit_domain($_)
-                              }
-                              sort {
-                                $a->{'dom'} cmp $b->{'dom'}
-                              } virtual_server::list_domains()];
+                              grep {virtual_server::can_edit_domain($_)}
+                              sort {$a->{'dom'} cmp $b->{'dom'}} virtual_server::list_domains()];
                     }
                     print ui_select(
                         ($item->{'name'} eq 'dname' ? 'dom' :
@@ -1196,7 +1191,7 @@ sub get_sysinfo_vars
         my $ip =
           $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
           &to_ipaddress(get_system_hostname());
-        $ip = " ($ip)" if ($ip);
+        $ip   = " ($ip)" if ($ip);
         $host = &get_system_hostname() . $ip;
         if (&foreign_available("net")) {
             $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
@@ -1222,7 +1217,7 @@ sub get_sysinfo_vars
         if ($has_virtualmin) {
             my ($vs_license, $__virtual_server_version);
 
-            $vs_license = licenses('vm');
+            $vs_license               = licenses('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
 
@@ -1804,7 +1799,7 @@ sub error_40x
     }
     $block_time += 5;
 
-    my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+    my $sec     = lc(get_env('https')) eq 'on' ? "; secure" : "";
     my $sidname = "sid";
     print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
     print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
@@ -1853,7 +1848,7 @@ sub theme_update_incompatible
     my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
 
     $authentic_remote_data =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-    $webmin_compatible_version = $3 ? $3 : $1;
+    $webmin_compatible_version  = $3 ? $3 : $1;
     $usermin_compatible_version = $2;
 
     if (
@@ -2173,7 +2168,14 @@ sub get_theme_user_link
     my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force '          : undef);
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
-    return '' . theme_version() .
+    my $mversion = int(theme_version(0, 1));
+    if ($mversion > 1) {
+        $mversion = "-$mversion";
+    } else {
+        $mversion = undef;
+    }
+
+    return '' . theme_version() . $mversion .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
@@ -3391,10 +3393,9 @@ sub get_default_right
 
             }
         }
-    }
-    elsif ($theme_requested_url =~ /server-manager/ &&
-           ($t_uri___i ||
-            (   length $theme_config{'settings_right_cloudmin_default'} &&
+    } elsif ($theme_requested_url =~ /server-manager/ &&
+             ($t_uri___i ||
+              ( length $theme_config{'settings_right_cloudmin_default'} &&
                 $theme_config{'settings_right_cloudmin_default'} ne ''  &&
                 (\server_available($theme_config{'settings_right_cloudmin_default'}, 'id') ||
                     $theme_config{'settings_right_cloudmin_default'} eq 'index.cgi'))))
@@ -3548,7 +3549,7 @@ sub update_notice
     $changelog_data =~ s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;
 
-    my @version = split(/ /, $changelog_version[0]);
+    my @version           = split(/ /, $changelog_version[0]);
     my $changelog_content = '
       <div class="modal fade fade9" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-update">
@@ -3751,7 +3752,7 @@ sub get_autocomplete_shell
             $unit_tmp =~ s/\|/,/g;
             $unit_tmp =~ s/;/,/g;
 
-            my @units_tmp = split /,/, $unit_tmp;
+            my @units_tmp          = split /,/, $unit_tmp;
             my @units_possible_tmp = ('start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status');
             @rs_tmp = (@units_tmp ? @units_tmp : @units_possible_tmp);
             my @rs_cmd;
