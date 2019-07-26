@@ -1205,6 +1205,18 @@ sub theme_version
     return $version;
 }
 
+sub theme_mversion_str
+{
+    my $mversion = int(theme_version(0, 1));
+    if ($mversion > 1) {
+        $mversion = "-$mversion";
+    } else {
+        $mversion = undef;
+    }
+
+    return $mversion;
+}
+
 sub theme_debug_mode
 {
     my $debug_mode = "$root_directory/$current_theme/unauthenticated/js/authentic.src.js";

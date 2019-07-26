@@ -2168,12 +2168,7 @@ sub get_theme_user_link
     my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force '          : undef);
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
-    my $mversion = int(theme_version(0, 1));
-    if ($mversion > 1) {
-        $mversion = "-$mversion";
-    } else {
-        $mversion = undef;
-    }
+    my $mversion = theme_mversion_str();
 
     return '' . theme_version() . $mversion .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
@@ -3275,6 +3270,9 @@ sub get_xhr_request
                     backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart");
                 }
                 my $tversion = theme_version();
+                my $mversion = theme_mversion_str();
+                $tversion = $tversion . $mversion;
+                
                 @update_rs = {
                                "success" => ($usermin ? theme_text('theme_git_patch_update_success_message2', $tversion) :
                                                theme_text('theme_git_patch_update_success_message', $tversion)
