@@ -692,6 +692,7 @@ sub print_left_menu
     my $__custom_print = 0;
     my $__custom_link  = 0;
     my $__mail_spinner = 0;
+    my $__text_status  = 0;
     foreach my $item (@$items) {
         if ($module eq $item->{'module'} || $group) {
 
@@ -837,6 +838,15 @@ sub print_left_menu
             } elsif ($item->{'type'} eq 'html') {
                 print '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
                   $item->{'html'} . '</span></li>';
+            } elsif ($item->{'type'} eq 'text') {
+                if ($__text_status == 1) {
+                    $__text_status =
+'<li class="menu-container menu-status menu-status-mode"><span class="badge"><i class="fa fa-fw fa-user-circle"></i>'
+                      . html_escape($item->{'desc'})
+                      . '</span></li>';
+                } else {
+                    $__text_status++;
+                }
             } elsif ($item->{'type'} eq 'cat') {
 
                 # Skip printing Webmin category because there is a switch for it
@@ -897,6 +907,9 @@ sub print_left_menu
             } elsif (($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') &&
                      $item->{'module'} ne 'mailbox')
             {
+                # Print user mode
+                print $__text_status if ($__text_status !~ /^\d+$/);
+
                 # For with an input of some kind
                 if ($item->{'cgi'}) {
                     print "<li class=\"menu-container\"><form action='$item->{'cgi'}'>\n";
@@ -3272,7 +3285,7 @@ sub get_xhr_request
                 my $tversion = theme_version();
                 my $mversion = theme_mversion_str();
                 $tversion = $tversion . $mversion;
-                
+
                 @update_rs = {
                                "success" => ($usermin ? theme_text('theme_git_patch_update_success_message2', $tversion) :
                                                theme_text('theme_git_patch_update_success_message', $tversion)
