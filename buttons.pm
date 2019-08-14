@@ -5,8 +5,9 @@
 #
 use strict;
 
-our (%in, %gconfig, %miniserv, $remote_user, $root_directory, %theme_config, $get_user_level);
+our (%in, %gconfig, %miniserv, $remote_user, $root_directory, %theme_config, %theme_text, $get_user_level, $mode_status);
 
+print "<li data-x-buttons><ul data-x-container>";
 print '<li data-collapse-trigger-container data-linked' .
   get_button_tooltip('theme_xhred_tooltip_navigation_pinned', 'settings_hotkey_navigation', 'auto top') .
   ' class="user-link cursor-pointer' .
@@ -73,14 +74,29 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
 }
 
 print '<li class="user-link">';
-if (&foreign_available("acl")) {
-    print '<a' . get_button_tooltip('theme_tooltip_edit_user', undef, 'auto top') .
-      ' class="menu-exclude-link" data-href="' . $gconfig{'webprefix'} . '/acl/edit_user.cgi" href="' .
-      $gconfig{'webprefix'} . '/acl/edit_user.cgi?user=' . (get_env('base_remote_user') eq "root" ? "root" : $remote_user) .
-      '"><i class="fa fa-fw fa-user"></i>&nbsp;<span>' . $remote_user . '</span></a>';
+my $foreign_acl = &foreign_available("acl");
+my $edit_user   = ($foreign_acl ? ("<hr class='hr-no-margin hr-darker'>" . $theme_text{'theme_tooltip_edit_user'}) : undef);
+my $title_proc;
+if ($mode_status && $mode_status !~ /^\d+$/) {
+    $title_proc = $mode_status . $edit_user;
 } else {
-    print '<a class="menu-exclude-link" style="pointer-events: none;"><i class="fa fa-fw fa-user"></i>&nbsp;<span>' .
-      $remote_user . '</span></a>';
+    $title_proc =
+      $foreign_acl ? $theme_text{'theme_tooltip_edit_user'} :
+      (get_product_name() eq 'usermin' ?
+"<span><strong>$theme_text{'theme_global_access_level'}</strong>:&nbsp;&nbsp;<em>$theme_text{'theme_global_user_mode'}</em></span>"
+        : undef);
+}
+my $user_title = get_button_tooltip($title_proc, undef, 'auto top', 1, undef, "aside .user-link");
+
+if ($foreign_acl) {
+    print '<a' .
+      $user_title . ' class="menu-exclude-link" data-href="' . $gconfig{'webprefix'} . '/acl/edit_user.cgi" href="' .
+      $gconfig{'webprefix'} . '/acl/edit_user.cgi?user=' . (get_env('base_remote_user') eq "root" ? "root" : $remote_user) .
+      '"><i class="fa2 fa-fw fa2-user-tag vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
+} else {
+    print '<a ' . $user_title .
+      ' class="menu-exclude-link cursor-default"><i class="fa2 fa-fw fa2-user-tag vertical-align-baseline"></i>&nbsp;<span>'
+      . $remote_user . '</span></a>';
 }
 print '</li>';
 
@@ -107,7 +123,7 @@ if ($miniserv{'logout'} &&
 
 if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
     $theme_config{'settings_leftmenu_button_language'} eq 'true' &&
-    ($in{'xhr-buttons-type'} eq '1'))
+    ($in{'xhr-navigation-type'} eq 'virtualmin' || $in{'xhr-navigation-type'} eq 'cloudmin'))
 {
     print '<li data-linked' . get_button_tooltip('theme_tooltip_language_link', undef, 'auto top') . ' class="user-link">
                     <a class="menu-exclude-link pd-rt-4" href="'
@@ -127,5 +143,7 @@ print '<li data-linked' .
   get_button_tooltip('theme_xhred_filemanager_context_refresh', 'settings_hotkey_reload', 'auto top') .
   ' class="user-link' . ($theme_config{'settings_leftmenu_button_refresh'} ne 'true' && ' hidden') .
 '"><a class="menu-exclude-link pd-rt-4" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
+
+print "</ul></li>";
 
 1;

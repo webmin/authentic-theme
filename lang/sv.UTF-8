@@ -1121,3 +1121,8 @@ theme_xhred_filemanager_editor_reverting_content=Återställ ändringarna till o
 #19.37
 theme_xhred_filemanager_exclude_dirs=Uteslut poster
 theme_xhred_filemanager_exclude_dirs_desc=Semikolonseparerad lista över filer eller underkataloger till att utesluta
+
+
+#19.38
+theme_global_access_level=Access Level
+theme_global_user_mode=User Mode

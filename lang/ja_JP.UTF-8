@@ -1120,3 +1120,8 @@ theme_xhred_filemanager_editor_reverting_content=変更をドロップして元�
 #19.37
 theme_xhred_filemanager_exclude_dirs=エントリを除外する
 theme_xhred_filemanager_exclude_dirs_desc=除外するファイルまたはサブディレクトリのセミコロン区切りリスト
+
+
+#19.38
+theme_global_access_level=Access Level
+theme_global_user_mode=User Mode
