@@ -75,16 +75,18 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
 
 print '<li class="user-link">';
 my $foreign_acl = &foreign_available("acl");
+my $user_mode   = get_product_name() eq 'usermin';
 my $edit_user   = ($foreign_acl ? ("<hr class='hr-no-margin hr-darker'>" . $theme_text{'theme_tooltip_edit_user'}) : undef);
 my $title_proc;
-if ($mode_status && $mode_status !~ /^\d+$/) {
+if (!$user_mode && $mode_status && $mode_status !~ /^\d+$/) {
     $title_proc = $mode_status . $edit_user;
 } else {
     $title_proc =
       $foreign_acl ? $theme_text{'theme_tooltip_edit_user'} :
-      (get_product_name() eq 'usermin' ?
+      ( get_product_name() eq 'usermin' ?
 "<span><strong>$theme_text{'theme_global_access_level'}</strong>:&nbsp;&nbsp;<em>$theme_text{'theme_global_user_mode'}</em></span>"
-        : undef);
+        :
+          undef);
 }
 my $user_title = get_button_tooltip($title_proc, undef, 'auto top', 1, undef, "aside .user-link");
 
