@@ -184,4 +184,6 @@ elsif (foreign_available("mailbox") &&
     print_sysinfo_link(1);
 }
 
+require(dirname(__FILE__) . "/buttons.pm");
+
 1;

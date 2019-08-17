@@ -593,11 +593,11 @@ theme_new_password_header= ユーザーの新しいパスワードを設定す�
 login_reset= パスワードの復元
 theme_xhred_move_top= 一番上に移動
 theme_xhred_move_bottom= 下に移動
-theme_xhred_move_up= 上がる
+theme_xhred_move_up= 上に移動
 theme_xhred_move_down= 下に移動
-theme_xhred_add_after= 後で追加する
+theme_xhred_add_after= 後に追加
 theme_xhred_add_before= 前に追加
-settings_show_night_mode_link= 昼/夜モード切り替え
+settings_show_night_mode_link= ライト/ダークモード切り替え
 settings_hotkey_toggle_key_night_mode= ダーク/ライトパレットを切り替えるためのホットキー
 settings_title= テーマ構成
 settings_subtitle= ユーザーの場合
@@ -645,7 +645,7 @@ theme_xhred_global_beta_version= ベータ版
 theme_xhred_global_release= リリース
 theme_xhred_global_released_on= リリース日
 theme_xhred_global_committed_on= コミットした
-theme_xhred_global_resolved_issues= %valueリリースで解決された問題
+theme_xhred_global_resolved_issues=リリース %value で解決された問題
 
 
 #18.48
@@ -671,7 +671,7 @@ theme_xhred_filemanager_editor_refresh_content= コンテンツをリフレッ�
 theme_xhred_filemanager_save_to_refresh_content= コンテンツをリフレッシュできるようにするには、ファイルを保存する必要があります。
 theme_xhred_filemanager_save_to_refresh_content_proc= ファイルの内容を更新しています。
 theme_xhred_global_dark= ダーク
-theme_xhred_global_light= 光
+theme_xhred_global_light= ライト
 theme_xhred_global_minimize= 最小化する
 theme_xhred_global_maximize= 最大化する
 theme_xhred_global_normalize= ノーマライズ
@@ -1118,5 +1118,10 @@ theme_xhred_filemanager_editor_reverting_content=変更をドロップして元�
 
 
 #19.37
-theme_xhred_filemanager_exclude_dirs=Exclude entries
-theme_xhred_filemanager_exclude_dirs_desc=Semicolon separated list of files or subdirectories to exclude
+theme_xhred_filemanager_exclude_dirs=エントリを除外する
+theme_xhred_filemanager_exclude_dirs_desc=除外するファイルまたはサブディレクトリのセミコロン区切りリスト
+
+
+#19.38
+theme_global_access_level=Access Level
+theme_global_user_mode=User Mode

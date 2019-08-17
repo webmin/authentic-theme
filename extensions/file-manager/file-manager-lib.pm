@@ -863,7 +863,7 @@ sub print_content
         my @td_tags = (undef,
                        'class="col-icon"',
                        'class="col-name" data-xarchive="' . $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' .
-                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $filename . '"');
+                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . html_escape($filename) . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
