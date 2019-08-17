@@ -91,14 +91,13 @@ if (!$user_mode && $mode_status && $mode_status !~ /^\d+$/) {
 my $user_title = get_button_tooltip($title_proc, undef, 'auto top', 1, undef, "aside .user-link");
 
 if ($foreign_acl) {
-    print '<a' .
-      $user_title . ' class="menu-exclude-link" data-href="' . $gconfig{'webprefix'} . '/acl/edit_user.cgi" href="' .
-      $gconfig{'webprefix'} . '/acl/edit_user.cgi?user=' . (get_env('base_remote_user') eq "root" ? "root" : $remote_user) .
-      '"><i class="fa2 fa-fw fa2-user-tag vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
+    print '<a' . $user_title . ' class="menu-exclude-link" data-href="' .
+      $gconfig{'webprefix'} . '/acl/edit_user.cgi" href="' . $gconfig{'webprefix'} . '/acl/edit_user.cgi?user=' .
+      (get_env('base_remote_user') eq "root" ? "root" : $remote_user) . '"><i class="fa2 fa-fw ' .
+      get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
 } else {
-    print '<a ' . $user_title .
-      ' class="menu-exclude-link cursor-default"><i class="fa2 fa-fw fa2-user-tag vertical-align-baseline"></i>&nbsp;<span>'
-      . $remote_user . '</span></a>';
+    print '<a ' . $user_title . ' class="menu-exclude-link cursor-default"><i class="fa2 fa-fw ' .
+      get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
 }
 print '</li>';
 

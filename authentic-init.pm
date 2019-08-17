@@ -814,6 +814,21 @@ sub get_user_level
     return ($level, $has_virtualmin, $has_cloudmin);
 }
 
+sub get_user_icon
+{
+    my $user_icon = 'fa2-user-cog';
+    if ($get_user_level eq '1') {
+        $user_icon = 'fa2-user-plus';
+    } elsif ($get_user_level eq '2') {
+        $user_icon = 'fa2-user-check';
+    } elsif ($get_user_level eq '3') {
+        $user_icon = 'fa2-user';
+    } elsif ($get_user_level eq '4') {
+        $user_icon = 'fa2-user-friends';
+    }
+    return $user_icon;
+}
+
 sub set_user_level
 {
     if ($get_user_level ne '0' && $get_user_level ne '1') {
