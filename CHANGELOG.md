@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.39 (August 18, 2019)
+* Add ability to restore initial sorting for tables [#1386](https://github.com/authentic-theme/authentic-theme/issues/1386)
+* Add to show minor theme version
+* Add to display datetime in from now format for Running Processes module [#1387/comment-516709651](https://github.com/authentic-theme/authentic-theme/issues/1387#issuecomment-516709651)
+* Add to display current user login mode for Virtualmin/Cloudmin
+* Fix to prevent possible XSS
+* Fix bugs
+
 #### Version 19.38 (July 20, 2019)
 * Add to ship Roboto Mono font for smoother UX across platforms
 * Fiх minimum value for starting server pagination in File Manager [sourceforge.net/5286](https://sourceforge.net/p/webadmin/bugs/5286)
