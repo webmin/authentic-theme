@@ -1124,5 +1124,5 @@ theme_xhred_filemanager_exclude_dirs_desc=Semikolonseparerad lista över filer e
 
 
 #19.38
-theme_global_access_level=Access Level
-theme_global_user_mode=User Mode
+theme_global_access_level=Åtkomstnivå
+theme_global_user_mode=Användarläge
