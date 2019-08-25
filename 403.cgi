@@ -9,6 +9,8 @@ use strict;
 
 use File::Basename;
 
+our $trust_unknown_referers = 1;
+
 require(dirname(__FILE__) . "/authentic-lib.pm");
 
 error_40x();
