@@ -1810,7 +1810,6 @@ sub error_40x
 
     my $sec     = lc(get_env('https')) eq 'on' ? "; secure" : "";
     my $sidname = "sid";
-    print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
     print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
     print "Set-Cookie: redirect=1; path=/\r\n";
     print "Set-Cookie: testing=1; path=/$sec\r\n";
@@ -1833,7 +1832,7 @@ sub error_40x
     if (defined($in{'code'})) {
         print '<div class="alert alert-danger error_40x">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
-          $in{'code'} . '</strong><br><span>' . $in{'message'} . "</span>\n";
+          html_escape($in{'code'}) . '</strong><br><span>' . html_escape($in{'message'}) . "</span>\n";
         print '</div>' . "\n";
     }
     &footer();
