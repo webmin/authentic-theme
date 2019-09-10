@@ -3150,8 +3150,19 @@ sub get_xhr_request
                  } list_languages()
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
-            my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
-            print nice_size($size, -1) . '|' . nice_number($size);
+            set_user_level();
+            my $path = get_access_data('root') . $in{'xhr-get_size_path'};
+            my $home = get_user_home();
+            if ($get_user_level eq '3' && !string_starts_with($path, $home)) {
+                $path = $home . $path;
+                $path =~ s/\/\//\//g;
+            }
+            if (!-r $path) {
+                print "$theme_text{'theme_xhred_global_error'}|-1";
+            } else {
+                my $size = recursive_disk_usage($path);
+                print nice_size($size, -1) . '|' . nice_number($size);
+            }
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";
