@@ -71,6 +71,7 @@ const mail = (function() {
                 json_to_query: Convert.json_to_query,
                 serialized_to_json: Convert.serialized_to_json,
                 nice_size: Convert.nice_size,
+                html_escape: Convert.htmlEscape,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
                 moment: moment,
@@ -955,7 +956,7 @@ const mail = (function() {
                                     if (readonly) {
                                         readonly = ['readonly'];
                                     }
-                                    return $$.create.input([str, `c-${str}-${id}`], String(), data_visible[str], 'text', readonly);
+                                    return $$.create.input([str, `c-${str}-${id}`], String(), _.plugin.html_escape(data_visible[str]), 'text', readonly);
                                 },
                                 select: {},
                                 composer: function(target) {
@@ -1480,7 +1481,7 @@ const mail = (function() {
                                     del: check.field('pri', data.hidden),
                                 }
                             },
-                            from: element.select.from || element.input('from', data.visible, 1),
+                            from: element.select.from ||  element.input('from', data.visible, 1),
                             to: element.input('to', data.visible),
                             cc: element.input('cc', data.visible),
                             bcc: element.input('bcc', data.visible),
