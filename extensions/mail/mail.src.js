@@ -952,11 +952,15 @@ const mail = (function() {
                                 },
                             },
                             element = {
-                                input: (str, data_visible, readonly = false) => {
+                                input: (str, data_visible, readonly = false, no_escape = false) => {
+                                    let value = data_visible[str];
                                     if (readonly) {
                                         readonly = ['readonly'];
                                     }
-                                    return $$.create.input([str, `c-${str}-${id}`], String(), _.plugin.html_escape(data_visible[str]), 'text', readonly);
+                                    if (!no_escape) {
+                                        value = _.plugin.html_escape(value);
+                                    }
+                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, 'text', readonly);
                                 },
                                 select: {},
                                 composer: function(target) {
@@ -1481,12 +1485,12 @@ const mail = (function() {
                                     del: check.field('pri', data.hidden),
                                 }
                             },
-                            from: element.select.from ||  element.input('from', data.visible, 1),
+                            from: element.select.from ||  element.input('from', data.visible, true),
                             to: element.input('to', data.visible),
                             cc: element.input('cc', data.visible),
                             bcc: element.input('bcc', data.visible),
                             subject: element.input('subject', data.visible),
-                            attachments: element.input(classes.form.name.tattach, data.visible),
+                            attachments: element.input(classes.form.name.tattach, data.visible, false, true),
                             body: data.visible.body,
                         })
 
