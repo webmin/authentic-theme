@@ -181,7 +181,7 @@ sub theme_file_chooser_button
     my $chroot = defined($_[3]) ? $_[3] : "/";
     my $add    = int($_[4]);
     my $link   = "chooser.cgi?add=$add&type=$_[1]&chroot=$chroot&file=\"+encodeURIComponent(ifield.value)";
-    my $icon   = 'fa-fw fa-files-o';
+    my $icon   = 'fa-fw fa-files-o -cs';
 
     return get_chooser_button_template($link, $icon);
 }
@@ -218,7 +218,7 @@ sub theme_popup_window_button
 {
     my ($url, $w, $h, $scroll, $fields) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
-    my $icon = "fa-files-o";
+    my $icon = "fa-files-o -cs";
     if ($url =~ /third_chooser|standard_chooser/) {
         $icon = "fa-world";
     }
@@ -1148,22 +1148,22 @@ sub theme_nice_size
     my ($units, $uname);
     if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_nice_size_PB'};
+        $uname = $theme_text{'theme_xhred_nice_size_PB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_nice_size_TB'};
+        $uname = $theme_text{'theme_xhred_nice_size_TB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_nice_size_GB'};
+        $uname = $theme_text{'theme_xhred_nice_size_GB'};
     } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
         $units = 1024 * 1024;
-        $uname = $theme_text{'theme_nice_size_MB'};
+        $uname = $theme_text{'theme_xhred_nice_size_MB'};
     } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
         $units = 1024;
-        $uname = $theme_text{'theme_nice_size_kB'};
+        $uname = $theme_text{'theme_xhred_nice_size_kB'};
     } else {
         $units = 1;
-        $uname = $theme_text{'theme_nice_size_b'};
+        $uname = $theme_text{'theme_xhred_nice_size_b'};
     }
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;

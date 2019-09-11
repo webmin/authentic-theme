@@ -3151,13 +3151,16 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             set_user_level();
-            my $path = get_access_data('root') . $in{'xhr-get_size_path'};
-            my $home = get_user_home();
+            my $path  = get_access_data('root') . $in{'xhr-get_size_path'};
+            my $nodir = $in{'xhr-get_size_nodir'};
+            my $home  = get_user_home();
             if ($get_user_level eq '3' && !string_starts_with($path, $home)) {
                 $path = $home . $path;
                 $path =~ s/\/\//\//g;
             }
-            if (!-r $path) {
+            if ($nodir && -d $path) {
+                print "$theme_text{'theme_xhred_global_error'}|-2";
+            } elsif (!-r $path) {
                 print "$theme_text{'theme_xhred_global_error'}|-1";
             } else {
                 my $size = recursive_disk_usage($path);
