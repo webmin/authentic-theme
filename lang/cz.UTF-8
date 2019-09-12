@@ -837,12 +837,12 @@ theme_xhred_filemanager_canceled_download=Download canceled.
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download=Force <code>tar</code> command, even if <code>zip</code> is available, when downloading as archive
-theme_nice_size_PB=PB
-theme_nice_size_TB=TB
-theme_nice_size_GB=GB
-theme_nice_size_MB=MB
-theme_nice_size_kB=kB
-theme_nice_size_b=bytes
+theme_xhred_nice_size_PB=PB
+theme_xhred_nice_size_TB=TB
+theme_xhred_nice_size_GB=GB
+theme_xhred_nice_size_MB=MB
+theme_xhred_nice_size_kB=kB
+theme_xhred_nice_size_b=bytes
 settings_sysinfo_real_time_status_options=Real-time monitoring options
 settings_sysinfo_real_time_status_disk=Enable for disks
 settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
@@ -1128,3 +1128,37 @@ theme_xhred_filemanager_exclude_dirs_desc=Semicolon separated list of files or s
 #19.38
 theme_global_access_level=Access Level
 theme_global_user_mode=User Mode
+
+
+#19.40
+theme_xhred_global_attachments=Attachments
+theme_xhred_editor_tb_font=Font
+theme_xhred_editor_tb_size=Size
+theme_xhred_editor_tb_bold=Bold (%cmd+B)
+theme_xhred_editor_tb_italic=Italic (%cmd+I)
+theme_xhred_editor_tb_underline=Underline (%cmd+U)
+theme_xhred_editor_tb_color=Text color
+theme_xhred_editor_tb_background=Text background
+theme_xhred_editor_tb_align=Align
+theme_xhred_editor_tb_list_ordered=Numbered list
+theme_xhred_editor_tb_list_bullet=Bulleted list
+theme_xhred_editor_tb_strike=Strikethrough
+theme_xhred_editor_tb_blockquote=Quote
+theme_xhred_editor_tb_code-block=Insert code
+theme_xhred_editor_tb_link=Insert link (%cmd+K)
+theme_xhred_editor_tb_clean=Remove formatting
+theme_xhred_mail_composer_send=Send
+theme_xhred_mail_composer_schedule=Schedule send
+theme_xhred_mail_composer_attach=Attach file(s)
+theme_xhred_mail_composer_insert_picture=Insert pictures inline
+theme_xhred_mail_composer_toggle=Toggle HTML/plain text mode
+theme_xhred_mail_composer_discard=Discard draft
+theme_xhred_mail_composer_server_attach=Attach file from server
+theme_xhred_mail_composer_addrecipients=Add recipients to addressbook
+theme_xhred_mail_composer_notifications_dsn=Request delivery status
+theme_xhred_mail_composer_notifications_del=Request read receipt
+theme_xhred_global_options=Options
+theme_xhred_mail_composer_draft_saving=Draft saving...
+theme_xhred_mail_composer_draft_saved=Draft saved
+theme_xhred_mail_composer_server_attach_error_read=Requested file cannot be read or permission denied
+theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached

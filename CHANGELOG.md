@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 19.40-alpha2 (September 6, 2019)
+#### Version 19.40-beta1 (September 11, 2019)
+* Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
 * Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
 * Fix context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
 * Fix to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)

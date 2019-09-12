@@ -53,10 +53,15 @@ const mail = (function() {
                     },
                 },
             },
+            platform: {
+                mac: window.navigator.platform === 'MacIntel',
+            },
             content: get_pjax_content,
             load: load,
             language: theme_language,
             notification: plugins.messenger.post,
+            file_chooser: plugins.chooser.file,
+            button_progress: snippets.progressive_button,
             rows: page_table_rows_control,
             document_title: theme_title_generate,
             navigation: {
@@ -64,8 +69,12 @@ const mail = (function() {
             },
             plugin: {
                 json_to_query: Convert.json_to_query,
+                serialized_to_json: Convert.serialized_to_json,
+                nice_size: Convert.nice_size,
+                html_escape: Convert.htmlEscape,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
+                moment: moment,
 
                 select: (data, size = '34') => {
                     if (Array.isArray(data)) {
@@ -101,8 +110,9 @@ const mail = (function() {
                     )
 
                 },
-                tooltip: () => {
-                    $('[data-tooltip="mailbox"]').tooltip({
+                tooltip: (target) => {
+                    let $target = target || $('[data-tooltip="mailbox"]');
+                    $target.tooltip({
                         html: true,
                         trigger: 'hover',
                         container: 'body',
@@ -131,7 +141,7 @@ const mail = (function() {
                 /**
                  * Returns set of selectors for generating layout
                  *
-                 * @returns {object}
+                 * @returns {string}
                  */
                 layout: {
                     container: 'container-fluid',
@@ -172,7 +182,7 @@ const mail = (function() {
                 /**
                  * Returns used selectors for generating elements
                  *
-                 * @returns {string|object}
+                 * @returns {string}
                  */
                 tree: {
                     container: 'data-mail-folders',
@@ -260,6 +270,300 @@ const mail = (function() {
                         empty: 'fa fa-fw fa-1_50x fa-inbox'
                     }
                 },
+                compose: {
+                    button: {
+                        inverse: 'btn-inverse'
+                    },
+                    hidden: 'hidden',
+                    panel: {
+                        content: 'jsPanel-content',
+                        container: 'jspCompose',
+                        container_shown: 'jspShown',
+                        backdrop: 'compose_backdrop',
+                    },
+                    editor: {
+                        compose: 'ql-compose',
+                        content: 'ql-editor',
+                        toolbar: 'ql-toolbar',
+                        tb_bold: 'ql-bold',
+                        tb_link: 'ql-link',
+                        tb_image: 'ql-image',
+                        controls: {
+                            compose: 'compose-controls',
+                            more: 'more-options',
+                            extra: {
+                                attach: 'e-attachment',
+                                link: 'e-ql-link',
+                                image: 'e-ql-image',
+                                html: 'e-html',
+                                discard: 'e-discard',
+                            }
+                        }
+                    },
+                    form: {
+                        header: 'form-head',
+                        recipients: {
+                            control: 'recipients-control',
+                            fields: 'recipients-control-fields',
+                        },
+                        name: {
+                            tattach: 'tattachments',
+                        }
+                    },
+                    icons: {
+                        upload: {
+                            server: 'fa fa-fw fa-download-cloud',
+                            attach: 'fa2 fa2-attach',
+                        }
+                    }
+                },
+                notification: {
+                    danger: 'exclamation-triangle',
+                    error: 'exclamation-circle',
+                    success: 'fa-check-circle',
+                    type: {
+                        search: 'search',
+                    }
+                },
+                class: {
+                    events_none: 'pointer-events-none',
+                },
+
+                /**
+                 * Returns templates
+                 *
+                 * @returns {string}
+                 */
+                template: {
+                    compose: (data) => {
+                        let hidden = ' class="' + data.class.hidden + '"',
+                            empty = String(),
+                            status = {
+                                server_file: empty,
+                                abook: empty,
+                                crypt: empty,
+                                sign: empty,
+                                dsn: empty,
+                                del: empty,
+                                menu: {
+                                    server_file: empty,
+                                    encrypt: empty,
+                                    options: empty,
+                                },
+                            },
+                            value = {
+                                server_file: data.toggle.more.server_file,
+                                crypt: data.toggle.more.crypt[0],
+                                sign: data.toggle.more.sign[0],
+                                abook: data.toggle.more.abook,
+                                dsn: data.toggle.more.dsn,
+                                del: data.toggle.more.del,
+                            }
+
+                        value.server_file === null && (status.server_file = hidden);
+                        if (value.server_file === null) {
+                            status.menu.server_file = hidden
+                        }
+                        value.crypt === null && (status.crypt = hidden);
+                        value.sign === null && (status.sign = hidden);
+                        if (value.crypt === null && value.sign === null) {
+                            status.menu.encrypt = hidden
+                        }
+
+                        value.abook === null && (status.abook = hidden);
+                        value.dsn === null && (status.dsn = hidden);
+                        value.del === null && (status.del = hidden);
+                        if (value.abook === null &&
+                            value.dsn === null &&
+                            value.del === null) {
+                            status.menu.options = hidden
+                        }
+
+                        return `
+                            <form class="compose" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
+                                <div class="form-e">
+                                    <div class="${data.class.form.header}">
+                                        <div class="form-group">
+                                            <div class="flex">
+                                                <div class="col-xs-1">
+                                                    <label for="c-from-${data.id}">${data.language.from}</label>
+                                                </div>
+                                                <div class="col-xs-11">
+                                                    <span class="btn-group ${data.class.form.recipients.control}">
+                                                        <button type="button" class="btn btn-link btn-transparent-link btn-resized btn-link-bordered cc${data.toggle.recipients.cc}">Cc</button>
+                                                        <button type="button" class="btn btn-link btn-transparent-link btn-resized btn-link-bordered bcc${data.toggle.recipients.bcc}">Bcc</button>
+                                                    </span>
+                                                    ${data.from}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="flex">
+                                                <div class="col-xs-1">
+                                                    <label for="c-to-${data.id}">${data.language.to}</label>
+                                                </div>
+                                                <div class="col-xs-11">
+                                                    ${data.to}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="${data.class.form.recipients.fields}">
+                                            <div class="form-group cc${data.toggle.recipients.ccf}">
+                                                <div class="flex">
+                                                    <div class="col-xs-1">
+                                                        <label for="c-cc-${data.id}">${data.language.cc}</label>
+                                                    </div>
+                                                    <div class="col-xs-11">
+                                                        ${data.cc}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group bcc${data.toggle.recipients.bccf}">
+                                                <div class="flex">
+                                                    <div class="col-xs-1">
+                                                        <label for="c-bcc-${data.id}">${data.language.bcc}</label>
+                                                    </div>
+                                                    <div class="col-xs-11">
+                                                        ${data.bcc}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="flex">
+                                                <div class="col-xs-1">
+                                                    <label for="c-subject-${data.id}">${data.language.subject}</label>
+                                                </div>
+                                                <div class="col-xs-11">
+                                                    ${data.subject}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="flex attachments hidden">
+                                                <div class="col-xs-1">
+                                                    <label for="c-attach-${data.id}">${data.language._attachments}</label>
+                                                </div>
+                                                <div class="col-xs-11">
+                                                    ${data.attachments}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compose-controls-block">
+                                        <div class="ql-compose-container">
+                                          <div class="ql-compose ql-container-toolbar-bottom">${data.body}</div>
+                                          <div id="tb-${data.id}">
+                                            <span class="ql-formats">
+                                              <select class="ql-font"></select>
+                                              <select class="ql-size"></select>
+                                            </span>
+                                            <span class="ql-formats">
+                                              <button class="ql-bold"></button>
+                                              <button class="ql-italic"></button>
+                                              <button class="ql-underline"></button>
+                                              <select class="ql-color"></select>
+                                              <select class="ql-background"></select>
+                                            </span>
+                                            <span class="ql-formats">
+                                              <select class="ql-align"></select>
+                                            </span>
+                                            <span class="ql-formats">
+                                              <button class="ql-list" value="ordered"></button>
+                                              <button class="ql-list" value="bullet"></button>
+                                            </span>
+                                            <span class="ql-formats">
+                                                <span class="dropup">
+                                                    <button class="btn btn-default dropdown-toggle pd-0" type="button" id="extra-${data.id}" data-toggle="dropdown" aria-expanded="true">
+                                                      <span class="fa fa-lg fa-menu"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="extra-${data.id}">
+                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-strike"></button></li>
+                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-blockquote"></button></li>
+                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-code-block"></button></li>
+                                                      <li role="presentation" class="${data.class.hidden}"><button role="menuitem" tabindex="-1" class="ql-link"></button></li>
+                                                      <li role="presentation" class="${data.class.hidden}"><button role="menuitem" tabindex="-1" class="ql-image"></button></li>
+                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-clean"></button></li>
+                                                    </ul>
+                                                </span>
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div class="btn-group ${data.class.editor.controls.compose}">
+                                          <button type="submit" class="btn btn-primary btn-progress">
+                                            <span>
+                                                <span>&nbsp;&nbsp;${data.language._send}&nbsp;&nbsp;</span>
+                                                <span>
+                                                    <span class="progressing"></span>
+                                                </span>
+                                            </span>
+                                          </button>
+                                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu">
+                                            <li e-not-implemented><a><i class="fa fa-fw fa-clock"></i>&nbsp;&nbsp;${data.language._schedule}</a></li>
+                                          </ul>
+                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.attach}" data-title="${data.language._attach}"><i class="fa-fw fa2 fa2-attach fa-md"></i></button>
+                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.link}" data-title="${data.language._insert_link}"><i class="fa-fw fa2 fa2-link fa-1_25x"></i></button>
+                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.image}" data-title="${data.language._insert_picture}"><i class="fa fa-fw fa-md fa-image"></i></button>
+                                          <button e-not-implemented type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.html}" data-title="${data.language._toggle}"><i class="fa fa-fw fa-md fa-html"></i></button>
+                                        </div>
+                                        <div class="btn-group ${data.class.editor.controls.compose} pull-right">
+                                            <span class="dropup ${data.class.editor.controls.more}">
+                                                <button class="btn btn-link btn-transparent-link dropdown-toggle" type="button" id="${data.class.editor.controls.more}-${data.id}" data-toggle="dropdown" aria-expanded="true">
+                                                  <span class="fa fa-lg fa-dots-vertical"></span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="${data.class.editor.controls.more}-${data.id}">
+                                                  <li${status.server_file} role="presentation"><a data-value="server-attach"><i class="fa fa-fw fa-download-cloud"></i>&nbsp;&nbsp;${data.language._server_attach}</a></li>
+                                                  <li${status.menu.server_file} class="divider"></li>
+                                                  <li${status.menu.encrypt} class="dropdown-submenu right" role="menu">
+                                                      <a tabindex="-1">${data.language._encrypt}</a>
+                                                      <ul class="dropdown-menu" role="menu" data-type="encrypt">
+                                                        <li data-encrypt-container>
+                                                            <div class="menu-group">
+                                                                <div${status.sign}>
+                                                                    <label>${data.language.sign}</label>
+                                                                    ${data.toggle.more.sign[1]}
+                                                                </div>
+                                                                <div${status.crypt}>
+                                                                    <label>${data.language.crypt}</label>
+                                                                    ${data.toggle.more.crypt[1]}
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                      </ul>
+                                                  </li>
+                                                  <li class="dropdown-submenu right" role="menu">
+                                                      <a tabindex="-1">${data.language.pri.label}</a>
+                                                      <ul class="dropdown-menu" role="menu" data-type="priority">
+                                                        <li><a tabindex="-1" data-value="1">${data.language.pri.data.highest}</a></li>
+                                                        <li><a tabindex="-1" data-value="2">${data.language.pri.data.high}</a></li>
+                                                        <li><a tabindex="-1"><i class="fa fa-fw fa-check pull-left"></i>${data.language.pri.data.normal}</a></li>
+                                                        <li><a tabindex="-1" data-value="4">${data.language.pri.data.low}</a></li>
+                                                        <li><a tabindex="-1" data-value="5">${data.language.pri.data.lowest}</a></li>
+                                                      </ul>
+                                                  </li>
+                                                  <li${status.menu.options} class="divider"></li>
+                                                  <li${status.menu.options} class="dropdown-submenu right" role="menu">
+                                                      <a tabindex="-1">${data.language._options}</a>
+                                                      <ul class="dropdown-menu" role="menu" data-type="options">
+                                                        <li${status.abook}><a tabindex="-1">${$$.create.checkbox(0, 'abook', 1, 0, value.abook)}${data.language._addrecipients}</a></li>
+                                                        <li${status.dsn}><a tabindex="-1">${$$.create.checkbox(0, 'dsn', 1, value.dsn)}${data.language._notifications_dsn}</a></li>
+                                                        <li${status.del}><a tabindex="-1">${$$.create.checkbox(0, 'del', 1, value.del)}${data.language._notifications_del}</a></li>
+                                                      </ul>
+                                                  </li>
+                                                </ul>
+                                            </span>
+                                            <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.discard}" data-title="${data.language._discard}"><i class="fa fa2 fa-fw fa-sm fa2-trash"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        `;
+                    }
+                }
+
             },
 
             /**
@@ -319,8 +623,28 @@ const mail = (function() {
                  * @returns {string}
                  */
                 input: function(name = String(), placeholder = String(), value = String(), type = 'text', attributes = String()) {
-                    let attribute = this._attributes(attributes);
-                    return '<input ' + attribute + ' type="' + type + '" name="' + name + '" id="' + name + '" placeholder="' + placeholder + '" value="' + value + '">';
+                    let attribute = this._attributes(attributes),
+                        id = name;
+                    if (typeof name === 'object') {
+                        id = name[1];
+                        name = name[0];
+                    }
+                    return '<input ' + attribute + ' type="' + type + '" name="' + name + '" id="' + id + '" placeholder="' + placeholder + '" value="' + value + '">';
+                },
+
+                /**
+                 * Generates textarea element
+                 *
+                 * @returns {string}
+                 */
+                textarea: function(name = String(), placeholder = String(), value = String(), attributes = String()) {
+                    let attribute = this._attributes(attributes),
+                        id = name;
+                    if (typeof name === 'object') {
+                        id = name[1];
+                        name = name[0];
+                    }
+                    return '<textarea ' + attribute + ' name="' + name + '" id="' + id + '" placeholder="' + placeholder + '">' + value + '</textarea>';
                 },
 
                 /**
@@ -353,9 +677,13 @@ const mail = (function() {
                  *
                  * @returns {string}
                  */
-                checkbox: function(attributes = String(), name = String(), value = String(), label = '&nbsp;', id = String(), checked = String()) {
+                checkbox: function(attributes = String(), name = String(), value = String(), label = '&nbsp;', checked = String()) {
                     let attribute = this._attributes(attributes),
-                        checkbox = String();
+                        checkbox = String(),
+                        id = name + '-' + Math.floor(Math.random() * 9e10);
+
+                    !label && (label = '&nbsp;');
+                    checked && (checked = 'checked')
                     checkbox += '<span ' + attribute + ' class="awcheckbox awobject">';
                     checkbox += '<input class="iawobject" ' + checked + ' type="checkbox" name="' + name + '" value="' + value + '" id="' + id + '">';
                     checkbox += '<label class="lawobject" for="' + id + '">' + label + '</label>';
@@ -466,6 +794,767 @@ const mail = (function() {
             },
 
         }
+
+    /**
+     * Compose object sub-module ;;
+     *
+     * @since 19.40
+     *
+     * @return {object} Reveals compose module API
+     */
+    const compose = (function() {
+        let xtarget = {};
+        xtarget.send = 'send_mail.cgi';
+        xtarget.reply = 'reply_mail.cgi';
+
+        // Load dependencies
+        _.load.bundle(['jquery.jspanel', 'quill'], 1);
+
+        /**
+         * Creates new compose message dialog
+         *
+         * @param {object}  [form]   Refers to form data in case of replied message
+         * @param {boolean} [inline] Returns composer without panel
+         * @param {object}  [types]  Sets composer type for reply all and forward
+         *
+         * @returns {string}
+         */
+        const message = (form = false, inline = false, types = {}) => {
+            let path = _.path.prefix,
+                cmodule = _.variable.module.name(),
+                prefix = `${path}/${cmodule}`;
+
+            xtarget.getSize = path + '/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=';
+
+            if (typeof form === 'object' && form.length) {
+                form = $(form).serialize() + '&reply=1';
+            } else {
+                form = 'new=1';
+            }
+
+            // Check for message type
+            if (types.reply_all) {
+                form += '&rall=1';
+            } else if (types.forward) {
+                form += '&forward=1';
+            }
+
+            // Get reply form as provided
+            fetch(`${prefix}/${xtarget.reply}?${form}`)
+                .then(rs => {
+                    return rs.text();
+                }).then(rs => {
+
+                    // Reply data for further send mail
+                    let $form = $(rs).find(`[action*="${xtarget.send}"]`),
+                        generate = {
+                            timestamp: () => {
+                                return _.plugin.moment().valueOf() * 1e2
+                            },
+                            random: () => {
+                                return Math.floor(Math.random() * 9e14);
+                            }
+                        },
+                        id = generate.timestamp(),
+                        form_data_lost = $form.find(':checkbox:not(:checked)').attr('value', '0').prop('checked', true).map(function() {
+                            return this.name
+                        }).get(),
+                        form_data = $form.serialize();
+
+                    if (form_data) {
+                        form_data = _.plugin.serialized_to_json(form_data);
+
+                        let
+                            // Object data for extracted fields
+                            data = {
+                                visible: {},
+                                hidden: {},
+                            },
+                            classes = $$.$.compose,
+
+                            toggle = {
+                                // Toggle visibility of extra fields and its controllers
+                                recipients: (id, data, data_visible) => {
+                                    if (typeof data === 'object') {
+                                        let target = data[0],
+                                            state = data[1],
+                                            rcs = `.${classes.form.recipients.control}`,
+                                            rcsf = `.${classes.form.recipients.fields}`,
+                                            rc = target.querySelector(rcs),
+                                            rf = target.querySelector(rcsf);
+
+                                        rc.querySelector(`.${id}`).classList.toggle(classes.button.inverse, !state)
+                                        rf.querySelector(`.${id}`).classList.toggle(classes.hidden, state)
+                                        return;
+                                    } else if (data === 'rc') {
+                                        return !data_visible[id] ? String() : ` ${classes.button.inverse}`
+                                    } else if (data === 'rf') {
+                                        return data_visible[id] ? String() : ` ${classes.hidden}`
+                                    }
+                                },
+
+                                // Toggle visibility of attachment field
+                                attachments: (panel) => {
+                                    let a = panel.querySelector(`[name="${classes.form.name.tattach}"]`),
+                                        l = a.previousSibling.querySelectorAll('.tag').length;
+                                    a.parentNode.parentNode.classList.toggle(classes.hidden, !l);
+                                    adjust.contenteditable(panel);
+                                },
+
+                                // Add backdrop for maximized panel
+                                backdrop: (panel, show) => {
+                                    let body = $('body'),
+                                        re_zi = 99999,
+                                        compose_backdrop = classes.panel.backdrop;
+
+                                    if (show) {
+                                        panel[0].dataset.zIndex = panel[0].style.zIndex;
+                                        panel[0].style.zIndex = re_zi + 1;
+                                        panel[0].setAttribute('maximized', 1);
+                                        body.append(`<div class="modal-backdrop fade2 in zi-${re_zi} ${compose_backdrop}"></div>`)
+                                    } else {
+                                        if (panel[0]) {
+                                            panel[0].style.zIndex = panel[0].dataset.zIndex;
+                                            panel[0].removeAttribute('maximized');
+                                            delete panel[0].dataset.zIndex;
+                                        }
+                                        body.find(`.modal-backdrop.${compose_backdrop}`).remove();
+                                    }
+                                },
+                            },
+                            adjust = {
+
+                                // Adjust the size of editable area
+                                contenteditable: (panel) => {
+                                    let target = panel.querySelector(`.${classes.panel.content}`),
+                                        container = target ? target.offsetHeight : window.innerHeight / 4,
+                                        top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
+                                        editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
+                                        offset = 60,
+                                        editor = panel.querySelector(`.${classes.editor.compose}`),
+                                        height = `${container - top_block - editor_toolbar - offset}px`;
+
+                                    editor.style.height = height;
+                                },
+
+                                // Define modifier key
+                                modifier: (str) => {
+                                    return str.replace(/%cmd/, _.platform.mac ? 'Cmd' : 'Ctrl');
+                                }
+                            },
+                            check = {
+                                field: (field, object) => {
+                                    let value = object[field];
+                                    if (value && !isNaN(value)) {
+                                        value = ~~value;
+                                    }
+                                    return typeof value === 'undefined' ? null : value
+                                },
+                            },
+                            element = {
+                                input: (str, data_visible, readonly = false, no_escape = false) => {
+                                    let value = data_visible[str];
+                                    if (readonly) {
+                                        readonly = ['readonly'];
+                                    }
+                                    if (!no_escape) {
+                                        value = _.plugin.html_escape(value);
+                                    }
+                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, 'text', readonly);
+                                },
+                                select: {},
+                                composer: function(target) {
+                                    let panel = target,
+                                        paneled = panel.header ? true : false;
+                                    target = target[0];
+
+                                    let asb = target.querySelector(`.${classes.form.header}`),
+                                        ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
+                                        rcs = target.querySelector(`.${classes.form.recipients.control}`),
+                                        quill = new Quill(target.querySelector(`.${classes.editor.compose}`), {
+                                            modules: {
+                                                formula: false,
+                                                syntax: false,
+                                                toolbar: target.querySelector(`#tb-${id}`),
+                                            },
+                                            bounds: target,
+                                            theme: 'snow'
+                                        }),
+
+                                        // Update message title dynamically
+                                        title_update = function(ds) {
+                                            let sf = asb.querySelector('[name="subject"]'),
+
+                                                // Trigger title update
+                                                ud = () => {
+                                                    sf.dispatchEvent(new Event('input'));
+                                                },
+
+                                                // Change opacity for notifications
+                                                us = (tg, df) => {
+                                                    if (paneled) {
+                                                        tg.style.opacity = (df ? 0.7 : 1);
+                                                    }
+                                                },
+
+                                                // Display draft processing notifications
+                                                du = (tg) => {
+
+                                                    if (ds === 1) {
+                                                        tg.textContent = _.language('theme_xhred_mail_composer_draft_saving');
+                                                        us(tg, true);
+                                                    } else if (ds === -1) {
+                                                        tg.textContent = _.language('theme_xhred_mail_composer_draft_saved');
+                                                        us(tg, true);
+
+                                                        // Change status back to original title
+                                                        setTimeout(() => {
+                                                            us(tg);
+                                                            ud();
+                                                        }, 2e3)
+                                                    }
+                                                }
+
+                                            if (paneled) {
+                                                let pt = panel.header.title[0],
+                                                    pti = pt.textContent;
+                                                if (ds) {
+                                                    du(pt, pti);
+                                                } else {
+                                                    sf.addEventListener('input', function() {
+                                                        pt.textContent = this.value || pti;
+                                                    })
+
+                                                    // Update subject on initial load for replied mail
+                                                    ud();
+                                                }
+                                            }
+                                        };
+
+                                    paneled && target.classList.add(classes.panel.container, classes.panel.container_shown);
+                                    adjust.contenteditable(target);
+
+                                    // Reflect subject in panel title if exists
+                                    title_update();
+
+                                    setTimeout(() => {
+                                        let tb = quill.options.modules.toolbar.container,
+                                            upload_list = [],
+                                            server_list = [],
+                                            priority = null,
+                                            server_attach_previous = null,
+                                            attachments = target.querySelector(`[name="${classes.form.name.tattach}"]`),
+                                            content = target.querySelector(`.${classes.editor.content}`),
+                                            ctl_att = ccs[0].querySelector(`.${classes.editor.controls.extra.attach}`),
+                                            ctl_lnk = ccs[0].querySelector(`.${classes.editor.controls.extra.link}`),
+                                            ctl_img = ccs[0].querySelector(`.${classes.editor.controls.extra.image}`),
+                                            ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`),
+                                            ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
+                                            $more_options = $(target).find(`.${classes.editor.controls.more}`),
+
+                                            // Process added attachment
+                                            add_attachment = (type, id, filedata, size, update) => {
+
+                                                let icon = (type === 'server' ? classes.icons.upload.server : classes.icons.upload.attach),
+                                                    name = filedata.name.split("/").pop() || filedata.name;
+
+                                                $(attachments).tagsinput('add', `[i class="${icon}"][/i]${name} [em](${_.plugin.nice_size(size)})[/em]`);
+
+                                                // Register reference for inserted tag
+                                                let tags = attachments.previousSibling.querySelectorAll('.tag'),
+                                                    last = tags[tags.length - 1];
+                                                last.dataset.reference = id;
+
+                                                // Store uploaded/attached file
+                                                if (type === 'server') {
+                                                    server_list[id] = filedata.name;
+                                                } else {
+                                                    upload_list[id] = filedata.file;
+                                                }
+
+                                                // Update editor on last
+                                                if (update) {
+                                                    adjust.contenteditable(target)
+                                                    toggle.attachments(target);
+                                                }
+                                            };
+
+                                        // Event for external insert link to editor button
+                                        ctl_lnk.addEventListener('click', () => {
+                                            tb.querySelector(`.${classes.editor.tb_link}`).dispatchEvent(new Event('click'));
+                                        })
+
+                                        // Event for external add images to editor button
+                                        ctl_img.addEventListener('click', () => {
+                                            tb.querySelector(`.${classes.editor.tb_image}`).dispatchEvent(new Event('click'));
+                                        })
+
+                                        // Event for controlling visibility of extra recipients fields
+                                        rcs.querySelectorAll('button').forEach((b) => {
+                                            b.addEventListener('click', () => {
+                                                let enabled = b.classList.contains(classes.button.inverse),
+                                                    type = b.classList.contains("bcc") ? 'bcc' : 'cc';
+                                                toggle.recipients(type, [target, enabled]);
+                                                adjust.contenteditable(target);
+                                            });
+                                        })
+
+                                        // Event for attaching new file(s)
+                                        ctl_att.addEventListener('click', () => {
+                                            let form = target.querySelector('form'),
+                                                xu = document.createElement('input');
+
+                                            // Create temporary file input and listen for change
+                                            xu.type = "file";
+                                            xu.setAttribute('multiple', 1);
+                                            xu.classList.add(classes.hidden);
+                                            xu = form.appendChild(xu);
+                                            xu.click();
+                                            xu.addEventListener('change', function() {
+                                                Array.from(this.files).forEach((file, i, arr) => {
+                                                    let fuid = generate.random() + i,
+                                                        size = file.size,
+                                                        name = file.name,
+                                                        last = (i === arr.length - 1);
+                                                    add_attachment('upload', fuid, { name: name, file: file }, size, last);
+                                                    last && xu.remove();
+                                                })
+                                            })
+                                        })
+
+                                        // Events to manage more options menu
+                                        $more_options.find('.dropdown-menu').on("click.bs.dropdown", function(event) {
+
+                                            let type = this.dataset.type,
+                                                etarget = event.target,
+                                                action = etarget.dataset.value;
+
+                                            // Attach new file from server
+                                            if (action === 'server-attach') {
+                                                let error = {
+                                                    read: _.language('theme_xhred_mail_composer_server_attach_error_read'),
+                                                    dir: _.language('theme_xhred_mail_composer_server_attach_error_dir')
+                                                };
+
+                                                _.file_chooser({
+                                                    file: server_attach_previous
+                                                }).then(file => {
+                                                    if (file) {
+                                                        let suid = generate.random();
+                                                        fetch(xtarget.getSize + file).then(r => {
+                                                            r.text().then(rs => {
+                                                                let s = rs.split(`|`),
+                                                                    size = s[1].replace(/\s+/g, String());
+                                                                if (size == -1 || size == -2) {
+                                                                    let message = size == -1 ? error.read : error.dir
+                                                                    _.notification([$$.$.notification.danger, message], 10, "error", 0, 1, ['bottom', 'center'])
+                                                                } else {
+                                                                    add_attachment('server', suid, { name: file }, size, true);
+                                                                }
+                                                            });
+                                                        })
+                                                    }
+                                                    server_attach_previous = file;
+                                                });
+                                                return
+                                            }
+
+                                            // Prevent closing dropdown menu on click for all other
+                                            event.stopPropagation();
+
+                                            // Change message priority
+                                            if (type === 'priority') {
+                                                let check = etarget.closest('ul').querySelector('i');
+                                                check.remove();
+                                                etarget.appendChild(check);
+                                                priority = action ? ~~action : null;
+                                            }
+
+                                            // Toggle options checkboxes
+                                            if (type === 'options') {
+                                                let cb = etarget.querySelector('input[type="checkbox"]');
+                                                cb && (cb.checked ^= 1);
+                                            }
+                                        });
+
+                                        // Init attachment tags input
+                                        $(attachments).tagsinput({
+                                            allowDuplicates: true,
+                                            confirmKeys: [13],
+                                            delimiter: '\\000',
+                                        });
+
+                                        // Remove actual attachments upon removing a tag
+                                        $(attachments).on('itemRemoved', (event) => {
+                                            let item = event.item[1];
+                                            if (item) {
+                                                delete upload_list[item];
+                                                delete server_list[item];
+                                            }
+                                            toggle.attachments(target);
+                                        });
+
+                                        // Init tooltip for compose controls
+                                        _.plugin.tooltip($(ctl_att)
+                                            .add(ctl_img)
+                                            .add(ctl_att)
+                                            .add(ctl_lnk)
+                                            .add(ctl_tgl)
+                                            .add(ctl_dis)
+                                        );
+
+                                        // Create tooltip for editor controls
+                                        let editor_controls = [
+                                            'font',
+                                            'size',
+                                            'bold',
+                                            'italic',
+                                            'underline',
+                                            'color',
+                                            'background',
+                                            'align',
+                                            { 'list': 'ordered' },
+                                            { 'list': 'bullet' },
+                                            'strike',
+                                            'blockquote',
+                                            'code-block',
+                                            'link',
+                                            'clean',
+                                        ]
+                                        editor_controls.forEach((v) => {
+                                            let button,
+                                                key,
+                                                value,
+                                                language = 'theme_xhred_editor_tb';
+
+                                            if (typeof v === 'object') {
+                                                key = Object.keys(v)[0];
+                                                value = `${key}[value="${v[key]}"]`;
+                                                language += `_${key}_${v[key]}`;
+                                            } else {
+                                                value = v;
+                                                language += `_${v}`;
+                                            }
+
+                                            button = tb.querySelector(`.ql-${value}`)
+                                            button.dataset.title = adjust.modifier(_.language(language));
+                                            _.plugin.tooltip($(button))
+                                        })
+
+                                        // Prepare form submit
+                                        let submit = target.querySelector('button[type="submit"]'),
+                                            draft = false,
+                                            draft_update = () => {
+                                                typeof this.draft_timeout === 'number' &&
+                                                    clearTimeout(this.draft_timeout);
+                                                this.draft_timeout = setTimeout(() => {
+                                                    draft = true;
+                                                    submit.dispatchEvent(new Event('click'));
+                                                }, 2e3);
+                                            };
+
+                                        // Prevent default submit on input fields
+                                        asb.querySelectorAll('input').forEach((input) => {
+                                            input.addEventListener('keydown', (event) => {
+                                                if (event.keyCode === 13) {
+                                                    event.preventDefault();
+                                                    return
+                                                }
+                                                draft_update();
+                                            });
+                                        })
+
+                                        // Event to handle saving drafts
+                                        content.addEventListener('input', () => {
+                                            draft_update();
+                                        })
+
+                                        // Submitting mail
+                                        submit.addEventListener('click', function(event) {
+                                            event.preventDefault();
+
+                                            let form = this.closest('form'),
+                                                form_data = new FormData(form),
+                                                trusted = event.isTrusted || ~~submit.dataset.isTrusted;
+
+                                            // Prevent form from submitting while saving a draft
+                                            if (draft && trusted) {
+                                                return
+                                            }
+
+                                            // Check for draft
+                                            draft && (form_data.set('draft', 1), title_update(1));
+
+                                            // Add message body
+                                            form_data.append('body', quill.root.innerHTML);
+
+                                            // Set message priority
+                                            let pri_key = 'pri'
+                                            priority ? form_data.set(pri_key, priority) : form_data.delete(pri_key);
+
+                                            // Add hidden entries except ones already in the menu
+                                            Object.entries(data.hidden).forEach((e) => {
+                                                let key = e[0],
+                                                    value = e[1];
+                                                if (!['abook', 'crypt', 'sign', 'pri', 'del', 'dsn'].includes(key)) {
+                                                    form_data.set(key, value)
+                                                }
+                                            });
+
+                                            // Add file uploads
+                                            let fsus = Object.values(upload_list);
+                                            fsus.length && fsus.forEach((f, i) => {
+                                                form_data.set(`attach${i}`, f)
+                                            });
+
+                                            // Add server attachments
+                                            let ssus = Object.values(server_list);
+                                            ssus.length &&
+                                                ssus.forEach((f, i) => {
+                                                    form_data.set(`file${i}`, f)
+                                                });
+
+                                            // Add lock while processing
+                                            !draft &&
+                                                target.classList.add($$.$.class.events_none);
+
+                                            // Post mail data
+                                            let xhr = new XMLHttpRequest();
+                                            xhr.open("POST", `${form.getAttribute('action')}`);
+                                            xhr.upload.onprogress = (e) => {
+                                                !draft &&
+                                                    _.button_progress(this, Math.ceil((e.loaded / e.total) * 100));
+                                            };
+                                            xhr.onload = (e) => {
+                                                let rs = e.target.responseText,
+                                                    status = String(),
+                                                    error = String(),
+                                                    error_container = false,
+                                                    parser = new DOMParser();
+
+                                                // Handle responses
+                                                rs = parser.parseFromString(rs, 'text/html');
+                                                if (rs) {
+                                                    rs = rs.querySelector('.panel-body'),
+                                                        error_container = rs.querySelector('h3');
+                                                    if (error_container) {
+
+                                                        // Send error notification
+                                                        error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
+                                                        _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center'])
+
+                                                        // Reset progress
+                                                        _.button_progress(this, 0);
+
+                                                        // Remove lock
+                                                        target.classList.remove($$.$.class.events_none);
+                                                    } else if (!draft) {
+
+                                                        // Send success notification
+                                                        status = rs.innerHTML
+                                                        _.notification([$$.$.notification.danger, status], 10, "success", 0, 1, ['bottom', 'center'])
+                                                        paneled && panel.close();
+                                                    }
+                                                }
+
+                                                // Update title
+                                                if (draft) {
+                                                    title_update(-1);
+                                                }
+
+                                                // Reset draft status
+                                                draft = false;
+
+                                                // Reset trusted state for submit
+                                                this.dataset.isTrusted = 0;
+                                            };
+                                            xhr.send(form_data);
+
+                                        })
+
+                                        // Submit mail using hotkey (%cmd-enter)
+                                        target.addEventListener('keydown', e => {
+                                            let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
+                                                enter = e.keyCode === 13;
+                                            if (meta && enter && !target.classList.contains($$.$.class.events_none)) {
+                                                submit.dataset.isTrusted = 1;
+                                                submit.dispatchEvent(new Event('click'));
+                                            }
+                                        });
+
+                                        // Temporary to shown not impplemented
+                                        $(target).on('click', '[e-not-implemented]', function(event) {
+                                            event.preventDefault();
+                                            _.notification([$$.$.notification.danger, 'Not yet implemented. Expect in 19.40-beta2.'], 10, "info", 0, 1, ['bottom', 'center'])
+                                        });
+
+                                    }, 3e2)
+                                },
+
+                            },
+                            language = {},
+                            template = {};
+
+                        // Group received fields
+                        Object.entries(form_data).filter((f) => {
+                            [
+                                'from',
+                                'to',
+                                'cc',
+                                'bcc',
+                                'subject',
+                                'body'
+                            ].includes(f[0]) ? (data.visible[f[0]] = f[1]) : (data.hidden[f[0]] = f[1]);
+                        });
+
+                        // Extract language strings for visible fields
+                        Object.entries(data.visible).forEach((e) => {
+                            let id = e[0];
+                            language[id] = $form.find(`[name=${id}]`).parent().prev().text();
+                        });
+
+                        // Extract language strings for hidden fields
+                        Object.entries(data.hidden).forEach(function(e) {
+                            let id = e[0];
+                            if (['crypt', 'sign'].includes(id)) {
+                                language[id] = $form.find(`[name=${id}]`).parent().prev().text();
+                            } else if (['pri'].includes(id)) {
+                                let data = {};
+                                $form.find(`[name=${id}] option`).map(function() {
+                                    data[this.innerText.toLowerCase()] = this.innerText
+                                });
+                                language[id] = { label: $form.find(`[name=${id}]`).parent().prev().text(), data: data };
+                            }
+                        });
+
+                        // Extend language with more strings
+                        language._attachments = _.language('theme_xhred_global_attachments');
+                        language._send = _.language('theme_xhred_mail_composer_send');
+                        language._schedule = _.language('theme_xhred_mail_composer_schedule');
+                        language._attach = _.language('theme_xhred_mail_composer_attach');
+                        language._insert_link = adjust.modifier(_.language('theme_xhred_editor_tb_link'));
+                        language._insert_picture = _.language('theme_xhred_mail_composer_insert_picture');
+                        language._toggle = _.language('theme_xhred_mail_composer_toggle');
+                        language._discard = _.language('theme_xhred_mail_composer_discard');
+                        language._server_attach = _.language('theme_xhred_mail_composer_server_attach');
+                        language._notifications = _.language('theme_xhred_global_notifications');
+                        language._notifications_dsn = _.language('theme_xhred_mail_composer_notifications_dsn');
+                        language._notifications_del = _.language('theme_xhred_mail_composer_notifications_del');
+                        language._encrypt = _.language('theme_xhred_global_encrypt');
+                        language._options = _.language('theme_xhred_global_options');
+                        language._addrecipients = _.language('theme_xhred_mail_composer_addrecipients');
+
+                        // Check for form selects
+                        element.select.from = $form[0].querySelector(`select[name="from"]`);
+                        element.select.sign = $form[0].querySelector(`select[name="sign"]`);
+                        element.select.crypt = $form[0].querySelector(`select[name="crypt"]`);
+                        if (element.select.from) {
+                            element.select.from = element.select.from.outerHTML;
+                        }
+                        if (element.select.sign) {
+                            element.select.sign = element.select.sign.outerHTML;
+                        }
+                        if (element.select.crypt) {
+                            element.select.crypt = element.select.crypt.outerHTML;
+                        }
+
+                        // Build mail form the template
+                        template.form = $$.$.template.compose({
+                            prefix: prefix,
+                            target: {
+                                send: xtarget.send
+                            },
+                            charset: data.hidden.charset,
+                            id: id,
+                            class: classes,
+                            language: language,
+                            toggle: {
+                                recipients: {
+                                    cc: toggle.recipients('cc', 'rc', data.visible),
+                                    bcc: toggle.recipients('bcc', 'rc', data.visible),
+                                    ccf: toggle.recipients('cc', 'rf', data.visible),
+                                    bccf: toggle.recipients('bcc', 'rf', data.visible),
+                                },
+                                more: {
+                                    server_file: check.field('file0', data.hidden),
+                                    abook: check.field('abook', data.hidden),
+                                    dsn: check.field('dsn', data.hidden),
+                                    del: check.field('del', data.hidden),
+                                    sign: [check.field('sign', data.hidden), element.select.sign],
+                                    crypt: [check.field('crypt', data.hidden), element.select.crypt],
+                                    del: check.field('pri', data.hidden),
+                                }
+                            },
+                            from: element.select.from ||  element.input('from', data.visible, true),
+                            to: element.input('to', data.visible),
+                            cc: element.input('cc', data.visible),
+                            bcc: element.input('bcc', data.visible),
+                            subject: element.input('subject', data.visible),
+                            attachments: element.input(classes.form.name.tattach, data.visible, false, true),
+                            body: data.visible.body,
+                        })
+
+                        if (inline) {
+                            let inlne_form = inline.append(template.form);
+                            element.composer(inlne_form);
+                        } else {
+
+                            // Create compose panel
+                            let composers = $(`.${classes.panel.container} .${classes.editor.compose}`).length,
+                                small_window = window.innerWidth < 640,
+                                window_height = window.innerHeight,
+                                ioffset = -15,
+                                offset = composers ? ioffset * 5 * composers : ioffset,
+                                position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
+                                panel = $.jsPanel({
+                                    position: position,
+                                    theme: "dimgrey",
+                                    onwindowresize: true,
+                                    panelSize: {
+                                        width: (small_window ? '98%' : 600),
+                                        height: (small_window ? '99%' : 600)
+                                    },
+                                    headerTitle: _.language('theme_xhred_mail_new_message'),
+                                    content: template.form,
+                                    maximizedMargin: {
+                                        top: window_height * 0.03,
+                                        bottom: window_height * 0.03,
+                                        left: window_height * 0.1,
+                                        right: window_height * 0.1,
+                                    },
+                                    dblclicks: {
+                                        title: "maximize"
+                                    },
+                                    onminimized: function() {
+                                        toggle.backdrop(this);
+                                    },
+                                    onclosed: function() {
+                                        toggle.backdrop(this);
+                                    },
+                                    onnormalized: function() {
+                                        adjust.contenteditable(this[0]);
+                                        toggle.backdrop(this);
+                                    },
+                                    onmaximized: function() {
+                                        adjust.contenteditable(this[0]);
+                                        toggle.backdrop(this, 1);
+                                    },
+                                    callback: function() {
+                                        element.composer(this)
+                                    },
+                                });
+
+                            panel.header.title.addClass('plain');
+                        }
+                    }
+                });
+        }
+
+        // Reveal sub-modules ;;
+        return {
+            message: message,
+        }
+    })();
 
     /**
      * Messages object sub-module ;;
@@ -858,7 +1947,7 @@ const mail = (function() {
                  */
                 button.forward.on('click', function() {
                     // Produce notification (temporary)
-                    _.notification(['exclamation-triangle', 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['top', 'center'])
+                    _.notification([$$.$.notification.danger, 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['bottom', 'center'])
                 });
 
                 /**
@@ -1105,7 +2194,8 @@ const mail = (function() {
                 $(folders.data.selector.navigation)
                     .off('click', button.compose)
                     .on('click', button.compose, function() {
-                        _.content(_.variable.module.link() + '/reply_mail.cgi?new=1&folder=0');
+                        compose.message();
+                        // _.content(_.variable.module.link() + '/reply_mail.cgi?new=1');
                     })
             },
 
@@ -1151,9 +2241,10 @@ const mail = (function() {
             },
 
             /**
-             * Render static page
+             * Render row
              *
-             * @param {string} page Returns HTML for static page
+             * @param {string} text
+             * @param {string} icon
              *
              * @returns {string}
              */
@@ -1186,14 +2277,14 @@ const mail = (function() {
                 if (data.error) {
                     let errors = data.error.error;
                     for (let i = 0; i < errors.length; i++) {
-                        _.notification(['exclamation-circle', errors[i]], 20, "error", i, 1, ['top', 'center']);
+                        _.notification([$$.$.notification.error, errors[i]], 20, "error", i, 1, ['bottom', 'center']);
                     }
                     return
                 }
 
                 let messages_list_available = messages_list.length > 128 ? 1 : 0;
                 if (!messages_list_available && data.searched) {
-                    _.notification(['search', _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 1, ['top', 'center'])
+                    _.notification([$$.$.notification.type.search, _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
                     return
                 }
 
@@ -1378,7 +2469,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'attach'
                                         }, 'span',
                                         (
-                                            $$.create.checkbox(0, 'attach', 1, _.language('theme_xhred_mail_search_has_attach'), 'attach')
+                                            $$.create.checkbox(0, 'attach', 1, _.language('theme_xhred_mail_search_has_attach'))
                                         )
                                     ),
                                     $$.create.$(0, {
@@ -1443,7 +2534,7 @@ const mail = (function() {
             get: get,
             storage: storage,
         }
-    })()
+    })();
 
     /**
      * Folders sub-module ;;
@@ -1560,10 +2651,7 @@ const mail = (function() {
             },
             load: function() {
                 this.fetched = 1;
-                _.load.bundle(_.path.js + '/' + data.file.fancytree,
-                    _.path.css + '/' + data.file.fancytree,
-                    (_.variable.switch() ? [get] : 0), 1
-                );
+                _.load.bundle(data.file.fancytree, 1, (_.variable.switch() ? [get] : 0), 1);
             },
             reload: function(source) {
                 let tree = data.plugin.tree('get');
@@ -1688,7 +2776,7 @@ const mail = (function() {
             adjust: adjust,
             data: data
         }
-    })()
+    })();
 
     // Reveal modules (API) ;;
     return {
@@ -1701,6 +2789,7 @@ const mail = (function() {
         messages: {
             get: messages.get,
             sort: messages.sort
-        }
+        },
+        compose: compose.message
     }
 })();
