@@ -1,5 +1,5 @@
 body_cp=CPU
-body_cpu=Carico medio su CPU
+body_cpu=Carico medio della CPU
 body_cpuinfo=Informazioni CPU
 body_cputemps=Temperature CPU
 body_cputype=$5, $8 core
@@ -11,7 +11,7 @@ body_firewall=Versione Firewall
 body_header0=Informazioni di Sistema
 body_header1=Informazioni Account
 body_host=Nome Host di Sistema
-body_kernel=Kernel
+body_kernel=Kernel e CPU
 body_kernelon=$1 $2 su $3
 body_load=$1 (1 minuto) $2 (5 minuti) $3 (15 minuti)
 body_os=Sistema Operativo
@@ -22,13 +22,13 @@ body_updates=Aggiornamenti pacchetto
 body_updays=$1 giorni, $2 ore, $3 minuti
 body_uphours=$1 ore, $2 minuti
 body_upmins=$1 minuti
-body_upneed=$1 aggiornamenti di pacchetto sono disponibili
-body_upneed1=$1 package update is available
+body_upneed=$1 aggiornamenti di pacchetto disponibili
+body_upneed1=$1 aggiornamento di pacchetto disponibile
 body_upok=Tutti i pacchetti installati sono aggiornati
-body_upsec=$1 aggiornamenti di pacchetto sono disponibili, dei quali $2 sono aggiornamenti di sicurezza
-body_upsec1=$1 package updates are available, of which $2 is security update
-body_upsec2=$1 package update is available, of which $2 are security updates
-body_upsec3=$1 package update is available, of which $2 is security update
+body_upsec=$1 aggiornamenti di pacchetto disponibili, tra cui $2 aggiornamenti di sicurezza
+body_upsec1=$1 aggiornamenti di pacchetto disponibili, tra cui $2 aggiornamento di suicurezza
+body_upsec2=$1 aggiornamento di pacchetto disponibile, tra cui $2 aggiornamenti di sicurezza
+body_upsec3=$1 aggiornamento di pacchetto disponibile, tra cui $2 aggiornamento di sicurezza
 body_uptime=Uptime di Sistema
 body_used=$1 totale / $2 usato
 body_used_and_free=$1 totale / $2 libero / $3 usato
@@ -36,21 +36,20 @@ body_usermin=Versione Usermin
 body_virt=Memoria virtuale
 body_webmin=Versione Webmin
 
-left_favorites=Favorites
-left_favorites_no=There were no favorites added yet...
+left_favorites=Preferiti
+left_favorites_no=Non sono stati aggiunti preferiti al momento...
 left_feedback=Invia Feedback
 theme_xhred_global_sys_info=Informazioni di Sistema
 left_others=Altri
-left_refresh_modules=Resetta moduli
+left_refresh_modules=Ricarica moduli
 left_search=Cerca
 left_statistics=Statistiche di sistema
 
 login_danger=Pericolo!
-login_message=Devi inserire nome utente e password per effettuare il login
+login_message=Devi inserire nome utente e password per effettuare l'accesso
 theme_xhred_login_pass=Password
-login_reset=Reimposta
 login_save=Ricordami
-login_signin=Entra
+login_signin=Accedi
 login_success=Successo!
 theme_xhred_login_token=Token
 theme_xhred_login_user=Nome Utente
@@ -58,31 +57,31 @@ login_warning=Attenzione!
 
 right_aliases=Alias server
 right_bw=Utilizzo e limite della larghezza di banda
-right_dom=Il tuo nome server
+right_dom=Nome del tuo server
 right_faliases=Alias mail
-right_fdbs=Basi di dati
+right_fdbs=Database
 right_fdoms=Server Virtuali
-right_from=Loggato da
+right_from=Accesso effettuato da
 right_fusers2=Utenti FTP
 right_fusers=Utenti Mail/FTP
 right_fvm2=Macchine Virtuali
 right_fweb=Siti Web Virtuali
 right_licenceheader_vm2=Licenze Cloudmin
-right_login=Loggato come
+right_login=Accesso effettuato come
 right_not=Non installato
 right_of=$1 su $2
 right_quota=Quota ed utilizzo disco
 right_reselip=(Rivenditore $1)
 right_sharedip=(IP condiviso)
-right_slcheck=Ri-controlla licenza Cloudmin
-right_subs=Sotto-servers
+right_slcheck=Ricontrolla licenza Cloudmin
+right_subs=Sottoserver
 right_virtdocs2=Documentazione aggiuntiva
 right_virtualmin=Versione Virtualmin
-right_vlcheck=Ri-controlla licenza Virtualmin
+right_vlcheck=Ricontrolla licenza Virtualmin
 right_vm2=Versione Cloudmin
 
-theme_xhred_session_failed=Login failed. Please try again.
-session_logout=Logout riuscito. Usa il form di seguito per loggarti di nuovo.
+theme_xhred_session_failed=Accesso fallito. Perfavore riprova.
+session_logout=Disconnessione riuscita. Usa il modulo di seguito per accedere di nuovo.
 session_timed_out=Sessione scaduta dopo $1 minuti di inattività.
 session_twofailed=Autenticazione a due fattori fallita: $1
 
@@ -95,117 +94,117 @@ session_twofailed=Autenticazione a due fattori fallita: $1
 
 
 
-settings_right_options=Options
-settings_right_restore_defaults=Restore defaults
-settings_right_restored=Restored
-settings_right_restoring=Restoring
-settings_right_saved=Saved
-settings_right_saving=Saving
+settings_right_options=Opzioni
+settings_right_restore_defaults=Ripristina impostazioni predefinite
+settings_right_restored=Ripristinate
+settings_right_restoring=Ripristino in corso
+settings_right_saved=Salvate
+settings_right_saving=Salvataggio in corso
 
-settings_right_theme_extensions=Theme extensions
-settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.
+settings_right_theme_extensions=Estensioni tema
+settings_right_theme_extensions_title=Estensioni tema
+settings_right_file_edit=Modifica file estensione:
+settings_right_extensions_title=Design tema esteso, consente di manipolare facilmente parti mirate dell'interfaccia.
 
-theme_xhred_settings_right_theme_logos=Theme logos
-theme_xhred_settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
-settings_right_logo_authenticated_users=Logo for authenticated users
-settings_right_logo_unauthenticated_users=Logo for unauthenticated users
+theme_xhred_settings_right_theme_logos=Loghi del tema
+theme_xhred_settings_right_theme_logos_title=Loghi del tema
+settings_right_logos_title=I loghi del tema possono essere facilmente impostati qui, sia per gli utenti autenticati che per quelli non autenticati. La dimensione raccomandata del logo è <kbd>180x90</kbd> pixel e l'unico formato supportato è <kbd>.png</kbd>, per fornire trasparenza alfa.
+settings_right_logo_authenticated_users=Logo per gli utenti autenticati
+settings_right_logo_unauthenticated_users=Logo per gli utenti non autenticati
 
-settings_right_current_theme=Current theme
-settings_right_title=This page allows you to configure options for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
-settings_right_theme_left_configuration_title=Theme Configuration
-settings_right_theme_left_extensions_title=Theme Extensions Editor
-settings_right_theme_left_logo_title=Theme Logo Control
-settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
+settings_right_current_theme=Tema attuale
+settings_right_title=Questa pagina permette di configurare le opzioni per <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Le impostazioni verranno memorizzate anche dopo l'aggiornamento del tema.
+settings_right_theme_left_configuration_title=Configurazione tema
+settings_right_theme_left_extensions_title=Editor estensioni tema
+settings_right_theme_left_logo_title=Controllo logo del tema
+settings_right_theme_configurable_options_title=Opzioni impostabili per Authentic Theme
 
 
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
-settings_security_description=Security alerts will let you setup email notifications upon certain events.<br class="lh0">Format: <code>Message|Subject|Comma separated list of users/emails|Comma separated list of ignored IPv4/IPv6</code><br class="lh0">Usage: <code>%3 successful login alert for user %1 from %2|%3 successful login alert|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>From: root, To: root, Subject: Webmin successful login alert, Message: Webmin successful login alert for user root from 2.3.4.5</code>
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=Dashboard options
+settings_right_window_options_title=Opzioni finestra
+settings_right_navigation_menu_title=Opzioni menu di navigazione
+settings_right_table_options_title=Opzioni tabella
+settings_security_title=Opzioni avvisi di sicurezza
+settings_security_description=Gli avvisi di sicurezza consentono di impostare le notifiche e-mail su determinati eventi.<br class="lh0">Formato: <code>Messaggio|Oggetto|Lista separata da virgole di utenti/e-mail|Lista separata da virgole di IPv4/IPv6 ignorati</code><br class="lh0">Utilizzo: <code>%3 avviso di accesso riuscito per l'utente %1 da %2|%3 avviso di accesso riuscito|root,user@example.org|1.2.3.4,5.6.7.8</code><br class="lh0"> Output: <code>Da: root, A: root, Oggetto: Avviso di accesso riuscito a Webmin, messaggio: Avviso di accesso riuscito a Webmin per l'utente root da 2.3.4.5</code>
+settings_right_hotkey_options_title=Opzioni tasti di scelta rapida
+settings_right_sysinfo_page_options_title=Opzioni dashboard
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module.
-settings_hotkey_custom_1=Custom link <code>1</code>
-settings_hotkey_custom_2=Custom link <code>2</code>
-settings_hotkey_custom_3=Custom link <code>3</code>
-settings_hotkey_custom_4=Custom link <code>4</code>
-settings_hotkey_custom_5=Custom link <code>5</code>
-settings_hotkey_custom_6=Custom link <code>6</code>
-settings_hotkey_custom_7=Custom link <code>7</code>
-settings_hotkey_custom_8=Custom link <code>8</code>
-settings_hotkey_custom_9=Custom link <code>9</code>
+settings_right_hotkey_custom_options_description=I link personalizzati ti permettono di utilizzare cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. L'<code>URL</code> può essere estratto dal riquadro destro del contenuto della pagina attualmente aperta, leggendone l'origine. E' importante che l'<code>URL</code> non abbia una barra all'inizio e non utilizzi prefissi. Per esempio, per passare rapidamente ad Apache, impostare il campo<code>Link personalizzato 1</code> a <code>/apache/</code>. Se il modificatore predefinito dei tasti di scelta rapida è impostato a <code>Alt,</code> premendo <code>Alt+1</code>, si aprirà il modulo Apache.
+settings_hotkey_custom_1=Link personalizzato <code>1</code>
+settings_hotkey_custom_2=Link personalizzato <code>2</code>
+settings_hotkey_custom_3=Link personalizzato <code>3</code>
+settings_hotkey_custom_4=Link personalizzato <code>4</code>
+settings_hotkey_custom_5=Link personalizzato <code>5</code>
+settings_hotkey_custom_6=Link personalizzato <code>6</code>
+settings_hotkey_custom_7=Link personalizzato <code>7</code>
+settings_hotkey_custom_8=Link personalizzato <code>8</code>
+settings_hotkey_custom_9=Link personalizzato <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
-settings_background_color=Content page color palette
-settings_loader_top=Enable page progress loader on top of the screen
-settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default content page
+settings_navigation_color=Tavolozza colori del menu di navigazione
+settings_background_color=Tavolozza colori dei contenuti della pagina
+settings_loader_top=Attiva la barra di caricamento della pagina nella parte superiore dello schermo
+settings_loader_left=Attiva spinner per il menu di navigazione
+settings_right_reload=Carica il contenuto predefinito della pagina
 
-settings_right_hide_table_icons=Hide table icons
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
-settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
+settings_right_hide_table_icons=Nascondi icone della tabella
+settings_right_hide_table_icons_description=Rimuovi completamente le icone dalle tabelle della pagina di contenuto e visualizza semplici link con il simbolo chevron a destra.
+settings_right_small_table_icons=Icone piccole della tabella
+settings_right_small_table_icons_description=Sostituire le icone delle tabelle di dimensioni standard con icone piccole e mostra i link delle icone utilizzando tooltip.
+settings_right_animate_table_icons=Anima icone della tabella al passaggio del mouse
+settings_right_grayscaled_table_icons=Icone della tabella in scala di grigi e diventano colorate solo al passaggio del mouse
 
-settings_leftmenu_section_hide_refresh_modules=Hide Refresh Modules link
-settings_leftmenu_section_hide_unused_modules=Hide Unused Modules link
-settings_favorites=Show favorites button
-settings_leftmenu_button_language=Show language button
-settings_leftmenu_button_refresh=Show refresh button
+settings_leftmenu_section_hide_refresh_modules=Nascondi il link Ricarica moduli
+settings_leftmenu_section_hide_unused_modules=Nascondi il link Moduli inutilizzati
+settings_favorites=Mostra pulsante Preferiti
+settings_leftmenu_button_language=Mostra pulsante Lingua
+settings_leftmenu_button_refresh=Mostra pulsante Ricarica
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=Mostra pulsante Impostazioni del tema
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey for Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey for Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey for Usermin
-settings_hotkey_toggle_key_webmail=Hotkey for Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Hotkey for search field
-settings_hotkey_reload=Hotkey for page reload
+settings_hotkeys_active=Attiva utilizzo dei tasti di scelta rapida
+settings_hotkey_toggle_modifier=Modificatore tasti di scelta rapida
+settings_hotkey_toggle_key_webmin=Tasto di scelta rapida per Webmin
+settings_hotkey_toggle_key_virtualmin=Tasto di scelta rapida per Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tasto di scelta rapida per Cloudmin
+settings_hotkey_toggle_key_usermin=Tasto di scelta rapida per Usermin
+settings_hotkey_toggle_key_webmail=Tasto di scelta rapida per Mail
+settings_hotkey_sysinfo=Tasto di scelta rapida per Dashboard
+settings_hotkey_shell=Tasto di scelta rapida per Terminale
+settings_hotkey_favorites=Tasto di scelta rapida per Preferiti
+settings_hotkey_focus_search=Tasto di scelta rapida per Campo ricerca
+settings_hotkey_reload=Tasto di scelta rapida per Ricaricamento pagina
 
-settings_sysinfo_easypie_charts=Show charts
-settings_sysinfo_theme_updates=Check for Authentic Theme updates
-settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
-settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
-settings_sysinfo_expand_all_accordions=Make all accordions expanded
-settings_sysinfo_link_mini=Show dashboard link as button
+settings_sysinfo_easypie_charts=Mostra grafici
+settings_sysinfo_theme_updates=Controlla aggiornamenti di Authentic Theme
+settings_sysinfo_csf_updates=Controlla aggiornamenti di ConfigServer Security & Firewall
+settings_sysinfo_drive_status_on_new_line=Visualizza stato CPU e dischi ognuno su una nuova riga
+settings_sysinfo_expand_all_accordions=Rendi estesi tutti i pannelli ad estensione
+settings_sysinfo_link_mini=Visualizza link dashboard come pulsante
 
-settings_right_page_defaults_title=Default pages
-settings_right_default_tab_webmin=Default tab after logging in to Webmin
-settings_right_default_tab_usermin=Default tab after logging in to Usermin
-settings_right_virtualmin_default=Default page for Virtualmin
-settings_right_cloudmin_default=Default page for Cloudmin
+settings_right_page_defaults_title=Pagine predefinite
+settings_right_default_tab_webmin=Scheda predefinita dopo aver effettuato l'accesso a Webmin
+settings_right_default_tab_usermin=Scheda predefinita dopo aver effettuato l'accesso a Usermin
+settings_right_virtualmin_default=Pagina predefinita per Virtualmin
+settings_right_cloudmin_default=Pagina predefinita per Cloudmin
 
-settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Side slider options
-settings_side_slider_fixed=Keep always visible
-settings_side_slider_palette=Slider palette
-settings_hotkey_toggle_slider=Hotkey for side slider
+settings_right_clear_local_cache=Pulisci cache
+settings_right_notification_slider_options_title=Opzioni slider laterale
+settings_side_slider_fixed=Mantieni sempre visibile
+settings_side_slider_palette=Tavolozza colori slider
+settings_hotkey_toggle_slider=Tasto di scelta rapida per slider laterale
 
-settings_side_slider_enabled=Enable slider
-settings_leftmenu_user_html=Show HTML snippet
+settings_side_slider_enabled=Attiva slider
+settings_leftmenu_user_html=Mostra codice HTML
 
 theme_changelog=Note di rilascio
-theme_conference=Theme Conference
+theme_conference=Conferenza tema
 theme_development_support=Supporto per lo sviluppo
-theme_donate=Donazione
+theme_donate=Dona
 theme_download=Scarica
-theme_name=Authentic Tema
+theme_name=Authentic Theme
 theme_update=Aggiorna
 theme_update_available=Ultima versione disponibile
-theme_update_notice=Nota di aggiornamento
-theme_version=Authentic theme version
+theme_update_notice=Avviso di aggiornamento
+theme_version=Versione Authentic theme
 
 
 # Version 17.40
