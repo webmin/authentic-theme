@@ -1283,7 +1283,7 @@ const mail = (function() {
                                             }
 
                                             // Check for draft
-                                            draft && (form_data.set('draft', 1), title_update(1));
+                                            draft && (form_data.set('draft', 1), form_data.set('enew', 1), title_update(1));
 
                                             // Add message body
                                             form_data.append('body', quill.root.innerHTML);
@@ -1296,7 +1296,7 @@ const mail = (function() {
                                             Object.entries(data.hidden).forEach((e) => {
                                                 let key = e[0],
                                                     value = e[1];
-                                                if (!['abook', 'crypt', 'sign', 'pri', 'del', 'dsn'].includes(key)) {
+                                                if (!['abook', 'crypt', 'sign', 'pri', 'del', 'dsn', 'enew'].includes(key)) {
                                                     form_data.set(key, value)
                                                 }
                                             });
