@@ -64,6 +64,7 @@ const mail = (function() {
             button_progress: snippets.progressive_button,
             rows: page_table_rows_control,
             document_title: theme_title_generate,
+            uri_param: uri_parse_param,
             navigation: {
                 reset: plugins.navigation.reset
             },
@@ -952,15 +953,15 @@ const mail = (function() {
                                 },
                             },
                             element = {
-                                input: (str, data_visible, readonly = false, no_escape = false) => {
-                                    let value = data_visible[str];
+                                input: (str, data, readonly = false, no_escape = false, type = 'text') => {
+                                    let value = (typeof data === 'object' ? data[str] : data);
                                     if (readonly) {
                                         readonly = ['readonly'];
                                     }
                                     if (!no_escape) {
                                         value = _.plugin.html_escape(value);
                                     }
-                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, 'text', readonly);
+                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, type, readonly);
                                 },
                                 select: {},
                                 composer: function(target) {
@@ -1282,9 +1283,6 @@ const mail = (function() {
                                                 return
                                             }
 
-                                            // Check for draft
-                                            draft && (form_data.set('draft', 1), form_data.set('enew', 1), title_update(1));
-
                                             // Add message body
                                             form_data.append('body', quill.root.innerHTML);
 
@@ -1292,11 +1290,11 @@ const mail = (function() {
                                             let pri_key = 'pri'
                                             priority ? form_data.set(pri_key, priority) : form_data.delete(pri_key);
 
-                                            // Add hidden entries except ones already in the menu
+                                            // Add hidden entries except ones already in the form
                                             Object.entries(data.hidden).forEach((e) => {
                                                 let key = e[0],
                                                     value = e[1];
-                                                if (!['abook', 'crypt', 'sign', 'pri', 'del', 'dsn', 'enew'].includes(key)) {
+                                                if (!form_data.has(key)) {
                                                     form_data.set(key, value)
                                                 }
                                             });
@@ -1313,6 +1311,14 @@ const mail = (function() {
                                                 ssus.forEach((f, i) => {
                                                     form_data.set(`file${i}`, f)
                                                 });
+
+                                            // Check for draft
+                                            draft && (
+                                                form_data.set('new', 0),
+                                                form_data.set('enew', 1),
+                                                form_data.set('save', 1),
+                                                title_update(1)
+                                            );
 
                                             // Add lock while processing
                                             !draft &&
@@ -1357,9 +1363,19 @@ const mail = (function() {
                                                     }
                                                 }
 
-                                                // Update title
                                                 if (draft) {
+
+                                                    // Update title
                                                     title_update(-1);
+
+                                                    // Is it saved message
+                                                    let id = _.uri_param('id', e.target.responseURL),
+                                                        folder = _.uri_param('folder', e.target.responseURL),
+                                                        set = form.querySelector('[name="id"]');
+                                                    if (id && !set) {
+                                                        form.insertAdjacentHTML('beforeend', element.input('id', id, false, false, 'hidden'));
+                                                        form.insertAdjacentHTML('beforeend', element.input('folder', folder, false, false, 'hidden'));
+                                                    }
                                                 }
 
                                                 // Reset draft status
@@ -1485,7 +1501,7 @@ const mail = (function() {
                                     del: check.field('pri', data.hidden),
                                 }
                             },
-                            from: element.select.from ||  element.input('from', data.visible, true),
+                            from: element.select.from || element.input('from', data.visible, true),
                             to: element.input('to', data.visible),
                             cc: element.input('cc', data.visible),
                             bcc: element.input('bcc', data.visible),
