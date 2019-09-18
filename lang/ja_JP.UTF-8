@@ -1159,3 +1159,6 @@ theme_xhred_mail_composer_draft_saving=Draft saving...
 theme_xhred_mail_composer_draft_saved=Draft saved
 theme_xhred_mail_composer_server_attach_error_read=Requested file cannot be read or permission denied
 theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached
+theme_xhred_mail_composer_discarded_draft=Draft has been discarded
+theme_xhred_global_undo=Undo
+
