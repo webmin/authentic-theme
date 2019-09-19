@@ -1160,3 +1160,5 @@ theme_xhred_mail_composer_draft_saving=Utkast sparas...
 theme_xhred_mail_composer_draft_saved=Utkast sparad
 theme_xhred_mail_composer_server_attach_error_read=Den begärda filen kan inte läsas eller åtkomst nekas
 theme_xhred_mail_composer_server_attach_error_dir=Kataloger går inte att bifogas
+theme_xhred_mail_composer_discarded_draft=Draft has been discarded
+theme_xhred_global_undo=Undo

@@ -64,6 +64,7 @@ const mail = (function() {
             button_progress: snippets.progressive_button,
             rows: page_table_rows_control,
             document_title: theme_title_generate,
+            uri_param: uri_parse_param,
             navigation: {
                 reset: plugins.navigation.reset
             },
@@ -320,9 +321,10 @@ const mail = (function() {
                 notification: {
                     danger: 'exclamation-triangle',
                     error: 'exclamation-circle',
-                    success: 'fa-check-circle',
+                    success: 'check-circle',
                     type: {
                         search: 'search',
+                        trash: '- fa2 fa2-trash',
                     }
                 },
                 class: {
@@ -824,7 +826,8 @@ const mail = (function() {
                 cmodule = _.variable.module.name(),
                 prefix = `${path}/${cmodule}`;
 
-            xtarget.getSize = path + '/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=';
+            xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
+            xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
 
             if (typeof form === 'object' && form.length) {
                 form = $(form).serialize() + '&reply=1';
@@ -952,15 +955,15 @@ const mail = (function() {
                                 },
                             },
                             element = {
-                                input: (str, data_visible, readonly = false, no_escape = false) => {
-                                    let value = data_visible[str];
+                                input: (str, data, readonly = false, no_escape = false, type = 'text') => {
+                                    let value = (typeof data === 'object' ? data[str] : data);
                                     if (readonly) {
                                         readonly = ['readonly'];
                                     }
                                     if (!no_escape) {
                                         value = _.plugin.html_escape(value);
                                     }
-                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, 'text', readonly);
+                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, type, readonly);
                                 },
                                 select: {},
                                 composer: function(target) {
@@ -1052,6 +1055,84 @@ const mail = (function() {
                                             ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
                                             $more_options = $(target).find(`.${classes.editor.controls.more}`),
 
+                                            draft = {
+                                                status: false,
+
+                                                timeout: {
+                                                    update: null,
+                                                    discard: null,
+                                                },
+
+                                                // Draft data
+                                                data: [],
+
+                                                // Reset draft data
+                                                reset: function() {
+                                                    let folder = this.data[0];
+                                                    this.data = [];
+                                                    if (folder) {
+                                                        this.data.push(folder);
+                                                    }
+                                                },
+
+                                                // Test draft data
+                                                test: function() {
+                                                    return this.data.length >= 1;
+                                                },
+
+                                                // Initiate draft save
+                                                save: function() {
+                                                    this.terminate();
+                                                    this.timeout.update = setTimeout(() => {
+                                                        this.status = true;
+                                                        submit.dispatchEvent(new Event('click'));
+                                                    }, 2e3);
+                                                },
+
+                                                // Terminate draft save
+                                                terminate: function() {
+                                                    typeof this.timeout.update === 'number' &&
+                                                        clearTimeout(this.timeout.update);
+                                                },
+
+                                                // Discard the draft
+                                                purge: function(id, folder, message) {
+                                                    fetch(`${xtarget.delete}&id=${id}&folder=${folder}&d=${message}`).then(r => {
+                                                        r.text().then(() => {
+                                                            draft.refresh();
+                                                        });
+                                                    })
+                                                },
+
+                                                // Update draft folder's content if opened
+                                                refresh: function() {
+                                                    if (this.test() && folders.check(this.data[0])) {
+                                                        folders.refresh();
+                                                    }
+                                                },
+
+                                                control: {
+
+                                                    // Schedule draft for discard
+                                                    discard: function() {
+                                                        draft.timeout.discard = setTimeout(() => {
+                                                            draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
+                                                            draft.reset();
+                                                            draft.terminate();
+                                                            paneled && panel.close();
+                                                        }, 5e3);
+                                                    },
+                                                    
+                                                    // Undo discarded draft
+                                                    undo: function() {
+                                                        target.classList.remove(classes.hidden);
+                                                        typeof draft.timeout.discard === 'number' &&
+                                                            clearTimeout(draft.timeout.discard);
+                                                    },
+                                                }
+
+                                            },
+
                                             // Process added attachment
                                             add_attachment = (type, id, filedata, size, update) => {
 
@@ -1087,6 +1168,22 @@ const mail = (function() {
                                         // Event for external add images to editor button
                                         ctl_img.addEventListener('click', () => {
                                             tb.querySelector(`.${classes.editor.tb_image}`).dispatchEvent(new Event('click'));
+                                        })
+
+                                        // Event for discarding the draft
+                                        ctl_dis.addEventListener('click', () => {
+                                            draft.control.discard();
+                                            let undo = {
+                                                cancel: {
+                                                    label: _.language('theme_xhred_global_undo'),
+                                                    action: function() {
+                                                        this.hide();
+                                                        draft.control.undo();
+                                                    }
+                                                }
+                                            };
+                                            _.notification([$$.$.notification.type.trash, _.language('theme_xhred_mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
+                                            target.classList.add(classes.hidden);
                                         })
 
                                         // Event for controlling visibility of extra recipients fields
@@ -1242,16 +1339,7 @@ const mail = (function() {
                                         })
 
                                         // Prepare form submit
-                                        let submit = target.querySelector('button[type="submit"]'),
-                                            draft = false,
-                                            draft_update = () => {
-                                                typeof this.draft_timeout === 'number' &&
-                                                    clearTimeout(this.draft_timeout);
-                                                this.draft_timeout = setTimeout(() => {
-                                                    draft = true;
-                                                    submit.dispatchEvent(new Event('click'));
-                                                }, 2e3);
-                                            };
+                                        let submit = target.querySelector('button[type="submit"]');
 
                                         // Prevent default submit on input fields
                                         asb.querySelectorAll('input').forEach((input) => {
@@ -1260,13 +1348,13 @@ const mail = (function() {
                                                     event.preventDefault();
                                                     return
                                                 }
-                                                draft_update();
+                                                draft.save();
                                             });
                                         })
 
                                         // Event to handle saving drafts
                                         content.addEventListener('input', () => {
-                                            draft_update();
+                                            draft.save();
                                         })
 
                                         // Submitting mail
@@ -1278,12 +1366,9 @@ const mail = (function() {
                                                 trusted = event.isTrusted || ~~submit.dataset.isTrusted;
 
                                             // Prevent form from submitting while saving a draft
-                                            if (draft && trusted) {
+                                            if (draft.status && trusted) {
                                                 return
                                             }
-
-                                            // Check for draft
-                                            draft && (form_data.set('draft', 1), title_update(1));
 
                                             // Add message body
                                             form_data.append('body', quill.root.innerHTML);
@@ -1292,11 +1377,11 @@ const mail = (function() {
                                             let pri_key = 'pri'
                                             priority ? form_data.set(pri_key, priority) : form_data.delete(pri_key);
 
-                                            // Add hidden entries except ones already in the menu
+                                            // Add hidden entries except ones already in the form
                                             Object.entries(data.hidden).forEach((e) => {
                                                 let key = e[0],
                                                     value = e[1];
-                                                if (!['abook', 'crypt', 'sign', 'pri', 'del', 'dsn'].includes(key)) {
+                                                if (!form_data.has(key)) {
                                                     form_data.set(key, value)
                                                 }
                                             });
@@ -1314,15 +1399,23 @@ const mail = (function() {
                                                     form_data.set(`file${i}`, f)
                                                 });
 
+                                            // Check for draft
+                                            draft.status && (
+                                                form_data.set('new', 0),
+                                                form_data.set('enew', 1),
+                                                form_data.set('save', 1),
+                                                title_update(1)
+                                            );
+
                                             // Add lock while processing
-                                            !draft &&
+                                            !draft.status &&
                                                 target.classList.add($$.$.class.events_none);
 
                                             // Post mail data
                                             let xhr = new XMLHttpRequest();
                                             xhr.open("POST", `${form.getAttribute('action')}`);
                                             xhr.upload.onprogress = (e) => {
-                                                !draft &&
+                                                !draft.status &&
                                                     _.button_progress(this, Math.ceil((e.loaded / e.total) * 100));
                                             };
                                             xhr.onload = (e) => {
@@ -1330,7 +1423,53 @@ const mail = (function() {
                                                     status = String(),
                                                     error = String(),
                                                     error_container = false,
-                                                    parser = new DOMParser();
+                                                    parser = new DOMParser(),
+                                                    _g = function(param) {
+                                                        return _.uri_param(param, e.target.responseURL)
+                                                    },
+                                                    _d = {
+                                                        id: _g('id'),
+                                                        folder: {
+                                                            index: _g('folder'),
+                                                            type: _g('folder_type'),
+                                                            id: _g('folder_id'),
+                                                        },
+                                                        input: {
+                                                            id: form.querySelector('[name="id"]'),
+                                                            folder: form.querySelector('[name="folder"]'),
+                                                        },
+                                                    };
+
+                                                // Handle previously saved draft
+                                                if (draft.status) {
+
+                                                    // Update title
+                                                    title_update(-1);
+
+                                                    // Store reference for current draft
+                                                    draft.data = [_d.folder.id, _d.folder.index, (_d.input.id && _d.input.id.value), _d.id];
+
+                                                    // Clear previous drafts for IMAP and POP
+                                                    if (_d.folder.type == 2 || _d.folder.type == 4) {
+                                                        if (_d.input.id) {
+                                                            draft.purge.apply(null, draft.data)
+                                                        } else {
+                                                            draft.refresh()
+                                                        }
+                                                    } else {
+
+                                                        // Refresh drafts folder at once when mail can be edited
+                                                        draft.refresh()
+                                                    }
+
+                                                    // Remove previously set data
+                                                    _d.input.id && _d.input.id.remove();
+                                                    _d.input.folder && _d.input.folder.remove();
+
+                                                    // Update form data
+                                                    form.insertAdjacentHTML('beforeend', element.input('id', _d.id, false, false, 'hidden'));
+                                                    form.insertAdjacentHTML('beforeend', element.input('folder', _d.folder.index, false, false, 'hidden'));
+                                                }
 
                                                 // Handle responses
                                                 rs = parser.parseFromString(rs, 'text/html');
@@ -1348,22 +1487,22 @@ const mail = (function() {
 
                                                         // Remove lock
                                                         target.classList.remove($$.$.class.events_none);
-                                                    } else if (!draft) {
+                                                    } else if (!draft.status) {
 
                                                         // Send success notification
                                                         status = rs.innerHTML
                                                         _.notification([$$.$.notification.danger, status], 10, "success", 0, 1, ['bottom', 'center'])
                                                         paneled && panel.close();
+
+                                                        // Delete previously stored draft message
+                                                        draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
+                                                        draft.reset();
+                                                        draft.terminate();
                                                     }
                                                 }
 
-                                                // Update title
-                                                if (draft) {
-                                                    title_update(-1);
-                                                }
-
                                                 // Reset draft status
-                                                draft = false;
+                                                draft.status = false;
 
                                                 // Reset trusted state for submit
                                                 this.dataset.isTrusted = 0;
@@ -1485,7 +1624,7 @@ const mail = (function() {
                                     del: check.field('pri', data.hidden),
                                 }
                             },
-                            from: element.select.from ||  element.input('from', data.visible, true),
+                            from: element.select.from || element.input('from', data.visible, true),
                             to: element.input('to', data.visible),
                             cc: element.input('cc', data.visible),
                             bcc: element.input('bcc', data.visible),
@@ -2709,7 +2848,7 @@ const mail = (function() {
                     },
                     id = key.folder_id;
 
-                // Sey active folder
+                // Set active folder
                 if (search.file && search.id != null && key.mail_system != 2 && key.mail_system != 4) {
                     key = search.file
                 } else {
@@ -2725,6 +2864,16 @@ const mail = (function() {
                     this.set(key);
                 }, 1e2);
             }
+        }
+
+        /**
+         * Refreshes mail in currently selected folder
+         *
+         * @returns {void}
+         */
+        const refresh = () => {
+            let node = tree.node();
+            node.span.click();
         }
 
         /**
@@ -2760,6 +2909,21 @@ const mail = (function() {
         }
 
         /**
+         * Check if selected folder is what we are looking for
+         *
+         * @param {string} folder Folder name to check if currently selected
+         *
+         * @return {boolean}
+         */
+        const check = function(folder) {
+            let node = tree.node();
+            if (node && node.key === folder) {
+                return true;
+            }
+            return false;
+        }
+
+        /**
          * Adjust folders into view
          *
          * @return {void}
@@ -2772,7 +2936,9 @@ const mail = (function() {
         return {
             get: get,
             set: set,
+            refresh: refresh,
             update: update,
+            check: check,
             adjust: adjust,
             data: data
         }
@@ -2783,7 +2949,9 @@ const mail = (function() {
         folders: {
             get: folders.get,
             set: folders.set,
+            refresh: folders.refresh,
             update: folders.update,
+            check: folders.check,
             adjust: folders.adjust
         },
         messages: {
