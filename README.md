@@ -78,6 +78,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 #### Translations
 * [Pierre Wozniak](https://github.com/pwozniak89) (French)
+* [Maicol Battistini](https://github.com/maicol07) (Italian)
 * [Richard van Laak](https://github.com/Rvanlaak) (Dutch)
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
 * [Kay Marquardt](https://github.com/gnadelwartz), [Michael Keck](https://github.com/mkkeck) (German)
