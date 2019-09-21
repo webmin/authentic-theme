@@ -1011,6 +1011,7 @@ const mail = (function() {
                                         ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
                                         rcs = target.querySelector(`.${classes.form.recipients.control}`),
                                         qtg = target.querySelector(`.${classes.editor.compose}`),
+                                        tcm = target.querySelector(`[${classes.editor.composer}="text"]`),
                                         editor = {
                                             this: new Quill(qtg, {
                                                 modules: {
@@ -1441,12 +1442,19 @@ const mail = (function() {
                                             draft.save();
                                         })
 
-                                        // Event to handle content change in body
+                                        // Event to handle content change in HTML body
                                         editor.this.on('text-change', function() {
 
                                             // Save the draft
                                             draft.save();
                                         })
+
+                                        // Event to handle content change in text body
+                                        tcm.addEventListener('input', function() {
+                                            
+                                            // Save the draft
+                                            draft.save();
+                                        })                                        
 
                                         // Submitting mail
                                         submit.addEventListener('click', function(event) {
