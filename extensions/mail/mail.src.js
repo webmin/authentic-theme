@@ -64,6 +64,7 @@ const mail = (function() {
             button_progress: snippets.progressive_button,
             rows: page_table_rows_control,
             document_title: theme_title_generate,
+            update_mdata: core.updateModuleData,
             uri_param: uri_parse_param,
             navigation: {
                 reset: plugins.navigation.reset
@@ -284,8 +285,10 @@ const mail = (function() {
                     },
                     editor: {
                         compose: 'ql-compose',
+                        composer: 'data-composer',
                         content: 'ql-editor',
                         toolbar: 'ql-toolbar',
+                        disabled: 'ql-disabled',
                         tb_bold: 'ql-bold',
                         tb_link: 'ql-link',
                         tb_image: 'ql-image',
@@ -454,7 +457,8 @@ const mail = (function() {
                                     </div>
                                     <div class="compose-controls-block">
                                         <div class="ql-compose-container">
-                                          <div class="ql-compose ql-container-toolbar-bottom">${data.body}</div>
+                                          <textarea class="${data.status.text}" ${data.class.editor.composer}="text"></textarea>
+                                          <div ${data.class.editor.composer}="html" class="ql-compose ql-container-toolbar-bottom ${data.status.html}">${data.body}</div>
                                           <div id="tb-${data.id}">
                                             <span class="ql-formats">
                                               <select class="ql-font"></select>
@@ -507,9 +511,9 @@ const mail = (function() {
                                             <li e-not-implemented><a><i class="fa fa-fw fa-clock"></i>&nbsp;&nbsp;${data.language._schedule}</a></li>
                                           </ul>
                                           <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.attach}" data-title="${data.language._attach}"><i class="fa-fw fa2 fa2-attach fa-md"></i></button>
-                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.link}" data-title="${data.language._insert_link}"><i class="fa-fw fa2 fa2-link fa-1_25x"></i></button>
-                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.image}" data-title="${data.language._insert_picture}"><i class="fa fa-fw fa-md fa-image"></i></button>
-                                          <button e-not-implemented type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.html}" data-title="${data.language._toggle}"><i class="fa fa-fw fa-md fa-html"></i></button>
+                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.link} ${data.status.html}" ${data.class.editor.composer}-h data-title="${data.language._insert_link}"><i class="fa-fw fa2 fa2-link fa-1_25x"></i></button>
+                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.image} ${data.status.html}" ${data.class.editor.composer}-h data-title="${data.language._insert_picture}"><i class="fa fa-fw fa-md fa-image"></i></button>
+                                          <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.html}" data-title="${data.language._toggle}"><i class="fa fa-fw fa-md fa-html"></i></button>
                                         </div>
                                         <div class="btn-group ${data.class.editor.controls.compose} pull-right">
                                             <span class="dropup ${data.class.editor.controls.more}">
@@ -831,8 +835,10 @@ const mail = (function() {
 
             if (typeof form === 'object' && form.length) {
                 form = $(form).serialize() + '&reply=1';
+                types.new = 0;
             } else {
                 form = 'new=1';
+                types.new = 1;
             }
 
             // Check for message type
@@ -924,19 +930,38 @@ const mail = (function() {
                                         body.find(`.modal-backdrop.${compose_backdrop}`).remove();
                                     }
                                 },
+
+                                // Toggle HTML/text input
+                                formatting: (target, status) => {
+                                    let es = classes.editor.composer,
+                                        eb = target.querySelectorAll(`[${es}-h]`),
+                                        ed = target.querySelectorAll(`[${es}]`);
+
+                                    eb.forEach((b) => {
+                                        b.classList.toggle(classes.hidden, !status);
+                                    })
+
+                                    ed.forEach((e) => {
+                                        if (e.getAttribute(es) === 'text') {
+                                            e.classList.toggle(classes.hidden, status)
+                                        } else {
+                                            e.classList.toggle(classes.hidden, !status)
+                                        }
+                                    })
+                                    adjust.contenteditable(target);
+                                },
                             },
                             adjust = {
 
                                 // Adjust the size of editable area
                                 contenteditable: (panel) => {
                                     let target = panel.querySelector(`.${classes.panel.content}`),
+                                        offset = 60,
                                         container = target ? target.offsetHeight : window.innerHeight / 4,
                                         top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
                                         editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
-                                        offset = 60,
-                                        editor = panel.querySelector(`.${classes.editor.compose}`),
+                                        editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
                                         height = `${container - top_block - editor_toolbar - offset}px`;
-
                                     editor.style.height = height;
                                 },
 
@@ -968,21 +993,57 @@ const mail = (function() {
                                 select: {},
                                 composer: function(target) {
                                     let panel = target,
-                                        paneled = panel.header ? true : false;
+                                        paneled = panel.header ? true : false,
+                                        config = {
+                                            html: {
+                                                allowed: data.hidden.html_edit,
+                                                initial: data.hidden.html_edit_config,
+                                            },
+                                        },
+                                        config_update = function(option, value) {
+                                            _.update_mdata("/uconfig.cgi?mailbox", "/uconfig_save.cgi", {
+                                                [option]: value
+                                            })
+                                        };
                                     target = target[0];
 
                                     let asb = target.querySelector(`.${classes.form.header}`),
                                         ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
                                         rcs = target.querySelector(`.${classes.form.recipients.control}`),
-                                        quill = new Quill(target.querySelector(`.${classes.editor.compose}`), {
-                                            modules: {
-                                                formula: false,
-                                                syntax: false,
-                                                toolbar: target.querySelector(`#tb-${id}`),
+                                        qtg = target.querySelector(`.${classes.editor.compose}`),
+                                        editor = {
+                                            this: new Quill(qtg, {
+                                                modules: {
+                                                    formula: false,
+                                                    syntax: false,
+                                                    imageDrop: true,
+                                                    toolbar: target.querySelector(`#tb-${id}`),
+                                                },
+                                                bounds: target,
+                                                theme: 'snow'
+                                            }),
+                                            get: {
+                                                text: () => {
+                                                    return editor.this.root.parentElement.previousElementSibling.value
+                                                },
+                                                html: () => {
+                                                    return editor.this.root.innerHTML
+                                                },
+                                                data: () => {
+                                                    return config.html.allowed ? editor.get.html() : editor.get.text();
+                                                },
                                             },
-                                            bounds: target,
-                                            theme: 'snow'
-                                        }),
+                                            convert: () => {
+                                                let he = editor.this,
+                                                    te = he.root.parentElement.previousElementSibling;
+
+                                                if (config.html.allowed) {
+                                                    he.setText(te.value);
+                                                } else {
+                                                    te.value = he.getText();
+                                                }
+                                            }
+                                        },
 
                                         // Update message title dynamically
                                         title_update = function(ds) {
@@ -1040,8 +1101,30 @@ const mail = (function() {
                                     // Reflect subject in panel title if exists
                                     title_update();
 
+                                    // Toggle HTML/text editor state
+                                    let ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`);
+                                    ctl_tgl.addEventListener('click', (event) => {
+                                        let st = parseInt(config.html.allowed) || 0,
+                                            ia = parseInt(config.html.initial) || 0,
+                                            sg = +!st,
+                                            co = sg ? 2 : (ia === 1 ? 1 : 0);
+                                        
+                                        toggle.formatting(target, sg)
+                                        config.html.allowed = sg;
+
+
+                                        // Change actual config option
+                                        config_update('html_edit', co);
+
+                                        // Convert current message to make sure HTML is removed
+                                        editor.convert();
+                                    })
+                                    // ctl_tgl.dispatchEvent(new Event('click'));
+
+
+                                    // Register controls and its events
                                     setTimeout(() => {
-                                        let tb = quill.options.modules.toolbar.container,
+                                        let tb = editor.this.options.modules.toolbar.container,
                                             upload_list = [],
                                             server_list = [],
                                             priority = null,
@@ -1051,7 +1134,6 @@ const mail = (function() {
                                             ctl_att = ccs[0].querySelector(`.${classes.editor.controls.extra.attach}`),
                                             ctl_lnk = ccs[0].querySelector(`.${classes.editor.controls.extra.link}`),
                                             ctl_img = ccs[0].querySelector(`.${classes.editor.controls.extra.image}`),
-                                            ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`),
                                             ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
                                             $more_options = $(target).find(`.${classes.editor.controls.more}`),
 
@@ -1122,7 +1204,7 @@ const mail = (function() {
                                                             paneled && panel.close();
                                                         }, 5e3);
                                                     },
-                                                    
+
                                                     // Undo discarded draft
                                                     undo: function() {
                                                         target.classList.remove(classes.hidden);
@@ -1352,8 +1434,17 @@ const mail = (function() {
                                             });
                                         })
 
-                                        // Event to handle saving drafts
-                                        content.addEventListener('input', () => {
+                                        // Event to handle change in header
+                                        asb.addEventListener('input', function() {
+
+                                            // Save the draft
+                                            draft.save();
+                                        })
+
+                                        // Event to handle content change in body
+                                        editor.this.on('text-change', function() {
+
+                                            // Save the draft
                                             draft.save();
                                         })
 
@@ -1371,7 +1462,7 @@ const mail = (function() {
                                             }
 
                                             // Add message body
-                                            form_data.append('body', quill.root.innerHTML);
+                                            form_data.append('body', editor.get.data());
 
                                             // Set message priority
                                             let pri_key = 'pri'
@@ -1607,6 +1698,11 @@ const mail = (function() {
                             id: id,
                             class: classes,
                             language: language,
+                            status: {
+                                text: ~~data.hidden.html_edit ? classes.hidden : String(),
+                                html: ~~data.hidden.html_edit ? String() : classes.hidden,
+
+                            },
                             toggle: {
                                 recipients: {
                                     cc: toggle.recipients('cc', 'rc', data.visible),
