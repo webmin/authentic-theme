@@ -653,7 +653,7 @@ sub init_vars
     our $theme_module_query_id;
 
     my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
-    our $global_prefix = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
+    our $global_prefix    = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
     our $parent_webprefix = $parent_webprefix_local;
 
     our $xnav = "xnavigation=1";
@@ -755,7 +755,7 @@ sub get_current_user_language
         $language = $ENV{'HTTP_ACCEPT_LANGUAGE'};
         $language =~ s/;.*//;
         @languages = split /,/, $language;
-        $language = $languages[0];
+        $language  = $languages[0];
     }
 
     if (($language_browser && !$language) || !$language_browser) {
@@ -812,6 +812,21 @@ sub get_user_level
         $level = 0;
     }
     return ($level, $has_virtualmin, $has_cloudmin);
+}
+
+sub get_user_icon
+{
+    my $user_icon = 'fa2-user-cog';
+    if ($get_user_level eq '1') {
+        $user_icon = 'fa2-user-plus';
+    } elsif ($get_user_level eq '2') {
+        $user_icon = 'fa2-user-check';
+    } elsif ($get_user_level eq '3') {
+        $user_icon = 'fa2-user';
+    } elsif ($get_user_level eq '4') {
+        $user_icon = 'fa2-user-friends';
+    }
+    return $user_icon;
 }
 
 sub set_user_level
@@ -903,14 +918,13 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
-    }
-    elsif (
-           (string_contains($keys, "install")     ||
-            string_contains($keys, "recsok")      ||
-            string_contains($keys, "scripts_iok") ||
-            string_contains($keys, "right_upok")
-           ) &&
-           !string_contains($keys, "uninstall"))
+    } elsif (
+             (string_contains($keys, "install")     ||
+              string_contains($keys, "recsok")      ||
+              string_contains($keys, "scripts_iok") ||
+              string_contains($keys, "right_upok")
+             ) &&
+             !string_contains($keys, "uninstall"))
     {
         $class = "success ";
         $icon  = "package-install fa-1_25x";
@@ -1065,8 +1079,7 @@ sub get_button_style
     } elsif (string_contains($keys, "dbase_add") || string_contains($keys, "databases_import")) {
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
-    }
-    elsif (
+    } elsif (
         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
         ||
         (string_contains($keys, "create") &&
@@ -1205,6 +1218,18 @@ sub theme_version
     return $version;
 }
 
+sub theme_mversion_str
+{
+    my $mversion = int(theme_version(0, 1));
+    if ($mversion > 1) {
+        $mversion = "-$mversion";
+    } else {
+        $mversion = undef;
+    }
+
+    return $mversion;
+}
+
 sub theme_debug_mode
 {
     my $debug_mode = "$root_directory/$current_theme/unauthenticated/js/authentic.src.js";
@@ -1254,7 +1279,7 @@ sub header_html_data
       theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
       get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' . ($module ? "/$module/" : un_urlize(get_env('request_uri'))) .
+      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri')))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
@@ -1262,7 +1287,7 @@ sub header_html_data
 sub header_body_data
 {
     my ($module) = @_;
-    return 'data-uri="' . ($module ? "/$module/" : get_env('request_uri')) . '"'
+    return 'data-uri="' . ($module ? "/$module/" : html_escape(get_env('request_uri'))) . '"'
       .
       ( (get_module_name() || $module) ?
           ' class="' .
@@ -1343,7 +1368,7 @@ sub set_theme_temp_data
     my %var;
 
     $salt =~ tr/A-Za-z0-9//cd;
-    $key =~ tr/A-Za-z0-9//cd;
+    $key  =~ tr/A-Za-z0-9//cd;
 
     $value =~ s/[?|&]$xnav//g;
     $value =~ s/[?|&]randomized=[\d]+//g;

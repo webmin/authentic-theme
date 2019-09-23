@@ -22,8 +22,8 @@ our (
 
     %theme_text, %module_text_full, %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
-    $has_usermin,              $has_usermin_version,
-    $has_usermin_root_dir, $has_usermin_conf_dir, $t_var_switch_m, $t_var_product_m);
+    $has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir,
+    $mode_status, $t_var_switch_m,      $t_var_product_m);
 
 init_type();
 init_config();
@@ -141,10 +141,9 @@ sub get_swith_mode
     {
         $t_var_switch_m  = '3';
         $t_var_product_m = '3';
-    }
-    elsif (&foreign_available("virtual-server") ||
-           &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
-                                                    !&foreign_available("server-manager")))
+    } elsif (&foreign_available("virtual-server") ||
+             &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
+                                                      !&foreign_available("server-manager")))
     {
         $t_var_switch_m  = '2';
         $t_var_product_m = '2';
@@ -693,6 +692,7 @@ sub print_left_menu
     my $__custom_print = 0;
     my $__custom_link  = 0;
     my $__mail_spinner = 0;
+
     foreach my $item (@$items) {
         if ($module eq $item->{'module'} || $group) {
 
@@ -838,6 +838,13 @@ sub print_left_menu
             } elsif ($item->{'type'} eq 'html') {
                 print '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
                   $item->{'html'} . '</span></li>';
+            } elsif ($item->{'type'} eq 'text' && $item->{'desc'}) {
+                if ($mode_status == 1) {
+                    $mode_status =
+"<span><strong>$theme_text{'theme_global_access_level'}</strong>:&nbsp;&nbsp;<em>@{[html_escape($item->{'desc'})]}</em></span>";
+                } else {
+                    $mode_status++;
+                }
             } elsif ($item->{'type'} eq 'cat') {
 
                 # Skip printing Webmin category because there is a switch for it
@@ -898,6 +905,7 @@ sub print_left_menu
             } elsif (($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') &&
                      $item->{'module'} ne 'mailbox')
             {
+
                 # For with an input of some kind
                 if ($item->{'cgi'}) {
                     print "<li class=\"menu-container\"><form action='$item->{'cgi'}'>\n";
@@ -920,12 +928,8 @@ sub print_left_menu
                                  virtual_server::shorten_domain_name($_),
                                  "title=\"" . virtual_server::show_domain_name($_) . "\""]
                               }
-                              grep {
-                                virtual_server::can_edit_domain($_)
-                              }
-                              sort {
-                                $a->{'dom'} cmp $b->{'dom'}
-                              } virtual_server::list_domains()];
+                              grep {virtual_server::can_edit_domain($_)}
+                              sort {$a->{'dom'} cmp $b->{'dom'}} virtual_server::list_domains()];
                     }
                     print ui_select(
                         ($item->{'name'} eq 'dname' ? 'dom' :
@@ -1196,7 +1200,7 @@ sub get_sysinfo_vars
         my $ip =
           $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
           &to_ipaddress(get_system_hostname());
-        $ip = " ($ip)" if ($ip);
+        $ip   = " ($ip)" if ($ip);
         $host = &get_system_hostname() . $ip;
         if (&foreign_available("net")) {
             $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
@@ -1222,7 +1226,7 @@ sub get_sysinfo_vars
         if ($has_virtualmin) {
             my ($vs_license, $__virtual_server_version);
 
-            $vs_license = licenses('vm');
+            $vs_license               = licenses('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
 
@@ -1804,9 +1808,8 @@ sub error_40x
     }
     $block_time += 5;
 
-    my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+    my $sec     = lc(get_env('https')) eq 'on' ? "; secure" : "";
     my $sidname = "sid";
-    print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
     print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
     print "Set-Cookie: redirect=1; path=/\r\n";
     print "Set-Cookie: testing=1; path=/$sec\r\n";
@@ -1829,7 +1832,7 @@ sub error_40x
     if (defined($in{'code'})) {
         print '<div class="alert alert-danger error_40x">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
-          $in{'code'} . '</strong><br><span>' . $in{'message'} . "</span>\n";
+          html_escape($in{'code'}) . '</strong><br><span>' . html_escape($in{'message'}) . "</span>\n";
         print '</div>' . "\n";
     }
     &footer();
@@ -1853,7 +1856,7 @@ sub theme_update_incompatible
     my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
 
     $authentic_remote_data =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-    $webmin_compatible_version = $3 ? $3 : $1;
+    $webmin_compatible_version  = $3 ? $3 : $1;
     $usermin_compatible_version = $2;
 
     if (
@@ -2173,7 +2176,9 @@ sub get_theme_user_link
     my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force '          : undef);
     my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
 
-    return '' . theme_version() .
+    my $mversion = theme_mversion_str();
+
+    return '' . theme_version() . $mversion .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
@@ -3112,8 +3117,6 @@ sub get_xhr_request
 
         if ($in{'xhr-navigation'} eq '1') {
             require(dirname(__FILE__) . "/navigation.pm");
-        } elsif ($in{'xhr-buttons'} eq '1') {
-            require(dirname(__FILE__) . "/buttons.pm");
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
@@ -3147,8 +3150,22 @@ sub get_xhr_request
                  } list_languages()
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
-            my $size = recursive_disk_usage(get_access_data('root') . $in{'xhr-get_size_path'});
-            print nice_size($size, -1) . '|' . nice_number($size);
+            set_user_level();
+            my $path  = get_access_data('root') . $in{'xhr-get_size_path'};
+            my $nodir = $in{'xhr-get_size_nodir'};
+            my $home  = get_user_home();
+            if ($get_user_level eq '3' && !string_starts_with($path, $home)) {
+                $path = $home . $path;
+                $path =~ s/\/\//\//g;
+            }
+            if ($nodir && -d $path) {
+                print "$theme_text{'theme_xhred_global_error'}|-2";
+            } elsif (!-r $path) {
+                print "$theme_text{'theme_xhred_global_error'}|-1";
+            } else {
+                my $size = recursive_disk_usage($path);
+                print nice_size($size, -1) . '|' . nice_number($size);
+            }
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";
@@ -3273,6 +3290,9 @@ sub get_xhr_request
                     backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart");
                 }
                 my $tversion = theme_version();
+                my $mversion = theme_mversion_str();
+                $tversion = $tversion . $mversion;
+
                 @update_rs = {
                                "success" => ($usermin ? theme_text('theme_git_patch_update_success_message2', $tversion) :
                                                theme_text('theme_git_patch_update_success_message', $tversion)
@@ -3391,10 +3411,9 @@ sub get_default_right
 
             }
         }
-    }
-    elsif ($theme_requested_url =~ /server-manager/ &&
-           ($t_uri___i ||
-            (   length $theme_config{'settings_right_cloudmin_default'} &&
+    } elsif ($theme_requested_url =~ /server-manager/ &&
+             ($t_uri___i ||
+              ( length $theme_config{'settings_right_cloudmin_default'} &&
                 $theme_config{'settings_right_cloudmin_default'} ne ''  &&
                 (\server_available($theme_config{'settings_right_cloudmin_default'}, 'id') ||
                     $theme_config{'settings_right_cloudmin_default'} eq 'index.cgi'))))
@@ -3500,6 +3519,7 @@ sub content
     print '<br><br><ul class="user-links">';
     require(dirname(__FILE__) . "/buttons.pm");
     print '</ul>';
+    print "<script>plugins.navigation.get.buttons();</script>";
 
     # Custom text
     print '<ul class="user-html"><li class="user-html-string">'
@@ -3548,7 +3568,7 @@ sub update_notice
     $changelog_data =~ s/\[([^\[]+)\]\(([^\)]+)\)/<a class="label label-default" href="$2" target="_blank">$1<\/a>/g;
     $changelog_data =~ s/\n\*(.*)/\n<li>$1<\/li>/g;
 
-    my @version = split(/ /, $changelog_version[0]);
+    my @version           = split(/ /, $changelog_version[0]);
     my $changelog_content = '
       <div class="modal fade fade9" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-update">
@@ -3751,7 +3771,7 @@ sub get_autocomplete_shell
             $unit_tmp =~ s/\|/,/g;
             $unit_tmp =~ s/;/,/g;
 
-            my @units_tmp = split /,/, $unit_tmp;
+            my @units_tmp          = split /,/, $unit_tmp;
             my @units_possible_tmp = ('start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status');
             @rs_tmp = (@units_tmp ? @units_tmp : @units_possible_tmp);
             my @rs_cmd;

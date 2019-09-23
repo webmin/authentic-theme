@@ -722,11 +722,13 @@ sub print_content
       ) .
       ""
       .
-      text(nice_number($info_total,   ","),
-           nice_number($info_files,   ","),
-           nice_number($info_folders, ","),
-           nice_number($totals,       ","),
-           nice_number($pages,        ",")
+      utf8_decode(
+                  text(nice_number($info_total,   ","),
+                       nice_number($info_files,   ","),
+                       nice_number($info_folders, ","),
+                       nice_number($totals,       ","),
+                       nice_number($pages,        ",")
+                  )
       ) .
       "</div>";
 
@@ -862,8 +864,9 @@ sub print_content
                           ($query ? " data-filemin-flink=\"$hlink_path\"" : undef) . ">$vlink</a>");
         my @td_tags = (undef,
                        'class="col-icon"',
-                       'class="col-name" data-xarchive="' . $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' .
-                         $is_gpg . '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . $filename . '"');
+                       'class="col-name" data-xarchive="' .
+                         $is_archive . '" data-xfile="' . $is_file . '" data-gpg="' . $is_gpg .
+                         '" data-img="' . $is_img . '" data-order="' . ($is_file ? 1 : 0) . html_escape($filename) . '"');
         if ($userconfig{'columns'} =~ /type/) {
             push(@row_data, $type);
             push(@td_tags,  'class="col-type"');
@@ -996,22 +999,22 @@ sub local_nice_size
     my ($units, $uname);
     if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $text{'theme_nice_size_PB'};
+        $uname = $text{'theme_xhred_nice_size_PB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $text{'theme_nice_size_TB'};
+        $uname = $text{'theme_xhred_nice_size_TB'};
     } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
         $units = 1024 * 1024 * 1024;
-        $uname = $text{'theme_nice_size_GB'};
+        $uname = $text{'theme_xhred_nice_size_GB'};
     } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
         $units = 1024 * 1024;
-        $uname = $text{'theme_nice_size_MB'};
+        $uname = $text{'theme_xhred_nice_size_MB'};
     } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
         $units = 1024;
-        $uname = $text{'theme_nice_size_kB'};
+        $uname = $text{'theme_xhred_nice_size_kB'};
     } else {
         $units = 1;
-        $uname = $text{'theme_nice_size_b'};
+        $uname = $text{'theme_xhred_nice_size_b'};
     }
     my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
     $sz =~ s/\.00$//;

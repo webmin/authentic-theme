@@ -835,12 +835,12 @@ theme_xhred_filemanager_canceled_download= ダウンロードがキャンセル�
 
 #19.19
 theme_xhred_filemanager_settings_force_tar_download= <code>zip</code>コマンドが利用可能であっても、アーカイブとしてダウンロードするときに<code>tar</code>コマンドを強制します
-theme_nice_size_PB=PB
-theme_nice_size_TB=TB
-theme_nice_size_GB=GB
-theme_nice_size_MB=MB
-theme_nice_size_kB=KB
-theme_nice_size_b=bytes
+theme_xhred_nice_size_PB=PB
+theme_xhred_nice_size_TB=TB
+theme_xhred_nice_size_GB=GB
+theme_xhred_nice_size_MB=MB
+theme_xhred_nice_size_kB=KB
+theme_xhred_nice_size_b=bytes
 settings_sysinfo_real_time_status_options= リアルタイムの監視オプション
 settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
 settings_sysinfo_real_time_status_disk_description= 低速/大容量ファイルシステム上のディスクのリアルタイム監視を無効にすると便利な場合があります
@@ -1120,3 +1120,44 @@ theme_xhred_filemanager_editor_reverting_content=変更をドロップして元�
 #19.37
 theme_xhred_filemanager_exclude_dirs=エントリを除外する
 theme_xhred_filemanager_exclude_dirs_desc=除外するファイルまたはサブディレクトリのセミコロン区切りリスト
+
+
+#19.38
+theme_global_access_level=アクセスレベル
+theme_global_user_mode=ユーザーモード
+
+
+#19.40
+theme_xhred_global_attachments=添付ファイル
+theme_xhred_editor_tb_font=フォント
+theme_xhred_editor_tb_size=サイズ
+theme_xhred_editor_tb_bold=太字 (%cmd+B)
+theme_xhred_editor_tb_italic=イタリック体(%cmd+I)
+theme_xhred_editor_tb_underline=下線 (%cmd+U)
+theme_xhred_editor_tb_color=テキストの色
+theme_xhred_editor_tb_background=テキストの背景
+theme_xhred_editor_tb_align=整列
+theme_xhred_editor_tb_list_ordered=番号付きリスト
+theme_xhred_editor_tb_list_bullet=箇条書きリスト
+theme_xhred_editor_tb_strike=取り消し線
+theme_xhred_editor_tb_blockquote=引用
+theme_xhred_editor_tb_code-block=コードを挿入
+theme_xhred_editor_tb_link=リンクを挿入 (%cmd+K)
+theme_xhred_editor_tb_clean=フォーマットを削除
+theme_xhred_mail_composer_send=送信
+theme_xhred_mail_composer_schedule=スケジュール送信
+theme_xhred_mail_composer_attach=添付ファイル
+theme_xhred_mail_composer_insert_picture=写真をインラインで挿入
+theme_xhred_mail_composer_toggle=HTML/プレーンテキストモードの切り替え
+theme_xhred_mail_composer_discard=下書きを破棄
+theme_xhred_mail_composer_server_attach=サーバーからファイルを添付
+theme_xhred_mail_composer_addrecipients=受信者をアドレス帳に追加する
+theme_xhred_mail_composer_notifications_dsn=配送ステータスをリクエストする
+theme_xhred_mail_composer_notifications_del=開封確認をリクエストする
+theme_xhred_global_options=オプション
+theme_xhred_mail_composer_draft_saving=ドラフトの保存...
+theme_xhred_mail_composer_draft_saved=下書きを保存しました
+theme_xhred_mail_composer_server_attach_error_read=要求されたファイルを読み取れないか、許可が拒否されました
+theme_xhred_mail_composer_server_attach_error_dir=ディレクトリは添付できません
+theme_xhred_mail_composer_discarded_draft=下書きは破棄されました
+theme_xhred_global_undo=元に戻す

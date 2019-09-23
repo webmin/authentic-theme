@@ -1,5 +1,24 @@
 ## Changelog
 
+#### Version 19.40-beta1 (September 11, 2019)
+* Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
+* Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
+* Fix context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
+* Fix to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
+* Fix bundle background load to try/catch errors for callbacks
+* Fix possible XSS when adding to favorites
+
+<!--- separator --->
+
+
+#### Version 19.39 (August 18, 2019)
+* Add ability to restore initial sorting for tables [#1386](https://github.com/authentic-theme/authentic-theme/issues/1386)
+* Add to show minor theme version
+* Add to display datetime in from now format for Running Processes module [#1387/comment-516709651](https://github.com/authentic-theme/authentic-theme/issues/1387#issuecomment-516709651)
+* Add to display current user login mode for Virtualmin/Cloudmin
+* Fix to prevent possible XSS
+* Fix bugs
+
 #### Version 19.38 (July 20, 2019)
 * Add to ship Roboto Mono font for smoother UX across platforms
 * Fiх minimum value for starting server pagination in File Manager [sourceforge.net/5286](https://sourceforge.net/p/webadmin/bugs/5286)
@@ -103,8 +122,6 @@
 * Fix to balance multi selects
 * Fix status label placement in Cloudmin navigation
 * Fix over a hundred of other minor bugs and made other improvements
-
-<!--- separator --->
 
 #### Version 19.22 (December 25, 2018)
 * Add ability to raise internal file editor from inbuilt command line interface [#1268](https://github.com/authentic-theme/authentic-theme/issues/1268)

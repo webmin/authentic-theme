@@ -22,7 +22,7 @@
 * Extended support for _File Manager_ and _ConfigServer Security & Firewall_ modules
 
 ### Requirements
-* Webmin _1.900+_ (required), Usermin _1.750+_ (optional), Virtualmin _6.00+_ (optional), Cloudmin _9.20+_ (optional)
+* Webmin _1.930+_ (required), Usermin _1.780+_ (optional), Virtualmin _6.06+_ (optional), Cloudmin _9.4+_ (optional)
 
 ### Recommended modules
 * Installed _Net::SSLeay_ module, to make automatic update notifications work
@@ -77,6 +77,8 @@ Theme only re-renders this module and adds support for code highlight, when edit
 * [Joe Cooper](https://github.com/swelljoe)
 
 #### Translations
+* [Pierre Wozniak](https://github.com/pwozniak89) (French)
+* [Maicol Battistini](https://github.com/maicol07) (Italian)
 * [Richard van Laak](https://github.com/Rvanlaak) (Dutch)
 * [Michał Pawlik](https://github.com/majk-p) (Polish)
 * [Kay Marquardt](https://github.com/gnadelwartz), [Michael Keck](https://github.com/mkkeck) (German)
