@@ -1146,7 +1146,7 @@ theme_xhred_editor_tb_code-block=Infoga kod
 theme_xhred_editor_tb_link=Infoga länk (%cmd+K)
 theme_xhred_editor_tb_clean=Ta bort formatering
 theme_xhred_mail_composer_send=Skicka
-theme_xhred_mail_composer_schedule=Skicka senare
+theme_xhred_mail_composer_schedule=Schedule
 theme_xhred_mail_composer_attach=Bifoga fil(er)
 theme_xhred_mail_composer_insert_picture=Infoga bilder i kö
 theme_xhred_mail_composer_toggle=Växla läge mellan HTML/oformatterad text
@@ -1162,3 +1162,7 @@ theme_xhred_mail_composer_server_attach_error_read=Den begärda filen kan inte l
 theme_xhred_mail_composer_server_attach_error_dir=Kataloger går inte att bifogas
 theme_xhred_mail_composer_discarded_draft=Draft has been discarded
 theme_xhred_global_undo=Undo
+
+theme_xhred_global_today=Today
+theme_xhred_global_tomorrow=Tomorrow
+theme_xhred_mail_composer_scheduled=Send %1 at %2

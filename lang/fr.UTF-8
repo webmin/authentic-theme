@@ -1059,7 +1059,7 @@ theme_xhred_editor_tb_code-block=Inserer du code
 theme_xhred_editor_tb_link=Insérer un lien (%cmd+K)
 theme_xhred_editor_tb_clean=Supprimer le formatage
 theme_xhred_mail_composer_send=Envoyer
-theme_xhred_mail_composer_schedule=Envoi planifié
+theme_xhred_mail_composer_schedule=Planifié
 theme_xhred_mail_composer_attach=Joindre un/des fichier(s)
 theme_xhred_mail_composer_insert_picture=Insérer des images dans le texte
 theme_xhred_mail_composer_toggle=Basculer le mode HTML/Texte brut
@@ -1075,3 +1075,7 @@ theme_xhred_mail_composer_server_attach_error_read=Le fichier demandé ne peut �
 theme_xhred_mail_composer_server_attach_error_dir=Les répertoires ne peuvent être joints
 theme_xhred_mail_composer_discarded_draft=Le brouillon a été abandonné
 theme_xhred_global_undo=Annuler
+
+theme_xhred_global_today=Today
+theme_xhred_global_tomorrow=Tomorrow
+theme_xhred_mail_composer_scheduled=Send %1 at %2

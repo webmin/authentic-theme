@@ -1146,7 +1146,7 @@ theme_xhred_editor_tb_code-block=Insert code
 theme_xhred_editor_tb_link=Insert link (%cmd+K)
 theme_xhred_editor_tb_clean=Remove formatting
 theme_xhred_mail_composer_send=Send
-theme_xhred_mail_composer_schedule=Schedule send
+theme_xhred_mail_composer_schedule=Schedule
 theme_xhred_mail_composer_attach=Attach file(s)
 theme_xhred_mail_composer_insert_picture=Insert pictures inline
 theme_xhred_mail_composer_toggle=Toggle HTML/plain text mode
@@ -1163,3 +1163,6 @@ theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached
 theme_xhred_mail_composer_discarded_draft=Draft has been discarded
 theme_xhred_global_undo=Undo
 
+theme_xhred_global_today=Today
+theme_xhred_global_tomorrow=Tomorrow
+theme_xhred_mail_composer_scheduled=Send %1 at %2

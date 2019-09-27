@@ -1145,7 +1145,7 @@ theme_xhred_editor_tb_code-block=コードを挿入
 theme_xhred_editor_tb_link=リンクを挿入 (%cmd+K)
 theme_xhred_editor_tb_clean=フォーマットを削除
 theme_xhred_mail_composer_send=送信
-theme_xhred_mail_composer_schedule=スケジュール送信
+theme_xhred_mail_composer_schedule=スケジュ
 theme_xhred_mail_composer_attach=添付ファイル
 theme_xhred_mail_composer_insert_picture=写真をインラインで挿入
 theme_xhred_mail_composer_toggle=HTML/プレーンテキストモードの切り替え
@@ -1161,3 +1161,7 @@ theme_xhred_mail_composer_server_attach_error_read=要求されたファイル�
 theme_xhred_mail_composer_server_attach_error_dir=ディレクトリは添付できません
 theme_xhred_mail_composer_discarded_draft=下書きは破棄されました
 theme_xhred_global_undo=元に戻す
+
+theme_xhred_global_today=Today
+theme_xhred_global_tomorrow=Tomorrow
+theme_xhred_mail_composer_scheduled=Send %1 at %2
