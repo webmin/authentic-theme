@@ -1165,3 +1165,4 @@ theme_xhred_global_undo=元に戻す
 theme_xhred_global_today=Today
 theme_xhred_global_tomorrow=Tomorrow
 theme_xhred_mail_composer_scheduled=Send %1 at %2
+theme_global_core=Core

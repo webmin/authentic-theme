@@ -1389,8 +1389,8 @@ sub get_sysinfo_vars
         if ($info->{'cputemps'}) {
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
-                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core ' .
-                  $t->{'core'} . ': '
+                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> ' .
+                  $theme_text{'theme_global_core'} . ' ' . (int($t->{'core'}) + 1) . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
