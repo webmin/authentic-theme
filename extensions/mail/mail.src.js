@@ -1100,10 +1100,10 @@ const mail = (function() {
                                                 du = (tg) => {
 
                                                     if (ds === 1) {
-                                                        tg.textContent = _.lang('theme_xhred_mail_composer_draft_saving');
+                                                        tg.textContent = _.lang('mail_composer_draft_saving');
                                                         us(tg, true);
                                                     } else if (ds === -1) {
-                                                        tg.textContent = _.lang('theme_xhred_mail_composer_draft_saved');
+                                                        tg.textContent = _.lang('mail_composer_draft_saved');
                                                         us(tg, true);
 
                                                         // Change status back to original title
@@ -1186,7 +1186,7 @@ const mail = (function() {
                                                     this.checkbox().addEventListener('click', function() {
                                                         let s = submit,
                                                             t = s.querySelector('span').querySelector('span'),
-                                                            ct = _.lang('theme_xhred_mail_composer_schedule'),
+                                                            ct = _.lang('mail_composer_schedule'),
                                                             c = this.checked,
                                                             sb = classes.button.submit,
                                                             sc = classes.button.schedule,
@@ -1228,8 +1228,8 @@ const mail = (function() {
                                                         autoclose: true,
                                                         startDate: "0d",
                                                     }).on("changeDate", function(l) {
-                                                        let today = _.lang('theme_xhred_global_today').toLowerCase(),
-                                                            tomorrow = _.lang('theme_xhred_global_tomorrow').toLowerCase(),
+                                                        let today = _.lang('global_today').toLowerCase(),
+                                                            tomorrow = _.lang('global_tomorrow').toLowerCase(),
                                                             label = today,
                                                             now = new Date(),
                                                             y = now.getFullYear(),
@@ -1386,14 +1386,14 @@ const mail = (function() {
                                             draft.control.discard();
                                             let undo = {
                                                 cancel: {
-                                                    label: _.lang('theme_xhred_global_undo'),
+                                                    label: _.lang('global_undo'),
                                                     action: function() {
                                                         this.hide();
                                                         draft.control.undo();
                                                     }
                                                 }
                                             };
-                                            _.notification([$$.$.notification.type.trash, _.lang('theme_xhred_mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
+                                            _.notification([$$.$.notification.type.trash, _.lang('mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
                                             target.classList.add(classes.hidden);
                                         })
 
@@ -1440,8 +1440,8 @@ const mail = (function() {
                                             // Attach new file from server
                                             if (action === 'server-attach') {
                                                 let error = {
-                                                    read: _.lang('theme_xhred_mail_composer_server_attach_error_read'),
-                                                    dir: _.lang('theme_xhred_mail_composer_server_attach_error_dir')
+                                                    read: _.lang('mail_composer_server_attach_error_read'),
+                                                    dir: _.lang('mail_composer_server_attach_error_dir')
                                                 };
 
                                                 _.file_chooser({
@@ -1533,7 +1533,7 @@ const mail = (function() {
                                             let button,
                                                 key,
                                                 value,
-                                                language = 'theme_xhred_editor_tb';
+                                                language = 'editor_tb';
 
                                             if (typeof v === 'object') {
                                                 key = Object.keys(v)[0];
@@ -1868,23 +1868,23 @@ const mail = (function() {
                         });
 
                         // Extend language with more strings
-                        language._attachments = _.lang('theme_xhred_global_attachments');
-                        language._send = _.lang('theme_xhred_mail_composer_send');
-                        language._scheduled = _.lang('theme_xhred_mail_composer_scheduled')
-                            .replace(/%1/, `<span data-i>${element.type.date()}<span data-t>${_.lang('theme_xhred_global_today').toLowerCase()}</span></span>`)
+                        language._attachments = _.lang('global_attachments');
+                        language._send = _.lang('mail_composer_send');
+                        language._scheduled = _.lang('mail_composer_scheduled')
+                            .replace(/%1/, `<span data-i>${element.type.date()}<span data-t>${_.lang('global_today').toLowerCase()}</span></span>`)
                             .replace(/%2/, element.type.time());
-                        language._attach = _.lang('theme_xhred_mail_composer_attach');
-                        language._insert_link = adjust.modifier(_.lang('theme_xhred_editor_tb_link'));
-                        language._insert_picture = _.lang('theme_xhred_mail_composer_insert_picture');
-                        language._toggle = _.lang('theme_xhred_mail_composer_toggle');
-                        language._discard = _.lang('theme_xhred_mail_composer_discard');
-                        language._server_attach = _.lang('theme_xhred_mail_composer_server_attach');
-                        language._notifications = _.lang('theme_xhred_global_notifications');
-                        language._notifications_dsn = _.lang('theme_xhred_mail_composer_notifications_dsn');
-                        language._notifications_del = _.lang('theme_xhred_mail_composer_notifications_del');
-                        language._encrypt = _.lang('theme_xhred_global_encrypt');
-                        language._options = _.lang('theme_xhred_global_options');
-                        language._addrecipients = _.lang('theme_xhred_mail_composer_addrecipients');
+                        language._attach = _.lang('mail_composer_attach');
+                        language._insert_link = adjust.modifier(_.lang('editor_tb_link'));
+                        language._insert_picture = _.lang('mail_composer_insert_picture');
+                        language._toggle = _.lang('mail_composer_toggle');
+                        language._discard = _.lang('mail_composer_discard');
+                        language._server_attach = _.lang('mail_composer_server_attach');
+                        language._notifications = _.lang('global_notifications');
+                        language._notifications_dsn = _.lang('mail_composer_notifications_dsn');
+                        language._notifications_del = _.lang('mail_composer_notifications_del');
+                        language._encrypt = _.lang('global_encrypt');
+                        language._options = _.lang('global_options');
+                        language._addrecipients = _.lang('mail_composer_addrecipients');
 
                         // Check for form selects
                         element.select.from = $form[0].querySelector(`select[name="from"]`);
@@ -1963,7 +1963,7 @@ const mail = (function() {
                                         width: (small_window ? '98%' : 600),
                                         height: (small_window ? '99%' : 600)
                                     },
-                                    headerTitle: _.lang('theme_xhred_mail_new_message'),
+                                    headerTitle: _.lang('mail_new_message'),
                                     content: template.form,
                                     maximizedMargin: {
                                         top: window_height * 0.03,
@@ -2029,7 +2029,7 @@ const mail = (function() {
                     function(data) {
                         render(data);
                         loader.end();
-                        _.document_title(0, _.lang('theme_xhred_titles_mail'));
+                        _.document_title(0, _.lang('titles_mail'));
                     });
             },
 
@@ -2100,7 +2100,7 @@ const mail = (function() {
                     let selected_count = Object.keys(storage).length;
                     $(this.counter).text(
                         (
-                            selected_count ? (selected_count + ' ' + _.lang('theme_xhred_global_selected')) : String()
+                            selected_count ? (selected_count + ' ' + _.lang('global_selected')) : String()
                         )
                         .toLowerCase()
                     );
@@ -2370,7 +2370,7 @@ const mail = (function() {
                         copy = $copy.is(':checked');
 
                     if ($target.is($copy)) {
-                        $submit.text(copy ? _.lang('theme_xhred_global_copy') : _.lang('theme_xhred_global_move'));
+                        $submit.text(copy ? _.lang('global_copy') : _.lang('global_move'));
                     }
 
                     if ($target.is('button:not(.disabled)')) {
@@ -2564,7 +2564,7 @@ const mail = (function() {
                         id = $row.find('input[value]').val(),
                         state = $(event.target).is($(button.special.starred)) ? 1 : 0,
                         unread = +$row.attr('data-unread'),
-                        text = _.lang('theme_xhred_global_' + (state ? 'unstarred' : 'starred') + '');
+                        text = _.lang('global_' + (state ? 'unstarred' : 'starred') + '');
 
                     $row.attr('data-starred', +!state);
 
@@ -2733,7 +2733,7 @@ const mail = (function() {
 
                 let messages_list_available = messages_list.length > 128 ? 1 : 0;
                 if (!messages_list_available && data.searched) {
-                    _.notification([$$.$.notification.type.search, _.lang('theme_xhred_mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
+                    _.notification([$$.$.notification.type.search, _.lang('mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
                     return
                 }
 
@@ -2749,7 +2749,7 @@ const mail = (function() {
                         },
                         pagination = {
                             link: (data.pagination_arrow_last || data.pagination_arrow_first || String()),
-                            title: (data.pagination_arrow_last ? _.lang('theme_xhred_mail_pagination_last') : (data.pagination_arrow_first ? _.lang('theme_xhred_mail_pagination_first') : false))
+                            title: (data.pagination_arrow_last ? _.lang('mail_pagination_last') : (data.pagination_arrow_first ? _.lang('mail_pagination_first') : false))
                         }
 
                     panel
@@ -2768,7 +2768,7 @@ const mail = (function() {
                             ], 3
                         ], $$.create.checkbox({
                             select: 1
-                        }), String(), _.lang('theme_xhred_global_select')));
+                        }), String(), _.lang('global_select')));
 
                     let $form_controls = $($$.create.$('layout.controls', {
                         'form-controls': 1
@@ -2778,7 +2778,7 @@ const mail = (function() {
                             if (type === 'buttons') {
                                 $form_controls.append($$.create.$('controls.' + v[0], {
                                     'form-control': v[0]
-                                }, 'span', String(), _.lang('theme_xhred_global_' + v[0] + '')));
+                                }, 'span', String(), _.lang('global_' + v[0] + '')));
 
                             } else if (type === 'dropdowns') {
                                 for (let [di, dd] of v.entries()) {
@@ -2792,7 +2792,7 @@ const mail = (function() {
                                         $form_controls.append(
                                             $$.create.dropdown('controls.' + dd + '.dropdown', [
                                                 entries, 2
-                                            ], 0, dd, _.lang('theme_xhred_mail_' + dd + '') || _.lang('theme_xhred_global_' + dd + ''))
+                                            ], 0, dd, _.lang('mail_' + dd + '') || _.lang('global_' + dd + ''))
 
                                         )
                                     }
@@ -2813,7 +2813,7 @@ const mail = (function() {
                                     data.list.sort.subject,
                                     data.list.sort.spam,
                                 ], 5
-                            ], data.list.sorted, 'sort', _.lang('theme_xhred_global_sort')),
+                            ], data.list.sorted, 'sort', _.lang('global_sort')),
                             $$.create.dropdown('controls.search.dropdown', [
                                 [
                                     $$.create.$(0, {
@@ -2821,7 +2821,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'simple'
                                         }, 'span',
                                         (
-                                            $$.create.input('search', _.lang('theme_xhred_mail_search_search_mail'), String(), 'text', {
+                                            $$.create.input('search', _.lang('mail_search_search_mail'), String(), 'text', {
                                                 'search-mail': 1
                                             }) +
                                             $$.create.button('layout.button.transparent.link', {
@@ -2834,7 +2834,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', {}, 'span', $$.create.label('search-from', _.lang('theme_xhred_mail_search_from'))) +
+                                            $$.create.$('layout.column.3', {}, 'span', $$.create.label('search-from', _.lang('mail_search_from'))) +
                                             $$.create.$('layout.column.9', {}, 'span', $$.create.input('search-from'))
                                         )
                                     ),
@@ -2843,7 +2843,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-to', _.lang('theme_xhred_mail_search_to'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-to', _.lang('mail_search_to'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-to'))
                                         )
                                     ),
@@ -2852,7 +2852,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-subject', _.lang('theme_xhred_mail_search_subject'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-subject', _.lang('mail_search_subject'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-subject'))
                                         )
                                     ),
@@ -2861,7 +2861,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsin', _.lang('theme_xhred_mail_search_has_words'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsin', _.lang('mail_search_has_words'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-wordsin'))
                                         )
                                     ),
@@ -2870,7 +2870,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.lang('theme_xhred_mail_search_doesnt_have_words'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.lang('mail_search_doesnt_have_words'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-wordsout'))
                                         )
                                     ),
@@ -2879,12 +2879,12 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-status', _.lang('theme_xhred_mail_search_with_status'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-status', _.lang('mail_search_with_status'))) +
                                             $$.create.$('layout.column.9', 0, 'span',
-                                                $$.create.radio(0, 'status', -1, _.lang('theme_xhred_mail_search_with_status_any'), 'status_def', 'checked') +
-                                                $$.create.radio(0, 'status', 0, _.lang('theme_xhred_mail_search_with_status_unread'), 'status0') +
-                                                $$.create.radio(0, 'status', 1, _.lang('theme_xhred_mail_search_with_status_read'), 'status1') +
-                                                $$.create.radio(0, 'status', 2, _.lang('theme_xhred_mail_search_with_status_special'), 'status2')
+                                                $$.create.radio(0, 'status', -1, _.lang('mail_search_with_status_any'), 'status_def', 'checked') +
+                                                $$.create.radio(0, 'status', 0, _.lang('mail_search_with_status_unread'), 'status0') +
+                                                $$.create.radio(0, 'status', 1, _.lang('mail_search_with_status_read'), 'status1') +
+                                                $$.create.radio(0, 'status', 2, _.lang('mail_search_with_status_special'), 'status2')
                                             )
                                         )
                                     ),
@@ -2894,7 +2894,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'search-in'
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-folder', _.lang('theme_xhred_mail_search_search_in'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-folder', _.lang('mail_search_search_in'))) +
                                             $$.create.$('layout.column.9', 0, 'span', data.form_list.buttons.submit.dropdowns[0][1][0][1])
                                         )
                                     ),
@@ -2904,10 +2904,10 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'limit'
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.lang('theme_xhred_mail_search_limit_results'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.lang('mail_search_limit_results'))) +
                                             $$.create.$('layout.column.9', 0, 'span',
-                                                $$.create.radio(0, 'limit_def', 1, _.lang('theme_xhred_global_no'), 'limit_def0', 'checked') +
-                                                $$.create.radio(0, 'limit_def', 0, _.lang('theme_xhred_mail_search_limit_results_yes') + ' ' + $$.create.input(
+                                                $$.create.radio(0, 'limit_def', 1, _.lang('global_no'), 'limit_def0', 'checked') +
+                                                $$.create.radio(0, 'limit_def', 0, _.lang('mail_search_limit_results_yes') + ' ' + $$.create.input(
                                                     'limit', '', 20, 'number', ['step="20"', 'min="10"']) + ' latest messages', 'limit_def1')
                                             )
                                         )
@@ -2918,7 +2918,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'attach'
                                         }, 'span',
                                         (
-                                            $$.create.checkbox(0, 'attach', 1, _.lang('theme_xhred_mail_search_has_attach'))
+                                            $$.create.checkbox(0, 'attach', 1, _.lang('mail_search_has_attach'))
                                         )
                                     ),
                                     $$.create.$(0, {
@@ -2927,7 +2927,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'submit'
                                         }, 'span',
                                         (
-                                            $$.create.button('layout.button.primary', false, _.lang('theme_xhred_global_search'), 'controls.search.icon')
+                                            $$.create.button('layout.button.primary', false, _.lang('global_search'), 'controls.search.icon')
                                         )
                                     )
                                 ], 5
@@ -2936,15 +2936,15 @@ const mail = (function() {
                                     'controls.search.clear.link', ['href="index.cgi?folder=' + data.searched_folder_index + '"'],
                                     'a',
                                     ($$.create.icon('controls.search.clear.icon') + ' ' + data.searched_message.toLowerCase()),
-                                    _.lang('theme_xhred_mail_search_clear')) : String()
-                            ), 'search', _.lang('theme_xhred_global_search')),
+                                    _.lang('mail_search_clear')) : String()
+                            ), 'search', _.lang('global_search')),
                             $$.create.$('controls.counter', 0, 'span')
                         )
                         .end().last()
                         .append(
                             $$.create.$('controls.refresh.button', {
                                 'refresh': 1
-                            }, 'span', String(), _.lang('theme_xhred_global_refresh')),
+                            }, 'span', String(), _.lang('global_refresh')),
                             $$.create.$('controls.pagination', (pagination.link ? ['href="' + pagination.link + '"', 'data-href="' + pagination.link + '"'] : false), 'a', data.pagination_message, pagination.title),
                             data.pagination_arrow_left,
                             data.pagination_arrow_right
@@ -2974,7 +2974,7 @@ const mail = (function() {
 
                 } else {
                     events();
-                    panel.append(row((data.folder_index === 0 ? _.lang('theme_xhred_mail_no_new_mail') : _.lang('theme_xhred_mail_no_mail')), 'messages.row.empty'))
+                    panel.append(row((data.folder_index === 0 ? _.lang('mail_no_new_mail') : _.lang('mail_no_mail')), 'messages.row.empty'))
                 }
             }
 
@@ -3080,7 +3080,7 @@ const mail = (function() {
                     $(data.selector.navigation).prepend('<li><div ' + $$.$.tree.container + '></div></li>');
                     $(data.selector.navigation).prepend('<li>' + $$.create.$('layout.button.block.transparent', {
                         'compose': 1
-                    }, 'span', $$.create.icon('controls.compose.icon') + " " + _.lang('theme_xhred_mail_new_message')) + '</li>');
+                    }, 'span', $$.create.icon('controls.compose.icon') + " " + _.lang('mail_new_message')) + '</li>');
                 } else {
                     return;
                 }
