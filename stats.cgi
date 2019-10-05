@@ -42,7 +42,7 @@ my $ddata = sub {
     if (ref($cdata->{$k}) ne 'ARRAY') {
         $cdata->{$k} = [];
     }
-    push($cdata->{$k},
+    push(@{ $cdata->{$k} },
          {  t => time(),
             d => $d
          });
@@ -122,7 +122,6 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     &$ddata('disk', $disk);
                 }
             }
-
         }
 
         # Reverse output for LTR users
