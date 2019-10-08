@@ -1168,7 +1168,7 @@ theme_xhred_mail_composer_server_attach_error_dir=Le cartelle non possono essere
 theme_xhred_mail_composer_discarded_draft=La bozza è stata scartata
 theme_xhred_global_undo=Annulla
 
-theme_xhred_global_today=Today
-theme_xhred_global_tomorrow=Tomorrow
-theme_xhred_mail_composer_scheduled=Send %1 at %2
+theme_xhred_global_today=Oggi
+theme_xhred_global_tomorrow=Domani
+theme_xhred_mail_composer_scheduled=Invia %1 all'ora %2
 theme_global_core=Core
