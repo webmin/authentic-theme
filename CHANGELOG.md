@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.40-beta3 (October 09, 2019)
+* Add stats history charts to Dashboard
+* Fix CPU core count start from one for Dashboard
+* Fix reauthenticate screen interaction with other elements, and improve its error handling
+* Fix stack order for popovers
+
 #### Version 19.40-beta2 (September 27, 2019)
 * Add scheduled emails for mail composer
 * Add HTML/plain text toggle for mail composer
