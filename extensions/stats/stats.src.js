@@ -29,7 +29,7 @@ const stats = {
             chart: Chartist,
             moment: moment,
             state: () => {
-                return v___theme_state_visible
+                return settings_sysinfo_real_time_stored || v___theme_state_visible
             },
             enabled: () => {
                 return settings_sysinfo_real_time_status
@@ -37,6 +37,22 @@ const stats = {
             timeout: () => {
                 return settings_sysinfo_real_time_timeout
             },
+        },
+
+        // Define selectors
+        selector: {
+            chart: {
+                container: {
+                    parent: 'live_stats',
+                    data: 'data-chart',
+                },
+                loader: 'data-charts-loader'
+
+            },
+            collapse: 'collapse',
+            dashboard: 'system-status',
+            slider: 'info-container',
+            piechart: 'piechart'
         },
 
         // Get data
@@ -52,9 +68,15 @@ const stats = {
                     return
                 }
 
+                // Live charts already loaded
+                let extra = String();
+                if (document.querySelector(`[${this.selector.chart.loader}]`)) {
+                    extra = '&sdata=1';
+                }
+
                 this.call = $.ajax({
                     context: this,
-                    url: this.extend.prefix + "/stats.cgi?xhr-stats=general",
+                    url: `${this.extend.prefix}/stats.cgi?xhr-stats=general${extra}`,
                     error: function(xhr) {
 
                         // Set error counter
@@ -96,9 +118,11 @@ const stats = {
                 let v = parseInt(data),
                     vo = (typeof data === 'object' ? data[(data.length - 1)] : false),
                     vt = (vo ? vo : v),
-                    $pc = $('#system-status .piechart[data-charts*="' + target + '"]'),
-                    $lc = $('.info-container .' + target + '_percent'),
-                    $od = $('#system-status span[data-id="sysinfo_' + target + '"], .info-container span[data-data="' + target + '"]');
+                    $pc = $(`#${this.selector.dashboard} .${this.selector.piechart}[data-charts*="${target}"]`),
+                    $lc = $(`.${this.selector.slider} .${target}_percent`),
+                    $od = $(`#${this.selector.dashboard} span[data-id="sysinfo_${target}"], 
+                             .${this.selector.slider} span[data-data="${target}"]`),
+                    cached = (target === 'fcached' ? 2 : (target === 'scached' ? 1 : 0));
 
                 if (Number.isInteger(v)) {
 
@@ -129,14 +153,10 @@ const stats = {
                 }
 
                 // Draw history graphs
-                if (target === 'cached') {
-                    let ls = 'live_stats',
-                        lb = 'data-chart',
-                        ll = 'data-loader',
-                        cl = 'collapse',
-                        lds = `${ls}-${cl}`,
+                if (cached) {
+                    let lds = `${this.selector.chart.container.parent}-${this.selector.collapse}`,
                         ldv = $(`#${lds}`).hasClass('in'),
-                        ld = $(`#${lds}`).find(`[${ll}]`);
+                        ld = $(`#${lds}`).find(`[${this.selector.chart.loader}]`);
 
                     // Process each supplied graph
                     Object.entries(data).map(([type, array]) => {
@@ -151,8 +171,8 @@ const stats = {
                                     height: '100px',
                                 }
                             },
-                            lg = this.extend.language(`${ls}_${type}`),
-                            tg = $(`#${lds}`).find(`[${lb}=${type}]`),
+                            lg = this.extend.language(`${this.selector.chart.container.parent}_${type}`),
+                            tg = $(`#${lds}`).find(`[${this.selector.chart.container.data}=${type}]`),
                             sr = [{
                                 name: `series-${type}`,
                                 data: array
@@ -182,13 +202,27 @@ const stats = {
 
                         // Update series if chart already exist
                         if (tg[0] && tg[0].textContent) {
-                            this[`chart_${type}`].update({
-                                series: sr
-                            });
-                            return
+                            if (cached === 1) {
+                                let tdata = sr,
+                                    cdata = this[`chart_${type}`].data.series,
+                                    cdata_ready = new Promise((r) => {
+                                        tdata.forEach(function(d, i, a) {
+                                            cdata[i].data.push(d.data[0]);
+                                            if (i === a.length - 1) {
+                                                r()
+                                            }
+                                        });
+                                    });
+                                cdata_ready.then(() => {
+                                    this[`chart_${type}`].update({
+                                        series: cdata
+                                    });
+                                });
+                            }
                         }
+
                         // Initialize chart the first time
-                        else {
+                        else if (cached === 2) {
                             this[`chart_${type}`] = new this.extend.chart.Line(tg[0], {
                                 series: sr,
                             }, {
@@ -235,12 +269,10 @@ const stats = {
                                     }),
                                 ]
                             });
-                        }
 
-                        // Remove loader when chart is created
-                        this[`chart_${type}`].on('created', function() {
-                            ld.addClass('hidden')
-                        });
+                            // Remove loader
+                            this[`chart_${type}`].on('created', () => ld.remove());
+                        }
                     })
                 }
             })

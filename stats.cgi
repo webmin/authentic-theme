@@ -34,17 +34,31 @@ my $option   = sub {
 };
 
 my %data;
+my $tdata = {};
+my $sdata = $in{'sdata'} ? 1 : 0;
 my $fdata = "$config_directory/$current_theme/stats-$remote_user.json";
 my $cdata = read_file_contents($fdata);
 my $ddata = sub {
     my ($k, $d) = @_;
+    
+    # Save and return data
     if (!$k) {
         if (&$option('stored')) {
-            $data{'cached'} = $cdata;
+
+            # Cache complete dataset
             write_file_contents($fdata, convert_to_json($cdata));
+
+            # Return requested data
+            if ($sdata) {
+                $data{'fcached'} = $cdata;
+            } else {
+                $data{'scached'} = $tdata;
+            }
         }
         return;
     }
+
+    # Store complete dataset
     if (ref($cdata->{$k}) ne 'ARRAY') {
         $cdata->{$k} = [];
     }
@@ -52,6 +66,8 @@ my $ddata = sub {
          {  x => time(),
             y => $d
          });
+
+    # Trim stored dataset based on user option
     my $qf = 1000;
     my $n  = int(&$option('stored_length', 1) * $qf);
     if ($n < $qf / 2 || $n > $qf * 4) {
@@ -60,6 +76,15 @@ my $ddata = sub {
     if ($n < scalar @{ $cdata->{$k} }) {
         splice(@{ $cdata->{$k} }, 0, -$n);
     }
+
+    # Store single dataset
+    if (ref($tdata->{$k}) ne 'ARRAY') {
+        $tdata->{$k} = [];
+    }
+    push(@{ $tdata->{$k} },
+         {  x => time(),
+            y => $d
+         });
 };
 $cdata = convert_from_json($cdata) if ($cdata);
 $cdata ||= {};

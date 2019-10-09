@@ -518,7 +518,7 @@ sub get_extended_sysinfo
             $theme_config{'settings_sysinfo_real_time_stored'} ne 'false')
         {
             my $data =
-              '<div data-loader class="text-muted loading-dots flex-center loader_">' .
+              '<div data-charts-loader class="text-muted loading-dots flex-center loader_">' .
               $theme_text{'theme_xhred_datatable_sloadingrecords'} .
 '</div><span data-chart="cpu"></span><span data-chart="mem"></span><span data-chart="proc"></span><span data-chart="dio"></span>';
             $returned_sysinfo .= print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
@@ -2088,6 +2088,7 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
+        unlink_file("$config_directory/$current_theme/stats-$remote_user.json");
     }
 
     # Clear session specific temporary files
