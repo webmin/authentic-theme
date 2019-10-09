@@ -181,7 +181,7 @@ const stats = {
                         }
 
                         // Update series if chart already exist
-                        if (tg.textContent && tg.textContent.length) {
+                        if (tg[0] && tg[0].textContent) {
                             this[`chart_${type}`].update({
                                 series: sr
                             });
