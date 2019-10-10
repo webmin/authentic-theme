@@ -31,6 +31,9 @@ const stats = {
             state: () => {
                 return settings_sysinfo_real_time_stored || v___theme_state_visible
             },
+            stored_length: () => {
+                return settings_sysinfo_real_time_stored_length
+            },
             enabled: () => {
                 return settings_sysinfo_real_time_status
             },
@@ -203,11 +206,19 @@ const stats = {
                         // Update series if chart already exist
                         if (tg[0] && tg[0].textContent) {
                             if (cached === 1) {
+                                let qf = 1e3,
+                                    lf = parseInt(this.extend.stored_length() * qf);
+                                if (lf < qf / 2 || lf > qf * 24) {
+                                    lf = qf;
+                                }
                                 let tdata = sr,
                                     cdata = this[`chart_${type}`].data.series,
                                     cdata_ready = new Promise((r) => {
                                         tdata.forEach(function(d, i, a) {
                                             cdata[i].data.push(d.data[0]);
+                                            if (cdata[i].data.length > lf) {
+                                                cdata[i].data.shift();
+                                            }
                                             if (i === a.length - 1) {
                                                 r()
                                             }

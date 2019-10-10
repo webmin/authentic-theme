@@ -2861,7 +2861,7 @@ sub theme_settings
                 $range_step = '1';
             } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
                 $range_min  = '0.5';
-                $range_max  = '4';
+                $range_max  = '24';
                 $range_step = '0.5';
                 $iwidth     = '30';
             }

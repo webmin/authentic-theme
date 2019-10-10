@@ -70,7 +70,7 @@ my $ddata = sub {
     # Trim stored dataset based on user option
     my $qf = 1000;
     my $n  = int(&$option('stored_length', 1) * $qf);
-    if ($n < $qf / 2 || $n > $qf * 4) {
+    if ($n < $qf / 2 || $n > $qf * 24) {
         $n = $qf;
     }
     if ($n < scalar @{ $cdata->{$k} }) {

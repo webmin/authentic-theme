@@ -81,6 +81,7 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_sysinfo_real_time_status = true,
     settings_sysinfo_real_time_stored = true,
+    settings_sysinfo_real_time_stored_length = 1,
     settings_sysinfo_real_time_timeout = 1000,
 
     settings_sysinfo_easypie_charts = true,
@@ -124,4 +125,3 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_theme_locale_format_short = "L",
 
     config_portable_theme_locale_languages = null;
-    
