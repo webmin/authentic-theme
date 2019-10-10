@@ -2096,6 +2096,9 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
+
+        # Clear stats history
+        kill_byname("$current_theme/stats.cgi", 9);
         unlink_file("$config_directory/$current_theme/stats-$remote_user.json");
     }
 

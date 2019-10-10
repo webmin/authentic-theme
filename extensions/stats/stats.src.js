@@ -290,11 +290,11 @@ const stats = {
             });
             setTimeout(() => {
                 this.extend.state() && this.query();
-            }, 10);
+            }, 200);
         },
 
         // Stop querying
-        kill: function() {
+        disable: function() {
             let abort = this.call.abort;
 
             typeof abort === "function" && (abort.call(), this.stopped = 0);
