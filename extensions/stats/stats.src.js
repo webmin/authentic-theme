@@ -15,6 +15,7 @@ const stats = {
     general: {
         timeout: 1000,
         stopped: 1,
+        killed: 0,
         error: 0,
         requery: 0,
         call: {},
@@ -62,7 +63,7 @@ const stats = {
         query: function() {
 
             // Repeat right after success
-            this.stopped && (() => {
+            (this.stopped && !this.killed) && (() => {
                 this.stopped = 0;
                 this.call = {};
 
@@ -189,15 +190,15 @@ const stats = {
                         // Extend data object expected way to draw multiple series in single graph
                         if (array[0] && typeof array[0].y === 'object') {
                             sr = [];
-                            array[0].y.forEach(function(element, index) {
+                            array[0].y.forEach(function(x, i) {
                                 let data = [];
-                                array.forEach(function(element2) {
+                                array.forEach(function(n) {
                                     data.push({
-                                        data: { x: element2.x, y: element2.y[index] }
+                                        data: { x: n.x, y: n.y[i] }
                                     })
                                 });
                                 sr.push({
-                                    name: `series-${type}-${index}`,
+                                    name: `series-${type}-${i}`,
                                     data: data
                                 })
                             });
@@ -208,19 +209,19 @@ const stats = {
                             if (cached === 1) {
                                 let qf = 1e3,
                                     lf = parseInt(this.extend.stored_length() * qf);
-                                if (lf < qf / 2 || lf > qf * 24) {
+                                if (lf < qf / 2 || lf > qf * 6) {
                                     lf = qf;
                                 }
                                 let tdata = sr,
                                     cdata = this[`chart_${type}`].data.series,
-                                    cdata_ready = new Promise((r) => {
+                                    cdata_ready = new Promise((resolve) => {
                                         tdata.forEach(function(d, i, a) {
                                             cdata[i].data.push(d.data[0]);
                                             if (cdata[i].data.length > lf) {
                                                 cdata[i].data.shift();
                                             }
                                             if (i === a.length - 1) {
-                                                r()
+                                                resolve()
                                             }
                                         });
                                     });
@@ -286,8 +287,10 @@ const stats = {
                         }
                     })
                 }
-            })
-            this.extend.state() && this.query();
+            });
+            setTimeout(() => {
+                this.extend.state() && this.query();
+            }, 10);
         },
 
         // Stop querying
@@ -296,6 +299,8 @@ const stats = {
 
             typeof abort === "function" && (abort.call(), this.stopped = 0);
 
+            this.killed = 1;
+            
             setTimeout(() => {
                 this.stopped = 1, this.call = {};
             }, this.timeout + 2);
@@ -304,7 +309,7 @@ const stats = {
         // Check to enable stats after stop
         enable: function() {
             if (this.extend.enabled()) {
-                this.timeout = this.extend.timeout(), this.stopped = 1, this.query();
+                this.timeout = this.extend.timeout(), this.stopped = 1, this.killed = 0, this.query();
             }
         }
     }

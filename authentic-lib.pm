@@ -517,11 +517,19 @@ sub get_extended_sysinfo
             $theme_config{'settings_sysinfo_real_time_status'} ne 'false' &&
             $theme_config{'settings_sysinfo_real_time_stored'} ne 'false')
         {
-            my $data =
-              '<div data-charts-loader class="text-muted loading-dots flex-center loader_">' .
-              $theme_text{'theme_xhred_datatable_sloadingrecords'} .
-'</div><span data-chart="cpu"></span><span data-chart="mem"></span><span data-chart="proc"></span><span data-chart="dio"></span>';
-            $returned_sysinfo .= print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
+            my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
+                          <div class="flex-center-inner">
+                            <span class="cspinner"><span class="cspinner-icon light smaller"></span></span>'
+              . $theme_text{'theme_xhred_datatable_sloadingrecords'} . '
+                          </div>
+                        </div>
+                            <span data-chart="cpu"></span>
+                            <span data-chart="mem"></span>
+                            <span data-chart="virt"></span>
+                            <span data-chart="proc"></span>
+                            <span data-chart="dio"></span>';
+            $returned_sysinfo .=
+              print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
         }
         $returned_sysinfo .= '</div><br><br><br><br>';
         return $returned_sysinfo;
@@ -2861,7 +2869,7 @@ sub theme_settings
                 $range_step = '1';
             } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
                 $range_min  = '0.5';
-                $range_max  = '24';
+                $range_max  = '6';
                 $range_step = '0.5';
                 $iwidth     = '30';
             }
