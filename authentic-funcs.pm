@@ -364,4 +364,48 @@ sub format_document_title
     return $title;
 }
 
+sub current_kill_previous
+{
+    my ($keep) = @_;
+    my $pid = current_running(1);
+    if ($pid) {
+        kill(9, $pid);
+    }
+    current_to_pid($keep);
+}
+
+sub current_to_filename
+{
+    my ($filename) = @_;
+    my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $user = $remote_user;
+
+    $filename =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
+    $filename = $1;
+    $filename =~ tr/A-Za-z0-9//cd;
+    $user     =~ tr/A-Za-z0-9//cd;
+    $salt     =~ tr/A-Za-z0-9//cd;
+    return '.theme_' . $salt . '_' . get_product_name() . '_' . $user . '_' . "$filename.pid";
+}
+
+sub current_running
+{
+    my ($clean) = @_;
+    my %pid;
+    my $filename = tempname(current_to_filename($0));
+    read_file($filename, \%pid);
+    $clean && unlink_file($filename);
+    return $pid{'pid'} || 0;
+}
+
+sub current_to_pid
+{
+    my ($keep) = @_;
+    my $script = current_to_filename($0);
+
+    my $tmp_file = ($keep ? tempname($script) : transname($script));
+    my %pid = (pid => $$);
+    write_file($tmp_file, \%pid);
+}
+
 1;
