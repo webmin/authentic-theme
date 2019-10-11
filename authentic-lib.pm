@@ -2456,7 +2456,7 @@ sub theme_settings
             'settings_sysinfo_real_time_stored',
             'true',
             'settings_sysinfo_real_time_stored_length',
-            '1',
+            '0.5',
             'settings_sysinfo_real_time_timeout',
             '1000',
 
