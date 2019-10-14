@@ -1091,3 +1091,4 @@ theme_xhred_live_stats_proc=Processus
 theme_xhred_live_stats_dio=Disque E/S
 theme_xhred_global_hour=Heure
 theme_xhred_global_hours=Heures
+theme_xhred_title_locale_time_format=Time format

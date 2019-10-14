@@ -29,6 +29,9 @@ const stats = {
             language: theme_language,
             chart: Chartist,
             moment: moment,
+            locale: {
+                time: config_portable_theme_locale_format_time,
+            },
             state: () => {
                 return settings_sysinfo_real_time_stored || v___theme_state_visible
             },
@@ -242,7 +245,7 @@ const stats = {
                                     type: this.extend.chart.FixedScaleAxis,
                                     divisor: 12,
                                     labelInterpolationFnc: (value) => {
-                                        return this.extend.moment(value * 1000).format('LTS');
+                                        return this.extend.moment(value * 1000).format(this.extend.locale.time);
                                     }
                                 },
                                 height: options.chart.height,

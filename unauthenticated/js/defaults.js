@@ -123,5 +123,6 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_theme_locale_format_full = "LLLL",
     config_portable_theme_locale_format_long = "LL",
     config_portable_theme_locale_format_short = "L",
+    config_portable_theme_locale_format_time = "LTS",
 
     config_portable_theme_locale_languages = null;

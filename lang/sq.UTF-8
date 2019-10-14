@@ -1193,3 +1193,4 @@ theme_xhred_live_stats_proc=Process
 theme_xhred_live_stats_dio=Disk I/O
 theme_xhred_global_hour=Hour
 theme_xhred_global_hours=Hours
+theme_xhred_title_locale_time_format=Time format
