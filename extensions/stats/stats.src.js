@@ -27,6 +27,7 @@ const stats = {
             error: connection_error,
             prevent: theme_updating,
             language: theme_language,
+            bandwidth: Convert.nice_size,
             chart: Chartist,
             moment: moment,
             locale: {
@@ -172,6 +173,9 @@ const stats = {
                                     type: () => {
                                         return (type === 'proc' || type === 'dio');
                                     },
+                                    bandwidth: () => {
+                                        return type === 'dio';
+                                    },
                                     fill: function() { return this.type() ? false : true },
                                     high: function() { return this.type() ? undefined : 100 },
                                     threshold: function() { return this.type() ? -1 : 50 },
@@ -259,9 +263,14 @@ const stats = {
                                 },
                                 axisY: {
                                     onlyInteger: true,
-                                    labelInterpolationFnc: function(value) {
+                                    labelInterpolationFnc: (value) => {
                                         if (options.chart.fill()) {
                                             return (value ? (value + '%') : value);
+                                        } else if (options.chart.bandwidth(value)) {
+                                            return (value ? this.extend.bandwidth(value * 1000, {
+                                                'fpn': 0,
+                                                'mebi': 1
+                                            }) : value)
                                         } else {
                                             return value
                                         }
@@ -274,9 +283,9 @@ const stats = {
                                             axisClass: "ct-axis-title",
                                             offset: {
                                                 x: 0,
-                                                y: 12
+                                                y: 10
                                             },
-                                            flipTitle: true
+                                            flipTitle: true,
                                         }
                                     }),
                                     this.extend.chart.plugins.ctThreshold({
@@ -303,7 +312,7 @@ const stats = {
             typeof abort === "function" && (abort.call(), this.stopped = 0);
 
             this.killed = 1;
-            
+
             setTimeout(() => {
                 this.stopped = 1, this.call = {};
             }, this.timeout + 2);
