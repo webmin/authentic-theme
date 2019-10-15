@@ -27,7 +27,9 @@ const stats = {
             error: connection_error,
             prevent: theme_updating,
             language: theme_language,
-            bandwidth: Convert.nice_size,
+            convert: {
+                size: Convert.nice_size
+            },
             chart: Chartist,
             moment: moment,
             locale: {
@@ -267,9 +269,8 @@ const stats = {
                                         if (options.chart.fill()) {
                                             return (value ? (value + '%') : value);
                                         } else if (options.chart.bandwidth(value)) {
-                                            return (value ? this.extend.bandwidth(value * 1000, {
-                                                'fpn': 0,
-                                                'mebi': 1
+                                            return (value ? this.extend.convert.size(value * 1000, {
+                                                'fpn': 0
                                             }) : value)
                                         } else {
                                             return value
