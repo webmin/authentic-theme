@@ -1163,9 +1163,7 @@ theme_xhred_mail_composer_notifications_del=Richiedi ricevuta di lettura
 theme_xhred_global_options=Opzioni
 theme_xhred_mail_composer_draft_saving=Salvataggio della bozza...
 theme_xhred_mail_composer_draft_saved=Bozza salvata
-theme_xhred_mail_composer_server_attach_error_read=Il file richiesto non può essere letto o autorizzazione negata>>>>>>> master
-1198
-
+theme_xhred_mail_composer_server_attach_error_read=Il file richiesto non può essere letto o autorizzazione negata
 theme_xhred_mail_composer_server_attach_error_dir=Le cartelle non possono essere allegate
 theme_xhred_mail_composer_discarded_draft=La bozza è stata scartata
 theme_xhred_global_undo=Annulla
