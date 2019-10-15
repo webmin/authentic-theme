@@ -519,7 +519,7 @@ sub get_extended_sysinfo
         {
             my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
                           <div class="flex-center-inner">
-                            <span class="cspinner"><span class="cspinner-icon light smaller"></span></span>'
+                            <span class="cspinner"><span class="cspinner-icon light smaller2"></span></span>'
               . $theme_text{'theme_xhred_datatable_sloadingrecords'} . '
                           </div>
                         </div>
