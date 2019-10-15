@@ -17,9 +17,20 @@ use File::Grep qw( fdo );
 use POSIX;
 use JSON::PP;
 
-our (%access,           %gconfig,          %in,            %text,       @remote_user_info,
-     $base_remote_user, $config_directory, $current_theme, %userconfig, @allowed_paths,
-     $base,             $cwd,              $path,          $remote_user);
+our (%access,
+     %gconfig,
+     %in,
+     %text,
+     @remote_user_info,
+     $base_remote_user,
+     $config_directory,
+     $current_theme,
+     %userconfig,
+     @allowed_paths,
+     $base,
+     $cwd,
+     $path,
+     $remote_user);
 our $checked_path;
 our $module_path;
 
@@ -995,33 +1006,38 @@ sub get_tree
 
 sub local_nice_size
 {
-    # my %text = (load_language($current_theme), %text);
-    my ($units, $uname);
-    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_PB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_TB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_GB'};
-    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
-        $units = 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_MB'};
-    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
-        $units = 1024;
-        $uname = $text{'theme_xhred_nice_size_kB'};
-    } else {
-        $units = 1;
-        $uname = $text{'theme_xhred_nice_size_b'};
+    my ($bytes, $minimal, $decimal) = @_;
+    my ($decimal_units, $binary_units) = (1000, 1024);
+    my $bytes_initial = $bytes;
+    my $unit          = $decimal ? $decimal_units : $binary_units;
+    my $label         = sub {
+        my ($item) = @_;
+        my $text = 'theme_xhred_nice_size_';
+        my $unit = ($unit > $decimal_units ? 'I' : undef);
+        my @labels = ($text{"${text}b"},
+                      $text{"${text}k${unit}B"},
+                      $text{"${text}M${unit}B"},
+                      $text{"${text}G${unit}B"},
+                      $text{"${text}T${unit}B"},
+                      $text{"${text}P${unit}B"});
+        return $labels[$item];
+    };
+
+    my $item = 0;
+    if (abs($bytes) >= $unit) {
+        do {
+            $bytes /= $unit;
+            ++$item;
+        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
     }
-    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
-    $sz =~ s/\.00$//;
-    if ($_[1] == -1) {
-        return $sz . " " . $uname;
+
+    my $factor    = 10**2;
+    my $formatted = int($bytes * $factor) / $factor;
+
+    if ($minimal == -1) {
+        return $formatted . " " . &$label($item);
     }
-    return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
 }
 
 sub nice_number

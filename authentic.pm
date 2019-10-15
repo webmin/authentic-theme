@@ -7,16 +7,36 @@ use strict;
 
 use File::Basename;
 
-our ($get_user_level,                $xnav,                     %theme_config,
-     %theme_text,                    %config,                   %gconfig,
-     %tconfig,                       %text,                     $basic_virtualmin_domain,
-     $basic_virtualmin_menu,         $cb,                       $tb,
-     $title,                         $cloudmin_no_create_links, $cloudmin_no_edit_buttons,
-     $cloudmin_no_global_links,      $current_theme,            $done_theme_post_save_server,
-     $mailbox_no_addressbook_button, $mailbox_no_folder_button, $module_index_link,
-     $module_index_name,             $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode,
-     $page_capture,                  $remote_user,              $root_directory,
-     $session_id,                    $ui_formcount,             $user_module_config_directory);
+our ($get_user_level,
+     $xnav,
+     %theme_config,
+     %theme_text,
+     %config,
+     %gconfig,
+     %tconfig,
+     %text,
+     $basic_virtualmin_domain,
+     $basic_virtualmin_menu,
+     $cb,
+     $tb,
+     $title,
+     $cloudmin_no_create_links,
+     $cloudmin_no_edit_buttons,
+     $cloudmin_no_global_links,
+     $current_theme,
+     $done_theme_post_save_server,
+     $mailbox_no_addressbook_button,
+     $mailbox_no_folder_button,
+     $module_index_link,
+     $module_index_name,
+     $nocreate_virtualmin_menu,
+     $nosingledomain_virtualmin_mode,
+     $page_capture,
+     $remote_user,
+     $root_directory,
+     $session_id,
+     $ui_formcount,
+     $user_module_config_directory);
 
 do(dirname(__FILE__) . "/authentic-init.pm");
 
@@ -24,7 +44,7 @@ sub theme_header
 {
 
     (get_raw() && return);
-    my $tref = ref($_[0]) eq 'ARRAY';
+    my $tref   = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
         (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
@@ -44,7 +64,7 @@ sub theme_header
         print '<td id="headln2l" class="invisible">';
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
-            my $nolo = get_env('anonymous_user') ||
+            my $nolo  = get_env('anonymous_user') ||
               get_env('ssl_user')   ||
               get_env('local_user') ||
               get_env('http_user_agent') =~ /webmin/i;
@@ -218,7 +238,7 @@ sub theme_popup_window_button
 {
     my ($url, $w, $h, $scroll, $fields) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
-    my $icon = "fa-files-o -cs";
+    my $icon     = "fa-files-o -cs";
     if ($url =~ /third_chooser|standard_chooser/) {
         $icon = "fa-world";
     }
@@ -441,8 +461,7 @@ sub theme_ui_links_row
             @$links =
               map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"}
               @$links;
-            return
-              @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
+            return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
               "";
         } else {
             if ($nopuncs == 1) {
@@ -642,7 +661,7 @@ sub theme_ui_select
       ($tags ? " " . $tags : "") . ">\n";
     my ($o, %opt, $s, $v);
     my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
-    my $t = 'x-md-';
+    my $t   = 'x-md-';
     foreach $o (@$opts) {
         $o = [$o] if (!ref($o));
         $v = ($o->[1] || $o->[0]);
@@ -668,7 +687,7 @@ sub theme_ui_radio
     my ($rv, $o);
     my $rand = int rand(1e4);
     foreach $o (@$opts) {
-        my $id = &quote_escape($name . "_" . $o->[0]);
+        my $id    = &quote_escape($name . "_" . $o->[0]);
         my $label = $o->[1] || $o->[0];
         my $after;
         if ($label =~ /^([\000-\377]*?)((<a\s+href|<input|<select|<textarea)[\000-\377]*)$/i) {
@@ -1145,34 +1164,38 @@ sub theme_make_date
 
 sub theme_nice_size
 {
-    my ($units, $uname);
-    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_PB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_TB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_GB'};
-    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
-        $units = 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_MB'};
-    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
-        $units = 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_kB'};
-    } else {
-        $units = 1;
-        $uname = $theme_text{'theme_xhred_nice_size_b'};
-    }
-    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
-    $sz =~ s/\.00$//;
+    my ($bytes, $minimal, $decimal) = @_;
+    my ($decimal_units, $binary_units) = (1000, 1024);
+    my $bytes_initial = $bytes;
+    my $unit          = $decimal ? $decimal_units : $binary_units;
+    my $label         = sub {
+        my ($item) = @_;
+        my $text = 'theme_xhred_nice_size_';
+        my $unit = ($unit > $decimal_units ? 'I' : undef);
+        my @labels = ($theme_text{"${text}b"},
+                      $theme_text{"${text}k${unit}B"},
+                      $theme_text{"${text}M${unit}B"},
+                      $theme_text{"${text}G${unit}B"},
+                      $theme_text{"${text}T${unit}B"},
+                      $theme_text{"${text}P${unit}B"});
+        return $labels[$item];
+    };
 
-    if ($_[1] == -1) {
-        return $sz . " " . $uname;
-    } else {
-        return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
+    my $item = 0;
+    if (abs($bytes) >= $unit) {
+        do {
+            $bytes /= $unit;
+            ++$item;
+        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
     }
+
+    my $factor    = 10**2;
+    my $formatted = int($bytes * $factor) / $factor;
+
+    if ($minimal == -1) {
+        return $formatted . " " . &$label($item);
+    } 
+    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
 }
 
 sub theme_redirect
@@ -1189,7 +1212,7 @@ sub theme_redirect
     my $relredir = $gconfig{'relative_redir'};
     my ($arg1, $arg2) = ($_[0], $_[1]);
     my ($link) = $arg1 || $arg2;
-    my ($url) = $arg2;
+    my ($url)  = $arg2;
     if (!$relredir) {
         ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
     }
