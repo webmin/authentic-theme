@@ -138,7 +138,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     &$ddata('cpu', $cpu);
 
                     # IO blocks
-                    my $io = [$cpuusage[5], $cpuusage[6]];
+                    my $io = [$cpuusage[6], $cpuusage[5]];
                     $data{'io'} = $io;
                     &$ddata('dio', $io);
                 }
