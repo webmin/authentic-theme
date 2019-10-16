@@ -173,10 +173,10 @@ const stats = {
                         let options = {
                                 chart: {
                                     type: () => {
-                                        return (type === 'proc' || type === 'dio');
+                                        return (type === 'proc' || type === 'dio' || type === 'network');
                                     },
                                     bandwidth: () => {
-                                        return type === 'dio';
+                                        return (type === 'dio' || type === 'network');
                                     },
                                     fill: function() { return this.type() ? false : true },
                                     high: function() { return this.type() ? undefined : 100 },
@@ -218,7 +218,7 @@ const stats = {
                             if (cached === 1) {
                                 let qf = 1e3,
                                     lf = parseInt(this.extend.stored_length() * qf);
-                                if (lf < qf / 2 || lf > qf * 6) {
+                                if (lf < qf / 10 || lf > qf * 6) {
                                     lf = qf;
                                 }
                                 let tdata = sr,
@@ -269,8 +269,16 @@ const stats = {
                                         if (options.chart.fill()) {
                                             return (value ? (value + '%') : value);
                                         } else if (options.chart.bandwidth(value)) {
+                                            if (type === 'network') {
+                                                return (value ? this.extend.convert.size(value, {
+                                                    'fixed': 0,
+                                                    'bits': 1,
+                                                    'round': 1,
+                                                }) : value)
+                                            }
                                             return (value ? this.extend.convert.size(value * 1000, {
-                                                'fpn': 0
+                                                'fixed': 0,
+                                                'round': 1,
                                             }) : value)
                                         } else {
                                             return value
@@ -284,7 +292,7 @@ const stats = {
                                             axisClass: "ct-axis-title",
                                             offset: {
                                                 x: 0,
-                                                y: 10
+                                                y: 9
                                             },
                                             flipTitle: true,
                                         }

@@ -5,9 +5,17 @@
 #
 use strict;
 
-our (%in,          %module_text_full, %theme_text,        %theme_config,
-     %gconfig,     %tconfig,          $current_lang_info, $root_directory,
-     $remote_user, $get_user_level,   $webmin_script_type);
+our (%in,
+     %module_text_full,
+     %theme_text,
+     %theme_config,
+     %gconfig,
+     %tconfig,
+     $current_lang_info,
+     $root_directory,
+     $remote_user,
+     $get_user_level,
+     $webmin_script_type);
 
 sub settings
 {
@@ -406,6 +414,55 @@ sub current_to_pid
     my $tmp_file = ($keep ? tempname($script) : transname($script));
     my %pid = (pid => $$);
     write_file($tmp_file, \%pid);
+}
+
+sub network_stats
+{
+    # Get network data from all interfaces
+    my ($type) = @_;
+    my $file = "/proc/net/dev";
+    return () unless -r $file;
+    open(my $dev, $file);
+    my (@titles, %result);
+    while (my $line = <$dev>) {
+        chomp($line);
+        if ($line =~ /^.{6}\|([^\\]+)\|([^\\]+)$/) {
+            my ($rec, $trans) = ($1, $2);
+            @titles = ((map {"r$_"} split(/\s+/, $rec)), (map {"t$_"} split(/\s+/, $trans)));
+        } elsif ($line =~ /^\s*([^:]+):\s*(.*)$/) {
+            my ($id, @data) = ($1, split(/\s+/, $2));
+            $result{$id} = { map {$titles[$_] => $data[$_];} (0 .. $#titles) };
+        }
+    }
+    close($dev);
+
+    # Return current network I/O
+    if ($type eq 'io') {
+        my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
+        my $results = \%result;
+        my $results2;
+
+        # Parse current data
+        foreach (%$results) {
+            $rbytes += $results->{$_}->{'rbytes'};
+            $tbytes += $results->{$_}->{'tbytes'};
+        }
+
+        # Wait for one second and fetch data over again
+        sleep 1, $results2 = network_stats();
+
+        # Parse data after dalay
+        foreach (%$results2) {
+            $rbytes2 += $results2->{$_}->{'rbytes'};
+            $tbytes2 += $results2->{$_}->{'tbytes'};
+        }
+
+        # Return current network I/O
+        $rbytes = int($rbytes2 - $rbytes);
+        $tbytes = int($tbytes2 - $tbytes);
+        return ($rbytes, $tbytes);
+    }
+    return \%result;
 }
 
 1;

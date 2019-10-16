@@ -100,7 +100,7 @@ my $ddata = sub {
     # Trim stored dataset based on user option
     my $qf = 1000;
     my $n  = int(&$option('stored_length', 1) * $qf);
-    if ($n < $qf / 2 || $n > $qf * 6) {
+    if ($n < $qf / 10 || $n > $qf * 6) {
         $n = $qf;
     }
     if ($n < scalar @{ $cdata->{$k} }) {
@@ -137,8 +137,8 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     $data{'cpu'} = [$cpu, text('body_load', ($cpuinfo[0], $cpuinfo[1], $cpuinfo[2]))];
                     &$ddata('cpu', $cpu);
 
-                    # IO blocks
-                    my $io = [$cpuusage[6], $cpuusage[5]];
+                    # Disk I/O
+                    my $io = [$cpuusage[5], $cpuusage[6]];
                     $data{'io'} = $io;
                     &$ddata('dio', $io);
                 }
@@ -194,12 +194,23 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     if (@disk_space && $disk_space[0] && $disk_space[0] > 0) {
                         my $disk = int(($disk_space[0] - $disk_space[1]) / $disk_space[0] * 100);
                         $data{'disk'} = [$disk,
-                                         text('body_used_and_free',      nice_size($disk_space[0]),
-                                              nice_size($disk_space[1]), nice_size($disk_space[0] - $disk_space[1])
+                                         text('body_used_and_free',
+                                              nice_size($disk_space[0]),
+                                              nice_size($disk_space[1]),
+                                              nice_size($disk_space[0] - $disk_space[1])
                                          )];
                     }
                 }
             }
+        }
+
+        # Network I/O
+        my @network = network_stats('io');
+        if (@network) {
+            my $in  = $network[0];
+            my $out = $network[1];
+            $data{'network'} = [$in, $out];
+            &$ddata('network', [$in, $out]);
         }
 
         # Reverse output for LTR users

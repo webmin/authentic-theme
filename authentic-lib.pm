@@ -527,7 +527,8 @@ sub get_extended_sysinfo
                             <span data-chart="mem"></span>
                             <span data-chart="virt"></span>
                             <span data-chart="proc"></span>
-                            <span data-chart="dio"></span>';
+                            <span data-chart="dio"></span>
+                            <span data-chart="network"></span>';
             $returned_sysinfo .=
               print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
         }
@@ -2456,7 +2457,7 @@ sub theme_settings
             'settings_sysinfo_real_time_stored',
             'true',
             'settings_sysinfo_real_time_stored_length',
-            '0.5',
+            '0.1',
             'settings_sysinfo_real_time_timeout',
             '1000',
 
@@ -2871,9 +2872,9 @@ sub theme_settings
                 $range_max  = '520';
                 $range_step = '1';
             } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
-                $range_min  = '0.5';
+                $range_min  = '0.1';
                 $range_max  = '6';
-                $range_step = '0.5';
+                $range_step = '0.1';
                 $iwidth     = '30';
             }
             $v = '
