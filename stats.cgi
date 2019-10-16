@@ -11,6 +11,9 @@ no warnings 'uninitialized';
 use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 
+use Async;
+use Time::HiRes qw (usleep);
+
 BEGIN {push(@INC, "..");}
 use WebminCore;
 
@@ -20,10 +23,11 @@ do(dirname(__FILE__) . "/authentic-funcs.pm");
 init_config();
 ReadParse();
 
+# Load theme language and settings
 our %text = load_language($current_theme);
-
 my %settings = settings($config_directory . "/$current_theme/settings.js", 'settings_');
-my $option   = sub {
+
+my $option = sub {
     if ($_[1]) {
         return $settings{"settings_sysinfo_real_time_$_[0]"};
     }
@@ -123,6 +127,9 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
     my $target = $in{'xhr-stats'};
     if ($target eq 'general') {
 
+        # Run in async to reduce script execution time
+        my $network = Async->new(sub {network_stats('io')});
+
         if (foreign_check("proc")) {
             foreign_require("proc");
 
@@ -205,12 +212,21 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
         }
 
         # Network I/O
-        my @network = network_stats('io');
-        if (@network) {
-            my $in  = $network[0];
-            my $out = $network[1];
-            $data{'network'} = [$in, $out];
-            &$ddata('network', [$in, $out]);
+        if ($network) {
+            for (;;) {
+                if ($network->ready) {
+                    if (!$network->error) {
+                        my $nrs = unserialise_variable($network->result);
+                        my $in  = @{$nrs}[0];
+                        my $out = @{$nrs}[1];
+
+                        $data{'network'} = [$in, $out];
+                        &$ddata('network', [$in, $out]);
+                    }
+                    last;
+                }
+                usleep 1e5;
+            }
         }
 
         # Reverse output for LTR users

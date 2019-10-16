@@ -439,8 +439,8 @@ sub network_stats
     # Return current network I/O
     if ($type eq 'io') {
         my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
+        my @rs;
         my $results = \%result;
-        my $results2;
 
         # Parse current data
         foreach (%$results) {
@@ -449,18 +449,20 @@ sub network_stats
         }
 
         # Wait for one second and fetch data over again
-        sleep 1, $results2 = network_stats();
+        sleep 1, $results = network_stats();
 
         # Parse data after dalay
-        foreach (%$results2) {
-            $rbytes2 += $results2->{$_}->{'rbytes'};
-            $tbytes2 += $results2->{$_}->{'tbytes'};
+        foreach (%$results) {
+            $rbytes2 += $results->{$_}->{'rbytes'};
+            $tbytes2 += $results->{$_}->{'tbytes'};
         }
 
         # Return current network I/O
         $rbytes = int($rbytes2 - $rbytes);
         $tbytes = int($tbytes2 - $tbytes);
-        return ($rbytes, $tbytes);
+
+        @rs = ($rbytes, $tbytes);
+        return serialise_variable(\@rs);
     }
     return \%result;
 }
