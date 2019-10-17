@@ -467,4 +467,16 @@ sub network_stats
     return \%result;
 }
 
+sub acl_system_status
+{
+    my ($show) = @_;
+    my %access = get_module_acl($remote_user, 'system-status');
+    $access{'show'} ||= "";
+    if ($access{'show'} eq '*') {
+        return 1;
+    } else {
+        return indexof($show, split(/\s+/, $access{'show'})) >= 0;
+    }
+}
+
 1;

@@ -352,8 +352,10 @@ sub get_sysinfo_warning
             if ($info->{'type'} eq 'warning') {
                 $returned_data .= replace("ui_submit ui_form_end_submit",
                                           "btn-tiny ui_submit ui_form_end_submit",
-                                          &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn',
-                                                        undef, 1,
+                                          &ui_alert_box($info->{'warning'},
+                                                        $info->{'level'} || 'warn',
+                                                        undef,
+                                                        1,
                                                         $info->{'desc'} || undef
                                           ));
             }
@@ -515,7 +517,8 @@ sub get_extended_sysinfo
         }
         if ($get_user_level eq '0' &&
             $theme_config{'settings_sysinfo_real_time_status'} ne 'false' &&
-            $theme_config{'settings_sysinfo_real_time_stored'} ne 'false')
+            $theme_config{'settings_sysinfo_real_time_stored'} ne 'false' &&
+            (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {
             my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
                           <div class="flex-center-inner">
@@ -960,7 +963,10 @@ sub print_left_menu
                            )
                         ),
                         ($item->{'name'} eq 'dname' ? @dname : $item->{'menu'}),
-                        1, 0, 0, 0,
+                        1,
+                        0,
+                        0,
+                        0,
                         "data-autocomplete-title=\"
                             "
                           . (
@@ -1162,13 +1168,32 @@ sub get_sysinfo_vars
     @info = grep {$_->{'id'} eq 'sysinfo'} @info;
 
     # Define used vars
-    my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-        $host,               $os,                      $webmin_version,  $virtualmin_version,
-        $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-        $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-        $running_proc,       $load,                    $real_memory,     $virtual_memory,
-        $disk_space,         $package_message,         $csf_title,       $csf_data,
-        $csf_remote_version, $authentic_remote_version);
+    my ($cpu_percent,
+        $mem_percent,
+        $virt_percent,
+        $disk_percent,
+        $host,
+        $os,
+        $webmin_version,
+        $virtualmin_version,
+        $cloudmin_version,
+        $authentic_theme_version,
+        $local_time,
+        $kernel_arch,
+        $cpu_type,
+        $cpu_temperature,
+        $hdd_temperature,
+        $uptime,
+        $running_proc,
+        $load,
+        $real_memory,
+        $virtual_memory,
+        $disk_space,
+        $package_message,
+        $csf_title,
+        $csf_data,
+        $csf_remote_version,
+        $authentic_remote_version);
 
     if (@info) {
         $info_arr = @info[0]->{'raw'};
@@ -1388,8 +1413,10 @@ sub get_sysinfo_vars
         # Kernel and arch
         if ($info->{'kernel'}) {
             $kernel_arch =
-              &theme_text('body_kernelon',                $info->{'kernel'}->{'os'},
-                          $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'});
+              &theme_text('body_kernelon',
+                          $info->{'kernel'}->{'os'},
+                          $info->{'kernel'}->{'version'},
+                          $info->{'kernel'}->{'arch'});
         }
 
         # CPU Type and cores
@@ -1542,7 +1569,8 @@ sub get_sysinfo_vars
                                       $secs eq 1 ? 'body_upsec1' : $poss eq 1 &&
                                       $secs gt 1 ? 'body_upsec2' : 'body_upsec3'
                                    ),
-                                   $poss, $secs);
+                                   $poss,
+                                   $secs);
             } elsif ($poss) {
                 $msg = &theme_text(($poss gt 1 ? 'body_upneed' : 'body_upneed1'), $poss);
             } else {
@@ -1556,13 +1584,32 @@ sub get_sysinfo_vars
         }
     }
 
-    return ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-            $host,               $os,                      $webmin_version,  $virtualmin_version,
-            $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-            $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-            $running_proc,       $load,                    $real_memory,     $virtual_memory,
-            $disk_space,         $package_message,         $csf_title,       $csf_data,
-            $csf_remote_version, $authentic_remote_version);
+    return ($cpu_percent,
+            $mem_percent,
+            $virt_percent,
+            $disk_percent,
+            $host,
+            $os,
+            $webmin_version,
+            $virtualmin_version,
+            $cloudmin_version,
+            $authentic_theme_version,
+            $local_time,
+            $kernel_arch,
+            $cpu_type,
+            $cpu_temperature,
+            $hdd_temperature,
+            $uptime,
+            $running_proc,
+            $load,
+            $real_memory,
+            $virtual_memory,
+            $disk_space,
+            $package_message,
+            $csf_title,
+            $csf_data,
+            $csf_remote_version,
+            $authentic_remote_version);
 
 }
 
@@ -1904,9 +1951,12 @@ sub theme_update_incompatible
     {
         @notice = {
                     "incompatible" => (
-                           theme_text('theme_git_patch_incompatible_message', $theme_text{'theme_name'},
-                                      $authentic_remote_version,              $theme_text{'theme_xhred_titles_wm'},
-                                      $webmin_compatible_version,             $theme_text{'theme_xhred_titles_um'},
+                           theme_text('theme_git_patch_incompatible_message',
+                                      $theme_text{'theme_name'},
+                                      $authentic_remote_version,
+                                      $theme_text{'theme_xhred_titles_wm'},
+                                      $webmin_compatible_version,
+                                      $theme_text{'theme_xhred_titles_um'},
                                       $usermin_compatible_version
                              ) .
                              " "
@@ -1924,13 +1974,16 @@ sub theme_update_incompatible
     {
         @notice = {
                     "incompatible" => (
-                                       theme_text('theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
-                                                  $authentic_remote_version, $theme_text{'theme_xhred_titles_wm'},
+                                       theme_text('theme_git_patch_incompatible_message_s',
+                                                  $theme_text{'theme_name'},
+                                                  $authentic_remote_version,
+                                                  $theme_text{'theme_xhred_titles_wm'},
                                                   $webmin_compatible_version
                                          ) .
                                          " "
                                          .
-                                         theme_text('theme_git_patch_incompatible_message_desc', $force_button,
+                                         theme_text('theme_git_patch_incompatible_message_desc',
+                                                    $force_button,
                                                     $theme_text{'theme_xhred_titles_wm'}
                                          )
                     ) };
@@ -1944,13 +1997,16 @@ sub theme_update_incompatible
     {
         @notice = {
                     "incompatible" => (
-                                       theme_text('theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
-                                                  $authentic_remote_version, $theme_text{'theme_xhred_titles_um'},
+                                       theme_text('theme_git_patch_incompatible_message_s',
+                                                  $theme_text{'theme_name'},
+                                                  $authentic_remote_version,
+                                                  $theme_text{'theme_xhred_titles_um'},
                                                   $usermin_compatible_version
                                          ) .
                                          " "
                                          .
-                                         theme_text('theme_git_patch_incompatible_message_desc', $force_button,
+                                         theme_text('theme_git_patch_incompatible_message_desc',
+                                                    $force_button,
                                                     $theme_text{'theme_xhred_titles_um'}
                                          )
                     ) };
@@ -2379,7 +2435,8 @@ sub settings_get_select_default_module
 {
     my ($name, $value) = @_;
     my @modules = get_available_module_infos();
-    my $select = ui_select($name, $value,
+    my $select = ui_select($name,
+                           $value,
                            [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
                               sort {$a->{'desc'} cmp $b->{'desc'}} @modules
                            ]);
@@ -2578,8 +2635,9 @@ sub theme_settings
             'settings_hotkey_slider',
             'e',
             'settings_hotkey_toggle_key_night_mode',
-            'l', '__',
-            theme_settings('fa', 'sub-title', '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
+            'l',
+            '__',
+            theme_settings('fa', 'sub-title',  '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
             'settings_hotkey_custom_1',
             '',
             'settings_hotkey_custom_2',
@@ -2639,8 +2697,10 @@ sub theme_settings
         }
 
         # Exclude list of settings for Virtualmin
-        my @s_vm_e = ('settings_right_virtualmin_default',     'settings_show_webmin_tab',
-                      'settings_hotkey_toggle_key_virtualmin', 'settings_sysinfo_max_servers');
+        my @s_vm_e = ('settings_right_virtualmin_default',
+                      'settings_show_webmin_tab',
+                      'settings_hotkey_toggle_key_virtualmin',
+                      'settings_sysinfo_max_servers');
 
         if (!foreign_available("virtual-server")) {
             foreach my $e (@s_vm_e) {
@@ -2977,7 +3037,8 @@ sub theme_settings
                 </select>';
         } elsif ($k eq 'settings_right_virtualmin_default') {
             if (foreign_available('virtual-server')) {
-                $v = &ui_select($k, $v,
+                $v = &ui_select($k,
+                                $v,
                                 [[undef,       undef],
                                  ['index.cgi', $theme_text{'theme_config_virtualmin'}],
                                  map {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
@@ -2988,7 +3049,8 @@ sub theme_settings
         } elsif ($k eq 'settings_right_cloudmin_default') {
             if (&foreign_available('server-manager')) {
                 my @servers = &server_manager::list_available_managed_servers_sorted();
-                $v = &ui_select($k, $v,
+                $v = &ui_select($k,
+                                $v,
                                 [[undef,       undef],
                                  ['index.cgi', $theme_text{'theme_config_cloudmin'}],
                                  map {[$_->{'id'}, $_->{'host'}]} @servers,
@@ -3350,13 +3412,32 @@ sub get_xhr_request
             }
         } elsif ($in{'xhr-info'} eq '1') {
             my @info = theme_list_combined_system_info();
-            our ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-                 $host,               $os,                      $webmin_version,  $virtualmin_version,
-                 $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-                 $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-                 $running_proc,       $load,                    $real_memory,     $virtual_memory,
-                 $disk_space,         $package_message,         $csf_title,       $csf_data,
-                 $csf_remote_version, $authentic_remote_version
+            our ($cpu_percent,
+                 $mem_percent,
+                 $virt_percent,
+                 $disk_percent,
+                 $host,
+                 $os,
+                 $webmin_version,
+                 $virtualmin_version,
+                 $cloudmin_version,
+                 $authentic_theme_version,
+                 $local_time,
+                 $kernel_arch,
+                 $cpu_type,
+                 $cpu_temperature,
+                 $hdd_temperature,
+                 $uptime,
+                 $running_proc,
+                 $load,
+                 $real_memory,
+                 $virtual_memory,
+                 $disk_space,
+                 $package_message,
+                 $csf_title,
+                 $csf_data,
+                 $csf_remote_version,
+                 $authentic_remote_version
             ) = get_sysinfo_vars(\@info);
 
             # Build update info
