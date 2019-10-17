@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.40-beta4 (October 18, 2019)
+* Add network I/O stats history charts to Dashboard
+* Fix other issues and perform other optimizations
+
 #### Version 19.40-beta3 (October 09, 2019)
 * Add stats history charts to Dashboard
 * Fix CPU core count start from one for Dashboard
