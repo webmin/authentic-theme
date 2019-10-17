@@ -527,8 +527,8 @@ sub get_extended_sysinfo
                             <span data-chart="mem"></span>
                             <span data-chart="virt"></span>
                             <span data-chart="proc"></span>
-                            <span data-chart="dio"></span>
-                            <span data-chart="network"></span>';
+                            <span data-chart="disk"></span>
+                            <span data-chart="net"></span>';
             $returned_sysinfo .=
               print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
         }

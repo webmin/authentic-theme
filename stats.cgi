@@ -54,13 +54,14 @@ my $fdata = "$config_directory/$current_theme/stats-$remote_user.json";
 my $cdata = read_file_contents($fdata);
 my $ddata = sub {
     my ($k, $d) = @_;
+    my $time = time();
 
     # Save and return data
     if (!$k) {
         if (&$option('stored')) {
 
             # Clear existing cache if available features was disabled
-            my %map = (cpu  => ['cpu', 'dio'],
+            my %map = (cpu  => ['cpu', 'disk'],
                        mem  => ['mem', 'virt'],
                        load => 'proc');
 
@@ -97,19 +98,52 @@ my $ddata = sub {
         $cdata->{$k} = [];
     }
     push(@{ $cdata->{$k} },
-         {  x => time(),
+         {  x => $time,
             y => $d
          });
 
-    # Trim stored dataset based on user option
-    my $qf = 1000;
-    my $n  = int(&$option('stored_length', 1) * $qf);
+    # Store only values that correspond with user option
+    my $qf = 3600;
+    my $fr = $qf / 30;
+    my $tf = 0.1;
+    my $rn = 0;
+    my $sl = &$option('stored_length', 1) || $tf;
+
+    # Treat rounded values in UI accordingly
+    if ($sl < 1 && $sl != $tf * 5) {
+        if ($sl eq ($tf * 2)) {
+            $sl = $tf;
+        } elsif ($sl eq ($tf * 3)) {
+            $sl = $tf * 4;
+        } elsif ($sl eq ($tf * 7)) {
+            $sl = $tf * 6;
+        } elsif ($sl eq ($tf * 9)) {
+            $sl = $tf * 8;
+        }
+        if ($sl eq $tf || $sl eq $tf * 6) {
+            $rn = 2 * $fr;
+        } elsif ($sl eq $tf * 4) {
+            $rn = -2 * $fr;
+        } elsif ($sl eq $tf * 8) {
+            $rn = $fr;
+        }
+    }
+
+    # User option sanity check
+    my $n = int($sl * $qf) + $rn;
     if ($n < $qf / 10 || $n > $qf * 6) {
         $n = $qf;
     }
-    if ($n < scalar @{ $cdata->{$k} }) {
-        splice(@{ $cdata->{$k} }, 0, -$n);
+
+    # Trim dataset
+    for my $i (0 .. @{ $cdata->{$k} }) {
+        if (defined(@{ $cdata->{$k} }[$i])) {
+            if (($time - @{ $cdata->{$k} }[$i]->{'x'}) > $n) {
+                delete @{ $cdata->{$k} }[$i];
+            }
+        }
     }
+    @{ $cdata->{$k} } = grep {$_ ne undef} @{ $cdata->{$k} };
 
     # Store single dataset
     if (ref($tdata->{$k}) ne 'ARRAY') {
@@ -147,7 +181,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     # Disk I/O
                     my $io = [$cpuusage[5], $cpuusage[6]];
                     $data{'io'} = $io;
-                    &$ddata('dio', $io);
+                    &$ddata('disk', $io);
                 }
             }
 
@@ -220,8 +254,8 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                         my $in  = @{$nrs}[0];
                         my $out = @{$nrs}[1];
 
-                        $data{'network'} = [$in, $out];
-                        &$ddata('network', [$in, $out]);
+                        $data{'net'} = [$in, $out];
+                        &$ddata('net', [$in, $out]);
                     }
                     last;
                 }

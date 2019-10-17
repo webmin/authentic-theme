@@ -173,10 +173,10 @@ const stats = {
                         let options = {
                                 chart: {
                                     type: () => {
-                                        return (type === 'proc' || type === 'dio' || type === 'network');
+                                        return (type === 'proc' || type === 'disk' || type === 'net');
                                     },
                                     bandwidth: () => {
-                                        return (type === 'dio' || type === 'network');
+                                        return (type === 'disk' || type === 'net');
                                     },
                                     fill: function() { return this.type() ? false : true },
                                     high: function() { return this.type() ? undefined : 100 },
@@ -269,7 +269,7 @@ const stats = {
                                         if (options.chart.fill()) {
                                             return (value ? (value + '%') : value);
                                         } else if (options.chart.bandwidth(value)) {
-                                            if (type === 'network') {
+                                            if (type === 'net') {
                                                 return (value ? this.extend.convert.size(value, {
                                                     'fixed': 0,
                                                     'bits': 1,
