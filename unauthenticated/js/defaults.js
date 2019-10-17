@@ -80,6 +80,8 @@ var settings_mailbox_slash_delimiter = true,
     settings_navigation_always_collapse = false,
 
     settings_sysinfo_real_time_status = true,
+    settings_sysinfo_real_time_stored = true,
+    settings_sysinfo_real_time_stored_length = 0.1,
     settings_sysinfo_real_time_timeout = 1000,
 
     settings_sysinfo_easypie_charts = true,
@@ -121,6 +123,6 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_theme_locale_format_full = "LLLL",
     config_portable_theme_locale_format_long = "LL",
     config_portable_theme_locale_format_short = "L",
+    config_portable_theme_locale_format_time = "LTS",
 
     config_portable_theme_locale_languages = null;
-    

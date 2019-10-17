@@ -513,6 +513,25 @@ sub get_extended_sysinfo
                 }
             }
         }
+        if ($get_user_level eq '0' &&
+            $theme_config{'settings_sysinfo_real_time_status'} ne 'false' &&
+            $theme_config{'settings_sysinfo_real_time_stored'} ne 'false')
+        {
+            my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
+                          <div class="flex-center-inner">
+                            <span class="cspinner"><span class="cspinner-icon light smaller2"></span></span>'
+              . $theme_text{'theme_xhred_datatable_sloadingrecords'} . '
+                          </div>
+                        </div>
+                            <span data-chart="cpu"></span>
+                            <span data-chart="mem"></span>
+                            <span data-chart="virt"></span>
+                            <span data-chart="proc"></span>
+                            <span data-chart="disk"></span>
+                            <span data-chart="net"></span>';
+            $returned_sysinfo .=
+              print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
+        }
         $returned_sysinfo .= '</div><br><br><br><br>';
         return $returned_sysinfo;
     }
@@ -1389,8 +1408,8 @@ sub get_sysinfo_vars
         if ($info->{'cputemps'}) {
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
-                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core ' .
-                  $t->{'core'} . ': '
+                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> ' .
+                  $theme_text{'theme_global_core'} . ' ' . (int($t->{'core'}) + 1) . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
@@ -1660,21 +1679,32 @@ sub print_favorites
 
 sub print_panels_group_start
 {
-    my ($id) = @_;
-    print '<div class="panel-group" id="' . $id . '" role="tablist" aria-multiselectable="true">';
+    my ($id, $get) = @_;
+    my $str = '<div class="panel-group" id="' . $id . '" role="tablist" aria-multiselectable="true">';
+    if ($get) {
+        return $str;
+    }
+    print $str;
 }
 
 sub print_panels_group_end
 {
-    print '</div>';
+    my ($get) = @_;
+    my $str = '</div>';
+    if ($get) {
+        return $str;
+    }
+    print $str;
 }
 
 sub print_panel
 {
-    my ($opened, $id, $title, $data) = @_;
-
-    print '
-              <div class="panel panel-default">
+    my ($opened, $id, $title, $data, $get, $sorter) = @_;
+    if ($sorter) {
+        $sorter = ' data-sorter="' . $sorter . '" ';
+    }
+    my $str = '
+              <div' . $sorter . 'class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
@@ -1691,7 +1721,10 @@ sub print_panel
       . $id . '-collapse" class="panel-collapse collapse' .
       ($opened ? ' in' : '') . '" role="tabpanel" aria-labelledby="' . $id . '">
                 <div class="panel-body">' . $data . '</div></div></div>';
-
+    if ($get) {
+        return $str;
+    }
+    print $str;
 }
 
 sub parse_license_date
@@ -2064,6 +2097,10 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
+
+        # Clear stats history
+        kill_byname("$current_theme/stats.cgi", 9);
+        unlink_file("$config_directory/$current_theme/stats-$remote_user.json");
     }
 
     # Clear session specific temporary files
@@ -2417,6 +2454,10 @@ sub theme_settings
             'true',
             'settings_sysinfo_real_time_status_disk',
             'true',
+            'settings_sysinfo_real_time_stored',
+            'true',
+            'settings_sysinfo_real_time_stored_length',
+            '0.1',
             'settings_sysinfo_real_time_timeout',
             '1000',
 
@@ -2797,11 +2838,13 @@ sub theme_settings
                  $k eq 'settings_invert_level_navigation'     ||
                  $k eq 'settings_brightness_level_navigation' ||
                  $k eq 'settings_contrast_level_navigation'   ||
-                 $k eq 'settings_leftmenu_width')
+                 $k eq 'settings_leftmenu_width'              ||
+                 $k eq 'settings_sysinfo_real_time_stored_length')
         {
 
             my $range_max = '1';
             my $range_min = '0';
+            my $iwidth    = '80';
             my $range_step;
 
             if ($k eq 'settings_grayscale_level_navigation' ||
@@ -2828,10 +2871,16 @@ sub theme_settings
                 $range_min  = '260';
                 $range_max  = '520';
                 $range_step = '1';
+            } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
+                $range_min  = '0.1';
+                $range_max  = '6';
+                $range_step = '0.1';
+                $iwidth     = '30';
             }
             $v = '
-                <input style="display: inline; width: 80%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="'
-              . $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
+                <input style="display: inline; width: ' .
+              $iwidth . '%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="' .
+              $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
             ';
 
         } elsif ($k eq 'settings_leftmenu_custom_links') {

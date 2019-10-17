@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 19.40-beta3 (October 09, 2019)
+* Add stats history charts to Dashboard
+* Fix CPU core count start from one for Dashboard
+* Fix reauthenticate screen interaction with other elements, and improve its error handling
+* Fix stack order for popovers
+
+#### Version 19.40-beta2 (September 27, 2019)
+* Add scheduled emails for mail composer
+* Add HTML/plain text toggle for mail composer
+* Fix to save drafts properly in mail composer
+
 #### Version 19.40-beta1 (September 11, 2019)
 * Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
 * Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)

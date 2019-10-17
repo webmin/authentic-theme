@@ -5,9 +5,17 @@
 #
 use strict;
 
-our (%in,          %module_text_full, %theme_text,        %theme_config,
-     %gconfig,     %tconfig,          $current_lang_info, $root_directory,
-     $remote_user, $get_user_level,   $webmin_script_type);
+our (%in,
+     %module_text_full,
+     %theme_text,
+     %theme_config,
+     %gconfig,
+     %tconfig,
+     $current_lang_info,
+     $root_directory,
+     $remote_user,
+     $get_user_level,
+     $webmin_script_type);
 
 sub settings
 {
@@ -362,6 +370,101 @@ sub format_document_title
     my $title = ($os_type ? "$product $os_type" : $product);
     $title =~ s/\R//g;
     return $title;
+}
+
+sub current_kill_previous
+{
+    my ($keep) = @_;
+    my $pid = current_running(1);
+    if ($pid) {
+        kill(9, $pid);
+    }
+    current_to_pid($keep);
+}
+
+sub current_to_filename
+{
+    my ($filename) = @_;
+    my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $user = $remote_user;
+
+    $filename =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
+    $filename = $1;
+    $filename =~ tr/A-Za-z0-9//cd;
+    $user     =~ tr/A-Za-z0-9//cd;
+    $salt     =~ tr/A-Za-z0-9//cd;
+    return '.theme_' . $salt . '_' . get_product_name() . '_' . $user . '_' . "$filename.pid";
+}
+
+sub current_running
+{
+    my ($clean) = @_;
+    my %pid;
+    my $filename = tempname(current_to_filename($0));
+    read_file($filename, \%pid);
+    $clean && unlink_file($filename);
+    return $pid{'pid'} || 0;
+}
+
+sub current_to_pid
+{
+    my ($keep) = @_;
+    my $script = current_to_filename($0);
+
+    my $tmp_file = ($keep ? tempname($script) : transname($script));
+    my %pid = (pid => $$);
+    write_file($tmp_file, \%pid);
+}
+
+sub network_stats
+{
+    # Get network data from all interfaces
+    my ($type) = @_;
+    my $file = "/proc/net/dev";
+    return () unless -r $file;
+    open(my $dev, $file);
+    my (@titles, %result);
+    while (my $line = <$dev>) {
+        chomp($line);
+        if ($line =~ /^.{6}\|([^\\]+)\|([^\\]+)$/) {
+            my ($rec, $trans) = ($1, $2);
+            @titles = ((map {"r$_"} split(/\s+/, $rec)), (map {"t$_"} split(/\s+/, $trans)));
+        } elsif ($line =~ /^\s*([^:]+):\s*(.*)$/) {
+            my ($id, @data) = ($1, split(/\s+/, $2));
+            $result{$id} = { map {$titles[$_] => $data[$_];} (0 .. $#titles) };
+        }
+    }
+    close($dev);
+
+    # Return current network I/O
+    if ($type eq 'io') {
+        my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
+        my @rs;
+        my $results = \%result;
+
+        # Parse current data
+        foreach (%$results) {
+            $rbytes += $results->{$_}->{'rbytes'};
+            $tbytes += $results->{$_}->{'tbytes'};
+        }
+
+        # Wait for one second and fetch data over again
+        sleep 1, $results = network_stats();
+
+        # Parse data after dalay
+        foreach (%$results) {
+            $rbytes2 += $results->{$_}->{'rbytes'};
+            $tbytes2 += $results->{$_}->{'tbytes'};
+        }
+
+        # Return current network I/O
+        $rbytes = int($rbytes2 - $rbytes);
+        $tbytes = int($tbytes2 - $tbytes);
+
+        @rs = ($rbytes, $tbytes);
+        return serialise_variable(\@rs);
+    }
+    return \%result;
 }
 
 1;
