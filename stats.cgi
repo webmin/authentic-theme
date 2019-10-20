@@ -12,7 +12,6 @@ use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 
 use Async;
-use Time::HiRes qw (usleep);
 
 BEGIN {push(@INC, "..");}
 use WebminCore;
@@ -254,7 +253,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     }
                     last;
                 }
-                usleep 1e5;
+                select(undef, undef, undef, 0.1);
             }
         }
 
