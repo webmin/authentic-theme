@@ -1751,7 +1751,7 @@ sub print_panel
         $sorter = ' data-sorter="' . $sorter . '" ';
     }
     my $str = '
-              <div' . $sorter . 'class="panel panel-default">
+              <div' . $sorter . ' class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
