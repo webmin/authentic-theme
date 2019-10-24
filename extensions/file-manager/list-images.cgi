@@ -157,7 +157,7 @@ if (has_command('identify')) {
             if ($file_encoded) {
                 push(@items,
                      {  index => $index,
-                        title => html_escape("$filename (@{[local_nice_size($files_size, -1)]})"),
+                        title => html_escape("$filename (@{[theme_nice_size_local($files_size, -1)]})"),
                         file  => $filename,
                         cwd   => $cwd,
                         src   => ("data:$type;base64,$file_encoded"),

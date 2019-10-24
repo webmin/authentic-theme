@@ -64,6 +64,47 @@ sub theme_make_date_local
     return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
 }
 
+sub theme_nice_size_local
+{
+    my ($bytes, $minimal, $decimal) = @_;
+
+    if ($gconfig{'nicesizenobinary'} eq '1' && !defined($decimal)) {
+        $decimal = 1;
+    }
+    my ($decimal_units, $binary_units) = (1000, 1024);
+    my $bytes_initial = $bytes;
+    my $unit          = $decimal ? $decimal_units : $binary_units;
+
+    my $label = sub {
+        my ($item) = @_;
+        my $text   = 'theme_xhred_nice_size_';
+        my $unit   = ($unit > $decimal_units ? 'I' : undef);
+        my @labels = ($theme_text{"${text}b"},
+                      $theme_text{"${text}k${unit}B"},
+                      $theme_text{"${text}M${unit}B"},
+                      $theme_text{"${text}G${unit}B"},
+                      $theme_text{"${text}T${unit}B"},
+                      $theme_text{"${text}P${unit}B"});
+        return $labels[$item];
+    };
+
+    my $item = 0;
+    if (abs($bytes) >= $unit) {
+        do {
+            $bytes /= $unit;
+            ++$item;
+        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
+    }
+
+    my $factor    = 10**2;
+    my $formatted = int($bytes * $factor) / $factor;
+
+    if ($minimal == -1) {
+        return $formatted . " " . &$label($item);
+    }
+    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
+}
+
 sub nice_number
 {
     my ($number, $delimiter) = @_;
@@ -316,7 +357,7 @@ sub is_switch_webmin
            (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
              get_product_name() eq 'usermin') ||
            ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/   &&
              ($get_user_level eq '1' || $get_user_level eq '2'))
            ||
            ( $get_user_level ne '3' &&
@@ -385,8 +426,8 @@ sub current_kill_previous
 sub current_to_filename
 {
     my ($filename) = @_;
-    my $salt = substr(encode_base64($main::session_id), 0, 16);
-    my $user = $remote_user;
+    my $salt       = substr(encode_base64($main::session_id), 0, 16);
+    my $user       = $remote_user;
 
     $filename =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $filename = $1;

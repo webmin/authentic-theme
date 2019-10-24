@@ -1164,38 +1164,7 @@ sub theme_make_date
 
 sub theme_nice_size
 {
-    my ($bytes, $minimal, $decimal) = @_;
-    my ($decimal_units, $binary_units) = (1000, 1024);
-    my $bytes_initial = $bytes;
-    my $unit          = $decimal ? $decimal_units : $binary_units;
-    my $label         = sub {
-        my ($item) = @_;
-        my $text = 'theme_xhred_nice_size_';
-        my $unit = ($unit > $decimal_units ? 'I' : undef);
-        my @labels = ($theme_text{"${text}b"},
-                      $theme_text{"${text}k${unit}B"},
-                      $theme_text{"${text}M${unit}B"},
-                      $theme_text{"${text}G${unit}B"},
-                      $theme_text{"${text}T${unit}B"},
-                      $theme_text{"${text}P${unit}B"});
-        return $labels[$item];
-    };
-
-    my $item = 0;
-    if (abs($bytes) >= $unit) {
-        do {
-            $bytes /= $unit;
-            ++$item;
-        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
-    }
-
-    my $factor    = 10**2;
-    my $formatted = int($bytes * $factor) / $factor;
-
-    if ($minimal == -1) {
-        return $formatted . " " . &$label($item);
-    } 
-    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
+    return theme_nice_size_local(@_);
 }
 
 sub theme_redirect

@@ -1,13 +1,13 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.io>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
+do(dirname(__FILE__) . "/../../authentic-funcs.pm");
 
 use Cwd 'abs_path';
 use Encode qw(decode encode);
@@ -21,6 +21,7 @@ our (%access,
      %gconfig,
      %in,
      %text,
+     %theme_text,
      @remote_user_info,
      $base_remote_user,
      $config_directory,
@@ -65,7 +66,8 @@ sub get_libs
         $checked_path =~ s/$in{'cwd'}\//\//ig;
     }
 
-    %text = (load_language($current_theme), load_language($module), %text);
+    %text       = (load_language($current_theme), load_language($module), %text);
+    %theme_text = %text;
 }
 
 sub get_type
@@ -155,22 +157,6 @@ sub tokenize
         unlink_file($tmp_file);
         return $theme_temp_data{$key};
     }
-}
-
-sub string_contains
-{
-    return (index($_[0], $_[1]) != -1);
-}
-
-sub string_starts_with
-{
-    return substr($_[0], 0, length($_[1])) eq $_[1];
-}
-
-sub string_ends_with
-{
-    my $length = length($_[1]);
-    return substr($_[0], -$length, $length) eq $_[1];
 }
 
 sub get_pagination
@@ -285,11 +271,6 @@ sub get_entries_list
         @entries_list = split(/\0/, $in{'name'});
     }
     return @entries_list;
-}
-
-sub head
-{
-    print "Content-type: text/html\n\n";
 }
 
 sub extra_query
@@ -886,7 +867,7 @@ sub print_content
         push(@td_tags, 'class="col-actions"');
 
         if ($userconfig{'columns'} =~ /size/) {
-            my $size = &local_nice_size($list[$count - 1][8]);
+            my $size = &theme_nice_size_local($list[$count - 1][8]);
             push @row_data,
               (
 "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
@@ -1004,50 +985,6 @@ sub get_tree
     return \@r;
 }
 
-sub local_nice_size
-{
-    my ($bytes, $minimal, $decimal) = @_;
-    my ($decimal_units, $binary_units) = (1000, 1024);
-    my $bytes_initial = $bytes;
-    my $unit          = $decimal ? $decimal_units : $binary_units;
-    my $label         = sub {
-        my ($item) = @_;
-        my $text = 'theme_xhred_nice_size_';
-        my $unit = ($unit > $decimal_units ? 'I' : undef);
-        my @labels = ($text{"${text}b"},
-                      $text{"${text}k${unit}B"},
-                      $text{"${text}M${unit}B"},
-                      $text{"${text}G${unit}B"},
-                      $text{"${text}T${unit}B"},
-                      $text{"${text}P${unit}B"});
-        return $labels[$item];
-    };
-
-    my $item = 0;
-    if (abs($bytes) >= $unit) {
-        do {
-            $bytes /= $unit;
-            ++$item;
-        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
-    }
-
-    my $factor    = 10**2;
-    my $formatted = int($bytes * $factor) / $factor;
-
-    if ($minimal == -1) {
-        return $formatted . " " . &$label($item);
-    }
-    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
-}
-
-sub nice_number
-{
-    my ($number, $delimiter) = @_;
-    $delimiter = " " if (!$delimiter);
-    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
-    return $number;
-}
-
 sub paster
 {
     my ($c, $f, $s, $d, $r, $m) = @_;
@@ -1154,13 +1091,6 @@ sub set_env
 {
     my ($k, $v) = @_;
     $ENV{ uc($k) } = $v;
-}
-
-sub trim
-{
-    my $s = shift;
-    $s =~ s/^\s+|\s+$//g;
-    return $s;
 }
 
 1;

@@ -7,15 +7,42 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,    @theme_bundle_js,             %module_text_full,         %theme_config,
-     %theme_text,          %theme_temp_data,             $get_user_level,           $global_prefix,
-     $parent_webprefix,    $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,
-     $has_usermin_version, $has_usermin,                 $has_virtualmin,           $theme_module_query_id,
-     $t_uri___i,           $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,
-     $t_var_product_m,     $t_var_switch_m,              $xnav,                     %config,
-     %gaccess,             %gconfig,                     %in,                       %tconfig,
-     %text,                $base_remote_user,            $config_directory,         $current_lang,
-     $current_theme,       $remote_user,                 $root_directory,           $theme_root_directory,
+our (@theme_bundle_css,
+     @theme_bundle_js,
+     %module_text_full,
+     %theme_config,
+     %theme_text,
+     %theme_temp_data,
+     $get_user_level,
+     $global_prefix,
+     $parent_webprefix,
+     $has_cloudmin,
+     $has_usermin_conf_dir,
+     $has_usermin_root_dir,
+     $has_usermin_version,
+     $has_usermin,
+     $has_virtualmin,
+     $theme_module_query_id,
+     $t_uri___i,
+     $theme_requested_from_module,
+     $theme_requested_from_tab,
+     $theme_requested_url,
+     $t_var_product_m,
+     $t_var_switch_m,
+     $xnav,
+     %config,
+     %gaccess,
+     %gconfig,
+     %in,
+     %tconfig,
+     %text,
+     $base_remote_user,
+     $config_directory,
+     $current_lang,
+     $current_theme,
+     $remote_user,
+     $root_directory,
+     $theme_root_directory,
      $title);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
@@ -37,6 +64,7 @@ sub settings_filter
     for (values %in_data) {s/'false'/false/g}
     for (values %in_data) {s/'1'/1/g}
     for (values %in_data) {s/'0'/0/g}
+
     for (values %in_data) {
         s/
          \G
@@ -1255,11 +1283,12 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
-      format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
-      ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
+    return 'data-host="' . get_env('http_host') . '" data-hostname="' .
+      get_display_hostname() . '" data-title-initial="' . format_document_title($args[0]) . '" data-debug="' .
+      theme_debug_mode() . '" data-session="' . ($remote_user ? '1' : '0') . '" data-size-type-decimal="' .
+      $gconfig{'nicesizenobinary'} . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
-      '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
+      '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' . ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
       '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
       '" data-slider-fixed="' . ($theme_config{'settings_side_slider_fixed'} eq "true" &&
@@ -1427,8 +1456,8 @@ sub parse_servers_path
     my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
 
     if ($parent) {
-        my ($parent_link)      = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix)    = $parent_link =~ /:\d+(.*\/link.cgi\/\S*\d)/;
+        my ($parent_link)      = $parent        =~ /(\S*link\.cgi\/[\d]{8,16})/;
+        my ($parent_prefix)    = $parent_link   =~ /:\d+(.*\/link.cgi\/\S*\d)/;
         my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
 
         return ($parent_prefix, $parent_webprefix);
