@@ -171,9 +171,12 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     &$ddata('cpu', $cpu);
 
                     # Disk I/O
-                    my $io = [$cpuusage[5], $cpuusage[6]];
-                    $data{'io'} = $io;
-                    &$ddata('disk', $io);
+                    my $in  = $cpuusage[5];
+                    my $out = $cpuusage[6];
+                    if ($in && $out || $in eq '0' || $out eq '0') {
+                        $data{'io'} = [$in, $out];
+                        &$ddata('disk', [$in, $out]);
+                    }
                 }
             }
 
