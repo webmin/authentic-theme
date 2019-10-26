@@ -1,27 +1,22 @@
 ## Changelog
 
-#### Version 19.40-beta4 (October 18, 2019)
-* Add network I/O stats history charts to Dashboard
-* Fix other issues and perform other optimizations
-
-#### Version 19.40-beta3 (October 09, 2019)
+#### Version 19.40-RC1 (October 26, 2019)
 * Add stats history charts to Dashboard
-* Fix CPU core count start from one for Dashboard
-* Fix reauthenticate screen interaction with other elements, and improve its error handling
-* Fix stack order for popovers
-
-#### Version 19.40-beta2 (September 27, 2019)
-* Add scheduled emails for mail composer
-* Add HTML/plain text toggle for mail composer
-* Fix to save drafts properly in mail composer
-
-#### Version 19.40-beta1 (September 11, 2019)
 * Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
 * Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
+* Add greater saturation to default navigation color palette
+* Add network I/O stats history charts to Dashboard
+* Add scheduled emails for mail composer
+* Add HTML/plain text toggle for mail composer
 * Fix context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
 * Fix to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
 * Fix bundle background load to try/catch errors for callbacks
 * Fix possible XSS when adding to favorites
+* Fix to save drafts properly in mail composer
+* Fix other issues and perform other optimizations
+* Fix CPU core count start from one for Dashboard
+* Fix reauthenticate screen interaction with other elements, and improve its error handling
+* Fix stack order for popovers
 
 <!--- separator --->
 
