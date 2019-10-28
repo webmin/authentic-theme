@@ -157,7 +157,7 @@ sub theme_footer
     embed_port_shell();
     embed_footer((theme_debug_mode()),
                  (
-                  (get_module_name()                                                  ||
+                  (get_module_name() ||
                      get_env('request_uri') =~ /\/config.cgi\?/                       ||
                      get_env('request_uri') =~ /\/uconfig.cgi\?/                      ||
                      get_env('request_uri') =~ /\/webmin_search.cgi\?/                ||
@@ -385,7 +385,7 @@ sub theme_ui_columns_start
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
+            $rv .= ($heads->[$i] eq ''    ? '<br>'        : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -405,7 +405,7 @@ sub theme_ui_columns_row
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
-            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
+            $rv .= ($cols->[$i] !~ /\S/             ? '<br>'        : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
     }
@@ -424,7 +424,7 @@ sub theme_ui_columns_header
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
+            $rv .= ($cols->[$i] eq ''     ? '#'           : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -656,8 +656,10 @@ sub theme_ui_select
     my ($name, $value, $opts, $size, $multiple, $missing, $dis, $tags) = @_;
     my $rv;
     $rv .=
-      "<select class='ui_select' " . "name=\"" . &quote_escape($name) .
-      "\" " . ($size ? " size='$size'" : "") . ($multiple ? " multiple" : "") . ($dis ? " disabled=true" : "") .
+"<select onchange=\"\$(this.options).removeAttr('selected'); this.options[this.options.selectedIndex].setAttribute('selected', 'selected')\" class='ui_select' "
+      . "name=\""
+      . &quote_escape($name)
+      . "\" " . ($size ? " size='$size'" : "") . ($multiple ? " multiple" : "") . ($dis ? " disabled=true" : "") .
       ($tags ? " " . $tags : "") . ">\n";
     my ($o, %opt, $s, $v);
     my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
@@ -768,7 +770,7 @@ sub theme_ui_submit
 
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
-      ($name ne '' ? " id=\"" . &quote_escape($name) . "\"" : "") .
+      ($name ne ''                                                     ? " id=\"" . &quote_escape($name) . "\""   : "") .
       ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
       &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
@@ -1146,8 +1148,8 @@ sub theme_ui_radio_table
         $rv .= "<tr>\n";
         $rv .=
           "<td" . (defined($r->[2]) ? "" : " colspan=2") .
-          ">" . ($nobold ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
-          ($nobold ? "" : "</b>") . "</td>\n";
+          ">" . ($nobold            ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
+          ($nobold                  ? "" : "</b>") . "</td>\n";
         if (defined($r->[2])) {
             $rv .= "<td>" . $r->[2] . "</td>\n";
         }
@@ -1182,6 +1184,7 @@ sub theme_redirect
     my ($arg1, $arg2) = ($_[0], $_[1]);
     my ($link) = $arg1 || $arg2;
     my ($url)  = $arg2;
+
     if (!$relredir) {
         ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
     }
