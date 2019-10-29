@@ -655,11 +655,14 @@ sub theme_ui_select
 
     my ($name, $value, $opts, $size, $multiple, $missing, $dis, $tags) = @_;
     my $rv;
+    my $onchange =
+"onchange=\"\$(this.options).removeAttr('selected'); this.options[this.options.selectedIndex].setAttribute('selected', 'selected')\"";
+    if ($multiple) {
+        $onchange = undef;
+    }
     $rv .=
-"<select onchange=\"\$(this.options).removeAttr('selected'); this.options[this.options.selectedIndex].setAttribute('selected', 'selected')\" class='ui_select' "
-      . "name=\""
-      . &quote_escape($name)
-      . "\" " . ($size ? " size='$size'" : "") . ($multiple ? " multiple" : "") . ($dis ? " disabled=true" : "") .
+      "<select $onchange class='ui_select' " . "name=\"" . &quote_escape($name) .
+      "\" " . ($size ? " size='$size'" : "") . ($multiple ? " multiple" : "") . ($dis ? " disabled=true" : "") .
       ($tags ? " " . $tags : "") . ">\n";
     my ($o, %opt, $s, $v);
     my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
