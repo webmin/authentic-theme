@@ -968,12 +968,12 @@ const mail = (function() {
                                 // Adjust the size of editable area
                                 contenteditable: (panel) => {
                                     let target = panel.querySelector(`.${classes.panel.content}`),
-                                        offset = 60,
                                         container = target ? target.offsetHeight : window.innerHeight / 4,
                                         top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
                                         editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
                                         editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                        height = `${container - top_block - editor_toolbar - offset}px`;
+                                        offset = 60 + (editor_toolbar ? editor_toolbar : 1),
+                                        height = `${container - top_block - offset}px`;
                                     editor.style.height = height;
                                 },
 
