@@ -1,13 +1,14 @@
 ## Changelog
 
-#### Version 19.40-RC1 (October 26, 2019)
-* Add stats history charts to Dashboard
+#### Version 19.40-RC2 (October 29, 2019)
+* Add basic stats history charts to Dashboard
+* Add network I/O stats history charts to Dashboard
 * Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
+* Add HTML/plain text toggle for mail composer
+* Add scheduled emails for mail composer
 * Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
 * Add greater saturation to default navigation color palette
-* Add network I/O stats history charts to Dashboard
-* Add scheduled emails for mail composer
-* Add HTML/plain text toggle for mail composer
+* Add improvements to inbuilt command shell
 * Fix context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
 * Fix to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
 * Fix bundle background load to try/catch errors for callbacks
@@ -17,6 +18,7 @@
 * Fix CPU core count start from one for Dashboard
 * Fix reauthenticate screen interaction with other elements, and improve its error handling
 * Fix stack order for popovers
+* Fix issues with dropdowns in latest versions of Chrome
 
 <!--- separator --->
 
