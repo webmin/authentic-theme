@@ -1345,7 +1345,7 @@ sub get_sysinfo_vars
                     (
                         (
                          ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
-                          $authentic_installed_version =~ /alpha|beta|RC/
+                          $authentic_installed_version    =~ /alpha|beta|RC/
                          ) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
@@ -1353,8 +1353,8 @@ sub get_sysinfo_vars
 
                 ))
             {
-                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
-                my $authentic_remote_alpha_beta  = $authentic_remote_version_local =~ /alpha|beta/;
+                my $authentic_remote_beta       = $authentic_remote_version_local =~ /alpha|beta|RC/;
+                my $authentic_remote_alpha_beta = $authentic_remote_version_local =~ /alpha|beta/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -2143,7 +2143,7 @@ sub theme_var_dir
 
 sub clear_theme_cache
 {
-    my ($root) = @_;
+    my ($root)        = @_;
     my $salt          = substr(encode_base64($main::session_id), 0, 16);
     my $theme_var_dir = theme_var_dir();
     my $tmp_dir       = tempname_dir();
@@ -2601,6 +2601,8 @@ sub theme_settings
             'true',
             'settings_right_grayscaled_table_icons',
             'true',
+            'settings_table_init_datatables',
+            '5000',
 
             '__',
             theme_settings('fa', 'keyboard-o', &theme_text('settings_right_hotkey_options_title')),
@@ -2637,7 +2639,7 @@ sub theme_settings
             'settings_hotkey_toggle_key_night_mode',
             'l',
             '__',
-            theme_settings('fa', 'sub-title',  '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
+            theme_settings('fa', 'sub-title', '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
             'settings_hotkey_custom_1',
             '',
             'settings_hotkey_custom_2',
@@ -2899,6 +2901,7 @@ sub theme_settings
                  $k eq 'settings_brightness_level_navigation' ||
                  $k eq 'settings_contrast_level_navigation'   ||
                  $k eq 'settings_leftmenu_width'              ||
+                 $k eq 'settings_table_init_datatables'       ||
                  $k eq 'settings_sysinfo_real_time_stored_length')
         {
 
@@ -2931,6 +2934,11 @@ sub theme_settings
                 $range_min  = '260';
                 $range_max  = '520';
                 $range_step = '1';
+            } elsif ($k eq 'settings_table_init_datatables') {
+                $range_min  = '500';
+                $range_max  = '50000';
+                $range_step = '500';
+                $iwidth     = '30';
             } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
                 $range_min  = '0.1';
                 $range_max  = '6';
@@ -3041,7 +3049,7 @@ sub theme_settings
                                 $v,
                                 [[undef,       undef],
                                  ['index.cgi', $theme_text{'theme_config_virtualmin'}],
-                                 map {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
+                                 map    {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
                                    grep {&virtual_server::can_edit_domain($_)}
                                    sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
                                 ]);
@@ -3365,8 +3373,8 @@ sub get_xhr_request
             my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
-                                 replace((!has_command('curl') || !has_command('bash') ? '>git<' : '~'),
-                                         (!has_command('curl') ? '>curl<' : '>bash<'),
+                                 replace((!has_command('curl') || !has_command('bash') ? '>git<'  : '~'),
+                                         (!has_command('curl')                         ? '>curl<' : '>bash<'),
                                          $theme_text{'theme_git_patch_no_git_message'}
                                  ), };
                 print convert_to_json(\@update_rs);
