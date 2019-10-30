@@ -1077,6 +1077,9 @@ const mail = (function() {
                                                 } else {
                                                     te.value = he.getText();
                                                 }
+                                            },
+                                            maximized: () => {
+                                                return target.hasAttribute('maximized');
                                             }
                                         },
 
@@ -1326,6 +1329,7 @@ const mail = (function() {
 
                                                     // Schedule draft for discard
                                                     discard: function() {
+                                                        editor.maximized() && panel.normalize();
                                                         draft.timeout.discard = setTimeout(() => {
                                                             draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
                                                             draft.reset();
