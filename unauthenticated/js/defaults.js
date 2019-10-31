@@ -75,7 +75,7 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_side_slider_background_refresh_time = 5,
 
-    settings_table_init_datatables = 5000,
+    settings_table_init_datatables = 20000,
 
 
     settings_leftmenu_width = 260,

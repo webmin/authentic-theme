@@ -2602,7 +2602,7 @@ sub theme_settings
             'settings_right_grayscaled_table_icons',
             'true',
             'settings_table_init_datatables',
-            '5000',
+            '20000',
 
             '__',
             theme_settings('fa', 'keyboard-o', &theme_text('settings_right_hotkey_options_title')),
