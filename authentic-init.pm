@@ -127,6 +127,28 @@ sub settings_default
     return %c;
 }
 
+sub get_theme_color
+{
+    my %theme_colors = ('blue'      => '#2e5d9b',
+                        'darkBlue'  => '#31506b',
+                        'lightBlue' => '#2f648e',
+                        'gold'      => '#96825c',
+                        'green'     => '#277b4c',
+                        'red'       => '#9e1f32',
+                        'indianRed' => '#b14f4f',
+                        'orange'    => '#ab6d3b',
+                        'white'     => '#ffffff',
+                        'brown'     => '#5d4636',
+                        'purple'    => '#523a51',
+                        'grey'      => '#4d5250',
+                        'darkGrey'  => '#373c39',
+                        'noir'      => '#292929',
+                        'gunmetal'  => '#2a2d32');
+
+    my $color = $theme_config{'settings_navigation_color'};
+    return $theme_colors{$color};
+}
+
 sub embed_favicon
 {
     my ($inline) = @_;
@@ -163,12 +185,12 @@ sub embed_favicon
     }
     print ' <link ' .
       $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' . $favicon_path . '/manifest.json">' . "\n";
-    print ' <link ' .
-      $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
-    print ' <meta name="msapplication-TileColor" content="#3d74ca">' . "\n";
+    print ' <link ' . $ref_link .
+      ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="' . get_theme_color() . '">' . "\n";
+    print ' <meta name="msapplication-TileColor" content="' . get_theme_color() . '">' . "\n";
     print ' <meta ' .
       $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">' . "\n";
-    print ' <meta name="theme-color" content="#3d74ca">' . "\n";
+    print ' <meta name="theme-color" content="' . get_theme_color() . '">' . "\n";
 
 }
 
