@@ -1,24 +1,22 @@
 ## Changelog
 
-#### Version 19.40-RC2 (October 29, 2019)
-* Add basic stats history charts to Dashboard
-* Add network I/O stats history charts to Dashboard
-* Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
-* Add HTML/plain text toggle for mail composer
-* Add scheduled emails for mail composer
+#### Version 19.40 (October 31, 2019)
+* Add basic stats history charts to Dashboard [#1415/comment-542940377](https://github.com/authentic-theme/authentic-theme/issues/1415#issuecomment-542940377)
+* Add brand new mail composer with scheduled emails for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
 * Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
+* Add mobile color themes to blend with current palette [#1405](https://github.com/authentic-theme/authentic-theme/issues/1405)
 * Add greater saturation to default navigation color palette
 * Add improvements to inbuilt command shell
-* Fix context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
-* Fix to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
-* Fix bundle background load to try/catch errors for callbacks
 * Fix possible XSS when adding to favorites
-* Fix to save drafts properly in mail composer
-* Fix other issues and perform other optimizations
-* Fix CPU core count start from one for Dashboard
+* Fiх context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
+* Fiх to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
+* Fix issues with directory tree-view in File Manager in Usermin
+* Fix bundle background load to try/catch errors for callbacks
+* Fix CPU core count start from one on Dashboard
 * Fix reauthenticate screen interaction with other elements, and improve its error handling
 * Fix stack order for popovers
 * Fix issues with dropdowns in latest versions of Chrome
+* Fix other issues and perform many other optimizations
 
 <!--- separator --->
 
