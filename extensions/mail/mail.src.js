@@ -1822,15 +1822,15 @@ const mail = (function() {
 
                                         })
 
-                                        // Submit mail using hotkey (%cmd-enter)
-                                        target.addEventListener('keydown', e => {
-                                            let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
-                                                enter = e.keyCode === 13;
-                                            if (meta && enter && !target.classList.contains($$.$.class.events_none)) {
-                                                submit.dataset.isTrusted = 1;
-                                                submit.dispatchEvent(new Event('click'));
-                                            }
-                                        });
+                                        // Submit mail using hotkey (%cmd-enter) - disabled for now
+                                        // target.addEventListener('keydown', e => {
+                                        //     let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
+                                        //         enter = e.keyCode === 13;
+                                        //     if (meta && enter && !target.classList.contains($$.$.class.events_none)) {
+                                        //         submit.dataset.isTrusted = 1;
+                                        //         submit.dispatchEvent(new Event('click'));
+                                        //     }
+                                        // });
 
                                     }, 3e2)
                                 },
