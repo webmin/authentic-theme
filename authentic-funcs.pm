@@ -68,9 +68,6 @@ sub theme_nice_size_local
 {
     my ($bytes, $minimal, $decimal) = @_;
 
-    if ($gconfig{'nicesizenobinary'} eq '1' && !defined($decimal)) {
-        $decimal = 1;
-    }
     my ($decimal_units, $binary_units) = (1000, 1024);
     my $bytes_initial = $bytes;
     my $unit          = $decimal ? $decimal_units : $binary_units;

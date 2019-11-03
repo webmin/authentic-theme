@@ -1305,10 +1305,9 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-host="' . get_env('http_host') . '" data-hostname="' .
-      get_display_hostname() . '" data-title-initial="' . format_document_title($args[0]) . '" data-debug="' .
-      theme_debug_mode() . '" data-session="' . ($remote_user ? '1' : '0') . '" data-size-type-decimal="' .
-      $gconfig{'nicesizenobinary'} . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
+    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
+      format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
+      ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' . ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
