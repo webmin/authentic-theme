@@ -16,6 +16,7 @@
 * Fix reauthenticate screen interaction with other elements, and improve its error handling
 * Fix stack order for popovers
 * Fix issues with dropdowns in latest versions of Chrome
+* Fix issues with Usermin on mobile devices
 * Fix other issues and perform many other optimizations
 
 <!--- separator --->
