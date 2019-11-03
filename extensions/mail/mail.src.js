@@ -1954,8 +1954,11 @@ const mail = (function() {
 
                             // Create compose panel
                             let composers = $(`.${classes.panel.container} .${classes.editor.compose}`).length,
-                                small_window = window.innerWidth < 640,
+                                window_width = window.innerWidth,
+                                small_window_width = window_width < 640,
                                 window_height = window.innerHeight,
+                                small_window_height = window_height < 640,
+                                small_window = small_window_width || small_window_height,
                                 ioffset = -15,
                                 offset = composers ? ioffset * 5 * composers : ioffset,
                                 position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
@@ -1964,16 +1967,16 @@ const mail = (function() {
                                     theme: "dimgrey",
                                     onwindowresize: true,
                                     panelSize: {
-                                        width: (small_window ? '98%' : 600),
-                                        height: (small_window ? '99%' : 600)
+                                        width: (small_window ? window_width + 4 * ioffset : 600),
+                                        height: (small_window ? window_height + 4 * ioffset : 600)
                                     },
                                     headerTitle: _.lang('mail_new_message'),
                                     content: template.form,
                                     maximizedMargin: {
-                                        top: window_height * 0.03,
-                                        bottom: window_height * 0.03,
-                                        left: window_height * 0.1,
-                                        right: window_height * 0.1,
+                                        top: small_window ? -1 * ioffset : window_height * 0.03,
+                                        bottom: small_window ? -1 * ioffset : window_height * 0.03,
+                                        left: small_window ? -1 * ioffset : window_height * 0.1,
+                                        right: small_window ? -1 * ioffset : window_height * 0.1,
                                     },
                                     dblclicks: {
                                         title: "maximize"
@@ -1993,7 +1996,10 @@ const mail = (function() {
                                         toggle.backdrop(this, 1);
                                     },
                                     callback: function() {
-                                        element.composer(this)
+                                        element.composer(this);
+                                        if (small_window) {
+                                            this.maximize();
+                                        }
                                     },
                                 });
 
