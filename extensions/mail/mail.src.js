@@ -1598,7 +1598,7 @@ const mail = (function() {
                                             // Reset trusted state for submit
                                             this.dataset.isTrusted = 0;
 
-                                            // Prevent form from submitting while saving a draft
+                                            // Terminate draft event in case mail is actually submitted
                                             if (trusted) {
                                                 draft.terminate();
                                             }
@@ -1796,7 +1796,7 @@ const mail = (function() {
 
                                         })
 
-                                        // Submit mail using hotkey( % cmd - enter)
+                                        // Submit mail using hotkey(%cmd-enter)
                                         target.addEventListener('keydown', e => {
                                             let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
                                                 enter = e.keyCode === 13;
