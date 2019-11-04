@@ -1030,8 +1030,8 @@ const mail = (function() {
                                         paneled = panel.header ? true : false,
                                         config = {
                                             html: {
-                                                allowed: data.hidden.html_edit,
-                                                initial: data.hidden.html_edit_config,
+                                                allowed: parseInt(data.hidden.html_edit),
+                                                initial: parseInt(data.hidden.html_edit_config),
                                             },
                                         },
                                         config_update = function(option, value) {
@@ -1059,7 +1059,7 @@ const mail = (function() {
                                             }),
                                             get: {
                                                 text: () => {
-                                                    return editor.this.root.parentElement.previousElementSibling.value
+                                                    return tcm.value
                                                 },
                                                 html: () => {
                                                     return editor.this.root.innerHTML
@@ -1141,13 +1141,13 @@ const mail = (function() {
 
                                     // Toggle HTML/text editor state
                                     let ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`);
-                                    ctl_tgl.addEventListener('click', (event) => {
+                                    ctl_tgl.addEventListener('click', () => {
                                         let st = parseInt(config.html.allowed) || 0,
                                             ia = parseInt(config.html.initial) || 0,
                                             sg = +!st,
                                             co = sg ? 2 : (ia === 1 ? 1 : 0);
 
-                                        toggle.formatting(target, sg)
+                                        toggle.formatting(target, sg);
                                         config.html.allowed = sg;
 
                                         // Change actual config option
@@ -1650,6 +1650,9 @@ const mail = (function() {
                                                 ssus.forEach((f, i) => {
                                                     form_data.set(`file${i}`, f)
                                                 });
+
+                                            // Update HTML/text status
+                                            form_data.set('html_edit', config.html.allowed);
 
                                             // Check for draft
                                             draft.status && (
