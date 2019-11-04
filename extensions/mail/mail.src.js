@@ -1264,7 +1264,6 @@ const mail = (function() {
                                             },
 
                                             draft = {
-                                                status: false,
 
                                                 timeout: {
                                                     update: null,
@@ -1292,7 +1291,6 @@ const mail = (function() {
                                                 save: function() {
                                                     this.terminate();
                                                     this.timeout.update = setTimeout(() => {
-                                                        this.status = true;
                                                         submit.dispatchEvent(new Event('click'));
                                                     }, 2e3);
                                                 },
@@ -1595,31 +1593,14 @@ const mail = (function() {
                                             let form = this.closest('form'),
                                                 form_data = new FormData(form),
                                                 trusted = event.isTrusted || ~~submit.dataset.isTrusted,
-                                                lock = () => {
+                                                draft_status = !trusted;
 
-                                                    // Add lock
-                                                    target.classList.add($$.$.class.events_none)
-                                                },
-                                                unlock = () => {
-
-                                                    // Reset progress
-                                                    _.button_progress(this, 0);
-
-                                                    // Remove lock
-                                                    target.classList.remove($$.$.class.events_none);
-                                                },
-                                                reset = () => {
-
-                                                    // Reset draft status
-                                                    draft.status = false;
-
-                                                    // Reset trusted state for submit
-                                                    this.dataset.isTrusted = 0;
-                                                };
+                                            // Reset trusted state for submit
+                                            this.dataset.isTrusted = 0;
 
                                             // Prevent form from submitting while saving a draft
-                                            if (draft.status && trusted) {
-                                                return
+                                            if (trusted) {
+                                                draft.terminate();
                                             }
 
                                             // Add message body
@@ -1651,20 +1632,16 @@ const mail = (function() {
                                                     form_data.set(`file${i}`, f)
                                                 });
 
-                                            // Update HTML/text status
+                                            // Update HTML/text mode status
                                             form_data.set('html_edit', config.html.allowed);
 
                                             // Check for draft
-                                            draft.status && (
+                                            draft_status && (
                                                 form_data.set('new', 0),
                                                 form_data.set('enew', 1),
                                                 form_data.set('save', 1),
                                                 title_update(1)
                                             );
-
-                                            // Add lock while processing
-                                            !draft.status &&
-                                                lock();
 
                                             // Prepare scheduled mail
                                             let schedule = {
@@ -1690,7 +1667,7 @@ const mail = (function() {
                                                 }
                                             }
 
-                                            if (scheduled.status() && !draft.status) {
+                                            if (scheduled.status() && !draft_status) {
                                                 let m = {
                                                     body: 'mail',
                                                     is_html: config.html.allowed,
@@ -1718,10 +1695,10 @@ const mail = (function() {
 
                                             // Post mail data
                                             let xhr = new XMLHttpRequest(),
-                                                link = ((scheduled.status() && !draft.status) ? xtarget.schedule : form.getAttribute('action'));
+                                                link = ((scheduled.status() && !draft_status) ? xtarget.schedule : form.getAttribute('action'));
                                             xhr.open("POST", link);
                                             xhr.upload.onprogress = (e) => {
-                                                !draft.status &&
+                                                !draft_status &&
                                                     _.button_progress(this, Math.ceil((e.loaded / e.total) * 100));
                                             };
                                             xhr.onload = (e) => {
@@ -1747,7 +1724,7 @@ const mail = (function() {
                                                     };
 
                                                 // Handle previously saved draft
-                                                if (draft.status) {
+                                                if (draft_status) {
 
                                                     // Update title
                                                     title_update(-1);
@@ -1786,10 +1763,10 @@ const mail = (function() {
 
                                                             // Send error notification
                                                             error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
-                                                            _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center'])
+                                                            _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
 
-                                                            // Reset progress and remove lock
-                                                            unlock();
+                                                            // Reset progress
+                                                            _.button_progress(this, 0);
 
                                                         } else {
 
@@ -1803,17 +1780,11 @@ const mail = (function() {
                                                         }
                                                     }
                                                 }
-
-                                                // Reset draft status and trusted state for submit
-                                                reset();
                                             }
                                             xhr.onerror = (e) => {
 
-                                                // Reset progress and remove lock
-                                                unlock();
-
-                                                // Reset draft status and trusted state for submit
-                                                reset();
+                                                // Reset progress
+                                                _.button_progress(this, 0);
 
                                                 // Display error message
                                                 _.error({
@@ -1825,15 +1796,15 @@ const mail = (function() {
 
                                         })
 
-                                        // Submit mail using hotkey (%cmd-enter) - disabled for now
-                                        // target.addEventListener('keydown', e => {
-                                        //     let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
-                                        //         enter = e.keyCode === 13;
-                                        //     if (meta && enter && !target.classList.contains($$.$.class.events_none)) {
-                                        //         submit.dataset.isTrusted = 1;
-                                        //         submit.dispatchEvent(new Event('click'));
-                                        //     }
-                                        // });
+                                        // Submit mail using hotkey( % cmd - enter)
+                                        target.addEventListener('keydown', e => {
+                                            let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
+                                                enter = e.keyCode === 13;
+                                            if (meta && enter) {
+                                                submit.dataset.isTrusted = 1;
+                                                submit.dispatchEvent(new Event('click'));
+                                            }
+                                        });
 
                                     }, 3e2)
                                 },
