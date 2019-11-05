@@ -972,7 +972,7 @@ const mail = (function() {
                                         top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
                                         editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
                                         editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                        offset = 60 + (editor_toolbar || 1),
+                                        offset = 50 + (editor_toolbar || 1),
                                         height = `${container - top_block - offset}px`;
                                     editor.style.height = height;
                                 },
@@ -1951,6 +1951,8 @@ const mail = (function() {
                                         bottom: small_window ? -1 * ioffset : window_height * 0.03,
                                         left: small_window ? -1 * ioffset : window_height * 0.1,
                                         right: small_window ? -1 * ioffset : window_height * 0.1,
+                                    },
+                                    footerToolbar: function() {
                                     },
                                     dblclicks: {
                                         title: "maximize"
