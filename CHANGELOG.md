@@ -7,6 +7,8 @@
 * Add mobile color themes to blend with current palette [#1405](https://github.com/authentic-theme/authentic-theme/issues/1405)
 * Add greater saturation to default navigation color palette
 * Add improvements to inbuilt command shell
+* Add better support for horizontally long tables
+* Add better scrollbars styling across browsers
 * Fix possible XSS when adding to favorites
 * Fiх context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
 * Fiх to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
