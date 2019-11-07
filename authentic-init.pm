@@ -142,7 +142,6 @@ sub get_theme_color
                         'purple'    => '#523a51',
                         'grey'      => '#4d5250',
                         'darkGrey'  => '#373c39',
-                        'noir'      => '#292929',
                         'gunmetal'  => '#2a2d32');
 
     my $color = $theme_config{'settings_navigation_color'};

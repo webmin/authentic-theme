@@ -2370,9 +2370,6 @@ sub settings_get_select_navigation_color
                     <option value="darkGrey"'
       . ($v eq 'darkGrey' && ' selected') . '>Dark Grey</option>
 
-                    <option value="noir"'
-      . ($v eq 'noir' && ' selected') . '>Noir</option>
-
                     <option value="gunmetal"'
       . ($v eq 'gunmetal' && ' selected') . '>Gunmetal</option>
                 </select>';
