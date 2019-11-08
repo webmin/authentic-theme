@@ -1,5 +1,14 @@
 ## Changelog
 
+#### Version 19.41 (November 08, 2019)
+* Add improvements to dark theme and color palettes
+* Add better scrollbars styling across browsers
+* Add better support for horizontally long tables
+* Add better attachments tags management for new mail composer
+* Add ConfigServer Security & Firewall have reloadable URLs
+* Fix issues with Usermin on mobile devices
+* Fix other bugs
+
 #### Version 19.40 (October 31, 2019)
 * Add basic stats history charts to Dashboard [#1415/comment-542940377](https://github.com/authentic-theme/authentic-theme/issues/1415#issuecomment-542940377)
 * Add brand new mail composer with scheduled emails for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
@@ -7,8 +16,6 @@
 * Add mobile color themes to blend with current palette [#1405](https://github.com/authentic-theme/authentic-theme/issues/1405)
 * Add greater saturation to default navigation color palette
 * Add improvements to inbuilt command shell
-* Add better support for horizontally long tables
-* Add better scrollbars styling across browsers
 * Fix possible XSS when adding to favorites
 * Fiх context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
 * Fiх to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
@@ -18,7 +25,6 @@
 * Fix reauthenticate screen interaction with other elements, and improve its error handling
 * Fix stack order for popovers
 * Fix issues with dropdowns in latest versions of Chrome
-* Fix issues with Usermin on mobile devices
 * Fix other issues and perform many other optimizations
 
 <!--- separator --->
