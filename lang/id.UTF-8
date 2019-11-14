@@ -139,7 +139,7 @@ settings_hotkey_custom_7=Tautan khusus <code>7</code>
 settings_hotkey_custom_8=Tautan khusus <code>8</code>
 settings_hotkey_custom_9=Tautan khusus <code>9</code>
 
-settings_navigation_color=Palet warna menu navigasi
+settings_navigation_color=Color palette
 settings_background_color=Palet warna laman konten
 settings_loader_top=Aktifkan progress loader laman pada bagian atas layar
 settings_loader_left=Aktifkan spinner untuk menu navigasi
@@ -1198,3 +1198,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

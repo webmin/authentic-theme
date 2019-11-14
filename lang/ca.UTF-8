@@ -140,7 +140,7 @@ settings_hotkey_custom_7=Drecera <code>7</code>
 settings_hotkey_custom_8=Drecera <code>8</code>
 settings_hotkey_custom_9=Drecera <code>9</code>
 
-settings_navigation_color=Color del menú de navegació
+settings_navigation_color=Color palette
 settings_background_color=Color del fons
 settings_loader_top=Habilitar la barra de progrés superior
 settings_loader_left=Habilitar el selector pel menú de navegació
@@ -1196,3 +1196,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

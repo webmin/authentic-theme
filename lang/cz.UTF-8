@@ -140,7 +140,7 @@ settings_hotkey_custom_7=Vlastní odkaz <code>7</code>
 settings_hotkey_custom_8=Vlastni odkaz <code>8</code>
 settings_hotkey_custom_9=Vlastni odkaz <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
+settings_navigation_color=Color palette
 settings_background_color=Content page color palette
 settings_loader_left=Povolit posuvník pro navigační panel
 settings_right_reload=Nahrání výchozí stránky
@@ -1195,3 +1195,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

@@ -139,7 +139,7 @@ settings_hotkey_custom_7=Egen länk <code>7</code>
 settings_hotkey_custom_8=Egen länk <code>8</code>
 settings_hotkey_custom_9=Egen länk <code>9</code>
 
-settings_navigation_color=Färgpalett för navigeringsmeny
+settings_navigation_color=Color palette
 settings_background_color=Färgpalett för innehållssida
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
@@ -1193,3 +1193,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

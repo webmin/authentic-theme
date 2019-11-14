@@ -1896,7 +1896,7 @@ sub error_40x
     my $charset = &get_charset();
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html data-background-style="'
+    print '<html data-bgs="'
       .
       ( theme_night_mode() ? 'nightRider' :
           'gainsboro'
@@ -2365,14 +2365,12 @@ sub settings_get_select_navigation_color
       . ($v eq 'purple' && ' selected') . '>Dark Purple</option>
 
                     <option value="grey"'
-      . ($v eq 'grey' && ' selected') . '>Dim Grey</option>
+      . ($v eq 'grey' && ' selected') . '>Dim Gray</option>
 
                     <option value="darkGrey"'
-      . ($v eq 'darkGrey' && ' selected') . '>Dark Grey</option>
+      . ($v eq 'darkGrey' && ' selected') . '>Dark Gray</option>
 
-                    <option value="gunmetal"'
-      . ($v eq 'gunmetal' && ' selected') . '>Gunmetal</option>
-                </select>';
+      </select>';
 
 }
 
@@ -2469,22 +2467,6 @@ sub theme_settings
             '1',
             'settings_font_family',
             '0',
-            'settings_navigation_color',
-            'blue',
-            'settings_grayscale_level_navigation',
-            '0',
-            'settings_sepia_level_navigation',
-            '0',
-            'settings_saturate_level_navigation',
-            '1',
-            'settings_hue_level_navigation',
-            '0',
-            'settings_invert_level_navigation',
-            '0',
-            'settings_brightness_level_navigation',
-            '1',
-            'settings_contrast_level_navigation',
-            '1',
             'settings_cm_editor_palette',
             'monokai',
             'settings_right_page_hide_persistent_vscroll',
@@ -2532,6 +2514,22 @@ sub theme_settings
 
             '__',
             theme_settings('fa', 'bars', &theme_text('settings_right_navigation_menu_title')),
+            'settings_navigation_color',
+            'blue',
+            'settings_grayscale_level_navigation',
+            '0',
+            'settings_sepia_level_navigation',
+            '0',
+            'settings_saturate_level_navigation',
+            '1',
+            'settings_hue_level_navigation',
+            '0',
+            'settings_invert_level_navigation',
+            '0',
+            'settings_brightness_level_navigation',
+            '1',
+            'settings_contrast_level_navigation',
+            '1',
             'settings_navigation_always_collapse',
             'false',
             'settings_leftmenu_width',
@@ -2586,7 +2584,7 @@ sub theme_settings
             'settings_side_slider_favorites_enabled',
             'true',
             'settings_side_slider_palette',
-            'grey',
+            'nav',
 
             '__',
             theme_settings('fa', 'table', &theme_text('settings_right_table_options_title')),
@@ -3073,8 +3071,12 @@ sub theme_settings
         } elsif ($k eq 'settings_side_slider_palette') {
             $v = '<select class="ui_select" name="' . $k . '">
 
-                    <option value="grey"'
-              . ($v eq 'grey' && ' selected') . '>Dim Grey (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+                    <option value="nav"'
+              . ($v eq 'nav' && ' selected') . '>' .
+              $theme_text{'settings_side_slider_blend'} . ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+
+                    <option value="gray"'
+              . ($v eq 'gray' && ' selected') . '>Dim Gray</option>
 
                     <option value="white"'
               . ($v eq 'white' && ' selected') . '>White</option>

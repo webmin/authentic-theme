@@ -129,20 +129,19 @@ sub settings_default
 
 sub get_theme_color
 {
-    my %theme_colors = ('blue'      => '#2e5d9b',
+    my %theme_colors = ('blue'      => '#2d5d9d',
                         'darkBlue'  => '#31506b',
-                        'lightBlue' => '#2f648e',
-                        'gold'      => '#96825c',
+                        'lightBlue' => '#23689e',
+                        'gold'      => '#947c55',
                         'green'     => '#277b4c',
                         'red'       => '#9e1f32',
                         'indianRed' => '#b14f4f',
-                        'orange'    => '#ab6d3b',
+                        'orange'    => '#a9713f',
                         'white'     => '#ffffff',
                         'brown'     => '#5d4636',
-                        'purple'    => '#523a51',
+                        'purple'    => '#543c53',
                         'grey'      => '#4d5250',
-                        'darkGrey'  => '#373c39',
-                        'gunmetal'  => '#2a2d32');
+                        'darkGrey'  => '#3d423f');
 
     my $color = $theme_config{'settings_navigation_color'};
     return $theme_colors{$color};
@@ -521,15 +520,15 @@ sub embed_noscript
     my $noscript = <<EOF;
       <noscript>
       <style>
-        html[data-background-style="gainsboro"]
+        html[data-bgs="gainsboro"]
         {
           background-color: #d6d6d6;
         }
-        html[data-background-style="nightRider"]
+        html[data-bgs="nightRider"]
         {
           background-color: #1a1c20;
         }
-        html[data-background-style="nightRider"] div[data-noscript]
+        html[data-bgs="nightRider"] div[data-noscript]
         {
           color: #979ba080;
         }
@@ -820,14 +819,7 @@ sub get_current_user_language
 
 sub get_filters
 {
-    return '-webkit-filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
-      ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
-      ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
-      ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
-      'deg)' . ' invert(' . $theme_config{'settings_invert_level_navigation'} .
-      ') brightness(' . $theme_config{'settings_brightness_level_navigation'} .
-      ') contrast(' . $theme_config{'settings_contrast_level_navigation'} .
-      ')' . '; filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
+    return 'filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
       ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
       ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
       ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
@@ -1307,7 +1299,7 @@ sub header_html_data
     return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
       format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
-      '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
+      '"' . ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' . ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
       '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .

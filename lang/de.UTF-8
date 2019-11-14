@@ -131,7 +131,7 @@ settings_hotkey_custom_7=Benutzerdefinierter Link <code>7</code>
 settings_hotkey_custom_8=Benutzerdefinierter Link <code>8</code>
 settings_hotkey_custom_9=Benutzerdefinierter Link <code>9</code>
 
-settings_navigation_color=Farbpalette f&uuml;r Navigations Men&uuml;
+settings_navigation_color=Color palette
 settings_background_color=Farbpalette f&uuml;r Inhalts Seite
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Men&uuml; einschalten
@@ -1187,3 +1187,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

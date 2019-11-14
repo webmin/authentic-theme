@@ -38,7 +38,7 @@ if ($gconfig{'loginbanner'} &&
     print "Set-Cookie: banner=1; path=/\r\n";
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html data-background-style="'
+    print '<html data-bgs="'
       .
       ( theme_night_mode() ? 'nightRider' :
           'gainsboro'
@@ -72,7 +72,7 @@ print "Set-Cookie: redirect=1; path=/\r\n";
 print "Set-Cookie: testing=1; path=/$sec\r\n";
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-background-style="'
+print '<html data-bgs="'
   .
   ( theme_night_mode() ? 'nightRider' :
       'gainsboro'

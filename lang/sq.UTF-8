@@ -139,7 +139,7 @@ settings_hotkey_custom_7=Lidhje e personalizuar <code> 7 </code>
 settings_hotkey_custom_8=Lidhje e personalizuar <code> 8 </code>
 settings_hotkey_custom_9=Lidhje e personalizuar <code> 9 </code>
 
-settings_navigation_color=Paleta e ngjyrave të menysë të navigimit
+settings_navigation_color=Color palette
 settings_background_color=Paleta ngjyra e faqes së përmbajtjes
 settings_loader_top=Aktivizo ngarkuesin e përparimit të faqes në krye të ekranit
 settings_loader_left=Aktivizo spinner për menunë e navigimit
@@ -1207,3 +1207,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

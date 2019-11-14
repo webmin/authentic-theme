@@ -139,7 +139,7 @@ settings_hotkey_custom_7=カスタムリンク <code>7</code>
 settings_hotkey_custom_8=カスタムリンク <code>8</code>
 settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
-settings_navigation_color=ナビゲーションメニューのカラーパレット
+settings_navigation_color=Color palette
 settings_background_color=コンテンツページのカラーパレット
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
@@ -1192,3 +1192,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

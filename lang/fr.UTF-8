@@ -119,7 +119,7 @@ settings_hotkey_custom_6=Lien personnalisé <code>6</code>
 settings_hotkey_custom_7=Lien personnalisé <code>7</code>
 settings_hotkey_custom_8=Lien personnalisé <code>8</code>
 settings_hotkey_custom_9=Lien personnalisé <code>9</code>
-settings_navigation_color=Palette de couleur du menu de navigation
+settings_navigation_color=Color palette
 settings_background_color=Palette de couleur du contenu de la page
 settings_loader_top=Activer le barregraphe de chargement de page en haut de l'écran
 settings_loader_left=Activer le spinner pour le menu de navigation
@@ -1105,3 +1105,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

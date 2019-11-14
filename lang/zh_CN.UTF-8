@@ -139,7 +139,7 @@ settings_hotkey_custom_7=自定义链接 <code>7</code>
 settings_hotkey_custom_8=自定义链接 <code>8</code>
 settings_hotkey_custom_9=自定义链接 <code>9</code>
 
-settings_navigation_color=导航菜单调色板
+settings_navigation_color=Color palette
 settings_background_color=内容页面调色板
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
@@ -1193,3 +1193,7 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
 theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit

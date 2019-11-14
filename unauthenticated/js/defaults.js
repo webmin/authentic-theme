@@ -33,7 +33,7 @@ var settings_mailbox_slash_delimiter = true,
     settings_document_title = 1,
     settings_right_page_hide_persistent_vscroll = true,
 
-    settings_side_slider_palette = "grey",
+    settings_side_slider_palette = "nav",
     settings_side_slider_enabled = true,
     settings_side_slider_fixed = false,
     settings_side_slider_sysinfo_enabled = true,
