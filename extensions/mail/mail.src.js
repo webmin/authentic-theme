@@ -972,7 +972,7 @@ const mail = (function() {
                                         top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
                                         editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
                                         editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                        offset = 50 + (editor_toolbar || 1),
+                                        offset = 50 + editor_toolbar,
                                         height = `${container - top_block - offset}px`;
                                     editor.style.height = height;
                                 },
