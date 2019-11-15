@@ -59,9 +59,9 @@ sub theme_header
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
         print $tconfig{'preheader'};
-        print "<table class=\"header\"><tr>\n";
-
-        print '<td id="headln2l" class="invisible">';
+        print '<div class="header">
+                <div class="row">';
+        print '<div data-header-left id="headln2l" class="invisible col-sm-4">';
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
             my $nolo  = get_env('anonymous_user') ||
@@ -108,22 +108,22 @@ sub theme_header
                   "</a><br>\n";
             }
         }
-        print "</td>\n";
+        print "</div>\n";
         if ($_[1]) {
-            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
+            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\" class=\"col-sm-4\">",
               "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
-            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
+            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
               ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
-            print "</td>\n";
+            print "</div>\n";
         }
-        print "<td id=\"headln2r\">";
+        print "<div data-header-right id=\"headln2r\" class=\"col-sm-4\">";
         print $_[6];
-        print "</td></tr></table>\n";
+        print "</div></div></div>\n";
         print $tconfig{'postheader'};
         print '</div>' . "\n";
         print '<div class="panel-body">' . "\n";
