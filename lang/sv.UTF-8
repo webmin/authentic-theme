@@ -1179,21 +1179,21 @@ theme_xhred_live_stats_proc=Process
 theme_xhred_live_stats_disk=Disk I/O
 theme_xhred_global_hour=Timme
 theme_xhred_global_hours=Timmar
-theme_xhred_title_locale_time_format=Time format
+theme_xhred_title_locale_time_format=Tidsformat
 theme_xhred_nice_size_PIB=PiB
 theme_xhred_nice_size_TIB=TiB
 theme_xhred_nice_size_GIB=GiB
 theme_xhred_nice_size_MIB=MiB
 theme_xhred_nice_size_kIB=kiB
-theme_xhred_live_stats_net=Network I/O
+theme_xhred_live_stats_net=Nätverks I/O
 theme_xhred_nice_size_PBB=Pbps
 theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
-theme_xhred_global_rows=Rows
+settings_table_init_datatables=Maximalt antal rader för att initiera tabellsortering och sökning
+theme_xhred_global_rows=Rader
 
 
 #19.42
-settings_side_slider_blend=Inherit
+settings_side_slider_blend=Ärv
