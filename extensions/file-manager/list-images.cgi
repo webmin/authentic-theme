@@ -182,7 +182,7 @@ if (has_command('identify')) {
     my $package_updates = "package-updates";
     if (foreign_available($package_updates)) {
         my $redir                = "$gconfig{'webprefix'}/$request_uri{'module'}";
-        my $pkgname              = ($gconfig{'os_type'} =~ 'debian' ? 'imagemagick' : 'ImageMagick');
+        my $pkgname              = ($gconfig{'os_type'} =~ /debian/ ? 'imagemagick' : 'ImageMagick');
         my %package_updates_lang = load_language($package_updates);
         my $update_failed        = html_escape($package_updates_lang{'update_failed'});
         my $update_ok            = html_escape(text('global_deps_installed', "<code>$pkgname</code>"));
