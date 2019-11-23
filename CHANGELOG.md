@@ -1,5 +1,14 @@
 ## Changelog
 
+#### Version 19.42 (November 23, 2019)
+* Add ability for side slider to inherit colors from navigation menu
+* Add greatly improved icons' rendering for Microsoft Windows users
+* Add navigation ability to breadcrumbs for file chooser and improve its icons
+* Add support for jailed server owners in File Manager
+* Add better support for mobile devices
+* Add many small, while important visual improvements
+* Fix toning issues for color palettes
+
 #### Version 19.41 (November 08, 2019)
 * Add improvements to dark theme and color palettes
 * Add better scrollbars styling across browsers
@@ -28,7 +37,6 @@
 * Fix other issues and perform many other optimizations
 
 <!--- separator --->
-
 
 #### Version 19.39 (August 18, 2019)
 * Add ability to restore initial sorting for tables [#1386](https://github.com/authentic-theme/authentic-theme/issues/1386)
