@@ -992,6 +992,12 @@ sub get_button_style
         $icon = "toggle-switch  fa-1_25x";
     } elsif (string_contains($keys, "shutdown")) {
         $icon = "power-off";
+    } elsif (string_contains($keys, "index_shut")) {
+        $icon = "power-off";
+        $class = "danger ";
+    } elsif (string_contains($keys, "index_reboot reboot_title")) {
+        $icon = "refresh-mdi fa-1_25x";
+        $class = "warning ";
     } elsif (string_contains($keys, "docker_reg")) {
         $icon = "check-circle-o";
     } elsif (string_contains($keys, "tmpl_nprev") || string_contains($keys, "wizard_prev")) {
@@ -1047,7 +1053,7 @@ sub get_button_style
     } elsif (string_contains($keys, "ddrop_empty")) {
         $class = "warning ";
         $icon  = "times-circle-o";
-    } elsif (string_contains($keys, "start")) {
+    } elsif (string_contains($keys, "start") || string_contains($keys, "index_run")) {
         $class = "success ";
         $icon  = "play";
     } elsif (string_contains($keys, "index_stop") ||
