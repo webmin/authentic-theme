@@ -15,6 +15,7 @@ our (%in,
      $root_directory,
      $remote_user,
      $get_user_level,
+     $theme_prevent_make_date,
      $webmin_script_type);
 
 sub settings
@@ -55,13 +56,19 @@ sub theme_ui_checkbox_local
 
 sub theme_make_date_local
 {
+    if (get_env('script_name') =~ /disable_domain/ ||
+        $main::webmin_script_type ne 'web')
+    {
+        $main::theme_prevent_make_date = 1;
+        return &make_date(@_);
+    }
     my ($s, $o, $f) = @_;
     my $t = "x-md";
     my $d = "<$t-d>$s";
     ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ($f == -1 ? ";-1" : ";0"))) .
      "</$t-d>");
     (!$o && ($d .= " <$t-t>$s</$t-t>"));
-    return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
+    return $d;
 }
 
 sub theme_nice_size_local
