@@ -28,6 +28,7 @@ var settings_mailbox_slash_delimiter = true,
     settings_cm_editor_palette = "monokai",
 
     settings_contrast_mode = false,
+    settings_theme_make_date = true,
     settings_enable_container_offset = true,
     settings_usermin_default_module = 'sysinfo.cgi',
     settings_document_title = 1,

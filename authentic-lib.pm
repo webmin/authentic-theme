@@ -1399,12 +1399,21 @@ sub get_sysinfo_vars
         my ($_time);
         $_time      = time();
         $local_time = localtime($_time);
+        my $no_theme_date_time = $theme_config{'settings_theme_make_date'} eq 'false';
         if (foreign_available("time")) {
-            $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
-              $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+            if ($no_theme_date_time) {
+                $local_time = '<a href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+            } else {
+                $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
+                  $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+            }
         } else {
-            $local_time = '<span data-convertible-timestamp-full="' .
-              $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
+            if ($no_theme_date_time) {
+                $local_time = '<span>' . $local_time . '</span>';
+            } else {
+                $local_time = '<span data-convertible-timestamp-full="' .
+                  $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
+            }
         }
     }
 
@@ -2473,6 +2482,8 @@ sub theme_settings
             'true',
             'settings_hide_top_loader',
             'false',
+            'settings_theme_make_date',
+            'true',
             'settings_enable_container_offset',
             'true',
             'settings_contrast_mode',

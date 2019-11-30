@@ -94,6 +94,7 @@ sub settings_default
     $c{'settings_invert_level_navigation'}            = '0';
     $c{'settings_brightness_level_navigation'}        = '1';
     $c{'settings_contrast_level_navigation'}          = '1';
+    $c{'settings_theme_make_date'}                    = 'true';
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_usermin_default_module'}             = 'sysinfo.cgi';

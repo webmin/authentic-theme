@@ -60,6 +60,11 @@ print ui_table_row($theme_text{'settings_cm_editor_palette'},
                    ));
 print ui_table_row($theme_text{'settings_hide_top_loader'},
                    ui_yesno_radio('settings_hide_top_loader', $theme_config{'settings_hide_top_loader'}, "true", "false"));
+print ui_table_row($theme_text{'settings_theme_make_date'},
+                   ui_yesno_radio('settings_theme_make_date',
+                                  $theme_config{'settings_theme_make_date'},
+                                  "true", "false"
+                   ));
 print ui_table_row($theme_text{'settings_enable_container_offset'},
                    ui_yesno_radio('settings_enable_container_offset',
                                   $theme_config{'settings_enable_container_offset'},

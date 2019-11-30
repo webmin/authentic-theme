@@ -5,18 +5,8 @@
 #
 use strict;
 
-our (%in,
-     %module_text_full,
-     %theme_text,
-     %theme_config,
-     %gconfig,
-     %tconfig,
-     $current_lang_info,
-     $root_directory,
-     $remote_user,
-     $get_user_level,
-     $theme_prevent_make_date,
-     $webmin_script_type);
+our (%in, %module_text_full, %theme_text, %theme_config, %gconfig, %tconfig, $current_lang_info, $root_directory,
+     $remote_user, $get_user_level, $theme_prevent_make_date, $webmin_script_type);
 
 sub settings
 {
@@ -56,8 +46,15 @@ sub theme_ui_checkbox_local
 
 sub theme_make_date_local
 {
-    if (get_env('script_name') =~ /disable_domain/ ||
-        $main::webmin_script_type ne 'web')
+    if (
+        (
+         (get_env('script_name') =~ /disable_domain/ ||
+          $main::webmin_script_type ne 'web' ||
+          $main::header_content_type ne "text/html"
+         ) &&
+         !$main::theme_allow_make_date
+        ) ||
+        $theme_config{'settings_theme_make_date'} eq 'false')
     {
         $main::theme_prevent_make_date = 1;
         return &make_date(@_);
