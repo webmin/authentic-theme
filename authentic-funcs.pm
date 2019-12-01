@@ -14,10 +14,7 @@ our (%in,
      $current_lang_info,
      $root_directory,
      $remote_user,
-     $get_user_level,
-     $theme_allow_make_date,
-     $theme_prevent_make_date,
-     $webmin_script_type);
+     $get_user_level);
 
 sub settings
 {
