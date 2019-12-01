@@ -61,7 +61,8 @@ sub theme_make_date_local
         (
          (get_env('script_name') =~ /disable_domain/ ||
           $main::webmin_script_type ne 'web' ||
-          $main::header_content_type ne "text/html"
+          ($main::header_content_type ne "text/html" &&
+              $main::header_content_type ne "application/json")
          ) &&
          !$main::theme_allow_make_date
         ) ||
