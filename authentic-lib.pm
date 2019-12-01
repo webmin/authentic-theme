@@ -2340,7 +2340,7 @@ sub settings_get_select_navigation_color
     return '<select class="ui_select" name="' . $k . '">
 
                     <option value="blue"'
-      . ($v eq 'blue' && ' selected') . '>Royal Blue (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+      . ($v eq 'blue' && ' selected') . '>Royal Blue</option>
 
                     <option value="darkBlue"'
       . ($v eq 'darkBlue' && ' selected') . '>Midnight Blue</option>
@@ -2367,7 +2367,7 @@ sub settings_get_select_navigation_color
       . ($v eq 'white' && ' selected') . '>White Snow</option>
 
                     <option value="brown"'
-      . ($v eq 'brown' && ' selected') . '>Saddle Brown</option>
+      . ($v eq 'brown' && ' selected') . '>Saddle Brown (' . $theme_text{'theme_xhred_global_default'} . ')</option>
 
 
                     <option value="purple"'
@@ -2526,7 +2526,7 @@ sub theme_settings
             '__',
             theme_settings('fa', 'bars', &theme_text('settings_right_navigation_menu_title')),
             'settings_navigation_color',
-            'blue',
+            'brown',
             'settings_grayscale_level_navigation',
             '0',
             'settings_sepia_level_navigation',

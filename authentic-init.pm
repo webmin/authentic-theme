@@ -85,7 +85,7 @@ sub settings_default
 {
     my %c;
     $c{'settings_font_family'}                        = '0';
-    $c{'settings_navigation_color'}                   = 'blue';
+    $c{'settings_navigation_color'}                   = 'brown';
     $c{'settings_background_color'}                   = 'gainsboro';
     $c{'settings_grayscale_level_navigation'}         = '0';
     $c{'settings_sepia_level_navigation'}             = '0';

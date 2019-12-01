@@ -7,7 +7,7 @@ var settings_mailbox_slash_delimiter = true,
     settings_right_cloudmin_default = "sysinfo.cgi",
 
     settings_font_family = 0,
-    settings_navigation_color = "blue",
+    settings_navigation_color = "brown",
 
     settings_grayscale_level_navigation = "0",
     settings_sepia_level_navigation = "0",
