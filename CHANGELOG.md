@@ -1,5 +1,17 @@
 ## Changelog
 
+#### Version 19.43-RC1 (December 03, 2019)
+* Set saddle brown color palette as default
+* Add various UI improvements
+* Add ability to automatically focus rows in post-actions in File Manager
+* Add possibility to avoid from formatting dates using browser (use server format instead)
+* Fix to improve account level control in File Manager
+* Fix breakage as navigating from File Manager to one of the progressive pages
+* Fix to let JavaScript store current select state on popstate
+* Fix icon rows look and size (minimal)
+* Fix to improve data tables behaviour on popstate
+* Fix MySQL/PostgreSQL controls to work on popstate
+
 #### Version 19.42 (November 23, 2019)
 * Add ability for side slider to inherit colors from navigation menu
 * Add greatly improved icons' rendering for Microsoft Windows users
