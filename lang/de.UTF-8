@@ -3,10 +3,10 @@ body_cpu=Durchschnittliche Prozessor-Auslastung
 body_cpuinfo=Prozessorinformation
 body_cputemps=Prozessor-Temperatur
 body_cputype=$5, $8 Kerne
-body_disk=Lokaler HDD-Speicher
+body_disk=Festplatten Speicher
 body_driveerr=$1 Fehler!
 body_drivefailed=SMART-Check fehlgeschlagen!
-body_drivetemps=HDD-Temperatur
+body_drivetemps=Festplatten-Temperatur
 body_firewall=Firewall-Version
 body_header0=Systeminformation
 body_header1=Nutzerinformation
@@ -16,7 +16,7 @@ body_kernelon=$1 $2 auf $3
 body_load=$1 (1 Min) $2 (5 Min) $3 (15 Min)
 body_os=Betriebssystem
 body_procs=Laufende Prozesse
-body_real=Echter Speicher
+body_real=Hauptspeicher
 body_time=Systemzeit
 body_updates=Paket-Updates
 body_updays=$1 Tage, $2 Stunden, $3 Minuten
@@ -33,7 +33,7 @@ body_uptime=System-Betriebszeit
 body_used=$1 gesamt / $2 genutzt
 body_used_and_free=$1 gesamt / $2 frei / $3 genutzt
 body_usermin=Usermin-Version
-body_virt=Virtueller Speicher
+body_virt=Auslagerungsspeicher
 body_webmin=Webmin-Version
 
 left_favorites=Favoriten
@@ -1074,7 +1074,7 @@ global_deps_installed=Das Paket $1 wurde erfolgreich installiert.
 global_deps_error=Das Paket $1 konnte nicht installiert werden. Bitte installiere es h&auml;ndisch.
 global_deps_installing=Das Paket $1 wird installiert.
 theme_xhred_global_toggle_fullscreen=Vollbild umschalten
-theme_xhred_global_zoom_in_out=Ein/aus Zoomen
+theme_xhred_global_zoom_in_out=Vergr&ouml;%szlig;ern/Verkleinern
 theme_xhred_global_prev_arrow_left=Vorheriger (Pfeil links)
 theme_xhred_global_next_arrow_right=N&auml;chster (Pfeil rechts)
 
@@ -1087,7 +1087,7 @@ settings_document_title_option_1=Modul — $1 Version (OS Typ)
 settings_document_title_option_2=$1 Version (OS Typ) — Modul
 settings_document_title_option_4=$1 Version (OS typ)
 settings_document_title_option_5=Hostname - $1 Version (OS Typ) — Modul
-settings_document_title_option_6=username@hostname - $1 version (OS Typ) — Modul
+settings_document_title_option_6=username@hostname - $1 Version (OS Typ) — Modul
 settings_document_title_option_7=Modul — $1
 settings_document_title_option_8=Hostname — Modul
 settings_document_title_option_9=username@hostname — Modul
@@ -1106,93 +1106,93 @@ settings_usermin_default_module=Standard Modul
 
 
 #19.34
-theme_xhred_search_in_file_open_external=Detach file to separate editor
-theme_xhred_path_to_console=Open current path in terminal (Alt+Shift+K)
-theme_xhred_filemanager_editor_revert_content=Revert File
-theme_xhred_filemanager_editor_reverting_content=Dropping changes and reverting to original file content.
+theme_xhred_search_in_file_open_external=Bearbeite Datei in externem Editor
+theme_xhred_path_to_console=&Ouml;ffne aktuellen Pfad in Kommandozeile. (Alt+Shift+K)
+theme_xhred_filemanager_editor_revert_content=Datei zur&uuml;cksetzen
+theme_xhred_filemanager_editor_reverting_content=&Auml;nderungen r&uuml;ckg&auml;ngig machen und originalen Dateiinhalt wiederherstellen.
 
 
 #19.37
-theme_xhred_filemanager_exclude_dirs=Exclude entries
-theme_xhred_filemanager_exclude_dirs_desc=Semicolon separated list of files or subdirectories to exclude
+theme_xhred_filemanager_exclude_dirs=Eintr&auml;ge ausschlie&szlig;en
+theme_xhred_filemanager_exclude_dirs_desc=Liste von Dateien und Unterverzeichnissen die ausgeschlossen werden, getrennt durch Semicolon
 
 
 #19.38
-theme_global_access_level=Access Level
-theme_global_user_mode=User Mode
+theme_global_access_level=Zugriffsebene
+theme_global_user_mode=Benutzerebene
 
 
 #19.40
-theme_xhred_global_attachments=Attachments
-theme_xhred_editor_tb_font=Font
-theme_xhred_editor_tb_size=Size
-theme_xhred_editor_tb_bold=Bold (%cmd+B)
-theme_xhred_editor_tb_italic=Italic (%cmd+I)
-theme_xhred_editor_tb_underline=Underline (%cmd+U)
-theme_xhred_editor_tb_color=Text color
-theme_xhred_editor_tb_background=Text background
-theme_xhred_editor_tb_align=Align
-theme_xhred_editor_tb_list_ordered=Numbered list
-theme_xhred_editor_tb_list_bullet=Bulleted list
-theme_xhred_editor_tb_strike=Strikethrough
-theme_xhred_editor_tb_blockquote=Quote
-theme_xhred_editor_tb_code-block=Insert code
-theme_xhred_editor_tb_link=Insert link (%cmd+K)
-theme_xhred_editor_tb_clean=Remove formatting
-theme_xhred_mail_composer_send=Send
-theme_xhred_mail_composer_schedule=Schedule
-theme_xhred_mail_composer_attach=Attach file(s)
-theme_xhred_mail_composer_insert_picture=Insert pictures inline
-theme_xhred_mail_composer_toggle=Toggle HTML/plain text mode
-theme_xhred_mail_composer_discard=Discard draft
-theme_xhred_mail_composer_server_attach=Attach file from server
-theme_xhred_mail_composer_addrecipients=Add recipients to addressbook
-theme_xhred_mail_composer_notifications_dsn=Request delivery status
-theme_xhred_mail_composer_notifications_del=Request read receipt
-theme_xhred_global_options=Options
-theme_xhred_mail_composer_draft_saving=Draft saving...
-theme_xhred_mail_composer_draft_saved=Draft saved
-theme_xhred_mail_composer_server_attach_error_read=Requested file cannot be read or permission denied
-theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached
-theme_xhred_mail_composer_discarded_draft=Draft has been discarded
-theme_xhred_global_undo=Undo
+theme_xhred_global_attachments=Anh&auml;nge
+theme_xhred_editor_tb_font=Schrift
+theme_xhred_editor_tb_size=Gr&ouml;&szlig;e
+theme_xhred_editor_tb_bold=Fett (%cmd+B)
+theme_xhred_editor_tb_italic=Kursiv (%cmd+I)
+theme_xhred_editor_tb_underline=Unterstrichen (%cmd+U)
+theme_xhred_editor_tb_color=Text Farbe
+theme_xhred_editor_tb_background=Text Hintergrund
+theme_xhred_editor_tb_align=Ausrichtung
+theme_xhred_editor_tb_list_ordered=Nummerierte Liste
+theme_xhred_editor_tb_list_bullet=Aufz&auml;hlung
+theme_xhred_editor_tb_strike=Durchgestrichen
+theme_xhred_editor_tb_blockquote=Zitat
+theme_xhred_editor_tb_code-block=Programmcode einf&uuml;gen
+theme_xhred_editor_tb_link=Verk&uuml;pfung einf&uml;gen (%cmd+K)
+theme_xhred_editor_tb_clean=Formatierung entfernen
+theme_xhred_mail_composer_send=Senden
+theme_xhred_mail_composer_schedule=Planen
+theme_xhred_mail_composer_attach=Datei(en) anh&auml;gen
+theme_xhred_mail_composer_insert_picture=Bild einf&uuml;gen
+theme_xhred_mail_composer_toggle=Umschalten HTML/Text Modus
+theme_xhred_mail_composer_discard=Entwurf verwerfen
+theme_xhred_mail_composer_server_attach=Datei von Server anh&auml;gen
+theme_xhred_mail_composer_addrecipients=Empfänger zum Adressbuch hinzuf&uuml;gen
+theme_xhred_mail_composer_notifications_dsn=Zustellungsbenachrichtigung anfordern
+theme_xhred_mail_composer_notifications_del=Lesebenachrichtigung anfordern
+theme_xhred_global_options=Optionen
+theme_xhred_mail_composer_draft_saving=Speichere Entwurf...
+theme_xhred_mail_composer_draft_saved=Entwurf gespeichert
+theme_xhred_mail_composer_server_attach_error_read=Angeforderte Datei kann nicht gelesen werden oder keine Berechtigung
+theme_xhred_mail_composer_server_attach_error_dir=Verzeichnisse k&ouml;nnen nicht angeh&auml;gt werden
+theme_xhred_mail_composer_discarded_draft=Entwurf gel&ouml;scht
+theme_xhred_global_undo=R&uuml;ckg&auml;ngig
 
-theme_xhred_global_today=Today
-theme_xhred_global_tomorrow=Tomorrow
-theme_xhred_mail_composer_scheduled=Send %1 at %2
-theme_global_core=Core
-settings_sysinfo_real_time_stored=Enable stats history
-settings_sysinfo_real_time_stored_description=If enabled, previously gathered stats will be stored, and displayed in a graph on the Dashboard
-settings_sysinfo_real_time_stored_length=Stats history duration
-settings_sysinfo_real_time_stored_length_description=The time during which stats history is stored
-theme_dashboard_accordion_live_stats=Stats History
-theme_xhred_live_stats_cpu=CPU
-theme_xhred_live_stats_mem=Memory
-theme_xhred_live_stats_virt=Swap
-theme_xhred_live_stats_proc=Process
-theme_xhred_live_stats_disk=Disk I/O
-theme_xhred_global_hour=Hour
-theme_xhred_global_hours=Hours
-theme_xhred_title_locale_time_format=Time format
-theme_xhred_nice_size_PIB=PiB
-theme_xhred_nice_size_TIB=TiB
-theme_xhred_nice_size_GIB=GiB
-theme_xhred_nice_size_MIB=MiB
-theme_xhred_nice_size_kIB=kiB
-theme_xhred_live_stats_net=Network I/O
+theme_xhred_global_today=Heute
+theme_xhred_global_tomorrow=Morgen
+theme_xhred_mail_composer_scheduled=Sende %1 um %2
+theme_global_core=Kern
+settings_sysinfo_real_time_stored=Werte Verlauf einschalten
+settings_sysinfo_real_time_stored_description=Die gesammelten Werte werden gespeichert und als Grafik im Dashboard angezeigt
+settings_sysinfo_real_time_stored_length=Zeitraum der gesammelten Werte
+settings_sysinfo_real_time_stored_length_description=Zeitraum über den die Werte gespeichert und angezeigt werden
+theme_dashboard_accordion_live_stats=Werte Verlauf
+theme_xhred_live_stats_cpu=Prozesssor
+theme_xhred_live_stats_mem=Hauptspeicher
+theme_xhred_live_stats_virt=Auslagerungsspeicher
+theme_xhred_live_stats_proc=Prozess
+theme_xhred_live_stats_disk=Festplatten Durchsatz
+theme_xhred_global_hour=Stunde
+theme_xhred_global_hours=Stunden
+theme_xhred_title_locale_time_format=Zeit Format
+theme_xhred_nice_size_PIB=PB
+theme_xhred_nice_size_TIB=TB
+theme_xhred_nice_size_GIB=GB
+theme_xhred_nice_size_MIB=MB
+theme_xhred_nice_size_kIB=kB
+theme_xhred_live_stats_net=Netzwerk Durchsatz
 theme_xhred_nice_size_PBB=Pbps
 theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
-theme_xhred_global_rows=Rows
+settings_table_init_datatables=Maximale Anzahl Reihen beim Sortieren und Suchen in der Tabelle
+theme_xhred_global_rows=Reihen
 
 
 #19.42
-settings_side_slider_blend=Inherit
+settings_side_slider_blend=Vererbt
 
 
 #19.43
-settings_theme_make_date=Enable date/time conversion in browser
-settings_theme_make_date_description=If disabled, date/time format provided by the server will be used
+settings_theme_make_date=Datum- und Zeitformat im Browser konvertieren
+settings_theme_make_date_description=Die Umsetzung von Datum und Uhrzeit in das angegebene Format wird vom Browser durchgef&uuml;hrt, ansonsten wird das Format des Servers verwendet
