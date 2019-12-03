@@ -691,7 +691,7 @@ sub print_left_custom_links
 {
     my $extra = $theme_config{'settings_leftmenu_custom_links'};
     if ($extra) {
-        $extra = replace('\'', '"', un_urlize($extra));
+        $extra = replace('\'', '"', un_urlize($extra, 1));
         if ($extra && $extra =~ m/"extra":/) {
             my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
             my $extra_json = convert_from_json($extra);
@@ -3280,10 +3280,12 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             set_user_level();
-            my $path  = get_access_data('root') . $in{'xhr-get_size_path'};
+            my $module = $in{'xhr-get_size_cmodule'};
+            my $jailed_user = get_fm_jailed_user($module);
+            my $path  = ($jailed_user || get_access_data('root')) . $in{'xhr-get_size_path'};
             my $nodir = $in{'xhr-get_size_nodir'};
-            my $home  = get_user_home();
-            if ($get_user_level eq '3' && !string_starts_with($path, $home)) {
+            my $home  = ($jailed_user || get_user_home());
+            if (($jailed_user || $get_user_level eq '3') && !string_starts_with($path, $home)) {
                 $path = $home . $path;
                 $path =~ s/\/\//\//g;
             }
@@ -3298,10 +3300,12 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path = "$in{'xhr-get_list_path'}";
+            my $module = $in{'xhr-get_list_cmodule'};
             my @dirs;
 
-            if ($get_user_level eq '2' || $get_user_level eq '4') {
-                $path = get_user_home() . $path;
+            my $jailed_user = get_fm_jailed_user($module);
+            if ($jailed_user || $get_user_level eq '2' || $get_user_level eq '4') {
+                $path = ($jailed_user || get_user_home()) . $path;
             }
             opendir(my $dirs, $path);
             while (my $dir = readdir $dirs) {
@@ -3315,18 +3319,30 @@ sub get_xhr_request
             print convert_to_json(\@dirs);
 
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
-            set_user_level();
+            
+            my $module = $in{'xhr-encoding_convert_cmodule'};
+            my $jailed_user = get_fm_jailed_user($module, 1);
+            my $jailed_user_home = get_fm_jailed_user($module);
+            my $cfile = $in{'xhr-encoding_convert_file'};
+            if ($jailed_user) {
+              switch_to_unix_user_local($jailed_user);
+              $cfile = $jailed_user_home . $cfile;
+            } else {
+                set_user_level();
+            }
 
             my $data;
             eval {
                 $data = Encode::encode('utf-8',
                                        Encode::decode($in{'xhr-encoding_convert_name'},
-                                                      read_file_contents($in{'xhr-encoding_convert_file'})
+                                                      read_file_contents($cfile)
                                        ));
             };
             print $data;
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
-            switch_to_unix_user_local();
+            my $module = $in{'xhr-get_gpg_keys_cmodule'};
+            my $jailed_user = get_fm_jailed_user($module, 1);
+            switch_to_unix_user_local($jailed_user || undef);
             my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;

@@ -934,6 +934,11 @@ sub print_content
     $list_data{'searched'}             = $query ? 1 : 0;
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
     $list_data{'flush_reset'}          = $in{'flush_reset'} ? 1 : 0;
+    $list_data{'udata'} = { user   => $remote_user_info[0],
+                            home   => $remote_user_info[7],
+                            uid    => $remote_user_info[2],
+                            guid   => $remote_user_info[3],
+                            access => $access{'work_as_user'} };
 
     print_json_local([\%list_data]);
 }

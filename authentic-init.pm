@@ -994,10 +994,10 @@ sub get_button_style
     } elsif (string_contains($keys, "shutdown")) {
         $icon = "power-off";
     } elsif (string_contains($keys, "index_shut")) {
-        $icon = "power-off";
+        $icon  = "power-off";
         $class = "danger ";
     } elsif (string_contains($keys, "index_reboot reboot_title")) {
-        $icon = "refresh-mdi fa-1_25x";
+        $icon  = "refresh-mdi fa-1_25x";
         $class = "warning ";
     } elsif (string_contains($keys, "docker_reg")) {
         $icon = "check-circle-o";
@@ -1327,7 +1327,7 @@ sub header_html_data
       theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
       get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri')))) .
+      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
@@ -1501,6 +1501,21 @@ sub get_user_id
     }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[2];
+}
+
+sub get_fm_jailed_user
+{
+    if (!supports_users()) {
+        return undef;
+    }
+    my $jailed_user = 0;
+    my %fmaccess    = get_module_acl(undef, $_[0]);
+    if ($get_user_level eq '0' && %fmaccess && $fmaccess{'work_as_user'} && $fmaccess{'work_as_user'} ne $remote_user) {
+        my @user_info = getpwnam($fmaccess{'work_as_user'});
+        $jailed_user = $_[1] ? $user_info[0] : $user_info[7];
+    }
+    return $jailed_user;
+
 }
 
 sub get_tuconfig_file
