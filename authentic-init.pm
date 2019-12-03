@@ -1515,7 +1515,6 @@ sub get_fm_jailed_user
         $jailed_user = $_[1] ? $user_info[0] : $user_info[7];
     }
     return $jailed_user;
-
 }
 
 sub get_tuconfig_file
@@ -1563,7 +1562,6 @@ sub get_link
     $string =~ /<a.*href.*>([\s\S]+?)<\/a>/;
 
     return [$url, $1];
-
 }
 
 sub get_button_tooltip

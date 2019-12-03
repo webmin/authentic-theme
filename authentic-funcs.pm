@@ -198,7 +198,6 @@ sub get_text_ltr
     } else {
         return 1;
     }
-
 }
 
 sub reverse_string
