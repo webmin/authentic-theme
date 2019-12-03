@@ -1137,7 +1137,7 @@ theme_xhred_editor_tb_list_bullet=Aufz&auml;hlung
 theme_xhred_editor_tb_strike=Durchgestrichen
 theme_xhred_editor_tb_blockquote=Zitat
 theme_xhred_editor_tb_code-block=Programmcode einf&uuml;gen
-theme_xhred_editor_tb_link=Verküpfung einf&uml;gen (%cmd+K)
+theme_xhred_editor_tb_link=Verk&uuml;pfung einf&uml;gen (%cmd+K)
 theme_xhred_editor_tb_clean=Formatierung entfernen
 theme_xhred_mail_composer_send=Senden
 theme_xhred_mail_composer_schedule=Planen
@@ -1152,7 +1152,7 @@ theme_xhred_mail_composer_notifications_del=Lesebenachrichtigung anfordern
 theme_xhred_global_options=Optionen
 theme_xhred_mail_composer_draft_saving=Speichere Entwurf...
 theme_xhred_mail_composer_draft_saved=Entwurf gespeichert
-theme_xhred_mail_composer_server_attach_error_read=Angeforderte Datei kann nicht gelesen werden oder keine Betrechtiging
+theme_xhred_mail_composer_server_attach_error_read=Angeforderte Datei kann nicht gelesen werden oder keine Berechtigung
 theme_xhred_mail_composer_server_attach_error_dir=Verzeichnisse k&ouml;nnen nicht angeh&auml;gt werden
 theme_xhred_mail_composer_discarded_draft=Entwurf gel&ouml;scht
 theme_xhred_global_undo=R&uuml;ckg&auml;ngig
@@ -1185,7 +1185,7 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximale Anzahl Reihen beim sortieren und suchen in der Tabelle
+settings_table_init_datatables=Maximale Anzahl Reihen beim Sortieren und Suchen in der Tabelle
 theme_xhred_global_rows=Reihen
 
 
@@ -1195,4 +1195,4 @@ settings_side_slider_blend=Vererbt
 
 #19.43
 settings_theme_make_date=Datum- und Zeitformat im Browser konvertieren
-settings_theme_make_date_description=Die Umsetzung von Datum und Uhrzeit in das angegebene Format wird vom Browwser durchgef&uuml;hrt, ansonsten wird das Format des Servers verwendet
+settings_theme_make_date_description=Die Umsetzung von Datum und Uhrzeit in das angegebene Format wird vom Browser durchgef&uuml;hrt, ansonsten wird das Format des Servers verwendet
