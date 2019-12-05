@@ -631,7 +631,7 @@ theme_xhred_global_prev_page=Kembali satu halaman
 theme_xhred_global_help=Bantuan
 settings_right_soft_updates_page_options_title=Pembaruan perangkat lunak
 theme_xhred_git_compare_changes=Bandingkan perubahan
-theme_xhred_filemanager_link_to_clipboard=Nama tautan simbolis `<strong><em>%value</em></strong>` telah disalin ke papan klip.
+theme_xhred_filemanager_link_to_clipboard=Nama tautan simbolis telah disalin ke papan klip.
 
 
 #18.46

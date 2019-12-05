@@ -546,7 +546,7 @@ sub print_content
         @list = exec_search();
     } else {
         unless (opendir(DIR, $cwd)) {
-            print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
+            print_error("$text{'theme_xhred_global_error'}: [tt]`$cwd`[/tt]- $!.");
             exit;
         }
         @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
