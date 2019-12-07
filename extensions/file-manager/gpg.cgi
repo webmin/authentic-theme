@@ -69,7 +69,7 @@ foreach my $name (@entries_list) {
     }
     if ($status != 0) {
         if ($status == 512) {
-            $errors{ html_escape($name) } = $text{'filemanager_archive_gpg_private_error'};
+            $errors{ $name } = $text{'filemanager_archive_gpg_private_error'};
         }
     }
 }

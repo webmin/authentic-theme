@@ -768,9 +768,7 @@ sub print_content
             }
             $hlink_path =~ s/\/\Q$filename\E$//;
         }
-
-        $path = html_escape($path);
-
+        
         my $type = $list[$count - 1][14];
         $type =~ s/\//\-/g;
         my $img = "images/icons/mime/$type.png";
