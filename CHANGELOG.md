@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.43-RC2 (December 04, 2019)
+#### Version 19.43 (December 07, 2019)
 * Set saddle brown color palette as default
 * Add various UI improvements
 * Add ability to automatically focus rows in post-actions in File Manager [@8317851](https://github.com/authentic-theme/authentic-theme/commit/83178518c3218ad01ee13a8e0368a02143e9c110)
-* Add possibility to avoid from formatting dates using browser (use server format instead)
+* Add an option to avoid formatting dates using browser (use server format instead)
 * Add better support and safety when working with HTML based filenames in File Manager
+* Fix numerous and infamous issues with File Manager
 * Fiх to improve account level control in File Manager [@ef22ef0](https://github.com/authentic-theme/authentic-theme/commit/ef22ef0d87dcc96147924ef3830327fb1164a27c)
 * Fiх breakage as navigating from File Manager to one of the progressive pages [@6cfcfae](https://github.com/authentic-theme/authentic-theme/commit/6cfcfae7922a2395b44ab58a7bb9aa02de93189a)
 * Fix to let JavaScript store current select state on popstate
