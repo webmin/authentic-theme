@@ -35,9 +35,10 @@ $label =~ tr/a-zA-Z\-\+ //dc;
 my @entries_list = get_entries_list();
 
 foreach my $file (@entries_list) {
+	my $file_ = $file;
     $file = simplify_path($file);
     if (system_logged("chattr $recursive " . $label . " " . quotemeta("$cwd/$file")) != 0) {
-        $errors{ html_escape($file) } = lc("$text{'attr_label_error_proc'}: $?");
+        $errors{ $file_ } = lc("$text{'attr_label_error_proc'}: $?");
     }
 }
 

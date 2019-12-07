@@ -50,14 +50,6 @@ print ui_table_row($theme_text{'settings_font_family'},
                                                    ),
                                                    'settings_font_family'
                    ));
-print ui_table_row($theme_text{'settings_navigation_color'},
-                   settings_get_select_navigation_color(
-                                                        ($theme_config{'settings_navigation_color'} ne 'undefined' ?
-                                                           $theme_config{'settings_navigation_color'} :
-                                                           'blue'
-                                                        ),
-                                                        'settings_navigation_color'
-                   ));
 print ui_table_row($theme_text{'settings_cm_editor_palette'},
                    settings_get_select_editor_color(
                                                     ($theme_config{'settings_cm_editor_palette'} ne 'undefined' ?
@@ -65,6 +57,13 @@ print ui_table_row($theme_text{'settings_cm_editor_palette'},
                                                        'monokai'
                                                     ),
                                                     'settings_cm_editor_palette'
+                   ));
+print ui_table_row($theme_text{'settings_hide_top_loader'},
+                   ui_yesno_radio('settings_hide_top_loader', $theme_config{'settings_hide_top_loader'}, "true", "false"));
+print ui_table_row($theme_text{'settings_theme_make_date'},
+                   ui_yesno_radio('settings_theme_make_date',
+                                  $theme_config{'settings_theme_make_date'},
+                                  "true", "false"
                    ));
 print ui_table_row($theme_text{'settings_enable_container_offset'},
                    ui_yesno_radio('settings_enable_container_offset',
@@ -83,8 +82,14 @@ print ui_table_row($theme_text{'settings_mail_ui'},
                    ui_yesno_radio('settings_mail_ui', $theme_config{'settings_mail_ui'}, "true", "false"));
 print ui_table_row(undef, '<b>' . $theme_text{'settings_right_navigation_menu_title'} . '</b>', 2);
 
-print ui_table_row($theme_text{'settings_hide_top_loader'},
-                   ui_yesno_radio('settings_hide_top_loader', $theme_config{'settings_hide_top_loader'}, "true", "false"));
+print ui_table_row($theme_text{'settings_navigation_color'},
+                   settings_get_select_navigation_color(
+                                                        ($theme_config{'settings_navigation_color'} ne 'undefined' ?
+                                                           $theme_config{'settings_navigation_color'} :
+                                                           'brown'
+                                                        ),
+                                                        'settings_navigation_color'
+                   ));
 print ui_table_row($theme_text{'settings_collapse_navigation_link'},
                    ui_yesno_radio('settings_collapse_navigation_link',
                                   $theme_config{'settings_collapse_navigation_link'},

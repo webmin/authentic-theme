@@ -7,15 +7,42 @@ use strict;
 
 use File::Basename;
 
-our (@theme_bundle_css,    @theme_bundle_js,             %module_text_full,         %theme_config,
-     %theme_text,          %theme_temp_data,             $get_user_level,           $global_prefix,
-     $parent_webprefix,    $has_cloudmin,                $has_usermin_conf_dir,     $has_usermin_root_dir,
-     $has_usermin_version, $has_usermin,                 $has_virtualmin,           $theme_module_query_id,
-     $t_uri___i,           $theme_requested_from_module, $theme_requested_from_tab, $theme_requested_url,
-     $t_var_product_m,     $t_var_switch_m,              $xnav,                     %config,
-     %gaccess,             %gconfig,                     %in,                       %tconfig,
-     %text,                $base_remote_user,            $config_directory,         $current_lang,
-     $current_theme,       $remote_user,                 $root_directory,           $theme_root_directory,
+our (@theme_bundle_css,
+     @theme_bundle_js,
+     %module_text_full,
+     %theme_config,
+     %theme_text,
+     %theme_temp_data,
+     $get_user_level,
+     $global_prefix,
+     $parent_webprefix,
+     $has_cloudmin,
+     $has_usermin_conf_dir,
+     $has_usermin_root_dir,
+     $has_usermin_version,
+     $has_usermin,
+     $has_virtualmin,
+     $theme_module_query_id,
+     $t_uri___i,
+     $theme_requested_from_module,
+     $theme_requested_from_tab,
+     $theme_requested_url,
+     $t_var_product_m,
+     $t_var_switch_m,
+     $xnav,
+     %config,
+     %gaccess,
+     %gconfig,
+     %in,
+     %tconfig,
+     %text,
+     $base_remote_user,
+     $config_directory,
+     $current_lang,
+     $current_theme,
+     $remote_user,
+     $root_directory,
+     $theme_root_directory,
      $title);
 
 do(dirname(__FILE__) . "/authentic-funcs.pm");
@@ -37,6 +64,7 @@ sub settings_filter
     for (values %in_data) {s/'false'/false/g}
     for (values %in_data) {s/'1'/1/g}
     for (values %in_data) {s/'0'/0/g}
+
     for (values %in_data) {
         s/
          \G
@@ -57,7 +85,7 @@ sub settings_default
 {
     my %c;
     $c{'settings_font_family'}                        = '0';
-    $c{'settings_navigation_color'}                   = 'blue';
+    $c{'settings_navigation_color'}                   = 'brown';
     $c{'settings_background_color'}                   = 'gainsboro';
     $c{'settings_grayscale_level_navigation'}         = '0';
     $c{'settings_sepia_level_navigation'}             = '0';
@@ -66,6 +94,7 @@ sub settings_default
     $c{'settings_invert_level_navigation'}            = '0';
     $c{'settings_brightness_level_navigation'}        = '1';
     $c{'settings_contrast_level_navigation'}          = '1';
+    $c{'settings_theme_make_date'}                    = 'true';
     $c{'settings_enable_container_offset'}            = 'true';
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_usermin_default_module'}             = 'sysinfo.cgi';
@@ -97,6 +126,26 @@ sub settings_default
     $c{'settings_mail_ui'}                            = 'true';
 
     return %c;
+}
+
+sub get_theme_color
+{
+    my %theme_colors = ('blue'      => '#2d5d9d',
+                        'darkBlue'  => '#31506b',
+                        'lightBlue' => '#23689e',
+                        'gold'      => '#947c55',
+                        'green'     => '#277b4c',
+                        'red'       => '#9e1f32',
+                        'indianRed' => '#b14f4f',
+                        'orange'    => '#a9713f',
+                        'white'     => '#ffffff',
+                        'brown'     => '#5d4636',
+                        'purple'    => '#543c53',
+                        'grey'      => '#4d5250',
+                        'darkGrey'  => '#3d423f');
+
+    my $color = $theme_config{'settings_navigation_color'};
+    return $theme_colors{$color};
 }
 
 sub embed_favicon
@@ -135,12 +184,12 @@ sub embed_favicon
     }
     print ' <link ' .
       $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' . $favicon_path . '/manifest.json">' . "\n";
-    print ' <link ' .
-      $ref_link . ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="#3d74ca">' . "\n";
-    print ' <meta name="msapplication-TileColor" content="#3d74ca">' . "\n";
+    print ' <link ' . $ref_link .
+      ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="' . get_theme_color() . '">' . "\n";
+    print ' <meta name="msapplication-TileColor" content="' . get_theme_color() . '">' . "\n";
     print ' <meta ' .
       $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">' . "\n";
-    print ' <meta name="theme-color" content="#3d74ca">' . "\n";
+    print ' <meta name="theme-color" content="' . get_theme_color() . '">' . "\n";
 
 }
 
@@ -472,15 +521,15 @@ sub embed_noscript
     my $noscript = <<EOF;
       <noscript>
       <style>
-        html[data-background-style="gainsboro"]
+        html[data-bgs="gainsboro"]
         {
           background-color: #d6d6d6;
         }
-        html[data-background-style="nightRider"]
+        html[data-bgs="nightRider"]
         {
           background-color: #1a1c20;
         }
-        html[data-background-style="nightRider"] div[data-noscript]
+        html[data-bgs="nightRider"] div[data-noscript]
         {
           color: #979ba080;
         }
@@ -771,14 +820,7 @@ sub get_current_user_language
 
 sub get_filters
 {
-    return '-webkit-filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
-      ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
-      ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
-      ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
-      'deg)' . ' invert(' . $theme_config{'settings_invert_level_navigation'} .
-      ') brightness(' . $theme_config{'settings_brightness_level_navigation'} .
-      ') contrast(' . $theme_config{'settings_contrast_level_navigation'} .
-      ')' . '; filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
+    return 'filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
       ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
       ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
       ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
@@ -951,6 +993,12 @@ sub get_button_style
         $icon = "toggle-switch  fa-1_25x";
     } elsif (string_contains($keys, "shutdown")) {
         $icon = "power-off";
+    } elsif (string_contains($keys, "index_shut")) {
+        $icon  = "power-off";
+        $class = "danger ";
+    } elsif (string_contains($keys, "index_reboot reboot_title")) {
+        $icon  = "refresh-mdi fa-1_25x";
+        $class = "warning ";
     } elsif (string_contains($keys, "docker_reg")) {
         $icon = "check-circle-o";
     } elsif (string_contains($keys, "tmpl_nprev") || string_contains($keys, "wizard_prev")) {
@@ -1006,7 +1054,7 @@ sub get_button_style
     } elsif (string_contains($keys, "ddrop_empty")) {
         $class = "warning ";
         $icon  = "times-circle-o";
-    } elsif (string_contains($keys, "start")) {
+    } elsif (string_contains($keys, "start") || string_contains($keys, "index_run")) {
         $class = "success ";
         $icon  = "play";
     } elsif (string_contains($keys, "index_stop") ||
@@ -1258,8 +1306,8 @@ sub header_html_data
     return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
       format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
-      '"' . ($skip ? '' : ' data-background-style="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
-      '' . ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
+      '"' . ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
+      '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' . ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
       '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
       '" data-slider-fixed="' . ($theme_config{'settings_side_slider_fixed'} eq "true" &&
@@ -1279,7 +1327,7 @@ sub header_html_data
       theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
       get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri')))) .
+      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
       '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
 }
@@ -1427,8 +1475,8 @@ sub parse_servers_path
     my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
 
     if ($parent) {
-        my ($parent_link)      = $parent =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix)    = $parent_link =~ /:\d+(.*\/link.cgi\/\S*\d)/;
+        my ($parent_link)      = $parent        =~ /(\S*link\.cgi\/[\d]{8,16})/;
+        my ($parent_prefix)    = $parent_link   =~ /:\d+(.*\/link.cgi\/\S*\d)/;
         my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
 
         return ($parent_prefix, $parent_webprefix);
@@ -1453,6 +1501,20 @@ sub get_user_id
     }
     my @my_user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
     return $my_user_info[2];
+}
+
+sub get_fm_jailed_user
+{
+    if (!supports_users()) {
+        return undef;
+    }
+    my $jailed_user = 0;
+    my %fmaccess    = get_module_acl(undef, $_[0]);
+    if ($get_user_level eq '0' && %fmaccess && $fmaccess{'work_as_user'} && $fmaccess{'work_as_user'} ne $remote_user) {
+        my @user_info = getpwnam($fmaccess{'work_as_user'});
+        $jailed_user = $_[1] ? $user_info[0] : $user_info[7];
+    }
+    return $jailed_user;
 }
 
 sub get_tuconfig_file
@@ -1500,7 +1562,6 @@ sub get_link
     $string =~ /<a.*href.*>([\s\S]+?)<\/a>/;
 
     return [$url, $1];
-
 }
 
 sub get_button_tooltip

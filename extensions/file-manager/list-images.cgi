@@ -37,7 +37,7 @@ if (!$files_all) {
         @list = exec_search();
     } else {
         unless (opendir(DIR, $cwd)) {
-            print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
+            print_error("$text{'theme_xhred_global_error'}: [tt]`$cwd`[/tt]- $!.");
             exit;
         }
         @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
@@ -157,7 +157,7 @@ if (has_command('identify')) {
             if ($file_encoded) {
                 push(@items,
                      {  index => $index,
-                        title => html_escape("$filename (@{[local_nice_size($files_size, -1)]})"),
+                        title => html_escape("$filename (@{[theme_nice_size_local($files_size, -1)]})"),
                         file  => $filename,
                         cwd   => $cwd,
                         src   => ("data:$type;base64,$file_encoded"),
@@ -182,7 +182,7 @@ if (has_command('identify')) {
     my $package_updates = "package-updates";
     if (foreign_available($package_updates)) {
         my $redir                = "$gconfig{'webprefix'}/$request_uri{'module'}";
-        my $pkgname              = ($gconfig{'os_type'} =~ 'debian' ? 'imagemagick' : 'ImageMagick');
+        my $pkgname              = ($gconfig{'os_type'} =~ /debian/ ? 'imagemagick' : 'ImageMagick');
         my %package_updates_lang = load_language($package_updates);
         my $update_failed        = html_escape($package_updates_lang{'update_failed'});
         my $update_ok            = html_escape(text('global_deps_installed', "<code>$pkgname</code>"));

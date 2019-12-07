@@ -1,26 +1,56 @@
 ## Changelog
 
-#### Version 19.40-beta3 (October 09, 2019)
-* Add stats history charts to Dashboard
-* Fix CPU core count start from one for Dashboard
+#### Version 19.43 (December 07, 2019)
+* Set saddle brown color palette as default
+* Add various UI improvements
+* Add ability to automatically focus rows in post-actions in File Manager [@8317851](https://github.com/authentic-theme/authentic-theme/commit/83178518c3218ad01ee13a8e0368a02143e9c110)
+* Add an option to avoid formatting dates using browser (use server format instead)
+* Add better support and safety when working with HTML based filenames in File Manager
+* Fix numerous and infamous issues with File Manager
+* Fiх to improve account level control in File Manager [@ef22ef0](https://github.com/authentic-theme/authentic-theme/commit/ef22ef0d87dcc96147924ef3830327fb1164a27c)
+* Fiх breakage as navigating from File Manager to one of the progressive pages [@6cfcfae](https://github.com/authentic-theme/authentic-theme/commit/6cfcfae7922a2395b44ab58a7bb9aa02de93189a)
+* Fix to let JavaScript store current select state on popstate
+* Fix icon rows look and size (minimal)
+* Fix to improve data tables behaviour on popstate
+* Fix MySQL/PostgreSQL controls to work on popstate
+
+#### Version 19.42 (November 23, 2019)
+* Add ability for side slider to inherit colors from navigation menu
+* Add greatly improved icons' rendering for Microsoft Windows users
+* Add navigation ability to breadcrumbs for file chooser and improve its icons
+* Add support for jailed server owners in File Manager
+* Add better support for mobile devices
+* Add many small, while important visual improvements
+* Fix toning issues for color palettes
+
+#### Version 19.41 (November 08, 2019)
+* Add improvements to dark theme and color palettes
+* Add better scrollbars styling across browsers
+* Add better support for horizontally long tables
+* Add better attachments tags management for new mail composer
+* Add ConfigServer Security & Firewall have reloadable URLs
+* Fix issues with Usermin on mobile devices
+* Fix other bugs
+
+#### Version 19.40 (October 31, 2019)
+* Add basic stats history charts to Dashboard [#1415/comment-542940377](https://github.com/authentic-theme/authentic-theme/issues/1415#issuecomment-542940377)
+* Add brand new mail composer with scheduled emails for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
+* Add keyboard navigation support for tree-view in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
+* Add mobile color themes to blend with current palette [#1405](https://github.com/authentic-theme/authentic-theme/issues/1405)
+* Add greater saturation to default navigation color palette
+* Add improvements to inbuilt command shell
+* Fix possible XSS when adding to favorites
+* Fiх context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
+* Fiх to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
+* Fix issues with directory tree-view in File Manager in Usermin
+* Fix bundle background load to try/catch errors for callbacks
+* Fix CPU core count start from one on Dashboard
 * Fix reauthenticate screen interaction with other elements, and improve its error handling
 * Fix stack order for popovers
-
-#### Version 19.40-beta2 (September 27, 2019)
-* Add scheduled emails for mail composer
-* Add HTML/plain text toggle for mail composer
-* Fix to save drafts properly in mail composer
-
-#### Version 19.40-beta1 (September 11, 2019)
-* Add brand new mail composer for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
-* Add keyboard navigation support for tree in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
-* Fix context menu call using row icon in File Manager [#1394](https://github.com/authentic-theme/authentic-theme/issues/1394)
-* Fix to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
-* Fix bundle background load to try/catch errors for callbacks
-* Fix possible XSS when adding to favorites
+* Fix issues with dropdowns in latest versions of Chrome
+* Fix other issues and perform many other optimizations
 
 <!--- separator --->
-
 
 #### Version 19.39 (August 18, 2019)
 * Add ability to restore initial sorting for tables [#1386](https://github.com/authentic-theme/authentic-theme/issues/1386)

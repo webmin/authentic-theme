@@ -140,7 +140,7 @@ settings_hotkey_custom_7=Custom link <code>7</code>
 settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
-settings_navigation_color=Navigation menu color palette
+settings_navigation_color=Color palette
 settings_background_color=Content page color palette
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
@@ -628,8 +628,7 @@ theme_xhred_global_prev_page=Go back one page
 theme_xhred_global_help=Help
 settings_right_soft_updates_page_options_title=Software updates
 theme_xhred_git_compare_changes=Compare changes
-theme_xhred_filemanager_link_to_clipboard=Symbolic link's name `<strong><em>%value</em></strong>` has been copied to clipboard.
-
+theme_xhred_filemanager_link_to_clipboard=Symbolic link's name has been copied to clipboard.
 
 
 #18.46
@@ -1194,3 +1193,14 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
+theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit
+
+
+#19.43
+settings_theme_make_date=Enable date/time conversion in browser
+settings_theme_make_date_description=If disabled, date/time format provided by the server will be used

@@ -14,8 +14,7 @@ our (%in,
      $current_lang_info,
      $root_directory,
      $remote_user,
-     $get_user_level,
-     $webmin_script_type);
+     $get_user_level);
 
 sub settings
 {
@@ -55,13 +54,65 @@ sub theme_ui_checkbox_local
 
 sub theme_make_date_local
 {
+    if (
+        (
+         (get_env('script_name') =~ /disable_domain/ ||
+          $main::webmin_script_type ne 'web' ||
+          ($main::header_content_type ne "text/html" &&
+              $main::header_content_type ne "application/json")
+         ) &&
+         !$main::theme_allow_make_date
+        ) ||
+        $theme_config{'settings_theme_make_date'} eq 'false')
+    {
+        $main::theme_prevent_make_date = 1;
+        return &make_date(@_);
+    }
     my ($s, $o, $f) = @_;
     my $t = "x-md";
     my $d = "<$t-d>$s";
     ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ($f == -1 ? ";-1" : ";0"))) .
      "</$t-d>");
     (!$o && ($d .= " <$t-t>$s</$t-t>"));
-    return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
+    return $d;
+}
+
+sub theme_nice_size_local
+{
+    my ($bytes, $minimal, $decimal) = @_;
+
+    my ($decimal_units, $binary_units) = (1000, 1024);
+    my $bytes_initial = $bytes;
+    my $unit          = $decimal ? $decimal_units : $binary_units;
+
+    my $label = sub {
+        my ($item) = @_;
+        my $text   = 'theme_xhred_nice_size_';
+        my $unit   = ($unit > $decimal_units ? 'I' : undef);
+        my @labels = ($theme_text{"${text}b"},
+                      $theme_text{"${text}k${unit}B"},
+                      $theme_text{"${text}M${unit}B"},
+                      $theme_text{"${text}G${unit}B"},
+                      $theme_text{"${text}T${unit}B"},
+                      $theme_text{"${text}P${unit}B"});
+        return $labels[$item];
+    };
+
+    my $item = 0;
+    if (abs($bytes) >= $unit) {
+        do {
+            $bytes /= $unit;
+            ++$item;
+        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
+    }
+
+    my $factor    = 10**2;
+    my $formatted = int($bytes * $factor) / $factor;
+
+    if ($minimal == -1) {
+        return $formatted . " " . &$label($item);
+    }
+    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
 }
 
 sub nice_number
@@ -147,7 +198,6 @@ sub get_text_ltr
     } else {
         return 1;
     }
-
 }
 
 sub reverse_string
@@ -316,7 +366,7 @@ sub is_switch_webmin
            (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
              get_product_name() eq 'usermin') ||
            ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/   &&
              ($get_user_level eq '1' || $get_user_level eq '2'))
            ||
            ( $get_user_level ne '3' &&
@@ -385,8 +435,8 @@ sub current_kill_previous
 sub current_to_filename
 {
     my ($filename) = @_;
-    my $salt = substr(encode_base64($main::session_id), 0, 16);
-    my $user = $remote_user;
+    my $salt       = substr(encode_base64($main::session_id), 0, 16);
+    my $user       = $remote_user;
 
     $filename =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
     $filename = $1;
@@ -465,6 +515,18 @@ sub network_stats
         return serialise_variable(\@rs);
     }
     return \%result;
+}
+
+sub acl_system_status
+{
+    my ($show) = @_;
+    my %access = get_module_acl($remote_user, 'system-status');
+    $access{'show'} ||= "";
+    if ($access{'show'} eq '*') {
+        return 1;
+    } else {
+        return indexof($show, split(/\s+/, $access{'show'})) >= 0;
+    }
 }
 
 1;

@@ -140,7 +140,7 @@ settings_hotkey_custom_7=Legătură personalizată <code>7</code>
 settings_hotkey_custom_8=Legătură personalizată <code>8</code>
 settings_hotkey_custom_9=Legătură personalizată <code>9</code>
 
-settings_navigation_color=Culoare meniu navigare
+settings_navigation_color=Color palette
 settings_background_color=Culoare pagina conţinut
 settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
 settings_loader_left=Activează spinner pentru meniul de navigare
@@ -628,8 +628,7 @@ theme_xhred_global_prev_page=Înapoi o pagină
 theme_xhred_global_help=Ajutor
 settings_right_soft_updates_page_options_title=Actualizări Software
 theme_xhred_git_compare_changes=Compară schimbările
-theme_xhred_filemanager_link_to_clipboard=Numele link-ului simbolic `<strong><em>%value</em></strong>` a fost copiat în clipboard.
-
+theme_xhred_filemanager_link_to_clipboard=Numele link-ului simbolic a fost copiat în clipboard.
 
 
 #18.46
@@ -1192,3 +1191,14 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
+theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit
+
+
+#19.43
+settings_theme_make_date=Enable date/time conversion in browser
+settings_theme_make_date_description=If disabled, date/time format provided by the server will be used

@@ -12,7 +12,6 @@ use File::Basename;
 use lib (dirname(__FILE__) . '/lib');
 
 use Async;
-use Time::HiRes qw (usleep);
 
 BEGIN {push(@INC, "..");}
 use WebminCore;
@@ -36,37 +35,27 @@ my $option = sub {
     }
     return ($settings{"settings_sysinfo_real_time_$_[0]"} eq 'false') ? 0 : 1;
 };
-my $available = sub {
-    my ($show) = @_;
-    my %access = get_module_acl($remote_user, 'system-status');
-    $access{'show'} ||= "";
-    if ($access{'show'} eq '*') {
-        return 1;
-    } else {
-        return indexof($show, split(/\s+/, $access{'show'})) >= 0;
-    }
-};
 
 my %data;
 my $tdata = {};
 my $sdata = $in{'sdata'} ? 1 : 0;
 my $fdata = "$config_directory/$current_theme/stats-$remote_user.json";
 my $cdata = read_file_contents($fdata);
+my $time  = time();
 my $ddata = sub {
     my ($k, $d) = @_;
-    my $time = time();
 
     # Save and return data
     if (!$k) {
         if (&$option('stored')) {
 
             # Clear existing cache if available features was disabled
-            my %map = (cpu  => ['cpu', 'disk'],
-                       mem  => ['mem', 'virt'],
-                       load => 'proc');
+            my %map = (cpu  => ['cpu',  'disk'],
+                       mem  => ['mem',  'virt'],
+                       load => ['proc', 'net']);
 
             foreach my $key (keys %map) {
-                my $feature = &$available($key);
+                my $feature = acl_system_status($key);
                 if (ref($map{$key}) eq 'ARRAY') {
                     foreach my $skey (@{ $map{$key} }) {
                         if (!$feature) {
@@ -162,13 +151,16 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
     if ($target eq 'general') {
 
         # Run in async to reduce script execution time
-        my $network = Async->new(sub {network_stats('io')});
+        my $network;
+        if (acl_system_status('load')) {
+            $network = Async->new(sub {network_stats('io')});
+        }
 
         if (foreign_check("proc")) {
             foreign_require("proc");
 
             # CPU stats
-            if (&$available('cpu')) {
+            if (acl_system_status('cpu')) {
                 my @cpuinfo  = defined(&proc::get_cpu_info)     ? proc::get_cpu_info()     : ();
                 my @cpuusage = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ();
                 if (@cpuinfo && @cpuusage) {
@@ -179,14 +171,17 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                     &$ddata('cpu', $cpu);
 
                     # Disk I/O
-                    my $io = [$cpuusage[5], $cpuusage[6]];
-                    $data{'io'} = $io;
-                    &$ddata('disk', $io);
+                    my $in  = $cpuusage[5];
+                    my $out = $cpuusage[6];
+                    if ($in && $out || $in eq '0' || $out eq '0') {
+                        $data{'io'} = [$in, $out];
+                        &$ddata('disk', [$in, $out]);
+                    }
                 }
             }
 
             # Memory stats
-            if (&$available('mem')) {
+            if (acl_system_status('mem')) {
                 my @memory = defined(&proc::get_memory_info) ? proc::get_memory_info() : ();
                 if (@memory) {
                     $data{'mem'}  = [];
@@ -215,7 +210,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
             }
 
             # Number of running processes
-            if (&$available('load')) {
+            if (acl_system_status('load')) {
                 my @processes = proc::list_processes();
                 my $proc      = scalar(@processes);
                 $data{'proc'} = $proc;
@@ -224,7 +219,7 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
         }
 
         # Disk space
-        if (&$available('disk')) {
+        if (acl_system_status('disk')) {
             if (foreign_check("mount") && &$option('status_disk')) {
                 foreign_require("mount");
 
@@ -254,12 +249,14 @@ if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
                         my $in  = @{$nrs}[0];
                         my $out = @{$nrs}[1];
 
-                        $data{'net'} = [$in, $out];
-                        &$ddata('net', [$in, $out]);
+                        if ($in && $out || $in eq '0' || $out eq '0') {
+                            $data{'net'} = [$in, $out];
+                            &$ddata('net', [$in, $out]);
+                        }
                     }
                     last;
                 }
-                usleep 1e5;
+                select(undef, undef, undef, 0.1);
             }
         }
 

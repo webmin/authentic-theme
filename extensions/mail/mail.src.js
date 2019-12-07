@@ -968,12 +968,12 @@ const mail = (function() {
                                 // Adjust the size of editable area
                                 contenteditable: (panel) => {
                                     let target = panel.querySelector(`.${classes.panel.content}`),
-                                        offset = 60,
                                         container = target ? target.offsetHeight : window.innerHeight / 4,
                                         top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
                                         editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
                                         editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                        height = `${container - top_block - editor_toolbar - offset}px`;
+                                        offset = 50 + editor_toolbar,
+                                        height = `${container - top_block - offset}px`;
                                     editor.style.height = height;
                                 },
 
@@ -1030,8 +1030,8 @@ const mail = (function() {
                                         paneled = panel.header ? true : false,
                                         config = {
                                             html: {
-                                                allowed: data.hidden.html_edit,
-                                                initial: data.hidden.html_edit_config,
+                                                allowed: parseInt(data.hidden.html_edit),
+                                                initial: parseInt(data.hidden.html_edit_config),
                                             },
                                         },
                                         config_update = function(option, value) {
@@ -1059,7 +1059,7 @@ const mail = (function() {
                                             }),
                                             get: {
                                                 text: () => {
-                                                    return editor.this.root.parentElement.previousElementSibling.value
+                                                    return tcm.value
                                                 },
                                                 html: () => {
                                                     return editor.this.root.innerHTML
@@ -1077,6 +1077,9 @@ const mail = (function() {
                                                 } else {
                                                     te.value = he.getText();
                                                 }
+                                            },
+                                            maximized: () => {
+                                                return target.hasAttribute('maximized');
                                             }
                                         },
 
@@ -1138,13 +1141,13 @@ const mail = (function() {
 
                                     // Toggle HTML/text editor state
                                     let ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`);
-                                    ctl_tgl.addEventListener('click', (event) => {
+                                    ctl_tgl.addEventListener('click', () => {
                                         let st = parseInt(config.html.allowed) || 0,
                                             ia = parseInt(config.html.initial) || 0,
                                             sg = +!st,
                                             co = sg ? 2 : (ia === 1 ? 1 : 0);
 
-                                        toggle.formatting(target, sg)
+                                        toggle.formatting(target, sg);
                                         config.html.allowed = sg;
 
                                         // Change actual config option
@@ -1261,7 +1264,6 @@ const mail = (function() {
                                             },
 
                                             draft = {
-                                                status: false,
 
                                                 timeout: {
                                                     update: null,
@@ -1289,7 +1291,6 @@ const mail = (function() {
                                                 save: function() {
                                                     this.terminate();
                                                     this.timeout.update = setTimeout(() => {
-                                                        this.status = true;
                                                         submit.dispatchEvent(new Event('click'));
                                                     }, 2e3);
                                                 },
@@ -1326,6 +1327,7 @@ const mail = (function() {
 
                                                     // Schedule draft for discard
                                                     discard: function() {
+                                                        editor.maximized() && panel.normalize();
                                                         draft.timeout.discard = setTimeout(() => {
                                                             draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
                                                             draft.reset();
@@ -1591,31 +1593,14 @@ const mail = (function() {
                                             let form = this.closest('form'),
                                                 form_data = new FormData(form),
                                                 trusted = event.isTrusted || ~~submit.dataset.isTrusted,
-                                                lock = () => {
+                                                draft_status = !trusted;
 
-                                                    // Add lock
-                                                    target.classList.add($$.$.class.events_none)
-                                                },
-                                                unlock = () => {
+                                            // Reset trusted state for submit
+                                            this.dataset.isTrusted = 0;
 
-                                                    // Reset progress
-                                                    _.button_progress(this, 0);
-
-                                                    // Remove lock
-                                                    target.classList.remove($$.$.class.events_none);
-                                                },
-                                                reset = () => {
-
-                                                    // Reset draft status
-                                                    draft.status = false;
-
-                                                    // Reset trusted state for submit
-                                                    this.dataset.isTrusted = 0;
-                                                };
-
-                                            // Prevent form from submitting while saving a draft
-                                            if (draft.status && trusted) {
-                                                return
+                                            // Terminate draft event in case mail is actually submitted
+                                            if (trusted) {
+                                                draft.terminate();
                                             }
 
                                             // Add message body
@@ -1647,17 +1632,16 @@ const mail = (function() {
                                                     form_data.set(`file${i}`, f)
                                                 });
 
+                                            // Update HTML/text mode status
+                                            form_data.set('html_edit', config.html.allowed);
+
                                             // Check for draft
-                                            draft.status && (
+                                            draft_status && (
                                                 form_data.set('new', 0),
                                                 form_data.set('enew', 1),
                                                 form_data.set('save', 1),
                                                 title_update(1)
                                             );
-
-                                            // Add lock while processing
-                                            !draft.status &&
-                                                lock();
 
                                             // Prepare scheduled mail
                                             let schedule = {
@@ -1683,7 +1667,7 @@ const mail = (function() {
                                                 }
                                             }
 
-                                            if (scheduled.status() && !draft.status) {
+                                            if (scheduled.status() && !draft_status) {
                                                 let m = {
                                                     body: 'mail',
                                                     is_html: config.html.allowed,
@@ -1711,10 +1695,10 @@ const mail = (function() {
 
                                             // Post mail data
                                             let xhr = new XMLHttpRequest(),
-                                                link = ((scheduled.status() && !draft.status) ? xtarget.schedule : form.getAttribute('action'));
+                                                link = ((scheduled.status() && !draft_status) ? xtarget.schedule : form.getAttribute('action'));
                                             xhr.open("POST", link);
                                             xhr.upload.onprogress = (e) => {
-                                                !draft.status &&
+                                                !draft_status &&
                                                     _.button_progress(this, Math.ceil((e.loaded / e.total) * 100));
                                             };
                                             xhr.onload = (e) => {
@@ -1740,7 +1724,7 @@ const mail = (function() {
                                                     };
 
                                                 // Handle previously saved draft
-                                                if (draft.status) {
+                                                if (draft_status) {
 
                                                     // Update title
                                                     title_update(-1);
@@ -1779,10 +1763,10 @@ const mail = (function() {
 
                                                             // Send error notification
                                                             error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
-                                                            _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center'])
+                                                            _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
 
-                                                            // Reset progress and remove lock
-                                                            unlock();
+                                                            // Reset progress
+                                                            _.button_progress(this, 0);
 
                                                         } else {
 
@@ -1796,17 +1780,11 @@ const mail = (function() {
                                                         }
                                                     }
                                                 }
-
-                                                // Reset draft status and trusted state for submit
-                                                reset();
                                             }
                                             xhr.onerror = (e) => {
 
-                                                // Reset progress and remove lock
-                                                unlock();
-
-                                                // Reset draft status and trusted state for submit
-                                                reset();
+                                                // Reset progress
+                                                _.button_progress(this, 0);
 
                                                 // Display error message
                                                 _.error({
@@ -1818,11 +1796,11 @@ const mail = (function() {
 
                                         })
 
-                                        // Submit mail using hotkey (%cmd-enter)
+                                        // Submit mail using hotkey(%cmd-enter)
                                         target.addEventListener('keydown', e => {
                                             let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
                                                 enter = e.keyCode === 13;
-                                            if (meta && enter && !target.classList.contains($$.$.class.events_none)) {
+                                            if (meta && enter) {
                                                 submit.dataset.isTrusted = 1;
                                                 submit.dispatchEvent(new Event('click'));
                                             }
@@ -1950,8 +1928,11 @@ const mail = (function() {
 
                             // Create compose panel
                             let composers = $(`.${classes.panel.container} .${classes.editor.compose}`).length,
-                                small_window = window.innerWidth < 640,
+                                window_width = window.innerWidth,
+                                small_window_width = window_width < 640,
                                 window_height = window.innerHeight,
+                                small_window_height = window_height < 640,
+                                small_window = small_window_width || small_window_height,
                                 ioffset = -15,
                                 offset = composers ? ioffset * 5 * composers : ioffset,
                                 position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
@@ -1960,16 +1941,18 @@ const mail = (function() {
                                     theme: "dimgrey",
                                     onwindowresize: true,
                                     panelSize: {
-                                        width: (small_window ? '98%' : 600),
-                                        height: (small_window ? '99%' : 600)
+                                        width: (small_window ? window_width + 4 * ioffset : 600),
+                                        height: (small_window ? window_height + 4 * ioffset : 600)
                                     },
                                     headerTitle: _.lang('mail_new_message'),
                                     content: template.form,
                                     maximizedMargin: {
-                                        top: window_height * 0.03,
-                                        bottom: window_height * 0.03,
-                                        left: window_height * 0.1,
-                                        right: window_height * 0.1,
+                                        top: small_window ? -1 * ioffset : window_height * 0.03,
+                                        bottom: small_window ? -1 * ioffset : window_height * 0.03,
+                                        left: small_window ? -1 * ioffset : window_height * 0.1,
+                                        right: small_window ? -1 * ioffset : window_height * 0.1,
+                                    },
+                                    footerToolbar: function() {
                                     },
                                     dblclicks: {
                                         title: "maximize"
@@ -1989,7 +1972,10 @@ const mail = (function() {
                                         toggle.backdrop(this, 1);
                                     },
                                     callback: function() {
-                                        element.composer(this)
+                                        element.composer(this);
+                                        if (small_window) {
+                                            this.maximize();
+                                        }
                                     },
                                 });
 

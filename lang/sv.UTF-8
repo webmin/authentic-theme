@@ -139,7 +139,7 @@ settings_hotkey_custom_7=Egen länk <code>7</code>
 settings_hotkey_custom_8=Egen länk <code>8</code>
 settings_hotkey_custom_9=Egen länk <code>9</code>
 
-settings_navigation_color=Färgpalett för navigeringsmeny
+settings_navigation_color=Color palette
 settings_background_color=Färgpalett för innehållssida
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
@@ -626,8 +626,7 @@ theme_xhred_global_prev_page=Föregående sida
 theme_xhred_global_help=Hjälp
 settings_right_soft_updates_page_options_title=Programuppdateringar
 theme_xhred_git_compare_changes=Jämför förändringar
-theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn <strong><em>%value</em></strong> har kopierats till urklippet.
-
+theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn har kopierats till urklippet.
 
 
 #18.46
@@ -1179,15 +1178,26 @@ theme_xhred_live_stats_proc=Process
 theme_xhred_live_stats_disk=Disk I/O
 theme_xhred_global_hour=Timme
 theme_xhred_global_hours=Timmar
-theme_xhred_title_locale_time_format=Time format
+theme_xhred_title_locale_time_format=Tidsformat
 theme_xhred_nice_size_PIB=PiB
 theme_xhred_nice_size_TIB=TiB
 theme_xhred_nice_size_GIB=GiB
 theme_xhred_nice_size_MIB=MiB
 theme_xhred_nice_size_kIB=kiB
-theme_xhred_live_stats_net=Network I/O
+theme_xhred_live_stats_net=Nätverks I/O
 theme_xhred_nice_size_PBB=Pbps
 theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=Maximalt antal rader för att initiera tabellsortering och sökning
+theme_xhred_global_rows=Rader
+
+
+#19.42
+settings_side_slider_blend=Ärv
+
+
+#19.43
+settings_theme_make_date=Enable date/time conversion in browser
+settings_theme_make_date_description=If disabled, date/time format provided by the server will be used

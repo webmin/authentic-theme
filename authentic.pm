@@ -59,9 +59,9 @@ sub theme_header
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
         print $tconfig{'preheader'};
-        print "<table class=\"header\"><tr>\n";
-
-        print '<td id="headln2l" class="invisible">';
+        print '<div class="header">
+                <div class="row">';
+        print '<div data-header-left id="headln2l" class="invisible col-sm-4">';
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
             my $nolo  = get_env('anonymous_user') ||
@@ -108,22 +108,22 @@ sub theme_header
                   "</a><br>\n";
             }
         }
-        print "</td>\n";
+        print "</div>\n";
         if ($_[1]) {
-            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
+            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\" class=\"col-sm-4\">",
               "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
-            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
+            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
               ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
-            print "</td>\n";
+            print "</div>\n";
         }
-        print "<td id=\"headln2r\">";
+        print "<div data-header-right id=\"headln2r\" class=\"col-sm-4\">";
         print $_[6];
-        print "</td></tr></table>\n";
+        print "</div></div></div>\n";
         print $tconfig{'postheader'};
         print '</div>' . "\n";
         print '<div class="panel-body">' . "\n";
@@ -157,7 +157,7 @@ sub theme_footer
     embed_port_shell();
     embed_footer((theme_debug_mode()),
                  (
-                  (get_module_name()                                                  ||
+                  (get_module_name() ||
                      get_env('request_uri') =~ /\/config.cgi\?/                       ||
                      get_env('request_uri') =~ /\/uconfig.cgi\?/                      ||
                      get_env('request_uri') =~ /\/webmin_search.cgi\?/                ||
@@ -385,7 +385,7 @@ sub theme_ui_columns_start
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
+            $rv .= ($heads->[$i] eq ''    ? '<br>'        : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -405,7 +405,7 @@ sub theme_ui_columns_row
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
-            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
+            $rv .= ($cols->[$i] !~ /\S/             ? '<br>'        : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
     }
@@ -424,7 +424,7 @@ sub theme_ui_columns_header
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
+            $rv .= ($cols->[$i] eq ''     ? '#'           : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -768,7 +768,7 @@ sub theme_ui_submit
 
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
-      ($name ne '' ? " id=\"" . &quote_escape($name) . "\"" : "") .
+      ($name ne ''                                                     ? " id=\"" . &quote_escape($name) . "\""   : "") .
       ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
       &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
@@ -1146,8 +1146,8 @@ sub theme_ui_radio_table
         $rv .= "<tr>\n";
         $rv .=
           "<td" . (defined($r->[2]) ? "" : " colspan=2") .
-          ">" . ($nobold ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
-          ($nobold ? "" : "</b>") . "</td>\n";
+          ">" . ($nobold            ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
+          ($nobold                  ? "" : "</b>") . "</td>\n";
         if (defined($r->[2])) {
             $rv .= "<td>" . $r->[2] . "</td>\n";
         }
@@ -1164,38 +1164,7 @@ sub theme_make_date
 
 sub theme_nice_size
 {
-    my ($bytes, $minimal, $decimal) = @_;
-    my ($decimal_units, $binary_units) = (1000, 1024);
-    my $bytes_initial = $bytes;
-    my $unit          = $decimal ? $decimal_units : $binary_units;
-    my $label         = sub {
-        my ($item) = @_;
-        my $text = 'theme_xhred_nice_size_';
-        my $unit = ($unit > $decimal_units ? 'I' : undef);
-        my @labels = ($theme_text{"${text}b"},
-                      $theme_text{"${text}k${unit}B"},
-                      $theme_text{"${text}M${unit}B"},
-                      $theme_text{"${text}G${unit}B"},
-                      $theme_text{"${text}T${unit}B"},
-                      $theme_text{"${text}P${unit}B"});
-        return $labels[$item];
-    };
-
-    my $item = 0;
-    if (abs($bytes) >= $unit) {
-        do {
-            $bytes /= $unit;
-            ++$item;
-        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
-    }
-
-    my $factor    = 10**2;
-    my $formatted = int($bytes * $factor) / $factor;
-
-    if ($minimal == -1) {
-        return $formatted . " " . &$label($item);
-    } 
-    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
+    return theme_nice_size_local(@_);
 }
 
 sub theme_redirect
@@ -1213,6 +1182,7 @@ sub theme_redirect
     my ($arg1, $arg2) = ($_[0], $_[1]);
     my ($link) = $arg1 || $arg2;
     my ($url)  = $arg2;
+
     if (!$relredir) {
         ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
     }

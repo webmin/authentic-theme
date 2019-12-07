@@ -165,7 +165,6 @@ const stats = {
                 // Draw history graphs
                 if (cached) {
                     let lds = `${this.selector.chart.container.parent}-${this.selector.collapse}`,
-                        ldv = $(`#${lds}`).hasClass('in'),
                         ld = $(`#${lds}`).find(`[${this.selector.chart.loader}]`);
 
                     // Process each supplied graph
@@ -191,8 +190,8 @@ const stats = {
                                 data: array
                             }];
 
-                        // Don't run further in case there is no container or panel is closed
-                        if (!tg.length || !ldv) {
+                        // Don't run further in case there is no container
+                        if (!tg.length) {
                             return
                         }
 
