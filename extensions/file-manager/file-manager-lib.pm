@@ -785,11 +785,7 @@ sub print_content
         my $is_img     = 0;
         if ($list[$count - 1][15] == 1) {
             $is_file = 0;
-            if ($path eq '/' . $link) {
-                $href = "index.cgi?path=" . &urlize("$path");
-            } else {
-                $href = "index.cgi?path=" . &urlize("$path/$link");
-            }
+            $href = "index.cgi?path=" . &urlize("$path/$link");
         } else {
             my ($fname, $fpath, $fsuffix) =
               fileparse($list[$count - 1][0]);
