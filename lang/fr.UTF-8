@@ -1,4 +1,4 @@
-﻿body_cp=Processeur (CPU)
+body_cp=Processeur (CPU)
 body_cpu=Charge moyenne du CPU
 body_cpuinfo=Informations du CPU
 body_cputemps=Températures du CPU
@@ -119,7 +119,7 @@ settings_hotkey_custom_6=Lien personnalisé <code>6</code>
 settings_hotkey_custom_7=Lien personnalisé <code>7</code>
 settings_hotkey_custom_8=Lien personnalisé <code>8</code>
 settings_hotkey_custom_9=Lien personnalisé <code>9</code>
-settings_navigation_color=Palette de couleur du menu de navigation
+settings_navigation_color=Color palette
 settings_background_color=Palette de couleur du contenu de la page
 settings_loader_top=Activer le barregraphe de chargement de page en haut de l'écran
 settings_loader_left=Activer le spinner pour le menu de navigation
@@ -563,7 +563,7 @@ theme_xhred_global_prev_page=Retour à la page précédente
 theme_xhred_global_help=Aide
 settings_right_soft_updates_page_options_title=Mises à jour
 theme_xhred_git_compare_changes=Comparer les changements
-theme_xhred_filemanager_link_to_clipboard=Le lien symbolique `<strong><em>%value</em></strong>` a été copié dans le presse-papier.
+theme_xhred_filemanager_link_to_clipboard=Le lien symbolique a été copié dans le presse-papier.
 
 
 #18.46
@@ -1088,7 +1088,7 @@ theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Mémoire
 theme_xhred_live_stats_virt=Swap
 theme_xhred_live_stats_proc=Processus
-theme_xhred_live_stats_dio=Disque E/S
+theme_xhred_live_stats_disk=E/S disque
 theme_xhred_global_hour=Heure
 theme_xhred_global_hours=Heures
 theme_xhred_title_locale_time_format=Format de l'heure
