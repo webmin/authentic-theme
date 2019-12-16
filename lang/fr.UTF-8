@@ -1,4 +1,4 @@
-﻿body_cp=Processeur (CPU)
+body_cp=Processeur (CPU)
 body_cpu=Charge moyenne du CPU
 body_cpuinfo=Informations du CPU
 body_cputemps=Températures du CPU
@@ -1088,29 +1088,29 @@ theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Mémoire
 theme_xhred_live_stats_virt=Swap
 theme_xhred_live_stats_proc=Processus
-theme_xhred_live_stats_disk=Disque E/S
+theme_xhred_live_stats_disk=E/S disque
 theme_xhred_global_hour=Heure
 theme_xhred_global_hours=Heures
-theme_xhred_title_locale_time_format=Time format
-theme_xhred_nice_size_PIB=PiB
-theme_xhred_nice_size_TIB=TiB
-theme_xhred_nice_size_GIB=GiB
-theme_xhred_nice_size_MIB=MiB
-theme_xhred_nice_size_kIB=kiB
-theme_xhred_live_stats_net=Network I/O
+theme_xhred_title_locale_time_format=Format de l'heure
+theme_xhred_nice_size_PIB=Po
+theme_xhred_nice_size_TIB=To
+theme_xhred_nice_size_GIB=Go
+theme_xhred_nice_size_MIB=Mo
+theme_xhred_nice_size_kIB=ko
+theme_xhred_live_stats_net=E/S réseau
 theme_xhred_nice_size_PBB=Pbps
 theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
-theme_xhred_global_rows=Rows
+settings_table_init_datatables=Nombre maximum de lignes pour initier un tri et une recherche dans la table
+theme_xhred_global_rows=Lignes
 
 
 #19.42
-settings_side_slider_blend=Inherit
+settings_side_slider_blend=Hérité
 
 
 #19.43
-settings_theme_make_date=Enable date/time conversion in browser
-settings_theme_make_date_description=If disabled, date/time format provided by the server will be used
+settings_theme_make_date=Activier la conversion date/heure dans le navigateur
+settings_theme_make_date_description=Si désactivé, le format de date/heure du serveur sera utilisé
