@@ -964,6 +964,7 @@ sub get_button_style
              (string_contains($keys, "install")     ||
               string_contains($keys, "recsok")      ||
               string_contains($keys, "scripts_iok") ||
+              string_contains($keys, "missing_now") ||
               string_contains($keys, "right_upok")
              ) &&
              !string_contains($keys, "uninstall"))
