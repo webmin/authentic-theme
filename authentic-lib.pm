@@ -1696,22 +1696,27 @@ sub print_favorites
 
     if ($f && $f =~ m/"favorites":/) {
         my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
-        my $fc = convert_from_json($f);
-        foreach my $favorite (@{ $fc->{'favorites'} }) {
-            if (length($favorite->{"link"})) {
-                print '
+        eval {
+            my $fc = convert_from_json($f);
+            foreach my $favorite (@{ $fc->{'favorites'} }) {
+                my $ln = quote_escape($favorite->{"link"}, '"');
+                my $ic = quote_escape($favorite->{"icon"}, '"');
+                my $tl = html_escape($favorite->{"title"});
+                if (length($ln)) {
+                    print '
               <li class="menu-exclude ui-sortable-handle">
                   <a class="menu-exclude-link" href="'
-                  . (string_starts_with($favorite->{"link"}, "!edit") ? undef : $gconfig{'webprefix'}) .
-                  $favorite->{"link"} . '"><i data-product="' .
-                  $favorite->{"icon"} . '" class="wbm-' . $favorite->{"icon"} . ' wbm-sm">&nbsp;</i><span class="f__c">
-                            ' . $favorite->{"title"} . '
+                      . (string_starts_with($ln, "!edit") ? undef : $gconfig{'webprefix'}) .
+                      ($ln) . '"><i data-product="' . ($ic) . '" class="wbm-' .
+                      ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
+                            ' . $tl . '
                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i aria-label="'
-                  . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
+                      . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
                   </a>
               </li>';
+                }
             }
-        }
+        };
     }
     print '
               <li class="menu-exclude exclude favorites-no-message'
@@ -3280,11 +3285,11 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             set_user_level();
-            my $module = $in{'xhr-get_size_cmodule'};
+            my $module      = $in{'xhr-get_size_cmodule'};
             my $jailed_user = get_fm_jailed_user($module);
-            my $path  = ($jailed_user || get_access_data('root')) . $in{'xhr-get_size_path'};
-            my $nodir = $in{'xhr-get_size_nodir'};
-            my $home  = ($jailed_user || get_user_home());
+            my $path        = ($jailed_user || get_access_data('root')) . $in{'xhr-get_size_path'};
+            my $nodir       = $in{'xhr-get_size_nodir'};
+            my $home        = ($jailed_user || get_user_home());
             if (($jailed_user || $get_user_level eq '3') && !string_starts_with($path, $home)) {
                 $path = $home . $path;
                 $path =~ s/\/\//\//g;
@@ -3299,7 +3304,7 @@ sub get_xhr_request
             }
         } elsif ($in{'xhr-get_list'} eq '1') {
 
-            my $path = "$in{'xhr-get_list_path'}";
+            my $path   = "$in{'xhr-get_list_path'}";
             my $module = $in{'xhr-get_list_cmodule'};
             my @dirs;
 
@@ -3319,28 +3324,26 @@ sub get_xhr_request
             print convert_to_json(\@dirs);
 
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
-            
-            my $module = $in{'xhr-encoding_convert_cmodule'};
-            my $jailed_user = get_fm_jailed_user($module, 1);
+
+            my $module           = $in{'xhr-encoding_convert_cmodule'};
+            my $jailed_user      = get_fm_jailed_user($module, 1);
             my $jailed_user_home = get_fm_jailed_user($module);
-            my $cfile = $in{'xhr-encoding_convert_file'};
+            my $cfile            = $in{'xhr-encoding_convert_file'};
             if ($jailed_user) {
-              switch_to_unix_user_local($jailed_user);
-              $cfile = $jailed_user_home . $cfile;
+                switch_to_unix_user_local($jailed_user);
+                $cfile = $jailed_user_home . $cfile;
             } else {
                 set_user_level();
             }
 
             my $data;
             eval {
-                $data = Encode::encode('utf-8',
-                                       Encode::decode($in{'xhr-encoding_convert_name'},
-                                                      read_file_contents($cfile)
-                                       ));
+                $data =
+                  Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, read_file_contents($cfile)));
             };
             print $data;
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
-            my $module = $in{'xhr-get_gpg_keys_cmodule'};
+            my $module      = $in{'xhr-get_gpg_keys_cmodule'};
             my $jailed_user = get_fm_jailed_user($module, 1);
             switch_to_unix_user_local($jailed_user || undef);
             my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
