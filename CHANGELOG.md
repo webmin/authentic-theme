@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 19.44-RC1 (December 18, 2019)
+* Add ability to raise editor's collapsed panel on single header click [#629/comment-564448213](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-564448213)
+* Add better support for folders with escaped entries in File Manager
+* Add improvements to cursor stealing when using keyboard navigation in File Manager
+* Add German and French language translation updates
+* Fix file editor's issues: XSS, encoding conversion and other
+* Fiх theme favorites fail-over and possible XSS prevention [webmin/webmin#1156](https://github.com/webmin/webmin/issues/1156)
+* Fix horizontal scroll for tree-view in File Manager
+* Fix to handle both progressive and static Webalizer output
+
 #### Version 19.43 (December 07, 2019)
 * Set saddle brown color palette as default
 * Add various UI improvements
