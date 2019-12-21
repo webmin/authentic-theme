@@ -464,7 +464,7 @@ sub get_extended_sysinfo
                     }
 
                     if ($info->{'type'} ne 'html') {
-                        $returned_sysinfo .= '<table class="table table-striped table-hover"><tbody>';
+                        $returned_sysinfo .= '<table class="table table-striped"><tbody>';
                     }
 
                     if ($info->{'type'} eq 'table' &&
