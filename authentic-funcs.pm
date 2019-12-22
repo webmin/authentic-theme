@@ -400,8 +400,9 @@ sub is_switch_cloudmin
 sub is_switch_webmail
 {
     return (
-            (!$theme_config{'settings_right_default_tab_usermin'} ||
-               $theme_config{'settings_right_default_tab_usermin'} =~ /mail/
+            (
+             !get_theme_temp_data('goto', 1) && (!$theme_config{'settings_right_default_tab_usermin'} ||
+                                                 $theme_config{'settings_right_default_tab_usermin'} =~ /mail/)
             ) ? 1 : 0);
 }
 
