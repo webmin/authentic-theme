@@ -1,15 +1,16 @@
 ## Changelog
 
-#### Version 19.44-RC2 (December 20, 2019)
+#### Version 19.44 (December 21, 2019)
 * Add better support for folders with escaped entries in File Manager
 * Add improvements to cursor stealing when using keyboard navigation in File Manager
-* Add ability to raise editor's collapsed panel on single header click [#629/comment-564448213](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-564448213)
-* Add German, Swedish, and French language translation updates
-* Fix file editor's issues: XSS, encoding conversion and other
+* Add ability to raise editor's collapsed panel on single click [#629/comment-564448213](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-564448213)
+* Add row highlights for certain pages on Virtualmin/Cloudmin [virtualmin.com/67945](https://virtualmin.com/node/67945)
+* Add protection against submitting broken form data, while filter is active [@5fb9301](https://github.com/authentic-theme/authentic-theme/commit/5fb9301bc250d5f3af001914d79a41c46dd0a895)
+* Add German, Swedish, Italian, and French language translation updates
 * Fiх theme favorites fail-over and possible XSS prevention [webmin/webmin#1156](https://github.com/webmin/webmin/issues/1156)
+* Fix file editor's issues: XSS, encoding conversion and other
 * Fix horizontal scroll for tree-view in File Manager
-* Fix to handle both progressive and static Webalizer output
-* Fix progressive page detection/separation
+* Fix progressive page detection/separation (AWstats, Webalizer, and many other)
 
 #### Version 19.43 (December 07, 2019)
 * Set saddle brown color palette as default
