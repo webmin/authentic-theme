@@ -62,6 +62,7 @@ sub theme_header
         print '<div class="header">
                 <div class="row">';
         print '<div data-header-left id="headln2l" class="invisible col-sm-4">';
+
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
             my $nolo  = get_env('anonymous_user') ||
@@ -1264,7 +1265,14 @@ sub theme_js_redirect
     if ($url =~ /^\//) {
         $url = $gconfig{'webprefix'} . $url;
     }
-
+    if ($url eq "/" || $url eq "$gconfig{'webprefix'}/") {
+        my $module = dirname(get_env('script_name'));
+        if ($module ne '/') {
+            $url = "$gconfig{'webprefix'}$module";
+        } else {
+            $url = "$gconfig{'webprefix'}/sysinfo.cgi";
+        }
+    }
     return
 "$theme_text{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('"
       . quote_escape($url)
