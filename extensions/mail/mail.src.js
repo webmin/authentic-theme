@@ -554,11 +554,11 @@ const mail = (function() {
                                                   <li class="dropdown-submenu right" role="menu">
                                                       <a tabindex="-1">${data.language.pri.label}</a>
                                                       <ul class="dropdown-menu" role="menu" data-type="priority">
-                                                        <li><a tabindex="-1" data-value="1">${data.language.pri.data.highest}</a></li>
-                                                        <li><a tabindex="-1" data-value="2">${data.language.pri.data.high}</a></li>
-                                                        <li><a tabindex="-1"><i class="fa fa-fw fa-check pull-left"></i>${data.language.pri.data.normal}</a></li>
-                                                        <li><a tabindex="-1" data-value="4">${data.language.pri.data.low}</a></li>
-                                                        <li><a tabindex="-1" data-value="5">${data.language.pri.data.lowest}</a></li>
+                                                        <li><a tabindex="-1" data-value="1">${data.language.pri.data[0]}</a></li>
+                                                        <li><a tabindex="-1" data-value="2">${data.language.pri.data[1]}</a></li>
+                                                        <li><a tabindex="-1"><i class="fa fa-fw fa-check pull-left"></i>${data.language.pri.data[2]}</a></li>
+                                                        <li><a tabindex="-1" data-value="4">${data.language.pri.data[3]}</a></li>
+                                                        <li><a tabindex="-1" data-value="5">${data.language.pri.data[4]}</a></li>
                                                       </ul>
                                                   </li>
                                                   <li${status.menu.options} class="divider"></li>
@@ -1838,8 +1838,8 @@ const mail = (function() {
                                 language[id] = $form.find(`[name=${id}]`).parent().prev().text();
                             } else if (['pri'].includes(id)) {
                                 let data = {};
-                                $form.find(`[name=${id}] option`).map(function() {
-                                    data[this.innerText.toLowerCase()] = this.innerText
+                                $form.find(`[name=${id}] option`).map(function(ix) {
+                                    data[ix] = this.innerText
                                 });
                                 language[id] = { label: $form.find(`[name=${id}]`).parent().prev().text(), data: data };
                             }
