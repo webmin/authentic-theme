@@ -6,6 +6,7 @@
 * Add ability to raise editor's collapsed panel on single click [#629/comment-564448213](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-564448213)
 * Add row highlights for certain pages on Virtualmin/Cloudmin [virtualmin.com/67945](https://virtualmin.com/node/67945)
 * Add protection against submitting broken form data, while filter is active [@5fb9301](https://github.com/authentic-theme/authentic-theme/commit/5fb9301bc250d5f3af001914d79a41c46dd0a895)
+* Add user-friendly reload message upon language change
 * Add German, Swedish, Italian, and French language translation updates
 * Fiх theme favorites fail-over and possible XSS prevention [webmin/webmin#1156](https://github.com/webmin/webmin/issues/1156)
 * Fix file editor's issues: XSS, encoding conversion and other
