@@ -1,4 +1,4 @@
-﻿y_cp=Processeur (CPU)
+﻿body_cp=Processeur (CPU)
 body_cpu=Charge moyenne du CPU
 body_cpuinfo=Informations du CPU
 body_cputemps=Températures du CPU
