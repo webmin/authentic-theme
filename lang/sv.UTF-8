@@ -1201,3 +1201,7 @@ settings_side_slider_blend=Ärv
 #19.43
 settings_theme_make_date=Aktivera konvertering av datum/tid i webbläsaren
 settings_theme_make_date_description=Om inakiverad, kommer formatet på datum/tid att komma från servern
+
+
+#19.44
+theme_xhred_reload_lang_notification=Theme language has been changed. The page will be reloaded, to apply new settings.

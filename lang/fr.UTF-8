@@ -1,4 +1,4 @@
-body_cp=Processeur (CPU)
+﻿y_cp=Processeur (CPU)
 body_cpu=Charge moyenne du CPU
 body_cpuinfo=Informations du CPU
 body_cputemps=Températures du CPU
@@ -1114,3 +1114,7 @@ settings_side_slider_blend=Hérité
 #19.43
 settings_theme_make_date=Activier la conversion date/heure dans le navigateur
 settings_theme_make_date_description=Si désactivé, le format de date/heure du serveur sera utilisé
+
+
+#19.44
+theme_xhred_reload_lang_notification=Theme language has been changed. The page will be reloaded, to apply new settings.
