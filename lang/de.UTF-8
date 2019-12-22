@@ -936,7 +936,7 @@ theme_xhred_find_in_config_files_result_found_single=$1 Ergebniss für $3 in $2 
 theme_xhred_find_in_config_files_result_found_multi=$1 Ergebnisse für $3 in $2 Datei gefunden
 theme_xhred_find_in_config_files_results_found=$1 Ergebnisse für $3 in $2 Dateien gefunden
 
-theme_xhred_filemanager_context_symlink=Neuen symbolischen Verweis erzeügen
+theme_xhred_filemanager_context_symlink=Neuen symbolischen Verweis erzeugen
 theme_xhred_global_symbolic=Symbolischer Verweis
 theme_xhred_global_target=Ziel
 settings_sysinfo_max_servers=Maximale Anzahl virtuelle Server die angezeigt werden sollen
@@ -945,7 +945,7 @@ right_download_is_ready=Deine Datei zum Herunterladen ist fertig.
 theme_xhred_download_is_being_prepared=Deine Datei zum Herunterladen wird vorbereitet. Dies kann eine Weile dauern. Bitte warten..
 theme_xhred_backup_is_being_prepared=Deine Sicherung wird vorbereitet. Dies kann eine Weile dauern. Bitte warten..
 
-settings_mail_ui=Neue Benutzeroberfläche f&uumlr Mail verwenden
+settings_mail_ui=Neue Benutzeroberfläche für Mail verwenden
 
 settings_show_theme_configuration_for_admins_only=Knopf für Design Einstellungen nur für Administratoren anzeigen
 settings_show_theme_configuration_for_admins_only_error=Zugriff verweigert: Der Zugang zu den Benutzereinstellungen wurde vom Administrator gesperrt
