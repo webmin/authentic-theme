@@ -36,7 +36,6 @@ our (@theme_bundle_css,
      %in,
      %tconfig,
      %text,
-     $base_remote_user,
      $config_directory,
      $current_lang,
      $current_theme,
@@ -808,7 +807,7 @@ sub get_current_user_language
     }
 
     if (($language_browser && !$language) || !$language_browser) {
-        $language = $gconfig{ 'lang' . '_' . $base_remote_user };
+        $language = $gconfig{ 'lang' . '_' . $remote_user };
         $language = ($language ? $language : $gconfig{'lang'});
     }
 
