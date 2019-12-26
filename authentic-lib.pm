@@ -1451,7 +1451,7 @@ sub get_sysinfo_vars
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
-                  '</span>&nbsp;';
+                  '</span>';
             }
         }
         if ($info->{'drivetemps'}) {
@@ -1474,7 +1474,7 @@ sub get_sysinfo_vars
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
-                  $emsg . '</span>&nbsp;';
+                  $emsg . '</span>';
             }
         }
     }
