@@ -14,7 +14,7 @@ use Time::Local;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 if (!$in{'link'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());

@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, $current_theme, $config_directory, %theme_text, $has_usermin, $has_usermin_conf_dir);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 

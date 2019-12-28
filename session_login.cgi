@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %gconfig, %tconfig, %text, $config_directory, $current_theme, %theme_text);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 my %miniserv;
 get_miniserv_config(\%miniserv);

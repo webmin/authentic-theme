@@ -7,7 +7,7 @@ use strict;
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
-do(dirname(__FILE__) . "/../../authentic-funcs.pm");
+do(dirname(__FILE__) . "/../../authentic-funcs.pl");
 
 use Cwd 'abs_path';
 use Encode qw(decode encode);
@@ -53,7 +53,7 @@ sub get_libs
 {
     my ($module) = @_;
 
-    require($module_path . '/' . $module . '-lib.pl');
+    do($module_path . '/' . $module . '-lib.pl');
 
     &ReadParse();
 

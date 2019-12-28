@@ -11,7 +11,7 @@ use File::Basename;
 
 our ($remote_user, %theme_config, %theme_text);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true' &&
   error($theme_text{'settings_show_theme_configuration_for_admins_only_error'});

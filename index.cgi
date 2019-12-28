@@ -9,5 +9,5 @@ use strict;
 
 use File::Basename;
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 authentic();

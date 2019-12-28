@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %text, %gconfig, %request_uri, %userconfig, @allowed_paths, @remote_user_info, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 kill_previous($0, $$);
 

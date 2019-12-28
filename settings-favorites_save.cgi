@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, $in, $current_theme, $config_directory, $remote_user, %theme_text);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 theme_config_dir_available();
 

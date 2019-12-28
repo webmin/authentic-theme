@@ -44,7 +44,7 @@ our (@theme_bundle_css,
      $theme_root_directory,
      $title);
 
-do(dirname(__FILE__) . "/authentic-funcs.pm");
+do(dirname(__FILE__) . "/authentic-funcs.pl");
 
 init_vars();
 
@@ -234,7 +234,7 @@ sub embed_header
     print "</script>\n";
 
     if ($args[2]) {
-        do(dirname(__FILE__) . "/dependencies.pm");
+        do(dirname(__FILE__) . "/dependencies.pl");
     }
 
     if ($args[3] eq '1') {
@@ -448,9 +448,9 @@ EOF
 
 sub embed_pm_scripts
 {
-    my $scripts = "$config_directory/$current_theme/scripts.pm";
+    my $scripts = "$config_directory/$current_theme/scripts.pl";
     if (-r $scripts && -s $scripts) {
-        require($scripts);
+        do($scripts);
     }
 }
 
@@ -659,7 +659,7 @@ sub theme_text
 sub init_vars
 {
     if (theme_debug_mode()) {
-        do("$root_directory/$current_theme/.debug.pm");
+        do("$root_directory/$current_theme/.debug.pl");
     }
 
     my %tconfig_local = settings("$config_directory/$current_theme/config");
@@ -1622,7 +1622,7 @@ sub lib_csf_control
 {
     my ($action) = @_;
     if (foreign_check("csf") && foreign_available("csf") && $current_theme =~ /authentic-theme/) {
-        require("$root_directory/$current_theme/extensions/csf/csf-lib.pm");
+        do("$root_directory/$current_theme/extensions/csf/csf-lib.pl");
         if ($action eq 'load') {
             csf_mod();
         } elsif ($action eq 'unload') {

@@ -28,7 +28,7 @@ our (
 init_type();
 init_config();
 
-require(dirname(__FILE__) . "/authentic-init.pm");
+do(dirname(__FILE__) . "/authentic-init.pl");
 
 sub authentic
 {
@@ -3250,7 +3250,7 @@ sub get_xhr_request
         head();
 
         if ($in{'xhr-navigation'} eq '1') {
-            require(dirname(__FILE__) . "/navigation.pm");
+            do(dirname(__FILE__) . "/navigation.pl");
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
@@ -3259,7 +3259,7 @@ sub get_xhr_request
             } elsif ($in{'restore'} eq '1') {
                 theme_settings('restore', undef, undef);
             } else {
-                require(dirname(__FILE__) . "/settings.pm");
+                do(dirname(__FILE__) . "/settings.pl");
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
@@ -3679,12 +3679,12 @@ sub content
 
     # Navigation
     print '<ul class="navigation">' . "\n";
-    require(dirname(__FILE__) . "/navigation.pm");
+    do(dirname(__FILE__) . "/navigation.pl");
     print '</ul>' . "\n";
 
     # Buttons
     print '<br><br><ul class="user-links">';
-    require(dirname(__FILE__) . "/buttons.pm");
+    do(dirname(__FILE__) . "/buttons.pl");
     print '</ul>';
     print "<script>plugins.navigation.get.buttons();</script>";
 

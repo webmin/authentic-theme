@@ -38,7 +38,7 @@ our ($get_user_level,
      $ui_formcount,
      $user_module_config_directory);
 
-do(dirname(__FILE__) . "/authentic-init.pm");
+do(dirname(__FILE__) . "/authentic-init.pl");
 
 sub theme_header
 {

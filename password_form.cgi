@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %gconfig, %text, $pragma_no_cache, %theme_text, %theme_config);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 $pragma_no_cache = 1;
 $ENV{'MINISERV_INTERNAL'} || die "Can only be called by miniserv.pl";

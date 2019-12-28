@@ -17,7 +17,7 @@ BEGIN {push(@INC, "..");}
 use WebminCore;
 
 our (%in, $config_directory, $current_theme, $remote_user);
-do(dirname(__FILE__) . "/authentic-funcs.pm");
+do(dirname(__FILE__) . "/authentic-funcs.pl");
 
 init_config();
 ReadParse();

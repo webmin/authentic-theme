@@ -53,8 +53,8 @@ sub get_request_uri
 
 sub get_libs
 {
-    require(dirname(__FILE__) . '/../../authentic-funcs.pm');
-    require(get_env('document_root') . '/' . get_module() . '/' . get_module() . '-lib.pl');
+    do(dirname(__FILE__) . '/../../authentic-funcs.pl');
+    do(get_env('document_root') . '/' . get_module() . '/' . get_module() . '-lib.pl');
 
     ReadParse();
 }

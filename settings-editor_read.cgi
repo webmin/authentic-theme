@@ -11,13 +11,13 @@ use File::Basename;
 
 our (%in, $current_theme, $config_directory, $remote_user, %theme_text);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 
 my @files = ($config_directory . "/$current_theme/styles.css",
              $config_directory . "/$current_theme/scripts.js",
-             $config_directory . "/$current_theme/scripts.pm",
+             $config_directory . "/$current_theme/scripts.pl",
              $config_directory . "/$current_theme/favorites-$remote_user.json",
              $config_directory . "/$current_theme/custom-lang");
 my $file = html_escape($in{'file'});
@@ -31,7 +31,7 @@ print '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><sp
   ( $file =~ /.css/    ? $theme_text{'theme_fileformat_css'} :
       $file =~ /.json/ ? $theme_text{'theme_fileformat_json'} :
       $file =~ /.js/   ? $theme_text{'theme_fileformat_js'} :
-      $file =~ /.pm/   ? $theme_text{'theme_fileformat_perl'} :
+      $file =~ /.pl/   ? $theme_text{'theme_fileformat_perl'} :
       $theme_text{'theme_fileformat_plain_text'}
   ) .
   '</span></div>';
@@ -54,7 +54,7 @@ print &ui_textarea("data",
                    20, 80, undef, undef,
                    "style='width: 100%' "
                      .
-                     ( $file =~ '.pm' ? 'placeholder="' . $theme_text{'theme_fileformat_perl_placeholder'} . '"' :
+                     ( $file =~ '.pl' ? 'placeholder="' . $theme_text{'theme_fileformat_perl_placeholder'} . '"' :
                          ''
                      ) .
                      "");
