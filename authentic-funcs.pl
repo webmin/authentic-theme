@@ -95,15 +95,27 @@ sub theme_nice_size_local
                       $theme_text{"${text}G${unit}B"},
                       $theme_text{"${text}T${unit}B"},
                       $theme_text{"${text}P${unit}B"});
-        return $labels[$item];
+        return $labels[$item - 1];
+    };
+    my $allowed = sub {
+        my ($item) = @_;
+        return $minimal >= $unit && $minimal >= ($unit**$item);
     };
 
-    my $item = 0;
-    if (abs($bytes) >= $unit) {
+    my $do = sub {
+        my ($bytes) = @_;
+        return abs($bytes) >= $unit;
+    };
+
+    my $item = 1;
+    if (&$do($bytes)) {
         do {
             $bytes /= $unit;
             ++$item;
-        } while ((abs($bytes) >= $decimal_units || $minimal >= $decimal_units) && $item < 5);
+        } while ((&$do($bytes) || &$allowed($item)) && $item <= 5);
+    } elsif (&$allowed($item)) {
+        $item = int(log($minimal) / log($unit)) + 1;
+        $bytes /= ($unit**$item);
     }
 
     my $factor    = 10**2;
