@@ -297,7 +297,7 @@ settings_contrast_level_navigation=对比度滤镜
 settings_contrast_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_cm_view_palette=查看器调色板
-settings_cm_editor_palette=编辑器调色板
+settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=全选
 theme_xhred_filemanager_context_select_invert=反向选择

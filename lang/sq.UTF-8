@@ -309,7 +309,7 @@ settings_contrast_level_navigation=Filtri i Kontrasti
 settings_contrast_level_navigation_description=Vlerat e paracaktuara / aktuale <code> 1 </code> / <code data-name="settings_contrast_level_navigation"> 0 </code>
 
 settings_cm_view_palette=Paleta ngjyra e shikuesit
-settings_cm_editor_palette=Paleta e ngjyrave të redaktorit
+settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=Zgjedh të gjitha
 theme_xhred_filemanager_context_select_invert=Zhvendos përzgjedhjen

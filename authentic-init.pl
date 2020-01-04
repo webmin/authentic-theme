@@ -1319,7 +1319,7 @@ sub header_html_data
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-theme-version="' . theme_version(0) .
+      ' data-editor-palette="' . $theme_config{'settings_cm_editor_palette'} . '" data-theme-version="' . theme_version(0) .
       '" data-theme-mversion="' . theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' .
       get_user_home() . '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' .
       dashboard_switch() . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .

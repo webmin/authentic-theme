@@ -262,7 +262,7 @@ settings_brightness_level_navigation_description=Par défaut/Valeur actuelle <co
 settings_contrast_level_navigation=Contraste
 settings_contrast_level_navigation_description=Par défaut/Valeur actuelle <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Palette de couleur de la visionneuse
-settings_cm_editor_palette=Palette de couleur de l'éditeur
+settings_cm_editor_palette=Code highlight color palette
 theme_xhred_filemanager_context_select_all=Tout sélectionner
 theme_xhred_filemanager_context_select_invert=Inverser la sélection
 theme_xhred_filemanager_context_refresh=Rafraîchir
