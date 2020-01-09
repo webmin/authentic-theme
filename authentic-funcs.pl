@@ -275,7 +275,7 @@ sub product_version_update
 {
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.910', '1.760', '6.06', '9.4', '12.12', $tconfig{'beta_updates'});
+      ('1.940', '1.790', '6.08', '9.4', '13.12', $tconfig{'beta_updates'});
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
