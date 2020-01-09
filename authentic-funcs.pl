@@ -10,7 +10,6 @@ our (%in,
      %theme_text,
      %theme_config,
      %gconfig,
-     %tconfig,
      $current_lang_info,
      $root_directory,
      $remote_user,
@@ -274,8 +273,7 @@ sub replace_meta
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.940', '1.790', '6.08', '9.4', '13.12', $tconfig{'beta_updates'});
+    my ($wv, $uv, $vv, $cv, $fv) = ('1.940', '1.790', '6.08', '9.4', '13.12');
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -283,11 +281,9 @@ sub product_version_update
         ($p eq "c" && $v < $cv) ||
         ($p eq "f" && $v < $fv))
     {
-        return (($d eq '1' || ($d ne '1' && $p eq "f")) ?
-                  '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
-                  $theme_text{'theme_xhred_global_outdated'} .
-                  '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>' :
-                  $v);
+        return '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
+          $theme_text{'theme_xhred_global_outdated'} .
+          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>';
     } else {
         return $v;
     }
