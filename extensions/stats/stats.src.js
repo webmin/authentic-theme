@@ -34,6 +34,9 @@ const stats = {
             moment: moment,
             locale: {
                 time: config_portable_theme_locale_format_time,
+                offset: () => {
+                    return get_utc_offset()
+                }
             },
             state: () => {
                 return settings_sysinfo_real_time_stored || v___theme_state_visible
@@ -250,7 +253,7 @@ const stats = {
                                     type: this.extend.chart.FixedScaleAxis,
                                     divisor: 12,
                                     labelInterpolationFnc: (value) => {
-                                        return this.extend.moment(value * 1000).format(this.extend.locale.time);
+                                        return this.extend.moment(value * 1000).utcOffset(this.extend.locale.offset()).format(this.extend.locale.time);
                                     }
                                 },
                                 height: options.chart.height,

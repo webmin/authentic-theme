@@ -135,6 +135,13 @@ sub nice_number
     return $number;
 }
 
+sub get_time_offset
+{
+    my $offset = backquote_command('date +"%z"');
+    $offset =~ s/\n//;
+    return $offset;
+}
+
 sub get_theme_language
 {
     my %s;

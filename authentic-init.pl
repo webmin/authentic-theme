@@ -1328,8 +1328,8 @@ sub header_html_data
       get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
       '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
-      '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
-      '" data-product="' . get_product_name() . '" data-access-level="' . $get_user_level . '"';
+      '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
+      get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
 }
 
 sub header_body_data
