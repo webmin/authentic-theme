@@ -959,6 +959,13 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
+    } elsif (string_contains($keys, "zonekey")) {
+        if ($keys eq "zonekey_disable") {
+            $class = "danger ";
+            $icon  = " fa2 fa2-key-minus fa-1_15x";
+        } else {
+            $icon = " fa2 fa2-key";
+        }
     } elsif (
              (string_contains($keys, "install")     ||
               string_contains($keys, "recsok")      ||
