@@ -562,9 +562,12 @@ sub theme_ui_textbox
     my ($name, $value, $size, $dis, $max, $tags) = @_;
     my $rv;
 
+    my $ids;
+    $ids = "_i_$main::ui_textbox_tcalled" if ($main::ui_textbox_tcalled++);
+
     $rv .=
 '<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
-    $rv .= 'id="' . &quote_escape($name) . '" ';
+    $rv .= 'id="' . &quote_escape($name . $ids) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
@@ -756,8 +759,11 @@ sub theme_ui_textarea
     my ($name, $value, $rows, $cols, $wrap, $dis, $tags) = @_;
     $cols = &ui_max_text_width($cols, 1);
 
+    my $ids;
+    $ids = "_t_$main::ui_textarea_tcalled" if ($main::ui_textarea_tcalled++);
+
     return "<textarea style='display: inline; width:100%;' class='form-control ui_textarea' " .
-      "name=\"" . &quote_escape($name) . "\" " . "id=\"" . &quote_escape($name) .
+      "name=\"" . &quote_escape($name) . "\" " . "id=\"" . &quote_escape($name . $ids) .
       "\" " . "rows='$rows' cols='$cols'" . ($wrap ? " wrap=$wrap" : "") . ($dis ? " disabled=true" : "") .
       ($tags ? " $tags" : "") . ">" . &html_escape($value) . "</textarea>";
 }
@@ -767,9 +773,12 @@ sub theme_ui_submit
     my ($label, $name, $dis, $tags) = @_;
     my ($keys, $class, $icon) = get_button_style($label);
 
+    my $ids;
+    $ids = "_s_$main::ui_submit_tcalled" if ($main::ui_submit_tcalled++);
+
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
-      ($name ne ''                                                     ? " id=\"" . &quote_escape($name) . "\""   : "") .
+      ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
       ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
       &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
@@ -1057,6 +1066,17 @@ sub theme_ui_hidden_javascript
     $jscb =~ s/'/\\'/g;
     $jstb =~ s/'/\\'/g;
     return undef;
+}
+
+sub theme_ui_hidden
+{
+    my $ids;
+    $ids = "_h_$main::ui_hidden_tcalled" if ($main::ui_hidden_tcalled++);
+
+    my ($name, $value) = @_;
+    return "<input class='ui_hidden' type='hidden' " . "name=\"" . &quote_escape($name) .
+      "\" " . "id=\"" . &quote_escape($name . $ids) . "\" " . "value=\"" . &quote_escape($value) . "\">\n";
+
 }
 
 sub theme_ui_hidden_start
