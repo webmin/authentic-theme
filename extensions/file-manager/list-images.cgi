@@ -49,8 +49,8 @@ if (!$files_all) {
     my $pages     = 0;
 
     my $max_allowed = int($userconfig{'max_allowed'});
-    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 2000) {
-        $max_allowed = 300;
+    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 10000) {
+        $max_allowed = 1000;
     }
 
     my $totals         = scalar(@list);
