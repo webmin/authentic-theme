@@ -1,7 +1,7 @@
 desc=Authentic Theme
 longdesc=Webmin/Usermin/Virtualmin/Cloudmin theme based on Bootstrap and Font Awesome (https://github.com/authentic-theme/authentic-theme)
 version=19.45-RC1
-mversion=03
+mversion=04
 depends=1.940 1.790
 webmin=1
 usermin=1

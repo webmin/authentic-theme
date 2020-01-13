@@ -120,7 +120,7 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_module_filemanager_switch_user = true,
     config_portable_module_filemanager_remember_tabs = true,
 
-    config_portable_module_xsql_fit_content_screen_height = true,
+    config_portable_module_xsql_fit_content_screen_height = false,
 
     config_portable_theme_locale_language = false,
     config_portable_theme_locale_format_full = "LLLL",
