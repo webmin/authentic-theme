@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 19.45-RC2 (January 14, 2020)
-* Add amazing stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
+#### Version 19.45 (January 14, 2020)
+* Add stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
 * Add protection against re-submitting progressive/modifier pages
 * Add user-friendly reload message upon language change
 * Add date/time offset to display server timezone
@@ -9,8 +9,8 @@
 * Add better bottom buttons alignment in navigation menu for long usernames
 * Fix file editor not saving files correctly
 * Fix broken file editor focus on resize/drag operations
-* Fix to keep maximized file editor window, if called from File Manager
-* Fix to improve logic for stealing cursor in File Manager for keyboard navigation
+* Fix to maximized file editor window, if called from File Manager
+* Fix to improve logic for stealing cursor in File Manager with keyboard navigation
 * Fix to return ability to display Command Shell module as it is
 * Fix to avoid connection error dialog, if _webmin_ package is being updated
 * Fix to avoid styled links in table headers and on progressive pages
