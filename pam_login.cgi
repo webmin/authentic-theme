@@ -64,6 +64,9 @@ if ($gconfig{'loginbanner'} &&
 }
 
 my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+if (!$miniserv{'no_httponly'}) {
+  $sec .= "; httpOnly";
+}
 my $sidname = $miniserv{'sidname'} || "sid";
 print "Auth-type: auth-required=1\r\n";
 print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
