@@ -1021,6 +1021,9 @@ sub get_button_style
         $icon = "times-circle-o";
     } elsif (string_contains($keys, "ticket_submit")) {
         $icon = "question-circle";
+    } elsif (string_contains($keys, "trace_change")) {
+        $icon  = " fa2 fa2-toggle-off  fa-0_90x";
+        $class = "warning ";
     } elsif (string_contains($keys, "passwd_change")) {
         $icon  = "key-li";
         $class = "warning ";
