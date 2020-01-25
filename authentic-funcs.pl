@@ -273,7 +273,7 @@ sub replace_meta
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv) = ('1.940', '1.790', '6.08', '9.4', '13.12');
+    my ($wv, $uv, $vv, $cv, $fv) = ('1.941', '1.791', '6.08', '9.4', '14.01');
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
