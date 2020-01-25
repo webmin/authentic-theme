@@ -1199,3 +1199,11 @@ settings_theme_make_date_description=Die Umsetzung von Datum und Uhrzeit in das 
 
 #19.44
 theme_xhred_reload_lang_notification=Die Sprache des Design wurde geändert, Die Seite wird mit der neuen Einstellung neu geladen.
+
+
+#19.46
+theme_xhred_global_small=Small
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Medium
+theme_xhred_global_large=Large
+theme_xhred_global_huge=Huge

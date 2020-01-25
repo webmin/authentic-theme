@@ -472,8 +472,19 @@ const mail = (function() {
                                           <div ${data.class.editor.composer}="html" class="ql-compose ql-container-toolbar-bottom ${data.status.html}">${data.body}</div>
                                           <div id="tb-${data.id}">
                                             <span class="ql-formats">
-                                              <select class="ql-font"></select>
-                                              <select class="ql-size"></select>
+                                              <select class="ql-font">
+                                                <option value="initial" selected>${data.language._default}</option>
+                                                <option value="sans-serif">Sans Serif</option>
+                                                <option value="serif">Serif</option>
+                                                <option value="monospace">Monospace</option>
+                                              </select>
+                                              <select class="ql-size">
+                                                  <option value="0.75em">${data.language._font_size.small}</option>
+                                                  <option selected>${data.language._font_size.normal}</option>
+                                                  <option value="1.2em">${data.language._font_size.medium}</option>
+                                                  <option value="1.5em">${data.language._font_size.large}</option>
+                                                  <option value="2.5em">${data.language._font_size.huge}</option>
+                                              </select>
                                             </span>
                                             <span class="ql-formats">
                                               <button class="ql-bold"></button>
@@ -1038,8 +1049,19 @@ const mail = (function() {
                                             _.update_mdata("/uconfig.cgi?mailbox", "/uconfig_save.cgi", {
                                                 [option]: value
                                             })
-                                        };
+                                        },
+                                        qs = Quill.import('attributors/style/size'),
+                                        qf = Quill.import('attributors/style/font');
+
+                                    // Quill: assign font-size and font-family, rather than using classes
+                                    qs.whitelist = ["0.75em", "1.2em", "1.5em", "2.5em"];
+                                    qf.whitelist = ["initial", "sans-serif", "serif", "monospace"];
+                                    Quill.register(qs, true);
+                                    Quill.register(qf, true);
+
+                                    // Redefine the actual target
                                     target = target[0];
+
 
                                     let asb = target.querySelector(`.${classes.form.header}`),
                                         ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
@@ -1863,6 +1885,15 @@ const mail = (function() {
                         language._encrypt = _.lang('global_encrypt');
                         language._options = _.lang('global_options');
                         language._addrecipients = _.lang('mail_composer_addrecipients');
+                        language._default = _.lang('global_default');
+                        language._font_size = {
+                            small: _.lang('global_small'),
+                            normal: _.lang('global_normal'),
+                            medium: _.lang('global_medium'),
+                            large: _.lang('global_large'),
+                            huge: _.lang('global_huge'),
+                        };
+
 
                         // Check for form selects
                         element.select.from = $form[0].querySelector(`select[name="from"]`);
@@ -1952,8 +1983,7 @@ const mail = (function() {
                                         left: small_window ? -1 * ioffset : window_height * 0.1,
                                         right: small_window ? -1 * ioffset : window_height * 0.1,
                                     },
-                                    footerToolbar: function() {
-                                    },
+                                    footerToolbar: function() {},
                                     dblclicks: {
                                         title: "maximize"
                                     },

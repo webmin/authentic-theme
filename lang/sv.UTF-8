@@ -1205,3 +1205,11 @@ settings_theme_make_date_description=Om inakiverad, kommer formatet på datum/ti
 
 #19.44
 theme_xhred_reload_lang_notification=Temaspråket har ändrats. Sidan laddas om för att tillämpa de nya inställningarna.
+
+
+#19.46
+theme_xhred_global_small=Small
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Medium
+theme_xhred_global_large=Large
+theme_xhred_global_huge=Huge

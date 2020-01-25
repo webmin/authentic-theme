@@ -1207,3 +1207,11 @@ settings_theme_make_date_description=If disabled, date/time format provided by t
 
 #19.44
 theme_xhred_reload_lang_notification=Theme language has been changed. The page will be reloaded, to apply new settings.
+
+
+#19.46
+theme_xhred_global_small=Small
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Medium
+theme_xhred_global_large=Large
+theme_xhred_global_huge=Huge

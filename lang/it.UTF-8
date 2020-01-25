@@ -1215,3 +1215,11 @@ settings_theme_make_date_description=Se disattivato, verrà utilizzato il format
 
 #19.44
 theme_xhred_reload_lang_notification=La lingua del tema è stata cambiata. La pagina verrà ricaricata per applicare le nuove impostazioni.
+
+
+#19.46
+theme_xhred_global_small=Small
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Medium
+theme_xhred_global_large=Large
+theme_xhred_global_huge=Huge
