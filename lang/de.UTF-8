@@ -1202,9 +1202,9 @@ theme_xhred_reload_lang_notification=Die Sprache des Design wurde geändert, Die
 
 
 #19.46
-theme_xhred_global_small=Small
+theme_xhred_global_small=Schmal
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Medium
-theme_xhred_global_large=Large
-theme_xhred_global_huge=Huge
-theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
+theme_xhred_global_large=Groß
+theme_xhred_global_huge=Sehr groß
+theme_xhred_filemanager_editor_maximized=Maximiere Editor Fenster beim Start
