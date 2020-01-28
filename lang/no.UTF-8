@@ -1074,3 +1074,4 @@ theme_xhred_global_medium=Medium
 theme_xhred_global_large=Large
 theme_xhred_global_huge=Huge
 theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
+settings_sysinfo_remember_accordions=Save accordions state used last time
