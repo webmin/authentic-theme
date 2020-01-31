@@ -1015,9 +1015,13 @@ sub get_button_style
              string_contains($keys, "wizard_next") ||
              string_contains($keys, "tmpl_cnext")  ||
              string_contains($keys, "tmpl_snext")  ||
+             string_contains($keys, "continue")    ||
              string_contains($keys, "download_cont"))
     {
         $icon = "arrow-circle-o-right";
+        if (string_contains($keys, "continue")) {
+            $class = "success ";
+        }
     } elsif (string_contains($keys, "cancel")) {
         $icon = "times-circle-o";
     } elsif (string_contains($keys, "ticket_submit")) {
@@ -1059,6 +1063,9 @@ sub get_button_style
     {
         $class = "info ";
         $icon  = "search";
+    } elsif (string_contains($keys, "dmass_move") || string_contains($keys, "domains_move")) {
+        $class = "warning ";
+        $icon  = " fa2 fa2-transfer";
     } elsif (string_contains($keys, "restart") || string_contains($keys, "edit_kill")) {
         $class = "warning ";
         $icon  = "refresh";
