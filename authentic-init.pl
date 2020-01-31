@@ -979,6 +979,7 @@ sub get_button_style
         $icon  = "package-install fa-1_25x";
     } elsif (string_contains($keys, "uninstall") ||
              string_contains($keys, "edit_uninst") ||
+             string_contains($keys, "scripts_uok") ||
              string_contains($keys, "drecs_ok"))
     {
         $class = "danger ";
@@ -1085,6 +1086,8 @@ sub get_button_style
     {
         $class = "warning ";
         $icon  = "refresh";
+    } elsif (string_contains($keys, "scripts_ustop")) {
+        $icon = "stop";
     } elsif (string_contains($keys, "index_script")) {
         $icon = "update";
     } elsif (string_contains($keys, "status")) {
