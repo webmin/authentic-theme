@@ -86,7 +86,7 @@ print ui_table_row($theme_text{'settings_navigation_color'},
                    settings_get_select_navigation_color(
                                                         ($theme_config{'settings_navigation_color'} ne 'undefined' ?
                                                            $theme_config{'settings_navigation_color'} :
-                                                           'brown'
+                                                           'blue'
                                                         ),
                                                         'settings_navigation_color'
                    ));
