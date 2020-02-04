@@ -967,7 +967,7 @@ sub get_tree
                 return;
             }
         }
-        sort {"\L$a" cmp "\L$b"} @_;
+        return sort {"\L$a" cmp "\L$b"} @_;
     };
     find(
          {  wanted     => $wanted,
