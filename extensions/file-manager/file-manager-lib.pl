@@ -946,7 +946,7 @@ sub get_tree
 
     my $wanted = sub {
         my $td = $File::Find::name;
-        if (-d $td && !-l $td) {
+        if (-d $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
                 return;
@@ -966,13 +966,6 @@ sub get_tree
             if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
                 return;
             }
-        }
-        my $dd = ($df > 0 ? ($df + 1) : 0);
-        if ($dd) {
-            if ($d < $dd) {
-                return sort {"\L$a" cmp "\L$b"} @_;
-            }
-            return;
         }
         sort {"\L$a" cmp "\L$b"} @_;
     };
