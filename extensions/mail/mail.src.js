@@ -66,12 +66,18 @@ const mail = (function() {
             lang: theme_language,
             notification: plugins.messenger.post,
             file_chooser: plugins.chooser.file,
-            button_progress: snippets.progressive_button,
+            button: {
+                progress: snippets.progressive_button,
+                lock: snippets.button_lock,
+            },
             rows: page_table_rows_control,
             document_title: theme_title_generate,
             update_mdata: core.updateModuleData,
             uri_param: uri_parse_param,
             error: connection_error,
+            event: {
+                generate: event_generate
+            },
             navigation: {
                 reset: plugins.navigation.reset
             },
@@ -399,7 +405,7 @@ const mail = (function() {
                             <form class="compose" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
                                 <div class="form-e">
                                     <div class="${data.class.form.header}">
-                                        <div class="form-group">
+                                        <div class="form-group from">
                                             <div class="flex">
                                                 <div class="col-xs-1">
                                                     <label for="c-from-${data.id}">${data.language.from}</label>
@@ -413,7 +419,7 @@ const mail = (function() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group to">
                                             <div class="flex">
                                                 <div class="col-xs-1">
                                                     <label for="c-to-${data.id}">${data.language.to}</label>
@@ -855,6 +861,7 @@ const mail = (function() {
             xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
             xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
             xtarget.schedule = `${path}/schedule/save.cgi`;
+            xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0`;
 
             if (typeof form === 'object' && form.length) {
                 form = $(form).serialize() + '&reply=1';
@@ -1195,6 +1202,9 @@ const mail = (function() {
                                             ctl_img = ccs[0].querySelector(`.${classes.editor.controls.extra.image}`),
                                             ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
                                             submit = target.querySelector('button[type="submit"]'),
+                                            to_ = target.querySelector('input[name="to"]'),
+                                            cc_ = target.querySelector('input[name="cc"]'),
+                                            bcc_ = target.querySelector('input[name="bcc"]'),
                                             $more_options = $(target).find(`.${classes.editor.controls.more}`),
 
                                             scheduled = {
@@ -1608,6 +1618,79 @@ const mail = (function() {
                                         // Scheduled mail events
                                         scheduled.events();
 
+                                        // Bring address book autocompletion
+                                        fetch(xtarget.addressBook)
+                                            .then(function(rs) {
+                                                return rs.text();
+                                            })
+                                            .then(function(d) {
+
+                                                [to_, cc_, bcc_].forEach(input => {
+
+                                                    // Bind tags input
+                                                    let tags = $(input).tagsinput({
+                                                        confirmKeys: [13, 32],
+                                                        addOnBlur: false,
+                                                        cancelConfirmKeysOnEmpty: false,
+                                                        tagClass: 'label recipient'
+                                                    });
+
+                                                    // Initialize autocomplete on received data,
+                                                    // if there is something in user's address book
+                                                    let b = d.match(/"(.*)","(.*)"/gm);
+                                                    if (b) {
+                                                        let book = [];
+                                                        b.map(function(en) {
+                                                            let em = en.match(/"(.*)","(.*)"/);
+                                                            if (em) {
+                                                                book.push(em[2] + " <" + em[1] + ">");
+                                                            }
+                                                        });
+
+                                                        !$.isEmptyObject(book) && tags[0].$input.autocomplete({
+                                                            lookup: book,
+                                                            autoSelectFirst: true,
+                                                            position: 'relative',
+                                                            appendTo: tags[0].$container,
+                                                            onSelect: function(m) {
+                                                                $(input).tagsinput('add', m.value);
+                                                                this.value = String();
+                                                            }
+                                                        });
+                                                    }
+
+                                                    $(input)
+
+                                                        .on('itemAdded itemRemoved', function(event) {
+
+                                                            // Soft validate email address
+                                                            let email = event.item,
+                                                                contact = email.match(/<(.*)>/);
+                                                            if (contact) {
+                                                                email = contact[1];
+                                                            }
+                                                            if (event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
+                                                                $(event.target.previousSibling).find('.recipient').last().addClass('error')
+                                                            }
+
+                                                            // Adjust the container size on adding/removing recipient
+                                                            adjust.contenteditable(target);
+
+                                                        })
+
+                                                    // Imitate tab keypress to generate the tag as well
+                                                    tags[0].$input.on('keydown', function(event) {
+                                                        let value = this.value;
+                                                        if (event.keyCode === 9) {
+                                                            $(this).trigger(_.event.generate('keypress', 32));
+                                                            if (value) {
+                                                                event.preventDefault();
+                                                            }
+                                                        }
+                                                    });
+                                                })
+                                            });
+
                                         // Submitting mail
                                         submit.addEventListener('click', function(event) {
                                             event.preventDefault();
@@ -1721,7 +1804,10 @@ const mail = (function() {
                                             xhr.open("POST", link);
                                             xhr.upload.onprogress = (e) => {
                                                 !draft_status &&
-                                                    _.button_progress(this, Math.ceil((e.loaded / e.total) * 100));
+                                                    (
+                                                        _.button.progress(this, Math.ceil((e.loaded / e.total) * 100)),
+                                                        _.button.lock(this, true)
+                                                    );
                                             };
                                             xhr.onload = (e) => {
                                                 let rs = e.target.responseText,
@@ -1788,7 +1874,10 @@ const mail = (function() {
                                                             _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
 
                                                             // Reset progress
-                                                            _.button_progress(this, 0);
+                                                            _.button.progress(this, 0);
+
+                                                            // Unlock button
+                                                            _.button.lock(this, false)
 
                                                         } else {
 
@@ -1806,7 +1895,10 @@ const mail = (function() {
                                             xhr.onerror = (e) => {
 
                                                 // Reset progress
-                                                _.button_progress(this, 0);
+                                                _.button.progress(this, 0);
+
+                                                // Unlock button
+                                                _.button.lock(this, false)
 
                                                 // Display error message
                                                 _.error({
