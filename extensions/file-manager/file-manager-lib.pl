@@ -768,7 +768,7 @@ sub print_content
             }
             $hlink_path =~ s/\/\Q$filename\E$//;
         }
-        
+
         my $type = $list[$count - 1][14];
         $type =~ s/\//\-/g;
         my $img = "images/icons/mime/$type.png";
@@ -785,7 +785,7 @@ sub print_content
         my $is_img     = 0;
         if ($list[$count - 1][15] == 1) {
             $is_file = 0;
-            $href = "index.cgi?path=" . &urlize("$path/$link");
+            $href    = "index.cgi?path=" . &urlize("$path/$link");
         } else {
             my ($fname, $fpath, $fsuffix) =
               fileparse($list[$count - 1][0]);
@@ -946,7 +946,7 @@ sub get_tree
 
     my $wanted = sub {
         my $td = $File::Find::name;
-        if (-d $td) {
+        if (-d $td && !-l $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
                 return;
@@ -961,11 +961,17 @@ sub get_tree
     my $preprocess = sub {
         my $td = $File::Find::name;
         my $d  = $td =~ tr[/][];
-
         if ($e && $p eq "/" && $d == 1) {
             if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
                 return;
             }
+        }
+        my $dd = ($df > 0 ? ($df + 1) : 0);
+        if ($dd) {
+            if ($d < $dd) {
+                return sort {"\L$a" cmp "\L$b"} @_;
+            }
+            return;
         }
         return sort {"\L$a" cmp "\L$b"} @_;
     };
