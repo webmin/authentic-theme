@@ -1,5 +1,24 @@
 ## Changelog
 
+#### Version 19.46 (February 04, 2020)
+* Set royal blue color palette as default
+* Add recipient (from address book) autocomplete for new mail composer in Usermin
+* Add significant even though tiny CSS enhancements
+* Add ability to navigate pages using backspace/⇧+backspace (before user interaction)
+* Add hotkeys to maximize/normalize file editor window (Alt + ▵/Alt + ▿)
+* Add ability to select/deselect row using ⇧ + ▵ or ⇧ + ▿ in File Manager
+* Add better post server-error handling for initial load in File Manager
+* Add ability to save accordions state used last time on Dashboard
+* Add ability to clear table/accordion filter with escape key as well
+* Fix to improve keyboard navigation (up/down/pgup/pgdn/home/end) in File Manager
+* Fix to embed font family and size values inline for new mail composer
+* Fix to forbid recalling certain pages on page reload
+* Fix to let manually dismiss session reauthenticate modal
+* Fix fatal fail on invalid/incomplete regex passed in System Logs/View Logfile
+* Fix users in jailed mode in Usermin for File Manager
+* Fix tree depth control for multiple modes in File Manager
+
+
 #### Version 19.45 (January 14, 2020)
 * Add stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
 * Add protection against re-submitting progressive/modifier pages
