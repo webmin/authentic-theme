@@ -1245,7 +1245,7 @@ sub get_sysinfo_vars
           $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
           &to_ipaddress(get_system_hostname());
         $ip   = " ($ip)" if ($ip);
-        $host = &get_system_hostname() . $ip;
+        $host = &get_display_hostname() . $ip;
         if (&foreign_available("net")) {
             $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
         }
