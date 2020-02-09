@@ -1218,10 +1218,10 @@ theme_xhred_reload_lang_notification=La lingua del tema è stata cambiata. La pa
 
 
 #19.46
-theme_xhred_global_small=Small
-theme_xhred_global_normal=Normal
-theme_xhred_global_medium=Medium
-theme_xhred_global_large=Large
-theme_xhred_global_huge=Huge
-theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
-settings_sysinfo_remember_accordions=Save accordions state used last time
+theme_xhred_global_small=Piccolo
+theme_xhred_global_normal=Normale
+theme_xhred_global_medium=Medio
+theme_xhred_global_large=Grande
+theme_xhred_global_huge=Gigante
+theme_xhred_filemanager_editor_maximized=Massimizza il pannello dell'editor all'avvio
+settings_sysinfo_remember_accordions=Salva lo stato delle sezioni espandibili dell'ultima volta
