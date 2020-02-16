@@ -1097,6 +1097,9 @@ sub get_button_style
         $icon = "stop";
     } elsif (string_contains($keys, "index_script")) {
         $icon = "update";
+    } elsif (string_contains($keys, "cron_ok")) {
+        $icon  = "check-circle-o";
+        $class = "success ";
     } elsif (string_contains($keys, "status")) {
         $icon = "info-circle";
     } elsif (string_contains($keys, "index_clear") || string_contains($keys, "shell_clear")) {
