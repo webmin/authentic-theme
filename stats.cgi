@@ -143,7 +143,9 @@ my $ddata = sub {
             y => $d
          });
 };
-$cdata = convert_from_json($cdata) if ($cdata);
+
+eval {$cdata = convert_from_json($cdata) if ($cdata);};
+unlink($fdata), $cdata = {} if ($@);
 $cdata ||= {};
 
 if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
