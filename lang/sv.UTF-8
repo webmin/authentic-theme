@@ -1208,10 +1208,10 @@ theme_xhred_reload_lang_notification=Temaspråket har ändrats. Sidan laddas om 
 
 
 #19.46
-theme_xhred_global_small=Small
+theme_xhred_global_small=Liten
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Medium
-theme_xhred_global_large=Large
-theme_xhred_global_huge=Huge
-theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
-settings_sysinfo_remember_accordions=Save accordions state used last time
+theme_xhred_global_large=Stor
+theme_xhred_global_huge=Enorm
+theme_xhred_filemanager_editor_maximized=Maximera redigeringspanelen vid start
+settings_sysinfo_remember_accordions=Kom ihåg om menyerna var utvidgade eller ihop dragna sen du sist var där
