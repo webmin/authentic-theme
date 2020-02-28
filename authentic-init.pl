@@ -1203,11 +1203,15 @@ sub get_button_style
     {
         $class = "primary ";
         $icon  = "upload";
-    } elsif (string_contains($keys, "index_down") || string_contains($keys, "transfer_downloadok")) {
+    } elsif (string_contains($keys, "index_down") ||
+             string_contains($keys, "transfer_downloadok") ||
+             string_contains($keys, "index_up")            ||
+             string_contains($keys, "download_need"))
+    {
         $class = "primary ";
         $icon  = "download";
-    } elsif (string_contains($keys, "index_up") || string_contains($keys, "download_need")) {
-        $class = "primary ";
+    } elsif (string_contains($keys, "images_get")) {
+        $class = "success ";
         $icon  = "download";
     } elsif (string_contains($keys, "umass_del1") ||
              string_contains($keys, "gdel_del")    ||
