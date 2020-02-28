@@ -1679,10 +1679,16 @@ const mail = (function() {
                                                         })
 
                                                     // Imitate tab keypress to generate the tag as well
-                                                    tags[0].$input.on('keydown', function(event) {
+                                                    tags[0].$input.on('keydown blur', function(event) {
                                                         let value = this.value;
-                                                        if (event.keyCode === 9) {
+                                                        if (event.keyCode === 9 || event.type === 'blur') {
+                                                            
+                                                            // Dispatch event to complete the tag
                                                             $(this).trigger(_.event.generate('keypress', 32));
+
+                                                            // Adjust the container size on adding/removing recipient
+                                                            adjust.contenteditable(target);
+
                                                             if (value) {
                                                                 event.preventDefault();
                                                             }
