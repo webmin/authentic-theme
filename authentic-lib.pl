@@ -697,9 +697,19 @@ sub print_left_custom_links
             my $extra_json = convert_from_json($extra);
             foreach my $e (@{ $extra_json->{'extra'} }) {
                 if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
+                    my $target = $e->{"target"};
+                    if ($target) {
+                        $target = " target=\"$target\"";
+                    }
+                    if ($e->{"port"}) {
+                        my $host = get_env('http_host');
+                        $host =~ s/:(\d+)$/:$e->{'port'}/;
+                        $e->{"link"} = "//$host$e->{'link'}";
+                    }
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' . $type . ' data-after><a href="' . $e->{"link"} . '" class="' . $type_class .
+                    print '<li ' .
+                      $type . ' data-after><a ' . $target . ' href="' . $e->{"link"} . '" class="' . $type_class .
                       '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
                 }
             }

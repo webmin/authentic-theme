@@ -1016,7 +1016,7 @@ theme_xhred_shell_aborted=操作は中止されました
 #19.32
 theme_xhred_connection_reboot=再起動
 theme_xhred_connection_reboot_details=サーバーは再起動中です。 お待ちください..
-settings_leftmenu_custom_links_description=カスタムの追加リンクをナビゲーションメニューに挿入することができます。 <br> <br> <em> title </em>、<em> link </em>、<em> icon </em>というキーが必要です。 オプションで、<em> level </em>キーを値とともにカンマ区切りのリストで指定することで、どのログインモードでリンクを表示するかを定義できます。<br> <br> <em> 0 </ em >  - 管理者ログイン <br> <em> 1 </em>  - 販売代理店のログイン; <br> <em> 2 </em>  - サーバーの所有者のログイン; <br> <em> 3 </em>  - ユーザーのログイン; <br> < em> 4 </em>  - システム所有者のログイン。<br> <br>以下の例のように、有効なJSONオブジェクトを文字列として渡す必要があります。<hr> <pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre></pre>
+settings_leftmenu_custom_links_description=カスタムの追加リンクをナビゲーションメニューに挿入することができます。 <br> <br> <em> title </em>、<em> link </em>、<em> icon </em>というキーが必要です。 オプションで、<em> level </em>キーを値とともにカンマ区切りのリストで指定することで、どのログインモードでリンクを表示するかを定義できます。<br> <br> <em> 0 </ em >  - 管理者ログイン <br> <em> 1 </em>  - 販売代理店のログイン; <br> <em> 2 </em>  - サーバーの所有者のログイン; <br> <em> 3 </em>  - ユーザーのログイン; <br> < em> 4 </em>  - システム所有者のログイン。<br> <br>以下の例のように、有効なJSONオブジェクトを文字列として渡す必要があります。<hr> <pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre></pre>
 left_favorites_edit=お気に入りを編集
 left_favorites_edit_desc=このページを使用して、テーマのお気に入りユーザーファイルを手動で編集できます。 変更に対して構文やその他の妥当性検査は行われないため、これは慎重に行う必要があります。
 theme_xhred_filemanager_records_for_server_pagination=サーバーのページ区切りを開始するためのディレクトリ内のデフォルトのアイテム数
