@@ -796,7 +796,7 @@ sub print_left_menu
 
                 } elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
-                } elsif ($link =~ /\/server-manager\/edit_pass.cgi/) {
+                } elsif ($link =~ /\/server-manager\/edit_pass.cgi/ || $link =~ /\/virtual-server\/edit_pass.cgi$/) {
                     $icon = '<i class="fa fa-fw fa-key"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
                     $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
