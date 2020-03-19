@@ -16,7 +16,7 @@ use Async;
 BEGIN {push(@INC, "..");}
 use WebminCore;
 
-our (%in, $config_directory, $current_theme, $remote_user);
+our (%in, $config_directory, $var_directory, $current_theme, $remote_user);
 do(dirname(__FILE__) . "/authentic-funcs.pl");
 
 init_config();
@@ -24,7 +24,7 @@ ReadParse();
 
 # Load theme language and settings
 our %text = load_language($current_theme);
-my %settings = settings($config_directory . "/$current_theme/settings.js", 'settings_');
+my %settings = settings("$config_directory/$current_theme/settings.js", 'settings_');
 
 my $option = sub {
     if ($_[1]) {
@@ -37,12 +37,13 @@ my $option = sub {
 };
 
 my %data;
-my $tdata = {};
-my $sdata = $in{'sdata'} ? 1 : 0;
-my $fdata = "$config_directory/$current_theme/stats-$remote_user.json";
-my $cdata = read_file_contents($fdata);
-my $time  = time();
-my $ddata = sub {
+my $tdata  = {};
+my $sdata  = $in{'sdata'} ? 1 : 0;
+my $fdatad = "$var_directory/modules/$current_theme";
+my $fdata  = "$fdatad/stats-$remote_user.json";
+my $cdata  = read_file_contents($fdata);
+my $time   = time();
+my $ddata  = sub {
     my ($k, $d) = @_;
 
     # Save and return data
@@ -70,6 +71,7 @@ my $ddata = sub {
             }
 
             # Cache complete dataset
+            mkdir($fdatad, 0700) if (!-d $fdatad);
             write_file_contents($fdata, convert_to_json($cdata));
 
             # Return requested data

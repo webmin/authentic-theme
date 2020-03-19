@@ -18,7 +18,7 @@ use WebminCore;
 our (
     %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user,
     $theme_root_directory,
-    $current_theme, $root_directory, $config_directory,
+    $current_theme, $root_directory, $config_directory, $var_directory,
 
     %theme_text, %module_text_full, %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
@@ -2180,7 +2180,7 @@ sub clear_theme_cache
 
         # Clear stats history
         kill_byname("$current_theme/stats.cgi", 9);
-        unlink_file("$config_directory/$current_theme/stats-$remote_user.json");
+        unlink_file("$var_directory/modules/$current_theme/stats-$remote_user.json");
     }
 
     # Clear session specific temporary files
