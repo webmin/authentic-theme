@@ -1092,11 +1092,11 @@ theme_xhred_live_stats_disk=E/S disque
 theme_xhred_global_hour=Heure
 theme_xhred_global_hours=Heures
 theme_xhred_title_locale_time_format=Format de l'heure
-theme_xhred_nice_size_PIB=PiB
-theme_xhred_nice_size_TIB=TiB
-theme_xhred_nice_size_GIB=GiB
-theme_xhred_nice_size_MIB=MiB
-theme_xhred_nice_size_kIB=KiB
+theme_xhred_nice_size_PIB=Po
+theme_xhred_nice_size_TIB=To
+theme_xhred_nice_size_GIB=Go
+theme_xhred_nice_size_MIB=Mo
+theme_xhred_nice_size_kIB=ko
 theme_xhred_live_stats_net=E/S réseau
 theme_xhred_nice_size_PBB=Pbps
 theme_xhred_nice_size_TBB=Tbps
@@ -1121,10 +1121,10 @@ theme_xhred_reload_lang_notification=La langue du thème a été modifiée. La p
 
 
 #19.46
-theme_xhred_global_small=Small
+theme_xhred_global_small=Petit
 theme_xhred_global_normal=Normal
-theme_xhred_global_medium=Medium
-theme_xhred_global_large=Large
-theme_xhred_global_huge=Huge
-theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
-settings_sysinfo_remember_accordions=Save accordions state used last time
+theme_xhred_global_medium=Moyen
+theme_xhred_global_large=Grand
+theme_xhred_global_huge=Très grand
+theme_xhred_filemanager_editor_maximized=Maximiser la fenêtre d'édition de fichier à l'ouverture
+settings_sysinfo_remember_accordions=Mémoriser l'état des accordéons utilisés la dernière fois
