@@ -1119,6 +1119,7 @@ settings_theme_make_date_description=Si désactivé, le format de date/heure du 
 #19.44
 theme_xhred_reload_lang_notification=La langue du thème a été modifiée. La page va être rechargée afin d'appliquer les nouveaux réglages.
 
+
 #19.46
 theme_xhred_global_small=Petit
 theme_xhred_global_normal=Normal
