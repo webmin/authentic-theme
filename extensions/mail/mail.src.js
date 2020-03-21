@@ -1746,6 +1746,9 @@ const mail = (function() {
                                             // Update HTML/text mode status
                                             form_data.set('html_edit', config.html.allowed);
 
+                                            // Force disable spellcheck for new mail composer
+                                            form_data.set('spell', 0);
+
                                             // Check for draft
                                             draft_status && (
                                                 form_data.set('new', 0),
