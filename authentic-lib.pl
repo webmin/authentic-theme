@@ -18,7 +18,7 @@ use WebminCore;
 our (
     %in, %text, %config, %gconfig, %tconfig, %gaccess, $current_lang, $title, $base_remote_user, $remote_user,
     $theme_root_directory,
-    $current_theme, $root_directory, $config_directory,
+    $current_theme, $root_directory, $config_directory, $var_directory,
 
     %theme_text, %module_text_full, %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
@@ -28,7 +28,7 @@ our (
 init_type();
 init_config();
 
-require(dirname(__FILE__) . "/authentic-init.pm");
+do(dirname(__FILE__) . "/authentic-init.pl");
 
 sub authentic
 {
@@ -352,8 +352,10 @@ sub get_sysinfo_warning
             if ($info->{'type'} eq 'warning') {
                 $returned_data .= replace("ui_submit ui_form_end_submit",
                                           "btn-tiny ui_submit ui_form_end_submit",
-                                          &ui_alert_box($info->{'warning'}, $info->{'level'} || 'warn',
-                                                        undef, 1,
+                                          &ui_alert_box($info->{'warning'},
+                                                        $info->{'level'} || 'warn',
+                                                        undef,
+                                                        1,
                                                         $info->{'desc'} || undef
                                           ));
             }
@@ -462,7 +464,7 @@ sub get_extended_sysinfo
                     }
 
                     if ($info->{'type'} ne 'html') {
-                        $returned_sysinfo .= '<table class="table table-striped table-hover"><tbody>';
+                        $returned_sysinfo .= '<table class="table table-striped"><tbody>';
                     }
 
                     if ($info->{'type'} eq 'table' &&
@@ -512,6 +514,26 @@ sub get_extended_sysinfo
 
                 }
             }
+        }
+        if ($get_user_level eq '0' &&
+            $theme_config{'settings_sysinfo_real_time_status'} ne 'false' &&
+            $theme_config{'settings_sysinfo_real_time_stored'} ne 'false' &&
+            (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
+        {
+            my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
+                          <div class="flex-center-inner">
+                            <span class="cspinner"><span class="cspinner-icon light smaller2"></span></span>'
+              . $theme_text{'theme_xhred_datatable_sloadingrecords'} . '
+                          </div>
+                        </div>
+                            <span data-chart="cpu"></span>
+                            <span data-chart="mem"></span>
+                            <span data-chart="virt"></span>
+                            <span data-chart="proc"></span>
+                            <span data-chart="disk"></span>
+                            <span data-chart="net"></span>';
+            $returned_sysinfo .=
+              print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
         }
         $returned_sysinfo .= '</div><br><br><br><br>';
         return $returned_sysinfo;
@@ -669,15 +691,25 @@ sub print_left_custom_links
 {
     my $extra = $theme_config{'settings_leftmenu_custom_links'};
     if ($extra) {
-        $extra = replace('\'', '"', un_urlize($extra));
+        $extra = replace('\'', '"', un_urlize($extra, 1));
         if ($extra && $extra =~ m/"extra":/) {
             my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
             my $extra_json = convert_from_json($extra);
             foreach my $e (@{ $extra_json->{'extra'} }) {
                 if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
+                    my $target = $e->{"target"};
+                    if ($target) {
+                        $target = " target=\"$target\"";
+                    }
+                    if ($e->{"port"}) {
+                        my $host = get_env('http_host');
+                        $host =~ s/:(\d+)$/:$e->{'port'}/;
+                        $e->{"link"} = "//$host$e->{'link'}";
+                    }
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' . $type . ' data-after><a href="' . $e->{"link"} . '" class="' . $type_class .
+                    print '<li ' .
+                      $type . ' data-after><a ' . $target . ' href="' . $e->{"link"} . '" class="' . $type_class .
                       '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
                 }
             }
@@ -774,7 +806,7 @@ sub print_left_menu
 
                 } elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
-                } elsif ($link =~ /\/server-manager\/edit_pass.cgi/) {
+                } elsif ($link =~ /\/server-manager\/edit_pass.cgi/ || $link =~ /\/virtual-server\/edit_pass.cgi$/) {
                     $icon = '<i class="fa fa-fw fa-key"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
                     $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
@@ -941,7 +973,10 @@ sub print_left_menu
                            )
                         ),
                         ($item->{'name'} eq 'dname' ? @dname : $item->{'menu'}),
-                        1, 0, 0, 0,
+                        1,
+                        0,
+                        0,
+                        0,
                         "data-autocomplete-title=\"
                             "
                           . (
@@ -1143,13 +1178,32 @@ sub get_sysinfo_vars
     @info = grep {$_->{'id'} eq 'sysinfo'} @info;
 
     # Define used vars
-    my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-        $host,               $os,                      $webmin_version,  $virtualmin_version,
-        $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-        $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-        $running_proc,       $load,                    $real_memory,     $virtual_memory,
-        $disk_space,         $package_message,         $csf_title,       $csf_data,
-        $csf_remote_version, $authentic_remote_version);
+    my ($cpu_percent,
+        $mem_percent,
+        $virt_percent,
+        $disk_percent,
+        $host,
+        $os,
+        $webmin_version,
+        $virtualmin_version,
+        $cloudmin_version,
+        $authentic_theme_version,
+        $local_time,
+        $kernel_arch,
+        $cpu_type,
+        $cpu_temperature,
+        $hdd_temperature,
+        $uptime,
+        $running_proc,
+        $load,
+        $real_memory,
+        $virtual_memory,
+        $disk_space,
+        $package_message,
+        $csf_title,
+        $csf_data,
+        $csf_remote_version,
+        $authentic_remote_version);
 
     if (@info) {
         $info_arr = @info[0]->{'raw'};
@@ -1201,7 +1255,7 @@ sub get_sysinfo_vars
           $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
           &to_ipaddress(get_system_hostname());
         $ip   = " ($ip)" if ($ip);
-        $host = &get_system_hostname() . $ip;
+        $host = &get_display_hostname() . $ip;
         if (&foreign_available("net")) {
             $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
         }
@@ -1301,7 +1355,7 @@ sub get_sysinfo_vars
                     (
                         (
                          ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
-                          $authentic_installed_version =~ /alpha|beta|RC/
+                          $authentic_installed_version    =~ /alpha|beta|RC/
                          ) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
@@ -1309,8 +1363,8 @@ sub get_sysinfo_vars
 
                 ))
             {
-                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
-                my $authentic_remote_alpha_beta  = $authentic_remote_version_local =~ /alpha|beta/;
+                my $authentic_remote_beta       = $authentic_remote_version_local =~ /alpha|beta|RC/;
+                my $authentic_remote_alpha_beta = $authentic_remote_version_local =~ /alpha|beta/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -1355,12 +1409,21 @@ sub get_sysinfo_vars
         my ($_time);
         $_time      = time();
         $local_time = localtime($_time);
+        my $no_theme_date_time = $theme_config{'settings_theme_make_date'} eq 'false';
         if (foreign_available("time")) {
-            $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
-              $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+            if ($no_theme_date_time) {
+                $local_time = '<a href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+            } else {
+                $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
+                  $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+            }
         } else {
-            $local_time = '<span data-convertible-timestamp-full="' .
-              $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
+            if ($no_theme_date_time) {
+                $local_time = '<span>' . $local_time . '</span>';
+            } else {
+                $local_time = '<span data-convertible-timestamp-full="' .
+                  $_time . '"   data-convertible-date-full="' . $local_time . '" >' . $local_time . '</span>';
+            }
         }
     }
 
@@ -1369,8 +1432,10 @@ sub get_sysinfo_vars
         # Kernel and arch
         if ($info->{'kernel'}) {
             $kernel_arch =
-              &theme_text('body_kernelon',                $info->{'kernel'}->{'os'},
-                          $info->{'kernel'}->{'version'}, $info->{'kernel'}->{'arch'});
+              &theme_text('body_kernelon',
+                          $info->{'kernel'}->{'os'},
+                          $info->{'kernel'}->{'version'},
+                          $info->{'kernel'}->{'arch'});
         }
 
         # CPU Type and cores
@@ -1389,14 +1454,14 @@ sub get_sysinfo_vars
         if ($info->{'cputemps'}) {
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
-                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> Core ' .
-                  $t->{'core'} . ': '
+                  '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> ' .
+                  $theme_text{'theme_global_core'} . ' ' . (int($t->{'core'}) + 1) . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
-                  '</span>&nbsp;';
+                  '</span>';
             }
         }
         if ($info->{'drivetemps'}) {
@@ -1419,7 +1484,7 @@ sub get_sysinfo_vars
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
-                  $emsg . '</span>&nbsp;';
+                  $emsg . '</span>';
             }
         }
     }
@@ -1523,7 +1588,8 @@ sub get_sysinfo_vars
                                       $secs eq 1 ? 'body_upsec1' : $poss eq 1 &&
                                       $secs gt 1 ? 'body_upsec2' : 'body_upsec3'
                                    ),
-                                   $poss, $secs);
+                                   $poss,
+                                   $secs);
             } elsif ($poss) {
                 $msg = &theme_text(($poss gt 1 ? 'body_upneed' : 'body_upneed1'), $poss);
             } else {
@@ -1537,13 +1603,32 @@ sub get_sysinfo_vars
         }
     }
 
-    return ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-            $host,               $os,                      $webmin_version,  $virtualmin_version,
-            $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-            $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-            $running_proc,       $load,                    $real_memory,     $virtual_memory,
-            $disk_space,         $package_message,         $csf_title,       $csf_data,
-            $csf_remote_version, $authentic_remote_version);
+    return ($cpu_percent,
+            $mem_percent,
+            $virt_percent,
+            $disk_percent,
+            $host,
+            $os,
+            $webmin_version,
+            $virtualmin_version,
+            $cloudmin_version,
+            $authentic_theme_version,
+            $local_time,
+            $kernel_arch,
+            $cpu_type,
+            $cpu_temperature,
+            $hdd_temperature,
+            $uptime,
+            $running_proc,
+            $load,
+            $real_memory,
+            $virtual_memory,
+            $disk_space,
+            $package_message,
+            $csf_title,
+            $csf_data,
+            $csf_remote_version,
+            $authentic_remote_version);
 
 }
 
@@ -1621,22 +1706,27 @@ sub print_favorites
 
     if ($f && $f =~ m/"favorites":/) {
         my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
-        my $fc = convert_from_json($f);
-        foreach my $favorite (@{ $fc->{'favorites'} }) {
-            if (length($favorite->{"link"})) {
-                print '
+        eval {
+            my $fc = convert_from_json($f);
+            foreach my $favorite (@{ $fc->{'favorites'} }) {
+                my $ln = quote_escape($favorite->{"link"}, '"');
+                my $ic = quote_escape($favorite->{"icon"}, '"');
+                my $tl = html_escape($favorite->{"title"});
+                if (length($ln)) {
+                    print '
               <li class="menu-exclude ui-sortable-handle">
                   <a class="menu-exclude-link" href="'
-                  . (string_starts_with($favorite->{"link"}, "!edit") ? undef : $gconfig{'webprefix'}) .
-                  $favorite->{"link"} . '"><i data-product="' .
-                  $favorite->{"icon"} . '" class="wbm-' . $favorite->{"icon"} . ' wbm-sm">&nbsp;</i><span class="f__c">
-                            ' . $favorite->{"title"} . '
+                      . (string_starts_with($ln, "!edit") ? undef : $gconfig{'webprefix'}) .
+                      ($ln) . '"><i data-product="' . ($ic) . '" class="wbm-' .
+                      ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
+                            ' . $tl . '
                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i aria-label="'
-                  . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
+                      . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
                   </a>
               </li>';
+                }
             }
-        }
+        };
     }
     print '
               <li class="menu-exclude exclude favorites-no-message'
@@ -1660,21 +1750,32 @@ sub print_favorites
 
 sub print_panels_group_start
 {
-    my ($id) = @_;
-    print '<div class="panel-group" id="' . $id . '" role="tablist" aria-multiselectable="true">';
+    my ($id, $get) = @_;
+    my $str = '<div class="panel-group" id="' . $id . '" role="tablist" aria-multiselectable="true">';
+    if ($get) {
+        return $str;
+    }
+    print $str;
 }
 
 sub print_panels_group_end
 {
-    print '</div>';
+    my ($get) = @_;
+    my $str = '</div>';
+    if ($get) {
+        return $str;
+    }
+    print $str;
 }
 
 sub print_panel
 {
-    my ($opened, $id, $title, $data) = @_;
-
-    print '
-              <div class="panel panel-default">
+    my ($opened, $id, $title, $data, $get, $sorter) = @_;
+    if ($sorter) {
+        $sorter = ' data-sorter="' . $sorter . '" ';
+    }
+    my $str = '
+              <div' . $sorter . ' class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
@@ -1691,7 +1792,10 @@ sub print_panel
       . $id . '-collapse" class="panel-collapse collapse' .
       ($opened ? ' in' : '') . '" role="tabpanel" aria-labelledby="' . $id . '">
                 <div class="panel-body">' . $data . '</div></div></div>';
-
+    if ($get) {
+        return $str;
+    }
+    print $str;
 }
 
 sub parse_license_date
@@ -1780,7 +1884,7 @@ sub embed_login_head
         print
 '<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
 for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i].offsetHeight?1:0;b.classList.add("input_warning_caps");b.setAttribute("title","Caps Lock");d&&b.classList.add("large");a[i].classList.add("use_input_warning_caps");a[i].parentNode.insertBefore(b,a[i].nextSibling);a[i].addEventListener("blur",function(){this.nextSibling.classList.remove("visible")});a[i].addEventListener("keydown",function(c){"function"===typeof c.getModifierState&&((state=20===c.keyCode?!c.getModifierState("CapsLock"):
-c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}</script>';
+c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}setTimeout(function(){if(navigator&&navigator.oscpu){var t=navigator.oscpu,i=document.querySelector("html"),e="data-platform";t.indexOf("Linux")>-1?i.setAttribute(e,"linux"):t.indexOf("Windows")>-1&&i.setAttribute(e,"windows")}});</script>';
 
         embed_css_night_rider();
         embed_css_fonts();
@@ -1816,7 +1920,7 @@ sub error_40x
     my $charset = &get_charset();
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html data-background-style="'
+    print '<html data-bgs="'
       .
       ( theme_night_mode() ? 'nightRider' :
           'gainsboro'
@@ -1871,9 +1975,12 @@ sub theme_update_incompatible
     {
         @notice = {
                     "incompatible" => (
-                           theme_text('theme_git_patch_incompatible_message', $theme_text{'theme_name'},
-                                      $authentic_remote_version,              $theme_text{'theme_xhred_titles_wm'},
-                                      $webmin_compatible_version,             $theme_text{'theme_xhred_titles_um'},
+                           theme_text('theme_git_patch_incompatible_message',
+                                      $theme_text{'theme_name'},
+                                      $authentic_remote_version,
+                                      $theme_text{'theme_xhred_titles_wm'},
+                                      $webmin_compatible_version,
+                                      $theme_text{'theme_xhred_titles_um'},
                                       $usermin_compatible_version
                              ) .
                              " "
@@ -1891,13 +1998,16 @@ sub theme_update_incompatible
     {
         @notice = {
                     "incompatible" => (
-                                       theme_text('theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
-                                                  $authentic_remote_version, $theme_text{'theme_xhred_titles_wm'},
+                                       theme_text('theme_git_patch_incompatible_message_s',
+                                                  $theme_text{'theme_name'},
+                                                  $authentic_remote_version,
+                                                  $theme_text{'theme_xhred_titles_wm'},
                                                   $webmin_compatible_version
                                          ) .
                                          " "
                                          .
-                                         theme_text('theme_git_patch_incompatible_message_desc', $force_button,
+                                         theme_text('theme_git_patch_incompatible_message_desc',
+                                                    $force_button,
                                                     $theme_text{'theme_xhred_titles_wm'}
                                          )
                     ) };
@@ -1911,13 +2021,16 @@ sub theme_update_incompatible
     {
         @notice = {
                     "incompatible" => (
-                                       theme_text('theme_git_patch_incompatible_message_s', $theme_text{'theme_name'},
-                                                  $authentic_remote_version, $theme_text{'theme_xhred_titles_um'},
+                                       theme_text('theme_git_patch_incompatible_message_s',
+                                                  $theme_text{'theme_name'},
+                                                  $authentic_remote_version,
+                                                  $theme_text{'theme_xhred_titles_um'},
                                                   $usermin_compatible_version
                                          ) .
                                          " "
                                          .
-                                         theme_text('theme_git_patch_incompatible_message_desc', $force_button,
+                                         theme_text('theme_git_patch_incompatible_message_desc',
+                                                    $force_button,
                                                     $theme_text{'theme_xhred_titles_um'}
                                          )
                     ) };
@@ -2054,7 +2167,7 @@ sub theme_var_dir
 
 sub clear_theme_cache
 {
-    my ($root) = @_;
+    my ($root)        = @_;
     my $salt          = substr(encode_base64($main::session_id), 0, 16);
     my $theme_var_dir = theme_var_dir();
     my $tmp_dir       = tempname_dir();
@@ -2064,6 +2177,10 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
+
+        # Clear stats history
+        kill_byname("$current_theme/stats.cgi", 9);
+        unlink_file("$var_directory/modules/$current_theme/stats-$remote_user.json");
     }
 
     # Clear session specific temporary files
@@ -2272,17 +2389,12 @@ sub settings_get_select_navigation_color
       . ($v eq 'purple' && ' selected') . '>Dark Purple</option>
 
                     <option value="grey"'
-      . ($v eq 'grey' && ' selected') . '>Dim Grey</option>
+      . ($v eq 'grey' && ' selected') . '>Dim Gray</option>
 
                     <option value="darkGrey"'
-      . ($v eq 'darkGrey' && ' selected') . '>Dark Grey</option>
+      . ($v eq 'darkGrey' && ' selected') . '>Dark Gray</option>
 
-                    <option value="noir"'
-      . ($v eq 'noir' && ' selected') . '>Noir</option>
-
-                    <option value="gunmetal"'
-      . ($v eq 'gunmetal' && ' selected') . '>Gunmetal</option>
-                </select>';
+      </select>';
 
 }
 
@@ -2342,7 +2454,8 @@ sub settings_get_select_default_module
 {
     my ($name, $value) = @_;
     my @modules = get_available_module_infos();
-    my $select = ui_select($name, $value,
+    my $select = ui_select($name,
+                           $value,
                            [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
                               sort {$a->{'desc'} cmp $b->{'desc'}} @modules
                            ]);
@@ -2378,28 +2491,14 @@ sub theme_settings
             '1',
             'settings_font_family',
             '0',
-            'settings_navigation_color',
-            'blue',
-            'settings_grayscale_level_navigation',
-            '0',
-            'settings_sepia_level_navigation',
-            '0',
-            'settings_saturate_level_navigation',
-            '1',
-            'settings_hue_level_navigation',
-            '0',
-            'settings_invert_level_navigation',
-            '0',
-            'settings_brightness_level_navigation',
-            '1',
-            'settings_contrast_level_navigation',
-            '1',
             'settings_cm_editor_palette',
             'monokai',
             'settings_right_page_hide_persistent_vscroll',
             'true',
             'settings_hide_top_loader',
             'false',
+            'settings_theme_make_date',
+            'true',
             'settings_enable_container_offset',
             'true',
             'settings_contrast_mode',
@@ -2417,6 +2516,10 @@ sub theme_settings
             'true',
             'settings_sysinfo_real_time_status_disk',
             'true',
+            'settings_sysinfo_real_time_stored',
+            'true',
+            'settings_sysinfo_real_time_stored_length',
+            '0.1',
             'settings_sysinfo_real_time_timeout',
             '1000',
 
@@ -2432,11 +2535,29 @@ sub theme_settings
             '8',
             'settings_sysinfo_expand_all_accordions',
             'false',
+            'settings_sysinfo_remember_accordions',
+            'true',
             'settings_sysinfo_max_servers',
             '10',
 
             '__',
             theme_settings('fa', 'bars', &theme_text('settings_right_navigation_menu_title')),
+            'settings_navigation_color',
+            'blue',
+            'settings_grayscale_level_navigation',
+            '0',
+            'settings_sepia_level_navigation',
+            '0',
+            'settings_saturate_level_navigation',
+            '1',
+            'settings_hue_level_navigation',
+            '0',
+            'settings_invert_level_navigation',
+            '0',
+            'settings_brightness_level_navigation',
+            '1',
+            'settings_contrast_level_navigation',
+            '1',
             'settings_navigation_always_collapse',
             'false',
             'settings_leftmenu_width',
@@ -2491,7 +2612,7 @@ sub theme_settings
             'settings_side_slider_favorites_enabled',
             'true',
             'settings_side_slider_palette',
-            'grey',
+            'nav',
 
             '__',
             theme_settings('fa', 'table', &theme_text('settings_right_table_options_title')),
@@ -2503,6 +2624,8 @@ sub theme_settings
             'true',
             'settings_right_grayscaled_table_icons',
             'true',
+            'settings_table_init_datatables',
+            '20000',
 
             '__',
             theme_settings('fa', 'keyboard-o', &theme_text('settings_right_hotkey_options_title')),
@@ -2537,7 +2660,8 @@ sub theme_settings
             'settings_hotkey_slider',
             'e',
             'settings_hotkey_toggle_key_night_mode',
-            'l', '__',
+            'l',
+            '__',
             theme_settings('fa', 'sub-title', '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
             'settings_hotkey_custom_1',
             '',
@@ -2598,8 +2722,10 @@ sub theme_settings
         }
 
         # Exclude list of settings for Virtualmin
-        my @s_vm_e = ('settings_right_virtualmin_default',     'settings_show_webmin_tab',
-                      'settings_hotkey_toggle_key_virtualmin', 'settings_sysinfo_max_servers');
+        my @s_vm_e = ('settings_right_virtualmin_default',
+                      'settings_show_webmin_tab',
+                      'settings_hotkey_toggle_key_virtualmin',
+                      'settings_sysinfo_max_servers');
 
         if (!foreign_available("virtual-server")) {
             foreach my $e (@s_vm_e) {
@@ -2797,11 +2923,14 @@ sub theme_settings
                  $k eq 'settings_invert_level_navigation'     ||
                  $k eq 'settings_brightness_level_navigation' ||
                  $k eq 'settings_contrast_level_navigation'   ||
-                 $k eq 'settings_leftmenu_width')
+                 $k eq 'settings_leftmenu_width'              ||
+                 $k eq 'settings_table_init_datatables'       ||
+                 $k eq 'settings_sysinfo_real_time_stored_length')
         {
 
             my $range_max = '1';
             my $range_min = '0';
+            my $iwidth    = '80';
             my $range_step;
 
             if ($k eq 'settings_grayscale_level_navigation' ||
@@ -2828,10 +2957,21 @@ sub theme_settings
                 $range_min  = '260';
                 $range_max  = '520';
                 $range_step = '1';
+            } elsif ($k eq 'settings_table_init_datatables') {
+                $range_min  = '500';
+                $range_max  = '50000';
+                $range_step = '500';
+                $iwidth     = '30';
+            } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
+                $range_min  = '0.1';
+                $range_max  = '6';
+                $range_step = '0.1';
+                $iwidth     = '30';
             }
             $v = '
-                <input style="display: inline; width: 80%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="'
-              . $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
+                <input style="display: inline; width: ' .
+              $iwidth . '%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="' .
+              $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
             ';
 
         } elsif ($k eq 'settings_leftmenu_custom_links') {
@@ -2928,10 +3068,11 @@ sub theme_settings
                 </select>';
         } elsif ($k eq 'settings_right_virtualmin_default') {
             if (foreign_available('virtual-server')) {
-                $v = &ui_select($k, $v,
+                $v = &ui_select($k,
+                                $v,
                                 [[undef,       undef],
                                  ['index.cgi', $theme_text{'theme_config_virtualmin'}],
-                                 map {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
+                                 map    {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
                                    grep {&virtual_server::can_edit_domain($_)}
                                    sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
                                 ]);
@@ -2939,7 +3080,8 @@ sub theme_settings
         } elsif ($k eq 'settings_right_cloudmin_default') {
             if (&foreign_available('server-manager')) {
                 my @servers = &server_manager::list_available_managed_servers_sorted();
-                $v = &ui_select($k, $v,
+                $v = &ui_select($k,
+                                $v,
                                 [[undef,       undef],
                                  ['index.cgi', $theme_text{'theme_config_cloudmin'}],
                                  map {[$_->{'id'}, $_->{'host'}]} @servers,
@@ -2957,8 +3099,12 @@ sub theme_settings
         } elsif ($k eq 'settings_side_slider_palette') {
             $v = '<select class="ui_select" name="' . $k . '">
 
-                    <option value="grey"'
-              . ($v eq 'grey' && ' selected') . '>Dim Grey (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+                    <option value="nav"'
+              . ($v eq 'nav' && ' selected') . '>' .
+              $theme_text{'settings_side_slider_blend'} . ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+
+                    <option value="gray"'
+              . ($v eq 'gray' && ' selected') . '>Dim Gray</option>
 
                     <option value="white"'
               . ($v eq 'white' && ' selected') . '>White</option>
@@ -3116,7 +3262,7 @@ sub get_xhr_request
         head();
 
         if ($in{'xhr-navigation'} eq '1') {
-            require(dirname(__FILE__) . "/navigation.pm");
+            do(dirname(__FILE__) . "/navigation.pl");
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
@@ -3125,7 +3271,7 @@ sub get_xhr_request
             } elsif ($in{'restore'} eq '1') {
                 theme_settings('restore', undef, undef);
             } else {
-                require(dirname(__FILE__) . "/settings.pm");
+                do(dirname(__FILE__) . "/settings.pl");
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
@@ -3151,10 +3297,12 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             set_user_level();
-            my $path  = get_access_data('root') . $in{'xhr-get_size_path'};
-            my $nodir = $in{'xhr-get_size_nodir'};
-            my $home  = get_user_home();
-            if ($get_user_level eq '3' && !string_starts_with($path, $home)) {
+            my $module      = $in{'xhr-get_size_cmodule'};
+            my $jailed_user = get_fm_jailed_user($module);
+            my $path        = ($jailed_user || get_access_data('root')) . $in{'xhr-get_size_path'};
+            my $nodir       = $in{'xhr-get_size_nodir'};
+            my $home        = ($jailed_user || get_user_home());
+            if (($jailed_user || $get_user_level eq '3') && !string_starts_with($path, $home)) {
                 $path = $home . $path;
                 $path =~ s/\/\//\//g;
             }
@@ -3168,11 +3316,13 @@ sub get_xhr_request
             }
         } elsif ($in{'xhr-get_list'} eq '1') {
 
-            my $path = "$in{'xhr-get_list_path'}";
+            my $path   = "$in{'xhr-get_list_path'}";
+            my $module = $in{'xhr-get_list_cmodule'};
             my @dirs;
 
-            if ($get_user_level eq '2' || $get_user_level eq '4') {
-                $path = get_user_home() . $path;
+            my $jailed_user = get_fm_jailed_user($module);
+            if ($jailed_user || $get_user_level eq '2' || $get_user_level eq '4') {
+                $path = ($jailed_user || get_user_home()) . $path;
             }
             opendir(my $dirs, $path);
             while (my $dir = readdir $dirs) {
@@ -3186,18 +3336,28 @@ sub get_xhr_request
             print convert_to_json(\@dirs);
 
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
-            set_user_level();
+
+            my $module           = $in{'xhr-encoding_convert_cmodule'};
+            my $jailed_user      = get_fm_jailed_user($module, 1);
+            my $jailed_user_home = get_fm_jailed_user($module);
+            my $cfile            = $in{'xhr-encoding_convert_file'};
+            if ($jailed_user) {
+                switch_to_unix_user_local($jailed_user);
+                $cfile = $jailed_user_home . $cfile;
+            } else {
+                set_user_level();
+            }
 
             my $data;
             eval {
-                $data = Encode::encode('utf-8',
-                                       Encode::decode($in{'xhr-encoding_convert_name'},
-                                                      read_file_contents($in{'xhr-encoding_convert_file'})
-                                       ));
+                $data =
+                  Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, read_file_contents($cfile)));
             };
             print $data;
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
-            switch_to_unix_user_local();
+            my $module      = $in{'xhr-get_gpg_keys_cmodule'};
+            my $jailed_user = get_fm_jailed_user($module, 1);
+            switch_to_unix_user_local($jailed_user || undef);
             my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;
@@ -3254,8 +3414,8 @@ sub get_xhr_request
             my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
-                                 replace((!has_command('curl') || !has_command('bash') ? '>git<' : '~'),
-                                         (!has_command('curl') ? '>curl<' : '>bash<'),
+                                 replace((!has_command('curl') || !has_command('bash') ? '>git<'  : '~'),
+                                         (!has_command('curl')                         ? '>curl<' : '>bash<'),
                                          $theme_text{'theme_git_patch_no_git_message'}
                                  ), };
                 print convert_to_json(\@update_rs);
@@ -3301,13 +3461,32 @@ sub get_xhr_request
             }
         } elsif ($in{'xhr-info'} eq '1') {
             my @info = theme_list_combined_system_info();
-            our ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-                 $host,               $os,                      $webmin_version,  $virtualmin_version,
-                 $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-                 $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-                 $running_proc,       $load,                    $real_memory,     $virtual_memory,
-                 $disk_space,         $package_message,         $csf_title,       $csf_data,
-                 $csf_remote_version, $authentic_remote_version
+            our ($cpu_percent,
+                 $mem_percent,
+                 $virt_percent,
+                 $disk_percent,
+                 $host,
+                 $os,
+                 $webmin_version,
+                 $virtualmin_version,
+                 $cloudmin_version,
+                 $authentic_theme_version,
+                 $local_time,
+                 $kernel_arch,
+                 $cpu_type,
+                 $cpu_temperature,
+                 $hdd_temperature,
+                 $uptime,
+                 $running_proc,
+                 $load,
+                 $real_memory,
+                 $virtual_memory,
+                 $disk_space,
+                 $package_message,
+                 $csf_title,
+                 $csf_data,
+                 $csf_remote_version,
+                 $authentic_remote_version
             ) = get_sysinfo_vars(\@info);
 
             # Build update info
@@ -3512,12 +3691,12 @@ sub content
 
     # Navigation
     print '<ul class="navigation">' . "\n";
-    require(dirname(__FILE__) . "/navigation.pm");
+    do(dirname(__FILE__) . "/navigation.pl");
     print '</ul>' . "\n";
 
     # Buttons
     print '<br><br><ul class="user-links">';
-    require(dirname(__FILE__) . "/buttons.pm");
+    do(dirname(__FILE__) . "/buttons.pl");
     print '</ul>';
     print "<script>plugins.navigation.get.buttons();</script>";
 

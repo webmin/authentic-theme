@@ -12,7 +12,7 @@ use File::Basename;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 my %errors;
 my $error_fatal;
@@ -44,9 +44,10 @@ my @entries_list = get_entries_list();
 
 if (!scalar %errors) {
     foreach my $name (@entries_list) {
+        my $name_ = $name;
         $name = simplify_path($name);
         if (!$name || system_logged("chown $recursive $uid:$grid " . quotemeta("$cwd/$name")) != 0) {
-            $errors{ urlize($name) } = lc("$text{'error_chown'}: $?");
+            $errors{ $name_ } =  lc("$text{'error_chown'}: $?");
         }
     }
 }

@@ -7,24 +7,44 @@ use strict;
 
 use File::Basename;
 
-our ($get_user_level,                $xnav,                     %theme_config,
-     %theme_text,                    %config,                   %gconfig,
-     %tconfig,                       %text,                     $basic_virtualmin_domain,
-     $basic_virtualmin_menu,         $cb,                       $tb,
-     $title,                         $cloudmin_no_create_links, $cloudmin_no_edit_buttons,
-     $cloudmin_no_global_links,      $current_theme,            $done_theme_post_save_server,
-     $mailbox_no_addressbook_button, $mailbox_no_folder_button, $module_index_link,
-     $module_index_name,             $nocreate_virtualmin_menu, $nosingledomain_virtualmin_mode,
-     $page_capture,                  $remote_user,              $root_directory,
-     $session_id,                    $ui_formcount,             $user_module_config_directory);
+our ($get_user_level,
+     $xnav,
+     %theme_config,
+     %theme_text,
+     %config,
+     %gconfig,
+     %tconfig,
+     %text,
+     $basic_virtualmin_domain,
+     $basic_virtualmin_menu,
+     $cb,
+     $tb,
+     $title,
+     $cloudmin_no_create_links,
+     $cloudmin_no_edit_buttons,
+     $cloudmin_no_global_links,
+     $current_theme,
+     $done_theme_post_save_server,
+     $mailbox_no_addressbook_button,
+     $mailbox_no_folder_button,
+     $module_index_link,
+     $module_index_name,
+     $nocreate_virtualmin_menu,
+     $nosingledomain_virtualmin_mode,
+     $page_capture,
+     $remote_user,
+     $root_directory,
+     $session_id,
+     $ui_formcount,
+     $user_module_config_directory);
 
-do(dirname(__FILE__) . "/authentic-init.pm");
+do(dirname(__FILE__) . "/authentic-init.pl");
 
 sub theme_header
 {
 
     (get_raw() && return);
-    my $tref = ref($_[0]) eq 'ARRAY';
+    my $tref   = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
         (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
@@ -39,12 +59,13 @@ sub theme_header
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
         print $tconfig{'preheader'};
-        print "<table class=\"header\"><tr>\n";
+        print '<div class="header">
+                <div class="row">';
+        print '<div data-header-left id="headln2l" class="invisible col-sm-4">';
 
-        print '<td id="headln2l" class="invisible">';
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
-            my $nolo = get_env('anonymous_user') ||
+            my $nolo  = get_env('anonymous_user') ||
               get_env('ssl_user')   ||
               get_env('local_user') ||
               get_env('http_user_agent') =~ /webmin/i;
@@ -88,22 +109,22 @@ sub theme_header
                   "</a><br>\n";
             }
         }
-        print "</td>\n";
+        print "</div>\n";
         if ($_[1]) {
-            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\">",
+            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\" class=\"col-sm-4\">",
               "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
         } else {
             my $ts =
               defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
               "+2";
-            print "<td data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c'>",
+            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
               ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
-            print "</td>\n";
+            print "</div>\n";
         }
-        print "<td id=\"headln2r\">";
+        print "<div data-header-right id=\"headln2r\" class=\"col-sm-4\">";
         print $_[6];
-        print "</td></tr></table>\n";
+        print "</div></div></div>\n";
         print $tconfig{'postheader'};
         print '</div>' . "\n";
         print '<div class="panel-body">' . "\n";
@@ -137,7 +158,7 @@ sub theme_footer
     embed_port_shell();
     embed_footer((theme_debug_mode()),
                  (
-                  (get_module_name()                                                  ||
+                  (get_module_name() ||
                      get_env('request_uri') =~ /\/config.cgi\?/                       ||
                      get_env('request_uri') =~ /\/uconfig.cgi\?/                      ||
                      get_env('request_uri') =~ /\/webmin_search.cgi\?/                ||
@@ -218,7 +239,7 @@ sub theme_popup_window_button
 {
     my ($url, $w, $h, $scroll, $fields) = @_;
     my $scrollyn = $scroll ? "yes" : "no";
-    my $icon = "fa-files-o -cs";
+    my $icon     = "fa-files-o -cs";
     if ($url =~ /third_chooser|standard_chooser/) {
         $icon = "fa-world";
     }
@@ -365,7 +386,7 @@ sub theme_ui_columns_start
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
+            $rv .= ($heads->[$i] eq ''    ? '<br>'        : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -385,7 +406,7 @@ sub theme_ui_columns_row
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
-            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
+            $rv .= ($cols->[$i] !~ /\S/             ? '<br>'        : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
     }
@@ -404,7 +425,7 @@ sub theme_ui_columns_header
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
+            $rv .= ($cols->[$i] eq ''     ? '#'           : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -441,8 +462,7 @@ sub theme_ui_links_row
             @$links =
               map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"}
               @$links;
-            return
-              @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
+            return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
               "";
         } else {
             if ($nopuncs == 1) {
@@ -542,9 +562,12 @@ sub theme_ui_textbox
     my ($name, $value, $size, $dis, $max, $tags) = @_;
     my $rv;
 
+    my $ids;
+    $ids = "_i_$main::ui_textbox_tcalled" if ($main::ui_textbox_tcalled++);
+
     $rv .=
 '<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
-    $rv .= 'id="' . &quote_escape($name) . '" ';
+    $rv .= 'id="' . &quote_escape($name . $ids) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
@@ -642,7 +665,7 @@ sub theme_ui_select
       ($tags ? " " . $tags : "") . ">\n";
     my ($o, %opt, $s, $v);
     my %sel = ref($value) ? (map {$_, 1} @$value) : ($value, 1);
-    my $t = 'x-md-';
+    my $t   = 'x-md-';
     foreach $o (@$opts) {
         $o = [$o] if (!ref($o));
         $v = ($o->[1] || $o->[0]);
@@ -668,7 +691,7 @@ sub theme_ui_radio
     my ($rv, $o);
     my $rand = int rand(1e4);
     foreach $o (@$opts) {
-        my $id = &quote_escape($name . "_" . $o->[0]);
+        my $id    = &quote_escape($name . "_" . $o->[0]);
         my $label = $o->[1] || $o->[0];
         my $after;
         if ($label =~ /^([\000-\377]*?)((<a\s+href|<input|<select|<textarea)[\000-\377]*)$/i) {
@@ -736,8 +759,11 @@ sub theme_ui_textarea
     my ($name, $value, $rows, $cols, $wrap, $dis, $tags) = @_;
     $cols = &ui_max_text_width($cols, 1);
 
+    my $ids;
+    $ids = "_t_$main::ui_textarea_tcalled" if ($main::ui_textarea_tcalled++);
+
     return "<textarea style='display: inline; width:100%;' class='form-control ui_textarea' " .
-      "name=\"" . &quote_escape($name) . "\" " . "id=\"" . &quote_escape($name) .
+      "name=\"" . &quote_escape($name) . "\" " . "id=\"" . &quote_escape($name . $ids) .
       "\" " . "rows='$rows' cols='$cols'" . ($wrap ? " wrap=$wrap" : "") . ($dis ? " disabled=true" : "") .
       ($tags ? " $tags" : "") . ">" . &html_escape($value) . "</textarea>";
 }
@@ -747,9 +773,12 @@ sub theme_ui_submit
     my ($label, $name, $dis, $tags) = @_;
     my ($keys, $class, $icon) = get_button_style($label);
 
+    my $ids;
+    $ids = "_s_$main::ui_submit_tcalled" if ($main::ui_submit_tcalled++);
+
     return "<button class=\"btn btn-" . $class .
       " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
-      ($name ne '' ? " id=\"" . &quote_escape($name) . "\"" : "") .
+      ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
       ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
       &quote_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
@@ -1039,6 +1068,17 @@ sub theme_ui_hidden_javascript
     return undef;
 }
 
+sub theme_ui_hidden
+{
+    my $ids;
+    $ids = "_h_$main::ui_hidden_tcalled" if ($main::ui_hidden_tcalled++);
+
+    my ($name, $value) = @_;
+    return "<input class='ui_hidden' type='hidden' " . "name=\"" . &quote_escape($name) .
+      "\" " . "id=\"" . &quote_escape($name . $ids) . "\" " . "value=\"" . &quote_escape($value) . "\">\n";
+
+}
+
 sub theme_ui_hidden_start
 {
 
@@ -1127,8 +1167,8 @@ sub theme_ui_radio_table
         $rv .= "<tr>\n";
         $rv .=
           "<td" . (defined($r->[2]) ? "" : " colspan=2") .
-          ">" . ($nobold ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
-          ($nobold ? "" : "</b>") . "</td>\n";
+          ">" . ($nobold            ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
+          ($nobold                  ? "" : "</b>") . "</td>\n";
         if (defined($r->[2])) {
             $rv .= "<td>" . $r->[2] . "</td>\n";
         }
@@ -1145,34 +1185,7 @@ sub theme_make_date
 
 sub theme_nice_size
 {
-    my ($units, $uname);
-    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_PB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_TB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_GB'};
-    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
-        $units = 1024 * 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_MB'};
-    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
-        $units = 1024;
-        $uname = $theme_text{'theme_xhred_nice_size_kB'};
-    } else {
-        $units = 1;
-        $uname = $theme_text{'theme_xhred_nice_size_b'};
-    }
-    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
-    $sz =~ s/\.00$//;
-
-    if ($_[1] == -1) {
-        return $sz . " " . $uname;
-    } else {
-        return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
-    }
+    return theme_nice_size_local(@_);
 }
 
 sub theme_redirect
@@ -1189,7 +1202,8 @@ sub theme_redirect
     my $relredir = $gconfig{'relative_redir'};
     my ($arg1, $arg2) = ($_[0], $_[1]);
     my ($link) = $arg1 || $arg2;
-    my ($url) = $arg2;
+    my ($url)  = $arg2;
+
     if (!$relredir) {
         ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
     }
@@ -1271,7 +1285,14 @@ sub theme_js_redirect
     if ($url =~ /^\//) {
         $url = $gconfig{'webprefix'} . $url;
     }
-
+    if ($url eq "/" || $url eq "$gconfig{'webprefix'}/") {
+        my $module = dirname(get_env('script_name'));
+        if ($module ne '/') {
+            $url = "$gconfig{'webprefix'}$module";
+        } else {
+            $url = "$gconfig{'webprefix'}/sysinfo.cgi";
+        }
+    }
     return
 "$theme_text{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('"
       . quote_escape($url)

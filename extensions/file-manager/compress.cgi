@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 if (!$in{'arch'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
@@ -48,7 +48,7 @@ if ($in{'method'} eq 'tar') {
         }
 
         if (system($gpg) != 0) {
-            $errors{ html_escape($file) } = "$text{'filemanager_archive_gpg_error'}: $?";
+            $errors{ $file } = "$text{'filemanager_archive_gpg_error'}: $?";
         }
         unlink_file($file);
     }
@@ -62,7 +62,7 @@ if ($in{'method'} eq 'tar') {
         $command .= " " . quotemeta($name);
 
         if (!-e ($cwd . '/' . $name)) {
-            $errors{ urlize(html_escape($name)) } = lc($text{'theme_xhred_global_no_target'});
+            $errors{ $name } = lc($text{'theme_xhred_global_no_target'});
         }
     }
     system($command);

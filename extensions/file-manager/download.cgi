@@ -13,7 +13,7 @@ use Time::Local;
 
 our (%in, $cwd);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 my $command;
 my $has_zip    = has_command('zip');

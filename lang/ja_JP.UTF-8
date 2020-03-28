@@ -139,7 +139,7 @@ settings_hotkey_custom_7=カスタムリンク <code>7</code>
 settings_hotkey_custom_8=カスタムリンク <code>8</code>
 settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
-settings_navigation_color=ナビゲーションメニューのカラーパレット
+settings_navigation_color=カラーパレット
 settings_background_color=コンテンツページのカラーパレット
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
@@ -297,7 +297,7 @@ settings_contrast_level_navigation=コントラストフィルタ
 settings_contrast_level_navigation_description=Defdqmault/電流値 <code>1</code> /<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_cm_view_palette=ビューアーのカラーパレット
-settings_cm_editor_palette=エディタのカラーパレット
+settings_cm_editor_palette=コードハイライトカラーパレット
 
 theme_xhred_filemanager_context_select_all=すべて選択
 theme_xhred_filemanager_context_select_invert=選択の反転
@@ -626,7 +626,7 @@ theme_xhred_global_prev_page= 1ページ前に戻る
 theme_xhred_global_help=ヘルプ
 settings_right_soft_updates_page_options_title= ソフトウェアの更新
 theme_xhred_git_compare_changes= 変更を比較する
-theme_xhred_filemanager_link_to_clipboard= シンボリックリンクの名前 `<strong> <em>%value</em></strong> 'がクリップボードにコピーされました。
+theme_xhred_filemanager_link_to_clipboard= シンボリックリンクの名前 がクリップボードにコピーされました。
 
 
 #18.46
@@ -1016,7 +1016,7 @@ theme_xhred_shell_aborted=操作は中止されました
 #19.32
 theme_xhred_connection_reboot=再起動
 theme_xhred_connection_reboot_details=サーバーは再起動中です。 お待ちください..
-settings_leftmenu_custom_links_description=カスタムの追加リンクをナビゲーションメニューに挿入することができます。 <br> <br> <em> title </em>、<em> link </em>、<em> icon </em>というキーが必要です。 オプションで、<em> level </em>キーを値とともにカンマ区切りのリストで指定することで、どのログインモードでリンクを表示するかを定義できます。<br> <br> <em> 0 </ em >  - 管理者ログイン <br> <em> 1 </em>  - 販売代理店のログイン; <br> <em> 2 </em>  - サーバーの所有者のログイン; <br> <em> 3 </em>  - ユーザーのログイン; <br> < em> 4 </em>  - システム所有者のログイン。<br> <br>以下の例のように、有効なJSONオブジェクトを文字列として渡す必要があります。<hr> <pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre></pre>
+settings_leftmenu_custom_links_description=カスタムの追加リンクをナビゲーションメニューに挿入することができます。 <br> <br> <em> title </em>、<em> link </em>、<em> icon </em>というキーが必要です。 オプションで、<em> level </em>キーを値とともにカンマ区切りのリストで指定することで、どのログインモードでリンクを表示するかを定義できます。<br> <br> <em> 0 </ em >  - 管理者ログイン <br> <em> 1 </em>  - 販売代理店のログイン; <br> <em> 2 </em>  - サーバーの所有者のログイン; <br> <em> 3 </em>  - ユーザーのログイン; <br> < em> 4 </em>  - システム所有者のログイン。<br> <br>以下の例のように、有効なJSONオブジェクトを文字列として渡す必要があります。<hr> <pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre></pre>
 left_favorites_edit=お気に入りを編集
 left_favorites_edit_desc=このページを使用して、テーマのお気に入りユーザーファイルを手動で編集できます。 変更に対して構文やその他の妥当性検査は行われないため、これは慎重に行う必要があります。
 theme_xhred_filemanager_records_for_server_pagination=サーバーのページ区切りを開始するためのディレクトリ内のデフォルトのアイテム数
@@ -1161,3 +1161,57 @@ theme_xhred_mail_composer_server_attach_error_read=要求されたファイル�
 theme_xhred_mail_composer_server_attach_error_dir=ディレクトリは添付できません
 theme_xhred_mail_composer_discarded_draft=下書きは破棄されました
 theme_xhred_global_undo=元に戻す
+
+theme_xhred_global_today=今日
+theme_xhred_global_tomorrow=明日
+theme_xhred_mail_composer_scheduled=%2で%1を送信
+theme_global_core=コア
+settings_sysinfo_real_time_stored=統計履歴を有効にする
+settings_sysinfo_real_time_stored_description=有効にすると、以前に収集された統計が保存され、ダッシュボードのグラフに表示されます
+settings_sysinfo_real_time_stored_length=統計履歴期間
+settings_sysinfo_real_time_stored_length_description=統計履歴が保存される時間
+theme_dashboard_accordion_live_stats=統計履歴
+theme_xhred_live_stats_cpu=CPU
+theme_xhred_live_stats_mem=Memory
+theme_xhred_live_stats_virt=Swap
+theme_xhred_live_stats_proc=Process
+theme_xhred_live_stats_disk=Disk I/O
+theme_xhred_global_hour=時
+theme_xhred_global_hours=時間
+theme_xhred_title_locale_time_format=時間形式
+theme_xhred_nice_size_PIB=PiB
+theme_xhred_nice_size_TIB=TiB
+theme_xhred_nice_size_GIB=GiB
+theme_xhred_nice_size_MIB=MiB
+theme_xhred_nice_size_kIB=KiB
+theme_xhred_live_stats_net=Network I/O
+theme_xhred_nice_size_PBB=Pbps
+theme_xhred_nice_size_TBB=Tbps
+theme_xhred_nice_size_GBB=Gbps
+theme_xhred_nice_size_MBB=Mbps
+theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=テーブルのソートと検索を初期化する最大行数
+theme_xhred_global_rows=行
+
+
+#19.42
+settings_side_slider_blend=継承する
+
+
+#19.43
+settings_theme_make_date=ブラウザで日付/時刻変換を有効にする
+settings_theme_make_date_description=無効にすると、サーバーが提供する日付/時刻形式が使用されます
+
+
+#19.44
+theme_xhred_reload_lang_notification=テーマ言語が変更されました。 新しい設定を適用するために、ページがリロードされます。
+
+
+#19.46
+theme_xhred_global_small=最小
+theme_xhred_global_normal=普通
+theme_xhred_global_medium=中
+theme_xhred_global_large=大
+theme_xhred_global_huge=最大
+theme_xhred_filemanager_editor_maximized=起動時にエディターパネルを最大化
+settings_sysinfo_remember_accordions=前回使用したアコーディオンの状態を保存する

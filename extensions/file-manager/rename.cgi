@@ -12,13 +12,13 @@ use File::Basename;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 if (!$in{'name'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
 }
 
-$path = html_escape($path) || "/";
+$path = $path || "/";
 
 my $type;
 if (-d "$cwd/$in{'name'}") {
@@ -41,8 +41,10 @@ if (-e "$cwd/$in{'name'}") {
     } else {
         print_error(
                     (
-                     text('filemanager_rename_denied', html_escape($in{'name'}),
-                          $path,                       lc($text{ 'theme_xhred_global_' . $type . '' })
+                     text('filemanager_rename_denied',
+                          html_escape($in{'name'}),
+                          html_escape($path),
+                          lc($text{ 'theme_xhred_global_' . $type . '' })
                      )
                     ));
     }

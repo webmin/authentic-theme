@@ -139,7 +139,7 @@ settings_hotkey_custom_7=Egen länk <code>7</code>
 settings_hotkey_custom_8=Egen länk <code>8</code>
 settings_hotkey_custom_9=Egen länk <code>9</code>
 
-settings_navigation_color=Färgpalett för navigeringsmeny
+settings_navigation_color=Color palette
 settings_background_color=Färgpalett för innehållssida
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
@@ -297,7 +297,7 @@ settings_contrast_level_navigation=Filter för kontrast
 settings_contrast_level_navigation_description=Standard/nuvarande värde <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_cm_view_palette=Visa färgpalett
-settings_cm_editor_palette=Redigera färgpalett
+settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=Markera alla
 theme_xhred_filemanager_context_select_invert=Invertera
@@ -626,8 +626,7 @@ theme_xhred_global_prev_page=Föregående sida
 theme_xhred_global_help=Hjälp
 settings_right_soft_updates_page_options_title=Programuppdateringar
 theme_xhred_git_compare_changes=Jämför förändringar
-theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn <strong><em>%value</em></strong> har kopierats till urklippet.
-
+theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn har kopierats till urklippet.
 
 
 #18.46
@@ -1017,7 +1016,7 @@ theme_xhred_shell_aborted=Operationen avbruten
 #19.32
 theme_xhred_connection_reboot=Startar om
 theme_xhred_connection_reboot_details=Servern startas om, vänta...
-settings_leftmenu_custom_links_description=Det är möjligt att ha anpassade, extra länkar injicerade i navigeringsmenyn. <br><br> Nycklarna <em>title</em>, <em>link</em> och <em>icon</em> krävs; valfritt kan du definiera vid vilket inloggningsläge en länk ska visas, genom att ange <em>level</em>-nyckel, med värden, i kommaseparerad lista, som innehåller: <br><br> <em>0</em> - administratörsinloggning; <br><em>1</em> - återförsäljareinloggning;<br><em>2</em> - serverägarinloggning;<br> <em>3</em> - användarinloggning;<br> <em>4</em> - systemägarinloggning.<br><br> Det kommer att kräva att du skickar ett giltigt JSON-objekt som en sträng, som i exemplet nedan.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
+settings_leftmenu_custom_links_description=Det är möjligt att ha anpassade, extra länkar injicerade i navigeringsmenyn. <br><br> Nycklarna <em>title</em>, <em>link</em> och <em>icon</em> krävs; valfritt kan du definiera vid vilket inloggningsläge en länk ska visas, genom att ange <em>level</em>-nyckel, med värden, i kommaseparerad lista, som innehåller: <br><br> <em>0</em> - administratörsinloggning; <br><em>1</em> - återförsäljareinloggning;<br><em>2</em> - serverägarinloggning;<br> <em>3</em> - användarinloggning;<br> <em>4</em> - systemägarinloggning.<br><br> Det kommer att kräva att du skickar ett giltigt JSON-objekt som en sträng, som i exemplet nedan.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 left_favorites_edit=Redigera favoriter
 left_favorites_edit_desc=Den här sidan kan användas för att manuellt redigera användarfilens temafavoriter. Detta bör göras med försiktighet, eftersom ingen syntax eller annan validitetskontroll kommer att utföras på dina ändringar.
 theme_xhred_filemanager_records_for_server_pagination=Antalet objekt i en katalog för att påbörja sidnumrering
@@ -1146,7 +1145,7 @@ theme_xhred_editor_tb_code-block=Infoga kod
 theme_xhred_editor_tb_link=Infoga länk (%cmd+K)
 theme_xhred_editor_tb_clean=Ta bort formatering
 theme_xhred_mail_composer_send=Skicka
-theme_xhred_mail_composer_schedule=Skicka senare
+theme_xhred_mail_composer_schedule=Schedule
 theme_xhred_mail_composer_attach=Bifoga fil(er)
 theme_xhred_mail_composer_insert_picture=Infoga bilder i kö
 theme_xhred_mail_composer_toggle=Växla läge mellan HTML/oformatterad text
@@ -1160,5 +1159,59 @@ theme_xhred_mail_composer_draft_saving=Utkast sparas...
 theme_xhred_mail_composer_draft_saved=Utkast sparad
 theme_xhred_mail_composer_server_attach_error_read=Den begärda filen kan inte läsas eller åtkomst nekas
 theme_xhred_mail_composer_server_attach_error_dir=Kataloger går inte att bifogas
-theme_xhred_mail_composer_discarded_draft=Draft has been discarded
-theme_xhred_global_undo=Undo
+theme_xhred_mail_composer_discarded_draft=Utkast har tagits bort
+theme_xhred_global_undo=Ångra
+
+theme_xhred_global_today=Idag
+theme_xhred_global_tomorrow=Imorgon
+theme_xhred_mail_composer_scheduled=Skicka %1 vid %2
+theme_global_core=Kärna
+settings_sysinfo_real_time_stored=Aktivera statistikhistorik
+settings_sysinfo_real_time_stored_description=Om aktiverad kommer tidigare samlad statistik att lagras och visas i en graf på översiktssidan
+settings_sysinfo_real_time_stored_length=Statistikens historikvaraktighet
+settings_sysinfo_real_time_stored_length_description=Tiden under vilken statistikhistoriken lagras
+theme_dashboard_accordion_live_stats=Statistikhistorik
+theme_xhred_live_stats_cpu=CPU
+theme_xhred_live_stats_mem=Minne
+theme_xhred_live_stats_virt=Växlingsfil
+theme_xhred_live_stats_proc=Process
+theme_xhred_live_stats_disk=Disk I/O
+theme_xhred_global_hour=Timme
+theme_xhred_global_hours=Timmar
+theme_xhred_title_locale_time_format=Tidsformat
+theme_xhred_nice_size_PIB=PiB
+theme_xhred_nice_size_TIB=TiB
+theme_xhred_nice_size_GIB=GiB
+theme_xhred_nice_size_MIB=MiB
+theme_xhred_nice_size_kIB=KiB
+theme_xhred_live_stats_net=Nätverks I/O
+theme_xhred_nice_size_PBB=Pbps
+theme_xhred_nice_size_TBB=Tbps
+theme_xhred_nice_size_GBB=Gbps
+theme_xhred_nice_size_MBB=Mbps
+theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=Maximalt antal rader för att initiera tabellsortering och sökning
+theme_xhred_global_rows=Rader
+
+
+#19.42
+settings_side_slider_blend=Ärv
+
+
+#19.43
+settings_theme_make_date=Aktivera konvertering av datum/tid i webbläsaren
+settings_theme_make_date_description=Om inakiverad, kommer formatet på datum/tid att komma från servern
+
+
+#19.44
+theme_xhred_reload_lang_notification=Temaspråket har ändrats. Sidan laddas om för att tillämpa de nya inställningarna.
+
+
+#19.46
+theme_xhred_global_small=Liten
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Medium
+theme_xhred_global_large=Stor
+theme_xhred_global_huge=Enorm
+theme_xhred_filemanager_editor_maximized=Maximera redigeringspanelen vid start
+settings_sysinfo_remember_accordions=Kom ihåg om menyerna var utvidgade eller ihop dragna sen du sist var där

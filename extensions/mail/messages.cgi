@@ -12,7 +12,7 @@ use lib (dirname(__FILE__) . '/../../lib');
 
 our (%text, %in, %userconfig, %config, $special_folder_id);
 
-require(dirname(__FILE__) . '/mail-lib.pm');
+do(dirname(__FILE__) . '/mail-lib.pl');
 
 my %mails;
 

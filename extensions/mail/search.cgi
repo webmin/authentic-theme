@@ -9,7 +9,7 @@ use strict;
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
-require(dirname(__FILE__) . '/mail-lib.pm');
+do(dirname(__FILE__) . '/mail-lib.pl');
 
 # Find mail messages matching some pattern
 our (%text, %in, %userconfig);

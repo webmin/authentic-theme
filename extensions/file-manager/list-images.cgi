@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %text, %gconfig, %request_uri, %userconfig, @allowed_paths, @remote_user_info, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 kill_previous($0, $$);
 
@@ -37,7 +37,7 @@ if (!$files_all) {
         @list = exec_search();
     } else {
         unless (opendir(DIR, $cwd)) {
-            print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
+            print_error("$text{'theme_xhred_global_error'}: [tt]`$cwd`[/tt]- $!.");
             exit;
         }
         @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
@@ -49,8 +49,8 @@ if (!$files_all) {
     my $pages     = 0;
 
     my $max_allowed = int($userconfig{'max_allowed'});
-    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 2000) {
-        $max_allowed = 300;
+    if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 10000) {
+        $max_allowed = 1000;
     }
 
     my $totals         = scalar(@list);
@@ -157,7 +157,7 @@ if (has_command('identify')) {
             if ($file_encoded) {
                 push(@items,
                      {  index => $index,
-                        title => html_escape("$filename (@{[local_nice_size($files_size, -1)]})"),
+                        title => html_escape("$filename (@{[theme_nice_size_local($files_size, -1)]})"),
                         file  => $filename,
                         cwd   => $cwd,
                         src   => ("data:$type;base64,$file_encoded"),
@@ -182,7 +182,7 @@ if (has_command('identify')) {
     my $package_updates = "package-updates";
     if (foreign_available($package_updates)) {
         my $redir                = "$gconfig{'webprefix'}/$request_uri{'module'}";
-        my $pkgname              = ($gconfig{'os_type'} =~ 'debian' ? 'imagemagick' : 'ImageMagick');
+        my $pkgname              = ($gconfig{'os_type'} =~ /debian/ ? 'imagemagick' : 'ImageMagick');
         my %package_updates_lang = load_language($package_updates);
         my $update_failed        = html_escape($package_updates_lang{'update_failed'});
         my $update_ok            = html_escape(text('global_deps_installed', "<code>$pkgname</code>"));

@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 if (is_root() && supports_users()) {
 

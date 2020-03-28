@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %gconfig, %tconfig, %text, $config_directory, $current_theme, %theme_text);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 my %miniserv;
 get_miniserv_config(\%miniserv);
@@ -38,7 +38,7 @@ if ($gconfig{'loginbanner'} &&
     print "Set-Cookie: banner=1; path=/\r\n";
     &PrintHeader($charset);
     print '<!DOCTYPE HTML>', "\n";
-    print '<html data-background-style="'
+    print '<html data-bgs="'
       .
       ( theme_night_mode() ? 'nightRider' :
           'gainsboro'
@@ -64,6 +64,9 @@ if ($gconfig{'loginbanner'} &&
 }
 
 my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+if (!$miniserv{'no_httponly'}) {
+  $sec .= "; httpOnly";
+}
 my $sidname = $miniserv{'sidname'} || "sid";
 print "Auth-type: auth-required=1\r\n";
 print "Set-Cookie: banner=0; path=/$sec\r\n"   if ($gconfig{'loginbanner'});
@@ -72,7 +75,7 @@ print "Set-Cookie: redirect=1; path=/\r\n";
 print "Set-Cookie: testing=1; path=/$sec\r\n";
 &PrintHeader($charset);
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-background-style="'
+print '<html data-bgs="'
   .
   ( theme_night_mode() ? 'nightRider' :
       'gainsboro'

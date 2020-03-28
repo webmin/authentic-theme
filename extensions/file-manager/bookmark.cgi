@@ -12,7 +12,7 @@ use File::Basename;
 
 our (%text, @remote_user_info, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 get_paths();
 my $confdir = "$remote_user_info[7]/.filemin";

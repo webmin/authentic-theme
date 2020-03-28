@@ -12,7 +12,7 @@ use File::Basename;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 my %errors;
 my @deleted_entries;
@@ -21,9 +21,10 @@ my @entries_list = get_entries_list();
 my $fsid         = $in{'fsid'};
 
 foreach my $name (@entries_list) {
+	my $name_ = $name;
     $name = simplify_path($name);
     if (!&unlink_file($cwd . '/' . $name)) {
-        $errors{ urlize(html_escape($name)) } = "$text{'error_delete'}";
+        $errors{ $name_ } = lc($text{'error_delete'});
     } else {
         push(@deleted_entries, $name);
     }

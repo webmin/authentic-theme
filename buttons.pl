@@ -73,7 +73,7 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
     print '</li>';
 }
 
-print '<li class="user-link">';
+print '<li class="user-link user-link-acl">';
 my $foreign_acl = &foreign_available("acl");
 my $user_mode   = get_product_name() eq 'usermin';
 my $edit_user   = ($foreign_acl ? ("<hr class='hr-no-margin hr-darker'>" . $theme_text{'theme_tooltip_edit_user'}) : undef);

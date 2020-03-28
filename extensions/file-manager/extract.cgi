@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 my @entries_list = get_entries_list();
 my %errors;
@@ -114,14 +114,14 @@ foreach my $name (@entries_list) {
     if ($status != 0 || $status_gpg != 0) {
         if ($gpg) {
             if ($status_gpg == 512) {
-                $errors{ html_escape($name) } = $text{'filemanager_archive_gpg_private_error'};
+                $errors{ $name } = $text{'filemanager_archive_gpg_private_error'};
             }
         } elsif ($status == 1280 || $status == 65280) {
-            $errors{ html_escape($name) } = $text{'filemanager_archive_password_required'};
+            $errors{ $name } = $text{'filemanager_archive_password_required'};
         } elsif ($status == 256 || $status == 512 || $status == 768) {
-            $errors{ html_escape($name) } = $text{'filemanager_archive_password_wrong'};
+            $errors{ $name } = $text{'filemanager_archive_password_wrong'};
         } elsif ($status == 2304 || $status == 2560) {
-            $errors{ html_escape($name) } = $text{'filemanager_archive_file_not_found'};
+            $errors{ $name } = $text{'filemanager_archive_file_not_found'};
         }
     }
 }

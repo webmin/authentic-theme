@@ -12,7 +12,7 @@ use lib (dirname(__FILE__) . '/../../lib');
 
 our (%in);
 
-require(dirname(__FILE__) . '/mail-lib.pm');
+do(dirname(__FILE__) . '/mail-lib.pl');
 
 my %temporary;
 my @folders_data = list_folders_sorted();

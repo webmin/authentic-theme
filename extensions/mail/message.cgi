@@ -14,7 +14,7 @@ my %email;
 
 our (%in);
 
-require(dirname(__FILE__) . '/mail-lib.pm');
+do(dirname(__FILE__) . '/mail-lib.pl');
 
 my @folders = list_folders_sorted();
 my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;

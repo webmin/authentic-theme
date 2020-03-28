@@ -1,13 +1,13 @@
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
 # Copyright Ilia Rostovtsev <programming@rostovtsev.io>
-# Copyright Alexandr Bezenkov (https://github.com/real-gecko/filemin)
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
 
 use File::Basename;
 use lib (dirname(__FILE__) . '/../../lib');
+do(dirname(__FILE__) . "/../../authentic-funcs.pl");
 
 use Cwd 'abs_path';
 use Encode qw(decode encode);
@@ -17,9 +17,21 @@ use File::Grep qw( fdo );
 use POSIX;
 use JSON::PP;
 
-our (%access,           %gconfig,          %in,            %text,       @remote_user_info,
-     $base_remote_user, $config_directory, $current_theme, %userconfig, @allowed_paths,
-     $base,             $cwd,              $path,          $remote_user);
+our (%access,
+     %gconfig,
+     %in,
+     %text,
+     %theme_text,
+     @remote_user_info,
+     $base_remote_user,
+     $config_directory,
+     $current_theme,
+     %userconfig,
+     @allowed_paths,
+     $base,
+     $cwd,
+     $path,
+     $remote_user);
 our $checked_path;
 our $module_path;
 
@@ -41,7 +53,7 @@ sub get_libs
 {
     my ($module) = @_;
 
-    require($module_path . '/' . $module . '-lib.pl');
+    do($module_path . '/' . $module . '-lib.pl');
 
     &ReadParse();
 
@@ -54,7 +66,8 @@ sub get_libs
         $checked_path =~ s/$in{'cwd'}\//\//ig;
     }
 
-    %text = (load_language($current_theme), load_language($module), %text);
+    %text       = (load_language($current_theme), load_language($module), %text);
+    %theme_text = %text;
 }
 
 sub get_type
@@ -144,22 +157,6 @@ sub tokenize
         unlink_file($tmp_file);
         return $theme_temp_data{$key};
     }
-}
-
-sub string_contains
-{
-    return (index($_[0], $_[1]) != -1);
-}
-
-sub string_starts_with
-{
-    return substr($_[0], 0, length($_[1])) eq $_[1];
-}
-
-sub string_ends_with
-{
-    my $length = length($_[1]);
-    return substr($_[0], -$length, $length) eq $_[1];
 }
 
 sub get_pagination
@@ -274,11 +271,6 @@ sub get_entries_list
         @entries_list = split(/\0/, $in{'name'});
     }
     return @entries_list;
-}
-
-sub head
-{
-    print "Content-type: text/html\n\n";
 }
 
 sub extra_query
@@ -554,7 +546,7 @@ sub print_content
         @list = exec_search();
     } else {
         unless (opendir(DIR, $cwd)) {
-            print_error("$text{'theme_xhred_global_error'}: <tt>`$cwd`</tt>- $!.");
+            print_error("$text{'theme_xhred_global_error'}: [tt]`$cwd`[/tt]- $!.");
             exit;
         }
         @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
@@ -777,8 +769,6 @@ sub print_content
             $hlink_path =~ s/\/\Q$filename\E$//;
         }
 
-        $path = html_escape($path);
-
         my $type = $list[$count - 1][14];
         $type =~ s/\//\-/g;
         my $img = "images/icons/mime/$type.png";
@@ -795,11 +785,7 @@ sub print_content
         my $is_img     = 0;
         if ($list[$count - 1][15] == 1) {
             $is_file = 0;
-            if ($path eq '/' . $link) {
-                $href = "index.cgi?path=" . &urlize("$path");
-            } else {
-                $href = "index.cgi?path=" . &urlize("$path/$link");
-            }
+            $href    = "index.cgi?path=" . &urlize("$path/$link");
         } else {
             my ($fname, $fpath, $fsuffix) =
               fileparse($list[$count - 1][0]);
@@ -875,10 +861,10 @@ sub print_content
         push(@td_tags, 'class="col-actions"');
 
         if ($userconfig{'columns'} =~ /size/) {
-            my $size = &local_nice_size($list[$count - 1][8]);
+            my $size = &theme_nice_size_local($list[$count - 1][8]);
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'theme_xhred_filemanager_global_size_in_bytes'})]}<br>@{[nice_number($list[$count - 1][8])]}\">"
                   . $size . "</span>");
             push(@td_tags, undef);
         }
@@ -896,7 +882,7 @@ sub print_content
             }
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_user_group_id'}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'filemanager_global_user_group_id'})]}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
                   . $user . ':' . $group . "</span>");
             push(@td_tags, 'class="col-ownership"');
         }
@@ -922,7 +908,7 @@ sub print_content
             my $change_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][11]));
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'filemanager_global_access_change_time'})]}<br>$access_time<br>$change_time\">"
                   . $mod_time . "</span>");
             push(@td_tags, 'data-order="' . ($list[$count - 1][10]) . '" class="col-time"');
         }
@@ -942,6 +928,11 @@ sub print_content
     $list_data{'searched'}             = $query ? 1 : 0;
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
     $list_data{'flush_reset'}          = $in{'flush_reset'} ? 1 : 0;
+    $list_data{'udata'} = { user   => $remote_user_info[0],
+                            home   => $remote_user_info[7],
+                            uid    => $remote_user_info[2],
+                            guid   => $remote_user_info[3],
+                            access => $access{'work_as_user'} };
 
     print_json_local([\%list_data]);
 }
@@ -970,7 +961,6 @@ sub get_tree
     my $preprocess = sub {
         my $td = $File::Find::name;
         my $d  = $td =~ tr[/][];
-
         if ($e && $p eq "/" && $d == 1) {
             if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
                 return;
@@ -983,7 +973,7 @@ sub get_tree
             }
             return;
         }
-        sort {"\L$a" cmp "\L$b"} @_;
+        return sort {"\L$a" cmp "\L$b"} @_;
     };
     find(
          {  wanted     => $wanted,
@@ -991,45 +981,6 @@ sub get_tree
          },
          $p);
     return \@r;
-}
-
-sub local_nice_size
-{
-    # my %text = (load_language($current_theme), %text);
-    my ($units, $uname);
-    if (abs($_[0]) > 1024 * 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_PB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_TB'};
-    } elsif (abs($_[0]) > 1024 * 1024 * 1024 || $_[1] >= 1024 * 1024 * 1024) {
-        $units = 1024 * 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_GB'};
-    } elsif (abs($_[0]) > 1024 * 1024 || $_[1] >= 1024 * 1024) {
-        $units = 1024 * 1024;
-        $uname = $text{'theme_xhred_nice_size_MB'};
-    } elsif (abs($_[0]) > 1024 || $_[1] >= 1024) {
-        $units = 1024;
-        $uname = $text{'theme_xhred_nice_size_kB'};
-    } else {
-        $units = 1;
-        $uname = $text{'theme_xhred_nice_size_b'};
-    }
-    my $sz = sprintf("%.2f", ($_[0] * 1.0 / $units));
-    $sz =~ s/\.00$//;
-    if ($_[1] == -1) {
-        return $sz . " " . $uname;
-    }
-    return '<span data-filesize-bytes="' . $_[0] . '">' . ($sz . " " . $uname) . '</span>';
-}
-
-sub nice_number
-{
-    my ($number, $delimiter) = @_;
-    $delimiter = " " if (!$delimiter);
-    $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
-    return $number;
 }
 
 sub paster
@@ -1138,13 +1089,6 @@ sub set_env
 {
     my ($k, $v) = @_;
     $ENV{ uc($k) } = $v;
-}
-
-sub trim
-{
-    my $s = shift;
-    $s =~ s/^\s+|\s+$//g;
-    return $s;
 }
 
 1;

@@ -13,7 +13,7 @@ our (%in,             %gconfig,     %text,                $current_theme, $confi
      $remote_user,    $title,       %theme_config,        %theme_text,    $get_user_level,
      $has_virtualmin, $has_usermin, $has_usermin_version, $has_usermin_conf_dir);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 header($title, 'stripped');
 

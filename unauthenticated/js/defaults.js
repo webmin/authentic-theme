@@ -28,12 +28,13 @@ var settings_mailbox_slash_delimiter = true,
     settings_cm_editor_palette = "monokai",
 
     settings_contrast_mode = false,
+    settings_theme_make_date = true,
     settings_enable_container_offset = true,
     settings_usermin_default_module = 'sysinfo.cgi',
     settings_document_title = 1,
     settings_right_page_hide_persistent_vscroll = true,
 
-    settings_side_slider_palette = "grey",
+    settings_side_slider_palette = "nav",
     settings_side_slider_enabled = true,
     settings_side_slider_fixed = false,
     settings_side_slider_sysinfo_enabled = true,
@@ -75,17 +76,24 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_side_slider_background_refresh_time = 5,
 
+    settings_table_init_datatables = 20000,
+
 
     settings_leftmenu_width = 260,
     settings_navigation_always_collapse = false,
 
     settings_sysinfo_real_time_status = true,
+    settings_sysinfo_real_time_stored = true,
+    settings_sysinfo_real_time_stored_length = 0.1,
     settings_sysinfo_real_time_timeout = 1000,
 
     settings_sysinfo_easypie_charts = true,
     settings_sysinfo_easypie_charts_size = 172,
     settings_sysinfo_easypie_charts_width = 2,
     settings_sysinfo_easypie_charts_scale = 8,
+    
+    settings_sysinfo_remember_accordions = true,
+    settings_sysinfo_expand_all_accordions = false,
 
     settings_sysinfo_theme_updates = false,
 
@@ -114,13 +122,16 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_module_filemanager_force_tar = true,
     config_portable_module_filemanager_switch_user = true,
     config_portable_module_filemanager_remember_tabs = true,
+    config_portable_module_filemanager_editor_maximized = false,
 
-    config_portable_module_xsql_fit_content_screen_height = true,
+    config_portable_module_xsql_fit_content_screen_height = false,
 
     config_portable_theme_locale_language = false,
     config_portable_theme_locale_format_full = "LLLL",
     config_portable_theme_locale_format_long = "LL",
     config_portable_theme_locale_format_short = "L",
+    config_portable_theme_locale_format_time = "LTS",
 
-    config_portable_theme_locale_languages = null;
-    
+    config_portable_theme_locale_languages = null,
+
+    settings_experimental_extended_on_hover = false;

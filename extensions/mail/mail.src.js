@@ -52,20 +52,32 @@ const mail = (function() {
                         return prefix ? `${prefix}/${v___module}` : `/${this.name()}`;
                     },
                 },
+                locale: {
+                    short: config_portable_theme_locale_format_short,
+                }
             },
             platform: {
                 mac: window.navigator.platform === 'MacIntel',
             },
             content: get_pjax_content,
             load: load,
-            language: theme_language,
+            sdata: get_server_data,
+            mavailable: core.moduleAvailable,
+            lang: theme_language,
             notification: plugins.messenger.post,
             file_chooser: plugins.chooser.file,
-            button_progress: snippets.progressive_button,
+            button: {
+                progress: snippets.progressive_button,
+                lock: snippets.button_lock,
+            },
             rows: page_table_rows_control,
             document_title: theme_title_generate,
             update_mdata: core.updateModuleData,
             uri_param: uri_parse_param,
+            error: connection_error,
+            event: {
+                generate: event_generate
+            },
             navigation: {
                 reset: plugins.navigation.reset
             },
@@ -274,7 +286,9 @@ const mail = (function() {
                 },
                 compose: {
                     button: {
-                        inverse: 'btn-inverse'
+                        inverse: 'btn-inverse',
+                        submit: 'btn-primary',
+                        schedule: 'btn-info',
                     },
                     hidden: 'hidden',
                     panel: {
@@ -286,6 +300,7 @@ const mail = (function() {
                     editor: {
                         compose: 'ql-compose',
                         composer: 'data-composer',
+                        scheduled: 'scheduled',
                         content: 'ql-editor',
                         toolbar: 'ql-toolbar',
                         disabled: 'ql-disabled',
@@ -312,6 +327,7 @@ const mail = (function() {
                         },
                         name: {
                             tattach: 'tattachments',
+                            scheduled: 'scheduled',
                         }
                     },
                     icons: {
@@ -327,6 +343,7 @@ const mail = (function() {
                     success: 'check-circle',
                     type: {
                         search: 'search',
+                        scheduled: 'clock',
                         trash: '- fa2 fa2-trash',
                     }
                 },
@@ -388,7 +405,7 @@ const mail = (function() {
                             <form class="compose" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
                                 <div class="form-e">
                                     <div class="${data.class.form.header}">
-                                        <div class="form-group">
+                                        <div class="form-group from">
                                             <div class="flex">
                                                 <div class="col-xs-1">
                                                     <label for="c-from-${data.id}">${data.language.from}</label>
@@ -402,7 +419,7 @@ const mail = (function() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group to">
                                             <div class="flex">
                                                 <div class="col-xs-1">
                                                     <label for="c-to-${data.id}">${data.language.to}</label>
@@ -461,8 +478,19 @@ const mail = (function() {
                                           <div ${data.class.editor.composer}="html" class="ql-compose ql-container-toolbar-bottom ${data.status.html}">${data.body}</div>
                                           <div id="tb-${data.id}">
                                             <span class="ql-formats">
-                                              <select class="ql-font"></select>
-                                              <select class="ql-size"></select>
+                                              <select class="ql-font">
+                                                <option value="initial" selected>${data.language._default}</option>
+                                                <option value="sans-serif">Sans Serif</option>
+                                                <option value="serif">Serif</option>
+                                                <option value="monospace">Monospace</option>
+                                              </select>
+                                              <select class="ql-size">
+                                                  <option value="0.75em">${data.language._font_size.small}</option>
+                                                  <option selected>${data.language._font_size.normal}</option>
+                                                  <option value="1.2em">${data.language._font_size.medium}</option>
+                                                  <option value="1.5em">${data.language._font_size.large}</option>
+                                                  <option value="2.5em">${data.language._font_size.huge}</option>
+                                              </select>
                                             </span>
                                             <span class="ql-formats">
                                               <button class="ql-bold"></button>
@@ -498,17 +526,17 @@ const mail = (function() {
                                         <div class="btn-group ${data.class.editor.controls.compose}">
                                           <button type="submit" class="btn btn-primary btn-progress">
                                             <span>
-                                                <span>&nbsp;&nbsp;${data.language._send}&nbsp;&nbsp;</span>
+                                                <span>${data.language._send}</span>
                                                 <span>
                                                     <span class="progressing"></span>
                                                 </span>
                                             </span>
                                           </button>
-                                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="caret"></span>
+                                          <button type="button" class="btn btn-primary dropdown-toggle ${data.status.module.schedule}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="fa fa-0_90x fa-clock"></span>
                                           </button>
-                                          <ul class="dropdown-menu">
-                                            <li e-not-implemented><a><i class="fa fa-fw fa-clock"></i>&nbsp;&nbsp;${data.language._schedule}</a></li>
+                                          <ul class="dropdown-menu ${data.class.editor.scheduled} ${data.status.module.schedule}">
+                                            <li><a>${$$.create.checkbox(0, 'scheduled', 1)}${data.language._scheduled}</a></li>
                                           </ul>
                                           <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.attach}" data-title="${data.language._attach}"><i class="fa-fw fa2 fa2-attach fa-md"></i></button>
                                           <button type="button" class="btn btn-link btn-transparent-link ${data.class.editor.controls.extra.link} ${data.status.html}" ${data.class.editor.composer}-h data-title="${data.language._insert_link}"><i class="fa-fw fa2 fa2-link fa-1_25x"></i></button>
@@ -543,11 +571,11 @@ const mail = (function() {
                                                   <li class="dropdown-submenu right" role="menu">
                                                       <a tabindex="-1">${data.language.pri.label}</a>
                                                       <ul class="dropdown-menu" role="menu" data-type="priority">
-                                                        <li><a tabindex="-1" data-value="1">${data.language.pri.data.highest}</a></li>
-                                                        <li><a tabindex="-1" data-value="2">${data.language.pri.data.high}</a></li>
-                                                        <li><a tabindex="-1"><i class="fa fa-fw fa-check pull-left"></i>${data.language.pri.data.normal}</a></li>
-                                                        <li><a tabindex="-1" data-value="4">${data.language.pri.data.low}</a></li>
-                                                        <li><a tabindex="-1" data-value="5">${data.language.pri.data.lowest}</a></li>
+                                                        <li><a tabindex="-1" data-value="1">${data.language.pri.data[0]}</a></li>
+                                                        <li><a tabindex="-1" data-value="2">${data.language.pri.data[1]}</a></li>
+                                                        <li><a tabindex="-1"><i class="fa fa-fw fa-check pull-left"></i>${data.language.pri.data[2]}</a></li>
+                                                        <li><a tabindex="-1" data-value="4">${data.language.pri.data[3]}</a></li>
+                                                        <li><a tabindex="-1" data-value="5">${data.language.pri.data[4]}</a></li>
                                                       </ul>
                                                   </li>
                                                   <li${status.menu.options} class="divider"></li>
@@ -832,6 +860,8 @@ const mail = (function() {
 
             xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
             xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
+            xtarget.schedule = `${path}/schedule/save.cgi`;
+            xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0`;
 
             if (typeof form === 'object' && form.length) {
                 form = $(form).serialize() + '&reply=1';
@@ -956,12 +986,12 @@ const mail = (function() {
                                 // Adjust the size of editable area
                                 contenteditable: (panel) => {
                                     let target = panel.querySelector(`.${classes.panel.content}`),
-                                        offset = 60,
                                         container = target ? target.offsetHeight : window.innerHeight / 4,
                                         top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
                                         editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
                                         editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                        height = `${container - top_block - editor_toolbar - offset}px`;
+                                        offset = 50 + editor_toolbar,
+                                        height = `${container - top_block - offset}px`;
                                     editor.style.height = height;
                                 },
 
@@ -991,21 +1021,54 @@ const mail = (function() {
                                     return $$.create.input([str, `c-${str}-${id}`], String(), value, type, readonly);
                                 },
                                 select: {},
+                                type: {
+                                    time: () => {
+                                        let ct = new Date(),
+                                            format = (s) => {
+                                                return ('0' + s).substr(-2)
+                                            },
+                                            round = (m) => {
+                                                let r = Math.ceil(m / 10) * 10;
+                                                return r === 60 ? r - 5 : r;
+                                            },
+                                            h = format(ct.getHours()),
+                                            m = round(format(ct.getMinutes()));
+                                        return `<input type="time" name="time" step="300" value="${h}:${m}">`;
+                                    },
+                                    date: () => {
+                                        let ct = new Date(),
+                                            y = ct.getFullYear(),
+                                            m = ct.getMonth() + 1,
+                                            d = ct.getDate();
+                                        return `<input type="text" name="date" data-value="${y}-${m}-${d}">`;
+                                    }
+                                },
                                 composer: function(target) {
                                     let panel = target,
                                         paneled = panel.header ? true : false,
                                         config = {
                                             html: {
-                                                allowed: data.hidden.html_edit,
-                                                initial: data.hidden.html_edit_config,
+                                                allowed: parseInt(data.hidden.html_edit),
+                                                initial: parseInt(data.hidden.html_edit_config),
                                             },
                                         },
                                         config_update = function(option, value) {
                                             _.update_mdata("/uconfig.cgi?mailbox", "/uconfig_save.cgi", {
                                                 [option]: value
                                             })
-                                        };
+                                        },
+                                        qs = Quill.import('attributors/style/size'),
+                                        qf = Quill.import('attributors/style/font');
+
+                                    // Quill: assign font-size and font-family, rather than using classes
+                                    qs.whitelist = ["0.75em", "1.2em", "1.5em", "2.5em"];
+                                    qf.whitelist = ["initial", "sans-serif", "serif", "monospace"];
+                                    Quill.register(qs, true);
+                                    Quill.register(qf, true);
+
+                                    // Redefine the actual target
                                     target = target[0];
+
 
                                     let asb = target.querySelector(`.${classes.form.header}`),
                                         ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
@@ -1025,7 +1088,7 @@ const mail = (function() {
                                             }),
                                             get: {
                                                 text: () => {
-                                                    return editor.this.root.parentElement.previousElementSibling.value
+                                                    return tcm.value
                                                 },
                                                 html: () => {
                                                     return editor.this.root.innerHTML
@@ -1043,6 +1106,9 @@ const mail = (function() {
                                                 } else {
                                                     te.value = he.getText();
                                                 }
+                                            },
+                                            maximized: () => {
+                                                return target.hasAttribute('maximized');
                                             }
                                         },
 
@@ -1066,10 +1132,10 @@ const mail = (function() {
                                                 du = (tg) => {
 
                                                     if (ds === 1) {
-                                                        tg.textContent = _.language('theme_xhred_mail_composer_draft_saving');
+                                                        tg.textContent = _.lang('mail_composer_draft_saving');
                                                         us(tg, true);
                                                     } else if (ds === -1) {
-                                                        tg.textContent = _.language('theme_xhred_mail_composer_draft_saved');
+                                                        tg.textContent = _.lang('mail_composer_draft_saved');
                                                         us(tg, true);
 
                                                         // Change status back to original title
@@ -1104,15 +1170,14 @@ const mail = (function() {
 
                                     // Toggle HTML/text editor state
                                     let ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`);
-                                    ctl_tgl.addEventListener('click', (event) => {
+                                    ctl_tgl.addEventListener('click', () => {
                                         let st = parseInt(config.html.allowed) || 0,
                                             ia = parseInt(config.html.initial) || 0,
                                             sg = +!st,
                                             co = sg ? 2 : (ia === 1 ? 1 : 0);
-                                        
-                                        toggle.formatting(target, sg)
-                                        config.html.allowed = sg;
 
+                                        toggle.formatting(target, sg);
+                                        config.html.allowed = sg;
 
                                         // Change actual config option
                                         config_update('html_edit', co);
@@ -1136,10 +1201,101 @@ const mail = (function() {
                                             ctl_lnk = ccs[0].querySelector(`.${classes.editor.controls.extra.link}`),
                                             ctl_img = ccs[0].querySelector(`.${classes.editor.controls.extra.image}`),
                                             ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
+                                            submit = target.querySelector('button[type="submit"]'),
+                                            to_ = target.querySelector('input[name="to"]'),
+                                            cc_ = target.querySelector('input[name="cc"]'),
+                                            bcc_ = target.querySelector('input[name="bcc"]'),
                                             $more_options = $(target).find(`.${classes.editor.controls.more}`),
 
+                                            scheduled = {
+                                                target: target.querySelector(`[name="${classes.form.name.scheduled}"]`),
+                                                container: target.querySelector(`.${classes.editor.scheduled}`),
+                                                events: function() {
+
+                                                    // Event to prevent closing dropdown for scheduled mail
+                                                    this.container.addEventListener('click', (event) => {
+                                                        event.stopPropagation();
+                                                    });
+
+                                                    // Event to change send/scheduled label for submit button
+                                                    this.checkbox().addEventListener('click', function() {
+                                                        let s = submit,
+                                                            t = s.querySelector('span').querySelector('span'),
+                                                            ct = _.lang('mail_composer_schedule'),
+                                                            c = this.checked,
+                                                            sb = classes.button.submit,
+                                                            sc = classes.button.schedule,
+                                                            d = s.nextElementSibling,
+                                                            st = language._send;
+
+                                                        s.classList.toggle(sc, c);
+                                                        s.classList.toggle(sb, !c);
+                                                        d.classList.toggle(sc, c);
+                                                        d.classList.toggle(sb, !c);
+                                                        t.textContent = c ? ct : st;
+                                                    });
+
+                                                    // Initialize date picker
+                                                    this.datepicker();
+                                                },
+                                                status: function() {
+                                                    return this.target.checked;
+                                                },
+                                                checkbox: function() {
+                                                    return this.container.querySelector('[type="checkbox"]');
+                                                },
+                                                holder: function() {
+                                                    return this.container.querySelector('[data-t]');
+                                                },
+                                                datepicker: function() {
+
+                                                    let tag = this.holder(),
+                                                        input = tag.previousSibling;
+
+                                                    // Event to handle change date for scheduled mail
+                                                    tag.addEventListener('click', function() {
+                                                        $(input).datepicker('show');
+                                                    });
+
+                                                    $(input).datepicker({
+                                                        language: _.sdata("language"),
+                                                        todayHighlight: true,
+                                                        autoclose: true,
+                                                        startDate: "0d",
+                                                    }).on("changeDate", function(l) {
+                                                        let today = _.lang('global_today').toLowerCase(),
+                                                            tomorrow = _.lang('global_tomorrow').toLowerCase(),
+                                                            label = today,
+                                                            now = new Date(),
+                                                            y = now.getFullYear(),
+                                                            m = now.getMonth() + 1,
+                                                            d = now.getDate(),
+                                                            py = l.date.getFullYear(),
+                                                            pm = l.date.getMonth() + 1,
+                                                            pd = l.date.getDate(),
+                                                            date = l.dates[0],
+                                                            date_ = py + '-' + pm + '-' + pd,
+                                                            date_formatted = moment(date).format(_.variable.locale.short);
+
+                                                        this.dataset.value = date_;
+
+                                                        if (
+                                                            y === py && m === pm &&
+                                                            (d === pd || d + 1 === pd)
+                                                        ) {
+                                                            if (d + 1 === pd) {
+                                                                label = tomorrow
+                                                            }
+                                                        } else {
+                                                            label = date_formatted
+                                                        }
+
+                                                        tag.textContent = label
+                                                    })
+                                                }
+                                            },
+
                                             draft = {
-                                                status: false,
 
                                                 timeout: {
                                                     update: null,
@@ -1167,7 +1323,6 @@ const mail = (function() {
                                                 save: function() {
                                                     this.terminate();
                                                     this.timeout.update = setTimeout(() => {
-                                                        this.status = true;
                                                         submit.dispatchEvent(new Event('click'));
                                                     }, 2e3);
                                                 },
@@ -1194,10 +1349,17 @@ const mail = (function() {
                                                     }
                                                 },
 
+                                                clean: function() {
+                                                    this.test() && this.purge(this.data[0], this.data[1], this.data[3]);
+                                                    this.reset();
+                                                    this.terminate();
+                                                },
+
                                                 control: {
 
                                                     // Schedule draft for discard
                                                     discard: function() {
+                                                        editor.maximized() && panel.normalize();
                                                         draft.timeout.discard = setTimeout(() => {
                                                             draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
                                                             draft.reset();
@@ -1258,14 +1420,14 @@ const mail = (function() {
                                             draft.control.discard();
                                             let undo = {
                                                 cancel: {
-                                                    label: _.language('theme_xhred_global_undo'),
+                                                    label: _.lang('global_undo'),
                                                     action: function() {
                                                         this.hide();
                                                         draft.control.undo();
                                                     }
                                                 }
                                             };
-                                            _.notification([$$.$.notification.type.trash, _.language('theme_xhred_mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
+                                            _.notification([$$.$.notification.type.trash, _.lang('mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
                                             target.classList.add(classes.hidden);
                                         })
 
@@ -1312,8 +1474,8 @@ const mail = (function() {
                                             // Attach new file from server
                                             if (action === 'server-attach') {
                                                 let error = {
-                                                    read: _.language('theme_xhred_mail_composer_server_attach_error_read'),
-                                                    dir: _.language('theme_xhred_mail_composer_server_attach_error_dir')
+                                                    read: _.lang('mail_composer_server_attach_error_read'),
+                                                    dir: _.lang('mail_composer_server_attach_error_dir')
                                                 };
 
                                                 _.file_chooser({
@@ -1405,7 +1567,7 @@ const mail = (function() {
                                             let button,
                                                 key,
                                                 value,
-                                                language = 'theme_xhred_editor_tb';
+                                                language = 'editor_tb';
 
                                             if (typeof v === 'object') {
                                                 key = Object.keys(v)[0];
@@ -1417,14 +1579,18 @@ const mail = (function() {
                                             }
 
                                             button = tb.querySelector(`.ql-${value}`)
-                                            button.dataset.title = adjust.modifier(_.language(language));
+                                            button.dataset.title = adjust.modifier(_.lang(language));
                                             _.plugin.tooltip($(button))
                                         })
 
-                                        // Prepare form submit
-                                        let submit = target.querySelector('button[type="submit"]');
+                                        // Event to handle change in header
+                                        asb.addEventListener('input', function() {
 
-                                        // Prevent default submit on input fields
+                                            // Save the draft
+                                            draft.save();
+                                        })
+
+                                        // Event to prevent default submit on input fields
                                         asb.querySelectorAll('input').forEach((input) => {
                                             input.addEventListener('keydown', (event) => {
                                                 if (event.keyCode === 13) {
@@ -1433,13 +1599,6 @@ const mail = (function() {
                                                 }
                                                 draft.save();
                                             });
-                                        })
-
-                                        // Event to handle change in header
-                                        asb.addEventListener('input', function() {
-
-                                            // Save the draft
-                                            draft.save();
                                         })
 
                                         // Event to handle content change in HTML body
@@ -1451,10 +1610,92 @@ const mail = (function() {
 
                                         // Event to handle content change in text body
                                         tcm.addEventListener('input', function() {
-                                            
+
                                             // Save the draft
                                             draft.save();
-                                        })                                        
+                                        })
+
+                                        // Scheduled mail events
+                                        scheduled.events();
+
+                                        // Bring address book autocompletion
+                                        fetch(xtarget.addressBook)
+                                            .then(function(rs) {
+                                                return rs.text();
+                                            })
+                                            .then(function(d) {
+
+                                                [to_, cc_, bcc_].forEach(input => {
+
+                                                    // Bind tags input
+                                                    let tags = $(input).tagsinput({
+                                                        confirmKeys: [13, 32],
+                                                        addOnBlur: false,
+                                                        cancelConfirmKeysOnEmpty: false,
+                                                        tagClass: 'label recipient'
+                                                    });
+
+                                                    // Initialize autocomplete on received data,
+                                                    // if there is something in user's address book
+                                                    let b = d.match(/"(.*)","(.*)"/gm);
+                                                    if (b) {
+                                                        let book = [];
+                                                        b.map(function(en) {
+                                                            let em = en.match(/"(.*)","(.*)"/);
+                                                            if (em) {
+                                                                book.push(em[2] + " <" + em[1] + ">");
+                                                            }
+                                                        });
+
+                                                        !$.isEmptyObject(book) && tags[0].$input.autocomplete({
+                                                            lookup: book,
+                                                            autoSelectFirst: true,
+                                                            position: 'relative',
+                                                            appendTo: tags[0].$container,
+                                                            onSelect: function(m) {
+                                                                $(input).tagsinput('add', m.value);
+                                                                this.value = String();
+                                                            }
+                                                        });
+                                                    }
+
+                                                    $(input)
+
+                                                        .on('itemAdded itemRemoved', function(event) {
+
+                                                            // Soft validate email address
+                                                            let email = event.item,
+                                                                contact = email.match(/<(.*)>/);
+                                                            if (contact) {
+                                                                email = contact[1];
+                                                            }
+                                                            if (event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
+                                                                $(event.target.previousSibling).find('.recipient').last().addClass('error')
+                                                            }
+
+                                                            // Adjust the container size on adding/removing recipient
+                                                            adjust.contenteditable(target);
+
+                                                        })
+
+                                                    // Imitate tab keypress to generate the tag as well
+                                                    tags[0].$input.on('keydown blur', function(event) {
+                                                        let value = this.value;
+                                                        if (event.keyCode === 9 || event.type === 'blur') {
+                                                            
+                                                            // Dispatch event to complete the tag
+                                                            $(this).trigger(_.event.generate('keypress', 32));
+
+                                                            // Adjust the container size on adding/removing recipient
+                                                            adjust.contenteditable(target);
+
+                                                            if (value) {
+                                                                event.preventDefault();
+                                                            }
+                                                        }
+                                                    });
+                                                })
+                                            });
 
                                         // Submitting mail
                                         submit.addEventListener('click', function(event) {
@@ -1462,11 +1703,15 @@ const mail = (function() {
 
                                             let form = this.closest('form'),
                                                 form_data = new FormData(form),
-                                                trusted = event.isTrusted || ~~submit.dataset.isTrusted;
+                                                trusted = event.isTrusted || ~~submit.dataset.isTrusted,
+                                                draft_status = !trusted;
 
-                                            // Prevent form from submitting while saving a draft
-                                            if (draft.status && trusted) {
-                                                return
+                                            // Reset trusted state for submit
+                                            this.dataset.isTrusted = 0;
+
+                                            // Terminate draft event in case mail is actually submitted
+                                            if (trusted) {
+                                                draft.terminate();
                                             }
 
                                             // Add message body
@@ -1498,24 +1743,80 @@ const mail = (function() {
                                                     form_data.set(`file${i}`, f)
                                                 });
 
+                                            // Update HTML/text mode status
+                                            form_data.set('html_edit', config.html.allowed);
+
+                                            // Force disable spellcheck for new mail composer
+                                            form_data.set('spell', 0);
+
                                             // Check for draft
-                                            draft.status && (
+                                            draft_status && (
                                                 form_data.set('new', 0),
                                                 form_data.set('enew', 1),
                                                 form_data.set('save', 1),
                                                 title_update(1)
                                             );
 
-                                            // Add lock while processing
-                                            !draft.status &&
-                                                target.classList.add($$.$.class.events_none);
+                                            // Prepare scheduled mail
+                                            let schedule = {
+                                                date: {
+                                                    get: function(d) {
+                                                        let date = this.value,
+                                                            t = scheduled.container.querySelector('[name="date"]');
+                                                        if (t) {
+                                                            date = t.dataset.value.split('-');
+                                                        }
+                                                        return d === 'y' ? ~~date[0] : d === 'm' ? ~~date[1] : ~~date[2];
+                                                    }
+                                                },
+                                                time: {
+                                                    value: scheduled.container.querySelector('[type="time"]').value,
+                                                    get: function(t) {
+                                                        let time = ['12', '00'];
+                                                        if (this.value) {
+                                                            time = this.value.split(':');
+                                                        }
+                                                        return t === 'h' ? ~~time[0] : ~~time[1];
+                                                    }
+                                                }
+                                            }
+
+                                            if (scheduled.status() && !draft_status) {
+                                                let m = {
+                                                    body: 'mail',
+                                                    is_html: config.html.allowed,
+                                                    delete_after: 1,
+                                                    enabled: 1,
+                                                    status: 1,
+                                                    mode: 1,
+                                                    hour: schedule.time.get('h'),
+                                                    min: schedule.time.get('m'),
+                                                    day: schedule.date.get('d'),
+                                                    month: schedule.date.get('m'),
+                                                    year: schedule.date.get('y'),
+                                                }
+
+                                                // Extens submitted form data
+                                                Object.entries(m).forEach(function(e, i) {
+                                                    if (i) {
+                                                        form_data.set(e[0], e[1])
+                                                    } else {
+                                                        form_data.set(e[1], form_data.get(e[0]));
+                                                        form_data.delete(e[0]);
+                                                    }
+                                                })
+                                            }
 
                                             // Post mail data
-                                            let xhr = new XMLHttpRequest();
-                                            xhr.open("POST", `${form.getAttribute('action')}`);
+                                            let xhr = new XMLHttpRequest(),
+                                                link = ((scheduled.status() && !draft_status) ? xtarget.schedule : form.getAttribute('action'));
+                                            xhr.open("POST", link);
                                             xhr.upload.onprogress = (e) => {
-                                                !draft.status &&
-                                                    _.button_progress(this, Math.ceil((e.loaded / e.total) * 100));
+                                                !draft_status &&
+                                                    (
+                                                        _.button.progress(this, Math.ceil((e.loaded / e.total) * 100)),
+                                                        _.button.lock(this, true)
+                                                    );
                                             };
                                             xhr.onload = (e) => {
                                                 let rs = e.target.responseText,
@@ -1540,7 +1841,7 @@ const mail = (function() {
                                                     };
 
                                                 // Handle previously saved draft
-                                                if (draft.status) {
+                                                if (draft_status) {
 
                                                     // Update title
                                                     title_update(-1);
@@ -1568,62 +1869,64 @@ const mail = (function() {
                                                     // Update form data
                                                     form.insertAdjacentHTML('beforeend', element.input('id', _d.id, false, false, 'hidden'));
                                                     form.insertAdjacentHTML('beforeend', element.input('folder', _d.folder.index, false, false, 'hidden'));
-                                                }
+                                                } else {
 
-                                                // Handle responses
-                                                rs = parser.parseFromString(rs, 'text/html');
-                                                if (rs) {
-                                                    rs = rs.querySelector('.panel-body'),
-                                                        error_container = rs.querySelector('h3');
-                                                    if (error_container) {
+                                                    // Handle responses
+                                                    rs = parser.parseFromString(rs, 'text/html');
+                                                    if (rs) {
+                                                        rs = rs.querySelector('.panel-body'),
+                                                            error_container = rs.querySelector('h3');
+                                                        if (error_container) {
 
-                                                        // Send error notification
-                                                        error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
-                                                        _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center'])
+                                                            // Send error notification
+                                                            error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
+                                                            _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
 
-                                                        // Reset progress
-                                                        _.button_progress(this, 0);
+                                                            // Reset progress
+                                                            _.button.progress(this, 0);
 
-                                                        // Remove lock
-                                                        target.classList.remove($$.$.class.events_none);
-                                                    } else if (!draft.status) {
+                                                            // Unlock button
+                                                            _.button.lock(this, false)
 
-                                                        // Send success notification
-                                                        status = rs.innerHTML
-                                                        _.notification([$$.$.notification.danger, status], 10, "success", 0, 1, ['bottom', 'center'])
-                                                        paneled && panel.close();
+                                                        } else {
 
-                                                        // Delete previously stored draft message
-                                                        draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
-                                                        draft.reset();
-                                                        draft.terminate();
+                                                            // Send success notification
+                                                            status = rs.innerHTML;
+                                                            _.notification([scheduled.status() ? $$.$.notification.type.scheduled : $$.$.notification.success, status], 10, "success", 0, 1, ['bottom', 'center'])
+                                                            paneled && panel.close();
+
+                                                            // Delete previously stored draft message
+                                                            draft.clean();
+                                                        }
                                                     }
                                                 }
+                                            }
+                                            xhr.onerror = (e) => {
 
-                                                // Reset draft status
-                                                draft.status = false;
+                                                // Reset progress
+                                                _.button.progress(this, 0);
 
-                                                // Reset trusted state for submit
-                                                this.dataset.isTrusted = 0;
-                                            };
+                                                // Unlock button
+                                                _.button.lock(this, false)
+
+                                                // Display error message
+                                                _.error({
+                                                    responseText: e.target.responseText,
+                                                    status: xhr.status
+                                                }, 1);
+                                            }
                                             xhr.send(form_data);
 
                                         })
 
-                                        // Submit mail using hotkey (%cmd-enter)
+                                        // Submit mail using hotkey(%cmd-enter)
                                         target.addEventListener('keydown', e => {
                                             let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
                                                 enter = e.keyCode === 13;
-                                            if (meta && enter && !target.classList.contains($$.$.class.events_none)) {
+                                            if (meta && enter) {
                                                 submit.dataset.isTrusted = 1;
                                                 submit.dispatchEvent(new Event('click'));
                                             }
-                                        });
-
-                                        // Temporary to shown not impplemented
-                                        $(target).on('click', '[e-not-implemented]', function(event) {
-                                            event.preventDefault();
-                                            _.notification([$$.$.notification.danger, 'Not yet implemented. Expect in 19.40-beta2.'], 10, "info", 0, 1, ['bottom', 'center'])
                                         });
 
                                     }, 3e2)
@@ -1658,29 +1961,40 @@ const mail = (function() {
                                 language[id] = $form.find(`[name=${id}]`).parent().prev().text();
                             } else if (['pri'].includes(id)) {
                                 let data = {};
-                                $form.find(`[name=${id}] option`).map(function() {
-                                    data[this.innerText.toLowerCase()] = this.innerText
+                                $form.find(`[name=${id}] option`).map(function(ix) {
+                                    data[ix] = this.innerText
                                 });
                                 language[id] = { label: $form.find(`[name=${id}]`).parent().prev().text(), data: data };
                             }
                         });
 
                         // Extend language with more strings
-                        language._attachments = _.language('theme_xhred_global_attachments');
-                        language._send = _.language('theme_xhred_mail_composer_send');
-                        language._schedule = _.language('theme_xhred_mail_composer_schedule');
-                        language._attach = _.language('theme_xhred_mail_composer_attach');
-                        language._insert_link = adjust.modifier(_.language('theme_xhred_editor_tb_link'));
-                        language._insert_picture = _.language('theme_xhred_mail_composer_insert_picture');
-                        language._toggle = _.language('theme_xhred_mail_composer_toggle');
-                        language._discard = _.language('theme_xhred_mail_composer_discard');
-                        language._server_attach = _.language('theme_xhred_mail_composer_server_attach');
-                        language._notifications = _.language('theme_xhred_global_notifications');
-                        language._notifications_dsn = _.language('theme_xhred_mail_composer_notifications_dsn');
-                        language._notifications_del = _.language('theme_xhred_mail_composer_notifications_del');
-                        language._encrypt = _.language('theme_xhred_global_encrypt');
-                        language._options = _.language('theme_xhred_global_options');
-                        language._addrecipients = _.language('theme_xhred_mail_composer_addrecipients');
+                        language._attachments = _.lang('global_attachments');
+                        language._send = _.lang('mail_composer_send');
+                        language._scheduled = _.lang('mail_composer_scheduled')
+                            .replace(/%1/, `<span data-i>${element.type.date()}<span data-t>${_.lang('global_today').toLowerCase()}</span></span>`)
+                            .replace(/%2/, element.type.time());
+                        language._attach = _.lang('mail_composer_attach');
+                        language._insert_link = adjust.modifier(_.lang('editor_tb_link'));
+                        language._insert_picture = _.lang('mail_composer_insert_picture');
+                        language._toggle = _.lang('mail_composer_toggle');
+                        language._discard = _.lang('mail_composer_discard');
+                        language._server_attach = _.lang('mail_composer_server_attach');
+                        language._notifications = _.lang('global_notifications');
+                        language._notifications_dsn = _.lang('mail_composer_notifications_dsn');
+                        language._notifications_del = _.lang('mail_composer_notifications_del');
+                        language._encrypt = _.lang('global_encrypt');
+                        language._options = _.lang('global_options');
+                        language._addrecipients = _.lang('mail_composer_addrecipients');
+                        language._default = _.lang('global_default');
+                        language._font_size = {
+                            small: _.lang('global_small'),
+                            normal: _.lang('global_normal'),
+                            medium: _.lang('global_medium'),
+                            large: _.lang('global_large'),
+                            huge: _.lang('global_huge'),
+                        };
+
 
                         // Check for form selects
                         element.select.from = $form[0].querySelector(`select[name="from"]`);
@@ -1709,7 +2023,9 @@ const mail = (function() {
                             status: {
                                 text: ~~data.hidden.html_edit ? classes.hidden : String(),
                                 html: ~~data.hidden.html_edit ? String() : classes.hidden,
-
+                                module: {
+                                    schedule: _.mavailable('schedule') ? String() : classes.hidden,
+                                }
                             },
                             toggle: {
                                 recipients: {
@@ -1744,8 +2060,11 @@ const mail = (function() {
 
                             // Create compose panel
                             let composers = $(`.${classes.panel.container} .${classes.editor.compose}`).length,
-                                small_window = window.innerWidth < 640,
+                                window_width = window.innerWidth,
+                                small_window_width = window_width < 640,
                                 window_height = window.innerHeight,
+                                small_window_height = window_height < 640,
+                                small_window = small_window_width || small_window_height,
                                 ioffset = -15,
                                 offset = composers ? ioffset * 5 * composers : ioffset,
                                 position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
@@ -1754,17 +2073,18 @@ const mail = (function() {
                                     theme: "dimgrey",
                                     onwindowresize: true,
                                     panelSize: {
-                                        width: (small_window ? '98%' : 600),
-                                        height: (small_window ? '99%' : 600)
+                                        width: (small_window ? window_width + 4 * ioffset : 600),
+                                        height: (small_window ? window_height + 4 * ioffset : 600)
                                     },
-                                    headerTitle: _.language('theme_xhred_mail_new_message'),
+                                    headerTitle: _.lang('mail_new_message'),
                                     content: template.form,
                                     maximizedMargin: {
-                                        top: window_height * 0.03,
-                                        bottom: window_height * 0.03,
-                                        left: window_height * 0.1,
-                                        right: window_height * 0.1,
+                                        top: small_window ? -1 * ioffset : window_height * 0.03,
+                                        bottom: small_window ? -1 * ioffset : window_height * 0.03,
+                                        left: small_window ? -1 * ioffset : window_height * 0.1,
+                                        right: small_window ? -1 * ioffset : window_height * 0.1,
                                     },
+                                    footerToolbar: function() {},
                                     dblclicks: {
                                         title: "maximize"
                                     },
@@ -1783,7 +2103,10 @@ const mail = (function() {
                                         toggle.backdrop(this, 1);
                                     },
                                     callback: function() {
-                                        element.composer(this)
+                                        element.composer(this);
+                                        if (small_window) {
+                                            this.maximize();
+                                        }
                                     },
                                 });
 
@@ -1818,12 +2141,12 @@ const mail = (function() {
          */
         const get = (data) => {
                 loader.start();
-                _.notification('hide-all');
+                // _.notification('hide-all');
                 $.post(_.path.extensions + '/mail/messages.cgi?' + _.plugin.json_to_query(data),
                     function(data) {
                         render(data);
                         loader.end();
-                        _.document_title(0, _.language('theme_xhred_titles_mail'));
+                        _.document_title(0, _.lang('titles_mail'));
                     });
             },
 
@@ -1894,7 +2217,7 @@ const mail = (function() {
                     let selected_count = Object.keys(storage).length;
                     $(this.counter).text(
                         (
-                            selected_count ? (selected_count + ' ' + _.language('theme_xhred_global_selected')) : String()
+                            selected_count ? (selected_count + ' ' + _.lang('global_selected')) : String()
                         )
                         .toLowerCase()
                     );
@@ -2164,7 +2487,7 @@ const mail = (function() {
                         copy = $copy.is(':checked');
 
                     if ($target.is($copy)) {
-                        $submit.text(copy ? _.language('theme_xhred_global_copy') : _.language('theme_xhred_global_move'));
+                        $submit.text(copy ? _.lang('global_copy') : _.lang('global_move'));
                     }
 
                     if ($target.is('button:not(.disabled)')) {
@@ -2358,7 +2681,7 @@ const mail = (function() {
                         id = $row.find('input[value]').val(),
                         state = $(event.target).is($(button.special.starred)) ? 1 : 0,
                         unread = +$row.attr('data-unread'),
-                        text = _.language('theme_xhred_global_' + (state ? 'unstarred' : 'starred') + '');
+                        text = _.lang('global_' + (state ? 'unstarred' : 'starred') + '');
 
                     $row.attr('data-starred', +!state);
 
@@ -2527,7 +2850,7 @@ const mail = (function() {
 
                 let messages_list_available = messages_list.length > 128 ? 1 : 0;
                 if (!messages_list_available && data.searched) {
-                    _.notification([$$.$.notification.type.search, _.language('theme_xhred_mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
+                    _.notification([$$.$.notification.type.search, _.lang('mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
                     return
                 }
 
@@ -2543,7 +2866,7 @@ const mail = (function() {
                         },
                         pagination = {
                             link: (data.pagination_arrow_last || data.pagination_arrow_first || String()),
-                            title: (data.pagination_arrow_last ? _.language('theme_xhred_mail_pagination_last') : (data.pagination_arrow_first ? _.language('theme_xhred_mail_pagination_first') : false))
+                            title: (data.pagination_arrow_last ? _.lang('mail_pagination_last') : (data.pagination_arrow_first ? _.lang('mail_pagination_first') : false))
                         }
 
                     panel
@@ -2562,7 +2885,7 @@ const mail = (function() {
                             ], 3
                         ], $$.create.checkbox({
                             select: 1
-                        }), String(), _.language('theme_xhred_global_select')));
+                        }), String(), _.lang('global_select')));
 
                     let $form_controls = $($$.create.$('layout.controls', {
                         'form-controls': 1
@@ -2572,7 +2895,7 @@ const mail = (function() {
                             if (type === 'buttons') {
                                 $form_controls.append($$.create.$('controls.' + v[0], {
                                     'form-control': v[0]
-                                }, 'span', String(), _.language('theme_xhred_global_' + v[0] + '')));
+                                }, 'span', String(), _.lang('global_' + v[0] + '')));
 
                             } else if (type === 'dropdowns') {
                                 for (let [di, dd] of v.entries()) {
@@ -2586,7 +2909,7 @@ const mail = (function() {
                                         $form_controls.append(
                                             $$.create.dropdown('controls.' + dd + '.dropdown', [
                                                 entries, 2
-                                            ], 0, dd, _.language('theme_xhred_mail_' + dd + '') || _.language('theme_xhred_global_' + dd + ''))
+                                            ], 0, dd, _.lang('mail_' + dd + '') || _.lang('global_' + dd + ''))
 
                                         )
                                     }
@@ -2607,7 +2930,7 @@ const mail = (function() {
                                     data.list.sort.subject,
                                     data.list.sort.spam,
                                 ], 5
-                            ], data.list.sorted, 'sort', _.language('theme_xhred_global_sort')),
+                            ], data.list.sorted, 'sort', _.lang('global_sort')),
                             $$.create.dropdown('controls.search.dropdown', [
                                 [
                                     $$.create.$(0, {
@@ -2615,7 +2938,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'simple'
                                         }, 'span',
                                         (
-                                            $$.create.input('search', _.language('theme_xhred_mail_search_search_mail'), String(), 'text', {
+                                            $$.create.input('search', _.lang('mail_search_search_mail'), String(), 'text', {
                                                 'search-mail': 1
                                             }) +
                                             $$.create.button('layout.button.transparent.link', {
@@ -2628,7 +2951,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', {}, 'span', $$.create.label('search-from', _.language('theme_xhred_mail_search_from'))) +
+                                            $$.create.$('layout.column.3', {}, 'span', $$.create.label('search-from', _.lang('mail_search_from'))) +
                                             $$.create.$('layout.column.9', {}, 'span', $$.create.input('search-from'))
                                         )
                                     ),
@@ -2637,7 +2960,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-to', _.language('theme_xhred_mail_search_to'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-to', _.lang('mail_search_to'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-to'))
                                         )
                                     ),
@@ -2646,7 +2969,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-subject', _.language('theme_xhred_mail_search_subject'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-subject', _.lang('mail_search_subject'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-subject'))
                                         )
                                     ),
@@ -2655,7 +2978,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsin', _.language('theme_xhred_mail_search_has_words'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsin', _.lang('mail_search_has_words'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-wordsin'))
                                         )
                                     ),
@@ -2664,7 +2987,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.language('theme_xhred_mail_search_doesnt_have_words'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.lang('mail_search_doesnt_have_words'))) +
                                             $$.create.$('layout.column.9', 0, 'span', $$.create.input('search-wordsout'))
                                         )
                                     ),
@@ -2673,12 +2996,12 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.advanced]: 1
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-status', _.language('theme_xhred_mail_search_with_status'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-status', _.lang('mail_search_with_status'))) +
                                             $$.create.$('layout.column.9', 0, 'span',
-                                                $$.create.radio(0, 'status', -1, _.language('theme_xhred_mail_search_with_status_any'), 'status_def', 'checked') +
-                                                $$.create.radio(0, 'status', 0, _.language('theme_xhred_mail_search_with_status_unread'), 'status0') +
-                                                $$.create.radio(0, 'status', 1, _.language('theme_xhred_mail_search_with_status_read'), 'status1') +
-                                                $$.create.radio(0, 'status', 2, _.language('theme_xhred_mail_search_with_status_special'), 'status2')
+                                                $$.create.radio(0, 'status', -1, _.lang('mail_search_with_status_any'), 'status_def', 'checked') +
+                                                $$.create.radio(0, 'status', 0, _.lang('mail_search_with_status_unread'), 'status0') +
+                                                $$.create.radio(0, 'status', 1, _.lang('mail_search_with_status_read'), 'status1') +
+                                                $$.create.radio(0, 'status', 2, _.lang('mail_search_with_status_special'), 'status2')
                                             )
                                         )
                                     ),
@@ -2688,7 +3011,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'search-in'
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-folder', _.language('theme_xhred_mail_search_search_in'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-folder', _.lang('mail_search_search_in'))) +
                                             $$.create.$('layout.column.9', 0, 'span', data.form_list.buttons.submit.dropdowns[0][1][0][1])
                                         )
                                     ),
@@ -2698,10 +3021,10 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'limit'
                                         }, 'span',
                                         (
-                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.language('theme_xhred_mail_search_limit_results'))) +
+                                            $$.create.$('layout.column.3', 0, 'span', $$.create.label('search-wordsout', _.lang('mail_search_limit_results'))) +
                                             $$.create.$('layout.column.9', 0, 'span',
-                                                $$.create.radio(0, 'limit_def', 1, _.language('theme_xhred_global_no'), 'limit_def0', 'checked') +
-                                                $$.create.radio(0, 'limit_def', 0, _.language('theme_xhred_mail_search_limit_results_yes') + ' ' + $$.create.input(
+                                                $$.create.radio(0, 'limit_def', 1, _.lang('global_no'), 'limit_def0', 'checked') +
+                                                $$.create.radio(0, 'limit_def', 0, _.lang('mail_search_limit_results_yes') + ' ' + $$.create.input(
                                                     'limit', '', 20, 'number', ['step="20"', 'min="10"']) + ' latest messages', 'limit_def1')
                                             )
                                         )
@@ -2712,7 +3035,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'attach'
                                         }, 'span',
                                         (
-                                            $$.create.checkbox(0, 'attach', 1, _.language('theme_xhred_mail_search_has_attach'))
+                                            $$.create.checkbox(0, 'attach', 1, _.lang('mail_search_has_attach'))
                                         )
                                     ),
                                     $$.create.$(0, {
@@ -2721,7 +3044,7 @@ const mail = (function() {
                                             [$$.$.controls.search.data.form.type]: 'submit'
                                         }, 'span',
                                         (
-                                            $$.create.button('layout.button.primary', false, _.language('theme_xhred_global_search'), 'controls.search.icon')
+                                            $$.create.button('layout.button.primary', false, _.lang('global_search'), 'controls.search.icon')
                                         )
                                     )
                                 ], 5
@@ -2730,15 +3053,15 @@ const mail = (function() {
                                     'controls.search.clear.link', ['href="index.cgi?folder=' + data.searched_folder_index + '"'],
                                     'a',
                                     ($$.create.icon('controls.search.clear.icon') + ' ' + data.searched_message.toLowerCase()),
-                                    _.language('theme_xhred_mail_search_clear')) : String()
-                            ), 'search', _.language('theme_xhred_global_search')),
+                                    _.lang('mail_search_clear')) : String()
+                            ), 'search', _.lang('global_search')),
                             $$.create.$('controls.counter', 0, 'span')
                         )
                         .end().last()
                         .append(
                             $$.create.$('controls.refresh.button', {
                                 'refresh': 1
-                            }, 'span', String(), _.language('theme_xhred_global_refresh')),
+                            }, 'span', String(), _.lang('global_refresh')),
                             $$.create.$('controls.pagination', (pagination.link ? ['href="' + pagination.link + '"', 'data-href="' + pagination.link + '"'] : false), 'a', data.pagination_message, pagination.title),
                             data.pagination_arrow_left,
                             data.pagination_arrow_right
@@ -2768,7 +3091,7 @@ const mail = (function() {
 
                 } else {
                     events();
-                    panel.append(row((data.folder_index === 0 ? _.language('theme_xhred_mail_no_new_mail') : _.language('theme_xhred_mail_no_mail')), 'messages.row.empty'))
+                    panel.append(row((data.folder_index === 0 ? _.lang('mail_no_new_mail') : _.lang('mail_no_mail')), 'messages.row.empty'))
                 }
             }
 
@@ -2874,7 +3197,7 @@ const mail = (function() {
                     $(data.selector.navigation).prepend('<li><div ' + $$.$.tree.container + '></div></li>');
                     $(data.selector.navigation).prepend('<li>' + $$.create.$('layout.button.block.transparent', {
                         'compose': 1
-                    }, 'span', $$.create.icon('controls.compose.icon') + " " + _.language('theme_xhred_mail_new_message')) + '</li>');
+                    }, 'span', $$.create.icon('controls.compose.icon') + " " + _.lang('mail_new_message')) + '</li>');
                 } else {
                     return;
                 }

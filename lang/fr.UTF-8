@@ -119,8 +119,8 @@ settings_hotkey_custom_6=Lien personnalisé <code>6</code>
 settings_hotkey_custom_7=Lien personnalisé <code>7</code>
 settings_hotkey_custom_8=Lien personnalisé <code>8</code>
 settings_hotkey_custom_9=Lien personnalisé <code>9</code>
-settings_navigation_color=Palette de couleur du menu de navigation
-settings_background_color=Palette de couleur du contenu de la page
+settings_navigation_color=Palette de couleurs
+settings_background_color=Palette de couleurs du contenu de la page
 settings_loader_top=Activer le barregraphe de chargement de page en haut de l'écran
 settings_loader_left=Activer le spinner pour le menu de navigation
 settings_right_reload=Charger le contenu par défaut de la page
@@ -262,7 +262,7 @@ settings_brightness_level_navigation_description=Par défaut/Valeur actuelle <co
 settings_contrast_level_navigation=Contraste
 settings_contrast_level_navigation_description=Par défaut/Valeur actuelle <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Palette de couleur de la visionneuse
-settings_cm_editor_palette=Palette de couleur de l'éditeur
+settings_cm_editor_palette=Palette de couleur pour la surbrillance du code
 theme_xhred_filemanager_context_select_all=Tout sélectionner
 theme_xhred_filemanager_context_select_invert=Inverser la sélection
 theme_xhred_filemanager_context_refresh=Rafraîchir
@@ -563,7 +563,7 @@ theme_xhred_global_prev_page=Retour à la page précédente
 theme_xhred_global_help=Aide
 settings_right_soft_updates_page_options_title=Mises à jour
 theme_xhred_git_compare_changes=Comparer les changements
-theme_xhred_filemanager_link_to_clipboard=Le lien symbolique `<strong><em>%value</em></strong>` a été copié dans le presse-papier.
+theme_xhred_filemanager_link_to_clipboard=Le lien symbolique a été copié dans le presse-papier.
 
 
 #18.46
@@ -733,7 +733,7 @@ theme_xhred_filemanager_tree_expand_search=Ouvrir toutes les branches contenant 
 
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Forcer la synchronisation de l'état de la collection d'arrière plan
+theme_xhred_tooltip_side_slider_sync_sysinfo=Forcer le raffraichissement des données d'arrière plan
 theme_xhred_tooltip_side_slider_go_to_dashboard=Aller au tableau de bord
 theme_xhred_tooltip_side_slider_open_favorites_control=Ouvrir le contrôle des favoris
 theme_xhred_tooltip_side_slider_delete_all_notification=Supprimer toutes les notifications
@@ -933,7 +933,7 @@ theme_xhred_shell_aborted=Opération annulée
 #19.32
 theme_xhred_connection_reboot=Redémarrage
 theme_xhred_connection_reboot_details=Le serveur est en cours de redémarrage. Merci de patienter...
-settings_leftmenu_custom_links_description=Il est possible d'avoir des liens supplémentaires injectés dans le menu de navigation.<br><br>Les champs <em>title</em>, <em>link</em> et <em>icon</em> sont requis. Facultativement, vous pouvez définir pour chaque type de connexion un lien en spécifiant le champ <em>level</em>, ayant pour valeur, séparés par des virgules, contenant :<br><br> <em>0</em> - connexion administrateur;<br> <em>1</em> - connexion revendreur ;<br> <em>2</em> - connexion propriétaire du serveur;<br> <em>3</em> - connexion utilisateur;<br> <em>4</em> - connexion propriétaire du système.<br><br>Cela vous obligera à fournir un objet JSON sous forme de chaine de caractères, comme dans l'exemple suivant.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "Serveur DNS BIND", "link": "/bind8", "icon": "server"}]}</pre>
+settings_leftmenu_custom_links_description=Il est possible d'avoir des liens supplémentaires injectés dans le menu de navigation.<br><br>Les champs <em>title</em>, <em>link</em> et <em>icon</em> sont requis. Facultativement, vous pouvez définir pour chaque type de connexion un lien en spécifiant le champ <em>level</em>, ayant pour valeur, séparés par des virgules, contenant :<br><br> <em>0</em> - connexion administrateur;<br> <em>1</em> - connexion revendreur ;<br> <em>2</em> - connexion propriétaire du serveur;<br> <em>3</em> - connexion utilisateur;<br> <em>4</em> - connexion propriétaire du système.<br><br>Cela vous obligera à fournir un objet JSON sous forme de chaine de caractères, comme dans l'exemple suivant.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "Serveur DNS BIND", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 left_favorites_edit=Modifier les favoris
 left_favorites_edit_desc=Cette page peut être utilisée pour modifier manuellement le fichier des favoris du thème. Ceci doit être fait avec prudence car aucune vérification de syntaxe ou de validité ne sera effectuée sur vos modifications.
 theme_xhred_filemanager_records_for_server_pagination=Nombre par défaut d'éléments dans le répertoire pour démarrer une pagination du serveur
@@ -1042,37 +1042,89 @@ theme_global_user_mode=Mode utilisateur
 
 
 #19.40
-theme_xhred_global_attachments=Attachments
-theme_xhred_editor_tb_font=Font
-theme_xhred_editor_tb_size=Size
-theme_xhred_editor_tb_bold=Bold (%cmd+B)
-theme_xhred_editor_tb_italic=Italic (%cmd+I)
-theme_xhred_editor_tb_underline=Underline (%cmd+U)
-theme_xhred_editor_tb_color=Text color
-theme_xhred_editor_tb_background=Text background
-theme_xhred_editor_tb_align=Align
-theme_xhred_editor_tb_list_ordered=Numbered list
-theme_xhred_editor_tb_list_bullet=Bulleted list
-theme_xhred_editor_tb_strike=Strikethrough
-theme_xhred_editor_tb_blockquote=Quote
-theme_xhred_editor_tb_code-block=Insert code
-theme_xhred_editor_tb_link=Insert link (%cmd+K)
-theme_xhred_editor_tb_clean=Remove formatting
-theme_xhred_mail_composer_send=Send
-theme_xhred_mail_composer_schedule=Schedule send
-theme_xhred_mail_composer_attach=Attach file(s)
-theme_xhred_mail_composer_insert_picture=Insert pictures inline
-theme_xhred_mail_composer_toggle=Toggle HTML/plain text mode
-theme_xhred_mail_composer_discard=Discard draft
-theme_xhred_mail_composer_server_attach=Attach file from server
-theme_xhred_mail_composer_addrecipients=Add recipients to addressbook
-theme_xhred_mail_composer_notifications_dsn=Request delivery status
-theme_xhred_mail_composer_notifications_del=Request read receipt
+theme_xhred_global_attachments=Pièces jointes
+theme_xhred_editor_tb_font=Police
+theme_xhred_editor_tb_size=Taille
+theme_xhred_editor_tb_bold=Gras (%cmd+B)
+theme_xhred_editor_tb_italic=Italique (%cmd+I)
+theme_xhred_editor_tb_underline=Souligné (%cmd+U)
+theme_xhred_editor_tb_color=Couleur du texte
+theme_xhred_editor_tb_background=Arrière plan du texte
+theme_xhred_editor_tb_align=Alignement
+theme_xhred_editor_tb_list_ordered=Liste numérotée
+theme_xhred_editor_tb_list_bullet=Puces
+theme_xhred_editor_tb_strike=Barré
+theme_xhred_editor_tb_blockquote=Citer
+theme_xhred_editor_tb_code-block=Inserer du code
+theme_xhred_editor_tb_link=Insérer un lien (%cmd+K)
+theme_xhred_editor_tb_clean=Supprimer le formatage
+theme_xhred_mail_composer_send=Envoyer
+theme_xhred_mail_composer_schedule=Envoi planifié
+theme_xhred_mail_composer_attach=Joindre un/des fichier(s)
+theme_xhred_mail_composer_insert_picture=Insérer des images intégrée
+theme_xhred_mail_composer_toggle=Basculer le mode HTML/Texte brut
+theme_xhred_mail_composer_discard=Abandonner le brouillon
+theme_xhred_mail_composer_server_attach=Joindre un fichier depuis le serveur
+theme_xhred_mail_composer_addrecipients=Ajouter des destinataires au carnet d'adresse
+theme_xhred_mail_composer_notifications_dsn=Demander une notification de l'état de remise
+theme_xhred_mail_composer_notifications_del=Demander un accusé de réception
 theme_xhred_global_options=Options
-theme_xhred_mail_composer_draft_saving=Draft saving...
-theme_xhred_mail_composer_draft_saved=Draft saved
-theme_xhred_mail_composer_server_attach_error_read=Requested file cannot be read or permission denied
-theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached
-theme_xhred_mail_composer_discarded_draft=Draft has been discarded
-theme_xhred_global_undo=Undo
+theme_xhred_mail_composer_draft_saving=Sauvegarde du brouillon...
+theme_xhred_mail_composer_draft_saved=Brouillon sauvegardé
+theme_xhred_mail_composer_server_attach_error_read=Le fichier demandé ne peut être lu ou la permission est refusée
+theme_xhred_mail_composer_server_attach_error_dir=Les répertoires ne peuvent être joints
+theme_xhred_mail_composer_discarded_draft=Le brouillon a été abandonné
+theme_xhred_global_undo=Annuler
+theme_xhred_global_today=Aujourd'hui
+theme_xhred_global_tomorrow=Demain
+theme_xhred_mail_composer_scheduled=Envoyer %1 à %2
+theme_global_core=Cœur
+settings_sysinfo_real_time_stored=Activer l'historique des statistiques
+settings_sysinfo_real_time_stored_description=Si activé, les statistiques en temps réel, précédemment recueillies, seront enregistrées et affichées dans un graphique sur le Tableau de bord
+settings_sysinfo_real_time_stored_length=Durée de l'historique des statistiques
+settings_sysinfo_real_time_stored_length_description=Intervalle pendant lequel l'historique des statistiques est conservé/affiché
+theme_dashboard_accordion_live_stats=Historique des statistiques
+theme_xhred_live_stats_cpu=CPU
+theme_xhred_live_stats_mem=Mémoire
+theme_xhred_live_stats_virt=Swap
+theme_xhred_live_stats_proc=Processus
+theme_xhred_live_stats_disk=E/S disque
+theme_xhred_global_hour=Heure
+theme_xhred_global_hours=Heures
+theme_xhred_title_locale_time_format=Format de l'heure
+theme_xhred_nice_size_PIB=Pio
+theme_xhred_nice_size_TIB=Tio
+theme_xhred_nice_size_GIB=Gio
+theme_xhred_nice_size_MIB=Mio
+theme_xhred_nice_size_kIB=kio
+theme_xhred_live_stats_net=E/S réseau
+theme_xhred_nice_size_PBB=Pbps
+theme_xhred_nice_size_TBB=Tbps
+theme_xhred_nice_size_GBB=Gbps
+theme_xhred_nice_size_MBB=Mbps
+theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=Nombre maximum de lignes pour initier un tri et une recherche dans la table
+theme_xhred_global_rows=Lignes
 
+
+#19.42
+settings_side_slider_blend=Hérité
+
+
+#19.43
+settings_theme_make_date=Activier la conversion date/heure dans le navigateur
+settings_theme_make_date_description=Si désactivé, le format de date/heure du serveur sera utilisé
+
+
+#19.44
+theme_xhred_reload_lang_notification=La langue du thème a été modifiée. La page va être rechargée afin d'appliquer les nouveaux réglages.
+
+
+#19.46
+theme_xhred_global_small=Petit
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Moyen
+theme_xhred_global_large=Grand
+theme_xhred_global_huge=Très grand
+theme_xhred_filemanager_editor_maximized=Maximiser la fenêtre d'édition de fichier à l'ouverture
+settings_sysinfo_remember_accordions=Mémoriser l'état des accordéons utilisés la dernière fois

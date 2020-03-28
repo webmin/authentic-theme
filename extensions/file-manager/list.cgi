@@ -9,6 +9,6 @@ use strict;
 
 use File::Basename;
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 print_content();

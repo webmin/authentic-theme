@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %gconfig, %text, $pragma_no_cache, %theme_text, %theme_config);
 
-require(dirname(__FILE__) . "/authentic-lib.pm");
+do(dirname(__FILE__) . "/authentic-lib.pl");
 
 $pragma_no_cache = 1;
 $ENV{'MINISERV_INTERNAL'} || die "Can only be called by miniserv.pl";
@@ -20,7 +20,7 @@ my $charset = &get_charset();
 &PrintHeader($charset);
 
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-background-style="' . $theme_config{'settings_background_color'} . '" class="session_login">', "\n";
+print '<html data-bgs="' . $theme_config{'settings_background_color'} . '" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";

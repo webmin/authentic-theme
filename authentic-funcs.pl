@@ -5,9 +5,15 @@
 #
 use strict;
 
-our (%in,          %module_text_full, %theme_text,        %theme_config,
-     %gconfig,     %tconfig,          $current_lang_info, $root_directory,
-     $remote_user, $get_user_level,   $webmin_script_type);
+our (%in,
+     %module_text_full,
+     %theme_text,
+     %theme_config,
+     %gconfig,
+     $current_lang_info,
+     $root_directory,
+     $remote_user,
+     $get_user_level);
 
 sub settings
 {
@@ -47,13 +53,77 @@ sub theme_ui_checkbox_local
 
 sub theme_make_date_local
 {
+    if (
+        (
+         (get_env('script_name') =~ /disable_domain/ ||
+          $main::webmin_script_type ne 'web' ||
+          ($main::header_content_type ne "text/html" &&
+              $main::header_content_type ne "application/json")
+         ) &&
+         !$main::theme_allow_make_date
+        ) ||
+        $theme_config{'settings_theme_make_date'} eq 'false')
+    {
+        $main::theme_prevent_make_date = 1;
+        return &make_date(@_);
+    }
     my ($s, $o, $f) = @_;
     my $t = "x-md";
     my $d = "<$t-d>$s";
     ($d .= (string_starts_with($f, 'yyyy') ? ";2" : (string_contains($f, 'mon') ? ";1" : ($f == -1 ? ";-1" : ";0"))) .
      "</$t-d>");
     (!$o && ($d .= " <$t-t>$s</$t-t>"));
-    return ($main::webmin_script_type eq 'web' ? $d : strftime("%c (%Z %z)", localtime($s)));
+    return $d;
+}
+
+sub theme_nice_size_local
+{
+    my ($bytes, $minimal, $decimal) = @_;
+
+    my ($decimal_units, $binary_units) = (1000, 1024);
+    my $bytes_initial = $bytes;
+    my $unit          = $decimal ? $decimal_units : $binary_units;
+
+    my $label = sub {
+        my ($item) = @_;
+        my $text   = 'theme_xhred_nice_size_';
+        my $unit   = ($unit > $decimal_units ? 'I' : undef);
+        my @labels = ($theme_text{"${text}b"},
+                      $theme_text{"${text}k${unit}B"},
+                      $theme_text{"${text}M${unit}B"},
+                      $theme_text{"${text}G${unit}B"},
+                      $theme_text{"${text}T${unit}B"},
+                      $theme_text{"${text}P${unit}B"});
+        return $labels[$item - 1];
+    };
+    my $allowed = sub {
+        my ($item) = @_;
+        return $minimal >= $unit && $minimal >= ($unit**$item);
+    };
+
+    my $do = sub {
+        my ($bytes) = @_;
+        return abs($bytes) >= $unit;
+    };
+
+    my $item = 1;
+    if (&$do($bytes)) {
+        do {
+            $bytes /= $unit;
+            ++$item;
+        } while ((&$do($bytes) || &$allowed($item)) && $item <= 5);
+    } elsif (&$allowed($item)) {
+        $item  = int(log($minimal) / log($unit)) + 1;
+        $bytes = $item == 2 ? $bytes / (defined($unit) ? $unit : $item) : 0;
+    }
+
+    my $factor    = 10**2;
+    my $formatted = int($bytes * $factor) / $factor;
+
+    if ($minimal == -1) {
+        return $formatted . " " . &$label($item);
+    }
+    return '<span data-filesize-bytes="' . $bytes_initial . '">' . ($formatted . " " . &$label($item)) . '</span>';
 }
 
 sub nice_number
@@ -62,6 +132,13 @@ sub nice_number
     $delimiter = " " if (!$delimiter);
     $number =~ s/(\d)(?=(\d{3})+(\D|$))/$1$delimiter/g;
     return $number;
+}
+
+sub get_time_offset
+{
+    my $offset = backquote_command('date +"%z"');
+    $offset =~ s/\n//;
+    return $offset;
 }
 
 sub get_theme_language
@@ -139,7 +216,6 @@ sub get_text_ltr
     } else {
         return 1;
     }
-
 }
 
 sub reverse_string
@@ -197,8 +273,7 @@ sub replace_meta
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv, $d) =
-      ('1.910', '1.760', '6.06', '9.4', '12.12', $tconfig{'beta_updates'});
+    my ($wv, $uv, $vv, $cv, $fv) = ('1.941', '1.791', '6.08', '9.4', '14.01');
 
     if (($p eq "w" && $v < $wv) ||
         ($p eq "u" && $v < $uv) ||
@@ -206,11 +281,9 @@ sub product_version_update
         ($p eq "c" && $v < $cv) ||
         ($p eq "f" && $v < $fv))
     {
-        return (($d eq '1' || ($d ne '1' && $p eq "f")) ?
-                  '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
-                  $theme_text{'theme_xhred_global_outdated'} .
-                  '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>' :
-                  $v);
+        return '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
+          $theme_text{'theme_xhred_global_outdated'} .
+          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>';
     } else {
         return $v;
     }
@@ -308,7 +381,7 @@ sub is_switch_webmin
            (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
              get_product_name() eq 'usermin') ||
            ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/   &&
              ($get_user_level eq '1' || $get_user_level eq '2'))
            ||
            ( $get_user_level ne '3' &&
@@ -342,8 +415,9 @@ sub is_switch_cloudmin
 sub is_switch_webmail
 {
     return (
-            (!$theme_config{'settings_right_default_tab_usermin'} ||
-               $theme_config{'settings_right_default_tab_usermin'} =~ /mail/
+            (
+             !get_theme_temp_data('goto', 1) && (!$theme_config{'settings_right_default_tab_usermin'} ||
+                                                 $theme_config{'settings_right_default_tab_usermin'} =~ /mail/)
             ) ? 1 : 0);
 }
 
@@ -362,6 +436,113 @@ sub format_document_title
     my $title = ($os_type ? "$product $os_type" : $product);
     $title =~ s/\R//g;
     return $title;
+}
+
+sub current_kill_previous
+{
+    my ($keep) = @_;
+    my $pid = current_running(1);
+    if ($pid) {
+        kill(9, $pid);
+    }
+    current_to_pid($keep);
+}
+
+sub current_to_filename
+{
+    my ($filename) = @_;
+    my $salt       = substr(encode_base64($main::session_id), 0, 16);
+    my $user       = $remote_user;
+
+    $filename =~ s/(?|([\w-]+$)|([\w-]+)\.)//;
+    $filename = $1;
+    $filename =~ tr/A-Za-z0-9//cd;
+    $user     =~ tr/A-Za-z0-9//cd;
+    $salt     =~ tr/A-Za-z0-9//cd;
+    return '.theme_' . $salt . '_' . get_product_name() . '_' . $user . '_' . "$filename.pid";
+}
+
+sub current_running
+{
+    my ($clean) = @_;
+    my %pid;
+    my $filename = tempname(current_to_filename($0));
+    read_file($filename, \%pid);
+    $clean && unlink_file($filename);
+    return $pid{'pid'} || 0;
+}
+
+sub current_to_pid
+{
+    my ($keep) = @_;
+    my $script = current_to_filename($0);
+
+    my $tmp_file = ($keep ? tempname($script) : transname($script));
+    my %pid = (pid => $$);
+    write_file($tmp_file, \%pid);
+}
+
+sub network_stats
+{
+    # Get network data from all interfaces
+    my ($type) = @_;
+    my $file = "/proc/net/dev";
+    return () unless -r $file;
+    open(my $dev, $file);
+    my (@titles, %result);
+    while (my $line = <$dev>) {
+        chomp($line);
+        if ($line =~ /^.{6}\|([^\\]+)\|([^\\]+)$/) {
+            my ($rec, $trans) = ($1, $2);
+            @titles = ((map {"r$_"} split(/\s+/, $rec)), (map {"t$_"} split(/\s+/, $trans)));
+        } elsif ($line =~ /^\s*([^:]+):\s*(.*)$/) {
+            my ($id, @data) = ($1, split(/\s+/, $2));
+            $result{$id} = { map {$titles[$_] => $data[$_];} (0 .. $#titles) };
+        }
+    }
+    close($dev);
+
+    # Return current network I/O
+    if ($type eq 'io') {
+        my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
+        my @rs;
+        my $results = \%result;
+
+        # Parse current data
+        foreach (%$results) {
+            $rbytes += $results->{$_}->{'rbytes'};
+            $tbytes += $results->{$_}->{'tbytes'};
+        }
+
+        # Wait for one second and fetch data over again
+        sleep 1, $results = network_stats();
+
+        # Parse data after dalay
+        foreach (%$results) {
+            $rbytes2 += $results->{$_}->{'rbytes'};
+            $tbytes2 += $results->{$_}->{'tbytes'};
+        }
+
+        # Return current network I/O
+        $rbytes = int($rbytes2 - $rbytes);
+        $tbytes = int($tbytes2 - $tbytes);
+
+        @rs = ($rbytes, $tbytes);
+        return serialise_variable(\@rs);
+    }
+    return \%result;
+}
+
+sub acl_system_status
+{
+    my ($show) = @_;
+    my %access = get_module_acl($remote_user, 'system-status');
+    $access{'show'} ||= "";
+    if ($access{'show'} eq '*') {
+        return 1;
+    } else {
+        return indexof($show, split(/\s+/, $access{'show'})) >= 0;
+    }
 }
 
 1;

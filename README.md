@@ -52,7 +52,7 @@ The theme has built-in feature to notify administrative users to install updates
 Go to theme configuration folder under Webmin, create/find _config_ file, open it and add/change the value from _0_ to _1_ for _beta_updates_ option.
 
 ### How do I customize the theme?
-Theme has configurable options. There, as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pm_.
+Theme has configurable options. There, as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pl_.
 
 ### How do I execute shell command using search field?
 Type `!` in search, followed by your command. Example: `!ls /root`. It's required to have _Command Shell_ module available.

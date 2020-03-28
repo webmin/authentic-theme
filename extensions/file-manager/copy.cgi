@@ -12,7 +12,7 @@ use File::Basename;
 
 our (%in, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 open(my $fh, ">", &get_paste_buffer_file()) or die "Error: $!";
 print $fh "copy\n";

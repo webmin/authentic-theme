@@ -12,7 +12,7 @@ use File::Basename;
 
 our (%in, %text, $cwd, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 my %errors;
 
@@ -23,9 +23,10 @@ my @entries_list = get_entries_list();
 # Selected directories and files only
 if ($in{'applyto'} eq '1') {
     foreach my $name (@entries_list) {
+        my $name_ = $name;
         $name = simplify_path($name);
         if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
-            $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+            $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
         }
     }
 }
@@ -33,9 +34,10 @@ if ($in{'applyto'} eq '1') {
 # Selected files and directories and files in selected directories
 if ($in{'applyto'} eq '2') {
     foreach my $name (@entries_list) {
+        my $name_ = $name;
         $name = simplify_path($name);
         if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
-            $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+            $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
         }
         if (-d "$cwd/$name") {
             if (
@@ -43,7 +45,7 @@ if ($in{'applyto'} eq '2') {
                       "find " . quotemeta("$cwd/$name") . " -maxdepth 1 -type f -exec chmod " . quotemeta($perms) . " {} \\;"
                 ) != 0)
             {
-                $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+                $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
         }
     }
@@ -52,9 +54,10 @@ if ($in{'applyto'} eq '2') {
 # All (recursive)
 if ($in{'applyto'} eq '3') {
     foreach my $name (@entries_list) {
+        my $name_ = $name;
         $name = simplify_path($name);
         if (system_logged("chmod -R " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
-            $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+            $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
         }
     }
 }
@@ -62,16 +65,17 @@ if ($in{'applyto'} eq '3') {
 # Selected files and files under selected directories and subdirectories
 if ($in{'applyto'} eq '4') {
     foreach my $name (@entries_list) {
+        my $name_ = $name;
         $name = simplify_path($name);
         if (-f "$cwd/$name") {
             if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
-                $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+                $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
         } else {
             if (system_logged("find " . quotemeta("$cwd/$name") . " -type f -exec chmod " . quotemeta($perms) . " {} \\;")
                 != 0)
             {
-                $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+                $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
         }
     }
@@ -82,12 +86,12 @@ if ($in{'applyto'} eq '5') {
     foreach my $name (@entries_list) {
         if (-d "$cwd/$name") {
             if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
-                $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+                $errors{ $name } = lc("$text{'error_chmod'}: $?");
             }
             if (system_logged("find " . quotemeta("$cwd/$name") . " -type d -exec chmod " . quotemeta($perms) . " {} \\;")
                 != 0)
             {
-                $errors{ urlize(html_escape($name)) } = lc("$text{'error_chmod'}: $?");
+                $errors{ $name } = lc("$text{'error_chmod'}: $?");
             }
         }
     }

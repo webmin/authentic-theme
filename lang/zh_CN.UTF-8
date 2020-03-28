@@ -139,7 +139,7 @@ settings_hotkey_custom_7=自定义链接 <code>7</code>
 settings_hotkey_custom_8=自定义链接 <code>8</code>
 settings_hotkey_custom_9=自定义链接 <code>9</code>
 
-settings_navigation_color=导航菜单调色板
+settings_navigation_color=Color palette
 settings_background_color=内容页面调色板
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
@@ -297,7 +297,7 @@ settings_contrast_level_navigation=对比度滤镜
 settings_contrast_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_cm_view_palette=查看器调色板
-settings_cm_editor_palette=编辑器调色板
+settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=全选
 theme_xhred_filemanager_context_select_invert=反向选择
@@ -626,7 +626,7 @@ theme_xhred_global_prev_page=上一页
 theme_xhred_global_help=帮助
 settings_right_soft_updates_page_options_title=软件更新
 theme_xhred_git_compare_changes=比较变动
-theme_xhred_filemanager_link_to_clipboard=符号链接的名称“<strong><em>%value</em></strong>”已复制到剪贴板。
+theme_xhred_filemanager_link_to_clipboard=符号链接的名称已复制到剪贴板。
 
 
 #18.46
@@ -1017,7 +1017,7 @@ theme_xhred_shell_aborted=Operation aborted
 #19.32
 theme_xhred_connection_reboot=Rebooting
 theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
-settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}]}</pre>
+settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 left_favorites_edit=Edit Favorites
 left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
 theme_xhred_filemanager_records_for_server_pagination=Default number of items in directory to initiate server pagination
@@ -1146,7 +1146,7 @@ theme_xhred_editor_tb_code-block=Insert code
 theme_xhred_editor_tb_link=Insert link (%cmd+K)
 theme_xhred_editor_tb_clean=Remove formatting
 theme_xhred_mail_composer_send=Send
-theme_xhred_mail_composer_schedule=Schedule send
+theme_xhred_mail_composer_schedule=Schedule
 theme_xhred_mail_composer_attach=Attach file(s)
 theme_xhred_mail_composer_insert_picture=Insert pictures inline
 theme_xhred_mail_composer_toggle=Toggle HTML/plain text mode
@@ -1163,3 +1163,56 @@ theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached
 theme_xhred_mail_composer_discarded_draft=Draft has been discarded
 theme_xhred_global_undo=Undo
 
+theme_xhred_global_today=Today
+theme_xhred_global_tomorrow=Tomorrow
+theme_xhred_mail_composer_scheduled=Send %1 at %2
+theme_global_core=Core
+settings_sysinfo_real_time_stored=Enable stats history
+settings_sysinfo_real_time_stored_description=If enabled, previously gathered stats will be stored, and displayed in a graph on the Dashboard
+settings_sysinfo_real_time_stored_length=Stats history duration
+settings_sysinfo_real_time_stored_length_description=The time during which stats history is stored
+theme_dashboard_accordion_live_stats=Stats History
+theme_xhred_live_stats_cpu=CPU
+theme_xhred_live_stats_mem=Memory
+theme_xhred_live_stats_virt=Swap
+theme_xhred_live_stats_proc=Process
+theme_xhred_live_stats_disk=Disk I/O
+theme_xhred_global_hour=Hour
+theme_xhred_global_hours=Hours
+theme_xhred_title_locale_time_format=Time format
+theme_xhred_nice_size_PIB=PiB
+theme_xhred_nice_size_TIB=TiB
+theme_xhred_nice_size_GIB=GiB
+theme_xhred_nice_size_MIB=MiB
+theme_xhred_nice_size_kIB=KiB
+theme_xhred_live_stats_net=Network I/O
+theme_xhred_nice_size_PBB=Pbps
+theme_xhred_nice_size_TBB=Tbps
+theme_xhred_nice_size_GBB=Gbps
+theme_xhred_nice_size_MBB=Mbps
+theme_xhred_nice_size_kBB=Kbps
+settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
+theme_xhred_global_rows=Rows
+
+
+#19.42
+settings_side_slider_blend=Inherit
+
+
+#19.43
+settings_theme_make_date=Enable date/time conversion in browser
+settings_theme_make_date_description=If disabled, date/time format provided by the server will be used
+
+
+#19.44
+theme_xhred_reload_lang_notification=Theme language has been changed. The page will be reloaded, to apply new settings.
+
+
+#19.46
+theme_xhred_global_small=Small
+theme_xhred_global_normal=Normal
+theme_xhred_global_medium=Medium
+theme_xhred_global_large=Large
+theme_xhred_global_huge=Huge
+theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
+settings_sysinfo_remember_accordions=Save accordions state used last time

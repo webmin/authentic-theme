@@ -11,7 +11,7 @@ use File::Basename;
 
 our (%in, %request_uri, $cwd, $base, $path);
 
-require(dirname(__FILE__) . '/file-manager-lib.pm');
+do(dirname(__FILE__) . '/file-manager-lib.pl');
 
 open(my $fh, "<" . &get_paste_buffer_file()) or die "Error: $!";
 my @arr = <$fh>;

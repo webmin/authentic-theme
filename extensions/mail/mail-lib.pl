@@ -53,8 +53,8 @@ sub get_request_uri
 
 sub get_libs
 {
-    require(dirname(__FILE__) . '/../../authentic-funcs.pm');
-    require(get_env('document_root') . '/' . get_module() . '/' . get_module() . '-lib.pl');
+    do(dirname(__FILE__) . '/../../authentic-funcs.pl');
+    do(get_env('document_root') . '/' . get_module() . '/' . get_module() . '-lib.pl');
 
     ReadParse();
 }
@@ -617,6 +617,7 @@ sub messages_list
         if ($sorted eq 'size') {
             $scolumn .= ui_span_row('row brow brow-size') . nice_size($m->{'size'}, 1024) . ui_span_row();
         } else {
+            $main::theme_allow_make_date = 1;
             $scolumn .=
               ui_span_row('row mrow mrow-date') . theme_make_date_local($m->{'header'}->{'date'}, 1, -1) . ui_span_row();
         }
@@ -808,24 +809,5 @@ sub ui_table_tbody_end
 {
     return '</tbody></table>';
 }
-
-# sub print_hash
-# {
-#     print "Content-type: text/html\n\n";
-#     my (%d) = @_;
-#
-#     use Data::Dumper;
-#     print Dumper(\%d);
-# }
-#
-# sub print_array
-# {
-#     print "Content-type: text/html\n\n";
-#     my ($____v) = @_;
-#     use Data::Dumper;
-#     print '<pre style="color: red">';
-#     print Dumper $____v;
-#     print '</pre>';
-# }
 
 1;
