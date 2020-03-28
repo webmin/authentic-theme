@@ -139,7 +139,7 @@ settings_hotkey_custom_7=カスタムリンク <code>7</code>
 settings_hotkey_custom_8=カスタムリンク <code>8</code>
 settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
-settings_navigation_color=Color palette
+settings_navigation_color=カラーパレット
 settings_background_color=コンテンツページのカラーパレット
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
@@ -297,7 +297,7 @@ settings_contrast_level_navigation=コントラストフィルタ
 settings_contrast_level_navigation_description=Defdqmault/電流値 <code>1</code> /<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_cm_view_palette=ビューアーのカラーパレット
-settings_cm_editor_palette=Code highlight color palette
+settings_cm_editor_palette=コードハイライトカラーパレット
 
 theme_xhred_filemanager_context_select_all=すべて選択
 theme_xhred_filemanager_context_select_invert=選択の反転
@@ -1145,7 +1145,7 @@ theme_xhred_editor_tb_code-block=コードを挿入
 theme_xhred_editor_tb_link=リンクを挿入 (%cmd+K)
 theme_xhred_editor_tb_clean=フォーマットを削除
 theme_xhred_mail_composer_send=送信
-theme_xhred_mail_composer_schedule=スケジュ
+theme_xhred_mail_composer_schedule=スケジュール送信
 theme_xhred_mail_composer_attach=添付ファイル
 theme_xhred_mail_composer_insert_picture=写真をインラインで挿入
 theme_xhred_mail_composer_toggle=HTML/プレーンテキストモードの切り替え
@@ -1162,23 +1162,23 @@ theme_xhred_mail_composer_server_attach_error_dir=ディレクトリは添付で
 theme_xhred_mail_composer_discarded_draft=下書きは破棄されました
 theme_xhred_global_undo=元に戻す
 
-theme_xhred_global_today=Today
-theme_xhred_global_tomorrow=Tomorrow
-theme_xhred_mail_composer_scheduled=Send %1 at %2
-theme_global_core=Core
-settings_sysinfo_real_time_stored=Enable stats history
-settings_sysinfo_real_time_stored_description=If enabled, previously gathered stats will be stored, and displayed in a graph on the Dashboard
-settings_sysinfo_real_time_stored_length=Stats history duration
-settings_sysinfo_real_time_stored_length_description=The time during which stats history is stored
-theme_dashboard_accordion_live_stats=Stats History
+theme_xhred_global_today=今日
+theme_xhred_global_tomorrow=明日
+theme_xhred_mail_composer_scheduled=%2で%1を送信
+theme_global_core=コア
+settings_sysinfo_real_time_stored=統計履歴を有効にする
+settings_sysinfo_real_time_stored_description=有効にすると、以前に収集された統計が保存され、ダッシュボードのグラフに表示されます
+settings_sysinfo_real_time_stored_length=統計履歴期間
+settings_sysinfo_real_time_stored_length_description=統計履歴が保存される時間
+theme_dashboard_accordion_live_stats=統計履歴
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memory
 theme_xhred_live_stats_virt=Swap
 theme_xhred_live_stats_proc=Process
 theme_xhred_live_stats_disk=Disk I/O
-theme_xhred_global_hour=Hour
-theme_xhred_global_hours=Hours
-theme_xhred_title_locale_time_format=Time format
+theme_xhred_global_hour=時
+theme_xhred_global_hours=時間
+theme_xhred_title_locale_time_format=時間形式
 theme_xhred_nice_size_PIB=PiB
 theme_xhred_nice_size_TIB=TiB
 theme_xhred_nice_size_GIB=GiB
@@ -1190,28 +1190,28 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximum number of rows to initialize table sorting and search
-theme_xhred_global_rows=Rows
+settings_table_init_datatables=テーブルのソートと検索を初期化する最大行数
+theme_xhred_global_rows=行
 
 
 #19.42
-settings_side_slider_blend=Inherit
+settings_side_slider_blend=継承する
 
 
 #19.43
-settings_theme_make_date=Enable date/time conversion in browser
-settings_theme_make_date_description=If disabled, date/time format provided by the server will be used
+settings_theme_make_date=ブラウザで日付/時刻変換を有効にする
+settings_theme_make_date_description=無効にすると、サーバーが提供する日付/時刻形式が使用されます
 
 
 #19.44
-theme_xhred_reload_lang_notification=Theme language has been changed. The page will be reloaded, to apply new settings.
+theme_xhred_reload_lang_notification=テーマ言語が変更されました。 新しい設定を適用するために、ページがリロードされます。
 
 
 #19.46
-theme_xhred_global_small=Small
-theme_xhred_global_normal=Normal
-theme_xhred_global_medium=Medium
-theme_xhred_global_large=Large
-theme_xhred_global_huge=Huge
-theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
-settings_sysinfo_remember_accordions=Save accordions state used last time
+theme_xhred_global_small=最小
+theme_xhred_global_normal=普通
+theme_xhred_global_medium=中
+theme_xhred_global_large=大
+theme_xhred_global_huge=最大
+theme_xhred_filemanager_editor_maximized=起動時にエディターパネルを最大化
+settings_sysinfo_remember_accordions=前回使用したアコーディオンの状態を保存する
