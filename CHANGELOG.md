@@ -1,5 +1,27 @@
 ## Changelog
 
+#### Version 19.47-RC1 (March 28, 2020)
+* Add ability to recognize downloads in submitted form
+* Add new time/date display type in mail listing
+* Add better protection against re-submitting modifier pages on reload
+* Add ability to use port and target in custom links [#904](https://github.com/authentic-theme/authentic-theme/issues/904#issuecomment-595632748)
+* Add Italian, Swedish, French and Japanese language translation updates
+* Fix missing borders in high-contrast mode
+* Fix not to style links at Dashboard in alerts
+* Fix error message line height and don't convert links to buttons on error pages
+* Fix to prevent editor panel go over dropdowns
+* Fix to force disable spellcheck for new mail composer
+* Fiх to enlarge input fields for locale language and format [#1456](https://github.com/authentic-theme/authentic-theme/issues/1456)
+* Fix to use "var" dir for storing theme data (like stats)
+* Fix edit scheduled backup/another destination UI bugs in Virtualmin
+* Fix broken tree-view in extra admin mode in Virtualmin
+* Fix blur event for new mail composer in Usermin
+* Fix to add missing icon for change password nav menu link
+* Fix to respect user option for displaying hostname on Dashboard
+* Fix to print DS record each on new line on Setup DNSSEC Key page in BIND module
+* Fix system monitors icons alignment on Dashboard
+* Fiх reloading and redirects when webprefix is used [webmin/webmin#1195](https://github.com/webmin/webmin/issues/1195)
+
 #### Version 19.46 (February 04, 2020)
 * Set royal blue color palette as default
 * Add recipient (from address book) autocomplete for new mail composer in Usermin
@@ -17,7 +39,6 @@
 * Fix fatal fail on invalid/incomplete regex passed in System Logs/View Logfile
 * Fix users in jailed mode in Usermin for File Manager
 * Fix tree depth control for multiple modes in File Manager
-
 
 #### Version 19.45 (January 14, 2020)
 * Add stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
