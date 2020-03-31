@@ -1,11 +1,13 @@
 ## Changelog
 
-#### Version 19.47-RC1 (March 28, 2020)
+#### Version 19.47-RC2 (March 31, 2020)
 * Add ability to recognize downloads in submitted form
 * Add new time/date display type in mail listing
 * Add better protection against re-submitting modifier pages on reload
 * Add ability to use port and target in custom links [#904](https://github.com/authentic-theme/authentic-theme/issues/904#issuecomment-595632748)
+* Add ability to keep autocomplete search on page load, speeding navigation
 * Add Italian, Swedish, French and Japanese language translation updates
+* Fix top navigation in Running Processes for other languages
 * Fix missing borders in high-contrast mode
 * Fix not to style links at Dashboard in alerts
 * Fix error message line height and don't convert links to buttons on error pages
