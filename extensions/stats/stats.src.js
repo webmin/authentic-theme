@@ -218,17 +218,20 @@ const stats = {
                         // Update series if chart already exist
                         if (tg[0] && tg[0].textContent) {
                             if (cached === 1) {
-                                let qf = 1e3,
-                                    lf = parseInt(this.extend.stored_length() * qf);
-                                if (lf < qf / 10 || lf > qf * 6) {
-                                    lf = qf;
+                                let lf = parseInt(this.extend.stored_length());
+                                if (lf < 600 || lf > 86400) {
+                                    lf = 600;
                                 }
                                 let tdata = sr,
                                     cdata = this[`chart_${type}`].data.series,
+                                    cdata_start,
+                                    cdata_end,
                                     cdata_ready = new Promise((resolve) => {
                                         tdata.forEach(function(d, i, a) {
+                                            cdata_start = cdata[i].data[0].x || cdata[i].data[0].data.x;
+                                            cdata_end = cdata[i].data[cdata[i].data.length - 1].x || cdata[i].data[cdata[i].data.length - 1].data.x;
                                             cdata[i].data.push(d.data[0]);
-                                            if (cdata[i].data.length > lf) {
+                                            if (cdata_end - cdata_start > lf) {
                                                 cdata[i].data.shift();
                                             }
                                             if (i === a.length - 1) {

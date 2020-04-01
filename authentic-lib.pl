@@ -2519,7 +2519,7 @@ sub theme_settings
             'settings_sysinfo_real_time_stored',
             'true',
             'settings_sysinfo_real_time_stored_length',
-            '0.1',
+            '600',
             'settings_sysinfo_real_time_timeout',
             '1000',
 
@@ -2924,8 +2924,7 @@ sub theme_settings
                  $k eq 'settings_brightness_level_navigation' ||
                  $k eq 'settings_contrast_level_navigation'   ||
                  $k eq 'settings_leftmenu_width'              ||
-                 $k eq 'settings_table_init_datatables'       ||
-                 $k eq 'settings_sysinfo_real_time_stored_length')
+                 $k eq 'settings_table_init_datatables')
         {
 
             my $range_max = '1';
@@ -2961,11 +2960,6 @@ sub theme_settings
                 $range_min  = '500';
                 $range_max  = '50000';
                 $range_step = '500';
-                $iwidth     = '30';
-            } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
-                $range_min  = '0.1';
-                $range_max  = '6';
-                $range_step = '0.1';
                 $iwidth     = '30';
             }
             $v = '
@@ -3096,6 +3090,34 @@ sub theme_settings
             $v = settings_get_select_background_color($v, $k);
         } elsif ($k eq 'settings_cm_editor_palette') {
             $v = settings_get_select_editor_color($v, $k);
+        } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
+            $v = '<select class="ui_select" name="' . $k . '">
+
+                    <option value="600"'
+              . ($v eq '600' && ' selected') . '>10 ' . lc($theme_text{'theme_xhred_global_minutes'}) . '</option>
+
+                    <option value="1800"'
+              . ($v eq '1800' && ' selected') . '>30 ' . lc($theme_text{'theme_xhred_global_minutes'}) . '</option>
+
+              <option value="3600"'
+              . ($v eq '3600' && ' selected') . '>1 ' . lc($theme_text{'theme_xhred_global_hour'}) . '</option>
+
+              <option value="7200"'
+              . ($v eq '7200' && ' selected') . '>2 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
+
+              <option value="10800"'
+              . ($v eq '10800' && ' selected') . '>3 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
+
+              <option value="21600"'
+              . ($v eq '21600' && ' selected') . '>6 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
+
+              <option value="43200"'
+              . ($v eq '43200' && ' selected') . '>12 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
+
+              <option value="86400"'
+              . ($v eq '86400' && ' selected') . '>24 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
+
+                </select>';
         } elsif ($k eq 'settings_side_slider_palette') {
             $v = '<select class="ui_select" name="' . $k . '">
 

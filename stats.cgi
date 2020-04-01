@@ -93,37 +93,11 @@ my $ddata  = sub {
             y => $d
          });
 
-    # Store only values that correspond with user option
-    my $qf = 3600;
-    my $fr = $qf / 30;
-    my $tf = 0.1;
-    my $rn = 0;
-    my $sl = &$option('stored_length', 1) || $tf;
-
-    # Treat rounded values in UI accordingly
-    if ($sl < 1 && $sl != $tf * 5) {
-        if ($sl eq ($tf * 2)) {
-            $sl = $tf;
-        } elsif ($sl eq ($tf * 3)) {
-            $sl = $tf * 4;
-        } elsif ($sl eq ($tf * 7)) {
-            $sl = $tf * 6;
-        } elsif ($sl eq ($tf * 9)) {
-            $sl = $tf * 8;
-        }
-        if ($sl eq $tf || $sl eq $tf * 6) {
-            $rn = 2 * $fr;
-        } elsif ($sl eq $tf * 4) {
-            $rn = -2 * $fr;
-        } elsif ($sl eq $tf * 8) {
-            $rn = $fr;
-        }
-    }
+    my $n = &$option('stored_length', 1) || 600;
 
     # User option sanity check
-    my $n = int($sl * $qf) + $rn;
-    if ($n < $qf / 10 || $n > $qf * 6) {
-        $n = $qf;
+    if ($n < 600 || $n > 86400) {
+        $n = 600;
     }
 
     # Trim dataset
