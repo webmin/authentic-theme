@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.47-RC3 (April 01, 2020)
+#### Version 19.47-RC4 (April 03, 2020)
 * Add ability to recognize downloads in submitted form
 * Add new time/date display type in mail listing
 * Add better protection against re-submitting modifier pages on reload
 * Add ability to use port and target in custom links [#904](https://github.com/authentic-theme/authentic-theme/issues/904#issuecomment-595632748)
 * Add ability to keep autocomplete search on page load, speeding navigation
+* Add password meter when editing databases passwords in Virtualmin
 * Add Italian, Swedish, French and Japanese language translation updates
 * Fix stats history duration inaccuracy [#1464](https://github.com/authentic-theme/authentic-theme/issues/1464)
 * Fix top navigation in Running Processes for other languages
@@ -24,6 +25,7 @@
 * Fix to print DS record each on new line on Setup DNSSEC Key page in BIND module
 * Fix system monitors icons alignment on Dashboard
 * Fiх reloading and redirects when webprefix is used [webmin/webmin#1195](https://github.com/webmin/webmin/issues/1195)
+* Fix displaying password meter while typing
 
 #### Version 19.46 (February 04, 2020)
 * Set royal blue color palette as default
