@@ -1,26 +1,27 @@
 ## Changelog
 
-#### Version 19.47-RC4 (April 03, 2020)
+#### Version 19.47 (April 06, 2020)
 * Add ability to recognize downloads in submitted form
-* Add new time/date display type in mail listing
+* Add new date/time display format type in mail listing in Usermin
 * Add better protection against re-submitting modifier pages on reload
 * Add ability to use port and target in custom links [#904](https://github.com/authentic-theme/authentic-theme/issues/904#issuecomment-595632748)
 * Add ability to keep autocomplete search on page load, speeding navigation
 * Add password meter when editing databases passwords in Virtualmin
+* Add ability to copy read-only textarea content to clipboard
 * Add Italian, Swedish, French and Japanese language translation updates
-* Fix stats history duration inaccuracy [#1464](https://github.com/authentic-theme/authentic-theme/issues/1464)
-* Fix top navigation in Running Processes for other languages
+* Fiх stats history duration inaccuracy [#1464](https://github.com/authentic-theme/authentic-theme/issues/1464)
+* Fix top navigation in Running Processes module for other languages
 * Fix missing borders in high-contrast mode
 * Fix not to style links at Dashboard in alerts
 * Fix error message line height and don't convert links to buttons on error pages
 * Fix to prevent editor panel go over dropdowns
 * Fix to force disable spellcheck for new mail composer
 * Fiх to enlarge input fields for locale language and format [#1456](https://github.com/authentic-theme/authentic-theme/issues/1456)
-* Fix to use "var" dir for storing theme data (like stats)
+* Fix to use "/var/" dir for storing temporary theme data (like stats)
 * Fix edit scheduled backup/another destination UI bugs in Virtualmin
 * Fix broken tree-view in extra admin mode in Virtualmin
 * Fix blur event for new mail composer in Usermin
-* Fix to add missing icon for change password nav menu link
+* Fix to add missing icon in change password link in navigation menu
 * Fix to respect user option for displaying hostname on Dashboard
 * Fix to print DS record each on new line on Setup DNSSEC Key page in BIND module
 * Fix system monitors icons alignment on Dashboard
@@ -44,6 +45,8 @@
 * Fix fatal fail on invalid/incomplete regex passed in System Logs/View Logfile
 * Fix users in jailed mode in Usermin for File Manager
 * Fix tree depth control for multiple modes in File Manager
+
+<!--- separator --->
 
 #### Version 19.45 (January 14, 2020)
 * Add stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
@@ -125,8 +128,6 @@
 * Fix stack order for popovers
 * Fix issues with dropdowns in latest versions of Chrome
 * Fix other issues and perform many other optimizations
-
-<!--- separator --->
 
 #### Version 19.39 (August 18, 2019)
 * Add ability to restore initial sorting for tables [#1386](https://github.com/authentic-theme/authentic-theme/issues/1386)
