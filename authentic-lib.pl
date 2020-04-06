@@ -3672,8 +3672,10 @@ sub init
     # Don't log XHR requests
     my %tmp_miniserv;
     get_miniserv_config(\%tmp_miniserv);
-    if (!$tmp_miniserv{'nolog'}) {
-        $tmp_miniserv{'nolog'} = ".*xhr.*";
+    my $nolog = quotemeta('/stats.cgi?xhr-stats=general');
+    $nolog =~ s/\\ / /g;
+    if ($tmp_miniserv{'nolog'} ne $nolog) {
+        $tmp_miniserv{'nolog'} = $nolog;
         put_miniserv_config(\%tmp_miniserv);
         reload_miniserv();
     }
