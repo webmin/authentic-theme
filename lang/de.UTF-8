@@ -1209,3 +1209,7 @@ theme_xhred_global_large=Groß
 theme_xhred_global_huge=Sehr groß
 theme_xhred_filemanager_editor_maximized=Maximiere Editor Fenster beim Start
 settings_sysinfo_remember_accordions=Speichere letzten Zustand des Akkordeons
+
+
+#19.47
+theme_xhred_textarea_to_clipboard=Selected textarea content has been successfully copied to clipboard

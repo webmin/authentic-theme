@@ -1128,3 +1128,7 @@ theme_xhred_global_large=Grand
 theme_xhred_global_huge=Très grand
 theme_xhred_filemanager_editor_maximized=Maximiser la fenêtre d'édition de fichier à l'ouverture
 settings_sysinfo_remember_accordions=Mémoriser l'état des accordéons utilisés la dernière fois
+
+
+#19.47
+theme_xhred_textarea_to_clipboard=Selected textarea content has been successfully copied to clipboard

@@ -1215,3 +1215,7 @@ theme_xhred_global_large=大
 theme_xhred_global_huge=最大
 theme_xhred_filemanager_editor_maximized=起動時にエディターパネルを最大化
 settings_sysinfo_remember_accordions=前回使用したアコーディオンの状態を保存する
+
+
+#19.47
+theme_xhred_textarea_to_clipboard=Selected textarea content has been successfully copied to clipboard

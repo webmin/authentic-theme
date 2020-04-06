@@ -1215,3 +1215,7 @@ theme_xhred_global_large=Stor
 theme_xhred_global_huge=Enorm
 theme_xhred_filemanager_editor_maximized=Maximera redigeringspanelen vid start
 settings_sysinfo_remember_accordions=Kom ihåg om menyerna var utvidgade eller ihop dragna sen du sist var där
+
+
+#19.47
+theme_xhred_textarea_to_clipboard=Selected textarea content has been successfully copied to clipboard

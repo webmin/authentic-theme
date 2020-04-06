@@ -1219,3 +1219,7 @@ theme_xhred_global_large=Large
 theme_xhred_global_huge=Huge
 theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
 settings_sysinfo_remember_accordions=Save accordions state used last time
+
+
+#19.47
+theme_xhred_textarea_to_clipboard=Selected textarea content has been successfully copied to clipboard
