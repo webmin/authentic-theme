@@ -999,6 +999,9 @@ sub get_button_style
              string_contains($keys, "massdomains_enaok"))
     {
         $icon = "toggle-switch  fa-1_25x";
+        if (string_contains($keys, "index_enable")) {
+            $class = 'success';
+        }
     } elsif (string_contains($keys, "shutdown")) {
         $icon = "power-off";
     } elsif (string_contains($keys, "index_shut")) {
@@ -1113,6 +1116,9 @@ sub get_button_style
              string_contains($keys, "disable"))
     {
         $icon = "toggle-switch-off fa-1_25x";
+        if (string_contains($keys, "index_disable")) {
+            $class = 'danger';
+        }
     } elsif (string_contains($keys, "index_global") ||
              string_contains($keys, "umass_ok")    ||
              string_contains($keys, "vars_edit")   ||
