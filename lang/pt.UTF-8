@@ -1222,3 +1222,7 @@ settings_sysinfo_remember_accordions=Save accordions state used last time
 
 #19.47
 theme_xhred_textarea_to_clipboard=Selected textarea content has been successfully copied to clipboard
+
+
+#19.48
+theme_xhred_global_alias=Alias

@@ -1219,3 +1219,7 @@ settings_sysinfo_remember_accordions=Kom ihåg om menyerna var utvidgade eller i
 
 #19.47
 theme_xhred_textarea_to_clipboard=Det markerade innehållet i textområdet har kopierats till urklippet
+
+
+#19.48
+theme_xhred_global_alias=Alias

@@ -861,7 +861,7 @@ const mail = (function() {
             xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
             xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
             xtarget.schedule = `${path}/schedule/save.cgi`;
-            xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0`;
+            xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0&incgr=1`;
 
             if (typeof form === 'object' && form.length) {
                 form = $(form).serialize() + '&reply=1';
@@ -1637,12 +1637,16 @@ const mail = (function() {
 
                                                     // Initialize autocomplete on received data,
                                                     // if there is something in user's address book
-                                                    let b = d.match(/"(.*)","(.*)"/gm);
+                                                    let a = _.lang('theme_xhred_global_alias'),
+                                                        b = d.match(/"(.*)","(.*)"/gm);
                                                     if (b) {
                                                         let book = [];
                                                         b.map(function(en) {
-                                                            let em = en.match(/"(.*)","(.*)"/);
-                                                            if (em) {
+                                                            let gr = en.match(/"-","(.*)"/),
+                                                                em = en.match(/"(.*)","(.*)"/);
+                                                            if (gr) {
+                                                                book.push(a + " <" + em[2] + ">");
+                                                            } else if (em) {
                                                                 book.push(em[2] + " <" + em[1] + ">");
                                                             }
                                                         });
@@ -1669,7 +1673,7 @@ const mail = (function() {
                                                             if (contact) {
                                                                 email = contact[1];
                                                             }
-                                                            if (event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
+                                                            if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
                                                                 $(event.target.previousSibling).find('.recipient').last().addClass('error')
                                                             }
 
@@ -1681,8 +1685,8 @@ const mail = (function() {
                                                     // Imitate tab keypress to generate the tag as well
                                                     tags[0].$input.on('keydown blur', function(event) {
                                                         let value = this.value;
-                                                        if (event.keyCode === 9 || event.type === 'blur') {
-                                                            
+                                                        if (event.keyCode === 9 || (event.type === 'blur' && event.relatedTarget)) {
+
                                                             // Dispatch event to complete the tag
                                                             $(this).trigger(_.event.generate('keypress', 32));
 
