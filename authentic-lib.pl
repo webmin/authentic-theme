@@ -736,8 +736,6 @@ sub print_left_menu
             }
 
             if ($item->{'type'} eq 'item' &&
-                $link ne add_webprefix("/virtual-server/edit_lang.cgi") &&
-                $link ne add_webprefix("/virtual-server/edit_lang.cgi") &&
                 $link ne add_webprefix("/virtual-server/pro/history.cgi"))
             {
 
@@ -2162,15 +2160,15 @@ sub theme_var_dir
     } else {
         chmod(0700, $theme_var_dir);
     }
-    return $theme_var_dir;
+    return ($theme_var_dir, $product_var);
 }
 
 sub clear_theme_cache
 {
-    my ($root)        = @_;
-    my $salt          = substr(encode_base64($main::session_id), 0, 16);
-    my $theme_var_dir = theme_var_dir();
-    my $tmp_dir       = tempname_dir();
+    my ($root)  = @_;
+    my $salt    = substr(encode_base64($main::session_id), 0, 16);
+    my $tmp_dir = tempname_dir();
+    my ($theme_var_dir, $product_var) = theme_var_dir();
 
     # Clear cached files
     if ($root) {
@@ -2181,6 +2179,13 @@ sub clear_theme_cache
         # Clear stats history
         kill_byname("$current_theme/stats.cgi", 9);
         unlink_file("$var_directory/modules/$current_theme/stats-$remote_user.json");
+
+        # Clear other files
+        if (foreign_available('virtual-server')) {
+            unlink_file("$product_var/modules/virtual-server/links-cache");
+        }
+        unlink_file("$product_var/cache");
+        unlink_file("$product_var/module.infos.cache");
     }
 
     # Clear session specific temporary files
