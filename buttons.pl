@@ -103,6 +103,14 @@ print '</li>';
 
 &get_miniserv_config(\%miniserv);
 
+if (&foreign_available("change-user") &&
+    $theme_config{'settings_leftmenu_button_language'} eq 'true')
+{
+    print '<li data-linked' . get_button_tooltip('theme_xhred_title_language_locale', undef, 'auto top') .
+      ' class="user-link"><a class="menu-exclude-link pd-rt-4" href="' .
+      $gconfig{'webprefix'} . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
+}
+
 if ($miniserv{'logout'} &&
     !get_env('ssl_user') &&
     get_env('http_user_agent') !~ /webmin/i)
@@ -120,24 +128,6 @@ if ($miniserv{'logout'} &&
           $gconfig{'webprefix'} . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
     }
     print '</li>';
-}
-
-if (-r "$root_directory/virtual-server/edit_lang.cgi" &&
-    $theme_config{'settings_leftmenu_button_language'} eq 'true' &&
-    ($in{'xhr-navigation-type'} eq 'virtualmin' || $in{'xhr-navigation-type'} eq 'cloudmin'))
-{
-    print '<li data-linked' . get_button_tooltip('theme_tooltip_language_link', undef, 'auto top') . ' class="user-link">
-                    <a class="menu-exclude-link pd-rt-4" href="'
-      . $gconfig{'webprefix'} . '/virtual-server/edit_lang.cgi">
-                        <i class="fa fa-fw fa-globe"></i>
-                    </a>
-                </li>';
-} elsif (&foreign_available("change-user") &&
-         $theme_config{'settings_leftmenu_button_language'} eq 'true')
-{
-    print '<li data-linked' . get_button_tooltip('theme_xhred_title_language_locale', undef, 'auto top') .
-      ' class="user-link"><a class="menu-exclude-link pd-rt-4" href="' .
-      $gconfig{'webprefix'} . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
 }
 
 print '<li data-linked' .
