@@ -2142,7 +2142,7 @@ sub theme_cached
 sub theme_var_dir
 {
 
-    my $product_var = get_env('webmin_var');
+    my $product_var = $var_directory || get_env('webmin_var');
     if (!$product_var) {
         open(VARPATH, "$config_directory/var-path");
         chop($product_var = <VARPATH>);
@@ -2177,8 +2177,8 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-csf-stable");
 
         # Clear stats history
+        unlink_file("$theme_var_dir/stats-$remote_user.json");
         kill_byname("$current_theme/stats.cgi", 9);
-        unlink_file("$var_directory/modules/$current_theme/stats-$remote_user.json");
 
         # Clear other files
         if (foreign_available('virtual-server')) {
