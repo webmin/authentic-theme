@@ -73,6 +73,14 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
     print '</li>';
 }
 
+if (&foreign_available("change-user") &&
+    $theme_config{'settings_leftmenu_button_language'} eq 'true')
+{
+    print '<li data-linked' . get_button_tooltip('theme_xhred_title_language_locale', undef, 'auto top') .
+      ' class="user-link"><a class="menu-exclude-link pd-rt-4" href="' .
+      $gconfig{'webprefix'} . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
+}
+
 print '<li class="user-link user-link-acl">';
 my $foreign_acl = &foreign_available("acl");
 my $user_mode   = get_product_name() eq 'usermin';
@@ -103,13 +111,6 @@ print '</li>';
 
 &get_miniserv_config(\%miniserv);
 
-if (&foreign_available("change-user") &&
-    $theme_config{'settings_leftmenu_button_language'} eq 'true')
-{
-    print '<li data-linked' . get_button_tooltip('theme_xhred_title_language_locale', undef, 'auto top') .
-      ' class="user-link"><a class="menu-exclude-link pd-rt-4" href="' .
-      $gconfig{'webprefix'} . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
-}
 
 if ($miniserv{'logout'} &&
     !get_env('ssl_user') &&
