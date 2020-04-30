@@ -2181,12 +2181,20 @@ sub clear_theme_cache
         kill_byname("$current_theme/stats.cgi", 9);
 
         # Clear other files
-        if (foreign_available('virtual-server')) {
-            unlink_file("$product_var/modules/virtual-server/links-cache");
+        if (&foreign_available('virtual-server')) {
+            &foreign_require("virtual-server", "virtual-server-lib.pl");
+            virtual_server::clear_links_cache();
         }
+
+        # Remove cached downloads
         unlink_file("$product_var/cache");
-        unlink_file("$product_var/module.infos.cache");
     }
+    
+    # Clear potentially stuck menus
+    unlink_file("$product_var/module.infos.cache");
+
+    # Clear potentially stuck BIND cache module
+    unlink_file("$config_directory/bind8/zone-names");
 
     # Clear session specific temporary files
     opendir(my $dir, $tmp_dir);
