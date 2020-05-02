@@ -82,19 +82,19 @@ theme_xhred_notifications_firewall_danger=Firewall Nebezpečí
 theme_xhred_notifications_firewall_danger_message=Zdá se, že <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">neběží</i> nebo byl zastaven! Nenechávejte server vystavený, zkontrolujte nastavení brány firewall (%v)
 theme_xhred_notifications_firewall_warning=Varování brány firewall
 settings_grayscale_level_navigation=Filtr ve stupních šedi
-settings_grayscale_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sépiový filtr
-settings_sepia_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Nasycený filtr
-settings_saturate_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Hue-rotate filter
-settings_hue_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Invertovat filtr
-settings_invert_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Jasový filtr
-settings_brightness_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrastní filtr
-settings_contrast_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Paleta barev prohlížeče
 settings_cm_editor_palette=Paleta zvýraznění kódu
 theme_xhred_filemanager_context_select_all=Vybrat vše
@@ -129,7 +129,7 @@ theme_xhred_filemanager_context_transfer=Převod
 theme_xhred_filemanager_title_symlink_target=Cíl odkazu
 right_unlimited=Neomezený
 settings_leftmenu_width=Upřednostňovaná šířka
-settings_leftmenu_width_description=Výchozí/proud šířka <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Výchozí/proud šířka <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Zobrazit přepínače obrácené
 settings_switch_rdisplay_description=Tato možnost umožňuje nastavit jiné pořadí přepínačů vlevo nahoře. Po změně této možnosti je nutné znovu načíst stránku
 theme_xhred_filemanager_context_calculate_selected_size=Vypočítejte vybranou velikost

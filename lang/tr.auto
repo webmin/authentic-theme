@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Güvenlik Duvarı Tehlikesi
 theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">çalışmıyor</i> ya da durdurulmuş görünüyor! Sunucunuzu açıkta bırakmayın, güvenlik duvarı ayarlarını kontrol edin (%v)
 theme_xhred_notifications_firewall_warning=Güvenlik Duvarı Uyarısı
 settings_grayscale_level_navigation=Gri tonlamalı filtre
-settings_grayscale_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepya filtresi
-settings_sepia_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Doygun filtre
-settings_saturate_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Ton döndürme filtresi
-settings_hue_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Filtreyi ters çevir
-settings_invert_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Parlaklık filtresi
-settings_brightness_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrast filtresi
-settings_contrast_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Görüntüleyici renk paleti
 settings_cm_editor_palette=Kod vurgulama renk paleti
 theme_xhred_filemanager_context_select_all=Hepsini seç
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=Aktar
 theme_xhred_filemanager_title_symlink_target=Bağlantı hedefi
 right_unlimited=Sınırsız
 settings_leftmenu_width=Tercih edilen genişlik
-settings_leftmenu_width_description=Standart/mevcut genişlik <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Standart/mevcut genişlik <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Ters çevrilmiş anahtarları göster
 settings_switch_rdisplay_description=Bu seçenek, sol üstteki anahtarlar için farklı bir düzen ayarlamanızı sağlar. Bu seçeneği değiştirdikten sonra, tam sayfa yeniden yüklemesi gerekir
 theme_xhred_filemanager_context_calculate_selected_size=Seçilen boyutu hesapla

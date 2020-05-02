@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Nebezpečenstvo Firewallu
 theme_xhred_notifications_firewall_danger_message=Zdá sa, že <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">nefungujú</i> alebo boli zastavené! Nenechajte server vystavený, skontrolujte nastavenia brány firewall (%v)
 theme_xhred_notifications_firewall_warning=Varovanie brány firewall
 settings_grayscale_level_navigation=Filter v odtieňoch sivej
-settings_grayscale_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sépiový filter
-settings_sepia_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Nasýtený filter
-settings_saturate_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Odtieňový filter
-settings_hue_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Invertovať filter
-settings_invert_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Filter jasu
-settings_brightness_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrastný filter
-settings_contrast_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Paleta farieb prehliadača
 settings_cm_editor_palette=Paleta farieb zvýraznenia kódu
 theme_xhred_filemanager_context_select_all=Vybrať všetko
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=prevod
 theme_xhred_filemanager_title_symlink_target=Cieľ odkazu
 right_unlimited=neobmedzený
 settings_leftmenu_width=Preferovaná šírka
-settings_leftmenu_width_description=Východisková/prúd šírka <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Východisková/prúd šírka <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Zobraziť prepínače obrátené
 settings_switch_rdisplay_description=Táto voľba umožňuje nastaviť rôzne poradie prepínačov vľavo hore. Po zmene tejto možnosti sa vyžaduje úplné načítanie stránky
 theme_xhred_filemanager_context_calculate_selected_size=Vypočítajte vybranú veľkosť

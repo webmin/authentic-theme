@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=防火牆危險
 theme_xhred_notifications_firewall_danger_message=似乎<strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">未運行</i>或已停止！不要讓服務器暴露在外，請檢查防火牆設置（%v ）
 theme_xhred_notifications_firewall_warning=防火牆警告
 settings_grayscale_level_navigation=灰度濾鏡
-settings_grayscale_level_navigation_description=默認/電流值<code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=默認/電流值<code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=棕褐色過濾器
-settings_sepia_level_navigation_description=默認/電流值<code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=默認/電流值<code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=飽和過濾器
-settings_saturate_level_navigation_description=默認/電流值<code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=默認/電流值<code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=色相旋轉濾鏡
-settings_hue_level_navigation_description=默認/電流值<code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=默認/電流值<code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=反轉濾波器
-settings_invert_level_navigation_description=默認/電流值<code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=默認/電流值<code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=亮度濾鏡
-settings_brightness_level_navigation_description=默認/電流值<code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=默認/電流值<code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=對比濾鏡
-settings_contrast_level_navigation_description=默認/電流值<code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=默認/電流值<code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=查看器調色板
 settings_cm_editor_palette=代碼突出顯示調色板
 theme_xhred_filemanager_context_select_all=全選
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=傳遞
 theme_xhred_filemanager_title_symlink_target=連結目標
 right_unlimited=無限
 settings_leftmenu_width=理想寬度
-settings_leftmenu_width_description=默認/電流寬度<code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=默認/電流寬度<code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=顯示開關反轉
 settings_switch_rdisplay_description=此選項使您可以為左上方的開關設置不同的順序。更改此選項後，需要重新加載頁面
 theme_xhred_filemanager_context_calculate_selected_size=計算所選尺寸

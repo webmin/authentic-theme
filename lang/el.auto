@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Κίνδυνος τείχους προ
 theme_xhred_notifications_firewall_danger_message=Φαίνεται ότι το <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">δεν εκτελείται</i> ή έχει σταματήσει! Μην αφήσετε τον διακομιστή σας εκτεθειμένο, ελέγξτε για τις ρυθμίσεις του τείχους προστασίας (%v)
 theme_xhred_notifications_firewall_warning=Προειδοποίηση τείχους προστασίας
 settings_grayscale_level_navigation=Φίλτρο κλίμακας του γκρι
-settings_grayscale_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Φίλτρο σέπια
-settings_sepia_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Φίλτρο κορεσμού
-settings_saturate_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Φίλτρο περιστροφής απόχρωσης
-settings_hue_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Αντιστρέψτε το φίλτρο
-settings_invert_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Φίλτρο φωτεινότητας
-settings_brightness_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Φίλτρο αντίθεσης
-settings_contrast_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Παλέτα χρωμάτων θεατή
 settings_cm_editor_palette=Παλέτα χρωμάτων επισήμανσης κώδικα
 theme_xhred_filemanager_context_select_all=Επιλογή όλων
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=ΜΕΤΑΦΟΡΑ
 theme_xhred_filemanager_title_symlink_target=Στόχος συνδέσμου
 right_unlimited=Απεριόριστος
 settings_leftmenu_width=Προτιμώμενο πλάτος
-settings_leftmenu_width_description=Προεπιλεγμένη/τρέχον πλάτος <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Προεπιλεγμένη/τρέχον πλάτος <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Η εμφάνιση των διακοπτών αντιστράφηκε
 settings_switch_rdisplay_description=Αυτή η επιλογή σας επιτρέπει να ορίσετε διαφορετική σειρά για διακόπτες πάνω-αριστερά. Μετά την αλλαγή αυτής της επιλογής, απαιτείται πλήρης επαναφόρτωση σελίδας
 theme_xhred_filemanager_context_calculate_selected_size=Υπολογίστε το επιλεγμένο μέγεθος

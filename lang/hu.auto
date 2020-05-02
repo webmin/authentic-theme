@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Tűzfal veszély
 theme_xhred_notifications_firewall_danger_message=Úgy tűnik, hogy a <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">nem fut</i> vagy leállt! Ne hagyja kiszolgálóját szabadon, ellenőrizze a tűzfal beállításait (%v)
 theme_xhred_notifications_firewall_warning=Tűzfal figyelmeztetés
 settings_grayscale_level_navigation=Szürkeárnyalatos szűrő
-settings_grayscale_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Szépia szűrő
-settings_sepia_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Telített szűrő
-settings_saturate_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Színárnyalat-elforgatás
-settings_hue_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Fordított szűrő
-settings_invert_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Fényerősség-szűrő
-settings_brightness_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontraszt szűrő
-settings_contrast_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=A néző színpaletta
 settings_cm_editor_palette=A kód kiemelése színpaletta
 theme_xhred_filemanager_context_select_all=Mindet kiválaszt
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=Átutalás
 theme_xhred_filemanager_title_symlink_target=Link link
 right_unlimited=Korlátlan
 settings_leftmenu_width=Előnyös szélesség
-settings_leftmenu_width_description=Alapérték/aktuális szélessége <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Alapérték/aktuális szélessége <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Show kapcsolók fordítva
 settings_switch_rdisplay_description=Ez az opció lehetővé teszi, hogy eltérő sorrendet állítson be a bal felső kapcsolókhoz. Az opció megváltoztatása után az oldal teljes újratöltése szükséges
 theme_xhred_filemanager_context_calculate_selected_size=Számítsa ki a kiválasztott méretet

@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=อันตรายของไฟ�
 theme_xhred_notifications_firewall_danger_message=ปรากฏว่า <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">ไม่ทำงาน</i> หรือหยุดทำงาน! อย่าปล่อยให้เซิร์ฟเวอร์ของคุณเปิดเผยตรวจสอบการตั้งค่าไฟร์วอลล์ (%v)
 theme_xhred_notifications_firewall_warning=คำเตือนของไฟร์วอลล์
 settings_grayscale_level_navigation=ตัวกรองสีเทา
-settings_grayscale_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=กรองซีเปีย
-settings_sepia_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=กรองเปียกโชก
-settings_saturate_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=ฟิลเตอร์เว้หมุน
-settings_hue_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=สลับตัวกรอง
-settings_invert_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=ตัวกรองความสว่าง
-settings_brightness_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=ตัวกรองความคมชัด
-settings_contrast_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=ค่าเริ่มต้น/ปัจจุบัน <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=จานสีของตัวแสดง
 settings_cm_editor_palette=รหัสชุดสีเน้นสี
 theme_xhred_filemanager_context_select_all=เลือกทั้งหมด
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=โอน
 theme_xhred_filemanager_title_symlink_target=ลิงก์เป้าหมาย
 right_unlimited=ไม่ จำกัด
 settings_leftmenu_width=ความกว้างที่ดีกว่า
-settings_leftmenu_width_description=เริ่มต้น/ปัจจุบันความกว้าง <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=เริ่มต้น/ปัจจุบันความกว้าง <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=แสดงสวิตช์กลับด้าน
 settings_switch_rdisplay_description=ตัวเลือกนี้ช่วยให้คุณสามารถกำหนดลำดับที่แตกต่างกันสำหรับสวิตช์ด้านซ้ายบน หลังจากเปลี่ยนตัวเลือกนี้แล้วจำเป็นต้องโหลดหน้าซ้ำทั้งหมด
 theme_xhred_filemanager_context_calculate_selected_size=คำนวณขนาดที่เลือก

@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Palomuurin vaara
 theme_xhred_notifications_firewall_danger_message=Näyttää siltä, että <strong>ConfigServer Server Security and Firewall</strong> eivät <i class="badge badge-danger">ole käynnissä</i> tai on lopetettu! Älä jätä palvelinta paljastamaan, tarkista palomuuriasetukset (%v)
 theme_xhred_notifications_firewall_warning=Palomuurivaroitus
 settings_grayscale_level_navigation=Harmaasävyinen suodatin
-settings_grayscale_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Seepiasuodatin
-settings_sepia_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Kyllästetty suodatin
-settings_saturate_level_navigation_description=Default/virta-arvot <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Default/virta-arvot <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Sävyä kiertävä suodatin
-settings_hue_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Käännä suodatin
-settings_invert_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Kirkkaussuodatin
-settings_brightness_level_navigation_description=Default/virta-arvot <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Default/virta-arvot <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrasti suodatin
-settings_contrast_level_navigation_description=Default/virta-arvot <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Default/virta-arvot <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Katsojan värivalikoima
 settings_cm_editor_palette=Koodin korostusvärivalikoima
 theme_xhred_filemanager_context_select_all=Valitse kaikki
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=Siirtää
 theme_xhred_filemanager_title_symlink_target=Linkki kohde
 right_unlimited=Rajoittamaton
 settings_leftmenu_width=Suositeltava leveys
-settings_leftmenu_width_description=Default/nykyinen leveys <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Default/nykyinen leveys <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Näytä kytkimet käännettynä
 settings_switch_rdisplay_description=Tämän vaihtoehdon avulla voit asettaa eri järjestyksen vasemmalle yläkytkimille. Vaihdettuaan tämän vaihtoehdon, sivun täydellinen uudelleenlataus on tarpeen
 theme_xhred_filemanager_context_calculate_selected_size=Laske valittu koko

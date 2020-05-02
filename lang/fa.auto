@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=فایروال خطر
 theme_xhred_notifications_firewall_danger_message=به نظر می رسد که <strong>ConfigServer Server Security and Firewall</strong> در <i class="badge badge-danger">حال اجرا نیست</i> یا متوقف شده است! سرور خود را در معرض قرار ندهید ، تنظیمات فایروال را بررسی کنید (%v)
 theme_xhred_notifications_firewall_warning=اخطار فایروال
 settings_grayscale_level_navigation=فیلتر خاکستری
-settings_grayscale_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=فیلتر سپیا
-settings_sepia_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=فیلتر اشباع
-settings_saturate_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=فیلتر چرخش رنگ
-settings_hue_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=فیلتر معکوس
-settings_invert_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=فیلتر روشنایی
-settings_brightness_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=فیلتر کنتراست
-settings_contrast_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=پالت رنگ بیننده
 settings_cm_editor_palette=پالت رنگ برجسته کد
 theme_xhred_filemanager_context_select_all=انتخاب همه
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=انتقال
 theme_xhred_filemanager_title_symlink_target=هدف پیوند
 right_unlimited=نامحدود
 settings_leftmenu_width=عرض ترجیحی
-settings_leftmenu_width_description=پیش فرض/در حال حاضر عرض <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=پیش فرض/در حال حاضر عرض <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=نمایش سوئیچ ها معکوس شد
 settings_switch_rdisplay_description=این گزینه به شما امکان می دهد تا ترتیب های مختلفی را برای سوئیچ های بالا سمت چپ تنظیم کنید. پس از تغییر این گزینه ، بارگذاری مجدد صفحه مورد نیاز است
 theme_xhred_filemanager_context_calculate_selected_size=اندازه انتخاب شده را محاسبه کنید

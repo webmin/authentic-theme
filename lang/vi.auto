@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Tường lửa nguy hiểm
 theme_xhred_notifications_firewall_danger_message=Dường như <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">không chạy</i> hoặc đã bị dừng! Đừng để máy chủ của bạn bị lộ, hãy kiểm tra cài đặt tường lửa (%v)
 theme_xhred_notifications_firewall_warning=Cảnh báo tường lửa
 settings_grayscale_level_navigation=Bộ lọc thang độ xám
-settings_grayscale_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Bộ lọc Sepia
-settings_sepia_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Bộ lọc bão hòa
-settings_saturate_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Bộ lọc xoay Huế
-settings_hue_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Bộ lọc đảo
-settings_invert_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Bộ lọc độ sáng
-settings_brightness_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Bộ lọc tương phản
-settings_contrast_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Bảng màu người xem
 settings_cm_editor_palette=Bảng màu mã nổi bật
 theme_xhred_filemanager_context_select_all=Chọn tất cả
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=chuyển khoản
 theme_xhred_filemanager_title_symlink_target=Liên kết mục tiêu
 right_unlimited=Vô hạn
 settings_leftmenu_width=Chiều rộng thích hợp
-settings_leftmenu_width_description=Default/hiện chiều rộng <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Default/hiện chiều rộng <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Hiển thị công tắc đảo ngược
 settings_switch_rdisplay_description=Tùy chọn này cho phép bạn đặt thứ tự khác nhau cho các công tắc trên cùng bên trái. Sau khi thay đổi tùy chọn này, yêu cầu tải lại trang hoàn chỉnh
 theme_xhred_filemanager_context_calculate_selected_size=Tính kích thước đã chọn

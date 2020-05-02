@@ -115,19 +115,19 @@ theme_xhred_notifications_firewall_danger=Опасность брандмауэ�
 theme_xhred_notifications_firewall_danger_message=Похоже, что <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">не работает</i> или был остановлен! Не оставляйте сервер открытым, проверьте настройки брандмауэра (%v)
 theme_xhred_notifications_firewall_warning=Предупреждение брандмауэра
 settings_grayscale_level_navigation=Фильтр оттенков серого
-settings_grayscale_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Сепия фильтр
-settings_sepia_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Насыщенный фильтр
-settings_saturate_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Hue-rotate filter
-settings_hue_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Инвертировать фильтр
-settings_invert_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Текущие значения по умолчанию <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Яркость фильтра
-settings_brightness_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Контрастный фильтр
-settings_contrast_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Цветовая палитра зрителя
 settings_cm_editor_palette=Кодовая подсветка цветовой палитры
 theme_xhred_filemanager_context_select_invert=Наоборот
@@ -147,7 +147,7 @@ theme_xhred_filemanager_context_transfer=Перечислить
 theme_xhred_filemanager_title_symlink_target=Цель ссылки
 right_unlimited=неограниченный
 settings_leftmenu_width=Предпочтительная ширина
-settings_leftmenu_width_description=По умолчанию/Текущая ширина <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=По умолчанию/Текущая ширина <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Показать переключатели в обратном порядке
 settings_switch_rdisplay_description=Эта опция позволяет вам установить другой порядок для верхних левых переключателей. После изменения этого параметра требуется полная перезагрузка страницы.
 theme_xhred_filemanager_context_calculate_selected_size=Рассчитать выбранный размер

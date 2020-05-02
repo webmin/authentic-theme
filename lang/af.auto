@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Brandmuur gevaar
 theme_xhred_notifications_firewall_danger_message=Dit blyk dat <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">nie loop</i> of gestop is nie! Moenie u bediener blootgestel hou nie; kyk na die firewall-instellings (%v)
 theme_xhred_notifications_firewall_warning=Firewall Waarskuwing
 settings_grayscale_level_navigation=Grysskaalfilter
-settings_grayscale_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia-filter
-settings_sepia_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Versadigde filter
-settings_saturate_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Hue-draai filter
-settings_hue_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Keer die filter om
-settings_invert_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Helderheidsfilter
-settings_brightness_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrasfilter
-settings_contrast_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Kyker se kleurpalet
 settings_cm_editor_palette=Kode-kleurkleurpalet
 theme_xhred_filemanager_context_select_all=Kies alles
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=oordrag
 theme_xhred_filemanager_title_symlink_target=Skakel teiken
 right_unlimited=Unlimited
 settings_leftmenu_width=Verkieslike breedte
-settings_leftmenu_width_description=Verstek/huidige breedte <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Verstek/huidige breedte <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Wys skakelaars omgekeer
 settings_switch_rdisplay_description=Met hierdie opsie kan u verskillende volgorde instel vir skakelaars van links bo. Nadat u hierdie opsie verander het, is volledige bladsy herlaai nodig
 theme_xhred_filemanager_context_calculate_selected_size=Bereken die gekose grootte

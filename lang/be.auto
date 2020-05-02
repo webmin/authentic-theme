@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Небяспека брандмаўэ�
 theme_xhred_notifications_firewall_danger_message=Здаецца, <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">не запушчана</i> альбо спынена! Не пакідайце сервер адкрытым, праверце параметры брандмаўэра (%v)
 theme_xhred_notifications_firewall_warning=Папярэджанне брандмаўэра
 settings_grayscale_level_navigation=Фільтр у шэрага адцення
-settings_grayscale_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Фільтр сэпіі
-settings_sepia_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Насыціць фільтр
-settings_saturate_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Адценне-паварот фільтра
-settings_hue_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Інвертаваць фільтр
-settings_invert_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Фільтр яркасці
-settings_brightness_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Кантрастны фільтр
-settings_contrast_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Колеравая палітра прагляду
 settings_cm_editor_palette=Кодавая палітра каляровай палітры
 theme_xhred_filemanager_context_select_all=Абраць усё
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=Перадача
 theme_xhred_filemanager_title_symlink_target=Спасылка мэты
 right_unlimited=Неабмежаваны
 settings_leftmenu_width=Пераважная шырыня
-settings_leftmenu_width_description=Па змаўчанні/Бягучая шырыня <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Па змаўчанні/Бягучая шырыня <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Паказвайце перамыкачы адваротна
 settings_switch_rdisplay_description=Гэтая опцыя дазваляе ўсталёўваць іншы парадак для верхніх левых камутатараў. Пасля змены гэтай опцыі патрабуецца поўная загрузка старонкі
 theme_xhred_filemanager_context_calculate_selected_size=Разлічыце абраны памер

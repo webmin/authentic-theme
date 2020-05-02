@@ -158,19 +158,19 @@ theme_xhred_notifications_firewall_danger=Peligro de cortafuegos
 theme_xhred_notifications_firewall_danger_message=¡Parece que <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">no</i> se <i class="badge badge-danger">está ejecutando</i> o se ha detenido! No deje su servidor expuesto, verifique la configuración del firewall (%v)
 theme_xhred_notifications_firewall_warning=Advertencia de cortafuegos
 settings_grayscale_level_navigation=Filtro de escala de grises
-settings_grayscale_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtro sepia
-settings_sepia_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Filtro de saturación
-settings_saturate_level_navigation_description=/ Valores de corriente por defecto <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=/ Valores de corriente por defecto <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Filtro de rotación de tono
-settings_hue_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Filtro invertido
-settings_invert_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=/ Valores de corriente por defecto <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Filtro de brillo
-settings_brightness_level_navigation_description=/ Valores de corriente por defecto <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=/ Valores de corriente por defecto <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Filtro de contraste
-settings_contrast_level_navigation_description=/ Valores de corriente por defecto <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=/ Valores de corriente por defecto <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Paleta de colores del visor
 settings_cm_editor_palette=Paleta de colores de resaltado de código
 theme_xhred_filemanager_context_select_all=Seleccionar todo
@@ -205,7 +205,7 @@ theme_xhred_filemanager_context_transfer=Transferir
 theme_xhred_filemanager_title_symlink_target=Objetivo de enlace
 right_unlimited=Ilimitado
 settings_leftmenu_width=Ancho preferible
-settings_leftmenu_width_description=Predeterminado/corriente anchura <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Predeterminado/corriente anchura <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Mostrar interruptores invertidos
 settings_switch_rdisplay_description=Esta opción le permite establecer un orden diferente para los interruptores superiores izquierdos. Después de cambiar esta opción, se requiere la recarga completa de la página
 theme_xhred_filemanager_context_calculate_selected_size=Calcular el tamaño seleccionado

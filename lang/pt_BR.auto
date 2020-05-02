@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Perigo do firewall
 theme_xhred_notifications_firewall_danger_message=Parece que o <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">não</i> está <i class="badge badge-danger">sendo executado</i> ou foi parado! Não deixe seu servidor exposto, verifique as configurações do firewall (%v)
 theme_xhred_notifications_firewall_warning=Aviso de firewall
 settings_grayscale_level_navigation=Filtro de escala de cinza
-settings_grayscale_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtro sépia
-settings_sepia_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Filtro saturado
-settings_saturate_level_navigation_description=Os valores padrão/corrente <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Os valores padrão/corrente <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Filtro Hue-rotate
-settings_hue_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Filtro invertido
-settings_invert_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Filtro de brilho
-settings_brightness_level_navigation_description=Os valores padrão/corrente <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Os valores padrão/corrente <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Filtro de contraste
-settings_contrast_level_navigation_description=Os valores padrão/corrente <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Os valores padrão/corrente <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Paleta de cores do visualizador
 settings_cm_editor_palette=Paleta de cores de destaque de código
 theme_xhred_filemanager_context_select_all=Selecionar tudo
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=Transferir
 theme_xhred_filemanager_title_symlink_target=Link alvo
 right_unlimited=Ilimitado
 settings_leftmenu_width=Largura preferida
-settings_leftmenu_width_description=Padrão/atual largura de <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Padrão/atual largura de <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Mostrar interruptores invertidos
 settings_switch_rdisplay_description=Esta opção permite definir ordens diferentes para os switches do canto superior esquerdo. Depois de alterar esta opção, é necessário recarregar a página completa
 theme_xhred_filemanager_context_calculate_selected_size=Calcular o tamanho selecionado

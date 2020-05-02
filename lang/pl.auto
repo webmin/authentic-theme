@@ -162,19 +162,19 @@ theme_xhred_notifications_firewall_danger=Niebezpieczeństwo zapory ogniowej
 theme_xhred_notifications_firewall_danger_message=Wygląda na to, że <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">nie działa</i> lub został zatrzymany! Nie wystawiaj swojego serwera na działanie, sprawdź ustawienia zapory (%v)
 theme_xhred_notifications_firewall_warning=Ostrzeżenie zapory ogniowej
 settings_grayscale_level_navigation=Filtr w skali szarości
-settings_grayscale_level_navigation_description=Default/wartości prądu <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Default/wartości prądu <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtr sepii
-settings_sepia_level_navigation_description=Default/wartości prądu <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Default/wartości prądu <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Filtr nasycony
-settings_saturate_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Filtr obracania odcienia
-settings_hue_level_navigation_description=Default/wartości prądu <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Default/wartości prądu <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Odwróć filtr
-settings_invert_level_navigation_description=Default/wartości prądu <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Default/wartości prądu <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Filtr jasności
-settings_brightness_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Filtr kontrastu
-settings_contrast_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Paleta kolorów przeglądarki
 settings_cm_editor_palette=Paleta kolorów wyróżnienia kodu
 theme_xhred_filemanager_context_select_all=Zaznacz wszystko
@@ -209,7 +209,7 @@ theme_xhred_filemanager_context_transfer=Transfer
 theme_xhred_filemanager_title_symlink_target=Link docelowy
 right_unlimited=bez limitu
 settings_leftmenu_width=Preferowana szerokość
-settings_leftmenu_width_description=Domyślna/prąd szerokość <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Domyślna/prąd szerokość <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Pokaż przełączniki odwrócone
 settings_switch_rdisplay_description=Ta opcja umożliwia ustawienie innej kolejności przełączników w lewym górnym rogu. Po zmianie tej opcji wymagane jest pełne ponowne załadowanie strony
 theme_xhred_filemanager_context_calculate_selected_size=Oblicz wybrany rozmiar

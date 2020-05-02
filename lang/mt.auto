@@ -240,19 +240,19 @@ theme_xhred_notifications_firewall_danger=Firewall Periklu
 theme_xhred_notifications_firewall_danger_message=Jidher li <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">mhux qed jaħdmu</i> jew twaqqfu! Tħallix is-server tiegħek espost, iċċekkja s-settings tal-firewall (%v)
 theme_xhred_notifications_firewall_warning=Twissija tal-firewall
 settings_grayscale_level_navigation=Filtru fuq skala griża
-settings_grayscale_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data="settings_grayscale_level_navigation">0</code>
+settings_grayscale_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtru tas-seba
-settings_sepia_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data="settings_sepia_level_navigation">0</code>
+settings_sepia_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
 settings_saturate_level_navigation=Filtru saturat
-settings_saturate_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data="settings_saturate_level_navigation">0</code>
+settings_saturate_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
 settings_hue_level_navigation=Idawwar filtru bil-lewn
-settings_hue_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data="settings_hue_level_navigation">0</code>
+settings_hue_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Inverta filtru
-settings_invert_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data="settings_invert_level_navigation">0</code>
+settings_invert_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
 settings_brightness_level_navigation=Filtru tal-Luminożità
-settings_brightness_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data="settings_brightness_level_navigation">0</code>
+settings_brightness_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Filtru tal-kuntrast
-settings_contrast_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data="settings_contrast_level_navigation">0</code>
+settings_contrast_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 settings_cm_view_palette=Telespettatur tal-paletta tal-kuluri
 settings_cm_editor_palette=Kodiċi li jenfasizzaw paletta tal-kulur
 theme_xhred_filemanager_context_select_all=Agħżel kollox
@@ -287,7 +287,7 @@ theme_xhred_filemanager_context_transfer=Trasferiment
 theme_xhred_filemanager_title_symlink_target=Rabta fil-mira
 right_unlimited=Illimitat
 settings_leftmenu_width=Wisa 'preferibbli
-settings_leftmenu_width_description=Default/wisa attwali <code>260</code>/<code data="settings_leftmenu_width">0</code>
+settings_leftmenu_width_description=Default/wisa attwali <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Uri l-iswiċċijiet maqluba
 settings_switch_rdisplay_description=Din l-għażla tippermettilek tissettja ordni differenti għal swiċċijiet ta 'fuq tax-xellug. Wara li tinbidel din l-għażla, tagħbija mill-ġdid tal-paġna hija meħtieġa
 theme_xhred_filemanager_context_calculate_selected_size=Ikkalkula d-daqs magħżul
