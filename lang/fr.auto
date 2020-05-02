@@ -1,0 +1,13 @@
+theme_xhred_nice_size_PB=PB
+theme_xhred_nice_size_TB=TB
+theme_xhred_nice_size_GB=GB
+theme_xhred_nice_size_MB=MB
+theme_xhred_nice_size_kB=kB
+theme_xhred_nice_size_b=octets
+extensions_mail_flag_spam_status=Statut de spam
+extensions_mail_flag_spam_status_data=1 $ sur $2
+extensions_mail_flag_tls_on=Cryptage standard (TLS)
+extensions_mail_flag_tls_off=Courrier non chiffré
+extensions_mail_flag_tls_none=État de chiffrement inconnu
+theme_xhred_textarea_to_clipboard=Le contenu de la zone de texte sélectionnée a été copié avec succès dans le presse-papiers
+theme_xhred_global_alias=Alias

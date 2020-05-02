@@ -1,0 +1,12 @@
+theme_xhred_login_pass=パスワード
+theme_xhred_login_token=トークン
+theme_xhred_login_user=ユーザー名
+theme_xhred_session_failed=ログインに失敗しました。もう一度お試しください。
+settings_favorites=お気に入りボタンを表示
+extensions_mail_flag_spam_status=スパム状況
+extensions_mail_flag_spam_status_data=$2のうち$1
+extensions_mail_flag_tls_on=標準暗号化（TLS）
+extensions_mail_flag_tls_off=暗号化されていないメール
+extensions_mail_flag_tls_none=暗号化ステータスが不明です
+theme_xhred_textarea_to_clipboard=選択したテキストエリアのコンテンツがクリップボードに正常にコピーされました
+theme_xhred_global_alias=エイリアス
