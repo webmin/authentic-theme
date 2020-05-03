@@ -1,5 +1,5 @@
 extensions_mail_flag_spam_status=Spam-Status
-extensions_mail_flag_spam_status_data=1 $ von $2
+extensions_mail_flag_spam_status_data=$1 von $2
 extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt

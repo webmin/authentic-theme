@@ -865,7 +865,7 @@ sub print_content
             push @row_data,
               (
 "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'theme_xhred_filemanager_global_size_in_bytes'})]}<br>@{[nice_number($list[$count - 1][8])]}\">"
-                  . $size . "</span>");
+                  . utf8_decode($size) . "</span>");
             push(@td_tags, undef);
         }
         if ($userconfig{'columns'} =~ /owner_user/) {

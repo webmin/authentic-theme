@@ -1,6 +1,6 @@
 theme_xhred_session_failed=Autentificare esuata. Vă rugăm să încercați din nou.
 extensions_mail_flag_spam_status=Starea spamului
-extensions_mail_flag_spam_status_data=1 $ din $2
+extensions_mail_flag_spam_status_data=$1 din $2
 extensions_mail_flag_tls_on=Criptare standard (TLS)
 extensions_mail_flag_tls_off=E-mail necriptat
 extensions_mail_flag_tls_none=Nu se cunoaște starea de criptare
