@@ -147,7 +147,7 @@ $mails{'pagination_message'} =
   @mail ?
   text('extensions_mail_current_position',
        $initial < 1 ? ($start ? $start + 1 : 1) : ($percurrent + 1 - $perpage),
-       ($total < $percurrent ? $total : $percurrent),
+       ($total < $percurrent  ? $total     : $percurrent),
        scalar(@mail)) :
   text('mail_none', $mails{'folder_name'});
 
@@ -291,6 +291,8 @@ $mails{'list'} = {
     ) };
 
 $mails{'mail_system'} = $config{'mail_system'};
+$mails{'config'} = { 'g' => \%config,
+                     'u' => \%userconfig, };
 
 save_last_folder_id($folder);
 pop3_logout();

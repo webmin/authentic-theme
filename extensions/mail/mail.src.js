@@ -400,7 +400,6 @@ const mail = (function() {
                             value.del === null) {
                             status.menu.options = hidden
                         }
-
                         return `
                             <form class="compose" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
                                 <div class="form-e">
@@ -408,14 +407,22 @@ const mail = (function() {
                                         <div class="form-group from">
                                             <div class="flex">
                                                 <div class="col-xs-1">
-                                                    <label for="c-from-${data.id}">${data.language.from}</label>
+                                                    <label for="c-from-${data.id}">${data.language.real || data.language.from}</label>
                                                 </div>
                                                 <div class="col-xs-11">
                                                     <span class="btn-group ${data.class.form.recipients.control}">
                                                         <button type="button" class="btn btn-link btn-transparent-link btn-resized btn-link-bordered cc${data.toggle.recipients.cc}">Cc</button>
                                                         <button type="button" class="btn btn-link btn-transparent-link btn-resized btn-link-bordered bcc${data.toggle.recipients.bcc}">Bcc</button>
                                                     </span>
-                                                    ${data.from}
+                                                    ${typeof data.from === 'object' ? 
+                                                    `<div class="input-group c-from-input-group">
+                                                        <input type="text" name="real" id="c-from-${data.id}" value="${data.from.name}" placeholder="${data.language._name}">
+                                                        <span class="ltgt">&lt;</span><input type="text" name="user" value="${data.from.user}" placeholder="${data.language._username}">
+                                                        <span class="input-group-addon">@${data.from.dom}&gt;</span>
+                                                        <input type="hidden" name="dom" value="${data.from.dom}">
+                                                    </div>` : 
+                                                    data.from
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -828,1303 +835,1350 @@ const mail = (function() {
             },
 
         }
-
     /**
-     * Compose object sub-module ;;
-     *
-     * @since 19.40
-     *
-     * @return {object} Reveals compose module API
+     * Imports configs
      */
-    const compose = (function() {
-        let xtarget = {};
-        xtarget.send = 'send_mail.cgi';
-        xtarget.reply = 'reply_mail.cgi';
-
-        // Load dependencies
-        _.load.bundle(['jquery.jspanel', 'quill'], 1);
+    const config = {
+            d: {},
+            set: function(config) {
+                this.d = config;
+            }
+        },
 
         /**
-         * Creates new compose message dialog
+         * Compose object sub-module ;;
          *
-         * @param {object}  [form]   Refers to form data in case of replied message
-         * @param {boolean} [inline] Returns composer without panel
-         * @param {object}  [types]  Sets composer type for reply all and forward
+         * @since 19.40
          *
-         * @returns {string}
+         * @return {object} Reveals compose module API
          */
-        const message = (form = false, inline = false, types = {}) => {
-            let path = _.path.prefix,
-                cmodule = _.variable.module.name(),
-                prefix = `${path}/${cmodule}`;
+        compose = (function() {
+            let xtarget = {};
+            xtarget.send = 'send_mail.cgi';
+            xtarget.reply = 'reply_mail.cgi';
 
-            xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
-            xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
-            xtarget.schedule = `${path}/schedule/save.cgi`;
-            xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0&incgr=1`;
+            // Load dependencies
+            _.load.bundle(['jquery.jspanel', 'quill'], 1);
 
-            if (typeof form === 'object' && form.length) {
-                form = $(form).serialize() + '&reply=1';
-                types.new = 0;
-            } else {
-                form = 'new=1';
-                types.new = 1;
-            }
+            /**
+             * Creates new compose message dialog
+             *
+             * @param {object}  [form]   Refers to form data in case of replied message
+             * @param {boolean} [inline] Returns composer without panel
+             * @param {object}  [types]  Sets composer type for reply all and forward
+             *
+             * @returns {string}
+             */
+            const message = (form = false, inline = false, types = {}) => {
+                let path = _.path.prefix,
+                    cmodule = _.variable.module.name(),
+                    prefix = `${path}/${cmodule}`;
 
-            // Check for message type
-            if (types.reply_all) {
-                form += '&rall=1';
-            } else if (types.forward) {
-                form += '&forward=1';
-            }
+                xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
+                xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
+                xtarget.schedule = `${path}/schedule/save.cgi`;
+                xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0&incgr=1`;
 
-            // Get reply form as provided
-            fetch(`${prefix}/${xtarget.reply}?${form}`)
-                .then(rs => {
-                    return rs.text();
-                }).then(rs => {
+                if (typeof form === 'object' && form.length) {
+                    form = $(form).serialize() + '&reply=1';
+                    types.new = 0;
+                } else {
+                    form = 'new=1';
+                    types.new = 1;
+                }
 
-                    // Reply data for further send mail
-                    let $form = $(rs).find(`[action*="${xtarget.send}"]`),
-                        generate = {
-                            timestamp: () => {
-                                return _.plugin.moment().valueOf() * 1e2
-                            },
-                            random: () => {
-                                return Math.floor(Math.random() * 9e14);
-                            }
-                        },
-                        id = generate.timestamp(),
-                        form_data_lost = $form.find(':checkbox:not(:checked)').attr('value', '0').prop('checked', true).map(function() {
-                            return this.name
-                        }).get(),
-                        form_data = $form.serialize();
+                // Check for message type
+                if (types.reply_all) {
+                    form += '&rall=1';
+                } else if (types.forward) {
+                    form += '&forward=1';
+                }
 
-                    if (form_data) {
-                        form_data = _.plugin.serialized_to_json(form_data);
+                // Get reply form as provided
+                fetch(`${prefix}/${xtarget.reply}?${form}`)
+                    .then(rs => {
+                        return rs.text();
+                    }).then(rs => {
 
-                        let
-                            // Object data for extracted fields
-                            data = {
-                                visible: {},
-                                hidden: {},
-                            },
-                            classes = $$.$.compose,
-
-                            toggle = {
-                                // Toggle visibility of extra fields and its controllers
-                                recipients: (id, data, data_visible) => {
-                                    if (typeof data === 'object') {
-                                        let target = data[0],
-                                            state = data[1],
-                                            rcs = `.${classes.form.recipients.control}`,
-                                            rcsf = `.${classes.form.recipients.fields}`,
-                                            rc = target.querySelector(rcs),
-                                            rf = target.querySelector(rcsf);
-
-                                        rc.querySelector(`.${id}`).classList.toggle(classes.button.inverse, !state)
-                                        rf.querySelector(`.${id}`).classList.toggle(classes.hidden, state)
-                                        return;
-                                    } else if (data === 'rc') {
-                                        return !data_visible[id] ? String() : ` ${classes.button.inverse}`
-                                    } else if (data === 'rf') {
-                                        return data_visible[id] ? String() : ` ${classes.hidden}`
-                                    }
+                        // Reply data for further send mail
+                        let $form = $(rs).find(`[action*="${xtarget.send}"]`),
+                            generate = {
+                                timestamp: () => {
+                                    return _.plugin.moment().valueOf() * 1e2
                                 },
-
-                                // Toggle visibility of attachment field
-                                attachments: (panel) => {
-                                    let a = panel.querySelector(`[name="${classes.form.name.tattach}"]`),
-                                        l = a.previousSibling.querySelectorAll('.tag').length;
-                                    a.parentNode.parentNode.classList.toggle(classes.hidden, !l);
-                                    adjust.contenteditable(panel);
-                                },
-
-                                // Add backdrop for maximized panel
-                                backdrop: (panel, show) => {
-                                    let body = $('body'),
-                                        re_zi = 99999,
-                                        compose_backdrop = classes.panel.backdrop;
-
-                                    if (show) {
-                                        panel[0].dataset.zIndex = panel[0].style.zIndex;
-                                        panel[0].style.zIndex = re_zi + 1;
-                                        panel[0].setAttribute('maximized', 1);
-                                        body.append(`<div class="modal-backdrop fade2 in zi-${re_zi} ${compose_backdrop}"></div>`)
-                                    } else {
-                                        if (panel[0]) {
-                                            panel[0].style.zIndex = panel[0].dataset.zIndex;
-                                            panel[0].removeAttribute('maximized');
-                                            delete panel[0].dataset.zIndex;
-                                        }
-                                        body.find(`.modal-backdrop.${compose_backdrop}`).remove();
-                                    }
-                                },
-
-                                // Toggle HTML/text input
-                                formatting: (target, status) => {
-                                    let es = classes.editor.composer,
-                                        eb = target.querySelectorAll(`[${es}-h]`),
-                                        ed = target.querySelectorAll(`[${es}]`);
-
-                                    eb.forEach((b) => {
-                                        b.classList.toggle(classes.hidden, !status);
-                                    })
-
-                                    ed.forEach((e) => {
-                                        if (e.getAttribute(es) === 'text') {
-                                            e.classList.toggle(classes.hidden, status)
-                                        } else {
-                                            e.classList.toggle(classes.hidden, !status)
-                                        }
-                                    })
-                                    adjust.contenteditable(target);
-                                },
-                            },
-                            adjust = {
-
-                                // Adjust the size of editable area
-                                contenteditable: (panel) => {
-                                    let target = panel.querySelector(`.${classes.panel.content}`),
-                                        container = target ? target.offsetHeight : window.innerHeight / 4,
-                                        top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
-                                        editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
-                                        editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                        offset = 50 + editor_toolbar,
-                                        height = `${container - top_block - offset}px`;
-                                    editor.style.height = height;
-                                },
-
-                                // Define modifier key
-                                modifier: (str) => {
-                                    return str.replace(/%cmd/, _.platform.mac ? 'Cmd' : 'Ctrl');
+                                random: () => {
+                                    return Math.floor(Math.random() * 9e14);
                                 }
                             },
-                            check = {
-                                field: (field, object) => {
-                                    let value = object[field];
-                                    if (value && !isNaN(value)) {
-                                        value = ~~value;
-                                    }
-                                    return typeof value === 'undefined' ? null : value
+                            id = generate.timestamp(),
+                            form_data_lost = $form.find(':checkbox:not(:checked)').attr('value', '0').prop('checked', true).map(function() {
+                                return this.name
+                            }).get(),
+                            form_data = $form.serialize();
+
+                        if (form_data) {
+                            form_data = _.plugin.serialized_to_json(form_data);
+
+                            let
+                                // Object data for extracted fields
+                                data = {
+                                    visible: {},
+                                    hidden: {},
                                 },
-                            },
-                            element = {
-                                input: (str, data, readonly = false, no_escape = false, type = 'text') => {
-                                    let value = (typeof data === 'object' ? data[str] : data);
-                                    if (readonly) {
-                                        readonly = ['readonly'];
-                                    }
-                                    if (!no_escape) {
-                                        value = _.plugin.html_escape(value);
-                                    }
-                                    return $$.create.input([str, `c-${str}-${id}`], String(), value, type, readonly);
-                                },
-                                select: {},
-                                type: {
-                                    time: () => {
-                                        let ct = new Date(),
-                                            format = (s) => {
-                                                return ('0' + s).substr(-2)
-                                            },
-                                            round = (m) => {
-                                                let r = Math.ceil(m / 10) * 10;
-                                                return r === 60 ? r - 5 : r;
-                                            },
-                                            h = format(ct.getHours()),
-                                            m = round(format(ct.getMinutes()));
-                                        return `<input type="time" name="time" step="300" value="${h}:${m}">`;
+                                classes = $$.$.compose,
+
+                                toggle = {
+                                    // Toggle visibility of extra fields and its controllers
+                                    recipients: (id, data, data_visible) => {
+                                        if (typeof data === 'object') {
+                                            let target = data[0],
+                                                state = data[1],
+                                                rcs = `.${classes.form.recipients.control}`,
+                                                rcsf = `.${classes.form.recipients.fields}`,
+                                                rc = target.querySelector(rcs),
+                                                rf = target.querySelector(rcsf);
+
+                                            rc.querySelector(`.${id}`).classList.toggle(classes.button.inverse, !state)
+                                            rf.querySelector(`.${id}`).classList.toggle(classes.hidden, state)
+                                            return;
+                                        } else if (data === 'rc') {
+                                            return !data_visible[id] ? String() : ` ${classes.button.inverse}`
+                                        } else if (data === 'rf') {
+                                            return data_visible[id] ? String() : ` ${classes.hidden}`
+                                        }
                                     },
-                                    date: () => {
-                                        let ct = new Date(),
-                                            y = ct.getFullYear(),
-                                            m = ct.getMonth() + 1,
-                                            d = ct.getDate();
-                                        return `<input type="text" name="date" data-value="${y}-${m}-${d}">`;
+
+                                    // Toggle visibility of attachment field
+                                    attachments: (panel) => {
+                                        let a = panel.querySelector(`[name="${classes.form.name.tattach}"]`),
+                                            l = a.previousSibling.querySelectorAll('.tag').length;
+                                        a.parentNode.parentNode.classList.toggle(classes.hidden, !l);
+                                        adjust.contenteditable(panel);
+                                    },
+
+                                    // Add backdrop for maximized panel
+                                    backdrop: (panel, show) => {
+                                        let body = $('body'),
+                                            re_zi = 99999,
+                                            compose_backdrop = classes.panel.backdrop;
+
+                                        if (show) {
+                                            panel[0].dataset.zIndex = panel[0].style.zIndex;
+                                            panel[0].style.zIndex = re_zi + 1;
+                                            panel[0].setAttribute('maximized', 1);
+                                            body.append(`<div class="modal-backdrop fade2 in zi-${re_zi} ${compose_backdrop}"></div>`)
+                                        } else {
+                                            if (panel[0]) {
+                                                panel[0].style.zIndex = panel[0].dataset.zIndex;
+                                                panel[0].removeAttribute('maximized');
+                                                delete panel[0].dataset.zIndex;
+                                            }
+                                            body.find(`.modal-backdrop.${compose_backdrop}`).remove();
+                                        }
+                                    },
+
+                                    // Toggle HTML/text input
+                                    formatting: (target, status) => {
+                                        let es = classes.editor.composer,
+                                            eb = target.querySelectorAll(`[${es}-h]`),
+                                            ed = target.querySelectorAll(`[${es}]`);
+
+                                        eb.forEach((b) => {
+                                            b.classList.toggle(classes.hidden, !status);
+                                        })
+
+                                        ed.forEach((e) => {
+                                            if (e.getAttribute(es) === 'text') {
+                                                e.classList.toggle(classes.hidden, status)
+                                            } else {
+                                                e.classList.toggle(classes.hidden, !status)
+                                            }
+                                        })
+                                        adjust.contenteditable(target);
+                                    },
+                                },
+                                adjust = {
+
+                                    // Adjust the size of editable area
+                                    contenteditable: (panel) => {
+                                        let target = panel.querySelector(`.${classes.panel.content}`),
+                                            container = target ? target.offsetHeight : window.innerHeight / 4,
+                                            top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
+                                            editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
+                                            editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
+                                            offset = 50 + editor_toolbar,
+                                            height = `${container - top_block - offset}px`;
+                                        editor.style.height = height;
+                                    },
+
+                                    // Define modifier key
+                                    modifier: (str) => {
+                                        return str.replace(/%cmd/, _.platform.mac ? 'Cmd' : 'Ctrl');
                                     }
                                 },
-                                composer: function(target) {
-                                    let panel = target,
-                                        paneled = panel.header ? true : false,
-                                        config = {
-                                            html: {
+                                check = {
+                                    field: (field, object) => {
+                                        let value = object[field];
+                                        if (value && !isNaN(value)) {
+                                            value = ~~value;
+                                        }
+                                        return typeof value === 'undefined' ? null : value
+                                    },
+                                },
+                                element = {
+                                    input: (str, data, readonly = false, no_escape = false, type = 'text') => {
+                                        let value = (typeof data === 'object' ? data[str] : data);
+                                        if (readonly) {
+                                            readonly = ['readonly'];
+                                        }
+                                        if (!no_escape) {
+                                            value = _.plugin.html_escape(value);
+                                        }
+                                        return $$.create.input([str, `c-${str}-${id}`], String(), value, type, readonly);
+                                    },
+                                    select: {},
+                                    type: {
+                                        time: () => {
+                                            let ct = new Date(),
+                                                format = (s) => {
+                                                    return ('0' + s).substr(-2)
+                                                },
+                                                round = (m) => {
+                                                    let r = Math.ceil(m / 10) * 10;
+                                                    return r === 60 ? r - 5 : r;
+                                                },
+                                                h = format(ct.getHours()),
+                                                m = round(format(ct.getMinutes()));
+                                            return `<input type="time" name="time" step="300" value="${h}:${m}">`;
+                                        },
+                                        date: () => {
+                                            let ct = new Date(),
+                                                y = ct.getFullYear(),
+                                                m = ct.getMonth() + 1,
+                                                d = ct.getDate();
+                                            return `<input type="text" name="date" data-value="${y}-${m}-${d}">`;
+                                        }
+                                    },
+                                    composer: function(target) {
+                                        let panel = target,
+                                            paneled = panel.header ? true : false,
+                                            config_html = {
                                                 allowed: parseInt(data.hidden.html_edit),
                                                 initial: parseInt(data.hidden.html_edit_config),
                                             },
-                                        },
-                                        config_update = function(option, value) {
-                                            _.update_mdata("/uconfig.cgi?mailbox", "/uconfig_save.cgi", {
-                                                [option]: value
-                                            })
-                                        },
-                                        qs = Quill.import('attributors/style/size'),
-                                        qf = Quill.import('attributors/style/font');
-
-                                    // Quill: assign font-size and font-family, rather than using classes
-                                    qs.whitelist = ["0.75em", "1.2em", "1.5em", "2.5em"];
-                                    qf.whitelist = ["initial", "sans-serif", "serif", "monospace"];
-                                    Quill.register(qs, true);
-                                    Quill.register(qf, true);
-
-                                    // Redefine the actual target
-                                    target = target[0];
-
-
-                                    let asb = target.querySelector(`.${classes.form.header}`),
-                                        ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
-                                        rcs = target.querySelector(`.${classes.form.recipients.control}`),
-                                        qtg = target.querySelector(`.${classes.editor.compose}`),
-                                        tcm = target.querySelector(`[${classes.editor.composer}="text"]`),
-                                        editor = {
-                                            this: new Quill(qtg, {
-                                                modules: {
-                                                    formula: false,
-                                                    syntax: false,
-                                                    imageDrop: true,
-                                                    toolbar: target.querySelector(`#tb-${id}`),
-                                                },
-                                                bounds: target,
-                                                theme: 'snow'
-                                            }),
-                                            get: {
-                                                text: () => {
-                                                    return tcm.value
-                                                },
-                                                html: () => {
-                                                    return editor.this.root.innerHTML
-                                                },
-                                                data: () => {
-                                                    return config.html.allowed ? editor.get.html() : editor.get.text();
-                                                },
-                                            },
-                                            convert: () => {
-                                                let he = editor.this,
-                                                    te = he.root.parentElement.previousElementSibling;
-
-                                                if (config.html.allowed) {
-                                                    he.setText(te.value);
-                                                } else {
-                                                    te.value = he.getText();
-                                                }
-                                            },
-                                            maximized: () => {
-                                                return target.hasAttribute('maximized');
-                                            }
-                                        },
-
-                                        // Update message title dynamically
-                                        title_update = function(ds) {
-                                            let sf = asb.querySelector('[name="subject"]'),
-
-                                                // Trigger title update
-                                                ud = () => {
-                                                    sf.dispatchEvent(new Event('input'));
-                                                },
-
-                                                // Change opacity for notifications
-                                                us = (tg, df) => {
-                                                    if (paneled) {
-                                                        tg.style.opacity = (df ? 0.7 : 1);
-                                                    }
-                                                },
-
-                                                // Display draft processing notifications
-                                                du = (tg) => {
-
-                                                    if (ds === 1) {
-                                                        tg.textContent = _.lang('mail_composer_draft_saving');
-                                                        us(tg, true);
-                                                    } else if (ds === -1) {
-                                                        tg.textContent = _.lang('mail_composer_draft_saved');
-                                                        us(tg, true);
-
-                                                        // Change status back to original title
-                                                        setTimeout(() => {
-                                                            us(tg);
-                                                            ud();
-                                                        }, 2e3)
-                                                    }
-                                                }
-
-                                            if (paneled) {
-                                                let pt = panel.header.title[0],
-                                                    pti = pt.textContent;
-                                                if (ds) {
-                                                    du(pt, pti);
-                                                } else {
-                                                    sf.addEventListener('input', function() {
-                                                        pt.textContent = this.value || pti;
-                                                    })
-
-                                                    // Update subject on initial load for replied mail
-                                                    ud();
-                                                }
-                                            }
-                                        };
-
-                                    paneled && target.classList.add(classes.panel.container, classes.panel.container_shown);
-                                    adjust.contenteditable(target);
-
-                                    // Reflect subject in panel title if exists
-                                    title_update();
-
-                                    // Toggle HTML/text editor state
-                                    let ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`);
-                                    ctl_tgl.addEventListener('click', () => {
-                                        let st = parseInt(config.html.allowed) || 0,
-                                            ia = parseInt(config.html.initial) || 0,
-                                            sg = +!st,
-                                            co = sg ? 2 : (ia === 1 ? 1 : 0);
-
-                                        toggle.formatting(target, sg);
-                                        config.html.allowed = sg;
-
-                                        // Change actual config option
-                                        config_update('html_edit', co);
-
-                                        // Convert current message to make sure HTML is removed
-                                        editor.convert();
-                                    })
-                                    // ctl_tgl.dispatchEvent(new Event('click'));
-
-
-                                    // Register controls and its events
-                                    setTimeout(() => {
-                                        let tb = editor.this.options.modules.toolbar.container,
-                                            upload_list = [],
-                                            server_list = [],
-                                            priority = null,
-                                            server_attach_previous = null,
-                                            attachments = target.querySelector(`[name="${classes.form.name.tattach}"]`),
-                                            content = target.querySelector(`.${classes.editor.content}`),
-                                            ctl_att = ccs[0].querySelector(`.${classes.editor.controls.extra.attach}`),
-                                            ctl_lnk = ccs[0].querySelector(`.${classes.editor.controls.extra.link}`),
-                                            ctl_img = ccs[0].querySelector(`.${classes.editor.controls.extra.image}`),
-                                            ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
-                                            submit = target.querySelector('button[type="submit"]'),
-                                            to_ = target.querySelector('input[name="to"]'),
-                                            cc_ = target.querySelector('input[name="cc"]'),
-                                            bcc_ = target.querySelector('input[name="bcc"]'),
-                                            $more_options = $(target).find(`.${classes.editor.controls.more}`),
-
-                                            scheduled = {
-                                                target: target.querySelector(`[name="${classes.form.name.scheduled}"]`),
-                                                container: target.querySelector(`.${classes.editor.scheduled}`),
-                                                events: function() {
-
-                                                    // Event to prevent closing dropdown for scheduled mail
-                                                    this.container.addEventListener('click', (event) => {
-                                                        event.stopPropagation();
-                                                    });
-
-                                                    // Event to change send/scheduled label for submit button
-                                                    this.checkbox().addEventListener('click', function() {
-                                                        let s = submit,
-                                                            t = s.querySelector('span').querySelector('span'),
-                                                            ct = _.lang('mail_composer_schedule'),
-                                                            c = this.checked,
-                                                            sb = classes.button.submit,
-                                                            sc = classes.button.schedule,
-                                                            d = s.nextElementSibling,
-                                                            st = language._send;
-
-                                                        s.classList.toggle(sc, c);
-                                                        s.classList.toggle(sb, !c);
-                                                        d.classList.toggle(sc, c);
-                                                        d.classList.toggle(sb, !c);
-                                                        t.textContent = c ? ct : st;
-                                                    });
-
-                                                    // Initialize date picker
-                                                    this.datepicker();
-                                                },
-                                                status: function() {
-                                                    return this.target.checked;
-                                                },
-                                                checkbox: function() {
-                                                    return this.container.querySelector('[type="checkbox"]');
-                                                },
-                                                holder: function() {
-                                                    return this.container.querySelector('[data-t]');
-                                                },
-                                                datepicker: function() {
-
-                                                    let tag = this.holder(),
-                                                        input = tag.previousSibling;
-
-                                                    // Event to handle change date for scheduled mail
-                                                    tag.addEventListener('click', function() {
-                                                        $(input).datepicker('show');
-                                                    });
-
-                                                    $(input).datepicker({
-                                                        language: _.sdata("language"),
-                                                        todayHighlight: true,
-                                                        autoclose: true,
-                                                        startDate: "0d",
-                                                    }).on("changeDate", function(l) {
-                                                        let today = _.lang('global_today').toLowerCase(),
-                                                            tomorrow = _.lang('global_tomorrow').toLowerCase(),
-                                                            label = today,
-                                                            now = new Date(),
-                                                            y = now.getFullYear(),
-                                                            m = now.getMonth() + 1,
-                                                            d = now.getDate(),
-                                                            py = l.date.getFullYear(),
-                                                            pm = l.date.getMonth() + 1,
-                                                            pd = l.date.getDate(),
-                                                            date = l.dates[0],
-                                                            date_ = py + '-' + pm + '-' + pd,
-                                                            date_formatted = moment(date).format(_.variable.locale.short);
-
-                                                        this.dataset.value = date_;
-
-                                                        if (
-                                                            y === py && m === pm &&
-                                                            (d === pd || d + 1 === pd)
-                                                        ) {
-                                                            if (d + 1 === pd) {
-                                                                label = tomorrow
-                                                            }
-                                                        } else {
-                                                            label = date_formatted
-                                                        }
-
-                                                        tag.textContent = label
-                                                    })
-                                                }
-                                            },
-
-                                            draft = {
-
-                                                timeout: {
-                                                    update: null,
-                                                    discard: null,
-                                                },
-
-                                                // Draft data
-                                                data: [],
-
-                                                // Reset draft data
-                                                reset: function() {
-                                                    let folder = this.data[0];
-                                                    this.data = [];
-                                                    if (folder) {
-                                                        this.data.push(folder);
-                                                    }
-                                                },
-
-                                                // Test draft data
-                                                test: function() {
-                                                    return this.data.length >= 1;
-                                                },
-
-                                                // Initiate draft save
-                                                save: function() {
-                                                    this.terminate();
-                                                    this.timeout.update = setTimeout(() => {
-                                                        submit.dispatchEvent(new Event('click'));
-                                                    }, 2e3);
-                                                },
-
-                                                // Terminate draft save
-                                                terminate: function() {
-                                                    typeof this.timeout.update === 'number' &&
-                                                        clearTimeout(this.timeout.update);
-                                                },
-
-                                                // Discard the draft
-                                                purge: function(id, folder, message) {
-                                                    fetch(`${xtarget.delete}&id=${id}&folder=${folder}&d=${message}`).then(r => {
-                                                        r.text().then(() => {
-                                                            draft.refresh();
-                                                        });
-                                                    })
-                                                },
-
-                                                // Update draft folder's content if opened
-                                                refresh: function() {
-                                                    if (this.test() && folders.check(this.data[0])) {
-                                                        folders.refresh();
-                                                    }
-                                                },
-
-                                                clean: function() {
-                                                    this.test() && this.purge(this.data[0], this.data[1], this.data[3]);
-                                                    this.reset();
-                                                    this.terminate();
-                                                },
-
-                                                control: {
-
-                                                    // Schedule draft for discard
-                                                    discard: function() {
-                                                        editor.maximized() && panel.normalize();
-                                                        draft.timeout.discard = setTimeout(() => {
-                                                            draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
-                                                            draft.reset();
-                                                            draft.terminate();
-                                                            paneled && panel.close();
-                                                        }, 5e3);
-                                                    },
-
-                                                    // Undo discarded draft
-                                                    undo: function() {
-                                                        target.classList.remove(classes.hidden);
-                                                        typeof draft.timeout.discard === 'number' &&
-                                                            clearTimeout(draft.timeout.discard);
-                                                    },
-                                                }
-
-                                            },
-
-                                            // Process added attachment
-                                            add_attachment = (type, id, filedata, size, update) => {
-
-                                                let icon = (type === 'server' ? classes.icons.upload.server : classes.icons.upload.attach),
-                                                    name = filedata.name.split("/").pop() || filedata.name;
-
-                                                $(attachments).tagsinput('add', `[i class="${icon}"][/i]${name} [em](${_.plugin.nice_size(size)})[/em]`);
-
-                                                // Register reference for inserted tag
-                                                let tags = attachments.previousSibling.querySelectorAll('.tag'),
-                                                    last = tags[tags.length - 1];
-                                                last.dataset.reference = id;
-
-                                                // Store uploaded/attached file
-                                                if (type === 'server') {
-                                                    server_list[id] = filedata.name;
-                                                } else {
-                                                    upload_list[id] = filedata.file;
-                                                }
-
-                                                // Update editor on last
-                                                if (update) {
-                                                    adjust.contenteditable(target)
-                                                    toggle.attachments(target);
-                                                }
-                                            };
-
-                                        // Event for external insert link to editor button
-                                        ctl_lnk.addEventListener('click', () => {
-                                            tb.querySelector(`.${classes.editor.tb_link}`).dispatchEvent(new Event('click'));
-                                        })
-
-                                        // Event for external add images to editor button
-                                        ctl_img.addEventListener('click', () => {
-                                            tb.querySelector(`.${classes.editor.tb_image}`).dispatchEvent(new Event('click'));
-                                        })
-
-                                        // Event for discarding the draft
-                                        ctl_dis.addEventListener('click', () => {
-                                            draft.control.discard();
-                                            let undo = {
-                                                cancel: {
-                                                    label: _.lang('global_undo'),
-                                                    action: function() {
-                                                        this.hide();
-                                                        draft.control.undo();
-                                                    }
-                                                }
-                                            };
-                                            _.notification([$$.$.notification.type.trash, _.lang('mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
-                                            target.classList.add(classes.hidden);
-                                        })
-
-                                        // Event for controlling visibility of extra recipients fields
-                                        rcs.querySelectorAll('button').forEach((b) => {
-                                            b.addEventListener('click', () => {
-                                                let enabled = b.classList.contains(classes.button.inverse),
-                                                    type = b.classList.contains("bcc") ? 'bcc' : 'cc';
-                                                toggle.recipients(type, [target, enabled]);
-                                                adjust.contenteditable(target);
-                                            });
-                                        })
-
-                                        // Event for attaching new file(s)
-                                        ctl_att.addEventListener('click', () => {
-                                            let form = target.querySelector('form'),
-                                                xu = document.createElement('input');
-
-                                            // Create temporary file input and listen for change
-                                            xu.type = "file";
-                                            xu.setAttribute('multiple', 1);
-                                            xu.classList.add(classes.hidden);
-                                            xu = form.appendChild(xu);
-                                            xu.click();
-                                            xu.addEventListener('change', function() {
-                                                Array.from(this.files).forEach((file, i, arr) => {
-                                                    let fuid = generate.random() + i,
-                                                        size = file.size,
-                                                        name = file.name,
-                                                        last = (i === arr.length - 1);
-                                                    add_attachment('upload', fuid, { name: name, file: file }, size, last);
-                                                    last && xu.remove();
+                                            config_update = function(option, value) {
+                                                _.update_mdata("/uconfig.cgi?mailbox", "/uconfig_save.cgi", {
+                                                    [option]: value
                                                 })
-                                            })
+                                            },
+                                            qs = Quill.import('attributors/style/size'),
+                                            qf = Quill.import('attributors/style/font');
+
+                                        // Quill: assign font-size and font-family, rather than using classes
+                                        qs.whitelist = ["0.75em", "1.2em", "1.5em", "2.5em"];
+                                        qf.whitelist = ["initial", "sans-serif", "serif", "monospace"];
+                                        Quill.register(qs, true);
+                                        Quill.register(qf, true);
+
+                                        // Redefine the actual target
+                                        target = target[0];
+
+
+                                        let asb = target.querySelector(`.${classes.form.header}`),
+                                            ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
+                                            rcs = target.querySelector(`.${classes.form.recipients.control}`),
+                                            qtg = target.querySelector(`.${classes.editor.compose}`),
+                                            tcm = target.querySelector(`[${classes.editor.composer}="text"]`),
+                                            editor = {
+                                                this: new Quill(qtg, {
+                                                    modules: {
+                                                        formula: false,
+                                                        syntax: false,
+                                                        imageDrop: true,
+                                                        toolbar: target.querySelector(`#tb-${id}`),
+                                                    },
+                                                    bounds: target,
+                                                    theme: 'snow'
+                                                }),
+                                                get: {
+                                                    text: () => {
+                                                        return tcm.value
+                                                    },
+                                                    html: () => {
+                                                        return editor.this.root.innerHTML
+                                                    },
+                                                    data: () => {
+                                                        return config_html.allowed ? editor.get.html() : editor.get.text();
+                                                    },
+                                                },
+                                                convert: () => {
+                                                    let he = editor.this,
+                                                        te = he.root.parentElement.previousElementSibling;
+
+                                                    if (config_html.allowed) {
+                                                        he.setText(te.value);
+                                                    } else {
+                                                        te.value = he.getText();
+                                                    }
+                                                },
+                                                maximized: () => {
+                                                    return target.hasAttribute('maximized');
+                                                }
+                                            },
+
+                                            // Update message title dynamically
+                                            title_update = function(ds) {
+                                                let sf = asb.querySelector('[name="subject"]'),
+
+                                                    // Trigger title update
+                                                    ud = () => {
+                                                        sf.dispatchEvent(new Event('input'));
+                                                    },
+
+                                                    // Change opacity for notifications
+                                                    us = (tg, df) => {
+                                                        if (paneled) {
+                                                            tg.style.opacity = (df ? 0.7 : 1);
+                                                        }
+                                                    },
+
+                                                    // Display draft processing notifications
+                                                    du = (tg) => {
+
+                                                        if (ds === 1) {
+                                                            tg.textContent = _.lang('mail_composer_draft_saving');
+                                                            us(tg, true);
+                                                        } else if (ds === -1) {
+                                                            tg.textContent = _.lang('mail_composer_draft_saved');
+                                                            us(tg, true);
+
+                                                            // Change status back to original title
+                                                            setTimeout(() => {
+                                                                us(tg);
+                                                                ud();
+                                                            }, 2e3)
+                                                        }
+                                                    }
+
+                                                if (paneled) {
+                                                    let pt = panel.header.title[0],
+                                                        pti = pt.textContent;
+                                                    if (ds) {
+                                                        du(pt, pti);
+                                                    } else {
+                                                        sf.addEventListener('input', function() {
+                                                            pt.textContent = this.value || pti;
+                                                        })
+
+                                                        // Update subject on initial load for replied mail
+                                                        ud();
+                                                    }
+                                                }
+                                            };
+
+                                        paneled && target.classList.add(classes.panel.container, classes.panel.container_shown);
+                                        adjust.contenteditable(target);
+
+                                        // Reflect subject in panel title if exists
+                                        title_update();
+
+                                        // Toggle HTML/text editor state
+                                        let ctl_tgl = ccs[0].querySelector(`.${classes.editor.controls.extra.html}`);
+                                        ctl_tgl.addEventListener('click', () => {
+                                            let st = parseInt(config_html.allowed) || 0,
+                                                ia = parseInt(config_html.initial) || 0,
+                                                sg = +!st,
+                                                co = sg ? 2 : (ia === 1 ? 1 : 0);
+
+                                            toggle.formatting(target, sg);
+                                            config_html.allowed = sg;
+
+                                            // Change actual config option
+                                            config_update('html_edit', co);
+
+                                            // Convert current message to make sure HTML is removed
+                                            editor.convert();
                                         })
 
-                                        // Events to manage more options menu
-                                        $more_options.find('.dropdown-menu').on("click.bs.dropdown", function(event) {
+                                        // Event to automatically adjust adjust real name and username
+                                        let from_from = target.querySelector('input[name="from"]:not(disabled)'),
+                                            from_name = target.querySelector('input[name="real"]'),
+                                            from_user = target.querySelector('input[name="user"]');
+                                        if (from_name && from_user) {
+                                            $.fn.eW = function(text, font) {
+                                                if (!$.fn.eW.fakeEl) {
+                                                    $.fn.eW.fakeEl = $('<span data-eW>').hide().appendTo(document.body);
+                                                }
+                                                $.fn.eW.fakeEl.text(text || this.val() || this.text() || this.attr('placeholder')).css('font', font || this.css('font'));
+                                                return $.fn.eW.fakeEl.width() + 7;
+                                            };
+                                            [from_name, from_user].forEach((i, n) => {
+                                                i.addEventListener('input', function() {
+                                                    $(this).css({ width: parseInt($(this).eW() + (!n && 3)) })
+                                                });
+                                                i.dispatchEvent(new Event('input'));
+                                            })
+                                        }
 
-                                            let type = this.dataset.type,
-                                                etarget = event.target,
-                                                action = etarget.dataset.value;
+                                        // Focus editable from input
+                                        let from_focus = from_from || from_name;
+                                        if (from_focus) {
+                                            from_focus.focus();
+                                            from_focus.setSelectionRange(-1, -1);
+                                        }
 
-                                            // Attach new file from server
-                                            if (action === 'server-attach') {
-                                                let error = {
-                                                    read: _.lang('mail_composer_server_attach_error_read'),
-                                                    dir: _.lang('mail_composer_server_attach_error_dir')
-                                                };
+                                        // Register controls and its events
+                                        setTimeout(() => {
+                                            let tb = editor.this.options.modules.toolbar.container,
+                                                upload_list = [],
+                                                server_list = [],
+                                                priority = null,
+                                                server_attach_previous = null,
+                                                attachments = target.querySelector(`[name="${classes.form.name.tattach}"]`),
+                                                content = target.querySelector(`.${classes.editor.content}`),
+                                                ctl_att = ccs[0].querySelector(`.${classes.editor.controls.extra.attach}`),
+                                                ctl_lnk = ccs[0].querySelector(`.${classes.editor.controls.extra.link}`),
+                                                ctl_img = ccs[0].querySelector(`.${classes.editor.controls.extra.image}`),
+                                                ctl_dis = ccs[1].querySelector(`.${classes.editor.controls.extra.discard}`),
+                                                submit = target.querySelector('button[type="submit"]'),
+                                                to_ = target.querySelector('input[name="to"]'),
+                                                cc_ = target.querySelector('input[name="cc"]'),
+                                                bcc_ = target.querySelector('input[name="bcc"]'),
+                                                $more_options = $(target).find(`.${classes.editor.controls.more}`),
 
-                                                _.file_chooser({
-                                                    file: server_attach_previous
-                                                }).then(file => {
-                                                    if (file) {
-                                                        let suid = generate.random();
-                                                        fetch(xtarget.getSize + file).then(r => {
-                                                            r.text().then(rs => {
-                                                                let s = rs.split(`|`),
-                                                                    size = s[1].replace(/\s+/g, String());
-                                                                if (size == -1 || size == -2) {
-                                                                    let message = size == -1 ? error.read : error.dir
-                                                                    _.notification([$$.$.notification.danger, message], 10, "error", 0, 1, ['bottom', 'center'])
-                                                                } else {
-                                                                    add_attachment('server', suid, { name: file }, size, true);
+                                                scheduled = {
+                                                    target: target.querySelector(`[name="${classes.form.name.scheduled}"]`),
+                                                    container: target.querySelector(`.${classes.editor.scheduled}`),
+                                                    events: function() {
+
+                                                        // Event to prevent closing dropdown for scheduled mail
+                                                        this.container.addEventListener('click', (event) => {
+                                                            event.stopPropagation();
+                                                        });
+
+                                                        // Event to change send/scheduled label for submit button
+                                                        this.checkbox().addEventListener('click', function() {
+                                                            let s = submit,
+                                                                t = s.querySelector('span').querySelector('span'),
+                                                                ct = _.lang('mail_composer_schedule'),
+                                                                c = this.checked,
+                                                                sb = classes.button.submit,
+                                                                sc = classes.button.schedule,
+                                                                d = s.nextElementSibling,
+                                                                st = language._send;
+
+                                                            s.classList.toggle(sc, c);
+                                                            s.classList.toggle(sb, !c);
+                                                            d.classList.toggle(sc, c);
+                                                            d.classList.toggle(sb, !c);
+                                                            t.textContent = c ? ct : st;
+                                                        });
+
+                                                        // Initialize date picker
+                                                        this.datepicker();
+                                                    },
+                                                    status: function() {
+                                                        return this.target.checked;
+                                                    },
+                                                    checkbox: function() {
+                                                        return this.container.querySelector('[type="checkbox"]');
+                                                    },
+                                                    holder: function() {
+                                                        return this.container.querySelector('[data-t]');
+                                                    },
+                                                    datepicker: function() {
+
+                                                        let tag = this.holder(),
+                                                            input = tag.previousSibling;
+
+                                                        // Event to handle change date for scheduled mail
+                                                        tag.addEventListener('click', function() {
+                                                            $(input).datepicker('show');
+                                                        });
+
+                                                        $(input).datepicker({
+                                                            language: _.sdata("language"),
+                                                            todayHighlight: true,
+                                                            autoclose: true,
+                                                            startDate: "0d",
+                                                        }).on("changeDate", function(l) {
+                                                            let today = _.lang('global_today').toLowerCase(),
+                                                                tomorrow = _.lang('global_tomorrow').toLowerCase(),
+                                                                label = today,
+                                                                now = new Date(),
+                                                                y = now.getFullYear(),
+                                                                m = now.getMonth() + 1,
+                                                                d = now.getDate(),
+                                                                py = l.date.getFullYear(),
+                                                                pm = l.date.getMonth() + 1,
+                                                                pd = l.date.getDate(),
+                                                                date = l.dates[0],
+                                                                date_ = py + '-' + pm + '-' + pd,
+                                                                date_formatted = moment(date).format(_.variable.locale.short);
+
+                                                            this.dataset.value = date_;
+
+                                                            if (
+                                                                y === py && m === pm &&
+                                                                (d === pd || d + 1 === pd)
+                                                            ) {
+                                                                if (d + 1 === pd) {
+                                                                    label = tomorrow
                                                                 }
+                                                            } else {
+                                                                label = date_formatted
+                                                            }
+
+                                                            tag.textContent = label
+                                                        })
+                                                    }
+                                                },
+
+                                                draft = {
+
+                                                    timeout: {
+                                                        update: null,
+                                                        discard: null,
+                                                    },
+
+                                                    // Draft data
+                                                    data: [],
+
+                                                    // Reset draft data
+                                                    reset: function() {
+                                                        let folder = this.data[0];
+                                                        this.data = [];
+                                                        if (folder) {
+                                                            this.data.push(folder);
+                                                        }
+                                                    },
+
+                                                    // Test draft data
+                                                    test: function() {
+                                                        return this.data.length >= 1;
+                                                    },
+
+                                                    // Initiate draft save
+                                                    save: function() {
+                                                        this.terminate();
+                                                        this.timeout.update = setTimeout(() => {
+                                                            submit.dispatchEvent(new Event('click'));
+                                                        }, 2e3);
+                                                    },
+
+                                                    // Terminate draft save
+                                                    terminate: function() {
+                                                        typeof this.timeout.update === 'number' &&
+                                                            clearTimeout(this.timeout.update);
+                                                    },
+
+                                                    // Discard the draft
+                                                    purge: function(id, folder, message) {
+                                                        fetch(`${xtarget.delete}&id=${id}&folder=${folder}&d=${message}`).then(r => {
+                                                            r.text().then(() => {
+                                                                draft.refresh();
                                                             });
                                                         })
-                                                    }
-                                                    server_attach_previous = file;
-                                                });
-                                                return
-                                            }
-
-                                            // Prevent closing dropdown menu on click for all other
-                                            event.stopPropagation();
-
-                                            // Change message priority
-                                            if (type === 'priority') {
-                                                let check = etarget.closest('ul').querySelector('i');
-                                                check.remove();
-                                                etarget.appendChild(check);
-                                                priority = action ? ~~action : null;
-                                            }
-
-                                            // Toggle options checkboxes
-                                            if (type === 'options') {
-                                                let cb = etarget.querySelector('input[type="checkbox"]');
-                                                cb && (cb.checked ^= 1);
-                                            }
-                                        });
-
-                                        // Init attachment tags input
-                                        $(attachments).tagsinput({
-                                            allowDuplicates: true,
-                                            confirmKeys: [13],
-                                            delimiter: '\\000',
-                                        });
-
-                                        // Remove actual attachments upon removing a tag
-                                        $(attachments).on('itemRemoved', (event) => {
-                                            let item = event.item[1];
-                                            if (item) {
-                                                delete upload_list[item];
-                                                delete server_list[item];
-                                            }
-                                            toggle.attachments(target);
-                                        });
-
-                                        // Init tooltip for compose controls
-                                        _.plugin.tooltip($(ctl_att)
-                                            .add(ctl_img)
-                                            .add(ctl_att)
-                                            .add(ctl_lnk)
-                                            .add(ctl_tgl)
-                                            .add(ctl_dis)
-                                        );
-
-                                        // Create tooltip for editor controls
-                                        let editor_controls = [
-                                            'font',
-                                            'size',
-                                            'bold',
-                                            'italic',
-                                            'underline',
-                                            'color',
-                                            'background',
-                                            'align',
-                                            { 'list': 'ordered' },
-                                            { 'list': 'bullet' },
-                                            'strike',
-                                            'blockquote',
-                                            'code-block',
-                                            'link',
-                                            'clean',
-                                        ]
-                                        editor_controls.forEach((v) => {
-                                            let button,
-                                                key,
-                                                value,
-                                                language = 'editor_tb';
-
-                                            if (typeof v === 'object') {
-                                                key = Object.keys(v)[0];
-                                                value = `${key}[value="${v[key]}"]`;
-                                                language += `_${key}_${v[key]}`;
-                                            } else {
-                                                value = v;
-                                                language += `_${v}`;
-                                            }
-
-                                            button = tb.querySelector(`.ql-${value}`)
-                                            button.dataset.title = adjust.modifier(_.lang(language));
-                                            _.plugin.tooltip($(button))
-                                        })
-
-                                        // Event to handle change in header
-                                        asb.addEventListener('input', function() {
-
-                                            // Save the draft
-                                            draft.save();
-                                        })
-
-                                        // Event to prevent default submit on input fields
-                                        asb.querySelectorAll('input').forEach((input) => {
-                                            input.addEventListener('keydown', (event) => {
-                                                if (event.keyCode === 13) {
-                                                    event.preventDefault();
-                                                    return
-                                                }
-                                                draft.save();
-                                            });
-                                        })
-
-                                        // Event to handle content change in HTML body
-                                        editor.this.on('text-change', function() {
-
-                                            // Save the draft
-                                            draft.save();
-                                        })
-
-                                        // Event to handle content change in text body
-                                        tcm.addEventListener('input', function() {
-
-                                            // Save the draft
-                                            draft.save();
-                                        })
-
-                                        // Scheduled mail events
-                                        scheduled.events();
-
-                                        // Bring address book autocompletion
-                                        fetch(xtarget.addressBook)
-                                            .then(function(rs) {
-                                                return rs.text();
-                                            })
-                                            .then(function(d) {
-
-                                                [to_, cc_, bcc_].forEach(input => {
-
-                                                    // Bind tags input
-                                                    let tags = $(input).tagsinput({
-                                                        confirmKeys: [13, 32],
-                                                        addOnBlur: false,
-                                                        cancelConfirmKeysOnEmpty: false,
-                                                        tagClass: 'label recipient'
-                                                    });
-
-                                                    // Initialize autocomplete on received data,
-                                                    // if there is something in user's address book
-                                                    let a = _.lang('theme_xhred_global_alias'),
-                                                        b = d.match(/"(.*)","(.*)"/gm);
-                                                    if (b) {
-                                                        let book = [];
-                                                        b.map(function(en) {
-                                                            let gr = en.match(/"-","(.*)"/),
-                                                                em = en.match(/"(.*)","(.*)"/);
-                                                            if (gr) {
-                                                                book.push(a + " <" + em[2] + ">");
-                                                            } else if (em) {
-                                                                book.push(em[2] + " <" + em[1] + ">");
-                                                            }
-                                                        });
-
-                                                        !$.isEmptyObject(book) && tags[0].$input.autocomplete({
-                                                            lookup: book,
-                                                            autoSelectFirst: true,
-                                                            position: 'relative',
-                                                            appendTo: tags[0].$container,
-                                                            onSelect: function(m) {
-                                                                $(input).tagsinput('add', m.value);
-                                                                this.value = String();
-                                                            }
-                                                        });
-                                                    }
-
-                                                    $(input)
-
-                                                        .on('itemAdded itemRemoved', function(event) {
-
-                                                            // Soft validate email address
-                                                            let email = event.item,
-                                                                contact = email.match(/<(.*)>/);
-                                                            if (contact) {
-                                                                email = contact[1];
-                                                            }
-                                                            if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
-                                                                $(event.target.previousSibling).find('.recipient').last().addClass('error')
-                                                            }
-
-                                                            // Adjust the container size on adding/removing recipient
-                                                            adjust.contenteditable(target);
-
-                                                        })
-
-                                                    // Imitate tab keypress to generate the tag as well
-                                                    tags[0].$input.on('keydown blur', function(event) {
-                                                        let value = this.value;
-                                                        if (event.keyCode === 9 || (event.type === 'blur' && event.relatedTarget)) {
-
-                                                            // Dispatch event to complete the tag
-                                                            $(this).trigger(_.event.generate('keypress', 32));
-
-                                                            // Adjust the container size on adding/removing recipient
-                                                            adjust.contenteditable(target);
-
-                                                            if (value) {
-                                                                event.preventDefault();
-                                                            }
-                                                        }
-                                                    });
-                                                })
-                                            });
-
-                                        // Submitting mail
-                                        submit.addEventListener('click', function(event) {
-                                            event.preventDefault();
-
-                                            let form = this.closest('form'),
-                                                form_data = new FormData(form),
-                                                trusted = event.isTrusted || ~~submit.dataset.isTrusted,
-                                                draft_status = !trusted;
-
-                                            // Reset trusted state for submit
-                                            this.dataset.isTrusted = 0;
-
-                                            // Terminate draft event in case mail is actually submitted
-                                            if (trusted) {
-                                                draft.terminate();
-                                            }
-
-                                            // Add message body
-                                            form_data.append('body', editor.get.data());
-
-                                            // Set message priority
-                                            let pri_key = 'pri'
-                                            priority ? form_data.set(pri_key, priority) : form_data.delete(pri_key);
-
-                                            // Add hidden entries except ones already in the form
-                                            Object.entries(data.hidden).forEach((e) => {
-                                                let key = e[0],
-                                                    value = e[1];
-                                                if (!form_data.has(key)) {
-                                                    form_data.set(key, value)
-                                                }
-                                            });
-
-                                            // Add file uploads
-                                            let fsus = Object.values(upload_list);
-                                            fsus.length && fsus.forEach((f, i) => {
-                                                form_data.set(`attach${i}`, f)
-                                            });
-
-                                            // Add server attachments
-                                            let ssus = Object.values(server_list);
-                                            ssus.length &&
-                                                ssus.forEach((f, i) => {
-                                                    form_data.set(`file${i}`, f)
-                                                });
-
-                                            // Update HTML/text mode status
-                                            form_data.set('html_edit', config.html.allowed);
-
-                                            // Force disable spellcheck for new mail composer
-                                            form_data.set('spell', 0);
-
-                                            // Check for draft
-                                            draft_status && (
-                                                form_data.set('new', 0),
-                                                form_data.set('enew', 1),
-                                                form_data.set('save', 1),
-                                                title_update(1)
-                                            );
-
-                                            // Prepare scheduled mail
-                                            let schedule = {
-                                                date: {
-                                                    get: function(d) {
-                                                        let date = this.value,
-                                                            t = scheduled.container.querySelector('[name="date"]');
-                                                        if (t) {
-                                                            date = t.dataset.value.split('-');
-                                                        }
-                                                        return d === 'y' ? ~~date[0] : d === 'm' ? ~~date[1] : ~~date[2];
-                                                    }
-                                                },
-                                                time: {
-                                                    value: scheduled.container.querySelector('[type="time"]').value,
-                                                    get: function(t) {
-                                                        let time = ['12', '00'];
-                                                        if (this.value) {
-                                                            time = this.value.split(':');
-                                                        }
-                                                        return t === 'h' ? ~~time[0] : ~~time[1];
-                                                    }
-                                                }
-                                            }
-
-                                            if (scheduled.status() && !draft_status) {
-                                                let m = {
-                                                    body: 'mail',
-                                                    is_html: config.html.allowed,
-                                                    delete_after: 1,
-                                                    enabled: 1,
-                                                    status: 1,
-                                                    mode: 1,
-                                                    hour: schedule.time.get('h'),
-                                                    min: schedule.time.get('m'),
-                                                    day: schedule.date.get('d'),
-                                                    month: schedule.date.get('m'),
-                                                    year: schedule.date.get('y'),
-                                                }
-
-                                                // Extens submitted form data
-                                                Object.entries(m).forEach(function(e, i) {
-                                                    if (i) {
-                                                        form_data.set(e[0], e[1])
-                                                    } else {
-                                                        form_data.set(e[1], form_data.get(e[0]));
-                                                        form_data.delete(e[0]);
-                                                    }
-                                                })
-                                            }
-
-                                            // Post mail data
-                                            let xhr = new XMLHttpRequest(),
-                                                link = ((scheduled.status() && !draft_status) ? xtarget.schedule : form.getAttribute('action'));
-                                            xhr.open("POST", link);
-                                            xhr.upload.onprogress = (e) => {
-                                                !draft_status &&
-                                                    (
-                                                        _.button.progress(this, Math.ceil((e.loaded / e.total) * 100)),
-                                                        _.button.lock(this, true)
-                                                    );
-                                            };
-                                            xhr.onload = (e) => {
-                                                let rs = e.target.responseText,
-                                                    status = String(),
-                                                    error = String(),
-                                                    error_container = false,
-                                                    parser = new DOMParser(),
-                                                    _g = function(param) {
-                                                        return _.uri_param(param, e.target.responseURL)
                                                     },
-                                                    _d = {
-                                                        id: _g('id'),
-                                                        folder: {
-                                                            index: _g('folder'),
-                                                            type: _g('folder_type'),
-                                                            id: _g('folder_id'),
+
+                                                    // Update draft folder's content if opened
+                                                    refresh: function() {
+                                                        if (this.test() && folders.check(this.data[0])) {
+                                                            folders.refresh();
+                                                        }
+                                                    },
+
+                                                    clean: function() {
+                                                        this.test() && this.purge(this.data[0], this.data[1], this.data[3]);
+                                                        this.reset();
+                                                        this.terminate();
+                                                    },
+
+                                                    control: {
+
+                                                        // Schedule draft for discard
+                                                        discard: function() {
+                                                            editor.maximized() && panel.normalize();
+                                                            draft.timeout.discard = setTimeout(() => {
+                                                                draft.test() && draft.purge(draft.data[0], draft.data[1], draft.data[3]);
+                                                                draft.reset();
+                                                                draft.terminate();
+                                                                paneled && panel.close();
+                                                            }, 5e3);
                                                         },
-                                                        input: {
-                                                            id: form.querySelector('[name="id"]'),
-                                                            folder: form.querySelector('[name="folder"]'),
+
+                                                        // Undo discarded draft
+                                                        undo: function() {
+                                                            target.classList.remove(classes.hidden);
+                                                            typeof draft.timeout.discard === 'number' &&
+                                                                clearTimeout(draft.timeout.discard);
                                                         },
+                                                    }
+
+                                                },
+
+                                                // Process added attachment
+                                                add_attachment = (type, id, filedata, size, update) => {
+
+                                                    let icon = (type === 'server' ? classes.icons.upload.server : classes.icons.upload.attach),
+                                                        name = filedata.name.split("/").pop() || filedata.name;
+
+                                                    $(attachments).tagsinput('add', `[i class="${icon}"][/i]${name} [em](${_.plugin.nice_size(size)})[/em]`);
+
+                                                    // Register reference for inserted tag
+                                                    let tags = attachments.previousSibling.querySelectorAll('.tag'),
+                                                        last = tags[tags.length - 1];
+                                                    last.dataset.reference = id;
+
+                                                    // Store uploaded/attached file
+                                                    if (type === 'server') {
+                                                        server_list[id] = filedata.name;
+                                                    } else {
+                                                        upload_list[id] = filedata.file;
+                                                    }
+
+                                                    // Update editor on last
+                                                    if (update) {
+                                                        adjust.contenteditable(target)
+                                                        toggle.attachments(target);
+                                                    }
+                                                };
+
+                                            // Event for external insert link to editor button
+                                            ctl_lnk.addEventListener('click', () => {
+                                                tb.querySelector(`.${classes.editor.tb_link}`).dispatchEvent(new Event('click'));
+                                            })
+
+                                            // Event for external add images to editor button
+                                            ctl_img.addEventListener('click', () => {
+                                                tb.querySelector(`.${classes.editor.tb_image}`).dispatchEvent(new Event('click'));
+                                            })
+
+                                            // Event for discarding the draft
+                                            ctl_dis.addEventListener('click', () => {
+                                                draft.control.discard();
+                                                let undo = {
+                                                    cancel: {
+                                                        label: _.lang('global_undo'),
+                                                        action: function() {
+                                                            this.hide();
+                                                            draft.control.undo();
+                                                        }
+                                                    }
+                                                };
+                                                _.notification([$$.$.notification.type.trash, _.lang('mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
+                                                target.classList.add(classes.hidden);
+                                            })
+
+                                            // Event for controlling visibility of extra recipients fields
+                                            rcs.querySelectorAll('button').forEach((b) => {
+                                                b.addEventListener('click', () => {
+                                                    let enabled = b.classList.contains(classes.button.inverse),
+                                                        type = b.classList.contains("bcc") ? 'bcc' : 'cc';
+                                                    toggle.recipients(type, [target, enabled]);
+                                                    adjust.contenteditable(target);
+                                                });
+                                            })
+
+                                            // Event for attaching new file(s)
+                                            ctl_att.addEventListener('click', () => {
+                                                let form = target.querySelector('form'),
+                                                    xu = document.createElement('input');
+
+                                                // Create temporary file input and listen for change
+                                                xu.type = "file";
+                                                xu.setAttribute('multiple', 1);
+                                                xu.classList.add(classes.hidden);
+                                                xu = form.appendChild(xu);
+                                                xu.click();
+                                                xu.addEventListener('change', function() {
+                                                    Array.from(this.files).forEach((file, i, arr) => {
+                                                        let fuid = generate.random() + i,
+                                                            size = file.size,
+                                                            name = file.name,
+                                                            last = (i === arr.length - 1);
+                                                        add_attachment('upload', fuid, { name: name, file: file }, size, last);
+                                                        last && xu.remove();
+                                                    })
+                                                })
+                                            })
+
+                                            // Events to manage more options menu
+                                            $more_options.find('.dropdown-menu').on("click.bs.dropdown", function(event) {
+
+                                                let type = this.dataset.type,
+                                                    etarget = event.target,
+                                                    action = etarget.dataset.value;
+
+                                                // Attach new file from server
+                                                if (action === 'server-attach') {
+                                                    let error = {
+                                                        read: _.lang('mail_composer_server_attach_error_read'),
+                                                        dir: _.lang('mail_composer_server_attach_error_dir')
                                                     };
 
-                                                // Handle previously saved draft
-                                                if (draft_status) {
-
-                                                    // Update title
-                                                    title_update(-1);
-
-                                                    // Store reference for current draft
-                                                    draft.data = [_d.folder.id, _d.folder.index, (_d.input.id && _d.input.id.value), _d.id];
-
-                                                    // Clear previous drafts for IMAP and POP
-                                                    if (_d.folder.type == 2 || _d.folder.type == 4) {
-                                                        if (_d.input.id) {
-                                                            draft.purge.apply(null, draft.data)
-                                                        } else {
-                                                            draft.refresh()
+                                                    _.file_chooser({
+                                                        file: server_attach_previous
+                                                    }).then(file => {
+                                                        if (file) {
+                                                            let suid = generate.random();
+                                                            fetch(xtarget.getSize + file).then(r => {
+                                                                r.text().then(rs => {
+                                                                    let s = rs.split(`|`),
+                                                                        size = s[1].replace(/\s+/g, String());
+                                                                    if (size == -1 || size == -2) {
+                                                                        let message = size == -1 ? error.read : error.dir
+                                                                        _.notification([$$.$.notification.danger, message], 10, "error", 0, 1, ['bottom', 'center'])
+                                                                    } else {
+                                                                        add_attachment('server', suid, { name: file }, size, true);
+                                                                    }
+                                                                });
+                                                            })
                                                         }
-                                                    } else {
+                                                        server_attach_previous = file;
+                                                    });
+                                                    return
+                                                }
 
-                                                        // Refresh drafts folder at once when mail can be edited
-                                                        draft.refresh()
-                                                    }
+                                                // Prevent closing dropdown menu on click for all other
+                                                event.stopPropagation();
 
-                                                    // Remove previously set data
-                                                    _d.input.id && _d.input.id.remove();
-                                                    _d.input.folder && _d.input.folder.remove();
+                                                // Change message priority
+                                                if (type === 'priority') {
+                                                    let check = etarget.closest('ul').querySelector('i');
+                                                    check.remove();
+                                                    etarget.appendChild(check);
+                                                    priority = action ? ~~action : null;
+                                                }
 
-                                                    // Update form data
-                                                    form.insertAdjacentHTML('beforeend', element.input('id', _d.id, false, false, 'hidden'));
-                                                    form.insertAdjacentHTML('beforeend', element.input('folder', _d.folder.index, false, false, 'hidden'));
+                                                // Toggle options checkboxes
+                                                if (type === 'options') {
+                                                    let cb = etarget.querySelector('input[type="checkbox"]');
+                                                    cb && (cb.checked ^= 1);
+                                                }
+                                            });
+
+                                            // Init attachment tags input
+                                            $(attachments).tagsinput({
+                                                allowDuplicates: true,
+                                                confirmKeys: [13],
+                                                delimiter: '\\000',
+                                            });
+
+                                            // Remove actual attachments upon removing a tag
+                                            $(attachments).on('itemRemoved', (event) => {
+                                                let item = event.item[1];
+                                                if (item) {
+                                                    delete upload_list[item];
+                                                    delete server_list[item];
+                                                }
+                                                toggle.attachments(target);
+                                            });
+
+                                            // Init tooltip for compose controls
+                                            _.plugin.tooltip($(ctl_att)
+                                                .add(ctl_img)
+                                                .add(ctl_att)
+                                                .add(ctl_lnk)
+                                                .add(ctl_tgl)
+                                                .add(ctl_dis)
+                                            );
+
+                                            // Create tooltip for editor controls
+                                            let editor_controls = [
+                                                'font',
+                                                'size',
+                                                'bold',
+                                                'italic',
+                                                'underline',
+                                                'color',
+                                                'background',
+                                                'align',
+                                                { 'list': 'ordered' },
+                                                { 'list': 'bullet' },
+                                                'strike',
+                                                'blockquote',
+                                                'code-block',
+                                                'link',
+                                                'clean',
+                                            ]
+                                            editor_controls.forEach((v) => {
+                                                let button,
+                                                    key,
+                                                    value,
+                                                    language = 'editor_tb';
+
+                                                if (typeof v === 'object') {
+                                                    key = Object.keys(v)[0];
+                                                    value = `${key}[value="${v[key]}"]`;
+                                                    language += `_${key}_${v[key]}`;
                                                 } else {
+                                                    value = v;
+                                                    language += `_${v}`;
+                                                }
 
-                                                    // Handle responses
-                                                    rs = parser.parseFromString(rs, 'text/html');
-                                                    if (rs) {
-                                                        rs = rs.querySelector('.panel-body'),
-                                                            error_container = rs.querySelector('h3');
-                                                        if (error_container) {
+                                                button = tb.querySelector(`.ql-${value}`)
+                                                button.dataset.title = adjust.modifier(_.lang(language));
+                                                _.plugin.tooltip($(button))
+                                            })
 
-                                                            // Send error notification
-                                                            error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
-                                                            _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
+                                            // Event to handle change in header
+                                            asb.addEventListener('input', function() {
 
-                                                            // Reset progress
-                                                            _.button.progress(this, 0);
+                                                // Save the draft
+                                                draft.save();
+                                            })
 
-                                                            // Unlock button
-                                                            _.button.lock(this, false)
+                                            // Event to prevent default submit on input fields
+                                            asb.querySelectorAll('input').forEach((input) => {
+                                                input.addEventListener('keydown', (event) => {
+                                                    if (event.keyCode === 13) {
+                                                        event.preventDefault();
+                                                        return
+                                                    }
+                                                    draft.save();
+                                                });
+                                            })
 
-                                                        } else {
+                                            // Event to handle content change in HTML body
+                                            editor.this.on('text-change', function() {
 
-                                                            // Send success notification
-                                                            status = rs.innerHTML;
-                                                            _.notification([scheduled.status() ? $$.$.notification.type.scheduled : $$.$.notification.success, status], 10, "success", 0, 1, ['bottom', 'center'])
-                                                            paneled && panel.close();
+                                                // Save the draft
+                                                draft.save();
+                                            })
 
-                                                            // Delete previously stored draft message
-                                                            draft.clean();
+                                            // Event to handle content change in text body
+                                            tcm.addEventListener('input', function() {
+
+                                                // Save the draft
+                                                draft.save();
+                                            })
+
+                                            // Scheduled mail events
+                                            scheduled.events();
+
+                                            // Bring address book autocompletion
+                                            fetch(xtarget.addressBook)
+                                                .then(function(rs) {
+                                                    return rs.text();
+                                                })
+                                                .then(function(d) {
+
+                                                    [to_, cc_, bcc_].forEach(input => {
+
+                                                        // Bind tags input
+                                                        let tags = $(input).tagsinput({
+                                                            confirmKeys: [13, 32],
+                                                            addOnBlur: false,
+                                                            cancelConfirmKeysOnEmpty: false,
+                                                            tagClass: 'label recipient'
+                                                        });
+
+                                                        // Initialize autocomplete on received data,
+                                                        // if there is something in user's address book
+                                                        let a = _.lang('theme_xhred_global_alias'),
+                                                            b = d.match(/"(.*)","(.*)"/gm);
+                                                        if (b) {
+                                                            let book = [];
+                                                            b.map(function(en) {
+                                                                let gr = en.match(/"-","(.*)"/),
+                                                                    em = en.match(/"(.*)","(.*)"/);
+                                                                if (gr) {
+                                                                    book.push(a + " <" + em[2] + ">");
+                                                                } else if (em) {
+                                                                    book.push(em[2] + " <" + em[1] + ">");
+                                                                }
+                                                            });
+
+                                                            !$.isEmptyObject(book) && tags[0].$input.autocomplete({
+                                                                lookup: book,
+                                                                autoSelectFirst: true,
+                                                                position: 'relative',
+                                                                appendTo: tags[0].$container,
+                                                                onSelect: function(m) {
+                                                                    $(input).tagsinput('add', m.value);
+                                                                    this.value = String();
+                                                                }
+                                                            });
+                                                        }
+
+                                                        $(input)
+
+                                                            .on('itemAdded itemRemoved', function(event) {
+
+                                                                // Soft validate email address
+                                                                let email = event.item,
+                                                                    contact = email.match(/<(.*)>/);
+                                                                if (contact) {
+                                                                    email = contact[1];
+                                                                }
+                                                                if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
+                                                                    $(event.target.previousSibling).find('.recipient').last().addClass('error')
+                                                                }
+
+                                                                // Adjust the container size on adding/removing recipient
+                                                                adjust.contenteditable(target);
+
+                                                            })
+
+                                                        // Imitate tab keypress to generate the tag as well
+                                                        tags[0].$input.on('keydown blur', function(event) {
+                                                            let value = this.value;
+                                                            if (event.keyCode === 9 || (event.type === 'blur' && event.relatedTarget)) {
+
+                                                                // Dispatch event to complete the tag
+                                                                $(this).trigger(_.event.generate('keypress', 32));
+
+                                                                // Adjust the container size on adding/removing recipient
+                                                                adjust.contenteditable(target);
+
+                                                                if (value) {
+                                                                    event.preventDefault();
+                                                                }
+                                                            }
+                                                        });
+                                                    })
+                                                });
+
+                                            // Submitting mail
+                                            submit.addEventListener('click', function(event) {
+                                                event.preventDefault();
+
+                                                let form = this.closest('form'),
+                                                    form_data = new FormData(form),
+                                                    trusted = event.isTrusted || ~~submit.dataset.isTrusted,
+                                                    draft_status = !trusted;
+
+                                                // Reset trusted state for submit
+                                                this.dataset.isTrusted = 0;
+
+                                                // Terminate draft event in case mail is actually submitted
+                                                if (trusted) {
+                                                    draft.terminate();
+                                                }
+
+                                                // Add message body
+                                                form_data.append('body', editor.get.data());
+
+                                                // Set message priority
+                                                let pri_key = 'pri'
+                                                priority ? form_data.set(pri_key, priority) : form_data.delete(pri_key);
+
+                                                // Add hidden entries except ones already in the form
+                                                Object.entries(data.hidden).forEach((e) => {
+                                                    let key = e[0],
+                                                        value = e[1];
+                                                    if (!form_data.has(key)) {
+                                                        form_data.set(key, value)
+                                                    }
+                                                });
+
+                                                // Add file uploads
+                                                let fsus = Object.values(upload_list);
+                                                fsus.length && fsus.forEach((f, i) => {
+                                                    form_data.set(`attach${i}`, f)
+                                                });
+
+                                                // Add server attachments
+                                                let ssus = Object.values(server_list);
+                                                ssus.length &&
+                                                    ssus.forEach((f, i) => {
+                                                        form_data.set(`file${i}`, f)
+                                                    });
+
+                                                // Update HTML/text mode status
+                                                form_data.set('html_edit', config_html.allowed);
+
+                                                // Force disable spellcheck for new mail composer
+                                                form_data.set('spell', 0);
+
+                                                // Check for draft
+                                                draft_status && (
+                                                    form_data.set('new', 0),
+                                                    form_data.set('enew', 1),
+                                                    form_data.set('save', 1),
+                                                    title_update(1)
+                                                );
+
+                                                // Prepare scheduled mail
+                                                let schedule = {
+                                                    date: {
+                                                        get: function(d) {
+                                                            let date = this.value,
+                                                                t = scheduled.container.querySelector('[name="date"]');
+                                                            if (t) {
+                                                                date = t.dataset.value.split('-');
+                                                            }
+                                                            return d === 'y' ? ~~date[0] : d === 'm' ? ~~date[1] : ~~date[2];
+                                                        }
+                                                    },
+                                                    time: {
+                                                        value: scheduled.container.querySelector('[type="time"]').value,
+                                                        get: function(t) {
+                                                            let time = ['12', '00'];
+                                                            if (this.value) {
+                                                                time = this.value.split(':');
+                                                            }
+                                                            return t === 'h' ? ~~time[0] : ~~time[1];
                                                         }
                                                     }
                                                 }
-                                            }
-                                            xhr.onerror = (e) => {
 
-                                                // Reset progress
-                                                _.button.progress(this, 0);
+                                                if (scheduled.status() && !draft_status) {
+                                                    let m = {
+                                                        body: 'mail',
+                                                        is_html: config_html.allowed,
+                                                        delete_after: 1,
+                                                        enabled: 1,
+                                                        status: 1,
+                                                        mode: 1,
+                                                        hour: schedule.time.get('h'),
+                                                        min: schedule.time.get('m'),
+                                                        day: schedule.date.get('d'),
+                                                        month: schedule.date.get('m'),
+                                                        year: schedule.date.get('y'),
+                                                    }
 
-                                                // Unlock button
-                                                _.button.lock(this, false)
+                                                    // Extens submitted form data
+                                                    Object.entries(m).forEach(function(e, i) {
+                                                        if (i) {
+                                                            form_data.set(e[0], e[1])
+                                                        } else {
+                                                            form_data.set(e[1], form_data.get(e[0]));
+                                                            form_data.delete(e[0]);
+                                                        }
+                                                    })
+                                                }
 
-                                                // Display error message
-                                                _.error({
-                                                    responseText: e.target.responseText,
-                                                    status: xhr.status
-                                                }, 1);
-                                            }
-                                            xhr.send(form_data);
+                                                // Post mail data
+                                                let xhr = new XMLHttpRequest(),
+                                                    link = ((scheduled.status() && !draft_status) ? xtarget.schedule : form.getAttribute('action'));
+                                                xhr.open("POST", link);
+                                                xhr.upload.onprogress = (e) => {
+                                                    !draft_status &&
+                                                        (
+                                                            _.button.progress(this, Math.ceil((e.loaded / e.total) * 100)),
+                                                            _.button.lock(this, true)
+                                                        );
+                                                };
+                                                xhr.onload = (e) => {
+                                                    let rs = e.target.responseText,
+                                                        status = String(),
+                                                        error = String(),
+                                                        error_container = false,
+                                                        parser = new DOMParser(),
+                                                        _g = function(param) {
+                                                            return _.uri_param(param, e.target.responseURL)
+                                                        },
+                                                        _d = {
+                                                            id: _g('id'),
+                                                            folder: {
+                                                                index: _g('folder'),
+                                                                type: _g('folder_type'),
+                                                                id: _g('folder_id'),
+                                                            },
+                                                            input: {
+                                                                id: form.querySelector('[name="id"]'),
+                                                                folder: form.querySelector('[name="folder"]'),
+                                                            },
+                                                        };
 
-                                        })
+                                                    // Handle previously saved draft
+                                                    if (draft_status) {
 
-                                        // Submit mail using hotkey(%cmd-enter)
-                                        target.addEventListener('keydown', e => {
-                                            let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
-                                                enter = e.keyCode === 13;
-                                            if (meta && enter) {
-                                                submit.dataset.isTrusted = 1;
-                                                submit.dispatchEvent(new Event('click'));
-                                            }
-                                        });
+                                                        // Update title
+                                                        title_update(-1);
 
-                                    }, 3e2)
+                                                        // Store reference for current draft
+                                                        draft.data = [_d.folder.id, _d.folder.index, (_d.input.id && _d.input.id.value), _d.id];
+
+                                                        // Clear previous drafts for IMAP and POP
+                                                        if (_d.folder.type == 2 || _d.folder.type == 4) {
+                                                            if (_d.input.id) {
+                                                                draft.purge.apply(null, draft.data)
+                                                            } else {
+                                                                draft.refresh()
+                                                            }
+                                                        } else {
+
+                                                            // Refresh drafts folder at once when mail can be edited
+                                                            draft.refresh()
+                                                        }
+
+                                                        // Remove previously set data
+                                                        _d.input.id && _d.input.id.remove();
+                                                        _d.input.folder && _d.input.folder.remove();
+
+                                                        // Update form data
+                                                        form.insertAdjacentHTML('beforeend', element.input('id', _d.id, false, false, 'hidden'));
+                                                        form.insertAdjacentHTML('beforeend', element.input('folder', _d.folder.index, false, false, 'hidden'));
+                                                    } else {
+
+                                                        // Handle responses
+                                                        rs = parser.parseFromString(rs, 'text/html');
+                                                        if (rs) {
+                                                            rs = rs.querySelector('.panel-body'),
+                                                                error_container = rs.querySelector('h3');
+                                                            if (error_container) {
+
+                                                                // Send error notification
+                                                                error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
+                                                                _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
+
+                                                                // Reset progress
+                                                                _.button.progress(this, 0);
+
+                                                                // Unlock button
+                                                                _.button.lock(this, false)
+
+                                                            } else {
+
+                                                                // Send success notification
+                                                                status = rs.innerHTML;
+                                                                _.notification([scheduled.status() ? $$.$.notification.type.scheduled : $$.$.notification.success, status], 10, "success", 0, 1, ['bottom', 'center'])
+                                                                paneled && panel.close();
+
+                                                                // Delete previously stored draft message
+                                                                draft.clean();
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                xhr.onerror = (e) => {
+
+                                                    // Reset progress
+                                                    _.button.progress(this, 0);
+
+                                                    // Unlock button
+                                                    _.button.lock(this, false)
+
+                                                    // Display error message
+                                                    _.error({
+                                                        responseText: e.target.responseText,
+                                                        status: xhr.status
+                                                    }, 1);
+                                                }
+                                                xhr.send(form_data);
+
+                                            })
+
+                                            // Submit mail using hotkey(%cmd-enter)
+                                            target.addEventListener('keydown', e => {
+                                                let meta = _.platform.mac ? e.metaKey : e.ctrlKey,
+                                                    enter = e.keyCode === 13;
+                                                if (meta && enter) {
+                                                    submit.dataset.isTrusted = 1;
+                                                    submit.dispatchEvent(new Event('click'));
+                                                }
+                                            });
+
+                                        }, 3e2)
+                                    },
+
                                 },
+                                language = {},
+                                template = {};
 
-                            },
-                            language = {},
-                            template = {};
+                            // Group received fields
+                            Object.entries(form_data).filter((f) => {
+                                [
+                                    'from',
+                                    'real',
+                                    'to',
+                                    'cc',
+                                    'bcc',
+                                    'subject',
+                                    'body'
+                                ].includes(f[0]) ? (data.visible[f[0]] = f[1]) : (data.hidden[f[0]] = f[1]);
+                            });
 
-                        // Group received fields
-                        Object.entries(form_data).filter((f) => {
-                            [
-                                'from',
-                                'to',
-                                'cc',
-                                'bcc',
-                                'subject',
-                                'body'
-                            ].includes(f[0]) ? (data.visible[f[0]] = f[1]) : (data.hidden[f[0]] = f[1]);
-                        });
-
-                        // Extract language strings for visible fields
-                        Object.entries(data.visible).forEach((e) => {
-                            let id = e[0];
-                            language[id] = $form.find(`[name=${id}]`).parent().prev().text();
-                        });
-
-                        // Extract language strings for hidden fields
-                        Object.entries(data.hidden).forEach(function(e) {
-                            let id = e[0];
-                            if (['crypt', 'sign'].includes(id)) {
+                            // Extract language strings for visible fields
+                            Object.entries(data.visible).forEach((e) => {
+                                let id = e[0];
                                 language[id] = $form.find(`[name=${id}]`).parent().prev().text();
-                            } else if (['pri'].includes(id)) {
-                                let data = {};
-                                $form.find(`[name=${id}] option`).map(function(ix) {
-                                    data[ix] = this.innerText
-                                });
-                                language[id] = { label: $form.find(`[name=${id}]`).parent().prev().text(), data: data };
+                            });
+
+                            // Extract language strings for hidden fields
+                            Object.entries(data.hidden).forEach(function(e) {
+                                let id = e[0];
+                                if (['crypt', 'sign'].includes(id)) {
+                                    language[id] = $form.find(`[name=${id}]`).parent().prev().text();
+                                } else if (['pri'].includes(id)) {
+                                    let data = {};
+                                    $form.find(`[name=${id}] option`).map(function(ix) {
+                                        data[ix] = this.innerText
+                                    });
+                                    language[id] = { label: $form.find(`[name=${id}]`).parent().prev().text(), data: data };
+                                }
+                            });
+
+                            // Extend language with more strings
+                            language._attachments = _.lang('global_attachments');
+                            language._send = _.lang('mail_composer_send');
+                            language._scheduled = _.lang('mail_composer_scheduled')
+                                .replace(/%1/, `<span data-i>${element.type.date()}<span data-t>${_.lang('global_today').toLowerCase()}</span></span>`)
+                                .replace(/%2/, element.type.time());
+                            language._attach = _.lang('mail_composer_attach');
+                            language._insert_link = adjust.modifier(_.lang('editor_tb_link'));
+                            language._insert_picture = _.lang('mail_composer_insert_picture');
+                            language._toggle = _.lang('mail_composer_toggle');
+                            language._discard = _.lang('mail_composer_discard');
+                            language._server_attach = _.lang('mail_composer_server_attach');
+                            language._notifications = _.lang('global_notifications');
+                            language._notifications_dsn = _.lang('mail_composer_notifications_dsn');
+                            language._notifications_del = _.lang('mail_composer_notifications_del');
+                            language._encrypt = _.lang('global_encrypt');
+                            language._options = _.lang('global_options');
+                            language._addrecipients = _.lang('mail_composer_addrecipients');
+                            language._default = _.lang('global_default');
+                            language._name = _.lang('mail_composer_real_name');
+                            language._username = _.lang('mail_composer_username');
+                            language._font_size = {
+                                small: _.lang('global_small'),
+                                normal: _.lang('global_normal'),
+                                medium: _.lang('global_medium'),
+                                large: _.lang('global_large'),
+                                huge: _.lang('global_huge'),
+                            };
+
+                            // Check if we have composable from email address 
+                            let from_name = $form[0].querySelector(`input[name="real"]`),
+                                from_user = $form[0].querySelector(`input[name="user"]`),
+                                from_dom = $form[0].querySelector(`input[name="dom"]`),
+                                from_composable;
+                            if (from_dom) {
+                                from_composable = {
+                                    name: from_name.value,
+                                    user: from_user.value,
+                                    dom: from_dom.value,
+                                }
                             }
-                        });
 
-                        // Extend language with more strings
-                        language._attachments = _.lang('global_attachments');
-                        language._send = _.lang('mail_composer_send');
-                        language._scheduled = _.lang('mail_composer_scheduled')
-                            .replace(/%1/, `<span data-i>${element.type.date()}<span data-t>${_.lang('global_today').toLowerCase()}</span></span>`)
-                            .replace(/%2/, element.type.time());
-                        language._attach = _.lang('mail_composer_attach');
-                        language._insert_link = adjust.modifier(_.lang('editor_tb_link'));
-                        language._insert_picture = _.lang('mail_composer_insert_picture');
-                        language._toggle = _.lang('mail_composer_toggle');
-                        language._discard = _.lang('mail_composer_discard');
-                        language._server_attach = _.lang('mail_composer_server_attach');
-                        language._notifications = _.lang('global_notifications');
-                        language._notifications_dsn = _.lang('mail_composer_notifications_dsn');
-                        language._notifications_del = _.lang('mail_composer_notifications_del');
-                        language._encrypt = _.lang('global_encrypt');
-                        language._options = _.lang('global_options');
-                        language._addrecipients = _.lang('mail_composer_addrecipients');
-                        language._default = _.lang('global_default');
-                        language._font_size = {
-                            small: _.lang('global_small'),
-                            normal: _.lang('global_normal'),
-                            medium: _.lang('global_medium'),
-                            large: _.lang('global_large'),
-                            huge: _.lang('global_huge'),
-                        };
+                            // Check for form selects
+                            element.select.from = $form[0].querySelector(`select[name="from"]`);
+                            element.select.sign = $form[0].querySelector(`select[name="sign"]`);
+                            element.select.crypt = $form[0].querySelector(`select[name="crypt"]`);
+                            if (element.select.from) {
+                                element.select.from = element.select.from.outerHTML;
+                            }
+                            if (element.select.sign) {
+                                element.select.sign = element.select.sign.outerHTML;
+                            }
+                            if (element.select.crypt) {
+                                element.select.crypt = element.select.crypt.outerHTML;
+                            }
 
-
-                        // Check for form selects
-                        element.select.from = $form[0].querySelector(`select[name="from"]`);
-                        element.select.sign = $form[0].querySelector(`select[name="sign"]`);
-                        element.select.crypt = $form[0].querySelector(`select[name="crypt"]`);
-                        if (element.select.from) {
-                            element.select.from = element.select.from.outerHTML;
-                        }
-                        if (element.select.sign) {
-                            element.select.sign = element.select.sign.outerHTML;
-                        }
-                        if (element.select.crypt) {
-                            element.select.crypt = element.select.crypt.outerHTML;
-                        }
-
-                        // Build mail form the template
-                        template.form = $$.$.template.compose({
-                            prefix: prefix,
-                            target: {
-                                send: xtarget.send
-                            },
-                            charset: data.hidden.charset,
-                            id: id,
-                            class: classes,
-                            language: language,
-                            status: {
-                                text: ~~data.hidden.html_edit ? classes.hidden : String(),
-                                html: ~~data.hidden.html_edit ? String() : classes.hidden,
-                                module: {
-                                    schedule: _.mavailable('schedule') ? String() : classes.hidden,
-                                }
-                            },
-                            toggle: {
-                                recipients: {
-                                    cc: toggle.recipients('cc', 'rc', data.visible),
-                                    bcc: toggle.recipients('bcc', 'rc', data.visible),
-                                    ccf: toggle.recipients('cc', 'rf', data.visible),
-                                    bccf: toggle.recipients('bcc', 'rf', data.visible),
+                            // Build mail form the template
+                            template.form = $$.$.template.compose({
+                                prefix: prefix,
+                                target: {
+                                    send: xtarget.send
                                 },
-                                more: {
-                                    server_file: check.field('file0', data.hidden),
-                                    abook: check.field('abook', data.hidden),
-                                    dsn: check.field('dsn', data.hidden),
-                                    del: check.field('del', data.hidden),
-                                    sign: [check.field('sign', data.hidden), element.select.sign],
-                                    crypt: [check.field('crypt', data.hidden), element.select.crypt],
-                                    del: check.field('pri', data.hidden),
-                                }
-                            },
-                            from: element.select.from || element.input('from', data.visible, true),
-                            to: element.input('to', data.visible),
-                            cc: element.input('cc', data.visible),
-                            bcc: element.input('bcc', data.visible),
-                            subject: element.input('subject', data.visible),
-                            attachments: element.input(classes.form.name.tattach, data.visible, false, true),
-                            body: data.visible.body,
-                        })
+                                charset: data.hidden.charset,
+                                id: id,
+                                class: classes,
+                                language: language,
+                                status: {
+                                    text: ~~data.hidden.html_edit ? classes.hidden : String(),
+                                    html: ~~data.hidden.html_edit ? String() : classes.hidden,
+                                    module: {
+                                        schedule: _.mavailable('schedule') ? String() : classes.hidden,
+                                    }
+                                },
+                                toggle: {
+                                    recipients: {
+                                        cc: toggle.recipients('cc', 'rc', data.visible),
+                                        bcc: toggle.recipients('bcc', 'rc', data.visible),
+                                        ccf: toggle.recipients('cc', 'rf', data.visible),
+                                        bccf: toggle.recipients('bcc', 'rf', data.visible),
+                                    },
+                                    more: {
+                                        server_file: check.field('file0', data.hidden),
+                                        abook: check.field('abook', data.hidden),
+                                        dsn: check.field('dsn', data.hidden),
+                                        del: check.field('del', data.hidden),
+                                        sign: [check.field('sign', data.hidden), element.select.sign],
+                                        crypt: [check.field('crypt', data.hidden), element.select.crypt],
+                                        pri: check.field('pri', data.hidden),
+                                    }
+                                },
+                                from: from_composable || element.select.from || element.input('from', data.visible, !~~config.d.g.edit_from),
+                                to: element.input('to', data.visible),
+                                cc: element.input('cc', data.visible),
+                                bcc: element.input('bcc', data.visible),
+                                subject: element.input('subject', data.visible),
+                                attachments: element.input(classes.form.name.tattach, data.visible, false, true),
+                                body: data.visible.body,
+                            })
 
-                        if (inline) {
-                            let inlne_form = inline.append(template.form);
-                            element.composer(inlne_form);
-                        } else {
+                            if (inline) {
+                                let inlne_form = inline.append(template.form);
+                                element.composer(inlne_form);
+                            } else {
 
-                            // Create compose panel
-                            let composers = $(`.${classes.panel.container} .${classes.editor.compose}`).length,
-                                window_width = window.innerWidth,
-                                small_window_width = window_width < 640,
-                                window_height = window.innerHeight,
-                                small_window_height = window_height < 640,
-                                small_window = small_window_width || small_window_height,
-                                ioffset = -15,
-                                offset = composers ? ioffset * 5 * composers : ioffset,
-                                position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
-                                panel = $.jsPanel({
-                                    position: position,
-                                    theme: "dimgrey",
-                                    onwindowresize: true,
-                                    panelSize: {
-                                        width: (small_window ? window_width + 4 * ioffset : 600),
-                                        height: (small_window ? window_height + 4 * ioffset : 600)
-                                    },
-                                    headerTitle: _.lang('mail_new_message'),
-                                    content: template.form,
-                                    maximizedMargin: {
-                                        top: small_window ? -1 * ioffset : window_height * 0.03,
-                                        bottom: small_window ? -1 * ioffset : window_height * 0.03,
-                                        left: small_window ? -1 * ioffset : window_height * 0.1,
-                                        right: small_window ? -1 * ioffset : window_height * 0.1,
-                                    },
-                                    footerToolbar: function() {},
-                                    dblclicks: {
-                                        title: "maximize"
-                                    },
-                                    onminimized: function() {
-                                        toggle.backdrop(this);
-                                    },
-                                    onclosed: function() {
-                                        toggle.backdrop(this);
-                                    },
-                                    onnormalized: function() {
-                                        adjust.contenteditable(this[0]);
-                                        toggle.backdrop(this);
-                                    },
-                                    onmaximized: function() {
-                                        adjust.contenteditable(this[0]);
-                                        toggle.backdrop(this, 1);
-                                    },
-                                    callback: function() {
-                                        element.composer(this);
-                                        if (small_window) {
-                                            this.maximize();
-                                        }
-                                    },
-                                });
+                                // Create compose panel
+                                let composers = $(`.${classes.panel.container} .${classes.editor.compose}`).length,
+                                    window_width = window.innerWidth,
+                                    small_window_width = window_width < 640,
+                                    window_height = window.innerHeight,
+                                    small_window_height = window_height < 640,
+                                    small_window = small_window_width || small_window_height,
+                                    ioffset = -15,
+                                    offset = composers ? ioffset * 5 * composers : ioffset,
+                                    position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
+                                    panel = $.jsPanel({
+                                        position: position,
+                                        theme: "dimgrey",
+                                        onwindowresize: true,
+                                        panelSize: {
+                                            width: (small_window ? window_width + 4 * ioffset : 600),
+                                            height: (small_window ? window_height + 4 * ioffset : 600)
+                                        },
+                                        headerTitle: _.lang('mail_new_message'),
+                                        content: template.form,
+                                        maximizedMargin: {
+                                            top: small_window ? -1 * ioffset : window_height * 0.03,
+                                            bottom: small_window ? -1 * ioffset : window_height * 0.03,
+                                            left: small_window ? -1 * ioffset : window_height * 0.1,
+                                            right: small_window ? -1 * ioffset : window_height * 0.1,
+                                        },
+                                        footerToolbar: function() {},
+                                        dblclicks: {
+                                            title: "maximize"
+                                        },
+                                        onminimized: function() {
+                                            toggle.backdrop(this);
+                                        },
+                                        onclosed: function() {
+                                            toggle.backdrop(this);
+                                        },
+                                        onnormalized: function() {
+                                            adjust.contenteditable(this[0]);
+                                            toggle.backdrop(this);
+                                        },
+                                        onmaximized: function() {
+                                            adjust.contenteditable(this[0]);
+                                            toggle.backdrop(this, 1);
+                                        },
+                                        callback: function() {
+                                            element.composer(this);
+                                            if (small_window) {
+                                                this.maximize();
+                                            }
+                                        },
+                                    });
 
-                            panel.header.title.addClass('plain');
+                                panel.header.title.addClass('plain');
+                            }
                         }
-                    }
-                });
-        }
+                    });
+            }
 
-        // Reveal sub-modules ;;
-        return {
-            message: message,
-        }
-    })();
+            // Reveal sub-modules ;;
+            return {
+                message: message,
+            }
+        })();
 
     /**
      * Messages object sub-module ;;
@@ -2151,6 +2205,9 @@ const mail = (function() {
                         render(data);
                         loader.end();
                         _.document_title(0, _.lang('titles_mail'));
+
+                        // Set received config data
+                        config.set(data[0].config);
                     });
             },
 

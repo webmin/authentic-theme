@@ -1225,3 +1225,8 @@ theme_xhred_textarea_to_clipboard=Selected textarea content has been successfull
 
 #19.48
 theme_xhred_global_alias=Alias
+
+
+#19.50
+theme_xhred_mail_composer_real_name=Real name
+theme_xhred_mail_composer_username=username
