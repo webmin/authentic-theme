@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=เพิ่มขนาดแผงแ
 settings_sysinfo_remember_accordions=บันทึกสถานะหีบเพลงที่ใช้ครั้งสุดท้าย
 theme_xhred_textarea_to_clipboard=คัดลอกเนื้อหา textarea ที่เลือกไปยังคลิปบอร์ดเรียบร้อยแล้ว
 theme_xhred_global_alias=นามแฝง
+theme_xhred_mail_composer_real_name=ชื่อจริง
+theme_xhred_mail_composer_username=ชื่อผู้ใช้

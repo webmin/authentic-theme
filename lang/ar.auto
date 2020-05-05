@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=تكبير لوحة التحرير عن
 settings_sysinfo_remember_accordions=استخدام حالة حفظ الأكورديون آخر مرة
 theme_xhred_textarea_to_clipboard=تم نسخ محتوى النص المحدد بنجاح إلى الحافظة
 theme_xhred_global_alias=الاسم المستعار
+theme_xhred_mail_composer_real_name=الاسم الحقيقي
+theme_xhred_mail_composer_username=اسم المستخدم

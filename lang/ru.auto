@@ -765,3 +765,5 @@ theme_xhred_filemanager_editor_maximized=Развернуть панель ре�
 settings_sysinfo_remember_accordions=Сохранить состояние аккордеонов, использованное в прошлый раз
 theme_xhred_textarea_to_clipboard=Выбранное содержимое текстовой области было успешно скопировано в буфер обмена
 theme_xhred_global_alias=кличка
+theme_xhred_mail_composer_real_name=Настоящее имя
+theme_xhred_mail_composer_username=имя пользователя

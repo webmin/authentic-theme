@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Увеличете максимално
 settings_sysinfo_remember_accordions=Запазване на състоянието на акордеони, използвано последния път
 theme_xhred_textarea_to_clipboard=Избраното съдържание на текстови съобщения успешно е копирано в клипборда
 theme_xhred_global_alias=псевдоним
+theme_xhred_mail_composer_real_name=Истинско име
+theme_xhred_mail_composer_username=потребителско име

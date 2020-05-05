@@ -5,3 +5,5 @@ extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
 theme_xhred_textarea_to_clipboard=Ausgewählte Textbereichsinhalte wurden erfolgreich in die Zwischenablage kopiert
 theme_xhred_global_alias=Alias
+theme_xhred_mail_composer_real_name=Echter Name
+theme_xhred_mail_composer_username=Nutzername

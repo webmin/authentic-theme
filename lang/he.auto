@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=הגדל את חלון העורכים �
 settings_sysinfo_remember_accordions=שמור מצב אקורדיונים ששימש בפעם הקודמת
 theme_xhred_textarea_to_clipboard=תוכן טקסטריאה שנבחר הועתק בהצלחה ללוח
 theme_xhred_global_alias=כינוי
+theme_xhred_mail_composer_real_name=שם אמיתי
+theme_xhred_mail_composer_username=שם משתמש

@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Gehitu editoreen panela hasieran
 settings_sysinfo_remember_accordions=Gorde akordeoien egoera azken aldiz erabilita
 theme_xhred_textarea_to_clipboard=Aukeratutako textarea edukia arbelean kopiatu da
 theme_xhred_global_alias=alias
+theme_xhred_mail_composer_real_name=Benetako izena
+theme_xhred_mail_composer_username=Erabiltzaile izena

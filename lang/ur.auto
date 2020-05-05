@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=شروع ہونے پر ایڈیٹر پ�
 settings_sysinfo_remember_accordions=پچھلی بار استعمال ہونے والی ایورڈینس اسٹیٹ کو بچائیں
 theme_xhred_textarea_to_clipboard=منتخب ٹیکسٹیریا مواد کو کامیابی کے ساتھ کلپ بورڈ میں کاپی کردیا گیا ہے
 theme_xhred_global_alias=عرف
+theme_xhred_mail_composer_real_name=اصلی نام
+theme_xhred_mail_composer_username=صارف نام

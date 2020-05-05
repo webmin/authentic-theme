@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Μεγιστοποιήστε τον π�
 settings_sysinfo_remember_accordions=Αποθηκεύστε την κατάσταση ακορντεόν που χρησιμοποιήθηκε την τελευταία φορά
 theme_xhred_textarea_to_clipboard=Το επιλεγμένο περιεχόμενο κειμένου αντιγράφηκε επιτυχώς στο πρόχειρο
 theme_xhred_global_alias=Ψευδώνυμο
+theme_xhred_mail_composer_real_name=Το πραγματικό του όνομα
+theme_xhred_mail_composer_username=όνομα χρήστη

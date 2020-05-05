@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Maksimeer die redigeerderpaneel by aanv
 settings_sysinfo_remember_accordions=Stoor trekklaviertoestand wat laas gebruik is
 theme_xhred_textarea_to_clipboard=Geselekteerde teksarea-inhoud is suksesvol na die knipbord gekopieër
 theme_xhred_global_alias=alias
+theme_xhred_mail_composer_real_name=Regte naam
+theme_xhred_mail_composer_username=username

@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Maksimoi toimittajapaneeli käynnistyks
 settings_sysinfo_remember_accordions=Tallenna harmonikan tila, jota käytettiin viimeksi
 theme_xhred_textarea_to_clipboard=Valittu tekstialueen sisältö on kopioitu onnistuneesti leikepöydälle
 theme_xhred_global_alias=Alias
+theme_xhred_mail_composer_real_name=Oikea nimi
+theme_xhred_mail_composer_username=käyttäjätunnus

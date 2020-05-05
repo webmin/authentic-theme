@@ -442,3 +442,5 @@ theme_xhred_filemanager_editor_maximized=Maksimer redigeringspanelet ved start
 settings_sysinfo_remember_accordions=Lagre trekkspill tilstand brukt sist
 theme_xhred_textarea_to_clipboard=Det valgte tekstområdet innholdet er blitt kopiert til utklippstavlen
 theme_xhred_global_alias=Alias
+theme_xhred_mail_composer_real_name=Virkelige navn
+theme_xhred_mail_composer_username=brukernavn

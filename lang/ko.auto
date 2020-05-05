@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=시작시 편집기 패널 최대화
 settings_sysinfo_remember_accordions=마지막으로 사용한 아코디언 상태 저장
 theme_xhred_textarea_to_clipboard=선택한 텍스트 영역 내용이 클립 보드에 성공적으로 복사되었습니다
 theme_xhred_global_alias=별명
+theme_xhred_mail_composer_real_name=실제 이름
+theme_xhred_mail_composer_username=사용자 이름

@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Максимізуйте панель �
 settings_sysinfo_remember_accordions=Зберегти стан гармошок, використаний останній раз
 theme_xhred_textarea_to_clipboard=Вибраний вміст текстової області успішно скопійовано у буфер обміну
 theme_xhred_global_alias=Псевдонім
+theme_xhred_mail_composer_real_name=Справжнє ім'я
+theme_xhred_mail_composer_username=ім'я користувача

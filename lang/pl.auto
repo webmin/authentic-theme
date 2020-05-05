@@ -897,3 +897,5 @@ theme_xhred_filemanager_editor_maximized=Zmaksymalizuj panel edytora po uruchomi
 settings_sysinfo_remember_accordions=Zapisz stan akordeonów użyty ostatnio
 theme_xhred_textarea_to_clipboard=Wybrana zawartość pola tekstowego została pomyślnie skopiowana do schowka
 theme_xhred_global_alias=Alias
+theme_xhred_mail_composer_real_name=Prawdziwe imię
+theme_xhred_mail_composer_username=Nazwa Użytkownika

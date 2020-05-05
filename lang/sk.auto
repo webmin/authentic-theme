@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Maximalizujte panel editorov pri spuste
 settings_sysinfo_remember_accordions=Uložený stav harmoniky použitý naposledy
 theme_xhred_textarea_to_clipboard=Vybraný textový obsah bol úspešne skopírovaný do schránky
 theme_xhred_global_alias=prezývka
+theme_xhred_mail_composer_real_name=Skutočné meno
+theme_xhred_mail_composer_username=užívateľské meno

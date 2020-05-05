@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Tối đa hóa bảng soạn thảo khi
 settings_sysinfo_remember_accordions=Lưu trạng thái accordion sử dụng thời gian qua
 theme_xhred_textarea_to_clipboard=Nội dung textarea đã chọn đã được sao chép thành công vào clipboard
 theme_xhred_global_alias=Bí danh
+theme_xhred_mail_composer_real_name=Tên thật
+theme_xhred_mail_composer_username=tên tài khoản

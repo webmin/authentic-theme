@@ -976,3 +976,5 @@ theme_xhred_filemanager_editor_maximized=Indítsa el a szerkesztőpanel maximali
 settings_sysinfo_remember_accordions=Mentsd el a legutóbb használt harmonika állapotát
 theme_xhred_textarea_to_clipboard=A kiválasztott textarealap tartalma sikeresen át lett másolva a vágólapra
 theme_xhred_global_alias=Álnév
+theme_xhred_mail_composer_real_name=Igazi neve
+theme_xhred_mail_composer_username=felhasználónév
