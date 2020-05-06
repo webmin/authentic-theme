@@ -2180,20 +2180,21 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/stats-$remote_user.json");
         kill_byname("$current_theme/stats.cgi", 9);
 
-        # Clear links cache
-        if (&foreign_available('virtual-server')) {
-            &foreign_require("virtual-server", "virtual-server-lib.pl");
-            virtual_server::clear_links_cache();
-        }
+    }
 
-        # Clear potentially stuck BIND cache module
-        if (&foreign_available('bind8')) {
-            &foreign_require("bind8", "bind8-lib.pl");
-            bind8::flush_zone_names();
-        }
-        
-        # Remove cached downloads
-        unlink_file("$product_var/cache");
+    # Remove cached downloads
+    unlink_file("$product_var/cache");
+
+    # Clear potentially stuck BIND cache module
+    if (&foreign_available('bind8')) {
+        &foreign_require("bind8", "bind8-lib.pl");
+        bind8::flush_zone_names();
+    }
+
+    # Clear links cache
+    if (&foreign_available('virtual-server')) {
+        &foreign_require("virtual-server", "virtual-server-lib.pl");
+        virtual_server::clear_links_cache();
     }
 
     # Clear potentially stuck menus and other cache
