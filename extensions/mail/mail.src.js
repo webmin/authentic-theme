@@ -266,8 +266,7 @@ const mail = (function() {
                     },
                     counter: 'mail-selected-count',
                     refresh: {
-                        button: 'btn btn-transparent-link btn-lg btn-transparent fa fa-refresh',
-                        animation: 'fa-spin-gradual'
+                        button: 'btn btn-lg btn-default fa fa-refresh-mdi'
                     },
                     pagination: 'pagination-title',
                     settings: 'btn btn-default fa fa-cog'
@@ -2725,7 +2724,6 @@ const mail = (function() {
                  * @returns {void}
                  */
                 button.refresh.on('click', function() {
-                    $(this).addClass($$.$.controls.refresh.animation);
                     $$.element('tree.active').click()
                 })
 
@@ -2983,6 +2981,9 @@ const mail = (function() {
                         .find($$.selector('layout.column.6')).first()
                         .append(
                             $form_controls,
+                            $$.create.$('controls.refresh.button', {
+                                'refresh': 1
+                            }, 'button', String(), _.lang('global_refresh')),
                             $$.create.dropdown('controls.sort.dropdown', [
                                 [
                                     data.list.sort.date,
@@ -3120,9 +3121,6 @@ const mail = (function() {
                         )
                         .end().last()
                         .append(
-                            $$.create.$('controls.refresh.button', {
-                                'refresh': 1
-                            }, 'span', String(), _.lang('global_refresh')),
                             $$.create.$('controls.pagination', (pagination.link ? ['href="' + pagination.link + '"', 'data-href="' + pagination.link + '"'] : false), 'a', data.pagination_message, pagination.title),
                             data.pagination_arrow_left,
                             data.pagination_arrow_right
@@ -3149,17 +3147,71 @@ const mail = (function() {
                     folders.update(data);
                     events(data);
                     messages.storage.restore();
+                    messages.refresh(panel);
 
                 } else {
                     events();
                     panel.append(row((data.folder_index === 0 ? _.lang('mail_no_new_mail') : _.lang('mail_no_mail')), 'messages.row.empty'))
                 }
+            },
+
+            /**
+             * Set interval for automatic messages update
+             *
+             * @returns {void}
+             */
+            refresh = function(panel, stop) {
+                typeof this.refreshTimer === "number" && clearInterval(this.refreshTimer);
+
+                // Clear timer and return
+                if (stop) {
+                    return;
+                }
+
+                // Register last interaction time for smother UX
+                let last_interaction_time = Date.now();
+                panel[0].addEventListener('mousemove', function() {
+                    last_interaction_time = Date.now();
+                })
+
+                // Update messages, if conditions are met
+                this.refreshTimer = setInterval(() => {
+                    let refreshing = () => {
+                        panel.find($$.element('controls.refresh.button')).trigger('click');
+                    }
+                    if (config.d.u) {
+                        clearInterval(this.refreshTimer);
+                        if (config.d.u.refresh) {
+
+                            // Perform actual refresh
+                            this.refreshTimer = setInterval(() => {
+                                // Stop refresh if there is no mail list
+                                if (!document.querySelector(`.${panel[0].classList[0]}`)) {
+                                    this.refresh(false, true);
+                                }
+
+                                // Refresh the page if user is not interacting with the page or idle for more than 60 seconds
+                                let last_interaction_ago = parseInt((Date.now() - last_interaction_time) / 1000),
+                                    is_checked = panel.find('[name="d"]:checked').length,
+                                    is_pagination = panel.find('[href*="index.cgi"][href*="start=0"]').length,
+                                    is_open = panel.find('.open').length;
+                                if (((is_checked || is_pagination || is_open) && last_interaction_ago > 60) ||
+                                    (!is_checked && !is_pagination && !is_open)) {
+                                    refreshing();
+                                }
+                            }, parseInt(config.d.u.refresh) * 1000);
+                        } else {
+                            this.refresh(false, true);
+                        }
+                    }
+                }, 1e2)
             }
 
         // Reveal sub-modules ;;
         return {
             get: get,
             storage: storage,
+            refresh: refresh
         }
     })();
 
