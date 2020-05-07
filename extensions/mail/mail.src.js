@@ -59,7 +59,9 @@ const mail = (function() {
             platform: {
                 mac: window.navigator.platform === 'MacIntel',
             },
-            content: get_pjax_content,
+            pjax: {
+                fetch: get_pjax_content,
+            },
             load: load,
             sdata: get_server_data,
             mavailable: core.moduleAvailable,
@@ -400,7 +402,7 @@ const mail = (function() {
                             status.menu.options = hidden
                         }
                         return `
-                            <form class="compose" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
+                            <form class="compose" data-pjax="no" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
                                 <div class="form-e">
                                     <div class="${data.class.form.header}">
                                         <div class="form-group from">
@@ -2820,7 +2822,6 @@ const mail = (function() {
                     .off('click', button.compose)
                     .on('click', button.compose, function() {
                         compose.message();
-                        // _.content(_.variable.module.link() + '/reply_mail.cgi?new=1');
                     })
             },
 
@@ -3266,7 +3267,7 @@ const mail = (function() {
                                             setTimeout(() => {
                                                 tree.adjust();
                                             }, 1e2);
-                                            _.content(data.url.link + encodeURIComponent(d.node.key));
+                                            _.pjax.fetch(data.url.link + encodeURIComponent(d.node.key));
                                             messages.storage.reset();
                                             _.navigation.reset();
                                         }
