@@ -1709,12 +1709,15 @@ const mail = (function() {
 
                                                                 // Soft validate email address
                                                                 let email = event.item,
+                                                                    contact;
+                                                                if (email) {
                                                                     contact = email.match(/<(.*)>/);
-                                                                if (contact) {
-                                                                    email = contact[1];
-                                                                }
-                                                                if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
-                                                                    $(event.target.previousSibling).find('.recipient').last().addClass('error')
+                                                                    if (contact) {
+                                                                        email = contact[1];
+                                                                    }
+                                                                    if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
+                                                                        $(event.target.previousSibling).find('.recipient').last().addClass('error')
+                                                                    }
                                                                 }
 
                                                                 // Adjust the container size on adding/removing recipient
