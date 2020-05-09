@@ -41,11 +41,11 @@ const mail = (function() {
             },
             variable: {
                 switch: function() {
-                    return $t_uri_webmail
+                    return $t_uri_webmail;
                 },
                 module: {
                     name: function() {
-                        return v___module
+                        return 'mailbox';
                     },
                     link: function() {
                         let prefix = v___location_prefix;
@@ -90,6 +90,7 @@ const mail = (function() {
                 html_escape: Convert.htmlEscape,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
+                preloader_dismiss: page.handle.content.preloader_dismiss,
                 moment: moment,
 
                 select: (data, size = '34') => {
@@ -2591,7 +2592,7 @@ const mail = (function() {
                     $dropdown_search_advanced_all = dropdown.search.find('[name="search-wordsin"]');
 
                 // Set current folder first
-                if ($dropdown_search_select.length) {
+                if (data && $dropdown_search_select.length) {
                     $dropdown_search_select[0].value = data.searched_folder_index || data.folder_index;
                 }
 
@@ -3146,6 +3147,7 @@ const mail = (function() {
                     _.plugin.arialabel();
                     _.plugin.tooltip();
                     _.plugin.offset_adjust(true);
+                    _.plugin.preloader_dismiss();
                     _.rows();
                     folders.set(data);
                     folders.update(data);
@@ -3215,7 +3217,8 @@ const mail = (function() {
         return {
             get: get,
             storage: storage,
-            refresh: refresh
+            refresh: refresh,
+            events: events,
         }
     })();
 
@@ -3370,6 +3373,7 @@ const mail = (function() {
                     tree.reload(source)
                 } else {
                     tree.init(source)
+                    mail.messages.events()
                 }
             });
         }
@@ -3500,7 +3504,8 @@ const mail = (function() {
         },
         messages: {
             get: messages.get,
-            sort: messages.sort
+            sort: messages.sort,
+            events: messages.events,
         },
         compose: compose.message
     }
