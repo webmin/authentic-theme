@@ -374,10 +374,11 @@ sub theme_generate_icon
 
 sub theme_ui_columns_start
 {
-    my ($heads, $width, $noborder, $tdtags, $title) = @_;
+    my ($heads, $width, $noborder, $tdtags, $title, $sortable) = @_;
     my ($rv, $i);
 
-    $rv .= '<table class="table table-striped table-hover table-condensed">' . "\n";
+    $sortable = ' dtable-sortable' if ($sortable);
+    $rv .= "<table class=\"table table-striped table-hover table-condensed$sortable\">" . "\n";
     if ($title) {
         $rv .= "<caption>$title</caption>\n";
     }
