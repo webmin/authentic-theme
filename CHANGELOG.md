@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 19.50 (May 10, 2020)
+* Add improvements to mail module in Usermin for smoother UX
+* Add mail automatic refresh support to mail module in Usermin
+* Add support for aliases in new mail composer
+* Add better support for HTML descriptions in Custom Commands module [sourceforge.net#600155](https://sourceforge.net/p/webadmin/discussion/600155/thread/015e51d013/#98b2)
+* Add clear cache menu option to side slider dropdown
+* Add translations to 41 languages
+* Add dozens of other UI improvements
+* Fix submitting a form on saving a draft, upon composing mail in Usermin (in Safari)
+* Fix interruption of standard call by progressive call, without breaking page
+
 #### Version 19.47 (April 06, 2020)
 * Add ability to recognize downloads in submitted form
 * Add new date/time display format type in mail listing in Usermin
