@@ -1716,7 +1716,7 @@ const mail = (function() {
                                                                     if (contact) {
                                                                         email = contact[1];
                                                                     }
-                                                                    if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,32})+$/.test(email)) {
+                                                                    if (!event.item.startsWith(a) && event.type === 'itemAdded' && !/.+@.+\..+/.test(email)) {
                                                                         $(event.target.previousSibling).find('.recipient').last().addClass('error')
                                                                     }
                                                                 }
