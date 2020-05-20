@@ -1,9 +1,0 @@
-settings_sysinfo_theme_updates_for_usermin=Installera temauppdateringar också för Usermin
-extensions_mail_flag_spam_status=Skräppostatus
-extensions_mail_flag_spam_status_data=$1 av $2
-extensions_mail_flag_tls_on=Standardkryptering (TLS)
-extensions_mail_flag_tls_off=Okrypterad post
-extensions_mail_flag_tls_none=Krypteringsstatus okänd
-theme_xhred_global_alias=Alias
-theme_xhred_mail_composer_real_name=Riktiga namn
-theme_xhred_mail_composer_username=Användarnamn
