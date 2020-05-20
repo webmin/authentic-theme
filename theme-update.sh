@@ -131,7 +131,7 @@ else
           RVER=0
         fi
 
-        # Generate a warning if theme requires latest patches from Git
+        # Generate a warning if latest, required patches from Git are not installed
         if [ $GRPERR -eq 0 ]; then
           if [[ $RVER > $PVER ]]; then
             echo -e "
