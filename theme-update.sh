@@ -124,7 +124,15 @@ else
             RVER=0
           fi
         fi
-        if [ $GRPERR  -eq 0 ]; then
+
+        # Check if latest Git dev version of Webmin/Usermin installed
+        LATESTDEV=$(find "$DIR/version" -mmin -60)
+        if [ ! -z $LATESTDEV ]; then
+          RVER=0
+        fi
+
+        # Generate a warning if theme requires latest patches from Git
+        if [ $GRPERR -eq 0 ]; then
           if [[ $RVER > $PVER ]]; then
             echo -e "
 \e[47;1;31;82mWarning!\e[0m Installing this version of \e[49;1;37;182mAuthentic Theme\e[0m \e[49;32m"${TVER^}"\e[0m requires
