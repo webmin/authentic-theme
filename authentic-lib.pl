@@ -1353,7 +1353,7 @@ sub get_sysinfo_vars
                     (
                         (
                          ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
-                          $authentic_installed_version    =~ /alpha|beta|RC/
+                          $authentic_installed_version =~ /alpha|beta|RC/
                          ) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
@@ -1960,6 +1960,27 @@ sub theme_update_incompatible
     $authentic_remote_data =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
     $webmin_compatible_version  = $3 ? $3 : $1;
     $usermin_compatible_version = $2;
+
+    my $webmin_version_file  = "$root_directory/version";
+    my $usermin_version_file = "$has_usermin_root_dir/version";
+    my $get_latest_dev = sub {
+        my ($file, $var) = @_;
+        if (-r $file) {
+            my $version_dev = read_file_lines($file, 1)->[0];
+            if ($version_dev =~ /\d\.\d{4,}/) {
+                my @file_stat = stat($file);
+                if ($file_stat[9] > time() - (60 * 60)) {
+                    ${$var} = 1;
+                }
+            }
+        }
+    };
+
+    # Do we have latest dev version of Webmin installed
+    &$get_latest_dev($webmin_version_file, \$webmin_compatible_version);
+
+    # Do we have latest dev version of Usermin installed
+    &$get_latest_dev($usermin_version_file, \$usermin_compatible_version);
 
     if (
 
@@ -3680,7 +3701,7 @@ sub get_default_right
 
 sub init_type
 {
-    (($ENV{'CONTENT_TYPE'} =~ /multipart\/form-data/i) ? ReadParseMime() :
+    (($ENV{'CONTENT_TYPE'}  =~ /multipart\/form-data/i) ? ReadParseMime() :
        ($ENV{'SCRIPT_NAME'} =~ /session_login|pam_login/i ? ReadParse(undef, undef, undef, 2) : ReadParse()));
 }
 
