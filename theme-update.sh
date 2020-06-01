@@ -10,11 +10,9 @@ DIR="$(echo "$DIR" | sed 's/\/authentic-theme.*//g')"
 PROD=${DIR##*/}
 GIT="git"
 CURL="curl"
+CURLTIMEOUT=5
 REPO="authentic-theme/authentic-theme"
 PARAMS="$*"
-
-# Clear the screen for better readability
-clear
 
 if [[ "$1" == "-h" || "$1" == "-help" || "$1" == "--help" ]] ; then
   echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script - updates theme to the latest development or stable (release version)"
@@ -67,14 +65,10 @@ else
         GITAPI="https://api.github.com/repos/webmin/webmin/contents"
         UPDATE="update-from-repo.sh"
 
-        # Backup current script file first in case something goes wrong
-        mv "$DIR"/${UPDATE} "$DIR"/${UPDATE}.bak
         # Get latest update script
-        curl -s -o "$DIR"/${UPDATE} -H "Accept:application/vnd.github.v3.raw" ${GITAPI}/${UPDATE}
+        ${CURL} -s -o "$DIR"/${UPDATE} -H "Accept:application/vnd.github.v3.raw" ${GITAPI}/${UPDATE} --connect-timeout $CURLTIMEOUT
         if [ $? -eq 0 ]; then
           chmod +x "$DIR"/${UPDATE}
-        else
-          mv "$DIR"/${UPDATE}.bak "$DIR"/${UPDATE}
         fi
       else
         echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m";
@@ -90,7 +84,7 @@ else
         else
           if type ${CURL} >/dev/null 2>&1
           then
-            VERSION=$(curl -s https://api.github.com/repos/$REPO/releases/latest | grep tag_name | head -n 1)
+            VERSION=$($CURL -s https://api.github.com/repos/$REPO/releases/latest  --connect-timeout $CURLTIMEOUT | grep tag_name | head -n 1)
             [[ $VERSION =~ [0-9]+\.[0-9]+|[0-9]+\.[0-9]+\.[0-9]+ ]]
             PRRELEASE="--branch ${BASH_REMATCH[0]} --quiet"
             PRRELEASETAG=${BASH_REMATCH[0]}
