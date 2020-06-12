@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 19.51 (June 12, 2020)
+* Add ability to disable select in pair of input radios
+* Add to disable compression format for single archive [virtualmin/virtualmin-gpl@d89f950](https://github.com/virtualmin/virtualmin-gpl/commit/d89f950c36b6022b16a204bd78055a31f138cad0#commitcomment-39584388)
+* Add a check for update script, if a user installed Git version of Webmin/Usermin [#1477](https://github.com/authentic-theme/authentic-theme/issues/1477)
+* Add better show password links styling
+* Fiх move arrows positioning [#1473](https://github.com/authentic-theme/authentic-theme/issues/1473)
+* Fix language machine translations checkbox display
+* Fix config page broken filter functionality
+* Fix to consider nearby textarea for chooser
+* Fix managed systems menu link detection in Cloudmin
+
 #### Version 19.50 (May 10, 2020)
 * Add improvements to mail module in Usermin for smoother UX
 * Add mail automatic refresh support to mail module in Usermin
