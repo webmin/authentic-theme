@@ -953,6 +953,12 @@ sub get_button_style
         $class = "danger ";
 
         $icon = "times-circle";
+    } elsif (string_contains($keys, "disable_ok")) {
+        $class = "warning ";
+        $icon  = "lock";
+    } elsif (string_contains($keys, "enable_ok")) {
+        $class = "success ";
+        $icon  = "unlock";
     } elsif (string_contains($keys, "twofactor_enable")) {
         $class = "info ";
         $icon  = "lock";
