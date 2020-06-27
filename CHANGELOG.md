@@ -10,6 +10,7 @@
 * Fix config page broken filter functionality
 * Fix to consider nearby textarea for chooser
 * Fix managed systems menu link detection in Cloudmin
+* Fix onload error for mail module in Usermin
 
 #### Version 19.50 (May 10, 2020)
 * Add improvements to mail module in Usermin for smoother UX
