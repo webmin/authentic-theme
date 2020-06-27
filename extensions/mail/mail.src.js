@@ -3263,6 +3263,12 @@ const mail = (function() {
                 },
                 plugin: {
                     tree: (source) => {
+                        if (!$.fn.fancytree) {
+                            setTimeout(() => {
+                                data.plugin.tree(source);
+                            }, 4e2);
+                            return;
+                        }
                         source = (source === 'get' ? 'getTree' :
                             (source === 'node' ? 'getActiveNode' :
                                 Object.assign(data.options.tree, {
