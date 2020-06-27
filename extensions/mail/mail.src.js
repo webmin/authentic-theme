@@ -3147,7 +3147,6 @@ const mail = (function() {
                     _.plugin.arialabel();
                     _.plugin.tooltip();
                     _.plugin.offset_adjust(true);
-                    _.plugin.preloader_dismiss();
                     _.rows();
                     folders.set(data);
                     folders.update(data);
@@ -3159,6 +3158,11 @@ const mail = (function() {
                     events();
                     panel.append(row((data.folder_index === 0 ? _.lang('mail_no_new_mail') : _.lang('mail_no_mail')), 'messages.row.empty'))
                 }
+
+                // Dismiss the loader for all calls
+                setTimeout(() => {
+                    _.plugin.preloader_dismiss();
+                }, 2e2);
             },
 
             /**
