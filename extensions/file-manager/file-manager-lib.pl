@@ -10,12 +10,10 @@ use lib (dirname(__FILE__) . '/../../lib');
 do(dirname(__FILE__) . "/../../authentic-funcs.pl");
 
 use Cwd 'abs_path';
-use Encode qw(decode encode);
 use File::MimeInfo;
 use File::Find;
 use File::Grep qw( fdo );
 use POSIX;
-use JSON::PP;
 
 our (%access,
      %gconfig,
@@ -314,26 +312,9 @@ sub fatal_errors
     print "</ul>";
 }
 
-sub utf8_decode
-{
-    my ($text) = @_;
-    return decode('UTF-8', $text, Encode::FB_DEFAULT);
-}
-
 sub redirect_local
 {
     print "Location: $_[0]\n\n";
-}
-
-sub convert_to_json_local
-{
-    return JSON::PP->new->encode((@_ ? @_ : {}));
-}
-
-sub print_json_local
-{
-    print "Content-type: application/json;\n\n";
-    print convert_to_json_local(@_);
 }
 
 sub print_error
@@ -714,13 +695,13 @@ sub print_content
       ) .
       ""
       .
-      utf8_decode(
-                  text(nice_number($info_total,   ","),
-                       nice_number($info_files,   ","),
-                       nice_number($info_folders, ","),
-                       nice_number($totals,       ","),
-                       nice_number($pages,        ",")
-                  )
+      (
+        text(nice_number($info_total,   ","),
+             nice_number($info_files,   ","),
+             nice_number($info_folders, ","),
+             nice_number($totals,       ","),
+             nice_number($pages,        ",")
+        )
       ) .
       "</div>";
 
@@ -753,7 +734,6 @@ sub print_content
         $link =~ s/\Q$cwd\E\///;
         $link =~ s/^\///g;
         my $vlink = html_escape($link);
-        $vlink = utf8_decode($vlink);
         my $hlink = html_escape($vlink);
 
         my $filename = $link;
@@ -864,8 +844,9 @@ sub print_content
             my $size = &theme_nice_size_local($list[$count - 1][8]);
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'theme_xhred_filemanager_global_size_in_bytes'})]}<br>@{[nice_number($list[$count - 1][8])]}\">"
-                  . utf8_decode($size) . "</span>");
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
+                  . ($size)
+                  . "</span>");
             push(@td_tags, undef);
         }
         if ($userconfig{'columns'} =~ /owner_user/) {
@@ -882,7 +863,7 @@ sub print_content
             }
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'filemanager_global_user_group_id'})]}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_user_group_id'}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
                   . $user . ':' . $group . "</span>");
             push(@td_tags, 'class="col-ownership"');
         }
@@ -908,7 +889,7 @@ sub print_content
             my $change_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][11]));
             push @row_data,
               (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"@{[utf8_decode($text{'filemanager_global_access_change_time'})]}<br>$access_time<br>$change_time\">"
+"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
                   . $mod_time . "</span>");
             push(@td_tags, 'data-order="' . ($list[$count - 1][10]) . '" class="col-time"');
         }
@@ -918,10 +899,10 @@ sub print_content
 
     $list_data{'form'} .= &ui_hidden("path", $path), "\n";
     $list_data{'form'} .= '</form>';
-    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}            : undef);
-    $list_data{'error'}       = (length $in{'error'}       ? utf8_decode($in{'error'}) : undef);
-    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'}        : undef);
-    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}             : undef);
+    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}     : undef);
+    $list_data{'error'}       = (length $in{'error'}       ? ($in{'error'})     : undef);
+    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
+    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}      : undef);
     $list_data{'page_requested'}       = $page;
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;
@@ -934,7 +915,7 @@ sub print_content
                             guid   => $remote_user_info[3],
                             access => $access{'work_as_user'} };
 
-    print_json_local([\%list_data]);
+    print_json([\%list_data]);
 }
 
 sub get_tree
