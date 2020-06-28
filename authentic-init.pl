@@ -201,7 +201,7 @@ sub embed_header
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
     print ' <head>', "\n";
     embed_noscript();
-    print ' <meta charset="' . ($charset ? quote_escape($charset) : 'utf-8') . '">', "\n";
+    print '<meta charset="utf-8">', "\n";
     embed_favicon();
     print ' <title>',
       ( $args[4] ?

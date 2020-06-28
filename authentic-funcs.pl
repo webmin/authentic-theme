@@ -20,7 +20,7 @@ sub settings
     my ($f, $e) = @_;
     my %c;
     if (-r $f) {
-        my $k = read_file_contents($f);
+        my $k = read_file_contents_with_layer($f, 'utf8');
         my %k = $k =~ /(.*?)=(.*)/g;
         delete @k{ grep(!/^$e/, keys %k) };
         foreach my $s (keys %k) {

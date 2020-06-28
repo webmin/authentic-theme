@@ -1686,7 +1686,7 @@ sub print_favorites
         rename_file($ff, $ffn);
     }
 
-    my $f = &read_file_contents($config_directory . "/$current_theme/favorites-$remote_user.json");
+    my $f = &read_file_contents_with_layer($config_directory . "/$current_theme/favorites-$remote_user.json", 'utf8');
     print '<div id="favorites-menu">
     <div class="favorites-menu-outer">
       <nav class="favorites-menu">
