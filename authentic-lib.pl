@@ -1718,7 +1718,8 @@ sub print_favorites
                       ($ln) . '"><i data-product="' . ($ic) . '" class="wbm-' .
                       ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $tl . '
-                        &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px"><i aria-label="'
+                        &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px">';
+                  print '<i aria-label="'
                       . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
                   </a>
               </li>';
