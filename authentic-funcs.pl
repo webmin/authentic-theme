@@ -545,20 +545,4 @@ sub acl_system_status
     }
 }
 
-sub convert_from_json_local
-{
-    eval "use JSON::PP";
-    if (!$@) {
-        my ($json_text) = @_;
-        my $json = JSON::PP->new;
-        if (get_env('https')) {
-            return $json->utf8->decode($json_text);
-        } else {
-            return $json->latin1->decode($json_text);
-        }
-    } else {
-        error("The JSON::PP Perl module is not available on your system : $@");
-    }
-}
-
 1;
