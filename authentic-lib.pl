@@ -694,7 +694,7 @@ sub print_left_custom_links
         $extra = replace('\'', '"', un_urlize($extra, 1));
         if ($extra && $extra =~ m/"extra":/) {
             my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
-            my $extra_json = convert_from_json($extra);
+            my $extra_json = convert_from_json_local($extra);
             foreach my $e (@{ $extra_json->{'extra'} }) {
                 if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
                     my $target = $e->{"target"};
@@ -1705,7 +1705,7 @@ sub print_favorites
     if ($f && $f =~ m/"favorites":/) {
         my ($f) = $f =~ /\{(?:\{.*\}|[^{])*\}/sg;
         eval {
-            my $fc = convert_from_json($f);
+            my $fc = convert_from_json_local($f);
             foreach my $favorite (@{ $fc->{'favorites'} }) {
                 my $ln = quote_escape($favorite->{"link"}, '"');
                 my $ic = quote_escape($favorite->{"icon"}, '"');

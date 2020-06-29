@@ -478,7 +478,7 @@ sub current_to_pid
     my $script = current_to_filename($0);
 
     my $tmp_file = ($keep ? tempname($script) : transname($script));
-    my %pid = (pid => $$);
+    my %pid      = (pid => $$);
     write_file($tmp_file, \%pid);
 }
 
@@ -542,6 +542,22 @@ sub acl_system_status
         return 1;
     } else {
         return indexof($show, split(/\s+/, $access{'show'})) >= 0;
+    }
+}
+
+sub convert_from_json_local
+{
+    eval "use JSON::PP";
+    if (!$@) {
+        my ($json_text) = @_;
+        my $json = JSON::PP->new;
+        if (get_env('https')) {
+            return $json->utf8->decode($json_text);
+        } else {
+            return $json->latin1->decode($json_text);
+        }
+    } else {
+        error("The JSON::PP Perl module is not available on your system : $@");
     }
 }
 
