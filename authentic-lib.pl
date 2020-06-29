@@ -708,9 +708,11 @@ sub print_left_custom_links
                     }
                     my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' .
-                      $type . ' data-after><a ' . $target . ' href="' . $e->{"link"} . '" class="' . $type_class .
-                      '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>' . $e->{"title"} . '</span></a></li>';
+                    print '<li ' . $type . ' data-after><a ' . $target . ' href="' .
+                      $e->{"link"} . '" class="' . $type_class . '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>';
+                    utf8::encode($e->{'title'});
+                    print $e->{'title'};
+                    print '</span></a></li>';
                 }
             }
         }
@@ -1719,8 +1721,8 @@ sub print_favorites
                       ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $tl . '
                         &nbsp;<small class="hidden" style="font-size: 0.6em; position: absolute; margin-top: -1px">';
-                  print '<i aria-label="'
-                      . $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
+                    print '<i aria-label="' .
+                      $theme_text{'theme_xhred_favorites_remove'} . '" class="fa fa-times"></i></small></span>
                   </a>
               </li>';
                 }
@@ -1964,7 +1966,7 @@ sub theme_update_incompatible
 
     my $webmin_version_file  = "$root_directory/version";
     my $usermin_version_file = "$has_usermin_root_dir/version";
-    my $get_latest_dev = sub {
+    my $get_latest_dev       = sub {
         my ($file, $var) = @_;
         if (-r $file) {
             my $version_dev = read_file_lines($file, 1)->[0];
