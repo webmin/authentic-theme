@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.51 (June 29, 2020)
+#### Version 19.51 (June 30, 2020)
 * Add ability to disable select in pair of input radios
 * Add to disable compression format for single archive [virtualmin/virtualmin-gpl@d89f950](https://github.com/virtualmin/virtualmin-gpl/commit/d89f950c36b6022b16a204bd78055a31f138cad0#commitcomment-39584388)
 * Add a check for update script, if a user installed Git version of Webmin/Usermin [#1477](https://github.com/authentic-theme/authentic-theme/issues/1477)
