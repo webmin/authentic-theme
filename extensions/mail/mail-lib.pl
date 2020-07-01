@@ -9,14 +9,15 @@ use File::Basename;
 use Digest::MD5 qw(md5_hex);
 use Encode qw( encode decode );
 
-our (%in, $current_theme, $default_charset, %userconfig, %config, %gconfig, %dsnreplies, %delreplies);
+our (%in, $current_theme, $default_charset, %text, %theme_text, %userconfig, %config, %gconfig, %dsnreplies, %delreplies);
 
 our %request_uri = get_request_uri();
 set_module();
 get_libs();
 set_charset();
 
-our %text = (load_language($current_theme), load_language(get_module()));
+%text = (load_language($current_theme), %text);
+%theme_text = %text;
 
 sub get_env
 {
@@ -32,9 +33,7 @@ sub set_env
 
 sub set_charset
 {
-    if (lc($gconfig{'lang'}) =~ 'utf-8') {
-        $default_charset = "utf-8";
-    }
+    $default_charset = "utf-8";
 }
 
 sub get_request_uri
@@ -381,7 +380,7 @@ sub message_flags
     if (mail_has_attachments($mail, $folder)) {
         $all .= ui_icon('paperclip fa-rotate-315 mail-list-attachment',
                         (
-                         ui_text($text{'extensions_mail_flag_attachment'} . "<br>(" . nice_size($mail->{'size'}, 1024) . ")"
+                         ui_text($text{'extensions_mail_flag_attachment'} . "<br>(" . theme_nice_size_local($mail->{'size'}, 1024) . ")"
                          )
                         ),
                         'auto top',
@@ -615,7 +614,7 @@ sub messages_list
 
         my ($sorted) = get_sort_field($folder);
         if ($sorted eq 'size') {
-            $scolumn .= ui_span_row('row brow brow-size') . nice_size($m->{'size'}, 1024) . ui_span_row();
+            $scolumn .= ui_span_row('row brow brow-size') . theme_nice_size_local($m->{'size'}, 1024) . ui_span_row();
         } else {
             $main::theme_allow_make_date = 1;
             $scolumn .=

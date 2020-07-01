@@ -40,7 +40,7 @@ my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;
 my ($qtotal, $qcount, $totalquota, $countquota) = get_user_quota();
 if ($totalquota) {
     $mails{'quota'} =
-      text('extensions_mail_quota', nice_size($qtotal), (int($qtotal * 100 / $totalquota)), nice_size($totalquota));
+      text('extensions_mail_quota', theme_nice_size_local($qtotal), (int($qtotal * 100 / $totalquota)), theme_nice_size_local($totalquota));
 }
 
 # Work out start from jump page
