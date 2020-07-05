@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 19.52 (July 06, 2020)
+* Add better display of catched errors upon setting up virtual server in Virtualmin
+* Fix a bug when removing bookmarks in File Manager
+* Fix top buttons positioning in context menu for File Manager
+* Fix to prevent copying to internal buffer, if text on page is selected in File Manager
+* Fix to allow only one Multi-Processing Module (MPM) be chosen when configuring Apache modules
+* Fiх to keep all cookies secure [@7d6b234](https://github.com/authentic-theme/authentic-theme/commit/7d6b234966be108c047d2c81526ff4e520940bec)
+* Fix to color enable/disable virtual server buttons
+* Fix stuck loader when using new mail UI in Usermin
+* Fix onload error for new mail UI on slow connections in Usermin
+
 #### Version 19.51 (June 30, 2020)
 * Add ability to disable select in pair of input radios
 * Add to disable compression format for single archive [virtualmin/virtualmin-gpl@d89f950](https://github.com/virtualmin/virtualmin-gpl/commit/d89f950c36b6022b16a204bd78055a31f138cad0#commitcomment-39584388)
