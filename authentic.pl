@@ -699,7 +699,9 @@ sub theme_ui_radio
             $label = $1;
             $after = $2;
         }
-        $rv .= '<span class="awradio awobject"><input class="iawobject" type="radio" ';
+        $label = trim($label);
+        my $bl = string_ends_with($label, '<br>') ? ' ds-bl-fs' : undef;
+        $rv .= "<span class=\"awradio awobject$bl\"><input class=\"iawobject\" type=\"radio\" ";
         $rv .= 'name="' . &quote_escape($name) . '" ';
         $rv .= 'value="' . &quote_escape($o->[0]) . '" ';
         $rv .= ($o->[0] eq $val ? 'checked ' : '');
@@ -709,7 +711,7 @@ sub theme_ui_radio
         $rv .= '>' . "\n";
         $rv .= '<label class="lawobject" ';
         $rv .= 'for="' . $id . '_' . $rand . '">' . "\n";
-        $rv .= '' . (length trim($label) ? trim($label) : '&nbsp;') . "\n";
+        $rv .= '' . (length $label ? $label : '&nbsp;') . "\n";
         $rv .= '</label></span>' . $after . "\n";
     }
 
