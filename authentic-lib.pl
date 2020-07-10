@@ -2893,16 +2893,16 @@ sub theme_settings
                 $disabled = " pointer-events-none";
             }
 
-            $v = '<span class="awradio awobject' . $disabled . '">
-                    <input class="iawobject" type="radio" name="'
-              . $k . '" id="' . $k . '_1" value="true"' . ($v eq 'true' && ' checked') . '>
-                    <label class="lawobject" for="'
-              . $k . '_1">' . $text{'yes'} . '</label>
-                    <input class="iawobject" type="radio" name="'
-              . $k . '" id="' . $k . '_0" value="false"' . ($v eq 'false' && ' checked') . '>
-                    <label class="lawobject" for="'
-              . $k . '_0">' . $text{'no'} . '</label>
-                </span>
+            $v = '<span class="awradio awobject' . $disabled . '">'.
+                    '<input class="iawobject" type="radio" name="'
+              . $k . '" id="' . $k . '_1" value="true"' . ($v eq 'true' && ' checked') . '>'.
+                    '<label class="lawobject" for="'
+              . $k . '_1">' . $text{'yes'} . '</label>'.
+                    '<input class="iawobject" type="radio" name="'
+              . $k . '" id="' . $k . '_0" value="false"' . ($v eq 'false' && ' checked') . '>'.
+                    '<label class="lawobject" for="'
+              . $k . '_0">' . $text{'no'} . '</label>'.
+                '</span>
             ';
 
         } elsif ($k =~ /settings_security_notify_on_/ ||
@@ -3181,18 +3181,22 @@ sub theme_settings
         my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
         return '
             <tr class="atshover">
-                <td class="col_label atscontent"><b>'
-          . $theme_text{$k} . '</b>'
+                <td class="col_label atscontent">'
           .
           (
             $description && (
-                      $k =~ /level_navigation|leftmenu_width/ ?
-                      '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                      $k =~ /level_navigation|leftmenu_width/ ? undef :
                       '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
                       $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
-                      '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>' .
-                      ($k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
+                      '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
             )
+          ) .
+          '<b>' . $theme_text{$k} . '</b>'
+          .
+          ( $description &&
+              ($k =~ /level_navigation|leftmenu_width/ ?
+                '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                $k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
           ) .
           '</td>
                 <td class="col_value atscontent"><span>'
