@@ -2120,7 +2120,7 @@ sub theme_cached
     my ($id, $cvalue, $error) = @_;
     $id || die "Can't use undefined as cache filename";
 
-    my $theme_var_dir = theme_var_dir();
+    my ($theme_var_dir) = theme_var_dir();
     my $fcached       = "$theme_var_dir/$id";
     my @cached        = stat($fcached);
     my $ctime         = $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
