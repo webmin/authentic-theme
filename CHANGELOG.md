@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 19.53-beta1 (July 10, 2020)
+* Add alignment to the top vertically and to the right horizontally for all table labels for better UX
+* Add better mobile device support
+* Fix to perfect label alignment for different outputs
+
 #### Version 19.52 (July 06, 2020)
 * Add better display of catched errors upon setting up virtual server in Virtualmin
 * Fix a bug when removing bookmarks in File Manager
