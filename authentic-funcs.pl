@@ -43,12 +43,14 @@ sub theme_ui_checkbox_local
         $label = $1;
         $after = $2;
     }
-    return "<span class=\"awcheckbox awobject\"><input class=\"iawobject\" type=\"checkbox\" " .
+    $label = trim($label);
+    my $bl = string_ends_with($label, '<br>') ? ' ds-bl-fs' : undef;
+    return "<span class=\"awcheckbox awobject$bl\"><input class=\"iawobject\" type=\"checkbox\" " .
       "name=\"" . &quote_escape($name) .
       "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") .
       " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" . ($tags ? " " . $tags : "") .
       "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
-      (length trim($label) ? trim($label) : '&nbsp;') . '</label></span>' . $after;
+      (length $label ? $label : '&nbsp;') . '</label></span>' . $after;
 }
 
 sub theme_make_date_local
