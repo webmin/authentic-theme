@@ -11,7 +11,7 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_grayscale_level_navigation = "0",
     settings_sepia_level_navigation = "0",
-    settings_saturate_level_navigation = "1",
+    settings_saturate_level_navigation = "1.15",
     settings_hue_level_navigation = "0",
     settings_invert_level_navigation = "0",
     settings_brightness_level_navigation = "1",
