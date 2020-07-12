@@ -1,9 +1,11 @@
 ## Changelog
 
-#### Version 19.53-beta1 (July 10, 2020)
-* Add alignment to the top vertically and to the right horizontally for all table labels for better UX
+#### Version 19.53-beta2 (July 12, 2020)
+* Add alignment for all table labels to the top vertically, and to the right horizontally for better UX
 * Add better mobile device support
-* Fix to perfect label alignment for different outputs
+* Fix to drop no longer needed row highlight for tables with new labels align
+* Fix to slightly enhance initial saturation value for navigation
+* Fix loaders positioning in File Manager
 
 #### Version 19.52 (July 06, 2020)
 * Add better display of catched errors upon setting up virtual server in Virtualmin
