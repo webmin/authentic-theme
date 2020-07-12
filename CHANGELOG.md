@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.53-beta2 (July 12, 2020)
+#### Version 19.53 (July 12, 2020)
 * Add alignment for all table labels to the top vertically, and to the right horizontally for better UX
 * Add better mobile device support
 * Fix to drop no longer needed row highlight for tables with new labels align
@@ -42,6 +42,8 @@
 * Add dozens of other UI improvements
 * Fix submitting a form on saving a draft, upon composing mail in Usermin (in Safari)
 * Fix interruption of standard call by progressive call, without breaking page
+
+<!--- separator --->
 
 #### Version 19.47 (April 06, 2020)
 * Add ability to recognize downloads in submitted form
@@ -88,8 +90,6 @@
 * Fix fatal fail on invalid/incomplete regex passed in System Logs/View Logfile
 * Fix users in jailed mode in Usermin for File Manager
 * Fix tree depth control for multiple modes in File Manager
-
-<!--- separator --->
 
 #### Version 19.45 (January 14, 2020)
 * Add stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
