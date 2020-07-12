@@ -88,7 +88,7 @@ sub settings_default
     $c{'settings_background_color'}                   = 'gainsboro';
     $c{'settings_grayscale_level_navigation'}         = '0';
     $c{'settings_sepia_level_navigation'}             = '0';
-    $c{'settings_saturate_level_navigation'}          = '1';
+    $c{'settings_saturate_level_navigation'}          = '1.2';
     $c{'settings_hue_level_navigation'}               = '0';
     $c{'settings_invert_level_navigation'}            = '0';
     $c{'settings_brightness_level_navigation'}        = '1';
