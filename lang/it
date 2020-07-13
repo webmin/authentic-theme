@@ -973,3 +973,15 @@ theme_xhred_global_large=Grande
 theme_xhred_global_huge=Gigante
 theme_xhred_filemanager_editor_maximized=Massimizza il pannello dell'editor all'avvio
 settings_sysinfo_remember_accordions=Salva lo stato delle sezioni espandibili dell'ultima volta
+
+#19.47
+theme_xhred_textarea_to_clipboard=Il conuto selezionato nella casella di testo è stato copiato negli appunti
+
+
+#19.48
+theme_xhred_global_alias=Alias
+
+
+#19.50
+theme_xhred_mail_composer_real_name=Nome reale
+theme_xhred_mail_composer_username=nome utente
