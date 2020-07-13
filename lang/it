@@ -861,7 +861,8 @@ theme_xhred_global_preview_img_sel=Anteprima delle immagini selezionate
 theme_xhred_global_preview_img_all=Anteprima di tutte le immagini
 theme_xhred_filemanager_preview_images_building=La galleria immagini viene generata per l'anteprima.
 theme_xhred_filemanager_preview_images_deps_error1=È necessario avere il pacchetto <code>ImageMagick</code> installato sul sistema per far funzionare questa funzione.
-theme_xhred_filemanager_preview_images_deps_error2=Puoi $1 per installarlo automaticamente per te.theme_xhred_filemanager_preview_images_error=The image gallery can not be generated.
+theme_xhred_filemanager_preview_images_deps_error2=Puoi $1 per installarlo automaticamente per te.
+theme_xhred_filemanager_preview_images_error=La galleria delle immagini non può essere generata.
 global_deps_installed=Il pacchetto $1 è stato installato con successo.
 global_deps_error=Il pacchetto $1 non è stato installato con successo. Si prega di installarlo manualmente.
 global_deps_installing=Il pacchetto $1 è in fase di installazione.
