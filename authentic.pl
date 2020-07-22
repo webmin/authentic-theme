@@ -586,7 +586,7 @@ sub theme_ui_password
     my $rv;
 
     $rv .=
-'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align:middle" class="form-control ui_password" type="password" ';
+'<input spellcheck="false" style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align:middle" class="form-control ui_password" type="password" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';

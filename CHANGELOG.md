@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.53 (July 19, 2020)
+* Add alignment for all table labels to the top vertically, and to the right horizontally for better UX
+* Add better mobile device support
+* Fix to drop no longer needed row highlight for tables with new labels align
+* Fix to slightly enhance initial saturation value for navigation
+* Fix loaders positioning in File Manager
+* Fiх upload button functionality and alignment [#1483](https://github.com/authentic-theme/authentic-theme/issues/1483)
+
 #### Version 19.52 (July 06, 2020)
 * Add better display of catched errors upon setting up virtual server in Virtualmin
 * Fix a bug when removing bookmarks in File Manager
@@ -35,6 +43,8 @@
 * Add dozens of other UI improvements
 * Fix submitting a form on saving a draft, upon composing mail in Usermin (in Safari)
 * Fix interruption of standard call by progressive call, without breaking page
+
+<!--- separator --->
 
 #### Version 19.47 (April 06, 2020)
 * Add ability to recognize downloads in submitted form
@@ -81,8 +91,6 @@
 * Fix fatal fail on invalid/incomplete regex passed in System Logs/View Logfile
 * Fix users in jailed mode in Usermin for File Manager
 * Fix tree depth control for multiple modes in File Manager
-
-<!--- separator --->
 
 #### Version 19.45 (January 14, 2020)
 * Add stored listing navigation in File Manager [@2405933](https://github.com/authentic-theme/authentic-theme/commit/2405933f5fb526cdafb0377e157dccbbaa89c8c8)
