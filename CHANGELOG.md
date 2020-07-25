@@ -1,12 +1,13 @@
 ## Changelog
 
-#### Version 19.53 (July 19, 2020)
+#### Version 19.53 (July 25, 2020)
 * Add alignment for all table labels to the top vertically, and to the right horizontally for better UX
 * Add better mobile device support
 * Fix to drop no longer needed row highlight for tables with new labels align
 * Fix to slightly enhance initial saturation value for navigation
 * Fix loaders positioning in File Manager
 * Fiх upload button functionality and alignment [#1483](https://github.com/authentic-theme/authentic-theme/issues/1483)
+* Fiх to improve user interactions with notification popups [@d69ccdf](https://github.com/authentic-theme/authentic-theme/commit/d69ccdfb32bbcdaf07a52e4d8db2571834a09202)
 
 #### Version 19.52 (July 06, 2020)
 * Add better display of catched errors upon setting up virtual server in Virtualmin
