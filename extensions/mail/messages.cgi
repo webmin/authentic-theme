@@ -57,8 +57,8 @@ if ($in{'jump'} =~ /^\d+$/ && $in{'jump'} > 0) {
 }
 
 # Get email to show, in order
-my @error;
-my ($start, @mail) = messages_fetch($start, $end, $perpage, $in{'jump'}, $folder, !$userconfig{'show_body'}, \@error);
+my @fetch_mail_error;
+my ($start, @mail) = messages_fetch($start, $end, $perpage, $in{'jump'}, $folder, !$userconfig{'show_body'}, \@fetch_mail_error);
 
 if ($end >= scalar(@mail)) {
     $end = scalar(@mail) - 1;
@@ -66,7 +66,7 @@ if ($end >= scalar(@mail)) {
 if ($end < $start) {
     $start = 0;
     $end   = int($start + $perpage - 1);
-    ($start, @mail) = messages_fetch($start, $end, $perpage, $in{'jump'}, $folder, !$userconfig{'show_body'}, \@error);
+    ($start, @mail) = messages_fetch($start, $end, $perpage, $in{'jump'}, $folder, !$userconfig{'show_body'}, \@fetch_mail_error);
 }
 
 # Store default folders data
@@ -235,8 +235,19 @@ $mails{'form_list'} = { 'target' => 'delete_mail.cgi',
                         'buttons' => $form_list_buttons // defined };
 
 # Assign errors
-if (@error) {
-    $mails{'error'} = text('mail_err', $error[0] == 0 ? $error[1] : text('save_elogin', $error[1]));
+if (@fetch_mail_error) {
+    my $fetch_mail_error = "@fetch_mail_error";
+    my $mail_system = $config{'mail_system'};
+    my $mail_err = $fetch_mail_error;
+    if ($fetch_mail_error =~ /\[AUTH/) {
+        if ($mail_system == 4) {
+            $mail_err = text('save_elogin2', $fetch_mail_error);
+        } elsif ($mail_system == 2) {
+            $mail_err = text('save_elogin', $fetch_mail_error);
+        }
+        $mails{'redirect'} = 'inbox_login_error.cgi';
+    }
+    $mails{'error'} = text('mail_err', $mail_err);
 }
 my $errors = $mails{'error'};
 if ($in{'error_fatal'} eq '1' || $errors) {

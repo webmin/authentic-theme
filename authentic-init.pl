@@ -588,7 +588,7 @@ sub embed_port_shell
     {
         my $prefix;
         my $hostname = ($prefix) = split(/\./, get_display_hostname());
-        my $host = ($prefix ? $prefix : get_display_hostname());
+        my $host     = ($prefix ? $prefix : get_display_hostname());
         print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
   <div class="-shell-port-container">
     <div data-shell-config><i aria-label="' .
@@ -1247,7 +1247,9 @@ sub get_button_style
     {
         $class = "warning ";
         $icon  = "pencil-square-o";
-    } elsif (string_contains($keys, "lkeys_sok2")) {
+    } elsif (string_contains($keys, "lkeys_sok2") ||
+             string_contains($keys, "mail_login"))
+    {
         $class = "success ";
         $icon  = "key";
     } elsif (string_contains($keys, "letsencrypt_title") ||
@@ -1341,7 +1343,7 @@ sub header_html_data
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
       '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
-      ' data-high-contrast="' . ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
+      ' data-high-contrast="' .         ($theme_config{'settings_contrast_mode'} eq 'true'              ? '1' : '0') .
       '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
       '" data-slider-fixed="' . ($theme_config{'settings_side_slider_fixed'} eq "true" &&
                                  $get_user_level eq '0' &&

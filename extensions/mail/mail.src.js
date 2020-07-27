@@ -2909,6 +2909,11 @@ const mail = (function() {
                     for (let i = 0; i < errors.length; i++) {
                         _.notification([$$.$.notification.error, errors[i]], 20, "error", i, 1, ['bottom', 'center']);
                     }
+
+                    // If redirect requested, follow it
+                    if (data.redirect) {
+                        _.pjax.fetch(data.redirect);
+                    }
                     return
                 }
 
