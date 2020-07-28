@@ -2198,6 +2198,26 @@ const mail = (function() {
     const messages = (function() {
 
         /**
+         * Control the state of previous fetch call
+         */
+        const fetching = {
+            state: false,
+            initial: true,
+            abort: function() {
+                if (this.pending() === true &&
+                    this.initial === false) {
+                    this.state.abort();
+                }
+            },
+            pending: function() {
+                if (typeof this.state.state === "function" && this.state.state() === "pending") {
+                    return true;
+                }
+                return false;
+            },
+        };
+
+        /**
          * Fetches and renders list of messages for the given folder with particular pagination
          *
          * @returns {void}
@@ -2205,7 +2225,8 @@ const mail = (function() {
         const get = (data) => {
                 loader.start();
                 // _.notification('hide-all');
-                $.post(_.path.extensions + '/mail/messages.cgi?' + _.plugin.json_to_query(data),
+                fetching.abort();
+                fetching.state = $.post(_.path.extensions + '/mail/messages.cgi?' + _.plugin.json_to_query(data),
                     function(data) {
                         render(data);
                         loader.end();
@@ -2213,6 +2234,8 @@ const mail = (function() {
 
                         // Set received config data
                         config.set(data[0].config);
+
+                        fetching.initial = false;
                     });
             },
 
@@ -2862,6 +2885,7 @@ const mail = (function() {
                         storage.reset();
                     }
                     if (refetch || data.folder_counts_allowed) {
+                        fetching.abort();
                         $.post(_.path.extensions + '/mail/messages.cgi?' + hidden + 'show_body_len=' + preview_length() + '', function(data) {
                             render(data);
                             loader.end();
@@ -2908,6 +2932,12 @@ const mail = (function() {
                     let errors = data.error.error;
                     for (let i = 0; i < errors.length; i++) {
                         _.notification([$$.$.notification.error, errors[i]], 20, "error", i, 1, ['bottom', 'center']);
+                    }
+
+                    // If redirect requested, follow it
+                    if (data.redirect) {
+                        fetching.abort();
+                        _.pjax.fetch(data.redirect);
                     }
                     return
                 }
@@ -3187,7 +3217,7 @@ const mail = (function() {
                 // Update messages, if conditions are met
                 this.refreshTimer = setInterval(() => {
                     let refreshing = () => {
-                        panel.find($$.element('controls.refresh.button')).trigger('click');
+                        !fetching.pending() && panel.find($$.element('controls.refresh.button')).trigger('click');
                     }
                     if (config.d.u) {
                         clearInterval(this.refreshTimer);
