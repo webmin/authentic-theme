@@ -1283,6 +1283,7 @@ sub get_sysinfo_vars
             $vs_license               = licenses('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
+            $__virtual_server_version =~ s/.pro//igs;
 
             $virtualmin_version = (
                 product_version_update($__virtual_server_version, 'v') . " " . (
