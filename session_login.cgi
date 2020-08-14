@@ -21,7 +21,8 @@ my $charset = &get_charset();
 # Check to add error handler
 error_40x_handler();
 
-our %theme_config = (settings($config_directory . "/$current_theme/settings-admin", 'settings_'),
+our %theme_config = (settings($config_directory . "/$current_theme/settings.js",    'settings_'),
+                     settings($config_directory . "/$current_theme/settings-admin", 'settings_'),
                      settings($config_directory . "/$current_theme/settings-root",  'settings_'));
 
 # Show pre-login text banner
@@ -63,7 +64,7 @@ if ($gconfig{'loginbanner'} &&
 
 my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
 if (!$miniserv{'no_httponly'}) {
-  $sec .= "; httpOnly";
+    $sec .= "; httpOnly";
 }
 my $sidname = $miniserv{'sidname'} || "sid";
 print "Auth-type: auth-required=1\r\n";

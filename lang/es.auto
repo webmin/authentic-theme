@@ -895,3 +895,4 @@ theme_xhred_textarea_to_clipboard=El contenido seleccionado del área de texto s
 theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Nombre real
 theme_xhred_mail_composer_username=nombre de usuario
+settings_global_palette_unauthenticated=Paleta de colores de la página de inicio de sesión

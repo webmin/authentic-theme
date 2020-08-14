@@ -767,3 +767,4 @@ theme_xhred_textarea_to_clipboard=Выбранное содержимое тек
 theme_xhred_global_alias=кличка
 theme_xhred_mail_composer_real_name=Настоящее имя
 theme_xhred_mail_composer_username=имя пользователя
+settings_global_palette_unauthenticated=Цветовая палитра страницы входа
