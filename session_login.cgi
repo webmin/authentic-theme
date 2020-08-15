@@ -39,7 +39,7 @@ if ($gconfig{'loginbanner'} &&
     print '<!DOCTYPE HTML>', "\n";
     print '<html data-bgs="'
       .
-      ( theme_night_mode() ? 'nightRider' :
+      ( theme_night_mode_login() ? 'nightRider' :
           'gainsboro'
       ) .
       '" class="session_login">', "\n";
@@ -76,7 +76,7 @@ print "Set-Cookie: testing=1; path=/$sec\r\n";
 print '<!DOCTYPE HTML>', "\n";
 print '<html data-bgs="'
   .
-  ( theme_night_mode() ? 'nightRider' :
+  ( theme_night_mode_login() ? 'nightRider' :
       'gainsboro'
   ) .
   '" class="session_login">', "\n";

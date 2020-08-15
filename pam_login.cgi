@@ -41,10 +41,10 @@ if ($gconfig{'loginbanner'} &&
     print '<!DOCTYPE HTML>', "\n";
     print '<html data-bgs="'
       .
-      ( theme_night_mode() ? 'nightRider' :
+      ( theme_night_mode_login() ? 'nightRider' :
           'gainsboro'
       ) .
-      '" data-night-mode="' . theme_night_mode() . '" class="session_login pam_login">', "\n";
+      '" data-night-mode="' . theme_night_mode_login() . '" class="session_login pam_login">', "\n";
     embed_login_head();
     print '<body class="session_login pam_login" ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
@@ -78,10 +78,10 @@ print "Set-Cookie: testing=1; path=/$sec\r\n";
 print '<!DOCTYPE HTML>', "\n";
 print '<html data-bgs="'
   .
-  ( theme_night_mode() ? 'nightRider' :
+  ( theme_night_mode_login() ? 'nightRider' :
       'gainsboro'
   ) .
-  '" data-night-mode="' . theme_night_mode() . '" class="session_login pam_login">', "\n";
+  '" data-night-mode="' . theme_night_mode_login() . '" class="session_login pam_login">', "\n";
 embed_login_head();
 print '<body class="session_login pam_login" ' . $tconfig{'inbody'} . '>' . "\n";
 embed_overlay_prebody();

@@ -1270,6 +1270,15 @@ sub get_button_style
 
 sub theme_night_mode
 {
+    if ($theme_config{'settings_force_night_mode'} eq '1') {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+sub theme_night_mode_login
+{
     if ($theme_config{'settings_global_palette_unauthenticated'} eq 'dark') {
         return 1;
     } else {
