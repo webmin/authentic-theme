@@ -1108,6 +1108,9 @@ sub get_button_style
         $class = "success ";
     } elsif (string_contains($keys, "status")) {
         $icon = "info-circle";
+    } elsif (string_contains($keys, "warnok")) {
+        $icon = "check-circle-o";
+        $class = "warning ";
     } elsif (string_contains($keys, "index_clear") || string_contains($keys, "shell_clear")) {
         $icon = "history";
     } elsif (string_contains($keys, "index_clearcmds") || string_contains($keys, "shell_clearcmds")) {
