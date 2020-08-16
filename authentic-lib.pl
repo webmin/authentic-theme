@@ -1283,6 +1283,7 @@ sub get_sysinfo_vars
             $vs_license               = licenses('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
+            $__virtual_server_version =~ s/.pro//igs;
 
             $virtualmin_version = (
                 product_version_update($__virtual_server_version, 'v') . " " . (
@@ -2121,11 +2122,11 @@ sub theme_cached
     $id || die "Can't use undefined as cache filename";
 
     my ($theme_var_dir) = theme_var_dir();
-    my $fcached       = "$theme_var_dir/$id";
-    my @cached        = stat($fcached);
-    my $ctime         = $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
-    my $cache         = read_file_contents($fcached);
-    my $cdata         = $cache ? unserialise_variable($cache) : undef;
+    my $fcached         = "$theme_var_dir/$id";
+    my @cached          = stat($fcached);
+    my $ctime           = $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
+    my $cache           = read_file_contents($fcached);
+    my $cdata           = $cache ? unserialise_variable($cache) : undef;
     my @data;
 
     if (@cached && $cached[9] > time() - $ctime) {
@@ -2446,7 +2447,7 @@ sub settings_get_select_editor_color
 
             <option value="monokai"'
       . ($v eq 'monokai' && ' selected') .
-      '>' . $theme_text{'theme_xhred_global_dark'} . ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+      '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
 
             <option value="elegant"'
       . ($v eq 'elegant' && ' selected') . '>' . $theme_text{'theme_xhred_global_light'} . '</option>
@@ -2534,6 +2535,8 @@ sub theme_settings
             '0',
             'settings_cm_editor_palette',
             'monokai',
+            'settings_global_palette_unauthenticated',
+            'light',
             'settings_right_page_hide_persistent_vscroll',
             'true',
             'settings_hide_top_loader',
@@ -2893,16 +2896,12 @@ sub theme_settings
                 $disabled = " pointer-events-none";
             }
 
-            $v = '<span class="awradio awobject' . $disabled . '">'.
-                    '<input class="iawobject" type="radio" name="'
-              . $k . '" id="' . $k . '_1" value="true"' . ($v eq 'true' && ' checked') . '>'.
-                    '<label class="lawobject" for="'
-              . $k . '_1">' . $text{'yes'} . '</label>'.
-                    '<input class="iawobject" type="radio" name="'
-              . $k . '" id="' . $k . '_0" value="false"' . ($v eq 'false' && ' checked') . '>'.
-                    '<label class="lawobject" for="'
-              . $k . '_0">' . $text{'no'} . '</label>'.
-                '</span>
+            $v =
+              '<span class="awradio awobject' . $disabled . '">' . '<input class="iawobject" type="radio" name="' . $k .
+              '" id="' . $k . '_1" value="true"' . ($v eq 'true' && ' checked') . '>' . '<label class="lawobject" for="' .
+              $k . '_1">' . $text{'yes'} . '</label>' . '<input class="iawobject" type="radio" name="' .
+              $k . '" id="' . $k . '_0" value="false"' . ($v eq 'false' && ' checked') .
+              '>' . '<label class="lawobject" for="' . $k . '_0">' . $text{'no'} . '</label>' . '</span>
             ';
 
         } elsif ($k =~ /settings_security_notify_on_/ ||
@@ -3131,6 +3130,12 @@ sub theme_settings
             $v = settings_get_select_background_color($v, $k);
         } elsif ($k eq 'settings_cm_editor_palette') {
             $v = settings_get_select_editor_color($v, $k);
+        } elsif ($k eq 'settings_global_palette_unauthenticated') {
+            $v = ui_select($k,
+                           $v,
+                           [[('light', $theme_text{'theme_xhred_global_light'})],
+                            [('dark',  $theme_text{'theme_xhred_global_dark'})]
+                           ]);
         } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
             $v = '<select class="ui_select" name="' . $k . '">
 
@@ -3182,21 +3187,22 @@ sub theme_settings
         return '
             <tr class="atshover">
                 <td class="col_label atscontent">'
-          .
-          (
-            $description && (
-                      $k =~ /level_navigation|leftmenu_width/ ? undef :
-                      '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
-                      $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
-                      '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
-            )
+          . (
+             $description && (
+                             $k =~ /level_navigation|leftmenu_width/ ? undef :
+                             '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
+                             $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
+                             '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
+             )
           ) .
           '<b>' . $theme_text{$k} . '</b>'
           .
-          ( $description &&
-              ($k =~ /level_navigation|leftmenu_width/ ?
-                '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-                $k =~ /sysinfo_theme_updates/ && '<div class="smaller text-normal no-padding margined-left-1"></div>')
+          (
+            $description && ($k =~ /level_navigation|leftmenu_width/ ?
+                             '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                             $k =~ /sysinfo_theme_updates/ &&
+                             '<div class="smaller text-normal no-padding margined-left-1"></div>'
+            )
           ) .
           '</td>
                 <td class="col_value atscontent"><span>'

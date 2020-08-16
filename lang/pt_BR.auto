@@ -978,3 +978,4 @@ theme_xhred_textarea_to_clipboard=O conteúdo da área de texto selecionado foi 
 theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Nome real
 theme_xhred_mail_composer_username=nome do usuário
+settings_global_palette_unauthenticated=Paleta de cores da página de login

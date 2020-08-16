@@ -978,3 +978,4 @@ theme_xhred_textarea_to_clipboard=คัดลอกเนื้อหา textar
 theme_xhred_global_alias=นามแฝง
 theme_xhred_mail_composer_real_name=ชื่อจริง
 theme_xhred_mail_composer_username=ชื่อผู้ใช้
+settings_global_palette_unauthenticated=จานสีของหน้าเข้าสู่ระบบ

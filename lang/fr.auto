@@ -13,3 +13,4 @@ theme_xhred_textarea_to_clipboard=Le contenu de la zone de texte sélectionnée 
 theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Vrai nom
 theme_xhred_mail_composer_username=Nom d'utilisateur
+settings_global_palette_unauthenticated=Palette de couleurs de la page de connexion

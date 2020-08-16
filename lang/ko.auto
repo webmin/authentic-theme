@@ -978,3 +978,4 @@ theme_xhred_textarea_to_clipboard=선택한 텍스트 영역 내용이 클립 �
 theme_xhred_global_alias=별명
 theme_xhred_mail_composer_real_name=실제 이름
 theme_xhred_mail_composer_username=사용자 이름
+settings_global_palette_unauthenticated=로그인 페이지 색상 표

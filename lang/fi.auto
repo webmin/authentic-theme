@@ -978,3 +978,4 @@ theme_xhred_textarea_to_clipboard=Valittu tekstialueen sisältö on kopioitu onn
 theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Oikea nimi
 theme_xhred_mail_composer_username=käyttäjätunnus
+settings_global_palette_unauthenticated=Sisäänkirjautumissivun värivalikoima
