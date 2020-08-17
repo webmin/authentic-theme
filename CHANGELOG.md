@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.54 (August 17, 2020)
+* Add ability for admins to enforce palette for login page [#1488/comment-674190326](https://github.com/authentic-theme/authentic-theme/issues/1488#issuecomment-674190326)
+* Add ability to manually register progressive page for module developers [wiki/progressive](https://github.com/authentic-theme/authentic-theme/wiki/Progressive-Pages)
+* Fiх to add better outline for selected text in editor [#1490](https://github.com/authentic-theme/authentic-theme/issues/1490#issuecomment-674392206)
+* Fix displaying Virtualmin Pro version twice on Dashboard
+* Fiх to direct to the right form's URL, when opened via proxy [virtualmin.com/69681](https://www.virtualmin.com/node/69681)
+
 #### Version 19.53 (July 28, 2020)
 * Add alignment for all table labels to the top vertically, and to the right horizontally for better UX
 * Add better mobile device support
