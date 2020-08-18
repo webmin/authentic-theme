@@ -90,6 +90,7 @@ sub print_category
                       'cat_services'      => 'fa-puzzle-piece',
                       'create_new'        => 'fa-plus',
                       'create_add'        => 'fa-plus',
+                      'create_create'     => 'fa-server-add fa-1_05x margined-left--2',
                       'global_gce'        => 'fa-google',
                       'global_ec2'        => 'fa2 fa2-amazon scaled1_5',
                       'global_hosts'      => 'fa-globe',
@@ -810,7 +811,7 @@ sub print_left_menu
                     $icon = '<i class="fa fa-fw fa-key"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
                     $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
-                } elsif ($link =~ /\/server-manager\/create_form.cgi/) {
+                } elsif ($link =~ /\/server-manager\/create_form.cgi/ && $group != 1) {
                     $icon = '<i class="fa fa-fw fa-server-add scaled1"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/) {
                     if ($link =~ /refresh=1/) {
