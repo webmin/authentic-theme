@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.55 (August 31, 2020)
+#### Version 19.55-beta1 (August 31, 2020)
 * Add better styling for a new apply changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
 * Add native table filter for install scripts page
 * Fix error message print style for failed certificate renewal
