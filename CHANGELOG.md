@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.55-beta1 (August 31, 2020)
+#### Version 19.55-beta2 (August 31, 2020)
 * Add better styling for a new apply changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
 * Add native table filter for install scripts page
 * Fix error message print style for failed certificate renewal
 * Fix to display all textareas using monospace
 * Fix an icon for create system submenu in Cloudmin navigation
+* Fix radio buttons going out of the table
 
 #### Version 19.54 (August 17, 2020)
 * Add ability for admins to enforce palette for login page [#1488/comment-674190326](https://github.com/authentic-theme/authentic-theme/issues/1488#issuecomment-674190326)
