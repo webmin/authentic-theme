@@ -6,6 +6,7 @@
 use strict;
 
 our (%in,
+     %text,
      %module_text_full,
      %theme_text,
      %theme_config,
@@ -154,7 +155,13 @@ sub get_theme_language
         {
             next;
         }
-        $s{$key} .= $theme_text{$key};
+        $s{$key} = $theme_text{$key};
+    }
+
+    # Pass additional language strings
+    my %xhred = ('vm', 'scripts_desc');
+    foreach my $key (keys %xhred) {
+        $s{ $key . "_" . $xhred{$key} } = $text{ $xhred{$key} } if ($text{ $xhred{$key} });
     }
     return convert_to_json(\%s);
 
