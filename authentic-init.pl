@@ -903,6 +903,9 @@ sub get_button_style
 
     if (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
         $icon = "backup fa-1_25x";
+    } elsif (string_contains($keys, "pass_ok")) {
+        $icon = " fa2 fa2-key";
+        $class = "warning ";
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
     } elsif (string_contains($keys, "docker_reg")) {
@@ -1109,7 +1112,7 @@ sub get_button_style
     } elsif (string_contains($keys, "status")) {
         $icon = "info-circle";
     } elsif (string_contains($keys, "warnok")) {
-        $icon = "check-circle-o";
+        $icon  = "check-circle-o";
         $class = "warning ";
     } elsif (string_contains($keys, "index_clear") || string_contains($keys, "shell_clear")) {
         $icon = "history";
