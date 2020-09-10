@@ -1,12 +1,19 @@
 ## Changelog
 
-#### Version 19.55-beta2 (August 31, 2020)
+#### Version 19.55-RC1 (September 10, 2020)
 * Add better styling for a new apply changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
-* Add native table filter for install scripts page
-* Fix error message print style for failed certificate renewal
-* Fix to display all textareas using monospace
+* Add support for new consecutive line breaks [webmin/webmin@3e60854](https://github.com/webmin/webmin/commit/3e60854861c0ec1b9a1835245da9b5c1970f4512)
+* Add native table filter for install scripts page in Virtualmin
+* Add missing message signature to a new mail composer
+* Add ability to refresh logs with 2 seconds interval
+* Fix to HTML escape a label that is put inside of actual tags
+* Fix error message print style for failed certificate renewal in Virtualmin
 * Fix an icon for create system submenu in Cloudmin navigation
-* Fix radio buttons going out of the table
+* Fix radio buttons going out of table area
+* Fix to display all textareas using monospace
+* Fix textareas default size
+
+<!--- separator --->
 
 #### Version 19.54 (August 17, 2020)
 * Add ability for admins to enforce palette for login page [#1488/comment-674190326](https://github.com/authentic-theme/authentic-theme/issues/1488#issuecomment-674190326)
@@ -62,7 +69,6 @@
 * Fix submitting a form on saving a draft, upon composing mail in Usermin (in Safari)
 * Fix interruption of standard call by progressive call, without breaking page
 
-<!--- separator --->
 
 #### Version 19.47 (April 06, 2020)
 * Add ability to recognize downloads in submitted form
