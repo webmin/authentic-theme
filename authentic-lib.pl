@@ -3183,7 +3183,7 @@ sub theme_settings
             $v = settings_get_select_document_title($v, $k);
         }
         my $description     = $theme_text{ $k . '_description' };
-        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click' : 'hover';
+        my $popover_trigger = 'click';
         my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
         return '
             <tr class="atshover">
