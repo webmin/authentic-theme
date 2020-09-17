@@ -906,14 +906,14 @@ sub print_left_menu
 
                     $__custom_print++;
 
-                    if (licenses('vm') eq '1' &&
+                    if (check_pro_package('vm') eq '1' &&
                         $item->{'module'} eq 'virtual-server')
                     {
                         &print_category_link($gconfig{'webprefix'} . "/virtual-server/licence.cgi",
                                              $theme_text{'right_vlcheck'}, 1);
                     }
 
-                    if (licenses('cm') eq '1' &&
+                    if (check_pro_package('cm') eq '1' &&
                         $item->{'module'} eq 'server-manager')
                     {
                         &print_category_link($gconfig{'webprefix'} . "/server-manager/licence.cgi",
@@ -1281,7 +1281,7 @@ sub get_sysinfo_vars
         if ($has_virtualmin) {
             my ($vs_license, $__virtual_server_version);
 
-            $vs_license               = licenses('vm');
+            $vs_license               = check_pro_package('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
             $__virtual_server_version =~ s/.pro//igs;
@@ -1308,22 +1308,24 @@ sub get_sysinfo_vars
 
         # Cloudmin version
         if ($has_cloudmin) {
-            my ($vm2_license, $__server_manager_version);
-
-            $vm2_license = licenses('cm');
-
-            $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
-                                           (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
-            $__server_manager_version =~ s/.gpl//igs;
-
+            my ($cm_licensed, $cm_version, $cm_type, $cm_type_g, $cm_type_p, $cm_version_o);
+            $cm_licensed = check_pro_package('cm');
+            if (defined(&server_manager::get_module_version_and_type)) {
+                ($cm_version, $cm_type) = &server_manager::get_module_version_and_type();
+            } else {
+                $cm_version_o = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
+                                   (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
+                $cm_version_o =~ s/(\.[a-z]+)$//igs;
+            }
+            $cm_type_g = $cm_version ? $cm_type : '';
+            $cm_type_p = $cm_version ? $cm_type : 'Pro';
             $cloudmin_version = (
-                product_version_update($__server_manager_version, 'c') . " " . (
-                    $vm2_license eq '0' ? '' :
-                      ''
-
-                      . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
+                product_version_update($cm_version || $cm_version_o, 'c') . " "
+                  .
+                  ( $cm_licensed eq '0' ? $cm_type_g :
+                      ' ' . $cm_type_p . ' <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                       .
-                      ( ($vm2_license eq '1') ?
+                      ( ($cm_licensed eq '1') ?
                           ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_slcheck'} . '" href=\'' .
                           $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
@@ -1332,7 +1334,7 @@ sub get_sysinfo_vars
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
                       $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
 '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
-                ));
+                  ));
         }
 
         # Fetch theme version
@@ -2447,8 +2449,7 @@ sub settings_get_select_editor_color
     return '<select class="ui_select" name="' . $k . '">
 
             <option value="monokai"'
-      . ($v eq 'monokai' && ' selected') .
-      '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
+      . ($v eq 'monokai' && ' selected') . '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
 
             <option value="elegant"'
       . ($v eq 'elegant' && ' selected') . '>' . $theme_text{'theme_xhred_global_light'} . '</option>

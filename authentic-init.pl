@@ -714,19 +714,23 @@ sub init_vars
 
 }
 
-sub licenses
+sub check_pro_package
 {
     my ($id) = @_;
     if (&foreign_available("virtual-server") && $id eq "vm") {
         my %virtualmin = &get_module_info("virtual-server");
-        if ($virtualmin{'version'} =~ /gpl/igs) {
+        if ($virtualmin{'version'} =~ /pro/is) {
+            return 1;
+        } elsif ($virtualmin{'version'} =~ /gpl/is) {
             return 0;
         } else {
             return 1;
         }
     } elsif (&foreign_available("server-manager") && $id eq "cm") {
         my %cloudmin = &get_module_info("server-manager");
-        if ($cloudmin{'version'} =~ /gpl/igs) {
+        if ($cloudmin{'version'} =~ /pro/is || $cloudmin{'version'} =~ /real/is) {
+            return 1;
+        } elsif ($cloudmin{'version'} =~ /\..*?\./is) {
             return 0;
         } else {
             return 1;
@@ -904,7 +908,7 @@ sub get_button_style
     if (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
         $icon = "backup fa-1_25x";
     } elsif (string_contains($keys, "pass_ok")) {
-        $icon = " fa2 fa2-key";
+        $icon  = " fa2 fa2-key";
         $class = "warning ";
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
