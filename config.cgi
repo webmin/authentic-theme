@@ -119,9 +119,5 @@ if (!$func) {
 print &ui_table_end();
 print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
 
-if ($module eq "virtual-server") {
-    &ui_print_footer("/right.cgi", $text{'config_return'});
-} else {
-    &ui_print_footer("/$module", $text{'index'});
-}
+&ui_print_footer("/$module", $text{'index'});
 
