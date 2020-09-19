@@ -979,3 +979,5 @@ theme_xhred_global_alias=alias
 theme_xhred_mail_composer_real_name=Regte naam
 theme_xhred_mail_composer_username=username
 settings_global_palette_unauthenticated=Aanmeldingsbladsy-kleurpalet
+settings_config_save_and_next=Stoor en volgende
+settings_config_configuration_category=Konfigurasie kategorie

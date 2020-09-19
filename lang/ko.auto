@@ -979,3 +979,5 @@ theme_xhred_global_alias=별명
 theme_xhred_mail_composer_real_name=실제 이름
 theme_xhred_mail_composer_username=사용자 이름
 settings_global_palette_unauthenticated=로그인 페이지 색상 표
+settings_config_save_and_next=저장하고 다음
+settings_config_configuration_category=구성 범주

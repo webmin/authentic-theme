@@ -900,3 +900,5 @@ theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Prawdziwe imię
 theme_xhred_mail_composer_username=Nazwa Użytkownika
 settings_global_palette_unauthenticated=Paleta kolorów strony logowania
+settings_config_save_and_next=Zapisz i Dalej
+settings_config_configuration_category=Kategoria konfiguracji

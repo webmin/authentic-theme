@@ -979,3 +979,5 @@ theme_xhred_global_alias=นามแฝง
 theme_xhred_mail_composer_real_name=ชื่อจริง
 theme_xhred_mail_composer_username=ชื่อผู้ใช้
 settings_global_palette_unauthenticated=จานสีของหน้าเข้าสู่ระบบ
+settings_config_save_and_next=บันทึกและถัดไป
+settings_config_configuration_category=หมวดการกำหนดค่า

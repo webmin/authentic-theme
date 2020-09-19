@@ -1234,3 +1234,8 @@ theme_xhred_mail_composer_username=username
 
 #19.53
 settings_global_palette_unauthenticated=Login page color palette
+
+
+#19.55
+settings_config_save_and_next=Save and Next
+settings_config_configuration_category=Configuration category

@@ -979,3 +979,5 @@ theme_xhred_global_alias=takma ad
 theme_xhred_mail_composer_real_name=Gerçek ad
 theme_xhred_mail_composer_username=Kullanıcı adı
 settings_global_palette_unauthenticated=Giriş sayfası renk paleti
+settings_config_save_and_next=Kaydet ve İleri
+settings_config_configuration_category=Yapılandırma kategorisi

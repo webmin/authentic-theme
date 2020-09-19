@@ -768,3 +768,5 @@ theme_xhred_global_alias=кличка
 theme_xhred_mail_composer_real_name=Настоящее имя
 theme_xhred_mail_composer_username=имя пользователя
 settings_global_palette_unauthenticated=Цветовая палитра страницы входа
+settings_config_save_and_next=Сохранить и Далее
+settings_config_configuration_category=Категория конфигурации

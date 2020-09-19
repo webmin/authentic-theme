@@ -387,7 +387,7 @@ sub theme_ui_columns_start
     if (ref($heads)) {
         for ($i = 0; $i < @$heads; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($heads->[$i] eq ''    ? '<br>'        : $heads->[$i]);
+            $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -407,7 +407,7 @@ sub theme_ui_columns_row
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<td data-td-e " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">\n";
-            $rv .= ($cols->[$i] !~ /\S/             ? '<br>'        : $cols->[$i]);
+            $rv .= ($cols->[$i] !~ /\S/ ? '<br>' : $cols->[$i]);
             $rv .= '</td>' . "\n";
         }
     }
@@ -426,7 +426,7 @@ sub theme_ui_columns_header
     if (ref($cols)) {
         for ($i = 0; $i < @$cols; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
-            $rv .= ($cols->[$i] eq ''     ? '#'           : $cols->[$i]);
+            $rv .= ($cols->[$i] eq '' ? '#' : $cols->[$i]);
             $rv .= '</th>' . "\n";
         }
     }
@@ -746,8 +746,7 @@ sub theme_ui_oneradio
       &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\_$rand\"" .
       ($tags ? " " . $tags : "") . ">";
     $ret .=
-      '<label class="lawobject" for="' . $id . '_' . $rand . '">' .
-      (length $label ? $label : '&nbsp;') . '</label></span>';
+      '<label class="lawobject" for="' . $id . '_' . $rand . '">' . (length $label ? $label : '&nbsp;') . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
@@ -773,14 +772,16 @@ sub theme_ui_textarea
 
 sub theme_ui_submit
 {
-    my ($label, $name, $dis, $tags) = @_;
+    my ($label, $name, $dis, $tags, $icon_class, $btn_class_extra) = @_;
     my ($keys, $class, $icon) = get_button_style($label);
-
+    if ($icon_class && !$icon) {
+        $icon = "<i class=\"$icon_class\"></i>";
+    }
     my $ids;
     $ids = "_s_$main::ui_submit_tcalled" if ($main::ui_submit_tcalled++);
 
-    return "<button class=\"btn btn-" . $class .
-      " ui_submit ui_form_end_submit\" type=\"button\"" . ($name ne '' ? " name=\"" . &quote_escape($name) . "\"" : "") .
+    return "<button class=\"btn btn-$class ui_submit ui_form_end_submit $btn_class_extra\" type=\"button\"" .
+      ($name ne '' ? " name=\"" . &quote_escape($name) . "\""      : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
       ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
       &html_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
@@ -798,7 +799,7 @@ sub theme_ui_reset
 
     $rv .= '<button class="btn btn-default ui_reset" style="height: 28px; vertical-align:middle" type="reset" ';
     $rv .= ($dis ? 'disabled="disabled">' : '>');
-    $rv .= &quote_escape($label);
+    $rv .= &html_escape($label);
     $rv .= '</button>' . "\n";
 
     return $rv;
@@ -806,14 +807,19 @@ sub theme_ui_reset
 
 sub theme_ui_button
 {
-    my ($label, $name, $dis, $tags) = @_;
+    my ($label, $name, $dis, $tags, $icon, $type, $btn_class_extra) = @_;
     my $rv;
+    my $label_safe = &html_escape($label);
+    if ($icon) {
+        $label_safe = "<i class=\"$icon\"></i>&nbsp;<span data-entry>$label_safe</span>";
+    }
+    $type = "button" if (!$type);
 
-    $rv .= '<button type="button" class="btn btn-default ui_button" ';
+    $rv .= "<button type=\"$type\" class=\"btn btn-default ui_button $btn_class_extra\" ";
     $rv .= ($name ne '' ? 'name="' . &quote_escape($name) . '" ' : '');
     $rv .= ($dis ? 'disabled="disabled"' : '');
     $rv .= ($tags ? ' ' . $tags : '') . '>';
-    $rv .= &quote_escape($label);
+    $rv .= $label_safe;
     $rv .= '</button>' . "\n";
 
     return $rv;
@@ -1170,8 +1176,8 @@ sub theme_ui_radio_table
         $rv .= "<tr>\n";
         $rv .=
           "<td" . (defined($r->[2]) ? "" : " colspan=2") .
-          ">" . ($nobold            ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
-          ($nobold                  ? "" : "</b>") . "</td>\n";
+          ">" . ($nobold ? "" : "<b>") . &ui_oneradio($name, $r->[0], $r->[1], $r->[0] eq $sel, $r->[3]) .
+          ($nobold ? "" : "</b>") . "</td>\n";
         if (defined($r->[2])) {
             $rv .= "<td>" . $r->[2] . "</td>\n";
         }

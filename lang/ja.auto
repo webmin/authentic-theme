@@ -13,3 +13,5 @@ theme_xhred_global_alias=エイリアス
 theme_xhred_mail_composer_real_name=本名
 theme_xhred_mail_composer_username=ユーザー名
 settings_global_palette_unauthenticated=ログインページのカラーパレット
+settings_config_save_and_next=保存して次へ
+settings_config_configuration_category=構成カテゴリ

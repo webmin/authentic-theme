@@ -979,3 +979,5 @@ theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Isem reali
 theme_xhred_mail_composer_username=username
 settings_global_palette_unauthenticated=Idħol fil-paġna tal-paletta tal-kulur
+settings_config_save_and_next=Ħlief u Li jmiss
+settings_config_configuration_category=Kategorija tal-konfigurazzjoni

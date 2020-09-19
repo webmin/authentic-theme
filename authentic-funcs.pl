@@ -35,6 +35,25 @@ sub settings
     }
 }
 
+sub ui_button_group_local
+{
+    my ($buttons, $extra_class) = @_;
+    my $rv;
+    $rv = "<div class=\"btn-group $extra_class\">$buttons</div>";
+    return $rv;
+}
+
+sub ui_span_local
+{
+    my ($data, $extra_class) = @_;
+    my $rv;
+    if ($extra_class) {
+        $extra_class = " class=\"$extra_class\"";
+    }
+    $rv = "<span$extra_class>$data</span>";
+    return $rv;
+}
+
 sub theme_ui_checkbox_local
 {
     my ($name, $value, $label, $sel, $tags, $dis) = @_;

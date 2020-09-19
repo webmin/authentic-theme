@@ -979,3 +979,5 @@ theme_xhred_global_alias=Álnév
 theme_xhred_mail_composer_real_name=Igazi neve
 theme_xhred_mail_composer_username=felhasználónév
 settings_global_palette_unauthenticated=A bejelentkező oldal színpaletta
+settings_config_save_and_next=Mentés és tovább
+settings_config_configuration_category=Konfigurációs kategória

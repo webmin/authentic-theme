@@ -979,3 +979,5 @@ theme_xhred_global_alias=prezývka
 theme_xhred_mail_composer_real_name=Skutočné meno
 theme_xhred_mail_composer_username=užívateľské meno
 settings_global_palette_unauthenticated=Paleta farieb prihlasovacej stránky
+settings_config_save_and_next=Uložiť a ďalšie
+settings_config_configuration_category=Konfiguračná kategória

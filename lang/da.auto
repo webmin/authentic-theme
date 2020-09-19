@@ -896,3 +896,5 @@ theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Rigtige navn
 theme_xhred_mail_composer_username=brugernavn
 settings_global_palette_unauthenticated=Login-side farvepalet
+settings_config_save_and_next=Gem og Næste
+settings_config_configuration_category=Konfigurationskategori

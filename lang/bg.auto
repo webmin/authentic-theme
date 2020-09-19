@@ -979,3 +979,5 @@ theme_xhred_global_alias=псевдоним
 theme_xhred_mail_composer_real_name=Истинско име
 theme_xhred_mail_composer_username=потребителско име
 settings_global_palette_unauthenticated=Цветова палитра на страницата за влизане
+settings_config_save_and_next=Запазване и следващо
+settings_config_configuration_category=Категория на конфигурацията

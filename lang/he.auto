@@ -979,3 +979,5 @@ theme_xhred_global_alias=כינוי
 theme_xhred_mail_composer_real_name=שם אמיתי
 theme_xhred_mail_composer_username=שם משתמש
 settings_global_palette_unauthenticated=לוח הצבעים של דף הכניסה
+settings_config_save_and_next=שמור והבא
+settings_config_configuration_category=קטגוריית תצורה
