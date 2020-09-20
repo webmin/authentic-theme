@@ -12,7 +12,7 @@ use warnings;
 
 use File::Basename;
 
-our (%text, %in, $config_directory, %theme_text);
+our (%text, %in, $config_directory, $user_config_directory, %theme_text);
 
 require(dirname(__FILE__) . "/authentic-lib.pl");
 require(dirname(__FILE__) . "/../config-lib.pl");
@@ -21,6 +21,7 @@ my (%access,
     %module_info,
     %info,
     %newconfig,
+    %canconfig,
     @info_order,
     @sections,
     $help,
@@ -33,9 +34,8 @@ my (%access,
 
 $module = $in{'module'} || $ARGV[0];
 &foreign_available($module) || &error($text{'config_eaccess'});
-%access = &get_module_acl(undef, $module);
-$access{'noconfig'} &&
-  &error($text{'config_ecannot'});
+&switch_to_remote_user();
+&create_user_config_dirs();
 %module_info = &get_module_info($module);
 
 if (-r &help_file($module, "config_intro")) {
@@ -46,8 +46,8 @@ if (-r &help_file($module, "config_intro")) {
 &ui_print_header(&text('config_dir', $module_info{'desc'}), $text{'config_title'}, "", $help, 0, 1);
 $module_dir = &module_root_directory($module);
 
-# Read the config.info file to find sections
-&read_file("$module_dir/config.info", \%info, \@info_order);
+# Read the uconfig.info file to find sections
+&read_file("$module_dir/uconfig.info", \%info, \@info_order);
 foreach my $i (@info_order) {
     my @p = split(/,/, $info{$i});
     if ($p[1] == 11) {
@@ -69,7 +69,7 @@ if (@sections > 1) {
     $in{'section'} = $sections[$idx]->[0];
 
     # We have some sections .. show a menu to select
-    print &ui_form_start("config.cgi");
+    print &ui_form_start("uconfig.cgi");
     print &ui_hidden("module", $module), "\n";
     print &ui_span_local($theme_text{'settings_config_configuration_category'} . ":", 'row-block-label') . "\n";
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
@@ -91,7 +91,7 @@ if (@sections > 1) {
 }
 $sname = $theme_text{'theme_xhred_config_configurable_options'} if (!$sname);
 
-print &ui_form_start("config_save.cgi", "post");
+print &ui_form_start("uconfig_save.cgi", "post");
 print &ui_hidden("module", $module), "\n";
 print &ui_hidden("section", $in{'section'}), "\n";
 if ($section) {
@@ -105,23 +105,27 @@ if ($section) {
     }
 }
 print &ui_table_start($sname, "width=100%", 2);
-&read_file("$config_directory/$module/config", \%newconfig);
+&read_file("$module/defaultuconfig",                \%newconfig);
+&read_file("$config_directory/$module/uconfig",     \%newconfig);
+&read_file("$user_config_directory/$module/config", \%newconfig);
+&read_file("$config_directory/$module/canconfig",   \%canconfig);
 
 my $func;
-if (-r "$module_dir/config_info.pl") {
+if (-r "$module_dir/uconfig_info.pl") {
 
     # Module has a custom config editor
-    &foreign_require($module, "config_info.pl");
+    &foreign_require($module, "uconfig_info.pl");
     my $fn = "${module}::config_form";
     if (defined(&$fn)) {
         $func++;
-        &foreign_call($module, "config_form", \%newconfig);
+        &foreign_call($module, "config_form", \%newconfig, \%canconfig);
     }
 }
 if (!$func) {
 
     # Use config.info to create config inputs
-    &generate_config(\%newconfig, "$module_dir/config.info", $module, undef, undef, $in{'section'});
+    &generate_config(\%newconfig, "$module_dir/uconfig.info", $module, (%canconfig ? \%canconfig : undef),
+                     undef, $in{'section'});
 }
 print &ui_table_end();
 print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
