@@ -780,11 +780,16 @@ sub theme_ui_submit
     my $ids;
     $ids = "_s_$main::ui_submit_tcalled" if ($main::ui_submit_tcalled++);
 
+    my $nbsp;
+    if ($label) {
+      $nbsp = "&nbsp;";
+    }
+
     return "<button class=\"btn btn-$class ui_submit ui_form_end_submit $btn_class_extra\" type=\"button\"" .
       ($name ne '' ? " name=\"" . &quote_escape($name) . "\""      : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
-      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "&nbsp;<span data-entry=\"$keys\">" .
-      &html_escape($label) . "&nbsp;</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
+      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "$nbsp<span data-entry=\"$keys\">" .
+      &html_escape($label) . "$nbsp</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
           ""
@@ -810,8 +815,12 @@ sub theme_ui_button
     my ($label, $name, $dis, $tags, $icon, $type, $btn_class_extra) = @_;
     my $rv;
     my $label_safe = &html_escape($label);
+    my $nbsp;
+    if ($label) {
+      $nbsp = "&nbsp;";
+    }
     if ($icon) {
-        $label_safe = "<i class=\"$icon\"></i>&nbsp;<span data-entry>$label_safe</span>";
+        $label_safe = "<i class=\"$icon\"></i>$nbsp<span data-entry>$label_safe</span>";
     }
     $type = "button" if (!$type);
 
