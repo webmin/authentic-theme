@@ -54,6 +54,35 @@ sub ui_span_local
     return $rv;
 }
 
+sub ui_dropdown_local
+{
+
+    my ($elements, $dconfig) = @_;
+    my $dconf_toggle          = $dconfig->{'tooltip'}         || 'tooltip';
+    my $dconf_container       = $dconfig->{'container'}       || 'body';
+    my $dconf_title           = $dconfig->{'title'}           || undef;
+    my $dconf_container_class = $dconfig->{'container-class'} || undef;
+    my $dconf_button_class    = $dconfig->{'button-class'}    || 'btn-default';
+    my $dconf_button_icon     = $dconfig->{'icon'} ? "<span class=\"$dconfig->{'icon'}\"></span>"             : undef;
+    my $dconf_button_text     = $dconfig->{'text'} ? "&nbsp;<span data-entry>$dconfig->{'text'}&nbsp;</span>" : undef;
+    my $dconf_ul_class        = $dconfig->{'ul-class'} || undef;
+    my $dconf_li_class        = $dconfig->{'li-class'} || undef;
+    my $lis;
+
+    foreach my $e (@{$elements}) {
+        $lis .= "<li class=\"$dconf_li_class\">$e</li>\n";
+    }
+    return
+"<div data-toggle=\"$dconf_toggle\" data-container=\"$dconf_container\" data-title=\"$dconf_title\" class=\"btn-group $dconf_container_class\">
+    <button aria-label=\"$dconf_title\" data-toggle=\"dropdown\" class=\"btn dropdown-toggle $dconf_button_class\" aria-expanded=\"false\">
+        $dconf_button_icon$dconf_button_text
+    </button>                                    
+    <ul class=\"dropdown-menu $dconf_ul_class\" role=\"menu\">
+        $lis
+    </ul>
+</div>";
+}
+
 sub theme_ui_checkbox_local
 {
     my ($name, $value, $label, $sel, $tags, $dis) = @_;
@@ -288,7 +317,7 @@ sub replace_meta
 
     my $hostname   = &get_display_hostname();
     my $version    = &get_webmin_version();
-    my $os_type    = $gconfig{'real_os_type'} || $gconfig{'os_type'};
+    my $os_type    = $gconfig{'real_os_type'}    || $gconfig{'os_type'};
     my $os_version = $gconfig{'real_os_version'} || $gconfig{'os_version'};
     $string =~ s/%HOSTNAME%/$hostname/g;
     $string =~ s/%VERSION%/$version/g;

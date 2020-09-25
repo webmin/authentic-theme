@@ -898,3 +898,4 @@ theme_xhred_mail_composer_username=brugernavn
 settings_global_palette_unauthenticated=Login-side farvepalet
 settings_config_save_and_next=Gem og Næste
 settings_config_configuration_category=Konfigurationskategori
+config_search_options_all=Søg gennem alle modulkonfigurationsindstillinger

@@ -16,3 +16,4 @@ theme_xhred_mail_composer_username=Nom d'utilisateur
 settings_global_palette_unauthenticated=Palette de couleurs de la page de connexion
 settings_config_save_and_next=Enregistrer et suivant
 settings_config_configuration_category=Catégorie de configuration
+config_search_options_all=Rechercher dans toutes les options de configuration du module

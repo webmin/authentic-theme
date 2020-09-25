@@ -822,3 +822,4 @@ theme_xhred_mail_composer_username=uživatelské jméno
 settings_global_palette_unauthenticated=Paleta barev přihlašovací stránky
 settings_config_save_and_next=Uložit a další
 settings_config_configuration_category=Kategorie konfigurace
+config_search_options_all=Prohledejte všechny možnosti konfigurace modulu

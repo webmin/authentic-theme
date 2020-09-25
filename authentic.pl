@@ -820,7 +820,7 @@ sub theme_ui_button
       $nbsp = "&nbsp;";
     }
     if ($icon) {
-        $label_safe = "<i class=\"$icon\"></i>$nbsp<span data-entry>$label_safe</span>";
+        $label_safe = "<i class=\"$icon\"></i>$nbsp<span data-entry>$label_safe$nbsp</span>";
     }
     $type = "button" if (!$type);
 

@@ -981,3 +981,4 @@ theme_xhred_mail_composer_username=ім'я користувача
 settings_global_palette_unauthenticated=Колірна палітра сторінки для входу
 settings_config_save_and_next=Зберегти та Далі
 settings_config_configuration_category=Категорія конфігурації
+config_search_options_all=Шукати серед усіх параметрів конфігурації модуля

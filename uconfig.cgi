@@ -48,14 +48,30 @@ $module_dir = &module_root_directory($module);
 
 # Read the uconfig.info file to find sections
 &read_file("$module_dir/uconfig.info", \%info, \@info_order);
+my @config_quick_access;
+my $config_quick_access_section;
+my $config_quick_access_category;
 foreach my $i (@info_order) {
     my @p = split(/,/, $info{$i});
     if ($p[1] == 11) {
         push(@sections, [$i, $p[0]]);
+        $config_quick_access_section  = $i;
+        $config_quick_access_category = $p[0];
+    } else {
+        my $value = $p[0];
+        $value =~ s/<(?:[^>'"]*|(['"]).*?\1)*>//gs;
+        push(@config_quick_access,
+             {  value   => $value,
+                section => $config_quick_access_section,
+                data    => { category => $config_quick_access_category }
+             });
     }
 }
 if (@sections > 1) {
-
+    print ' <script>';
+    print 'var config_quick_access = ' . convert_to_json(\@config_quick_access);
+    print "</script>\n";
+    
     # Work out template section to edit
     $in{'section'} ||= $sections[0]->[0];
     $idx = &indexof($in{'section'}, map {$_->[0]} @sections);
@@ -75,9 +91,19 @@ if (@sections > 1) {
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
     print &ui_button_group_local(
                                  (
-                                  &ui_submit($theme_text{'extensions_mail_pagination_left'},
-                                             "nprev", undef, undef, "fa fa-fw fa-arrow-circle-o-left",
-                                             "heighter-28")
+                                  &ui_dropdown_local([(&ui_textbox('search'))],
+                                                     {  'title'           => $theme_text{'config_search_options_all'},
+                                                        'icon'            => 'fa fa-md fa-file-find',
+                                                        'container-class' => 'elm-rel-z config-search',
+                                                        'button-class'    => 'btn-default elm-rel-z heighter-28 pd-lr-8',
+                                                        'ul-class'        => 'pd-tb-0',
+                                                     }
+                                    )
+                                    .
+                                    &ui_submit($theme_text{'extensions_mail_pagination_left'},
+                                               "nprev", undef, undef,
+                                               "fa fa-fw fa-arrow-circle-o-left",
+                                               "heighter-28 margined-left-5")
                                     .
                                     &ui_submit($theme_text{'extensions_mail_pagination_right'},
                                                "nnext", undef, undef, "fa fa-fw fa-arrow-circle-o-right",
