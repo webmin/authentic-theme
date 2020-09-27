@@ -1,9 +1,10 @@
 ## Changelog
 
-#### Version 19.55-RC5 (September 26, 2020)
+#### Version 19.55-RC6 (September 27, 2020)
 * Add to display module config by section with search capability
 * Add better styling for a new apply changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
 * Add support for new consecutive line breaks [webmin/webmin@3e60854](https://github.com/webmin/webmin/commit/3e60854861c0ec1b9a1835245da9b5c1970f4512)
+* Add more distinctive look for focused checkboxes/radios
 * Add native table filter for install scripts page in Virtualmin
 * Add missing message signature to a new mail composer
 * Add ability to refresh logs with 2 seconds interval
