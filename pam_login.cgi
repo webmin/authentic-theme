@@ -158,10 +158,8 @@ print '<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></
 if (!$in{'password'}) {
     if ($text{'session_postfix'} =~ "href") {
         my $link = get_link($text{'session_postfix'}, 'ugly');
-        print '<button onclick=\'window.open("' . $link->[0] . '", "' . $link->[1] .
-'", "toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=700,height=500");return false;\' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;'
-          . &theme_text('login_reset')
-          . '</button>' . "\n";
+        print '<a target="_blank" href=' .
+          $link->[0] . ' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;' . $link->[1] . '</a>' . "\n";
     }
 }
 
