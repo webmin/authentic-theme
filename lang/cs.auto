@@ -268,7 +268,6 @@ theme_fileformat_perl_placeholder=Tento soubor musí končit `1;` úspěšně pr
 theme_error_access_not_root=Přístup byl odepřen: Uživatel potřebuje přístup k modulu <em>Webmin Configuration</em>, aby mohl upravit konfiguraci motivu
 settings_hide_top_loader=Skrýt horní lištu průběhu
 settings_leftmenu_vm_cm_dropdown_icons=Zobrazovat symbolické ikony v rozevíracím seznamu ve Virtualmin/Cloudmin
-settings_font_family=Rodina písem
 theme_xhred_global_shipped=Odesláno
 theme_xhred_global_available=Dostupný
 theme_xhred_global_not_available=Není dostupný

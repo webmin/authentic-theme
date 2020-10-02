@@ -2350,50 +2350,6 @@ sub get_theme_user_link
       $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
 }
 
-sub settings_get_select_font_family
-{
-    my ($v, $k) = @_;
-    return '<select class="ui_select" name="' . $k . '">
-
-                    <option value="system-default"'
-      . ($v eq 'system-default' && ' selected') . '>[' . $theme_text{'theme_xhred_global_local_system_default'} . ']</option>
-
-                    <option value="0"'
-      . ($v eq '0' && ' selected') . '>Roboto (' . $theme_text{'theme_xhred_global_default'} . ', ' .
-      lc($theme_text{'theme_xhred_global_shipped'}) . ')</option>
-
-                    <option value="1"'
-      . ($v eq '1' && ' selected') . '>Roboto</option>
-
-                    <option value="arial"'
-      . ($v eq 'arial' && ' selected') . '>Arial</option>
-
-
-                    <option value="helvetica-neue"'
-      . ($v eq 'helvetica-neue' && ' selected') . '>Helvetica Neue</option>
-
-                    <option value="open-sans"'
-      . ($v eq 'open-sans' && ' selected') . '>Open Sans</option>
-
-                    <option value="open-sans-condensed"'
-      . ($v eq 'open-sans-condensed' && ' selected') . '>Open Sans Condensed</option>
-
-                    <option value="sans-serif"'
-      . ($v eq 'sans-serif' && ' selected') . '>Sans Serif</option>
-
-                    <option value="segoe-ui"'
-      . ($v eq 'segoe-ui' && ' selected') . '>Segoe UI</option>
-
-                    <option value="tahoma"'
-      . ($v eq 'tahoma' && ' selected') . '>Tahoma</option>
-
-                    <option value="trebuchet-ms"'
-      . ($v eq 'trebuchet-ms' && ' selected') . '>Trebuchet MS</option>
-
-                </select>';
-
-}
-
 sub settings_get_select_navigation_color
 {
     my ($v, $k) = @_;
@@ -2533,8 +2489,6 @@ sub theme_settings
             theme_settings('fa', 'desktop', &theme_text('settings_global_options_title')),
             'settings_document_title',
             '1',
-            'settings_font_family',
-            '0',
             'settings_cm_editor_palette',
             'monokai',
             'settings_global_palette_unauthenticated',
@@ -3124,8 +3078,6 @@ sub theme_settings
                                 ]);
             }
 
-        } elsif ($k eq 'settings_font_family') {
-            $v = settings_get_select_font_family($v, $k);
         } elsif ($k eq 'settings_navigation_color') {
             $v = settings_get_select_navigation_color($v, $k);
         } elsif ($k eq 'settings_background_color') {

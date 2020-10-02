@@ -83,7 +83,6 @@ sub settings_filter
 sub settings_default
 {
     my %c;
-    $c{'settings_font_family'}                        = '0';
     $c{'settings_navigation_color'}                   = 'blue';
     $c{'settings_background_color'}                   = 'gainsboro';
     $c{'settings_grayscale_level_navigation'}         = '0';
@@ -456,15 +455,8 @@ sub embed_pm_scripts
 
 sub embed_css_fonts
 {
-
-    if (!$theme_config{'settings_font_family'} || $theme_config{'settings_font_family'} eq 'undefined') {
-        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    } elsif ($theme_config{'settings_font_family'} != '1') {
-        print ' <link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $theme_config{'settings_font_family'} . '.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    }
+    print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
+      (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 }
 
 sub embed_css_bundle
@@ -1364,7 +1356,7 @@ sub header_html_data
       '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' .         ($theme_config{'settings_contrast_mode'} eq 'true'              ? '1' : '0') .
       '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' . ($theme_config{'settings_side_slider_fixed'} eq "true" &&
+      '" data-slider-fixed="' .         ($theme_config{'settings_side_slider_fixed'} eq "true" &&
                                  $get_user_level eq '0' &&
                                  $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' .

@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Ennek a fájlnak végződnie kell `1;` hogy si
 theme_error_access_not_root=Hozzáférés megtagadva: A felhasználónak hozzáférnie kell a <em>Webmin Configuration</em> modulhoz a témakonfiguráció szerkesztéséhez
 settings_hide_top_loader=A felső folyamatjelző sáv elrejtése
 settings_leftmenu_vm_cm_dropdown_icons=A szimbolikus ikonok megjelenítése a Virtualmin/Cloudmin legördülő menüjében
-settings_font_family=Betűtípus család
 theme_xhred_global_shipped=Kiszállított
 theme_xhred_global_available=Elérhető
 theme_xhred_global_not_available=Nem elérhető

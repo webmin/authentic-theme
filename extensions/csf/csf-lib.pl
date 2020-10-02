@@ -59,7 +59,7 @@ sub csf_strings
 
         # Trim versions' number
         $csf_installed_version =~ s/^\s+|\s+$//g;
-        $csf_remote_version =~ s/^\s+|\s+$//g;
+        $csf_remote_version    =~ s/^\s+|\s+$//g;
     } else {
         $csf_remote_version = '0';
     }
@@ -140,13 +140,8 @@ sub csf_mod
     print $fh '<link href="' . $gconfig{'webprefix'} .
       '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 
-    if (!$theme_config{'settings_font_family'}) {
-        print $fh '<link href="' . $gconfig{'webprefix'} .
-          '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    } elsif ($theme_config{'settings_font_family'} != '1') {
-        print $fh '<link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/font-' .
-          $theme_config{'settings_font_family'} . '.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    }
+    print $fh '<link href="' . $gconfig{'webprefix'} .
+      '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 
     print $fh '<script src="' .
       $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
@@ -170,9 +165,8 @@ sub csf_mod
     print $fh4 ' '
       .
       replace("\"", "'",
-              header_html_data('csf', '1', ($theme_text{'theme_xhred_csf'} . " — " . get_html_framed_title(), 0, 0, '1')
-              )
-      ) .
+              header_html_data('csf', '1', ($theme_text{'theme_xhred_csf'} . " — " . get_html_framed_title(), 0, 0, '1')))
+      .
       '';
     close $fh4;
 
@@ -192,7 +186,7 @@ sub csf_mod
 
     if (-f $csf_conf && !-f $csf_ui_patch) {
         (my $fc = read_file_contents($csf_conf)) =~ s/$csf_ui = "0"/$csf_ui = "1"/g;
-        write_file_contents($csf_conf,                                            $fc);
+        write_file_contents($csf_conf,     $fc);
         write_file_contents($csf_ui_patch, "\n");
     }
 }

@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Fitxategi honekin amaitu behar da `1;` arrakas
 theme_error_access_not_root=Sarbide ukatua: erabiltzaileak <em>Webmin Configuration</em> modulurako sarbidea behar du gaiaren konfigurazioa editatzeko
 settings_hide_top_loader=Ezkutatu aurrerapen barra
 settings_leftmenu_vm_cm_dropdown_icons=Erakutsi goitibeherako ikono sinbolikoak Virtualmin/Cloudmin zerbitzuan
-settings_font_family=Letra-familia
 theme_xhred_global_shipped=datorrena
 theme_xhred_global_available=eskura
 theme_xhred_global_not_available=Ez dago eskuragarri

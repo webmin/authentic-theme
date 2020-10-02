@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=يجب أن ينتهي هذا الملف بـ 
 theme_error_access_not_root=تم رفض الوصول: يحتاج المستخدم إلى الوصول إلى وحدة <em>Webmin Configuration</em> لتحرير تكوين السمة
 settings_hide_top_loader=إخفاء شريط التقدم العلوي
 settings_leftmenu_vm_cm_dropdown_icons=إظهار الرموز الرمزية في القائمة المنسدلة في Virtualmin/Cloudmin
-settings_font_family=خط العائلة
 theme_xhred_global_shipped=شحنها
 theme_xhred_global_available=متاح
 theme_xhred_global_not_available=غير متاح

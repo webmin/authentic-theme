@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=اس فائل کا اختتام لازمی ہ�
 theme_error_access_not_root=Access denied: User needs access to the <em>Webmin Configuration</em> module to edit theme configuration
 settings_hide_top_loader=اعلی پیشرفت بار چھپائیں
 settings_leftmenu_vm_cm_dropdown_icons=ورچوئل مین/کلاؤڈمین میں ڈراپ ڈاؤن میں علامتی شبیہیں دکھائیں
-settings_font_family=فونٹ کنبہ
 theme_xhred_global_shipped=بھیج دیا گیا
 theme_xhred_global_available=دستیاب
 theme_xhred_global_not_available=دستیاب نہیں ہے

@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=이 파일은 `1;` 성공적으로 작동합�
 theme_error_access_not_root=액세스 거부 : 사용자는 테마 구성을 편집하려면 <em>Webmin 구성</em> 모듈에 액세스해야합니다.
 settings_hide_top_loader=상단 진행률 표시 줄 숨기기
 settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudmin의 드롭 다운에 기호 아이콘 표시
-settings_font_family=폰트 패밀리
 theme_xhred_global_shipped=배송 됨
 theme_xhred_global_available=유효한
 theme_xhred_global_not_available=사용할 수 없습니다

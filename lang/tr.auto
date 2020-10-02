@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Bu dosya ile bitmelidir ` 1 'dir; ` başarıyl
 theme_error_access_not_root=Erişim reddedildi: Kullanıcı, tema yapılandırmasını düzenlemek için <em>Webmin Configuration</em> modülüne erişmelidir
 settings_hide_top_loader=Üst ilerleme çubuğunu gizle
 settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudmin'de açılır menüde sembolik simgeleri göster
-settings_font_family=Font ailesi
 theme_xhred_global_shipped=gönderilen
 theme_xhred_global_available=Mevcut
 theme_xhred_global_not_available=Müsait değil

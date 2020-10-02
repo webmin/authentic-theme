@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Tập tin này phải kết thúc bằng `1;` 
 theme_error_access_not_root=Truy cập bị từ chối: Người dùng cần quyền truy cập vào mô-đun <em>Cấu hình Webmin</em> để chỉnh sửa cấu hình chủ đề
 settings_hide_top_loader=Ẩn thanh tiến trình hàng đầu
 settings_leftmenu_vm_cm_dropdown_icons=Hiển thị các biểu tượng tượng trưng trong trình đơn thả xuống trong Virtualmin/Cloudmin
-settings_font_family=Họ phông chữ
 theme_xhred_global_shipped=Vận chuyển
 theme_xhred_global_available=Có sẵn
 theme_xhred_global_not_available=Không có sẵn

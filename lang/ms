@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Berkas ini harus diakhiri dengan `1;` agar dap
 theme_error_access_not_root=Izin ditolak: Pengguna perlu mengakses modul <em>Konfigurasi Webmin</em> untuk menyunting konfigurasi tema
 settings_hide_top_loader=Sembunyikan pita kemajuan di atas dan loadernya
 settings_leftmenu_vm_cm_dropdown_icons=Tampilkan ikon simbolis pada drop-down di Virtualmin/Cloudmin
-settings_font_family=Keluarga fonta
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Tersedia
 theme_xhred_global_not_available=Tidak tersedia

@@ -344,7 +344,6 @@ theme_fileformat_perl_placeholder=Este archivo debe terminar con `1;` para traba
 theme_error_access_not_root=Acceso denegado: el usuario necesita acceder al módulo <em>Configuración de Webmin</em> para editar la configuración del tema
 settings_hide_top_loader=Ocultar barra de progreso superior
 settings_leftmenu_vm_cm_dropdown_icons=Mostrar iconos simbólicos en el menú desplegable en Virtualmin/Cloudmin
-settings_font_family=Familia tipográfica
 theme_xhred_global_shipped=Enviado
 theme_xhred_global_available=Disponible
 theme_xhred_global_not_available=No disponible

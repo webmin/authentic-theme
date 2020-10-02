@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Hierdie lêer moet eindig met `1;` om suksesvo
 theme_error_access_not_root=Toegang geweier: Gebruiker het toegang tot die module <em>Webmin Configuration</em> nodig om die temakonfigurasie te wysig
 settings_hide_top_loader=Versteek die boonste vorderingsbalk
 settings_leftmenu_vm_cm_dropdown_icons=Wys simboliese ikone in die keuselys in Virtualmin/Cloudmin
-settings_font_family=Font familie
 theme_xhred_global_shipped=verskeep
 theme_xhred_global_available=beskikbaar
 theme_xhred_global_not_available=Nie beskikbaar nie

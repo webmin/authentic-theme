@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Ova datoteka mora završiti sa `1;` da uspješ
 theme_error_access_not_root=Pristup odbijen: korisniku je potreban pristup modulu <em>Konfiguracija Webmin</em> za uređivanje konfiguracije teme
 settings_hide_top_loader=Sakrij gornju traku napretka
 settings_leftmenu_vm_cm_dropdown_icons=Prikažite simboličke ikone u padajućem izborniku u Virtualmin/Cloudmin
-settings_font_family=Obitelj fontova
 theme_xhred_global_shipped=isporučen
 theme_xhred_global_available=Dostupno
 theme_xhred_global_not_available=Nije dostupno

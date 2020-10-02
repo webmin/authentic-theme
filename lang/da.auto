@@ -344,7 +344,6 @@ theme_fileformat_perl_placeholder=Denne fil skal slutte med `1;` at arbejde med 
 theme_error_access_not_root=Adgang nægtet: Bruger har brug for adgang til <em>Webmin Konfiguration</em> modulet for at redigere temakonfiguration
 settings_hide_top_loader=Skjul øverste statuslinje
 settings_leftmenu_vm_cm_dropdown_icons=Vis symbolikoner i rullemenuen i Virtualmin/Cloudmin
-settings_font_family=Skrifttype
 theme_xhred_global_shipped=afsendt
 theme_xhred_global_available=Ledig
 theme_xhred_global_not_available=Ikke tilgængelig

@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Ce fichier doit se terminer par `1;` pour fonc
 theme_error_access_not_root=Accès refusé : L'utilisateur doit avoir accès au module  <em>configuration de Webmin</em> pour modifier la configuration du thème
 settings_hide_top_loader=Masquer la barre de chargement du haut de page
 settings_leftmenu_vm_cm_dropdown_icons=Afficher les icônes symboliques dans les listes déroulantes de Virtualmin/Cloudmin
-settings_font_family=Police
 theme_xhred_global_shipped=Envoyé
 theme_xhred_global_available=Disponible
 theme_xhred_global_not_available=Pas disponible

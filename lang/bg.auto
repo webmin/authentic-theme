@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Този файл трябва да завър
 theme_error_access_not_root=Достъпът е отказан: Потребителят се нуждае от достъп до модула <em>Webmin Configuration</em>, за да редактира конфигурацията на тема
 settings_hide_top_loader=Скриване на горната лента за напредък
 settings_leftmenu_vm_cm_dropdown_icons=Показване на символни икони в падащото меню в Virtualmin/Cloudmin
-settings_font_family=Шрифтово семейство
 theme_xhred_global_shipped=Доставят
 theme_xhred_global_available=На разположение
 theme_xhred_global_not_available=Не е наличен

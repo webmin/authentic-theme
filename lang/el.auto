@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Αυτό το αρχείο πρέπει να �
 theme_error_access_not_root=Δεν επιτρέπεται η πρόσβαση: Ο χρήστης χρειάζεται πρόσβαση στην ενότητα <em>Διαμόρφωση Webmin</em> για να επεξεργαστεί τη διαμόρφωση θέματος
 settings_hide_top_loader=Απόκρυψη κορυφαίας γραμμής προόδου
 settings_leftmenu_vm_cm_dropdown_icons=Εμφάνιση συμβολικών εικονιδίων στο αναπτυσσόμενο μενού στο Virtualmin/Cloudmin
-settings_font_family=Οικογένεια γραμματοσειρών
 theme_xhred_global_shipped=Εστάλη
 theme_xhred_global_available=Διαθέσιμος
 theme_xhred_global_not_available=Μη διαθέσιμος

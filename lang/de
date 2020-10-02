@@ -426,7 +426,6 @@ theme_fileformat_perl_placeholder=Die Datei muss mit `1;` enden, siehe http://st
 theme_error_access_not_root=Zugriff verweigert: Der Benutzer benötigt Zugriff auf die <em>Webmin Konfiguration</em>, um die Design Einstellungen zu bearbeiten
 settings_hide_top_loader=Verberge obere Fortschrittsanzeige
 settings_leftmenu_vm_cm_dropdown_icons=Symbole in Virtualmin/Cloudmin Dropdown Liste azeigen
-settings_font_family=Schriftart
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Vorhanden
 theme_xhred_global_not_available=Nicht vorhanden
