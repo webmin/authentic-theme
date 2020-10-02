@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.60-RC1 (September 29, 2020)
+#### Version 19.60-RC2 (October 02, 2020)
 * Add to display module config by section with search capability
 * Add better styling for a new apply changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
 * Add support for new consecutive line breaks [webmin/webmin@3e60854](https://github.com/webmin/webmin/commit/3e60854861c0ec1b9a1835245da9b5c1970f4512)
