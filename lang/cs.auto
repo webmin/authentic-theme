@@ -822,3 +822,4 @@ settings_global_palette_unauthenticated=Paleta barev přihlašovací stránky
 settings_config_save_and_next=Uložit a další
 settings_config_configuration_category=Kategorie konfigurace
 config_search_options_all=Prohledejte všechny možnosti konfigurace modulu
+theme_xhred_editing_config_file=Úpravy konfiguračního souboru

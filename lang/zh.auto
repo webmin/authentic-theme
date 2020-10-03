@@ -240,3 +240,4 @@ settings_global_palette_unauthenticated=登录页面调色板
 settings_config_save_and_next=保存并下一步
 settings_config_configuration_category=配置类别
 config_search_options_all=搜索所有模块配置选项
+theme_xhred_editing_config_file=编辑配置文件

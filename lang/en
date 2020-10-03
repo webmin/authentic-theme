@@ -1239,3 +1239,4 @@ settings_global_palette_unauthenticated=Login page color palette
 settings_config_save_and_next=Save and Next
 settings_config_configuration_category=Configuration category
 config_search_options_all=Search through all module config options
+theme_xhred_editing_config_file=Editing config file

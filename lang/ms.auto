@@ -445,3 +445,4 @@ settings_global_palette_unauthenticated=Palet warna halaman log masuk
 settings_config_save_and_next=Simpan dan Seterusnya
 settings_config_configuration_category=Kategori konfigurasi
 config_search_options_all=Cari melalui semua pilihan konfigurasi modul
+theme_xhred_editing_config_file=Mengedit fail konfigurasi

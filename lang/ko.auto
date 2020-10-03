@@ -981,3 +981,4 @@ settings_global_palette_unauthenticated=로그인 페이지 색상 표
 settings_config_save_and_next=저장하고 다음
 settings_config_configuration_category=구성 범주
 config_search_options_all=모든 모듈 구성 옵션 검색
+theme_xhred_editing_config_file=구성 파일 편집
