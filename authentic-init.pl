@@ -923,6 +923,9 @@ sub get_button_style
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
+    } elsif (string_contains($keys, "migrate") || string_contains($keys, "import")) {
+        $class = "success ";
+        $icon  = " fa2 fa2-import";
     } elsif (string_contains($keys, "update") ||
              string_contains($keys, "index_sync"))
     {
