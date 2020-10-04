@@ -423,7 +423,6 @@ theme_fileformat_perl_placeholder=Denne filen må slutte med `1;` for å virke o
 theme_error_access_not_root=Tilgang nektet: Brukeren må ha tilgang til modulen <em>Webmin konfigurasjon</em> for å redigere tema-konfigurasjon
 settings_hide_top_loader=Skjul fremdriftslinjen på toppen og lasteren dens
 settings_leftmenu_vm_cm_dropdown_icons=Vis symbolske ikoner i neddtrekk i Virtualmin/Cloudmin
-settings_font_family=Skrift-familie
 theme_xhred_global_shipped=Levert
 theme_xhred_global_available=Tilgjengelig
 theme_xhred_global_not_available=Ikke tilgjengelig

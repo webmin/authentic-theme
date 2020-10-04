@@ -425,7 +425,6 @@ theme_fileformat_perl_placeholder=Aces fişier trebuie să se termine cu `1;` ca
 theme_error_access_not_root=Acces refuzat: Utilizatorul are nevoie de acces la modulul <em>Configurări Webmin</em> pentru a edita configurația temei
 settings_hide_top_loader=Ascunde bara de progress şi încărcătorul
 settings_leftmenu_vm_cm_dropdown_icons=Afișați pictogramele simbolice în meniul derulant în Virtualmin/Cloudmin
-settings_font_family=Familia de fonturi
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Disponibil
 theme_xhred_global_not_available=Indisponibil

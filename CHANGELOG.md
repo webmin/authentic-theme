@@ -1,5 +1,28 @@
 ## Changelog
 
+#### Version 19.60 (October 04, 2020)
+* Add to display module config by section with search capability
+* Add better font contrast and greater overall consistency
+* Add better styling for a new apply config changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
+* Add support for new consecutive line breaks [webmin/webmin@3e60854](https://github.com/webmin/webmin/commit/3e60854861c0ec1b9a1835245da9b5c1970f4512)
+* Add more distinctive look for focused checkboxes/radios
+* Add missing message signature to a new mail composer
+* Add native table filter for install scripts page in Virtualmin
+* Add ability to refresh logs with smaller interval
+* Fix elements and loader positioning in file editor
+* Fix top loader not being shown on calling the page multiple times
+* Fix to HTML escape a label that is put inside of actual tags
+* Fix error message print style for failed certificate renewal in Virtualmin
+* Fix PostgreSQL password change field width in Virtualmin
+* Fix an icon for create system submenu in Cloudmin navigation
+* Fix to have better version type recognition for Cloudmin
+* Fix radio buttons going out of table area
+* Fix to display all textareas using monospace font family
+* Fix to correct textareas default size
+* Fix dozens of other tiny UI issues
+
+<!--- separator --->
+
 #### Version 19.54 (August 17, 2020)
 * Add ability for admins to enforce palette for login page [#1488/comment-674190326](https://github.com/authentic-theme/authentic-theme/issues/1488#issuecomment-674190326)
 * Add ability to manually register progressive page for module developers [wiki/progressive](https://github.com/authentic-theme/authentic-theme/wiki/Progressive-Pages)
@@ -54,7 +77,6 @@
 * Fix submitting a form on saving a draft, upon composing mail in Usermin (in Safari)
 * Fix interruption of standard call by progressive call, without breaking page
 
-<!--- separator --->
 
 #### Version 19.47 (April 06, 2020)
 * Add ability to recognize downloads in submitted form

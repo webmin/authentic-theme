@@ -540,7 +540,6 @@ settings_hide_top_loader=Hide top progress bar
 
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
-settings_font_family=Font family
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Available
 theme_xhred_global_not_available=Not available
@@ -816,7 +815,7 @@ settings_sysinfo_theme_updates_for_usermin=Install theme updates for Usermin as 
 theme_xhred_global_installed_version=Installed version
 theme_xhred_global_installed_and_latest_version=Installed and latest version
 theme_xhred_global_latest_stable=Latest stable
-theme_xhred_global_latest_beta=Latest beta
+theme_xhred_global_latest_beta=Latest development
 settings_perform_content_scrolling=Enable automatic page scrolling for progressive output
 settings_contrast_mode=Enable high contrast mode
 theme_xhred_global_firewall=Firewall
@@ -1234,3 +1233,10 @@ theme_xhred_mail_composer_username=username
 
 #19.53
 settings_global_palette_unauthenticated=Login page color palette
+
+
+#19.60
+settings_config_save_and_next=Save and Next
+settings_config_configuration_category=Configuration category
+config_search_options_all=Search through all module config options
+theme_xhred_editing_config_file=Editing config file

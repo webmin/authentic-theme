@@ -83,12 +83,11 @@ sub settings_filter
 sub settings_default
 {
     my %c;
-    $c{'settings_font_family'}                        = '0';
     $c{'settings_navigation_color'}                   = 'blue';
     $c{'settings_background_color'}                   = 'gainsboro';
     $c{'settings_grayscale_level_navigation'}         = '0';
     $c{'settings_sepia_level_navigation'}             = '0';
-    $c{'settings_saturate_level_navigation'}          = '1.15';
+    $c{'settings_saturate_level_navigation'}          = '1.33';
     $c{'settings_hue_level_navigation'}               = '0';
     $c{'settings_invert_level_navigation'}            = '0';
     $c{'settings_brightness_level_navigation'}        = '1';
@@ -456,15 +455,8 @@ sub embed_pm_scripts
 
 sub embed_css_fonts
 {
-
-    if (!$theme_config{'settings_font_family'} || $theme_config{'settings_font_family'} eq 'undefined') {
-        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    } elsif ($theme_config{'settings_font_family'} != '1') {
-        print ' <link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/font-' . $theme_config{'settings_font_family'} . '.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    }
+    print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
+      (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 }
 
 sub embed_css_bundle
@@ -714,19 +706,23 @@ sub init_vars
 
 }
 
-sub licenses
+sub check_pro_package
 {
     my ($id) = @_;
     if (&foreign_available("virtual-server") && $id eq "vm") {
         my %virtualmin = &get_module_info("virtual-server");
-        if ($virtualmin{'version'} =~ /gpl/igs) {
+        if ($virtualmin{'version'} =~ /pro/is) {
+            return 1;
+        } elsif ($virtualmin{'version'} =~ /gpl/is) {
             return 0;
         } else {
             return 1;
         }
     } elsif (&foreign_available("server-manager") && $id eq "cm") {
         my %cloudmin = &get_module_info("server-manager");
-        if ($cloudmin{'version'} =~ /gpl/igs) {
+        if ($cloudmin{'version'} =~ /pro/is || $cloudmin{'version'} =~ /real/is) {
+            return 1;
+        } elsif ($cloudmin{'version'} =~ /\..*?\./is) {
             return 0;
         } else {
             return 1;
@@ -903,6 +899,9 @@ sub get_button_style
 
     if (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
         $icon = "backup fa-1_25x";
+    } elsif (string_contains($keys, "pass_ok")) {
+        $icon  = " fa2 fa2-key";
+        $class = "warning ";
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
     } elsif (string_contains($keys, "docker_reg")) {
@@ -924,6 +923,9 @@ sub get_button_style
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
+    } elsif (string_contains($keys, "migrate") || string_contains($keys, "import")) {
+        $class = "success ";
+        $icon  = " fa2 fa2-import";
     } elsif (string_contains($keys, "update") ||
              string_contains($keys, "index_sync"))
     {
@@ -1109,7 +1111,7 @@ sub get_button_style
     } elsif (string_contains($keys, "status")) {
         $icon = "info-circle";
     } elsif (string_contains($keys, "warnok")) {
-        $icon = "check-circle-o";
+        $icon  = "check-circle-o";
         $class = "warning ";
     } elsif (string_contains($keys, "index_clear") || string_contains($keys, "shell_clear")) {
         $icon = "history";
@@ -1357,7 +1359,7 @@ sub header_html_data
       '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' .         ($theme_config{'settings_contrast_mode'} eq 'true'              ? '1' : '0') .
       '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' . ($theme_config{'settings_side_slider_fixed'} eq "true" &&
+      '" data-slider-fixed="' .         ($theme_config{'settings_side_slider_fixed'} eq "true" &&
                                  $get_user_level eq '0' &&
                                  $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
       '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' .

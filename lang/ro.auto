@@ -87,3 +87,7 @@ theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Nume real
 theme_xhred_mail_composer_username=nume de utilizator
 settings_global_palette_unauthenticated=Paleta de culori a paginii de conectare
+settings_config_save_and_next=Salvați și Următorul
+settings_config_configuration_category=Categorie de configurare
+config_search_options_all=Căutați prin toate opțiunile de configurare a modulului
+theme_xhred_editing_config_file=Editarea fișierului de configurare

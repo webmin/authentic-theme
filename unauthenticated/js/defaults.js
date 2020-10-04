@@ -6,12 +6,11 @@ var settings_mailbox_slash_delimiter = true,
     settings_right_virtualmin_default = "sysinfo.cgi",
     settings_right_cloudmin_default = "sysinfo.cgi",
 
-    settings_font_family = 0,
     settings_navigation_color = "blue",
 
     settings_grayscale_level_navigation = "0",
     settings_sepia_level_navigation = "0",
-    settings_saturate_level_navigation = "1.15",
+    settings_saturate_level_navigation = "1.33",
     settings_hue_level_navigation = "0",
     settings_invert_level_navigation = "0",
     settings_brightness_level_navigation = "1",

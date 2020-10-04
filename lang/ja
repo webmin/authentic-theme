@@ -421,7 +421,6 @@ theme_fileformat_perl_placeholder= このファイルは正常に動作するに
 theme_error_access_not_root= アクセスが拒否されました:テーマ設定を編集するには、<em> Webmin Configuration </em>モジュールにアクセスする必要があります
 settings_hide_top_loader= 上部の進行状況バーを非表示にする
 settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
-settings_font_family= フォントファミリー
 theme_xhred_global_shipped= 出荷された
 theme_xhred_global_available= 利用可能
 theme_xhred_global_not_available= 利用不可

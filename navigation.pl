@@ -87,11 +87,11 @@ if (
                     $__custom_print++;
                 }
                 if ($__print_hidden eq '0') {
-                    if (licenses('vm') eq '1') {
+                    if (check_pro_package('vm') eq '1') {
                         &print_category_link($gconfig{'webprefix'} . "/virtual-server/licence.cgi",
                                              $theme_text{'right_vlcheck'}, 1);
                     }
-                    if (licenses('cm') eq '1') {
+                    if (check_pro_package('cm') eq '1') {
                         &print_category_link($gconfig{'webprefix'} . "/server-manager/licence.cgi",
                                              $theme_text{'right_slcheck'}, 1);
                     }

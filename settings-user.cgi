@@ -42,14 +42,6 @@ print ui_table_row($theme_text{'settings_document_title'},
                                                       ),
                                                       'settings_document_title'
                    ));
-print ui_table_row($theme_text{'settings_font_family'},
-                   settings_get_select_font_family(
-                                                   ($theme_config{'settings_font_family'} ne 'undefined' ?
-                                                      $theme_config{'settings_font_family'} :
-                                                      '0'
-                                                   ),
-                                                   'settings_font_family'
-                   ));
 print ui_table_row($theme_text{'settings_cm_editor_palette'},
                    settings_get_select_editor_color(
                                                     ($theme_config{'settings_cm_editor_palette'} ne 'undefined' ?

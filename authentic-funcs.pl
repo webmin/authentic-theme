@@ -6,6 +6,7 @@
 use strict;
 
 our (%in,
+     %text,
      %module_text_full,
      %theme_text,
      %theme_config,
@@ -32,6 +33,54 @@ sub settings
     } else {
         return %c;
     }
+}
+
+sub ui_button_group_local
+{
+    my ($buttons, $extra_class) = @_;
+    my $rv;
+    $rv = "<div class=\"btn-group $extra_class\">$buttons</div>";
+    return $rv;
+}
+
+sub ui_span_local
+{
+    my ($data, $extra_class) = @_;
+    my $rv;
+    if ($extra_class) {
+        $extra_class = " class=\"$extra_class\"";
+    }
+    $rv = "<span$extra_class>$data</span>";
+    return $rv;
+}
+
+sub ui_dropdown_local
+{
+
+    my ($elements, $dconfig) = @_;
+    my $dconf_toggle          = $dconfig->{'tooltip'}         || 'tooltip';
+    my $dconf_container       = $dconfig->{'container'}       || 'body';
+    my $dconf_title           = $dconfig->{'title'}           || undef;
+    my $dconf_container_class = $dconfig->{'container-class'} || undef;
+    my $dconf_button_class    = $dconfig->{'button-class'}    || 'btn-default';
+    my $dconf_button_icon     = $dconfig->{'icon'} ? "<span class=\"$dconfig->{'icon'}\"></span>"             : undef;
+    my $dconf_button_text     = $dconfig->{'text'} ? "&nbsp;<span data-entry>$dconfig->{'text'}&nbsp;</span>" : undef;
+    my $dconf_ul_class        = $dconfig->{'ul-class'} || undef;
+    my $dconf_li_class        = $dconfig->{'li-class'} || undef;
+    my $lis;
+
+    foreach my $e (@{$elements}) {
+        $lis .= "<li class=\"$dconf_li_class\">$e</li>\n";
+    }
+    return
+"<div data-toggle=\"$dconf_toggle\" data-container=\"$dconf_container\" data-title=\"$dconf_title\" class=\"btn-group $dconf_container_class\">
+    <button aria-label=\"$dconf_title\" data-toggle=\"dropdown\" class=\"btn dropdown-toggle $dconf_button_class\" aria-expanded=\"false\">
+        $dconf_button_icon$dconf_button_text
+    </button>                                    
+    <ul class=\"dropdown-menu $dconf_ul_class\" role=\"menu\">
+        $lis
+    </ul>
+</div>";
 }
 
 sub theme_ui_checkbox_local
@@ -154,7 +203,13 @@ sub get_theme_language
         {
             next;
         }
-        $s{$key} .= $theme_text{$key};
+        $s{$key} = $theme_text{$key};
+    }
+
+    # Pass additional language strings
+    my %xhred = ('vm', 'scripts_desc');
+    foreach my $key (keys %xhred) {
+        $s{ $key . "_" . $xhred{$key} } = $text{ $xhred{$key} } if ($text{ $xhred{$key} });
     }
     return convert_to_json(\%s);
 
@@ -262,7 +317,7 @@ sub replace_meta
 
     my $hostname   = &get_display_hostname();
     my $version    = &get_webmin_version();
-    my $os_type    = $gconfig{'real_os_type'} || $gconfig{'os_type'};
+    my $os_type    = $gconfig{'real_os_type'}    || $gconfig{'os_type'};
     my $os_version = $gconfig{'real_os_version'} || $gconfig{'os_version'};
     $string =~ s/%HOSTNAME%/$hostname/g;
     $string =~ s/%VERSION%/$version/g;

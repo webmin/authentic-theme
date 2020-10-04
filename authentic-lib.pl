@@ -90,6 +90,7 @@ sub print_category
                       'cat_services'      => 'fa-puzzle-piece',
                       'create_new'        => 'fa-plus',
                       'create_add'        => 'fa-plus',
+                      'create_create'     => 'fa-server-add fa-1_05x margined-left--2',
                       'global_gce'        => 'fa-google',
                       'global_ec2'        => 'fa2 fa2-amazon scaled1_5',
                       'global_hosts'      => 'fa-globe',
@@ -810,7 +811,7 @@ sub print_left_menu
                     $icon = '<i class="fa fa-fw fa-key"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
                     $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
-                } elsif ($link =~ /\/server-manager\/create_form.cgi/) {
+                } elsif ($link =~ /\/server-manager\/create_form.cgi/ && $group != 1) {
                     $icon = '<i class="fa fa-fw fa-server-add scaled1"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/) {
                     if ($link =~ /refresh=1/) {
@@ -905,14 +906,14 @@ sub print_left_menu
 
                     $__custom_print++;
 
-                    if (licenses('vm') eq '1' &&
+                    if (check_pro_package('vm') eq '1' &&
                         $item->{'module'} eq 'virtual-server')
                     {
                         &print_category_link($gconfig{'webprefix'} . "/virtual-server/licence.cgi",
                                              $theme_text{'right_vlcheck'}, 1);
                     }
 
-                    if (licenses('cm') eq '1' &&
+                    if (check_pro_package('cm') eq '1' &&
                         $item->{'module'} eq 'server-manager')
                     {
                         &print_category_link($gconfig{'webprefix'} . "/server-manager/licence.cgi",
@@ -1280,7 +1281,7 @@ sub get_sysinfo_vars
         if ($has_virtualmin) {
             my ($vs_license, $__virtual_server_version);
 
-            $vs_license               = licenses('vm');
+            $vs_license               = check_pro_package('vm');
             $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
             $__virtual_server_version =~ s/.gpl//igs;
             $__virtual_server_version =~ s/.pro//igs;
@@ -1307,22 +1308,24 @@ sub get_sysinfo_vars
 
         # Cloudmin version
         if ($has_cloudmin) {
-            my ($vm2_license, $__server_manager_version);
-
-            $vm2_license = licenses('cm');
-
-            $__server_manager_version = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
-                                           (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
-            $__server_manager_version =~ s/.gpl//igs;
-
+            my ($cm_licensed, $cm_version, $cm_type, $cm_type_g, $cm_type_p, $cm_version_o);
+            $cm_licensed = check_pro_package('cm');
+            if (defined(&server_manager::get_module_version_and_type)) {
+                ($cm_version, $cm_type) = &server_manager::get_module_version_and_type();
+            } else {
+                $cm_version_o = (defined(@$info_arr[3]) ? @$info_arr[3]->{'cm_version'} :
+                                   (defined(@$info_arr[2]) ? @$info_arr[2]->{'cm_version'} : undef));
+                $cm_version_o =~ s/(\.[a-z]+)$//igs;
+            }
+            $cm_type_g = $cm_version ? $cm_type : '';
+            $cm_type_p = $cm_version ? $cm_type : 'Pro';
             $cloudmin_version = (
-                product_version_update($__server_manager_version, 'c') . " " . (
-                    $vm2_license eq '0' ? '' :
-                      ''
-
-                      . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
+                product_version_update($cm_version || $cm_version_o, 'c') . " "
+                  .
+                  ( $cm_licensed eq '0' ? $cm_type_g :
+                      ' ' . $cm_type_p . ' <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                       .
-                      ( ($vm2_license eq '1') ?
+                      ( ($cm_licensed eq '1') ?
                           ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_slcheck'} . '" href=\'' .
                           $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
@@ -1331,7 +1334,7 @@ sub get_sysinfo_vars
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
                       $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
 '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
-                ));
+                  ));
         }
 
         # Fetch theme version
@@ -2347,50 +2350,6 @@ sub get_theme_user_link
       $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
 }
 
-sub settings_get_select_font_family
-{
-    my ($v, $k) = @_;
-    return '<select class="ui_select" name="' . $k . '">
-
-                    <option value="system-default"'
-      . ($v eq 'system-default' && ' selected') . '>[' . $theme_text{'theme_xhred_global_local_system_default'} . ']</option>
-
-                    <option value="0"'
-      . ($v eq '0' && ' selected') . '>Roboto (' . $theme_text{'theme_xhred_global_default'} . ', ' .
-      lc($theme_text{'theme_xhred_global_shipped'}) . ')</option>
-
-                    <option value="1"'
-      . ($v eq '1' && ' selected') . '>Roboto</option>
-
-                    <option value="arial"'
-      . ($v eq 'arial' && ' selected') . '>Arial</option>
-
-
-                    <option value="helvetica-neue"'
-      . ($v eq 'helvetica-neue' && ' selected') . '>Helvetica Neue</option>
-
-                    <option value="open-sans"'
-      . ($v eq 'open-sans' && ' selected') . '>Open Sans</option>
-
-                    <option value="open-sans-condensed"'
-      . ($v eq 'open-sans-condensed' && ' selected') . '>Open Sans Condensed</option>
-
-                    <option value="sans-serif"'
-      . ($v eq 'sans-serif' && ' selected') . '>Sans Serif</option>
-
-                    <option value="segoe-ui"'
-      . ($v eq 'segoe-ui' && ' selected') . '>Segoe UI</option>
-
-                    <option value="tahoma"'
-      . ($v eq 'tahoma' && ' selected') . '>Tahoma</option>
-
-                    <option value="trebuchet-ms"'
-      . ($v eq 'trebuchet-ms' && ' selected') . '>Trebuchet MS</option>
-
-                </select>';
-
-}
-
 sub settings_get_select_navigation_color
 {
     my ($v, $k) = @_;
@@ -2446,8 +2405,7 @@ sub settings_get_select_editor_color
     return '<select class="ui_select" name="' . $k . '">
 
             <option value="monokai"'
-      . ($v eq 'monokai' && ' selected') .
-      '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
+      . ($v eq 'monokai' && ' selected') . '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
 
             <option value="elegant"'
       . ($v eq 'elegant' && ' selected') . '>' . $theme_text{'theme_xhred_global_light'} . '</option>
@@ -2531,8 +2489,6 @@ sub theme_settings
             theme_settings('fa', 'desktop', &theme_text('settings_global_options_title')),
             'settings_document_title',
             '1',
-            'settings_font_family',
-            '0',
             'settings_cm_editor_palette',
             'monokai',
             'settings_global_palette_unauthenticated',
@@ -3122,8 +3078,6 @@ sub theme_settings
                                 ]);
             }
 
-        } elsif ($k eq 'settings_font_family') {
-            $v = settings_get_select_font_family($v, $k);
         } elsif ($k eq 'settings_navigation_color') {
             $v = settings_get_select_navigation_color($v, $k);
         } elsif ($k eq 'settings_background_color') {
@@ -3182,7 +3136,7 @@ sub theme_settings
             $v = settings_get_select_document_title($v, $k);
         }
         my $description     = $theme_text{ $k . '_description' };
-        my $popover_trigger = $k eq 'settings_leftmenu_custom_links' ? 'click' : 'hover';
+        my $popover_trigger = 'click';
         my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
         return '
             <tr class="atshover">

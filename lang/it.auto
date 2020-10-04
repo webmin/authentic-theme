@@ -1,1 +1,5 @@
 settings_global_palette_unauthenticated=Tavolozza dei colori della pagina di accesso
+settings_config_save_and_next=Salva e Avanti
+settings_config_configuration_category=Categoria di configurazione
+config_search_options_all=Cerca in tutte le opzioni di configurazione del modulo
+theme_xhred_editing_config_file=Modifica del file di configurazione

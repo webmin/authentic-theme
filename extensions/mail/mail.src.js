@@ -483,7 +483,7 @@ const mail = (function() {
                                     </div>
                                     <div class="compose-controls-block">
                                         <div class="ql-compose-container">
-                                          <textarea class="${data.status.text}" ${data.class.editor.composer}="text"></textarea>
+                                          <textarea data-signature="${data.signature}" class="${data.status.text}" ${data.class.editor.composer}="text">\n\n\n${data.signature}</textarea>
                                           <div ${data.class.editor.composer}="html" class="ql-compose ql-container-toolbar-bottom ${data.status.html}">${data.body}</div>
                                           <div id="tb-${data.id}">
                                             <span class="ql-formats">
@@ -916,7 +916,8 @@ const mail = (function() {
                             form_data_lost = $form.find(':checkbox:not(:checked)').attr('value', '0').prop('checked', true).map(function() {
                                 return this.name
                             }).get(),
-                            form_data = $form.serialize();
+                            form_data = $form.serialize(),
+                            signature = $.trim($(rs).find('textarea[name="body"]').text());
 
                         if (form_data) {
                             form_data = _.plugin.serialized_to_json(form_data);
@@ -2114,6 +2115,7 @@ const mail = (function() {
                                 subject: element.input('subject', data.visible),
                                 attachments: element.input(classes.form.name.tattach, data.visible, false, true),
                                 body: data.visible.body,
+                                signature: signature
                             })
 
                             if (inline) {
