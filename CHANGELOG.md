@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.61-beta1 (October 14, 2020)
+* Add to display two factor authentication field selectively on login page
+* Add sortable table for mailbox user list [#1496/comment-703835699](https://github.com/authentic-theme/authentic-theme/issues/1496#issuecomment-703835699)
+* Add better display of restore virtual server page in Virtualmin
+* Fix directory tree listing in File Manager for safe user
+* Fix bugs
+
 #### Version 19.60 (October 04, 2020)
 * Add to display module config by section with search capability
 * Add better font contrast and greater overall consistency
