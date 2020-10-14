@@ -982,3 +982,5 @@ settings_config_save_and_next=Saglabāt un turpināt
 settings_config_configuration_category=Konfigurācijas kategorija
 config_search_options_all=Meklēt visās moduļa konfigurācijas opcijās
 theme_xhred_editing_config_file=Rediģē konfigurācijas failu
+theme_xhred_login_message_2fa=Šim lietotājam ir iespējota divu faktoru autentifikācija, lai pieteiktos
+theme_xhred_global_verify=Pārbaudiet

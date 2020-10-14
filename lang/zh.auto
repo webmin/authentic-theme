@@ -241,3 +241,5 @@ settings_config_save_and_next=保存并下一步
 settings_config_configuration_category=配置类别
 config_search_options_all=搜索所有模块配置选项
 theme_xhred_editing_config_file=编辑配置文件
+theme_xhred_login_message_2fa=已启用此用户的两因素身份验证登录
+theme_xhred_global_verify=校验

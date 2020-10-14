@@ -982,3 +982,5 @@ settings_config_save_and_next=Gorde eta Hurrengoa
 settings_config_configuration_category=Konfigurazio kategoria
 config_search_options_all=Bilatu modulua konfiguratzeko aukera guztietan
 theme_xhred_editing_config_file=Konfigurazio fitxategia editatzen
+theme_xhred_login_message_2fa=Bi faktoreko autentifikazioa gaitu da erabiltzaile honek saioa hasteko
+theme_xhred_global_verify=Egiaztatu

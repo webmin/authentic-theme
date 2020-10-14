@@ -823,3 +823,5 @@ settings_config_save_and_next=Uložit a další
 settings_config_configuration_category=Kategorie konfigurace
 config_search_options_all=Prohledejte všechny možnosti konfigurace modulu
 theme_xhred_editing_config_file=Úpravy konfiguračního souboru
+theme_xhred_login_message_2fa=Pro přihlášení tohoto uživatele bylo povoleno dvoufaktorové ověřování
+theme_xhred_global_verify=Ověřit

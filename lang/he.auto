@@ -982,3 +982,5 @@ settings_config_save_and_next=שמור והבא
 settings_config_configuration_category=קטגוריית תצורה
 config_search_options_all=חפש בכל אפשרויות התצורה של המודול
 theme_xhred_editing_config_file=עריכת קובץ תצורה
+theme_xhred_login_message_2fa=אימות דו-גורמי הופעל עבור משתמש זה בכניסה
+theme_xhred_global_verify=תאשר

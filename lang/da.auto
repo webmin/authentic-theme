@@ -899,3 +899,5 @@ settings_config_save_and_next=Gem og Næste
 settings_config_configuration_category=Konfigurationskategori
 config_search_options_all=Søg gennem alle modulkonfigurationsindstillinger
 theme_xhred_editing_config_file=Redigering af konfigurationsfil
+theme_xhred_login_message_2fa=To-faktor-godkendelse er blevet aktiveret for denne bruger til at logge på
+theme_xhred_global_verify=Verificere

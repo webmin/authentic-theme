@@ -982,3 +982,5 @@ settings_config_save_and_next=Kaydet ve İleri
 settings_config_configuration_category=Yapılandırma kategorisi
 config_search_options_all=Tüm modül yapılandırma seçeneklerinde ara
 theme_xhred_editing_config_file=Yapılandırma dosyasını düzenleme
+theme_xhred_login_message_2fa=Bu kullanıcının oturum açması için iki faktörlü kimlik doğrulama etkinleştirildi
+theme_xhred_global_verify=Doğrulayın

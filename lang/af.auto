@@ -982,3 +982,5 @@ settings_config_save_and_next=Stoor en volgende
 settings_config_configuration_category=Konfigurasie kategorie
 config_search_options_all=Soek deur al die instellingsopsies van die module
 theme_xhred_editing_config_file=Wysig tans konfigurasielêer
+theme_xhred_login_message_2fa=Tweefaktor-verifikasie is geaktiveer vir hierdie gebruiker om aan te meld
+theme_xhred_global_verify=Verifieer

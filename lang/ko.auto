@@ -982,3 +982,5 @@ settings_config_save_and_next=저장하고 다음
 settings_config_configuration_category=구성 범주
 config_search_options_all=모든 모듈 구성 옵션 검색
 theme_xhred_editing_config_file=구성 파일 편집
+theme_xhred_login_message_2fa=이 사용자가 로그인 할 수 있도록 2 단계 인증이 활성화되었습니다.
+theme_xhred_global_verify=검증

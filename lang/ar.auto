@@ -982,3 +982,5 @@ settings_config_save_and_next=حفظ ثم التالي
 settings_config_configuration_category=فئة التكوين
 config_search_options_all=ابحث في جميع خيارات تكوين الوحدة
 theme_xhred_editing_config_file=تحرير ملف التكوين
+theme_xhred_login_message_2fa=تم تمكين المصادقة الثنائية لهذا المستخدم لتسجيل الدخول
+theme_xhred_global_verify=تحقق

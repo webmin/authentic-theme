@@ -390,3 +390,5 @@ settings_config_save_and_next=Desa i següent
 settings_config_configuration_category=Categoria de configuració
 config_search_options_all=Cerqueu entre totes les opcions de configuració del mòdul
 theme_xhred_editing_config_file=S'està editant el fitxer de configuració
+theme_xhred_login_message_2fa=S'ha habilitat l'autenticació de dos factors perquè aquest usuari pugui iniciar la sessió
+theme_xhred_global_verify=Verifiqueu

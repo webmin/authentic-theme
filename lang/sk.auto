@@ -982,3 +982,5 @@ settings_config_save_and_next=Uložiť a ďalšie
 settings_config_configuration_category=Konfiguračná kategória
 config_search_options_all=Vyhľadajte všetky možnosti konfigurácie modulu
 theme_xhred_editing_config_file=Úpravy konfiguračného súboru
+theme_xhred_login_message_2fa=Pre tohto používateľa bolo povolené dvojfaktorové overenie na prihlásenie
+theme_xhred_global_verify=Overiť

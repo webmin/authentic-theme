@@ -982,3 +982,5 @@ settings_config_save_and_next=ذخیره و بعدی
 settings_config_configuration_category=دسته پیکربندی
 config_search_options_all=از طریق تمام گزینه های پیکربندی ماژول جستجو کنید
 theme_xhred_editing_config_file=در حال ویرایش فایل پیکربندی
+theme_xhred_login_message_2fa=احراز هویت دو عاملی برای ورود به سیستم این کاربر فعال شده است
+theme_xhred_global_verify=تأیید کنید

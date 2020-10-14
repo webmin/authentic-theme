@@ -982,3 +982,5 @@ settings_config_save_and_next=Ħlief u Li jmiss
 settings_config_configuration_category=Kategorija tal-konfigurazzjoni
 config_search_options_all=Fittex fl-għażliet kollha tal-konfigurazzjoni tal-modulu
 theme_xhred_editing_config_file=Editjar tal-fajl tal-konfigurazzjoni
+theme_xhred_login_message_2fa=L-awtentikazzjoni b'żewġ fatturi ġiet attivata għal dan l-utent biex jidħol
+theme_xhred_global_verify=Ivverifika

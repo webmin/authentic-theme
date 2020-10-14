@@ -874,3 +874,5 @@ settings_config_save_and_next=Opslaan en volgende
 settings_config_configuration_category=Configuratie categorie
 config_search_options_all=Doorzoek alle configuratie-opties voor de module
 theme_xhred_editing_config_file=Bewerken van configuratiebestand
+theme_xhred_login_message_2fa=Twee-factor authenticatie is ingeschakeld voor deze gebruiker om in te loggen
+theme_xhred_global_verify=Verifiëren

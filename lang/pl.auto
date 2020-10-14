@@ -903,3 +903,5 @@ settings_config_save_and_next=Zapisz i Dalej
 settings_config_configuration_category=Kategoria konfiguracji
 config_search_options_all=Przeszukaj wszystkie opcje konfiguracji modułu
 theme_xhred_editing_config_file=Edycja pliku konfiguracyjnego
+theme_xhred_login_message_2fa=Dla tego użytkownika włączono uwierzytelnianie dwuskładnikowe
+theme_xhred_global_verify=Zweryfikować

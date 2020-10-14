@@ -982,3 +982,5 @@ settings_config_save_and_next=保存並下一步
 settings_config_configuration_category=配置類別
 config_search_options_all=搜索所有模塊配置選項
 theme_xhred_editing_config_file=編輯配置文件
+theme_xhred_login_message_2fa=已啟用此用戶的兩因素身份驗證登錄
+theme_xhred_global_verify=校驗

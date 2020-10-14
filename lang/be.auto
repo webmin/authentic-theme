@@ -982,3 +982,5 @@ settings_config_save_and_next=Захаваць і далей
 settings_config_configuration_category=Катэгорыя канфігурацыі
 config_search_options_all=Пошук па ўсіх параметрах канфігурацыі модуля
 theme_xhred_editing_config_file=Рэдагаванне файла канфігурацыі
+theme_xhred_login_message_2fa=Двухфактарная аўтэнтыфікацыя ўключана для гэтага карыстальніка для ўваходу
+theme_xhred_global_verify=Праверце

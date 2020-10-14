@@ -982,3 +982,5 @@ settings_config_save_and_next=Mentés és tovább
 settings_config_configuration_category=Konfigurációs kategória
 config_search_options_all=Keresse meg az összes modul konfigurációs beállítását
 theme_xhred_editing_config_file=Konfigurációs fájl szerkesztése
+theme_xhred_login_message_2fa=A kétfaktoros hitelesítést engedélyezték ennek a felhasználónak a bejelentkezéshez
+theme_xhred_global_verify=Ellenőrizze

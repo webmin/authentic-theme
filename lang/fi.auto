@@ -982,3 +982,5 @@ settings_config_save_and_next=Tallenna ja Seuraava
 settings_config_configuration_category=Kokoonpanoluokka
 config_search_options_all=Hae läpi kaikki moduulin määritysvaihtoehdot
 theme_xhred_editing_config_file=Muokataan määritystiedostoa
+theme_xhred_login_message_2fa=Kaksivaiheinen todennus on sallittu tämän käyttäjän kirjautumisessa
+theme_xhred_global_verify=Vahvista

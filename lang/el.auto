@@ -982,3 +982,5 @@ settings_config_save_and_next=Αποθήκευση και Επόμενο
 settings_config_configuration_category=Κατηγορία διαμόρφωσης
 config_search_options_all=Αναζήτηση σε όλες τις επιλογές διαμόρφωσης λειτουργικής μονάδας
 theme_xhred_editing_config_file=Επεξεργασία αρχείου config
+theme_xhred_login_message_2fa=Ο έλεγχος ταυτότητας δύο παραγόντων έχει ενεργοποιηθεί για να συνδεθεί αυτός ο χρήστης
+theme_xhred_global_verify=Επαληθεύω
