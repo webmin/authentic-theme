@@ -151,7 +151,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
       . '" autofocus>' . "\n";
     print '</div>' . "\n";
     print '<div class="form-group form-signin-group">';
-    print '<button class="btn btn-success" type="submit"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
+    print '<button class="btn btn-info" type="submit"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
       &theme_text('theme_xhred_global_verify') . '</button>' . "\n";
     print '<a class="btn btn-default" href="' .
       $gconfig{'webprefix'} . '/session_login.cgi"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' .
