@@ -154,7 +154,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print '<button class="btn btn-info" type="submit"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
       &theme_text('theme_xhred_global_verify') . '</button>' . "\n";
     print '<a class="btn btn-default" href="' .
-      $gconfig{'webprefix'} . '/session_login.cgi"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' .
+      $gconfig{'webprefix'} . '/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' .
       &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
     print '</div>';
 } else {
