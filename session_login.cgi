@@ -87,11 +87,13 @@ print '<div class="container session_login" data-dcontainer="1">' . "\n";
 
 if (defined($in{'failed'})) {
     if ($in{'twofactor_msg'}) {
-        print "<h3>",, "</h3><p></p>\n";
-        print '<div class="alert alert-warning" data-twofactor>' . "\n";
-        print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $theme_text{'login_warning'} .
-          '</strong><br /><span>' . &theme_text('session_twofailed', &html_escape($in{'twofactor_msg'})) . "</span>\n";
-        print '</div>' . "\n";
+        if ($in{'failed_twofactor_attempt'} > 1) {
+            print "<h3>",, "</h3><p></p>\n";
+            print '<div class="alert alert-warning" data-twofactor>' . "\n";
+            print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $theme_text{'login_warning'} .
+              '</strong><br /><span>' . &theme_text('session_twofailed', &html_escape($in{'twofactor_msg'})) . "</span>\n";
+            print '</div>' . "\n";
+        }
     } else {
         print '<div class="alert alert-warning">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
@@ -134,48 +136,63 @@ if ($gconfig{'realname'}) {
     $host =~ s/:\d+//g;
     $host = &html_escape($host);
 }
-print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
-print '<div class="input-group form-group">' . "\n";
-print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-print
-'<input type="text" class="form-control session_login" name="user" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
-  . &theme_text('theme_xhred_login_user')
-  . '" autofocus>' . "\n";
-print '</div>' . "\n";
-print '<div class="input-group form-group">' . "\n";
-print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
-print
-  '<input type="password" class="form-control session_login" name="pass" autocomplete="off" autocorrect="off" placeholder="'
-  . &theme_text('theme_xhred_login_pass')
-  . '">' . "\n";
-print '</div>' . "\n";
-
-if ($miniserv{'twofactor_provider'}) {
+if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
+    print '<p class="form-signin-paragraph">' .
+      &theme_text('theme_xhred_login_message_2fa') . '</p>' . "\n";
+    print &ui_hidden('user',                     $in{'failed'});
+    print &ui_hidden('pass',                     $in{'failed_pass'});
+    print &ui_hidden('save',                     $in{'failed_save'});
+    print &ui_hidden('failed_twofactor_attempt', $in{'failed_twofactor_attempt'});
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
     print
 '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" autocorrect="off" placeholder="'
       . &theme_text('theme_xhred_login_token')
-      . '">' . "\n";
+      . '" autofocus>' . "\n";
     print '</div>' . "\n";
-}
-if (!$gconfig{'noremember'}) {
-    print '<div class="input-group form-group">
-            <span class="awcheckbox awobject"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save">'
-      . $theme_text{'login_save'} . '</label></span>
-         </div>' . "\n";
-}
-print '<div class="form-group form-signin-group">';
-print '<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;' .
-  &theme_text('login_signin') . '</button>' . "\n";
+    print '<div class="form-group form-signin-group">';
+    print '<button class="btn btn-info" type="submit"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
+      &theme_text('theme_xhred_global_verify') . '</button>' . "\n";
+    print '<a class="btn btn-default" href="' .
+      $gconfig{'webprefix'} . '/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' .
+      &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
+    print '</div>';
+} else {
+    print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
+    print '<div class="input-group form-group">' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
+    print
+'<input type="text" class="form-control session_login" name="user" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
+      . &theme_text('theme_xhred_login_user')
+      . '" ' . ($in{"failed"} ? 'value="' . $in{"failed"} . '"' : 'autofocus') . '>' . "\n";
+    print '</div>' . "\n";
+    print '<div class="input-group form-group">' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
+    print
+'<input type="password" class="form-control session_login" name="pass" autocomplete="off" autocorrect="off" placeholder="'
+      . &theme_text('theme_xhred_login_pass')
+      . '"' . ($in{"failed"} ? ' autofocus' : '') . '>' . "\n";
+    print '</div>' . "\n";
 
-if ($text{'session_postfix'} =~ "href") {
-    my $link = get_link($text{'session_postfix'}, 'ugly');
-    print '<a target="_blank" href=' .
-      $link->[0] . ' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;' . $link->[1] . '</a>' . "\n";
-}
+    if (!$gconfig{'noremember'}) {
+        print '<div class="input-group form-group">
+              <span class="awcheckbox awobject"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save">'
+          . $theme_text{'login_save'} . '</label></span>
+           </div>' . "\n";
+    }
+    print '<div class="form-group form-signin-group">';
+    print '<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;' .
+      &theme_text('login_signin') . '</button>' . "\n";
 
-print '</div>';
+    if ($text{'session_postfix'} =~ "href") {
+        my $link = get_link($text{'session_postfix'}, 'ugly');
+        print '<a target="_blank" href=' .
+          $link->[0] . ' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;' . $link->[1] . '</a>' . "\n";
+    }
+
+    print '</div>';
+
+}
 print '</form>' . "\n";
 
 &footer();

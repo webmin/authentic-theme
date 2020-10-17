@@ -20,10 +20,10 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory, $var_directory,
 
-    %theme_text, %module_text_full, %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
+    %theme_text,               %module_text_full, %theme_config,     $get_user_level, $global_prefix, $theme_requested_url,
     $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
-    $has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir,
-    $mode_status, $t_var_switch_m,      $t_var_product_m);
+    $has_usermin,              $has_usermin_version,     $has_usermin_root_dir, $has_usermin_conf_dir,
+    $mode_status,              $t_var_switch_m,          $t_var_product_m);
 
 init_type();
 init_config();
@@ -322,7 +322,7 @@ sub print_category_link
 {
     my ($link, $label, $state) = @_;
     print '<li data-linked' . ($state && ' class="hidden"') . '>' . "\n";
-    print '<a' . ($state && ' data-parent-hidden') . ' href="' .
+    print '<a' .              ($state && ' data-parent-hidden') . ' href="' .
       (($link !~ /^\// && $link !~ /^http/) ? ('/' . $link) : $link) . '"> ' . $label . '</a>' . "\n";
     print '</li>' . "\n";
 }
@@ -1359,7 +1359,7 @@ sub get_sysinfo_vars
                     (
                         (
                          ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
-                          $authentic_installed_version =~ /alpha|beta|RC/
+                          $authentic_installed_version    =~ /alpha|beta|RC/
                          ) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
@@ -1367,8 +1367,8 @@ sub get_sysinfo_vars
 
                 ))
             {
-                my $authentic_remote_beta       = $authentic_remote_version_local =~ /alpha|beta|RC/;
-                my $authentic_remote_alpha_beta = $authentic_remote_version_local =~ /alpha|beta/;
+                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
+                my $authentic_remote_alpha_beta  = $authentic_remote_version_local =~ /alpha|beta/;
                 my $authentic_remote_version_tag = $authentic_remote_version_local;
                 my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
                 $authentic_remote_version_tag = $_remote_version_tag[0];
@@ -1889,7 +1889,7 @@ sub embed_login_head
         print
 '<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
 for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i].offsetHeight?1:0;b.classList.add("input_warning_caps");b.setAttribute("title","Caps Lock");d&&b.classList.add("large");a[i].classList.add("use_input_warning_caps");a[i].parentNode.insertBefore(b,a[i].nextSibling);a[i].addEventListener("blur",function(){this.nextSibling.classList.remove("visible")});a[i].addEventListener("keydown",function(c){"function"===typeof c.getModifierState&&((state=20===c.keyCode?!c.getModifierState("CapsLock"):
-c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'.fa-sign-in:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}setTimeout(function(){if(navigator&&navigator.oscpu){var t=navigator.oscpu,i=document.querySelector("html"),e="data-platform";t.indexOf("Linux")>-1?i.setAttribute(e,"linux"):t.indexOf("Windows")>-1&&i.setAttribute(e,"windows")}});</script>';
+c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'button i.fa-sign-in:not(.invisible)\') || document.querySelector(\'button i.fa-qrcode:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}setTimeout(function(){if(navigator&&navigator.oscpu){var t=navigator.oscpu,i=document.querySelector("html"),e="data-platform";t.indexOf("Linux")>-1?i.setAttribute(e,"linux"):t.indexOf("Windows")>-1&&i.setAttribute(e,"windows")}});</script>';
 
         embed_css_night_rider();
         embed_css_fonts();
@@ -2213,15 +2213,21 @@ sub clear_theme_cache
     # Remove cached downloads
     unlink_file("$product_var/cache");
 
-    # Clear potentially stuck BIND cache module
+    # Clear potentially stuck BIND cache
     if (&foreign_available('bind8')) {
-        &foreign_require("bind8", "bind8-lib.pl");
+        &foreign_require("bind8");
         bind8::flush_zone_names();
+    }
+
+    # Clear potentially stuck Apache cache
+    if (&foreign_available('apache')) {
+        &foreign_require("apache", "postinstall.pl");
+        apache::module_install();
     }
 
     # Clear links cache
     if (&foreign_available('virtual-server')) {
-        &foreign_require("virtual-server", "virtual-server-lib.pl");
+        &foreign_require("virtual-server");
         virtual_server::clear_links_cache();
     }
 
@@ -2576,7 +2582,7 @@ sub theme_settings
             'false',
             'settings_show_night_mode_link',
             'true',
-            'settings_show_terminal_link',
+            'settings_show_terminal_link2',
             'true',
             'settings_favorites',
             'true',
@@ -2643,7 +2649,7 @@ sub theme_settings
             'u',
             'settings_hotkey_toggle_key_webmail',
             'm',
-            'settings_hotkey_shell',
+            'settings_hotkey_shell2',
             'k',
             'settings_hotkey_sysinfo',
             'i',
@@ -2867,7 +2873,7 @@ sub theme_settings
                  $k eq 'settings_hotkey_slider'                ||
                  $k eq 'settings_hotkey_toggle_slider'         ||
                  $k eq 'settings_hotkey_reload'                ||
-                 $k eq 'settings_hotkey_shell'                 ||
+                 $k eq 'settings_hotkey_shell2'                ||
                  $k eq 'settings_hotkey_sysinfo'               ||
                  $k eq 'settings_hotkey_favorites'             ||
                  $k eq 'settings_sysinfo_real_time_timeout'    ||
@@ -2884,7 +2890,7 @@ sub theme_settings
                 $k eq 'settings_hotkey_slider'                ||
                 $k eq 'settings_hotkey_toggle_slider'         ||
                 $k eq 'settings_hotkey_reload'                ||
-                $k eq 'settings_hotkey_shell'                 ||
+                $k eq 'settings_hotkey_shell2'                ||
                 $k eq 'settings_hotkey_sysinfo'               ||
                 $k eq 'settings_hotkey_favorites'             ||
                 $k eq 'settings_sysinfo_easypie_charts_width' ||
@@ -2900,7 +2906,7 @@ sub theme_settings
                 $k eq 'settings_hotkey_slider'        ||
                 $k eq 'settings_hotkey_toggle_slider' ||
                 $k eq 'settings_hotkey_reload'        ||
-                $k eq 'settings_hotkey_shell'         ||
+                $k eq 'settings_hotkey_shell2'        ||
                 $k eq 'settings_hotkey_sysinfo'       ||
                 $k eq 'settings_hotkey_favorites') ?
               ' maxlength="1"' :
@@ -3979,7 +3985,7 @@ sub get_autocomplete_shell
             $unit_tmp =~ s/\|/,/g;
             $unit_tmp =~ s/;/,/g;
 
-            my @units_tmp          = split /,/, $unit_tmp;
+            my @units_tmp = split /,/, $unit_tmp;
             my @units_possible_tmp = ('start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status');
             @rs_tmp = (@units_tmp ? @units_tmp : @units_possible_tmp);
             my @rs_cmd;

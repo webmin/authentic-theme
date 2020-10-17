@@ -1240,3 +1240,12 @@ settings_config_save_and_next=Save and Next
 settings_config_configuration_category=Configuration category
 config_search_options_all=Search through all module config options
 theme_xhred_editing_config_file=Editing config file
+
+
+#19.61
+theme_xhred_login_message_2fa=Two-factor authentication has been enabled for this user to login
+theme_xhred_global_verify=Verify
+settings_show_terminal_link2=Show command shell button
+settings_hotkey_shell2=Hotkey for command shell
+theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Command shell

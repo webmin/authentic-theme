@@ -102,7 +102,7 @@ sub settings_default
     $c{'settings_collapse_navigation_link'}           = 'true';
     $c{'settings_sysinfo_link_mini'}                  = 'false';
     $c{'settings_show_night_mode_link'}               = 'true';
-    $c{'settings_show_terminal_link'}                 = 'true';
+    $c{'settings_show_terminal_link2'}                = 'true';
     $c{'settings_favorites'}                          = 'true';
     $c{'settings_theme_options_button'}               = 'true';
     $c{'settings_leftmenu_button_refresh'}            = 'false';
@@ -113,7 +113,7 @@ sub settings_default
     $c{'settings_hotkey_toggle_key_cloudmin'}         = 'c';
     $c{'settings_hotkey_toggle_key_usermin'}          = 'u';
     $c{'settings_hotkey_toggle_key_webmail'}          = 'm';
-    $c{'settings_hotkey_shell'}                       = 'k';
+    $c{'settings_hotkey_shell2'}                      = 'k';
     $c{'settings_hotkey_sysinfo'}                     = 'i';
     $c{'settings_hotkey_navigation'}                  = 'a';
     $c{'settings_hotkey_toggle_slider'}               = 'n';
@@ -923,7 +923,7 @@ sub get_button_style
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
-    } elsif (string_contains($keys, "migrate") || string_contains($keys, "import")) {
+    } elsif (string_contains($keys, "migrate_show") || string_contains($keys, "import_show")) {
         $class = "success ";
         $icon  = " fa2 fa2-import";
     } elsif (string_contains($keys, "update") ||

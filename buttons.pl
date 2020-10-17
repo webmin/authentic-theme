@@ -39,10 +39,10 @@ print '<li data-linked' .
 print '<span><i class="fa fa-fw ' . (theme_night_mode() ? 'fa-sun vertical-align-middle' : 'fa-moon') . '"></i></span>';
 print '</li>';
 
-if ($theme_config{'settings_show_terminal_link'} ne 'false' &&
+if ($theme_config{'settings_show_terminal_link2'} ne 'false' &&
     foreign_available("shell"))
 {
-    print '<li data-linked' . get_button_tooltip('theme_tooltip_terminal_link', 'settings_hotkey_shell', 'auto top') .
+    print '<li data-linked' . get_button_tooltip('theme_tooltip_terminal_link2', 'settings_hotkey_shell2', 'auto top') .
       ' class="user-link ported-console cursor-pointer">';
     print '<span class="pd-rt-4"><i class="fa fa-fw fa-terminal"></i></span>';
     print '</li>';
@@ -104,8 +104,8 @@ if ($foreign_acl) {
       (get_env('base_remote_user') eq "root" ? "root" : $remote_user) . '"><i class="fa2 fa-fw ' .
       get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
 } else {
-    print '<a ' . $user_title . ' class="menu-exclude-link cursor-default"><i class="fa2 fa-fw ' .
-      get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
+    print '<a ' . $user_title . ' class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' .
+      get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span class="pointer-events-none">' . $remote_user . '</span></a>';
 }
 print '</li>';
 
