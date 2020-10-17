@@ -984,3 +984,7 @@ config_search_options_all=ماڈیول کے تمام اختیارات کے ذر�
 theme_xhred_editing_config_file=ترمیم شدہ فائل فائل
 theme_xhred_login_message_2fa=اس صارف کو لاگ ان کرنے کیلئے دو عنصر کی توثیق کو فعال کردیا گیا ہے
 theme_xhred_global_verify=تصدیق کریں
+settings_show_terminal_link2=کمانڈ شیل بٹن دکھائیں
+settings_hotkey_shell2=کمانڈ شیل کے لئے ہاٹکی
+theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=کمانڈ شیل

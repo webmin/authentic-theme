@@ -984,3 +984,7 @@ config_search_options_all=از طریق تمام گزینه های پیکربن�
 theme_xhred_editing_config_file=در حال ویرایش فایل پیکربندی
 theme_xhred_login_message_2fa=احراز هویت دو عاملی برای ورود به سیستم این کاربر فعال شده است
 theme_xhred_global_verify=تأیید کنید
+settings_show_terminal_link2=دکمه پوسته فرمان را نشان دهید
+settings_hotkey_shell2=کلید میانبر برای پوسته فرمان
+theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt+Shift+K)</tt> باز کنید
+theme_tooltip_terminal_link2=پوسته فرمان

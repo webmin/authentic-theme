@@ -984,3 +984,7 @@ config_search_options_all=ابحث في جميع خيارات تكوين الو�
 theme_xhred_editing_config_file=تحرير ملف التكوين
 theme_xhred_login_message_2fa=تم تمكين المصادقة الثنائية لهذا المستخدم لتسجيل الدخول
 theme_xhred_global_verify=تحقق
+settings_show_terminal_link2=إظهار زر قذيفة الأمر
+settings_hotkey_shell2=مفتاح التشغيل السريع لقذيفة الأوامر
+theme_xhred_path_to_console2=افتح المسار الحالي في غلاف الأمر <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=قذيفة القيادة

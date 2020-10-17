@@ -984,3 +984,7 @@ config_search_options_all=Poiščite vse možnosti konfiguracije modula
 theme_xhred_editing_config_file=Urejanje konfiguracijske datoteke
 theme_xhred_login_message_2fa=Dvofaktorska avtentikacija je omogočena temu uporabniku za prijavo
 theme_xhred_global_verify=Preverite
+settings_show_terminal_link2=Pokaži gumb ukazne lupine
+settings_hotkey_shell2=Bližnjična tipka za ukazno lupino
+theme_xhred_path_to_console2=Odprite trenutno pot v ukazni lupini <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Ukazna lupina

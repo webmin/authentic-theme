@@ -984,3 +984,7 @@ config_search_options_all=Пошук па ўсіх параметрах канф
 theme_xhred_editing_config_file=Рэдагаванне файла канфігурацыі
 theme_xhred_login_message_2fa=Двухфактарная аўтэнтыфікацыя ўключана для гэтага карыстальніка для ўваходу
 theme_xhred_global_verify=Праверце
+settings_show_terminal_link2=Паказаць кнопку каманднай абалонкі
+settings_hotkey_shell2=Гарачая клавіша для каманднай абалонкі
+theme_xhred_path_to_console2=Адкрыць бягучы шлях у каманднай абалонцы <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Камандная абалонка

@@ -98,8 +98,8 @@ print ui_table_row($theme_text{'settings_show_night_mode_link'},
                                   "true",                          "false"
                    ));
 if (foreign_available("shell")) {
-    print ui_table_row($theme_text{'settings_show_terminal_link'},
-                       ui_yesno_radio('settings_show_terminal_link', $theme_config{'settings_show_terminal_link'},
+    print ui_table_row($theme_text{'settings_show_terminal_link2'},
+                       ui_yesno_radio('settings_show_terminal_link2', $theme_config{'settings_show_terminal_link2'},
                                       "true",                        "false"
                        ));
 }

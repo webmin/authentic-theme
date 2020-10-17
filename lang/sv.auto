@@ -5,3 +5,7 @@ config_search_options_all=Sök igenom alla modulkonfigurationsalternativ
 theme_xhred_editing_config_file=Redigerar konfigurationsfil
 theme_xhred_login_message_2fa=Tvåfaktorautentisering har aktiverats för den här användaren att logga in
 theme_xhred_global_verify=Kontrollera
+settings_show_terminal_link2=Visa kommandoskal-knappen
+settings_hotkey_shell2=Snabbtangent för kommandoskal
+theme_xhred_path_to_console2=Öppna aktuell sökväg i kommandoskal <tt>(Alt+Skift+K)</tt>
+theme_tooltip_terminal_link2=Kommandoskal

@@ -984,3 +984,7 @@ config_search_options_all=Meklēt visās moduļa konfigurācijas opcijās
 theme_xhred_editing_config_file=Rediģē konfigurācijas failu
 theme_xhred_login_message_2fa=Šim lietotājam ir iespējota divu faktoru autentifikācija, lai pieteiktos
 theme_xhred_global_verify=Pārbaudiet
+settings_show_terminal_link2=Rādīt komandas čaulas pogu
+settings_hotkey_shell2=Karsto taustiņu komandu čaulai
+theme_xhred_path_to_console2=Atveriet pašreizējo ceļu komandu apvalkā <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Komandas apvalks

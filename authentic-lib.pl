@@ -2582,7 +2582,7 @@ sub theme_settings
             'false',
             'settings_show_night_mode_link',
             'true',
-            'settings_show_terminal_link',
+            'settings_show_terminal_link2',
             'true',
             'settings_favorites',
             'true',
@@ -2649,7 +2649,7 @@ sub theme_settings
             'u',
             'settings_hotkey_toggle_key_webmail',
             'm',
-            'settings_hotkey_shell',
+            'settings_hotkey_shell2',
             'k',
             'settings_hotkey_sysinfo',
             'i',
@@ -2873,7 +2873,7 @@ sub theme_settings
                  $k eq 'settings_hotkey_slider'                ||
                  $k eq 'settings_hotkey_toggle_slider'         ||
                  $k eq 'settings_hotkey_reload'                ||
-                 $k eq 'settings_hotkey_shell'                 ||
+                 $k eq 'settings_hotkey_shell2'                ||
                  $k eq 'settings_hotkey_sysinfo'               ||
                  $k eq 'settings_hotkey_favorites'             ||
                  $k eq 'settings_sysinfo_real_time_timeout'    ||
@@ -2890,7 +2890,7 @@ sub theme_settings
                 $k eq 'settings_hotkey_slider'                ||
                 $k eq 'settings_hotkey_toggle_slider'         ||
                 $k eq 'settings_hotkey_reload'                ||
-                $k eq 'settings_hotkey_shell'                 ||
+                $k eq 'settings_hotkey_shell2'                ||
                 $k eq 'settings_hotkey_sysinfo'               ||
                 $k eq 'settings_hotkey_favorites'             ||
                 $k eq 'settings_sysinfo_easypie_charts_width' ||
@@ -2906,7 +2906,7 @@ sub theme_settings
                 $k eq 'settings_hotkey_slider'        ||
                 $k eq 'settings_hotkey_toggle_slider' ||
                 $k eq 'settings_hotkey_reload'        ||
-                $k eq 'settings_hotkey_shell'         ||
+                $k eq 'settings_hotkey_shell2'        ||
                 $k eq 'settings_hotkey_sysinfo'       ||
                 $k eq 'settings_hotkey_favorites') ?
               ' maxlength="1"' :

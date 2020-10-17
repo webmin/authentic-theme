@@ -825,3 +825,7 @@ config_search_options_all=Prohledejte všechny možnosti konfigurace modulu
 theme_xhred_editing_config_file=Úpravy konfiguračního souboru
 theme_xhred_login_message_2fa=Pro přihlášení tohoto uživatele bylo povoleno dvoufaktorové ověřování
 theme_xhred_global_verify=Ověřit
+settings_show_terminal_link2=Zobrazit tlačítko příkazového prostředí
+settings_hotkey_shell2=Klávesová zkratka pro příkazový shell
+theme_xhred_path_to_console2=Otevřete aktuální cestu v příkazovém prostředí <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Příkazový shell

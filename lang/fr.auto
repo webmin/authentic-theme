@@ -20,3 +20,7 @@ config_search_options_all=Rechercher dans toutes les options de configuration du
 theme_xhred_editing_config_file=Modification du fichier de configuration
 theme_xhred_login_message_2fa=L'authentification à deux facteurs a été activée pour que cet utilisateur puisse se connecter
 theme_xhred_global_verify=Vérifier
+settings_show_terminal_link2=Afficher le bouton du shell de commande
+settings_hotkey_shell2=Raccourci pour le shell de commande
+theme_xhred_path_to_console2=Ouvrir le chemin actuel dans le shell de commande <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Shell de commande

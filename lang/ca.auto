@@ -392,3 +392,7 @@ config_search_options_all=Cerqueu entre totes les opcions de configuració del m
 theme_xhred_editing_config_file=S'està editant el fitxer de configuració
 theme_xhred_login_message_2fa=S'ha habilitat l'autenticació de dos factors perquè aquest usuari pugui iniciar la sessió
 theme_xhred_global_verify=Verifiqueu
+settings_show_terminal_link2=Mostra el botó de l'intèrpret d'ordres
+settings_hotkey_shell2=Tecla d'accés ràpid per a l'intèrpret d'ordres
+theme_xhred_path_to_console2=Obriu el camí actual a l'intèrpret d'ordres <tt>(Alt+Maj+K)</tt>
+theme_tooltip_terminal_link2=Intèrpret d'ordres

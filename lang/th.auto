@@ -984,3 +984,7 @@ config_search_options_all=ค้นหาตัวเลือกการกำ
 theme_xhred_editing_config_file=การแก้ไขไฟล์กำหนดค่า
 theme_xhred_login_message_2fa=เปิดใช้งานการพิสูจน์ตัวตนแบบสองปัจจัยเพื่อให้ผู้ใช้รายนี้เข้าสู่ระบบ
 theme_xhred_global_verify=ตรวจสอบ
+settings_show_terminal_link2=แสดงปุ่มเชลล์คำสั่ง
+settings_hotkey_shell2=ฮ็อตคีย์สำหรับเชลล์คำสั่ง
+theme_xhred_path_to_console2=เปิดเส้นทางปัจจุบันในเชลล์คำสั่ง <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=เชลล์คำสั่ง

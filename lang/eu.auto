@@ -984,3 +984,7 @@ config_search_options_all=Bilatu modulua konfiguratzeko aukera guztietan
 theme_xhred_editing_config_file=Konfigurazio fitxategia editatzen
 theme_xhred_login_message_2fa=Bi faktoreko autentifikazioa gaitu da erabiltzaile honek saioa hasteko
 theme_xhred_global_verify=Egiaztatu
+settings_show_terminal_link2=Erakutsi komando shell botoia
+settings_hotkey_shell2=Komando shellaren laster tekla
+theme_xhred_path_to_console2=Ireki uneko bidea komando shellean <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Agindu shell

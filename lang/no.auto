@@ -451,3 +451,7 @@ config_search_options_all=Søk gjennom alle modulkonfigurasjonsalternativene
 theme_xhred_editing_config_file=Redigerer konfigurasjonsfil
 theme_xhred_login_message_2fa=Tofaktorautentisering er aktivert for at denne brukeren kan logge på
 theme_xhred_global_verify=Bekrefte
+settings_show_terminal_link2=Vis kommandoskall-knapp
+settings_hotkey_shell2=Hurtigtast for kommandoskall
+theme_xhred_path_to_console2=Åpne nåværende bane i kommandoskallet <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Kommandoskall

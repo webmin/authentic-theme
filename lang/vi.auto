@@ -984,3 +984,7 @@ config_search_options_all=Tìm kiếm qua tất cả các tùy chọn cấu hìn
 theme_xhred_editing_config_file=Chỉnh sửa tệp cấu hình
 theme_xhred_login_message_2fa=Xác thực hai yếu tố đã được bật để người dùng này đăng nhập
 theme_xhred_global_verify=Kiểm chứng
+settings_show_terminal_link2=Hiển thị nút trình bao lệnh
+settings_hotkey_shell2=Phím nóng cho trình bao lệnh
+theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Lệnh shell
