@@ -12,10 +12,10 @@ use warnings;
 
 use File::Basename;
 
-our (%text, %in, $config_directory, $user_config_directory);
+our (%text, %in, $root_directory, $config_directory, $user_config_directory);
 
 require(dirname(__FILE__) . "/authentic-lib.pl");
-require(dirname(__FILE__) . "/../config-lib.pl");
+require("$root_directory/config-lib.pl");
 
 my (%newconfig, %oldconfig, %canconfig, $module, $module_dir, $custom_config, $config_post_save);
 

@@ -12,7 +12,7 @@ use warnings;
 
 use File::Basename;
 
-our (%text, %in, $config_directory, %theme_text, $root_directory);
+our (%text, %in, $root_directory, $config_directory, %theme_text);
 
 require(dirname(__FILE__) . "/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
