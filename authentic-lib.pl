@@ -2213,6 +2213,14 @@ sub clear_theme_cache
     # Remove cached downloads
     unlink_file("$product_var/cache");
 
+    # Remove and regenerate OS cache
+    if (&foreign_available('webmin')) {
+        unlink_file("$product_var/modules/webmin/oscache");
+        &foreign_require("webmin");
+        my %osinfo = webmin::detect_operating_system();
+        webmin::apply_new_os_version(\%osinfo);
+    }
+
     # Clear potentially stuck BIND cache
     if (&foreign_available('bind8')) {
         &foreign_require("bind8");
