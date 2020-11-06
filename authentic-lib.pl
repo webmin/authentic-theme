@@ -2215,28 +2215,26 @@ sub clear_theme_cache
 
     # Remove and regenerate OS cache
     if (&foreign_available('webmin')) {
-        unlink_file("$product_var/modules/webmin/oscache");
         &foreign_require("webmin");
-        my %osinfo = webmin::detect_operating_system();
-        webmin::apply_new_os_version(\%osinfo);
+        &webmin::detect_operating_system();
     }
 
     # Clear potentially stuck BIND cache
     if (&foreign_available('bind8')) {
         &foreign_require("bind8");
-        bind8::flush_zone_names();
+        &bind8::flush_zone_names();
     }
 
     # Clear potentially stuck Apache cache
     if (&foreign_available('apache')) {
         &foreign_require("apache", "postinstall.pl");
-        apache::module_install();
+        &apache::module_install();
     }
 
     # Clear links cache
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server");
-        virtual_server::clear_links_cache();
+        &virtual_server::clear_links_cache();
     }
 
     # Clear potentially stuck menus and other cache
