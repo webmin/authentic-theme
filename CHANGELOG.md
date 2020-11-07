@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.62-beta1 (November 07, 2020)
+* Fix bugs
+
 #### Version 19.61 (October 16, 2020)
 * Add sortable table for mailbox user list [#1496/comment-703835699](https://github.com/authentic-theme/authentic-theme/issues/1496#issuecomment-703835699)
 * Add to display two-factor authentication field for user selectively on login page
