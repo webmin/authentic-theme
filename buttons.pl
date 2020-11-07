@@ -64,11 +64,11 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
     if ($get_user_level eq '0' && foreign_available('webmin')) {
         print '<a' .
           $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
-          $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
+          $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-tune scale2"></i></a>';
     } else {
         print '<a' .
           $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
-          $gconfig{'webprefix'} . '/settings-user.cgi"><i class="fa fa-fw fa-cogs"></i></a>';
+          $gconfig{'webprefix'} . '/settings-user.cgi"><i class="fa fa-fw fa-tune"></i></a>';
     }
     print '</li>';
 }

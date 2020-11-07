@@ -48,37 +48,37 @@ sub print_category
                       'settings'          => 'fa-cog',
                       'global_setting'    => 'fa-cog',
                       'cat_settings'      => 'fa-cog',
-                      'system'            => 'fa-wrench',
-                      'cat_system'        => 'fa-wrench',
-                      'servers'           => 'fa-rocket',
-                      'other'             => 'fa-gavel',
+                      'system'            => 'fa2 fa2-system',
+                      'cat_system'        => 'fa2 fa2-system',
+                      'servers'           => 'fa2 fa2-server',
+                      'other'             => 'fa2 fa2-tools',
                       'info'              => 'fa-info',
-                      'hardware'          => 'fa-hdd-o scaled1_5',
-                      'global_hardware'   => 'fa-hdd-o scaled1_5',
-                      'global_storage'    => 'fa-hdd-o scaled1_5',
-                      'cluster'           => 'fa-power-off',
+                      'hardware'          => 'fa2 fa2-disk',
+                      'global_hardware'   => 'fa2 fa2-disk',
+                      'global_storage'    => 'fa2 fa2-disk',
+                      'cluster'           => 'fa2 fa2-cluster',
                       'global_cluster'    => 'fa-power-off',
                       'unused'            => 'fa-puzzle-piece',
                       'global_unused'     => 'fa-puzzle-piece',
-                      'mail'              => 'fa-envelope',
-                      'global_mail'       => 'fa-envelope',
-                      'email'             => 'fa-envelope',
-                      'global_email'      => 'fa-envelope',
+                      'mail'              => 'fa2 fa2-email scaled1_5',
+                      'global_mail'       => 'fa2 fa2-email scaled1_5',
+                      'email'             => 'fa2 fa2-email scaled1_5',
+                      'global_email'      => 'fa2 fa2-email scaled1_5',
                       'login'             => 'fa-user',
                       'global_login'      => 'fa-user',
-                      'apps'              => 'fa-rocket',
-                      'global_apps'       => 'fa-rocket',
-                      'custom'            => 'fa-wrench',
-                      'global_custom'     => 'fa-wrench',
-                      'net'               => 'fa-shield',
-                      'ip'                => 'fa-shield',
-                      'global_ip'         => 'fa-shield',
+                      'apps'              => 'fa2 fa2-server',
+                      'global_apps'       => 'fa2 fa2-server',
+                      'custom'            => 'fa2 fa2-system',
+                      'global_custom'     => 'fa2 fa2-system',
+                      'net'               => 'fa2 fa2-network',
+                      'ip'                => 'fa2 fa2-network',
+                      'global_ip'         => 'fa2 fa2-network',
                       'check'             => 'fa-user-md',
                       'global_check'      => 'fa-user-md',
                       'add'               => 'fa-plus',
                       'global_add'        => 'fa-plus',
-                      'backup'            => 'fa-floppy-o',
-                      'global_backup'     => 'fa-floppy-o',
+                      'backup'            => 'fa-backup fa-1_15x',
+                      'global_backup'     => 'fa-backup fa-1_15x',
                       'global_server',    => 'fa-cogs',
                       'cat_server',       => 'fa-cogs',
                       'global_system'     => 'fa-cogs',
@@ -96,9 +96,9 @@ sub print_category
                       'global_hosts'      => 'fa-globe',
                       'global_virtualmin' => 'fa-virtualmin scaled1_5',
                       'global_owners'     => 'fa-users',
-                      'global_monitor'    => 'fa-desktop',
+                      'global_monitor'    => 'fa2 fa2-system',
                       'global_settings'   => 'fa-cloud',
-                      'cat_manage'        => 'fa-gavel',
+                      'cat_manage'        => 'fa2 fa2-tools',
                       'cat_res'           => 'fa-share-alt',
                       'global_admin'      => 'fa-key',
                       'cat_admin'         => 'fa-key',
@@ -783,19 +783,19 @@ sub print_left_menu
                 }
 
                 if ($link =~ /\/virtual-server\/domain_form.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-plus-square-o"></i>';
+                    $icon = '<i class="fa fa-fw fa-server-add"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/edit_domain.cgi/ ||
                          $link =~ /\/server-manager\/edit_serv.cgi/)
                 {
-                    $icon = '<i class="fa fa-fw fa-pencil-square-o"></i>';
+                    $icon = '<i class="fa fa-fw fa2 fa2-settings"></i>';
                 } elsif ($link =~ /\/virtual-server\/view_domain.cgi/) {
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/list_users.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-users"></i>';
+                    $icon = '<i class="fa fa-fw fa2 fa2-users-cog"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_aliases.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-envelope-o"></i>';
+                    $icon = '<i class="fa fa-fw fa2 fa2-maillist"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_databases.cgi/) {
                     $icon = '<i class="fa fa-fw fa-database"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_scripts.cgi/ ||
@@ -812,7 +812,7 @@ sub print_left_menu
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
                     $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
                 } elsif ($link =~ /\/server-manager\/create_form.cgi/ && $group != 1) {
-                    $icon = '<i class="fa fa-fw fa-server-add scaled1"></i>';
+                    $icon = '<i class="fa fa-fw fa-server-add"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv.cgi/) {
                     if ($link =~ /refresh=1/) {
                         $icon = '<i class="fa fa-fw fa-refresh"></i>';
