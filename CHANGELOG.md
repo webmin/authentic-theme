@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.62-RC1 (November 07, 2020)
+#### Version 19.62 (November 08, 2020)
 * Add better menu icons, fix alignment and size
 * Fix bugs
 
