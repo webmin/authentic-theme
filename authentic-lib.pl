@@ -90,7 +90,7 @@ sub print_category
                       'cat_services'      => 'fa-puzzle-piece',
                       'create_new'        => 'fa-plus',
                       'create_add'        => 'fa-plus',
-                      'create_create'     => 'fa-server-add fa-1_05x margined-left--2',
+                      'create_create'     => 'fa-server-add',
                       'global_gce'        => 'fa-google',
                       'global_ec2'        => 'fa2 fa2-amazon scaled1_5',
                       'global_hosts'      => 'fa-globe',
