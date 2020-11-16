@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.63-beta1 (November 17, 2020)
+* Add better support for native form validation (HTML5)
+
 #### Version 19.62 (November 08, 2020)
 * Add better menu icons, fix alignment and size
 * Fix bugs
