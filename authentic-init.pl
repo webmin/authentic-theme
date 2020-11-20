@@ -1670,7 +1670,7 @@ sub error_40x_handler
 sub lib_csf_control
 {
     my ($action) = @_;
-    if (foreign_check("csf") && foreign_available("csf") && $current_theme =~ /authentic-theme/) {
+    if (foreign_check("csf") && foreign_available("csf") && has_command("csf") && $current_theme =~ /authentic-theme/) {
         do("$root_directory/$current_theme/extensions/csf/csf-lib.pl");
         if ($action eq 'load') {
             csf_mod();
