@@ -30,7 +30,7 @@ foreach my $folder (@folders_data) {
     my ($parent, $child) = $fid =~ m|^ (.+) \. ([^\.]+) \z|x;
     my $name   = $folder_name;
     my $key    = folders_key_escape($id);
-    my $title  = folders_title_escape(folders_title_unseen(html_escape($child ? $child : $name), $unread)); utf8::encode($title);
+    my $title  = folders_title_escape(folders_title_unseen(html_escape($child ? $child : $name), $unread)); utf8::decode($title); utf8::encode($title);
     my $active = (folders_key_escape($in{'key'}) eq $key ? 1 : 0);
     my $data = $temporary{$fid} = { key    => $key,
                                     title  => $title,
