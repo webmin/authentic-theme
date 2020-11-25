@@ -508,10 +508,12 @@ sub theme_select_rows_link
 
 sub theme_ui_form_start
 {
-    my ($script, $method, $target, $tags) = @_;
+    my ($script, $method, $target, $tags, $class) = @_;
     my $rv;
 
-    $rv .= '<form class="ui_form" ';
+    $class = 'ui_form' if (!$class);
+
+    $rv .= "<form class=\"$class\" ";
     $rv .= 'action="' . &html_escape($script) . '" ';
     $rv .= ($method eq 'post' ? 'method="post" ' :
               ($method eq 'form-data' ? 'method="post" enctype="multipart/form-data" ' : 'method="get" '));

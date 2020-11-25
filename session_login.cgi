@@ -15,6 +15,7 @@ do(dirname(__FILE__) . "/authentic-lib.pl");
 
 my %miniserv;
 get_miniserv_config(\%miniserv);
+load_theme_library();
 
 my $charset = &get_charset();
 
@@ -114,15 +115,18 @@ if (defined($in{'failed'})) {
     print '</div>' . "\n";
 }
 print "$text{'session_prefix'}\n";
-print '<form method="post" target="_top" action="' . $gconfig{'webprefix'} .
-  '/session_login.cgi" class="form-signin session_login clearfix" role="form" onsubmit="spinner()">' . "\n";
 
-print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
-     <span>'
-  . (&get_product_name() eq 'webmin' ? $theme_text{'theme_xhred_titles_wm'} :
-       $theme_text{'theme_xhred_titles_um'}
+print &ui_form_start("$gconfig{'webprefix'}/session_login.cgi",
+                     "post", undef,
+                     "role=\"form\" onsubmit=\"spinner()\"",
+                     "form-signin session_login clearfix");
+
+print "<i class=\"wbm-webmin\"></i><h2 class=\"form-signin-heading\"><span> "
+  .
+  ( &get_product_name() eq "webmin" ? $theme_text{'theme_xhred_titles_wm'} :
+      $theme_text{'theme_xhred_titles_um'}
   ) .
-  '</span></h2>' . "\n";
+  "</span></h2>" . "\n";
 
 # Process logo
 embed_logo();
@@ -137,8 +141,7 @@ if ($gconfig{'realname'}) {
     $host = &html_escape($host);
 }
 if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
-    print '<p class="form-signin-paragraph">' .
-      &theme_text('theme_xhred_login_message_2fa') . '</p>' . "\n";
+    print '<p class="form-signin-paragraph">' . &theme_text('theme_xhred_login_message_2fa') . '</p>' . "\n";
     print &ui_hidden('user',                     $in{'failed'});
     print &ui_hidden('pass',                     $in{'failed_pass'});
     print &ui_hidden('save',                     $in{'failed_save'});
@@ -153,18 +156,24 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print '<div class="form-group form-signin-group">';
     print '<button class="btn btn-info" type="submit"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
       &theme_text('theme_xhred_global_verify') . '</button>' . "\n";
-    print '<a class="btn btn-default" href="' .
-      $gconfig{'webprefix'} . '/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' .
-      &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
+    print '<a class="btn btn-default" href="' . $gconfig{'webprefix'} .
+      '/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' . &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
     print '</div>';
 } else {
     print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-    print
-'<input type="text" class="form-control session_login" name="user" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
-      . &theme_text('theme_xhred_login_user')
-      . '" ' . ($in{"failed"} ? 'value="' . $in{"failed"} . '"' : 'autofocus') . '>' . "\n";
+
+    print ui_input(
+                   { 'name'           => 'user',
+                     'value'          => $in{"failed"},
+                     'class'          => 'form-control session_login',
+                     "autocomplete"   => "off",
+                     "autocorrect"    => "off",
+                     "autocapitalize" => "none",
+                     "placeholder"    => $theme_text{'theme_xhred_login_user'}
+                   });
+
     print '</div>' . "\n";
     print '<div class="input-group form-group">' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";

@@ -43,6 +43,123 @@ sub ui_button_group_local
     return $rv;
 }
 
+
+sub ui_element
+{
+    my ($e, $c) = @_;
+
+    # Allowed elements to use 'type' attr
+    if ($e =~ /^(a|button|embed|input|link|menu|object|script|source|style)$/) {
+
+        # Set default `type` for common elements
+        if ($e eq 'input') {
+            $c->{'type'} = "text" if (!$c->{'type'});
+        } elsif ($e eq 'button') {
+            $c->{'type'} = "button" if (!$c->{'type'});
+        }
+        $c->{'type'} = " type=\"@{[quote_escape($c->{'type'})]}\"" if ($c->{'type'});
+    } else {
+        delete $c->{'type'};
+    }
+
+    # Allowed elements to use 'name' attr
+    if ($e =~ /^(button|fieldset|form|iframe|input|map|meta|object|output|param|select|textarea)$/) {
+        $c->{'name'} = " name=\"@{[quote_escape($c->{'name'})]}\"" if ($c->{'name'});
+    } else {
+        delete $c->{'name'};
+    }
+
+    # Allowed elements to use 'value' attr
+    if ($e =~ /^(button|input|meter|li|option|progress|param)$/) {
+        $c->{'value'} = " value=\"@{[quote_escape($c->{'value'})]}\"" if ($c->{'value'});
+    } else {
+        delete $c->{'value'};
+    }
+
+    # Trigger `autofocus` or remove it
+    if ($e =~ /^(button|input|select|textarea)$/) {
+        if ($c->{'autofocus'} =~ /^(false|0)$/) {
+            delete $c->{'autofocus'};
+        } 
+        # If element is empty trigger autofocus
+        elsif ($e =~ /input|textarea/ && !$c->{'value'}) {
+            $c->{'autofocus'} = " autofocus";
+        }
+    }
+
+    # Set default `class` for common elements
+    if (!$c->{'class'}) {
+        my $c_;
+        if ($e eq 'input') {
+            $c_ = "form-control";
+            if ($c->{'type'} =~ /password/) {
+                $c_ .= " ui_password";
+            } else {
+                $c_ .= " ui_textbox";
+            }
+        } elsif ($e eq 'textarea') {
+            $c_ = "form-control ui_textarea";
+        }
+        $c->{'class'} = " class=\"$c_\"";
+    } else {
+        $c->{'class'} = " class=\"@{[quote_escape($c->{'class'})]}\"";
+    }
+
+    # Collect all other independent attributes
+    my $attrs;
+    foreach my $attr (keys %{$c}) {
+        if ($attr ne "class" &&
+            $attr ne "value" &&
+            $attr ne "name"  &&
+            $attr ne "type")
+        {
+
+            # Parse and add data attributes passed as reference
+            if ($attr eq "data") {
+                if (ref($c->{$attr})) {
+                    foreach my $dattr (keys %{ $c->{$attr} }) {
+                        $attrs .= " data-$dattr=\"@{[quote_escape($c->{$attr}->{$dattr})]}\"";
+                    }
+                }
+
+                # Add all other attributes to the tag
+            } else {
+                $attrs .= " $attr=\"@{[quote_escape($c->{$attr})]}\"";
+            }
+        }
+    }
+
+    # Check if a tag must be closed
+    my $e_c;
+    if ($e !~ /^(area|base|br|hr|input|link|meta|param|source|circle|track|wbr)$/) {
+        $e_c = "</$e>";
+    }
+    return "<$e$c->{'type'}$c->{'name'}$c->{'value'}$c->{'class'}$attrs>@{[html_escape($c->{'_'})]}$e_c\n";
+}
+
+sub ui_input
+{
+    my ($c, $v, $s, $d, $m, $t) = @_;
+
+    # If old type input used, support it as well
+    if (!ref($c)) {
+        $c = { 'name'  => $c,
+               'value' => $v,
+               'size'  => $s };
+        $c->{'disabled'}  = "true" if ($d);
+        $c->{'maxlength'} = $m     if ($m);
+        if ($t) {
+            my @t = split(/\s+/, $t);
+            foreach my $t (@t) {
+                my ($t, $v) = ($t =~ /(.*?)=(.*)/);
+                $v =~ s/^("|')|("|')$//g;
+                $c->{$t} = "@{[quote_escape($v)]}";
+            }
+        }
+    }
+    return ui_element('input', $c);
+}
+
 sub ui_span_local
 {
     my ($data, $extra_class) = @_;
