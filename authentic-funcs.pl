@@ -449,11 +449,15 @@ sub product_version_update
     my ($v, $p) = @_;
     my ($wv, $uv, $vv, $cv, $fv) = ('1.941', '1.791', '6.08', '9.4', '14.01');
 
-    if (($p eq "w" && $v < $wv) ||
-        ($p eq "u" && $v < $uv) ||
-        ($p eq "v" && $v < $vv) ||
-        ($p eq "c" && $v < $cv) ||
-        ($p eq "f" && $v < $fv))
+    my $vc = $v;
+    if ($vc && $vc =~ /(\.).*?(\.)/) {
+        substr($vc, 1 + index($vc, '.')) =~ s[\.][]g;
+    }
+    if (($p eq "w" && $vc < $wv) ||
+        ($p eq "u" && $vc < $uv) ||
+        ($p eq "v" && $vc < $vv) ||
+        ($p eq "c" && $vc < $cv) ||
+        ($p eq "f" && $vc < $fv))
     {
         return '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
           $theme_text{'theme_xhred_global_outdated'} .
