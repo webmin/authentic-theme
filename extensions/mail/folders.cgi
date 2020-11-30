@@ -34,9 +34,9 @@ foreach my $folder (@folders_data) {
     $title     = folders_title_escape(folders_title_unseen(html_escape($title), $unread));
     my $active = (folders_key_escape($in{'key'}) eq $key ? 1 : 0);
     my $data   = $temporary{$fid} = { key    => $key,
-                                        title  => $title,
-                                        active => $active,
-                                        unread => $unread, };
+                                      title  => $title,
+                                      active => $active,
+                                      unread => $unread, };
     defined $parent ? (push @{ $temporary{$parent}{children} }, $data) : (push(@folders, $data));
 }
 print_json(\@folders);
