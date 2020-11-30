@@ -140,7 +140,7 @@ sub folders_select
             splice(@opts, (4 + $offset), 0, [$id, $f->{'name'}]);
             $offset++;
         } else {
-            utf8::encode($f->{'name'});
+            utf8::decode($f->{'name'}); utf8::encode($f->{'name'});
             push(@opts, [$id, $f->{'name'}]);
         }
     }
