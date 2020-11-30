@@ -1120,7 +1120,7 @@ sub print_sysstats_table
             foreach my $t (@{ @{$data}[0]->{'table'} }) {
                 my $insert = ($t->{"desc"} =~ /\Q$prod/i);
                 if ($insert && $get_user_level ne '3') {
-                    print_table_row($theme_text{'body_webmin'}, get_webmin_version());
+                    print_table_row($theme_text{'body_webmin'}, get_webmin_version(1));
                 }
                 print_table_row($t->{"desc"}, $t->{"value"});
                 if ($insert) {
