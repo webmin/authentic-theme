@@ -797,27 +797,16 @@ sub print_content
                 $type_archive = mimetype($link_gpg);
                 $is_gpg       = 1;
             }
-            if (($type_archive =~ /application-zip/ && has_command('unzip')) ||
-                ($type_archive =~ /application-x-7z-compressed/ &&
-                    has_command('7z')) ||
-                ($type_archive =~ /application-x-rar|application-vnd\.rar/ &&
-                    (has_command('unrar') || has_command('unar'))) ||
-                ($type_archive =~ /application-x-rpm/ &&
-                    has_command('rpm2cpio') &&
-                    has_command('cpio')) ||
-                ($type_archive =~ /application-x-deb/ &&
-                    has_command('dpkg'))
-                ||
-                (
-                    ($type_archive =~ /x-compressed-tar/ || $type_archive =~ /-x-tar/ ||
-                     ($type_archive =~ /-x-bzip/ &&
-                         has_command('bzip2')) ||
-                     ($type_archive =~ /-gzip/ &&
-                         (has_command('gzip') || has_command('gunzip'))) ||
-                     ($type_archive =~ /-x-xz/ &&
-                         has_command('xz'))
-                    ) &&
-                    has_command('tar')))
+            if ($type_archive =~ /application-zip/ ||
+                $type_archive =~ /application-x-7z-compressed/ ||
+                $type_archive =~ /application-x-rar|application-vnd\.rar/ ||
+                $type_archive =~ /application-x-rpm/ ||
+                $type_archive =~ /application-x-deb|debian\.binary-package/ ||
+                $type_archive =~ /x-compressed-tar/ || 
+                $type_archive =~ /-x-tar/ ||
+                $type_archive =~ /-x-bzip/ ||
+                $type_archive =~ /-gzip/ ||
+                $type_archive =~ /-x-xz/)
             {
                 $is_archive = 1;
                 $actions =
