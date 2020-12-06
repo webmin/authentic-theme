@@ -7,12 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
-
 our (%text, %in, %userconfig, %config, $special_folder_id);
 
-do(dirname(__FILE__) . '/mail-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 my %mails;
 

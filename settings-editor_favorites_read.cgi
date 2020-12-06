@@ -7,11 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, $current_theme, $config_directory, $remote_user, %theme_text);
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 my $file = $config_directory . "/$current_theme/favorites-$remote_user.json";
 my $data = &read_file_contents($file);

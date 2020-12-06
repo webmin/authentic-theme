@@ -8,16 +8,14 @@
 use strict;
 no warnings 'uninitialized';
 
-use File::Basename;
-use lib (dirname(__FILE__) . '/lib');
-
+use lib ("$ENV{'THEME_ROOT'}/lib");
 use Async;
 
 BEGIN {push(@INC, "..");}
 use WebminCore;
 
 our (%in, $config_directory, $var_directory, $current_theme, $remote_user);
-do(dirname(__FILE__) . "/authentic-funcs.pl");
+do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
 
 init_config();
 ReadParse();

@@ -5,8 +5,6 @@
 #
 use strict;
 
-use File::Basename;
-
 our ($get_user_level,
      $xnav,
      %theme_config,
@@ -38,7 +36,7 @@ our ($get_user_level,
      $ui_formcount,
      $user_module_config_directory);
 
-do(dirname(__FILE__) . "/authentic-init.pl");
+do("$ENV{'THEME_ROOT'}/authentic-init.pl");
 
 sub theme_header
 {
@@ -1300,12 +1298,12 @@ sub theme_redirect_download
 sub theme_js_redirect
 {
     my ($url, $window) = @_;
-
     $window ||= "window";
     if ($url =~ /^\//) {
         $url = $gconfig{'webprefix'} . $url;
     }
     if ($url eq "/" || $url eq "$gconfig{'webprefix'}/") {
+        eval "use File::Basename";
         my $module = dirname(get_env('script_name'));
         if ($module ne '/') {
             $url = "$gconfig{'webprefix'}$module";

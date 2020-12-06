@@ -7,12 +7,11 @@
 #
 use strict;
 
-use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
+use lib ("$ENV{'THEME_ROOT'}/lib");
 
 our (%in);
 
-do(dirname(__FILE__) . '/mail-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 my %temporary;
 my @folders_data = list_folders_sorted();

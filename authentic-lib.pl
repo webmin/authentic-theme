@@ -5,8 +5,7 @@
 #
 use strict;
 
-use File::Basename;
-use lib (dirname(__FILE__) . "/lib");
+use lib ("$ENV{'THEME_ROOT'}/lib");
 
 use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
@@ -27,8 +26,7 @@ our (
 
 init_type();
 init_config();
-
-do(dirname(__FILE__) . "/authentic-init.pl");
+do("$ENV{'THEME_ROOT'}/authentic-init.pl");
 
 sub authentic
 {
@@ -3301,7 +3299,7 @@ sub get_xhr_request
         head();
 
         if ($in{'xhr-navigation'} eq '1') {
-            do(dirname(__FILE__) . "/navigation.pl");
+            do("$ENV{'THEME_ROOT'}/navigation.pl");
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
@@ -3310,7 +3308,7 @@ sub get_xhr_request
             } elsif ($in{'restore'} eq '1') {
                 theme_settings('restore', undef, undef);
             } else {
-                do(dirname(__FILE__) . "/settings.pl");
+                do("$ENV{'THEME_ROOT'}/settings.pl");
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
@@ -3732,12 +3730,12 @@ sub content
 
     # Navigation
     print '<ul class="navigation">' . "\n";
-    do(dirname(__FILE__) . "/navigation.pl");
+    do("$ENV{'THEME_ROOT'}/navigation.pl");
     print '</ul>' . "\n";
 
     # Buttons
     print '<br><br><ul class="user-links">';
-    do(dirname(__FILE__) . "/buttons.pl");
+    do("$ENV{'THEME_ROOT'}/buttons.pl");
     print '</ul>';
     print "<script>plugins.navigation.get.buttons();</script>";
 

@@ -8,12 +8,9 @@
 
 use strict;
 
-use File::Basename;
-use Time::Local;
-
 our (%in, $cwd);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 my $command;
 my $has_zip    = has_command('zip');
@@ -34,7 +31,6 @@ if ($in{'cancel'} eq '1') {
     open(FILE, "< $file") or die "can't open $file: $!";
     binmode FILE;
     local $/ = \102400;
-
     while (<FILE>) {
         print $_;
     }
@@ -58,7 +54,6 @@ if ($in{'cancel'} eq '1') {
         close $fh;
         $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd) . " -T " . $list;
     }
-
     system_logged($command);
 }
 head();

@@ -7,12 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-use File::Find;
-
 our (%in, %text, @allowed_paths, $cwd, $base, $path);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 kill_previous($0, $$);
 

@@ -7,8 +7,6 @@
 #
 use strict;
 
-use File::Basename;
-
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 print_content();

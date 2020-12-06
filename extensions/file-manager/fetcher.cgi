@@ -7,14 +7,11 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (is_root() && supports_users()) {
-
     if ($in{'list_users'} || $in{'home_base'}) {
         foreign_require("useradmin");
         my %uconfig = foreign_config("useradmin");
@@ -29,7 +26,6 @@ if (is_root() && supports_users()) {
             }
             print_json(\%users);
         }
-
         if ($in{'home_base'}) {
             print_json({ 'home_base' => $user_home_base });
         }

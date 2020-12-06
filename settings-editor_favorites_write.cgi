@@ -7,11 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, %gconfig, %theme_text, $config_directory, $current_theme, $remote_user, $has_usermin);
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 theme_config_dir_available();
 

@@ -7,11 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, %text, $cwd, $path);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'arch'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});

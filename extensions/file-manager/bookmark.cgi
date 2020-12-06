@@ -8,11 +8,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%text, @remote_user_info, $path);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 get_paths();
 my $confdir = "$remote_user_info[7]/.filemin";

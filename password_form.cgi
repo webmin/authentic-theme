@@ -7,11 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, %gconfig, %text, $pragma_no_cache, %theme_text, %theme_config);
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 $pragma_no_cache = 1;
 $ENV{'MINISERV_INTERNAL'} || die "Can only be called by miniserv.pl";

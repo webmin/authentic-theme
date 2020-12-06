@@ -9,12 +9,9 @@
 
 use strict;
 
-use File::Basename;
-use Time::Local;
-
 our (%in, %text, $cwd, $path);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'link'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
@@ -30,7 +27,6 @@ if (!$host) {
     $file =~ s/^.*\///;
     $file ||= "index.html";
     $full = "$cwd/$file";
-
     if (-e $full) {
         print_error(text('filemanager_rename_exists', $file, $path, $text{'theme_xhred_global_file'}) . ".");
     } else {

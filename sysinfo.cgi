@@ -7,13 +7,11 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in,             %gconfig,     %text,                $current_theme, $config_directory,
      $remote_user,    $title,       %theme_config,        %theme_text,    $get_user_level,
      $has_virtualmin, $has_usermin, $has_usermin_version, $has_usermin_conf_dir);
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 header($title, 'stripped');
 

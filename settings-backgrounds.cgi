@@ -7,11 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, %gconfig, $current_theme, $config_directory, %theme_text);
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 

@@ -7,7 +7,6 @@
 #
 use strict;
 
-use File::Basename;
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
 authentic();

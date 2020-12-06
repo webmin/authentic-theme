@@ -5,7 +5,6 @@
 #
 use strict;
 
-use File::Basename;
 use Digest::MD5 qw(md5_hex);
 use Encode qw( encode decode );
 
@@ -52,7 +51,7 @@ sub get_request_uri
 
 sub get_libs
 {
-    do(dirname(__FILE__) . '/../../authentic-funcs.pl');
+    do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
     do(get_env('document_root') . '/' . get_module() . '/' . get_module() . '-lib.pl');
 
     ReadParse();

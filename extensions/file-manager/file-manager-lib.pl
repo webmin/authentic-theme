@@ -5,12 +5,13 @@
 #
 use strict;
 
-use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
-do(dirname(__FILE__) . "/../../authentic-funcs.pl");
+use lib ("$ENV{'THEME_ROOT'}/lib");
+
+do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
 
 use Cwd 'abs_path';
 use Encode qw(decode encode);
+use File::Basename;
 use File::MimeInfo;
 use File::Find;
 use File::Grep qw( fdo );

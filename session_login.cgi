@@ -7,11 +7,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, %gconfig, %tconfig, %text, $config_directory, $current_theme, %theme_text);
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 my %miniserv;
 get_miniserv_config(\%miniserv);

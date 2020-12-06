@@ -7,10 +7,8 @@
 #
 use strict;
 
-use File::Basename;
-
 our $trust_unknown_referers = 1;
 
-do(dirname(__FILE__) . "/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 error_40x();

@@ -184,6 +184,6 @@ elsif (foreign_available("mailbox") &&
     print_sysinfo_link(1);
 }
 
-do(dirname(__FILE__) . "/buttons.pl");
+do("$ENV{'THEME_ROOT'}/buttons.pl");
 
 1;

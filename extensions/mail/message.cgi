@@ -7,14 +7,10 @@
 #
 use strict;
 
-use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
-
 my %email;
-
 our (%in);
 
-do(dirname(__FILE__) . '/mail-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 my @folders = list_folders_sorted();
 my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;

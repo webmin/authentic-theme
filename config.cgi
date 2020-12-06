@@ -10,11 +10,9 @@
 use strict;
 use warnings;
 
-use File::Basename;
-
 our (%text, %in, $root_directory, $config_directory, %theme_text);
 
-require(dirname(__FILE__) . "/authentic-lib.pl");
+require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
 
 my (%access,

@@ -8,11 +8,9 @@
 #
 use strict;
 
-use File::Basename;
-
 our (%in, $path);
 
-do(dirname(__FILE__) . '/file-manager-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 open(my $fh, ">", &get_paste_buffer_file()) or die "Error: $!";
 print $fh "cut\n";

@@ -7,9 +7,7 @@
 #
 use strict;
 
-use File::Basename;
-use lib (dirname(__FILE__) . '/../../lib');
-do(dirname(__FILE__) . '/mail-lib.pl');
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 # Find mail messages matching some pattern
 our (%text, %in, %userconfig);
