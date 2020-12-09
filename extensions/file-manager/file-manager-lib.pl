@@ -837,7 +837,7 @@ sub print_content
               (
 "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
                   . $size . "</span>");
-            push(@td_tags, undef);
+            push(@td_tags, 'class="col-size"');
         }
         if ($userconfig{'columns'} =~ /owner_user/) {
             my $user;

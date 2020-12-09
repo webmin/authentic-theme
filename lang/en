@@ -1249,3 +1249,7 @@ settings_show_terminal_link2=Show command shell button
 settings_hotkey_shell2=Hotkey for command shell
 theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Command shell
+
+
+#19.70
+theme_xhred_filemanager_context_view=View
