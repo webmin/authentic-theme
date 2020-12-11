@@ -3375,6 +3375,8 @@ sub get_xhr_request
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
 
             my $module           = $in{'xhr-encoding_convert_cmodule'};
+            my $limit            = $in{'xhr-encoding_convert_limit'};
+            my $binary           = $in{'xhr-encoding_convert_binary'};
             my $jailed_user      = get_fm_jailed_user($module, 1);
             my $jailed_user_home = get_fm_jailed_user($module);
             my $cfile            = $in{'xhr-encoding_convert_file'};
@@ -3386,10 +3388,17 @@ sub get_xhr_request
             }
 
             my $data;
-            eval {
-                $data =
-                  Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, read_file_contents($cfile)));
-            };
+            if ($binary) {
+                $data = read_file_contents($cfile, $limit);
+                $data =~ s/[^[:print:]\n\r\t]/ /g;
+            } else {
+                eval {
+                    $data = Encode::encode('utf-8',
+                                           Encode::decode($in{'xhr-encoding_convert_name'},
+                                                          read_file_contents($cfile, $limit)
+                                           ));
+                };
+            }
             print $data;
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
             my $module      = $in{'xhr-get_gpg_keys_cmodule'};
