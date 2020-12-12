@@ -988,3 +988,5 @@ settings_show_terminal_link2=Показати кнопку командної о
 settings_hotkey_shell2=Гаряча клавіша для командної оболонки
 theme_xhred_path_to_console2=Відкрити поточний шлях у командній оболонці <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Командна оболонка
+theme_xhred_filemanager_context_view=Переглянути
+theme_xhred_file_viewer=Переглядач файлів

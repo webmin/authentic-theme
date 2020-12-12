@@ -988,3 +988,5 @@ settings_show_terminal_link2=Εμφάνιση κουμπιού κελύφους 
 settings_hotkey_shell2=Hotkey για το κέλυφος εντολών
 theme_xhred_path_to_console2=Ανοίξτε την τρέχουσα διαδρομή στο κέλυφος εντολών <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Κέλυφος εντολών
+theme_xhred_filemanager_context_view=Θέα
+theme_xhred_file_viewer=Πρόγραμμα προβολής αρχείων

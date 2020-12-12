@@ -988,3 +988,5 @@ settings_show_terminal_link2=Pokaži gumb ukazne lupine
 settings_hotkey_shell2=Bližnjična tipka za ukazno lupino
 theme_xhred_path_to_console2=Odprite trenutno pot v ukazni lupini <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Ukazna lupina
+theme_xhred_filemanager_context_view=Pogled
+theme_xhred_file_viewer=Pregledovalnik datotek

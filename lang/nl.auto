@@ -880,3 +880,5 @@ settings_show_terminal_link2=Toon opdrachtshell-knop
 settings_hotkey_shell2=Sneltoets voor opdrachtshell
 theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Commandoschaal
+theme_xhred_filemanager_context_view=Visie
+theme_xhred_file_viewer=Bestandsviewer

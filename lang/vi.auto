@@ -988,3 +988,5 @@ settings_show_terminal_link2=Hiển thị nút trình bao lệnh
 settings_hotkey_shell2=Phím nóng cho trình bao lệnh
 theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Lệnh shell
+theme_xhred_filemanager_context_view=Lượt xem
+theme_xhred_file_viewer=Trình xem tệp

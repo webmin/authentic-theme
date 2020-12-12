@@ -988,3 +988,5 @@ settings_show_terminal_link2=إظهار زر قذيفة الأمر
 settings_hotkey_shell2=مفتاح التشغيل السريع لقذيفة الأوامر
 theme_xhred_path_to_console2=افتح المسار الحالي في غلاف الأمر <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=قذيفة القيادة
+theme_xhred_filemanager_context_view=رأي
+theme_xhred_file_viewer=عارض الملفات

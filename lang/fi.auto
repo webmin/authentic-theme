@@ -988,3 +988,5 @@ settings_show_terminal_link2=Näytä komentotulkin painike
 settings_hotkey_shell2=Komennon kuoren pikanäppäin
 theme_xhred_path_to_console2=Avaa komentorivin nykyinen polku <tt>(Alt+Vaihto+K)</tt>
 theme_tooltip_terminal_link2=Komennon kuori
+theme_xhred_filemanager_context_view=Näytä
+theme_xhred_file_viewer=Tiedostojen katseluohjelma

@@ -452,3 +452,5 @@ settings_show_terminal_link2=Tunjukkan butang shell arahan
 settings_hotkey_shell2=Hotkey untuk shell arahan
 theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Cengkerang arahan
+theme_xhred_filemanager_context_view=Pandangan
+theme_xhred_file_viewer=Pemapar Fail

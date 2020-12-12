@@ -396,3 +396,5 @@ settings_show_terminal_link2=Mostra el botó de l'intèrpret d'ordres
 settings_hotkey_shell2=Tecla d'accés ràpid per a l'intèrpret d'ordres
 theme_xhred_path_to_console2=Obriu el camí actual a l'intèrpret d'ordres <tt>(Alt+Maj+K)</tt>
 theme_tooltip_terminal_link2=Intèrpret d'ordres
+theme_xhred_filemanager_context_view=Veure
+theme_xhred_file_viewer=Visualitzador de fitxers

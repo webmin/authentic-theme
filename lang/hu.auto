@@ -988,3 +988,5 @@ settings_show_terminal_link2=Parancshéj megjelenítése gomb
 settings_hotkey_shell2=Gyorsbillentyű a parancshéjhoz
 theme_xhred_path_to_console2=Nyissa meg az aktuális útvonalat a <tt>parancssorban (Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Parancshéj
+theme_xhred_filemanager_context_view=Kilátás
+theme_xhred_file_viewer=File Viewer

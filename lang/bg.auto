@@ -988,3 +988,5 @@ settings_show_terminal_link2=Показване на командния буто
 settings_hotkey_shell2=Бърз клавиш за командна обвивка
 theme_xhred_path_to_console2=Отворете текущия път в командната обвивка <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Командна обвивка
+theme_xhred_filemanager_context_view=Изглед
+theme_xhred_file_viewer=Преглед на файлове
