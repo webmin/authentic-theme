@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=افتح المسار الحالي في غلاف ا
 theme_tooltip_terminal_link2=قذيفة القيادة
 theme_xhred_filemanager_context_view=رأي
 theme_xhred_file_viewer=عارض الملفات
+theme_xhred_global_done=منجز.
+theme_xhred_filemanager_file_save_err=خطأ في حفظ الملف.

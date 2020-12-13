@@ -910,3 +910,5 @@ theme_xhred_path_to_console2=Abra o caminho atual no shell de comando <tt>(Alt+S
 theme_tooltip_terminal_link2=Shell de comando
 theme_xhred_filemanager_context_view=Visão
 theme_xhred_file_viewer=Visualizador de arquivos
+theme_xhred_global_done=Feito.
+theme_xhred_filemanager_file_save_err=Erro ao salvar o arquivo.

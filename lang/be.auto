@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=Адкрыць бягучы шлях у каман�
 theme_tooltip_terminal_link2=Камандная абалонка
 theme_xhred_filemanager_context_view=Выгляд
 theme_xhred_file_viewer=Праглядальнік файлаў
+theme_xhred_global_done=Гатова.
+theme_xhred_filemanager_file_save_err=Памылка захавання файла.

@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=Ireki uneko bidea komando shellean <tt>(Alt+Shift+K
 theme_tooltip_terminal_link2=Agindu shell
 theme_xhred_filemanager_context_view=Ikusi
 theme_xhred_file_viewer=Fitxategi ikustailea
+theme_xhred_global_done=Eginda.
+theme_xhred_filemanager_file_save_err=Errorea fitxategia gordetzean.

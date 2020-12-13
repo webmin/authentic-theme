@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=פתח נתיב נוכחי במעטפת הפקוד�
 theme_tooltip_terminal_link2=פגז פיקוד
 theme_xhred_filemanager_context_view=נוף
 theme_xhred_file_viewer=מציג קבצים
+theme_xhred_global_done=בוצע.
+theme_xhred_filemanager_file_save_err=שגיאה בשמירת הקובץ.

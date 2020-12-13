@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <
 theme_tooltip_terminal_link2=پوسته فرمان
 theme_xhred_filemanager_context_view=چشم انداز
 theme_xhred_file_viewer=نمایشگر پرونده
+theme_xhred_global_done=انجام شده.
+theme_xhred_filemanager_file_save_err=خطا در ذخیره فایل.

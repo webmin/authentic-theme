@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=Otvorte aktuálnu cestu v príkazovom shell <tt>(Al
 theme_tooltip_terminal_link2=Príkazová schránka
 theme_xhred_filemanager_context_view=vyhliadka
 theme_xhred_file_viewer=Prehliadač súborov
+theme_xhred_global_done=Hotový.
+theme_xhred_filemanager_file_save_err=Chyba pri ukladaní súboru.

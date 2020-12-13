@@ -25,3 +25,5 @@ theme_xhred_path_to_console2=コマンドシェルで現在のパスを開く<tt
 theme_tooltip_terminal_link2=コマンドシェル
 theme_xhred_filemanager_context_view=見る
 theme_xhred_file_viewer=ファイルビューア
+theme_xhred_global_done=完了。
+theme_xhred_filemanager_file_save_err=ファイルの保存中にエラーが発生しました。

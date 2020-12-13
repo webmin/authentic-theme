@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt+Shif
 theme_tooltip_terminal_link2=명령 셸
 theme_xhred_filemanager_context_view=전망
 theme_xhred_file_viewer=파일 뷰어
+theme_xhred_global_done=끝난.
+theme_xhred_filemanager_file_save_err=파일을 저장하는 중에 오류가 발생했습니다.

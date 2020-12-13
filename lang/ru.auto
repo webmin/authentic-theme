@@ -779,3 +779,5 @@ theme_xhred_path_to_console2=Открыть текущий путь в кома�
 theme_tooltip_terminal_link2=Командная оболочка
 theme_xhred_filemanager_context_view=Посмотреть
 theme_xhred_file_viewer=Просмотрщик файлов
+theme_xhred_global_done=Готово.
+theme_xhred_filemanager_file_save_err=Ошибка при сохранении файла.

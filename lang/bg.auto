@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=Отворете текущия път в кома�
 theme_tooltip_terminal_link2=Командна обвивка
 theme_xhred_filemanager_context_view=Изглед
 theme_xhred_file_viewer=Преглед на файлове
+theme_xhred_global_done=Свършен.
+theme_xhred_filemanager_file_save_err=Грешка при запазване на файла.

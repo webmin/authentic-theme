@@ -990,3 +990,5 @@ theme_xhred_path_to_console2=Nyissa meg az aktuális útvonalat a <tt>parancssor
 theme_tooltip_terminal_link2=Parancshéj
 theme_xhred_filemanager_context_view=Kilátás
 theme_xhred_file_viewer=File Viewer
+theme_xhred_global_done=Kész.
+theme_xhred_filemanager_file_save_err=Hiba történt a fájl mentésekor.
