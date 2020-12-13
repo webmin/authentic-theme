@@ -1,6 +1,8 @@
 ## Changelog
 
-#### Version 19.63-beta1 (November 17, 2020)
+#### Version 19.70-beta1 (December 13, 2020)
+* Add ability to preview any files in File Manager
+* Add access to file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
 
 #### Version 19.62 (November 08, 2020)
