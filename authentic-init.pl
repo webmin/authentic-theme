@@ -466,15 +466,7 @@ sub embed_css_bundle
 
 sub embed_css_night_rider
 {
-    if (theme_night_mode()) {
-        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
-    }
-}
-
-sub embed_css_content_palette
-{
-    if (theme_night_mode()) {
+    if (theme_night_mode_login()) {
         print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
     }

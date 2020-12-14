@@ -1868,7 +1868,7 @@ sub embed_login_head
         print $file_contents;
         print '</style>';
 
-        if (theme_night_mode()) {
+        if (theme_night_mode_login()) {
             my $file_contents =
               read_file_contents("$root_directory/$current_theme/unauthenticated/css/palettes/nightrider.min.css");
             print '<style>';
