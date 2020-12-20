@@ -122,6 +122,7 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_module_filemanager_switch_user = true,
     config_portable_module_filemanager_remember_tabs = true,
     config_portable_module_filemanager_editor_maximized = false,
+    config_portable_module_filemanager_view_limit = 512000,
 
     config_portable_module_xsql_fit_content_screen_height = false,
 
