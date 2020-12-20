@@ -1718,7 +1718,7 @@ sub print_favorites
                     print '
               <li class="menu-exclude ui-sortable-handle">
                   <a class="menu-exclude-link" href="'
-                      . (string_starts_with($ln, "!edit") ? undef : $gconfig{'webprefix'}) .
+                      . ((string_starts_with($ln, "!edit") || string_starts_with($ln, "!view")) ? undef : $gconfig{'webprefix'}) .
                       ($ln) . '"><i data-product="' . ($ic) . '" class="wbm-' .
                       ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $tl . '
@@ -3375,8 +3375,6 @@ sub get_xhr_request
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
 
             my $module           = $in{'xhr-encoding_convert_cmodule'};
-            my $limit            = $in{'xhr-encoding_convert_limit'};
-            my $binary           = $in{'xhr-encoding_convert_binary'};
             my $jailed_user      = get_fm_jailed_user($module, 1);
             my $jailed_user_home = get_fm_jailed_user($module);
             my $cfile            = $in{'xhr-encoding_convert_file'};
@@ -3386,18 +3384,14 @@ sub get_xhr_request
             } else {
                 set_user_level();
             }
-
-            my $data;
-            if ($binary) {
-                $data = read_file_contents($cfile, $limit);
-                $data =~ s/[^[:print:]\n\r\t]/ /g;
-            } else {
-                eval {
-                    $data = Encode::encode('utf-8',
-                                           Encode::decode($in{'xhr-encoding_convert_name'},
-                                                          read_file_contents($cfile, $limit)
-                                           ));
-                };
+            my $data = &ui_read_file_contents_limit(
+                                                    { 'file',    $cfile, 'limit', $in{'xhr-encoding_convert_limit'},
+                                                      'reverse', $in{'xhr-encoding_convert_reverse'},
+                                                      'head',    $in{'xhr-encoding_convert_head'},
+                                                      'tail',    $in{'xhr-encoding_convert_tail'}
+                                                    });
+            if (-s $cfile < 128 || -T $cfile) {
+                eval {$data = Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, $data));};
             }
             print $data;
         } elsif ($in{'xhr-file_stats'} eq '1') {
@@ -3414,10 +3408,8 @@ sub get_xhr_request
             }
             my $fz = recursive_disk_usage($cfile);
             $fz = nice_size($fz, -1);
-            my $f = &backquote_command(
-              "file " . quotemeta($cfile)." 2>/dev/null");
-            my $s = &backquote_command(
-              "stat " . quotemeta($cfile)." 2>/dev/null");
+            my $f = &backquote_command("file " . quotemeta($cfile) . " 2>/dev/null");
+            my $s = &backquote_command("stat " . quotemeta($cfile) . " 2>/dev/null");
             $f = trim($f);
             $s =~ /(Size:)(\s+)(\d+)(\s+)/;
             my $sz = length($3) + length($4);
