@@ -16,6 +16,11 @@ our (%in,
      $remote_user,
      $get_user_level);
 
+=head2 settings(file, [grep_pattern])
+Parses given JavaScript filename to a hash reference
+
+=cut
+
 sub settings
 {
     my ($f, $e) = @_;
@@ -23,7 +28,8 @@ sub settings
     if (-r $f) {
         my $k = read_file_contents($f);
         my %k = $k =~ /(.*?)=(.*)/g;
-        delete @k{ grep(!/^$e/, keys %k) };
+        delete @k{ grep(!/^$e/, keys %k) }
+          if ($e);
         foreach my $s (keys %k) {
             $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
             $k{$s} =~ s/\\'/'/g;
@@ -42,7 +48,6 @@ sub ui_button_group_local
     $rv = "<div class=\"btn-group $extra_class\">$buttons</div>";
     return $rv;
 }
-
 
 sub ui_element
 {
@@ -80,7 +85,8 @@ sub ui_element
     if ($e =~ /^(button|input|select|textarea)$/) {
         if ($c->{'autofocus'} =~ /^(false|0)$/) {
             delete $c->{'autofocus'};
-        } 
+        }
+
         # If element is empty trigger autofocus
         elsif ($e =~ /input|textarea/ && !$c->{'value'}) {
             $c->{'autofocus'} = " autofocus";
