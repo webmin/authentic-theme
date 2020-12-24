@@ -415,8 +415,12 @@ sub exec_search
     my $exclude = $in{'exclude'};
     my $replace = $in{'grepreplace'};
     my $caseins = $in{'caseins'};
-    my $follow = ($in{'follow'} ? 1 : 0);
-    my $regex  = ($in{'regex'}  ? 1 : 0);
+    my $follow  = ($in{'follow'} || $in{'limit_type'} == 3 ? 1 : 0);
+    my $regex   = ($in{'regex'}                            ? 1 : 0);
+    my $ouser   = $in{'limit_user'};
+    my $ogroup  = $in{'limit_group'};
+    my $otype   = $in{'limit_type'};
+    my $osize   = $in{'limit_size'};
     my @results;
     my @excludes;
 
@@ -457,7 +461,103 @@ sub exec_search
                                    }
                                }
                            }
-                           if (!$exclude || (@excludes && !$excluded)) {
+                           my $extra_exclude;
+                           if ($ouser || $ogroup || $osize) {
+                               my $found_cwd  = &simplify_path("$cwd/$found");
+                               my @found_stat = stat($found_cwd);
+                               if ($ouser && $ouser ne getpwuid($found_stat[4])) {
+                                   $extra_exclude = 1;
+                               }
+                               if ($ogroup && $ogroup ne getgrgid($found_stat[5])) {
+                                   $extra_exclude = 1;
+                               }
+                               if ($osize) {
+                                   my ($osize_operator) = $osize =~ /\s*([\D]+)\d/;
+                                   my ($osize_size)     = $osize =~ /\s*([\d]+)\s*/;
+                                   my ($osize_unit)     = $osize =~ /\s*\d+\s*(\p{L}+)/;
+                                   my $file_size        = $found_stat[7];
+                                   if ($otype == 2 && -d $found_cwd) {
+                                       $file_size = recursive_disk_usage($found_cwd);
+                                   }
+                                   $osize_operator = trim($osize_operator);
+                                   $osize_size     = int(trim($osize_size));
+                                   $osize_unit     = lc(trim($osize_unit));
+                                   if ($osize_size) {
+                                       if ($osize_unit) {
+                                           if ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_kB'}) ||
+                                               $osize_unit eq lc($theme_text{'theme_xhred_nice_size_kIB'}) ||
+                                               string_starts_with($osize_unit, "k") ||
+                                               string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_kB'})))
+                                           {
+                                               $osize_size *= 1024;
+                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_MB'}) ||
+                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_MIB'}) ||
+                                                string_starts_with($osize_unit, "m") ||
+                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_MB'})))
+                                           {
+                                               $osize_size *= 1024 * 1024;
+                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_GB'}) ||
+                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_GIB'}) ||
+                                                string_starts_with($osize_unit, "g") ||
+                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_GB'})))
+                                           {
+                                               $osize_size *= 1024 * 1024 * 1024;
+                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_TB'}) ||
+                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_TIB'}) ||
+                                                string_starts_with($osize_unit, "t") ||
+                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_TB'})))
+                                           {
+                                               $osize_size *= 1024 * 1024 * 1024 * 1024;
+                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_PB'}) ||
+                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_PIB'}) ||
+                                                string_starts_with($osize_unit, "p") ||
+                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_PB'})))
+                                           {
+                                               $osize_size *= 1024 * 1024 * 1024 * 1024 * 1024;
+                                           }
+                                       }
+                                       if ($osize_operator eq '<') {
+                                           if ($osize_size <= $file_size) {
+                                               $extra_exclude = 1;
+                                           }
+                                       } elsif ($osize_operator eq '<=') {
+                                           if ($osize_size < $file_size) {
+                                               $extra_exclude = 1;
+                                           }
+                                       } elsif ($osize_operator eq '>') {
+                                           if ($osize_size >= $file_size) {
+                                               $extra_exclude = 1;
+                                           }
+                                       } elsif ($osize_operator eq '>=') {
+                                           if ($osize_size > $file_size) {
+                                               $extra_exclude = 1;
+                                           }
+                                       } elsif ($osize_operator eq '!=') {
+                                           if ($osize_size == $file_size) {
+                                               $extra_exclude = 1;
+                                           }
+
+                                       } elsif (!$osize_operator || $osize_operator eq '=' || $osize_operator eq '==') {
+                                           if ($osize_size != $file_size) {
+                                               $extra_exclude = 1;
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                           if ($otype) {
+                               my $found_cwd = &simplify_path("$cwd/$found");
+                               if ($otype == 1 && !-f $found_cwd) {
+                                   $extra_exclude = 1;
+                               }
+                               if ($otype == 2 && !-d $found_cwd) {
+                                   $extra_exclude = 1;
+                               }
+                               if ($otype == 3 && !-l $found_cwd) {
+                                   $extra_exclude = 1;
+                               }
+                           }
+                           if (!$extra_exclude && (!$exclude || (@excludes && !$excluded))) {
                                push(@results, $found);
                            }
                        }
@@ -573,7 +673,7 @@ sub print_content
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
         $page      = int($in{'page'})     || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
-        $pages = ceil(($totals) / $pagelimit);
+        $pages     = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
             $page = $pages;
             $in{'page'} = $page;
@@ -655,7 +755,7 @@ sub print_content
     if (server_pagination_enabled($totals, $max_allowed, $query)) {
         $page      = int($in{'page'})     || 1;
         $pagelimit = int($in{'paginate'}) || int($tuconfig_per_page) || 30;
-        $pages = ceil(($totals) / $pagelimit);
+        $pages     = ceil(($totals) / $pagelimit);
         if ($page > $pages) {
             $page = $pages;
             $in{'page'} = $page;
@@ -698,12 +798,12 @@ sub print_content
       ""
       .
       (
-                  text(nice_number($info_total,   ","),
-                       nice_number($info_files,   ","),
-                       nice_number($info_folders, ","),
-                       nice_number($totals,       ","),
-                       nice_number($pages,        ",")
-                  )
+        text(nice_number($info_total,   ","),
+             nice_number($info_files,   ","),
+             nice_number($info_folders, ","),
+             nice_number($totals,       ","),
+             nice_number($pages,        ",")
+        )
       ) .
       "</div>";
 
@@ -799,14 +899,14 @@ sub print_content
                 $is_gpg       = 1;
             }
             if ($type_archive =~ /application-zip/ ||
-                $type_archive =~ /application-x-7z-compressed/ ||
-                $type_archive =~ /application-x-rar|application-vnd\.rar/ ||
-                $type_archive =~ /application-x-rpm/ ||
+                $type_archive =~ /application-x-7z-compressed/              ||
+                $type_archive =~ /application-x-rar|application-vnd\.rar/   ||
+                $type_archive =~ /application-x-rpm/                        ||
                 $type_archive =~ /application-x-deb|debian\.binary-package/ ||
-                $type_archive =~ /x-compressed-tar/ || 
-                $type_archive =~ /-x-tar/ ||
-                $type_archive =~ /-x-bzip/ ||
-                $type_archive =~ /-gzip/ ||
+                $type_archive =~ /x-compressed-tar/                         ||
+                $type_archive =~ /-x-tar/                                   ||
+                $type_archive =~ /-x-bzip/                                  ||
+                $type_archive =~ /-gzip/                                    ||
                 $type_archive =~ /-x-xz/)
             {
                 $is_archive = 1;
@@ -889,16 +989,16 @@ sub print_content
 
     $list_data{'form'} .= &ui_hidden("path", $path), "\n";
     $list_data{'form'} .= '</form>';
-    $list_data{'success'}     = (length $in{'success'}     ? $in{'success'}            : undef);
-    $list_data{'error'}       = (length $in{'error'}       ? $in{'error'} : undef);
-    $list_data{'error_fatal'} = (length $in{'error_fatal'} ? $in{'error_fatal'}        : undef);
-    $list_data{'output'}      = (length $in{'output'}      ? $in{'output'}             : undef);
+    $list_data{'success'}              = (length $in{'success'}     ? $in{'success'}     : undef);
+    $list_data{'error'}                = (length $in{'error'}       ? $in{'error'}       : undef);
+    $list_data{'error_fatal'}          = (length $in{'error_fatal'} ? $in{'error_fatal'} : undef);
+    $list_data{'output'}               = (length $in{'output'}      ? $in{'output'}      : undef);
     $list_data{'page_requested'}       = $page;
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;
-    $list_data{'searched'}             = $query ? 1 : 0;
+    $list_data{'searched'}             = $query                 ? 1 : 0;
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
-    $list_data{'flush_reset'}          = $in{'flush_reset'} ? 1 : 0;
+    $list_data{'flush_reset'}          = $in{'flush_reset'}     ? 1 : 0;
     $list_data{'udata'} = { user   => $remote_user_info[0],
                             home   => $remote_user_info[7],
                             uid    => $remote_user_info[2],

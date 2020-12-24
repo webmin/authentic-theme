@@ -1261,3 +1261,10 @@ theme_xhred_filemanager_view_head_and_reverse=Head and reverse file output
 theme_xhred_filemanager_view_tail=Tail file output
 theme_xhred_filemanager_view_tail_and_reverse=Tail and reverse file output
 theme_xhred_filemanager_view_head_and_tail=Head and tail file output
+
+theme_xhred_filemanager_search_info_search_dir=Search directory
+theme_xhred_filemanager_search_limit_user=Owned by user
+theme_xhred_filemanager_search_limit_group=Owned by group
+theme_xhred_filemanager_search_limit_type=File type
+theme_xhred_filemanager_search_limit_size=File size
+theme_xhred_filemanager_search_limit_size_desc=e.g. <2 K or >1 M
