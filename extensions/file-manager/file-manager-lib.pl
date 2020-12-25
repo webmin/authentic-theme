@@ -472,74 +472,103 @@ sub exec_search
                                    $extra_exclude = 1;
                                }
                                if ($osize) {
-                                   my ($osize_operator) = $osize =~ /\s*([\D]+)\d/;
-                                   my ($osize_size)     = $osize =~ /\s*([\d]+)\s*/;
-                                   my ($osize_unit)     = $osize =~ /\s*\d+\s*(\p{L}+)/;
-                                   my $file_size        = $found_stat[7];
+                                   my ($osize_operator)    = $osize =~ /\s*([\D]+)\d/;
+                                   my ($osize_size)        = $osize =~ /\s*([\d]+)\s*/;
+                                   my ($osize_unit)        = $osize =~ /\s*\d+\s*(\p{L}+)/;
+                                   my ($osize_operator_bi) = $osize =~ /\s*[\D]+\d.*?-\s*([\D]+)\d/;
+                                   my ($osize_size_bi)     = $osize =~ /\s*[\d]+\s*.*?-.*?([\d]+)\s*/;
+                                   my ($osize_unit_bi)     = $osize =~ /\s*\d+\s*\p{L}+\s*-.*?[\d]+\s*(\p{L}+)/;
+                                   my $file_size           = $found_stat[7];
+                                   my $osize_size_format   = sub {
+                                       my ($unit, $size) = @_;
+                                       if ($unit eq lc($theme_text{'theme_xhred_nice_size_kB'}) ||
+                                           $unit eq lc($theme_text{'theme_xhred_nice_size_kIB'}) ||
+                                           string_starts_with($unit, "k") ||
+                                           string_starts_with($unit, lc($theme_text{'theme_xhred_nice_size_kB'})))
+                                       {
+                                           $size *= 1024;
+                                       } elsif ($unit eq lc($theme_text{'theme_xhred_nice_size_MB'}) ||
+                                                $unit eq lc($theme_text{'theme_xhred_nice_size_MIB'}) ||
+                                                string_starts_with($unit, "m") ||
+                                                string_starts_with($unit, lc($theme_text{'theme_xhred_nice_size_MB'})))
+                                       {
+                                           $size *= 1024 * 1024;
+                                       } elsif ($unit eq lc($theme_text{'theme_xhred_nice_size_GB'}) ||
+                                                $unit eq lc($theme_text{'theme_xhred_nice_size_GIB'}) ||
+                                                string_starts_with($unit, "g") ||
+                                                string_starts_with($unit, lc($theme_text{'theme_xhred_nice_size_GB'})))
+                                       {
+                                           $size *= 1024 * 1024 * 1024;
+                                       } elsif ($unit eq lc($theme_text{'theme_xhred_nice_size_TB'}) ||
+                                                $unit eq lc($theme_text{'theme_xhred_nice_size_TIB'}) ||
+                                                string_starts_with($unit, "t") ||
+                                                string_starts_with($unit, lc($theme_text{'theme_xhred_nice_size_TB'})))
+                                       {
+                                           $size *= 1024 * 1024 * 1024 * 1024;
+                                       } elsif ($unit eq lc($theme_text{'theme_xhred_nice_size_PB'}) ||
+                                                $unit eq lc($theme_text{'theme_xhred_nice_size_PIB'}) ||
+                                                string_starts_with($unit, "p") ||
+                                                string_starts_with($unit, lc($theme_text{'theme_xhred_nice_size_PB'})))
+                                       {
+                                           $size *= 1024 * 1024 * 1024 * 1024 * 1024;
+                                       }
+                                       return $size;
+
+                                   };
+                                   my $extra_exclude_test = sub {
+                                       my ($operator, $osize, $fsize) = @_;
+                                       my $exclude;
+                                       if ($operator eq '<') {
+                                           if ($osize <= $fsize) {
+                                               $exclude = 1;
+                                           }
+                                       } elsif ($operator eq '<=') {
+                                           if ($osize < $fsize) {
+                                               $exclude = 1;
+                                           }
+                                       } elsif ($operator eq '>') {
+                                           if ($osize >= $fsize) {
+                                               $exclude = 1;
+                                           }
+                                       } elsif ($operator eq '>=') {
+                                           if ($osize > $fsize) {
+                                               $exclude = 1;
+                                           }
+                                       } elsif ($operator eq '!=') {
+                                           if ($osize == $fsize) {
+                                               $exclude = 1;
+                                           }
+
+                                       } elsif (!$operator || $operator eq '=' || $operator eq '==') {
+                                           if ($osize != $fsize) {
+                                               $exclude = 1;
+                                           }
+                                       }
+                                       return $exclude;
+                                   };
                                    if ($otype == 2 && -d $found_cwd) {
                                        $file_size = recursive_disk_usage($found_cwd);
                                    }
-                                   $osize_operator = trim($osize_operator);
-                                   $osize_size     = int(trim($osize_size));
-                                   $osize_unit     = lc(trim($osize_unit));
+                                   $osize_operator    = trim($osize_operator);
+                                   $osize_size        = int(trim($osize_size));
+                                   $osize_unit        = lc(trim($osize_unit));
+                                   $osize_operator_bi = trim($osize_operator_bi);
+                                   $osize_size_bi     = int(trim($osize_size_bi));
+                                   $osize_unit_bi     = lc(trim($osize_unit_bi));
                                    if ($osize_size) {
+                                       my $osize_size_ = $osize_size;
                                        if ($osize_unit) {
-                                           if ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_kB'}) ||
-                                               $osize_unit eq lc($theme_text{'theme_xhred_nice_size_kIB'}) ||
-                                               string_starts_with($osize_unit, "k") ||
-                                               string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_kB'})))
-                                           {
-                                               $osize_size *= 1024;
-                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_MB'}) ||
-                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_MIB'}) ||
-                                                string_starts_with($osize_unit, "m") ||
-                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_MB'})))
-                                           {
-                                               $osize_size *= 1024 * 1024;
-                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_GB'}) ||
-                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_GIB'}) ||
-                                                string_starts_with($osize_unit, "g") ||
-                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_GB'})))
-                                           {
-                                               $osize_size *= 1024 * 1024 * 1024;
-                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_TB'}) ||
-                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_TIB'}) ||
-                                                string_starts_with($osize_unit, "t") ||
-                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_TB'})))
-                                           {
-                                               $osize_size *= 1024 * 1024 * 1024 * 1024;
-                                           } elsif ($osize_unit eq lc($theme_text{'theme_xhred_nice_size_PB'}) ||
-                                                $osize_unit eq lc($theme_text{'theme_xhred_nice_size_PIB'}) ||
-                                                string_starts_with($osize_unit, "p") ||
-                                                string_starts_with($osize_unit, lc($theme_text{'theme_xhred_nice_size_PB'})))
-                                           {
-                                               $osize_size *= 1024 * 1024 * 1024 * 1024 * 1024;
-                                           }
+                                           $osize_size_ = &$osize_size_format($osize_unit, $osize_size_);
                                        }
-                                       if ($osize_operator eq '<') {
-                                           if ($osize_size <= $file_size) {
-                                               $extra_exclude = 1;
-                                           }
-                                       } elsif ($osize_operator eq '<=') {
-                                           if ($osize_size < $file_size) {
-                                               $extra_exclude = 1;
-                                           }
-                                       } elsif ($osize_operator eq '>') {
-                                           if ($osize_size >= $file_size) {
-                                               $extra_exclude = 1;
-                                           }
-                                       } elsif ($osize_operator eq '>=') {
-                                           if ($osize_size > $file_size) {
-                                               $extra_exclude = 1;
-                                           }
-                                       } elsif ($osize_operator eq '!=') {
-                                           if ($osize_size == $file_size) {
-                                               $extra_exclude = 1;
-                                           }
-
-                                       } elsif (!$osize_operator || $osize_operator eq '=' || $osize_operator eq '==') {
-                                           if ($osize_size != $file_size) {
-                                               $extra_exclude = 1;
+                                       $extra_exclude = &$extra_exclude_test($osize_operator, $osize_size_, $file_size);
+                                       if (!$extra_exclude) {
+                                           if ($osize_size && $osize_size_bi) {
+                                               my $osize_size_bi_ = $osize_size_bi;
+                                               if ($osize_unit_bi) {
+                                                   $osize_size_bi_ = &$osize_size_format($osize_unit, $osize_size_bi_);
+                                               }
+                                               $extra_exclude =
+                                                 &$extra_exclude_test($osize_operator_bi, $osize_size_bi_, $file_size);
                                            }
                                        }
                                    }
