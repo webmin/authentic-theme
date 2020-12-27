@@ -3,21 +3,28 @@ extensions_mail_flag_spam_status_data=$1 von $2
 extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
+
 theme_xhred_textarea_to_clipboard=Ausgewählte Textbereichsinhalte wurden erfolgreich in die Zwischenablage kopiert
+
 theme_xhred_global_alias=Alias
+
 theme_xhred_mail_composer_real_name=Echter Name
 theme_xhred_mail_composer_username=Nutzername
+
 settings_global_palette_unauthenticated=Farbpalette der Anmeldeseite
+
 settings_config_save_and_next=Speichern und weiter
 settings_config_configuration_category=Konfigurationskategorie
 config_search_options_all=Durchsuchen Sie alle Modulkonfigurationsoptionen
 theme_xhred_editing_config_file=Konfigurationsdatei bearbeiten
+
 theme_xhred_login_message_2fa=Die Zwei-Faktor-Authentifizierung wurde aktiviert, damit sich dieser Benutzer anmelden kann
 theme_xhred_global_verify=Überprüfen
 settings_show_terminal_link2=Befehls-Shell-Schaltfläche anzeigen
 settings_hotkey_shell2=Hotkey für die Befehlsshell
 theme_xhred_path_to_console2=Öffnen Sie den aktuellen Pfad in der Befehlsshell <tt>(Alt+Umschalt+K)</tt>
 theme_tooltip_terminal_link2=Befehlsshell
+
 theme_xhred_filemanager_context_view=Aussicht
 theme_xhred_file_viewer=Datei-Viewer
 theme_xhred_global_done=Getan.
@@ -27,6 +34,7 @@ theme_xhred_filemanager_view_head_and_reverse=Ausgabe der Kopf- und Rückwärtsd
 theme_xhred_filemanager_view_tail=Tail-Dateiausgabe
 theme_xhred_filemanager_view_tail_and_reverse=Tail- und Reverse-Dateiausgabe
 theme_xhred_filemanager_view_head_and_tail=Ausgabe der Kopf- und Schwanzdatei
+
 theme_xhred_filemanager_search_info_search_dir=Suchverzeichnis
 theme_xhred_filemanager_search_limit_user=Im Besitz des Benutzers
 theme_xhred_filemanager_search_limit_group=Im Besitz der Gruppe

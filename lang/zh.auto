@@ -3,35 +3,48 @@ extensions_mail_flag_spam_status_data=2美元中的1美元
 extensions_mail_flag_tls_on=标准加密（TLS）
 extensions_mail_flag_tls_off=未加密的邮件
 extensions_mail_flag_tls_none=加密状态未知
+
 theme_xhred_settings_right_theme_bgs=主题背景
 theme_xhred_settings_right_theme_bgs_title=主题背景
 settings_right_bgs_title=可以在此处设置登录页面的主题背景。唯一受支持的格式是<kbd>.png</kbd> ，以提供Alpha透明度。
 settings_right_bg_unauthenticated_users=未经身份验证的用户的背景
 settings_right_theme_left_background_title=主题背景控制
+
 theme_xhred_find_in_config_files=在配置文件中查找
 theme_xhred_find_in_config_files_result_found_single=在$2文件中找到$1个结果，价格为$3
 theme_xhred_find_in_config_files_result_found_multi=在$2文件中以$3的价格找到$1个结果
 theme_xhred_find_in_config_files_results_found=在$2文件中以$3的价格找到$1个结果
+
 theme_xhred_filemanager_context_symlink=创建新的符号链接
 theme_xhred_global_symbolic=符号链接
 theme_xhred_global_target=目标
 settings_sysinfo_max_servers=显示的最大虚拟服务器
+
 right_download_is_ready=您下载已准备就绪。
 theme_xhred_download_is_being_prepared=您的下载正在准备中。可能要花一点时间。请稍候 ..
 theme_xhred_backup_is_being_prepared=您的备份正在准备中。可能要花一点时间。请稍候 ..
+
 settings_mail_ui=启用新邮件界面
+
 settings_show_theme_configuration_for_admins_only=显示主题设置按钮仅适用于管理员
 settings_show_theme_configuration_for_admins_only_error=访问被拒绝：管理员阻止了对用户定制的访问
+
 theme_xhred_tooltip_navigation_pinned=固定/取消固定导航菜单
 settings_hotkey_navigation=切换导航菜单的热键
+
 theme_xhred_search_in_webmin=搜索Webmin
 theme_xhred_search_in_usermin=搜索Usermin
 theme_xhred_search_in_virtualserver=搜索Virtualmin
 theme_xhred_search_in_servermanager=搜索Cloudmin
+
 theme_xhred_filemanager_context_clipboard_selection=将选择内容复制到剪贴板
+
 settings_hotkey_slider=切换侧滑块的热键
+
 theme_git_update_locked=由于没有与GitHub的连接或其API速率限制过高，无法完成主题更新。对于后面未经身份验证的请求，速率限制允许每小时最多60个请求。稍后再试，或使用控制台通过更新脚本手动完成。
+
 settings_collapse_navigation_link=显示固定/取消固定按钮
+
 settings_cache_interval=运行更新检查的间隔
 settings_cache_interval_1h=每隔一小时
 settings_cache_interval_12h=每12小时
@@ -42,11 +55,15 @@ settings_cache_interval_1m=每月一次
 settings_cache_interval_3m=每3个月一次
 settings_cache_interval_6m=一年两次
 settings_cache_interval_1y=一年一次
+
 theme_xhred_reload_notification=主题配置已更改，但未保存。页面将被重新加载，以重置为当前设置。
+
 theme_xhred_global_save_as=另存为
 theme_xhred_editor_save_file_as=另存为
 theme_xhred_global_configuration=组态
+
 body_used_cached_total=总计$1 /已使用$3 /已使用$2
+
 theme_xhred_favorites_add=添加到收藏夹
 theme_xhred_favorites_remove=从收藏夹中删除
 theme_xhred_select_deselect=选择/取消选择当前项目
@@ -63,12 +80,14 @@ theme_xhred_mail_no_new_mail=没有新邮件
 theme_xhred_editor_set_syntax=设定语法
 theme_xhred_global_menu=菜单
 theme_xhred_shell_aborted=行动取消
+
 theme_xhred_connection_reboot=重新启动
 theme_xhred_connection_reboot_details=服务器正在重新启动。请稍候 ..
 settings_leftmenu_custom_links_description=可以将自定义的额外链接注入到导航菜单中。 <br><br>需要键<em>title</em>，<em>link</em>和<em>icon</em>； （可选）您可以通过指定<em>level</em>键，并在逗号分隔的列表中指定值，以定义在哪种登录模式下显示链接，该值包含：<br><br> <em>0</ em >-管理员登录； <br><em> 1 </em>-经销商登录；<br> <em>2</em>-服务器所有者登录； <br><em> 3 </em>-用户登录；<br> <em>4</em>-系统所有者登录。<br><br>这将要求您将有效的JSON对象作为字符串传递，如下例。<hr><pre> {"extra"：[{ "标题"："Google Mail"，"链接"："https://gmail.com/"，"icon"："google"，"级别"："0、1、2、3、4"}，{ "title"："BIND DNS服务器"，"link"："/bind8"，"icon"："服务器"}，{"title"："Usermin"，"link"："/"，"icon"："信封"，"端口"："20000"，"目标"："_ blank"}]} </pre>
 left_favorites_edit=编辑收藏夹
 left_favorites_edit_desc=该页面可用于手动编辑主题收藏夹用户文件。这应该谨慎进行，因为不会对您的更改执行语法或其他有效性检查。
 theme_xhred_filemanager_records_for_server_pagination=目录中用于启动服务器分页的默认项目数
+
 filemanager_global_info_paginated_total1=$4页面上$3项目的$1文件和$2目录
 filemanager_global_info_paginated_total2=$4页面上的$3项目的$1个文件和$2目录
 filemanager_global_info_paginated_total3=$4页面上的$3项目的$1文件和$2目录
@@ -103,6 +122,7 @@ filemanager_archive_file_not_found=文件不存在
 filemanager_archive_gpg_private_error=没有可用的秘密密钥或密钥的密码短语不正确
 theme_xhred_filemanager_errors_extraction=提取时发生以下错误
 theme_xhred_filemanager_extract_option_delete_afterwards=成功提取后删除档案
+
 theme_xhred_login_passphrase_desc=输入您的GPG密钥的密码（如果已设置）。
 theme_xhred_filemanager_encrypt_option_delete_afterwards=成功加密后删除文件
 theme_xhred_filemanager_decrypt_option_delete_afterwards=成功解密后删除文件
@@ -114,6 +134,7 @@ theme_xhred_filemanager_crypt_decrypt=文件正在解密。
 theme_xhred_filemanager_crypt_encrypted=所选文件的加密成功。
 theme_xhred_filemanager_crypt_decrypted=所选文件的解密成功。
 theme_xhred_filemanager_batch_error=它还包括%1常见错误的截断结果。
+
 theme_xhred_global_preview_img=预览图片
 theme_xhred_global_preview_img_sel=预览选定的图像
 theme_xhred_global_preview_img_all=预览所有图片
@@ -128,6 +149,7 @@ theme_xhred_global_toggle_fullscreen=切换全屏
 theme_xhred_global_zoom_in_out=放大/缩小
 theme_xhred_global_prev_arrow_left=上一个（向左箭头）
 theme_xhred_global_next_arrow_right=下一个（向右箭头）
+
 settings_reset_cache_tooltip=通过单击从任何页面重置主题的缓存<br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br>热键
 settings_update_theme_tooltip=从任何页面运行主题更新。通过单击更新到最新的开发版本<br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br>热键安装最新的稳定版，使用不带Meta键的相同组合
 theme_xhred_clear_cache_initiated=清除缓存并重新加载。
@@ -145,19 +167,24 @@ theme_xhred_csf=ConfigServer Security & Firewall
 theme_xhred_global_version=版
 theme_xhred_notify_patching_module_style=为$1应用初始UI补丁并重新加载。
 theme_xhred_global_error_more_details_online=注意：请在我们的%1wiki页面%1在线上阅读有关此错误及其解决方法的更多信息。
+
 theme_xhred_filemanager_search_file_mask=文件遮罩
 theme_xhred_filemanager_search_regex=正则表达式
 theme_xhred_upload_successful=<span>$1个文件</span>已成功上传到$2目录
 theme_xhred_upload_successful_single=<span>$1文件</span>已成功上传到$2目录
 settings_usermin_default_module=默认模块
+
 theme_xhred_search_in_file_open_external=将文件分离到单独的编辑器
 theme_xhred_path_to_console=在终端<tt>（Alt+Shift+K）</tt>中打开当前路径
 theme_xhred_filemanager_editor_revert_content=还原档案
 theme_xhred_filemanager_editor_reverting_content=删除更改并还原为原始文件内容。
+
 theme_xhred_filemanager_exclude_dirs=排除条目
 theme_xhred_filemanager_exclude_dirs_desc=以分号分隔的要排除的文件或子目录列表
+
 theme_global_access_level=访问权限
 theme_global_user_mode=用户模式
+
 theme_xhred_global_attachments=附件
 theme_xhred_editor_tb_font=字形
 theme_xhred_editor_tb_size=尺寸
@@ -191,6 +218,7 @@ theme_xhred_mail_composer_server_attach_error_read=无法读取请求的文件�
 theme_xhred_mail_composer_server_attach_error_dir=目录无法附加
 theme_xhred_mail_composer_discarded_draft=草稿已被丢弃
 theme_xhred_global_undo=撤消
+
 theme_xhred_global_today=今天
 theme_xhred_global_tomorrow=明天
 theme_xhred_mail_composer_scheduled=在%2发送%1
@@ -221,10 +249,14 @@ theme_xhred_nice_size_MBB=兆比特
 theme_xhred_nice_size_kBB=千比特
 settings_table_init_datatables=初始化表排序和搜索的最大行数
 theme_xhred_global_rows=行数
+
 settings_side_slider_blend=继承
+
 settings_theme_make_date=在浏览器中启用日期/时间转换
 settings_theme_make_date_description=如果禁用，将使用服务器提供的日期/时间格式
+
 theme_xhred_reload_lang_notification=主题语言已更改。该页面将被重新加载，以应用新设置。
+
 theme_xhred_global_small=小
 theme_xhred_global_normal=正常
 theme_xhred_global_medium=介质
@@ -232,21 +264,28 @@ theme_xhred_global_large=大
 theme_xhred_global_huge=巨大
 theme_xhred_filemanager_editor_maximized=启动时最大化编辑器面板
 settings_sysinfo_remember_accordions=保存上次使用的手风琴状态
+
 theme_xhred_textarea_to_clipboard=所选textarea内容已成功复制到剪贴板
+
 theme_xhred_global_alias=别名
+
 theme_xhred_mail_composer_real_name=真正的名字
 theme_xhred_mail_composer_username=用户名
+
 settings_global_palette_unauthenticated=登录页面调色板
+
 settings_config_save_and_next=保存并下一步
 settings_config_configuration_category=配置类别
 config_search_options_all=搜索所有模块配置选项
 theme_xhred_editing_config_file=编辑配置文件
+
 theme_xhred_login_message_2fa=已启用此用户的两因素身份验证登录
 theme_xhred_global_verify=校验
 settings_show_terminal_link2=显示命令外壳按钮
 settings_hotkey_shell2=命令外壳热键
 theme_xhred_path_to_console2=在命令外壳<tt>（Alt+Shift+K）</tt>中打开当前路径
 theme_tooltip_terminal_link2=命令外壳
+
 theme_xhred_filemanager_context_view=视图
 theme_xhred_file_viewer=文件浏览器
 theme_xhred_global_done=做完了
@@ -256,6 +295,7 @@ theme_xhred_filemanager_view_head_and_reverse=头文件和反向文件输出
 theme_xhred_filemanager_view_tail=尾文件输出
 theme_xhred_filemanager_view_tail_and_reverse=尾部和反向文件输出
 theme_xhred_filemanager_view_head_and_tail=头和尾文件输出
+
 theme_xhred_filemanager_search_info_search_dir=搜索目录
 theme_xhred_filemanager_search_limit_user=由用户拥有
 theme_xhred_filemanager_search_limit_group=归集团所有

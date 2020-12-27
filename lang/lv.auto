@@ -35,6 +35,7 @@ body_used_and_free=Kopā $1 / $2 bezmaksas / $3 izmantoti
 body_usermin=Usermin versija
 body_virt=Virtuālā atmiņa
 body_webmin=Webmin versija
+
 left_favorites=Izlase
 left_favorites_no=Vēl nebija pievienota neviena izlase. ..
 left_feedback=Sūtīt atsauksmes
@@ -43,6 +44,7 @@ left_others=Citi
 left_refresh_modules=Atsvaidziniet moduļus
 left_search=Meklēt
 left_statistics=Sistēmas statistika
+
 login_danger=Bīstami!
 login_message=Lai pieteiktos serverī, jums jāievada lietotājvārds un parole
 theme_xhred_login_pass=Parole
@@ -52,6 +54,7 @@ login_success=Panākumi!
 theme_xhred_login_token=Žetons
 theme_xhred_login_user=Lietotājvārds
 login_warning=Brīdinājums!
+
 right_aliases=Alias serveri
 right_bw=Joslas platuma lietojums un ierobežojums
 right_dom=Jūsu servera nosaukums
@@ -76,37 +79,44 @@ right_virtdocs2=Papildu dokumentācija
 right_virtualmin=Virtualmin versija
 right_vlcheck=Pārbaudiet Virtualmin licenci
 right_vm2=Cloudmin versija
+
 theme_xhred_session_failed=Pieslēgšanās neizdevās. Lūdzu mēģiniet vēlreiz.
 session_logout=Atteikšanās ir veiksmīga. Izmantojiet zemāk esošo formu, lai vēlreiz pieteiktos.
 session_timed_out=Sesijai beidzās laiks pēc $1 minūtes bezdarbības.
 session_twofailed=Divu faktoru autentifikācija neizdevās: $1
+
 settings_right_options=Iespējas
 settings_right_restore_defaults=Atjaunot noklusējumus
 settings_right_restored=Restaurēts
 settings_right_restoring=Atjaunošana
 settings_right_saved=Saglabāts
 settings_right_saving=Ietaupot
+
 settings_right_theme_extensions=Tēmas paplašinājumi
 settings_right_theme_extensions_title=Tēmas paplašinājumi
 settings_right_file_edit=Rediģēt paplašinājuma failu:
 settings_right_extensions_title=Tēmas plašais dizains ļauj ērti manipulēt ar mērķtiecīgām saskarnes daļām.
+
 theme_xhred_settings_right_theme_logos=Motīvu logotipi
 theme_xhred_settings_right_theme_logos_title=Motīvu logotipi
 settings_right_logos_title=Motīvu logotipus šeit var viegli iestatīt gan autentificētiem, gan neautentificētiem lietotājiem. Ieteicamais logotipa izmērs ir <kbd>180x90</kbd> pikseļi, un vienīgais atbalstītais formāts ir <kbd>.png</kbd>, lai nodrošinātu alfa caurspīdīgumu.
 settings_right_logo_authenticated_users=Logotips autentificētiem lietotājiem
 settings_right_logo_unauthenticated_users=Neautentificētu lietotāju logotips
+
 settings_right_current_theme=Pašreizējā tēma
 settings_right_title=Šī lapa ļauj jums konfigurēt iespējas <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Autentiska tēma</a>. Atjauninot motīvu, iestatījumi tiks saglabāti.
 settings_right_theme_left_configuration_title=Tēmas konfigurācija
 settings_right_theme_left_extensions_title=Motīvu paplašinājumu redaktors
 settings_right_theme_left_logo_title=Motīva logotipa vadība
 settings_right_theme_configurable_options_title=Konfigurējamas opcijas autentiskai tēmai
+
 settings_right_window_options_title=Logu iespējas
 settings_right_navigation_menu_title=Navigācijas izvēlnes opcijas
 settings_right_table_options_title=Tabulas iespējas
 settings_security_title=Drošības trauksmju opcijas
 settings_right_hotkey_options_title=Karsto taustiņu iespējas
 settings_right_sysinfo_page_options_title=Informācijas paneļa opcijas
+
 settings_right_hotkey_custom_options_description=Pielāgotas saites ļauj izmantot ciparus no <code>1</code> līdz <code>9</code>, lai ātri piekļūtu jebkuram derīgam Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> var iegūt no pašlaik atvērtās labās puses ietvara satura lapas, nolasot tā avotu. Ir svarīgi, lai <code>URL</code> sākumā nebūtu slīpsvītra un nebūtu izmantoti prefiksi. Piemēram, lai ātri pārslēgtos uz Apache, iestatiet uz <code>custom link 1</code> lauku <code>/apache/</code>. Ja noklusējuma karsto taustiņu modifikators ir iestatīts uz <code>Alt,</code> noklikšķinot uz <code>Alt+1</code>, tiks atvērts Apache modulis
 settings_hotkey_custom_1=Pielāgota saite <code>1</code>
 settings_hotkey_custom_2=Pielāgota saite <code>2</code>
@@ -117,23 +127,28 @@ settings_hotkey_custom_6=Pielāgota saite <code>6</code>
 settings_hotkey_custom_7=Pielāgota saite <code>7</code>
 settings_hotkey_custom_8=Pielāgota saite <code>8</code>
 settings_hotkey_custom_9=Pielāgota saite <code>9</code>
+
 settings_navigation_color=Krāsu palete
 settings_background_color=Satura lapas krāsu palete
 settings_loader_top=Ekrāna augšdaļā iespējot lapas virzības augšupielādi
 settings_loader_left=Iespējot navigācijas izvēlnes vērpējus
 settings_right_reload=Ielādēt noklusējuma satura lapu
+
 settings_right_hide_table_icons=Slēpt tabulas ikonas
 settings_right_hide_table_icons_description=Pilnībā noņemiet ikonas no satura lapu tabulām un parādiet vienkāršās saites ar labo šavronu
 settings_right_small_table_icons=Nelielas tabulas ikonas
 settings_right_small_table_icons_description=Aizstājiet standarta izmēra tabulas ikonas ar mazām un displeja ikonu saiti, izmantojot rīka padomu
 settings_right_animate_table_icons=Dzīves centrā esošās tabulas ikonas
 settings_right_grayscaled_table_icons=Pelēktoņu tabulas ikonas un piešķir krāsu tikai fokusam
+
 settings_leftmenu_section_hide_refresh_modules=Slēpt saiti atsvaidzināt moduļus
 settings_leftmenu_section_hide_unused_modules=Slēpt sadaļu Neizmantotie moduļi
 settings_favorites=Rādīt izlases pogu
 settings_leftmenu_button_language=Rādīt valodas pogu
 settings_leftmenu_button_refresh=Rādīt atsvaidzināšanas pogu
+
 settings_theme_options_button=Rādīt motīva iestatījumu pogu
+
 settings_hotkeys_active=Iespējot karsto taustiņu izmantošanu
 settings_hotkey_toggle_modifier=Karsto taustiņu modifikators
 settings_hotkey_toggle_key_webmin=Karstais taustiņš Webmin
@@ -146,24 +161,29 @@ settings_hotkey_shell=Karstais taustiņš terminālim
 settings_hotkey_favorites=Karstais taustiņš izlasei
 settings_hotkey_focus_search=Karstais taustiņš meklēšanas laukam
 settings_hotkey_reload=Karstais taustiņš lapas atkārtotai ielādēšanai
+
 settings_sysinfo_easypie_charts=Rādīt diagrammas
 settings_sysinfo_theme_updates=Pārbaudiet, vai nav atjaunināti autentiski motīvi
 settings_sysinfo_csf_updates=Pārbaudiet ConfigServer drošības un ugunsmūra atjauninājumus
 settings_sysinfo_drive_status_on_new_line=Rādīt centrālo procesoru un piedziņas statusu katrā jaunā rindiņā
 settings_sysinfo_expand_all_accordions=Saglabājiet visus akordeonus paplašinātus
 settings_sysinfo_link_mini=Rādīt informācijas paneļa saiti kā pogu
+
 settings_right_page_defaults_title=Noklusētās lapas
 settings_right_default_tab_webmin=Noklusējuma cilne pēc pieteikšanās Webmin
 settings_right_default_tab_usermin=Noklusējuma cilne pēc pieteikšanās Usermin
 settings_right_virtualmin_default=Noklusējuma lapa Virtualmin
 settings_right_cloudmin_default=Noklusējuma lapa Cloudmin
+
 settings_right_clear_local_cache=Iztīrīt kešatmiņu
 settings_right_notification_slider_options_title=Sānu slīdņa iespējas
 settings_side_slider_fixed=Esiet vienmēr redzams
 settings_side_slider_palette=Slīdņu palete
 settings_hotkey_toggle_slider=Karstais taustiņš sānu slīdnim
+
 settings_side_slider_enabled=Iespējot slīdni
 settings_leftmenu_user_html=Rādīt HTML fragmentu
+
 theme_changelog=Changelog
 theme_conference=Tematiskā konference
 theme_development_support=Attīstības atbalsts
@@ -174,6 +194,7 @@ theme_update=Atjaunināt
 theme_update_available=Jaunākais pieejamais laidiens
 theme_update_notice=Atjaunināšanas paziņojums
 theme_version=Autentiska motīva versija
+
 theme_xhred_global_error=Kļūda
 theme_global_warning=Brīdinājums
 theme_global_success=Panākumi
@@ -187,6 +208,7 @@ theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Vienkāršs teksts
+
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
 theme_xhred_titles_dashboard=Mērinstrumentu panelis
@@ -194,6 +216,7 @@ theme_xhred_titles_mail=Pasts
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
+
 theme_xhred_global_please_wait=Lūdzu uzgaidiet. ..
 theme_xhred_filemanager_copying_selected=Kopēšana atlasīta.
 theme_xhred_filemanager_cutting_selected=Izciršana izvēlēta.
@@ -224,6 +247,7 @@ theme_xhred_filemanager_not_decompressable=Nevar atspiest šāda veida failus.
 theme_xhred_filemanager_no_selection_to_copy=Nav kopēšanai atlasīts neviens direktorijs/fails.
 theme_xhred_filemanager_no_selection_to_cut=Neviens direktorijs/fails nav atlasīts griešanai.
 theme_xhred_filemanager_empty_clipboard=Starpliktuve ir tukša.
+
 theme_xhred_filemanager_successful_extraction=Atlasītā (-o) faila (-u) ieguve bija veiksmīga.
 theme_xhred_filemanager_successful_deletion=Dzēšana bija veiksmīga.
 theme_xhred_filemanager_successful_permissions=Atļaujas ir veiksmīgi mainītas.
@@ -231,14 +255,18 @@ theme_xhred_filemanager_successful_ownership=Īpašumtiesības ir veiksmīgi mai
 theme_xhred_filemanager_successful_compression=Kompresija ir veiksmīgi pabeigta.
 theme_xhred_filemanager_successful_directory_creation=Katalogs `<strong>%value</strong>` tika veiksmīgi izveidots.
 theme_xhred_filemanager_successful_file_creation=Fails `<strong>%value</strong>` tika veiksmīgi izveidots.
+
 theme_xhred_notifications_packages_updates=Pakešu atjaunināšana
 theme_xhred_notifications_theme_update=Tēmas atjaunināšana
 theme_xhred_notifications_theme_update_message=Ir pieejama jauna <strong>Authentic Theme</strong> <em>%v</em> versija. Lūdzu, atjauniniet.
 theme_xhred_notifications_firewall_update=Ugunsmūra atjaunināšana
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+
 theme_xhred_notifications_firewall_danger=Ugunsmūra briesmas
 theme_xhred_notifications_firewall_danger_message=Šķiet, ka <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">nedarbojas</i> vai ir apturēts! Neatstājiet savu serveri atklātu, pārbaudiet ugunsmūra iestatījumus (%v)
+
 theme_xhred_notifications_firewall_warning=Ugunsmūra brīdinājums
+
 settings_grayscale_level_navigation=Pelēktoņu filtrs
 settings_grayscale_level_navigation_description=Default/pašreizējais vērtības <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sēpijas filtrs
@@ -253,8 +281,10 @@ settings_brightness_level_navigation=Spilgtuma filtrs
 settings_brightness_level_navigation_description=Default/pašreizējais vērtības <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Kontrasta filtrs
 settings_contrast_level_navigation_description=Default/pašreizējais vērtības <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
 settings_cm_view_palette=Skatītāja krāsu palete
 settings_cm_editor_palette=Kods izceļ krāsu paleti
+
 theme_xhred_filemanager_context_select_all=Izvēlēties visus
 theme_xhred_filemanager_context_select_invert=Apgrieztā izvēle
 theme_xhred_filemanager_context_refresh=atjaunot
@@ -265,6 +295,7 @@ theme_xhred_filemanager_context_cut=Griezt
 theme_xhred_filemanager_context_paste=Ielīmēt
 theme_xhred_filemanager_context_chmod=Mainīt atļaujas
 theme_xhred_filemanager_context_chown=Mainīt īpašnieku
+
 theme_xhred_filemanager_context_new=Jauns
 theme_xhred_filemanager_context_newarchive=Izveidot jaunu arhīvu
 theme_xhred_filemanager_context_delete=Dzēst
@@ -274,9 +305,11 @@ theme_xhred_filemanager_context_extract=Ekstrakts
 theme_xhred_filemanager_context_goto=Atvērt preces atrašanās vietu
 theme_xhred_filemanager_context_properties=Īpašības
 theme_xhred_filemanager_context_search=Meklēt
+
 theme_xhred_filemanager_context_deselect_all=Atsijāt visu
 theme_xhred_filemanager_context_upload=Augšupielādēt pašreizējā direktorijā
 theme_xhred_filemanager_context_download=Lejupielāde no attālināta URL
+
 theme_config_virtualmin=Virtualmin virtuālie serveri
 theme_config_cloudmin=Cloudmin pārvaldītās sistēmas
 settings_right_thirdparties_options_title=Trešo pušu moduļu iespējas
@@ -284,15 +317,19 @@ theme_xhred_filemanager_context_calculate_size=Aprēķiniet lielumu atstarpes ta
 theme_xhred_filemanager_context_bookmarks=Grāmatzīmes
 theme_xhred_filemanager_context_bookmark_current=Grāmatzīme pašlaik atvērts ceļš
 theme_xhred_filemanager_context_transfer=Pārskaitījums
+
 theme_xhred_filemanager_title_symlink_target=Saites mērķis
+
 right_unlimited=Neierobežots
 settings_leftmenu_width=Vēlamais platums
 settings_leftmenu_width_description=Default/pašreizējais platums <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Rādīt slēdžus apgriezti
 settings_switch_rdisplay_description=Šī opcija ļauj iestatīt atšķirīgu secību slēdžiem augšējā kreisajā stūrī. Pēc šīs opcijas maiņas ir nepieciešama pilnīga lapas atkārtota ielāde
+
 theme_xhred_filemanager_context_calculate_selected_size=Aprēķiniet izvēlēto izmēru
 theme_xhred_filemanager_selected_entries=Atlasīts: %value vienības
 theme_xhred_filemanager_manual_path=Ievadiet ceļu manuāli
+
 theme_xhred_datatable_semptytable=Tabulā nav pieejami dati
 theme_xhred_datatable_sinfo=Rāda _START_ līdz _END_ no _TOTAL_ vienumiem
 theme_xhred_datatable_sinfoempty=Rāda 0 līdz 0 no 0 vienībām
@@ -300,6 +337,7 @@ theme_xhred_datatable_slengthmenu=Rādīt _MENU_ vienumus
 theme_xhred_datatable_sloadingrecords=Iekraušana
 theme_xhred_datatable_sprocessing=Notiek apstrāde. ..
 theme_xhred_datatable_szerorecords=Nav atrasts neviens atbilstošs ieraksts
+
 theme_xhred_filemanager_file_edit_but_not_saved=Fails ir rediģēts, bet nav saglabāts.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Ko tu gribi darīt?
 theme_xhred_global_save=Saglabāt
@@ -307,13 +345,16 @@ theme_xhred_global_save_and_close=Saglabājiet un aizveriet
 theme_xhred_global_close_without_saving=Aizveriet, nesaglabājot
 theme_xhred_global_continue_editing=Turpiniet rediģēšanu
 theme_xhred_filemanager_context_download_file=Lejupielādēt
+
 settings_sysinfo_easypie_charts_width=Diagrammu platums
 settings_sysinfo_easypie_charts_scale=Diagrammu mēroga garums
+
 right_return_theme_options=tēmas iespējas
 theme_xhred_datatable_semptydirectory=Katalogs ir tukšs
 theme_xhred_filemanager_context_clipboard=Kopēt ceļu uz starpliktuvi
 theme_xhred_global_warning=Brīdinājums
 theme_xhred_global_close=Aizveriet
+
 theme_xhred_filemanager__no_bookmarks=Nav saglabātu grāmatzīmju
 theme_xhred_filemanager_unbookmark_success=Kataloga <strong><em>%value</em></strong> tika veiksmīgi noņemta no jūsu grāmatzīmēm.
 theme_xhred_filemanager_bookmark=Grāmatzīme pašreizējo direktoriju
@@ -329,21 +370,27 @@ theme_xhred_filemanager_target_conflict_message_1=Ielīmētais mērķis jau past
 theme_xhred_filemanager_target_conflict_message_2=Ielīmētie mērķi jau pastāv! Ko jūs dodat priekšroku?
 theme_xhred_filemanager_target_conflict_replace=Apvienot un aizstāt
 theme_xhred_filemanager_target_conflict_paste=Ielīmēt ar jaunu vārdu
+
 theme_xhred_editor_help_title=Redaktora īsinājumtaustiņi
+
 theme_xhred_filemanager_hide_toolbar=Paslēpt rīkjoslu
 theme_xhred_filemanager_hide_actions=Slēpt darbību kolonnu
 theme_xhred_filemanager_hovered_toolbar=Aktivizējiet peles kursora nolaižamo rīkjoslu
 theme_xhred_filemanager_context_delete_selected=Dzēst atlasīto
+
 theme_xhred_database_adding_new_row=Tiek pievienota jauna rinda
 theme_xhred_database_editing_row=Rediģē atlasīto rindu
 theme_xhred_database_editing_rows=Atlasīto rindu rediģēšana
 theme_xhred_database_adding_new_row_data=Iestatiet datus
+
 theme_xhred_datatable_filter=Filtrēt
+
 theme_xhred_global_update=Atjaunināt
 theme_xhred_global_update_and_return=Atjaunināt un atgriezt
 theme_xhred_global_update_and_close=Atjauniniet un aizveriet
 theme_xhred_global_back=Atpakaļ
 theme_xhred_global_cancel=Atcelt
+
 theme_xhred_database_add_row_successful=Jauna rinda tika veiksmīgi pievienota
 theme_xhred_database_edit_row_successful=Atlasītā rinda tika veiksmīgi atjaunināta
 theme_xhred_database_edit_rows_successful=Atlasītās rindas tika veiksmīgi atjauninātas
@@ -363,9 +410,13 @@ theme_xhred_database_objects_selected_delete=Dzēst atlasītos objektus
 theme_xhred_database_db_selected_drop=Izmest atlasīto datu bāzi
 theme_xhred_database_dbs_selected_drop=Atmetiet atlasītās datu bāzes
 theme_xhred_database_edit_but_not_saved=Tabulas dati ir rediģēti, bet nav saglabāti.
+
 theme_xhred_global_no_such_command=Šķiet, ka izpildāmā <tt>$1</tt> nav instalēta vai neatrodas jūsu sistēmas ceļā.
+
 theme_xhred_global_notice=Paziņojums
+
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
+
 theme_xhred_global_file=Fails
 theme_xhred_global_directory=Katalogs
 theme_xhred_global_no_target=Mērķis neeksistē vai nav pieejams
@@ -376,55 +427,81 @@ theme_xhred_global_all=Visi
 theme_xhred_global_none=Nav
 theme_xhred_global_yes=Jā
 theme_xhred_global_no=Nē
+
 theme_xhred_filemanager_new_tab=Pievienot jaunu cilni (Ctrl+Space)
 theme_xhred_datatable_no_search_results=<span class="h5">Rezultāti nav atrasti</span> <br> Izmēģiniet citu meklēšanu
+
 theme_xhred_filemanager_buffer_error=Neizdevās ielīmēt failus buferī - atļauja ir liegta.
+
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` jau pastāv `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Nevar izveidot $3 `<strong><em>$1</em></strong>` iekšā `<strong><tt>$2</tt></strong>` - atļauja liegta.
+
 filemanager_paste_warning=Neizdevās ielīmēt mērķi (-us). Iespējams, ka pieprasīto (-os) objektu (-us) varēja <em>pārdēvēt, pārvietot</em> vai <em>izdzēst</em>, kamēr/pirms ielīmēšanas. Vēl viens iespējamais iemesls ir tas, ka galamērķi nevar ierakstīt. Ir vērts pārbaudīt objektu atribūtus.
+
 theme_xhred_filemanager_delete_warning=Dzēšana ir veiksmīgi pabeigta, bet ne visiem objektiem. Iespējams, ka pieprasītais (-ie) objekts (-i) pirms dzēšanas varēja būt <em>pārdēvēts</em> vai <em>pārvietots</em>. Cits iespējamais iemesls ir ierobežotas atļaujas (atribūti). Kļūdas ziņojums:
+
 filemanager_rename_exists=$3 ar vārdu `<strong><em>$1</em></strong>` jau pastāv `<strong><tt>$2</tt></strong>`
 filemanager_rename_denied=Nevar pārdēvēt $3. Tas var notikt tāpēc, ka avots $3 ir noņemts vai ierobežotu atļauju dēļ.
+
 theme_xhred_filemanager_successful_rename=Pārdēvēšana `<strong><em><s>%from</s></em></strong>` uz `<strong><em>%to</em></strong>` bija veiksmīgs.
+
 filemanager_global_info_total1=Kopā: $1 fails un $2 direktorijs
 filemanager_global_info_total2=Kopā: $1 faili un $2 direktorijs
 filemanager_global_info_total3=Kopā: $1 fails un $2 direktoriji
 filemanager_global_info_total4=Kopā: $1 faili un $2 direktoriji
+
 theme_xhred_filemanager_selected_entry=Atlasīts: %value vienums
+
 theme_xhred_filemanager_search_query=Vaicājuma maska
 theme_xhred_filemanager_search_match=Atrast rezultātos
 theme_xhred_filemanager_search_replace=Aizstāt rezultātos
+
 theme_xhred_global_find=Atrodi
 theme_xhred_global_replace=Aizvietot
+
 theme_xhred_filemanager_searching_matching=Tiek meklēti `<em>%value</em>` atbilstošie failu/direktoriju nosaukumi, kas satur `<em>%text</em>` tekstu.
 theme_xhred_filemanager_searching_replacing=Aizvietojot atbilstības `<em>%text</em>` ar `<em>%replace</em>` failos ar nosaukumiem, kas satur `<em>%value</em>`.
+
 theme_xhred_filemanager_search_replaced_multi=Atrasts un aizstāts <strong>%value</strong> failos.
 theme_xhred_filemanager_search_replaced=Atrasts un aizstāts <strong> failā.
+
 theme_xhred_filemanager_successful_permissions_with_errors=Atļaujas ir veiksmīgi mainītas, bet ne visiem objektiem:
+
 theme_xhred_filemanager_successful_ownership_with_errors=Īpašumtiesības nav veiksmīgi mainītas visiem objektiem:
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Īpašumtiesības nevar mainīt šādu kļūdu dēļ:
+
 theme_xhred_filemanager_successful_compression_with_errors=Saspiešana ir pabeigta ar šādām kļūdām:
 theme_xhred_filemanager_successful_compression_bg=Kompresija ir veiksmīgi pabeigta. Saspiests fails `<strong>%file</strong>` atrodas `<strong>%path</strong>` direktorijā.
 theme_xhred_filemanager_successful_compression_bg_with_errors=Saspiešana ir pabeigta ar kļūdām. Saspiestajam failam `<strong>%file</strong>` jāatrodas `<strong>%path</strong>` direktorijā.
+
 theme_xhred_filemanager_settings_notification_type=Parādāmo paziņojumu veids
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informācija, brīdinājumi un kļūdas
 theme_xhred_filemanager_settings_notification_type_warn_err=Brīdinājumi un kļūdas
 theme_xhred_filemanager_settings_notification_type_err=Tikai kļūdas
+
 theme_xhred_filemanager_settings_tabs_remember_state=Pirmajā ielādes reizē atjaunojiet iepriekš izmantotās cilnes
 theme_xhred_filemanager_context_open_new_tab=Atvērt jaunā cilnē
+
 theme_xhred_xsql_fit_content_screen_height=Fit datu bāzes tabulas saturu ekrāna augstumā
+
 theme_xhred_datatable_filter_visible_tables=Filtrēt redzamo tabulu (-as)
 theme_xhred_module_help=Palīdzība moduļiem
+
 theme_xhred_server_process_running=Servera process joprojām darbojas!? Vai tiešām vēlaties virzīties prom un jums nav piekļuves izvades informācijai? Pat ja jūs tagad aiziesit, process netiks pārtraukts.
+
 settings_global_options_title=Globālās iespējas
 settings_global_passgen_format=Paroļu ģenerators
 settings_global_passgen_format_description=Iestatiet ģenerētajā parolē izmantoto garumu un rakstzīmju veidu. Noklusējuma vērtība ir vienāda ar <code>15|az,AZ,0-9</code>, kas apzīmē paroli ar 15 rakstzīmēm, kas satur lielos un mazos burtus un ciparus. Īpašās rakstzīmes ir iespējams pievienot arī, izmantojot <code>#</code> hash zīmi
 theme_xhred_password_generator_new=Ģenerēt jaunu paroli <br> (uz starpliktuvi)
 theme_xhred_password_generator_new_success=Ģenerētā parole %password ir veiksmīgi nokopēta starpliktuvē.
+
 theme_fileformat_perl=Perls
 theme_fileformat_perl_placeholder=Šim failam ir jābeidzas ar `1;` veiksmīgi strādāt.
+
 theme_error_access_not_root=Piekļuve liegta: Lai rediģētu motīva konfigurāciju, lietotājam ir nepieciešama piekļuve <em>Webmin Configuration</em> modulim
+
 settings_hide_top_loader=Slēpt augšējo progresa joslu
+
 settings_leftmenu_vm_cm_dropdown_icons=Rādīt simboliskās ikonas nolaižamajā izvēlnē Virtualmin/Cloudmin
 theme_xhred_global_shipped=Nosūtīts
 theme_xhred_global_available=Pieejams
@@ -440,10 +517,12 @@ theme_xhred_notification_none=Nav paziņojumu
 theme_xhred_notification_no_data=Nav savākti dati
 theme_xhred_notification_no_favorites=Nav izlases datu
 theme_xhred_global_theme_version=Tēmas versija
+
 settings_side_slider_sysinfo_enabled=Rādīt informācijas paneļa cilni
 settings_side_slider_notifications_enabled=Rādīt paziņojumu cilni
 settings_side_slider_favorites_enabled=Rādīt izlases cilni
 settings_show_terminal_link=Rādīt termināļa pogu
+
 theme_xhred_sysinfo_system_monitors=Sistēmas monitori
 theme_xhred_sysinfo_server_status=Serveru statuss
 theme_xhred_sysinfo_software_versions=Programmatūras versijas
@@ -451,18 +530,23 @@ theme_xhred_sysinfo_recent_logins=Jaunākie pieteikumi
 theme_xhred_sysinfo_vm_package_updates=Virtualmin pakotnes atjauninājumi
 theme_xhred_sysinfo_disk_quotas=Diska kvotas
 theme_xhred_sysinfo_bandwidth_quotas=Joslas platuma kvotas
+
 left_netdata=Reāllaika monitorings
 settings_leftmenu_netdata=Rādīt Netdata reāllaika uzraudzības saiti
 settings_leftmenu_netdata_link=Netdata servera vēlamā saite
+
 theme_xhred_filemanager_context_chattr=Mainīt atribūtus
 theme_xhred_filemanager_changing_attributes=Iestatot atribūtiem <strong><em>%value</em></strong> atlasītajā failā.
 theme_xhred_filemanager_successful_attributes_with_errors=Visiem objektiem atribūti nav veiksmīgi iestatīti:
 theme_xhred_filemanager_successful_attributes=Atribūti ir veiksmīgi iestatīti.
+
 theme_xhred_filemanager_context_chcon=Mainiet drošības kontekstu
 theme_xhred_filemanager_changing_secontext=Drošības konteksta maiņa uz <strong><em>%value</em></strong> atlasītajā failā.
 theme_xhred_filemanager_successful_secontext_with_errors=Drošības konteksts nav veiksmīgi mainīts visiem objektiem:
 theme_xhred_filemanager_successful_secontext=Drošības konteksts ir veiksmīgi mainīts.
+
 theme_xhred_global_no_results_found=Nekas nav atrasts
+
 theme_new_password_header=Iestatiet jaunu paroli lietotājam
 login_reset=Paroles atkopšana
 theme_xhred_move_top=Pārvietot uz augšu
@@ -475,12 +559,14 @@ settings_show_night_mode_link=Rādīt dienas/nakts režīma pogu
 settings_hotkey_toggle_key_night_mode=Karstais taustiņš tumšās/gaišās paletes pārslēgšanai
 settings_title=Tēmas konfigurācija
 settings_subtitle=Lietotājam
+
 theme_tooltip_night_mode=Dienas/nakts režīma pārslēgšana
 theme_tooltip_terminal_link=Terminālis
 theme_tooltip_language_link=Valoda
 theme_xhred_tooltip_switch_user=Mainīt lietotāju
 theme_tooltip_logout=Izrakstīties
 theme_tooltip_edit_user=Rediģēt lietotāju
+
 settings_sysinfo_easypie_charts_size=Diagrammu diametrs
 theme_xhred_global_choose=Izvēlieties
 theme_xhred_global_select=Izvēlieties
@@ -497,6 +583,7 @@ theme_xhred_global_help=Palīdzība
 settings_right_soft_updates_page_options_title=Programmatūras atjauninājumi
 theme_xhred_git_compare_changes=Salīdziniet izmaiņas
 theme_xhred_filemanager_link_to_clipboard=Simboliskās saites nosaukums ir nokopēts starpliktuvē.
+
 theme_left_mail_prefs=Pasta preferences
 theme_left_mail_change_password=Mainīt paroli
 theme_left_mail_account_functions=Konta funkcijas
@@ -504,12 +591,14 @@ theme_xhred_global_dir_up=Pāriet uz iepriekšējo direktoriju (Backspace)
 theme_xhred_global_module_config=Moduļa konfigurācija
 theme_xhred_global_return=Atgriezties
 theme_xhred_global_return_to_module_index=Atgriezties moduļu rādītājā
+
 theme_xhred_global_complete_changelog=Pilnīga pārmaiņu reģistrēšana
 theme_xhred_global_beta_version=Beta versija
 theme_xhred_global_release=Atlaidiet
 theme_xhred_global_released_on=Atbrīvots
 theme_xhred_global_committed_on=Apņēmusies
 theme_xhred_global_resolved_issues=Atrisinātās problēmas %value izlaidumos
+
 theme_force_upgrade=Piespiest atjaunināšanas motīvu
 theme_xhred_force_upgrade_beta=Instalējiet jaunāko izstrādes versiju (beta)
 theme_xhred_force_upgrade_stable=Instalējiet jaunāko versiju (stabila)
@@ -517,6 +606,7 @@ theme_xhred_source_encoding=Avota kodējums
 theme_update_footer=Lūdzu, laipni ziņojiet par kļūdām $1 krātuvē. Sekojiet tēmas $2 kanālam, lai iegūtu jaunākos atjauninājumus.
 theme_xhred_encoding_manually_set=Kodēšana manuāli
 theme_xhred_filemanager_save_to_change_encoding=Fails ir jāsaglabā, lai varētu mainīt kodējumu.
+
 theme_xhred_filemanager_user_switch=Pārslēgties uz lietotāju (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Atlasot zemāk uzskaitīto lietotājvārdu, jūs pārslēgsit citas darbības, kas jāveic kā šim lietotājam.
 theme_xhred_filemanager_user_switch_description_back=Lai pārslēgtos atpakaļ uz noklusējuma režīmu, izvēlieties pirmo atlasīto iespēju.
@@ -534,23 +624,32 @@ theme_xhred_global_minimize=Samaziniet
 theme_xhred_global_maximize=Maksimizēt
 theme_xhred_global_normalize=Normalizēt
 theme_xhred_global_set_encoding=Iestatīt kodējumu
+
 theme_xhred_sysinfo_update_start=Sistēmas informācija tiek atcerēta.
 theme_xhred_sysinfo_update_end=Sistēmas informācija ir veiksmīgi atcerēta.
 theme_xhred_sysinfo_update_failed=Sistēmas informāciju nevar atcerēties. Pamēģini vēlreiz vēlāk.
+
 theme_xhred_global_development_version=Izstrādes versija
+
 right_vm_server_summary=Virtuālā servera kopsavilkums
+
 settings_webmin_default_module=Noklusējuma modulis Webmin
+
 theme_xhred_global_unbeforeunload_title=Jūsu veiktās izmaiņas, iespējams, netiks saglabātas
 theme_xhred_global_unbeforeunload_message=Ja turpināsit, nesaglabātās izmaiņas šajā lapā var tikt neatgriezeniski zaudētas.
 theme_xhred_global_continue=Turpināt
+
 theme_xhred_global_automatic_refresh=Automātiska atsvaidzināšana
 theme_xhred_global_second=Otrkārt
 theme_xhred_global_seconds=Sekundēs
 theme_xhred_global_minute=Minūti
 theme_xhred_global_minutes=Minūtes
+
 theme_xhred_browser_warning=Lai jūsu datorā būtu vislabākā pieredze ar servera paneli, izmantojiet atbalstītu, atjauninātu pārlūku. <br><br> <em>Internet Explorer</em> vairs netiek atbalstīts. <br><br> Ieteicamās pārlūkprogrammas ir <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> vai <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Lai apietu noteiktos ierobežojumus, jūs varētu lejupielādēt pārlūkprogrammas portatīvo versiju, kurai nav nepieciešama instalēšana.</div>
+
 theme_xhred_filter_content=Filtrējiet saturu
 theme_xhred_log_file_empty=Žurnāla fails ir tukšs
+
 theme_xhred_config_configurable_options=Konfigurējamas opcijas
 theme_xhred_filter_content_no_matches_query=Neviens saturs neatbilst vaicājumam %str
 theme_xhred_toggle_accordions=Pārslēgt akordeonu redzamību
@@ -568,15 +667,18 @@ theme_xhred_signing_in=Pierakstīšanās
 theme_xhred_signing_success=Veiksmīgi pierakstījies!
 theme_xhred_session_failed_password=Nepareiza parole, lūdzu, mēģiniet vēlreiz.
 theme_xhred_global_reauthenticate=Atkārtoti autentificējiet
+
 settings_sysinfo_real_time_status=Iespējojiet uzraudzību reāllaikā
 settings_sysinfo_real_time_timeout=Intervāls atjaunināšanas veikšanai
 settings_sysinfo_real_time_timeout_description=Iestatiet vēlamo monitoru atjaunināšanas intervālu fonā. Vērtība bija paredzēta milisekundēs. Saglabājiet šo vērtību pēc iespējas zemāk, lai novērstu īstermiņa datu zaudēšanu
 theme_xhred_global_redirecting=Novirzīšana
+
 body_no_javascript_title=JavaScript ir atspējots
 body_no_javascript_message=Lūdzu, iespējojiet javascript un atsvaidziniet lapu
 theme_xhred_connection_lost=Savienojums zaudēts
 theme_xhred_connection_success=Savienojums veiksmīgi izveidots
 theme_xhred_connection_success_details=Ir izveidots savienojums ar serveri.
+
 theme_xhred_return_home=Atgriezties paneļa rādītājā
 theme_xhred_global_upload=Augšupielādēt
 theme_xhred_global_select_files=Atlasīt failu
@@ -584,12 +686,14 @@ theme_xhred_global_file_selected=fails ir atlasīts
 theme_xhred_global_files_selected=faili atlasīti
 theme_xhred_global_reset=Atiestatīt
 theme_xhred_upload_initial_info=Velciet un nometiet failus šeit vai noklikšķiniet, lai atlasītu
+
 theme_xhred_global_empty=Tukšs
 theme_xhred_global_click_here=noklikšķiniet šeit
 theme_git_patch_incompatible_message=Lai instalētu šo $1 <em>$2</em> versiju, lai tā pareizi darbotos, nepieciešama jaunākā un/vai, iespējams, neizpausta $3 un $5 versija.
 theme_git_patch_incompatible_message_s=Lai instalētu šo $1 <em>$2</em> versiju, lai tā pareizi darbotos, nepieciešama jaunākā un/vai, iespējams, neizpausta $3 versija.
 theme_git_patch_incompatible_message_desc=Var būt nesaderīgas izmaiņas, kas var liegt motīva darbībai, kā paredzēts. Lai apietu šo brīdinājumu un jebkurā gadījumā piespiestu motīva instalēšanu, izmantojot $1, vai jauniniet $2 uz jaunāko izstrādes versiju, palaižot <kbd>update-from-repo.sh</kbd> skriptu no tā direktorijas.
 theme_xhred_global_outdated=Šī versija ir novecojusi
+
 theme_xhred_filemanager_edit_html=Rediģēt kā HTML
 theme_xhred_global_example=Piemērs
 theme_xhred_global_output_example=Izejas piemērs
@@ -624,6 +728,7 @@ theme_xhred_filemanager_tree_view_depth=Iegūts koku skata dziļums sākotnējā
 theme_xhred_global_unlimited=Neierobežots
 theme_xhred_filemanager_tree_exclude_on_first_load=Izslēdziet nebūtiskus direktorijus no sākotnējās slodzes pārvietošanās koka skatam (ielādēšana notiek ātrāk)
 theme_xhred_filemanager_tree_expand_search=Filtrējot koka skatu, paplašiniet visas filiāles, kurās ir atbilstības
+
 theme_xhred_tooltip_side_slider_sync_sysinfo=Piespiest sinhronizēt fona statusa kolekciju
 theme_xhred_tooltip_side_slider_go_to_dashboard=Dodieties uz informācijas paneli
 theme_xhred_tooltip_side_slider_open_favorites_control=Atveriet izlases vadību
@@ -634,6 +739,7 @@ theme_xhred_tooltip_side_slider_pinned=Piespraudiet/atvienojiet sānu slīdni
 settings_side_slider_fixed_toggle=Rādīt piespraudes/atspraust pārslēgšanu
 settings_side_slider_fixed_toggle_description=Šī opcija parādīs pārslēgšanos sānu slīdnī, apakšējā rindā, ļaujot pārslēgt tā redzamību lidojuma laikā, ja ir izpildīti iepriekšējās opcijas nosacījumi.
 settings_right_page_hide_persistent_vscroll=Slēpt pastāvīgu vertikālu ritjoslu
+
 settings_sysinfo_theme_updates_for_usermin=Instalējiet arī Usermin motīvu atjauninājumus
 theme_xhred_global_installed_version=Instalētā versija
 theme_xhred_global_installed_and_latest_version=Instalēta un jaunākā versija
@@ -643,11 +749,13 @@ settings_perform_content_scrolling=Iespējojiet automātisku lapu ritināšanu p
 settings_contrast_mode=Iespējot augsta kontrasta režīmu
 theme_xhred_global_firewall=Ugunsmūris
 theme_xhred_settings_show_webmin_tab=Rādīt Webmin slēdzi navigācijas izvēlnē?
+
 settings_enable_container_offset=Iespējot konteinera nobīdi
 settings_enable_container_offset_description=Šī opcija darbosies tikai uz ekrāniem ar minimālo izšķirtspēju 1920 horizontālie pikseļi
 theme_xhred_filemanager_preparing_download=Notiek lejupielādes sagatavošana. Arhivēšana %number faila (-u). Lūdzu, uzgaidiet %dots
 theme_xhred_filemanager_prepared_download=Lejupielāde ir gatava. Arhivēts %number failu (s).
 theme_xhred_filemanager_canceled_download=Lejupielāde atcelta.
+
 theme_xhred_filemanager_settings_force_tar_download=Piespiest <code>tar</code> komandu, pat ja ir pieejams <code>zip</code>, lejupielādējot kā arhīvu
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -659,6 +767,7 @@ settings_sysinfo_real_time_status_options=Monitoringa iespējas reālā laikā
 settings_sysinfo_real_time_status_disk=Iespējot diskiem
 settings_sysinfo_real_time_status_disk_description=Varētu būt noderīgi atspējot reālā laika disku uzraudzību lēnām/lielām failu sistēmām
 theme_xhred_title_locale_non_ui_config=Servera ģenerēts datuma formāts
+
 extensions_mail_current_position=Ziņojumi 1–$2 no $3
 extensions_mail_sort_by_sender=Kārtot pēc sūtītāja
 extensions_mail_sort_by_recipient=Kārtot pēc saņēmēja
@@ -725,6 +834,7 @@ extensions_mail_move_copy_only=Nepārvietojiet, vienkārši nokopējiet to
 theme_xhred_global_total=Kopā
 theme_xhred_global_selected=Atlasīts
 theme_xhred_mail_new_message=Jauna ziņa
+
 theme_xhred_mail_search_simple=Rādīt meklēšanas iespējas
 theme_xhred_mail_search_advanced=Slēpt meklēšanas iespējas
 theme_xhred_mail_search_clear=Notīrīt meklēšanas rezultātus
@@ -744,35 +854,48 @@ theme_xhred_mail_search_search_in=Meklēt
 theme_xhred_mail_search_limit_results=Ierobežojiet meklēšanas rezultātus
 theme_xhred_mail_search_limit_results_yes=Jā, meklējiet tikai caur
 theme_xhred_mail_search_has_attach=Ir pieķeršanās
+
 theme_xhred_settings_right_theme_bgs=Tēmas foni
 theme_xhred_settings_right_theme_bgs_title=Tēmas foni
 settings_right_bgs_title=Šeit var iestatīt pieteikšanās lapas motīvu fonu. Vienīgais atbalstītais formāts ir <kbd>.png</kbd>, lai nodrošinātu alfa caurspīdīgumu.
 settings_right_bg_unauthenticated_users=Fona neautentificētiem lietotājiem
 settings_right_theme_left_background_title=Tēmas fona kontrole
+
 theme_xhred_find_in_config_files=Atrodiet konfigurācijas failos
 theme_xhred_find_in_config_files_result_found_single=Rezultāts $1 tika atrasts $2 failā par $3
 theme_xhred_find_in_config_files_result_found_multi=Rezultāti $1 tika atrasti $2 failā par $3
 theme_xhred_find_in_config_files_results_found=Rezultāti $1 tika atrasti $2 failos par $3
+
 theme_xhred_filemanager_context_symlink=Izveidojiet jaunu simbolisko saiti
 theme_xhred_global_symbolic=Simboliska saite
 theme_xhred_global_target=Mērķis
 settings_sysinfo_max_servers=Maksimālais rādāmo virtuālo serveru skaits
+
 right_download_is_ready=Lejupielāde ir gatava.
 theme_xhred_download_is_being_prepared=Notiek lejupielādes sagatavošana. Tas var aizņemt kādu laiku. Lūdzu uzgaidiet ..
 theme_xhred_backup_is_being_prepared=Tiek gatavota jūsu rezerves kopija. Tas var aizņemt kādu laiku. Lūdzu uzgaidiet ..
+
 settings_mail_ui=Iespējot jaunu pasta saskarni
+
 settings_show_theme_configuration_for_admins_only=Rādīt motīvu iestatījumu pogu tikai administratoriem
 settings_show_theme_configuration_for_admins_only_error=Piekļuve liegta: administrators ir bloķējis piekļuvi lietotāju pielāgojumiem
+
 theme_xhred_tooltip_navigation_pinned=Piespraust/atvienot navigācijas izvēlni
 settings_hotkey_navigation=Karstais taustiņš navigācijas izvēlnes pārslēgšanai
+
 theme_xhred_search_in_webmin=Meklēt Webmin
 theme_xhred_search_in_usermin=Meklēt Usermin
 theme_xhred_search_in_virtualserver=Meklēt Virtualmin
 theme_xhred_search_in_servermanager=Meklēt Cloudmin
+
 theme_xhred_filemanager_context_clipboard_selection=Kopēt atlasi starpliktuvē
+
 settings_hotkey_slider=Karstais taustiņš sānu slīdņa pārslēgšanai
+
 theme_git_update_locked=Motīva atjaunināšanu nevar pabeigt, jo nav izveidots savienojums ar GitHub vai tā API ātruma ierobežojumu. Pēdējiem neautentificētajiem pieprasījumiem likmes ierobežojums ļauj veikt līdz 60 pieprasījumiem stundā. Mēģiniet vēlāk vēlreiz vai izmantojiet konsoli, lai to izdarītu manuāli, izmantojot atjaunināšanas skriptu.
+
 settings_collapse_navigation_link=Rādīt tapu/atvienot pogu
+
 settings_cache_interval=Atjaunināšanas darbības intervāls
 settings_cache_interval_1h=katru stundu
 settings_cache_interval_12h=ik pēc 12 stundām
@@ -783,11 +906,15 @@ settings_cache_interval_1m=reizi mēnesī
 settings_cache_interval_3m=reizi 3 mēnešos
 settings_cache_interval_6m=divreiz gadā
 settings_cache_interval_1y=vienreiz gadā
+
 theme_xhred_reload_notification=Motīva konfigurācija ir mainīta, bet nav saglabāta. Lapa tiks atkārtoti ielādēta, lai atjaunotu pašreizējos iestatījumus.
+
 theme_xhred_global_save_as=Saglabāt kā
 theme_xhred_editor_save_file_as=Saglabāt failu kā
 theme_xhred_global_configuration=Konfigurācija
+
 body_used_cached_total=Kopā $1 / $3 kešatmiņā saglabāti / $2 izmantoti
+
 theme_xhred_favorites_add=Pievienot pie favorītiem
 theme_xhred_favorites_remove=Noņemt no izlases
 theme_xhred_select_deselect=Atlasiet/noņemiet atzīmi no pašreizējā vienuma
@@ -804,12 +931,14 @@ theme_xhred_mail_no_new_mail=Nav jaunu pastu
 theme_xhred_editor_set_syntax=Iestatīt sintakse
 theme_xhred_global_menu=Izvēlne
 theme_xhred_shell_aborted=Darbība pārtraukta
+
 theme_xhred_connection_reboot=Atsāknēšana
 theme_xhred_connection_reboot_details=Serveris tiek atsāknēts. Lūdzu uzgaidiet ..
 settings_leftmenu_custom_links_description=Navigācijas izvēlnē ir iespējams ievadīt pielāgotas, papildu saites. Nepieciešami taustiņi <em>title</em>, <em>link</em> un <em>ikona</em>; pēc izvēles jūs varat definēt, kurā pieteikšanās režīmā saite tiks parādīta, norādot <em>līmeni</em> taustiņu ar vērtībām komatatdalītā sarakstā, kas satur: <br><br> <em>0</em> > - administratora pieteikšanās; <br><em> 1 </em>- pieteikšanās tālākpārdevējam;<br> <em>2</em> - servera īpašnieka pieteikšanās; <br><em> 3 </em>- lietotāja pieteikšanās;<br> <em>4</em> - sistēmas īpašnieka pieteikšanās. <br><br> Jums būs jāpārsūta derīgs JSON objekts kā virkne, kā parādīts zemāk redzamajā piemērā. <hr><pre> {"extra": [{ "nosaukums": "Google Mail", "saite": "https://gmail.com/", "ikona": "google", "līmenis": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " aploksne "," ports ":" 20000 "," mērķis ":" _blank "}]} </pre>
 left_favorites_edit=Rediģēt izlasi
 left_favorites_edit_desc=Šo lapu var izmantot, lai manuāli rediģētu motīvu izlases lietotāja failu. Tas jādara uzmanīgi, jo jūsu izmaiņām netiks veikta sintakse vai cita derīguma pārbaude.
 theme_xhred_filemanager_records_for_server_pagination=Noklusējuma vienumu skaits direktorijā, lai sāktu servera paginēšanu
+
 filemanager_global_info_paginated_total1=$1 faili un $2 $3 direktoriji $4 lapās
 filemanager_global_info_paginated_total2=$1 faili un $2 $3 direktoriji $4 lapās
 filemanager_global_info_paginated_total3=$2 $3 direktoriju $4 lapas
@@ -844,6 +973,7 @@ filemanager_archive_file_not_found=Fails neeksistē
 filemanager_archive_gpg_private_error=Nav pieejama neviena slepena atslēga vai atslēgas ieejas frāze
 theme_xhred_filemanager_errors_extraction=Izvilkšanas laikā radās šādas kļūdas:
 theme_xhred_filemanager_extract_option_delete_afterwards=Pēc veiksmīgas ieguves izdzēsiet arhīvu
+
 theme_xhred_login_passphrase_desc=Ievadiet GPG atslēgas ieejas frāzi, ja tā ir iestatīta.
 theme_xhred_filemanager_encrypt_option_delete_afterwards=Pēc veiksmīgas šifrēšanas izdzēsiet failu
 theme_xhred_filemanager_decrypt_option_delete_afterwards=Pēc veiksmīgas atšifrēšanas izdzēsiet failu
@@ -855,6 +985,7 @@ theme_xhred_filemanager_crypt_decrypt=Faili tiek atšifrēti.
 theme_xhred_filemanager_crypt_encrypted=Atlasīto failu šifrēšana bija veiksmīga.
 theme_xhred_filemanager_crypt_decrypted=Atlasīto failu atšifrēšana bija veiksmīga.
 theme_xhred_filemanager_batch_error=Tas ietver arī saīsinātus %1 pazīstamu kļūdu rezultātus.
+
 theme_xhred_global_preview_img=Priekšskatījuma attēls
 theme_xhred_global_preview_img_sel=Priekšskatīt atlasītos attēlus
 theme_xhred_global_preview_img_all=Priekšskatīt visus attēlus
@@ -869,6 +1000,7 @@ theme_xhred_global_toggle_fullscreen=Pārslēgt pilnekrāna režīmu
 theme_xhred_global_zoom_in_out=Tuvināt/tālināt
 theme_xhred_global_prev_arrow_left=Iepriekšējais (bultiņa pa kreisi)
 theme_xhred_global_next_arrow_right=Nākamais (bultiņa pa labi)
+
 settings_reset_cache_tooltip=Noklikšķinot uz, atiestatīt motīva kešatmiņu no jebkuras lapas <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> karstais taustiņš
 settings_update_theme_tooltip=Palaist motīvu atjaunināšanu no jebkuras lapas. Atjauniniet uz jaunāko attīstības versiju, noklikšķinot uz <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> karstais taustiņš; Lai instalētu jaunāko stabilo, izmantojiet to pašu kombo bez Meta taustiņa
 theme_xhred_clear_cache_initiated=Kešatmiņas tīrīšana un atkārtota ielāde.
@@ -886,19 +1018,24 @@ theme_xhred_csf=ConfigServer Security & Firewall
 theme_xhred_global_version=versija
 theme_xhred_notify_patching_module_style=Sākotnējā lietotāja saskarnes plākstera lietošana $1 un atkārtota ielāde.
 theme_xhred_global_error_more_details_online=Piezīme. Lūdzu, izlasiet vairāk par šo kļūdu un tās novēršanu mūsu %1wiki lapā %1 tiešsaistē.
+
 theme_xhred_filemanager_search_file_mask=Failu maska
 theme_xhred_filemanager_search_regex=Regulāra izteiksme
 theme_xhred_upload_successful=<span>$1 faili</span> ir veiksmīgi augšupielādēti $2 direktorijā
 theme_xhred_upload_successful_single=<span>$1 fails</span> ir veiksmīgi augšupielādēts $2 direktorijā
 settings_usermin_default_module=Noklusējuma modulis
+
 theme_xhred_search_in_file_open_external=Atdaliet failu atsevišķam redaktoram
 theme_xhred_path_to_console=Atvērt pašreizējo ceļu terminālī <tt (Alt+Shift+K) </tt>
 theme_xhred_filemanager_editor_revert_content=Atjaunot failu
 theme_xhred_filemanager_editor_reverting_content=Izmaiņu pārtraukšana un atgriešanās pie sākotnējā faila satura.
+
 theme_xhred_filemanager_exclude_dirs=Izslēgt ierakstus
 theme_xhred_filemanager_exclude_dirs_desc=Ar semikolu atdalāmo failu vai apakšdirektoriju saraksts
+
 theme_global_access_level=Piekļuves līmenis
 theme_global_user_mode=Lietotāja režīms
+
 theme_xhred_global_attachments=Pielikumi
 theme_xhred_editor_tb_font=Fonts
 theme_xhred_editor_tb_size=Izmērs
@@ -932,6 +1069,7 @@ theme_xhred_mail_composer_server_attach_error_read=Pieprasīto failu nevar nolas
 theme_xhred_mail_composer_server_attach_error_dir=Katalogus nevar pievienot
 theme_xhred_mail_composer_discarded_draft=Melnraksts ir atmests
 theme_xhred_global_undo=Atsaukt
+
 theme_xhred_global_today=Šodien
 theme_xhred_global_tomorrow=Rīt
 theme_xhred_mail_composer_scheduled=Nosūtiet %1 uz %2
@@ -962,10 +1100,14 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maksimālais rindu skaits, lai sāktu tabulas kārtošanu un meklēšanu
 theme_xhred_global_rows=Rindas
+
 settings_side_slider_blend=Mantojums
+
 settings_theme_make_date=Iespējot datuma/laika konvertēšanu pārlūkā
 settings_theme_make_date_description=Ja tas ir atspējots, tiks izmantots servera nodrošinātais datuma/laika formāts
+
 theme_xhred_reload_lang_notification=Tēmas valoda ir mainīta. Lapa tiks atkārtoti ielādēta, lai lietotu jaunus iestatījumus.
+
 theme_xhred_global_small=Maza
 theme_xhred_global_normal=Normāli
 theme_xhred_global_medium=Vidēja
@@ -973,21 +1115,28 @@ theme_xhred_global_large=Liela
 theme_xhred_global_huge=Milzīgs
 theme_xhred_filemanager_editor_maximized=Palieliniet redaktora paneli, startējot
 settings_sysinfo_remember_accordions=Saglabājiet pēdējo reizi izmantoto akordeonu stāvokli
+
 theme_xhred_textarea_to_clipboard=Atlasītais teksta apgabala saturs ir veiksmīgi nokopēts starpliktuvē
+
 theme_xhred_global_alias=Pseidonīms
+
 theme_xhred_mail_composer_real_name=Īstais vārds
 theme_xhred_mail_composer_username=lietotājvārds
+
 settings_global_palette_unauthenticated=Pieteikšanās lapas krāsu palete
+
 settings_config_save_and_next=Saglabāt un turpināt
 settings_config_configuration_category=Konfigurācijas kategorija
 config_search_options_all=Meklēt visās moduļa konfigurācijas opcijās
 theme_xhred_editing_config_file=Rediģē konfigurācijas failu
+
 theme_xhred_login_message_2fa=Šim lietotājam ir iespējota divu faktoru autentifikācija, lai pieteiktos
 theme_xhred_global_verify=Pārbaudiet
 settings_show_terminal_link2=Rādīt komandas čaulas pogu
 settings_hotkey_shell2=Karsto taustiņu komandu čaulai
 theme_xhred_path_to_console2=Atveriet pašreizējo ceļu komandu apvalkā <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Komandas apvalks
+
 theme_xhred_filemanager_context_view=Skats
 theme_xhred_file_viewer=Failu skatītājs
 theme_xhred_global_done=Gatavs.
@@ -997,6 +1146,7 @@ theme_xhred_filemanager_view_head_and_reverse=Faila izvadīšana ar galvu un atp
 theme_xhred_filemanager_view_tail=Astes faila izvade
 theme_xhred_filemanager_view_tail_and_reverse=Aste un reversa faila izvade
 theme_xhred_filemanager_view_head_and_tail=Galvas un astes faila izvade
+
 theme_xhred_filemanager_search_info_search_dir=Meklēt direktorijā
 theme_xhred_filemanager_search_limit_user=Īpašnieks ir lietotājs
 theme_xhred_filemanager_search_limit_group=Pieder grupai

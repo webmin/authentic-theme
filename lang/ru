@@ -32,12 +32,14 @@ body_used_and_free=$1 всего / $2 свободно / $3 использова
 body_usermin=Версия Usermin
 body_virt=Виртуальная память
 body_webmin=Версия Webmin
+
 left_feedback=Отправить отзыв
 theme_xhred_global_sys_info=Информация о системе
 left_others=Утилиты
 left_refresh_modules=Обновить модули
 left_search=Поиск
 left_statistics=Системная Статистика
+
 login_danger=Опасность!
 login_message=Вы должны ввести имя пользователя и пароль для входа на сервер
 theme_xhred_login_pass=Пароль
@@ -47,6 +49,7 @@ login_success=Успех!
 theme_xhred_login_token=Код
 theme_xhred_login_user=Имя пользователя
 login_warning=Предупреждение!
+
 right_aliases=Псевдоним серверов
 right_bw=Пропускная способность и ограничения
 right_dom=Имя сервера
@@ -71,21 +74,26 @@ right_virtdocs2=Подробная документация
 right_virtualmin=Версия Virtualmin
 right_vlcheck=Обновить лицензию Virtualmin
 right_vm2=Версия Cloudmin
+
 session_logout=Успешный выход из системы. Используйте форму ниже, чтобы войти снова.
 session_timed_out=Сессия истекла за $1 мин. бездействия.
 session_twofailed=Ошибка двухфакторной аутентификации: $1
+
 settings_right_options=Настройки
 settings_right_restore_defaults=Востановить по умолчанию
 settings_right_restored=Востановить
 settings_right_restoring=Востановленно
 settings_right_saved=Сохранить
 settings_right_saving=Сохранено
+
 settings_leftmenu_section_hide_refresh_modules=Не показывать "Обновить Модули"
 settings_leftmenu_section_hide_unused_modules=Не показывать "Неиспользуемые Модули"
 settings_favorites=Показывать кнопку избранное
 settings_leftmenu_button_language=Показывать кнопку язык
 settings_leftmenu_button_refresh=Показывать кнопку обновить
+
 settings_theme_options_button=Показывать кнопку настройки темы
+
 settings_hotkeys_active=Включить использование горячих клавиш
 settings_hotkey_toggle_modifier=Первая горячая клавиша
 settings_hotkey_toggle_key_webmin=Горячая клавиша для Webmin
@@ -98,7 +106,9 @@ settings_hotkey_shell=Горячая клавиша для терминала
 settings_hotkey_favorites=Горячая клавиша для избранного
 settings_hotkey_focus_search=Горячая клавиша для поля поиска
 settings_hotkey_reload=Горячая клавиша для перезагрузки страницы
+
 settings_side_slider_enabled=Включить боковую панель
+
 theme_changelog=Список изменений
 theme_conference=Конференция темы
 theme_development_support=Поддержка разработчика
@@ -109,21 +119,27 @@ theme_update=Обновить
 theme_update_available=Последний имеющийся релиз
 theme_update_notice=Уведомление Обновления
 theme_version=Authentic theme version
+
 theme_xhred_global_error=Ошибка
 theme_global_warning=Внимание
 theme_global_success=Удачно
 theme_global_info=Информация
+
 theme_xhred_titles_dashboard=Панель
+
 theme_xhred_global_please_wait=Пожалуйста подождите...
 theme_xhred_filemanager_copying_selected=Выделите для копирования.
 theme_xhred_filemanager_cutting_selected=Выделите длч вырезания.
 theme_xhred_filemanager_pasting_selected=Вставить в буфер обмена.
+
 theme_xhred_filemanager_successful_extraction=Файлы успешно извлечены.
 theme_xhred_filemanager_successful_deletion=Удаление успешно.
 theme_xhred_filemanager_successful_compression=Компрессия успешно завершена.
 theme_xhred_filemanager_successful_directory_creation=Папка `<strong>%value</strong>` успешно создана.
 theme_xhred_filemanager_successful_file_creation=Файл `<strong>%value</strong>` создан успешно.
+
 theme_xhred_notifications_theme_update_message=Обнаружена новая версия <em>%v</em>  <strong>Authentic Theme</strong>. Пожалуйста установите последнюю версию.
+
 theme_xhred_filemanager_context_select_all=Выбрать все
 theme_xhred_filemanager_context_refresh=Обновить
 theme_xhred_filemanager_context_newfile=Создать новый файл
@@ -131,6 +147,7 @@ theme_xhred_filemanager_context_newfoder=Создать новую папку
 theme_xhred_filemanager_context_copy=Копировать
 theme_xhred_filemanager_context_cut=Вырезать
 theme_xhred_filemanager_context_paste=Вставить
+
 theme_xhred_filemanager_context_new=Новый
 theme_xhred_filemanager_context_newarchive=Создать новый архив
 theme_xhred_filemanager_context_delete=Удалить
@@ -139,18 +156,23 @@ theme_xhred_filemanager_context_edit=Редактировать
 theme_xhred_filemanager_context_extract=Извлечь
 theme_xhred_filemanager_context_properties=Свойства
 theme_xhred_filemanager_context_search=Поиск
+
 theme_xhred_filemanager_selected_entries=Выбрано: %value объектов
+
 theme_xhred_global_save=Сохранить
 theme_xhred_global_save_and_close=Сохранить и закрыть
 theme_xhred_global_close_without_saving=Закрыть не сохраняя
 theme_xhred_global_continue_editing=Продолжить редактирование
 theme_xhred_filemanager_context_download_file=Загрузить
+
 theme_xhred_datatable_filter=Фильтр
+
 theme_xhred_global_update=Обновить
 theme_xhred_global_update_and_return=Обновить и вернуться
 theme_xhred_global_update_and_close=Обновить и закрыть
 theme_xhred_global_back=Вернуться
 theme_xhred_global_cancel=Отменить
+
 theme_xhred_global_file=Файл
 theme_xhred_global_directory=Директория
 theme_xhred_global_on=Включить
@@ -159,47 +181,61 @@ theme_xhred_global_all=Все
 theme_xhred_global_none=Ничто
 theme_xhred_global_yes=Да
 theme_xhred_global_no=Нет
+
 filemanager_global_info_total1=Всего: $1 файл и $2 директория
 filemanager_global_info_total2=Всего: $1 файлов и $2 директория
 filemanager_global_info_total3=Всего: $1 файл и $2 директории
 filemanager_global_info_total4=Всего: $1 файлов и $2 директории
+
 theme_xhred_filemanager_selected_entry=Выбран: %value объект
+
 theme_xhred_global_find=Поиск
 theme_xhred_global_replace=Заменить
+
 settings_global_options_title=Глобальные настройки
 settings_global_passgen_format=Генератор паролей
 theme_xhred_password_generator_new=Сгенерировать новый пароль<br> (В буфер обмена)
 theme_xhred_password_generator_new_success=Сгенерированный пароль %password скопирован в буфер обмена.
+
 theme_xhred_global_notifications=Уведомления
 theme_xhred_global_favorites=Избранное
 theme_xhred_global_theme_version=Версия темы
+
 theme_xhred_sysinfo_system_monitors=Системный Монитор
 theme_xhred_sysinfo_server_status=Статус Серверов
 theme_xhred_sysinfo_recent_logins=Последние входившие
 theme_xhred_sysinfo_vm_package_updates=Обновление пакетов Virtualmin
 theme_xhred_sysinfo_disk_quotas=Дисковые квоты
+
 theme_new_password_header=Установить новый пароль для пользователя
 login_reset=Востановление пароля
 settings_title=Настройка темы
 settings_subtitle=Для пользователя
+
 theme_tooltip_terminal_link=Терминал
 theme_tooltip_language_link=Язык
 theme_xhred_tooltip_switch_user=Сменить пользователя
 theme_tooltip_logout=Записать
 theme_tooltip_edit_user=Редактировать пользователя
+
 theme_xhred_git_patch_initiated=Начато обновление темы.
 theme_xhred_global_help=Помощь
 theme_xhred_git_compare_changes=Сравнить изменения
+
 theme_left_mail_change_password=Сменить Пароль
+
 theme_force_upgrade=Быстро обновить тему
 theme_xhred_force_upgrade_beta=Установить последнюю бета версию
 theme_xhred_force_upgrade_stable=Установить последнюю стабильную версию
+
 theme_xhred_global_whats_new=Что нового
 theme_xhred_global_theme_configuration=Настройка темы
 theme_xhred_global_official_website=Официальный сайт
 theme_xhred_global_about_theme=О теме
+
 settings_sysinfo_real_time_status=Включить мониторинг в реальном времени
 settings_sysinfo_real_time_timeout=Интервал обновления значений
+
 settings_document_title_option_3=Модуль
 settings_document_title_option_1=Модуль — $1 версия (тип ОС)
 settings_document_title_option_2=$1 версия (тип ОС) — Модуль

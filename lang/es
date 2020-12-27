@@ -35,6 +35,7 @@ body_used_and_free=$1 total / $2 libre / $3 usado
 body_usermin=Versión Usermin
 body_virt=Memoria virtual
 body_webmin=Versión Webmin
+
 left_favorites=Favorites
 left_favorites_no=There were no favorites added yet...
 left_feedback=Envía Feedback
@@ -43,6 +44,7 @@ left_others=Otros
 left_refresh_modules=Reajusta módulos
 left_search=Buscar
 left_statistics=Estadísticas del sistema
+
 login_danger=Peligro!
 login_message=Debe ingresar un nombre de usuario y contraseña para iniciar sesión
 theme_xhred_login_pass=Contraseña
@@ -52,6 +54,7 @@ login_success=Éxito
 theme_xhred_login_token=Token
 theme_xhred_login_user=Nombre de usuario
 login_warning=Atención!
+
 right_aliases=Servidores alias
 right_bw=Utilización y límite del ancho de banda
 right_dom=Su nombre de servidor
@@ -76,8 +79,10 @@ right_virtdocs2=Documentación adicional
 right_virtualmin=Versión Virtualmin
 right_vlcheck=Vuelva a verificar la licencia Virtualmin
 right_vm2=Versión Cloudmin
+
 theme_xhred_session_failed=Login failed. Please try again.
 session_logout=Logout exitoso. Utilice el formulario de abajo para iniciar sesión de nuevo.
 session_timed_out=Su sesión ha expirado después $1 minutos de inactividad.
 session_twofailed=Autenticación de dos factores fallada: $1
+
 login_reset=Reajusta

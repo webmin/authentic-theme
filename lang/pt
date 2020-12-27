@@ -35,12 +35,14 @@ body_used_and_free=$1 total / $2 livre / $3 usado
 body_usermin=Versão Usermin
 body_virt=Memória Virtual
 body_webmin=Versão Webmin
+
 left_feedback=Enviar comentários
 theme_xhred_global_sys_info=Informações sobre o sistema
 left_others=Outros
 left_refresh_modules=Atualizar Módulos
 left_search=Pesquisa
 left_statistics=Estatísticas do Sistema
+
 login_danger=Perigo!
 login_message=Você deve digitar um nome de usuário e senha para acessar o servidor no
 theme_xhred_login_pass=Senha
@@ -50,6 +52,7 @@ login_success=Sucesso!
 theme_xhred_login_token=Token
 theme_xhred_login_user=Nome de usuário
 login_warning=Aviso!
+
 right_aliases=Alias servidores
 right_bw=Uso de banda e limite
 right_dom=Seu nome do servidor
@@ -74,7 +77,9 @@ right_virtdocs2=Documentação adicional
 right_virtualmin=Versão Virtualmin
 right_vlcheck=Verifique novamente licença Virtualmin
 right_vm2=Versão Cloudmin
+
 session_logout=Logout com sucesso. Utilize o formulário abaixo para efetuar o login novamente.
 session_timed_out=Sessão expirou após $1 minutos de inatividade.
 session_twofailed=Autenticação Two-factor falhou: $1
+
 login_reset=Restabelecer

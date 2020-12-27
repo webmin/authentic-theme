@@ -32,6 +32,7 @@ body_used_and_free=$1 sumie / $2 wolne / $3 użyte
 body_usermin=Wersja Usermina
 body_virt=Pamięć wirtualna
 body_webmin=Wersja Webmina
+
 left_favorites=Favorites
 left_favorites_no=There were no favorites added yet...
 left_feedback=Wyślij opinię
@@ -40,6 +41,7 @@ left_others=Inne
 left_refresh_modules=Odśwież moduły
 left_search=Szukaj
 left_statistics=Statystyki systemowe
+
 login_danger=Niebezpieczeństwo!
 login_message=Musisz podać nazwę użytkownika aby zalogować się na serwer
 theme_xhred_login_pass=Hasło
@@ -49,6 +51,7 @@ login_success=Sukces!
 theme_xhred_login_token=Token
 theme_xhred_login_user=Nazwa użytkownika
 login_warning=Ostrzeżenie!
+
 right_aliases=Aliasy serwerów
 right_bw=Użycie i limity łącza
 right_dom=Nazwa Twojego serwera
@@ -73,7 +76,9 @@ right_virtdocs2=Dokumentacja dodatkowa
 right_virtualmin=Wersja Virtualmina
 right_vlcheck=Ponownie sprawdź licencję Virtualmina
 right_vm2=Wersja Cloudmina
+
 session_logout=Wylogowano prawidłowo. Użyj formularza poniżej, aby ponownie się zalogować.
 session_timed_out=Upłynął limit czasu sesji po $1 minutach nieaktywności.
 session_twofailed=Dwuskładnikowe uwierzytelnienie nie powiodło się: $1
+
 login_reset=Reset

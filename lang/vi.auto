@@ -35,6 +35,7 @@ body_used_and_free=Tổng cộng $1 / $2 miễn phí / $3 đã sử dụng
 body_usermin=Phiên bản Usermin
 body_virt=Bộ nhớ ảo
 body_webmin=Phiên bản webmin
+
 left_favorites=Yêu thích
 left_favorites_no=Không có mục yêu thích nào được thêm vào. ..
 left_feedback=Gửi thông tin phản hồi
@@ -43,6 +44,7 @@ left_others=Khác
 left_refresh_modules=Làm mới mô-đun
 left_search=Tìm kiếm
 left_statistics=Thống kê hệ thống
+
 login_danger=Nguy hiểm!
 login_message=Bạn phải nhập tên người dùng và mật khẩu để đăng nhập vào máy chủ trên
 theme_xhred_login_pass=Mật khẩu
@@ -52,6 +54,7 @@ login_success=Sự thành công!
 theme_xhred_login_token=Mã thông báo
 theme_xhred_login_user=tên tài khoản
 login_warning=Cảnh báo!
+
 right_aliases=Máy chủ bí danh
 right_bw=Sử dụng và giới hạn băng thông
 right_dom=Tên máy chủ của bạn
@@ -76,37 +79,44 @@ right_virtdocs2=Tài liệu bổ sung
 right_virtualmin=Phiên bản ảo
 right_vlcheck=Kiểm tra lại giấy phép Virtualmin
 right_vm2=Phiên bản đám mây
+
 theme_xhred_session_failed=Đăng nhập thất bại. Vui lòng thử lại.
 session_logout=Thoát ra thành công. Sử dụng mẫu dưới đây để đăng nhập lại.
 session_timed_out=Phiên đã hết thời gian sau khi $1 phút không hoạt động.
 session_twofailed=Xác thực hai yếu tố không thành công: $1
+
 settings_right_options=Tùy chọn
 settings_right_restore_defaults=Khôi phục mặc định
 settings_right_restored=Đã khôi phục
 settings_right_restoring=Khôi phục
 settings_right_saved=Đã lưu
 settings_right_saving=Tiết kiệm
+
 settings_right_theme_extensions=Tiện ích mở rộng chủ đề
 settings_right_theme_extensions_title=Phần mở rộng chủ đề
 settings_right_file_edit=Chỉnh sửa tập tin mở rộng:
 settings_right_extensions_title=Chủ đề thiết kế rộng rãi, cho phép bạn dễ dàng thao tác trên các phần được nhắm mục tiêu của giao diện.
+
 theme_xhred_settings_right_theme_logos=Logo chủ đề
 theme_xhred_settings_right_theme_logos_title=Logo chủ đề
 settings_right_logos_title=Logo chủ đề có thể dễ dàng được đặt ở đây, cho cả người dùng, người dùng xác thực và không xác thực. Kích thước logo được đề xuất là <kbd>180x90</kbd> pixel và định dạng được hỗ trợ duy nhất là <kbd>.png</kbd>, để cung cấp độ trong suốt alpha.
 settings_right_logo_authenticated_users=Logo cho người dùng xác thực
 settings_right_logo_unauthenticated_users=Logo cho người dùng không được xác thực
+
 settings_right_current_theme=Chủ đề hiện tại
 settings_right_title=Trang này cho phép bạn định cấu hình các tùy chọn cho <a href="https://github.com/authentic-theme/authentic-theme"lists">Theme Theme</a>. Cài đặt sẽ được lưu trữ khi cập nhật chủ đề.
 settings_right_theme_left_configuration_title=Cấu hình chủ đề
 settings_right_theme_left_extensions_title=Trình chỉnh sửa mở rộng chủ đề
 settings_right_theme_left_logo_title=Kiểm soát logo chủ đề
 settings_right_theme_configurable_options_title=Tùy chọn cấu hình cho Theme xác thực
+
 settings_right_window_options_title=Tùy chọn cửa sổ
 settings_right_navigation_menu_title=Tùy chọn menu điều hướng
 settings_right_table_options_title=Tùy chọn bảng
 settings_security_title=Tùy chọn cảnh báo bảo mật
 settings_right_hotkey_options_title=Tùy chọn phím nóng
 settings_right_sysinfo_page_options_title=Tùy chọn bảng điều khiển
+
 settings_right_hotkey_custom_options_description=Liên kết tùy chỉnh cho phép bạn sử dụng các chữ số từ <code>1</code> đến <code>9</code> để truy cập nhanh bất kỳ <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin hợp lệ nào <code>URL.</code> <code>URL</code> có thể được trích xuất từ trang nội dung khung bên phải hiện đang mở, bằng cách đọc nguồn của nó. Điều quan trọng là <code>URL</code> không có dấu gạch chéo ngay từ đầu và không sử dụng tiền tố. Ví dụ: để chuyển nhanh sang Apache, hãy đặt thành <code>custom link 1</code> trường <code>/apache/</code>. Nếu công cụ sửa đổi phím nóng mặc định được đặt thành <code>Alt,</code> nhấp vào <code>Alt+1</code>, sẽ mở cho bạn mô-đun Apache
 settings_hotkey_custom_1=Liên kết tùy chỉnh <code>1</code>
 settings_hotkey_custom_2=Liên kết tùy chỉnh <code>2</code>
@@ -117,23 +127,28 @@ settings_hotkey_custom_6=Liên kết tùy chỉnh <code>6</code>
 settings_hotkey_custom_7=Liên kết tùy chỉnh <code>7</code>
 settings_hotkey_custom_8=Liên kết tùy chỉnh <code>8</code>
 settings_hotkey_custom_9=Liên kết tùy chỉnh <code>9</code>
+
 settings_navigation_color=Bảng màu
 settings_background_color=Bảng màu trang nội dung
 settings_loader_top=Cho phép trình tải tiến trình trang ở trên cùng của màn hình
 settings_loader_left=Bật spinner cho menu điều hướng
 settings_right_reload=Tải trang nội dung mặc định
+
 settings_right_hide_table_icons=Ẩn biểu tượng bảng
 settings_right_hide_table_icons_description=Xóa hoàn toàn các biểu tượng khỏi bảng trang nội dung và hiển thị các liên kết đơn giản với chevron phải
 settings_right_small_table_icons=Biểu tượng bảng nhỏ
 settings_right_small_table_icons_description=Thay thế các biểu tượng bảng kích thước tiêu chuẩn với các biểu tượng nhỏ và biểu tượng hiển thị liên kết bằng cách sử dụng tooltip
 settings_right_animate_table_icons=Biểu tượng bảng động
 settings_right_grayscaled_table_icons=Biểu tượng bảng thang độ xám và chỉ mang lại màu sắc tập trung
+
 settings_leftmenu_section_hide_refresh_modules=Ẩn liên kết mô-đun làm mới
 settings_leftmenu_section_hide_unused_modules=Ẩn phần mô-đun không sử dụng
 settings_favorites=Hiển thị nút yêu thích
 settings_leftmenu_button_language=Hiển thị nút ngôn ngữ
 settings_leftmenu_button_refresh=Hiển thị nút làm mới
+
 settings_theme_options_button=Hiển thị nút cài đặt chủ đề
+
 settings_hotkeys_active=Cho phép sử dụng phím nóng
 settings_hotkey_toggle_modifier=Sửa đổi phím nóng
 settings_hotkey_toggle_key_webmin=Phím nóng cho Webmin
@@ -146,24 +161,29 @@ settings_hotkey_shell=Hotkey cho thiết bị đầu cuối
 settings_hotkey_favorites=Hotkey cho mục yêu thích
 settings_hotkey_focus_search=Phím nóng cho trường tìm kiếm
 settings_hotkey_reload=Hotkey để tải lại trang
+
 settings_sysinfo_easypie_charts=Hiển thị biểu đồ
 settings_sysinfo_theme_updates=Kiểm tra cập nhật Theme xác thực
 settings_sysinfo_csf_updates=Kiểm tra các bản cập nhật Tường lửa & Bảo mật Cấu hình Máy chủ
 settings_sysinfo_drive_status_on_new_line=Hiển thị trạng thái CPU và ổ đĩa trên mỗi dòng mới
 settings_sysinfo_expand_all_accordions=Giữ tất cả các hiệp ước được mở rộng
 settings_sysinfo_link_mini=Hiển thị liên kết bảng điều khiển dưới dạng nút
+
 settings_right_page_defaults_title=Trang mặc định
 settings_right_default_tab_webmin=Tab mặc định sau khi đăng nhập vào Webmin
 settings_right_default_tab_usermin=Tab mặc định sau khi đăng nhập vào Usermin
 settings_right_virtualmin_default=Trang mặc định cho Virtualmin
 settings_right_cloudmin_default=Trang mặc định cho Cloudmin
+
 settings_right_clear_local_cache=Xóa bộ nhớ cache
 settings_right_notification_slider_options_title=Tùy chọn thanh trượt bên
 settings_side_slider_fixed=Luôn luôn nhìn thấy
 settings_side_slider_palette=Bảng màu trượt
 settings_hotkey_toggle_slider=Phím nóng cho thanh trượt bên
+
 settings_side_slider_enabled=Kích hoạt thanh trượt
 settings_leftmenu_user_html=Hiển thị đoạn mã HTML
+
 theme_changelog=Thay đổi
 theme_conference=Hội nghị chủ đề
 theme_development_support=Hỗ trợ phát triển
@@ -174,6 +194,7 @@ theme_update=Cập nhật
 theme_update_available=Bản phát hành mới nhất có sẵn
 theme_update_notice=Cập nhật thông báo
 theme_version=Phiên bản chủ đề đích thực
+
 theme_xhred_global_error=lỗi
 theme_global_warning=Cảnh báo
 theme_global_success=Sự thành công
@@ -187,6 +208,7 @@ theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=Văn bản thô
+
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
 theme_xhred_titles_dashboard=bảng điều khiển
@@ -194,6 +216,7 @@ theme_xhred_titles_mail=Thư
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
+
 theme_xhred_global_please_wait=Xin vui lòng chờ. ..
 theme_xhred_filemanager_copying_selected=Sao chép đã chọn.
 theme_xhred_filemanager_cutting_selected=Cắt chọn.
@@ -224,6 +247,7 @@ theme_xhred_filemanager_not_decompressable=Không thể giải nén loại tập
 theme_xhred_filemanager_no_selection_to_copy=Không có thư mục/tập tin được chọn để sao chép.
 theme_xhred_filemanager_no_selection_to_cut=Không có thư mục/tập tin được chọn để cắt.
 theme_xhred_filemanager_empty_clipboard=Clipboard trống rỗng.
+
 theme_xhred_filemanager_successful_extraction=Trích xuất tập tin được chọn (s) đã thành công.
 theme_xhred_filemanager_successful_deletion=Xóa đã thành công.
 theme_xhred_filemanager_successful_permissions=Quyền đã được thay đổi thành công.
@@ -231,14 +255,18 @@ theme_xhred_filemanager_successful_ownership=Quyền sở hữu đã được th
 theme_xhred_filemanager_successful_compression=Nén đã thành công.
 theme_xhred_filemanager_successful_directory_creation=Danh mục `<strong>%value</strong>` đã được tạo thành công.
 theme_xhred_filemanager_successful_file_creation=Tập tin `<strong>%value</strong>` đã được tạo thành công.
+
 theme_xhred_notifications_packages_updates=Cập nhật gói
 theme_xhred_notifications_theme_update=Cập nhật chủ đề
 theme_xhred_notifications_theme_update_message=Đã có phiên bản mới <em>%v</em> của <strong>Authentic Theme</strong>. Vui lòng cập nhật.
 theme_xhred_notifications_firewall_update=Cập nhật tường lửa
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+
 theme_xhred_notifications_firewall_danger=Tường lửa nguy hiểm
 theme_xhred_notifications_firewall_danger_message=Dường như <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">không chạy</i> hoặc đã bị dừng! Đừng để máy chủ của bạn bị lộ, hãy kiểm tra cài đặt tường lửa (%v)
+
 theme_xhred_notifications_firewall_warning=Cảnh báo tường lửa
+
 settings_grayscale_level_navigation=Bộ lọc thang độ xám
 settings_grayscale_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Bộ lọc Sepia
@@ -253,8 +281,10 @@ settings_brightness_level_navigation=Bộ lọc độ sáng
 settings_brightness_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=Bộ lọc tương phản
 settings_contrast_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
 settings_cm_view_palette=Bảng màu người xem
 settings_cm_editor_palette=Bảng màu mã nổi bật
+
 theme_xhred_filemanager_context_select_all=Chọn tất cả
 theme_xhred_filemanager_context_select_invert=Lựa chọn đối nghịch
 theme_xhred_filemanager_context_refresh=Làm tươi
@@ -265,6 +295,7 @@ theme_xhred_filemanager_context_cut=Cắt
 theme_xhred_filemanager_context_paste=Dán
 theme_xhred_filemanager_context_chmod=Thay đổi quyền
 theme_xhred_filemanager_context_chown=Thay đổi quyền sở hữu
+
 theme_xhred_filemanager_context_new=Mới
 theme_xhred_filemanager_context_newarchive=Tạo kho lưu trữ mới
 theme_xhred_filemanager_context_delete=Xóa bỏ
@@ -274,9 +305,11 @@ theme_xhred_filemanager_context_extract=Trích xuất
 theme_xhred_filemanager_context_goto=Mở vị trí mục
 theme_xhred_filemanager_context_properties=Tính chất
 theme_xhred_filemanager_context_search=Tìm kiếm
+
 theme_xhred_filemanager_context_deselect_all=Bỏ chọn tất cả
 theme_xhred_filemanager_context_upload=Tải lên thư mục hiện tại
 theme_xhred_filemanager_context_download=Tải xuống từ URL từ xa
+
 theme_config_virtualmin=Máy chủ ảo Virtualmin
 theme_config_cloudmin=Hệ thống quản lý Cloudmin
 settings_right_thirdparties_options_title=Tùy chọn mô-đun của bên thứ ba
@@ -284,15 +317,19 @@ theme_xhred_filemanager_context_calculate_size=Tính kích thước trên phím 
 theme_xhred_filemanager_context_bookmarks=Dấu trang
 theme_xhred_filemanager_context_bookmark_current=Đường dẫn hiện đang mở
 theme_xhred_filemanager_context_transfer=chuyển khoản
+
 theme_xhred_filemanager_title_symlink_target=Liên kết mục tiêu
+
 right_unlimited=Vô hạn
 settings_leftmenu_width=Chiều rộng thích hợp
 settings_leftmenu_width_description=Default/hiện chiều rộng <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Hiển thị công tắc đảo ngược
 settings_switch_rdisplay_description=Tùy chọn này cho phép bạn đặt thứ tự khác nhau cho các công tắc trên cùng bên trái. Sau khi thay đổi tùy chọn này, yêu cầu tải lại trang hoàn chỉnh
+
 theme_xhred_filemanager_context_calculate_selected_size=Tính kích thước đã chọn
 theme_xhred_filemanager_selected_entries=Đã chọn: %value mục
 theme_xhred_filemanager_manual_path=Nhập đường dẫn thủ công
+
 theme_xhred_datatable_semptytable=không có dữ liệu trong bảng
 theme_xhred_datatable_sinfo=Hiển thị _START_ cho _END_ trong số các mục _TOTAL_
 theme_xhred_datatable_sinfoempty=Hiển thị 0 đến 0 của 0 mục
@@ -300,6 +337,7 @@ theme_xhred_datatable_slengthmenu=Hiển thị các mục _MENU_
 theme_xhred_datatable_sloadingrecords=Đang tải
 theme_xhred_datatable_sprocessing=Chế biến. ..
 theme_xhred_datatable_szerorecords=Không tìm thấy kết quả
+
 theme_xhred_filemanager_file_edit_but_not_saved=Tập tin đã được chỉnh sửa nhưng chưa được lưu.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Bạn muốn làm gì?
 theme_xhred_global_save=Tiết kiệm
@@ -307,13 +345,16 @@ theme_xhred_global_save_and_close=Lưu và đóng
 theme_xhred_global_close_without_saving=Đóng mà không lưu
 theme_xhred_global_continue_editing=Tiếp tục chỉnh sửa
 theme_xhred_filemanager_context_download_file=Tải xuống
+
 settings_sysinfo_easypie_charts_width=Chiều rộng của biểu đồ
 settings_sysinfo_easypie_charts_scale=Độ dài tỷ lệ của biểu đồ
+
 right_return_theme_options=tùy chọn chủ đề
 theme_xhred_datatable_semptydirectory=Thư mục trống
 theme_xhred_filemanager_context_clipboard=Sao chép đường dẫn vào clipboard
 theme_xhred_global_warning=Cảnh báo
 theme_xhred_global_close=Đóng
+
 theme_xhred_filemanager__no_bookmarks=Không có dấu trang đã lưu
 theme_xhred_filemanager_unbookmark_success=Thư mục <strong><em>%value</em></strong> đã được xóa thành công khỏi dấu trang của bạn.
 theme_xhred_filemanager_bookmark=Đánh dấu thư mục hiện tại
@@ -329,21 +370,27 @@ theme_xhred_filemanager_target_conflict_message_1=Mục tiêu đã dán đã t�
 theme_xhred_filemanager_target_conflict_message_2=Mục tiêu đã dán đã tồn tại! Bạn thích làm gì?
 theme_xhred_filemanager_target_conflict_replace=Hợp nhất và thay thế
 theme_xhred_filemanager_target_conflict_paste=Dán bằng tên mới
+
 theme_xhred_editor_help_title=Phím tắt biên tập
+
 theme_xhred_filemanager_hide_toolbar=Ẩn thanh công cụ
 theme_xhred_filemanager_hide_actions=Ẩn cột hành động
 theme_xhred_filemanager_hovered_toolbar=Kích hoạt thả xuống trong thanh công cụ trên chuột di chuột
 theme_xhred_filemanager_context_delete_selected=Xóa đã chọn
+
 theme_xhred_database_adding_new_row=Thêm hàng mới
 theme_xhred_database_editing_row=Chỉnh sửa hàng đã chọn
 theme_xhred_database_editing_rows=Chỉnh sửa các hàng đã chọn
 theme_xhred_database_adding_new_row_data=Đặt dữ liệu
+
 theme_xhred_datatable_filter=Bộ lọc
+
 theme_xhred_global_update=Cập nhật
 theme_xhred_global_update_and_return=Cập nhật và trả lại
 theme_xhred_global_update_and_close=Cập nhật và đóng
 theme_xhred_global_back=Trở lại
 theme_xhred_global_cancel=Hủy bỏ
+
 theme_xhred_database_add_row_successful=Hàng mới đã được thêm thành công
 theme_xhred_database_edit_row_successful=Hàng được chọn đã được cập nhật thành công
 theme_xhred_database_edit_rows_successful=Các hàng được chọn đã được cập nhật thành công
@@ -363,9 +410,13 @@ theme_xhred_database_objects_selected_delete=Xóa các đối tượng được 
 theme_xhred_database_db_selected_drop=Bỏ cơ sở dữ liệu đã chọn
 theme_xhred_database_dbs_selected_drop=Bỏ cơ sở dữ liệu đã chọn
 theme_xhred_database_edit_but_not_saved=Dữ liệu bảng đã được chỉnh sửa nhưng không được lưu.
+
 theme_xhred_global_no_such_command=Dường như <tt>$1</tt> thực thi không được cài đặt hoặc không có trong đường dẫn trên hệ thống của bạn.
+
 theme_xhred_global_notice=Để ý
+
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
+
 theme_xhred_global_file=Tập tin
 theme_xhred_global_directory=Danh mục
 theme_xhred_global_no_target=Mục tiêu không tồn tại hoặc không thể truy cập
@@ -376,55 +427,81 @@ theme_xhred_global_all=Tất cả
 theme_xhred_global_none=không ai
 theme_xhred_global_yes=Đúng
 theme_xhred_global_no=Không
+
 theme_xhred_filemanager_new_tab=Thêm tab mới (Ctrl+Space)
 theme_xhred_datatable_no_search_results=<span class="h5">Không tìm thấy kết quả</span> <br> Hãy thử một tìm kiếm khác
+
 theme_xhred_filemanager_buffer_error=Không thể dán tệp vào bộ đệm - quyền bị từ chối.
+
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` đã tồn tại trong `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Không thể tạo $3 `<strong><em>$1</em></strong>` trong `<strong><tt>$2</tt></strong>` - sự cho phép bị từ chối.
+
 filemanager_paste_warning=Không thể dán mục tiêu. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên, di chuyển</em> hoặc <em>đã xóa</em> trong khi/trước khi dán. Một nguyên nhân khác có thể là đích đến không thể ghi được. Đó là giá trị kiểm tra thuộc tính của đối tượng.
+
 theme_xhred_filemanager_delete_warning=Xóa đã kết thúc thành công nhưng không phải cho tất cả các đối tượng. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên</em> hoặc <em>di chuyển</em> trước khi xóa. Quyền hạn chế (thuộc tính) là một nguyên nhân có thể khác. Thông báo lỗi:
+
 filemanager_rename_exists=$3 với tên `<strong><em>$1</em></strong>` đã tồn tại trong `<strong><tt>$2</tt></strong>`
 filemanager_rename_denied=Không thể đổi tên $3. Điều này có thể xảy ra do nguồn $3 đã bị xóa hoặc do quyền hạn chế.
+
 theme_xhred_filemanager_successful_rename=Đổi tên `<strong><em><s>%from</s></em></strong>` đến `<strong><em>%to</em></strong>` đã thành công.
+
 filemanager_global_info_total1=Tổng cộng: tệp $1 và thư mục $2
 filemanager_global_info_total2=Tổng cộng: các tệp $1 và thư mục $2
 filemanager_global_info_total3=Tổng cộng: tệp $1 và thư mục $2
 filemanager_global_info_total4=Tổng cộng: các tệp $1 và thư mục $2
+
 theme_xhred_filemanager_selected_entry=Đã chọn: %value mục
+
 theme_xhred_filemanager_search_query=Mặt nạ truy vấn
 theme_xhred_filemanager_search_match=Tìm kết quả
 theme_xhred_filemanager_search_replace=Thay thế trong kết quả
+
 theme_xhred_global_find=Tìm thấy
 theme_xhred_global_replace=Thay thế
+
 theme_xhred_filemanager_searching_matching=Tìm kiếm `<em>%value</em>` khớp với tên của tệp/thư mục, chứa `<em>%text</em>` bản văn bản.
 theme_xhred_filemanager_searching_replacing=Thay thế khớp `<em>%text</em>` bằng `<em>%replace</em>` trong tệp bằng tên chứa `<em>%value</em>`.
+
 theme_xhred_filemanager_search_replaced_multi=Tìm thấy và thay thế trong các tệp <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=Tìm thấy và thay thế trong tệp <strong>1</strong>.
+
 theme_xhred_filemanager_successful_permissions_with_errors=Quyền đã được thay đổi thành công nhưng không phải cho tất cả các đối tượng:
+
 theme_xhred_filemanager_successful_ownership_with_errors=Quyền sở hữu đã không được thay đổi thành công cho tất cả các đối tượng:
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Quyền sở hữu không thể thay đổi do các lỗi sau:
+
 theme_xhred_filemanager_successful_compression_with_errors=Quá trình nén đã kết thúc với các lỗi sau:
 theme_xhred_filemanager_successful_compression_bg=Nén đã thành công. Tập tin `<strong>%file</strong>` nén được đặt trong thư mục `<strong>%path</strong>`.
 theme_xhred_filemanager_successful_compression_bg_with_errors=Nén đã kết thúc với lỗi. Tập tin `<strong>%file</strong>` nén được đặt trong thư mục `<strong>%path</strong>`.
+
 theme_xhred_filemanager_settings_notification_type=Loại thông báo sẽ hiển thị
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Thông tin, cảnh báo và lỗi
 theme_xhred_filemanager_settings_notification_type_warn_err=Cảnh báo và lỗi
 theme_xhred_filemanager_settings_notification_type_err=Chỉ có lỗi
+
 theme_xhred_filemanager_settings_tabs_remember_state=Khôi phục các tab đã sử dụng trước đó trong lần tải đầu tiên
 theme_xhred_filemanager_context_open_new_tab=Mở ra trong trang mới
+
 theme_xhred_xsql_fit_content_screen_height=Phù hợp với nội dung bảng cơ sở dữ liệu về chiều cao màn hình
+
 theme_xhred_datatable_filter_visible_tables=Bộ lọc có thể nhìn thấy (s)
 theme_xhred_module_help=Trợ giúp mô-đun
+
 theme_xhred_server_process_running=Quá trình máy chủ vẫn đang chạy!? Bạn có chắc chắn rằng bạn muốn điều hướng đi và không có quyền truy cập vào thông tin đầu ra? Ngay cả khi bạn rời đi bây giờ, quá trình sẽ không bị chấm dứt.
+
 settings_global_options_title=Tùy chọn toàn cầu
 settings_global_passgen_format=Tạo mật khẩu
 settings_global_passgen_format_description=Đặt độ dài và loại ký tự được sử dụng trong mật khẩu được tạo. Giá trị mặc định bằng <code>15|az,AZ,0-9</code>, đại diện cho mật khẩu có độ dài 15 ký tự, chứa các chữ cái và chữ in hoa và in thường. Cũng có thể thêm các ký tự đặc biệt bằng cách sử dụng dấu <code>#</code> băm
 theme_xhred_password_generator_new=Tạo mật khẩu mới <br> (Tới Clipboard)
 theme_xhred_password_generator_new_success=Đã tạo mật khẩu %password đã được sao chép vào clipboard thành công.
+
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Tập tin này phải kết thúc bằng `1;` để làm việc thành công.
+
 theme_error_access_not_root=Truy cập bị từ chối: Người dùng cần quyền truy cập vào mô-đun <em>Cấu hình Webmin</em> để chỉnh sửa cấu hình chủ đề
+
 settings_hide_top_loader=Ẩn thanh tiến trình hàng đầu
+
 settings_leftmenu_vm_cm_dropdown_icons=Hiển thị các biểu tượng tượng trưng trong trình đơn thả xuống trong Virtualmin/Cloudmin
 theme_xhred_global_shipped=Vận chuyển
 theme_xhred_global_available=Có sẵn
@@ -440,10 +517,12 @@ theme_xhred_notification_none=Không có thông báo
 theme_xhred_notification_no_data=Không có dữ liệu thu thập
 theme_xhred_notification_no_favorites=Không có dữ liệu yêu thích
 theme_xhred_global_theme_version=Phiên bản chủ đề
+
 settings_side_slider_sysinfo_enabled=Hiển thị tab bảng điều khiển
 settings_side_slider_notifications_enabled=Hiển thị tab thông báo
 settings_side_slider_favorites_enabled=Hiển thị tab yêu thích
 settings_show_terminal_link=Hiển thị nút thiết bị đầu cuối
+
 theme_xhred_sysinfo_system_monitors=Màn hình hệ thống
 theme_xhred_sysinfo_server_status=Tình trạng máy chủ
 theme_xhred_sysinfo_software_versions=Phiên bản phần mềm
@@ -451,18 +530,23 @@ theme_xhred_sysinfo_recent_logins=Đăng nhập gần đây
 theme_xhred_sysinfo_vm_package_updates=Cập nhật gói Virtualmin
 theme_xhred_sysinfo_disk_quotas=Hạn ngạch đĩa
 theme_xhred_sysinfo_bandwidth_quotas=Hạn ngạch băng thông
+
 left_netdata=Giám sát thời gian thực
 settings_leftmenu_netdata=Hiển thị liên kết giám sát thời gian thực Netdata
 settings_leftmenu_netdata_link=Liên kết ưa thích máy chủ Netdata
+
 theme_xhred_filemanager_context_chattr=Thay đổi thuộc tính
 theme_xhred_filemanager_changing_attributes=Đặt thuộc tính thành <strong><em>%value</em></strong> trên (các) tệp đã chọn.
 theme_xhred_filemanager_successful_attributes_with_errors=Các thuộc tính chưa được đặt thành công cho tất cả các đối tượng:
 theme_xhred_filemanager_successful_attributes=Các thuộc tính đã được thiết lập thành công.
+
 theme_xhred_filemanager_context_chcon=Thay đổi bối cảnh bảo mật
 theme_xhred_filemanager_changing_secontext=Thay đổi bối cảnh bảo mật thành <strong><em>%value</em></strong> trên (các) tệp đã chọn.
 theme_xhred_filemanager_successful_secontext_with_errors=Bối cảnh bảo mật đã không được thay đổi thành công cho tất cả các đối tượng:
 theme_xhred_filemanager_successful_secontext=Bối cảnh an ninh đã được thay đổi thành công.
+
 theme_xhred_global_no_results_found=không tim được kêt quả
+
 theme_new_password_header=Đặt mật khẩu mới cho người dùng
 login_reset=Khôi phục mật khẩu
 theme_xhred_move_top=Di chuyển lên đầu
@@ -475,12 +559,14 @@ settings_show_night_mode_link=Hiển thị nút chế độ ngày/đêm
 settings_hotkey_toggle_key_night_mode=Hotkey để chuyển đổi bảng màu tối/sáng
 settings_title=Cấu hình chủ đề
 settings_subtitle=Dành cho người dùng
+
 theme_tooltip_night_mode=Chuyển đổi chế độ ngày/đêm
 theme_tooltip_terminal_link=Thiết bị đầu cuối
 theme_tooltip_language_link=Ngôn ngữ
 theme_xhred_tooltip_switch_user=Chuyển người dùng
 theme_tooltip_logout=Đăng xuất
 theme_tooltip_edit_user=Người dùng biên tập
+
 settings_sysinfo_easypie_charts_size=Đường kính của biểu đồ
 theme_xhred_global_choose=Chọn
 theme_xhred_global_select=Lựa chọn
@@ -497,6 +583,7 @@ theme_xhred_global_help=Cứu giúp
 settings_right_soft_updates_page_options_title=Nâng cấp phần mềm
 theme_xhred_git_compare_changes=So sánh thay đổi
 theme_xhred_filemanager_link_to_clipboard=Tên liên kết tượng trưng đã được sao chép vào clipboard.
+
 theme_left_mail_prefs=Tùy chọn thư
 theme_left_mail_change_password=Đổi mật khẩu
 theme_left_mail_account_functions=Chức năng tài khoản
@@ -504,12 +591,14 @@ theme_xhred_global_dir_up=Chuyển đến thư mục trước (Backspace)
 theme_xhred_global_module_config=Cấu hình mô-đun
 theme_xhred_global_return=Trở về
 theme_xhred_global_return_to_module_index=Trở về chỉ mục mô-đun
+
 theme_xhred_global_complete_changelog=Thay đổi hoàn toàn
 theme_xhred_global_beta_version=Bản thử nghiệm
 theme_xhred_global_release=Giải phóng
 theme_xhred_global_released_on=Ra mắt vào
 theme_xhred_global_committed_on=Cam kết
 theme_xhred_global_resolved_issues=Đã giải quyết các vấn đề trong bản phát hành %value
+
 theme_force_upgrade=Buộc cập nhật chủ đề
 theme_xhred_force_upgrade_beta=Cài đặt phiên bản phát triển mới nhất (beta)
 theme_xhred_force_upgrade_stable=Cài đặt phiên bản phát hành mới nhất (ổn định)
@@ -517,6 +606,7 @@ theme_xhred_source_encoding=Mã hóa nguồn
 theme_update_footer=Vui lòng loại báo cáo lỗi cho kho lưu trữ $1. Theo dõi kênh $2 của chủ đề để cập nhật mới nhất.
 theme_xhred_encoding_manually_set=Đặt mã hóa thủ công
 theme_xhred_filemanager_save_to_change_encoding=Tập tin phải được lưu, để cho phép thay đổi mã hóa.
+
 theme_xhred_filemanager_user_switch=Chuyển sang người dùng (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Bằng cách chọn tên người dùng được liệt kê bên dưới, bạn sẽ chuyển các hoạt động tiếp theo được thực hiện như người dùng này.
 theme_xhred_filemanager_user_switch_description_back=Để chuyển về chế độ mặc định, chọn tùy chọn đầu tiên trong chọn.
@@ -534,23 +624,32 @@ theme_xhred_global_minimize=Giảm thiểu
 theme_xhred_global_maximize=Tối đa hóa
 theme_xhred_global_normalize=Bình thường hóa
 theme_xhred_global_set_encoding=Đặt mã hóa
+
 theme_xhred_sysinfo_update_start=Thông tin hệ thống đang được nhớ lại.
 theme_xhred_sysinfo_update_end=Thông tin hệ thống đã được nhớ lại thành công.
 theme_xhred_sysinfo_update_failed=Thông tin hệ thống không thể được nhớ lại. Thử lại sau.
+
 theme_xhred_global_development_version=Phiên bản phát triển
+
 right_vm_server_summary=Tóm tắt máy chủ ảo
+
 settings_webmin_default_module=Mô-đun mặc định cho Webmin
+
 theme_xhred_global_unbeforeunload_title=Những thay đổi bạn đã thực hiện có thể không được lưu
 theme_xhred_global_unbeforeunload_message=Nếu bạn tiếp tục, những thay đổi chưa được lưu trên trang này có thể bị mất vĩnh viễn.
 theme_xhred_global_continue=Tiếp tục
+
 theme_xhred_global_automatic_refresh=Tự động làm mới
 theme_xhred_global_second=Thứ hai
 theme_xhred_global_seconds=Giây
 theme_xhred_global_minute=Phút
 theme_xhred_global_minutes=Phút
+
 theme_xhred_browser_warning=Để có trải nghiệm tốt nhất với bảng điều khiển máy chủ trên máy tính của bạn, hãy sử dụng trình duyệt cập nhật, được hỗ trợ. <br><br> <em>Internet Explorer</em> không còn được hỗ trợ. <br><br> Các trình duyệt được đề xuất là <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> hoặc <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Bạn có thể tải xuống phiên bản di động của trình duyệt không yêu cầu cài đặt để vượt qua các giới hạn được áp đặt.</div>
+
 theme_xhred_filter_content=Lọc nội dung
 theme_xhred_log_file_empty=Tệp nhật ký trống
+
 theme_xhred_config_configurable_options=Tùy chọn cấu hình
 theme_xhred_filter_content_no_matches_query=Không có nội dung phù hợp với truy vấn %str
 theme_xhred_toggle_accordions=Chuyển đổi tầm nhìn của accordion
@@ -568,15 +667,18 @@ theme_xhred_signing_in=Đang đăng nhập
 theme_xhred_signing_success=Đăng nhập thành công!
 theme_xhred_session_failed_password=Sai mật khẩu, vui lòng thử lại.
 theme_xhred_global_reauthenticate=Xác nhận lại
+
 settings_sysinfo_real_time_status=Cho phép theo dõi thời gian thực
 settings_sysinfo_real_time_timeout=Khoảng thời gian để thực hiện cập nhật
 settings_sysinfo_real_time_timeout_description=Đặt khoảng thời gian mong muốn để cập nhật màn hình ở chế độ nền. Giá trị có nghĩa là tính bằng mili giây. Giữ giá trị này càng thấp càng tốt để tránh mất dữ liệu ngắn hạn
 theme_xhred_global_redirecting=Chuyển hướng
+
 body_no_javascript_title=JavaScript bị vô hiệu hóa
 body_no_javascript_message=Vui lòng kích hoạt javascript và làm mới trang
 theme_xhred_connection_lost=Kết nối bị mất
 theme_xhred_connection_success=Kết nối thành công
 theme_xhred_connection_success_details=Kết nối với máy chủ đã được thiết lập lại.
+
 theme_xhred_return_home=Trở về bảng chỉ mục
 theme_xhred_global_upload=Tải lên
 theme_xhred_global_select_files=Chọn tệp tin)
@@ -584,12 +686,14 @@ theme_xhred_global_file_selected=tập tin được chọn
 theme_xhred_global_files_selected=tập tin được chọn
 theme_xhred_global_reset=Cài lại
 theme_xhred_upload_initial_info=Kéo và thả tệp ở đây hoặc nhấp để chọn
+
 theme_xhred_global_empty=Trống
 theme_xhred_global_click_here=bấm vào đây
 theme_git_patch_incompatible_message=Việc cài đặt phiên bản $1 <em>$2</em> này yêu cầu phiên bản mới nhất và/hoặc có thể chưa được phát hành của $3 và $5 để hoạt động chính xác.
 theme_git_patch_incompatible_message_s=Việc cài đặt phiên bản $1 <em>$2</em> này yêu cầu phiên bản mới nhất và/hoặc có thể chưa được phát hành của $3 để hoạt động chính xác.
 theme_git_patch_incompatible_message_desc=Có thể có những thay đổi không tương thích, có thể ngăn chủ đề hoạt động như thiết kế. Để bỏ qua cảnh báo này, và buộc cài đặt chủ đề bằng $1, hoặc nâng cấp $2 lên phiên bản phát triển mới nhất trước tiên bằng giao diện điều khiển, bằng cách chạy tập lệnh <kbd>update-from-repo.sh</kbd> từ thư mục của nó.
 theme_xhred_global_outdated=Phiên bản này là lỗi thời
+
 theme_xhred_filemanager_edit_html=Chỉnh sửa dưới dạng HTML
 theme_xhred_global_example=Thí dụ
 theme_xhred_global_output_example=Ví dụ đầu ra
@@ -624,6 +728,7 @@ theme_xhred_filemanager_tree_view_depth=Trích xuất độ sâu xem cây trên 
 theme_xhred_global_unlimited=Vô hạn
 theme_xhred_filemanager_tree_exclude_on_first_load=Loại trừ các thư mục không cần thiết khỏi di chuyển ngang qua tải ban đầu để xem cây (tải nhanh hơn)
 theme_xhred_filemanager_tree_expand_search=Mở rộng tất cả các nhánh có chứa kết quả khớp trong khi lọc chế độ xem dạng cây
+
 theme_xhred_tooltip_side_slider_sync_sysinfo=Buộc đồng bộ hóa bộ sưu tập trạng thái nền
 theme_xhred_tooltip_side_slider_go_to_dashboard=Đi đến bảng điều khiển
 theme_xhred_tooltip_side_slider_open_favorites_control=Điều khiển yêu thích mở
@@ -634,6 +739,7 @@ theme_xhred_tooltip_side_slider_pinned=Thanh trượt/ghim bên
 settings_side_slider_fixed_toggle=Hiển thị chuyển đổi pin/bỏ ghim
 settings_side_slider_fixed_toggle_description=Tùy chọn này sẽ hiển thị chuyển đổi, trong thanh trượt bên, ở hàng dưới cùng, cho phép chuyển đổi khả năng hiển thị của nó khi đang bay, nếu các điều kiện trong tùy chọn trước đó được đáp ứng.
 settings_right_page_hide_persistent_vscroll=Ẩn thanh cuộn dọc liên tục
+
 settings_sysinfo_theme_updates_for_usermin=Cài đặt cập nhật chủ đề cho Usermin là tốt
 theme_xhred_global_installed_version=Phiên bản đã cài đặt
 theme_xhred_global_installed_and_latest_version=Phiên bản cài đặt và mới nhất
@@ -643,11 +749,13 @@ settings_perform_content_scrolling=Cho phép cuộn trang tự động cho đầ
 settings_contrast_mode=Bật chế độ tương phản cao
 theme_xhred_global_firewall=Bức tường lửa
 theme_xhred_settings_show_webmin_tab=Hiển thị chuyển đổi Webmin trong menu điều hướng?
+
 settings_enable_container_offset=Cho phép bù container
 settings_enable_container_offset_description=Tùy chọn này sẽ chỉ hoạt động trên màn hình với độ phân giải tối thiểu 1920 pixel ngang
 theme_xhred_filemanager_preparing_download=Chuẩn bị tải về. Lưu trữ %number tập tin. Vui lòng đợi %dots
 theme_xhred_filemanager_prepared_download=Tải về đã sẵn sàng. Lưu trữ %number tập tin (s).
 theme_xhred_filemanager_canceled_download=Tải về hủy bỏ.
+
 theme_xhred_filemanager_settings_force_tar_download=Buộc lệnh <code>tar</code>, ngay cả khi <code>zip</code> có sẵn, khi tải xuống dưới dạng lưu trữ
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=Lao
@@ -659,6 +767,7 @@ settings_sysinfo_real_time_status_options=Tùy chọn giám sát thời gian th�
 settings_sysinfo_real_time_status_disk=Cho phép đĩa
 settings_sysinfo_real_time_status_disk_description=Có thể hữu ích để vô hiệu hóa giám sát thời gian thực cho các đĩa trên hệ thống tệp chậm/lớn
 theme_xhred_title_locale_non_ui_config=Định dạng ngày tạo của máy chủ
+
 extensions_mail_current_position=Tin nhắn $1-$2 trên $3
 extensions_mail_sort_by_sender=Sắp xếp theo người gửi
 extensions_mail_sort_by_recipient=Sắp xếp theo người nhận
@@ -725,6 +834,7 @@ extensions_mail_move_copy_only=Đừng di chuyển, chỉ cần sao chép nó
 theme_xhred_global_total=Toàn bộ
 theme_xhred_global_selected=Đã chọn
 theme_xhred_mail_new_message=Tin nhắn mới
+
 theme_xhred_mail_search_simple=Hiển thị tùy chọn tìm kiếm
 theme_xhred_mail_search_advanced=Ẩn tùy chọn tìm kiếm
 theme_xhred_mail_search_clear=Xóa kết quả tìm kiếm
@@ -744,35 +854,48 @@ theme_xhred_mail_search_search_in=Tìm kiếm ở
 theme_xhred_mail_search_limit_results=Giới hạn kết quả tìm kiếm
 theme_xhred_mail_search_limit_results_yes=Có, chỉ tìm kiếm thông qua
 theme_xhred_mail_search_has_attach=có tập tin đính kèm
+
 theme_xhred_settings_right_theme_bgs=Hình nền chủ đề
 theme_xhred_settings_right_theme_bgs_title=Hình nền chủ đề
 settings_right_bgs_title=Nền chủ đề cho trang đăng nhập có thể được đặt ở đây. Định dạng được hỗ trợ duy nhất là <kbd>.png</kbd>, để cung cấp độ trong suốt alpha.
 settings_right_bg_unauthenticated_users=Bối cảnh cho người dùng không được xác thực
 settings_right_theme_left_background_title=Kiểm soát nền chủ đề
+
 theme_xhred_find_in_config_files=Tìm trong tập tin cấu hình
 theme_xhred_find_in_config_files_result_found_single=Kết quả $1 được tìm thấy trong tệp $2 với giá $3
 theme_xhred_find_in_config_files_result_found_multi=Kết quả $1 được tìm thấy trong tệp $2 với giá $3
 theme_xhred_find_in_config_files_results_found=Kết quả $1 được tìm thấy trong các tệp $2 với giá $3
+
 theme_xhred_filemanager_context_symlink=Tạo liên kết tượng trưng mới
 theme_xhred_global_symbolic=Liên kết tượng trưng
 theme_xhred_global_target=Mục tiêu
 settings_sysinfo_max_servers=Máy chủ ảo tối đa hiển thị
+
 right_download_is_ready=Tải về của bạn đã sẵn sàng.
 theme_xhred_download_is_being_prepared=Tải xuống của bạn đang được chuẩn bị. Nó có thể mất một thời gian. Xin vui lòng chờ ..
 theme_xhred_backup_is_being_prepared=Sao lưu của bạn đang được chuẩn bị. Nó có thể mất một thời gian. Xin vui lòng chờ ..
+
 settings_mail_ui=Kích hoạt giao diện người dùng thư mới
+
 settings_show_theme_configuration_for_admins_only=Chỉ hiển thị nút cài đặt chủ đề cho quản trị viên
 settings_show_theme_configuration_for_admins_only_error=Truy cập bị từ chối: Quản trị viên đã chặn quyền truy cập vào các tùy chỉnh của người dùng
+
 theme_xhred_tooltip_navigation_pinned=Menu điều hướng ghim/bỏ ghim
 settings_hotkey_navigation=Hotkey để chuyển đổi menu điều hướng
+
 theme_xhred_search_in_webmin=Tìm kiếm trên Webmin
 theme_xhred_search_in_usermin=Tìm kiếm Usermin
 theme_xhred_search_in_virtualserver=Tìm kiếm Virtualmin
 theme_xhred_search_in_servermanager=Tìm kiếm trên Cloudmin
+
 theme_xhred_filemanager_context_clipboard_selection=Sao chép lựa chọn vào clipboard
+
 settings_hotkey_slider=Hotkey cho thanh trượt bên
+
 theme_git_update_locked=Không thể hoàn thành cập nhật chủ đề do không có kết nối với GitHub hoặc vượt quá giới hạn tốc độ API của nó. Đối với sau này, các yêu cầu không được xác thực, giới hạn tốc độ cho phép tối đa 60 yêu cầu mỗi giờ. Thử lại sau hoặc sử dụng bàn điều khiển để thực hiện thủ công thông qua tập lệnh cập nhật.
+
 settings_collapse_navigation_link=Hiển thị nút pin/bỏ ghim
+
 settings_cache_interval=Khoảng thời gian để chạy cập nhật kiểm tra
 settings_cache_interval_1h=mỗi tiếng
 settings_cache_interval_12h=cứ sau 12 giờ
@@ -783,11 +906,15 @@ settings_cache_interval_1m=mỗi tháng một lần
 settings_cache_interval_3m=3 tháng một lần
 settings_cache_interval_6m=hai lần một năm
 settings_cache_interval_1y=mỗi năm một lần
+
 theme_xhred_reload_notification=Cấu hình chủ đề đã được thay đổi nhưng không được lưu. Trang sẽ được tải lại, để thiết lập lại cài đặt hiện tại.
+
 theme_xhred_global_save_as=Lưu thành
 theme_xhred_editor_save_file_as=Lưu file dưới dạng
 theme_xhred_global_configuration=Cấu hình
+
 body_used_cached_total=Tổng cộng $1 / $3 được lưu trữ / $2 đã sử dụng
+
 theme_xhred_favorites_add=Thêm vào mục yêu thích
 theme_xhred_favorites_remove=Loại bỏ khỏi mục ưa thích
 theme_xhred_select_deselect=Chọn/bỏ chọn mục hiện tại
@@ -804,12 +931,14 @@ theme_xhred_mail_no_new_mail=Không có thư mới
 theme_xhred_editor_set_syntax=Đặt cú pháp
 theme_xhred_global_menu=Thực đơn
 theme_xhred_shell_aborted=Hoạt động bị hủy bỏ
+
 theme_xhred_connection_reboot=Khởi động lại
 theme_xhred_connection_reboot_details=Máy chủ đang được khởi động lại. Xin vui lòng chờ ..
 settings_leftmenu_custom_links_description=Có thể có các liên kết tùy chỉnh, thêm vào menu điều hướng. <br><br> Các phím <em>title</em>, <em>link</em> và <em>icon</em> là bắt buộc; tùy chọn, bạn có thể xác định chế độ đăng nhập sẽ hiển thị ở chế độ đăng nhập nào, bằng cách chỉ định khóa <em>level</em>, với các giá trị, trong danh sách được phân tách bằng dấu phẩy, chứa: <br><br> <em>0</ em > - đăng nhập quản trị viên; <br><em> 1 </em>- đăng nhập người bán lại;<br> <em>2</em> - đăng nhập của chủ sở hữu máy chủ; <br><em> 3 </em>- đăng nhập người dùng;<br> <em>4</em> - đăng nhập của chủ sở hữu hệ thống. <br><br> Nó sẽ yêu cầu bạn chuyển đối tượng JSON hợp lệ dưới dạng chuỗi, như trong ví dụ bên dưới. <hr><pre> {"thêm": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " phong bì "," cổng ":" 20000 "," mục tiêu ":" _blank "}]} </pre>
 left_favorites_edit=Chỉnh sửa mục yêu thích
 left_favorites_edit_desc=Trang này có thể được sử dụng để chỉnh sửa thủ công tệp người dùng yêu thích chủ đề. Điều này nên được thực hiện cẩn thận, vì không có cú pháp hoặc kiểm tra tính hợp lệ khác sẽ được thực hiện trên các thay đổi của bạn.
 theme_xhred_filemanager_records_for_server_pagination=Số mục mặc định trong thư mục để bắt đầu phân trang máy chủ
+
 filemanager_global_info_paginated_total1=Tệp $1 và thư mục $2 của các mục $3 trên các trang $4
 filemanager_global_info_paginated_total2=Các tệp $1 và thư mục $2 của các mục $3 trên các trang $4
 filemanager_global_info_paginated_total3=Tệp $1 và các thư mục $2 của các mục $3 trên các trang $4
@@ -844,6 +973,7 @@ filemanager_archive_file_not_found=Tệp không tồn tại
 filemanager_archive_gpg_private_error=Không có khóa bí mật có sẵn hoặc cụm mật khẩu của khóa không chính xác
 theme_xhred_filemanager_errors_extraction=Các lỗi sau đây xảy ra trong khi giải nén
 theme_xhred_filemanager_extract_option_delete_afterwards=Xóa lưu trữ sau khi giải nén thành công
+
 theme_xhred_login_passphrase_desc=Nhập cụm mật khẩu của khóa GPG nếu được đặt.
 theme_xhred_filemanager_encrypt_option_delete_afterwards=Xóa tập tin sau khi mã hóa thành công
 theme_xhred_filemanager_decrypt_option_delete_afterwards=Xóa tập tin sau khi giải mã thành công
@@ -855,6 +985,7 @@ theme_xhred_filemanager_crypt_decrypt=Các tập tin đang được giải mã.
 theme_xhred_filemanager_crypt_encrypted=Mã hóa các tập tin được chọn đã thành công.
 theme_xhred_filemanager_crypt_decrypted=Giải mã các tập tin được chọn đã thành công.
 theme_xhred_filemanager_batch_error=Nó cũng bao gồm các kết quả rút gọn của %1 lỗi quen thuộc.
+
 theme_xhred_global_preview_img=Xem trước hình ảnh
 theme_xhred_global_preview_img_sel=Xem trước hình ảnh đã chọn
 theme_xhred_global_preview_img_all=Xem trước tất cả hình ảnh
@@ -869,6 +1000,7 @@ theme_xhred_global_toggle_fullscreen=Bật chế độ toàn màn hình
 theme_xhred_global_zoom_in_out=Phóng to/thu nhỏ
 theme_xhred_global_prev_arrow_left=Trước đó (mũi tên trái)
 theme_xhred_global_next_arrow_right=Tiếp theo (mũi tên phải)
+
 settings_reset_cache_tooltip=Đặt lại bộ đệm của chủ đề từ bất kỳ trang nào, bằng cách nhấp vào <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> phím nóng
 settings_update_theme_tooltip=Chạy cập nhật chủ đề từ bất kỳ trang nào. Cập nhật lên phiên bản phát triển mới nhất, bằng cách nhấp vào <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> phím nóng; để cài đặt ổn định mới nhất, sử dụng cùng một kết hợp mà không cần khóa Meta
 theme_xhred_clear_cache_initiated=Xóa bộ nhớ cache và tải lại.
@@ -886,19 +1018,24 @@ theme_xhred_csf=ConfigServer Security & Firewall
 theme_xhred_global_version=phiên bản
 theme_xhred_notify_patching_module_style=Áp dụng bản vá UI ban đầu cho $1 và tải lại.
 theme_xhred_global_error_more_details_online=Lưu ý: Vui lòng đọc thêm về lỗi này và cách khắc phục, trong trang %1 %1wiki %1 trực tuyến của chúng tôi.
+
 theme_xhred_filemanager_search_file_mask=Mặt nạ tập tin
 theme_xhred_filemanager_search_regex=Biểu hiện thông thường
 theme_xhred_upload_successful=<span>$1 tệp</span> đã được tải lên thành công vào thư mục $2
 theme_xhred_upload_successful_single=<span>$1 tệp</span> đã được tải lên thành công vào thư mục $2
 settings_usermin_default_module=Mô-đun mặc định
+
 theme_xhred_search_in_file_open_external=Tách tập tin để tách trình soạn thảo
 theme_xhred_path_to_console=Mở đường dẫn hiện tại trong thiết bị đầu cuối <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Hoàn nguyên tập tin
 theme_xhred_filemanager_editor_reverting_content=Bỏ các thay đổi và trở lại nội dung tập tin gốc.
+
 theme_xhred_filemanager_exclude_dirs=Không bao gồm các mục
 theme_xhred_filemanager_exclude_dirs_desc=Danh sách các tệp hoặc thư mục con được phân tách bằng dấu chấm phẩy để loại trừ
+
 theme_global_access_level=Cấp độ truy cập
 theme_global_user_mode=Chế độ người dùng
+
 theme_xhred_global_attachments=Tài liệu đính kèm
 theme_xhred_editor_tb_font=Nét chữ
 theme_xhred_editor_tb_size=Kích thước
@@ -932,6 +1069,7 @@ theme_xhred_mail_composer_server_attach_error_read=Tập tin yêu cầu có th�
 theme_xhred_mail_composer_server_attach_error_dir=Thư mục không thể được đính kèm
 theme_xhred_mail_composer_discarded_draft=Dự thảo đã bị loại bỏ
 theme_xhred_global_undo=Hoàn tác
+
 theme_xhred_global_today=Hôm nay
 theme_xhred_global_tomorrow=Ngày mai
 theme_xhred_mail_composer_scheduled=Gửi %1 với %2
@@ -962,10 +1100,14 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kb/giây
 settings_table_init_datatables=Số lượng hàng tối đa để khởi tạo sắp xếp và tìm kiếm bảng
 theme_xhred_global_rows=Hàng
+
 settings_side_slider_blend=Thừa kế
+
 settings_theme_make_date=Cho phép chuyển đổi ngày/giờ trong trình duyệt
 settings_theme_make_date_description=Nếu bị tắt, định dạng ngày/giờ do máy chủ cung cấp sẽ được sử dụng
+
 theme_xhred_reload_lang_notification=Ngôn ngữ chủ đề đã được thay đổi. Trang sẽ được tải lại, để áp dụng các cài đặt mới.
+
 theme_xhred_global_small=Nhỏ
 theme_xhred_global_normal=Bình thường
 theme_xhred_global_medium=Trung bình
@@ -973,21 +1115,28 @@ theme_xhred_global_large=Lớn
 theme_xhred_global_huge=Khổng lồ
 theme_xhred_filemanager_editor_maximized=Tối đa hóa bảng soạn thảo khi bắt đầu
 settings_sysinfo_remember_accordions=Lưu trạng thái accordion sử dụng thời gian qua
+
 theme_xhred_textarea_to_clipboard=Nội dung textarea đã chọn đã được sao chép thành công vào clipboard
+
 theme_xhred_global_alias=Bí danh
+
 theme_xhred_mail_composer_real_name=Tên thật
 theme_xhred_mail_composer_username=tên tài khoản
+
 settings_global_palette_unauthenticated=Bảng màu trang đăng nhập
+
 settings_config_save_and_next=Lưu và tiếp theo
 settings_config_configuration_category=Loại cấu hình
 config_search_options_all=Tìm kiếm qua tất cả các tùy chọn cấu hình mô-đun
 theme_xhred_editing_config_file=Chỉnh sửa tệp cấu hình
+
 theme_xhred_login_message_2fa=Xác thực hai yếu tố đã được bật để người dùng này đăng nhập
 theme_xhred_global_verify=Kiểm chứng
 settings_show_terminal_link2=Hiển thị nút trình bao lệnh
 settings_hotkey_shell2=Phím nóng cho trình bao lệnh
 theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Lệnh shell
+
 theme_xhred_filemanager_context_view=Lượt xem
 theme_xhred_file_viewer=Trình xem tệp
 theme_xhred_global_done=Làm xong.
@@ -997,6 +1146,7 @@ theme_xhred_filemanager_view_head_and_reverse=Đầu ra và đảo ngược tệ
 theme_xhred_filemanager_view_tail=Đầu ra tệp đuôi
 theme_xhred_filemanager_view_tail_and_reverse=Đuôi và đảo ngược đầu ra tệp
 theme_xhred_filemanager_view_head_and_tail=Đầu và đuôi tệp đầu ra
+
 theme_xhred_filemanager_search_info_search_dir=Thư mục tìm kiếm
 theme_xhred_filemanager_search_limit_user=Do người dùng sở hữu
 theme_xhred_filemanager_search_limit_group=Thuộc sở hữu của nhóm

@@ -1,14 +1,17 @@
 settings_global_palette_unauthenticated=Tavolozza dei colori della pagina di accesso
+
 settings_config_save_and_next=Salva e Avanti
 settings_config_configuration_category=Categoria di configurazione
 config_search_options_all=Cerca in tutte le opzioni di configurazione del modulo
 theme_xhred_editing_config_file=Modifica del file di configurazione
+
 theme_xhred_login_message_2fa=L'autenticazione a due fattori è stata abilitata per l'accesso di questo utente
 theme_xhred_global_verify=Verificare
 settings_show_terminal_link2=Mostra il pulsante della shell dei comandi
 settings_hotkey_shell2=Tasto di scelta rapida per la shell dei comandi
 theme_xhred_path_to_console2=Apri il percorso corrente nella shell dei comandi <tt>(Alt+Maiusc+K)</tt>
 theme_tooltip_terminal_link2=Shell di comando
+
 theme_xhred_filemanager_context_view=Visualizza
 theme_xhred_file_viewer=Visualizzatore di file
 theme_xhred_global_done=Fatto.
@@ -18,6 +21,7 @@ theme_xhred_filemanager_view_head_and_reverse=Testa e output file inverso
 theme_xhred_filemanager_view_tail=Output del file di coda
 theme_xhred_filemanager_view_tail_and_reverse=Uscita file di coda e inversa
 theme_xhred_filemanager_view_head_and_tail=Uscita file di testa e coda
+
 theme_xhred_filemanager_search_info_search_dir=Directory di ricerca
 theme_xhred_filemanager_search_limit_user=Di proprietà dell'utente
 theme_xhred_filemanager_search_limit_group=Di proprietà del gruppo

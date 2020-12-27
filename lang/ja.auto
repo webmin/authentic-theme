@@ -1,28 +1,38 @@
 theme_xhred_login_pass=パスワード
 theme_xhred_login_token=トークン
 theme_xhred_login_user=ユーザー名
+
 theme_xhred_session_failed=ログインに失敗しました。もう一度お試しください。
+
 settings_favorites=お気に入りボタンを表示
+
 extensions_mail_flag_spam_status=スパム状況
 extensions_mail_flag_spam_status_data=$2のうち$1
 extensions_mail_flag_tls_on=標準暗号化（TLS）
 extensions_mail_flag_tls_off=暗号化されていないメール
 extensions_mail_flag_tls_none=暗号化ステータスが不明です
+
 theme_xhred_textarea_to_clipboard=選択したテキストエリアのコンテンツがクリップボードに正常にコピーされました
+
 theme_xhred_global_alias=エイリアス
+
 theme_xhred_mail_composer_real_name=本名
 theme_xhred_mail_composer_username=ユーザー名
+
 settings_global_palette_unauthenticated=ログインページのカラーパレット
+
 settings_config_save_and_next=保存して次へ
 settings_config_configuration_category=構成カテゴリ
 config_search_options_all=すべてのモジュール構成オプションを検索します
 theme_xhred_editing_config_file=設定ファイルの編集
+
 theme_xhred_login_message_2fa=このユーザーがログインできるように、2要素認証が有効になっています
 theme_xhred_global_verify=確認
 settings_show_terminal_link2=コマンドシェルボタンを表示
 settings_hotkey_shell2=コマンドシェルのホットキー
 theme_xhred_path_to_console2=コマンドシェルで現在のパスを開く<tt>（Alt+Shift+K）</tt>
 theme_tooltip_terminal_link2=コマンドシェル
+
 theme_xhred_filemanager_context_view=見る
 theme_xhred_file_viewer=ファイルビューア
 theme_xhred_global_done=完了。
@@ -32,6 +42,7 @@ theme_xhred_filemanager_view_head_and_reverse=ヘッドおよびリバースフ�
 theme_xhred_filemanager_view_tail=テールファイル出力
 theme_xhred_filemanager_view_tail_and_reverse=テールおよびリバースファイル出力
 theme_xhred_filemanager_view_head_and_tail=ヘッドとテールのファイル出力
+
 theme_xhred_filemanager_search_info_search_dir=検索ディレクトリ
 theme_xhred_filemanager_search_limit_user=ユーザーが所有
 theme_xhred_filemanager_search_limit_group=グループが所有

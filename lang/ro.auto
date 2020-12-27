@@ -1,13 +1,17 @@
 theme_xhred_session_failed=Autentificare esuata. Vă rugăm să încercați din nou.
+
 extensions_mail_flag_spam_status=Starea spamului
 extensions_mail_flag_spam_status_data=$1 din $2
 extensions_mail_flag_tls_on=Criptare standard (TLS)
 extensions_mail_flag_tls_off=E-mail necriptat
 extensions_mail_flag_tls_none=Nu se cunoaște starea de criptare
+
 theme_xhred_filemanager_exclude_dirs=Excludeți intrările
 theme_xhred_filemanager_exclude_dirs_desc=Lista de fișiere sau subdirectoare separate de punct și virgulă
+
 theme_global_access_level=Nivel de acces
 theme_global_user_mode=Modul utilizator
+
 theme_xhred_global_attachments=Fișiere atașate
 theme_xhred_editor_tb_font=Font
 theme_xhred_editor_tb_size=mărimea
@@ -41,6 +45,7 @@ theme_xhred_mail_composer_server_attach_error_read=Fișierul solicitat nu poate 
 theme_xhred_mail_composer_server_attach_error_dir=Directorii nu pot fi atașate
 theme_xhred_mail_composer_discarded_draft=Schița a fost eliminată
 theme_xhred_global_undo=Anula
+
 theme_xhred_global_today=Astăzi
 theme_xhred_global_tomorrow=Mâine
 theme_xhred_mail_composer_scheduled=Trimiteți %1 la %2
@@ -71,10 +76,14 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Numărul maxim de rânduri pentru inițializarea sortării și căutării tabelelor
 theme_xhred_global_rows=rânduri
+
 settings_side_slider_blend=Moşteni
+
 settings_theme_make_date=Activați conversia datei/ore în browser
 settings_theme_make_date_description=Dacă este dezactivat, se va utiliza formatul dată/oră furnizat de server
+
 theme_xhred_reload_lang_notification=Limbajul temei a fost schimbat. Pagina va fi reîncărcată pentru a aplica noi setări.
+
 theme_xhred_global_small=Mic
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Mediu
@@ -82,21 +91,28 @@ theme_xhred_global_large=Mare
 theme_xhred_global_huge=Imens
 theme_xhred_filemanager_editor_maximized=Maximizați panoul editor la început
 settings_sysinfo_remember_accordions=Salvați starea de acordeoane folosită ultima dată
+
 theme_xhred_textarea_to_clipboard=Conținutul de textare selectat a fost copiat cu succes în clipboard
+
 theme_xhred_global_alias=Alias
+
 theme_xhred_mail_composer_real_name=Nume real
 theme_xhred_mail_composer_username=nume de utilizator
+
 settings_global_palette_unauthenticated=Paleta de culori a paginii de conectare
+
 settings_config_save_and_next=Salvați și Următorul
 settings_config_configuration_category=Categorie de configurare
 config_search_options_all=Căutați prin toate opțiunile de configurare a modulului
 theme_xhred_editing_config_file=Editarea fișierului de configurare
+
 theme_xhred_login_message_2fa=Autentificarea cu doi factori a fost activată pentru ca acest utilizator să se conecteze
 theme_xhred_global_verify=Verifica
 settings_show_terminal_link2=Afișați butonul shell al comenzii
 settings_hotkey_shell2=Tastă rapidă pentru comanda shell
 theme_xhred_path_to_console2=Deschideți calea curentă în comanda shell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Shell de comandă
+
 theme_xhred_filemanager_context_view=Vedere
 theme_xhred_file_viewer=Vizualizator de fișiere
 theme_xhred_global_done=Terminat.
@@ -106,6 +122,7 @@ theme_xhred_filemanager_view_head_and_reverse=Ieșirea capului și a fișierului
 theme_xhred_filemanager_view_tail=Ieșire fișier coadă
 theme_xhred_filemanager_view_tail_and_reverse=Ieșirea fișierului coadă și inversă
 theme_xhred_filemanager_view_head_and_tail=Ieșire fișier cap și coadă
+
 theme_xhred_filemanager_search_info_search_dir=Căutare director
 theme_xhred_filemanager_search_limit_user=Deținut de utilizator
 theme_xhred_filemanager_search_limit_group=Deținut de grup

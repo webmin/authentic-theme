@@ -35,6 +35,7 @@ body_used_and_free=סך הכל $1 / $2 חופשי / $3
 body_usermin=גרסת Usermin
 body_virt=זיכרון וירטואלי
 body_webmin=גרסת וובמין
+
 left_favorites=מועדפים
 left_favorites_no=לא הוספו עדיין מועדפים. ..
 left_feedback=שלח משוב
@@ -43,6 +44,7 @@ left_others=אחרים
 left_refresh_modules=רענון מודולים
 left_search=לחפש
 left_statistics=סטטיסטיקת מערכת
+
 login_danger=סכנה!
 login_message=עליך להזין שם משתמש וסיסמא כדי להתחבר לשרת ב
 theme_xhred_login_pass=סיסמה
@@ -52,6 +54,7 @@ login_success=הצלחה!
 theme_xhred_login_token=אסימון
 theme_xhred_login_user=שם משתמש
 login_warning=אזהרה!
+
 right_aliases=שרתי כינוי
 right_bw=שימוש רוחב פס ומגבלה
 right_dom=שם השרת שלך
@@ -76,37 +79,44 @@ right_virtdocs2=תיעוד נוסף
 right_virtualmin=גרסת Virtualmin
 right_vlcheck=בדוק מחדש את רישיון Virtualmin
 right_vm2=גרסת Cloudmin
+
 theme_xhred_session_failed=ההתחברות נכשלה. בבקשה נסה שוב.
 session_logout=היציאה הצליחה. השתמש בטופס למטה כדי להתחבר שוב.
 session_timed_out=המועד הסתיים לאחר $1 דקות של חוסר פעילות.
 session_twofailed=אימות שני גורמים נכשל: $1
+
 settings_right_options=אפשרויות
 settings_right_restore_defaults=לשחזר את ברירות מחדל
 settings_right_restored=שוחזר
 settings_right_restoring=משחזר
 settings_right_saved=שמור
 settings_right_saving=חוסך
+
 settings_right_theme_extensions=הרחבות נושא
 settings_right_theme_extensions_title=הרחבות נושא
 settings_right_file_edit=ערוך קובץ סיומת:
 settings_right_extensions_title=עיצוב נרחב בנושא, מאפשר לך לתפעל בקלות על חלקים ממוקדים בממשק.
+
 theme_xhred_settings_right_theme_logos=סמלי נושא
 theme_xhred_settings_right_theme_logos_title=סמלי נושא
 settings_right_logos_title=ניתן להגדיר כאן לוגו של ערכות נושא, למשתמשים מאומתים וגם לא מאומתים. גודל הלוגו המומלץ הוא <kbd>180x90</kbd> פיקסלים והפורמט הנתמך היחיד הוא <kbd>.png</kbd>, בכדי לספק שקיפות אלפא.
 settings_right_logo_authenticated_users=לוגו למשתמשים מאומתים
 settings_right_logo_unauthenticated_users=לוגו למשתמשים לא מאומתים
+
 settings_right_current_theme=נושא נוכחי
 settings_right_title=דף זה מאפשר לך להגדיר אפשרויות עבור <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">נושא אותנטי</a>. ההגדרות יישמרו בעדכון הנושא.
 settings_right_theme_left_configuration_title=תצורת נושא
 settings_right_theme_left_extensions_title=עורך הרחבות נושא
 settings_right_theme_left_logo_title=בקרת לוגו של נושא
 settings_right_theme_configurable_options_title=אפשרויות הניתנות להגדרה עבור נושא אותנטי
+
 settings_right_window_options_title=אפשרויות חלון
 settings_right_navigation_menu_title=אפשרויות תפריט ניווט
 settings_right_table_options_title=אפשרויות טבלה
 settings_security_title=אפשרויות התראות אבטחה
 settings_right_hotkey_options_title=אפשרויות מקשי קיצור
 settings_right_sysinfo_page_options_title=אפשרויות לוח המחוונים
+
 settings_right_hotkey_custom_options_description=קישורים מותאמים אישית מאפשרים לך להשתמש בספרות מ <code>1</code> עד <code>9</code> מנת לגשת במהירות לכל <code>URL.</code> תקינה של Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> ניתן לשלוף את <code>URL</code> מדף תוכן המסגרת הימני שנפתח כעת, על ידי קריאת המקור שלה. חשוב <code>URL</code> לא תהיה נטויה בתחילת הדרך והיא לא תשתמש בקידומות. לדוגמה, למעבר מהיר לאפאצ'י, קבע לשדה <code>custom link 1</code> <code>/apache/</code> <code>custom link 1</code>. אם שינוי מקשי המקשים המהווים ברירת מחדל מוגדר כ- <code>Alt,</code> לחיצה על <code>Alt+1</code>, תפתח בפניך את מודול Apache
 settings_hotkey_custom_1=קישור מותאם אישית <code>1</code>
 settings_hotkey_custom_2=קישור מותאם אישית <code>2</code>
@@ -117,23 +127,28 @@ settings_hotkey_custom_6=קישור מותאם אישית <code>6</code>
 settings_hotkey_custom_7=קישור מותאם אישית <code>7</code>
 settings_hotkey_custom_8=קישור מותאם אישית <code>8</code>
 settings_hotkey_custom_9=קישור מותאם אישית <code>9</code>
+
 settings_navigation_color=פלטת צבעים
 settings_background_color=לוח הצבעים של דף התוכן
 settings_loader_top=אפשר מטעין התקדמות לעמוד בראש המסך
 settings_loader_left=אפשר ספינר לתפריט ניווט
 settings_right_reload=טען דף תוכן ברירת מחדל
+
 settings_right_hide_table_icons=הסתר סמלי טבלה
 settings_right_hide_table_icons_description=הסר לחלוטין סמלים מטבלאות דפי התוכן והצג קישורים רגילים עם שברון ימין
 settings_right_small_table_icons=סמלי שולחן קטנים
 settings_right_small_table_icons_description=החלף סמלים של טבלאות בגודל סטנדרטי עם סמלים קטנים וסמלי תצוגה מקשרים באמצעות הסבר כלים
 settings_right_animate_table_icons=הנפש סמלים של טבלה במיקוד
 settings_right_grayscaled_table_icons=סמלי שולחן בגווני אפור ומביאים צבע בפוקוס בלבד
+
 settings_leftmenu_section_hide_refresh_modules=הסתר את קישור המודולים לרענון
 settings_leftmenu_section_hide_unused_modules=הסתר את קטע המודולים הלא בשימוש
 settings_favorites=הצג כפתור מועדפים
 settings_leftmenu_button_language=הצג כפתור שפה
 settings_leftmenu_button_refresh=הצג כפתור רענון
+
 settings_theme_options_button=הצג לחצן הגדרות נושא
+
 settings_hotkeys_active=אפשר שימוש במקשי מקשים חמים
 settings_hotkey_toggle_modifier=שינוי מקשי קיצור
 settings_hotkey_toggle_key_webmin=מקש חם ל- Webmin
@@ -146,24 +161,29 @@ settings_hotkey_shell=מקש חם למסוף
 settings_hotkey_favorites=מקש חם למועדפים
 settings_hotkey_focus_search=מקש חם לשדה חיפוש
 settings_hotkey_reload=מקש חם לטעינה מחדש של העמוד
+
 settings_sysinfo_easypie_charts=הצג תרשימים
 settings_sysinfo_theme_updates=בדוק אם קיימים עדכונים בנושא נושא אותנטי
 settings_sysinfo_csf_updates=בדוק אם קיימים עדכוני ConfigServer אבטחה וחומת אש
 settings_sysinfo_drive_status_on_new_line=הצג את מעבד ה- CPU והכונן כל אחד בשורה חדשה
 settings_sysinfo_expand_all_accordions=השאר את כל האקורדיונים מורחבים
 settings_sysinfo_link_mini=הצג את קישור לוח המחוונים ככפתור
+
 settings_right_page_defaults_title=דפי ברירת מחדל
 settings_right_default_tab_webmin=כרטיסיית ברירת מחדל לאחר כניסה ל- Webmin
 settings_right_default_tab_usermin=כרטיסיית ברירת מחדל לאחר כניסה ל- Usermin
 settings_right_virtualmin_default=עמוד ברירת מחדל עבור Virtualmin
 settings_right_cloudmin_default=עמוד ברירת מחדל עבור Cloudmin
+
 settings_right_clear_local_cache=נקה מטמון
 settings_right_notification_slider_options_title=אפשרויות מחוון צד
 settings_side_slider_fixed=שמור תמיד גלוי
 settings_side_slider_palette=לוח המחוונים
 settings_hotkey_toggle_slider=מקש מקש למחוון צדדי
+
 settings_side_slider_enabled=הפעל את המחוון
 settings_leftmenu_user_html=הצג קטע HTML
+
 theme_changelog=צ'נגלוג
 theme_conference=ועידת נושא
 theme_development_support=תמיכה בפיתוח
@@ -174,6 +194,7 @@ theme_update=עדכון
 theme_update_available=המהדורה האחרונה הזמינה
 theme_update_notice=הודעת עדכון
 theme_version=גרסת נושא אותנטית
+
 theme_xhred_global_error=שגיאה
 theme_global_warning=אזהרה
 theme_global_success=הצלחה
@@ -187,6 +208,7 @@ theme_fileformat_css=CSS
 theme_fileformat_json=ג'ייסון
 theme_fileformat_js=JavaScript
 theme_fileformat_plain_text=טקסט רגיל
+
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
 theme_xhred_titles_dashboard=לוח מחוונים
@@ -194,6 +216,7 @@ theme_xhred_titles_mail=דואר
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
+
 theme_xhred_global_please_wait=המתן בבקשה. ..
 theme_xhred_filemanager_copying_selected=העתקה נבחרה.
 theme_xhred_filemanager_cutting_selected=חיתוך נבחר.
@@ -224,6 +247,7 @@ theme_xhred_filemanager_not_decompressable=לא ניתן לפרק את הקוב�
 theme_xhred_filemanager_no_selection_to_copy=אין ספריות/קבצים שנבחרו להעתקה.
 theme_xhred_filemanager_no_selection_to_cut=אין ספריות/קבצים שנבחרו לחתוך.
 theme_xhred_filemanager_empty_clipboard=הלוח ריק.
+
 theme_xhred_filemanager_successful_extraction=חילוץ הקבצים שנבחרו הצליח.
 theme_xhred_filemanager_successful_deletion=המחיקה הצליחה.
 theme_xhred_filemanager_successful_permissions=ההרשאות שונו בהצלחה.
@@ -231,14 +255,18 @@ theme_xhred_filemanager_successful_ownership=הבעלות השתנתה בהצל�
 theme_xhred_filemanager_successful_compression=הדחיסה הסתיימה בהצלחה.
 theme_xhred_filemanager_successful_directory_creation=מדריך `<strong>%value</strong>` נוצר בהצלחה.
 theme_xhred_filemanager_successful_file_creation=קובץ `<strong>%value</strong>` נוצר בהצלחה.
+
 theme_xhred_notifications_packages_updates=עדכון חבילות
 theme_xhred_notifications_theme_update=עדכון נושא
 theme_xhred_notifications_theme_update_message=גרסה חדשה <em>%v</em> של <strong>Authentic Theme</strong> זמינה. אנא עדכן.
 theme_xhred_notifications_firewall_update=עדכון חומת אש
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
+
 theme_xhred_notifications_firewall_danger=סכנת חומת אש
 theme_xhred_notifications_firewall_danger_message=נראה כי <strong>ConfigServer Server Security and Firewall</strong> <i class="badge badge-danger">אינם פועלים</i> או נעצרו! אל תשאיר את השרת שלך חשוף, בדוק אם הגדרות חומת האש (%v)
+
 theme_xhred_notifications_firewall_warning=אזהרת חומת אש
+
 settings_grayscale_level_navigation=מסנן אפור
 settings_grayscale_level_navigation_description=ערכי ברירה/נוכחיים <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=פילטר ספיה
@@ -253,8 +281,10 @@ settings_brightness_level_navigation=פילטר בהירות
 settings_brightness_level_navigation_description=ערכי ברירה/נוכחיים <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=פילטר ניגודיות
 settings_contrast_level_navigation_description=ערכי ברירה/נוכחיים <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+
 settings_cm_view_palette=לוח הצבעים של הצופה
 settings_cm_editor_palette=לוח הצבעים של הדגשת הקוד
+
 theme_xhred_filemanager_context_select_all=בחר הכל
 theme_xhred_filemanager_context_select_invert=בחירה הפוך
 theme_xhred_filemanager_context_refresh=רענן
@@ -265,6 +295,7 @@ theme_xhred_filemanager_context_cut=גזירה
 theme_xhred_filemanager_context_paste=הדבק
 theme_xhred_filemanager_context_chmod=שנה הרשאות
 theme_xhred_filemanager_context_chown=לשנות בעלות
+
 theme_xhred_filemanager_context_new=חדש
 theme_xhred_filemanager_context_newarchive=צור ארכיון חדש
 theme_xhred_filemanager_context_delete=מחק
@@ -274,9 +305,11 @@ theme_xhred_filemanager_context_extract=לחלץ
 theme_xhred_filemanager_context_goto=פתח את מיקום הפריט
 theme_xhred_filemanager_context_properties=נכסים
 theme_xhred_filemanager_context_search=לחפש
+
 theme_xhred_filemanager_context_deselect_all=הסר סימון מהכל
 theme_xhred_filemanager_context_upload=העלה לספרייה הנוכחית
 theme_xhred_filemanager_context_download=הורד מכתובת אתר מרוחקת
+
 theme_config_virtualmin=שרתים וירטואליים של
 theme_config_cloudmin=מערכות מנוהלות בענן
 settings_right_thirdparties_options_title=אפשרויות מודולים של צד שלישי
@@ -284,15 +317,19 @@ theme_xhred_filemanager_context_calculate_size=חישוב הגודל בסרגל 
 theme_xhred_filemanager_context_bookmarks=סימניות
 theme_xhred_filemanager_context_bookmark_current=הסימניה פתחה כעת
 theme_xhred_filemanager_context_transfer=העברה
+
 theme_xhred_filemanager_title_symlink_target=יעד קישור
+
 right_unlimited=ללא הגבלה
 settings_leftmenu_width=רוחב עדיף
 settings_leftmenu_width_description=ברירה/נוכחית רוחב <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=מתגי הצג הפוכים
 settings_switch_rdisplay_description=אפשרות זו מאפשרת לך לקבוע סדר שונה עבור בוררים משמאל למעלה. לאחר שינוי אפשרות זו, יש לטעון מחדש מלא בדפים
+
 theme_xhred_filemanager_context_calculate_selected_size=חשב את הגודל שנבחר
 theme_xhred_filemanager_selected_entries=נבחר: פריטי %value
 theme_xhred_filemanager_manual_path=הזן נתיב ידנית
+
 theme_xhred_datatable_semptytable=אין נתונים זמינים בטבלה
 theme_xhred_datatable_sinfo=מציג _START_ עד _END_ מתוך _TOTAL_ פריטים
 theme_xhred_datatable_sinfoempty=מציג 0 עד 0 מתוך 0 פריטים
@@ -300,6 +337,7 @@ theme_xhred_datatable_slengthmenu=הצג _MENU_ פריטים
 theme_xhred_datatable_sloadingrecords=טעינה
 theme_xhred_datatable_sprocessing=מעבד. ..
 theme_xhred_datatable_szerorecords=לא נמצאו תוצאות תואמות
+
 theme_xhred_filemanager_file_edit_but_not_saved=הקובץ נערך אך לא נשמר.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=מה אתה רוצה לעשות?
 theme_xhred_global_save=להציל
@@ -307,13 +345,16 @@ theme_xhred_global_save_and_close=שמור וסגור
 theme_xhred_global_close_without_saving=סגור בלי לשמור
 theme_xhred_global_continue_editing=המשך בעריכה
 theme_xhred_filemanager_context_download_file=הורד
+
 settings_sysinfo_easypie_charts_width=רוחב התרשימים
 settings_sysinfo_easypie_charts_scale=אורך גודל של תרשימים
+
 right_return_theme_options=אפשרויות נושא
 theme_xhred_datatable_semptydirectory=הספרייה ריקה
 theme_xhred_filemanager_context_clipboard=העתק נתיב ללוח
 theme_xhred_global_warning=אזהרה
 theme_xhred_global_close=סגור
+
 theme_xhred_filemanager__no_bookmarks=אין סימניות שמורות
 theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> מדריך הספריות הוסר בהצלחה מהסימניות שלך.
 theme_xhred_filemanager_bookmark=הוסף סימניה לספרייה הנוכחית
@@ -329,21 +370,27 @@ theme_xhred_filemanager_target_conflict_message_1=יעד שהודבק כבר ק�
 theme_xhred_filemanager_target_conflict_message_2=יעדים שהודבקו כבר קיימים! מה אתה מעדיף לעשות?
 theme_xhred_filemanager_target_conflict_replace=מיזוג והחלף
 theme_xhred_filemanager_target_conflict_paste=הדבק עם שם חדש
+
 theme_xhred_editor_help_title=קיצורי מקשים לעורך
+
 theme_xhred_filemanager_hide_toolbar=הסתר את סרגל הכלים
 theme_xhred_filemanager_hide_actions=הסתר את העמודה פעולות
 theme_xhred_filemanager_hovered_toolbar=הפעל את התפריט הנפתח בסרגל הכלים בריחוף העכבר
 theme_xhred_filemanager_context_delete_selected=מחק את הנבחר
+
 theme_xhred_database_adding_new_row=הוספת שורה חדשה
 theme_xhred_database_editing_row=עריכת שורה שנבחרה
 theme_xhred_database_editing_rows=עריכת שורות שנבחרו
 theme_xhred_database_adding_new_row_data=הגדר נתונים
+
 theme_xhred_datatable_filter=סנן
+
 theme_xhred_global_update=עדכון
 theme_xhred_global_update_and_return=עדכן וחזור
 theme_xhred_global_update_and_close=עדכן וסגור
 theme_xhred_global_back=חזור
 theme_xhred_global_cancel=בטל
+
 theme_xhred_database_add_row_successful=שורה חדשה נוספה בהצלחה
 theme_xhred_database_edit_row_successful=השורה שנבחרה עודכנה בהצלחה
 theme_xhred_database_edit_rows_successful=השורות שנבחרו עודכנו בהצלחה
@@ -363,9 +410,13 @@ theme_xhred_database_objects_selected_delete=מחק אובייקטים שנבח�
 theme_xhred_database_db_selected_drop=שחרר את מסד הנתונים שנבחר
 theme_xhred_database_dbs_selected_drop=זרוק מסדי נתונים שנבחרו
 theme_xhred_database_edit_but_not_saved=נתוני הטבלה נערכו אך לא נשמרו.
+
 theme_xhred_global_no_such_command=נראה ש- <tt>$1</tt> הפעלה אינו מותקן או אינו בנתיב במערכת שלך.
+
 theme_xhred_global_notice=הודעה
+
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
+
 theme_xhred_global_file=קובץ
 theme_xhred_global_directory=מדריך
 theme_xhred_global_no_target=היעד אינו קיים או אינו נגיש
@@ -376,55 +427,81 @@ theme_xhred_global_all=את כל
 theme_xhred_global_none=אף אחד
 theme_xhred_global_yes=כן
 theme_xhred_global_no=לא
+
 theme_xhred_filemanager_new_tab=הוסף כרטיסייה חדשה (Ctrl+רווח)
 theme_xhred_datatable_no_search_results=<span class="h5">לא נמצאו תוצאות</span> <br> נסה חיפוש אחר
+
 theme_xhred_filemanager_buffer_error=הדבקת קבצים במאגר נכשלה - ההרשאה נדחתה.
+
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` קיים כבר ב `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=לא ניתן ליצור $3 `<strong><em>$1</em></strong>` בתוך `<strong><tt>$2</tt></strong>` - ההרשאה נדחתה.
+
 filemanager_paste_warning=הדבקת יעדים נכשלים. יתכן שניתן היה לשנות את שם האובייקטים המבוקשים, להזיזם </em>או<em> </em> בזמן/לפני ההדבקה. סיבה אפשרית נוספת היא שיעד אינו ניתן לכתיבה. כדאי לבדוק את תכונות האובייקטים.
+
 theme_xhred_filemanager_delete_warning=המחיקה הסתיימה בהצלחה אך לא עבור כל האובייקטים. יתכן כי האובייקטים / ים המבוקשים היו יכולים להיות <em>שינוי שם</em> או <em></em> לפני המחיקה. הרשאות מוגבלות (תכונות) הן סיבה אפשרית נוספת. הודעת שגיאה:
+
 filemanager_rename_exists=$3 עם שם `<strong><em>$1</em></strong>` קיים כבר ב `<strong><tt>$2</tt></strong>`
 filemanager_rename_denied=לא ניתן לשנות את שם ה- $3. זה עשוי לקרות מכיוון שהמקור $3 הוסר או בגלל הרשאות מוגבלות.
+
 theme_xhred_filemanager_successful_rename=שינוי שם `<strong><em><s>%from</s></em></strong>` ל `<strong><em>%to</em></strong>` היה מוצלח.
+
 filemanager_global_info_total1=סה"כ: קובץ $1 וספריית $2
 filemanager_global_info_total2=סה"כ: $1 קבצים וספריית $2
 filemanager_global_info_total3=סה"כ: $1 קובץ ו- $2 ספריות
 filemanager_global_info_total4=סה"כ: $1 קבצים ו- $2 ספריות
+
 theme_xhred_filemanager_selected_entry=נבחר: פריט %value
+
 theme_xhred_filemanager_search_query=מסכת שאילתה
 theme_xhred_filemanager_search_match=מצא בתוצאות
 theme_xhred_filemanager_search_replace=החלף בתוצאות
+
 theme_xhred_global_find=למצוא
 theme_xhred_global_replace=החלף
+
 theme_xhred_filemanager_searching_matching=מחפש `<em>%value</em>` תואם שמות של קבצים/ספריות, המכיל `<em>%text</em>` טקסט.
 theme_xhred_filemanager_searching_replacing=החלפת התאמות `<em>%text</em>` עם `<em>%replace</em>` בקבצים עם שמות המכילים `<em>%value</em>`.
+
 theme_xhred_filemanager_search_replaced_multi=נמצא והחלף בקבצי <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=נמצא והוחלף בקובץ <strong>1</strong>.
+
 theme_xhred_filemanager_successful_permissions_with_errors=ההרשאות שונו בהצלחה אך לא עבור כל האובייקטים:
+
 theme_xhred_filemanager_successful_ownership_with_errors=הבעלות לא השתנתה בהצלחה עבור כל האובייקטים:
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=לא ניתן לשנות בעלות בגלל השגיאות הבאות:
+
 theme_xhred_filemanager_successful_compression_with_errors=הדחיסה סיימה עם השגיאות הבאות:
 theme_xhred_filemanager_successful_compression_bg=הדחיסה הסתיימה בהצלחה. קובץ `<strong>%file</strong>` נמצא בספריית `<strong>%path</strong>`.
 theme_xhred_filemanager_successful_compression_bg_with_errors=הדחיסה הסתיימה בשגיאות. קובץ דחוס `<strong>%file</strong>` צריך להיות ממוקם בספריית `<strong>%path</strong>`.
+
 theme_xhred_filemanager_settings_notification_type=סוג ההתראות להצגה
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=ידיעות, אזהרות ושגיאות
 theme_xhred_filemanager_settings_notification_type_warn_err=אזהרות ושגיאות
 theme_xhred_filemanager_settings_notification_type_err=שגיאות בלבד
+
 theme_xhred_filemanager_settings_tabs_remember_state=שחזר לשוניות ששימשו בעבר בעומס הראשון
 theme_xhred_filemanager_context_open_new_tab=פתח בכרטיסייה חדשה
+
 theme_xhred_xsql_fit_content_screen_height=התאם תוכן טבלת מסד נתונים בגובה המסך
+
 theme_xhred_datatable_filter_visible_tables=סנן טבלה (ים) גלויים
 theme_xhred_module_help=עזרה במודול
+
 theme_xhred_server_process_running=תהליך השרת עדיין פועל !? האם אתה בטוח שאתה רוצה לנווט הלאה ואין לך גישה למידע על פלט? גם אם תעזוב כעת התהליך לא יסתיים.
+
 settings_global_options_title=אופציות עולמיות
 settings_global_passgen_format=מחולל סיסמאות
 settings_global_passgen_format_description=הגדר את האורך וסוג התו המשמשים בסיסמה שנוצרה. ערך ברירת המחדל שווה ל <code>15|az,AZ,0-9</code>, המייצג סיסמא באורך 15 תווים, המכיל אותיות ומספרי אותיות גדולות וקטנות. אפשר גם להוסיף תווים מיוחדים באמצעות <code>#</code> סימן חשיש
 theme_xhred_password_generator_new=צור סיסמא חדשה <br> (ללוח)
 theme_xhred_password_generator_new_success=סיסמה שנוצרה %password הועתקה ללוח בהצלחה.
+
 theme_fileformat_perl=פרל
 theme_fileformat_perl_placeholder=קובץ זה חייב להסתיים ב `1;` לעבוד בהצלחה.
+
 theme_error_access_not_root=הגישה נדחתה: המשתמש זקוק לגישה למודול <em>Webmin Configuration</em> כדי לערוך את תצורת הנושא
+
 settings_hide_top_loader=הסתר את סרגל ההתקדמות העליון
+
 settings_leftmenu_vm_cm_dropdown_icons=הצג סמלים סמלים בתפריט הנפתח ב- Virtualmin/Cloudmin
 theme_xhred_global_shipped=נשלח
 theme_xhred_global_available=זמין
@@ -440,10 +517,12 @@ theme_xhred_notification_none=אין התראות
 theme_xhred_notification_no_data=לא נאספו נתונים
 theme_xhred_notification_no_favorites=אין נתונים מועדפים
 theme_xhred_global_theme_version=גרסת הנושא
+
 settings_side_slider_sysinfo_enabled=הצג כרטיסיית לוח המחוונים
 settings_side_slider_notifications_enabled=הצג כרטיסיית התראות
 settings_side_slider_favorites_enabled=הצג כרטיסיית מועדפים
 settings_show_terminal_link=הצג כפתור מסוף
+
 theme_xhred_sysinfo_system_monitors=צגי מערכת
 theme_xhred_sysinfo_server_status=סטטוס שרתים
 theme_xhred_sysinfo_software_versions=גרסאות תוכנה
@@ -451,18 +530,23 @@ theme_xhred_sysinfo_recent_logins=כניסות אחרונות
 theme_xhred_sysinfo_vm_package_updates=עדכוני חבילה של Virtualmin
 theme_xhred_sysinfo_disk_quotas=מכסות דיסק
 theme_xhred_sysinfo_bandwidth_quotas=מכסות רוחב פס
+
 left_netdata=ניטור בזמן אמת
 settings_leftmenu_netdata=הצג קישור ניטור בזמן אמת בזמן אמת
 settings_leftmenu_netdata_link=קישור מועדף על שרת Netdata
+
 theme_xhred_filemanager_context_chattr=שנה תכונות
 theme_xhred_filemanager_changing_attributes=הגדרת תכונות <strong><em>%value</em></strong> בקבצים שנבחרו.
 theme_xhred_filemanager_successful_attributes_with_errors=תכונות לא הוגדרו בהצלחה לכל האובייקטים:
 theme_xhred_filemanager_successful_attributes=התכונות הוגדרו בהצלחה.
+
 theme_xhred_filemanager_context_chcon=שנה את הקשר האבטחה
 theme_xhred_filemanager_changing_secontext=שינוי הקשר האבטחה <strong><em>%value</em></strong> בקבצים שנבחרו.
 theme_xhred_filemanager_successful_secontext_with_errors=הקשר האבטחה לא השתנה בהצלחה עבור כל האובייקטים:
 theme_xhred_filemanager_successful_secontext=הקשר האבטחה השתנה בהצלחה.
+
 theme_xhred_global_no_results_found=לא נמצאו תוצאות
+
 theme_new_password_header=הגדר סיסמא חדשה למשתמש
 login_reset=שחזור סיסמא
 theme_xhred_move_top=עבור לראש הדף
@@ -475,12 +559,14 @@ settings_show_night_mode_link=הצג כפתור מצב יום/לילה
 settings_hotkey_toggle_key_night_mode=מקש מקש להחלפת לוח כהה/בהיר
 settings_title=תצורת נושא
 settings_subtitle=למשתמש
+
 theme_tooltip_night_mode=מצב יום/לילה
 theme_tooltip_terminal_link=מסוף
 theme_tooltip_language_link=שפה
 theme_xhred_tooltip_switch_user=החלף משתמש
 theme_tooltip_logout=התנתק
 theme_tooltip_edit_user=ערוך משתמש
+
 settings_sysinfo_easypie_charts_size=קוטר התרשימים
 theme_xhred_global_choose=בחר
 theme_xhred_global_select=בחר
@@ -497,6 +583,7 @@ theme_xhred_global_help=עזרה
 settings_right_soft_updates_page_options_title=עדכוני תוכנה
 theme_xhred_git_compare_changes=השווה שינויים
 theme_xhred_filemanager_link_to_clipboard=שם הקישור הסמלי הועתק ללוח.
+
 theme_left_mail_prefs=העדפות דואר
 theme_left_mail_change_password=שנה סיסמא
 theme_left_mail_account_functions=פונקציות חשבון
@@ -504,12 +591,14 @@ theme_xhred_global_dir_up=עבור לספרייה הקודמת (Backspace)
 theme_xhred_global_module_config=תצורת מודול
 theme_xhred_global_return=חזור
 theme_xhred_global_return_to_module_index=חזור לאינדקס המודולים
+
 theme_xhred_global_complete_changelog=החלף המלא
 theme_xhred_global_beta_version=גירסת בטא
 theme_xhred_global_release=שחרור
 theme_xhred_global_released_on=שוחרר ב
 theme_xhred_global_committed_on=התחייב
 theme_xhred_global_resolved_issues=נפתרו בעיות בשחרורי %value
+
 theme_force_upgrade=הפעל את נושא העדכון
 theme_xhred_force_upgrade_beta=התקן את גרסת הפיתוח האחרונה (בטא)
 theme_xhred_force_upgrade_stable=התקן את גרסת המהדורה האחרונה (יציבה)
@@ -517,6 +606,7 @@ theme_xhred_source_encoding=קידוד מקור
 theme_update_footer=אנא הקפד לדווח על באגים למאגר $1. עקוב אחר הערוץ $2 של הנושא לקבלת העדכונים האחרונים.
 theme_xhred_encoding_manually_set=הגדרת קידוד ידנית
 theme_xhred_filemanager_save_to_change_encoding=יש לשמור את הקובץ על מנת לאפשר שינוי קידוד.
+
 theme_xhred_filemanager_user_switch=עבור למשתמש (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=על ידי בחירת שם המשתמש המופיע למטה, תעביר פעולות נוספות לביצוע כמשתמש זה.
 theme_xhred_filemanager_user_switch_description_back=כדי לחזור למצב ברירת מחדל בחר באפשרות הראשונה שבחר.
@@ -534,23 +624,32 @@ theme_xhred_global_minimize=מזער
 theme_xhred_global_maximize=למקסם
 theme_xhred_global_normalize=לנרמל
 theme_xhred_global_set_encoding=הגדר קידוד
+
 theme_xhred_sysinfo_update_start=מידע על המערכת נזכר מחדש.
 theme_xhred_sysinfo_update_end=מידע על המערכת נזכר בהצלחה.
 theme_xhred_sysinfo_update_failed=לא ניתן לזכור מידע על המערכת מחדש. נסה שוב מאוחר יותר.
+
 theme_xhred_global_development_version=גרסת פיתוח
+
 right_vm_server_summary=סיכום שרתים וירטואליים
+
 settings_webmin_default_module=מודול ברירת מחדל עבור Webmin
+
 theme_xhred_global_unbeforeunload_title=יתכן ששינויים שביצעת לא יישמרו
 theme_xhred_global_unbeforeunload_message=אם תמשיך, שינויים שלא נשמרו בדף זה עלולים לאבד לצמיתות.
 theme_xhred_global_continue=המשך
+
 theme_xhred_global_automatic_refresh=רענון אוטומטי
 theme_xhred_global_second=שני
 theme_xhred_global_seconds=שניות
 theme_xhred_global_minute=דקה
 theme_xhred_global_minutes=דקות
+
 theme_xhred_browser_warning=כדי לקבל את החוויה הטובה ביותר עם לוח השרת במחשב שלך, השתמש בדפדפן מעודכן ומעודכן. <br><br> <em>Internet Explorer</em> אינו נתמך עוד. <br><br> דפדפנים מומלצים הם <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> או <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8" style=";text-align:right;direction:rtl">אתה יכול להוריד גרסה ניידת של דפדפן, שאינה דורשת התקנה, כדי לעקוף מגבלות שהוטלו.</div>
+
 theme_xhred_filter_content=סנן תוכן
 theme_xhred_log_file_empty=קובץ היומן ריק
+
 theme_xhred_config_configurable_options=אפשרויות הניתנות להגדרה
 theme_xhred_filter_content_no_matches_query=אין תוכן תואם לשאילתת %str
 theme_xhred_toggle_accordions=החלף את נראות האקורדיונים
@@ -568,15 +667,18 @@ theme_xhred_signing_in=כניסה
 theme_xhred_signing_success=כניסה בהצלחה!
 theme_xhred_session_failed_password=סיסמא שגויה, אנא נסה שוב.
 theme_xhred_global_reauthenticate=אימת מחדש
+
 settings_sysinfo_real_time_status=אפשר ניטור בזמן אמת
 settings_sysinfo_real_time_timeout=מרווח לביצוע העדכון
 settings_sysinfo_real_time_timeout_description=הגדר מרווח רצוי לעדכון צגים ברקע. הערך אמור להיות באלפיות השנייה. שמור על ערך זה נמוך ככל האפשר כדי למנוע אובדן של נתונים לטווח הקצר
 theme_xhred_global_redirecting=הפניה מחדש
+
 body_no_javascript_title=JavaScript אינו פעיל
 body_no_javascript_message=אנא אפשר ג'אווה סקריפט ורענן את הדף
 theme_xhred_connection_lost=החיבור אבד
 theme_xhred_connection_success=החיבור הצליח
 theme_xhred_connection_success_details=החיבור לשרת הוקם מחדש.
+
 theme_xhred_return_home=חזור לאינדקס החלונית
 theme_xhred_global_upload=העלה
 theme_xhred_global_select_files=בחר קבצים)
@@ -584,12 +686,14 @@ theme_xhred_global_file_selected=הקובץ שנבחר
 theme_xhred_global_files_selected=קבצים שנבחרו
 theme_xhred_global_reset=אפס
 theme_xhred_upload_initial_info=גרור ושחרר קבצים לכאן או לחץ לבחירה
+
 theme_xhred_global_empty=ריק
 theme_xhred_global_click_here=לחץ כאן
 theme_git_patch_incompatible_message=התקנת גרסה זו של $1 <em>$2</em> מחייבת גרסה אחרונה ו/או אולי לא פורסמה של $3 ו- $5 כדי לעבוד כראוי.
 theme_git_patch_incompatible_message_s=התקנת גרסה זו של $1 <em>$2</em> מחייבת גרסה אחרונה ו/או אולי לא פורסמה של $3 כדי לעבוד כראוי.
 theme_git_patch_incompatible_message_desc=יתכנו שינויים שאינם תואמים, שיכולים למנוע מהעיצוב לעבוד כמתוכנן. כדי לעקוף אזהרה זו, ולאלץ להתקין את העיצוב בכל מקרה $1, או לשדרג $2 לגרסת הפיתוח האחרונה באמצעות הקונסולה, על ידי הפעלת סקריפט <kbd>update-from-repo.sh</kbd> שלה.
 theme_xhred_global_outdated=גרסה זו אינה מיושנת
+
 theme_xhred_filemanager_edit_html=ערוך כ- HTML
 theme_xhred_global_example=דוגמא
 theme_xhred_global_output_example=דוגמא לפלט
@@ -624,6 +728,7 @@ theme_xhred_filemanager_tree_view_depth=עומק תצוגת עצים מחולץ 
 theme_xhred_global_unlimited=ללא הגבלה
 theme_xhred_filemanager_tree_exclude_on_first_load=אל תכלול ספריות חיוניות מניתוב בעומס ראשוני לתצוגת עץ (נטען מהר יותר)
 theme_xhred_filemanager_tree_expand_search=הרחב את כל הענפים המכילים גפרורים בעת סינון נוף העץ
+
 theme_xhred_tooltip_side_slider_sync_sysinfo=כוח לסנכרן אוסף סטטוס רקע
 theme_xhred_tooltip_side_slider_go_to_dashboard=עבור ללוח המחוונים
 theme_xhred_tooltip_side_slider_open_favorites_control=פתיחת שליטת המועדפים
@@ -634,6 +739,7 @@ theme_xhred_tooltip_side_slider_pinned=הצמד/הסר את מחוון הצד
 settings_side_slider_fixed_toggle=הצג את הצמד/ביטול ההצמדה
 settings_side_slider_fixed_toggle_description=אפשרות זו תציג את המיתוג, בסליידר הצדדי, בשורה התחתונה, ומאפשרת להחליף את נראותו תוך כדי תנועה, אם מתקיימים התנאים באפשרות הקודמת.
 settings_right_page_hide_persistent_vscroll=הסתר סרגל גלילה אנכי מתמשך
+
 settings_sysinfo_theme_updates_for_usermin=התקן גם עדכוני נושא עבור Usermin
 theme_xhred_global_installed_version=גרסה מותקנת
 theme_xhred_global_installed_and_latest_version=הגרסה המותקנת והעדכנית ביותר
@@ -643,11 +749,13 @@ settings_perform_content_scrolling=אפשר גלילת דפים אוטומטית
 settings_contrast_mode=אפשר מצב של ניגודיות גבוהה
 theme_xhred_global_firewall=חומת אש
 theme_xhred_settings_show_webmin_tab=הצגת מתג Webmin בתפריט הניווט?
+
 settings_enable_container_offset=אפשר קיזוז מכולות
 settings_enable_container_offset_description=אפשרות זו תעבוד רק על מסכים עם רזולוציה מינימלית של 1920 פיקסלים אופקיים
 theme_xhred_filemanager_preparing_download=מכין הורדה. ארכוב קובצי %number. אנא המתן %dots
 theme_xhred_filemanager_prepared_download=ההורדה מוכנה. שמור קובצי %number בארכיון.
 theme_xhred_filemanager_canceled_download=ההורדה בוטלה.
+
 theme_xhred_filemanager_settings_force_tar_download=<code>tar</code> פקודת <code>tar</code>, גם אם <code>zip</code> זמין, בעת ההורדה כארכיון
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=שחפת
@@ -659,6 +767,7 @@ settings_sysinfo_real_time_status_options=אפשרויות ניטור בזמן �
 settings_sysinfo_real_time_status_disk=אפשר לדיסקים
 settings_sysinfo_real_time_status_disk_description=יכול להיות שימושי להשבית ניטור בזמן אמת עבור דיסקים במערכות קבצים איטיות/גדולות
 theme_xhred_title_locale_non_ui_config=פורמט תאריך שנוצר על ידי שרת
+
 extensions_mail_current_position=הודעות 1- $2 מ- $3
 extensions_mail_sort_by_sender=מיין לפי השולח
 extensions_mail_sort_by_recipient=מיין לפי הנמען
@@ -725,6 +834,7 @@ extensions_mail_move_copy_only=אל תזוז, פשוט העתק אותו
 theme_xhred_global_total=סך הכל
 theme_xhred_global_selected=נבחר
 theme_xhred_mail_new_message=הודעה חדשה
+
 theme_xhred_mail_search_simple=הצג אפשרויות חיפוש
 theme_xhred_mail_search_advanced=הסתר אפשרויות חיפוש
 theme_xhred_mail_search_clear=נקה תוצאות חיפוש
@@ -744,35 +854,48 @@ theme_xhred_mail_search_search_in=חפשי ב
 theme_xhred_mail_search_limit_results=הגבל את תוצאות החיפוש
 theme_xhred_mail_search_limit_results_yes=כן, חפש רק דרך
 theme_xhred_mail_search_has_attach=יש קובץ מצורף
+
 theme_xhred_settings_right_theme_bgs=רקע נושא
 theme_xhred_settings_right_theme_bgs_title=רקע נושא
 settings_right_bgs_title=ניתן לקבוע כאן נושא נושא לדף הכניסה. הפורמט היחיד הנתמך הוא <kbd>.png</kbd>, כדי לספק שקיפות אלפא.
 settings_right_bg_unauthenticated_users=רקע למשתמשים לא מאומתים
 settings_right_theme_left_background_title=בקרת רקע נושא
+
 theme_xhred_find_in_config_files=מצא בקבצי config
 theme_xhred_find_in_config_files_result_found_single=תוצאה של $1 נמצאה בקובץ $2 עבור $3
 theme_xhred_find_in_config_files_result_found_multi=תוצאות $1 נמצאו בקובץ $2 עבור $3
 theme_xhred_find_in_config_files_results_found=תוצאות $1 נמצאו ב $2 קבצים עבור $3
+
 theme_xhred_filemanager_context_symlink=צור קישור סמלי חדש
 theme_xhred_global_symbolic=קישור סמלי
 theme_xhred_global_target=יעד
 settings_sysinfo_max_servers=שרתי וירטואלי מקסימליים להצגה
+
 right_download_is_ready=ההורדה שלך מוכנה.
 theme_xhred_download_is_being_prepared=ההכנה שלך מוכנה. זה עלול לקחת זמן. המתן בבקשה ..
 theme_xhred_backup_is_being_prepared=מכינים את הגיבוי שלך. זה עלול לקחת זמן. המתן בבקשה ..
+
 settings_mail_ui=הפעל ממשק משתמש של דואר חדש
+
 settings_show_theme_configuration_for_admins_only=הצג לחצן הגדרות נושא למנהלים בלבד
 settings_show_theme_configuration_for_admins_only_error=הגישה נדחתה: מנהל המערכת חסם גישה להתאמות אישיות של משתמשים
+
 theme_xhred_tooltip_navigation_pinned=הצמד/ביטול הצמדת תפריט ניווט
 settings_hotkey_navigation=מקש חם למצב תפריט ניווט
+
 theme_xhred_search_in_webmin=חפש ב- Webmin
 theme_xhred_search_in_usermin=חיפוש ב- Usermin
 theme_xhred_search_in_virtualserver=חפש בווירטמין
 theme_xhred_search_in_servermanager=חפש ב- Cloudmin
+
 theme_xhred_filemanager_context_clipboard_selection=העתק את הבחירה ללוח
+
 settings_hotkey_slider=מקש מקש להחלפת הצד המחוון
+
 theme_git_update_locked=לא ניתן להשלים את עדכון הנושא בגלל שום חיבור ל- GitHub או הגבלת שיעורי ה- API שלו. עבור בקשות אחרונות ולא מאומתות, מגבלת התעריף מאפשרת עד 60 בקשות לשעה. נסה שוב מאוחר יותר או השתמש במסוף כדי לעשות זאת ידנית באמצעות סקריפט העדכון.
+
 settings_collapse_navigation_link=הצג כפתור סיכה/ביטול סיכה
+
 settings_cache_interval=מרווח להפעלת בדיקת עדכונים
 settings_cache_interval_1h=כל שעה
 settings_cache_interval_12h=כל 12 שעות
@@ -783,11 +906,15 @@ settings_cache_interval_1m=פעם בחודש
 settings_cache_interval_3m=אחת לשלושה חודשים
 settings_cache_interval_6m=פעמיים בשנה
 settings_cache_interval_1y=פעם בשנה
+
 theme_xhred_reload_notification=תצורת הנושא השתנתה אך לא נשמרה. העמוד ייטען מחדש כדי לאפס להגדרות הנוכחיות.
+
 theme_xhred_global_save_as=שמור כ
 theme_xhred_editor_save_file_as=שמור קובץ בשם
 theme_xhred_global_configuration=תצורה
+
 body_used_cached_total=סך הכל $1 / $3 במטמון / $2
+
 theme_xhred_favorites_add=הוסף למועדפים
 theme_xhred_favorites_remove=הסר מהמועדפים
 theme_xhred_select_deselect=בחר/בטל את הבחירה בפריט הנוכחי
@@ -804,12 +931,14 @@ theme_xhred_mail_no_new_mail=אין דואר חדש
 theme_xhred_editor_set_syntax=הגדר תחביר
 theme_xhred_global_menu=תפריט
 theme_xhred_shell_aborted=הפעולה בוטלה
+
 theme_xhred_connection_reboot=אתחול מחדש
 theme_xhred_connection_reboot_details=אתחול השרת מחדש. המתן בבקשה ..
 settings_leftmenu_custom_links_description=אפשר להכניס קישורים מותאמים אישית ותוספת לתפריט הניווט. <br><br> המקשים <em>כותרת</em>, <em>קישור</em> ו <em>סמל</em> נדרשים; לחלופין, באפשרותך להגדיר באיזה מצב כניסה יוצג קישור, על ידי ציון מקש <em>רמה</em> עם ערכים ברשימה מופרדת בפסיקים, המכיל: <br><br> <em>0</em> > - כניסה למנהל; <br><em> 1 </em>- כניסה למפיצים;<br> <em>2</em> - התחברות לבעלי שרת; <br><em> 3 </em>- כניסה למשתמש;<br> <em>4</em> - כניסה לבעלי מערכת. <br><br> זה ידרוש ממך להעביר אובייקט חוקי JSON כמחרוזת, כמו בדוגמה למטה. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " מעטפה "," port ":" 20000 "," target ":" _blank "}]} </pre>
 left_favorites_edit=ערוך מועדפים
 left_favorites_edit_desc=ניתן להשתמש בדף זה לעריכה ידנית של קובץ המשתמש המועדפים על נושא. יש לעשות זאת בזהירות, מכיוון שלא יבוצע שום תחביר או בדיקת תוקף אחרת על השינויים שלך.
 theme_xhred_filemanager_records_for_server_pagination=מספר ברירת המחדל של הפריטים בספרייה כדי להתחיל עימוד שרתים
+
 filemanager_global_info_paginated_total1=קובץ $1 ו $2 ספרייה של $3 פריטים ב $4 דפים
 filemanager_global_info_paginated_total2=קבצי $1 ו $2 ספרייה של $3 פריטים ב $4 דפים
 filemanager_global_info_paginated_total3=קובץ $1 ו $2 ספריות של $3 פריטים ב $4
@@ -844,6 +973,7 @@ filemanager_archive_file_not_found=הקובץ לא קיים
 filemanager_archive_gpg_private_error=אין מפתח סודי זמין או ביטוי הסיסמה של המפתח אינו שגוי
 theme_xhred_filemanager_errors_extraction=השגיאות הבאות התרחשו במהלך החילוץ
 theme_xhred_filemanager_extract_option_delete_afterwards=מחק את הארכיון לאחר מיצוי מוצלח
+
 theme_xhred_login_passphrase_desc=הזן את משפט הסיסמה של מפתח ה- GPG שלך אם הוא מוגדר.
 theme_xhred_filemanager_encrypt_option_delete_afterwards=מחק קובץ לאחר הצפנה מוצלחת
 theme_xhred_filemanager_decrypt_option_delete_afterwards=מחק קובץ לאחר פענוח מוצלח
@@ -855,6 +985,7 @@ theme_xhred_filemanager_crypt_decrypt=קבצים מפוענחים.
 theme_xhred_filemanager_crypt_encrypted=ההצפנה של קבצים שנבחרו הצליחה.
 theme_xhred_filemanager_crypt_decrypted=פענוח הקבצים שנבחרו היה מוצלח.
 theme_xhred_filemanager_batch_error=זה כולל גם תוצאות קטורות של %1 שגיאות מוכרות.
+
 theme_xhred_global_preview_img=תצוגה מקדימה של תמונה
 theme_xhred_global_preview_img_sel=תצוגה מקדימה של תמונות שנבחרו
 theme_xhred_global_preview_img_all=תצוגה מקדימה של כל התמונות
@@ -869,6 +1000,7 @@ theme_xhred_global_toggle_fullscreen=החלף מסך מלא
 theme_xhred_global_zoom_in_out=התקרב/התרחק
 theme_xhred_global_prev_arrow_left=הקודם (חץ שמאלה)
 theme_xhred_global_next_arrow_right=הבא (חץ ימינה)
+
 settings_reset_cache_tooltip=אפס את המטמון של העיצוב מכל דף, על ידי לחיצה על <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> מקש חם
 settings_update_theme_tooltip=הפעל עדכון נושא מכל עמוד. עדכן לגרסת הפיתוח האחרונה, על ידי לחיצה על <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> מקש חם; להתקנת האורווה האחרונה, השתמש באותו משולבת ללא מפתח Meta
 theme_xhred_clear_cache_initiated=ניקוי מטמון וטעינה מחדש.
@@ -886,19 +1018,24 @@ theme_xhred_csf=ConfigServer Security & Firewall
 theme_xhred_global_version=גרסה
 theme_xhred_notify_patching_module_style=החלת תיקון UI ראשוני עבור $1 וטעינה מחדש.
 theme_xhred_global_error_more_details_online=הערה: אנא קרא עוד אודות שגיאה זו וכיצד לפתור אותה, בדף %1 %1wiki %1 המקוון.
+
 theme_xhred_filemanager_search_file_mask=מסיכת קבצים
 theme_xhred_filemanager_search_regex=הבעה רגילה
 theme_xhred_upload_successful=<span>$1 קבצים</span> הועלה בהצלחה לספריית $2
 theme_xhred_upload_successful_single=<span>קובץ $1</span> הועלה בהצלחה לספריית $2
 settings_usermin_default_module=מודול ברירת מחדל
+
 theme_xhred_search_in_file_open_external=נתק קובץ לעורך נפרד
 theme_xhred_path_to_console=פתח נתיב נוכחי במסוף <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=החזר קובץ
 theme_xhred_filemanager_editor_reverting_content=השמטת שינויים וחזרה לתוכן הקובץ המקורי.
+
 theme_xhred_filemanager_exclude_dirs=אל תכלול ערכים
 theme_xhred_filemanager_exclude_dirs_desc=פסיקים מופרדים ברשימה של קבצים או ספריות משנה שלא לכלול
+
 theme_global_access_level=רמת גישה
 theme_global_user_mode=מצב משתמש
+
 theme_xhred_global_attachments=קבצים מצורפים
 theme_xhred_editor_tb_font=גופן
 theme_xhred_editor_tb_size=גודל
@@ -932,6 +1069,7 @@ theme_xhred_mail_composer_server_attach_error_read=לא ניתן לקרוא את
 theme_xhred_mail_composer_server_attach_error_dir=לא ניתן לצרף ספריות
 theme_xhred_mail_composer_discarded_draft=הטיוטה הושלכה
 theme_xhred_global_undo=לבטל
+
 theme_xhred_global_today=היום
 theme_xhred_global_tomorrow=מחר
 theme_xhred_mail_composer_scheduled=שלח %1 ב- %2
@@ -962,10 +1100,14 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=המספר המרבי של שורות לאתחול מיון וחיפוש טבלאות
 theme_xhred_global_rows=שורות
+
 settings_side_slider_blend=ירושה
+
 settings_theme_make_date=אפשר המרת תאריך/שעה בדפדפן
 settings_theme_make_date_description=אם מושבת, ישמש פורמט תאריך/שעה המסופק על ידי השרת
+
 theme_xhred_reload_lang_notification=שפת הנושא שונתה. העמוד ייטען מחדש כדי להחיל הגדרות חדשות.
+
 theme_xhred_global_small=קטן
 theme_xhred_global_normal=רגיל
 theme_xhred_global_medium=בינוני
@@ -973,21 +1115,28 @@ theme_xhred_global_large=גדול
 theme_xhred_global_huge=ענק
 theme_xhred_filemanager_editor_maximized=הגדל את חלון העורכים עם ההתחלה
 settings_sysinfo_remember_accordions=שמור מצב אקורדיונים ששימש בפעם הקודמת
+
 theme_xhred_textarea_to_clipboard=תוכן טקסטריאה שנבחר הועתק בהצלחה ללוח
+
 theme_xhred_global_alias=כינוי
+
 theme_xhred_mail_composer_real_name=שם אמיתי
 theme_xhred_mail_composer_username=שם משתמש
+
 settings_global_palette_unauthenticated=לוח הצבעים של דף הכניסה
+
 settings_config_save_and_next=שמור והבא
 settings_config_configuration_category=קטגוריית תצורה
 config_search_options_all=חפש בכל אפשרויות התצורה של המודול
 theme_xhred_editing_config_file=עריכת קובץ תצורה
+
 theme_xhred_login_message_2fa=אימות דו-גורמי הופעל עבור משתמש זה בכניסה
 theme_xhred_global_verify=תאשר
 settings_show_terminal_link2=הצג לחצן מעטפת פקודה
 settings_hotkey_shell2=מקש מקשים לקליפת פקודה
 theme_xhred_path_to_console2=פתח נתיב נוכחי במעטפת הפקודה <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=פגז פיקוד
+
 theme_xhred_filemanager_context_view=נוף
 theme_xhred_file_viewer=מציג קבצים
 theme_xhred_global_done=בוצע.
@@ -997,6 +1146,7 @@ theme_xhred_filemanager_view_head_and_reverse=פלט קובץ ראש והפוך
 theme_xhred_filemanager_view_tail=פלט קובץ זנב
 theme_xhred_filemanager_view_tail_and_reverse=פלט קבצים בזנב והפוך
 theme_xhred_filemanager_view_head_and_tail=פלט קובץ ראש וזנב
+
 theme_xhred_filemanager_search_info_search_dir=ספריית חיפוש
 theme_xhred_filemanager_search_limit_user=בבעלות המשתמש
 theme_xhred_filemanager_search_limit_group=בבעלות הקבוצה
