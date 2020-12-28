@@ -262,6 +262,7 @@ theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer サーバ
 
 theme_xhred_notifications_firewall_warning=ファイアウォールの警告
 
+#17.50
 settings_grayscale_level_navigation=グレースケールフィルタ
 settings_grayscale_level_navigation_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=セピアフィルター
@@ -291,6 +292,7 @@ theme_xhred_filemanager_context_paste=ペースト
 theme_xhred_filemanager_context_chmod=アクセス許可の変更
 theme_xhred_filemanager_context_chown=所有権の変更
 
+#17.51
 theme_xhred_filemanager_context_new=New
 theme_xhred_filemanager_context_newarchive=新しいアーカイブの作成
 theme_xhred_filemanager_context_delete=削除
@@ -301,10 +303,12 @@ theme_xhred_filemanager_context_goto=アイテムの場所を開く
 theme_xhred_filemanager_context_properties=プロパティ
 theme_xhred_filemanager_context_search=検索
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=すべて選択解除
 theme_xhred_filemanager_context_upload=現在のディレクトリにアップロード
 theme_xhred_filemanager_context_download=リモート URL からダウンロード
 
+#17.53
 theme_config_virtualmin=仮想サーバー
 theme_config_cloudmin=Cloudmin 管理システム
 settings_right_thirdparties_options_title=サードパーティモジュールのオプション
@@ -313,14 +317,17 @@ theme_xhred_filemanager_context_bookmarks=ブックマーク
 theme_xhred_filemanager_context_bookmark_current=現在開いているパスをブックマークする
 theme_xhred_filemanager_context_transfer=転送
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=リンク先
 
+#17.60
 right_unlimited= 無制限
 settings_leftmenu_width=好ましい幅
 settings_leftmenu_width_description=デフォルト/現在の幅 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=リバーススイッチ出力
 settings_switch_rdisplay_description=このオプションを使用すると、左上のスイッチに異なる順序を設定できます。このオプションを変更した後、新しい設定を適用するには、ページのリロードが必要です。
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size= 選択したサイズを計算する
 theme_xhred_filemanager_selected_entries= 選択:%value のエントリ
 theme_xhred_filemanager_manual_path= 手動でパスを入力
@@ -333,6 +340,7 @@ theme_xhred_datatable_sloadingrecords= 読み込み中
 theme_xhred_datatable_sprocessing= 処理中...
 theme_xhred_datatable_szerorecords=該当する記録が見つかりません
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved= ファイルは編集されましたが保存されていません。
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=何をしたいですか？
 theme_xhred_global_save=セーブ
@@ -341,9 +349,11 @@ theme_xhred_global_close_without_saving= 保存せずに閉じる
 theme_xhred_global_continue_editing= 編集を続ける
 theme_xhred_filemanager_context_download_file=ダウンロード
 
+#17.65
 settings_sysinfo_easypie_charts_width= グラフの幅
 settings_sysinfo_easypie_charts_scale= グラフの長さのスケール
 
+#17.80
 right_return_theme_options= テーマのオプション
 theme_xhred_datatable_semptydirectory= ディレクトリが空です
 theme_xhred_filemanager_context_clipboard= パスをクリップボードにコピーする
@@ -373,11 +383,13 @@ theme_xhred_filemanager_hide_actions= 操作の列を非表示
 theme_xhred_filemanager_hovered_toolbar= マウス・ホバー上のツールバーのドロップダウンをアクティブにする
 theme_xhred_filemanager_context_delete_selected= 選択を削除します
 
+#17.83
 theme_xhred_database_adding_new_row= 新しい行を追加する
 theme_xhred_database_editing_row= 選択した行の編集
 theme_xhred_database_editing_rows= 選択した行の編集
 theme_xhred_database_adding_new_row_data= データを設定する
 
+#17.84
 theme_xhred_datatable_filter= フィルタ
 
 theme_xhred_global_update= 更新
@@ -412,6 +424,7 @@ theme_xhred_global_notice= 通知
 
 theme_xhred_updates_disabled_notice= <em>Authentic Theme</em>の更新に関する通知を有効にしていないことが検出されましたか？ <br> <br> <a href="%link" class="label label-default"> <strong> <i class = "fa fa-cogs"> </i>テーマ設定</strong>でこの機能を有効にする> </a>をクリックすると、すぐにワンクリックで最新バージョンにアップデートするのに役立ちます。
 
+#18.00
 theme_xhred_global_file= ファイル
 theme_xhred_global_directory= ディレクトリ
 theme_xhred_global_no_target= ターゲットが存在しないか、アクセスできない
@@ -484,19 +497,24 @@ theme_xhred_module_help= モジュールヘルプ
 
 theme_xhred_server_process_running= サーバープロセスはまだ実行中です！移動して情報を出力する権限がないと確信していますか？今すぐ出てもプロセスは終了しません。
 
+#18.03
 settings_global_options_title= グローバルオプション
 settings_global_passgen_format= パスワードジェネレータ
 settings_global_passgen_format_description= 生成されたパスワードに使用されている長さと文字タイプを設定します。デフォルト値は、大文字と小文字を含む15文字のパスワードを表す<code>a-z、A-Z、0-9</code>と同じです。 <code>＃</code>ハッシュ記号を使用して特殊文字を追加することもできます
 theme_xhred_password_generator_new= 新しいパスワードを生成<br>(クリップボードに)
 theme_xhred_password_generator_new_success= 生成されたパスワード%passwordがクリップボードに正常にコピーされました。
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder= このファイルは正常に動作するには `1;`で終わらなければなりません。
 
+#18.10
 theme_error_access_not_root= アクセスが拒否されました:テーマ設定を編集するには、<em> Webmin Configuration </em>モジュールにアクセスする必要があります
 
+#18.20
 settings_hide_top_loader= 上部の進行状況バーを非表示にする
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
 theme_xhred_global_shipped= 出荷された
 theme_xhred_global_available= 利用可能
@@ -542,6 +560,7 @@ theme_xhred_filemanager_successful_secontext= セキュリティコンテキス�
 
 theme_xhred_global_no_results_found= 結果が見つかりません
 
+#18.40
 theme_new_password_header= ユーザーの新しいパスワードを設定する
 login_reset= パスワードの復元
 theme_xhred_move_top= 一番上に移動
@@ -562,6 +581,7 @@ theme_xhred_tooltip_switch_user= ユーザーを切り替える
 theme_tooltip_logout= サインアウト
 theme_tooltip_edit_user= ユーザーを編集する
 
+#18.45
 settings_sysinfo_easypie_charts_size= グラフの直径
 theme_xhred_global_choose= 選択する
 theme_xhred_global_select= 選択
@@ -579,6 +599,7 @@ settings_right_soft_updates_page_options_title= ソフトウェアの更新
 theme_xhred_git_compare_changes= 変更を比較する
 theme_xhred_filemanager_link_to_clipboard= シンボリックリンクの名前 がクリップボードにコピーされました。
 
+#18.46
 theme_left_mail_prefs= メールの設定
 theme_left_mail_change_password= パスワードを変更する
 theme_left_mail_account_functions= アカウント機能
@@ -587,6 +608,7 @@ theme_xhred_global_module_config= モジュール構成
 theme_xhred_global_return= 戻る
 theme_xhred_global_return_to_module_index= モジュールインデックスに戻る
 
+#18.47
 theme_xhred_global_complete_changelog= 完全な変更履歴
 theme_xhred_global_beta_version= ベータ版
 theme_xhred_global_release= リリース
@@ -594,6 +616,7 @@ theme_xhred_global_released_on= リリース日
 theme_xhred_global_committed_on= コミットした
 theme_xhred_global_resolved_issues=リリース %value で解決された問題
 
+#18.48
 theme_force_upgrade=強制的にアップデート
 theme_xhred_force_upgrade_beta= 最新の開発版をインストールする(ベータ版)
 theme_xhred_force_upgrade_stable= 最新リリース版をインストールする(安定版)
@@ -602,6 +625,7 @@ theme_update_footer= $1のリポジトリにバグを報告してください。
 theme_xhred_encoding_manually_set= 手動でエンコーディングを設定する
 theme_xhred_filemanager_save_to_change_encoding= エンコーディングを変更できるようにするには、ファイルを保存する必要があります。
 
+#18.49
 theme_xhred_filemanager_user_switch= ユーザーに切り替え (Ctrl+M)
 theme_xhred_filemanager_user_switch_description= 下記のユーザー名を選択することで、このユーザーとして実行される操作を切り替えることができます。
 theme_xhred_filemanager_user_switch_description_back= デフォルトモードに戻すには、selectの最初のオプションを選択します。
@@ -620,6 +644,7 @@ theme_xhred_global_maximize= 最大化する
 theme_xhred_global_normalize= ノーマライズ
 theme_xhred_global_set_encoding= エンコーディングの設定
 
+#19.00
 theme_xhred_sysinfo_update_start= システム情報が再収集されています。
 theme_xhred_sysinfo_update_end= システム情報が正常に再収集されました。
 theme_xhred_sysinfo_update_failed= システム情報を再収集することはできません。あとでもう一度試してみてください。
@@ -640,11 +665,14 @@ theme_xhred_global_seconds= 秒
 theme_xhred_global_minute= 分
 theme_xhred_global_minutes= 分
 
+#19.01
 theme_xhred_browser_warning=コンピュータのサーバーパネルで最高の操作性を実現するには、サポートされている最新のブラウザを使用します。<br><br><em>Internet Explorer</em>はサポートされなくなりました。<br><br>推奨されるブラウザは、 <em>Chrome</em>、 <em>Firefox</em>、 <em>Opera</em> 、<em>サファリ</em>、<em>エッジ</em>です。<div class="alert alert-warning margined-top-10 margined-bottom--8">あなたは、インストールを必要としないブラウザのポータブルバージョンをダウンロードすることができます, 課された制限をバイパスする.</div>
 
+#19.02
 theme_xhred_filter_content= フィルタの内容
 theme_xhred_log_file_empty= ログファイルが空です
 
+#19.03
 theme_xhred_config_configurable_options= 設定可能なオプション
 theme_xhred_filter_content_no_matches_query= %strクエリと一致するコンテンツがありません
 theme_xhred_toggle_accordions= アコーディオンの可視性を切り替える
@@ -663,17 +691,20 @@ theme_xhred_signing_success= ログインに成功しました！
 theme_xhred_session_failed_password= パスワードが間違っています。もう一度お試しください。
 theme_xhred_global_reauthenticate= 再認証
 
+#19.04
 settings_sysinfo_real_time_status= リアルタイム監視を有効にする
 settings_sysinfo_real_time_timeout= 更新を実行する間隔
 settings_sysinfo_real_time_timeout_description= バックグラウンドでモニターを更新する間隔を設定します。値はミリ秒単位で表します。短期間のデータの損失を防ぐため、この値はできるだけ低くしてください。
 theme_xhred_global_redirecting= リダイレクト
 
+#19.05
 body_no_javascript_title= JavaScriptが無効です
 body_no_javascript_message= JavaScriptを有効にしてページを更新してください
 theme_xhred_connection_lost= 接続切断
 theme_xhred_connection_success= 接続成功
 theme_xhred_connection_success_details= サーバーへの接続が再確立されました。
 
+#19.08
 theme_xhred_return_home= パネルインデックスに戻る
 theme_xhred_global_upload= アップロード
 theme_xhred_global_select_files= ファイルを選択
@@ -682,6 +713,7 @@ theme_xhred_global_files_selected= 選択されたファイル
 theme_xhred_global_reset= リセット
 theme_xhred_upload_initial_info= ここにファイルをドラッグアンドドロップするか、クリックして選択します
 
+#19.09
 theme_xhred_global_empty= 空
 theme_xhred_global_click_here= ここをクリック
 theme_git_patch_incompatible_message= このバージョンの$1<em>$2</em>をインストールすると、 $3と$5の最新版および/または未発売版が適切に動作する必要があります。
@@ -689,6 +721,7 @@ theme_git_patch_incompatible_message_s= このバージョンの$1<em>$2</em>を
 theme_git_patch_incompatible_message_desc= 互換性のない変更があり、テーマが設計どおりに機能しなくなる可能性があります。この警告を無視して、テーマを強制的に$1にインストールするか、コンソールから<kbd>update-from-repo.sh</kbd>スクリプトをそのディレクトリから実行して、最新の開発バージョンに最初にアップグレードします。
 theme_xhred_global_outdated= このバージョンは古くなっています
 
+#19.10
 theme_xhred_filemanager_edit_html= HTMLを編集
 theme_xhred_global_example= 例
 theme_xhred_global_output_example= 出力例
@@ -724,6 +757,7 @@ theme_xhred_global_unlimited= 無制限
 theme_xhred_filemanager_tree_exclude_on_first_load= ツリービューの初期読み込み時のトラバースからなディレクトリを除外する
 theme_xhred_filemanager_tree_expand_search= ツリービューのフィルタ処理中に一致するすべての分岐を展開する
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo= バックグラウンド状態収集を強制的に同期させる
 theme_xhred_tooltip_side_slider_go_to_dashboard= ダッシュボードに進む
 theme_xhred_tooltip_side_slider_open_favorites_control= お気に入りコントロールを開く
@@ -735,6 +769,7 @@ settings_side_slider_fixed_toggle= ピンの表示/固定解除の切り替え
 settings_side_slider_fixed_toggle_description= このオプションは、横のスライダの下の行にトグルを表示し、前のオプションの条件が満たされた場合にその表示をトグルで切り替えることができます
 settings_right_page_hide_persistent_vscroll= 垂直スクロールバーを隠す
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin= テーマの更新を実行するとUserminに影響を与える必要があります。
 theme_xhred_global_installed_version= インストールされたバージョン
 theme_xhred_global_installed_and_latest_version= インストール済みの最新バージョン
@@ -745,12 +780,14 @@ settings_contrast_mode= ハイコントラストモードを有効にする
 theme_xhred_global_firewall= ファイアーウォール
 theme_xhred_settings_show_webmin_tab= ナビゲーションメニューにWebminスイッチを表示しますか？
 
+#19.14
 settings_enable_container_offset= コンテナオフセットを有効にする
 settings_enable_container_offset_description= このオプションは、横1920ピクセルの最小解像度の画面でのみ機能します
 theme_xhred_filemanager_preparing_download= ダウンロードの準備中。 %number個のファイルをアーカイブしています。 %dotsをお待ちください
 theme_xhred_filemanager_prepared_download= ダウンロードの準備ができました。 %number個のファイルをアーカイブしました。
 theme_xhred_filemanager_canceled_download= ダウンロードがキャンセルされました。
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download= <code>zip</code>コマンドが利用可能であっても、アーカイブとしてダウンロードするときに<code>tar</code>コマンドを強制します
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -763,6 +800,7 @@ settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
 settings_sysinfo_real_time_status_disk_description= 低速/大容量ファイルシステム上のディスクのリアルタイム監視を無効にすると便利な場合があります
 theme_xhred_title_locale_non_ui_config= 非UI形式（自動メールやエクスポートされたファイルなど）
 
+#19.20
 extensions_mail_current_position=メッセージ$1〜$2 の $3
 extensions_mail_sort_by_sender= 差出人で並べ替え
 extensions_mail_sort_by_recipient= 受信者で並べ替え
@@ -899,12 +937,14 @@ settings_cache_interval_1y= 一年に一度
 
 theme_xhred_reload_notification= テーマ設定は変更されましたが保存されていません。現在の設定にリセットするために、ページがリロードされます。
 
+#19.22
 theme_xhred_global_save_as= 名前を付けて保存
 theme_xhred_editor_save_file_as= ファイルに名前を付けて保存
 theme_xhred_global_configuration= 設定
 
 body_used_cached_total= 使用済み $2/キャッシュ $3/合計 $1
 
+#19.30
 theme_xhred_favorites_add=お気に入りに追加
 theme_xhred_favorites_remove=お気に入りから削除
 theme_xhred_select_deselect=現在のアイテムを選択/選択解除
@@ -922,6 +962,7 @@ theme_xhred_editor_set_syntax=構文を設定する
 theme_xhred_global_menu=メニュー
 theme_xhred_shell_aborted=操作は中止されました
 
+#19.32
 theme_xhred_connection_reboot=再起動
 theme_xhred_connection_reboot_details=サーバーは再起動中です。 お待ちください..
 settings_leftmenu_custom_links_description=カスタムの追加リンクをナビゲーションメニューに挿入することができます。 <br> <br> <em> title </em>、<em> link </em>、<em> icon </em>というキーが必要です。 オプションで、<em> level </em>キーを値とともにカンマ区切りのリストで指定することで、どのログインモードでリンクを表示するかを定義できます。<br> <br> <em> 0 </ em >  - 管理者ログイン <br> <em> 1 </em>  - 販売代理店のログイン; <br> <em> 2 </em>  - サーバーの所有者のログイン; <br> <em> 3 </em>  - ユーザーのログイン; <br> < em> 4 </em>  - システム所有者のログイン。<br> <br>以下の例のように、有効なJSONオブジェクトを文字列として渡す必要があります。<hr> <pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre></pre>
@@ -1009,23 +1050,28 @@ theme_xhred_global_version=バージョン
 theme_xhred_notify_patching_module_style=最初のUIパッチを$1に適用してリロードします。
 theme_xhred_global_error_more_details_online=注：このエラーとその解決方法の詳細については、オンラインの5丁目%1wikiページ％1をご覧ください。
 
+#19.33
 theme_xhred_filemanager_search_file_mask=ファイルマスク
 theme_xhred_filemanager_search_regex=正規表現
 theme_xhred_upload_successful=<span> $1ファイル</span>は$2ディレクトリにアップロードされました
 theme_xhred_upload_successful_single=<span> $1ファイル</span>は$2ディレクトリにアップロードされました
 settings_usermin_default_module=デフォルトモジュール
 
+#19.34
 theme_xhred_search_in_file_open_external=ファイルを別のエディタにデタッチ
 theme_xhred_path_to_console=ターミナルで現在のパスを開く(Alt + Shift + K)
 theme_xhred_filemanager_editor_revert_content=ファイルを元に戻す
 theme_xhred_filemanager_editor_reverting_content=変更をドロップして元のファイルの内容に戻す
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=エントリを除外する
 theme_xhred_filemanager_exclude_dirs_desc=除外するファイルまたはサブディレクトリのセミコロン区切りリスト
 
+#19.38
 theme_global_access_level=アクセスレベル
 theme_global_user_mode=ユーザーモード
 
+#19.40
 theme_xhred_global_attachments=添付ファイル
 theme_xhred_editor_tb_font=フォント
 theme_xhred_editor_tb_size=サイズ
@@ -1091,13 +1137,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=テーブルのソートと検索を初期化する最大行数
 theme_xhred_global_rows=行
 
+#19.42
 settings_side_slider_blend=継承する
 
+#19.43
 settings_theme_make_date=ブラウザで日付/時刻変換を有効にする
 settings_theme_make_date_description=無効にすると、サーバーが提供する日付/時刻形式が使用されます
 
+#19.44
 theme_xhred_reload_lang_notification=テーマ言語が変更されました。 新しい設定を適用するために、ページがリロードされます。
 
+#19.46
 theme_xhred_global_small=最小
 theme_xhred_global_normal=普通
 theme_xhred_global_medium=中

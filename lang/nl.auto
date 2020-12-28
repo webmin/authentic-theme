@@ -151,6 +151,7 @@ theme_xhred_notifications_firewall_danger_message=Het lijkt erop dat <strong>Con
 
 theme_xhred_notifications_firewall_warning=Firewallwaarschuwing
 
+#17.50
 settings_grayscale_level_navigation=Grijswaardenfilter
 settings_grayscale_level_navigation_description=Default/stroomwaarden <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia filter
@@ -180,6 +181,7 @@ theme_xhred_filemanager_context_paste=Plakken
 theme_xhred_filemanager_context_chmod=Wijzig de rechten
 theme_xhred_filemanager_context_chown=Verander van eigenaar
 
+#17.51
 theme_xhred_filemanager_context_new=Nieuw
 theme_xhred_filemanager_context_newarchive=Maak een nieuw archief
 theme_xhred_filemanager_context_delete=Verwijderen
@@ -190,10 +192,12 @@ theme_xhred_filemanager_context_goto=Locatie van item openen
 theme_xhred_filemanager_context_properties=Eigendommen
 theme_xhred_filemanager_context_search=Zoeken
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Deselecteer alles
 theme_xhred_filemanager_context_upload=Upload naar de huidige directory
 theme_xhred_filemanager_context_download=Download van externe URL
 
+#17.53
 theme_config_virtualmin=Virtualmin virtuele servers
 theme_config_cloudmin=Door Cloudmin beheerde systemen
 settings_right_thirdparties_options_title=Opties voor modules van derden
@@ -202,14 +206,17 @@ theme_xhred_filemanager_context_bookmarks=Bladwijzers
 theme_xhred_filemanager_context_bookmark_current=Bookmark het momenteel geopende pad
 theme_xhred_filemanager_context_transfer=Overdracht
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Doel koppelen
 
+#17.60
 right_unlimited=Onbeperkt
 settings_leftmenu_width=Bij voorkeur breedte
 settings_leftmenu_width_description=Default/huidige breedte <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Toon schakelaars omgekeerd
 settings_switch_rdisplay_description=Met deze optie kunt u een andere volgorde instellen voor schakelaars linksboven. Na het wijzigen van deze optie is het volledig opnieuw laden van de pagina vereist
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Bereken de geselecteerde maat
 theme_xhred_filemanager_selected_entries=Geselecteerd: %value items
 theme_xhred_filemanager_manual_path=Voer het pad handmatig in
@@ -222,6 +229,7 @@ theme_xhred_datatable_sloadingrecords=Bezig met laden
 theme_xhred_datatable_sprocessing=Verwerken. ..
 theme_xhred_datatable_szerorecords=Geen overeenkomende records gevonden
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Bestand is bewerkt maar niet opgeslagen.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Wat wil je doen?
 theme_xhred_global_save=Opslaan
@@ -230,9 +238,11 @@ theme_xhred_global_close_without_saving=Sluiten zonder op te slaan
 theme_xhred_global_continue_editing=Ga door met bewerken
 theme_xhred_filemanager_context_download_file=Downloaden
 
+#17.65
 settings_sysinfo_easypie_charts_width=Breedte van grafieken
 settings_sysinfo_easypie_charts_scale=Schaallengte van grafieken
 
+#17.80
 right_return_theme_options=thema opties
 theme_xhred_datatable_semptydirectory=Directory is leeg
 theme_xhred_filemanager_context_clipboard=Kopieer pad naar klembord
@@ -262,11 +272,13 @@ theme_xhred_filemanager_hide_actions=Kolom acties verbergen
 theme_xhred_filemanager_hovered_toolbar=Activeer dropdown in werkbalk bij muisaanwijzer
 theme_xhred_filemanager_context_delete_selected=Verwijder geselecteerde
 
+#17.83
 theme_xhred_database_adding_new_row=Nieuwe rij toevoegen
 theme_xhred_database_editing_row=Geselecteerde rij bewerken
 theme_xhred_database_editing_rows=Geselecteerde rijen bewerken
 theme_xhred_database_adding_new_row_data=Stel gegevens in
 
+#17.84
 theme_xhred_datatable_filter=Filter
 
 theme_xhred_global_update=Bijwerken
@@ -301,6 +313,7 @@ theme_xhred_global_notice=Merk op
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=het dossier
 theme_xhred_global_directory=Directory
 theme_xhred_global_no_target=Target bestaat niet of is niet toegankelijk
@@ -373,19 +386,24 @@ theme_xhred_module_help=Module hulp
 
 theme_xhred_server_process_running=Serverproces loopt nog steeds !? Weet u zeker dat u weg wilt navigeren en geen toegang hebt tot uitvoerinformatie? Zelfs als u nu vertrekt, wordt het proces niet beëindigd.
 
+#18.03
 settings_global_options_title=Globale opties
 settings_global_passgen_format=Wachtwoord generator
 settings_global_passgen_format_description=Stel de lengte en het type teken in dat wordt gebruikt in het gegenereerde wachtwoord. De standaardwaarde is gelijk aan <code>15|az,AZ,0-9</code>, wat staat voor een wachtwoord van 15 tekens lang, met hoofdletters, kleine letters en cijfers. Het is ook mogelijk om speciale tekens toe te voegen door <code>#</code> hekje te gebruiken
 theme_xhred_password_generator_new=Genereer nieuw wachtwoord <br> (naar klembord)
 theme_xhred_password_generator_new_success=Gegenereerd wachtwoord %password is met succes naar het klembord gekopieerd.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Dit bestand moet eindigen op `1;` om succesvol te werken.
 
+#18.10
 theme_error_access_not_root=Toegang geweigerd: de gebruiker heeft toegang nodig tot de <em>Webmin-configuratie</em> -module om de thema-configuratie te bewerken
 
+#18.20
 settings_hide_top_loader=Bovenste voortgangsbalk verbergen
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Toon symbolische pictogrammen in drop-down in Virtualmin/Cloudmin
 theme_xhred_global_shipped=Verzonden
 theme_xhred_global_available=Beschikbaar
@@ -431,6 +449,7 @@ theme_xhred_filemanager_successful_secontext=De beveiligingscontext is met succe
 
 theme_xhred_global_no_results_found=geen resultaten gevonden
 
+#18.40
 theme_new_password_header=Stel een nieuw wachtwoord in voor de gebruiker
 theme_xhred_move_top=Ga naar boven
 theme_xhred_move_bottom=Verplaats naar beneden
@@ -450,6 +469,7 @@ theme_xhred_tooltip_switch_user=Verander gebruiker
 theme_tooltip_logout=Afmelden
 theme_tooltip_edit_user=Bewerk gebruiker
 
+#18.45
 settings_sysinfo_easypie_charts_size=Diameter van grafieken
 theme_xhred_global_choose=Kiezen
 theme_xhred_global_select=Selecteer
@@ -467,6 +487,7 @@ settings_right_soft_updates_page_options_title=Software updates
 theme_xhred_git_compare_changes=Vergelijk veranderingen
 theme_xhred_filemanager_link_to_clipboard=De naam van de symbolische link is naar het klembord gekopieerd.
 
+#18.46
 theme_left_mail_prefs=Mailvoorkeuren
 theme_left_mail_change_password=Wachtwoord wijzigen
 theme_left_mail_account_functions=Accountfuncties
@@ -475,6 +496,7 @@ theme_xhred_global_module_config=Module configuratie
 theme_xhred_global_return=Keer terug
 theme_xhred_global_return_to_module_index=Keer terug naar de module-index
 
+#18.47
 theme_xhred_global_complete_changelog=Volledige changelog
 theme_xhred_global_beta_version=Beta versie
 theme_xhred_global_release=Vrijlating
@@ -482,6 +504,7 @@ theme_xhred_global_released_on=Uitgebracht op
 theme_xhred_global_committed_on=Toegewijd op
 theme_xhred_global_resolved_issues=Problemen opgelost in %value releases
 
+#18.48
 theme_force_upgrade=Update-thema afdwingen
 theme_xhred_force_upgrade_beta=Installeer de nieuwste ontwikkelingsversie (bèta)
 theme_xhred_force_upgrade_stable=Installeer de laatste releaseversie (stabiel)
@@ -490,6 +513,7 @@ theme_update_footer=Gelieve bugs te melden aan de $1 -repository. Volg het $2 -k
 theme_xhred_encoding_manually_set=Codering handmatig instellen
 theme_xhred_filemanager_save_to_change_encoding=Bestand moet worden opgeslagen om codering te kunnen wijzigen.
 
+#18.49
 theme_xhred_filemanager_user_switch=Overschakelen naar gebruiker (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Door de onderstaande gebruikersnaam te selecteren, schakelt u over naar andere bewerkingen die als deze gebruiker moeten worden uitgevoerd.
 theme_xhred_filemanager_user_switch_description_back=Kies de eerste optie in selecteren om terug te schakelen naar de standaardmodus.
@@ -508,6 +532,7 @@ theme_xhred_global_maximize=Maximaliseren
 theme_xhred_global_normalize=Normaliseren
 theme_xhred_global_set_encoding=Codering instellen
 
+#19.00
 theme_xhred_sysinfo_update_start=Systeeminformatie wordt opgehaald.
 theme_xhred_sysinfo_update_end=Systeeminformatie is met succes opgehaald.
 theme_xhred_sysinfo_update_failed=Systeeminformatie kan niet worden onthouden. Probeer het later nog eens.
@@ -528,11 +553,14 @@ theme_xhred_global_seconds=Seconden
 theme_xhred_global_minute=Minuut
 theme_xhred_global_minutes=Minuten
 
+#19.01
 theme_xhred_browser_warning=Gebruik een ondersteunde, up-to-date browser voor de beste ervaring met het serverpaneel op uw computer. <br><br> <em>Internet Explorer</em> wordt niet langer ondersteund. <br><br> Aanbevolen browsers zijn <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> of <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">U kunt een draagbare versie van een browser downloaden, die geen installatie vereist, om opgelegde beperkingen te omzeilen.</div>
 
+#19.02
 theme_xhred_filter_content=Filter inhoud
 theme_xhred_log_file_empty=Logbestand is leeg
 
+#19.03
 theme_xhred_config_configurable_options=Configureerbare opties
 theme_xhred_filter_content_no_matches_query=Geen enkele inhoud komt overeen met de %str zoekopdracht
 theme_xhred_toggle_accordions=Zichtbaarheid van accordeons in- / uitschakelen
@@ -551,17 +579,20 @@ theme_xhred_signing_success=Succesvol ingelogd!
 theme_xhred_session_failed_password=Verkeerd wachtwoord, probeer het opnieuw.
 theme_xhred_global_reauthenticate=Opnieuw verifiëren
 
+#19.04
 settings_sysinfo_real_time_status=Schakel realtime monitoring in
 settings_sysinfo_real_time_timeout=Interval voor het uitvoeren van update
 settings_sysinfo_real_time_timeout_description=Stel het gewenste interval in voor het bijwerken van monitoren op de achtergrond. De waarde is bedoeld in milliseconden. Houd deze waarde zo laag mogelijk om verlies van kortetermijngegevens te voorkomen
 theme_xhred_global_redirecting=Omleiden
 
+#19.05
 body_no_javascript_title=JavaScript is uitgeschakeld
 body_no_javascript_message=Schakel javascript in en vernieuw de pagina
 theme_xhred_connection_lost=Verbinding verbroken
 theme_xhred_connection_success=Verbinding geslaagd
 theme_xhred_connection_success_details=De verbinding met de server is hersteld.
 
+#19.08
 theme_xhred_return_home=Keer terug naar de paneelindex
 theme_xhred_global_upload=Uploaden
 theme_xhred_global_select_files=Selecteer bestand)
@@ -570,6 +601,7 @@ theme_xhred_global_files_selected=geselecteerde bestanden
 theme_xhred_global_reset=Reset
 theme_xhred_upload_initial_info=Sleep bestanden hier naartoe en klik erop om te selecteren
 
+#19.09
 theme_xhred_global_empty=Leeg
 theme_xhred_global_click_here=Klik hier
 theme_git_patch_incompatible_message=Om deze versie van $1 <em>$2</em> te installeren, moet de nieuwste en/of mogelijk niet-uitgebrachte versie van $3 en $5 correct werken.
@@ -577,6 +609,7 @@ theme_git_patch_incompatible_message_s=Om deze versie van $1 <em>$2</em> te inst
 theme_git_patch_incompatible_message_desc=Er kunnen onverenigbare wijzigingen zijn waardoor het thema niet meer werkt zoals het bedoeld is. Om deze waarschuwing te omzeilen en het thema toch $1 te installeren of $2 naar de nieuwste ontwikkelversie te upgraden met behulp van de console, door het script <kbd>update-from-repo.sh</kbd> vanuit de directory uit te voeren.
 theme_xhred_global_outdated=Deze versie is verouderd
 
+#19.10
 theme_xhred_filemanager_edit_html=Bewerk als HTML
 theme_xhred_global_example=Voorbeeld
 theme_xhred_global_output_example=Uitvoervoorbeeld
@@ -612,6 +645,7 @@ theme_xhred_global_unlimited=Onbeperkt
 theme_xhred_filemanager_tree_exclude_on_first_load=Sluit niet-essentiële mappen uit bij het doorlopen bij de eerste keer laden voor boomweergave (laadt sneller)
 theme_xhred_filemanager_tree_expand_search=Vouw alle takken met overeenkomsten uit terwijl u de structuurweergave filtert
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Forceer om het verzamelen van achtergrondstatus te synchroniseren
 theme_xhred_tooltip_side_slider_go_to_dashboard=Ga naar het dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Open favorietenbeheer
@@ -623,6 +657,7 @@ settings_side_slider_fixed_toggle=Toon in-/uitschakelknop
 settings_side_slider_fixed_toggle_description=Deze optie geeft de schakelaar in de zijschuifbalk op de onderste rij weer, waardoor de zichtbaarheid tijdens het vliegen kan worden gewijzigd, als aan de voorwaarden in de vorige optie is voldaan.
 settings_right_page_hide_persistent_vscroll=Aanhoudende verticale schuifbalk verbergen
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Installeer ook thema-updates voor Usermin
 theme_xhred_global_installed_version=Geïnstalleerde versie
 theme_xhred_global_installed_and_latest_version=Geïnstalleerde en nieuwste versie
@@ -633,12 +668,14 @@ settings_contrast_mode=Schakel de modus voor hoog contrast in
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Webmin-schakelaar weergeven in navigatiemenu?
 
+#19.14
 settings_enable_container_offset=Container-offset inschakelen
 settings_enable_container_offset_description=Deze optie werkt alleen op schermen met een minimale resolutie van 1920 horizontale pixels
 theme_xhred_filemanager_preparing_download=Download voorbereiden. %number Nummerbestand (en) archiveren. Even geduld %dots
 theme_xhred_filemanager_prepared_download=Download is klaar. Gearchiveerd %number nummerbestand (en).
 theme_xhred_filemanager_canceled_download=Download geannuleerd.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Forceer <code>tar</code> opdracht, zelfs als <code>zip</code> beschikbaar is, bij het downloaden als archief
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -651,6 +688,7 @@ settings_sysinfo_real_time_status_disk=Inschakelen voor schijven
 settings_sysinfo_real_time_status_disk_description=Het kan handig zijn om realtime monitoring uit te schakelen voor schijven op langzame/grote bestandssystemen
 theme_xhred_title_locale_non_ui_config=Door de server gegenereerd datumnotatie
 
+#19.20
 extensions_mail_current_position=Berichten $1-$2 van $3
 extensions_mail_sort_by_sender=Sorteren op afzender
 extensions_mail_sort_by_recipient=Sorteer op ontvanger
@@ -792,12 +830,14 @@ settings_cache_interval_1y=eens per jaar
 
 theme_xhred_reload_notification=Thema-configuratie is gewijzigd maar niet opgeslagen. De pagina wordt opnieuw geladen om terug te keren naar de huidige instellingen.
 
+#19.22
 theme_xhred_global_save_as=Opslaan als
 theme_xhred_editor_save_file_as=Bestand opslaan als
 theme_xhred_global_configuration=Configuratie
 
 body_used_cached_total=$1 totaal / $3 in de cache / $2 gebruikt
 
+#19.30
 theme_xhred_favorites_add=Toevoegen aan favorieten
 theme_xhred_favorites_remove=Verwijder van favorieten
 theme_xhred_select_deselect=Selecteer/deselecteer huidig item
@@ -815,6 +855,7 @@ theme_xhred_editor_set_syntax=Stel syntaxis in
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Operatie afgebroken
 
+#19.32
 theme_xhred_connection_reboot=Opnieuw opstarten
 theme_xhred_connection_reboot_details=De server wordt opnieuw opgestart. Wacht alsjeblieft ..
 settings_leftmenu_custom_links_description=Het is mogelijk om aangepaste, extra links in het navigatiemenu te laten injecteren. <br><br> De sleutels <em>titel</em>, <em>link</em> en <em>pictogram</em> zijn vereist; optioneel kunt u definiëren in welke aanmeldingsmodus een link wordt weergegeven, door de sleutel <em>level</em> met waarden op te geven in een door komma's gescheiden lijst, die het volgende bevat: <br><br> <em>0</ em > - login beheerder; <br><em> 1 </em>- reseller login;<br> <em>2</em> - login servereigenaar; <br><em> 3 </em>- login gebruiker;<br> <em>4</em> - login systeemeigenaar. <br><br> Je moet een geldig JSON-object doorgeven als een string, zoals in het onderstaande voorbeeld. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " envelop "," poort ":" 20000 "," target ":" _blank "}]} </pre>
@@ -902,23 +943,28 @@ theme_xhred_global_version=versie
 theme_xhred_notify_patching_module_style=Aanvankelijke UI-patch toepassen voor $1 en opnieuw laden.
 theme_xhred_global_error_more_details_online=Opmerking: lees meer over deze fout en hoe u deze kunt oplossen op onze %1wiki pagina %1 online.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Bestandsmasker
 theme_xhred_filemanager_search_regex=Reguliere expressie
 theme_xhred_upload_successful=<span>$1-bestanden</span> zijn geüpload naar de map $2
 theme_xhred_upload_successful_single=Het <span>$1-bestand</span> is geüpload naar de $2 -directory
 settings_usermin_default_module=Standaard module
 
+#19.34
 theme_xhred_search_in_file_open_external=Koppel het bestand los van de aparte editor
 theme_xhred_path_to_console=Open huidig pad in terminal <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Bestand terugzetten
 theme_xhred_filemanager_editor_reverting_content=Wijzigingen laten vallen en terugkeren naar originele bestandsinhoud.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Uitsluitingen uitsluiten
 theme_xhred_filemanager_exclude_dirs_desc=Door puntkomma's gescheiden lijst met bestanden of submappen die moeten worden uitgesloten
 
+#19.38
 theme_global_access_level=Toegangsniveau
 theme_global_user_mode=Gebruikersmodus
 
+#19.40
 theme_xhred_global_attachments=Bijlagen
 theme_xhred_editor_tb_font=Lettertype
 theme_xhred_editor_tb_size=Grootte
@@ -984,13 +1030,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximumaantal rijen om het sorteren en zoeken van tabellen te initialiseren
 theme_xhred_global_rows=Rijen
 
+#19.42
 settings_side_slider_blend=Erven
 
+#19.43
 settings_theme_make_date=Schakel datum/tijd-conversie in browser in
 settings_theme_make_date_description=Indien uitgeschakeld, wordt de door de server verstrekte datum/tijd-indeling gebruikt
 
+#19.44
 theme_xhred_reload_lang_notification=Thema-taal is gewijzigd. De pagina wordt opnieuw geladen om nieuwe instellingen toe te passen.
 
+#19.46
 theme_xhred_global_small=Klein
 theme_xhred_global_normal=Normaal
 theme_xhred_global_medium=Medium
@@ -999,20 +1049,26 @@ theme_xhred_global_huge=Reusachtig
 theme_xhred_filemanager_editor_maximized=Maximaliseer het editorpaneel bij het opstarten
 settings_sysinfo_remember_accordions=Bewaar de accordeonstaat die de vorige keer is gebruikt
 
+#19.47
 theme_xhred_textarea_to_clipboard=De geselecteerde tekstgebiedinhoud is met succes naar het klembord gekopieerd
 
+#19.48
 theme_xhred_global_alias=Alias
 
+#19.50
 theme_xhred_mail_composer_real_name=Echte naam
 theme_xhred_mail_composer_username=gebruikersnaam
 
+#19.53
 settings_global_palette_unauthenticated=Kleurenpalet inlogpagina
 
+#19.60
 settings_config_save_and_next=Opslaan en volgende
 settings_config_configuration_category=Configuratie categorie
 config_search_options_all=Doorzoek alle configuratie-opties voor de module
 theme_xhred_editing_config_file=Bewerken van configuratiebestand
 
+#19.61
 theme_xhred_login_message_2fa=Twee-factor authenticatie is ingeschakeld voor deze gebruiker om in te loggen
 theme_xhred_global_verify=Verifiëren
 settings_show_terminal_link2=Toon opdrachtshell-knop
@@ -1020,6 +1076,7 @@ settings_hotkey_shell2=Sneltoets voor opdrachtshell
 theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Commandoschaal
 
+#19.70
 theme_xhred_filemanager_context_view=Visie
 theme_xhred_file_viewer=Bestandsviewer
 theme_xhred_global_done=Gedaan.

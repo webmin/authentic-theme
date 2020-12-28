@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=Näyttää siltä, että <stro
 
 theme_xhred_notifications_firewall_warning=Palomuurivaroitus
 
+#17.50
 settings_grayscale_level_navigation=Harmaasävyinen suodatin
 settings_grayscale_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Seepiasuodatin
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=liitä
 theme_xhred_filemanager_context_chmod=Vaihda käyttöoikeudet
 theme_xhred_filemanager_context_chown=Vaihda omistajuus
 
+#17.51
 theme_xhred_filemanager_context_new=Uusi
 theme_xhred_filemanager_context_newarchive=Luo uusi arkisto
 theme_xhred_filemanager_context_delete=Poistaa
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Avaa kohteen sijainti
 theme_xhred_filemanager_context_properties=ominaisuudet
 theme_xhred_filemanager_context_search=Hae
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Poista kaikki valinnat
 theme_xhred_filemanager_context_upload=Lataa nykyiseen hakemistoon
 theme_xhred_filemanager_context_download=Lataa etä-URL-osoitteesta
 
+#17.53
 theme_config_virtualmin=Virtualmin-virtuaalipalvelimet
 theme_config_cloudmin=Cloudmin-hallintajärjestelmät
 settings_right_thirdparties_options_title=Kolmansien osapuolien moduulien vaihtoehdot
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=kirjanmerkit
 theme_xhred_filemanager_context_bookmark_current=Kirjanmerkki tällä hetkellä avattu polku
 theme_xhred_filemanager_context_transfer=Siirtää
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Linkki kohde
 
+#17.60
 right_unlimited=Rajoittamaton
 settings_leftmenu_width=Suositeltava leveys
 settings_leftmenu_width_description=Default/nykyinen leveys <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Näytä kytkimet käännettynä
 settings_switch_rdisplay_description=Tämän vaihtoehdon avulla voit asettaa eri järjestyksen vasemmalle yläkytkimille. Vaihdettuaan tämän vaihtoehdon, sivun täydellinen uudelleenlataus on tarpeen
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Laske valittu koko
 theme_xhred_filemanager_selected_entries=Valittu: %value kohteita
 theme_xhred_filemanager_manual_path=Syötä polku manuaalisesti
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Ladataan
 theme_xhred_datatable_sprocessing=Processing. ..
 theme_xhred_datatable_szerorecords=Vastaavia tietueita ei löytynyt
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Tiedostoa on muokattu, mutta sitä ei ole tallennettu.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Mitä haluat tehdä?
 theme_xhred_global_save=Tallentaa
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Sulje tallentamatta
 theme_xhred_global_continue_editing=Jatka muokkausta
 theme_xhred_filemanager_context_download_file=ladata
 
+#17.65
 settings_sysinfo_easypie_charts_width=Kaavioiden leveys
 settings_sysinfo_easypie_charts_scale=Asteikon pituus kaavioita
 
+#17.80
 right_return_theme_options=Teema-asetukset
 theme_xhred_datatable_semptydirectory=Hakemisto on tyhjä
 theme_xhred_filemanager_context_clipboard=Kopioi polku leikepöydälle
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=Piilota toiminnot-sarake
 theme_xhred_filemanager_hovered_toolbar=Aktivoi hiiren osoittimen työkalurivin pudotus
 theme_xhred_filemanager_context_delete_selected=Poista valitut
 
+#17.83
 theme_xhred_database_adding_new_row=Lisätään uusi rivi
 theme_xhred_database_editing_row=Valitun rivin muokkaaminen
 theme_xhred_database_editing_rows=Valittujen rivien muokkaaminen
 theme_xhred_database_adding_new_row_data=Aseta tiedot
 
+#17.84
 theme_xhred_datatable_filter=Suodattaa
 
 theme_xhred_global_update=Päivittää
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Ilmoitus
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=tiedosto
 theme_xhred_global_directory=hakemisto
 theme_xhred_global_no_target=Kohtetta ei ole tai sitä ei voi käyttää
@@ -489,19 +502,24 @@ theme_xhred_module_help=Ohje moduulille
 
 theme_xhred_server_process_running=Palvelinprosessi on edelleen käynnissä!? Oletko varma, että haluat navigoida pois etkä pääse pääsyä tulostetietoihin? Vaikka jätätkin nyt, prosessia ei lopeteta.
 
+#18.03
 settings_global_options_title=Globaalit vaihtoehdot
 settings_global_passgen_format=Salasanan luonti
 settings_global_passgen_format_description=Aseta luodussa salasanassa käytetty pituus ja merkityyppi. Oletusarvo on <code>15|az,AZ,0-9</code>, joka edustaa 15 merkin pituista salasanaa, joka sisältää isot ja pienet kirjaimet ja numerot. On myös mahdollista lisätä erikoismerkkejä käyttämällä <code>#</code> hash-merkkiä
 theme_xhred_password_generator_new=Luo uusi salasana <br> (leikepöydälle)
 theme_xhred_password_generator_new_success=Luotu salasana %password on kopioitu leikepöydälle onnistuneesti.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Tämän tiedoston on oltava lopussa `1;` toimimaan onnistuneesti.
 
+#18.10
 theme_error_access_not_root=Käyttö evätty: Käyttäjä tarvitsee pääsyn <em>Webmin Configuration</em> -moduuliin teeman määritysten muokkaamiseksi
 
+#18.20
 settings_hide_top_loader=Piilota edistymispalkki
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Näytä symboliset kuvakkeet avattavassa valikossa Virtualmin/Cloudmin
 theme_xhred_global_shipped=toimitetaan
 theme_xhred_global_available=Saatavilla
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=Suojauskonteksti on muutettu onnist
 
 theme_xhred_global_no_results_found=Ei tuloksia
 
+#18.40
 theme_new_password_header=Aseta uusi salasana käyttäjälle
 login_reset=Salasanan palautus
 theme_xhred_move_top=Siirry alkuun
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Vaihda käyttäjää
 theme_tooltip_logout=Kirjaudu ulos
 theme_tooltip_edit_user=Muokkaa käyttäjää
 
+#18.45
 settings_sysinfo_easypie_charts_size=Karttojen halkaisija
 theme_xhred_global_choose=Valita
 theme_xhred_global_select=valita
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Ohjelmistopäivitykset
 theme_xhred_git_compare_changes=Vertaa muutoksia
 theme_xhred_filemanager_link_to_clipboard=Symbolisen linkin nimi on kopioitu leikepöydälle.
 
+#18.46
 theme_left_mail_prefs=Sähköpostiasetukset
 theme_left_mail_change_password=Vaihda salasana
 theme_left_mail_account_functions=Tilitoiminnot
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Moduulin konfigurointi
 theme_xhred_global_return=Palata
 theme_xhred_global_return_to_module_index=Palaa moduulihakemistoon
 
+#18.47
 theme_xhred_global_complete_changelog=Täydellinen muutosloki
 theme_xhred_global_beta_version=Beta-versio
 theme_xhred_global_release=julkaisu
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Julkaistu
 theme_xhred_global_committed_on=Sitoutunut
 theme_xhred_global_resolved_issues=Ratkaisut ongelmat %value -julkaisuissa
 
+#18.48
 theme_force_upgrade=Pakota päivitys teema
 theme_xhred_force_upgrade_beta=Asenna uusin kehitysversio (beta)
 theme_xhred_force_upgrade_stable=Asenna uusin versio (vakaa)
@@ -607,6 +630,7 @@ theme_update_footer=Ole hyvä ja ilmoita virheistä $1 -varastoon. Seuraa teeman
 theme_xhred_encoding_manually_set=Aseta koodaus manuaalisesti
 theme_xhred_filemanager_save_to_change_encoding=Tiedosto on tallennettava, jotta koodausta voidaan muuttaa.
 
+#18.49
 theme_xhred_filemanager_user_switch=Vaihda käyttäjälle (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Kun valitset alla olevan käyttäjänimen, vaihdat muut toiminnot, jotka suoritetaan tällä käyttäjällä.
 theme_xhred_filemanager_user_switch_description_back=Voit vaihtaa takaisin oletustilaan valitsemalla ensimmäisen vaihtoehdon.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=Maksimoida
 theme_xhred_global_normalize=normalisoitua
 theme_xhred_global_set_encoding=Aseta koodaus
 
+#19.00
 theme_xhred_sysinfo_update_start=Järjestelmätietoja muistetaan.
 theme_xhred_sysinfo_update_end=Järjestelmätiedot on kerätty onnistuneesti.
 theme_xhred_sysinfo_update_failed=Järjestelmätietoja ei voida muistaa. Yritä myöhemmin uudelleen.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=sekuntia
 theme_xhred_global_minute=minuutti
 theme_xhred_global_minutes=Pöytäkirja
 
+#19.01
 theme_xhred_browser_warning=Käytä tuettua, ajan tasalla olevaa selainta, jotta saat parhaan kokemuksen tietokoneesi palvelinpaneelista. <br><br> <em>Internet Explorer</em> ei enää tueta. <br><br> Suositellut selaimet ovat <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> tai <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Voit ladata kannettavan selaimen version, joka ei vaadi asennusta, ohittaaksesi asetetut rajoitukset.</div>
 
+#19.02
 theme_xhred_filter_content=Suodata sisältö
 theme_xhred_log_file_empty=Lokitiedosto on tyhjä
 
+#19.03
 theme_xhred_config_configurable_options=Konfiguroitavat vaihtoehdot
 theme_xhred_filter_content_no_matches_query=Mikään sisältö ei vastaa %str -kyselyä
 theme_xhred_toggle_accordions=Vaihda haitarien näkyvyys
@@ -668,17 +696,20 @@ theme_xhred_signing_success=Sisäänkirjautuminen onnistuneesti!
 theme_xhred_session_failed_password=Väärä salasana, yritä uudelleen.
 theme_xhred_global_reauthenticate=laillisuustarkastuksen
 
+#19.04
 settings_sysinfo_real_time_status=Ota reaaliaikainen seuranta käyttöön
 settings_sysinfo_real_time_timeout=Väli päivityksen suorittamiseen
 settings_sysinfo_real_time_timeout_description=Aseta haluttu aikaväli näytön päivittämiseksi taustalla. Arvon tarkoitettiin olevan millisekuntina. Pidä tämä arvo mahdollisimman alhaisena estääksesi lyhytaikaisen tiedon menetyksen
 theme_xhred_global_redirecting=Redirecting
 
+#19.05
 body_no_javascript_title=JavaScript on poistettu käytöstä
 body_no_javascript_message=Ota JavaScript käyttöön ja päivitä sivu
 theme_xhred_connection_lost=Yhteys kadotettu
 theme_xhred_connection_success=Yhteys onnistui
 theme_xhred_connection_success_details=Yhteys palvelimeen on muodostettu uudelleen.
 
+#19.08
 theme_xhred_return_home=Palaa paneeliin
 theme_xhred_global_upload=upload
 theme_xhred_global_select_files=Valitse tiedosto (t)
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=tiedostot valittu
 theme_xhred_global_reset=Nollaa
 theme_xhred_upload_initial_info=Vedä ja pudota tiedostot tähän tai napsauta valitaksesi
 
+#19.09
 theme_xhred_global_empty=Tyhjä
 theme_xhred_global_click_here=Klikkaa tästä
 theme_git_patch_incompatible_message=Tämän $1 <em>$2</em> version asentaminen vaatii $3 ja $5 uusimman ja/tai mahdollisesti julkistamattoman version toimimaan oikein.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=Tämän $1 <em>$2</em> version asentamine
 theme_git_patch_incompatible_message_desc=Siellä saattaa olla yhteensopimattomia muutoksia, jotka voivat estää teema toimimasta suunnitellulla tavalla. Ohittaa tämä varoitus ja pakottaa teema asentamaan joka tapauksessa $1 tai päivitä $2 uusimpaan kehitysversioon ensin konsolin avulla suorittamalla <kbd>update-from-repo.sh</kbd> komentosarjan hakemistosta.
 theme_xhred_global_outdated=Tämä versio on vanhentunut
 
+#19.10
 theme_xhred_filemanager_edit_html=Muokkaa HTML-muodossa
 theme_xhred_global_example=esimerkki
 theme_xhred_global_output_example=Tulosesimerkki
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=Rajoittamaton
 theme_xhred_filemanager_tree_exclude_on_first_load=Sulje pois välttämättömät hakemistot siirtymästä puunäkymän alkuperäisen kuormituksen aikana (latautuu nopeammin)
 theme_xhred_filemanager_tree_expand_search=Laajenna kaikki oksat, jotka sisältävät tuloksia, kun suodatat puunäkymää
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Pakota synkronoimaan taustatilan keruu
 theme_xhred_tooltip_side_slider_go_to_dashboard=Siirry kojelautaan
 theme_xhred_tooltip_side_slider_open_favorites_control=Avaa suosikkiohjaus
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=Näytä pin/irrota kytkentä
 settings_side_slider_fixed_toggle_description=Tämä vaihtoehto näyttää vaihtosivun sivurivillä alareunassa, jolloin sen näkyvyys voidaan vaihtaa lennossa, jos edellisen vaihtoehdon ehdot täyttyvät.
 settings_right_page_hide_persistent_vscroll=Piilota pysyvä pystysuuntainen vierityspalkki
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Asenna teemapäivitykset myös Userminille
 theme_xhred_global_installed_version=Asennettu versio
 theme_xhred_global_installed_and_latest_version=Asennettu ja uusin versio
@@ -750,12 +785,14 @@ settings_contrast_mode=Ota käyttöön korkea kontrastitila
 theme_xhred_global_firewall=palomuuri
 theme_xhred_settings_show_webmin_tab=Näytä Webmin-kytkin navigointivalikossa?
 
+#19.14
 settings_enable_container_offset=Ota konttisiirto käyttöön
 settings_enable_container_offset_description=Tämä vaihtoehto toimii vain näytöillä, joiden tarkkuus on vähintään 1920 vaakapistettä
 theme_xhred_filemanager_preparing_download=Latauksen valmistelu. Arkistoidaan %number tiedostoja. Odota %dots
 theme_xhred_filemanager_prepared_download=Lataa on valmis. Arkistoitu %number tiedostoja.
 theme_xhred_filemanager_canceled_download=Lataa peruutettu.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Pakota <code>tar</code> komento, vaikka <code>zip</code> olisi saatavilla, kun lataat arkistoksi
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=Ota käyttöön levyille
 settings_sysinfo_real_time_status_disk_description=Voi olla hyödyllistä poistaa reaaliaikainen tarkkailu levyiltä hitaissa/suurissa tiedostojärjestelmissä
 theme_xhred_title_locale_non_ui_config=Palvelimen luoma päivämäärämuoto
 
+#19.20
 extensions_mail_current_position=Viestit $1–$2 / $3
 extensions_mail_sort_by_sender=Lajittele lähettäjän mukaan
 extensions_mail_sort_by_recipient=Lajittele vastaanottajan mukaan
@@ -909,12 +947,14 @@ settings_cache_interval_1y=kerran vuodessa
 
 theme_xhred_reload_notification=Teeman kokoonpano on muutettu, mutta sitä ei ole tallennettu. Sivu ladataan uudelleen, jotta se voidaan palauttaa nykyisiin asetuksiin.
 
+#19.22
 theme_xhred_global_save_as=Tallenna nimellä
 theme_xhred_editor_save_file_as=Tallenna tiedosto nimellä
 theme_xhred_global_configuration=kokoonpano
 
 body_used_cached_total=$1 yhteensä / $3 välimuistissa / $2 käytetty
 
+#19.30
 theme_xhred_favorites_add=Lisää suosikkeihin
 theme_xhred_favorites_remove=Poista suosikeista
 theme_xhred_select_deselect=Valitse/poista nykyisen kohteen valinta
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=Aseta syntaksi
 theme_xhred_global_menu=valikko
 theme_xhred_shell_aborted=Operaatio peruttu
 
+#19.32
 theme_xhred_connection_reboot=uudelleenkäynnistystä
 theme_xhred_connection_reboot_details=Palvelinta käynnistetään uudelleen. Odota ..
 settings_leftmenu_custom_links_description=Navigointivalikkoon voidaan lisätä mukautettuja ylimääräisiä linkkejä. <br><br> Avaimet <em>otsikko</em>, <em>link</em> ja <em>kuvake</em> vaaditaan; valinnaisesti voit määrittää missä sisäänkirjautumismuodossa linkki näytetään määrittelemällä <em>taso</em> -näppäin arvoineen pilkuilla erotetussa luettelossa, joka sisältää: <br><br> <em>0</ em > - järjestelmänvalvojan sisäänkirjautuminen; <br><em> 1 </em>- jälleenmyyjän sisäänkirjautuminen;<br> <em>2</em> - palvelimen omistajan sisäänkirjautuminen; <br><em> 3 </em>- käyttäjän sisäänkirjautuminen;<br> <em>4</em> - järjestelmän omistajan sisäänkirjautuminen. <br><br> Se edellyttää, että lähetä kelvollinen JSON-objekti merkkijonona, kuten alla olevassa esimerkissä. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " kirjekuori "," portti ":" 20000 "," kohde ":" _blank "}]} </pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=versio
 theme_xhred_notify_patching_module_style=Alkuperäisen käyttöliittymäkorjauksen käyttäminen $1 ja uudelleenlataus.
 theme_xhred_global_error_more_details_online=Huomaa: Lue lisää virheestä ja sen ratkaisemisesta %1wiki sivullamme %1 online.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Tiedoston peite
 theme_xhred_filemanager_search_regex=Tavallinen ilme
 theme_xhred_upload_successful=<span>$1 tiedostot</span> on ladattu onnistuneesti $2 hakemistoon
 theme_xhred_upload_successful_single=<span>$1 tiedosto</span> on ladattu onnistuneesti $2 hakemistoon
 settings_usermin_default_module=Oletusmoduuli
 
+#19.34
 theme_xhred_search_in_file_open_external=Irrota tiedosto erilliseen editoriin
 theme_xhred_path_to_console=Avaa nykyinen polku terminaalissa <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Palauta tiedosto
 theme_xhred_filemanager_editor_reverting_content=Muutosten hylkääminen ja palaaminen alkuperäiseen tiedostoon.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Sulje merkinnät pois
 theme_xhred_filemanager_exclude_dirs_desc=Semikolonilla erotettu luettelo tiedostoista tai alihakemistoista, jotka poistetaan
 
+#19.38
 theme_global_access_level=Käyttöoikeustaso
 theme_global_user_mode=Käyttäjätila
 
+#19.40
 theme_xhred_global_attachments=Liitteet
 theme_xhred_editor_tb_font=kirjasinlaji
 theme_xhred_editor_tb_size=Koko
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=kbps
 settings_table_init_datatables=Rivien enimmäismäärä taulukon lajittelun ja haun aloittamiseksi
 theme_xhred_global_rows=riviä
 
+#19.42
 settings_side_slider_blend=Periä
 
+#19.43
 settings_theme_make_date=Ota päivämäärän ja ajan muuntaminen käyttöön selaimessa
 settings_theme_make_date_description=Jos tämä ei ole käytössä, käytetään palvelimen tarjoamaa päivämäärä- ja aikamuotoa
 
+#19.44
 theme_xhred_reload_lang_notification=Teeman kieli on vaihdettu. Sivu ladataan uudelleen, jotta uudet asetukset otetaan käyttöön.
 
+#19.46
 theme_xhred_global_small=Pieni
 theme_xhred_global_normal=normaali
 theme_xhred_global_medium=keskikokoinen
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=Valtava
 theme_xhred_filemanager_editor_maximized=Maksimoi toimittajapaneeli käynnistyksen yhteydessä
 settings_sysinfo_remember_accordions=Tallenna harmonikan tila, jota käytettiin viimeksi
 
+#19.47
 theme_xhred_textarea_to_clipboard=Valittu tekstialueen sisältö on kopioitu onnistuneesti leikepöydälle
 
+#19.48
 theme_xhred_global_alias=Alias
 
+#19.50
 theme_xhred_mail_composer_real_name=Oikea nimi
 theme_xhred_mail_composer_username=käyttäjätunnus
 
+#19.53
 settings_global_palette_unauthenticated=Sisäänkirjautumissivun värivalikoima
 
+#19.60
 settings_config_save_and_next=Tallenna ja Seuraava
 settings_config_configuration_category=Kokoonpanoluokka
 config_search_options_all=Hae läpi kaikki moduulin määritysvaihtoehdot
 theme_xhred_editing_config_file=Muokataan määritystiedostoa
 
+#19.61
 theme_xhred_login_message_2fa=Kaksivaiheinen todennus on sallittu tämän käyttäjän kirjautumisessa
 theme_xhred_global_verify=Vahvista
 settings_show_terminal_link2=Näytä komentotulkin painike
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=Komennon kuoren pikanäppäin
 theme_xhred_path_to_console2=Avaa komentorivin nykyinen polku <tt>(Alt+Vaihto+K)</tt>
 theme_tooltip_terminal_link2=Komennon kuori
 
+#19.70
 theme_xhred_filemanager_context_view=Näytä
 theme_xhred_file_viewer=Tiedostojen katseluohjelma
 theme_xhred_global_done=Tehty.

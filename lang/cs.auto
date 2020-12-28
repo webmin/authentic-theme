@@ -92,6 +92,7 @@ theme_xhred_notifications_firewall_danger_message=Zdá se, že <strong>ConfigSer
 
 theme_xhred_notifications_firewall_warning=Varování brány firewall
 
+#17.50
 settings_grayscale_level_navigation=Filtr ve stupních šedi
 settings_grayscale_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sépiový filtr
@@ -121,6 +122,7 @@ theme_xhred_filemanager_context_paste=Vložit
 theme_xhred_filemanager_context_chmod=Změnit oprávnění
 theme_xhred_filemanager_context_chown=Změnit vlastnictví
 
+#17.51
 theme_xhred_filemanager_context_new=Nový
 theme_xhred_filemanager_context_newarchive=Vytvořit nový archiv
 theme_xhred_filemanager_context_delete=Odstranit
@@ -131,10 +133,12 @@ theme_xhred_filemanager_context_goto=Otevřít umístění položky
 theme_xhred_filemanager_context_properties=Vlastnosti
 theme_xhred_filemanager_context_search=Vyhledávání
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Odznačit vše
 theme_xhred_filemanager_context_upload=Nahrát do aktuálního adresáře
 theme_xhred_filemanager_context_download=Stáhnout ze vzdálené URL
 
+#17.53
 theme_config_virtualmin=Virtuální servery Virtualmin
 theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Možnosti modulů třetích stran
@@ -143,14 +147,17 @@ theme_xhred_filemanager_context_bookmarks=Záložky
 theme_xhred_filemanager_context_bookmark_current=Záložka právě otevřená cesta
 theme_xhred_filemanager_context_transfer=Převod
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Cíl odkazu
 
+#17.60
 right_unlimited=Neomezený
 settings_leftmenu_width=Upřednostňovaná šířka
 settings_leftmenu_width_description=Výchozí/proud šířka <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Zobrazit přepínače obrácené
 settings_switch_rdisplay_description=Tato možnost umožňuje nastavit jiné pořadí přepínačů vlevo nahoře. Po změně této možnosti je nutné znovu načíst stránku
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Vypočítejte vybranou velikost
 theme_xhred_filemanager_selected_entries=Vybrané: %value položek
 theme_xhred_filemanager_manual_path=Zadejte cestu ručně
@@ -163,6 +170,7 @@ theme_xhred_datatable_sloadingrecords=načítání
 theme_xhred_datatable_sprocessing=Zpracovává se. ..
 theme_xhred_datatable_szerorecords=Nebyly nalezeny žádné odpovídající záznamy
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Soubor byl upraven, ale nebyl uložen.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Co chceš dělat?
 theme_xhred_global_save=Uložit
@@ -171,9 +179,11 @@ theme_xhred_global_close_without_saving=Zavřít bez uložení
 theme_xhred_global_continue_editing=Pokračujte v úpravách
 theme_xhred_filemanager_context_download_file=Stažení
 
+#17.65
 settings_sysinfo_easypie_charts_width=Šířka grafů
 settings_sysinfo_easypie_charts_scale=Měřítko délky grafů
 
+#17.80
 right_return_theme_options=možnosti motivu
 theme_xhred_datatable_semptydirectory=Adresář je prázdný
 theme_xhred_filemanager_context_clipboard=Zkopírujte cestu do schránky
@@ -203,11 +213,13 @@ theme_xhred_filemanager_hide_actions=Skrýt sloupec akcí
 theme_xhred_filemanager_hovered_toolbar=Aktivujte rozevírací nabídku na panelu nástrojů při najetí myší
 theme_xhred_filemanager_context_delete_selected=Smazat vybrané
 
+#17.83
 theme_xhred_database_adding_new_row=Přidání nového řádku
 theme_xhred_database_editing_row=Úpravy vybraného řádku
 theme_xhred_database_editing_rows=Úpravy vybraných řádků
 theme_xhred_database_adding_new_row_data=Nastavit data
 
+#17.84
 theme_xhred_datatable_filter=Filtr
 
 theme_xhred_global_update=Aktualizace
@@ -242,6 +254,7 @@ theme_xhred_global_notice=Oznámení
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=Soubor
 theme_xhred_global_directory=Adresář
 theme_xhred_global_no_target=Cíl neexistuje nebo není přístupný
@@ -314,19 +327,24 @@ theme_xhred_module_help=Nápověda modulu
 
 theme_xhred_server_process_running=Proces serveru stále běží !? Jste si jisti, že se chcete odejít a nemáte přístup k výstupním informacím? I když nyní odejdete, proces nebude ukončen.
 
+#18.03
 settings_global_options_title=Globální možnosti
 settings_global_passgen_format=Generátor hesel
 settings_global_passgen_format_description=Nastavte délku a typ znaku použitého ve vygenerovaném hesle. Výchozí hodnota se rovná <code>15|az,AZ,0-9</code>, což představuje heslo o délce 15 znaků, obsahující velká a malá písmena a čísla. Je také možné přidat speciální znaky pomocí znaku <code>#</code> hash
 theme_xhred_password_generator_new=Generovat nové heslo <br> (do schránky)
 theme_xhred_password_generator_new_success=Generované heslo %password bylo úspěšně zkopírováno do schránky.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Tento soubor musí končit `1;` úspěšně pracovat.
 
+#18.10
 theme_error_access_not_root=Přístup byl odepřen: Uživatel potřebuje přístup k modulu <em>Webmin Configuration</em>, aby mohl upravit konfiguraci motivu
 
+#18.20
 settings_hide_top_loader=Skrýt horní lištu průběhu
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Zobrazovat symbolické ikony v rozevíracím seznamu ve Virtualmin/Cloudmin
 theme_xhred_global_shipped=Odesláno
 theme_xhred_global_available=Dostupný
@@ -372,6 +390,7 @@ theme_xhred_filemanager_successful_secontext=Kontext zabezpečení byl úspěšn
 
 theme_xhred_global_no_results_found=Nebyly nalezeny žádné výsledky
 
+#18.40
 theme_new_password_header=Nastavit nové heslo pro uživatele
 theme_xhred_move_top=Přesuňte se nahoru
 theme_xhred_move_bottom=Přesuňte se dolů
@@ -391,6 +410,7 @@ theme_xhred_tooltip_switch_user=Přepnout uživatele
 theme_tooltip_logout=Odhlásit se
 theme_tooltip_edit_user=Upravit uživatele
 
+#18.45
 settings_sysinfo_easypie_charts_size=Průměr grafů
 theme_xhred_global_choose=Vybrat
 theme_xhred_global_select=Vybrat
@@ -408,6 +428,7 @@ settings_right_soft_updates_page_options_title=Aktualizace softwaru
 theme_xhred_git_compare_changes=Porovnejte změny
 theme_xhred_filemanager_link_to_clipboard=Název symbolického odkazu byl zkopírován do schránky.
 
+#18.46
 theme_left_mail_prefs=Předvolby pošty
 theme_left_mail_change_password=Změnit heslo
 theme_left_mail_account_functions=Funkce účtu
@@ -416,6 +437,7 @@ theme_xhred_global_module_config=Konfigurace modulu
 theme_xhred_global_return=Vrátit se
 theme_xhred_global_return_to_module_index=Návrat na index modulu
 
+#18.47
 theme_xhred_global_complete_changelog=Kompletní seznam změn
 theme_xhred_global_beta_version=Beta verze
 theme_xhred_global_release=Uvolnění
@@ -423,6 +445,7 @@ theme_xhred_global_released_on=Vydáno dne
 theme_xhred_global_committed_on=Závazek
 theme_xhred_global_resolved_issues=Vyřešené problémy ve vydáních s %value
 
+#18.48
 theme_force_upgrade=Vynutit aktualizaci motivu
 theme_xhred_force_upgrade_beta=Nainstalovat nejnovější vývojovou verzi (beta)
 theme_xhred_force_upgrade_stable=Nainstalujte nejnovější verzi (stabilní)
@@ -431,6 +454,7 @@ theme_update_footer=Prosím buďte laskaví, abyste hlásili chyby do úložišt
 theme_xhred_encoding_manually_set=Ručně nastavit kódování
 theme_xhred_filemanager_save_to_change_encoding=Aby bylo možné změnit kódování, musí být soubor uložen.
 
+#18.49
 theme_xhred_filemanager_user_switch=Přepnout na uživatele (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Výběrem níže uvedeného uživatelského jména přepnete další operace, které budou prováděny jako tento uživatel.
 theme_xhred_filemanager_user_switch_description_back=Chcete-li přepnout zpět do výchozího režimu, vyberte první možnost ve výběru.
@@ -449,6 +473,7 @@ theme_xhred_global_maximize=Maximalizovat
 theme_xhred_global_normalize=Normalizovat
 theme_xhred_global_set_encoding=Nastavit kódování
 
+#19.00
 theme_xhred_sysinfo_update_start=Systémové informace se zapamatují.
 theme_xhred_sysinfo_update_end=Systémové informace byly úspěšně zachyceny.
 theme_xhred_sysinfo_update_failed=Systémové informace nelze získat zpět. Zkuste to později znovu.
@@ -469,11 +494,14 @@ theme_xhred_global_seconds=Sekundy
 theme_xhred_global_minute=Minuta
 theme_xhred_global_minutes=Minut
 
+#19.01
 theme_xhred_browser_warning=Chcete-li mít s serverovým panelem v počítači co nejlepší zážitek, použijte podporovaný a aktuální prohlížeč. <br><br> <em>Internet Explorer</em> již není podporován. <br><br> Doporučené prohlížeče jsou <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> nebo <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Mohli byste si stáhnout přenosnou verzi prohlížeče, která nevyžaduje instalaci, abyste obešli uložená omezení.</div>
 
+#19.02
 theme_xhred_filter_content=Filtrujte obsah
 theme_xhred_log_file_empty=Soubor protokolu je prázdný
 
+#19.03
 theme_xhred_config_configurable_options=Konfigurovatelné možnosti
 theme_xhred_filter_content_no_matches_query=Dotaz %str neodpovídá žádnému obsahu
 theme_xhred_toggle_accordions=Přepínání viditelnosti harmonik
@@ -492,17 +520,20 @@ theme_xhred_signing_success=Úspěšně přihlášeni!
 theme_xhred_session_failed_password=Chybné heslo, zkuste to znovu.
 theme_xhred_global_reauthenticate=Reauthenticate
 
+#19.04
 settings_sysinfo_real_time_status=Povolit monitorování v reálném čase
 settings_sysinfo_real_time_timeout=Interval pro provedení aktualizace
 settings_sysinfo_real_time_timeout_description=Nastavte požadovaný interval pro aktualizaci monitorů na pozadí. Hodnota měla být v milisekundách. Tuto hodnotu udržujte co nejníže, abyste zabránili ztrátě krátkodobých dat
 theme_xhred_global_redirecting=Přesměrování
 
+#19.05
 body_no_javascript_title=JavaScript je zakázán
 body_no_javascript_message=Povolte javascript a aktualizujte stránku
 theme_xhred_connection_lost=Spojení ztraceno
 theme_xhred_connection_success=Připojení bylo úspěšné
 theme_xhred_connection_success_details=Připojení k serveru bylo obnoveno.
 
+#19.08
 theme_xhred_return_home=Návrat na index panelu
 theme_xhred_global_upload=nahrát
 theme_xhred_global_select_files=Vyberte soubory
@@ -511,6 +542,7 @@ theme_xhred_global_files_selected=vybrané soubory
 theme_xhred_global_reset=Reset
 theme_xhred_upload_initial_info=Přetáhněte soubory sem nebo kliknutím vyberte
 
+#19.09
 theme_xhred_global_empty=Prázdný
 theme_xhred_global_click_here=klikněte zde
 theme_git_patch_incompatible_message=Instalace této verze $1 <em>$2</em> vyžaduje, aby nejnovější a/nebo možná nevydaná verze $3 a $5 fungovala správně.
@@ -518,6 +550,7 @@ theme_git_patch_incompatible_message_s=Instalace této verze $1 <em>$2</em> vyž
 theme_git_patch_incompatible_message_desc=Mohou se vyskytnout nekompatibilní změny, které by mohly zabránit tomu, aby téma fungovalo tak, jak bylo navrženo. Chcete-li toto varování obejít a vynutit instalaci motivu $1 nebo upgradovat $2 na nejnovější vývojovou verzi nejprve pomocí konzole, <kbd>update-from-repo.sh</kbd> skript <kbd>update-from-repo.sh</kbd> ze svého adresáře.
 theme_xhred_global_outdated=Tato verze je zastaralá
 
+#19.10
 theme_xhred_filemanager_edit_html=Upravit jako HTML
 theme_xhred_global_example=Příklad
 theme_xhred_global_output_example=Příklad výstupu
@@ -553,6 +586,7 @@ theme_xhred_global_unlimited=Neomezený
 theme_xhred_filemanager_tree_exclude_on_first_load=Vyloučit nepotřebné adresáře z přechodu na počáteční zatížení pro zobrazení stromu (načítání rychleji)
 theme_xhred_filemanager_tree_expand_search=Rozbalte všechny větve, které obsahují shody, zatímco filtrujete stromové zobrazení
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Vynutit synchronizaci sběru stavu na pozadí
 theme_xhred_tooltip_side_slider_go_to_dashboard=Přejít na řídicí panel
 theme_xhred_tooltip_side_slider_open_favorites_control=Otevřete kontrolu oblíbených položek
@@ -564,6 +598,7 @@ settings_side_slider_fixed_toggle=Zobrazit přepínání pin/unpin
 settings_side_slider_fixed_toggle_description=Tato možnost zobrazí přepínač v bočním posuvníku ve spodním řádku, což umožňuje přepínat jeho viditelnost za běhu, pokud jsou splněny podmínky v předchozí možnosti.
 settings_right_page_hide_persistent_vscroll=Skrýt trvalý svislý posuvník
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Nainstalujte také aktualizace motivů pro Usermin
 theme_xhred_global_installed_version=Nainstalovaná verze
 theme_xhred_global_installed_and_latest_version=Nainstalovaná a nejnovější verze
@@ -574,12 +609,14 @@ settings_contrast_mode=Povolit režim vysokého kontrastu
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Zobrazit přepínač Webmin v navigační nabídce?
 
+#19.14
 settings_enable_container_offset=Povolit odsazení kontejneru
 settings_enable_container_offset_description=Tato volba bude fungovat pouze na obrazovkách s minimálním rozlišením 1920 horizontálních pixelů
 theme_xhred_filemanager_preparing_download=Příprava stahování. Archivace souborů %number. Počkejte prosím %dots
 theme_xhred_filemanager_prepared_download=Stahování je připraveno. Archivované %number souborů.
 theme_xhred_filemanager_canceled_download=Stahování bylo zrušeno.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Vynucení příkazu <code>tar</code>, i když je k dispozici <code>zip</code>, při stahování jako archivu
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -592,6 +629,7 @@ settings_sysinfo_real_time_status_disk=Povolit pro disky
 settings_sysinfo_real_time_status_disk_description=Může být užitečné zakázat monitorování v reálném čase u disků v systémech s pomalým/velkým souborem
 theme_xhred_title_locale_non_ui_config=Serverem generovaný formát data
 
+#19.20
 extensions_mail_current_position=Zprávy $1 - $2 ze $3
 extensions_mail_sort_by_sender=Seřadit podle odesílatele
 extensions_mail_sort_by_recipient=Seřadit podle příjemce
@@ -733,12 +771,14 @@ settings_cache_interval_1y=jednou za rok
 
 theme_xhred_reload_notification=Konfigurace motivu byla změněna, ale nebyla uložena. Stránka se znovu načte, aby se obnovilo aktuální nastavení.
 
+#19.22
 theme_xhred_global_save_as=Uložit jako
 theme_xhred_editor_save_file_as=Uložte soubor jako
 theme_xhred_global_configuration=Konfigurace
 
 body_used_cached_total=Celkem $1 / $3 v mezipaměti / $2
 
+#19.30
 theme_xhred_favorites_add=Přidat k oblíbeným
 theme_xhred_favorites_remove=Odstranit z oblíbených
 theme_xhred_select_deselect=Vyberte/zrušte výběr aktuální položky
@@ -756,6 +796,7 @@ theme_xhred_editor_set_syntax=Nastavit syntaxi
 theme_xhred_global_menu=Jídelní lístek
 theme_xhred_shell_aborted=Operace byla přerušena
 
+#19.32
 theme_xhred_connection_reboot=Restartování
 theme_xhred_connection_reboot_details=Server se restartuje. Prosím, čekejte ..
 settings_leftmenu_custom_links_description=Do navigační nabídky je možné vložit vlastní další odkazy. <br><br> Vyžadují se klávesy <em>title</em>, <em>link</em> a <em>ikona</em>; volitelně můžete definovat, v jakém režimu přihlášení se bude odkaz zobrazovat, zadáním klávesy <em>level</em> s hodnotami v seznamu oddělených čárkami, který obsahuje: <br><br> <em>0</ em > - přihlášení správce; <br><em> 1 </em>- přihlášení distributora;<br> <em>2</em> - přihlášení vlastníka serveru; <br><em> 3 </em>- přihlášení uživatele;<br> <em>4</em> - přihlášení vlastníka systému. <br><br> Bude vyžadovat, abyste předali platný objekt JSON jako řetězec, jako v příkladu níže. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " obálka "," port ":" 20000 "," target ":" _blank "}]} </pre>
@@ -843,23 +884,28 @@ theme_xhred_global_version=verze
 theme_xhred_notify_patching_module_style=Použití počáteční opravy uživatelského rozhraní pro $1 a opětovné načtení.
 theme_xhred_global_error_more_details_online=Poznámka: Přečtěte si více o této chybě a jak ji vyřešit, na naší %1wiki stránce %1 online.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Maska souboru
 theme_xhred_filemanager_search_regex=Regulární výraz
 theme_xhred_upload_successful=<span>$1 soubory</span> byly úspěšně nahrány do adresáře $2
 theme_xhred_upload_successful_single=Soubor <span>$1</span> byl úspěšně nahrán do adresáře $2
 settings_usermin_default_module=Výchozí modul
 
+#19.34
 theme_xhred_search_in_file_open_external=Odpojte soubor do samostatného editoru
 theme_xhred_path_to_console=Otevřete aktuální cestu v terminálu <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Vrátit soubor
 theme_xhred_filemanager_editor_reverting_content=Přetažení změn a návrat k původnímu obsahu souboru.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Vyloučit položky
 theme_xhred_filemanager_exclude_dirs_desc=Seznam souborů nebo podadresářů, které chcete vyloučit, oddělte středníkem
 
+#19.38
 theme_global_access_level=Úroveň přístupu
 theme_global_user_mode=Uživatelský režim
 
+#19.40
 theme_xhred_global_attachments=Přílohy
 theme_xhred_editor_tb_font=Písmo
 theme_xhred_editor_tb_size=Velikost
@@ -925,13 +971,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Maximální počet řádků pro inicializaci třídění a vyhledávání tabulek
 theme_xhred_global_rows=Řádky
 
+#19.42
 settings_side_slider_blend=Zdědit
 
+#19.43
 settings_theme_make_date=Aktivovat převod data a času v prohlížeči
 settings_theme_make_date_description=Pokud je zakázáno, použije se formát data a času poskytovaný serverem
 
+#19.44
 theme_xhred_reload_lang_notification=Jazyk motivu byl změněn. Stránka se načte znovu, aby bylo možné použít nová nastavení.
 
+#19.46
 theme_xhred_global_small=Malý
 theme_xhred_global_normal=Normální
 theme_xhred_global_medium=Střední
@@ -940,20 +990,26 @@ theme_xhred_global_huge=Obrovský
 theme_xhred_filemanager_editor_maximized=Maximalizujte panel editorů při spuštění
 settings_sysinfo_remember_accordions=Uložit naposledy použitý stav harmonik
 
+#19.47
 theme_xhred_textarea_to_clipboard=Vybraný obsah textarea byl úspěšně zkopírován do schránky
 
+#19.48
 theme_xhred_global_alias=Alias
 
+#19.50
 theme_xhred_mail_composer_real_name=Skutečné jméno
 theme_xhred_mail_composer_username=uživatelské jméno
 
+#19.53
 settings_global_palette_unauthenticated=Paleta barev přihlašovací stránky
 
+#19.60
 settings_config_save_and_next=Uložit a další
 settings_config_configuration_category=Kategorie konfigurace
 config_search_options_all=Prohledejte všechny možnosti konfigurace modulu
 theme_xhred_editing_config_file=Úpravy konfiguračního souboru
 
+#19.61
 theme_xhred_login_message_2fa=Pro přihlášení tohoto uživatele bylo povoleno dvoufaktorové ověřování
 theme_xhred_global_verify=Ověřit
 settings_show_terminal_link2=Zobrazit tlačítko příkazového prostředí
@@ -961,6 +1017,7 @@ settings_hotkey_shell2=Klávesová zkratka pro příkazový shell
 theme_xhred_path_to_console2=Otevřete aktuální cestu v příkazovém prostředí <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Příkazový shell
 
+#19.70
 theme_xhred_filemanager_context_view=Pohled
 theme_xhred_file_viewer=Prohlížeč souborů
 theme_xhred_global_done=Hotovo.

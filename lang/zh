@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=似乎 <strong>ConfigServer �
 
 theme_xhred_notifications_firewall_warning=防火墙警告
 
+#17.50
 settings_grayscale_level_navigation=灰度滤镜
 settings_grayscale_level_navigation_description=默认/当前值 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=棕褐色过滤器
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=粘贴
 theme_xhred_filemanager_context_chmod=更改权限
 theme_xhred_filemanager_context_chown=更改所有权
 
+#17.51
 theme_xhred_filemanager_context_new=新建
 theme_xhred_filemanager_context_newarchive=创建新的压缩档
 theme_xhred_filemanager_context_delete=删除
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=打开项目位置
 theme_xhred_filemanager_context_properties=属性
 theme_xhred_filemanager_context_search=查找
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=取消全选
 theme_xhred_filemanager_context_upload=上传到当前目录
 theme_xhred_filemanager_context_download=远程 URL 下载
 
+#17.53
 theme_config_virtualmin=Virtualmin 虚拟服务器
 theme_config_cloudmin=Cloudmin 管理系统
 settings_right_thirdparties_options_title=第三方模块选项
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=书签
 theme_xhred_filemanager_context_bookmark_current=书签目前打开的路径
 theme_xhred_filemanager_context_transfer=转移
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=链接目标
 
+#17.60
 right_unlimited=无限制
 settings_leftmenu_width=首选宽度
 settings_leftmenu_width_description=默认/当前宽度 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=显示开关反转
 settings_switch_rdisplay_description=此选项允许您为左上角开关设置不同的顺序。更改此选项后，需要完成页面重新加载。
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=计算所选文件大小
 theme_xhred_filemanager_selected_entries=已选：%value 条目
 theme_xhred_filemanager_manual_path=手动输入路径
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=正在加载
 theme_xhred_datatable_sprocessing=正在处理...
 theme_xhred_datatable_szerorecords=沒有找到匹配的记录
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=文件已编辑但尚未保存。
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=您想做什么？
 theme_xhred_global_save=保存
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=关闭但不保存
 theme_xhred_global_continue_editing=继续编辑
 theme_xhred_filemanager_context_download_file=下载
 
+#17.65
 settings_sysinfo_easypie_charts_width=图表宽度
 settings_sysinfo_easypie_charts_scale=图表的比例长度
 
+#17.80
 right_return_theme_options=主题选项
 theme_xhred_datatable_semptydirectory=目录是空的
 theme_xhred_filemanager_context_clipboard=复制路径到剪贴板
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=隐藏操作列
 theme_xhred_filemanager_hovered_toolbar=在鼠标悬停时激活工具栏中的下拉列表
 theme_xhred_filemanager_context_delete_selected=删除所选
 
+#17.83
 theme_xhred_database_adding_new_row=添加新行
 theme_xhred_database_editing_row=正在编辑选定的行
 theme_xhred_database_editing_rows=正在编辑选定的行
 theme_xhred_database_adding_new_row_data=设置数据
 
+#17.84
 theme_xhred_datatable_filter=过滤器
 
 theme_xhred_global_update=更新
@@ -417,6 +429,7 @@ theme_xhred_global_notice=注意
 
 theme_xhred_updates_disabled_notice=检测到您没有为 <em>Authentic 主题</em> 更新启用通知？ <br><br>在<a href="%link" class="label label-default"><strong><i class ="fa fa-cogs"></i>主题配置</strong>中启用此功能</a>将帮助您在新版本发布时可通过单击立即更新。
 
+#18.00
 theme_xhred_global_file=文件
 theme_xhred_global_directory=目录
 theme_xhred_global_no_target=目标不存在或无法访问
@@ -489,19 +502,24 @@ theme_xhred_module_help=模块帮助
 
 theme_xhred_server_process_running=服务器进程仍在运行！？您确定要导航并且无法访问输出信息吗？即使您现在离开，该过程也不会终止。
 
+#18.03
 settings_global_options_title=全局选项
 settings_global_passgen_format=密码生成器
 settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=生成新密码（点击复制到剪贴板）
 theme_xhred_password_generator_new_success=生成的密码 %password 已被成功复制到剪贴板。
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=该文件必须以“1;”结束才能成功运行。
 
+#18.10
 theme_error_access_not_root=拒绝访问：用户需要访问 <em>Webmin 配置</em>模块才能编辑主题配置
 
+#18.20
 settings_hide_top_loader=隐藏顶部进度条
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=在 Virtualmin/Cloudmin 中的下拉列表中显示符号图标
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=可用
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=安全上下文已成功更改。
 
 theme_xhred_global_no_results_found=没有找到结果
 
+#18.40
 theme_new_password_header=为用户设置新密码
 login_reset=重置密码
 theme_xhred_move_top=移动到顶部
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=切换用户
 theme_tooltip_logout=登出
 theme_tooltip_edit_user=编辑用户
 
+#18.45
 settings_sysinfo_easypie_charts_size=图表直径
 theme_xhred_global_choose=选择
 theme_xhred_global_select=选择
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=软件更新
 theme_xhred_git_compare_changes=比较变动
 theme_xhred_filemanager_link_to_clipboard=符号链接的名称已复制到剪贴板。
 
+#18.46
 theme_left_mail_prefs=邮件首选项
 theme_left_mail_change_password=更改密码
 theme_left_mail_account_functions=帐户功能
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=模块设置
 theme_xhred_global_return=返回
 theme_xhred_global_return_to_module_index=返回模块索引
 
+#18.47
 theme_xhred_global_complete_changelog=完成的变更日志
 theme_xhred_global_beta_version=Beta 版本
 theme_xhred_global_release=发布
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=发布于
 theme_xhred_global_committed_on=致力于
 theme_xhred_global_resolved_issues=在 %value 发布中已解决的问题
 
+#18.48
 theme_force_upgrade=强制更新主题
 theme_xhred_force_upgrade_beta=安装最新开发版本（测试版）
 theme_xhred_force_upgrade_stable=安装最新发布版本（稳定）
@@ -607,6 +630,7 @@ theme_update_footer=请善意报告 $1 仓库的错误。按照主题的 $2 频�
 theme_xhred_encoding_manually_set=手动设置编码
 theme_xhred_filemanager_save_to_change_encoding=必须保存文件，以便允许更改编码。
 
+#18.49
 theme_xhred_filemanager_user_switch=切换到用户（Ctrl+M）
 theme_xhred_filemanager_user_switch_description=通过选择下面列出的用户名，您将作为此用户执行进一步的操作。
 theme_xhred_filemanager_user_switch_description_back=要切换回默认模式，请选择第一个选项。
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=最大化
 theme_xhred_global_normalize=恢复
 theme_xhred_global_set_encoding=设置编码
 
+#19.00
 theme_xhred_sysinfo_update_start=正在重新收集系统信息。
 theme_xhred_sysinfo_update_end=系统信息已成功重新收集。
 theme_xhred_sysinfo_update_failed=系统信息无法重新收集。稍后再试。
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=秒
 theme_xhred_global_minute=分钟
 theme_xhred_global_minutes=分钟
 
+#19.01
 theme_xhred_browser_warning=要在计算机上获得最佳的服务器面板体验，请使用支持的最新浏览器。<br><br>不再支持 <em>Internet Explorer</em>。<br><br>推荐浏览器是 <em>Chrome</em>，<em>Firefox</em>，<em>Opera</em> 或 <em>Safari</em>，<em>Edge</em>。 <div class="alert alert-warning margined-top-10 margined-bottom-8">您可以下载不需要安装的浏览器的便携版本，以绕过施加的限制。</div>
 
+#19.02
 theme_xhred_filter_content=过滤内容
 theme_xhred_log_file_empty=日志文件为空
 
+#19.03
 theme_xhred_config_configurable_options=可配置选项
 theme_xhred_filter_content_no_matches_query=没有内容匹配 %str 查询
 theme_xhred_toggle_accordions=切换折叠可见性
@@ -668,17 +696,20 @@ theme_xhred_signing_success=成功登录！
 theme_xhred_session_failed_password=密码错误，请再试一次。
 theme_xhred_global_reauthenticate=重新验证
 
+#19.04
 settings_sysinfo_real_time_status=启用实时监控
 settings_sysinfo_real_time_timeout=执行更新的时间间隔
 settings_sysinfo_real_time_timeout_description=设置在后台更新监视器所需的间隔。该值以毫秒为单位。保持此值尽可能低，以防止短期数据丢失。
 theme_xhred_global_redirecting=重定向
 
+#19.05
 body_no_javascript_title=JavaScript 已禁用
 body_no_javascript_message=请启用 javascript 并刷新页面
 theme_xhred_connection_lost=连接丢失
 theme_xhred_connection_success=连接成功
 theme_xhred_connection_success_details=已重新建立到服务器的连接
 
+#19.08
 theme_xhred_return_home=返回面板索引
 theme_xhred_global_upload=上传
 theme_xhred_global_select_files=选择文件
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=文件已选中
 theme_xhred_global_reset=重置
 theme_xhred_upload_initial_info=在此处拖放文件或单击以选中
 
+#19.09
 theme_xhred_global_empty=空
 theme_xhred_global_click_here=点击此处
 theme_git_patch_incompatible_message=安装此版本的 $1 <em>$2</em>需要最新和/或可能未发布的 $3 <em>$4</em> 和 $5 <em>$6</em> 版本才能正常运行。
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=安装此版本的 $1 <em>$2</em> 需要�
 theme_git_patch_incompatible_message_desc=这可能是不兼容的更改，可能会阻止主题按设计工作。要绕过此警告，并强制安装主题 $1，或者首先使用控制台将 $2 升级到最新的开发版本，方法是从其目录运行 <kbd>update-from-repo.sh</kbd>脚本。
 theme_xhred_global_outdated=此版本已过时
 
+#19.10
 theme_xhred_filemanager_edit_html=作为 HTML 编辑
 theme_xhred_global_example=示例
 theme_xhred_global_output_example=输出示例
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=不限
 theme_xhred_filemanager_tree_exclude_on_first_load=在树视图的初始加载中排除非必要的目录（加载更快）
 theme_xhred_filemanager_tree_expand_search=在过滤树视图时展开包含匹配项的所有分支
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=强制同步后台状态集合
 theme_xhred_tooltip_side_slider_go_to_dashboard=转到仪表板
 theme_xhred_tooltip_side_slider_open_favorites_control=打开收藏夹控件
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=显示固定/取消固定切换
 settings_side_slider_fixed_toggle_description=此选项将在侧滑块的底行显示切换，如果满足先前选项中的条件，则允许动态切换其可见性。
 settings_right_page_hide_persistent_vscroll=隐藏持久性垂直滚动条
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=同时为 Usermin 安装主题更新
 theme_xhred_global_installed_version=已安装的版本
 theme_xhred_global_installed_and_latest_version=已安装最新版本
@@ -750,12 +785,14 @@ settings_contrast_mode=启用高对比度模式
 theme_xhred_global_firewall=防火墙
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
+#19.14
 settings_enable_container_offset=启用容器偏移量
 settings_enable_container_offset_description=此选项仅适用于最小分辨率为 1920 水平像素的屏幕
 theme_xhred_filemanager_preparing_download=正在准备下载。正在归档 %number 文件。请等待%dots
 theme_xhred_filemanager_prepared_download=下载已准备就绪。归档 %number 个文件。
 theme_xhred_filemanager_canceled_download=下载已取消。
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=下载为存档时，强制使用 <code>tar</code> 命令，即使 <code>zip</code> 可用
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=启用磁盘
 settings_sysinfo_real_time_status_disk_description=在慢速/大型文件系统上禁用磁盘的实时监控可能很有用
 theme_xhred_title_locale_non_ui_config=非 UI 格式（如自动电子邮件和导出的文件）
 
+#19.20
 extensions_mail_current_position=消息 $3 的 $1-$2
 extensions_mail_sort_by_sender=按发件人排序
 extensions_mail_sort_by_recipient=按收件人排序

@@ -81,4 +81,5 @@ session_logout=Wylogowano prawidłowo. Użyj formularza poniżej, aby ponownie s
 session_timed_out=Upłynął limit czasu sesji po $1 minutach nieaktywności.
 session_twofailed=Dwuskładnikowe uwierzytelnienie nie powiodło się: $1
 
+#18.40
 login_reset=Reset

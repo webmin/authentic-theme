@@ -82,4 +82,5 @@ session_logout=Logout com sucesso. Utilize o formulário abaixo para efetuar o l
 session_timed_out=Sessão expirou após $1 minutos de inatividade.
 session_twofailed=Autenticação Two-factor falhou: $1
 
+#18.40
 login_reset=Restabelecer

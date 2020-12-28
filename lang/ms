@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=Sepertinya <strong>ConfigServe
 
 theme_xhred_notifications_firewall_warning=Peringatan Firewall
 
+#17.50
 settings_grayscale_level_navigation=Filter abu-abu
 settings_grayscale_level_navigation_description=Nilai default/saat ini <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filter Sepia
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=Tempel
 theme_xhred_filemanager_context_chmod=Ubah hak akses
 theme_xhred_filemanager_context_chown=Ubah kepemilikan
 
+#17.51
 theme_xhred_filemanager_context_new=Baru
 theme_xhred_filemanager_context_newarchive=Buat arsip baru
 theme_xhred_filemanager_context_delete=Hapus
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Buka lokasi item
 theme_xhred_filemanager_context_properties=Properti
 theme_xhred_filemanager_context_search=Cari
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Batalkan semua pilihan
 theme_xhred_filemanager_context_upload=Unggah ke direktori saat ini
 theme_xhred_filemanager_context_download=Unduh dari URL
 
+#17.53
 theme_config_virtualmin=Virtualmin Virtual Server
 theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Pilihan modul pihak ketiga
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=Bookmarks
 theme_xhred_filemanager_context_bookmark_current=Bookmark lokasi yang sedang dibuka
 theme_xhred_filemanager_context_transfer=Kirim
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Target tautan
 
+#17.60
 right_unlimited=Tak terbatas
 settings_leftmenu_width=Lebar yang lebih disuka
 settings_leftmenu_width_description=Lebar default/saat ini <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Balikkan keluaran switch
 settings_switch_rdisplay_description=Pilihan ini memungkinkan Anda mengatur urutan yang berbeda untuk tombol kiri atas. Setepah mengubah pilihan ini, muat ulang halaman secara lengkap, hal ini diperlukan untuk menerapkan pengaturan baru.
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Hitung ukurang yang terpilih
 theme_xhred_filemanager_selected_entries=Terpilih: %value entries
 theme_xhred_filemanager_manual_path=Masukkan lokasi secara manual
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Memuat
 theme_xhred_datatable_sprocessing=Memroses...
 theme_xhred_datatable_szerorecords=Tidak ditemukan catatan yang cocok
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Berkas telah disunting namun belum disimpan.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Apa yang ingin Anda lakukan?
 theme_xhred_global_save=Simpan
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Tutup tanpa menyimpan
 theme_xhred_global_continue_editing=Lanjutkan menyunting
 theme_xhred_filemanager_context_download_file=Mengunduh
 
+#17.65
 settings_sysinfo_easypie_charts_width=Lebar grafik
 settings_sysinfo_easypie_charts_scale=Skala panjang grafik
 
+#17.80
 right_return_theme_options=pilihan tema
 theme_xhred_datatable_semptydirectory=Direktori kosong
 theme_xhred_filemanager_context_clipboard=Salin lokasi ke papan klip
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=Sembunyikan kolom aksi
 theme_xhred_filemanager_hovered_toolbar=Aktifkan dropdown pada toolbar pada saat mouse hover
 theme_xhred_filemanager_context_delete_selected=Hapus yang dipilih
 
+#17.83
 theme_xhred_database_adding_new_row=Menambahkan baris baru
 theme_xhred_database_editing_row=Menyunting baris terpilih
 theme_xhred_database_editing_rows=Menyunting baris terpilih
 theme_xhred_database_adding_new_row_data=Atur data
 
+#17.84
 theme_xhred_datatable_filter=Saring
 
 theme_xhred_global_update=Perbarui
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Pemberitahuan
 
 theme_xhred_updates_disabled_notice=Anda yakin tidak mengaktifkan pemberitahuan untuk pembaruan <em>Tema Authentic</em>? <br><br>Mengaktifkan fitur ini di <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i>Konfigurasi Tema</strong></a> akan membantu Anda memperbaharui ke versi terbaru dalam satu klik segera setelah keluar.
 
+#18.00
 theme_xhred_global_file=Berkas
 theme_xhred_global_directory=Direktori
 theme_xhred_global_no_target=Target tidak ada atau tidak dapat diakses
@@ -489,19 +502,24 @@ theme_xhred_module_help=Bantuan Modul
 
 theme_xhred_server_process_running=Proses server masih berjalan!? Apakah Anda yakin ingin menavigasi dan tidak memiliki akses ke informasi keluaran? Bahkan jika Anda pergii sekarang prosesnya tidak akan dihentikan.
 
+#18.03
 settings_global_options_title=Pilihan Global
 settings_global_passgen_format=Generator kata sandi
 settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Ciptakan kata sandi baru<br> (Ke Papan Klip)
 theme_xhred_password_generator_new_success=Kata sandi %password yang baru diciptakan telah berhasil disalin ke papan klip.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Berkas ini harus diakhiri dengan `1;` agar dapat bekerja dengan baik.
 
+#18.10
 theme_error_access_not_root=Izin ditolak: Pengguna perlu mengakses modul <em>Konfigurasi Webmin</em> untuk menyunting konfigurasi tema
 
+#18.20
 settings_hide_top_loader=Sembunyikan pita kemajuan di atas dan loadernya
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Tampilkan ikon simbolis pada drop-down di Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Tersedia
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=Konteks keamanan telah berhasil diu
 
 theme_xhred_global_no_results_found=Tidak ada hasil yang ditemukan
 
+#18.40
 theme_new_password_header=Atur kata sandi baru untuk pengguna
 login_reset=Pemulihan kata sandi
 theme_xhred_move_top=Pindahkan ke atas
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Berganti pengguna
 theme_tooltip_logout=Keluar
 theme_tooltip_edit_user=Sunting pengguna
 
+#18.45
 settings_sysinfo_easypie_charts_size=Diameter grafik
 theme_xhred_global_choose=Pilih
 theme_xhred_global_select=Pilih
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Pembaruan perangkat lunak
 theme_xhred_git_compare_changes=Bandingkan perubahan
 theme_xhred_filemanager_link_to_clipboard=Nama tautan simbolis telah disalin ke papan klip.
 
+#18.46
 theme_left_mail_prefs=Preferensi Surel
 theme_left_mail_change_password=Ubah Kata sandi
 theme_left_mail_account_functions=Fungsi Akun
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Konfigurasi Modul
 theme_xhred_global_return=Kembali
 theme_xhred_global_return_to_module_index=Kembali ke indeks modul
 
+#18.47
 theme_xhred_global_complete_changelog=Catatan perubahan lengkap
 theme_xhred_global_beta_version=Versi Beta
 theme_xhred_global_release=Rilis
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Dirilis pada
 theme_xhred_global_committed_on=Dikomit pada
 theme_xhred_global_resolved_issues=Isu terselesaikan dalam rilis %value
 
+#18.48
 theme_force_upgrade=Paksa pembaruan tema
 theme_xhred_force_upgrade_beta=Install versi pengembangan terbaru (beta)
 theme_xhred_force_upgrade_stable=Install versi rilis terkini (stabil)
@@ -607,6 +630,7 @@ theme_update_footer=Mohon melaporkan bug ke repositori $1. Ikuti kanal tema $2 u
 theme_xhred_encoding_manually_set=Atur encoding secara manual
 theme_xhred_filemanager_save_to_change_encoding=Berkas harus disimpan, agar encoding dapat diubah.
 
+#18.49
 theme_xhred_filemanager_user_switch=Beralih ke pengguna (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Dengan memilih nama pengguna yang tercantum di bawah ini, Anda akan beralih operasi lebih lanjut untuk dilakukan sebagai pengguna ini.
 theme_xhred_filemanager_user_switch_description_back=Untuk kembali ke mode default pilih opsi pertama yang dipilih.

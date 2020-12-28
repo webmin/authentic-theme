@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer Server Se
 
 theme_xhred_notifications_firewall_warning=방화벽 경고
 
+#17.50
 settings_grayscale_level_navigation=그레이 스케일 필터
 settings_grayscale_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=세피아 필터
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=풀
 theme_xhred_filemanager_context_chmod=권한 변경
 theme_xhred_filemanager_context_chown=소유권 변경
 
+#17.51
 theme_xhred_filemanager_context_new=새로운
 theme_xhred_filemanager_context_newarchive=새 보관 파일 만들기
 theme_xhred_filemanager_context_delete=지우다
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=열린 품목 위치
 theme_xhred_filemanager_context_properties=속성
 theme_xhred_filemanager_context_search=검색
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=모두 선택 해제
 theme_xhred_filemanager_context_upload=현재 디렉토리로 업로드
 theme_xhred_filemanager_context_download=원격 URL에서 다운로드
 
+#17.53
 theme_config_virtualmin=Virtualmin 가상 서버
 theme_config_cloudmin=Cloudmin 관리 시스템
 settings_right_thirdparties_options_title=타사 모듈 옵션
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=북마크
 theme_xhred_filemanager_context_bookmark_current=현재 열린 경로 북마크
 theme_xhred_filemanager_context_transfer=이전
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=링크 대상
 
+#17.60
 right_unlimited=제한 없는
 settings_leftmenu_width=바람직한 폭
 settings_leftmenu_width_description=기본 전류/폭 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=스위치를 반대로 표시
 settings_switch_rdisplay_description=이 옵션을 사용하면 왼쪽 상단 스위치에 대해 다른 순서를 설정할 수 있습니다. 이 옵션을 변경 한 후 전체 페이지를 다시로드해야합니다.
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=선택한 크기 계산
 theme_xhred_filemanager_selected_entries=선택 : %value 개 항목
 theme_xhred_filemanager_manual_path=경로를 수동으로 입력
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=로딩
 theme_xhred_datatable_sprocessing=처리 중. ..
 theme_xhred_datatable_szerorecords=일치하는 레코드가 없습니다
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=파일이 편집되었지만 저장되지 않았습니다.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=뭐하고 싶어?
 theme_xhred_global_save=저장
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=저장하지 않고 닫기
 theme_xhred_global_continue_editing=계속 편집
 theme_xhred_filemanager_context_download_file=다운로드
 
+#17.65
 settings_sysinfo_easypie_charts_width=차트 너비
 settings_sysinfo_easypie_charts_scale=차트의 스케일 길이
 
+#17.80
 right_return_theme_options=테마 옵션
 theme_xhred_datatable_semptydirectory=디렉토리가 비어 있습니다
 theme_xhred_filemanager_context_clipboard=클립 보드에 경로 복사
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=액션 열 숨기기
 theme_xhred_filemanager_hovered_toolbar=마우스로 가리키면 툴바에서 드롭 다운 활성화
 theme_xhred_filemanager_context_delete_selected=선택된 것을 지워 라
 
+#17.83
 theme_xhred_database_adding_new_row=새 행 추가
 theme_xhred_database_editing_row=선택된 행 편집
 theme_xhred_database_editing_rows=선택된 행 편집
 theme_xhred_database_adding_new_row_data=데이터 설정
 
+#17.84
 theme_xhred_datatable_filter=필터
 
 theme_xhred_global_update=최신 정보
@@ -417,6 +429,7 @@ theme_xhred_global_notice=주의
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=파일
 theme_xhred_global_directory=예배 규칙서
 theme_xhred_global_no_target=대상이 존재하지 않거나 액세스 할 수 없습니다
@@ -489,19 +502,24 @@ theme_xhred_module_help=모듈 도움말
 
 theme_xhred_server_process_running=서버 프로세스가 여전히 실행 중입니까? 다른 곳으로 이동하고 출력 정보에 액세스 할 수 없습니까? 지금 나가도 프로세스가 종료되지 않습니다.
 
+#18.03
 settings_global_options_title=글로벌 옵션
 settings_global_passgen_format=비밀번호 생성기
 settings_global_passgen_format_description=생성 된 비밀번호에 사용 된 길이와 문자 유형을 설정하십시오. 기본값은 <code>15|az,AZ,0-9</code> 와 같습니다. 이는 대문자와 소문자 및 숫자를 포함하여 15 자 길이의 암호를 나타냅니다. <code>#</code> 해시 기호를 사용하여 특수 문자를 추가 할 수도 있습니다
 theme_xhred_password_generator_new=새 비밀번호 생성 <br> (클립 보드로)
 theme_xhred_password_generator_new_success=생성 된 비밀번호 %password 가 클립 보드에 복사되었습니다.
 
+#18.08
 theme_fileformat_perl=펄
 theme_fileformat_perl_placeholder=이 파일은 `1;` 성공적으로 작동합니다.
 
+#18.10
 theme_error_access_not_root=액세스 거부 : 사용자는 테마 구성을 편집하려면 <em>Webmin 구성</em> 모듈에 액세스해야합니다.
 
+#18.20
 settings_hide_top_loader=상단 진행률 표시 줄 숨기기
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudmin의 드롭 다운에 기호 아이콘 표시
 theme_xhred_global_shipped=배송 됨
 theme_xhred_global_available=유효한
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=보안 컨텍스트가 성공적으
 
 theme_xhred_global_no_results_found=검색 결과가 없습니다
 
+#18.40
 theme_new_password_header=사용자의 새 비밀번호 설정
 login_reset=비밀번호 복구
 theme_xhred_move_top=맨 위로 이동
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=사용자 전환
 theme_tooltip_logout=로그 아웃
 theme_tooltip_edit_user=사용자 편집
 
+#18.45
 settings_sysinfo_easypie_charts_size=차트 지름
 theme_xhred_global_choose=고르다
 theme_xhred_global_select=고르다
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=소프트웨어 업데이트
 theme_xhred_git_compare_changes=변경 사항 비교
 theme_xhred_filemanager_link_to_clipboard=심볼릭 링크의 이름이 클립 보드에 복사되었습니다.
 
+#18.46
 theme_left_mail_prefs=메일 환경 설정
 theme_left_mail_change_password=비밀번호 변경
 theme_left_mail_account_functions=계정 기능
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=모듈 구성
 theme_xhred_global_return=반환
 theme_xhred_global_return_to_module_index=모듈 색인으로 돌아 가기
 
+#18.47
 theme_xhred_global_complete_changelog=완전한 변경 내역
 theme_xhred_global_beta_version=베타 버전
 theme_xhred_global_release=해제
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=에 출시
 theme_xhred_global_committed_on=에 헌신
 theme_xhred_global_resolved_issues=%value 릴리스에서 해결 된 문제
 
+#18.48
 theme_force_upgrade=강제 업데이트 테마
 theme_xhred_force_upgrade_beta=최신 개발 버전 (베타) 설치
 theme_xhred_force_upgrade_stable=최신 릴리스 버전 설치 (안정적)
@@ -607,6 +630,7 @@ theme_update_footer=$1 리포지토리에 버그를보고하십시오. 최신 �
 theme_xhred_encoding_manually_set=수동으로 인코딩 설정
 theme_xhred_filemanager_save_to_change_encoding=인코딩을 변경하려면 파일을 저장해야합니다.
 
+#18.49
 theme_xhred_filemanager_user_switch=사용자로 전환 (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=아래 나열된 사용자 이름을 선택하면이 사용자로 수행 할 추가 작업이 전환됩니다.
 theme_xhred_filemanager_user_switch_description_back=기본 모드로 다시 전환하려면 select의 첫 번째 옵션을 선택하십시오.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=최대화
 theme_xhred_global_normalize=정규화
 theme_xhred_global_set_encoding=인코딩 설정
 
+#19.00
 theme_xhred_sysinfo_update_start=시스템 정보를 수집 중입니다.
 theme_xhred_sysinfo_update_end=시스템 정보가 성공적으로 수집되었습니다.
 theme_xhred_sysinfo_update_failed=시스템 정보를 수집 할 수 없습니다. 나중에 다시 시도하십시오.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=초
 theme_xhred_global_minute=분
 theme_xhred_global_minutes=의사록
 
+#19.01
 theme_xhred_browser_warning=컴퓨터의 서버 패널에 대한 최상의 경험을 얻으려면 지원되는 최신 브라우저를 사용하십시오. <br><br> <em>Internet Explorer</em> 는 더 이상 지원되지 않습니다. <br><br> 권장 브라우저는 <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> 또는 <em>Safari</em>, <em>Edge</em> 입니다. <div class="alert alert-warning margined-top-10 margined-bottom--8">부과 된 제한을 무시하기 위해 설치가 필요없는 휴대용 버전의 브라우저를 다운로드 할 수 있습니다.</div>
 
+#19.02
 theme_xhred_filter_content=내용 필터링
 theme_xhred_log_file_empty=로그 파일이 비어 있습니다
 
+#19.03
 theme_xhred_config_configurable_options=구성 가능한 옵션
 theme_xhred_filter_content_no_matches_query=%str 쿼리와 일치하는 내용이 없습니다
 theme_xhred_toggle_accordions=아코디언 가시성 전환
@@ -668,17 +696,20 @@ theme_xhred_signing_success=성공적으로 로그인했습니다!
 theme_xhred_session_failed_password=비밀번호가 틀립니다. 다시 시도하십시오.
 theme_xhred_global_reauthenticate=재 인증
 
+#19.04
 settings_sysinfo_real_time_status=실시간 모니터링 활성화
 settings_sysinfo_real_time_timeout=업데이트 수행 간격
 settings_sysinfo_real_time_timeout_description=백그라운드에서 모니터를 업데이트 할 간격을 설정하십시오. 값은 밀리 초 단위입니다. 단기 데이터 손실을 방지하려면이 값을 가능한 한 낮게 유지하십시오
 theme_xhred_global_redirecting=리디렉션
 
+#19.05
 body_no_javascript_title=자바 스크립트 비활성화
 body_no_javascript_message=자바 스크립트를 활성화하고 페이지를 새로 고침하십시오.
 theme_xhred_connection_lost=연결이 끊어졌습니다
 theme_xhred_connection_success=연결 성공
 theme_xhred_connection_success_details=서버 연결이 다시 설정되었습니다.
 
+#19.08
 theme_xhred_return_home=패널 인덱스로 돌아 가기
 theme_xhred_global_upload=업로드
 theme_xhred_global_select_files=파일 선택
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=선택된 파일
 theme_xhred_global_reset=초기화
 theme_xhred_upload_initial_info=여기로 파일을 끌어다 놓거나 클릭하여 선택
 
+#19.09
 theme_xhred_global_empty=빈
 theme_xhred_global_click_here=여기를 클릭하십시오
 theme_git_patch_incompatible_message=이 $1 <em>$2</em> 버전을 설치하려면 $3 및 $5의 최신 및/또는 미공개 버전이 제대로 작동해야합니다.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=이 $1 <em>$2</em> 버전을 설치하려
 theme_git_patch_incompatible_message_desc=호환되지 않는 변경 사항이있을 수 있으며, 이는 테마가 디자인 된대로 작동하지 못하게 할 수 있습니다. 이 경고를 무시하고 디렉토리에서 <kbd>update-from-repo.sh</kbd> 스크립트를 실행하여 먼저 콘솔을 사용하여 테마를 $1로 설치하거나 $2 를 최신 개발 버전으로 업그레이드하십시오.
 theme_xhred_global_outdated=이 버전은 구식입니다
 
+#19.10
 theme_xhred_filemanager_edit_html=HTML로 편집
 theme_xhred_global_example=예
 theme_xhred_global_output_example=출력 예
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=제한 없는
 theme_xhred_filemanager_tree_exclude_on_first_load=트리 뷰를위한 초기로드에서 불필요한 디렉토리 통과를 제외합니다 (더 빠르게로드).
 theme_xhred_filemanager_tree_expand_search=트리 뷰를 필터링하는 동안 일치하는 항목이 포함 된 모든 분기 확장
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=백그라운드 상태 수집을 강제로 동기화
 theme_xhred_tooltip_side_slider_go_to_dashboard=대시 보드로 이동
 theme_xhred_tooltip_side_slider_open_favorites_control=즐겨 찾기 제어 열기
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=핀/핀 해제 토글 표시
 settings_side_slider_fixed_toggle_description=이 옵션은 측면 슬라이더의 맨 아래 행에 토글을 표시하여 이전 옵션의 조건이 충족되는 경우 즉시 가시성을 토글 할 수 있습니다.
 settings_right_page_hide_persistent_vscroll=지속적인 수직 스크롤바 숨기기
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Usermin을위한 테마 업데이트 설치
 theme_xhred_global_installed_version=설치된 버전
 theme_xhred_global_installed_and_latest_version=설치 및 최신 버전
@@ -750,12 +785,14 @@ settings_contrast_mode=고 대비 모드 사용
 theme_xhred_global_firewall=방화벽
 theme_xhred_settings_show_webmin_tab=탐색 메뉴에 Webmin 스위치를 표시 하시겠습니까?
 
+#19.14
 settings_enable_container_offset=컨테이너 오프셋 사용
 settings_enable_container_offset_description=이 옵션은 최소 해상도 1920 가로 픽셀의 화면에서만 작동합니다
 theme_xhred_filemanager_preparing_download=다운로드 준비 중입니다. %number 파일을 보관 중입니다. %dots 기다려주십시오
 theme_xhred_filemanager_prepared_download=다운로드가 준비되었습니다. 보관 된 %number 파일.
 theme_xhred_filemanager_canceled_download=다운로드가 취소되었습니다.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=아카이브로 다운로드 할 때 <code>zip</code> 을 사용할 수있는 경우에도 <code>tar</code> 명령 실행
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=결핵
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=디스크 활성화
 settings_sysinfo_real_time_status_disk_description=느리거나 큰 파일 시스템에서 디스크에 대한 실시간 모니터링을 비활성화하는 것이 유용 할 수 있습니다
 theme_xhred_title_locale_non_ui_config=서버 생성 날짜 형식
 
+#19.20
 extensions_mail_current_position=$3의 $1-$2 메시지
 extensions_mail_sort_by_sender=발신자별로 정렬
 extensions_mail_sort_by_recipient=수신자별로 정렬
@@ -909,12 +947,14 @@ settings_cache_interval_1y=일년에 한번
 
 theme_xhred_reload_notification=테마 구성이 변경되었지만 저장되지 않았습니다. 현재 설정으로 재설정하기 위해 페이지가 다시로드됩니다.
 
+#19.22
 theme_xhred_global_save_as=다른 이름으로 저장
 theme_xhred_editor_save_file_as=파일을 다른 이름으로 저장
 theme_xhred_global_configuration=구성
 
 body_used_cached_total=총 $1 / $3 캐시 / $2 사용
 
+#19.30
 theme_xhred_favorites_add=즐겨 찾기에 추가
 theme_xhred_favorites_remove=즐겨 찾기에서 삭제하기
 theme_xhred_select_deselect=현재 항목 선택/선택 해제
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=구문 설정
 theme_xhred_global_menu=메뉴
 theme_xhred_shell_aborted=작업이 중단되었습니다
 
+#19.32
 theme_xhred_connection_reboot=재부팅
 theme_xhred_connection_reboot_details=서버가 재부팅 중입니다. 기다려주세요 ..
 settings_leftmenu_custom_links_description=탐색 메뉴에 사용자 정의 된 추가 링크를 삽입 할 수 있습니다. <br><br> <em>제목</em>, <em>링크</em> 및 <em>아이콘</em> 키가 필요합니다. 선택적으로 <em>level</em> 키를 쉼표로 구분 된 목록에 <br><br> <em>0</ em으로 지정하여 링크가 표시되는 로그인 모드를 정의 할 수 있습니다. >-관리자 로그인; <br><em> 1 </em>-리셀러 로그인;<br> <em>2</em>-서버 소유자 로그인; <br><em> 3 </em>-사용자 로그인;<br> <em>4</em>-시스템 소유자 로그인. <br><br> 아래 예와 같이 유효한 JSON 객체를 문자열로 전달해야합니다. <hr><pre> { "extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS 서버", "link": "/bind8", "icon": "server"}, { "title": "Usermin", "link": "/", "icon": " envelope ","port ":"20000 ","target ":"_blank "}]} </pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=버전
 theme_xhred_notify_patching_module_style=$1에 초기 UI 패치를 적용하고 다시로드하십시오.
 theme_xhred_global_error_more_details_online=참고 : 온라인 %1wiki 페이지 %1 에서이 오류 및 해결 방법에 대해 자세히 알아보십시오.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=파일 마스크
 theme_xhred_filemanager_search_regex=정규식
 theme_xhred_upload_successful=<span>$1 파일</span>이 $2 디렉토리에 성공적으로 업로드되었습니다
 theme_xhred_upload_successful_single=<span>$1 파일</span>이 $2 디렉토리에 성공적으로 업로드되었습니다
 settings_usermin_default_module=기본 모듈
 
+#19.34
 theme_xhred_search_in_file_open_external=별도의 편집기로 파일 분리
 theme_xhred_path_to_console=터미널에서 현재 경로 열기 <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=파일 되돌리기
 theme_xhred_filemanager_editor_reverting_content=변경 사항을 삭제하고 원래 파일 내용으로 되돌립니다.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=항목 제외
 theme_xhred_filemanager_exclude_dirs_desc=제외 할 세미콜론으로 구분 된 파일 또는 하위 디렉토리 목록
 
+#19.38
 theme_global_access_level=접근 수준
 theme_global_user_mode=사용자 모드
 
+#19.40
 theme_xhred_global_attachments=첨부
 theme_xhred_editor_tb_font=폰트
 theme_xhred_editor_tb_size=크기
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=테이블 정렬 및 검색을 초기화하는 최대 행 수
 theme_xhred_global_rows=행
 
+#19.42
 settings_side_slider_blend=상속
 
+#19.43
 settings_theme_make_date=브라우저에서 날짜/시간 변환 사용
 settings_theme_make_date_description=비활성화하면 서버에서 제공 한 날짜/시간 형식이 사용됩니다
 
+#19.44
 theme_xhred_reload_lang_notification=테마 언어가 변경되었습니다. 새로운 설정을 적용하기 위해 페이지가 새로 고침됩니다.
 
+#19.46
 theme_xhred_global_small=작은
 theme_xhred_global_normal=표준
 theme_xhred_global_medium=매질
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=거대한
 theme_xhred_filemanager_editor_maximized=시작시 편집기 패널 최대화
 settings_sysinfo_remember_accordions=마지막으로 사용한 아코디언 상태 저장
 
+#19.47
 theme_xhred_textarea_to_clipboard=선택한 텍스트 영역 내용이 클립 보드에 성공적으로 복사되었습니다
 
+#19.48
 theme_xhred_global_alias=별명
 
+#19.50
 theme_xhred_mail_composer_real_name=실제 이름
 theme_xhred_mail_composer_username=사용자 이름
 
+#19.53
 settings_global_palette_unauthenticated=로그인 페이지 색상 표
 
+#19.60
 settings_config_save_and_next=저장하고 다음
 settings_config_configuration_category=구성 범주
 config_search_options_all=모든 모듈 구성 옵션 검색
 theme_xhred_editing_config_file=구성 파일 편집
 
+#19.61
 theme_xhred_login_message_2fa=이 사용자가 로그인 할 수 있도록 2 단계 인증이 활성화되었습니다.
 theme_xhred_global_verify=검증
 settings_show_terminal_link2=명령 셸 버튼 표시
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=명령 셸용 단축키
 theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=명령 셸
 
+#19.70
 theme_xhred_filemanager_context_view=전망
 theme_xhred_file_viewer=파일 뷰어
 theme_xhred_global_done=끝난.

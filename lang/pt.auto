@@ -185,6 +185,7 @@ theme_xhred_notifications_firewall_danger_message=Parece que o <strong>ConfigSer
 
 theme_xhred_notifications_firewall_warning=Aviso de firewall
 
+#17.50
 settings_grayscale_level_navigation=Filtro de escala de cinza
 settings_grayscale_level_navigation_description=Os valores padrão atuais/<code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtro sépia
@@ -214,6 +215,7 @@ theme_xhred_filemanager_context_paste=Colar
 theme_xhred_filemanager_context_chmod=Alterar permissões
 theme_xhred_filemanager_context_chown=Alterar propriedade
 
+#17.51
 theme_xhred_filemanager_context_new=Novo
 theme_xhred_filemanager_context_newarchive=Criar novo arquivo
 theme_xhred_filemanager_context_delete=Excluir
@@ -224,10 +226,12 @@ theme_xhred_filemanager_context_goto=Localização do item em aberto
 theme_xhred_filemanager_context_properties=Propriedades
 theme_xhred_filemanager_context_search=Procurar
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Desmarcar todos
 theme_xhred_filemanager_context_upload=Carregar no diretório atual
 theme_xhred_filemanager_context_download=Download a partir do URL remoto
 
+#17.53
 theme_config_virtualmin=Servidores Virtuais Virtualmin
 theme_config_cloudmin=Sistemas Gerenciados Cloudmin
 settings_right_thirdparties_options_title=Opções de módulos de terceiros
@@ -236,14 +240,17 @@ theme_xhred_filemanager_context_bookmarks=Favoritos
 theme_xhred_filemanager_context_bookmark_current=Marcador de caminho aberto no momento
 theme_xhred_filemanager_context_transfer=Transferir
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Link alvo
 
+#17.60
 right_unlimited=Ilimitado
 settings_leftmenu_width=Largura preferida
 settings_leftmenu_width_description=Padrão/atual largura de <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Mostrar interruptores invertidos
 settings_switch_rdisplay_description=Esta opção permite definir ordens diferentes para os switches do canto superior esquerdo. Depois de alterar esta opção, é necessário recarregar a página completa
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Calcular o tamanho selecionado
 theme_xhred_filemanager_selected_entries=Selecionado: %value itens de %value
 theme_xhred_filemanager_manual_path=Digite o caminho manualmente
@@ -256,6 +263,7 @@ theme_xhred_datatable_sloadingrecords=Carregando
 theme_xhred_datatable_sprocessing=Em processamento. ..
 theme_xhred_datatable_szerorecords=Nenhum registro correspondente encontrado
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=O arquivo foi editado, mas não foi salvo.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=O que você quer fazer?
 theme_xhred_global_save=Salve 
@@ -264,9 +272,11 @@ theme_xhred_global_close_without_saving=Fechar sem salvar
 theme_xhred_global_continue_editing=Continue editando
 theme_xhred_filemanager_context_download_file=Baixar
 
+#17.65
 settings_sysinfo_easypie_charts_width=Largura dos gráficos
 settings_sysinfo_easypie_charts_scale=Escalar o comprimento dos gráficos
 
+#17.80
 right_return_theme_options=Opções de temas
 theme_xhred_datatable_semptydirectory=O diretório está vazio
 theme_xhred_filemanager_context_clipboard=Copiar caminho para a área de transferência
@@ -296,11 +306,13 @@ theme_xhred_filemanager_hide_actions=Ocultar coluna de ações
 theme_xhred_filemanager_hovered_toolbar=Ativar o menu suspenso na barra de ferramentas ao passar o mouse
 theme_xhred_filemanager_context_delete_selected=Excluir selecionado
 
+#17.83
 theme_xhred_database_adding_new_row=Adicionando nova linha
 theme_xhred_database_editing_row=Editando a linha selecionada
 theme_xhred_database_editing_rows=Editando linhas selecionadas
 theme_xhred_database_adding_new_row_data=Definir dados
 
+#17.84
 theme_xhred_datatable_filter=Filtro
 
 theme_xhred_global_update=Atualizar
@@ -335,6 +347,7 @@ theme_xhred_global_notice=Aviso prévio
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=Arquivo
 theme_xhred_global_directory=Diretório
 theme_xhred_global_no_target=O destino não existe ou não está acessível
@@ -407,19 +420,24 @@ theme_xhred_module_help=Ajuda do módulo
 
 theme_xhred_server_process_running=O processo do servidor ainda está em execução !? Tem certeza de que deseja navegar para longe e não tem acesso às informações de saída? Mesmo se você sair agora, o processo não será encerrado.
 
+#18.03
 settings_global_options_title=Opções globais
 settings_global_passgen_format=Gerador de senhas
 settings_global_passgen_format_description=Defina o tamanho e o tipo de caractere usado na senha gerada. O valor padrão é igual a <code>15|az,AZ,0-9</code>, que representa a senha com 15 caracteres de comprimento, contendo letras maiúsculas e minúsculas e números. Também é possível adicionar caracteres especiais usando <code>#</code> sinal de hash
 theme_xhred_password_generator_new=Gerar nova senha <br> (para a área de transferência)
 theme_xhred_password_generator_new_success=Senha gerada %password foi copiada para a área de transferência com sucesso.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Este arquivo deve terminar com `1;` para trabalhar com sucesso.
 
+#18.10
 theme_error_access_not_root=Acesso negado: o usuário precisa acessar o módulo <em>Configuração de Webmin</em> para editar a configuração do tema
 
+#18.20
 settings_hide_top_loader=Ocultar barra de progresso superior
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Mostrar ícones simbólicos no menu suspenso no Virtualmin/Cloudmin
 theme_xhred_global_shipped=Enviado
 theme_xhred_global_available=acessível
@@ -465,6 +483,7 @@ theme_xhred_filemanager_successful_secontext=O contexto de segurança foi altera
 
 theme_xhred_global_no_results_found=Nenhum resultado encontrado
 
+#18.40
 theme_new_password_header=Definir nova senha para o usuário
 theme_xhred_move_top=Mover para o topo
 theme_xhred_move_bottom=Mover para baixo
@@ -484,6 +503,7 @@ theme_xhred_tooltip_switch_user=Mudar de utilizador
 theme_tooltip_logout=Sair
 theme_tooltip_edit_user=Editar usuário
 
+#18.45
 settings_sysinfo_easypie_charts_size=Diâmetro dos gráficos
 theme_xhred_global_choose=Escolher
 theme_xhred_global_select=Selecione
@@ -501,6 +521,7 @@ settings_right_soft_updates_page_options_title=Atualizações de software
 theme_xhred_git_compare_changes=Comparar alterações
 theme_xhred_filemanager_link_to_clipboard=O nome do link simbólico foi copiado para a área de transferência.
 
+#18.46
 theme_left_mail_prefs=Preferências de Correio
 theme_left_mail_change_password=Mudar senha
 theme_left_mail_account_functions=Funções da conta
@@ -509,6 +530,7 @@ theme_xhred_global_module_config=Configuração do módulo
 theme_xhred_global_return=Retorna
 theme_xhred_global_return_to_module_index=Retornar ao índice do módulo
 
+#18.47
 theme_xhred_global_complete_changelog=Registro de alterações completo
 theme_xhred_global_beta_version=Versão beta
 theme_xhred_global_release=Lançamento
@@ -516,6 +538,7 @@ theme_xhred_global_released_on=Lançado em
 theme_xhred_global_committed_on=Confirmado em
 theme_xhred_global_resolved_issues=Problemas resolvidos em %value liberações de %value
 
+#18.48
 theme_force_upgrade=Forçar atualização do tema
 theme_xhred_force_upgrade_beta=Instale a versão mais recente de desenvolvimento (beta)
 theme_xhred_force_upgrade_stable=Instale a versão mais recente (estável)
@@ -524,6 +547,7 @@ theme_update_footer=Por favor, seja gentil relatando bugs para o $1 repositório
 theme_xhred_encoding_manually_set=Definir codificação manualmente
 theme_xhred_filemanager_save_to_change_encoding=O arquivo deve ser salvo para permitir que a codificação seja alterada.
 
+#18.49
 theme_xhred_filemanager_user_switch=Mudar para usuário (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Ao selecionar o nome de usuário listado abaixo, você alternará outras operações a serem executadas como este usuário.
 theme_xhred_filemanager_user_switch_description_back=Para voltar ao modo padrão, escolha a primeira opção em Selecionar.
@@ -542,6 +566,7 @@ theme_xhred_global_maximize=Maximizar
 theme_xhred_global_normalize=Normalizar
 theme_xhred_global_set_encoding=Definir codificação
 
+#19.00
 theme_xhred_sysinfo_update_start=As informações do sistema estão sendo coletadas.
 theme_xhred_sysinfo_update_end=As informações do sistema foram coletadas com sucesso.
 theme_xhred_sysinfo_update_failed=As informações do sistema não podem ser recuperadas. Tente mais tarde.
@@ -562,11 +587,14 @@ theme_xhred_global_seconds=Segundos
 theme_xhred_global_minute=Minuto
 theme_xhred_global_minutes=Minutos
 
+#19.01
 theme_xhred_browser_warning=Para ter a melhor experiência com o painel do servidor no seu computador, use um navegador atualizado e suportado. <br><br> <em>Internet Explorer</em> não é mais suportado. <br><br> Os navegadores recomendados são <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> ou <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Você pode baixar a versão portátil de um navegador, que não requer instalação, para ignorar as limitações impostas.</div>
 
+#19.02
 theme_xhred_filter_content=Filtrar conteúdo
 theme_xhred_log_file_empty=O arquivo de log está vazio
 
+#19.03
 theme_xhred_config_configurable_options=Opções configuráveis
 theme_xhred_filter_content_no_matches_query=Nenhum conteúdo corresponde a %str query
 theme_xhred_toggle_accordions=Alternar visibilidade de acordeões
@@ -585,17 +613,20 @@ theme_xhred_signing_success=Conectado com sucesso!
 theme_xhred_session_failed_password=Senha incorreta, tente novamente.
 theme_xhred_global_reauthenticate=Autenticar novamente
 
+#19.04
 settings_sysinfo_real_time_status=Ativar monitoramento em tempo real
 settings_sysinfo_real_time_timeout=Intervalo para executar a atualização
 settings_sysinfo_real_time_timeout_description=Defina o intervalo desejado para atualizar os monitores em segundo plano. O valor deveria estar em milissegundos. Mantenha esse valor o mais baixo possível para evitar a perda de dados de curto prazo
 theme_xhred_global_redirecting=Redirecionando
 
+#19.05
 body_no_javascript_title=JavaScript desabilitado
 body_no_javascript_message=Por favor habilite o javascript e atualize a página
 theme_xhred_connection_lost=Conexão perdida
 theme_xhred_connection_success=Conexão bem-sucedida
 theme_xhred_connection_success_details=A conexão com o servidor foi restabelecida.
 
+#19.08
 theme_xhred_return_home=Retornar ao índice do painel
 theme_xhred_global_upload=Envio
 theme_xhred_global_select_files=Selecionar arquivos)
@@ -604,6 +635,7 @@ theme_xhred_global_files_selected=arquivos selecionados
 theme_xhred_global_reset=Redefinir
 theme_xhred_upload_initial_info=Arraste e solte arquivos aqui ou clique para selecionar
 
+#19.09
 theme_xhred_global_empty=Esvaziar
 theme_xhred_global_click_here=Clique aqui
 theme_git_patch_incompatible_message=A instalação desta versão do $1 <em>$2</em> requer a versão mais recente e/ou possivelmente não lançada do $3 e $5 para funcionar corretamente.
@@ -611,6 +643,7 @@ theme_git_patch_incompatible_message_s=A instalação desta versão do $1 <em>$2
 theme_git_patch_incompatible_message_desc=Pode haver alterações incompatíveis, que podem impedir o funcionamento do tema conforme projetado. Para ignorar esse aviso e forçar a instalação do tema de qualquer maneira $1, ou faça upgrade de $2 para a versão de desenvolvimento mais recente primeiro usando o console, executando o script <kbd>update-from-repo.sh</kbd> em seu diretório
 theme_xhred_global_outdated=Esta versão está ultrapassada
 
+#19.10
 theme_xhred_filemanager_edit_html=Editar como HTML
 theme_xhred_global_example=Exemplo
 theme_xhred_global_output_example=Exemplo de saída
@@ -646,6 +679,7 @@ theme_xhred_global_unlimited=Ilimitado
 theme_xhred_filemanager_tree_exclude_on_first_load=Excluir diretórios não essenciais do deslocamento no carregamento inicial para exibição em árvore (carrega mais rapidamente)
 theme_xhred_filemanager_tree_expand_search=Expanda todas as ramificações que contêm correspondências ao filtrar a exibição em árvore
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Forçar a sincronização da coleção de status em segundo plano
 theme_xhred_tooltip_side_slider_go_to_dashboard=Ir para a dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Controle de favoritos abertos
@@ -657,6 +691,7 @@ settings_side_slider_fixed_toggle=Mostrar alternar pino/desafixar
 settings_side_slider_fixed_toggle_description=Esta opção exibirá a alternância, no controle deslizante lateral, na linha inferior, permitindo alternar sua visibilidade em tempo real, se as condições da opção anterior forem atendidas.
 settings_right_page_hide_persistent_vscroll=Ocultar barra de rolagem vertical persistente
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Instale atualizações de tema para o Usermin também
 theme_xhred_global_installed_version=Versão instalada
 theme_xhred_global_installed_and_latest_version=Versão instalada e mais recente
@@ -667,12 +702,14 @@ settings_contrast_mode=Ativar modo de alto contraste
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Mostrar a opção Webmin no menu de navegação?
 
+#19.14
 settings_enable_container_offset=Ativar deslocamento de contêiner
 settings_enable_container_offset_description=Esta opção funciona apenas em telas com resolução mínima de 1920 pixels horizontais
 theme_xhred_filemanager_preparing_download=Preparando o download. Arquivando %number arquivos. Aguarde %dots
 theme_xhred_filemanager_prepared_download=O download está pronto. %number arquivos arquivados.
 theme_xhred_filemanager_canceled_download=Download cancelado.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Forçar comando <code>tar</code>, mesmo se <code>zip</code> estiver disponível, ao fazer o download como archive
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=tb
@@ -685,6 +722,7 @@ settings_sysinfo_real_time_status_disk=Ativar para discos
 settings_sysinfo_real_time_status_disk_description=Pode ser útil desativar o monitoramento em tempo real de discos em sistemas de arquivos grandes/lentos
 theme_xhred_title_locale_non_ui_config=Formato de data gerado pelo servidor
 
+#19.20
 extensions_mail_current_position=Mensagens $1-$2 de $3
 extensions_mail_sort_by_sender=Classificar por remetente
 extensions_mail_sort_by_recipient=Classificar por destinatário
@@ -826,12 +864,14 @@ settings_cache_interval_1y=uma vez por ano
 
 theme_xhred_reload_notification=A configuração do tema foi alterada, mas não salva. A página será recarregada, para redefinir as configurações atuais.
 
+#19.22
 theme_xhred_global_save_as=Salvar como
 theme_xhred_editor_save_file_as=Salvar arquivo como
 theme_xhred_global_configuration=Configuração
 
 body_used_cached_total=$1 total / $3 em cache / $2 usado
 
+#19.30
 theme_xhred_favorites_add=Adicionar aos favoritos
 theme_xhred_favorites_remove=Remover dos favoritos
 theme_xhred_select_deselect=Marque/desmarque o item atual
@@ -849,6 +889,7 @@ theme_xhred_editor_set_syntax=Definir sintaxe
 theme_xhred_global_menu=Cardápio
 theme_xhred_shell_aborted=Operação abortada
 
+#19.32
 theme_xhred_connection_reboot=Reiniciando
 theme_xhred_connection_reboot_details=O servidor está sendo reinicializado. Por favor, espere ..
 settings_leftmenu_custom_links_description=É possível injetar links extras personalizados no menu de navegação. <br><br> As chaves <em>título</em>, <em>link</em> e <em>ícone</em> são obrigatórias; opcionalmente, é possível definir em qual modo de login um link seria exibido, especificando a chave <em>level</em>, com valores, na lista separada por vírgula, contendo: <br><br> <em>0</ em > - login do administrador; <br><em> 1 </em>- login do revendedor;<br> <em>2</em> - login do proprietário do servidor; <br><em> 3 </em>- login do usuário;<br> <em>4</em> - login do proprietário do sistema. <br><br> Requer que você passe um objeto JSON válido como uma string, como no exemplo abaixo. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "Servidor DNS BIND", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " envelope "," porta ":" 20000 "," destino ":" _blank "}]} </pre>
@@ -936,23 +977,28 @@ theme_xhred_global_version=versão
 theme_xhred_notify_patching_module_style=Aplicando o patch inicial da interface do usuário para $1 e recarregando.
 theme_xhred_global_error_more_details_online=Nota: Leia mais sobre este erro e como resolvê-lo, em nossa página %1 %1wiki %1 online.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Máscara de arquivo
 theme_xhred_filemanager_search_regex=Expressão regular
 theme_xhred_upload_successful=<span>arquivos $1</span> foram carregados com sucesso no diretório $2
 theme_xhred_upload_successful_single=<span>arquivo $1</span> foi carregado com sucesso no diretório $2
 settings_usermin_default_module=Módulo padrão
 
+#19.34
 theme_xhred_search_in_file_open_external=Desanexar arquivo para separar o editor
 theme_xhred_path_to_console=Abra o caminho atual no terminal <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Reverter arquivo
 theme_xhred_filemanager_editor_reverting_content=Eliminando alterações e revertendo para o conteúdo original do arquivo.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Excluir entradas
 theme_xhred_filemanager_exclude_dirs_desc=Lista de arquivos ou subdiretórios separados por ponto e vírgula para excluir
 
+#19.38
 theme_global_access_level=Nível de acesso
 theme_global_user_mode=Modo de usuário
 
+#19.40
 theme_xhred_global_attachments=Anexos
 theme_xhred_editor_tb_font=Fonte
 theme_xhred_editor_tb_size=Tamanho
@@ -1018,13 +1064,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Número máximo de linhas para inicializar a classificação e a pesquisa da tabela
 theme_xhred_global_rows=Linhas
 
+#19.42
 settings_side_slider_blend=Herdar
 
+#19.43
 settings_theme_make_date=Ativar conversão de data/hora no navegador
 settings_theme_make_date_description=Se desativado, o formato de data/hora fornecido pelo servidor será usado
 
+#19.44
 theme_xhred_reload_lang_notification=O idioma do tema foi alterado. A página será recarregada para aplicar novas configurações.
 
+#19.46
 theme_xhred_global_small=Pequeno
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Médio
@@ -1033,20 +1083,26 @@ theme_xhred_global_huge=Imenso
 theme_xhred_filemanager_editor_maximized=Maximizar o painel do editor ao iniciar
 settings_sysinfo_remember_accordions=Salvar estado de acordeão usado pela última vez
 
+#19.47
 theme_xhred_textarea_to_clipboard=O conteúdo da área de texto selecionado foi copiado com êxito para a área de transferência
 
+#19.48
 theme_xhred_global_alias=Alias
 
+#19.50
 theme_xhred_mail_composer_real_name=Nome real
 theme_xhred_mail_composer_username=nome do usuário
 
+#19.53
 settings_global_palette_unauthenticated=Paleta de cores da página de login
 
+#19.60
 settings_config_save_and_next=Salvar e Avançar
 settings_config_configuration_category=Categoria de configuração
 config_search_options_all=Pesquise todas as opções de configuração do módulo
 theme_xhred_editing_config_file=Editando arquivo de configuração
 
+#19.61
 theme_xhred_login_message_2fa=A autenticação de dois fatores foi habilitada para este usuário fazer login
 theme_xhred_global_verify=Verificar
 settings_show_terminal_link2=Mostrar botão do shell de comando
@@ -1054,6 +1110,7 @@ settings_hotkey_shell2=Atalho para shell de comando
 theme_xhred_path_to_console2=Abra o caminho atual no shell de comando <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Shell de comando
 
+#19.70
 theme_xhred_filemanager_context_view=Visão
 theme_xhred_file_viewer=Visualizador de arquivos
 theme_xhred_global_done=Feito.

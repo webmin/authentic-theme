@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=Úgy tűnik, hogy a <strong>Co
 
 theme_xhred_notifications_firewall_warning=Tűzfal figyelmeztetés
 
+#17.50
 settings_grayscale_level_navigation=Szürkeárnyalatos szűrő
 settings_grayscale_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Szépia szűrő
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=Paszta
 theme_xhred_filemanager_context_chmod=Engedélyek módosítása
 theme_xhred_filemanager_context_chown=Tulajdonos megváltoztatása
 
+#17.51
 theme_xhred_filemanager_context_new=Új
 theme_xhred_filemanager_context_newarchive=Hozzon létre új archívumot
 theme_xhred_filemanager_context_delete=Töröl
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Nyissa meg az elem helyét
 theme_xhred_filemanager_context_properties=Tulajdonságok
 theme_xhred_filemanager_context_search=Keresés
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Törölje az Összes kijelölését
 theme_xhred_filemanager_context_upload=Töltse fel az aktuális könyvtárba
 theme_xhred_filemanager_context_download=Töltse le a távoli URL-ről
 
+#17.53
 theme_config_virtualmin=Virtualmin virtuális szerverek
 theme_config_cloudmin=Cloudmin által kezelt rendszerek
 settings_right_thirdparties_options_title=Harmadik féltől származó modulok lehetőségei
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=Könyvjelzők
 theme_xhred_filemanager_context_bookmark_current=Könyvjelző jelenleg megnyitott útvonal
 theme_xhred_filemanager_context_transfer=Átutalás
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Link link
 
+#17.60
 right_unlimited=Korlátlan
 settings_leftmenu_width=Előnyös szélesség
 settings_leftmenu_width_description=Alapérték/aktuális szélessége <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Show kapcsolók fordítva
 settings_switch_rdisplay_description=Ez az opció lehetővé teszi, hogy eltérő sorrendet állítson be a bal felső kapcsolókhoz. Az opció megváltoztatása után az oldal teljes újratöltése szükséges
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Számítsa ki a kiválasztott méretet
 theme_xhred_filemanager_selected_entries=Kiválasztott: %value elem
 theme_xhred_filemanager_manual_path=Adja meg az útvonalat kézzel
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Betöltés
 theme_xhred_datatable_sprocessing=Feldolgozás. ..
 theme_xhred_datatable_szerorecords=Nem található megfelelő rekord
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=A fájlt szerkesztették, de nem mentte.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Mit akarsz csinálni?
 theme_xhred_global_save=Megment
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Bezárás mentés nélkül
 theme_xhred_global_continue_editing=Folytassa a szerkesztést
 theme_xhred_filemanager_context_download_file=Letöltés
 
+#17.65
 settings_sysinfo_easypie_charts_width=Diagramok szélessége
 settings_sysinfo_easypie_charts_scale=A diagramok méretaránya
 
+#17.80
 right_return_theme_options=téma beállítások
 theme_xhred_datatable_semptydirectory=A könyvtár üres
 theme_xhred_filemanager_context_clipboard=Másolja az elérési utat a vágólapra
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=Műveletek oszlop elrejtése
 theme_xhred_filemanager_hovered_toolbar=Aktiválja az egérmutatót az eszköztár legördülő menüjét
 theme_xhred_filemanager_context_delete_selected=Kijelöltek eltávolítása
 
+#17.83
 theme_xhred_database_adding_new_row=Új sor hozzáadása
 theme_xhred_database_editing_row=A kiválasztott sor szerkesztése
 theme_xhred_database_editing_rows=Kiválasztott sorok szerkesztése
 theme_xhred_database_adding_new_row_data=Adatok beállítása
 
+#17.84
 theme_xhred_datatable_filter=Szűrő
 
 theme_xhred_global_update=frissítés
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Értesítés
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=fájl
 theme_xhred_global_directory=Könyvtár
 theme_xhred_global_no_target=A cél nem létezik, vagy nem érhető el
@@ -489,19 +502,24 @@ theme_xhred_module_help=Modul súgó
 
 theme_xhred_server_process_running=A szerver folyamata továbbra is fut !? Biztos benne, hogy el akar navigálni, és nincs hozzáférése a kimeneti információkhoz? A folyamat akkor sem fejeződik be, ha távozik.
 
+#18.03
 settings_global_options_title=Globális lehetőségek
 settings_global_passgen_format=Jelszógenerátor
 settings_global_passgen_format_description=Állítsa be a generált jelszóban használt hosszúságot és karaktertípust. Az alapértelmezett érték <code>15|az,AZ,0-9</code>, amely 15 karakter hosszú jelszót jelent, amely kis- és nagybetűket és számokat tartalmaz. Különleges karaktereket is hozzáadhat a <code>#</code> hash jel használatával
 theme_xhred_password_generator_new=Új jelszó létrehozása <br> (a vágólapra)
 theme_xhred_password_generator_new_success=A generált jelszó %password sikeresen át lett másolva a vágólapra.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Ennek a fájlnak végződnie kell `1;` hogy sikeresen működjön.
 
+#18.10
 theme_error_access_not_root=Hozzáférés megtagadva: A felhasználónak hozzáférnie kell a <em>Webmin Configuration</em> modulhoz a témakonfiguráció szerkesztéséhez
 
+#18.20
 settings_hide_top_loader=A felső folyamatjelző sáv elrejtése
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=A szimbolikus ikonok megjelenítése a Virtualmin/Cloudmin legördülő menüjében
 theme_xhred_global_shipped=Kiszállított
 theme_xhred_global_available=Elérhető
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=A biztonsági környezet sikeresen 
 
 theme_xhred_global_no_results_found=Nincs találat
 
+#18.40
 theme_new_password_header=Állítson be új jelszót a felhasználó számára
 login_reset=Jelszó visszaállítás
 theme_xhred_move_top=Lépjen a tetejére
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Felhasználót váltani
 theme_tooltip_logout=Kijelentkezés
 theme_tooltip_edit_user=Felhasználó szerkesztése
 
+#18.45
 settings_sysinfo_easypie_charts_size=Diagramok átmérője
 theme_xhred_global_choose=Választ
 theme_xhred_global_select=választ
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Szoftver frissítések
 theme_xhred_git_compare_changes=Hasonlítsa össze a változásokat
 theme_xhred_filemanager_link_to_clipboard=A szimbolikus link nevét a vágólapra másolta.
 
+#18.46
 theme_left_mail_prefs=Levelezési beállítások
 theme_left_mail_change_password=Jelszó módosítása
 theme_left_mail_account_functions=Fiókfunkciók
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Modul konfigur
 theme_xhred_global_return=Visszatérés
 theme_xhred_global_return_to_module_index=Vissza a modul indexéhez
 
+#18.47
 theme_xhred_global_complete_changelog=Teljes váltási napló
 theme_xhred_global_beta_version=Béta verzió
 theme_xhred_global_release=Kiadás
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Megjelent
 theme_xhred_global_committed_on=Elkötelezett
 theme_xhred_global_resolved_issues=Megoldott problémák a %value kiadásokban
 
+#18.48
 theme_force_upgrade=A frissítési téma kényszerítése
 theme_xhred_force_upgrade_beta=Telepítse a legújabb fejlesztői verziót (béta)
 theme_xhred_force_upgrade_stable=Telepítse a legfrissebb verziót (stabil)
@@ -607,6 +630,7 @@ theme_update_footer=Kérjük, szíveskedjen bejelenteni a hibákat az $1 lerakat
 theme_xhred_encoding_manually_set=A kódolás kézi beállítása
 theme_xhred_filemanager_save_to_change_encoding=A fájlt el kell menteni a kódolás megváltoztatásának lehetővé tétele érdekében.
 
+#18.49
 theme_xhred_filemanager_user_switch=Váltás a felhasználóra (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Az alább felsorolt felhasználónév kiválasztásával átvált a további műveletekre, amelyeket ennek a felhasználónak kell végrehajtania.
 theme_xhred_filemanager_user_switch_description_back=Az alapértelmezett módba való visszatéréshez válassza a kiválasztott első lehetőséget.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=Teljes méret
 theme_xhred_global_normalize=Normalize
 theme_xhred_global_set_encoding=Állítsa be a kódolást
 
+#19.00
 theme_xhred_sysinfo_update_start=A rendszerinformációk visszaemlékezésre kerülnek.
 theme_xhred_sysinfo_update_end=A rendszerinformációkat sikerült visszahívni.
 theme_xhred_sysinfo_update_failed=A rendszerinformációkat nem lehet visszahívni. Próbáld újra később.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=másodperc
 theme_xhred_global_minute=Perc
 theme_xhred_global_minutes=Percek
 
+#19.01
 theme_xhred_browser_warning=A számítógép szerverpaneljével való legjobb élmény érdekében használjon egy támogatott, legfrissebb böngészőt. <br><br> <em>Internet Explorer</em> már nem támogatott. <br><br> Ajánlott böngészők: <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> vagy <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Letölthet egy böngésző hordozható verzióját, amely nem igényel telepítést, hogy megkerülje a korlátozásokat.</div>
 
+#19.02
 theme_xhred_filter_content=Tartalom szűrése
 theme_xhred_log_file_empty=A naplófájl üres
 
+#19.03
 theme_xhred_config_configurable_options=Konfigurálható lehetőségek
 theme_xhred_filter_content_no_matches_query=Nincs tartalom, amely megegyezik a %str lekérdezéssel
 theme_xhred_toggle_accordions=Váltás a harmonika láthatóságára
@@ -668,17 +696,20 @@ theme_xhred_signing_success=Sikeres bejelentkezés!
 theme_xhred_session_failed_password=Hibás jelszó, próbálkozzon újra.
 theme_xhred_global_reauthenticate=újrahitelesíteni
 
+#19.04
 settings_sysinfo_real_time_status=Valós idejű figyelés engedélyezése
 settings_sysinfo_real_time_timeout=Interval a frissítés végrehajtásához
 settings_sysinfo_real_time_timeout_description=Állítsa be a monitorok frissítésének kívánt időközét a háttérben. Az érték milliszekundumban értendő. Tartsa ezt az értéket a lehető legalacsonyabban, hogy elkerülje a rövid távú adatok elvesztését
 theme_xhred_global_redirecting=Az átirányítás
 
+#19.05
 body_no_javascript_title=A JavaScript le van tiltva
 body_no_javascript_message=Kérjük, engedélyezze a javascriptet, és frissítse az oldalt
 theme_xhred_connection_lost=A kapcsolat megszakadt
 theme_xhred_connection_success=A kapcsolat sikeres
 theme_xhred_connection_success_details=A kapcsolat a szerverrel helyreállt.
 
+#19.08
 theme_xhred_return_home=Vissza a panel indexéhez
 theme_xhred_global_upload=Feltöltés
 theme_xhred_global_select_files=Fájlok kiválasztása)
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=fájlok kiválasztva
 theme_xhred_global_reset=Visszaállítás
 theme_xhred_upload_initial_info=Húzza át és dobja le a fájlokat ide, vagy kattintson a kiválasztáshoz
 
+#19.09
 theme_xhred_global_empty=Üres
 theme_xhred_global_click_here=kattints ide
 theme_git_patch_incompatible_message=A $1 <em>$2</em> ezen verziójának telepítéséhez a megfelelő működéshez szükség van a $3 és $5 legújabb és/vagy esetleg még nem kiadott verziójára.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=A $1 <em>$2</em> ezen verziójának telep
 theme_git_patch_incompatible_message_desc=Lehet, hogy inkompatibilisek a változások, amelyek megakadályozhatják a téma megfelelő működését. A figyelmeztetés megkerülésére és a téma telepítésére kényszerítve $1, vagy frissítse a $2 <kbd>update-from-repo.sh</kbd> a legújabb fejlesztési verzióra, először a konzol használatával, futtatva a <kbd>update-from-repo.sh</kbd> szkriptet a könyvtárából.
 theme_xhred_global_outdated=Ez a verzió elavult
 
+#19.10
 theme_xhred_filemanager_edit_html=Szerkesztés HTML-ként
 theme_xhred_global_example=Példa
 theme_xhred_global_output_example=Kimeneti példa
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=Korlátlan
 theme_xhred_filemanager_tree_exclude_on_first_load=Kizárja az elengedhetetlen könyvtárakat a famegtekintés kezdeti betöltésekor történő áthaladásból (gyorsabban betöltődik)
 theme_xhred_filemanager_tree_expand_search=Bontsa ki az összes olyan ágat, amely egyezéseket tartalmaz, a fanézet szűrése közben
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Kényszerít a háttérállapot-gyűjtemény szinkronizálására
 theme_xhred_tooltip_side_slider_go_to_dashboard=Ugrás az irányítópultra
 theme_xhred_tooltip_side_slider_open_favorites_control=Nyissa meg a kedvencek vezérlését
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=A pin/unpin váltás megjelenítése
 settings_side_slider_fixed_toggle_description=Ez az opció megjeleníti a kapcsolót az oldalsó csúszkában, az alsó sorban, lehetővé téve annak láthatóságát váltás közben, ha az előző opció feltételei teljesülnek.
 settings_right_page_hide_persistent_vscroll=Az állandó függőleges görgetősáv elrejtése
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Telepítse a témafrissítéseket a Usermin számára is
 theme_xhred_global_installed_version=Telepített verzió
 theme_xhred_global_installed_and_latest_version=Telepítve és a legújabb verzió
@@ -750,12 +785,14 @@ settings_contrast_mode=Nagy kontrasztú mód engedélyezése
 theme_xhred_global_firewall=Tűzfal
 theme_xhred_settings_show_webmin_tab=Megjeleníti a Webmin kapcsolót a navigációs menüben?
 
+#19.14
 settings_enable_container_offset=A konténer eltolásának engedélyezése
 settings_enable_container_offset_description=Ez az opció csak a képernyőkön működik, amelyek minimális felbontása 1920 vízszintes pixel
 theme_xhred_filemanager_preparing_download=A letöltés előkészítése. %number Számú fájl archiválása. Kérjük, várjon %dots
 theme_xhred_filemanager_prepared_download=A letöltés kész. Archivált %number fájl (ok).
 theme_xhred_filemanager_canceled_download=A letöltés megszakítva.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Kényszerítse a <code>tar</code> parancsot, még ha <code>zip</code> is elérhető, archívumként történő letöltéskor
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=tuberkulózis
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=Engedélyezze a lemezeket
 settings_sysinfo_real_time_status_disk_description=Hasznos lehet letiltani a valós idejű megfigyelést a lassú/nagy fájlrendszerek lemezein
 theme_xhred_title_locale_non_ui_config=Szerver által generált dátumformátum
 
+#19.20
 extensions_mail_current_position=1–$2 / $3 üzenetek
 extensions_mail_sort_by_sender=Rendezés feladó szerint
 extensions_mail_sort_by_recipient=Rendezés címzett szerint
@@ -909,12 +947,14 @@ settings_cache_interval_1y=évente egyszer
 
 theme_xhred_reload_notification=A téma konfigurációja megváltozott, de nem mentve. Az oldal újratöltésre kerül, hogy visszaálljon az aktuális beállításokra.
 
+#19.22
 theme_xhred_global_save_as=Mentés másként
 theme_xhred_editor_save_file_as=Mentse a fájlt
 theme_xhred_global_configuration=Configuration
 
 body_used_cached_total=Összesen $1 / $3 tárolt / $2 használt
 
+#19.30
 theme_xhred_favorites_add=Add hozzá a kedvencekhez
 theme_xhred_favorites_remove=Eltávolítás a kedvencekből
 theme_xhred_select_deselect=Az aktuális elem kiválasztása/törlése
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=Állítsa be a szintaxist
 theme_xhred_global_menu=Menü
 theme_xhred_shell_aborted=A művelet megszakítva
 
+#19.32
 theme_xhred_connection_reboot=újraindítása
 theme_xhred_connection_reboot_details=A szerver újraindul. Kérlek várj ..
 settings_leftmenu_custom_links_description=A navigációs menübe egyéni extra linkeket lehet beinjektálni. <em>cím</em>, <em>link</em> és az <em>ikon</em> gombok szükségesek; opcionálisan meghatározhatja, hogy melyik bejelentkezési módban jelenjen meg egy link, az <em>szint</em> gomb megadásával, az értékekkel, vesszővel elválasztott listában, amely tartalmazza: <br><br> <em>0</em> > - rendszergazdai bejelentkezés; <br><em> 1 </em>- viszonteladó bejelentkezése;<br> <em>2</em> - szerver tulajdonosa bejelentkezés; <br><em> 3 </em>- felhasználói bejelentkezés;<br> <em>4</em> - a rendszertulajdonos bejelentkezése. <br><br> Ehhez az érvényes példához hasonlóan érvényes JSON-objektumot kell megadnia karakterlánccal. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " boríték "," port ":" 20000 "," cél ":" _blank "}]} </pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=változat
 theme_xhred_notify_patching_module_style=Kezdeti felhasználói felület-javítás alkalmazása az $1 -hoz és újratelepítés.
 theme_xhred_global_error_more_details_online=Megjegyzés: Kérjük, olvassa el többet a hibáról és annak megoldásáról a %1wiki %1 online oldalon.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Fájlmaszk
 theme_xhred_filemanager_search_regex=Reguláris kifejezés
 theme_xhred_upload_successful=A <span>$1 fájlokat</span> sikeresen feltöltötték az $2 könyvtárba
 theme_xhred_upload_successful_single=A <span>$1 fájlt</span> sikeresen feltöltötték az $2 könyvtárba
 settings_usermin_default_module=Alapértelmezett modul
 
+#19.34
 theme_xhred_search_in_file_open_external=Vegye le a fájlt különálló szerkesztőre
 theme_xhred_path_to_console=Nyissa meg az aktuális utat a <tt>terminálon (Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Fájl visszaállítása
 theme_xhred_filemanager_editor_reverting_content=A változások visszavonása és az eredeti fájltartalomhoz való visszatérés.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=A bejegyzések kizárása
 theme_xhred_filemanager_exclude_dirs_desc=A kizárandó fájlok vagy alkönyvtárak pontosvesszővel elválasztva
 
+#19.38
 theme_global_access_level=Hozzáférési szint
 theme_global_user_mode=Felhasználói mód
 
+#19.40
 theme_xhred_global_attachments=Mellékletek
 theme_xhred_editor_tb_font=Betűtípus
 theme_xhred_editor_tb_size=Méret
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=kbps
 settings_table_init_datatables=A táblák rendezésének és keresésének inicializálására szolgáló sorok maximális száma
 theme_xhred_global_rows=sorok
 
+#19.42
 settings_side_slider_blend=Örököl
 
+#19.43
 settings_theme_make_date=Dátum/idő konvertálás engedélyezése a böngészőben
 settings_theme_make_date_description=Ha nem engedélyezi, akkor a kiszolgáló által megadott dátum- és időformátumot fogja használni
 
+#19.44
 theme_xhred_reload_lang_notification=A téma nyelve megváltozott. Az oldal újratöltésre kerül az új beállítások alkalmazásához.
 
+#19.46
 theme_xhred_global_small=Kicsi
 theme_xhred_global_normal=Normál
 theme_xhred_global_medium=Közepes
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=Hatalmas
 theme_xhred_filemanager_editor_maximized=Indítsa el a szerkesztőpanel maximalizálása
 settings_sysinfo_remember_accordions=Mentsd el a legutóbb használt harmonika állapotát
 
+#19.47
 theme_xhred_textarea_to_clipboard=A kiválasztott textarealap tartalma sikeresen át lett másolva a vágólapra
 
+#19.48
 theme_xhred_global_alias=Álnév
 
+#19.50
 theme_xhred_mail_composer_real_name=Igazi neve
 theme_xhred_mail_composer_username=felhasználónév
 
+#19.53
 settings_global_palette_unauthenticated=A bejelentkező oldal színpaletta
 
+#19.60
 settings_config_save_and_next=Mentés és tovább
 settings_config_configuration_category=Konfigurációs kategória
 config_search_options_all=Keresse meg az összes modul konfigurációs beállítását
 theme_xhred_editing_config_file=Konfigurációs fájl szerkesztése
 
+#19.61
 theme_xhred_login_message_2fa=A kétfaktoros hitelesítést engedélyezték ennek a felhasználónak a bejelentkezéshez
 theme_xhred_global_verify=Ellenőrizze
 settings_show_terminal_link2=Parancshéj megjelenítése gomb
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=Gyorsbillentyű a parancshéjhoz
 theme_xhred_path_to_console2=Nyissa meg az aktuális útvonalat a <tt>parancssorban (Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Parancshéj
 
+#19.70
 theme_xhred_filemanager_context_view=Kilátás
 theme_xhred_file_viewer=File Viewer
 theme_xhred_global_done=Kész.

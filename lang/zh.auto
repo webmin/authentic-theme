@@ -1,3 +1,4 @@
+#19.20
 extensions_mail_flag_spam_status=垃圾邮件状态
 extensions_mail_flag_spam_status_data=2美元中的1美元
 extensions_mail_flag_tls_on=标准加密（TLS）
@@ -58,12 +59,14 @@ settings_cache_interval_1y=一年一次
 
 theme_xhred_reload_notification=主题配置已更改，但未保存。页面将被重新加载，以重置为当前设置。
 
+#19.22
 theme_xhred_global_save_as=另存为
 theme_xhred_editor_save_file_as=另存为
 theme_xhred_global_configuration=组态
 
 body_used_cached_total=总计$1 /已使用$3 /已使用$2
 
+#19.30
 theme_xhred_favorites_add=添加到收藏夹
 theme_xhred_favorites_remove=从收藏夹中删除
 theme_xhred_select_deselect=选择/取消选择当前项目
@@ -81,6 +84,7 @@ theme_xhred_editor_set_syntax=设定语法
 theme_xhred_global_menu=菜单
 theme_xhred_shell_aborted=行动取消
 
+#19.32
 theme_xhred_connection_reboot=重新启动
 theme_xhred_connection_reboot_details=服务器正在重新启动。请稍候 ..
 settings_leftmenu_custom_links_description=可以将自定义的额外链接注入到导航菜单中。 <br><br>需要键<em>title</em>，<em>link</em>和<em>icon</em>； （可选）您可以通过指定<em>level</em>键，并在逗号分隔的列表中指定值，以定义在哪种登录模式下显示链接，该值包含：<br><br> <em>0</ em >-管理员登录； <br><em> 1 </em>-经销商登录；<br> <em>2</em>-服务器所有者登录； <br><em> 3 </em>-用户登录；<br> <em>4</em>-系统所有者登录。<br><br>这将要求您将有效的JSON对象作为字符串传递，如下例。<hr><pre> {"extra"：[{ "标题"："Google Mail"，"链接"："https://gmail.com/"，"icon"："google"，"级别"："0、1、2、3、4"}，{ "title"："BIND DNS服务器"，"link"："/bind8"，"icon"："服务器"}，{"title"："Usermin"，"link"："/"，"icon"："信封"，"端口"："20000"，"目标"："_ blank"}]} </pre>
@@ -168,23 +172,28 @@ theme_xhred_global_version=版
 theme_xhred_notify_patching_module_style=为$1应用初始UI补丁并重新加载。
 theme_xhred_global_error_more_details_online=注意：请在我们的%1wiki页面%1在线上阅读有关此错误及其解决方法的更多信息。
 
+#19.33
 theme_xhred_filemanager_search_file_mask=文件遮罩
 theme_xhred_filemanager_search_regex=正则表达式
 theme_xhred_upload_successful=<span>$1个文件</span>已成功上传到$2目录
 theme_xhred_upload_successful_single=<span>$1文件</span>已成功上传到$2目录
 settings_usermin_default_module=默认模块
 
+#19.34
 theme_xhred_search_in_file_open_external=将文件分离到单独的编辑器
 theme_xhred_path_to_console=在终端<tt>（Alt+Shift+K）</tt>中打开当前路径
 theme_xhred_filemanager_editor_revert_content=还原档案
 theme_xhred_filemanager_editor_reverting_content=删除更改并还原为原始文件内容。
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=排除条目
 theme_xhred_filemanager_exclude_dirs_desc=以分号分隔的要排除的文件或子目录列表
 
+#19.38
 theme_global_access_level=访问权限
 theme_global_user_mode=用户模式
 
+#19.40
 theme_xhred_global_attachments=附件
 theme_xhred_editor_tb_font=字形
 theme_xhred_editor_tb_size=尺寸
@@ -250,13 +259,17 @@ theme_xhred_nice_size_kBB=千比特
 settings_table_init_datatables=初始化表排序和搜索的最大行数
 theme_xhred_global_rows=行数
 
+#19.42
 settings_side_slider_blend=继承
 
+#19.43
 settings_theme_make_date=在浏览器中启用日期/时间转换
 settings_theme_make_date_description=如果禁用，将使用服务器提供的日期/时间格式
 
+#19.44
 theme_xhred_reload_lang_notification=主题语言已更改。该页面将被重新加载，以应用新设置。
 
+#19.46
 theme_xhred_global_small=小
 theme_xhred_global_normal=正常
 theme_xhred_global_medium=介质
@@ -265,20 +278,26 @@ theme_xhred_global_huge=巨大
 theme_xhred_filemanager_editor_maximized=启动时最大化编辑器面板
 settings_sysinfo_remember_accordions=保存上次使用的手风琴状态
 
+#19.47
 theme_xhred_textarea_to_clipboard=所选textarea内容已成功复制到剪贴板
 
+#19.48
 theme_xhred_global_alias=别名
 
+#19.50
 theme_xhred_mail_composer_real_name=真正的名字
 theme_xhred_mail_composer_username=用户名
 
+#19.53
 settings_global_palette_unauthenticated=登录页面调色板
 
+#19.60
 settings_config_save_and_next=保存并下一步
 settings_config_configuration_category=配置类别
 config_search_options_all=搜索所有模块配置选项
 theme_xhred_editing_config_file=编辑配置文件
 
+#19.61
 theme_xhred_login_message_2fa=已启用此用户的两因素身份验证登录
 theme_xhred_global_verify=校验
 settings_show_terminal_link2=显示命令外壳按钮
@@ -286,6 +305,7 @@ settings_hotkey_shell2=命令外壳热键
 theme_xhred_path_to_console2=在命令外壳<tt>（Alt+Shift+K）</tt>中打开当前路径
 theme_tooltip_terminal_link2=命令外壳
 
+#19.70
 theme_xhred_filemanager_context_view=视图
 theme_xhred_file_viewer=文件浏览器
 theme_xhred_global_done=做完了

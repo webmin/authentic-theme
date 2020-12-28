@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=Φαίνεται ότι το <
 
 theme_xhred_notifications_firewall_warning=Προειδοποίηση τείχους προστασίας
 
+#17.50
 settings_grayscale_level_navigation=Φίλτρο κλίμακας του γκρι
 settings_grayscale_level_navigation_description=Προεπιλεγμένη/τρέχουσες αξίες <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Φίλτρο σέπια
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=Επικόλληση
 theme_xhred_filemanager_context_chmod=Αλλαγή δικαιωμάτων
 theme_xhred_filemanager_context_chown=Αλλαγή ιδιοκτησίας
 
+#17.51
 theme_xhred_filemanager_context_new=Νέος
 theme_xhred_filemanager_context_newarchive=Δημιουργήστε νέο αρχείο
 theme_xhred_filemanager_context_delete=Διαγράφω
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Άνοιγμα τοποθεσίας αντ�
 theme_xhred_filemanager_context_properties=Ιδιότητες
 theme_xhred_filemanager_context_search=Αναζήτηση
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Αποεπιλογή όλων
 theme_xhred_filemanager_context_upload=Μεταφόρτωση στον τρέχοντα κατάλογο
 theme_xhred_filemanager_context_download=Λήψη από απομακρυσμένη διεύθυνση URL
 
+#17.53
 theme_config_virtualmin=Virtualmin Virtual Servers
 theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Επιλογές ενοτήτων τρίτων
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=Σελιδοδείκτες
 theme_xhred_filemanager_context_bookmark_current=Ο σελιδοδείκτης άνοιξε αυτήν τη στιγμή
 theme_xhred_filemanager_context_transfer=ΜΕΤΑΦΟΡΑ
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Στόχος συνδέσμου
 
+#17.60
 right_unlimited=Απεριόριστος
 settings_leftmenu_width=Προτιμώμενο πλάτος
 settings_leftmenu_width_description=Προεπιλεγμένη/τρέχον πλάτος <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Η εμφάνιση των διακοπτών αντιστράφηκε
 settings_switch_rdisplay_description=Αυτή η επιλογή σας επιτρέπει να ορίσετε διαφορετική σειρά για διακόπτες πάνω-αριστερά. Μετά την αλλαγή αυτής της επιλογής, απαιτείται πλήρης επαναφόρτωση σελίδας
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Υπολογίστε το επιλεγμένο μέγεθος
 theme_xhred_filemanager_selected_entries=Επιλεγμένα: %value αντικείμενα
 theme_xhred_filemanager_manual_path=Εισαγάγετε τη διαδρομή χειροκίνητα
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Φόρτωση
 theme_xhred_datatable_sprocessing=Επεξεργασία. ..
 theme_xhred_datatable_szerorecords=Δεν βρέθηκαν αντίστοιχες εγγραφές
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Το αρχείο έχει επεξεργαστεί αλλά δεν έχει αποθηκευτεί.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Τι θέλετε να κάνετε;
 theme_xhred_global_save=Σώσει
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Κλείσιμο χωρίς αποθήκ
 theme_xhred_global_continue_editing=Συνεχίστε την επεξεργασία
 theme_xhred_filemanager_context_download_file=Κατεβάστε
 
+#17.65
 settings_sysinfo_easypie_charts_width=Πλάτος γραφημάτων
 settings_sysinfo_easypie_charts_scale=Μήκος κλίμακας γραφημάτων
 
+#17.80
 right_return_theme_options=επιλογές θέματος
 theme_xhred_datatable_semptydirectory=Ο κατάλογος είναι άδειος
 theme_xhred_filemanager_context_clipboard=Αντιγραφή διαδρομής στο πρόχειρο
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=Απόκρυψη στήλης ενεργε�
 theme_xhred_filemanager_hovered_toolbar=Ενεργοποιήστε το αναπτυσσόμενο μενού στη γραμμή εργαλείων στο ποντίκι
 theme_xhred_filemanager_context_delete_selected=Διαγραφή επιλεγμένων
 
+#17.83
 theme_xhred_database_adding_new_row=Προσθήκη νέας σειράς
 theme_xhred_database_editing_row=Επεξεργασία επιλεγμένης σειράς
 theme_xhred_database_editing_rows=Επεξεργασία επιλεγμένων σειρών
 theme_xhred_database_adding_new_row_data=Ορισμός δεδομένων
 
+#17.84
 theme_xhred_datatable_filter=Φίλτρο
 
 theme_xhred_global_update=Εκσυγχρονίζω
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Ειδοποίηση
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=Αρχείο
 theme_xhred_global_directory=Ευρετήριο
 theme_xhred_global_no_target=Ο στόχος δεν υπάρχει ή δεν είναι προσβάσιμος
@@ -489,19 +502,24 @@ theme_xhred_module_help=Βοήθεια ενότητας
 
 theme_xhred_server_process_running=Η διαδικασία διακομιστή συνεχίζεται !? Είστε βέβαιοι ότι θέλετε να πλοηγηθείτε μακριά και δεν έχετε πρόσβαση σε πληροφορίες εξόδου; Ακόμα κι αν φύγετε τώρα, η διαδικασία δεν θα τερματιστεί.
 
+#18.03
 settings_global_options_title=Παγκόσμιες επιλογές
 settings_global_passgen_format=Δημιουργία κωδικού πρόσβασης
 settings_global_passgen_format_description=Ορίστε το μήκος και τον τύπο χαρακτήρα που χρησιμοποιείται στον δημιουργημένο κωδικό πρόσβασης. Η προεπιλεγμένη τιμή ισούται με <code>15|az,AZ,0-9</code>, που αντιπροσωπεύει κωδικό πρόσβασης με μήκος 15 χαρακτήρων, που περιέχει κεφαλαία και πεζά γράμματα και αριθμούς. Είναι επίσης δυνατό να προσθέσετε ειδικούς χαρακτήρες χρησιμοποιώντας το σύμβολο <code>#</code> hash
 theme_xhred_password_generator_new=Δημιουργία νέου κωδικού πρόσβασης <br> (Στο Πρόχειρο)
 theme_xhred_password_generator_new_success=Ο κωδικός %password δημιουργήθηκε αντιγράφηκε με επιτυχία στο πρόχειρο.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Αυτό το αρχείο πρέπει να τελειώνει με `1;` να δουλέψω με επιτυχία.
 
+#18.10
 theme_error_access_not_root=Δεν επιτρέπεται η πρόσβαση: Ο χρήστης χρειάζεται πρόσβαση στην ενότητα <em>Διαμόρφωση Webmin</em> για να επεξεργαστεί τη διαμόρφωση θέματος
 
+#18.20
 settings_hide_top_loader=Απόκρυψη κορυφαίας γραμμής προόδου
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Εμφάνιση συμβολικών εικονιδίων στο αναπτυσσόμενο μενού στο Virtualmin/Cloudmin
 theme_xhred_global_shipped=Εστάλη
 theme_xhred_global_available=Διαθέσιμος
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=Το περιβάλλον ασφα�
 
 theme_xhred_global_no_results_found=Δεν βρέθηκαν αποτελέσματα
 
+#18.40
 theme_new_password_header=Ορίστε νέο κωδικό πρόσβασης για τον χρήστη
 login_reset=ΕΠΑΝΑΚΤΗΣΗ ΚΩΔΙΚΟΥ
 theme_xhred_move_top=Μετακίνηση στην κορυφή
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Αλλαγή χρήστη
 theme_tooltip_logout=Αποσύνδεση
 theme_tooltip_edit_user=Επεξεργασία χρήστη
 
+#18.45
 settings_sysinfo_easypie_charts_size=Διάμετρος γραφημάτων
 theme_xhred_global_choose=Επιλέγω
 theme_xhred_global_select=Επιλέγω
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Ενημερώσεις λογισ
 theme_xhred_git_compare_changes=Συγκρίνετε τις αλλαγές
 theme_xhred_filemanager_link_to_clipboard=Το όνομα του συμβολικού συνδέσμου αντιγράφηκε στο πρόχειρο.
 
+#18.46
 theme_left_mail_prefs=Προτιμήσεις αλληλογραφίας
 theme_left_mail_change_password=Άλλαξε κωδικό
 theme_left_mail_account_functions=Λειτουργίες λογαριασμού
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Διαμόρφωση μονάδας
 theme_xhred_global_return=ΕΠΙΣΤΡΟΦΗ
 theme_xhred_global_return_to_module_index=Επιστροφή στο ευρετήριο λειτουργικών μονάδων
 
+#18.47
 theme_xhred_global_complete_changelog=Πλήρης αλλαγή
 theme_xhred_global_beta_version=Δοκιμαστική έκδοση
 theme_xhred_global_release=Ελευθέρωση
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Κυκλοφόρησε στις
 theme_xhred_global_committed_on=Δέσμευση στις
 theme_xhred_global_resolved_issues=Επιλύθηκαν ζητήματα στις εκδόσεις %value
 
+#18.48
 theme_force_upgrade=Αναγκαστική ενημέρωση θέματος
 theme_xhred_force_upgrade_beta=Εγκατάσταση της τελευταίας έκδοσης ανάπτυξης (beta)
 theme_xhred_force_upgrade_stable=Εγκατάσταση της τελευταίας έκδοσης έκδοσης (σταθερή)
@@ -607,6 +630,7 @@ theme_update_footer=Παρακαλούμε αναφέρετε σφάλματα �
 theme_xhred_encoding_manually_set=Μη αυτόματη ρύθμιση κωδικοποίησης
 theme_xhred_filemanager_save_to_change_encoding=Το αρχείο πρέπει να αποθηκευτεί, προκειμένου να είναι δυνατή η αλλαγή της κωδικοποίησης.
 
+#18.49
 theme_xhred_filemanager_user_switch=Εναλλαγή σε χρήστη (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Επιλέγοντας το όνομα χρήστη που αναφέρεται παρακάτω, θα αλλάξετε περαιτέρω ενέργειες που θα εκτελεστούν ως αυτός ο χρήστης.
 theme_xhred_filemanager_user_switch_description_back=Για να επιστρέψετε στην προεπιλεγμένη λειτουργία, επιλέξτε την πρώτη επιλογή στο select.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=Αυξάνω στον ανώτατο βαθμό
 theme_xhred_global_normalize=Ομαλύνω
 theme_xhred_global_set_encoding=Ορισμός κωδικοποίησης
 
+#19.00
 theme_xhred_sysinfo_update_start=Οι πληροφορίες συστήματος ανακαλούνται.
 theme_xhred_sysinfo_update_end=Οι πληροφορίες συστήματος ανακλήθηκαν επιτυχώς.
 theme_xhred_sysinfo_update_failed=Δεν είναι δυνατή η ανάκληση των πληροφοριών συστήματος. Προσπαθήστε ξανά αργότερα.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=Δευτερόλεπτα
 theme_xhred_global_minute=Λεπτό
 theme_xhred_global_minutes=Λεπτά
 
+#19.01
 theme_xhred_browser_warning=Για να έχετε την καλύτερη εμπειρία με τον πίνακα διακομιστών στον υπολογιστή σας, χρησιμοποιήστε ένα υποστηριζόμενο, ενημερωμένο πρόγραμμα περιήγησης. <br><br> <em>Internet Explorer</em> δεν υποστηρίζεται πλέον. <br><br> Τα προτεινόμενα προγράμματα περιήγησης είναι τα <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> ή <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Θα μπορούσατε να κατεβάσετε τη φορητή έκδοση ενός προγράμματος περιήγησης, που δεν απαιτεί εγκατάσταση, για να παρακάμψετε τους επιβαλλόμενους περιορισμούς.</div>
 
+#19.02
 theme_xhred_filter_content=Φιλτράρισμα περιεχομένου
 theme_xhred_log_file_empty=Το αρχείο καταγραφής είναι κενό
 
+#19.03
 theme_xhred_config_configurable_options=Διαμορφώσιμες επιλογές
 theme_xhred_filter_content_no_matches_query=Κανένα περιεχόμενο δεν αντιστοιχεί %str ερώτημα %str
 theme_xhred_toggle_accordions=Εναλλαγή ορατότητας ακορντεόν
@@ -668,17 +696,20 @@ theme_xhred_signing_success=Συνδεθήκατε με επιτυχία!
 theme_xhred_session_failed_password=Λάθος κωδικός πρόσβασης, δοκιμάστε ξανά.
 theme_xhred_global_reauthenticate=Επαληθεύστε ξανά τον έλεγχο ταυτότητας
 
+#19.04
 settings_sysinfo_real_time_status=Ενεργοποίηση παρακολούθησης σε πραγματικό χρόνο
 settings_sysinfo_real_time_timeout=Διάστημα για την εκτέλεση της ενημέρωσης
 settings_sysinfo_real_time_timeout_description=Ορίστε το επιθυμητό διάστημα για την ενημέρωση των οθονών στο παρασκήνιο. Η τιμή σήμαινε ότι είναι σε χιλιοστά του δευτερολέπτου. Διατηρήστε αυτήν την τιμή όσο το δυνατόν χαμηλότερη για να αποφύγετε την απώλεια βραχυπρόθεσμων δεδομένων
 theme_xhred_global_redirecting=Ανακατεύθυνση
 
+#19.05
 body_no_javascript_title=Το JavaScript είναι απενεργοποιημένο
 body_no_javascript_message=Ενεργοποιήστε τη javascript και ανανεώστε τη σελίδα
 theme_xhred_connection_lost=Η σύνδεση χάθηκε
 theme_xhred_connection_success=Η σύνδεση ήταν επιτυχής
 theme_xhred_connection_success_details=Η σύνδεση με τον διακομιστή αποκαταστάθηκε.
 
+#19.08
 theme_xhred_return_home=Επιστροφή στο ευρετήριο του πίνακα
 theme_xhred_global_upload=Μεταφόρτωση
 theme_xhred_global_select_files=Επιλογή αρχείων
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=επιλεγμένα αρχεία
 theme_xhred_global_reset=Επαναφορά
 theme_xhred_upload_initial_info=Μεταφέρετε και αποθέστε αρχεία εδώ ή κάντε κλικ για να επιλέξετε
 
+#19.09
 theme_xhred_global_empty=Αδειάζω
 theme_xhred_global_click_here=Κάντε κλικ ΕΔΩ
 theme_git_patch_incompatible_message=Η εγκατάσταση αυτής της έκδοσης $1 <em>$2</em> απαιτεί την πιο πρόσφατη και/ή πιθανώς μη κυκλοφορούμενη έκδοση $3 και $5 για να λειτουργήσει σωστά.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=Η εγκατάσταση αυτής τη
 theme_git_patch_incompatible_message_desc=Ενδέχεται να υπάρχουν ασυμβίβαστες αλλαγές, που θα μπορούσαν να εμποδίσουν το θέμα να λειτουργεί όπως έχει σχεδιαστεί. Για να παρακάμψετε αυτήν την προειδοποίηση και να εγκαταστήσετε με δύναμη το θέμα ούτως ή άλλως $1 ή να αναβαθμίσετε $2 στην τελευταία έκδοση ανάπτυξης πρώτα χρησιμοποιώντας την κονσόλα, εκτελώντας το σενάριο <kbd>update-from-repo.sh</kbd> από τον κατάλογό του.
 theme_xhred_global_outdated=Αυτή η έκδοση είναι παλιά
 
+#19.10
 theme_xhred_filemanager_edit_html=Επεξεργασία ως HTML
 theme_xhred_global_example=Παράδειγμα
 theme_xhred_global_output_example=Παράδειγμα παραγωγής
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=Απεριόριστος
 theme_xhred_filemanager_tree_exclude_on_first_load=Εξαιρέστε τους μη απαραίτητους καταλόγους από τη διέλευση στο αρχικό φορτίο για προβολή δέντρου (φορτώνει γρηγορότερα)
 theme_xhred_filemanager_tree_expand_search=Αναπτύξτε όλους τους κλάδους που περιέχουν αντιστοιχίες ενώ φιλτράρετε την προβολή δέντρου
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Αναγκάστε να συγχρονίσετε τη συλλογή κατάστασης φόντου
 theme_xhred_tooltip_side_slider_go_to_dashboard=Μεταβείτε στον πίνακα ελέγχου
 theme_xhred_tooltip_side_slider_open_favorites_control=Άνοιγμα ελέγχου αγαπημένων
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=Εμφάνιση εναλλαγής καρφι
 settings_side_slider_fixed_toggle_description=Αυτή η επιλογή θα εμφανίσει την εναλλαγή, στο πλευρικό ρυθμιστικό, στην κάτω σειρά, επιτρέποντας την εναλλαγή της ορατότητάς της εν κινήσει, εάν πληρούνται οι προϋποθέσεις στην προηγούμενη επιλογή.
 settings_right_page_hide_persistent_vscroll=Απόκρυψη μόνιμης κατακόρυφης γραμμής κύλισης
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Εγκαταστήστε επίσης ενημερώσεις θέματος για το Usermin
 theme_xhred_global_installed_version=Εγκατεστημένη έκδοση
 theme_xhred_global_installed_and_latest_version=Εγκατεστημένη και τελευταία έκδοση
@@ -750,12 +785,14 @@ settings_contrast_mode=Ενεργοποίηση λειτουργίας υψηλ�
 theme_xhred_global_firewall=Τείχος προστασίας
 theme_xhred_settings_show_webmin_tab=Εμφάνιση διακόπτη Webmin στο μενού πλοήγησης;
 
+#19.14
 settings_enable_container_offset=Ενεργοποίηση μετατόπισης κοντέινερ
 settings_enable_container_offset_description=Αυτή η επιλογή θα λειτουργεί μόνο σε οθόνες με ελάχιστη ανάλυση 1920 οριζόντια pixel
 theme_xhred_filemanager_preparing_download=Προετοιμασία λήψης. Αρχειοθέτηση %number αρχείων. Περιμένετε %dots
 theme_xhred_filemanager_prepared_download=Η λήψη είναι έτοιμη. Αρχειοθετημένα %number αρχείων.
 theme_xhred_filemanager_canceled_download=Η λήψη ακυρώθηκε.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Αναγκαστική εντολή <code>tar</code>, ακόμα και αν είναι διαθέσιμο <code>zip</code>, κατά τη λήψη ως αρχείο
 theme_xhred_nice_size_PB=ΡΒ
 theme_xhred_nice_size_TB=Φυματίωση
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=Ενεργοποίηση για δίσκ�
 settings_sysinfo_real_time_status_disk_description=Μπορεί να είναι χρήσιμο να απενεργοποιήσετε την παρακολούθηση σε πραγματικό χρόνο για δίσκους σε αργά/μεγάλα συστήματα αρχείων
 theme_xhred_title_locale_non_ui_config=Μορφή ημερομηνίας δημιουργίας διακομιστή
 
+#19.20
 extensions_mail_current_position=Μηνύματα $1-$2 από $3
 extensions_mail_sort_by_sender=Ταξινόμηση κατά αποστολέα
 extensions_mail_sort_by_recipient=Ταξινόμηση κατά παραλήπτη
@@ -909,12 +947,14 @@ settings_cache_interval_1y=μια φορά το χρόνο
 
 theme_xhred_reload_notification=Η διαμόρφωση θέματος έχει αλλάξει αλλά δεν έχει αποθηκευτεί. Η σελίδα θα φορτωθεί ξανά, για επαναφορά στις τρέχουσες ρυθμίσεις.
 
+#19.22
 theme_xhred_global_save_as=Αποθήκευση ως
 theme_xhred_editor_save_file_as=Αποθήκευση αρχείου ως
 theme_xhred_global_configuration=Διαμόρφωση
 
 body_used_cached_total=Σύνολο $1 / $3 προσωρινά αποθηκευμένα / $2 χρησιμοποιημένα
 
+#19.30
 theme_xhred_favorites_add=Προσθήκη στα αγαπημένα
 theme_xhred_favorites_remove=Κατάργηση από τα αγαπημένα
 theme_xhred_select_deselect=Επιλέξτε/αποεπιλέξτε το τρέχον στοιχείο
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=Ορισμός σύνταξης
 theme_xhred_global_menu=Μενού
 theme_xhred_shell_aborted=Η λειτουργία ακυρώθηκε
 
+#19.32
 theme_xhred_connection_reboot=Επανεκκίνηση
 theme_xhred_connection_reboot_details=Γίνεται επανεκκίνηση του διακομιστή. Παρακαλώ περιμένετε ..
 settings_leftmenu_custom_links_description=Είναι δυνατή η έγχυση προσαρμοσμένων, επιπλέον συνδέσμων στο μενού πλοήγησης. <br><br> Απαιτούνται τα πλήκτρα <em>title</em>, <em>link</em> και <em></em>. προαιρετικά, μπορείτε να ορίσετε σε ποια λειτουργία σύνδεσης θα εμφανίζεται ένας σύνδεσμος, καθορίζοντας <em>επίπεδο</em> κλειδί, με τιμές, σε λίστα διαχωρισμένη με κόμμα, που περιέχει: <br><br> <em>0</ em > - σύνδεση διαχειριστή <br><em> 1 </em>- σύνδεση μεταπωλητή;<br> <em>2</em> - είσοδος κατόχου διακομιστή; <br><em> 3 </em>- σύνδεση χρήστη;<br> <em>4</em> - είσοδος κατόχου συστήματος. <br><br> Θα σας ζητήσει να περάσετε έγκυρο αντικείμενο JSON ως συμβολοσειρά, όπως στο παρακάτω παράδειγμα. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " φάκελος "," port ":" 20000 "," target ":" _blank "}]} </pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=εκδοχή
 theme_xhred_notify_patching_module_style=Εφαρμογή αρχικής ενημερωμένης έκδοσης κώδικα για $1 και επαναφόρτωση.
 theme_xhred_global_error_more_details_online=Σημείωση: Διαβάστε περισσότερα σχετικά με αυτό το σφάλμα και πώς να το επιλύσετε, στη σελίδα %1 %1wiki %1 διαδίκτυο.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Μάσκα αρχείων
 theme_xhred_filemanager_search_regex=Κοινή έκφραση
 theme_xhred_upload_successful=<span>$1 αρχεία</span> μεταφορτώθηκαν με επιτυχία στον κατάλογο $2
 theme_xhred_upload_successful_single=<span>$1 αρχείο</span> μεταφορτώθηκε με επιτυχία στον κατάλογο $2
 settings_usermin_default_module=Προεπιλεγμένη ενότητα
 
+#19.34
 theme_xhred_search_in_file_open_external=Αποσύνδεση αρχείου σε ξεχωριστό πρόγραμμα επεξεργασίας
 theme_xhred_path_to_console=Ανοίξτε την τρέχουσα διαδρομή στο τερματικό <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Επαναφορά αρχείου
 theme_xhred_filemanager_editor_reverting_content=Αποβολή αλλαγών και επαναφορά στο αρχικό περιεχόμενο του αρχείου.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Εξαίρεση καταχωρήσεων
 theme_xhred_filemanager_exclude_dirs_desc=Διαχωρισμένη με ερωτηματικά λίστα αρχείων ή υποκαταλόγων προς εξαίρεση
 
+#19.38
 theme_global_access_level=Επίπεδο πρόσβασης
 theme_global_user_mode=Λειτουργία χρήστη
 
+#19.40
 theme_xhred_global_attachments=Συνημμένα
 theme_xhred_editor_tb_font=Γραμματοσειρά
 theme_xhred_editor_tb_size=Μέγεθος
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Μέγιστος αριθμός σειρών για την προετοιμασία ταξινόμησης και αναζήτησης πίνακα
 theme_xhred_global_rows=Σειρές
 
+#19.42
 settings_side_slider_blend=Κληρονομώ
 
+#19.43
 settings_theme_make_date=Ενεργοποίηση μετατροπής ημερομηνίας/ώρας στο πρόγραμμα περιήγησης
 settings_theme_make_date_description=Εάν απενεργοποιηθεί, θα χρησιμοποιηθεί η μορφή ημερομηνίας/ώρας που παρέχεται από τον διακομιστή
 
+#19.44
 theme_xhred_reload_lang_notification=Η γλώσσα θέματος έχει αλλάξει. Η σελίδα θα φορτωθεί ξανά, για να εφαρμοστούν νέες ρυθμίσεις.
 
+#19.46
 theme_xhred_global_small=Μικρό
 theme_xhred_global_normal=Κανονικός
 theme_xhred_global_medium=Μεσαίο
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=Τεράστιος
 theme_xhred_filemanager_editor_maximized=Μεγιστοποιήστε τον πίνακα επεξεργασίας κατά την έναρξη
 settings_sysinfo_remember_accordions=Αποθηκεύστε την κατάσταση ακορντεόν που χρησιμοποιήθηκε την τελευταία φορά
 
+#19.47
 theme_xhred_textarea_to_clipboard=Το επιλεγμένο περιεχόμενο κειμένου αντιγράφηκε επιτυχώς στο πρόχειρο
 
+#19.48
 theme_xhred_global_alias=Ψευδώνυμο
 
+#19.50
 theme_xhred_mail_composer_real_name=Το πραγματικό του όνομα
 theme_xhred_mail_composer_username=όνομα χρήστη
 
+#19.53
 settings_global_palette_unauthenticated=Παλέτα χρωμάτων σελίδας σύνδεσης
 
+#19.60
 settings_config_save_and_next=Αποθήκευση και Επόμενο
 settings_config_configuration_category=Κατηγορία διαμόρφωσης
 config_search_options_all=Αναζήτηση σε όλες τις επιλογές διαμόρφωσης λειτουργικής μονάδας
 theme_xhred_editing_config_file=Επεξεργασία αρχείου config
 
+#19.61
 theme_xhred_login_message_2fa=Ο έλεγχος ταυτότητας δύο παραγόντων έχει ενεργοποιηθεί για να συνδεθεί αυτός ο χρήστης
 theme_xhred_global_verify=Επαληθεύω
 settings_show_terminal_link2=Εμφάνιση κουμπιού κελύφους εντολών
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=Hotkey για το κέλυφος εντολών
 theme_xhred_path_to_console2=Ανοίξτε την τρέχουσα διαδρομή στο κέλυφος εντολών <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Κέλυφος εντολών
 
+#19.70
 theme_xhred_filemanager_context_view=Θέα
 theme_xhred_file_viewer=Πρόγραμμα προβολής αρχείων
 theme_xhred_global_done=Εγινε.

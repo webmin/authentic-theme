@@ -174,4 +174,5 @@ settings_right_default_tab_usermin=Výchozí záložka po přihlášení do User
 settings_right_virtualmin_default=Výchozí stránka Virtualminu
 settings_right_cloudmin_default=Výchozí stránka Cloudminu
 
+#18.40
 login_reset=Reset

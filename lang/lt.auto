@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=Panašu, kad „ <strong>Confi
 
 theme_xhred_notifications_firewall_warning=Įspėjimas apie ugniasienę
 
+#17.50
 settings_grayscale_level_navigation=Pilkos spalvos filtras
 settings_grayscale_level_navigation_description=Numatytosios/srovės vertės <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepijos filtras
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=Įklijuokite
 theme_xhred_filemanager_context_chmod=Pakeisti leidimus
 theme_xhred_filemanager_context_chown=Pakeiskite nuosavybės teises
 
+#17.51
 theme_xhred_filemanager_context_new=Nauja
 theme_xhred_filemanager_context_newarchive=Sukurkite naują archyvą
 theme_xhred_filemanager_context_delete=Ištrinti
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Atidaryti prekės vietą
 theme_xhred_filemanager_context_properties=Savybės
 theme_xhred_filemanager_context_search=Paieška
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Atzymeti visus pasirinkimus
 theme_xhred_filemanager_context_upload=Įkelkite į dabartinį katalogą
 theme_xhred_filemanager_context_download=Atsisiųsti iš nuotolinio URL
 
+#17.53
 theme_config_virtualmin=„Virtualmin“ virtualūs serveriai
 theme_config_cloudmin=„Cloudmin“ valdomos sistemos
 settings_right_thirdparties_options_title=Trečiųjų šalių modulių parinktys
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=Žymos
 theme_xhred_filemanager_context_bookmark_current=Žymelė šiuo metu atidarytas kelias
 theme_xhred_filemanager_context_transfer=Perkėlimas
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Susieti tikslą
 
+#17.60
 right_unlimited=Neribota
 settings_leftmenu_width=Pageidautinas plotis
 settings_leftmenu_width_description=Default/srovės plotis <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Rodyti jungiklius atvirkščiai
 settings_switch_rdisplay_description=Ši parinktis leidžia nustatyti skirtingą jungiklių, esančių viršutinėje kairėje, tvarką. Pakeitus šią parinktį, reikia visiškai iš naujo įkelti puslapį
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Apskaičiuokite pasirinktą dydį
 theme_xhred_filemanager_selected_entries=Pasirinkta: %value elementų
 theme_xhred_filemanager_manual_path=Įveskite kelią rankiniu būdu
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Pakrovimas
 theme_xhred_datatable_sprocessing=Apdorojimas. ..
 theme_xhred_datatable_szerorecords=Nerasta atitinkančių įrašų
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Failas buvo suredaguotas, bet neišsaugotas.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Ką tu nori padaryti?
 theme_xhred_global_save=Sutaupyti
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Uždarykite neišsaugodami
 theme_xhred_global_continue_editing=Tęskite redagavimą
 theme_xhred_filemanager_context_download_file=parsisiųsti
 
+#17.65
 settings_sysinfo_easypie_charts_width=Diagramų plotis
 settings_sysinfo_easypie_charts_scale=Diagramų mastelio ilgis
 
+#17.80
 right_return_theme_options=temos parinktys
 theme_xhred_datatable_semptydirectory=Katalogas tuščias
 theme_xhred_filemanager_context_clipboard=Kopijuoti kelią į mainų sritį
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=Slėpti veiksmų stulpelį
 theme_xhred_filemanager_hovered_toolbar=Aktyvinkite pelės žymeklio įrankių juostos išskleidžiamąjį meniu
 theme_xhred_filemanager_context_delete_selected=Išštrinti pasirinktus
 
+#17.83
 theme_xhred_database_adding_new_row=Pridedama nauja eilutė
 theme_xhred_database_editing_row=Redaguojama pasirinkta eilutė
 theme_xhred_database_editing_rows=Redaguoti pasirinktas eiles
 theme_xhred_database_adding_new_row_data=Nustatykite duomenis
 
+#17.84
 theme_xhred_datatable_filter=Filtras
 
 theme_xhred_global_update=Atnaujinti
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Pastebėti
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=Byla
 theme_xhred_global_directory=Katalogas
 theme_xhred_global_no_target=Tikslas neegzistuoja arba jo negalima pasiekti
@@ -489,19 +502,24 @@ theme_xhred_module_help=Modulio pagalba
 
 theme_xhred_server_process_running=Serverio procesas vis dar vykdomas !? Ar tikrai norite pasitraukti ir neturite prieigos prie išvesties informacijos? Net jei paliksite dabar, procesas nebus nutrauktas.
 
+#18.03
 settings_global_options_title=Visuotinės galimybės
 settings_global_passgen_format=Slaptažodžio generatorius
 settings_global_passgen_format_description=Nustatykite sukurto slaptažodžio ilgį ir simbolio tipą. Numatytoji reikšmė lygi <code>15|az,AZ,0-9</code>, tai yra slaptažodis, kurio ilgis yra 15 simbolių, kuriame yra didžiosios ir mažosios raidės ir skaičiai. Taip pat galima pridėti specialiųjų simbolių naudojant <code>#</code> maišos ženklą
 theme_xhred_password_generator_new=Sukurti naują slaptažodį <br> (į mainų sritį)
 theme_xhred_password_generator_new_success=Generuotas slaptažodis %password sėkmingai nukopijuotas į mainų sritį.
 
+#18.08
 theme_fileformat_perl=Perlas
 theme_fileformat_perl_placeholder=Šis failas turi baigtis `1;` sėkmingai dirbti.
 
+#18.10
 theme_error_access_not_root=Prieiga atmesta: norint redaguoti temos konfigūraciją, vartotojui reikia prieigos prie <em>„Webmin Configuration</em>“ modulio
 
+#18.20
 settings_hide_top_loader=Slėpti viršutinę progreso juostą
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Rodyti simbolines piktogramas išskleidžiamajame meniu „Virtualmin“/„Cloudmin“
 theme_xhred_global_shipped=Išsiųsta
 theme_xhred_global_available=Yra
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=Saugumo kontekstas buvo sėkmingai 
 
 theme_xhred_global_no_results_found=Nieko nerasta
 
+#18.40
 theme_new_password_header=Nustatykite naują slaptažodį vartotojui
 login_reset=Slaptažodžio grąžinimas
 theme_xhred_move_top=Perkelti į viršų
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Pakeisti vartotoją
 theme_tooltip_logout=Atsijungti
 theme_tooltip_edit_user=Redaguoti vartotoją
 
+#18.45
 settings_sysinfo_easypie_charts_size=Diagramų skersmuo
 theme_xhred_global_choose=Pasirinkite
 theme_xhred_global_select=Pasirinkite
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Programinės įrangos atnaujinima
 theme_xhred_git_compare_changes=Palyginkite pokyčius
 theme_xhred_filemanager_link_to_clipboard=Simbolinio saito vardas nukopijuotas į mainų sritį.
 
+#18.46
 theme_left_mail_prefs=Pašto nuostatos
 theme_left_mail_change_password=Pakeisti slaptažodį
 theme_left_mail_account_functions=Sąskaitos funkcijos
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Modulio konfigūracija
 theme_xhred_global_return=Grįžti
 theme_xhred_global_return_to_module_index=Grįžti į modulio rodyklę
 
+#18.47
 theme_xhred_global_complete_changelog=Pilnas pakeitimų žurnalas
 theme_xhred_global_beta_version=Beta versija
 theme_xhred_global_release=Atleiskite
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Paleistas
 theme_xhred_global_committed_on=Įsipareigojo
 theme_xhred_global_resolved_issues=Išspręstos problemos %value leidimais
 
+#18.48
 theme_force_upgrade=Priverstinai atnaujinti temą
 theme_xhred_force_upgrade_beta=Įdiekite naujausią kūrimo versiją (beta)
 theme_xhred_force_upgrade_stable=Įdiekite naujausią išleidimo versiją (stabili)
@@ -607,6 +630,7 @@ theme_update_footer=Prašome maloniai pranešti apie klaidas $1 saugykloje. Nor�
 theme_xhred_encoding_manually_set=Rankiniu būdu nustatykite kodavimą
 theme_xhred_filemanager_save_to_change_encoding=Failas turi būti išsaugotas, kad būtų galima pakeisti kodavimą.
 
+#18.49
 theme_xhred_filemanager_user_switch=Perjungti į vartotoją (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Pasirinkę žemiau pateiktą vartotojo vardą, pakeisite kitas operacijas, kurias turėsite atlikti kaip šis vartotojas.
 theme_xhred_filemanager_user_switch_description_back=Norėdami grįžti į numatytąjį režimą, pasirinkite pirmąją pasirinktį.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=Padidinti
 theme_xhred_global_normalize=Normalizuoti
 theme_xhred_global_set_encoding=Nustatyti kodavimą
 
+#19.00
 theme_xhred_sysinfo_update_start=Prisimenama sistemos informacija.
 theme_xhred_sysinfo_update_end=Sistemos informacija buvo sėkmingai prisiminta.
 theme_xhred_sysinfo_update_failed=Sistemos informacijos atsiminti negalima. Pabandyti dar kartą vėliau.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=Sekundės
 theme_xhred_global_minute=Minutė
 theme_xhred_global_minutes=Minutės
 
+#19.01
 theme_xhred_browser_warning=Norėdami gauti geriausios patirties naudodamiesi savo kompiuterio serverio skydeliu, naudokite palaikomą, naujausią naršyklę. <br><br> <em>Internet Explorer</em> nebepalaikoma. <br><br> Rekomenduojamos naršyklės yra „ <em>Chrome</em>, „ <em>Firefox</em>, „ <em>Opera</em> arba „ <em>Safari</em>, „ <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Norėdami apeiti nustatytus apribojimus, galite atsisiųsti nešiojamą naršyklės versiją, kuriai nereikia diegti.</div>
 
+#19.02
 theme_xhred_filter_content=Filtruoti turinį
 theme_xhred_log_file_empty=Žurnalo failas tuščias
 
+#19.03
 theme_xhred_config_configurable_options=Konfigūruojamos parinktys
 theme_xhred_filter_content_no_matches_query=Nei vienas turinys %str užklausos %str
 theme_xhred_toggle_accordions=Perjungti akordeono matomumą
@@ -668,17 +696,20 @@ theme_xhred_signing_success=Sėkmingai prisijungėte!
 theme_xhred_session_failed_password=Neteisingas slaptažodis, bandykite dar kartą.
 theme_xhred_global_reauthenticate=Iš naujo patvirtinkite
 
+#19.04
 settings_sysinfo_real_time_status=Įgalinti stebėjimą realiuoju laiku
 settings_sysinfo_real_time_timeout=Intervalas atnaujinimui atlikti
 settings_sysinfo_real_time_timeout_description=Nustatykite norimą intervalą monitorių atnaujinimui fone. Reikšmė turėjo būti milisekundžių. Laikykite šią vertę kuo mažesnę, kad neprarastumėte trumpalaikių duomenų
 theme_xhred_global_redirecting=Peradresavimas
 
+#19.05
 body_no_javascript_title=„JavaScript“ neleidžiama
 body_no_javascript_message=Įgalinkite „JavaScript“ ir atnaujinkite puslapį
 theme_xhred_connection_lost=Nutrūko ryšys
 theme_xhred_connection_success=Ryšys pavyko
 theme_xhred_connection_success_details=Ryšys su serveriu buvo atkurtas.
 
+#19.08
 theme_xhred_return_home=Grįžti į skydelio rodyklę
 theme_xhred_global_upload=Įkelti
 theme_xhred_global_select_files=Pasirinkite failą (-us)
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=failai pasirinkti
 theme_xhred_global_reset=Atstatyti
 theme_xhred_upload_initial_info=Nuvilkite failus čia arba spustelėkite, kad pasirinktumėte
 
+#19.09
 theme_xhred_global_empty=Tuščia
 theme_xhred_global_click_here=paspauskite čia
 theme_git_patch_incompatible_message=Norint įdiegti šią $1 <em>$2</em> versiją reikia tinkamos naujausios ir (arba) galbūt neišleistos $3 ir $5 versijos.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=Norint įdiegti šią $1 <em>$2</em> vers
 theme_git_patch_incompatible_message_desc=Gali būti nesuderinamų pakeitimų, dėl kurių tema gali nebeveikti taip, kaip numatyta. Norėdami apeiti šį įspėjimą ir vis tiek priversti įdiegti temą $1, arba pirmiausia atnaujinkite $2 į naujausią kūrimo versiją naudodami konsolę, paleisdami „ <kbd>update-from-repo.sh</kbd> scenarijų iš savo katalogo.
 theme_xhred_global_outdated=Ši versija pasenusi
 
+#19.10
 theme_xhred_filemanager_edit_html=Redaguoti kaip HTML
 theme_xhred_global_example=Pavyzdys
 theme_xhred_global_output_example=Išvesties pavyzdys
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=Neribota
 theme_xhred_filemanager_tree_exclude_on_first_load=Pašalinkite neesminius katalogus, kad jie galėtų pereiti nuo pradinės medžių peržiūros apkrovos (įkeliama greičiau)
 theme_xhred_filemanager_tree_expand_search=Išskleiskite visas šakas, kuriose yra atitikmenų, filtruodami medžio rodinį
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Priverstinė sinchronizuoti foninės būsenos kolekciją
 theme_xhred_tooltip_side_slider_go_to_dashboard=Pereiti prie prietaisų skydelio
 theme_xhred_tooltip_side_slider_open_favorites_control=Atidaryti parankinių valdymą
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=Rodyti perjungimą kaiščiu/atsegti
 settings_side_slider_fixed_toggle_description=Ši parinktis rodys perjungimą šoniniame slankiklyje, apatinėje eilutėje, leidžiančią perjungti jo matomumą skrendant, jei bus įvykdytos ankstesnės parinkties sąlygos.
 settings_right_page_hide_persistent_vscroll=Slėpti nuolatinę vertikalią slinkties juostą
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Įdiekite „Usermin“ temos atnaujinimus
 theme_xhred_global_installed_version=Įdiegta versija
 theme_xhred_global_installed_and_latest_version=Įdiegta ir naujausia versija
@@ -750,12 +785,14 @@ settings_contrast_mode=Įgalinti didelio kontrasto režimą
 theme_xhred_global_firewall=Užkarda
 theme_xhred_settings_show_webmin_tab=Rodyti naršyklės meniu „Webmin“ jungiklį?
 
+#19.14
 settings_enable_container_offset=Įgalinti konteinerio poslinkį
 settings_enable_container_offset_description=Ši parinktis veiks tik ekranuose, kurių mažiausia skiriamoji geba yra 1920 horizontaliųjų pikselių
 theme_xhred_filemanager_preparing_download=Pasiruošimas atsisiųsti. Archyvuojamas %number failas (-ai). Palaukite %dots
 theme_xhred_filemanager_prepared_download=Atsisiuntimas yra paruoštas. Archyvuotas failas (-ai) %number.
 theme_xhred_filemanager_canceled_download=Atsisiuntimas atšauktas.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Priverskite komandą <code>tar</code>, net jei galimas <code>zip</code> kodas, kai ją atsisiunčiate kaip archyvą
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=Įgalinti diskus
 settings_sysinfo_real_time_status_disk_description=Gali būti naudinga išjungti lėtų/didelių failų sistemų diskų stebėjimą realiuoju laiku
 theme_xhred_title_locale_non_ui_config=Serverio sukurtas datos formatas
 
+#19.20
 extensions_mail_current_position=Žinutės 1–$2 iš $3
 extensions_mail_sort_by_sender=Rūšiuoti pagal siuntėją
 extensions_mail_sort_by_recipient=Rūšiuoti pagal gavėją
@@ -909,12 +947,14 @@ settings_cache_interval_1y=kartą per metus
 
 theme_xhred_reload_notification=Temos konfigūracija buvo pakeista, bet neišsaugota. Puslapis bus iš naujo įkeltas, kad būtų atkurti dabartiniai nustatymai.
 
+#19.22
 theme_xhred_global_save_as=Išsaugoti kaip
 theme_xhred_editor_save_file_as=Išsaugoti failą kaip
 theme_xhred_global_configuration=Konfigūracija
 
 body_used_cached_total=Iš viso $1 / $3 talpykloje / $2 naudotas
 
+#19.30
 theme_xhred_favorites_add=Įtraukti į adresyną
 theme_xhred_favorites_remove=Pašalinti iš parankinių
 theme_xhred_select_deselect=Pasirinkite/panaikinkite dabartinio elemento pasirinkimą
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=Nustatyti sintaksę
 theme_xhred_global_menu=Meniu
 theme_xhred_shell_aborted=Operacija nutraukta
 
+#19.32
 theme_xhred_connection_reboot=Perkrovimas
 theme_xhred_connection_reboot_details=Serveris perkraunamas. Prašau palauk ..
 settings_leftmenu_custom_links_description=Į naršymo meniu galima įtraukti pasirinktinių, papildomų nuorodų. Reikalingi klavišai <em>title</em>, <em>link</em> ir <em>piktograma</em>; pasirinktinai galite apibrėžti, kuriame prisijungimo režime bus rodoma nuoroda, nurodant <em>lygį</em> klavišą su vertėmis kableliais atskirtame sąraše, kuriame būtų: <br><br> <em>0</em> > - administratoriaus prisijungimas; <br><em> 1 </em>- prisijungimas perpardavėjui;<br> <em>2</em> - prisijungimas prie serverio savininko; <br><em> 3 </em>- vartotojo prisijungimas;<br> <em>4</em> - sistemos savininko prisijungimas. <br><br> Jums reikės perduoti galiojantį JSON objektą kaip eilutę, kaip parodyta žemiau pateiktame pavyzdyje. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": " vokas “,„ prievadas “:„ 20000 “,„ taikinys “:„ _blank “}]} </pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=versija
 theme_xhred_notify_patching_module_style=Pradinio vartotojo sąsajos pataisos pritaikymas $1 ir perkėlimas.
 theme_xhred_global_error_more_details_online=Pastaba: skaitykite daugiau apie šią klaidą ir kaip ją išspręsti mūsų %1wiki puslapyje %1 internete.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Bylos kaukė
 theme_xhred_filemanager_search_regex=Įprasta išraiška
 theme_xhred_upload_successful=<span>$1 failai</span> buvo sėkmingai įkelti į $2 katalogą
 theme_xhred_upload_successful_single=<span>$1 failas</span> sėkmingai įkeltas į $2 katalogą
 settings_usermin_default_module=Numatytasis modulis
 
+#19.34
 theme_xhred_search_in_file_open_external=Atskirkite failą į atskirą redaktorių
 theme_xhred_path_to_console=Atidarykite dabartinį kelią terminale <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Grąžinti failą
 theme_xhred_filemanager_editor_reverting_content=Pakeitimų atsisakymas ir grįžimas į pradinį failo turinį.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Neįtraukti įrašų
 theme_xhred_filemanager_exclude_dirs_desc=Semikolonas atskirtas failų ar pakatalogių sąrašas, kurį norite išskirti
 
+#19.38
 theme_global_access_level=Prieigos lygis
 theme_global_user_mode=Vartotojo režimas
 
+#19.40
 theme_xhred_global_attachments=Priedai
 theme_xhred_editor_tb_font=Šriftas
 theme_xhred_editor_tb_size=Dydis
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Didžiausias eilučių skaičius, kad būtų galima pradėti lentelių rūšiavimą ir paiešką
 theme_xhred_global_rows=Eilutės
 
+#19.42
 settings_side_slider_blend=Paveldėti
 
+#19.43
 settings_theme_make_date=Įgalinti datos/laiko konvertavimą naršyklėje
 settings_theme_make_date_description=Jei neleidžiama, bus naudojamas serverio pateiktas datos/laiko formatas
 
+#19.44
 theme_xhred_reload_lang_notification=Temos kalba buvo pakeista. Puslapis bus perkeltas, kad būtų pritaikyti nauji nustatymai.
 
+#19.46
 theme_xhred_global_small=Mažas
 theme_xhred_global_normal=Normalus
 theme_xhred_global_medium=Vidutinis
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=Didelis
 theme_xhred_filemanager_editor_maximized=Padidinkite redaktoriaus skydą paleidę
 settings_sysinfo_remember_accordions=Įrašykite paskutinį kartą naudotą akordeono būseną
 
+#19.47
 theme_xhred_textarea_to_clipboard=Pasirinktas teksto juostos turinys sėkmingai nukopijuotas į mainų sritį
 
+#19.48
 theme_xhred_global_alias=Pseudonimas
 
+#19.50
 theme_xhred_mail_composer_real_name=Tikras vardas
 theme_xhred_mail_composer_username=Vartotojo vardas
 
+#19.53
 settings_global_palette_unauthenticated=Prisijungimo puslapio spalvų paletė
 
+#19.60
 settings_config_save_and_next=Išsaugoti ir kitą
 settings_config_configuration_category=Konfigūracijos kategorija
 config_search_options_all=Ieškokite visose modulio konfigūracijos parinktyse
 theme_xhred_editing_config_file=Redaguojamas konfigūracijos failas
 
+#19.61
 theme_xhred_login_message_2fa=Šiam vartotojui buvo įjungtas dviejų veiksnių autentifikavimas
 theme_xhred_global_verify=Patikrinkite
 settings_show_terminal_link2=Rodyti komandos apvalkalo mygtuką
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=Spartusis klavišas komandų apvalkalui
 theme_xhred_path_to_console2=Atidarykite dabartinį kelią komandų apvalkale <tt>(„Alt“+„Shift“+K)</tt>
 theme_tooltip_terminal_link2=Komandos apvalkalas
 
+#19.70
 theme_xhred_filemanager_context_view=Vaizdas
 theme_xhred_file_viewer=Failų peržiūros priemonė
 theme_xhred_global_done=Padaryta.

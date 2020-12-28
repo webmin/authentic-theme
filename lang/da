@@ -85,4 +85,5 @@ session_logout=Loggede ud uden fejl. Brug formen under for at logge ind igen.
 session_timed_out=Sessionen udløb efter $1 minutters inaktivitet.
 session_twofailed=To-faktor godkendelse fejlede: $1
 
+#18.40
 login_reset=Nulstil

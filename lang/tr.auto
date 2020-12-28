@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer Server Se
 
 theme_xhred_notifications_firewall_warning=Güvenlik Duvarı Uyarısı
 
+#17.50
 settings_grayscale_level_navigation=Gri tonlamalı filtre
 settings_grayscale_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepya filtresi
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=Yapıştırmak
 theme_xhred_filemanager_context_chmod=İzinleri değiştir
 theme_xhred_filemanager_context_chown=Sahipliği değiştir
 
+#17.51
 theme_xhred_filemanager_context_new=Yeni
 theme_xhred_filemanager_context_newarchive=Yeni arşiv oluştur
 theme_xhred_filemanager_context_delete=Sil
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Öğe konumunu aç
 theme_xhred_filemanager_context_properties=Özellikleri
 theme_xhred_filemanager_context_search=Arama
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Tüm seçimleri kaldır
 theme_xhred_filemanager_context_upload=Mevcut dizine yükle
 theme_xhred_filemanager_context_download=Uzak URL'den indir
 
+#17.53
 theme_config_virtualmin=Virtualmin Sanal Sunucuları
 theme_config_cloudmin=Cloudmin Yönetilen Sistemler
 settings_right_thirdparties_options_title=Üçüncü taraf modül seçenekleri
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=Yer imleri
 theme_xhred_filemanager_context_bookmark_current=Yer işareti açılmış olan yol
 theme_xhred_filemanager_context_transfer=Aktar
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Bağlantı hedefi
 
+#17.60
 right_unlimited=Sınırsız
 settings_leftmenu_width=Tercih edilen genişlik
 settings_leftmenu_width_description=Standart/mevcut genişlik <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Ters çevrilmiş anahtarları göster
 settings_switch_rdisplay_description=Bu seçenek, sol üstteki anahtarlar için farklı bir düzen ayarlamanızı sağlar. Bu seçeneği değiştirdikten sonra, tam sayfa yeniden yüklemesi gerekir
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Seçilen boyutu hesapla
 theme_xhred_filemanager_selected_entries=Seçilen: %value öğesi
 theme_xhred_filemanager_manual_path=Yolu manuel olarak girin
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Yükleniyor
 theme_xhred_datatable_sprocessing=İşleme. ..
 theme_xhred_datatable_szerorecords=Hiçbir eşleşen kayıt bulunamadı
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Dosya düzenlendi ancak kaydedilmedi.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Ne yapmak istiyorsun?
 theme_xhred_global_save=Kayıt etmek
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Kaydetmeden kapat
 theme_xhred_global_continue_editing=Düzenlemeye devam et
 theme_xhred_filemanager_context_download_file=İndir
 
+#17.65
 settings_sysinfo_easypie_charts_width=Grafik genişliği
 settings_sysinfo_easypie_charts_scale=Grafiklerin ölçek uzunluğu
 
+#17.80
 right_return_theme_options=tema ayarları
 theme_xhred_datatable_semptydirectory=Dizin boş
 theme_xhred_filemanager_context_clipboard=Yolu panoya kopyala
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=İşlemler sütununu gizle
 theme_xhred_filemanager_hovered_toolbar=Fareyle üzerine gelindiğinde araç çubuğundaki açılır listeyi etkinleştir
 theme_xhred_filemanager_context_delete_selected=Silme seçildi
 
+#17.83
 theme_xhred_database_adding_new_row=Yeni satır ekleme
 theme_xhred_database_editing_row=Seçili satırı düzenleme
 theme_xhred_database_editing_rows=Seçili satırları düzenleme
 theme_xhred_database_adding_new_row_data=Verileri ayarla
 
+#17.84
 theme_xhred_datatable_filter=filtre
 
 theme_xhred_global_update=Güncelleme
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Farkına varmak
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=Dosya
 theme_xhred_global_directory=rehber
 theme_xhred_global_no_target=Hedef mevcut değil veya erişilebilir değil
@@ -489,19 +502,24 @@ theme_xhred_module_help=Modül yardımı
 
 theme_xhred_server_process_running=Sunucu işlemi hala çalışıyor !? Uzaklaşmak istediğinizden ve çıktı bilgilerine erişiminiz olmadığından emin misiniz? Şimdi ayrılsanız bile işlem sonlandırılmayacak.
 
+#18.03
 settings_global_options_title=Global seçenekler
 settings_global_passgen_format=Şifre üreticisi
 settings_global_passgen_format_description=Oluşturulan parolada kullanılan uzunluk ve karakter türünü ayarlayın. Varsayılan değer, büyük ve küçük harfler ve sayılar içeren 15 karakter uzunluğunda parolayı temsil eden <code>15|az,AZ,0-9</code> eşittir. <code>#</code> Karma işaretini kullanarak özel karakterler eklemek de mümkündür
 theme_xhred_password_generator_new=Yeni Şifre Oluştur <br> (Panoya)
 theme_xhred_password_generator_new_success=Oluşturulan şifre %password başarıyla panoya kopyalandı.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Bu dosya ile bitmelidir ` 1 'dir; ` başarıyla çalışmak.
 
+#18.10
 theme_error_access_not_root=Erişim reddedildi: Kullanıcı, tema yapılandırmasını düzenlemek için <em>Webmin Configuration</em> modülüne erişmelidir
 
+#18.20
 settings_hide_top_loader=Üst ilerleme çubuğunu gizle
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudmin'de açılır menüde sembolik simgeleri göster
 theme_xhred_global_shipped=gönderilen
 theme_xhred_global_available=Mevcut
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=Güvenlik içeriği başarıyla de�
 
 theme_xhred_global_no_results_found=Sonuç bulunamadı
 
+#18.40
 theme_new_password_header=Kullanıcı için yeni şifre belirle
 login_reset=Şifre kurtarma
 theme_xhred_move_top=Yukarı taşı
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Kullanıcı değiştir
 theme_tooltip_logout=oturumu Kapat
 theme_tooltip_edit_user=Kullanıcıyı düzenle
 
+#18.45
 settings_sysinfo_easypie_charts_size=Grafiklerin çapı
 theme_xhred_global_choose=Seç
 theme_xhred_global_select=seçmek
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Yazılım güncellemeleri
 theme_xhred_git_compare_changes=Değişiklikleri karşılaştır
 theme_xhred_filemanager_link_to_clipboard=Sembolik bağlantının adı panoya kopyalandı.
 
+#18.46
 theme_left_mail_prefs=Posta Tercihleri
 theme_left_mail_change_password=Şifre değiştir
 theme_left_mail_account_functions=Hesap İşlevleri
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Modül yapılandırması
 theme_xhred_global_return=Dönüş
 theme_xhred_global_return_to_module_index=Modül dizinine dön
 
+#18.47
 theme_xhred_global_complete_changelog=Değişiklik günlüğünü tamamla
 theme_xhred_global_beta_version=Beta sürümü
 theme_xhred_global_release=Serbest bırakmak
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Çıkış tarihi
 theme_xhred_global_committed_on=Kararlı
 theme_xhred_global_resolved_issues=%value bültenlerinde çözülen sorunlar
 
+#18.48
 theme_force_upgrade=Güncelleme temasını zorla
 theme_xhred_force_upgrade_beta=En son geliştirme sürümünü yükle (beta)
 theme_xhred_force_upgrade_stable=En son sürüm sürümünü yükle (kararlı)
@@ -607,6 +630,7 @@ theme_update_footer=Lütfen $1 deposuna hataları bildirin. En son güncellemele
 theme_xhred_encoding_manually_set=Kodlamayı manuel olarak ayarlama
 theme_xhred_filemanager_save_to_change_encoding=Kodlamanın değiştirilebilmesi için dosya kaydedilmelidir.
 
+#18.49
 theme_xhred_filemanager_user_switch=Kullanıcıya geç (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Aşağıda listelenen kullanıcı adını seçerek, bu kullanıcı olarak gerçekleştirilecek diğer işlemleri değiştireceksiniz.
 theme_xhred_filemanager_user_switch_description_back=Varsayılan moda geri dönmek için seçimdeki ilk seçeneği seçin.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=Üst Düzeye
 theme_xhred_global_normalize=Normale
 theme_xhred_global_set_encoding=Kodlamayı ayarla
 
+#19.00
 theme_xhred_sysinfo_update_start=Sistem bilgileri hatırlanıyor.
 theme_xhred_sysinfo_update_end=Sistem bilgileri başarıyla hatırlandı.
 theme_xhred_sysinfo_update_failed=Sistem bilgileri hatırlanamıyor. Daha sonra tekrar deneyin.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=Saniye
 theme_xhred_global_minute=Dakika
 theme_xhred_global_minutes=Dakika
 
+#19.01
 theme_xhred_browser_warning=Bilgisayarınızdaki sunucu paneliyle en iyi deneyimi elde etmek için desteklenen, güncel bir tarayıcı kullanın. <br><br> <em>Internet Explorer</em> artık desteklenmemektedir. <br><br> Önerilen tarayıcılar <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> veya <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Yüklü kısıtlamaları aşmak için, kurulum gerektirmeyen bir tarayıcının taşınabilir sürümünü indirebilirsiniz.</div>
 
+#19.02
 theme_xhred_filter_content=İçeriği filtrele
 theme_xhred_log_file_empty=Günlük dosyası boş
 
+#19.03
 theme_xhred_config_configurable_options=Yapılandırılabilir seçenekler
 theme_xhred_filter_content_no_matches_query=%str sorgusuyla eşleşen içerik yok
 theme_xhred_toggle_accordions=Akordeonların görünürlüğünü aç / kapat
@@ -668,17 +696,20 @@ theme_xhred_signing_success=Başarıyla oturum açıldı!
 theme_xhred_session_failed_password=Yanlış şifre, lütfen tekrar deneyin.
 theme_xhred_global_reauthenticate=reauthenticate
 
+#19.04
 settings_sysinfo_real_time_status=Gerçek zamanlı izlemeyi etkinleştir
 settings_sysinfo_real_time_timeout=Güncelleme yapma aralığı
 settings_sysinfo_real_time_timeout_description=Arka planda monitörleri güncellemek için istenen aralığı ayarlayın. Değerin milisaniye cinsinden olması gerekiyordu. Kısa vadeli verilerin kaybını önlemek için bu değeri mümkün olduğunca düşük tutun
 theme_xhred_global_redirecting=yönlendirme
 
+#19.05
 body_no_javascript_title=JavaScript devre dışı
 body_no_javascript_message=Lütfen javascript'i etkinleştirin ve sayfayı yenileyin
 theme_xhred_connection_lost=Bağlantı koptu
 theme_xhred_connection_success=Bağlantı başarılı
 theme_xhred_connection_success_details=Sunucu bağlantısı yeniden sağlandı.
 
+#19.08
 theme_xhred_return_home=Panel dizinine dön
 theme_xhred_global_upload=Yükleme
 theme_xhred_global_select_files=Dosya seçin
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=seçilen dosyalar
 theme_xhred_global_reset=Sıfırla
 theme_xhred_upload_initial_info=Dosyaları buraya sürükleyip bırakın veya seçmek için tıklayın
 
+#19.09
 theme_xhred_global_empty=Boş
 theme_xhred_global_click_here=buraya Tıkla
 theme_git_patch_incompatible_message=$1 <em>$2</em> sürümünün yüklenmesi için düzgün çalışması için $3 ve $5 'un en son ve/veya muhtemelen yayınlanmamış sürümü gerekir.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=Bu $1 <em>$2</em> sürümünü yüklemek 
 theme_git_patch_incompatible_message_desc=Temanın tasarlandığı gibi çalışmasını engelleyebilecek uyumsuz değişiklikler olabilir. Bu uyarıyı atlamak ve temayı yine de $1 yüklemeye zorlamak veya dizininden <kbd>update-from-repo.sh</kbd> komut dosyasını çalıştırarak ilk önce konsolu kullanarak en son geliştirme sürümüne $2 yükseltmek.
 theme_xhred_global_outdated=Bu sürüm eski
 
+#19.10
 theme_xhred_filemanager_edit_html=HTML olarak düzenle
 theme_xhred_global_example=Misal
 theme_xhred_global_output_example=Çıktı örneği
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=Sınırsız
 theme_xhred_filemanager_tree_exclude_on_first_load=Gereksiz dizinleri ağaç görünümü için ilk yükte geçişten hariç tutun (daha hızlı yüklenir)
 theme_xhred_filemanager_tree_expand_search=Ağaç görünümünü filtrelerken eşleşmeler içeren tüm dalları genişletin
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Arka plan durumu koleksiyonunu senkronize etmeye zorla
 theme_xhred_tooltip_side_slider_go_to_dashboard=Gösterge tablosuna git
 theme_xhred_tooltip_side_slider_open_favorites_control=Sık kullanılanları aç kontrolü
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=Raptiyeyi göster/sabitlemeyi aç/kapat
 settings_side_slider_fixed_toggle_description=Bu seçenek, önceki seçenekteki koşullar yerine getirilirse, yan kaydırıcıda alt satırda geçişi göstererek anında görünürlüğünü değiştirmeye izin verir.
 settings_right_page_hide_persistent_vscroll=Kalıcı dikey kaydırma çubuğunu gizle
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Usermin için tema güncellemelerini de yükle
 theme_xhred_global_installed_version=Yüklü sürüm
 theme_xhred_global_installed_and_latest_version=Yüklü ve en son sürüm
@@ -750,12 +785,14 @@ settings_contrast_mode=Yüksek kontrast modunu etkinleştir
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Gezinme menüsünde Webmin anahtarı gösterilsin mi?
 
+#19.14
 settings_enable_container_offset=Kapsayıcı ofsetini etkinleştir
 settings_enable_container_offset_description=Bu seçenek yalnızca minimum 1920 yatay piksel çözünürlüğe sahip ekranlarda çalışır
 theme_xhred_filemanager_preparing_download=İndirme hazırlanıyor. %number dosya (lar) ı arşivleniyor. Lütfen %dots bekleyin
 theme_xhred_filemanager_prepared_download=İndirme hazır. Arşivlenen %number dosyası.
 theme_xhred_filemanager_canceled_download=İndirme iptal edildi.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Arşiv olarak indirilirken <code>zip</code> olsa bile <code>tar</code> komutunu zorla
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=Diskler için etkinleştir
 settings_sysinfo_real_time_status_disk_description=Yavaş/büyük dosya sistemlerindeki diskler için gerçek zamanlı izlemeyi devre dışı bırakmak yararlı olabilir
 theme_xhred_title_locale_non_ui_config=Sunucu tarafından oluşturulan tarih biçimi
 
+#19.20
 extensions_mail_current_position=Mesajlar $1-$2 / $3
 extensions_mail_sort_by_sender=Gönderene göre sırala
 extensions_mail_sort_by_recipient=Alıcıya göre sırala
@@ -909,12 +947,14 @@ settings_cache_interval_1y=yılda bir kez
 
 theme_xhred_reload_notification=Tema yapılandırması değiştirildi ancak kaydedilmedi. Geçerli ayarlara sıfırlamak için sayfa yeniden yüklenecektir.
 
+#19.22
 theme_xhred_global_save_as=Farklı kaydet
 theme_xhred_editor_save_file_as=Farklı kaydet
 theme_xhred_global_configuration=Yapılandırma
 
 body_used_cached_total=$1 toplam / $3 önbelleklenmiş / $2 kullanılmış
 
+#19.30
 theme_xhred_favorites_add=Favorilere ekle
 theme_xhred_favorites_remove=Favorilerden çıkar
 theme_xhred_select_deselect=Geçerli öğeyi seç/seçimini kaldır
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=Sözdizimini ayarla
 theme_xhred_global_menu=Menü
 theme_xhred_shell_aborted=İşlem iptal edildi
 
+#19.32
 theme_xhred_connection_reboot=Rebooting
 theme_xhred_connection_reboot_details=Sunucu yeniden başlatılıyor. Lütfen bekle ..
 settings_leftmenu_custom_links_description=Navigasyon menüsüne özel, ekstra bağlantılar enjekte etmek mümkündür. <br><br> <em>başlık</em>, <em>bağlantı</em> ve <em>simgesi</em> tuşları gereklidir; isteğe bağlı olarak, virgülle ayrılmış listede <em>düzey</em> tuşunu değerlerle birlikte belirterek, hangi oturum açma modunda görüntüleneceğini tanımlayabilirsiniz: <br><br> <em>0</ em > - yönetici girişi; <br><em> 1 </em>- bayi girişi;<br> <em>2</em> - sunucu sahibi girişi; <br><em> 3 </em>- kullanıcı girişi;<br> <em>4</em> - sistem sahibi girişi. <br><br> Aşağıdaki örnekte olduğu gibi geçerli JSON nesnesini bir dize olarak geçirmeniz gerekir. <hr><pre> {"extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "düzey": "0,1,2,3,4"}, { "title": "BIND DNS Sunucusu", "link": "/bind8", "icon": "sunucu"}, {"title": "Usermin", "link": "/", "icon": " zarf "," bağlantı noktası ":" 20000 "," hedef ":" _blank "}]} </pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=versiyon
 theme_xhred_notify_patching_module_style=$1 için ilk kullanıcı arayüzü düzeltme eki uygulanıyor ve yeniden yükleniyor.
 theme_xhred_global_error_more_details_online=Not: %1wiki sayfamız %1 çevrimiçiimizde bu hata ve nasıl çözüleceği hakkında daha fazla bilgi edinin.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Dosya maskesi
 theme_xhred_filemanager_search_regex=Düzenli ifade
 theme_xhred_upload_successful=<span>$1 dosya</span> $2 dizinine başarıyla yüklendi
 theme_xhred_upload_successful_single=<span>$1 dosya</span> $2 dizinine başarıyla yüklendi
 settings_usermin_default_module=Varsayılan modül
 
+#19.34
 theme_xhred_search_in_file_open_external=Dosyayı ayrı bir düzenleyiciye ayır
 theme_xhred_path_to_console=<Tt>(Alt+Üst Karakter+K)</tt> terminalinde geçerli yolu aç
 theme_xhred_filemanager_editor_revert_content=Dosyayı Geri Al
 theme_xhred_filemanager_editor_reverting_content=Değişiklikleri bırakma ve orijinal dosya içeriğine dönme.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Girişleri hariç tut
 theme_xhred_filemanager_exclude_dirs_desc=Hariç tutulacak noktalı virgülle ayrılmış dosya veya alt dizin listesi
 
+#19.38
 theme_global_access_level=Erişim Seviyesi
 theme_global_user_mode=Kullanıcı modu
 
+#19.40
 theme_xhred_global_attachments=Ekler
 theme_xhred_editor_tb_font=Yazı tipi
 theme_xhred_editor_tb_size=Boyut
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=kbps
 settings_table_init_datatables=Tablo sıralama ve aramayı başlatmak için maksimum satır sayısı
 theme_xhred_global_rows=Satırlar
 
+#19.42
 settings_side_slider_blend=Devralma
 
+#19.43
 settings_theme_make_date=Tarayıcıda tarih/saat dönüştürmeyi etkinleştir
 settings_theme_make_date_description=Devre dışı bırakılırsa, sunucu tarafından sağlanan tarih/saat biçimi kullanılır
 
+#19.44
 theme_xhred_reload_lang_notification=Tema dili değiştirildi. Yeni ayarları uygulamak için sayfa yeniden yüklenecektir.
 
+#19.46
 theme_xhred_global_small=Küçük
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Orta
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=Kocaman
 theme_xhred_filemanager_editor_maximized=Başlangıçta editör panelini büyütün
 settings_sysinfo_remember_accordions=Son kez kullanılan akordeonları kaydet durumu
 
+#19.47
 theme_xhred_textarea_to_clipboard=Seçilen metin içeriği panoya başarıyla kopyalandı
 
+#19.48
 theme_xhred_global_alias=takma ad
 
+#19.50
 theme_xhred_mail_composer_real_name=Gerçek ad
 theme_xhred_mail_composer_username=Kullanıcı adı
 
+#19.53
 settings_global_palette_unauthenticated=Giriş sayfası renk paleti
 
+#19.60
 settings_config_save_and_next=Kaydet ve İleri
 settings_config_configuration_category=Yapılandırma kategorisi
 config_search_options_all=Tüm modül yapılandırma seçeneklerinde ara
 theme_xhred_editing_config_file=Yapılandırma dosyasını düzenleme
 
+#19.61
 theme_xhred_login_message_2fa=Bu kullanıcının oturum açması için iki faktörlü kimlik doğrulama etkinleştirildi
 theme_xhred_global_verify=Doğrulayın
 settings_show_terminal_link2=Komut kabuğu düğmesini göster
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=Komut kabuğu için kısayol tuşu
 theme_xhred_path_to_console2=Geçerli yolu komut kabuğunda açın <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Komut kabuğu
 
+#19.70
 theme_xhred_filemanager_context_view=Görünüm
 theme_xhred_file_viewer=Dosya Görüntüleyici
 theme_xhred_global_done=Bitti.

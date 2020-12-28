@@ -1,3 +1,4 @@
+#19.10
 theme_xhred_filemanager_edit_html=Edita com a HTML
 theme_xhred_global_example=Exemple
 theme_xhred_global_output_example=Exemple de sortida
@@ -33,6 +34,7 @@ theme_xhred_global_unlimited=Il·limitat
 theme_xhred_filemanager_tree_exclude_on_first_load=Exclou que els directoris no essencials es desplacin en la càrrega inicial per a la visualització en arbre (es carrega més ràpidament)
 theme_xhred_filemanager_tree_expand_search=Expandiu totes les branques que continguin coincidències mentre filtreu la vista en arbre
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Força per sincronitzar la col·lecció d'estat de fons
 theme_xhred_tooltip_side_slider_go_to_dashboard=Vés al tauler
 theme_xhred_tooltip_side_slider_open_favorites_control=Obriu el control de preferits
@@ -44,6 +46,7 @@ settings_side_slider_fixed_toggle=Mostra el passador/fixació
 settings_side_slider_fixed_toggle_description=Aquesta opció mostrarà el commutador, al lliscador lateral, a la fila inferior, permetent commutar la seva visibilitat sobre el vol, si es compleixen les condicions de l’opció anterior.
 settings_right_page_hide_persistent_vscroll=Amagueu la barra de desplaçament vertical persistent
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Instal·leu també actualitzacions de tema per a Usermin
 theme_xhred_global_installed_version=Versió instal·lada
 theme_xhred_global_installed_and_latest_version=Instal·lada i última versió
@@ -54,12 +57,14 @@ settings_contrast_mode=Activa el mode d’alt contrast
 theme_xhred_global_firewall=Tallafoc
 theme_xhred_settings_show_webmin_tab=Mostra el canvi Webmin al menú de navegació?
 
+#19.14
 settings_enable_container_offset=Activa la compensació de contenidors
 settings_enable_container_offset_description=Aquesta opció només funcionarà en pantalles amb una resolució mínima de 1920 píxels horitzontals
 theme_xhred_filemanager_preparing_download=Preparant la baixada. Arxivant %number fitxers (s). Espereu %dots
 theme_xhred_filemanager_prepared_download=La descàrrega ja està a punt. %number Arxiu (s) arxivat (s).
 theme_xhred_filemanager_canceled_download=S'ha cancel·lat la baixada.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Força l’ordre <code>tar</code>, encara que estigui disponible <code>zip</code> quan descarregueu com a arxiu
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -72,6 +77,7 @@ settings_sysinfo_real_time_status_disk=Habilita per a discos
 settings_sysinfo_real_time_status_disk_description=Pot ser útil desactivar la supervisió en temps real dels discos dels sistemes de fitxers lents/grans
 theme_xhred_title_locale_non_ui_config=Format de data generat pel servidor
 
+#19.20
 extensions_mail_current_position=Missatges 1- $2 de 3 dòlars
 extensions_mail_sort_by_sender=Ordena per remitent
 extensions_mail_sort_by_recipient=Ordena per destinatari
@@ -213,12 +219,14 @@ settings_cache_interval_1y=una vegada a l'any
 
 theme_xhred_reload_notification=La configuració del tema s'ha canviat, però no s'ha desat. La pàgina es tornarà a carregar per restablir la configuració actual.
 
+#19.22
 theme_xhred_global_save_as=Guardar com
 theme_xhred_editor_save_file_as=Desa el fitxer com a
 theme_xhred_global_configuration=Configuració
 
 body_used_cached_total=$1 total / $3 cache / $2 que s'utilitza
 
+#19.30
 theme_xhred_favorites_add=Afegir a preferits
 theme_xhred_favorites_remove=Elimina de les preferides
 theme_xhred_select_deselect=Seleccioneu/deseleccioneu l’actualitat
@@ -236,6 +244,7 @@ theme_xhred_editor_set_syntax=Estableix la sintaxi
 theme_xhred_global_menu=Menú
 theme_xhred_shell_aborted=L'operació s'ha desactivat
 
+#19.32
 theme_xhred_connection_reboot=Reiniciar
 theme_xhred_connection_reboot_details=El servidor es reinicia. Espereu ..
 settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -323,23 +332,28 @@ theme_xhred_global_version=versió
 theme_xhred_notify_patching_module_style=Aplicació del pegat inicial de la interfície d'usuari per a $1 i recàrrega.
 theme_xhred_global_error_more_details_online=Nota: si us plau, llegiu més informació sobre aquest error i com resoldre'l, a la nostra pàgina %1 %1wiki %1 en línia.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Màscara de fitxer
 theme_xhred_filemanager_search_regex=Expressió normal
 theme_xhred_upload_successful=Els fitxers <span>$1</span> s'han carregat correctament al directori $2
 theme_xhred_upload_successful_single=El fitxer <span>$1</span> s'ha penjat correctament al directori $2
 settings_usermin_default_module=Mòdul per defecte
 
+#19.34
 theme_xhred_search_in_file_open_external=Desmarqueu el fitxer de l’editor per separat
 theme_xhred_path_to_console=Obriu el camí actual al terminal <tt>(Alt+Maj+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Revertiu el fitxer
 theme_xhred_filemanager_editor_reverting_content=Eliminar els canvis i tornar al contingut del fitxer original.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Exclou les entrades
 theme_xhred_filemanager_exclude_dirs_desc=Llista de fitxers o subdirectoris separats de punt i coma
 
+#19.38
 theme_global_access_level=Nivell d'accés
 theme_global_user_mode=Mode Usuari
 
+#19.40
 theme_xhred_global_attachments=Arxius adjunts
 theme_xhred_editor_tb_font=Font
 theme_xhred_editor_tb_size=Mida
@@ -405,13 +419,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Nombre màxim de files per inicialitzar la classificació i la cerca de taules
 theme_xhred_global_rows=Files
 
+#19.42
 settings_side_slider_blend=Herència
 
+#19.43
 settings_theme_make_date=Habilita la conversió de data/hora al navegador
 settings_theme_make_date_description=Si està desactivat, s’utilitzarà el format de data/hora proporcionat pel servidor
 
+#19.44
 theme_xhred_reload_lang_notification=El llenguatge del tema s'ha canviat. Es tornarà a carregar la pàgina per aplicar la configuració nova.
 
+#19.46
 theme_xhred_global_small=Petita
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Mitjà
@@ -420,20 +438,26 @@ theme_xhred_global_huge=Enorme
 theme_xhred_filemanager_editor_maximized=Maximitzeu el tauler de l'editor des del començament
 settings_sysinfo_remember_accordions=Desa l’estat d’acordions que es va fer servir la darrera vegada
 
+#19.47
 theme_xhred_textarea_to_clipboard=El contingut de textura seleccionat s'ha copiat correctament al porta-retalls
 
+#19.48
 theme_xhred_global_alias=Àlies
 
+#19.50
 theme_xhred_mail_composer_real_name=Nom real
 theme_xhred_mail_composer_username=nom d'usuari
 
+#19.53
 settings_global_palette_unauthenticated=Paleta de colors de la pàgina d’inici de sessió
 
+#19.60
 settings_config_save_and_next=Desa i següent
 settings_config_configuration_category=Categoria de configuració
 config_search_options_all=Cerqueu entre totes les opcions de configuració del mòdul
 theme_xhred_editing_config_file=S'està editant el fitxer de configuració
 
+#19.61
 theme_xhred_login_message_2fa=S'ha habilitat l'autenticació de dos factors perquè aquest usuari pugui iniciar la sessió
 theme_xhred_global_verify=Verifiqueu
 settings_show_terminal_link2=Mostra el botó de l'intèrpret d'ordres
@@ -441,6 +465,7 @@ settings_hotkey_shell2=Tecla d'accés ràpid per a l'intèrpret d'ordres
 theme_xhred_path_to_console2=Obriu el camí actual a l'intèrpret d'ordres <tt>(Alt+Maj+K)</tt>
 theme_tooltip_terminal_link2=Intèrpret d'ordres
 
+#19.70
 theme_xhred_filemanager_context_view=Veure
 theme_xhred_file_viewer=Visualitzador de fitxers
 theme_xhred_global_done=Fet.

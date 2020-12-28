@@ -267,6 +267,7 @@ theme_xhred_notifications_firewall_danger_message=Jidher li <strong>ConfigServer
 
 theme_xhred_notifications_firewall_warning=Twissija tal-firewall
 
+#17.50
 settings_grayscale_level_navigation=Filtru fuq skala griża
 settings_grayscale_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtru tas-seba
@@ -296,6 +297,7 @@ theme_xhred_filemanager_context_paste=Ippejstja
 theme_xhred_filemanager_context_chmod=Tibdil permessi
 theme_xhred_filemanager_context_chown=Ibdel is-sjieda
 
+#17.51
 theme_xhred_filemanager_context_new=Ġdid
 theme_xhred_filemanager_context_newarchive=Oħloq arkivju ġdid
 theme_xhred_filemanager_context_delete=Ħassar
@@ -306,10 +308,12 @@ theme_xhred_filemanager_context_goto=Post tal-oġġett miftuħ
 theme_xhred_filemanager_context_properties=Propjetajiet
 theme_xhred_filemanager_context_search=Fittex
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Tagħżel kollu
 theme_xhred_filemanager_context_upload=Tella 'direttorju kurrenti
 theme_xhred_filemanager_context_download=Niżżel minn URL remot
 
+#17.53
 theme_config_virtualmin=Servers Virtwali Virtualmin
 theme_config_cloudmin=Sistemi Immexxi minn Cloudmin
 settings_right_thirdparties_options_title=Għażliet ta 'moduli ta' partijiet terzi
@@ -318,14 +322,17 @@ theme_xhred_filemanager_context_bookmarks=Bookmarks
 theme_xhred_filemanager_context_bookmark_current=Bħalissa t-triq miftuħa tat-timbru
 theme_xhred_filemanager_context_transfer=Trasferiment
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Rabta fil-mira
 
+#17.60
 right_unlimited=Illimitat
 settings_leftmenu_width=Wisa 'preferibbli
 settings_leftmenu_width_description=Default/wisa attwali <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Uri l-iswiċċijiet maqluba
 settings_switch_rdisplay_description=Din l-għażla tippermettilek tissettja ordni differenti għal swiċċijiet ta 'fuq tax-xellug. Wara li tinbidel din l-għażla, tagħbija mill-ġdid tal-paġna hija meħtieġa
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Ikkalkula d-daqs magħżul
 theme_xhred_filemanager_selected_entries=Magħżula: %value oġġetti ta ' %value
 theme_xhred_filemanager_manual_path=Daħħal il-passaġġ manwalment
@@ -338,6 +345,7 @@ theme_xhred_datatable_sloadingrecords=Tagħbija
 theme_xhred_datatable_sprocessing=Ipproċessar. ..
 theme_xhred_datatable_szerorecords=Ma nstab l-ebda rekord ta 'tqabbil
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Il-fajl ġie editjat iżda ma ġiex salvat.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Xi trid tagħmel?
 theme_xhred_global_save=Issejvja
@@ -346,9 +354,11 @@ theme_xhred_global_close_without_saving=Agħlaq mingħajr ma tiffranka
 theme_xhred_global_continue_editing=Kompli editjar
 theme_xhred_filemanager_context_download_file=Niżżel
 
+#17.65
 settings_sysinfo_easypie_charts_width=Wisa 'taċ-ċarts
 settings_sysinfo_easypie_charts_scale=Skala tat-tul taċ-ċarts
 
+#17.80
 right_return_theme_options=għażliet tat-tema
 theme_xhred_datatable_semptydirectory=Direttorju huwa vojt
 theme_xhred_filemanager_context_clipboard=Ikkopja triq għall-clipboard
@@ -378,11 +388,13 @@ theme_xhred_filemanager_hide_actions=Aħbi l-kolonna tal-azzjonijiet
 theme_xhred_filemanager_hovered_toolbar=Attiva l-waqgħa fil-toolbar fuq il-mouse
 theme_xhred_filemanager_context_delete_selected=Ħassar magħżul
 
+#17.83
 theme_xhred_database_adding_new_row=Żieda ta 'ringiela ġdida
 theme_xhred_database_editing_row=Editjar ta 'ringiela magħżula
 theme_xhred_database_editing_rows=Editjar ta 'ringieli magħżula
 theme_xhred_database_adding_new_row_data=Issettja d-data
 
+#17.84
 theme_xhred_datatable_filter=Iffiltra
 
 theme_xhred_global_update=Aġġornament
@@ -417,6 +429,7 @@ theme_xhred_global_notice=Avviż
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
+#18.00
 theme_xhred_global_file=Fajl
 theme_xhred_global_directory=Direttorju
 theme_xhred_global_no_target=Il-mira ma teżistix jew ma tkunx aċċessibbli
@@ -489,19 +502,24 @@ theme_xhred_module_help=Modulu ta 'għajnuna
 
 theme_xhred_server_process_running=Il-proċess tas-server għadu għaddej !? Int żgur li trid tinnaviga 'l bogħod u m'għandek l-ebda aċċess għal informazzjoni dwar l-output? Anki jekk titlaq issa l-proċess mhux se jintemm.
 
+#18.03
 settings_global_options_title=Għażliet globali
 settings_global_passgen_format=Ġeneratur ta 'password
 settings_global_passgen_format_description=Issettja t-tul u t-tip ta 'karattru użati fil-password iġġenerat. Il-valur awtomatiku huwa ekwivalenti għal <code>15|az,AZ,0-9</code>, li jirrappreżenta l-password bi 15-il karattru fit-tul, li fih ittri u numri miktuba u isfel Huwa possibbli wkoll li żżid karattri speċjali billi tuża <code>#</code> hash sign
 theme_xhred_password_generator_new=Iġġenera Password Ġdida <br> (Biex Clipboard)
 theme_xhred_password_generator_new_success=Il-password iġġenerat %password ġiet ikkuppjata fil-clipboard b'suċċess.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Dan il-fajl irid jintemm `1;` biex taħdem b'suċċess.
 
+#18.10
 theme_error_access_not_root=Aċċess miċħud: L-utent jeħtieġ aċċess għall-modulu <em>Konfigurazzjoni Webmin</em> biex jeditja l-konfigurazzjoni tat-tema
 
+#18.20
 settings_hide_top_loader=Aħbi l-aqwa bar tal-progress
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Uri ikoni simboliċi fi drop-down fi Virtualmin/Cloudmin
 theme_xhred_global_shipped=Ġarr
 theme_xhred_global_available=Disponibbli
@@ -547,6 +565,7 @@ theme_xhred_filemanager_successful_secontext=Il-kuntest tas-sigurtà nbidel b'su
 
 theme_xhred_global_no_results_found=Ma nstab l-ebda riżultat
 
+#18.40
 theme_new_password_header=Issettja password ġdida għall-utent
 login_reset=Irkupru tal-Password
 theme_xhred_move_top=Mexxi 'l fuq
@@ -567,6 +586,7 @@ theme_xhred_tooltip_switch_user=Ibdel l-utent
 theme_tooltip_logout=Itlaq
 theme_tooltip_edit_user=Editja l-utent
 
+#18.45
 settings_sysinfo_easypie_charts_size=Dijametru taċ-ċarts
 theme_xhred_global_choose=Agħżel
 theme_xhred_global_select=Agħżel
@@ -584,6 +604,7 @@ settings_right_soft_updates_page_options_title=Aġġornamenti tas-Softwer
 theme_xhred_git_compare_changes=Qabbel il-bidliet
 theme_xhred_filemanager_link_to_clipboard=L-isem tal-link simboliku ġie kkupjat fil-clipboard.
 
+#18.46
 theme_left_mail_prefs=Preferenzi bil-Mail
 theme_left_mail_change_password=Biddel il-password
 theme_left_mail_account_functions=Funzjonijiet tal-Kont
@@ -592,6 +613,7 @@ theme_xhred_global_module_config=Modulu konfigurat
 theme_xhred_global_return=Ritorn
 theme_xhred_global_return_to_module_index=Ritorn għall-indiċi tal-modulu
 
+#18.47
 theme_xhred_global_complete_changelog=Changelog komplut
 theme_xhred_global_beta_version=Verżjoni beta
 theme_xhred_global_release=Itlaq
@@ -599,6 +621,7 @@ theme_xhred_global_released_on=Meħlus fuq
 theme_xhred_global_committed_on=Impenjat fuqha
 theme_xhred_global_resolved_issues=Kwistjonijiet solvuti fi rilaxxi tal- %value
 
+#18.48
 theme_force_upgrade=Forza it-tema tal-aġġornament
 theme_xhred_force_upgrade_beta=Installa l-aħħar verżjoni tal-iżvilupp (beta)
 theme_xhred_force_upgrade_stable=Installa l-aħħar verżjoni tar-rilaxx (stabbli)
@@ -607,6 +630,7 @@ theme_update_footer=Jekk jogħġbok kun tip ta ’bugs ta’ rappurtar għar-rep
 theme_xhred_encoding_manually_set=Issettja kodifikazzjoni manwali
 theme_xhred_filemanager_save_to_change_encoding=Il-fajl irid jiġi ssejvjat sabiex il-kodifikazzjoni tinbidel.
 
+#18.49
 theme_xhred_filemanager_user_switch=Aqleb għall-utent (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Billi tagħżel il-username elenkat hawn taħt, int ser taqleb aktar operazzjonijiet biex titwettaq bħala dan l-utent.
 theme_xhred_filemanager_user_switch_description_back=Biex terġa 'lura għall-modalità default agħżel l-ewwel għażla f'li tagħżel.
@@ -625,6 +649,7 @@ theme_xhred_global_maximize=Timmassimizza
 theme_xhred_global_normalize=Normalizza
 theme_xhred_global_set_encoding=Issettja kodifikazzjoni
 
+#19.00
 theme_xhred_sysinfo_update_start=L-informazzjoni tas-sistema qed tinġabar.
 theme_xhred_sysinfo_update_end=L-informazzjoni tas-sistema ġiet riflessa b'suċċess.
 theme_xhred_sysinfo_update_failed=L-informazzjoni tas-sistema ma tistax tinġabar. Erġa 'erġa' aktar tard.
@@ -645,11 +670,14 @@ theme_xhred_global_seconds=Sekondi
 theme_xhred_global_minute=Minuta
 theme_xhred_global_minutes=Minuti
 
+#19.01
 theme_xhred_browser_warning=Biex ikollok l-aqwa esperjenza bil-pannell tas-server fuq il-kompjuter tiegħek, uża browser sostnut u aġġornat. <br><br> <em>Internet Explorer</em> m'għadux sostnut. <br><br> Il-browsers rakkomandati huma <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> jew <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Tista 'tniżżel verżjoni portabbli ta' browser, li ma teħtieġx installazzjoni, biex tevita limitazzjonijiet imposti.</div>
 
+#19.02
 theme_xhred_filter_content=Iffiltra l-kontenut
 theme_xhred_log_file_empty=Il-fajl tal-ġurnal huwa vojt
 
+#19.03
 theme_xhred_config_configurable_options=Għażliet konfigurabbli
 theme_xhred_filter_content_no_matches_query=L-ebda kontenut ma jaqbel ma ' %str query
 theme_xhred_toggle_accordions=Toggle il-viżibbiltà tal-qbils
@@ -668,17 +696,20 @@ theme_xhred_signing_success=Iddejtajt b'suċċess!
 theme_xhred_session_failed_password=Password ħażina, jekk jogħġbok erġa 'pprova.
 theme_xhred_global_reauthenticate=Jerġa 'tidentifika
 
+#19.04
 settings_sysinfo_real_time_status=Ippermetti monitoraġġ f'ħin reali
 settings_sysinfo_real_time_timeout=Intervall għat-twettiq ta 'aġġornament
 settings_sysinfo_real_time_timeout_description=Issettja l-intervall mixtieq għall-aġġornament tal-monitors fl-isfond. Il-valur maħsub li jkun f 'millisekondi. Żomm dan il-valur baxx kemm jista 'jkun biex tevita telf ta' dejta għal żmien qasir
 theme_xhred_global_redirecting=Rindirizz
 
+#19.05
 body_no_javascript_title=JavaScript huwa diżattivat
 body_no_javascript_message=Jekk jogħġbok ħalli javascript u tiffriska l-paġna
 theme_xhred_connection_lost=Konnessjoni mitlufa
 theme_xhred_connection_success=Konnessjoni ta 'suċċess
 theme_xhred_connection_success_details=Il-konnessjoni mas-server ġiet stabbilita mill-ġdid.
 
+#19.08
 theme_xhred_return_home=Ritorn għall-indiċi tal-pannell
 theme_xhred_global_upload=Itellgħu
 theme_xhred_global_select_files=Agħżel fajl (i)
@@ -687,6 +718,7 @@ theme_xhred_global_files_selected=fajls magħżula
 theme_xhred_global_reset=Irrisettja
 theme_xhred_upload_initial_info=Iddreggja u qiegħed il-fajls hawn jew ikklikkja biex tagħżel
 
+#19.09
 theme_xhred_global_empty=Vojta
 theme_xhred_global_click_here=għafas hawn
 theme_git_patch_incompatible_message=L-installazzjoni ta 'din il-verżjoni ta' $1 <em>$2</em> teħtieġ l-iktar verżjoni reċenti u/jew possibilment mhux rilaxxata ta '$3 u $5 biex taħdem sewwa.
@@ -694,6 +726,7 @@ theme_git_patch_incompatible_message_s=L-installazzjoni ta 'din il-verżjoni ta'
 theme_git_patch_incompatible_message_desc=Jista 'jkun hemm tibdil inkompatibbli, li jista' jwaqqaf it-tema milli taħdem kif iddisinjat. Biex taqbeż din it-twissija, u ġġiegħel tinstalla t-tema xorta waħda $1, jew taġġorna $2 għall-aħħar verżjoni ta 'żvilupp l-ewwel billi tuża console, billi <kbd>update-from-repo.sh</kbd> skritt <kbd>update-from-repo.sh</kbd> mid-direttorju tagħha.
 theme_xhred_global_outdated=Din il-verżjoni hija skaduta
 
+#19.10
 theme_xhred_filemanager_edit_html=Edit bħala HTML
 theme_xhred_global_example=Eżempju
 theme_xhred_global_output_example=Eżempju ta 'riżultat
@@ -729,6 +762,7 @@ theme_xhred_global_unlimited=Illimitat
 theme_xhred_filemanager_tree_exclude_on_first_load=Eskludi direttorji mhux essenzjali mill-mogħdija fuq tagħbija inizjali għal vista tas-siġar (tagħbijiet aktar malajr)
 theme_xhred_filemanager_tree_expand_search=Wessgħet il-fergħat kollha li fihom it-taqbiliet waqt li tkun iffiltrata s-siġra
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Seħħ biex tissinkronizza l-ġbir tal-istatus tal-isfond
 theme_xhred_tooltip_side_slider_go_to_dashboard=Mur fuq id-dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Iftaħ il-kontroll tal-favoriti
@@ -740,6 +774,7 @@ settings_side_slider_fixed_toggle=Uri l-pin/unpin toggle
 settings_side_slider_fixed_toggle_description=Din l-għażla turi t-toggle, fis-slajder tal-ġenb, fir-ringiela tal-qiegħ, u tippermetti li tattiva l-viżibbiltà tagħha fuq il-fly, jekk jiġu ssodisfati l-kundizzjonijiet fl-għażla ta 'qabel.
 settings_right_page_hide_persistent_vscroll=Aħbi scrollbar vertikali persistenti
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Installa aġġornamenti tat-tema għal Usermin ukoll
 theme_xhred_global_installed_version=Verżjoni installata
 theme_xhred_global_installed_and_latest_version=Installat u l-aħħar verżjoni
@@ -750,12 +785,14 @@ settings_contrast_mode=Jippermetti modalità ta 'kuntrast għoli
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Uri l-iswiċċ ta 'Webmin fil-menu ta' navigazzjoni?
 
+#19.14
 settings_enable_container_offset=Ippermetti tpaċija tal-kontejners
 settings_enable_container_offset_description=Din l-għażla taħdem biss fuq skrins b'riżoluzzjoni minima ta '1920 pixel orizzontali
 theme_xhred_filemanager_preparing_download=Tħejji t-tniżżil. Arkivjar %number fajl (i). Jekk jogħġbok stenna %dots
 theme_xhred_filemanager_prepared_download=Id-download huwa lest. %number Fajl (i) arkivjat.
 theme_xhred_filemanager_canceled_download=Id-download jitħassar.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Forza l-kmand tal- <code>tar</code>, anke jekk <code>zip</code> huwa disponibbli, meta tniżżel bħala arkivju
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -768,6 +805,7 @@ settings_sysinfo_real_time_status_disk=Jippermetti d-diski
 settings_sysinfo_real_time_status_disk_description=Jista 'jkun utli li tiddiżattiva l-monitoraġġ f'ħin reali għal diski fuq sistemi ta' fajls bil-mod/kbar
 theme_xhred_title_locale_non_ui_config=Format ta 'data ġġenerat minn server
 
+#19.20
 extensions_mail_current_position=Messaġġi $1-$2 ta '$3
 extensions_mail_sort_by_sender=Issortja skont min jibgħatha
 extensions_mail_sort_by_recipient=Issortja skont ir-riċevitur
@@ -909,12 +947,14 @@ settings_cache_interval_1y=darba f'sena
 
 theme_xhred_reload_notification=Il-konfigurazzjoni tat-tema ġiet mibdula iżda mhux salvata. Il-paġna se titgħabba mill-ġdid, biex terġa 'tinkiseb għall-issettjar kurrenti.
 
+#19.22
 theme_xhred_global_save_as=Issejvja As
 theme_xhred_editor_save_file_as=Issejvja l-fajl kif
 theme_xhred_global_configuration=Konfigurazzjoni
 
 body_used_cached_total=$1 totali / $3 cached / $2 użat
 
+#19.30
 theme_xhred_favorites_add=Żid mal-favoriti
 theme_xhred_favorites_remove=Neħħi mill-Favourites
 theme_xhred_select_deselect=Agħżel/tneħħi l-oġġett kurrenti
@@ -932,6 +972,7 @@ theme_xhred_editor_set_syntax=Issettja s-sintassi
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Operazzjoni abortita
 
+#19.32
 theme_xhred_connection_reboot=Ristartjar
 theme_xhred_connection_reboot_details=Is-server qed jinbeda mill-ġdid. Stenna ..
 settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -1019,23 +1060,28 @@ theme_xhred_global_version=verżjoni
 theme_xhred_notify_patching_module_style=Applikazzjoni tal-garża UI inizjali għal $1 u tagħbija mill-ġdid.
 theme_xhred_global_error_more_details_online=Nota: Jekk jogħġbok aqra aktar dwar dan l-iżball u kif issolvih, fil-paġna %1 %1wiki tagħna %1 online.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Maskra tal-fajl
 theme_xhred_filemanager_search_regex=Espressjoni regolari
 theme_xhred_upload_successful=Fajls <span>$1</span> ġew imtellgħa b'suċċess fid-direttorju $2
 theme_xhred_upload_successful_single=<span>$1 file</span> ġie mtella 'b'suċċess fid-direttorju $2
 settings_usermin_default_module=Modulu awtomatiku
 
+#19.34
 theme_xhred_search_in_file_open_external=Aqta fajl ma 'editur separat
 theme_xhred_path_to_console=Iftaħ il-passaġġ kurrenti fit-terminal <tt>(Alt+Shift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Irritorna l-Fajl
 theme_xhred_filemanager_editor_reverting_content=Twaqqa 'bidliet u terġa' lura għall-kontenut tal-fajl oriġinali.
 
+#19.37
 theme_xhred_filemanager_exclude_dirs=Eskludi l-iskrizzjonijiet
 theme_xhred_filemanager_exclude_dirs_desc=Lista semicolon separata ta 'fajls jew sottodirettorati li jiġu esklużi
 
+#19.38
 theme_global_access_level=Livell ta 'Aċċess
 theme_global_user_mode=Modalità Utent
 
+#19.40
 theme_xhred_global_attachments=Mehmużin
 theme_xhred_editor_tb_font=Il-font
 theme_xhred_editor_tb_size=Daqs
@@ -1101,13 +1147,17 @@ theme_xhred_nice_size_kBB=Kbps
 settings_table_init_datatables=Numru massimu ta 'ringieli għall-inizjalizzazzjoni tal-issortjar u t-tfittxija tat-tabella
 theme_xhred_global_rows=Rings
 
+#19.42
 settings_side_slider_blend=Jiret
 
+#19.43
 settings_theme_make_date=Jippermetti l-konverżjoni ta 'data/ħin fil-browser
 settings_theme_make_date_description=Jekk b'diżabilità, jintuża l-format tad-data/il-ħin provdut mis-server
 
+#19.44
 theme_xhred_reload_lang_notification=Il-lingwa tat-tema ġiet mibdula. Il-paġna se titgħabba mill-ġdid, biex tapplika settings ġodda.
 
+#19.46
 theme_xhred_global_small=Żgħar
 theme_xhred_global_normal=Normali
 theme_xhred_global_medium=Medju
@@ -1116,20 +1166,26 @@ theme_xhred_global_huge=Enormi
 theme_xhred_filemanager_editor_maximized=Timmassimizza l-pannell tal-editur malli tibda
 settings_sysinfo_remember_accordions=Ħlief l-istat ta 'l-akkordji użat l-aħħar darba
 
+#19.47
 theme_xhred_textarea_to_clipboard=Il-kontenut ta 'textarea magħżul ġie kkupjat b'suċċess fil-clipboard
 
+#19.48
 theme_xhred_global_alias=Alias
 
+#19.50
 theme_xhred_mail_composer_real_name=Isem reali
 theme_xhred_mail_composer_username=username
 
+#19.53
 settings_global_palette_unauthenticated=Idħol fil-paġna tal-paletta tal-kulur
 
+#19.60
 settings_config_save_and_next=Ħlief u Li jmiss
 settings_config_configuration_category=Kategorija tal-konfigurazzjoni
 config_search_options_all=Fittex fl-għażliet kollha tal-konfigurazzjoni tal-modulu
 theme_xhred_editing_config_file=Editjar tal-fajl tal-konfigurazzjoni
 
+#19.61
 theme_xhred_login_message_2fa=L-awtentikazzjoni b'żewġ fatturi ġiet attivata għal dan l-utent biex jidħol
 theme_xhred_global_verify=Ivverifika
 settings_show_terminal_link2=Uri l-buttuna tal-qoxra tal-kmand
@@ -1137,6 +1193,7 @@ settings_hotkey_shell2=Hotkey għall-qoxra tal-kmand
 theme_xhred_path_to_console2=Iftaħ it-triq kurrenti fil-kmand shell <tt>(Alt+Shift+K)</tt>
 theme_tooltip_terminal_link2=Qoxra tal-kmand
 
+#19.70
 theme_xhred_filemanager_context_view=Ara
 theme_xhred_file_viewer=File Viewer
 theme_xhred_global_done=Magħmul.

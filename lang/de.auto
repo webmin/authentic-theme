@@ -1,23 +1,30 @@
+#19.20
 extensions_mail_flag_spam_status=Spam-Status
 extensions_mail_flag_spam_status_data=$1 von $2
 extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
 
+#19.47
 theme_xhred_textarea_to_clipboard=Ausgewählte Textbereichsinhalte wurden erfolgreich in die Zwischenablage kopiert
 
+#19.48
 theme_xhred_global_alias=Alias
 
+#19.50
 theme_xhred_mail_composer_real_name=Echter Name
 theme_xhred_mail_composer_username=Nutzername
 
+#19.53
 settings_global_palette_unauthenticated=Farbpalette der Anmeldeseite
 
+#19.60
 settings_config_save_and_next=Speichern und weiter
 settings_config_configuration_category=Konfigurationskategorie
 config_search_options_all=Durchsuchen Sie alle Modulkonfigurationsoptionen
 theme_xhred_editing_config_file=Konfigurationsdatei bearbeiten
 
+#19.61
 theme_xhred_login_message_2fa=Die Zwei-Faktor-Authentifizierung wurde aktiviert, damit sich dieser Benutzer anmelden kann
 theme_xhred_global_verify=Überprüfen
 settings_show_terminal_link2=Befehls-Shell-Schaltfläche anzeigen
@@ -25,6 +32,7 @@ settings_hotkey_shell2=Hotkey für die Befehlsshell
 theme_xhred_path_to_console2=Öffnen Sie den aktuellen Pfad in der Befehlsshell <tt>(Alt+Umschalt+K)</tt>
 theme_tooltip_terminal_link2=Befehlsshell
 
+#19.70
 theme_xhred_filemanager_context_view=Aussicht
 theme_xhred_file_viewer=Datei-Viewer
 theme_xhred_global_done=Getan.

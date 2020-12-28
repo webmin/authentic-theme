@@ -266,6 +266,7 @@ theme_xhred_notifications_firewall_danger_message=Se pare că <strong>ConfigServ
 
 theme_xhred_notifications_firewall_warning=Atenționare Firewall
 
+#17.50
 settings_grayscale_level_navigation=Filtru nuanţe de gri
 settings_grayscale_level_navigation_description=Valori implicite/curente <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtru nuanţe sepia
@@ -295,6 +296,7 @@ theme_xhred_filemanager_context_paste=Lipeşte
 theme_xhred_filemanager_context_chmod=Schimbă Permisiuni
 theme_xhred_filemanager_context_chown=Schimbă Proprietate
 
+#17.51
 theme_xhred_filemanager_context_new=Nou
 theme_xhred_filemanager_context_newarchive=Crează o nouă arhivă
 theme_xhred_filemanager_context_delete=Şterge
@@ -305,10 +307,12 @@ theme_xhred_filemanager_context_goto=Deschide Locaţia Articolului
 theme_xhred_filemanager_context_properties=Proprietăţi
 theme_xhred_filemanager_context_search=Caută
 
+#17.52
 theme_xhred_filemanager_context_deselect_all=Deselectează Tot
 theme_xhred_filemanager_context_upload=Încarcă în directorul curent
 theme_xhred_filemanager_context_download=Descarcă din URL de la distanţă
 
+#17.53
 theme_config_virtualmin=Virtualmin Servere Virtuale
 theme_config_cloudmin=Cloudmin Sisteme Administrate
 settings_right_thirdparties_options_title=Opţiunile modulelor terţe
@@ -317,14 +321,17 @@ theme_xhred_filemanager_context_bookmarks=Marcaje
 theme_xhred_filemanager_context_bookmark_current=Marchează calea deschisă acum
 theme_xhred_filemanager_context_transfer=Transferă
 
+#17.54
 theme_xhred_filemanager_title_symlink_target=Ţintă Link
 
+#17.60
 right_unlimited=Nelimitat
 settings_leftmenu_width=Lăţimea preferată
 settings_leftmenu_width_description=Lăţimea implicită/curentă <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Buton de inversare
 settings_switch_rdisplay_description=Această opţiune îţi permite configurarea ordinii difertie pentru butoanele din stânga sus. După modificarea opţiuni, este necesară reîncărcarea paginii pentru a se aplica modificarea.
 
+#17.63
 theme_xhred_filemanager_context_calculate_selected_size=Calculează dimensiunea selectată
 theme_xhred_filemanager_selected_entries=Selectat: %value intrări
 theme_xhred_filemanager_manual_path=Introdu calea manual
@@ -337,6 +344,7 @@ theme_xhred_datatable_sloadingrecords=Încarc
 theme_xhred_datatable_sprocessing=Procesez...
 theme_xhred_datatable_szerorecords=Nico înregistrare potrivită
 
+#17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Fişierul a fost editat dar n-a fost salvat.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Ce doreşti să faci?
 theme_xhred_global_save=Salvează
@@ -345,9 +353,11 @@ theme_xhred_global_close_without_saving=Închide fără să salvezi
 theme_xhred_global_continue_editing=Continuă editarea
 theme_xhred_filemanager_context_download_file=Descarcă
 
+#17.65
 settings_sysinfo_easypie_charts_width=Lăţime grafice
 settings_sysinfo_easypie_charts_scale=Scalează lungimea graficelor
 
+#17.80
 right_return_theme_options=Opţiuni temă
 theme_xhred_datatable_semptydirectory=Directorul este gol
 theme_xhred_filemanager_context_clipboard=Copiați calea în clipboard
@@ -377,11 +387,13 @@ theme_xhred_filemanager_hide_actions=Ascunde coloana de acţiuni
 theme_xhred_filemanager_hovered_toolbar=Activează meniuri în bara de instrumente la planarea cursorului
 theme_xhred_filemanager_context_delete_selected=Şterge ce-i selectat
 
+#17.83
 theme_xhred_database_adding_new_row=Adăugarea unui rând nou
 theme_xhred_database_editing_row=Editarea rândului selectat
 theme_xhred_database_editing_rows=Editarea rândurilor selectate
 theme_xhred_database_adding_new_row_data=Setare date
 
+#17.84
 theme_xhred_datatable_filter=Filttru
 
 theme_xhred_global_update=Actualizează
@@ -416,6 +428,7 @@ theme_xhred_global_notice=Notificare
 
 theme_xhred_updates_disabled_notice=Am detectat că nu ai activate notificările pentru actualizările <em>Authentic Theme</em>? <br><br>Activarea acestor în <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Configurare Temă</strong></a> te va ajuta să actualizezi la ultima versiune cu un singur click imediat ce este publicat.
 
+#18.00
 theme_xhred_global_file=Fişier
 theme_xhred_global_directory=Director
 theme_xhred_global_no_target=Obiectivul nu există sau nu este accesibil
@@ -488,19 +501,24 @@ theme_xhred_module_help=Ajutorul modulului
 
 theme_xhred_server_process_running=Procesul serverului încă rulează!? Sunteți sigur că doriți să navigați și să nu aveți acces la informațiile generate? Chiar dacă ieşiţi acum, procesul nu va fi terminat.
 
+#18.03
 settings_global_options_title=Opţiuni globale
 settings_global_passgen_format=Generator de parolă
 settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Generează Parola Nouă<br> (În Clipboard)
 theme_xhred_password_generator_new_success=Parola generată %password s-a copiat cu succes în clipboard.
 
+#18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Aces fişier trebuie să se termine cu `1;` ca să poată funcţiona cu succes.
 
+#18.10
 theme_error_access_not_root=Acces refuzat: Utilizatorul are nevoie de acces la modulul <em>Configurări Webmin</em> pentru a edita configurația temei
 
+#18.20
 settings_hide_top_loader=Ascunde bara de progress şi încărcătorul
 
+#18.30
 settings_leftmenu_vm_cm_dropdown_icons=Afișați pictogramele simbolice în meniul derulant în Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Disponibil
@@ -546,6 +564,7 @@ theme_xhred_filemanager_successful_secontext=Contextul de securitate s-a schimba
 
 theme_xhred_global_no_results_found=N-am găsit rezultate
 
+#18.40
 theme_new_password_header=Aplica noua parolă pentru utilizator
 login_reset=Recuperare parolă
 theme_xhred_move_top=Mută la început
@@ -566,6 +585,7 @@ theme_xhred_tooltip_switch_user=Schimbă utilizator
 theme_tooltip_logout=Ieşire
 theme_tooltip_edit_user=Editare utilizator
 
+#18.45
 settings_sysinfo_easypie_charts_size=Diametru grafice
 theme_xhred_global_choose=Alege
 theme_xhred_global_select=Selectează
@@ -583,6 +603,7 @@ settings_right_soft_updates_page_options_title=Actualizări Software
 theme_xhred_git_compare_changes=Compară schimbările
 theme_xhred_filemanager_link_to_clipboard=Numele link-ului simbolic a fost copiat în clipboard.
 
+#18.46
 theme_left_mail_prefs=Preferinţe de email
 theme_left_mail_change_password=Schimbă parola
 theme_left_mail_account_functions=Funcţiile contului
@@ -591,6 +612,7 @@ theme_xhred_global_module_config=Configurare modul
 theme_xhred_global_return=Întoarce-te
 theme_xhred_global_return_to_module_index=Întoarce-te la indexul modulului
 
+#18.47
 theme_xhred_global_complete_changelog=Changelog complet
 theme_xhred_global_beta_version=Versiune Beta
 theme_xhred_global_release=Release
@@ -598,6 +620,7 @@ theme_xhred_global_released_on=Eliberat pe
 theme_xhred_global_committed_on=Comis pe
 theme_xhred_global_resolved_issues=Probleme rezolvate în %value
 
+#18.48
 theme_force_upgrade=Forţează actualizarea temei folosind ultima publicare de pe GitHub
 theme_xhred_force_upgrade_beta=Install latest development version (beta)
 theme_xhred_force_upgrade_stable=Install latest release version (stable)
@@ -606,6 +629,7 @@ theme_update_footer=Please be kind reporting bugs to $1 repository. Follow theme
 theme_xhred_encoding_manually_set=Manually set encoding
 theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to allow encoding to be changed.
 
+#18.49
 theme_xhred_filemanager_user_switch=Comută la utilizator (Ctrl+M)
 theme_xhred_filemanager_user_switch_description=Selectând utilizatorul listat mai jos, vei schimba modalitatea de operare, urmând a fi efectuate sub acest utilizator.
 theme_xhred_filemanager_user_switch_description_back=Pentru a reveni la modul implicit, alegeți prima opțiune din selecţie.
@@ -624,6 +648,7 @@ theme_xhred_global_maximize=Maximizează
 theme_xhred_global_normalize=Normalizare
 theme_xhred_global_set_encoding=Setează codificarea
 
+#19.00
 theme_xhred_sysinfo_update_start=Informaţiile de sistem sunt în curs de recolectare.
 theme_xhred_sysinfo_update_end=Informaţiile de sistem s-au recolectat cu succes.
 theme_xhred_sysinfo_update_failed=Informaţiile de sistem nu se pot recolcta. Reîncearcă mai târziu.
@@ -644,11 +669,14 @@ theme_xhred_global_seconds=Secunde
 theme_xhred_global_minute=Minut
 theme_xhred_global_minutes=Minute
 
+#19.01
 theme_xhred_browser_warning=Pentru o experienţă completă cu panourile serverului pe PC-ul tău, foloseşte un browser suportat şi actualizat.<br><br><em>Internet Explorer</em> nu mai este acceptat.<br><br>Browserele recomandate sunt <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> or <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Poţi descărca versiuni de browsere portabile, ce nu necesită instalare, pentru a evita limitări impuse.</div>
 
+#19.02
 theme_xhred_filter_content=Filtrează conţinut
 theme_xhred_log_file_empty=Fişierul de loguri este gol
 
+#19.03
 theme_xhred_config_configurable_options=Opţiuni configurabile
 theme_xhred_filter_content_no_matches_query=Niciun conţinut nu corespunde %str interogate
 theme_xhred_toggle_accordions=Comută vizibilitate acordeon
@@ -667,17 +695,20 @@ theme_xhred_signing_success=Autentificare cu succes!
 theme_xhred_session_failed_password=Parolă greşită, reîncearcă.
 theme_xhred_global_reauthenticate=Reautentificare
 
+#19.04
 settings_sysinfo_real_time_status=Permite monitorizare în timp real
 settings_sysinfo_real_time_timeout=Interval pentru reactualizare
 settings_sysinfo_real_time_timeout_description=Setează intervalul dorit pentru actualizarea monitorizării din fundal. Valoarea va fi în milisecunde. Menţine această valoare cât mai mică pentru a preveni pierderi de date pe scurte perioade timp
 theme_xhred_global_redirecting=Redirecționez
 
+#19.05
 body_no_javascript_title=JavaScript este deyactivat
 body_no_javascript_message=Te rog activează javascript și reîncarcă pagina
 theme_xhred_connection_lost=Conexiune pierdută
 theme_xhred_connection_success=Conexiune cu succes
 theme_xhred_connection_success_details=Conexiunea la server s-a restabilit.
 
+#19.08
 theme_xhred_return_home=Întoarcere la panoul index
 theme_xhred_global_upload=Încarcă
 theme_xhred_global_select_files=Selectează fișier(e)
@@ -686,6 +717,7 @@ theme_xhred_global_files_selected=fișiere selectate
 theme_xhred_global_reset=Reset
 theme_xhred_upload_initial_info=Drag-and-drop fișiere aici sau clic ca să selectezi
 
+#19.09
 theme_xhred_global_empty=Gol
 theme_xhred_global_click_here=clic aici
 theme_git_patch_incompatible_message=Instalarea acestei versiuni $1 <em>$2</em> necesită ultima și/sau o posibilă versiune nelansată $3 sau $5 pentru a funcţiona corect.
@@ -693,6 +725,7 @@ theme_git_patch_incompatible_message_s=Instalarea acestei versiuni $1 <em>$2</em
 theme_git_patch_incompatible_message_desc=Ar putea exista modificări incompatibile, care ar putea afecta funcţionarea corectă a temei. Pentru a ocoli această atenţionare şi a forţa instalarea temei oricum $1, sau upgrade $2 la ultima versiune de dezvoltare, trebuie folosită consola executând scriptul <kbd>update-from-repo.sh</kbd> din directorul său.
 theme_xhred_global_outdated=Această versiune este învechită
 
+#19.10
 theme_xhred_filemanager_edit_html=Editează ca HTML
 theme_xhred_global_example=Exemplu
 theme_xhred_global_output_example=Expune exemplul
@@ -728,6 +761,7 @@ theme_xhred_global_unlimited=Nelimitat
 theme_xhred_filemanager_tree_exclude_on_first_load=Exclude directoarele neesențiale din traverase a tree-view la inițializare pagini (încărcare rapidă)
 theme_xhred_filemanager_tree_expand_search=Extinde toate ramurile ce conțin potriviri în timpul filtrării tree-view
 
+#19.12
 theme_xhred_tooltip_side_slider_sync_sysinfo=Forțează sincronizarea în fundal pentru colecția de status
 theme_xhred_tooltip_side_slider_go_to_dashboard=Mergi la tabloul de bord
 theme_xhred_tooltip_side_slider_open_favorites_control=Deschide gestionarul favoritelor
@@ -739,6 +773,7 @@ settings_side_slider_fixed_toggle=Arată comutarea fixează/de-fixează
 settings_side_slider_fixed_toggle_description=Această opțiune va arăta comutatorul, în slide-ul lateral, în randul din subsol, permițând comutarea vizibilității pe fugă, dacă se întrunesc condițiile din opțiunea precedentă.
 settings_right_page_hide_persistent_vscroll=Ascunde scrollbar-ul persistent vertical
 
+#19.13
 settings_sysinfo_theme_updates_for_usermin=Instalează actualizări de temă și pentru Usermin
 theme_xhred_global_installed_version=Versiune instalată
 theme_xhred_global_installed_and_latest_version=Instalat și versiune ultimă
@@ -749,12 +784,14 @@ settings_contrast_mode=Activează modul contrast mare
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Arăt comutare la Webmin in meniul de navigare?
 
+#19.14
 settings_enable_container_offset=Activați decalajul containerului
 settings_enable_container_offset_description=Această opțiune va funcționa numai pe ecrane cu o rezoluție minimă de 1920 de pixeli orizontali
 theme_xhred_filemanager_preparing_download=Prepar download. Arhivez %number fișier(e). Te rog așteptă%dots
 theme_xhred_filemanager_prepared_download=Downloadul este gata. Arhivez %number fișier(e).
 theme_xhred_filemanager_canceled_download=Download anulat.
 
+#19.19
 theme_xhred_filemanager_settings_force_tar_download=Forțează comanda <code>tar</code>, chiar dacă <code>zip</code> este disponibil, cînd descarc ca arhivă
 theme_xhred_nice_size_PB=PO(PB)
 theme_xhred_nice_size_TB=TO(TB)
@@ -767,6 +804,7 @@ settings_sysinfo_real_time_status_disk=Activează pentru discuri
 settings_sysinfo_real_time_status_disk_description=Ar putea fi util să dezactivezi monitorizarea în timp real a discurilor pe sistemele de fișiere lente/mari
 theme_xhred_title_locale_non_ui_config=Format non-UI (ca în e-mailurile automate și fișierele exportate)
 
+#19.20
 extensions_mail_current_position=Mesaje $1-$2 din $3
 extensions_mail_sort_by_sender=Sortează după expeditor
 extensions_mail_sort_by_recipient=Sortează după destinatar
@@ -903,12 +941,14 @@ settings_cache_interval_1y=odată pe an
 
 theme_xhred_reload_notification=Configurația temei a fost modificată, dar nu a fost salvată. Pagina va fi reîncărcată, pentru a reveni la setările curente.
 
+#19.22
 theme_xhred_global_save_as=Salvează Ca
 theme_xhred_editor_save_file_as=Salveaza fișier ca
 theme_xhred_global_configuration=Configurare
 
 body_used_cached_total=$1 total / $3 în cache / $2 folosit
 
+#19.30
 theme_xhred_favorites_add=Aaugă la favorite
 theme_xhred_favorites_remove=Scoate din favorite
 theme_xhred_select_deselect=Selectează/deselectează reperul curent
@@ -926,6 +966,7 @@ theme_xhred_editor_set_syntax=Setează sintaxa
 theme_xhred_global_menu=Meniu
 theme_xhred_shell_aborted=Operațiune anulată
 
+#19.32
 theme_xhred_connection_reboot=În repornire
 theme_xhred_connection_reboot_details=Serverul este în repornire. Te rog așteaptă..
 settings_leftmenu_custom_links_description=Este posibil să ai linkuri extra personalizate, injectate în meniul de navigare. <br> <br> Sunt necesare tastele <em>titlu</em>, <em>link</em> și <em>icon</em>; opțional puteți defini la ce mod de conectare va fi afișat un link, specificând tasta <em>nivel</em>, cu valori, în lista separată prin virgulă, care conține: <br><br> <em>0</em> - login administrator; <br><em>1</em> - autentificare reseller <br><br><em>2</em> - login utilizator, <em>3</ em> em>4</em> - autentificarea proprietarului sistemului. <br><br> Va fi necesar să trimiteți obiect valabil JSON ca un șir, ca în exemplul de mai jos.<hr><pre>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -1013,12 +1054,14 @@ theme_xhred_global_version=versiune
 theme_xhred_notify_patching_module_style=Aplic patch UI inițial pentru $1 și reîncarc.
 theme_xhred_global_error_more_details_online=Notă: Te rog citește mai mult despre această eroare și cum o poți rezolva, în pagina noastră %1wiki page%1 online.
 
+#19.33
 theme_xhred_filemanager_search_file_mask=Mască fişier
 theme_xhred_filemanager_search_regex=Expresie uzuală
 theme_xhred_upload_successful=<span>$1 fișiere</span> s-au încărcat cu succes în folderul $2
 theme_xhred_upload_successful_single=<span>$1 fișier</span> s-au încărcat cu succes în folderul $2
 settings_usermin_default_module=Modul implicit
 
+#19.34
 theme_xhred_search_in_file_open_external=Detașază fișierul la un editor separat
 theme_xhred_path_to_console=Deschide calea curentă în terminal (Alt+Shift+K)
 theme_xhred_filemanager_editor_revert_content=Inversează fișier
