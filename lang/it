@@ -1175,3 +1175,37 @@ theme_xhred_global_alias=Alias
 #19.50
 theme_xhred_mail_composer_real_name=Nome reale
 theme_xhred_mail_composer_username=nome utente
+
+#19.53
+settings_global_palette_unauthenticated=Tavolozza colori della pagina di accesso
+
+#19.60
+settings_config_save_and_next=Salva e prosegui
+settings_config_configuration_category=Categoria configurazione
+config_search_options_all=Cerca tra tutte le opzioni di configurazione modulo
+theme_xhred_editing_config_file=Stai modificando un file di configurazione
+
+#19.61
+theme_xhred_login_message_2fa=L'autenticazione a due fattori è stata abilitata per questo utente per effettuare il login
+theme_xhred_global_verify=Verifica
+settings_show_terminal_link2=Mostra il pulsante della shell di comando
+settings_hotkey_shell2=Tasto di scelta rapida per la shell di comando
+theme_xhred_path_to_console2=Aprire il percorso corrente nella shell di comando <tt>(Alt+Shift+K)</tt>
+theme_tooltip_terminal_link2=Shell di comando
+
+#19.70
+theme_xhred_filemanager_context_view=Visualizza
+theme_xhred_file_viewer=Visualizzatore file
+theme_xhred_global_done=Fatto.
+theme_xhred_filemanager_file_save_err=Errore durante il salvataggio del file.
+theme_xhred_filemanager_view_head=Head file output
+theme_xhred_filemanager_view_head_and_reverse=Head and reverse file output
+theme_xhred_filemanager_view_tail=Tail file output
+theme_xhred_filemanager_view_tail_and_reverse=Tail and reverse file output
+theme_xhred_filemanager_view_head_and_tail=Head and tail file output
+theme_xhred_filemanager_search_info_search_dir=Cerca nella cartella
+theme_xhred_filemanager_search_limit_user=Di proprietà dell'utente
+theme_xhred_filemanager_search_limit_group=Di proprietà del gruppo
+theme_xhred_filemanager_search_limit_type=Tipo di file
+theme_xhred_filemanager_search_limit_size=Dimensione del file
+theme_xhred_filemanager_search_limit_size_desc=es. <2 K o >3 M - <5 M
