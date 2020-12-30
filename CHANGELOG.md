@@ -1,7 +1,9 @@
 ## Changelog
 
-#### Version 19.70-beta2 (December 20, 2020)
+#### Version 19.70-beta3 (December 31, 2020)
 * Add ability to preview any files in File Manager
+* Add support for deleting files to trash in File Manager
+* Add more features to search functionality (filter user, group, size and type) in File Manager
 * Add access to file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
 * Fix bugs
