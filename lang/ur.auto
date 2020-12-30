@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=گروپ کی ملکیت ہے
 theme_xhred_filemanager_search_limit_type=فائل کی قسم
 theme_xhred_filemanager_search_limit_size=فائل کا ناپ
 theme_xhred_filemanager_search_limit_size_desc=e.g. <2 K or >1 M
+
+theme_xhred_filemanager_context_move_to_trash=ردی میں ڈالیں
+theme_xhred_filemanager_context_permanently_delete=مستقل طور پر حذف کریں
+theme_xhred_global_remove=دور
+theme_xhred_filemanager_settings_deletion_mode=کوڑے دان میں جاکر فائلوں کو محفوظ طریقے سے حذف کریں
+theme_xhred_filemanager_successful_removal=ہٹانا کامیاب رہا۔
+theme_xhred_filemanager_removing_selected=ہٹانا منتخب کیا گیا۔
+theme_xhred_filemanager_remove_warning=Removal has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before removal. Restricted permissions (attributes) is another possible cause. Error message:

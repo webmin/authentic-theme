@@ -8,6 +8,9 @@
 #
 use strict;
 
+use File::Copy;
+use File::Path;
+
 our (%in, %text, $cwd, $path);
 
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
@@ -17,14 +20,34 @@ my @deleted_entries;
 
 my @entries_list = get_entries_list();
 my $fsid         = $in{'fsid'};
+my $to_trash     = $in{'trash'};
+my $time         = strftime('%Y-%m-%d_%H:%M:%S', localtime());
 
 foreach my $name (@entries_list) {
-	my $name_ = $name;
+    my $name_ = $name;
     $name = simplify_path($name);
-    if (!&unlink_file($cwd . '/' . $name)) {
-        $errors{ $name_ } = lc($text{'error_delete'});
+    if ($to_trash) {
+        my $tdir    = "$in{'home'}/.Trash/$cwd";
+        my %mkpopts = { owner => int($in{'uid'}), group => int($in{'guid'}) };
+        my $mkpathr = mkpath($tdir, \%mkpopts);
+        my $tfile;
+        if (!$mkpathr && -f "$tdir/$name" && -r "$tdir/$name") {
+            $tfile = "$tdir/$name-$time";
+        } elsif (!$mkpathr && glob("$tdir/$name/*")) {
+            $tfile = "$tdir/$name-$time";
+            mkpath($tdir, \%mkpopts);
+        }
+        if (!move("$cwd/$name", $tfile || "$tdir/$name")) {
+            $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));
+        } else {
+            push(@deleted_entries, $name);
+        }
     } else {
-        push(@deleted_entries, $name);
+        if (!&unlink_file($cwd . '/' . $name)) {
+            $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));
+        } else {
+            push(@deleted_entries, $name);
+        }
     }
 }
 

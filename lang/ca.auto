@@ -482,3 +482,11 @@ theme_xhred_filemanager_search_limit_group=Propietat del grup
 theme_xhred_filemanager_search_limit_type=Tipus d'arxiu
 theme_xhred_filemanager_search_limit_size=Mida de l'arxiu
 theme_xhred_filemanager_search_limit_size_desc=per exemple. <2 K o >1 M
+
+theme_xhred_filemanager_context_move_to_trash=Mou a la paperera
+theme_xhred_filemanager_context_permanently_delete=Suprimeix permanentment
+theme_xhred_global_remove=Elimina
+theme_xhred_filemanager_settings_deletion_mode=Suprimiu els fitxers de manera segura movent-vos a la paperera
+theme_xhred_filemanager_successful_removal=La supressió ha estat correcta.
+theme_xhred_filemanager_removing_selected=S'està eliminant la selecció.
+theme_xhred_filemanager_remove_warning=L'eliminació s'ha acabat correctament, però no per a tots els objectes. És possible que els objectes sol·licitats s’hagin pogut <em>canviar de nom</em> o <em>moure</em> abans d’eliminar-los. Els permisos (atributs) restringits són una altra causa possible. Missatge d'error:

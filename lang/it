@@ -1203,6 +1203,7 @@ theme_xhred_filemanager_view_head_and_reverse=Head and reverse file output
 theme_xhred_filemanager_view_tail=Tail file output
 theme_xhred_filemanager_view_tail_and_reverse=Tail and reverse file output
 theme_xhred_filemanager_view_head_and_tail=Head and tail file output
+
 theme_xhred_filemanager_search_info_search_dir=Cerca nella cartella
 theme_xhred_filemanager_search_limit_user=Di proprietà dell'utente
 theme_xhred_filemanager_search_limit_group=Di proprietà del gruppo

@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=Propriedade do grupo
 theme_xhred_filemanager_search_limit_type=Tipo de arquivo
 theme_xhred_filemanager_search_limit_size=Tamanho do arquivo
 theme_xhred_filemanager_search_limit_size_desc=por exemplo. <2 K ou >1 M
+
+theme_xhred_filemanager_context_move_to_trash=Mover para lixeira
+theme_xhred_filemanager_context_permanently_delete=Excluir permanentemente
+theme_xhred_global_remove=Retirar
+theme_xhred_filemanager_settings_deletion_mode=Exclua arquivos com segurança movendo para a lixeira
+theme_xhred_filemanager_successful_removal=A remoção foi bem-sucedida.
+theme_xhred_filemanager_removing_selected=Removendo selecionado.
+theme_xhred_filemanager_remove_warning=A remoção foi concluída com sucesso, mas não para todos os objetos. É possível que os objetos solicitados tenham sido <em>renomeados</em> ou <em>movidos</em> antes da remoção. Permissões restritas (atributos) são outra causa possível. Mensagem de erro:

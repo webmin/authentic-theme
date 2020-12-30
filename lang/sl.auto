@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=V lasti skupine
 theme_xhred_filemanager_search_limit_type=Vrsta datoteke
 theme_xhred_filemanager_search_limit_size=Velikost datoteke
 theme_xhred_filemanager_search_limit_size_desc=npr. <2 K ali >1 M
+
+theme_xhred_filemanager_context_move_to_trash=Premakni v koš
+theme_xhred_filemanager_context_permanently_delete=Trajno izbriši
+theme_xhred_global_remove=Odstrani
+theme_xhred_filemanager_settings_deletion_mode=Datoteke varno izbrišite tako, da se premaknete v koš
+theme_xhred_filemanager_successful_removal=Odstranitev je bila uspešna.
+theme_xhred_filemanager_removing_selected=Odstranjevanje izbranega.
+theme_xhred_filemanager_remove_warning=Odstranitev je bila uspešno končana, vendar ne za vse predmete. Možno je, da bi bili zahtevani predmeti <em>odstranjeni</em> ali <em>premaknjeni</em> pred odstranitvijo. Omejena dovoljenja (atributi) so še en možen vzrok. Obvestilo o napaki:

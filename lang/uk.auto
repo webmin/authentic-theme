@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=Належить групі
 theme_xhred_filemanager_search_limit_type=Тип файлу
 theme_xhred_filemanager_search_limit_size=Розмір файлу
 theme_xhred_filemanager_search_limit_size_desc=напр. <2 К або >1 М
+
+theme_xhred_filemanager_context_move_to_trash=Перемістити до кошика
+theme_xhred_filemanager_context_permanently_delete=Остаточно видалити
+theme_xhred_global_remove=Видалити
+theme_xhred_filemanager_settings_deletion_mode=Видаліть файли безпечно, перемістившись до кошика
+theme_xhred_filemanager_successful_removal=Видалення було успішним.
+theme_xhred_filemanager_removing_selected=Видалення вибраного.
+theme_xhred_filemanager_remove_warning=Видалення завершено успішно, але не для всіх об’єктів. Можливо, запитувані об’єкти могли бути <em>перейменовані</em> чи <em>переміщені</em> перед видаленням. Обмежені дозволи (атрибути) - ще одна можлива причина. Повідомлення про помилку:

@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=בבעלות הקבוצה
 theme_xhred_filemanager_search_limit_type=סוג קובץ
 theme_xhred_filemanager_search_limit_size=גודל הקובץ
 theme_xhred_filemanager_search_limit_size_desc=לְמָשָׁל <2 K או >1 M
+
+theme_xhred_filemanager_context_move_to_trash=העבר לאשפה
+theme_xhred_filemanager_context_permanently_delete=מחק לצמיתות
+theme_xhred_global_remove=לְהַסִיר
+theme_xhred_filemanager_settings_deletion_mode=מחק קבצים בבטחה על ידי מעבר לאשפה
+theme_xhred_filemanager_successful_removal=ההסרה הצליחה.
+theme_xhred_filemanager_removing_selected=מסיר את הנבחר.
+theme_xhred_filemanager_remove_warning=ההסרה הסתיימה בהצלחה אך לא לכל האובייקטים. יתכן שניתן היה <em>לשנות שם</em> או <em>להעביר</em> לפני ההסרה. הרשאות מוגבלות (תכונות) הן סיבה אפשרית נוספת. הודעת שגיאה:

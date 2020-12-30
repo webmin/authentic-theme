@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=Grubun sahibi
 theme_xhred_filemanager_search_limit_type=Dosya tipi
 theme_xhred_filemanager_search_limit_size=Dosya boyutu
 theme_xhred_filemanager_search_limit_size_desc=Örneğin. <2 K veya >1 M
+
+theme_xhred_filemanager_context_move_to_trash=Çöp kutusuna taşıyın
+theme_xhred_filemanager_context_permanently_delete=Kalıcı olarak silmek
+theme_xhred_global_remove=Kaldırmak
+theme_xhred_filemanager_settings_deletion_mode=Çöp kutusuna giderek dosyaları güvenle silin
+theme_xhred_filemanager_successful_removal=Kaldırma başarılı oldu.
+theme_xhred_filemanager_removing_selected=Seçilenler kaldırılıyor.
+theme_xhred_filemanager_remove_warning=Kaldırma işlemi başarıyla tamamlandı, ancak tüm nesneler için değil. İstenen nesnelerin kaldırılmadan önce <em>yeniden adlandırılmış</em> veya <em>taşınmış</em> olması mümkündür. Kısıtlanmış izinler (öznitelikler) başka bir olası nedendir. Hata mesajı:

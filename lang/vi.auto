@@ -1210,3 +1210,11 @@ theme_xhred_filemanager_search_limit_group=Thuộc sở hữu của nhóm
 theme_xhred_filemanager_search_limit_type=Loại tệp
 theme_xhred_filemanager_search_limit_size=Kích thước tập tin
 theme_xhred_filemanager_search_limit_size_desc=ví dụ. <2 K hoặc >1M
+
+theme_xhred_filemanager_context_move_to_trash=Di chuyển vào thùng rác
+theme_xhred_filemanager_context_permanently_delete=Xóa vĩnh viễn
+theme_xhred_global_remove=Tẩy
+theme_xhred_filemanager_settings_deletion_mode=Xóa tệp an toàn bằng cách chuyển vào thùng rác
+theme_xhred_filemanager_successful_removal=Đã xóa thành công.
+theme_xhred_filemanager_removing_selected=Đang xóa đã chọn.
+theme_xhred_filemanager_remove_warning=Quá trình xóa đã kết thúc thành công nhưng không phải đối với tất cả các đối tượng. Có thể (các) đối tượng được yêu cầu có thể đã được <em>đổi tên</em> hoặc <em>di chuyển</em> trước khi xóa. Các quyền (thuộc tính) bị hạn chế là một nguyên nhân có thể khác. Thông báo lỗi:

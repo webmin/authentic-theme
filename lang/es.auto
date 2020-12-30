@@ -1122,3 +1122,11 @@ theme_xhred_filemanager_search_limit_group=Propiedad del grupo
 theme_xhred_filemanager_search_limit_type=Tipo de archivo
 theme_xhred_filemanager_search_limit_size=Tamaño del archivo
 theme_xhred_filemanager_search_limit_size_desc=p.ej. <2 K o >1 M
+
+theme_xhred_filemanager_context_move_to_trash=Mover a la papelera
+theme_xhred_filemanager_context_permanently_delete=Borrar permanentemente
+theme_xhred_global_remove=Eliminar
+theme_xhred_filemanager_settings_deletion_mode=Elimina archivos de forma segura moviéndolos a la papelera
+theme_xhred_filemanager_successful_removal=La eliminación se realizó correctamente.
+theme_xhred_filemanager_removing_selected=Eliminando seleccionados.
+theme_xhred_filemanager_remove_warning=La eliminación ha finalizado correctamente, pero no para todos los objetos. Es posible que los objetos solicitados hayan sido <em>renombrados</em> o <em>movidos</em> antes de la eliminación. Los permisos (atributos) restringidos es otra posible causa. Mensaje de error:

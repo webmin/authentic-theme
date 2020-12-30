@@ -322,3 +322,11 @@ theme_xhred_filemanager_search_limit_group=归集团所有
 theme_xhred_filemanager_search_limit_type=文件类型
 theme_xhred_filemanager_search_limit_size=文件大小
 theme_xhred_filemanager_search_limit_size_desc=例如<2 K 或 >1 M
+
+theme_xhred_filemanager_context_move_to_trash=移到废纸篓
+theme_xhred_filemanager_context_permanently_delete=永久删除
+theme_xhred_global_remove=去掉
+theme_xhred_filemanager_settings_deletion_mode=通过移到回收站安全地删除文件
+theme_xhred_filemanager_successful_removal=移除成功。
+theme_xhred_filemanager_removing_selected=删除所选内容。
+theme_xhred_filemanager_remove_warning=删除成功完成，但并非所有对象都删除。在删除之前，请求的对象可能已经被<em>重命名</em>或<em>移动</em>。权限受限（属性）是另一个可能的原因。错误信息：

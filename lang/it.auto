@@ -1,34 +1,7 @@
-#19.53
-settings_global_palette_unauthenticated=Tavolozza dei colori della pagina di accesso
-
-#19.60
-settings_config_save_and_next=Salva e Avanti
-settings_config_configuration_category=Categoria di configurazione
-config_search_options_all=Cerca in tutte le opzioni di configurazione del modulo
-theme_xhred_editing_config_file=Modifica del file di configurazione
-
-#19.61
-theme_xhred_login_message_2fa=L'autenticazione a due fattori è stata abilitata per l'accesso di questo utente
-theme_xhred_global_verify=Verificare
-settings_show_terminal_link2=Mostra il pulsante della shell dei comandi
-settings_hotkey_shell2=Tasto di scelta rapida per la shell dei comandi
-theme_xhred_path_to_console2=Apri il percorso corrente nella shell dei comandi <tt>(Alt+Maiusc+K)</tt>
-theme_tooltip_terminal_link2=Shell di comando
-
-#19.70
-theme_xhred_filemanager_context_view=Visualizza
-theme_xhred_file_viewer=Visualizzatore di file
-theme_xhred_global_done=Fatto.
-theme_xhred_filemanager_file_save_err=Errore durante il salvataggio del file.
-theme_xhred_filemanager_view_head=Uscita file di testa
-theme_xhred_filemanager_view_head_and_reverse=Testa e output file inverso
-theme_xhred_filemanager_view_tail=Output del file di coda
-theme_xhred_filemanager_view_tail_and_reverse=Uscita file di coda e inversa
-theme_xhred_filemanager_view_head_and_tail=Uscita file di testa e coda
-
-theme_xhred_filemanager_search_info_search_dir=Directory di ricerca
-theme_xhred_filemanager_search_limit_user=Di proprietà dell'utente
-theme_xhred_filemanager_search_limit_group=Di proprietà del gruppo
-theme_xhred_filemanager_search_limit_type=Tipo di file
-theme_xhred_filemanager_search_limit_size=Dimensione del file
-theme_xhred_filemanager_search_limit_size_desc=per esempio. <2 K o >1 M
+theme_xhred_filemanager_context_move_to_trash=Sposta nel cestino
+theme_xhred_filemanager_context_permanently_delete=Elimina definitivamente
+theme_xhred_global_remove=Rimuovere
+theme_xhred_filemanager_settings_deletion_mode=Elimina i file in modo sicuro spostandoti nel cestino
+theme_xhred_filemanager_successful_removal=La rimozione ha avuto successo.
+theme_xhred_filemanager_removing_selected=Rimozione di selezionati.
+theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma non per tutti gli oggetti. È possibile che gli oggetti richiesti siano stati <em>rinominati</em> o <em>spostati</em> prima della rimozione. Le autorizzazioni limitate (attributi) sono un'altra possibile causa. Messaggio di errore:

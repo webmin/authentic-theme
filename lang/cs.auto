@@ -1034,3 +1034,11 @@ theme_xhred_filemanager_search_limit_group=Vlastněno skupinou
 theme_xhred_filemanager_search_limit_type=Typ souboru
 theme_xhred_filemanager_search_limit_size=Velikost souboru
 theme_xhred_filemanager_search_limit_size_desc=např. <2 K nebo >1 M
+
+theme_xhred_filemanager_context_move_to_trash=Přesunout do koše
+theme_xhred_filemanager_context_permanently_delete=Trvale smazat
+theme_xhred_global_remove=Odstranit
+theme_xhred_filemanager_settings_deletion_mode=Bezpečné mazání souborů přesunutím do koše
+theme_xhred_filemanager_successful_removal=Odstranění proběhlo úspěšně.
+theme_xhred_filemanager_removing_selected=Odebrání vybrané.
+theme_xhred_filemanager_remove_warning=Odstranění bylo úspěšně dokončeno, ale ne u všech objektů. Je možné, že požadované objekty mohly být před odebráním <em>přejmenovány</em> nebo <em>přesunuty</em>. Další možnou příčinou jsou omezená oprávnění (atributy). Chybové hlášení:
