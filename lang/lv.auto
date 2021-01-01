@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Pārvietot uz atkritni
 theme_xhred_filemanager_context_permanently_delete=Neatgriezeniski dzēst
 theme_xhred_global_remove=Noņemt
 theme_xhred_filemanager_settings_deletion_mode=Droši izdzēsiet failus, pārvietojoties uz atkritni
-theme_xhred_filemanager_successful_removal=Noņemšana bija veiksmīga.
+theme_xhred_filemanager_successful_removal=Izvešana atkritnē <tt>$1</tt> bija veiksmīga.
 theme_xhred_filemanager_removing_selected=Notiek atlasītā noņemšana.
 theme_xhred_filemanager_remove_warning=Noņemšana ir veiksmīgi pabeigta, bet ne visiem objektiem. Iespējams, ka pieprasīto objektu (-us) pirms noņemšanas varēja <em>pārdēvēt</em> vai <em>pārvietot</em>. Ierobežotās atļaujas (atribūti) ir vēl viens iespējamais iemesls. Kļūdas ziņojums:

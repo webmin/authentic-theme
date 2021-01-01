@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Joan zakarrontzira
 theme_xhred_filemanager_context_permanently_delete=Ezabatu behin betiko
 theme_xhred_global_remove=Kendu
 theme_xhred_filemanager_settings_deletion_mode=Ezabatu fitxategiak segurtasunez zaborrontzira
-theme_xhred_filemanager_successful_removal=Kentzea arrakastatsua izan da.
+theme_xhred_filemanager_successful_removal=<tt>$1</tt> zaborrontzira kentzea arrakastatsua izan da.
 theme_xhred_filemanager_removing_selected=Hautatutakoa kentzen.
 theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objektu guztientzat. Baliteke eskatutako objektuak kendu aurretik <em>izena aldatu</em> edo <em>mugitu</em> izatea. Baimen mugatuak (atributuak) beste kausa posible bat da. Akats mezua:

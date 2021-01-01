@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=ارسال الى سلة المح�
 theme_xhred_filemanager_context_permanently_delete=حذف بشكل دائم
 theme_xhred_global_remove=إزالة
 theme_xhred_filemanager_settings_deletion_mode=احذف الملفات بأمان من خلال الانتقال إلى سلة المهملات
-theme_xhred_filemanager_successful_removal=تمت الإزالة بنجاح.
+theme_xhred_filemanager_successful_removal=تمت الإزالة إلى المهملات <tt>$1</tt> بنجاح.
 theme_xhred_filemanager_removing_selected=إزالة المحدد.
 theme_xhred_filemanager_remove_warning=انتهت الإزالة بنجاح ولكن ليس لجميع الكائنات. من الممكن أن يكون قد تمت <em>إعادة تسمية</em> الكائن المطلوب أو <em>نقله</em> قبل الإزالة. الأذونات المقيدة (السمات) هي سبب آخر محتمل. رسالة خطأ:

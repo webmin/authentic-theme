@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=انتقال به سطل زبال�
 theme_xhred_filemanager_context_permanently_delete=حذف دائمی
 theme_xhred_global_remove=برداشتن
 theme_xhred_filemanager_settings_deletion_mode=با انتقال به سطل زباله ، پرونده ها را با خیال راحت پاک کنید
-theme_xhred_filemanager_successful_removal=حذف موفقیت آمیز بود.
+theme_xhred_filemanager_successful_removal=حذف در سطل زباله <tt>$1</tt> با موفقیت انجام شد.
 theme_xhred_filemanager_removing_selected=در حال حذف موارد انتخاب شده.
 theme_xhred_filemanager_remove_warning=حذف با موفقیت به پایان رسید اما نه برای همه اشیا. این احتمال وجود دارد که شی (های) درخواستی قبل از حذف <em>تغییر نام داده شود</em> یا <em>منتقل شود</em>. مجوزهای محدود شده (ویژگی ها) دلیل احتمالی دیگری است. پیغام خطا:

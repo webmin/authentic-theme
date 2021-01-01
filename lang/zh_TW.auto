@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=移到廢紙簍
 theme_xhred_filemanager_context_permanently_delete=永久刪除
 theme_xhred_global_remove=去掉
 theme_xhred_filemanager_settings_deletion_mode=通過移到回收站安全地刪除文件
-theme_xhred_filemanager_successful_removal=移除成功。
+theme_xhred_filemanager_successful_removal=已成功刪除垃圾<tt>$1</tt>。
 theme_xhred_filemanager_removing_selected=刪除所選內容。
 theme_xhred_filemanager_remove_warning=刪除成功完成，但並非所有對像都刪除。在刪除之前，請求的對象可能已經被<em>重命名</em>或<em>移動</em>。受限的權限（屬性）是另一個可能的原因。錯誤信息：

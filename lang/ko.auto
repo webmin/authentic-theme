@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=휴지통으로 이동
 theme_xhred_filemanager_context_permanently_delete=영구적으로 삭제
 theme_xhred_global_remove=없애다
 theme_xhred_filemanager_settings_deletion_mode=휴지통으로 이동하여 안전하게 파일 삭제
-theme_xhred_filemanager_successful_removal=성공적으로 제거되었습니다.
+theme_xhred_filemanager_successful_removal=<tt>$1</tt> 휴지통으로 성공적으로 제거되었습니다.
 theme_xhred_filemanager_removing_selected=선택한 항목을 제거합니다.
 theme_xhred_filemanager_remove_warning=제거가 성공적으로 완료되었지만 모든 개체에 대한 것은 아닙니다. 요청 된 개체가 제거되기 전에 <em>이름이 바뀌거나</em> <em>이동</em>되었을 수 있습니다. 제한된 권한 (속성)은 또 다른 가능한 원인입니다. 에러 메시지:

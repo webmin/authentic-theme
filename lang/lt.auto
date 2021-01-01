@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Išmesti
 theme_xhred_filemanager_context_permanently_delete=Visam laikui ištrinti
 theme_xhred_global_remove=Pašalinti
 theme_xhred_filemanager_settings_deletion_mode=Saugiai ištrinkite failus perkeldami į šiukšliadėžę
-theme_xhred_filemanager_successful_removal=Pašalinti pavyko.
+theme_xhred_filemanager_successful_removal=Sėkmingai pašalinta į šiukšliadėžę <tt>$1</tt>.
 theme_xhred_filemanager_removing_selected=Pašalinama pasirinkta.
 theme_xhred_filemanager_remove_warning=Pašalinimas sėkmingai baigtas, bet ne visiems objektams. Gali būti, kad prašomas (-i) objektas (-ai) prieš pašalinimą galėjo būti <em>pervadintas</em> arba <em>perkeltas</em>. Apriboti leidimai (atributai) yra kita galima priežastis. Klaidos pranešimas:

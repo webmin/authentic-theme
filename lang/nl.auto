@@ -1098,6 +1098,6 @@ theme_xhred_filemanager_context_move_to_trash=Verplaats naar prullenbak
 theme_xhred_filemanager_context_permanently_delete=Permanent verwijderen
 theme_xhred_global_remove=Verwijderen
 theme_xhred_filemanager_settings_deletion_mode=Verwijder bestanden veilig door ze naar de prullenbak te verplaatsen
-theme_xhred_filemanager_successful_removal=Verwijdering is gelukt.
+theme_xhred_filemanager_successful_removal=Verwijdering naar prullenbak <tt>$1</tt> is gelukt.
 theme_xhred_filemanager_removing_selected=Selectie verwijderen.
 theme_xhred_filemanager_remove_warning=Het verwijderen is met succes voltooid, maar niet voor alle objecten. Het is mogelijk dat de aangevraagde objecten zijn <em>hernoemd</em> of <em>verplaatst</em> voordat ze werden verwijderd. Beperkte machtigingen (attributen) is een andere mogelijke oorzaak. Foutmelding:

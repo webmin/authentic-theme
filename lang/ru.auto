@@ -992,6 +992,6 @@ theme_xhred_filemanager_context_move_to_trash=Переместить в корз
 theme_xhred_filemanager_context_permanently_delete=Удалить навсегда
 theme_xhred_global_remove=удалять
 theme_xhred_filemanager_settings_deletion_mode=Безопасное удаление файлов, переместив их в корзину
-theme_xhred_filemanager_successful_removal=Удаление прошло успешно.
+theme_xhred_filemanager_successful_removal=Удаление в корзину <tt>$1</tt> прошло успешно.
 theme_xhred_filemanager_removing_selected=Удаление выбранного.
 theme_xhred_filemanager_remove_warning=Удаление завершено успешно, но не для всех объектов. Возможно, запрошенный объект (ы) мог быть <em>переименован</em> или <em>перемещен</em> перед удалением. Ограниченные права (атрибуты) - еще одна возможная причина. Сообщение об ошибке:

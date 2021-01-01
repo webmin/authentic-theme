@@ -20,6 +20,6 @@ theme_xhred_filemanager_context_move_to_trash=Mettre à la corbeille
 theme_xhred_filemanager_context_permanently_delete=Effacé définitivement
 theme_xhred_global_remove=Retirer
 theme_xhred_filemanager_settings_deletion_mode=Supprimer les fichiers en toute sécurité en les déplaçant vers la corbeille
-theme_xhred_filemanager_successful_removal=La suppression a réussi.
+theme_xhred_filemanager_successful_removal=La suppression de la corbeille <tt>$1</tt> a réussi.
 theme_xhred_filemanager_removing_selected=Suppression de la sélection.
 theme_xhred_filemanager_remove_warning=La suppression s'est terminée avec succès mais pas pour tous les objets. Il est possible que le ou les objets demandés aient été <em>renommés</em> ou <em>déplacés</em> avant la suppression. Les autorisations restreintes (attributs) sont une autre cause possible. Message d'erreur:

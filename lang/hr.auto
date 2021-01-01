@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Baci u smeće
 theme_xhred_filemanager_context_permanently_delete=Trajno izbriši
 theme_xhred_global_remove=Ukloniti
 theme_xhred_filemanager_settings_deletion_mode=Izbrišite datoteke sigurno premještanjem u otpad
-theme_xhred_filemanager_successful_removal=Uklanjanje je uspješno.
+theme_xhred_filemanager_successful_removal=Uklanjanje u otpad <tt>$1</tt> bilo je uspješno.
 theme_xhred_filemanager_removing_selected=Uklanjanje odabranog.
 theme_xhred_filemanager_remove_warning=Uklanjanje je uspješno završeno, ali ne za sve objekte. Moguće je da su traženi objekti mogli biti <em>preimenovani</em> ili <em>premješteni</em> prije uklanjanja. Ograničena dopuštenja (atributi) drugi su mogući uzrok. Poruka pogreške:

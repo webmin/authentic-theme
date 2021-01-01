@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Перамясціць у смет
 theme_xhred_filemanager_context_permanently_delete=Выдаліць назаўсёды
 theme_xhred_global_remove=Выдаліць
 theme_xhred_filemanager_settings_deletion_mode=Выдаліце файлы бяспечна, перамясціўшыся ў сметніцу
-theme_xhred_filemanager_successful_removal=Выдаленне прайшло паспяхова.
+theme_xhred_filemanager_successful_removal=Выдаленне ў сметніцу <tt>$1</tt> было паспяховым.
 theme_xhred_filemanager_removing_selected=Выдаленне выбранага.
 theme_xhred_filemanager_remove_warning=Выдаленне завершана паспяхова, але не для ўсіх аб'ектаў. Не выключана, што запытаныя аб'екты маглі быць <em>перайменаваны</em> альбо <em>перамешчаны</em> перад выдаленнем. Іншая магчымая прычына - абмежаваныя дазволы (атрыбуты). Паведамленне пра памылку:

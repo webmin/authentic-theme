@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Siirtää roskakoriin
 theme_xhred_filemanager_context_permanently_delete=Poista pysyvästi
 theme_xhred_global_remove=Poista
 theme_xhred_filemanager_settings_deletion_mode=Poista tiedostot turvallisesti siirtämällä roskakoriin
-theme_xhred_filemanager_successful_removal=Poisto onnistui.
+theme_xhred_filemanager_successful_removal=Poistaminen roskakoriin <tt>$1</tt> onnistui.
 theme_xhred_filemanager_removing_selected=Poistetaan valittuja.
 theme_xhred_filemanager_remove_warning=Poisto on suoritettu onnistuneesti, mutta ei kaikkien objektien kohdalla. On mahdollista, että pyydetyt objektit voidaan <em>nimetä uudelleen</em> tai <em>siirtää</em> ennen poistamista. Rajoitetut käyttöoikeudet (määritteet) on toinen mahdollinen syy. Virheviesti:

@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Kidobni a kukába
 theme_xhred_filemanager_context_permanently_delete=Végleges törlés
 theme_xhred_global_remove=Eltávolítás
 theme_xhred_filemanager_settings_deletion_mode=A fájlokat biztonságosan törölheti, ha a kukába költözik
-theme_xhred_filemanager_successful_removal=Az eltávolítás sikeres volt.
+theme_xhred_filemanager_successful_removal=A <tt>$1</tt> kukába való eltávolítás sikeres volt.
 theme_xhred_filemanager_removing_selected=Kijelölt eltávolítása.
 theme_xhred_filemanager_remove_warning=Az eltávolítás sikeresen befejeződött, de nem minden objektum esetében. Lehetséges, hogy a kért objektum (oka) t eltávolítás előtt <em>átnevezhették</em> vagy <em>áthelyezhették</em> e. A korlátozott engedélyek (attribútumok) egy másik lehetséges ok. Hiba üzenet:

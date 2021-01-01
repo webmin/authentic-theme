@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Μετακίνηση στον Κά
 theme_xhred_filemanager_context_permanently_delete=Μόνιμη διαγραφή
 theme_xhred_global_remove=Αφαιρώ
 theme_xhred_filemanager_settings_deletion_mode=Διαγράψτε τα αρχεία με ασφάλεια μετακινώντας στον κάδο απορριμμάτων
-theme_xhred_filemanager_successful_removal=Η κατάργηση ήταν επιτυχής.
+theme_xhred_filemanager_successful_removal=Η κατάργηση στον κάδο απορριμμάτων <tt>$1</tt> ήταν επιτυχής.
 theme_xhred_filemanager_removing_selected=Κατάργηση επιλεγμένων.
 theme_xhred_filemanager_remove_warning=Η αφαίρεση ολοκληρώθηκε με επιτυχία, αλλά όχι για όλα τα αντικείμενα. Είναι πιθανό ότι τα ζητούμενα αντικείμενα θα μπορούσαν να είχαν <em>μετονομαστεί</em> ή <em>μετακινήθηκαν</em> πριν από την κατάργηση. Τα περιορισμένα δικαιώματα (χαρακτηριστικά) είναι μια άλλη πιθανή αιτία. Μήνυμα λάθους:

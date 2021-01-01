@@ -62,6 +62,6 @@ theme_xhred_filemanager_context_move_to_trash=ゴミ箱へ移動
 theme_xhred_filemanager_context_permanently_delete=完全に削除する
 theme_xhred_global_remove=削除する
 theme_xhred_filemanager_settings_deletion_mode=ゴミ箱に移動してファイルを安全に削除します
-theme_xhred_filemanager_successful_removal=削除は成功しました。
+theme_xhred_filemanager_successful_removal=ごみ箱への削除<tt>$1</tt>は成功しました。
 theme_xhred_filemanager_removing_selected=選択したものを削除します。
 theme_xhred_filemanager_remove_warning=削除は正常に完了しましたが、すべてのオブジェクトについてではありません。リクエストされたオブジェクトは、削除する前に<em>名前が変更された</em>または<em>移動された</em>可能性があります。制限された権限（属性）は、別の考えられる原因です。エラーメッセージ：

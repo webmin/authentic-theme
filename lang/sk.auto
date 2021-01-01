@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Presunúť do koša
 theme_xhred_filemanager_context_permanently_delete=Natrvalo odstrániť
 theme_xhred_global_remove=Odstrániť
 theme_xhred_filemanager_settings_deletion_mode=Súbory môžete bezpečne mazať presunutím do koša
-theme_xhred_filemanager_successful_removal=Odstránenie bolo úspešné.
+theme_xhred_filemanager_successful_removal=Odstránenie do koša <tt>$1</tt> bolo úspešné.
 theme_xhred_filemanager_removing_selected=Odstraňuje sa vybraté.
 theme_xhred_filemanager_remove_warning=Odstránenie bolo úspešne dokončené, ale nie pre všetky objekty. Je možné, že požadované objekty mohli byť pred odstránením <em>premenované</em> alebo <em>presunuté</em>. Ďalšou možnou príčinou sú obmedzené povolenia (atribúty). Chybná správa:

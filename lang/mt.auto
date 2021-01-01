@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Mexxi lejn Trash
 theme_xhred_filemanager_context_permanently_delete=Ħassar b'mod permanenti
 theme_xhred_global_remove=Neħħi
 theme_xhred_filemanager_settings_deletion_mode=Ħassar fajls mingħajr periklu billi tiċċaqlaq għat-Trash
-theme_xhred_filemanager_successful_removal=It-tneħħija kienet ta 'suċċess.
+theme_xhred_filemanager_successful_removal=It-tneħħija għat-Trash <tt>$1</tt> irnexxiet.
 theme_xhred_filemanager_removing_selected=It-tneħħija magħżula.
 theme_xhred_filemanager_remove_warning=It-tneħħija spiċċat b'suċċess iżda mhux għall-oġġetti kollha. Huwa possibbli li l-oġġett (i) mitlub (i) setgħu ġew <em>isem ġdid</em> jew <em>imċaqlaq</em> qabel it-tneħħija. Permessi ristretti (attributi) hija kawża oħra possibbli. Messaġġ ta 'żball:

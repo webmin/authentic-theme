@@ -26,16 +26,21 @@ my $time         = strftime('%Y-%m-%d_%H:%M:%S', localtime());
 foreach my $name (@entries_list) {
     my $name_ = $name;
     $name = simplify_path($name);
+    my $mkpath_ = sub {
+        my ($dir) = @_;
+        my $rs = mkpath($dir, { owner => int($in{'uid'}), group => int($in{'guid'}) });
+        return $rs;
+    };
     if ($to_trash) {
         my $tdir    = "$in{'home'}/.Trash/$cwd";
         my %mkpopts = { owner => int($in{'uid'}), group => int($in{'guid'}) };
-        my $mkpathr = mkpath($tdir, \%mkpopts);
+        my $mkpathr = &$mkpath_($tdir);
         my $tfile;
         if (!$mkpathr && -f "$tdir/$name" && -r "$tdir/$name") {
             $tfile = "$tdir/$name-$time";
         } elsif (!$mkpathr && glob("$tdir/$name/*")) {
             $tfile = "$tdir/$name-$time";
-            mkpath($tdir, \%mkpopts);
+            &$mkpath_($tdir);
         }
         if (!move("$cwd/$name", $tfile || "$tdir/$name")) {
             $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));

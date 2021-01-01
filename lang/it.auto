@@ -2,6 +2,6 @@ theme_xhred_filemanager_context_move_to_trash=Sposta nel cestino
 theme_xhred_filemanager_context_permanently_delete=Elimina definitivamente
 theme_xhred_global_remove=Rimuovere
 theme_xhred_filemanager_settings_deletion_mode=Elimina i file in modo sicuro spostandoti nel cestino
-theme_xhred_filemanager_successful_removal=La rimozione ha avuto successo.
+theme_xhred_filemanager_successful_removal=La rimozione nel cestino <tt>$1</tt> è riuscita.
 theme_xhred_filemanager_removing_selected=Rimozione di selezionati.
 theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma non per tutti gli oggetti. È possibile che gli oggetti richiesti siano stati <em>rinominati</em> o <em>spostati</em> prima della rimozione. Le autorizzazioni limitate (attributi) sono un'altra possibile causa. Messaggio di errore:

@@ -1215,6 +1215,6 @@ theme_xhred_filemanager_context_move_to_trash=Преместване в кошч
 theme_xhred_filemanager_context_permanently_delete=Изтриване за постоянно
 theme_xhred_global_remove=Премахване
 theme_xhred_filemanager_settings_deletion_mode=Изтрийте файловете безопасно, като се преместите в кошчето
-theme_xhred_filemanager_successful_removal=Премахването беше успешно.
+theme_xhred_filemanager_successful_removal=Премахването в кошчето <tt>$1</tt> беше успешно.
 theme_xhred_filemanager_removing_selected=Премахване на избраното.
 theme_xhred_filemanager_remove_warning=Премахването приключи успешно, но не за всички обекти. Възможно е заявените обекти да са били <em>преименувани</em> или <em>преместени</em> преди премахването. Ограничените разрешения (атрибути) е друга възможна причина. Съобщение за грешка:
