@@ -1,12 +1,14 @@
 ## Changelog
 
-#### Version 19.70-beta3 (December 31, 2020)
-* Add ability to preview any files in File Manager
+#### Version 19.70-RC1 (January 5, 2021)
+* Add ability to preview any file in File Manager
 * Add support for deleting files to trash in File Manager
 * Add more features to search functionality (filter user, group, size and type) in File Manager
-* Add access to file status output for editor and viewer windows
+* Add to display extended file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
 * Fix bugs
+
+<!--- separator --->
 
 #### Version 19.62 (November 08, 2020)
 * Add better menu icons, fix alignment and size
@@ -41,7 +43,6 @@
 * Fix to correct textareas default size
 * Fix dozens of other tiny UI issues
 
-<!--- separator --->
 
 #### Version 19.54 (August 17, 2020)
 * Add ability for admins to enforce palette for login page [#1488/comment-674190326](https://github.com/authentic-theme/authentic-theme/issues/1488#issuecomment-674190326)
