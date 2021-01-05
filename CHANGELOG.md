@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.70-RC1 (January 5, 2021)
+#### Version 19.70 (January 5, 2021)
 * Add ability to preview any file in File Manager
 * Add support for deleting files to trash in File Manager
 * Add more features to search functionality (filter user, group, size and type) in File Manager
