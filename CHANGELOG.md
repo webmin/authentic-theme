@@ -2,7 +2,7 @@
 
 #### Version 19.70 (January 5, 2021)
 * Add ability to preview any file in File Manager
-* Add support for deleting files to trash in File Manager
+* Add support for removing files to trash in File Manager
 * Add more features to search functionality (filter user, group, size and type) in File Manager
 * Add to display extended file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
