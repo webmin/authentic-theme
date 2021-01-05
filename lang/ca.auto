@@ -481,7 +481,7 @@ theme_xhred_filemanager_search_limit_user=Propietat de l'usuari
 theme_xhred_filemanager_search_limit_group=Propietat del grup
 theme_xhred_filemanager_search_limit_type=Tipus d'arxiu
 theme_xhred_filemanager_search_limit_size=Mida de l'arxiu
-theme_xhred_filemanager_search_limit_size_desc=per exemple. <2 K o >1 M
+theme_xhred_filemanager_search_limit_size_desc=per exemple. <2K o >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Mou a la paperera
 theme_xhred_filemanager_context_permanently_delete=Suprimeix permanentment

@@ -558,7 +558,7 @@ theme_xhred_filemanager_search_limit_user=Dimiliki oleh pengguna
 theme_xhred_filemanager_search_limit_group=Dimiliki oleh kumpulan
 theme_xhred_filemanager_search_limit_type=Jenis fail
 theme_xhred_filemanager_search_limit_size=Saiz fail
-theme_xhred_filemanager_search_limit_size_desc=cth. <2 K atau >1 M
+theme_xhred_filemanager_search_limit_size_desc=cth. <2K atau >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Pindah ke tong sampah
 theme_xhred_filemanager_context_permanently_delete=Padam Kekal

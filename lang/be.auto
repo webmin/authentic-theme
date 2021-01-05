@@ -1209,7 +1209,7 @@ theme_xhred_filemanager_search_limit_user=Належыць карыстальн�
 theme_xhred_filemanager_search_limit_group=Належыць групе
 theme_xhred_filemanager_search_limit_type=Тып файла
 theme_xhred_filemanager_search_limit_size=Памер файла
-theme_xhred_filemanager_search_limit_size_desc=напр. <2 К або >1 М
+theme_xhred_filemanager_search_limit_size_desc=напр. <2К або >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Перамясціць у сметніцу
 theme_xhred_filemanager_context_permanently_delete=Выдаліць назаўсёды

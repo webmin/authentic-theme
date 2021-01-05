@@ -1209,7 +1209,7 @@ theme_xhred_filemanager_search_limit_user=사용자 소유
 theme_xhred_filemanager_search_limit_group=그룹 소유
 theme_xhred_filemanager_search_limit_type=파일 유형
 theme_xhred_filemanager_search_limit_size=파일 크기
-theme_xhred_filemanager_search_limit_size_desc=예 : <2K 또는 >1M
+theme_xhred_filemanager_search_limit_size_desc=예 : <2K 또는 >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=휴지통으로 이동
 theme_xhred_filemanager_context_permanently_delete=영구적으로 삭제

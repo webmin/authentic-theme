@@ -1209,7 +1209,7 @@ theme_xhred_filemanager_search_limit_user=Vlasnik korisnika
 theme_xhred_filemanager_search_limit_group=Vlasnik grupe
 theme_xhred_filemanager_search_limit_type=Vrsta datoteke
 theme_xhred_filemanager_search_limit_size=Veličina datoteke
-theme_xhred_filemanager_search_limit_size_desc=npr. <2 K ili >1 M
+theme_xhred_filemanager_search_limit_size_desc=npr. <2K ili >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Baci u smeće
 theme_xhred_filemanager_context_permanently_delete=Trajno izbriši

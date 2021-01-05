@@ -1209,7 +1209,7 @@ theme_xhred_filemanager_search_limit_user=Erabiltzailearen jabea
 theme_xhred_filemanager_search_limit_group=Taldearen jabetza
 theme_xhred_filemanager_search_limit_type=Fitxategi mota
 theme_xhred_filemanager_search_limit_size=Fitxategiaren tamaina
-theme_xhred_filemanager_search_limit_size_desc=adibidez <2 K edo >1 M
+theme_xhred_filemanager_search_limit_size_desc=adibidez <2K edo >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Joan zakarrontzira
 theme_xhred_filemanager_context_permanently_delete=Ezabatu behin betiko

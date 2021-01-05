@@ -1126,7 +1126,7 @@ theme_xhred_filemanager_search_limit_user=Propriedade do usuário
 theme_xhred_filemanager_search_limit_group=Propriedade do grupo
 theme_xhred_filemanager_search_limit_type=Tipo de arquivo
 theme_xhred_filemanager_search_limit_size=Tamanho do arquivo
-theme_xhred_filemanager_search_limit_size_desc=por exemplo. <2 K ou >1 M
+theme_xhred_filemanager_search_limit_size_desc=por exemplo. <2K ou >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Mover para lixeira
 theme_xhred_filemanager_context_permanently_delete=Excluir permanentemente

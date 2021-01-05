@@ -1209,7 +1209,7 @@ theme_xhred_filemanager_search_limit_user=Vlastnené používateľom
 theme_xhred_filemanager_search_limit_group=Vo vlastníctve skupiny
 theme_xhred_filemanager_search_limit_type=Typ súboru
 theme_xhred_filemanager_search_limit_size=Veľkosť súboru
-theme_xhred_filemanager_search_limit_size_desc=napr. <2 K alebo >1 M
+theme_xhred_filemanager_search_limit_size_desc=napr. <2K alebo >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Presunúť do koša
 theme_xhred_filemanager_context_permanently_delete=Natrvalo odstrániť

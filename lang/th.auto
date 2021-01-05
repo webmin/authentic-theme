@@ -1209,7 +1209,7 @@ theme_xhred_filemanager_search_limit_user=เป็นเจ้าของโ�
 theme_xhred_filemanager_search_limit_group=เป็นเจ้าของโดยกลุ่ม
 theme_xhred_filemanager_search_limit_type=ประเภทไฟล์
 theme_xhred_filemanager_search_limit_size=ขนาดไฟล์
-theme_xhred_filemanager_search_limit_size_desc=เช่น. <2 K หรือ >1 M
+theme_xhred_filemanager_search_limit_size_desc=เช่น. <2K หรือ >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=ย้ายไปที่ถังขยะ
 theme_xhred_filemanager_context_permanently_delete=ลบถาวร
