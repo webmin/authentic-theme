@@ -7,6 +7,6 @@
 #
 use strict;
 
-do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
+do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
 
 print_content();

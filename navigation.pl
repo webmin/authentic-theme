@@ -184,6 +184,6 @@ elsif (foreign_available("mailbox") &&
     print_sysinfo_link(1);
 }
 
-do("$ENV{'THEME_ROOT'}/buttons.pl");
+do("@{[miniserv::getenv('theme_root')]}/buttons.pl");
 
 1;

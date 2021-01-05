@@ -12,7 +12,7 @@ use warnings;
 
 our (%text, %in, $root_directory, $config_directory, $user_config_directory, %theme_text);
 
-require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+require("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
 
 my (%access,

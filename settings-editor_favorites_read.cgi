@@ -9,7 +9,7 @@ use strict;
 
 our (%in, $current_theme, $config_directory, $remote_user, %theme_text);
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
 my $file = $config_directory . "/$current_theme/favorites-$remote_user.json";
 my $data = &read_file_contents($file);

@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %gconfig, %text, $pragma_no_cache, %theme_text, %theme_config);
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
 $pragma_no_cache = 1;
 $ENV{'MINISERV_INTERNAL'} || die "Can only be called by miniserv.pl";

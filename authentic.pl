@@ -36,7 +36,7 @@ our ($get_user_level,
      $ui_formcount,
      $user_module_config_directory);
 
-do("$ENV{'THEME_ROOT'}/authentic-init.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-init.pl");
 
 sub theme_header
 {

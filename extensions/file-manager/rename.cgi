@@ -10,7 +10,7 @@ use strict;
 
 our (%in, %text, $cwd, $path);
 
-do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
+do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'name'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());

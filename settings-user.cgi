@@ -9,7 +9,7 @@ use strict;
 
 our ($remote_user, %theme_config, %theme_text);
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
 $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true' &&
   error($theme_text{'settings_show_theme_configuration_for_admins_only_error'});

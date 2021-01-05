@@ -8,14 +8,14 @@
 use strict;
 no warnings 'uninitialized';
 
-use lib ("$ENV{'THEME_ROOT'}/lib");
+use lib ("@{[miniserv::getenv('theme_root')]}/lib");
 use Async;
 
 BEGIN {push(@INC, "..");}
 use WebminCore;
 
 our (%in, $config_directory, $var_directory, $current_theme, $remote_user);
-do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-funcs.pl");
 
 init_config();
 ReadParse();

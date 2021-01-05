@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %gconfig, $current_theme, $config_directory, %theme_text);
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
 !foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
 

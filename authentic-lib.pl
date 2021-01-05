@@ -5,7 +5,7 @@
 #
 use strict;
 
-use lib ("$ENV{'THEME_ROOT'}/lib");
+use lib ("@{[miniserv::getenv('theme_root')]}/lib");
 
 use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
@@ -26,7 +26,7 @@ our (
 
 init_type();
 init_config();
-do("$ENV{'THEME_ROOT'}/authentic-init.pl");
+do("@{[miniserv::getenv('theme_root')]}/authentic-init.pl");
 
 sub authentic
 {
@@ -3299,7 +3299,7 @@ sub get_xhr_request
         head();
 
         if ($in{'xhr-navigation'} eq '1') {
-            do("$ENV{'THEME_ROOT'}/navigation.pl");
+            do("@{[miniserv::getenv('theme_root')]}/navigation.pl");
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
@@ -3308,7 +3308,7 @@ sub get_xhr_request
             } elsif ($in{'restore'} eq '1') {
                 theme_settings('restore', undef, undef);
             } else {
-                do("$ENV{'THEME_ROOT'}/settings.pl");
+                do("@{[miniserv::getenv('theme_root')]}/settings.pl");
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
@@ -3759,12 +3759,12 @@ sub content
 
     # Navigation
     print '<ul class="navigation">' . "\n";
-    do("$ENV{'THEME_ROOT'}/navigation.pl");
+    do("@{[miniserv::getenv('theme_root')]}/navigation.pl");
     print '</ul>' . "\n";
 
     # Buttons
     print '<br><br><ul class="user-links">';
-    do("$ENV{'THEME_ROOT'}/buttons.pl");
+    do("@{[miniserv::getenv('theme_root')]}/buttons.pl");
     print '</ul>';
     print "<script>plugins.navigation.get.buttons();</script>";
 
