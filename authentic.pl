@@ -128,11 +128,13 @@ sub theme_header
         print '<div class="panel-body">' . "\n";
     }
     $miniserv::page_capture = 1;
+    $miniserv::theme_header_captured = 1;
 }
 
 sub theme_footer
 {
     (get_raw() && return);
+    (!$miniserv::theme_header_captured && return);
     my %this_module_info = &get_module_info(&get_module_name());
     for (my $i = 0; $i + 1 < @_; $i += 2) {
         my $url = $_[$i];
