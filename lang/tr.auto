@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=reauthenticate
 
 #19.04
 settings_sysinfo_real_time_status=Gerçek zamanlı izlemeyi etkinleştir
-settings_sysinfo_real_time_timeout=Güncelleme yapma aralığı
-settings_sysinfo_real_time_timeout_description=Arka planda monitörleri güncellemek için istenen aralığı ayarlayın. Değerin milisaniye cinsinden olması gerekiyordu. Kısa vadeli verilerin kaybını önlemek için bu değeri mümkün olduğunca düşük tutun
 theme_xhred_global_redirecting=yönlendirme
 
 #19.05

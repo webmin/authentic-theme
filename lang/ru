@@ -247,7 +247,6 @@ theme_xhred_global_about_theme=О теме
 
 #19.04
 settings_sysinfo_real_time_status=Включить мониторинг в реальном времени
-settings_sysinfo_real_time_timeout=Интервал обновления значений
 
 settings_document_title_option_3=Модуль
 settings_document_title_option_1=Модуль — $1 версия (тип ОС)

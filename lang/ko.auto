@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=재 인증
 
 #19.04
 settings_sysinfo_real_time_status=실시간 모니터링 활성화
-settings_sysinfo_real_time_timeout=업데이트 수행 간격
-settings_sysinfo_real_time_timeout_description=백그라운드에서 모니터를 업데이트 할 간격을 설정하십시오. 값은 밀리 초 단위입니다. 단기 데이터 손실을 방지하려면이 값을 가능한 한 낮게 유지하십시오
 theme_xhred_global_redirecting=리디렉션
 
 #19.05

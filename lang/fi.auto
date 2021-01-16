@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=laillisuustarkastuksen
 
 #19.04
 settings_sysinfo_real_time_status=Ota reaaliaikainen seuranta käyttöön
-settings_sysinfo_real_time_timeout=Väli päivityksen suorittamiseen
-settings_sysinfo_real_time_timeout_description=Aseta haluttu aikaväli näytön päivittämiseksi taustalla. Arvon tarkoitettiin olevan millisekuntina. Pidä tämä arvo mahdollisimman alhaisena estääksesi lyhytaikaisen tiedon menetyksen
 theme_xhred_global_redirecting=Redirecting
 
 #19.05

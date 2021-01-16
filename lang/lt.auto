@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Iš naujo patvirtinkite
 
 #19.04
 settings_sysinfo_real_time_status=Įgalinti stebėjimą realiuoju laiku
-settings_sysinfo_real_time_timeout=Intervalas atnaujinimui atlikti
-settings_sysinfo_real_time_timeout_description=Nustatykite norimą intervalą monitorių atnaujinimui fone. Reikšmė turėjo būti milisekundžių. Laikykite šią vertę kuo mažesnę, kad neprarastumėte trumpalaikių duomenų
 theme_xhred_global_redirecting=Peradresavimas
 
 #19.05

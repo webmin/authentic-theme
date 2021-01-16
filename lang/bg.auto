@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=удостоверите отново
 
 #19.04
 settings_sysinfo_real_time_status=Активиране на мониторинга в реално време
-settings_sysinfo_real_time_timeout=Интервал за извършване на актуализация
-settings_sysinfo_real_time_timeout_description=Задайте желания интервал за актуализиране на мониторите във фонов режим. Стойността трябваше да бъде в милисекунди. Поддържайте тази стойност възможно най-ниска, за да предотвратите загуба на краткосрочни данни
 theme_xhred_global_redirecting=Пренасочване
 
 #19.05

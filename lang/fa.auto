@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=تأیید مجدد
 
 #19.04
 settings_sysinfo_real_time_status=نظارت در زمان واقعی را فعال کنید
-settings_sysinfo_real_time_timeout=بازه برای انجام بروزرسانی
-settings_sysinfo_real_time_timeout_description=برای به روزرسانی مانیتورها در پس زمینه ، فاصله مورد نظر را تنظیم کنید. مقدار به معنای میلی ثانیه است. این مقدار را تا حد ممکن کم نگه دارید تا از بین رفتن داده های کوتاه مدت جلوگیری کنید
 theme_xhred_global_redirecting=تغییر مسیر
 
 #19.05

@@ -610,8 +610,6 @@ theme_xhred_global_reauthenticate=godkende igen
 
 #19.04
 settings_sysinfo_real_time_status=Aktivér overvågning i realtid
-settings_sysinfo_real_time_timeout=Interval for udførelse af opdatering
-settings_sysinfo_real_time_timeout_description=Indstil det ønskede interval for opdatering af skærme i baggrunden. Værdien betød at være i millisekunder. Hold denne værdi så lav som muligt for at forhindre tab af kortvarige data
 theme_xhred_global_redirecting=Omdirigering
 
 #19.05

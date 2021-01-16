@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Erneut anmelden
 
 #19.04
 settings_sysinfo_real_time_status=Echtzeitüberwachung einschalten
-settings_sysinfo_real_time_timeout=Aktualisierungsintervall
-settings_sysinfo_real_time_timeout_description=Legt das Intervall für die Aktualisierung von Daten im Hintergrund fest. Der Wert sollte in Millisekunden angegeben werden. Halte den Wert so niedrig wie möglich, um den Verlust von Kurzzeitdaten zu vermeiden.
 theme_xhred_global_redirecting=Umleiten
 
 #19.05

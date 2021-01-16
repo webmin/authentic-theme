@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=újrahitelesíteni
 
 #19.04
 settings_sysinfo_real_time_status=Valós idejű figyelés engedélyezése
-settings_sysinfo_real_time_timeout=Interval a frissítés végrehajtásához
-settings_sysinfo_real_time_timeout_description=Állítsa be a monitorok frissítésének kívánt időközét a háttérben. Az érték milliszekundumban értendő. Tartsa ezt az értéket a lehető legalacsonyabban, hogy elkerülje a rövid távú adatok elvesztését
 theme_xhred_global_redirecting=Az átirányítás
 
 #19.05

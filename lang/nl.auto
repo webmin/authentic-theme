@@ -581,8 +581,6 @@ theme_xhred_global_reauthenticate=Opnieuw verifiëren
 
 #19.04
 settings_sysinfo_real_time_status=Schakel realtime monitoring in
-settings_sysinfo_real_time_timeout=Interval voor het uitvoeren van update
-settings_sysinfo_real_time_timeout_description=Stel het gewenste interval in voor het bijwerken van monitoren op de achtergrond. De waarde is bedoeld in milliseconden. Houd deze waarde zo laag mogelijk om verlies van kortetermijngegevens te voorkomen
 theme_xhred_global_redirecting=Omleiden
 
 #19.05

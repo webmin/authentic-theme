@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Atkārtoti autentificējiet
 
 #19.04
 settings_sysinfo_real_time_status=Iespējojiet uzraudzību reāllaikā
-settings_sysinfo_real_time_timeout=Intervāls atjaunināšanas veikšanai
-settings_sysinfo_real_time_timeout_description=Iestatiet vēlamo monitoru atjaunināšanas intervālu fonā. Vērtība bija paredzēta milisekundēs. Saglabājiet šo vērtību pēc iespējas zemāk, lai novērstu īstermiņa datu zaudēšanu
 theme_xhred_global_redirecting=Novirzīšana
 
 #19.05

@@ -697,8 +697,6 @@ theme_xhred_global_reauthenticate=Reautentificare
 
 #19.04
 settings_sysinfo_real_time_status=Permite monitorizare în timp real
-settings_sysinfo_real_time_timeout=Interval pentru reactualizare
-settings_sysinfo_real_time_timeout_description=Setează intervalul dorit pentru actualizarea monitorizării din fundal. Valoarea va fi în milisecunde. Menţine această valoare cât mai mică pentru a preveni pierderi de date pe scurte perioade timp
 theme_xhred_global_redirecting=Redirecționez
 
 #19.05

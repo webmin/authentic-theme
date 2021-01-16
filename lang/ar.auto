@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=إعادة المصادقة
 
 #19.04
 settings_sysinfo_real_time_status=تمكين المراقبة في الوقت الحقيقي
-settings_sysinfo_real_time_timeout=الفاصل الزمني لإجراء التحديث
-settings_sysinfo_real_time_timeout_description=اضبط الفاصل الزمني المطلوب لتحديث الشاشات في الخلفية. كان من المفترض أن تكون القيمة بالمللي ثانية. حافظ على هذه القيمة عند أدنى مستوى ممكن لمنع فقدان البيانات قصيرة المدى
 theme_xhred_global_redirecting=إعادة توجيه
 
 #19.05

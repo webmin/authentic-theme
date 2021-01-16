@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Verifiera igen
 
 #19.04
 settings_sysinfo_real_time_status=Aktivera realtidsövervakning
-settings_sysinfo_real_time_timeout=Uppdateringsintervall
-settings_sysinfo_real_time_timeout_description=Ställ in önskat intervall för uppdatering av övervakningen i bakgrunden. Värdet är i millisekunder. Håll detta värde så lågt som möjligt för att förhindra förlust av kortsiktiga data.
 theme_xhred_global_redirecting=Omdirigerar
 
 #19.05

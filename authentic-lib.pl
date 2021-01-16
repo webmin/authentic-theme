@@ -2530,8 +2530,6 @@ sub theme_settings
             'true',
             'settings_sysinfo_real_time_stored_length',
             '600',
-            'settings_sysinfo_real_time_timeout',
-            '1000',
 
             '__',
             theme_settings('fa', 'info-circle', &theme_text('settings_right_sysinfo_page_options_title')),
@@ -2880,7 +2878,6 @@ sub theme_settings
                  $k eq 'settings_hotkey_shell2'                ||
                  $k eq 'settings_hotkey_sysinfo'               ||
                  $k eq 'settings_hotkey_favorites'             ||
-                 $k eq 'settings_sysinfo_real_time_timeout'    ||
                  $k eq 'settings_sysinfo_easypie_charts_size'  ||
                  $k eq 'settings_sysinfo_easypie_charts_width' ||
                  $k eq 'settings_sysinfo_easypie_charts_scale' ||
@@ -2900,7 +2897,7 @@ sub theme_settings
                 $k eq 'settings_sysinfo_easypie_charts_width' ||
                 $k eq 'settings_sysinfo_easypie_charts_scale' ||
                 $k eq 'settings_sysinfo_max_servers') ? ' width: 36px; ' :
-              ( ($k eq 'settings_sysinfo_real_time_timeout' || $k eq 'settings_sysinfo_easypie_charts_size') ?
+              ( ($k eq 'settings_sysinfo_easypie_charts_size') ?
                   ' width: 50px; ' :
                   ' width: 95%; ');
             my $max_length =

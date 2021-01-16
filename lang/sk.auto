@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=reauthenticate
 
 #19.04
 settings_sysinfo_real_time_status=Povoliť sledovanie v reálnom čase
-settings_sysinfo_real_time_timeout=Interval na vykonanie aktualizácie
-settings_sysinfo_real_time_timeout_description=Nastavte požadovaný interval aktualizácie monitorov na pozadí. Hodnota mala byť v milisekundách. Túto hodnotu udržiavajte čo najmenšiu, aby ste predišli strate krátkodobých údajov
 theme_xhred_global_redirecting=presmerovanie
 
 #19.05

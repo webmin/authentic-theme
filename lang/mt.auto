@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Jerġa 'tidentifika
 
 #19.04
 settings_sysinfo_real_time_status=Ippermetti monitoraġġ f'ħin reali
-settings_sysinfo_real_time_timeout=Intervall għat-twettiq ta 'aġġornament
-settings_sysinfo_real_time_timeout_description=Issettja l-intervall mixtieq għall-aġġornament tal-monitors fl-isfond. Il-valur maħsub li jkun f 'millisekondi. Żomm dan il-valur baxx kemm jista 'jkun biex tevita telf ta' dejta għal żmien qasir
 theme_xhred_global_redirecting=Rindirizz
 
 #19.05

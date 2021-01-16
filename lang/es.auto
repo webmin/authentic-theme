@@ -610,8 +610,6 @@ theme_xhred_global_reauthenticate=Reautorizar
 
 #19.04
 settings_sysinfo_real_time_status=Habilitar monitoreo en tiempo real
-settings_sysinfo_real_time_timeout=Intervalo para realizar la actualización
-settings_sysinfo_real_time_timeout_description=Establezca el intervalo deseado para actualizar los monitores en segundo plano. El valor destinado a estar en milisegundos. Mantenga este valor lo más bajo posible para evitar la pérdida de datos a corto plazo
 theme_xhred_global_redirecting=Redireccionamiento
 
 #19.05

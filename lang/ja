@@ -693,8 +693,6 @@ theme_xhred_global_reauthenticate= 再認証
 
 #19.04
 settings_sysinfo_real_time_status= リアルタイム監視を有効にする
-settings_sysinfo_real_time_timeout= 更新を実行する間隔
-settings_sysinfo_real_time_timeout_description= バックグラウンドでモニターを更新する間隔を設定します。値はミリ秒単位で表します。短期間のデータの損失を防ぐため、この値はできるだけ低くしてください。
 theme_xhred_global_redirecting= リダイレクト
 
 #19.05

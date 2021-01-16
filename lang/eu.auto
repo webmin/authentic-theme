@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=autentifikatzeko
 
 #19.04
 settings_sysinfo_real_time_status=Gaitu denbora errealeko jarraipena
-settings_sysinfo_real_time_timeout=Eguneratzea burutzeko tartea
-settings_sysinfo_real_time_timeout_description=Ezarri monitoreak atzeko planoan eguneratzeko nahi duzun tartea. Balioak milisegundotan egotea suposatzen du. Mantendu balio hori ahalik eta txikiena epe laburreko datuak galtzea saihesteko
 theme_xhred_global_redirecting=Ber bideratu
 
 #19.05

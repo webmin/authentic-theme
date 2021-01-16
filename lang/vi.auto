@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Xác nhận lại
 
 #19.04
 settings_sysinfo_real_time_status=Cho phép theo dõi thời gian thực
-settings_sysinfo_real_time_timeout=Khoảng thời gian để thực hiện cập nhật
-settings_sysinfo_real_time_timeout_description=Đặt khoảng thời gian mong muốn để cập nhật màn hình ở chế độ nền. Giá trị có nghĩa là tính bằng mili giây. Giữ giá trị này càng thấp càng tốt để tránh mất dữ liệu ngắn hạn
 theme_xhred_global_redirecting=Chuyển hướng
 
 #19.05

@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Ponovno potrdilo
 
 #19.04
 settings_sysinfo_real_time_status=Omogoči spremljanje v realnem času
-settings_sysinfo_real_time_timeout=Interval za izvajanje posodobitve
-settings_sysinfo_real_time_timeout_description=Nastavite želeni interval za posodabljanje monitorjev v ozadju. Vrednost naj bi bila v milisekundah. Naj bo ta vrednost čim nižja, da preprečite izgubo kratkoročnih podatkov
 theme_xhred_global_redirecting=Preusmeritev
 
 #19.05

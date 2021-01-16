@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=אימת מחדש
 
 #19.04
 settings_sysinfo_real_time_status=אפשר ניטור בזמן אמת
-settings_sysinfo_real_time_timeout=מרווח לביצוע העדכון
-settings_sysinfo_real_time_timeout_description=הגדר מרווח רצוי לעדכון צגים ברקע. הערך אמור להיות באלפיות השנייה. שמור על ערך זה נמוך ככל האפשר כדי למנוע אובדן של נתונים לטווח הקצר
 theme_xhred_global_redirecting=הפניה מחדש
 
 #19.05

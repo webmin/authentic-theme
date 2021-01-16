@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=重新验证
 
 #19.04
 settings_sysinfo_real_time_status=启用实时监控
-settings_sysinfo_real_time_timeout=执行更新的时间间隔
-settings_sysinfo_real_time_timeout_description=设置在后台更新监视器所需的间隔。该值以毫秒为单位。保持此值尽可能低，以防止短期数据丢失。
 theme_xhred_global_redirecting=重定向
 
 #19.05

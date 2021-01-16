@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=Réauthentifier
 
 #19.04
 settings_sysinfo_real_time_status=Activer la surveillance en temps réel
-settings_sysinfo_real_time_timeout=Intervalle pour effectuer la mise à jour
-settings_sysinfo_real_time_timeout_description=Définissez l'intervalle souhaité pour la mise à jour des moniteurs en arrière-plan. La valeur censée être en millisecondes. Gardez cette valeur aussi basse que possible pour éviter la perte de données à court terme
 theme_xhred_global_redirecting=Redirection
 
 #19.05

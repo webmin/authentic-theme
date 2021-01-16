@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=reauthenticate
 
 #19.04
 settings_sysinfo_real_time_status=เปิดใช้งานการตรวจสอบตามเวลาจริง
-settings_sysinfo_real_time_timeout=ช่วงเวลาสำหรับดำเนินการอัปเดต
-settings_sysinfo_real_time_timeout_description=กำหนดช่วงเวลาที่ต้องการสำหรับการอัพเดทจอภาพในพื้นหลัง ค่าหมายถึงเป็นมิลลิวินาที เก็บค่านี้ต่ำที่สุดเท่าที่จะทำได้เพื่อป้องกันการสูญเสียข้อมูลระยะสั้น
 theme_xhred_global_redirecting=เปลี่ยนเส้นทาง
 
 #19.05

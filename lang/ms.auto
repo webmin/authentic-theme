@@ -47,8 +47,6 @@ theme_xhred_global_reauthenticate=Sahkan semula
 
 #19.04
 settings_sysinfo_real_time_status=Dayakan pemantauan masa nyata
-settings_sysinfo_real_time_timeout=Selang untuk melakukan kemas kini
-settings_sysinfo_real_time_timeout_description=Tetapkan selang masa yang dikehendaki untuk mengemas kini monitor di latar belakang. Nilai bermaksud dalam milisaat. Pastikan nilai ini serendah mungkin untuk mengelakkan kehilangan data jangka pendek
 theme_xhred_global_redirecting=Mengarahkan semula
 
 #19.05

@@ -698,8 +698,6 @@ theme_xhred_global_reauthenticate=دوبارہ تصدیق کرنا
 
 #19.04
 settings_sysinfo_real_time_status=اصل وقت کی نگرانی کو قابل بنائیں
-settings_sysinfo_real_time_timeout=اپ ڈیٹ کرنے کے لئے وقفہ
-settings_sysinfo_real_time_timeout_description=پس منظر میں مانیٹر کو اپ ڈیٹ کرنے کے لئے مطلوبہ وقفہ طے کریں۔ قدر کا مطلب ملی سیکنڈ میں ہونا تھا۔ قلیل مدتی ڈیٹا کے نقصان کو روکنے کے لئے اس قدر کو ہر ممکن حد تک کم رکھیں
 theme_xhred_global_redirecting=ری ڈائریکٹ ہو رہا ہے
 
 #19.05

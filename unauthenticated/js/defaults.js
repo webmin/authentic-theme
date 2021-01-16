@@ -84,7 +84,6 @@ var settings_mailbox_slash_delimiter = true,
     settings_sysinfo_real_time_status = true,
     settings_sysinfo_real_time_stored = true,
     settings_sysinfo_real_time_stored_length = 600,
-    settings_sysinfo_real_time_timeout = 1000,
 
     settings_sysinfo_easypie_charts = true,
     settings_sysinfo_easypie_charts_size = 172,
