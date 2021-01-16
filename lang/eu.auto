@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Ezabatu fitxategiak segurtasunez 
 theme_xhred_filemanager_successful_removal=<tt>$1</tt> zaborrontzira kentzea arrakastatsua izan da.
 theme_xhred_filemanager_removing_selected=Hautatutakoa kentzen.
 theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objektu guztientzat. Baliteke eskatutako objektuak kendu aurretik <em>izena aldatu</em> edo <em>mugitu</em> izatea. Baimen mugatuak (atributuak) beste kausa posible bat da. Akats mezua:
+
+theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziurtagiria</a> abisua

@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Çöp kutusuna giderek dosyaları
 theme_xhred_filemanager_successful_removal=<tt>$1</tt> çöp kutusuna kaldırma işlemi başarılı oldu.
 theme_xhred_filemanager_removing_selected=Seçilenler kaldırılıyor.
 theme_xhred_filemanager_remove_warning=Kaldırma işlemi başarıyla tamamlandı, ancak tüm nesneler için değil. İstenen nesnelerin kaldırılmadan önce <em>yeniden adlandırılmış</em> veya <em>taşınmış</em> olması mümkündür. Kısıtlanmış izinler (öznitelikler) başka bir olası nedendir. Hata mesajı:
+
+theme_xhred_connection_error_details_ssl=<a>Kendinden imzalı SSL sertifikasını</a> kontrol edin uyarısı

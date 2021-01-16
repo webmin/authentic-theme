@@ -1133,3 +1133,5 @@ theme_xhred_filemanager_settings_deletion_mode=Exclua arquivos com segurança mo
 theme_xhred_filemanager_successful_removal=A remoção para a lixeira <tt>$1</tt> foi bem-sucedida.
 theme_xhred_filemanager_removing_selected=Removendo selecionado.
 theme_xhred_filemanager_remove_warning=A remoção foi concluída com sucesso, mas não para todos os objetos. É possível que os objetos solicitados tenham sido <em>renomeados</em> ou <em>movidos</em> antes da remoção. Permissões restritas (atributos) são outra causa possível. Mensagem de erro:
+
+theme_xhred_connection_error_details_ssl=Verifique o aviso de <a>certificado SSL autoassinado</a>

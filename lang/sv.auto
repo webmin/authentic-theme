@@ -40,3 +40,5 @@ theme_xhred_filemanager_settings_deletion_mode=Ta bort filer säkert genom att f
 theme_xhred_filemanager_successful_removal=Borttagning till papperskorgen <tt>$1</tt> lyckades.
 theme_xhred_filemanager_removing_selected=Tar bort vald.
 theme_xhred_filemanager_remove_warning=Borttagningen är klar men inte för alla objekt. Det är möjligt att efterfrågade objekt kunde ha <em>bytt namn</em> eller <em>flyttats</em> innan de togs bort. Begränsade behörigheter (attribut) är en annan möjlig orsak. Felmeddelande:
+
+theme_xhred_connection_error_details_ssl=Kontrollera <a>självsignerat SSL-certifikat</a>

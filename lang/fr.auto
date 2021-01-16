@@ -23,3 +23,5 @@ theme_xhred_filemanager_settings_deletion_mode=Supprimer les fichiers en toute s
 theme_xhred_filemanager_successful_removal=La suppression de la corbeille <tt>$1</tt> a réussi.
 theme_xhred_filemanager_removing_selected=Suppression de la sélection.
 theme_xhred_filemanager_remove_warning=La suppression s'est terminée avec succès mais pas pour tous les objets. Il est possible que le ou les objets demandés aient été <em>renommés</em> ou <em>déplacés</em> avant la suppression. Les autorisations restreintes (attributs) sont une autre cause possible. Message d'erreur:
+
+theme_xhred_connection_error_details_ssl=Vérifiez l'avertissement concernant le <a>certificat SSL auto-signé</a>

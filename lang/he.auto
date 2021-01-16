@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=מחק קבצים בבטחה על
 theme_xhred_filemanager_successful_removal=ההסרה לאשפה <tt>$1</tt> הצליחה.
 theme_xhred_filemanager_removing_selected=מסיר את הנבחר.
 theme_xhred_filemanager_remove_warning=ההסרה הסתיימה בהצלחה אך לא לכל האובייקטים. יתכן שניתן היה <em>לשנות שם</em> או <em>להעביר</em> לפני ההסרה. הרשאות מוגבלות (תכונות) הן סיבה אפשרית נוספת. הודעת שגיאה:
+
+theme_xhred_connection_error_details_ssl=בדוק אזהרת <a>אישור SSL בחתימה עצמית</a>

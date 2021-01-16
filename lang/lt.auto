@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Saugiai ištrinkite failus perkel
 theme_xhred_filemanager_successful_removal=Sėkmingai pašalinta į šiukšliadėžę <tt>$1</tt>.
 theme_xhred_filemanager_removing_selected=Pašalinama pasirinkta.
 theme_xhred_filemanager_remove_warning=Pašalinimas sėkmingai baigtas, bet ne visiems objektams. Gali būti, kad prašomas (-i) objektas (-ai) prieš pašalinimą galėjo būti <em>pervadintas</em> arba <em>perkeltas</em>. Apriboti leidimai (atributai) yra kita galima priežastis. Klaidos pranešimas:
+
+theme_xhred_connection_error_details_ssl=Patikrinkite <a>savarankiškai pasirašyto SSL sertifikato</a> įspėjimą

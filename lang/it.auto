@@ -5,3 +5,5 @@ theme_xhred_filemanager_settings_deletion_mode=Elimina i file in modo sicuro spo
 theme_xhred_filemanager_successful_removal=La rimozione nel cestino <tt>$1</tt> è riuscita.
 theme_xhred_filemanager_removing_selected=Rimozione di selezionati.
 theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma non per tutti gli oggetti. È possibile che gli oggetti richiesti siano stati <em>rinominati</em> o <em>spostati</em> prima della rimozione. Le autorizzazioni limitate (attributi) sono un'altra possibile causa. Messaggio di errore:
+
+theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>certificato SSL autofirmato</a>

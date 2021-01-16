@@ -152,3 +152,5 @@ theme_xhred_filemanager_settings_deletion_mode=Ștergeți fișierele în siguran
 theme_xhred_filemanager_successful_removal=Eliminarea în coșul de gunoi <tt>$1</tt> a reușit.
 theme_xhred_filemanager_removing_selected=Se elimină elementele selectate.
 theme_xhred_filemanager_remove_warning=Eliminarea sa încheiat cu succes, dar nu pentru toate obiectele. Este posibil ca obiectele solicitate să fi putut fi <em>redenumite</em> sau <em>mutate</em> înainte de eliminare. Permisiunile restricționate (atribute) sunt o altă cauză posibilă. Mesaj de eroare:
+
+theme_xhred_connection_error_details_ssl=Verificați avertismentul <a>certificat SSL auto-semnat</a>

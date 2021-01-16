@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Poista tiedostot turvallisesti si
 theme_xhred_filemanager_successful_removal=Poistaminen roskakoriin <tt>$1</tt> onnistui.
 theme_xhred_filemanager_removing_selected=Poistetaan valittuja.
 theme_xhred_filemanager_remove_warning=Poisto on suoritettu onnistuneesti, mutta ei kaikkien objektien kohdalla. On mahdollista, että pyydetyt objektit voidaan <em>nimetä uudelleen</em> tai <em>siirtää</em> ennen poistamista. Rajoitetut käyttöoikeudet (määritteet) on toinen mahdollinen syy. Virheviesti:
+
+theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-varmenne</a> -varoitus

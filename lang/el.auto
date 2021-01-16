@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Διαγράψτε τα αρχε�
 theme_xhred_filemanager_successful_removal=Η κατάργηση στον κάδο απορριμμάτων <tt>$1</tt> ήταν επιτυχής.
 theme_xhred_filemanager_removing_selected=Κατάργηση επιλεγμένων.
 theme_xhred_filemanager_remove_warning=Η αφαίρεση ολοκληρώθηκε με επιτυχία, αλλά όχι για όλα τα αντικείμενα. Είναι πιθανό ότι τα ζητούμενα αντικείμενα θα μπορούσαν να είχαν <em>μετονομαστεί</em> ή <em>μετακινήθηκαν</em> πριν από την κατάργηση. Τα περιορισμένα δικαιώματα (χαρακτηριστικά) είναι μια άλλη πιθανή αιτία. Μήνυμα λάθους:
+
+theme_xhred_connection_error_details_ssl=Ελέγξτε την προειδοποίηση <a>πιστοποιητικό SSL αυτόματης υπογραφής</a>

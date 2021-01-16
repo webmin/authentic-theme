@@ -565,3 +565,5 @@ theme_xhred_filemanager_settings_deletion_mode=Padamkan fail dengan selamat deng
 theme_xhred_filemanager_successful_removal=Pembuangan ke sampah <tt>$1</tt> berjaya.
 theme_xhred_filemanager_removing_selected=Mengalih keluar dipilih.
 theme_xhred_filemanager_remove_warning=Pembuangan telah berjaya dilakukan tetapi tidak untuk semua objek. Ada kemungkinan objek yang diminta dapat <em>dinamakan semula</em> atau <em>dipindahkan</em> sebelum dikeluarkan. Kebenaran terhad (atribut) adalah kemungkinan penyebab lain. Mesej ralat:
+
+theme_xhred_connection_error_details_ssl=Periksa amaran <a>sijil SSL yang ditandatangani sendiri</a>

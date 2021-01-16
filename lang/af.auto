@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Verwyder lêers veilig deur na di
 theme_xhred_filemanager_successful_removal=Die verwydering van die asblik <tt>$1</tt> was suksesvol.
 theme_xhred_filemanager_removing_selected=Verwyder gekies.
 theme_xhred_filemanager_remove_warning=Die verwydering is suksesvol voltooi, maar nie vir alle voorwerpe nie. Dit is moontlik dat die gevraagde voorwerp (e) <em>hernoem is</em> of <em>geskuif</em> kon word voordat dit verwyder is. Beperkte toestemmings (eienskappe) is 'n ander moontlike oorsaak. Foutboodskap:
+
+theme_xhred_connection_error_details_ssl=Kyk na <a>selfondertekende SSL-sertifikaat</a> -waarskuwing

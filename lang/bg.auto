@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=Изтрийте файловет
 theme_xhred_filemanager_successful_removal=Премахването в кошчето <tt>$1</tt> беше успешно.
 theme_xhred_filemanager_removing_selected=Премахване на избраното.
 theme_xhred_filemanager_remove_warning=Премахването приключи успешно, но не за всички обекти. Възможно е заявените обекти да са били <em>преименувани</em> или <em>преместени</em> преди премахването. Ограничените разрешения (атрибути) е друга възможна причина. Съобщение за грешка:
+
+theme_xhred_connection_error_details_ssl=Проверете предупреждението за <a>самоподписан SSL сертификат</a>

@@ -1216,3 +1216,5 @@ theme_xhred_filemanager_settings_deletion_mode=ลบไฟล์อย่าง
 theme_xhred_filemanager_successful_removal=การนำออกไปที่ถังขยะ <tt>$1</tt> สำเร็จ
 theme_xhred_filemanager_removing_selected=กำลังลบสิ่งที่เลือก
 theme_xhred_filemanager_remove_warning=การลบเสร็จสมบูรณ์แล้ว แต่ไม่ใช่สำหรับวัตถุทั้งหมด เป็นไปได้ว่าวัตถุที่ร้องขออาจถูก <em>เปลี่ยนชื่อ</em> หรือ <em>ย้าย</em> ก่อนที่จะลบออก สิทธิ์ที่ จำกัด (แอตทริบิวต์) เป็นอีกสาเหตุหนึ่งที่เป็นไปได้ ข้อความผิดพลาด:
+
+theme_xhred_connection_error_details_ssl=ตรวจสอบคำเตือน <a>ใบรับรอง SSL ที่ลงชื่อด้วยตนเอง</a>

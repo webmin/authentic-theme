@@ -23,3 +23,5 @@ theme_xhred_filemanager_settings_deletion_mode=Slett filer trygt ved å flytte t
 theme_xhred_filemanager_successful_removal=Fjerningen til papirkurven <tt>$1</tt> var vellykket.
 theme_xhred_filemanager_removing_selected=Fjerner valgt.
 theme_xhred_filemanager_remove_warning=Fjerningen er fullført, men ikke for alle objekter. Det er mulig at forespurte objekt (er) kunne blitt <em>omdøpt</em> eller <em>flyttet</em> før fjerning. Begrensede tillatelser (attributter) er en annen mulig årsak. Feilmelding:
+
+theme_xhred_connection_error_details_ssl=Sjekk <a>selvsignert SSL-sertifikat</a> advarsel
