@@ -45,7 +45,7 @@ sub theme_header
     my $tref   = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
-        (($ttitle ne $title ? "$ttitle - $title" : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
+        (($ttitle ne $title ? ($title ? "$ttitle - $title" : $ttitle) : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
         ));
     print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
