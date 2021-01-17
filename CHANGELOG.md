@@ -1,11 +1,13 @@
 ## Changelog
 
-#### Version 19.70 (January 5, 2021)
+#### Version 19.70 (January 17, 2021)
 * Add ability to preview any file in File Manager
 * Add support for removing files to trash in File Manager
 * Add more features to search functionality (filter user, group, size and type) in File Manager
 * Add to display extended file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
+* Add better error handing for pages with SSL certificate errors [forum.virtualmin.com/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
+* Fix to prevent stats collection on the background if browser tab is not focused
 * Fix bugs
 
 <!--- separator --->
