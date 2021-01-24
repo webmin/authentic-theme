@@ -134,7 +134,7 @@ sub theme_header
 sub theme_footer
 {
     (get_raw() && return);
-    (!$miniserv::theme_header_captured && return);
+    ((!$miniserv::theme_header_captured || !$miniserv::page_capture) && return);
     my %this_module_info = &get_module_info(&get_module_name());
     for (my $i = 0; $i + 1 < @_; $i += 2) {
         my $url = $_[$i];
