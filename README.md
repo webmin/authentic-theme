@@ -10,7 +10,7 @@
 ## About
 **Authentic Theme** is modern, ultrafast single-page application for [Webmin/](https://github.com/webmin/webmin)[Usermin](https://github.com/webmin/usermin) that is made with _love_. Managing servers, operating systems and applications has never been so easy.
 
-[![Quick UI overview 2021](https://rostovtsev.io/pub/media/screenshots/screenshot-main-page-1970-updated.png)](https://www.youtube.com/watch?v=daYG6O4AsEw&feature=emb_logo)
+[![Quick UI overview 2021](https://rostovtsev.io/pub/media/screenshots/webmin-2021-screenshot-updated.png)](https://www.youtube.com/watch?v=daYG6O4AsEw&feature=emb_logo)
 ![](https://rostovtsev.io/pub/media/screenshots/screenshot-pallets-1970-updated.png)
 
 ### Features
