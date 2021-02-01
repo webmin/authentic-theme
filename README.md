@@ -10,7 +10,7 @@
 ## About
 **Authentic Theme** is modern, ultrafast single-page application for [Webmin/](https://github.com/webmin/webmin)[Usermin](https://github.com/webmin/usermin) that is made with _love_. Managing servers, operating systems and applications has never been so easy.
 
-![](https://rostovtsev.io/pub/media/screenshots/19.00-1.gif)
+[![Quick UI overview 2021](https://rostovtsev.io/pub/media/screenshots/screenshot-main-page-1970.png)](https://www.youtube.com/watch?v=daYG6O4AsEw&feature=emb_logo)
 ![](https://rostovtsev.io/pub/media/screenshots/screenshot-pallets-1710.png)
 
 ### Features
@@ -22,7 +22,7 @@
 * Extended support for _File Manager_ and _ConfigServer Security & Firewall_ modules
 
 ### Requirements
-* Webmin _1.930+_ (required), Usermin _1.780+_ (optional), Virtualmin _6.06+_ (optional), Cloudmin _9.4+_ (optional)
+* Webmin _1.970+_ (required), Usermin _1.820+_ (optional), Virtualmin _6.14+_ (optional), Cloudmin _9.5+_ (optional)
 
 ### Recommended modules
 * Installed _Net::SSLeay_ module, to make automatic update notifications work
