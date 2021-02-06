@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=הצג תרשימים
 settings_sysinfo_theme_updates=בדוק אם קיימים עדכונים בנושא נושא אותנטי
 settings_sysinfo_csf_updates=בדוק אם קיימים עדכוני ConfigServer אבטחה וחומת אש
 settings_sysinfo_drive_status_on_new_line=הצג את מעבד ה- CPU והכונן כל אחד בשורה חדשה
-settings_sysinfo_expand_all_accordions=השאר את כל האקורדיונים מורחבים
 settings_sysinfo_link_mini=הצג את קישור לוח המחוונים ככפתור
 
 settings_right_page_defaults_title=דפי ברירת מחדל
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=בינוני
 theme_xhred_global_large=גדול
 theme_xhred_global_huge=ענק
 theme_xhred_filemanager_editor_maximized=הגדל את חלון העורכים עם ההתחלה
-settings_sysinfo_remember_accordions=שמור מצב אקורדיונים ששימש בפעם הקודמת
 
 #19.47
 theme_xhred_textarea_to_clipboard=תוכן טקסטריאה שנבחר הועתק בהצלחה ללוח
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=מסיר את הנבחר.
 theme_xhred_filemanager_remove_warning=ההסרה הסתיימה בהצלחה אך לא לכל האובייקטים. יתכן שניתן היה <em>לשנות שם</em> או <em>להעביר</em> לפני ההסרה. הרשאות מוגבלות (תכונות) הן סיבה אפשרית נוספת. הודעת שגיאה:
 
 theme_xhred_connection_error_details_ssl=בדוק אזהרת <a>אישור SSL בחתימה עצמית</a>
+
+#19.71
+settings_sysinfo_hidden_panels=אקורדיונים נסתרים
+theme_xhred_tooltip_dashboard_panels_disable=הסתר את החלונית $1 

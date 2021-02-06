@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Tampilkan grafik
 settings_sysinfo_theme_updates=Periksa untuk pembaruan Tema Authentic
 settings_sysinfo_csf_updates=Periksa untuk pembaruan ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Perlihatkan status CPU dan drives masing-masing pada tiap baris
-settings_sysinfo_expand_all_accordions=Buat semua akordeon terkembang
 settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Halaman default

@@ -388,11 +388,41 @@ sub get_extended_sysinfo
                         }
                     }
                 }
-
+                if ($theme_config{'settings_sysinfo_hidden_panels'} =~ /\'$info->{'id'}\'/) {
+                    next;
+                }
                 if ($info->{'id'} && $charts_not_supported eq 'no') {
                     my $open =
                       ($info->{'open'} || $info->{'id'} eq 'domain') ? ' in' :
                       ($theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
+                    my $formatted_title = (
+                                        $info->{'id'} . '-' .
+                                          $info->{'module'} eq 'status_services-status' ?
+                                          $theme_text{'theme_xhred_sysinfo_system_monitors'} :
+                                          ($info->{'id'} . '-' .
+                                             $info->{'module'} eq 'sysinfo-virtual-server' ?
+                                             $theme_text{'theme_xhred_sysinfo_software_versions'} :
+                                             ($info->{'id'} . '-' .
+                                                $info->{'module'} eq 'status-virtual-server' ?
+                                                $theme_text{'theme_xhred_sysinfo_server_status'} :
+                                                ($info->{'id'} . '-' .
+                                                   $info->{'module'} eq 'quota-virtual-server' ?
+                                                   $theme_text{'theme_xhred_sysinfo_disk_quotas'} :
+                                                   ($info->{'id'} . '-' .
+                                                      $info->{'module'} eq 'bw-virtual-server' ?
+                                                      $theme_text{'theme_xhred_sysinfo_bandwidth_quotas'} :
+                                                      ($info->{'id'} . '-' .
+                                                         $info->{'module'} eq 'updates-virtual-server' ?
+                                                         $theme_text{'theme_xhred_sysinfo_vm_package_updates'} :
+                                                         ($info->{'id'} . '-' . $info->{'module'} eq 'acl_logins-acl' ?
+                                                            $theme_text{'theme_xhred_sysinfo_recent_logins'} :
+                                                            ($info->{'desc'})
+                                                         )
+                                                      )
+                                                   )
+                                                )
+                                             )
+                                          ));
 
                     $returned_sysinfo .= '
                     <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
@@ -417,36 +447,15 @@ sub get_extended_sysinfo
                       ) .
                       '" aria-controls="' . $info->{'id'} . '-' . $info->{'module'} . $x . '-collapse">
                               '
-                      . ($info->{'id'} . '-' .
-                           $info->{'module'} eq 'status_services-status' ?
-                           $theme_text{'theme_xhred_sysinfo_system_monitors'} :
-                           ($info->{'id'} . '-' .
-                              $info->{'module'} eq 'sysinfo-virtual-server' ?
-                              $theme_text{'theme_xhred_sysinfo_software_versions'} :
-                              ( $info->{'id'} . '-' .
-                                  $info->{'module'} eq 'status-virtual-server' ?
-                                  $theme_text{'theme_xhred_sysinfo_server_status'} :
-                                  ( $info->{'id'} . '-' .
-                                      $info->{'module'} eq 'quota-virtual-server' ?
-                                      $theme_text{'theme_xhred_sysinfo_disk_quotas'} :
-                                      ( $info->{'id'} . '-' .
-                                          $info->{'module'} eq 'bw-virtual-server' ?
-                                          $theme_text{'theme_xhred_sysinfo_bandwidth_quotas'} :
-                                          ( $info->{'id'} . '-' .
-                                              $info->{'module'} eq 'updates-virtual-server' ?
-                                              $theme_text{'theme_xhred_sysinfo_vm_package_updates'} :
-                                              ( $info->{'id'} . '-' . $info->{'module'} eq 'acl_logins-acl' ?
-                                                  $theme_text{'theme_xhred_sysinfo_recent_logins'} :
-                                                  ($info->{'desc'})
-                                              )
-                                          )
-                                      )
-                                  )
-                              )
-                           )
+                      . $formatted_title . '<span class="pull-right on-hover"><i class="fa fa-fw fa-times-thin" '
+                      .
+                      get_button_tooltip(
+                                         "<span data-no-wrap>" . theme_text('theme_xhred_tooltip_dashboard_panels_disable', $formatted_title
+                                         ) . "</span>",
+                                         undef,
+                                         'auto right'
                       ) .
-                      '
-                            </a>
+                      '></i></span></a>
                           </h4>
                         </div>
                     <div id="'
@@ -532,7 +541,23 @@ sub get_extended_sysinfo
                             <span data-chart="disk"></span>
                             <span data-chart="net"></span>';
             $returned_sysinfo .=
-              print_panel(1, 'live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, $data, 1, 'A');
+              print_panel(
+                1,
+                'live_stats',
+"$theme_text{'theme_dashboard_accordion_live_stats'}<span class=\"pull-right on-hover\"><i class=\"fa fa-fw fa-times-thin\" "
+                  .
+                  get_button_tooltip(
+                                     theme_text('theme_xhred_tooltip_dashboard_panels_disable',
+                                                $theme_text{'theme_dashboard_accordion_live_stats'}
+                                     ),
+                                     undef,
+                                     'auto right'
+                  ) .
+                  "></i></span>",
+                $data,
+                1,
+                'A',
+                'live_stats');
         }
         $returned_sysinfo .= '</div><br><br><br><br>';
         return $returned_sysinfo;
@@ -1718,7 +1743,10 @@ sub print_favorites
                     print '
               <li class="menu-exclude ui-sortable-handle">
                   <a class="menu-exclude-link" href="'
-                      . ((string_starts_with($ln, "!edit") || string_starts_with($ln, "!view")) ? undef : $gconfig{'webprefix'}) .
+                      . ((string_starts_with($ln, "!edit") || string_starts_with($ln, "!view")) ?
+                           undef :
+                           $gconfig{'webprefix'}
+                      ) .
                       ($ln) . '"><i data-product="' . ($ic) . '" class="wbm-' .
                       ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
                             ' . $tl . '
@@ -1773,12 +1801,15 @@ sub print_panels_group_end
 
 sub print_panel
 {
-    my ($opened, $id, $title, $data, $get, $sorter) = @_;
+    my ($opened, $id, $title, $data, $get, $sorter, $ref) = @_;
     if ($sorter) {
         $sorter = ' data-sorter="' . $sorter . '" ';
     }
+    if ($ref) {
+        $ref = ' data-referrer="' . $ref . '" ';
+    }
     my $str = '
-              <div' . $sorter . ' class="panel panel-default">
+              <div' . $sorter . ' class="panel panel-default"' . $ref . '>
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">
@@ -2541,10 +2572,8 @@ sub theme_settings
             '2',
             'settings_sysinfo_easypie_charts_scale',
             '8',
-            'settings_sysinfo_expand_all_accordions',
-            'false',
-            'settings_sysinfo_remember_accordions',
-            'true',
+            'settings_sysinfo_hidden_panels',
+            '',
             'settings_sysinfo_max_servers',
             '10',
 
@@ -2729,6 +2758,11 @@ sub theme_settings
             }
         }
 
+        # Exclude hidden panels if none
+        if (!$theme_config{'settings_sysinfo_hidden_panels'}) {
+            push(@theme_settings_excluded, 'settings_sysinfo_hidden_panels');
+        }
+
         # Exclude list of settings for Virtualmin
         my @s_vm_e = ('settings_right_virtualmin_default',
                       'settings_show_webmin_tab',
@@ -2868,6 +2902,23 @@ sub theme_settings
               '>' . '<label class="lawobject" for="' . $k . '_0">' . $text{'no'} . '</label>' . '</span>
             ';
 
+        } elsif ($k =~ /settings_sysinfo_hidden_panels/ && $theme_config{'settings_sysinfo_hidden_panels'}) {
+            my $excluded_accordions;
+            my @excluded_accordions;
+            my @selected_excluded_accordions;
+            eval {
+                my $data = $theme_config{'settings_sysinfo_hidden_panels'};
+                $data =~ s/'/"/g;
+                $excluded_accordions = convert_from_json($data);
+                @selected_excluded_accordions = keys %{$excluded_accordions};
+                foreach my $key (@selected_excluded_accordions) {
+                    push(@excluded_accordions, [$key, $excluded_accordions->{$key}]);
+                }
+            };
+            if (!$@) {
+                $v = &ui_select("settings_sysinfo_hidden_panels", \@selected_excluded_accordions, \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
+            }
+
         } elsif ($k =~ /settings_security_notify_on_/ ||
                  $k =~ /settings_hotkey_toggle_key_/           ||
                  $k eq 'settings_hotkey_focus_search'          ||
@@ -2897,8 +2948,7 @@ sub theme_settings
                 $k eq 'settings_sysinfo_easypie_charts_width' ||
                 $k eq 'settings_sysinfo_easypie_charts_scale' ||
                 $k eq 'settings_sysinfo_max_servers') ? ' width: 36px; ' :
-              ( ($k eq 'settings_sysinfo_easypie_charts_size') ?
-                  ' width: 50px; ' :
+              ( ($k eq 'settings_sysinfo_easypie_charts_size') ? ' width: 50px; ' :
                   ' width: 95%; ');
             my $max_length =
               ($k =~ /settings_hotkey_toggle_key_/ ||

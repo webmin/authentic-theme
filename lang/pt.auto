@@ -84,7 +84,6 @@ settings_sysinfo_easypie_charts=Mostrar gráficos
 settings_sysinfo_theme_updates=Verifique se há atualizações de temas autênticos
 settings_sysinfo_csf_updates=Verifique se há atualizações de segurança e firewall do ConfigServer
 settings_sysinfo_drive_status_on_new_line=Mostrar status da CPU e das unidades, cada uma na nova linha
-settings_sysinfo_expand_all_accordions=Mantenha todos os acordeões expandidos
 settings_sysinfo_link_mini=Mostrar link do painel como botão
 
 settings_right_page_defaults_title=Páginas padrão
@@ -1079,7 +1078,6 @@ theme_xhred_global_medium=Médio
 theme_xhred_global_large=ampla
 theme_xhred_global_huge=Imenso
 theme_xhred_filemanager_editor_maximized=Maximizar o painel do editor ao iniciar
-settings_sysinfo_remember_accordions=Salvar estado de acordeão usado pela última vez
 
 #19.47
 theme_xhred_textarea_to_clipboard=O conteúdo da área de texto selecionado foi copiado com êxito para a área de transferência
@@ -1135,3 +1133,7 @@ theme_xhred_filemanager_removing_selected=Removendo selecionado.
 theme_xhred_filemanager_remove_warning=A remoção foi concluída com sucesso, mas não para todos os objetos. É possível que os objetos solicitados tenham sido <em>renomeados</em> ou <em>movidos</em> antes da remoção. Permissões restritas (atributos) são outra causa possível. Mensagem de erro:
 
 theme_xhred_connection_error_details_ssl=Verifique o aviso de <a>certificado SSL autoassinado</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Acordeões escondidos
+theme_xhred_tooltip_dashboard_panels_disable=Esconder o painel $1 

@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Wys kaarte
 settings_sysinfo_theme_updates=Kyk vir outentieke tema-opdaterings
 settings_sysinfo_csf_updates=Kyk na opdaterings vir ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Toon CPU en dryfstatus elk op 'n nuwe reël
-settings_sysinfo_expand_all_accordions=Hou alle trekklaviere uitgebrei
 settings_sysinfo_link_mini=Wys die skakel van die instrumentbord as knoppie
 
 settings_right_page_defaults_title=Standaardbladsye
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=medium
 theme_xhred_global_large=groot
 theme_xhred_global_huge=Groot
 theme_xhred_filemanager_editor_maximized=Maksimeer die redigeerderpaneel by aanvang
-settings_sysinfo_remember_accordions=Stoor trekklaviertoestand wat laas gebruik is
 
 #19.47
 theme_xhred_textarea_to_clipboard=Geselekteerde teksarea-inhoud is suksesvol na die knipbord gekopieër
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Verwyder gekies.
 theme_xhred_filemanager_remove_warning=Die verwydering is suksesvol voltooi, maar nie vir alle voorwerpe nie. Dit is moontlik dat die gevraagde voorwerp (e) <em>hernoem is</em> of <em>geskuif</em> kon word voordat dit verwyder is. Beperkte toestemmings (eienskappe) is 'n ander moontlike oorsaak. Foutboodskap:
 
 theme_xhred_connection_error_details_ssl=Kyk na <a>selfondertekende SSL-sertifikaat</a> -waarskuwing
+
+#19.71
+settings_sysinfo_hidden_panels=Versteekte trekklaviere
+theme_xhred_tooltip_dashboard_panels_disable=Versteek $1 paneel

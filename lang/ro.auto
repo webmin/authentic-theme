@@ -98,7 +98,6 @@ theme_xhred_global_medium=Mediu
 theme_xhred_global_large=Mare
 theme_xhred_global_huge=Imens
 theme_xhred_filemanager_editor_maximized=Maximizați panoul editor la început
-settings_sysinfo_remember_accordions=Salvați starea de acordeoane folosită ultima dată
 
 #19.47
 theme_xhred_textarea_to_clipboard=Conținutul de textare selectat a fost copiat cu succes în clipboard
@@ -154,3 +153,7 @@ theme_xhred_filemanager_removing_selected=Se elimină elementele selectate.
 theme_xhred_filemanager_remove_warning=Eliminarea sa încheiat cu succes, dar nu pentru toate obiectele. Este posibil ca obiectele solicitate să fi putut fi <em>redenumite</em> sau <em>mutate</em> înainte de eliminare. Permisiunile restricționate (atribute) sunt o altă cauză posibilă. Mesaj de eroare:
 
 theme_xhred_connection_error_details_ssl=Verificați avertismentul <a>certificat SSL auto-semnat</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Acordeoane ascunse
+theme_xhred_tooltip_dashboard_panels_disable=Ascundeți panoul $1 

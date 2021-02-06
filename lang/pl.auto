@@ -85,7 +85,6 @@ settings_sysinfo_easypie_charts=Pokaż wykresy
 settings_sysinfo_theme_updates=Sprawdź, czy są dostępne autentyczne motywy
 settings_sysinfo_csf_updates=Sprawdź aktualizacje zabezpieczeń i zapory sieciowej ConfigServer
 settings_sysinfo_drive_status_on_new_line=Pokaż status procesora i dysków w każdym nowym wierszu
-settings_sysinfo_expand_all_accordions=Rozwiń wszystkie akordeony
 settings_sysinfo_link_mini=Pokaż łącze deski rozdzielczej jako przycisk
 
 settings_right_page_defaults_title=Domyślne strony
@@ -1080,7 +1079,6 @@ theme_xhred_global_medium=Średni
 theme_xhred_global_large=Duży
 theme_xhred_global_huge=Olbrzymi
 theme_xhred_filemanager_editor_maximized=Zmaksymalizuj panel edytora po uruchomieniu
-settings_sysinfo_remember_accordions=Zapisz stan akordeonów użyty ostatnio
 
 #19.47
 theme_xhred_textarea_to_clipboard=Wybrana zawartość pola tekstowego została pomyślnie skopiowana do schowka
@@ -1136,3 +1134,7 @@ theme_xhred_filemanager_removing_selected=Usuwanie wybranych.
 theme_xhred_filemanager_remove_warning=Usuwanie zakończyło się pomyślnie, ale nie dla wszystkich obiektów. Możliwe, że żądane obiekty mogły zostać <em>przemianowane</em> lub <em>przeniesione</em> przed usunięciem. Ograniczone uprawnienia (atrybuty) to kolejna możliwa przyczyna. Komunikat o błędzie:
 
 theme_xhred_connection_error_details_ssl=Sprawdź ostrzeżenie <a>certyfikat SSL z podpisem własnym</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Ukryte akordeony
+theme_xhred_tooltip_dashboard_panels_disable=Ukryj panel $1 

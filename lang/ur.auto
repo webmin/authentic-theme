@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=چارٹ دکھائیں
 settings_sysinfo_theme_updates=مستند تھیم کی تازہ کاریوں کو چیک کریں
 settings_sysinfo_csf_updates=تشکیل سرور کی حفاظت اور فائر وال کی تازہ کاریوں کی جانچ کریں
 settings_sysinfo_drive_status_on_new_line=ہر ایک کو نئی لائن پر سی پی یو اور ڈرائیو کی حیثیت دکھائیں
-settings_sysinfo_expand_all_accordions=تمام معاہدوں کو وسعت دیتے رہیں
 settings_sysinfo_link_mini=بٹن کے بطور ڈیش بورڈ لنک دکھائیں
 
 settings_right_page_defaults_title=پہلے سے طے شدہ صفحات
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=میڈیم
 theme_xhred_global_large=بڑے
 theme_xhred_global_huge=بھاری
 theme_xhred_filemanager_editor_maximized=شروع ہونے پر ایڈیٹر پینل کو زیادہ سے زیادہ کریں
-settings_sysinfo_remember_accordions=پچھلی بار استعمال ہونے والی ایورڈینس اسٹیٹ کو بچائیں
 
 #19.47
 theme_xhred_textarea_to_clipboard=منتخب ٹیکسٹیریا مواد کو کامیابی کے ساتھ کلپ بورڈ میں کاپی کردیا گیا ہے
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=ہٹانا منتخب کیا گیا۔
 theme_xhred_filemanager_remove_warning=Removal has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before removal. Restricted permissions (attributes) is another possible cause. Error message:
 
 theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a> warning
+
+#19.71
+settings_sysinfo_hidden_panels=پوشیدہ معاہدے
+theme_xhred_tooltip_dashboard_panels_disable=$1 پینل چھپائیں

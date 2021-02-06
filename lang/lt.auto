@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Rodyti diagramas
 settings_sysinfo_theme_updates=Patikrinkite, ar nėra autentiškų temų atnaujinimų
 settings_sysinfo_csf_updates=Patikrinkite, ar nėra „ConfigServer“ saugos ir ugniasienės atnaujinimų
 settings_sysinfo_drive_status_on_new_line=Rodyti CPU ir kiekvieno disko būseną naujoje eilutėje
-settings_sysinfo_expand_all_accordions=Visi akordeonai turi būti išplėsti
 settings_sysinfo_link_mini=Rodyti informacijos suvestinės nuorodą kaip mygtuką
 
 settings_right_page_defaults_title=Numatytieji puslapiai
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Vidutinis
 theme_xhred_global_large=Didelis
 theme_xhred_global_huge=Didelis
 theme_xhred_filemanager_editor_maximized=Padidinkite redaktoriaus skydą paleidę
-settings_sysinfo_remember_accordions=Įrašykite paskutinį kartą naudotą akordeono būseną
 
 #19.47
 theme_xhred_textarea_to_clipboard=Pasirinktas teksto juostos turinys sėkmingai nukopijuotas į mainų sritį
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Pašalinama pasirinkta.
 theme_xhred_filemanager_remove_warning=Pašalinimas sėkmingai baigtas, bet ne visiems objektams. Gali būti, kad prašomas (-i) objektas (-ai) prieš pašalinimą galėjo būti <em>pervadintas</em> arba <em>perkeltas</em>. Apriboti leidimai (atributai) yra kita galima priežastis. Klaidos pranešimas:
 
 theme_xhred_connection_error_details_ssl=Patikrinkite <a>savarankiškai pasirašyto SSL sertifikato</a> įspėjimą
+
+#19.71
+settings_sysinfo_hidden_panels=Paslėpti akordeonai
+theme_xhred_tooltip_dashboard_panels_disable=Slėpti skydą $1 

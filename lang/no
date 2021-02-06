@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Vis diagrammer
 settings_sysinfo_theme_updates=Se etter oppdateringer til Authentic Tema
 settings_sysinfo_csf_updates=Se etter ConfigServer Security & Firewall oppdateringer
 settings_sysinfo_drive_status_on_new_line=Vis status for CPU og disker på hver sin linje
-settings_sysinfo_expand_all_accordions=Utvid alle trekkspill
 settings_sysinfo_link_mini=Veis lenke til instrumentpanel som knapp
 
 settings_right_page_defaults_title=Standard sider
@@ -1161,7 +1160,6 @@ theme_xhred_global_medium=Middels
 theme_xhred_global_large=Stor
 theme_xhred_global_huge=Diger
 theme_xhred_filemanager_editor_maximized=Maksimer editor-panel ved start
-settings_sysinfo_remember_accordions=Lagret trekkspill-tilstander brukt sist gang
 
 #19.47
 theme_xhred_textarea_to_clipboard=Valgt tekstområde-innhold er kopiert til utklippstavlen

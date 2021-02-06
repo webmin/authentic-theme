@@ -161,7 +161,6 @@ settings_sysinfo_easypie_charts=グラフの表示
 settings_sysinfo_theme_updates=Authentic Themaの更新をチェック
 settings_sysinfo_csf_updates=ConfigServer のセキュリティとファイアウォールの更新を確認する
 settings_sysinfo_drive_status_on_new_line=新しい行に CPU とドライブのステータスを表示する
-settings_sysinfo_expand_all_accordions=すべてのアコーディオンを拡張
 settings_sysinfo_link_mini=ダッシュボードリンクをボタンとして表示
 
 settings_right_page_defaults_title=既定のページ
@@ -1152,4 +1151,3 @@ theme_xhred_global_medium=中
 theme_xhred_global_large=大
 theme_xhred_global_huge=最大
 theme_xhred_filemanager_editor_maximized=起動時にエディターパネルを最大化
-settings_sysinfo_remember_accordions=前回使用したアコーディオンの状態を保存する

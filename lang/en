@@ -176,7 +176,6 @@ settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
 settings_sysinfo_csf_updates=Check for ConfigServer Security & Firewall updates
 settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new line
-settings_sysinfo_expand_all_accordions=Keep all accordions expanded
 settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Default pages
@@ -1213,7 +1212,6 @@ theme_xhred_global_medium=Medium
 theme_xhred_global_large=Large
 theme_xhred_global_huge=Huge
 theme_xhred_filemanager_editor_maximized=Maximize editor panel upon start
-settings_sysinfo_remember_accordions=Save accordions state used last time
 
 
 #19.47
@@ -1276,3 +1274,8 @@ theme_xhred_filemanager_removing_selected=Removing selected.
 theme_xhred_filemanager_remove_warning=Removal has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before removal. Restricted permissions (attributes) is another possible cause. Error message:
 
 theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a> warning
+
+
+#19.71
+settings_sysinfo_hidden_panels=Hidden accordions
+theme_xhred_tooltip_dashboard_panels_disable=Hide $1 panel

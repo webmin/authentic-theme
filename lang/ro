@@ -165,7 +165,6 @@ settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
 settings_sysinfo_csf_updates=Verifică actualizări pentru ConfigServer Security și Firewall
 settings_sysinfo_drive_status_on_new_line=Afișează starea Procesorului și a Discurilor fiecare pe un nou rând
-settings_sysinfo_expand_all_accordions=Menține toate acordeoanele extinse
 settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Pagini implicite

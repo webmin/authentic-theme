@@ -276,7 +276,6 @@ theme_xhred_global_medium=介质
 theme_xhred_global_large=大
 theme_xhred_global_huge=巨大
 theme_xhred_filemanager_editor_maximized=启动时最大化编辑器面板
-settings_sysinfo_remember_accordions=保存上次使用的手风琴状态
 
 #19.47
 theme_xhred_textarea_to_clipboard=所选textarea内容已成功复制到剪贴板
@@ -332,3 +331,7 @@ theme_xhred_filemanager_removing_selected=删除所选内容。
 theme_xhred_filemanager_remove_warning=删除成功完成，但并非所有对象都删除。在删除之前，请求的对象可能已经被<em>重命名</em>或<em>移动</em>。权限受限（属性）是另一个可能的原因。错误信息：
 
 theme_xhred_connection_error_details_ssl=检查<a>自签名SSL证书</a>警告
+
+#19.71
+settings_sysinfo_hidden_panels=隐藏的手风琴
+theme_xhred_tooltip_dashboard_panels_disable=隐藏 $1面板

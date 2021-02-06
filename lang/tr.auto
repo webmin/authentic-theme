@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Grafikleri göster
 settings_sysinfo_theme_updates=Otantik Tema güncellemelerini kontrol etme
 settings_sysinfo_csf_updates=ConfigServer Güvenlik ve Güvenlik Duvarı güncellemelerini kontrol edin
 settings_sysinfo_drive_status_on_new_line=CPU ve sürücülerin durumunu yeni satırda göster
-settings_sysinfo_expand_all_accordions=Tüm akordeonları genişletin
 settings_sysinfo_link_mini=Gösterge tablosu bağlantısını düğme olarak göster
 
 settings_right_page_defaults_title=Varsayılan sayfalar
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Orta
 theme_xhred_global_large=Büyük
 theme_xhred_global_huge=Kocaman
 theme_xhred_filemanager_editor_maximized=Başlangıçta editör panelini büyütün
-settings_sysinfo_remember_accordions=Son kez kullanılan akordeonları kaydet durumu
 
 #19.47
 theme_xhred_textarea_to_clipboard=Seçilen metin içeriği panoya başarıyla kopyalandı
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Seçilenler kaldırılıyor.
 theme_xhred_filemanager_remove_warning=Kaldırma işlemi başarıyla tamamlandı, ancak tüm nesneler için değil. İstenen nesnelerin kaldırılmadan önce <em>yeniden adlandırılmış</em> veya <em>taşınmış</em> olması mümkündür. Kısıtlanmış izinler (öznitelikler) başka bir olası nedendir. Hata mesajı:
 
 theme_xhred_connection_error_details_ssl=<a>Kendinden imzalı SSL sertifikasını</a> kontrol edin uyarısı
+
+#19.71
+settings_sysinfo_hidden_panels=Gizli akordeonlar
+theme_xhred_tooltip_dashboard_panels_disable=$1 panelini gizle

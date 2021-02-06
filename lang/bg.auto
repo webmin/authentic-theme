@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Показване на диаграми
 settings_sysinfo_theme_updates=Проверете за актуални актуализации на темата
 settings_sysinfo_csf_updates=Проверете за актуализации на защитата и защитната стена на ConfigServer
 settings_sysinfo_drive_status_on_new_line=Показване на състоянието на процесора и дисковете на всеки ред
-settings_sysinfo_expand_all_accordions=Дръжте всички акордеони разширени
 settings_sysinfo_link_mini=Показване на връзката на таблото за управление като бутон
 
 settings_right_page_defaults_title=Страници по подразбиране
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=среда
 theme_xhred_global_large=Голям
 theme_xhred_global_huge=огромен
 theme_xhred_filemanager_editor_maximized=Увеличете максимално редакторния панел при стартиране
-settings_sysinfo_remember_accordions=Запазване на състоянието на акордеони, използвано последния път
 
 #19.47
 theme_xhred_textarea_to_clipboard=Избраното съдържание на текстови съобщения успешно е копирано в клипборда
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Премахване на избран
 theme_xhred_filemanager_remove_warning=Премахването приключи успешно, но не за всички обекти. Възможно е заявените обекти да са били <em>преименувани</em> или <em>преместени</em> преди премахването. Ограничените разрешения (атрибути) е друга възможна причина. Съобщение за грешка:
 
 theme_xhred_connection_error_details_ssl=Проверете предупреждението за <a>самоподписан SSL сертификат</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Скрити акордеони
+theme_xhred_tooltip_dashboard_panels_disable=Скриване на панела $1 

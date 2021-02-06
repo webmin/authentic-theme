@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=إظهار الرسوم البيانية
 settings_sysinfo_theme_updates=تحقق من تحديثات السمة الأصلية
 settings_sysinfo_csf_updates=تحقق من تحديثات ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=إظهار حالة وحدة المعالجة المركزية ومحركات الأقراص في كل سطر جديد
-settings_sysinfo_expand_all_accordions=حافظ على توسيع جميع الأكورديونات
 settings_sysinfo_link_mini=إظهار رابط لوحة المعلومات كزر
 
 settings_right_page_defaults_title=الصفحات الافتراضية
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=متوسط
 theme_xhred_global_large=كبير
 theme_xhred_global_huge=ضخم
 theme_xhred_filemanager_editor_maximized=تكبير لوحة التحرير عند البدء
-settings_sysinfo_remember_accordions=استخدام حالة حفظ الأكورديون آخر مرة
 
 #19.47
 theme_xhred_textarea_to_clipboard=تم نسخ محتوى النص المحدد بنجاح إلى الحافظة
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=إزالة المحدد.
 theme_xhred_filemanager_remove_warning=انتهت الإزالة بنجاح ولكن ليس لجميع الكائنات. من الممكن أن يكون قد تمت <em>إعادة تسمية</em> الكائن المطلوب أو <em>نقله</em> قبل الإزالة. الأذونات المقيدة (السمات) هي سبب آخر محتمل. رسالة خطأ:
 
 theme_xhred_connection_error_details_ssl=تحقق من تحذير <a>شهادة SSL الموقعة ذاتيًا</a>
+
+#19.71
+settings_sysinfo_hidden_panels=الأكورديون المخفية
+theme_xhred_tooltip_dashboard_panels_disable=إخفاء لوحة$1

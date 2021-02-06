@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Diagramok megjelenítése
 settings_sysinfo_theme_updates=Ellenőrizze a hiteles témafrissítéseket
 settings_sysinfo_csf_updates=Ellenőrizze a ConfigServer biztonsági és tűzfalfrissítéseit
 settings_sysinfo_drive_status_on_new_line=A CPU és a meghajtók állapotának megjelenítése új soron
-settings_sysinfo_expand_all_accordions=Tartsa az összes harmonikát kibővítve
 settings_sysinfo_link_mini=Az irányítópult hivatkozásának megjelenítése gombként
 
 settings_right_page_defaults_title=Alapértelmezett oldalak
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Közepes
 theme_xhred_global_large=Nagy
 theme_xhred_global_huge=Hatalmas
 theme_xhred_filemanager_editor_maximized=Indítsa el a szerkesztőpanel maximalizálása
-settings_sysinfo_remember_accordions=Mentsd el a legutóbb használt harmonika állapotát
 
 #19.47
 theme_xhred_textarea_to_clipboard=A kiválasztott textarealap tartalma sikeresen át lett másolva a vágólapra
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Kijelölt eltávolítása.
 theme_xhred_filemanager_remove_warning=Az eltávolítás sikeresen befejeződött, de nem minden objektum esetében. Lehetséges, hogy a kért objektum (oka) t eltávolítás előtt <em>átnevezhették</em> vagy <em>áthelyezhették</em> e. A korlátozott engedélyek (attribútumok) egy másik lehetséges ok. Hiba üzenet:
 
 theme_xhred_connection_error_details_ssl=Ellenőrizze az <a>önaláírt SSL tanúsítvány</a> figyelmeztetést
+
+#19.71
+settings_sysinfo_hidden_panels=Rejtett harmonikák
+theme_xhred_tooltip_dashboard_panels_disable=$1 panel elrejtése

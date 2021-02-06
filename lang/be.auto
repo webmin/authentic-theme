@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Паказаць дыяграмы
 settings_sysinfo_theme_updates=Праверце сапраўдныя абнаўлення тэмы
 settings_sysinfo_csf_updates=Праверце абнаўлення бяспекі і брандмаўэра ConfigServer
 settings_sysinfo_drive_status_on_new_line=Пакажыце працэсар і стан дыскаў на кожным новым радку
-settings_sysinfo_expand_all_accordions=Утрымлівайце ўсе гармонікі
 settings_sysinfo_link_mini=Паказваць спасылку на прыборнай панэлі як кнопку
 
 settings_right_page_defaults_title=Старонкі па змаўчанні
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Сярэдні
 theme_xhred_global_large=Вялікі
 theme_xhred_global_huge=Вялізны
 theme_xhred_filemanager_editor_maximized=Максімальна павялічыць рэдактар панэлі пры запуску
-settings_sysinfo_remember_accordions=Захаваць стан гармонаў, выкарыстаны апошні раз
 
 #19.47
 theme_xhred_textarea_to_clipboard=Выбранае змесціва тэкставай вобласці паспяхова скапіявана ў буфер абмену
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Выдаленне выбранага.
 theme_xhred_filemanager_remove_warning=Выдаленне завершана паспяхова, але не для ўсіх аб'ектаў. Не выключана, што запытаныя аб'екты маглі быць <em>перайменаваны</em> альбо <em>перамешчаны</em> перад выдаленнем. Іншая магчымая прычына - абмежаваныя дазволы (атрыбуты). Паведамленне пра памылку:
 
 theme_xhred_connection_error_details_ssl=Праверце <a>папярэджанне ўласнага подпісу SSL</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Схаваныя акардэоны
+theme_xhred_tooltip_dashboard_panels_disable=Схаваць панэль $1 

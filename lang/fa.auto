@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=نمایش نمودارها
 settings_sysinfo_theme_updates=به روزرسانی های موضوع معتبر را بررسی کنید
 settings_sysinfo_csf_updates=به روزرسانی های ConfigServer Security & Firewall را بررسی کنید
 settings_sysinfo_drive_status_on_new_line=نمایش CPU و وضعیت درایوهای هر یک در خط جدید
-settings_sysinfo_expand_all_accordions=همه آکاردئون ها را گسترش دهید
 settings_sysinfo_link_mini=نمایش لینک داشبورد به عنوان دکمه
 
 settings_right_page_defaults_title=صفحات پیش فرض
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=متوسط
 theme_xhred_global_large=بزرگ
 theme_xhred_global_huge=بزرگ
 theme_xhred_filemanager_editor_maximized=پنل ویرایشگر را از شروع به حداکثر برسانید
-settings_sysinfo_remember_accordions=صرفه جویی در حالت آکوردئون آخرین بار استفاده شده است
 
 #19.47
 theme_xhred_textarea_to_clipboard=محتوای متن انتخابی با موفقیت در کلیپ بورد کپی شد
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=در حال حذف موارد انتخ
 theme_xhred_filemanager_remove_warning=حذف با موفقیت به پایان رسید اما نه برای همه اشیا. این احتمال وجود دارد که شی (های) درخواستی قبل از حذف <em>تغییر نام داده شود</em> یا <em>منتقل شود</em>. مجوزهای محدود شده (ویژگی ها) دلیل احتمالی دیگری است. پیغام خطا:
 
 theme_xhred_connection_error_details_ssl=هشدار <a>گواهی SSL خود امضا شده</a> را بررسی کنید
+
+#19.71
+settings_sysinfo_hidden_panels=آکاردئون پنهان
+theme_xhred_tooltip_dashboard_panels_disable=پانل$1 پنهان شود

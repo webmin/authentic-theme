@@ -59,3 +59,7 @@ theme_xhred_filemanager_removing_selected=Ausgewählte entfernen.
 theme_xhred_filemanager_remove_warning=Das Entfernen wurde erfolgreich abgeschlossen, jedoch nicht für alle Objekte. Es ist möglich, dass angeforderte Objekte vor dem Entfernen <em>umbenannt</em> oder <em>verschoben</em> wurden. Eingeschränkte Berechtigungen (Attribute) sind eine weitere mögliche Ursache. Fehlermeldung:
 
 theme_xhred_connection_error_details_ssl=Überprüfen Sie die Warnung <a>selbstsigniertes SSL-Zertifikat</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Versteckte Akkordeons
+theme_xhred_tooltip_dashboard_panels_disable=$1 Panel ausblenden

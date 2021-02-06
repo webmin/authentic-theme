@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Näytä kaaviot
 settings_sysinfo_theme_updates=Tarkista aitoja teemapäivityksiä
 settings_sysinfo_csf_updates=Tarkista, onko ConfigServer Security & Firewall -päivityksiä
 settings_sysinfo_drive_status_on_new_line=Näytä prosessori ja taajuusmuuttajan tila uudella rivillä
-settings_sysinfo_expand_all_accordions=Pidä kaikki harmonikat laajennettuna
 settings_sysinfo_link_mini=Näytä kojetaulun linkki painikkeena
 
 settings_right_page_defaults_title=Oletussivut
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=keskikokoinen
 theme_xhred_global_large=Suuri
 theme_xhred_global_huge=Valtava
 theme_xhred_filemanager_editor_maximized=Maksimoi toimittajapaneeli käynnistyksen yhteydessä
-settings_sysinfo_remember_accordions=Tallenna harmonikan tila, jota käytettiin viimeksi
 
 #19.47
 theme_xhred_textarea_to_clipboard=Valittu tekstialueen sisältö on kopioitu onnistuneesti leikepöydälle
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Poistetaan valittuja.
 theme_xhred_filemanager_remove_warning=Poisto on suoritettu onnistuneesti, mutta ei kaikkien objektien kohdalla. On mahdollista, että pyydetyt objektit voidaan <em>nimetä uudelleen</em> tai <em>siirtää</em> ennen poistamista. Rajoitetut käyttöoikeudet (määritteet) on toinen mahdollinen syy. Virheviesti:
 
 theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-varmenne</a> -varoitus
+
+#19.71
+settings_sysinfo_hidden_panels=Piilotetut harmonikat
+theme_xhred_tooltip_dashboard_panels_disable=Piilota $1 paneeli

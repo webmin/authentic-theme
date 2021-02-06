@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Erakutsi diagramak
 settings_sysinfo_theme_updates=Egiaztatu benetako gaiaren eguneratzeak
 settings_sysinfo_csf_updates=Egiaztatu ConfigServer Security eta Firewall eguneratzeak
 settings_sysinfo_drive_status_on_new_line=Erakutsi CPU eta unitateen egoera lerro berrian
-settings_sysinfo_expand_all_accordions=Jarrai akordeoiak zabalduta
 settings_sysinfo_link_mini=Erakutsi arbelaren esteka botoia gisa
 
 settings_right_page_defaults_title=Lehenetsitako orriak
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Medium
 theme_xhred_global_large=Handiak
 theme_xhred_global_huge=Erraldoia
 theme_xhred_filemanager_editor_maximized=Gehitu editoreen panela hasieran
-settings_sysinfo_remember_accordions=Gorde akordeoien egoera azken aldiz erabilita
 
 #19.47
 theme_xhred_textarea_to_clipboard=Aukeratutako textarea edukia arbelean kopiatu da
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Hautatutakoa kentzen.
 theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objektu guztientzat. Baliteke eskatutako objektuak kendu aurretik <em>izena aldatu</em> edo <em>mugitu</em> izatea. Baimen mugatuak (atributuak) beste kausa posible bat da. Akats mezua:
 
 theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziurtagiria</a> abisua
+
+#19.71
+settings_sysinfo_hidden_panels=Ezkutuko akordeoiak
+theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela

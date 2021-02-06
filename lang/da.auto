@@ -79,7 +79,6 @@ settings_sysinfo_easypie_charts=Vis diagrammer
 settings_sysinfo_theme_updates=Kontroller, om der er opdateringer til autentisk tema
 settings_sysinfo_csf_updates=Kontroller, om der er opdateringer til ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Vis CPU og drev status hver på en ny linje
-settings_sysinfo_expand_all_accordions=Hold alle trekkspil udvidet
 settings_sysinfo_link_mini=Vis link til instrumentbræt som knap
 
 settings_right_page_defaults_title=Standardsider
@@ -1074,7 +1073,6 @@ theme_xhred_global_medium=Medium
 theme_xhred_global_large=Stor
 theme_xhred_global_huge=Kæmpe stor
 theme_xhred_filemanager_editor_maximized=Maksimer redigeringspanelet ved start
-settings_sysinfo_remember_accordions=Gem trekkspil tilstand brugt sidste gang
 
 #19.47
 theme_xhred_textarea_to_clipboard=Det valgte tekstindhold er blevet kopieret til udklipsholder
@@ -1130,3 +1128,7 @@ theme_xhred_filemanager_removing_selected=Fjerner valgt.
 theme_xhred_filemanager_remove_warning=Fjernelse er afsluttet med succes, men ikke for alle objekter. Det er muligt, at de ønskede objekt (er) kunne have været <em>omdøbt</em> eller <em>flyttet</em> før fjernelsen. Begrænsede tilladelser (attributter) er en anden mulig årsag. Fejl besked:
 
 theme_xhred_connection_error_details_ssl=Tjek advarslen <a>selvsigneret SSL-certifikat</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Skjulte harmonikaer
+theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet

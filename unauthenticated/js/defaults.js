@@ -86,9 +86,9 @@ var settings_mailbox_slash_delimiter = true,
     settings_sysinfo_real_time_stored_length = 600,
 
     settings_sysinfo_easypie_charts = true,
-    settings_sysinfo_easypie_charts_size = 172,
+    settings_sysinfo_easypie_charts_size = 185,
     settings_sysinfo_easypie_charts_width = 2,
-    settings_sysinfo_easypie_charts_scale = 8,
+    settings_sysinfo_easypie_charts_scale = 9,
     
     settings_sysinfo_remember_accordions = true,
     settings_sysinfo_expand_all_accordions = false,

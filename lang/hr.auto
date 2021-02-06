@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Prikaži grafikone
 settings_sysinfo_theme_updates=Provjerite autentična ažuriranja teme
 settings_sysinfo_csf_updates=Provjerite ažuriranja Sigurnosti i vatrozida ConfigServer
 settings_sysinfo_drive_status_on_new_line=Prikažite status CPU-a i pogona svaki na novoj liniji
-settings_sysinfo_expand_all_accordions=Držite sve harmonike
 settings_sysinfo_link_mini=Prikaži gumb nadzorne ploče kao gumb
 
 settings_right_page_defaults_title=Zadane stranice
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Srednji
 theme_xhred_global_large=veliki
 theme_xhred_global_huge=Ogroman
 theme_xhred_filemanager_editor_maximized=Maksimalno povećajte ploču uređivača na početku
-settings_sysinfo_remember_accordions=Spremi stanje posljednje harmonike
 
 #19.47
 theme_xhred_textarea_to_clipboard=Odabrani sadržaj textarea uspješno je kopiran u međuspremnik
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Uklanjanje odabranog.
 theme_xhred_filemanager_remove_warning=Uklanjanje je uspješno završeno, ali ne za sve objekte. Moguće je da su traženi objekti mogli biti <em>preimenovani</em> ili <em>premješteni</em> prije uklanjanja. Ograničena dopuštenja (atributi) drugi su mogući uzrok. Poruka pogreške:
 
 theme_xhred_connection_error_details_ssl=Provjerite <a>upozorenje o samopotpisanom SSL certifikatu</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Skrivene harmonike
+theme_xhred_tooltip_dashboard_panels_disable=Sakrij ploču $1 

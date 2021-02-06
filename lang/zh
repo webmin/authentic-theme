@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=显示图表
 settings_sysinfo_theme_updates=检查 Authentic 主题更新
 settings_sysinfo_csf_updates=检查 ConfigServer 安全和防火墙更新
 settings_sysinfo_drive_status_on_new_line=在新行上显示 CPU 和驱动器状态
-settings_sysinfo_expand_all_accordions=展开所有折叠菜单
 settings_sysinfo_link_mini=将仪表板链接显示为按钮
 
 settings_right_page_defaults_title=默认页

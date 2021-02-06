@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Uri ċ-ċarts
 settings_sysinfo_theme_updates=Iċċekkja għal aġġornamenti tat-Tema Awtentika
 settings_sysinfo_csf_updates=Iċċekkja għal aġġornamenti tas-Sigurtà u l-Firewall ConfigServer
 settings_sysinfo_drive_status_on_new_line=Uri l-istatus tas-CPU u drajv kull wieħed fuq linja ġdida
-settings_sysinfo_expand_all_accordions=Żomm l-akkordji kollha estiżi
 settings_sysinfo_link_mini=Uri l-link tad-dashboard bħala buttuna
 
 settings_right_page_defaults_title=Paġni awtomatiċi
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Medju
 theme_xhred_global_large=Kbar
 theme_xhred_global_huge=Enormi
 theme_xhred_filemanager_editor_maximized=Timmassimizza l-pannell tal-editur malli tibda
-settings_sysinfo_remember_accordions=Ħlief l-istat ta 'l-akkordji użat l-aħħar darba
 
 #19.47
 theme_xhred_textarea_to_clipboard=Il-kontenut ta 'textarea magħżul ġie kkupjat b'suċċess fil-clipboard
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=It-tneħħija magħżula.
 theme_xhred_filemanager_remove_warning=It-tneħħija spiċċat b'suċċess iżda mhux għall-oġġetti kollha. Huwa possibbli li l-oġġett (i) mitlub (i) setgħu ġew <em>isem ġdid</em> jew <em>imċaqlaq</em> qabel it-tneħħija. Permessi ristretti (attributi) hija kawża oħra possibbli. Messaġġ ta 'żball:
 
 theme_xhred_connection_error_details_ssl=Iċċekkja t-twissija <a>ċertifikat SSL iffirmat minnu nnifsu</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Akkordjoni moħbija
+theme_xhred_tooltip_dashboard_panels_disable=Aħbi $1 panel

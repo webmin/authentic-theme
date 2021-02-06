@@ -436,7 +436,6 @@ theme_xhred_global_medium=Mitjà
 theme_xhred_global_large=De grans dimensions
 theme_xhred_global_huge=Enorme
 theme_xhred_filemanager_editor_maximized=Maximitzeu el tauler de l'editor des del començament
-settings_sysinfo_remember_accordions=Desa l’estat d’acordions que es va fer servir la darrera vegada
 
 #19.47
 theme_xhred_textarea_to_clipboard=El contingut de textura seleccionat s'ha copiat correctament al porta-retalls
@@ -492,3 +491,7 @@ theme_xhred_filemanager_removing_selected=S'està eliminant la selecció.
 theme_xhred_filemanager_remove_warning=L'eliminació s'ha acabat correctament, però no per a tots els objectes. És possible que els objectes sol·licitats s’hagin pogut <em>canviar de nom</em> o <em>moure</em> abans d’eliminar-los. Els permisos (atributs) restringits són una altra causa possible. Missatge d'error:
 
 theme_xhred_connection_error_details_ssl=Comproveu l'advertiment <a>certificat SSL autofirmat</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Acordions ocults
+theme_xhred_tooltip_dashboard_panels_disable=Amaga el tauler $1 

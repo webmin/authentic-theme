@@ -986,7 +986,6 @@ theme_xhred_global_medium=Střední
 theme_xhred_global_large=Velký
 theme_xhred_global_huge=Obrovský
 theme_xhred_filemanager_editor_maximized=Maximalizujte panel editorů při spuštění
-settings_sysinfo_remember_accordions=Uložit naposledy použitý stav harmonik
 
 #19.47
 theme_xhred_textarea_to_clipboard=Vybraný obsah textarea byl úspěšně zkopírován do schránky
@@ -1042,3 +1041,7 @@ theme_xhred_filemanager_removing_selected=Odebrání vybrané.
 theme_xhred_filemanager_remove_warning=Odstranění bylo úspěšně dokončeno, ale ne u všech objektů. Je možné, že požadované objekty mohly být před odebráním <em>přejmenovány</em> nebo <em>přesunuty</em>. Další možnou příčinou jsou omezená oprávnění (atributy). Chybové hlášení:
 
 theme_xhred_connection_error_details_ssl=Zkontrolujte <a>certifikát SSL podepsaný svým držitelem</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Skryté akordeony
+theme_xhred_tooltip_dashboard_panels_disable=Skrýt panel $1 

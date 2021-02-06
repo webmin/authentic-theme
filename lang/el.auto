@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Εμφάνιση γραφημάτων
 settings_sysinfo_theme_updates=Ελέγξτε για αυθεντικές ενημερώσεις θέματος
 settings_sysinfo_csf_updates=Ελέγξτε για ενημερώσεις του ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Εμφάνιση καθεστώτος CPU και μονάδων δίσκου σε κάθε νέα γραμμή
-settings_sysinfo_expand_all_accordions=Διατηρήστε όλα τα ακορντεόν εκτεταμένα
 settings_sysinfo_link_mini=Εμφάνιση συνδέσμου πίνακα ελέγχου ως κουμπί
 
 settings_right_page_defaults_title=Προεπιλεγμένες σελίδες
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Μεσαίο
 theme_xhred_global_large=Μεγάλο
 theme_xhred_global_huge=Τεράστιος
 theme_xhred_filemanager_editor_maximized=Μεγιστοποιήστε τον πίνακα επεξεργασίας κατά την έναρξη
-settings_sysinfo_remember_accordions=Αποθηκεύστε την κατάσταση ακορντεόν που χρησιμοποιήθηκε την τελευταία φορά
 
 #19.47
 theme_xhred_textarea_to_clipboard=Το επιλεγμένο περιεχόμενο κειμένου αντιγράφηκε επιτυχώς στο πρόχειρο
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Κατάργηση επιλεγμέν�
 theme_xhred_filemanager_remove_warning=Η αφαίρεση ολοκληρώθηκε με επιτυχία, αλλά όχι για όλα τα αντικείμενα. Είναι πιθανό ότι τα ζητούμενα αντικείμενα θα μπορούσαν να είχαν <em>μετονομαστεί</em> ή <em>μετακινήθηκαν</em> πριν από την κατάργηση. Τα περιορισμένα δικαιώματα (χαρακτηριστικά) είναι μια άλλη πιθανή αιτία. Μήνυμα λάθους:
 
 theme_xhred_connection_error_details_ssl=Ελέγξτε την προειδοποίηση <a>πιστοποιητικό SSL αυτόματης υπογραφής</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Κρυμμένα ακορντεόν
+theme_xhred_tooltip_dashboard_panels_disable=Απόκρυψη του πίνακα $1 

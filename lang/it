@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Mostra grafici
 settings_sysinfo_theme_updates=Controlla aggiornamenti di Authentic Theme
 settings_sysinfo_csf_updates=Controlla aggiornamenti di ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Visualizza stato CPU e dischi ognuno su una nuova riga
-settings_sysinfo_expand_all_accordions=Rendi estesi tutti i pannelli ad estensione
 settings_sysinfo_link_mini=Visualizza link dashboard come pulsante
 
 settings_right_page_defaults_title=Pagine predefinite
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Medio
 theme_xhred_global_large=Grande
 theme_xhred_global_huge=Gigante
 theme_xhred_filemanager_editor_maximized=Massimizza il pannello dell'editor all'avvio
-settings_sysinfo_remember_accordions=Salva lo stato delle sezioni espandibili dell'ultima volta
 
 #19.47
 theme_xhred_textarea_to_clipboard=Il conuto selezionato nella casella di testo è stato copiato negli appunti

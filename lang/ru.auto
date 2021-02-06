@@ -60,7 +60,6 @@ settings_sysinfo_easypie_charts=Показать графики
 settings_sysinfo_theme_updates=Проверьте наличие обновлений Аутентичной темы
 settings_sysinfo_csf_updates=Проверьте наличие обновлений безопасности и межсетевого экрана ConfigServer
 settings_sysinfo_drive_status_on_new_line=Показывать состояние процессора и дисков в новой строке
-settings_sysinfo_expand_all_accordions=Держите все аккордеоны расширенными
 settings_sysinfo_link_mini=Показать ссылку на панель управления как кнопку
 
 settings_right_page_defaults_title=Страницы по умолчанию
@@ -940,7 +939,6 @@ theme_xhred_global_medium=средний
 theme_xhred_global_large=большой
 theme_xhred_global_huge=огромный
 theme_xhred_filemanager_editor_maximized=Развернуть панель редактора при запуске
-settings_sysinfo_remember_accordions=Сохранить состояние аккордеонов, использованное в прошлый раз
 
 #19.47
 theme_xhred_textarea_to_clipboard=Выбранное содержимое текстовой области было успешно скопировано в буфер обмена
@@ -996,3 +994,7 @@ theme_xhred_filemanager_removing_selected=Удаление выбранного.
 theme_xhred_filemanager_remove_warning=Удаление завершено успешно, но не для всех объектов. Возможно, запрошенный объект (ы) мог быть <em>переименован</em> или <em>перемещен</em> перед удалением. Ограниченные права (атрибуты) - еще одна возможная причина. Сообщение об ошибке:
 
 theme_xhred_connection_error_details_ssl=Проверьте предупреждение <a>самоподписанный сертификат SSL</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Скрытые аккордеоны
+theme_xhred_tooltip_dashboard_panels_disable=Скрыть панель $1 

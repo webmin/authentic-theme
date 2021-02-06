@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Pokaži grafikone
 settings_sysinfo_theme_updates=Preverite pristnosti posodobitev teme
 settings_sysinfo_csf_updates=Preverite, ali obstajajo posodobitve za varnost in požarni zid ConfigServer
 settings_sysinfo_drive_status_on_new_line=Prikažite stanje CPU-ja in pogona v vsaki vrstici
-settings_sysinfo_expand_all_accordions=Razširite vse harmonike
 settings_sysinfo_link_mini=Pokaži povezavo na nadzorni plošči
 
 settings_right_page_defaults_title=Privzete strani
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Srednja
 theme_xhred_global_large=Velika
 theme_xhred_global_huge=Ogromno
 theme_xhred_filemanager_editor_maximized=Ob zagonu povečajte ploščo urednika
-settings_sysinfo_remember_accordions=Shrani stanje harmonike, ki je bila uporabljena zadnjič
 
 #19.47
 theme_xhred_textarea_to_clipboard=Izbrana vsebina besedila je bila uspešno kopirana v odložišče
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Odstranjevanje izbranega.
 theme_xhred_filemanager_remove_warning=Odstranitev je bila uspešno končana, vendar ne za vse predmete. Možno je, da bi bili zahtevani predmeti <em>odstranjeni</em> ali <em>premaknjeni</em> pred odstranitvijo. Omejena dovoljenja (atributi) so še en možen vzrok. Obvestilo o napaki:
 
 theme_xhred_connection_error_details_ssl=Preverite <a>samopodpisano potrdilo SSL</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Skrite harmonike
+theme_xhred_tooltip_dashboard_panels_disable=Skrij podokno $1 

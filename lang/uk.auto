@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Показати діаграми
 settings_sysinfo_theme_updates=Перевірте наявність оновлених тем
 settings_sysinfo_csf_updates=Перевірте наявність оновлень безпеки та брандмауера ConfigServer
 settings_sysinfo_drive_status_on_new_line=Показати стан процесора та дисків кожен на новому рядку
-settings_sysinfo_expand_all_accordions=Тримайте всі гармошки розширеними
 settings_sysinfo_link_mini=Показати посилання на панелі інструментів
 
 settings_right_page_defaults_title=Сторінки за замовчуванням
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Середній
 theme_xhred_global_large=Великий
 theme_xhred_global_huge=Величезний
 theme_xhred_filemanager_editor_maximized=Максимізуйте панель редактора після запуску
-settings_sysinfo_remember_accordions=Зберегти стан гармошок, використаний останній раз
 
 #19.47
 theme_xhred_textarea_to_clipboard=Вибраний вміст текстової області успішно скопійовано у буфер обміну
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Видалення вибраного.
 theme_xhred_filemanager_remove_warning=Видалення завершено успішно, але не для всіх об’єктів. Можливо, запитувані об’єкти могли бути <em>перейменовані</em> чи <em>переміщені</em> перед видаленням. Обмежені дозволи (атрибути) - ще одна можлива причина. Повідомлення про помилку:
 
 theme_xhred_connection_error_details_ssl=Перевірте <a>попередження про власний підпис SSL</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Приховані гармошки
+theme_xhred_tooltip_dashboard_panels_disable=Сховати панель $1 

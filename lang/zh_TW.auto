@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=顯示圖表
 settings_sysinfo_theme_updates=檢查真實主題更新
 settings_sysinfo_csf_updates=檢查ConfigServer安全性和防火牆更新
 settings_sysinfo_drive_status_on_new_line=在新行中分別顯示CPU和驅動器狀態
-settings_sysinfo_expand_all_accordions=保持所有手風琴膨脹
 settings_sysinfo_link_mini=將儀表板鏈接顯示為按鈕
 
 settings_right_page_defaults_title=默認頁面
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=介質
 theme_xhred_global_large=大
 theme_xhred_global_huge=巨大
 theme_xhred_filemanager_editor_maximized=啟動時最大化編輯器面板
-settings_sysinfo_remember_accordions=保存上次使用的手風琴狀態
 
 #19.47
 theme_xhred_textarea_to_clipboard=所選textarea內容已成功複製到剪貼板
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=刪除所選內容。
 theme_xhred_filemanager_remove_warning=刪除成功完成，但並非所有對像都刪除。在刪除之前，請求的對象可能已經被<em>重命名</em>或<em>移動</em>。受限的權限（屬性）是另一個可能的原因。錯誤信息：
 
 theme_xhred_connection_error_details_ssl=檢查<a>自簽名SSL證書</a>警告
+
+#19.71
+settings_sysinfo_hidden_panels=隱藏的手風琴
+theme_xhred_tooltip_dashboard_panels_disable=隱藏 $1面板

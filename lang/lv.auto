@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Rādīt diagrammas
 settings_sysinfo_theme_updates=Pārbaudiet, vai nav atjaunināti autentiski motīvi
 settings_sysinfo_csf_updates=Pārbaudiet ConfigServer drošības un ugunsmūra atjauninājumus
 settings_sysinfo_drive_status_on_new_line=Rādīt centrālo procesoru un piedziņas statusu katrā jaunā rindiņā
-settings_sysinfo_expand_all_accordions=Saglabājiet visus akordeonus paplašinātus
 settings_sysinfo_link_mini=Rādīt informācijas paneļa saiti kā pogu
 
 settings_right_page_defaults_title=Noklusētās lapas
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Vidēja
 theme_xhred_global_large=Liela
 theme_xhred_global_huge=Milzīgs
 theme_xhred_filemanager_editor_maximized=Palieliniet redaktora paneli, startējot
-settings_sysinfo_remember_accordions=Saglabājiet pēdējo reizi izmantoto akordeonu stāvokli
 
 #19.47
 theme_xhred_textarea_to_clipboard=Atlasītais teksta apgabala saturs ir veiksmīgi nokopēts starpliktuvē
@@ -1218,3 +1216,7 @@ theme_xhred_filemanager_removing_selected=Notiek atlasītā noņemšana.
 theme_xhred_filemanager_remove_warning=Noņemšana ir veiksmīgi pabeigta, bet ne visiem objektiem. Iespējams, ka pieprasīto objektu (-us) pirms noņemšanas varēja <em>pārdēvēt</em> vai <em>pārvietot</em>. Ierobežotās atļaujas (atribūti) ir vēl viens iespējamais iemesls. Kļūdas ziņojums:
 
 theme_xhred_connection_error_details_ssl=Pārbaudiet brīdinājumu par <a>pašu parakstītu SSL sertifikātu</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Slēptie akordeoni
+theme_xhred_tooltip_dashboard_panels_disable=Slēpt $1 paneli

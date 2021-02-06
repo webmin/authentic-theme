@@ -166,7 +166,6 @@ settings_sysinfo_easypie_charts=Visa diagram
 settings_sysinfo_theme_updates=Se om det finns uppdateringar till Authentic Theme
 settings_sysinfo_csf_updates=Se om det finns uppdateringar till ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Visa CPU och diskstatus på varsin rad
-settings_sysinfo_expand_all_accordions=Expandera alla ihopfällda menyer
 settings_sysinfo_link_mini=Visa översiktslänk som en knapp
 
 settings_right_page_defaults_title=Standardsidor
@@ -1162,7 +1161,6 @@ theme_xhred_global_medium=Medium
 theme_xhred_global_large=Stor
 theme_xhred_global_huge=Enorm
 theme_xhred_filemanager_editor_maximized=Maximera redigeringspanelen vid start
-settings_sysinfo_remember_accordions=Kom ihåg om menyerna var utvidgade eller ihop dragna sen du sist var där
 
 #19.47
 theme_xhred_textarea_to_clipboard=Det markerade innehållet i textområdet har kopierats till urklippet

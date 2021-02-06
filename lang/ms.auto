@@ -511,7 +511,6 @@ theme_xhred_global_medium=Sedang
 theme_xhred_global_large=Besar
 theme_xhred_global_huge=Besar
 theme_xhred_filemanager_editor_maximized=Maksimumkan panel editor semasa mula
-settings_sysinfo_remember_accordions=Simpan keadaan akordion yang digunakan kali terakhir
 
 #19.47
 theme_xhred_textarea_to_clipboard=Kandungan teks yang dipilih berjaya disalin ke papan keratan
@@ -567,3 +566,7 @@ theme_xhred_filemanager_removing_selected=Mengalih keluar dipilih.
 theme_xhred_filemanager_remove_warning=Pembuangan telah berjaya dilakukan tetapi tidak untuk semua objek. Ada kemungkinan objek yang diminta dapat <em>dinamakan semula</em> atau <em>dipindahkan</em> sebelum dikeluarkan. Kebenaran terhad (atribut) adalah kemungkinan penyebab lain. Mesej ralat:
 
 theme_xhred_connection_error_details_ssl=Periksa amaran <a>sijil SSL yang ditandatangani sendiri</a>
+
+#19.71
+settings_sysinfo_hidden_panels=Akordeon tersembunyi
+theme_xhred_tooltip_dashboard_panels_disable=Sembunyikan panel $1 
