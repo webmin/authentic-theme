@@ -370,7 +370,7 @@ sub get_extended_sysinfo
 
     if ($info_ref) {
         $returned_sysinfo .=
-          '<div class="panel-group" id="extended_sysinfo' . $x . '" role="tablist" aria-multiselectable="true">';
+          '<div class="panel-group ui-sortable" id="extended_sysinfo' . $x . '" role="tablist" aria-multiselectable="true">';
         foreach my $info (@{$info_ref}) {
             if ($info->{'id'} ne 'notifications' &&
                 $info->{'type'} ne 'link'            &&
@@ -425,12 +425,12 @@ sub get_extended_sysinfo
                                           ));
 
                     $returned_sysinfo .= '
-                    <div  data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
+                    <div draggable="true" data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
                       .
                       ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
                           'panel-default'
                       ) .
-                      '">
+                      ' ui-sortable-handle">
                         <div class="panel-heading" data-toggle="collapse" data-target="#' .
                       $info->{'id'} . '-' . $info->{'module'} .
                       $x . '-collapse" role="tab" id="' . $info->{'id'} . '-' . $info->{'module'} . $x . '">
@@ -1782,7 +1782,7 @@ sub print_favorites
 sub print_panels_group_start
 {
     my ($id, $get) = @_;
-    my $str = '<div class="panel-group" id="' . $id . '" role="tablist" aria-multiselectable="true">';
+    my $str = '<div class="panel-group ui-sortable" id="' . $id . '" role="tablist" aria-multiselectable="true">';
     if ($get) {
         return $str;
     }
@@ -1809,7 +1809,7 @@ sub print_panel
         $ref = ' data-referrer="' . $ref . '" ';
     }
     my $str = '
-              <div' . $sorter . ' class="panel panel-default"' . $ref . '>
+              <div draggable="true"' . $sorter . ' class="panel panel-default ui-sortable-handle"' . $ref . '>
                   <div class="panel-heading" data-toggle="collapse" data-target="#' .
       $id . '-collapse" role="tab" id="' . $id . '">
                     <h4 class="panel-title">

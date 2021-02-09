@@ -99,6 +99,8 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_collapse_navigation_link = true,
     settings_sysinfo_link_mini = false,
+    
+    settings_sysinfo_panels_order = {},
 
     settings_perform_content_scrolling = true,
     settings_show_terminal_link2 = true,
