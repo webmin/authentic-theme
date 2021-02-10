@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Il-proċess tas-server għadu għaddej !? Int
 
 #18.03
 settings_global_options_title=Għażliet globali
-settings_global_passgen_format=Ġeneratur ta 'password
-settings_global_passgen_format_description=Issettja t-tul u t-tip ta 'karattru użati fil-password iġġenerat. Il-valur awtomatiku huwa ekwivalenti għal <code>15|az,AZ,0-9</code>, li jirrappreżenta l-password bi 15-il karattru fit-tul, li fih ittri u numri miktuba u isfel Huwa possibbli wkoll li żżid karattri speċjali billi tuża <code>#</code> hash sign
 theme_xhred_password_generator_new=Iġġenera Password Ġdida <br> (Biex Clipboard)
 theme_xhred_password_generator_new_success=Il-password iġġenerat %password ġiet ikkuppjata fil-clipboard b'suċċess.
 

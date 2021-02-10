@@ -422,8 +422,6 @@ theme_xhred_server_process_running=Proces serwera nadal działa !? Czy na pewno 
 
 #18.03
 settings_global_options_title=Opcje globalne
-settings_global_passgen_format=Generator hasła
-settings_global_passgen_format_description=Ustaw długość i typ znaków używany w wygenerowanym haśle. Wartość domyślna to <code>15|az,AZ,0-9</code>, co reprezentuje hasło o długości 15 znaków, zawierające wielkie i małe litery oraz cyfry. Możliwe jest także dodawanie znaków specjalnych za pomocą <code>#</code> znaku skrótu
 theme_xhred_password_generator_new=Wygeneruj nowe hasło <br> (do schowka)
 theme_xhred_password_generator_new_success=Wygenerowane hasło %password zostało pomyślnie skopiowane do schowka.
 

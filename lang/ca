@@ -503,8 +503,6 @@ theme_xhred_server_process_running=El procés encara està en execussió. Encara
 
 #18.03
 settings_global_options_title=Opcions generals
-settings_global_passgen_format=Generador de contrasenyes
-settings_global_passgen_format_description=Set the length and character type used in the generated password. Default value equals to <code>15|a-z,A-Z,0-9</code>, which represents password with 15 characters in length, containing upper and lower case letters and numbers. It's also possible to add special characters by using <code>#</code> hash sign
 theme_xhred_password_generator_new=Genera una nova contrasenya<br> (Al porta-retalls)
 theme_xhred_password_generator_new_success=S'ha generat la contrasenya %password i s'ha copiat al porta-retalls.
 

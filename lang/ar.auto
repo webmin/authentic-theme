@@ -503,8 +503,6 @@ theme_xhred_server_process_running=عملية الخادم لا تزال قيد 
 
 #18.03
 settings_global_options_title=الخيارات العالمية
-settings_global_passgen_format=مولد كلمة السر
-settings_global_passgen_format_description=قم بتعيين الطول ونوع الحرف المستخدم في كلمة المرور التي تم إنشاؤها. القيمة الافتراضية تساوي <code>15|az,AZ,0-9</code> ، والتي تمثل كلمة مرور بطول 15 حرفًا ، تحتوي على أحرف وأرقام كبيرة وصغيرة. من الممكن أيضًا إضافة أحرف خاصة باستخدام علامة التجزئة <code>#</code>
 theme_xhred_password_generator_new=إنشاء كلمة مرور جديدة <br> (إلى الحافظة)
 theme_xhred_password_generator_new_success=تم نسخ %password تم إنشاؤها %password إلى الحافظة بنجاح.
 

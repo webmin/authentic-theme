@@ -503,8 +503,6 @@ theme_xhred_server_process_running=O processo do servidor ainda está em execuç
 
 #18.03
 settings_global_options_title=Opções globais
-settings_global_passgen_format=Gerador de senhas
-settings_global_passgen_format_description=Defina o tamanho e o tipo de caractere usado na senha gerada. O valor padrão é igual a <code>15|az,AZ,0-9</code>, que representa a senha com 15 caracteres de comprimento, contendo letras maiúsculas e minúsculas e números. Também é possível adicionar caracteres especiais usando <code>#</code> sinal de hash
 theme_xhred_password_generator_new=Gerar nova senha <br> (para a área de transferência)
 theme_xhred_password_generator_new_success=Senha gerada %password foi copiada para a área de transferência com sucesso.
 

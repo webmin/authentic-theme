@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Die bedienerproses loop steeds !? Is u seker 
 
 #18.03
 settings_global_options_title=Wêreldwye opsies
-settings_global_passgen_format=Wagwoord kragopwekker
-settings_global_passgen_format_description=Stel die lengte en die karaktersoort in wat in die gegenereerde wagwoord gebruik word. Standaardwaarde is gelyk aan <code>15|az,AZ,0-9</code>, wat 'n wagwoord met 15 karakters in lengte bevat, met hoofletters en letters. Dit is ook moontlik om spesiale karakters by te voeg deur <code>#</code> hash-teken te gebruik
 theme_xhred_password_generator_new=Genereer nuwe wagwoord <br> (na knipbord)
 theme_xhred_password_generator_new_success=Gegenereerde wagwoord %password is suksesvol na die knipbord gekopieër.
 

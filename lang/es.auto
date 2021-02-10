@@ -416,8 +416,6 @@ theme_xhred_server_process_running=¿El proceso del servidor aún se está ejecu
 
 #18.03
 settings_global_options_title=Opciones globales
-settings_global_passgen_format=Generador de contraseñas
-settings_global_passgen_format_description=Establezca la longitud y el tipo de caracteres utilizados en la contraseña generada. El valor predeterminado es igual a <code>15|az,AZ,0-9</code>, que representa la contraseña con 15 caracteres de longitud, que contiene letras y números en mayúsculas y minúsculas. También es posible agregar caracteres especiales usando <code>#</code> signo <code>#</code> hash
 theme_xhred_password_generator_new=Generar nueva contraseña <br> (Al portapapeles)
 theme_xhred_password_generator_new_success=La contraseña generada %password se ha copiado al portapapeles con éxito.
 

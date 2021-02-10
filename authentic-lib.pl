@@ -425,7 +425,8 @@ sub get_extended_sysinfo
                                           ));
 
                     $returned_sysinfo .= '
-                    <div draggable="true" data-referrer="' . $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
+                    <div draggable="true" data-referrer="' .
+                      $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
                       .
                       ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
                           'panel-default'
@@ -449,9 +450,9 @@ sub get_extended_sysinfo
                               '
                       . $formatted_title . '<span class="pull-right on-hover"><i class="fa fa-fw fa-times-thin" '
                       .
-                      get_button_tooltip(
-                                         "<span data-no-wrap>" . theme_text('theme_xhred_tooltip_dashboard_panels_disable', $formatted_title
-                                         ) . "</span>",
+                      get_button_tooltip("<span data-no-wrap>" .
+                                             theme_text('theme_xhred_tooltip_dashboard_panels_disable', $formatted_title) .
+                                             "</span>",
                                          undef,
                                          'auto right'
                       ) .
@@ -2548,8 +2549,6 @@ sub theme_settings
             'true',
             'settings_right_reload',
             'true',
-            'settings_global_passgen_format',
-            '15|a-z,A-Z,0-9',
 
             '__',
             theme_settings('fa', 'info-circle', &theme_text('settings_sysinfo_real_time_status_options')),
@@ -2909,14 +2908,16 @@ sub theme_settings
             eval {
                 my $data = $theme_config{'settings_sysinfo_hidden_panels'};
                 $data =~ s/'/"/g;
-                $excluded_accordions = convert_from_json($data);
+                $excluded_accordions          = convert_from_json($data);
                 @selected_excluded_accordions = keys %{$excluded_accordions};
                 foreach my $key (@selected_excluded_accordions) {
                     push(@excluded_accordions, [$key, $excluded_accordions->{$key}]);
                 }
             };
             if (!$@) {
-                $v = &ui_select("settings_sysinfo_hidden_panels", \@selected_excluded_accordions, \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
+                $v = &ui_select("settings_sysinfo_hidden_panels",
+                                \@selected_excluded_accordions,
+                                \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
             }
 
         } elsif ($k =~ /settings_security_notify_on_/ ||
@@ -3033,14 +3034,9 @@ sub theme_settings
                  $k eq 'settings_hotkey_custom_8'       ||
                  $k eq 'settings_hotkey_custom_9'       ||
                  $k eq 'settings_leftmenu_netdata_link' ||
-                 $k eq 'settings_leftmenu_user_html'    ||
-                 $k eq 'settings_global_passgen_format')
+                 $k eq 'settings_leftmenu_user_html')
         {
             my $width = ' width: 40%; ';
-
-            if ($k eq 'settings_global_passgen_format') {
-                $width = ' width: 30%; ';
-            }
             if ($k eq 'settings_leftmenu_netdata_link') {
                 $width = ' width: 50%; ';
             } elsif ($k eq 'settings_leftmenu_user_html') {
@@ -3650,6 +3646,16 @@ sub get_xhr_request
             print convert_to_json(\@match);
         } elsif ($in{'xhr-csf-unload'} eq '1') {
             lib_csf_control('unload');
+        } elsif ($in{'xhr-gennewpass'} eq 'get') {
+            my $pass;
+            if (&foreign_available('virtual-server')) {
+                &foreign_require("virtual-server");
+                $pass = &virtual_server::random_password();
+            } elsif (&foreign_available('useradmin')) {
+                &foreign_require("useradmin", "user-lib.pl");
+                $pass = &useradmin::generate_random_password();
+            }
+            print $pass;
         }
 
         exit;

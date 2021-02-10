@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Quá trình máy chủ vẫn đang chạy!? B
 
 #18.03
 settings_global_options_title=Tùy chọn toàn cầu
-settings_global_passgen_format=Tạo mật khẩu
-settings_global_passgen_format_description=Đặt độ dài và loại ký tự được sử dụng trong mật khẩu được tạo. Giá trị mặc định bằng <code>15|az,AZ,0-9</code>, đại diện cho mật khẩu có độ dài 15 ký tự, chứa các chữ cái và chữ in hoa và in thường. Cũng có thể thêm các ký tự đặc biệt bằng cách sử dụng dấu <code>#</code> băm
 theme_xhred_password_generator_new=Tạo mật khẩu mới <br> (Tới Clipboard)
 theme_xhred_password_generator_new_success=Đã tạo mật khẩu %password đã được sao chép vào clipboard thành công.
 

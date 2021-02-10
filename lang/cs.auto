@@ -329,8 +329,6 @@ theme_xhred_server_process_running=Proces serveru stále běží !? Jste si jist
 
 #18.03
 settings_global_options_title=Globální možnosti
-settings_global_passgen_format=Generátor hesel
-settings_global_passgen_format_description=Nastavte délku a typ znaku použitého ve vygenerovaném hesle. Výchozí hodnota se rovná <code>15|az,AZ,0-9</code>, což představuje heslo o délce 15 znaků, obsahující velká a malá písmena a čísla. Je také možné přidat speciální znaky pomocí znaku <code>#</code> hash
 theme_xhred_password_generator_new=Generovat nové heslo <br> (do schránky)
 theme_xhred_password_generator_new_success=Generované heslo %password bylo úspěšně zkopírováno do schránky.
 

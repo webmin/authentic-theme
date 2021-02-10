@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Serverio procesas vis dar vykdomas !? Ar tikr
 
 #18.03
 settings_global_options_title=Visuotinės galimybės
-settings_global_passgen_format=Slaptažodžio generatorius
-settings_global_passgen_format_description=Nustatykite sukurto slaptažodžio ilgį ir simbolio tipą. Numatytoji reikšmė lygi <code>15|az,AZ,0-9</code>, tai yra slaptažodis, kurio ilgis yra 15 simbolių, kuriame yra didžiosios ir mažosios raidės ir skaičiai. Taip pat galima pridėti specialiųjų simbolių naudojant <code>#</code> maišos ženklą
 theme_xhred_password_generator_new=Sukurti naują slaptažodį <br> (į mainų sritį)
 theme_xhred_password_generator_new_success=Generuotas slaptažodis %password sėkmingai nukopijuotas į mainų sritį.
 

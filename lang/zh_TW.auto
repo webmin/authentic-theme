@@ -503,8 +503,6 @@ theme_xhred_server_process_running=服務器進程仍在運行！您確定要導
 
 #18.03
 settings_global_options_title=全局選項
-settings_global_passgen_format=密碼產生器
-settings_global_passgen_format_description=設置生成的密碼中使用的長度和字符類型。默認值等於<code>15|az,AZ,0-9</code> ，它表示長度為15個字符的密碼，包含大小寫字母和數字。也可以使用<code>#</code>哈希符號添加特殊字符
 theme_xhred_password_generator_new=生成新密碼<br>（至剪貼板）
 theme_xhred_password_generator_new_success=生成的密碼%password已成功複製到剪貼板。
 

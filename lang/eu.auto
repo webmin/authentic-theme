@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Zerbitzariaren prozesua martxan dago oraindik
 
 #18.03
 settings_global_options_title=Aukera globala
-settings_global_passgen_format=Pasahitz sortzailea
-settings_global_passgen_format_description=Ezarri sortutako pasahitzan erabilitako luzera eta karaktere mota. Balio lehenetsia <code>15|az,AZ,0-9</code>, 15 karaktere luzeren pasahitza adierazten duena, maiuskulak eta minuskulak eta zenbakiak dituena. Karaktere bereziak gehitzea ere posible da <code>#</code> hash ikurra erabiliz
 theme_xhred_password_generator_new=Sortu pasahitz berria <br> (arbelera)
 theme_xhred_password_generator_new_success=Sortutako %password arbelean kopiatu da.
 

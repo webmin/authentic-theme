@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Palvelinprosessi on edelleen käynnissä!? Ol
 
 #18.03
 settings_global_options_title=Globaalit vaihtoehdot
-settings_global_passgen_format=Salasanan luonti
-settings_global_passgen_format_description=Aseta luodussa salasanassa käytetty pituus ja merkityyppi. Oletusarvo on <code>15|az,AZ,0-9</code>, joka edustaa 15 merkin pituista salasanaa, joka sisältää isot ja pienet kirjaimet ja numerot. On myös mahdollista lisätä erikoismerkkejä käyttämällä <code>#</code> hash-merkkiä
 theme_xhred_password_generator_new=Luo uusi salasana <br> (leikepöydälle)
 theme_xhred_password_generator_new_success=Luotu salasana %password on kopioitu leikepöydälle onnistuneesti.
 

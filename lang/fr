@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Le processus serveur est toujours en cours d'
 
 #18.03
 settings_global_options_title=Options globales
-settings_global_passgen_format=Générateur de mot de passe
-settings_global_passgen_format_description=Définissez la longueur et le type de caractère utilisés dans le mot de passe généré. La valeur par défaut est égale à <code>15|a-z,A-Z,0-9</code>, qui représente un mot de passe de 15 caractères, contenant des lettres majuscules et minuscules et des chiffres. Il est également possible d'ajouter des caractères spéciaux en utilisant le signe dièse <code>#</code>
 theme_xhred_password_generator_new=Générer un nouveau mot de passe <br> (dans le presse-papiers)
 theme_xhred_password_generator_new_success=Le mot de passe généré %password a été copié dans le presse-papiers avec succès.
 

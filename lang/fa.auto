@@ -503,8 +503,6 @@ theme_xhred_server_process_running=روند سرور هنوز در حال انج
 
 #18.03
 settings_global_options_title=گزینه های جهانی
-settings_global_passgen_format=تولید کننده رمز عبور
-settings_global_passgen_format_description=طول و نوع شخصیت مورد استفاده در رمز عبور تولید شده را تنظیم کنید. مقدار پیش فرض برابر است با <code>15|az,AZ,0-9</code> ، که گذرواژه با 15 حرف طول دارد ، حاوی حروف و اعداد بزرگ و کوچک است. همچنین می توانید با استفاده از علامت <code>#</code> هش ، کاراکترهای خاصی اضافه کنید
 theme_xhred_password_generator_new=ایجاد گذرواژه جدید <br> (به کلیپ بورد)
 theme_xhred_password_generator_new_success=رمز عبور تولید شده %password با موفقیت در کلیپ بورد کپی شد.
 

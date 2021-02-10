@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Proces poslužitelja i dalje traje !? Jeste l
 
 #18.03
 settings_global_options_title=Globalne mogućnosti
-settings_global_passgen_format=Generator lozinki
-settings_global_passgen_format_description=Postavite duljinu i vrstu znakova koji se koriste u generiranoj lozinci. Zadana vrijednost jednaka je <code>15|az,AZ,0-9</code>, što predstavlja lozinku s duljinom od 15 znakova, koja sadrži velika i mala slova i brojeve. Također je moguće dodati posebne znakove pomoću <code>#</code> hash znaka
 theme_xhred_password_generator_new=Stvori novu lozinku <br> (u međuspremnik)
 theme_xhred_password_generator_new_success=Generirana lozinka %password uspješno je kopirana u međuspremnik.
 

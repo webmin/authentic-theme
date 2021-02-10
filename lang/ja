@@ -498,8 +498,6 @@ theme_xhred_server_process_running= サーバープロセスはまだ実行中�
 
 #18.03
 settings_global_options_title= グローバルオプション
-settings_global_passgen_format= パスワードジェネレータ
-settings_global_passgen_format_description= 生成されたパスワードに使用されている長さと文字タイプを設定します。デフォルト値は、大文字と小文字を含む15文字のパスワードを表す<code>a-z、A-Z、0-9</code>と同じです。 <code>＃</code>ハッシュ記号を使用して特殊文字を追加することもできます
 theme_xhred_password_generator_new= 新しいパスワードを生成<br>(クリップボードに)
 theme_xhred_password_generator_new_success= 生成されたパスワード%passwordがクリップボードに正常にコピーされました。
 

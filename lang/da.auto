@@ -416,8 +416,6 @@ theme_xhred_server_process_running=Serverprocessen kører stadig !? Er du sikker
 
 #18.03
 settings_global_options_title=Globale muligheder
-settings_global_passgen_format=Adgangskodegenerator
-settings_global_passgen_format_description=Indstil længden og tegnetypen, der bruges i den genererede adgangskode. Standardværdien svarer til <code>15|az,AZ,0-9</code>, som repræsenterer adgangskode med 15 tegn i længden, der indeholder store og små bogstaver og tal. Det er også muligt at tilføje specialtegn ved hjælp af <code>#</code> hash-tegn
 theme_xhred_password_generator_new=Generer nyt kodeord <br> (til udklipsholder)
 theme_xhred_password_generator_new_success=Den genererede adgangskode %password er blevet kopieret til udklipsholder med succes.
 

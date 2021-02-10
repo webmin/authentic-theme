@@ -503,8 +503,6 @@ theme_xhred_server_process_running=תהליך השרת עדיין פועל !? ה
 
 #18.03
 settings_global_options_title=אופציות עולמיות
-settings_global_passgen_format=מחולל סיסמאות
-settings_global_passgen_format_description=הגדר את האורך וסוג התו המשמשים בסיסמה שנוצרה. ערך ברירת המחדל שווה ל <code>15|az,AZ,0-9</code>, המייצג סיסמא באורך 15 תווים, המכיל אותיות ומספרי אותיות גדולות וקטנות. אפשר גם להוסיף תווים מיוחדים באמצעות <code>#</code> סימן חשיש
 theme_xhred_password_generator_new=צור סיסמא חדשה <br> (ללוח)
 theme_xhred_password_generator_new_success=סיסמה שנוצרה %password הועתקה ללוח בהצלחה.
 

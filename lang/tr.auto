@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Sunucu işlemi hala çalışıyor !? Uzaklaş
 
 #18.03
 settings_global_options_title=Global seçenekler
-settings_global_passgen_format=Şifre üreticisi
-settings_global_passgen_format_description=Oluşturulan parolada kullanılan uzunluk ve karakter türünü ayarlayın. Varsayılan değer, büyük ve küçük harfler ve sayılar içeren 15 karakter uzunluğunda parolayı temsil eden <code>15|az,AZ,0-9</code> eşittir. <code>#</code> Karma işaretini kullanarak özel karakterler eklemek de mümkündür
 theme_xhred_password_generator_new=Yeni Şifre Oluştur <br> (Panoya)
 theme_xhred_password_generator_new_success=Oluşturulan şifre %password başarıyla panoya kopyalandı.
 

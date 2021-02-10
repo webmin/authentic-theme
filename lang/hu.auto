@@ -503,8 +503,6 @@ theme_xhred_server_process_running=A szerver folyamata továbbra is fut !? Bizto
 
 #18.03
 settings_global_options_title=Globális lehetőségek
-settings_global_passgen_format=Jelszógenerátor
-settings_global_passgen_format_description=Állítsa be a generált jelszóban használt hosszúságot és karaktertípust. Az alapértelmezett érték <code>15|az,AZ,0-9</code>, amely 15 karakter hosszú jelszót jelent, amely kis- és nagybetűket és számokat tartalmaz. Különleges karaktereket is hozzáadhat a <code>#</code> hash jel használatával
 theme_xhred_password_generator_new=Új jelszó létrehozása <br> (a vágólapra)
 theme_xhred_password_generator_new_success=A generált jelszó %password sikeresen át lett másolva a vágólapra.
 

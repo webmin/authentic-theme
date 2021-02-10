@@ -387,8 +387,6 @@ theme_xhred_server_process_running=Serverproces loopt nog steeds !? Weet u zeker
 
 #18.03
 settings_global_options_title=Globale opties
-settings_global_passgen_format=Wachtwoord generator
-settings_global_passgen_format_description=Stel de lengte en het type teken in dat wordt gebruikt in het gegenereerde wachtwoord. De standaardwaarde is gelijk aan <code>15|az,AZ,0-9</code>, wat staat voor een wachtwoord van 15 tekens lang, met hoofdletters, kleine letters en cijfers. Het is ook mogelijk om speciale tekens toe te voegen door <code>#</code> hekje te gebruiken
 theme_xhred_password_generator_new=Genereer nieuw wachtwoord <br> (naar klembord)
 theme_xhred_password_generator_new_success=Gegenereerd wachtwoord %password is met succes naar het klembord gekopieerd.
 

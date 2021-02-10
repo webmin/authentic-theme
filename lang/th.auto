@@ -503,8 +503,6 @@ theme_xhred_server_process_running=กระบวนการเซิร์ฟ
 
 #18.03
 settings_global_options_title=ตัวเลือกระดับโลก
-settings_global_passgen_format=เครื่องกำเนิดรหัสผ่าน
-settings_global_passgen_format_description=ตั้งค่าความยาวและประเภทตัวอักษรที่ใช้ในรหัสผ่านที่สร้างขึ้น ค่าเริ่มต้นเท่ากับ <code>15|az,AZ,0-9</code> ซึ่งแสดงถึงรหัสผ่านที่มีความยาว 15 อักขระประกอบด้วยตัวอักษรและตัวเลขตัวพิมพ์ใหญ่และเล็ก นอกจากนี้ยังสามารถเพิ่มอักขระพิเศษโดยใช้เครื่องหมาย <code>#</code> hash
 theme_xhred_password_generator_new=สร้างรหัสผ่านใหม่ <br> (ไปยังคลิปบอร์ด)
 theme_xhred_password_generator_new_success=รหัสผ่านที่สร้างรหัสผ่าน %password ถูกคัดลอกไปยังคลิปบอร์ดเรียบร้อยแล้ว
 

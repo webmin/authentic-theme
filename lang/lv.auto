@@ -503,8 +503,6 @@ theme_xhred_server_process_running=Servera process joprojām darbojas!? Vai tie�
 
 #18.03
 settings_global_options_title=Globālās iespējas
-settings_global_passgen_format=Paroļu ģenerators
-settings_global_passgen_format_description=Iestatiet ģenerētajā parolē izmantoto garumu un rakstzīmju veidu. Noklusējuma vērtība ir vienāda ar <code>15|az,AZ,0-9</code>, kas apzīmē paroli ar 15 rakstzīmēm, kas satur lielos un mazos burtus un ciparus. Īpašās rakstzīmes ir iespējams pievienot arī, izmantojot <code>#</code> hash zīmi
 theme_xhred_password_generator_new=Ģenerēt jaunu paroli <br> (uz starpliktuvi)
 theme_xhred_password_generator_new_success=Ģenerētā parole %password ir veiksmīgi nokopēta starpliktuvē.
 

@@ -59,7 +59,7 @@ var settings_mailbox_slash_delimiter = true,
     settings_hotkey_toggle_slider = "n",
     settings_hotkey_reload = "r",
 
-    settings_global_passgen_format = "12|a-z,A-Z,0-9,#",
+    settings_global_passgen_format = "15|a-z,A-Z,0-9,#",
 
     settings_leftmenu_vm_cm_dropdown_icons = true,
 

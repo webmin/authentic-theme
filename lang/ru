@@ -199,7 +199,6 @@ theme_xhred_global_replace=Заменить
 
 #18.03
 settings_global_options_title=Глобальные настройки
-settings_global_passgen_format=Генератор паролей
 theme_xhred_password_generator_new=Сгенерировать новый пароль<br> (В буфер обмена)
 theme_xhred_password_generator_new_success=Сгенерированный пароль %password скопирован в буфер обмена.
 
