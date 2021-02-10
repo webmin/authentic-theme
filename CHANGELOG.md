@@ -1,13 +1,18 @@
 ## Changelog
 
+#### Version 19.71-beta2 (February 11, 2021)
+* Add ability to use server side generated passwords [forum.virtualmin.com/t/108121](https://forum.virtualmin.com/t/cant-find-increasing-password-length-settings-anymore/108121)
+* Add ability to hide and reorder panels on the Dashboard
+* Add better error handing for pages with SSL certificate errors [forum.virtualmin.com/t/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
+* Fix to prevent stats collection on the background if browser tab is not focused
+* Fix expired certificate link to change left menu accordingly
+
 #### Version 19.70 (January 17, 2021)
 * Add ability to preview any file in File Manager
 * Add support for removing files to trash in File Manager
 * Add more features to search functionality (filter user, group, size and type) in File Manager
 * Add to display extended file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
-* Add better error handing for pages with SSL certificate errors [forum.virtualmin.com/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
-* Fix to prevent stats collection on the background if browser tab is not focused
 * Fix bugs
 
 <!--- separator --->
