@@ -89,7 +89,7 @@ var settings_mailbox_slash_delimiter = true,
     settings_sysinfo_easypie_charts_size = 185,
     settings_sysinfo_easypie_charts_width = 2,
     settings_sysinfo_easypie_charts_scale = 9,
-    
+
     settings_sysinfo_remember_accordions = true,
     settings_sysinfo_expand_all_accordions = false,
 
@@ -99,8 +99,8 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_collapse_navigation_link = true,
     settings_sysinfo_link_mini = false,
-    
-    settings_sysinfo_panels_order = {},
+
+    settings_sysinfo_panels_order = '{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'G\',\'quota\':\'H\',\'bw\':\'I\',\'sysinfo\':\'J\',\'updates\':\'K\',\'ftypes\':\'L\'}',
 
     settings_perform_content_scrolling = true,
     settings_show_terminal_link2 = true,
