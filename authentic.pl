@@ -34,7 +34,8 @@ our ($get_user_level,
      $root_directory,
      $session_id,
      $ui_formcount,
-     $user_module_config_directory);
+     $theme_ui_post_header_text,
+     $user_module_config_directory,);
 
 do("@{[miniserv::getenv('theme_root')]}/authentic-init.pl");
 
@@ -121,6 +122,11 @@ sub theme_header
             print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
               ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
             print "<br>$_[9]\n" if ($_[9]);
+            if ($theme_ui_post_header_text) {
+                print "<span data-sub_title><br>$theme_ui_post_header_text</tt></span>";
+            } else {
+              print "<p class=\"margined-bottom-5\"></p>";
+            }
             print "</div>\n";
         }
         print "<div data-header-right id=\"headln2r\" class=\"col-sm-4\">";
@@ -193,6 +199,15 @@ sub theme_footer
 
     print '</body>', "\n";
     print '</html>', "\n";
+}
+
+sub theme_ui_print_header
+{
+    my ($text, @args) = @_;
+    if (length($text)) {
+        $theme_ui_post_header_text = $text;
+    }
+    &header(@args);
 }
 
 sub theme_popup_prehead
@@ -835,18 +850,6 @@ sub theme_ui_button
     $rv .= ($tags       ? ' ' . $tags                            : '') . '>';
     $rv .= $label_safe;
     $rv .= '</button>' . "\n";
-
-    return $rv;
-}
-
-sub theme_ui_post_header
-{
-    my ($text) = @_;
-    my $rv;
-
-    if (defined($text)) {
-        $rv = '<span class="ui_post_header hidden"><br>' . $text . '</span>';
-    }
 
     return $rv;
 }
