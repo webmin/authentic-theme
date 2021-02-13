@@ -45,8 +45,11 @@ sub theme_header
     my $tref   = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
-        (($ttitle ne $title ? ($title ? "$ttitle - $title" : $ttitle) : $ttitle), $_[7], theme_debug_mode(), (@_ > 1 ? '1' : '0'), ($tref ? 1 : 0)
-        ));
+                 (($ttitle ne $title ? ($title ? "$ttitle - $title" : $ttitle) : $ttitle),
+                  $_[7], theme_debug_mode(),
+                  (@_ > 1 ? '1' : '0'),
+                  ($tref  ? 1   : 0)
+                 ));
     print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody();
     if (@_ > 1 && $_[1] ne 'stripped') {
@@ -127,7 +130,7 @@ sub theme_header
         print '</div>' . "\n";
         print '<div class="panel-body">' . "\n";
     }
-    $miniserv::page_capture = 1;
+    $miniserv::page_capture          = 1;
     $miniserv::theme_header_captured = 1;
 }
 
@@ -574,9 +577,9 @@ sub theme_ui_textbox
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
-    $rv .= ($dis ? 'disabled="true" ' : '');
-    $rv .= ($max ? 'maxlength="' . $max . '" ' : '');
-    $rv .= ($tags ? $tags : '');
+    $rv .= ($dis  ? 'disabled="true" '          : '');
+    $rv .= ($max  ? 'maxlength="' . $max . '" ' : '');
+    $rv .= ($tags ? $tags                       : '');
     $rv .= '>' . "\n";
 
     return $rv;
@@ -592,9 +595,9 @@ sub theme_ui_password
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
-    $rv .= ($dis ? 'disabled="true" ' : '');
-    $rv .= ($max ? 'maxlength="' . $max . '" ' : '');
-    $rv .= ($tags ? $tags : '');
+    $rv .= ($dis  ? 'disabled="true" '          : '');
+    $rv .= ($max  ? 'maxlength="' . $max . '" ' : '');
+    $rv .= ($tags ? $tags                       : '');
     $rv .= '>' . "\n";
 
     return $rv;
@@ -706,8 +709,8 @@ sub theme_ui_radio
         $rv .= "<span class=\"awradio awobject$bl\"><input class=\"iawobject\" type=\"radio\" ";
         $rv .= 'name="' . &quote_escape($name) . '" ';
         $rv .= 'value="' . &quote_escape($o->[0]) . '" ';
-        $rv .= ($o->[0] eq $val ? 'checked ' : '');
-        $rv .= ($dis ? 'disabled="true" ' : '');
+        $rv .= ($o->[0] eq $val ? 'checked '         : '');
+        $rv .= ($dis            ? 'disabled="true" ' : '');
         $rv .= 'id="' . $id . '_' . $rand . '" ';
         $rv .= $o->[2] . ' ';
         $rv .= '><label class="lawobject" ';
@@ -784,13 +787,13 @@ sub theme_ui_submit
 
     my $nbsp;
     if ($label) {
-      $nbsp = "&nbsp;";
+        $nbsp = "&nbsp;";
     }
 
     return "<button class=\"btn btn-$class ui_submit ui_form_end_submit $btn_class_extra\" type=\"button\"" .
       ($name ne '' ? " name=\"" . &quote_escape($name) . "\""      : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
-      ($dis ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "$nbsp<span data-entry=\"$keys\">" .
+      ($dis        ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "$nbsp<span data-entry=\"$keys\">" .
       &html_escape($label) . "$nbsp</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
       .
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
@@ -819,7 +822,7 @@ sub theme_ui_button
     my $label_safe = &html_escape($label);
     my $nbsp;
     if ($label) {
-      $nbsp = "&nbsp;";
+        $nbsp = "&nbsp;";
     }
     if ($icon) {
         $label_safe = "<i class=\"$icon\"></i>$nbsp<span data-entry>$label_safe$nbsp</span>";
@@ -828,8 +831,8 @@ sub theme_ui_button
 
     $rv .= "<button type=\"$type\" class=\"btn btn-default ui_button $btn_class_extra\" ";
     $rv .= ($name ne '' ? 'name="' . &quote_escape($name) . '" ' : '');
-    $rv .= ($dis ? 'disabled="disabled"' : '');
-    $rv .= ($tags ? ' ' . $tags : '') . '>';
+    $rv .= ($dis        ? 'disabled="disabled"'                  : '');
+    $rv .= ($tags       ? ' ' . $tags                            : '') . '>';
     $rv .= $label_safe;
     $rv .= '</button>' . "\n";
 
@@ -1039,7 +1042,7 @@ sub theme_ui_opt_textbox
 {
     my ($name, $value, $size, $opt1, $opt2, $dis, $extra, $max, $tags) = @_;
     my $dis1 = &js_disable_inputs([$name, (defined($extra) ? @$extra : ())], []);
-    my $dis2 = &js_disable_inputs([], [$name, (defined($extra) ? @$extra : ())]);
+    my $dis2 = &js_disable_inputs([],                                        [$name, (defined($extra) ? @$extra : ())]);
     my $rv;
     $size = &ui_max_text_width($size);
     $rv .= &ui_radio($name . "_def",
@@ -1277,9 +1280,9 @@ sub theme_redirect_download
 {
     if ($_[0] =~ /fetch.cgi/) {
         my $query = get_env('query_string');
-        my $show  = $query =~ /show=1/ ? 1 : 0;
-        my $delay = $_[0] =~ /unzip=1/ ? 1 : 0;
-        my $zip   = $_[0] =~ /.zip/ ? 1 : 0;
+        my $show  = $query =~ /show=1/  ? 1 : 0;
+        my $delay = $_[0]  =~ /unzip=1/ ? 1 : 0;
+        my $zip   = $_[0]  =~ /.zip/    ? 1 : 0;
         my $message;
 
         if ($delay) {
@@ -1370,6 +1373,13 @@ sub theme_post_change_modules
     print '<script>';
     print 'theme_post_save=-1', "\n";
     print '</script>';
+}
+
+sub theme_ui_text_color
+{
+    my ($text, $type) = @_;
+    $type = "warning" if ($type eq "warn");
+    return "<span class=\"ui_text_color text_type_$type text-$type\">$text</span>\n";
 }
 
 $main::cloudmin_no_create_links = 1;
