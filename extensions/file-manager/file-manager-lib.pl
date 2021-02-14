@@ -723,9 +723,24 @@ sub print_content
 
     @list = map {&simplify_path("$cwd/$_")} @list;
 
+    my %acls;
+    my %attributes;
     my $setype = get_selinux_command_type();
     my %secontext;
-    my %attributes;
+
+    # List ACLs
+    if ($userconfig{'columns'} =~ /acls/ && get_acls_status()) {
+        my $command = get_list_acls_command() . " " . join(' ', map {quotemeta("$_")} @list);
+        my $output  = `$command`;
+        my @aclsArr;
+        foreach my $aclsStr (split(/\n\n/, $output)) {
+            $aclsStr =~ /#\s+file:\s*(.*)/;
+            my ($file) = ($aclsStr =~ /#\s+file:\s*(.*)/);
+            my @aclsA = ($aclsStr =~ /^(?!#)([\w:-]+)/gm);
+            push(@aclsArr, [$file, \@aclsA]);
+        }
+        %acls = map {$_->[0] => ('<span data-acls>' . join("<br>", @{ $_->[1] }) . '</span>')} @aclsArr;
+    }
 
     # List attributes
     if ($userconfig{'columns'} =~ /attributes/ && get_attr_status()) {
@@ -734,7 +749,7 @@ sub print_content
         my $output = `$command`;
         my @attributesArr =
           map {[split(/\s+/, $_, 2)]} split(/\n/, $output);
-        %attributes = map {$_->[1] => ('<span data-attributes="s">' . $_->[0] . '</span>')} @attributesArr;
+        %attributes = map {$_->[1] => ('<span data-attributes>' . $_->[0] . '</span>')} @attributesArr;
     }
 
     # List security context
@@ -751,7 +766,7 @@ sub print_content
     }
 
     # Get info about directory entries
-    my @info    = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}]} @list;
+    my @info    = map {[$_, lstat($_), &mimetype($_), -d, -l $_, $secontext{$_}, $attributes{$_}, $acls{$_}]} @list;
     my @folders = map {$_} grep {$_->[15] == 1} @info;
     my @files   = map {$_} grep {$_->[15] != 1} @info;
 
@@ -850,6 +865,8 @@ sub print_content
       if ($userconfig{'columns'} =~ /owner_user/);
     push @ui_columns, ('<span data-head-permissions>' . $text{'permissions'} . '</span>')
       if ($userconfig{'columns'} =~ /permissions/);
+    push @ui_columns, ('<span data-head-acls>' . $text{'acls'} . '</span>')
+      if (get_acls_status() && $userconfig{'columns'} =~ /acls/);
     push @ui_columns, ('<span data-head-attributes>' . $text{'attributes'} . '</span>')
       if (get_attr_status() && $userconfig{'columns'} =~ /attributes/);
     push @ui_columns, ('<span data-head-selinux>' . $text{'selinux'} . '</span>')
@@ -991,6 +1008,11 @@ sub print_content
             my $permissions = sprintf("%04o", $list[$count - 1][3] & 07777);
             push @row_data, $permissions;
             push(@td_tags, 'class=col-permissions');
+        }
+
+        if (get_acls_status() && $userconfig{'columns'} =~ /acls/) {
+            push @row_data, $list[$count - 1][19];
+            push(@td_tags, 'class="col-acls"');
         }
 
         if (get_attr_status() && $userconfig{'columns'} =~ /attributes/) {
