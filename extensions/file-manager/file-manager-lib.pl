@@ -736,7 +736,7 @@ sub print_content
         foreach my $aclsStr (split(/\n\n/, $output)) {
             $aclsStr =~ /#\s+file:\s*(.*)/;
             my ($file) = ($aclsStr =~ /#\s+file:\s*(.*)/);
-            my @aclsA = ($aclsStr =~ /^(?!(#|user::|group::|other::))([\w\:\-\_]+)/gm);
+            my @aclsA = ($aclsStr =~ /^(?!#)([\w\:\-\_]+)/gm);
             push(@aclsArr, [$file, \@aclsA]);
         }
         %acls = map {$_->[0] => ('<span data-acls>' . join("<br>", (grep /\S/, @{ $_->[1] })) . '</span>')} @aclsArr;
