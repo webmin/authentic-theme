@@ -768,7 +768,6 @@ theme_xhred_global_installed_version=Installerad version
 theme_xhred_global_installed_and_latest_version=Installerad och senaste versionen
 theme_xhred_global_latest_stable=Senaste stabila
 theme_xhred_global_latest_beta=Senaste betan
-settings_perform_content_scrolling=Aktivera automatisk sidrullning för progressiv utmatning
 theme_xhred_global_firewall=Brandvägg
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 

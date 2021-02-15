@@ -689,7 +689,6 @@ theme_xhred_global_installed_version=Zainstalowana wersja
 theme_xhred_global_installed_and_latest_version=Zainstalowana i najnowsza wersja
 theme_xhred_global_latest_stable=Ostatnia stajnia
 theme_xhred_global_latest_beta=Najnowsza wersja beta
-settings_perform_content_scrolling=Włącz automatyczne przewijanie strony w celu uzyskania progresywnego wyniku
 theme_xhred_global_firewall=Zapora ogniowa
 theme_xhred_settings_show_webmin_tab=Pokaż przełącznik Webmin w menu nawigacyjnym?
 

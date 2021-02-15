@@ -2537,8 +2537,6 @@ sub theme_settings
             'monokai',
             'settings_global_palette_unauthenticated',
             'light',
-            'settings_perform_content_scrolling',
-            'true',
 
             '__',
             theme_settings('fa', 'info-circle', &theme_text('settings_sysinfo_real_time_status_options')),
@@ -2973,7 +2971,7 @@ sub theme_settings
 
             my $range_max = '1';
             my $range_min = '0';
-            my $iwidth    = $k eq 'settings_leftmenu_width' ? '25' : '80';
+            my $iwidth    = '80';
             my $range_step;
 
             if ($k eq 'settings_grayscale_level_navigation' ||
@@ -3000,11 +2998,12 @@ sub theme_settings
                 $range_min  = '260';
                 $range_max  = '520';
                 $range_step = '1';
+                $iwidth     = '25';
             } elsif ($k eq 'settings_table_init_datatables') {
                 $range_min  = '500';
                 $range_max  = '50000';
                 $range_step = '500';
-                $iwidth     = '30';
+                $iwidth     = '25';
             }
             $v = '
                 <input style="display: inline; width: ' .

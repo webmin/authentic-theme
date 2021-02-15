@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=Instalatutako bertsioa
 theme_xhred_global_installed_and_latest_version=Instalatu eta azken bertsioa
 theme_xhred_global_latest_stable=Azken egonkorra
 theme_xhred_global_latest_beta=Azken beta
-settings_perform_content_scrolling=Gaitu orri korritze automatikoa irteera progresiborako
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Erakutsi Webmin switch aldatzea nabigazio menuan?
 

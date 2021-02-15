@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=Yüklü sürüm
 theme_xhred_global_installed_and_latest_version=Yüklü ve en son sürüm
 theme_xhred_global_latest_stable=Son kararlı
 theme_xhred_global_latest_beta=En son beta sürümü
-settings_perform_content_scrolling=Aşamalı çıktı için otomatik sayfa kaydırmayı etkinleştir
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Gezinme menüsünde Webmin anahtarı gösterilsin mi?
 

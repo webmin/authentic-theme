@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=รุ่นที่ติดตั้ง
 theme_xhred_global_installed_and_latest_version=เวอร์ชันที่ติดตั้งและล่าสุด
 theme_xhred_global_latest_stable=มั่นคงล่าสุด
 theme_xhred_global_latest_beta=เบต้าล่าสุด
-settings_perform_content_scrolling=เปิดใช้งานการเลื่อนหน้าอัตโนมัติสำหรับการแสดงผลแบบก้าวหน้า
 theme_xhred_global_firewall=ไฟร์วอลล์
 theme_xhred_settings_show_webmin_tab=แสดงสวิตช์ Webmin ในเมนูนำทางหรือไม่
 

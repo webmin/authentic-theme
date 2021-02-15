@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=Εγκατεστημένη έκδοση
 theme_xhred_global_installed_and_latest_version=Εγκατεστημένη και τελευταία έκδοση
 theme_xhred_global_latest_stable=Τελευταίο στάβλο
 theme_xhred_global_latest_beta=Τελευταία έκδοση beta
-settings_perform_content_scrolling=Ενεργοποιήστε την αυτόματη κύλιση σελίδων για προοδευτική έξοδο
 theme_xhred_global_firewall=Τείχος προστασίας
 theme_xhred_settings_show_webmin_tab=Εμφάνιση διακόπτη Webmin στο μενού πλοήγησης;
 

@@ -557,7 +557,6 @@ theme_xhred_global_installed_version=Установленная версия
 theme_xhred_global_installed_and_latest_version=Установлена и последняя версия
 theme_xhred_global_latest_stable=Последний стабильный
 theme_xhred_global_latest_beta=Последняя бета
-settings_perform_content_scrolling=Включить автоматическую прокрутку страницы для прогрессивного вывода
 theme_xhred_global_firewall=Брандмауэр
 theme_xhred_settings_show_webmin_tab=Показать переключатель Webmin в меню навигации?
 

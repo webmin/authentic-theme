@@ -767,7 +767,6 @@ theme_xhred_global_installed_version=Installert versjon
 theme_xhred_global_installed_and_latest_version=Installert og siste versjon
 theme_xhred_global_latest_stable=Siste stabil
 theme_xhred_global_latest_beta=Siste beta
-settings_perform_content_scrolling=Aktiver automatisk siderulling for progressiv output
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Vis Webmin-bryter i navigasjonsmenyen?
 

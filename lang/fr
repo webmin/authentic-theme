@@ -768,7 +768,6 @@ theme_xhred_global_installed_version=Version installée
 theme_xhred_global_installed_and_latest_version=Installé et dernière version
 theme_xhred_global_latest_stable=Dernières stables
 theme_xhred_global_latest_beta=Dernières développement
-settings_perform_content_scrolling=Activer le défilement automatique des pages pour une sortie progressive
 theme_xhred_global_firewall=Pare-feu
 theme_xhred_settings_show_webmin_tab=Afficher le commutateur Webmin dans le menu de navigation?
 

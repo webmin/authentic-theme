@@ -597,7 +597,6 @@ theme_xhred_global_installed_version=Nainstalovaná verze
 theme_xhred_global_installed_and_latest_version=Nainstalovaná a nejnovější verze
 theme_xhred_global_latest_stable=Poslední stabilní
 theme_xhred_global_latest_beta=Nejnovější beta
-settings_perform_content_scrolling=Povolte automatické rolování stránek pro progresivní výstup
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Zobrazit přepínač Webmin v navigační nabídce?
 

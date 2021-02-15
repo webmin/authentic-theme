@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=安裝版本
 theme_xhred_global_installed_and_latest_version=已安裝和最新版本
 theme_xhred_global_latest_stable=最新穩定
 theme_xhred_global_latest_beta=最新測試版
-settings_perform_content_scrolling=啟用自動頁面滾動以進行漸進式輸出
 theme_xhred_global_firewall=防火牆功能
 theme_xhred_settings_show_webmin_tab=在導航菜單中顯示Webmin開關？
 

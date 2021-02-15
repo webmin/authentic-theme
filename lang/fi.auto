@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=Asennettu versio
 theme_xhred_global_installed_and_latest_version=Asennettu ja uusin versio
 theme_xhred_global_latest_stable=Viimeisin vakaa
 theme_xhred_global_latest_beta=Uusin beeta
-settings_perform_content_scrolling=Ota automaattinen sivun vieritys progressiivista tulostusta varten
 theme_xhred_global_firewall=palomuuri
 theme_xhred_settings_show_webmin_tab=Näytä Webmin-kytkin navigointivalikossa?
 

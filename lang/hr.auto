@@ -771,7 +771,6 @@ theme_xhred_global_installed_version=Instalirana verzija
 theme_xhred_global_installed_and_latest_version=Instalirana i najnovija verzija
 theme_xhred_global_latest_stable=Najnovije stabilno
 theme_xhred_global_latest_beta=Najnovija beta verzija
-settings_perform_content_scrolling=Omogući automatsko pomicanje stranica za progresivni izlaz
 theme_xhred_global_firewall=firewall
 theme_xhred_settings_show_webmin_tab=Pokazati prekidač Webmin u navigacijskom izborniku?
 
