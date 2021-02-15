@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=行數
 #19.42
 settings_side_slider_blend=繼承
 
-#19.43
-settings_theme_make_date=在瀏覽器中啟用日期/時間轉換
-settings_theme_make_date_description=如果禁用，將使用服務器提供的日期/時間格式
-
 #19.44
 theme_xhred_reload_lang_notification=主題語言已更改。該頁面將被重新加載，以應用新設置。
 

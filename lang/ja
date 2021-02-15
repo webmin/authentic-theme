@@ -1131,10 +1131,6 @@ theme_xhred_global_rows=行
 #19.42
 settings_side_slider_blend=継承する
 
-#19.43
-settings_theme_make_date=ブラウザで日付/時刻変換を有効にする
-settings_theme_make_date_description=無効にすると、サーバーが提供する日付/時刻形式が使用されます
-
 #19.44
 theme_xhred_reload_lang_notification=テーマ言語が変更されました。 新しい設定を適用するために、ページがリロードされます。
 

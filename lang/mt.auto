@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Rings
 #19.42
 settings_side_slider_blend=Jiret
 
-#19.43
-settings_theme_make_date=Jippermetti l-konverżjoni ta 'data/ħin fil-browser
-settings_theme_make_date_description=Jekk b'diżabilità, jintuża l-format tad-data/il-ħin provdut mis-server
-
 #19.44
 theme_xhred_reload_lang_notification=Il-lingwa tat-tema ġiet mibdula. Il-paġna se titgħabba mill-ġdid, biex tapplika settings ġodda.
 

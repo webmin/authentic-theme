@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Ilarak
 #19.42
 settings_side_slider_blend=heretatzen
 
-#19.43
-settings_theme_make_date=Gaitu data/ordua bihurketa arakatzailean
-settings_theme_make_date_description=Desgaituta badago, zerbitzariak emandako data/ordu formatua erabiliko da
-
 #19.44
 theme_xhred_reload_lang_notification=Gaiaren hizkuntza aldatu da. Orrialdea berriro kargatuko da, ezarpen berriak aplikatzeko.
 

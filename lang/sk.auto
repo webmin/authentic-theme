@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=riadky
 #19.42
 settings_side_slider_blend=dediť
 
-#19.43
-settings_theme_make_date=Povoliť v prehliadači konverziu dátumu a času
-settings_theme_make_date_description=Ak je zakázaná, použije sa formát dátumu a času poskytnutý serverom
-
 #19.44
 theme_xhred_reload_lang_notification=Jazyk témy sa zmenil. Stránka sa načíta znova, aby sa mohli použiť nové nastavenia.
 

@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=ردیف ها
 #19.42
 settings_side_slider_blend=به ارث می برند
 
-#19.43
-settings_theme_make_date=تبدیل تاریخ/زمان را در مرورگر فعال کنید
-settings_theme_make_date_description=در صورت غیرفعال بودن ، از فرمت تاریخ/زمان ارائه شده توسط سرور استفاده می شود
-
 #19.44
 theme_xhred_reload_lang_notification=زبان مضمون تغییر کرده است. برای اعمال تنظیمات جدید ، این صفحه بارگیری مجدد می شود.
 

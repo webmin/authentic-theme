@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Радкі
 #19.42
 settings_side_slider_blend=Спадчыну
 
-#19.43
-settings_theme_make_date=Уключыць пераўтварэнне даты і часу ў аглядальніку
-settings_theme_make_date_description=Пры адключэнні будзе выкарыстоўвацца фармат даты/часу, прадастаўлены серверам
-
 #19.44
 theme_xhred_reload_lang_notification=Мова тэмы была зменена. Старонка будзе перазагружана, каб ужыць новыя налады.
 

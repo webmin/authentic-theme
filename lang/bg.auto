@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Редове
 #19.42
 settings_side_slider_blend=наследят
 
-#19.43
-settings_theme_make_date=Активиране на преобразуване на дата/час в браузър
-settings_theme_make_date_description=Ако е деактивиран, ще се използва формат на дата/час, предоставен от сървъра
-
 #19.44
 theme_xhred_reload_lang_notification=Езикът на темите е променен. Страницата ще бъде презаредена, за да приложи нови настройки.
 

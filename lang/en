@@ -1189,11 +1189,6 @@ theme_xhred_global_rows=Rows
 settings_side_slider_blend=Inherited
 
 
-#19.43
-settings_theme_make_date=Enable date/time conversion in browser
-settings_theme_make_date_description=If disabled, date/time format provided by the server will be used
-
-
 #19.44
 theme_xhred_reload_lang_notification=Theme language has been changed. The page will be reloaded, to apply new settings.
 

@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=행
 #19.42
 settings_side_slider_blend=상속
 
-#19.43
-settings_theme_make_date=브라우저에서 날짜/시간 변환 사용
-settings_theme_make_date_description=비활성화하면 서버에서 제공 한 날짜/시간 형식이 사용됩니다
-
 #19.44
 theme_xhred_reload_lang_notification=테마 언어가 변경되었습니다. 새로운 설정을 적용하기 위해 페이지가 새로 고침됩니다.
 

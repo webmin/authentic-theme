@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=แถว
 #19.42
 settings_side_slider_blend=สืบทอด
 
-#19.43
-settings_theme_make_date=เปิดใช้งานการแปลงวันที่/เวลาในเบราว์เซอร์
-settings_theme_make_date_description=หากปิดใช้งานจะใช้รูปแบบวันที่/เวลาที่เซิร์ฟเวอร์จัดเตรียมไว้
-
 #19.44
 theme_xhred_reload_lang_notification=ภาษาของชุดรูปแบบมีการเปลี่ยนแปลง หน้าจะโหลดใหม่เพื่อใช้การตั้งค่าใหม่
 

@@ -496,10 +496,6 @@ theme_xhred_global_rows=Baris
 #19.42
 settings_side_slider_blend=Waris
 
-#19.43
-settings_theme_make_date=Dayakan penukaran tarikh/masa dalam penyemak imbas
-settings_theme_make_date_description=Sekiranya dilumpuhkan, format tarikh/masa yang disediakan oleh pelayan akan digunakan
-
 #19.44
 theme_xhred_reload_lang_notification=Bahasa tema telah diubah. Halaman akan dimuat semula, untuk menerapkan tetapan baru.
 

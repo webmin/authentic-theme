@@ -1024,10 +1024,6 @@ theme_xhred_global_rows=Rijen
 #19.42
 settings_side_slider_blend=Erven
 
-#19.43
-settings_theme_make_date=Schakel datum/tijd-conversie in browser in
-settings_theme_make_date_description=Indien uitgeschakeld, wordt de door de server verstrekte datum/tijd-indeling gebruikt
-
 #19.44
 theme_xhred_reload_lang_notification=Thema-taal is gewijzigd. De pagina wordt opnieuw geladen om nieuwe instellingen toe te passen.
 

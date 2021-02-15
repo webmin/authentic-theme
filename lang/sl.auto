@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Vrstice
 #19.42
 settings_side_slider_blend=Dedovanje
 
-#19.43
-settings_theme_make_date=Omogoči pretvorbo datum/čas v brskalniku
-settings_theme_make_date_description=Če je onemogočen, bo uporabljen format datuma in časa, ki ga je zagotovil strežnik
-
 #19.44
 theme_xhred_reload_lang_notification=Jezik teme je bil spremenjen. Stran bo ponovno naložena in uporabila bo nove nastavitve.
 

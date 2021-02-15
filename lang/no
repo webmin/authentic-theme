@@ -1140,10 +1140,6 @@ theme_xhred_global_rows=Rader
 #19.42
 settings_side_slider_blend=Arvet
 
-#19.43
-settings_theme_make_date=Aktiver dato/tid konvertering i nettleser
-settings_theme_make_date_description=Hvis det er deaktivert, vil dato- / tidsformat fra serveren brukes
-
 #19.44
 theme_xhred_reload_lang_notification=Tema-språk er endret. For at nye innstillinger skal tas i bruk blir siden lastet på nytt.
 

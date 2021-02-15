@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Righe
 #19.42
 settings_side_slider_blend=Eredita
 
-#19.43
-settings_theme_make_date=Attiva conversione data/ora nel browser
-settings_theme_make_date_description=Se disattivato, verrà utilizzato il formato data/ora ottenuto dal server
-
 #19.44
 theme_xhred_reload_lang_notification=La lingua del tema è stata cambiata. La pagina verrà ricaricata per applicare le nuove impostazioni.
 

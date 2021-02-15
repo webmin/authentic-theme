@@ -1053,10 +1053,6 @@ theme_xhred_global_rows=rækker
 #19.42
 settings_side_slider_blend=Arve
 
-#19.43
-settings_theme_make_date=Aktivér konvertering af dato/tid i browseren
-settings_theme_make_date_description=Hvis det er deaktiveret, bruges dato/klokkeslætformat leveret af serveren
-
 #19.44
 theme_xhred_reload_lang_notification=Temasprog er blevet ændret. Siden bliver genindlæst for at anvende nye indstillinger.
 

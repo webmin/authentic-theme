@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Linhas
 #19.42
 settings_side_slider_blend=Herdar
 
-#19.43
-settings_theme_make_date=Ativar conversão de data/hora no navegador
-settings_theme_make_date_description=Se desativado, o formato de data/hora fornecido pelo servidor será usado
-
 #19.44
 theme_xhred_reload_lang_notification=O idioma do tema foi alterado. A página será recarregada para aplicar novas configurações.
 

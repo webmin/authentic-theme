@@ -1136,10 +1136,6 @@ theme_xhred_global_rows=Reihen
 #19.42
 settings_side_slider_blend=Vererbt
 
-#19.43
-settings_theme_make_date=Datum- und Zeitformat im Browser konvertieren
-settings_theme_make_date_description=Die Umsetzung von Datum und Uhrzeit in das angegebene Format wird vom Browser durchgeführt, ansonsten wird das Format des Servers verwendet
-
 #19.44
 theme_xhred_reload_lang_notification=Die Sprache des Design wurde geändert, Die Seite wird mit der neuen Einstellung neu geladen.
 

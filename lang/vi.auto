@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Hàng
 #19.42
 settings_side_slider_blend=Thừa kế
 
-#19.43
-settings_theme_make_date=Cho phép chuyển đổi ngày/giờ trong trình duyệt
-settings_theme_make_date_description=Nếu bị tắt, định dạng ngày/giờ do máy chủ cung cấp sẽ được sử dụng
-
 #19.44
 theme_xhred_reload_lang_notification=Ngôn ngữ chủ đề đã được thay đổi. Trang sẽ được tải lại, để áp dụng các cài đặt mới.
 

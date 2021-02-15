@@ -966,10 +966,6 @@ theme_xhred_global_rows=Řádky
 #19.42
 settings_side_slider_blend=Zdědit
 
-#19.43
-settings_theme_make_date=Aktivovat převod data a času v prohlížeči
-settings_theme_make_date_description=Pokud je zakázáno, použije se formát data a času poskytovaný serverem
-
 #19.44
 theme_xhred_reload_lang_notification=Jazyk motivu byl změněn. Stránka se načte znovu, aby bylo možné použít nová nastavení.
 

@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=sorok
 #19.42
 settings_side_slider_blend=Örököl
 
-#19.43
-settings_theme_make_date=Dátum/idő konvertálás engedélyezése a böngészőben
-settings_theme_make_date_description=Ha nem engedélyezi, akkor a kiszolgáló által megadott dátum- és időformátumot fogja használni
-
 #19.44
 theme_xhred_reload_lang_notification=A téma nyelve megváltozott. Az oldal újratöltésre kerül az új beállítások alkalmazásához.
 

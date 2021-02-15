@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=שורות
 #19.42
 settings_side_slider_blend=ירושה
 
-#19.43
-settings_theme_make_date=אפשר המרת תאריך/שעה בדפדפן
-settings_theme_make_date_description=אם מושבת, ישמש פורמט תאריך/שעה המסופק על ידי השרת
-
 #19.44
 theme_xhred_reload_lang_notification=שפת הנושא שונתה. העמוד ייטען מחדש כדי להחיל הגדרות חדשות.
 

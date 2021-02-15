@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=riviä
 #19.42
 settings_side_slider_blend=Periä
 
-#19.43
-settings_theme_make_date=Ota päivämäärän ja ajan muuntaminen käyttöön selaimessa
-settings_theme_make_date_description=Jos tämä ei ole käytössä, käytetään palvelimen tarjoamaa päivämäärä- ja aikamuotoa
-
 #19.44
 theme_xhred_reload_lang_notification=Teeman kieli on vaihdettu. Sivu ladataan uudelleen, jotta uudet asetukset otetaan käyttöön.
 

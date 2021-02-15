@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Рядки
 #19.42
 settings_side_slider_blend=Спадщина
 
-#19.43
-settings_theme_make_date=Увімкнути перетворення дати/часу у веб-переглядачі
-settings_theme_make_date_description=Якщо вимкнено, буде використовуватися формат дати/часу, наданий сервером
-
 #19.44
 theme_xhred_reload_lang_notification=Мова теми змінено. Сторінка буде перезавантажена, щоб застосувати нові налаштування.
 

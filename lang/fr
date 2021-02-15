@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Lignes
 #19.42
 settings_side_slider_blend=Hérité
 
-#19.43
-settings_theme_make_date=Activer la conversion date/heure dans le navigateur
-settings_theme_make_date_description=Si désactivé, le format de date/heure fourni par le serveur sera utilisé
-
 #19.44
 theme_xhred_reload_lang_notification=La langue du thème a été modifiée. La page sera rechargée, pour appliquer de nouveaux paramètres.
 

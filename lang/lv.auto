@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Rindas
 #19.42
 settings_side_slider_blend=Mantojums
 
-#19.43
-settings_theme_make_date=Iespējot datuma/laika konvertēšanu pārlūkā
-settings_theme_make_date_description=Ja tas ir atspējots, tiks izmantots servera nodrošinātais datuma/laika formāts
-
 #19.44
 theme_xhred_reload_lang_notification=Tēmas valoda ir mainīta. Lapa tiks atkārtoti ielādēta, lai lietotu jaunus iestatījumus.
 

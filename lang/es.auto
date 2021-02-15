@@ -1053,10 +1053,6 @@ theme_xhred_global_rows=Filas
 #19.42
 settings_side_slider_blend=Heredar
 
-#19.43
-settings_theme_make_date=Habilite la conversión de fecha/hora en el navegador
-settings_theme_make_date_description=Si está deshabilitado, se utilizará el formato de fecha/hora proporcionado por el servidor
-
 #19.44
 theme_xhred_reload_lang_notification=Se ha cambiado el idioma del tema. La página se volverá a cargar para aplicar la nueva configuración.
 

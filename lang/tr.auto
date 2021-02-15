@@ -1141,10 +1141,6 @@ theme_xhred_global_rows=Satırlar
 #19.42
 settings_side_slider_blend=Devralma
 
-#19.43
-settings_theme_make_date=Tarayıcıda tarih/saat dönüştürmeyi etkinleştir
-settings_theme_make_date_description=Devre dışı bırakılırsa, sunucu tarafından sağlanan tarih/saat biçimi kullanılır
-
 #19.44
 theme_xhred_reload_lang_notification=Tema dili değiştirildi. Yeni ayarları uygulamak için sayfa yeniden yüklenecektir.
 

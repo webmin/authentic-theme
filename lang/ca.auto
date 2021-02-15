@@ -421,10 +421,6 @@ theme_xhred_global_rows=Files
 #19.42
 settings_side_slider_blend=Herència
 
-#19.43
-settings_theme_make_date=Habilita la conversió de data/hora al navegador
-settings_theme_make_date_description=Si està desactivat, s’utilitzarà el format de data/hora proporcionat pel servidor
-
 #19.44
 theme_xhred_reload_lang_notification=El llenguatge del tema s'ha canviat. Es tornarà a carregar la pàgina per aplicar la configuració nova.
 
