@@ -684,7 +684,6 @@ theme_xhred_global_installed_and_latest_version=Instalado y última versión
 theme_xhred_global_latest_stable=Último establo
 theme_xhred_global_latest_beta=Última beta
 settings_perform_content_scrolling=Habilite el desplazamiento automático de página para una salida progresiva
-settings_contrast_mode=Habilitar el modo de alto contraste
 theme_xhred_global_firewall=Cortafuegos
 theme_xhred_settings_show_webmin_tab=¿Mostrar el interruptor de Webmin en el menú de navegación?
 

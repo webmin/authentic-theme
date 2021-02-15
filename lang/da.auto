@@ -684,7 +684,6 @@ theme_xhred_global_installed_and_latest_version=Installeret og seneste version
 theme_xhred_global_latest_stable=Seneste stabile
 theme_xhred_global_latest_beta=Seneste beta
 settings_perform_content_scrolling=Aktivér automatisk sidespilning for progressiv output
-settings_contrast_mode=Aktivér tilstand med høj kontrast
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Vis Webmin-switch i navigationsmenuen?
 

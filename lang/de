@@ -772,7 +772,6 @@ theme_xhred_global_installed_and_latest_version=Installierte und letzte Version
 theme_xhred_global_latest_stable=Letzte stabile
 theme_xhred_global_latest_beta=Letzte Beta
 settings_perform_content_scrolling=Automatisches Seitenrollen für progressive Ausgabe einschalten
-settings_contrast_mode=Hoher Kontrast Modus einschalten
 theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 

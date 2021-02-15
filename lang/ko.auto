@@ -772,7 +772,6 @@ theme_xhred_global_installed_and_latest_version=설치 및 최신 버전
 theme_xhred_global_latest_stable=최신 안정
 theme_xhred_global_latest_beta=최신 베타
 settings_perform_content_scrolling=점진적 출력을 위해 자동 페이지 스크롤 사용
-settings_contrast_mode=고 대비 모드 사용
 theme_xhred_global_firewall=방화벽
 theme_xhred_settings_show_webmin_tab=탐색 메뉴에 Webmin 스위치를 표시 하시겠습니까?
 

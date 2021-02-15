@@ -772,7 +772,6 @@ theme_xhred_global_installed_and_latest_version=已安装最新版本
 theme_xhred_global_latest_stable=最新稳定版
 theme_xhred_global_latest_beta=最新 beta 版
 settings_perform_content_scrolling=为渐进式输出启用页面自动滚动
-settings_contrast_mode=启用高对比度模式
 theme_xhred_global_firewall=防火墙
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 

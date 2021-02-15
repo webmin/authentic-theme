@@ -772,7 +772,6 @@ theme_xhred_global_installed_and_latest_version=Telepítve és a legújabb verzi
 theme_xhred_global_latest_stable=Utolsó stabil
 theme_xhred_global_latest_beta=Legújabb béta
 settings_perform_content_scrolling=Engedélyezze az automatikus oldalgörgetést a progresszív megjelenítéshez
-settings_contrast_mode=Nagy kontrasztú mód engedélyezése
 theme_xhred_global_firewall=Tűzfal
 theme_xhred_settings_show_webmin_tab=Megjeleníti a Webmin kapcsolót a navigációs menüben?
 

@@ -772,7 +772,6 @@ theme_xhred_global_installed_and_latest_version=تثبيت وأحدث إصدار
 theme_xhred_global_latest_stable=آخر مستقر
 theme_xhred_global_latest_beta=أحدث بيتا
 settings_perform_content_scrolling=تمكين التمرير التلقائي للصفحة للإخراج التدريجي
-settings_contrast_mode=تمكين وضع التباين العالي
 theme_xhred_global_firewall=جدار الحماية
 theme_xhred_settings_show_webmin_tab=هل تريد إظهار مفتاح Webmin في قائمة التنقل؟
 
