@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=تحقق من تحذير <a>شهادة 
 #19.71
 settings_sysinfo_hidden_panels=الأكورديون المخفية
 theme_xhred_tooltip_dashboard_panels_disable=إخفاء لوحة$1
+theme_xhred_dashboard_panels_disabled_explain=يمكن إعادة تمكين اللوحة المخفية باستخدام صفحة تكوين السمة.

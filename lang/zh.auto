@@ -335,3 +335,4 @@ theme_xhred_connection_error_details_ssl=检查<a>自签名SSL证书</a>警告
 #19.71
 settings_sysinfo_hidden_panels=隐藏的手风琴
 theme_xhred_tooltip_dashboard_panels_disable=隐藏 $1面板
+theme_xhred_dashboard_panels_disabled_explain=可以使用主题配置页面重新启用隐藏面板。

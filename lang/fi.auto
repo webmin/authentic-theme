@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-va
 #19.71
 settings_sysinfo_hidden_panels=Piilotetut harmonikat
 theme_xhred_tooltip_dashboard_panels_disable=Piilota $1 paneeli
+theme_xhred_dashboard_panels_disabled_explain=Piilotettu paneeli voidaan ottaa uudelleen käyttöön teeman määrityssivulla.

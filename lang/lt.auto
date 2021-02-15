@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Patikrinkite <a>savarankiškai pasiraš
 #19.71
 settings_sysinfo_hidden_panels=Paslėpti akordeonai
 theme_xhred_tooltip_dashboard_panels_disable=Slėpti skydą $1 
+theme_xhred_dashboard_panels_disabled_explain=Paslėptą skydą galima iš naujo įjungti naudojant temos konfigūracijos puslapį.

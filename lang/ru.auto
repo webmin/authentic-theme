@@ -995,3 +995,4 @@ theme_xhred_connection_error_details_ssl=Проверьте предупрежд
 #19.71
 settings_sysinfo_hidden_panels=Скрытые аккордеоны
 theme_xhred_tooltip_dashboard_panels_disable=Скрыть панель $1 
+theme_xhred_dashboard_panels_disabled_explain=Скрытую панель можно повторно включить на странице конфигурации темы.

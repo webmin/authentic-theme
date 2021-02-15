@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Skontrolujte varovanie <a>certifikát S
 #19.71
 settings_sysinfo_hidden_panels=Skryté harmoniky
 theme_xhred_tooltip_dashboard_panels_disable=Skryť panel $1 
+theme_xhred_dashboard_panels_disabled_explain=Skrytý panel je možné znova povoliť pomocou konfiguračnej stránky témy.

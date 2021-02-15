@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Preverite <a>samopodpisano potrdilo SSL
 #19.71
 settings_sysinfo_hidden_panels=Skrite harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Skrij podokno $1 
+theme_xhred_dashboard_panels_disabled_explain=Skrite plošče lahko znova omogočite s pomočjo strani s konfiguracijo teme.

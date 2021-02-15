@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Verifique o aviso de <a>certificado SSL
 #19.71
 settings_sysinfo_hidden_panels=Acordeões escondidos
 theme_xhred_tooltip_dashboard_panels_disable=Esconder o painel $1 
+theme_xhred_dashboard_panels_disabled_explain=O painel oculto pode ser reativado usando a página de configuração do tema.

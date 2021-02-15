@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=<a>Kendinden imzalı SSL sertifikasın�
 #19.71
 settings_sysinfo_hidden_panels=Gizli akordeonlar
 theme_xhred_tooltip_dashboard_panels_disable=$1 panelini gizle
+theme_xhred_dashboard_panels_disabled_explain=Gizli panel, tema yapılandırma sayfası kullanılarak yeniden etkinleştirilebilir.

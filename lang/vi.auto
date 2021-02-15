@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Kiểm tra cảnh báo <a>chứng chỉ
 #19.71
 settings_sysinfo_hidden_panels=Đàn accordions ẩn
 theme_xhred_tooltip_dashboard_panels_disable=Ẩn bảng điều khiển $1 
+theme_xhred_dashboard_panels_disabled_explain=Bảng điều khiển ẩn có thể được bật lại bằng cách sử dụng trang cấu hình chủ đề.

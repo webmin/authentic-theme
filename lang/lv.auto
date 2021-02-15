@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Pārbaudiet brīdinājumu par <a>pašu 
 #19.71
 settings_sysinfo_hidden_panels=Slēptie akordeoni
 theme_xhred_tooltip_dashboard_panels_disable=Slēpt $1 paneli
+theme_xhred_dashboard_panels_disabled_explain=Slēpto paneli var atkārtoti iespējot, izmantojot motīva konfigurācijas lapu.

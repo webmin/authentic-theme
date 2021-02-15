@@ -1277,3 +1277,4 @@ theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a
 #19.71
 settings_sysinfo_hidden_panels=Hidden accordions
 theme_xhred_tooltip_dashboard_panels_disable=Hide $1 panel
+theme_xhred_dashboard_panels_disabled_explain=Hidden panel can be re-enabled using theme configuration page.

@@ -1130,3 +1130,4 @@ theme_xhred_connection_error_details_ssl=Tjek advarslen <a>selvsigneret SSL-cert
 #19.71
 settings_sysinfo_hidden_panels=Skjulte harmonikaer
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
+theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan genaktiveres ved hjælp af temakonfigurationssiden.

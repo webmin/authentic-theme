@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a
 #19.71
 settings_sysinfo_hidden_panels=پوشیدہ معاہدے
 theme_xhred_tooltip_dashboard_panels_disable=$1 پینل چھپائیں
+theme_xhred_dashboard_panels_disabled_explain=تھیم کنفیگریشن پیج کا استعمال کرکے پوشیدہ پینل کو دوبارہ فعال کیا جاسکتا ہے۔

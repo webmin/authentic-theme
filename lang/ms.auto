@@ -570,3 +570,4 @@ theme_xhred_connection_error_details_ssl=Periksa amaran <a>sijil SSL yang ditand
 #19.71
 settings_sysinfo_hidden_panels=Akordeon tersembunyi
 theme_xhred_tooltip_dashboard_panels_disable=Sembunyikan panel $1 
+theme_xhred_dashboard_panels_disabled_explain=Panel tersembunyi dapat diaktifkan semula menggunakan halaman konfigurasi tema.

@@ -1101,3 +1101,4 @@ theme_xhred_connection_error_details_ssl=Controleer de waarschuwing <a>zelfonder
 #19.71
 settings_sysinfo_hidden_panels=Verborgen accordeons
 theme_xhred_tooltip_dashboard_panels_disable=Verberg $1 paneel
+theme_xhred_dashboard_panels_disabled_explain=Verborgen paneel kan opnieuw worden ingeschakeld met behulp van de themaconfiguratiepagina.

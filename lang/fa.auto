@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=هشدار <a>گواهی SSL خود ا�
 #19.71
 settings_sysinfo_hidden_panels=آکاردئون پنهان
 theme_xhred_tooltip_dashboard_panels_disable=پانل$1 پنهان شود
+theme_xhred_dashboard_panels_disabled_explain=با استفاده از صفحه پیکربندی موضوع ، پانل پنهان را می توان دوباره فعال کرد.

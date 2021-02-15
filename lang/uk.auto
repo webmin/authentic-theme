@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Перевірте <a>попередж�
 #19.71
 settings_sysinfo_hidden_panels=Приховані гармошки
 theme_xhred_tooltip_dashboard_panels_disable=Сховати панель $1 
+theme_xhred_dashboard_panels_disabled_explain=Приховану панель можна ввімкнути за допомогою сторінки конфігурації теми.

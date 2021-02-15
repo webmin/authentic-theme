@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=檢查<a>自簽名SSL證書</a>警告
 #19.71
 settings_sysinfo_hidden_panels=隱藏的手風琴
 theme_xhred_tooltip_dashboard_panels_disable=隱藏 $1面板
+theme_xhred_dashboard_panels_disabled_explain=可以使用主題配置頁面重新啟用隱藏面板。

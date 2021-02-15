@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziu
 #19.71
 settings_sysinfo_hidden_panels=Ezkutuko akordeoiak
 theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela
+theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke gaiaren konfigurazio orria erabiliz.

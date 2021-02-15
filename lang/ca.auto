@@ -495,3 +495,4 @@ theme_xhred_connection_error_details_ssl=Comproveu l'advertiment <a>certificat S
 #19.71
 settings_sysinfo_hidden_panels=Acordions ocults
 theme_xhred_tooltip_dashboard_panels_disable=Amaga el tauler $1 
+theme_xhred_dashboard_panels_disabled_explain=El tauler ocult es pot tornar a activar mitjançant la pàgina de configuració del tema.

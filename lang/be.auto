@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Праверце <a>папярэджа�
 #19.71
 settings_sysinfo_hidden_panels=Схаваныя акардэоны
 theme_xhred_tooltip_dashboard_panels_disable=Схаваць панэль $1 
+theme_xhred_dashboard_panels_disabled_explain=Схаваную панэль можна паўторна ўключыць на старонцы канфігурацыі тэмы.

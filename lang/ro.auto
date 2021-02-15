@@ -157,3 +157,4 @@ theme_xhred_connection_error_details_ssl=Verificați avertismentul <a>certificat
 #19.71
 settings_sysinfo_hidden_panels=Acordeoane ascunse
 theme_xhred_tooltip_dashboard_panels_disable=Ascundeți panoul $1 
+theme_xhred_dashboard_panels_disabled_explain=Panoul ascuns poate fi reactivat folosind pagina de configurare a temei.

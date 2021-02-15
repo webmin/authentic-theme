@@ -29,3 +29,4 @@ theme_xhred_connection_error_details_ssl=Vérifiez l'avertissement concernant le
 #19.71
 settings_sysinfo_hidden_panels=Accordéons cachés
 theme_xhred_tooltip_dashboard_panels_disable=Masquer le panneau $1 
+theme_xhred_dashboard_panels_disabled_explain=Le panneau masqué peut être réactivé à l'aide de la page de configuration du thème.

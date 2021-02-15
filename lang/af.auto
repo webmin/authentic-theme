@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Kyk na <a>selfondertekende SSL-sertifik
 #19.71
 settings_sysinfo_hidden_panels=Versteekte trekklaviere
 theme_xhred_tooltip_dashboard_panels_disable=Versteek $1 paneel
+theme_xhred_dashboard_panels_disabled_explain=Versteekte paneel kan weer geaktiveer word met behulp van die tema-konfigurasie-bladsy.

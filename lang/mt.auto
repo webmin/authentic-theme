@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=Iċċekkja t-twissija <a>ċertifikat SS
 #19.71
 settings_sysinfo_hidden_panels=Akkordjoni moħbija
 theme_xhred_tooltip_dashboard_panels_disable=Aħbi $1 panel
+theme_xhred_dashboard_panels_disabled_explain=Il-pannell moħbi jista 'jerġa' jiġi attivat billi tintuża l-paġna tal-konfigurazzjoni tat-tema.

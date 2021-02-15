@@ -1218,3 +1218,4 @@ theme_xhred_connection_error_details_ssl=ตรวจสอบคำเตือ
 #19.71
 settings_sysinfo_hidden_panels=หีบเพลงที่ซ่อนอยู่
 theme_xhred_tooltip_dashboard_panels_disable=ซ่อนแผง $1 
+theme_xhred_dashboard_panels_disabled_explain=แผงที่ซ่อนสามารถเปิดใช้งานได้อีกครั้งโดยใช้หน้าการกำหนดค่าธีม
