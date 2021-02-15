@@ -513,9 +513,6 @@ theme_fileformat_perl_placeholder=Dan il-fajl irid jintemm `1;` biex taħdem b's
 #18.10
 theme_error_access_not_root=Aċċess miċħud: L-utent jeħtieġ aċċess għall-modulu <em>Konfigurazzjoni Webmin</em> biex jeditja l-konfigurazzjoni tat-tema
 
-#18.20
-settings_hide_top_loader=Aħbi l-aqwa bar tal-progress
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Uri ikoni simboliċi fi drop-down fi Virtualmin/Cloudmin
 theme_xhred_global_shipped=Ġarr

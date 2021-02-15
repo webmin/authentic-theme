@@ -513,9 +513,6 @@ theme_fileformat_perl_placeholder=该文件必须以“1;”结束才能成功�
 #18.10
 theme_error_access_not_root=拒绝访问：用户需要访问 <em>Webmin 配置</em>模块才能编辑主题配置
 
-#18.20
-settings_hide_top_loader=隐藏顶部进度条
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=在 Virtualmin/Cloudmin 中的下拉列表中显示符号图标
 theme_xhred_global_shipped=Shipped

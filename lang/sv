@@ -513,9 +513,6 @@ theme_fileformat_perl_placeholder=Denna filen måste avslutas med `1;` för att 
 #18.10
 theme_error_access_not_root=Åtkomst nekad: Användaren måste ha tillgång till modulen <em>Webmin-konfiguration</em> för att kunna redigera ett tema
 
-#18.20
-settings_hide_top_loader=Göm övre förlopps- och laddindikatorn
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Visa symboliska ikoner i drag-och-släpp i Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped

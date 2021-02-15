@@ -95,7 +95,6 @@ sub settings_default
     $c{'settings_contrast_mode'}                      = 'false';
     $c{'settings_usermin_default_module'}             = 'sysinfo.cgi';
     $c{'settings_document_title'}                     = '1';
-    $c{'settings_hide_top_loader'}                    = 'false';
     $c{'settings_collapse_navigation_link'}           = 'true';
     $c{'settings_sysinfo_link_mini'}                  = 'false';
     $c{'settings_show_night_mode_link'}               = 'true';

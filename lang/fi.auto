@@ -513,9 +513,6 @@ theme_fileformat_perl_placeholder=Tämän tiedoston on oltava lopussa `1;` toimi
 #18.10
 theme_error_access_not_root=Käyttö evätty: Käyttäjä tarvitsee pääsyn <em>Webmin Configuration</em> -moduuliin teeman määritysten muokkaamiseksi
 
-#18.20
-settings_hide_top_loader=Piilota edistymispalkki
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Näytä symboliset kuvakkeet avattavassa valikossa Virtualmin/Cloudmin
 theme_xhred_global_shipped=toimitetaan

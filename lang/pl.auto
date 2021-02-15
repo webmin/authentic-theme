@@ -432,9 +432,6 @@ theme_fileformat_perl_placeholder=Ten plik musi kończyć się `1;` z powodzenie
 #18.10
 theme_error_access_not_root=Odmowa dostępu: użytkownik musi uzyskać dostęp do modułu <em>Webmin Configuration</em>, aby edytować konfigurację motywu
 
-#18.20
-settings_hide_top_loader=Ukryj górny pasek postępu
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Pokaż symboliczne ikony w menu rozwijanym w Virtualmin/Cloudmin
 theme_xhred_global_shipped=Wysłane

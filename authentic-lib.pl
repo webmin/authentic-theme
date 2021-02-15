@@ -2535,8 +2535,6 @@ sub theme_settings
             'monokai',
             'settings_global_palette_unauthenticated',
             'light',
-            'settings_hide_top_loader',
-            'false',
             'settings_theme_make_date',
             'true',
             'settings_enable_container_offset',
