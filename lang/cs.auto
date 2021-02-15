@@ -592,7 +592,6 @@ theme_xhred_global_settings=Nastavení
 theme_xhred_tooltip_side_slider_pinned=Posuvný boční posuvník
 settings_side_slider_fixed_toggle=Zobrazit přepínání pin/unpin
 settings_side_slider_fixed_toggle_description=Tato možnost zobrazí přepínač v bočním posuvníku ve spodním řádku, což umožňuje přepínat jeho viditelnost za běhu, pokud jsou splněny podmínky v předchozí možnosti.
-settings_right_page_hide_persistent_vscroll=Skrýt trvalý svislý posuvník
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Nainstalujte také aktualizace motivů pro Usermin

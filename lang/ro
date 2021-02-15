@@ -766,7 +766,6 @@ theme_xhred_global_settings=Setări
 theme_xhred_tooltip_side_slider_pinned=Fixează/de-fixează slider-ul lateral
 settings_side_slider_fixed_toggle=Arată comutarea fixează/de-fixează
 settings_side_slider_fixed_toggle_description=Această opțiune va arăta comutatorul, în slide-ul lateral, în randul din subsol, permițând comutarea vizibilității pe fugă, dacă se întrunesc condițiile din opțiunea precedentă.
-settings_right_page_hide_persistent_vscroll=Ascunde scrollbar-ul persistent vertical
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalează actualizări de temă și pentru Usermin

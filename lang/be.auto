@@ -767,7 +767,6 @@ theme_xhred_global_settings=Налады
 theme_xhred_tooltip_side_slider_pinned=Прыкруціць/адкруціць бакавы паўзунок
 settings_side_slider_fixed_toggle=Паказаць пераключэнне кантактаў/адключэння
 settings_side_slider_fixed_toggle_description=Гэтая опцыя будзе адлюстроўваць перамыкач у бакавым паўзунку ў ніжнім радку, што дазваляе пераключыць яго бачнасць на хаду, калі выкананы ўмовы папярэдняга варыянту.
-settings_right_page_hide_persistent_vscroll=Схаваць стойкую вертыкальную паласу пракруткі
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Таксама ўсталюйце абнаўленні тэмы для Usermin

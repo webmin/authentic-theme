@@ -767,7 +767,6 @@ theme_xhred_global_settings=Ρυθμίσεις
 theme_xhred_tooltip_side_slider_pinned=Καρφίτσα/ξεκαρφιτσώστε το πλαϊνό ρυθμιστικό
 settings_side_slider_fixed_toggle=Εμφάνιση εναλλαγής καρφιτσών/ξεκαρφιτσώματος
 settings_side_slider_fixed_toggle_description=Αυτή η επιλογή θα εμφανίσει την εναλλαγή, στο πλευρικό ρυθμιστικό, στην κάτω σειρά, επιτρέποντας την εναλλαγή της ορατότητάς της εν κινήσει, εάν πληρούνται οι προϋποθέσεις στην προηγούμενη επιλογή.
-settings_right_page_hide_persistent_vscroll=Απόκρυψη μόνιμης κατακόρυφης γραμμής κύλισης
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Εγκαταστήστε επίσης ενημερώσεις θέματος για το Usermin

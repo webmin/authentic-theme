@@ -767,7 +767,6 @@ theme_xhred_global_settings=Réglages
 theme_xhred_tooltip_side_slider_pinned=Épingler/détacher le curseur latéral
 settings_side_slider_fixed_toggle=Afficher la bascule épingler/détacher
 settings_side_slider_fixed_toggle_description=Cette option affichera la bascule, dans le curseur latéral, sur la rangée du bas, permettant de basculer sa visibilité à la volée, si les conditions de l'option précédente sont remplies.
-settings_right_page_hide_persistent_vscroll=Masquer la barre de défilement verticale persistante
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installez également les mises à jour de thème pour Usermin

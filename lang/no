@@ -766,7 +766,6 @@ theme_xhred_global_settings=Innstillinger
 theme_xhred_tooltip_side_slider_pinned=Fest/løsne sideglidebryteren
 settings_side_slider_fixed_toggle=Vis veksler for feste/løsne
 settings_side_slider_fixed_toggle_description=Dette alternativet viser vekselen, i side-glidbryteren, nederst på raden, slik at du kan bytte synlighet i fart, hvis vilkårene i forrige alternativ er oppfylt.
-settings_right_page_hide_persistent_vscroll=Skjul vedvarende loddrett rullefelt
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installer tema-oppdateringer for Usermin også

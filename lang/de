@@ -767,7 +767,6 @@ theme_xhred_global_settings=Einstellungen
 theme_xhred_tooltip_side_slider_pinned=Befestige seitlichen Schieber
 settings_side_slider_fixed_toggle=Zeige Befestigungs Umschalter
 settings_side_slider_fixed_toggle_description=Diese Einstellung zeigt den Umschalter zum Befestigen des seitlichen Schiebers in der untersten Zeile. Damit kannst Du jederzeit zwichen befestigt und nicht befestigt umschalten.
-settings_right_page_hide_persistent_vscroll=Verstecke den vertikalen Schiebebalken
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Design Update auch für Usermin durchführen

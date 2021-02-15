@@ -684,7 +684,6 @@ theme_xhred_global_settings=Definições
 theme_xhred_tooltip_side_slider_pinned=Fixar/desafixar o controle deslizante lateral
 settings_side_slider_fixed_toggle=Mostrar alternar pino/desafixar
 settings_side_slider_fixed_toggle_description=Esta opção exibirá a alternância, no controle deslizante lateral, na linha inferior, permitindo alternar sua visibilidade em tempo real, se as condições da opção anterior forem atendidas.
-settings_right_page_hide_persistent_vscroll=Ocultar barra de rolagem vertical persistente
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instale atualizações de tema para o Usermin também

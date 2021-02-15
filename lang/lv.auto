@@ -767,7 +767,6 @@ theme_xhred_global_settings=Iestatījumi
 theme_xhred_tooltip_side_slider_pinned=Piespraudiet/atvienojiet sānu slīdni
 settings_side_slider_fixed_toggle=Rādīt piespraudes/atspraust pārslēgšanu
 settings_side_slider_fixed_toggle_description=Šī opcija parādīs pārslēgšanos sānu slīdnī, apakšējā rindā, ļaujot pārslēgt tā redzamību lidojuma laikā, ja ir izpildīti iepriekšējās opcijas nosacījumi.
-settings_right_page_hide_persistent_vscroll=Slēpt pastāvīgu vertikālu ritjoslu
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalējiet arī Usermin motīvu atjauninājumus

@@ -767,7 +767,6 @@ theme_xhred_global_settings=Is-settings
 theme_xhred_tooltip_side_slider_pinned=Pin/slider ġenb slider
 settings_side_slider_fixed_toggle=Uri l-pin/unpin toggle
 settings_side_slider_fixed_toggle_description=Din l-għażla turi t-toggle, fis-slajder tal-ġenb, fir-ringiela tal-qiegħ, u tippermetti li tattiva l-viżibbiltà tagħha fuq il-fly, jekk jiġu ssodisfati l-kundizzjonijiet fl-għażla ta 'qabel.
-settings_right_page_hide_persistent_vscroll=Aħbi scrollbar vertikali persistenti
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installa aġġornamenti tat-tema għal Usermin ukoll

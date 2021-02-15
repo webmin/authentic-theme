@@ -685,7 +685,6 @@ theme_xhred_global_settings=Ustawienia
 theme_xhred_tooltip_side_slider_pinned=Suwak boczny przypinania/odpinania
 settings_side_slider_fixed_toggle=Pokaż przełącznik przypinania/odpinania
 settings_side_slider_fixed_toggle_description=Ta opcja wyświetla przełącznik, w bocznym suwaku, w dolnym rzędzie, umożliwiając przełączanie jego widoczności w locie, jeśli warunki w poprzedniej opcji są spełnione.
-settings_right_page_hide_persistent_vscroll=Ukryj stały pionowy pasek przewijania
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Zainstaluj także aktualizacje motywów dla Usermin

@@ -767,7 +767,6 @@ theme_xhred_global_settings=Настройки
 theme_xhred_tooltip_side_slider_pinned=Закрепване/отпушване на страничен плъзгач
 settings_side_slider_fixed_toggle=Показване на превключване на пин/изключване
 settings_side_slider_fixed_toggle_description=Тази опция ще показва превключвателя, в страничния плъзгач, в долния ред, което позволява да се включи видимостта му в движение, ако са изпълнени условията в предишната опция.
-settings_right_page_hide_persistent_vscroll=Скриване на устойчива вертикална лента за превъртане
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Инсталирайте актуализации на теми и за Usermin

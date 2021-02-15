@@ -767,7 +767,6 @@ theme_xhred_global_settings=設定值
 theme_xhred_tooltip_side_slider_pinned=固定/解除固定側滑塊
 settings_side_slider_fixed_toggle=顯示固定/取消固定切換
 settings_side_slider_fixed_toggle_description=如果滿足上一個選項中的條件，此選項將在側面滑塊底部的一行中顯示切換，以便即時切換其可見性。
-settings_right_page_hide_persistent_vscroll=隱藏永久垂直滾動條
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=也為Usermin安裝主題更新

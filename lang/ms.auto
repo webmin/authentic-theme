@@ -119,7 +119,6 @@ theme_xhred_global_settings=Tetapan
 theme_xhred_tooltip_side_slider_pinned=Pin/lepaskan gelangsar sisi
 settings_side_slider_fixed_toggle=Tunjukkan togol pin/pin
 settings_side_slider_fixed_toggle_description=Pilihan ini akan memaparkan toggle, di slaid sisi, di baris bawah, yang memungkinkan untuk menukar penglihatannya dengan cepat, jika syarat dalam pilihan sebelumnya dipenuhi.
-settings_right_page_hide_persistent_vscroll=Sembunyikan bar tatal menegak berterusan
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Pasang kemas kini tema untuk Usermin juga

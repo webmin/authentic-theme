@@ -767,7 +767,6 @@ theme_xhred_global_settings=Beállítások
 theme_xhred_tooltip_side_slider_pinned=Csúsztassa/húzza ki az oldalsó csúszkát
 settings_side_slider_fixed_toggle=A pin/unpin váltás megjelenítése
 settings_side_slider_fixed_toggle_description=Ez az opció megjeleníti a kapcsolót az oldalsó csúszkában, az alsó sorban, lehetővé téve annak láthatóságát váltás közben, ha az előző opció feltételei teljesülnek.
-settings_right_page_hide_persistent_vscroll=Az állandó függőleges görgetősáv elrejtése
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Telepítse a témafrissítéseket a Usermin számára is

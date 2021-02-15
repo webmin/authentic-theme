@@ -2535,8 +2535,6 @@ sub theme_settings
             'monokai',
             'settings_global_palette_unauthenticated',
             'light',
-            'settings_right_page_hide_persistent_vscroll',
-            'true',
             'settings_hide_top_loader',
             'false',
             'settings_theme_make_date',
@@ -3840,8 +3838,7 @@ sub content
     print_favorites();
 
     # Content
-    print '<div id="content" class="__page' .
-      ($theme_config{'settings_right_page_hide_persistent_vscroll'} eq 'false' ? ' fvscroll' : undef) . '">' . "\n";
+    print '<div id="content" class="__page fvscroll">' . "\n";
 
     print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
 }

@@ -767,7 +767,6 @@ theme_xhred_global_settings=instellings
 theme_xhred_tooltip_side_slider_pinned=Speld/skuif die skuifspeld oop
 settings_side_slider_fixed_toggle=Toon knoppie om te speld/ontkoppel
 settings_side_slider_fixed_toggle_description=Hierdie opsie vertoon die skakelaar, in die syskuifbalk, aan die onderste ry, sodat u die sigbaarheid daarvan kan wissel, indien aan die voorwaardes in die vorige opsie voldoen is.
-settings_right_page_hide_persistent_vscroll=Steek aanhoudende vertikale skuifbalk
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installeer ook tema-opdaterings vir Usermin

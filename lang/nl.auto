@@ -650,7 +650,6 @@ theme_xhred_global_settings=Instellingen
 theme_xhred_tooltip_side_slider_pinned=Zijschuif vastmaken/losmaken
 settings_side_slider_fixed_toggle=Toon in-/uitschakelknop
 settings_side_slider_fixed_toggle_description=Deze optie geeft de schakelaar in de zijschuifbalk op de onderste rij weer, waardoor de zichtbaarheid tijdens het vliegen kan worden gewijzigd, als aan de voorwaarden in de vorige optie is voldaan.
-settings_right_page_hide_persistent_vscroll=Aanhoudende verticale schuifbalk verbergen
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installeer ook thema-updates voor Usermin

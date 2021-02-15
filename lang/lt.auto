@@ -767,7 +767,6 @@ theme_xhred_global_settings=Nustatymai
 theme_xhred_tooltip_side_slider_pinned=Prisegti/atsegti šoninį slankiklį
 settings_side_slider_fixed_toggle=Rodyti perjungimą kaiščiu/atsegti
 settings_side_slider_fixed_toggle_description=Ši parinktis rodys perjungimą šoniniame slankiklyje, apatinėje eilutėje, leidžiančią perjungti jo matomumą skrendant, jei bus įvykdytos ankstesnės parinkties sąlygos.
-settings_right_page_hide_persistent_vscroll=Slėpti nuolatinę vertikalią slinkties juostą
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Įdiekite „Usermin“ temos atnaujinimus

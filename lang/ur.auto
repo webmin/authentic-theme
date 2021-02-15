@@ -767,7 +767,6 @@ theme_xhred_global_settings=ترتیبات
 theme_xhred_tooltip_side_slider_pinned=سائیڈ سلائیڈر کو پن/انپن کریں
 settings_side_slider_fixed_toggle=ٹوگل ٹوٹ پن/پن کھولیں
 settings_side_slider_fixed_toggle_description=یہ آپشن سلائڈ سلائیڈر میں ، نیچے والی صف میں ، ٹوگل ظاہر کرے گا ، جب پرواز میں اپنی نمائش ٹوگل کرنے کی اجازت دیتا ہے ، اگر پچھلے آپشن میں شرائط پوری ہوجائیں۔
-settings_right_page_hide_persistent_vscroll=مستقل عمودی سکرول بار چھپائیں
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=یوزر مین کے لئے بھی تھیم اپ ڈیٹس انسٹال کریں

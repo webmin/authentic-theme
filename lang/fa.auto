@@ -767,7 +767,6 @@ theme_xhred_global_settings=تنظیمات
 theme_xhred_tooltip_side_slider_pinned=پین/لغزنده سمت باز کردن
 settings_side_slider_fixed_toggle=نشان دادن پین/ناپدید شدن ضامن
 settings_side_slider_fixed_toggle_description=در صورت برطرف شدن شرایط موجود در گزینه قبلی ، این گزینه ضربدر را در قسمت کشویی کناری ، در ردیف پایین نمایش می دهد و باعث می شود قابلیت دید در پرواز تغییر یابد.
-settings_right_page_hide_persistent_vscroll=پیمایشگر ثابت عمودی را مخفی کنید
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=به روزرسانی های تم را برای Usermin نیز نصب کنید

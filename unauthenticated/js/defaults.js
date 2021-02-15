@@ -31,7 +31,6 @@ var settings_mailbox_slash_delimiter = true,
     settings_enable_container_offset = true,
     settings_usermin_default_module = 'sysinfo.cgi',
     settings_document_title = 1,
-    settings_right_page_hide_persistent_vscroll = true,
 
     settings_side_slider_palette = "nav",
     settings_side_slider_enabled = true,

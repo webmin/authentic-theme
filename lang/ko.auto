@@ -767,7 +767,6 @@ theme_xhred_global_settings=설정
 theme_xhred_tooltip_side_slider_pinned=핀/핀 해제 사이드 슬라이더
 settings_side_slider_fixed_toggle=핀/핀 해제 토글 표시
 settings_side_slider_fixed_toggle_description=이 옵션은 측면 슬라이더의 맨 아래 행에 토글을 표시하여 이전 옵션의 조건이 충족되는 경우 즉시 가시성을 토글 할 수 있습니다.
-settings_right_page_hide_persistent_vscroll=지속적인 수직 스크롤바 숨기기
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Usermin을위한 테마 업데이트 설치

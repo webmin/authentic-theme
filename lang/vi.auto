@@ -767,7 +767,6 @@ theme_xhred_global_settings=Cài đặt
 theme_xhred_tooltip_side_slider_pinned=Thanh trượt/ghim bên
 settings_side_slider_fixed_toggle=Hiển thị chuyển đổi pin/bỏ ghim
 settings_side_slider_fixed_toggle_description=Tùy chọn này sẽ hiển thị chuyển đổi, trong thanh trượt bên, ở hàng dưới cùng, cho phép chuyển đổi khả năng hiển thị của nó khi đang bay, nếu các điều kiện trong tùy chọn trước đó được đáp ứng.
-settings_right_page_hide_persistent_vscroll=Ẩn thanh cuộn dọc liên tục
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Cài đặt cập nhật chủ đề cho Usermin là tốt

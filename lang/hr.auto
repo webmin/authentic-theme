@@ -767,7 +767,6 @@ theme_xhred_global_settings=postavke
 theme_xhred_tooltip_side_slider_pinned=Pin/otkopčajte bočni klizač
 settings_side_slider_fixed_toggle=Prikaži preklopku za pinove/otkopčavanje
 settings_side_slider_fixed_toggle_description=Ova će opcija prikazati preklopnik, u bočnom klizaču, u donjem redu, što omogućava da se njegova vidljivost mijenja u letu, ako su ispunjeni uvjeti iz prethodne opcije.
-settings_right_page_hide_persistent_vscroll=Sakrij trajno okomito klizač
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalirajte ažuriranja tema i za Usermin

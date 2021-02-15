@@ -553,7 +553,6 @@ theme_xhred_global_settings=настройки
 theme_xhred_tooltip_side_slider_pinned=Закрепить/открепить боковой ползунок
 settings_side_slider_fixed_toggle=Показать пин/открепить переключатель
 settings_side_slider_fixed_toggle_description=Эта опция отображает переключатель в боковом ползунке в нижнем ряду, позволяя переключать его видимость на лету, если выполнены условия предыдущего варианта.
-settings_right_page_hide_persistent_vscroll=Скрыть постоянную вертикальную полосу прокрутки
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Также установите обновления темы для Usermin

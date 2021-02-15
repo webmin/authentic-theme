@@ -63,11 +63,6 @@ print ui_table_row($theme_text{'settings_enable_container_offset'},
 print ui_table_row($theme_text{'settings_contrast_mode'},
                    ui_yesno_radio('settings_contrast_mode', $theme_config{'settings_contrast_mode'}, "true", "false"));
 
-print ui_table_row($theme_text{'settings_right_page_hide_persistent_vscroll'},
-                   ui_yesno_radio('settings_right_page_hide_persistent_vscroll',
-                                  $theme_config{'settings_right_page_hide_persistent_vscroll'},
-                                  "true", "false"
-                   ));
 print ui_table_row($theme_text{'settings_mail_ui'},
                    ui_yesno_radio('settings_mail_ui', $theme_config{'settings_mail_ui'}, "true", "false"));
 print ui_table_row(undef, '<b>' . $theme_text{'settings_right_navigation_menu_title'} . '</b>', 2);

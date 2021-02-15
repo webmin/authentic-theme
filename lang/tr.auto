@@ -767,7 +767,6 @@ theme_xhred_global_settings=Ayarlar
 theme_xhred_tooltip_side_slider_pinned=Yan kaydırıcıyı sabitle/sabitle
 settings_side_slider_fixed_toggle=Raptiyeyi göster/sabitlemeyi aç/kapat
 settings_side_slider_fixed_toggle_description=Bu seçenek, önceki seçenekteki koşullar yerine getirilirse, yan kaydırıcıda alt satırda geçişi göstererek anında görünürlüğünü değiştirmeye izin verir.
-settings_right_page_hide_persistent_vscroll=Kalıcı dikey kaydırma çubuğunu gizle
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Usermin için tema güncellemelerini de yükle

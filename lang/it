@@ -767,7 +767,6 @@ theme_xhred_global_settings=Impostazioni
 theme_xhred_tooltip_side_slider_pinned=Aggancia/sgancia slider laterale
 settings_side_slider_fixed_toggle=Mostra pulsante Aggancia/sgancia
 settings_side_slider_fixed_toggle_description=Questa opzione mostrerà il pulsante, nella riga in basso della slide laterale, permettendo di attivare o disattivare la sua visibilità al volo, se le condizioni dell'opzione precedente sono soddisfatte.
-settings_right_page_hide_persistent_vscroll=Nascondi barra di scorrimento verticale persistente
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installa aggiornamenti tema anche per Usermin

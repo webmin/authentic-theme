@@ -44,7 +44,6 @@ theme_xhred_global_settings=Configuració
 theme_xhred_tooltip_side_slider_pinned=Llisqueu el punteador lateral/fixeu-lo
 settings_side_slider_fixed_toggle=Mostra el passador/fixació
 settings_side_slider_fixed_toggle_description=Aquesta opció mostrarà el commutador, al lliscador lateral, a la fila inferior, permetent commutar la seva visibilitat sobre el vol, si es compleixen les condicions de l’opció anterior.
-settings_right_page_hide_persistent_vscroll=Amagueu la barra de desplaçament vertical persistent
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instal·leu també actualitzacions de tema per a Usermin

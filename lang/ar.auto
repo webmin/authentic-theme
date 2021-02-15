@@ -767,7 +767,6 @@ theme_xhred_global_settings=الإعدادات
 theme_xhred_tooltip_side_slider_pinned=تثبيت/إلغاء تثبيت شريط التمرير الجانبي
 settings_side_slider_fixed_toggle=إظهار تبديل الدبوس/إلغاء التثبيت
 settings_side_slider_fixed_toggle_description=سيعرض هذا الخيار التبديل ، في شريط التمرير الجانبي ، في الصف السفلي ، مما يسمح بتبديل الرؤية على الطاير ، إذا تم استيفاء الشروط في الخيار السابق.
-settings_right_page_hide_persistent_vscroll=إخفاء شريط التمرير العمودي المستمر
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=قم بتثبيت تحديثات السمة لـ Usermin أيضًا

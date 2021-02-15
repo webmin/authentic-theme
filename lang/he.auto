@@ -767,7 +767,6 @@ theme_xhred_global_settings=הגדרות
 theme_xhred_tooltip_side_slider_pinned=הצמד/הסר את מחוון הצד
 settings_side_slider_fixed_toggle=הצג את הצמד/ביטול ההצמדה
 settings_side_slider_fixed_toggle_description=אפשרות זו תציג את המיתוג, בסליידר הצדדי, בשורה התחתונה, ומאפשרת להחליף את נראותו תוך כדי תנועה, אם מתקיימים התנאים באפשרות הקודמת.
-settings_right_page_hide_persistent_vscroll=הסתר סרגל גלילה אנכי מתמשך
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=התקן גם עדכוני נושא עבור Usermin

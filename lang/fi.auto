@@ -767,7 +767,6 @@ theme_xhred_global_settings=asetukset
 theme_xhred_tooltip_side_slider_pinned=Kiinnitä/irrota sivun liukusäädin
 settings_side_slider_fixed_toggle=Näytä pin/irrota kytkentä
 settings_side_slider_fixed_toggle_description=Tämä vaihtoehto näyttää vaihtosivun sivurivillä alareunassa, jolloin sen näkyvyys voidaan vaihtaa lennossa, jos edellisen vaihtoehdon ehdot täyttyvät.
-settings_right_page_hide_persistent_vscroll=Piilota pysyvä pystysuuntainen vierityspalkki
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Asenna teemapäivitykset myös Userminille

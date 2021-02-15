@@ -767,7 +767,6 @@ theme_xhred_global_settings=Nastavitve
 theme_xhred_tooltip_side_slider_pinned=Stranski drsnik privijte/odvijte
 settings_side_slider_fixed_toggle=Pokaži stikalo za pin/unpin
 settings_side_slider_fixed_toggle_description=Ta možnost prikaže preklop v stranskem drsniku v spodnji vrstici in tako omogoči, da se njegova vidnost med letenjem preklopi, če so izpolnjeni pogoji iz prejšnje možnosti.
-settings_right_page_hide_persistent_vscroll=Skrij obstojno navpično drsno vrstico
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Namestite posodobitve teme tudi za Usermin

@@ -679,7 +679,6 @@ theme_xhred_global_settings=Indstillinger
 theme_xhred_tooltip_side_slider_pinned=Fastgør/løsn sideskyderen
 settings_side_slider_fixed_toggle=Vis pin/unpin toggle
 settings_side_slider_fixed_toggle_description=Denne indstilling viser skiftet i sideskyderen i den nederste række, så du kan skifte synlighed under farten, hvis betingelserne i forrige indstilling er opfyldt.
-settings_right_page_hide_persistent_vscroll=Skjul vedvarende lodret rullepanel
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installer også temaopdateringer til Usermin

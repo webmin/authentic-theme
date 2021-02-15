@@ -767,7 +767,6 @@ theme_xhred_global_settings=ezarpenak
 theme_xhred_tooltip_side_slider_pinned=Pin/unpin alboko graduatzailea
 settings_side_slider_fixed_toggle=Erakutsi pin/unpin toggle
 settings_side_slider_fixed_toggle_description=Aukera honek txandakatzeko alboko labainean beheko errenkadan bistaratuko du eta aukera honek aurreko ikusiko baldintzak betetzen baditu, ikusgarritasuna txertatu dezake.
-settings_right_page_hide_persistent_vscroll=Ezkutatu barra bertikal iraunkorra
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalatu gaiaren eguneratzeak Erabiltzaileentzako ere
