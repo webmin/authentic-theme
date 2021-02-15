@@ -100,7 +100,7 @@ var settings_mailbox_slash_delimiter = true,
     settings_collapse_navigation_link = true,
     settings_sysinfo_link_mini = false,
 
-    settings_sysinfo_panels_order = '{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'G\',\'quota\':\'H\',\'bw\':\'I\',\'sysinfo\':\'J\',\'updates\':\'K\',\'ftypes\':\'L\'}',
+    settings_sysinfo_panels_order='{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'F\',\'quota\':\'G\',\'bw\':\'I\',\'sysinfo\':\'H\',\'updates\':\'I\',\'ftypes\':\'J\',\'serial\':\'K\'}',
 
     settings_perform_content_scrolling = true,
     settings_show_terminal_link2 = true,
