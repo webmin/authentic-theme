@@ -8,6 +8,9 @@
 /* jshint esversion: 6 */
 /* jshint jquery: true */
 
+
+
+
 'use strict';
 
 // Stats module
@@ -39,16 +42,13 @@ const stats = {
                 }
             },
             state: () => {
-                return settings_sysinfo_real_time_stored || v___theme_state_visible
+                return theme.visibility.get()
             },
             stored_length: () => {
                 return settings_sysinfo_real_time_stored_length
             },
             enabled: () => {
                 return settings_sysinfo_real_time_status
-            },
-            timeout: () => {
-                return settings_sysinfo_real_time_timeout
             },
         },
 
@@ -104,7 +104,7 @@ const stats = {
                         // Retry again
                         !this.requery && (this.requery = setTimeout(() => {
                             this.stopped = 1, this.requery = 0, this.query();
-                        }, 3000));
+                        }, (this.timeout * 3)));
                     },
                     success: function(data) {
 
@@ -115,7 +115,6 @@ const stats = {
                         setTimeout(() => {
                             this.render(data);
                         }, this.timeout);
-
                         this.stopped = 1;
                     },
                     dataType: "json",
@@ -329,13 +328,13 @@ const stats = {
 
             setTimeout(() => {
                 this.stopped = 1, this.call = {};
-            }, this.timeout + 2);
+            }, (this.timeout + 2));
         },
 
         // Check to enable stats after stop
         enable: function() {
             if (this.extend.enabled()) {
-                this.timeout = this.extend.timeout(), this.stopped = 1, this.killed = 0, this.query();
+                this.stopped = 1, this.killed = 0, this.query();
             }
         }
     }

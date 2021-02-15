@@ -9,6 +9,8 @@
 /* jslint bitwise: true */
 /* jshint jquery: true */
 
+
+
 'use strict';
 
 /**
@@ -88,6 +90,8 @@ const mail = (function() {
                 serialized_to_json: Convert.serialized_to_json,
                 nice_size: Convert.nice_size,
                 html_escape: Convert.htmlEscape,
+                html_strip: Convert.htmlStrip,
+                quote_escape: Convert.quoteEscape,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
                 preloader_dismiss: page.handle.content.preloader_dismiss,
@@ -917,7 +921,7 @@ const mail = (function() {
                                 return this.name
                             }).get(),
                             form_data = $form.serialize(),
-                            signature = $.trim($(rs).find('textarea[name="body"]').text());
+                            signature = $.trim(_.plugin.quote_escape(_.plugin.html_strip($(rs).find('textarea[name="body"]').text())));
 
                         if (form_data) {
                             form_data = _.plugin.serialized_to_json(form_data);
