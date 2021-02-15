@@ -9,8 +9,6 @@
 /* jslint bitwise: true */
 /* jshint jquery: true */
 
-
-
 'use strict';
 
 /**
@@ -3556,3 +3554,4 @@ const mail = (function() {
         compose: compose.message
     }
 })();
+

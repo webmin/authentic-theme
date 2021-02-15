@@ -8,9 +8,6 @@
 /* jshint esversion: 6 */
 /* jshint jquery: true */
 
-
-
-
 'use strict';
 
 // Stats module
@@ -339,3 +336,4 @@ const stats = {
         }
     }
 }
+
