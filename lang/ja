@@ -128,7 +128,6 @@ settings_navigation_color=カラーパレット
 settings_background_color=コンテンツページのカラーパレット
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
-settings_right_reload=既定のコンテンツページの読み込み
 
 settings_right_hide_table_icons=右フレームのテーブルアイコンを非表示にする
 settings_right_hide_table_icons_description=完全にコンテンツページのテーブルからアイコンを削除し、右シェブロンとプレーンリンクを表示する
@@ -646,8 +645,6 @@ theme_xhred_sysinfo_update_failed= システム情報を再収集することは
 theme_xhred_global_development_version= 開発版
 
 right_vm_server_summary= 仮想サーバーの概要
-
-settings_webmin_default_module= Webminのデフォルトモジュール
 
 theme_xhred_global_unbeforeunload_title= あなたが行った変更は保存されないかもしれません
 theme_xhred_global_unbeforeunload_message= 続行すると、このページの保存されていない変更が永久に失われる可能性があります。

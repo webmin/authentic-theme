@@ -132,7 +132,7 @@ settings_navigation_color=Kleurpalet
 settings_background_color=Inhoudsbladsy-palet
 settings_loader_top=Aktiveer vorderingslaaier aan die bokant van die skerm
 settings_loader_left=Skakel spin vir die navigasiekieslys in
-settings_right_reload=Laai standaardinhoudbladsy
+settings_right_reload=Laai die standaardbladsy op die tabskakelaar
 
 settings_right_hide_table_icons=Versteek tabelikone
 settings_right_hide_table_icons_description=Verwyder ikone heeltemal van die inhoudsbladsye en vertoon gewone skakels met die regterkant
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Ontwikkelingsweergawe
 
 right_vm_server_summary=Virtuele bedieneropsomming
 
-settings_webmin_default_module=Standaardmodule vir Webmin
+settings_webmin_default_module=Standaardbladsy vir Webmin
 
 theme_xhred_global_unbeforeunload_title=Wysigings wat u aangebring het, word moontlik nie gestoor nie
 theme_xhred_global_unbeforeunload_message=As u voortgaan, kan ongestoorde veranderinge op hierdie bladsy permanent verlore gaan.

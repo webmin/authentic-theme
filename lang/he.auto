@@ -132,7 +132,7 @@ settings_navigation_color=פלטת צבעים
 settings_background_color=לוח הצבעים של דף התוכן
 settings_loader_top=אפשר מטעין התקדמות לעמוד בראש המסך
 settings_loader_left=אפשר ספינר לתפריט ניווט
-settings_right_reload=טען דף תוכן ברירת מחדל
+settings_right_reload=טען דף ברירת מחדל במתג הכרטיסיות
 
 settings_right_hide_table_icons=הסתר סמלי טבלה
 settings_right_hide_table_icons_description=הסר לחלוטין סמלים מטבלאות דפי התוכן והצג קישורים רגילים עם שברון ימין
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=גרסת פיתוח
 
 right_vm_server_summary=סיכום שרתים וירטואליים
 
-settings_webmin_default_module=מודול ברירת מחדל עבור Webmin
+settings_webmin_default_module=דף ברירת מחדל עבור Webmin
 
 theme_xhred_global_unbeforeunload_title=יתכן ששינויים שביצעת לא יישמרו
 theme_xhred_global_unbeforeunload_message=אם תמשיך, שינויים שלא נשמרו בדף זה עלולים לאבד לצמיתות.

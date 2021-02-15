@@ -132,7 +132,7 @@ settings_navigation_color=پالت رنگ
 settings_background_color=پالت رنگ صفحه محتوا
 settings_loader_top=لودر پیشرفت صفحه را در بالای صفحه فعال کنید
 settings_loader_left=فعال کردن اسپینر برای منوی پیمایش
-settings_right_reload=صفحه محتوای پیش فرض را بارگیری کنید
+settings_right_reload=صفحه پیش فرض را در سوئیچ تب بارگیری کنید
 
 settings_right_hide_table_icons=نمادهای جدول را مخفی کنید
 settings_right_hide_table_icons_description=نمادها را به طور کامل از جداول صفحه محتوا حذف کرده و پیوندهای ساده را با شورون سمت راست نمایش دهید
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=نسخه توسعه
 
 right_vm_server_summary=خلاصه سرور مجازی
 
-settings_webmin_default_module=ماژول پیش فرض برای وبمین
+settings_webmin_default_module=صفحه پیش فرض برای وبمین
 
 theme_xhred_global_unbeforeunload_title=تغییراتی که ایجاد کرده اید ممکن است ذخیره نشود
 theme_xhred_global_unbeforeunload_message=در صورت ادامه ، تغییرات غیر ذخیره شده در این صفحه می توانند برای همیشه از بین بروند.

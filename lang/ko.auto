@@ -132,7 +132,7 @@ settings_navigation_color=색상 팔레트
 settings_background_color=컨텐츠 페이지 컬러 팔레트
 settings_loader_top=화면 상단에 페이지 진행 로더 사용
 settings_loader_left=탐색 메뉴에 스피너 사용
-settings_right_reload=기본 컨텐츠 페이지로드
+settings_right_reload=탭 스위치에 기본 페이지로드
 
 settings_right_hide_table_icons=테이블 아이콘 숨기기
 settings_right_hide_table_icons_description=컨텐츠 페이지 테이블에서 아이콘을 완전히 제거하고 오른쪽 갈매기 형 표시가있는 일반 링크를 표시합니다.
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=개발 버전
 
 right_vm_server_summary=가상 서버 요약
 
-settings_webmin_default_module=Webmin의 기본 모듈
+settings_webmin_default_module=Webmin의 기본 페이지
 
 theme_xhred_global_unbeforeunload_title=변경 사항이 저장되지 않을 수 있습니다
 theme_xhred_global_unbeforeunload_message=계속하면이 페이지에 저장하지 않은 변경 사항이 영구적으로 손실 될 수 있습니다.

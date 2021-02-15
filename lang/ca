@@ -132,7 +132,6 @@ settings_navigation_color=Color palette
 settings_background_color=Color del fons
 settings_loader_top=Habilitar la barra de progrés superior
 settings_loader_left=Habilitar el selector pel menú de navegació
-settings_right_reload=Carrega els continguts per dectecte de la pàgina
 
 settings_right_hide_table_icons=Amagar les icones
 settings_right_hide_table_icons_description=Mostra enllaços en comptes d'icones en les taules.
@@ -651,8 +650,6 @@ theme_xhred_sysinfo_update_failed=No s'ha pogut obtenir la informació del siste
 theme_xhred_global_development_version=Versió de desenvolupament
 
 right_vm_server_summary=Resum del servidor virtual
-
-settings_webmin_default_module=Mòdul per defecte de Webmin
 
 theme_xhred_global_unbeforeunload_title=Podria ser que els canvis realitzats no es desessin
 theme_xhred_global_unbeforeunload_message=Si continues, els canvis que no hagis desat es perdran.

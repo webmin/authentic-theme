@@ -132,7 +132,6 @@ settings_navigation_color=Color palette
 settings_background_color=Farbpalette für Inhalts Seite
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
-settings_right_reload=Lade Standard Inhalts Seite
 
 settings_right_hide_table_icons=Tabellen Symbole im rechten Fenster nicht anzeigen
 settings_right_hide_table_icons_description=Entferne Symbole aus allen Inhaltstabellen und zeige stattdessen Links an.
@@ -651,8 +650,6 @@ theme_xhred_sysinfo_update_failed=System Informationen konnten nicht geladren we
 theme_xhred_global_development_version=Entwicklunger Version
 
 right_vm_server_summary=Virtual Server Zusammenfassung
-
-settings_webmin_default_module=Standard Modul für Webmin
 
 theme_xhred_global_unbeforeunload_title=Deine Änderungen wurden noch nicht gespeichert
 theme_xhred_global_unbeforeunload_message=Mit Weiter könnten Deine nicht gespeicherten Änderungen auf dieser Seite verloren gehen.

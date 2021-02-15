@@ -132,7 +132,7 @@ settings_navigation_color=Paleta de cores
 settings_background_color=Paleta de cores da página de conteúdo
 settings_loader_top=Ativar o carregador de progresso da página na parte superior da tela
 settings_loader_left=Ativar o botão giratório para o menu de navegação
-settings_right_reload=Carregar página de conteúdo padrão
+settings_right_reload=Carregar página padrão na troca de guia
 
 settings_right_hide_table_icons=Ocultar ícones da tabela
 settings_right_hide_table_icons_description=Remova completamente os ícones das tabelas da página de conteúdo e exiba links simples com a divisa direita
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Versão de desenvolvimento
 
 right_vm_server_summary=Resumo do servidor virtual
 
-settings_webmin_default_module=Módulo padrão para Webmin
+settings_webmin_default_module=Página padrão para Webmin
 
 theme_xhred_global_unbeforeunload_title=As alterações que você fez podem não ser salvas
 theme_xhred_global_unbeforeunload_message=Se você continuar, as alterações não salvas nesta página poderão ser perdidas permanentemente.

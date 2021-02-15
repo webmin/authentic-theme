@@ -132,7 +132,6 @@ settings_navigation_color=Color palette
 settings_background_color=Tavolozza colori dei contenuti della pagina
 settings_loader_top=Attiva la barra di caricamento della pagina nella parte superiore dello schermo
 settings_loader_left=Attiva spinner per il menu di navigazione
-settings_right_reload=Carica il contenuto predefinito della pagina
 
 settings_right_hide_table_icons=Nascondi icone della tabella
 settings_right_hide_table_icons_description=Rimuovi completamente le icone dalle tabelle della pagina di contenuto e visualizza semplici link con il simbolo chevron a destra.
@@ -651,8 +650,6 @@ theme_xhred_sysinfo_update_failed=Le informazioni di sistema non possono essere 
 theme_xhred_global_development_version=Versione di sviluppo
 
 right_vm_server_summary=Riepilogo del server virtuale
-
-settings_webmin_default_module=Modulo predefinito per Webmin
 
 theme_xhred_global_unbeforeunload_title=Le modifiche apportate potrebbero non essere salvate.
 theme_xhred_global_unbeforeunload_message=Se continui, le modifiche non salvate in questa pagina potrebbero andare perse definitivamente.

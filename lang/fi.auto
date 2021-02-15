@@ -132,7 +132,7 @@ settings_navigation_color=Väripaletti
 settings_background_color=Sisältösivun värivalikoima
 settings_loader_top=Ota sivun edistymisen lataus käyttöön näytön yläreunaan
 settings_loader_left=Ota kehrä navigointivalikossa käyttöön
-settings_right_reload=Lataa oletussisältösivu
+settings_right_reload=Lataa oletussivu välilehden kytkimelle
 
 settings_right_hide_table_icons=Piilota pöydän kuvakkeet
 settings_right_hide_table_icons_description=Poista kuvakkeet kokonaan sisältösivutaulukoista ja näytä selkeät linkit oikealla rintakehällä
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Kehitysversio
 
 right_vm_server_summary=Virtuaalipalvelimen yhteenveto
 
-settings_webmin_default_module=Webminin oletusmoduuli
+settings_webmin_default_module=Webminin oletussivu
 
 theme_xhred_global_unbeforeunload_title=Tekemiäsi muutoksia ei välttämättä tallenneta
 theme_xhred_global_unbeforeunload_message=Jos jatkat, tämän sivun tallentamattomat muutokset voivat kadota lopullisesti.

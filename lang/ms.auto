@@ -1,3 +1,5 @@
+settings_right_reload=Muatkan halaman lalai pada suis tab
+
 #19.00
 theme_xhred_sysinfo_update_start=Maklumat sistem dikenang.
 theme_xhred_sysinfo_update_end=Maklumat sistem berjaya dikenang semula.
@@ -7,7 +9,7 @@ theme_xhred_global_development_version=Versi pembangunan
 
 right_vm_server_summary=Ringkasan Pelayan Maya
 
-settings_webmin_default_module=Modul lalai untuk Webmin
+settings_webmin_default_module=Halaman lalai untuk Webmin
 
 theme_xhred_global_unbeforeunload_title=Perubahan yang anda buat mungkin tidak disimpan
 theme_xhred_global_unbeforeunload_message=Sekiranya anda meneruskan, perubahan yang tidak disimpan pada halaman ini akan hilang secara kekal.

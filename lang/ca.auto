@@ -1,3 +1,7 @@
+settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
+
+settings_webmin_default_module=Pàgina predeterminada per a Webmin
+
 #19.10
 theme_xhred_filemanager_edit_html=Edita com a HTML
 theme_xhred_global_example=Exemple

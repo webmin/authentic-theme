@@ -132,7 +132,7 @@ settings_navigation_color=Цветова палитра
 settings_background_color=Цветова палитра на страницата със съдържание
 settings_loader_top=Активирайте товарача за напредък на страницата в горната част на екрана
 settings_loader_left=Активиране на спинера за навигационното меню
-settings_right_reload=Заредете страница със съдържание по подразбиране
+settings_right_reload=Заредете страницата по подразбиране в раздела за превключване
 
 settings_right_hide_table_icons=Скриване на иконите на таблицата
 settings_right_hide_table_icons_description=Изтрийте напълно иконите от таблиците със страницата със съдържанието и показвайте обикновени връзки с десен шеврон
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Версия за разработка
 
 right_vm_server_summary=Обобщение на виртуалния сървър
 
-settings_webmin_default_module=Модул по подразбиране за Webmin
+settings_webmin_default_module=Страница по подразбиране за Webmin
 
 theme_xhred_global_unbeforeunload_title=Промените, които сте направили, може да не бъдат запазени
 theme_xhred_global_unbeforeunload_message=Ако продължите, незапазените промени на тази страница могат да бъдат загубени за постоянно.

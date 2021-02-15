@@ -131,7 +131,6 @@ settings_navigation_color=Color palette
 settings_background_color=Culoare pagina conţinut
 settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
 settings_loader_left=Activează spinner pentru meniul de navigare
-settings_right_reload=Încarcă pagina cu conținut implicit
 
 settings_right_hide_table_icons=Ascunde pictogramele tabelelor din cadrul din dreapta
 settings_right_hide_table_icons_description=Elimină complet pictogramele din tabelele paginii de conținut și afișează doar linkuri cu săgeată la dreapta
@@ -650,8 +649,6 @@ theme_xhred_sysinfo_update_failed=Informaţiile de sistem nu se pot recolcta. Re
 theme_xhred_global_development_version=Versiune de dezvoltare
 
 right_vm_server_summary=Sumarul Serverului Virtual
-
-settings_webmin_default_module=Modul implicit pentru Webmin
 
 theme_xhred_global_unbeforeunload_title=Modificările făcute s-ar putea să nu se salveze
 theme_xhred_global_unbeforeunload_message=Dacă continui, modificările nesalvate din această pagină pot fi pierdute permanent.

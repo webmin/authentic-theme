@@ -16,7 +16,7 @@ settings_navigation_color=Kleurenpalet
 settings_background_color=Kleurenpalet van inhoudspagina
 settings_loader_top=Schakel paginavoortganglader in bovenaan het scherm
 settings_loader_left=Schakel spinner in voor navigatiemenu
-settings_right_reload=Laad standaard inhoudspagina
+settings_right_reload=Laad de standaardpagina op de tabschakelaar
 
 settings_right_hide_table_icons=Tabelpictogrammen verbergen
 settings_right_hide_table_icons_description=Verwijder pictogrammen volledig uit de tabellen van de inhoudspagina en geef duidelijke links weer met de rechter chevron
@@ -535,7 +535,7 @@ theme_xhred_global_development_version=Ontwikkelingsversie
 
 right_vm_server_summary=Samenvatting virtuele server
 
-settings_webmin_default_module=Standaardmodule voor Webmin
+settings_webmin_default_module=Standaardpagina voor Webmin
 
 theme_xhred_global_unbeforeunload_title=Wijzigingen die u hebt aangebracht, worden mogelijk niet opgeslagen
 theme_xhred_global_unbeforeunload_message=Als je doorgaat, kunnen niet-opgeslagen wijzigingen op deze pagina permanent verloren gaan.

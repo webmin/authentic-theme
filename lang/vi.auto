@@ -132,7 +132,7 @@ settings_navigation_color=Bảng màu
 settings_background_color=Bảng màu trang nội dung
 settings_loader_top=Cho phép trình tải tiến trình trang ở trên cùng của màn hình
 settings_loader_left=Bật spinner cho menu điều hướng
-settings_right_reload=Tải trang nội dung mặc định
+settings_right_reload=Tải trang mặc định trên chuyển đổi tab
 
 settings_right_hide_table_icons=Ẩn biểu tượng bảng
 settings_right_hide_table_icons_description=Xóa hoàn toàn các biểu tượng khỏi bảng trang nội dung và hiển thị các liên kết đơn giản với chevron phải
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Phiên bản phát triển
 
 right_vm_server_summary=Tóm tắt máy chủ ảo
 
-settings_webmin_default_module=Mô-đun mặc định cho Webmin
+settings_webmin_default_module=Trang mặc định cho Webmin
 
 theme_xhred_global_unbeforeunload_title=Những thay đổi bạn đã thực hiện có thể không được lưu
 theme_xhred_global_unbeforeunload_message=Nếu bạn tiếp tục, những thay đổi chưa được lưu trên trang này có thể bị mất vĩnh viễn.

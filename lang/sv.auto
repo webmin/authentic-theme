@@ -1,3 +1,7 @@
+settings_right_reload=Ladda standardsidan på flikomkopplaren
+
+settings_webmin_default_module=Standardsida för Webmin
+
 #19.53
 settings_global_palette_unauthenticated=Inloggningssidan färgpalett
 

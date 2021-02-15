@@ -132,7 +132,6 @@ settings_navigation_color=Fargepalett
 settings_background_color=Fargepalett for innholdsside
 settings_loader_top=Aktiver side fremdriftslasert på toppen av skjermen
 settings_loader_left=Aktiver spinner for navigasjonsmeny
-settings_right_reload=Last standard innholdsside
 
 settings_right_hide_table_icons=Skjul tabellikoner for høyre ramme
 settings_right_hide_table_icons_description=Fjerner ikoner helt fra tabeller på innholdssiden og viser vanlige lenker med høyre dobbelthake
@@ -650,8 +649,6 @@ theme_xhred_sysinfo_update_failed=Systeminformasjon kan ikke samles inn på nytt
 theme_xhred_global_development_version=Utviklings-versjon
 
 right_vm_server_summary=Oversikt for virtuell tjener
-
-settings_webmin_default_module=Standard modul for Webmin
 
 theme_xhred_global_unbeforeunload_title=Endringer du har gjort, blir kanskje ikke lagret
 theme_xhred_global_unbeforeunload_message=Hvis du fortsetter, kan u-lagrede endringer på denne siden gå tapt permanent.

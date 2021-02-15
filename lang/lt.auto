@@ -132,7 +132,7 @@ settings_navigation_color=Spalvų paletė
 settings_background_color=Turinio puslapio spalvų paletė
 settings_loader_top=Ekrano viršuje įgalinkite puslapio eigos kaupiklį
 settings_loader_left=Įgalinti naršymo meniu suktuką
-settings_right_reload=Įkelti numatytąjį turinio puslapį
+settings_right_reload=Įkelkite numatytąjį puslapį į skirtuko jungiklį
 
 settings_right_hide_table_icons=Slėpti lentelės piktogramas
 settings_right_hide_table_icons_description=Visiškai pašalinkite piktogramas iš turinio puslapio lentelių ir rodykite paprastas nuorodas su dešine viršuje
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Plėtros versija
 
 right_vm_server_summary=Virtualiojo serverio suvestinė
 
-settings_webmin_default_module=Numatytasis „Webmin“ modulis
+settings_webmin_default_module=Numatytasis „Webmin“ puslapis
 
 theme_xhred_global_unbeforeunload_title=Jūsų atlikti pakeitimai gali būti neišsaugoti
 theme_xhred_global_unbeforeunload_message=Jei tęsite toliau, neišsaugoti šio puslapio pakeitimai gali būti visam laikui prarasti.

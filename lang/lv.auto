@@ -132,7 +132,7 @@ settings_navigation_color=Krāsu palete
 settings_background_color=Satura lapas krāsu palete
 settings_loader_top=Ekrāna augšdaļā iespējot lapas virzības augšupielādi
 settings_loader_left=Iespējot navigācijas izvēlnes vērpējus
-settings_right_reload=Ielādēt noklusējuma satura lapu
+settings_right_reload=Ielādējiet noklusējuma lapu cilnes slēdzī
 
 settings_right_hide_table_icons=Slēpt tabulas ikonas
 settings_right_hide_table_icons_description=Pilnībā noņemiet ikonas no satura lapu tabulām un parādiet vienkāršās saites ar labo šavronu
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Izstrādes versija
 
 right_vm_server_summary=Virtuālā servera kopsavilkums
 
-settings_webmin_default_module=Noklusējuma modulis Webmin
+settings_webmin_default_module=Webmin noklusējuma lapa
 
 theme_xhred_global_unbeforeunload_title=Jūsu veiktās izmaiņas, iespējams, netiks saglabātas
 theme_xhred_global_unbeforeunload_message=Ja turpināsit, nesaglabātās izmaiņas šajā lapā var tikt neatgriezeniski zaudētas.

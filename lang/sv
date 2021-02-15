@@ -132,7 +132,6 @@ settings_navigation_color=Color palette
 settings_background_color=Färgpalett för innehållssida
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
-settings_right_reload=Ladda standard innehållssida
 
 settings_right_hide_table_icons=Dölj tabellikonerna för högra ramen
 settings_right_hide_table_icons_description=Ta bort samtliga ikoner från tabellerna och visa i stället endast textlänkar med en högersparre
@@ -651,8 +650,6 @@ theme_xhred_sysinfo_update_failed=Det gick inte att samla in systeminformationen
 theme_xhred_global_development_version=Utvecklingsversion
 
 right_vm_server_summary=Sammanfattning av virtuell server
-
-settings_webmin_default_module=Standardmodul för Webmin
 
 theme_xhred_global_unbeforeunload_title=Ändringar du gjort kanske inte sparas
 theme_xhred_global_unbeforeunload_message=Om du fortsätter, kan ändringar du gjort på denna sidan gå förlorade.

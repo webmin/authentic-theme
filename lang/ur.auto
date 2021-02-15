@@ -132,7 +132,7 @@ settings_navigation_color=رنگین پیلیٹ
 settings_background_color=مواد کا صفحہ رنگ پیلیٹ
 settings_loader_top=اسکرین کے اوپری حصے میں پیج پروگریس لوڈر کو فعال کریں
 settings_loader_left=نیویگیشن مینو کیلئے اسپنر کو فعال کریں
-settings_right_reload=پہلے سے طے شدہ مواد کا صفحہ لوڈ کریں
+settings_right_reload=ٹیب سوئچ پر پہلے سے طے شدہ صفحہ لوڈ کریں
 
 settings_right_hide_table_icons=ٹیبل شبیہیں چھپائیں
 settings_right_hide_table_icons_description=مشمولاتی صفحہ کے جدولوں سے شبیہیں مکمل طور پر ہٹائیں اور دائیں شیورون کے ساتھ سیدھے روابط دکھائیں
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=ترقیاتی ورژن
 
 right_vm_server_summary=ورچوئل سرور کا خلاصہ
 
-settings_webmin_default_module=ویبمین کیلئے ڈیفالٹ ماڈیول
+settings_webmin_default_module=ویبمین کے لئے پہلے سے طے شدہ صفحہ
 
 theme_xhred_global_unbeforeunload_title=ممکن ہے آپ کی تبدیلیاں محفوظ نہ ہوں
 theme_xhred_global_unbeforeunload_message=اگر آپ جاری رکھتے ہیں تو ، اس صفحے پر غیر محفوظ شدہ تبدیلیاں مستقل طور پر ختم ہوسکتی ہیں۔

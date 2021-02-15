@@ -132,7 +132,7 @@ settings_navigation_color=Szín paletta
 settings_background_color=A tartalom oldal színpaletta
 settings_loader_top=Engedélyezze az oldalfejlesztőt a képernyő tetején
 settings_loader_left=Spinner engedélyezése a navigációs menüben
-settings_right_reload=Töltse be az alapértelmezett tartalom oldalt
+settings_right_reload=Az alapértelmezett oldal betöltése a fülkapcsolóra
 
 settings_right_hide_table_icons=Asztal ikonok elrejtése
 settings_right_hide_table_icons_description=Teljesen távolítsa el az ikonokat a tartalomlap-táblázatokból, és jelenítsen meg egyszerű linkeket a jobb oldali felülettel
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Fejlesztési verzió
 
 right_vm_server_summary=Virtuális szerver összefoglalása
 
-settings_webmin_default_module=Alapértelmezett modul a Webmin számára
+settings_webmin_default_module=Alapértelmezett oldal a Webmin számára
 
 theme_xhred_global_unbeforeunload_title=Előfordulhat, hogy az elvégzett módosításokat nem menti el
 theme_xhred_global_unbeforeunload_message=Ha folytatja, akkor az ezen az oldalon nem mentett változtatások véglegesen elveszhetnek.

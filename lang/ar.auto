@@ -132,7 +132,7 @@ settings_navigation_color=لوحة الألوان
 settings_background_color=لوحة ألوان صفحة المحتوى
 settings_loader_top=تفعيل أداة تحميل تقدم الصفحة أعلى الشاشة
 settings_loader_left=تمكين الدوار لقائمة التنقل
-settings_right_reload=تحميل صفحة المحتوى الافتراضية
+settings_right_reload=تحميل الصفحة الافتراضية على مفتاح التبويب
 
 settings_right_hide_table_icons=إخفاء أيقونات الجدول
 settings_right_hide_table_icons_description=قم بإزالة الرموز تمامًا من جداول صفحة المحتوى وعرض الارتباطات العادية باستخدام شارة رتبة اليمين
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=نسخة التطوير
 
 right_vm_server_summary=ملخص الخادم الظاهري
 
-settings_webmin_default_module=الوحدة النمطية الافتراضية لـ Webmin
+settings_webmin_default_module=الصفحة الافتراضية لـ Webmin
 
 theme_xhred_global_unbeforeunload_title=قد لا يتم حفظ التغييرات التي أجريتها
 theme_xhred_global_unbeforeunload_message=إذا تابعت ، فقد تفقد التغييرات غير المحفوظة في هذه الصفحة بشكل دائم.

@@ -132,7 +132,7 @@ settings_navigation_color=Каляровая палітра
 settings_background_color=Палітра колераў змесціва старонкі
 settings_loader_top=Уключыць загрузчык прасоўвання старонкі ўверсе экрана
 settings_loader_left=Уключыць спінер для навігацыйнага меню
-settings_right_reload=Загрузіце старонку змесціва па змаўчанні
+settings_right_reload=Загрузіць старонку па змаўчанні на пераключальнік табуляцыі
 
 settings_right_hide_table_icons=Схаваць абразкі табліцы
 settings_right_hide_table_icons_description=Цалкам выдаліце абразкі з табліц змесціва і пакажыце простыя спасылкі з правым шаўронам
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Версія распрацоўкі
 
 right_vm_server_summary=Рэзюмэ віртуальнага сервера
 
-settings_webmin_default_module=Модуль па змаўчанні для Webmin
+settings_webmin_default_module=Старонка па змаўчанні для Webmin
 
 theme_xhred_global_unbeforeunload_title=Зробленыя вамі змены не могуць быць захаваны
 theme_xhred_global_unbeforeunload_message=Калі вы працягнеце, захаваныя змены на гэтай старонцы могуць быць канчаткова страчаны.

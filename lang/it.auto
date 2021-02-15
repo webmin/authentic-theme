@@ -1,3 +1,7 @@
+settings_right_reload=Carica la pagina predefinita sull'interruttore di tabulazione
+
+settings_webmin_default_module=Pagina predefinita per Webmin
+
 theme_xhred_filemanager_context_move_to_trash=Sposta nel cestino
 theme_xhred_filemanager_context_permanently_delete=Elimina definitivamente
 theme_xhred_global_remove=Rimuovere

@@ -45,7 +45,7 @@ settings_navigation_color=Farvepalet
 settings_background_color=Farvepalet på indholdssiden
 settings_loader_top=Aktivér sidefremskyndelseslæsser øverst på skærmen
 settings_loader_left=Aktivér spinner til navigationsmenu
-settings_right_reload=Indlæs standardindholdsside
+settings_right_reload=Indlæs standardsiden på fanebladet
 
 settings_right_hide_table_icons=Skjul tabelikoner
 settings_right_hide_table_icons_description=Fjern ikoner helt fra indholdssidetabellerne og vis almindelige links med højre chevron
@@ -564,7 +564,7 @@ theme_xhred_global_development_version=Udviklingsversion
 
 right_vm_server_summary=Oversigt over virtuel server
 
-settings_webmin_default_module=Standardmodul til Webmin
+settings_webmin_default_module=Standardside for Webmin
 
 theme_xhred_global_unbeforeunload_title=Ændringer, du har foretaget, gemmes muligvis ikke
 theme_xhred_global_unbeforeunload_message=Hvis du fortsætter, kan ikke-gemte ændringer på denne side mistes permanent.

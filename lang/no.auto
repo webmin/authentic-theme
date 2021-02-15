@@ -1,3 +1,7 @@
+settings_right_reload=Last inn standardsiden på fanebryteren
+
+settings_webmin_default_module=Standardside for Webmin
+
 #19.70
 theme_xhred_filemanager_context_view=Utsikt
 theme_xhred_file_viewer=File Viewer

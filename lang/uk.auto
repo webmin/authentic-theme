@@ -132,7 +132,7 @@ settings_navigation_color=Колірна палітра
 settings_background_color=Колірна палітра сторінки вмісту
 settings_loader_top=Увімкнути завантажувач прогресу сторінки вгорі екрана
 settings_loader_left=Увімкнути спінер для навігаційного меню
-settings_right_reload=Завантажте сторінку вмісту за замовчуванням
+settings_right_reload=Завантажте сторінку за замовчуванням на перемикач вкладки
 
 settings_right_hide_table_icons=Сховати піктограми таблиці
 settings_right_hide_table_icons_description=Повністю видаліть піктограми із таблиць із вмістовою сторінкою та відображайте прості посилання з правим шевроном
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Версія розробки
 
 right_vm_server_summary=Підсумок віртуального сервера
 
-settings_webmin_default_module=Модуль за замовчуванням для Webmin
+settings_webmin_default_module=Сторінка за замовчуванням для Webmin
 
 theme_xhred_global_unbeforeunload_title=Внесені вами зміни можуть бути збережені
 theme_xhred_global_unbeforeunload_message=Якщо ви продовжите, збережені зміни на цій сторінці можуть бути назавжди втрачені.

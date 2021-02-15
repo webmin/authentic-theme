@@ -132,7 +132,7 @@ settings_navigation_color=Παλέτα χρωμάτων
 settings_background_color=Παλέτα χρωμάτων σελίδας περιεχομένου
 settings_loader_top=Ενεργοποίηση του προγράμματος φόρτωσης προόδου σελίδας στο πάνω μέρος της οθόνης
 settings_loader_left=Ενεργοποίηση spinner για μενού πλοήγησης
-settings_right_reload=Φόρτωση προεπιλεγμένης σελίδας περιεχομένου
+settings_right_reload=Φόρτωση προεπιλεγμένης σελίδας στο διακόπτη καρτέλας
 
 settings_right_hide_table_icons=Απόκρυψη εικονιδίων πίνακα
 settings_right_hide_table_icons_description=Καταργήστε εντελώς τα εικονίδια από τους πίνακες σελίδων περιεχομένου και εμφανίστε απλούς συνδέσμους με το δεξί chevron
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Έκδοση ανάπτυξης
 
 right_vm_server_summary=Σύνοψη εικονικού διακομιστή
 
-settings_webmin_default_module=Προεπιλεγμένη ενότητα για Webmin
+settings_webmin_default_module=Προεπιλεγμένη σελίδα για το Webmin
 
 theme_xhred_global_unbeforeunload_title=Οι αλλαγές που έχετε πραγματοποιήσει ενδέχεται να μην αποθηκευτούν
 theme_xhred_global_unbeforeunload_message=Εάν συνεχίσετε, οι μη αποθηκευμένες αλλαγές σε αυτήν τη σελίδα θα μπορούσαν να χαθούν οριστικά.

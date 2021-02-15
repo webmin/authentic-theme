@@ -132,7 +132,7 @@ settings_navigation_color=色彩調色板
 settings_background_color=內容頁面調色板
 settings_loader_top=在屏幕頂部啟用頁面進度加載器
 settings_loader_left=啟用微調器的導航菜單
-settings_right_reload=加載默認內容頁面
+settings_right_reload=在選項卡開關上加載默認頁面
 
 settings_right_hide_table_icons=隱藏表格圖標
 settings_right_hide_table_icons_description=從內容頁表中完全刪除圖標，並使用右V形顯示純鏈接
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=開發版
 
 right_vm_server_summary=虛擬服務器摘要
 
-settings_webmin_default_module=Webmin的默認模塊
+settings_webmin_default_module=Webmin的默認頁面
 
 theme_xhred_global_unbeforeunload_title=您所做的更改可能不會保存
 theme_xhred_global_unbeforeunload_message=如果繼續，此頁面上未保存的更改可能會永久丟失。

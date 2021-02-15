@@ -132,7 +132,7 @@ settings_navigation_color=Barvna paleta
 settings_background_color=Barvna paleta vsebinskih strani
 settings_loader_top=Omogoči nalagalec napredka strani na vrhu zaslona
 settings_loader_left=Omogoči vrtenje za navigacijski meni
-settings_right_reload=Naložite privzeto stran z vsebino
+settings_right_reload=Naložite privzeto stran na stikalo za zavihek
 
 settings_right_hide_table_icons=Skrij ikone tabele
 settings_right_hide_table_icons_description=Iz tabel z vsebinsko stranjo v celoti odstranite ikone in prikažite navadne povezave z desnim ševronom
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Razvojna različica
 
 right_vm_server_summary=Povzetek navideznega strežnika
 
-settings_webmin_default_module=Privzeti modul za Webmin
+settings_webmin_default_module=Privzeta stran za Webmin
 
 theme_xhred_global_unbeforeunload_title=Spremembe, ki ste jih naredili, ni mogoče shraniti
 theme_xhred_global_unbeforeunload_message=Če nadaljujete, lahko neshranjene spremembe na tej strani trajno izgubite.

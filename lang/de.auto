@@ -1,3 +1,7 @@
+settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
+
+settings_webmin_default_module=Standardseite für Webmin
+
 #19.20
 extensions_mail_flag_spam_status=Spam-Status
 extensions_mail_flag_spam_status_data=$1 von $2

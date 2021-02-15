@@ -1,3 +1,7 @@
+settings_right_reload=在选项卡开关上加载默认页面
+
+settings_webmin_default_module=Webmin的默认页面
+
 #19.20
 extensions_mail_flag_spam_status=垃圾邮件状态
 extensions_mail_flag_spam_status_data=2美元中的1美元

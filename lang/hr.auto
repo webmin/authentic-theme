@@ -132,7 +132,7 @@ settings_navigation_color=Paleta boja
 settings_background_color=Paleta boja sa stranicama sa sadržajem
 settings_loader_top=Omogućite program za učitavanje napredovanja stranice na vrhu zaslona
 settings_loader_left=Omogući spinner za navigacijski izbornik
-settings_right_reload=Učitajte zadanu stranicu sa sadržajem
+settings_right_reload=Učitajte zadanu stranicu na prekidač kartice
 
 settings_right_hide_table_icons=Sakrij ikone stola
 settings_right_hide_table_icons_description=Potpuno uklonite ikone sa tablica stranica sa sadržajem i prikažite obične veze s desnim ševronom
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Razvojna verzija
 
 right_vm_server_summary=Sažetak virtualnog poslužitelja
 
-settings_webmin_default_module=Zadani modul za Webmin
+settings_webmin_default_module=Zadana stranica za Webmin
 
 theme_xhred_global_unbeforeunload_title=Promjene koje ste napravili možda neće biti spremljene
 theme_xhred_global_unbeforeunload_message=Ako nastavite, nespremljene promjene na ovoj stranici mogu se trajno izgubiti.

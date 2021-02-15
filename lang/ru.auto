@@ -47,7 +47,7 @@ settings_navigation_color=Цветовая палитра
 settings_background_color=Цветовая палитра содержимого страницы
 settings_loader_top=Включить загрузчик прогресса страницы в верхней части экрана
 settings_loader_left=Включить спиннер для меню навигации
-settings_right_reload=Загрузить страницу содержимого по умолчанию
+settings_right_reload=Загрузить страницу по умолчанию при переключении вкладки
 
 settings_right_hide_table_icons=Скрыть значки таблицы
 settings_right_hide_table_icons_description=Полностью удалите значки из таблиц содержимого страницы и отобразите простые ссылки с правым шевроном
@@ -443,7 +443,7 @@ theme_xhred_global_development_version=Версия для разработки
 
 right_vm_server_summary=Обзор виртуального сервера
 
-settings_webmin_default_module=Модуль по умолчанию для Webmin
+settings_webmin_default_module=Страница по умолчанию для Webmin
 
 theme_xhred_global_unbeforeunload_title=Внесенные вами изменения не могут быть сохранены
 theme_xhred_global_unbeforeunload_message=Если вы продолжите, несохраненные изменения на этой странице могут быть навсегда потеряны.

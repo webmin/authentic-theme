@@ -132,7 +132,6 @@ settings_navigation_color=Color palette
 settings_background_color=内容页面调色板
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
-settings_right_reload=加载默认内容页面
 
 settings_right_hide_table_icons=隐藏表图标
 settings_right_hide_table_icons_description=从内容页面表中完全删除图标，并使用右侧纯链接
@@ -651,8 +650,6 @@ theme_xhred_sysinfo_update_failed=系统信息无法重新收集。稍后再试�
 theme_xhred_global_development_version=开发版本
 
 right_vm_server_summary=虚拟服务器概览
-
-settings_webmin_default_module=Webmin 默认模块
 
 theme_xhred_global_unbeforeunload_title=您所做的更改可能无法保存
 theme_xhred_global_unbeforeunload_message=如果继续，此页面上未保存的更改可能会永久丢失。

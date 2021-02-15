@@ -1,4 +1,5 @@
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
+settings_right_reload=Načíst výchozí stránku na přepínač kartě
 
 settings_right_clear_local_cache=Vyčistit mezipaměť
 settings_right_notification_slider_options_title=Boční posuvné možnosti
@@ -477,7 +478,7 @@ theme_xhred_global_development_version=Vývojová verze
 
 right_vm_server_summary=Shrnutí virtuálního serveru
 
-settings_webmin_default_module=Výchozí modul pro Webmin
+settings_webmin_default_module=Výchozí stránka pro Webmina
 
 theme_xhred_global_unbeforeunload_title=Změny, které jste provedli, se nemusí uložit
 theme_xhred_global_unbeforeunload_message=Pokud budete pokračovat, neuložené změny na této stránce mohou být trvale ztraceny.

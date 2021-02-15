@@ -132,7 +132,6 @@ settings_navigation_color=Color palette
 settings_background_color=Palet warna laman konten
 settings_loader_top=Aktifkan progress loader laman pada bagian atas layar
 settings_loader_left=Aktifkan spinner untuk menu navigasi
-settings_right_reload=Muat konten laman default
 
 settings_right_hide_table_icons=Sembunyikan tabel ikon untuk frame kanan
 settings_right_hide_table_icons_description=Sepenuhnya hapus ikon dari tabel laman konten dan tampilkan tautan murni dengan chevron yang tepat

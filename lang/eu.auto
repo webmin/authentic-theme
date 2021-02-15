@@ -132,7 +132,7 @@ settings_navigation_color=Kolore paleta
 settings_background_color=Edukiaren orriaren paleta
 settings_loader_top=Gaitu orrialdearen aurrera kargatzailea pantailaren gainean
 settings_loader_left=Gaitu spinner nabigazio menua
-settings_right_reload=Kargatu eduki lehenetsitako orria
+settings_right_reload=Kargatu lehenetsitako orria fitxa aldatzailean
 
 settings_right_hide_table_icons=Ezkutatu taularen ikonoak
 settings_right_hide_table_icons_description=Erabat kendu ikonoak eduki orriko tauletatik eta eskuineko estekak erakutsi eskuineko chevron-ekin
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Garapen bertsioa
 
 right_vm_server_summary=Zerbitzari birtualaren laburpena
 
-settings_webmin_default_module=Lehenetsitako modulua Webmin-erako
+settings_webmin_default_module=Webmin-en orri lehenetsia
 
 theme_xhred_global_unbeforeunload_title=Baliteke egindako aldaketak gorde ezin izatea
 theme_xhred_global_unbeforeunload_message=Jarraituz gero, orrialde honetan gordetako aldaketak betirako galdu litezke.

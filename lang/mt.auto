@@ -132,7 +132,7 @@ settings_navigation_color=Paletta tal-kuluri
 settings_background_color=Paletta tal-kulur tal-paġna tal-kontenut
 settings_loader_top=Agħti l-loader tal-progress tal-paġna fuq il-parti ta 'fuq tal-iskrin
 settings_loader_left=Agħti spinner għall-menu tan-navigazzjoni
-settings_right_reload=Tagħbija paġna tal-kontenut default
+settings_right_reload=Tagħbija paġna default fuq swiċċ tab
 
 settings_right_hide_table_icons=Aħbi l-ikoni tal-mejda
 settings_right_hide_table_icons_description=Neħħi kompletament l-ikoni mit-tabelli tal-paġna tal-kontenut u turi rabtiet sempliċi ma 'chevron dritt
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Verżjoni ta 'żvilupp
 
 right_vm_server_summary=Sommarju tas-Server Virtwali
 
-settings_webmin_default_module=Modulu awtomatiku għal Webmin
+settings_webmin_default_module=Paġna default għal Webmin
 
 theme_xhred_global_unbeforeunload_title=Il-bidliet li għamilt ma jistgħux jiġu salvati
 theme_xhred_global_unbeforeunload_message=Jekk tkompli, il-bidliet mhux salvati f'din il-paġna jistgħu jintilfu b'mod permanenti.

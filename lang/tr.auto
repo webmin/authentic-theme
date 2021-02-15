@@ -132,7 +132,7 @@ settings_navigation_color=Renk paleti
 settings_background_color=İçerik sayfası renk paleti
 settings_loader_top=Ekranın üst kısmındaki sayfa ilerleme yükleyicisini etkinleştir
 settings_loader_left=Gezinme menüsü için çeviriciyi etkinleştir
-settings_right_reload=Varsayılan içerik sayfasını yükle
+settings_right_reload=Varsayılan sayfayı sekme anahtarına yükle
 
 settings_right_hide_table_icons=Tablo simgelerini gizle
 settings_right_hide_table_icons_description=İçerik sayfası tablolarından simgeleri tamamen kaldırın ve sağ köşeli çift ayraç ile düz bağlantılar görüntüleyin
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Geliştirme sürümü
 
 right_vm_server_summary=Sanal Sunucu Özeti
 
-settings_webmin_default_module=Webmin için varsayılan modül
+settings_webmin_default_module=Webmin için varsayılan sayfa
 
 theme_xhred_global_unbeforeunload_title=Yaptığınız değişiklikler kaydedilmeyebilir
 theme_xhred_global_unbeforeunload_message=Devam ederseniz, bu sayfadaki kaydedilmemiş değişiklikler kalıcı olarak kaybolabilir.

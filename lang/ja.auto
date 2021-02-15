@@ -4,7 +4,11 @@ theme_xhred_login_user=ユーザー名
 
 theme_xhred_session_failed=ログインに失敗しました。もう一度お試しください。
 
+settings_right_reload=タブスイッチにデフォルトページをロード
+
 settings_favorites=お気に入りボタンを表示
+
+settings_webmin_default_module=Webminのデフォルトページ
 
 #19.20
 extensions_mail_flag_spam_status=スパム状況

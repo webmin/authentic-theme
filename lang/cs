@@ -131,7 +131,6 @@ settings_hotkey_custom_9=Vlastni odkaz <code>9</code>
 settings_navigation_color=Color palette
 settings_background_color=Content page color palette
 settings_loader_left=Povolit posuvník pro navigační panel
-settings_right_reload=Nahrání výchozí stránky
 
 settings_right_hide_table_icons=Schovat ikony v tabulkách v pravém rámci
 settings_right_hide_table_icons_description=Úplně odstranit ikony ze stránek a zobrazit textové linky se šipkou

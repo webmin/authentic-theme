@@ -1,5 +1,9 @@
 theme_xhred_session_failed=Autentificare esuata. Vă rugăm să încercați din nou.
 
+settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
+
+settings_webmin_default_module=Pagină implicită pentru Webmin
+
 #19.20
 extensions_mail_flag_spam_status=Starea spamului
 extensions_mail_flag_spam_status_data=$1 din $2

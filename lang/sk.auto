@@ -132,7 +132,7 @@ settings_navigation_color=Farebná paleta
 settings_background_color=Paleta farieb stránky s obsahom
 settings_loader_top=Povoľte v hornej časti obrazovky zavádzač priebehu stránky
 settings_loader_left=Povoliť rozmetávač pre navigačné menu
-settings_right_reload=Načítať predvolenú stránku obsahu
+settings_right_reload=Načítať predvolenú stránku pri prepínaní kariet
 
 settings_right_hide_table_icons=Skryť ikony tabuľky
 settings_right_hide_table_icons_description=Úplne odstráňte ikony z tabuliek stránok s obsahom a zobrazte jednoduché odkazy so pravou šípkou
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=Vývojová verzia
 
 right_vm_server_summary=Zhrnutie virtuálneho servera
 
-settings_webmin_default_module=Predvolený modul pre Webmin
+settings_webmin_default_module=Predvolená stránka pre Webmin
 
 theme_xhred_global_unbeforeunload_title=Zmeny, ktoré ste vykonali, sa nemusia uložiť
 theme_xhred_global_unbeforeunload_message=Ak budete pokračovať, neuložené zmeny na tejto stránke sa môžu natrvalo stratiť.

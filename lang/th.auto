@@ -132,7 +132,7 @@ settings_navigation_color=จานสี
 settings_background_color=จานสีของหน้าเนื้อหา
 settings_loader_top=เปิดใช้งานตัวโหลดความคืบหน้าของเพจที่ด้านบนของหน้าจอ
 settings_loader_left=เปิดใช้งานสปินเนอร์สำหรับเมนูการนำทาง
-settings_right_reload=โหลดหน้าเนื้อหาเริ่มต้น
+settings_right_reload=โหลดหน้าเริ่มต้นบนสวิตช์แท็บ
 
 settings_right_hide_table_icons=ซ่อนไอคอนตาราง
 settings_right_hide_table_icons_description=ลบไอคอนออกอย่างสมบูรณ์จากตารางหน้าเนื้อหาและแสดงลิงก์ธรรมดาพร้อมเครื่องหมายบั้งด้านขวา
@@ -652,7 +652,7 @@ theme_xhred_global_development_version=รุ่นพัฒนา
 
 right_vm_server_summary=ข้อมูลสรุปเซิร์ฟเวอร์เสมือน
 
-settings_webmin_default_module=โมดูลเริ่มต้นสำหรับ Webmin
+settings_webmin_default_module=เพจเริ่มต้นสำหรับ Webmin
 
 theme_xhred_global_unbeforeunload_title=การเปลี่ยนแปลงที่คุณทำอาจไม่ถูกบันทึก
 theme_xhred_global_unbeforeunload_message=หากคุณดำเนินการต่อการเปลี่ยนแปลงที่ไม่ได้บันทึกในหน้านี้อาจสูญหายได้อย่างถาวร
