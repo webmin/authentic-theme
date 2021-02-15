@@ -2981,7 +2981,7 @@ sub theme_settings
 
             my $range_max = '1';
             my $range_min = '0';
-            my $iwidth    = '80';
+            my $iwidth    = $k eq 'settings_leftmenu_width' ? '25' : '80';
             my $range_step;
 
             if ($k eq 'settings_grayscale_level_navigation' ||
