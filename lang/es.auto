@@ -689,8 +689,6 @@ theme_xhred_global_firewall=Cortafuegos
 theme_xhred_settings_show_webmin_tab=¿Mostrar el interruptor de Webmin en el menú de navegación?
 
 #19.14
-settings_enable_container_offset=Habilitar desplazamiento de contenedor
-settings_enable_container_offset_description=Esta opción solo funcionará en pantallas con una resolución mínima de 1920 píxeles horizontales
 theme_xhred_filemanager_preparing_download=Preparando descarga. Archivando %number archivo (s). Por favor espere %dots
 theme_xhred_filemanager_prepared_download=La descarga está lista. Archivos archivados %number.
 theme_xhred_filemanager_canceled_download=Descarga cancelada

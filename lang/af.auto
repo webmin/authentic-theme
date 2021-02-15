@@ -777,8 +777,6 @@ theme_xhred_global_firewall=firewall
 theme_xhred_settings_show_webmin_tab=Wys die Webmin-skakelaar in die navigasiekieslys?
 
 #19.14
-settings_enable_container_offset=Aktiveer verpakking van houers
-settings_enable_container_offset_description=Hierdie opsie werk slegs op skerms met 'n minimum resolusie van 1920 horisontale pixels
 theme_xhred_filemanager_preparing_download=Berei die aflaai voor. Argiveer %number getallêer (s). Wag %dots
 theme_xhred_filemanager_prepared_download=Aflaai is gereed. Gearchiveerde %number getallêer (s).
 theme_xhred_filemanager_canceled_download=Aflaai gekanselleer.

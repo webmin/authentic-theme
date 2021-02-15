@@ -689,8 +689,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Vis Webmin-switch i navigationsmenuen?
 
 #19.14
-settings_enable_container_offset=Aktivér containerforskydning
-settings_enable_container_offset_description=Denne mulighed fungerer kun på skærme med en minimal opløsning på 1920 vandrette pixels
 theme_xhred_filemanager_preparing_download=Forbereder download. Arkivering af %number nummerfil (er). Vent %dots
 theme_xhred_filemanager_prepared_download=Download er klar. Arkiveret %number nummerfil (er).
 theme_xhred_filemanager_canceled_download=Download annulleret.

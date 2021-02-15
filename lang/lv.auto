@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Ugunsmūris
 theme_xhred_settings_show_webmin_tab=Rādīt Webmin slēdzi navigācijas izvēlnē?
 
 #19.14
-settings_enable_container_offset=Iespējot konteinera nobīdi
-settings_enable_container_offset_description=Šī opcija darbosies tikai uz ekrāniem ar minimālo izšķirtspēju 1920 horizontālie pikseļi
 theme_xhred_filemanager_preparing_download=Notiek lejupielādes sagatavošana. Arhivēšana %number faila (-u). Lūdzu, uzgaidiet %dots
 theme_xhred_filemanager_prepared_download=Lejupielāde ir gatava. Arhivēts %number failu (s).
 theme_xhred_filemanager_canceled_download=Lejupielāde atcelta.

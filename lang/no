@@ -776,8 +776,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Vis Webmin-bryter i navigasjonsmenyen?
 
 #19.14
-settings_enable_container_offset=Aktiver container offset
-settings_enable_container_offset_description=Dette alternativet vil bare fungere på skjermer med minimum oppløsning på 1920 horisontale piksler
 theme_xhred_filemanager_preparing_download=Forbereder nedlasting. Arkiverer %number fil(er). Vennligst vent%dots
 theme_xhred_filemanager_prepared_download=Nedlasting er klar. Arkiverte %number fil(er).
 theme_xhred_filemanager_canceled_download=Nedlasting avbrutt.

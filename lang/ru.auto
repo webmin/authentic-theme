@@ -563,8 +563,6 @@ theme_xhred_global_firewall=Брандмауэр
 theme_xhred_settings_show_webmin_tab=Показать переключатель Webmin в меню навигации?
 
 #19.14
-settings_enable_container_offset=Включить смещение контейнера
-settings_enable_container_offset_description=Эта опция будет работать только на экранах с минимальным разрешением 1920 пикселей по горизонтали
 theme_xhred_filemanager_preparing_download=Подготовка к загрузке. Архивирование %number файлов. Пожалуйста, подождите %dots
 theme_xhred_filemanager_prepared_download=Загрузка готова. Архивные %number файлов.
 theme_xhred_filemanager_canceled_download=Загрузка отменена.

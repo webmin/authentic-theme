@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Tűzfal
 theme_xhred_settings_show_webmin_tab=Megjeleníti a Webmin kapcsolót a navigációs menüben?
 
 #19.14
-settings_enable_container_offset=A konténer eltolásának engedélyezése
-settings_enable_container_offset_description=Ez az opció csak a képernyőkön működik, amelyek minimális felbontása 1920 vízszintes pixel
 theme_xhred_filemanager_preparing_download=A letöltés előkészítése. %number Számú fájl archiválása. Kérjük, várjon %dots
 theme_xhred_filemanager_prepared_download=A letöltés kész. Archivált %number fájl (ok).
 theme_xhred_filemanager_canceled_download=A letöltés megszakítva.

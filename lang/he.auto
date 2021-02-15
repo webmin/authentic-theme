@@ -777,8 +777,6 @@ theme_xhred_global_firewall=חומת אש
 theme_xhred_settings_show_webmin_tab=הצגת מתג Webmin בתפריט הניווט?
 
 #19.14
-settings_enable_container_offset=אפשר קיזוז מכולות
-settings_enable_container_offset_description=אפשרות זו תעבוד רק על מסכים עם רזולוציה מינימלית של 1920 פיקסלים אופקיים
 theme_xhred_filemanager_preparing_download=מכין הורדה. ארכוב קובצי %number. אנא המתן %dots
 theme_xhred_filemanager_prepared_download=ההורדה מוכנה. שמור קובצי %number בארכיון.
 theme_xhred_filemanager_canceled_download=ההורדה בוטלה.

@@ -777,8 +777,6 @@ theme_xhred_global_firewall=ไฟร์วอลล์
 theme_xhred_settings_show_webmin_tab=แสดงสวิตช์ Webmin ในเมนูนำทางหรือไม่
 
 #19.14
-settings_enable_container_offset=เปิดใช้งานการชดเชยคอนเทนเนอร์
-settings_enable_container_offset_description=ตัวเลือกนี้จะทำงานบนหน้าจอที่มีความละเอียดขั้นต่ำ 1920 พิกเซลแนวนอนเท่านั้น
 theme_xhred_filemanager_preparing_download=กำลังเตรียมการดาวน์โหลด การเก็บถาวรไฟล์ %number กรุณารอ %dots
 theme_xhred_filemanager_prepared_download=การดาวน์โหลดพร้อมแล้ว ไฟล์ %number เก็บถาวร
 theme_xhred_filemanager_canceled_download=ยกเลิกการดาวน์โหลด

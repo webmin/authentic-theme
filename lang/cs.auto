@@ -602,8 +602,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Zobrazit přepínač Webmin v navigační nabídce?
 
 #19.14
-settings_enable_container_offset=Povolit odsazení kontejneru
-settings_enable_container_offset_description=Tato volba bude fungovat pouze na obrazovkách s minimálním rozlišením 1920 horizontálních pixelů
 theme_xhred_filemanager_preparing_download=Příprava stahování. Archivace souborů %number. Počkejte prosím %dots
 theme_xhred_filemanager_prepared_download=Stahování je připraveno. Archivované %number souborů.
 theme_xhred_filemanager_canceled_download=Stahování bylo zrušeno.

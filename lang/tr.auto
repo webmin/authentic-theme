@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Gezinme menüsünde Webmin anahtarı gösterilsin mi?
 
 #19.14
-settings_enable_container_offset=Kapsayıcı ofsetini etkinleştir
-settings_enable_container_offset_description=Bu seçenek yalnızca minimum 1920 yatay piksel çözünürlüğe sahip ekranlarda çalışır
 theme_xhred_filemanager_preparing_download=İndirme hazırlanıyor. %number dosya (lar) ı arşivleniyor. Lütfen %dots bekleyin
 theme_xhred_filemanager_prepared_download=İndirme hazır. Arşivlenen %number dosyası.
 theme_xhred_filemanager_canceled_download=İndirme iptal edildi.

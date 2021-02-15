@@ -695,8 +695,6 @@ theme_xhred_global_firewall=Zapora ogniowa
 theme_xhred_settings_show_webmin_tab=Pokaż przełącznik Webmin w menu nawigacyjnym?
 
 #19.14
-settings_enable_container_offset=Włącz przesunięcie kontenera
-settings_enable_container_offset_description=Ta opcja działa tylko na ekranach o minimalnej rozdzielczości 1920 pikseli poziomych
 theme_xhred_filemanager_preparing_download=Przygotowuję pobieranie. Archiwizacja plików z %number. Poczekaj %dots
 theme_xhred_filemanager_prepared_download=Pobieranie jest gotowe. Zarchiwizowane pliki z %number.
 theme_xhred_filemanager_canceled_download=Pobieranie anulowane.

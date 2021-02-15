@@ -132,8 +132,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Tunjukkan suis Webmin dalam menu navigasi?
 
 #19.14
-settings_enable_container_offset=Dayakan pengimbangan kontena
-settings_enable_container_offset_description=Pilihan ini hanya akan berfungsi pada skrin dengan resolusi minimum 1920 piksel mendatar
 theme_xhred_filemanager_preparing_download=Menyiapkan muat turun. Mengarkibkan %number fail. Sila tunggu %dots
 theme_xhred_filemanager_prepared_download=Muat turun sudah siap. Fail %number diarkibkan
 theme_xhred_filemanager_canceled_download=Muat turun dibatalkan.

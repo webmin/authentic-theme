@@ -694,8 +694,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Mostrar a opção Webmin no menu de navegação?
 
 #19.14
-settings_enable_container_offset=Ativar deslocamento de contêiner
-settings_enable_container_offset_description=Esta opção funciona apenas em telas com resolução mínima de 1920 pixels horizontais
 theme_xhred_filemanager_preparing_download=Preparando o download. Arquivando %number arquivos. Aguarde %dots
 theme_xhred_filemanager_prepared_download=O download está pronto. %number arquivos arquivados.
 theme_xhred_filemanager_canceled_download=Download cancelado.

@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Erakutsi Webmin switch aldatzea nabigazio menuan?
 
 #19.14
-settings_enable_container_offset=Gaitu edukiontziaren desplazamendua
-settings_enable_container_offset_description=Aukera hau 1920 pixel horizontal gutxieneko bereizmena duten pantailetan bakarrik funtzionatuko da
 theme_xhred_filemanager_preparing_download=Deskarga prestatzen. %number fitxategi (k) artxibatzea. Mesedez itxaron %dots
 theme_xhred_filemanager_prepared_download=Deskarga prest dago. %number fitxategi (k) artxibatuta.
 theme_xhred_filemanager_canceled_download=Deskarga bertan behera utzi da.

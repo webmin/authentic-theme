@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Brandvägg
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 #19.14
-settings_enable_container_offset=Aktivera fönsterramar
-settings_enable_container_offset_description=Detta alternativet fungerar bara på skärmar med minsta upplösning på 1920 horisontella pixlar
 theme_xhred_filemanager_preparing_download=Förbereder nerladdning. Arkiverar %number fil(er). Vänta%dots
 theme_xhred_filemanager_prepared_download=Klar för nerladdning. Arkiverat %number fil(er).
 theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.

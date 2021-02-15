@@ -777,8 +777,6 @@ theme_xhred_global_firewall=방화벽
 theme_xhred_settings_show_webmin_tab=탐색 메뉴에 Webmin 스위치를 표시 하시겠습니까?
 
 #19.14
-settings_enable_container_offset=컨테이너 오프셋 사용
-settings_enable_container_offset_description=이 옵션은 최소 해상도 1920 가로 픽셀의 화면에서만 작동합니다
 theme_xhred_filemanager_preparing_download=다운로드 준비 중입니다. %number 파일을 보관 중입니다. %dots 기다려주십시오
 theme_xhred_filemanager_prepared_download=다운로드가 준비되었습니다. 보관 된 %number 파일.
 theme_xhred_filemanager_canceled_download=다운로드가 취소되었습니다.

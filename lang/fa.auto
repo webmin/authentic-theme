@@ -777,8 +777,6 @@ theme_xhred_global_firewall=دیواره آتش
 theme_xhred_settings_show_webmin_tab=نمایش سوئیچ وبمین در منوی ناوبری؟
 
 #19.14
-settings_enable_container_offset=ظرف را جبران کنید
-settings_enable_container_offset_description=این گزینه فقط روی صفحه نمایش هایی با حداقل وضوح تصویر 1920 پیکسل افقی کار خواهد کرد
 theme_xhred_filemanager_preparing_download=آماده سازی بارگیری بایگانی %number (پرونده) پرونده لطفا %dots صبر کنید
 theme_xhred_filemanager_prepared_download=بارگیری آماده است بایگانی %number پرونده فایل (ها) بایگانی شده است.
 theme_xhred_filemanager_canceled_download=بارگیری لغو شد

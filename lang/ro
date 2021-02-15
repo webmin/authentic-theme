@@ -776,8 +776,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Arăt comutare la Webmin in meniul de navigare?
 
 #19.14
-settings_enable_container_offset=Activați decalajul containerului
-settings_enable_container_offset_description=Această opțiune va funcționa numai pe ecrane cu o rezoluție minimă de 1920 de pixeli orizontali
 theme_xhred_filemanager_preparing_download=Prepar download. Arhivez %number fișier(e). Te rog așteptă%dots
 theme_xhred_filemanager_prepared_download=Downloadul este gata. Arhivez %number fișier(e).
 theme_xhred_filemanager_canceled_download=Download anulat.

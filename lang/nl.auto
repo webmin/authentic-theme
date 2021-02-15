@@ -660,8 +660,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Webmin-schakelaar weergeven in navigatiemenu?
 
 #19.14
-settings_enable_container_offset=Container-offset inschakelen
-settings_enable_container_offset_description=Deze optie werkt alleen op schermen met een minimale resolutie van 1920 horizontale pixels
 theme_xhred_filemanager_preparing_download=Download voorbereiden. %number Nummerbestand (en) archiveren. Even geduld %dots
 theme_xhred_filemanager_prepared_download=Download is klaar. Gearchiveerd %number nummerbestand (en).
 theme_xhred_filemanager_canceled_download=Download geannuleerd.

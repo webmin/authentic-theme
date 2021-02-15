@@ -777,8 +777,6 @@ theme_xhred_global_firewall=POŽARNE dvere
 theme_xhred_settings_show_webmin_tab=Zobraziť prepínač Webmin v navigačnej ponuke?
 
 #19.14
-settings_enable_container_offset=Povoliť posun kontajnera
-settings_enable_container_offset_description=Táto voľba bude fungovať iba na obrazovkách s minimálnym rozlíšením 1920 horizontálnych pixlov
 theme_xhred_filemanager_preparing_download=Pripravuje sa sťahovanie. Archivácia súborov s %number. Čakajte %dots
 theme_xhred_filemanager_prepared_download=Stiahnutie je pripravené. Archivované %number súborov.
 theme_xhred_filemanager_canceled_download=Sťahovanie bolo zrušené.

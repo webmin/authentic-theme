@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Užkarda
 theme_xhred_settings_show_webmin_tab=Rodyti naršyklės meniu „Webmin“ jungiklį?
 
 #19.14
-settings_enable_container_offset=Įgalinti konteinerio poslinkį
-settings_enable_container_offset_description=Ši parinktis veiks tik ekranuose, kurių mažiausia skiriamoji geba yra 1920 horizontaliųjų pikselių
 theme_xhred_filemanager_preparing_download=Pasiruošimas atsisiųsti. Archyvuojamas %number failas (-ai). Palaukite %dots
 theme_xhred_filemanager_prepared_download=Atsisiuntimas yra paruoštas. Archyvuotas failas (-ai) %number.
 theme_xhred_filemanager_canceled_download=Atsisiuntimas atšauktas.

@@ -48,11 +48,6 @@ print ui_table_row($theme_text{'settings_cm_editor_palette'},
                                                     ),
                                                     'settings_cm_editor_palette'
                    ));
-print ui_table_row($theme_text{'settings_enable_container_offset'},
-                   ui_yesno_radio('settings_enable_container_offset',
-                                  $theme_config{'settings_enable_container_offset'},
-                                  "true", "false"
-                   ));
 print ui_table_row($theme_text{'settings_contrast_mode'},
                    ui_yesno_radio('settings_contrast_mode', $theme_config{'settings_contrast_mode'}, "true", "false"));
 

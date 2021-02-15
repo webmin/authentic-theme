@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Τείχος προστασίας
 theme_xhred_settings_show_webmin_tab=Εμφάνιση διακόπτη Webmin στο μενού πλοήγησης;
 
 #19.14
-settings_enable_container_offset=Ενεργοποίηση μετατόπισης κοντέινερ
-settings_enable_container_offset_description=Αυτή η επιλογή θα λειτουργεί μόνο σε οθόνες με ελάχιστη ανάλυση 1920 οριζόντια pixel
 theme_xhred_filemanager_preparing_download=Προετοιμασία λήψης. Αρχειοθέτηση %number αρχείων. Περιμένετε %dots
 theme_xhred_filemanager_prepared_download=Η λήψη είναι έτοιμη. Αρχειοθετημένα %number αρχείων.
 theme_xhred_filemanager_canceled_download=Η λήψη ακυρώθηκε.

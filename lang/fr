@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Pare-feu
 theme_xhred_settings_show_webmin_tab=Afficher le commutateur Webmin dans le menu de navigation?
 
 #19.14
-settings_enable_container_offset=Activer le décalage du conteneur
-settings_enable_container_offset_description=Cette option ne fonctionnera que sur les écrans avec une résolution minimale de 1920 pixels horizontaux
 theme_xhred_filemanager_preparing_download=Préparation du téléchargement. Archivage %number fichier(s). Veuillez patienter %dots
 theme_xhred_filemanager_prepared_download=Le téléchargement est prêt. Archivé %number fichier(s).
 theme_xhred_filemanager_canceled_download=Téléchargement annulé.

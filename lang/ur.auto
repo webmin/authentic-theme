@@ -777,8 +777,6 @@ theme_xhred_global_firewall=فائر وال
 theme_xhred_settings_show_webmin_tab=نیویگیشن مینو میں ویب مین سوئچ دکھائیں؟
 
 #19.14
-settings_enable_container_offset=کنٹینر آفسیٹ کو فعال کریں
-settings_enable_container_offset_description=یہ آپشن صرف ان اسکرینوں پر کام کرے گا جن کی کم از کم 1920 افقی پکسلز کی قرارداد ہے
 theme_xhred_filemanager_preparing_download=ڈاؤن لوڈ کی تیاری کر رہا ہے۔ %number فائل (زبانیں) کو محفوظ کرنا۔ برائے مہربانی %dots انتظار کریں
 theme_xhred_filemanager_prepared_download=ڈاؤن لوڈ تیار ہے۔ محفوظ شدہ %number فائل (زبانیں)۔
 theme_xhred_filemanager_canceled_download=ڈاؤن لوڈ منسوخ

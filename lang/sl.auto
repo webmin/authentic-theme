@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Požarni zid
 theme_xhred_settings_show_webmin_tab=Pokaži stikalo Webmin v navigacijskem meniju?
 
 #19.14
-settings_enable_container_offset=Omogoči premik vsebnika
-settings_enable_container_offset_description=Ta možnost bo delovala samo na zaslonih z minimalno ločljivostjo 1920 horizontalnih pik
 theme_xhred_filemanager_preparing_download=Priprava prenosa. Arhiviranje datotek %number. Počakajte %dots
 theme_xhred_filemanager_prepared_download=Prenos je pripravljen. Arhivirane datoteke %number.
 theme_xhred_filemanager_canceled_download=Prenos preklican.

@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Mostrare interruttore Webmin nel menu di navigazione?
 
 #19.14
-settings_enable_container_offset=Abilita l'offset del contenitore
-settings_enable_container_offset_description=Questa opzione funziona solo su schermi con una risoluzione minima di 1920 pixel orizzontali.
 theme_xhred_filemanager_preparing_download=Preparazione del download. Archiviazione di %number file. Attendere %dots
 theme_xhred_filemanager_prepared_download=Il download è pronto. Archiviati %number file.
 theme_xhred_filemanager_canceled_download=Download annullato.

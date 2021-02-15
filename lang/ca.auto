@@ -57,8 +57,6 @@ theme_xhred_global_firewall=Tallafoc
 theme_xhred_settings_show_webmin_tab=Mostra el canvi Webmin al menú de navegació?
 
 #19.14
-settings_enable_container_offset=Activa la compensació de contenidors
-settings_enable_container_offset_description=Aquesta opció només funcionarà en pantalles amb una resolució mínima de 1920 píxels horitzontals
 theme_xhred_filemanager_preparing_download=Preparant la baixada. Arxivant %number fitxers (s). Espereu %dots
 theme_xhred_filemanager_prepared_download=La descàrrega ja està a punt. %number Arxiu (s) arxivat (s).
 theme_xhred_filemanager_canceled_download=S'ha cancel·lat la baixada.

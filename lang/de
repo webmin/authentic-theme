@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 #19.14
-settings_enable_container_offset=Container Abstand einschalten
-settings_enable_container_offset_description=Diese Option funktioniert nur auf Bildschirmen mit einer minimalen Auflösung von 1920 horizontale Bildpunkten.
 theme_xhred_filemanager_preparing_download=Bereite Herunterladen vor. Archiviere %number Dateien. Bitte warten%dots
 theme_xhred_filemanager_prepared_download=Herunterladen bereit. %number Dateien archiviert.
 theme_xhred_filemanager_canceled_download=Herunterladen abgebrochen.

@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Firewall
 theme_xhred_settings_show_webmin_tab=Показване на превключвателя на Webmin в менюто за навигация?
 
 #19.14
-settings_enable_container_offset=Активиране на компенсиране на контейнера
-settings_enable_container_offset_description=Тази опция ще работи само на екрани с минимална резолюция от 1920 хоризонтални пиксела
 theme_xhred_filemanager_preparing_download=Подготовка за изтегляне. Архивиране на %number (и) файлове (файлове). Моля, изчакайте %dots
 theme_xhred_filemanager_prepared_download=Изтеглянето е готово. Архивирани файлове %number (и).
 theme_xhred_filemanager_canceled_download=Изтеглянето е анулирано.

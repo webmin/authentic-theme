@@ -2535,8 +2535,6 @@ sub theme_settings
             'monokai',
             'settings_global_palette_unauthenticated',
             'light',
-            'settings_enable_container_offset',
-            'true',
             'settings_contrast_mode',
             'false',
             'settings_perform_content_scrolling',

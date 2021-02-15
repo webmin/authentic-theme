@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Брандмаўэр
 theme_xhred_settings_show_webmin_tab=Паказаць пераключальнік Webmin у меню навігацыі?
 
 #19.14
-settings_enable_container_offset=Уключыць зрушэнне кантэйнера
-settings_enable_container_offset_description=Гэтая опцыя будзе працаваць толькі на экранах з мінімальным дазволам у 1920 г. па гарызантальных пікселях
 theme_xhred_filemanager_preparing_download=Падрыхтоўка да загрузкі. Архіваванне %number файлаў (ы). Пачакайце, калі ласка, %dots
 theme_xhred_filemanager_prepared_download=Загрузка гатовая. Заархіваваны %number (ы).
 theme_xhred_filemanager_canceled_download=Загрузка адменена.

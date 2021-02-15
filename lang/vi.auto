@@ -777,8 +777,6 @@ theme_xhred_global_firewall=Bức tường lửa
 theme_xhred_settings_show_webmin_tab=Hiển thị chuyển đổi Webmin trong menu điều hướng?
 
 #19.14
-settings_enable_container_offset=Cho phép bù container
-settings_enable_container_offset_description=Tùy chọn này sẽ chỉ hoạt động trên màn hình với độ phân giải tối thiểu 1920 pixel ngang
 theme_xhred_filemanager_preparing_download=Chuẩn bị tải về. Lưu trữ %number tập tin. Vui lòng đợi %dots
 theme_xhred_filemanager_prepared_download=Tải về đã sẵn sàng. Lưu trữ %number tập tin (s).
 theme_xhred_filemanager_canceled_download=Tải về hủy bỏ.
