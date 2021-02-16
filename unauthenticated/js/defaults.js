@@ -18,7 +18,6 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_background_color = "gainsboro",
 
-    settings_hide_top_loader = false,
     settings_show_night_mode_link = true,
     settings_theme_options_button = true,
     settings_leftmenu_button_refresh = false,
@@ -26,9 +25,6 @@ var settings_mailbox_slash_delimiter = true,
     settings_cm_view_palette = "monokai",
     settings_cm_editor_palette = "monokai",
 
-    settings_contrast_mode = false,
-    settings_theme_make_date = true,
-    settings_enable_container_offset = true,
     settings_usermin_default_module = 'sysinfo.cgi',
     settings_document_title = 1,
 
@@ -135,4 +131,11 @@ var settings_mailbox_slash_delimiter = true,
 
     config_portable_theme_locale_languages = null,
 
-    settings_experimental_extended_on_hover = false;
+    settings_experimental_extended_on_hover = false,
+
+    // Options that can be manually controlled
+    settings_right_page_hide_persistent_vscroll = false,
+    settings_hide_top_loader = false,
+    settings_theme_make_date = true,
+    settings_enable_container_offset = true,
+    settings_contrast_mode = false,
