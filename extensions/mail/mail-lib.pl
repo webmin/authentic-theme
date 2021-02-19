@@ -239,7 +239,6 @@ sub message_details
         my @headers = map {ref $_ eq "ARRAY" ? @$_ : $_} @$headers;
         $headers = join(' ', @headers);
 
-        # print_array($headers);
         my ($source) = $headers =~ /eceived\sfrom\s(?!localhost)(.*?)\(.*?\[(?!127.0.0.1)(.*?)\]/;
         if ($1 && $2) {
             $source = $1 . " " . ui_text($2, 'light');
