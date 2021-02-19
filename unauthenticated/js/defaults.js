@@ -1,34 +1,35 @@
 // Theme default options
 
-var settings_mailbox_slash_delimiter = true,
+var
+    settings_mailbox_slash_delimiter = true,
     settings_right_reload = true,
-    settings_right_default_tab_usermin = "mail",
-    settings_right_virtualmin_default = "sysinfo.cgi",
-    settings_right_cloudmin_default = "sysinfo.cgi",
+    settings_right_default_tab_usermin = 'mail',
+    settings_right_virtualmin_default = 'sysinfo.cgi',
+    settings_right_cloudmin_default = 'sysinfo.cgi',
 
-    settings_navigation_color = "blue",
+    settings_navigation_color = 'blue',
 
-    settings_grayscale_level_navigation = "0",
-    settings_sepia_level_navigation = "0",
-    settings_saturate_level_navigation = "1.33",
-    settings_hue_level_navigation = "0",
-    settings_invert_level_navigation = "0",
-    settings_brightness_level_navigation = "1",
-    settings_contrast_level_navigation = "1",
+    settings_grayscale_level_navigation = '0',
+    settings_sepia_level_navigation = '0',
+    settings_saturate_level_navigation = '1.33',
+    settings_hue_level_navigation = '0',
+    settings_invert_level_navigation = '0',
+    settings_brightness_level_navigation = '1',
+    settings_contrast_level_navigation = '1',
 
-    settings_background_color = "gainsboro",
+    settings_background_color = 'gainsboro',
 
     settings_show_night_mode_link = true,
     settings_theme_options_button = true,
     settings_leftmenu_button_refresh = false,
 
-    settings_cm_view_palette = "monokai",
-    settings_cm_editor_palette = "monokai",
+    settings_cm_view_palette = 'monokai',
+    settings_cm_editor_palette = 'monokai',
 
     settings_usermin_default_module = 'sysinfo.cgi',
     settings_document_title = 1,
 
-    settings_side_slider_palette = "nav",
+    settings_side_slider_palette = 'nav',
     settings_side_slider_enabled = true,
     settings_side_slider_fixed = false,
     settings_side_slider_sysinfo_enabled = true,
@@ -38,35 +39,33 @@ var settings_mailbox_slash_delimiter = true,
     settings_show_webmin_tab = true,
 
     settings_hotkeys_active = true,
-    settings_hotkey_toggle_modifier = "altKey",
-    settings_hotkey_toggle_key_webmin = "w",
-    settings_hotkey_toggle_key_virtualmin = "v",
-    settings_hotkey_toggle_key_cloudmin = "c",
-    settings_hotkey_toggle_key_usermin = "u",
-    settings_hotkey_toggle_key_webmail = "m",
-    settings_hotkey_toggle_key_night_mode = "l",
-    settings_hotkey_shell2 = "k",
-    settings_hotkey_sysinfo = "i",
-    settings_hotkey_favorites = "f",
-    settings_hotkey_focus_search = "s",
-    settings_hotkey_navigation = "a",
-    settings_hotkey_slider = "e",
-    settings_hotkey_toggle_slider = "n",
-    settings_hotkey_reload = "r",
-
-    settings_global_passgen_format = "15|a-z,A-Z,0-9,#",
+    settings_hotkey_toggle_modifier = 'altKey',
+    settings_hotkey_toggle_key_webmin = 'w',
+    settings_hotkey_toggle_key_virtualmin = 'v',
+    settings_hotkey_toggle_key_cloudmin = 'c',
+    settings_hotkey_toggle_key_usermin = 'u',
+    settings_hotkey_toggle_key_webmail = 'm',
+    settings_hotkey_toggle_key_night_mode = 'l',
+    settings_hotkey_shell2 = 'k',
+    settings_hotkey_sysinfo = 'i',
+    settings_hotkey_favorites = 'f',
+    settings_hotkey_focus_search = 's',
+    settings_hotkey_navigation = 'a',
+    settings_hotkey_slider = 'e',
+    settings_hotkey_toggle_slider = 'n',
+    settings_hotkey_reload = 'r',
 
     settings_leftmenu_vm_cm_dropdown_icons = true,
 
-    settings_hotkey_custom_1 = false,
-    settings_hotkey_custom_2 = false,
-    settings_hotkey_custom_3 = false,
-    settings_hotkey_custom_4 = false,
-    settings_hotkey_custom_5 = false,
-    settings_hotkey_custom_6 = false,
-    settings_hotkey_custom_7 = false,
-    settings_hotkey_custom_8 = false,
-    settings_hotkey_custom_9 = false,
+    settings_hotkey_custom_1 = '',
+    settings_hotkey_custom_2 = '',
+    settings_hotkey_custom_3 = '',
+    settings_hotkey_custom_4 = '',
+    settings_hotkey_custom_5 = '',
+    settings_hotkey_custom_6 = '',
+    settings_hotkey_custom_7 = '',
+    settings_hotkey_custom_8 = '',
+    settings_hotkey_custom_9 = '',
 
     settings_side_slider_background_refresh_time = 5,
 
@@ -90,18 +89,14 @@ var settings_mailbox_slash_delimiter = true,
 
     settings_sysinfo_theme_updates = false,
 
-    settings_sysinfo_csf_updates = false,
-
     settings_collapse_navigation_link = true,
     settings_sysinfo_link_mini = false,
 
-    settings_sysinfo_panels_order='{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'F\',\'quota\':\'G\',\'bw\':\'I\',\'sysinfo\':\'H\',\'updates\':\'I\',\'ftypes\':\'J\',\'serial\':\'K\'}',
+    settings_sysinfo_panels_order = '{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'F\',\'quota\':\'G\',\'bw\':\'I\',\'sysinfo\':\'H\',\'updates\':\'I\',\'ftypes\':\'J\',\'serial\':\'K\'}',
 
     settings_perform_content_scrolling = true,
     settings_show_terminal_link2 = true,
     settings_favorites = true,
-    settings_mail_ui = true,
-
 
     config_portable_module_filemanager_records_per_page = 30,
     config_portable_module_filemanager_records_for_server_pagination = 1000,
@@ -124,18 +119,26 @@ var settings_mailbox_slash_delimiter = true,
     config_portable_module_xsql_fit_content_screen_height = false,
 
     config_portable_theme_locale_language = false,
-    config_portable_theme_locale_format_full = "LLLL",
-    config_portable_theme_locale_format_long = "LL",
-    config_portable_theme_locale_format_short = "L",
-    config_portable_theme_locale_format_time = "LTS",
+    config_portable_theme_locale_format_full = 'LLLL',
+    config_portable_theme_locale_format_long = 'LL',
+    config_portable_theme_locale_format_short = 'L',
+    config_portable_theme_locale_format_time = 'LTS',
 
     config_portable_theme_locale_languages = null,
 
     settings_experimental_extended_on_hover = false,
 
-    // Options that can be manually controlled
-    settings_right_page_hide_persistent_vscroll = false,
+    settings_global_passgen_format = '15|a-z,A-Z,0-9,#',
+
+
+    // Options that are not presented on UI but could be controlled manually,
+    // E.g. to change options below, you would need to open browser's console,
+    // change an option boolean value and call `theme.config.save()` function.
+    settings_right_page_hide_persistent_vscroll = true,
     settings_hide_top_loader = false,
     settings_theme_make_date = true,
     settings_enable_container_offset = true,
     settings_contrast_mode = false,
+    settings_sysinfo_csf_updates = false,
+    settings_mail_ui = true,
+    settings_show_theme_configuration_for_admins_only = false;

@@ -11,7 +11,7 @@ our (%in, %gconfig, %theme_text, $config_directory, $current_theme, $remote_user
 
 do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
-theme_config_dir_available();
+theme_make_config_dir();
 
 my $file = $config_directory . "/$current_theme/favorites-$remote_user.json";
 unlink_file($file);

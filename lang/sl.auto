@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Urejevalnik tematskih razširitev
 settings_right_theme_left_logo_title=Nadzor logotipa teme
 settings_right_theme_configurable_options_title=Nastavljive možnosti za avtentično temo
 
-settings_right_window_options_title=Možnosti okna
-settings_right_navigation_menu_title=Možnosti navigacijskega menija
-settings_right_table_options_title=Možnosti tabele
-settings_security_title=Možnosti varnostnih opozoril
-settings_right_hotkey_options_title=Možnosti hitre tipke
-settings_right_sysinfo_page_options_title=Možnosti nadzorne plošče
+settings_right_hotkey_options=Bližnjice
 
 settings_right_hotkey_custom_options_description=Povezave po meri omogočajo uporabo številk od <code>1</code> do <code>9</code> za hiter dostop do katerega koli veljavnega <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> lahko izvlečete s trenutno odprte desne strani z vsebino okvira z branjem njegovega vira. Pomembno je, da <code>URL</code> na začetku nima poševnice in ne uporablja predpone. Če želite na primer hitro preklopiti na Apache, nastavite na polje <code>custom link 1</code> <code>/apache/</code>. Če je privzeti modifikator hitrih tipk nastavljen na <code>Alt,</code> klikom na <code>Alt+1</code> se vam odpre modul Apache
 settings_hotkey_custom_1=Povezava po meri <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Privzeta stran za Virtualmin
 settings_right_cloudmin_default=Privzeta stran za Cloudmin
 
 settings_right_clear_local_cache=Počisti predpomnilnik
-settings_right_notification_slider_options_title=Možnosti stranskih drsnikov
 settings_side_slider_fixed=Vedno vidni
-settings_side_slider_palette=Drsna paleta
 settings_hotkey_toggle_slider=Hitra tipka za stranski drsnik
 
 settings_side_slider_enabled=Omogoči drsnik
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Generirano geslo %password je uspešn
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Ta datoteka se mora končati z `1;` da bi uspešno delali.
 
-#18.10
-theme_error_access_not_root=Dostop zavrnjen: Uporabnik potrebuje dostop do modula <em>Konfiguracija Webmin</em> za urejanje konfiguracije teme
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Prikažite simbolične ikone v spustnem meniju v Virtualmin/Cloudmin
 theme_xhred_global_shipped=Odpremljeno
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Posodobitev teme ni uspela. Poskusite uporabiti kon
 theme_xhred_git_patch_initiated=Začela se je posodobitev teme.
 theme_xhred_global_prev_page=Vrnite se na eno stran
 theme_xhred_global_help=Pomoč
-settings_right_soft_updates_page_options_title=Posodobitve programske opreme
 theme_xhred_git_compare_changes=Primerjaj spremembe
 theme_xhred_filemanager_link_to_clipboard=Ime simbolične povezave je bilo kopirano v odložišče.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Polna oblika
 theme_xhred_title_locale_long=Dolga oblika
 theme_xhred_title_locale_short=Kratek format
 settings_navigation_always_collapse=Vedno propadel
-settings_side_slider_fixed_description=Ta možnost je na voljo samo na zaslonih HD z minimalno ločljivostjo 1366 vodoravnih pik in z onemogočeno možnostjo, da se navigacija vedno strdi
 theme_xhred_filemanager_records_per_page=Privzeto število zapisov na strani
 theme_xhred_filemanager_sorting=Privzeta vrsta razvrščanja
 theme_xhred_filemanager_sorting_asc=Naraščajoče
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Izbrišite vsa obvestila
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Označi vsa obvestila kot prebrana
 theme_xhred_global_settings=Nastavitve
 theme_xhred_tooltip_side_slider_pinned=Stranski drsnik privijte/odvijte
-settings_side_slider_fixed_toggle=Pokaži stikalo za pin/unpin
-settings_side_slider_fixed_toggle_description=Ta možnost prikaže preklop v stranskem drsniku v spodnji vrstici in tako omogoči, da se njegova vidnost med letenjem preklopi, če so izpolnjeni pogoji iz prejšnje možnosti.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Namestite posodobitve teme tudi za Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajti
-settings_sysinfo_real_time_status_options=Možnosti spremljanja v realnem času
 settings_sysinfo_real_time_status_disk=Omogoči za diske
 settings_sysinfo_real_time_status_disk_description=Morda bi bilo koristno onemogočiti nadzor v realnem času za diske v počasnih/velikih datotečnih sistemih
 theme_xhred_title_locale_non_ui_config=Oblika datuma, ki jo ustvari strežnik
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Pripravlja se vam varnostna kopija. Lahko t
 
 settings_mail_ui=Omogoči nov uporabniški vmesnik e-pošte
 
-settings_show_theme_configuration_for_admins_only=Pokaži gumb nastavitev teme samo za skrbnike
 settings_show_theme_configuration_for_admins_only_error=Dostop zavrnjen: Skrbnik je blokiral dostop do prilagoditev uporabnikov
 
 theme_xhred_tooltip_navigation_pinned=Pripni/odveči navigacijski meni
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Odstranitev je bila uspešno končana, ve
 theme_xhred_connection_error_details_ssl=Preverite <a>samopodpisano potrdilo SSL</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Skrite harmonike
+settings_sysinfo_hidden_panels_provisional=Skrite harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Skrij podokno $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrite plošče lahko znova omogočite s pomočjo strani s konfiguracijo teme.
+settings_right_sysinfo_page_options=Nadzorna plošča in nadzor v realnem času
+settings_right_navigation_menu_options=Navigacijski meni
+settings_right_notification_slider_options=Stranski drsnik
+settings_right_table_options=Prikaz tabele
+settings_right_hotkey_custom_options=Bližnjične tipke za povezave po meri
+settings_right_soft_updates_page_options=Posodobitve teme
+settings_global_general_options_title=Splošne možnosti
+theme_error_access_not_root_user=Dostop zavrnjen: uporabnik nima pravice urejati tega odseka

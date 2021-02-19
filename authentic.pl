@@ -125,7 +125,7 @@ sub theme_header
             if ($theme_ui_post_header_text) {
                 print "<span data-sub_title><br>$theme_ui_post_header_text</tt></span>";
             } else {
-              print "<p class=\"margined-bottom-5\"></p>";
+                print "<p class=\"margined-bottom-5\"></p>";
             }
             print "</div>\n";
         }
@@ -171,7 +171,7 @@ sub theme_footer
                      get_env('request_uri') =~ /\/config.cgi\?/                       ||
                      get_env('request_uri') =~ /\/uconfig.cgi\?/                      ||
                      get_env('request_uri') =~ /\/webmin_search.cgi\?/                ||
-                     get_env('request_uri') =~ /\/settings-user.cgi/                  ||
+                     get_env('request_uri') =~ /\/tconfig.cgi/                        ||
                      get_env('request_uri') =~ /\/settings-editor_read.cgi/           ||
                      get_env('request_uri') =~ /\/settings-editor_favorites_read.cgi/ ||
                      get_env('request_uri') =~ /\/settings-logos.cgi/                 ||

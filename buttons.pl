@@ -61,15 +61,9 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
 {
     print '<li data-linked class="user-link theme-options cursor-pointer">';
     my $tooltip = get_button_tooltip('settings_title', undef, 'auto top');
-    if ($get_user_level eq '0' && foreign_available('webmin')) {
-        print '<a' .
-          $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/webmin/edit_themes.cgi" data-href="' .
-          $gconfig{'webprefix'} . '/webmin/edit_themes.cgi"><i class="fa fa-fw fa-tune scale2"></i></a>';
-    } else {
-        print '<a' .
-          $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/settings-user.cgi" data-href="' .
-          $gconfig{'webprefix'} . '/settings-user.cgi"><i class="fa fa-fw fa-tune"></i></a>';
-    }
+    print '<a' .
+      $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/tconfig.cgi" data-href="' .
+      $gconfig{'webprefix'} . '/tconfig.cgi"><i class="fa2 fa-fw fa2-palette"></i></a>';
     print '</li>';
 }
 

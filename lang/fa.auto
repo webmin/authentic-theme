@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=ویرایشگر برنامه تم
 settings_right_theme_left_logo_title=کنترل آرم تم
 settings_right_theme_configurable_options_title=گزینه های قابل تنظیم برای موضوع معتبر
 
-settings_right_window_options_title=گزینه های پنجره
-settings_right_navigation_menu_title=گزینه های فهرست پیمایش
-settings_right_table_options_title=گزینه های جدول
-settings_security_title=گزینه های هشدارهای امنیتی
-settings_right_hotkey_options_title=گزینه های کلید فوری
-settings_right_sysinfo_page_options_title=گزینه های داشبورد
+settings_right_hotkey_options=کلیدهای میانبر
 
 settings_right_hotkey_custom_options_description=پیوندهای سفارشی شما را قادر می سازد از <code>1</code> تا <code>9</code> تا سریعاً به هر <code>URL.</code> معتبر Webmin/Usermin/Virtualmin/Cloudmin دسترسی پیدا <code>URL.</code> <code>URL</code> می توان با خواندن منبع آن ، از صفحه محتوای قاب راست باز شده در حال حاضر استخراج کرد. مهم است که <code>URL</code> در ابتدا هیچ برشی ندارد و از پیشوندها استفاده نمی کند. به عنوان مثال ، برای جابجایی سریع به Apache ، روی <code>custom link 1</code> زمینه <code>/apache/</code>. اگر تنظیم کننده کلید پیش فرض پیش فرض روی <code>Alt,</code> تنظیم شود <code>Alt,</code> کلیک روی <code>Alt+1</code> ، ماژول Apache را برای شما باز می کنیم
 settings_hotkey_custom_1=پیوند سفارشی <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=صفحه پیش فرض برای Virtualmin
 settings_right_cloudmin_default=صفحه پیش فرض برای Cloudmin
 
 settings_right_clear_local_cache=پاک کردن حافظه پنهان
-settings_right_notification_slider_options_title=گزینه های کشویی جانبی
 settings_side_slider_fixed=همیشه قابل مشاهده باشید
-settings_side_slider_palette=پالت کشویی
 settings_hotkey_toggle_slider=کلید کلید برای کشویی جانبی
 
 settings_side_slider_enabled=کشویی را فعال کنید
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=رمز عبور تولید شده %pa
 theme_fileformat_perl=پرل
 theme_fileformat_perl_placeholder=این پرونده باید پایان یابد ` 1؛ ` تا با موفقیت کار کنیم
 
-#18.10
-theme_error_access_not_root=دسترسی رد شد: کاربر برای ویرایش پیکربندی موضوع به ماژول <em>پیکربندی وبمین</em> نیاز دارد
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=نمادهای نمادین را به صورت کشویی در Virtualmin/Cloudmin نمایش دهید
 theme_xhred_global_shipped=حمل شده
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=بروزرسانی طرح زمینه انجام ن�
 theme_xhred_git_patch_initiated=بروزرسانی موضوع آغاز شده است.
 theme_xhred_global_prev_page=به یک صفحه برگردید
 theme_xhred_global_help=کمک
-settings_right_soft_updates_page_options_title=بروز رسانی نرم افزار
 theme_xhred_git_compare_changes=تغییرات را مقایسه کنید
 theme_xhred_filemanager_link_to_clipboard=نام پیوند نمادین در کلیپ بورد کپی شده است.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=فرمت کامل
 theme_xhred_title_locale_long=فرمت طولانی
 theme_xhred_title_locale_short=قالب کوتاه
 settings_navigation_always_collapse=همیشه فرو ریخت
-settings_side_slider_fixed_description=این گزینه فقط در صفحه نمایش های HD با حداقل وضوح تصویر 1366 پیکسل افقی و گزینه غیرفعال برای نگه داشتن ناوبری همیشه از بین می رود
 theme_xhred_filemanager_records_per_page=تعداد پیش فرض سوابق در هر صفحه
 theme_xhred_filemanager_sorting=نوع مرتب سازی پیش فرض
 theme_xhred_filemanager_sorting_asc=صعودی
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=همه اعلان ها �
 theme_xhred_tooltip_side_slider_mark_read_all_notification=همه اعلان ها را به عنوان خوانده شده علامت گذاری کنید
 theme_xhred_global_settings=تنظیمات
 theme_xhred_tooltip_side_slider_pinned=پین/لغزنده سمت باز کردن
-settings_side_slider_fixed_toggle=نشان دادن پین/ناپدید شدن ضامن
-settings_side_slider_fixed_toggle_description=در صورت برطرف شدن شرایط موجود در گزینه قبلی ، این گزینه ضربدر را در قسمت کشویی کناری ، در ردیف پایین نمایش می دهد و باعث می شود قابلیت دید در پرواز تغییر یابد.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=به روزرسانی های تم را برای Usermin نیز نصب کنید
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=گیگابایت
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=کیلوبایت
 theme_xhred_nice_size_b=بایت
-settings_sysinfo_real_time_status_options=گزینه های نظارت در زمان واقعی
 settings_sysinfo_real_time_status_disk=برای دیسک ها فعال شود
 settings_sysinfo_real_time_status_disk_description=ممکن است غیرفعال کردن مانیتورینگ در زمان واقعی برای دیسک ها روی سیستم های فایل کند یا بزرگ باشد
 theme_xhred_title_locale_non_ui_config=فرمت تاریخ ایجاد شده توسط سرور
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=نسخه پشتیبان تهیه شده ش�
 
 settings_mail_ui=UI نامه جدید را فعال کنید
 
-settings_show_theme_configuration_for_admins_only=دکمه تنظیمات موضوع را فقط برای سرپرستان نشان دهید
 settings_show_theme_configuration_for_admins_only_error=دسترسی رد شد: سرپرست دسترسی به تنظیمات کاربر را مسدود کرده است
 
 theme_xhred_tooltip_navigation_pinned=منوی پیمایش/غیرفعال کردن پین
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=حذف با موفقیت به پایان 
 theme_xhred_connection_error_details_ssl=هشدار <a>گواهی SSL خود امضا شده</a> را بررسی کنید
 
 #19.71
-settings_sysinfo_hidden_panels=آکاردئون پنهان
+settings_sysinfo_hidden_panels_provisional=آکاردئون پنهان
 theme_xhred_tooltip_dashboard_panels_disable=پانل$1 پنهان شود
 theme_xhred_dashboard_panels_disabled_explain=با استفاده از صفحه پیکربندی موضوع ، پانل پنهان را می توان دوباره فعال کرد.
+settings_right_sysinfo_page_options=داشبورد و نظارت بر زمان واقعی
+settings_right_navigation_menu_options=منوی پیمایش
+settings_right_notification_slider_options=کشویی کناری
+settings_right_table_options=نمایش میز
+settings_right_hotkey_custom_options=کلیدهای میانبر را به صورت سفارشی پیوند دهید
+settings_right_soft_updates_page_options=به روز رسانی تم
+settings_global_general_options_title=گزینه های کلی
+theme_error_access_not_root_user=دسترسی ممنوع: کاربر ویرایش این بخش را ندارد

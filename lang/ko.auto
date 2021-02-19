@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=테마 확장 편집기
 settings_right_theme_left_logo_title=테마 로고 컨트롤
 settings_right_theme_configurable_options_title=인증 테마에 대해 구성 가능한 옵션
 
-settings_right_window_options_title=창 옵션
-settings_right_navigation_menu_title=탐색 메뉴 옵션
-settings_right_table_options_title=테이블 옵션
-settings_security_title=보안 경고 옵션
-settings_right_hotkey_options_title=핫키 옵션
-settings_right_sysinfo_page_options_title=대시 보드 옵션
+settings_right_hotkey_options=단축키
 
 settings_right_hotkey_custom_options_description=사용자 정의 링크를 사용하면 유효한 Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> 에 빠르게 액세스하기 위해 <code>1</code> 에서 <code>9</code> 숫자를 사용할 수 있습니다 <code>URL.</code> 소스를 읽으면 현재 열린 오른쪽 프레임 컨텐츠 페이지에서 <code>URL</code> 을 추출 할 수 있습니다. <code>URL</code> 은 처음에 슬래시가없고 접두사를 사용하지 않는 것이 중요합니다. 예를 들어, Apache로 빠르게 전환하려면 <code>custom link 1</code> 필드 <code>/apache/</code>. 기본 핫키 수정자가 <code>Alt,</code> 설정된 경우 <code>Alt+1</code> 클릭하면 Apache 모듈이 열립니다.
 settings_hotkey_custom_1=맞춤 링크 <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Virtualmin의 기본 페이지
 settings_right_cloudmin_default=Cloudmin의 기본 페이지
 
 settings_right_clear_local_cache=캐시 지우기
-settings_right_notification_slider_options_title=사이드 슬라이더 옵션
 settings_side_slider_fixed=항상 보이게
-settings_side_slider_palette=슬라이더 팔레트
 settings_hotkey_toggle_slider=사이드 슬라이더 단축키
 
 settings_side_slider_enabled=슬라이더 사용
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=생성 된 비밀번호 %password 가
 theme_fileformat_perl=펄
 theme_fileformat_perl_placeholder=이 파일은 `1;` 성공적으로 작동합니다.
 
-#18.10
-theme_error_access_not_root=액세스 거부 : 사용자는 테마 구성을 편집하려면 <em>Webmin 구성</em> 모듈에 액세스해야합니다.
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudmin의 드롭 다운에 기호 아이콘 표시
 theme_xhred_global_shipped=배송 됨
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=테마 업데이트에 실패했습니다. 콘솔�
 theme_xhred_git_patch_initiated=테마 업데이트가 시작되었습니다.
 theme_xhred_global_prev_page=한 페이지 뒤로
 theme_xhred_global_help=도움
-settings_right_soft_updates_page_options_title=소프트웨어 업데이트
 theme_xhred_git_compare_changes=변경 사항 비교
 theme_xhred_filemanager_link_to_clipboard=심볼릭 링크의 이름이 클립 보드에 복사되었습니다.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=풀 포맷
 theme_xhred_title_locale_long=긴 형식
 theme_xhred_title_locale_short=짧은 형식
 settings_navigation_always_collapse=항상 붕괴
-settings_side_slider_fixed_description=이 옵션은 최소 해상도가 1366 수평 픽셀이고 내비게이션을 항상 축소 상태로 유지하기위한 옵션이 비활성화 된 HD 화면에서만 사용할 수 있습니다
 theme_xhred_filemanager_records_per_page=페이지 당 기본 레코드 수
 theme_xhred_filemanager_sorting=기본 정렬 유형
 theme_xhred_filemanager_sorting_asc=오름차순
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=모든 알림 삭제
 theme_xhred_tooltip_side_slider_mark_read_all_notification=모든 알림을 읽은 상태로 표시
 theme_xhred_global_settings=설정
 theme_xhred_tooltip_side_slider_pinned=핀/핀 해제 사이드 슬라이더
-settings_side_slider_fixed_toggle=핀/핀 해제 토글 표시
-settings_side_slider_fixed_toggle_description=이 옵션은 측면 슬라이더의 맨 아래 행에 토글을 표시하여 이전 옵션의 조건이 충족되는 경우 즉시 가시성을 토글 할 수 있습니다.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Usermin을위한 테마 업데이트 설치
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=바이트
-settings_sysinfo_real_time_status_options=실시간 모니터링 옵션
 settings_sysinfo_real_time_status_disk=디스크 활성화
 settings_sysinfo_real_time_status_disk_description=느리거나 큰 파일 시스템에서 디스크에 대한 실시간 모니터링을 비활성화하는 것이 유용 할 수 있습니다
 theme_xhred_title_locale_non_ui_config=서버 생성 날짜 형식
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=백업 준비 중입니다. 시간이 걸�
 
 settings_mail_ui=새 메일 UI 사용
 
-settings_show_theme_configuration_for_admins_only=관리자에게만 테마 설정 버튼 표시
 settings_show_theme_configuration_for_admins_only_error=액세스 거부 : 관리자가 사용자 정의에 대한 액세스를 차단했습니다
 
 theme_xhred_tooltip_navigation_pinned=탐색 메뉴 핀/핀 해제
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=제거가 성공적으로 완료되었지
 theme_xhred_connection_error_details_ssl=<a>자체 서명 된 SSL 인증서</a> 경고 확인
 
 #19.71
-settings_sysinfo_hidden_panels=숨겨진 아코디언
+settings_sysinfo_hidden_panels_provisional=숨겨진 아코디언
 theme_xhred_tooltip_dashboard_panels_disable=$1 패널 숨기기
 theme_xhred_dashboard_panels_disabled_explain=숨겨진 패널은 테마 구성 페이지를 사용하여 다시 활성화 할 수 있습니다.
+settings_right_sysinfo_page_options=대시 보드 및 실시간 모니터링
+settings_right_navigation_menu_options=탐색 메뉴
+settings_right_notification_slider_options=사이드 슬라이더
+settings_right_table_options=테이블 디스플레이
+settings_right_hotkey_custom_options=사용자 정의 링크 단축키
+settings_right_soft_updates_page_options=테마 업데이트
+settings_global_general_options_title=일반 옵션
+theme_error_access_not_root_user=액세스 거부 : 사용자는이 섹션을 편집 할 권한이 없습니다.

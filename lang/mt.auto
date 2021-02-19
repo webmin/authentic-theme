@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Editur Estensjonijiet Tema
 settings_right_theme_left_logo_title=Kontroll tal-Logo tat-Tema
 settings_right_theme_configurable_options_title=Għażliet konfigurabbli għal Tema Awtentika
 
-settings_right_window_options_title=Għażliet tat-Tieqa
-settings_right_navigation_menu_title=Għażliet fil-menu ta 'navigazzjoni
-settings_right_table_options_title=Għażliet tat-tabella
-settings_security_title=Għażliet ta 'Twissijiet ta' Sigurtà
-settings_right_hotkey_options_title=Għażliet Hotkey
-settings_right_sysinfo_page_options_title=Opzjonijiet tad-Dashboard
+settings_right_hotkey_options=Hotkeys
 
 settings_right_hotkey_custom_options_description=Rabtiet personalizzati jippermettulek tuża numri minn <code>1</code> sa <code>9</code> sabiex taċċessa malajr kwalunkwe URL validu Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> L- <code>URL</code> tista 'tiġi estratta mill-paġna tal-kontenut tal-qafas tal-lemin miftuħa bħalissa, billi taqra s-sors tagħha. Huwa importanti li l- <code>URL</code> ma jkollu l-ebda mmejla fil-bidu u ma jużax prefissi. Pereżempju, biex taqleb malajr għal Apache, issettja r <code>custom link 1</code> qasam <code>/apache/</code>. Jekk il-modifikatur tal-hotkeys default issettjat għal <code>Alt,</code> tikklikkja <code>Alt+1</code>, se tiftaħek il-modulu Apache
 settings_hotkey_custom_1=Link personalizzat <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Paġna awtomatika għal Virtualmin
 settings_right_cloudmin_default=Paġna awtomatika għal Cloudmin
 
 settings_right_clear_local_cache=Ċara l-cache
-settings_right_notification_slider_options_title=Għażliet tas-slider tal-ġenb
 settings_side_slider_fixed=Żomm dejjem viżibbli
-settings_side_slider_palette=Slider paletta
 settings_hotkey_toggle_slider=Hotkey għal slider tal-ġenb
 
 settings_side_slider_enabled=Jippermetti slider
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Il-password iġġenerat %password ġi
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Dan il-fajl irid jintemm `1;` biex taħdem b'suċċess.
 
-#18.10
-theme_error_access_not_root=Aċċess miċħud: L-utent jeħtieġ aċċess għall-modulu <em>Konfigurazzjoni Webmin</em> biex jeditja l-konfigurazzjoni tat-tema
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Uri ikoni simboliċi fi drop-down fi Virtualmin/Cloudmin
 theme_xhred_global_shipped=Ġarr
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=L-aġġornament tat-tema falla. Ipprova uża consol
 theme_xhred_git_patch_initiated=Inbeda aġġornament tat-tema.
 theme_xhred_global_prev_page=Mur lura paġna waħda
 theme_xhred_global_help=Għajnuna
-settings_right_soft_updates_page_options_title=Aġġornamenti tas-Softwer
 theme_xhred_git_compare_changes=Qabbel il-bidliet
 theme_xhred_filemanager_link_to_clipboard=L-isem tal-link simboliku ġie kkupjat fil-clipboard.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Format sħiħ
 theme_xhred_title_locale_long=Format twil
 theme_xhred_title_locale_short=Format qasir
 settings_navigation_always_collapse=Dejjem waqa '
-settings_side_slider_fixed_description=Din l-għażla hija disponibbli biss fuq skrins HD b'riżoluzzjoni minima ta '1366 pixel orizzontali u b'għażla b'diżabilità biex iżżomm in-navigazzjoni dejjem waqa'
 theme_xhred_filemanager_records_per_page=Numru default ta 'rekords għal kull paġna
 theme_xhred_filemanager_sorting=Tip ta 'għażla awtomatiku
 theme_xhred_filemanager_sorting_asc=Axxendenti
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Ħassar in-notifiki koll
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Immarka n-notifiki kollha kif qrajt
 theme_xhred_global_settings=Is-settings
 theme_xhred_tooltip_side_slider_pinned=Pin/slider ġenb slider
-settings_side_slider_fixed_toggle=Uri l-pin/unpin toggle
-settings_side_slider_fixed_toggle_description=Din l-għażla turi t-toggle, fis-slajder tal-ġenb, fir-ringiela tal-qiegħ, u tippermetti li tattiva l-viżibbiltà tagħha fuq il-fly, jekk jiġu ssodisfati l-kundizzjonijiet fl-għażla ta 'qabel.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installa aġġornamenti tat-tema għal Usermin ukoll
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Għażliet ta 'monitoraġġ f'ħin reali
 settings_sysinfo_real_time_status_disk=Jippermetti d-diski
 settings_sysinfo_real_time_status_disk_description=Jista 'jkun utli li tiddiżattiva l-monitoraġġ f'ħin reali għal diski fuq sistemi ta' fajls bil-mod/kbar
 theme_xhred_title_locale_non_ui_config=Format ta 'data ġġenerat minn server
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Il-backup tiegħek qed jitħejja. Jista 'ji
 
 settings_mail_ui=Agħti UI tal-posta l-ġdida
 
-settings_show_theme_configuration_for_admins_only=Uri l-buttuna tas-settings tat-tema għall-amministraturi biss
 settings_show_theme_configuration_for_admins_only_error=Aċċess miċħud: L-amministratur jibblokka l-aċċess għall-customisations tal-utenti
 
 theme_xhred_tooltip_navigation_pinned=Pin/unpin menu navigazzjoni
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=It-tneħħija spiċċat b'suċċess iżda
 theme_xhred_connection_error_details_ssl=Iċċekkja t-twissija <a>ċertifikat SSL iffirmat minnu nnifsu</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Akkordjoni moħbija
+settings_sysinfo_hidden_panels_provisional=Akkordjoni moħbija
 theme_xhred_tooltip_dashboard_panels_disable=Aħbi $1 panel
 theme_xhred_dashboard_panels_disabled_explain=Il-pannell moħbi jista 'jerġa' jiġi attivat billi tintuża l-paġna tal-konfigurazzjoni tat-tema.
+settings_right_sysinfo_page_options=Dashboard u monitoraġġ f'ħin reali
+settings_right_navigation_menu_options=Menu tan-navigazzjoni
+settings_right_notification_slider_options=Slider tal-ġenb
+settings_right_table_options=Wirja tal-mejda
+settings_right_hotkey_custom_options=Hotkeys ta 'links personalizzati
+settings_right_soft_updates_page_options=Aġġornamenti tat-tema
+settings_global_general_options_title=Għażliet ġenerali
+theme_error_access_not_root_user=Aċċess miċħud: L-utent mhux privileġġjat li jeditja din it-taqsima

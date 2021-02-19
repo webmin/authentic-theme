@@ -109,13 +109,6 @@ settings_right_theme_left_extensions_title=Editor de Extensii Authentic Theme
 settings_right_theme_left_logo_title=Administrare Logo Authentic Theme
 settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
 
-settings_right_window_options_title=Opțiunile de Fereastră
-settings_right_navigation_menu_title=Opțiunile Meniului de Navigare
-settings_right_table_options_title=Opțiuni pentru Tabele
-settings_security_title=Opțiuni pentru Alerte de Securitate
-settings_right_hotkey_options_title=Opțiuni Hotkeys
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=Legăturile personalizate îți dă voie sa folosești cifre de la <code>1</code> la <code>9</code> pentru a accesa orice <code>URL</code> valid Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code>-ul poate fi extras din cardul din dreapta al paginii curente, citindu-i sursa. Este important ca <code>URL</code>-ul să nu aibă slash-uri la început și să nu folosească prefixe. Ca exemplu, pentru a trece rapid la Apache, configurează câmpul <code>legătură personalizată 1</code> <code>/apache/</code>. Dacă tasta pentru hotkey este implicit <code>Alt,</code> făcând click <code>Alt+1</code>, va deschide modulul Apache.
 settings_hotkey_custom_1=Legătură personalizată <code>1</code>
 settings_hotkey_custom_2=Legătură personalizată <code>2</code>
@@ -173,9 +166,7 @@ settings_right_virtualmin_default=Paginia implicită pentru Virtualmin
 settings_right_cloudmin_default=Paginia implicită pentru Cloudmin
 
 settings_right_clear_local_cache=Eliberează Cache-ul
-settings_right_notification_slider_options_title=Side slider options
 settings_side_slider_fixed=Menține întotdeauna sliderul vizibil
-settings_side_slider_palette=Culoare Slider
 settings_hotkey_toggle_slider=Hotkey for side slider
 
 settings_side_slider_enabled=Activează slider
@@ -508,9 +499,6 @@ theme_xhred_password_generator_new_success=Parola generată %password s-a copiat
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Aces fişier trebuie să se termine cu `1;` ca să poată funcţiona cu succes.
 
-#18.10
-theme_error_access_not_root=Acces refuzat: Utilizatorul are nevoie de acces la modulul <em>Configurări Webmin</em> pentru a edita configurația temei
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Afișați pictogramele simbolice în meniul derulant în Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
@@ -592,7 +580,6 @@ theme_xhred_git_patch_update=Actualizare temă eşuată.Încearcă să foloseşt
 theme_xhred_git_patch_initiated=Actualizare temă inişiată.
 theme_xhred_global_prev_page=Înapoi o pagină
 theme_xhred_global_help=Ajutor
-settings_right_soft_updates_page_options_title=Actualizări Software
 theme_xhred_git_compare_changes=Compară schimbările
 theme_xhred_filemanager_link_to_clipboard=Numele link-ului simbolic a fost copiat în clipboard.
 
@@ -730,7 +717,6 @@ theme_xhred_title_locale_full=Format întreg
 theme_xhred_title_locale_long=Format lung
 theme_xhred_title_locale_short=Format scurt
 settings_navigation_always_collapse=Întotdeauna desfăcute
-settings_side_slider_fixed_description=Această opțiune este disponibilă doar pe ecrane HD cu o rezoluție minimă de 1366 pixeli pe orizontală și cu opțiunea de menținere a navigației desfășurată dezactivată
 theme_xhred_filemanager_records_per_page=Număr de repere implicit, pe pagină implicită
 theme_xhred_filemanager_sorting=Tip de sortare implicit
 theme_xhred_filemanager_sorting_asc=Ascendentă
@@ -758,8 +744,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Șterge toate notificăr
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Marchează toate notificarile ca citite
 theme_xhred_global_settings=Setări
 theme_xhred_tooltip_side_slider_pinned=Fixează/de-fixează slider-ul lateral
-settings_side_slider_fixed_toggle=Arată comutarea fixează/de-fixează
-settings_side_slider_fixed_toggle_description=Această opțiune va arăta comutatorul, în slide-ul lateral, în randul din subsol, permițând comutarea vizibilității pe fugă, dacă se întrunesc condițiile din opțiunea precedentă.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalează actualizări de temă și pentru Usermin
@@ -783,7 +767,6 @@ theme_xhred_nice_size_GB=GO(GB)
 theme_xhred_nice_size_MB=MO(MB)
 theme_xhred_nice_size_kB=kO(kB)
 theme_xhred_nice_size_b=octeți
-settings_sysinfo_real_time_status_options=Opțiuni de monitorizare în timp real
 settings_sysinfo_real_time_status_disk=Activează pentru discuri
 settings_sysinfo_real_time_status_disk_description=Ar putea fi util să dezactivezi monitorizarea în timp real a discurilor pe sistemele de fișiere lente/mari
 theme_xhred_title_locale_non_ui_config=Format non-UI (ca în e-mailurile automate și fișierele exportate)
@@ -893,7 +876,6 @@ theme_xhred_backup_is_being_prepared=Backup-ul tău se prepară. Va dura ceva ti
 
 settings_mail_ui=Activeaza noul UI pentru e-mail
 
-settings_show_theme_configuration_for_admins_only=Afișază butonul Setări de temă numai pentru administratori
 settings_show_theme_configuration_for_admins_only_error=Acces restricționat: Administratorul a blocat accesul personalizările utilizatorului
 
 theme_xhred_tooltip_navigation_pinned=Fixează/Defixează meniul de navigare

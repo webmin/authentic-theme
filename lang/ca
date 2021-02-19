@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Editor de Complements
 settings_right_theme_left_logo_title=Gestió del logotip
 settings_right_theme_configurable_options_title=Opcions de configuració
 
-settings_right_window_options_title=Finestra d'opcions
-settings_right_navigation_menu_title=Opcions del menú de navegació
-settings_right_table_options_title=Opcions de les taules
-settings_security_title=Opcions de les alertes de seguretat
-settings_right_hotkey_options_title=Opcions de les dreceres
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=Les dreceres personalitzades permeten utilitzar els dígits del 1 fins al 9 per tal d'accedir de forma ràpida a qualsevol element. La URL es pot obtenir mirant el seu orígen. És important que la URL no tingui la barra inclinada ni utilitzi cap prefixe.</br>Per exemple, per accedir ràpidament al mòdul Apache cal definir al camp "Drecera 1", el paràmetre <code>/apache/</code>. Si la opció de drecera està configurat a ALT, prement "Alt+1" s'obrirà el mòdul d'apache.
 settings_hotkey_custom_1=Drecera <code>1</code>
 settings_hotkey_custom_2=Drecera <code>2</code>
@@ -174,9 +167,7 @@ settings_right_virtualmin_default=Pàgina per defecte de Virtualmin
 settings_right_cloudmin_default=Pàgina per defecte de Cloudmin
 
 settings_right_clear_local_cache=Neteja la memòria cau
-settings_right_notification_slider_options_title=Opcions del panell dret
 settings_side_slider_fixed=Mantenir sempre visible
-settings_side_slider_palette=Color del fons
 settings_hotkey_toggle_slider=Dreceres del panell dret
 
 settings_side_slider_enabled=Habilitar el panell dret
@@ -509,9 +500,6 @@ theme_xhred_password_generator_new_success=S'ha generat la contrasenya %password
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Aquest arxiu ha d'acabar en `1;` per a funcionar correctament.
 
-#18.10
-theme_error_access_not_root=Accés denegat: L'usuari necessita poder accedir a la configuració de webmin per tal de poder editar la configuració del tema.
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Mostra icones simbòliques a Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
@@ -593,7 +581,6 @@ theme_xhred_git_patch_update=No s'ha pogut actualitzar el tema. Utilitza la cons
 theme_xhred_git_patch_initiated=S'ha iniciat correctament l'actualització del tema.
 theme_xhred_global_prev_page=Pàgina anterior
 theme_xhred_global_help=Ajuda
-settings_right_soft_updates_page_options_title=Actualitzacions de programari
 theme_xhred_git_compare_changes=Compara els canvis
 theme_xhred_filemanager_link_to_clipboard=El nom de l'enllaç s'ha copiat correctament al porta-retalls.
 

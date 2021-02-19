@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Gaien hedapenen editorea
 settings_right_theme_left_logo_title=Gaiaren logotipoaren kontrola
 settings_right_theme_configurable_options_title=Aukera konfiguragarriak Benetako Gaia
 
-settings_right_window_options_title=Leiho aukerak
-settings_right_navigation_menu_title=Nabigazioaren menuko aukerak
-settings_right_table_options_title=Taularen aukerak
-settings_security_title=Segurtasun Alerten aukerak
-settings_right_hotkey_options_title=Zuzeneko tekla aukerak
-settings_right_sysinfo_page_options_title=Arbel aukerak
+settings_right_hotkey_options=Tekla lasterrak
 
 settings_right_hotkey_custom_options_description=Lotura pertsonalizatuak <code>1</code> <code>9</code> arteko zenbakiak erabiltzeko aukera ematen dizu edozein Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> baliozkoak sartzeko <code>URL.</code> Unean irekitako eskuineko markoaren edukiaren orrialdetik <code>URL</code> sor daiteke, bere jatorria irakurriz. Garrantzitsua da <code>URL</code> hasieran ez duela zirrikiturik eta ez erabiltzea aurrizkiak. Adibidez, Apachera azkar aldatzeko, ezarri <code>custom link 1</code> <code>/apache/</code> eremu <code>custom link 1</code>. Teklatuko lasterbideen lehenetsia <code>Alt,</code> ezarrita badago <code>Alt,</code> <code>Alt+1</code> sakatzean Apache modulua irekiko zaizu
 settings_hotkey_custom_1=<code>1</code> lotura pertsonalizatua
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Lehenetsitako orria Virtualmin-en
 settings_right_cloudmin_default=Lehenetsitako orria Cloudminen
 
 settings_right_clear_local_cache=Garbitu cachea
-settings_right_notification_slider_options_title=Alboko graduatzailearen aukerak
 settings_side_slider_fixed=Jarrai beti ikusgai
-settings_side_slider_palette=Irristagaitza paleta
 settings_hotkey_toggle_slider=Alboko graduatzailearentzako laster-tekla
 
 settings_side_slider_enabled=Gaitu graduatzailea
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Sortutako %password arbelean kopiatu 
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Fitxategi honekin amaitu behar da `1;` arrakastaz lan egiteko.
 
-#18.10
-theme_error_access_not_root=Sarbide ukatua: erabiltzaileak <em>Webmin Configuration</em> modulurako sarbidea behar du gaiaren konfigurazioa editatzeko
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Erakutsi goitibeherako ikono sinbolikoak Virtualmin/Cloudmin zerbitzuan
 theme_xhred_global_shipped=datorrena
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Gaiaren eguneratzeak huts egin du. Saiatu kontsola 
 theme_xhred_git_patch_initiated=Gaiaren eguneratzea abiarazi da.
 theme_xhred_global_prev_page=Itzuli orri bat
 theme_xhred_global_help=Laguntza
-settings_right_soft_updates_page_options_title=Software eguneratzeak
 theme_xhred_git_compare_changes=Aldatu aldaketak
 theme_xhred_filemanager_link_to_clipboard=Esteka sinbolikoaren izena arbelean kopiatu da.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Formatu osoa
 theme_xhred_title_locale_long=Formatu luzea
 theme_xhred_title_locale_short=Formatu laburra
 settings_navigation_always_collapse=Beti erori da
-settings_side_slider_fixed_description=Aukera hau HD pantailetan soilik dago erabilgarri 1366 pixel horizontaleko bereizmenarekin eta nabigazioa beti erortuta mantentzeko aukera desgaituta dutenekin
 theme_xhred_filemanager_records_per_page=Orri bakoitzeko erregistro kopurua lehenetsita
 theme_xhred_filemanager_sorting=Lehenespenez ordenatzeko mota
 theme_xhred_filemanager_sorting_asc=Goruntz
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Ezabatu jakinarazpen guz
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Markatu jakinarazpen guztiak irakurri ahala
 theme_xhred_global_settings=ezarpenak
 theme_xhred_tooltip_side_slider_pinned=Pin/unpin alboko graduatzailea
-settings_side_slider_fixed_toggle=Erakutsi pin/unpin toggle
-settings_side_slider_fixed_toggle_description=Aukera honek txandakatzeko alboko labainean beheko errenkadan bistaratuko du eta aukera honek aurreko ikusiko baldintzak betetzen baditu, ikusgarritasuna txertatu dezake.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalatu gaiaren eguneratzeak Erabiltzaileentzako ere
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=byte
-settings_sysinfo_real_time_status_options=Denbora errealeko jarraipena egiteko aukerak
 settings_sysinfo_real_time_status_disk=Gaitu diskoetarako
 settings_sysinfo_real_time_status_disk_description=Baliteke baliagarria izan daitekeela fitxategi-sistema geldo edo handietako diskoetarako denbora errealeko jarraipena desgaitzea
 theme_xhred_title_locale_non_ui_config=Zerbitzariak sortutako data formatua
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Zure babeskopiak prestatzen ari dira. Pixka
 
 settings_mail_ui=Gaitu posta-interfaze berria
 
-settings_show_theme_configuration_for_admins_only=Erakutsi gaiaren ezarpenen botoia administratzaileentzat bakarrik
 settings_show_theme_configuration_for_admins_only_error=Sarbide ukatua: administratzaileak erabiltzaileen pertsonalizazioetarako sarbidea blokeatu du
 
 theme_xhred_tooltip_navigation_pinned=Pinatu/desblokeatu nabigazio menua
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objekt
 theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziurtagiria</a> abisua
 
 #19.71
-settings_sysinfo_hidden_panels=Ezkutuko akordeoiak
+settings_sysinfo_hidden_panels_provisional=Ezkutuko akordeoiak
 theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela
 theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke gaiaren konfigurazio orria erabiliz.
+settings_right_sysinfo_page_options=Arbel eta denbora errealeko monitorizazioa
+settings_right_navigation_menu_options=Nabigazio menua
+settings_right_notification_slider_options=Alboko graduatzailea
+settings_right_table_options=Mahaiaren bistaratzea
+settings_right_hotkey_custom_options=Esteka pertsonalizatuak laster-teklak
+settings_right_soft_updates_page_options=Gaiaren eguneratzeak
+settings_global_general_options_title=Aukera orokorrak
+theme_error_access_not_root_user=Sarbidea ukatuta: erabiltzaileak ez du atal hau editatzeko baimenik

@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Editor rozšírení motívov
 settings_right_theme_left_logo_title=Ovládanie loga témy
 settings_right_theme_configurable_options_title=Konfigurovateľné možnosti pre autentickú tému
 
-settings_right_window_options_title=Možnosti okna
-settings_right_navigation_menu_title=Možnosti navigačnej ponuky
-settings_right_table_options_title=Možnosti tabuľky
-settings_security_title=Možnosti výstrah zabezpečenia
-settings_right_hotkey_options_title=Možnosti klávesových skratiek
-settings_right_sysinfo_page_options_title=Možnosti informačného panela
+settings_right_hotkey_options=Klávesové skratky
 
 settings_right_hotkey_custom_options_description=Vlastné odkazy vám umožňujú používať číslice od <code>1</code> do <code>9</code> aby ste mali rýchly prístup k akejkoľvek platnej webovej <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> možno získať z aktuálne otvorenej stránky s obsahom pravého rámu prečítaním jej zdroja. Je dôležité, aby <code>URL</code> na začiatku neobsahovala lomku a nepoužívala predpony. Napríklad, ak chcete rýchlo prepnúť na Apache, nastavte na <code>custom link 1</code> pole <code>custom link 1</code> pole <code>/apache/</code>. Ak je predvolený modifikátor klávesových skratiek nastavený na <code>Alt,</code> kliknutím na <code>Alt+1</code> sa otvorí modul Apache
 settings_hotkey_custom_1=Vlastný odkaz <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Predvolená stránka pre Virtualmin
 settings_right_cloudmin_default=Predvolená stránka pre Cloudmin
 
 settings_right_clear_local_cache=Vymazať vyrovnávaciu pamäť
-settings_right_notification_slider_options_title=Možnosti bočného posúvača
 settings_side_slider_fixed=Udržujte vždy viditeľné
-settings_side_slider_palette=Posuvná paleta
 settings_hotkey_toggle_slider=Klávesová skratka pre bočný posúvač
 
 settings_side_slider_enabled=Povoliť posúvač
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Generované heslo %password bolo úsp
 theme_fileformat_perl=perl
 theme_fileformat_perl_placeholder=Tento súbor musí končiť reťazcom `1;` úspešne pracovať.
 
-#18.10
-theme_error_access_not_root=Prístup bol odmietnutý: Používateľ potrebuje prístup k modulu <em>Webmin Configuration</em>, aby mohol upraviť konfiguráciu témy
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Zobrazte symbolické ikony v rozbaľovacej ponuke Virtualmin/Cloudmin
 theme_xhred_global_shipped=dodaný
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Aktualizácia motívu zlyhala. Skúste to urobiť p
 theme_xhred_git_patch_initiated=Začala sa aktualizácia témy.
 theme_xhred_global_prev_page=Vráťte sa o jednu stránku späť
 theme_xhred_global_help=Pomoc
-settings_right_soft_updates_page_options_title=Aktualizácie softvéru
 theme_xhred_git_compare_changes=Porovnajte zmeny
 theme_xhred_filemanager_link_to_clipboard=Názov symbolického odkazu bol skopírovaný do schránky.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Plný formát
 theme_xhred_title_locale_long=Dlhý formát
 theme_xhred_title_locale_short=Krátky formát
 settings_navigation_always_collapse=Vždy sa zrútil
-settings_side_slider_fixed_description=Táto možnosť je k dispozícii iba na obrazovkách HD s minimálnym rozlíšením 1366 vodorovných pixelov a so zakázanou možnosťou udržiavania navigácie vždy v zbalenom stave
 theme_xhred_filemanager_records_per_page=Predvolený počet záznamov na stránku
 theme_xhred_filemanager_sorting=Predvolený typ zoradenia
 theme_xhred_filemanager_sorting_asc=stúpajúca
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Odstrániť všetky ozn�
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Všetky oznámenia označte ako prečítané
 theme_xhred_global_settings=nastavenie
 theme_xhred_tooltip_side_slider_pinned=Posuvný bočný posúvač
-settings_side_slider_fixed_toggle=Zobraziť prepínač pripnutia/odopnutia
-settings_side_slider_fixed_toggle_description=Táto voľba zobrazí prepínač v bočnom posúvači v dolnom riadku, ktorý umožňuje prepnúť jeho viditeľnosť za behu, ak sú splnené podmienky v predchádzajúcej možnosti.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Nainštalujte tiež aktualizácie tém pre Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajtov
-settings_sysinfo_real_time_status_options=Možnosti monitorovania v reálnom čase
 settings_sysinfo_real_time_status_disk=Povoliť pre disky
 settings_sysinfo_real_time_status_disk_description=Môže byť užitočné zakázať monitorovanie diskov v systémoch s pomalými/veľkými súbormi v reálnom čase
 theme_xhred_title_locale_non_ui_config=Formát dátumu vygenerovaný serverom
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Vaša záloha sa pripravuje. Môže to chv�
 
 settings_mail_ui=Povoliť nové používateľské rozhranie pošty
 
-settings_show_theme_configuration_for_admins_only=Tlačidlo Zobraziť nastavenie témy iba pre správcov
 settings_show_theme_configuration_for_admins_only_error=Prístup odmietnutý: Správca zablokoval prístup k prispôsobeniam používateľov
 
 theme_xhred_tooltip_navigation_pinned=Pripnúť/odblokovať navigačnú ponuku
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Odstránenie bolo úspešne dokončené, 
 theme_xhred_connection_error_details_ssl=Skontrolujte varovanie <a>certifikát SSL s vlastným podpisom</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Skryté harmoniky
+settings_sysinfo_hidden_panels_provisional=Skryté harmoniky
 theme_xhred_tooltip_dashboard_panels_disable=Skryť panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrytý panel je možné znova povoliť pomocou konfiguračnej stránky témy.
+settings_right_sysinfo_page_options=Dashboard a monitorovanie v reálnom čase
+settings_right_navigation_menu_options=Navigačné menu
+settings_right_notification_slider_options=Bočný posúvač
+settings_right_table_options=Stolový displej
+settings_right_hotkey_custom_options=Klávesové skratky s vlastnými odkazmi
+settings_right_soft_updates_page_options=Aktualizácie tém
+settings_global_general_options_title=Všeobecné možnosti
+theme_error_access_not_root_user=Prístup odmietnutý: Používateľ nemá oprávnenie upravovať túto sekciu

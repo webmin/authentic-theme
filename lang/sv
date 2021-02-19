@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Tilläggsredigerare för Authentic Th
 settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
 settings_right_theme_configurable_options_title=Konfigurerbara alternativ för Authentic Theme
 
-settings_right_window_options_title=Fönsteralternativ
-settings_right_navigation_menu_title=Navigeringsmenyalternativ
-settings_right_table_options_title=Tabellalternativ
-settings_security_title=Alternativ för säkerhetsvarningar
-settings_right_hotkey_options_title=Snabbtangentalternativ
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>/apache/</code>. Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
 settings_hotkey_custom_1=Egen länk <code>1</code>
 settings_hotkey_custom_2=Egen länk <code>2</code>
@@ -174,9 +167,7 @@ settings_right_virtualmin_default=Standardsida för Virtualmin
 settings_right_cloudmin_default=Standardsida för Cloudmin
 
 settings_right_clear_local_cache=Rensa buffert
-settings_right_notification_slider_options_title=Sidomenyalternativ
 settings_side_slider_fixed=Visa alltid sidomeny
-settings_side_slider_palette=Sidomenypalett
 settings_hotkey_toggle_slider=Snabbtangent för sidomeny
 
 settings_side_slider_enabled=Aktivera sidomeny
@@ -509,9 +500,6 @@ theme_xhred_password_generator_new_success=Det nya lösenordet %password har bli
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Denna filen måste avslutas med `1;` för att fungera korrekt.
 
-#18.10
-theme_error_access_not_root=Åtkomst nekad: Användaren måste ha tillgång till modulen <em>Webmin-konfiguration</em> för att kunna redigera ett tema
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Visa symboliska ikoner i drag-och-släpp i Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
@@ -593,7 +581,6 @@ theme_xhred_git_patch_update=Uppdatering av temat misslyckades. Prova uppdatera 
 theme_xhred_git_patch_initiated=Uppdatering av temat har påbörjats.
 theme_xhred_global_prev_page=Föregående sida
 theme_xhred_global_help=Hjälp
-settings_right_soft_updates_page_options_title=Programuppdateringar
 theme_xhred_git_compare_changes=Jämför förändringar
 theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn har kopierats till urklippet.
 
@@ -731,7 +718,6 @@ theme_xhred_title_locale_full=Fullt format
 theme_xhred_title_locale_long=Långt format
 theme_xhred_title_locale_short=Kort format
 settings_navigation_always_collapse=Alltid ihopfällda
-settings_side_slider_fixed_description=Detta alternativet är endast tillgängligt på HD-skärmar med en minsta upplösning på 1366 horisontella pixlar och och med inaktiverat alternativ för att hålla navigeringen alltid ihopfälld
 theme_xhred_filemanager_records_per_page=Standard antal poster per sida
 theme_xhred_filemanager_sorting=Standard sorteringsordning
 theme_xhred_filemanager_sorting_asc=Stigande
@@ -759,8 +745,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Ta bort alla aviseringar
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Markera alla aviseringar som lästa
 theme_xhred_global_settings=Inställningar
 theme_xhred_tooltip_side_slider_pinned=Fäst/ta bort sidomenyn
-settings_side_slider_fixed_toggle=Visa växla fäst/ta bort
-settings_side_slider_fixed_toggle_description=Detta alternativ visar en växlaknapp på nedersta raden i sidomenyn som tillåter dig att växla funktionen direkt, men bara om villkoren i tidigare alternativ är uppfyllda.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installera temauppdateringar även för Usermin
@@ -784,7 +768,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Alternativ för realtidsövervakning
 settings_sysinfo_real_time_status_disk=Aktiverad för diskar
 settings_sysinfo_real_time_status_disk_description=Det kan vara lönt att inaktivera realtidsövervakning för diskar på långsamma/stora filsystem
 theme_xhred_title_locale_non_ui_config=Icke-UI-format (som i automatiserade e-postmeddelanden och exporterade filer)
@@ -899,7 +882,6 @@ theme_xhred_backup_is_being_prepared=Din säkerhetskopia förbereds. Det kan ta 
 
 settings_mail_ui=Aktivera nytt e-postanvändargränssnitt
 
-settings_show_theme_configuration_for_admins_only=Visa endast temainställningar för administratörer
 settings_show_theme_configuration_for_admins_only_error=Åtkomst nekad: Administratören har blockerat åtkomst till användaranpassningar
 
 theme_xhred_tooltip_navigation_pinned=Fäst/ta bort navigeringsmeny

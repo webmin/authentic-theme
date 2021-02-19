@@ -27,11 +27,11 @@ sub settings
     my %c;
     if (-r $f) {
         my $k = read_file_contents($f);
-        my %k = $k =~ /(.*?)=(.*)/g;
+        my %k = $k =~ /\s*(.*?)\s*=\s*(.*)\s*/g;
         delete @k{ grep(!/^$e/, keys %k) }
           if ($e);
         foreach my $s (keys %k) {
-            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|;(?=[^;]*$)//g;
+            $k{$s} =~ s/^[^']*\K'|'(?=[^']*$)|[;,](?=[^;,]*$)//g;
             $k{$s} =~ s/\\'/'/g;
             $c{$s} .= $k{$s};
         }

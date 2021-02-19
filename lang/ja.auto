@@ -4,6 +4,8 @@ theme_xhred_login_user=ユーザー名
 
 theme_xhred_session_failed=ログインに失敗しました。もう一度お試しください。
 
+settings_right_hotkey_options=ホットキー
+
 settings_right_reload=タブスイッチにデフォルトページをロード
 
 settings_favorites=お気に入りボタンを表示
@@ -73,6 +75,14 @@ theme_xhred_filemanager_remove_warning=削除は正常に完了しましたが�
 theme_xhred_connection_error_details_ssl=<a>自己署名SSL証明書</a>の警告を確認してください
 
 #19.71
-settings_sysinfo_hidden_panels=隠されたアコーディオン
+settings_sysinfo_hidden_panels_provisional=隠されたアコーディオン
 theme_xhred_tooltip_dashboard_panels_disable=$1パネルを非表示
 theme_xhred_dashboard_panels_disabled_explain=非表示のパネルは、テーマ構成ページを使用して再度有効にすることができます。
+settings_right_sysinfo_page_options=ダッシュボードとリアルタイムの監視
+settings_right_navigation_menu_options=ナビゲーションメニュー
+settings_right_notification_slider_options=サイドスライダー
+settings_right_table_options=テーブル表示
+settings_right_hotkey_custom_options=カスタムリンクのホットキー
+settings_right_soft_updates_page_options=テーマの更新
+settings_global_general_options_title=一般的なオプション
+theme_error_access_not_root_user=アクセスが拒否されました：ユーザーにはこのセクションを編集する権限がありません

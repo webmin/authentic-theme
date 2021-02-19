@@ -29,12 +29,7 @@ settings_right_theme_left_extensions_title=Edytor rozszerzeń motywów
 settings_right_theme_left_logo_title=Kontrola logo motywu
 settings_right_theme_configurable_options_title=Konfigurowalne opcje dla motywu autentycznego
 
-settings_right_window_options_title=Opcje okna
-settings_right_navigation_menu_title=Opcje menu nawigacji
-settings_right_table_options_title=Opcje tabeli
-settings_security_title=Opcje alertów bezpieczeństwa
-settings_right_hotkey_options_title=Opcje skrótów
-settings_right_sysinfo_page_options_title=Opcje deski rozdzielczej
+settings_right_hotkey_options=Skróty klawiszowe
 
 settings_right_hotkey_custom_options_description=Niestandardowe linki umożliwiają korzystanie z cyfr od <code>1</code> do <code>9</code> w celu szybkiego dostępu do dowolnego poprawnego <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> można wyodrębnić z aktualnie otwartej strony zawartości prawej ramki, czytając jego źródło. Ważne jest, aby <code>URL</code> nie zawierał ukośnika na początku i nie używał przedrostków. Na przykład, aby szybko przełączyć się na Apache, ustaw <code>custom link 1</code> pole <code>custom link 1</code> <code>/apache/</code>. Jeśli domyślny modyfikator klawiszy skrótu ustawiony na <code>Alt,</code> kliknięcie <code>Alt+1</code> otworzy moduł Apache
 settings_hotkey_custom_1=Niestandardowy link <code>1</code>
@@ -94,9 +89,7 @@ settings_right_virtualmin_default=Domyślna strona Virtualmin
 settings_right_cloudmin_default=Domyślna strona dla Cloudmin
 
 settings_right_clear_local_cache=Wyczyść pamięć podręczną
-settings_right_notification_slider_options_title=Opcje bocznego suwaka
 settings_side_slider_fixed=Bądź zawsze widoczny
-settings_side_slider_palette=Paleta suwaków
 settings_hotkey_toggle_slider=Skrót dla bocznego suwaka
 
 settings_side_slider_enabled=Włącz suwak
@@ -429,9 +422,6 @@ theme_xhred_password_generator_new_success=Wygenerowane hasło %password został
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Ten plik musi kończyć się `1;` z powodzeniem pracować.
 
-#18.10
-theme_error_access_not_root=Odmowa dostępu: użytkownik musi uzyskać dostęp do modułu <em>Webmin Configuration</em>, aby edytować konfigurację motywu
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Pokaż symboliczne ikony w menu rozwijanym w Virtualmin/Cloudmin
 theme_xhred_global_shipped=Wysłane
@@ -512,7 +502,6 @@ theme_xhred_git_patch_update=Aktualizacja motywu nie powiodła się. Spróbuj u�
 theme_xhred_git_patch_initiated=Aktualizacja motywu została zainicjowana.
 theme_xhred_global_prev_page=Wróć o jedną stronę
 theme_xhred_global_help=Wsparcie
-settings_right_soft_updates_page_options_title=Aktualizacje oprogramowania
 theme_xhred_git_compare_changes=Porównaj zmiany
 theme_xhred_filemanager_link_to_clipboard=Nazwa dowiązania symbolicznego została skopiowana do schowka.
 
@@ -652,7 +641,6 @@ theme_xhred_title_locale_full=Pełny format
 theme_xhred_title_locale_long=Długi format
 theme_xhred_title_locale_short=Krótki format
 settings_navigation_always_collapse=Zawsze się zawalił
-settings_side_slider_fixed_description=Ta opcja jest dostępna tylko na ekranach HD o minimalnej rozdzielczości 1366 pikseli poziomych i wyłączonej opcji, aby nawigacja zawsze była zwinięta
 theme_xhred_filemanager_records_per_page=Domyślna liczba rekordów na stronę
 theme_xhred_filemanager_sorting=Domyślny typ sortowania
 theme_xhred_filemanager_sorting_asc=Rosnąco
@@ -680,8 +668,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Usuń wszystkie powiadom
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Oznacz wszystkie powiadomienia jako przeczytane
 theme_xhred_global_settings=Ustawienia
 theme_xhred_tooltip_side_slider_pinned=Suwak boczny przypinania/odpinania
-settings_side_slider_fixed_toggle=Pokaż przełącznik przypinania/odpinania
-settings_side_slider_fixed_toggle_description=Ta opcja wyświetla przełącznik, w bocznym suwaku, w dolnym rzędzie, umożliwiając przełączanie jego widoczności w locie, jeśli warunki w poprzedniej opcji są spełnione.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Zainstaluj także aktualizacje motywów dla Usermin
@@ -705,7 +691,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajty
-settings_sysinfo_real_time_status_options=Opcje monitorowania w czasie rzeczywistym
 settings_sysinfo_real_time_status_disk=Włącz dla dysków
 settings_sysinfo_real_time_status_disk_description=Przydatne może być wyłączenie monitorowania w czasie rzeczywistym dysków w wolnych/dużych systemach plików
 theme_xhred_title_locale_non_ui_config=Format daty wygenerowany przez serwer
@@ -820,7 +805,6 @@ theme_xhred_backup_is_being_prepared=Twoja kopia zapasowa jest w przygotowaniu. 
 
 settings_mail_ui=Włącz interfejs nowej poczty
 
-settings_show_theme_configuration_for_admins_only=Pokaż przycisk ustawień motywu tylko dla administratorów
 settings_show_theme_configuration_for_admins_only_error=Odmowa dostępu: Administrator zablokował dostęp do ustawień użytkownika
 
 theme_xhred_tooltip_navigation_pinned=Przypnij/odpnij menu nawigacyjne
@@ -1122,6 +1106,14 @@ theme_xhred_filemanager_remove_warning=Usuwanie zakończyło się pomyślnie, al
 theme_xhred_connection_error_details_ssl=Sprawdź ostrzeżenie <a>certyfikat SSL z podpisem własnym</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Ukryte akordeony
+settings_sysinfo_hidden_panels_provisional=Ukryte akordeony
 theme_xhred_tooltip_dashboard_panels_disable=Ukryj panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Ukryty panel można ponownie włączyć za pomocą strony konfiguracji kompozycji.
+settings_right_sysinfo_page_options=Pulpit nawigacyjny i monitorowanie w czasie rzeczywistym
+settings_right_navigation_menu_options=Menu nawigacji
+settings_right_notification_slider_options=Boczny suwak
+settings_right_table_options=Wyświetlacz stołowy
+settings_right_hotkey_custom_options=Skróty klawiszowe niestandardowych łączy
+settings_right_soft_updates_page_options=Aktualizacje motywów
+settings_global_general_options_title=Opcje ogólne
+theme_error_access_not_root_user=Odmowa dostępu: użytkownik nie ma uprawnień do edycji tej sekcji

@@ -1,3 +1,5 @@
+settings_right_hotkey_options=Raccourcis clavier
+
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
 
 settings_webmin_default_module=Page par défaut pour Webmin
@@ -31,6 +33,14 @@ theme_xhred_filemanager_remove_warning=La suppression s'est terminée avec succ�
 theme_xhred_connection_error_details_ssl=Vérifiez l'avertissement concernant le <a>certificat SSL auto-signé</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Accordéons cachés
+settings_sysinfo_hidden_panels_provisional=Accordéons cachés
 theme_xhred_tooltip_dashboard_panels_disable=Masquer le panneau $1 
 theme_xhred_dashboard_panels_disabled_explain=Le panneau masqué peut être réactivé à l'aide de la page de configuration du thème.
+settings_right_sysinfo_page_options=Tableau de bord et surveillance en temps réel
+settings_right_navigation_menu_options=Le menu de navigation
+settings_right_notification_slider_options=Curseur latéral
+settings_right_table_options=Affichage de la table
+settings_right_hotkey_custom_options=Raccourcis clavier personnalisés
+settings_right_soft_updates_page_options=Mises à jour du thème
+settings_global_general_options_title=Options générales
+theme_error_access_not_root_user=Accès refusé: l'utilisateur n'est pas autorisé à modifier cette section

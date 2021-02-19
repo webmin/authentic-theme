@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=主題擴展編輯器
 settings_right_theme_left_logo_title=主題徽標控件
 settings_right_theme_configurable_options_title=真實主題的可配置選項
 
-settings_right_window_options_title=窗口選項
-settings_right_navigation_menu_title=導航菜單選項
-settings_right_table_options_title=表格選項
-settings_security_title=安全警報選項
-settings_right_hotkey_options_title=熱鍵選項
-settings_right_sysinfo_page_options_title=儀表板選項
+settings_right_hotkey_options=熱鍵
 
 settings_right_hotkey_custom_options_description=自定義鏈接使您可以使用<code>1</code>到<code>9</code>數字，以便快速訪問任何有效的Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code>可以通過閱讀<code>URL</code>從當前打開的右框架內容頁面中提取<code>URL</code> 。重要的是， <code>URL</code>開頭必須沒有斜杠並且不使用前綴。例如，要快速切換到Apache，請設置為<code>custom link 1</code>字段<code>/apache/</code> 。如果默認的熱鍵修改器設置為<code>Alt,</code>單擊<code>Alt+1</code> ，將打開您的Apache模塊。
 settings_hotkey_custom_1=自訂連結<code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Virtualmin的默認頁面
 settings_right_cloudmin_default=Cloudmin的默認頁面
 
 settings_right_clear_local_cache=清除緩存
-settings_right_notification_slider_options_title=側面滑塊選項
 settings_side_slider_fixed=始終保持可見
-settings_side_slider_palette=滑塊調色板
 settings_hotkey_toggle_slider=側滑塊熱鍵
 
 settings_side_slider_enabled=啟用滑桿
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=生成的密碼%password已成功複�
 theme_fileformat_perl=佩爾
 theme_fileformat_perl_placeholder=該文件必須以`1;`成功地工作。
 
-#18.10
-theme_error_access_not_root=拒絕訪問：用戶需要訪問<em>Webmin Configuration</em>模塊才能編輯主題配置
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=在Virtualmin/Cloudmin的下拉菜單中顯示符號圖標
 theme_xhred_global_shipped=已出貨
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=主題更新失敗。嘗試使用控制台手動進
 theme_xhred_git_patch_initiated=主題更新已啟動。
 theme_xhred_global_prev_page=返回上一頁
 theme_xhred_global_help=幫幫我
-settings_right_soft_updates_page_options_title=軟件更新
 theme_xhred_git_compare_changes=比較變更
 theme_xhred_filemanager_link_to_clipboard=符號鏈接的名稱已復製到剪貼板。
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=全格式
 theme_xhred_title_locale_long=長格式
 theme_xhred_title_locale_short=短格式
 settings_navigation_always_collapse=總是崩潰
-settings_side_slider_fixed_description=此選項僅在最低分辨率為1366水平像素的高清屏幕上可用，並且具有禁用選項以保持導航始終處於折疊狀態
 theme_xhred_filemanager_records_per_page=每頁的默認記錄數
 theme_xhred_filemanager_sorting=默認排序類型
 theme_xhred_filemanager_sorting_asc=上升
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=刪除所有通知
 theme_xhred_tooltip_side_slider_mark_read_all_notification=將所有通知標記為已讀
 theme_xhred_global_settings=設定值
 theme_xhred_tooltip_side_slider_pinned=固定/解除固定側滑塊
-settings_side_slider_fixed_toggle=顯示固定/取消固定切換
-settings_side_slider_fixed_toggle_description=如果滿足上一個選項中的條件，此選項將在側面滑塊底部的一行中顯示切換，以便即時切換其可見性。
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=也為Usermin安裝主題更新
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=國標
 theme_xhred_nice_size_MB=兆字節
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=個字節
-settings_sysinfo_real_time_status_options=實時監控選項
 settings_sysinfo_real_time_status_disk=為磁盤啟用
 settings_sysinfo_real_time_status_disk_description=禁用慢/大文件系統上磁盤的實時監視可能很有用
 theme_xhred_title_locale_non_ui_config=服務器生成的日期格式
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=您的備份正在準備中。可能要花�
 
 settings_mail_ui=啟用新郵件界面
 
-settings_show_theme_configuration_for_admins_only=顯示主題設置按鈕僅適用於管理員
 settings_show_theme_configuration_for_admins_only_error=訪問被拒絕：管理員阻止了對用戶定制的訪問
 
 theme_xhred_tooltip_navigation_pinned=固定/取消固定導航菜單
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=刪除成功完成，但並非所有對�
 theme_xhred_connection_error_details_ssl=檢查<a>自簽名SSL證書</a>警告
 
 #19.71
-settings_sysinfo_hidden_panels=隱藏的手風琴
+settings_sysinfo_hidden_panels_provisional=隱藏的手風琴
 theme_xhred_tooltip_dashboard_panels_disable=隱藏 $1面板
 theme_xhred_dashboard_panels_disabled_explain=可以使用主題配置頁面重新啟用隱藏面板。
+settings_right_sysinfo_page_options=儀表板和實時監控
+settings_right_navigation_menu_options=導航菜單
+settings_right_notification_slider_options=側滑桿
+settings_right_table_options=表顯示
+settings_right_hotkey_custom_options=自定義鏈接熱鍵
+settings_right_soft_updates_page_options=主題更新
+settings_global_general_options_title=常規選項
+theme_error_access_not_root_user=訪問被拒絕：用戶無權編輯此部分

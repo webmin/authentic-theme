@@ -7,13 +7,13 @@
 #
 use strict;
 
-our (%in, $current_theme, $config_directory, %theme_text, $has_usermin, $has_usermin_conf_dir);
+our (%in, $current_theme, $config_directory, $get_user_level, %theme_text, $has_usermin, $has_usermin_conf_dir);
 
 do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
-!foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
+$get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
 
-theme_config_dir_available();
+theme_make_config_dir();
 
 my $lsw = "background_content.png";
 my $lw  = "/$current_theme/$lsw";

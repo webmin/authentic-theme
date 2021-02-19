@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Trình chỉnh sửa mở rộng ch�
 settings_right_theme_left_logo_title=Kiểm soát logo chủ đề
 settings_right_theme_configurable_options_title=Tùy chọn cấu hình cho Theme xác thực
 
-settings_right_window_options_title=Tùy chọn cửa sổ
-settings_right_navigation_menu_title=Tùy chọn menu điều hướng
-settings_right_table_options_title=Tùy chọn bảng
-settings_security_title=Tùy chọn cảnh báo bảo mật
-settings_right_hotkey_options_title=Tùy chọn phím nóng
-settings_right_sysinfo_page_options_title=Tùy chọn bảng điều khiển
+settings_right_hotkey_options=Phím nóng
 
 settings_right_hotkey_custom_options_description=Liên kết tùy chỉnh cho phép bạn sử dụng các chữ số từ <code>1</code> đến <code>9</code> để truy cập nhanh bất kỳ <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin hợp lệ nào <code>URL.</code> <code>URL</code> có thể được trích xuất từ trang nội dung khung bên phải hiện đang mở, bằng cách đọc nguồn của nó. Điều quan trọng là <code>URL</code> không có dấu gạch chéo ngay từ đầu và không sử dụng tiền tố. Ví dụ: để chuyển nhanh sang Apache, hãy đặt thành <code>custom link 1</code> trường <code>/apache/</code>. Nếu công cụ sửa đổi phím nóng mặc định được đặt thành <code>Alt,</code> nhấp vào <code>Alt+1</code>, sẽ mở cho bạn mô-đun Apache
 settings_hotkey_custom_1=Liên kết tùy chỉnh <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Trang mặc định cho Virtualmin
 settings_right_cloudmin_default=Trang mặc định cho Cloudmin
 
 settings_right_clear_local_cache=Xóa bộ nhớ cache
-settings_right_notification_slider_options_title=Tùy chọn thanh trượt bên
 settings_side_slider_fixed=Luôn luôn nhìn thấy
-settings_side_slider_palette=Bảng màu trượt
 settings_hotkey_toggle_slider=Phím nóng cho thanh trượt bên
 
 settings_side_slider_enabled=Kích hoạt thanh trượt
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Đã tạo mật khẩu %password đ�
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Tập tin này phải kết thúc bằng `1;` để làm việc thành công.
 
-#18.10
-theme_error_access_not_root=Truy cập bị từ chối: Người dùng cần quyền truy cập vào mô-đun <em>Cấu hình Webmin</em> để chỉnh sửa cấu hình chủ đề
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Hiển thị các biểu tượng tượng trưng trong trình đơn thả xuống trong Virtualmin/Cloudmin
 theme_xhred_global_shipped=Vận chuyển
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Cập nhật chủ đề đã thất bại. Hãy th
 theme_xhred_git_patch_initiated=Cập nhật chủ đề đã được bắt đầu.
 theme_xhred_global_prev_page=Quay lại một trang
 theme_xhred_global_help=Cứu giúp
-settings_right_soft_updates_page_options_title=Nâng cấp phần mềm
 theme_xhred_git_compare_changes=So sánh thay đổi
 theme_xhred_filemanager_link_to_clipboard=Tên liên kết tượng trưng đã được sao chép vào clipboard.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Định dạng đầy đủ
 theme_xhred_title_locale_long=Định dạng dài
 theme_xhred_title_locale_short=Định dạng ngắn
 settings_navigation_always_collapse=Luôn sụp đổ
-settings_side_slider_fixed_description=Tùy chọn này chỉ khả dụng trên màn hình HD với độ phân giải tối thiểu 1366 pixel ngang và với tùy chọn bị vô hiệu hóa để giữ cho điều hướng luôn bị thu gọn
 theme_xhred_filemanager_records_per_page=Số lượng hồ sơ mặc định trên mỗi trang
 theme_xhred_filemanager_sorting=Loại sắp xếp mặc định
 theme_xhred_filemanager_sorting_asc=Tăng dần
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Xóa tất cả các th�
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Đánh dấu tất cả các thông báo là đã đọc
 theme_xhred_global_settings=Cài đặt
 theme_xhred_tooltip_side_slider_pinned=Thanh trượt/ghim bên
-settings_side_slider_fixed_toggle=Hiển thị chuyển đổi pin/bỏ ghim
-settings_side_slider_fixed_toggle_description=Tùy chọn này sẽ hiển thị chuyển đổi, trong thanh trượt bên, ở hàng dưới cùng, cho phép chuyển đổi khả năng hiển thị của nó khi đang bay, nếu các điều kiện trong tùy chọn trước đó được đáp ứng.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Cài đặt cập nhật chủ đề cho Usermin là tốt
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=byte
-settings_sysinfo_real_time_status_options=Tùy chọn giám sát thời gian thực
 settings_sysinfo_real_time_status_disk=Cho phép đĩa
 settings_sysinfo_real_time_status_disk_description=Có thể hữu ích để vô hiệu hóa giám sát thời gian thực cho các đĩa trên hệ thống tệp chậm/lớn
 theme_xhred_title_locale_non_ui_config=Định dạng ngày tạo của máy chủ
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Sao lưu của bạn đang được chuẩn
 
 settings_mail_ui=Kích hoạt giao diện người dùng thư mới
 
-settings_show_theme_configuration_for_admins_only=Chỉ hiển thị nút cài đặt chủ đề cho quản trị viên
 settings_show_theme_configuration_for_admins_only_error=Truy cập bị từ chối: Quản trị viên đã chặn quyền truy cập vào các tùy chỉnh của người dùng
 
 theme_xhred_tooltip_navigation_pinned=Menu điều hướng ghim/bỏ ghim
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Quá trình xóa đã kết thúc thành 
 theme_xhred_connection_error_details_ssl=Kiểm tra cảnh báo <a>chứng chỉ SSL tự ký</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Đàn accordions ẩn
+settings_sysinfo_hidden_panels_provisional=Đàn accordions ẩn
 theme_xhred_tooltip_dashboard_panels_disable=Ẩn bảng điều khiển $1 
 theme_xhred_dashboard_panels_disabled_explain=Bảng điều khiển ẩn có thể được bật lại bằng cách sử dụng trang cấu hình chủ đề.
+settings_right_sysinfo_page_options=Bảng điều khiển và giám sát thời gian thực
+settings_right_navigation_menu_options=Chức năng điều hướng
+settings_right_notification_slider_options=Thanh trượt bên
+settings_right_table_options=Bảng hiển thị
+settings_right_hotkey_custom_options=Các phím nóng liên kết tùy chỉnh
+settings_right_soft_updates_page_options=Cập nhật chủ đề
+settings_global_general_options_title=Các tùy chọn chung
+theme_error_access_not_root_user=Quyền truy cập bị từ chối: Người dùng không có đặc quyền chỉnh sửa phần này

@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Teemalaajennusten toimittaja
 settings_right_theme_left_logo_title=Teeman logon hallinta
 settings_right_theme_configurable_options_title=Konfiguroitavat vaihtoehdot autenttiseen teemaan
 
-settings_right_window_options_title=Ikkunavaihtoehdot
-settings_right_navigation_menu_title=Navigointivalikon vaihtoehdot
-settings_right_table_options_title=Taulukkovaihtoehdot
-settings_security_title=Suojausvaroitusasetukset
-settings_right_hotkey_options_title=Pikanäppäinvaihtoehdot
-settings_right_sysinfo_page_options_title=Hallintapaneelin vaihtoehdot
+settings_right_hotkey_options=Pikanäppäimet
 
 settings_right_hotkey_custom_options_description=Custom linkkien avulla voit käyttää numerot <code>1</code> ja <code>9</code>, jotta pikanäppäin-mitään pätevää Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> voidaan poimia tällä hetkellä avatusta oikean kehyksen sisältösivulta lukemalla sen lähde. On tärkeää, että <code>URL</code> osoitteen alussa ei ole kaltevuutta ja että siinä ei käytetä etuliitteitä. Esimerkiksi siirtyäksesi nopeasti Apacheen asettamalla <code>custom link 1</code> kenttä <code>/apache/</code>. Jos oletuspikanäppäinmuokkaajaksi on asetettu <code>Alt,</code> napsauttamalla <code>Alt+1</code>, avaat sinulle Apache-moduulin
 settings_hotkey_custom_1=Muokattu linkki <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Virtualmin oletussivu
 settings_right_cloudmin_default=Cloudmin oletussivu
 
 settings_right_clear_local_cache=Tyhjennä välimuisti
-settings_right_notification_slider_options_title=Sivun liukusäätimen vaihtoehdot
 settings_side_slider_fixed=Pidä aina näkyvissä
-settings_side_slider_palette=Liukusäädin
 settings_hotkey_toggle_slider=Pikanäppäin sivuliukusäätimelle
 
 settings_side_slider_enabled=Ota liukusäädin käyttöön
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Luotu salasana %password on kopioitu 
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Tämän tiedoston on oltava lopussa `1;` toimimaan onnistuneesti.
 
-#18.10
-theme_error_access_not_root=Käyttö evätty: Käyttäjä tarvitsee pääsyn <em>Webmin Configuration</em> -moduuliin teeman määritysten muokkaamiseksi
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Näytä symboliset kuvakkeet avattavassa valikossa Virtualmin/Cloudmin
 theme_xhred_global_shipped=toimitetaan
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Teeman päivitys epäonnistui. Yritä tehdä konsol
 theme_xhred_git_patch_initiated=Teeman päivitys on aloitettu.
 theme_xhred_global_prev_page=Palaa yhdellä sivulla
 theme_xhred_global_help=auta
-settings_right_soft_updates_page_options_title=Ohjelmistopäivitykset
 theme_xhred_git_compare_changes=Vertaa muutoksia
 theme_xhred_filemanager_link_to_clipboard=Symbolisen linkin nimi on kopioitu leikepöydälle.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Koko muoto
 theme_xhred_title_locale_long=Pitkä muoto
 theme_xhred_title_locale_short=Lyhyt muoto
 settings_navigation_always_collapse=Aina romahtanut
-settings_side_slider_fixed_description=Tämä vaihtoehto on käytettävissä vain HD-näytöillä, joiden tarkkuus on vähintään 1366 vaakapikseliä ja joiden käytöstä poistettu vaihtoehto navigoinnin pitämiseksi aina romahtuna
 theme_xhred_filemanager_records_per_page=Tietueiden oletusmäärä sivua kohden
 theme_xhred_filemanager_sorting=Oletustyyppilajittelu
 theme_xhred_filemanager_sorting_asc=nouseva
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Poista kaikki ilmoitukse
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Merkitse kaikki ilmoitukset luetuiksi
 theme_xhred_global_settings=asetukset
 theme_xhred_tooltip_side_slider_pinned=Kiinnitä/irrota sivun liukusäädin
-settings_side_slider_fixed_toggle=Näytä pin/irrota kytkentä
-settings_side_slider_fixed_toggle_description=Tämä vaihtoehto näyttää vaihtosivun sivurivillä alareunassa, jolloin sen näkyvyys voidaan vaihtaa lennossa, jos edellisen vaihtoehdon ehdot täyttyvät.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Asenna teemapäivitykset myös Userminille
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=tavua
-settings_sysinfo_real_time_status_options=Reaaliaikaiset seurantavaihtoehdot
 settings_sysinfo_real_time_status_disk=Ota käyttöön levyille
 settings_sysinfo_real_time_status_disk_description=Voi olla hyödyllistä poistaa reaaliaikainen tarkkailu levyiltä hitaissa/suurissa tiedostojärjestelmissä
 theme_xhred_title_locale_non_ui_config=Palvelimen luoma päivämäärämuoto
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Varmuuskopioasi valmistellaan. Se voi vied�
 
 settings_mail_ui=Ota uuden sähköpostin käyttöliittymä käyttöön
 
-settings_show_theme_configuration_for_admins_only=Näytä teema-asetukset -painike vain järjestelmänvalvojille
 settings_show_theme_configuration_for_admins_only_error=Käyttö evätty: Järjestelmänvalvoja on estänyt pääsyn käyttäjän räätälöintiin
 
 theme_xhred_tooltip_navigation_pinned=Napauta/poista navigointivalikko
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Poisto on suoritettu onnistuneesti, mutta
 theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-varmenne</a> -varoitus
 
 #19.71
-settings_sysinfo_hidden_panels=Piilotetut harmonikat
+settings_sysinfo_hidden_panels_provisional=Piilotetut harmonikat
 theme_xhred_tooltip_dashboard_panels_disable=Piilota $1 paneeli
 theme_xhred_dashboard_panels_disabled_explain=Piilotettu paneeli voidaan ottaa uudelleen käyttöön teeman määrityssivulla.
+settings_right_sysinfo_page_options=Kojelauta ja reaaliaikainen seuranta
+settings_right_navigation_menu_options=Navigointivalikko
+settings_right_notification_slider_options=Sivuliukusäädin
+settings_right_table_options=Taulukon näyttö
+settings_right_hotkey_custom_options=Mukautettujen linkkien pikanäppäimet
+settings_right_soft_updates_page_options=Teeman päivitykset
+settings_global_general_options_title=Yleiset vaihtoehdot
+theme_error_access_not_root_user=Käyttö estetty: Käyttäjällä ei ole oikeuksia muokata tätä osiota

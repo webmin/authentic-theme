@@ -1,3 +1,5 @@
+settings_right_hotkey_options=Tasti di scelta rapida
+
 settings_right_reload=Carica la pagina predefinita sull'interruttore di tabulazione
 
 settings_webmin_default_module=Pagina predefinita per Webmin
@@ -13,6 +15,14 @@ theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma
 theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>certificato SSL autofirmato</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Fisarmoniche nascoste
+settings_sysinfo_hidden_panels_provisional=Fisarmoniche nascoste
 theme_xhred_tooltip_dashboard_panels_disable=Nascondi il pannello $1 
 theme_xhred_dashboard_panels_disabled_explain=Il pannello nascosto può essere riattivato utilizzando la pagina di configurazione del tema.
+settings_right_sysinfo_page_options=Dashboard e monitoraggio in tempo reale
+settings_right_navigation_menu_options=Menu di navigazione
+settings_right_notification_slider_options=Slider laterale
+settings_right_table_options=Display da tavolo
+settings_right_hotkey_custom_options=Tasti di scelta rapida dei collegamenti personalizzati
+settings_right_soft_updates_page_options=Aggiornamenti del tema
+settings_global_general_options_title=Opzioni generali
+theme_error_access_not_root_user=Accesso negato: l'utente non dispone dei privilegi per modificare questa sezione

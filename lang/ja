@@ -106,13 +106,6 @@ settings_right_theme_left_extensions_title=Theme 拡張エディタ
 settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
 settings_right_theme_configurable_options_title= Authentic Theme のための設定可能なオプション
 
-settings_right_window_options_title=ウィンドウ オプション
-settings_right_navigation_menu_title=ナビゲーションメニューオプション
-settings_right_table_options_title=テーブルオプション
-settings_security_title=セキュリティ警告オプション
-settings_right_hotkey_options_title=ホットキーオプション
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/Cloudminの<code>URL</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
 settings_hotkey_custom_1=カスタムリンク <code>1</code>
 settings_hotkey_custom_2=カスタムリンク <code>2</code>
@@ -169,9 +162,7 @@ settings_right_virtualmin_default=Usermin にログインした後のデフォ�
 settings_right_cloudmin_default=Cloudmin の既定のページ
 
 settings_right_clear_local_cache=キャッシュのクリア
-settings_right_notification_slider_options_title=サイドスライダオプション
 settings_side_slider_fixed=常に表示しておく
-settings_side_slider_palette=スライダパレット
 settings_hotkey_toggle_slider=スライダのホットキー
 
 settings_side_slider_enabled=スライダを有効にする
@@ -504,9 +495,6 @@ theme_xhred_password_generator_new_success= 生成されたパスワード%passw
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder= このファイルは正常に動作するには `1;`で終わらなければなりません。
 
-#18.10
-theme_error_access_not_root= アクセスが拒否されました:テーマ設定を編集するには、<em> Webmin Configuration </em>モジュールにアクセスする必要があります
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons= Virtualmin/Cloudminのドロップダウンリストに記号アイコンを表示する
 theme_xhred_global_shipped= 出荷された
@@ -588,7 +576,6 @@ theme_xhred_git_patch_update= Authentic Themeの更新に失敗しました。�
 theme_xhred_git_patch_initiated= Authentic Themeの更新が開始されました。
 theme_xhred_global_prev_page= 1ページ前に戻る
 theme_xhred_global_help=ヘルプ
-settings_right_soft_updates_page_options_title= ソフトウェアの更新
 theme_xhred_git_compare_changes= 変更を比較する
 theme_xhred_filemanager_link_to_clipboard= シンボリックリンクの名前 がクリップボードにコピーされました。
 
@@ -726,7 +713,6 @@ theme_xhred_title_locale_full= フルフォーマット
 theme_xhred_title_locale_long= ロングフォーマット
 theme_xhred_title_locale_short= 短い形式
 settings_navigation_always_collapse= 常に折りたたまれている
-settings_side_slider_fixed_description= このオプションは、最小解像度1366水平ピクセルのHD画面でのみ使用でき、常にナビゲーションを無効にするオプションは無効になっています
 theme_xhred_filemanager_records_per_page= ページあたりのデフォルトレコード数
 theme_xhred_filemanager_sorting= デフォルトのソートタイプ
 theme_xhred_filemanager_sorting_asc= 上昇
@@ -754,8 +740,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification= すべての通知を�
 theme_xhred_tooltip_side_slider_mark_read_all_notification= すべての通知を既読としてマークする
 theme_xhred_global_settings= 設定
 theme_xhred_tooltip_side_slider_pinned= ピン/ピン止め側のスライダ
-settings_side_slider_fixed_toggle= ピンの表示/固定解除の切り替え
-settings_side_slider_fixed_toggle_description= このオプションは、横のスライダの下の行にトグルを表示し、前のオプションの条件が満たされた場合にその表示をトグルで切り替えることができます
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin= テーマの更新を実行するとUserminに影響を与える必要があります。
@@ -779,7 +763,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=KB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options= リアルタイムの監視オプション
 settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
 settings_sysinfo_real_time_status_disk_description= 低速/大容量ファイルシステム上のディスクのリアルタイム監視を無効にすると便利な場合があります
 theme_xhred_title_locale_non_ui_config= 非UI形式（自動メールやエクスポートされたファイルなど）
@@ -889,7 +872,6 @@ theme_xhred_backup_is_being_prepared= バックアップを準備中です。そ
 
 settings_mail_ui= 新しいメールUIを有効にする
 
-settings_show_theme_configuration_for_admins_only= 管理者のみのテーマ設定ボタンを表示
 settings_show_theme_configuration_for_admins_only_error= アクセスが拒否されました:管理者がユーザーのカスタム設定へのアクセスをブロックしました
 
 theme_xhred_tooltip_navigation_pinned= ピン固定/ピン固定解除メニュー

@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Editor de extensões de tema
 settings_right_theme_left_logo_title=Tema Logo Control
 settings_right_theme_configurable_options_title=Opções configuráveis para tema autêntico
 
-settings_right_window_options_title=Opções da janela
-settings_right_navigation_menu_title=Opções do menu de navegação
-settings_right_table_options_title=Opções de tabela
-settings_security_title=Opções de alertas de segurança
-settings_right_hotkey_options_title=Opções de teclas de atalho
-settings_right_sysinfo_page_options_title=Opções do painel
+settings_right_hotkey_options=Atalhos
 
 settings_right_hotkey_custom_options_description=Os links personalizados permitem que você use dígitos de <code>1</code> a <code>9</code> para acessar rapidamente qualquer <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin válido <code>URL.</code> O <code>URL</code> pode ser extraído da página de conteúdo do quadro direito aberta no momento, lendo sua fonte. É importante que o <code>URL</code> não tenha barra no começo e não use prefixos. Por exemplo, para alternar rapidamente para o Apache, defina como <code>custom link 1</code> campo <code>/apache/</code>. Se o modificador de teclas de atalho padrão definido como <code>Alt,</code> clicar em <code>Alt+1</code>, abrirá o módulo Apache
 settings_hotkey_custom_1=Link personalizado <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Página padrão do Virtualmin
 settings_right_cloudmin_default=Página padrão para Cloudmin
 
 settings_right_clear_local_cache=Limpar cache
-settings_right_notification_slider_options_title=Opções de controle deslizante lateral
 settings_side_slider_fixed=Mantenha sempre visível
-settings_side_slider_palette=Paleta deslizante
 settings_hotkey_toggle_slider=Tecla de atalho para o controle deslizante lateral
 
 settings_side_slider_enabled=Ativar controle deslizante
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Senha gerada %password foi copiada pa
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Este arquivo deve terminar com `1;` para trabalhar com sucesso.
 
-#18.10
-theme_error_access_not_root=Acesso negado: o usuário precisa acessar o módulo <em>Configuração de Webmin</em> para editar a configuração do tema
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Mostrar ícones simbólicos no menu suspenso no Virtualmin/Cloudmin
 theme_xhred_global_shipped=Enviado
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=A atualização do tema falhou. Tente usar o consol
 theme_xhred_git_patch_initiated=A atualização do tema foi iniciada.
 theme_xhred_global_prev_page=Voltar uma página
 theme_xhred_global_help=Socorro
-settings_right_soft_updates_page_options_title=Atualizações de software
 theme_xhred_git_compare_changes=Comparar alterações
 theme_xhred_filemanager_link_to_clipboard=O nome do link simbólico foi copiado para a área de transferência.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Formato completo
 theme_xhred_title_locale_long=Formato longo
 theme_xhred_title_locale_short=Formato curto
 settings_navigation_always_collapse=Sempre em colapso
-settings_side_slider_fixed_description=Esta opção está disponível apenas em telas HD com resolução mínima de 1366 pixels horizontais e com a opção desativada para manter a navegação sempre reduzida
 theme_xhred_filemanager_records_per_page=Número padrão de registros por página
 theme_xhred_filemanager_sorting=Tipo de classificação padrão
 theme_xhred_filemanager_sorting_asc=Crescente
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Excluir todas as notific
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Marcar todas as notificações como lidas
 theme_xhred_global_settings=Definições
 theme_xhred_tooltip_side_slider_pinned=Fixar/desafixar o controle deslizante lateral
-settings_side_slider_fixed_toggle=Mostrar alternar pino/desafixar
-settings_side_slider_fixed_toggle_description=Esta opção exibirá a alternância, no controle deslizante lateral, na linha inferior, permitindo alternar sua visibilidade em tempo real, se as condições da opção anterior forem atendidas.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instale atualizações de tema para o Usermin também
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Opções de monitoramento em tempo real
 settings_sysinfo_real_time_status_disk=Ativar para discos
 settings_sysinfo_real_time_status_disk_description=Pode ser útil desativar o monitoramento em tempo real de discos em sistemas de arquivos grandes/lentos
 theme_xhred_title_locale_non_ui_config=Formato de data gerado pelo servidor
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Seu backup está sendo preparado. Pode demo
 
 settings_mail_ui=Ativar nova interface de usuário de email
 
-settings_show_theme_configuration_for_admins_only=Mostrar botão de configurações de tema apenas para administradores
 settings_show_theme_configuration_for_admins_only_error=Acesso negado: o administrador bloqueou o acesso às personalizações do usuário
 
 theme_xhred_tooltip_navigation_pinned=Fixar/desafixar o menu de navegação
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=A remoção foi concluída com sucesso, m
 theme_xhred_connection_error_details_ssl=Verifique o aviso de <a>certificado SSL autoassinado</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Acordeões escondidos
+settings_sysinfo_hidden_panels_provisional=Acordeões escondidos
 theme_xhred_tooltip_dashboard_panels_disable=Esconder o painel $1 
 theme_xhred_dashboard_panels_disabled_explain=O painel oculto pode ser reativado usando a página de configuração do tema.
+settings_right_sysinfo_page_options=Painel e monitoramento em tempo real
+settings_right_navigation_menu_options=Menu de navegação
+settings_right_notification_slider_options=Controle deslizante lateral
+settings_right_table_options=Exibir mesa
+settings_right_hotkey_custom_options=Teclas de atalho de links personalizados
+settings_right_soft_updates_page_options=Atualizações de tema
+settings_global_general_options_title=Opções gerais
+theme_error_access_not_root_user=Acesso negado: o usuário não tem o privilégio de editar esta seção

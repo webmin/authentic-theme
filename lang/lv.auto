@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Motīvu paplašinājumu redaktors
 settings_right_theme_left_logo_title=Motīva logotipa vadība
 settings_right_theme_configurable_options_title=Konfigurējamas opcijas autentiskai tēmai
 
-settings_right_window_options_title=Logu iespējas
-settings_right_navigation_menu_title=Navigācijas izvēlnes opcijas
-settings_right_table_options_title=Tabulas iespējas
-settings_security_title=Drošības trauksmju opcijas
-settings_right_hotkey_options_title=Karsto taustiņu iespējas
-settings_right_sysinfo_page_options_title=Informācijas paneļa opcijas
+settings_right_hotkey_options=Karstie taustiņi
 
 settings_right_hotkey_custom_options_description=Pielāgotas saites ļauj izmantot ciparus no <code>1</code> līdz <code>9</code>, lai ātri piekļūtu jebkuram derīgam Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> var iegūt no pašlaik atvērtās labās puses ietvara satura lapas, nolasot tā avotu. Ir svarīgi, lai <code>URL</code> sākumā nebūtu slīpsvītra un nebūtu izmantoti prefiksi. Piemēram, lai ātri pārslēgtos uz Apache, iestatiet uz <code>custom link 1</code> lauku <code>/apache/</code>. Ja noklusējuma karsto taustiņu modifikators ir iestatīts uz <code>Alt,</code> noklikšķinot uz <code>Alt+1</code>, tiks atvērts Apache modulis
 settings_hotkey_custom_1=Pielāgota saite <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Noklusējuma lapa Virtualmin
 settings_right_cloudmin_default=Noklusējuma lapa Cloudmin
 
 settings_right_clear_local_cache=Iztīrīt kešatmiņu
-settings_right_notification_slider_options_title=Sānu slīdņa iespējas
 settings_side_slider_fixed=Esiet vienmēr redzams
-settings_side_slider_palette=Slīdņu palete
 settings_hotkey_toggle_slider=Karstais taustiņš sānu slīdnim
 
 settings_side_slider_enabled=Iespējot slīdni
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Ģenerētā parole %password ir veiks
 theme_fileformat_perl=Perls
 theme_fileformat_perl_placeholder=Šim failam ir jābeidzas ar `1;` veiksmīgi strādāt.
 
-#18.10
-theme_error_access_not_root=Piekļuve liegta: Lai rediģētu motīva konfigurāciju, lietotājam ir nepieciešama piekļuve <em>Webmin Configuration</em> modulim
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Rādīt simboliskās ikonas nolaižamajā izvēlnē Virtualmin/Cloudmin
 theme_xhred_global_shipped=Nosūtīts
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Motīva atjaunināšana neizdevās. Mēģiniet izma
 theme_xhred_git_patch_initiated=Tēmas atjaunināšana ir uzsākta.
 theme_xhred_global_prev_page=Iet atpakaļ vienu lapu
 theme_xhred_global_help=Palīdzība
-settings_right_soft_updates_page_options_title=Programmatūras atjauninājumi
 theme_xhred_git_compare_changes=Salīdziniet izmaiņas
 theme_xhred_filemanager_link_to_clipboard=Simboliskās saites nosaukums ir nokopēts starpliktuvē.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Pilns formāts
 theme_xhred_title_locale_long=Garais formāts
 theme_xhred_title_locale_short=Īss formāts
 settings_navigation_always_collapse=Vienmēr sabruka
-settings_side_slider_fixed_description=Šī opcija ir pieejama tikai HD ekrānos ar minimālo izšķirtspēju 1366 horizontālajos pikseļos un ar atspējoto opciju navigācijas saglabāšanai vienmēr
 theme_xhred_filemanager_records_per_page=Noklusētais ierakstu skaits vienā lappusē
 theme_xhred_filemanager_sorting=Noklusējuma kārtošanas tips
 theme_xhred_filemanager_sorting_asc=Augoši
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Dzēst visus paziņojumu
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Atzīmējiet visus paziņojumus kā lasītus
 theme_xhred_global_settings=Iestatījumi
 theme_xhred_tooltip_side_slider_pinned=Piespraudiet/atvienojiet sānu slīdni
-settings_side_slider_fixed_toggle=Rādīt piespraudes/atspraust pārslēgšanu
-settings_side_slider_fixed_toggle_description=Šī opcija parādīs pārslēgšanos sānu slīdnī, apakšējā rindā, ļaujot pārslēgt tā redzamību lidojuma laikā, ja ir izpildīti iepriekšējās opcijas nosacījumi.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalējiet arī Usermin motīvu atjauninājumus
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=baiti
-settings_sysinfo_real_time_status_options=Monitoringa iespējas reālā laikā
 settings_sysinfo_real_time_status_disk=Iespējot diskiem
 settings_sysinfo_real_time_status_disk_description=Varētu būt noderīgi atspējot reālā laika disku uzraudzību lēnām/lielām failu sistēmām
 theme_xhred_title_locale_non_ui_config=Servera ģenerēts datuma formāts
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Tiek gatavota jūsu rezerves kopija. Tas va
 
 settings_mail_ui=Iespējot jaunu pasta saskarni
 
-settings_show_theme_configuration_for_admins_only=Rādīt motīvu iestatījumu pogu tikai administratoriem
 settings_show_theme_configuration_for_admins_only_error=Piekļuve liegta: administrators ir bloķējis piekļuvi lietotāju pielāgojumiem
 
 theme_xhred_tooltip_navigation_pinned=Piespraust/atvienot navigācijas izvēlni
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Noņemšana ir veiksmīgi pabeigta, bet n
 theme_xhred_connection_error_details_ssl=Pārbaudiet brīdinājumu par <a>pašu parakstītu SSL sertifikātu</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Slēptie akordeoni
+settings_sysinfo_hidden_panels_provisional=Slēptie akordeoni
 theme_xhred_tooltip_dashboard_panels_disable=Slēpt $1 paneli
 theme_xhred_dashboard_panels_disabled_explain=Slēpto paneli var atkārtoti iespējot, izmantojot motīva konfigurācijas lapu.
+settings_right_sysinfo_page_options=Vadības panelis un reāllaika uzraudzība
+settings_right_navigation_menu_options=Navigācijas izvēlne
+settings_right_notification_slider_options=Sānu slīdnis
+settings_right_table_options=Galda displejs
+settings_right_hotkey_custom_options=Pielāgoto saišu karstie taustiņi
+settings_right_soft_updates_page_options=Motīvu atjauninājumi
+settings_global_general_options_title=Vispārīgas iespējas
+theme_error_access_not_root_user=Piekļuve liegta: lietotājam nav tiesību rediģēt šo sadaļu

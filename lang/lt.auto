@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Temų plėtinių redaktorius
 settings_right_theme_left_logo_title=Temos logotipo valdymas
 settings_right_theme_configurable_options_title=Konfigūruojamos autentiškos temos parinktys
 
-settings_right_window_options_title=Lango parinktys
-settings_right_navigation_menu_title=Naršymo meniu parinktys
-settings_right_table_options_title=Lentelės parinktys
-settings_security_title=Saugos įspėjimų parinktys
-settings_right_hotkey_options_title=Spartiųjų klavišų parinktys
-settings_right_sysinfo_page_options_title=Prietaisų skydelio parinktys
+settings_right_hotkey_options=Spartieji klavišai
 
 settings_right_hotkey_custom_options_description=Pasirinktinės nuorodos leidžia naudoti skaitmenis nuo <code>1</code> iki <code>9</code>, kad būtų galima greitai pasiekti galiojantį „Webmin“/„Usermin“/„Virtualmin“/„Cloudmin“ <code>URL.</code> <code>URL</code> galima išgauti iš šiuo metu atidaryto dešiniojo kadro turinio puslapio, perskaičius jo šaltinį. Svarbu, kad <code>URL</code> pradžioje nebūtų brūkšnio ir nenaudojami priešdėliai. Pvz., Norėdami greitai perjungti į „Apache“, nustatykite <code>custom link 1</code> lauką <code>/apache/</code>. Jei numatytasis sparčiųjų klavišų keitiklis bus nustatytas į <code>Alt,</code> spustelėję <code>Alt+1</code>, atidarysite „Apache“ modulį
 settings_hotkey_custom_1=<code>1</code> pasirinktinė nuoroda
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Numatytasis „Virtualmin“ puslapis
 settings_right_cloudmin_default=Numatytasis „Cloudmin“ puslapis
 
 settings_right_clear_local_cache=Išvalyti talpyklą
-settings_right_notification_slider_options_title=Šoninio slankiklio parinktys
 settings_side_slider_fixed=Laikykitės visada matomų
-settings_side_slider_palette=Slankiklio paletė
 settings_hotkey_toggle_slider=Greitasis šoninio slankiklio mygtukas
 
 settings_side_slider_enabled=Įgalinti slankiklį
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Generuotas slaptažodis %password sė
 theme_fileformat_perl=Perlas
 theme_fileformat_perl_placeholder=Šis failas turi baigtis `1;` sėkmingai dirbti.
 
-#18.10
-theme_error_access_not_root=Prieiga atmesta: norint redaguoti temos konfigūraciją, vartotojui reikia prieigos prie <em>„Webmin Configuration</em>“ modulio
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Rodyti simbolines piktogramas išskleidžiamajame meniu „Virtualmin“/„Cloudmin“
 theme_xhred_global_shipped=Išsiųsta
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Nepavyko atnaujinti temos. Pabandykite naudoti kons
 theme_xhred_git_patch_initiated=Pradėtas temos atnaujinimas.
 theme_xhred_global_prev_page=Grįžkite vieną puslapį atgal
 theme_xhred_global_help=Pagalba
-settings_right_soft_updates_page_options_title=Programinės įrangos atnaujinimai
 theme_xhred_git_compare_changes=Palyginkite pokyčius
 theme_xhred_filemanager_link_to_clipboard=Simbolinio saito vardas nukopijuotas į mainų sritį.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Visas formatas
 theme_xhred_title_locale_long=Ilgas formatas
 theme_xhred_title_locale_short=Trumpas formatas
 settings_navigation_always_collapse=Visada žlugo
-settings_side_slider_fixed_description=Ši parinktis galima tik HD ekranuose, kurių mažiausia skiriamoji geba yra 1366 horizontalieji pikseliai, ir su išjungta parinktimi, leidžiančia palaikyti navigaciją visada sutrauktą
 theme_xhred_filemanager_records_per_page=Numatytasis įrašų skaičius puslapyje
 theme_xhred_filemanager_sorting=Numatytasis rūšiavimo tipas
 theme_xhred_filemanager_sorting_asc=Kylanti
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Ištrinkite visus prane�
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Pažymėkite visus pranešimus kaip perskaitytus
 theme_xhred_global_settings=Nustatymai
 theme_xhred_tooltip_side_slider_pinned=Prisegti/atsegti šoninį slankiklį
-settings_side_slider_fixed_toggle=Rodyti perjungimą kaiščiu/atsegti
-settings_side_slider_fixed_toggle_description=Ši parinktis rodys perjungimą šoniniame slankiklyje, apatinėje eilutėje, leidžiančią perjungti jo matomumą skrendant, jei bus įvykdytos ankstesnės parinkties sąlygos.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Įdiekite „Usermin“ temos atnaujinimus
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=baitų
-settings_sysinfo_real_time_status_options=Stebėjimo realiuoju laiku galimybės
 settings_sysinfo_real_time_status_disk=Įgalinti diskus
 settings_sysinfo_real_time_status_disk_description=Gali būti naudinga išjungti lėtų/didelių failų sistemų diskų stebėjimą realiuoju laiku
 theme_xhred_title_locale_non_ui_config=Serverio sukurtas datos formatas
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Jūsų atsarginė kopija ruošiama. Tai gal
 
 settings_mail_ui=Įgalinti naujo pašto vartotojo sąsają
 
-settings_show_theme_configuration_for_admins_only=Rodyti temos nustatymų mygtuką tik administratoriams
 settings_show_theme_configuration_for_admins_only_error=Prieiga atmesta: administratorius užblokavo prieigą prie vartotojo pritaikymų
 
 theme_xhred_tooltip_navigation_pinned=Prisegti/atsegti naršymo meniu
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Pašalinimas sėkmingai baigtas, bet ne v
 theme_xhred_connection_error_details_ssl=Patikrinkite <a>savarankiškai pasirašyto SSL sertifikato</a> įspėjimą
 
 #19.71
-settings_sysinfo_hidden_panels=Paslėpti akordeonai
+settings_sysinfo_hidden_panels_provisional=Paslėpti akordeonai
 theme_xhred_tooltip_dashboard_panels_disable=Slėpti skydą $1 
 theme_xhred_dashboard_panels_disabled_explain=Paslėptą skydą galima iš naujo įjungti naudojant temos konfigūracijos puslapį.
+settings_right_sysinfo_page_options=Informacijos suvestinė ir stebėjimas realiuoju laiku
+settings_right_navigation_menu_options=Naršymo meniu
+settings_right_notification_slider_options=Šoninis slankiklis
+settings_right_table_options=Stalo rodymas
+settings_right_hotkey_custom_options=Tinkintų nuorodų spartieji klavišai
+settings_right_soft_updates_page_options=Temos atnaujinimai
+settings_global_general_options_title=Bendrosios galimybės
+theme_error_access_not_root_user=Prieiga uždrausta: vartotojui nėra suteikta teisė redaguoti šios skilties

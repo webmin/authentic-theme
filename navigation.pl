@@ -69,7 +69,7 @@ if (
                 if (($minfo->{'dir'} eq 'webmin' && foreign_available("webmin")) &&
                     $__custom_print eq '0')
                 {
-                    print_category_link($gconfig{'webprefix'} . "/webmin/edit_themes.cgi",
+                    print_category_link($gconfig{'webprefix'} . "/tconfig.cgi",
                                         $theme_text{'settings_right_theme_left_configuration_title'}, 1);
                     print_category_link($gconfig{'webprefix'} . "/settings-editor_read.cgi",
                                         $theme_text{'settings_right_theme_left_extensions_title'}, 1);
@@ -83,7 +83,7 @@ if (
                          $__custom_print eq '0' &&
                          $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')
                 {
-                    print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $theme_text{'settings_title'}, 1);
+                    print_category_link($gconfig{'webprefix'} . "/tconfig.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
                 }
                 if ($__print_hidden eq '0') {

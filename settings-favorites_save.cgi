@@ -11,7 +11,7 @@ our (%in, $in, $current_theme, $config_directory, $remote_user, %theme_text);
 
 do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
-theme_config_dir_available();
+theme_make_config_dir();
 
 $in =~ s/\t\n\r//g;
 $in =~ /\{(?:\{.*\}|[^{])*\}/sg;

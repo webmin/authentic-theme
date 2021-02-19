@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Authentic tema utvidelses-editor
 settings_right_theme_left_logo_title=Authentic tema logokontroll
 settings_right_theme_configurable_options_title=Konfigurerbare innstillinger for Authentic tema
 
-settings_right_window_options_title=Vindu innstillinger
-settings_right_navigation_menu_title=Innstillinger for navigasjonsmeny
-settings_right_table_options_title=Tabell innstillinger
-settings_security_title=Innstillinger for sikkerhetsvarsler
-settings_right_hotkey_options_title=Hurtigtast innstillinger
-settings_right_sysinfo_page_options_title=Innstillinger for Instrumentpanel
-
 settings_right_hotkey_custom_options_description=Tilpassede koblinger gjør at du kan bruke tallene fra <code>1</code> til <code>9</code> for rask tilgang til en hvilken som helst gyldig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</Code> <code>URL</code>en kan hentes ut fra den gjeldende innholdssiden i høyre ramme ved å lese kilden. Det er viktig at <code>URL</code>en ikke har noen skråstrek i begynnelsen og ikke bruke prefikser. For eksempel, for å hurtigskifte til Apache, sett <code>tilpasset kobling 1</code> felt til <code>/apache/</code>. Hvis standard hurtigtaster-tast er satt til <code>Alt</code> vil <code>Alt + 1</code> åpne Apache-modulen
 settings_hotkey_custom_1=Egendefinert lenke <code>1</code>
 settings_hotkey_custom_2=Egendefinert lenke <code>2</code>
@@ -174,9 +167,7 @@ settings_right_virtualmin_default=Standard side for Virtualmin
 settings_right_cloudmin_default=Standard side for Cloudmin
 
 settings_right_clear_local_cache=Nullstill cache
-settings_right_notification_slider_options_title=Innstillinger for varslings-slider
 settings_side_slider_fixed=Hold glidebryter alltid synlig
-settings_side_slider_palette=Slider palett
 settings_hotkey_toggle_slider=Hurtigtast for Notification Slider
 
 settings_side_slider_enabled=Aktiver slider
@@ -508,9 +499,6 @@ theme_xhred_password_generator_new_success=Generert passord %password er kopiert
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Denne filen må slutte med `1;` for å virke ordentlig.
 
-#18.10
-theme_error_access_not_root=Tilgang nektet: Brukeren må ha tilgang til modulen <em>Webmin konfigurasjon</em> for å redigere tema-konfigurasjon
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Vis symbolske ikoner i neddtrekk i Virtualmin/Cloudmin
 theme_xhred_global_shipped=Levert
@@ -592,7 +580,6 @@ theme_xhred_git_patch_update=Tema oppgradering feilet. Prøv å bruke konsollet 
 theme_xhred_git_patch_initiated=Tema-oppgradering er startet-.
 theme_xhred_global_prev_page=Gå tilbake en side
 theme_xhred_global_help=Hjelp
-settings_right_soft_updates_page_options_title=Programvareoppdateringer
 theme_xhred_git_compare_changes=Sammenlign endringer
 theme_xhred_filemanager_link_to_clipboard=Symbolsk lenkes navn er kopiert til utklippstavlen.
 
@@ -730,7 +717,6 @@ theme_xhred_title_locale_full=Fullt format
 theme_xhred_title_locale_long=Langt format
 theme_xhred_title_locale_short=Kort format
 settings_navigation_always_collapse=Alltid sammentrukket
-settings_side_slider_fixed_description=Dette alternativet er bare tilgjengelig på HD-skjermer med en minimumsoppløsning på 1366 horisontale piksler og med deaktivert alternativ for å holde navigasjonen alltid sammentrukket
 theme_xhred_filemanager_records_per_page=Standard antall oppføringer per side
 theme_xhred_filemanager_sorting=Standard sorteringstype
 theme_xhred_filemanager_sorting_asc=Stigende
@@ -758,8 +744,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Slett alle varsler
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Merk alle varsler som lest
 theme_xhred_global_settings=Innstillinger
 theme_xhred_tooltip_side_slider_pinned=Fest/løsne sideglidebryteren
-settings_side_slider_fixed_toggle=Vis veksler for feste/løsne
-settings_side_slider_fixed_toggle_description=Dette alternativet viser vekselen, i side-glidbryteren, nederst på raden, slik at du kan bytte synlighet i fart, hvis vilkårene i forrige alternativ er oppfylt.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installer tema-oppdateringer for Usermin også
@@ -783,7 +767,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Innstillinger for sanntidsovervåking
 settings_sysinfo_real_time_status_disk=Aktiver for disker
 settings_sysinfo_real_time_status_disk_description=Det kan være nyttig å deaktivere sanntidsovervåking av disker på trege/store filsystemer
 theme_xhred_title_locale_non_ui_config=Ikke-UI format (som i automatiserte eposter og eksporterte filer)
@@ -898,7 +881,6 @@ theme_xhred_backup_is_being_prepared=Sikkerhetskopien din blir forberedt. Det ka
 
 settings_mail_ui=Aktiver nytt e-post UI
 
-settings_show_theme_configuration_for_admins_only=Vis kun knapp for temainnstillinger for administratorer
 settings_show_theme_configuration_for_admins_only_error=Tilgang nektet: Administrator has blokkert tilgang til brukertilpasninger
 
 theme_xhred_tooltip_navigation_pinned=Fest/løsne navigasjonsmenyen

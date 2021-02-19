@@ -23,12 +23,7 @@ settings_right_theme_left_extensions_title=Editor de extensiones de temas
 settings_right_theme_left_logo_title=Control de logotipo de tema
 settings_right_theme_configurable_options_title=Opciones configurables para tema auténtico
 
-settings_right_window_options_title=Opciones de ventana
-settings_right_navigation_menu_title=Opciones del menú de navegación
-settings_right_table_options_title=Opciones de mesa
-settings_security_title=Opciones de alertas de seguridad
-settings_right_hotkey_options_title=Opciones de teclas de acceso rápido
-settings_right_sysinfo_page_options_title=Opciones de tablero
+settings_right_hotkey_options=Teclas de acceso rápido
 
 settings_right_hotkey_custom_options_description=Los enlaces personalizados le permiten usar dígitos del <code>1</code> al <code>9</code> para acceder rápidamente a cualquier <code>URL.</code> válida de Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> La <code>URL</code> se puede extraer de la página de contenido del marco derecho abierto actualmente, leyendo su fuente. Es importante que la <code>URL</code> no tenga barra al principio y no use prefijos. Por ejemplo, para cambiar rápidamente a Apache, configure <code>custom link 1</code> campo <code>/apache/</code>. Si el modificador de teclas rápidas predeterminado establecido en <code>Alt,</code> hacer clic en <code>Alt+1</code>, se abrirá su módulo Apache
 settings_hotkey_custom_1=Enlace personalizado <code>1</code>
@@ -88,9 +83,7 @@ settings_right_virtualmin_default=Página predeterminada para Virtualmin
 settings_right_cloudmin_default=Página predeterminada para Cloudmin
 
 settings_right_clear_local_cache=Limpiar cache
-settings_right_notification_slider_options_title=Opciones de control deslizante lateral
 settings_side_slider_fixed=Mantener siempre visible
-settings_side_slider_palette=Paleta deslizante
 settings_hotkey_toggle_slider=Tecla de acceso rápido para control deslizante lateral
 
 settings_side_slider_enabled=Habilitar control deslizante
@@ -423,9 +416,6 @@ theme_xhred_password_generator_new_success=La contraseña generada %password se 
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Este archivo debe terminar con `1;` para trabajar con éxito
 
-#18.10
-theme_error_access_not_root=Acceso denegado: el usuario necesita acceder al módulo <em>Configuración de Webmin</em> para editar la configuración del tema
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Mostrar iconos simbólicos en el menú desplegable en Virtualmin/Cloudmin
 theme_xhred_global_shipped=Enviado
@@ -506,7 +496,6 @@ theme_xhred_git_patch_update=La actualización del tema ha fallado. Intenta usar
 theme_xhred_git_patch_initiated=Se ha iniciado la actualización del tema.
 theme_xhred_global_prev_page=Regrese una página
 theme_xhred_global_help=Ayuda
-settings_right_soft_updates_page_options_title=Actualizaciones de software
 theme_xhred_git_compare_changes=Comparar cambios
 theme_xhred_filemanager_link_to_clipboard=El nombre del enlace simbólico se ha copiado al portapapeles.
 
@@ -646,7 +635,6 @@ theme_xhred_title_locale_full=Formato completo
 theme_xhred_title_locale_long=Formato largo
 theme_xhred_title_locale_short=Formato corto
 settings_navigation_always_collapse=Siempre colapsado
-settings_side_slider_fixed_description=Esta opción solo está disponible en pantallas de alta definición con una resolución mínima de 1366 píxeles horizontales y con la opción desactivada para mantener la navegación siempre contraída
 theme_xhred_filemanager_records_per_page=Número predeterminado de registros por página
 theme_xhred_filemanager_sorting=Tipo de ordenación predeterminado
 theme_xhred_filemanager_sorting_asc=Ascendente
@@ -674,8 +662,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Eliminar todas las notif
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Marcar todas las notificaciones como leídas
 theme_xhred_global_settings=Configuraciones
 theme_xhred_tooltip_side_slider_pinned=Fijar/desanclar el deslizador lateral
-settings_side_slider_fixed_toggle=Mostrar pin/unpin alternar
-settings_side_slider_fixed_toggle_description=Esta opción mostrará la alternancia, en el control deslizante lateral, en la fila inferior, lo que permite alternar su visibilidad sobre la marcha, si se cumplen las condiciones de la opción anterior.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instale actualizaciones de temas para Usermin también
@@ -699,7 +685,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MEGABYTE
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Opciones de monitoreo en tiempo real
 settings_sysinfo_real_time_status_disk=Habilitar para discos
 settings_sysinfo_real_time_status_disk_description=Puede ser útil desactivar la supervisión en tiempo real para discos en sistemas de archivos lentos/grandes
 theme_xhred_title_locale_non_ui_config=Formato de fecha generado por el servidor
@@ -814,7 +799,6 @@ theme_xhred_backup_is_being_prepared=Su copia de seguridad se está preparando. 
 
 settings_mail_ui=Habilitar nueva interfaz de usuario de correo
 
-settings_show_theme_configuration_for_admins_only=Mostrar el botón de configuración del tema solo para administradores
 settings_show_theme_configuration_for_admins_only_error=Acceso denegado: el administrador ha bloqueado el acceso a las personalizaciones de los usuarios
 
 theme_xhred_tooltip_navigation_pinned=Anclar/desanclar menú de navegación
@@ -1116,6 +1100,14 @@ theme_xhred_filemanager_remove_warning=La eliminación ha finalizado correctamen
 theme_xhred_connection_error_details_ssl=Verifique la advertencia de <a>certificado SSL autofirmado</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Acordeones ocultos
+settings_sysinfo_hidden_panels_provisional=Acordeones ocultos
 theme_xhred_tooltip_dashboard_panels_disable=Ocultar panel $1 
 theme_xhred_dashboard_panels_disabled_explain=El panel oculto se puede volver a habilitar usando la página de configuración del tema.
+settings_right_sysinfo_page_options=Panel de control y monitoreo en tiempo real
+settings_right_navigation_menu_options=Menú de Navegación
+settings_right_notification_slider_options=Deslizador lateral
+settings_right_table_options=Pantalla de mesa
+settings_right_hotkey_custom_options=Teclas de acceso rápido de enlaces personalizados
+settings_right_soft_updates_page_options=Actualizaciones de temas
+settings_global_general_options_title=Opciones generales
+theme_error_access_not_root_user=Acceso denegado: el usuario no tiene el privilegio de editar esta sección

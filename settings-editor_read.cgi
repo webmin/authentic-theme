@@ -7,11 +7,11 @@
 #
 use strict;
 
-our (%in, $current_theme, $config_directory, $remote_user, %theme_text);
+our (%in, $current_theme, $config_directory, $get_user_level, $remote_user, %theme_text);
 
 do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
-!foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
+$get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
 
 my @files = ($config_directory . "/$current_theme/styles.css",
              $config_directory . "/$current_theme/scripts.js",
@@ -57,4 +57,4 @@ print &ui_textarea("data",
                      ) .
                      "");
 print &ui_form_end([["save", $theme_text{'theme_xhred_global_save'}]]);
-&ui_print_footer("webmin/edit_themes.cgi", $theme_text{'right_return_theme_options'});
+&ui_print_footer("tconfig.cgi", $theme_text{'right_return_theme_options'});

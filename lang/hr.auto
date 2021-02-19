@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Uređivač tema za proširenja
 settings_right_theme_left_logo_title=Kontrola logotipa teme
 settings_right_theme_configurable_options_title=Podesive opcije za autentičnu temu
 
-settings_right_window_options_title=Opcije prozora
-settings_right_navigation_menu_title=Opcije izbornika navigacije
-settings_right_table_options_title=Opcije tablice
-settings_security_title=Opcije sigurnosnih upozorenja
-settings_right_hotkey_options_title=Opcije hitne tipke
-settings_right_sysinfo_page_options_title=Opcije nadzorne ploče
+settings_right_hotkey_options=Prečaci
 
 settings_right_hotkey_custom_options_description=Prilagođene veze omogućuju vam upotrebu cifara od <code>1</code> do <code>9</code> da biste brzo pristupili bilo kojem važećem <code>URL.</code> -u Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> se može izdvojiti sa trenutno otvorene stranice desnog okvira sadržaja čitanjem izvora. Važno je da <code>URL</code> na početku nema poševinu i da ne koristi prefikse. Na primjer, za brzi prijelaz na Apache postavite na <code>custom link 1</code> polje <code>custom link 1</code> <code>/apache/</code>. Ako je zadani modifikator hitnih tipki postavljen na <code>Alt,</code> klikanjem <code>Alt+1</code> otvorit će vam se Apache modul
 settings_hotkey_custom_1=Prilagođena veza <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Zadana stranica za Virtualmin
 settings_right_cloudmin_default=Zadana stranica za Cloudmin
 
 settings_right_clear_local_cache=Očisti predmemoriju
-settings_right_notification_slider_options_title=Opcije bočnih klizača
 settings_side_slider_fixed=Budite uvijek vidljivi
-settings_side_slider_palette=Paleta klizača
 settings_hotkey_toggle_slider=Hotkey za bočni klizač
 
 settings_side_slider_enabled=Omogući klizač
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Generirana lozinka %password uspješn
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Ova datoteka mora završiti sa `1;` da uspješno rade.
 
-#18.10
-theme_error_access_not_root=Pristup odbijen: korisniku je potreban pristup modulu <em>Konfiguracija Webmin</em> za uređivanje konfiguracije teme
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Prikažite simboličke ikone u padajućem izborniku u Virtualmin/Cloudmin
 theme_xhred_global_shipped=isporučen
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Ažuriranje teme nije uspjelo. Pokušajte pomoću k
 theme_xhred_git_patch_initiated=Pokrenuto je ažuriranje teme.
 theme_xhred_global_prev_page=Vratite se na jednu stranicu
 theme_xhred_global_help=Pomozite
-settings_right_soft_updates_page_options_title=Ažuriranja softvera
 theme_xhred_git_compare_changes=Usporedite promjene
 theme_xhred_filemanager_link_to_clipboard=Ime simbolične veze kopirano je u međuspremnik.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Puni format
 theme_xhred_title_locale_long=Dug format
 theme_xhred_title_locale_short=Kratki format
 settings_navigation_always_collapse=Uvijek propada
-settings_side_slider_fixed_description=Ta je opcija dostupna samo na HD ekranima s minimalnom razlučivosti od 1366 vodoravnih piksela i s onemogućenom opcijom za uvijek očuvanje navigacije
 theme_xhred_filemanager_records_per_page=Zadani broj zapisa po stranici
 theme_xhred_filemanager_sorting=Zadana vrsta sortiranja
 theme_xhred_filemanager_sorting_asc=Uzlazni
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Izbrišite sve obavijest
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Označite sve obavijesti kao pročitane
 theme_xhred_global_settings=postavke
 theme_xhred_tooltip_side_slider_pinned=Pin/otkopčajte bočni klizač
-settings_side_slider_fixed_toggle=Prikaži preklopku za pinove/otkopčavanje
-settings_side_slider_fixed_toggle_description=Ova će opcija prikazati preklopnik, u bočnom klizaču, u donjem redu, što omogućava da se njegova vidljivost mijenja u letu, ako su ispunjeni uvjeti iz prethodne opcije.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Instalirajte ažuriranja tema i za Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=HR
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajtova
-settings_sysinfo_real_time_status_options=Opcije praćenja u stvarnom vremenu
 settings_sysinfo_real_time_status_disk=Omogući za diskove
 settings_sysinfo_real_time_status_disk_description=Bilo bi korisno onemogućiti praćenje u stvarnom vremenu za diskove na sporim/velikim datotečnim sustavima
 theme_xhred_title_locale_non_ui_config=Format datuma generiran na poslužitelju
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Priprema se sigurnosna kopija. Može potraj
 
 settings_mail_ui=Omogući novo korisničko sučelje e-pošte
 
-settings_show_theme_configuration_for_admins_only=Prikažite gumb postavki teme samo za administratore
 settings_show_theme_configuration_for_admins_only_error=Pristup odbijen: Administrator je blokirao pristup korisničkim prilagodbama
 
 theme_xhred_tooltip_navigation_pinned=Prikvači/ukloni navigacijski izbornik
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Uklanjanje je uspješno završeno, ali ne
 theme_xhred_connection_error_details_ssl=Provjerite <a>upozorenje o samopotpisanom SSL certifikatu</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Skrivene harmonike
+settings_sysinfo_hidden_panels_provisional=Skrivene harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Sakrij ploču $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrivena ploča može se ponovno omogućiti pomoću stranice za konfiguraciju teme.
+settings_right_sysinfo_page_options=Nadzorna ploča i nadzor u stvarnom vremenu
+settings_right_navigation_menu_options=Navigacijski izbornik
+settings_right_notification_slider_options=Klizač sa strane
+settings_right_table_options=Prikaz tablice
+settings_right_hotkey_custom_options=Hitne tipke za prilagođene veze
+settings_right_soft_updates_page_options=Ažuriranja teme
+settings_global_general_options_title=Opće mogućnosti
+theme_error_access_not_root_user=Pristup odbijen: Korisnik nema privilegiju uređivati ovaj odjeljak

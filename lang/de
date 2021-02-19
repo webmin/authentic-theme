@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Authentic Design Erweiterungs Editor
 settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen
 settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Design
 
-settings_right_window_options_title=Optionen für Fenster
-settings_right_navigation_menu_title=Optionen für Navigations Menü
-settings_right_table_options_title=Optionen für Tabellen
-settings_security_title=Optionen für Sicherheits Warnungen
-settings_right_hotkey_options_title=Optionen für Schnellzugriffs Tasten
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=Benutzerdefinierte Links erlauben es die Ziffertasten <code>1</code> bis <code>9</code> als Schnellzugriffs Tasten für beliebige Webmin/Usermin/Virtualmin/Cloudmin <code>URLs</code> einzurichten. Die <code>URL</code> erhält man wenn man sich nur den rechten Frame anzeigen lä&szligt, z.B. mit einem rechtsklick auf die rechte Inhalts Seite und der Auswahl "Nur diesem Frame anzeigen". Wichtig: Es darf nur das letzte Teilstück der <code>URL</code> verwendet werden! Zum Aufrufen der Apache Configuration muss der Eintrag in Benuterzdefinierter Link 1 <code>/apache/</code> sein, ohne fürende oder folgende Schrägstiche (/).
 settings_hotkey_custom_1=Benutzerdefinierter Link <code>1</code>
 settings_hotkey_custom_2=Benutzerdefinierter Link <code>2</code>
@@ -174,9 +167,7 @@ settings_right_virtualmin_default=Standard Kategorie für Virtualmin
 settings_right_cloudmin_default=Standard Kategorie für Cloudmin
 
 settings_right_clear_local_cache=Lösche Zwischenspeicher
-settings_right_notification_slider_options_title=Optionen für schwebende Benachrichtigungen
 settings_side_slider_fixed=Schwebende Benachrichtigungen immer ananzeigen
-settings_side_slider_palette=Farbpalette für schwebende Benachrichtigungen
 settings_hotkey_toggle_slider=Schnellzugriffs Taste für schwebende Benachrichtigungen
 
 settings_side_slider_enabled=Schwebende Benachrichtigungen einschalten
@@ -509,9 +500,6 @@ theme_xhred_password_generator_new_success=Erzeugtes Passwort %password wurde in
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Die Datei muss mit `1;` enden, siehe http://stackoverflow.com/questions/1940182/what-does-1-mean-in-perl
 
-#18.10
-theme_error_access_not_root=Zugriff verweigert: Der Benutzer benötigt Zugriff auf die <em>Webmin Konfiguration</em>, um die Design Einstellungen zu bearbeiten
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Symbole in Virtualmin/Cloudmin Dropdown Liste azeigen
 theme_xhred_global_shipped=Shipped
@@ -593,7 +581,6 @@ theme_xhred_git_patch_update=Design Update fehlgeschlagen. Versuche es bitte sel
 theme_xhred_git_patch_initiated=Design Update wurde angesto&szligen.
 theme_xhred_global_prev_page=Eine Seite zurück
 theme_xhred_global_help=Hilfe
-settings_right_soft_updates_page_options_title=Software Updates
 theme_xhred_git_compare_changes=Vergleiche Änderungen
 theme_xhred_filemanager_link_to_clipboard=Name des symbolischen Links wurde in die Zwischenablage kopiert.
 
@@ -731,7 +718,6 @@ theme_xhred_title_locale_full=Deatilliertes Format
 theme_xhred_title_locale_long=Langes Format
 theme_xhred_title_locale_short=Kurzes Format
 settings_navigation_always_collapse=Menü immer eingeklappt
-settings_side_slider_fixed_description=Diese Einstellung ist nur auf HD Bildschirmen mit einer Auflösung von mehr als 1366 horizontalen Bildpunken und nicht eingeschalteter Einstellung "Menü immer eingeklappt" auswählbar
 theme_xhred_filemanager_records_per_page=Standard Einstellung für anzuzeigende Zeilen pro Seite
 theme_xhred_filemanager_sorting=Standardmäßig sortieren nach Typ
 theme_xhred_filemanager_sorting_asc=Aufsteigend
@@ -759,8 +745,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Lösche alle Benachricht
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Markiere alle Benachrichtigungen als gelesen
 theme_xhred_global_settings=Einstellungen
 theme_xhred_tooltip_side_slider_pinned=Befestige seitlichen Schieber
-settings_side_slider_fixed_toggle=Zeige Befestigungs Umschalter
-settings_side_slider_fixed_toggle_description=Diese Einstellung zeigt den Umschalter zum Befestigen des seitlichen Schiebers in der untersten Zeile. Damit kannst Du jederzeit zwichen befestigt und nicht befestigt umschalten.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Design Update auch für Usermin durchführen
@@ -784,7 +768,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Real-time Monitor Optionen
 settings_sysinfo_real_time_status_disk=Für Festplatten Laufwerke einschalten
 settings_sysinfo_real_time_status_disk_description=Es kann hilfreich sein den real-time Monitor für langsame oder große Dateisysteme auszuschalten.
 theme_xhred_title_locale_non_ui_config=Unversales Format (wie in automatischen Mails und exportierten Daten)
@@ -894,7 +877,6 @@ theme_xhred_backup_is_being_prepared=Deine Sicherung wird vorbereitet. Dies kann
 
 settings_mail_ui=Neue Benutzeroberfläche für Mail verwenden
 
-settings_show_theme_configuration_for_admins_only=Knopf für Design Einstellungen nur für Administratoren anzeigen
 settings_show_theme_configuration_for_admins_only_error=Zugriff verweigert: Der Zugang zu den Benutzereinstellungen wurde vom Administrator gesperrt
 
 theme_xhred_tooltip_navigation_pinned=Zeige/verstecke Navigationsmenü

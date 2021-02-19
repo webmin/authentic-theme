@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Tema-uitbreidings-redakteur
 settings_right_theme_left_logo_title=Tema-logo beheer
 settings_right_theme_configurable_options_title=Opstelbare opsies vir outentieke tema
 
-settings_right_window_options_title=Vensteropsies
-settings_right_navigation_menu_title=Opsies-kieslysopsies
-settings_right_table_options_title=Tabelopsies
-settings_security_title=Opsies vir sekuriteitswaarskuwings
-settings_right_hotkey_options_title=Sneltoets-opsies
-settings_right_sysinfo_page_options_title=Opsies op die paneelbord
+settings_right_hotkey_options=Sneltoetse
 
 settings_right_hotkey_custom_options_description=Met persoonlike skakels kan u syfers van <code>1</code> tot <code>9</code> gebruik om vinnig toegang tot enige geldige Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> Die <code>URL</code> kan onttrek word vanaf die huidige bladsy met die regte raamraamwerk deur die bron te lees. Dit is belangrik dat <code>URL</code> aan die begin geen streep het nie en nie voorvoegsels gebruik nie. Byvoorbeeld, om vinnig oor te skakel na Apache, stel u in op die <code>custom link 1</code> veld <code>/apache/</code>. As die standaard-sneltoets-wysiger op <code>Alt,</code> klik op <code>Alt+1</code>, en dan word u Apache-module oopgemaak
 settings_hotkey_custom_1=Pasgemaakte skakel <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Verstek bladsy vir Virtualmin
 settings_right_cloudmin_default=Verstek bladsy vir Cloudmin
 
 settings_right_clear_local_cache=Maak kas skoon
-settings_right_notification_slider_options_title=Opsies vir skuifknoppies
 settings_side_slider_fixed=Hou altyd sigbaar
-settings_side_slider_palette=Skuifpalet
 settings_hotkey_toggle_slider=Sneltoets vir syskyfie
 
 settings_side_slider_enabled=Aktiveer skuifbalk
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Gegenereerde wagwoord %password is su
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Hierdie lêer moet eindig met `1;` om suksesvol te werk.
 
-#18.10
-theme_error_access_not_root=Toegang geweier: Gebruiker het toegang tot die module <em>Webmin Configuration</em> nodig om die temakonfigurasie te wysig
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Wys simboliese ikone in die keuselys in Virtualmin/Cloudmin
 theme_xhred_global_shipped=verskeep
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Tema-opdatering het misluk. Probeer konsole gebruik
 theme_xhred_git_patch_initiated=Tema-opdatering is begin.
 theme_xhred_global_prev_page=Gaan een bladsy terug
 theme_xhred_global_help=hulp
-settings_right_soft_updates_page_options_title=Sagteware-opdaterings
 theme_xhred_git_compare_changes=Vergelyk veranderinge
 theme_xhred_filemanager_link_to_clipboard=Die naam van die simboliese skakel is na die knipbord gekopieër.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Volle formaat
 theme_xhred_title_locale_long=Lang formaat
 theme_xhred_title_locale_short=Kort formaat
 settings_navigation_always_collapse=Altyd inmekaargesak
-settings_side_slider_fixed_description=Hierdie opsie is slegs beskikbaar op HD-skerms met 'n minimum resolusie van 1366 horisontale pixels en met 'n gestremde opsie om navigasie altyd inmekaar te stort
 theme_xhred_filemanager_records_per_page=Standaard aantal rekords per bladsy
 theme_xhred_filemanager_sorting=Verstek tipe sorteer
 theme_xhred_filemanager_sorting_asc=stygende
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Vee alle kennisgewings u
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Merk alle kennisgewings soos gelees
 theme_xhred_global_settings=instellings
 theme_xhred_tooltip_side_slider_pinned=Speld/skuif die skuifspeld oop
-settings_side_slider_fixed_toggle=Toon knoppie om te speld/ontkoppel
-settings_side_slider_fixed_toggle_description=Hierdie opsie vertoon die skakelaar, in die syskuifbalk, aan die onderste ry, sodat u die sigbaarheid daarvan kan wissel, indien aan die voorwaardes in die vorige opsie voldoen is.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installeer ook tema-opdaterings vir Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=KG
 theme_xhred_nice_size_b=grepe
-settings_sysinfo_real_time_status_options=Opsies vir intydse monitering
 settings_sysinfo_real_time_status_disk=Aktiveer vir skywe
 settings_sysinfo_real_time_status_disk_description=Dit kan nuttig wees om intydse monitering vir skywe op stadige/groot lêerstelsels uit te skakel
 theme_xhred_title_locale_non_ui_config=Bediener-gegenereerde datumformaat
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=U rugsteun word voorberei. Dit kan 'n rukki
 
 settings_mail_ui=Aktiveer nuwe e-pos-UI
 
-settings_show_theme_configuration_for_admins_only=Wys tema-instellingsknoppie slegs vir administrateurs
 settings_show_theme_configuration_for_admins_only_error=Toegang geweier: Administrateur het toegang tot gebruiker-aanpassings geblokkeer
 
 theme_xhred_tooltip_navigation_pinned=Speld/ontklee navigasiekieslys
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Die verwydering is suksesvol voltooi, maa
 theme_xhred_connection_error_details_ssl=Kyk na <a>selfondertekende SSL-sertifikaat</a> -waarskuwing
 
 #19.71
-settings_sysinfo_hidden_panels=Versteekte trekklaviere
+settings_sysinfo_hidden_panels_provisional=Versteekte trekklaviere
 theme_xhred_tooltip_dashboard_panels_disable=Versteek $1 paneel
 theme_xhred_dashboard_panels_disabled_explain=Versteekte paneel kan weer geaktiveer word met behulp van die tema-konfigurasie-bladsy.
+settings_right_sysinfo_page_options=Dashboard en intydse monitering
+settings_right_navigation_menu_options=Navigasiekieslys
+settings_right_notification_slider_options=Sy-skuifbalk
+settings_right_table_options=Tafeluitstalling
+settings_right_hotkey_custom_options=Persoonlike skakels met die skakel
+settings_right_soft_updates_page_options=Tema-opdaterings
+settings_global_general_options_title=Algemene opsies
+theme_error_access_not_root_user=Toegang geweier: Gebruiker het nie die voorreg om hierdie afdeling te wysig nie

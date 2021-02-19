@@ -19,10 +19,10 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory, $var_directory,
 
-    %theme_text,               %module_text_full, %theme_config,     $get_user_level, $global_prefix, $theme_requested_url,
-    $theme_requested_from_tab, @theme_settings_excluded, $t_uri___i, $theme_module_query_id, $has_virtualmin, $has_cloudmin,
-    $has_usermin,              $has_usermin_version,     $has_usermin_root_dir, $has_usermin_conf_dir,
-    $mode_status,              $t_var_switch_m,          $t_var_product_m);
+    %theme_text,               %module_text_full,    %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
+    $theme_requested_from_tab, $t_uri___i,           $theme_module_query_id, $has_virtualmin, $has_cloudmin,
+    $has_usermin,              $has_usermin_version, $has_usermin_root_dir,  $has_usermin_conf_dir,
+    $mode_status,              $t_var_switch_m,      $t_var_product_m);
 
 init_type();
 init_config();
@@ -388,7 +388,7 @@ sub get_extended_sysinfo
                         }
                     }
                 }
-                if ($theme_config{'settings_sysinfo_hidden_panels'} =~ /\'$info->{'id'}\'/) {
+                if ($theme_config{'settings_sysinfo_hidden_panels_provisional'} =~ /\'$info->{'id'}\'/) {
                     next;
                 }
                 if ($info->{'id'} && $charts_not_supported eq 'no') {
@@ -919,7 +919,7 @@ sub print_left_menu
                 if (($c eq 'global_setting' || $c eq 'global_settings' && &foreign_available("webmin")) &&
                     $__custom_print eq '0')
                 {
-                    &print_category_link($gconfig{'webprefix'} . "/webmin/edit_themes.cgi",
+                    &print_category_link($gconfig{'webprefix'} . "/tconfig.cgi",
                                          $theme_text{'settings_right_theme_left_configuration_title'}, 1);
                     &print_category_link($gconfig{'webprefix'} . "/settings-editor_read.cgi",
                                          $theme_text{'settings_right_theme_left_extensions_title'}, 1);
@@ -948,7 +948,7 @@ sub print_left_menu
                          $__custom_print eq '0' &&
                          $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')
                 {
-                    print_category_link($gconfig{'webprefix'} . "/settings-user.cgi", $theme_text{'settings_title'}, 1);
+                    print_category_link($gconfig{'webprefix'} . "/tconfig.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
                 }
                 if ($item->{'module'} ne 'mailbox') {
@@ -1408,7 +1408,7 @@ sub get_sysinfo_vars
                   ) .
                   '" class="btn btn-xxs btn-' .
                   ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
-                  ($global_prefix || $gconfig{'webprefix'}) . '/webmin/edit_themes.cgi\'><i class="fa fa-fw ' .
+                  ($global_prefix || $gconfig{'webprefix'}) . '/tconfig.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
                   '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
@@ -1416,11 +1416,11 @@ sub get_sysinfo_vars
                   . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
                   '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
                   '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
-                  $authentic_remote_version_tag . '/authentic-theme-' . $authentic_remote_version_local .
-                  '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' . $theme_text{'theme_download'} .
-                  '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' . ($global_prefix || $gconfig{'webprefix'}) .
-                  '/webmin/edit_themes.cgi\' data-href=\'' . ($global_prefix || $gconfig{'webprefix'}) .
-                  '/webmin/edit_themes.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
+                  $authentic_remote_version_tag . '/authentic-theme-' .
+                  $authentic_remote_version_local . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
+                  $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
+                  ($global_prefix || $gconfig{'webprefix'}) . '/tconfig.cgi\' data-href=\'' .
+                  ($global_prefix || $gconfig{'webprefix'}) . '/tconfig.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
                   $theme_text{'theme_xhred_global_configuration'} . '</a>' . '</div>';
 
             } else {
@@ -2276,7 +2276,7 @@ sub clear_theme_cache
     closedir $dir;
 }
 
-sub theme_config_dir_available
+sub theme_make_config_dir
 {
     my $_wm_at_conf_dir = $config_directory . '/' . $current_theme;
 
@@ -2377,8 +2377,8 @@ sub get_theme_user_link
     my $is_hidden = (!foreign_available("webmin") &&
                        $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true' ? ' hidden-force ' :
                        undef);
-    my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force '          : undef);
-    my $link           = ($get_user_level eq '0' ? '/webmin/edit_themes.cgi' : '/settings-user.cgi');
+    my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
+    my $link           = '/tconfig.cgi';
 
     my $mversion = theme_mversion_str();
 
@@ -2504,826 +2504,6 @@ sub settings_get_select_default_module
     return $select;
 }
 
-sub theme_settings
-{
-    my ($t, $k, $v) = @_;
-
-    if ($t eq 'get') {
-        my @settings = (
-            '__',
-            theme_settings('fa',
-                           'file-o',
-                           &theme_text('settings_right_page_defaults_title') .
-                             "~" . &theme_text('settings_right_page_default_description')
-            ),
-            'settings_right_default_tab_webmin',
-            (foreign_available("virtual-server") ? 'virtualmin' : '/'),
-            'settings_right_default_tab_usermin',
-            'mail',
-            'settings_webmin_default_module',
-            get_goto_module(),
-            'settings_right_virtualmin_default',
-            'sysinfo.cgi',
-            'settings_right_cloudmin_default',
-            'sysinfo.cgi',
-            'settings_right_reload',
-            'true',
-
-            '__',
-            theme_settings('fa', 'desktop', &theme_text('settings_global_options_title')),
-            'settings_document_title',
-            '1',
-            'settings_cm_editor_palette',
-            'monokai',
-            'settings_global_palette_unauthenticated',
-            'light',
-
-            '__',
-            theme_settings('fa', 'info-circle', &theme_text('settings_sysinfo_real_time_status_options')),
-            'settings_sysinfo_real_time_status',
-            'true',
-            'settings_sysinfo_real_time_status_disk',
-            'true',
-            'settings_sysinfo_real_time_stored',
-            'true',
-            'settings_sysinfo_real_time_stored_length',
-            '600',
-
-            '__',
-            theme_settings('fa', 'info-circle', &theme_text('settings_right_sysinfo_page_options_title')),
-            'settings_sysinfo_easypie_charts',
-            'true',
-            'settings_sysinfo_easypie_charts_size',
-            '172',
-            'settings_sysinfo_easypie_charts_width',
-            '2',
-            'settings_sysinfo_easypie_charts_scale',
-            '8',
-            'settings_sysinfo_hidden_panels',
-            '',
-            'settings_sysinfo_max_servers',
-            '10',
-
-            '__',
-            theme_settings('fa', 'bars', &theme_text('settings_right_navigation_menu_title')),
-            'settings_navigation_color',
-            'blue',
-            'settings_grayscale_level_navigation',
-            '0',
-            'settings_sepia_level_navigation',
-            '0',
-            'settings_saturate_level_navigation',
-            '1',
-            'settings_hue_level_navigation',
-            '0',
-            'settings_invert_level_navigation',
-            '0',
-            'settings_brightness_level_navigation',
-            '1',
-            'settings_contrast_level_navigation',
-            '1',
-            'settings_navigation_always_collapse',
-            'false',
-            'settings_leftmenu_width',
-            '260',
-            'settings_switch_rdisplay',
-            'false',
-            'settings_show_webmin_tab',
-            'true',
-            'settings_leftmenu_section_hide_refresh_modules',
-            'false',
-            'settings_leftmenu_section_hide_unused_modules',
-            'false',
-            'settings_collapse_navigation_link',
-            'true',
-            'settings_sysinfo_link_mini',
-            'false',
-            'settings_show_night_mode_link',
-            'true',
-            'settings_show_terminal_link2',
-            'true',
-            'settings_favorites',
-            'true',
-            'settings_theme_options_button',
-            'true',
-            'settings_show_theme_configuration_for_admins_only',
-            'false',
-            'settings_leftmenu_button_language',
-            'false',
-            'settings_leftmenu_button_refresh',
-            'false',
-            'settings_leftmenu_netdata',
-            'true',
-            'settings_leftmenu_netdata_link',
-            'http://' . get_system_hostname() . ':19999',
-            'settings_leftmenu_user_html',
-            '',
-            'settings_leftmenu_user_html_only_for_administrator',
-            'false',
-            'settings_leftmenu_custom_links',
-            '',
-
-            '__',
-            theme_settings('fa', 'bell', &theme_text('settings_right_notification_slider_options_title')),
-            'settings_side_slider_enabled',
-            'true',
-            'settings_side_slider_fixed',
-            'false',
-            'settings_side_slider_sysinfo_enabled',
-            'true',
-            'settings_side_slider_notifications_enabled',
-            'true',
-            'settings_side_slider_favorites_enabled',
-            'true',
-            'settings_side_slider_palette',
-            'nav',
-
-            '__',
-            theme_settings('fa', 'table', &theme_text('settings_right_table_options_title')),
-            'settings_right_hide_table_icons',
-            'false',
-            'settings_right_small_table_icons',
-            'false',
-            'settings_right_animate_table_icons',
-            'true',
-            'settings_right_grayscaled_table_icons',
-            'true',
-            'settings_table_init_datatables',
-            '20000',
-
-            '__',
-            theme_settings('fa', 'keyboard-o', &theme_text('settings_right_hotkey_options_title')),
-            'settings_hotkeys_active',
-            'true',
-            'settings_hotkey_toggle_modifier',
-            'altKey',
-            'settings_hotkey_toggle_key_webmin',
-            'w',
-            'settings_hotkey_toggle_key_virtualmin',
-            'v',
-            'settings_hotkey_toggle_key_cloudmin',
-            'c',
-            'settings_hotkey_toggle_key_usermin',
-            'u',
-            'settings_hotkey_toggle_key_webmail',
-            'm',
-            'settings_hotkey_shell2',
-            'k',
-            'settings_hotkey_sysinfo',
-            'i',
-            'settings_hotkey_toggle_slider',
-            'n',
-            'settings_hotkey_favorites',
-            'f',
-            'settings_hotkey_focus_search',
-            's',
-            'settings_hotkey_reload',
-            'r',
-            'settings_hotkey_navigation',
-            'a',
-            'settings_hotkey_slider',
-            'e',
-            'settings_hotkey_toggle_key_night_mode',
-            'l',
-            '__',
-            theme_settings('fa', 'sub-title', '' . "~" . &theme_text('settings_right_hotkey_custom_options_description')),
-            'settings_hotkey_custom_1',
-            '',
-            'settings_hotkey_custom_2',
-            '',
-            'settings_hotkey_custom_3',
-            '',
-            'settings_hotkey_custom_4',
-            '',
-            'settings_hotkey_custom_5',
-            '',
-            'settings_hotkey_custom_6',
-            '',
-            'settings_hotkey_custom_7',
-            '',
-            'settings_hotkey_custom_8',
-            '',
-            'settings_hotkey_custom_9',
-            '',
-
-            '__',
-            theme_settings('fa', 'info-circle', &theme_text('settings_right_soft_updates_page_options_title')),
-            'settings_sysinfo_theme_updates',
-            'false',
-            'settings_sysinfo_csf_updates',
-            'false',
-            'settings_cache_interval',
-            '86400',
-            'settings_sysinfo_theme_updates_for_usermin',
-            'true');
-
-        return (@settings);
-    }
-
-    if ($t eq 'exclusions') {
-
-        # Exclude list of combined settings for UserminVirtualmin/Cloudmin
-        my @s_vc_e = ('settings_show_theme_configuration_for_admins_only');
-
-        if (!&foreign_available("server-manager") &&
-            !foreign_available("virtual-server") &&
-            !get_usermin_data("mailbox"))
-        {
-            foreach my $e (@s_vc_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude list of combined settings for Virtualmin/Cloudmin
-        my @s_vc_e = ('settings_right_default_tab_webmin', 'settings_right_reload');
-
-        if (!&foreign_available("server-manager") &&
-            !foreign_available("virtual-server"))
-        {
-            foreach my $e (@s_vc_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude hidden panels if none
-        if (!$theme_config{'settings_sysinfo_hidden_panels'}) {
-            push(@theme_settings_excluded, 'settings_sysinfo_hidden_panels');
-        }
-
-        # Exclude list of settings for Virtualmin
-        my @s_vm_e = ('settings_right_virtualmin_default',
-                      'settings_show_webmin_tab',
-                      'settings_hotkey_toggle_key_virtualmin',
-                      'settings_sysinfo_max_servers');
-
-        if (!foreign_available("virtual-server")) {
-            foreach my $e (@s_vm_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude list of settings for Cloudmin
-        my @s_cm_e = ('settings_right_cloudmin_default', 'settings_hotkey_toggle_key_cloudmin');
-        if (!&foreign_available("server-manager")) {
-            foreach my $e (@s_cm_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude list of settings for Usermin
-        my @s_um_e = ('settings_hotkey_toggle_key_usermin', 'settings_sysinfo_theme_updates_for_usermin');
-        if (!$has_usermin) {
-            foreach my $e (@s_um_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude list of settings for Webmail
-        my @s_wm_e = ('settings_hotkey_toggle_key_webmail', 'settings_right_default_tab_usermin');
-        if (!get_usermin_data("mailbox")) {
-            foreach my $e (@s_wm_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude list of settings for ConfigServer Security & Firewall
-        my @s_cf_e = ('settings_sysinfo_csf_updates');
-        if (!&foreign_available("csf")) {
-            foreach my $e (@s_cf_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        # Exclude Netdata link and default address
-        my @s_netd_e = ('settings_leftmenu_netdata', 'settings_leftmenu_netdata_link');
-        if (!has_command('netdata')) {
-            foreach my $e (@s_netd_e) {
-                push(@theme_settings_excluded, $e);
-            }
-        }
-
-        return @theme_settings_excluded;
-    }
-
-    if ($t eq 'fa') {
-        return $v;
-    }
-
-    if ($t eq 'header') {
-        return '
-            ' . $theme_text{'settings_right_title'} . '
-            <p></p>
-            <form class="ui_form" action="/settings.cgi" method="post"
-                data-text-current_theme="'
-          . $theme_text{'settings_right_current_theme'}
-
-          . '" data-text-settings_right_saved="' . $theme_text{'settings_right_saved'}
-
-          . '" data-text-save="' . $text{'save'}
-
-          . '" data-text-settings_right_saving="' . $theme_text{'settings_right_saving'}
-
-          . '" data-text-settings_right_restore_defaults="' . $theme_text{'settings_right_restore_defaults'}
-
-          . '" data-text-settings_right_clear_local_cache="' . $theme_text{'settings_right_clear_local_cache'}
-
-          . '" data-text-settings_right_restored="' . $theme_text{'settings_right_restored'}
-
-          . '" data-text-settings_right_restoring="' . $theme_text{'settings_right_restoring'}
-
-          . '" data-text-error="' . $theme_text{'error'}
-
-          . '">
-                <div class="table-responsive">
-                    <table class="table table-striped table-condensed table-subtable">
-                        <thead><tr><th class="table-title" style="width: auto"><i class="fa fa-cogs vertical-align-text-middle"></i>&nbsp;<b>'
-          . $theme_text{'settings_right_theme_configurable_options_title'} . '</b></th></tr></thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table class="sub_table_container table-hardcoded" width="100%">
-                                        <tbody>
-                                        ';
-    }
-
-    if ($t eq 'section') {
-        foreach my $e (@theme_settings_excluded) {
-            if ($k =~ /\Q$theme_text{$e}\E/) {
-                return;
-            }
-        }
-        return '
-            <tr>
-                <td colspan="2" class="col_value'
-          . ($k ? ' col_header ' : '') . ' atssection"><b>' . $k . '</b>' .
-          ($v && '<br><div class="smaller text-normal no-padding">' . $v . '</div>') . '</td>
-            </tr>
-        ';
-    }
-
-    if ($t eq 'content') {
-        foreach my $o (@theme_settings_excluded) {
-            if ($k eq $o) {
-                return;
-            }
-        }
-
-        my $v = (length $theme_config{$k} ? $theme_config{$k} : $v);
-
-        if ($v eq 'true' || $v eq 'false') {
-            my $disabled;
-
-            # Force disabled state
-            if (!has_command('git') &&
-                ($k eq 'settings_sysinfo_theme_updates' ||
-                    $k eq 'settings_sysinfo_theme_updates_for_usermin'))
-            {
-                $disabled = " pointer-events-none";
-            }
-
-            $v =
-              '<span class="awradio awobject' . $disabled . '">' . '<input class="iawobject" type="radio" name="' . $k .
-              '" id="' . $k . '_1" value="true"' . ($v eq 'true' && ' checked') . '>' . '<label class="lawobject" for="' .
-              $k . '_1">' . $text{'yes'} . '</label>' . '<input class="iawobject" type="radio" name="' .
-              $k . '" id="' . $k . '_0" value="false"' . ($v eq 'false' && ' checked') .
-              '>' . '<label class="lawobject" for="' . $k . '_0">' . $text{'no'} . '</label>' . '</span>
-            ';
-
-        } elsif ($k =~ /settings_sysinfo_hidden_panels/ && $theme_config{'settings_sysinfo_hidden_panels'}) {
-            my $excluded_accordions;
-            my @excluded_accordions;
-            my @selected_excluded_accordions;
-            eval {
-                my $data = $theme_config{'settings_sysinfo_hidden_panels'};
-                $data =~ s/'/"/g;
-                $excluded_accordions          = convert_from_json($data);
-                @selected_excluded_accordions = keys %{$excluded_accordions};
-                foreach my $key (@selected_excluded_accordions) {
-                    push(@excluded_accordions, [$key, $excluded_accordions->{$key}]);
-                }
-            };
-            if (!$@) {
-                $v = &ui_select("settings_sysinfo_hidden_panels",
-                                \@selected_excluded_accordions,
-                                \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
-            }
-
-        } elsif ($k =~ /settings_security_notify_on_/ ||
-                 $k =~ /settings_hotkey_toggle_key_/           ||
-                 $k eq 'settings_hotkey_focus_search'          ||
-                 $k eq 'settings_hotkey_navigation'            ||
-                 $k eq 'settings_hotkey_slider'                ||
-                 $k eq 'settings_hotkey_toggle_slider'         ||
-                 $k eq 'settings_hotkey_reload'                ||
-                 $k eq 'settings_hotkey_shell2'                ||
-                 $k eq 'settings_hotkey_sysinfo'               ||
-                 $k eq 'settings_hotkey_favorites'             ||
-                 $k eq 'settings_sysinfo_easypie_charts_size'  ||
-                 $k eq 'settings_sysinfo_easypie_charts_width' ||
-                 $k eq 'settings_sysinfo_easypie_charts_scale' ||
-                 $k eq 'settings_sysinfo_max_servers')
-        {
-
-            my $width =
-              ($k =~ /settings_hotkey_toggle_key_/ ||
-                $k eq 'settings_hotkey_focus_search'          ||
-                $k eq 'settings_hotkey_navigation'            ||
-                $k eq 'settings_hotkey_slider'                ||
-                $k eq 'settings_hotkey_toggle_slider'         ||
-                $k eq 'settings_hotkey_reload'                ||
-                $k eq 'settings_hotkey_shell2'                ||
-                $k eq 'settings_hotkey_sysinfo'               ||
-                $k eq 'settings_hotkey_favorites'             ||
-                $k eq 'settings_sysinfo_easypie_charts_width' ||
-                $k eq 'settings_sysinfo_easypie_charts_scale' ||
-                $k eq 'settings_sysinfo_max_servers') ? ' width: 36px; ' :
-              ( ($k eq 'settings_sysinfo_easypie_charts_size') ? ' width: 50px; ' :
-                  ' width: 95%; ');
-            my $max_length =
-              ($k =~ /settings_hotkey_toggle_key_/ ||
-                $k eq 'settings_hotkey_focus_search'  ||
-                $k eq 'settings_hotkey_navigation'    ||
-                $k eq 'settings_hotkey_slider'        ||
-                $k eq 'settings_hotkey_toggle_slider' ||
-                $k eq 'settings_hotkey_reload'        ||
-                $k eq 'settings_hotkey_shell2'        ||
-                $k eq 'settings_hotkey_sysinfo'       ||
-                $k eq 'settings_hotkey_favorites') ?
-              ' maxlength="1"' :
-              ' ';
-
-            $v = '
-                <input style="display: inline;'
-              . $width . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' .
-              $k . '" value="' . $v . '"' . $max_length . '>
-            ';
-
-        } elsif ($k eq 'settings_grayscale_level_navigation' ||
-                 $k eq 'settings_sepia_level_navigation'      ||
-                 $k eq 'settings_saturate_level_navigation'   ||
-                 $k eq 'settings_hue_level_navigation'        ||
-                 $k eq 'settings_invert_level_navigation'     ||
-                 $k eq 'settings_brightness_level_navigation' ||
-                 $k eq 'settings_contrast_level_navigation'   ||
-                 $k eq 'settings_leftmenu_width'              ||
-                 $k eq 'settings_table_init_datatables')
-        {
-
-            my $range_max = '1';
-            my $range_min = '0';
-            my $iwidth    = '80';
-            my $range_step;
-
-            if ($k eq 'settings_grayscale_level_navigation' ||
-                $k eq 'settings_sepia_level_navigation'    ||
-                $k eq 'settings_saturate_level_navigation' ||
-                $k eq 'settings_invert_level_navigation')
-            {
-
-                if ($k eq 'settings_saturate_level_navigation') {
-                    $range_max = '3';
-                }
-                $range_step = '0.01';
-            } elsif ($k eq 'settings_brightness_level_navigation' ||
-                     $k eq 'settings_contrast_level_navigation')
-            {
-                $range_min  = '0.1';
-                $range_max  = '3';
-                $range_step = '0.01';
-            } elsif ($k eq 'settings_hue_level_navigation') {
-                $range_min  = '-360';
-                $range_max  = '360';
-                $range_step = '1';
-            } elsif ($k eq 'settings_leftmenu_width') {
-                $range_min  = '260';
-                $range_max  = '520';
-                $range_step = '1';
-                $iwidth     = '25';
-            } elsif ($k eq 'settings_table_init_datatables') {
-                $range_min  = '500';
-                $range_max  = '50000';
-                $range_step = '500';
-                $iwidth     = '25';
-            }
-            $v = '
-                <input style="display: inline; width: ' .
-              $iwidth . '%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="' .
-              $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
-            ';
-
-        } elsif ($k eq 'settings_leftmenu_custom_links') {
-            $v = ui_textarea($k, $v, 1);
-        } elsif ($k eq 'settings_hotkey_custom_1' ||
-                 $k eq 'settings_hotkey_custom_2'       ||
-                 $k eq 'settings_hotkey_custom_3'       ||
-                 $k eq 'settings_hotkey_custom_4'       ||
-                 $k eq 'settings_hotkey_custom_5'       ||
-                 $k eq 'settings_hotkey_custom_6'       ||
-                 $k eq 'settings_hotkey_custom_7'       ||
-                 $k eq 'settings_hotkey_custom_8'       ||
-                 $k eq 'settings_hotkey_custom_9'       ||
-                 $k eq 'settings_leftmenu_netdata_link' ||
-                 $k eq 'settings_leftmenu_user_html')
-        {
-            my $width = ' width: 40%; ';
-            if ($k eq 'settings_leftmenu_netdata_link') {
-                $width = ' width: 50%; ';
-            } elsif ($k eq 'settings_leftmenu_user_html') {
-                $width = ' width: 95%; ';
-            }
-
-            $v = '
-                <input style="display: inline;'
-              . $width . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' .
-              $k . '" value="' . $v . '">
-            ';
-        } elsif ($k eq 'settings_right_default_tab_webmin') {
-            $v = '<select class="ui_select" name="' . $k . '">
-                <option value="/"'
-              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_wm'} . '</option>
-
-                '
-              . (&foreign_available("virtual-server") &&
-                 ' <option value="virtualmin"' .
-                 ($v eq 'virtualmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_vm'} . '</option> ') .
-              '
-
-               '
-              . (&foreign_available("server-manager") &&
-                 ' <option value="cloudmin"' .
-                 ($v eq 'cloudmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_cm'} . '</option>') .
-              '
-                </select>';
-        } elsif ($k eq 'settings_webmin_default_module') {
-            $v = settings_get_select_default_module('goto_webmin_default_module', $gconfig{'gotomodule'});
-        } elsif ($k eq 'settings_right_default_tab_usermin') {
-            $v = '<select class="ui_select" name="' . $k . '">
-                <option value="/"'
-              . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>
-
-                '
-              . (get_usermin_data('mailbox') &&
-                 ' <option value="mail"' .
-                 ($v eq 'mail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
-              '
-
-                </select>';
-        } elsif ($k eq 'settings_hotkey_toggle_modifier') {
-            $v = '<select class="ui_select" name="' . $k . '">
-                    <option value="altKey"'
-              . ($v eq 'altKey' && ' selected') . '>Alt</option>
-                    <option value="ctrlKey"'
-              . ($v eq 'ctrlKey' && ' selected') . '>Ctrl</option>
-                    <option value="metaKey"'
-              . ($v eq 'metaKey' && ' selected') . '>Meta</option>
-                </select>';
-        } elsif ($k eq 'settings_cache_interval') {
-            $v = '<select class="ui_select" name="' . $k . '">
-                    <option value="3600"' .
-              ($v eq '3600' && ' selected') . '>' . $theme_text{'settings_cache_interval_1h'} . '</option>
-                    <option value="43200"' .
-              ($v eq '43200' && ' selected') . '>' . $theme_text{'settings_cache_interval_12h'} . '</option>
-                    <option value="86400"' .
-              ($v eq '86400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1d'} . '</option>
-                    <option value="604800"' .
-              ($v eq '604800' && ' selected') . '>' . $theme_text{'settings_cache_interval_7d'} . '</option>
-                    <option value="1209600"' .
-              ($v eq '1209600' && ' selected') . '>' . $theme_text{'settings_cache_interval_14d'} . '</option>
-                    <option value="2419200"' .
-              ($v eq '2419200' && ' selected') . '>' . $theme_text{'settings_cache_interval_1m'} . '</option>
-                    <option value="7257600"' .
-              ($v eq '7257600' && ' selected') . '>' . $theme_text{'settings_cache_interval_3m'} . '</option>
-                    <option value="14515200"' .
-              ($v eq '14515200' && ' selected') . '>' . $theme_text{'settings_cache_interval_6m'} . '</option>
-                    <option value="29030400"' .
-              ($v eq '29030400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1y'} . '</option>
-                </select>';
-        } elsif ($k eq 'settings_right_virtualmin_default') {
-            if (foreign_available('virtual-server')) {
-                $v = &ui_select($k,
-                                $v,
-                                [[undef,       undef],
-                                 ['index.cgi', $theme_text{'theme_config_virtualmin'}],
-                                 map    {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
-                                   grep {&virtual_server::can_edit_domain($_)}
-                                   sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
-                                ]);
-            }
-        } elsif ($k eq 'settings_right_cloudmin_default') {
-            if (&foreign_available('server-manager')) {
-                my @servers = &server_manager::list_available_managed_servers_sorted();
-                $v = &ui_select($k,
-                                $v,
-                                [[undef,       undef],
-                                 ['index.cgi', $theme_text{'theme_config_cloudmin'}],
-                                 map {[$_->{'id'}, $_->{'host'}]} @servers,
-                                ]);
-            }
-
-        } elsif ($k eq 'settings_navigation_color') {
-            $v = settings_get_select_navigation_color($v, $k);
-        } elsif ($k eq 'settings_background_color') {
-            $v = settings_get_select_background_color($v, $k);
-        } elsif ($k eq 'settings_cm_editor_palette') {
-            $v = settings_get_select_editor_color($v, $k);
-        } elsif ($k eq 'settings_global_palette_unauthenticated') {
-            $v = ui_select($k,
-                           $v,
-                           [[('light', $theme_text{'theme_xhred_global_light'})],
-                            [('dark',  $theme_text{'theme_xhred_global_dark'})]
-                           ]);
-        } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
-            $v = '<select class="ui_select" name="' . $k . '">
-
-                    <option value="600"'
-              . ($v eq '600' && ' selected') . '>10 ' . lc($theme_text{'theme_xhred_global_minutes'}) . '</option>
-
-                    <option value="1800"'
-              . ($v eq '1800' && ' selected') . '>30 ' . lc($theme_text{'theme_xhred_global_minutes'}) . '</option>
-
-              <option value="3600"'
-              . ($v eq '3600' && ' selected') . '>1 ' . lc($theme_text{'theme_xhred_global_hour'}) . '</option>
-
-              <option value="7200"'
-              . ($v eq '7200' && ' selected') . '>2 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="10800"'
-              . ($v eq '10800' && ' selected') . '>3 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="21600"'
-              . ($v eq '21600' && ' selected') . '>6 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="43200"'
-              . ($v eq '43200' && ' selected') . '>12 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="86400"'
-              . ($v eq '86400' && ' selected') . '>24 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-                </select>';
-        } elsif ($k eq 'settings_side_slider_palette') {
-            $v = '<select class="ui_select" name="' . $k . '">
-
-                    <option value="nav"'
-              . ($v eq 'nav' && ' selected') . '>' .
-              $theme_text{'settings_side_slider_blend'} . ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
-
-                    <option value="gray"'
-              . ($v eq 'gray' && ' selected') . '>Dim Gray</option>
-
-                    <option value="white"'
-              . ($v eq 'white' && ' selected') . '>White</option>
-
-                </select>';
-        } elsif ($k eq 'settings_document_title') {
-            $v = settings_get_select_document_title($v, $k);
-        }
-        my $description     = $theme_text{ $k . '_description' };
-        my $popover_trigger = 'click';
-        my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
-        return '
-            <tr class="atshover">
-                <td class="col_label atscontent">'
-          . (
-             $description && (
-                             $k =~ /level_navigation|leftmenu_width/ ? undef :
-                             '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
-                             $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
-                             '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
-             )
-          ) .
-          '<b>' . $theme_text{$k} . '</b>'
-          .
-          (
-            $description && ($k =~ /level_navigation|leftmenu_width/ ?
-                             '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-                             $k =~ /sysinfo_theme_updates/ &&
-                             '<div class="smaller text-normal no-padding margined-left-1"></div>'
-            )
-          ) .
-          '</td>
-                <td class="col_value atscontent"><span>'
-          . $v . '</span></td>
-            </tr>
-        ';
-    }
-
-    if ($t eq 'footer') {
-        return '
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <table class="ui_form_end_buttons" style="width:100%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="btn-group">
-                                    <a style="min-width:90px" class="btn btn-success" id="atsave"><i class="fa fa-fw fa-floppy-o" style="margin-right:7px;"></i>'
-          . $text{'save'} . '</a>
-                                    <a style="min-width:146px" class="btn btn-default" id="atrestore"><i class="fa fa-fw fa-history" style="margin-right:7px;"></i>'
-          . $theme_text{'settings_right_restore_defaults'} . '</a>
-                                    <a style="min-width:132px" class="btn btn-default" onclick="theme_cache_clear(this);" '
-          . get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1) .
-          '><i class="fa fa-fw fa-hourglass-o" style="margin-right:7px;"></i>' .
-          $theme_text{'settings_right_clear_local_cache'} . '</a>
-         ' . (
-            $get_user_level eq '0' ?
-              '                     <span id="force_update_menu_cnt" class="dropup"'
-              .
-              ( has_command('git') ?
-                  get_button_tooltip('settings_update_theme_tooltip', undef, undef, 1, 1, '#force_update_menu_cnt') :
-                  get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
-              ) .
-              '>
-                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover' .
-              (has_command('git') ? undef : ' disabled') .
-              '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' .
-              $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
-                                         <span class="caret"></span>
-                                       </button>
-                                       <ul class="dropdown-menu" aria-labelledby="force_update_menu">
-                                         <li><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-package-install margined-right-8"></i>'
-              . $theme_text{'theme_xhred_force_upgrade_stable'} . '</a></li>
-                                         <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-git-commit margined-right-8"></i>'
-              . $theme_text{'theme_xhred_force_upgrade_beta'} . '</a></li>
-                                       </ul>
-                                   </span>'
-            :
-              ''
-          ) .
-          '
-                                </div>
-                            </td>
-                            <td style="text-align: right;">
-                                <div class="btn-group">
-                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_styles" href="'
-          . $gconfig{'webprefix'} .
-          '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o" style="margin-right:7px;"></i>' .
-          $theme_text{'settings_right_theme_extensions'} . '</a>
-                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="'
-          . $gconfig{'webprefix'} .
-          '/settings-logos.cgi"><i class="fa fa-fw fa-file-image-o" style="margin-right:7px;"></i>' .
-          $theme_text{'theme_xhred_settings_right_theme_logos'} . '</a>
-                                    <a class="btn btn-default page_footer_ajax_submit" id="edit_logos" href="'
-          . $gconfig{'webprefix'} .
-          '/settings-backgrounds.cgi"><i class="fa fa-fw fa-image" style="margin-right:7px;"></i>' .
-          $theme_text{'theme_xhred_settings_right_theme_bgs'} . '</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-        ';
-    }
-
-    if ($t eq 'save' || $t eq 'restore') {
-
-        theme_config_dir_available();
-
-        if ($t eq 'save') {
-            !foreign_available("webmin") &&
-              error($theme_text{'theme_error_access_not_root'});
-            my %i = settings_filter(%in, $t);
-            write_file($config_directory . "/$current_theme/settings.js", \%i);
-        }
-        if ($t eq 'restore') {
-
-            !foreign_available("webmin") &&
-              error($theme_text{'theme_error_access_not_root'});
-
-            unlink_file($config_directory . "/$current_theme/settings.js");
-            unlink_file(get_tuconfig_file());
-            if ($has_usermin) {
-                unlink_file($has_usermin_conf_dir . "/$current_theme/settings.js");
-            }
-        }
-
-        if ($has_usermin) {
-            unlink_file($has_usermin_conf_dir . "/$current_theme/settings.js");
-            copy_source_dest($config_directory . "/$current_theme/settings.js", $has_usermin_conf_dir . "/$current_theme");
-        }
-
-        if (-r $config_directory . "/$current_theme/logo.png" &&
-            $has_usermin)
-        {
-            unlink_file($has_usermin_conf_dir . "/$current_theme/logo.png");
-            copy_source_dest($config_directory . "/$current_theme/logo.png", $has_usermin_conf_dir . "/$current_theme");
-        }
-        if (-r $config_directory . "/$current_theme/logo_welcome.png" &&
-            $has_usermin)
-        {
-            unlink_file($has_usermin_conf_dir . "/$current_theme/logo_welcome.png");
-            copy_source_dest($config_directory . "/$current_theme/logo_welcome.png",
-                             $has_usermin_conf_dir . "/$current_theme");
-        }
-    }
-}
-
 sub get_xhr_request
 {
 
@@ -3335,18 +2515,14 @@ sub get_xhr_request
         } elsif ($in{'xhr-default'} eq '1') {
             print get_default_right();
         } elsif ($in{'xhr-settings'} eq '1') {
-            if ($in{'save'} eq '1') {
-                theme_settings('save', undef, undef);
-            } elsif ($in{'restore'} eq '1') {
-                theme_settings('restore', undef, undef);
-            } else {
-                do("@{[miniserv::getenv('theme_root')]}/settings.pl");
+            if ($in{'restore'} eq '1') {
+                theme_config_restore();
             }
         } elsif ($in{'xhr-manage-config'} eq '1') {
             if ($in{'save'} eq '1') {
-                manage_theme_config('save');
+                theme_config_save();
             } elsif ($in{'load'} eq '1') {
-                print manage_theme_config('load');
+                print theme_config_get();
             }
         } elsif ($in{'xhr-get_available_modules'} eq '1') {
             print get_available_modules('json');
@@ -3767,7 +2943,7 @@ sub init
     }
 
     # Make sure that config directory exists
-    theme_config_dir_available();
+    theme_make_config_dir();
 
     # Register hooks
     $theme_module_query_id = ($theme_requested_url =~ /virtual-server/ ? 'dom' : 'sid');
@@ -3938,21 +3114,49 @@ sub get_available_modules
 
 }
 
-sub manage_theme_config
+sub theme_config_save
 {
-    my ($action) = @_;
-    my %tuconfig;
+    theme_make_config_dir();
+    my %i = settings_filter(%in);
+    write_file(get_tuconfig_file(), \%i);
 
-    if ($action eq 'save') {
-        my %i = settings_filter(%in);
-        write_file(get_tuconfig_file(), \%i);
-    } elsif ($action eq 'load') {
-        my $tuconfig_file = (get_tuconfig_file());
-        if (-f $tuconfig_file) {
-            my %tuconfig = (settings($tuconfig_file, 'config_portable_'));
-            return convert_to_json(\%tuconfig);
-        } else {
-            return convert_to_json();
+    # Master administrator must also save certain options to
+    # global `settings.js` config file to affect all users
+    if ($get_user_level eq '0') {
+        delete @i{ grep(!/^settings_/, keys %i) };
+        write_file(get_tgconfig_file(), \%i);
+    }
+}
+
+sub theme_config_get
+{
+    my %tuconfig;
+    my $tuconfig_file = get_tuconfig_file();
+    if (-f $tuconfig_file) {
+        my %tuconfig = settings($tuconfig_file);
+        return convert_to_json(\%tuconfig);
+    } else {
+        return convert_to_json();
+    }
+
+}
+
+sub theme_config_restore
+{
+    my $tuconfig_file = get_tuconfig_file();
+    unlink_file($tuconfig_file);
+    if ($has_usermin) {
+        my $tuuconfig_file = $tuconfig_file;
+        $tuuconfig_file =~ s/webmin/usermin/;
+        unlink_file($tuuconfig_file);
+    }
+    if ($get_user_level eq '0') {
+        my $tgconfig_file = get_tgconfig_file();
+        unlink_file($tgconfig_file);
+        if ($has_usermin) {
+            my $tugconfig_file = $tgconfig_file;
+            $tugconfig_file =~ s/webmin/usermin/;
+            unlink_file($tugconfig_file);
         }
     }
 }

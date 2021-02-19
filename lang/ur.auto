@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=تھیم ایکسٹینشن ایڈی�
 settings_right_theme_left_logo_title=تھیم لوگو کنٹرول
 settings_right_theme_configurable_options_title=مستند تھیم کے لئے قابل ترتیب اختیارات
 
-settings_right_window_options_title=ونڈو کے اختیارات
-settings_right_navigation_menu_title=نیویگیشن مینو کے اختیارات
-settings_right_table_options_title=ٹیبل کے اختیارات
-settings_security_title=سیکیورٹی انتباہ کے اختیارات
-settings_right_hotkey_options_title=ہاٹکی کے اختیارات
-settings_right_sysinfo_page_options_title=ڈیش بورڈ کے اختیارات
+settings_right_hotkey_options=ہاٹکیز
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
 settings_hotkey_custom_1=Custom link <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=ورچوئل مین کے لئے پہلے سے 
 settings_right_cloudmin_default=کلاؤڈمن کے لئے پہلے سے طے شدہ صفحہ
 
 settings_right_clear_local_cache=کیشے صاف کریں
-settings_right_notification_slider_options_title=سائڈ سلائیڈر کے اختیارات
 settings_side_slider_fixed=ہمیشہ دکھائے رکھیں
-settings_side_slider_palette=سلائیڈر پیلیٹ
 settings_hotkey_toggle_slider=سائڈ سلائیڈر کے لئے ہاٹکی
 
 settings_side_slider_enabled=سلائیڈر کو فعال کریں
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=تیار کردہ پاس ورڈ %pass
 theme_fileformat_perl=پرل
 theme_fileformat_perl_placeholder=اس فائل کا اختتام لازمی ہے ` 1؛ ` کامیابی سے کام کرنے کے لئے.
 
-#18.10
-theme_error_access_not_root=Access denied: User needs access to the <em>Webmin Configuration</em> module to edit theme configuration
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=ورچوئل مین/کلاؤڈمین میں ڈراپ ڈاؤن میں علامتی شبیہیں دکھائیں
 theme_xhred_global_shipped=بھیج دیا گیا
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=تھیم اپ ڈیٹ ناکام ہوگیا۔ اسے
 theme_xhred_git_patch_initiated=تھیم اپ ڈیٹ کا آغاز کیا گیا ہے۔
 theme_xhred_global_prev_page=ایک صفحے واپس جائیں
 theme_xhred_global_help=مدد
-settings_right_soft_updates_page_options_title=سافٹ ویئر اپ ڈیٹ
 theme_xhred_git_compare_changes=تبدیلیوں کا موازنہ کریں
 theme_xhred_filemanager_link_to_clipboard=علامتی لنک کا نام کلپ بورڈ میں کاپی کر لیا گیا ہے۔
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=مکمل شکل
 theme_xhred_title_locale_long=لمبا شکل
 theme_xhred_title_locale_short=مختصر شکل
 settings_navigation_always_collapse=ہمیشہ منہدم
-settings_side_slider_fixed_description=یہ آپشن صرف HD اسکرینوں پر دستیاب ہے جس میں کم از کم 1366 افقی پکسلز کی قرارداد ہے اور نیویگیشن کو ہمیشہ گرنے کے لئے غیر فعال آپشن کے ساتھ
 theme_xhred_filemanager_records_per_page=پہلے سے طے شدہ ریکارڈوں کی تعداد
 theme_xhred_filemanager_sorting=پہلے سے طے شدہ ترتیب
 theme_xhred_filemanager_sorting_asc=چڑھنا
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=تمام اطلاعات 
 theme_xhred_tooltip_side_slider_mark_read_all_notification=تمام اطلاعات کو پڑھے ہوئے کے بطور نشان زد کریں
 theme_xhred_global_settings=ترتیبات
 theme_xhred_tooltip_side_slider_pinned=سائیڈ سلائیڈر کو پن/انپن کریں
-settings_side_slider_fixed_toggle=ٹوگل ٹوٹ پن/پن کھولیں
-settings_side_slider_fixed_toggle_description=یہ آپشن سلائڈ سلائیڈر میں ، نیچے والی صف میں ، ٹوگل ظاہر کرے گا ، جب پرواز میں اپنی نمائش ٹوگل کرنے کی اجازت دیتا ہے ، اگر پچھلے آپشن میں شرائط پوری ہوجائیں۔
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=یوزر مین کے لئے بھی تھیم اپ ڈیٹس انسٹال کریں
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=جی بی
 theme_xhred_nice_size_MB=ایم بی
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=بائٹس
-settings_sysinfo_real_time_status_options=اصل وقت کی نگرانی کے اختیارات
 settings_sysinfo_real_time_status_disk=ڈسک کے لئے اہل کریں
 settings_sysinfo_real_time_status_disk_description=یہ سست/بڑے فائل سسٹم پر ڈسکوں کے ل real ریئل ٹائم مانیٹرنگ کو غیر موثر ثابت ہوگا
 theme_xhred_title_locale_non_ui_config=سرور نے تاریخ کی شکل تیار کی
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=آپ کا بیک اپ تیار کیا جا�
 
 settings_mail_ui=نیا میل UI فعال کریں
 
-settings_show_theme_configuration_for_admins_only=صرف منتظمین کے لئے تھیم کی ترتیبات کا بٹن دکھائیں
 settings_show_theme_configuration_for_admins_only_error=رسائی سے انکار: ایڈمنسٹریٹر نے صارف کی تخصیص تک رسائی کو مسدود کردیا ہے
 
 theme_xhred_tooltip_navigation_pinned=نیویگیشن مینو کو پن/ان پین کھولیں
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Removal has finished successfully but not
 theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a> warning
 
 #19.71
-settings_sysinfo_hidden_panels=پوشیدہ معاہدے
+settings_sysinfo_hidden_panels_provisional=پوشیدہ معاہدے
 theme_xhred_tooltip_dashboard_panels_disable=$1 پینل چھپائیں
 theme_xhred_dashboard_panels_disabled_explain=تھیم کنفیگریشن پیج کا استعمال کرکے پوشیدہ پینل کو دوبارہ فعال کیا جاسکتا ہے۔
+settings_right_sysinfo_page_options=ڈیش بورڈ اور اصل وقت کی نگرانی
+settings_right_navigation_menu_options=نیویگیشن مینو
+settings_right_notification_slider_options=سائیڈ سلائیڈر
+settings_right_table_options=ٹیبل ڈسپلے
+settings_right_hotkey_custom_options=کسٹم لنکس ہاٹکیز
+settings_right_soft_updates_page_options=تھیم اپ ڈیٹ
+settings_global_general_options_title=عام اختیارات
+theme_error_access_not_root_user=رسائی سے انکار: صارف کو اس حصے میں ترمیم کرنے کا استحقاق نہیں ہے

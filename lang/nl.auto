@@ -1,5 +1,4 @@
-settings_right_hotkey_options_title=Sneltoetsopties
-settings_right_sysinfo_page_options_title=Dashboard-opties
+settings_right_hotkey_options=Sneltoetsen
 
 settings_right_hotkey_custom_options_description=Met aangepaste links kunt u cijfers van <code>1</code> tot <code>9</code> om snel toegang te krijgen tot een geldige Webmin/Usermin/Virtualmin/Cloudmin- <code>URL.</code> De <code>URL</code> kan worden opgehaald uit de momenteel geopende inhoudspagina van het rechterkader door de bron te lezen. Het is belangrijk dat <code>URL</code> aan het begin geen schuine streep heeft en geen voorvoegsels gebruikt. Als u bijvoorbeeld snel wilt overschakelen naar Apache, stelt u <code>custom link 1</code> field <code>/apache/</code>. Als de standaard sneltoetsmodifier die is ingesteld op <code>Alt,</code> klikt u op <code>Alt+1</code> om uw Apache-module te openen
 settings_hotkey_custom_1=Aangepaste link <code>1</code>
@@ -59,9 +58,7 @@ settings_right_virtualmin_default=Standaardpagina voor Virtualmin
 settings_right_cloudmin_default=Standaardpagina voor Cloudmin
 
 settings_right_clear_local_cache=Cache wissen
-settings_right_notification_slider_options_title=Side slider opties
 settings_side_slider_fixed=Altijd zichtbaar houden
-settings_side_slider_palette=Schuifpalet
 settings_hotkey_toggle_slider=Sneltoets voor zijschuif
 
 settings_side_slider_enabled=Schuifregelaar inschakelen
@@ -394,9 +391,6 @@ theme_xhred_password_generator_new_success=Gegenereerd wachtwoord %password is m
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Dit bestand moet eindigen op `1;` om succesvol te werken.
 
-#18.10
-theme_error_access_not_root=Toegang geweigerd: de gebruiker heeft toegang nodig tot de <em>Webmin-configuratie</em> -module om de thema-configuratie te bewerken
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Toon symbolische pictogrammen in drop-down in Virtualmin/Cloudmin
 theme_xhred_global_shipped=Verzonden
@@ -477,7 +471,6 @@ theme_xhred_git_patch_update=Thema-update is mislukt. Probeer de console te gebr
 theme_xhred_git_patch_initiated=Thema-update is gestart.
 theme_xhred_global_prev_page=Ga één pagina terug
 theme_xhred_global_help=Helpen
-settings_right_soft_updates_page_options_title=Software updates
 theme_xhred_git_compare_changes=Vergelijk veranderingen
 theme_xhred_filemanager_link_to_clipboard=De naam van de symbolische link is naar het klembord gekopieerd.
 
@@ -617,7 +610,6 @@ theme_xhred_title_locale_full=Volledig formaat
 theme_xhred_title_locale_long=Lang formaat
 theme_xhred_title_locale_short=Kort formaat
 settings_navigation_always_collapse=Stortte altijd in
-settings_side_slider_fixed_description=Deze optie is alleen beschikbaar op HD-schermen met een minimale resolutie van 1366 horizontale pixels en met een uitgeschakelde optie om de navigatie altijd samengevouwen te houden
 theme_xhred_filemanager_records_per_page=Standaardaantal records per pagina
 theme_xhred_filemanager_sorting=Standaard sorteringstype
 theme_xhred_filemanager_sorting_asc=Oplopend
@@ -645,8 +637,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Verwijder alle meldingen
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Markeer alle meldingen als gelezen
 theme_xhred_global_settings=Instellingen
 theme_xhred_tooltip_side_slider_pinned=Zijschuif vastmaken/losmaken
-settings_side_slider_fixed_toggle=Toon in-/uitschakelknop
-settings_side_slider_fixed_toggle_description=Deze optie geeft de schakelaar in de zijschuifbalk op de onderste rij weer, waardoor de zichtbaarheid tijdens het vliegen kan worden gewijzigd, als aan de voorwaarden in de vorige optie is voldaan.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Installeer ook thema-updates voor Usermin
@@ -670,7 +660,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Realtime bewakingsopties
 settings_sysinfo_real_time_status_disk=Inschakelen voor schijven
 settings_sysinfo_real_time_status_disk_description=Het kan handig zijn om realtime monitoring uit te schakelen voor schijven op langzame/grote bestandssystemen
 theme_xhred_title_locale_non_ui_config=Door de server gegenereerd datumnotatie
@@ -785,7 +774,6 @@ theme_xhred_backup_is_being_prepared=Uw back-up wordt voorbereid. Het kan even d
 
 settings_mail_ui=Schakel nieuwe e-mailgebruikersinterface in
 
-settings_show_theme_configuration_for_admins_only=Knop voor thema-instellingen weergeven, alleen voor beheerders
 settings_show_theme_configuration_for_admins_only_error=Toegang geweigerd: de beheerder heeft de toegang tot gebruikersaanpassingen geblokkeerd
 
 theme_xhred_tooltip_navigation_pinned=Navigatiemenu vastmaken/losmaken
@@ -1087,6 +1075,14 @@ theme_xhred_filemanager_remove_warning=Het verwijderen is met succes voltooid, m
 theme_xhred_connection_error_details_ssl=Controleer de waarschuwing <a>zelfondertekend SSL-certificaat</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Verborgen accordeons
+settings_sysinfo_hidden_panels_provisional=Verborgen accordeons
 theme_xhred_tooltip_dashboard_panels_disable=Verberg $1 paneel
 theme_xhred_dashboard_panels_disabled_explain=Verborgen paneel kan opnieuw worden ingeschakeld met behulp van de themaconfiguratiepagina.
+settings_right_sysinfo_page_options=Dashboard en realtime monitoring
+settings_right_navigation_menu_options=Navigatie menu
+settings_right_notification_slider_options=Schuifregelaar aan de zijkant
+settings_right_table_options=Tafel display
+settings_right_hotkey_custom_options=Aangepaste koppelingen sneltoetsen
+settings_right_soft_updates_page_options=Thema-updates
+settings_global_general_options_title=Algemene opties
+theme_error_access_not_root_user=Toegang geweigerd: de gebruiker is niet gemachtigd om deze sectie te bewerken

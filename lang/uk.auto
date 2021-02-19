@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Тема розширень реда�
 settings_right_theme_left_logo_title=Тема управління логотипом
 settings_right_theme_configurable_options_title=Параметри, що настроюються для автентичної теми
 
-settings_right_window_options_title=Параметри вікна
-settings_right_navigation_menu_title=Параметри меню навігації
-settings_right_table_options_title=Параметри таблиці
-settings_security_title=Параметри попередження про безпеку
-settings_right_hotkey_options_title=Параметри гарячої клавіші
-settings_right_sysinfo_page_options_title=Параметри інформаційної панелі
+settings_right_hotkey_options=Гарячі клавіші
 
 settings_right_hotkey_custom_options_description=Спеціальні посилання дозволяють використовувати цифри від <code>1</code> до <code>9</code> для швидкого доступу до будь-якої дійсної <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> можна отримати з відкритої на даний момент сторінки вмісту правого кадру, прочитавши її джерело. Важливо, щоб <code>URL</code> не мав косу рису на початку і не використовував префікси. Наприклад, для швидкого переходу на Apache встановіть <code>custom link 1</code> поле <code>custom link 1</code> <code>/apache/</code>. Якщо модифікатор гарячих клавіш за замовчуванням встановлено на <code>Alt,</code> натиснувши <code>Alt+1</code>, ви відкриєте модуль Apache
 settings_hotkey_custom_1=Спеціальне посилання <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Сторінка за замовчування
 settings_right_cloudmin_default=Сторінка Cloudmin за замовчуванням
 
 settings_right_clear_local_cache=Очистити кеш
-settings_right_notification_slider_options_title=Параметри бічного повзунка
 settings_side_slider_fixed=Зберігайте завжди видимим
-settings_side_slider_palette=Палітра повзунів
 settings_hotkey_toggle_slider=Клавіша швидкої доступу для бічного повзунка
 
 settings_side_slider_enabled=Увімкнути повзунок
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Створений пароль %pass
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Цей файл повинен закінчуватися `1;` успішно працювати.
 
-#18.10
-theme_error_access_not_root=Доступ заборонено: Користувачеві потрібен доступ до модуля <em>Конфігурація веб-сайту</em> для редагування конфігурації теми
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Показуйте символьні значки у спадному меню в Virtualmin/Cloudmin
 theme_xhred_global_shipped=Поставляється
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Помилка оновлення теми. Спр�
 theme_xhred_git_patch_initiated=Розпочато оновлення теми.
 theme_xhred_global_prev_page=Поверніться на одну сторінку
 theme_xhred_global_help=Довідка
-settings_right_soft_updates_page_options_title=Оновлення програмного забезпечення
 theme_xhred_git_compare_changes=Порівняйте зміни
 theme_xhred_filemanager_link_to_clipboard=Ім'я символічної посилання скопійовано у буфер обміну.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Повний формат
 theme_xhred_title_locale_long=Довгий формат
 theme_xhred_title_locale_short=Короткий формат
 settings_navigation_always_collapse=Завжди руйнувався
-settings_side_slider_fixed_description=Ця опція доступна лише на екранах HD з мінімальною роздільною здатністю 1366 горизонтальних пікселів та з вимкненою опцією для збереження навігації завжди згорнутою
 theme_xhred_filemanager_records_per_page=Кількість записів на сторінці за замовчуванням
 theme_xhred_filemanager_sorting=Тип сортування за замовчуванням
 theme_xhred_filemanager_sorting_asc=Зростання
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Видалити всі 
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Позначте всі сповіщення як прочитані
 theme_xhred_global_settings=Налаштування
 theme_xhred_tooltip_side_slider_pinned=Бічний повзунок для викрутки/відкручення
-settings_side_slider_fixed_toggle=Показати перемикання штифтів/відкручення
-settings_side_slider_fixed_toggle_description=Цей параметр відображає перемикач у бічному слайдері в нижньому рядку, що дозволяє перемикати його видимість на льоту, якщо дотримуються умови попереднього параметра.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Встановіть оновлення теми також для Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=ГБ
 theme_xhred_nice_size_MB=МБ
 theme_xhred_nice_size_kB=кБ
 theme_xhred_nice_size_b=байт
-settings_sysinfo_real_time_status_options=Варіанти моніторингу в реальному часі
 settings_sysinfo_real_time_status_disk=Увімкнути для дисків
 settings_sysinfo_real_time_status_disk_description=Можливо, буде корисно відключити моніторинг у реальному часі для дисків у повільних/великих файлових системах
 theme_xhred_title_locale_non_ui_config=Формат дати, створений сервером
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Ваша резервна копія гот
 
 settings_mail_ui=Увімкнути новий інтерфейс пошти
 
-settings_show_theme_configuration_for_admins_only=Показати кнопку налаштувань теми лише для адміністраторів
 settings_show_theme_configuration_for_admins_only_error=Заборонено доступ: адміністратор заблокував доступ до налаштувань користувачів
 
 theme_xhred_tooltip_navigation_pinned=Закріпити/відкрутити навігаційне меню
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Видалення завершено у�
 theme_xhred_connection_error_details_ssl=Перевірте <a>попередження про власний підпис SSL</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Приховані гармошки
+settings_sysinfo_hidden_panels_provisional=Приховані гармошки
 theme_xhred_tooltip_dashboard_panels_disable=Сховати панель $1 
 theme_xhred_dashboard_panels_disabled_explain=Приховану панель можна ввімкнути за допомогою сторінки конфігурації теми.
+settings_right_sysinfo_page_options=Інформаційна панель та моніторинг у реальному часі
+settings_right_navigation_menu_options=Меню навігації
+settings_right_notification_slider_options=Бічний повзунок
+settings_right_table_options=Відображення таблиці
+settings_right_hotkey_custom_options=Гарячі клавіші спеціальних посилань
+settings_right_soft_updates_page_options=Оновлення теми
+settings_global_general_options_title=Загальні варіанти
+theme_error_access_not_root_user=Доступ заборонено: Користувач не має права редагувати цей розділ

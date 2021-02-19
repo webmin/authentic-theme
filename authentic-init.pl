@@ -78,47 +78,6 @@ sub settings_filter
     return %in_data;
 }
 
-sub settings_default
-{
-    my %c;
-    $c{'settings_navigation_color'}                   = 'blue';
-    $c{'settings_background_color'}                   = 'gainsboro';
-    $c{'settings_grayscale_level_navigation'}         = '0';
-    $c{'settings_sepia_level_navigation'}             = '0';
-    $c{'settings_saturate_level_navigation'}          = '1.33';
-    $c{'settings_hue_level_navigation'}               = '0';
-    $c{'settings_invert_level_navigation'}            = '0';
-    $c{'settings_brightness_level_navigation'}        = '1';
-    $c{'settings_contrast_level_navigation'}          = '1';
-    $c{'settings_usermin_default_module'}             = 'sysinfo.cgi';
-    $c{'settings_document_title'}                     = '1';
-    $c{'settings_collapse_navigation_link'}           = 'true';
-    $c{'settings_sysinfo_link_mini'}                  = 'false';
-    $c{'settings_show_night_mode_link'}               = 'true';
-    $c{'settings_show_terminal_link2'}                = 'true';
-    $c{'settings_favorites'}                          = 'true';
-    $c{'settings_theme_options_button'}               = 'true';
-    $c{'settings_leftmenu_button_refresh'}            = 'false';
-    $c{'settings_hotkeys_active'}                     = 'true';
-    $c{'settings_hotkey_toggle_modifier'}             = 'altKey';
-    $c{'settings_hotkey_toggle_key_webmin'}           = 'w';
-    $c{'settings_hotkey_toggle_key_virtualmin'}       = 'v';
-    $c{'settings_hotkey_toggle_key_cloudmin'}         = 'c';
-    $c{'settings_hotkey_toggle_key_usermin'}          = 'u';
-    $c{'settings_hotkey_toggle_key_webmail'}          = 'm';
-    $c{'settings_hotkey_shell2'}                      = 'k';
-    $c{'settings_hotkey_sysinfo'}                     = 'i';
-    $c{'settings_hotkey_navigation'}                  = 'a';
-    $c{'settings_hotkey_toggle_slider'}               = 'n';
-    $c{'settings_hotkey_favorites'}                   = 'f';
-    $c{'settings_hotkey_focus_search'}                = 's';
-    $c{'settings_hotkey_reload'}                      = 'r';
-    $c{'settings_hotkey_toggle_key_night_mode'}       = 'l';
-    $c{'settings_mail_ui'}                            = 'true';
-
-    return %c;
-}
-
 sub get_theme_color
 {
     my %theme_colors = ('blue'      => '#2d5d9d',
@@ -361,22 +320,22 @@ sub embed_overlay_postbody
 sub embed_settings
 {
 
-    my $str_settings       = "settings";
-    my $str_js             = "js";
-    my $global_config_file = ($config_directory . "/" . $current_theme . "/" . $str_settings . "." . $str_js);
-    my $user_config_file   = (get_tuconfig_file());
+    my $global_config_file = get_tgconfig_file();
+    my $user_config_file   = get_tuconfig_file();
 
-    # Global configuration
+    # Embed global configuration
     if (-r $global_config_file) {
         $global_config_file = read_file_contents($global_config_file);
         $global_config_file =~ tr/\r\n/;/d;
+        $global_config_file =~ s/\s*(.*?=)'([\d\.]+)'(;)\s*/$1$2$3/g;
         print ' <script>' . $global_config_file . '</script>' . "\n";
     }
 
-    # User configuration
+    # Embed user configuration
     if (-r $user_config_file) {
         $user_config_file = read_file_contents($user_config_file);
         $user_config_file =~ tr/\r\n/;/d;
+        $user_config_file =~ s/\s*(.*?=)'([\d\.]+)'(;)\s*/$1$2$3/g;
         print ' <script>' . $user_config_file . '</script>' . "\n";
     }
 }
@@ -642,9 +601,9 @@ sub init_vars
     my %tconfig_local = settings("$config_directory/$current_theme/config");
     our %tconfig = (%tconfig, %tconfig_local);
 
-    our %theme_config = (settings_default(),
-                         settings($config_directory . "/$current_theme/settings.js", 'settings_'),
-                         settings(get_tuconfig_file(),                               'settings_'));
+    our %theme_config = (settings("$root_directory/$current_theme/unauthenticated/js/defaults.js", "settings_"),
+                         settings(get_tgconfig_file(), "settings_"),
+                         settings(get_tuconfig_file(),                               "settings_"));
 
     our %theme_text = (load_language($current_theme), %text);
 
@@ -1551,10 +1510,15 @@ sub get_fm_jailed_user
     return $jailed_user;
 }
 
-sub get_tuconfig_file
+sub get_tgconfig_file
 {
-    my $tuconfig = $config_directory . "/$current_theme/settings-" . $remote_user;
-    return $tuconfig;
+    return "$config_directory/$current_theme/settings.js";
+}
+
+sub get_tuconfig_file
+{ 
+    my $oconfig = "$config_directory/$current_theme/settings-$remote_user";
+    return -r $oconfig ? $oconfig : "$oconfig.js";
 }
 
 sub get_stripped

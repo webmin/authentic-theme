@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Рэдактар тэмы пашыр�
 settings_right_theme_left_logo_title=Тэма кіравання лагатыпам
 settings_right_theme_configurable_options_title=Параметры, якія можна наладзіць для аўтэнтычнай тэмы
 
-settings_right_window_options_title=Параметры акна
-settings_right_navigation_menu_title=Параметры меню навігацыі
-settings_right_table_options_title=Варыянты табліцы
-settings_security_title=Параметры сігналізацыі аб бяспецы
-settings_right_hotkey_options_title=Параметры хуткай клавішы
-settings_right_sysinfo_page_options_title=Параметры прыборнай панэлі
+settings_right_hotkey_options=Гарачыя клавішы
 
 settings_right_hotkey_custom_options_description=Карыстальніцкія спасылкі дазваляюць выкарыстоўваць лічбы ад <code>1</code> да <code>9</code> для хуткага доступу да любога сапраўднага URL Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> можна атрымаць з адкрытай у цяперашні час старонкі змесціва правага кадра, прачытаўшы яго крыніцу. Важна, каб <code>URL</code> не меў рысай рысы ў пачатку і не выкарыстоўваў прэфіксы. Напрыклад, для хуткага пераключэння на Apache усталюйце ў <code>custom link 1</code> поле <code>/apache/</code>. Калі мадыфікатар гарачых клавіш па змаўчанні усталяваны ў <code>Alt,</code> націснуўшы <code>Alt+1</code>, адкрыецца вам модуль Apache
 settings_hotkey_custom_1=Карыстальніцкая спасылка <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Старонка па змаўчанні дл�
 settings_right_cloudmin_default=Старонка Cloudmin па змаўчанні
 
 settings_right_clear_local_cache=Ачысціць кэш
-settings_right_notification_slider_options_title=Параметры бакавых паўзуноў
 settings_side_slider_fixed=Захоўваць заўсёды бачным
-settings_side_slider_palette=Палітра паўзуноў
 settings_hotkey_toggle_slider=Клавіша хуткага доступу для бакавога паўзунка
 
 settings_side_slider_enabled=Уключыць паўзунок
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Сфарміраваны пароль
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Гэты файл павінен заканчвацца `1;` паспяхова працаваць.
 
-#18.10
-theme_error_access_not_root=Доступ забаронены: Карыстальніку патрэбны доступ да модуля <em>Канфігурацыя Webmin</em> для рэдагавання канфігурацыі тэмы
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Паказаць сімвалічныя значкі ў выпадальным меню ў Virtualmin/Cloudmin
 theme_xhred_global_shipped=Адгружана
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Абнаўленне тэмы не атрымала
 theme_xhred_git_patch_initiated=Абноўлена тэма.
 theme_xhred_global_prev_page=Вярнуцца на адну старонку
 theme_xhred_global_help=Даведка
-settings_right_soft_updates_page_options_title=Абнаўленне праграмнага забеспячэння
 theme_xhred_git_compare_changes=Параўнайце змены
 theme_xhred_filemanager_link_to_clipboard=Імя сімвалічнай спасылкі было скапіравана ў буфер абмену.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Поўны фармат
 theme_xhred_title_locale_long=Доўгі фармат
 theme_xhred_title_locale_short=Кароткі фармат
 settings_navigation_always_collapse=Заўсёды развальваўся
-settings_side_slider_fixed_description=Гэтая опцыя даступная толькі на экранах HD з мінімальным дазволам гарызантальных пікселяў 1366 і з адключаным варыянтам захавання навігацыі заўсёды згорнутай
 theme_xhred_filemanager_records_per_page=Колькасць запісаў на старонцы па змаўчанні
 theme_xhred_filemanager_sorting=Тып сартавання па змаўчанні
 theme_xhred_filemanager_sorting_asc=Узыходзячае
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Выдаліць усе 
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Адзначыць усе апавяшчэнні як прачытаныя
 theme_xhred_global_settings=Налады
 theme_xhred_tooltip_side_slider_pinned=Прыкруціць/адкруціць бакавы паўзунок
-settings_side_slider_fixed_toggle=Паказаць пераключэнне кантактаў/адключэння
-settings_side_slider_fixed_toggle_description=Гэтая опцыя будзе адлюстроўваць перамыкач у бакавым паўзунку ў ніжнім радку, што дазваляе пераключыць яго бачнасць на хаду, калі выкананы ўмовы папярэдняга варыянту.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Таксама ўсталюйце абнаўленні тэмы для Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=ГБ
 theme_xhred_nice_size_MB=МБ
 theme_xhred_nice_size_kB=кБ
 theme_xhred_nice_size_b=байт
-settings_sysinfo_real_time_status_options=Варыянты маніторынгу ў рэжыме рэальнага часу
 settings_sysinfo_real_time_status_disk=Уключыць для дыскаў
 settings_sysinfo_real_time_status_disk_description=Гэта можа быць карысна адключыць маніторынг у рэжыме рэальнага часу на дысках з павольнай/вялікай файлавай сістэмай
 theme_xhred_title_locale_non_ui_config=Сфарміраваны серверам фармат даты
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Ваша рэзервовая копія р
 
 settings_mail_ui=Уключыць новы карыстацкі інтэрфейс
 
-settings_show_theme_configuration_for_admins_only=Паказаць кнопку наладкі тэмы толькі для адміністратараў
 settings_show_theme_configuration_for_admins_only_error=Доступ забаронены: адміністратар заблакаваў доступ да налад карыстальнікаў
 
 theme_xhred_tooltip_navigation_pinned=Звязаць/адкруціць меню навігацыі
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Выдаленне завершана п�
 theme_xhred_connection_error_details_ssl=Праверце <a>папярэджанне ўласнага подпісу SSL</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Схаваныя акардэоны
+settings_sysinfo_hidden_panels_provisional=Схаваныя акардэоны
 theme_xhred_tooltip_dashboard_panels_disable=Схаваць панэль $1 
 theme_xhred_dashboard_panels_disabled_explain=Схаваную панэль можна паўторна ўключыць на старонцы канфігурацыі тэмы.
+settings_right_sysinfo_page_options=Прыборная панэль і маніторынг у рэжыме рэальнага часу
+settings_right_navigation_menu_options=Меню навігацыі
+settings_right_notification_slider_options=Бакавы паўзунок
+settings_right_table_options=Дысплей табліцы
+settings_right_hotkey_custom_options=Гарачыя клавішы спецыяльных спасылак
+settings_right_soft_updates_page_options=Абнаўленне тэмы
+settings_global_general_options_title=Агульныя варыянты
+theme_error_access_not_root_user=Доступ забаронены: карыстальнік не мае права рэдагаваць гэты раздзел

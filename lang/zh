@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Authentic 主题扩展编辑器
 settings_right_theme_left_logo_title=Authentic 主题 Logo 控制
 settings_right_theme_configurable_options_title=Authentic 主题的可配置选项
 
-settings_right_window_options_title=窗口选项
-settings_right_navigation_menu_title=导航菜单选项
-settings_right_table_options_title=表选项
-settings_security_title=安全警报选项
-settings_right_hotkey_options_title=快捷键选项
-settings_right_sysinfo_page_options_title=仪表板选项
-
 settings_right_hotkey_custom_options_description=自定义链接使您可以使用 <code>1</code> 到 <code>9</code> 的数字，以便快速访问任何有效的 Webmin/Usermin/Virtualmin/Cloudmin <code>URL。</code>可以通过读取其源来从当前打开的右框架内容页面中提取 <code>URL</code>。重要的是 <code>URL</code> 在开头没有斜杠，不使用前缀。例如，要快速切换到 Apache，请设置 <code>自定义链接 1</code> 字段为 <code>/apache/</code>。如果默认快捷键修改器设置为 <code>Alt,</code>则单击 <code>Alt+1</code> 将打开 Apache 模块
 settings_hotkey_custom_1=自定义链接 <code>1</code>
 settings_hotkey_custom_2=自定义链接 <code>2</code>
@@ -174,9 +167,7 @@ settings_right_virtualmin_default=登录到 Virtualmin 的默认页
 settings_right_cloudmin_default=Cloudmin 默认页
 
 settings_right_clear_local_cache=清除缓存
-settings_right_notification_slider_options_title=侧滑块选项
 settings_side_slider_fixed=始终可见
-settings_side_slider_palette=滑块调色板
 settings_hotkey_toggle_slider=滑块快捷键
 
 settings_side_slider_enabled=启用滑块
@@ -509,9 +500,6 @@ theme_xhred_password_generator_new_success=生成的密码 %password 已被成�
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=该文件必须以“1;”结束才能成功运行。
 
-#18.10
-theme_error_access_not_root=拒绝访问：用户需要访问 <em>Webmin 配置</em>模块才能编辑主题配置
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=在 Virtualmin/Cloudmin 中的下拉列表中显示符号图标
 theme_xhred_global_shipped=Shipped
@@ -593,7 +581,6 @@ theme_xhred_git_patch_update=主题更新失败。尝试使用控制台手动执
 theme_xhred_git_patch_initiated=主题更新已经启动。
 theme_xhred_global_prev_page=上一页
 theme_xhred_global_help=帮助
-settings_right_soft_updates_page_options_title=软件更新
 theme_xhred_git_compare_changes=比较变动
 theme_xhred_filemanager_link_to_clipboard=符号链接的名称已复制到剪贴板。
 
@@ -731,7 +718,6 @@ theme_xhred_title_locale_full=全格式
 theme_xhred_title_locale_long=长格式
 theme_xhred_title_locale_short=短格式
 settings_navigation_always_collapse=总是折叠
-settings_side_slider_fixed_description=此选项仅适用于最低分辨率为 1366 水平像素的高清屏幕，并且具有禁用选项以保持导航始终折叠
 theme_xhred_filemanager_records_per_page=每页的默认记录数
 theme_xhred_filemanager_sorting=默认排序类型
 theme_xhred_filemanager_sorting_asc=升序
@@ -759,8 +745,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=删除所有通知
 theme_xhred_tooltip_side_slider_mark_read_all_notification=将所有通知标记为已读
 theme_xhred_global_settings=设置
 theme_xhred_tooltip_side_slider_pinned=固定/取消固定侧滑块
-settings_side_slider_fixed_toggle=显示固定/取消固定切换
-settings_side_slider_fixed_toggle_description=此选项将在侧滑块的底行显示切换，如果满足先前选项中的条件，则允许动态切换其可见性。
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=同时为 Usermin 安装主题更新
@@ -784,7 +768,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=实时监控选项
 settings_sysinfo_real_time_status_disk=启用磁盘
 settings_sysinfo_real_time_status_disk_description=在慢速/大型文件系统上禁用磁盘的实时监控可能很有用
 theme_xhred_title_locale_non_ui_config=非 UI 格式（如自动电子邮件和导出的文件）

@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=محرر ملحقات السمة
 settings_right_theme_left_logo_title=التحكم في شعار السمة
 settings_right_theme_configurable_options_title=خيارات قابلة للتكوين لـ Authentic Theme
 
-settings_right_window_options_title=خيارات النافذة
-settings_right_navigation_menu_title=خيارات قائمة التنقل
-settings_right_table_options_title=خيارات الجدول
-settings_security_title=خيارات تنبيهات الأمان
-settings_right_hotkey_options_title=خيارات مفتاح التشغيل السريع
-settings_right_sysinfo_page_options_title=خيارات لوحة القيادة
+settings_right_hotkey_options=مفاتيح التشغيل السريع
 
 settings_right_hotkey_custom_options_description=تتيح لك الروابط المخصصة استخدام الأرقام من <code>1</code> إلى <code>9</code> للوصول السريع إلى أي <code>URL.</code> صالح لـ Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> يمكن استخراج <code>URL</code> من صفحة محتوى الإطار الأيمن المفتوحة حاليًا بقراءة مصدره. من المهم ألا يحتوي <code>URL</code> على شرطة مائلة في البداية ولا يستخدم البادئات. على سبيل المثال ، للتبديل السريع إلى Apache ، اضبط على الحقل <code>custom link 1</code> <code>/apache/</code>. إذا تم ضبط مفتاح التشغيل السريع الافتراضي على <code>Alt,</code> النقر فوق <code>Alt+1</code> ، سيفتح لك وحدة Apache
 settings_hotkey_custom_1=رابط مخصص <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=الصفحة الافتراضية لـ Virtual
 settings_right_cloudmin_default=الصفحة الافتراضية لـ Cloudmin
 
 settings_right_clear_local_cache=مسح ذاكرة التخزين المؤقت
-settings_right_notification_slider_options_title=خيارات شريط التمرير الجانبي
 settings_side_slider_fixed=ابق مرئيًا دائمًا
-settings_side_slider_palette=لوحة التمرير
 settings_hotkey_toggle_slider=هوتكي لشريط التمرير الجانبي
 
 settings_side_slider_enabled=تمكين شريط التمرير
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=تم نسخ %password تم إنشاؤ
 theme_fileformat_perl=بيرل
 theme_fileformat_perl_placeholder=يجب أن ينتهي هذا الملف بـ ` 1 ؛ ` للعمل بنجاح.
 
-#18.10
-theme_error_access_not_root=تم رفض الوصول: يحتاج المستخدم إلى الوصول إلى وحدة <em>Webmin Configuration</em> لتحرير تكوين السمة
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=إظهار الرموز الرمزية في القائمة المنسدلة في Virtualmin/Cloudmin
 theme_xhred_global_shipped=شحنها
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=فشل تحديث السمة. حاول استخدا
 theme_xhred_git_patch_initiated=تم بدء تحديث السمة.
 theme_xhred_global_prev_page=العودة إلى صفحة واحدة
 theme_xhred_global_help=مساعدة
-settings_right_soft_updates_page_options_title=تحديثات البرنامج
 theme_xhred_git_compare_changes=قارن التغييرات
 theme_xhred_filemanager_link_to_clipboard=تم نسخ اسم الرابط الرمزي إلى الحافظة.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=شكل كامل
 theme_xhred_title_locale_long=تنسيق طويل
 theme_xhred_title_locale_short=تنسيق قصير
 settings_navigation_always_collapse=انهار دائما
-settings_side_slider_fixed_description=لا يتوفر هذا الخيار إلا على الشاشات عالية الدقة بدقة لا تقل عن 1366 بكسل أفقي ومع خيار تعطيل للحفاظ على التنقل مطويًا دائمًا
 theme_xhred_filemanager_records_per_page=العدد الافتراضي للسجلات لكل صفحة
 theme_xhred_filemanager_sorting=نوع الفرز الافتراضي
 theme_xhred_filemanager_sorting_asc=تصاعدي
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=حذف جميع الإخ
 theme_xhred_tooltip_side_slider_mark_read_all_notification=اجعل جميع الإخطارات مقروءة
 theme_xhred_global_settings=الإعدادات
 theme_xhred_tooltip_side_slider_pinned=تثبيت/إلغاء تثبيت شريط التمرير الجانبي
-settings_side_slider_fixed_toggle=إظهار تبديل الدبوس/إلغاء التثبيت
-settings_side_slider_fixed_toggle_description=سيعرض هذا الخيار التبديل ، في شريط التمرير الجانبي ، في الصف السفلي ، مما يسمح بتبديل الرؤية على الطاير ، إذا تم استيفاء الشروط في الخيار السابق.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=قم بتثبيت تحديثات السمة لـ Usermin أيضًا
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=غيغابايت
 theme_xhred_nice_size_MB=ميغابايت
 theme_xhred_nice_size_kB=كيلو بايت
 theme_xhred_nice_size_b=بايت
-settings_sysinfo_real_time_status_options=خيارات المراقبة في الوقت الحقيقي
 settings_sysinfo_real_time_status_disk=تمكين للأقراص
 settings_sysinfo_real_time_status_disk_description=قد يكون من المفيد تعطيل المراقبة في الوقت الحقيقي للأقراص على أنظمة الملفات البطيئة/الكبيرة
 theme_xhred_title_locale_non_ui_config=تنسيق التاريخ الذي أنشأه الخادم
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=جاري النسخ الاحتياطي. ق�
 
 settings_mail_ui=تمكين واجهة مستخدم البريد الجديدة
 
-settings_show_theme_configuration_for_admins_only=إظهار زر إعدادات السمة للمسؤولين فقط
 settings_show_theme_configuration_for_admins_only_error=تم رفض الوصول: منع المسؤول الوصول إلى تخصيصات المستخدم
 
 theme_xhred_tooltip_navigation_pinned=تثبيت/إلغاء تثبيت قائمة التنقل
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=انتهت الإزالة بنجاح ول
 theme_xhred_connection_error_details_ssl=تحقق من تحذير <a>شهادة SSL الموقعة ذاتيًا</a>
 
 #19.71
-settings_sysinfo_hidden_panels=الأكورديون المخفية
+settings_sysinfo_hidden_panels_provisional=الأكورديون المخفية
 theme_xhred_tooltip_dashboard_panels_disable=إخفاء لوحة$1
 theme_xhred_dashboard_panels_disabled_explain=يمكن إعادة تمكين اللوحة المخفية باستخدام صفحة تكوين السمة.
+settings_right_sysinfo_page_options=لوحة القيادة والمراقبة في الوقت الحقيقي
+settings_right_navigation_menu_options=قائمة الإبحار
+settings_right_notification_slider_options=المنزلق الجانبي
+settings_right_table_options=عرض الجدول
+settings_right_hotkey_custom_options=مفاتيح التشغيل السريع للروابط المخصصة
+settings_right_soft_updates_page_options=تحديثات الموضوع
+settings_global_general_options_title=خيارات عامة
+theme_error_access_not_root_user=الوصول مرفوض: المستخدم ليس له امتياز لتحرير هذا القسم

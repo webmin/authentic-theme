@@ -7,11 +7,11 @@
 #
 use strict;
 
-our (%in, %gconfig, $current_theme, $config_directory, %theme_text);
+our (%in, %gconfig, $current_theme, $config_directory, $get_user_level, %theme_text);
 
 do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 
-!foreign_available("webmin") && error($theme_text{'theme_error_access_not_root'});
+$get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
 
 &ui_print_header(html_escape($in{'file'}), $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, undef, undef, undef, 1);
 
@@ -77,4 +77,4 @@ print '
         </tr>
     </table>
 </form>';
-&ui_print_footer("webmin/edit_themes.cgi", $theme_text{'right_return_theme_options'});
+&ui_print_footer("tconfig.cgi", $theme_text{'right_return_theme_options'});

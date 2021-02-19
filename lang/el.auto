@@ -110,12 +110,7 @@ settings_right_theme_left_extensions_title=Πρόγραμμα επεξεργασ
 settings_right_theme_left_logo_title=Έλεγχος λογότυπου θεμάτων
 settings_right_theme_configurable_options_title=Διαμορφώσιμες επιλογές για αυθεντικό θέμα
 
-settings_right_window_options_title=Επιλογές παραθύρου
-settings_right_navigation_menu_title=Επιλογές μενού πλοήγησης
-settings_right_table_options_title=Επιλογές πίνακα
-settings_security_title=Επιλογές ειδοποιήσεων ασφαλείας
-settings_right_hotkey_options_title=Επιλογές Hotkey
-settings_right_sysinfo_page_options_title=Επιλογές πίνακα ελέγχου
+settings_right_hotkey_options=Hotkeys
 
 settings_right_hotkey_custom_options_description=Οι προσαρμοσμένοι σύνδεσμοι σάς επιτρέπουν να χρησιμοποιείτε ψηφία από το <code>1</code> έως το <code>9</code> για γρήγορη πρόσβαση σε οποιαδήποτε έγκυρη <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> Η <code>URL</code> μπορεί να εξαχθεί από τη σελίδα περιεχομένου δεξιού πλαισίου που έχει ανοίξει αυτήν τη στιγμή, διαβάζοντας την πηγή της. Είναι σημαντικό το <code>URL</code> μην έχει κάθετο στην αρχή και να μην χρησιμοποιεί προθέματα. Για παράδειγμα, για γρήγορη εναλλαγή σε Apache, ορίστε σε <code>custom link 1</code> πεδίο <code>/apache/</code>. Εάν ο προεπιλεγμένος τροποποιητής hotkeys έχει οριστεί σε <code>Alt,</code> κάνοντας κλικ στο <code>Alt+1</code>, θα ανοίξει η ενότητα Apache
 settings_hotkey_custom_1=Προσαρμοσμένος σύνδεσμος <code>1</code>
@@ -175,9 +170,7 @@ settings_right_virtualmin_default=Προεπιλεγμένη σελίδα για
 settings_right_cloudmin_default=Προεπιλεγμένη σελίδα για το Cloudmin
 
 settings_right_clear_local_cache=Εκκαθάριση προσωρινής μνήμης
-settings_right_notification_slider_options_title=Επιλογές πλευρικού ρυθμιστικού
 settings_side_slider_fixed=Κρατήστε πάντα ορατό
-settings_side_slider_palette=Παλέτα ρυθμιστικών
 settings_hotkey_toggle_slider=Hotkey για πλαϊνό ρυθμιστικό
 
 settings_side_slider_enabled=Ενεργοποίηση ρυθμιστικού
@@ -510,9 +503,6 @@ theme_xhred_password_generator_new_success=Ο κωδικός %password δημι�
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Αυτό το αρχείο πρέπει να τελειώνει με `1;` να δουλέψω με επιτυχία.
 
-#18.10
-theme_error_access_not_root=Δεν επιτρέπεται η πρόσβαση: Ο χρήστης χρειάζεται πρόσβαση στην ενότητα <em>Διαμόρφωση Webmin</em> για να επεξεργαστεί τη διαμόρφωση θέματος
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Εμφάνιση συμβολικών εικονιδίων στο αναπτυσσόμενο μενού στο Virtualmin/Cloudmin
 theme_xhred_global_shipped=Εστάλη
@@ -594,7 +584,6 @@ theme_xhred_git_patch_update=Η ενημέρωση θέματος απέτυχε
 theme_xhred_git_patch_initiated=Η ενημέρωση θέματος ξεκίνησε.
 theme_xhred_global_prev_page=Επιστροφή σε μία σελίδα
 theme_xhred_global_help=Βοήθεια
-settings_right_soft_updates_page_options_title=Ενημερώσεις λογισμικού
 theme_xhred_git_compare_changes=Συγκρίνετε τις αλλαγές
 theme_xhred_filemanager_link_to_clipboard=Το όνομα του συμβολικού συνδέσμου αντιγράφηκε στο πρόχειρο.
 
@@ -734,7 +723,6 @@ theme_xhred_title_locale_full=Πλήρης μορφή
 theme_xhred_title_locale_long=Μεγάλη μορφή
 theme_xhred_title_locale_short=Σύντομη μορφή
 settings_navigation_always_collapse=Πάντα καταρρέει
-settings_side_slider_fixed_description=Αυτή η επιλογή είναι διαθέσιμη μόνο σε οθόνες HD με ελάχιστη ανάλυση 1366 οριζόντια εικονοστοιχεία και με απενεργοποιημένη επιλογή για να διατηρείται πάντα η σύμπτυξη της πλοήγησης
 theme_xhred_filemanager_records_per_page=Προεπιλεγμένος αριθμός εγγραφών ανά σελίδα
 theme_xhred_filemanager_sorting=Προεπιλεγμένος τύπος ταξινόμησης
 theme_xhred_filemanager_sorting_asc=Ανερχόμενος
@@ -762,8 +750,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Διαγραφή όλω�
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Επισημάνετε όλες τις ειδοποιήσεις ως αναγνωσμένες
 theme_xhred_global_settings=Ρυθμίσεις
 theme_xhred_tooltip_side_slider_pinned=Καρφίτσα/ξεκαρφιτσώστε το πλαϊνό ρυθμιστικό
-settings_side_slider_fixed_toggle=Εμφάνιση εναλλαγής καρφιτσών/ξεκαρφιτσώματος
-settings_side_slider_fixed_toggle_description=Αυτή η επιλογή θα εμφανίσει την εναλλαγή, στο πλευρικό ρυθμιστικό, στην κάτω σειρά, επιτρέποντας την εναλλαγή της ορατότητάς της εν κινήσει, εάν πληρούνται οι προϋποθέσεις στην προηγούμενη επιλογή.
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Εγκαταστήστε επίσης ενημερώσεις θέματος για το Usermin
@@ -787,7 +773,6 @@ theme_xhred_nice_size_GB=γιγαμπάιτ
 theme_xhred_nice_size_MB=ΜΒ
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=byte
-settings_sysinfo_real_time_status_options=Επιλογές παρακολούθησης σε πραγματικό χρόνο
 settings_sysinfo_real_time_status_disk=Ενεργοποίηση για δίσκους
 settings_sysinfo_real_time_status_disk_description=Μπορεί να είναι χρήσιμο να απενεργοποιήσετε την παρακολούθηση σε πραγματικό χρόνο για δίσκους σε αργά/μεγάλα συστήματα αρχείων
 theme_xhred_title_locale_non_ui_config=Μορφή ημερομηνίας δημιουργίας διακομιστή
@@ -902,7 +887,6 @@ theme_xhred_backup_is_being_prepared=Το αντίγραφο ασφαλείας 
 
 settings_mail_ui=Ενεργοποίηση νέας διεπαφής αλληλογραφίας
 
-settings_show_theme_configuration_for_admins_only=Εμφάνιση κουμπιού ρυθμίσεων θέματος μόνο για διαχειριστές
 settings_show_theme_configuration_for_admins_only_error=Δεν επιτρέπεται η πρόσβαση: Ο διαχειριστής έχει αποκλείσει την πρόσβαση στις προσαρμογές των χρηστών
 
 theme_xhred_tooltip_navigation_pinned=Καρφίτσωμα/ξεκαρφιτσώστε το μενού πλοήγησης
@@ -1204,6 +1188,14 @@ theme_xhred_filemanager_remove_warning=Η αφαίρεση ολοκληρώθη�
 theme_xhred_connection_error_details_ssl=Ελέγξτε την προειδοποίηση <a>πιστοποιητικό SSL αυτόματης υπογραφής</a>
 
 #19.71
-settings_sysinfo_hidden_panels=Κρυμμένα ακορντεόν
+settings_sysinfo_hidden_panels_provisional=Κρυμμένα ακορντεόν
 theme_xhred_tooltip_dashboard_panels_disable=Απόκρυψη του πίνακα $1 
 theme_xhred_dashboard_panels_disabled_explain=Το κρυφό πλαίσιο μπορεί να ενεργοποιηθεί ξανά χρησιμοποιώντας τη σελίδα διαμόρφωσης θέματος.
+settings_right_sysinfo_page_options=Πίνακας ελέγχου και παρακολούθηση σε πραγματικό χρόνο
+settings_right_navigation_menu_options=Μενού πλοήγησης
+settings_right_notification_slider_options=Πλευρικό ρυθμιστικό
+settings_right_table_options=Οθόνη πίνακα
+settings_right_hotkey_custom_options=Προσαρμοσμένοι σύνδεσμοι hotkeys
+settings_right_soft_updates_page_options=Ενημερώσεις θεμάτων
+settings_global_general_options_title=Γενικές επιλογές
+theme_error_access_not_root_user=Δεν επιτρέπεται η πρόσβαση: Ο χρήστης δεν έχει δικαίωμα να επεξεργαστεί αυτήν την ενότητα

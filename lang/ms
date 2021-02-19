@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Penyunting Esktensi Tema Authentic
 settings_right_theme_left_logo_title=Kontrol Logo Tema Authentic
 settings_right_theme_configurable_options_title=Pilihan yang dapat dikonfigurasi untuk tema Authentic
 
-settings_right_window_options_title=Pilihan jendela
-settings_right_navigation_menu_title=Pilihan menu navigasi
-settings_right_table_options_title=Pilihan tabel
-settings_security_title=Security Alerts options
-settings_right_hotkey_options_title=Pilihan Hotkey
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=Tautan khusus memungkinkan Anda untuk menggunakan digit antara <code>1</code> hingga <code>9</code> untuk mengakses dengan cepat <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code> dapat diambil dari konten frame laman yang sedang dibuka, dengan membaca sumbernya. <code>URL</code> tidak menggunakan garis miring di depannya dan tidak memilik awalan, ini penting. Misalnya, untuk berpindah ke Apache dengan cepat, atur field <code>tautan khusus 1</code> dengan <code>/apache/</code>. Jika modifier hotkey default diatur ke <code>Alt,</code> dengan meng-klik <code>Alt+1</code>, akan membuka modul Apache Anda
 settings_hotkey_custom_1=Tautan khusus <code>1</code>
 settings_hotkey_custom_2=Tautan khusus <code>2</code>
@@ -174,9 +167,7 @@ settings_right_virtualmin_default=Halaman default untuk Virtualmin
 settings_right_cloudmin_default=Halaman default untuk Cloudmin
 
 settings_right_clear_local_cache=Kosongkan cache
-settings_right_notification_slider_options_title=Pilihan slider samping
 settings_side_slider_fixed=Pertahankan slider selalu terlihat
-settings_side_slider_palette=Palet slider
 settings_hotkey_toggle_slider=Hotkey untuk slider
 
 settings_side_slider_enabled=Aktifkan slider
@@ -509,9 +500,6 @@ theme_xhred_password_generator_new_success=Kata sandi %password yang baru dicipt
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Berkas ini harus diakhiri dengan `1;` agar dapat bekerja dengan baik.
 
-#18.10
-theme_error_access_not_root=Izin ditolak: Pengguna perlu mengakses modul <em>Konfigurasi Webmin</em> untuk menyunting konfigurasi tema
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Tampilkan ikon simbolis pada drop-down di Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
@@ -593,7 +581,6 @@ theme_xhred_git_patch_update=Pembaruan tema gagal. Coba gunakan konsol untuk mel
 theme_xhred_git_patch_initiated=Pembaruan tema telah diinisiasi.
 theme_xhred_global_prev_page=Kembali satu halaman
 theme_xhred_global_help=Bantuan
-settings_right_soft_updates_page_options_title=Pembaruan perangkat lunak
 theme_xhred_git_compare_changes=Bandingkan perubahan
 theme_xhred_filemanager_link_to_clipboard=Nama tautan simbolis telah disalin ke papan klip.
 

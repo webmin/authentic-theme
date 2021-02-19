@@ -110,13 +110,6 @@ settings_right_theme_left_extensions_title=Theme Extensions Editor
 settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Dostupná nastavení pro Authentic Theme
 
-settings_right_window_options_title=Možnosti oken
-settings_right_navigation_menu_title=Možnosti navigačního panelu
-settings_right_table_options_title=Možnosti tabulek
-settings_security_title=Možnosti bezpečnostních upozornění
-settings_right_hotkey_options_title=Nastavení klávesových zkratek
-settings_right_sysinfo_page_options_title=Dashboard options
-
 settings_right_hotkey_custom_options_description=Vlastní odkazy umožňují použít čísla od <code>1</code> do <code>9</code> pro rychlý přístup k jakékoliv Webmin/Usermin/Virtualmin/Cloudmin <code>URL adrese.</code> <code>URL adresu</code> je možné získat z aktuálně otevřeného pravého rámce po zhlédnutí jeho zdrojového kódu. Je důležité, aby <code>URL adresa</code> neobsahovala žádné lomítko na začátku a neobsahovala žádný prefix. Například tedy k rychlému přístupu k Apache, nastavte hodnotu pole pro <code>vlastní link 1</code> jako <code>/apache/</code>. Pokud je přepínač klávesových zkratek nastavený na <code>Alt,</code> pak se klávesovou zkratkou <code>Alt+1</code>, dostanete na stránku Apache.
 settings_hotkey_custom_1=Vlastní odkaz <code>1</code>
 settings_hotkey_custom_2=Vlastní odkaz <code>2</code>

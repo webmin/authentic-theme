@@ -119,13 +119,7 @@ settings_right_theme_left_extensions_title=Theme Extensions Editor
 settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
-
-settings_right_window_options_title=Window options
-settings_right_navigation_menu_title=Navigation menu options
-settings_right_table_options_title=Table options
-settings_security_title=Security Alerts options
-settings_right_hotkey_options_title=Hotkey options
-settings_right_sysinfo_page_options_title=Dashboard options
+settings_right_hotkey_options=Hotkey options
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
 settings_hotkey_custom_1=Custom link <code>1</code>
@@ -185,9 +179,7 @@ settings_right_virtualmin_default=Default page for Virtualmin
 settings_right_cloudmin_default=Default page for Cloudmin
 
 settings_right_clear_local_cache=Clear cache
-settings_right_notification_slider_options_title=Side slider options
 settings_side_slider_fixed=Keep always visible
-settings_side_slider_palette=Slider color palette
 settings_hotkey_toggle_slider=Hotkey for side slider
 
 settings_side_slider_enabled=Enable slider
@@ -527,10 +519,6 @@ theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=This file must end with `1;` to work successfully.
 
 
-#18.10
-theme_error_access_not_root=Access denied: User needs access to the <em>Webmin Configuration</em> module to edit theme configuration
-
-
 #18.30
 settings_leftmenu_vm_cm_dropdown_icons=Show symbolic icons in drop-down in Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
@@ -614,7 +602,6 @@ theme_xhred_git_patch_update=Theme update has failed. Try using console to do it
 theme_xhred_git_patch_initiated=Theme update has been initiated.
 theme_xhred_global_prev_page=Go back one page
 theme_xhred_global_help=Help
-settings_right_soft_updates_page_options_title=Software updates
 theme_xhred_git_compare_changes=Compare changes
 theme_xhred_filemanager_link_to_clipboard=Symbolic link's name has been copied to clipboard.
 
@@ -767,7 +754,6 @@ theme_xhred_title_locale_full=Full format
 theme_xhred_title_locale_long=Long format
 theme_xhred_title_locale_short=Short format
 settings_navigation_always_collapse=Always collapsed
-settings_side_slider_fixed_description=This option is only available on HD screens with minimum resolution of 1366 horizontal pixels and with disabled option for keeping navigation always collapsed
 theme_xhred_filemanager_records_per_page=Default number of records per page
 theme_xhred_filemanager_sorting=Default sorting type
 theme_xhred_filemanager_sorting_asc=Ascending
@@ -796,9 +782,6 @@ theme_xhred_tooltip_side_slider_delete_all_notification=Delete all notifications
 theme_xhred_tooltip_side_slider_mark_read_all_notification=Mark all notifications as read
 theme_xhred_global_settings=Settings
 theme_xhred_tooltip_side_slider_pinned=Pin/unpin side slider
-settings_side_slider_fixed_toggle=Show pin/unpin toggle
-settings_side_slider_fixed_toggle_description=This option will display the toggle, in the side slider, at the bottom row, allowing to toggle its visibility on the fly, if conditions in previous option are met.
-
 
 #19.13
 settings_sysinfo_theme_updates_for_usermin=Install theme updates for Usermin as well
@@ -824,7 +807,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_options=Real-time monitoring options
 settings_sysinfo_real_time_status_disk=Enable for disks
 settings_sysinfo_real_time_status_disk_description=It might be useful to disable real-time monitoring for disks on slow/large file systems
 theme_xhred_title_locale_non_ui_config=Server generated date format
@@ -940,8 +922,7 @@ theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take 
 
 settings_mail_ui=Enable new mail UI
 
-settings_show_theme_configuration_for_admins_only=Show theme settings button for administrators only
-settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customisations
+settings_show_theme_configuration_for_admins_only_error=Access denied: Administrator has blocked access to user customization
 
 theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
 settings_hotkey_navigation=Hotkey for toggling navigation menu
@@ -1261,6 +1242,15 @@ theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a
 
 
 #19.71
-settings_sysinfo_hidden_panels=Hidden accordions
+settings_sysinfo_hidden_panels_provisional=Hidden accordions
 theme_xhred_tooltip_dashboard_panels_disable=Hide $1 panel
 theme_xhred_dashboard_panels_disabled_explain=Hidden panel can be re-enabled using theme configuration page.
+settings_right_sysinfo_page_options=Dashboard and real-time monitoring
+settings_right_navigation_menu_options=Navigation menu
+settings_right_notification_slider_options=Side slider
+settings_right_table_options=Table display
+settings_right_hotkey_options=Hotkeys
+settings_right_hotkey_custom_options=Custom links hotkeys
+settings_right_soft_updates_page_options=Theme updates
+settings_global_general_options_title=General options
+theme_error_access_not_root_user=Access denied: User is not privileged to edit this section
