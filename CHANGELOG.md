@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.71-RC1 (February 19, 2021)
+#### Version 19.71-RC2 (February 20, 2021)
 * Add ability to use server side generated passwords [forum.virtualmin.com/t/108121](https://forum.virtualmin.com/t/cant-find-increasing-password-length-settings-anymore/108121)
 * Add ability to hide and reorder panels on the Dashboard
 * Add better error handing for pages with SSL certificate errors [forum.virtualmin.com/t/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
