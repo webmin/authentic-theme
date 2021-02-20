@@ -1194,5 +1194,5 @@ settings_right_notification_slider_options=Thanh trượt bên
 settings_right_table_options=Bảng hiển thị
 settings_right_hotkey_custom_options=Các phím nóng liên kết tùy chỉnh
 settings_right_soft_updates_page_options=Cập nhật chủ đề
-settings_global_general_options_title=Các tùy chọn chung
+settings_global_general_options_title=Mặc định chung
 theme_error_access_not_root_user=Quyền truy cập bị từ chối: Người dùng không có đặc quyền chỉnh sửa phần này

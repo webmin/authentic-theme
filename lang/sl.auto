@@ -1194,5 +1194,5 @@ settings_right_notification_slider_options=Stranski drsnik
 settings_right_table_options=Prikaz tabele
 settings_right_hotkey_custom_options=Bližnjične tipke za povezave po meri
 settings_right_soft_updates_page_options=Posodobitve teme
-settings_global_general_options_title=Splošne možnosti
+settings_global_general_options_title=Splošne privzete vrednosti
 theme_error_access_not_root_user=Dostop zavrnjen: uporabnik nima pravice urejati tega odseka
