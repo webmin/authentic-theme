@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Controllo logo del tema
 settings_right_theme_configurable_options_title=Opzioni impostabili per Authentic Theme
 
 settings_right_hotkey_custom_options_description=I link personalizzati ti permettono di utilizzare cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. L'<code>URL</code> può essere estratto dal riquadro destro del contenuto della pagina attualmente aperta, leggendone l'origine. E' importante che l'<code>URL</code> non abbia una barra all'inizio e non utilizzi prefissi. Per esempio, per passare rapidamente ad Apache, impostare il campo<code>Link personalizzato 1</code> a <code>/apache/</code>. Se il modificatore predefinito dei tasti di scelta rapida è impostato a <code>Alt,</code> premendo <code>Alt+1</code>, si aprirà il modulo Apache.
-settings_hotkey_custom_1=Link personalizzato <code>1</code>
-settings_hotkey_custom_2=Link personalizzato <code>2</code>
-settings_hotkey_custom_3=Link personalizzato <code>3</code>
-settings_hotkey_custom_4=Link personalizzato <code>4</code>
-settings_hotkey_custom_5=Link personalizzato <code>5</code>
-settings_hotkey_custom_6=Link personalizzato <code>6</code>
-settings_hotkey_custom_7=Link personalizzato <code>7</code>
-settings_hotkey_custom_8=Link personalizzato <code>8</code>
-settings_hotkey_custom_9=Link personalizzato <code>9</code>
+settings_hotkey_custom_1_user=Link personalizzato <code>1</code>
+settings_hotkey_custom_2_user=Link personalizzato <code>2</code>
+settings_hotkey_custom_3_user=Link personalizzato <code>3</code>
+settings_hotkey_custom_4_user=Link personalizzato <code>4</code>
+settings_hotkey_custom_5_user=Link personalizzato <code>5</code>
+settings_hotkey_custom_6_user=Link personalizzato <code>6</code>
+settings_hotkey_custom_7_user=Link personalizzato <code>7</code>
+settings_hotkey_custom_8_user=Link personalizzato <code>8</code>
+settings_hotkey_custom_9_user=Link personalizzato <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=Attiva la barra di caricamento della pagina nella parte superiore dello schermo
@@ -879,7 +879,7 @@ theme_xhred_backup_is_being_prepared=Il tuo backup è in fase di preparazione. P
 
 settings_mail_ui=Attiva nuova UI per le email
 
-settings_show_theme_configuration_for_admins_only_error=Accesso negato: L'amministratore ha bloccato l'accesso alle personalizzazioni dell'utente
+settings_theme_config_admins_only_privileged_error=Accesso negato: L'amministratore ha bloccato l'accesso alle personalizzazioni dell'utente
 
 theme_xhred_tooltip_navigation_pinned=Fissa/Non fissare menu di navigazione
 settings_hotkey_navigation=Tasto di scelta rapida per attivare o disattivare il menu di navigazione

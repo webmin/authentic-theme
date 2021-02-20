@@ -33,7 +33,7 @@ theme_xhred_filemanager_remove_warning=La suppression s'est terminée avec succ�
 theme_xhred_connection_error_details_ssl=Vérifiez l'avertissement concernant le <a>certificat SSL auto-signé</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Accordéons cachés
+settings_sysinfo_hidden_panels_user=Accordéons cachés
 theme_xhred_tooltip_dashboard_panels_disable=Masquer le panneau $1 
 theme_xhred_dashboard_panels_disabled_explain=Le panneau masqué peut être réactivé à l'aide de la page de configuration du thème.
 settings_right_sysinfo_page_options=Tableau de bord et surveillance en temps réel

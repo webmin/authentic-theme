@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Konfigurovateľné možnosti pre
 settings_right_hotkey_options=Klávesové skratky
 
 settings_right_hotkey_custom_options_description=Vlastné odkazy vám umožňujú používať číslice od <code>1</code> do <code>9</code> aby ste mali rýchly prístup k akejkoľvek platnej webovej <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> možno získať z aktuálne otvorenej stránky s obsahom pravého rámu prečítaním jej zdroja. Je dôležité, aby <code>URL</code> na začiatku neobsahovala lomku a nepoužívala predpony. Napríklad, ak chcete rýchlo prepnúť na Apache, nastavte na <code>custom link 1</code> pole <code>custom link 1</code> pole <code>/apache/</code>. Ak je predvolený modifikátor klávesových skratiek nastavený na <code>Alt,</code> kliknutím na <code>Alt+1</code> sa otvorí modul Apache
-settings_hotkey_custom_1=Vlastný odkaz <code>1</code>
-settings_hotkey_custom_2=Vlastný odkaz <code>2</code>
-settings_hotkey_custom_3=Vlastný odkaz <code>3</code>
-settings_hotkey_custom_4=Vlastný odkaz <code>4</code>
-settings_hotkey_custom_5=Vlastný odkaz <code>5</code>
-settings_hotkey_custom_6=Vlastný odkaz <code>6</code>
-settings_hotkey_custom_7=Vlastný odkaz <code>7</code>
-settings_hotkey_custom_8=Vlastný odkaz <code>8</code>
-settings_hotkey_custom_9=Vlastný odkaz <code>9</code>
+settings_hotkey_custom_1_user=Vlastný odkaz <code>1</code>
+settings_hotkey_custom_2_user=Vlastný odkaz <code>2</code>
+settings_hotkey_custom_3_user=Vlastný odkaz <code>3</code>
+settings_hotkey_custom_4_user=Vlastný odkaz <code>4</code>
+settings_hotkey_custom_5_user=Vlastný odkaz <code>5</code>
+settings_hotkey_custom_6_user=Vlastný odkaz <code>6</code>
+settings_hotkey_custom_7_user=Vlastný odkaz <code>7</code>
+settings_hotkey_custom_8_user=Vlastný odkaz <code>8</code>
+settings_hotkey_custom_9_user=Vlastný odkaz <code>9</code>
 
 settings_navigation_color=Farebná paleta
 settings_loader_top=Povoľte v hornej časti obrazovky zavádzač priebehu stránky
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Vaša záloha sa pripravuje. Môže to chv�
 
 settings_mail_ui=Povoliť nové používateľské rozhranie pošty
 
-settings_show_theme_configuration_for_admins_only_error=Prístup odmietnutý: Správca zablokoval prístup k prispôsobeniam používateľov
+settings_theme_config_admins_only_privileged_error=Prístup odmietnutý: Správca zablokoval prístup k prispôsobeniam používateľov
 
 theme_xhred_tooltip_navigation_pinned=Pripnúť/odblokovať navigačnú ponuku
 settings_hotkey_navigation=Klávesová skratka pre prepínanie navigačnej ponuky
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Odstránenie bolo úspešne dokončené, 
 theme_xhred_connection_error_details_ssl=Skontrolujte varovanie <a>certifikát SSL s vlastným podpisom</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Skryté harmoniky
+settings_sysinfo_hidden_panels_user=Skryté harmoniky
 theme_xhred_tooltip_dashboard_panels_disable=Skryť panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrytý panel je možné znova povoliť pomocou konfiguračnej stránky témy.
 settings_right_sysinfo_page_options=Dashboard a monitorovanie v reálnom čase

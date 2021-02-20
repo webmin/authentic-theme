@@ -9,6 +9,7 @@ var
     settings_document_title = 1,
     settings_cm_editor_palette = 'monokai',
     settings_global_palette_unauthenticated = 'light',
+    settings_theme_config_admins_only_privileged = false,
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
@@ -81,15 +82,15 @@ var
     settings_hotkey_toggle_key_night_mode = 'l',
 
     // Custom links hotkeys options defaults
-    settings_hotkey_custom_1 = '',
-    settings_hotkey_custom_2 = '',
-    settings_hotkey_custom_3 = '',
-    settings_hotkey_custom_4 = '',
-    settings_hotkey_custom_5 = '',
-    settings_hotkey_custom_6 = '',
-    settings_hotkey_custom_7 = '',
-    settings_hotkey_custom_8 = '',
-    settings_hotkey_custom_9 = '',
+    settings_hotkey_custom_1_user = '',
+    settings_hotkey_custom_2_user = '',
+    settings_hotkey_custom_3_user = '',
+    settings_hotkey_custom_4_user = '',
+    settings_hotkey_custom_5_user = '',
+    settings_hotkey_custom_6_user = '',
+    settings_hotkey_custom_7_user = '',
+    settings_hotkey_custom_8_user = '',
+    settings_hotkey_custom_9_user = '',
     
     // Theme updates options defaults
     settings_sysinfo_theme_updates = false,
@@ -140,7 +141,6 @@ var
     settings_theme_make_date = true,
     settings_enable_container_offset = true,
     settings_contrast_mode = false,
-    settings_show_theme_configuration_for_admins_only = false,
     settings_sysinfo_remember_accordions = true,
     settings_sysinfo_expand_all_accordions = false,
     settings_mail_ui = true,

@@ -81,7 +81,7 @@ if (
 
                 } elsif (!foreign_available("webmin") &&
                          $__custom_print eq '0' &&
-                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')
+                         $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true')
                 {
                     print_category_link($gconfig{'webprefix'} . "/tconfig.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;

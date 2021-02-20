@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Konfigūruojamos autentiškos te
 settings_right_hotkey_options=Spartieji klavišai
 
 settings_right_hotkey_custom_options_description=Pasirinktinės nuorodos leidžia naudoti skaitmenis nuo <code>1</code> iki <code>9</code>, kad būtų galima greitai pasiekti galiojantį „Webmin“/„Usermin“/„Virtualmin“/„Cloudmin“ <code>URL.</code> <code>URL</code> galima išgauti iš šiuo metu atidaryto dešiniojo kadro turinio puslapio, perskaičius jo šaltinį. Svarbu, kad <code>URL</code> pradžioje nebūtų brūkšnio ir nenaudojami priešdėliai. Pvz., Norėdami greitai perjungti į „Apache“, nustatykite <code>custom link 1</code> lauką <code>/apache/</code>. Jei numatytasis sparčiųjų klavišų keitiklis bus nustatytas į <code>Alt,</code> spustelėję <code>Alt+1</code>, atidarysite „Apache“ modulį
-settings_hotkey_custom_1=<code>1</code> pasirinktinė nuoroda
-settings_hotkey_custom_2=<code>2</code> pasirinktinė nuoroda
-settings_hotkey_custom_3=<code>3</code> pasirinktinė nuoroda
-settings_hotkey_custom_4=<code>4</code> pasirinktinė nuoroda
-settings_hotkey_custom_5=<code>5</code> pasirinktinė nuoroda
-settings_hotkey_custom_6=<code>6</code> pasirinktinė nuoroda
-settings_hotkey_custom_7=<code>7</code> pasirinktinė nuoroda
-settings_hotkey_custom_8=<code>8</code> pasirinktinė nuoroda
-settings_hotkey_custom_9=Pasirinkta nuoroda <code>9</code>
+settings_hotkey_custom_1_user=<code>1</code> pasirinktinė nuoroda
+settings_hotkey_custom_2_user=<code>2</code> pasirinktinė nuoroda
+settings_hotkey_custom_3_user=<code>3</code> pasirinktinė nuoroda
+settings_hotkey_custom_4_user=<code>4</code> pasirinktinė nuoroda
+settings_hotkey_custom_5_user=<code>5</code> pasirinktinė nuoroda
+settings_hotkey_custom_6_user=<code>6</code> pasirinktinė nuoroda
+settings_hotkey_custom_7_user=<code>7</code> pasirinktinė nuoroda
+settings_hotkey_custom_8_user=<code>8</code> pasirinktinė nuoroda
+settings_hotkey_custom_9_user=Pasirinkta nuoroda <code>9</code>
 
 settings_navigation_color=Spalvų paletė
 settings_loader_top=Ekrano viršuje įgalinkite puslapio eigos kaupiklį
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Jūsų atsarginė kopija ruošiama. Tai gal
 
 settings_mail_ui=Įgalinti naujo pašto vartotojo sąsają
 
-settings_show_theme_configuration_for_admins_only_error=Prieiga atmesta: administratorius užblokavo prieigą prie vartotojo pritaikymų
+settings_theme_config_admins_only_privileged_error=Prieiga atmesta: administratorius užblokavo prieigą prie vartotojo pritaikymų
 
 theme_xhred_tooltip_navigation_pinned=Prisegti/atsegti naršymo meniu
 settings_hotkey_navigation=Spartusis naršymo meniu klavišas
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Pašalinimas sėkmingai baigtas, bet ne v
 theme_xhred_connection_error_details_ssl=Patikrinkite <a>savarankiškai pasirašyto SSL sertifikato</a> įspėjimą
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Paslėpti akordeonai
+settings_sysinfo_hidden_panels_user=Paslėpti akordeonai
 theme_xhred_tooltip_dashboard_panels_disable=Slėpti skydą $1 
 theme_xhred_dashboard_panels_disabled_explain=Paslėptą skydą galima iš naujo įjungti naudojant temos konfigūracijos puslapį.
 settings_right_sysinfo_page_options=Informacijos suvestinė ir stebėjimas realiuoju laiku

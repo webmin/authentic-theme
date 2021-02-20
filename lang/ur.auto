@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=مستند تھیم کے لئے 
 settings_right_hotkey_options=ہاٹکیز
 
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
-settings_hotkey_custom_1=Custom link <code>1</code>
-settings_hotkey_custom_2=Custom link <code>2</code>
-settings_hotkey_custom_3=Custom link <code>3</code>
-settings_hotkey_custom_4=Custom link <code>4</code>
-settings_hotkey_custom_5=Custom link <code>5</code>
-settings_hotkey_custom_6=Custom link <code>6</code>
-settings_hotkey_custom_7=Custom link <code>7</code>
-settings_hotkey_custom_8=Custom link <code>8</code>
-settings_hotkey_custom_9=Custom link <code>9</code>
+settings_hotkey_custom_1_user=Custom link <code>1</code>
+settings_hotkey_custom_2_user=Custom link <code>2</code>
+settings_hotkey_custom_3_user=Custom link <code>3</code>
+settings_hotkey_custom_4_user=Custom link <code>4</code>
+settings_hotkey_custom_5_user=Custom link <code>5</code>
+settings_hotkey_custom_6_user=Custom link <code>6</code>
+settings_hotkey_custom_7_user=Custom link <code>7</code>
+settings_hotkey_custom_8_user=Custom link <code>8</code>
+settings_hotkey_custom_9_user=Custom link <code>9</code>
 
 settings_navigation_color=رنگین پیلیٹ
 settings_loader_top=اسکرین کے اوپری حصے میں پیج پروگریس لوڈر کو فعال کریں
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=آپ کا بیک اپ تیار کیا جا�
 
 settings_mail_ui=نیا میل UI فعال کریں
 
-settings_show_theme_configuration_for_admins_only_error=رسائی سے انکار: ایڈمنسٹریٹر نے صارف کی تخصیص تک رسائی کو مسدود کردیا ہے
+settings_theme_config_admins_only_privileged_error=رسائی سے انکار: ایڈمنسٹریٹر نے صارف کی تخصیص تک رسائی کو مسدود کردیا ہے
 
 theme_xhred_tooltip_navigation_pinned=نیویگیشن مینو کو پن/ان پین کھولیں
 settings_hotkey_navigation=ٹوگلنگ نیویگیشن مینو کیلئے ہاٹکی
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Removal has finished successfully but not
 theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a> warning
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=پوشیدہ معاہدے
+settings_sysinfo_hidden_panels_user=پوشیدہ معاہدے
 theme_xhred_tooltip_dashboard_panels_disable=$1 پینل چھپائیں
 theme_xhred_dashboard_panels_disabled_explain=تھیم کنفیگریشن پیج کا استعمال کرکے پوشیدہ پینل کو دوبارہ فعال کیا جاسکتا ہے۔
 settings_right_sysinfo_page_options=ڈیش بورڈ اور اصل وقت کی نگرانی

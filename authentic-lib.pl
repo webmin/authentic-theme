@@ -388,7 +388,7 @@ sub get_extended_sysinfo
                         }
                     }
                 }
-                if ($theme_config{'settings_sysinfo_hidden_panels_provisional'} =~ /\'$info->{'id'}\'/) {
+                if ($theme_config{'settings_sysinfo_hidden_panels_user'} =~ /\'$info->{'id'}\'/) {
                     next;
                 }
                 if ($info->{'id'} && $charts_not_supported eq 'no') {
@@ -946,7 +946,7 @@ sub print_left_menu
 
                 } elsif (!foreign_available("webmin") &&
                          $__custom_print eq '0' &&
-                         $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true')
+                         $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true')
                 {
                     print_category_link($gconfig{'webprefix'} . "/tconfig.cgi", $theme_text{'settings_title'}, 1);
                     $__custom_print++;
@@ -2375,7 +2375,7 @@ sub get_default_target
 sub get_theme_user_link
 {
     my $is_hidden = (!foreign_available("webmin") &&
-                       $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true' ? ' hidden-force ' :
+                       $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true' ? ' hidden-force ' :
                        undef);
     my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
     my $link           = '/tconfig.cgi';
@@ -3117,16 +3117,21 @@ sub get_available_modules
 sub theme_config_save
 {
     theme_make_config_dir();
-    my %i = settings_filter(%in);
-    write_file(get_tuconfig_file(), \%i);
+    my %u = settings_filter(%in);
+    my %a = %u;
+
+    # Never allow saving privileged options sent from user
+    delete @u{ grep(/_privileged$/, keys %u) };
+    write_file(get_tuconfig_file(), \%u);
 
     # Master administrator must also save certain options to
     # global `settings.js` config file to affect all users
     if ($get_user_level eq '0') {
-        delete @i{ grep(!/^settings_/, keys %i) };
-        delete @i{ grep(/_provisional$/, keys %i) };
-        delete @i{ grep(/hotkey_custom/, keys %i) };
-        write_file(get_tgconfig_file(), \%i);
+        delete @a{ grep(!/^settings_/,   keys %a) };
+
+        # Never save user-based options to global config
+        delete @a{ grep(/_user$/, keys %a) };
+        write_file(get_tgconfig_file(), \%a);
     }
 }
 

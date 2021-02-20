@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Kontrol Logo Tema Authentic
 settings_right_theme_configurable_options_title=Pilihan yang dapat dikonfigurasi untuk tema Authentic
 
 settings_right_hotkey_custom_options_description=Tautan khusus memungkinkan Anda untuk menggunakan digit antara <code>1</code> hingga <code>9</code> untuk mengakses dengan cepat <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code> dapat diambil dari konten frame laman yang sedang dibuka, dengan membaca sumbernya. <code>URL</code> tidak menggunakan garis miring di depannya dan tidak memilik awalan, ini penting. Misalnya, untuk berpindah ke Apache dengan cepat, atur field <code>tautan khusus 1</code> dengan <code>/apache/</code>. Jika modifier hotkey default diatur ke <code>Alt,</code> dengan meng-klik <code>Alt+1</code>, akan membuka modul Apache Anda
-settings_hotkey_custom_1=Tautan khusus <code>1</code>
-settings_hotkey_custom_2=Tautan khusus <code>2</code>
-settings_hotkey_custom_3=Tautan khusus <code>3</code>
-settings_hotkey_custom_4=Tautan khusus <code>4</code>
-settings_hotkey_custom_5=Tautan khusus <code>5</code>
-settings_hotkey_custom_6=Tautan khusus <code>6</code>
-settings_hotkey_custom_7=Tautan khusus <code>7</code>
-settings_hotkey_custom_8=Tautan khusus <code>8</code>
-settings_hotkey_custom_9=Tautan khusus <code>9</code>
+settings_hotkey_custom_1_user=Tautan khusus <code>1</code>
+settings_hotkey_custom_2_user=Tautan khusus <code>2</code>
+settings_hotkey_custom_3_user=Tautan khusus <code>3</code>
+settings_hotkey_custom_4_user=Tautan khusus <code>4</code>
+settings_hotkey_custom_5_user=Tautan khusus <code>5</code>
+settings_hotkey_custom_6_user=Tautan khusus <code>6</code>
+settings_hotkey_custom_7_user=Tautan khusus <code>7</code>
+settings_hotkey_custom_8_user=Tautan khusus <code>8</code>
+settings_hotkey_custom_9_user=Tautan khusus <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=Aktifkan progress loader laman pada bagian atas layar

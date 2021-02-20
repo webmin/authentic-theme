@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Opstelbare opsies vir outentieke
 settings_right_hotkey_options=Sneltoetse
 
 settings_right_hotkey_custom_options_description=Met persoonlike skakels kan u syfers van <code>1</code> tot <code>9</code> gebruik om vinnig toegang tot enige geldige Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> Die <code>URL</code> kan onttrek word vanaf die huidige bladsy met die regte raamraamwerk deur die bron te lees. Dit is belangrik dat <code>URL</code> aan die begin geen streep het nie en nie voorvoegsels gebruik nie. Byvoorbeeld, om vinnig oor te skakel na Apache, stel u in op die <code>custom link 1</code> veld <code>/apache/</code>. As die standaard-sneltoets-wysiger op <code>Alt,</code> klik op <code>Alt+1</code>, en dan word u Apache-module oopgemaak
-settings_hotkey_custom_1=Pasgemaakte skakel <code>1</code>
-settings_hotkey_custom_2=Pasgemaakte skakel <code>2</code>
-settings_hotkey_custom_3=Pasgemaakte skakel <code>3</code>
-settings_hotkey_custom_4=Pasgemaakte skakel <code>4</code>
-settings_hotkey_custom_5=Pasgemaakte skakel <code>5</code>
-settings_hotkey_custom_6=Pasgemaakte skakel <code>6</code>
-settings_hotkey_custom_7=Pasgemaakte skakel <code>7</code>
-settings_hotkey_custom_8=Pasgemaakte skakel <code>8</code>
-settings_hotkey_custom_9=Pasgemaakte skakel <code>9</code>
+settings_hotkey_custom_1_user=Pasgemaakte skakel <code>1</code>
+settings_hotkey_custom_2_user=Pasgemaakte skakel <code>2</code>
+settings_hotkey_custom_3_user=Pasgemaakte skakel <code>3</code>
+settings_hotkey_custom_4_user=Pasgemaakte skakel <code>4</code>
+settings_hotkey_custom_5_user=Pasgemaakte skakel <code>5</code>
+settings_hotkey_custom_6_user=Pasgemaakte skakel <code>6</code>
+settings_hotkey_custom_7_user=Pasgemaakte skakel <code>7</code>
+settings_hotkey_custom_8_user=Pasgemaakte skakel <code>8</code>
+settings_hotkey_custom_9_user=Pasgemaakte skakel <code>9</code>
 
 settings_navigation_color=Kleurpalet
 settings_loader_top=Aktiveer vorderingslaaier aan die bokant van die skerm
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=U rugsteun word voorberei. Dit kan 'n rukki
 
 settings_mail_ui=Aktiveer nuwe e-pos-UI
 
-settings_show_theme_configuration_for_admins_only_error=Toegang geweier: Administrateur het toegang tot gebruiker-aanpassings geblokkeer
+settings_theme_config_admins_only_privileged_error=Toegang geweier: Administrateur het toegang tot gebruiker-aanpassings geblokkeer
 
 theme_xhred_tooltip_navigation_pinned=Speld/ontklee navigasiekieslys
 settings_hotkey_navigation=Sneltoets vir navigasie-kieslys
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Die verwydering is suksesvol voltooi, maa
 theme_xhred_connection_error_details_ssl=Kyk na <a>selfondertekende SSL-sertifikaat</a> -waarskuwing
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Versteekte trekklaviere
+settings_sysinfo_hidden_panels_user=Versteekte trekklaviere
 theme_xhred_tooltip_dashboard_panels_disable=Versteek $1 paneel
 theme_xhred_dashboard_panels_disabled_explain=Versteekte paneel kan weer geaktiveer word met behulp van die tema-konfigurasie-bladsy.
 settings_right_sysinfo_page_options=Dashboard en intydse monitering

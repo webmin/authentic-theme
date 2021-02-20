@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Konfiguroitavat vaihtoehdot aute
 settings_right_hotkey_options=Pikanäppäimet
 
 settings_right_hotkey_custom_options_description=Custom linkkien avulla voit käyttää numerot <code>1</code> ja <code>9</code>, jotta pikanäppäin-mitään pätevää Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> voidaan poimia tällä hetkellä avatusta oikean kehyksen sisältösivulta lukemalla sen lähde. On tärkeää, että <code>URL</code> osoitteen alussa ei ole kaltevuutta ja että siinä ei käytetä etuliitteitä. Esimerkiksi siirtyäksesi nopeasti Apacheen asettamalla <code>custom link 1</code> kenttä <code>/apache/</code>. Jos oletuspikanäppäinmuokkaajaksi on asetettu <code>Alt,</code> napsauttamalla <code>Alt+1</code>, avaat sinulle Apache-moduulin
-settings_hotkey_custom_1=Muokattu linkki <code>1</code>
-settings_hotkey_custom_2=Muokattu linkki <code>2</code>
-settings_hotkey_custom_3=Muokattu linkki <code>3</code>
-settings_hotkey_custom_4=Muokattu linkki <code>4</code>
-settings_hotkey_custom_5=Muokattu linkki <code>5</code>
-settings_hotkey_custom_6=Muokattu linkki <code>6</code>
-settings_hotkey_custom_7=Muokattu linkki <code>7</code>
-settings_hotkey_custom_8=Muokattu linkki <code>8</code>
-settings_hotkey_custom_9=Muokattu linkki <code>9</code>
+settings_hotkey_custom_1_user=Muokattu linkki <code>1</code>
+settings_hotkey_custom_2_user=Muokattu linkki <code>2</code>
+settings_hotkey_custom_3_user=Muokattu linkki <code>3</code>
+settings_hotkey_custom_4_user=Muokattu linkki <code>4</code>
+settings_hotkey_custom_5_user=Muokattu linkki <code>5</code>
+settings_hotkey_custom_6_user=Muokattu linkki <code>6</code>
+settings_hotkey_custom_7_user=Muokattu linkki <code>7</code>
+settings_hotkey_custom_8_user=Muokattu linkki <code>8</code>
+settings_hotkey_custom_9_user=Muokattu linkki <code>9</code>
 
 settings_navigation_color=Väripaletti
 settings_loader_top=Ota sivun edistymisen lataus käyttöön näytön yläreunaan
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Varmuuskopioasi valmistellaan. Se voi vied�
 
 settings_mail_ui=Ota uuden sähköpostin käyttöliittymä käyttöön
 
-settings_show_theme_configuration_for_admins_only_error=Käyttö evätty: Järjestelmänvalvoja on estänyt pääsyn käyttäjän räätälöintiin
+settings_theme_config_admins_only_privileged_error=Käyttö evätty: Järjestelmänvalvoja on estänyt pääsyn käyttäjän räätälöintiin
 
 theme_xhred_tooltip_navigation_pinned=Napauta/poista navigointivalikko
 settings_hotkey_navigation=Pikanäppäin navigointivalikon vaihtoon
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Poisto on suoritettu onnistuneesti, mutta
 theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-varmenne</a> -varoitus
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Piilotetut harmonikat
+settings_sysinfo_hidden_panels_user=Piilotetut harmonikat
 theme_xhred_tooltip_dashboard_panels_disable=Piilota $1 paneeli
 theme_xhred_dashboard_panels_disabled_explain=Piilotettu paneeli voidaan ottaa uudelleen käyttöön teeman määrityssivulla.
 settings_right_sysinfo_page_options=Kojelauta ja reaaliaikainen seuranta

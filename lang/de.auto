@@ -67,7 +67,7 @@ theme_xhred_filemanager_remove_warning=Das Entfernen wurde erfolgreich abgeschlo
 theme_xhred_connection_error_details_ssl=Überprüfen Sie die Warnung <a>selbstsigniertes SSL-Zertifikat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Versteckte Akkordeons
+settings_sysinfo_hidden_panels_user=Versteckte Akkordeons
 theme_xhred_tooltip_dashboard_panels_disable=$1 Panel ausblenden
 theme_xhred_dashboard_panels_disabled_explain=Das ausgeblendete Bedienfeld kann über die Designkonfigurationsseite wieder aktiviert werden.
 settings_right_sysinfo_page_options=Dashboard und Echtzeitüberwachung

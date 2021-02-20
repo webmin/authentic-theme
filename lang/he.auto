@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=אפשרויות הניתנות 
 settings_right_hotkey_options=מקשי קיצור
 
 settings_right_hotkey_custom_options_description=קישורים מותאמים אישית מאפשרים לך להשתמש בספרות מ <code>1</code> עד <code>9</code> מנת לגשת במהירות לכל <code>URL.</code> תקינה של Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> ניתן לשלוף את <code>URL</code> מדף תוכן המסגרת הימני שנפתח כעת, על ידי קריאת המקור שלה. חשוב <code>URL</code> לא תהיה נטויה בתחילת הדרך והיא לא תשתמש בקידומות. לדוגמה, למעבר מהיר לאפאצ'י, קבע לשדה <code>custom link 1</code> <code>/apache/</code> <code>custom link 1</code>. אם שינוי מקשי המקשים המהווים ברירת מחדל מוגדר כ- <code>Alt,</code> לחיצה על <code>Alt+1</code>, תפתח בפניך את מודול Apache
-settings_hotkey_custom_1=קישור מותאם אישית <code>1</code>
-settings_hotkey_custom_2=קישור מותאם אישית <code>2</code>
-settings_hotkey_custom_3=קישור מותאם אישית <code>3</code>
-settings_hotkey_custom_4=קישור מותאם אישית <code>4</code>
-settings_hotkey_custom_5=קישור מותאם אישית <code>5</code>
-settings_hotkey_custom_6=קישור מותאם אישית <code>6</code>
-settings_hotkey_custom_7=קישור מותאם אישית <code>7</code>
-settings_hotkey_custom_8=קישור מותאם אישית <code>8</code>
-settings_hotkey_custom_9=קישור מותאם אישית <code>9</code>
+settings_hotkey_custom_1_user=קישור מותאם אישית <code>1</code>
+settings_hotkey_custom_2_user=קישור מותאם אישית <code>2</code>
+settings_hotkey_custom_3_user=קישור מותאם אישית <code>3</code>
+settings_hotkey_custom_4_user=קישור מותאם אישית <code>4</code>
+settings_hotkey_custom_5_user=קישור מותאם אישית <code>5</code>
+settings_hotkey_custom_6_user=קישור מותאם אישית <code>6</code>
+settings_hotkey_custom_7_user=קישור מותאם אישית <code>7</code>
+settings_hotkey_custom_8_user=קישור מותאם אישית <code>8</code>
+settings_hotkey_custom_9_user=קישור מותאם אישית <code>9</code>
 
 settings_navigation_color=פלטת צבעים
 settings_loader_top=אפשר מטעין התקדמות לעמוד בראש המסך
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=מכינים את הגיבוי שלך. זה
 
 settings_mail_ui=הפעל ממשק משתמש של דואר חדש
 
-settings_show_theme_configuration_for_admins_only_error=הגישה נדחתה: מנהל המערכת חסם גישה להתאמות אישיות של משתמשים
+settings_theme_config_admins_only_privileged_error=הגישה נדחתה: מנהל המערכת חסם גישה להתאמות אישיות של משתמשים
 
 theme_xhred_tooltip_navigation_pinned=הצמד/ביטול הצמדת תפריט ניווט
 settings_hotkey_navigation=מקש חם למצב תפריט ניווט
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=ההסרה הסתיימה בהצלחה א
 theme_xhred_connection_error_details_ssl=בדוק אזהרת <a>אישור SSL בחתימה עצמית</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=אקורדיונים נסתרים
+settings_sysinfo_hidden_panels_user=אקורדיונים נסתרים
 theme_xhred_tooltip_dashboard_panels_disable=הסתר את החלונית $1 
 theme_xhred_dashboard_panels_disabled_explain=ניתן להפעיל מחדש את החלונית הנסתרת באמצעות דף תצורת העיצוב.
 settings_right_sysinfo_page_options=לוח מחוונים וניטור בזמן אמת

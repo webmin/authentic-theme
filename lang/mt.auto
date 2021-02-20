@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Għażliet konfigurabbli għal T
 settings_right_hotkey_options=Hotkeys
 
 settings_right_hotkey_custom_options_description=Rabtiet personalizzati jippermettulek tuża numri minn <code>1</code> sa <code>9</code> sabiex taċċessa malajr kwalunkwe URL validu Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> L- <code>URL</code> tista 'tiġi estratta mill-paġna tal-kontenut tal-qafas tal-lemin miftuħa bħalissa, billi taqra s-sors tagħha. Huwa importanti li l- <code>URL</code> ma jkollu l-ebda mmejla fil-bidu u ma jużax prefissi. Pereżempju, biex taqleb malajr għal Apache, issettja r <code>custom link 1</code> qasam <code>/apache/</code>. Jekk il-modifikatur tal-hotkeys default issettjat għal <code>Alt,</code> tikklikkja <code>Alt+1</code>, se tiftaħek il-modulu Apache
-settings_hotkey_custom_1=Link personalizzat <code>1</code>
-settings_hotkey_custom_2=Link personalizzat <code>2</code>
-settings_hotkey_custom_3=Rabta apposta <code>3</code>
-settings_hotkey_custom_4=Link personalizzat <code>4</code>
-settings_hotkey_custom_5=Rabta apposta <code>5</code>
-settings_hotkey_custom_6=Rabta Custom <code>6</code>
-settings_hotkey_custom_7=Rabta apposta <code>7</code>
-settings_hotkey_custom_8=Link personalizzat <code>8</code>
-settings_hotkey_custom_9=Rabta apposta <code>9</code>
+settings_hotkey_custom_1_user=Link personalizzat <code>1</code>
+settings_hotkey_custom_2_user=Link personalizzat <code>2</code>
+settings_hotkey_custom_3_user=Rabta apposta <code>3</code>
+settings_hotkey_custom_4_user=Link personalizzat <code>4</code>
+settings_hotkey_custom_5_user=Rabta apposta <code>5</code>
+settings_hotkey_custom_6_user=Rabta Custom <code>6</code>
+settings_hotkey_custom_7_user=Rabta apposta <code>7</code>
+settings_hotkey_custom_8_user=Link personalizzat <code>8</code>
+settings_hotkey_custom_9_user=Rabta apposta <code>9</code>
 
 settings_navigation_color=Paletta tal-kuluri
 settings_loader_top=Agħti l-loader tal-progress tal-paġna fuq il-parti ta 'fuq tal-iskrin
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Il-backup tiegħek qed jitħejja. Jista 'ji
 
 settings_mail_ui=Agħti UI tal-posta l-ġdida
 
-settings_show_theme_configuration_for_admins_only_error=Aċċess miċħud: L-amministratur jibblokka l-aċċess għall-customisations tal-utenti
+settings_theme_config_admins_only_privileged_error=Aċċess miċħud: L-amministratur jibblokka l-aċċess għall-customisations tal-utenti
 
 theme_xhred_tooltip_navigation_pinned=Pin/unpin menu navigazzjoni
 settings_hotkey_navigation=Hotkey għal navigazzjoni fil-menu ta 'navigazzjoni
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=It-tneħħija spiċċat b'suċċess iżda
 theme_xhred_connection_error_details_ssl=Iċċekkja t-twissija <a>ċertifikat SSL iffirmat minnu nnifsu</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Akkordjoni moħbija
+settings_sysinfo_hidden_panels_user=Akkordjoni moħbija
 theme_xhred_tooltip_dashboard_panels_disable=Aħbi $1 panel
 theme_xhred_dashboard_panels_disabled_explain=Il-pannell moħbi jista 'jerġa' jiġi attivat billi tintuża l-paġna tal-konfigurazzjoni tat-tema.
 settings_right_sysinfo_page_options=Dashboard u monitoraġġ f'ħin reali

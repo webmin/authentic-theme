@@ -33,7 +33,7 @@ theme_xhred_filemanager_remove_warning=Fjerningen er fullført, men ikke for all
 theme_xhred_connection_error_details_ssl=Sjekk <a>selvsignert SSL-sertifikat</a> advarsel
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Skjulte trekkspill
+settings_sysinfo_hidden_panels_user=Skjulte trekkspill
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
 theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan aktiveres på nytt ved hjelp av temakonfigurasjonssiden.
 settings_right_sysinfo_page_options=Dashbord og sanntidsovervåking

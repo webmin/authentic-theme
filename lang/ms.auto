@@ -257,7 +257,7 @@ theme_xhred_backup_is_being_prepared=Sandaran anda sedang disiapkan. Mungkin mem
 
 settings_mail_ui=Dayakan UI mel baru
 
-settings_show_theme_configuration_for_admins_only_error=Akses ditolak: Pentadbir telah menyekat akses ke penyesuaian pengguna
+settings_theme_config_admins_only_privileged_error=Akses ditolak: Pentadbir telah menyekat akses ke penyesuaian pengguna
 
 theme_xhred_tooltip_navigation_pinned=Sematkan/lepaskan menu navigasi
 settings_hotkey_navigation=Hotkey untuk menukar menu navigasi
@@ -558,7 +558,7 @@ theme_xhred_filemanager_remove_warning=Pembuangan telah berjaya dilakukan tetapi
 theme_xhred_connection_error_details_ssl=Periksa amaran <a>sijil SSL yang ditandatangani sendiri</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Akordeon tersembunyi
+settings_sysinfo_hidden_panels_user=Akordeon tersembunyi
 theme_xhred_tooltip_dashboard_panels_disable=Sembunyikan panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Panel tersembunyi dapat diaktifkan semula menggunakan halaman konfigurasi tema.
 settings_right_sysinfo_page_options=Papan pemuka dan pemantauan masa nyata

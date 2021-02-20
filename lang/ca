@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Gestió del logotip
 settings_right_theme_configurable_options_title=Opcions de configuració
 
 settings_right_hotkey_custom_options_description=Les dreceres personalitzades permeten utilitzar els dígits del 1 fins al 9 per tal d'accedir de forma ràpida a qualsevol element. La URL es pot obtenir mirant el seu orígen. És important que la URL no tingui la barra inclinada ni utilitzi cap prefixe.</br>Per exemple, per accedir ràpidament al mòdul Apache cal definir al camp "Drecera 1", el paràmetre <code>/apache/</code>. Si la opció de drecera està configurat a ALT, prement "Alt+1" s'obrirà el mòdul d'apache.
-settings_hotkey_custom_1=Drecera <code>1</code>
-settings_hotkey_custom_2=Drecera <code>2</code>
-settings_hotkey_custom_3=Drecera <code>3</code>
-settings_hotkey_custom_4=Drecera <code>4</code>
-settings_hotkey_custom_5=Drecera <code>5</code>
-settings_hotkey_custom_6=Drecera <code>6</code>
-settings_hotkey_custom_7=Drecera <code>7</code>
-settings_hotkey_custom_8=Drecera <code>8</code>
-settings_hotkey_custom_9=Drecera <code>9</code>
+settings_hotkey_custom_1_user=Drecera <code>1</code>
+settings_hotkey_custom_2_user=Drecera <code>2</code>
+settings_hotkey_custom_3_user=Drecera <code>3</code>
+settings_hotkey_custom_4_user=Drecera <code>4</code>
+settings_hotkey_custom_5_user=Drecera <code>5</code>
+settings_hotkey_custom_6_user=Drecera <code>6</code>
+settings_hotkey_custom_7_user=Drecera <code>7</code>
+settings_hotkey_custom_8_user=Drecera <code>8</code>
+settings_hotkey_custom_9_user=Drecera <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=Habilitar la barra de progrés superior

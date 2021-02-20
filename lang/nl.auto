@@ -1,15 +1,15 @@
 settings_right_hotkey_options=Sneltoetsen
 
 settings_right_hotkey_custom_options_description=Met aangepaste links kunt u cijfers van <code>1</code> tot <code>9</code> om snel toegang te krijgen tot een geldige Webmin/Usermin/Virtualmin/Cloudmin- <code>URL.</code> De <code>URL</code> kan worden opgehaald uit de momenteel geopende inhoudspagina van het rechterkader door de bron te lezen. Het is belangrijk dat <code>URL</code> aan het begin geen schuine streep heeft en geen voorvoegsels gebruikt. Als u bijvoorbeeld snel wilt overschakelen naar Apache, stelt u <code>custom link 1</code> field <code>/apache/</code>. Als de standaard sneltoetsmodifier die is ingesteld op <code>Alt,</code> klikt u op <code>Alt+1</code> om uw Apache-module te openen
-settings_hotkey_custom_1=Aangepaste link <code>1</code>
-settings_hotkey_custom_2=Aangepaste link <code>2</code>
-settings_hotkey_custom_3=Aangepaste link <code>3</code>
-settings_hotkey_custom_4=Aangepaste link <code>4</code>
-settings_hotkey_custom_5=Aangepaste link <code>5</code>
-settings_hotkey_custom_6=Aangepaste link <code>6</code>
-settings_hotkey_custom_7=Aangepaste link <code>7</code>
-settings_hotkey_custom_8=Aangepaste link <code>8</code>
-settings_hotkey_custom_9=Aangepaste link <code>9</code>
+settings_hotkey_custom_1_user=Aangepaste link <code>1</code>
+settings_hotkey_custom_2_user=Aangepaste link <code>2</code>
+settings_hotkey_custom_3_user=Aangepaste link <code>3</code>
+settings_hotkey_custom_4_user=Aangepaste link <code>4</code>
+settings_hotkey_custom_5_user=Aangepaste link <code>5</code>
+settings_hotkey_custom_6_user=Aangepaste link <code>6</code>
+settings_hotkey_custom_7_user=Aangepaste link <code>7</code>
+settings_hotkey_custom_8_user=Aangepaste link <code>8</code>
+settings_hotkey_custom_9_user=Aangepaste link <code>9</code>
 
 settings_navigation_color=Kleurenpalet
 settings_loader_top=Schakel paginavoortganglader in bovenaan het scherm
@@ -771,7 +771,7 @@ theme_xhred_backup_is_being_prepared=Uw back-up wordt voorbereid. Het kan even d
 
 settings_mail_ui=Schakel nieuwe e-mailgebruikersinterface in
 
-settings_show_theme_configuration_for_admins_only_error=Toegang geweigerd: de beheerder heeft de toegang tot gebruikersaanpassingen geblokkeerd
+settings_theme_config_admins_only_privileged_error=Toegang geweigerd: de beheerder heeft de toegang tot gebruikersaanpassingen geblokkeerd
 
 theme_xhred_tooltip_navigation_pinned=Navigatiemenu vastmaken/losmaken
 settings_hotkey_navigation=Sneltoets voor het wisselen van navigatiemenu
@@ -1072,7 +1072,7 @@ theme_xhred_filemanager_remove_warning=Het verwijderen is met succes voltooid, m
 theme_xhred_connection_error_details_ssl=Controleer de waarschuwing <a>zelfondertekend SSL-certificaat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Verborgen accordeons
+settings_sysinfo_hidden_panels_user=Verborgen accordeons
 theme_xhred_tooltip_dashboard_panels_disable=Verberg $1 paneel
 theme_xhred_dashboard_panels_disabled_explain=Verborgen paneel kan opnieuw worden ingeschakeld met behulp van de themaconfiguratiepagina.
 settings_right_sysinfo_page_options=Dashboard en realtime monitoring

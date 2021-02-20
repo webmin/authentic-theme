@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=خيارات قابلة للتك
 settings_right_hotkey_options=مفاتيح التشغيل السريع
 
 settings_right_hotkey_custom_options_description=تتيح لك الروابط المخصصة استخدام الأرقام من <code>1</code> إلى <code>9</code> للوصول السريع إلى أي <code>URL.</code> صالح لـ Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> يمكن استخراج <code>URL</code> من صفحة محتوى الإطار الأيمن المفتوحة حاليًا بقراءة مصدره. من المهم ألا يحتوي <code>URL</code> على شرطة مائلة في البداية ولا يستخدم البادئات. على سبيل المثال ، للتبديل السريع إلى Apache ، اضبط على الحقل <code>custom link 1</code> <code>/apache/</code>. إذا تم ضبط مفتاح التشغيل السريع الافتراضي على <code>Alt,</code> النقر فوق <code>Alt+1</code> ، سيفتح لك وحدة Apache
-settings_hotkey_custom_1=رابط مخصص <code>1</code>
-settings_hotkey_custom_2=رابط مخصص <code>2</code>
-settings_hotkey_custom_3=رابط مخصص <code>3</code>
-settings_hotkey_custom_4=رابط مخصص <code>4</code>
-settings_hotkey_custom_5=رابط مخصص <code>5</code>
-settings_hotkey_custom_6=رابط مخصص <code>6</code>
-settings_hotkey_custom_7=رابط مخصص <code>7</code>
-settings_hotkey_custom_8=رابط مخصص <code>8</code>
-settings_hotkey_custom_9=رابط مخصص <code>9</code>
+settings_hotkey_custom_1_user=رابط مخصص <code>1</code>
+settings_hotkey_custom_2_user=رابط مخصص <code>2</code>
+settings_hotkey_custom_3_user=رابط مخصص <code>3</code>
+settings_hotkey_custom_4_user=رابط مخصص <code>4</code>
+settings_hotkey_custom_5_user=رابط مخصص <code>5</code>
+settings_hotkey_custom_6_user=رابط مخصص <code>6</code>
+settings_hotkey_custom_7_user=رابط مخصص <code>7</code>
+settings_hotkey_custom_8_user=رابط مخصص <code>8</code>
+settings_hotkey_custom_9_user=رابط مخصص <code>9</code>
 
 settings_navigation_color=لوحة الألوان
 settings_loader_top=تفعيل أداة تحميل تقدم الصفحة أعلى الشاشة
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=جاري النسخ الاحتياطي. ق�
 
 settings_mail_ui=تمكين واجهة مستخدم البريد الجديدة
 
-settings_show_theme_configuration_for_admins_only_error=تم رفض الوصول: منع المسؤول الوصول إلى تخصيصات المستخدم
+settings_theme_config_admins_only_privileged_error=تم رفض الوصول: منع المسؤول الوصول إلى تخصيصات المستخدم
 
 theme_xhred_tooltip_navigation_pinned=تثبيت/إلغاء تثبيت قائمة التنقل
 settings_hotkey_navigation=هوتكي لتبديل قائمة التنقل
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=انتهت الإزالة بنجاح ول
 theme_xhred_connection_error_details_ssl=تحقق من تحذير <a>شهادة SSL الموقعة ذاتيًا</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=الأكورديون المخفية
+settings_sysinfo_hidden_panels_user=الأكورديون المخفية
 theme_xhred_tooltip_dashboard_panels_disable=إخفاء لوحة$1
 theme_xhred_dashboard_panels_disabled_explain=يمكن إعادة تمكين اللوحة المخفية باستخدام صفحة تكوين السمة.
 settings_right_sysinfo_page_options=لوحة القيادة والمراقبة في الوقت الحقيقي

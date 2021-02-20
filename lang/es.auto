@@ -26,15 +26,15 @@ settings_right_theme_configurable_options_title=Opciones configurables para tema
 settings_right_hotkey_options=Teclas de acceso rápido
 
 settings_right_hotkey_custom_options_description=Los enlaces personalizados le permiten usar dígitos del <code>1</code> al <code>9</code> para acceder rápidamente a cualquier <code>URL.</code> válida de Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> La <code>URL</code> se puede extraer de la página de contenido del marco derecho abierto actualmente, leyendo su fuente. Es importante que la <code>URL</code> no tenga barra al principio y no use prefijos. Por ejemplo, para cambiar rápidamente a Apache, configure <code>custom link 1</code> campo <code>/apache/</code>. Si el modificador de teclas rápidas predeterminado establecido en <code>Alt,</code> hacer clic en <code>Alt+1</code>, se abrirá su módulo Apache
-settings_hotkey_custom_1=Enlace personalizado <code>1</code>
-settings_hotkey_custom_2=Enlace personalizado <code>2</code>
-settings_hotkey_custom_3=Enlace personalizado <code>3</code>
-settings_hotkey_custom_4=Enlace personalizado <code>4</code>
-settings_hotkey_custom_5=Enlace personalizado <code>5</code>
-settings_hotkey_custom_6=Enlace personalizado <code>6</code>
-settings_hotkey_custom_7=Enlace personalizado <code>7</code>
-settings_hotkey_custom_8=Enlace personalizado <code>8</code>
-settings_hotkey_custom_9=Enlace personalizado <code>9</code>
+settings_hotkey_custom_1_user=Enlace personalizado <code>1</code>
+settings_hotkey_custom_2_user=Enlace personalizado <code>2</code>
+settings_hotkey_custom_3_user=Enlace personalizado <code>3</code>
+settings_hotkey_custom_4_user=Enlace personalizado <code>4</code>
+settings_hotkey_custom_5_user=Enlace personalizado <code>5</code>
+settings_hotkey_custom_6_user=Enlace personalizado <code>6</code>
+settings_hotkey_custom_7_user=Enlace personalizado <code>7</code>
+settings_hotkey_custom_8_user=Enlace personalizado <code>8</code>
+settings_hotkey_custom_9_user=Enlace personalizado <code>9</code>
 
 settings_navigation_color=Paleta de color
 settings_loader_top=Habilite el cargador de progreso de página en la parte superior de la pantalla
@@ -796,7 +796,7 @@ theme_xhred_backup_is_being_prepared=Su copia de seguridad se está preparando. 
 
 settings_mail_ui=Habilitar nueva interfaz de usuario de correo
 
-settings_show_theme_configuration_for_admins_only_error=Acceso denegado: el administrador ha bloqueado el acceso a las personalizaciones de los usuarios
+settings_theme_config_admins_only_privileged_error=Acceso denegado: el administrador ha bloqueado el acceso a las personalizaciones de los usuarios
 
 theme_xhred_tooltip_navigation_pinned=Anclar/desanclar menú de navegación
 settings_hotkey_navigation=Tecla de acceso rápido para alternar el menú de navegación
@@ -1097,7 +1097,7 @@ theme_xhred_filemanager_remove_warning=La eliminación ha finalizado correctamen
 theme_xhred_connection_error_details_ssl=Verifique la advertencia de <a>certificado SSL autofirmado</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Acordeones ocultos
+settings_sysinfo_hidden_panels_user=Acordeones ocultos
 theme_xhred_tooltip_dashboard_panels_disable=Ocultar panel $1 
 theme_xhred_dashboard_panels_disabled_explain=El panel oculto se puede volver a habilitar usando la página de configuración del tema.
 settings_right_sysinfo_page_options=Panel de control y monitoreo en tiempo real

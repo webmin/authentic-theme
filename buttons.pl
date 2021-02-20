@@ -55,7 +55,7 @@ print '</li>';
 
 if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne 'false') ||
     ($get_user_level ne '0' &&
-        $theme_config{'settings_show_theme_configuration_for_admins_only'} ne 'true' &&
+        $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
         $theme_config{'settings_theme_options_button'} ne 'false'))
 {
     print '<li data-linked class="user-link theme-options cursor-pointer">';

@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Tùy chọn cấu hình cho Them
 settings_right_hotkey_options=Phím nóng
 
 settings_right_hotkey_custom_options_description=Liên kết tùy chỉnh cho phép bạn sử dụng các chữ số từ <code>1</code> đến <code>9</code> để truy cập nhanh bất kỳ <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin hợp lệ nào <code>URL.</code> <code>URL</code> có thể được trích xuất từ trang nội dung khung bên phải hiện đang mở, bằng cách đọc nguồn của nó. Điều quan trọng là <code>URL</code> không có dấu gạch chéo ngay từ đầu và không sử dụng tiền tố. Ví dụ: để chuyển nhanh sang Apache, hãy đặt thành <code>custom link 1</code> trường <code>/apache/</code>. Nếu công cụ sửa đổi phím nóng mặc định được đặt thành <code>Alt,</code> nhấp vào <code>Alt+1</code>, sẽ mở cho bạn mô-đun Apache
-settings_hotkey_custom_1=Liên kết tùy chỉnh <code>1</code>
-settings_hotkey_custom_2=Liên kết tùy chỉnh <code>2</code>
-settings_hotkey_custom_3=Liên kết tùy chỉnh <code>3</code>
-settings_hotkey_custom_4=Liên kết tùy chỉnh <code>4</code>
-settings_hotkey_custom_5=Liên kết tùy chỉnh <code>5</code>
-settings_hotkey_custom_6=Liên kết tùy chỉnh <code>6</code>
-settings_hotkey_custom_7=Liên kết tùy chỉnh <code>7</code>
-settings_hotkey_custom_8=Liên kết tùy chỉnh <code>8</code>
-settings_hotkey_custom_9=Liên kết tùy chỉnh <code>9</code>
+settings_hotkey_custom_1_user=Liên kết tùy chỉnh <code>1</code>
+settings_hotkey_custom_2_user=Liên kết tùy chỉnh <code>2</code>
+settings_hotkey_custom_3_user=Liên kết tùy chỉnh <code>3</code>
+settings_hotkey_custom_4_user=Liên kết tùy chỉnh <code>4</code>
+settings_hotkey_custom_5_user=Liên kết tùy chỉnh <code>5</code>
+settings_hotkey_custom_6_user=Liên kết tùy chỉnh <code>6</code>
+settings_hotkey_custom_7_user=Liên kết tùy chỉnh <code>7</code>
+settings_hotkey_custom_8_user=Liên kết tùy chỉnh <code>8</code>
+settings_hotkey_custom_9_user=Liên kết tùy chỉnh <code>9</code>
 
 settings_navigation_color=Bảng màu
 settings_loader_top=Cho phép trình tải tiến trình trang ở trên cùng của màn hình
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Sao lưu của bạn đang được chuẩn
 
 settings_mail_ui=Kích hoạt giao diện người dùng thư mới
 
-settings_show_theme_configuration_for_admins_only_error=Truy cập bị từ chối: Quản trị viên đã chặn quyền truy cập vào các tùy chỉnh của người dùng
+settings_theme_config_admins_only_privileged_error=Truy cập bị từ chối: Quản trị viên đã chặn quyền truy cập vào các tùy chỉnh của người dùng
 
 theme_xhred_tooltip_navigation_pinned=Menu điều hướng ghim/bỏ ghim
 settings_hotkey_navigation=Hotkey để chuyển đổi menu điều hướng
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Quá trình xóa đã kết thúc thành 
 theme_xhred_connection_error_details_ssl=Kiểm tra cảnh báo <a>chứng chỉ SSL tự ký</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Đàn accordions ẩn
+settings_sysinfo_hidden_panels_user=Đàn accordions ẩn
 theme_xhred_tooltip_dashboard_panels_disable=Ẩn bảng điều khiển $1 
 theme_xhred_dashboard_panels_disabled_explain=Bảng điều khiển ẩn có thể được bật lại bằng cách sử dụng trang cấu hình chủ đề.
 settings_right_sysinfo_page_options=Bảng điều khiển và giám sát thời gian thực

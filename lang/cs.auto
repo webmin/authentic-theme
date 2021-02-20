@@ -719,7 +719,7 @@ theme_xhred_backup_is_being_prepared=Vaše záloha se připravuje. Může to chv
 
 settings_mail_ui=Povolit nové uživatelské rozhraní pro poštu
 
-settings_show_theme_configuration_for_admins_only_error=Přístup byl odepřen: Správce zablokoval přístup k uživatelským přizpůsobením
+settings_theme_config_admins_only_privileged_error=Přístup byl odepřen: Správce zablokoval přístup k uživatelským přizpůsobením
 
 theme_xhred_tooltip_navigation_pinned=Přepnout/odepnout navigační nabídku
 settings_hotkey_navigation=Klávesová zkratka pro přepínání navigační nabídky
@@ -1020,7 +1020,7 @@ theme_xhred_filemanager_remove_warning=Odstranění bylo úspěšně dokončeno,
 theme_xhred_connection_error_details_ssl=Zkontrolujte <a>certifikát SSL podepsaný svým držitelem</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Skryté akordeony
+settings_sysinfo_hidden_panels_user=Skryté akordeony
 theme_xhred_tooltip_dashboard_panels_disable=Skrýt panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrytý panel lze znovu povolit pomocí konfigurační stránky motivu.
 settings_right_sysinfo_page_options=Dashboard a monitorování v reálném čase

@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=真實主題的可配置選項
 settings_right_hotkey_options=熱鍵
 
 settings_right_hotkey_custom_options_description=自定義鏈接使您可以使用<code>1</code>到<code>9</code>數字，以便快速訪問任何有效的Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code>可以通過閱讀<code>URL</code>從當前打開的右框架內容頁面中提取<code>URL</code> 。重要的是， <code>URL</code>開頭必須沒有斜杠並且不使用前綴。例如，要快速切換到Apache，請設置為<code>custom link 1</code>字段<code>/apache/</code> 。如果默認的熱鍵修改器設置為<code>Alt,</code>單擊<code>Alt+1</code> ，將打開您的Apache模塊。
-settings_hotkey_custom_1=自訂連結<code>1</code>
-settings_hotkey_custom_2=自定義鏈接<code>2</code>
-settings_hotkey_custom_3=自訂連結<code>3</code>
-settings_hotkey_custom_4=自訂連結<code>4</code>
-settings_hotkey_custom_5=自定義鏈接<code>5</code>
-settings_hotkey_custom_6=自定義鏈接<code>6</code>
-settings_hotkey_custom_7=自定義鏈接<code>7</code>
-settings_hotkey_custom_8=自定義鏈接<code>8</code>
-settings_hotkey_custom_9=自定義鏈接<code>9</code>
+settings_hotkey_custom_1_user=自訂連結<code>1</code>
+settings_hotkey_custom_2_user=自定義鏈接<code>2</code>
+settings_hotkey_custom_3_user=自訂連結<code>3</code>
+settings_hotkey_custom_4_user=自訂連結<code>4</code>
+settings_hotkey_custom_5_user=自定義鏈接<code>5</code>
+settings_hotkey_custom_6_user=自定義鏈接<code>6</code>
+settings_hotkey_custom_7_user=自定義鏈接<code>7</code>
+settings_hotkey_custom_8_user=自定義鏈接<code>8</code>
+settings_hotkey_custom_9_user=自定義鏈接<code>9</code>
 
 settings_navigation_color=色彩調色板
 settings_loader_top=在屏幕頂部啟用頁面進度加載器
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=您的備份正在準備中。可能要花�
 
 settings_mail_ui=啟用新郵件界面
 
-settings_show_theme_configuration_for_admins_only_error=訪問被拒絕：管理員阻止了對用戶定制的訪問
+settings_theme_config_admins_only_privileged_error=訪問被拒絕：管理員阻止了對用戶定制的訪問
 
 theme_xhred_tooltip_navigation_pinned=固定/取消固定導航菜單
 settings_hotkey_navigation=切換導航菜單的熱鍵
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=刪除成功完成，但並非所有對�
 theme_xhred_connection_error_details_ssl=檢查<a>自簽名SSL證書</a>警告
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=隱藏的手風琴
+settings_sysinfo_hidden_panels_user=隱藏的手風琴
 theme_xhred_tooltip_dashboard_panels_disable=隱藏 $1面板
 theme_xhred_dashboard_panels_disabled_explain=可以使用主題配置頁面重新啟用隱藏面板。
 settings_right_sysinfo_page_options=儀表板和實時監控

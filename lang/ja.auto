@@ -75,7 +75,7 @@ theme_xhred_filemanager_remove_warning=削除は正常に完了しましたが�
 theme_xhred_connection_error_details_ssl=<a>自己署名SSL証明書</a>の警告を確認してください
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=隠されたアコーディオン
+settings_sysinfo_hidden_panels_user=隠されたアコーディオン
 theme_xhred_tooltip_dashboard_panels_disable=$1パネルを非表示
 theme_xhred_dashboard_panels_disabled_explain=非表示のパネルは、テーマ構成ページを使用して再度有効にすることができます。
 settings_right_sysinfo_page_options=ダッシュボードとリアルタイムの監視

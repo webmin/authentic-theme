@@ -12,8 +12,8 @@ our ($remote_user, %gconfig, %text, %in, %theme_config, %theme_text, $has_usermi
 do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 do("@{[miniserv::getenv('theme_root')]}/tconfig-lib.pl");
 
-($get_user_level ne '0' && $theme_config{'settings_show_theme_configuration_for_admins_only'} eq 'true') &&
-  error($theme_text{'settings_show_theme_configuration_for_admins_only_error'});
+($get_user_level ne '0' && $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true') &&
+  error($theme_text{'settings_theme_config_admins_only_privileged_error'});
 
 ui_print_header(($theme_text{'settings_subtitle'} . ' <tt>' . $remote_user . '</tt>'),
                 $theme_text{'settings_title'},

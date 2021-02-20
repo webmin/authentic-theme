@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=인증 테마에 대해 구성 �
 settings_right_hotkey_options=단축키
 
 settings_right_hotkey_custom_options_description=사용자 정의 링크를 사용하면 유효한 Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> 에 빠르게 액세스하기 위해 <code>1</code> 에서 <code>9</code> 숫자를 사용할 수 있습니다 <code>URL.</code> 소스를 읽으면 현재 열린 오른쪽 프레임 컨텐츠 페이지에서 <code>URL</code> 을 추출 할 수 있습니다. <code>URL</code> 은 처음에 슬래시가없고 접두사를 사용하지 않는 것이 중요합니다. 예를 들어, Apache로 빠르게 전환하려면 <code>custom link 1</code> 필드 <code>/apache/</code>. 기본 핫키 수정자가 <code>Alt,</code> 설정된 경우 <code>Alt+1</code> 클릭하면 Apache 모듈이 열립니다.
-settings_hotkey_custom_1=맞춤 링크 <code>1</code>
-settings_hotkey_custom_2=맞춤 링크 <code>2</code>
-settings_hotkey_custom_3=맞춤 링크 <code>3</code>
-settings_hotkey_custom_4=맞춤 링크 <code>4</code>
-settings_hotkey_custom_5=맞춤 링크 <code>5</code>
-settings_hotkey_custom_6=맞춤 링크 <code>6</code>
-settings_hotkey_custom_7=맞춤 링크 <code>7</code>
-settings_hotkey_custom_8=맞춤 링크 <code>8</code>
-settings_hotkey_custom_9=맞춤 링크 <code>9</code>
+settings_hotkey_custom_1_user=맞춤 링크 <code>1</code>
+settings_hotkey_custom_2_user=맞춤 링크 <code>2</code>
+settings_hotkey_custom_3_user=맞춤 링크 <code>3</code>
+settings_hotkey_custom_4_user=맞춤 링크 <code>4</code>
+settings_hotkey_custom_5_user=맞춤 링크 <code>5</code>
+settings_hotkey_custom_6_user=맞춤 링크 <code>6</code>
+settings_hotkey_custom_7_user=맞춤 링크 <code>7</code>
+settings_hotkey_custom_8_user=맞춤 링크 <code>8</code>
+settings_hotkey_custom_9_user=맞춤 링크 <code>9</code>
 
 settings_navigation_color=색상 팔레트
 settings_loader_top=화면 상단에 페이지 진행 로더 사용
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=백업 준비 중입니다. 시간이 걸�
 
 settings_mail_ui=새 메일 UI 사용
 
-settings_show_theme_configuration_for_admins_only_error=액세스 거부 : 관리자가 사용자 정의에 대한 액세스를 차단했습니다
+settings_theme_config_admins_only_privileged_error=액세스 거부 : 관리자가 사용자 정의에 대한 액세스를 차단했습니다
 
 theme_xhred_tooltip_navigation_pinned=탐색 메뉴 핀/핀 해제
 settings_hotkey_navigation=탐색 메뉴 전환을위한 단축키
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=제거가 성공적으로 완료되었지
 theme_xhred_connection_error_details_ssl=<a>자체 서명 된 SSL 인증서</a> 경고 확인
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=숨겨진 아코디언
+settings_sysinfo_hidden_panels_user=숨겨진 아코디언
 theme_xhred_tooltip_dashboard_panels_disable=$1 패널 숨기기
 theme_xhred_dashboard_panels_disabled_explain=숨겨진 패널은 테마 구성 페이지를 사용하여 다시 활성화 할 수 있습니다.
 settings_right_sysinfo_page_options=대시 보드 및 실시간 모니터링

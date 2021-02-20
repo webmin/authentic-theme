@@ -157,7 +157,7 @@ theme_xhred_filemanager_remove_warning=Eliminarea sa încheiat cu succes, dar nu
 theme_xhred_connection_error_details_ssl=Verificați avertismentul <a>certificat SSL auto-semnat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Acordeoane ascunse
+settings_sysinfo_hidden_panels_user=Acordeoane ascunse
 theme_xhred_tooltip_dashboard_panels_disable=Ascundeți panoul $1 
 theme_xhred_dashboard_panels_disabled_explain=Panoul ascuns poate fi reactivat folosind pagina de configurare a temei.
 settings_right_sysinfo_page_options=Tablou de bord și monitorizare în timp real

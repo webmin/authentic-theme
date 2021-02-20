@@ -107,15 +107,15 @@ settings_right_theme_left_logo_title= Authentic Theme のロゴコントロー�
 settings_right_theme_configurable_options_title= Authentic Theme のための設定可能なオプション
 
 settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/Cloudminの<code>URL</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
-settings_hotkey_custom_1=カスタムリンク <code>1</code>
-settings_hotkey_custom_2=カスタムリンク <code>2</code>
-settings_hotkey_custom_3=カスタムリンク <code>3</code>
-settings_hotkey_custom_4=カスタムリンク <code>4</code>
-settings_hotkey_custom_5=カスタムリンク <code>5</code>
-settings_hotkey_custom_6=カスタムリンク <code>6</code>
-settings_hotkey_custom_7=カスタムリンク <code>7</code>
-settings_hotkey_custom_8=カスタムリンク <code>8</code>
-settings_hotkey_custom_9=カスタムリンク <code>9</code>
+settings_hotkey_custom_1_user=カスタムリンク <code>1</code>
+settings_hotkey_custom_2_user=カスタムリンク <code>2</code>
+settings_hotkey_custom_3_user=カスタムリンク <code>3</code>
+settings_hotkey_custom_4_user=カスタムリンク <code>4</code>
+settings_hotkey_custom_5_user=カスタムリンク <code>5</code>
+settings_hotkey_custom_6_user=カスタムリンク <code>6</code>
+settings_hotkey_custom_7_user=カスタムリンク <code>7</code>
+settings_hotkey_custom_8_user=カスタムリンク <code>8</code>
+settings_hotkey_custom_9_user=カスタムリンク <code>9</code>
 
 settings_navigation_color=カラーパレット
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
@@ -869,7 +869,7 @@ theme_xhred_backup_is_being_prepared= バックアップを準備中です。そ
 
 settings_mail_ui= 新しいメールUIを有効にする
 
-settings_show_theme_configuration_for_admins_only_error= アクセスが拒否されました:管理者がユーザーのカスタム設定へのアクセスをブロックしました
+settings_theme_config_admins_only_privileged_error= アクセスが拒否されました:管理者がユーザーのカスタム設定へのアクセスをブロックしました
 
 theme_xhred_tooltip_navigation_pinned= ピン固定/ピン固定解除メニュー
 settings_hotkey_navigation= ナビゲーションメニューを切り替えるホットキー

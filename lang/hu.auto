@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Konfigurálható beállítások 
 settings_right_hotkey_options=Gyorsbillentyűk
 
 settings_right_hotkey_custom_options_description=Egyéni linkek lehetővé teszik, hogy használja a számjegyeket <code>1</code>, hogy <code>9</code> annak érdekében, hogy gyors hozzáférést bármilyen érvényes Webmint/Usermin/Virtualmin/Cloudmin <code>URL.</code> Az <code>URL</code> kinyerhető a jelenleg megnyitott jobb oldali keret tartalom oldaláról, a forrás olvasásával. Fontos, hogy az <code>URL</code> elején ne legyen perjel, és ne használjon előtagokat. Például az Apache-ra való gyors váltáshoz állítsa be az <code>custom link 1</code> mezőjét <code>/apache/</code>. Ha az alapértelmezett gyorsbillentyűk módosítója <code>Alt,</code> értékre van állítva, akkor az <code>Alt+1</code> gombra kattintva megnyílik az Apache modul
-settings_hotkey_custom_1=<code>1</code> egyéni link
-settings_hotkey_custom_2=<code>2</code> egyéni link
-settings_hotkey_custom_3=<code>3</code> egyéni link
-settings_hotkey_custom_4=<code>4</code> egyéni link
-settings_hotkey_custom_5=Egyéni link <code>5</code>
-settings_hotkey_custom_6=Egyéni link <code>6</code>
-settings_hotkey_custom_7=Egyéni link <code>7</code>
-settings_hotkey_custom_8=<code>8</code> egyéni link
-settings_hotkey_custom_9=<code>9</code> egyéni link
+settings_hotkey_custom_1_user=<code>1</code> egyéni link
+settings_hotkey_custom_2_user=<code>2</code> egyéni link
+settings_hotkey_custom_3_user=<code>3</code> egyéni link
+settings_hotkey_custom_4_user=<code>4</code> egyéni link
+settings_hotkey_custom_5_user=Egyéni link <code>5</code>
+settings_hotkey_custom_6_user=Egyéni link <code>6</code>
+settings_hotkey_custom_7_user=Egyéni link <code>7</code>
+settings_hotkey_custom_8_user=<code>8</code> egyéni link
+settings_hotkey_custom_9_user=<code>9</code> egyéni link
 
 settings_navigation_color=Szín paletta
 settings_loader_top=Engedélyezze az oldalfejlesztőt a képernyő tetején
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=A biztonsági mentés készül. Ez eltartha
 
 settings_mail_ui=Új e-mail felhasználói felület engedélyezése
 
-settings_show_theme_configuration_for_admins_only_error=Hozzáférés megtagadva: A rendszergazda blokkolta a hozzáférést a felhasználói testreszabásokhoz
+settings_theme_config_admins_only_privileged_error=Hozzáférés megtagadva: A rendszergazda blokkolta a hozzáférést a felhasználói testreszabásokhoz
 
 theme_xhred_tooltip_navigation_pinned=A navigációs menü rögzítése/megszüntetése
 settings_hotkey_navigation=Gyorsbillentyű a navigációs menü váltásához
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Az eltávolítás sikeresen befejeződöt
 theme_xhred_connection_error_details_ssl=Ellenőrizze az <a>önaláírt SSL tanúsítvány</a> figyelmeztetést
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Rejtett harmonikák
+settings_sysinfo_hidden_panels_user=Rejtett harmonikák
 theme_xhred_tooltip_dashboard_panels_disable=$1 panel elrejtése
 theme_xhred_dashboard_panels_disabled_explain=A rejtett panel újból engedélyezhető a téma konfigurációs oldalán.
 settings_right_sysinfo_page_options=Irányítópult és valós idejű figyelés

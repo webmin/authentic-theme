@@ -31,15 +31,15 @@ settings_right_theme_configurable_options_title=Opções configuráveis para tem
 settings_right_hotkey_options=Atalhos
 
 settings_right_hotkey_custom_options_description=Os links personalizados permitem que você use dígitos de <code>1</code> a <code>9</code> para acessar rapidamente qualquer <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin válido <code>URL.</code> O <code>URL</code> pode ser extraído da página de conteúdo do quadro direito aberta no momento, lendo sua fonte. É importante que o <code>URL</code> não tenha barra no começo e não use prefixos. Por exemplo, para alternar rapidamente para o Apache, defina como <code>custom link 1</code> campo <code>/apache/</code>. Se o modificador de teclas de atalho padrão definido como <code>Alt,</code> clicar em <code>Alt+1</code>, abrirá o módulo Apache
-settings_hotkey_custom_1=Link personalizado <code>1</code>
-settings_hotkey_custom_2=Link personalizado <code>2</code>
-settings_hotkey_custom_3=Link personalizado <code>3</code>
-settings_hotkey_custom_4=Link personalizado <code>4</code>
-settings_hotkey_custom_5=Link personalizado <code>5</code>
-settings_hotkey_custom_6=Link personalizado <code>6</code>
-settings_hotkey_custom_7=Link personalizado <code>7</code>
-settings_hotkey_custom_8=Link personalizado <code>8</code>
-settings_hotkey_custom_9=Link personalizado <code>9</code>
+settings_hotkey_custom_1_user=Link personalizado <code>1</code>
+settings_hotkey_custom_2_user=Link personalizado <code>2</code>
+settings_hotkey_custom_3_user=Link personalizado <code>3</code>
+settings_hotkey_custom_4_user=Link personalizado <code>4</code>
+settings_hotkey_custom_5_user=Link personalizado <code>5</code>
+settings_hotkey_custom_6_user=Link personalizado <code>6</code>
+settings_hotkey_custom_7_user=Link personalizado <code>7</code>
+settings_hotkey_custom_8_user=Link personalizado <code>8</code>
+settings_hotkey_custom_9_user=Link personalizado <code>9</code>
 
 settings_navigation_color=Paleta de cores
 settings_loader_top=Ativar o carregador de progresso da página na parte superior da tela
@@ -801,7 +801,7 @@ theme_xhred_backup_is_being_prepared=Seu backup está sendo preparado. Pode demo
 
 settings_mail_ui=Ativar nova interface de usuário de email
 
-settings_show_theme_configuration_for_admins_only_error=Acesso negado: o administrador bloqueou o acesso às personalizações do usuário
+settings_theme_config_admins_only_privileged_error=Acesso negado: o administrador bloqueou o acesso às personalizações do usuário
 
 theme_xhred_tooltip_navigation_pinned=Fixar/desafixar o menu de navegação
 settings_hotkey_navigation=Tecla de atalho para alternar entre o menu de navegação
@@ -1102,7 +1102,7 @@ theme_xhred_filemanager_remove_warning=A remoção foi concluída com sucesso, m
 theme_xhred_connection_error_details_ssl=Verifique o aviso de <a>certificado SSL autoassinado</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Acordeões escondidos
+settings_sysinfo_hidden_panels_user=Acordeões escondidos
 theme_xhred_tooltip_dashboard_panels_disable=Esconder o painel $1 
 theme_xhred_dashboard_panels_disabled_explain=O painel oculto pode ser reativado usando a página de configuração do tema.
 settings_right_sysinfo_page_options=Painel e monitoramento em tempo real

@@ -50,7 +50,7 @@ theme_xhred_filemanager_remove_warning=Borttagningen är klar men inte för alla
 theme_xhred_connection_error_details_ssl=Kontrollera <a>självsignerat SSL-certifikat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Dolda dragspel
+settings_sysinfo_hidden_panels_user=Dolda dragspel
 theme_xhred_tooltip_dashboard_panels_disable=Dölj $1 -panelen
 theme_xhred_dashboard_panels_disabled_explain=Dold panel kan aktiveras igen med hjälp av temakonfigurationssidan.
 settings_right_sysinfo_page_options=Instrumentpanel och realtidsövervakning

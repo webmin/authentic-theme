@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=گزینه های قابل تن�
 settings_right_hotkey_options=کلیدهای میانبر
 
 settings_right_hotkey_custom_options_description=پیوندهای سفارشی شما را قادر می سازد از <code>1</code> تا <code>9</code> تا سریعاً به هر <code>URL.</code> معتبر Webmin/Usermin/Virtualmin/Cloudmin دسترسی پیدا <code>URL.</code> <code>URL</code> می توان با خواندن منبع آن ، از صفحه محتوای قاب راست باز شده در حال حاضر استخراج کرد. مهم است که <code>URL</code> در ابتدا هیچ برشی ندارد و از پیشوندها استفاده نمی کند. به عنوان مثال ، برای جابجایی سریع به Apache ، روی <code>custom link 1</code> زمینه <code>/apache/</code>. اگر تنظیم کننده کلید پیش فرض پیش فرض روی <code>Alt,</code> تنظیم شود <code>Alt,</code> کلیک روی <code>Alt+1</code> ، ماژول Apache را برای شما باز می کنیم
-settings_hotkey_custom_1=پیوند سفارشی <code>1</code>
-settings_hotkey_custom_2=پیوند سفارشی <code>2</code>
-settings_hotkey_custom_3=پیوند سفارشی <code>3</code>
-settings_hotkey_custom_4=پیوند سفارشی <code>4</code>
-settings_hotkey_custom_5=پیوند سفارشی <code>5</code>
-settings_hotkey_custom_6=پیوند سفارشی <code>6</code>
-settings_hotkey_custom_7=پیوند سفارشی <code>7</code>
-settings_hotkey_custom_8=پیوند سفارشی <code>8</code>
-settings_hotkey_custom_9=پیوند سفارشی <code>9</code>
+settings_hotkey_custom_1_user=پیوند سفارشی <code>1</code>
+settings_hotkey_custom_2_user=پیوند سفارشی <code>2</code>
+settings_hotkey_custom_3_user=پیوند سفارشی <code>3</code>
+settings_hotkey_custom_4_user=پیوند سفارشی <code>4</code>
+settings_hotkey_custom_5_user=پیوند سفارشی <code>5</code>
+settings_hotkey_custom_6_user=پیوند سفارشی <code>6</code>
+settings_hotkey_custom_7_user=پیوند سفارشی <code>7</code>
+settings_hotkey_custom_8_user=پیوند سفارشی <code>8</code>
+settings_hotkey_custom_9_user=پیوند سفارشی <code>9</code>
 
 settings_navigation_color=پالت رنگ
 settings_loader_top=لودر پیشرفت صفحه را در بالای صفحه فعال کنید
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=نسخه پشتیبان تهیه شده ش�
 
 settings_mail_ui=UI نامه جدید را فعال کنید
 
-settings_show_theme_configuration_for_admins_only_error=دسترسی رد شد: سرپرست دسترسی به تنظیمات کاربر را مسدود کرده است
+settings_theme_config_admins_only_privileged_error=دسترسی رد شد: سرپرست دسترسی به تنظیمات کاربر را مسدود کرده است
 
 theme_xhred_tooltip_navigation_pinned=منوی پیمایش/غیرفعال کردن پین
 settings_hotkey_navigation=کلید فوری برای منوی ناوبری ضامن
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=حذف با موفقیت به پایان 
 theme_xhred_connection_error_details_ssl=هشدار <a>گواهی SSL خود امضا شده</a> را بررسی کنید
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=آکاردئون پنهان
+settings_sysinfo_hidden_panels_user=آکاردئون پنهان
 theme_xhred_tooltip_dashboard_panels_disable=پانل$1 پنهان شود
 theme_xhred_dashboard_panels_disabled_explain=با استفاده از صفحه پیکربندی موضوع ، پانل پنهان را می توان دوباره فعال کرد.
 settings_right_sysinfo_page_options=داشبورد و نظارت بر زمان واقعی

@@ -32,15 +32,15 @@ settings_right_theme_configurable_options_title=Konfigurowalne opcje dla motywu 
 settings_right_hotkey_options=Skróty klawiszowe
 
 settings_right_hotkey_custom_options_description=Niestandardowe linki umożliwiają korzystanie z cyfr od <code>1</code> do <code>9</code> w celu szybkiego dostępu do dowolnego poprawnego <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> można wyodrębnić z aktualnie otwartej strony zawartości prawej ramki, czytając jego źródło. Ważne jest, aby <code>URL</code> nie zawierał ukośnika na początku i nie używał przedrostków. Na przykład, aby szybko przełączyć się na Apache, ustaw <code>custom link 1</code> pole <code>custom link 1</code> <code>/apache/</code>. Jeśli domyślny modyfikator klawiszy skrótu ustawiony na <code>Alt,</code> kliknięcie <code>Alt+1</code> otworzy moduł Apache
-settings_hotkey_custom_1=Niestandardowy link <code>1</code>
-settings_hotkey_custom_2=Niestandardowy link <code>2</code>
-settings_hotkey_custom_3=Niestandardowy link <code>3</code>
-settings_hotkey_custom_4=Niestandardowy link <code>4</code>
-settings_hotkey_custom_5=Niestandardowy link <code>5</code>
-settings_hotkey_custom_6=Niestandardowy link <code>6</code>
-settings_hotkey_custom_7=Niestandardowy link <code>7</code>
-settings_hotkey_custom_8=Niestandardowy link <code>8</code>
-settings_hotkey_custom_9=Niestandardowy link <code>9</code>
+settings_hotkey_custom_1_user=Niestandardowy link <code>1</code>
+settings_hotkey_custom_2_user=Niestandardowy link <code>2</code>
+settings_hotkey_custom_3_user=Niestandardowy link <code>3</code>
+settings_hotkey_custom_4_user=Niestandardowy link <code>4</code>
+settings_hotkey_custom_5_user=Niestandardowy link <code>5</code>
+settings_hotkey_custom_6_user=Niestandardowy link <code>6</code>
+settings_hotkey_custom_7_user=Niestandardowy link <code>7</code>
+settings_hotkey_custom_8_user=Niestandardowy link <code>8</code>
+settings_hotkey_custom_9_user=Niestandardowy link <code>9</code>
 
 settings_navigation_color=Paleta kolorów
 settings_loader_top=Włącz moduł ładujący postęp strony na górze ekranu
@@ -802,7 +802,7 @@ theme_xhred_backup_is_being_prepared=Twoja kopia zapasowa jest w przygotowaniu. 
 
 settings_mail_ui=Włącz interfejs nowej poczty
 
-settings_show_theme_configuration_for_admins_only_error=Odmowa dostępu: Administrator zablokował dostęp do ustawień użytkownika
+settings_theme_config_admins_only_privileged_error=Odmowa dostępu: Administrator zablokował dostęp do ustawień użytkownika
 
 theme_xhred_tooltip_navigation_pinned=Przypnij/odpnij menu nawigacyjne
 settings_hotkey_navigation=Skrót do przełączania menu nawigacji
@@ -1103,7 +1103,7 @@ theme_xhred_filemanager_remove_warning=Usuwanie zakończyło się pomyślnie, al
 theme_xhred_connection_error_details_ssl=Sprawdź ostrzeżenie <a>certyfikat SSL z podpisem własnym</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Ukryte akordeony
+settings_sysinfo_hidden_panels_user=Ukryte akordeony
 theme_xhred_tooltip_dashboard_panels_disable=Ukryj panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Ukryty panel można ponownie włączyć za pomocą strony konfiguracji kompozycji.
 settings_right_sysinfo_page_options=Pulpit nawigacyjny i monitorowanie w czasie rzeczywistym

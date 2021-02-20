@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Podesive opcije za autentičnu t
 settings_right_hotkey_options=Prečaci
 
 settings_right_hotkey_custom_options_description=Prilagođene veze omogućuju vam upotrebu cifara od <code>1</code> do <code>9</code> da biste brzo pristupili bilo kojem važećem <code>URL.</code> -u Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> se može izdvojiti sa trenutno otvorene stranice desnog okvira sadržaja čitanjem izvora. Važno je da <code>URL</code> na početku nema poševinu i da ne koristi prefikse. Na primjer, za brzi prijelaz na Apache postavite na <code>custom link 1</code> polje <code>custom link 1</code> <code>/apache/</code>. Ako je zadani modifikator hitnih tipki postavljen na <code>Alt,</code> klikanjem <code>Alt+1</code> otvorit će vam se Apache modul
-settings_hotkey_custom_1=Prilagođena veza <code>1</code>
-settings_hotkey_custom_2=Prilagođena veza <code>2</code>
-settings_hotkey_custom_3=Prilagođena veza <code>3</code>
-settings_hotkey_custom_4=Prilagođena veza <code>4</code>
-settings_hotkey_custom_5=Prilagođena veza <code>5</code>
-settings_hotkey_custom_6=Prilagođena veza <code>6</code>
-settings_hotkey_custom_7=Prilagođena veza <code>7</code>
-settings_hotkey_custom_8=Prilagođena veza <code>8</code>
-settings_hotkey_custom_9=Prilagođena veza <code>9</code>
+settings_hotkey_custom_1_user=Prilagođena veza <code>1</code>
+settings_hotkey_custom_2_user=Prilagođena veza <code>2</code>
+settings_hotkey_custom_3_user=Prilagođena veza <code>3</code>
+settings_hotkey_custom_4_user=Prilagođena veza <code>4</code>
+settings_hotkey_custom_5_user=Prilagođena veza <code>5</code>
+settings_hotkey_custom_6_user=Prilagođena veza <code>6</code>
+settings_hotkey_custom_7_user=Prilagođena veza <code>7</code>
+settings_hotkey_custom_8_user=Prilagođena veza <code>8</code>
+settings_hotkey_custom_9_user=Prilagođena veza <code>9</code>
 
 settings_navigation_color=Paleta boja
 settings_loader_top=Omogućite program za učitavanje napredovanja stranice na vrhu zaslona
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Priprema se sigurnosna kopija. Može potraj
 
 settings_mail_ui=Omogući novo korisničko sučelje e-pošte
 
-settings_show_theme_configuration_for_admins_only_error=Pristup odbijen: Administrator je blokirao pristup korisničkim prilagodbama
+settings_theme_config_admins_only_privileged_error=Pristup odbijen: Administrator je blokirao pristup korisničkim prilagodbama
 
 theme_xhred_tooltip_navigation_pinned=Prikvači/ukloni navigacijski izbornik
 settings_hotkey_navigation=Tipka za preklapanje navigacijskog izbornika
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Uklanjanje je uspješno završeno, ali ne
 theme_xhred_connection_error_details_ssl=Provjerite <a>upozorenje o samopotpisanom SSL certifikatu</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Skrivene harmonike
+settings_sysinfo_hidden_panels_user=Skrivene harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Sakrij ploču $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrivena ploča može se ponovno omogućiti pomoću stranice za konfiguraciju teme.
 settings_right_sysinfo_page_options=Nadzorna ploča i nadzor u stvarnom vremenu

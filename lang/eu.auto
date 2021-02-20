@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Aukera konfiguragarriak Benetako
 settings_right_hotkey_options=Tekla lasterrak
 
 settings_right_hotkey_custom_options_description=Lotura pertsonalizatuak <code>1</code> <code>9</code> arteko zenbakiak erabiltzeko aukera ematen dizu edozein Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> baliozkoak sartzeko <code>URL.</code> Unean irekitako eskuineko markoaren edukiaren orrialdetik <code>URL</code> sor daiteke, bere jatorria irakurriz. Garrantzitsua da <code>URL</code> hasieran ez duela zirrikiturik eta ez erabiltzea aurrizkiak. Adibidez, Apachera azkar aldatzeko, ezarri <code>custom link 1</code> <code>/apache/</code> eremu <code>custom link 1</code>. Teklatuko lasterbideen lehenetsia <code>Alt,</code> ezarrita badago <code>Alt,</code> <code>Alt+1</code> sakatzean Apache modulua irekiko zaizu
-settings_hotkey_custom_1=<code>1</code> lotura pertsonalizatua
-settings_hotkey_custom_2=<code>2</code> lotura pertsonalizatua
-settings_hotkey_custom_3=<code>3</code> lotura pertsonalizatua
-settings_hotkey_custom_4=<code>4</code> lotura pertsonalizatua
-settings_hotkey_custom_5=<code>5</code> lotura pertsonalizatua
-settings_hotkey_custom_6=<code>6</code> lotura pertsonalizatua
-settings_hotkey_custom_7=<code>7</code> lotura pertsonalizatua
-settings_hotkey_custom_8=<code>8</code> lotura pertsonalizatua
-settings_hotkey_custom_9=<code>9</code> lotura pertsonalizatua
+settings_hotkey_custom_1_user=<code>1</code> lotura pertsonalizatua
+settings_hotkey_custom_2_user=<code>2</code> lotura pertsonalizatua
+settings_hotkey_custom_3_user=<code>3</code> lotura pertsonalizatua
+settings_hotkey_custom_4_user=<code>4</code> lotura pertsonalizatua
+settings_hotkey_custom_5_user=<code>5</code> lotura pertsonalizatua
+settings_hotkey_custom_6_user=<code>6</code> lotura pertsonalizatua
+settings_hotkey_custom_7_user=<code>7</code> lotura pertsonalizatua
+settings_hotkey_custom_8_user=<code>8</code> lotura pertsonalizatua
+settings_hotkey_custom_9_user=<code>9</code> lotura pertsonalizatua
 
 settings_navigation_color=Kolore paleta
 settings_loader_top=Gaitu orrialdearen aurrera kargatzailea pantailaren gainean
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Zure babeskopiak prestatzen ari dira. Pixka
 
 settings_mail_ui=Gaitu posta-interfaze berria
 
-settings_show_theme_configuration_for_admins_only_error=Sarbide ukatua: administratzaileak erabiltzaileen pertsonalizazioetarako sarbidea blokeatu du
+settings_theme_config_admins_only_privileged_error=Sarbide ukatua: administratzaileak erabiltzaileen pertsonalizazioetarako sarbidea blokeatu du
 
 theme_xhred_tooltip_navigation_pinned=Pinatu/desblokeatu nabigazio menua
 settings_hotkey_navigation=Nabigazio menua aldatzeko laster-tekla
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objekt
 theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziurtagiria</a> abisua
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Ezkutuko akordeoiak
+settings_sysinfo_hidden_panels_user=Ezkutuko akordeoiak
 theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela
 theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke gaiaren konfigurazio orria erabiliz.
 settings_right_sysinfo_page_options=Arbel eta denbora errealeko monitorizazioa

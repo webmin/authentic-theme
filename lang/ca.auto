@@ -184,7 +184,7 @@ theme_xhred_backup_is_being_prepared=S’està preparant la vostra còpia de seg
 
 settings_mail_ui=Activa la nova interfície de correu electrònic
 
-settings_show_theme_configuration_for_admins_only_error=Accés denegat: l'administrador ha bloquejat l'accés a les personalitzacions dels usuaris
+settings_theme_config_admins_only_privileged_error=Accés denegat: l'administrador ha bloquejat l'accés a les personalitzacions dels usuaris
 
 theme_xhred_tooltip_navigation_pinned=Menú de fixació/fixació del menú
 settings_hotkey_navigation=Tecla directa per canviar el menú de navegació
@@ -485,7 +485,7 @@ theme_xhred_filemanager_remove_warning=L'eliminació s'ha acabat correctament, p
 theme_xhred_connection_error_details_ssl=Comproveu l'advertiment <a>certificat SSL autofirmat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Acordions ocults
+settings_sysinfo_hidden_panels_user=Acordions ocults
 theme_xhred_tooltip_dashboard_panels_disable=Amaga el tauler $1 
 theme_xhred_dashboard_panels_disabled_explain=El tauler ocult es pot tornar a activar mitjançant la pàgina de configuració del tema.
 settings_right_sysinfo_page_options=Tauler de control i monitorització en temps real

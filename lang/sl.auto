@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Nastavljive možnosti za avtenti
 settings_right_hotkey_options=Bližnjice
 
 settings_right_hotkey_custom_options_description=Povezave po meri omogočajo uporabo številk od <code>1</code> do <code>9</code> za hiter dostop do katerega koli veljavnega <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> lahko izvlečete s trenutno odprte desne strani z vsebino okvira z branjem njegovega vira. Pomembno je, da <code>URL</code> na začetku nima poševnice in ne uporablja predpone. Če želite na primer hitro preklopiti na Apache, nastavite na polje <code>custom link 1</code> <code>/apache/</code>. Če je privzeti modifikator hitrih tipk nastavljen na <code>Alt,</code> klikom na <code>Alt+1</code> se vam odpre modul Apache
-settings_hotkey_custom_1=Povezava po meri <code>1</code>
-settings_hotkey_custom_2=Povezava <code>2</code> po meri
-settings_hotkey_custom_3=Povezava po meri <code>3</code>
-settings_hotkey_custom_4=Povezava po meri <code>4</code>
-settings_hotkey_custom_5=Povezava po meri <code>5</code>
-settings_hotkey_custom_6=Povezava po meri <code>6</code>
-settings_hotkey_custom_7=Povezava po meri <code>7</code>
-settings_hotkey_custom_8=Povezava po meri <code>8</code>
-settings_hotkey_custom_9=Povezava po meri <code>9</code>
+settings_hotkey_custom_1_user=Povezava po meri <code>1</code>
+settings_hotkey_custom_2_user=Povezava <code>2</code> po meri
+settings_hotkey_custom_3_user=Povezava po meri <code>3</code>
+settings_hotkey_custom_4_user=Povezava po meri <code>4</code>
+settings_hotkey_custom_5_user=Povezava po meri <code>5</code>
+settings_hotkey_custom_6_user=Povezava po meri <code>6</code>
+settings_hotkey_custom_7_user=Povezava po meri <code>7</code>
+settings_hotkey_custom_8_user=Povezava po meri <code>8</code>
+settings_hotkey_custom_9_user=Povezava po meri <code>9</code>
 
 settings_navigation_color=Barvna paleta
 settings_loader_top=Omogoči nalagalec napredka strani na vrhu zaslona
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Pripravlja se vam varnostna kopija. Lahko t
 
 settings_mail_ui=Omogoči nov uporabniški vmesnik e-pošte
 
-settings_show_theme_configuration_for_admins_only_error=Dostop zavrnjen: Skrbnik je blokiral dostop do prilagoditev uporabnikov
+settings_theme_config_admins_only_privileged_error=Dostop zavrnjen: Skrbnik je blokiral dostop do prilagoditev uporabnikov
 
 theme_xhred_tooltip_navigation_pinned=Pripni/odveči navigacijski meni
 settings_hotkey_navigation=Hitra tipka za preklop menija za krmarjenje
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Odstranitev je bila uspešno končana, ve
 theme_xhred_connection_error_details_ssl=Preverite <a>samopodpisano potrdilo SSL</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Skrite harmonike
+settings_sysinfo_hidden_panels_user=Skrite harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Skrij podokno $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrite plošče lahko znova omogočite s pomočjo strani s konfiguracijo teme.
 settings_right_sysinfo_page_options=Nadzorna plošča in nadzor v realnem času

@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Dostupná nastavení pro Authentic Theme
 
 settings_right_hotkey_custom_options_description=Vlastní odkazy umožňují použít čísla od <code>1</code> do <code>9</code> pro rychlý přístup k jakékoliv Webmin/Usermin/Virtualmin/Cloudmin <code>URL adrese.</code> <code>URL adresu</code> je možné získat z aktuálně otevřeného pravého rámce po zhlédnutí jeho zdrojového kódu. Je důležité, aby <code>URL adresa</code> neobsahovala žádné lomítko na začátku a neobsahovala žádný prefix. Například tedy k rychlému přístupu k Apache, nastavte hodnotu pole pro <code>vlastní link 1</code> jako <code>/apache/</code>. Pokud je přepínač klávesových zkratek nastavený na <code>Alt,</code> pak se klávesovou zkratkou <code>Alt+1</code>, dostanete na stránku Apache.
-settings_hotkey_custom_1=Vlastní odkaz <code>1</code>
-settings_hotkey_custom_2=Vlastní odkaz <code>2</code>
-settings_hotkey_custom_3=Vlastní odkaz <code>3</code>
-settings_hotkey_custom_4=Vlastní odkaz <code>4</code>
-settings_hotkey_custom_5=Vlastní odkaz <code>5</code>
-settings_hotkey_custom_6=Vlastní odkaz <code>6</code>
-settings_hotkey_custom_7=Vlastní odkaz <code>7</code>
-settings_hotkey_custom_8=Vlastni odkaz <code>8</code>
-settings_hotkey_custom_9=Vlastni odkaz <code>9</code>
+settings_hotkey_custom_1_user=Vlastní odkaz <code>1</code>
+settings_hotkey_custom_2_user=Vlastní odkaz <code>2</code>
+settings_hotkey_custom_3_user=Vlastní odkaz <code>3</code>
+settings_hotkey_custom_4_user=Vlastní odkaz <code>4</code>
+settings_hotkey_custom_5_user=Vlastní odkaz <code>5</code>
+settings_hotkey_custom_6_user=Vlastní odkaz <code>6</code>
+settings_hotkey_custom_7_user=Vlastní odkaz <code>7</code>
+settings_hotkey_custom_8_user=Vlastni odkaz <code>8</code>
+settings_hotkey_custom_9_user=Vlastni odkaz <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_left=Povolit posuvník pro navigační panel

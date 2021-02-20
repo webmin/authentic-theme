@@ -110,15 +110,15 @@ settings_right_theme_left_logo_title=Administrare Logo Authentic Theme
 settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
 
 settings_right_hotkey_custom_options_description=Legăturile personalizate îți dă voie sa folosești cifre de la <code>1</code> la <code>9</code> pentru a accesa orice <code>URL</code> valid Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code>-ul poate fi extras din cardul din dreapta al paginii curente, citindu-i sursa. Este important ca <code>URL</code>-ul să nu aibă slash-uri la început și să nu folosească prefixe. Ca exemplu, pentru a trece rapid la Apache, configurează câmpul <code>legătură personalizată 1</code> <code>/apache/</code>. Dacă tasta pentru hotkey este implicit <code>Alt,</code> făcând click <code>Alt+1</code>, va deschide modulul Apache.
-settings_hotkey_custom_1=Legătură personalizată <code>1</code>
-settings_hotkey_custom_2=Legătură personalizată <code>2</code>
-settings_hotkey_custom_3=Legătură personalizată <code>3</code>
-settings_hotkey_custom_4=Legătură personalizată <code>4</code>
-settings_hotkey_custom_5=Legătură personalizată <code>5</code>
-settings_hotkey_custom_6=Legătură personalizată <code>6</code>
-settings_hotkey_custom_7=Legătură personalizată <code>7</code>
-settings_hotkey_custom_8=Legătură personalizată <code>8</code>
-settings_hotkey_custom_9=Legătură personalizată <code>9</code>
+settings_hotkey_custom_1_user=Legătură personalizată <code>1</code>
+settings_hotkey_custom_2_user=Legătură personalizată <code>2</code>
+settings_hotkey_custom_3_user=Legătură personalizată <code>3</code>
+settings_hotkey_custom_4_user=Legătură personalizată <code>4</code>
+settings_hotkey_custom_5_user=Legătură personalizată <code>5</code>
+settings_hotkey_custom_6_user=Legătură personalizată <code>6</code>
+settings_hotkey_custom_7_user=Legătură personalizată <code>7</code>
+settings_hotkey_custom_8_user=Legătură personalizată <code>8</code>
+settings_hotkey_custom_9_user=Legătură personalizată <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
@@ -873,7 +873,7 @@ theme_xhred_backup_is_being_prepared=Backup-ul tău se prepară. Va dura ceva ti
 
 settings_mail_ui=Activeaza noul UI pentru e-mail
 
-settings_show_theme_configuration_for_admins_only_error=Acces restricționat: Administratorul a blocat accesul personalizările utilizatorului
+settings_theme_config_admins_only_privileged_error=Acces restricționat: Administratorul a blocat accesul personalizările utilizatorului
 
 theme_xhred_tooltip_navigation_pinned=Fixează/Defixează meniul de navigare
 settings_hotkey_navigation=Taste rapide pentru comutarea meniului de navigare

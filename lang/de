@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen
 settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Design
 
 settings_right_hotkey_custom_options_description=Benutzerdefinierte Links erlauben es die Ziffertasten <code>1</code> bis <code>9</code> als Schnellzugriffs Tasten für beliebige Webmin/Usermin/Virtualmin/Cloudmin <code>URLs</code> einzurichten. Die <code>URL</code> erhält man wenn man sich nur den rechten Frame anzeigen lä&szligt, z.B. mit einem rechtsklick auf die rechte Inhalts Seite und der Auswahl "Nur diesem Frame anzeigen". Wichtig: Es darf nur das letzte Teilstück der <code>URL</code> verwendet werden! Zum Aufrufen der Apache Configuration muss der Eintrag in Benuterzdefinierter Link 1 <code>/apache/</code> sein, ohne fürende oder folgende Schrägstiche (/).
-settings_hotkey_custom_1=Benutzerdefinierter Link <code>1</code>
-settings_hotkey_custom_2=Benutzerdefinierter Link <code>2</code>
-settings_hotkey_custom_3=Benutzerdefinierter Link <code>3</code>
-settings_hotkey_custom_4=Benutzerdefinierter Link <code>4</code>
-settings_hotkey_custom_5=Benutzerdefinierter Link <code>5</code>
-settings_hotkey_custom_6=Benutzerdefinierter Link <code>6</code>
-settings_hotkey_custom_7=Benutzerdefinierter Link <code>7</code>
-settings_hotkey_custom_8=Benutzerdefinierter Link <code>8</code>
-settings_hotkey_custom_9=Benutzerdefinierter Link <code>9</code>
+settings_hotkey_custom_1_user=Benutzerdefinierter Link <code>1</code>
+settings_hotkey_custom_2_user=Benutzerdefinierter Link <code>2</code>
+settings_hotkey_custom_3_user=Benutzerdefinierter Link <code>3</code>
+settings_hotkey_custom_4_user=Benutzerdefinierter Link <code>4</code>
+settings_hotkey_custom_5_user=Benutzerdefinierter Link <code>5</code>
+settings_hotkey_custom_6_user=Benutzerdefinierter Link <code>6</code>
+settings_hotkey_custom_7_user=Benutzerdefinierter Link <code>7</code>
+settings_hotkey_custom_8_user=Benutzerdefinierter Link <code>8</code>
+settings_hotkey_custom_9_user=Benutzerdefinierter Link <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
@@ -874,7 +874,7 @@ theme_xhred_backup_is_being_prepared=Deine Sicherung wird vorbereitet. Dies kann
 
 settings_mail_ui=Neue Benutzeroberfläche für Mail verwenden
 
-settings_show_theme_configuration_for_admins_only_error=Zugriff verweigert: Der Zugang zu den Benutzereinstellungen wurde vom Administrator gesperrt
+settings_theme_config_admins_only_privileged_error=Zugriff verweigert: Der Zugang zu den Benutzereinstellungen wurde vom Administrator gesperrt
 
 theme_xhred_tooltip_navigation_pinned=Zeige/verstecke Navigationsmenü
 settings_hotkey_navigation=Schnellzuriffstaste zum Umschalten des Navigationsmenüs

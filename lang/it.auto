@@ -15,7 +15,7 @@ theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma
 theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>certificato SSL autofirmato</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Fisarmoniche nascoste
+settings_sysinfo_hidden_panels_user=Fisarmoniche nascoste
 theme_xhred_tooltip_dashboard_panels_disable=Nascondi il pannello $1 
 theme_xhred_dashboard_panels_disabled_explain=Il pannello nascosto può essere riattivato utilizzando la pagina di configurazione del tema.
 settings_right_sysinfo_page_options=Dashboard e monitoraggio in tempo reale

@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
 settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser les chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à toute URL Webmin/Usermin /Virtualmin/Cloudmin <code>valide.</code> Le L'<code>URL</code> peut être extraite de la page de contenu du cadre droit actuellement ouverte, en lisant sa source. Il est important que <code>URL</code> n'ait pas de barre oblique au début et n'utilise pas de préfixes. Par exemple, pour passer rapidement à Apache, définissez le champ <code>lien personnalisé 1</code> <code>/apache/</code>. Si le modificateur de raccourcis clavier par défaut est défini sur <code>Alt,</code> cliquer sur <code>Alt+1</code>, vous ouvrira le module Apache
-settings_hotkey_custom_1=Lien personnalisé <code>1</code>
-settings_hotkey_custom_2=Lien personnalisé <code>2</code>
-settings_hotkey_custom_3=Lien personnalisé <code>3</code>
-settings_hotkey_custom_4=Lien personnalisé <code>4</code>
-settings_hotkey_custom_5=Lien personnalisé <code>5</code>
-settings_hotkey_custom_6=Lien personnalisé <code>6</code>
-settings_hotkey_custom_7=Lien personnalisé <code>7</code>
-settings_hotkey_custom_8=Lien personnalisé <code>8</code>
-settings_hotkey_custom_9=Lien personnalisé <code>9</code>
+settings_hotkey_custom_1_user=Lien personnalisé <code>1</code>
+settings_hotkey_custom_2_user=Lien personnalisé <code>2</code>
+settings_hotkey_custom_3_user=Lien personnalisé <code>3</code>
+settings_hotkey_custom_4_user=Lien personnalisé <code>4</code>
+settings_hotkey_custom_5_user=Lien personnalisé <code>5</code>
+settings_hotkey_custom_6_user=Lien personnalisé <code>6</code>
+settings_hotkey_custom_7_user=Lien personnalisé <code>7</code>
+settings_hotkey_custom_8_user=Lien personnalisé <code>8</code>
+settings_hotkey_custom_9_user=Lien personnalisé <code>9</code>
 
 settings_navigation_color=Palette de couleurs
 settings_loader_top=Activer le chargeur de progression de page en haut de l'écran
@@ -879,7 +879,7 @@ theme_xhred_backup_is_being_prepared=Votre sauvegarde est en cours de préparati
 
 settings_mail_ui=Activer la nouvelle interface utilisateur de messagerie
 
-settings_show_theme_configuration_for_admins_only_error=Accès refusé: l'administrateur a bloqué l'accès aux personnalisations utilisateur
+settings_theme_config_admins_only_privileged_error=Accès refusé: l'administrateur a bloqué l'accès aux personnalisations utilisateur
 
 theme_xhred_tooltip_navigation_pinned=Menu de navigation Épingler/détacher
 settings_hotkey_navigation=Raccourci pour basculer le menu de navigation

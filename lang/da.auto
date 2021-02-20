@@ -26,15 +26,15 @@ settings_right_theme_configurable_options_title=Konfigurerbare indstillinger til
 settings_right_hotkey_options=Genvejstaster
 
 settings_right_hotkey_custom_options_description=Brugertilpassede links giver dig mulighed for at bruge cifre fra <code>1</code> til <code>9</code> for hurtigt at få adgang til enhver gyldig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> kan udvindes fra den aktuelt åbne side med højre rammeindhold ved at læse dens kilde. Det er vigtigt, at <code>URL</code> har nogen skråstreg i begyndelsen og ikke bruger præfikser. For eksempel for at skifte hurtigt til Apache skal du indstille til <code>custom link 1</code> felt <code>/apache/</code>. Hvis standard hotkeys-modifikatoren er indstillet til <code>Alt,</code> klikke på <code>Alt+1</code>, åbner du Apache-modul
-settings_hotkey_custom_1=Brugerdefineret link <code>1</code>
-settings_hotkey_custom_2=Brugerdefineret link <code>2</code>
-settings_hotkey_custom_3=Brugerdefineret link <code>3</code>
-settings_hotkey_custom_4=Brugerdefineret link <code>4</code>
-settings_hotkey_custom_5=Brugerdefineret link <code>5</code>
-settings_hotkey_custom_6=Brugerdefineret link <code>6</code>
-settings_hotkey_custom_7=Brugerdefineret link <code>7</code>
-settings_hotkey_custom_8=Brugerdefineret link <code>8</code>
-settings_hotkey_custom_9=Brugerdefineret link <code>9</code>
+settings_hotkey_custom_1_user=Brugerdefineret link <code>1</code>
+settings_hotkey_custom_2_user=Brugerdefineret link <code>2</code>
+settings_hotkey_custom_3_user=Brugerdefineret link <code>3</code>
+settings_hotkey_custom_4_user=Brugerdefineret link <code>4</code>
+settings_hotkey_custom_5_user=Brugerdefineret link <code>5</code>
+settings_hotkey_custom_6_user=Brugerdefineret link <code>6</code>
+settings_hotkey_custom_7_user=Brugerdefineret link <code>7</code>
+settings_hotkey_custom_8_user=Brugerdefineret link <code>8</code>
+settings_hotkey_custom_9_user=Brugerdefineret link <code>9</code>
 
 settings_navigation_color=Farvepalet
 settings_loader_top=Aktivér sidefremskyndelseslæsser øverst på skærmen
@@ -796,7 +796,7 @@ theme_xhred_backup_is_being_prepared=Din sikkerhedskopi er under forberedelse. D
 
 settings_mail_ui=Aktivér ny mail-brugergrænseflade
 
-settings_show_theme_configuration_for_admins_only_error=Adgang nægtet: Administrator har blokeret adgang til brugertilpasninger
+settings_theme_config_admins_only_privileged_error=Adgang nægtet: Administrator har blokeret adgang til brugertilpasninger
 
 theme_xhred_tooltip_navigation_pinned=Fastgør/fjern pin-menuen
 settings_hotkey_navigation=Genvejstast til at skifte navigationsmenu
@@ -1097,7 +1097,7 @@ theme_xhred_filemanager_remove_warning=Fjernelse er afsluttet med succes, men ik
 theme_xhred_connection_error_details_ssl=Tjek advarslen <a>selvsigneret SSL-certifikat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Skjulte harmonikaer
+settings_sysinfo_hidden_panels_user=Skjulte harmonikaer
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
 theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan genaktiveres ved hjælp af temakonfigurationssiden.
 settings_right_sysinfo_page_options=Dashboard og overvågning i realtid

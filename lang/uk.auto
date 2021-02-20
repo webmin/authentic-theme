@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Параметри, що нас�
 settings_right_hotkey_options=Гарячі клавіші
 
 settings_right_hotkey_custom_options_description=Спеціальні посилання дозволяють використовувати цифри від <code>1</code> до <code>9</code> для швидкого доступу до будь-якої дійсної <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> можна отримати з відкритої на даний момент сторінки вмісту правого кадру, прочитавши її джерело. Важливо, щоб <code>URL</code> не мав косу рису на початку і не використовував префікси. Наприклад, для швидкого переходу на Apache встановіть <code>custom link 1</code> поле <code>custom link 1</code> <code>/apache/</code>. Якщо модифікатор гарячих клавіш за замовчуванням встановлено на <code>Alt,</code> натиснувши <code>Alt+1</code>, ви відкриєте модуль Apache
-settings_hotkey_custom_1=Спеціальне посилання <code>1</code>
-settings_hotkey_custom_2=Спеціальне посилання <code>2</code>
-settings_hotkey_custom_3=Спеціальне посилання <code>3</code>
-settings_hotkey_custom_4=Спеціальне посилання <code>4</code>
-settings_hotkey_custom_5=Спеціальне посилання <code>5</code>
-settings_hotkey_custom_6=Спеціальне посилання <code>6</code>
-settings_hotkey_custom_7=Спеціальне посилання <code>7</code>
-settings_hotkey_custom_8=Спеціальне посилання <code>8</code>
-settings_hotkey_custom_9=Спеціальне посилання <code>9</code>
+settings_hotkey_custom_1_user=Спеціальне посилання <code>1</code>
+settings_hotkey_custom_2_user=Спеціальне посилання <code>2</code>
+settings_hotkey_custom_3_user=Спеціальне посилання <code>3</code>
+settings_hotkey_custom_4_user=Спеціальне посилання <code>4</code>
+settings_hotkey_custom_5_user=Спеціальне посилання <code>5</code>
+settings_hotkey_custom_6_user=Спеціальне посилання <code>6</code>
+settings_hotkey_custom_7_user=Спеціальне посилання <code>7</code>
+settings_hotkey_custom_8_user=Спеціальне посилання <code>8</code>
+settings_hotkey_custom_9_user=Спеціальне посилання <code>9</code>
 
 settings_navigation_color=Колірна палітра
 settings_loader_top=Увімкнути завантажувач прогресу сторінки вгорі екрана
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Ваша резервна копія гот
 
 settings_mail_ui=Увімкнути новий інтерфейс пошти
 
-settings_show_theme_configuration_for_admins_only_error=Заборонено доступ: адміністратор заблокував доступ до налаштувань користувачів
+settings_theme_config_admins_only_privileged_error=Заборонено доступ: адміністратор заблокував доступ до налаштувань користувачів
 
 theme_xhred_tooltip_navigation_pinned=Закріпити/відкрутити навігаційне меню
 settings_hotkey_navigation=Клавіша швидкої клавіші для переключення навігаційного меню
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Видалення завершено у�
 theme_xhred_connection_error_details_ssl=Перевірте <a>попередження про власний підпис SSL</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Приховані гармошки
+settings_sysinfo_hidden_panels_user=Приховані гармошки
 theme_xhred_tooltip_dashboard_panels_disable=Сховати панель $1 
 theme_xhred_dashboard_panels_disabled_explain=Приховану панель можна ввімкнути за допомогою сторінки конфігурації теми.
 settings_right_sysinfo_page_options=Інформаційна панель та моніторинг у реальному часі

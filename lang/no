@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Authentic tema logokontroll
 settings_right_theme_configurable_options_title=Konfigurerbare innstillinger for Authentic tema
 
 settings_right_hotkey_custom_options_description=Tilpassede koblinger gjør at du kan bruke tallene fra <code>1</code> til <code>9</code> for rask tilgang til en hvilken som helst gyldig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</Code> <code>URL</code>en kan hentes ut fra den gjeldende innholdssiden i høyre ramme ved å lese kilden. Det er viktig at <code>URL</code>en ikke har noen skråstrek i begynnelsen og ikke bruke prefikser. For eksempel, for å hurtigskifte til Apache, sett <code>tilpasset kobling 1</code> felt til <code>/apache/</code>. Hvis standard hurtigtaster-tast er satt til <code>Alt</code> vil <code>Alt + 1</code> åpne Apache-modulen
-settings_hotkey_custom_1=Egendefinert lenke <code>1</code>
-settings_hotkey_custom_2=Egendefinert lenke <code>2</code>
-settings_hotkey_custom_3=Egendefinert lenke <code>3</code>
-settings_hotkey_custom_4=Egendefinert lenke <code>4</code>
-settings_hotkey_custom_5=Egendefinert lenke <code>5</code>
-settings_hotkey_custom_6=Egendefinert lenke <code>6</code>
-settings_hotkey_custom_7=Egendefinert lenke <code>7</code>
-settings_hotkey_custom_8=Egendefinert lenke <code>8</code>
-settings_hotkey_custom_9=Egendefinert lenke <code>9</code>
+settings_hotkey_custom_1_user=Egendefinert lenke <code>1</code>
+settings_hotkey_custom_2_user=Egendefinert lenke <code>2</code>
+settings_hotkey_custom_3_user=Egendefinert lenke <code>3</code>
+settings_hotkey_custom_4_user=Egendefinert lenke <code>4</code>
+settings_hotkey_custom_5_user=Egendefinert lenke <code>5</code>
+settings_hotkey_custom_6_user=Egendefinert lenke <code>6</code>
+settings_hotkey_custom_7_user=Egendefinert lenke <code>7</code>
+settings_hotkey_custom_8_user=Egendefinert lenke <code>8</code>
+settings_hotkey_custom_9_user=Egendefinert lenke <code>9</code>
 
 settings_navigation_color=Fargepalett
 settings_loader_top=Aktiver side fremdriftslasert på toppen av skjermen
@@ -878,7 +878,7 @@ theme_xhred_backup_is_being_prepared=Sikkerhetskopien din blir forberedt. Det ka
 
 settings_mail_ui=Aktiver nytt e-post UI
 
-settings_show_theme_configuration_for_admins_only_error=Tilgang nektet: Administrator has blokkert tilgang til brukertilpasninger
+settings_theme_config_admins_only_privileged_error=Tilgang nektet: Administrator has blokkert tilgang til brukertilpasninger
 
 theme_xhred_tooltip_navigation_pinned=Fest/løsne navigasjonsmenyen
 settings_hotkey_navigation=Hurtigtast for veksling av navigasjonsmeny

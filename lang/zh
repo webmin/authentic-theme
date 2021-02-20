@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Authentic 主题 Logo 控制
 settings_right_theme_configurable_options_title=Authentic 主题的可配置选项
 
 settings_right_hotkey_custom_options_description=自定义链接使您可以使用 <code>1</code> 到 <code>9</code> 的数字，以便快速访问任何有效的 Webmin/Usermin/Virtualmin/Cloudmin <code>URL。</code>可以通过读取其源来从当前打开的右框架内容页面中提取 <code>URL</code>。重要的是 <code>URL</code> 在开头没有斜杠，不使用前缀。例如，要快速切换到 Apache，请设置 <code>自定义链接 1</code> 字段为 <code>/apache/</code>。如果默认快捷键修改器设置为 <code>Alt,</code>则单击 <code>Alt+1</code> 将打开 Apache 模块
-settings_hotkey_custom_1=自定义链接 <code>1</code>
-settings_hotkey_custom_2=自定义链接 <code>2</code>
-settings_hotkey_custom_3=自定义链接 <code>3</code>
-settings_hotkey_custom_4=自定义链接 <code>4</code>
-settings_hotkey_custom_5=自定义链接 <code>5</code>
-settings_hotkey_custom_6=自定义链接 <code>6</code>
-settings_hotkey_custom_7=自定义链接 <code>7</code>
-settings_hotkey_custom_8=自定义链接 <code>8</code>
-settings_hotkey_custom_9=自定义链接 <code>9</code>
+settings_hotkey_custom_1_user=自定义链接 <code>1</code>
+settings_hotkey_custom_2_user=自定义链接 <code>2</code>
+settings_hotkey_custom_3_user=自定义链接 <code>3</code>
+settings_hotkey_custom_4_user=自定义链接 <code>4</code>
+settings_hotkey_custom_5_user=自定义链接 <code>5</code>
+settings_hotkey_custom_6_user=自定义链接 <code>6</code>
+settings_hotkey_custom_7_user=自定义链接 <code>7</code>
+settings_hotkey_custom_8_user=自定义链接 <code>8</code>
+settings_hotkey_custom_9_user=自定义链接 <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=在屏幕顶部启用页面进度加载程序

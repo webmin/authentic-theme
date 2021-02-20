@@ -111,15 +111,15 @@ settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
 settings_right_theme_configurable_options_title=Konfigurerbara alternativ för Authentic Theme
 
 settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>/apache/</code>. Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
-settings_hotkey_custom_1=Egen länk <code>1</code>
-settings_hotkey_custom_2=Egen länk <code>2</code>
-settings_hotkey_custom_3=Egen länk <code>3</code>
-settings_hotkey_custom_4=Egen länk <code>4</code>
-settings_hotkey_custom_5=Egen länk <code>5</code>
-settings_hotkey_custom_6=Egen länk <code>6</code>
-settings_hotkey_custom_7=Egen länk <code>7</code>
-settings_hotkey_custom_8=Egen länk <code>8</code>
-settings_hotkey_custom_9=Egen länk <code>9</code>
+settings_hotkey_custom_1_user=Egen länk <code>1</code>
+settings_hotkey_custom_2_user=Egen länk <code>2</code>
+settings_hotkey_custom_3_user=Egen länk <code>3</code>
+settings_hotkey_custom_4_user=Egen länk <code>4</code>
+settings_hotkey_custom_5_user=Egen länk <code>5</code>
+settings_hotkey_custom_6_user=Egen länk <code>6</code>
+settings_hotkey_custom_7_user=Egen länk <code>7</code>
+settings_hotkey_custom_8_user=Egen länk <code>8</code>
+settings_hotkey_custom_9_user=Egen länk <code>9</code>
 
 settings_navigation_color=Color palette
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
@@ -879,7 +879,7 @@ theme_xhred_backup_is_being_prepared=Din säkerhetskopia förbereds. Det kan ta 
 
 settings_mail_ui=Aktivera nytt e-postanvändargränssnitt
 
-settings_show_theme_configuration_for_admins_only_error=Åtkomst nekad: Administratören har blockerat åtkomst till användaranpassningar
+settings_theme_config_admins_only_privileged_error=Åtkomst nekad: Administratören har blockerat åtkomst till användaranpassningar
 
 theme_xhred_tooltip_navigation_pinned=Fäst/ta bort navigeringsmeny
 settings_hotkey_navigation=Snabbtangent för att växla navigeringsmenyn

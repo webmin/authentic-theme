@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Konfigurējamas opcijas autentis
 settings_right_hotkey_options=Karstie taustiņi
 
 settings_right_hotkey_custom_options_description=Pielāgotas saites ļauj izmantot ciparus no <code>1</code> līdz <code>9</code>, lai ātri piekļūtu jebkuram derīgam Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> var iegūt no pašlaik atvērtās labās puses ietvara satura lapas, nolasot tā avotu. Ir svarīgi, lai <code>URL</code> sākumā nebūtu slīpsvītra un nebūtu izmantoti prefiksi. Piemēram, lai ātri pārslēgtos uz Apache, iestatiet uz <code>custom link 1</code> lauku <code>/apache/</code>. Ja noklusējuma karsto taustiņu modifikators ir iestatīts uz <code>Alt,</code> noklikšķinot uz <code>Alt+1</code>, tiks atvērts Apache modulis
-settings_hotkey_custom_1=Pielāgota saite <code>1</code>
-settings_hotkey_custom_2=Pielāgota saite <code>2</code>
-settings_hotkey_custom_3=<code>3</code> pielāgotā saite
-settings_hotkey_custom_4=Pielāgota saite <code>4</code>
-settings_hotkey_custom_5=Pielāgota saite <code>5</code>
-settings_hotkey_custom_6=Pielāgota saite <code>6</code>
-settings_hotkey_custom_7=Pielāgota saite <code>7</code>
-settings_hotkey_custom_8=Pielāgota saite <code>8</code>
-settings_hotkey_custom_9=Pielāgota saite <code>9</code>
+settings_hotkey_custom_1_user=Pielāgota saite <code>1</code>
+settings_hotkey_custom_2_user=Pielāgota saite <code>2</code>
+settings_hotkey_custom_3_user=<code>3</code> pielāgotā saite
+settings_hotkey_custom_4_user=Pielāgota saite <code>4</code>
+settings_hotkey_custom_5_user=Pielāgota saite <code>5</code>
+settings_hotkey_custom_6_user=Pielāgota saite <code>6</code>
+settings_hotkey_custom_7_user=Pielāgota saite <code>7</code>
+settings_hotkey_custom_8_user=Pielāgota saite <code>8</code>
+settings_hotkey_custom_9_user=Pielāgota saite <code>9</code>
 
 settings_navigation_color=Krāsu palete
 settings_loader_top=Ekrāna augšdaļā iespējot lapas virzības augšupielādi
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Tiek gatavota jūsu rezerves kopija. Tas va
 
 settings_mail_ui=Iespējot jaunu pasta saskarni
 
-settings_show_theme_configuration_for_admins_only_error=Piekļuve liegta: administrators ir bloķējis piekļuvi lietotāju pielāgojumiem
+settings_theme_config_admins_only_privileged_error=Piekļuve liegta: administrators ir bloķējis piekļuvi lietotāju pielāgojumiem
 
 theme_xhred_tooltip_navigation_pinned=Piespraust/atvienot navigācijas izvēlni
 settings_hotkey_navigation=Karstais taustiņš navigācijas izvēlnes pārslēgšanai
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Noņemšana ir veiksmīgi pabeigta, bet n
 theme_xhred_connection_error_details_ssl=Pārbaudiet brīdinājumu par <a>pašu parakstītu SSL sertifikātu</a>
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Slēptie akordeoni
+settings_sysinfo_hidden_panels_user=Slēptie akordeoni
 theme_xhred_tooltip_dashboard_panels_disable=Slēpt $1 paneli
 theme_xhred_dashboard_panels_disabled_explain=Slēpto paneli var atkārtoti iespējot, izmantojot motīva konfigurācijas lapu.
 settings_right_sysinfo_page_options=Vadības panelis un reāllaika uzraudzība

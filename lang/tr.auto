@@ -113,15 +113,15 @@ settings_right_theme_configurable_options_title=Otantik Tema için yapılandır�
 settings_right_hotkey_options=Kısayol tuşları
 
 settings_right_hotkey_custom_options_description=Özel bağlantılar, geçerli bir Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> hızlı bir şekilde erişmek için <code>1</code> <code>9</code> olan rakamları kullanmanızı sağlar <code>URL.</code> <code>URL</code>, kaynağı okunarak şu anda açık olan sağ çerçeve içerik sayfasından çıkarılabilir. <code>URL</code> başında eğik çizgi olmaması ve önek kullanmaması önemlidir. Örneğin, Apache'ye hızlı geçiş yapmak için <code>custom link 1</code> alanı <code>/apache/</code>. Varsayılan kısayol tuşu değiştiricisi <code>Alt,</code> ayarlanmışsa <code>Alt,</code> <code>Alt+1</code> tıklattığınızda Apache modülü açılır
-settings_hotkey_custom_1=Özel bağlantı <code>1</code>
-settings_hotkey_custom_2=Özel bağlantı <code>2</code>
-settings_hotkey_custom_3=Özel bağlantı <code>3</code>
-settings_hotkey_custom_4=Özel bağlantı <code>4</code>
-settings_hotkey_custom_5=Özel bağlantı <code>5</code>
-settings_hotkey_custom_6=Özel bağlantı <code>6</code>
-settings_hotkey_custom_7=Özel bağlantı <code>7</code>
-settings_hotkey_custom_8=Özel bağlantı <code>8</code>
-settings_hotkey_custom_9=Özel bağlantı <code>9</code>
+settings_hotkey_custom_1_user=Özel bağlantı <code>1</code>
+settings_hotkey_custom_2_user=Özel bağlantı <code>2</code>
+settings_hotkey_custom_3_user=Özel bağlantı <code>3</code>
+settings_hotkey_custom_4_user=Özel bağlantı <code>4</code>
+settings_hotkey_custom_5_user=Özel bağlantı <code>5</code>
+settings_hotkey_custom_6_user=Özel bağlantı <code>6</code>
+settings_hotkey_custom_7_user=Özel bağlantı <code>7</code>
+settings_hotkey_custom_8_user=Özel bağlantı <code>8</code>
+settings_hotkey_custom_9_user=Özel bağlantı <code>9</code>
 
 settings_navigation_color=Renk paleti
 settings_loader_top=Ekranın üst kısmındaki sayfa ilerleme yükleyicisini etkinleştir
@@ -884,7 +884,7 @@ theme_xhred_backup_is_being_prepared=Yedeklemeniz hazırlanıyor. Biraz zaman al
 
 settings_mail_ui=Yeni posta kullanıcı arayüzünü etkinleştir
 
-settings_show_theme_configuration_for_admins_only_error=Erişim reddedildi: Yönetici, kullanıcı özelleştirmelerine erişimi engelledi
+settings_theme_config_admins_only_privileged_error=Erişim reddedildi: Yönetici, kullanıcı özelleştirmelerine erişimi engelledi
 
 theme_xhred_tooltip_navigation_pinned=Gezinme menüsünü sabitle/sabitlemeyi kaldır
 settings_hotkey_navigation=Gezinme menüsünü değiştirmek için kısayol tuşu
@@ -1185,7 +1185,7 @@ theme_xhred_filemanager_remove_warning=Kaldırma işlemi başarıyla tamamlandı
 theme_xhred_connection_error_details_ssl=<a>Kendinden imzalı SSL sertifikasını</a> kontrol edin uyarısı
 
 #19.71
-settings_sysinfo_hidden_panels_provisional=Gizli akordeonlar
+settings_sysinfo_hidden_panels_user=Gizli akordeonlar
 theme_xhred_tooltip_dashboard_panels_disable=$1 panelini gizle
 theme_xhred_dashboard_panels_disabled_explain=Gizli panel, tema yapılandırma sayfası kullanılarak yeniden etkinleştirilebilir.
 settings_right_sysinfo_page_options=Kontrol paneli ve gerçek zamanlı izleme

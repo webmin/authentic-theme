@@ -23,6 +23,7 @@ sub theme_settings_raw
                        'settings_document_title',
                        'settings_cm_editor_palette',
                        'settings_global_palette_unauthenticated',
+                       'settings_theme_config_admins_only_privileged',
             ]
          }
         ],
@@ -35,7 +36,7 @@ sub theme_settings_raw
                        'settings_sysinfo_easypie_charts_size',
                        'settings_sysinfo_easypie_charts_width',
                        'settings_sysinfo_easypie_charts_scale',
-                       'settings_sysinfo_hidden_panels_provisional',
+                       'settings_sysinfo_hidden_panels_user',
                        'settings_sysinfo_max_servers',
                        'settings_sysinfo_real_time_status',
                        'settings_sysinfo_real_time_status_disk',
@@ -134,15 +135,15 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_hotkey_custom_options'),
             'desc'  => &theme_text('settings_right_hotkey_custom_options_description'),
             'data'  => [
-                       'settings_hotkey_custom_1',
-                       'settings_hotkey_custom_2',
-                       'settings_hotkey_custom_3',
-                       'settings_hotkey_custom_4',
-                       'settings_hotkey_custom_5',
-                       'settings_hotkey_custom_6',
-                       'settings_hotkey_custom_7',
-                       'settings_hotkey_custom_8',
-                       'settings_hotkey_custom_9',
+                       'settings_hotkey_custom_1_user',
+                       'settings_hotkey_custom_2_user',
+                       'settings_hotkey_custom_3_user',
+                       'settings_hotkey_custom_4_user',
+                       'settings_hotkey_custom_5_user',
+                       'settings_hotkey_custom_6_user',
+                       'settings_hotkey_custom_7_user',
+                       'settings_hotkey_custom_8_user',
+                       'settings_hotkey_custom_9_user',
             ]
          }
         ],
@@ -159,14 +160,6 @@ sub theme_settings_raw
 sub theme_settings_filter
 {
     my @theme_settings_filter;
-
-    # Exclude list of combined settings for UserminVirtualmin/Cloudmin
-    if (!&foreign_available("server-manager") &&
-        !foreign_available("virtual-server") &&
-        !get_usermin_data("mailbox"))
-    {
-        push(@theme_settings_filter, 'settings_show_theme_configuration_for_admins_only');
-    }
 
     # Exclude list of combined settings for Virtualmin/Cloudmin
     if (!&foreign_available("server-manager") &&
@@ -195,8 +188,8 @@ sub theme_settings_filter
     }
 
     # Exclude hidden panels if none
-    if (!$theme_config{'settings_sysinfo_hidden_panels_provisional'}) {
-        push(@theme_settings_filter, 'settings_sysinfo_hidden_panels_provisional');
+    if (!$theme_config{'settings_sysinfo_hidden_panels_user'}) {
+        push(@theme_settings_filter, 'settings_sysinfo_hidden_panels_user');
     }
 
     # Exclude list of settings for Virtualmin
@@ -235,6 +228,7 @@ sub theme_settings_filter
     # Limit to certain options for non privleged user
     if ($get_user_level ne '0') {
         push(@theme_settings_filter,
+             'settings_theme_config_admins_only_privileged',
              'settings_hotkey_slider',
              'settings_hotkey_toggle_slider',
              'settings_global_palette_unauthenticated',
@@ -299,14 +293,14 @@ sub theme_settings_format
           '>' . '<label class="lawobject" for="' . $k . '_0">' . $text{'no'} . '</label>' . '</span>
             ';
 
-    } elsif ($k =~ /settings_sysinfo_hidden_panels_provisional/ &&
-             $theme_config{'settings_sysinfo_hidden_panels_provisional'})
+    } elsif ($k =~ /settings_sysinfo_hidden_panels_user/ &&
+             $theme_config{'settings_sysinfo_hidden_panels_user'})
     {
         my $excluded_accordions;
         my @excluded_accordions;
         my @selected_excluded_accordions;
         eval {
-            my $data = $theme_config{'settings_sysinfo_hidden_panels_provisional'};
+            my $data = $theme_config{'settings_sysinfo_hidden_panels_user'};
             $data =~ s/'/"/g;
             $excluded_accordions          = convert_from_json($data);
             @selected_excluded_accordions = keys %{$excluded_accordions};
@@ -315,7 +309,7 @@ sub theme_settings_format
             }
         };
         if (!$@) {
-            $v = &ui_select("settings_sysinfo_hidden_panels_provisional",
+            $v = &ui_select("settings_sysinfo_hidden_panels_user",
                             \@selected_excluded_accordions,
                             \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
         }
