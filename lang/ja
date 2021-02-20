@@ -118,7 +118,6 @@ settings_hotkey_custom_8=カスタムリンク <code>8</code>
 settings_hotkey_custom_9=カスタムリンク <code>9</code>
 
 settings_navigation_color=カラーパレット
-settings_background_color=コンテンツページのカラーパレット
 settings_loader_top=画面上でページの進行状況ローダーを有効にする
 settings_loader_left=ナビゲーションメニューのスピナーを有効にする
 
@@ -151,7 +150,6 @@ settings_hotkey_reload=ページのリロードのためのホットキー
 
 settings_sysinfo_easypie_charts=グラフの表示
 settings_sysinfo_theme_updates=Authentic Themaの更新をチェック
-settings_sysinfo_csf_updates=ConfigServer のセキュリティとファイアウォールの更新を確認する
 settings_sysinfo_drive_status_on_new_line=新しい行に CPU とドライブのステータスを表示する
 settings_sysinfo_link_mini=ダッシュボードリンクをボタンとして表示
 
@@ -267,7 +265,6 @@ settings_brightness_level_navigation_description=デフォルト/電流値 <code
 settings_contrast_level_navigation=コントラストフィルタ
 settings_contrast_level_navigation_description=Defdqmault/電流値 <code>1</code> /<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=ビューアーのカラーパレット
 settings_cm_editor_palette=コードハイライトカラーパレット
 
 theme_xhred_filemanager_context_select_all=すべて選択

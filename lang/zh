@@ -122,7 +122,6 @@ settings_hotkey_custom_8=自定义链接 <code>8</code>
 settings_hotkey_custom_9=自定义链接 <code>9</code>
 
 settings_navigation_color=Color palette
-settings_background_color=内容页面调色板
 settings_loader_top=在屏幕顶部启用页面进度加载程序
 settings_loader_left=启用导航菜单微调
 
@@ -156,7 +155,6 @@ settings_hotkey_reload=页面重载快捷键
 
 settings_sysinfo_easypie_charts=显示图表
 settings_sysinfo_theme_updates=检查 Authentic 主题更新
-settings_sysinfo_csf_updates=检查 ConfigServer 安全和防火墙更新
 settings_sysinfo_drive_status_on_new_line=在新行上显示 CPU 和驱动器状态
 settings_sysinfo_link_mini=将仪表板链接显示为按钮
 
@@ -272,7 +270,6 @@ settings_brightness_level_navigation_description=默认/当前值 <code>1</code>
 settings_contrast_level_navigation=对比度滤镜
 settings_contrast_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=查看器调色板
 settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=全选

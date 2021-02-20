@@ -12,7 +12,6 @@ settings_hotkey_custom_8=Aangepaste link <code>8</code>
 settings_hotkey_custom_9=Aangepaste link <code>9</code>
 
 settings_navigation_color=Kleurenpalet
-settings_background_color=Kleurenpalet van inhoudspagina
 settings_loader_top=Schakel paginavoortganglader in bovenaan het scherm
 settings_loader_left=Schakel spinner in voor navigatiemenu
 settings_right_reload=Laad de standaardpagina op de tabschakelaar
@@ -47,7 +46,6 @@ settings_hotkey_reload=Sneltoets voor het opnieuw laden van pagina's
 
 settings_sysinfo_easypie_charts=Toon grafieken
 settings_sysinfo_theme_updates=Controleer op authentieke thema-updates
-settings_sysinfo_csf_updates=Controleer op updates voor ConfigServer-beveiliging en firewall
 settings_sysinfo_drive_status_on_new_line=Toon de CPU- en schijfstatus elk op een nieuwe regel
 settings_sysinfo_link_mini=Dashboardlink weergeven als knop
 
@@ -163,7 +161,6 @@ settings_brightness_level_navigation_description=Default/stroomwaarden <code>1</
 settings_contrast_level_navigation=Contrastfilter
 settings_contrast_level_navigation_description=Default/stroomwaarden <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Viewer kleurenpalet
 settings_cm_editor_palette=Code markeer kleurenpalet
 
 theme_xhred_filemanager_context_select_all=Selecteer alles

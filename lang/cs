@@ -122,7 +122,6 @@ settings_hotkey_custom_8=Vlastni odkaz <code>8</code>
 settings_hotkey_custom_9=Vlastni odkaz <code>9</code>
 
 settings_navigation_color=Color palette
-settings_background_color=Content page color palette
 settings_loader_left=Povolit posuvník pro navigační panel
 
 settings_right_hide_table_icons=Schovat ikony v tabulkách v pravém rámci
@@ -155,7 +154,6 @@ settings_hotkey_reload=Klávesová zkratka pro opetovné načtení stránky
 
 settings_sysinfo_easypie_charts=Zobrazit grafy
 settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu
-settings_sysinfo_csf_updates=Zkontrolovat aktualizace ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Zobrazit stav CPU a disků každý na zvláštním řádku
 settings_sysinfo_link_mini=Show dashboard link as button
 

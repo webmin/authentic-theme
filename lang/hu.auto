@@ -124,7 +124,6 @@ settings_hotkey_custom_8=<code>8</code> egyéni link
 settings_hotkey_custom_9=<code>9</code> egyéni link
 
 settings_navigation_color=Szín paletta
-settings_background_color=A tartalom oldal színpaletta
 settings_loader_top=Engedélyezze az oldalfejlesztőt a képernyő tetején
 settings_loader_left=Spinner engedélyezése a navigációs menüben
 settings_right_reload=Az alapértelmezett oldal betöltése a fülkapcsolóra
@@ -159,7 +158,6 @@ settings_hotkey_reload=Gyorsbillentyű az oldal újratöltéséhez
 
 settings_sysinfo_easypie_charts=Diagramok megjelenítése
 settings_sysinfo_theme_updates=Ellenőrizze a hiteles témafrissítéseket
-settings_sysinfo_csf_updates=Ellenőrizze a ConfigServer biztonsági és tűzfalfrissítéseit
 settings_sysinfo_drive_status_on_new_line=A CPU és a meghajtók állapotának megjelenítése új soron
 settings_sysinfo_link_mini=Az irányítópult hivatkozásának megjelenítése gombként
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Alapértelmezett/aktuális ért
 settings_contrast_level_navigation=Kontraszt szűrő
 settings_contrast_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=A néző színpaletta
 settings_cm_editor_palette=A kód kiemelése színpaletta
 
 theme_xhred_filemanager_context_select_all=Mindet kiválaszt

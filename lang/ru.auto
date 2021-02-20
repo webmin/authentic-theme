@@ -39,7 +39,6 @@ settings_hotkey_custom_8=Пользовательская ссылка <code>8</
 settings_hotkey_custom_9=Пользовательская ссылка <code>9</code>
 
 settings_navigation_color=Цветовая палитра
-settings_background_color=Цветовая палитра содержимого страницы
 settings_loader_top=Включить загрузчик прогресса страницы в верхней части экрана
 settings_loader_left=Включить спиннер для меню навигации
 settings_right_reload=Загрузить страницу по умолчанию при переключении вкладки
@@ -53,7 +52,6 @@ settings_right_grayscaled_table_icons=Иконки таблицы в града�
 
 settings_sysinfo_easypie_charts=Показать графики
 settings_sysinfo_theme_updates=Проверьте наличие обновлений Аутентичной темы
-settings_sysinfo_csf_updates=Проверьте наличие обновлений безопасности и межсетевого экрана ConfigServer
 settings_sysinfo_drive_status_on_new_line=Показывать состояние процессора и дисков в новой строке
 settings_sysinfo_link_mini=Показать ссылку на панель управления как кнопку
 
@@ -143,7 +141,6 @@ settings_brightness_level_navigation_description=Текущие значения
 settings_contrast_level_navigation=Контрастный фильтр
 settings_contrast_level_navigation_description=Текущие значения по умолчанию <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Цветовая палитра зрителя
 settings_cm_editor_palette=Кодовая подсветка цветовой палитры
 
 theme_xhred_filemanager_context_select_invert=Наоборот

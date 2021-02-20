@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Карыстальніцкая спасылка <code>8
 settings_hotkey_custom_9=Карыстальніцкая спасылка <code>9</code>
 
 settings_navigation_color=Каляровая палітра
-settings_background_color=Палітра колераў змесціва старонкі
 settings_loader_top=Уключыць загрузчык прасоўвання старонкі ўверсе экрана
 settings_loader_left=Уключыць спінер для навігацыйнага меню
 settings_right_reload=Загрузіць старонку па змаўчанні на пераключальнік табуляцыі
@@ -159,7 +158,6 @@ settings_hotkey_reload=Клавіша хуткага доступу для пе�
 
 settings_sysinfo_easypie_charts=Паказаць дыяграмы
 settings_sysinfo_theme_updates=Праверце сапраўдныя абнаўлення тэмы
-settings_sysinfo_csf_updates=Праверце абнаўлення бяспекі і брандмаўэра ConfigServer
 settings_sysinfo_drive_status_on_new_line=Пакажыце працэсар і стан дыскаў на кожным новым радку
 settings_sysinfo_link_mini=Паказваць спасылку на прыборнай панэлі як кнопку
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=/ Бягучыя значэнн
 settings_contrast_level_navigation=Кантрастны фільтр
 settings_contrast_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Колеравая палітра прагляду
 settings_cm_editor_palette=Кодавая палітра каляровай палітры
 
 theme_xhred_filemanager_context_select_all=Абраць усё

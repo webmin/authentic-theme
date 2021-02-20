@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Pasgemaakte skakel <code>8</code>
 settings_hotkey_custom_9=Pasgemaakte skakel <code>9</code>
 
 settings_navigation_color=Kleurpalet
-settings_background_color=Inhoudsbladsy-palet
 settings_loader_top=Aktiveer vorderingslaaier aan die bokant van die skerm
 settings_loader_left=Skakel spin vir die navigasiekieslys in
 settings_right_reload=Laai die standaardbladsy op die tabskakelaar
@@ -159,7 +158,6 @@ settings_hotkey_reload=Sneltoets vir bladsy herlaai
 
 settings_sysinfo_easypie_charts=Wys kaarte
 settings_sysinfo_theme_updates=Kyk vir outentieke tema-opdaterings
-settings_sysinfo_csf_updates=Kyk na opdaterings vir ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Toon CPU en dryfstatus elk op 'n nuwe reël
 settings_sysinfo_link_mini=Wys die skakel van die instrumentbord as knoppie
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Verstek/huidige waardes <code>1
 settings_contrast_level_navigation=Kontrasfilter
 settings_contrast_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Kyker se kleurpalet
 settings_cm_editor_palette=Kode-kleurkleurpalet
 
 theme_xhred_filemanager_context_select_all=Kies alles

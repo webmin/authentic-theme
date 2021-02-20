@@ -320,8 +320,17 @@ sub embed_overlay_postbody
 sub embed_settings
 {
 
-    my $global_config_file = get_tgconfig_file();
-    my $user_config_file   = get_tuconfig_file();
+    my $admin_def_config_file = get_taconfig_file();
+    my $global_config_file    = get_tgconfig_file();
+    my $user_config_file      = get_tuconfig_file();
+
+    # Embed admin defaults
+    if (-r $admin_def_config_file) {
+        $admin_def_config_file = read_file_contents($admin_def_config_file);
+        $admin_def_config_file =~ tr/\r\n/;/d;
+        $admin_def_config_file =~ s/\s*(.*?=)'([\d\.]+)'(;)\s*/$1$2$3/g;
+        print ' <script>' . $admin_def_config_file . '</script>' . "\n";
+    }
 
     # Embed global configuration
     if (-r $global_config_file) {
@@ -601,9 +610,10 @@ sub init_vars
     my %tconfig_local = settings("$config_directory/$current_theme/config");
     our %tconfig = (%tconfig, %tconfig_local);
 
-    our %theme_config = (settings("$root_directory/$current_theme/unauthenticated/js/defaults.js", "settings_"),
+    our %theme_config = (settings(get_tdconfig_file()),
+                         settings(get_taconfig_file()),
                          settings(get_tgconfig_file(), "settings_"),
-                         settings(get_tuconfig_file(),                               "settings_"));
+                         settings(get_tuconfig_file(), "settings_"));
 
     our %theme_text = (load_language($current_theme), %text);
 
@@ -1510,13 +1520,23 @@ sub get_fm_jailed_user
     return $jailed_user;
 }
 
+sub get_tdconfig_file
+{
+    return "$root_directory/$current_theme/unauthenticated/js/defaults.js";
+}
+
+sub get_taconfig_file
+{
+    return "$config_directory/$current_theme/defaults.js";
+}
+
 sub get_tgconfig_file
 {
     return "$config_directory/$current_theme/settings.js";
 }
 
 sub get_tuconfig_file
-{ 
+{
     my $oconfig = "$config_directory/$current_theme/settings-$remote_user";
     return -r $oconfig ? $oconfig : "$oconfig.js";
 }

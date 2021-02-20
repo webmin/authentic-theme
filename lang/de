@@ -122,7 +122,6 @@ settings_hotkey_custom_8=Benutzerdefinierter Link <code>8</code>
 settings_hotkey_custom_9=Benutzerdefinierter Link <code>9</code>
 
 settings_navigation_color=Color palette
-settings_background_color=Farbpalette für Inhalts Seite
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
 
@@ -156,7 +155,6 @@ settings_hotkey_reload=Schnellzugriffs Taste für neu Laden
 
 settings_sysinfo_easypie_charts=Diagramm anzeigen
 settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Design
-settings_sysinfo_csf_updates=Prüfe auf Update für Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Prozessor und Laufwerks Status auf eigener Zeile
 settings_sysinfo_link_mini=Link Dashboard als Knopf anzeigen
 
@@ -272,7 +270,6 @@ settings_brightness_level_navigation_description=Standard Wert/aktueller Wert: <
 settings_contrast_level_navigation=Kontrast Filter
 settings_contrast_level_navigation_description=Standard Wert/aktueller Wert: <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Farbpaletten angzeigen
 settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=Alles Auswählen

@@ -124,7 +124,6 @@ settings_hotkey_custom_8=<code>8</code> lotura pertsonalizatua
 settings_hotkey_custom_9=<code>9</code> lotura pertsonalizatua
 
 settings_navigation_color=Kolore paleta
-settings_background_color=Edukiaren orriaren paleta
 settings_loader_top=Gaitu orrialdearen aurrera kargatzailea pantailaren gainean
 settings_loader_left=Gaitu spinner nabigazio menua
 settings_right_reload=Kargatu lehenetsitako orria fitxa aldatzailean
@@ -159,7 +158,6 @@ settings_hotkey_reload=Orrialdea berriz kargatzeko laster-tekla
 
 settings_sysinfo_easypie_charts=Erakutsi diagramak
 settings_sysinfo_theme_updates=Egiaztatu benetako gaiaren eguneratzeak
-settings_sysinfo_csf_updates=Egiaztatu ConfigServer Security eta Firewall eguneratzeak
 settings_sysinfo_drive_status_on_new_line=Erakutsi CPU eta unitateen egoera lerro berrian
 settings_sysinfo_link_mini=Erakutsi arbelaren esteka botoia gisa
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Lehenetsia/uneko balioek <code>
 settings_contrast_level_navigation=Kontraste iragazkia
 settings_contrast_level_navigation_description=Lehenetsia/uneko balioek <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Ikuslearen kolore paleta
 settings_cm_editor_palette=Kodearen nabarmendu kolore-paleta
 
 theme_xhred_filemanager_context_select_all=Hautatu guztiak

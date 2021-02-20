@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Liên kết tùy chỉnh <code>8</code>
 settings_hotkey_custom_9=Liên kết tùy chỉnh <code>9</code>
 
 settings_navigation_color=Bảng màu
-settings_background_color=Bảng màu trang nội dung
 settings_loader_top=Cho phép trình tải tiến trình trang ở trên cùng của màn hình
 settings_loader_left=Bật spinner cho menu điều hướng
 settings_right_reload=Tải trang mặc định trên chuyển đổi tab
@@ -159,7 +158,6 @@ settings_hotkey_reload=Hotkey để tải lại trang
 
 settings_sysinfo_easypie_charts=Hiển thị biểu đồ
 settings_sysinfo_theme_updates=Kiểm tra cập nhật Theme xác thực
-settings_sysinfo_csf_updates=Kiểm tra các bản cập nhật Tường lửa & Bảo mật Cấu hình Máy chủ
 settings_sysinfo_drive_status_on_new_line=Hiển thị trạng thái CPU và ổ đĩa trên mỗi dòng mới
 settings_sysinfo_link_mini=Hiển thị liên kết bảng điều khiển dưới dạng nút
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Default/giá trị hiện tại
 settings_contrast_level_navigation=Bộ lọc tương phản
 settings_contrast_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Bảng màu người xem
 settings_cm_editor_palette=Bảng màu mã nổi bật
 
 theme_xhred_filemanager_context_select_all=Chọn tất cả

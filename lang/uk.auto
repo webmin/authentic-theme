@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Спеціальне посилання <code>8</code>
 settings_hotkey_custom_9=Спеціальне посилання <code>9</code>
 
 settings_navigation_color=Колірна палітра
-settings_background_color=Колірна палітра сторінки вмісту
 settings_loader_top=Увімкнути завантажувач прогресу сторінки вгорі екрана
 settings_loader_left=Увімкнути спінер для навігаційного меню
 settings_right_reload=Завантажте сторінку за замовчуванням на перемикач вкладки
@@ -159,7 +158,6 @@ settings_hotkey_reload=Клавіша швидкої клавіші для пе�
 
 settings_sysinfo_easypie_charts=Показати діаграми
 settings_sysinfo_theme_updates=Перевірте наявність оновлених тем
-settings_sysinfo_csf_updates=Перевірте наявність оновлень безпеки та брандмауера ConfigServer
 settings_sysinfo_drive_status_on_new_line=Показати стан процесора та дисків кожен на новому рядку
 settings_sysinfo_link_mini=Показати посилання на панелі інструментів
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=/ Поточні значенн
 settings_contrast_level_navigation=Контрастний фільтр
 settings_contrast_level_navigation_description=/ Поточні значення по замовчуванням <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Колірна палітра глядача
 settings_cm_editor_palette=Колірна палітра підсвічування коду
 
 theme_xhred_filemanager_context_select_all=Вибрати все

@@ -28,18 +28,16 @@ my @config_quick_access;
 # Format options for display and build quick access filter
 foreach my $sections (keys @settings) {
     foreach my $section ($settings[$sections]) {
-        for (my $i = 0; $i < scalar(@{ $section->[0]->{'data'} }) - 1; $i += 2) {
+        for (my $i = 0; $i < scalar(@{ $section->[0]->{'data'} }); $i++) {
             my @key_value_formated =
               theme_settings_format(@{ $section->[0]->{'data'} }[$i],
-                                    @{ $section->[0]->{'data'} }[$i + 1],
+                                    $theme_config{ @{ $section->[0]->{'data'} }[$i] },
                                     \@excluded_options);
             if (!$key_value_formated[0][0]) {
                 delete $section->[0]->{'data'}[$i];
-                delete $section->[0]->{'data'}[$i + 1];
                 next;
             }
-            $section->[0]->{'data'}[$i] = $key_value_formated[0][0];
-            $section->[0]->{'data'}[$i + 1] = $key_value_formated[0][1];
+            $section->[0]->{'data'}[$i] = [$key_value_formated[0][0], $key_value_formated[0][1]];
             $key_value_formated[0][0] =~ s/<div.*?>.*?<\/div>//gm;
             $key_value_formated[0][0] =~ s/<span.*?>.*?<\/span>//gm;
             $key_value_formated[0][0] =~ s/<sup.*?>.*?<\/sup>//gm;
@@ -80,7 +78,7 @@ if (@sections > 1) {
         $idx = 0 if ($idx >= @sections);
     }
     $in{'section'} = $sections[$idx]->[0];
-    
+
     print &ui_form_start("tconfig.cgi");
     print &ui_span_local($theme_text{'settings_config_configuration_category'} . ":", 'row-block-label') . "\n";
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
@@ -120,8 +118,8 @@ foreach my $s (@settings) {
         if ($s->[0]->{'desc'}) {
             print ui_table_row(undef, "<div class=\"table-cell-padded\">$s->[0]->{'desc'}</div>", 2);
         }
-        for (my $i = 0; $i < scalar(@{ $s->[0]->{'data'} }) - 1; $i += 2) {
-            print ui_table_row(@{ $s->[0]->{'data'} }[$i], @{ $s->[0]->{'data'} }[$i + 1]);
+        for (my $i = 0; $i < scalar(@{ $s->[0]->{'data'} }); $i++) {
+            print ui_table_row(@{ $s->[0]->{'data'} }[$i]->[0], @{ $s->[0]->{'data'} }[$i]->[1]);
         }
     }
 }

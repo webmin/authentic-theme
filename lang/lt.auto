@@ -124,7 +124,6 @@ settings_hotkey_custom_8=<code>8</code> pasirinktinė nuoroda
 settings_hotkey_custom_9=Pasirinkta nuoroda <code>9</code>
 
 settings_navigation_color=Spalvų paletė
-settings_background_color=Turinio puslapio spalvų paletė
 settings_loader_top=Ekrano viršuje įgalinkite puslapio eigos kaupiklį
 settings_loader_left=Įgalinti naršymo meniu suktuką
 settings_right_reload=Įkelkite numatytąjį puslapį į skirtuko jungiklį
@@ -159,7 +158,6 @@ settings_hotkey_reload=Spartusis klavišas puslapio perkėlimui
 
 settings_sysinfo_easypie_charts=Rodyti diagramas
 settings_sysinfo_theme_updates=Patikrinkite, ar nėra autentiškų temų atnaujinimų
-settings_sysinfo_csf_updates=Patikrinkite, ar nėra „ConfigServer“ saugos ir ugniasienės atnaujinimų
 settings_sysinfo_drive_status_on_new_line=Rodyti CPU ir kiekvieno disko būseną naujoje eilutėje
 settings_sysinfo_link_mini=Rodyti informacijos suvestinės nuorodą kaip mygtuką
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Numatytosios/srovės vertės <c
 settings_contrast_level_navigation=Kontrastinis filtras
 settings_contrast_level_navigation_description=Numatytosios/srovės vertės <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Žiūrėtojo spalvų paletė
 settings_cm_editor_palette=Kodo paryškinimo spalvų paletė
 
 theme_xhred_filemanager_context_select_all=Pasirinkti viską

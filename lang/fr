@@ -122,7 +122,6 @@ settings_hotkey_custom_8=Lien personnalisé <code>8</code>
 settings_hotkey_custom_9=Lien personnalisé <code>9</code>
 
 settings_navigation_color=Palette de couleurs
-settings_background_color=Palette de couleurs de la page de contenu
 settings_loader_top=Activer le chargeur de progression de page en haut de l'écran
 settings_loader_left=Activer le spinner pour le menu de navigation
 
@@ -156,7 +155,6 @@ settings_hotkey_reload=Raccourci pour le rechargement de la page
 
 settings_sysinfo_easypie_charts=Afficher les graphiques
 settings_sysinfo_theme_updates=Rechercher les mises à jour du thème authentique
-settings_sysinfo_csf_updates=Rechercher les mises à jour de ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Afficher l'état du processeur et des lecteurs sur une nouvelle ligne
 settings_sysinfo_link_mini=Afficher le lien du tableau de bord sous forme de bouton
 
@@ -272,7 +270,6 @@ settings_brightness_level_navigation_description=Valeurs par défaut/actuelles <
 settings_contrast_level_navigation=Filtre de contraste
 settings_contrast_level_navigation_description=Valeurs par défaut/actuelles <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Palette de couleurs du visualiseur
 settings_cm_editor_palette=Palette de couleurs de surbrillance du code
 
 theme_xhred_filemanager_context_select_all=Tout sélectionner

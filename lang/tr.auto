@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Özel bağlantı <code>8</code>
 settings_hotkey_custom_9=Özel bağlantı <code>9</code>
 
 settings_navigation_color=Renk paleti
-settings_background_color=İçerik sayfası renk paleti
 settings_loader_top=Ekranın üst kısmındaki sayfa ilerleme yükleyicisini etkinleştir
 settings_loader_left=Gezinme menüsü için çeviriciyi etkinleştir
 settings_right_reload=Varsayılan sayfayı sekme anahtarına yükle
@@ -159,7 +158,6 @@ settings_hotkey_reload=Sayfayı yeniden yüklemek için kısayol tuşu
 
 settings_sysinfo_easypie_charts=Grafikleri göster
 settings_sysinfo_theme_updates=Otantik Tema güncellemelerini kontrol etme
-settings_sysinfo_csf_updates=ConfigServer Güvenlik ve Güvenlik Duvarı güncellemelerini kontrol edin
 settings_sysinfo_drive_status_on_new_line=CPU ve sürücülerin durumunu yeni satırda göster
 settings_sysinfo_link_mini=Gösterge tablosu bağlantısını düğme olarak göster
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Standart/akım değerleri <code
 settings_contrast_level_navigation=Kontrast filtresi
 settings_contrast_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Görüntüleyici renk paleti
 settings_cm_editor_palette=Kod vurgulama renk paleti
 
 theme_xhred_filemanager_context_select_all=Hepsini seç

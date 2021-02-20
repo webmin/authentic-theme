@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Προσαρμοσμένος σύνδεσμος <code>8
 settings_hotkey_custom_9=Προσαρμοσμένος σύνδεσμος <code>9</code>
 
 settings_navigation_color=Παλέτα χρωμάτων
-settings_background_color=Παλέτα χρωμάτων σελίδας περιεχομένου
 settings_loader_top=Ενεργοποίηση του προγράμματος φόρτωσης προόδου σελίδας στο πάνω μέρος της οθόνης
 settings_loader_left=Ενεργοποίηση spinner για μενού πλοήγησης
 settings_right_reload=Φόρτωση προεπιλεγμένης σελίδας στο διακόπτη καρτέλας
@@ -159,7 +158,6 @@ settings_hotkey_reload=Hotkey για επαναφόρτωση σελίδας
 
 settings_sysinfo_easypie_charts=Εμφάνιση γραφημάτων
 settings_sysinfo_theme_updates=Ελέγξτε για αυθεντικές ενημερώσεις θέματος
-settings_sysinfo_csf_updates=Ελέγξτε για ενημερώσεις του ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Εμφάνιση καθεστώτος CPU και μονάδων δίσκου σε κάθε νέα γραμμή
 settings_sysinfo_link_mini=Εμφάνιση συνδέσμου πίνακα ελέγχου ως κουμπί
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Προεπιλεγμένη/τρ
 settings_contrast_level_navigation=Φίλτρο αντίθεσης
 settings_contrast_level_navigation_description=Προεπιλεγμένη/τρέχουσες τιμές <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Παλέτα χρωμάτων θεατή
 settings_cm_editor_palette=Παλέτα χρωμάτων επισήμανσης κώδικα
 
 theme_xhred_filemanager_context_select_all=Επιλογή όλων

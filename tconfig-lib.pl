@@ -14,32 +14,15 @@ sub theme_settings_raw
          {  'id'    => 's1',
             'title' => &theme_text('settings_global_general_options_title'),
             'data'  => [
-                'settings_right_default_tab_webmin',
-                (foreign_available("virtual-server") ? 'virtualmin' : '/'),
-
-                'settings_right_default_tab_usermin',
-                'mail',
-
-                'settings_webmin_default_module',
-                get_goto_module(),
-
-                'settings_right_virtualmin_default',
-                'sysinfo.cgi',
-
-                'settings_right_cloudmin_default',
-                'sysinfo.cgi',
-
-                'settings_right_reload',
-                'true',
-
-                'settings_document_title',
-                '1',
-
-                'settings_cm_editor_palette',
-                'monokai',
-
-                'settings_global_palette_unauthenticated',
-                'light',
+                       'settings_right_default_tab_webmin',
+                       'settings_right_default_tab_usermin',
+                       'settings_webmin_default_module',
+                       'settings_right_virtualmin_default',
+                       'settings_right_cloudmin_default',
+                       'settings_right_reload',
+                       'settings_document_title',
+                       'settings_cm_editor_palette',
+                       'settings_global_palette_unauthenticated',
             ]
          }
         ],
@@ -48,35 +31,16 @@ sub theme_settings_raw
          {  'id'    => 's2',
             'title' => &theme_text('settings_right_sysinfo_page_options'),
             'data'  => [
-                'settings_sysinfo_easypie_charts',
-                'true',
-
-                'settings_sysinfo_easypie_charts_size',
-                '172',
-
-                'settings_sysinfo_easypie_charts_width',
-                '2',
-
-                'settings_sysinfo_easypie_charts_scale',
-                '8',
-
-                'settings_sysinfo_hidden_panels_provisional',
-                '',
-
-                'settings_sysinfo_max_servers',
-                '10',
-
-                'settings_sysinfo_real_time_status',
-                'true',
-
-                'settings_sysinfo_real_time_status_disk',
-                'true',
-
-                'settings_sysinfo_real_time_stored',
-                'true',
-
-                'settings_sysinfo_real_time_stored_length',
-                '600',
+                       'settings_sysinfo_easypie_charts',
+                       'settings_sysinfo_easypie_charts_size',
+                       'settings_sysinfo_easypie_charts_width',
+                       'settings_sysinfo_easypie_charts_scale',
+                       'settings_sysinfo_hidden_panels_provisional',
+                       'settings_sysinfo_max_servers',
+                       'settings_sysinfo_real_time_status',
+                       'settings_sysinfo_real_time_status_disk',
+                       'settings_sysinfo_real_time_stored',
+                       'settings_sysinfo_real_time_stored_length',
             ]
          }
         ],
@@ -85,85 +49,32 @@ sub theme_settings_raw
          {  'id'    => 's3',
             'title' => &theme_text('settings_right_navigation_menu_options'),
             'data'  => [
-
-                'settings_navigation_color',
-                'blue',
-
-                'settings_grayscale_level_navigation',
-                '0',
-
-                'settings_sepia_level_navigation',
-                '0',
-
-                'settings_saturate_level_navigation',
-                '1',
-
-                'settings_hue_level_navigation',
-                '0',
-
-                'settings_invert_level_navigation',
-                '0',
-
-                'settings_brightness_level_navigation',
-                '1',
-
-                'settings_contrast_level_navigation',
-                '1',
-
-                'settings_navigation_always_collapse',
-                'false',
-
-                'settings_leftmenu_width',
-                '260',
-
-                'settings_switch_rdisplay',
-                'false',
-
-                'settings_leftmenu_section_hide_refresh_modules',
-                'false',
-
-                'settings_leftmenu_section_hide_unused_modules',
-                'false',
-
-                'settings_collapse_navigation_link',
-                'true',
-
-                'settings_sysinfo_link_mini',
-                'false',
-
-                'settings_show_night_mode_link',
-                'true',
-
-                'settings_show_terminal_link2',
-                'true',
-
-                'settings_favorites',
-                'true',
-
-                'settings_theme_options_button',
-                'true',
-
-                'settings_leftmenu_button_language',
-                'false',
-
-                'settings_leftmenu_button_refresh',
-                'false',
-
-                'settings_leftmenu_netdata',
-                'true',
-
-                'settings_leftmenu_netdata_link',
-                'http://' . get_system_hostname() . ':19999',
-
-                'settings_leftmenu_user_html',
-                '',
-
-                'settings_leftmenu_user_html_only_for_administrator',
-                'false',
-
-                'settings_leftmenu_custom_links',
-                '',
-
+                       'settings_navigation_color',
+                       'settings_grayscale_level_navigation',
+                       'settings_sepia_level_navigation',
+                       'settings_saturate_level_navigation',
+                       'settings_hue_level_navigation',
+                       'settings_invert_level_navigation',
+                       'settings_brightness_level_navigation',
+                       'settings_contrast_level_navigation',
+                       'settings_navigation_always_collapse',
+                       'settings_leftmenu_width',
+                       'settings_switch_rdisplay',
+                       'settings_leftmenu_section_hide_refresh_modules',
+                       'settings_leftmenu_section_hide_unused_modules',
+                       'settings_collapse_navigation_link',
+                       'settings_sysinfo_link_mini',
+                       'settings_show_night_mode_link',
+                       'settings_show_terminal_link2',
+                       'settings_favorites',
+                       'settings_theme_options_button',
+                       'settings_leftmenu_button_language',
+                       'settings_leftmenu_button_refresh',
+                       'settings_leftmenu_netdata',
+                       'settings_leftmenu_netdata_link',
+                       'settings_leftmenu_user_html',
+                       'settings_leftmenu_user_html_only_for_administrator',
+                       'settings_leftmenu_custom_links',
             ]
          }
         ],
@@ -172,20 +83,11 @@ sub theme_settings_raw
          {  'id'    => 's4',
             'title' => &theme_text('settings_right_notification_slider_options'),
             'data'  => [
-                'settings_side_slider_enabled',
-                'true',
-
-                'settings_side_slider_fixed',
-                'false',
-
-                'settings_side_slider_sysinfo_enabled',
-                'true',
-
-                'settings_side_slider_notifications_enabled',
-                'true',
-
-                'settings_side_slider_favorites_enabled',
-                'true',
+                       'settings_side_slider_enabled',
+                       'settings_side_slider_fixed',
+                       'settings_side_slider_sysinfo_enabled',
+                       'settings_side_slider_notifications_enabled',
+                       'settings_side_slider_favorites_enabled',
             ]
          }
         ],
@@ -194,20 +96,11 @@ sub theme_settings_raw
          {  'id'    => 's5',
             'title' => &theme_text('settings_right_table_options'),
             'data'  => [
-                'settings_right_hide_table_icons',
-                'false',
-
-                'settings_right_small_table_icons',
-                'false',
-
-                'settings_right_animate_table_icons',
-                'true',
-
-                'settings_right_grayscaled_table_icons',
-                'true',
-
-                'settings_table_init_datatables',
-                '20000',
+                       'settings_right_hide_table_icons',
+                       'settings_right_small_table_icons',
+                       'settings_right_animate_table_icons',
+                       'settings_right_grayscaled_table_icons',
+                       'settings_table_init_datatables',
             ]
          }
         ],
@@ -216,53 +109,22 @@ sub theme_settings_raw
          {  'id'    => 's6',
             'title' => &theme_text('settings_right_hotkey_options'),
             'data'  => [
-                'settings_hotkeys_active',
-                'true',
-
-                'settings_hotkey_toggle_modifier',
-                'altKey',
-
-                'settings_hotkey_toggle_key_webmin',
-                'w',
-
-                'settings_hotkey_toggle_key_virtualmin',
-                'v',
-
-                'settings_hotkey_toggle_key_cloudmin',
-                'c',
-
-                'settings_hotkey_toggle_key_usermin',
-                'u',
-
-                'settings_hotkey_toggle_key_webmail',
-                'm',
-
-                'settings_hotkey_shell2',
-                'k',
-
-                'settings_hotkey_sysinfo',
-                'i',
-
-                'settings_hotkey_toggle_slider',
-                'n',
-
-                'settings_hotkey_favorites',
-                'f',
-
-                'settings_hotkey_focus_search',
-                's',
-
-                'settings_hotkey_reload',
-                'r',
-
-                'settings_hotkey_navigation',
-                'a',
-
-                'settings_hotkey_slider',
-                'e',
-
-                'settings_hotkey_toggle_key_night_mode',
-                'l',
+                       'settings_hotkeys_active',
+                       'settings_hotkey_toggle_modifier',
+                       'settings_hotkey_toggle_key_webmin',
+                       'settings_hotkey_toggle_key_virtualmin',
+                       'settings_hotkey_toggle_key_cloudmin',
+                       'settings_hotkey_toggle_key_usermin',
+                       'settings_hotkey_toggle_key_webmail',
+                       'settings_hotkey_shell2',
+                       'settings_hotkey_sysinfo',
+                       'settings_hotkey_toggle_slider',
+                       'settings_hotkey_favorites',
+                       'settings_hotkey_focus_search',
+                       'settings_hotkey_reload',
+                       'settings_hotkey_navigation',
+                       'settings_hotkey_slider',
+                       'settings_hotkey_toggle_key_night_mode',
             ]
          }
         ],
@@ -272,32 +134,15 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_hotkey_custom_options'),
             'desc'  => &theme_text('settings_right_hotkey_custom_options_description'),
             'data'  => [
-                'settings_hotkey_custom_1',
-                '',
-
-                'settings_hotkey_custom_2',
-                '',
-
-                'settings_hotkey_custom_3',
-                '',
-
-                'settings_hotkey_custom_4',
-                '',
-
-                'settings_hotkey_custom_5',
-                '',
-
-                'settings_hotkey_custom_6',
-                '',
-
-                'settings_hotkey_custom_7',
-                '',
-
-                'settings_hotkey_custom_8',
-                '',
-
-                'settings_hotkey_custom_9',
-                '',
+                       'settings_hotkey_custom_1',
+                       'settings_hotkey_custom_2',
+                       'settings_hotkey_custom_3',
+                       'settings_hotkey_custom_4',
+                       'settings_hotkey_custom_5',
+                       'settings_hotkey_custom_6',
+                       'settings_hotkey_custom_7',
+                       'settings_hotkey_custom_8',
+                       'settings_hotkey_custom_9',
             ]
          }
         ],
@@ -305,16 +150,8 @@ sub theme_settings_raw
         [
          {  'id'    => 's8',
             'title' => &theme_text('settings_right_soft_updates_page_options'),
-            'data'  => [
-                'settings_sysinfo_theme_updates',
-                'false',
-
-                'settings_cache_interval',
-                '86400',
-
-                'settings_sysinfo_theme_updates_for_usermin',
-                'true'
-            ]
+            'data'  =>
+              ['settings_sysinfo_theme_updates', 'settings_cache_interval', 'settings_sysinfo_theme_updates_for_usermin',]
          }
         ]);
 }
@@ -336,6 +173,25 @@ sub theme_settings_filter
         !foreign_available("virtual-server"))
     {
         push(@theme_settings_filter, 'settings_right_default_tab_webmin', 'settings_right_reload');
+    }
+
+    # Assign default for options provided by the server side
+    else {
+        if (!$theme_config{'settings_right_default_tab_webmin'}) {
+            $theme_config{'settings_right_default_tab_webmin'} =
+              (foreign_available("virtual-server") ? 'virtualmin' : '/');
+        }
+    }
+
+    # Assign default for options provided by the server side
+    if (!$theme_config{'settings_webmin_default_module'}) {
+        $theme_config{'settings_webmin_default_module'} = get_goto_module();
+    }
+
+    # Assign default for options provided by the server side
+    if (!$theme_config{'settings_leftmenu_netdata_link'}) {
+        $theme_config{'settings_leftmenu_netdata_link'} =
+          ('//' . get_system_hostname() . ':19999');
     }
 
     # Exclude hidden panels if none
@@ -364,11 +220,6 @@ sub theme_settings_filter
     # Exclude list of settings for Webmail
     if (!get_usermin_data("mailbox")) {
         push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmail', 'settings_right_default_tab_usermin');
-    }
-
-    # Exclude list of settings for ConfigServer Security & Firewall
-    if (!&foreign_available("csf")) {
-        push(@theme_settings_filter, 'settings_sysinfo_csf_updates');
     }
 
     # Exclude Netdata link and default address
@@ -643,8 +494,6 @@ sub theme_settings_format
 
     } elsif ($k eq 'settings_navigation_color') {
         $v = settings_get_select_navigation_color($v, $k);
-    } elsif ($k eq 'settings_background_color') {
-        $v = settings_get_select_background_color($v, $k);
     } elsif ($k eq 'settings_cm_editor_palette') {
         $v = settings_get_select_editor_color($v, $k);
     } elsif ($k eq 'settings_global_palette_unauthenticated') {

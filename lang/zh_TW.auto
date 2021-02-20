@@ -124,7 +124,6 @@ settings_hotkey_custom_8=自定義鏈接<code>8</code>
 settings_hotkey_custom_9=自定義鏈接<code>9</code>
 
 settings_navigation_color=色彩調色板
-settings_background_color=內容頁面調色板
 settings_loader_top=在屏幕頂部啟用頁面進度加載器
 settings_loader_left=啟用微調器的導航菜單
 settings_right_reload=在選項卡開關上加載默認頁面
@@ -159,7 +158,6 @@ settings_hotkey_reload=頁面刷新熱鍵
 
 settings_sysinfo_easypie_charts=顯示圖表
 settings_sysinfo_theme_updates=檢查真實主題更新
-settings_sysinfo_csf_updates=檢查ConfigServer安全性和防火牆更新
 settings_sysinfo_drive_status_on_new_line=在新行中分別顯示CPU和驅動器狀態
 settings_sysinfo_link_mini=將儀表板鏈接顯示為按鈕
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=默認/電流值<code>1</code>/
 settings_contrast_level_navigation=對比濾鏡
 settings_contrast_level_navigation_description=默認/電流值<code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=查看器調色板
 settings_cm_editor_palette=代碼突出顯示調色板
 
 theme_xhred_filemanager_context_select_all=全選

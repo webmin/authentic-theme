@@ -43,7 +43,6 @@ settings_hotkey_custom_8=Niestandardowy link <code>8</code>
 settings_hotkey_custom_9=Niestandardowy link <code>9</code>
 
 settings_navigation_color=Paleta kolorów
-settings_background_color=Paleta kolorów strony treści
 settings_loader_top=Włącz moduł ładujący postęp strony na górze ekranu
 settings_loader_left=Włącz pokrętło w menu nawigacyjnym
 settings_right_reload=Załaduj domyślną stronę na przełączniku kart
@@ -78,7 +77,6 @@ settings_hotkey_reload=Skrót do przeładowania strony
 
 settings_sysinfo_easypie_charts=Pokaż wykresy
 settings_sysinfo_theme_updates=Sprawdź, czy są dostępne autentyczne motywy
-settings_sysinfo_csf_updates=Sprawdź aktualizacje zabezpieczeń i zapory sieciowej ConfigServer
 settings_sysinfo_drive_status_on_new_line=Pokaż status procesora i dysków w każdym nowym wierszu
 settings_sysinfo_link_mini=Pokaż łącze deski rozdzielczej jako przycisk
 
@@ -194,7 +192,6 @@ settings_brightness_level_navigation_description=Domyślne wartości prądu/<cod
 settings_contrast_level_navigation=Filtr kontrastu
 settings_contrast_level_navigation_description=Domyślne wartości prądu/<code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Paleta kolorów przeglądarki
 settings_cm_editor_palette=Paleta kolorów wyróżnienia kodu
 
 theme_xhred_filemanager_context_select_all=Zaznacz wszystko

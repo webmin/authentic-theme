@@ -122,7 +122,6 @@ settings_hotkey_custom_8=Link personalizzato <code>8</code>
 settings_hotkey_custom_9=Link personalizzato <code>9</code>
 
 settings_navigation_color=Color palette
-settings_background_color=Tavolozza colori dei contenuti della pagina
 settings_loader_top=Attiva la barra di caricamento della pagina nella parte superiore dello schermo
 settings_loader_left=Attiva spinner per il menu di navigazione
 
@@ -156,7 +155,6 @@ settings_hotkey_reload=Tasto di scelta rapida per Ricaricamento pagina
 
 settings_sysinfo_easypie_charts=Mostra grafici
 settings_sysinfo_theme_updates=Controlla aggiornamenti di Authentic Theme
-settings_sysinfo_csf_updates=Controlla aggiornamenti di ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=Visualizza stato CPU e dischi ognuno su una nuova riga
 settings_sysinfo_link_mini=Visualizza link dashboard come pulsante
 
@@ -272,7 +270,6 @@ settings_brightness_level_navigation_description=Per impostazione predefinita/at
 settings_contrast_level_navigation=Filtro contrasto
 settings_contrast_level_navigation_description=Per impostazione predefinita/attualmente vale <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Visualizzatore tavolozza colori
 settings_cm_editor_palette=Code highlight color palette
 
 theme_xhred_filemanager_context_select_all=Seleziona tutto

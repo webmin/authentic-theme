@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Персонализирана връзка <code>8</co
 settings_hotkey_custom_9=Персонализирана връзка <code>9</code>
 
 settings_navigation_color=Цветова палитра
-settings_background_color=Цветова палитра на страницата със съдържание
 settings_loader_top=Активирайте товарача за напредък на страницата в горната част на екрана
 settings_loader_left=Активиране на спинера за навигационното меню
 settings_right_reload=Заредете страницата по подразбиране в раздела за превключване
@@ -159,7 +158,6 @@ settings_hotkey_reload=Клавишна комбинация за презаре
 
 settings_sysinfo_easypie_charts=Показване на диаграми
 settings_sysinfo_theme_updates=Проверете за актуални актуализации на темата
-settings_sysinfo_csf_updates=Проверете за актуализации на защитата и защитната стена на ConfigServer
 settings_sysinfo_drive_status_on_new_line=Показване на състоянието на процесора и дисковете на всеки ред
 settings_sysinfo_link_mini=Показване на връзката на таблото за управление като бутон
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Подразбиране/тек
 settings_contrast_level_navigation=Контрастен филтър
 settings_contrast_level_navigation_description=Подразбиране/текущи стойности <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Цветова палитра на зрителя
 settings_cm_editor_palette=Цветна палитра с подчертаване на кода
 
 theme_xhred_filemanager_context_select_all=Избери всички

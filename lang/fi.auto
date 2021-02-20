@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Muokattu linkki <code>8</code>
 settings_hotkey_custom_9=Muokattu linkki <code>9</code>
 
 settings_navigation_color=Väripaletti
-settings_background_color=Sisältösivun värivalikoima
 settings_loader_top=Ota sivun edistymisen lataus käyttöön näytön yläreunaan
 settings_loader_left=Ota kehrä navigointivalikossa käyttöön
 settings_right_reload=Lataa oletussivu välilehden kytkimelle
@@ -159,7 +158,6 @@ settings_hotkey_reload=Pikanäppäin sivun lataamiseen
 
 settings_sysinfo_easypie_charts=Näytä kaaviot
 settings_sysinfo_theme_updates=Tarkista aitoja teemapäivityksiä
-settings_sysinfo_csf_updates=Tarkista, onko ConfigServer Security & Firewall -päivityksiä
 settings_sysinfo_drive_status_on_new_line=Näytä prosessori ja taajuusmuuttajan tila uudella rivillä
 settings_sysinfo_link_mini=Näytä kojetaulun linkki painikkeena
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Default/virta-arvot <code>1</co
 settings_contrast_level_navigation=Kontrasti suodatin
 settings_contrast_level_navigation_description=Default/virta-arvot <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Katsojan värivalikoima
 settings_cm_editor_palette=Koodin korostusvärivalikoima
 
 theme_xhred_filemanager_context_select_all=Valitse kaikki

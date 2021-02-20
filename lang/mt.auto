@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Link personalizzat <code>8</code>
 settings_hotkey_custom_9=Rabta apposta <code>9</code>
 
 settings_navigation_color=Paletta tal-kuluri
-settings_background_color=Paletta tal-kulur tal-paġna tal-kontenut
 settings_loader_top=Agħti l-loader tal-progress tal-paġna fuq il-parti ta 'fuq tal-iskrin
 settings_loader_left=Agħti spinner għall-menu tan-navigazzjoni
 settings_right_reload=Tagħbija paġna default fuq swiċċ tab
@@ -159,7 +158,6 @@ settings_hotkey_reload=Hotkey għal tagħbija mill-ġdid tal-paġna
 
 settings_sysinfo_easypie_charts=Uri ċ-ċarts
 settings_sysinfo_theme_updates=Iċċekkja għal aġġornamenti tat-Tema Awtentika
-settings_sysinfo_csf_updates=Iċċekkja għal aġġornamenti tas-Sigurtà u l-Firewall ConfigServer
 settings_sysinfo_drive_status_on_new_line=Uri l-istatus tas-CPU u drajv kull wieħed fuq linja ġdida
 settings_sysinfo_link_mini=Uri l-link tad-dashboard bħala buttuna
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Inadempjenza tal/valuri kurrent
 settings_contrast_level_navigation=Filtru tal-kuntrast
 settings_contrast_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Telespettatur tal-paletta tal-kuluri
 settings_cm_editor_palette=Kodiċi li jenfasizzaw paletta tal-kulur
 
 theme_xhred_filemanager_context_select_all=Agħżel kollox

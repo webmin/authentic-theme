@@ -124,7 +124,6 @@ settings_hotkey_custom_8=맞춤 링크 <code>8</code>
 settings_hotkey_custom_9=맞춤 링크 <code>9</code>
 
 settings_navigation_color=색상 팔레트
-settings_background_color=컨텐츠 페이지 컬러 팔레트
 settings_loader_top=화면 상단에 페이지 진행 로더 사용
 settings_loader_left=탐색 메뉴에 스피너 사용
 settings_right_reload=탭 스위치에 기본 페이지로드
@@ -159,7 +158,6 @@ settings_hotkey_reload=페이지 새로 고침을위한 단축키
 
 settings_sysinfo_easypie_charts=차트 표시
 settings_sysinfo_theme_updates=정통 테마 업데이트 확인
-settings_sysinfo_csf_updates=ConfigServer 보안 및 방화벽 업데이트 확인
 settings_sysinfo_drive_status_on_new_line=새 줄에 각각 CPU 및 드라이브 상태 표시
 settings_sysinfo_link_mini=대시 보드 링크를 버튼으로 표시
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=기본/전류 값 <code>1</code
 settings_contrast_level_navigation=대비 필터
 settings_contrast_level_navigation_description=기본/전류 값 <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=뷰어 색상 팔레트
 settings_cm_editor_palette=코드 하이라이트 색상 팔레트
 
 theme_xhred_filemanager_context_select_all=모두 선택

@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Custom link <code>8</code>
 settings_hotkey_custom_9=Custom link <code>9</code>
 
 settings_navigation_color=رنگین پیلیٹ
-settings_background_color=مواد کا صفحہ رنگ پیلیٹ
 settings_loader_top=اسکرین کے اوپری حصے میں پیج پروگریس لوڈر کو فعال کریں
 settings_loader_left=نیویگیشن مینو کیلئے اسپنر کو فعال کریں
 settings_right_reload=ٹیب سوئچ پر پہلے سے طے شدہ صفحہ لوڈ کریں
@@ -159,7 +158,6 @@ settings_hotkey_reload=صفحہ دوبارہ لوڈ کے لئے ہاٹکی
 
 settings_sysinfo_easypie_charts=چارٹ دکھائیں
 settings_sysinfo_theme_updates=مستند تھیم کی تازہ کاریوں کو چیک کریں
-settings_sysinfo_csf_updates=تشکیل سرور کی حفاظت اور فائر وال کی تازہ کاریوں کی جانچ کریں
 settings_sysinfo_drive_status_on_new_line=ہر ایک کو نئی لائن پر سی پی یو اور ڈرائیو کی حیثیت دکھائیں
 settings_sysinfo_link_mini=بٹن کے بطور ڈیش بورڈ لنک دکھائیں
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation=چمکنے والا فلٹر
 settings_brightness_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
 settings_contrast_level_navigation=اس کے برعکس فلٹر
 settings_contrast_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
-settings_cm_view_palette=ناظرین کا رنگ پیلیٹ
 settings_cm_editor_palette=کوڈ کو نمایاں کریں رنگ پیلیٹ
 
 theme_xhred_filemanager_context_select_all=تمام منتخب کریں

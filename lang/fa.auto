@@ -124,7 +124,6 @@ settings_hotkey_custom_8=پیوند سفارشی <code>8</code>
 settings_hotkey_custom_9=پیوند سفارشی <code>9</code>
 
 settings_navigation_color=پالت رنگ
-settings_background_color=پالت رنگ صفحه محتوا
 settings_loader_top=لودر پیشرفت صفحه را در بالای صفحه فعال کنید
 settings_loader_left=فعال کردن اسپینر برای منوی پیمایش
 settings_right_reload=صفحه پیش فرض را در سوئیچ تب بارگیری کنید
@@ -159,7 +158,6 @@ settings_hotkey_reload=کلید فوری برای بارگذاری مجدد صف
 
 settings_sysinfo_easypie_charts=نمایش نمودارها
 settings_sysinfo_theme_updates=به روزرسانی های موضوع معتبر را بررسی کنید
-settings_sysinfo_csf_updates=به روزرسانی های ConfigServer Security & Firewall را بررسی کنید
 settings_sysinfo_drive_status_on_new_line=نمایش CPU و وضعیت درایوهای هر یک در خط جدید
 settings_sysinfo_link_mini=نمایش لینک داشبورد به عنوان دکمه
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=پیش فرض/ارزش های �
 settings_contrast_level_navigation=فیلتر کنتراست
 settings_contrast_level_navigation_description=پیش فرض/ارزش های فعلی <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=پالت رنگ بیننده
 settings_cm_editor_palette=پالت رنگ برجسته کد
 
 theme_xhred_filemanager_context_select_all=انتخاب همه

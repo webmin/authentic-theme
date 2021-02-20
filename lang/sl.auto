@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Povezava po meri <code>8</code>
 settings_hotkey_custom_9=Povezava po meri <code>9</code>
 
 settings_navigation_color=Barvna paleta
-settings_background_color=Barvna paleta vsebinskih strani
 settings_loader_top=Omogoči nalagalec napredka strani na vrhu zaslona
 settings_loader_left=Omogoči vrtenje za navigacijski meni
 settings_right_reload=Naložite privzeto stran na stikalo za zavihek
@@ -159,7 +158,6 @@ settings_hotkey_reload=Hitra tipka za ponovno nalaganje strani
 
 settings_sysinfo_easypie_charts=Pokaži grafikone
 settings_sysinfo_theme_updates=Preverite pristnosti posodobitev teme
-settings_sysinfo_csf_updates=Preverite, ali obstajajo posodobitve za varnost in požarni zid ConfigServer
 settings_sysinfo_drive_status_on_new_line=Prikažite stanje CPU-ja in pogona v vsaki vrstici
 settings_sysinfo_link_mini=Pokaži povezavo na nadzorni plošči
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Default/trenutne vrednosti <cod
 settings_contrast_level_navigation=Kontrastni filter
 settings_contrast_level_navigation_description=Default/trenutne vrednosti <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Barvna paleta gledalcev
 settings_cm_editor_palette=Barvno paleto označite s kodo
 
 theme_xhred_filemanager_context_select_all=Izberi vse

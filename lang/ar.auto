@@ -124,7 +124,6 @@ settings_hotkey_custom_8=رابط مخصص <code>8</code>
 settings_hotkey_custom_9=رابط مخصص <code>9</code>
 
 settings_navigation_color=لوحة الألوان
-settings_background_color=لوحة ألوان صفحة المحتوى
 settings_loader_top=تفعيل أداة تحميل تقدم الصفحة أعلى الشاشة
 settings_loader_left=تمكين الدوار لقائمة التنقل
 settings_right_reload=تحميل الصفحة الافتراضية على مفتاح التبويب
@@ -159,7 +158,6 @@ settings_hotkey_reload=هوتكي لإعادة تحميل الصفحة
 
 settings_sysinfo_easypie_charts=إظهار الرسوم البيانية
 settings_sysinfo_theme_updates=تحقق من تحديثات السمة الأصلية
-settings_sysinfo_csf_updates=تحقق من تحديثات ConfigServer Security & Firewall
 settings_sysinfo_drive_status_on_new_line=إظهار حالة وحدة المعالجة المركزية ومحركات الأقراص في كل سطر جديد
 settings_sysinfo_link_mini=إظهار رابط لوحة المعلومات كزر
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=افتراضي/القيم ال�
 settings_contrast_level_navigation=مرشح التباين
 settings_contrast_level_navigation_description=افتراضي/القيم الحالية <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=لوحة ألوان العارض
 settings_cm_editor_palette=تسليط الضوء على لوحة الألوان
 
 theme_xhred_filemanager_context_select_all=اختر الكل

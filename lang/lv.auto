@@ -124,7 +124,6 @@ settings_hotkey_custom_8=Pielāgota saite <code>8</code>
 settings_hotkey_custom_9=Pielāgota saite <code>9</code>
 
 settings_navigation_color=Krāsu palete
-settings_background_color=Satura lapas krāsu palete
 settings_loader_top=Ekrāna augšdaļā iespējot lapas virzības augšupielādi
 settings_loader_left=Iespējot navigācijas izvēlnes vērpējus
 settings_right_reload=Ielādējiet noklusējuma lapu cilnes slēdzī
@@ -159,7 +158,6 @@ settings_hotkey_reload=Karstais taustiņš lapas atkārtotai ielādēšanai
 
 settings_sysinfo_easypie_charts=Rādīt diagrammas
 settings_sysinfo_theme_updates=Pārbaudiet, vai nav atjaunināti autentiski motīvi
-settings_sysinfo_csf_updates=Pārbaudiet ConfigServer drošības un ugunsmūra atjauninājumus
 settings_sysinfo_drive_status_on_new_line=Rādīt centrālo procesoru un piedziņas statusu katrā jaunā rindiņā
 settings_sysinfo_link_mini=Rādīt informācijas paneļa saiti kā pogu
 
@@ -275,7 +273,6 @@ settings_brightness_level_navigation_description=Default/pašreizējais vērtīb
 settings_contrast_level_navigation=Kontrasta filtrs
 settings_contrast_level_navigation_description=Default/pašreizējais vērtības <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_view_palette=Skatītāja krāsu palete
 settings_cm_editor_palette=Kods izceļ krāsu paleti
 
 theme_xhred_filemanager_context_select_all=Izvēlēties visus
