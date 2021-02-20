@@ -31,8 +31,7 @@ print '<li data-linked' .
   get_button_tooltip('theme_tooltip_night_mode', 'settings_hotkey_toggle_key_night_mode', 'auto top') .
   ' class="user-link palette-toggle cursor-pointer'
   .
-  ( ($theme_config{'settings_show_night_mode_link'} ne 'false' && $theme_config{'settings_background_color'} ne "nightRider")
-    ? '' :
+  ( $theme_config{'settings_show_night_mode_link'} ne 'false' ? '' :
       ' hidden'
   ) .
   '">';
@@ -61,9 +60,8 @@ if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne
 {
     print '<li data-linked class="user-link theme-options cursor-pointer">';
     my $tooltip = get_button_tooltip('settings_title', undef, 'auto top');
-    print '<a' .
-      $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} . '/tconfig.cgi" data-href="' .
-      $gconfig{'webprefix'} . '/tconfig.cgi"><i class="fa2 fa-fw fa2-palette"></i></a>';
+    print '<a' . $tooltip . ' class="menu-exclude-link" href="' . $gconfig{'webprefix'} .
+      '/tconfig.cgi" data-href="' . $gconfig{'webprefix'} . '/tconfig.cgi"><i class="fa2 fa-fw fa2-palette"></i></a>';
     print '</li>';
 }
 
@@ -98,13 +96,12 @@ if ($foreign_acl) {
       (get_env('base_remote_user') eq "root" ? "root" : $remote_user) . '"><i class="fa2 fa-fw ' .
       get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span>' . $remote_user . '</span></a>';
 } else {
-    print '<a ' . $user_title . ' class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' .
-      get_user_icon() . ' vertical-align-baseline"></i>&nbsp;<span class="pointer-events-none">' . $remote_user . '</span></a>';
+    print '<a ' . $user_title . ' class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' . get_user_icon() .
+      ' vertical-align-baseline"></i>&nbsp;<span class="pointer-events-none">' . $remote_user . '</span></a>';
 }
 print '</li>';
 
 &get_miniserv_config(\%miniserv);
-
 
 if ($miniserv{'logout'} &&
     !get_env('ssl_user') &&

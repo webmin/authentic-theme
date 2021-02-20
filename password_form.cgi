@@ -18,7 +18,7 @@ my $charset = &get_charset();
 &PrintHeader($charset);
 
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-bgs="' . $theme_config{'settings_background_color'} . '" class="session_login">', "\n";
+print '<html data-bgs="gainsboro" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";

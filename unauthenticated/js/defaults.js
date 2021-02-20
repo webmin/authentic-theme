@@ -2,7 +2,6 @@
 
 var
     // General options
-    settings_background_color = 'gainsboro',
     settings_right_default_tab_usermin = 'mail',
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'sysinfo.cgi',
