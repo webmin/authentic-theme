@@ -1,7 +1,7 @@
 // Theme options defaults
 
 var
-    // General options
+    // General defaults
     settings_right_default_tab_usermin = 'mail',
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'sysinfo.cgi',
