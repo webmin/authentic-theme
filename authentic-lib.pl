@@ -3124,6 +3124,7 @@ sub theme_config_save
     # global `settings.js` config file to affect all users
     if ($get_user_level eq '0') {
         delete @i{ grep(!/^settings_/, keys %i) };
+        delete @i{ grep(/_provisional$/, keys %i) };
         write_file(get_tgconfig_file(), \%i);
     }
 }

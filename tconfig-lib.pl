@@ -229,7 +229,7 @@ sub theme_settings_filter
 
     # Exclude Command Shell button if not available
     if (!foreign_available("shell")) {
-        push(@theme_settings_filter, 'settings_show_terminal_link2');
+        push(@theme_settings_filter, 'settings_show_terminal_link2', 'settings_hotkey_shell2');
     }
 
     # Limit to certain options for non privleged user
