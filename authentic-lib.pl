@@ -3125,6 +3125,7 @@ sub theme_config_save
     if ($get_user_level eq '0') {
         delete @i{ grep(!/^settings_/, keys %i) };
         delete @i{ grep(/_provisional$/, keys %i) };
+        delete @i{ grep(/hotkey_custom/, keys %i) };
         write_file(get_tgconfig_file(), \%i);
     }
 }
