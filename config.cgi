@@ -29,9 +29,9 @@ if (!-r $module_custom_config_file ||
     %access = &get_module_acl(undef, $module);
     ($access{'noconfig'}) &&
       &error($text{'config_ecannot'});
-    %module_info = &get_module_info($module);
 }
 
+%module_info = &get_module_info($module);
 if (-r &help_file($module, "config_intro")) {
     $help = ["config_intro", $module];
 } else {
@@ -82,7 +82,7 @@ if (@sections > 1) {
     # We have some sections .. show a menu to select
     print &ui_form_start("config.cgi");
     print &ui_hidden("module", $module), "\n";
-    print &ui_hidden("user",   $user),   "\n";
+    print &ui_hidden("user", $user ? 1 : 0), "\n";
     print &ui_span_local($theme_text{'settings_config_configuration_category'} . ":", 'row-block-label') . "\n";
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
     print &ui_button_group_local(
@@ -115,7 +115,7 @@ $sname = $theme_text{'theme_xhred_config_configurable_options'} if (!$sname);
 
 print &ui_form_start("config_save.cgi", "post");
 print &ui_hidden("module",  $module), "\n";
-print &ui_hidden("user",    $user),   "\n";
+print &ui_hidden("user",    $user ? 1 : 0), "\n";
 print &ui_hidden("section", $in{'section'}), "\n";
 if ($section) {
 
@@ -129,10 +129,13 @@ if ($section) {
 }
 print &ui_table_start($sname, "width=100%", 2);
 
-my $current_config = "$config_directory/$module/config$user";
-if (-r $module_custom_config_file && !-r $current_config) {
-    $current_config = "$root_directory/$current_theme/modules/$module/config";
+if (-r $module_custom_config_file) {
+    my $module_custom_config_default = "$root_directory/$current_theme/modules/$module/config";
+    if (-r $module_custom_config_default) {
+        &read_file($module_custom_config_default, \%newconfig);
+    }
 }
+my $current_config = "$config_directory/$module/config$user";
 &read_file($current_config, \%newconfig);
 
 my $func;
