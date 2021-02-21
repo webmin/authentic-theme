@@ -134,7 +134,7 @@ print '
             <td>
                 ' . $theme_footer[0] . '
             </td>
-            <td style="text-align: right;">
+            <td>
                 ' . $theme_footer[1] . '
             </td>
         </tr>

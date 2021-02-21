@@ -597,14 +597,14 @@ sub theme_footer
         </div>",
         ($get_user_level eq '0' ?
            "<div class=\"btn-group\">
-            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_styles\" href=\"$gconfig{'webprefix'}/settings-editor_read.cgi\">
-                <i class=\"fa fa-fw fa-file-code-o\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_theme_extensions'}
+            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-backgrounds.cgi\">
+                <i class=\"fa fa-fw fa-image\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_bgs'}
             </a>
             <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-logos.cgi\">
                 <i class=\"fa fa-fw fa-file-image-o\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_logos'}
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-backgrounds.cgi\">
-                <i class=\"fa fa-fw fa-image\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_bgs'}
+            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_styles\" href=\"$gconfig{'webprefix'}/settings-editor_read.cgi\">
+                <i class=\"fa fa-fw fa-file-code-o\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_theme_extensions'}
             </a>
         </div>" :
            ""
