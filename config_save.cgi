@@ -10,30 +10,34 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory);
+our (%text, %in, $root_directory, $config_directory, $remote_user, $current_theme);
 
 require("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
 
-my (%access,
-    %newconfig,
-    %oldconfig,
-    $module,
-    $module_dir,
-    $custom_config,
-    $config_post_save);
+my (%access, %newconfig, %oldconfig, $module, $module_dir, $module_custom_config_file, $user, $config_file,
+    $module_config_file, $custom_config, $config_post_save);
 
-$module = $in{'module'};
+$module                    = $in{'module'};
+$module_custom_config_file = "$root_directory/$current_theme/modules/$module/config.info";
+$user                      = $in{'user'} ? ".$remote_user" : undef;
+$config_file               = "$config_directory/$module/config$user";
+
 &error_setup($text{'config_err'});
 &foreign_available($module) || &error($text{'config_eaccess'});
-%access = &get_module_acl(undef, $module);
-$access{'noconfig'} && &error($text{'config_ecannot'});
+if (!-r $module_custom_config_file ||
+    (-r $module_custom_config_file && !$user))
+{
+    %access = &get_module_acl(undef, $module);
+    $access{'noconfig'} && &error($text{'config_ecannot'});
+}
 
 mkdir("$config_directory/$module", 0700);
-&lock_file("$config_directory/$module/config");
-&read_file("$config_directory/$module/config", \%newconfig);
+&lock_file($config_file);
+&read_file($config_file, \%newconfig);
 %oldconfig  = %newconfig;
 $module_dir = &module_root_directory($module);
+$module_config_file        = -r $module_custom_config_file ? $module_custom_config_file : "$module_dir/config.info";
 
 if (-r "$module_dir/config_info.pl") {
 
@@ -48,10 +52,10 @@ if (-r "$module_dir/config_info.pl") {
 if (!$custom_config) {
 
     # Use config.info to parse config inputs
-    &parse_config(\%newconfig, "$module_dir/config.info", $module, undef, $in{'section'});
+    &parse_config(\%newconfig, $module_config_file, $module, undef, $in{'section'});
 }
-&write_file("$config_directory/$module/config", \%newconfig);
-&unlock_file("$config_directory/$module/config");
+&write_file($config_file, \%newconfig);
+&unlock_file($config_file);
 
 # Call any post-config save function
 $config_post_save = "${module}::config_post_save";
@@ -67,7 +71,7 @@ if (&foreign_check("webmin")) {
 
 &webmin_log("_config_", undef, undef, \%in, $module);
 if ($in{'save_next'}) {
-    &redirect("config.cgi?module=$module&section=$in{'section_next'}");
+    &redirect("config.cgi?module=$module&section=$in{'section_next'}&user=$user");
 } else {
     &redirect("/$module/");
 }
