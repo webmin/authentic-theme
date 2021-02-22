@@ -29,7 +29,8 @@ $access{'noconfig'} && &error($text{'config_ecannot'});
 
 mkdir("$config_directory/$module", 0700);
 if (-r $module_custom_config_file) {
-    &load_module_preferences($module, \%oldconfig);
+    &load_module_preferences($module, \%newconfig);
+    %oldconfig = %newconfig;
     &parse_config(\%newconfig, $module_custom_config_file, $module, undef, $in{'section'});
     &save_module_preferences($module, \%newconfig);
 } else {
