@@ -76,7 +76,7 @@ if (&foreign_check("webmin")) {
 
 &webmin_log("_config_", undef, undef, \%in, $module);
 if ($in{'save_next'}) {
-    &redirect("config.cgi?module=$module&section=$in{'section_next'}&user=$in{'user'}");
+    &redirect("config.cgi?module=$module&section=$in{'section_next'}");
 } else {
     &redirect("/$module/");
 }
