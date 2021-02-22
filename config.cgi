@@ -16,21 +16,14 @@ require("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
 
 my (%access, %module_info, %info, %newconfig, @info_order, @sections, $help, $idx, $sname, $section, $module, $module_dir,
-    $module_custom_config_file, $module_config_file, $user, %moduletext);
+    $module_custom_config_file, $module_config_file, %moduletext);
 
 $module                    = $in{'module'} || $ARGV[0];
 $module_custom_config_file = "$root_directory/$current_theme/modules/$module/config.info";
-$user                      = $in{'user'} ? ".$remote_user" : undef;
 
 &foreign_available($module) || &error($text{'config_eaccess'});
-if (!-r $module_custom_config_file ||
-    (-r $module_custom_config_file && !$user))
-{
-    %access = &get_module_acl(undef, $module);
-    ($access{'noconfig'}) &&
-      &error($text{'config_ecannot'});
-}
-
+%access = &get_module_acl(undef, $module);
+$access{'noconfig'} && &error($text{'config_ecannot'});
 %module_info = &get_module_info($module);
 if (-r &help_file($module, "config_intro")) {
     $help = ["config_intro", $module];
@@ -82,7 +75,6 @@ if (@sections > 1) {
     # We have some sections .. show a menu to select
     print &ui_form_start("config.cgi");
     print &ui_hidden("module", $module), "\n";
-    print &ui_hidden("user", $user ? 1 : 0), "\n";
     print &ui_span_local($theme_text{'settings_config_configuration_category'} . ":", 'row-block-label') . "\n";
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
     print &ui_button_group_local(
@@ -114,8 +106,7 @@ if (@sections > 1) {
 $sname = $theme_text{'theme_xhred_config_configurable_options'} if (!$sname);
 
 print &ui_form_start("config_save.cgi", "post");
-print &ui_hidden("module",  $module), "\n";
-print &ui_hidden("user",    $user ? 1 : 0), "\n";
+print &ui_hidden("module", $module), "\n";
 print &ui_hidden("section", $in{'section'}), "\n";
 if ($section) {
 
@@ -129,14 +120,22 @@ if ($section) {
 }
 print &ui_table_start($sname, "width=100%", 2);
 
+# A rare and not recommened case to use, when
+# custom config needs to be used for a module
+# provided by theme itself
 if (-r $module_custom_config_file) {
-    my $module_custom_config_default = "$root_directory/$current_theme/modules/$module/config";
+    my $module_custom_config_default = "$root_directory/$current_theme/modules/$module/config.defaults";
     if (-r $module_custom_config_default) {
         &read_file($module_custom_config_default, \%newconfig);
     }
 }
-my $current_config = "$config_directory/$module/config$user";
+
+# Load module default config
+my $current_config = "$config_directory/$module/config";
 &read_file($current_config, \%newconfig);
+
+# Load user preferences
+&load_module_preferences($module, \%newconfig);
 
 my $func;
 if (-r "$module_dir/config_info.pl") {
