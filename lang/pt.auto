@@ -1113,3 +1113,5 @@ settings_right_hotkey_custom_options=Teclas de atalho de links personalizados
 settings_right_soft_updates_page_options=Atualizações de tema
 settings_global_general_options_title=Padrões gerais
 theme_error_access_not_root_user=Acesso negado: o usuário não tem o privilégio de editar esta seção
+settings_theme_config_admins_only_privileged=Proibir o acesso à configuração do tema para os usuários
+settings_theme_config_admins_only_privileged_description=Esta opção, se aplicada pelo administrador do servidor, ocultará a página de configuração do tema de usuários regulares não privilegiados. No entanto, esta opção não é recomendada para ser usada, pois os usuários regulares já terão acesso limitado à configuração do tema e só poderão alterar o conjunto mínimo de opções específicas do usuário

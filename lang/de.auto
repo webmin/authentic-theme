@@ -78,3 +78,5 @@ settings_right_hotkey_custom_options=Hotkeys für benutzerdefinierte Links
 settings_right_soft_updates_page_options=Themenaktualisierungen
 settings_global_general_options_title=Allgemeine Standardeinstellungen
 theme_error_access_not_root_user=Zugriff verweigert: Der Benutzer ist nicht berechtigt, diesen Abschnitt zu bearbeiten
+settings_theme_config_admins_only_privileged=Verbieten Sie Benutzern den Zugriff auf die Theme-Konfiguration
+settings_theme_config_admins_only_privileged_description=Wenn diese Option vom Serveradministrator erzwungen wird, wird die Themenkonfigurationsseite vor regulären, nicht privilegierten Benutzern ausgeblendet. Es wird jedoch nicht empfohlen, diese Option zu verwenden, da reguläre Benutzer bereits eingeschränkten Zugriff auf die Designkonfiguration haben und nur minimale benutzerspezifische Optionen ändern können

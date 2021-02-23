@@ -1196,3 +1196,5 @@ settings_right_hotkey_custom_options=مفاتيح التشغيل السريع ل
 settings_right_soft_updates_page_options=تحديثات الموضوع
 settings_global_general_options_title=الافتراضات العامة
 theme_error_access_not_root_user=الوصول مرفوض: المستخدم ليس له امتياز لتحرير هذا القسم
+settings_theme_config_admins_only_privileged=منع الوصول إلى موضوع التكوين للمستخدمين
+settings_theme_config_admins_only_privileged_description=سيخفي هذا الخيار ، إذا فرضه مسؤول الخادم ، صفحة تكوين السمة عن المستخدمين العاديين الذين لا يتمتعون بامتيازات. ومع ذلك ، لا يوصى باستخدام هذا الخيار ، حيث سيكون لدى المستخدمين العاديين بالفعل وصول محدود إلى تكوين السمة ، وسيكونون قادرين فقط على تغيير الحد الأدنى من مجموعة الخيارات المحددة للمستخدم
