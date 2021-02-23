@@ -13,7 +13,7 @@
 // Stats module
 const stats = {
     general: {
-        timeout: 1000,
+        timeout: settings_sysinfo_query_timeout,
         stopped: 1,
         killed: 0,
         error: 0,
