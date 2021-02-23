@@ -1,12 +1,16 @@
 ## Changelog
 
-#### Version 19.71-RC2 (February 20, 2021)
+#### Version 19.71 (February 24, 2021)
+* Add ability to hide and reorder panels on Dashboard
 * Add ability to use server side generated passwords [forum.virtualmin.com/t/108121](https://forum.virtualmin.com/t/cant-find-increasing-password-length-settings-anymore/108121)
-* Add ability to hide and reorder panels on the Dashboard
-* Add better error handing for pages with SSL certificate errors [forum.virtualmin.com/t/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
+* Add better error handling for pages with SSL certificate errors [forum.virtualmin.com/t/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
 * Add reworked theme configuration page
-* Fix to prevent stats collection on the background if browser tab is not focused
-* Fix expired certificate link to change left menu accordingly
+* Add reworked File Manager configuration page
+* Add initial ACLs listing support in File Manager
+* Fiх troublesome bug causing servers overload [@a8c894b](https://github.com/authentic-theme/authentic-theme/commit/a8c894bc82a81b92d9e71a2ca6a1ef8f25c271bd)
+* Fix navigation menu detections in Virtualmin for some pages
+* Fix to better detect editor highlight modes
+* Fix correctly printing very first portion of progressive output
 
 #### Version 19.70 (January 17, 2021)
 * Add ability to preview any file in File Manager
