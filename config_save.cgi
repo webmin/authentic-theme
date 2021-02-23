@@ -40,7 +40,7 @@ if (-r $module_custom_config_file) {
 } else {
     &lock_file($config_file);
     &read_file($config_file, \%newconfig);
-    %oldconfig = %newconfig;
+    %oldconfig  = %newconfig;
     $module_dir = &module_root_directory($module);
     if (-r "$module_dir/config_info.pl") {
 
@@ -76,7 +76,10 @@ if (&foreign_check("webmin")) {
 
 &webmin_log("_config_", undef, undef, \%in, $module);
 if ($in{'save_next'}) {
-    &redirect("config.cgi?module=$module&section=$in{'section_next'}");
+
+    # Used to return to the current section if needed W00900XXX
+    my $section_next = $in{'section_curr'} || $in{'section_next'};
+    &redirect("config.cgi?module=$module&section=$section_next");
 } else {
     &redirect("/$module/");
 }
