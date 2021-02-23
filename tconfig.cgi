@@ -42,6 +42,7 @@ foreach my $sections (keys @settings) {
             $key_value_formated[0][0] =~ s/<span.*?>.*?<\/span>//gm;
             $key_value_formated[0][0] =~ s/<sup.*?>.*?<\/sup>//gm;
             $key_value_formated[0][0] =~ s/<code>(.*?)<\/code>.*/$1/;
+            $key_value_formated[0][0] = entities_to_ascii($key_value_formated[0][0]);
             push(@config_quick_access,
                  {  'value'   => $key_value_formated[0][0],
                     'section' => $section->[0]->{'id'},
