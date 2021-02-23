@@ -89,6 +89,11 @@ const stats = {
                     url: `${this.extend.prefix}/stats.cgi?xhr-stats=general${extra}`,
                     error: function(xhr) {
 
+                        // Abort is not an error, don't retry
+                        if (xhr.statusText === 'abort') {
+                            return
+                        }
+
                         // Set error counter
                         this.error++;
 
@@ -101,7 +106,7 @@ const stats = {
                         // Retry again
                         !this.requery && (this.requery = setTimeout(() => {
                             this.stopped = 1, this.requery = 0, this.query();
-                        }, (this.timeout * 3)));
+                        }, (this.timeout * 6)));
                     },
                     success: function(data) {
 
@@ -310,22 +315,20 @@ const stats = {
                     })
                 }
             });
-            setTimeout(() => {
-                this.extend.state() && this.query();
-            }, 200);
+            this.extend.state() && this.query();
         },
 
         // Stop querying
         disable: function() {
             let abort = this.call.abort;
 
-            typeof abort === "function" && (abort.call(), this.stopped = 0);
-
-            this.killed = 1;
-
-            setTimeout(() => {
-                this.stopped = 1, this.call = {};
-            }, (this.timeout + 2));
+            typeof abort === "function" &&
+                (
+                    abort.call(),
+                    this.killed = 1,
+                    this.stopped = 1,
+                    this.call = {}
+                );
         },
 
         // Check to enable stats after stop
@@ -336,4 +339,3 @@ const stats = {
         }
     }
 }
-
