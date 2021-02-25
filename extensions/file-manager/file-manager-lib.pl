@@ -1065,21 +1065,27 @@ sub get_tree
     my $df = int($d);
     my %r;
     my @r;
-    my @ap          = @allowed_paths;
-    my $filter_root = scalar(@ap) > 1;
+    my @ap = @allowed_paths;
+    my $fr = scalar(@ap) > 1;
+    my $pf = ($p || ($fr ? "/" : $ap[0]));
 
     my $wanted = sub {
         my $td = $File::Find::name;
         if (-d $td && !-l $td) {
-            $td =~ s|^\Q$p\E/?||;
+            my $dc = $td =~ tr[/][];
+            if ($fr && !(grep {$_ =~ /^$td/} @ap)) {
+                return;
+            } elsif ($e && $pf eq '/' && $dc == 1) {
+                if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
+                    return;
+                }
+            }
+            $td =~ s|^\Q$pf\E/?||;
             if ($r{$td} || !$td) {
                 return;
             }
-            if ($filter_root && !grep(/$td/, @ap)) {
-                return;
-            }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
-            my $pp = $p ne '/' ? $p : undef;
+            my $pp = $pf ne '/' ? $pf : undef;
             my $c  = $r{$td} =
               { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
             defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
@@ -1087,15 +1093,10 @@ sub get_tree
     };
     my $preprocess = sub {
         my $td = $File::Find::name;
-        my $d  = $td =~ tr[/][];
-        if ($e && $p eq "/" && $d == 1) {
-            if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
-                return;
-            }
-        }
+        my $dc = $td =~ tr[/][];
         my $dd = ($df > 0 ? ($df + 1) : 0);
         if ($dd) {
-            if ($d < $dd) {
+            if ($dc < $dd) {
                 return sort {"\L$a" cmp "\L$b"} @_;
             }
             return;
@@ -1106,7 +1107,7 @@ sub get_tree
          {  wanted     => $wanted,
             preprocess => $preprocess
          },
-         $p);
+         $pf);
     return \@r;
 }
 

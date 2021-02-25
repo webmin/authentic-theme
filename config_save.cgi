@@ -25,7 +25,9 @@ $config_file               = "$config_directory/$module/config";
 &error_setup($text{'config_err'});
 &foreign_available($module) || &error($text{'config_eaccess'});
 %access = &get_module_acl(undef, $module);
-$access{'noconfig'} && &error($text{'config_ecannot'});
+if (!-r $module_custom_config_file) {
+    $access{'noconfig'} && &error($text{'config_ecannot'});
+}
 
 mkdir("$config_directory/$module", 0700);
 if (-r $module_custom_config_file) {

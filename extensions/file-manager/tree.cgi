@@ -18,6 +18,4 @@ unless (opendir(DIR, $cwd)) {
     fatal_errors("$text{'theme_xhred_global_error'}: [tt]`$cwd`[/tt]- $!.");
     exit;
 }
-
-my $tpath = ($in{'cpt'} ? $in{'cpt'} : scalar(@allowed_paths) > 1 ? '/' : $allowed_paths[0]);
-print_json(get_tree($tpath, $in{'d'}, $in{'e'}));
+print_json(get_tree($in{'cpt'}, $in{'d'}, $in{'e'}));

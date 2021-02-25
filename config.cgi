@@ -23,7 +23,9 @@ $module_custom_config_file = "$root_directory/$current_theme/modules/$module/con
 
 &foreign_available($module) || &error($text{'config_eaccess'});
 %access = &get_module_acl(undef, $module);
-$access{'noconfig'} && &error($text{'config_ecannot'});
+if (!-r $module_custom_config_file) {
+    $access{'noconfig'} && &error($text{'config_ecannot'});
+}
 %module_info = &get_module_info($module);
 if (-r &help_file($module, "config_intro")) {
     $help = ["config_intro", $module];
