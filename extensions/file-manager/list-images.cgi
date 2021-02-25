@@ -74,7 +74,7 @@ if (!$files_all) {
 }
 
 # Leave only allowed
-if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
+if (test_allowed_paths()) {
     my @tmp_list;
     for $path (@allowed_paths) {
         my $slashed = $path;

@@ -19,5 +19,5 @@ unless (opendir(DIR, $cwd)) {
     exit;
 }
 
-my $tpath = ($in{'cpt'} ? $in{'cpt'} : $allowed_paths[0]);
+my $tpath = ($in{'cpt'} ? $in{'cpt'} : scalar(@allowed_paths) > 1 ? '/' : $allowed_paths[0]);
 print_json(get_tree($tpath, $in{'d'}, $in{'e'}));

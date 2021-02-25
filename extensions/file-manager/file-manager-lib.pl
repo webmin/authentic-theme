@@ -666,7 +666,7 @@ sub print_content
     }
 
     # Filter out not allowed entries
-    if ($remote_user_info[0] ne 'root' && $allowed_paths[0] ne '$ROOT') {
+    if (test_allowed_paths()) {
 
         # Leave only allowed
         my @tmp_list;
@@ -1065,12 +1065,17 @@ sub get_tree
     my $df = int($d);
     my %r;
     my @r;
+    my @ap          = @allowed_paths;
+    my $filter_root = scalar(@ap) > 1;
 
     my $wanted = sub {
         my $td = $File::Find::name;
         if (-d $td && !-l $td) {
             $td =~ s|^\Q$p\E/?||;
             if ($r{$td} || !$td) {
+                return;
+            }
+            if ($filter_root && !grep(/$td/, @ap)) {
                 return;
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
