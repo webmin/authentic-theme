@@ -1073,7 +1073,7 @@ sub get_tree
         my $td = $File::Find::name;
         if (-d $td && !-l $td) {
             my $dc = $td =~ tr[/][];
-            if ($fr && !(grep {$_ =~ /^$td/} @ap)) {
+            if ($fr && !(grep {$td =~ /^\Q$_\E/} @ap)) {
                 return;
             } elsif ($e && $pf eq '/' && $dc == 1) {
                 if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
