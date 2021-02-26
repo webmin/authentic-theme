@@ -1077,6 +1077,9 @@ sub get_tree
         if (-d $td && !-l $td) {
             my ($ix) = grep {$af[$_] eq $td} (0 .. @af - 1);
             $ic = $ix if (defined($ix));
+            if (!grep {$af[$ic] =~ /^\Q$_\E/} @ap) {
+                return;
+            }
             my $dc = $td =~ tr[/][];
             if ($e && $af[$ic] eq '/' && $dc == 1) {
                 if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
