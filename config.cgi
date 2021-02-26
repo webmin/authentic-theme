@@ -121,9 +121,8 @@ if ($section) {
 }
 print &ui_table_start($sname, "width=100%", 2);
 
-# A rare and not recommened case to use, when
-# custom config needs to be used for a module
-# provided by theme itself
+# A case when a custom default config needs to be
+# used for a module provided by the theme itself
 if (-r $module_custom_config_file) {
     my $module_custom_config_default = "$root_directory/$current_theme/modules/$module/config.defaults";
     if (-r $module_custom_config_default) {
