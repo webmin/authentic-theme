@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Nuqqasijiet ġenerali
 theme_error_access_not_root_user=Aċċess miċħud: L-utent mhux privileġġjat li jeditja din it-taqsima
 settings_theme_config_admins_only_privileged=Ipprojbixxi l-aċċess għall-konfigurazzjoni tat-tema għall-utenti
 settings_theme_config_admins_only_privileged_description=Din l-għażla, jekk infurzata mill-amministratur tas-server, taħbi l-paġna tal-konfigurazzjoni tat-tema minn utenti regolari u mhux privileġġati. Madankollu, din l-għażla mhix irrakkomandata li tintuża, minħabba li l-utenti regolari diġà se jkollhom aċċess limitat għall-konfigurazzjoni tat-tema, u se jkunu jistgħu jibdlu biss sett minimu ta 'għażliet speċifiċi għall-utent.
+
+#19.72
+theme_xhred_global_prefs=Preferenzi
+mconfig_eaccess=Dan il-modulu ma jistax jiġi aċċessat
+mconfig_ecannot=M'hemm l-ebda fajl ta 'konfigurazzjoni tad-dwana misjub għal dan il-modulu

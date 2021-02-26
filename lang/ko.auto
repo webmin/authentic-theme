@@ -1198,3 +1198,8 @@ settings_global_general_options_title=일반 기본값
 theme_error_access_not_root_user=액세스 거부 : 사용자는이 섹션을 편집 할 권한이 없습니다.
 settings_theme_config_admins_only_privileged=사용자의 테마 구성에 대한 액세스 금지
 settings_theme_config_admins_only_privileged_description=이 옵션은 서버 관리자가 시행하는 경우 권한이없는 일반 사용자에게 테마 구성 페이지를 숨 깁니다. 그러나이 옵션은 사용하지 않는 것이 좋습니다. 일반 사용자는 이미 테마 구성에 대한 액세스가 제한되어 있고 사용자 별 옵션의 최소 집합 만 변경할 수 있기 때문입니다.
+
+#19.72
+theme_xhred_global_prefs=환경 설정
+mconfig_eaccess=이 모듈에 액세스 할 수 없습니다.
+mconfig_ecannot=이 모듈에 대한 사용자 정의 구성 파일이 없습니다.

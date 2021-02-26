@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Mặc định chung
 theme_error_access_not_root_user=Quyền truy cập bị từ chối: Người dùng không có đặc quyền chỉnh sửa phần này
 settings_theme_config_admins_only_privileged=Cấm truy cập vào cấu hình chủ đề cho người dùng
 settings_theme_config_admins_only_privileged_description=Tùy chọn này, nếu được quản trị viên máy chủ thực thi, sẽ ẩn trang cấu hình chủ đề khỏi người dùng thông thường, không có đặc quyền. Tuy nhiên, tùy chọn này không được khuyến khích sử dụng vì người dùng thông thường đã có quyền truy cập hạn chế vào cấu hình chủ đề và sẽ chỉ có thể thay đổi tập hợp tối thiểu các tùy chọn dành riêng cho người dùng
+
+#19.72
+theme_xhred_global_prefs=Sở thích
+mconfig_eaccess=Không thể truy cập mô-đun này
+mconfig_ecannot=Không có tệp cấu hình tùy chỉnh nào được tìm thấy cho mô-đun này

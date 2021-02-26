@@ -1253,3 +1253,9 @@ settings_global_general_options_title=General defaults
 theme_error_access_not_root_user=Access denied: User is not privileged to edit this section
 settings_theme_config_admins_only_privileged=Forbid access to theme config for users
 settings_theme_config_admins_only_privileged_description=This option, if enforced by the server administrator, will hide the theme configuration page from regular, non-privileged users. However, this option is not recommended to be used, as regular users will already have limited access to theme configuration, and will only be able to change minimal set of user specific options
+
+
+#19.72
+theme_xhred_global_prefs=Preferences
+mconfig_eaccess=This module cannot be accessed
+mconfig_ecannot=There is no custom configuration file found for this module

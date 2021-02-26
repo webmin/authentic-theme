@@ -1198,3 +1198,8 @@ settings_global_general_options_title=通用默認值
 theme_error_access_not_root_user=訪問被拒絕：用戶無權編輯此部分
 settings_theme_config_admins_only_privileged=禁止用戶訪問主題配置
 settings_theme_config_admins_only_privileged_description=如果由服務器管理員強制實施，則此選項將對常規非特權用戶隱藏主題配置頁面。但是，不建議使用此選項，因為普通用戶對主題配置的訪問已受到限制，並且只能更改最少的一組用戶特定選項
+
+#19.72
+theme_xhred_global_prefs=優先
+mconfig_eaccess=無法訪問該模塊
+mconfig_ecannot=找不到此模塊的自定義配置文件

@@ -28,3 +28,8 @@ settings_global_general_options_title=Impostazioni predefinite generali
 theme_error_access_not_root_user=Accesso negato: l'utente non dispone dei privilegi per modificare questa sezione
 settings_theme_config_admins_only_privileged=Vieta l'accesso alla configurazione del tema per gli utenti
 settings_theme_config_admins_only_privileged_description=Questa opzione, se applicata dall'amministratore del server, nasconderà la pagina di configurazione del tema agli utenti normali e non privilegiati. Tuttavia, questa opzione non è consigliata, poiché gli utenti regolari avranno già un accesso limitato alla configurazione del tema e potranno modificare solo un insieme minimo di opzioni specifiche dell'utente
+
+#19.72
+theme_xhred_global_prefs=Preferenze
+mconfig_eaccess=Questo modulo non è accessibile
+mconfig_ecannot=Non è stato trovato alcun file di configurazione personalizzato per questo modulo

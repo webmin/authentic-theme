@@ -170,3 +170,8 @@ settings_global_general_options_title=Valori implicite generale
 theme_error_access_not_root_user=Acces refuzat: utilizatorul nu are privilegiul de a edita această secțiune
 settings_theme_config_admins_only_privileged=Interzice accesul la configurarea temei pentru utilizatori
 settings_theme_config_admins_only_privileged_description=Această opțiune, dacă este aplicată de administratorul serverului, va ascunde pagina de configurare a temei de la utilizatorii obișnuiți, fără privilegii. Cu toate acestea, nu este recomandată utilizarea acestei opțiuni, deoarece utilizatorii obișnuiți vor avea deja acces limitat la configurația temei și vor putea modifica doar setul minim de opțiuni specifice utilizatorului.
+
+#19.72
+theme_xhred_global_prefs=Preferințe
+mconfig_eaccess=Acest modul nu poate fi accesat
+mconfig_ecannot=Nu a fost găsit niciun fișier de configurare personalizat pentru acest modul

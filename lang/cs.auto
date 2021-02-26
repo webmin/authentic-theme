@@ -1033,3 +1033,8 @@ settings_global_general_options_title=Obecná výchozí nastavení
 theme_error_access_not_root_user=Přístup odepřen: Uživatel nemá oprávnění upravovat tuto sekci
 settings_theme_config_admins_only_privileged=Zakázat uživatelům přístup ke konfiguraci motivu
 settings_theme_config_admins_only_privileged_description=Pokud tato možnost vynutí administrátor serveru, skryje stránku konfigurace motivu před běžnými, neprivilegovanými uživateli. Tuto možnost se však nedoporučuje používat, protože běžní uživatelé již budou mít omezený přístup ke konfiguraci motivu a budou moci změnit pouze minimální sadu konkrétních možností uživatele.
+
+#19.72
+theme_xhred_global_prefs=Předvolby
+mconfig_eaccess=K tomuto modulu není přístup
+mconfig_ecannot=Pro tento modul nebyl nalezen žádný vlastní konfigurační soubor

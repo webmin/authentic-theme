@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Genel varsayılanlar
 theme_error_access_not_root_user=Erişim reddedildi: Kullanıcı bu bölümü düzenleme ayrıcalığına sahip değil
 settings_theme_config_admins_only_privileged=Kullanıcılar için tema yapılandırmasına erişimi yasaklayın
 settings_theme_config_admins_only_privileged_description=Bu seçenek, sunucu yöneticisi tarafından zorlanırsa, tema yapılandırma sayfasını normal, ayrıcalıklı olmayan kullanıcılardan gizleyecektir. Ancak, normal kullanıcılar zaten tema yapılandırmasına sınırlı erişime sahip olacağından ve yalnızca minimum kullanıcıya özgü seçenekleri değiştirebileceğinden bu seçeneğin kullanılması önerilmez
+
+#19.72
+theme_xhred_global_prefs=Tercihler
+mconfig_eaccess=Bu modüle erişilemez
+mconfig_ecannot=Bu modül için özel bir yapılandırma dosyası bulunamadı

@@ -10,32 +10,42 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, $remote_user, $current_theme, %theme_text);
+our (%text, %in, $root_directory, $config_directory, %theme_text);
 
 require("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
 
-my (%access, %module_info, %info, %newconfig, @info_order, @sections, $help, $idx, $sname, $section, $module, $module_dir,
-    $module_custom_config_file, $module_config_file, %moduletext);
+my (%access,
+    %module_info,
+    %info,
+    %newconfig,
+    @info_order,
+    @sections,
+    $help,
+    $idx,
+    $sname,
+    $section,
+    $module,
+    $module_dir,
+    %moduletext);
 
-$module                    = $in{'module'} || $ARGV[0];
-$module_custom_config_file = "$root_directory/$current_theme/modules/$module/config.info";
-
+$module = $in{'module'}     || $ARGV[0];
 &foreign_available($module) || &error($text{'config_eaccess'});
 %access = &get_module_acl(undef, $module);
-$access{'noconfig'} && &error($text{'config_ecannot'});
+$access{'noconfig'} &&
+  &error($text{'config_ecannot'});
 %module_info = &get_module_info($module);
+
 if (-r &help_file($module, "config_intro")) {
     $help = ["config_intro", $module];
 } else {
     $help = undef;
 }
 &ui_print_header(&text('config_dir', $module_info{'desc'}), $text{'config_title'}, "", $help, 0, 1);
-$module_dir         = &module_root_directory($module);
-$module_config_file = -r $module_custom_config_file ? $module_custom_config_file : "$module_dir/config.info";
+$module_dir = &module_root_directory($module);
 
 # Read the config.info file to find sections
-&read_file($module_config_file, \%info, \@info_order);
+&read_file("$module_dir/config.info", \%info, \@info_order);
 my @config_quick_access;
 my $config_quick_access_section;
 my $config_quick_access_category;
@@ -48,7 +58,6 @@ foreach my $i (@info_order) {
     } else {
         my $value = $p[0];
         $value =~ s/<(?:[^>'"]*|(['"]).*?\1)*>//gs;
-        $value = &entities_to_ascii($value);
         push(@config_quick_access,
              {  value   => $value,
                 section => $config_quick_access_section,
@@ -120,21 +129,7 @@ if ($section) {
     }
 }
 print &ui_table_start($sname, "width=100%", 2);
-
-# A case when a custom default config needs to be
-# used for a module provided by the theme itself
-if (-r $module_custom_config_file) {
-    my $module_custom_config_default = "$root_directory/$current_theme/modules/$module/config.defaults";
-    if (-r $module_custom_config_default) {
-        &read_file($module_custom_config_default, \%newconfig);
-    }
-}
-
-# Load module default config
-my $current_config = "$config_directory/$module/config";
-&read_file($current_config, \%newconfig);
-
-# Load user preferences
+&read_file("$config_directory/$module/config", \%newconfig);
 &load_module_preferences($module, \%newconfig);
 
 my $func;
@@ -151,11 +146,10 @@ if (-r "$module_dir/config_info.pl") {
 if (!$func) {
 
     # Use config.info to create config inputs
-    &generate_config(\%newconfig, $module_config_file, $module, undef, undef, $in{'section'});
+    &generate_config(\%newconfig, "$module_dir/config.info", $module, undef, undef, $in{'section'});
 }
 print &ui_table_end();
 print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
 
 %moduletext = &load_language($module);
 &ui_print_footer("/$module", $moduletext{'index_return'} || $text{'index'});
-

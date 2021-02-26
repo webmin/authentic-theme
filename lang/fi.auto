@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Yleiset oletukset
 theme_error_access_not_root_user=Käyttö estetty: Käyttäjällä ei ole oikeuksia muokata tätä osiota
 settings_theme_config_admins_only_privileged=Estä käyttäjien pääsy teeman määrityksiin
 settings_theme_config_admins_only_privileged_description=Jos tämä vaihtoehto on palvelimen järjestelmänvalvojan pakottama, piilotetaan teeman määrityssivu tavallisilta käyttäjiltä, joilla ei ole oikeuksia. Tätä asetusta ei kuitenkaan suositella käytettäväksi, koska tavallisilla käyttäjillä on jo rajallinen pääsy teeman kokoonpanoon ja he voivat muuttaa vain vähän käyttäjäkohtaisia asetuksia
+
+#19.72
+theme_xhred_global_prefs=Asetukset
+mconfig_eaccess=Tätä moduulia ei voi käyttää
+mconfig_ecannot=Tälle moduulille ei löydy mukautettua kokoonpanotiedostoa

@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Vispārīgi noklusējumi
 theme_error_access_not_root_user=Piekļuve liegta: lietotājam nav tiesību rediģēt šo sadaļu
 settings_theme_config_admins_only_privileged=Aizliegt lietotājiem piekļuvi motīva konfigurācijai
 settings_theme_config_admins_only_privileged_description=Šī opcija, ja to piespiedīs servera administrators, paslēps motīvu konfigurācijas lapu no parastajiem, privileģētajiem lietotājiem. Tomēr šo opciju nav ieteicams izmantot, jo parastajiem lietotājiem jau būs ierobežota piekļuve motīvu konfigurācijai un viņi varēs mainīt tikai minimālu lietotāja specifisko opciju kopu
+
+#19.72
+theme_xhred_global_prefs=Preferences
+mconfig_eaccess=Šim modulim nevar piekļūt
+mconfig_ecannot=Šim modulim nav atrasts pielāgots konfigurācijas fails

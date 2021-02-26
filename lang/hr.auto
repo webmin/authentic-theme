@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Opće zadane vrijednosti
 theme_error_access_not_root_user=Pristup odbijen: Korisnik nema privilegiju uređivati ovaj odjeljak
 settings_theme_config_admins_only_privileged=Zabraniti pristup konfiguraciji teme za korisnike
 settings_theme_config_admins_only_privileged_description=Ova će opcija, ako je prisili administrator poslužitelja, sakriti stranicu s konfiguracijom teme od redovnih, ne privilegiranih korisnika. Međutim, ne preporučuje se korištenje ove opcije, jer će redovni korisnici već imati ograničeni pristup konfiguraciji teme i moći će mijenjati samo minimalni skup specifičnih za korisnika opcija
+
+#19.72
+theme_xhred_global_prefs=Postavke
+mconfig_eaccess=Ovom modulu se ne može pristupiti
+mconfig_ecannot=Za ovaj modul nije pronađena prilagođena konfiguracijska datoteka

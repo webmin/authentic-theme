@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Lehenespen orokorrak
 theme_error_access_not_root_user=Sarbidea ukatuta: erabiltzaileak ez du atal hau editatzeko baimenik
 settings_theme_config_admins_only_privileged=Debekatu erabiltzaileentzako gaiaren konfiguraziora sartzea
 settings_theme_config_admins_only_privileged_description=Aukera honek, zerbitzariaren administratzaileak ezartzen badu, gaiaren konfigurazio orria ezkutatuko die pribilegiatu gabeko erabiltzaile arruntei. Hala ere, ez da gomendatzen aukera hau erabiltzea, erabiltzaile arruntek dagoeneko sarbide mugatua izango baitute gaiaren konfiguraziorako, eta erabiltzailearen berariazko aukera multzo minimoa soilik aldatzeko aukera izango dute.
+
+#19.72
+theme_xhred_global_prefs=Lehentasunak
+mconfig_eaccess=Ezin da modulu honetara sartu
+mconfig_ecannot=Ez dago modulu honetarako konfigurazio fitxategi pertsonalizaturik

@@ -498,3 +498,8 @@ settings_global_general_options_title=Valors predeterminats generals
 theme_error_access_not_root_user=Accés denegat: l'usuari no té el privilegi d'editar aquesta secció
 settings_theme_config_admins_only_privileged=Prohibiu l'accés a la configuració del tema per als usuaris
 settings_theme_config_admins_only_privileged_description=Aquesta opció, si l'administrador del servidor la fa complir, amagarà la pàgina de configuració del tema als usuaris habituals no privilegiats. Tanmateix, no es recomana utilitzar aquesta opció, ja que els usuaris habituals ja tindran accés limitat a la configuració del tema i només podran canviar el conjunt mínim d'opcions específiques de l'usuari.
+
+#19.72
+theme_xhred_global_prefs=Preferències
+mconfig_eaccess=No es pot accedir a aquest mòdul
+mconfig_ecannot=No es troba cap fitxer de configuració personalitzat per a aquest mòdul

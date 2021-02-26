@@ -63,3 +63,8 @@ settings_global_general_options_title=Allmänna standardinställningar
 theme_error_access_not_root_user=Åtkomst nekad: Användaren har inte behörighet att redigera detta avsnitt
 settings_theme_config_admins_only_privileged=Förbjuda åtkomst till temakonfiguration för användare
 settings_theme_config_admins_only_privileged_description=Om detta verkställs av serveradministratören döljs temakonfigurationssidan från vanliga, icke-privilegierade användare. Det här alternativet rekommenderas dock inte att användas, eftersom vanliga användare redan har begränsad åtkomst till temakonfiguration och endast kan ändra minimal uppsättning användarspecifika alternativ
+
+#19.72
+theme_xhred_global_prefs=Inställningar
+mconfig_eaccess=Den här modulen kan inte nås
+mconfig_ecannot=Det finns ingen anpassad konfigurationsfil för den här modulen

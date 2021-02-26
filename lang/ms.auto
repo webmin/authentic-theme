@@ -571,3 +571,8 @@ settings_global_general_options_title=Lalai umum
 theme_error_access_not_root_user=Akses ditolak: Pengguna tidak berhak untuk mengedit bahagian ini
 settings_theme_config_admins_only_privileged=Larang akses ke konfigurasi tema untuk pengguna
 settings_theme_config_admins_only_privileged_description=Pilihan ini, jika ditegakkan oleh pentadbir pelayan, akan menyembunyikan halaman konfigurasi tema dari pengguna biasa dan tidak berhak. Namun, opsi ini tidak disarankan untuk digunakan, karena pengguna biasa sudah memiliki akses terbatas ke konfigurasi tema, dan hanya dapat mengubah sekumpulan minimum pilihan khusus pengguna
+
+#19.72
+theme_xhred_global_prefs=Keutamaan
+mconfig_eaccess=Modul ini tidak dapat diakses
+mconfig_ecannot=Tidak terdapat fail konfigurasi tersuai untuk modul ini

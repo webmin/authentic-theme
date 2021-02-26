@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Algemene standaardinstellings
 theme_error_access_not_root_user=Toegang geweier: Gebruiker het nie die voorreg om hierdie afdeling te wysig nie
 settings_theme_config_admins_only_privileged=Verbied toegang vir temakonfigurasie vir gebruikers
 settings_theme_config_admins_only_privileged_description=Hierdie opsie, indien dit deur die bedieneradministrateur toegepas word, sal die tema-konfigurasiebladsy vir gewone, nie-bevoorregte gebruikers verberg. Hierdie opsie word egter nie aanbeveel om te gebruik nie, aangesien gewone gebruikers alreeds beperkte toegang tot temakonfigurasie het, en slegs die minimale stel gebruikerspesifieke opsies sal kan verander.
+
+#19.72
+theme_xhred_global_prefs=Voorkeure
+mconfig_eaccess=Hierdie module kan nie verkry word nie
+mconfig_ecannot=Daar is geen persoonlike konfigurasielêer vir hierdie module gevind nie

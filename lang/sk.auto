@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Všeobecné predvolené hodnoty
 theme_error_access_not_root_user=Prístup odmietnutý: Používateľ nemá oprávnenie upravovať túto sekciu
 settings_theme_config_admins_only_privileged=Zakázať používateľom prístup k konfigurácii témy
 settings_theme_config_admins_only_privileged_description=Táto voľba, ak ju vynúti administrátor servera, skryje stránku s konfiguráciou témy pred bežnými, neoprávnenými používateľmi. Túto možnosť sa však neodporúča používať, pretože bežní používatelia už budú mať obmedzený prístup ku konfigurácii tém a budú môcť meniť iba minimálnu množinu možností špecifických pre používateľa.
+
+#19.72
+theme_xhred_global_prefs=Predvoľby
+mconfig_eaccess=Tento modul nie je prístupný
+mconfig_ecannot=Pre tento modul sa nenašiel žiadny vlastný konfiguračný súbor

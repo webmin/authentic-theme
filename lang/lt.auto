@@ -1198,3 +1198,8 @@ settings_global_general_options_title=Bendrieji nutylėjimai
 theme_error_access_not_root_user=Prieiga uždrausta: vartotojui nėra suteikta teisė redaguoti šios skilties
 settings_theme_config_admins_only_privileged=Uždrausti vartotojams prieigą prie temos konfigūracijos
 settings_theme_config_admins_only_privileged_description=Ši parinktis, jei ją vykdys serverio administratorius, paslėps temos konfigūracijos puslapį nuo įprastų, neprivilegijuotų vartotojų. Tačiau šios parinkties nerekomenduojama naudoti, nes įprasti vartotojai jau turės ribotą prieigą prie temos konfigūracijos ir galės pakeisti tik minimalius vartotojo specifinių parinkčių rinkinius
+
+#19.72
+theme_xhred_global_prefs=Nuostatos
+mconfig_eaccess=Šio modulio pasiekti negalima
+mconfig_ecannot=Šiam moduliui nerastas pritaikytas konfigūracijos failas

@@ -1198,3 +1198,8 @@ settings_global_general_options_title=ברירות מחדל כלליות
 theme_error_access_not_root_user=גישה נדחתה: המשתמש אינו רשאי לערוך קטע זה
 settings_theme_config_admins_only_privileged=איסור על גישה לתצורת התצורה של המשתמשים
 settings_theme_config_admins_only_privileged_description=אפשרות זו, אם אכפת אותה על ידי מנהל השרת, תסתיר את דף תצורת הנושא ממשתמשים רגילים שאינם מורשים. עם זאת, לא מומלץ להשתמש באפשרות זו, מכיוון שמשתמשים רגילים כבר יקבלו גישה מוגבלת לתצורת ערכת הנושא, והם יוכלו לשנות רק קבוצה מינימלית של אפשרויות ספציפיות למשתמש.
+
+#19.72
+theme_xhred_global_prefs=העדפות
+mconfig_eaccess=לא ניתן לגשת למודול זה
+mconfig_ecannot=לא נמצא קובץ תצורה מותאם אישית עבור מודול זה
