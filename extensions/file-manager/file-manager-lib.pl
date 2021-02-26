@@ -1062,30 +1062,36 @@ sub print_content
 sub get_tree
 {
     my ($p, $d, $e) = @_;
-    my $df = int($d);
     my %r;
     my @r;
+    my $ic;
+    my $rp;
+    my $df = int($d);
     my @ap = @allowed_paths;
     my $fr = scalar(@ap) > 1;
-    my $pf = ($p || ($fr ? "/" : $ap[0]));
+    my @af = length($p) ? ($p) : @ap;
+    my $fu = scalar(@af) == 1;
 
     my $wanted = sub {
         my $td = $File::Find::name;
         if (-d $td && !-l $td) {
+            my ($ix) = grep {$af[$_] eq $td} (0 .. @af - 1);
+            $ic = $ix if (defined($ix));
             my $dc = $td =~ tr[/][];
-            if ($fr && !(grep {$td =~ /^\Q$_\E/} @ap)) {
-                return;
-            } elsif ($e && $pf eq '/' && $dc == 1) {
+            if ($e && $af[$ic] eq '/' && $dc == 1) {
                 if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
                     return;
                 }
             }
-            $td =~ s|^\Q$pf\E/?||;
+            if ($fu) {
+                $td =~ s/^$af[$ic]//;
+            }
+            $td =~ s|^\Q/\E/?||;
             if ($r{$td} || !$td) {
                 return;
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
-            my $pp = $pf ne '/' ? $pf : undef;
+            my $pp = $fu ? $af[$ic] : undef;
             my $c  = $r{$td} =
               { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
             defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
@@ -1107,7 +1113,7 @@ sub get_tree
          {  wanted     => $wanted,
             preprocess => $preprocess
          },
-         $pf);
+         @af);
     return \@r;
 }
 
