@@ -1,11 +1,13 @@
 ## Changelog
 
-#### Version 19.72-RC2 (February 27, 2021)
+#### Version 19.72 (February 28, 2021)
+* Add error handler when viewed/edited file outside of allowed path
 * Add file tree-view optimizations for speed and security in File Manager
 * Fix file tree-view child counter bubble styling in File Manager
-* Fix support when multi allowed directories are used in File Manager
-* Fix navigation menu detection with File Manager config
+* Fix to improve support when multi allowed directories are used in File Manager
+* Fix navigation menu detection with new File Manager preferences page
 * Fix tooltip placement to be conditional to avoid breakage for the last element
+* Fix smarter titling when adding pages to favorites
 * Fix bugs
 
 #### Version 19.71 (February 24, 2021)
@@ -26,7 +28,6 @@
 * Add more features to search functionality (filter user, group, size and type) in File Manager
 * Add to display extended file status output for editor and viewer windows
 * Add better support for native form validation (HTML5)
-* Fix bugs
 
 <!--- separator --->
 
