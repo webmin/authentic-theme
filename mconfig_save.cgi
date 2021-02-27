@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, $remote_user, $current_theme);
+our (%text, %in, $root_directory, $config_directory, $remote_user, $current_theme, %theme_text);
 
 require("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
@@ -22,7 +22,7 @@ $module_custom_config_file = "$root_directory/$current_theme/modules/$module/con
 $config_file               = "$config_directory/$module/config";
 
 &error_setup($text{'config_err'});
-&foreign_available($module) || &error($text{'config_eaccess'});
+&foreign_available($module) || &error($theme_text{'config_eaccess'});
 
 mkdir("$config_directory/$module", 0700);
 if (-r $module_custom_config_file) {
@@ -33,9 +33,10 @@ if (-r $module_custom_config_file) {
     &load_module_preferences($module, \%newconfig);
     &parse_config(\%newconfig, $module_custom_config_file, $module, undef, $in{'section'});
     &save_module_preferences($module, \%newconfig);
-    
+
     # Redirect
     if ($in{'save_next'}) {
+
         # Used to return to the current section if needed W00900XXX
         my $section_next = $in{'section_curr'} || $in{'section_next'};
         &redirect("mconfig.cgi?module=$module&section=$section_next");
@@ -44,5 +45,5 @@ if (-r $module_custom_config_file) {
     }
 
 } else {
-    &error($text{'config_ecannot'});
+    &error($theme_text{'config_ecannot'});
 }
